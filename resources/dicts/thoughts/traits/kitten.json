@@ -28,7 +28,21 @@
     "polite": [],
     "quiet": [],
     "sweet": [],
-    "troublesome": [],
+    "troublesome": [
+        "Is thinking about mischief",
+        "Is wondering what trouble they can create",
+        "Is wondering about the unknown",
+        "Is planning to be naughty",
+        "Is thinking about being in trouble",
+        "Is trying to get out of trouble",
+        "Is thinking of how to cause trouble",
+        "Is planning to annoy an elder",
+        "Is trying very hard to look innocent",
+        "Is thinking about play-fighting with their littermates",
+        "Is putting thorns in r_c's bedding",
+        "Is thinking about stealing herbs from the medicine den",
+        "Is sneaking out of camp"
+    ],
     "strong connection to starclan": [
         "Thinks they saw a StarClan cat in their dreams",
         "Is scrambling the medicine cat's herbs!",

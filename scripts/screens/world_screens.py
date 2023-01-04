@@ -38,18 +38,49 @@ class OutsideClanScreen(Screens):
             elif event.ui_element == self.previous_page_button:
                 self.list_page -= 1
                 self.update_page()
+            elif event.ui_element == self.filter_by_closed:
+                self.filter_by_closed.hide()
+                self.filter_by_open.show()
+                self.filter_rank.show()
+                self.filter_age.show()
+            elif event.ui_element == self.filter_by_open:
+                self.filter_by_open.hide()
+                self.filter_by_closed.show()
+                self.filter_options_visible = False
+                self.filter_rank.hide()
+                self.filter_age.hide()
+            elif event.ui_element == self.filter_age:
+                self.filter_age.hide()
+                self.filter_rank.hide()
+                self.filter_by_open.hide()
+                self.filter_by_closed.show()
+                game.sort_type = "reverse_age"
+                Cat.sort_cats()
+                self.get_living_cats()
+                self.update_search_cats(self.search_bar.get_text())
+            elif event.ui_element == self.filter_rank:
+                self.filter_age.hide()
+                self.filter_rank.hide()
+                self.filter_by_open.hide()
+                self.filter_by_closed.show()
+                game.sort_type = "rank"
+                Cat.sort_cats()
+                self.get_living_cats()
+                self.update_search_cats(self.search_bar.get_text())
             else:
                 self.menu_button_pressed(event)
 
-    def screen_switches(self):
-        # Determine the living, exiled cats.
+    def get_living_cats(self):
         self.living_cats = []
-        for x in range(len(Cat.all_cats.values())):
-            the_cat = list(Cat.all_cats.values())[x]
+        for the_cat in Cat.all_cats_list:
             if not the_cat.dead and the_cat.outside:
                 self.living_cats.append(the_cat)
 
-        self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((525, 142), (147, 23)),
+    def screen_switches(self):
+        # Determine the living, exiled cats.
+        self.get_living_cats()
+
+        self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((421, 142), (147, 23)),
                                                               object_id="#search_entry_box")
 
         self.your_clan_button = UIImageButton(pygame.Rect((115, 135), (34, 34)), "", object_id="#your_clan_button")
@@ -67,6 +98,39 @@ class OutsideClanScreen(Screens):
 
         self.update_search_cats("") # This will list all the cats, and create the button objects.
 
+        # set up the filter buttons
+        x_pos = 576
+        y_pos = 135
+        self.filter_by_closed = UIImageButton(
+            pygame.Rect((x_pos, y_pos), (98, 34)),
+            "",
+            object_id="#filter_by_closed_button",
+            tool_tip_text="By default, cats are sorted by rank."
+        )
+        self.filter_by_open = UIImageButton(
+            pygame.Rect((x_pos, y_pos), (98, 34)),
+            "",
+            object_id="#filter_by_open_button",
+        )
+        self.filter_by_open.hide()
+        y_pos -= 29
+
+        self.filter_rank = UIImageButton(
+            pygame.Rect((x_pos - 2, y_pos), (102, 29)),
+            "",
+            object_id="#filter_rank_button",
+            starting_height=1
+        )
+        self.filter_rank.hide()
+        y_pos -= 29
+        self.filter_age = UIImageButton(
+            pygame.Rect((x_pos - 2, y_pos), (102, 29)),
+            "",
+            object_id="#filter_age_button",
+            starting_height=1
+        )
+        self.filter_age.hide()
+
         cat_profiles()
     
     def exit_screen(self):
@@ -77,13 +141,19 @@ class OutsideClanScreen(Screens):
         self.previous_page_button.kill()
         self.page_number.kill()
         self.search_bar.kill()
+        self.filter_by_closed.kill()
+        self.filter_by_open.kill()
+        self.filter_rank.kill()
+        self.filter_age.kill()
 
         # Remove currently displayed cats and cat names.
         for cat in self.display_cats:
             cat.kill()
+        self.display_cats = []
 
         for name in self.cat_names:
             name.kill()
+        self.cat_names = []
         
 
     def update_search_cats(self, search_text):
@@ -133,10 +203,12 @@ class OutsideClanScreen(Screens):
         # Remove the images for currently listed cats
         for cat in self.display_cats:
             cat.kill()
+        self.display_cats = []
 
         for name in self.cat_names:
             name.kill()
-        
+        self.cat_names = []
+
         # Generate object for the current cats
         pos_x = 0
         pos_y = 0
@@ -164,7 +236,7 @@ class OutsideClanScreen(Screens):
             self.update_search_cats(self.search_bar.get_text())
         self.previous_search_text = self.search_bar.get_text()
 
-        screen.blit(self.search_bar_image, (452, 135))
+        screen.blit(self.search_bar_image, (348, 135))
         clan_name_bg = pygame.transform.scale(
             image_cache.load_image("resources/images/outside_clan_bg.png").convert_alpha(), (242, 35))
 
