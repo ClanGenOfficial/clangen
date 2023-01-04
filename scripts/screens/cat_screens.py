@@ -611,7 +611,7 @@ class ProfileScreen(Screens):
         )
         if self.the_cat.status not in ['medicine cat', 'medicine cat apprentice']:
             self.profile_elements["med_den"].hide()
-            
+
         # Determine where the next and previous cat buttons lead
         self.determine_previous_and_next_cat()
 
