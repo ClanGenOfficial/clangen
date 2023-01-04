@@ -601,6 +601,14 @@ class ProfileScreen(Screens):
                                                                          self.the_cat.large_sprite)
         self.profile_elements["cat_image"].disable()
 
+        # if cat is a med or med app, show button for their den
+        if self.the_cat.status in ['medicine cat', 'medicine cat apprentice']:
+            self.profile_elements["med_den"] = UIImageButton(pygame.Rect
+                                                             ((100, 380), (151, 28)),
+                                                             "",
+                                                             object_id="#med_den_button"
+            )
+
         # Determine where the next and previous cat buttons lead
         self.determine_previous_and_next_cat()
 
