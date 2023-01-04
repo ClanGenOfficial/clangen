@@ -253,6 +253,7 @@ class PatrolScreen(Screens):
                 self.elements['info'] = pygame_gui.elements.UITextBox(
                     text, pygame.Rect((250, 525), (300, 400)), object_id=get_text_box_theme()
                 )
+
     def open_choose_cats_screen(self):
         """Opens the choose-cat patrol stage. """
         self.clear_page()  # Clear the page
