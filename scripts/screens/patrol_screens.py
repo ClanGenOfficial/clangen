@@ -27,6 +27,7 @@ class PatrolScreen(Screens):
     elements = {}  # hold elements for sub-page
     cat_buttons = {}  # Hold cat image sprites.
     selected_cat = None  # Holds selected cat.
+    selected_apprentice_index = 0
 
     def __init__(self, name=None):
         super().__init__(name)
@@ -53,13 +54,30 @@ class PatrolScreen(Screens):
                     self.update_button()
                     self.update_cat_images_buttons()
                     self.update_selected_cat()
+                    
             if 'app_mentor_button' in self.elements:
                 if event.ui_element == self.elements['app_mentor_button']:
                     self.selected_cat = self.app_mentor
                     self.update_button()
                     self.update_cat_images_buttons()
                     self.update_selected_cat()
+                    
 
+            # Check if apprentice cycle buttons are clicked.
+            if "cycle_app_mentor_left_button" in self.elements:
+                if event.ui_element == self.elements['cycle_app_mentor_left_button']:
+                    self.selected_apprentice_index -= 1
+                    self.app_mentor = self.selected_cat.apprentice[self.selected_apprentice_index]
+                    self.update_selected_cat()
+                    self.update_button()
+            
+            if "cycle_app_mentor_right_button" in self.elements:
+                if event.ui_element == self.elements['cycle_app_mentor_right_button']:
+                    self.selected_apprentice_index += 1
+                    self.app_mentor = self.selected_cat.apprentice[self.selected_apprentice_index]
+                    self.update_selected_cat()
+                    self.update_button()
+                
     def handle_choose_cats_events(self, event):
         if event.ui_element == self.elements["random"]:
             self.selected_cat = choice(self.able_cats)
@@ -253,6 +271,23 @@ class PatrolScreen(Screens):
                 self.elements['info'] = pygame_gui.elements.UITextBox(
                     text, pygame.Rect((250, 525), (300, 400)), object_id=get_text_box_theme()
                 )
+            
+            if self.selected_cat != None:
+                if 'cycle_app_mentor_right_button' in self.elements and 'cycle_app_mentor_left_button' in self.elements:
+                    if self.selected_apprentice_index == len(self.selected_cat.apprentice) - 1:
+                        self.elements['cycle_app_mentor_right_button'].disable()
+                    else:
+                        self.elements['cycle_app_mentor_left_button'].enable()
+
+                    if self.selected_apprentice_index == 0:
+                        self.elements['cycle_app_mentor_left_button'].disable()
+                    else:
+                        self.elements['cycle_app_mentor_left_button'].enable()
+
+                    if self.selected_cat.mentor != None:
+                        
+                        self.elements['cycle_app_mentor_left_button'].hide()
+                        self.elements['cycle_app_mentor_right_button'].hide()
 
     def open_choose_cats_screen(self):
         """Opens the choose-cat patrol stage. """
@@ -735,6 +770,12 @@ class PatrolScreen(Screens):
         if 'app_mentor_info' in self.elements:
             self.elements['app_mentor_info'].kill()
             del self.elements['app_mentor_info']
+        if 'cycle_app_mentor_left_button' in self.elements:
+            self.elements['cycle_app_mentor_left_button'].kill()
+            del self.elements['cycle_app_mentor_left_button']
+        if 'cycle_app_mentor_right_button' in self.elements:
+            self.elements['cycle_app_mentor_right_button'].kill()
+            del self.elements['cycle_app_mentor_right_button']
 
         if self.selected_cat is not None:
             # Now, if the selected cat is not None, we rebuild everything with the correct cat info
@@ -797,7 +838,7 @@ class PatrolScreen(Screens):
                     relation = 'mentor'
 
                 elif self.selected_cat.apprentice:
-                    self.app_mentor = Cat.fetch_cat(self.selected_cat.apprentice[0])
+                    self.app_mentor = Cat.fetch_cat(self.selected_cat.apprentice[self.selected_apprentice_index])
                     relation = 'apprentice'
                 else:
                     self.app_mentor = None
@@ -827,6 +868,13 @@ class PatrolScreen(Screens):
                     # Disable mate_button if the cat is not able to go on a patrol
                     if self.app_mentor not in self.able_cats:
                         self.elements['app_mentor_button'].disable()
+
+                    # Buttons to cycle between apprentices
+                    if self.selected_cat.mentor == None:
+                        self.elements['cycle_app_mentor_left_button'] = UIImageButton(pygame.Rect((548, 390), (34, 34)), "", object_id="#arrow_left_button")
+                        self.elements['cycle_app_mentor_right_button'] = UIImageButton(pygame.Rect((618, 390), (34, 34)), "", object_id="#arrow_right_button")
+
+                    
 
     def clear_page(self):
         """Clears all the elements"""
