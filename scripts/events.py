@@ -181,7 +181,8 @@ class Events():
                         random_count += 1
                         continue
 
-                    Cat.all_cats[random_cat].status = 'deputy'
+
+                    Cat.all_cats[random_cat].status_change('deputy')
                     text = ''
                     if game.clan.deputy is not None:
                         if game.clan.deputy.dead and not game.clan.leader.dead and not game.clan.leader.exiled:
@@ -210,6 +211,7 @@ class Events():
                             text = choice(possible_events)
 
                     game.clan.deputy = Cat.all_cats[random_cat]
+                    game.ranks_changed_timeskip = True
                     game.cur_events_list.append(text)
                     game.ceremony_events_list.append(text)
                     break
@@ -241,6 +243,11 @@ class Events():
 
                 if leader_dead or leader_outside:
                     game.cur_events_list.insert(0, f"{game.clan.name}Clan has no leader!")
+
+        # Resort if needed
+        if game.ranks_changed_timeskip and game.sort_type == "rank":
+            game.ranks_changed_timeskip = False
+            Cat.sort_cats()
 
     game.switches['timeskip'] = False
 
@@ -392,6 +399,7 @@ class Events():
                 not game.clan.deputy.outside and \
                 (leader_dead or leader_outside):
             game.clan.new_leader(game.clan.deputy)
+            game.ranks_changed_timeskip = True
             game.clan.leader_lives = 9
             text = ''
             if (game.clan.deputy.trait == 'bloodthirsty'):
@@ -432,7 +440,7 @@ class Events():
                 if cat.status == 'deputy':
                     game.clan.deputy = None
                 self.ceremony(cat, 'elder', ' has retired to the elder den.')
-                cat.status_change('elder')
+                #cat.status_change('elder')
 
             # apprentice a kitten to either med or warrior
             if cat.moons == cat_class.age_moons[cat.age][1]:
@@ -508,6 +516,7 @@ class Events():
         # ---------------------------------------------------------------------------- #
         ceremony = []
         cat.status_change(promoted_to)
+        game.ranks_changed_timeskip = True
 
         if game.clan.leader:
             leader_dead = game.clan.leader.dead

@@ -591,11 +591,13 @@ def apply_opacity(surface, opacity):
 # ---------------------------------------------------------------------------- #
 #                                     OTHER                                    #
 # ---------------------------------------------------------------------------- #
+
 def is_iterable(y):
     try:
         0 in y
     except TypeError:
         return False
+
 
 def get_text_box_theme(themename=""):
     """Updates the name of the theme based on dark or light mode"""
@@ -609,4 +611,8 @@ def get_text_box_theme(themename=""):
             return "text_box"
         else:
             return themename
+
+
+
+
 
