@@ -297,6 +297,8 @@ class ProfileScreen(Screens):
                 self.toggle_conditions_tab()
             elif event.ui_element == self.leader_ceremony_button:
                 self.change_screen('ceremony screen')
+            elif event.ui_element == self.profile_elements["med_den"]:
+                self.change_screen('med den screen')
             else:
                 self.handle_tab_events(event)
 

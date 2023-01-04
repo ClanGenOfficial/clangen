@@ -1313,6 +1313,8 @@ class MedDenScreen(Screens):
         self.tab_showing = self.in_den_tab
         self.tab_list = self.in_den_cats
 
+        self.herbs = {}
+
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
@@ -1494,7 +1496,7 @@ class MedDenScreen(Screens):
 
         for cat in self.display_med:
             self.med_cat = UISpriteButton(pygame.Rect
-                                          ((435, 155), (150, 150)),
+                                          ((435, 165), (150, 150)),
                                           cat.sprite,
                                           cat_object=cat)
             name = str(cat.name)
@@ -1593,6 +1595,29 @@ class MedDenScreen(Screens):
                                                     pygame.image.load(
                                                         "resources/images/med_cat_den/base.png").convert_alpha()
                                                     )
+
+        # TODO: make this classic specific after testing
+        herbs = game.clan.herbs
+        for herb in herbs:
+            if herb == 'cobweb':
+                self.herbs["cobweb1"] = pygame_gui.elements.UIImage(pygame.Rect
+                                                                    ((108, 95), (396, 216)),
+                                                                    pygame.image.load(
+                                                                        "resources/images/med_cat_den/cobweb1.png").convert_alpha()
+                                                                    )
+                if herbs["cobweb"] > 1:
+                    self.herbs["cobweb2"] = pygame_gui.elements.UIImage(pygame.Rect
+                                                                        ((108, 95), (396, 216)),
+                                                                        pygame.image.load(
+                                                                            "resources/images/med_cat_den/cobweb2.png").convert_alpha()
+                                                                        )
+                continue
+            self.herbs[herb] = pygame_gui.elements.UIImage(pygame.Rect
+                                                           ((108, 95), (396, 216)),
+                                                           pygame.image.load(
+                                                               f"resources/images/med_cat_den/{herb}.png").convert_alpha()
+                                                           )
+
 
     def exit_screen(self):
         self.meds_messages.kill()
