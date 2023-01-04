@@ -233,25 +233,19 @@ class ChooseMentorScreen(Screens):
         if is_instructor:
             self.next_cat = 1
 
-        for check_cat in Cat.all_cats:
-            if Cat.all_cats[check_cat].ID == self.the_cat.ID:
+        for check_cat in Cat.all_cats_list:
+            if check_cat.ID == self.the_cat.ID:
                 self.next_cat = 1
 
-            if self.next_cat == 0 and Cat.all_cats[
-                check_cat].ID != self.the_cat.ID and Cat.all_cats[
-                check_cat].dead == self.the_cat.dead and Cat.all_cats[
-                check_cat].ID != game.clan.instructor.ID and not Cat.all_cats[
-                check_cat].exiled and Cat.all_cats[check_cat].mentor is not None and Cat.all_cats[
-                check_cat].df == self.the_cat.df:
-                self.previous_cat = Cat.all_cats[check_cat].ID
+            if self.next_cat == 0 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead and \
+                    check_cat.ID != game.clan.instructor.ID and not check_cat.exiled and check_cat.mentor is not None \
+                    and check_cat.df == self.the_cat.df:
+                self.previous_cat = check_cat.ID
 
-            elif self.next_cat == 1 and Cat.all_cats[
-                check_cat].ID != self.the_cat.ID and Cat.all_cats[
-                check_cat].dead == self.the_cat.dead and Cat.all_cats[
-                check_cat].ID != game.clan.instructor.ID and not Cat.all_cats[
-                check_cat].exiled and Cat.all_cats[check_cat].mentor is not None and Cat.all_cats[
-                check_cat].df == self.the_cat.df:
-                self.next_cat = Cat.all_cats[check_cat].ID
+            elif self.next_cat == 1 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead and \
+                    check_cat.ID != game.clan.instructor.ID and not check_cat.exiled and check_cat.mentor is not None \
+                    and check_cat.df == self.the_cat.df:
+                self.next_cat = check_cat.ID
 
             elif int(self.next_cat) > 1:
                 break
@@ -669,25 +663,19 @@ class ViewChildrenScreen(Screens):
         if is_instructor:
             next_cat = 1
 
-        for check_cat in Cat.all_cats:
-            if Cat.all_cats[check_cat].ID == self.the_cat.ID:
+        for check_cat in Cat.all_cats_list:
+            if check_cat.ID == self.the_cat.ID:
                 next_cat = 1
             else:
-                if next_cat == 0 and Cat.all_cats[
-                        check_cat].ID != self.the_cat.ID and Cat.all_cats[
-                        check_cat].dead == self.the_cat.dead and Cat.all_cats[
-                        check_cat].ID != game.clan.instructor.ID and Cat.all_cats[
-                        check_cat].outside == self.the_cat.outside and Cat.all_cats[
-                        check_cat].df == self.the_cat.df and not Cat.all_cats[check_cat].faded:
-                    previous_cat = Cat.all_cats[check_cat].ID
+                if next_cat == 0 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead and \
+                        check_cat.ID != game.clan.instructor.ID and check_cat.outside == self.the_cat.outside and \
+                        check_cat.df == self.the_cat.df and not check_cat.faded:
+                    previous_cat = check_cat.ID
 
-                elif next_cat == 1 and Cat.all_cats[
-                        check_cat].ID != self.the_cat.ID and Cat.all_cats[
-                        check_cat].dead == self.the_cat.dead and Cat.all_cats[
-                        check_cat].ID != game.clan.instructor.ID and Cat.all_cats[
-                        check_cat].outside == self.the_cat.outside and Cat.all_cats[
-                        check_cat].df == self.the_cat.df and not Cat.all_cats[check_cat].faded:
-                    next_cat = Cat.all_cats[check_cat].ID
+                elif next_cat == 1 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead and \
+                        check_cat.ID != game.clan.instructor.ID and check_cat.outside == self.the_cat.outside and \
+                        check_cat.df == self.the_cat.df and not check_cat.faded:
+                    next_cat = check_cat.ID
 
                 elif int(next_cat) > 1:
                     break
@@ -1279,26 +1267,18 @@ class ChooseMateScreen(Screens):
         if is_instructor:
             next_cat = 1
 
-        for check_cat in Cat.all_cats:
-            if Cat.all_cats[check_cat].ID == self.the_cat.ID:
+        for check_cat in Cat.all_cats_list:
+            if check_cat.ID == self.the_cat.ID:
                 self.next_cat = 1
-            if self.next_cat == 0 and Cat.all_cats[
-                check_cat].ID != self.the_cat.ID and Cat.all_cats[
-                check_cat].dead == self.the_cat.dead and Cat.all_cats[
-                check_cat].ID != game.clan.instructor.ID and not Cat.all_cats[
-                check_cat].exiled and Cat.all_cats[
-                check_cat].status not in ['apprentice', 'medicine cat apprentice', 'kitten'] and Cat.all_cats[
-                check_cat].df == self.the_cat.df:
-                self.previous_cat = Cat.all_cats[check_cat].ID
+            if self.next_cat == 0 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead and \
+                    check_cat.ID != game.clan.instructor.ID and not check_cat.exiled and check_cat.status not in \
+                    ['apprentice', 'medicine cat apprentice', 'kitten'] and check_cat.df == self.the_cat.df:
+                self.previous_cat = check_cat.ID
 
-            elif self.next_cat == 1 and Cat.all_cats[
-                check_cat].ID != self.the_cat.ID and Cat.all_cats[
-                check_cat].dead == self.the_cat.dead and Cat.all_cats[
-                check_cat].ID != game.clan.instructor.ID and not Cat.all_cats[
-                check_cat].exiled and Cat.all_cats[
-                check_cat].status not in ['apprentice', 'medicine cat apprentice', 'kitten'] and Cat.all_cats[
-                check_cat].df == self.the_cat.df:
-                self.next_cat = Cat.all_cats[check_cat].ID
+            elif self.next_cat == 1 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead and \
+                    check_cat.ID != game.clan.instructor.ID and not check_cat.exiled and check_cat.status not in \
+                    ['apprentice', 'medicine cat apprentice', 'kitten'] and check_cat.df == self.the_cat.df:
+                self.next_cat = check_cat.ID
 
             elif int(self.next_cat) > 1:
                 break
@@ -1505,25 +1485,19 @@ class RelationshipScreen(Screens):
         if is_instructor:
             next_cat = 1
 
-        for check_cat in Cat.all_cats:
-            if Cat.all_cats[check_cat].ID == self.the_cat.ID:
+        for check_cat in Cat.all_cats_list:
+            if check_cat.ID == self.the_cat.ID:
                 next_cat = 1
             else:
-                if next_cat == 0 and Cat.all_cats[
-                        check_cat].ID != self.the_cat.ID and Cat.all_cats[
-                        check_cat].dead == self.the_cat.dead and Cat.all_cats[
-                        check_cat].ID != game.clan.instructor.ID and Cat.all_cats[
-                        check_cat].outside == self.the_cat.outside and Cat.all_cats[
-                        check_cat].df == self.the_cat.df and not Cat.all_cats[check_cat].faded:
-                    previous_cat = Cat.all_cats[check_cat].ID
+                if next_cat == 0 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead and \
+                        check_cat.ID != game.clan.instructor.ID and check_cat.outside == self.the_cat.outside and \
+                        check_cat.df == self.the_cat.df and not check_cat.faded:
+                    previous_cat = check_cat.ID
 
-                elif next_cat == 1 and Cat.all_cats[
-                        check_cat].ID != self.the_cat.ID and Cat.all_cats[
-                        check_cat].dead == self.the_cat.dead and Cat.all_cats[
-                        check_cat].ID != game.clan.instructor.ID and Cat.all_cats[
-                        check_cat].outside == self.the_cat.outside and Cat.all_cats[
-                        check_cat].df == self.the_cat.df and not Cat.all_cats[check_cat].faded:
-                    next_cat = Cat.all_cats[check_cat].ID
+                elif next_cat == 1 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead and \
+                        check_cat.ID != game.clan.instructor.ID and check_cat.outside == self.the_cat.outside and \
+                        check_cat.df == self.the_cat.df and not check_cat.faded:
+                    next_cat = check_cat.ID
 
                 elif int(next_cat) > 1:
                     break
