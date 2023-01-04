@@ -1624,6 +1624,9 @@ class MedDenScreen(Screens):
         self.last_med.kill()
         self.next_med.kill()
         self.den_base.kill()
+        for herb in self.herbs:
+            self.herbs[herb].kill()
+        self.herbs = {}
         self.med_info.kill()
         self.med_name.kill()
         self.back_button.kill()
