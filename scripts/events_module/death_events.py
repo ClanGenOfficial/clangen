@@ -3,8 +3,8 @@ import random
 
 from scripts.cat.cats import Cat, INJURIES
 from scripts.events_module.generate_events import GenerateEvents
-from scripts.utility import save_death, event_text_adjust, change_clan_relations, change_relationship_values
-from scripts.game_structure.game_essentials import game, SAVE_DEATH
+from scripts.utility import event_text_adjust, change_clan_relations, change_relationship_values
+from scripts.game_structure.game_essentials import game
 
 # ---------------------------------------------------------------------------- #
 #                               Death Event Class                              #
@@ -113,7 +113,7 @@ class Death_Events():
 
         if "war" in death_cause.tags and other_clan is not None and enemy_clan is not None:
             other_clan = enemy_clan
-            other_clan_name = other_clan.name
+            other_clan_name = other_clan.name + "clan"
 
         # let's change some relationship values \o/ check if another cat is mentioned and if they live
         if "other_cat" in death_cause.tags and "multi_death" not in death_cause.tags:
@@ -189,9 +189,6 @@ class Death_Events():
         game.birth_death_events_list.append(death_text)
         if "other_clan" in death_cause.tags:
             game.other_clans_events_list.append(death_text)
-
-        if SAVE_DEATH:
-            save_death(cat, death_text)
 
     def handle_relationship_changes(self, cat, death_cause, other_cat):
         cat_to = None

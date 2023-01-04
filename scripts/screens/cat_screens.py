@@ -12,7 +12,7 @@ from scripts.cat.pelts import collars, wild_accessories
 import scripts.game_structure.image_cache as image_cache
 import pygame_gui
 from re import sub
-from scripts.game_structure.image_button import UIImageButton, UISpriteButton, UITextBoxTweaked, UIImageTextBox
+from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked#, UIImageTextBox, UISpriteButton
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import *
 from scripts.cat.names import *
@@ -400,7 +400,7 @@ class ProfileScreen(Screens):
                     self.the_cat.outside = True
                     self.the_cat.thought = "Is shocked that they have been exiled"
                     for app in self.the_cat.apprentice:
-                        app.update_mentor()
+                        Cat.fetch_cat(app).update_mentor()
                     self.clear_profile()
                     self.build_profile()
                     self.update_disabled_buttons_and_text()
@@ -1209,7 +1209,7 @@ class ProfileScreen(Screens):
             if self.the_cat.status == 'leader':
                 insert2 = f"lost their lives"
                 if len(self.the_cat.died_by) > 2:
-                    insert = f"{', '.join(self.the_cat.died_by[:-2])}, and {self.the_cat.died_by[-1]}"
+                    insert = f"{', '.join(self.the_cat.died_by[0:-1])}, and {self.the_cat.died_by[-1]}"
                 elif len(self.the_cat.died_by) == 2:
                     insert = f"{self.the_cat.died_by[0]} and {self.the_cat.died_by[1]}"
                 else:
@@ -1429,27 +1429,26 @@ class ProfileScreen(Screens):
 
         # collect details for perm conditions
         if name in self.the_cat.permanent_condition:
-            # moons with condition
-            keys = self.the_cat.permanent_condition[name].keys()
             # display if the cat was born with it
             if self.the_cat.permanent_condition[name]["born_with"] is True:
                 text_list.append(f"born with this condition")
+
             # moons with the condition if not born with condition
-            elif 'moons_with' in keys:  # need to check if it exists for older saves
-                moons_with = self.the_cat.permanent_condition[name]["moons_with"]
-                if moons_with != 1:
-                    text_list.append(f"has had this condition for {moons_with} moons")
-                else:
-                    text_list.append(f"has had this condition for 1 moon")
+            moons_with = self.the_cat.permanent_condition[name].get("moons_with", 1)
+            if moons_with != 1:
+                text_list.append(f"has had this condition for {moons_with} moons")
+            else:
+                text_list.append(f"has had this condition for 1 moon")
+
             # is permanent
             text_list.append('permanent condition')
+
             # infected or festering
-            if 'complication' in keys:
-                complication = self.the_cat.permanent_condition[name]["complication"]
-                if complication is not None:
-                    if 'a festering wound' in self.the_cat.illnesses:
-                        complication = 'festering'
-                    text_list.append(f'is {complication}!')
+            complication = self.the_cat.permanent_condition[name].get("complication", None)
+            if complication is not None:
+                if 'a festering wound' in self.the_cat.illnesses:
+                    complication = 'festering'
+                text_list.append(f'is {complication}!')
 
         # collect details for injuries
         if name in self.the_cat.injuries:
@@ -2147,44 +2146,44 @@ class CeremonyScreen(Screens):
             virtues = [choice(queen_virtues), choice(warrior_virtues), choice(kit_virtues), choice(warrior2_virtues), choice(app_virtues), choice(elder_virtues), choice(warrior3_virtues), choice(med_cat_virtues), choice(prev_lead_virtues)]
             known = [False, False, False, False, False, False, False, False, False]
 
-            for i in reversed(Cat.all_cats.keys()):
+            for i in reversed(game.clan.starclan_cats):
                 c = Cat.all_cats[i]
                 if c.dead:
-                    if not queen and c.status == 'queen' and str(c.name).strip() != "unnamed queen" and not c.outside and not c.df:
+                    if not queen and c.status == 'queen':
                         queen = str(c.name)
                         known[0] = True
                         continue
-                    elif not kit and c.status == 'kitten' and not c.df:
+                    elif not kit and c.status == 'kitten':
                         kit = str(c.name)
                         known[2] = True
                         continue
-                    elif not app and c.status == 'apprentice' and not c.df:
+                    elif not app and c.status == 'apprentice':
                         app = str(c.name)
-                        known[3] = True                        
+                        known[4] = True                        
                         continue
-                    elif not prev_lead and c.status == 'leader' and not c.df:
+                    elif not prev_lead and c.status == 'leader':
                         prev_lead = str(c.name)
-                        known[7] = True 
+                        known[8] = True 
                         continue
-                    elif not elder and c.status == 'elder' and not c.df:
+                    elif not elder and c.status == 'elder':
                         elder = str(c.name)
-                        known[4] = True 
+                        known[5] = True 
                         continue
-                    elif not warrior and c.status == 'warrior' and not c.df:
+                    elif not warrior and c.status == 'warrior':
                         warrior = str(c.name)
                         known[1] = True 
                         continue
-                    elif not warrior2 and c.status == 'warrior' and not c.df:
+                    elif not warrior2 and c.status == 'warrior':
                         warrior2 = str(c.name)
-                        known[2] = True 
+                        known[3] = True 
                         continue
-                    elif not warrior3 and c.status == 'warrior' and not c.df:
+                    elif not warrior3 and c.status == 'warrior':
                         warrior3 = str(c.name)
-                        known[5] = True 
-                        continue
-                    elif not med_cat and (c.status == 'medicine cat' or c.status == 'medicine cat apprentice') and not c.df:
-                        med_cat = str(c.name)
                         known[6] = True 
+                        continue
+                    elif not med_cat and (c.status == 'medicine cat' or c.status == 'medicine cat apprentice'):
+                        med_cat = str(c.name)
+                        known[7] = True 
                         continue
                     if queen and warrior and kit and warrior2 and app and elder and warrior3 and med_cat and prev_lead:
                         break

@@ -42,13 +42,15 @@ class MakeClanScreen(Screens):
     expanded_mode_text = "A more hands-on experience. " \
                          "This mode has everything in Classic Mode as well as more management-focused features.<br><br>" \
                          "New features include:<br>" \
-                         "- Illnesses, Injuries, and Permanent Conditions<br><br>" \
+                         "- Illnesses, Injuries, and Permanent Conditions<br>" \
                          "- Ability to choose patrol type<br><br>" \
                          "With this mode you'll be making the important clan-life decisions."
 
     cruel_mode_text = "This mode has all the features of Expanded mode, but is significantly more difficult. If " \
                       "you'd like a challenge with a bit of brutality, then this mode is for you.<br><br>" \
-                      "You heard the warnings... a Cruel Season is coming. Will you survive?"
+                      "You heard the warnings... a Cruel Season is coming. Will you survive?" \
+                      "<br> <br>" \
+                      "-COMING SOON-"
 
     # This section holds all the information needed
     game_mode = 'classic'  # To save the users selection before conformation.
@@ -75,6 +77,7 @@ class MakeClanScreen(Screens):
 
     def __init__(self, name=None):
         super().__init__(name)
+        self.rolls_left = 3
         self.menu_warning = None
 
     def screen_switches(self):
@@ -153,9 +156,11 @@ class MakeClanScreen(Screens):
     def handle_choose_leader_event(self, event):
         if event.ui_element in [self.elements['roll1'], self.elements['roll2'], self.elements['roll3']]:
             event.ui_element.disable()
+            self.elements['select_cat'].hide()
             create_example_cats()  # create new cats
             self.selected_cat = None  # Your selected cat now no longer exists. Sad. They go away.
             self.refresh_cat_images_and_info()  # Refresh all the images.
+            self.rolls_left -= 1
         elif event.ui_element in [self.elements["cat" + str(u)] for u in range(0, 12)]:
             self.selected_cat = event.ui_element.return_cat_object()
             self.refresh_cat_images_and_info(self.selected_cat)
@@ -271,6 +276,7 @@ class MakeClanScreen(Screens):
         self.main_menu.kill()
         self.menu_warning.kill()
         self.clear_all_page()
+        self.rolls_left = 3
         return super().exit_screen()
 
     def on_use(self):
@@ -582,6 +588,13 @@ class MakeClanScreen(Screens):
         y_pos += 40
         self.elements['roll3'] = UIImageButton(pygame.Rect((x_pos, y_pos), (34, 34)), "",
                                                object_id="#random_dice_button")
+
+        if self.rolls_left <= 2:
+            self.elements['roll1'].disable()
+        if self.rolls_left <= 1:
+            self.elements['roll2'].disable()
+        if self.rolls_left == 0:
+            self.elements['roll3'].disable()
 
         # info for chosen cats:
         self.elements['cat_info'] = UITextBoxTweaked("", pygame.Rect((440, 260), (100, 100)), visible=False,

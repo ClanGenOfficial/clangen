@@ -311,13 +311,6 @@ class Cat():
         else:
             self.genderalign = self.gender
 
-        # NAME
-        if self.pelt is not None:
-            self.name = Name(status, prefix, suffix, self.pelt.colour,
-                             self.eye_colour, self.pelt.name)
-        else:
-            self.name = Name(status, prefix, suffix, eyes=self.eye_colour)
-
         # APPEARANCE
         init_eyes(self)
         init_pelt(self)
@@ -326,6 +319,18 @@ class Cat():
         init_accessories(self)
         init_white_patches(self)
         init_pattern(self)
+
+        # NAME
+        if self.pelt is not None:
+            self.name = Name(status,
+                             prefix,
+                             suffix,
+                             self.pelt.colour,
+                             self.eye_colour,
+                             self.pelt.name,
+                             self.tortiepattern)
+        else:
+            self.name = Name(status, prefix, suffix, eyes=self.eye_colour)
 
         # Sprite sizes
         self.sprite = None
@@ -376,10 +381,19 @@ class Cat():
         elif self.status == 'leader' and game.clan.leader_lives <= 0:
             self.dead = True
             game.clan.leader_lives = 0
+            if game.clan.instructor.df is False:
+                text = str(game.clan.leader.name) + ' has lost their last life and has travelled to StarClan.'
+                game.birth_death_events_list.append(text)
+                game.cur_events_list.append(text)
+            else:
+                text = str(
+                    game.clan.leader.name) + ' has lost their last life and has travelled to the Dark Forest.'
+                game.birth_death_events_list.append(text)
+                game.cur_events_list.append(text)
         else:
             self.dead = True
 
-        if self.status != 'leader' and died_by_condition is False:
+        if self.status != 'leader':
             self.injuries.clear()
             self.illnesses.clear()
 
@@ -1034,6 +1048,7 @@ class Cat():
             self.injuries[injury]["moons_with"] += 1
         else:
             self.injuries[injury].update({'moons_with': 1})
+
         # if the cat has an infected wound, the wound shouldn't heal till the illness is cured
         if "an infected wound" not in self.illnesses and "a festering wound" not in self.illnesses:
             self.injuries[injury]["duration"] -= 1
