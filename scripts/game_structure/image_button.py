@@ -320,3 +320,27 @@ class UIRelationStatusBar():
         self.status_bar.kill()
         self.overlay.kill()
         del self
+
+
+class IDImageButton(UIImageButton):
+    """Class to handle the "involved cats" button on the events page. It stores the IDs of the cat's involved."""
+
+    def __init__(self,
+                 relative_rect,
+                 text="",
+                 ids=None,
+                 object_id=None,
+                 container=None,
+                 layer_starting_height=1):
+
+        if ids:
+            self.ids = ids
+        else:
+            self.ids = None
+
+        super().__init__(relative_rect, text, object_id=object_id, container=container,
+                         starting_height=layer_starting_height)
+        # This button will auto-disable if no ids are entered.
+        if not self.ids:
+            self.disable()
+

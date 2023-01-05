@@ -2,6 +2,7 @@ import random
 from random import choice, randint
 import copy
 import ujson
+from scripts.event_class import Single_Event
 
 from scripts.utility import get_personality_compatibility
 from scripts.game_structure.game_essentials import *
@@ -115,19 +116,28 @@ class Relationship():
             action = choice(EXILED_CATS['cat_to'])
             string_to_replace = '(' + action[action.find("(") + 1:action.find(")")] + ')'
             self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name))
-            game.relation_events_list.append(f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)")
+            game.cur_events_list.append(Single_Event(
+                f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)", "relation",
+                [self.cat_to.ID, self.cat_from.ID]))
+            # game.relation_events_list.append(f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)")
             return
         elif self.cat_from.exiled and not self.cat_to.exiled:
             action = choice(EXILED_CATS['cat_from'])
             string_to_replace = '(' + action[action.find("(") + 1:action.find(")")] + ')'
             self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name))
-            game.relation_events_list.append(f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)")
+            game.cur_events_list.append(Single_Event(
+                f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)", "relation",
+                [self.cat_to.ID, self.cat_from.ID]))
+            # game.relation_events_list.append(f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)")
             return
         elif self.cat_from.exiled and self.cat_to.exiled:
             action = choice(EXILED_CATS['both'])
             string_to_replace = '(' + action[action.find("(") + 1:action.find(")")] + ')'
             self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name))
-            game.relation_events_list.append(f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)")
+            game.cur_events_list.append(Single_Event(
+                f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)", "relation",
+                [self.cat_to.ID, self.cat_from.ID]))
+            # game.relation_events_list.append(f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)")
             return
 
         # quick fix for outside cat relationships
@@ -135,22 +145,31 @@ class Relationship():
             action = choice(OUTSIDE_CATS['cat_to'])
             string_to_replace = '(' + action[action.find("(") + 1:action.find(")")] + ')'
             self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name))
-            game.relation_events_list.append(
-                f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)")
+            game.cur_events_list.append(Single_Event(
+                f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)", ["relation", "interaction"],
+                [self.cat_to.ID, self.cat_from.ID]))
+            # game.relation_events_list.append(
+            #     f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)")
             return
         elif self.cat_from.outside and not self.cat_to.outside:
             action = choice(OUTSIDE_CATS['cat_from'])
             string_to_replace = '(' + action[action.find("(") + 1:action.find(")")] + ')'
             self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name))
-            game.relation_events_list.append(
-                f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)")
+            game.cur_events_list.append(Single_Event(
+                f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)", ["relation", "interaction"],
+                [self.cat_to.ID, self.cat_from.ID]))
+            # game.relation_events_list.append(
+            #    f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)")
             return
         elif self.cat_from.outside and self.cat_to.outside:
             action = choice(OUTSIDE_CATS['both'])
             string_to_replace = '(' + action[action.find("(") + 1:action.find(")")] + ')'
             self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name))
-            game.relation_events_list.append(
-                f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)")
+            game.cur_events_list.append(Single_Event(
+                f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)", ["relation", "interaction"],
+                [self.cat_to.ID, self.cat_from.ID]))
+            # game.relation_events_list.append(
+            #    f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)")
             return
 
         # get action possibilities
@@ -189,7 +208,8 @@ class Relationship():
         # connect all information and broadcast
         both = action_string_all + effect_string
         self.log.append(both)
-        game.relation_events_list.append(both)
+        game.cur_events_list.append(Single_Event(both, ["relation", "interaction"], [self.cat_to.ID, self.cat_from.ID]))
+        # game.relation_events_list.append(both)
 
     def get_action_possibilities(self):
         """Creates a list of possibles actions of this relationship"""
