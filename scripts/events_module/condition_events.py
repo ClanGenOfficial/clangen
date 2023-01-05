@@ -786,8 +786,13 @@ class Condition_Events():
                 game.clan.herbs.pop(herb_used)
             # determine the effect of the herb
             effect = random.choice([1, 2, 3])
+            if effect == 1 and conditions[condition]['mortality'] == 0:
+                effect = 2
             if effect == 2 and condition in PERMANENT:
                 effect = 3
+            if effect == 3 and not conditions[condition]["risks"]:
+                effect = 1
+
             if effect == 1:
                 print_message = 'changed mortality for'
                 conditions[condition]["mortality"] += 5

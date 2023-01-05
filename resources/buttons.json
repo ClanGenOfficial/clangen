@@ -3458,6 +3458,52 @@
                 "path":"resources/images/buttons/med_den_minor_select.png"
             }
         }
+    },
+    "#med_cat_den_hover":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/med_cat_den/base.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/med_cat_den/base.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/med_cat_den/base.png"
+            },
+            "disabled_image":
+            {
+                "path": "resources/images/med_cat_den/base.png"
+            }
+        }
+    },
+    "#med_cat_den_hover_big":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/med_cat_den/base.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/med_cat_den/base.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/med_cat_den/base.png"
+            },
+            "disabled_image":
+            {
+                "path": "resources/images/med_cat_den/base.png"
+            }
+        }
     }
 }
 

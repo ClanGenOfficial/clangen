@@ -1623,11 +1623,48 @@ class MedDenScreen(Screens):
             i += 1
 
     def draw_med_den(self):
-        self.den_base = pygame_gui.elements.UIImage(pygame.Rect
-                                                    ((108, 95), (396, 224)),
-                                                    pygame.image.load(
-                                                        "resources/images/med_cat_den/base.png").convert_alpha()
-                                                    )
+        herbs_stored = game.clan.herbs.items()
+        herb_list = ["<b>Herb Stores</b>"]
+        for herb in herbs_stored:
+            amount = str(herb[1])
+            type = str(herb[0].replace("_", " "))
+            herb_list.append(f"{amount} {type}")
+
+        if len(herb_list) <= 10:
+            herb_display = "<br>".join(herb_list)
+
+            self.den_base = UIImageButton(pygame.Rect
+                                          ((108, 95), (396, 224)),
+                                          "",
+                                          object_id="#med_cat_den_hover",
+                                          tool_tip_text=herb_display
+                                          )
+        else:
+            count = 1
+            holding_pairs = []
+            pair = []
+            for y in range(len(herb_list)):
+                if (count % 2) == 0:  # checking if count is an even number
+                    print('even')
+                    count += 1
+                    pair.append(herb_list[y])
+                    holding_pairs.append("   -   ".join(pair))
+                    pair.clear()
+                    continue
+                else:
+                    print('odd', herb_list[y:y+1])
+                    pair.append(herb_list[y])
+                    count += 1
+
+            herb_display = "<br>".join(holding_pairs)
+            self.den_base = UIImageButton(pygame.Rect
+                                          ((108, 95), (396, 224)),
+                                          "",
+                                          object_id="#med_cat_den_hover_big",
+                                          tool_tip_text=herb_display
+                                          )
+
+
 
         herbs = game.clan.herbs
         for herb in herbs:
@@ -1649,7 +1686,6 @@ class MedDenScreen(Screens):
                                                            pygame.image.load(
                                                                f"resources/images/med_cat_den/{herb}.png").convert_alpha()
                                                            )
-
 
     def exit_screen(self):
         self.meds_messages.kill()
