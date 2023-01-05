@@ -2098,33 +2098,44 @@ class Cat():
 
         return cat_ob
 
+    # ---------------------------------------------------------------------------- #
+    #                                  Sorting                                     #
+    # ---------------------------------------------------------------------------- #
+
     @staticmethod
     def sort_cats():
         if game.sort_type == "age":
-            Cat.all_cats_list.sort(key=lambda x: x.moons)
+            Cat.all_cats_list.sort(key=lambda x: Cat.get_adjusted_age(x))
             print("sort")
         elif game.sort_type == "reverse_age":
-            Cat.all_cats_list.sort(key=lambda x: x.moons, reverse=True)
+            Cat.all_cats_list.sort(key=lambda x: Cat.get_adjusted_age(x), reverse=True)
         elif game.sort_type == "id":
             Cat.all_cats_list.sort(key=lambda x: int(x.ID))
         elif game.sort_type == "reverse_id":
             Cat.all_cats_list.sort(key=lambda x: int(x.ID), reverse=True)
         elif game.sort_type == "rank":
-            Cat.all_cats_list.sort(key=lambda x: (Cat.rank_order(x), x.moons), reverse=True)
+            Cat.all_cats_list.sort(key=lambda x: (Cat.rank_order(x), Cat.get_adjusted_age(x)), reverse=True)
         return
 
     @staticmethod
     def insert_cat(c):
-        if game.sort_type == "age":
-            bisect.insort(Cat.all_cats_list, c, key=lambda x: x.moons)
-        elif game.sort_type == "reverse_age":
-            bisect.insort(Cat.all_cats_list, c, key=lambda x: -1 * x.moons)
-        elif game.sort_type == "rank":
-            bisect.insort(Cat.all_cats_list, c, key=lambda x: (-1 * Cat.rank_order(x), -1 * x.moons))
-        elif game.sort_type == "id":
-            bisect.insort(Cat.all_cats_list, c, key=lambda x: int(x.ID))
-        elif game.sort_type == "reverse_id":
-            bisect.insort(Cat.all_cats_list, c, key=lambda x: -1 * int(x.ID))
+        try:
+            if game.sort_type == "age":
+                bisect.insort(Cat.all_cats_list, c, key=lambda x: Cat.get_adjusted_age(x))
+            elif game.sort_type == "reverse_age":
+                bisect.insort(Cat.all_cats_list, c, key=lambda x: -1 * Cat.get_adjusted_age(x))
+            elif game.sort_type == "rank":
+                bisect.insort(Cat.all_cats_list, c, key=lambda x: (-1 * Cat.rank_order(x), -1 *
+                                                                   Cat.get_adjusted_age(x)))
+            elif game.sort_type == "id":
+                bisect.insort(Cat.all_cats_list, c, key=lambda x: int(x.ID))
+            elif game.sort_type == "reverse_id":
+                bisect.insort(Cat.all_cats_list, c, key=lambda x: -1 * int(x.ID))
+        except (TypeError, NameError):
+            # If you are using python 3.8, key is not a supported parameter into insort. Therefore, we'll need to
+            # do the slower option of adding the cat, then resorting
+            Cat.all_cats_list.append(c)
+            Cat.sort_cats()
 
     @staticmethod
     def rank_order(cat):
@@ -2146,6 +2157,15 @@ class Cat():
             return 1
         else:
             return 0
+
+    @staticmethod
+    def get_adjusted_age(cat):
+        """Returns the dead_for moons rather than the age for dead cats, so dead cats are sorted by how long
+        they have been dead, rather than age at death"""
+        if cat.dead:
+            return cat.dead_for
+        else:
+            return cat.moons
 
 
 # ---------------------------------------------------------------------------- #
