@@ -3366,6 +3366,29 @@
                 "path":"resources/images/buttons/filter_age_unavailable.png"
             }
         }
+    },
+  "#events_cat_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/cat_icon.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/cat_icon_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/cat_icon.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/cat_icon_unavailable.png"
+            }
+        }
     }
 }
 

@@ -320,3 +320,34 @@ class UIRelationStatusBar():
         self.status_bar.kill()
         self.overlay.kill()
         del self
+
+
+class EventCatButton(UIImageButton):
+    """Class to handle the "involved cats" button on the events page. It stores the IDs of the cat's involved."""
+
+    def __init__(self,
+                 relative_rect,
+                 ids,
+                 container,
+                 layer_starting_height=1):
+
+        self.ids = ids
+
+        super().__init__(relative_rect, "", object_id="#events_cat_button", container=container,
+                         starting_height=layer_starting_height)
+
+        if not self.ids:
+            self.disable()
+            
+class EventCatProfileButton(pygame_gui.elements.UIButton):
+    
+    def __init__(self,
+                 relative_rect,
+                 text,
+                 id,
+                 object_id=None,
+                 container=None):
+
+        self.id = id
+
+        super().__init__(relative_rect, text, object_id=object_id, container=container)

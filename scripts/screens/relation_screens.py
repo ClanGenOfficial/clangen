@@ -269,6 +269,15 @@ class ChooseMentorScreen(Screens):
                     f"{str(self.the_cat.name)}'s current mentor is {str(self.mentor.name)}")
             else:
                 self.current_mentor_text.set_text(f"{str(self.the_cat.name)} does not have a mentor")
+        elif new_mentor:
+            self.the_cat.mentor = new_mentor.ID
+            new_mentor.apprentice.append(self.the_cat.ID)
+            self.mentor = new_mentor
+            if self.mentor is not None:
+                self.current_mentor_text.set_text(
+                    f"{str(self.the_cat.name)}'s current mentor is {str(self.mentor.name)}")
+            else:
+                self.current_mentor_text.set_text(f"{str(self.the_cat.name)} does not have a mentor")
 
     def update_selected_cat(self):
         """Updates the image and information on the currently selected mentor"""

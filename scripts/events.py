@@ -834,7 +834,7 @@ class Events():
                 mentor_name = str(mentor_ob.name)
         else:
             mentor_name = "None"
-            
+
         if leader:
             if leader.trait in risky_traits:
                 risky_leader = True
