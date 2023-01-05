@@ -3504,6 +3504,52 @@
                 "path": "resources/images/med_cat_den/base.png"
             }
         }
+    },
+    "#med_den_log_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/med_den_log.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/med_den_log_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/med_den_log.png"
+            },
+            "disabled_image":
+            {
+                "path": "resources/images/buttons/med_den_log_select.png"
+            }
+        }
+    },
+    "#hurt_sick_cats_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/hurt_sick_cats.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/hurt_sick_cats_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/hurt_sick_cats.png"
+            },
+            "disabled_image":
+            {
+                "path": "resources/images/buttons/hurt_sick_cats_select.png"
+            }
+        }
     }
 }
 

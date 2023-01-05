@@ -341,6 +341,26 @@
             "text_horiz_alignment": "center",
             "padding": "10,10"
         }
+    },
+    "#med_den_log_box": {
+        "colours": {
+            "dark_bg": "#00000000",
+            "selected_bg": "#776045",
+            "selected_text": "#AC9D72"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "13"
+
+        },
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "left",
+            "text_vert_alignment": "top",
+            "padding": "7, 0",
+            "text_vert_alignment_padding": "5"
+        }
     }
 }
 

@@ -33,6 +33,7 @@ class Game():
     health_events_list = []
     other_clans_events_list = []
     misc_events_list = []
+    herb_events_list = []
     allegiance_list = []
     language = {}
     game_mode = ''

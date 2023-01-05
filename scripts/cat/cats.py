@@ -1301,12 +1301,32 @@ class Cat():
             }
 
         if len(new_injury.also_got) > 0 and not int(random.random() * 5):
-            self.also_got = True
-            additional_injury = choice(new_injury.also_got)
-            if additional_injury in INJURIES:
-                self.additional_injury(additional_injury)
-            else:
-                self.get_ill(additional_injury, event_triggered=True)
+            avoided = False
+            if new_injury == 'recovering from birth':
+                clan_herbs = set()
+                needed_herbs = set()
+                clan_herbs.update(game.clan.herbs.keys())
+                needed_herbs.update(INJURIES[new_injury]["herbs"])
+                herb_set = needed_herbs.intersection(clan_herbs)
+                usable_herbs = []
+                usable_herbs.extend(herb_set)
+
+                if usable_herbs:
+                    # deplete the herb
+                    herb_used = random.choice(usable_herbs)
+                    game.clan.herbs[herb_used] -= 1
+                    if game.clan.herbs[herb_used] <= 0:
+                        game.clan.herbs.pop(herb_used)
+                    avoided = True
+                    text = f"{herb_used} was used to help {self.name} during kitting."
+
+            if not avoided:
+                self.also_got = True
+                additional_injury = choice(new_injury.also_got)
+                if additional_injury in INJURIES:
+                    self.additional_injury(additional_injury)
+                else:
+                    self.get_ill(additional_injury, event_triggered=True)
         else:
             self.also_got = False
 

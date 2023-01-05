@@ -1287,6 +1287,10 @@ class MedDenScreen(Screens):
 
     def __init__(self, name=None):
         super().__init__(name)
+        self.log_box = None
+        self.log_title = None
+        self.log_tab = None
+        self.cats_tab = None
         self.hurt_sick_title = None
         self.display_med = None
         self.med_cat = None
@@ -1316,6 +1320,8 @@ class MedDenScreen(Screens):
         self.tab_list = self.in_den_cats
 
         self.herbs = {}
+
+        self.open_tab = None
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -1359,6 +1365,16 @@ class MedDenScreen(Screens):
                 cat = event.ui_element.return_cat_object()
                 game.switches["cat"] = cat.ID
                 self.change_screen('profile screen')
+            elif event.ui_element == self.cats_tab:
+                self.open_tab = "cats"
+                self.cats_tab.disable()
+                self.log_tab.enable()
+                self.handle_tab_toggles()
+            elif event.ui_element == self.log_tab:
+                self.open_tab = "log"
+                self.log_tab.disable()
+                self.cats_tab.enable()
+                self.handle_tab_toggles()
 
     def screen_switches(self):
         self.hide_menu_buttons()
@@ -1367,18 +1383,45 @@ class MedDenScreen(Screens):
         self.last_med = UIImageButton(pygame.Rect((600, 278), (34, 34)), "", object_id="#arrow_left_button")
 
         if game.clan.game_mode != 'classic':
-            self.next_page = UIImageButton(pygame.Rect((676, 522), (34, 34)), "", object_id="#arrow_right_button")
-            self.last_page = UIImageButton(pygame.Rect((92, 522), (34, 34)), "", object_id="#arrow_left_button")
+            self.last_page = UIImageButton(pygame.Rect((330, 636), (34, 34)), "", object_id="#arrow_left_button")
+            self.next_page = UIImageButton(pygame.Rect((476, 636), (34, 34)), "", object_id="#arrow_right_button")
+
             self.hurt_sick_title = pygame_gui.elements.UITextBox(
                 "Hurt & Sick Cats",
-                pygame.Rect((120, 410), (200, 30)),
+                pygame.Rect((140, 410), (200, 30)),
                 object_id=get_text_box_theme("#cat_profile_name_box")
             )
+            self.log_title = pygame_gui.elements.UITextBox(
+                "Medicine Den Log",
+                pygame.Rect((140, 410), (200, 30)),
+                object_id=get_text_box_theme("#cat_profile_name_box")
+            )
+            self.log_title.hide()
             self.cat_bg = pygame_gui.elements.UIImage(pygame.Rect
-                                                      ((120, 440), (560, 200)),
+                                                      ((140, 440), (560, 200)),
                                                       pygame.image.load(
                                                           "resources/images/sick_hurt_bg.png").convert_alpha())
             self.cat_bg.disable()
+            log_text = game.herb_events_list.copy()
+            img_path = "resources/images/spacer.png"
+            self.log_box = pygame_gui.elements.UITextBox(
+                f"{f'<br><img src={img_path}><br>'.join(log_text)}<br>",
+                pygame.Rect
+                ((150, 450), (540, 180)),
+                object_id="#med_den_log_box",
+            )
+            self.log_box.hide()
+            self.cats_tab = UIImageButton(pygame.Rect
+                                          ((109, 462), (35, 75)),
+                                          "",
+                                          object_id="#hurt_sick_cats_button"
+                                          )
+            self.cats_tab.disable()
+            self.log_tab = UIImageButton(pygame.Rect
+                                         ((109, 552), (35, 64)),
+                                         "",
+                                         object_id="#med_den_log_button"
+                                         )
             self.in_den_tab = UIImageButton(pygame.Rect
                                             ((370, 409), (75, 35)),
                                             "",
@@ -1404,11 +1447,18 @@ class MedDenScreen(Screens):
             for cat in self.injured_and_sick_cats:
                 if cat.injuries:
                     for injury in cat.injuries:
-                        if injury in ['grief stricken', 'recovering from birth', "sprain"]:
-                            self.out_den_cats.append(cat)
-                            break
-                        elif cat.injuries[injury]["severity"] != 'minor':
+                        print(cat.name, injury)
+                        if cat.injuries[injury]["severity"] != 'minor':
                             self.in_den_cats.append(cat)
+                            if cat in self.out_den_cats:
+                                self.out_den_cats.remove(cat)
+                            elif cat in self.minor_cats:
+                                self.minor_cats.remove(cat)
+                            break
+                        elif injury in ['recovering from birth', "sprain", "lingering shock"]:
+                            self.out_den_cats.append(cat)
+                            if cat in self.minor_cats:
+                                self.minor_cats.remove(cat)
                             break
                         else:
                             self.minor_cats.append(cat)
@@ -1420,6 +1470,12 @@ class MedDenScreen(Screens):
                             if cat in self.out_den_cats:
                                 self.out_den_cats.remove(cat)
                             elif cat in self.minor_cats:
+                                self.minor_cats.remove(cat)
+                            break
+                        elif illness == 'grief stricken':
+                            if cat not in self.in_den_cats:
+                                self.out_den_cats.append(cat)
+                            if cat in self.minor_cats:
                                 self.minor_cats.remove(cat)
                             break
                         else:
@@ -1487,6 +1543,36 @@ class MedDenScreen(Screens):
         else:
             meds_cover = f"You have no medicine cats, your clan will be at higher risk of death and sickness."
             self.meds_messages.set_text(meds_cover)
+
+    def handle_tab_toggles(self):
+        if self.open_tab == "cats":
+            self.log_title.hide()
+            self.log_box.hide()
+
+            self.hurt_sick_title.show()
+            self.last_page.show()
+            self.next_page.show()
+            self.in_den_tab.show()
+            self.out_den_tab.show()
+            self.minor_tab.show()
+            for cat in self.cat_buttons:
+                self.cat_buttons[cat].show()
+            for x in range(len(self.cat_names)):
+                self.cat_names[x].show()
+        elif self.open_tab == "log":
+            self.hurt_sick_title.hide()
+            self.last_page.hide()
+            self.next_page.hide()
+            self.in_den_tab.hide()
+            self.out_den_tab.hide()
+            self.minor_tab.hide()
+            for cat in self.cat_buttons:
+                self.cat_buttons[cat].hide()
+            for x in range(len(self.cat_names)):
+                self.cat_names[x].hide()
+
+            self.log_title.show()
+            self.log_box.show()
 
     def update_med_cat(self):
         if self.med_cat:
@@ -1645,16 +1731,21 @@ class MedDenScreen(Screens):
             count = 1
             holding_pairs = []
             pair = []
+            added = False
             for y in range(len(herb_list)):
                 if (count % 2) == 0:  # checking if count is an even number
                     count += 1
                     pair.append(herb_list[y])
                     holding_pairs.append("   -   ".join(pair))
                     pair.clear()
+                    added = True
                     continue
                 else:
                     pair.append(herb_list[y])
                     count += 1
+                    added = False
+            if added is False:
+                holding_pairs.extend(pair)
 
             herb_display = "<br>".join(holding_pairs)
             self.den_base = UIImageButton(pygame.Rect
@@ -1690,6 +1781,7 @@ class MedDenScreen(Screens):
         self.last_med.kill()
         self.next_med.kill()
         self.den_base.kill()
+
         for herb in self.herbs:
             self.herbs[herb].kill()
         self.herbs = {}
@@ -1705,6 +1797,10 @@ class MedDenScreen(Screens):
             self.minor_tab.kill()
             self.clear_cat_buttons()
             self.hurt_sick_title.kill()
+            self.cats_tab.kill()
+            self.log_tab.kill()
+            self.log_title.kill()
+            self.log_box.kill()
         if self.med_cat:
             self.med_cat.kill()
 

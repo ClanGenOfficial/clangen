@@ -391,7 +391,7 @@ class Condition_Events():
         for illness in illnesses:
 
             # use herbs
-            self.use_herbs(illness, illnesses, ILLNESSES)
+            self.use_herbs(cat, illness, illnesses, ILLNESSES)
 
             # moon skip to try and kill or heal cat
             skipped = cat.moon_skip_illness(illness)
@@ -409,6 +409,7 @@ class Condition_Events():
                 event_list.clear()
                 event_list.append(event)
                 cat.died_by.append(event)
+                game.herb_events_list.append(event)
                 break
 
             # if the leader died, then break before handling other illnesses cus they'll be fully healed or dead dead
@@ -429,6 +430,7 @@ class Condition_Events():
                 event = possible_string_list[random_index]
                 event = event_text_adjust(Cat, event, cat, other_cat=None)
                 event_list.append(event)
+                game.herb_events_list.append(event)
 
                 cat.illnesses.pop(illness)
                 # make sure complications get reset if infection or fester were healed
@@ -475,7 +477,7 @@ class Condition_Events():
 
         injuries = cat.injuries.copy()
         for injury in injuries:
-            self.use_herbs(injury, injuries, INJURIES)
+            self.use_herbs(cat, injury, injuries, INJURIES)
 
             skipped = cat.moon_skip_injury(injury)
             if skipped:
@@ -500,6 +502,7 @@ class Condition_Events():
                 # clear event list first to make sure any heal or risk events from other injuries are not shown
                 event_list.clear()
                 event_list.append(event)
+                game.herb_events_list.append(event)
                 break
 
             elif cat.healed_condition is True:
@@ -515,6 +518,7 @@ class Condition_Events():
                     random_index = int(random.random() * len(possible_string_list))
                     event = possible_string_list[random_index]
                     event = event_text_adjust(Cat, event, cat, other_cat=None)  # adjust the text
+                    game.herb_events_list.append(event)
 
                 cat.injuries.pop(injury)
                 cat.healed_condition = False
@@ -580,7 +584,7 @@ class Condition_Events():
                 condition_appears = False
 
             if condition_appears is True:
-                self.use_herbs(condition, conditions, PERMANENT)
+                self.use_herbs(cat, condition, conditions, PERMANENT)
 
             # checking if the cat has a congenital condition to reveal
             condition_appears = cat.moon_skip_permanent_condition(condition)
@@ -594,6 +598,7 @@ class Condition_Events():
                 event = f"{cat.name} died from complications caused by {condition}."
                 event_list.append(event)
                 cat.died_by.append(event)
+                game.herb_events_list.append(event)
                 break
 
             elif condition_appears:
@@ -768,7 +773,7 @@ class Condition_Events():
                 # break out of risk giving loop cus we don't want to give multiple risks for one condition
                 break
 
-    def use_herbs(self, condition, conditions, source):
+    def use_herbs(self, cat, condition, conditions, source):
         # herbs that can be used for the condition and the clan has available
         clan_herbs = set()
         needed_herbs = set()
@@ -778,32 +783,47 @@ class Condition_Events():
         usable_herbs = []
         usable_herbs.extend(herb_set)
 
+        if not source[condition]["herbs"]:
+            return
+
         if usable_herbs:
+            # determine the effect of the herb
+            if conditions[condition]['mortality'] != 0:
+                effect = 'mortality'
+            if conditions[condition]["risks"]:
+                effect = 'risks'
+            if conditions[condition]['duration'] > 1:
+                effect = 'duration'
+            else:
+                return
+
             # deplete the herb
             herb_used = random.choice(usable_herbs)
             game.clan.herbs[herb_used] -= 1
             if game.clan.herbs[herb_used] <= 0:
                 game.clan.herbs.pop(herb_used)
-            # determine the effect of the herb
-            effect = random.choice([1, 2, 3])
-            if effect == 1 and conditions[condition]['mortality'] == 0:
-                effect = 2
-            if effect == 2 and condition in PERMANENT:
-                effect = 3
-            if effect == 3 and not conditions[condition]["risks"]:
-                effect = 1
 
-            if effect == 1:
-                print_message = 'changed mortality for'
+            effect_message = 'this should not show up'
+            if effect == 'mortality':
+                effect_message = 'They will be less likely to die.'
                 conditions[condition]["mortality"] += 5
-            elif effect == 2:
-                print_message = 'changed duration for'
+            elif effect == 'duration':
+                effect_message = 'They will heal sooner.'
                 conditions[condition]["duration"] -= 1
-            elif effect == 3:
-                print_message = 'changed risk chance for'
+            elif effect == 'risks':
+                effect_message = 'The risks associated with their condition are lowered.'
                 for risk in conditions[condition]["risks"]:
                     risk["chance"] += 5
-            print(herb_used, print_message, condition)
+                    if risk["chance"] < 0:
+                        risk["chance"] = 0
+            print(herb_used, condition)
+
+            text = f"{cat.name} was given {herb_used} as treatment. {effect_message}"
+            game.herb_events_list.append(text)
+        else:
+            # if they didn't get any herbs, make them more likely to die!! kill the kitties >:)
+            if conditions[condition]["mortality"] > 2:
+                conditions[condition]["mortality"] -= 1
 
 
 # ---------------------------------------------------------------------------- #

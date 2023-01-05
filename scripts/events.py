@@ -34,6 +34,7 @@ class Events():
         game.health_events_list = []
         game.other_clans_events_list = []
         game.misc_events_list = []
+        game.herb_events_list = []
         game.switches['saved_clan'] = False
         self.new_cat_invited = False
         game.patrolled.clear()
@@ -193,9 +194,7 @@ class Events():
                     else:
                         insert = f"{', '.join(herb_display[:-1])}, and {herb_display[-1]}"
                     event_list.append(f"{med.name} gathered {insert} this moon.")
-            text = "<br><br>".join(event_list)
-            game.cur_events_list.append(text)
-            game.health_events_list.append(text)
+            game.herb_events_list.extend(event_list)
             print(game.clan.herbs)
 
         game.event_scroll_ct = 0

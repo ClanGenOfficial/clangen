@@ -46,7 +46,7 @@
             "elder": 13
         },
         "duration": 2,
-        "medicine_duration": 1,
+        "medicine_duration": 2,
         "infectiousness": 0,
         "risks": [],
         "herbs": [
@@ -74,8 +74,8 @@
             "senior adult": 0,
             "elder": 0
         },
-        "duration": 2,
-        "medicine_duration": 1,
+        "duration": 4,
+        "medicine_duration": 2,
         "infectiousness": 15,
         "risks": [
             {
@@ -111,7 +111,7 @@
         "risks": [
             {
                 "name": "yellowcough",
-                "chance": 70
+                "chance": 60
             }
         ],
         "herbs": [
@@ -143,12 +143,12 @@
             "elder": 10
         },
         "duration": 3,
-        "medicine_duration": 1,
+        "medicine_duration": 2,
         "infectiousness": 15,
         "risks": [
             {
                 "name": "whitecough",
-                "chance": 15
+                "chance": 10
             }
         ],
         "herbs": [
@@ -180,12 +180,12 @@
             "elder": 13
         },
         "duration": 3,
-        "medicine_duration": 1,
+        "medicine_duration": 2,
         "infectiousness": 0,
         "risks": [
             {
                 "name": "a festering wound",
-                "chance": 15
+                "chance": 10
             }
         ],
         "herbs": [
@@ -271,7 +271,7 @@
             "elder": 0
         },
         "duration": 3,
-        "medicine_duration": 1,
+        "medicine_duration": 2,
         "infectiousness": 0,
         "risks": [
             {
@@ -304,12 +304,12 @@
             "elder": 15
         },
         "duration": 3,
-        "medicine_duration": 1,
+        "medicine_duration": 2,
         "infectiousness": 30,
         "risks": [
             {
                 "name": "greencough",
-                "chance": 20
+                "chance": 18
             }
         ],
         "herbs": [
@@ -336,17 +336,17 @@
             "kitten": 5,
             "adolescent": 10,
             "young adult": 15,
-            "adult": 20,
+            "adult": 15,
             "senior adult": 15,
             "elder": 5
         },
         "duration": 3,
-        "medicine_duration": 2,
+        "medicine_duration": 3,
         "infectiousness": 30,
         "risks": [
             {
                 "name": "redcough",
-                "chance": 100
+                "chance": 80
             }
         ],
         "herbs": [
@@ -374,7 +374,7 @@
             "elder": 3
         },
         "duration": 3,
-        "medicine_duration": 1,
+        "medicine_duration": 2,
         "infectiousness": 0,
         "risks": [],
         "herbs": [
@@ -432,7 +432,7 @@
             "elder": 0
         },
         "duration": 2,
-        "medicine_duration": 1,
+        "medicine_duration": 2,
         "infectiousness": 0,
         "risks": [
             {
@@ -469,7 +469,7 @@
         "risks": [
             {
                 "name": "diarrhea",
-                "chance": 10
+                "chance": 8
             }
         ],
         "herbs": [
@@ -498,7 +498,7 @@
             "senior adult": 0,
             "elder": 0
         },
-        "duration": 1,
+        "duration": 2,
         "medicine_duration": 1,
         "infectiousness": 0,
         "risks": [
@@ -533,11 +533,11 @@
         "risks": [
             {
                 "name": "lasting grief",
-                "chance": 65
+                "chance": 50
             },
             {
                 "name": "constant nightmares",
-                "chance": 25
+                "chance": 15
             }
         ],
         "herbs": [

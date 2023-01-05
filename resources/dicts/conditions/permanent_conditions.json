@@ -232,12 +232,12 @@
         "congenital": "sometimes",
         "moons_until": 0,
         "mortality": {
-            "kitten": 15,
-            "adolescent": 50,
-            "young adult": 65,
-            "adult": 75,
-            "senior adult": 50,
-            "elder": 20
+            "kitten": 10,
+            "adolescent": 40,
+            "young adult": 75,
+            "adult": 65,
+            "senior adult": 40,
+            "elder": 10
         },
         "illness_infectiousness": [
             {
@@ -264,11 +264,11 @@
             },
             {
                 "name": "yellowcough",
-                "chance": 70
+                "chance": 50
             },
             {
                 "name": "redcough",
-                "chance": 100
+                "chance": 60
             }
         ],
         "herbs": [
