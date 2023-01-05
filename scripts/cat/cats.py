@@ -815,12 +815,10 @@ class Cat():
         """ Generates a thought for the cat, which displays on their profile. """
         all_cats = self.all_cats
         other_cat = random.choice(list(all_cats.keys()))
-        countdown = int(len(all_cats) / 3)
 
         # get other cat
-        while other_cat == self and countdown > 0:
+        while other_cat == self and len(all_cats) > 1:
             other_cat = random.choice(list(all_cats.keys()))
-            countdown -= 1
         other_cat = all_cats.get(other_cat)
 
         # get possible thoughts

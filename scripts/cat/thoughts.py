@@ -6,7 +6,7 @@ def get_thoughts(cat, other_cat):
     # placeholder thought - should only appear in game, when there is only one cat left
     thoughts = ['Is not thinking about much right now']
 
-    if cat is None or other_cat is None or cat == other_cat:
+    if cat is None or other_cat is None:
         return thoughts
 
     # actions or thoughts for all cats. These switch either every moon or every time the game is re-opened
