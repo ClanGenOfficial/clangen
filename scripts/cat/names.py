@@ -19,10 +19,10 @@ class Name():
         # regular suffixes
         "acorn", "ash", "aster", "back", "beam", "bee", "belly", "berry", "bite", "bird", "blaze", "blink",
         "blossom", "bloom", "blotch", "bounce", "branch", "breeze", "briar", "bright", "brook", "burr", "bush",
-        "call", "cloud", "clover", "coral", "creek", "cry", "dapple", "daisy", "dawn", "drift", "drop",
+        "call", "cloud", "clover", "coral", "creek", "cry", "dapple", "daisy", "dawn", "dragon", "drift", "drop",
         "dusk", "dust", "ear", "ears", "eye", "eyes", "face", "fall", "fang", "feather", "fern", "fin", "fire",
-        "fish", "flame", "flight", "flood", "flower", "frost", "gaze", "goose", "gorse", "grass", "hail", "hare", 
-        "hawk", "haze", "heather", "holly", "hollow", "ivy", "jaw", "jay", "jump", "kite",
+        "fish", "flame", "flight", "flood", "flower", "frost", "gaze", "ghost", "god", "goose", "gorse", "grass", "hail",
+        "hare", "hawk", "haze", "heather", "holly", "hollow", "ivy", "jaw", "jay", "jump", "kite", "knight", 
         "lake", "larch", "leaf", "leap", "leg", "light", "lilac", "lily", "lotus", "mask", "mist", "moth",
         "moon", "mouse", "needle", "nettle", "night", "noise", "nose", "nut", "pad", "path", "patch",
         "petal", "pond", "pool", "poppy", "pounce", "puddle", "rapid", "rose", "rump", "run", "runner",
@@ -75,7 +75,7 @@ class Name():
         'Coyote', 'Crab', 'Crag', 'Crane', 'Creek', 'Cress', 'Crested',
         'Cricket', 'Crooked', 'Crouch', 'Crow', 'Crow', 'Curl', 'Curlew',
         'Curly', 'Cypress', 'Dahlia', 'Daisy', 'Damp', 'Dapple', 'Dappled',
-        'Dark', 'Dawn', 'Dawn', 'Day', 'Dead', 'Deer', 'Dew', 'Doe', 'Dog',
+        'Dark', 'Dawn', 'Dawn', 'Day', 'Dead', 'Deer', 'Desert' 'Dew', 'Doe', 'Dog',
         'Dove', 'Down', 'Downy', 'Drake', 'Dragon', 'Drift', 'Drizzle', 'Drought',
         'Dry', 'Duck', 'Dull', 'Dune', 'Dusk', 'Dust', 'Eagle', 'Echo', 'Eel',
         'Egret', 'Elk', 'Elm', 'Ember', 'Ermine', 'Faded', 'Faded', 'Fading',
@@ -85,8 +85,8 @@ class Name():
         'Flight', 'Flint', 'Flip', 'Flood', 'Flood', 'Flower', 'Flower',
         'Flurry', 'Flutter', 'Fly', 'Foam', 'Forest', 'Fox', 'Freckle',
         'Freeze', 'Fringe', 'Frog', 'Frond', 'Frost', 'Frozen', 'Furled',
-        'Fuzzy', 'Gander', 'Gannet', 'Gem', 'Giant', 'Gill', 'Gleam', 'Glow',
-        'Goose', 'Gorge', 'Gorse', 'Grass', 'Gravel', 'Grouse', 'Gull', 'Gust',
+        'Fuzzy', 'Gander', 'Gannet', 'Gem', 'Ghost', 'Giant', 'Gill', 'Gleam', 'Glow',
+        'God', 'Goose', 'Gorge', 'Gorse', 'Grass', 'Gravel', 'Grouse', 'Gull', 'Gust',
         'Hail', 'Half', 'Hare', 'Harvest', 'Hatch', 'Hawk', 'Hay', 'Haze',
         'Heath', 'Heather', 'Heavy', 'Hedge', 'Hen', 'Heron', 'Hickory',
         'Hill', 'Hoarse', 'Hollow', 'Holly', 'Hoot', 'Hop', 'Hope', 'Hornet',
@@ -98,7 +98,7 @@ class Name():
         'Mallow', 'Mantis', 'Maple', 'Marigold', 'Marsh', 'Marten', 'Meadow',
         'Mellow', 'Merry', 'Midge', 'Milk', 'Mink', 'Minnow', 'Mint', 'Mist',
         'Mistle', 'Misty', 'Mite', 'Mock', 'Mole', 'Mole', 'Moon', 'Moor',
-        'Morning', 'Moss', 'Mossy', 'Moth', 'Moth', 'Mottle', 'Mottled',
+        'Morning', 'Moss', 'Mossy', 'Moth', 'Moth', 'Mottle', 'Mottled', 'Mountain',
         'Mouse', 'Mouse', 'Mud', 'Mumble', 'Murk', 'Nacre', 'Narrow', 'Nectar',
         'Needle', 'Nettle', 'Newt', 'Night', 'Nut', 'Oak', 'Oat', 'Odd', 'One',
         'Orange', 'Osprey', 'Otter', 'Owl', 'Pale', 'Pansy', 'Panther',
@@ -261,7 +261,8 @@ class Name():
         "Felix", "Oliver", "Kitty", "Chloe", "Angel", "Samantha", "Muschi", 
         "Chicco", "Caramel", "Charlotte", "Chanel", "Lola", "Ollie", "Boo", 
         "Frankie", "Hotdog", "Beverly", "Mera", "Tasha", "Olivier", "Kaz",
-        "Kira", "Shira", "Marina", "Nur", "Roy", "Gala", "Bilbo"
+        "Kira", "Shira", "Marina", "Nur", "Roy", "Gala", "Bilbo", "Geralt",
+        "Witcher", "Homunculus", "Alchemist", "The Knight"
     ]
 
     if os.path.exists('saves/prefixlist.txt'):
