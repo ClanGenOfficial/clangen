@@ -1,6 +1,7 @@
-from random import choice, randint
+from random import choice, randint, choices
 from math import floor
 
+from scripts.clan import HERBS
 from scripts.game_structure.game_essentials import *
 from scripts.cat.names import *
 from scripts.cat.cats import *
@@ -472,6 +473,8 @@ class Patrol():
             self.handle_mentor_app_pairing()
             self.handle_relationships()
             self.final_success = self.patrol_event.success_text[n]
+            if game.clan.game_mode != 'classic':
+                self.handle_herbs()
             if antagonize:
                 self.antagonize = self.patrol_event.antagonize_text
 
@@ -758,6 +761,24 @@ class Patrol():
                     else:
                         self.patrol_random_cat.death_event.append(f'This cat gained a scar while patrolling.')
 
+    def handle_herbs(self):
+        if "random_herb" in patrol.patrol_event.tags:
+            number_of_herb_types = choice([1, 2, 3])
+            herbs_picked = choices(HERBS, k=number_of_herb_types)
+            for herb in herbs_picked:
+                amount_gotten = choices([1, 2, 3, 4, 5], [1, 2, 3, 2, 1], k=1)
+                print(game.clan.herbs)
+                game.clan.herbs.update({herb: amount_gotten[0]})
+                print(herb, amount_gotten)
+                print(game.clan.herbs)
+        elif "herb" in patrol.patrol_event.tags:
+            for tag in patrol.patrol_event.tags:
+                if tag in HERBS:
+                    amount_gotten = choices([1, 2, 3, 4, 5], [1, 2, 3, 2, 1], k=1)
+                    print(game.clan.herbs)
+                    game.clan.herbs.update({tag: amount_gotten[0]})
+                    print(tag, amount_gotten)
+                    print(game.clan.herbs)
     def handle_clan_relations(self, difference):
         """
         relations with other clans

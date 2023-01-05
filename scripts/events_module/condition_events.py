@@ -396,7 +396,7 @@ class Condition_Events():
             # moon skip to try and kill or heal cat
             skipped = cat.moon_skip_illness(illness)
             # test print, to track if events are displaying correctly
-            print(illness, cat.name, cat.healed_condition)
+            # print(illness, cat.name, cat.healed_condition)
 
             # if event trigger was true, events should be skipped for this illness
             if skipped is True:
@@ -683,7 +683,6 @@ class Condition_Events():
         if dictionary == cat.permanent_condition:
             event_triggered = True
         for risk in conditions[condition]["risks"]:
-            print(risk["name"])
             if risk["name"] in (cat.injuries or cat.illnesses):
                 continue
             if risk["name"] == 'an infected wound' and 'afestering wound' in cat.illnesses:
@@ -691,7 +690,6 @@ class Condition_Events():
 
             # adjust chance of risk gain if clan has enough meds
             chance = risk["chance"]
-            print(chance)
             if medical_cats_condition_fulfilled(Cat.all_cats.values(),
                                                 get_amount_cat_for_one_medic(game.clan)):
                 chance += 10  # lower risk if enough meds
@@ -713,9 +711,7 @@ class Condition_Events():
 
                 new_condition_name = risk['name']
                 if dictionary != cat.permanent_condition:
-                    print("old chance", risk["chance"])
                     risk["chance"] = risk["chance"] + 10  # lower risk of getting it again if not a perm condition
-                    print("new chance", risk["chance"])
 
                 # if it is a progressive illness, then remove the old illness and keep the new one
                 if condition in progression and new_condition_name == progression.get(condition):
@@ -782,26 +778,27 @@ class Condition_Events():
         usable_herbs = []
         usable_herbs.extend(herb_set)
 
-        # print(usable_herbs)
-
         if usable_herbs:
             # deplete the herb
             herb_used = random.choice(usable_herbs)
             game.clan.herbs[herb_used] -= 1
-            if game.clan.herbs[herb_used] >= 0:
+            if game.clan.herbs[herb_used] <= 0 and not int(random.random() * 2):
                 game.clan.herbs.pop(herb_used)
             # determine the effect of the herb
             effect = random.choice([1, 2, 3])
             if effect == 2 and condition in PERMANENT:
                 effect = 3
             if effect == 1:
+                print_message = 'changed mortality for'
                 conditions[condition]["mortality"] += 5
             elif effect == 2:
+                print_message = 'changed duration for'
                 conditions[condition]["duration"] -= 1
             elif effect == 3:
+                print_message = 'changed risk chance for'
                 for risk in conditions[condition]["risks"]:
                     risk["chance"] += 5
-            print(herb_used, effect, condition)
+            print(herb_used, print_message, condition)
 
 
 # ---------------------------------------------------------------------------- #
