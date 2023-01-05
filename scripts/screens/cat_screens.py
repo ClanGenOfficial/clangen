@@ -677,7 +677,7 @@ class ProfileScreen(Screens):
 
         previous_cat = 0
         next_cat = 0
-        if self.the_cat.dead and not is_instructor and not self.the_cat.df:
+        if self.the_cat.dead and not is_instructor and self.the_cat.df == game.clan.instructor.df:
             previous_cat = game.clan.instructor.ID
 
         if is_instructor:
@@ -702,6 +702,8 @@ class ProfileScreen(Screens):
 
         if next_cat == 1:
             next_cat = 0
+
+        print(previous_cat, next_cat)
 
         self.next_cat = next_cat
         self.previous_cat = previous_cat

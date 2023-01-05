@@ -188,7 +188,7 @@ class Events():
 
                     # Check if the leader is "None", assign them as dead if they are.
                     if game.clan.leader:
-                        leader_dead = game.clan.leader
+                        leader_dead = game.clan.leader.dead
                         leader_exiled = game.clan.leader.exiled
                     else:
                         leader_dead = True
@@ -198,8 +198,8 @@ class Events():
                     Cat.all_cats[random_cat].status_change('deputy')
                     involved_cats = [random_cat]
                     text = ''
-                    if game.clan.deputy is not None:
-                        if game.clan.deputy.dead and not game.clan.leader.dead and not game.clan.leader.exiled:
+                    if game.clan.deputy is not None and game.clan.leader is not None:
+                        if game.clan.deputy.dead and not leader_dead and not leader_exiled:
                             text = f"{game.clan.leader.name} chooses {Cat.all_cats[random_cat].name} to take over as deputy. They know that {game.clan.deputy.name} would approve."
                             involved_cats.extend([game.clan.leader.ID, game.clan.deputy.ID])
                         if not game.clan.deputy.dead and not game.clan.deputy.outside:
