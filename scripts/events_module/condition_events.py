@@ -9,6 +9,7 @@ from scripts.utility import event_text_adjust, get_med_cats, change_relationship
 from scripts.game_structure.game_essentials import game
 from scripts.events_module.scar_events import Scar_Events
 from scripts.events_module.generate_events import GenerateEvents
+from scripts.event_class import Single_Event
 
 
 # ---------------------------------------------------------------------------- #
@@ -73,10 +74,11 @@ class Condition_Events():
 
         # if an event happened, then add event to cur_event_list and save death if it happened.
         if event_string:
+            types = ["health"]
             if cat.dead:
-                game.birth_death_events_list.append(event_string)
-            game.cur_events_list.append(event_string)
-            game.health_events_list.append(event_string)
+                types.append("birth_death")
+            game.cur_events_list.append(Single_Event(event_string, types, cat.ID))
+            # game.health_events_list.append(event_string)
 
         # just double-checking that trigger is only returned True if the cat is dead
         if cat.dead:
@@ -101,6 +103,8 @@ class Condition_Events():
         if cat.dead:
             triggered = True
             return triggered
+
+        involved_cats = [cat.ID]
 
         # handle if the current cat is already injured
         if cat.is_injured():
@@ -200,6 +204,7 @@ class Condition_Events():
 
                     # let's change some relationship values \o/ check if another cat is mentioned
                     if "other_cat" in injury_event.tags:
+                        involved_cats.append(other_cat.ID)
                         self.handle_relationship_changes(cat, injury_event, other_cat)
 
                     text = event_text_adjust(Cat, injury_event.event_text, cat, other_cat, other_clan_name)
@@ -228,12 +233,14 @@ class Condition_Events():
             triggered = False
 
         if text is not None:
-            game.cur_events_list.append(text)
-            game.health_events_list.append(text)
+            types = ["health"]
+            # game.health_events_list.append(text)
             if cat.dead:
-                game.birth_death_events_list.append(text)
+                types.append("birth_death")
             if has_other_clan:
-                game.other_clans_events_list.append(text)
+                types.append("other_clans")
+            game.cur_events_list.append(Single_Event(text, types, involved_cats))
+
 
         return triggered
 
@@ -882,10 +889,11 @@ class Condition_Events():
 
         if len(event_list) > 0:
             event_string = ' '.join(event_list)
-            game.cur_events_list.append(event_string)
-            game.health_events_list.append(event_string)
+            types = ["health"]
             if cat.dead:
-                game.birth_death_events_list.append(event_string)
+                types.append("birth_death")
+
+            game.cur_events_list.append(Single_Event(event_string, types, cat.ID))
         return
 
 # ---------------------------------------------------------------------------- #

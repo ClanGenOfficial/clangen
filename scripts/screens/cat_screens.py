@@ -340,6 +340,9 @@ class ProfileScreen(Screens):
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()
+                # The resort can go in the status_change function for the others, but if must be here for leader
+                if game.sort_type == "rank":
+                    Cat.sort_cats()
             elif event.ui_element == self.toggle_deputy_button:
                 if self.the_cat.status == 'warrior':
                     self.the_cat.status_change('deputy', resort=True)
@@ -555,7 +558,7 @@ class ProfileScreen(Screens):
             self.the_cat.thought = "Hello. I am here to drag the dead cats of " + game.clan.name + "Clan into the Dark Forest."
 
         # Write cat name
-        self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(cat_name, pygame.Rect((200, 140), (400, 40)),
+        self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(cat_name, pygame.Rect((25, 140), (750, 40)),
                                                                           object_id=get_text_box_theme(
                                                                               "#cat_profile_name_box"))
 
@@ -845,7 +848,7 @@ class ProfileScreen(Screens):
 
         # MENTOR
         # Only shows up if the cat has a mentor.
-        if the_cat.mentor is not None:
+        if the_cat.mentor:
             mentor_ob = Cat.fetch_cat(the_cat.mentor)
             output += "mentor: " + str(mentor_ob.name) + "\n"
 
