@@ -133,6 +133,15 @@ class Events():
         # age up the clan
         game.clan.age += 1
 
+        # autosave
+        if game.settings.get('autosave') is True and game.clan.age % 5 == 0:
+            game.save_cats()
+            game.clan.save_clan()
+            game.clan.save_pregnancy(game.clan)
+
+        # change season
+        game.clan.current_season = game.clan.seasons[game.clan.age % 12]
+
         if game.clan.game_mode == 'classic':
             herbs = game.clan.herbs.copy()
             print(game.clan.herbs)
@@ -146,15 +155,48 @@ class Events():
                 new_herb = random.choice(HERBS)
                 game.clan.herbs.update({new_herb: 1})
             print(game.clan.herbs)
-
-        # autosave
-        if game.settings.get('autosave') is True and game.clan.age % 5 == 0:
-            game.save_cats()
-            game.clan.save_clan()
-            game.clan.save_pregnancy(game.clan)
-
-        # change season
-        game.clan.current_season = game.clan.seasons[game.clan.age % 12]
+        else:
+            event_list = []
+            meds_available = get_med_cats(Cat)
+            print(game.clan.herbs)
+            for med in meds_available:
+                if game.clan.current_season in ['Newleaf', 'Greenleaf']:
+                    amount = random.choices([1, 2, 3], [1, 2, 2], k=1)
+                elif game.clan.current_season == 'Leaf-fall':
+                    amount = random.choices([0, 1, 2], [3, 2, 1], k=1)
+                else:
+                    amount = random.choices([0, 1], [3, 1], k=1)
+                if amount[0] != 0:
+                    herbs_found = random.sample(HERBS, k=amount[0])
+                    herb_display = []
+                    for herb in herbs_found:
+                        if game.clan.current_season in ['Newleaf', 'Greenleaf']:
+                            amount = random.choices([1, 2, 3], [2, 1, 1], k=1)
+                        else:
+                            amount = random.choices([1, 2], [2, 1], k=1)
+                        print(amount)
+                        if herb in game.clan.herbs.keys():
+                            game.clan.herbs[herb] += amount[0]
+                        else:
+                            game.clan.herbs.update({herb: amount[0]})
+                        herb_display.append(herb.replace("_", " "))
+                else:
+                    herbs_found = []
+                    herb_display = []
+                if not herbs_found:
+                    event_list.append(f"{med.name} could not find any herbs this moon.")
+                else:
+                    if len(herbs_found) == 1:
+                        insert = f"{herb_display[0]}"
+                    elif len(herbs_found) == 2:
+                        insert = f"{herb_display[0]} and {herb_display[1]}"
+                    else:
+                        insert = f"{', '.join(herb_display[:-1])}, and {herb_display[-1]}"
+                    event_list.append(f"{med.name} gathered {insert} this moon.")
+            text = "<br><br>".join(event_list)
+            game.cur_events_list.append(text)
+            game.health_events_list.append(text)
+            print(game.clan.herbs)
 
         game.event_scroll_ct = 0
 

@@ -782,7 +782,7 @@ class Condition_Events():
             # deplete the herb
             herb_used = random.choice(usable_herbs)
             game.clan.herbs[herb_used] -= 1
-            if game.clan.herbs[herb_used] <= 0 and not int(random.random() * 2):
+            if game.clan.herbs[herb_used] <= 0:
                 game.clan.herbs.pop(herb_used)
             # determine the effect of the herb
             effect = random.choice([1, 2, 3])

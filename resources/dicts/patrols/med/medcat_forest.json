@@ -42,7 +42,7 @@
         "trust",
         "respect",
         "med_only",
-		"random_herb"
+		"random_herbs"
     ],
     "intro_text": "p_l decides it's a good opportunity to show app1 where the most commonly needed herbs are in the territory.",
     "decline_text": "As they see app1's absent minded gaze they change their mind. Maybe another day when app1 is more focused.",
@@ -70,7 +70,7 @@
     "patrol_id": "fst_med_herblocation2",
     "biome": "forest",
     "season": "Any",
-    "tags": ["med_cat", "apprentice", "med_only", "random_herb"],
+    "tags": ["med_cat", "apprentice", "med_only", "random_herbs"],
     "intro_text": "p_l has been sent out into the forest to try to find specific herbs alone.",
     "decline_text": "Nervous and scared of everything that even slightly moves, they decide to go back to camp and try again another day. Their mentor will not be pleased...",
     "chance_of_success": 65,
@@ -575,7 +575,7 @@
     "patrol_id": "fst_med_romance1",
     "biome": "forest",
     "season": "newleaf",
-    "tags": ["med_cat", "warrior", "random_herb", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c"],
+    "tags": ["med_cat", "warrior", "random_herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c"],
     "intro_text": "p_l goes out with a warrior escort, both for safety as they look for Newleaf's fresh buds, and for carrying capacity should they find anything.",
     "decline_text": "Their escort is called away on a different mission, and p_l decides to reorganize the herb store instead.",
     "chance_of_success": 60,
@@ -616,7 +616,7 @@
     "tags": [
         "med_cat",
         "med_only",
-        "random_herb",
+        "random_herbs",
         "romantic",
         "platonic",
         "respect",
@@ -663,7 +663,7 @@
     "tags": [
         "med_cat",
         "warrior",
-        "random_herb",
+        "random_herbs",
         "romantic",
         "platonic",
         "respect",
@@ -710,7 +710,7 @@
     "tags": [
         "med_cat",
         "med_only",
-        "random_herb",
+        "random_herbs",
         "romantic",
         "platonic",
         "respect",
@@ -757,7 +757,7 @@
     "tags": [
         "med_cat",
         "warrior",
-        "random_herb",
+        "random_herbs",
         "romantic",
         "platonic",
         "respect",
@@ -804,7 +804,7 @@
     "tags": [
         "med_cat",
         "med_only",
-        "random_herb",
+        "random_herbs",
         "romantic",
         "platonic",
         "respect",
@@ -851,7 +851,7 @@
     "tags": [
         "med_cat",
         "warrior",
-        "random_herb",
+        "random_herbs",
         "romantic",
         "platonic",
         "respect",
@@ -896,7 +896,7 @@
     "biome": "forest",
     "season": "leaf-bare",
     "tags": [
-        "med_cat", "med_only", "random_herb", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c"],
+        "med_cat", "med_only", "random_herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c"],
     "intro_text": "p_l heads out, leading a patrol of medicine cats to go find any fresh herbs that have survived Leaf-bare so far.",
     "decline_text": ". . . And they're called back almost immediately, as one of the elders starts hacking up something.",
     "chance_of_success": 60,

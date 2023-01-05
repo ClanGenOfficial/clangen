@@ -1631,13 +1631,13 @@ class MedDenScreen(Screens):
 
         herbs = game.clan.herbs
         for herb in herbs:
-            if herb == 'cobweb':
+            if herb == 'cobwebs':
                 self.herbs["cobweb1"] = pygame_gui.elements.UIImage(pygame.Rect
                                                                     ((108, 95), (396, 224)),
                                                                     pygame.image.load(
                                                                         "resources/images/med_cat_den/cobweb1.png").convert_alpha()
                                                                     )
-                if herbs["cobweb"] > 1:
+                if herbs["cobwebs"] > 1:
                     self.herbs["cobweb2"] = pygame_gui.elements.UIImage(pygame.Rect
                                                                         ((108, 95), (396, 224)),
                                                                         pygame.image.load(

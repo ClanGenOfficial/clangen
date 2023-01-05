@@ -472,9 +472,9 @@ class Patrol():
                         self.handle_reputation(10)
             self.handle_mentor_app_pairing()
             self.handle_relationships()
+            if game.clan.game_mode != 'classic' and not antagonize:
+                self.handle_herbs(n)
             self.final_success = self.patrol_event.success_text[n]
-            if game.clan.game_mode != 'classic':
-                self.handle_herbs()
             if antagonize:
                 self.antagonize = self.patrol_event.antagonize_text
 
@@ -761,23 +761,44 @@ class Patrol():
                     else:
                         self.patrol_random_cat.death_event.append(f'This cat gained a scar while patrolling.')
 
-    def handle_herbs(self):
-        if "random_herb" in patrol.patrol_event.tags:
+    def handle_herbs(self, outcome):
+        if "many_herbs1" in patrol.patrol_event.tags and outcome == 0:
+            large_amount = 4
+        elif "many_herbs2" in patrol.patrol_event.tags and outcome == 1:
+            large_amount = 4
+        elif "many_herbs3" in patrol.patrol_event.tags and outcome == 2:
+            large_amount = 4
+        elif "many_herbs4" in patrol.patrol_event.tags and outcome == 3:
+            large_amount = 4
+        else:
+            large_amount = None
+
+        if "random_herbs" in patrol.patrol_event.tags:
             number_of_herb_types = choice([1, 2, 3])
             herbs_picked = choices(HERBS, k=number_of_herb_types)
             for herb in herbs_picked:
-                amount_gotten = choices([1, 2, 3, 4, 5], [1, 2, 3, 2, 1], k=1)
-                print(game.clan.herbs)
-                game.clan.herbs.update({herb: amount_gotten[0]})
-                print(herb, amount_gotten)
+                if not large_amount:
+                    amount_gotten = choices([1, 2, 3, 4, 5], [1, 2, 3, 2, 1], k=1)
+                    print(game.clan.herbs)
+                    game.clan.herbs.update({herb: amount_gotten[0]})
+                    print(herb, amount_gotten)
+                else:
+                    print(game.clan.herbs)
+                    game.clan.herbs.update({herb: large_amount})
+                    print(herb, large_amount)
                 print(game.clan.herbs)
         elif "herb" in patrol.patrol_event.tags:
             for tag in patrol.patrol_event.tags:
                 if tag in HERBS:
-                    amount_gotten = choices([1, 2, 3, 4, 5], [1, 2, 3, 2, 1], k=1)
-                    print(game.clan.herbs)
-                    game.clan.herbs.update({tag: amount_gotten[0]})
-                    print(tag, amount_gotten)
+                    if not large_amount:
+                        amount_gotten = choices([1, 2, 3, 4, 5], [1, 2, 3, 2, 1], k=1)
+                        print(game.clan.herbs)
+                        game.clan.herbs.update({tag: amount_gotten[0]})
+                        print(tag, amount_gotten)
+                    else:
+                        print(game.clan.herbs)
+                        game.clan.herbs.update({tag: large_amount})
+                        print(tag, large_amount)
                     print(game.clan.herbs)
     def handle_clan_relations(self, difference):
         """
