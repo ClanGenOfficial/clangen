@@ -7,7 +7,7 @@ import pygame
 from scripts.events import events_class
 from scripts.utility import draw, get_text_box_theme, get_living_cat_count
 # from scripts.game_structure.text import *
-from scripts.game_structure.image_button import EventCatButton, EventCatProfileButton
+from scripts.game_structure.image_button import IDImageButton
 from scripts.game_structure.game_essentials import *
 from ..cat.cats import Cat
 from ..game_structure import image_cache
@@ -50,6 +50,9 @@ class EventsScreen(Screens):
         self.display_events_elements = {}
         self.involved_cat_buttons = []
         self.cat_profile_buttons = {}
+
+        # Stores the involved cat button that currently has its cat profile buttons open
+        self.open_involved_cat_button = None
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -201,7 +204,7 @@ class EventsScreen(Screens):
                 self.make_cat_buttons(event.ui_element)
             elif event.ui_element in self.cat_profile_buttons:
                 cat_profiles()
-                game.switches['cat'] = event.ui_element.id
+                game.switches['cat'] = event.ui_element.ids
                 self.change_screen('profile screen')
             else:
                 self.menu_button_pressed(event)
@@ -209,7 +212,7 @@ class EventsScreen(Screens):
     def screen_switches(self):
         cat_profiles()
 
-        self.heading = pygame_gui.elements.UITextBox("Check this page to which event are currently happening in the "
+        self.heading = pygame_gui.elements.UITextBox("Check this page to see which events are currently happening in the "
                                                      "Clan",
                                                      pygame.Rect((100, 110), (600, 40)),
                                                      object_id=get_text_box_theme())
@@ -291,6 +294,7 @@ class EventsScreen(Screens):
         self.birth_death_alert = None
         self.ceremony_alert = None
 
+        self.open_involved_cat_button = None
         self.make_events_container()
         self.events_container_y = self.event_container.get_relative_rect()[3]
 
@@ -308,6 +312,8 @@ class EventsScreen(Screens):
         self.update_events_display()
 
     def exit_screen(self):
+        self.open_involved_cat_button = None
+
         self.timeskip_button.kill()
         del self.timeskip_button
         #self.toggle_borders_button.kill()
@@ -432,17 +438,26 @@ class EventsScreen(Screens):
                 # Find the next y-height by finding the height of the text box, and adding 35 for the cats button
 
                 if i % 2 == 0:
-                    self.display_events_elements["shading" + str(i)] = pygame_gui.elements.UIImage(
-                        pygame.Rect((0, y),
-                                    (box_length + 50, self.display_events_elements["event" + str(i)].get_relative_rect()[3] + 40)),
-                        image_cache.load_image("resources/images/shading.png"), container=self.event_container)
+                    if game.settings["dark mode"]:
+                        self.display_events_elements["shading" + str(i)] = pygame_gui.elements.UIImage(
+                            pygame.Rect((0, y),
+                                        (box_length + 50, self.display_events_elements["event" + str(i)].get_relative_rect()[3] + 40)),
+                            image_cache.load_image("resources/images/shading_dark.png"), container=self.event_container)
+                    else:
+                        self.display_events_elements["shading" + str(i)] = pygame_gui.elements.UIImage(
+                            pygame.Rect((0, y),
+                                        (box_length + 50,
+                                         self.display_events_elements["event" + str(i)].get_relative_rect()[3] + 40)),
+                            image_cache.load_image("resources/images/shading.png"), container=self.event_container)
+
                     self.display_events_elements["shading" + str(i)].disable()
 
                 y += self.display_events_elements["event" + str(i)].get_relative_rect()[3]
 
-                self.involved_cat_buttons.append(EventCatButton(pygame.Rect(
+                self.involved_cat_buttons.append(IDImageButton(pygame.Rect(
                     (self.event_container.get_relative_rect()[2] - 40, y), (30, 30)),
-                    ev.cats_involved, self.event_container, layer_starting_height=2))
+                    ids=ev.cats_involved, container=self.event_container, layer_starting_height=2,
+                    object_id="#events_cat_button"))
 
                 y += 35
                 i += 1
@@ -465,24 +480,45 @@ class EventsScreen(Screens):
 
     def make_cat_buttons(self, button_pressed):
         """ Makes the buttons that take you to the profile. """
-        for ele in self.cat_profile_buttons:
-            ele.kill()
-        self.cat_profile_buttons = []
 
-        pressed_button_pos = (button_pressed.get_relative_rect()[0], button_pressed.get_relative_rect()[1])
+        # Check if the button you pressed doesn't have it cat profile buttons currently displayed.
+        # If it doesn't have it's buttons displayed, set the current open involved_cat_button to the pressed button,
+        # clear all other buttons, and open the cat profile buttons.
+        if self.open_involved_cat_button != button_pressed:
+            self.open_involved_cat_button = button_pressed
+            for ele in self.cat_profile_buttons:
+                ele.kill()
+            self.cat_profile_buttons = []
 
-        i = 1
-        for ev in button_pressed.ids:
-            cat_ob = Cat.fetch_cat(ev)
-            if cat_ob:
-                print(str(Cat.fetch_cat(ev).name), ev)
-                self.cat_profile_buttons.append(
-                    EventCatProfileButton(pygame.Rect((pressed_button_pos[0] - (100 * i), pressed_button_pos[1]),
-                                                      (100, 30)),
-                                          str(cat_ob.name), ev, container=self.event_container,)
-                )
-                i += 1
+            pressed_button_pos = (button_pressed.get_relative_rect()[0], button_pressed.get_relative_rect()[1])
 
+            i = 1
+            for ev in button_pressed.ids:
+                cat_ob = Cat.fetch_cat(ev)
+                if cat_ob:
+                    # Shorten name if needed
+                    name = str(cat_ob.name)
+                    if len(name) > 10:
+                        name = name[:9] + ".."
+
+                    self.cat_profile_buttons.append(
+                        IDImageButton(pygame.Rect((pressed_button_pos[0] - (101 * i) - 1,
+                                                   pressed_button_pos[1] + 2),
+                                                   (100, 25)),
+                                      text=name, ids=ev, container=self.event_container,
+                                      object_id="#events_cat_profile_button")
+                    )
+                    # There is only room for about four buttons.
+                    if i > 4:
+                        break
+                    i += 1
+
+        # If the button pressed does have its cat profile buttons open, just close the buttons.
+        else:
+            self.open_involved_cat_button = None
+            for ele in self.cat_profile_buttons:
+                ele.kill()
+            self.cat_profile_buttons = []
     def make_events_container(self):
         """ In its own function so that there is only one place the box size is set"""
         self.event_container = pygame_gui.elements.UIScrollingContainer(pygame.Rect((215, 276), (516, 350)))

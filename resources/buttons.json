@@ -3389,6 +3389,43 @@
                 "path":"resources/images/buttons/cat_icon_unavailable.png"
             }
         }
+    },
+  "#events_cat_profile_button":
+    {
+        "colours":
+        {
+            "normal_bg":"#655934",
+            "hovered_bg":"#1E1809",
+            "selected_bg":"#1E1809",
+            "normal_text":"#EEE4CD",
+            "hovered_text":"#EFE5CE",
+            "text_shadow": "#00000000"
+        },
+        "font":
+        {
+        "name": "notosans",
+        "size": "13"
+        },
+        "misc":
+        {
+            "border_width": "0",
+            "shadow_width": "0"
+        },
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/cat_event_profile.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/cat_event_profile_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/cat_event_profile.png"
+            }
+        }
     }
 }
 
