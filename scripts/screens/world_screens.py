@@ -149,9 +149,11 @@ class OutsideClanScreen(Screens):
         # Remove currently displayed cats and cat names.
         for cat in self.display_cats:
             cat.kill()
+        self.display_cats = []
 
         for name in self.cat_names:
             name.kill()
+        self.cat_names = []
         
 
     def update_search_cats(self, search_text):
