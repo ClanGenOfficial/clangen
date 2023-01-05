@@ -11,11 +11,13 @@ from .thoughts import *
 from .appearance_utility import *
 from scripts.conditions import Illness, Injury, PermanentCondition, get_amount_cat_for_one_medic, \
     medical_cats_condition_fulfilled
+import bisect
 
 from scripts.utility import *
 from scripts.game_structure.game_essentials import *
 from scripts.cat_relations.relationship import *
 import scripts.game_structure.image_cache as image_cache
+from scripts.event_class import Single_Event
 
 
 class Cat():
@@ -107,6 +109,8 @@ class Cat():
     all_cats = {}  # ID: object
     outside_cats = {}  # cats outside the clan
     id_iter = itertools.count()
+
+    all_cats_list = []
 
     grief_strings = {}
 
@@ -357,6 +361,9 @@ class Cat():
         # SAVE CAT INTO ALL_CATS DICTIONARY IN CATS-CLASS
         self.all_cats[self.ID] = self
 
+        if self.ID != "0":
+            Cat.insert_cat(self)
+
     def __repr__(self):
         return self.ID
 
@@ -383,13 +390,13 @@ class Cat():
             game.clan.leader_lives = 0
             if game.clan.instructor.df is False:
                 text = str(game.clan.leader.name) + ' has lost their last life and has travelled to StarClan.'
-                game.birth_death_events_list.append(text)
-                game.cur_events_list.append(text)
+                # game.birth_death_events_list.append(text)
+                game.cur_events_list.append(Single_Event(text, "birth_death", game.clan.leader.ID))
             else:
                 text = str(
                     game.clan.leader.name) + ' has lost their last life and has travelled to the Dark Forest.'
-                game.birth_death_events_list.append(text)
-                game.cur_events_list.append(text)
+                # game.birth_death_events_list.append(text)
+                game.cur_events_list.append(Single_Event(text, "birth_death", game.clan.leader.ID))
         else:
             self.dead = True
 
@@ -593,7 +600,7 @@ class Cat():
                 # adjust and append text to grief string list
                 text = ' '.join(text)
                 text = event_text_adjust(Cat, text, self, cat)
-                Cat.grief_strings[cat.ID] = text
+                Cat.grief_strings[cat.ID] = (text, (self.ID, cat.ID))
                 possible_strings.clear()
                 text = None
 
@@ -644,10 +651,12 @@ class Cat():
         self.update_mentor()
         game.clan.add_to_outside(self)
 
-    def status_change(self, new_status):
+    def status_change(self, new_status, resort=False):
         """ Changes the status of a cat. Additional functions are needed if you want to make a cat a leader or deputy.
             new_status = The new status of a cat. Can be 'apprentice', 'medicine cat apprentice', 'warrior'
-                        'medicine cat', 'elder'. """
+                        'medicine cat', 'elder'.
+            resort = If sorting type is 'rank', and resort is True, it will resort the cat list. This should
+                    only be true for non-timeskip status changes. """
         self.status = new_status
         self.name.status = new_status
 
@@ -674,6 +683,12 @@ class Cat():
 
         # update class dictionary
         self.all_cats[self.ID] = self
+
+        # If we have it sorted by rank, we also need to re-sort
+        if game.sort_type == "rank" and resort:
+            print(str(self.name))
+            print("sorting...")
+            Cat.sort_cats()
 
     def update_traits(self):
         """Updates the traits of a cat upon ageing up.  """
@@ -801,12 +816,10 @@ class Cat():
         """ Generates a thought for the cat, which displays on their profile. """
         all_cats = self.all_cats
         other_cat = random.choice(list(all_cats.keys()))
-        countdown = int(len(all_cats) / 3)
 
         # get other cat
-        while other_cat == self and countdown > 0:
+        while other_cat == self and len(all_cats) > 1:
             other_cat = random.choice(list(all_cats.keys()))
-            countdown -= 1
         other_cat = all_cats.get(other_cat)
 
         # get possible thoughts
@@ -998,14 +1011,14 @@ class Cat():
                 game.clan.leader_lives -= 1
                 if game.clan.leader_lives > 0:
                     text = f"{self.name} lost a life to {illness}."
-                    game.health_events_list.append(text)
-                    game.birth_death_events_list.append(text)
-                    game.cur_events_list.append(text)
+                    # game.health_events_list.append(text)
+                    # game.birth_death_events_list.append(text)
+                    game.cur_events_list.append(Single_Event(text, ["birth_death", "health"], game.clan.leader.ID))
                 elif game.clan.leader_lives <= 0:
                     text = f"{self.name} lost their last life to {illness}."
-                    game.health_events_list.append(text)
-                    game.birth_death_events_list.append(text)
-                    game.cur_events_list.append(text)
+                    # game.health_events_list.append(text)
+                    # game.birth_death_events_list.append(text)
+                    game.cur_events_list.append(Single_Event(text, ["birth_death", "health"], game.clan.leader.ID))
             self.die(died_by_condition=True)
             return False
 
@@ -1439,8 +1452,8 @@ class Cat():
 
             if not random.random() * rate:
                 text = f"{self.name} had contact with {cat.name} and now has {illness_name}."
-                game.health_events_list.append(text)
-                game.cur_events_list.append(text)
+                # game.health_events_list.append(text)
+                game.cur_events_list.append(Single_Event(text, "health", [self.ID, cat.ID]))
                 self.get_ill(illness_name)
 
     def save_condition(self):
@@ -2083,6 +2096,77 @@ class Cat():
         #print(str(cat_ob.name) + " has been loaded")
 
         return cat_ob
+
+    # ---------------------------------------------------------------------------- #
+    #                                  Sorting                                     #
+    # ---------------------------------------------------------------------------- #
+
+    @staticmethod
+    def sort_cats():
+        if game.sort_type == "age":
+            Cat.all_cats_list.sort(key=lambda x: Cat.get_adjusted_age(x))
+            print("sort")
+        elif game.sort_type == "reverse_age":
+            Cat.all_cats_list.sort(key=lambda x: Cat.get_adjusted_age(x), reverse=True)
+        elif game.sort_type == "id":
+            Cat.all_cats_list.sort(key=lambda x: int(x.ID))
+        elif game.sort_type == "reverse_id":
+            Cat.all_cats_list.sort(key=lambda x: int(x.ID), reverse=True)
+        elif game.sort_type == "rank":
+            Cat.all_cats_list.sort(key=lambda x: (Cat.rank_order(x), Cat.get_adjusted_age(x)), reverse=True)
+        return
+
+    @staticmethod
+    def insert_cat(c):
+        try:
+            if game.sort_type == "age":
+                bisect.insort(Cat.all_cats_list, c, key=lambda x: Cat.get_adjusted_age(x))
+            elif game.sort_type == "reverse_age":
+                bisect.insort(Cat.all_cats_list, c, key=lambda x: -1 * Cat.get_adjusted_age(x))
+            elif game.sort_type == "rank":
+                bisect.insort(Cat.all_cats_list, c, key=lambda x: (-1 * Cat.rank_order(x), -1 *
+                                                                   Cat.get_adjusted_age(x)))
+            elif game.sort_type == "id":
+                bisect.insort(Cat.all_cats_list, c, key=lambda x: int(x.ID))
+            elif game.sort_type == "reverse_id":
+                bisect.insort(Cat.all_cats_list, c, key=lambda x: -1 * int(x.ID))
+        except (TypeError, NameError):
+            # If you are using python 3.8, key is not a supported parameter into insort. Therefore, we'll need to
+            # do the slower option of adding the cat, then resorting
+            Cat.all_cats_list.append(c)
+            Cat.sort_cats()
+
+    @staticmethod
+    def rank_order(cat):
+        if cat.status == "leader":
+            return 8
+        elif cat.status == "deputy":
+            return 7
+        elif cat.status == "medicine cat":
+            return 6
+        elif cat.status == "medicine cat apprentice":
+            return 5
+        elif cat.status == "warrior":
+            return 4
+        elif cat.status == "apprentice":
+            return 3
+        elif cat.status == "elder":
+            return 2
+        elif cat.status == "kitten":
+            return 1
+        else:
+            return 0
+
+    @staticmethod
+    def get_adjusted_age(cat):
+        """Returns the dead_for moons rather than the age for dead cats, so dead cats are sorted by how long
+        they have been dead, rather than age at death"""
+        if cat.dead:
+            return cat.dead_for
+        else:
+            return cat.moons
+
+
 # ---------------------------------------------------------------------------- #
 #                                  properties                                  #
 # ---------------------------------------------------------------------------- #
@@ -2130,7 +2214,6 @@ class Cat():
                 self.age = key_age
         if not updated_age and self.age is not None:
             self.age = "elder"
-
 
 
 # ---------------------------------------------------------------------------- #

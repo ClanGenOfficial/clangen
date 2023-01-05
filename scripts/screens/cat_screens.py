@@ -340,25 +340,28 @@ class ProfileScreen(Screens):
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()
+                # The resort can go in the status_change function for the others, but if must be here for leader
+                if game.sort_type == "rank":
+                    Cat.sort_cats()
             elif event.ui_element == self.toggle_deputy_button:
                 if self.the_cat.status == 'warrior':
-                    self.the_cat.status_change('deputy')
+                    self.the_cat.status_change('deputy', resort=True)
                     game.clan.deputy = self.the_cat
                 elif self.the_cat.status == 'deputy':
-                    self.the_cat.status_change('warrior')
+                    self.the_cat.status_change('warrior', resort=True)
                     game.clan.deputy = None
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()
             elif event.ui_element == self.toggle_med_button:
                 if self.the_cat.status == 'medicine cat apprentice':
-                    self.the_cat.status_change('apprentice')
+                    self.the_cat.status_change('apprentice', resort=True)
                 elif self.the_cat.status == "apprentice":
-                    self.the_cat.status_change('medicine cat apprentice')
+                    self.the_cat.status_change('medicine cat apprentice', resort=True)
                 elif self.the_cat.status == 'medicine cat':
-                    self.the_cat.status_change('warrior')
+                    self.the_cat.status_change('warrior', resort=True)
                 elif self.the_cat.status in ['warrior', 'elder']:
-                    self.the_cat.status_change('medicine cat')
+                    self.the_cat.status_change('medicine cat', resort=True)
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()
@@ -555,7 +558,7 @@ class ProfileScreen(Screens):
             self.the_cat.thought = "Hello. I am here to drag the dead cats of " + game.clan.name + "Clan into the Dark Forest."
 
         # Write cat name
-        self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(cat_name, pygame.Rect((200, 140), (400, 40)),
+        self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(cat_name, pygame.Rect((25, 140), (750, 40)),
                                                                           object_id=get_text_box_theme(
                                                                               "#cat_profile_name_box"))
 
@@ -674,31 +677,25 @@ class ProfileScreen(Screens):
 
         previous_cat = 0
         next_cat = 0
-        if self.the_cat.dead and not is_instructor and not self.the_cat.df:
+        if self.the_cat.dead and not is_instructor and self.the_cat.df == game.clan.instructor.df:
             previous_cat = game.clan.instructor.ID
 
         if is_instructor:
             next_cat = 1
 
-        for check_cat in Cat.all_cats:
-            if Cat.all_cats[check_cat].ID == self.the_cat.ID:
+        for check_cat in Cat.all_cats_list:
+            if check_cat.ID == self.the_cat.ID:
                 next_cat = 1
             else:
-                if next_cat == 0 and Cat.all_cats[
-                    check_cat].ID != self.the_cat.ID and Cat.all_cats[
-                    check_cat].dead == self.the_cat.dead and Cat.all_cats[
-                    check_cat].ID != game.clan.instructor.ID and Cat.all_cats[
-                    check_cat].outside == self.the_cat.outside and Cat.all_cats[
-                    check_cat].df == self.the_cat.df and not Cat.all_cats[check_cat].faded:
-                    previous_cat = Cat.all_cats[check_cat].ID
+                if next_cat == 0 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead \
+                        and check_cat.ID != game.clan.instructor.ID and check_cat.outside == self.the_cat.outside and \
+                        check_cat.df == self.the_cat.df and not check_cat.faded:
+                    previous_cat = check_cat.ID
 
-                elif next_cat == 1 and Cat.all_cats[
-                    check_cat].ID != self.the_cat.ID and Cat.all_cats[
-                    check_cat].dead == self.the_cat.dead and Cat.all_cats[
-                    check_cat].ID != game.clan.instructor.ID and Cat.all_cats[
-                    check_cat].outside == self.the_cat.outside and Cat.all_cats[
-                    check_cat].df == self.the_cat.df and not Cat.all_cats[check_cat].faded:
-                    next_cat = Cat.all_cats[check_cat].ID
+                elif next_cat == 1 and check_cat != self.the_cat.ID and check_cat.dead == self.the_cat.dead \
+                        and check_cat.ID != game.clan.instructor.ID and check_cat.outside == self.the_cat.outside and \
+                        check_cat.df == self.the_cat.df and not check_cat.faded:
+                    next_cat = check_cat.ID
 
                 elif int(next_cat) > 1:
                     break
@@ -851,7 +848,7 @@ class ProfileScreen(Screens):
 
         # MENTOR
         # Only shows up if the cat has a mentor.
-        if the_cat.mentor is not None:
+        if the_cat.mentor:
             mentor_ob = Cat.fetch_cat(the_cat.mentor)
             output += "mentor: " + str(mentor_ob.name) + "\n"
 
@@ -1256,7 +1253,6 @@ class ProfileScreen(Screens):
                 pygame.Rect((89, 471), (624, 151)),
                 manager,
                 visible=self.first_page_visible)
-            container = self.first_page
 
             # holds next four conditions, displays only once arrow button is hit
             self.second_page_visible = False

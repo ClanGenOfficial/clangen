@@ -3274,6 +3274,158 @@
                 "path":"resources/images/buttons/guide_sc_unavailable.png"
             }
         }
+    },
+    "#filter_by_closed_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/filter_by_closed.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/filter_by_closed_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/filter_by_closed_unavailable.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/filter_by_closed_unavailable.png"
+            }
+        }
+    },
+    "#filter_by_open_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/filter_by_open_unavailable.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/filter_by_open_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/filter_by_open_unavailable.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/filter_by_open_unavailable.png"
+            }
+        }
+    },
+    "#filter_rank_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/filter_rank.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/filter_rank_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/filter_rank.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/filter_rank_unavailable.png"
+            }
+        }
+    },
+    "#filter_age_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/filter_age.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/filter_age_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/filter_age.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/filter_age_unavailable.png"
+            }
+        }
+    },
+  "#events_cat_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/cat_icon.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/cat_icon_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/cat_icon.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/cat_icon_unavailable.png"
+            }
+        }
+    },
+  "#events_cat_profile_button":
+    {
+        "colours":
+        {
+            "normal_bg":"#655934",
+            "hovered_bg":"#1E1809",
+            "selected_bg":"#1E1809",
+            "normal_text":"#EEE4CD",
+            "hovered_text":"#EFE5CE",
+            "text_shadow": "#00000000"
+        },
+        "font":
+        {
+        "name": "notosans",
+        "size": "13"
+        },
+        "misc":
+        {
+            "border_width": "0",
+            "shadow_width": "0"
+        },
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/cat_event_profile.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/cat_event_profile_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/cat_event_profile.png"
+            }
+        }
     }
 }
 
