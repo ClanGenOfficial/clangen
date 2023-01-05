@@ -10,6 +10,7 @@ from scripts.game_structure.image_button import UISpriteButton, UIImageButton
 from scripts.utility import get_text_box_theme, update_sprite, get_living_cat_count, get_med_cats
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import *
+from .cat_screens import ProfileScreen
 from ..conditions import get_amount_cat_for_one_medic, medical_cats_condition_fulfilled
 
 
@@ -1309,6 +1310,7 @@ class MedDenScreen(Screens):
         self.current_page = None
         self.meds = None
         self.back_button = None
+        self.profile_screen = ProfileScreen()
 
         self.tab_showing = self.in_den_tab
         self.tab_list = self.in_den_cats
@@ -1645,14 +1647,12 @@ class MedDenScreen(Screens):
             pair = []
             for y in range(len(herb_list)):
                 if (count % 2) == 0:  # checking if count is an even number
-                    print('even')
                     count += 1
                     pair.append(herb_list[y])
                     holding_pairs.append("   -   ".join(pair))
                     pair.clear()
                     continue
                 else:
-                    print('odd', herb_list[y:y+1])
                     pair.append(herb_list[y])
                     count += 1
 
@@ -1663,8 +1663,6 @@ class MedDenScreen(Screens):
                                           object_id="#med_cat_den_hover_big",
                                           tool_tip_text=herb_display
                                           )
-
-
 
         herbs = game.clan.herbs
         for herb in herbs:

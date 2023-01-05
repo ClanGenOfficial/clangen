@@ -265,6 +265,7 @@ class ProfileScreen(Screens):
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
+                print(self.open_tab)
                 self.close_current_tab()
                 self.change_screen(game.last_screen_forProfile)
             elif event.ui_element == self.previous_cat_button:
@@ -502,6 +503,8 @@ class ProfileScreen(Screens):
         self.hide_menu_buttons()  # Menu buttons don't appear on the profile screen
         cat_profiles()
         self.update_platform()
+        if game.last_screen_forProfile == 'med den screen':
+            self.toggle_conditions_tab()
 
     def clear_profile(self):
         """Clears all profile objects. """
@@ -1239,10 +1242,11 @@ class ProfileScreen(Screens):
         self.close_current_tab()
 
         if previous_open_tab == 'conditions':
-            '''If the current open tab is relations, just close the tab and do nothing else. '''
+            '''If the current open tab is conditions, just close the tab and do nothing else. '''
             pass
         else:
             self.open_tab = 'conditions'
+            print(self.open_tab)
             self.right_arrow = UIImageButton(
                 pygame.Rect((709, 540), (34, 34)),
                 "",
@@ -1274,6 +1278,7 @@ class ProfileScreen(Screens):
             self.update_disabled_buttons_and_text()
 
     def get_conditions(self):
+        self.the_cat = Cat.all_cats.get(game.switches['cat'])
         manager = pygame_gui.UIManager((800, 700), 'resources/defaults.json')
 
         # tracks the position of the detail boxes
@@ -1858,6 +1863,7 @@ class ProfileScreen(Screens):
 
     def close_current_tab(self):
         """Closes current tab. """
+        print(self.open_tab)
         if self.open_tab is None:
             pass
         elif self.open_tab == 'relations':
