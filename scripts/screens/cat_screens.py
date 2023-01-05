@@ -703,8 +703,6 @@ class ProfileScreen(Screens):
         if next_cat == 1:
             next_cat = 0
 
-        print(previous_cat, next_cat)
-
         self.next_cat = next_cat
         self.previous_cat = previous_cat
 
