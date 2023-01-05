@@ -59,12 +59,13 @@ class EventsScreen(Screens):
                 self.all_events = ""
                 self.event_display_type = 'all events'
                 self.all_events_button.disable()
-                if game.cur_events_list is not None and game.cur_events_list != []:
-                    for i in range(len(game.cur_events_list)):
-                        if not isinstance(game.cur_events_list[i], str):
-                            game.cur_events_list.remove(game.cur_events_list[i])
+                curr_events = [x.text + str(x.cats_involved) for x in game.cur_events_list]
+                if curr_events:
+                    for i in range(len(curr_events)):
+                        if not isinstance(curr_events[i], str):
+                            curr_events.remove(curr_events[i])
                             break
-                    self.all_events = '\n\n'.join(game.cur_events_list)
+                    self.all_events = '\n\n'.join(curr_events)
                 else:
                     self.all_events = "Nothing significant happened this moon"
 
@@ -72,12 +73,13 @@ class EventsScreen(Screens):
                 self.ceremonies_events_button.enable()
                 if self.ceremony_alert:
                     self.ceremony_alert.kill()
-                if game.ceremony_events_list is not None and game.ceremony_events_list != []:
-                    for i in range(len(game.ceremony_events_list)):
-                        if not isinstance(game.ceremony_events_list[i], str):
-                            game.ceremony_events_list.remove(game.ceremony_events_list[i])
+                ceremony_events_list = [x.text for x in game.cur_events_list if "ceremony" in x.types]
+                if ceremony_events_list:
+                    for i in range(len(ceremony_events_list)):
+                        if not isinstance(ceremony_events_list[i], str):
+                            ceremony_events_list.remove(ceremony_events_list[i])
                             break
-                    self.ceremony_events = '\n\n'.join(game.ceremony_events_list)
+                    self.ceremony_events = '\n\n'.join(ceremony_events_list)
 
                     self.ceremony_alert = pygame_gui.elements.UIImage(pygame.Rect((44, 340), (4, 22)),
                                                                       image_cache.load_image(
@@ -88,12 +90,13 @@ class EventsScreen(Screens):
                 if self.birth_death_alert:
                     self.birth_death_alert.kill()
                 self.birth_death_events_button.enable()
-                if game.birth_death_events_list is not None and game.birth_death_events_list != []:
-                    for i in range(len(game.birth_death_events_list)):
-                        if not isinstance(game.birth_death_events_list[i], str):
-                            game.birth_death_events_list.remove(game.birth_death_events_list[i])
+                birth_events_list = [x.text for x in game.cur_events_list if "birth_death" in x.types]
+                if birth_events_list:
+                    for i in range(len(birth_events_list)):
+                        if not isinstance(birth_events_list[i], str):
+                            birth_events_list.remove(birth_events_list[i])
                             break
-                    self.birth_death_events = '\n\n'.join(game.birth_death_events_list)
+                    self.birth_death_events = '\n\n'.join(birth_events_list)
                     self.birth_death_alert = pygame_gui.elements.UIImage(pygame.Rect((44, 390), (4, 22)),
                                                                          image_cache.load_image(
                                                                              "resources/images/alert_mark.png"
@@ -103,12 +106,13 @@ class EventsScreen(Screens):
                 if self.relation_alert:
                     self.relation_alert.kill()
                 self.relationship_events_button.enable()
-                if game.relation_events_list is not None and game.relation_events_list != []:
-                    for i in range(len(game.relation_events_list)):
-                        if not isinstance(game.relation_events_list[i], str):
-                            game.relation_events_list.remove(game.relation_events_list[i])
+                relation_events_list = [x.text for x in game.cur_events_list if "relation" in x.types]
+                if relation_events_list:
+                    for i in range(len(relation_events_list)):
+                        if not isinstance(relation_events_list[i], str):
+                            relation_events_list.remove(relation_events_list[i])
                             break
-                    self.relation_events = '\n\n'.join(game.relation_events_list)
+                    self.relation_events = '\n\n'.join(relation_events_list)
                     self.relation_alert = pygame_gui.elements.UIImage(pygame.Rect((44, 440), (4, 22)),
                                                                       image_cache.load_image(
                                                                           "resources/images/alert_mark.png"
@@ -118,12 +122,13 @@ class EventsScreen(Screens):
                 if self.health_alert:
                     self.health_alert.kill()
                 self.health_events_button.enable()
-                if game.health_events_list is not None and game.health_events_list != []:
-                    for i in range(len(game.health_events_list)):
-                        if not isinstance(game.health_events_list[i], str):
-                            game.health_events_list.remove(game.health_events_list[i])
+                health_events_list = [x.text for x in game.cur_events_list if "health" in x.types]
+                if health_events_list:
+                    for i in range(len(health_events_list)):
+                        if not isinstance(health_events_list[i], str):
+                            game.health_events_list.remove(health_events_list[i])
                             break
-                    self.health_events = '\n\n'.join(game.health_events_list)
+                    self.health_events = '\n\n'.join(health_events_list)
                     self.health_alert = pygame_gui.elements.UIImage(pygame.Rect((44, 490), (4, 22)),
                                                                     image_cache.load_image(
                                                                         "resources/images/alert_mark.png"
@@ -133,12 +138,13 @@ class EventsScreen(Screens):
                 if self.other_clans_alert:
                     self.other_clans_alert.kill()
                 self.other_clans_events_button.enable()
-                if game.other_clans_events_list is not None and game.other_clans_events_list != []:
-                    for i in range(len(game.other_clans_events_list)):
-                        if not isinstance(game.other_clans_events_list[i], str):
-                            game.other_clans_events_list.remove(game.other_clans_events_list[i])
+                other_clans_list = [x.text for x in game.cur_events_list if "other_clans" in x.types]
+                if other_clans_list:
+                    for i in range(len(other_clans_list)):
+                        if not isinstance(other_clans_list[i], str):
+                            game.other_clans_list.remove(game.other_clans_events_list[i])
                             break
-                    self.other_clans_events = '\n\n'.join(game.other_clans_events_list)
+                    self.other_clans_events = '\n\n'.join(other_clans_list)
                     self.other_clans_alert = pygame_gui.elements.UIImage(pygame.Rect((44, 540), (4, 22)),
                                                                          image_cache.load_image(
                                                                              "resources/images/alert_mark.png"
@@ -148,12 +154,13 @@ class EventsScreen(Screens):
                 if self.misc_alert:
                     self.misc_alert.kill()
                 self.misc_events_button.enable()
-                if game.misc_events_list is not None and game.misc_events_list != []:
-                    for i in range(len(game.misc_events_list)):
-                        if not isinstance(game.misc_events_list[i], str):
-                            game.misc_events_list.remove(game.misc_events_list[i])
+                misc_list = [x.text for x in game.cur_events_list if "misc" in x.types]
+                if misc_list is not None and misc_list != []:
+                    for i in range(len(misc_list)):
+                        if not isinstance(misc_list[i], str):
+                            game.misc_events_list.remove(misc_list[i])
                             break
-                    self.misc_events = '\n\n'.join(game.misc_events_list)
+                    self.misc_events = '\n\n'.join(misc_list)
                     self.misc_alert = pygame_gui.elements.UIImage(pygame.Rect((44, 590), (4, 22)),
                                                                   image_cache.load_image(
                                                                       "resources/images/alert_mark.png"

@@ -70,8 +70,8 @@ class Relation_Events():
                 if random.random() > 0.96:  # Roughly 1/25
                     self.had_one_event = True
                     text = f'{cat_from.name} will always love {cat_from_mate.name} but has decided to move on.'
-                    game.relation_events_list.insert(0, text)
-                    game.cur_events_list.append(text)
+                    # game.relation_events_list.insert(0, text)
+                    game.cur_events_list.append(Single_Event(text, "relation", [cat_from.ID, cat_from_mate.ID]))
                     current_relationship.mate = False
                     cat_from.mate = None
                     cat_from_mate.mate = None
@@ -126,9 +126,9 @@ class Relation_Events():
 
                     # new relationship
                     text = f"{cat_from.name} and {cat_to.name} can't ignore their feelings for each other."
-                    game.relation_events_list.insert(0, text)
-                    game.cur_events_list.append(text)
-                    self.handle_new_mates(cat_from, cat_to)
+                    # game.relation_events_list.insert(0, text)
+                    game.cur_events_list.append(Single_Event(text, "relation", [cat_from.ID, cat_to.ID]))
+                    self.handle_new_mates(current_relationship, cat_from, cat_to)
 
             # breakup
             if not self.had_one_event and current_relationship.mates and not cat_from.dead and not cat_to.dead:
@@ -229,8 +229,8 @@ class Relation_Events():
             self.had_one_event = True
             cat_from.set_mate(cat_to)
             cat_to.set_mate(cat_from)
-            game.cur_events_list.append(mate_string)
-            game.relation_events_list.append(mate_string)
+            game.cur_events_list.append(Single_Event(mate_string, "relation", [cat_from.ID, cat_to.ID]))
+            # game.relation_events_list.append(mate_string)
 
     def handle_breakup(self, relationship_from, relationship_to, cat_from, cat_to):
         from_mate_in_clan = False
@@ -250,8 +250,8 @@ class Relation_Events():
                 cat_from.unset_mate(breakup=True, fight=had_fight)
                 cat_to.unset_mate(breakup=True, fight=had_fight)
                 text = f"{cat_from.name} and {cat_to.name} broke up"
-                game.relation_events_list.insert(0, text)
-                game.cur_events_list.append(text)
+                # game.relation_events_list.insert(0, text)
+                game.cur_events_list.append(Single_Event(text, "relation", [cat_from.ID, cat_to.ID]))
 
     def big_love_check(self, cat, upper_threshold=40, lower_threshold=15):
         """
@@ -289,13 +289,13 @@ class Relation_Events():
 
                 if highest_romantic_relation.opposite_relationship.romantic_love <= lower_threshold:
                     text = f"{first_name} confessed their feelings to {second_name}, but they got rejected."
-                    game.relation_events_list.insert(0, text)
-                    game.cur_events_list.append(text)
+                    # game.relation_events_list.insert(0, text)
+                    game.cur_events_list.append(Single_Event(text, "relation", [cat.ID, cat_to.ID]))
                     return False
                 else:
                     text = f"{first_name} confessed their feelings to {second_name} and they have become mates."
-                    game.relation_events_list.insert(0, text)
-                    game.cur_events_list.append(text)
+                    # game.relation_events_list.insert(0, text)
+                    game.cur_events_list.append(Single_Event(text, "relation", [cat.ID, cat_to.ID]))
                     return True
         return False
 
@@ -327,8 +327,8 @@ class Relation_Events():
             if amount > 1:
                 insert = f'a litter of {str(amount)} kits'
             print_event = f"{str(cat.name)} brought {insert} back to camp, but refused to talk about their origin."
-            game.birth_death_events_list.append(print_event)
-            game.cur_events_list.append(print_event)
+            # game.birth_death_events_list.append(print_event)
+            game.cur_events_list.append(Single_Event(print_event, "birth_death", cat.ID))
             # display event
             # if len(print_event) < 100:
             #    game.cur_events_list.append(print_event)
@@ -353,8 +353,8 @@ class Relation_Events():
             "amount": 0
         }
         text = f"{pregnant_cat.name} announced that they are expecting kits."
-        game.birth_death_events_list.append(text)
-        game.cur_events_list.append(text)
+        # game.birth_death_events_list.append(text)
+        game.cur_events_list.append(Single_Event(text, "birth_death", pregnant_cat.ID))
 
     def handle_one_moon_pregnant(self, cat, clan=game.clan):
         """Handles if the cat is one moon pregnant."""
@@ -376,12 +376,12 @@ class Relation_Events():
 
         if thinking_amount == 1:
             text = f"{cat.name} thinks that they will have one kit."
-            game.birth_death_events_list.append(text)
-            game.cur_events_list.append(text)
+            # game.birth_death_events_list.append(text)
+            game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
         else:
             text = f"{cat.name} thinks that they will have {thinking_amount} kits."
-            game.birth_death_events_list.append(text)
-            game.cur_events_list.append(text)
+            # game.birth_death_events_list.append(text)
+            game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
 
     def handle_two_moon_pregnant(self, cat, clan=game.clan):
         """Handles if the cat is two moons pregnant."""
@@ -393,6 +393,8 @@ class Relation_Events():
         if cat.dead or cat.outside:
             del clan.pregnancy_data[cat.ID]
             return
+
+        involved_cats = [cat.ID]
 
         kits_amount = clan.pregnancy_data[cat.ID]["amount"]
         other_cat_id = clan.pregnancy_data[cat.ID]["second_parent"]
@@ -426,6 +428,7 @@ class Relation_Events():
                                f"A {insert}! {str(cat.name)} welcomes them happily, and seems unperturbed by the lack of a partner in the nursery with them."
                                ]
         elif cat.mate == other_cat.ID and not other_cat.dead and not other_cat.outside:
+            involved_cats.append(other_cat.ID)
             possible_events = [f"{str(cat.name)} had a {insert} with {str(other_cat.name)}.",
                                f"In the nursery, {str(cat.name)} lies suckling a {insert}, {str(other_cat.name)} watching over them and purring so hard their body vibrates.",
                                f"{str(cat.name)} and {str(other_cat.name)}'s eyes meet over their {insert}, full of love for their growing family.",
@@ -439,6 +442,7 @@ class Relation_Events():
                                f"Purring with {str(other_cat.name)} against their back, {str(cat.name)} feels like they're going to explode with love, looking at their tiny new {insert}."
                                ]
         elif cat.mate == other_cat.ID and other_cat.dead or other_cat.outside:
+            involved_cats.append(other_cat.ID)
             possible_events = [
                 f"{str(cat.name)} looks at their {insert}, choking on both a purr and a wail. How are they supposed to do this without {str(other_cat.name)}?",
                 f"{str(cat.name)} sobs and pushes their new {insert} away from them. They look far too much like {str(other_cat.name)} for {str(cat.name)} to stand the sight of them.",
@@ -449,6 +453,7 @@ class Relation_Events():
 
             ]
         elif cat.mate != other_cat.ID and cat.mate is not None:
+            involved_cats.append(other_cat.ID)
             possible_events = [f"{str(cat.name)} secretly had a {insert} with {str(other_cat.name)}.",
                                f"{str(cat.name)} hopes that their {insert} doesn't look too much like "
                                f"{str(other_cat.name)}, otherwise questions might follow.",
@@ -539,9 +544,9 @@ class Relation_Events():
 
         print_event = " ".join(event_list)
         # display event
-        game.health_events_list.append(print_event)
-        game.birth_death_events_list.append(print_event)
-        game.cur_events_list.append(print_event)
+        # game.health_events_list.append(print_event)
+        # game.birth_death_events_list.append(print_event)
+        game.cur_events_list.append(Single_Event(print_event, ["health", "birth_death"], involved_cats))
 
     # ---------------------------------------------------------------------------- #
     #                          check if event is triggered                         #
@@ -571,12 +576,12 @@ class Relation_Events():
                 relationship_from.romantic_love -= 10
             elif had_fight:
                 text = f"{str(cat_from.name)} and {str(cat_to.name)} had a fight and nearly broke up."
-                game.relation_events_list.insert(0, text)
-                game.cur_events_list.append(text)
+                # game.relation_events_list.insert(0, text)
+                game.cur_events_list.append(Single_Event(text, "relation", [cat_from.ID, cat_to.ID]))
             else:
                 text = f"{str(cat_from.name)} and {str(cat_to.name)} have somewhat different views about their relationship."
-                game.relation_events_list.insert(0, text)
-                game.cur_events_list.append(text)
+                # game.relation_events_list.insert(0, text)
+                game.cur_events_list.append(Single_Event(text, "relation", [cat_from.ID, cat_to.ID]))
                 relationship_from.romantic_love -= 10
                 relationship_to.romantic_love -= 10
                 relationship_from.comfortable -= 20
