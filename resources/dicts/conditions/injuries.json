@@ -24,7 +24,7 @@
             "blood loss"
         ],
         "cause_permanent": [],
-        "herb": [
+        "herbs": [
             "cobweb",
             "horsetail",
             "marigold",
@@ -64,7 +64,7 @@
             "blood loss"
         ],
         "cause_permanent": [],
-        "herb": [
+        "herbs": [
             "cobweb",
             "horsetail",
             "marigold",
@@ -104,7 +104,7 @@
             "blood loss"
         ],
         "cause_permanent": [],
-        "herb": [
+        "herbs": [
             "cobweb",
             "horsetail",
             "marigold",
@@ -144,7 +144,7 @@
             "blood loss"
         ],
         "cause_permanent": [],
-        "herb": [
+        "herbs": [
             "cobweb",
             "horsetail",
             "marigold",
@@ -183,7 +183,7 @@
             "poisoned"
         ],
         "cause_permanent": [],
-        "herb": [
+        "herbs": [
             "cobweb",
             "horsetail",
             "marigold",
@@ -230,7 +230,7 @@
             "torn pelt"
         ],
         "cause_permanent": [],
-        "herb": [
+        "herbs": [
             "cobweb",
             "horsetail",
             "marigold",
@@ -267,7 +267,7 @@
         ],
         "also_got": [],
         "cause_permanent": [],
-        "herb": [
+        "herbs": [
             "moss",
             "plantain"
         ]
@@ -292,7 +292,7 @@
             "shock"
         ],
         "cause_permanent": [],
-        "herb": [
+        "herbs": [
             "cobweb",
             "horsetail",
             "marigold",
@@ -329,7 +329,7 @@
         "cause_permanent": [
             "crooked jaw"
         ],
-        "herb": [
+        "herbs": [
             "cobweb",
             "horsetail",
             "marigold",
@@ -373,7 +373,7 @@
             "weak leg",
             "twisted leg"
         ],
-        "herb": [
+        "herbs": [
             "cobweb",
             "horsetail",
             "marigold",
@@ -417,7 +417,7 @@
             "weak leg",
             "twisted leg"
         ],
-        "herb": [
+        "herbs": [
             "cobweb",
             "horsetail",
             "marigold",
@@ -538,7 +538,7 @@
         "cause_permanent": [
             "lost their tail"
         ],
-        "herb": [
+        "herbs": [
             "cobweb",
             "horsetail",
             "marigold",
@@ -569,7 +569,8 @@
         "risks": [],
         "also_got": [],
         "cause_permanent": [
-        ]
+        ],
+        "herbs": []
     },
 
     "cracked pads":{
@@ -671,7 +672,7 @@
         "also_got": [],
         "cause_permanent": [
         ],
-        "herb": [
+        "herbs": [
             "cobweb",
             "plantain"
         ]
@@ -698,7 +699,8 @@
         ],
         "also_got": [],
         "cause_permanent": [
-        ]
+        ],
+        "herbs": []
     },
 
     "thorn in their paw":{
@@ -722,7 +724,8 @@
         ],
         "also_got": [],
         "cause_permanent": [
-        ]
+        ],
+        "herbs": []
     },
 
     "torn pelt":{
@@ -748,7 +751,7 @@
         ],
         "cause_permanent": [
         ],
-        "herb": [
+        "herbs": [
             "cobweb",
             "moss",
             "oak_leaves",
@@ -780,7 +783,7 @@
         "cause_permanent": [
             "partial hearing loss"
         ],
-        "herb": [
+        "herbs": [
             "cobweb",
             "moss",
             "oak_leaves",
@@ -821,7 +824,8 @@
             "moss",
             "dandelion",
             "poppy"
-        ]
+        ],
+        "herbs": []
     },
 
     "recovering from birth":{
@@ -851,7 +855,8 @@
             "oak_leaves",
             "raspberry",
             "dandelion"
-        ]
+        ],
+        "herbs": []
     },
 
     "water in their lungs":{
@@ -920,7 +925,7 @@
         "also_got": [],
         "cause_permanent": [
         ],
-        "herb": [
+        "herbs": [
             "cobweb",
             "moss",
             "oak_leaves",
@@ -956,7 +961,7 @@
             "lost their tail",
             "lost a leg"
         ],
-        "herb": [
+        "herbs": [
             "cobweb",
             "moss",
             "oak_leaves",
@@ -1055,7 +1060,8 @@
             "frostbite"
         ],
         "cause_permanent": [
-        ]
+        ],
+        "herbs": []
     },
 
     "dehydrated":{
@@ -1145,7 +1151,7 @@
             "failing eyesight",
             "goldenrod"
         ],
-        "herb": [
+        "herbs": [
             "cobweb",
             "horsetail",
             "moss",
@@ -1183,7 +1189,7 @@
         ],
         "cause_permanent": [
         ],
-        "herb": [
+        "herbs": [
             "cobweb",
             "horsetail",
             "moss",
@@ -1219,7 +1225,9 @@
         "also_got": [
         ],
         "cause_permanent": [
-            "paralyzed",
+            "paralyzed"
+        ],
+        "herbs": [
             "dandelion",
             "poppy"
         ]

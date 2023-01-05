@@ -14,7 +14,8 @@
         "illness_infectiousness": [
         ],
         "risks": [
-        ]
+        ],
+        "herbs": []
     },
     "lost a leg": {
         "severity": "major",
@@ -43,7 +44,8 @@
                 "name": "sore",
                 "chance": 20
             }
-        ]
+        ],
+        "herbs": []
     },
     "born without a leg": {
         "severity": "major",
@@ -68,7 +70,8 @@
                 "name": "joint pain",
                 "chance": 40
             }
-        ]
+        ],
+        "herbs": []
     },
     "weak leg": {
         "severity": "minor",
@@ -93,7 +96,8 @@
                 "name": "joint pain",
                 "chance": 40
             }
-        ]
+        ],
+        "herbs": []
     },
     "twisted leg": {
         "severity": "major",
@@ -118,7 +122,8 @@
                 "name": "joint pain",
                 "chance": 40
             }
-        ]
+        ],
+        "herbs": []
     },
     "lost their tail": {
         "severity": "minor",
@@ -143,7 +148,8 @@
                 "name": "phantom pain",
                 "chance": 10
             }
-        ]
+        ],
+        "herbs": []
     },
     "born without a tail": {
         "severity": "minor",
@@ -160,7 +166,8 @@
         "illness_infectiousness": [
         ],
         "risks": [
-        ]
+        ],
+        "herbs": []
     },
     "paralyzed": {
         "severity": "severe",
@@ -193,7 +200,8 @@
                 "name": "joint pain",
                 "chance": 20
             }
-        ]
+        ],
+        "herbs": []
     },
     "raspy lungs": {
         "severity": "minor",
@@ -282,7 +290,8 @@
         "illness_infectiousness": [
         ],
         "risks": [
-        ]
+        ],
+        "herbs": []
     },
     "one bad eye": {
         "severity": "major",
@@ -302,7 +311,8 @@
                 "name": "failing eyesight",
                 "chance": 80
             }
-        ]
+        ],
+        "herbs": []
     },
     "failing eyesight": {
         "severity": "major",
@@ -323,7 +333,8 @@
                 "name": "blind",
                 "chance": 50
             }
-        ]
+        ],
+        "herbs": []
     },
     "partial hearing loss": {
         "severity": "minor",
@@ -344,7 +355,8 @@
                 "name": "deaf",
                 "chance": 80
             }
-        ]
+        ],
+        "herbs": []
     },
     "deaf": {
         "severity": "major",
@@ -361,7 +373,8 @@
         "illness_infectiousness": [
         ],
         "risks": [
-        ]
+        ],
+        "herbs": []
 
     },
     "constant joint pain": {
@@ -410,7 +423,8 @@
                 "name": "seizure",
                 "chance": 10
             }
-        ]
+        ],
+        "herbs": []
     },
     "allergies": {
         "severity": "minor",
@@ -431,7 +445,8 @@
                 "name": "running nose",
                 "chance": 20
             }
-        ]
+        ],
+        "herbs": []
     },
     "constantly dizzy": {
         "severity": "major",
@@ -448,7 +463,8 @@
         "illness_infectiousness": [
         ],
         "risks": [
-        ]
+        ],
+        "herbs": []
     },
     "recurring shock": {
         "severity": "major",
