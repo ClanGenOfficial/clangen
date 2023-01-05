@@ -12,7 +12,7 @@ import pygame_gui
 import pygame
 
 # Version Number to be displayed.
-VERSION_NUMBER = "Ver. 0.4.0"
+VERSION_NUMBER = "Ver. 0.4.1"
 
 # from scripts.world import load_map
 
