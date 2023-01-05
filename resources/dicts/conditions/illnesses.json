@@ -22,6 +22,9 @@
         "infectiousness": 0,
         "risks": [
 
+        ],
+        "herbs": [
+            "poppy"
         ]
     },
     "diarrhea": {
@@ -45,7 +48,13 @@
         "duration": 2,
         "medicine_duration": 1,
         "infectiousness": 0,
-        "risks": []
+        "risks": [],
+        "herbs": [
+            "juniper",
+            "mallow",
+            "parsley",
+            "betony"
+        ]
     },
     "fleas": {
         "severity": "minor",
@@ -73,6 +82,9 @@
                 "name": "torn pelt",
                 "chance": 20
             }
+        ],
+        "herbs": [
+            "plantain"
         ]
     },
     "greencough": {
@@ -101,6 +113,15 @@
                 "name": "yellowcough",
                 "chance": 70
             }
+        ],
+        "herbs": [
+            "juniper",
+            "moss",
+            "tansy",
+            "mullein",
+            "poppy",
+            "plantain",
+            "catmint"
         ]
     },
     "kittencough": {
@@ -129,6 +150,15 @@
                 "name": "whitecough",
                 "chance": 15
             }
+        ],
+        "herbs": [
+            "juniper",
+            "moss",
+            "tansy",
+            "mullein",
+            "poppy",
+            "plantain",
+            "catmint"
         ]
     },
     "an infected wound": {
@@ -157,6 +187,15 @@
                 "name": "a festering wound",
                 "chance": 15
             }
+        ],
+        "herbs": [
+            "horsetail",
+            "marigold",
+            "wild_garlic",
+            "dandelion",
+            "burdock",
+            "poppy",
+            "plantain"
         ]
     },
     "carrionplace disease": {
@@ -203,7 +242,14 @@
         "duration": 50,
         "medicine_duration": 40,
         "infectiousness": 0,
-        "risks": []
+        "risks": [],
+        "herbs": [
+            "moss",
+            "tansy",
+            "dandelion",
+            "mullein",
+            "poppy"
+        ]
     },
     "running nose": {
         "severity": "minor",
@@ -231,6 +277,11 @@
                 "name": "whitecough",
                 "chance": 15
             }
+        ],
+        "herbs": [
+            "tansy",
+            "poppy",
+            "plantain"
         ]
     },
     "whitecough": {
@@ -259,6 +310,15 @@
                 "name": "greencough",
                 "chance": 20
             }
+        ],
+        "herbs": [
+            "juniper",
+            "moss",
+            "tansy",
+            "mullein",
+            "poppy",
+            "plantain",
+            "catmint"
         ]
     },
     "yellowcough": {
@@ -287,6 +347,11 @@
                 "name": "redcough",
                 "chance": 100
             }
+        ],
+        "herbs": [
+            "lungwort",
+            "tansy",
+            "mullein"
         ]
     },
     "a festering wound": {
@@ -310,7 +375,16 @@
         "duration": 3,
         "medicine_duration": 1,
         "infectiousness": 0,
-        "risks": []
+        "risks": [],
+        "herbs": [
+            "horsetail",
+            "marigold",
+            "moss",
+            "dandelion",
+            "burdock",
+            "poppy",
+            "plantain"
+        ]
     },
     "heat stroke": {
         "severity": "severe",
@@ -333,7 +407,10 @@
         "duration": 1,
         "medicine_duration": 1,
         "infectiousness": 0,
-        "risks": []
+        "risks": [],
+        "herbs": [
+            "moss"
+        ]
     },
     "heat exhaustion": {
         "severity": "major",
@@ -361,6 +438,10 @@
                 "name": "heat stroke",
                 "chance": 5
             }
+        ],
+        "herbs": [
+            "moss",
+            "poppy"
         ]
     },
     "stomachache": {
@@ -389,6 +470,13 @@
                 "name": "diarrhea",
                 "chance": 10
             }
+        ],
+        "herbs": [
+            "juniper",
+            "mallow",
+            "parsley",
+            "dandelion",
+            "poppy"
         ]
     },
     "constant nightmares": {
@@ -413,6 +501,11 @@
         "medicine_duration": 1,
         "infectiousness": 0,
         "risks": [
+        ],
+        "herbs": [
+            "juniper",
+            "thyme",
+            "poppy"
         ]
     },
     "grief stricken": {
@@ -445,6 +538,11 @@
                 "name": "constant nightmares",
                 "chance": 25
             }
+        ],
+        "herbs": [
+            "juniper",
+            "thyme",
+            "poppy"
         ]
     }
 }

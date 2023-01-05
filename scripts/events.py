@@ -1,4 +1,5 @@
 from scripts.cat.cats import *
+from scripts.clan import HERBS
 from scripts.conditions import medical_cats_condition_fulfilled, get_amount_cat_for_one_medic
 from scripts.cat_relations.relation_events import *
 from scripts.game_structure.load_cat import *
@@ -131,6 +132,20 @@ class Events():
 
         # age up the clan
         game.clan.age += 1
+
+        if game.clan.game_mode == 'classic':
+            herbs = game.clan.herbs.copy()
+            print(game.clan.herbs)
+            for herb in herbs:
+                adjust_by = random.choices([-2, -1, 0, 1, 2], [1, 2, 3, 2, 1], k=1)
+                print(adjust_by)
+                game.clan.herbs[herb] += adjust_by[0]
+                if game.clan.herbs[herb] <= 0:
+                    game.clan.herbs.pop(herb)
+            if not int(random.random() * 5):
+                new_herb = random.choice(HERBS)
+                game.clan.herbs.update({new_herb: 1})
+            print(game.clan.herbs)
 
         # autosave
         if game.settings.get('autosave') is True and game.clan.age % 5 == 0:

@@ -51,7 +51,8 @@
 		"apprentice",
 		"trust",
 		"respect",
-		"med_only"
+		"med_only",
+		"random_herb"
 	],
 	"intro_text":"p_l decides it's a good opportunity to show app1 where the most commonly needed herbs are in the territory, both above and underground away from the hot sun.",
 	"decline_text":"As they see app1's absent minded gaze they change their mind. Maybe another day when app1 is more focused and less liable to get a heatstroke when they go to show them the herbs aboveground",
@@ -90,7 +91,8 @@
 	"tags":[
 		"med_cat",
 		"apprentice",
-		"med_only"
+		"med_only",
+		"random_herb"
 	],
 	"intro_text":"app1 has been sent out into the desert to try to find some specific herbs alone.",
 	"decline_text":"Nervous and with the hot sun pounding on their back, they decide to go back to camp and try again another day their tail dragging behind them.",

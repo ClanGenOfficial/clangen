@@ -369,7 +369,7 @@ class Cat():
     def is_alive(self):
         return not self.dead
 
-    def die(self, body=True, died_by_condition=False):
+    def die(self, body=True):
         """
         This is used to kill a cat.
 
@@ -378,11 +378,11 @@ class Cat():
 
         died_by_condition - defaults to False, use this to mark if the cat is dying via a condition.
         """
-        if self.status == 'leader' and game.clan.leader_lives > 0 and died_by_condition is False:
-            self.injuries.clear()
-            self.illnesses.clear()
+        self.injuries.clear()
+        self.illnesses.clear()
+        if self.status == 'leader' and game.clan.leader_lives > 0:
             return
-        elif self.status == 'leader' and game.clan.leader_lives > 0 and died_by_condition is True:
+        elif self.status == 'leader' and game.clan.leader_lives > 0:
             return
         elif self.status == 'leader' and game.clan.leader_lives <= 0:
             self.dead = True
@@ -398,10 +398,6 @@ class Cat():
                 game.cur_events_list.append(text)
         else:
             self.dead = True
-
-        if self.status != 'leader':
-            self.injuries.clear()
-            self.illnesses.clear()
 
         if self.mate is not None:
             self.mate = None
@@ -1020,7 +1016,7 @@ class Cat():
                     game.health_events_list.append(text)
                     game.birth_death_events_list.append(text)
                     game.cur_events_list.append(text)
-            self.die(died_by_condition=True)
+            self.die()
             return False
 
         keys = self.illnesses[illness].keys()
@@ -1054,7 +1050,7 @@ class Cat():
         if mortality and not int(random.random() * mortality):
             if self.status == 'leader':
                 game.clan.leader_lives -= 1
-            self.die(died_by_condition=True)
+            self.die()
             return
 
         keys = self.injuries[injury].keys()
@@ -1109,7 +1105,7 @@ class Cat():
         if mortality and not int(random.random() * mortality):
             if self.status == 'leader':
                 game.clan.leader_lives -= 1
-            self.die(died_by_condition=True)
+            self.die()
             return False
 
 

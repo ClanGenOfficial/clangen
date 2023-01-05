@@ -66,6 +66,7 @@ class Illness:
                  medicine_duration,
                  medicine_mortality,
                  risks,
+                 herbs=None,
                  event_triggered=False):
         self.name = name
         self.severity = severity
@@ -75,6 +76,7 @@ class Illness:
         self.medicine_duration = int(medicine_duration)
         self.medicine_mortality = int(medicine_mortality)
         self.risks = risks
+        self.herbs = herbs if herbs else []
         self.new = event_triggered
 
         self.current_duration = duration
@@ -127,6 +129,7 @@ class Injury:
                  illness_infectiousness=None,
                  also_got=None,
                  cause_permanent=None,
+                 herbs=None,
                  event_triggered=False):
         self.name = name
         self.severity = severity
@@ -137,6 +140,7 @@ class Injury:
         self.illness_infectiousness = illness_infectiousness
         self.also_got = also_got
         self.cause_permanent = cause_permanent
+        self.herbs = herbs if herbs else []
         self.new = event_triggered
 
         self.current_duration = duration
@@ -181,6 +185,7 @@ class PermanentCondition:
                  mortality=0,
                  risks=None,
                  illness_infectiousness=None,
+                 herbs=None,
                  event_triggered=False):
         self.name = name
         self.severity = severity
@@ -189,6 +194,7 @@ class PermanentCondition:
         self.mortality = mortality
         self.risks = risks
         self.illness_infectiousness = illness_infectiousness
+        self.herbs = herbs if herbs else []
         self.new = event_triggered
 
         self.current_mortality = mortality

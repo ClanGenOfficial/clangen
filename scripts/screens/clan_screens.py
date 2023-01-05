@@ -1361,7 +1361,7 @@ class MedDenScreen(Screens):
     def screen_switches(self):
         self.hide_menu_buttons()
         self.back_button = UIImageButton(pygame.Rect((25, 25), (105, 30)), "", object_id="#back_button")
-        self.next_med = UIImageButton(pygame.Rect((650, 278), (34, 34)), "", object_id="#arrow_right_button")
+        self.next_med = UIImageButton(pygame.Rect((645, 278), (34, 34)), "", object_id="#arrow_right_button")
         self.last_med = UIImageButton(pygame.Rect((600, 278), (34, 34)), "", object_id="#arrow_left_button")
 
         if game.clan.game_mode != 'classic':
@@ -1434,12 +1434,14 @@ class MedDenScreen(Screens):
 
         self.meds_messages = UITextBoxTweaked(
             "",
-            pygame.Rect((108, 320), (600, 60)),
-            object_id=get_text_box_theme(),
+            pygame.Rect((108, 320), (600, 80)),
+            object_id=get_text_box_theme("#med_messages_box"),
             line_spacing=1
         )
 
         if self.meds:
+            med_messages = []
+
             amount_per_med = get_amount_cat_for_one_medic(game.clan)
             number = medical_cats_condition_fulfilled(Cat.all_cats.values(), amount_per_med,
                                                       give_clanmembers_covered=True)
@@ -1447,12 +1449,42 @@ class MedDenScreen(Screens):
                 insert = 'medicine cat'
             else:
                 insert = 'medicine cats'
-            meds_cover = f"Your {insert} can take care of up to {number} Clan members, including themselves."
+            meds_cover = f"Your {insert} can care for a Clan of up to {number} members, including themselves."
+
+            herb_amount = sum(game.clan.herbs.values())
+            med_concern = f"This should not appear."
+            if herb_amount == 0:
+                med_concern = f"The herb stores are empty and bare, this does not bode well."
+            elif 0 < herb_amount <= 5:
+                if len(self.meds) == 1:
+                    med_concern = f"The medicine cat worries over the herb stores, they don't have nearly enough for the Clan."
+                else:
+                    med_concern = f"The medicine cats worry over the herb stores, they don't have nearly enough for the Clan."
+            elif 5 < herb_amount <= 10:
+                med_concern = f"The herb stores are small, but it's enough for now."
+            elif 10 < herb_amount <= 20:
+                if len(self.meds) == 1:
+                    med_concern = f"The medicine cat is content with how many herbs they have stocked up."
+                else:
+                    med_concern = f"The medicine cats are content with how many herbs they have stocked up."
+            elif 20 < herb_amount <= 40:
+                if len(self.meds) == 1:
+                    med_concern = f"The herb stores are overflowing and the medicine cat has little worry."
+                else:
+                    med_concern = f"The herb stores are overflowing and the medicine cats have little worry."
+            elif 40 < herb_amount:
+                if len(self.meds) == 1:
+                    med_concern = f"StarClan has blessed them with plentiful herbs and the medicine cat sends their thanks to Silverpelt."
+                else:
+                    med_concern = f"StarClan has blessed them with plentiful herbs and the medicine cats send their thanks to Silverpelt."
+
+            med_messages.append(meds_cover)
+            med_messages.append(med_concern)
+            self.meds_messages.set_text("<br>".join(med_messages))
 
         else:
             meds_cover = f"You have no medicine cats, your clan will be at higher risk of death and sickness."
-
-        self.meds_messages.set_text(meds_cover)
+            self.meds_messages.set_text(meds_cover)
 
     def update_med_cat(self):
         if self.med_cat:
@@ -1501,8 +1533,8 @@ class MedDenScreen(Screens):
                                           cat.sprite,
                                           cat_object=cat)
             name = str(cat.name)
-            if len(name) >= 11:
-                short_name = str(cat.name)[0:9]
+            if len(name) >= 20:
+                short_name = str(cat.name)[0:18]
                 name = short_name + '...'
             self.med_name = pygame_gui.elements.ui_label.UILabel(pygame.Rect
                                                                  ((590, 155), (100, 30)),
@@ -1592,29 +1624,28 @@ class MedDenScreen(Screens):
 
     def draw_med_den(self):
         self.den_base = pygame_gui.elements.UIImage(pygame.Rect
-                                                    ((108, 95), (396, 216)),
+                                                    ((108, 95), (396, 224)),
                                                     pygame.image.load(
                                                         "resources/images/med_cat_den/base.png").convert_alpha()
                                                     )
 
-        # TODO: make this classic specific after testing
         herbs = game.clan.herbs
         for herb in herbs:
             if herb == 'cobweb':
                 self.herbs["cobweb1"] = pygame_gui.elements.UIImage(pygame.Rect
-                                                                    ((108, 95), (396, 216)),
+                                                                    ((108, 95), (396, 224)),
                                                                     pygame.image.load(
                                                                         "resources/images/med_cat_den/cobweb1.png").convert_alpha()
                                                                     )
                 if herbs["cobweb"] > 1:
                     self.herbs["cobweb2"] = pygame_gui.elements.UIImage(pygame.Rect
-                                                                        ((108, 95), (396, 216)),
+                                                                        ((108, 95), (396, 224)),
                                                                         pygame.image.load(
                                                                             "resources/images/med_cat_den/cobweb2.png").convert_alpha()
                                                                         )
                 continue
             self.herbs[herb] = pygame_gui.elements.UIImage(pygame.Rect
-                                                           ((108, 95), (396, 216)),
+                                                           ((108, 95), (396, 224)),
                                                            pygame.image.load(
                                                                f"resources/images/med_cat_den/{herb}.png").convert_alpha()
                                                            )

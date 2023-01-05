@@ -338,6 +338,8 @@ class Clan():
         clan_data["other_clans_relations"] = ",".join([str(i.relations) for i in self.all_clans])
         clan_data["other_clan_temperament"] = ",".join([str(i.temperament) for i in self.all_clans])
 
+        self.save_herbs(game.clan)
+
         with open(f'saves/{self.name}clan.json', 'w') as write_file:
             json_string = ujson.dumps(clan_data, indent=4)
             write_file.write(json_string)
@@ -349,7 +351,6 @@ class Clan():
         with open('saves/clanlist.txt', 'w') as write_file:
             write_file.write(list_data)
 
-        self.save_herbs(game.clan)
 
     def load_clan(self):
         if os.path.exists('saves/' + game.switches['clan_list'][0] + 'clan.json'):
@@ -617,19 +618,12 @@ class Clan():
         if not game.clan.name:
             return
         file_path = f"saves/{game.clan.name}/herbs.json"
-        if os.path.exists(file_path):
-            with open(file_path, 'r') as read_file:
-                clan.herbs = ujson.load(read_file)
-        else:
-            # generate a random set of herbs since the clan didn't have any saved
-            herbs = {}
-            random_herbs = random.choices(HERBS, k=random.randrange(3, 8))
-            for herb in random_herbs:
-                herbs.update({herb: random.randint(1, 3)})
-            with open(file_path, 'w') as rel_file:
-                json_string = ujson.dumps(herbs, indent=4)
-                rel_file.write(json_string)
-            clan.herbs = herbs
+        try:
+            with open(file_path, 'w') as file:
+                json_string = ujson.dumps(clan.herbs, indent=4)
+                file.write(json_string)
+        except:
+            print(f"Saving the herb data didn't work.")
 
     def load_pregnancy(self, clan):
         if not game.clan.name:

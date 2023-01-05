@@ -23,7 +23,20 @@
             "torn ear",
             "blood loss"
         ],
-        "cause_permanent": []
+        "cause_permanent": [],
+        "herb": [
+            "cobweb",
+            "horsetail",
+            "marigold",
+            "moss",
+            "oak_leaves",
+            "tansy",
+            "wild_garlic",
+            "dandelion",
+            "goldenrod",
+            "poppy",
+            "plantain"
+        ]
     },
 
     "bite-wound":{
@@ -50,7 +63,20 @@
             "torn pelt",
             "blood loss"
         ],
-        "cause_permanent": []
+        "cause_permanent": [],
+        "herb": [
+            "cobweb",
+            "horsetail",
+            "marigold",
+            "moss",
+            "oak_leaves",
+            "tansy",
+            "wild_garlic",
+            "dandelion",
+            "goldenrod",
+            "poppy",
+            "plantain"
+        ]
     },
 
     "cat bite":{
@@ -77,7 +103,20 @@
             "torn pelt",
             "blood loss"
         ],
-        "cause_permanent": []
+        "cause_permanent": [],
+        "herb": [
+            "cobweb",
+            "horsetail",
+            "marigold",
+            "moss",
+            "oak_leaves",
+            "tansy",
+            "wild_garlic",
+            "dandelion",
+            "goldenrod",
+            "poppy",
+            "plantain"
+        ]
     },
 
     "beak bite":{
@@ -104,7 +143,20 @@
             "torn pelt",
             "blood loss"
         ],
-        "cause_permanent": []
+        "cause_permanent": [],
+        "herb": [
+            "cobweb",
+            "horsetail",
+            "marigold",
+            "moss",
+            "oak_leaves",
+            "tansy",
+            "wild_garlic",
+            "dandelion",
+            "goldenrod",
+            "poppy",
+            "plantain"
+        ]
     },
 
     "snake bite":{
@@ -130,7 +182,20 @@
         "also_got": [
             "poisoned"
         ],
-        "cause_permanent": []
+        "cause_permanent": [],
+        "herb": [
+            "cobweb",
+            "horsetail",
+            "marigold",
+            "moss",
+            "oak_leaves",
+            "tansy",
+            "wild_garlic",
+            "dandelion",
+            "goldenrod",
+            "poppy",
+            "plantain"
+        ]
     },
 
     "rat bite":{
@@ -164,7 +229,21 @@
         "also_got": [
             "torn pelt"
         ],
-        "cause_permanent": []
+        "cause_permanent": [],
+        "herb": [
+            "cobweb",
+            "horsetail",
+            "marigold",
+            "moss",
+            "oak_leaves",
+            "tansy",
+            "wild_garlic",
+            "dandelion",
+            "burdock",
+            "goldenrod",
+            "poppy",
+            "plantain"
+        ]
     },
 
     "tick bites":{
@@ -187,7 +266,11 @@
             }
         ],
         "also_got": [],
-        "cause_permanent": []
+        "cause_permanent": [],
+        "herb": [
+            "moss",
+            "plantain"
+        ]
     },
 
     "blood loss":{
@@ -208,7 +291,15 @@
         "also_got": [
             "shock"
         ],
-        "cause_permanent": []
+        "cause_permanent": [],
+        "herb": [
+            "cobweb",
+            "horsetail",
+            "marigold",
+            "moss",
+            "dandelion",
+            "poppy"
+        ]
     },
 
     "broken jaw":{
@@ -237,6 +328,18 @@
         ],
         "cause_permanent": [
             "crooked jaw"
+        ],
+        "herb": [
+            "cobweb",
+            "horsetail",
+            "marigold",
+            "moss",
+            "oak_leaves",
+            "wild_garlic",
+            "dandelion",
+            "goldenrod",
+            "poppy",
+            "plantain"
         ]
     },
 
@@ -269,6 +372,16 @@
         "cause_permanent": [
             "weak leg",
             "twisted leg"
+        ],
+        "herb": [
+            "cobweb",
+            "horsetail",
+            "marigold",
+            "oak_leaves",
+            "wild_garlic",
+            "dandelion",
+            "poppy",
+            "plantain"
         ]
     },
 
@@ -303,6 +416,19 @@
             "lost a leg",
             "weak leg",
             "twisted leg"
+        ],
+        "herb": [
+            "cobweb",
+            "horsetail",
+            "marigold",
+            "moss",
+            "oak_leaves",
+            "tansy",
+            "wild_garlic",
+            "dandelion",
+            "goldenrod",
+            "poppy",
+            "plantain"
         ]
     },
 
@@ -327,6 +453,12 @@
         ],
         "cause_permanent": [
             "constant joint pain"
+        ],
+        "herbs": [
+            "daisy",
+            "marigold",
+            "dandelion",
+            "poppy"
         ]
     },
 
@@ -347,6 +479,12 @@
         "also_got": [
         ],
         "cause_permanent": [
+        ],
+        "herbs": [
+            "daisy",
+            "marigold",
+            "dandelion",
+            "poppy"
         ]
     },
 
@@ -366,6 +504,11 @@
         "risks": [],
         "also_got": [],
         "cause_permanent": [
+        ],
+        "herbs": [
+            "elder_leaves",
+            "dandelion",
+            "poppy"
         ]
     },
 
@@ -394,6 +537,19 @@
         ],
         "cause_permanent": [
             "lost their tail"
+        ],
+        "herb": [
+            "cobweb",
+            "horsetail",
+            "marigold",
+            "moss",
+            "oak_leaves",
+            "tansy",
+            "wild_garlic",
+            "dandelion",
+            "goldenrod",
+            "poppy",
+            "plantain"
         ]
     },
 
@@ -437,6 +593,11 @@
         ],
         "also_got": [],
         "cause_permanent": [
+        ],
+        "herbs": [
+            "oak_leaves",
+            "poppy",
+            "plantain"
         ]
     },
 
@@ -456,6 +617,12 @@
         "risks": [],
         "also_got": [],
         "cause_permanent": [
+        ],
+        "herbs": [
+            "daisy",
+            "marigold",
+            "dandelion",
+            "poppy"
         ]
     },
 
@@ -475,6 +642,10 @@
         "risks": [],
         "also_got": [],
         "cause_permanent": [
+        ],
+        "herbs": [
+            "dandelion",
+            "poppy"
         ]
     },
 
@@ -499,6 +670,10 @@
         ],
         "also_got": [],
         "cause_permanent": [
+        ],
+        "herb": [
+            "cobweb",
+            "plantain"
         ]
     },
 
@@ -572,6 +747,13 @@
         "also_got": [
         ],
         "cause_permanent": [
+        ],
+        "herb": [
+            "cobweb",
+            "moss",
+            "oak_leaves",
+            "goldenrod",
+            "poppy"
         ]
     },
 
@@ -597,6 +779,14 @@
         "also_got": [],
         "cause_permanent": [
             "partial hearing loss"
+        ],
+        "herb": [
+            "cobweb",
+            "moss",
+            "oak_leaves",
+            "goldenrod",
+            "poppy",
+            "plantain"
         ]
     },
 
@@ -627,7 +817,10 @@
         "also_got": [],
         "cause_permanent": [
             "lost a leg",
-            "lost their tail"
+            "lost their tail",
+            "moss",
+            "dandelion",
+            "poppy"
         ]
     },
 
@@ -654,6 +847,10 @@
             "blood loss"
         ],
         "cause_permanent": [
+            "horsetail",
+            "oak_leaves",
+            "raspberry",
+            "dandelion"
         ]
     },
 
@@ -692,6 +889,12 @@
         "also_got": [],
         "cause_permanent": [
             "raspy lungs"
+        ],
+        "herbs": [
+            "juniper",
+            "tansy",
+            "betony",
+            "plantain"
         ]
     },
 
@@ -716,6 +919,16 @@
         ],
         "also_got": [],
         "cause_permanent": [
+        ],
+        "herb": [
+            "cobweb",
+            "moss",
+            "oak_leaves",
+            "tansy",
+            "dandelion",
+            "goldenrod",
+            "poppy",
+            "plantain"
         ]
     },
 
@@ -742,6 +955,16 @@
         "cause_permanent": [
             "lost their tail",
             "lost a leg"
+        ],
+        "herb": [
+            "cobweb",
+            "moss",
+            "oak_leaves",
+            "tansy",
+            "dandelion",
+            "goldenrod",
+            "poppy",
+            "plantain"
         ]
     },
 
@@ -766,6 +989,11 @@
         ],
         "also_got": [],
         "cause_permanent": [
+        ],
+        "herbs": [
+            "juniper",
+            "thyme",
+            "poppy"
         ]
     },
 
@@ -787,6 +1015,11 @@
         "also_got": [],
         "cause_permanent": [
             "recurring shock"
+        ],
+        "herbs": [
+            "juniper",
+            "thyme",
+            "poppy"
         ]
     },
 
@@ -849,6 +1082,9 @@
             "heat exhaustion"
         ],
         "cause_permanent": [
+        ],
+        "herbs": [
+            "moss"
         ]
     },
 
@@ -875,7 +1111,9 @@
             "one bad eye",
             "blind",
             "loss of balance",
-            "partial hearing loss"
+            "partial hearing loss",
+            "dandelion",
+            "poppy"
         ]
     },
 
@@ -904,7 +1142,19 @@
         "cause_permanent": [
             "blind",
             "one bad eye",
-            "failing eyesight"
+            "failing eyesight",
+            "goldenrod"
+        ],
+        "herb": [
+            "cobweb",
+            "horsetail",
+            "moss",
+            "oak_leaves",
+            "tansy",
+            "wild_garlic",
+            "dandelion",
+            "poppy",
+            "plantain"
         ]
     },
 
@@ -932,6 +1182,17 @@
             "torn pelt"
         ],
         "cause_permanent": [
+        ],
+        "herb": [
+            "cobweb",
+            "horsetail",
+            "moss",
+            "oak_leaves",
+            "tansy",
+            "wild_garlic",
+            "dandelion",
+            "poppy",
+            "plantain"
         ]
     },
 
@@ -958,7 +1219,9 @@
         "also_got": [
         ],
         "cause_permanent": [
-            "paralyzed"
+            "paralyzed",
+            "dandelion",
+            "poppy"
         ]
     },
     
@@ -989,6 +1252,10 @@
             "shock"
         ],
         "cause_permanent": [
+        ],
+        "herbs": [
+            "tansy",
+            "dandelion"
         ]
     }
 }

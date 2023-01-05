@@ -14,7 +14,6 @@
         "illness_infectiousness": [
         ],
         "risks": [
-
         ]
     },
     "lost a leg": {
@@ -215,6 +214,9 @@
                 "name": "whitecough",
                 "chance": 20
             }
+        ],
+        "herbs": [
+            "betony"
         ]
     },
     "wasting disease": {
@@ -260,6 +262,9 @@
                 "name": "redcough",
                 "chance": 100
             }
+        ],
+        "herbs": [
+            "juniper"
         ]
     },
     "blind": {
@@ -378,6 +383,12 @@
                 "name": "joint pain",
                 "chance": 10
             }
+        ],
+        "herbs": [
+            "daisy",
+            "marigold",
+            "dandelion",
+            "poppy"
         ]
     },
     "seizure prone": {
@@ -458,6 +469,11 @@
                 "name": "constant nightmares",
                 "chance": 20
             }
+        ],
+        "herbs": [
+            "juniper",
+            "thyme",
+            "poppy"
         ]
     },
     "lasting grief": {
@@ -479,6 +495,11 @@
                 "name": "grief stricken",
                 "chance": 50
             }
+        ],
+        "herbs": [
+            "juniper",
+            "thyme",
+            "poppy"
         ]
     }
 }
