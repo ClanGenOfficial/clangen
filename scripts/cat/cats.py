@@ -17,6 +17,7 @@ from scripts.utility import *
 from scripts.game_structure.game_essentials import *
 from scripts.cat_relations.relationship import *
 import scripts.game_structure.image_cache as image_cache
+from scripts.event_class import Single_Event
 
 
 class Cat():
@@ -389,13 +390,13 @@ class Cat():
             game.clan.leader_lives = 0
             if game.clan.instructor.df is False:
                 text = str(game.clan.leader.name) + ' has lost their last life and has travelled to StarClan.'
-                game.birth_death_events_list.append(text)
-                game.cur_events_list.append(text)
+                # game.birth_death_events_list.append(text)
+                game.cur_events_list.append(Single_Event(text, "birth_death", game.clan.leader.ID))
             else:
                 text = str(
                     game.clan.leader.name) + ' has lost their last life and has travelled to the Dark Forest.'
-                game.birth_death_events_list.append(text)
-                game.cur_events_list.append(text)
+                # game.birth_death_events_list.append(text)
+                game.cur_events_list.append(Single_Event(text, "birth_death", game.clan.leader.ID))
         else:
             self.dead = True
 
@@ -599,7 +600,7 @@ class Cat():
                 # adjust and append text to grief string list
                 text = ' '.join(text)
                 text = event_text_adjust(Cat, text, self, cat)
-                Cat.grief_strings[cat.ID] = text
+                Cat.grief_strings[cat.ID] = (text, (self.ID, cat.ID))
                 possible_strings.clear()
                 text = None
 
@@ -815,12 +816,10 @@ class Cat():
         """ Generates a thought for the cat, which displays on their profile. """
         all_cats = self.all_cats
         other_cat = random.choice(list(all_cats.keys()))
-        countdown = int(len(all_cats) / 3)
 
         # get other cat
-        while other_cat == self and countdown > 0:
+        while other_cat == self and len(all_cats) > 1:
             other_cat = random.choice(list(all_cats.keys()))
-            countdown -= 1
         other_cat = all_cats.get(other_cat)
 
         # get possible thoughts
@@ -1012,14 +1011,14 @@ class Cat():
                 game.clan.leader_lives -= 1
                 if game.clan.leader_lives > 0:
                     text = f"{self.name} lost a life to {illness}."
-                    game.health_events_list.append(text)
-                    game.birth_death_events_list.append(text)
-                    game.cur_events_list.append(text)
+                    # game.health_events_list.append(text)
+                    # game.birth_death_events_list.append(text)
+                    game.cur_events_list.append(Single_Event(text, ["birth_death", "health"], game.clan.leader.ID))
                 elif game.clan.leader_lives <= 0:
                     text = f"{self.name} lost their last life to {illness}."
-                    game.health_events_list.append(text)
-                    game.birth_death_events_list.append(text)
-                    game.cur_events_list.append(text)
+                    # game.health_events_list.append(text)
+                    # game.birth_death_events_list.append(text)
+                    game.cur_events_list.append(Single_Event(text, ["birth_death", "health"], game.clan.leader.ID))
             self.die(died_by_condition=True)
             return False
 
@@ -1453,8 +1452,8 @@ class Cat():
 
             if not random.random() * rate:
                 text = f"{self.name} had contact with {cat.name} and now has {illness_name}."
-                game.health_events_list.append(text)
-                game.cur_events_list.append(text)
+                # game.health_events_list.append(text)
+                game.cur_events_list.append(Single_Event(text, "health", [self.ID, cat.ID]))
                 self.get_ill(illness_name)
 
     def save_condition(self):
