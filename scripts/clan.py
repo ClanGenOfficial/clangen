@@ -12,6 +12,19 @@ from sys import exit
 
 
 class Clan():
+    BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach"]
+    
+    CAT_TYPES = [
+        "kitten",
+        "apprentice",
+        "warrior",
+        "medicine",
+        "deputy",
+        "leader",
+        "elder",
+        "general",
+    ]
+
     leader_lives = 0
     clan_cats = []
     starclan_cats = []
