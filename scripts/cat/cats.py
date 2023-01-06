@@ -1038,7 +1038,6 @@ class Cat():
 
     def moon_skip_injury(self, injury):
         """handles the moon skip for injury"""
-        print('test')
         if not self.is_injured():
             return
 
@@ -1067,9 +1066,7 @@ class Cat():
             self.injuries[injury].update({'moons_with': 1})
 
         # if the cat has an infected wound, the wound shouldn't heal till the illness is cured
-        print(self.injuries[injury]["complication"])
         if not self.injuries[injury]["complication"]:
-            print('decrease duration')
             self.injuries[injury]["duration"] -= 1
         if self.injuries[injury]["duration"] <= 0:
             self.healed_condition = True

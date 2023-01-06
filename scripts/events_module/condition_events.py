@@ -809,18 +809,21 @@ class Condition_Events():
 
         if usable_herbs:
             # determine the effect of the herb
+            possible_effects = []
             if conditions[condition]['mortality'] != 0:
-                effect = 'mortality'
-            elif conditions[condition]["risks"]:
-                effect = 'risks'
-            elif conditions[condition]['duration'] > 1:
-                effect = 'duration'
-            else:
+                possible_effects.append('mortality')
+            if conditions[condition]["risks"]:
+                possible_effects.append('risks')
+            if conditions[condition]['duration'] > 1:
+                possible_effects.append('duration')
+            if not possible_effects:
                 return
+
+            effect = random.choice(possible_effects)
 
             # deplete the herb
             herb_used = random.choice(usable_herbs)
-            amount_used = random.choice([1, 2])
+            amount_used = random.choice([1, 2, 3])
             game.clan.herbs[herb_used] -= amount_used
             if game.clan.herbs[herb_used] <= 0:
                 game.clan.herbs.pop(herb_used)
@@ -838,7 +841,7 @@ class Condition_Events():
                     risk["chance"] += 5
                     if risk["chance"] < 0:
                         risk["chance"] = 0
-            print(herb_used, condition, effect_message)
+            print(amount_used, herb_used, condition, effect_message)
 
             text = f"{cat.name} was given {herb_used.replace('_', ' ')} as treatment for {condition}. {effect_message}"
             game.herb_events_list.append(text)
