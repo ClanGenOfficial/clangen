@@ -1476,13 +1476,15 @@ class MedDenScreen(Screens):
                             break
                         elif illness == 'grief stricken':
                             if cat not in self.in_den_cats:
-                                self.out_den_cats.append(cat)
+                                if cat not in self.out_den_cats:
+                                    self.out_den_cats.append(cat)
                             if cat in self.minor_cats:
                                 self.minor_cats.remove(cat)
                             break
                         else:
                             if cat not in (self.in_den_cats and self.out_den_cats):
-                                self.minor_cats.append(cat)
+                                if cat not in self.in_den_cats and cat not in self.out_den_cats:
+                                    self.minor_cats.append(cat)
             self.tab_list = self.in_den_cats
             self.current_page = 1
             self.update_sick_cats()
@@ -1518,19 +1520,19 @@ class MedDenScreen(Screens):
             med_concern = f"This should not appear."
             if herb_amount == 0:
                 med_concern = f"The herb stores are empty and bare, this does not bode well."
-            elif 0 < herb_amount <= 5:
+            elif 0 < herb_amount <= 8:
                 if len(self.meds) == 1:
                     med_concern = f"The medicine cat worries over the herb stores, they don't have nearly enough for the Clan."
                 else:
                     med_concern = f"The medicine cats worry over the herb stores, they don't have nearly enough for the Clan."
-            elif 5 < herb_amount <= 12:
+            elif 8 < herb_amount <= 20:
                 med_concern = f"The herb stores are small, but it's enough for now."
-            elif 12 < herb_amount <= 25:
+            elif 20 < herb_amount <= 30:
                 if len(self.meds) == 1:
                     med_concern = f"The medicine cat is content with how many herbs they have stocked up."
                 else:
                     med_concern = f"The medicine cats are content with how many herbs they have stocked up."
-            elif 25 < herb_amount <= 50:
+            elif 30 < herb_amount <= 50:
                 if len(self.meds) == 1:
                     med_concern = f"The herb stores are overflowing and the medicine cat has little worry."
                 else:
@@ -1809,8 +1811,10 @@ class MedDenScreen(Screens):
         for herb in self.herbs:
             self.herbs[herb].kill()
         self.herbs = {}
-        self.med_info.kill()
-        self.med_name.kill()
+        if self.med_info:
+            self.med_info.kill()
+        if self.med_name:
+            self.med_name.kill()
         self.back_button.kill()
         if game.clan.game_mode != 'classic':
             self.cat_bg.kill()

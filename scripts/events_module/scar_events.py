@@ -24,6 +24,7 @@ class Scar_Events():
         """ 
         This function handles the scars
         """
+        
         scar_text = cat.possible_scar
 
         chance = int(random.random() * 13 - cat.injuries[injury_name]["moons_with"])

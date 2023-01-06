@@ -297,12 +297,13 @@ class Events():
             meds_available = get_med_cats(Cat)
             print(game.clan.herbs)
             for med in meds_available:
-                if sum(game.clan.herbs.values()) >= 20 and len(game.clan.herbs.keys()) >= 10:
+                if sum(game.clan.herbs.values()) >= 25 and len(game.clan.herbs.keys()) >= 10:
                     if not event_list:
                         event_list.append(f"No one gathered herbs this moon.")
                         break  # not gonna herb gather if they have a lot of herbs already
                     else:
                         event_list.append(f"{med.name} did not gather herbs this moon.")
+                        break
                 if game.clan.current_season in ['Newleaf', 'Greenleaf']:
                     amount = random.choices([0, 1, 2, 3], [1, 2, 2, 2], k=1)
                 elif game.clan.current_season == 'Leaf-fall':
@@ -332,13 +333,17 @@ class Events():
                 if not herbs_found:
                     event_list.append(f"{med.name} could not find any herbs this moon.")
                 else:
-                    if len(herbs_found) == 1:
-                        insert = f"{herb_display[0]}"
-                    elif len(herbs_found) == 2:
-                        insert = f"{herb_display[0]} and {herb_display[1]}"
-                    else:
-                        insert = f"{', '.join(herb_display[:-1])}, and {herb_display[-1]}"
-                    event_list.append(f"{med.name} gathered {insert} this moon.")
+                    try:
+                        if len(herbs_found) == 1:
+                            insert = f"{herb_display[0]}"
+                        elif len(herbs_found) == 2:
+                            insert = f"{herb_display[0]} and {herb_display[1]}"
+                        else:
+                            insert = f"{', '.join(herb_display[:-1])}, and {herb_display[-1]}"
+                        event_list.append(f"{med.name} gathered {insert} this moon.")
+                    except IndexError:
+                        event_list.append(f"{med.name} could not find any herbs this moon.")
+                        return
             game.herb_events_list.extend(event_list)
             print(game.clan.herbs)
 
@@ -1774,9 +1779,7 @@ class Events():
         """
         # check if the cat is ill, if game mode is classic, or if clan has sufficient med cats in expanded mode
         amount_per_med = get_amount_cat_for_one_medic(game.clan)
-        if not cat.is_ill() or game.clan.game_mode == 'classic' or \
-                (medical_cats_condition_fulfilled(Cat.all_cats.values(),
-                                                  amount_per_med) and game.clan.game_mode != 'cruel season'):
+        if not cat.is_ill() or game.clan.game_mode == 'classic':
             return
 
         # check how many kitties are already ill
@@ -1802,11 +1805,14 @@ class Events():
             # print('CURRENT SICK COUNT TOO HIGH', already_sick_count, alive_count)
             return
 
+        meds = get_med_cats(Cat)
+
         for illness in cat.illnesses:
             # check if illness can infect other cats
             if cat.illnesses[illness]["infectiousness"] == 0:
                 continue
             chance = cat.illnesses[illness]["infectiousness"]
+            chance += len(meds) * 10
             if not int(random.random() * chance):  # 1/chance to infect
                 # fleas are the only condition allowed to spread outside of cold seasons
                 if game.clan.current_season not in ["Leaf-bare", "Leaf-fall"] and illness != 'fleas':

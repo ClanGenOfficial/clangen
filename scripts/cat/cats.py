@@ -531,6 +531,8 @@ class Cat():
                     game.clan.herbs["rosemary"] -= amount_used
                     if game.clan.herbs["rosemary"] <= 0:
                         game.clan.herbs.pop("rosemary")
+                    if f"Rosemary was used for {self.name}'s body." not in game.herb_events_list:
+                        game.herb_events_list.append(f"Rosemary was used for {self.name}'s body.")
 
                 severity = random.choices(['major', 'minor'], weights=chance, k=1)
                 # give the cat the relevant severity text
@@ -1308,7 +1310,7 @@ class Cat():
 
         if len(new_injury.also_got) > 0 and not int(random.random() * 5):
             avoided = False
-            if 'blood loss' in new_injury.also_got:
+            if 'blood loss' in new_injury.also_got and len(get_med_cats(Cat)) != 0:
                 clan_herbs = set()
                 needed_herbs = {"horsetail", "raspberry", "marigold", "cobwebs"}
                 clan_herbs.update(game.clan.herbs.keys())
@@ -1323,7 +1325,8 @@ class Cat():
                     if game.clan.herbs[herb_used] <= 0:
                         game.clan.herbs.pop(herb_used)
                     avoided = True
-                    text = f"{herb_used.capitalize} was used to stop blood loss for {self.name}."
+                    text = f"{str(herb_used).capitalize()} was used to stop blood loss for {self.name}."
+                    print(herb_used)
                     game.herb_events_list.append(text)
 
             if not avoided:

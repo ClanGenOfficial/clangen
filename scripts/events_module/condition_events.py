@@ -38,17 +38,12 @@ class Condition_Events():
                 triggered = True
             return triggered
 
-        # one if-statement has a range of 10
-        number_of_conditions = 1 * 10
-        ratio = 125  # 1/125 times triggering for each cat each moon
-
         event_string = self.handle_already_ill(cat)
 
         # ---------------------------------------------------------------------------- #
         #                              make cats sick                                  #
         # ---------------------------------------------------------------------------- #
-        chance_number = number_of_conditions * ratio
-        random_number = int(random.random() * chance_number)
+        random_number = int(random.random() * 300)
         if not cat.dead and not cat.is_ill() and random_number <= 10:
             season_dict = ILLNESSES_SEASON_LIST[season]
             possible_illnesses = []
@@ -807,7 +802,7 @@ class Condition_Events():
         needed_herbs = set()
         clan_herbs.update(game.clan.herbs.keys())
         needed_herbs.update(source[condition]["herbs"])
-        herb_set = needed_herbs.intersection(clan_herbs)
+        herb_set = clan_herbs.intersection(needed_herbs)
         usable_herbs = []
         usable_herbs.extend(herb_set)
 
@@ -831,7 +826,7 @@ class Condition_Events():
             effect = random.choice(possible_effects)
 
             # deplete the herb
-            herb_used = random.choice(usable_herbs)
+            herb_used = usable_herbs[0]
             if game.clan.herbs[herb_used] == 1:
                 amount_used = 1
             else:
@@ -861,7 +856,7 @@ class Condition_Events():
                     risk["chance"] += 11 - modifier + int(amount_used * 1.5)
                     if risk["chance"] < 0:
                         risk["chance"] = 0
-            print(amount_used, herb_used, condition, effect_message, "modifier:", modifier)
+            print(amount_used, herb_used, condition, effect_message, "modifier:", 11 - modifier + int(amount_used * 1.5))
 
             text = f"{cat.name} was given {herb_used.replace('_', ' ')} as treatment for {condition}. {effect_message}"
             game.herb_events_list.append(text)

@@ -613,7 +613,9 @@ class ProfileScreen(Screens):
                                                          object_id="#med_den_button"
         )
         self.profile_elements["med_den"].hide()
-        if self.the_cat.status in ['medicine cat', 'medicine cat apprentice'] or self.the_cat.is_ill() or self.the_cat.is_injured() or self.the_cat.is_disabled():
+        if not (self.the_cat.dead or self.the_cat.outside) and (self.the_cat.status in ['medicine cat', 'medicine cat apprentice'] or \
+                self.the_cat.is_ill() or \
+                self.the_cat.is_injured()):
             self.profile_elements["med_den"].show()
 
 
