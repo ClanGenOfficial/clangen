@@ -239,7 +239,7 @@ class EventsScreen(Screens):
     def screen_switches(self):
         cat_profiles()
 
-        self.heading = pygame_gui.elements.UITextBox("Check this page to which event are currently happening in the "
+        self.heading = pygame_gui.elements.UITextBox("Check this page to which events are currently happening in the "
                                                      "Clan",
                                                      pygame.Rect((100, 110), (600, 40)),
                                                      object_id=get_text_box_theme())
