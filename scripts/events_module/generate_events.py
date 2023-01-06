@@ -14,13 +14,12 @@ CAT_TYPES = [
 
 BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach"]
 
+resource_directory = "resources/dicts/events/"
+
 class GenerateEvents():
 
     @staticmethod
     def get_event_dicts(event_triggered, cat_type, biome):
-        assert cat_type in CAT_TYPES
-        assert biome in BIOME_TYPES
-
         events = None
         try:
             with open(
@@ -209,7 +208,4 @@ Use these to determine what corruption level the main cat should have, if releva
 You can mix and match corruption tags if you feel an event is on the line between two of them, the code will allow the event for a cat with either of the corruption levels tagged
 
 """
-
-
-resource_directory = "resources/dicts/events/"
 
