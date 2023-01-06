@@ -579,6 +579,8 @@ class Events():
                     str(game.clan.name) + "Clan, honoring their " +
                     str(random_honor) + "."
                 ])
+                if cat.trait == 'bloodthirsty':
+                    ceremony.extend([str(cat.name.prefix) + " has worked long and hard to earn their warrior name but " + str(game.clan.leader.name) + " can't help but to shiver in unease as they name them " + str(cat.name) + " after their " + str(random_honor) + "."])
             else:
                 ceremony.extend([str(game.clan.name) + "Clan welcomes " + str(cat.name.prefix) +
                                  str(cat.name.suffix) + " as a new warrior, honoring their " +
@@ -593,7 +595,8 @@ class Events():
                 + mentor_name + " as their mentor.",
                 "Newly-made apprentice " + str(cat.name) +
                 " touched noses with their new mentor, " +
-                mentor_name + "."
+                mentor_name + ".",
+                str(cat.name) + " carefully touches noses with their new mentor, " + mentor_name + ", looking quite intimidated and nervous."
             ])
             if cat.parent1 is not None and str(
                     cat_class.all_cats[cat.parent1].name) != str(
@@ -616,7 +619,8 @@ class Events():
                     " that they can do anything any cat can. " +
                     str(game.clan.leader.name) + " assigns " +
                     mentor_name +
-                    " as their mentor to make sure that happens."
+                    " as their mentor to make sure that happens.",
+                    "Standing proud and tall before their new mentor " + str(cat.name) +  " promises " + mentor_name + " that together they will prove to everyone that they will be the best warrior."
                 ])
 
         elif (promoted_to == 'apprentice') and cat.mentor is None:
@@ -649,7 +653,10 @@ class Events():
                     [str(cat.name) + " is taken to speak with StarClan. They are now a full medicine cat of the Clan.",
                      "The senior medicine cat has thought long and hard about this and gives " + str(cat.name.prefix) +
                      "paw their full name of " + str(cat.name) + ". StarClan gives their blessing and the stars "
-                     "twinkle in celebration."])
+                     "twinkle in celebration.", 
+                     f"With the stars softly shining and lighting their pelts, the senior medicine cat gives "
+                     f"{cat.name.prefix} their full name of {cat.name}. They both share the rest of the night "
+                     "with StarClan, celebrating their good fortune in having another medicine cat."])
                 
         elif promoted_to == 'elder' and not leader_dead:
             involved_cats.append(game.clan.leader.ID)

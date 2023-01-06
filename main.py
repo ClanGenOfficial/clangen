@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import sys
 import os
+import traceback
 directory = os.path.dirname(__file__)
 if directory:
     os.chdir(directory)
@@ -77,7 +78,7 @@ if clan_list:
         load_cats()
         clan_class.load_clan()
     except Exception as e:
-        print("\nERROR MESSAGE:\n", e, "\n")
+        print(traceback.format_exc())
         if not game.switches['error_message']:
             game.switches[
                 'error_message'] = 'There was an error loading the cats file!'
