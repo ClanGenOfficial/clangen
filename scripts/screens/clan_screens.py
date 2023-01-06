@@ -1466,7 +1466,7 @@ class MedDenScreen(Screens):
                             self.minor_cats.append(cat)
                 if cat.illnesses:
                     for illness in cat.illnesses:
-                        if cat.illnesses[illness]["severity"] != 'minor':
+                        if cat.illnesses[illness]["severity"] != 'minor' and illness != 'grief stricken':
                             if cat not in self.in_den_cats:
                                 self.in_den_cats.append(cat)
                             if cat in self.out_den_cats:
@@ -1565,7 +1565,7 @@ class MedDenScreen(Screens):
             for x in range(len(self.cat_names)):
                 self.cat_names[x].show()
             for button in self.conditions_hover:
-                self.conditions_hover[button].kill()
+                self.conditions_hover[button].show()
         elif self.open_tab == "log":
             self.hurt_sick_title.hide()
             self.last_page.hide()
@@ -1577,6 +1577,8 @@ class MedDenScreen(Screens):
                 self.cat_buttons[cat].hide()
             for x in range(len(self.cat_names)):
                 self.cat_names[x].hide()
+            for button in self.conditions_hover:
+                self.conditions_hover[button].hide()
 
             self.log_title.show()
             self.log_box.show()

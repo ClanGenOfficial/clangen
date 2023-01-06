@@ -168,7 +168,8 @@ class Events():
             meds_available = get_med_cats(Cat)
             print(game.clan.herbs)
             for med in meds_available:
-                if sum(game.clan.herbs.values()) >= 20:
+                if sum(game.clan.herbs.values()) >= 20 and len(game.clan.herbs.keys()) >= 10:
+                    game.herb_events_list.append(f"{med.name} did not gather herbs this moon.")
                     break  # not gonna herb gather if they have a lot of herbs already
                 if game.clan.current_season in ['Newleaf', 'Greenleaf']:
                     amount = random.choices([0, 1, 2, 3], [1, 2, 2, 2], k=1)
@@ -364,6 +365,10 @@ class Events():
                 possible_events.extend([
                     f"The persistent, dry heat managed to cause a small fire in the herb stores. While no one was "
                     f"injured, the herbs are little more than ashes now."
+                ])
+            elif game.clan.biome == 'Beach' and game.clan.current_season in ["Leaf-fall", "Leaf-bare"]:
+                possible_events.extend([
+                    f"A huge wave crashes into camp, leaving everyone soaked and the herb stores irreparably damaged."
                 ])
             game.clan.herbs.clear()
             chosen_event = choice(possible_events)
