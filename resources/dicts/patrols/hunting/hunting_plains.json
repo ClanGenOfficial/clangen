@@ -2176,7 +2176,7 @@
         "win_skills": ["smart", "very smart", "extremely smart", "good teacher", "great teacher", "fantastic teacher"],
         "win_trait": ["adventurous", "bold", "confident", "daring", "playful", "ambitious", "fierce", "shameless"],
         "fail_skills": ["None"],
-        "fail_trait": ["childish", "nervous"]],
+        "fail_trait": ["childish", "nervous"],
         "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
