@@ -3659,7 +3659,7 @@ null
     "chance_of_success": 50,
     "exp": 15,
     "success_text": [
-        "Spotting the gray fox they've tracked dipping into a shletered valley, r_c hangs back, sneaking around until they spot the fox caching a bird kill in an old towering tree stump. They simply wait for it to finish and leave, then creep in to steal the fox's hard work, bringing the prize back to camp for the freshkill pile. Sometimes winning a battle doesn't require fighting.",
+        "Spotting the gray fox they've tracked dipping into a sheltered valley, r_c hangs back, sneaking around until they spot the fox caching a bird kill in an old towering tree stump. They simply wait for it to finish and leave, then creep in to steal the fox's hard work, bringing the prize back to camp for the freshkill pile. Sometimes winning a battle doesn't require fighting.",
         null,
         "s_c tracks down a gray fox, and carefully cosiders it as an opponent. Stocky, yes, but they finally decide they can take it, and burst from cover, using surprise to get in a couple vicious swipes to the fox's face while its jaws are still full of prey. Yelping, the gray fox retreats from the cat, unwilling to risk more split blood, and s_c picks up the rat it carried with a proud grin.",
         "It's a situation that calls for careful calm, not implusive action. s_c tracks down a gray fox at the end of the scent trail, holding a little plump mouse, and waits carefully. Eventually, the fox tries to cache its freshkill in a little hole. s_c picks it up once the fox leaves, strolling back to camp having successfully outwitted the competing predator."
@@ -3776,7 +3776,7 @@ null
         null,
         "Finding a gray fox holding a mouse that would make a nice addition to c_n's freshkill pile, r_c goes to attack it. But the fox is just as keen to keep it as r_c is to win it, and they're injured in the resulting fight.",
         null,
-        "s_c hones in on the scent, and as soon as they spot the gray fox with a dead rat hanging from its jaws, recklessly throwes themselves to the attack. But the fox is a little too desperate to keep itself from harm, and s_c has to retreat from the fighting bleeding."
+        "s_c hones in on the scent, and as soon as they spot the gray fox with a dead rat hanging from its jaws, recklessly throwes themselves to the attack. But the fox is a little too desperate to keep itself from harm, and s_c has to retreat from the fight bleeding."
     ],
     "win_skills": ["good hunter", "great hunter", "fantastic hunter", "good fighter", "great fighter", "excellent fighter"],
     "win_trait": ["altruistic", "calm", "careful", "faithful", "insecure", "loyal", "nervous", "patient", "responsible", "righteous", "thoughtful", "wise"],
