@@ -583,16 +583,20 @@ class ProfileScreen(Screens):
             if game.clan.current_season == 'Newleaf':
                 self.profile_elements["background"] = pygame_gui.elements.UIImage(pygame.Rect((55, 200), (240, 210)),
                                                                                   self.newleaf_plt)
+                self.profile_elements["background"].disable()
             elif game.clan.current_season == 'Greenleaf':
                 self.profile_elements["background"] = pygame_gui.elements.UIImage(pygame.Rect((55, 200), (240, 210)),
                                                                                   self.greenleaf_plt)
+                self.profile_elements["background"].disable()
             elif game.clan.current_season == 'Leaf-bare':
                 self.profile_elements["background"] = pygame_gui.elements.UIImage(pygame.Rect((55, 200), (240, 210)),
                                                                                   self.leafbare_plt)
+                self.profile_elements["background"].disable()
             elif game.clan.current_season == 'Leaf-fall':
                 self.profile_elements["background"] = pygame_gui.elements.UIImage(pygame.Rect((55, 200), (240, 210)),
                                                                                   self.leaffall_plt)
-        self.profile_elements["background"].disable()
+                self.profile_elements["background"].disable()
+
 
         # Create cat image object
         self.profile_elements["cat_image"] = pygame_gui.elements.UIImage(pygame.Rect((100, 200), (150, 150)),
