@@ -612,8 +612,10 @@ class ProfileScreen(Screens):
                                                          "",
                                                          object_id="#med_den_button"
         )
-        if self.the_cat.status not in ['medicine cat', 'medicine cat apprentice'] or self.the_cat.dead or self.the_cat.outside:
-            self.profile_elements["med_den"].hide()
+        self.profile_elements["med_den"].hide()
+        if self.the_cat.status in ['medicine cat', 'medicine cat apprentice'] or self.the_cat.is_ill() or self.the_cat.is_injured() or self.the_cat.is_disabled():
+            self.profile_elements["med_den"].show()
+
 
         # Determine where the next and previous cat buttons lead
         self.determine_previous_and_next_cat()

@@ -487,7 +487,6 @@ class Condition_Events():
             self.use_herbs(cat, injury, injuries, INJURIES)
 
             skipped = cat.moon_skip_injury(injury)
-            print(injury, cat.healed_condition)
             if skipped:
                 continue
 
@@ -592,7 +591,15 @@ class Condition_Events():
                 condition_appears = False
 
             if condition_appears is True:
-                self.use_herbs(cat, condition, conditions, PERMANENT)
+                chance = 0
+                if conditions[condition]["severity"] == 'minor':
+                    chance = 5
+                elif conditions[condition]["severity"] == 'major':
+                    chance = 3
+                elif conditions[condition]["severity"] == 'severe':
+                    chance = 2
+                if not int(random.random() * chance):
+                    self.use_herbs(cat, condition, conditions, PERMANENT)
 
             # checking if the cat has a congenital condition to reveal
             condition_appears = cat.moon_skip_permanent_condition(condition)
@@ -808,14 +815,16 @@ class Condition_Events():
             return
 
         if usable_herbs:
+            keys = conditions[condition].keys()
             # determine the effect of the herb
             possible_effects = []
             if conditions[condition]['mortality'] != 0:
                 possible_effects.append('mortality')
             if conditions[condition]["risks"]:
                 possible_effects.append('risks')
-            if conditions[condition]['duration'] > 1:
-                possible_effects.append('duration')
+            if 'duration' in keys:
+                if conditions[condition]['duration'] > 1:
+                    possible_effects.append('duration')
             if not possible_effects:
                 return
 
@@ -823,25 +832,36 @@ class Condition_Events():
 
             # deplete the herb
             herb_used = random.choice(usable_herbs)
-            amount_used = random.choice([1, 2, 3])
+            if game.clan.herbs[herb_used] == 1:
+                amount_used = 1
+            else:
+                amount_used = random.randrange(1, game.clan.herbs[herb_used])
             game.clan.herbs[herb_used] -= amount_used
             if game.clan.herbs[herb_used] <= 0:
                 game.clan.herbs.pop(herb_used)
 
+            # applying a modifier for herb priority. herbs that are better for the condition will have stronger effects
+            count = 0
+            for herb in source[condition]['herbs']:
+                count += 1
+                if herb == herb_used:
+                    break
+            modifier = count
+
             effect_message = 'this should not show up'
             if effect == 'mortality':
                 effect_message = 'They will be less likely to die.'
-                conditions[condition]["mortality"] += 5
+                conditions[condition]["mortality"] += 11 - modifier + int(amount_used * 1.5)
             elif effect == 'duration':
                 effect_message = 'They will heal sooner.'
                 conditions[condition]["duration"] -= 1
             elif effect == 'risks':
                 effect_message = 'The risks associated with their condition are lowered.'
                 for risk in conditions[condition]["risks"]:
-                    risk["chance"] += 5
+                    risk["chance"] += 11 - modifier + int(amount_used * 1.5)
                     if risk["chance"] < 0:
                         risk["chance"] = 0
-            print(amount_used, herb_used, condition, effect_message)
+            print(amount_used, herb_used, condition, effect_message, "modifier:", modifier)
 
             text = f"{cat.name} was given {herb_used.replace('_', ' ')} as treatment for {condition}. {effect_message}"
             game.herb_events_list.append(text)
@@ -849,6 +869,9 @@ class Condition_Events():
             # if they didn't get any herbs, make them more likely to die!! kill the kitties >:)
             if conditions[condition]["mortality"] > 2:
                 conditions[condition]["mortality"] -= 1
+            for risk in conditions[condition]["risks"]:
+                if risk['chance'] > 2:
+                    risk['chance'] -= 1
 
 
 # ---------------------------------------------------------------------------- #

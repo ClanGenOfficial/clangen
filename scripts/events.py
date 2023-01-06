@@ -298,8 +298,11 @@ class Events():
             print(game.clan.herbs)
             for med in meds_available:
                 if sum(game.clan.herbs.values()) >= 20 and len(game.clan.herbs.keys()) >= 10:
-                    game.herb_events_list.append(f"No one gathered herbs this moon.")
-                    break  # not gonna herb gather if they have a lot of herbs already
+                    if not event_list:
+                        event_list.append(f"No one gathered herbs this moon.")
+                        break  # not gonna herb gather if they have a lot of herbs already
+                    else:
+                        event_list.append(f"{med.name} did not gather herbs this moon.")
                 if game.clan.current_season in ['Newleaf', 'Greenleaf']:
                     amount = random.choices([0, 1, 2, 3], [1, 2, 2, 2], k=1)
                 elif game.clan.current_season == 'Leaf-fall':
@@ -310,6 +313,9 @@ class Events():
                     herbs_found = random.sample(HERBS, k=amount[0])
                     herb_display = []
                     for herb in herbs_found:
+                        # TODO: need to add bee sting as an injury so that these two herbs are relevant.
+                        if herb in ['dandelion', 'blackberry']:
+                            continue
                         if game.clan.current_season in ['Newleaf', 'Greenleaf']:
                             amount = random.choices([1, 2, 3], [3, 3, 1], k=1)
                         else:
@@ -355,17 +361,27 @@ class Events():
                     break
             herb_amount = randrange(1, int(herbs[bad_herb] + 2))
             # deplete the herb
-            game.clan.herbs[bad_herb] -= herb_amount
+            herbs[bad_herb] -= herb_amount
             insert2 = 'some of'
-            if game.clan.herbs[bad_herb] <= 0:
-                game.clan.herbs.pop(bad_herb)
+            if herbs[bad_herb] <= 0:
+                herbs.pop(bad_herb)
                 insert2 = "all of"
 
             event = f"As the herb stores are inspected by the {insert}, it's noticed that {insert2} the {bad_herb} has gotten old and gone bad."
             game.herb_events_list.append(event)
             game.cur_events_list.append(Single_Event(event, "health"))
 
-        if not int(random.random() * 80) and sum(game.clan.herbs.values()) > 0 and len(meds) > 0:
+        elif not int(random.random() * 10) and 'moss' in herbs:
+            herb_amount = randrange(1, herbs['moss'] + 1)
+            herbs['moss'] -= herb_amount
+            if herbs['moss'] <= 0:
+                herbs.pop('moss')
+            event = f"The medicine den nests have been refreshed with new moss from the herb stores."
+            game.herb_events_list.append(event)
+            game.cur_events_list.append(Single_Event(event, "health"))
+            print('moss -', herb_amount)
+
+        elif not int(random.random() * 80) and sum(game.clan.herbs.values()) > 0 and len(meds) > 0:
 
             possible_events = []
             if self.at_war is True:

@@ -45,7 +45,12 @@
                 "chance": 20
             }
         ],
-        "herbs": []
+        "herbs": [
+            "daisy",
+            "juniper",
+            "marigold",
+            "ragwort"
+        ]
     },
     "born without a leg": {
         "severity": "major",
@@ -71,7 +76,12 @@
                 "chance": 40
             }
         ],
-        "herbs": []
+        "herbs": [
+            "daisy",
+            "juniper",
+            "marigold",
+            "ragwort"
+        ]
     },
     "weak leg": {
         "severity": "minor",
@@ -97,7 +107,12 @@
                 "chance": 40
             }
         ],
-        "herbs": []
+        "herbs": [
+            "daisy",
+            "juniper",
+            "marigold",
+            "ragwort"
+        ]
     },
     "twisted leg": {
         "severity": "major",
@@ -123,7 +138,12 @@
                 "chance": 40
             }
         ],
-        "herbs": []
+        "herbs": [
+            "daisy",
+            "juniper",
+            "marigold",
+            "ragwort"
+        ]
     },
     "lost their tail": {
         "severity": "minor",
@@ -149,7 +169,10 @@
                 "chance": 10
             }
         ],
-        "herbs": []
+        "herbs": [
+            "juniper",
+            "ragwort"
+        ]
     },
     "born without a tail": {
         "severity": "minor",
@@ -201,7 +224,12 @@
                 "chance": 20
             }
         ],
-        "herbs": []
+        "herbs": [
+            "daisy",
+            "juniper",
+            "ragwort",
+            "marigold"
+        ]
     },
     "raspy lungs": {
         "severity": "minor",
@@ -224,7 +252,8 @@
             }
         ],
         "herbs": [
-            "betony"
+            "betony",
+            "mullein"
         ]
     },
     "wasting disease": {
@@ -272,7 +301,8 @@
             }
         ],
         "herbs": [
-            "juniper"
+            "juniper",
+            "ragwort"
         ]
     },
     "blind": {
@@ -399,9 +429,9 @@
         ],
         "herbs": [
             "daisy",
+            "juniper",
             "marigold",
-            "dandelion",
-            "poppy"
+            "ragwort"
         ]
     },
     "seizure prone": {
@@ -424,7 +454,10 @@
                 "chance": 10
             }
         ],
-        "herbs": []
+        "herbs": [
+            "ragwort",
+            "juniper"
+        ]
     },
     "allergies": {
         "severity": "minor",
@@ -487,8 +520,8 @@
             }
         ],
         "herbs": [
-            "juniper",
             "thyme",
+            "juniper",
             "poppy"
         ]
     },
@@ -513,8 +546,8 @@
             }
         ],
         "herbs": [
-            "juniper",
             "thyme",
+            "juniper",
             "poppy"
         ]
     }

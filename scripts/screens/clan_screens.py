@@ -1709,7 +1709,6 @@ class MedDenScreen(Screens):
             if cat.permanent_condition:
                 condition_list.extend(cat.permanent_condition.keys())
             conditions = ",<br>".join(condition_list)
-            print(conditions)
 
             self.cat_buttons["able_cat" + str(i)] = UISpriteButton(pygame.Rect
                                                                    ((pos_x, pos_y), (50, 50)),

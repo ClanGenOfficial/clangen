@@ -24,7 +24,10 @@
 
         ],
         "herbs": [
-            "poppy"
+            "juniper",
+            "poppy",
+            "thyme",
+            "ragwort"
         ]
     },
     "diarrhea": {
@@ -50,10 +53,10 @@
         "infectiousness": 0,
         "risks": [],
         "herbs": [
+            "betony",
+            "mullein",
             "juniper",
-            "mallow",
-            "parsley",
-            "betony"
+            "mallow"
         ]
     },
     "fleas": {
@@ -115,13 +118,13 @@
             }
         ],
         "herbs": [
-            "juniper",
-            "moss",
+            "catmint",
             "tansy",
             "mullein",
-            "poppy",
             "plantain",
-            "catmint"
+            "juniper",
+            "poppy",
+            "moss"
         ]
     },
     "kittencough": {
@@ -152,13 +155,13 @@
             }
         ],
         "herbs": [
-            "juniper",
-            "moss",
+            "catmint",
             "tansy",
             "mullein",
-            "poppy",
             "plantain",
-            "catmint"
+            "juniper",
+            "poppy",
+            "moss"
         ]
     },
     "an infected wound": {
@@ -189,13 +192,10 @@
             }
         ],
         "herbs": [
-            "horsetail",
             "marigold",
-            "wild_garlic",
-            "dandelion",
             "burdock",
-            "poppy",
-            "plantain"
+            "wild_garlic",
+            "poppy"
         ]
     },
     "carrionplace disease": {
@@ -245,11 +245,14 @@
         "infectiousness": 0,
         "risks": [],
         "herbs": [
-            "moss",
-            "tansy",
-            "dandelion",
+            "lungwort",
             "mullein",
-            "poppy"
+            "tansy",
+            "plantain",
+            "juniper",
+            "ragwort",
+            "poppy",
+            "moss"
         ]
     },
     "running nose": {
@@ -280,9 +283,9 @@
             }
         ],
         "herbs": [
-            "tansy",
-            "poppy",
-            "plantain"
+            "ragwort",
+            "juniper",
+            "poppy"
         ]
     },
     "whitecough": {
@@ -313,13 +316,14 @@
             }
         ],
         "herbs": [
-            "juniper",
-            "moss",
+            "catmint",
+            "plantain",
             "tansy",
             "mullein",
+            "juniper",
+            "ragwort",
             "poppy",
-            "plantain",
-            "catmint"
+            "moss"
         ]
     },
     "yellowcough": {
@@ -350,9 +354,7 @@
             }
         ],
         "herbs": [
-            "lungwort",
-            "tansy",
-            "mullein"
+            "lungwort"
         ]
     },
     "a festering wound": {
@@ -378,13 +380,13 @@
         "infectiousness": 0,
         "risks": [],
         "herbs": [
-            "horsetail",
             "marigold",
-            "moss",
-            "dandelion",
             "burdock",
+            "oak_leaves",
+            "ragwort",
+            "juniper",
             "poppy",
-            "plantain"
+            "moss"
         ]
     },
     "heat stroke": {
@@ -410,6 +412,8 @@
         "infectiousness": 0,
         "risks": [],
         "herbs": [
+            "juniper",
+            "ragwort",
             "moss"
         ]
     },
@@ -441,8 +445,9 @@
             }
         ],
         "herbs": [
-            "moss",
-            "poppy"
+            "juniper",
+            "ragwort",
+            "moss"
         ]
     },
     "stomachache": {
@@ -475,8 +480,7 @@
         "herbs": [
             "juniper",
             "mallow",
-            "parsley",
-            "dandelion",
+            "ragwort",
             "poppy"
         ]
     },

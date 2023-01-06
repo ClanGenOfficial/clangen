@@ -1308,11 +1308,10 @@ class Cat():
 
         if len(new_injury.also_got) > 0 and not int(random.random() * 5):
             avoided = False
-            if new_injury == 'recovering from birth':
+            if 'blood loss' in new_injury.also_got:
                 clan_herbs = set()
-                needed_herbs = set()
+                needed_herbs = {"horsetail", "raspberry", "marigold", "cobwebs"}
                 clan_herbs.update(game.clan.herbs.keys())
-                needed_herbs.update(INJURIES[new_injury]["herbs"])
                 herb_set = needed_herbs.intersection(clan_herbs)
                 usable_herbs = []
                 usable_herbs.extend(herb_set)
@@ -1324,7 +1323,8 @@ class Cat():
                     if game.clan.herbs[herb_used] <= 0:
                         game.clan.herbs.pop(herb_used)
                     avoided = True
-                    text = f"{herb_used} was used to help {self.name} during kitting."
+                    text = f"{herb_used.capitalize} was used to stop blood loss for {self.name}."
+                    game.herb_events_list.append(text)
 
             if not avoided:
                 self.also_got = True
