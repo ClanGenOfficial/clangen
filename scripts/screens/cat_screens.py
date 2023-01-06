@@ -95,22 +95,22 @@ def bs_blurb_text(cat):
     if backstory == 'halfclan2':
         bs_blurb = "This cat was born in another Clan, but chose to come to this Clan to be with their other parent."
     if backstory == 'outsider_roots1':
-        bs_blurb = "This cat was born into the clan, but one of their parents is an outsider that belongs to no clan."
+        bs_blurb = "This cat was born into the Clan, but one of their parents is an outsider that belongs to no Clan."
     if backstory == 'outsider_roots2':
-        bs_blurb = "This cat was born outside the clan, but came to live in the Clan with their parent at a young age."
+        bs_blurb = "This cat was born outside the Clan, but came to live in the Clan with their parent at a young age."
     if backstory == 'loner1':
         bs_blurb = "This cat joined the Clan by choice after living life as a loner."
     if backstory == 'loner2':
-        bs_blurb = "This cat used to live in a barn, but mostly stayed away from twolegs. They decided clanlife " \
+        bs_blurb = "This cat used to live in a barn, but mostly stayed away from Twolegs. They decided clanlife " \
                    "might be an interesting change of pace."
     if backstory == 'kittypet1':
-        bs_blurb = "This cat joined the Clan by choice after living life with twolegs as a kittypet."
+        bs_blurb = "This cat joined the Clan by choice after living life with Twolegs as a kittypet."
     if backstory == 'kittypet2':
-        bs_blurb = "This cat used to live on something called a “boat” with twolegs, but decided to join the clan."
+        bs_blurb = "This cat used to live on something called a “boat” with Twolegs, but decided to join the Clan."
     if backstory == 'rogue1':
         bs_blurb = "This cat joined the Clan by choice after living life as a rogue."
     if backstory == 'rogue2':
-        bs_blurb = "This cat used to live in a twolegplace, scrounging for what they could find. They thought " \
+        bs_blurb = "This cat used to live in a Twolegplace, scrounging for what they could find. They thought " \
                    "the Clan might offer them more security."
     if backstory == 'abandoned1':
         bs_blurb = "This cat was found by the Clan as a kit and has been living with them ever since."
@@ -118,15 +118,15 @@ def bs_blurb_text(cat):
         bs_blurb = "This cat was born into a kittypet life, but was brought to the Clan as a kit and has lived " \
                    "here ever since."
     if backstory == 'abandoned3':
-        bs_blurb = "This cat was born into another clan, but they were left here as a kit for the Clan to raise."
+        bs_blurb = "This cat was born into another Clan, but they were left here as a kit for the Clan to raise."
     if backstory == 'medicine_cat':
-        bs_blurb = "This cat was once a medicine cat in another clan."
+        bs_blurb = "This cat was once a medicine cat in another Clan."
     if backstory == 'otherclan':
-        bs_blurb = "This cat was born into another clan, but came to this Clan by choice."
+        bs_blurb = "This cat was born into another Clan, but came to this Clan by choice."
     if backstory == 'otherclan2':
         bs_blurb = "This cat was unhappy in their old Clan and decided to come here instead."
     if backstory == 'ostracized_warrior':
-        bs_blurb = "This cat was ostracized from their old clan, but no one really knows why."
+        bs_blurb = "This cat was ostracized from their old Clan, but no one really knows why."
     if backstory == 'disgraced':
         bs_blurb = "This cat was cast out of their old Clan for some transgression that they're not keen on " \
                    "talking about."
@@ -138,7 +138,7 @@ def bs_blurb_text(cat):
         bs_blurb = "This cat came to this Clan after fleeing from their former Clan and the tyrannical " \
                    "leader that had taken over."
     if backstory == 'tragedy_survivor':
-        bs_blurb = "Something horrible happened to this cat's previous clan. They refuse to speak about it."
+        bs_blurb = "Something horrible happened to this cat's previous Clan. They refuse to speak about it."
     if backstory == 'orphaned':
         bs_blurb = "This cat was found with a deceased parent. The Clan took them in, but doesn't hide where " \
                    "they came from."
@@ -156,9 +156,9 @@ def backstory_text(cat):
     if bs_display == 'clanborn':
         bs_display = 'clanborn'
     elif bs_display == 'clan_founder':
-        bs_display = 'clan founder'
+        bs_display = 'Clan founder'
     elif bs_display in ['halfclan1', 'halfclan2']:
-        bs_display = 'half-clan'
+        bs_display = 'half-Clan'
     elif bs_display in ['outsider_roots1', 'outsider_roots2']:
         bs_display = 'outsider roots'
     elif bs_display in ['loner1', 'loner2']:
@@ -172,7 +172,7 @@ def backstory_text(cat):
     elif bs_display == 'medicine_cat':
         bs_display = 'formerly a medicine cat'
     elif bs_display in ['otherclan', 'otherclan2']:
-        bs_display = 'formerly from another clan'
+        bs_display = 'formerly from another Clan'
     elif bs_display == 'ostracized_warrior':
         bs_display = 'ostracized warrior'
     elif bs_display == 'disgraced':
@@ -2138,7 +2138,7 @@ class CeremonyScreen(Screens):
             elder_virtues = ["empathy","grace","humility","integrity","persistence","resilience"]
             warrior3_virtues = ["farsightedness","friendship","instincts","mercy","strength","unity"]
             med_cat_virtues = ["clear sight","devotion","faith","healing","patience","selflessness","wisdom"]
-            prev_lead_virtues = ["endurance in the face of hardship","knowing when to fight and when to choose peace","leadership through the darkest times","loyalty to their clan","the strength to overcome their fears","tireless energy"]
+            prev_lead_virtues = ["endurance in the face of hardship","knowing when to fight and when to choose peace","leadership through the darkest times","loyalty to their Clan","the strength to overcome their fears","tireless energy"]
             virtues = [choice(queen_virtues), choice(warrior_virtues), choice(kit_virtues), choice(warrior2_virtues), choice(app_virtues), choice(elder_virtues), choice(warrior3_virtues), choice(med_cat_virtues), choice(prev_lead_virtues)]
             known = [False, False, False, False, False, False, False, False, False]
 
@@ -2214,7 +2214,7 @@ class CeremonyScreen(Screens):
         else: 
             queen_text = 'A queen introduces themself as ' + queen + '. They softly touch their nose to ' + dep_name + '\'s head, giving them a life for ' + cat.virtues[0] + '.'
         if known[1]:
-            warrior_text = warrior + ' walks up to ' + dep_name + ' next, offering a life for ' + cat.virtues[1] + '. They smile, and state that the clan will do well under ' + dep_name + '\'s leadership.'
+            warrior_text = warrior + ' walks up to ' + dep_name + ' next, offering a life for ' + cat.virtues[1] + '. They smile, and state that the Clan will do well under ' + dep_name + '\'s leadership.'
         else: 
             warrior_text = 'An unknown warrior walks towards ' + dep_name + ' stating that their name is ' + warrior + '. They offer a life for ' + cat.virtues[1] + '.'
         if known[2]:
@@ -2238,7 +2238,7 @@ class CeremonyScreen(Screens):
         else: 
             warrior3_text = warrior3 + ', an unknown warrior, gives a life for ' + cat.virtues[6] + '. The cat turns around to take their place back in StarClan, leaving room for the next one to give a life.'
         if known[7]:
-            med_cat_text = med_cat + ' approaches next, a warm smile on their face. They offer a life for ' + cat.virtues[7] + ', whispering to take care of the clan the best they can.'
+            med_cat_text = med_cat + ' approaches next, a warm smile on their face. They offer a life for ' + cat.virtues[7] + ', whispering to take care of the Clan the best they can.'
         else: 
             med_cat_text = 'The next cat is not familiar. They smell of catmint and other herbs, and have a noble look to them. The cat tells ' + dep_name + ' that their name is ' + med_cat + '. They offer a life for ' + cat.virtues[7] + '.'
         if known[8]:
@@ -2246,14 +2246,14 @@ class CeremonyScreen(Screens):
         else: 
             prev_lead_text = prev_lead + ' one of Starclan\'s oldest leaders, looks at the new leader with pride. They give a last life, the gift of ' + cat.virtues[8] + '.'
         if known[8]:
-            ending_text = prev_lead + " hails " + dep_name + " by their new name, " + str(cat.name.prefix) + "star, telling them that their old life is no more. They are granted guardianship of " + str(game.clan.name) + "Clan, and are told to use their new power wisely. The group of starry cats yowls " + str(cat.name.prefix) + "star\'s name in support. " + str(cat.name.prefix) + "star wakes up feeling a new strength within their body and know that they are now ready to lead the clan."
+            ending_text = prev_lead + " hails " + dep_name + " by their new name, " + str(cat.name.prefix) + "star, telling them that their old life is no more. They are granted guardianship of " + str(game.clan.name) + "Clan, and are told to use their new power wisely. The group of starry cats yowls " + str(cat.name.prefix) + "star\'s name in support. " + str(cat.name.prefix) + "star wakes up feeling a new strength within their body and know that they are now ready to lead the Clan."
 
         else:
             ending_text = "StarClan hails " + dep_name + " by their new name, " + str(
                 cat.name.prefix) + "star, telling them that their old life is no more. They are granted guardianship of " + str(
                 game.clan.name) + "Clan, and are told to use their new power wisely. The group of starry cats yowls " + str(
                 cat.name.prefix) + "star\'s name in support. " + str(
-                cat.name.prefix) + "star wakes up feeling a new strength within their body and know that they are now ready to lead the clan."
+                cat.name.prefix) + "star wakes up feeling a new strength within their body and know that they are now ready to lead the Clan."
 
         return intro_text + '\n' + queen_text + '\n\n' + warrior_text + '\n\n' + kit_text + '\n\n' + warrior2_text + '\n\n' + app_text + '\n\n' + elder_text + '\n\n' + warrior3_text + '\n\n' + med_cat_text + '\n\n' + prev_lead_text + '\n\n' + ending_text
 
