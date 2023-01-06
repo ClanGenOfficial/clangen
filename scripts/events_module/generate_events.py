@@ -1,19 +1,6 @@
 import ujson
 from scripts.game_structure.game_essentials import game
 
-CAT_TYPES = [
-    "kitten",
-    "apprentice",
-    "warrior",
-    "medicine",
-    "deputy",
-    "leader",
-    "elder",
-    "general",
-]
-
-BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach"]
-
 resource_directory = "resources/dicts/events/"
 
 class GenerateEvents():
@@ -28,7 +15,7 @@ class GenerateEvents():
             ) as read_file:
                 events = ujson.loads(read_file.read())
         except:
-            print(f"Error: Unable to load events from biome {biome}.")
+            print(f"Error: Unable to load events for {cat_type} from biome {biome}.")
 
         return events
 
@@ -37,18 +24,25 @@ class GenerateEvents():
         event_list = []
         if cat_type in ["medicine cat", "medicine cat apprentice"]:
             cat_type = "medicine"
-            
+
         event_list.extend(self.generate_injury_event(GenerateEvents.get_event_dicts("injury", cat_type, "general")))
 
-        if game.clan.biome in BIOME_TYPES:
+        # skip the rest of the loading if there is an unrecognised cat type
+        if cat_type not in game.clan.CAT_TYPES:
+            print(f"WARNING: unrecognised cat status {cat_type} in generate_events. Have you added it to CAT_TYPES in clan.py?")
+
+        elif game.clan.biome not in game.clan.BIOME_TYPES:
+            print(f"WARNING: unrecognised biome {game.clan.biome} in generate_events. Have you added it to BIOME_TYPES in clan.py?")
+
+        else:   
             event_list.extend(self.generate_injury_event(GenerateEvents.get_event_dicts("injury", cat_type, game.clan.biome.lower())))
 
-        if cat_type in ["apprentice", "deputy", "leader"]:
-            event_list.extend(self.generate_injury_event(GenerateEvents.get_event_dicts("injury", "warrior", game.clan.biome.lower())))
-        
-        if cat_type not in ['kitten', 'leader']:
-            event_list.extend(self.generate_injury_event(GenerateEvents.get_event_dicts("injury", "general", "general")))
-            event_list.extend(self.generate_injury_event(GenerateEvents.get_event_dicts("injury", "general", game.clan.biome.lower())))
+            if cat_type in ["apprentice", "deputy", "leader"]:
+                event_list.extend(self.generate_injury_event(GenerateEvents.get_event_dicts("injury", "warrior", game.clan.biome.lower())))
+            
+            if cat_type not in ['kitten', 'leader']:
+                event_list.extend(self.generate_injury_event(GenerateEvents.get_event_dicts("injury", "general", "general")))
+                event_list.extend(self.generate_injury_event(GenerateEvents.get_event_dicts("injury", "general", game.clan.biome.lower())))
 
         return event_list
 
