@@ -122,7 +122,7 @@ class Events():
                 if check_cat.dead or check_cat.outside:
                     remove_cats.append(check_cat.ID)
 
-            #Remove the dead or outside cats
+            # Remove the dead or outside cats
             for ID in remove_cats:
                 if ID in Cat.grief_strings.keys():
                     Cat.grief_strings.pop(ID)
@@ -148,6 +148,8 @@ class Events():
         # change season
         game.clan.current_season = game.clan.seasons[game.clan.age % 12]
 
+        self.herb_destruction()
+
         if game.clan.game_mode == 'classic':
             herbs = game.clan.herbs.copy()
             print(game.clan.herbs)
@@ -166,6 +168,8 @@ class Events():
             meds_available = get_med_cats(Cat)
             print(game.clan.herbs)
             for med in meds_available:
+                if sum(game.clan.herbs.values()) >= 20:
+                    break  # not gonna herb gather if they have a lot of herbs already
                 if game.clan.current_season in ['Newleaf', 'Greenleaf']:
                     amount = random.choices([0, 1, 2, 3], [1, 2, 2, 2], k=1)
                 elif game.clan.current_season == 'Leaf-fall':
@@ -250,7 +254,6 @@ class Events():
                         leader_dead = True
                         leader_exiled = False
 
-
                     Cat.all_cats[random_cat].status_change('deputy')
                     involved_cats = [random_cat]
                     text = ''
@@ -283,7 +286,7 @@ class Events():
                                 f"{Cat.all_cats[random_cat].name} has been chosen as the new deputy. They hold their head up high and promise to do their best for the Clan.",
                                 f"{game.clan.leader.name} has been thinking deeply all day who they would respect and trust enough to stand at their side and at sunhigh makes the announcement that {Cat.all_cats[random_cat].name} will be the Clan's new deputy.",
                                 f"{Cat.all_cats[random_cat].name} has been chosen as the new deputy. They pray to StarClan that they are the right choice for the Clan.",
-                                               ]
+                            ]
                             # No additional involved cats
                             text = choice(possible_events)
 
@@ -328,6 +331,45 @@ class Events():
 
     game.switches['timeskip'] = False
 
+    def herb_destruction(self):
+        meds = get_med_cats(Cat, working=False)
+        if not int(random.random() * 80) and sum(game.clan.herbs.values()) > 0 and len(meds) > 0:
+            if len(meds) == 1:
+                insert = "medicine cat"
+            else:
+                insert = "medicine cats"
+            possible_events = []
+            if self.at_war is True:
+                possible_events.append(f"{self.enemy_clan}Clan breaks into the camp and ravages the herb stores, "
+                                       f"taking some for themselves and destroying the rest.")
+            possible_events.extend([
+                f"Some sort of pest got into the herb stores and completely destroyed them. The {insert} will have to "
+                f"clean it out and start over anew.",
+                f"Abnormally strong winds blew through the camp last night and scattered the herb store into a "
+                f"useless state.",
+                f"Some kind of blight has infected the herb stores, the {insert} have no choice but to clear out all "
+                f"the old herbs."
+            ])
+            if game.clan.current_season == 'Leaf-bare':
+                possible_events.extend([
+                    f"Freezing temperatures have not just affected the cats, it's also frostbitten the stored herbs. "
+                    f"They're useless now and will have to be replaced.",
+                ])
+            elif game.clan.current_season == 'Newleaf':
+                possible_events.extend([
+                    f"The Newleaf rain has left the air humid and the whole camp damp, the herb stores are found to "
+                    f"be growing mold and have to be thrown out. "
+                ])
+            elif game.clan.current_season == 'Greenleaf' and game.clan.biome != 'Mountainous':
+                possible_events.extend([
+                    f"The persistent, dry heat managed to cause a small fire in the herb stores. While no one was "
+                    f"injured, the herbs are little more than ashes now."
+                ])
+            game.clan.herbs.clear()
+            chosen_event = choice(possible_events)
+            print(possible_events)
+            game.cur_events_list.append(Single_Event(chosen_event, "health"))
+
     def handle_fading(self, cat):
         if game.settings["fading"] and not cat.prevent_fading and cat.ID != game.clan.instructor.ID and \
                 not cat.faded:
@@ -348,7 +390,6 @@ class Events():
                 if cat.ID in game.clan.med_cat_list:
                     game.clan.med_cat_list.remove(cat.ID)
 
-
                 # If the cat is the current med, leader, or deputy, remove them
                 if game.clan.leader:
                     if game.clan.leader.ID == cat.ID:
@@ -358,11 +399,10 @@ class Events():
                         game.clan.deputy = None
                 if game.clan.medicine_cat:
                     if game.clan.medicine_cat.ID == cat.ID:
-                        if game.clan.med_cat_list: # If there are other med cats
+                        if game.clan.med_cat_list:  # If there are other med cats
                             game.clan.medicine_cat = Cat.fetch_cat(game.clan.med_cat_list[0])
                         else:
                             game.clan.medicine_cat = None
-
 
                 game.cat_to_fade.append(cat.ID)
                 cat.set_faded()  # This is a flag to ensure they behave like a faded cat in the meantime.
@@ -514,7 +554,7 @@ class Events():
                 if cat.status == 'deputy':
                     game.clan.deputy = None
                 self.ceremony(cat, 'elder', ' has retired to the elder den.')
-                #cat.status_change('elder')
+                # cat.status_change('elder')
 
             # apprentice a kitten to either med or warrior
             if cat.moons == cat_class.age_moons[cat.age][1]:
@@ -629,7 +669,10 @@ class Events():
                     str(random_honor) + "."
                 ])
                 if cat.trait == 'bloodthirsty':
-                    ceremony.extend([str(cat.name.prefix) + " has worked long and hard to earn their warrior name but " + str(game.clan.leader.name) + " can't help but to shiver in unease as they name them " + str(cat.name) + " after their " + str(random_honor) + "."])
+                    ceremony.extend([
+                                        str(cat.name.prefix) + " has worked long and hard to earn their warrior name but " + str(
+                                            game.clan.leader.name) + " can't help but to shiver in unease as they name them " + str(
+                                            cat.name) + " after their " + str(random_honor) + "."])
             else:
                 ceremony.extend([str(game.clan.name) + "Clan welcomes " + str(cat.name.prefix) +
                                  str(cat.name.suffix) + " as a new warrior, honoring their " +
@@ -668,7 +711,8 @@ class Events():
                     str(game.clan.leader.name) + " assigns " +
                     mentor_name +
                     " as their mentor to make sure that happens.",
-                    "Standing proud and tall before their new mentor " + str(cat.name) +  " promises " + mentor_name + " that together they will prove to everyone that they will be the best warrior."
+                    "Standing proud and tall before their new mentor " + str(
+                        cat.name) + " promises " + mentor_name + " that together they will prove to everyone that they will be the best warrior."
                 ])
         elif (promoted_to == 'apprentice') and cat.mentor is None:
             ceremony.extend(["Newly-made apprentice " + str(cat.name) +
@@ -680,19 +724,24 @@ class Events():
                 str(cat.name) +
                 " has decided that hunting and fighting is not the way they can provide for their Clan. Instead, they have decided to serve their Clan by healing and communing with StarClan. "
                 + mentor_name + " proudly becomes their mentor.",
-                "Interested in herbs even in their kithood, " + str(cat.name) + " is eager to be apprenticed to " + mentor_name + ".",
-                "Interested in all the myths and stories told by the elders and queens " + str(cat.name) + " decides to become a medicine cat apprentice hoping to someday speak to those gone before. " + mentor_name + " loves their determination and eagerness to learn and agrees to take them on as their apprentice.",
-                "Only the thought alone of fighting and hurting another cat makes " + str(cat.name) + " shiver. They decide to heal instead of fight and " + mentor_name + " takes them under their wing."
+                "Interested in herbs even in their kithood, " + str(
+                    cat.name) + " is eager to be apprenticed to " + mentor_name + ".",
+                "Interested in all the myths and stories told by the elders and queens " + str(
+                    cat.name) + " decides to become a medicine cat apprentice hoping to someday speak to those gone before. " + mentor_name + " loves their determination and eagerness to learn and agrees to take them on as their apprentice.",
+                "Only the thought alone of fighting and hurting another cat makes " + str(
+                    cat.name) + " shiver. They decide to heal instead of fight and " + mentor_name + " takes them under their wing."
             ])
         elif (promoted_to == 'medicine cat apprentice') and cat.mentor is None:
             ceremony.extend(["Newly-made medicine cat apprentice " + str(cat.name) +
                              " learns the way of healing through guidance from StarClan."])
         elif promoted_to == 'medicine cat':
-                ceremony.extend(
+            ceremony.extend(
                 [str(cat.name) + " is taken to speak with StarClan. They are now a full medicine cat of the Clan.",
-                 "The senior medicine cat has thought long and hard about this and gives " + str(cat.name.prefix) + "paw their full name of " + str(cat.name) + ". StarClan gives their blessing and the stars twinkle in celebration.",
+                 "The senior medicine cat has thought long and hard about this and gives " + str(
+                     cat.name.prefix) + "paw their full name of " + str(
+                     cat.name) + ". StarClan gives their blessing and the stars twinkle in celebration.",
                  f"With the stars softly shining and lighting their pelts, the senior medicine cat gives {cat.name.prefix} their full name of {cat.name}. They both share the rest of the night with StarClan, celebrating their good fortune in having another medicine cat."])
-                
+
         elif promoted_to == 'elder' and not leader_dead:
             involved_cats.append(game.clan.leader.ID)
             ceremony.extend([
@@ -1667,7 +1716,7 @@ class Events():
         # The outside-value must be set to True before the cat can go to cotc
         cat.thought = "Is terrified as they are trapped in a large silver Twoleg den"
         # FIXME: Not sure what this is intended to do; 'cat_class' has no 'other_cats' attribute.
-        #cat_class.other_cats[cat.ID] = cat
+        # cat_class.other_cats[cat.ID] = cat
 
     def handle_outbreaks(self, cat):
         """

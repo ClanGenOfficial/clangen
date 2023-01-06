@@ -519,6 +519,7 @@ class Condition_Events():
                 # only try to give a scar if the event gave possible scar history
                 if cat.possible_scar is not None and injury not in ["blood loss", "shock", "lingering shock"]:
                     event, scar_given = self.scar_events.handle_scars(cat, injury)
+                    game.herb_events_list.append(event)
                 else:
                     # gather potential event strings for gotten condition
                     possible_string_list = INJURY_HEALED_STRINGS[injury]
@@ -839,7 +840,7 @@ class Condition_Events():
                         risk["chance"] = 0
             print(herb_used, condition, effect_message)
 
-            text = f"{cat.name} was given {herb_used.replace('_', ' ')} as treatment. {effect_message}"
+            text = f"{cat.name} was given {herb_used.replace('_', ' ')} as treatment for {condition}. {effect_message}"
             game.herb_events_list.append(text)
         else:
             # if they didn't get any herbs, make them more likely to die!! kill the kitties >:)

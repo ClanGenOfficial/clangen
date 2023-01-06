@@ -1284,6 +1284,7 @@ class AllegiancesScreen(Screens):
 
 class MedDenScreen(Screens):
     cat_buttons = {}
+    conditions_hover = {}
     cat_names = []
 
     def __init__(self, name=None):
@@ -1563,6 +1564,8 @@ class MedDenScreen(Screens):
                 self.cat_buttons[cat].show()
             for x in range(len(self.cat_names)):
                 self.cat_names[x].show()
+            for button in self.conditions_hover:
+                self.conditions_hover[button].kill()
         elif self.open_tab == "log":
             self.hurt_sick_title.hide()
             self.last_page.hide()
@@ -1696,16 +1699,32 @@ class MedDenScreen(Screens):
         pos_y = 460
         i = 0
         for cat in self.display_cats:
+            condition_list = []
+            if cat.injuries:
+                condition_list.extend(cat.injuries.keys())
+            if cat.illnesses:
+                condition_list.extend(cat.illnesses.keys())
+            if cat.permanent_condition:
+                condition_list.extend(cat.permanent_condition.keys())
+            conditions = ",<br>".join(condition_list)
+            print(conditions)
+
             self.cat_buttons["able_cat" + str(i)] = UISpriteButton(pygame.Rect
                                                                    ((pos_x, pos_y), (50, 50)),
                                                                    cat.sprite,
                                                                    cat_object=cat)
+
+            self.conditions_hover["able_cat" + str(i)] = UIImageButton(pygame.Rect
+                                                                       ((pos_x - 30, pos_y + 50), (110, 30)),
+                                                                       "",
+                                                                       object_id="#blank_button",
+                                                                       tool_tip_text=conditions)
             name = str(cat.name)
             if len(name) >= 10:
                 short_name = str(cat.name)[0:9]
                 name = short_name + '...'
             self.cat_names.append(pygame_gui.elements.UITextBox(name,
-                                                                pygame.Rect((pos_x - 30, pos_y + 50), (110, -1)),
+                                                                pygame.Rect((pos_x - 30, pos_y + 50), (110, 30)),
                                                                 object_id="text_box"))
 
             pos_x += 100
@@ -1721,7 +1740,8 @@ class MedDenScreen(Screens):
             amount = str(herb[1])
             type = str(herb[0].replace("_", " "))
             herb_list.append(f"{amount} {type}")
-
+        if not herbs_stored:
+            herb_list.append("Empty")
         if len(herb_list) <= 10:
             herb_display = "<br>".join(herb_list)
 
@@ -1785,7 +1805,6 @@ class MedDenScreen(Screens):
         self.last_med.kill()
         self.next_med.kill()
         self.den_base.kill()
-
         for herb in self.herbs:
             self.herbs[herb].kill()
         self.herbs = {}
@@ -1814,7 +1833,10 @@ class MedDenScreen(Screens):
     def clear_cat_buttons(self):
         for cat in self.cat_buttons:
             self.cat_buttons[cat].kill()
+        for button in self.conditions_hover:
+            self.conditions_hover[button].kill()
         for x in range(len(self.cat_names)):
             self.cat_names[x].kill()
+
         self.cat_names = []
         self.cat_buttons = {}

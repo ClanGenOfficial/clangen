@@ -3610,6 +3610,29 @@
                 "path": "resources/images/buttons/cat_event_profile.png"
             }
         }
+    },
+    "#blank_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/blank.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/blank.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/blank.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/blank.png"
+            }
+        }
     }
 }
 
