@@ -167,7 +167,7 @@ class Events():
             print(game.clan.herbs)
             for med in meds_available:
                 if game.clan.current_season in ['Newleaf', 'Greenleaf']:
-                    amount = random.choices([1, 2, 3], [1, 2, 2], k=1)
+                    amount = random.choices([0, 1, 2, 3], [1, 2, 2, 2], k=1)
                 elif game.clan.current_season == 'Leaf-fall':
                     amount = random.choices([0, 1, 2], [3, 2, 1], k=1)
                 else:
@@ -177,9 +177,9 @@ class Events():
                     herb_display = []
                     for herb in herbs_found:
                         if game.clan.current_season in ['Newleaf', 'Greenleaf']:
-                            amount = random.choices([1, 2, 3], [2, 1, 1], k=1)
+                            amount = random.choices([1, 2, 3], [3, 3, 1], k=1)
                         else:
-                            amount = random.choices([1, 2], [2, 1], k=1)
+                            amount = random.choices([1, 2], [4, 1], k=1)
                         print(amount)
                         if herb in game.clan.herbs.keys():
                             game.clan.herbs[herb] += amount[0]

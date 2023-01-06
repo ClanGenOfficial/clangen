@@ -487,6 +487,7 @@ class Condition_Events():
             self.use_herbs(cat, injury, injuries, INJURIES)
 
             skipped = cat.moon_skip_injury(injury)
+            print(injury, cat.healed_condition)
             if skipped:
                 continue
 
@@ -511,7 +512,6 @@ class Condition_Events():
                 event_list.append(event)
                 game.herb_events_list.append(event)
                 break
-
             elif cat.healed_condition is True:
                 triggered = True
                 scar_given = None
@@ -710,7 +710,7 @@ class Condition_Events():
         for risk in conditions[condition]["risks"]:
             if risk["name"] in (cat.injuries or cat.illnesses):
                 continue
-            if risk["name"] == 'an infected wound' and 'afestering wound' in cat.illnesses:
+            if risk["name"] == 'an infected wound' and 'a festering wound' in cat.illnesses:
                 continue
 
             # adjust chance of risk gain if clan has enough meds
@@ -810,16 +810,17 @@ class Condition_Events():
             # determine the effect of the herb
             if conditions[condition]['mortality'] != 0:
                 effect = 'mortality'
-            if conditions[condition]["risks"]:
+            elif conditions[condition]["risks"]:
                 effect = 'risks'
-            if conditions[condition]['duration'] > 1:
+            elif conditions[condition]['duration'] > 1:
                 effect = 'duration'
             else:
                 return
 
             # deplete the herb
             herb_used = random.choice(usable_herbs)
-            game.clan.herbs[herb_used] -= 1
+            amount_used = random.choice([1, 2])
+            game.clan.herbs[herb_used] -= amount_used
             if game.clan.herbs[herb_used] <= 0:
                 game.clan.herbs.pop(herb_used)
 
@@ -836,9 +837,9 @@ class Condition_Events():
                     risk["chance"] += 5
                     if risk["chance"] < 0:
                         risk["chance"] = 0
-            print(herb_used, condition)
+            print(herb_used, condition, effect_message)
 
-            text = f"{cat.name} was given {herb_used} as treatment. {effect_message}"
+            text = f"{cat.name} was given {herb_used.replace('_', ' ')} as treatment. {effect_message}"
             game.herb_events_list.append(text)
         else:
             # if they didn't get any herbs, make them more likely to die!! kill the kitties >:)

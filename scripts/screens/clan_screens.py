@@ -1449,7 +1449,7 @@ class MedDenScreen(Screens):
                 if cat.injuries:
                     for injury in cat.injuries:
                         print(cat.name, injury)
-                        if cat.injuries[injury]["severity"] != 'minor':
+                        if cat.injuries[injury]["severity"] != 'minor' and injury not in ['recovering from birth', "sprain", "lingering shock"]:
                             self.in_den_cats.append(cat)
                             if cat in self.out_den_cats:
                                 self.out_den_cats.remove(cat)
@@ -1510,6 +1510,9 @@ class MedDenScreen(Screens):
                 insert = 'medicine cats'
             meds_cover = f"Your {insert} can care for a Clan of up to {number} members, including themselves."
 
+            if len(self.meds) >= 1 and number == 0:
+                meds_cover = f"You have no medicine cats who are able to work. Your clan will be at a higher risk of death and disease."
+
             herb_amount = sum(game.clan.herbs.values())
             med_concern = f"This should not appear."
             if herb_amount == 0:
@@ -1519,19 +1522,19 @@ class MedDenScreen(Screens):
                     med_concern = f"The medicine cat worries over the herb stores, they don't have nearly enough for the Clan."
                 else:
                     med_concern = f"The medicine cats worry over the herb stores, they don't have nearly enough for the Clan."
-            elif 5 < herb_amount <= 10:
+            elif 5 < herb_amount <= 12:
                 med_concern = f"The herb stores are small, but it's enough for now."
-            elif 10 < herb_amount <= 20:
+            elif 12 < herb_amount <= 25:
                 if len(self.meds) == 1:
                     med_concern = f"The medicine cat is content with how many herbs they have stocked up."
                 else:
                     med_concern = f"The medicine cats are content with how many herbs they have stocked up."
-            elif 20 < herb_amount <= 40:
+            elif 25 < herb_amount <= 50:
                 if len(self.meds) == 1:
                     med_concern = f"The herb stores are overflowing and the medicine cat has little worry."
                 else:
                     med_concern = f"The herb stores are overflowing and the medicine cats have little worry."
-            elif 40 < herb_amount:
+            elif 50 < herb_amount:
                 if len(self.meds) == 1:
                     med_concern = f"StarClan has blessed them with plentiful herbs and the medicine cat sends their thanks to Silverpelt."
                 else:

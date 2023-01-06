@@ -525,6 +525,13 @@ class Cat():
                     chance = [3, 1]
                 if cat.trait in grief_minor:
                     chance = [1, 3]
+                if "rosemary" in game.clan.herbs:  # decrease major grief chance if grave herbs are used
+                    chance = [1, 6]
+                    amount_used = random.choice([1, 2])
+                    game.clan.herbs["rosemary"] -= amount_used
+                    if game.clan.herbs["rosemary"] <= 0:
+                        game.clan.herbs.pop("rosemary")
+
                 severity = random.choices(['major', 'minor'], weights=chance, k=1)
                 # give the cat the relevant severity text
                 severity = severity[0]
@@ -1059,7 +1066,7 @@ class Cat():
             self.injuries[injury].update({'moons_with': 1})
 
         # if the cat has an infected wound, the wound shouldn't heal till the illness is cured
-        if "an infected wound" not in self.illnesses and "a festering wound" not in self.illnesses:
+        if self.injuries[injury]["complication"]:
             self.injuries[injury]["duration"] -= 1
         if self.injuries[injury]["duration"] <= 0:
             self.healed_condition = True
