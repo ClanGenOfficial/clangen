@@ -552,7 +552,36 @@
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null
+},
+{
+        "patrol_id": "pln_train_roarbark1",
+        "biome": "plains",
+        "season": "Any",
+        "tags": ["training", "romantic", "trust", "big_change", "minor_injury", "apprentice", "two_apprentices"],
+        "intro_text": "Shivering with ilicit excitement, app1 gestures app2 on with their tail. They need to sneak out of camp before anyone notices them in the early morning dark.",
+        "decline_text": "Shaking their head, app2 looks back regretfully, tilting their head meaningfully towards where their mentor is already stirring for the day.",
+        "chance_of_success": 70,
+        "exp": 40,
+        "success_text": [
+                "The sun is peeking over the horizon when the apprentices arrive on the rocky outcrop at the edge of c_n territory, daringly venturing a couple steps beyond the border with wide eyes egging each other on. app1 finds a little patch of sunshine and with great ceremony offers it to app2, as they both settle down to wait. In the distance, massive, echoing, thunderous barks start to echo over the plain. The apprentices prickle at the excitement of hearing this private wild performance.",
+                "They're a little late, slowly down by awkward flirting, but app1 and app2 catch the tail end of the morning performance of the maned wolves, hearing their distant thunder barks reverberate through their bones with wide eyes and excited tail lashing.",
+                null,
+                "s_c has put a lot of effort into this date, and seeing their crush light up with excitement hearing the dawn chorus of the maned wolves echo from over the horizon makes it all worth it for them."
+        ],
+        "fail_text": [
+                "app2 shakes their head. There's nothing app1 can do to convince them, and they slink back to their nest, bitterly disappointed.",
+                null,
+                null,
+                "As they head out to the border, app1 rushes app2 along. It's too fast in such murky lighting, an app2 hurts themselves tumbling into an unseen hole. Their little outing is called off, and both of the apprentices return home, one limping, disappointed and struggling with feelings of rejection."
+        ],
+        "win_skills": ["None"],
+        "win_trait": ["bold", "charismatic", "playful", "empathetic", "faithful", "loving", "insecure", "lonesome", "loyal"],
+        "fail_skills": ["None"],
+        "fail_trait": ["None"],
+        "min_cats": 2,
+        "max_cats": 2,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
 }
-
 
 ]
