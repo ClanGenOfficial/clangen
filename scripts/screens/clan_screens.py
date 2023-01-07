@@ -117,8 +117,8 @@ class ClanScreen(Screens):
         # Creates and places the cat sprites.
         self.cat_buttons = []  # To contain all the buttons.
 
-        # We have to convert the postions to something pygame_gui buttons will understand
-        # This should be a temp solution. We should change the code that determines postions.
+        # We have to convert the positions to something pygame_gui buttons will understand
+        # This should be a temp solution. We should change the code that determines positions.
         i = 0
         for x in game.clan.clan_cats:
             if not Cat.all_cats[x].dead and Cat.all_cats[x].in_camp and \
