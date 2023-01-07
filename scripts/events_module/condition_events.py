@@ -38,13 +38,16 @@ class Condition_Events():
                 triggered = True
             return triggered
 
-        event_string = self.handle_already_ill(cat)
+        event_string = None
+
+        if cat.is_ill():
+            event_string = self.handle_already_ill(cat)
 
         # ---------------------------------------------------------------------------- #
         #                              make cats sick                                  #
         # ---------------------------------------------------------------------------- #
         random_number = int(random.random() * 300)
-        if not cat.dead and not cat.is_ill() and random_number <= 10:
+        if not cat.dead and not cat.is_ill() and random_number <= 10 and not event_string:
             season_dict = ILLNESSES_SEASON_LIST[season]
             possible_illnesses = []
 

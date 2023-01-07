@@ -779,7 +779,7 @@ class Patrol():
             number_of_herb_types = choice([1, 2, 3])
             herbs_picked = choices(HERBS, k=number_of_herb_types)
             for herb in herbs_picked:
-                herbs_gotten.append(herb)
+                herbs_gotten.append(str(herb).replace('_', ' '))
                 if not large_amount:
                     amount_gotten = choices([1, 2, 3], [1, 3, 2], k=1)
                     print(game.clan.herbs)
@@ -799,7 +799,7 @@ class Patrol():
         elif "herb" in patrol.patrol_event.tags:
             for tag in patrol.patrol_event.tags:
                 if tag in HERBS:
-                    herbs_gotten.append(tag)
+                    herbs_gotten.append(str(tag).replace('_', ' '))
                     if not large_amount:
                         amount_gotten = choices([1, 2, 3], [1, 3, 2], k=1)
                         print(game.clan.herbs)

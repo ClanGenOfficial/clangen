@@ -1737,8 +1737,9 @@ class MedDenScreen(Screens):
             i += 1
 
     def draw_med_den(self):
-        herbs_stored = game.clan.herbs.items()
-        herb_list = ["<b>Herb Stores</b>"]
+        sorted_dict = dict(sorted(game.clan.herbs.items()))
+        herbs_stored = sorted_dict.items()
+        herb_list = []
         for herb in herbs_stored:
             amount = str(herb[1])
             type = str(herb[0].replace("_", " "))
@@ -1746,7 +1747,7 @@ class MedDenScreen(Screens):
         if not herbs_stored:
             herb_list.append("Empty")
         if len(herb_list) <= 10:
-            herb_display = "<br>".join(herb_list)
+            herb_display = "<br>".join(sorted(herb_list))
 
             self.den_base = UIImageButton(pygame.Rect
                                           ((108, 95), (396, 224)),
