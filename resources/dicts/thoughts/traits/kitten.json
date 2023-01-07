@@ -1,7 +1,10 @@
 {
     "attention-seeker": [],
     "bossy": [],
-    "bouncy": [],
+    "bouncy": [
+        "Is pretending to be a rabbit hopping about",
+        "Is pawing at r_c's tail from behind them"
+    ],
     "bullying": [
         "Knocks over r_c",
         "Makes fun of r_c's insecurities"
@@ -42,11 +45,15 @@
         "Is trying not to shake with nerves",
         "Is trying to stay calm",
         "Wants to stay in their den a little longer",
-        "Is reminding themself that it will be okay"
+        "Is reminding themself that it will be okay",
+        "Is scared of r_c",
+        "Recently jumped at the sight of their own shadow"
     ],
     "noisy": [],
     "polite": [],
-    "quiet": [],
+    "quiet": [
+        "Is too good at playing hide-and-seek"
+    ],
     "sweet": [],
     "troublesome": [
         "Is thinking about mischief",
