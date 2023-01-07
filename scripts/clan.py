@@ -12,6 +12,19 @@ from sys import exit
 
 
 class Clan():
+    BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach"]
+    
+    CAT_TYPES = [
+        "kitten",
+        "apprentice",
+        "warrior",
+        "medicine",
+        "deputy",
+        "leader",
+        "elder",
+        "general",
+    ]
+
     leader_lives = 0
     clan_cats = []
     starclan_cats = []
@@ -270,19 +283,6 @@ class Clan():
     def switch_clans(self, clan):
         game.save_clanlist(clan)
         game.cur_events_list.clear()
-        game.other_clans_events_list.clear()
-        game.birth_death_events_list.clear()
-        game.relation_events_list.clear()
-        game.health_events_list.clear()
-        game.ceremony_events_list.clear()
-        game.misc_events_list.clear()
-        game.cur_events_list.clear()
-        game.other_clans_events_list.clear()
-        game.birth_death_events_list.clear()
-        game.relation_events_list.clear()
-        game.health_events_list.clear()
-        game.ceremony_events_list.clear()
-        game.misc_events_list.clear()
 
         pygame.display.quit()
         pygame.quit()
@@ -308,7 +308,7 @@ class Clan():
             clan_data["leader"] = self.leader.ID
             clan_data["leader_lives"] = self.leader_lives
         else:
-            clan_data["leader"] = "None"
+            clan_data["leader"] = None
 
         clan_data["leader_predecessors"] = self.leader_predecessors
 
@@ -316,7 +316,7 @@ class Clan():
         if self.deputy:
             clan_data["deputy"] = self.deputy.ID
         else:
-            clan_data["deputy"] = "None"
+            clan_data["deputy"] = None
 
         clan_data["deputy_predecessors"] = self.deputy_predecessors
 
@@ -324,7 +324,7 @@ class Clan():
         if self.medicine_cat:
             clan_data["med_cat"] = self.medicine_cat.ID
         else:
-            clan_data["med_cat"] = "None"
+            clan_data["med_cat"] = None
         clan_data["med_cat_number"] = self.med_cat_number
         clan_data["med_cat_predecessors"] = self.med_cat_predecessors
 
@@ -523,22 +523,23 @@ class Clan():
                   'r') as read_file:
             clan_data = ujson.loads(read_file.read())
 
-        if "None" in clan_data["leader"]:
-            leader = None
-            leader_lives = 0
-        else:
+        if clan_data["leader"]:
             leader = Cat.all_cats[clan_data["leader"]]
             leader_lives = clan_data["leader_lives"]
-
-        if "None" in clan_data["deputy"]:
-            deputy = None
         else:
+            leader = None
+            leader_lives = 0
+
+        if clan_data["deputy"]:
             deputy = Cat.all_cats[clan_data["deputy"]]
-
-        if "None" in clan_data["med_cat"]:
-            med_cat = None
         else:
+            deputy = None
+
+
+        if clan_data["med_cat"]:
             med_cat = Cat.all_cats[clan_data["med_cat"]]
+        else:
+            med_cat = None
 
         game.clan = Clan(clan_data["clanname"],
                          leader,

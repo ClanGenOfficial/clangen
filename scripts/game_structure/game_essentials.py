@@ -27,12 +27,6 @@ class Game():
     ranks_changed_timeskip = False  # Flag for when a cat's status changes occurs during a timeskip.
 
     cur_events_list = []
-    ceremony_events_list = []
-    birth_death_events_list = []
-    relation_events_list = []
-    health_events_list = []
-    other_clans_events_list = []
-    misc_events_list = []
     allegiance_list = []
     language = {}
     game_mode = ''
@@ -359,6 +353,7 @@ class Game():
                 "tortie_color": inter_cat.tortiecolour,
                 "tortie_pattern": inter_cat.tortiepattern,
                 "skin": inter_cat.skin,
+                "tint": inter_cat.tint,
                 "skill": inter_cat.skill,
                 "scars": inter_cat.scars if inter_cat.scars else [],
                 "accessory": inter_cat.accessory,
