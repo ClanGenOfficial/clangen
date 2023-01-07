@@ -17,7 +17,7 @@
         "While r_c thinks they're probably cranberries, they aren't confident enough with the identification to risk being wrong and plucking deathberries instead.",
         null,
         null,
-        "While plucking them from the bush, r_c feels one of the berries split in their mouth, and a horrible taste coats their tongue. These aren't strawberries. They rush to force themselves to throw up, and it works, expelling the deathberries from their system, but they're weak and shaky for the rest of the day."
+        "While plucking them from the bush, r_c feels one of the berries split in their mouth, and a horrible taste coats their tongue. These aren't raspberries. They rush to force themselves to throw up, and it works, expelling the deathberries from their system, but they're weak and shaky for the rest of the day."
     ],
     "win_skills": ["smart", "very smart", "extremely smart"],
     "win_trait": ["None"],
@@ -39,7 +39,7 @@
     "exp": 30,
     "success_text": [
         "app1 identifies them as raspberries, and carefully chews off a branch laden with them to bring back to camp. They can't quite remember what raspberries treat, but it's something to do with kitting.",
-        "These. . . could be deathberries. Might be strawberries. But maybe deathberries. It's not worth the risk, they can ask their mentor for more training about it later."
+        "These. . . could be deathberries. Might be raspberries. But maybe deathberries. It's not worth the risk, they can ask their mentor for more training about it later."
     ],
     "fail_text": [
         "Confidently gathering them and prancing back to camp, app1 is then informed that they've gathered raspberries, not cranberries, and this isn't going to help the Clan's elders with their problems.",
@@ -74,7 +74,7 @@
         "While r_c thinks they're probably cranberries, they aren't confident enough with the identification to risk being wrong and plucking deathberries instead.",
         null,
         null,
-        "While plucking them from the bush, r_c feels one of the berries split in their mouth, and a horrible taste coats their tongue. These aren't strawberries. They rush to force themselves to throw up, and it works, expelling the deathberries from their system, but they're weak and shaky for the rest of the day."
+        "While plucking them from the bush, r_c feels one of the berries split in their mouth, and a horrible taste coats their tongue. These aren't raspberries. They rush to force themselves to throw up, and it works, expelling the deathberries from their system, but they're weak and shaky for the rest of the day."
     ],
     "win_skills": ["smart", "very smart", "extremely smart"],
     "win_trait": ["None"],
@@ -96,7 +96,7 @@
     "exp": 30,
     "success_text": [
         "app1 identifies them as raspberries, and carefully chews off a branch laden with them to bring back to camp. They can't quite remember what cranberries treat, but it's something to do with kitting.",
-        "These. . . could be deathberries. Might be strawberries. But maybe deathberries. It's not worth the risk, they can ask their mentor for more training about it later."
+        "These. . . could be deathberries. Might be raspberries. But maybe deathberries. It's not worth the risk, they can ask their mentor for more training about it later."
     ],
     "fail_text": [
         "Confidently gathering them and prancing back to camp, app1 is then informed that they've gathered raspberries, not cranberries, and this isn't going to help the Clan's elders with their problems.",
