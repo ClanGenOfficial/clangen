@@ -297,6 +297,8 @@ class ProfileScreen(Screens):
                 self.toggle_conditions_tab()
             elif event.ui_element == self.leader_ceremony_button:
                 self.change_screen('ceremony screen')
+            elif event.ui_element == self.profile_elements["med_den"]:
+                self.change_screen('med den screen')
             else:
                 self.handle_tab_events(event)
 
@@ -503,6 +505,8 @@ class ProfileScreen(Screens):
         self.hide_menu_buttons()  # Menu buttons don't appear on the profile screen
         cat_profiles()
         self.update_platform()
+        if game.last_screen_forProfile == 'med den screen':
+            self.toggle_conditions_tab()
 
     def clear_profile(self):
         """Clears all profile objects. """
@@ -538,7 +542,7 @@ class ProfileScreen(Screens):
     def build_profile(self):
         """Rebuild builds the cat profile. Run when you switch cats
             or for changes in the profile."""
-        self.the_cat = Cat.all_cats.get(game.switches['cat'])
+        self.the_cat = Cat.all_cats.get(game.switches["cat"])
 
         # use these attributes to create differing profiles for starclan cats etc.
         is_sc_instructor = False
@@ -605,6 +609,19 @@ class ProfileScreen(Screens):
         self.profile_elements["cat_image"] = pygame_gui.elements.UIImage(pygame.Rect((100, 200), (150, 150)),
                                                                          self.the_cat.large_sprite)
         self.profile_elements["cat_image"].disable()
+
+        # if cat is a med or med app, show button for their den
+        self.profile_elements["med_den"] = UIImageButton(pygame.Rect
+                                                         ((100, 380), (151, 28)),
+                                                         "",
+                                                         object_id="#med_den_button"
+        )
+        self.profile_elements["med_den"].hide()
+        if not (self.the_cat.dead or self.the_cat.outside) and (self.the_cat.status in ['medicine cat', 'medicine cat apprentice'] or \
+                self.the_cat.is_ill() or \
+                self.the_cat.is_injured()):
+            self.profile_elements["med_den"].show()
+
 
         # Determine where the next and previous cat buttons lead
         self.determine_previous_and_next_cat()
@@ -1233,7 +1250,7 @@ class ProfileScreen(Screens):
         self.close_current_tab()
 
         if previous_open_tab == 'conditions':
-            '''If the current open tab is relations, just close the tab and do nothing else. '''
+            '''If the current open tab is conditions, just close the tab and do nothing else. '''
             pass
         else:
             self.open_tab = 'conditions'
@@ -1268,6 +1285,7 @@ class ProfileScreen(Screens):
             self.update_disabled_buttons_and_text()
 
     def get_conditions(self):
+        self.the_cat = Cat.all_cats.get(game.switches['cat'])
         manager = pygame_gui.UIManager((800, 700), 'resources/defaults.json')
 
         # tracks the position of the detail boxes

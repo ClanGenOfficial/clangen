@@ -22,6 +22,12 @@
         "infectiousness": 0,
         "risks": [
 
+        ],
+        "herbs": [
+            "juniper",
+            "poppy",
+            "thyme",
+            "ragwort"
         ]
     },
     "diarrhea": {
@@ -43,9 +49,16 @@
             "elder": 13
         },
         "duration": 2,
-        "medicine_duration": 1,
+        "medicine_duration": 2,
         "infectiousness": 0,
-        "risks": []
+        "risks": [],
+        "herbs": [
+            "betony",
+            "mullein",
+            "juniper",
+            "mallow",
+            "diarrhea"
+        ]
     },
     "fleas": {
         "severity": "minor",
@@ -65,14 +78,17 @@
             "senior adult": 0,
             "elder": 0
         },
-        "duration": 2,
-        "medicine_duration": 1,
+        "duration": 4,
+        "medicine_duration": 2,
         "infectiousness": 15,
         "risks": [
             {
                 "name": "torn pelt",
                 "chance": 20
             }
+        ],
+        "herbs": [
+            "plantain"
         ]
     },
     "greencough": {
@@ -99,8 +115,17 @@
         "risks": [
             {
                 "name": "yellowcough",
-                "chance": 70
+                "chance": 60
             }
+        ],
+        "herbs": [
+            "catmint",
+            "tansy",
+            "mullein",
+            "plantain",
+            "juniper",
+            "poppy",
+            "moss"
         ]
     },
     "kittencough": {
@@ -122,13 +147,22 @@
             "elder": 10
         },
         "duration": 3,
-        "medicine_duration": 1,
+        "medicine_duration": 2,
         "infectiousness": 15,
         "risks": [
             {
                 "name": "whitecough",
-                "chance": 15
+                "chance": 10
             }
+        ],
+        "herbs": [
+            "catmint",
+            "tansy",
+            "mullein",
+            "plantain",
+            "juniper",
+            "poppy",
+            "moss"
         ]
     },
     "an infected wound": {
@@ -150,13 +184,19 @@
             "elder": 13
         },
         "duration": 3,
-        "medicine_duration": 1,
+        "medicine_duration": 2,
         "infectiousness": 0,
         "risks": [
             {
                 "name": "a festering wound",
-                "chance": 15
+                "chance": 10
             }
+        ],
+        "herbs": [
+            "marigold",
+            "burdock",
+            "wild_garlic",
+            "poppy"
         ]
     },
     "carrionplace disease": {
@@ -180,7 +220,8 @@
         "duration": 3,
         "medicine_duration": 2,
         "infectiousness": 0,
-        "risks": []
+        "risks": [],
+        "herbs": []
     },
     "redcough": {
         "severity": "severe",
@@ -203,7 +244,17 @@
         "duration": 50,
         "medicine_duration": 40,
         "infectiousness": 0,
-        "risks": []
+        "risks": [],
+        "herbs": [
+            "lungwort",
+            "mullein",
+            "tansy",
+            "plantain",
+            "juniper",
+            "ragwort",
+            "poppy",
+            "moss"
+        ]
     },
     "running nose": {
         "severity": "minor",
@@ -224,13 +275,18 @@
             "elder": 0
         },
         "duration": 3,
-        "medicine_duration": 1,
+        "medicine_duration": 2,
         "infectiousness": 0,
         "risks": [
             {
                 "name": "whitecough",
                 "chance": 15
             }
+        ],
+        "herbs": [
+            "ragwort",
+            "juniper",
+            "poppy"
         ]
     },
     "whitecough": {
@@ -252,13 +308,23 @@
             "elder": 15
         },
         "duration": 3,
-        "medicine_duration": 1,
+        "medicine_duration": 2,
         "infectiousness": 30,
         "risks": [
             {
                 "name": "greencough",
-                "chance": 20
+                "chance": 18
             }
+        ],
+        "herbs": [
+            "catmint",
+            "plantain",
+            "tansy",
+            "mullein",
+            "juniper",
+            "ragwort",
+            "poppy",
+            "moss"
         ]
     },
     "yellowcough": {
@@ -275,18 +341,21 @@
             "kitten": 5,
             "adolescent": 10,
             "young adult": 15,
-            "adult": 20,
+            "adult": 15,
             "senior adult": 15,
             "elder": 5
         },
         "duration": 3,
-        "medicine_duration": 2,
+        "medicine_duration": 3,
         "infectiousness": 30,
         "risks": [
             {
                 "name": "redcough",
-                "chance": 100
+                "chance": 80
             }
+        ],
+        "herbs": [
+            "lungwort"
         ]
     },
     "a festering wound": {
@@ -308,9 +377,18 @@
             "elder": 3
         },
         "duration": 3,
-        "medicine_duration": 1,
+        "medicine_duration": 2,
         "infectiousness": 0,
-        "risks": []
+        "risks": [],
+        "herbs": [
+            "marigold",
+            "burdock",
+            "oak_leaves",
+            "ragwort",
+            "juniper",
+            "poppy",
+            "moss"
+        ]
     },
     "heat stroke": {
         "severity": "severe",
@@ -333,7 +411,12 @@
         "duration": 1,
         "medicine_duration": 1,
         "infectiousness": 0,
-        "risks": []
+        "risks": [],
+        "herbs": [
+            "juniper",
+            "ragwort",
+            "moss"
+        ]
     },
     "heat exhaustion": {
         "severity": "major",
@@ -354,13 +437,18 @@
             "elder": 0
         },
         "duration": 2,
-        "medicine_duration": 1,
+        "medicine_duration": 2,
         "infectiousness": 0,
         "risks": [
             {
                 "name": "heat stroke",
                 "chance": 5
             }
+        ],
+        "herbs": [
+            "juniper",
+            "ragwort",
+            "moss"
         ]
     },
     "stomachache": {
@@ -387,8 +475,14 @@
         "risks": [
             {
                 "name": "diarrhea",
-                "chance": 10
+                "chance": 8
             }
+        ],
+        "herbs": [
+            "juniper",
+            "mallow",
+            "ragwort",
+            "poppy"
         ]
     },
     "constant nightmares": {
@@ -409,10 +503,15 @@
             "senior adult": 0,
             "elder": 0
         },
-        "duration": 1,
+        "duration": 2,
         "medicine_duration": 1,
         "infectiousness": 0,
         "risks": [
+        ],
+        "herbs": [
+            "juniper",
+            "thyme",
+            "poppy"
         ]
     },
     "grief stricken": {
@@ -439,12 +538,17 @@
         "risks": [
             {
                 "name": "lasting grief",
-                "chance": 65
+                "chance": 50
             },
             {
                 "name": "constant nightmares",
-                "chance": 25
+                "chance": 15
             }
+        ],
+        "herbs": [
+            "juniper",
+            "thyme",
+            "poppy"
         ]
     }
 }

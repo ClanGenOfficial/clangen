@@ -18,6 +18,26 @@
             "text_horiz_alignment": "center"
         }
     },
+    "#med_messages_box_dark":
+    {
+        "colours":
+        {
+            "dark_bg": "#00000000",
+            "normal_text": "#EFE5CE"
+        },
+        "font":
+        {
+            "name": "notosans",
+            "size": "15"
+        },
+        "misc":
+        {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "center",
+            "text_vert_alignment": "center"
+        }
+    },
     "#events_box_dark":
     {
         "colours": 
