@@ -328,7 +328,7 @@ class Events():
                     herb_display = []
                     for herb in herbs_found:
                         # TODO: need to add bee sting as an injury so that these two herbs are relevant.
-                        if herb in ['dandelion', 'blackberry']:
+                        if herb in ['blackberry']:
                             continue
                         if game.clan.current_season in ['Newleaf', 'Greenleaf']:
                             amount = random.choices([1, 2, 3], [3, 3, 1], k=1)

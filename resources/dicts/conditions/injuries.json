@@ -492,6 +492,7 @@
         ],
         "herbs": [
             "elder_leaves",
+            "dandelion",
             "poppy"
         ]
     },
@@ -605,6 +606,7 @@
         ],
         "herbs": [
             "daisy",
+            "dandelion",
             "marigold",
             "ragwort",
             "poppy"
@@ -629,7 +631,9 @@
         "cause_permanent": [
         ],
         "herbs": [
-            "poppy"
+            "dandelion",
+            "poppy",
+            "raspberry"
         ]
     },
 
@@ -749,7 +753,8 @@
             "goldenrod",
             "marigold",
             "oak_leaves",
-            "wild_garlic"
+            "wild_garlic",
+            "raspberry"
         ]
     },
 
@@ -1274,6 +1279,7 @@
         "cause_permanent": [
         ],
         "herbs": [
+            "dandelion",
             "tansy",
             "juniper",
             "ragwort",
