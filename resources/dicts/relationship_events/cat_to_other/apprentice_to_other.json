@@ -45,21 +45,21 @@
     },
     "apprentice": {
         "unfriendly": [
-            "accuses (cat) of cheating, there's no way they could win so many practice fights fairly.",
+            "accuses (cat) of cheating and there's no way they could win so many practice fights fairly.",
             "doesn't like how (cat) has been talking about their mentor.",
             "has a disagreement with (cat) over who is the better hunter.",
             "is jealous that (cat) got to go on border patrol this morning.",
             "keeps leaving all of the boring apprentice tasks for (cat) to do by themself.",
-            "tells (cat)'s mentor that they've been sneaking out of camp.",
+            "tells (cat)'s mentor that they've been sneaking out of camp without permission.",
             "prays that they aren't on patrol with (cat) tomorrow.",
             "had a disagreement with (cat) while on patrol earlier.",
             "stole (cat)'s catch right out from under their claws."
         ],
         "neutral": [
             "is frustrated that (cat) won't take their duties more seriously.",
-            "has a mock battle with (cat).",
+            "is having a mock battle with (cat).",
             "has been listening to (cat) talk about how hard training has been.",
-            "is jealous that (cat) got praised by the leader.",
+            "is jealous that (cat) got praised by the Clan leader.",
             "doesn't understand how (cat) got so good at hunting.",
             "brings (cat) a piece of prey to share after a long day of training.",
             "is wowed by how well (cat) did in training today!",
@@ -122,11 +122,11 @@
         "unfriendly": [],
         "neutral": [
             "escorted (cat) so they could gather herbs.",
-            "thought of (cat) on the last patrol and took a rare herb with them.",
+            "thought of (cat) on the last patrol and brought a rare herb back for them.",
             "watched (cat) show kindness and compassion towards their patients.",
             "caught a glimpse of (cat) caring for a wounded warrior with confidence and grace.",
             "spent some time hanging out with (cat) in the medicine den.",
-            "feels like (cat) isn't taking their health seriously.",
+            "feels like (cat) isn't taking their own personal health seriously.",
             "went to (cat) for advice about a dream they had."
         ],
         "friendly": [],
@@ -148,7 +148,7 @@
         "unfriendly": [
             "accuses (cat) of being a bad deputy.",
             "had a disagreement with (cat) while on patrol earlier.",
-            "stole (cat)'s catch right out from under their claws."
+            "stole (cat)'s catch right out from under their claws!"
         ],
         "neutral": [
             "is tired from (cat) putting them on so many patrols.",
