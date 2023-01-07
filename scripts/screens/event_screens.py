@@ -313,7 +313,6 @@ class EventsScreen(Screens):
         # Draw and disable the correct menu buttons.
         self.set_disabled_menu_buttons(["events_screen"])
         self.show_menu_buttons()
-        self.display_events = []
         self.update_events_display()
 
     def exit_screen(self):

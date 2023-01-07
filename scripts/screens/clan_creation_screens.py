@@ -520,7 +520,7 @@ class MakeClanScreen(Screens):
         self.elements['game_mode_background'] = pygame_gui.elements.UIImage(pygame.Rect((325, 130), (399, 461)),
                                                                             text_box)
         self.elements['permi_warning'] = pygame_gui.elements.UITextBox(
-            "Your clan's game mode in permanent and cannot be changed after Clan creation.",
+            "Your clan's game mode is permanent and cannot be changed after Clan creation.",
             pygame.Rect((100, 581), (600, 40)),
             object_id=get_text_box_theme()
         )
