@@ -106,6 +106,7 @@ def json_load():
             new_cat.faded_offspring = cat["faded_offspring"] if "faded_offspring" in cat else []
             new_cat.opacity = cat["opacity"] if "opacity" in cat else 100
             new_cat.prevent_fading = cat["prevent_fading"] if "prevent_fading" in cat else False
+            new_cat.tint = cat["tint"] if "tint" in cat else "none"
             all_cats.append(new_cat)
         except KeyError as e:
             if "ID" in cat:
