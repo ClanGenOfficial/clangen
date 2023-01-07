@@ -1,7 +1,8 @@
-import ujson
+try:
+    import ujson
+except ImportError:
+    import json as ujson
 import random
-
-import ujson as ujson
 
 from scripts.cat.cats import Cat
 from scripts.conditions import medical_cats_condition_fulfilled, get_amount_cat_for_one_medic
