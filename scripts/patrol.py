@@ -1,6 +1,7 @@
-from random import choice, randint
+from random import choice, randint, choices
 from math import floor
 
+from scripts.clan import HERBS
 from scripts.game_structure.game_essentials import *
 from scripts.cat.names import *
 from scripts.cat.cats import *
@@ -471,6 +472,8 @@ class Patrol():
                         self.handle_reputation(10)
             self.handle_mentor_app_pairing()
             self.handle_relationships()
+            if game.clan.game_mode != 'classic' and not antagonize:
+                self.handle_herbs(n)
             self.final_success = self.patrol_event.success_text[n]
             if antagonize:
                 self.antagonize = self.patrol_event.antagonize_text
@@ -758,6 +761,69 @@ class Patrol():
                     else:
                         self.patrol_random_cat.death_event.append(f'This cat gained a scar while patrolling.')
 
+    def handle_herbs(self, outcome):
+        herbs_gotten = []
+
+        if "many_herbs1" in patrol.patrol_event.tags and outcome == 0:
+            large_amount = 5
+        elif "many_herbs2" in patrol.patrol_event.tags and outcome == 1:
+            large_amount = 5
+        elif "many_herbs3" in patrol.patrol_event.tags and outcome == 2:
+            large_amount = 5
+        elif "many_herbs4" in patrol.patrol_event.tags and outcome == 3:
+            large_amount = 5
+        else:
+            large_amount = None
+
+        if "random_herbs" in patrol.patrol_event.tags:
+            number_of_herb_types = choice([1, 2, 3])
+            herbs_picked = choices(HERBS, k=number_of_herb_types)
+            for herb in herbs_picked:
+                herbs_gotten.append(str(herb).replace('_', ' '))
+                if not large_amount:
+                    amount_gotten = choices([1, 2, 3], [1, 3, 2], k=1)
+                    print(game.clan.herbs)
+                    if herb in game.clan.herbs.keys():
+                        game.clan.herbs[herb] += amount_gotten[0] * len(patrol.patrol_cats)
+                    else:
+                        game.clan.herbs.update({herb: amount_gotten[0] * len(patrol.patrol_cats)})
+                    print(herb, amount_gotten * len(patrol.patrol_cats))
+                else:
+                    print(game.clan.herbs)
+                    if herb in game.clan.herbs.keys():
+                        game.clan.herbs[herb] += large_amount * len(patrol.patrol_cats)
+                    else:
+                        game.clan.herbs.update({herb: large_amount})
+                    print(herb, large_amount * len(patrol.patrol_cats))
+                print(game.clan.herbs)
+        elif "herb" in patrol.patrol_event.tags:
+            for tag in patrol.patrol_event.tags:
+                if tag in HERBS:
+                    herbs_gotten.append(str(tag).replace('_', ' '))
+                    if not large_amount:
+                        amount_gotten = choices([1, 2, 3], [1, 3, 2], k=1)
+                        print(game.clan.herbs)
+                        if tag in game.clan.herbs.keys():
+                            game.clan.herbs[tag] += amount_gotten[0] * len(patrol.patrol_cats)
+                        else:
+                            game.clan.herbs.update({tag: amount_gotten[0] * len(patrol.patrol_cats)})
+                        print(tag, amount_gotten[0] * len(patrol.patrol_cats))
+                    else:
+                        print(game.clan.herbs)
+                        if tag in game.clan.herbs.keys():
+                            game.clan.herbs[tag] += large_amount * len(patrol.patrol_cats)
+                        else:
+                            game.clan.herbs.update({tag: large_amount * len(patrol.patrol_cats)})
+                        print(tag, large_amount * len(patrol.patrol_cats))
+                    print(game.clan.herbs)
+        if herbs_gotten:
+            if len(herbs_gotten) == 1:
+                insert = f"{herbs_gotten[0]} was"
+            elif len(herbs_gotten) == 2:
+                insert = f"{herbs_gotten[0]} and {herbs_gotten[1]} were"
+            else:
+                insert = f"{', '.join(herbs_gotten[:-1])}, and {herbs_gotten[-1]} were"
+            game.herb_events_list.append(f"{insert.capitalize()} gathered on a patrol.")
     def handle_clan_relations(self, difference):
         """
         relations with other clans
@@ -1247,7 +1313,7 @@ class PatrolEvent():
         self.history_text = history_text
 
         tags = [
-            "hunting", "small_prey", "big_prey", "training", "border", "med_cat", "herbs", 
+            "hunting", "small_prey", "big_prey", "training", "border", "med_cat", "herb", "random_herbs", "many_herbs#" 
             "other_clan", "reputation", "fighting", 
             "new_cat", "new_cat_med", "new_cat_queen", "new_cat_female", "new_cat_tom", "new_cat_neutered",
             "new_cat_elder", "new_cat_majorinjury", "new_cat_kit", "new_cat_kits", "new_cat_newborn", 
@@ -1300,7 +1366,47 @@ class PatrolEvent():
         Keep in mind that the “non_lethal” tag will apply to ALL the conditions for that patrol.
         Right now, nonlethal shock is auto applied to all cats present when another cat dies. This may change in the future.
 
-        "two_apprentices" is for patrols with two apprentices (at least) in them. It works with the "apprentice" tag. "rel_two_apps" is for patrols with relationship changes between app1 and app2 that don't affect the rest of the patrol, and also works with "two_apprentices" and "apprentice".
+        HERB TAGGING:
+        herbs are given on successes only
+        “random_herbs” <give a random assortment of herbs
+        
+        “herbs” < use to mark that this patrol gives a specific herb, use in conjunction with a herb tag. 
+        
+        Herb tags:
+         "elder_leaves",
+         "cobwebs",
+         "daisy",
+         "horsetail",
+         "juniper",
+         "lungwort",
+         "mallow",
+         "marigold",
+         "moss",
+         "oak_leaves",
+         "parsley",
+         "raspberry",
+         "tansy",
+         "thyme",
+         "wild_garlic",
+         "dandelion",
+         "mullein",
+         "rosemary",
+         "burdock",
+         "blackberry",
+         "betony",
+         "goldenrod",
+         "poppy",
+         "plantain",
+         "catmint"
+        
+        “many_herbs#” < to cause the patrol to give a large number of herbs automatically. Replace the # with the 
+        outcome number (i.e. if you want success outcome 3 - which is the skill success - to give lots of herbs, then 
+        use “many_herbs3”)
+                
+
+        "two_apprentices" is for patrols with two apprentices (at least) in them. It works with the "apprentice" tag. 
+        "rel_two_apps" is for patrols with relationship changes between app1 and app2 that don't affect the rest of the 
+        patrol, and also works with "two_apprentices" and "apprentice".
 
         "warrior" is used to specify that the patrol should only trigger with at least 1 warrior in it. 
         "no_app" is for when no apps should be on the patrol

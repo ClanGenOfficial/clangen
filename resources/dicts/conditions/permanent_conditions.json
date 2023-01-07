@@ -14,8 +14,8 @@
         "illness_infectiousness": [
         ],
         "risks": [
-
-        ]
+        ],
+        "herbs": []
     },
     "lost a leg": {
         "severity": "major",
@@ -44,6 +44,12 @@
                 "name": "sore",
                 "chance": 20
             }
+        ],
+        "herbs": [
+            "daisy",
+            "juniper",
+            "marigold",
+            "ragwort"
         ]
     },
     "born without a leg": {
@@ -69,6 +75,12 @@
                 "name": "joint pain",
                 "chance": 40
             }
+        ],
+        "herbs": [
+            "daisy",
+            "juniper",
+            "marigold",
+            "ragwort"
         ]
     },
     "weak leg": {
@@ -94,6 +106,12 @@
                 "name": "joint pain",
                 "chance": 40
             }
+        ],
+        "herbs": [
+            "daisy",
+            "juniper",
+            "marigold",
+            "ragwort"
         ]
     },
     "twisted leg": {
@@ -119,6 +137,12 @@
                 "name": "joint pain",
                 "chance": 40
             }
+        ],
+        "herbs": [
+            "daisy",
+            "juniper",
+            "marigold",
+            "ragwort"
         ]
     },
     "lost their tail": {
@@ -144,6 +168,10 @@
                 "name": "phantom pain",
                 "chance": 10
             }
+        ],
+        "herbs": [
+            "juniper",
+            "ragwort"
         ]
     },
     "born without a tail": {
@@ -161,7 +189,8 @@
         "illness_infectiousness": [
         ],
         "risks": [
-        ]
+        ],
+        "herbs": []
     },
     "paralyzed": {
         "severity": "severe",
@@ -194,6 +223,12 @@
                 "name": "joint pain",
                 "chance": 20
             }
+        ],
+        "herbs": [
+            "daisy",
+            "juniper",
+            "ragwort",
+            "marigold"
         ]
     },
     "raspy lungs": {
@@ -215,6 +250,10 @@
                 "name": "whitecough",
                 "chance": 20
             }
+        ],
+        "herbs": [
+            "betony",
+            "mullein"
         ]
     },
     "wasting disease": {
@@ -222,12 +261,12 @@
         "congenital": "sometimes",
         "moons_until": 0,
         "mortality": {
-            "kitten": 15,
-            "adolescent": 50,
-            "young adult": 65,
-            "adult": 75,
-            "senior adult": 50,
-            "elder": 20
+            "kitten": 10,
+            "adolescent": 40,
+            "young adult": 75,
+            "adult": 65,
+            "senior adult": 40,
+            "elder": 10
         },
         "illness_infectiousness": [
             {
@@ -254,12 +293,16 @@
             },
             {
                 "name": "yellowcough",
-                "chance": 70
+                "chance": 50
             },
             {
                 "name": "redcough",
-                "chance": 100
+                "chance": 60
             }
+        ],
+        "herbs": [
+            "juniper",
+            "ragwort"
         ]
     },
     "blind": {
@@ -277,7 +320,8 @@
         "illness_infectiousness": [
         ],
         "risks": [
-        ]
+        ],
+        "herbs": []
     },
     "one bad eye": {
         "severity": "major",
@@ -297,7 +341,8 @@
                 "name": "failing eyesight",
                 "chance": 80
             }
-        ]
+        ],
+        "herbs": []
     },
     "failing eyesight": {
         "severity": "major",
@@ -318,7 +363,8 @@
                 "name": "blind",
                 "chance": 50
             }
-        ]
+        ],
+        "herbs": []
     },
     "partial hearing loss": {
         "severity": "minor",
@@ -339,7 +385,8 @@
                 "name": "deaf",
                 "chance": 80
             }
-        ]
+        ],
+        "herbs": []
     },
     "deaf": {
         "severity": "major",
@@ -356,7 +403,8 @@
         "illness_infectiousness": [
         ],
         "risks": [
-        ]
+        ],
+        "herbs": []
 
     },
     "constant joint pain": {
@@ -378,6 +426,12 @@
                 "name": "joint pain",
                 "chance": 10
             }
+        ],
+        "herbs": [
+            "daisy",
+            "juniper",
+            "marigold",
+            "ragwort"
         ]
     },
     "seizure prone": {
@@ -399,6 +453,10 @@
                 "name": "seizure",
                 "chance": 10
             }
+        ],
+        "herbs": [
+            "ragwort",
+            "juniper"
         ]
     },
     "allergies": {
@@ -420,7 +478,8 @@
                 "name": "running nose",
                 "chance": 20
             }
-        ]
+        ],
+        "herbs": []
     },
     "constantly dizzy": {
         "severity": "major",
@@ -437,7 +496,8 @@
         "illness_infectiousness": [
         ],
         "risks": [
-        ]
+        ],
+        "herbs": []
     },
     "recurring shock": {
         "severity": "major",
@@ -458,6 +518,11 @@
                 "name": "constant nightmares",
                 "chance": 20
             }
+        ],
+        "herbs": [
+            "thyme",
+            "juniper",
+            "poppy"
         ]
     },
     "lasting grief": {
@@ -479,6 +544,11 @@
                 "name": "grief stricken",
                 "chance": 50
             }
+        ],
+        "herbs": [
+            "thyme",
+            "juniper",
+            "poppy"
         ]
     }
 }
