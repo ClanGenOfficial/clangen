@@ -1,3 +1,4 @@
+import pygame
 import ujson
 import traceback
 from scripts.game_structure import image_cache
@@ -374,6 +375,21 @@ def update_sprite(cat):
             else:
                 new_sprite.blit(sprites.sprites[cat.tortiebase + cat.tortiecolour + str(cat.age_sprites[cat.age])], (0, 0))
                 new_sprite.blit(sprites.sprites[cat.tortiepattern + cat.pattern + str(cat.age_sprites[cat.age])], (0, 0))
+
+        # TINTS
+        if cat.tint != "none" and cat.tint in Sprites.cat_tints:
+            # Multiply with alpha does not work as you would expect - it just lowers the alpha of the
+            # entire surface. To get around this, we first blit the tint onto a white background to dull it,
+            # then blit the surface onto the sprite with pygame.BLEND_RGB_MULT
+            base = pygame.Surface((50, 50)).convert_alpha()
+            base.fill((255, 255, 255))
+            tint = pygame.Surface((50, 50)).convert_alpha()
+            tint.fill(tuple(Sprites.cat_tints[cat.tint]))
+            base.blit(tint, (0, 0))
+            new_sprite.blit(base, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
+
+
+
         # draw white patches
         if cat.white_patches is not None:
             if cat.pelt.length == 'long' and cat.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] \

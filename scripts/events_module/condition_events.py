@@ -879,12 +879,24 @@ class Condition_Events():
                     chance = int(retire_chances.get(cat.age))
                     if not int(random.random() * chance):
                         cat.retire_cat()
-                        event = f'{cat.name} has decided to retire from normal Clan duty.'
+                        if game.clan.leader is not None:
+                            if not game.clan.leader.dead and not game.clan.leader.exiled and not game.clan.leader.outside:
+                                event = f"{game.clan.leader.name}, seeing {cat.name} struggling the last few moons approaches them and promises them that no one would think less of them for retiring early and that they would still be a valuable member of the clan as an elder. {cat.name} agrees and later that day their elder ceremony is held."
+                            else:
+                                event = f'{cat.name} has decided to retire from normal Clan duty.'
+                        else:
+                            event = f'{cat.name} has decided to retire from normal Clan duty.'
                         event_list.append(event)
 
                 if cat.permanent_condition[condition]['severity'] == 'severe':
                     cat.retire_cat()
-                    event = f'{cat.name} has decided to retire from normal Clan duty.'
+                    if game.clan.leader is not None:
+                            if not game.clan.leader.dead and not game.clan.leader.exiled and not game.clan.leader.outside:
+                                event = f"{game.clan.leader.name}, seeing {cat.name} struggling the last few moons approaches them and promises them that no one would think less of them for retiring early and that they would still be a valuable member of the clan as an elder. {cat.name} agrees and later that day their elder ceremony is held."
+                            else:
+                                event = f'{cat.name} has decided to retire from normal Clan duty.'
+                    else:
+                        event = f'{cat.name} has decided to retire from normal Clan duty.'
                     event_list.append(event)
 
         if len(event_list) > 0:

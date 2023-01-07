@@ -161,6 +161,9 @@ class Cat():
         self.parent1 = parent1
         self.parent2 = parent2
         self.pelt = pelt
+
+        self.tint = choice(list(Sprites.cat_tints.keys()))
+
         self.eye_colour = eye_colour
         self.scars = []
         self.mentor = None
@@ -542,7 +545,7 @@ class Cat():
                         "world that took m_c and not them.",
                         "In the days to come, r_c barely stirs from their nest.",
                         "As the days pass from the vigil, r_c becomes angry and withdrawn. It feels like the entire "
-                        "clan is just moving on from m_c's death, and they categorically refuse to do so.",
+                        "Clan is just moving on from m_c's death, and they categorically refuse to do so.",
                         "Cats come to r_c afterwards, offering them the choicest cuts of prey, the juiciest still "
                         "beating heart of a mouse, but they're uninterested, staring at the wall of their nest and "
                         "refusing to talk.",
@@ -816,12 +819,10 @@ class Cat():
         """ Generates a thought for the cat, which displays on their profile. """
         all_cats = self.all_cats
         other_cat = random.choice(list(all_cats.keys()))
-        countdown = int(len(all_cats) / 3)
 
         # get other cat
-        while other_cat == self and countdown > 0:
+        while other_cat == self and len(all_cats) > 1:
             other_cat = random.choice(list(all_cats.keys()))
-            countdown -= 1
         other_cat = all_cats.get(other_cat)
 
         # get possible thoughts
@@ -832,7 +833,7 @@ class Cat():
         if "r_c" in chosen_thought:
             chosen_thought = chosen_thought.replace("r_c", str(other_cat.name))
 
-        # insert clan name if needed
+        # insert Clan name if needed
         if "c_n" in chosen_thought:
             chosen_thought = chosen_thought.replace("c_n", str(game.clan.name) + 'Clan')
 
@@ -1899,7 +1900,7 @@ class Cat():
         return relationship
 
     def create_all_relationships(self):
-        """Create Relationships to all current clan cats."""
+        """Create Relationships to all current Clancats."""
         for id in self.all_cats:
             the_cat = self.all_cats.get(id)
             if the_cat.ID is not self.ID:

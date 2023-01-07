@@ -103,14 +103,15 @@ class ClanScreen(Screens):
         for x in game.clan.clan_cats:
             if not Cat.all_cats[x].dead and Cat.all_cats[x].in_camp and \
                     not Cat.all_cats[x].exiled and not Cat.all_cats[x].outside:
-                # print("Original location" + str(Cat.all_cats[x].placement))
 
                 i += 1
                 if i > self.max_sprites_displayed:
                     break
 
                 self.cat_buttons.append(
-                    UISpriteButton(pygame.Rect(tuple(Cat.all_cats[x].placement), (50, 50)), Cat.all_cats[x].sprite, cat_id=x))
+                    UISpriteButton(pygame.Rect(tuple(Cat.all_cats[x].placement), (50, 50)), Cat.all_cats[x].sprite,
+                                   cat_id=x)
+                )
 
         self.save_button = UIImageButton(pygame.Rect(((343, 625), (114, 30))), "", object_id="#save_button")
 

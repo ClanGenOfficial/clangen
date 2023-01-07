@@ -11,6 +11,7 @@ from scripts.game_structure.image_button import IDImageButton
 from scripts.game_structure.game_essentials import *
 from ..cat.cats import Cat
 from ..game_structure import image_cache
+from scripts.event_class import Single_Event
 
 
 class EventsScreen(Screens):
@@ -119,7 +120,7 @@ class EventsScreen(Screens):
                 if self.misc_alert:
                     self.misc_alert.kill()
                 self.misc_events_button.enable()
-                self.misc_events = [x.text for x in game.cur_events_list if "misc" in x.types]
+                self.misc_events = [x for x in game.cur_events_list if "misc" in x.types]
                 if self.misc_events:
                     self.misc_alert = pygame_gui.elements.UIImage(pygame.Rect((44, 590), (4, 22)),
                                                                   image_cache.load_image(
@@ -127,6 +128,9 @@ class EventsScreen(Screens):
                                                                   ))
 
                 if self.event_display_type == "all events":
+                    # if events list is empty, add a single message the says nothing interesting happened
+                    if not self.all_events:
+                        self.all_events.append(Single_Event("Nothing interesting happened this moon"))
                     self.display_events = self.all_events
                 elif self.event_display_type == "ceremony events":
                     self.display_events = self.ceremony_events
@@ -519,6 +523,7 @@ class EventsScreen(Screens):
             for ele in self.cat_profile_buttons:
                 ele.kill()
             self.cat_profile_buttons = []
+
     def make_events_container(self):
         """ In its own function so that there is only one place the box size is set"""
         self.event_container = pygame_gui.elements.UIScrollingContainer(pygame.Rect((215, 276), (516, 350)))
