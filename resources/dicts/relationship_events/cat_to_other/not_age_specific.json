@@ -15,7 +15,7 @@
         "shudders at the sound of (cat)'s voice."
     ],
     "neutral": [
-        "complains about (cat).",
+        "complains about something (cat) did.",
         "is telling a story to (cat).",
         "is talking with (cat).",
         "is sharing prey with (cat).",
@@ -31,7 +31,10 @@
         "bickered about something trivial with (cat).",
         "finds the way (cat) acts increasingly uncomfortable.",
         "said something that rubbed (cat) the wrong way.",
-        "caught (cat) complaining about them behind their back."
+        "caught (cat) complaining about them behind their back.",
+        "swaps favorite prey with (cat).",
+        "chats with (cat) about their day.",
+        "appreciates (cat) telling them that they had a feather stuck to their face."
     ],
     "friendly": [
         "is sharing tongues with (cat).",

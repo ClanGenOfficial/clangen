@@ -47,7 +47,10 @@
             "won't stop copying everything (cat) does.",
             "helps (cat) pick burrs out of their fur.",
             "is helping (cat) pick burrs out of their fur after the last patrol.",
-            "listens to (cat) talk about what life was like when they were young."
+            "listens to (cat) talk about what life was like when they were young.",
+            "swaps favorite prey with (cat).",
+            "chats with (cat) about their day.",
+            "appreciates (cat) telling them that they had a feather stuck to their face."
         ],
         "dislike": [
             "divides (cat) into extra patrols.",

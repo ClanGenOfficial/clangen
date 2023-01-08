@@ -134,7 +134,8 @@
             "tells (cat) that they're an amazing storyteller.",
             "is having a wonderful time discussing recent Clan news with (cat).",
             "is always happy to grab some freshkill for (cat) to share.",
-            "wants to spend more time with (cat)!"
+            "wants to spend more time with (cat)!",
+            "asks (cat) how they're doing."
         ],
         "jealousy": [
             "is jealous that (cat) is getting more attention than them.",
@@ -303,7 +304,8 @@
             "defends (cat) from a clanmate's rude remarks.",
             "is having a wonderful time discussing recent Clan news with (cat).",
             "is always happy to grab some freshkill for (cat) to share.",
-            "wants to spend more time with (cat)!"
+            "wants to spend more time with (cat)!",
+            "asks (cat) how they're doing."
         ],
         "jealousy": [],
         "trust": [

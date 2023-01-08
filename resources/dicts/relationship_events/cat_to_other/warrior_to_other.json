@@ -28,7 +28,8 @@
         "neutral": [
             "is giving advice to (cat).",
             "is giving (cat) a task.",
-            "wishes (cat) would take things more seriously."
+            "wishes (cat) would take things more seriously.",
+            "asks (cat) how they're doing."
         ],
         "friendly": [
             "is feeling proud of (cat)."
@@ -52,7 +53,9 @@
             "saw (cat) miss an easy catch today.",
             "is thinking about how much (cat) reminds them of their own apprentice days.",
             "prays that they aren't on patrol with (cat) tomorrow.",
-            "had a disagreement with (cat) while on patrol earlier."
+            "had a disagreement with (cat) while on patrol earlier.",
+            "chats with (cat) while grabbing something to eat.",
+            "asks (cat) how they're doing."
         ],
         "friendly": [
             "is telling (cat) about their own days as an apprentice.",
@@ -79,7 +82,8 @@
             "has noticed (cat) isn't doing a lot of work lately.",
             "saw (cat) miss an easy catch today.",
             "prays that they aren't on patrol with (cat) tomorrow.",
-            "had a disagreement with (cat) while on patrol earlier."
+            "had a disagreement with (cat) while on patrol earlier.",
+            "asks (cat) how they're doing."
         ],
         "friendly": [
             "just told (cat) a hilarious joke.",
@@ -101,7 +105,8 @@
             "escorted (cat) so they could gather herbs.",
             "thought of (cat) on the last patrol and took a rare herb with them.",
             "feels like (cat) isn't taking their health seriously.",
-            "went to (cat) for advice about a dream they had."
+            "went to (cat) for advice about a dream they had.",
+            "asks (cat) how they're doing."
         ],
         "friendly": [],
         "close": []
@@ -114,7 +119,8 @@
         ],
         "neutral": [
             "saw (cat) miss an easy catch today.",
-            "had a disagreement with (cat) while on patrol earlier."
+            "had a disagreement with (cat) while on patrol earlier.",
+            "asks (cat) how they're doing."
         ],
         "friendly": [],
         "close": [
@@ -131,7 +137,8 @@
         "neutral": [
             "is tired from (cat) putting them on so many patrols.",
             "saw (cat) miss an easy catch today.",
-            "had a disagreement with (cat) while on patrol earlier."
+            "had a disagreement with (cat) while on patrol earlier.",
+            "asks (cat) how they're doing."
         ],
         "friendly": [],
         "close": [
@@ -141,7 +148,8 @@
     "elder": {
         "unfriendly": [],
         "neutral": [
-            "feels like they'll never accomplish as much as (cat)."
+            "feels like they'll never accomplish as much as (cat).",
+            "asks (cat) how they're doing."
         ],
         "friendly": [],
         "close": []
