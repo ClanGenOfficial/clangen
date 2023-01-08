@@ -7,7 +7,7 @@ from .base_screens import Screens, cat_profiles
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.image_button import UISpriteButton, UIImageButton
-from scripts.utility import get_text_box_theme, update_sprite, get_living_cat_count
+from scripts.utility import get_text_box_theme, update_sprite, get_living_cat_count, get_queens
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import *
 
@@ -1111,16 +1111,7 @@ class AllegiancesScreen(Screens):
                         ['', '      Apprentices: ' + app_names[:-2]])
         cat_count = self._extracted_from_screen_switches_24(
             living_cats, 'medicine cat', '<b><u>MEDICINE CATS</u></b>')
-        queens = []
-        for living_cat_ in living_cats:
-            if str(living_cat_.status
-                   ) == 'kitten' and living_cat_.parent1 is not None:
-                if Cat.all_cats[living_cat_.parent1].gender == 'male':
-                    if living_cat_.parent2 is None or Cat.all_cats[
-                        living_cat_.parent2].gender == 'male':
-                        queens.append(living_cat_.parent1)
-                else:
-                    queens.append(living_cat_.parent1)
+        queens = get_queens(living_cats, Cat.all_cats)
         cat_count = 0
         for living_cat__ in living_cats:
             if str(

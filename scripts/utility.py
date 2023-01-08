@@ -6,6 +6,21 @@ from scripts.cat.sprites import *
 from scripts.cat.pelts import *
 from scripts.game_structure.game_essentials import *
 
+def get_queens(living_cats, all_cats):
+	"""Returns a list with all cats with the 'status' queen."""
+	queens = []
+	for living_cat_ in living_cats:
+		if str(living_cat_.status) != 'kitten' or living_cat_.parent1 is None:
+			continue
+
+		parent_1 = all_cats[living_cat_.parent1]
+		parent_2 = living_cat_.parent2
+		if parent_1.gender == 'male':
+			if parent_2 is None or parent_2.gender == 'male':
+				queens.append(living_cat_.parent1)
+		else:
+			queens.append(living_cat_.parent1)
+	return queens
 
 def get_med_cats(Cat):
     """
