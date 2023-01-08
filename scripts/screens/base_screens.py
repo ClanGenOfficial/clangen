@@ -126,7 +126,7 @@ class Screens():
 
     # Enables all menu buttons but the ones passed in.
     # Sloppy, but works. Consider making it nicer.
-    def set_disabled_menu_buttons(self, disabled_buttons=[]):
+    def set_disabled_menu_buttons(self, disabled_buttons=()):
         """This sets all menu buttons as interact-able, except buttons listed in disabled_buttons.  """
         for button in self.menu_buttons:
             self.menu_buttons[button].enable()
