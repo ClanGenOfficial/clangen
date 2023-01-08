@@ -164,9 +164,7 @@ class Cat():
         self.parent1 = parent1
         self.parent2 = parent2
         self.pelt = pelt
-
-        self.tint = choice(list(Sprites.cat_tints.keys()))
-
+        self.tint = None
         self.eye_colour = eye_colour
         self.scars = []
         self.mentor = None
@@ -324,6 +322,7 @@ class Cat():
         # APPEARANCE
         init_eyes(self)
         init_pelt(self)
+        init_tint(self)
         init_sprite(self)
         init_scars(self)
         init_accessories(self)
@@ -842,8 +841,12 @@ class Cat():
             chosen_thought = chosen_thought.replace("r_c", str(other_cat.name))
 
         # insert Clan name if needed
-        if "c_n" in chosen_thought:
-            chosen_thought = chosen_thought.replace("c_n", str(game.clan.name) + 'Clan')
+        try:
+            if "c_n" in chosen_thought:
+                chosen_thought = chosen_thought.replace("c_n", str(game.clan.name) + 'Clan')
+        except AttributeError:
+            if "c_n" in chosen_thought:
+                chosen_thought = chosen_thought.replace("c_n", game.switches["clan_list"][0] + 'Clan')
 
         # insert thought
         self.thought = str(chosen_thought)
