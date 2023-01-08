@@ -51,7 +51,8 @@
 		"apprentice",
 		"trust",
 		"respect",
-		"med_only"
+		"med_only",
+		"random_herbs"
 	],
 	"intro_text":"p_l decides it's a good opportunity to show app1 where the most commonly needed herbs are in the territory, both above and underground away from the hot sun.",
 	"decline_text":"As they see app1's absent minded gaze they change their mind. Maybe another day when app1 is more focused and less liable to get a heatstroke when they go to show them the herbs aboveground",
@@ -90,7 +91,8 @@
 	"tags":[
 		"med_cat",
 		"apprentice",
-		"med_only"
+		"med_only",
+		"random_herbs"
 	],
 	"intro_text":"app1 has been sent out into the desert to try to find some specific herbs alone.",
 	"decline_text":"Nervous and with the hot sun pounding on their back, they decide to go back to camp and try again another day their tail dragging behind them.",
@@ -188,7 +190,7 @@
 		"med_cat",
 		"apprentice",
 		"med_only",
-		"herbs",
+		"herb",
 		"comfort",
 		"respect",
 		"trust",
@@ -231,7 +233,7 @@
 	"season":"newleaf",
 	"tags":[
 		"med_cat",
-		"herbs",
+		"herb",
 		"no_app",
 		"clan_to_patrol",
 		"respect", "injury", "sore"
@@ -277,7 +279,7 @@
 	"tags":[
 		"med_cat",
 		"warrior",
-		"herbs",
+		"herb",
 		"dislike", "injury", "sore"
 	],
 	"intro_text":"p_l is on a mission to find lungwort now that Greenleaf is on the horizon. As the only reliable cure for yellowcough, they're determined that c_n replenish their stocks of it. They take along a warrior escort to help.",
@@ -323,7 +325,7 @@
 		"med_cat",
 		"apprentice",
 		"med_only",
-		"herbs",
+		"herb",
 		"comfort",
 		"respect",
 		"trust",
@@ -366,7 +368,7 @@
 	"season":"leaf-bare",
 	"tags":[
 		"med_cat",
-		"herbs",
+		"herb",
 		"no_app",
 		"clan_to_patrol",
 		"respect", "injury", "sore"
@@ -412,7 +414,7 @@
 	"tags":[
 		"med_cat",
 		"warrior",
-		"herbs",
+		"herb",
 		"dislike", "injury", "sore"
 	],
 	"intro_text":"p_l is on a mission to find lungwort now that Leaf-bare is here. As the only reliable cure for yellowcough, they're determined that c_n won't run out of it. They take along a warrior escort to help.",
@@ -458,7 +460,7 @@
 		"med_cat",
 		"apprentice",
 		"med_only",
-		"herbs",
+		"herb",
 		"comfort",
 		"respect",
 		"trust",
@@ -501,7 +503,7 @@
 	"season":"leaf-fall",
 	"tags":[
 		"med_cat",
-		"herbs",
+		"herb",
 		"no_app",
 		"clan_to_patrol",
 		"respect", "injury", "sore"
@@ -547,7 +549,7 @@
 	"tags":[
 		"med_cat",
 		"warrior",
-		"herbs",
+		"herb",
 		"dislike", "injury", "sore"
 	],
 	"intro_text":"p_l is on a mission to find lungwort now that Leaf-fall is here. As the only reliable cure for yellowcough, they're determined that c_n replenish their stocks of it. They take along a warrior escort to help.",
@@ -645,7 +647,7 @@
 	"tags":[
 		"med_cat",
 		"warrior",
-		"herbs",
+		"herb",
 		"romantic",
 		"platonic",
 		"respect",
@@ -693,7 +695,7 @@
 	"tags":[
 		"med_cat",
 		"med_only",
-		"herbs",
+		"herb",
 		"romantic",
 		"platonic",
 		"respect",
@@ -740,7 +742,7 @@
 	"tags":[
 		"med_cat",
 		"warrior",
-		"herbs",
+		"herb",
 		"romantic",
 		"platonic",
 		"respect",
@@ -787,7 +789,7 @@
 	"tags":[
 		"med_cat",
 		"med_only",
-		"herbs",
+		"herb",
 		"romantic",
 		"platonic",
 		"respect",
@@ -834,7 +836,7 @@
 	"tags":[
 		"med_cat",
 		"warrior",
-		"herbs",
+		"herb",
 		"romantic",
 		"platonic",
 		"respect",
@@ -881,7 +883,7 @@
 	"tags":[
 		"med_cat",
 		"med_only",
-		"herbs",
+		"herb",
 		"romantic",
 		"platonic",
 		"respect",
@@ -928,7 +930,7 @@
 	"tags":[
 		"med_cat",
 		"warrior",
-		"herbs",
+		"herb",
 		"romantic",
 		"platonic",
 		"respect",
@@ -975,7 +977,7 @@
 	"tags":[
 		"med_cat",
 		"med_only",
-		"herbs",
+		"herb",
 		"romantic",
 		"platonic",
 		"respect",
@@ -1019,7 +1021,7 @@
     "patrol_id": "dst_med_appfirstsign1",
     "biome": "desert",
     "season": "Any",
-    "tags": ["med_cat", "apprentice", "med_only", "herbs"],
+    "tags": ["med_cat", "apprentice", "med_only", "herb"],
     "intro_text": "p_l is out to gather a few herbs at the behest of their mentor. The wind is gently rustling the scrubby grass as they pad along.",
     "decline_text": "Just before the apprentice can leave, their mentor calls for their attention. Apparently they have a different task that's more pressing.",
     "chance_of_success": 50,

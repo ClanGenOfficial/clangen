@@ -1,4 +1,7 @@
-import ujson
+try:
+    import ujson
+except ImportError:
+    import json as ujson
 from scripts.game_structure.game_essentials import game
 
 resource_directory = "resources/dicts/events/"

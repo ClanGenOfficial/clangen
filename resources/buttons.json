@@ -3363,7 +3363,191 @@
             },
             "disabled_image":
             {
-                "path":"resources/images/buttons/filter_age_unavailable.png"
+            "path": "resources/images/buttons/filter_age_unavailable.png"
+            }
+        }
+    },
+    "#med_den_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/med_den.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/med_den_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/med_den_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/med_den.png"
+            }
+        }
+    },
+    "#in_den_tab":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/med_den_in_den.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/med_den_in_den_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/med_den_in_den_select.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/med_den_in_den_select.png"
+            }
+        }
+    },
+    "#out_den_tab":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/med_den_out_den.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/med_den_out_den_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/med_den_out_den_select.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/med_den_out_den_select.png"
+            }
+        }
+    },
+    "#minor_tab":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/med_den_minor.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/med_den_minor_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/med_den_minor_select.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/med_den_minor_select.png"
+            }
+        }
+    },
+    "#med_cat_den_hover":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/med_cat_den/base.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/med_cat_den/base.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/med_cat_den/base.png"
+            },
+            "disabled_image":
+            {
+                "path": "resources/images/med_cat_den/base.png"
+            }
+        }
+    },
+    "#med_cat_den_hover_big":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/med_cat_den/base.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/med_cat_den/base.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/med_cat_den/base.png"
+            },
+            "disabled_image":
+            {
+                "path": "resources/images/med_cat_den/base.png"
+            }
+        }
+    },
+    "#med_den_log_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/med_den_log.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/med_den_log_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/med_den_log.png"
+            },
+            "disabled_image":
+            {
+                "path": "resources/images/buttons/med_den_log_select.png"
+            }
+        }
+    },
+    "#hurt_sick_cats_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/hurt_sick_cats.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/hurt_sick_cats_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/hurt_sick_cats.png"
+            },
+            "disabled_image":
+            {
+                "path": "resources/images/buttons/hurt_sick_cats_select.png"
             }
         }
     },
@@ -3424,6 +3608,29 @@
             "selected_image":
             {
                 "path": "resources/images/buttons/cat_event_profile.png"
+            }
+        }
+    },
+    "#blank_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/blank.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/blank.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/blank.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/blank.png"
             }
         }
     }

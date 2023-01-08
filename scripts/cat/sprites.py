@@ -1,7 +1,10 @@
 import pygame
 
 from scripts.game_structure.game_essentials import *
-import ujson
+try:
+    import ujson
+except ImportError:
+    import json as ujson
 
 
 class Sprites():

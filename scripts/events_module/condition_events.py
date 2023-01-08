@@ -1,7 +1,8 @@
-import ujson
+try:
+    import ujson
+except ImportError:
+    import json as ujson
 import random
-
-import ujson as ujson
 
 from scripts.cat.cats import Cat
 from scripts.conditions import medical_cats_condition_fulfilled, get_amount_cat_for_one_medic
@@ -38,18 +39,16 @@ class Condition_Events():
                 triggered = True
             return triggered
 
-        # one if-statement has a range of 10
-        number_of_conditions = 1 * 10
-        ratio = 125  # 1/125 times triggering for each cat each moon
+        event_string = None
 
-        event_string = self.handle_already_ill(cat)
+        if cat.is_ill():
+            event_string = self.handle_already_ill(cat)
 
         # ---------------------------------------------------------------------------- #
         #                              make cats sick                                  #
         # ---------------------------------------------------------------------------- #
-        chance_number = number_of_conditions * ratio
-        random_number = int(random.random() * chance_number)
-        if not cat.dead and not cat.is_ill() and random_number <= 10:
+        random_number = int(random.random() * 300)
+        if not cat.dead and not cat.is_ill() and random_number <= 10 and not event_string:
             season_dict = ILLNESSES_SEASON_LIST[season]
             possible_illnesses = []
 
@@ -87,7 +86,6 @@ class Condition_Events():
             triggered = False
 
         return triggered
-
 
     def handle_injuries(self, cat, other_cat, alive_kits, war, enemy_clan, season):
         """ 
@@ -200,7 +198,7 @@ class Condition_Events():
                     if "war" in injury_event.tags:
                         other_clan_name = enemy_clan
 
-                    #print('INJURY:', cat.name, cat.status, len(final_events), other_cat.name, other_cat.status)
+                    # print('INJURY:', cat.name, cat.status, len(final_events), other_cat.name, other_cat.status)
 
                     # let's change some relationship values \o/ check if another cat is mentioned
                     if "other_cat" in injury_event.tags:
@@ -350,8 +348,8 @@ class Condition_Events():
                 possible_conditions = scar_to_condition.get(scar)
                 perm_condition = random.choice(possible_conditions)
             elif scar is None:
-                if cat.injuries[injury_name] is not None:
-                    conditions = cat.injuries[injury_name]["cause_permanent"]
+                if INJURIES[injury_name] is not None:
+                    conditions = INJURIES[injury_name]["cause_permanent"]
                     for x in conditions:
                         if x in scarless_conditions:
                             possible_conditions.append(x)
@@ -373,14 +371,12 @@ class Condition_Events():
     # ---------------------------------------------------------------------------- #
     #                               helper functions                               #
     # ---------------------------------------------------------------------------- #
-    
+
     def handle_already_ill(self, cat):
 
+        starting_life_count = game.clan.leader_lives
         cat.healed_condition = False
         event_list = []
-        healed_illnesses = []
-        new_illness = []
-        old_illness = []
         illness_progression = {
             "running nose": "whitecough",
             "kittencough": "whitecough",
@@ -395,163 +391,71 @@ class Condition_Events():
         # ---------------------------------------------------------------------------- #
         #                         handle currently sick cats                           #
         # ---------------------------------------------------------------------------- #
-        # need to hold this number so that we can check if the leader has died
-        starting_life_count = game.clan.leader_lives
-        clear_leader_conditions = False
-        if cat.is_ill():
-            triggered = True
-            for illness in cat.illnesses:
 
-                # moon skip to try and kill or heal cat
-                skipped = cat.moon_skip_illness(illness)
-                # test print, to track if events are displaying correctly
-                # print(illness, cat.name, cat.healed_condition)
+        # making a copy, so we can iterate through copy and modify the real dict at the same time
+        illnesses = cat.illnesses.copy()
+        for illness in illnesses:
 
-                # if event trigger was true, events should be skipped for this illness
-                if skipped is True:
-                    continue
+            # use herbs
+            self.use_herbs(cat, illness, illnesses, ILLNESSES)
 
-                # death event text and break bc any other illnesses no longer matter
-                if cat.dead and cat.status != 'leader':
-                    event = f"{cat.name} died of {illness}."
-                    # clear event list to get rid of any healed or risk event texts from other illnesses
-                    event_list.clear()
-                    event_list.append(event)
-                    cat.died_by.append(event)
-                    break
+            # moon skip to try and kill or heal cat
+            skipped = cat.moon_skip_illness(illness)
+            # test print, to track if events are displaying correctly
+            # print(illness, cat.name, cat.healed_condition)
 
-                # if the leader died, then break before handling other illnesses cus they'll be fully healed or dead dead
-                elif cat.dead and cat.status == 'leader':
-                    cat.died_by.append(f"died to {illness}")
-                    break
-                elif cat.status == 'leader' and starting_life_count != game.clan.leader_lives:
-                    clear_leader_conditions = True
-                    cat.died_by.append(f"died to {illness}")
-                    break
+            # if event trigger was true, events should be skipped for this illness
+            if skipped is True:
+                continue
 
-                # heal the cat
-                elif cat.healed_condition is True:
-                    # gather potential event strings for healed illness
-                    possible_string_list = ILLNESS_HEALED_STRINGS[illness]
+            # death event text and break bc any other illnesses no longer matter
+            if cat.dead and cat.status != 'leader':
+                event = f"{cat.name} died of {illness}."
+                # clear event list to get rid of any healed or risk event texts from other illnesses
+                event_list.clear()
+                event_list.append(event)
+                cat.died_by.append(event)
+                game.herb_events_list.append(event)
+                break
 
-                    # choose event string
-                    random_index = int(random.random() * len(possible_string_list))
-                    event = possible_string_list[random_index]
-                    event = event_text_adjust(Cat, event, cat, other_cat=None)
-                    event_list.append(event)
+            # if the leader died, then break before handling other illnesses cus they'll be fully healed or dead dead
+            elif cat.dead and cat.status == 'leader':
+                cat.died_by.append(f"died to {illness}")
+                break
 
-                    # append to healed illness list bc we can't remove the illness while inside the for loop
-                    healed_illnesses.append(illness)
-                    cat.healed_condition = False
+            elif cat.status == 'leader' and starting_life_count != game.clan.leader_lives:
+                break
 
-                    # move to next illness, the cat can't get a risk from an illness that has healed
-                    continue
-                if illness in cat.illnesses:
+            # heal the cat
+            elif cat.healed_condition is True:
+                # gather potential event strings for healed illness
+                possible_string_list = ILLNESS_HEALED_STRINGS[illness]
 
-                    # if not dead or healed try to assign new illness from current illness risks
-                    for risk in cat.illnesses[illness]["risks"]:
+                # choose event string
+                random_index = int(random.random() * len(possible_string_list))
+                event = possible_string_list[random_index]
+                event = event_text_adjust(Cat, event, cat, other_cat=None)
+                event_list.append(event)
+                game.herb_events_list.append(event)
 
-                        # adjust chance of risk gain if clan has enough meds
-                        chance = risk["chance"]
-                        if medical_cats_condition_fulfilled(Cat.all_cats.values(),
-                                                            get_amount_cat_for_one_medic(game.clan)):
-                            chance = risk["chance"] + 10  # lower risk if enough meds
-                        if game.clan.medicine_cat is None:
-                            chance = int(chance * .75)  # higher risk if no meds
-                            if chance <= 0:  # ensure that chance is never 0
-                                chance = 1
-
-                        # if we hit the chance, then give the risk if the cat does not already have the risk
-                        if not int(random.random() * chance) and risk['name'] not in cat.illnesses:
-                            # check if the new risk is a previous stage of a current illness
-                            skip = False
-                            if risk['name'] in illness_progression:
-                                if illness_progression[risk['name']] in cat.illnesses:
-                                    skip = True
-                            # if it is, then break instead of giving the risk
-                            if skip is True:
-                                break
-
-                            new_condition_name = risk['name']
-                            risk["chance"] += 10  # lower risk of getting it again
-
-                            # check if the risk is an injury or perm, so we can treat it differently from new illnesses
-                            if new_condition_name in INJURIES:
-                                cat.get_injured(new_condition_name)
-                            if new_condition_name in PERMANENT:
-                                cat.get_permanent_condition(new_condition_name)
-                            # but if it IS an illness, append to relevant lists, so we can handle it outside the loop
-                            else:
-                                new_illness.append(new_condition_name)
-                                old_illness.append(illness)
-
-                            # gather potential event strings for gotten illness
-                            possible_string_list = ILLNESS_RISK_STRINGS[illness][new_condition_name]
-
-                            # choose event string and ensure clan's med cat number aligns with event text
-                            random_index = int(random.random() * len(possible_string_list))
-                            med_list = get_med_cats(Cat)
-                            med_cat = None
-                            if len(med_list) == 0:
-                                if random_index == 0:
-                                    random_index = 1
-                                else:
-                                    med_cat = None
-                            else:
-                                med_cat = random.choice(med_list)
-                                if med_cat == cat:
-                                    random_index = 1
-                            event = possible_string_list[random_index]
-                            event = event_text_adjust(Cat, event, cat, med_cat)  # adjust the text
-                            event_list.append(event)
-
-                            # break out of risk giving loop cus we don't want to give multiple risks for one illness
-                            break
-
-            if clear_leader_conditions is True or cat.dead:
-                # reset leader after death
-                cat.injuries.clear()
-                cat.illnesses.clear()
-                new_illness.clear()
-                old_illness.clear()
-                healed_illnesses.clear()
+                cat.illnesses.pop(illness)
+                # make sure complications get reset if infection or fester were healed
+                if illness in ['an infected wound', 'a festering wound']:
+                    for injury in cat.injuries:
+                        keys = cat.injuries[injury].keys()
+                        if 'complication' in keys:
+                            cat.injuries[injury]['complication'] = None
+                    for condition in cat.permanent_condition:
+                        keys = cat.permanent_condition[condition].keys()
+                        if 'complication' in keys:
+                            cat.permanent_condition[condition]['complication'] = None
                 cat.healed_condition = False
 
-            # making sure that when an illness progresses, the old illness is not kept and new illness is given
-            if len(new_illness) > 0:
-                for y in range(len(new_illness)):
-                    # check against progression dict
-                    for x in illness_progression:
-                        if old_illness[y] == x and \
-                                new_illness[y] == illness_progression.get(x) and \
-                                old_illness[y] in cat.illnesses:
-                            # remove the old illness if the new one is a progression
-                            cat.illnesses.pop(old_illness[y])
-                    # make the cat ill with new illness regardless of how progression check went
-                    cat.get_ill(new_illness[y])
+                # move to next illness, the cat can't get a risk from an illness that has healed
+                continue
 
-            # if the cat healed from illnesses, then remove those illnesses
-            if len(healed_illnesses) != 0:
-                # go through healed illness list one by one, in case they healed more than one this moon
-                for illness in healed_illnesses:
-                    # double check to make sure the cat WAS sick with that illness before trying to remove
-                    if illness in cat.illnesses:
-                        cat.illnesses.pop(illness)
-                    # check if illness was a complication and erase if it was
-                    if illness in ['an infected wound', 'a festering wound']:
-                        # cat can only have one infection/fester at a time so just run through all illnesses
-                        # and perm conditions to set all complication fields to None
-                        for injury in cat.injuries:
-                            keys = cat.injuries[injury].keys()
-                            if 'complication' in keys:
-                                cat.injuries[injury]['complication'] = None
-                        for condition in cat.permanent_condition:
-                            keys = cat.permanent_condition[condition].keys()
-                            if 'complication' in keys:
-                                cat.permanent_condition[condition]['complication'] = None
+            self.give_risks(cat, event_list, illness, illness_progression, illnesses, cat.illnesses)
 
-                # reset healed_condition value
-                cat.healed_condition = False
         # joining event list into one event string
         event_string = None
         if len(event_list) > 0:
@@ -564,163 +468,94 @@ class Condition_Events():
         Returns: boolean (if something happened) and the event_string
         """
         triggered = False
-        healed_injury = []
         event_list = []
-        new_condition = None
+
+        injury_progression = {
+            "poisoned": "redcough",
+            "shock": "lingering shock"
+        }
 
         # need to hold this number so that we can check if the leader has died
         starting_life_count = game.clan.leader_lives
-        clear_leader_conditions = False
 
         if game.clan.game_mode == "classic":
             return triggered
 
-        if not triggered:
-            for y in cat.injuries:
-                injury = y
-                skipped = cat.moon_skip_injury(injury)
-                if skipped:
-                    continue
+        injuries = cat.injuries.copy()
+        for injury in injuries:
+            self.use_herbs(cat, injury, injuries, INJURIES)
 
-                elif cat.status == 'leader' and starting_life_count != game.clan.leader_lives:
-                    clear_leader_conditions = True
-                    break
+            skipped = cat.moon_skip_injury(injury)
+            if skipped:
+                continue
 
-                if cat.dead:
-                    triggered = True
+            elif cat.status == 'leader' and starting_life_count != game.clan.leader_lives:
+                break
 
-                    possible_string_list = INJURY_DEATH_STRINGS[injury]
-                    event = random.choice(possible_string_list)
-                    event = event_text_adjust(Cat, event, cat)
-                    if cat.status == 'leader':
-                        history_text = event.replace(cat.name, " ")
-                        cat.died_by.append(history_text.strip())
-                        event = event.replace('.', ', losing a life.')
-                    else:
-                        cat.died_by.append(event)
+            if cat.dead:
+                triggered = True
 
-                    # clear event list first to make sure any heal or risk events from other injuries are not shown
-                    event_list.clear()
-                    event_list.append(event)
-                    break
+                possible_string_list = INJURY_DEATH_STRINGS[injury]
+                event = random.choice(possible_string_list)
+                event = event_text_adjust(Cat, event, cat)
+                if cat.status == 'leader':
+                    history_text = event.replace(cat.name, " ")
+                    cat.died_by.append(history_text.strip())
+                    event = event.replace('.', ', losing a life.')
+                else:
+                    cat.died_by.append(event)
 
-                elif cat.healed_condition is True:
-                    triggered = True
-                    scar_given = None
+                # clear event list first to make sure any heal or risk events from other injuries are not shown
+                event_list.clear()
+                event_list.append(event)
+                game.herb_events_list.append(event)
+                break
+            elif cat.healed_condition is True:
+                triggered = True
+                scar_given = None
 
-                    # only try to give a scar if the event gave possible scar history
-                    if cat.possible_scar is not None and injury not in ["blood loss", "shock", "lingering shock"]:
-                        event, scar_given = self.scar_events.handle_scars(cat, injury)
-                    else:
-                        # gather potential event strings for gotten condition
-                        possible_string_list = INJURY_HEALED_STRINGS[injury]
-                        random_index = int(random.random() * len(possible_string_list))
-                        event = possible_string_list[random_index]
-                        event = event_text_adjust(Cat, event, cat, other_cat=None)  # adjust the text
+                # only try to give a scar if the event gave possible scar history
+                if cat.possible_scar is not None and injury not in ["blood loss", "shock", "lingering shock"]:
+                    event, scar_given = self.scar_events.handle_scars(cat, injury)
+                    game.herb_events_list.append(event)
+                else:
+                    # gather potential event strings for gotten condition
+                    possible_string_list = INJURY_HEALED_STRINGS[injury]
+                    random_index = int(random.random() * len(possible_string_list))
+                    event = possible_string_list[random_index]
+                    event = event_text_adjust(Cat, event, cat, other_cat=None)  # adjust the text
+                    game.herb_events_list.append(event)
 
-                    healed_injury.append(injury)
-                    cat.healed_condition = False
-
-                    # try to give a permanent condition based on healed injury and new scar if any
-                    condition_got = self.handle_permanent_conditions(cat, injury_name=injury, scar=scar_given)
-
-                    if condition_got is not None:
-                        # gather potential event strings for gotten condition
-                        possible_string_list = PERMANENT_CONDITION_GOT_STRINGS[injury][condition_got]
-
-                        # choose event string and ensure clan's med cat number aligns with event text
-                        random_index = int(random.random() * len(possible_string_list))
-                        med_list = get_med_cats(Cat)
-                        med_cat = None
-                        if len(med_list) == 0:
-                            if random_index == 0 or random_index == 1:
-                                random_index = 2
-                            else:
-                                med_cat = None
-                        else:
-                            med_cat = random.choice(med_list)
-                            if med_cat == cat:
-                                random_index = 2
-                        event = possible_string_list[random_index]
-                        event = event_text_adjust(Cat, event, cat, other_cat=med_cat)  # adjust the text
-                    if event is not None:
-                        event_list.append(event)
-
-                elif not triggered:
-                    if injury in cat.injuries:
-                        risks = cat.injuries[injury]["risks"]
-                        for risk in risks:
-                            # adjust chance of risk gain if clan has enough meds or if clan has no meds at all
-                            amount_per_med = get_amount_cat_for_one_medic(game.clan)
-                            chance = risk["chance"]
-                            if medical_cats_condition_fulfilled(Cat.all_cats.values(), amount_per_med):
-                                chance = risk["chance"] + 10
-                            if game.clan.medicine_cat is None:
-                                chance = chance / 2
-                                if chance <= 0:
-                                    chance = 1
-                            if not int(random.random() * chance):
-                                if risk['name'] not in cat.injuries and risk['name'] not in cat.illnesses:
-                                    if risk['name'] == 'an infected wound' and 'a festering wound' in cat.illnesses:
-                                        break  # prevents a cat with a festering wound from receiving an infected wound
-                                    new_condition = risk['name']
-                                    complication = None
-                                    if new_condition == 'an infected wound':
-                                        complication = 'infected'
-                                    elif new_condition == 'a festering wound':
-                                        complication = 'festering'
-                                    keys = cat.injuries[injury].keys()
-                                    if 'complication' in keys:
-                                        cat.injuries[injury]["complication"] = complication
-                                    else:
-                                        cat.injuries[injury].update({'complication': complication})
-                                    # gather potential event strings for gotten condition
-                                    possible_string_list = INJURY_RISK_STRINGS[injury][new_condition]
-
-                                    # choose event string and ensure clan's med cat number aligns with event text
-                                    random_index = int(random.random() * len(possible_string_list))
-                                    med_list = get_med_cats(Cat)
-                                    med_cat = None
-                                    if len(med_list) == 0:
-                                        if random_index == 0:
-                                            random_index = 1
-                                        else:
-                                            med_cat = None
-                                    else:
-                                        med_cat = random.choice(med_list)
-                                        if med_cat == cat:
-                                            random_index = 1
-                                    event = possible_string_list[random_index]
-                                    event = event_text_adjust(Cat, event, cat, med_cat)  # adjust the text
-                                    event_list.append(event)
-                                    break
-                    if new_condition is not None:
-                        triggered = True
-                        break
-
-            if clear_leader_conditions is True or cat.dead:
-                # reset leader after death
-                cat.injuries.clear()
-                cat.illnesses.clear()
-                if new_condition is not None:
-                    new_condition.clear()
-                if healed_injury is not None:
-                    healed_injury.clear()
+                cat.injuries.pop(injury)
                 cat.healed_condition = False
 
-            if len(healed_injury) != 0:
-                for y in healed_injury:
-                    if y in cat.injuries:
-                        cat.injuries.pop(y)
+                # try to give a permanent condition based on healed injury and new scar if any
+                condition_got = self.handle_permanent_conditions(cat, injury_name=injury, scar=scar_given)
 
-        if new_condition in ILLNESSES:
-            if new_condition == 'redcough':
-                cat.injuries.pop('poisoned')
-            cat.get_ill(new_condition, event_triggered=True)
-        elif new_condition in INJURIES:
-            if new_condition == 'lingering shock':
-                cat.injuries.pop('shock')
-            cat.get_injured(new_condition)
+                if condition_got is not None:
+                    # gather potential event strings for gotten condition
+                    possible_string_list = PERMANENT_CONDITION_GOT_STRINGS[injury][condition_got]
+
+                    # choose event string and ensure clan's med cat number aligns with event text
+                    random_index = int(random.random() * len(possible_string_list))
+                    med_list = get_med_cats(Cat)
+                    med_cat = None
+                    if len(med_list) == 0:
+                        if random_index == 0 or random_index == 1:
+                            random_index = 2
+                        else:
+                            med_cat = None
+                    else:
+                        med_cat = random.choice(med_list)
+                        if med_cat == cat:
+                            random_index = 2
+                    event = possible_string_list[random_index]
+                    event = event_text_adjust(Cat, event, cat, other_cat=med_cat)  # adjust the text
+                if event is not None:
+                    event_list.append(event)
+                continue
+
+            self.give_risks(cat, event_list, injury, injury_progression, injuries, cat.injuries)
 
         if len(event_list) > 0:
             event_string = ' '.join(event_list)
@@ -740,19 +575,35 @@ class Condition_Events():
 
         event_list = []
 
-        new_condition = []
-        old_condition = []
-
         condition_progression = {
-            "one bad eye": ["failing eyesight"],
-            "failing eyesight": ["blind"],
-            "partial hearing loss": ["deaf"]
+            "one bad eye": "failing eyesight",
+            "failing eyesight": "blind",
+            "partial hearing loss": "deaf"
         }
 
-        for condition in cat.permanent_condition:
+        conditions = cat.permanent_condition
+        for condition in conditions:
+
+            condition_appears = True
+            if cat.permanent_condition[condition]["born_with"] is True and cat.permanent_condition[condition][
+                    "moons_until"] != -2:
+                condition_appears = False
+
+            if condition_appears is True:
+                chance = 0
+                if conditions[condition]["severity"] == 'minor':
+                    chance = 5
+                elif conditions[condition]["severity"] == 'major':
+                    chance = 3
+                elif conditions[condition]["severity"] == 'severe':
+                    chance = 2
+                if not int(random.random() * chance):
+                    self.use_herbs(cat, condition, conditions, PERMANENT)
+
             # checking if the cat has a congenital condition to reveal
             condition_appears = cat.moon_skip_permanent_condition(condition)
-            if cat.permanent_condition[condition]["born_with"] is True and cat.permanent_condition[condition]["moons_until"] != -2:
+
+            if not condition_appears:
                 continue
 
             elif cat.dead:
@@ -761,6 +612,8 @@ class Condition_Events():
                 event = f"{cat.name} died from complications caused by {condition}."
                 event_list.append(event)
                 cat.died_by.append(event)
+                game.herb_events_list.append(event)
+                break
 
             elif condition_appears:
                 # gather potential event strings for gotten risk
@@ -775,7 +628,7 @@ class Condition_Events():
 
                     # Check if the parent is in Cat.all_cats. If not, they are faded are dead.
 
-                    med_parent = False # If they have a med parent, this will be flicked to True in the next couple lines.
+                    med_parent = False  # If they have a med parent, this will be flicked to True in the next couple lines.
                     if cat.parent1 in Cat.all_cats:
                         parent1_dead = Cat.all_cats[cat.parent1].dead
                         if Cat.all_cats[cat.parent1].status == "medicine cat":
@@ -805,64 +658,11 @@ class Condition_Events():
                 event = possible_string_list[random_index]
                 event = event_text_adjust(Cat, event, cat, other_cat=med_cat)  # adjust the text
                 event_list.append(event)
-                triggered = True
+                continue
 
-        if not triggered:
-            for condition in cat.permanent_condition:
-                if cat.permanent_condition[condition]["moons_until"] is None or cat.permanent_condition[condition]["moons_until"] == 0:
-                    for risk in cat.permanent_condition[condition]["risks"]:
-                        if not int(random.random() * risk["chance"]):
-                            triggered = True
-                            new_ouchie = risk["name"]
-
-                            # gather potential event strings for gotten risk
-                            possible_string_list = PERM_CONDITION_RISK_STRINGS[condition][new_ouchie]
-
-                            # choose event string and ensure clan's med cat number aligns with event text
-                            random_index = int(random.random() * len(possible_string_list))
-                            med_list = get_med_cats(Cat)
-                            med_cat = None
-                            if len(med_list) == 0:
-                                if random_index == 0:
-                                    random_index = 1
-                                else:
-                                    med_cat = None
-                            else:
-                                med_cat = random.choice(med_list)
-                                if med_cat == cat:
-                                    random_index = 1
-                            event = possible_string_list[random_index]
-                            event = event_text_adjust(Cat, event, cat, other_cat=med_cat)  # adjust the text
-                            event_list.append(event)
-                            if new_ouchie in INJURIES:
-                                cat.get_injured(new_ouchie, event_triggered=True)
-                                break
-                            elif new_ouchie in ILLNESSES:
-                                cat.get_ill(new_ouchie, event_triggered=True)
-                                keys = cat.permanent_condition[condition].keys()
-                                complication = None
-                                if new_ouchie == 'an infected wound':
-                                    complication = 'infected'
-                                elif new_ouchie == 'a festering wound':
-                                    complication = 'festering'
-                                if complication is not None:
-                                    if 'complication' in keys:
-                                        cat.permanent_condition[condition]['complication'] = complication
-                                    else:
-                                        cat.permanent_condition[condition].update({'complication': complication})
-                                break
-                            elif new_ouchie in PERMANENT:
-                                new_condition.append(new_ouchie)
-                                old_condition.append(condition)
-                                break
-
-            if len(new_condition) > 0:
-                for y in range(len(new_condition)):
-                    for x in condition_progression:
-                        if x == old_condition[y]:
-                            if new_condition[y] in condition_progression.get(x):
-                                cat.permanent_condition.pop(old_condition[y])
-                    cat.get_permanent_condition(new_condition[y], event_triggered=True)
+            if cat.permanent_condition[condition]["moons_until"] is None or cat.permanent_condition[condition][
+                "moons_until"] == 0:
+                self.give_risks(cat, event_list, condition, condition_progression, conditions, cat.permanent_condition)
 
         retire_chances = {
             'kitten': 0,
@@ -873,7 +673,9 @@ class Condition_Events():
             'elder': 0
         }
 
-        if not triggered and not cat.dead and not cat.retired and cat.status not in ['leader', 'medicine cat', 'kitten'] and game.settings['retirement'] is False:
+        if not triggered and not cat.dead and not cat.retired and cat.status not in ['leader', 'medicine cat',
+                                                                                     'kitten'] and game.settings[
+            'retirement'] is False:
             for condition in cat.permanent_condition:
                 if cat.permanent_condition[condition]['severity'] == 'major':
                     chance = int(retire_chances.get(cat.age))
@@ -907,6 +709,169 @@ class Condition_Events():
 
             game.cur_events_list.append(Single_Event(event_string, types, cat.ID))
         return
+
+    def give_risks(self, cat, event_list, condition, progression, conditions, dictionary):
+        event_triggered = False
+        if dictionary == cat.permanent_condition:
+            event_triggered = True
+        for risk in conditions[condition]["risks"]:
+            if risk["name"] in (cat.injuries or cat.illnesses):
+                continue
+            if risk["name"] == 'an infected wound' and 'a festering wound' in cat.illnesses:
+                continue
+
+            # adjust chance of risk gain if clan has enough meds
+            chance = risk["chance"]
+            if medical_cats_condition_fulfilled(Cat.all_cats.values(),
+                                                get_amount_cat_for_one_medic(game.clan)):
+                chance += 10  # lower risk if enough meds
+            if game.clan.medicine_cat is None:
+                chance = int(chance * .75)  # higher risk if no meds
+                if chance <= 0:  # ensure that chance is never 0
+                    chance = 1
+
+            # if we hit the chance, then give the risk if the cat does not already have the risk
+            if not int(random.random() * chance) and risk['name'] not in dictionary:
+                # check if the new risk is a previous stage of a current illness
+                skip = False
+                if risk['name'] in progression:
+                    if progression[risk['name']] in dictionary:
+                        skip = True
+                # if it is, then break instead of giving the risk
+                if skip is True:
+                    break
+
+                new_condition_name = risk['name']
+                if dictionary != cat.permanent_condition:
+                    risk["chance"] = risk["chance"] + 10  # lower risk of getting it again if not a perm condition
+
+                # if it is a progressive illness, then remove the old illness and keep the new one
+                if condition in progression and new_condition_name == progression.get(condition):
+                    dictionary.pop(condition)
+
+                # gather potential event strings for gotten illness
+                if dictionary == cat.illnesses:
+                    possible_string_list = ILLNESS_RISK_STRINGS[condition][new_condition_name]
+                elif dictionary == cat.injuries:
+                    possible_string_list = INJURY_RISK_STRINGS[condition][new_condition_name]
+                else:
+                    possible_string_list = PERM_CONDITION_RISK_STRINGS[condition][new_condition_name]
+
+                # choose event string and ensure clan's med cat number aligns with event text
+                random_index = int(random.random() * len(possible_string_list))
+                med_list = get_med_cats(Cat)
+                med_cat = None
+                if len(med_list) == 0:
+                    if random_index == 0:
+                        random_index = 1
+                    else:
+                        med_cat = None
+                else:
+                    med_cat = random.choice(med_list)
+                    if med_cat == cat:
+                        random_index = 1
+                event = possible_string_list[random_index]
+                event = event_text_adjust(Cat, event, cat, other_cat=med_cat)  # adjust the text
+                event_list.append(event)
+
+                if new_condition_name in INJURIES:
+                    cat.get_injured(new_condition_name, event_triggered=event_triggered)
+                    break
+                elif new_condition_name in ILLNESSES:
+                    cat.get_ill(new_condition_name, event_triggered=event_triggered)
+                    if dictionary == cat.illnesses:
+                        break
+                    keys = dictionary[condition].keys()
+                    complication = None
+                    if new_condition_name == 'an infected wound':
+                        complication = 'infected'
+                    elif new_condition_name == 'a festering wound':
+                        complication = 'festering'
+                    if complication is not None:
+                        if 'complication' in keys:
+                            dictionary[condition]['complication'] = complication
+                        else:
+                            dictionary[condition].update({'complication': complication})
+                    break
+                elif new_condition_name in PERMANENT:
+                    cat.get_permanent_condition(new_condition_name, event_triggered=event_triggered)
+                    break
+
+                # break out of risk giving loop cus we don't want to give multiple risks for one condition
+                break
+
+    def use_herbs(self, cat, condition, conditions, source):
+        # herbs that can be used for the condition and the clan has available
+        clan_herbs = set()
+        needed_herbs = set()
+        clan_herbs.update(game.clan.herbs.keys())
+        needed_herbs.update(source[condition]["herbs"])
+        herb_set = clan_herbs.intersection(needed_herbs)
+        usable_herbs = []
+        usable_herbs.extend(herb_set)
+
+        if not source[condition]["herbs"]:
+            return
+
+        if usable_herbs:
+            keys = conditions[condition].keys()
+            # determine the effect of the herb
+            possible_effects = []
+            if conditions[condition]['mortality'] != 0:
+                possible_effects.append('mortality')
+            if conditions[condition]["risks"]:
+                possible_effects.append('risks')
+            if 'duration' in keys:
+                if conditions[condition]['duration'] > 1:
+                    possible_effects.append('duration')
+            if not possible_effects:
+                return
+
+            effect = random.choice(possible_effects)
+
+            # deplete the herb
+            herb_used = usable_herbs[0]
+            if game.clan.herbs[herb_used] == 1:
+                amount_used = 1
+            else:
+                amount_used = random.randrange(1, game.clan.herbs[herb_used])
+            game.clan.herbs[herb_used] -= amount_used
+            if game.clan.herbs[herb_used] <= 0:
+                game.clan.herbs.pop(herb_used)
+
+            # applying a modifier for herb priority. herbs that are better for the condition will have stronger effects
+            count = 0
+            for herb in source[condition]['herbs']:
+                count += 1
+                if herb == herb_used:
+                    break
+            modifier = count
+
+            effect_message = 'this should not show up'
+            if effect == 'mortality':
+                effect_message = 'They will be less likely to die.'
+                conditions[condition]["mortality"] += 11 - modifier + int(amount_used * 1.5)
+            elif effect == 'duration':
+                effect_message = 'They will heal sooner.'
+                conditions[condition]["duration"] -= 1
+            elif effect == 'risks':
+                effect_message = 'The risks associated with their condition are lowered.'
+                for risk in conditions[condition]["risks"]:
+                    risk["chance"] += 11 - modifier + int(amount_used * 1.5)
+                    if risk["chance"] < 0:
+                        risk["chance"] = 0
+            print(amount_used, herb_used, condition, effect_message, "modifier:", 11 - modifier + int(amount_used * 1.5))
+
+            text = f"{cat.name} was given {herb_used.replace('_', ' ')} as treatment for {condition}. {effect_message}"
+            game.herb_events_list.append(text)
+        else:
+            # if they didn't get any herbs, make them more likely to die!! kill the kitties >:)
+            if conditions[condition]["mortality"] > 2:
+                conditions[condition]["mortality"] -= 1
+            for risk in conditions[condition]["risks"]:
+                if risk['chance'] > 2:
+                    risk['chance'] -= 1
+
 
 # ---------------------------------------------------------------------------- #
 #                                LOAD RESOURCES                                #
