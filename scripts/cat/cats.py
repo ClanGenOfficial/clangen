@@ -841,8 +841,12 @@ class Cat():
             chosen_thought = chosen_thought.replace("r_c", str(other_cat.name))
 
         # insert Clan name if needed
-        if "c_n" in chosen_thought:
-            chosen_thought = chosen_thought.replace("c_n", str(game.clan.name) + 'Clan')
+        try:
+            if "c_n" in chosen_thought:
+                chosen_thought = chosen_thought.replace("c_n", str(game.clan.name) + 'Clan')
+        except AttributeError:
+            if "c_n" in chosen_thought:
+                chosen_thought = chosen_thought.replace("c_n", game.switches["clan_list"][0] + 'Clan')
 
         # insert thought
         self.thought = str(chosen_thought)
