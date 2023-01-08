@@ -999,7 +999,7 @@ class Events():
                                                                                'medicine cat']:
                         acc_text.extend([f'{name} has decided to always bring some {acc_plural} with them.',
                                          f'{acc_plural}'.capitalize() + f' are so important to {name} '
-                                                                        f'that they always carry it around.'
+                                                                        f'that they always carry it around.',
                                          f'{acc_plural}'.capitalize() + f' are so vital for {name} that they '
                                                                         f'always have some on them.'
                                          ])
