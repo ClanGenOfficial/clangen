@@ -165,7 +165,8 @@
             "goes to (cat) for advice about some recent troubles.",
             "asks (cat) for help resolving an argument with a friend.",
             "thinks of (cat) as their best friend.",
-            "lets (cat) play with their favorite toy."
+            "lets (cat) play with their favorite toy.",
+            "is sharing the latest gossip they heard over the border with (cat)."
         ]
     },
     "to": {
@@ -305,7 +306,8 @@
             "is having a wonderful time discussing recent Clan news with (cat).",
             "is always happy to grab some freshkill for (cat) to share.",
             "wants to spend more time with (cat)!",
-            "asks (cat) how they're doing."
+            "asks (cat) how they're doing.",
+            "bumps heads with (cat) reassuringly."
         ],
         "jealousy": [],
         "trust": [
@@ -320,7 +322,8 @@
             "promises not to tell (cat)'s mentor that they've been sneaking out of camp.",
             "stays awake all night whispering secrets to (cat).",
             "goes to (cat) for advice about some recent troubles.",
-            "defends (cat) from a clanmate's rude remarks."
+            "defends (cat) from a clanmate's rude remarks.",
+            "is sharing the latest gossip they heard over the border with (cat)."
         ]
     }
 }
