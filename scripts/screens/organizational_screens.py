@@ -111,14 +111,15 @@ class SwitchClanScreen(Screens):
         del self.main_menu
         self.info.kill()
         del self.info
+        self.current_clan.kill()
+        del self.current_clan
 
         del self.screen  # No need to keep that in memory.
 
         for button in self.clan_buttons:
             button.kill()
-        button = []
+        self.clan_buttons = []
 
-        self.clan_name = []
 
     def screen_switches(self):
         self.screen = pygame.image.load("resources/images/clan_saves_frame.png").convert_alpha()
@@ -128,13 +129,20 @@ class SwitchClanScreen(Screens):
             'Note: This will close the game.\n When you open it next, it should have the new clan.',
             pygame.Rect((100, 540), (600, 70)), object_id=get_text_box_theme())
 
+        self.current_clan = pygame_gui.elements.UITextBox("", pygame.Rect((100, 100), (600, 70)),
+                                                          object_id=get_text_box_theme())
+        if game.clan:
+            self.current_clan.set_text(f"The currently loaded clan is {game.clan.name}Clan")
+        else:
+            self.current_clan.set_text("There is no clan currently loaded.")
+
         self.clan_list = game.read_clans()
 
         self.clan_buttons = []
         self.clan_name = []
         i = 0
         y_pos = 189
-        for clan in self.clan_list:
+        for clan in self.clan_list[1:]:
             self.clan_name.append(clan)
             self.clan_buttons.append(pygame_gui.elements.UIButton(pygame.Rect((300, y_pos), (200, 39)), clan + "Clan",
                                                                   object_id="#saved_clan"))

@@ -468,10 +468,8 @@ def init_white_patches(cat):
 def init_tint(cat):
     # Basic tints as possible for all colors.
     possible_tints = Sprites.cat_tints["possible_tints"]["basic"].copy()
-    print(Sprites.cat_tints["possible_tints"]["basic"])
     if cat.pelt.colour in Sprites.cat_tints["colour_groups"]:
         color_group = Sprites.cat_tints["colour_groups"][cat.pelt.colour]
         possible_tints += Sprites.cat_tints["possible_tints"][color_group]
-        print(cat.pelt.colour, possible_tints)
         cat.tint = choice(possible_tints)
 
