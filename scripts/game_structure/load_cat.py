@@ -4,7 +4,10 @@ from .game_essentials import *
 from scripts.cat.cats import Cat
 from scripts.cat.pelts import choose_pelt
 from scripts.utility import update_sprite, is_iterable
-from ujson import JSONDecodeError
+try:
+    from ujson import JSONDecodeError
+except ImportError:
+    from json import JSONDecodeError
 
 def load_cats():
     try:

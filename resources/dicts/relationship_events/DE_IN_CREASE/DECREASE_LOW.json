@@ -1,17 +1,19 @@
 {
     "from": {
         "romantic_love": [
-            "Feels like (cat) hasn't been paying much attention to them lately"
+            "feels like (cat) hasn't been paying much attention to them lately."
         ],
         "like": [
-            "Is hiding from (cat)",
-            "Complains about (cat)",
-            "Has been listening to (cat) talk about how hard training has been",
-            "Called (cat) the wrong name"
+            "is hiding from (cat)",
+            "complains about something (cat) did.",
+            "has been listening to (cat) talk about how hard training has been.",
+            "called (cat) the wrong name."
         ],
-        "dislike": [],
+        "dislike": [
+            "chats with (cat) while grabbing something to eat."
+        ],
         "admiration": [
-            "Saw (cat) miss an easy catch today",
+            "saw (cat) miss an easy catch today",
             "thinks that (cat) has been behaving stuck up and rude.",
             "is dissatisfied that (cat) can't seem to get rid of their chronic pain."
         ],
@@ -38,7 +40,8 @@
         ],
         "dislike": [
             "feels bad that they caused a problem for (cat).",
-            "won't stop copying everything (cat) does."
+            "won't stop copying everything (cat) does.",
+            "chats with (cat) while grabbing something to eat."
         ],
         "admiration": [
             "is asking (cat) to tell them about how good they look.",

@@ -74,7 +74,7 @@
             "gives (cat) bitter herbs on purpose."
         ],
         "neutral": [
-            "is giving (cat) a task",
+            "is giving (cat) a task.",
             "is frustrated that (cat) won't take their duties more seriously.",
             "has noticed (cat) isn't doing a lot of work lately.",
             "feels like (cat) isn't taking their health seriously.",
@@ -121,7 +121,9 @@
             "gives (cat) bitter herbs on purpose."
         ],
         "neutral": [],
-        "friendly": [],
+        "friendly": [
+            "goes to (cat) to ask for their wisdom."
+        ],
         "close": [
             "feels like they'll never accomplish as much as (cat).",
             "tells (cat) about their last encounter with StarClan."

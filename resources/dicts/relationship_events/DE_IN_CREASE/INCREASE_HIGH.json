@@ -23,7 +23,8 @@
             "would give it all to make (cat)'s dreams come true.",
             "can't stop thinking about (cat).",
             "can't seem to keep their mind off (cat).",
-            "imagines what their kits with (cat) would look like."
+            "imagines what their kits with (cat) would look like.",
+            "promises (cat) that they'll be mates when they become warriors."
 
 
         ],
@@ -58,7 +59,11 @@
             "thinks of (cat) as their best friend.",
             "lets (cat) play with their favorite toy.",
             "takes a nap with (cat) after a long day playing mossball.",
-            "brings (cat) a piece of prey to share after a long day of training."
+            "brings (cat) a piece of prey to share after a long day of training.",
+            "goes to (cat) to ask for their wisdom.",
+            "thanks (cat) for covering for them during a patrol earlier.",
+            "is wowed by how bravely (cat) fought the other day.",
+            "is faced with a tough decision and wonders what (cat) would do."
         ],
         "dislike": [
             "is mocking (cat).",
@@ -126,17 +131,21 @@
             "goes to (cat) for advice about some recent troubles.",
             "asks (cat) for help resolving an argument with a friend.",
             "thinks of (cat) as their best friend.",
-            "tells (cat) that they're an amazing storyteller."
+            "tells (cat) that they're an amazing storyteller.",
+            "is having a wonderful time discussing recent Clan news with (cat).",
+            "is always happy to grab some freshkill for (cat) to share.",
+            "wants to spend more time with (cat)!",
+            "asks (cat) how they're doing."
         ],
         "jealousy": [
             "is jealous that (cat) is getting more attention than them.",
             "thinking about how (cat) wronged them.",
             "is upset that (cat) always wins in their games.",
             "hisses at (cat) for getting a bigger piece of prey.",
-            "thinks they should get to be an apprentice already! they're just as good as (cat).",
+            "thinks they should get to be an apprentice already! They're just as good as (cat).",
             "is jealous that (cat) got praised by the leader.",
             "doesn't understand how (cat) got so good at hunting.",
-            "accuses (cat) of cheating, there's no way they could win so many practice fights fairly.",
+            "accuses (cat) of cheating - there's no way they could win so many practice fights fairly!",
             "is jealous that (cat) got to fight in a border skirmish when they didn't.",
             "is jealous that (cat) got to go to the last gathering.",
             "feels like they'll never accomplish as much as (cat).",
@@ -156,7 +165,8 @@
             "goes to (cat) for advice about some recent troubles.",
             "asks (cat) for help resolving an argument with a friend.",
             "thinks of (cat) as their best friend.",
-            "lets (cat) play with their favorite toy."
+            "lets (cat) play with their favorite toy.",
+            "is sharing the latest gossip they heard over the border with (cat)."
         ]
     },
     "to": {
@@ -170,7 +180,8 @@
             "wants to spend the entire day with (cat).",
             "left a gift in (cat)'s nest for them to find.",
             "picked out the best piece of prey to share with (cat).",
-            "sneaks out at night to sleep in (cat)'s nest."
+            "sneaks out at night to sleep in (cat)'s nest.",
+            "promises (cat) that they'll be mates when they become warriors."
         ],
         "like": [
             "is telling a story to (cat).",
@@ -214,7 +225,11 @@
             "defends (cat) from a clanmate's rude remarks.",
             "lets (cat) play with their favorite toy.",
             "takes a nap with (cat) after a long day playing mossball.",
-            "brings (cat) a piece of prey to share after a long day of training."
+            "brings (cat) a piece of prey to share after a long day of training.",
+            "goes to (cat) to ask for their wisdom.",
+            "thanks (cat) for covering for them during a patrol earlier.",
+            "is wowed by how bravely (cat) fought the other day.",
+            "is faced with a tough decision and wonders what (cat) would do."
         ],
         "dislike": [
             "is mocking (cat).",
@@ -287,7 +302,12 @@
             "goes to (cat) for advice about some recent troubles.",
             "asks (cat) for help resolving an argument with a friend.",
             "tells (cat) that they're an amazing storyteller.",
-            "defends (cat) from a clanmate's rude remarks."
+            "defends (cat) from a clanmate's rude remarks.",
+            "is having a wonderful time discussing recent Clan news with (cat).",
+            "is always happy to grab some freshkill for (cat) to share.",
+            "wants to spend more time with (cat)!",
+            "asks (cat) how they're doing.",
+            "bumps heads with (cat) reassuringly."
         ],
         "jealousy": [],
         "trust": [
@@ -302,7 +322,8 @@
             "promises not to tell (cat)'s mentor that they've been sneaking out of camp.",
             "stays awake all night whispering secrets to (cat).",
             "goes to (cat) for advice about some recent troubles.",
-            "defends (cat) from a clanmate's rude remarks."
+            "defends (cat) from a clanmate's rude remarks.",
+            "is sharing the latest gossip they heard over the border with (cat)."
         ]
     }
 }
