@@ -1,9 +1,14 @@
 import pygame
 
 from scripts.game_structure.game_essentials import *
+try:
+    import ujson
+except ImportError:
+    import json as ujson
 
 
 class Sprites():
+    cat_tints = {}
 
     def __init__(self, original_size, new_size=None):
         self.size = original_size  # size of a single sprite in a spritesheet
@@ -12,6 +17,15 @@ class Sprites():
         self.images = {}
         self.groups = {}
         self.sprites = {}
+
+        self.load_tints()
+
+    def load_tints(self):
+        try:
+            with open("sprites/dicts/tint.json", 'r') as read_file:
+                Sprites.cat_tints = ujson.loads(read_file.read())
+        except:
+            print("Error Reading Tints")
 
     def spritesheet(self, a_file, name):
         """

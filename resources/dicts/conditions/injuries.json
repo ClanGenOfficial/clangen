@@ -1,8 +1,8 @@
 {
     "claw-wound":{
-        "duration": 2,
+        "duration": 3,
         "severity": "major",
-        "medicine_duration": 1,
+        "medicine_duration": 2,
         "mortality": {
             "kitten": 5,
             "adolescent": 40,
@@ -23,13 +23,24 @@
             "torn ear",
             "blood loss"
         ],
-        "cause_permanent": []
+        "cause_permanent": [],
+        "herbs": [
+            "cobwebs",
+            "goldenrod",
+            "marigold",
+            "oak_leaves",
+            "wild_garlic",
+            "tansy",
+            "poppy",
+            "ragwort",
+            "moss"
+        ]
     },
 
     "bite-wound":{
-        "duration": 2,
+        "duration": 3,
         "severity": "major",
-        "medicine_duration": 1,
+        "medicine_duration": 2,
         "mortality": {
             "kitten": 10,
             "adolescent": 45,
@@ -50,13 +61,24 @@
             "torn pelt",
             "blood loss"
         ],
-        "cause_permanent": []
+        "cause_permanent": [],
+        "herbs": [
+            "cobwebs",
+            "goldenrod",
+            "marigold",
+            "oak_leaves",
+            "wild_garlic",
+            "tansy",
+            "poppy",
+            "ragwort",
+            "moss"
+        ]
     },
 
     "cat bite":{
         "duration": 2,
         "severity": "major",
-        "medicine_duration": 1,
+        "medicine_duration": 2,
         "mortality": {
             "kitten": 10,
             "adolescent": 45,
@@ -77,7 +99,18 @@
             "torn pelt",
             "blood loss"
         ],
-        "cause_permanent": []
+        "cause_permanent": [],
+        "herbs": [
+            "cobwebs",
+            "goldenrod",
+            "marigold",
+            "oak_leaves",
+            "wild_garlic",
+            "tansy",
+            "poppy",
+            "ragwort",
+            "moss"
+        ]
     },
 
     "beak bite":{
@@ -104,7 +137,18 @@
             "torn pelt",
             "blood loss"
         ],
-        "cause_permanent": []
+        "cause_permanent": [],
+        "herbs": [
+            "cobwebs",
+            "goldenrod",
+            "marigold",
+            "oak_leaves",
+            "wild_garlic",
+            "tansy",
+            "poppy",
+            "ragwort",
+            "moss"
+        ]
     },
 
     "snake bite":{
@@ -130,7 +174,17 @@
         "also_got": [
             "poisoned"
         ],
-        "cause_permanent": []
+        "cause_permanent": [],
+        "herbs": [
+            "tansy",
+            "marigold",
+            "oak_leaves",
+            "goldenrod",
+            "wild_garlic",
+            "juniper",
+            "ragwort",
+            "poppy"
+        ]
     },
 
     "rat bite":{
@@ -164,11 +218,23 @@
         "also_got": [
             "torn pelt"
         ],
-        "cause_permanent": []
+        "cause_permanent": [],
+        "herbs": [
+            "wild_garlic",
+            "burdock",
+            "tansy",
+            "cobwebs",
+            "marigold",
+            "oak_leaves",
+            "goldenrod",
+            "juniper",
+            "poppy",
+            "moss"
+        ]
     },
 
     "tick bites":{
-        "duration": 1,
+        "duration": 2,
         "severity": "minor",
         "medicine_duration": 1,
         "mortality": {
@@ -187,7 +253,11 @@
             }
         ],
         "also_got": [],
-        "cause_permanent": []
+        "cause_permanent": [],
+        "herbs": [
+            "moss",
+            "plantain"
+        ]
     },
 
     "blood loss":{
@@ -196,11 +266,11 @@
         "medicine_duration": 1,
         "mortality": {
             "kitten": 5,
-            "adolescent": 15,
-            "young adult": 30,
-            "adult": 30,
-            "senior adult": 30,
-            "elder": 20
+            "adolescent": 10,
+            "young adult": 20,
+            "adult": 25,
+            "senior adult": 25,
+            "elder": 15
         },
         "illness_infectiousness": [],
         "risks": [
@@ -208,7 +278,16 @@
         "also_got": [
             "shock"
         ],
-        "cause_permanent": []
+        "cause_permanent": [],
+        "herbs": [
+            "cobwebs",
+            "horsetail",
+            "marigold",
+            "ragwort",
+            "juniper",
+            "moss",
+            "poppy"
+        ]
     },
 
     "broken jaw":{
@@ -217,11 +296,11 @@
         "medicine_duration": 5,
         "mortality": {
             "kitten": 10,
-            "adolescent": 45,
-            "young adult": 60,
-            "adult": 60,
-            "senior adult": 60,
-            "elder": 15
+            "adolescent": 35,
+            "young adult": 50,
+            "adult": 50,
+            "senior adult": 50,
+            "elder": 10
         },
         "illness_infectiousness": [],
         "risks": [
@@ -237,13 +316,23 @@
         ],
         "cause_permanent": [
             "crooked jaw"
+        ],
+        "herbs": [
+            "cobwebs",
+            "marigold",
+            "oak_leaves",
+            "wild_garlic",
+            "juniper",
+            "ragwort",
+            "poppy",
+            "moss"
         ]
     },
 
     "broken bone":{
-        "duration": 6,
+        "duration": 8,
         "severity": "severe",
-        "medicine_duration": 5,
+        "medicine_duration": 7,
         "mortality": {
             "kitten": 10,
             "adolescent": 45,
@@ -269,13 +358,23 @@
         "cause_permanent": [
             "weak leg",
             "twisted leg"
+        ],
+        "herbs": [
+            "cobwebs",
+            "marigold",
+            "oak_leaves",
+            "wild_garlic",
+            "juniper",
+            "ragwort",
+            "poppy",
+            "moss"
         ]
     },
 
     "mangled leg":{
         "duration": 3,
         "severity": "severe",
-        "medicine_duration": 2,
+        "medicine_duration": 3,
         "mortality": {
             "kitten": 15,
             "adolescent": 50,
@@ -303,6 +402,18 @@
             "lost a leg",
             "weak leg",
             "twisted leg"
+        ],
+        "herbs": [
+            "cobwebs",
+            "goldenrod",
+            "marigold",
+            "wild_garlic",
+            "oak_leaves",
+            "tansy",
+            "poppy",
+            "ragwort",
+            "juniper",
+            "moss"
         ]
     },
 
@@ -327,13 +438,19 @@
         ],
         "cause_permanent": [
             "constant joint pain"
+        ],
+        "herbs": [
+            "marigold",
+            "ragwort",
+            "daisy",
+            "poppy"
         ]
     },
 
     "joint pain":{
-        "duration": 1,
+        "duration": 2,
         "severity": "minor",
-        "medicine_duration": 1,
+        "medicine_duration": 2,
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -347,13 +464,19 @@
         "also_got": [
         ],
         "cause_permanent": [
+        ],
+        "herbs": [
+            "marigold",
+            "ragwort",
+            "daisy",
+            "poppy"
         ]
     },
 
     "sprain":{
-        "duration": 1,
+        "duration": 2,
         "severity": "major",
-        "medicine_duration": 1,
+        "medicine_duration": 2,
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -366,13 +489,18 @@
         "risks": [],
         "also_got": [],
         "cause_permanent": [
+        ],
+        "herbs": [
+            "elder_leaves",
+            "dandelion",
+            "poppy"
         ]
     },
 
     "mangled tail":{
         "duration": 3,
         "severity": "severe",
-        "medicine_duration": 2,
+        "medicine_duration": 3,
         "mortality": {
             "kitten": 15,
             "adolescent": 50,
@@ -394,6 +522,18 @@
         ],
         "cause_permanent": [
             "lost their tail"
+        ],
+        "herbs": [
+            "cobwebs",
+            "goldenrod",
+            "marigold",
+            "wild_garlic",
+            "oak_leaves",
+            "tansy",
+            "poppy",
+            "ragwort",
+            "juniper",
+            "moss"
         ]
     },
 
@@ -413,7 +553,8 @@
         "risks": [],
         "also_got": [],
         "cause_permanent": [
-        ]
+        ],
+        "herbs": []
     },
 
     "cracked pads":{
@@ -432,11 +573,17 @@
         "risks": [
             {
                 "name": "an infected wound",
-                "chance": 30
+                "chance": 20
             }
         ],
         "also_got": [],
         "cause_permanent": [
+        ],
+        "herbs": [
+            "oak_leaves",
+            "marigold",
+            "wild garlic",
+            "poppy"
         ]
     },
 
@@ -456,11 +603,18 @@
         "risks": [],
         "also_got": [],
         "cause_permanent": [
+        ],
+        "herbs": [
+            "daisy",
+            "dandelion",
+            "marigold",
+            "ragwort",
+            "poppy"
         ]
     },
 
     "phantom pain":{
-        "duration": 1,
+        "duration": 2,
         "severity": "major",
         "medicine_duration": 1,
         "mortality": {
@@ -475,6 +629,11 @@
         "risks": [],
         "also_got": [],
         "cause_permanent": [
+        ],
+        "herbs": [
+            "dandelion",
+            "poppy",
+            "raspberry"
         ]
     },
 
@@ -499,6 +658,12 @@
         ],
         "also_got": [],
         "cause_permanent": [
+        ],
+        "herbs": [
+            "cobwebs",
+            "marigold",
+            "oak_leaves",
+            "wild_garlic"
         ]
     },
 
@@ -523,6 +688,11 @@
         ],
         "also_got": [],
         "cause_permanent": [
+        ],
+        "herbs": [
+            "marigold",
+            "oak_leaves",
+            "wild_garlic"
         ]
     },
 
@@ -547,6 +717,11 @@
         ],
         "also_got": [],
         "cause_permanent": [
+        ],
+        "herbs": [
+            "marigold",
+            "oak_leaves",
+            "wild_garlic"
         ]
     },
 
@@ -566,12 +741,20 @@
         "risks": [
             {
                 "name": "an infected wound",
-                "chance": 30
+                "chance": 25
             }
         ],
         "also_got": [
         ],
         "cause_permanent": [
+        ],
+        "herbs": [
+            "cobwebs",
+            "goldenrod",
+            "marigold",
+            "oak_leaves",
+            "wild_garlic",
+            "raspberry"
         ]
     },
 
@@ -591,23 +774,30 @@
         "risks": [
             {
                 "name": "an infected wound",
-                "chance": 30
+                "chance": 25
             }
         ],
         "also_got": [],
         "cause_permanent": [
             "partial hearing loss"
+        ],
+        "herbs": [
+            "cobwebs",
+            "goldenrod",
+            "marigold",
+            "oak_leaves",
+            "wild_garlic"
         ]
     },
 
     "frostbite":{
         "duration": 2,
         "severity": "major",
-        "medicine_duration": 1,
+        "medicine_duration": 2,
         "mortality": {
             "kitten": 10,
             "adolescent": 20,
-            "young adult": 30,
+            "young adult": 25,
             "adult": 30,
             "senior adult": 20,
             "elder": 10
@@ -627,7 +817,16 @@
         "also_got": [],
         "cause_permanent": [
             "lost a leg",
-            "lost their tail"
+            "lost their tail",
+            "moss",
+            "dandelion",
+            "poppy"
+        ],
+        "herbs": [
+            "juniper",
+            "ragwort",
+            "poppy",
+            "moss"
         ]
     },
 
@@ -647,14 +846,19 @@
         "risks": [
             {
                 "name": "an infected wound",
-                "chance": 20
+                "chance": 15
             }
         ],
         "also_got": [
             "blood loss"
         ],
         "cause_permanent": [
-        ]
+            "oak_leaves",
+            "juniper",
+            "ragwort",
+            "moss"
+        ],
+        "herbs": []
     },
 
     "water in their lungs":{
@@ -662,12 +866,12 @@
         "severity": "major",
         "medicine_duration": 2,
         "mortality": {
-            "kitten": 30,
-            "adolescent": 60,
-            "young adult": 80,
-            "adult": 80,
-            "senior adult": 80,
-            "elder": 50
+            "kitten": 15,
+            "adolescent": 50,
+            "young adult": 60,
+            "adult": 60,
+            "senior adult": 60,
+            "elder": 30
         },
         "illness_infectiousness": [
             {
@@ -692,13 +896,21 @@
         "also_got": [],
         "cause_permanent": [
             "raspy lungs"
+        ],
+        "herbs": [
+            "juniper",
+            "betony",
+            "mullein",
+            "tansy",
+            "plantain",
+            "ragwort"
         ]
     },
 
     "burn":{
         "duration": 2,
         "severity": "major",
-        "medicine_duration": 1,
+        "medicine_duration": 2,
         "mortality": {
             "kitten": 10,
             "adolescent": 30,
@@ -711,18 +923,29 @@
         "risks": [
             {
                 "name": "an infected wound",
-                "chance": 30
+                "chance": 25
             }
         ],
         "also_got": [],
         "cause_permanent": [
+        ],
+        "herbs": [
+            "cobwebs",
+            "marigold",
+            "wild_garlic",
+            "oak_leaves",
+            "goldenrod",
+            "juniper",
+            "ragwort",
+            "poppy",
+            "moss"
         ]
     },
 
     "severe burn":{
         "duration": 4,
         "severity": "severe",
-        "medicine_duration": 2,
+        "medicine_duration": 3,
         "mortality": {
             "kitten": 5,
             "adolescent": 10,
@@ -735,13 +958,24 @@
         "risks": [
             {
                 "name": "an infected wound",
-                "chance": 30
+                "chance": 15
             }
         ],
         "also_got": [],
         "cause_permanent": [
             "lost their tail",
             "lost a leg"
+        ],
+        "herbs": [
+            "cobwebs",
+            "marigold",
+            "wild_garlic",
+            "oak_leaves",
+            "goldenrod",
+            "juniper",
+            "ragwort",
+            "poppy",
+            "moss"
         ]
     },
 
@@ -761,11 +995,17 @@
         "risks": [
             {
                 "name": "lingering shock",
-                "chance": 20
+                "chance": 15
             }
         ],
         "also_got": [],
         "cause_permanent": [
+        ],
+        "herbs": [
+            "thyme",
+            "juniper",
+            "ragwort",
+            "poppy"
         ]
     },
 
@@ -787,6 +1027,12 @@
         "also_got": [],
         "cause_permanent": [
             "recurring shock"
+        ],
+        "herbs": [
+            "thyme",
+            "juniper",
+            "ragwort",
+            "poppy"
         ]
     },
 
@@ -822,6 +1068,11 @@
             "frostbite"
         ],
         "cause_permanent": [
+        ],
+        "herbs": [
+            "juniper",
+            "ragwort",
+            "tansy"
         ]
     },
 
@@ -849,6 +1100,11 @@
             "heat exhaustion"
         ],
         "cause_permanent": [
+        ],
+        "herbs": [
+            "ragwort",
+            "juniper",
+            "moss"
         ]
     },
 
@@ -875,7 +1131,14 @@
             "one bad eye",
             "blind",
             "loss of balance",
-            "partial hearing loss"
+            "partial hearing loss",
+            "dandelion",
+            "poppy"
+        ],
+        "herbs": [
+            "juniper",
+            "ragwort",
+            "thyme"
         ]
     },
 
@@ -904,12 +1167,24 @@
         "cause_permanent": [
             "blind",
             "one bad eye",
-            "failing eyesight"
+            "failing eyesight",
+            "goldenrod"
+        ],
+        "herbs": [
+            "cobwebs",
+            "goldenrod",
+            "marigold",
+            "oak_leaves",
+            "wild_garlic",
+            "juniper",
+            "ragwort",
+            "poppy",
+            "moss"
         ]
     },
 
     "quilled by a porcupine":{
-        "duration": 1,
+        "duration": 2,
         "severity": "minor",
         "medicine_duration": 1,
         "mortality": {
@@ -932,13 +1207,24 @@
             "torn pelt"
         ],
         "cause_permanent": [
+        ],
+        "herbs": [
+            "cobwebs",
+            "goldenrod",
+            "marigold",
+            "oak_leaves",
+            "wild_garlic",
+            "juniper",
+            "ragwort",
+            "poppy",
+            "moss"
         ]
     },
 
     "broken back":{
         "duration": 12,
         "severity": "severe",
-        "medicine_duration": 8,
+        "medicine_duration": 9,
         "mortality": {
             "kitten": 5,
             "adolescent": 25,
@@ -959,6 +1245,11 @@
         ],
         "cause_permanent": [
             "paralyzed"
+        ],
+        "herbs": [
+            "juniper",
+            "ragwort",
+            "poppy"
         ]
     },
     
@@ -983,12 +1274,16 @@
             }
         ],
         "also_got": [
-            "torn pelt",
-            "bruises",
-            "scrapes",
             "shock"
         ],
         "cause_permanent": [
+        ],
+        "herbs": [
+            "dandelion",
+            "tansy",
+            "juniper",
+            "ragwort",
+            "poppy"
         ]
     }
 }

@@ -1,6 +1,10 @@
 import pygame
 import pygame_gui
-import ujson
+try:
+    import ujson
+except ImportError as e:
+    print(f"{e}\nFailed to import ujson, saving may be slower.")
+    import json as ujson
 import os
 from ast import literal_eval
 
@@ -33,6 +37,8 @@ class Game():
     health_events_list = []
     other_clans_events_list = []
     misc_events_list = []
+    herb_events_list = []
+
     allegiance_list = []
     language = {}
     game_mode = ''
@@ -359,6 +365,7 @@ class Game():
                 "tortie_color": inter_cat.tortiecolour,
                 "tortie_pattern": inter_cat.tortiepattern,
                 "skin": inter_cat.skin,
+                "tint": inter_cat.tint,
                 "skill": inter_cat.skill,
                 "scars": inter_cat.scars if inter_cat.scars else [],
                 "accessory": inter_cat.accessory,

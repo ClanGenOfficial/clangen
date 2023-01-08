@@ -12,6 +12,19 @@ from sys import exit
 
 
 class Clan():
+    BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach"]
+    
+    CAT_TYPES = [
+        "kitten",
+        "apprentice",
+        "warrior",
+        "medicine",
+        "deputy",
+        "leader",
+        "elder",
+        "general",
+    ]
+
     leader_lives = 0
     clan_cats = []
     starclan_cats = []
@@ -104,6 +117,7 @@ class Clan():
                 if medicine_cat.status != 'medicine cat':
                     Cat.all_cats[medicine_cat.ID].status_change('medicine cat')
             self.med_cat_number = len(self.med_cat_list)  # Must do this after the medicine cat is added to the list.
+            self.herbs = {}
             self.age = 0
             self.current_season = 'Newleaf'
             self.instructor = None  # This is the first cat in starclan, to "guide" the other dead cats there.
@@ -123,7 +137,6 @@ class Clan():
             it's a range from 1-100, with 30-70 being neutral, 71-100 being "welcoming",
             and 1-29 being "hostile". if you're hostile to outsiders, they will VERY RARELY show up.
             """
-
 
     def create_clan(self):
         """ This function is only called once a new clan is created in the 'clan created' screen, not every time
@@ -181,6 +194,7 @@ class Clan():
         if game.switches['game_mode'] == 'cruel_season':
             game.settings['disasters'] = True
 
+
     def add_cat(self, cat):  # cat is a 'Cat' object
         """ Adds cat into the list of clan cats"""
         if cat.ID in Cat.all_cats.keys(
@@ -197,16 +211,15 @@ class Clan():
                 self.med_cat_list.remove(cat.ID)
                 self.med_cat_predecessors += 1
 
-    def add_to_outside(self, cat): # same as add_cat
+    def add_to_outside(self, cat):  # same as add_cat
         """ Places the gone cat into cotc. It should not be removed from the list of cats in the clan"""
         if cat.ID in Cat.all_cats.keys(
         ) and cat.outside and cat.ID not in Cat.outside_cats.keys():
             # The outside-value must be set to True before the cat can go to cotc
-            Cat.outside_cats.update({cat.ID:cat})
-            if cat.status != 'leader': # takes away the suffix unless the cat used to be leader
+            Cat.outside_cats.update({cat.ID: cat})
+            if cat.status != 'leader':  # takes away the suffix unless the cat used to be leader
                 cat.suffix = ''
-            
-            
+
     def add_to_darkforest(self, cat):  # Same as add_cat
         """ Places the dead cat into the dark forest. It should not be removed from the list of cats in the clan"""
         if cat.ID in Cat.all_cats.keys(
@@ -234,7 +247,6 @@ class Clan():
                 self.clan_cats.remove(ID)
             if ID in self.starclan_cats:
                 self.starclan_cats.remove(ID)
-
 
     def __repr__(self):
         if self.name is not None:
@@ -270,19 +282,6 @@ class Clan():
     def switch_clans(self, clan):
         game.save_clanlist(clan)
         game.cur_events_list.clear()
-        game.other_clans_events_list.clear()
-        game.birth_death_events_list.clear()
-        game.relation_events_list.clear()
-        game.health_events_list.clear()
-        game.ceremony_events_list.clear()
-        game.misc_events_list.clear()
-        game.cur_events_list.clear()
-        game.other_clans_events_list.clear()
-        game.birth_death_events_list.clear()
-        game.relation_events_list.clear()
-        game.health_events_list.clear()
-        game.ceremony_events_list.clear()
-        game.misc_events_list.clear()
 
         pygame.display.quit()
         pygame.quit()
@@ -308,7 +307,7 @@ class Clan():
             clan_data["leader"] = self.leader.ID
             clan_data["leader_lives"] = self.leader_lives
         else:
-            clan_data["leader"] = "None"
+            clan_data["leader"] = None
 
         clan_data["leader_predecessors"] = self.leader_predecessors
 
@@ -316,7 +315,7 @@ class Clan():
         if self.deputy:
             clan_data["deputy"] = self.deputy.ID
         else:
-            clan_data["deputy"] = "None"
+            clan_data["deputy"] = None
 
         clan_data["deputy_predecessors"] = self.deputy_predecessors
 
@@ -324,7 +323,7 @@ class Clan():
         if self.medicine_cat:
             clan_data["med_cat"] = self.medicine_cat.ID
         else:
-            clan_data["med_cat"] = "None"
+            clan_data["med_cat"] = None
         clan_data["med_cat_number"] = self.med_cat_number
         clan_data["med_cat_predecessors"] = self.med_cat_predecessors
 
@@ -339,6 +338,8 @@ class Clan():
         clan_data["other_clans_relations"] = ",".join([str(i.relations) for i in self.all_clans])
         clan_data["other_clan_temperament"] = ",".join([str(i.temperament) for i in self.all_clans])
 
+        self.save_herbs(game.clan)
+
         with open(f'saves/{self.name}clan.json', 'w') as write_file:
             json_string = ujson.dumps(clan_data, indent=4)
             write_file.write(json_string)
@@ -349,6 +350,7 @@ class Clan():
                 list_data = list_data + game.switches['clan_list'][i] + "\n"
         with open('saves/clanlist.txt', 'w') as write_file:
             write_file.write(list_data)
+
 
     def load_clan(self):
         if os.path.exists('saves/' + game.switches['clan_list'][0] + 'clan.json'):
@@ -523,22 +525,23 @@ class Clan():
                   'r') as read_file:
             clan_data = ujson.loads(read_file.read())
 
-        if "None" in clan_data["leader"]:
-            leader = None
-            leader_lives = 0
-        else:
+        if clan_data["leader"]:
             leader = Cat.all_cats[clan_data["leader"]]
             leader_lives = clan_data["leader_lives"]
-
-        if "None" in clan_data["deputy"]:
-            deputy = None
         else:
+            leader = None
+            leader_lives = 0
+
+        if clan_data["deputy"]:
             deputy = Cat.all_cats[clan_data["deputy"]]
-
-        if "None" in clan_data["med_cat"]:
-            med_cat = None
         else:
+            deputy = None
+
+
+        if clan_data["med_cat"]:
             med_cat = Cat.all_cats[clan_data["med_cat"]]
+        else:
+            med_cat = None
 
         game.clan = Clan(clan_data["clanname"],
                          leader,
@@ -576,7 +579,6 @@ class Clan():
                                           clan_data["other_clan_temperament"].split(",")):
             game.clan.all_clans.append(OtherClan(name, int(relation), temper))
 
-
         for cat in clan_data["clan_cats"].split(","):
             if cat in Cat.all_cats.keys():
                 game.clan.add_cat(Cat.all_cats[cat])
@@ -585,12 +587,44 @@ class Clan():
                 print('Cat not found:', cat)
 
         if "faded_cats" in clan_data:
-            if clan_data["faded_cats"].strip(): # Check for empty string
+            if clan_data["faded_cats"].strip():  # Check for empty string
                 for cat in clan_data["faded_cats"].split(","):
                     game.clan.faded_ids.append(cat)
 
         self.load_pregnancy(game.clan)
+        self.load_herbs(game.clan)
         game.switches['error_message'] = ''
+
+    def load_herbs(self, clan):
+        if not game.clan.name:
+            return
+        file_path = f"saves/{game.clan.name}/herbs.json"
+        if os.path.exists(file_path):
+            with open(file_path,
+                      'r') as read_file:
+                clan.herbs = ujson.loads(read_file.read())
+
+        else:
+            # generate a random set of herbs since the clan didn't have any saved
+            herbs = {}
+            random_herbs = random.choices(HERBS, k=random.randrange(3, 8))
+            for herb in random_herbs:
+                herbs.update({herb: random.randint(1, 3)})
+            with open(file_path, 'w') as rel_file:
+                json_string = ujson.dumps(herbs, indent=4)
+                rel_file.write(json_string)
+            clan.herbs = herbs
+
+    def save_herbs(self, clan):
+        if not game.clan.name:
+            return
+        file_path = f"saves/{game.clan.name}/herbs.json"
+        try:
+            with open(file_path, 'w') as file:
+                json_string = ujson.dumps(clan.herbs, indent=4)
+                file.write(json_string)
+        except:
+            print(f"Saving the herb data didn't work.")
 
     def load_pregnancy(self, clan):
         if not game.clan.name:
@@ -657,3 +691,7 @@ class StarClan():
 
 clan_class = Clan()
 clan_class.remove_cat(cat_class.ID)
+
+HERBS = None
+with open(f"resources/dicts/herbs.json", 'r') as read_file:
+    HERBS = ujson.loads(read_file.read())

@@ -44,7 +44,15 @@
             "saved a piece of freshkill that they know is (cat)'s favorite.",
             "could recognize (cat) just by the sound of their paw steps.",
             "convinces (cat) to help them pull a prank on a clanmate.",
-            "won't stop copying everything (cat) does."
+            "won't stop copying everything (cat) does.",
+            "helps (cat) pick burrs out of their fur.",
+            "is helping (cat) pick burrs out of their fur after the last patrol.",
+            "listens to (cat) talk about what life was like when they were young.",
+            "swaps favorite prey with (cat).",
+            "chats with (cat) about their day.",
+            "appreciates (cat) telling them that they had a feather stuck to their face.",
+            "greets (cat) as they're exiting the warriors' den.",
+            "chats quietly with (cat) while they're both on camp guard duty."
         ],
         "dislike": [
             "divides (cat) into extra patrols.",
@@ -74,7 +82,9 @@
             "tells (cat) that they'll be an amazing medicine cat someday.",
             "is pestering (cat) for a story.",
             "settles down next to (cat) to listen to their stories.",
-            "won't stop copying everything (cat) does."
+            "won't stop copying everything (cat) does.",
+            "asks (cat) if they're really going to be the leader someday.",
+            "always wants to play as (cat) in their games of pretend."
         ],
         "comfortable": [
             "is hiding under a bush from (cat), but they can't stop giggling.",
@@ -99,7 +109,8 @@
             "wishes they could get their pelt to shine like (cat)'s.",
             "wishes they had (cat)'s mentor instead.",
             "is jealous that (cat) went on patrol without them.",
-            "is complaining that (cat) never does anything helpful."
+            "is complaining that (cat) never does anything helpful.",
+            "looks at (cat) napping in the apprentice's den and can't wait to leave the nursery."
         ],
         "trust": [
             "is asking (cat) how babies are made.",
@@ -141,7 +152,13 @@
             "playfully teases (cat) for missing a catch.",
             "is thinking about how much (cat) reminds them of their own apprentice days.",
             "saved a piece of freshkill that they know is (cat)'s favorite.",
-            "convinces (cat) to help them pull a prank on a clanmate."
+            "convinces (cat) to help them pull a prank on a clanmate.",
+            "helps (cat) pick burrs out of their fur.",
+            "is helping (cat) pick burrs out of their fur after the last patrol.",
+            "listens to (cat) talk about what life was like when they were young.",
+            "asks (cat) if they're really going to be the leader someday.",
+            "greets (cat) as they're exiting the warriors' den.",
+            "chats quietly with (cat) while they're both on camp guard duty."
         ],
         "dislike": [
             "divides (cat) into extra patrols.",

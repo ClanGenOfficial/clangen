@@ -898,7 +898,7 @@
             "The patrol can't seem to interpret the purpose of the object. Twolegs are just mystifying.",
             null,
             null,
-            "As r_c pokes around the strange smelling whatever-it-is, they poke past a piece of metal that tears through their ear, send them skittering backwards with a yelp."
+            "As r_c pokes around the strange smelling whatever-it-is, they poke past a piece of metal that tears through their ear, sending them skittering backwards with a yelp."
     ],
     "win_skills": ["smart", "very smart", "extremely smart"],
     "win_trait": ["None"],

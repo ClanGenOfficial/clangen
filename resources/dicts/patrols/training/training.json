@@ -3,14 +3,14 @@
     "patrol_id": "gen_train_berrybush1",
     "biome": "Any",
     "season": "greenleaf",
-    "tags": ["herbs", "training", "injury", "poisoned", "comfort", "trust"],
+    "tags": ["herb", "raspberry", "training", "injury", "poisoned", "comfort", "trust"],
     "intro_text": "While out training, r_c stumbles upon a bush of red berries.",
     "decline_text": "r_c decides not to touch the berries.",
     "chance_of_success": 80,
     "exp": 20,
     "success_text": [
         "Unsure but remembering the kittentales of red deathberries, r_c avoids them, and gives the rest of the patrol a head's up about the potentially dangerous bush.",
-        "After careful consideration and consulting with the other cats, r_c recognizes them as strawberries and brings the rare berries back to the medicine cat's den.",
+        "After careful consideration and consulting with the other cats, r_c recognizes them as raspberries and brings the rare berries back to the medicine cat's den.",
         "Astutely, s_c recognises the cranberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit."
     ],
     "fail_text": [
@@ -29,14 +29,14 @@
     "patrol_id": "gen_train_berrybush2",
     "biome": "Any",
     "season": "greenleaf",
-    "tags": ["herbs", "training", "apprentice", "injury", "poisoned", "death"],
+    "tags": ["herb", "raspberry","training", "apprentice", "injury", "poisoned", "death"],
     "intro_text": "While helping gathering herbs, r_c stumbles upon a bush of red berries.",
     "decline_text": "r_c decides not to touch the berries.",
     "chance_of_success": 80,
     "exp": 20,
     "success_text": [
         "Unsure but remembering the kittentales of red deathberries, app1 avoids them and alerts the patrol, who, extremely worried, confirm that this a deathberry bush.",
-        "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries and brings them back to camp, where it turns out they're called strawberries."
+        "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries and brings them back to camp, where it turns out they're called raspberries."
     ],
     "fail_text": [
         "Confidently gathering them and prancing back to camp, app1 is then informed that raspberries aren't a useful medicinal herb.",
@@ -53,14 +53,14 @@
     "patrol_id": "gen_train_berrybush3",
     "biome": "Any",
     "season": "leaf-fall",
-    "tags": ["herbs", "training", "injury", "poisoned"],
+    "tags": ["herb", "raspberry", "training", "injury", "poisoned"],
     "intro_text": "While helping gathering herbs, r_c stumbles upon a bush of red berries.",
     "decline_text": "r_c decides not to touch the berries.",
     "chance_of_success": 80,
     "exp": 20,
     "success_text": [
         "Unsure but remembering the kittentales of red deathberries, r_c avoids them, and gives the rest of the patrol a head's up about the potentially dangerous bush.",
-        "After careful consideration, r_c recognizes them as strawberries and brings the rare berries  back to the medicine cat's den.",
+        "After careful consideration, r_c recognizes them as raspberries and brings the rare berries  back to the medicine cat's den.",
         "Astutely, s_c recognises the cranberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit."
     ],
     "fail_text": [
@@ -79,14 +79,14 @@
     "patrol_id": "gen_train_berrybush4",
     "biome": "Any",
     "season": "leaf-fall",
-    "tags": ["herbs", "training", "apprentice", "injury", "poisoned", "death"],
+    "tags": ["herb", "raspberry", "training", "apprentice", "injury", "poisoned", "death"],
     "intro_text": "While helping gathering herbs, r_c stumbles upon a bush of red berries.",
     "decline_text": "r_c decides not to touch the berries.",
     "chance_of_success": 80,
     "exp": 20,
     "success_text": [
         "Unsure but remembering the kittentales of red deathberries, app1 avoids them and alerts the patrol, who, extremely worried, confirm that this a deathberry bush.",
-        "Whatever. Identifying them is a medicine cat problem.  app1 plucks the berries and brings them back to camp, where it turns out they're called strawberries."
+        "Whatever. Identifying them is a medicine cat problem.  app1 plucks the berries and brings them back to camp, where it turns out they're called raspberries."
     ],
     "fail_text": [
         "Confidently gathering them and prancing back to camp, app1 is then informed that raspberries aren't a useful medicinal herb.",
