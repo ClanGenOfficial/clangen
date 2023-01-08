@@ -1,6 +1,9 @@
 from random import choice
 
-import ujson
+try:
+    import ujson
+except ImportError:
+    import json as ujson
 
 def get_thoughts(cat, other_cat):
     # placeholder thought - should only appear in game, when there is only one cat left

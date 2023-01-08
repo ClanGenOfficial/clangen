@@ -1,7 +1,10 @@
 import random
 from random import choice, randint
 import copy
-import ujson
+try:
+    import ujson
+except ImportError:
+    import json as ujson
 from scripts.event_class import Single_Event
 
 from scripts.utility import get_personality_compatibility

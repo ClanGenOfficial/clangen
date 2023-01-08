@@ -369,9 +369,8 @@ class Patrol():
             gm_modifier = 3
         # initially setting stat_cat
         if self.patrol_event.win_skills is not None and self.patrol_event.win_trait is not None:
-            for cat in self.patrol_cats:
-                if cat.skill in self.patrol_event.win_skills or cat.trait in self.patrol_event.win_trait:
-                    self.patrol_stat_cat = cat
+            if cat_class.skill in self.patrol_event.win_skills or cat_class.trait in self.patrol_event.win_trait:
+                    self.patrol_stat_cat = cat_class
         # if patrol contains cats with autowin skill, chance of success is high
         # otherwise it will calculate the chance by adding the patrolevent's chance of success plus the patrol's total exp
         chance = self.patrol_event.chance_of_success + int(
@@ -391,19 +390,6 @@ class Patrol():
                 chance = chance + 50
 
         # resetting stat_cat to fails
-        if self.patrol_event.fail_skills is not None and self.patrol_event.fail_trait is not None:
-            for cat in self.patrol_cats:
-                if cat.skill in self.patrol_event.fail_skills or cat.trait in self.patrol_event.fail_trait:
-                    self.patrol_stat_cat = cat
-        if self.patrol_event.fail_skills is not None:
-            if set(self.patrol_skills).isdisjoint(
-                    self.patrol_event.fail_skills):
-                chance = chance - 50
-                if self.patrol_stat_cat is not None:
-                    if "bad" in self.patrol_stat_cat.skill:
-                        chance = chance - 5
-                    elif "awful" in self.patrol_stat_cat.skill:
-                        chance = chance - 10
         if self.patrol_event.fail_trait is not None:
             if set(self.patrol_traits).isdisjoint(
                     self.patrol_event.fail_trait):
@@ -430,10 +416,6 @@ class Patrol():
         if c < chance:
             self.success = True
             # this adds the stat cat (if there is one)
-            if self.patrol_event.win_skills is not None and self.patrol_event.win_trait is not None:
-                for cat in self.patrol_cats:
-                    if cat.skill in self.patrol_event.win_skills or cat.trait in self.patrol_event.win_trait:
-                        self.patrol_stat_cat = cat
             if self.patrol_stat_cat is not None:
                 if self.patrol_stat_cat.trait in self.patrol_event.win_trait:
                     n = 3
