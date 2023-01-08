@@ -2,7 +2,10 @@ from random import choice, randint
 import math
 import os.path
 import itertools
-import ujson
+try:
+    import ujson
+except ImportError:
+    import json as ujson
 
 from .pelts import *
 from .names import *

@@ -1,6 +1,10 @@
 import pygame
 import pygame_gui
-import ujson
+try:
+    import ujson
+except ImportError as e:
+    print(f"{e}\nFailed to import ujson, saving may be slower.")
+    import json as ujson
 import os
 from ast import literal_eval
 
