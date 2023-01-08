@@ -164,9 +164,7 @@ class Cat():
         self.parent1 = parent1
         self.parent2 = parent2
         self.pelt = pelt
-
-        self.tint = choice(list(Sprites.cat_tints.keys()))
-
+        self.tint = None
         self.eye_colour = eye_colour
         self.scars = []
         self.mentor = None
@@ -324,6 +322,7 @@ class Cat():
         # APPEARANCE
         init_eyes(self)
         init_pelt(self)
+        init_tint(self)
         init_sprite(self)
         init_scars(self)
         init_accessories(self)
