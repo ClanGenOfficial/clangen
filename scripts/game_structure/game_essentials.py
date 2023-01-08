@@ -599,7 +599,7 @@ class GameOver(UIWindow):
 
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.begin_anew_button:
-                game.last_screen_forupdate = self.last_screen
+                game.last_screen_forupdate = game.switches["cur_screen"]
                 game.switches['cur_screen'] = 'start screen'
                 game.switch_screens = True
                 self.kill()

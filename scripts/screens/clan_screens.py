@@ -118,9 +118,6 @@ class ClanScreen(Screens):
                                                        object_id="#save_text_box")
         self.update_buttons_and_text()
 
-        if get_living_cat_count(Cat) == 0:
-            GameOver('events screen')
-
     def exit_screen(self):
         # removes the cat sprites.
         for button in self.cat_buttons:
