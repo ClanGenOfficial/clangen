@@ -1,4 +1,7 @@
-import ujson
+try:
+    import ujson
+except ImportError:
+    import json as ujson
 import random
 
 from scripts.cat.cats import Cat, INJURIES

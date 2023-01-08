@@ -1,4 +1,7 @@
-import ujson
+try:
+    import ujson
+except ImportError:
+    import json as ujson
 import random
 
 from scripts.cat.cats import Cat
@@ -24,13 +27,15 @@ class Scar_Events():
         """ 
         This function handles the scars
         """
+        
         scar_text = cat.possible_scar
 
-        chance = int(random.random() * 10)
+        chance = int(random.random() * 13 - cat.injuries[injury_name]["moons_with"])
+        if chance <= 0:
+            chance = 1
         amount_per_med = get_amount_cat_for_one_medic(game.clan)
         if medical_cats_condition_fulfilled(game.cat_class.all_cats.values(), amount_per_med):
             chance += 3
-        #print(chance)
         if len(cat.scars) < 4 and chance <= 6:
 
             # move potential scar text into displayed scar text

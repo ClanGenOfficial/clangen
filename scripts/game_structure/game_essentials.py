@@ -1,6 +1,10 @@
 import pygame
 import pygame_gui
-import ujson
+try:
+    import ujson
+except ImportError as e:
+    print(f"{e}\nFailed to import ujson, saving may be slower.")
+    import json as ujson
 import os
 from ast import literal_eval
 
@@ -27,6 +31,14 @@ class Game():
     ranks_changed_timeskip = False  # Flag for when a cat's status changes occurs during a timeskip.
 
     cur_events_list = []
+    ceremony_events_list = []
+    birth_death_events_list = []
+    relation_events_list = []
+    health_events_list = []
+    other_clans_events_list = []
+    misc_events_list = []
+    herb_events_list = []
+
     allegiance_list = []
     language = {}
     game_mode = ''
@@ -599,7 +611,7 @@ class GameOver(UIWindow):
 
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.begin_anew_button:
-                game.last_screen_forupdate = self.last_screen
+                game.last_screen_forupdate = game.switches['cur_screen']
                 game.switches['cur_screen'] = 'start screen'
                 game.switch_screens = True
                 self.kill()

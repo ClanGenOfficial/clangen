@@ -2,7 +2,10 @@ from random import choice, randint
 import math
 import os.path
 import itertools
-import ujson
+try:
+    import ujson
+except ImportError:
+    import json as ujson
 
 from .pelts import *
 from .names import *
@@ -161,9 +164,7 @@ class Cat():
         self.parent1 = parent1
         self.parent2 = parent2
         self.pelt = pelt
-
-        self.tint = choice(list(Sprites.cat_tints.keys()))
-
+        self.tint = None
         self.eye_colour = eye_colour
         self.scars = []
         self.mentor = None
@@ -321,6 +322,7 @@ class Cat():
         # APPEARANCE
         init_eyes(self)
         init_pelt(self)
+        init_tint(self)
         init_sprite(self)
         init_scars(self)
         init_accessories(self)
@@ -373,7 +375,7 @@ class Cat():
     def is_alive(self):
         return not self.dead
 
-    def die(self, body=True, died_by_condition=False):
+    def die(self, body=True):
         """
         This is used to kill a cat.
 
@@ -382,11 +384,11 @@ class Cat():
 
         died_by_condition - defaults to False, use this to mark if the cat is dying via a condition.
         """
-        if self.status == 'leader' and game.clan.leader_lives > 0 and died_by_condition is False:
-            self.injuries.clear()
-            self.illnesses.clear()
+        self.injuries.clear()
+        self.illnesses.clear()
+        if self.status == 'leader' and game.clan.leader_lives > 0:
             return
-        elif self.status == 'leader' and game.clan.leader_lives > 0 and died_by_condition is True:
+        elif self.status == 'leader' and game.clan.leader_lives > 0:
             return
         elif self.status == 'leader' and game.clan.leader_lives <= 0:
             self.dead = True
@@ -402,10 +404,6 @@ class Cat():
                 game.cur_events_list.append(Single_Event(text, "birth_death", game.clan.leader.ID))
         else:
             self.dead = True
-
-        if self.status != 'leader':
-            self.injuries.clear()
-            self.illnesses.clear()
 
         if self.mate is not None:
             self.mate = None
@@ -532,6 +530,15 @@ class Cat():
                     chance = [3, 1]
                 if cat.trait in grief_minor:
                     chance = [1, 3]
+                if "rosemary" in game.clan.herbs:  # decrease major grief chance if grave herbs are used
+                    chance = [1, 6]
+                    amount_used = random.choice([1, 2])
+                    game.clan.herbs["rosemary"] -= amount_used
+                    if game.clan.herbs["rosemary"] <= 0:
+                        game.clan.herbs.pop("rosemary")
+                    if f"Rosemary was used for {self.name}'s body." not in game.herb_events_list:
+                        game.herb_events_list.append(f"Rosemary was used for {self.name}'s body.")
+
                 severity = random.choices(['major', 'minor'], weights=chance, k=1)
                 # give the cat the relevant severity text
                 severity = severity[0]
@@ -834,8 +841,12 @@ class Cat():
             chosen_thought = chosen_thought.replace("r_c", str(other_cat.name))
 
         # insert Clan name if needed
-        if "c_n" in chosen_thought:
-            chosen_thought = chosen_thought.replace("c_n", str(game.clan.name) + 'Clan')
+        try:
+            if "c_n" in chosen_thought:
+                chosen_thought = chosen_thought.replace("c_n", str(game.clan.name) + 'Clan')
+        except AttributeError:
+            if "c_n" in chosen_thought:
+                chosen_thought = chosen_thought.replace("c_n", game.switches["clan_list"][0] + 'Clan')
 
         # insert thought
         self.thought = str(chosen_thought)
@@ -1022,7 +1033,7 @@ class Cat():
                     # game.health_events_list.append(text)
                     # game.birth_death_events_list.append(text)
                     game.cur_events_list.append(Single_Event(text, ["birth_death", "health"], game.clan.leader.ID))
-            self.die(died_by_condition=True)
+            self.die()
             return False
 
         keys = self.illnesses[illness].keys()
@@ -1056,7 +1067,7 @@ class Cat():
         if mortality and not int(random.random() * mortality):
             if self.status == 'leader':
                 game.clan.leader_lives -= 1
-            self.die(died_by_condition=True)
+            self.die()
             return
 
         keys = self.injuries[injury].keys()
@@ -1066,7 +1077,7 @@ class Cat():
             self.injuries[injury].update({'moons_with': 1})
 
         # if the cat has an infected wound, the wound shouldn't heal till the illness is cured
-        if "an infected wound" not in self.illnesses and "a festering wound" not in self.illnesses:
+        if not self.injuries[injury]["complication"]:
             self.injuries[injury]["duration"] -= 1
         if self.injuries[injury]["duration"] <= 0:
             self.healed_condition = True
@@ -1111,7 +1122,7 @@ class Cat():
         if mortality and not int(random.random() * mortality):
             if self.status == 'leader':
                 game.clan.leader_lives -= 1
-            self.die(died_by_condition=True)
+            self.die()
             return False
 
 
@@ -1307,12 +1318,33 @@ class Cat():
             }
 
         if len(new_injury.also_got) > 0 and not int(random.random() * 5):
-            self.also_got = True
-            additional_injury = choice(new_injury.also_got)
-            if additional_injury in INJURIES:
-                self.additional_injury(additional_injury)
-            else:
-                self.get_ill(additional_injury, event_triggered=True)
+            avoided = False
+            if 'blood loss' in new_injury.also_got and len(get_med_cats(Cat)) != 0:
+                clan_herbs = set()
+                needed_herbs = {"horsetail", "raspberry", "marigold", "cobwebs"}
+                clan_herbs.update(game.clan.herbs.keys())
+                herb_set = needed_herbs.intersection(clan_herbs)
+                usable_herbs = []
+                usable_herbs.extend(herb_set)
+
+                if usable_herbs:
+                    # deplete the herb
+                    herb_used = random.choice(usable_herbs)
+                    game.clan.herbs[herb_used] -= 1
+                    if game.clan.herbs[herb_used] <= 0:
+                        game.clan.herbs.pop(herb_used)
+                    avoided = True
+                    text = f"{str(herb_used).capitalize()} was used to stop blood loss for {self.name}."
+                    print(herb_used)
+                    game.herb_events_list.append(text)
+
+            if not avoided:
+                self.also_got = True
+                additional_injury = choice(new_injury.also_got)
+                if additional_injury in INJURIES:
+                    self.additional_injury(additional_injury)
+                else:
+                    self.get_ill(additional_injury, event_triggered=True)
         else:
             self.also_got = False
 

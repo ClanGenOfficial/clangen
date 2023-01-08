@@ -23,7 +23,7 @@ class EventsScreen(Screens):
     health_events = ""
     other_clans_events = ""
     misc_events = ""
-    display_text = "<center> Check this page to see which events are currently happening at the Clan.</center>"
+    display_text = "<center> Check this page to see which events are currently happening in the Clan.</center>"
     display_events = ""
 
     def __init__(self, name=None):
@@ -445,13 +445,13 @@ class EventsScreen(Screens):
                     if game.settings["dark mode"]:
                         self.display_events_elements["shading" + str(i)] = pygame_gui.elements.UIImage(
                             pygame.Rect((0, y),
-                                        (box_length + 50, self.display_events_elements["event" + str(i)].get_relative_rect()[3] + 40)),
+                                        (box_length + 50, self.display_events_elements["event" + str(i)].get_relative_rect()[3] + 35)),
                             image_cache.load_image("resources/images/shading_dark.png"), container=self.event_container)
                     else:
                         self.display_events_elements["shading" + str(i)] = pygame_gui.elements.UIImage(
                             pygame.Rect((0, y),
                                         (box_length + 50,
-                                         self.display_events_elements["event" + str(i)].get_relative_rect()[3] + 40)),
+                                         self.display_events_elements["event" + str(i)].get_relative_rect()[3] + 35)),
                             image_cache.load_image("resources/images/shading.png"), container=self.event_container)
 
                     self.display_events_elements["shading" + str(i)].disable()
@@ -459,7 +459,7 @@ class EventsScreen(Screens):
                 y += self.display_events_elements["event" + str(i)].get_relative_rect()[3]
 
                 self.involved_cat_buttons.append(IDImageButton(pygame.Rect(
-                    (self.event_container.get_relative_rect()[2] - 40, y), (30, 30)),
+                    (self.event_container.get_relative_rect()[2] - 40, y - 5), (34, 34)),
                     ids=ev.cats_involved, container=self.event_container, layer_starting_height=2,
                     object_id="#events_cat_button"))
 
@@ -506,9 +506,9 @@ class EventsScreen(Screens):
                         name = name[:9] + ".."
 
                     self.cat_profile_buttons.append(
-                        IDImageButton(pygame.Rect((pressed_button_pos[0] - (101 * i) - 1,
+                        IDImageButton(pygame.Rect((pressed_button_pos[0] - (120 * i) - 1,
                                                    pressed_button_pos[1] + 2),
-                                                   (100, 25)),
+                                                   (116, 30)),
                                       text=name, ids=ev, container=self.event_container,
                                       object_id="#events_cat_profile_button")
                     )
@@ -526,7 +526,7 @@ class EventsScreen(Screens):
 
     def make_events_container(self):
         """ In its own function so that there is only one place the box size is set"""
-        self.event_container = pygame_gui.elements.UIScrollingContainer(pygame.Rect((215, 276), (516, 350)))
+        self.event_container = pygame_gui.elements.UIScrollingContainer(pygame.Rect((216, 276), (514, 350)))
 
 
 

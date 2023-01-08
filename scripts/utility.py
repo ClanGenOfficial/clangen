@@ -1,5 +1,8 @@
 import pygame
-import ujson
+try:
+    import ujson
+except ImportError:
+    import json as ujson
 import traceback
 from scripts.game_structure import image_cache
 
@@ -8,20 +11,32 @@ from scripts.cat.pelts import *
 from scripts.game_structure.game_essentials import *
 
 
-def get_med_cats(Cat):
+def get_med_cats(Cat, working=True):
     """
     returns a list of all meds and med apps currently alive, in the clan, and able to work
+
+    set working to False if you want all meds and med apps regardless of their work status
     """
     all_cats = Cat.all_cats.values()
 
-    medicine_apprentices = list(filter(
-        lambda c: c.status == 'medicine apprentice' and not c.dead and not c.outside and not c.not_working()
-        , all_cats
-    ))
-    medicine_cats = list(filter(
-        lambda c: c.status == 'medicine cat' and not c.dead and not c.outside and not c.not_working()
-        , all_cats
-    ))
+    if working is False:
+        medicine_apprentices = list(filter(
+            lambda c: c.status == 'medicine cat apprentice' and not c.dead and not c.outside
+            , all_cats
+        ))
+        medicine_cats = list(filter(
+            lambda c: c.status == 'medicine cat' and not c.dead and not c.outside
+            , all_cats
+        ))
+    else:
+        medicine_apprentices = list(filter(
+            lambda c: c.status == 'medicine cat apprentice' and not c.dead and not c.outside and not c.not_working()
+            , all_cats
+        ))
+        medicine_cats = list(filter(
+            lambda c: c.status == 'medicine cat' and not c.dead and not c.outside and not c.not_working()
+            , all_cats
+        ))
 
     possible_med_cats = []
     possible_med_cats.extend(medicine_cats)
@@ -377,14 +392,14 @@ def update_sprite(cat):
                 new_sprite.blit(sprites.sprites[cat.tortiepattern + cat.pattern + str(cat.age_sprites[cat.age])], (0, 0))
 
         # TINTS
-        if cat.tint != "none" and cat.tint in Sprites.cat_tints:
+        if cat.tint != "none" and cat.tint in Sprites.cat_tints["tint_colours"]:
             # Multiply with alpha does not work as you would expect - it just lowers the alpha of the
             # entire surface. To get around this, we first blit the tint onto a white background to dull it,
             # then blit the surface onto the sprite with pygame.BLEND_RGB_MULT
             base = pygame.Surface((50, 50)).convert_alpha()
             base.fill((255, 255, 255))
             tint = pygame.Surface((50, 50)).convert_alpha()
-            tint.fill(tuple(Sprites.cat_tints[cat.tint]))
+            tint.fill(tuple(Sprites.cat_tints["tint_colours"][cat.tint]))
             base.blit(tint, (0, 0))
             new_sprite.blit(base, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
 
