@@ -128,19 +128,19 @@ class ClanScreen(Screens):
                 if i > self.max_sprites_displayed:
                     break
 
-                self.cat_buttons.append(
-                    UISpriteButton(pygame.Rect(tuple(Cat.all_cats[x].placement), (50, 50)), Cat.all_cats[x].sprite,
-                                   cat_id=x)
-                )
+                try:
+                    self.cat_buttons.append(
+                        UISpriteButton(pygame.Rect(tuple(Cat.all_cats[x].placement), (50, 50)), Cat.all_cats[x].sprite,
+                                       cat_id=x)
+                    )
+                except:
+                    print(f"Error placing {str(Cat.all_cats[x].name)}\'s sprite on Clan page")
 
         self.save_button = UIImageButton(pygame.Rect(((343, 625), (114, 30))), "", object_id="#save_button")
 
         self.save_text = pygame_gui.elements.UITextBox("", pygame.Rect(320, 660, 160, 20),
                                                        object_id="#save_text_box")
         self.update_buttons_and_text()
-
-        if get_living_cat_count(Cat) == 0:
-            GameOver('events screen')
 
     def exit_screen(self):
         # removes the cat sprites.

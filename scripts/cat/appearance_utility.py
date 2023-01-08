@@ -1,5 +1,6 @@
 import random
 from .pelts import *
+from scripts.cat.sprites import Sprites
 
 # ---------------------------------------------------------------------------- #
 #                               utility functions                              #
@@ -127,6 +128,7 @@ def plural_acc_names(accessory, plural, singular):
 #                                init functions                                #
 # ---------------------------------------------------------------------------- #
 
+
 def init_eyes(cat):
     if cat.eye_colour is not None:
         return
@@ -148,6 +150,7 @@ def init_eyes(cat):
                 choice(eye_colours)
             ])
 
+
 def init_pelt(cat):
     if cat.pelt is not None:
         return
@@ -165,6 +168,7 @@ def init_pelt(cat):
                                 choice([par1.pelt.name, par2.pelt.name, None]), choice([par1.pelt.length, par2.pelt.length, None]))                  
     else:
         cat.pelt = choose_pelt(cat.gender)
+
 
 def init_sprite(cat):
     if cat.pelt is None:
@@ -186,6 +190,7 @@ def init_sprite(cat):
         cat.age_sprites['young adult'] = cat.age_sprites['adult']
         cat.age_sprites['senior adult'] = cat.age_sprites['adult']
         cat.age_sprites['dead'] = None
+
 
 def init_scars(cat):
     if not cat.scars:
@@ -217,6 +222,7 @@ def init_accessories(cat):
         ])
     else:
         cat.acc_display = None
+
 
 def init_pattern(cat):
     if cat.pelt is None:
@@ -254,6 +260,7 @@ def init_pattern(cat):
             cat.pattern = choice(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR', 'CREAMONE', 'CREAMTWO', 'CREAMTHREE', 'CREAMFOUR'])
     else:
         cat.pattern = None
+
 
 def init_white_patches(cat):
     if cat.pelt is None:
@@ -456,3 +463,13 @@ def init_white_patches(cat):
         cat.pelt.white = False
         if cat.pelt.name == "Calico":
             cat.pelt.name = "Tortie"
+
+
+def init_tint(cat):
+    # Basic tints as possible for all colors.
+    possible_tints = Sprites.cat_tints["possible_tints"]["basic"].copy()
+    if cat.pelt.colour in Sprites.cat_tints["colour_groups"]:
+        color_group = Sprites.cat_tints["colour_groups"][cat.pelt.colour]
+        possible_tints += Sprites.cat_tints["possible_tints"][color_group]
+        cat.tint = choice(possible_tints)
+
