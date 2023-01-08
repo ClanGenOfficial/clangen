@@ -40,11 +40,16 @@
         "thinks about how lucky they are to have someone like (cat) as a friend.",
         "helps (cat) work through something difficult that happened to them.",
         "comforts (cat) after a nightmare.",
-        "defends (cat) from a clanmate's rude remarks.",
+        "defends (cat) from a Clanmate's rude remarks.",
         "caught (cat) in a lie.",
         "bickered about something trivial with (cat).",
         "said something that rubbed (cat) the wrong way.",
-        "caught (cat) complaining about them behind their back."
+        "caught (cat) complaining about them behind their back.",
+        "helps (cat) pick burrs out of their fur.",
+        "is having a wonderful time discussing recent Clan news with (cat).",
+        "is always happy to grab some freshkill for (cat) to share.",
+        "wants to spend more time with (cat)!"
+
     ],
     "close": [
         "tells (cat) a secret.",
@@ -53,7 +58,7 @@
         "feels most like them-self when they're around (cat).",
         "thinks of (cat) as their best friend.",
         "saved a piece of freshkill that they know is (cat)'s favorite.",
-        "defends (cat) from a clanmate's rude remarks.",
+        "defends (cat) from a Clanmate's rude remarks.",
         "could recognize (cat) just by the sound of their paw steps.",
         "caught (cat) in a lie.",
         "caught (cat) complaining about them behind their back."
