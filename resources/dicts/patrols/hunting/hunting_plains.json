@@ -2098,13 +2098,13 @@
         "season": "Any",
         "tags": ["hunting", "warrior", "no_app"],
         "intro_text": "As r_c jumps up onto a rock to survey the plains, they spot the blood red pelt of a truly massive red fox.",
-        "decline_text": "Not today, thank you – they’ll go back to camp.",
+        "decline_text": "Not today, thank you - they'll go back to camp.",
         "chance_of_success": 60,
         "exp": 20,
         "success_text": [
-                "Swallowing their instinctive terror, r_c instead crouches to the rock and takes the time to assess the situation. Massive body, huge ruff of fur, legs towering daintily above the grass - this is too big to be a red fox, but ironically is less dangerous then it’s smaller fox counterpart.",
-                "No way, these things are barely ever seen! The hunting around here will already be ruined by the other predator, so r_c feels no guilt in hanging around to watch the maned wolf, thinking of the stories they’ll tell back at camp.",
-                "With a huff, r_c accepts that this hunt has failed – the massive maned wolf, despite every appearance, hunts nearly identical prey to c_n. Still, they’re not one to give up on an opportunity to learn, and sit and watch the wolf pounce for mice in case there might be tips to pick up."
+                "Swallowing their instinctive terror, r_c instead crouches to the rock and takes the time to assess the situation. Massive body, huge ruff of fur, legs towering daintily above the grass - this is too big to be a red fox, but ironically is less dangerous then it's smaller fox counterpart.",
+                "No way, these things are barely ever seen! The hunting around here will already be ruined by the other predator, so r_c feels no guilt in hanging around to watch the maned wolf, thinking of the stories they'll tell back at camp.",
+                "With a huff, r_c accepts that this hunt has failed - the massive maned wolf, despite every appearance, hunts nearly identical prey to c_n. Still, they're not one to give up on an opportunity to learn, and sit and watch the wolf pounce for mice in case there might be tips to pick up."
         ],
         "fail_text": [
                 "Their jolt of fear gives them strength, and r_c is most of the way home before it occurs to them that the huge maned creature might have been too big to be a red fox.",
@@ -2125,7 +2125,7 @@
         "season": "Any",
         "tags": ["hunting", "apprentice", "small_bite_injury", "scar", "injury", "shock"],
         "intro_text": "As app1 jumps up onto a rock to survey the plains, they spot the blood red pelt of a truly massive red fox.",
-        "decline_text": "Not today, thank you – they’ll go back to camp.",
+        "decline_text": "Not today, thank you - they'll go back to camp.",
         "chance_of_success": 40,
         "exp": 25,
         "success_text": [
@@ -2216,5 +2216,4 @@
                 "r_c was scarred by a maned wolf, fighting over food."
         ]
 }
-
 ]
