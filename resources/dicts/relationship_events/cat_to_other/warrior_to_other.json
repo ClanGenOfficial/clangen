@@ -60,7 +60,9 @@
             "prays that they aren't on patrol with (cat) tomorrow.",
             "had a disagreement with (cat) while on patrol earlier.",
             "chats with (cat) while grabbing something to eat.",
-            "asks (cat) how they're doing."
+            "asks (cat) how they're doing.",
+            "waves to (cat) with their tail as their patrols cross paths on the territory.",
+            "calls to (cat) to catch them a fat mouse on their next hunting patrol."
         ],
         "friendly": [
             "is telling (cat) about their own days as an apprentice.",
@@ -91,7 +93,9 @@
             "had a disagreement with (cat) while on patrol earlier.",
             "asks (cat) how they're doing.",
             "greets (cat) as they're exiting the warriors' den.",
-            "chats quietly with (cat) while they're both on camp guard duty."
+            "chats quietly with (cat) while they're both on camp guard duty.",
+            "waves to (cat) with their tail as their patrols cross paths on the territory.",
+            "calls to (cat) to catch them a fat mouse on their next hunting patrol."
         ],
         "friendly": [
             "just told (cat) a hilarious joke.",

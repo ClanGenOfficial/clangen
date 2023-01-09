@@ -166,7 +166,9 @@
             "is always happy to grab some freshkill for (cat) to share.",
             "wants to spend more time with (cat)!",
             "asks (cat) how they're doing.",
-            "spends most of the afternoon describing the territory to (cat)."
+            "spends most of the afternoon describing the territory to (cat).",
+            "basks in the sun with (cat)."
+
         ],
         "jealousy": [
             "is jealous that (cat) is getting more attention than them.",
@@ -365,7 +367,9 @@
             "bumps heads with (cat) reassuringly.",
             "spends most of the afternoon describing the territory to (cat).",
             "purrs as (cat) asks them to show them how to do a hunter's crouch. They oblige, happy to show their skills.",
-            "purrs as (cat) tells them that they hope they're their mentor when they become an apprentice."
+            "purrs as (cat) tells them that they hope they're their mentor when they become an apprentice.",
+            "basks in the sun with (cat)."
+
         ],
         "jealousy": [],
         "trust": [
