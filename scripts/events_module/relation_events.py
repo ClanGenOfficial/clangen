@@ -230,7 +230,6 @@ class Relation_Events():
             cat_from.set_mate(cat_to)
             cat_to.set_mate(cat_from)
             game.cur_events_list.append(Single_Event(mate_string, "relation", [cat_from.ID, cat_to.ID]))
-            # game.relation_events_list.append(mate_string)
 
     def handle_breakup(self, relationship_from, relationship_to, cat_from, cat_to):
         from_mate_in_clan = False
@@ -311,10 +310,10 @@ class Relation_Events():
             return
 
         chance = self.get_kits_chance(cat, other_cat, relation)
-        hit = int(random.random() * chance)
-        if hit:
+        no_hit = int(random.random() * chance)
+        if no_hit:
             return
-        # print(chance)
+        print("A KIT IS BORN")
 
         # even with no_gendered_breeding on a male cat with no second parent should not be count as pregnant
         # instead, the cat should get the kit instantly
@@ -747,27 +746,29 @@ class Relation_Events():
         # calculate the chance of having kits
         chance = 100
         if other_cat is not None:
-            chance = 40
-            if relation.romantic_love >= 45:
+            chance = 41
+            if relation.romantic_love >= 35:
                 chance -= 5
-            if relation.romantic_love >= 70:
+            if relation.romantic_love >= 55:
                 chance -= 5
-            if relation.romantic_love >= 90:
+            if relation.romantic_love >= 85:
                 chance -= 10
-            if relation.comfortable >= 50:
+            if relation.comfortable >= 35:
                 chance -= 5
-            if relation.comfortable >= 70:
+            if relation.comfortable >= 55:
                 chance -= 5
-            if relation.comfortable >= 90:
+            if relation.comfortable >= 85:
                 chance -= 10
+        else:
+            chance = int(int(living_cats) * 45)
+
         if old_male:
             chance = int(chance * 2)
 
-        if other_cat is None:
-            chance = int(int(living_cats) * 45)
         if chance > 20 > living_cats:
             chance -= 10
 
+        print("CHANCE", chance)
         return chance
 
     def get_affair_chance(self, mate_relation, affair_relation):
