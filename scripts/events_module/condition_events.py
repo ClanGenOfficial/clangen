@@ -569,6 +569,7 @@ class Condition_Events():
         Returns: boolean (if something happened) and the event_string
         """
         triggered = False
+        event_types = ["health"]
 
         if game.clan.game_mode == "classic":
             return triggered
@@ -608,6 +609,7 @@ class Condition_Events():
 
             elif cat.dead:
                 triggered = True
+                event_types.append("birth_death")
 
                 event = f"{cat.name} died from complications caused by {condition}."
                 event_list.append(event)
@@ -673,41 +675,60 @@ class Condition_Events():
             'elder': 0
         }
 
-        if not triggered and not cat.dead and not cat.retired and cat.status not in ['leader', 'medicine cat',
-                                                                                     'kitten'] and game.settings[
-            'retirement'] is False:
+        if not triggered and not cat.dead and not cat.retired and cat.status not in \
+                ['leader', 'medicine cat', 'kitten'] and game.settings['retirement'] is False:
             for condition in cat.permanent_condition:
                 if cat.permanent_condition[condition]['severity'] == 'major':
                     chance = int(retire_chances.get(cat.age))
                     if not int(random.random() * chance):
-                        cat.retire_cat()
+                        event_types.append('ceremony')
                         if game.clan.leader is not None:
-                            if not game.clan.leader.dead and not game.clan.leader.exiled and not game.clan.leader.outside:
-                                event = f"{game.clan.leader.name}, seeing {cat.name} struggling the last few moons approaches them and promises them that no one would think less of them for retiring early and that they would still be a valuable member of the clan as an elder. {cat.name} agrees and later that day their elder ceremony is held."
+                            if not game.clan.leader.dead and not game.clan.leader.exiled and \
+                                    not game.clan.leader.outside:
+                                event = f"{game.clan.leader.name}, seeing {cat.name} struggling the last few moons " \
+                                        f"approaches them and promises them that no one would think less of them for " \
+                                        f"retiring early and that they would still be a valuable member of the clan " \
+                                        f"as an elder. {cat.name} agrees and later that day their elder ceremony " \
+                                        f"is held."
                             else:
                                 event = f'{cat.name} has decided to retire from normal Clan duty.'
                         else:
                             event = f'{cat.name} has decided to retire from normal Clan duty.'
+
+                        if cat.age == 'adolescent':
+                            event += f"They are given the name {cat.name.prefix}{cat.name.suffix} in honor " \
+                                     f"of their contributions to {game.clan.name}Clan."
+
+                        cat.retire_cat()
+                        game.ranks_changed_timeskip = True
                         event_list.append(event)
 
                 if cat.permanent_condition[condition]['severity'] == 'severe':
-                    cat.retire_cat()
+                    event_types.append('ceremony')
                     if game.clan.leader is not None:
-                            if not game.clan.leader.dead and not game.clan.leader.exiled and not game.clan.leader.outside:
-                                event = f"{game.clan.leader.name}, seeing {cat.name} struggling the last few moons approaches them and promises them that no one would think less of them for retiring early and that they would still be a valuable member of the clan as an elder. {cat.name} agrees and later that day their elder ceremony is held."
-                            else:
-                                event = f'{cat.name} has decided to retire from normal Clan duty.'
+                        if not game.clan.leader.dead and not game.clan.leader.exiled \
+                                and not game.clan.leader.outside:
+                            event = f"{game.clan.leader.name}, seeing {cat.name} struggling the last few moons " \
+                                    f"approaches them and promises them that no one would think less of them for " \
+                                    f"retiring early and that they would still be a valuable member of the clan " \
+                                    f"as an elder. {cat.name} agrees and later that day their elder ceremony " \
+                                    f"is held."
+                        else:
+                            event = f'{cat.name} has decided to retire from normal Clan duty.'
                     else:
                         event = f'{cat.name} has decided to retire from normal Clan duty.'
+
+                    if cat.age == 'adolescent':
+                        event += f"They are given the name {cat.name.prefix}{cat.name.suffix} in honor " \
+                                 f"of their contributions to {game.clan.name}Clan."
+
+                    cat.retire_cat()
+                    game.ranks_changed_timeskip = True
                     event_list.append(event)
 
         if len(event_list) > 0:
             event_string = ' '.join(event_list)
-            types = ["health"]
-            if cat.dead:
-                types.append("birth_death")
-
-            game.cur_events_list.append(Single_Event(event_string, types, cat.ID))
+            game.cur_events_list.append(Single_Event(event_string, event_types, cat.ID))
         return
 
     def give_risks(self, cat, event_list, condition, progression, conditions, dictionary):
@@ -745,10 +766,6 @@ class Condition_Events():
                 if dictionary != cat.permanent_condition:
                     risk["chance"] = risk["chance"] + 10  # lower risk of getting it again if not a perm condition
 
-                # if it is a progressive illness, then remove the old illness and keep the new one
-                if condition in progression and new_condition_name == progression.get(condition):
-                    dictionary.pop(condition)
-
                 # gather potential event strings for gotten illness
                 if dictionary == cat.illnesses:
                     possible_string_list = ILLNESS_RISK_STRINGS[condition][new_condition_name]
@@ -756,6 +773,13 @@ class Condition_Events():
                     possible_string_list = INJURY_RISK_STRINGS[condition][new_condition_name]
                 else:
                     possible_string_list = PERM_CONDITION_RISK_STRINGS[condition][new_condition_name]
+
+                # if it is a progressive illness, then remove the old illness and keep the new one
+                if condition in progression and new_condition_name == progression.get(condition):
+                    removed_condition = True
+                    dictionary.pop(condition)
+                else:
+                    removed_condition = False
 
                 # choose event string and ensure clan's med cat number aligns with event text
                 random_index = int(random.random() * len(possible_string_list))
@@ -779,7 +803,7 @@ class Condition_Events():
                     break
                 elif new_condition_name in ILLNESSES:
                     cat.get_ill(new_condition_name, event_triggered=event_triggered)
-                    if dictionary == cat.illnesses:
+                    if dictionary == cat.illnesses or removed_condition:
                         break
                     keys = dictionary[condition].keys()
                     complication = None
