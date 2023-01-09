@@ -951,6 +951,32 @@
     "antagonize_fail_text": null
 },
 {
+        "patrol_id": "fst_med_rainygathering1",
+        "biome": "forest",
+        "season": "Any",
+        "tags": ["med_cat", "random_herbs", "many_herbs3", "big_change", "dislike", "respect"],
+        "intro_text": "p_l leads a patrol out to explore c_n's territory and bring back any herbs they can spot. Their whiskers want to twitch with every raindrop that hits them, but the Clan doesn't have the luxury to sit inside away from the weather.",
+        "decline_text": "Someone calls p_l back, and the patrol is forgotten as they help a clanmate.",
+        "chance_of_success": 70,
+        "exp": 10,
+        "success_text": [
+                "It's absolutely miserable weather to gather in, and p_l wishes they didn't have to, but even though r_c slips over and they all end up drenched they do bring back herbs.",
+               "The entire patrol mutely agrees to grit their teeth and bear it, but its a relieved group of cats to file into their nests to dry off, a random assortment of herbs refreshing the medicine cat den's stocks.",
+               "The keen eyed s_c spots herbs quickly, and the cats harvest them and retreat back to the dry camp, not lingering for a second more than they need to."
+        ],
+        "fail_text": [
+                "p_l knows the conditions are miserable, but their group is even more insufferable, and not only do they have to put up with these cats for an entire afternoon, there's also nothing to show for it."
+        ],
+        "win_skills": ["keen eye"],
+        "win_trait": ["None"],
+        "fail_skills": ["None"],
+        "fail_trait": ["None"],
+        "min_cats": 3,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+},
+{
         "patrol_id": "fst_med_gatheringblackberry_newleaf1",
         "biome": "forest",
         "season": "newleaf",
