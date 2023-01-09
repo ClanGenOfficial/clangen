@@ -745,10 +745,6 @@ class Condition_Events():
                 if dictionary != cat.permanent_condition:
                     risk["chance"] = risk["chance"] + 10  # lower risk of getting it again if not a perm condition
 
-                # if it is a progressive illness, then remove the old illness and keep the new one
-                if condition in progression and new_condition_name == progression.get(condition):
-                    dictionary.pop(condition)
-
                 # gather potential event strings for gotten illness
                 if dictionary == cat.illnesses:
                     possible_string_list = ILLNESS_RISK_STRINGS[condition][new_condition_name]
@@ -756,6 +752,13 @@ class Condition_Events():
                     possible_string_list = INJURY_RISK_STRINGS[condition][new_condition_name]
                 else:
                     possible_string_list = PERM_CONDITION_RISK_STRINGS[condition][new_condition_name]
+
+                # if it is a progressive illness, then remove the old illness and keep the new one
+                if condition in progression and new_condition_name == progression.get(condition):
+                    removed_condition = True
+                    dictionary.pop(condition)
+                else:
+                    removed_condition = False
 
                 # choose event string and ensure clan's med cat number aligns with event text
                 random_index = int(random.random() * len(possible_string_list))
@@ -779,7 +782,7 @@ class Condition_Events():
                     break
                 elif new_condition_name in ILLNESSES:
                     cat.get_ill(new_condition_name, event_triggered=event_triggered)
-                    if dictionary == cat.illnesses:
+                    if dictionary == cat.illnesses or removed_condition:
                         break
                     keys = dictionary[condition].keys()
                     complication = None
