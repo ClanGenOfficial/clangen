@@ -267,7 +267,7 @@ def init_white_patches(cat):
         init_pelt(cat)
     non_white_pelt = False
     if cat.pelt.colour != 'WHITE' and cat.pelt.name in\
-    ['Tortie', 'TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']:
+        ['Tortie', 'TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']:
         non_white_pelt = True
     if cat.pelt.white is True:
         pelt_choice = randint(0, 10)
@@ -299,7 +299,7 @@ def init_white_patches(cat):
             if par1.white_patches is None and cat.pelt.name == 'Calico':
                 cat.pelt.name = 'Tortie'
             # two parents
-        elif cat.parent1 is not None and cat.parent2 is not None and\
+        elif cat.parent1 and cat.parent2 and\
             cat.parent1 in cat.all_cats and cat.parent2 in cat.all_cats:
             # if 1, cat directly inherits parent 1's white patches. if 2, it directly inherits parent 2's
             par1 = cat.all_cats[cat.parent1]
@@ -320,10 +320,10 @@ def init_white_patches(cat):
                 cat.white_patches = choice(vit)
             else:
                 if par1.white_patches in point_markings and non_white_pelt\
-                or par2.white_patches in point_markings and non_white_pelt:
+                    or par2.white_patches in point_markings and non_white_pelt:
                     cat.white_patches = choice(point_markings)
                 elif par1.white_patches in vit and non_white_pelt\
-                or par2.white_patches in vit and non_white_pelt:
+                    or par2.white_patches in vit and non_white_pelt:
                     cat.white_patches = choice(vit)
                 elif par1.white_patches is None:
                     if par2.white_patches is None:
@@ -443,21 +443,26 @@ def init_white_patches(cat):
                     cat.white_patches = choice([vit])
                 else:
                     cat.pelt.white = False
-        # just making sure no cats end up with no white patches and true white         
-        if cat.pelt.white is False:
-            cat.white_patches = None
-        elif white_patches_choice == None:
-            cat.white_patches = None
-            cat.pelt.white = False
-        elif white_patches_choice == 'EXTRA' or white_patches_choice == 'FULLWHITE' or white_patches_choice == 'POINTMARK':
-            cat.white_patches = white_patches_choice
-        else:
-            whitechoice = choice(white_patches_choice)
-            if whitechoice == None:
-                cat.pelt.white = False
+        # just making sure no cats end up with no white patches and true white 
+        if cat.white_patches == None:
+            if cat.pelt.white is False:
                 cat.white_patches = None
+                if cat.pelt.name == "Calico":
+                    cat.pelt.name = "Tortie"
+            elif white_patches_choice == None:
+                cat.white_patches = None
+                cat.pelt.white = False
+                if cat.pelt.name == "Calico":
+                    cat.pelt.name = "Tortie"
+            elif white_patches_choice == 'EXTRA' or white_patches_choice == 'FULLWHITE' or white_patches_choice == 'POINTMARK':
+                cat.white_patches = white_patches_choice
             else:
-                cat.white_patches = choice(list(whitechoice))
+                whitechoice = choice(list(white_patches_choice))
+                if whitechoice == None:
+                    cat.pelt.white = False
+                    cat.white_patches = None
+                else:
+                    cat.white_patches = choice(list(whitechoice))
     else:
         cat.white_patches = None
         cat.pelt.white = False

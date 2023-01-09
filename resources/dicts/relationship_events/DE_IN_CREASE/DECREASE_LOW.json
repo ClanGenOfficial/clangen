@@ -1,7 +1,11 @@
 {
     "from": {
         "romantic_love": [
-            "feels like (cat) hasn't been paying much attention to them lately."
+            "feels like (cat) hasn't been paying much attention to them lately.",
+            "starting to have doubts about their feelings for (cat).",
+            "feels ignored by (cat).",
+            "didn't get the joke (cat) was telling."
+
         ],
         "like": [
             "is hiding from (cat)",
