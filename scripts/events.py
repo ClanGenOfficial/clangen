@@ -208,33 +208,45 @@ class Events():
                     text = ''
                     if game.clan.deputy is not None and game.clan.leader is not None:
                         if game.clan.deputy.dead and not leader_dead and not leader_exiled:
-                            text = f"{game.clan.leader.name} chooses {Cat.all_cats[random_cat].name} to take over as deputy. They know that {game.clan.deputy.name} would approve."
+                            text = f"{game.clan.leader.name} chooses {Cat.all_cats[random_cat].name} to take over " \
+                                   f"as deputy. They know that {game.clan.deputy.name} would approve."
                             involved_cats.extend([game.clan.leader.ID, game.clan.deputy.ID])
                         if not game.clan.deputy.dead and not game.clan.deputy.outside:
-                            text = f"{Cat.all_cats[random_cat].name} has been chosen as the new deputy. The retired deputy nods their approval."
+                            text = f"{Cat.all_cats[random_cat].name} has been chosen as the new deputy. " \
+                                   f"The retired deputy nods their approval."
                             # No other cat are involved here.
                         if game.clan.deputy.outside:
-                            text = f"{Cat.all_cats[random_cat].name} has been chosen as the new deputy. The Clan hopes that {game.clan.deputy.name} would approve."
+                            text = f"{Cat.all_cats[random_cat].name} has been chosen as the new deputy. " \
+                                   f"The Clan hopes that {game.clan.deputy.name} would approve."
                             involved_cats.append(game.clan.deputy.ID)
                     elif leader_dead or leader_exiled:
                         if game.clan.leader:
-                            text = f"Since losing {game.clan.leader.name} the Clan has been directionless. They all turn to {Cat.all_cats[random_cat].name} with hope for the future."
+                            text = f"Since losing {game.clan.leader.name} the Clan has been directionless. " \
+                                   f"They all turn to {Cat.all_cats[random_cat].name} with hope for the future."
                             involved_cats.append(game.clan.leader.ID)
                         else:
-                            text = f"Without a leader, the Clan has been directionless. They all turn to {Cat.all_cats[random_cat].name} with hope for the future."
+                            text = f"Without a leader, the Clan has been directionless. " \
+                                   f"They all turn to {Cat.all_cats[random_cat].name} with hope for the future."
                             # No additional involved cats.
                     else:
                         if Cat.all_cats[random_cat].trait == 'bloodthirsty':
-                            text = f"{Cat.all_cats[random_cat].name} has been chosen as the new deputy. They look at the Clan leader with an odd glint in their eyes."
+                            text = f"{Cat.all_cats[random_cat].name} has been chosen as the new deputy. " \
+                                   f"They look at the Clan leader with an odd glint in their eyes."
                             # No additional involved cats
 
                         else:
                             possible_events = [
-                                f"{Cat.all_cats[random_cat].name} has been chosen as the new deputy. The Clan yowls their name in approval.",
-                                f"{Cat.all_cats[random_cat].name} has been chosen as the new deputy. Some of the older Clan members question the wisdom in this choice.",
-                                f"{Cat.all_cats[random_cat].name} has been chosen as the new deputy. They hold their head up high and promise to do their best for the Clan.",
-                                f"{game.clan.leader.name} has been thinking deeply all day who they would respect and trust enough to stand at their side and at sunhigh makes the announcement that {Cat.all_cats[random_cat].name} will be the Clan's new deputy.",
-                                f"{Cat.all_cats[random_cat].name} has been chosen as the new deputy. They pray to StarClan that they are the right choice for the Clan.",
+                                f"{Cat.all_cats[random_cat].name} has been chosen as the new deputy. "
+                                f"The Clan yowls their name in approval.",
+                                f"{Cat.all_cats[random_cat].name} has been chosen as the new deputy. "
+                                f"Some of the older Clan members question the wisdom in this choice.",
+                                f"{Cat.all_cats[random_cat].name} has been chosen as the new deputy. "
+                                f"They hold their head up high and promise to do their best for the Clan.",
+                                f"{game.clan.leader.name} has been thinking deeply all day who they would "
+                                f"respect and trust enough to stand at their side and at sunhigh makes the "
+                                f"announcement that {Cat.all_cats[random_cat].name} will be the Clan's new deputy.",
+                                f"{Cat.all_cats[random_cat].name} has been chosen as the new deputy. They pray to "
+                                f"StarClan that they are the right choice for the Clan.",
                             ]
                             # No additional involved cats
                             text = choice(possible_events)

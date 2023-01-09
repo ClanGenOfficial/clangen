@@ -6,7 +6,7 @@ from .base_screens import Screens
 
 from scripts.utility import get_text_box_theme
 from scripts.clan import Clan, map_available
-from scripts.cat.cats import create_example_cats
+from scripts.cat.cats import create_example_cats, Cat
 from scripts.cat.names import names
 from scripts.cat.sprites import tiles
 from re import sub
@@ -859,6 +859,7 @@ class MakeClanScreen(Screens):
                          game.switches['camp_site'], convert_camp[self.selected_camp_tab],
                          self.game_mode, self.members)
         game.clan.create_clan()
+        Cat.sort_cats()
         if map_available:
             territory_claim = str(game.clan.name) + 'Clan Territory'
             otherclan_campsite = {}

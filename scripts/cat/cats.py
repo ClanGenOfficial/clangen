@@ -813,10 +813,9 @@ class Cat():
         self.update_traits()
         self.in_camp = 1
 
-        if self.moons < 12:
+        if self.status in ['apprentice', 'medicine cat apprentice']:
             self.update_mentor()
-
-        if self.moons >= 12:
+        else:
             self.update_skill()
 
         self.create_interaction()
@@ -1435,6 +1434,8 @@ class Cat():
     def retire_cat(self):
         self.retired = True
         self.status = 'elder'
+        self.name.status = 'elder'
+        self.update_mentor()
 
     def additional_injury(self, injury):
         self.get_injured(injury, event_triggered=True)
@@ -1741,8 +1742,8 @@ class Cat():
         else:
             self.mentor = None
 
-        # append and remove from lists if the app has aged up to warrior
-        if self.status == 'warrior' or self.dead:
+        # append and remove from lists if the app has aged up to warrior, or become an elder
+        if self.status in ['warrior', 'elder'] or self.dead:
             # app has graduated, no mentor needed anymore
             self.mentor = None
             # append and remove
