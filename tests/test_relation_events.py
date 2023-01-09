@@ -1,7 +1,7 @@
 import unittest
 from mock import patch
 
-from scripts.cat_relations.relation_events import Relation_Events
+from scripts.events_module.relation_events import Relation_Events
 from scripts.cat.cats import Cat
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan import Clan
