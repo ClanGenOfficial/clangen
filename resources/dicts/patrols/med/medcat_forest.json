@@ -951,39 +951,6 @@
     "antagonize_fail_text": null
 },
 {
-        "patrol_id": "gen_med_cobwebgathering3",
-        "biome": "Any",
-        "season": "Any",
-        "tags": ["med_cat", "warrior", "herbs", "cobwebs", "many_herbs2", "many_herbs3", "big_change", "platonic", "dislike", "respect"],
-        "intro_text": "c_n can never have enough cobwebs, p_l instructs their team, leading them out to search for them.",
-        "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-        "chance_of_success": 70,
-        "exp": 10,
-        "success_text": [
-                "p_l mrrps with laughter, watching r_c parade around with such a big bundle of cobwebs they keep colliding with things in their path they can't see. The entire patrol has gotten a wonderful haul, and it's a very pleased medicine cat that leads them back to camp.",
-               "The patrol brings back a truly massive haul, and in good humour too, laughing as they set down their sticks of spun up webbing in the medicine cat den. p_l joins everyone as they sit down to share tongues, ridding their pelts of dust and the odd spider as the cats catch up with each other and enjoy the day.",
-               "p_l's keen eyes have a knack for spotting the gossemer thin strings of cobwebs, and with the patrol there to follow their lead it's a very successful gathering mission."
-        ],
-        "fail_text": [
-                "Can warriors not pay attention, even to something as simple as cobwebs?! p_l holds their breath and counts to ten before they dismiss the patrol, every found cobweb ruined, what little they did manage to find."
-        ],
-        "win_skills": ["keen eye"],
-        "win_trait": ["None"],
-        "fail_skills": ["None"],
-        "fail_trait": ["None"],
-        "min_cats": 3,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
-},
-
-
-##############Forest versions
-
-
-
-
-{
         "patrol_id": "fst_med_gatheringblackberry_newleaf1",
         "biome": "forest",
         "season": "newleaf",
