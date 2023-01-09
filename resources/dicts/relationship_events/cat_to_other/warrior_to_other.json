@@ -1,7 +1,8 @@
 {
     "kitten": {
         "unfriendly": [
-            "is scolding (cat)."
+            "is scolding (cat).",
+            "growls at (cat) to get out from under their paws."
         ],
         "neutral": [
             "trips over (cat).",
@@ -15,7 +16,10 @@
             "hopes that their own kits are as cute as (cat) someday.",
             "is promising to take (cat) outside of camp if they behave.",
             "gave (cat) a trinket they found while out on patrol today.",
-            "is feeling proud of (cat)."
+            "is feeling proud of (cat).",
+            "spends most of the afternoon describing the territory to (cat).",
+            "purrs as (cat) asks them to show them how to do a hunter's crouch. They oblige, happy to show their skills.",
+            "purrs as (cat) tells them that they hope they're their mentor when they become an apprentice."
         ],
         "close": [
             "trains playfully with (cat)."
@@ -32,7 +36,8 @@
             "asks (cat) how they're doing."
         ],
         "friendly": [
-            "is feeling proud of (cat)."
+            "is feeling proud of (cat).",
+            "notices that (cat) is trying really hard to be a great medicine cat."
         ],
         "close": []
     },
@@ -64,7 +69,8 @@
             "playfully teases (cat) for missing a catch."
         ],
         "close": [
-            "playfully teases (cat) for missing a catch."
+            "playfully teases (cat) for missing a catch.",
+            "promises to teach (cat) a new technique later."
         ]
     },
     "warrior": {
