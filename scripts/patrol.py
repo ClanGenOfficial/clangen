@@ -1449,117 +1449,117 @@ med_directory = "med/"
 
 # HUNTING #
 HUNTING = None
-with open(f"{resource_directory}{hunting_directory}hunting.json", 'r') as read_file:
+with open(f"{resource_directory}{hunting_directory}hunting.json", 'r', encoding='ascii') as read_file:
     HUNTING = ujson.loads(read_file.read())
 
 HUNTING_FST = None
-with open(f"{resource_directory}{hunting_directory}hunting_forest.json", 'r') as read_file:
+with open(f"{resource_directory}{hunting_directory}hunting_forest.json", 'r', encoding='ascii') as read_file:
     HUNTING_FST = ujson.loads(read_file.read())
 
 HUNTING_PLN = None
-with open(f"{resource_directory}{hunting_directory}hunting_plains.json", 'r') as read_file:
+with open(f"{resource_directory}{hunting_directory}hunting_plains.json", 'r', encoding='ascii') as read_file:
     HUNTING_PLN = ujson.loads(read_file.read())
 
 HUNTING_MTN = None
-with open(f"{resource_directory}{hunting_directory}hunting_mountains.json", 'r') as read_file:
+with open(f"{resource_directory}{hunting_directory}hunting_mountains.json", 'r', encoding='ascii') as read_file:
     HUNTING_MTN = ujson.loads(read_file.read())
 
 HUNTING_BCH = None
-with open(f"{resource_directory}{hunting_directory}hunting_beach.json", 'r') as read_file:
+with open(f"{resource_directory}{hunting_directory}hunting_beach.json", 'r', encoding='ascii') as read_file:
     HUNTING_BCH = ujson.loads(read_file.read())
 
 HUNTING_WTLND = None
-with open(f"{resource_directory}{hunting_directory}hunting_wetlands.json", 'r') as read_file:
+with open(f"{resource_directory}{hunting_directory}hunting_wetlands.json", 'r', encoding='ascii') as read_file:
     HUNTING_WTLND = ujson.loads(read_file.read())
 
 # BORDER #
 BORDER = None
-with open(f"{resource_directory}{border_directory}border.json", 'r') as read_file:
+with open(f"{resource_directory}{border_directory}border.json", 'r', encoding='ascii') as read_file:
     BORDER = ujson.loads(read_file.read())
 
 BORDER_FST = None
-with open(f"{resource_directory}{border_directory}border_forest.json", 'r') as read_file:
+with open(f"{resource_directory}{border_directory}border_forest.json", 'r', encoding='ascii') as read_file:
     BORDER_FST = ujson.loads(read_file.read())
 
 BORDER_PLN = None
-with open(f"{resource_directory}{border_directory}border_plains.json", 'r') as read_file:
+with open(f"{resource_directory}{border_directory}border_plains.json", 'r', encoding='ascii') as read_file:
     BORDER_PLN = ujson.loads(read_file.read())
 
 BORDER_MTN = None
-with open(f"{resource_directory}{border_directory}border_mountains.json", 'r') as read_file:
+with open(f"{resource_directory}{border_directory}border_mountains.json", 'r', encoding='ascii') as read_file:
     BORDER_MTN = ujson.loads(read_file.read())
 
 BORDER_BCH = None
-with open(f"{resource_directory}{border_directory}border_beach.json", 'r') as read_file:
+with open(f"{resource_directory}{border_directory}border_beach.json", 'r', encoding='ascii') as read_file:
     BORDER_BCH = ujson.loads(read_file.read())
 
 # TRAINING #
 TRAINING = None
-with open(f"{resource_directory}{training_directory}training.json", 'r') as read_file:
+with open(f"{resource_directory}{training_directory}training.json", 'r', encoding='ascii') as read_file:
     TRAINING = ujson.loads(read_file.read())
 
 TRAINING_FST = None
-with open(f"{resource_directory}{training_directory}training_forest.json", 'r') as read_file:
+with open(f"{resource_directory}{training_directory}training_forest.json", 'r', encoding='ascii') as read_file:
     TRAINING_FST = ujson.loads(read_file.read())
 
 TRAINING_PLN = None
-with open(f"{resource_directory}{training_directory}training_plains.json", 'r') as read_file:
+with open(f"{resource_directory}{training_directory}training_plains.json", 'r', encoding='ascii') as read_file:
     TRAINING_PLN = ujson.loads(read_file.read())
 
 TRAINING_MTN = None
-with open(f"{resource_directory}{training_directory}training_mountains.json", 'r') as read_file:
+with open(f"{resource_directory}{training_directory}training_mountains.json", 'r', encoding='ascii') as read_file:
     TRAINING_MTN = ujson.loads(read_file.read())
 
 TRAINING_BCH = None
-with open(f"{resource_directory}{training_directory}training_beach.json", 'r') as read_file:
+with open(f"{resource_directory}{training_directory}training_beach.json", 'r', encoding='ascii') as read_file:
     TRAINING_BCH = ujson.loads(read_file.read())
 
 # MED CAT #
 
 MEDCAT = None
-with open(f"{resource_directory}{med_directory}medcat.json", 'r') as read_file:
+with open(f"{resource_directory}{med_directory}medcat.json", 'r', encoding='ascii') as read_file:
     MEDCAT = ujson.loads(read_file.read())
 
 MEDCAT_FST = None
-with open(f"{resource_directory}{med_directory}medcat_forest.json", 'r') as read_file:
+with open(f"{resource_directory}{med_directory}medcat_forest.json", 'r', encoding='ascii') as read_file:
     MEDCAT_FST = ujson.loads(read_file.read())
 
 MEDCAT_PLN = None
-with open(f"{resource_directory}{med_directory}medcat_plains.json", 'r') as read_file:
+with open(f"{resource_directory}{med_directory}medcat_plains.json", 'r', encoding='ascii') as read_file:
     MEDCAT_PLN = ujson.loads(read_file.read())
 
 MEDCAT_MTN = None
-with open(f"{resource_directory}{med_directory}medcat_mountains.json", 'r') as read_file:
+with open(f"{resource_directory}{med_directory}medcat_mountains.json", 'r', encoding='ascii') as read_file:
     MEDCAT_MTN = ujson.loads(read_file.read())
 
 MEDCAT_BCH = None
-with open(f"{resource_directory}{med_directory}medcat_beach.json", 'r') as read_file:
+with open(f"{resource_directory}{med_directory}medcat_beach.json", 'r', encoding='ascii') as read_file:
     MEDCAT_BCH = ujson.loads(read_file.read())
 
 # NEW CAT #
 NEW_CAT = None
-with open(f"{resource_directory}new_cat.json", 'r') as read_file:
+with open(f"{resource_directory}new_cat.json", 'r', encoding='ascii') as read_file:
     NEW_CAT = ujson.loads(read_file.read())
 
 NEW_CAT_HOSTILE = None
-with open(f"{resource_directory}new_cat_hostile.json", 'r') as read_file:
+with open(f"{resource_directory}new_cat_hostile.json", 'r', encoding='ascii') as read_file:
     NEW_CAT_HOSTILE = ujson.loads(read_file.read())
 
 NEW_CAT_WELCOMING = None
-with open(f"{resource_directory}new_cat_welcoming.json", 'r') as read_file:
+with open(f"{resource_directory}new_cat_welcoming.json", 'r', encoding='ascii') as read_file:
     NEW_CAT_WELCOMING = ujson.loads(read_file.read())
 
 # OTHER CLAN #
 OTHER_CLAN = None
-with open(f"{resource_directory}other_clan.json", 'r') as read_file:
+with open(f"{resource_directory}other_clan.json", 'r', encoding='ascii') as read_file:
     OTHER_CLAN = ujson.loads(read_file.read())
 
 OTHER_CLAN_ALLIES = None
-with open(f"{resource_directory}other_clan_allies.json", 'r') as read_file:
+with open(f"{resource_directory}other_clan_allies.json", 'r', encoding='ascii') as read_file:
     OTHER_CLAN_ALLIES = ujson.loads(read_file.read())
 
 OTHER_CLAN_HOSTILE = None
-with open(f"{resource_directory}other_clan_hostile.json", 'r') as read_file:
+with open(f"{resource_directory}other_clan_hostile.json", 'r', encoding='ascii') as read_file:
     OTHER_CLAN_HOSTILE = ujson.loads(read_file.read())
 
 # ---------------------------------------------------------------------------- #
@@ -1567,5 +1567,5 @@ with open(f"{resource_directory}other_clan_hostile.json", 'r') as read_file:
 # ---------------------------------------------------------------------------- #
 
 DISASTER = None
-with open(f"{resource_directory}disaster.json", 'r') as read_file:
+with open(f"{resource_directory}disaster.json", 'r', encoding='ascii') as read_file:
     DISASTER = ujson.loads(read_file.read())
