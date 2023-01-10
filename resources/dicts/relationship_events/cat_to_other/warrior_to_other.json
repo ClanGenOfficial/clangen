@@ -120,16 +120,30 @@
         ]
     },
     "medicine cat": {
-        "unfriendly": [],
+        "unfriendly": [
+            
+        ],
         "neutral": [
             "escorted (cat) so they could gather herbs.",
-            "thought of (cat) on the last patrol and took a rare herb with them.",
+            "thought of (cat) on the last patrol and brought an herb back with them.",
             "feels like (cat) isn't taking their health seriously.",
             "went to (cat) for advice about a dream they had.",
-            "asks (cat) how they're doing."
+            "asks (cat) how they're doing.",
+            "thanks (cat) for checking when they ask if they're feeling alright.",
+            "drops into the medicine den to ask (cat) if they've eaten yet.",
+            "asks (cat) if there's any herbs they should look out for while they're out on patrol later."
         ],
-        "friendly": [],
-        "close": []
+        "friendly": [
+            "asks (cat) if there's any herbs they should look out for while they're out on patrol later.",
+            "brings (cat) some freshkill, hoping that they remembered what (cat)'s favorite was.",
+            "is suddenly struck by the thought of how much (cat) does to keep the Clan healthy.",
+            "hopes (cat) knows how grateful they are to have them as a medicine cat.",
+            "thanks (cat) for keeping the Clan healthy."
+        ],
+        "close": [
+            "watches (cat) sort herbs as they chat about how their day has gone.",
+            "lets (cat) know that they're about to go out and asks if they need to watch for any herbs."
+        ]
     },
     "leader": {
         "unfriendly": [
