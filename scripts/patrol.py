@@ -972,7 +972,7 @@ class Patrol():
     def add_new_cats(self, litter_choice):
         tags = self.patrol_event.tags
         if "new_cat" in tags:
-            if "new_cat_majorinjury" in tags:
+            if "new_cat_majorinjury" in tags and game.clan.game_mode != 'classic':
                 majoryinjury = True
             else:
                 majoryinjury = False
@@ -1029,14 +1029,16 @@ class Patrol():
                     new_backstory=choice(['kittypet1', 'kittypet2'])
                     created_cats = self.create_new_cat(loner=False, loner_name=True, kittypet=True, queen=True, backstory=new_backstory)
                     new_cat = created_cats[0]
-                    new_cat.get_injured("recovering from birth")
+                    if game.clan.game_mode != 'classic':
+                        new_cat.get_injured("recovering from birth")
                 else:
                     new_backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2',
                                             'ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
                                             'tragedy_survivor'])
                     created_cats = self.create_new_cat(loner=True, loner_name=True, kittypet=False, queen=True, backstory=new_backstory)
                     new_cat = created_cats[0]
-                    new_cat.get_injured("recovering from birth")
+                    if game.clan.game_mode != 'classic':
+                        new_cat.get_injured("recovering from birth")
                 if "new_cat_kits" in tags:
                     if "new_cat_newborn" in tags:
                         new_backstory = 'outsider_roots2'
@@ -1094,6 +1096,7 @@ class Patrol():
                     new_cat = created_cats[0]
                     if majoryinjury:
                         new_cat.get_injured("broken bone")
+                    new_cat.update_mentor()
 
             elif "new_cat_elder" in tags:
                 kittypet = choice([True, False])

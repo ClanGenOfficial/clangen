@@ -92,7 +92,9 @@
             "is wowed by how bravely (cat) fought the other day.",
             "is faced with a tough decision and wonders what (cat) would do.",
             "spends most of the afternoon describing the territory to (cat).",
-            "promises to teach (cat) a new technique later."
+            "promises to teach (cat) a new technique later.",
+            "tells (cat) they'll save them a piece of freshkill.",
+            "gives (cat) some feathers from the bird they caught to line their nest."
         ],
         "dislike": [
             "is mocking (cat).",
@@ -139,7 +141,8 @@
             "goes to (cat) for advice about some recent troubles.",
             "asks (cat) for help resolving an argument with a friend.",
             "tells (cat) that they're an amazing storyteller.",
-            "notices that (cat) is trying really hard to be a great medicine cat."
+            "notices that (cat) is trying really hard to be a great medicine cat.",
+            "is suddenly struck by the thought of how much (cat) does to keep the Clan healthy."
         ],
         "comfortable": [
             "is telling a story to (cat).",
@@ -174,7 +177,20 @@
             "reminds (cat) to grab something from the freshkill pile if they haven't already.",
             "shares a joke about a neighboring Clan with (cat).",
             "waves to (cat) with their tail as their patrols cross paths on the territory.",
-            "calls to (cat) to catch them a fat mouse on their next hunting patrol."
+            "calls to (cat) to catch them a fat mouse on their next hunting patrol.",
+            "joins a game as (cat) runs up to them yowling that they're the greatest warrior ever and could never be defeated. The kit squeals in delight as m_c rolls over in surrender.",
+            "bats the mossball back to (cat) when it flies in front of their paws.",
+            "tells (cat) that they caught this prey just for them as they deliver it to them.",
+            "thanks (cat) for checking when they ask if they're feeling alright.",
+            "drops into the medicine den to ask (cat) if they've eaten yet.",
+            "asks (cat) if there's any herbs they should look out for while they're out on patrol later.",
+            "watches (cat) sort herbs as they chat about how their day has gone.",
+            "lets (cat) know that they're about to go out and asks if they need to watch for any herbs.",
+            "asks (cat) if there's any herbs they should look out for while they're out on patrol later.",
+            "brings (cat) some freshkill, hoping that they remembered what (cat)'s favorite was.",
+            "is suddenly struck by the thought of how much (cat) does to keep the Clan healthy.",
+            "hopes (cat) knows how grateful they are to have them as a medicine cat.",
+            "thanks (cat) for keeping the Clan healthy."
 
         ],
         "jealousy": [
@@ -206,7 +222,13 @@
             "asks (cat) for help resolving an argument with a friend.",
             "thinks of (cat) as their best friend.",
             "lets (cat) play with their favorite toy.",
-            "is sharing the latest gossip they heard over the border with (cat)."
+            "is sharing the latest gossip they heard over the border with (cat).",
+            "tells (cat) that they caught this prey just for them as they deliver it to them.",
+            "tells (cat) they'll save them a piece of freshkill.",
+            "gives (cat) some feathers from the bird they caught to line their nest.",
+            "thanks (cat) for checking when they ask if they're feeling alright.",
+            "is suddenly struck by the thought of how much (cat) does to keep the Clan healthy.",
+            "hopes (cat) knows how grateful they are to have them as a medicine cat."
         ]
     },
     "to": {
@@ -291,7 +313,9 @@
             "spends most of the afternoon describing the territory to (cat).",
             "purrs as (cat) asks them to show them how to do a hunter's crouch. They oblige, happy to show their skills.",
             "purrs as (cat) tells them that they hope they're their mentor when they become an apprentice.",
-            "promises to teach (cat) a new technique later."
+            "promises to teach (cat) a new technique later.",
+            "tells (cat) they'll save them a piece of freshkill.",
+            "gives (cat) some feathers from the bird they caught to line their nest."
         ],
         "dislike": [
             "is mocking (cat).",
@@ -335,10 +359,11 @@
             "took the time to help (apprentice) work through a technique they are struggling with.",
             "calmly explains hunting techniques to (cat) again for the fourth time today.",
             "is teaching (cat) how to walk without making a sound.",
-            "thought of (cat) on the last patrol and took a rare herb with them.",
+            "thought of (cat) on the last patrol and brought an herb back with them.",
             "is poised to help train (apprentice).",
             "tells (cat) a trick about a certain herb.",
-            "promises to teach (cat) a new technique later."
+            "promises to teach (cat) a new technique later.",
+            "tells (cat) that they caught this prey just for them as they deliver it to them."
         ],
         "comfortable": [
             "is telling a story to (cat).",
@@ -382,7 +407,18 @@
             "reminds (cat) to grab something from the freshkill pile if they haven't already.",
             "shares a joke about a neighboring Clan with (cat).",
             "waves to (cat) with their tail as their patrols cross paths on the territory.",
-            "calls to (cat) to catch them a fat mouse on their next hunting patrol."
+            "calls to (cat) to catch them a fat mouse on their next hunting patrol.",
+            "joins a game as (cat) runs up to them yowling that they're the greatest warrior ever and could never be defeated. The kit squeals in delight as m_c rolls over in surrender.",
+            "bats the mossball back to (cat) when it flies in front of their paws.",
+            "tells (cat) that they caught this prey just for them as they deliver it to them.",
+            "thanks (cat) for checking when they ask if they're feeling alright.",
+            "drops into the medicine den to ask (cat) if they've eaten yet.",
+            "asks (cat) if there's any herbs they should look out for while they're out on patrol later.",
+            "watches (cat) sort herbs as they chat about how their day has gone.",
+            "lets (cat) know that they're about to go out and asks if they need to watch for any herbs.",
+            "asks (cat) if there's any herbs they should look out for while they're out on patrol later.",
+            "brings (cat) some freshkill, hoping that they remembered what (cat)'s favorite was.",
+            "thanks (cat) for keeping the Clan healthy."
 
         ],
         "jealousy": [],
@@ -393,13 +429,16 @@
             "comes up with a plan to sneak out of camp with (cat).",
             "let (cat) lean on their shoulder after a recent injury.",
             "talks with (cat) about difficult decisions.",
-            "thought of (cat) on the last patrol and took a rare herb with them.",
+            "thought of (cat) on the last patrol and brought an herb back with them.",
             "tells (cat) about their last encounter with StarClan.",
             "promises not to tell (cat)'s mentor that they've been sneaking out of camp.",
             "stays awake all night whispering secrets to (cat).",
             "goes to (cat) for advice about some recent troubles.",
             "defends (cat) from a clanmate's rude remarks.",
-            "is sharing the latest gossip they heard over the border with (cat)."
+            "is sharing the latest gossip they heard over the border with (cat).",
+            "tells (cat) that they caught this prey just for them as they deliver it to them.",
+            "tells (cat) they'll save them a piece of freshkill.",
+            "gives (cat) some feathers from the bird they caught to line their nest."
         ]
     }
 }
