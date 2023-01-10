@@ -303,6 +303,7 @@ def event_text_adjust(Cat, text, cat, other_cat=None, other_clan_name=None, keep
     adjust_text = adjust_text.replace("d_l", danger_choice)
     adjust_text = adjust_text.replace("t_l", tail_choice)
     adjust_text = adjust_text.replace("c_n", str(game.clan.name) + "Clan")
+    adjust_text = adjust_text.replace("p_l", name)
 
     return adjust_text
 

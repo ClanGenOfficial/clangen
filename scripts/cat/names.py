@@ -300,12 +300,14 @@ class Name():
         # Set prefix
         if prefix is None:
             named_after_appearance = not random.getrandbits(3)  # Chance for True is '1/8'.
+            # Add possible prefix categories to list.
             possible_prefix_categories = []
-            if named_after_appearance and (eyes is not None or colour is not None):
-                if eyes in self.eye_prefixes:
-                    possible_prefix_categories.append(self.eye_prefixes[eyes])
-                if colour in self.colour_prefixes:
-                    possible_prefix_categories.append(self.colour_prefixes[colour])
+            if eyes in self.eye_prefixes:
+                possible_prefix_categories.append(self.eye_prefixes[eyes])
+            if colour in self.colour_prefixes:
+                possible_prefix_categories.append(self.colour_prefixes[colour])
+            # Choose appearance-based prefix if possible and named_after_appearance because True.
+            if named_after_appearance and possible_prefix_categories:
                 prefix_category = random.choice(possible_prefix_categories)
                 self.prefix = random.choice(prefix_category)
             else:
