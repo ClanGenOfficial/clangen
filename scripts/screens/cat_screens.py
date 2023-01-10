@@ -2166,7 +2166,7 @@ class CeremonyScreen(Screens):
 
             for i in reversed(game.clan.starclan_cats):
                 c = Cat.all_cats[i]
-                if c.dead and not c.outside and not c.DF:
+                if c.dead and not c.outside and not c.df:
                     if not queen and c.status == 'queen':
                         queen = str(c.name)
                         known[0] = True
