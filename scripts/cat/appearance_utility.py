@@ -289,7 +289,10 @@ def init_white_patches(cat):
                 cat.white_patches = choice(vit)
             else:
                 if par1.white_patches in point_markings and non_white_pelt:
-                    cat.white_patches = choice(point_markings)
+                    if pelt_choice < 5:
+                        cat.white_patches = choice(point_markings)
+                    else:
+                        cat.white_patches = choice(mid_white)
                 elif par1.white_patches in vit:
                     cat.white_patches = choice(vit)
                 elif par1.white_patches in [None, little_white, mid_white, high_white]:
@@ -321,7 +324,10 @@ def init_white_patches(cat):
             else:
                 if par1.white_patches in point_markings and non_white_pelt\
                     or par2.white_patches in point_markings and non_white_pelt:
-                    cat.white_patches = choice(point_markings)
+                    if pelt_choice < 5:
+                        cat.white_patches = choice(point_markings)
+                    else:
+                        cat.white_patches = choice(mid_white)
                 elif par1.white_patches in vit and non_white_pelt\
                     or par2.white_patches in vit and non_white_pelt:
                     cat.white_patches = choice(vit)
@@ -330,23 +336,23 @@ def init_white_patches(cat):
                         cat.pelt.white = False
                         cat.white_patches = None
                     elif par2.white_patches in little_white:
-                        white_patches_choice = random.choices(white_list, weights=(30, 70, 0, 0, 0, 0))
-                    elif par2.white_patches in mid_white:
+                        white_patches_choice = random.choices(white_list, weights=(10, 70, 20, 0, 0, 0))
+                    elif par2.white_patches in mid_white or par2.white_patches in point_markings:
                         white_patches_choice = random.choices(white_list, weights=(0, 60, 40, 0, 0, 0))
                     elif par2.white_patches in high_white:
                         white_patches_choice = random.choices(white_list, weights=(0, 20, 60, 20, 0, 0))
                     elif par2.white_patches in mostly_white:
                         white_patches_choice = random.choices(white_list, weights=(0, 5, 45, 30, 20, 0))
                     elif par2.white_patches == 'FULLWHITE':
-                        white_patches_choice = random.choices(white_list, weights=(5, 20, 20, 20, 20, 15))
+                        white_patches_choice = random.choices(white_list, weights=(0, 20, 20, 20, 20, 20))
                     else:
                         cat.white_patches = choice(little_white)
                 elif par1.white_patches in little_white:
                     if par2.white_patches is None:
-                        white_patches_choice = random.choices(white_list, weights=(50, 50, 0, 0, 0, 0))
+                        white_patches_choice = random.choices(white_list, weights=(20, 50, 30, 0, 0, 0))
                     elif par2.white_patches in little_white:
-                        white_patches_choice = random.choices(white_list, weights=(10, 50, 40, 0, 0, 0))
-                    elif par2.white_patches in mid_white:
+                        white_patches_choice = random.choices(white_list, weights=(5, 55, 40, 0, 0, 0))
+                    elif par2.white_patches in mid_white or par2.white_patches in point_markings:
                         white_patches_choice = random.choices(white_list, weights=(0, 40, 30, 30, 0, 0))
                     elif par2.white_patches in high_white:
                         white_patches_choice = random.choices(white_list, weights=(0, 10, 50, 30, 10, 0))
@@ -356,12 +362,12 @@ def init_white_patches(cat):
                         white_patches_choice = random.choices(white_list, weights=(0, 0, 0, 45, 35, 20))
                     else:
                         cat.white_patches = choice(little_white)
-                elif par1.white_patches in mid_white:
+                elif par1.white_patches in mid_white or par1.white_patches in point_markings:
                     if par2.white_patches is None:
                         white_patches_choice = random.choices(white_list, weights=(0, 60, 40, 0, 0, 0))
                     elif par2.white_patches in little_white:
                         white_patches_choice = random.choices(white_list, weights=(0, 40, 30, 30, 0, 0))
-                    elif par2.white_patches in mid_white:
+                    elif par2.white_patches in mid_white or par2.white_patches in point_markings:
                         white_patches_choice = random.choices(white_list, weights=(0, 20, 60, 20, 0, 0))
                     elif par2.white_patches in high_white:
                         white_patches_choice = random.choices(white_list, weights=(0, 0, 30, 50, 20, 0))
@@ -376,7 +382,7 @@ def init_white_patches(cat):
                         white_patches_choice = random.choices(white_list, weights=(0, 20, 60, 20, 0, 0))
                     elif par2.white_patches in little_white:
                         white_patches_choice = random.choices(white_list, weights=(0, 10, 50, 30, 10, 0))
-                    elif par2.white_patches in mid_white:
+                    elif par2.white_patches in mid_white or par2.white_patches in point_markings:
                         white_patches_choice = random.choices(white_list, weights=(0, 0, 30, 50, 20, 0))
                     elif par2.white_patches in high_white:
                         white_patches_choice = random.choices(white_list, weights=(0, 0, 30, 50, 20, 0))
@@ -391,7 +397,7 @@ def init_white_patches(cat):
                         white_patches_choice = random.choices(white_list, weights=(0, 5, 45, 30, 20, 0))
                     elif par2.white_patches in little_white:
                         white_patches_choice = random.choices(white_list, weights=(0, 0, 25, 40, 25, 10))
-                    elif par2.white_patches in mid_white:
+                    elif par2.white_patches in mid_white or par2.white_patches in point_markings:
                         white_patches_choice = random.choices(white_list, weights=(0, 0, 20, 50, 20, 10))
                     elif par2.white_patches in high_white:
                         white_patches_choice = random.choices(white_list, weights=(0, 0, 20, 30, 30, 20))
@@ -403,10 +409,10 @@ def init_white_patches(cat):
                         cat.white_patches = choice(mostly_white)
                 elif par1.white_patches == 'FULLWHITE':
                     if par2.white_patches is None:
-                        white_patches_choice = random.choices(white_list, weights=(5, 20, 20, 20, 20, 15))
+                        white_patches_choice = random.choices(white_list, weights=(0, 20, 20, 20, 20, 20))
                     elif par2.white_patches in little_white:
                         white_patches_choice = random.choices(white_list, weights=(0, 0, 0, 45, 35, 20))
-                    elif par2.white_patches in mid_white:
+                    elif par2.white_patches in mid_white or par2.white_patches in point_markings:
                         white_patches_choice = random.choices(white_list, weights=(0, 0, 0, 30, 40, 30))
                     elif par2.white_patches in high_white:
                         white_patches_choice = random.choices(white_list, weights=(0, 0, 0, 25, 50, 25))
@@ -423,18 +429,16 @@ def init_white_patches(cat):
         else:
             if pelt_choice == 1 and non_white_pelt:
                 cat.white_patches = choice(point_markings)
-            elif pelt_choice == 1 and cat.pelt.name == 'TwoColour' and cat.pelt.colour != 'WHITE':
-                white_patches_choice = choice(point_markings)
             elif pelt_choice == 2 and cat.pelt.name in ['Calico', 'TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']:
                 cat.white_patches = choice(mostly_white)
             elif pelt_choice == 3 and cat.pelt.name in ['TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']\
             and cat.pelt.colour != 'WHITE':
-                cat.white_patches = choice(['EXTRA', None, 'FULLWHITE'])
+                cat.white_patches = choice(['EXTRA', 'FULLWHITE'])
                 if cat.white_patches == None:
                     cat.pelt.white = False
             else:
                 if cat.pelt.name in ['TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']:
-                    white_patches_choice = random.choices(white_list, weights=(0, 30, 40, 30, 0, 0))
+                    white_patches_choice = random.choices(white_list, weights=(0, 30, 30, 30, 10, 0))
                 elif cat.pelt.name in ['Tortie']:
                     white_patches_choice = random.choices(white_list, weights=(0, 60, 40, 0, 0, 0))
                 elif cat.pelt.name in ['Calico']:
