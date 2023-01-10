@@ -194,6 +194,10 @@ class Relationship():
         string_to_replace = f"({action[start_point:end_point]})"
         self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name))
 
+        # replace m_c with cat name
+        string_to_replace = "m_c"
+        self.current_action_str = action.replace(string_to_replace, str(self.cat_from.name))
+
         # add the effect of the current action
         action_string_all = f"{str(self.cat_from.name)} {self.current_action_str} "
         if self_relation_effect == 'neutral effect':

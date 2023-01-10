@@ -1094,6 +1094,7 @@ class Patrol():
                     new_cat = created_cats[0]
                     if majoryinjury:
                         new_cat.get_injured("broken bone")
+                    new_cat.update_mentor()
 
             elif "new_cat_elder" in tags:
                 kittypet = choice([True, False])
