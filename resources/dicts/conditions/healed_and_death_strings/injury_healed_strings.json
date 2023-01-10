@@ -15,9 +15,9 @@
         "m_c has healed well from their cat bite."
     ],
     "beak bite": [
-        "m_c has healed from their cat bite.",
-        "m_c's cat bite has healed.",
-        "m_c has healed well from their cat bite."
+        "m_c has healed from their beak bite.",
+        "m_c's beak bite has healed.",
+        "m_c has healed well from their beak bite."
     ],
     "snake bite": [
         "The snake bite m_c got has healed.",
