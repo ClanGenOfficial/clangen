@@ -174,7 +174,10 @@
             "reminds (cat) to grab something from the freshkill pile if they haven't already.",
             "shares a joke about a neighboring Clan with (cat).",
             "waves to (cat) with their tail as their patrols cross paths on the territory.",
-            "calls to (cat) to catch them a fat mouse on their next hunting patrol."
+            "calls to (cat) to catch them a fat mouse on their next hunting patrol.",
+            "joins a game as (cat) runs up to them yowling that they're the greatest warrior ever and could never be defeated. The kit squeals in delight as m_c rolls over in surrender.",
+            "bats the mossball back to (cat) when it flies in front of their paws.",
+            "tells (cat) that they caught this prey just for them as they deliver it to them."
 
         ],
         "jealousy": [
@@ -206,7 +209,8 @@
             "asks (cat) for help resolving an argument with a friend.",
             "thinks of (cat) as their best friend.",
             "lets (cat) play with their favorite toy.",
-            "is sharing the latest gossip they heard over the border with (cat)."
+            "is sharing the latest gossip they heard over the border with (cat).",
+            "tells (cat) that they caught this prey just for them as they deliver it to them."
         ]
     },
     "to": {
@@ -338,7 +342,8 @@
             "thought of (cat) on the last patrol and took a rare herb with them.",
             "is poised to help train (apprentice).",
             "tells (cat) a trick about a certain herb.",
-            "promises to teach (cat) a new technique later."
+            "promises to teach (cat) a new technique later.",
+            "tells (cat) that they caught this prey just for them as they deliver it to them."
         ],
         "comfortable": [
             "is telling a story to (cat).",
@@ -382,7 +387,10 @@
             "reminds (cat) to grab something from the freshkill pile if they haven't already.",
             "shares a joke about a neighboring Clan with (cat).",
             "waves to (cat) with their tail as their patrols cross paths on the territory.",
-            "calls to (cat) to catch them a fat mouse on their next hunting patrol."
+            "calls to (cat) to catch them a fat mouse on their next hunting patrol.",
+            "joins a game as (cat) runs up to them yowling that they're the greatest warrior ever and could never be defeated. The kit squeals in delight as m_c rolls over in surrender.",
+            "bats the mossball back to (cat) when it flies in front of their paws.",
+            "tells (cat) that they caught this prey just for them as they deliver it to them."
 
         ],
         "jealousy": [],
@@ -399,7 +407,8 @@
             "stays awake all night whispering secrets to (cat).",
             "goes to (cat) for advice about some recent troubles.",
             "defends (cat) from a clanmate's rude remarks.",
-            "is sharing the latest gossip they heard over the border with (cat)."
+            "is sharing the latest gossip they heard over the border with (cat).",
+            "tells (cat) that they caught this prey just for them as they deliver it to them."
         ]
     }
 }
