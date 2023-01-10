@@ -92,7 +92,9 @@
             "is wowed by how bravely (cat) fought the other day.",
             "is faced with a tough decision and wonders what (cat) would do.",
             "spends most of the afternoon describing the territory to (cat).",
-            "promises to teach (cat) a new technique later."
+            "promises to teach (cat) a new technique later.",
+            "tells (cat) they'll save them a piece of freshkill.",
+            "gives (cat) some feathers from the bird they caught to line their nest."
         ],
         "dislike": [
             "is mocking (cat).",
@@ -210,7 +212,9 @@
             "thinks of (cat) as their best friend.",
             "lets (cat) play with their favorite toy.",
             "is sharing the latest gossip they heard over the border with (cat).",
-            "tells (cat) that they caught this prey just for them as they deliver it to them."
+            "tells (cat) that they caught this prey just for them as they deliver it to them.",
+            "tells (cat) they'll save them a piece of freshkill.",
+            "gives (cat) some feathers from the bird they caught to line their nest."
         ]
     },
     "to": {
@@ -295,7 +299,9 @@
             "spends most of the afternoon describing the territory to (cat).",
             "purrs as (cat) asks them to show them how to do a hunter's crouch. They oblige, happy to show their skills.",
             "purrs as (cat) tells them that they hope they're their mentor when they become an apprentice.",
-            "promises to teach (cat) a new technique later."
+            "promises to teach (cat) a new technique later.",
+            "tells (cat) they'll save them a piece of freshkill.",
+            "gives (cat) some feathers from the bird they caught to line their nest."
         ],
         "dislike": [
             "is mocking (cat).",
@@ -408,7 +414,9 @@
             "goes to (cat) for advice about some recent troubles.",
             "defends (cat) from a clanmate's rude remarks.",
             "is sharing the latest gossip they heard over the border with (cat).",
-            "tells (cat) that they caught this prey just for them as they deliver it to them."
+            "tells (cat) that they caught this prey just for them as they deliver it to them.",
+            "tells (cat) they'll save them a piece of freshkill.",
+            "gives (cat) some feathers from the bird they caught to line their nest."
         ]
     }
 }
