@@ -97,7 +97,7 @@
     "history_text": [
         "r_c was badly scarred when rogues ambushed their patrol.",
         "This cat was killed when rogues ambushed their patrol.",
-        "were killed in a rogue ambushed"
+        "were killed in a rogue ambush"
     ]
 },
 {    
@@ -128,7 +128,7 @@
     "history_text": [
     null,
         "This cat was killed when rogues ambushed them while on a solo patrol.",
-        "were killed in a rogue ambushed"
+        "were killed in a rogue ambush"
     ]
 },
 {    "patrol_id": "pln_bord_rogue3",
@@ -160,7 +160,7 @@
     "history_text": [
         "r_c was badly scarred when rogues attacked their patrol.",
         "This cat was killed when rogues attacked their patrol.",
-        "were killed in a rogue ambushed"
+        "were killed in a rogue attack"
     ]
 },
 {

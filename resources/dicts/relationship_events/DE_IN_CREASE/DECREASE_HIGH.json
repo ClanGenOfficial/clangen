@@ -6,7 +6,17 @@
             "heard a rumor that (cat) likes someone else.",
             "worries that (cat) will never feel the same way they do.",
             "noticed (cat) flirting with someone else.",
-            "finds the way (cat) acts increasingly uncomfortable."
+            "finds the way (cat) acts increasingly uncomfortable.",
+            "heard (cat) discussing potential mates but their name never came up.",
+            "heard (cat) talking badly about them.",
+            "thinks their dreams might not come true with (cat).",
+            "heard (cat) express an ideal they cannot agree with.",
+            "worries that (cat) isn't being honest with their relationship.",
+            "can't stand (cat)'s snoring in their nest.",
+            "is upset that (cat) tried to give them their least favorite prey - surely they know what they like!",
+            "wishes (cat) would stop giving them gifts, as their nest is getting too full.",
+            "hates the gift (cat) gave them.",
+            "catches (cat) staring at another cat."
         ],
         "like": [
             "is telling jokes about (cat).",
@@ -31,7 +41,8 @@
             "is annoyed by the mess (cat) made.",
             "wishes (cat) would take things more seriously.",
             "thinks they should be deputy instead of (cat).",
-            "was distracted while (cat) was telling a story."
+            "was distracted while (cat) was telling a story.",
+            "heard (cat) express an ideal they cannot agree with."
         ],
         "comfortable": [
             "is stuttering while speaking to (cat).",
@@ -52,7 +63,8 @@
             "accuses (cat) of being a bad deputy.",
             "noticed (cat) flirting with someone else.",
             "caught (cat) in a lie.",
-            "caught (cat) complaining about them behind their back."
+            "caught (cat) complaining about them behind their back.",
+            "worries that (cat) isn't being honest with their relationship."
         ]
     },
     "to": {
