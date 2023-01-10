@@ -455,14 +455,14 @@ def init_white_patches(cat):
                 if cat.pelt.name == "Calico":
                     cat.pelt.name = "Tortie"
             elif white_patches_choice == 'EXTRA' or white_patches_choice == 'FULLWHITE' or white_patches_choice == 'POINTMARK':
-                cat.white_patches = choice(list(white_patches_choice))
+                cat.white_patches = choice(white_patches_choice)
             else:
                 whitechoice = choice(list(white_patches_choice))
                 if whitechoice == None:
                     cat.pelt.white = False
                     cat.white_patches = None
                 else:
-                    cat.white_patches = choice(list(whitechoice))
+                    cat.white_patches = choice(whitechoice)
     else:
         cat.white_patches = None
         cat.pelt.white = False
