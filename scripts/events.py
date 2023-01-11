@@ -381,7 +381,7 @@ class Events():
         herbs_lost = []
         for herb in herbs:
             if herbs[herb] > 25:
-                herbs[herb] -= 25
+                herbs.update({herb: 25})
                 herbs_lost.append(herb)
 
         if herbs_lost:
