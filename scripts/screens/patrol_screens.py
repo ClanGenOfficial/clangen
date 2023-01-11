@@ -54,14 +54,13 @@ class PatrolScreen(Screens):
                     self.update_button()
                     self.update_cat_images_buttons()
                     self.update_selected_cat()
-                    
+
             if 'app_mentor_button' in self.elements:
                 if event.ui_element == self.elements['app_mentor_button']:
                     self.selected_cat = self.app_mentor
                     self.update_button()
                     self.update_cat_images_buttons()
                     self.update_selected_cat()
-                    
 
             # Check if apprentice cycle buttons are clicked.
             if "cycle_app_mentor_left_button" in self.elements:
@@ -70,14 +69,14 @@ class PatrolScreen(Screens):
                     self.app_mentor = self.selected_cat.apprentice[self.selected_apprentice_index]
                     self.update_selected_cat()
                     self.update_button()
-            
+
             if "cycle_app_mentor_right_button" in self.elements:
                 if event.ui_element == self.elements['cycle_app_mentor_right_button']:
                     self.selected_apprentice_index += 1
                     self.app_mentor = self.selected_cat.apprentice[self.selected_apprentice_index]
                     self.update_selected_cat()
                     self.update_button()
-                
+
     def handle_choose_cats_events(self, event):
         if event.ui_element == self.elements["random"]:
             self.selected_cat = choice(self.able_cats)
@@ -271,7 +270,7 @@ class PatrolScreen(Screens):
                 self.elements['info'] = pygame_gui.elements.UITextBox(
                     text, pygame.Rect((250, 525), (300, 400)), object_id=get_text_box_theme()
                 )
-            
+
             if self.selected_cat != None:
                 if 'cycle_app_mentor_right_button' in self.elements and 'cycle_app_mentor_left_button' in self.elements:
                     if self.selected_apprentice_index == len(self.selected_cat.apprentice) - 1:
@@ -285,7 +284,6 @@ class PatrolScreen(Screens):
                         self.elements['cycle_app_mentor_left_button'].enable()
 
                     if self.selected_cat.mentor != None:
-                        
                         self.elements['cycle_app_mentor_left_button'].hide()
                         self.elements['cycle_app_mentor_right_button'].hide()
 
@@ -308,7 +306,7 @@ class PatrolScreen(Screens):
                                                                  pygame.image.load(
                                                                      "resources/images/patrol_cat_frame.png").convert_alpha())
 
-        #Frames
+        # Frames
         self.elements["able_frame"] = pygame_gui.elements.UIImage(pygame.Rect((40, 460), self.able_box.get_size()),
                                                                   self.able_box)
         self.elements["able_frame"].disable()
@@ -401,7 +399,7 @@ class PatrolScreen(Screens):
             text = text.replace('o_c2', str(patrol.patrol_other_cats[1].name))
             text = text.replace('o_c3', str(patrol.patrol_other_cats[2].name))
             text = text.replace('o_c4', str(patrol.patrol_other_cats[3].name))
-        
+
         if 's_c' in text:
             if patrol.patrol_stat_cat is not None:
                 text = text.replace('s_c', str(patrol.patrol_stat_cat.name))
@@ -428,7 +426,7 @@ class PatrolScreen(Screens):
                     text = " ".join(modify)
                     break
             s += index + 3
-        
+
         text = text.replace('o_c_n', str(other_clan_name) + 'Clan')
 
         clan_name = game.clan.name
@@ -453,10 +451,12 @@ class PatrolScreen(Screens):
             s += index + 3
         text = text.replace('c_n', str(game.clan.name) + 'Clan')
 
-        sign_list = ['strangely-patterned stone', 'sharp stick', 'prey bone', 'cloud shaped like a cat', 
-        'tuft of red fur', 'red feather', 'brown feather', 'black feather', 'white feather', 'star-shaped leaf',
-        'beetle shell', 'snail shell', 'tuft of badger fur', 'two pawprints overlapping', 'flower missing a petal',
-        'tuft of fox fur', ]
+        sign_list = ['strangely-patterned stone', 'sharp stick', 'prey bone', 'cloud shaped like a cat',
+                     'tuft of red fur', 'red feather', 'brown feather', 'black feather', 'white feather',
+                     'star-shaped leaf',
+                     'beetle shell', 'snail shell', 'tuft of badger fur', 'two pawprints overlapping',
+                     'flower missing a petal',
+                     'tuft of fox fur', ]
         sign = choice(sign_list)
         s = 0
         pos = 0
@@ -518,7 +518,7 @@ class PatrolScreen(Screens):
             file = 'train'
         elif patrol.patrol_event.patrol_id.find('bord') != -1:
             file = 'bord'
-        
+
         try:
             self.elements['intro_image'] = pygame_gui.elements.UIImage(
                 pygame.Rect((75, 150), (300, 300)),
@@ -538,7 +538,7 @@ class PatrolScreen(Screens):
         # adjusting text for solo patrols
         intro_text = self.adjust_patrol_text(patrol.patrol_event.intro_text, patrol_size)
         self.elements["patrol_text"] = UITextBoxTweaked(intro_text, pygame.Rect((385, 175), (325, 270)),
-                                                                     object_id="#patrol_text_box")
+                                                        object_id="#patrol_text_box")
         # Patrol Info
         # TEXT CATEGORIES AND CHECKING FOR REPEATS
         members = []
@@ -553,7 +553,7 @@ class PatrolScreen(Screens):
         for x in patrol.patrol_traits:
             if x not in traits:
                 traits.append(x)
-                
+
         self.elements['patrol_info'] = pygame_gui.elements.UITextBox(
             f'patrol leader: {patrol.patrol_leader_name} \n'
             f'patrol members: {self.get_list_text(members)} \n'
@@ -622,6 +622,12 @@ class PatrolScreen(Screens):
 
         # Adjust text for solo patrols
         display_text = self.adjust_patrol_text(display_text, len(patrol.patrol_cats))
+
+        self.elements["patrol_results"] = pygame_gui.elements.UITextBox("",
+                                                                        pygame.Rect((550, 500), (172, 150)),
+                                                                        object_id=get_text_box_theme("#cat_patrol_info_box")
+                                                                        )
+        self.elements["patrol_results"].set_text(patrol.results())
 
         self.elements["patrol_text"].set_text(display_text)
 
@@ -829,11 +835,13 @@ class PatrolScreen(Screens):
                         self.elements['mate_button'].disable()
             # Draw mentor or apprentice
             relation = "should not display"
-            if self.selected_cat.status in ['medicine cat apprentice', 'apprentice'] or self.selected_cat.apprentice != []:
+            if self.selected_cat.status in ['medicine cat apprentice',
+                                            'apprentice'] or self.selected_cat.apprentice != []:
                 self.elements['app_mentor_frame'] = pygame_gui.elements.UIImage(pygame.Rect((495, 190), (166, 170)),
                                                                                 self.app_frame)
 
-                if self.selected_cat.status in ['medicine cat apprentice', 'apprentice'] and self.selected_cat.mentor is not None:
+                if self.selected_cat.status in ['medicine cat apprentice',
+                                                'apprentice'] and self.selected_cat.mentor is not None:
                     self.app_mentor = Cat.fetch_cat(self.selected_cat.mentor)
                     relation = 'mentor'
 
@@ -871,11 +879,12 @@ class PatrolScreen(Screens):
 
                     # Buttons to cycle between apprentices
                     if self.selected_cat.mentor == None:
-                        self.elements['cycle_app_mentor_left_button'] = UIImageButton(pygame.Rect((548, 390), (34, 34)), "", object_id="#arrow_left_button")
-                        self.elements['cycle_app_mentor_right_button'] = UIImageButton(pygame.Rect((618, 390), (34, 34)), "", object_id="#arrow_right_button")
+                        self.elements['cycle_app_mentor_left_button'] = UIImageButton(pygame.Rect((548, 390), (34, 34)),
+                                                                                      "",
+                                                                                      object_id="#arrow_left_button")
+                        self.elements['cycle_app_mentor_right_button'] = UIImageButton(
+                            pygame.Rect((618, 390), (34, 34)), "", object_id="#arrow_right_button")
                         self.update_button()
-
-                    
 
     def clear_page(self):
         """Clears all the elements"""
