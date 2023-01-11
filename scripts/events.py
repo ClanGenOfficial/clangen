@@ -141,6 +141,10 @@ class Events():
 
         self.check_clan_relations()
 
+        # Handle freshkill pile
+        relevant_cats = [cat for cat in Cat.all_cats.copy().values() if cat.is_alive() and not cat.exiled and not cat.outside]
+        game.clan.freshkill_pile.time_skip(relevant_cats)
+
         # age up the clan
         game.clan.age += 1
 

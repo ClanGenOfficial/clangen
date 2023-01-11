@@ -1133,6 +1133,7 @@ class AllegiancesScreen(Screens):
         cat_count = self._extracted_from_screen_switches_24(
             living_cats, 'medicine cat', '<b><u>MEDICINE CATS</u></b>')
         queens = get_queens(living_cats, Cat.all_cats)
+        queens = [cat.ID for cat in queens]
         cat_count = 0
         for living_cat__ in living_cats:
             if str(

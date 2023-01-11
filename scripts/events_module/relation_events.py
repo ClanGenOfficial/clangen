@@ -768,7 +768,6 @@ class Relation_Events():
         if chance > 20 > living_cats:
             chance -= 10
 
-        print("CHANCE", chance)
         return chance
 
     def get_affair_chance(self, mate_relation, affair_relation):
