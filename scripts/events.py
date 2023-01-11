@@ -378,10 +378,29 @@ class Events():
             insert = "medicine cats"
         herbs = game.clan.herbs
 
-        if len(herbs.keys()) >= 15:
+        herbs_lost = []
+        for herb in herbs:
+            if herbs[herb] > 25:
+                herbs[herb] -= 25
+                herbs_lost.append(herb)
+
+        if herbs_lost:
+            if len(herbs_lost) == 1 and herbs_lost[0] != 'cobwebs':
+                insert = f"much {herbs_lost[0]}"
+            elif len(herbs_lost) == 1 and herbs_lost[0] == 'cobwebs':
+                insert = f"many {herbs_lost[0]}"
+            elif len(herbs_lost) == 2:
+                insert = f"much {herbs_lost[0]} and {herbs_lost[1]}"
+            else:
+                insert = f"much {', '.join(herbs_lost[:-1])}, and {herbs_lost[-1]}"
+            text = f"The herb stores have too {insert}. The excess is given back to the earth."
+            game.herb_events_list.append(text)
+
+        if sum(herbs.values()) >= 50:
             chance = 2
         else:
             chance = 5
+
         if len(herbs.keys()) >= 10 and not int(random.random() * chance):
             index = randrange(1, int(len(herbs.keys()) / 2))
             count = 0
@@ -466,7 +485,7 @@ class Events():
 
             possible_events = []
             if self.at_war is True:
-                possible_events.append(f"{self.enemy_clan}Clan breaks into the camp and ravages the herb stores, "
+                possible_events.append(f"{self.enemy_clan} breaks into the camp and ravages the herb stores, "
                                        f"taking some for themselves and destroying the rest.")
             possible_events.extend([
                 f"Some sort of pest got into the herb stores and completely destroyed them. The {insert} will have to "
@@ -497,7 +516,6 @@ class Events():
                 ])
             game.clan.herbs.clear()
             chosen_event = choice(possible_events)
-            print(possible_events)
             game.cur_events_list.append(Single_Event(chosen_event, "health"))
             game.herb_events_list.append(chosen_event)
 
