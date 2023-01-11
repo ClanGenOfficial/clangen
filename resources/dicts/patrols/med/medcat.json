@@ -95,8 +95,8 @@
     "chance_of_success": 50,
     "exp": 30,
     "success_text": [
-        "app1 identifies them as raspberries, and carefully chews off a branch laden with them to bring back to camp. They can't quite remember what cranberries treat, but it's something to do with kitting.",
-        "These. . . could be deathberries. Might be raspberries. But maybe deathberries. It's not worth the risk, they can ask their mentor for more training about it later."
+        "app1 identifies them as raspberries, and carefully chews off a branch laden with them to bring back to camp. They can't quite remember what raspberries treat, but it's something to do with kitting.",
+        "These... could be deathberries. Might be raspberries. But maybe deathberries. It's not worth the risk, they can ask their mentor for more training about it later."
     ],
     "fail_text": [
         "Confidently gathering them and prancing back to camp, app1 is then informed that they've gathered raspberries, not cranberries, and this isn't going to help the Clan's elders with their problems.",
@@ -114,7 +114,7 @@
     "antagonize_fail_text": null,
     "history_text": [
             null,
-            "r_c died before completing their medicine cat training, from accidentally eating deathberries."
+            "r_c died before completing their medicine cat training from accidentally eating deathberries."
     ]
 },
 {
