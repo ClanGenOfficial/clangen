@@ -485,7 +485,7 @@ class Events():
 
             possible_events = []
             if self.at_war is True:
-                possible_events.append(f"{self.enemy_clan}Clan breaks into the camp and ravages the herb stores, "
+                possible_events.append(f"{self.enemy_clan} breaks into the camp and ravages the herb stores, "
                                        f"taking some for themselves and destroying the rest.")
             possible_events.extend([
                 f"Some sort of pest got into the herb stores and completely destroyed them. The {insert} will have to "
@@ -516,7 +516,6 @@ class Events():
                 ])
             game.clan.herbs.clear()
             chosen_event = choice(possible_events)
-            print(possible_events)
             game.cur_events_list.append(Single_Event(chosen_event, "health"))
             game.herb_events_list.append(chosen_event)
 
