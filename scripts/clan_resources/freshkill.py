@@ -114,8 +114,6 @@ class Freshkill_Pile():
         self.total_amount = sum(self.pile.values())
 
         self.feed_cats(living_cats)
-        print("MOONSKIPPED FRESHKILLPILE:", self.pile)
-        print("Total amount:", self.total_amount)
         
     def feed_cats(self, living_cats):
         """Handles to feed all living cats."""
@@ -141,6 +139,12 @@ class Freshkill_Pile():
                 # remove all cats, which are also queens
                 relevant_group = [cat for cat in relevant_group if cat not in relevant_queens]
             
+            sick_cats = [cat for cat in relevant_group if cat.is_injured() or cat.is_ill()]
+            needed_prey = len(relevant_group) * PREY_REQUIREMENT[status_] + len(sick_cats) * CONDITION_INCREASE
+            enough_prey = needed_prey <= self.total_amount
+
+            if not enough_prey:
+                self.handle_not_enough_food(relevant_group, status_)
             self.feed_group(relevant_group, status_)
 
     def update_nutrition(self, living_cats):
@@ -163,16 +167,7 @@ class Freshkill_Pile():
                 self.add_cat_to_nutrition(cat)
 
     def feed_group(self, group, status_):
-        """Handle the feeding of a specific group of cats."""
-        # check if there is enough prey for this group
-        sick_cats = [cat for cat in group if cat.is_injured() or cat.is_ill()]
-        needed_prey = len(group) * PREY_REQUIREMENT[status_] + len(sick_cats) * CONDITION_INCREASE
-        enough_prey = needed_prey <= self.total_amount
-
-        if not enough_prey:
-            self.handle_not_enough_food(group, status_)
-            return
-
+        """Handle the feeding of a specific group of cats, the order is already set."""
         for cat in group:
             needed_prey = PREY_REQUIREMENT[status_]
             if cat.is_ill() or cat.is_injured():
@@ -181,13 +176,41 @@ class Freshkill_Pile():
 
     def handle_not_enough_food(self, group, status_):
         """Handle the situation where there is not enough food for this group."""
-        # TODO: sort and check which cats of this group can be feed and which can not
-        # 		this should be depend on the tactic, which is chosen
-        for cat in group:
+        tactic = None
+
+        if tactic == "younger_first":
+            sorted_group = sorted(group, key=lambda x: x.moons)
+            self.feed_group(sorted_group, status_)
+        
+        elif tactic == "less_nutrition_first":
+            self.tactic_less_nutrition(group, status_)
+        
+        elif tactic == "more_experience_first":
+            sorted_group = sorted(group, key=lambda x: x.experience, reverse=True)
+            self.feed_group(sorted_group, status_)
+        
+        elif tactic == "hunter_first":
+            ranking = {
+                "fantastic hunter": 0,
+                "great hunter": 1,
+                "good hunter": 2,
+            }
+            sorted_group = sorted(group, key=lambda x: ranking[x.skill] if x.skill in ranking else 3)
+            self.feed_group(sorted_group, status_)
+        
+        else:
+            self.feed_group(group, status_)
+
+    def tactic_less_nutrition(self, group, status_):
+        """With this tactic, the cats with the lowest nutrition will be feed first."""
+        sorted_nutrition = sorted(self.nutrition_info.items(), key=lambda x: x[1].percentage)
+
+        for k, v in sorted_nutrition:
+            cat = Cat.all_cats[k]
             needed_prey = PREY_REQUIREMENT[status_]
             if cat.is_ill() or cat.is_injured():
                 needed_prey += CONDITION_INCREASE
-            self.feed_cat(cat, needed_prey)
+            self.feed_cat(cat,needed_prey)
 
     def feed_cat(self, cat, amount):
         """Handle the feeding process."""
