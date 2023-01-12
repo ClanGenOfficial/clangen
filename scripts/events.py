@@ -386,14 +386,14 @@ class Events():
 
         if herbs_lost:
             if len(herbs_lost) == 1 and herbs_lost[0] != 'cobwebs':
-                insert = f"much {herbs_lost[0]}"
+                insert2 = f"much {herbs_lost[0]}"
             elif len(herbs_lost) == 1 and herbs_lost[0] == 'cobwebs':
-                insert = f"many {herbs_lost[0]}"
+                insert2 = f"many {herbs_lost[0]}"
             elif len(herbs_lost) == 2:
-                insert = f"much {herbs_lost[0]} and {herbs_lost[1]}"
+                insert2 = f"much {herbs_lost[0]} and {herbs_lost[1]}"
             else:
-                insert = f"much {', '.join(herbs_lost[:-1])}, and {herbs_lost[-1]}"
-            text = f"The herb stores have too {insert}. The excess is given back to the earth."
+                insert2 = f"much {', '.join(herbs_lost[:-1])}, and {herbs_lost[-1]}"
+            text = f"The herb stores have too {insert2}. The excess is given back to the earth."
             game.herb_events_list.append(text)
 
         if sum(herbs.values()) >= 50:
