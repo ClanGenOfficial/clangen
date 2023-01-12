@@ -667,6 +667,7 @@ class Cat():
                         'medicine cat', 'elder'.
             resort = If sorting type is 'rank', and resort is True, it will resort the cat list. This should
                     only be true for non-timeskip status changes. """
+        old_status = self.status
         self.status = new_status
         self.name.status = new_status
 
@@ -680,8 +681,16 @@ class Cat():
         if self.status == 'warrior':
             self.update_mentor()
             self.update_skill()
-            if self.ID in game.clan.med_cat_list:
-                game.clan.med_cat_list.remove(self.ID)
+            if old_status == "medicine cat":
+                game.clan.remove_med_cat(self)
+
+            if old_status == 'leader':
+                game.clan.leader_lives = 0
+                if game.clan.leader:
+                    if game.clan.leader.ID == self.ID:
+                        game.clan.leader = None
+                        game.clan.leader_predecessors += 1
+
         elif self.status == 'medicine cat':
             self.update_med_mentor()
             self.update_skill()
@@ -689,7 +698,24 @@ class Cat():
                 game.clan.new_medicine_cat(self)
 
         if self.status == 'elder':
+            self.update_mentor()
             self.skill = choice(self.elder_skills)
+
+            # Will remove them from the clan med cat variables, if they are a med cat
+            if old_status == "medicine cat":
+                game.clan.remove_med_cat(self)
+
+            if old_status == 'leader':
+                game.clan.leader_lives = 0
+                if game.clan.leader:
+                    if game.clan.leader.ID == self.ID:
+                        game.clan.leader = None
+                        game.clan.leader_predecessors += 1
+
+            if game.clan.deputy:
+                if game.clan.deputy.ID == self.ID:
+                    game.clan.deputy = None
+                    game.clan.deputy_predecessors += 1
 
         # update class dictionary
         self.all_cats[self.ID] = self

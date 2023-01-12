@@ -364,6 +364,13 @@ class ProfileScreen(Screens):
                     self.the_cat.status_change('warrior', resort=True)
                 elif self.the_cat.status in ['warrior', 'elder']:
                     self.the_cat.status_change('medicine cat', resort=True)
+                elif self.the_cat.status == 'leader':
+                    self.the_cat.status_change('warrior', resort=True)
+                self.clear_profile()
+                self.build_profile()
+                self.update_disabled_buttons_and_text()
+            elif event.ui_element == self.retire_button:
+                self.the_cat.status_change('elder', resort=True)
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()
@@ -1528,15 +1535,16 @@ class ProfileScreen(Screens):
         else:
             self.open_tab = 'relations'
             self.see_family_button = UIImageButton(pygame.Rect((50, 450), (172, 36)), "",
-                                                   object_id="#see_family_button")
+                                                   starting_height=2, object_id="#see_family_button")
             self.see_relationships_button = UIImageButton(pygame.Rect((50, 486), (172, 36)), "",
-                                                          object_id="#see_relationships_button")
+                                                          starting_height=2, object_id="#see_relationships_button")
             self.choose_mate_button = UIImageButton(pygame.Rect((50, 522), (172, 36)), "",
-                                                    object_id="#choose_mate_button")
+                                                    starting_height=2, object_id="#choose_mate_button")
             self.change_mentor_button = UIImageButton(pygame.Rect((50, 558), (172, 36)), "",
-                                                      object_id="#change_mentor_button")
+                                                      starting_height=2, object_id="#change_mentor_button")
             # This button is another option to close the tab, although I've made the opening button also close the tab
-            self.close_tab_button = UIImageButton(pygame.Rect((50, 594), (172, 36)), "", object_id="#close_tab_button")
+            self.close_tab_button = UIImageButton(pygame.Rect((50, 594), (172, 36)), "",
+                                                  starting_height=2, object_id="#close_tab_button")
             self.update_disabled_buttons_and_text()
 
     def toggle_roles_tab(self):
@@ -1552,14 +1560,17 @@ class ProfileScreen(Screens):
         else:
             self.open_tab = 'roles'
             self.promote_leader_button = UIImageButton(pygame.Rect((226, 450), (172, 36)), "",
-                                                       object_id="#promote_leader_button")
+                                                       starting_height=2, object_id="#promote_leader_button")
+
+            self.retire_button = UIImageButton(pygame.Rect((226, 522), (172, 36)), "", starting_height=2,
+                                               object_id="#retire_button")
 
             # These are a placeholders, to be killed and recreated in self.update_disabled_buttons().
             #   This it due to the image switch depending on the cat's status, and the location switch the close button
             #    If you can think of a better way to do this, please fix! 
             self.toggle_deputy_button = UIImageButton(pygame.Rect((226, 486), (172, 36)), "", visible=False)
-            self.toggle_med_button = UIImageButton(pygame.Rect((226, 522), (172, 52)), "", visible=False)
-            self.close_tab_button = UIImageButton(pygame.Rect((226, 574), (172, 36)), "", visible=False)
+            self.toggle_med_button = UIImageButton(pygame.Rect((226, 558), (172, 52)), "", visible=False)
+            self.close_tab_button = UIImageButton(pygame.Rect((226, 610), (172, 36)), "", visible=False)
             self.update_disabled_buttons_and_text()
 
     def toggle_personal_tab(self):
@@ -1575,10 +1586,11 @@ class ProfileScreen(Screens):
         else:
             self.open_tab = 'personal'
             self.change_name_button = UIImageButton(pygame.Rect((402, 450), (172, 36)), "",
-                                                    object_id="#change_name_button")
+                                                    starting_height=2, object_id="#change_name_button")
             self.specify_gender_button = UIImageButton(pygame.Rect((402, 538), (172, 36)), "",
-                                                       object_id="#specify_gender_button")
-            self.close_tab_button = UIImageButton(pygame.Rect((402, 610), (172, 36)), "", object_id="#close_tab_button")
+                                                       starting_height=2, object_id="#specify_gender_button")
+            self.close_tab_button = UIImageButton(pygame.Rect((402, 610), (172, 36)), "",
+                                                  starting_height=2, object_id="#close_tab_button")
 
             # These are a placeholders, to be killed and recreated in self.update_disabled_buttons().
             #   This it due to the image switch depending on the cat's status, and the location switch the close button
@@ -1599,13 +1611,15 @@ class ProfileScreen(Screens):
             pass
         else:
             self.open_tab = 'dangerous'
-            self.kill_cat_button = UIImageButton \
-                (pygame.Rect((578, 486), (172, 36)),
+            self.kill_cat_button = UIImageButton(
+                 pygame.Rect((578, 486), (172, 36)),
                  "",
                  object_id="#kill_cat_button",
-                 tool_tip_text='This cannot be reversed.'
-                 )
-            self.close_tab_button = UIImageButton(pygame.Rect((578, 522), (172, 36)), "", object_id="#close_tab_button")
+                 tool_tip_text='This cannot be reversed.',
+                 starting_height=2,
+            )
+            self.close_tab_button = UIImageButton(pygame.Rect((578, 522), (172, 36)), "",
+                                                  starting_height=2, object_id="#close_tab_button")
 
             # These are a placeholders, to be killed and recreated in self.update_disabled_buttons_and_text().
             #   This it due to the image switch depending on the cat's status, and the location switch the close button
@@ -1614,7 +1628,8 @@ class ProfileScreen(Screens):
                 pygame.Rect((578, 486), (172, 36)),
                 "",
                 visible=False,
-                tool_tip_text='This cannot be reversed.'
+                tool_tip_text='This cannot be reversed.',
+                starting_height=2,
             )
             self.update_disabled_buttons_and_text()
 
@@ -1667,14 +1682,19 @@ class ProfileScreen(Screens):
                 'warrior'
             ] and not self.the_cat.dead and not self.the_cat.outside and deputy is None:
                 self.toggle_deputy_button = UIImageButton(pygame.Rect((226, 486), (172, 36)), "",
-                                                          object_id="#promote_deputy_button")
+                                                          starting_height=2, object_id="#promote_deputy_button")
             elif self.the_cat.status in ['deputy'] and not self.the_cat.dead and not self.the_cat.outside:
                 self.toggle_deputy_button = UIImageButton(pygame.Rect((226, 486), (172, 36)), "",
-                                                          object_id="#demote_deputy_button")
+                                                          starting_height=2, object_id="#demote_deputy_button")
             else:
                 self.toggle_deputy_button = UIImageButton(pygame.Rect((226, 486), (172, 36)), "",
-                                                          object_id="#promote_deputy_button")
+                                                          starting_height=2, object_id="#promote_deputy_button")
                 self.toggle_deputy_button.disable()
+
+            if self.the_cat.status in ['elder', 'kitten', 'apprentice', 'medicine cat apprentice']:
+                self.retire_button.disable()
+            else:
+                self.retire_button.enable()
 
             # This one is also different, same reasons. This also handles the exit close tab button for this tab
             close_button_location = (0, 0)
@@ -1682,52 +1702,52 @@ class ProfileScreen(Screens):
             self.toggle_med_button.kill()
             # Switch apprentice to medicine cat apprentice
             if self.the_cat.status in ['apprentice'] and not self.the_cat.dead and not self.the_cat.outside:
-                self.toggle_med_button = UIImageButton(pygame.Rect((226, 522), (172, 52)), "",
-                                                       object_id="#switch_med_app_button")
-                close_button_location = (226, 574)
+                self.toggle_med_button = UIImageButton(pygame.Rect((226, 558), (172, 52)), "",
+                                                       starting_height=2, object_id="#switch_med_app_button")
+                close_button_location = (226, 610)
             # Switch med apprentice to warrior apprentice
             elif self.the_cat.status in [
                 'medicine cat apprentice'] and not self.the_cat.dead and not self.the_cat.outside:
-                self.toggle_med_button = UIImageButton(pygame.Rect((226, 522), (172, 52)), "",
-                                                       object_id="#switch_warrior_app_button")
-                close_button_location = (226, 574)
+                self.toggle_med_button = UIImageButton(pygame.Rect((226, 558), (172, 52)), "",
+                                                       starting_height=2, object_id="#switch_warrior_app_button")
+                close_button_location = (226, 610)
             # Switch warrior or elder to med cat.
             elif self.the_cat.status in ['warrior', 'elder'] and not self.the_cat.dead and not self.the_cat.outside:
-                self.toggle_med_button = UIImageButton(pygame.Rect((226, 522), (172, 52)), "",
-                                                       object_id="#switch_med_cat_button")
-                close_button_location = (226, 574)
+                self.toggle_med_button = UIImageButton(pygame.Rect((226, 558), (172, 52)), "",
+                                                       starting_height=2, object_id="#switch_med_cat_button")
+                close_button_location = (226, 610)
             # Switch med cat to warrior
-            elif self.the_cat.status == 'medicine cat' and \
+            elif self.the_cat.status in ['medicine cat', 'leader'] and \
                     not self.the_cat.dead and \
                     not self.the_cat.outside and \
                     self.the_cat.age != 'elder':
-                self.toggle_med_button = UIImageButton(pygame.Rect((226, 522), (172, 36)), "",
-                                                       object_id="#switch_warrior_button")
-                close_button_location = (226, 558)
+                self.toggle_med_button = UIImageButton(pygame.Rect((226, 558), (172, 36)), "",
+                                                       starting_height=2, object_id="#switch_warrior_button")
+                close_button_location = (226, 594)
             else:
                 # Dummy button so .kill() calls don't fail
                 self.toggle_med_button = pygame_gui.elements.UIButton(pygame.Rect((0, 0), (0, 0)), "", visible=False)
-                close_button_location = (226, 522)
+                close_button_location = (226, 558)
 
             # Draw close button
             self.close_tab_button = UIImageButton(pygame.Rect(close_button_location, (172, 36)), "",
-                                                  object_id="#close_tab_button")
+                                                  starting_height=2, object_id="#close_tab_button")
         elif self.open_tab == "personal":
 
             # Button to trans or cis the cats.
             self.cis_trans_button.kill()
             if self.the_cat.gender == "female" and self.the_cat.genderalign in ['male', 'female']:
                 self.cis_trans_button = UIImageButton(pygame.Rect((402, 486), (172, 52)), "",
-                                                      object_id="#change_trans_male_button")
+                                                      starting_height=2, object_id="#change_trans_male_button")
             elif self.the_cat.gender == "male" and self.the_cat.genderalign in ['male', 'female']:
                 self.cis_trans_button = UIImageButton(pygame.Rect((402, 486), (172, 52)), "",
-                                                      object_id="#change_trans_female_button")
+                                                      starting_height=2, object_id="#change_trans_female_button")
             elif self.the_cat.genderalign != "female" and self.the_cat.genderalign != "male":
                 self.cis_trans_button = UIImageButton(pygame.Rect((402, 486), (172, 52)), "",
-                                                      object_id="#change_cis_button")
+                                                      starting_height=2, object_id="#change_cis_button")
             else:
                 self.cis_trans_button = UIImageButton(pygame.Rect((402, 486), (172, 52)), "",
-                                                      object_id="#change_cis_button")
+                                                      starting_height=2, object_id="#change_cis_button")
                 self.cis_trans_button.disable()
 
             # Button to prevent kits:
@@ -1735,13 +1755,13 @@ class ProfileScreen(Screens):
             if self.the_cat.age in ['young adult', 'adult', 'senior adult', 'elder'] and not self.the_cat.dead:
                 if self.the_cat.no_kits:
                     self.toggle_kits = UIImageButton(pygame.Rect((402, 574), (172, 36)), "",
-                                                     object_id="#allow_kits_button")
+                                                     starting_height=2, object_id="#allow_kits_button")
                 else:
                     self.toggle_kits = UIImageButton(pygame.Rect((402, 574), (172, 36)), "",
-                                                     object_id="#prevent_kits_button")
+                                                     starting_height=2, object_id="#prevent_kits_button")
             else:
                 self.toggle_kits = UIImageButton(pygame.Rect((402, 574), (172, 36)), "",
-                                                 object_id="#prevent_kits_button")
+                                                 starting_height=2, object_id="#prevent_kits_button")
                 self.toggle_kits.disable()
         # Dangerous Tab
         elif self.open_tab == 'dangerous':
@@ -1753,7 +1773,8 @@ class ProfileScreen(Screens):
                     pygame.Rect((578, 450), (172, 36)),
                     "",
                     object_id="#exile_cat_button",
-                    tool_tip_text='This cannot be reversed.')
+                    tool_tip_text='This cannot be reversed.',
+                    starting_height=2)
                 if self.the_cat.exiled or self.the_cat.outside:
                     self.exile_cat_button.disable()
             elif self.the_cat.dead:
@@ -1765,18 +1786,20 @@ class ProfileScreen(Screens):
                                                           "",
                                                           object_id=object_id,
                                                           tool_tip_text='Changing where this cat resides will change '
-                                                                        'where your Clan goes after death. '
-                                                          )
+                                                                        'where your Clan goes after death. ',
+                                                            starting_height=2)
                 else:
                     self.exile_cat_button = UIImageButton(pygame.Rect((578, 450), (172, 46)),
                                                           "",
-                                                          object_id=object_id)
+                                                          object_id=object_id,
+                                                          starting_height=2)
             else:
                 self.exile_cat_button = UIImageButton(
                     pygame.Rect((578, 450), (172, 36)),
                     "",
                     object_id="#exile_cat_button",
-                    tool_tip_text='This cannot be reversed.')
+                    tool_tip_text='This cannot be reversed.',
+                    starting_height=2)
                 self.exile_cat_button.disable()
 
             if not self.the_cat.dead and not self.the_cat.exiled and not self.the_cat.outside:
@@ -1880,6 +1903,7 @@ class ProfileScreen(Screens):
             self.close_tab_button.kill()
         elif self.open_tab == 'roles':
             self.promote_leader_button.kill()
+            self.retire_button.kill()
             self.toggle_deputy_button.kill()
             self.toggle_med_button.kill()
             self.close_tab_button.kill()
