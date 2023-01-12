@@ -419,11 +419,12 @@ class ProfileScreen(Screens):
                 if self.the_cat.dead:
                     if self.the_cat.df is True:
                         self.the_cat.df = False
+                        game.clan.add_to_starclan(self.the_cat)
                         self.the_cat.thought = "Is relieved to once again hunt in StarClan"
                     else:
                         self.the_cat.df = True
+                        game.clan.add_to_darkforest(self.the_cat)
                         self.the_cat.thought = "Is distraught after being sent to the Place of No Stars"
-                    update_sprite(self.the_cat)
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()

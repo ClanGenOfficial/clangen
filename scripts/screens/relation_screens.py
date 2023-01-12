@@ -1280,13 +1280,13 @@ class ChooseMateScreen(Screens):
             if check_cat.ID == self.the_cat.ID:
                 self.next_cat = 1
             if self.next_cat == 0 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead and \
-                    check_cat.ID != game.clan.instructor.ID and not check_cat.exiled and check_cat.age not in \
-                    ["adolescent", "kitten"] and check_cat.df == self.the_cat.df:
+                    check_cat.ID != game.clan.instructor.ID and not check_cat.exiled and not check_cat.outside and \
+                    check_cat.age not in ["adolescent", "kitten"] and check_cat.df == self.the_cat.df:
                 self.previous_cat = check_cat.ID
 
             elif self.next_cat == 1 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead and \
-                    check_cat.ID != game.clan.instructor.ID and not check_cat.exiled and check_cat.age not in \
-                    ["adolescent", "kitten"] and check_cat.df == self.the_cat.df:
+                    check_cat.ID != game.clan.instructor.ID and not check_cat.exiled and not check_cat.outside and \
+                    check_cat.age not in ["adolescent", "kitten"] and check_cat.df == self.the_cat.df:
                 self.next_cat = check_cat.ID
 
             elif int(self.next_cat) > 1:
