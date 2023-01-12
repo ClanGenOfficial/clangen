@@ -1563,7 +1563,8 @@ class ProfileScreen(Screens):
                                                        starting_height=2, object_id="#promote_leader_button")
 
             self.retire_button = UIImageButton(pygame.Rect((226, 522), (172, 36)), "", starting_height=2,
-                                               object_id="#retire_button")
+                                               object_id="#retire_button",
+                                               tool_tip_text="This cannot be undone")
 
             # These are a placeholders, to be killed and recreated in self.update_disabled_buttons().
             #   This it due to the image switch depending on the cat's status, and the location switch the close button
