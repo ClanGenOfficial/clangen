@@ -279,6 +279,20 @@ class Clan():
             self.medicine_cat = Cat.all_cats[medicine_cat]
             self.med_cat_number = len(self.med_cat_list)
 
+    def remove_med_cat(self, medicine_cat):
+        # Removes a med cat. Use when retiring, or switching to warrior
+        if medicine_cat:
+            if medicine_cat.ID in game.clan.med_cat_list:
+                game.clan.med_cat_list.remove(medicine_cat.ID)
+                game.clan.med_cat_number = len(game.clan.med_cat_list)
+            if self.medicine_cat:
+                if medicine_cat.ID == self.medicine_cat.ID:
+                    if game.clan.med_cat_list:
+                        game.clan.medicine_cat = Cat.fetch_cat(game.clan.med_cat_list[0])
+                        game.clan.med_cat_number = len(game.clan.med_cat_list)
+                    else:
+                        game.clan.medicine_cat = None
+
     def switch_clans(self, clan):
         game.save_clanlist(clan)
         game.cur_events_list.clear()
