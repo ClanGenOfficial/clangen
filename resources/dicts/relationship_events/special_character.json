@@ -63,10 +63,10 @@
       "blamed (cat) for their own mistake.",
       "won't stop bothering (cat).",
       "feels bad that they caused a problem for (cat).",
-      "convinces (cat) to help them pull a prank on a clanmate."
+      "convinces (cat) to help them pull a prank on a Clanmate."
     ],
     "empathetic": [
-      "listening to (elder)'s woes.",
+      "is listening to (elder)'s woes.",
       "is listening to (cat)'s troubles.",
       "noticed (apprentice) was struggling, and offered to help them."
     ],
@@ -83,7 +83,7 @@
     "compassionate": [
       "curled around (cat) to share warmth.",
       "lets (cat) have the last piece of fresh kill.",
-      "listening to (cat)'s problems.",
+      "is listening to (cat)'s problems.",
       "gives (cat) an item they may like.",
       "helps (elder) get around camp."
     ],
@@ -114,7 +114,7 @@
       "is gossiping about (cat).",
       "is teaching (cat) how to walk without making a sound.",
       "is showing (cat) how to sneak up on their enemies.",
-      "convinces (cat) to help them pull a prank on a clanmate."
+      "convinces (cat) to help them pull a prank on a Clanmate."
     ],
     "wise": [
       "is giving (cat) advice."

@@ -258,7 +258,7 @@ class Events():
                     # game.ceremony_events_list.append(text)
                     break
                 if random_count == 30:
-                    text = 'The Clan decides that no cat is fit to be deputy'
+                    text = 'The Clan decides that no cat is fit to be deputy.'
                     game.cur_events_list.append(Single_Event(text, "ceremony"))
                     # game.ceremony_events_list.append(text)
             else:
@@ -671,7 +671,7 @@ class Events():
                 text = ''
                 if game.clan.deputy.trait == 'bloodthirsty':
                     text = f'{str(game.clan.deputy.name)} has become the new leader. ' \
-                           f'They stare down at their clanmates with unsheathed claws, ' \
+                           f'They stare down at their Clanmates with unsheathed claws, ' \
                            f'promising a new era for the clans.'
                 else:
                     c = choice([1, 2, 3])
@@ -865,17 +865,18 @@ class Events():
                     ])
 
             if cat.is_disabled() and not leader_dead:
-                involved_cats.append(game.clan.leader.ID)
-                ceremony.extend([
-                    str(cat.name) + " is confidently telling " +
-                    str(game.clan.leader.name) +
-                    " that they can do anything any cat can. " +
-                    str(game.clan.leader.name) + " assigns " +
-                    mentor_name +
-                    " as their mentor to make sure that happens.",
-                    "Standing proud and tall before their new mentor " + str(
-                        cat.name) + " promises " + mentor_name + " that together they will prove to everyone that they will be the best warrior."
-                ])
+                if str(game.clan.leader.name) != mentor_name:
+                    involved_cats.append(game.clan.leader.ID)
+                    ceremony.extend([
+                        str(cat.name) + " is confidently telling " +
+                        str(game.clan.leader.name) +
+                        " that they can do anything any cat can. " +
+                        str(game.clan.leader.name) + " assigns " +
+                        mentor_name +
+                        " as their mentor to make sure that happens.",
+                        "Standing proud and tall before their new mentor " + str(
+                            cat.name) + " promises " + mentor_name + " that together they will prove to everyone that they will be the best warrior."
+                    ])
 
         elif (promoted_to == 'apprentice') and cat.mentor is None:
             ceremony.extend(["Newly-made apprentice " + str(cat.name) +
@@ -910,7 +911,7 @@ class Events():
                      "paw their full name of " + str(cat.name) + ". StarClan gives their blessing and the stars "
                      "twinkle in celebration.", 
                      f"With the stars softly shining and lighting their pelts, the senior medicine cat gives "
-                     f"{cat.name.prefix} their full name of {cat.name}. They both share the rest of the night "
+                     f"{cat.name.prefix}paw their full name of {cat.name}. They both share the rest of the night "
                      "with StarClan, celebrating their good fortune in having another medicine cat."])
 
         elif promoted_to == 'elder' and not leader_dead:
@@ -1018,7 +1019,7 @@ class Events():
                                 f'{name} received a cool {acc_singular} from {other_name} '
                                 f'and decided to wear it on their pelt.',
                                 f'{name} found a pretty {acc_singular} and decided to wear it on their pelt.',
-                                f'A clanmate gave {name} some {acc_plural} and they decided to wear them.'
+                                f'A Clanmate gave {name} some {acc_plural} and they decided to wear them.'
                             ])
                     elif cat.accessory in ["RED FEATHERS", "BLUE FEATHERS",
                                            "JAY FEATHERS"] and "NOTAIL" in cat.scars:
@@ -1035,13 +1036,13 @@ class Events():
                                          ])
                     else:
                         acc_text.extend([f'{name} finds a(n) {acc_singular} and decides to wear it on their pelt.',
-                                         f'A clanmate gives {name} a pretty {acc_singular} '
+                                         f'A Clanmate gives {name} a pretty {acc_singular} '
                                          f'and they decide to wear it on their pelt.',
                                          f'{name} finds a(n) {acc_singular} '
                                          f'while out on a walk and decides to wear it on their pelt.',
                                          f'{name} finds {acc_plural} '
                                          f'fascinating and decides to wear some on their pelt.',
-                                         f'A clanmate gives {name} a pretty {acc_singular} '
+                                         f'A Clanmate gives {name} a pretty {acc_singular} '
                                          f'to adorn their pelt as a gift.',
                                          f'{other_name} gives {name} a pretty {acc_singular} '
                                          f'and they decide to wear it on their pelt.'
@@ -1051,7 +1052,7 @@ class Events():
                         acc_text.extend([
                             f'{name} received a {acc_singular} from {other_name} and decided to wear it on their pelt.',
                             f'{name} found a {acc_singular} and decided to wear it on their pelt.',
-                            f'A clanmate gave {name} a {acc_singular} and they decided to wear it.'
+                            f'A Clanmate gave {name} a {acc_singular} and they decided to wear it.'
 
                         ])
                     elif cat.accessory in ["RED FEATHERS", "BLUE FEATHERS",
@@ -1066,7 +1067,7 @@ class Events():
                         acc_text.extend(
                             [f'{name} seems to have picked up a neat {acc_singular} while playing out in the camp.',
                              f'{name} finds something interesting and decides to wear it on their pelt.',
-                             f'A clanmate gives {name} a pretty {acc_singular} '
+                             f'A Clanmate gives {name} a pretty {acc_singular} '
                              f'and they decide to wear it on their pelt.',
                              f'{other_name} gives {name} a pretty {acc_singular} '
                              f'and they decide to wear it on their pelt.',
@@ -1252,7 +1253,7 @@ class Events():
                             f"{name} is injured during an unsupervised training exercise.",
                             f"{name} is hurt by enemy warriors after being ordered by {leader_name} to go over the border.",
                             f"{name} is injured after being ordered by {leader_name} to check out a Twoleg object.",
-                            f"{name} is battered while fighting a clanmate after {leader_name} encouraged a fight.",
+                            f"{name} is battered while fighting a Clanmate after {leader_name} encouraged a fight.",
                             f"{name} is injured by {leader_name} for disobeying orders.",
                             f"{name} is injured by {leader_name} for speaking out against them.",
                             f"{name} is cruelly injured by {leader_name} to make an example out of them.",
