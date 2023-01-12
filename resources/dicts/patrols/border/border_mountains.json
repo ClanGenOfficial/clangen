@@ -11,7 +11,7 @@
     "success_text": [
         "The patrol descends into battle without a second thought, easily driving the rogues away as they use their knowledge of the rocky terrain to their advantage.",
         null,
-        "s_c immediately leaps to protect their clanmates, their ferocity in battle quickly terrifying the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
+        "s_c immediately leaps to protect their Clanmates, their ferocity in battle quickly terrifying the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
         "s_c revels in the battle, leaping into the fray with their teeth bared and claws ready. The rogues are quickly driven away by the patrol."
     ],
     "fail_text": [
@@ -437,7 +437,7 @@
         "It keeps the cats' minds off their sore pads and the sharp stones they walk on. The patrol goes quickly and easily.",
         null,
         "s_c spins a story, vivid and engaging, telling the tale of a massive war their ancestors fought over the border the patrol is headed to mark. Not only does it keep every cat entertained, it really emphasizes the importance of the patrol and motivates everyone.",
-        "It's a fantastic idea, making the patrol fly by as cats chat and laugh with their clanmates, and everyone ends the day feeling much closer to each other."
+        "It's a fantastic idea, making the patrol fly by as cats chat and laugh with their Clanmates, and everyone ends the day feeling much closer to each other."
 ],
 "fail_text": [
         "The rocky terrain is too rough to keep up a story, and eventually r_c peters out, breathless and panting.",
