@@ -1921,6 +1921,7 @@ class Cat():
                 if self.parent1:
                     if self.is_sibling(other_cat) or other_cat.is_sibling(self):
                         return False
+
             # Check for relation via self's parents (parent/grandparent)
             if self.parent1:
                 if other_cat.is_grandparent(self) or other_cat.is_parent(self):
@@ -1929,6 +1930,7 @@ class Cat():
                 if other_cat.siblings:
                     if other_cat.is_uncle_aunt(self):
                         return False
+
             if not game.settings['first_cousin_mates']:
                 if self.is_cousin(other_cat):
                     return False
