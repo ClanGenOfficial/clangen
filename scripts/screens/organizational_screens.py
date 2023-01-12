@@ -537,7 +537,7 @@ class SettingsScreen(Screens):
             pygame.Rect((x_value, 376), (500, 50)), object_id=get_text_box_theme("#setting_text_box")
         )
         self.checkboxes_text['first_cousin_mates'] = pygame_gui.elements.UITextBox(
-            "Allow romantic interactions with first cousins",
+            "Allow first cousins to become mates/have romantic interactions",
             pygame.Rect((x_value, 415), (500, 50)), object_id=get_text_box_theme("#setting_text_box")
         )
 
