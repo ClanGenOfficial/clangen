@@ -346,6 +346,9 @@ class Clan():
 
         clan_data["faded_cats"] = ",".join([str(i) for i in self.faded_ids])
 
+        #Patrolled cats
+        clan_data["patrolled_cats"] = [str(i) for i in game.patrolled]
+
         # OTHER CLANS
         # Clan Names
         clan_data["other_clans_names"] = ",".join([str(i.name) for i in self.all_clans])
@@ -604,6 +607,13 @@ class Clan():
             if clan_data["faded_cats"].strip():  # Check for empty string
                 for cat in clan_data["faded_cats"].split(","):
                     game.clan.faded_ids.append(cat)
+
+        #Patrolled cats
+        if "patrolled_cats" in clan_data:
+            for cat in clan_data["patrolled_cats"]:
+                if cat in Cat.all_cats:
+                    game.patrolled.append(Cat.all_cats[cat])
+
 
         self.load_pregnancy(game.clan)
         self.load_herbs(game.clan)

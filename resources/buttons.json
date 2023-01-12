@@ -3305,7 +3305,7 @@
         {
             "normal_image":
             {
-                "path": "resources/images/buttons/filter_by_open_unavailable.png"
+                "path": "resources/images/buttons/filter_by_open.png"
             },
             "hovered_image":
             {

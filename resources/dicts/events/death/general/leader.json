@@ -292,8 +292,8 @@
     {
         "camp": "any",
         "tags": ["all_lives", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "no_body"],
-        "death_text": "m_c was burnt alive while trying to save their clanmates from a fire.",
-        "history_text": [null, "were killed in a fire trying to save their clanmates"],
+        "death_text": "m_c was burnt alive while trying to save their Clanmates from a fire.",
+        "history_text": [null, "were killed in a fire trying to save their Clanmates"],
         "cat_trait": ["altruistic", "bold", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible"],
         "cat_skill": null,
         "other_cat_trait": null,
