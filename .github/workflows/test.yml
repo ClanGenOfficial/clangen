@@ -15,41 +15,11 @@ jobs:
           architecture: 'x64'
       - name: Install depends
         run: python -m pip install --pre pygame ujson pygame_gui
-      - name: Test relationships (unittest)
+      - name: Run unit tests
         env:
           SDL_VIDEODRIVER: "dummy"
           SDL_AUDIODRIVER: "disk"
-        run: python3 -m unittest tests/test_relationships.py
-      - name: Test thoughts (unittest)
-        env:
-          SDL_VIDEODRIVER: "dummy"
-          SDL_AUDIODRIVER: "disk"
-        run: python3 -m unittest tests/test_thoughts.py
-      - name: Test relationship events (unittest)
-        env:
-          SDL_VIDEODRIVER: "dummy"
-          SDL_AUDIODRIVER: "disk"
-        run: python3 -m unittest tests/test_relation_events.py
-      - name: Test patrol (unittest)
-        env:
-          SDL_VIDEODRIVER: "dummy"
-          SDL_AUDIODRIVER: "disk"
-        run: python3 -m unittest tests/test_patrol.py
-      - name: Test conditions (unittest)
-        env:
-          SDL_VIDEODRIVER: "dummy"
-          SDL_AUDIODRIVER: "disk"
-        run: python3 -m unittest tests/test_conditions.py
-      - name: Test utility (unittest)
-        env:
-          SDL_VIDEODRIVER: "dummy"
-          SDL_AUDIODRIVER: "disk"
-        run: python3 -m unittest tests/test_utility.py
-      - name: Test cat (unittest)
-        env:
-          SDL_VIDEODRIVER: "dummy"
-          SDL_AUDIODRIVER: "disk"
-        run: python3 -m unittest tests/test_cat.py
+        run: python3 -m unittest tests/test_relationships.py tests/test_thoughts.py tests/test_relation_events.py tests/test_patrol.py tests/test_conditions.py tests/test_utility.py tests/test_cat.py
         
   # Check if file encoding is correct.
   encoding_test:
@@ -62,7 +32,4 @@ jobs:
           python-version: '3.11'
           architecture: 'x64'
       - name: Check file encoding
-        env:
-          SDL_VIDEODRIVER: "dummy"
-          SDL_AUDIODRIVER: "disk"
         run: python3 tests/test_encoding.py
