@@ -1,5 +1,5 @@
 import unittest
-import ujson
+import json
 
 from scripts.patrol import Patrol
 from scripts.cat.cats import Cat
@@ -11,19 +11,19 @@ class TestLeafPatrols(unittest.TestCase):
 
         NEWLEAF = None
         with open(f"{resource_directory}newleaf.json", 'r') as read_file:
-            NEWLEAF = ujson.loads(read_file.read())
+            NEWLEAF = json.loads(read_file.read())
         
         GREENLEAF = None
         with open(f"{resource_directory}greenleaf.json", 'r') as read_file:
-            GREENLEAF = ujson.loads(read_file.read())
+            GREENLEAF = json.loads(read_file.read())
         
         LEAF_FALL = None
         with open(f"{resource_directory}leaf-fall.json", 'r') as read_file:
-            LEAF_FALL = ujson.loads(read_file.read())
+            LEAF_FALL = json.loads(read_file.read())
 
         LEAF_BARE = None
         with open(f"{resource_directory}leaf-bare.json", 'r') as read_file:
-            LEAF_BARE = ujson.loads(read_file.read())
+            LEAF_BARE = json.loads(read_file.read())
         
         return [NEWLEAF,GREENLEAF,LEAF_FALL,LEAF_BARE]
 
@@ -98,23 +98,23 @@ class TestBiomePatrols(unittest.TestCase):
         resource_directory = "resources/dicts/patrols/biomes/"
         FOREST = None
         with open(f"{resource_directory}forest.json", 'r') as read_file:
-            FOREST = ujson.loads(read_file.read())
+            FOREST = json.loads(read_file.read())
 
         PLAINS = None
         with open(f"{resource_directory}plains.json", 'r') as read_file:
-            PLAINS = ujson.loads(read_file.read())
+            PLAINS = json.loads(read_file.read())
 
         MOUNTAINOUS = None
         with open(f"{resource_directory}mountainous.json", 'r') as read_file:
-            MOUNTAINOUS = ujson.loads(read_file.read())
+            MOUNTAINOUS = json.loads(read_file.read())
 
         SWAMP = None
         with open(f"{resource_directory}swamp.json", 'r') as read_file:
-            SWAMP = ujson.loads(read_file.read())
+            SWAMP = json.loads(read_file.read())
 
         BEACH = None
         with open(f"{resource_directory}beach.json", 'r') as read_file:
-            BEACH = ujson.loads(read_file.read())
+            BEACH = json.loads(read_file.read())
 
         return [FOREST,PLAINS,MOUNTAINOUS,SWAMP,BEACH]
 

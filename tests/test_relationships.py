@@ -1,5 +1,5 @@
 import unittest
-import ujson
+import json
 
 from scripts.cat.cats import Cat
 from scripts.cat_relations.relationship import Relationship
@@ -27,9 +27,9 @@ class TestRelationshipInteraction(unittest.TestCase):
         INCREASE_LOW = None
         INCREASE_HIGH = None
         with open(f"{resource_directory}INCREASE_HIGH.json", 'r') as read_file:
-            INCREASE_HIGH = ujson.loads(read_file.read())
+            INCREASE_HIGH = json.loads(read_file.read())
         with open(f"{resource_directory}INCREASE_LOW.json", 'r') as read_file:
-            INCREASE_LOW = ujson.loads(read_file.read())
+            INCREASE_LOW = json.loads(read_file.read())
 
         # when
         relationship1.platonic_like = 60
@@ -66,9 +66,9 @@ class TestRelationshipInteraction(unittest.TestCase):
         INCREASE_LOW = None
         INCREASE_HIGH = None
         with open(f"{resource_directory}INCREASE_HIGH.json", 'r') as read_file:
-            INCREASE_HIGH = ujson.loads(read_file.read())
+            INCREASE_HIGH = json.loads(read_file.read())
         with open(f"{resource_directory}INCREASE_LOW.json", 'r') as read_file:
-            INCREASE_LOW = ujson.loads(read_file.read())
+            INCREASE_LOW = json.loads(read_file.read())
 
         # when
         relationship1.platonic_like = 60
@@ -108,9 +108,9 @@ class TestRelationshipInteraction(unittest.TestCase):
         INCREASE_LOW = None
         INCREASE_HIGH = None
         with open(f"{resource_directory}INCREASE_HIGH.json", 'r') as read_file:
-            INCREASE_HIGH = ujson.loads(read_file.read())
+            INCREASE_HIGH = json.loads(read_file.read())
         with open(f"{resource_directory}INCREASE_LOW.json", 'r') as read_file:
-            INCREASE_LOW = ujson.loads(read_file.read())
+            INCREASE_LOW = json.loads(read_file.read())
 
         # when
         relationship1.platonic_like = 60
@@ -147,9 +147,9 @@ class TestRelationshipInteraction(unittest.TestCase):
         INCREASE_LOW = None
         INCREASE_HIGH = None
         with open(f"{resource_directory}INCREASE_HIGH.json", 'r') as read_file:
-            INCREASE_HIGH = ujson.loads(read_file.read())
+            INCREASE_HIGH = json.loads(read_file.read())
         with open(f"{resource_directory}INCREASE_LOW.json", 'r') as read_file:
-            INCREASE_LOW = ujson.loads(read_file.read())
+            INCREASE_LOW = json.loads(read_file.read())
 
         # when
         relationship1.platonic_like = 60
@@ -185,9 +185,9 @@ class TestRelationshipInteraction(unittest.TestCase):
         INCREASE_LOW = None
         INCREASE_HIGH = None
         with open(f"{resource_directory}INCREASE_HIGH.json", 'r') as read_file:
-            INCREASE_HIGH = ujson.loads(read_file.read())
+            INCREASE_HIGH = json.loads(read_file.read())
         with open(f"{resource_directory}INCREASE_LOW.json", 'r') as read_file:
-            INCREASE_LOW = ujson.loads(read_file.read())
+            INCREASE_LOW = json.loads(read_file.read())
 
         # when
         relationship1.platonic_like = 60
@@ -224,9 +224,9 @@ class TestRelationshipInteraction(unittest.TestCase):
         INCREASE_LOW = None
         INCREASE_HIGH = None
         with open(f"{resource_directory}INCREASE_HIGH.json", 'r') as read_file:
-            INCREASE_HIGH = ujson.loads(read_file.read())
+            INCREASE_HIGH = json.loads(read_file.read())
         with open(f"{resource_directory}INCREASE_LOW.json", 'r') as read_file:
-            INCREASE_LOW = ujson.loads(read_file.read())
+            INCREASE_LOW = json.loads(read_file.read())
 
         # when
         relationship1.platonic_like = 60
