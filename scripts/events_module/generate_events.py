@@ -6,6 +6,9 @@ from scripts.game_structure.game_essentials import game
 
 resource_directory = "resources/dicts/events/"
 
+# ---------------------------------------------------------------------------- #
+#                     Tagging Guidelines can be found below                    #
+# ---------------------------------------------------------------------------- #
 
 class GenerateEvents:
     @staticmethod
@@ -25,10 +28,18 @@ class GenerateEvents:
     def generate_events(self, events_dict):
         event_list = []
         for event in events_dict:
+            event_text = event["event_text"] if "event_text" in event else None
+            if not event_text:
+                event_text = event["death_text"] if "death_text" in event else None
+
+            if not event_text:
+                print(
+                    f"WARNING: some events resources which are used in generate_events. Have no 'event_text'."
+                )
             event = SingleEvent(
                 camp="any",
                 tags=event["tags"],
-                event_text=event["event_text"],
+                event_text=event_text,
                 history_text=event["history_text"],
                 cat_trait=event["cat_trait"],
                 cat_skill=event["cat_skill"],
