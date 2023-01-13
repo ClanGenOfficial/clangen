@@ -129,7 +129,7 @@ class Condition_Events():
                 triggered = True
 
             if triggered:
-                possible_events = self.generate_events.possible_injury_events(cat.status, cat.age)
+                possible_events = self.generate_events.possible_events(cat.status, cat.age, "injury")
                 final_events = []
 
                 for event in possible_events:

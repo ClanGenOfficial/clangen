@@ -527,21 +527,3 @@ class EventsScreen(Screens):
     def make_events_container(self):
         """ In its own function so that there is only one place the box size is set"""
         self.event_container = pygame_gui.elements.UIScrollingContainer(pygame.Rect((216, 276), (514, 350)))
-
-
-
-'''class SingleEventScreen(Screens):
-
-    def on_use(self):
-        # LAYOUT
-        if game.switches['event'] is not None:
-            events_class.all_events[game.switches['event']].page()
-
-        # buttons
-        buttons.draw_button(('center', -150),
-                            text='Continue',
-                            cur_screen='events screen')
-
-    def screen_switches(self):
-        pass
-'''

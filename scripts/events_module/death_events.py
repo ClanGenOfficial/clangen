@@ -37,7 +37,7 @@ class Death_Events():
             other_clan = game.clan.all_clans[0]
             other_clan_name = f'{str(other_clan.name)}Clan'
 
-        possible_events = self.generate_events.possible_death_events(cat.status, cat.age)
+        possible_events = self.generate_events.possible_events(cat.status, cat.age, "death")
         final_events = []
 
         for event in possible_events:
@@ -123,7 +123,7 @@ class Death_Events():
         if "other_cat" in death_cause.tags and "multi_death" not in death_cause.tags:
             self.handle_relationship_changes(cat, death_cause, other_cat)
 
-        death_text = event_text_adjust(Cat, death_cause.death_text, cat, other_cat, other_clan_name)
+        death_text = event_text_adjust(Cat, death_cause.event_text, cat, other_cat, other_clan_name)
         history_text = 'this should not show up - history text'
         other_history_text = 'this should not show up - other_history text'
 
