@@ -1667,8 +1667,20 @@ class RelationshipScreen(Screens):
                 col2 += "mate: none\n"
 
             # Relation info:
-            if self.inspect_cat.is_uncle_aunt(self.the_cat) or self.the_cat.is_uncle_aunt(self.inspect_cat):
-                col2 += "related\n"
+            if self.the_cat.is_uncle_aunt(self.inspect_cat):
+                if self.inspect_cat.genderalign in ['female', 'trans female']:
+                    col2 += "related: niece"
+                elif self.inspect_cat.genderalign in ['male', 'trans male']:
+                    col2 += "related: nephew"
+                else:
+                    col2 += "related: sibling's child\n"
+            elif self.inspect_cat.is_uncle_aunt(self.the_cat):
+                if self.inspect_cat.genderalign in ['female', 'trans female']:
+                    col2 += "related: aunt"
+                elif self.inspect_cat.genderalign in ['male', 'trans male']:
+                    col2 += "related: uncle"
+                else:
+                    col2 += "related: parent's sibling"
             elif self.inspect_cat.is_grandparent(self.the_cat):
                 col2 += "related: grandparent"
             elif self.the_cat.is_grandparent(self.inspect_cat):
@@ -1680,7 +1692,7 @@ class RelationshipScreen(Screens):
             elif self.inspect_cat.is_sibling(self.the_cat) or self.the_cat.is_sibling(self.inspect_cat):
                 col2 += "related: sibling"
 
-            self.inspect_cat_elements["col2"] = UITextBoxTweaked(col2, pygame.Rect((150, 335), (80, -1)),
+            self.inspect_cat_elements["col2"] = UITextBoxTweaked(col2, pygame.Rect((150, 335), (85, -1)),
                                                                  object_id="#cat_profile_info_box",
                                                                  line_spacing=0.95)
 
