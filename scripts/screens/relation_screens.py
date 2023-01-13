@@ -1618,13 +1618,18 @@ class RelationshipScreen(Screens):
                                                                              self.inspect_cat.large_sprite)
 
             # Family Dot
-            if self.inspect_cat.is_uncle_aunt(self.the_cat) or self.the_cat.is_uncle_aunt(
-                    self.inspect_cat) or \
-                    self.inspect_cat.is_grandparent(self.the_cat) or self.the_cat.is_grandparent(
-                self.inspect_cat) or \
-                    self.inspect_cat.is_parent(self.the_cat) or self.the_cat.is_parent(
-                self.inspect_cat) or \
-                    self.inspect_cat.is_sibling(self.the_cat):
+            # Only show family dot on cousins if first cousin mates are disabled.
+            if game.settings['first_cousin_mates']:
+                check_cousins = False
+            else:
+                check_cousins = self.inspect_cat.is_cousin(self.the_cat)
+
+            if self.inspect_cat.is_uncle_aunt(self.the_cat) or self.the_cat.is_uncle_aunt(self.inspect_cat) \
+                    or self.inspect_cat.is_grandparent(self.the_cat) or \
+                    self.the_cat.is_grandparent(self.inspect_cat) or \
+                    self.inspect_cat.is_parent(self.the_cat) or \
+                    self.the_cat.is_parent(self.inspect_cat) or \
+                    self.inspect_cat.is_sibling(self.the_cat) or check_cousins:
                 self.inspect_cat_elements['family'] = pygame_gui.elements.UIImage(pygame.Rect((45, 150), (18, 18)),
                                                                                   image_cache.load_image(
                                                                                       "resources/images/dot_big.png").convert_alpha())
@@ -1690,6 +1695,8 @@ class RelationshipScreen(Screens):
                 col2 += "related: child"
             elif self.inspect_cat.is_sibling(self.the_cat) or self.the_cat.is_sibling(self.inspect_cat):
                 col2 += "related: sibling"
+            elif not game.settings["first_cousin_mates"] and self.inspect_cat.is_cousin(self.the_cat):
+                col2 += "related: cousin"
 
             self.inspect_cat_elements["col2"] = UITextBoxTweaked(col2, pygame.Rect((150, 335), (80, -1)),
                                                                  object_id="#cat_profile_info_box",
@@ -1815,11 +1822,19 @@ class RelationshipScreen(Screens):
                                                                                      gender_icon)
 
         # FAMILY DOT
-        if the_relationship.cat_to.is_uncle_aunt(self.the_cat) or self.the_cat.is_uncle_aunt(the_relationship.cat_to) or \
-                the_relationship.cat_to.is_grandparent(self.the_cat) or self.the_cat.is_grandparent(
-            the_relationship.cat_to) or \
-                the_relationship.cat_to.is_parent(self.the_cat) or self.the_cat.is_parent(the_relationship.cat_to) or \
-                the_relationship.cat_to.is_sibling(self.the_cat):
+
+        # Only show family dot on cousins if first cousin mates are disabled.
+        if game.settings['first_cousin_mates']:
+            check_cousins = False
+        else:
+            check_cousins = the_relationship.cat_to.is_cousin(self.the_cat)
+
+        if the_relationship.cat_to.is_uncle_aunt(self.the_cat) or self.the_cat.is_uncle_aunt(the_relationship.cat_to) \
+                or the_relationship.cat_to.is_grandparent(self.the_cat) or \
+                self.the_cat.is_grandparent(the_relationship.cat_to) or \
+                the_relationship.cat_to.is_parent(self.the_cat) or \
+                self.the_cat.is_parent(the_relationship.cat_to) or \
+                the_relationship.cat_to.is_sibling(self.the_cat) or check_cousins:
             self.relation_list_elements['relation_icon' + str(i)] = pygame_gui.elements.UIImage(pygame.Rect((pos_x + 5,
                                                                                                              pos_y + 5),
                                                                                                             (9, 9)),
@@ -1842,10 +1857,10 @@ class RelationshipScreen(Screens):
 
         # ROMANTIC LOVE
         # CHECK AGE DIFFERENCE
-        different_age = the_relationship.cat_to.age != self.the_cat.age
+        same_age = the_relationship.cat_to.age == self.the_cat.age
         adult_ages = ['young adult', 'adult', 'senior adult', 'elder']
         both_adult = the_relationship.cat_to.age in adult_ages and self.the_cat.age in adult_ages
-        check_age = both_adult or not different_age
+        check_age = both_adult or same_age
 
         if the_relationship.romantic_love > 49 and check_age:
             text = "romantic love:"
