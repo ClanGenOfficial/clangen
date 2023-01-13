@@ -1,5 +1,5 @@
 import unittest
-from mock import patch
+from unittest.mock import patch
 
 from scripts.events_module.relation_events import Relation_Events
 from scripts.cat.cats import Cat

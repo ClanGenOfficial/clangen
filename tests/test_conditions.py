@@ -1,6 +1,6 @@
 import ujson
 import unittest
-from mock import patch
+from unittest.mock import patch
 
 from scripts.cat.cats import Cat
 from scripts.conditions import Illness, Injury, medical_cats_condition_fulfilled
