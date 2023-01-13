@@ -2161,7 +2161,10 @@ class CeremonyScreen(Screens):
 
     def handle_leadership_ceremony(self, cat):
         dep_name = str(cat.name.prefix) + str(cat.name.suffix)
-        intro_text = dep_name + " leaves to speak with StarClan. They close their eyes and are immediately surrounded by their loved ones, friends, and Clanmates who have passed on. Stars shine throughout their pelts, and their eyes are warm as they greet the new leader." + "\n"
+        if cat.trait == "bloodthirsty":
+            intro_text = dep_name + " leaves to speak with StarClan. They close their eyes and awaken under a vast, inky black sky. They turn around to see a wary group of cats approaching, stars dotting their fur." + "\n"
+        else:
+            intro_text = dep_name + " leaves to speak with StarClan. They close their eyes and are immediately surrounded by their loved ones, friends, and Clanmates who have passed on. Stars shine throughout their pelts, and their eyes are warm as they greet the new leader." + "\n"
 
         # as of right now, chooses random starclan cats to give lives
         # in the future, plan to have starclan cats with high relationships to give lives
@@ -2270,72 +2273,154 @@ class CeremonyScreen(Screens):
             virtues = cat.virtues
 
         if known[0]:
-            queen_text = queen + ' pads up to the new leader first, softly touching their nose to ' + dep_name + '\'s head. They give a life for ' + \
-                         cat.virtues[0] + '.'
+            if cat.trait == "bloodthirsty":
+                queen_text = queen + ' stalks up to the new leader first, eyes burning with unexpected ferocity. They touch their nose to ' + dep_name + '\'s head, giving them a life for ' + cat.virtues[0] + '. ' + dep_name + ' reels back with the emotion of the life that courses through them.'
+            else:
+                queen_text = queen + ' pads up to the new leader first, softly touching their nose to ' + dep_name + '\'s head. They give a life for ' + \
+                            cat.virtues[0] + '.'
         else:
-            queen_text = 'A queen introduces themself as ' + queen + '. They softly touch their nose to ' + dep_name + '\'s head, giving them a life for ' + \
+            if cat.trait == "bloodthirsty":
+                queen_text = 'A queen introduces themself as ' + queen + '. They touch their nose to ' + dep_name + '\'s head, giving them a life for ' + cat.virtues[0] + '. Their eyes are slightly narrowed as they step back, turning away as ' + dep_name + ' struggles to gain the new life.'
+            else:
+                queen_text = 'A queen introduces themself as ' + queen + '. They softly touch their nose to ' + dep_name + '\'s head, giving them a life for ' + \
                          cat.virtues[0] + '.'
         if known[1]:
-            warrior_text = warrior + ' walks up to ' + dep_name + ' next, offering a life for ' + cat.virtues[
-                1] + '. They smile, and state that the Clan will do well under ' + dep_name + '\'s leadership.'
+            if cat.trait == "bloodthirsty":
+                warrior_text = warrior + ' walks up to ' + dep_name + ' next, giving them a life for ' + cat.virtues[
+                    1] + '. They pause, then shake their head, heading back into the ranks of StarClan.'
+            else:
+                warrior_text = warrior + ' walks up to ' + dep_name + ' next, offering a life for ' + cat.virtues[
+                    1] + '. They smile, and state that the Clan will do well under ' + dep_name + '\'s leadership.'
         else:
-            warrior_text = 'An unknown warrior walks towards ' + dep_name + ' stating that their name is ' + warrior + '. They offer a life for ' + \
-                           cat.virtues[1] + '.'
+            if cat.trait == "bloodthirsty":
+                warrior_text = 'An unknown warrior walks towards ' + dep_name + ' stating that their name is ' + warrior + '. They offer a life for ' + \
+                           cat.virtues[1] + '. There is a sad look in their eyes.'
+            else:
+                warrior_text = 'An unknown warrior walks towards ' + dep_name + ' stating that their name is ' + warrior + '. They offer a life for ' + \
+                            cat.virtues[1] + '.'
         if known[2]:
-            kit_text = kit + ' bounds up to the new leader, reaching up on their hind legs to give them a new life for ' + \
-                       cat.virtues[2] + '. They flick their tail and head back to make room for the next cat.'
+            if cat.trait == "bloodthirsty":
+                kit_text = kit + ' hesitantly approaches the new leader, reaching up on their hind legs to give them a new life for ' + \
+                       cat.virtues[2] + '. They lash their tail and head back to make room for the next cat.'
+            else:
+                kit_text = kit + ' bounds up to the new leader, reaching up on their hind legs to give them a new life for ' + \
+                        cat.virtues[2] + '. They flick their tail and head back to make room for the next cat.'
         else:
-            kit_text = kit + ' introduces themself and bounds up to the new leader, reaching up on their hind legs to give them a new life for ' + \
+            if cat.trait == "bloodthirsty":
+                kit_text = kit + ' introduces themself and hesitantly approaches the new leader, reaching up on their hind legs to give them a new life for ' + \
                        cat.virtues[2] + '.'
+            else:
+                kit_text = kit + ' introduces themself and bounds up to the new leader, reaching up on their hind legs to give them a new life for ' + \
+                        cat.virtues[2] + '.'
         if known[3]:
-            warrior2_text = 'Another cat approaches. ' + warrior2 + ' steps forward to give ' + dep_name + ' a life for ' + \
+            if cat.trait == "bloodthisty":
+                warrior2_text = 'Another cat approaches. ' + warrior2 + ' steps forward to give ' + dep_name + ' a life for ' + \
+                            cat.virtues[3] + '. ' + dep_name + ' yowls in pain as the life rushes into them.'
+            else:
+                warrior2_text = 'Another cat approaches. ' + warrior2 + ' steps forward to give ' + dep_name + ' a life for ' + \
                             cat.virtues[3] + '. ' + dep_name + ' grits their teeth as the life rushes into them.'
         else:
-            warrior2_text = warrior2 + ' states their name and steps forward to give ' + dep_name + ' a life for ' + \
-                            cat.virtues[3] + '.'
+            if cat.trait == "bloodthirsty":
+                warrior2_text = warrior2 + ' states their name and steps forward to give ' + dep_name + ' a life for ' + \
+                            cat.virtues[3] + '. Their pelt does not gleam with starlight; instead, a black ooze drips from their fur.'
+            else:
+                warrior2_text = warrior2 + ' states their name and steps forward to give ' + dep_name + ' a life for ' + \
+                                cat.virtues[3] + '.'
         if known[4]:
-            app_text = 'A young cat is next to give a life. Starlight reflects off their youthful eyes. ' + app + ' stretches up to give a life for ' + \
+            if cat.trait == "bloodthirsty":
+                app_text = 'A young cat is next to give a life. They hesitate, before an older cat nudges them forward, whispering something in their ear. ' + app + ' stretches up to give a life for ' + \
                        cat.virtues[4] + '.'
+            else:
+                app_text = 'A young cat is next to give a life. Starlight reflects off their youthful eyes. ' + app + ' stretches up to give a life for ' + \
+                        cat.virtues[4] + '.'
         else:
-            app_text = app + ' an unfamiliar apprentice, stretches up to give a life for ' + cat.virtues[
-                4] + '. Their eyes glimmer as they wish ' + dep_name + " well, and step back for the next cat."
+            if cat.trait == "bloodthirsty":
+                app_text = app + ' an unfamiliar apprentice, stretches up to give a life for ' + cat.virtues[
+                4] + '. They start to growl something, but an older StarClan cat nudges them back into their ranks.'
+            else:
+                app_text = app + ' an unfamiliar apprentice, stretches up to give a life for ' + cat.virtues[
+                    4] + '. Their eyes glimmer as they wish ' + dep_name + " well, and step back for the next cat."
         if known[5]:
-            elder_text = elder + ' strides forward, an energy in their steps that wasn\'t present in their last moments. They give a life for ' + \
+            if cat.trait == "bloodthirsty":
+                elder_text = elder + ' pads forward with a wary expression. They give a life for ' + \
                          cat.virtues[5] + '.'
+            else:
+                elder_text = elder + ' strides forward, an energy in their steps that wasn\'t present in their last moments. They give a life for ' + \
+                            cat.virtues[5] + '.'
         else:
-            elder_text = elder + ', an elder, introduces themself and strides forward to give a new life for ' + \
+            if cat.trait == "bloodthirsty":
+                elder_text = 'An elder pads forward with a wary expression. They do not introduce themself. They give a life for ' + \
                          cat.virtues[5] + '.'
+            else:
+                elder_text = elder + ', an elder, introduces themself and strides forward to give a new life for ' + \
+                            cat.virtues[5] + '.'
         if known[6]:
-            warrior3_text = warrior3 + ' dips their head in greeting. Energy surges through ' + dep_name + '\'s pelt as they receive a life for ' + \
-                            cat.virtues[6] + '. They reassure ' + dep_name + ' that they are almost done.'
+            if cat.trait == "bloodthirsty":
+                warrior3_text = warrior3 + ' approaches. Pain surges through ' + dep_name + '\'s pelt as they receive a life for ' + \
+                                cat.virtues[6] + '. ' + warrior3 + ' watches dispassionately.'
+            else:
+                warrior3_text = warrior3 + ' dips their head in greeting. Energy surges through ' + dep_name + '\'s pelt as they receive a life for ' + \
+                                cat.virtues[6] + '. They reassure ' + dep_name + ' that they are almost done.'
         else:
-            warrior3_text = warrior3 + ', an unknown warrior, gives a life for ' + cat.virtues[
-                6] + '. The cat turns around to take their place back in StarClan, leaving room for the next one to give a life.'
+            if cat.trait == "bloodthirsty":
+                warrior3_text = warrior3 + ', an unknown warrior, gives a life for ' + cat.virtues[
+                    6] + '. The cat hurries back to take their place back in StarClan, leaving room for the next cat to give a life.'
+            else:
+                warrior3_text = warrior3 + ', an unknown warrior, gives a life for ' + cat.virtues[
+                    6] + '. The cat turns around to take their place back in StarClan, leaving room for the next cat to give a life.'
         if known[7]:
-            med_cat_text = med_cat + ' approaches next, a warm smile on their face. They offer a life for ' + \
-                           cat.virtues[7] + ', whispering to take care of the Clan the best they can.'
+            if cat.trait == "bloodthirsty":
+                med_cat_text = med_cat + ' approaches next, a blank expression on their face. They offer a life for ' + \
+                            cat.virtues[7] + ', whispering to not lose their way.'
+            else:
+                med_cat_text = med_cat + ' approaches next, a warm smile on their face. They offer a life for ' + \
+                            cat.virtues[7] + ', whispering to take care of the Clan the best they can.'
         else:
-            med_cat_text = 'The next cat is not familiar. They smell of catmint and other herbs, and have a noble look to them. The cat tells ' + dep_name + ' that their name is ' + med_cat + '. They offer a life for ' + \
-                           cat.virtues[7] + '.'
+            if cat.trait == "bloodthirsty":
+                med_cat_text = med_cat + ' approaches next, a blank expression on their face. They offer a life for ' + \
+                            cat.virtues[7] + '.'
+            else:
+                med_cat_text = 'The next cat is not familiar. They smell of catmint and other herbs, and have a noble look to them. The cat tells ' + dep_name + ' that their name is ' + med_cat + '. They offer a life for ' + \
+                            cat.virtues[7] + '.'
         if known[8]:
-            prev_lead_text = 'Finally, ' + prev_lead + ' steps forward. There is pride in their gaze as they stare into ' + dep_name + '\'s eyes. They give a life for ' + \
+            if cat.trait == "bloodthirsty":
+                prev_lead_text = 'Finally, ' + prev_lead + ' steps forward. There is a conflicted expression on their face when they step forward and stare into ' + dep_name + '\'s eyes. They give a life for ' + \
+                             cat.virtues[8] + '.'
+            else:
+                prev_lead_text = 'Finally, ' + prev_lead + ' steps forward. There is pride in their gaze as they stare into ' + dep_name + '\'s eyes. They give a life for ' + \
                              cat.virtues[8] + '.'
         else:
-            prev_lead_text = prev_lead + ' one of Starclan\'s oldest leaders, looks at the new leader with pride. They give a last life, the gift of ' + \
+            if cat.trait == "bloodthirsty":
+                prev_lead_text = prev_lead + ' one of Starclan\'s oldest leaders, looks at the new leader with a conflicted expression. They give a last life, the gift of ' + \
                              cat.virtues[8] + '.'
+            else:
+                prev_lead_text = prev_lead + ' one of Starclan\'s oldest leaders, looks at the new leader with pride. They give a last life, the gift of ' + \
+                                cat.virtues[8] + '.'
         if known[8]:
-            ending_text = prev_lead + " hails " + dep_name + " by their new name, " + str(
+            if cat.trait == "bloodthirsty":
+                ending_text = prev_lead + " hails " + dep_name + " by their new name, " + str(
                 cat.name.prefix) + "star, telling them that their old life is no more. They are granted guardianship of " + str(
-                game.clan.name) + "Clan, and are told to use their new power wisely. The group of starry cats yowls " + str(
-                cat.name.prefix) + "star\'s name in support. " + str(
-                cat.name.prefix) + "star wakes up feeling a new strength within their body and know that they are now ready to lead the Clan."
+                game.clan.name) + "Clan, and are told to use their new power wisely. StarClan is silent as the new leader begins to wake up. " + str(
+                cat.name.prefix) + "star stands, feeling a new strength within their body, and grins."
+            else:
+                ending_text = prev_lead + " hails " + dep_name + " by their new name, " + str(
+                    cat.name.prefix) + "star, telling them that their old life is no more. They are granted guardianship of " + str(
+                    game.clan.name) + "Clan, and are told to use their new power wisely. The group of starry cats yowls " + str(
+                    cat.name.prefix) + "star\'s name in support. " + str(
+                    cat.name.prefix) + "star wakes up feeling a new strength within their body and know that they are now ready to lead the Clan."
 
         else:
-            ending_text = "StarClan hails " + dep_name + " by their new name, " + str(
+            if cat.trait == "bloodthirsty":
+                ending_text = "StarClan hails " + dep_name + " by their new name, " + str(
                 cat.name.prefix) + "star, telling them that their old life is no more. They are granted guardianship of " + str(
-                game.clan.name) + "Clan, and are told to use their new power wisely. The group of starry cats yowls " + str(
-                cat.name.prefix) + "star\'s name in support. " + str(
-                cat.name.prefix) + "star wakes up feeling a new strength within their body and know that they are now ready to lead the Clan."
+                game.clan.name) + "Clan, and are told to use their new power wisely. StarClan is silent as the new leader begins to wake up. " + str(
+                cat.name.prefix) + "star stands, feeling a new strength within their body, and grins."
+            else:
+                ending_text = "StarClan hails " + dep_name + " by their new name, " + str(
+                    cat.name.prefix) + "star, telling them that their old life is no more. They are granted guardianship of " + str(
+                    game.clan.name) + "Clan, and are told to use their new power wisely. The group of starry cats yowls " + str(
+                    cat.name.prefix) + "star\'s name in support. " + str(
+                    cat.name.prefix) + "star wakes up feeling a new strength within their body and know that they are now ready to lead the Clan."
 
         return intro_text + '\n' + queen_text + '\n\n' + warrior_text + '\n\n' + kit_text + '\n\n' + warrior2_text + '\n\n' + app_text + '\n\n' + elder_text + '\n\n' + warrior3_text + '\n\n' + med_cat_text + '\n\n' + prev_lead_text + '\n\n' + ending_text
 
