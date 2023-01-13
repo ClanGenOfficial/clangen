@@ -667,6 +667,7 @@ class Cat():
                         'medicine cat', 'elder'.
             resort = If sorting type is 'rank', and resort is True, it will resort the cat list. This should
                     only be true for non-timeskip status changes. """
+        old_status = self.status
         self.status = new_status
         self.name.status = new_status
 
@@ -680,16 +681,45 @@ class Cat():
         if self.status == 'warrior':
             self.update_mentor()
             self.update_skill()
-            if self.ID in game.clan.med_cat_list:
-                game.clan.med_cat_list.remove(self.ID)
+            if old_status == "medicine cat":
+                game.clan.remove_med_cat(self)
+
+            if old_status == 'leader':
+                game.clan.leader_lives = 0
+                if game.clan.leader:
+                    if game.clan.leader.ID == self.ID:
+                        game.clan.leader = None
+                        game.clan.leader_predecessors += 1
+
         elif self.status == 'medicine cat':
+            if self.retired:
+                self.retired = False
+
             self.update_med_mentor()
             self.update_skill()
             if game.clan is not None:
                 game.clan.new_medicine_cat(self)
 
         if self.status == 'elder':
+            self.update_mentor()
+            self.retired = True
             self.skill = choice(self.elder_skills)
+
+            # Will remove them from the clan med cat variables, if they are a med cat
+            if old_status == "medicine cat":
+                game.clan.remove_med_cat(self)
+
+            if old_status == 'leader':
+                game.clan.leader_lives = 0
+                if game.clan.leader:
+                    if game.clan.leader.ID == self.ID:
+                        game.clan.leader = None
+                        game.clan.leader_predecessors += 1
+
+            if game.clan.deputy:
+                if game.clan.deputy.ID == self.ID:
+                    game.clan.deputy = None
+                    game.clan.deputy_predecessors += 1
 
         # update class dictionary
         self.all_cats[self.ID] = self
@@ -1181,6 +1211,18 @@ class Cat():
         if set(self.get_siblings()) & set(other_cat.get_parents()):
             return True
         return False
+
+    def is_cousin(self, other_cat):
+        grandparent_id = []
+        for parent in other_cat.get_parents():
+            parent_ob = Cat.fetch_cat(parent)
+            grandparent_id.extend(parent_ob.get_parents())
+        for parent in self.get_parents():
+            parent_ob = Cat.fetch_cat(parent)
+            if set(parent_ob.get_parents()) & set(grandparent_id):
+                return True
+        return False
+
 
 # ---------------------------------------------------------------------------- #
 #                                  conditions                                  #
@@ -1810,6 +1852,7 @@ class Cat():
                 if self.parent1:
                     if self.is_sibling(other_cat) or other_cat.is_sibling(self):
                         return False
+
             # Check for relation via self's parents (parent/grandparent)
             if self.parent1:
                 if other_cat.is_grandparent(self) or other_cat.is_parent(self):
@@ -1818,6 +1861,12 @@ class Cat():
                 if other_cat.siblings:
                     if other_cat.is_uncle_aunt(self):
                         return False
+
+            # Only need to check one.
+            if not game.settings['first_cousin_mates']:
+                if self.is_cousin(other_cat):
+                    return False
+
         else:
             if self.is_sibling(other_cat) or other_cat.is_sibling(self):
                         return False
@@ -1872,6 +1921,7 @@ class Cat():
                 if self.parent1:
                     if self.is_sibling(other_cat) or other_cat.is_sibling(self):
                         return False
+
             # Check for relation via self's parents (parent/grandparent)
             if self.parent1:
                 if other_cat.is_grandparent(self) or other_cat.is_parent(self):
@@ -1880,6 +1930,11 @@ class Cat():
                 if other_cat.siblings:
                     if other_cat.is_uncle_aunt(self):
                         return False
+
+            if not game.settings['first_cousin_mates']:
+                if self.is_cousin(other_cat):
+                    return False
+
         else:
             if self.is_sibling(other_cat) or other_cat.is_sibling(self):
                         return False

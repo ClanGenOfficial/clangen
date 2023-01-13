@@ -387,10 +387,10 @@
             "dislike",
             "neg_platonic"
         ],
-        "event_text": "m_c was injured after a fight with a clanmate that r_c encouraged.",
+        "event_text": "m_c was injured after a fight with a Clanmate that r_c encouraged.",
         "history_text": [
-            "m_c was scarred by a fellow clanmate on r_c's encouragement.",
-            "m_c died after fighting a fellow clanmate on r_c's encouragement.",
+            "m_c was scarred by a fellow Clanmate on r_c's encouragement.",
+            "m_c died after fighting a fellow Clanmate on r_c's encouragement.",
             null
         ],
         "cat_trait": null,
@@ -588,10 +588,10 @@
             "dislike",
             "neg_platonic"
         ],
-        "event_text": "m_c was injured after a fight with a clanmate that r_c encouraged.",
+        "event_text": "m_c was injured after a fight with a Clanmate that r_c encouraged.",
         "history_text": [
-            "m_c was scarred by a fellow clanmate on r_c's encouragement.",
-            "m_c died after fighting a clanmate on r_c's encouragement.",
+            "m_c was scarred by a fellow Clanmate on r_c's encouragement.",
+            "m_c died after fighting a Clanmate on r_c's encouragement.",
             null
         ],
         "cat_trait": null,

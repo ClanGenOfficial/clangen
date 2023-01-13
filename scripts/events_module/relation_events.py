@@ -422,7 +422,7 @@ class Relation_Events():
                                f"{str(cat.name)} had a {insert} and refused to talk about their progenitor.",
                                f"{str(cat.name)} had a {insert} and is absolutely refusing to talk about it or acknowledge it at all.",
                                f"{str(cat.name)} doesn't feel ready to be a parent of this {insert}. But they promise to the tiny flailing limbs by their side that they'll do their best, they swear on StarClan itself.",
-                               f"No one knows who {str(cat.name)} has had their {insert} with, but they seem very happy watching over their little offspring in the nursery",
+                               f"No one knows who {str(cat.name)} has had their {insert} with, but they seem very happy watching over their little offspring in the nursery.",
                                f"Whenever someone asks whether {str(cat.name)} will be alright raising their {insert} alone, they just smile, and reply that everything is going to work out fine.",
                                f"A {insert}! {str(cat.name)} welcomes them happily, and seems unperturbed by the lack of a partner in the nursery with them."
                                ]

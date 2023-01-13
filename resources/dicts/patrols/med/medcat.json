@@ -3,7 +3,7 @@
     "patrol_id": "gen_med_soloberrybush1",
     "biome": "Any",
     "season": "greenleaf",
-    "tags": ["herb", "raspberry", "med_cat", "injury", "poisoned"],
+    "tags": ["herb", "raspberry", "med_cat", "injury", "poisoned", "no_herbs2", "no_herbs3"],
     "intro_text": "While gathering herbs, r_c spots a bush of red berries.",
     "decline_text": "r_c decides not to touch the berries.",
     "chance_of_success": 50,
@@ -32,7 +32,7 @@
     "patrol_id": "gen_med_soloberrybush2",
     "biome": "Any",
     "season": "greenleaf",
-    "tags": ["herb", "raspberry", "med_cat", "apprentice", "injury", "poisoned", "death"],
+    "tags": ["herb", "raspberry", "med_cat", "apprentice", "injury", "poisoned", "death", "no_herbs2"],
     "intro_text": "While gathering herbs, app1 stumbles upon a bush of red berries.",
     "decline_text": "app1 decides not to touch the berries.",
     "chance_of_success": 50,
@@ -42,7 +42,7 @@
         "These. . . could be deathberries. Might be raspberries. But maybe deathberries. It's not worth the risk, they can ask their mentor for more training about it later."
     ],
     "fail_text": [
-        "Confidently gathering them and prancing back to camp, app1 is then informed that they've gathered raspberries, not cranberries, and this isn't going to help the Clan's elders with their problems.",
+        "Confidently gathering them and prancing back to camp, app1 is then informed that they've gathered deathberries, not raspberries, and this isn't going to help the Clan's elders with their problems.",
         null,
         "app1 plucks the berries, several splitting in their mouth, and tries not to gag at the horrible taste - after all, all the herbs they're trying to learn taste horrible. As they start back to camp, they wobble a little. And then the world goes dark.",
         "app1 carefully plucks the horrible tasting berries, and as soon as the taste hits their tongue, they realize they've made a terrible mistake. Gagging and throwing up and staggering, they crawl back to camp, weakly hoping their mentor will help them."
@@ -60,13 +60,13 @@
     "patrol_id": "gen_med_soloberrybush3",
     "biome": "Any",
     "season": "leaf-fall",
-    "tags": ["herb", "raspberry", "med_cat", "poisoned", "injury"],
+    "tags": ["herb", "raspberry", "med_cat", "poisoned", "injury", "no_herbs2", "no_herbs3"],
     "intro_text": "While gathering herbs, r_c spots a bush of red berries.",
     "decline_text": "r_c decides not to touch the berries.",
     "chance_of_success": 50,
     "exp": 30,
     "success_text": [
-        "r_c identifies them as raspberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit, especially it's leaves",
+        "r_c identifies them as raspberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit, especially its leaves.",
         "r_c knows deathberries when they see them, and slips back to camp to report it to the leader - the warriors will need to be told to avoid this bush.",
         "It takes little intelligence to recognise deathberries, but a great deal to collect them anyway. If s_c can dry them out, these berries will be sufficient for c_n for years to come. By using their weight to snap off a bush branch, and then carefully carrying it gingerly back to camp, s_c manages to bring them safely home."
     ],
@@ -89,7 +89,7 @@
     "patrol_id": "gen_med_soloberrybush4",
     "biome": "Any",
     "season": "leaf-fall",
-    "tags": ["herb", "raspberry", "med_cat", "apprentice", "injury", "poisoned", "death"],
+    "tags": ["herb", "raspberry", "med_cat", "apprentice", "injury", "poisoned", "death", "no_herbs2"],
     "intro_text": "While gathering herbs, app1 stumbles upon a bush of red berries.",
     "decline_text": "app1 decides not to touch the berries.",
     "chance_of_success": 50,
@@ -218,7 +218,7 @@
     "patrol_id": "gen_med_vision3",
     "biome": "Any",
     "season": "Any",
-    "tags": ["med_cat", "herb", "cobwebs"],
+    "tags": ["med_cat", "herb", "cobwebs", "no_herbs1"],
     "intro_text": "As they head out to gather cobwebs, r_c thinks about the dream they had last night. . . was it sent by StarClan?",
     "decline_text": "They push it from their mind.",
     "chance_of_success": 40,
@@ -259,7 +259,7 @@
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": "r_c feels hounded, never given a moment's peace, and they hiss at the StarClan cat. The ghost vanishes like a puff of fog in the morning sun, hopefully not to return.",
-    "antagonize_fail_text": "r_c feels hounded, never given a moment's peace, and they hiss at the StarClan cat. But when they turn around, there's only a rather upset looking clanmate, there to fetch them to camp to help with an emergency."
+    "antagonize_fail_text": "r_c feels hounded, never given a moment's peace, and they hiss at the StarClan cat. But when they turn around, there's only a rather upset looking Clanmate, there to fetch them to camp to help with an emergency."
 },
 {
     "patrol_id": "gen_med_ghost_star2",
@@ -283,7 +283,7 @@
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": "r_c feels hounded, never given a moment's peace, and they hiss at the StarClan cat. The ghost vanishes like a puff of fog in the morning sun, hopefully not to return.",
-    "antagonize_fail_text": "r_c feels hounded, never given a moment's peace, and they hiss at the StarClan cat. But when they turn around, there's only a rather upset looking clanmate, there to fetch them to camp to help with an emergency."
+    "antagonize_fail_text": "r_c feels hounded, never given a moment's peace, and they hiss at the StarClan cat. But when they turn around, there's only a rather upset looking Clanmate, there to fetch them to camp to help with an emergency."
 },
 {
     "patrol_id": "gen_med_ghost_star3",
@@ -305,7 +305,7 @@
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": "app1 feels hounded, never given a moment's peace, and they hiss at the StarClan cat. The ghost vanishes like a puff of fog in the morning sun, hopefully not to return.",
-    "antagonize_fail_text": "app1 feels hounded, never given a moment's peace, and they hiss at the StarClan cat. But when they turn around, there's only a rather upset looking clanmate, there to fetch them to camp to help with an emergency."
+    "antagonize_fail_text": "app1 feels hounded, never given a moment's peace, and they hiss at the StarClan cat. But when they turn around, there's only a rather upset looking Clanmate, there to fetch them to camp to help with an emergency."
 },
 {
     "patrol_id": "gen_med_ghost_star4",
@@ -329,7 +329,7 @@
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": "app1 feels hounded, never given a moment's peace, and they hiss at the StarClan cat. The ghost vanishes like a puff of fog in the morning sun, hopefully not to return.",
-    "antagonize_fail_text": "app1 feels hounded, never given a moment's peace, and they hiss at the StarClan cat. But when they turn around, there's only a rather upset looking clanmate, there to fetch them to camp to help with an emergency."
+    "antagonize_fail_text": "app1 feels hounded, never given a moment's peace, and they hiss at the StarClan cat. But when they turn around, there's only a rather upset looking Clanmate, there to fetch them to camp to help with an emergency."
 },
 {
     "patrol_id": "gen_med_sologathercobweb1",
@@ -515,7 +515,7 @@
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
-        "p_l points out to app1 each stone that marks the grave of a passed clanmate, making sure that the apprentice knows where to set their paws so as not to tread on anyone. The two cats solemnly go about their task. They pick the useful plants from around the graves to take back to the medicine den and rip up the rest."
+        "p_l points out to app1 each stone that marks the grave of a passed Clanmate, making sure that the apprentice knows where to set their paws so as not to tread on anyone. The two cats solemnly go about their task. They pick the useful plants from around the graves to take back to the medicine den and rip up the rest."
     ],
     "fail_text":[
         null,
@@ -540,7 +540,7 @@
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
-        "p_l points out to r_c each stone that marks the grave of a passed clanmate, making sure that the other cat knows where to set their paws so as not to tread on anyone. The two cats solemnly go about their task. They pick the useful plants from around the graves to take back to the medicine den and rip up the rest."
+        "p_l points out to r_c each stone that marks the grave of a passed Clanmate, making sure that the other cat knows where to set their paws so as not to tread on anyone. The two cats solemnly go about their task. They pick the useful plants from around the graves to take back to the medicine den and rip up the rest."
     ],
     "fail_text":[
         null,
