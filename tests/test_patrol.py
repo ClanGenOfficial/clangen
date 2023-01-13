@@ -1,5 +1,9 @@
 import unittest
-import ujson
+
+try:
+    import ujson
+except ImportError:
+    import json as ujson
 
 from scripts.patrol import Patrol
 from scripts.cat.cats import Cat

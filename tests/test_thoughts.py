@@ -1,5 +1,9 @@
-import ujson
 import unittest
+
+try:
+    import ujson
+except ImportError:
+    import json as ujson
 
 from scripts.cat.cats import Cat
 from scripts.cat.thoughts import *
