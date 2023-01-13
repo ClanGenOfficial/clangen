@@ -279,6 +279,20 @@ class Clan():
             self.medicine_cat = Cat.all_cats[medicine_cat]
             self.med_cat_number = len(self.med_cat_list)
 
+    def remove_med_cat(self, medicine_cat):
+        # Removes a med cat. Use when retiring, or switching to warrior
+        if medicine_cat:
+            if medicine_cat.ID in game.clan.med_cat_list:
+                game.clan.med_cat_list.remove(medicine_cat.ID)
+                game.clan.med_cat_number = len(game.clan.med_cat_list)
+            if self.medicine_cat:
+                if medicine_cat.ID == self.medicine_cat.ID:
+                    if game.clan.med_cat_list:
+                        game.clan.medicine_cat = Cat.fetch_cat(game.clan.med_cat_list[0])
+                        game.clan.med_cat_number = len(game.clan.med_cat_list)
+                    else:
+                        game.clan.medicine_cat = None
+
     def switch_clans(self, clan):
         game.save_clanlist(clan)
         game.cur_events_list.clear()
@@ -331,6 +345,9 @@ class Clan():
         clan_data['clan_cats'] = ",".join([str(i) for i in self.clan_cats])
 
         clan_data["faded_cats"] = ",".join([str(i) for i in self.faded_ids])
+
+        #Patrolled cats
+        clan_data["patrolled_cats"] = [str(i) for i in game.patrolled]
 
         # OTHER CLANS
         # Clan Names
@@ -590,6 +607,13 @@ class Clan():
             if clan_data["faded_cats"].strip():  # Check for empty string
                 for cat in clan_data["faded_cats"].split(","):
                     game.clan.faded_ids.append(cat)
+
+        #Patrolled cats
+        if "patrolled_cats" in clan_data:
+            for cat in clan_data["patrolled_cats"]:
+                if cat in Cat.all_cats:
+                    game.patrolled.append(Cat.all_cats[cat])
+
 
         self.load_pregnancy(game.clan)
         self.load_herbs(game.clan)

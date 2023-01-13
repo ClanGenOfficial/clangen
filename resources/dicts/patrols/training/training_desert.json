@@ -178,14 +178,14 @@
 		"chance_of_success":50,
 		"exp":20,
 		"success_text":[
-			"p_l frees their clanmate, and settles down to groom the sand from their pelt, everyone relieved to have gotten off so lightly.",
+			"p_l frees their Clanmate, and settles down to groom the sand from their pelt, everyone relieved to have gotten off so lightly.",
 			"p_l digs through the sand, lifting it from r_c for long enough for the other cat to scramble free.",
-			"Not letting themselves panic, s_c carefully assesses the collapsed dune trapping their clanmate. They point out a stable path to dig them out from above, and r_c is recovered, scared but okay.",
-			"Creeping in as close as possible, s_c purrs to their clanmate, keeping them calm as the patrol carefully digs down to them."
+			"Not letting themselves panic, s_c carefully assesses the collapsed dune trapping their Clanmate. They point out a stable path to dig them out from above, and r_c is recovered, scared but okay.",
+			"Creeping in as close as possible, s_c purrs to their Clanmate, keeping them calm as the patrol carefully digs down to them."
 		],
 		"fail_text":[
-			"The patrol works all day to free their clanmate and gets nothing else done.",
-			"Harshly, s_c tells their clanmate that they're on their own - this patrol is too important to wait for some idiot who got stuck.",
+			"The patrol works all day to free their Clanmate and gets nothing else done.",
+			"Harshly, s_c tells their Clanmate that they're on their own - this patrol is too important to wait for some idiot who got stuck.",
 			"p_l works frantically, but r_c is under the sand for too long, and slips away as the patrol tries desperately to free them.",
 			"The patrol eventually manages to rescue r_c, but they need to be helped back to camp, wheezing and injured."
 		],
@@ -243,9 +243,9 @@
 		"chance_of_success":50,
 		"exp":20,
 		"success_text":[
-			"Their clanmates come running at their yowls, and r_c is soon freed, shaken but unharmed. The patrol settles down as everyone comforts each other.",
+			"Their Clanmates come running at their yowls, and r_c is soon freed, shaken but unharmed. The patrol settles down as everyone comforts each other.",
 			"p_l digs through the sand, lifting it from r_c for long enough for the other cat to scramble free.",
-			"Not letting themselves panic, s_c carefully assesses the collapsed dune trapping their clanmate. They point out a stable path to dig them out from above, and r_c is recovered, scared but okay.",
+			"Not letting themselves panic, s_c carefully assesses the collapsed dune trapping their Clanmate. They point out a stable path to dig them out from above, and r_c is recovered, scared but okay.",
 			"Creeping in as close as possible, s_c purrs to r_c, keeping them calm as the patrol carefully digs down to them. r_c blinks up at them, holding on to their presence in the scary situation."
 		],
 		"fail_text":[
@@ -312,7 +312,7 @@
 			null
 		],
 		"fail_text":[
-			"r_c yowls until their voice is hoarse and croaky, and it takes hours before any of their clanmates pass by to hear them, but eventually they're freed.",
+			"r_c yowls until their voice is hoarse and croaky, and it takes hours before any of their Clanmates pass by to hear them, but eventually they're freed.",
 			null,
 			"Hurt and wheezing, r_c is alone as they drift to StarClan.",
 			"r_c eventually manages to pull themselves free, but they're battered and injured, and have to spend the night out alone on the beach before a patrol finds them the next morning and helps them back to camp."
