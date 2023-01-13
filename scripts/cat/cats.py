@@ -686,15 +686,13 @@ class Cat():
 
             if old_status == 'leader':
                 game.clan.leader_lives = 0
+                self.died_by = []  # Clear their deaths.
                 if game.clan.leader:
                     if game.clan.leader.ID == self.ID:
                         game.clan.leader = None
                         game.clan.leader_predecessors += 1
 
         elif self.status == 'medicine cat':
-            if self.retired:
-                self.retired = False
-
             self.update_med_mentor()
             self.update_skill()
             if game.clan is not None:
@@ -702,7 +700,6 @@ class Cat():
 
         if self.status == 'elder':
             self.update_mentor()
-            self.retired = True
             self.skill = choice(self.elder_skills)
 
             # Will remove them from the clan med cat variables, if they are a med cat
@@ -711,6 +708,7 @@ class Cat():
 
             if old_status == 'leader':
                 game.clan.leader_lives = 0
+                self.died_by = []  # Clear their deaths.
                 if game.clan.leader:
                     if game.clan.leader.ID == self.ID:
                         game.clan.leader = None
@@ -1473,10 +1471,26 @@ class Cat():
                 break
         return not_working
 
+    #This is only for cats that retire due to the health condition.
     def retire_cat(self):
+        old_status = self.status
         self.retired = True
         self.status = 'elder'
         self.name.status = 'elder'
+
+        if old_status == 'leader':
+            game.clan.leader_lives = 0
+            self.died_by = []  # Clear their deaths.
+            if game.clan.leader:
+                if game.clan.leader.ID == self.ID:
+                    game.clan.leader = None
+                    game.clan.leader_predecessors += 1
+
+        if game.clan.deputy:
+            if game.clan.deputy.ID == self.ID:
+                game.clan.deputy = None
+                game.clan.deputy_predecessors += 1
+
         self.update_mentor()
 
     def additional_injury(self, injury):

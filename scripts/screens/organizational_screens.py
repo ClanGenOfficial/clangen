@@ -596,7 +596,8 @@ class SettingsScreen(Screens):
                 "",
                 object_id=box_type,
                 container=self.checkboxes_text["container"],
-                tool_tip_text='Camp backgrounds will match with the mode. Nighttime for Dark mode and daytime for Light mode.'
+                tool_tip_text='Camp backgrounds will match with the mode: '
+                              'nighttime for Dark mode and daytime for Light mode.'
             )
             n += 1
             # Enable clan page background
