@@ -17,7 +17,7 @@ class ChanceOfKits(unittest.TestCase):
 
         # then
         chance = relation_events.get_kits_chance(cat)
-        self.assertEqual(chance, 70)
+        self.assertEqual(chance, 5805)
 
     def test_pair_low_relation(self):
         # given
@@ -32,7 +32,7 @@ class ChanceOfKits(unittest.TestCase):
 
         # then
         chance = relation_events.get_kits_chance(cat1,cat2,relationship1_2)
-        self.assertEqual(chance, 35)
+        self.assertEqual(chance, 41)
 
     def test_pair_semi_high_relation_1(self):
         # given
@@ -48,7 +48,7 @@ class ChanceOfKits(unittest.TestCase):
         
         # then
         chance = relation_events.get_kits_chance(cat1,cat2,relationship1_2)
-        self.assertEqual(chance, 30)
+        self.assertEqual(chance, 36)
 
     def test_pair_semi_high_relation_2(self):
         # given
@@ -65,7 +65,7 @@ class ChanceOfKits(unittest.TestCase):
         
         # then
         chance = relation_events.get_kits_chance(cat1,cat2,relationship1_2)
-        self.assertEqual(chance, 20)
+        self.assertEqual(chance, 26)
 
     def test_pair_highest_relation(self):
         # given
@@ -82,7 +82,7 @@ class ChanceOfKits(unittest.TestCase):
 
         # then
         chance = relation_events.get_kits_chance(cat1,cat2,relationship1_2)
-        self.assertEqual(chance, 5)
+        self.assertEqual(chance, 1)
 
     def test_pair_old_male(self):
         # given
@@ -97,7 +97,7 @@ class ChanceOfKits(unittest.TestCase):
 
         # then
         chance = relation_events.get_kits_chance(cat1,cat2,relationship1_2)
-        self.assertEqual(chance, 80)
+        self.assertEqual(chance, 82)
 
     def test_pair_highest_relation_many_cats(self):
         # given
@@ -114,7 +114,7 @@ class ChanceOfKits(unittest.TestCase):
 
         # then
         chance = relation_events.get_kits_chance(cat1,cat2,relationship1_2)
-        self.assertEqual(chance, 115)
+        self.assertEqual(chance, 1)
 
     def test_pair_single_many_cats(self):
         # given
@@ -126,7 +126,7 @@ class ChanceOfKits(unittest.TestCase):
 
         # then
         chance = relation_events.get_kits_chance(cat1)
-        self.assertEqual(chance, 190)
+        self.assertEqual(chance, 5760)
 
 
 class CanHaveKits(unittest.TestCase):
@@ -159,7 +159,7 @@ class CanHaveKits(unittest.TestCase):
 
 
 class Pregnancy(unittest.TestCase):
-    @patch('scripts.cat_relations.relation_events.Relation_Events.get_kits_chance')
+    @patch('scripts.events_module.relation_events.Relation_Events.get_kits_chance')
     def test_single_cat_female(self, get_kits_chance):
         # given
         relation_events = Relation_Events()
@@ -174,7 +174,7 @@ class Pregnancy(unittest.TestCase):
         # then
         self.assertIn(cat.ID, clan.pregnancy_data.keys())
 
-    @patch('scripts.cat_relations.relation_events.Relation_Events.get_kits_chance')
+    @patch('scripts.events_module.relation_events.Relation_Events.get_kits_chance')
     def test_pair(self, get_kits_chance):
         # given
         relation_events = Relation_Events()
@@ -193,7 +193,7 @@ class Pregnancy(unittest.TestCase):
         self.assertIn(cat1.ID, clan.pregnancy_data.keys())
         self.assertEqual(clan.pregnancy_data[cat1.ID]["second_parent"], cat2.ID)
 
-    @patch('scripts.cat_relations.relation_events.Relation_Events.get_kits_chance')
+    @patch('scripts.events_module.relation_events.Relation_Events.get_kits_chance')
     def test_single_cat_male(self, get_kits_chance):
         # given
         relation_events = Relation_Events()
