@@ -830,8 +830,7 @@ class Events():
                     str(random_honor) + "."
                 ])
                 if cat.trait == 'bloodthirsty':
-                    ceremony.extend([
-                                        str(cat.name.prefix) + "paw has worked long and hard to earn their warrior name but " + str(
+                    ceremony.extend([str(cat.name.prefix) + "paw has worked long and hard to earn their warrior name but " + str(
                                             game.clan.leader.name) + " can't help but to shiver in unease as they name them " + str(
                                             cat.name) + " after their " + str(random_honor) + "."])
             else:
@@ -849,7 +848,8 @@ class Events():
                 "Newly-made apprentice " + str(cat.name) +
                 " touched noses with their new mentor, " +
                 mentor_name + ".",
-                str(cat.name) + " carefully touches noses with their new mentor, " + mentor_name + ", looking quite intimidated and nervous."
+                str(cat.name) + " carefully touches noses with their new mentor, " + mentor_name + ", looking quite intimidated and nervous.",
+                str(cat.name) + " excitedly touches noses with their new mentor, " + mentor_name + ", looking quite eager to start training."
             ])
             if cat.parent1 is not None and str(
                     cat_class.all_cats[cat.parent1].name) != str(
