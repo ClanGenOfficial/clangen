@@ -878,8 +878,8 @@ class Relation_Events():
             # remove scars
             kit.scars.clear()
 
-            # try to give them a permanent condition. 1/100 chance
-            if not int(random.random() * 1) and game.clan.game_mode != 'classic':
+            # try to give them a permanent condition. 1/90 chance
+            if not int(random.random() * 90) and game.clan.game_mode != 'classic':
                 kit.congenital_condition(kit)
                 for condition in kit.permanent_condition:
                     if kit.permanent_condition[condition] == 'born without a leg':

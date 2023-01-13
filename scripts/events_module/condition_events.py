@@ -669,7 +669,7 @@ class Condition_Events():
         retire_chances = {
             'kitten': 0,
             'adolescent': 100,
-            'young adult': 1,
+            'young adult': 80,
             'adult': 70,
             'senior adult': 50,
             'elder': 0
