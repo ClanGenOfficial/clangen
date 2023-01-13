@@ -1,4 +1,4 @@
-import json
+import ujson
 import unittest
 
 from scripts.cat.cats import Cat
@@ -12,35 +12,35 @@ class TestsGetStatusThought(unittest.TestCase):
 
         KITTEN_GENERAL = None
         with open(f"{resource_directory}{in_depth_path}kitten_to_other.json", 'r') as read_file:
-            KITTEN_GENERAL = json.loads(read_file.read())
+            KITTEN_GENERAL = ujson.loads(read_file.read())
 
         APPR_GENERAL = None
         with open(f"{resource_directory}{in_depth_path}apprentice_to_other.json", 'r') as read_file:
-            APPR_GENERAL = json.loads(read_file.read())
+            APPR_GENERAL = ujson.loads(read_file.read())
 
         MED_APPR_GENERAL = None
         with open(f"{resource_directory}{in_depth_path}medicine_app_to_other.json", 'r') as read_file:
-            MED_APPR_GENERAL = json.loads(read_file.read())
+            MED_APPR_GENERAL = ujson.loads(read_file.read())
 
         WARRIOR_GENERAL = None
         with open(f"{resource_directory}{in_depth_path}warrior_to_other.json", 'r') as read_file:
-            WARRIOR_GENERAL = json.loads(read_file.read())
+            WARRIOR_GENERAL = ujson.loads(read_file.read())
 
         MEDICINE_GENERAL = None
         with open(f"{resource_directory}{in_depth_path}medicine_to_other.json", 'r') as read_file:
-            MEDICINE_GENERAL = json.loads(read_file.read())
+            MEDICINE_GENERAL = ujson.loads(read_file.read())
 
         DEPUTY_GENERAL = None
         with open(f"{resource_directory}{in_depth_path}deputy_to_other.json", 'r') as read_file:
-            DEPUTY_GENERAL = json.loads(read_file.read())
+            DEPUTY_GENERAL = ujson.loads(read_file.read())
 
         LEADER_GENERAL = None
         with open(f"{resource_directory}{in_depth_path}leader_to_other.json", 'r') as read_file:
-            LEADER_GENERAL = json.loads(read_file.read())
+            LEADER_GENERAL = ujson.loads(read_file.read())
 
         ELDER_GENERAL = None
         with open(f"{resource_directory}{in_depth_path}elder_to_other.json", 'r') as read_file:
-            ELDER_GENERAL = json.loads(read_file.read())
+            ELDER_GENERAL = ujson.loads(read_file.read())
 
         return [KITTEN_GENERAL, 
             APPR_GENERAL,
@@ -64,10 +64,10 @@ class TestsGetStatusThought(unittest.TestCase):
         resource_directory = "resources/dicts/thoughts/"
         GENERAL_ALIVE = None
         with open(f"{resource_directory}cat_alive_general.json", 'r') as read_file:
-            GENERAL_ALIVE = json.loads(read_file.read())
+            GENERAL_ALIVE = ujson.loads(read_file.read())
         MED_TRAIT = None
         with open(f"{resource_directory}traits/medicine.json", 'r') as read_file:
-            MED_TRAIT = json.loads(read_file.read())
+            MED_TRAIT = ujson.loads(read_file.read())
         # given
         medicine = Cat()
         warrior = Cat()
@@ -91,7 +91,7 @@ class TestFamilyThoughts(unittest.TestCase):
     def load_resources(self):
         FAMILY = None
         with open(f"{resource_directory}family.json", 'r') as read_file:
-            FAMILY = json.loads(read_file.read())
+            FAMILY = ujson.loads(read_file.read())
         return FAMILY
 
     def test_family_thought_young_children(self):

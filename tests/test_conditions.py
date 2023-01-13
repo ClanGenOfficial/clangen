@@ -1,6 +1,6 @@
-import json
+import ujson
 import unittest
-from unittest.mock import patch
+from mock import patch
 
 from scripts.cat.cats import Cat
 from scripts.conditions import Illness, Injury, medical_cats_condition_fulfilled
@@ -111,7 +111,7 @@ class TestsIllnesses(unittest.TestCase):
 
         ILLNESSES = None
         with open(f"{resource_directory}Illnesses.json", 'r') as read_file:
-            ILLNESSES = json.loads(read_file.read())
+            ILLNESSES = ujson.loads(read_file.read())
         return ILLNESSES
 
     def test_get_ill_unknown_name(self):
@@ -130,7 +130,7 @@ class TestInjury(unittest.TestCase):
 
         INJURIES = None
         with open(f"{resource_directory}Injuries.json", 'r') as read_file:
-            INJURIES = json.loads(read_file.read())
+            INJURIES = ujson.loads(read_file.read())
         return INJURIES
     
     def test_get_injured_unknown_name(self):
