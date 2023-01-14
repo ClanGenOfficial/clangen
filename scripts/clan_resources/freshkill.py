@@ -1,10 +1,7 @@
 from scripts.utility import get_queens
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import *
-try:
-    import ujson
-except ImportError:
-    import json as ujson
+from copy import deepcopy
 
 PREY_REQUIREMENT = {
     "leader": 3,
@@ -116,7 +113,7 @@ class Freshkill_Pile():
         self.feed_cats(living_cats)
         
     def feed_cats(self, living_cats):
-        """Handles to feed all living cats."""
+        """Handles to feed all living cats. This happens before the aging up."""
         self.update_nutrition(living_cats)
 
         relevant_group = []
@@ -133,7 +130,7 @@ class Freshkill_Pile():
             if status_ == "queen":
                 relevant_group = relevant_queens
             elif status_ == "kitten":
-                relevant_group = [cat for cat in living_cats if str(cat.status) == status_ and cat.moons > 3]
+                relevant_group = [cat for cat in living_cats if str(cat.status) == status_ and cat.moons >= 2]
             else:
                 relevant_group = [cat for cat in living_cats if str(cat.status) == status_]
                 # remove all cats, which are also queens
@@ -145,11 +142,12 @@ class Freshkill_Pile():
 
             if not enough_prey:
                 self.handle_not_enough_food(relevant_group, status_)
-            self.feed_group(relevant_group, status_)
+            else:
+                self.feed_group(relevant_group, status_)
 
     def update_nutrition(self, living_cats):
         """Update the nutrition information."""
-        old_nutrition_info = self.nutrition_info
+        old_nutrition_info = deepcopy(self.nutrition_info)
         self.nutrition_info = {}
 
         # TODO: check nutrition information from dead cats are removed
@@ -177,7 +175,6 @@ class Freshkill_Pile():
     def handle_not_enough_food(self, group, status_):
         """Handle the situation where there is not enough food for this group."""
         tactic = None
-
         if tactic == "younger_first":
             sorted_group = sorted(group, key=lambda x: x.moons)
             self.feed_group(sorted_group, status_)
