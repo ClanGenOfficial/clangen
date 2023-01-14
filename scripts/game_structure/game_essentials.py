@@ -571,7 +571,6 @@ class GameOver(UIWindow):
                          window_display_title='Game Over',
                          object_id='#game_over_window',
                          resizable=False)
-
         self.clan_name = str(game.clan.name + 'Clan')
         self.last_screen = last_screen
         self.game_over_message = UITextBoxTweaked(

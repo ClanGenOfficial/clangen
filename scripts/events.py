@@ -185,10 +185,11 @@ class Events():
                 game.cur_events_list.insert(0, Single_Event(string, "health"))
                 # game.health_events_list.insert(0, string)
 
-        if not game.clan.deputy or \
+        if get_living_cat_count(Cat) != 0 and \
+                (not game.clan.deputy or \
                 game.clan.deputy.dead or \
                 game.clan.deputy.outside or \
-                game.clan.deputy.retired:
+                game.clan.deputy.retired):
             if game.settings.get('deputy') is True:
                 random_count = 0
                 while random_count < 30:
@@ -569,7 +570,9 @@ class Events():
 
         # handle nutrition amount (CARE: the cats has to be fed before - should be handled in "one_moon" function)
         if game.clan.game_mode in ['expanded', 'cruel season'] and game.clan.freshkill_pile:
-            self.freshkill_events.handle_low_nutrient(cat, game.clan.freshkill_pile.nutrition_info)
+            self.freshkill_events.handle_nutrient(cat, game.clan.freshkill_pile.nutrition_info)
+            if cat.dead:
+                return
 
         # prevent injured or sick cats from unrealistic clan events
         if cat.is_ill() or cat.is_injured():
