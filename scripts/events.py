@@ -7,6 +7,7 @@ from scripts.events_module.relation_events import *
 from scripts.game_structure.load_cat import *
 from scripts.events_module.condition_events import Condition_Events
 from scripts.events_module.death_events import Death_Events
+from scripts.events_module.freshkill_pile_events import Freshkill_Events
 from scripts.event_class import Single_Event
 
 
@@ -29,6 +30,7 @@ class Events():
         self.relation_events = Relation_Events()
         self.condition_events = Condition_Events()
         self.death_events = Death_Events()
+        self.freshkill_events = Freshkill_Events()
 
     def one_moon(self):
         game.cur_events_list = []
@@ -50,6 +52,13 @@ class Events():
             game.switches['no_able_left'] = False
 
         self.relation_events.handle_pregnancy_age(game.clan)
+
+        if game.clan.game_mode in ['extended', 'cruel season']:
+            # feed the cats and update the nutrient status
+            relevant_cats = [cat for cat in Cat.all_cats.copy().values() if cat.is_alive() and not cat.exiled and not cat.outside]
+            game.clan.freshkill_pile.time_skip(relevant_cats)
+            # handle freshkill pile events, after feeding
+            self.freshkill_events.handle_amount_freshkill_pile(game.clan.freshkill_pile, relevant_cats)        
 
         for cat in Cat.all_cats.copy().values():
             if not cat.outside:
@@ -140,10 +149,6 @@ class Events():
             Cat.grief_strings.clear()
 
         self.check_clan_relations()
-
-        # Handle freshkill pile
-        relevant_cats = [cat for cat in Cat.all_cats.copy().values() if cat.is_alive() and not cat.exiled and not cat.outside]
-        game.clan.freshkill_pile.time_skip(relevant_cats)
 
         # age up the clan
         game.clan.age += 1
@@ -570,6 +575,10 @@ class Events():
             cat.dead_for += 1
             self.handle_fading(cat)  # Deal with fading.
             return
+
+        # handle nutrition amount (CARE: the cats has to be fed before - should be handled in "one_moon" function)
+        if game.clan.game_mode in ['extended', 'cruel season']:
+            self.freshkill_events.handle_low_nutrient(cat)
 
         # prevent injured or sick cats from unrealistic clan events
         if cat.is_ill() or cat.is_injured():

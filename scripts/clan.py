@@ -357,7 +357,8 @@ class Clan():
         clan_data["other_clan_temperament"] = ",".join([str(i.temperament) for i in self.all_clans])
 
         self.save_herbs(game.clan)
-        self.save_freshkill_pile(game.clan)
+        if game.clan.game_mode in ['expanded', 'cruel season']:
+            self.save_freshkill_pile(game.clan)
 
         with open(f'saves/{self.name}clan.json', 'w') as write_file:
             json_string = ujson.dumps(clan_data, indent=4)
@@ -618,7 +619,8 @@ class Clan():
 
         self.load_pregnancy(game.clan)
         self.load_herbs(game.clan)
-        self.load_freshkill_pile(game.clan)
+        if game.clan.game_mode in ['expanded', 'cruel season']:
+            self.load_freshkill_pile(game.clan)
         game.switches['error_message'] = ''
 
     def load_herbs(self, clan):
