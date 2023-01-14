@@ -94,8 +94,6 @@ def change_clan_relations(other_clan, difference=0):
     # change the value
     clan_relations += difference
     game.clan.all_clans[y].relations = clan_relations
-    print('CLAN RELATIONS:', other_clan.name, difference)
-
 
 # ---------------------------------------------------------------------------- #
 #                       Relationship / Traits / Relative                       #
@@ -577,8 +575,7 @@ def update_sprite(cat):
                     sprites.sprites['collars' + cat.accessory +
                                     str(cat.age_sprites[cat.age])], (0, 0))
     except (TypeError, KeyError):
-        print(f"Failed to load cat ID #{cat}'s sprite:")
-        print(traceback.format_exc())
+        print(f"ERROR: Failed to load cat ID #{cat}'s sprite:\n", traceback.format_exc())
 
         # Placeholder image
         new_sprite.blit(

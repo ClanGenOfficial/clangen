@@ -198,8 +198,6 @@ class Condition_Events():
                     if "war" in injury_event.tags:
                         other_clan_name = enemy_clan
 
-                    # print('INJURY:', cat.name, cat.status, len(final_events), other_cat.name, other_cat.status)
-
                     # let's change some relationship values \o/ check if another cat is mentioned
                     if "other_cat" in injury_event.tags:
                         involved_cats.append(other_cat.ID)
@@ -401,8 +399,6 @@ class Condition_Events():
 
             # moon skip to try and kill or heal cat
             skipped = cat.moon_skip_illness(illness)
-            # test print, to track if events are displaying correctly
-            # print(illness, cat.name, cat.healed_condition)
 
             # if event trigger was true, events should be skipped for this illness
             if skipped is True:
@@ -884,7 +880,6 @@ class Condition_Events():
                     risk["chance"] += 11 - modifier + int(amount_used * 1.5)
                     if risk["chance"] < 0:
                         risk["chance"] = 0
-            print(amount_used, herb_used, condition, effect_message, "modifier:", 11 - modifier + int(amount_used * 1.5))
 
             text = f"{cat.name} was given {herb_used.replace('_', ' ')} as treatment for {condition}. {effect_message}"
             game.herb_events_list.append(text)

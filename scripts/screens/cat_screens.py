@@ -1062,8 +1062,7 @@ class ProfileScreen(Screens):
                 if str(self.the_cat.ID) in rel_data:
                     self.user_notes = rel_data.get(str(self.the_cat.ID))
         except Exception as e:
-            print(e)
-            print(f'WARNING: there was an error reading the Notes file of cat #{self.the_cat.ID}.')
+            print(f"ERROR: there was an error reading the Notes file of cat #{self.the_cat.ID}.\n", e)
 
     def toggle_history_sub_tab(self):
         """To toggle the history-sub-tab"""

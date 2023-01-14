@@ -13,9 +13,7 @@ def test():
                 path = os.path.join(root, file)
                 with open(path, "r", encoding="ascii") as file_handle:
                     file_handle.read()
-                print(f"VALID: {path}")
 
 
 if __name__ == "__main__":
     test()
-    print("Done, woo yeah woo yeah")

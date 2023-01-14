@@ -636,7 +636,7 @@ class ViewChildrenScreen(Screens):
                                                                               object_id="#cat_patrol_info_box")
 
         else:
-            print(f'Error: cat {str(self.the_cat.mate)} not found',
+            print(f'ERROR: cat {str(self.the_cat.mate)} not found',
                   (342, 165))
 
         # OFFSPRING

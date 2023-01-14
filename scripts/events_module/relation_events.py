@@ -47,7 +47,7 @@ class Relation_Events():
             cat_from_mate = None
             if cat_from.mate:
                 if cat_from.mate not in Cat.all_cats:
-                    print(f"Cat #{cat_from} has a invalid mate. It will set to none.")
+                    print(f"WARNING: Cat #{cat_from} has a invalid mate. It will set to none.")
                     cat_from.mate = None
                     return
                 cat_from_mate = Cat.all_cats.get(cat_from.mate)
@@ -56,7 +56,7 @@ class Relation_Events():
             cat_to_mate = None
             if cat_to.mate:
                 if cat_to.mate not in Cat.all_cats:
-                    print(f"Cat #{cat_to} has a invalid mate. It will set to none.")
+                    print(f"WARNING: Cat #{cat_to} has a invalid mate. It will set to none.")
                     cat_to.mate = None
                     return
                 cat_to_mate = Cat.all_cats.get(cat_to.mate)
@@ -235,7 +235,7 @@ class Relation_Events():
         from_mate_in_clan = False
         if cat_from.mate:
             if cat_from.mate not in Cat.all_cats.keys():
-                print(f"Cat #{cat_from} has a invalid mate. It will set to none.")
+                print(f"WARNING: Cat #{cat_from} has a invalid mate. It will set to none.")
                 cat_from.mate = None
                 return
             cat_from_mate = Cat.all_cats.get(cat_from.mate)
@@ -313,7 +313,6 @@ class Relation_Events():
         no_hit = int(random.random() * chance)
         if no_hit:
             return
-        print("A KIT IS BORN")
 
         # even with no_gendered_breeding on a male cat with no second parent should not be count as pregnant
         # instead, the cat should get the kit instantly

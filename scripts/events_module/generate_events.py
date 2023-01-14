@@ -21,7 +21,7 @@ class GenerateEvents:
             ) as read_file:
                 events = ujson.loads(read_file.read())
         except:
-            print(f"Error: Unable to load events for {cat_type} from biome {biome}.")
+            print(f"ERROR: Unable to load events for {cat_type} from biome {biome}.")
 
         return events
 
@@ -33,9 +33,7 @@ class GenerateEvents:
                 event_text = event["death_text"] if "death_text" in event else None
 
             if not event_text:
-                print(
-                    f"WARNING: some events resources which are used in generate_events. Have no 'event_text'."
-                )
+                print(f"WARNING: some events resources which are used in generate_events. Have no 'event_text'.")
             event = SingleEvent(
                 camp="any",
                 tags=event["tags"],
@@ -63,14 +61,10 @@ class GenerateEvents:
 
         # skip the rest of the loading if there is an unrecognised cat type
         if cat_type not in game.clan.CAT_TYPES:
-            print(
-                f"WARNING: unrecognised cat status {cat_type} in generate_events. Have you added it to CAT_TYPES in clan.py?"
-            )
+            print(f"WARNING: unrecognised cat status {cat_type} in generate_events. Have you added it to CAT_TYPES in clan.py?")
 
         elif game.clan.biome not in game.clan.BIOME_TYPES:
-            print(
-                f"WARNING: unrecognised biome {game.clan.biome} in generate_events. Have you added it to BIOME_TYPES in clan.py?"
-            )
+            print(f"WARNING: unrecognised biome {game.clan.biome} in generate_events. Have you added it to BIOME_TYPES in clan.py?")
 
         else:
             event_list.extend(

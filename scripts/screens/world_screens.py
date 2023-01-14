@@ -212,7 +212,6 @@ class OutsideClanScreen(Screens):
         # Generate object for the current cats
         pos_x = 0
         pos_y = 0
-        # print(self.current_listed_cats)
         if self.current_listed_cats != []:
             for cat in self.chunks(self.current_listed_cats, 20)[self.list_page - 1]:
                 self.display_cats.append(UISpriteButton(pygame.Rect((130 + pos_x, 180 + pos_y),(50,50)),cat.sprite, cat.ID))
@@ -396,8 +395,6 @@ class MapScreen(Screens):
     def screen_switches(self):
         try:
             game.map_info = load_map('saves/' + game.clan.name)
-            print("Map loaded.")
         except:
             game.map_info = load_map("Fallback")
-            print("Default map loaded.")
 """

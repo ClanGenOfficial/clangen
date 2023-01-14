@@ -315,21 +315,17 @@ class Events():
     def herb_gather(self):
         if game.clan.game_mode == 'classic':
             herbs = game.clan.herbs.copy()
-            print(game.clan.herbs)
             for herb in herbs:
                 adjust_by = random.choices([-2, -1, 0, 1, 2], [1, 2, 3, 2, 1], k=1)
-                print(adjust_by)
                 game.clan.herbs[herb] += adjust_by[0]
                 if game.clan.herbs[herb] <= 0:
                     game.clan.herbs.pop(herb)
             if not int(random.random() * 5):
                 new_herb = random.choice(HERBS)
                 game.clan.herbs.update({new_herb: 1})
-            print(game.clan.herbs)
         else:
             event_list = []
             meds_available = get_med_cats(Cat)
-            print(game.clan.herbs)
             for med in meds_available:
                 if game.clan.current_season in ['Newleaf', 'Greenleaf']:
                     amount = random.choices([0, 1, 2, 3], [1, 2, 2, 2], k=1)
@@ -348,7 +344,6 @@ class Events():
                             amount = random.choices([1, 2, 3], [3, 3, 1], k=1)
                         else:
                             amount = random.choices([1, 2], [4, 1], k=1)
-                        print(amount)
                         if herb in game.clan.herbs.keys():
                             game.clan.herbs[herb] += amount[0]
                         else:
@@ -372,7 +367,6 @@ class Events():
                         event_list.append(f"{med.name} could not find any herbs this moon.")
                         return
             game.herb_events_list.extend(event_list)
-            print(game.clan.herbs)
 
     def herb_destruction(self):
         allies = []
@@ -488,7 +482,6 @@ class Events():
             event = f"The medicine den nests have been refreshed with new moss from the herb stores."
             game.herb_events_list.append(event)
             game.cur_events_list.append(Single_Event(event, "health"))
-            print('moss -', herb_amount)
 
         elif not int(random.random() * 80) and sum(game.clan.herbs.values()) > 0 and len(meds) > 0:
 
@@ -538,8 +531,6 @@ class Events():
 
             # Deal with fading the cat if they are old enough.
             if cat.dead_for > age_to_fade:
-                print(str(cat.name) + " is fading away...")
-                print("dead_for: " + str(cat.dead_for))
                 # If order not to add a cat to the faded list twice, we can't remove them or add them to
                 # faded cat list here. Rather, they are added to a list of cats that will be "faded" at the next save.
 
@@ -1184,7 +1175,7 @@ class Events():
                         if scar in scar_pool:
                             scar_pool.remove(scar)  # No doubles
                     except ValueError as e:
-                        print(f"Failed to exclude scar from pool: {e}")
+                        print(f"ERROR: Failed to exclude scar from pool: {e}")
 
         # Always possible scar events
         if scar_chance > random.random():
@@ -1946,7 +1937,6 @@ class Events():
 
         # if large amount of the population is already sick, stop spreading
         if already_sick_count >= alive_count * .25:
-            # print('CURRENT SICK COUNT TOO HIGH', already_sick_count, alive_count)
             return
 
         meds = get_med_cats(Cat)
@@ -1998,7 +1988,6 @@ class Events():
                     event = f'{illness_name} has spread around the camp. ' \
                             f'{", ".join(infected_names[:-1])}, and {infected_names[-1]} have been infected.'
 
-                print('OUTBREAK - PANDEMIC ALERT')
                 game.cur_events_list.append(Single_Event(event, "health", involved_cats))
                 # game.health_events_list.append(event)
                 break

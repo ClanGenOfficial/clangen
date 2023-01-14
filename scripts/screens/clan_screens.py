@@ -60,10 +60,7 @@ class ClanScreen(Screens):
                 game.switches['saved_clan'] = True
                 self.update_buttons_and_text()
             if event.ui_element in self.cat_buttons:
-                # print("cat pressed")
                 game.switches["cat"] = event.ui_element.return_cat_id()
-                # print(game.switches["cat"])
-                # print(event.ui_element.return_cat_id())
                 self.change_screen('profile screen')
             if event.ui_element == self.label_toggle:
                 if game.settings['den labels']:
@@ -133,7 +130,7 @@ class ClanScreen(Screens):
                                        cat_id=x)
                     )
                 except:
-                    print(f"Error placing {str(Cat.all_cats[x].name)}\'s sprite on Clan page")
+                    print(f"ERROR: placing {str(Cat.all_cats[x].name)}\'s sprite on Clan page")
 
         self.save_button = UIImageButton(pygame.Rect(((343, 625), (114, 30))), "", object_id="#save_button")
 
@@ -394,9 +391,7 @@ class StarClanScreen(Screens):
                 self.get_dead_cats()
                 self.update_search_cats(self.search_bar.get_text())
             elif event.ui_element in self.display_cats:
-                # print("cat pressed")
                 game.switches["cat"] = event.ui_element.return_cat_id()
-                # print(event.ui_element.return_cat_id())
                 self.change_screen('profile screen')
             else:
                 self.menu_button_pressed(event)
@@ -550,7 +545,6 @@ class StarClanScreen(Screens):
         # Generate object for the current cats
         pos_x = 0
         pos_y = 0
-        # print(self.current_listed_cats)
         if self.current_listed_cats:
             for cat in self.chunks(self.current_listed_cats, 20)[self.list_page - 1]:
                 update_sprite(cat)
@@ -673,9 +667,7 @@ class DFScreen(Screens):
                 self.get_dead_cats()
                 self.update_search_cats(self.search_bar.get_text())
             elif event.ui_element in self.display_cats:
-                # print("cat pressed")
                 game.switches["cat"] = event.ui_element.return_cat_id()
-                # print(event.ui_element.return_cat_id())
                 self.change_screen('profile screen')
             else:
                 self.menu_button_pressed(event)
@@ -829,7 +821,6 @@ class DFScreen(Screens):
         # Generate object for the current cats
         pos_x = 0
         pos_y = 0
-        # print(self.current_listed_cats)
         if self.current_listed_cats != []:
             for cat in self.chunks(self.current_listed_cats, 20)[self.list_page - 1]:
                 update_sprite(cat)
@@ -950,9 +941,7 @@ class ListScreen(Screens):
                 self.get_living_cats()
                 self.update_search_cats(self.search_bar.get_text())
             elif event.ui_element in self.display_cats:
-                # print("cat pressed")
                 game.switches["cat"] = event.ui_element.return_cat_id()
-                # print(event.ui_element.return_cat_id())
                 self.change_screen('profile screen')
             else:
                 self.menu_button_pressed(event)
@@ -1102,7 +1091,6 @@ class ListScreen(Screens):
         # Generate object for the current cats
         pos_x = 0
         pos_y = 0
-        # print(self.current_listed_cats)
         if self.current_listed_cats:
             for cat in self.chunks(self.current_listed_cats, 20)[self.list_page - 1]:
                 update_sprite(cat)
@@ -1295,7 +1283,6 @@ class AllegiancesScreen(Screens):
         cat_count = self._extracted_from_screen_switches_24(
             living_cats, 'kitten', '<b><u>KITS</u></b>')
 
-        # print(self.allegiance_list)
 
         self.scroll_container = pygame_gui.elements.UIScrollingContainer(pygame.Rect((50, 150), (700, 500)))
         self.ranks_box = pygame_gui.elements.UITextBox("\n".join([i[0] for i in self.allegiance_list]),
@@ -1521,7 +1508,6 @@ class MedDenScreen(Screens):
             for cat in self.injured_and_sick_cats:
                 if cat.injuries:
                     for injury in cat.injuries:
-                        print(cat.name, injury)
                         if cat.injuries[injury]["severity"] != 'minor' and injury not in ['recovering from birth', "sprain", "lingering shock"]:
                             self.in_den_cats.append(cat)
                             if cat in self.out_den_cats:

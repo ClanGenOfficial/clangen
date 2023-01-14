@@ -62,7 +62,6 @@ class EventsScreen(Screens):
                 if get_living_cat_count(Cat) == 0:
                     GameOver('events screen')
 
-                # print(get_living_cat_count(Cat))
                 self.event_display_type = 'all events'
                 self.all_events_button.disable()
                 self.all_events = [x for x in game.cur_events_list if "interaction" not in x.types]
@@ -431,7 +430,6 @@ class EventsScreen(Screens):
         i = 0
         y = 0
         for ev in self.display_events:
-            #print(ev.text)
             if isinstance(ev.text, str):  # Check to make sure text is a string.
                 self.display_events_elements["event" + str(i)] = pygame_gui.elements.UITextBox(ev.text,
                                                                                                pygame.Rect((0, y), (box_length - 20, -1)),

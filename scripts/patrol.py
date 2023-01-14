@@ -131,7 +131,6 @@ class Patrol():
                 self.app6_name = str(self.patrol_apprentices[5].name)
 
         self.other_clan = choice(game.clan.all_clans)
-        # print(self.patrol_total_experience)
 
     def get_possible_patrols(self, current_season, biome, all_clans, patrol_type,
                              game_setting_disaster=game.settings['disasters']):
@@ -152,7 +151,6 @@ class Patrol():
         clan_allies = False
         clan_size = int(len(game.clan.clan_cats))
         chance = 0
-        # print(str(self.patrol_statuses))
         # assigning other_clan relations
         if clan_relations > 17:
             clan_allies = True
@@ -325,7 +323,6 @@ class Patrol():
                 else:
                     if not self.patrol_random_cat.is_potential_mate(self.patrol_leader, for_patrol=True):
                         continue
-            # print(str(patrol.patrol_id))
             final_patrols.append(patrol)
 
         return final_patrols
@@ -397,7 +394,6 @@ class Patrol():
 
         c = randint(0, 100)
         outcome = int(random.getrandbits(4))
-        print(str(self.patrol_event.patrol_id))
 
         # ---------------------------------------------------------------------------- #
         #                                   SUCCESS                                    #
@@ -547,7 +543,6 @@ class Patrol():
         base_exp = 0
         if "max" in self.experience_levels:
             max_boost = 10
-            print("Max cat detected")
         else:
             max_boost = 0
         patrol_exp = self.patrol_event.exp
@@ -805,40 +800,30 @@ class Patrol():
                 herbs_gotten.append(str(herb).replace('_', ' '))
                 if not large_amount:
                     amount_gotten = choices([1, 2, 3], [1, 3, 2], k=1)
-                    print(game.clan.herbs)
                     if herb in game.clan.herbs.keys():
                         game.clan.herbs[herb] += amount_gotten[0] * len(patrol.patrol_cats)
                     else:
                         game.clan.herbs.update({herb: amount_gotten[0] * len(patrol.patrol_cats)})
-                    print(herb, amount_gotten * len(patrol.patrol_cats))
                 else:
-                    print(game.clan.herbs)
                     if herb in game.clan.herbs.keys():
                         game.clan.herbs[herb] += large_amount * len(patrol.patrol_cats)
                     else:
                         game.clan.herbs.update({herb: large_amount})
-                    print(herb, large_amount * len(patrol.patrol_cats))
-                print(game.clan.herbs)
         elif "herb" in patrol.patrol_event.tags:
             for tag in patrol.patrol_event.tags:
                 if tag in HERBS:
                     herbs_gotten.append(str(tag).replace('_', ' '))
                     if not large_amount:
                         amount_gotten = choices([1, 2, 3], [1, 3, 2], k=1)
-                        print(game.clan.herbs)
                         if tag in game.clan.herbs.keys():
                             game.clan.herbs[tag] += amount_gotten[0] * len(patrol.patrol_cats)
                         else:
                             game.clan.herbs.update({tag: amount_gotten[0] * len(patrol.patrol_cats)})
-                        print(tag, amount_gotten[0] * len(patrol.patrol_cats))
                     else:
-                        print(game.clan.herbs)
                         if tag in game.clan.herbs.keys():
                             game.clan.herbs[tag] += large_amount * len(patrol.patrol_cats)
                         else:
                             game.clan.herbs.update({tag: large_amount * len(patrol.patrol_cats)})
-                        print(tag, large_amount * len(patrol.patrol_cats))
-                    print(game.clan.herbs)
         if herbs_gotten:
             if len(herbs_gotten) == 1 and herbs_gotten[0] != 'cobwebs':
                 insert = f"{herbs_gotten[0]} was"

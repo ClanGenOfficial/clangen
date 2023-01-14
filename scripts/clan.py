@@ -522,7 +522,7 @@ class Clan():
                 game.clan.add_cat(Cat.all_cats[cat])
                 game.clan.add_to_starclan(Cat.all_cats[cat])
             else:
-                print('Cat not found:', cat)
+                print('WARNING: Cat not found:', cat)
         self.load_pregnancy(game.clan)
         game.switches['error_message'] = ''
 
@@ -603,7 +603,7 @@ class Clan():
                 game.clan.add_cat(Cat.all_cats[cat])
                 game.clan.add_to_starclan(Cat.all_cats[cat])
             else:
-                print('Cat not found:', cat)
+                print('WARNING: Cat not found:', cat)
 
         if "faded_cats" in clan_data:
             if clan_data["faded_cats"].strip():  # Check for empty string
@@ -652,7 +652,7 @@ class Clan():
                 json_string = ujson.dumps(clan.herbs, indent=4)
                 file.write(json_string)
         except:
-            print(f"Saving the herb data didn't work.")
+            print(f"ERROR: Saving the herb data didn't work.")
 
     def load_pregnancy(self, clan):
         if not game.clan.name:
@@ -673,7 +673,7 @@ class Clan():
                 json_string = ujson.dumps(clan.pregnancy_data, indent=4)
                 file.write(json_string)
         except:
-            print(f"Saving the pregnancy data didn't work.")
+            print(f"ERROR: Saving the pregnancy data didn't work.")
 
     def load_freshkill_pile(self, clan):
         if not game.clan.name or clan.game_mode == 'classic':
@@ -706,11 +706,10 @@ class Clan():
 
         try:
             with open(f"saves/{game.clan.name}/freshkill_pile.json", 'w') as rel_file:
-                print(clan.freshkill_pile.pile)
                 json_string = ujson.dumps(clan.freshkill_pile.pile, indent = 4)
                 rel_file.write(json_string)
         except:
-            print(f"WARNING: Saving the freshkill pile didn't work.")
+            print(f"ERROR: Saving the freshkill pile didn't work.")
 
         try:
             with open(f"saves/{game.clan.name}/nutrition_info.json", 'w') as rel_file:
@@ -724,7 +723,7 @@ class Clan():
                 json_string = ujson.dumps(data, indent = 4)
                 rel_file.write(json_string)
         except:
-            print(f"WARNING: Saving nutrition information of the freshkill pile didn't work.")
+            print(f"ERROR: Saving nutrition information of the freshkill pile didn't work.")
 
 class OtherClan():
 

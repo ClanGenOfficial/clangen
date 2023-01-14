@@ -106,7 +106,6 @@ class Death_Events():
         # ---------------------------------------------------------------------------- #
         #                                  kill cats                                   #
         # ---------------------------------------------------------------------------- #
-        #print('DEATH:', cat.name, cat.status, len(final_events), other_cat.name, other_cat.status)
         death_cause = (random.choice(final_events))
 
         # check if the cat's body was retrievable
@@ -144,11 +143,9 @@ class Death_Events():
         # give injuries to other cat if tagged as such
         if "other_cat_injured" in death_cause.tags:
             involved_cats.append(other_cat.ID)
-            print("TAG DETECTED", other_cat.name)
             for tag in death_cause.tags:
                 if tag in INJURIES:
                     other_cat.get_injured(tag)
-                    print("INJURED IN EVENT")
 
         # handle leader lives
         if cat.status == "leader" and "other_cat_death" not in death_cause.tags:

@@ -155,7 +155,7 @@ class Scar_Events():
                             scar_pool.remove('RIGHTEAR')
 
                     except ValueError as e:
-                        print(f"Failed to exclude scar from pool: {e}")
+                        print(f"ERROR: Failed to exclude scar from pool: {e}")
 
             if len(scar_pool) > 0:
                 specialty = random.choice(scar_pool)
