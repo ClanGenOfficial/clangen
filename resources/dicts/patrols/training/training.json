@@ -464,7 +464,7 @@
     "success_text": [
         "Everyone has a nice practice session and their coordination with, and trust in, their Clanmates grows stronger.",
         null,
-        "s_c takes charge and coordinates exercises for the training patrol. Soon cats are using each other as springboards, practicing breaking a clanmates' fall, and working on treading exactly in each other's pawsteps."
+        "s_c takes charge and coordinates exercises for the training patrol. Soon cats are using each other as springboards, practicing breaking a Clanmates' fall, and working on treading exactly in each other's pawsteps."
     ],
     "fail_text": [
             "Unfortunately, no one steps up to teach. It's a little awkward, but the patrol disbands to attend to other duties."
@@ -510,7 +510,7 @@
     "success_text": [
         "Everyone has a nice practice session and their coordination with their Clanmates grows stronger. app1 really gets into it, and is praised for their focus and enthusiasm.",
         null,
-        "s_c takes charge and coordinates exercises for the training patrol. Soon cats are using each other as springboards, practicing breaking a clanmates' fall, and working on treading exactly in each other's pawsteps."
+        "s_c takes charge and coordinates exercises for the training patrol. Soon cats are using each other as springboards, practicing breaking a Clanmates' fall, and working on treading exactly in each other's pawsteps."
     ],
     "fail_text": [
             "Unfortunately, no one steps up to teach. It's a little awkward, but the patrol disbands to attend to other duties."
@@ -803,7 +803,7 @@
     "season": "Any",
     "tags": ["training", "platonic", "romantic", "no_app", "big_change", "no_change_fail"],
     "intro_text": "Quietly, r_c brings p_l aside as they work on their chores, asking for help with wording something difficult.",
-    "decline_text": "Both of them are interrupted by a request form a clanmate - this conversation will have to wait.",
+    "decline_text": "Both of them are interrupted by a request form a Clanmate - this conversation will have to wait.",
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
@@ -826,11 +826,11 @@
     "season": "Any",
     "tags": ["training", "platonic", "romantic", "no_app", "big_change"],
     "intro_text": "During an odd moment of downtime, r_c asks p_l if they think they're a good teacher.",
-    "decline_text": "They're interrupted by some clanmates who need help, and go off to attend to their duties.",
+    "decline_text": "They're interrupted by some Clanmates who need help, and go off to attend to their duties.",
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-        "Helping their clanmates is so important, and r_c feels like they never do a good enough job. p_l interrupts them, shocked - they've always thought r_c has done great! r_c blushes and hides their nose in their paws.",
+        "Helping their Clanmates is so important, and r_c feels like they never do a good enough job. p_l interrupts them, shocked - they've always thought r_c has done great! r_c blushes and hides their nose in their paws.",
         "r_c talks about how they want to get better at mentoring and helping c_n's apprentices. p_l really admires them for their determination to always improve upon themselves.",
         "s_c describes their personal approach to teaching other cats, and r_c admires them for how much thought they put into it - it's a whole lot of work!"
     ],

@@ -100,7 +100,7 @@
     "patrol_id": "gen_med_vision3",
     "biome": "Any",
     "season": "Any",
-    "tags": ["med_cat", "herb", "cobwebs"],
+    "tags": ["med_cat", "herb", "cobwebs", "no_herbs1"],
     "intro_text": "As they head out to gather cobwebs, r_c thinks about the dream they had last night. . . was it sent by StarClan?",
     "decline_text": "They push it from their mind.",
     "chance_of_success": 40,
@@ -141,7 +141,7 @@
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": "r_c feels hounded, never given a moment's peace, and they hiss at the StarClan cat. The ghost vanishes like a puff of fog in the morning sun, hopefully not to return.",
-    "antagonize_fail_text": "r_c feels hounded, never given a moment's peace, and they hiss at the StarClan cat. But when they turn around, there's only a rather upset looking clanmate, there to fetch them to camp to help with an emergency."
+    "antagonize_fail_text": "r_c feels hounded, never given a moment's peace, and they hiss at the StarClan cat. But when they turn around, there's only a rather upset looking Clanmate, there to fetch them to camp to help with an emergency."
 },
 {
     "patrol_id": "gen_med_ghost_star2",
@@ -165,7 +165,7 @@
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": "r_c feels hounded, never given a moment's peace, and they hiss at the StarClan cat. The ghost vanishes like a puff of fog in the morning sun, hopefully not to return.",
-    "antagonize_fail_text": "r_c feels hounded, never given a moment's peace, and they hiss at the StarClan cat. But when they turn around, there's only a rather upset looking clanmate, there to fetch them to camp to help with an emergency."
+    "antagonize_fail_text": "r_c feels hounded, never given a moment's peace, and they hiss at the StarClan cat. But when they turn around, there's only a rather upset looking Clanmate, there to fetch them to camp to help with an emergency."
 },
 {
     "patrol_id": "gen_med_ghost_star3",
@@ -187,7 +187,7 @@
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": "app1 feels hounded, never given a moment's peace, and they hiss at the StarClan cat. The ghost vanishes like a puff of fog in the morning sun, hopefully not to return.",
-    "antagonize_fail_text": "app1 feels hounded, never given a moment's peace, and they hiss at the StarClan cat. But when they turn around, there's only a rather upset looking clanmate, there to fetch them to camp to help with an emergency."
+    "antagonize_fail_text": "app1 feels hounded, never given a moment's peace, and they hiss at the StarClan cat. But when they turn around, there's only a rather upset looking Clanmate, there to fetch them to camp to help with an emergency."
 },
 {
     "patrol_id": "gen_med_ghost_star4",

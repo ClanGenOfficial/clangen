@@ -1,5 +1,5 @@
 import unittest
-from mock import patch
+from unittest.mock import patch
 
 from scripts.events_module.relation_events import Relation_Events
 from scripts.cat.cats import Cat
@@ -159,7 +159,7 @@ class CanHaveKits(unittest.TestCase):
 
 
 class Pregnancy(unittest.TestCase):
-    @patch('scripts.cat_relations.relation_events.Relation_Events.get_kits_chance')
+    @patch('scripts.events_module.relation_events.Relation_Events.get_kits_chance')
     def test_single_cat_female(self, get_kits_chance):
         # given
         relation_events = Relation_Events()
@@ -174,7 +174,7 @@ class Pregnancy(unittest.TestCase):
         # then
         self.assertIn(cat.ID, clan.pregnancy_data.keys())
 
-    @patch('scripts.cat_relations.relation_events.Relation_Events.get_kits_chance')
+    @patch('scripts.events_module.relation_events.Relation_Events.get_kits_chance')
     def test_pair(self, get_kits_chance):
         # given
         relation_events = Relation_Events()
@@ -193,7 +193,7 @@ class Pregnancy(unittest.TestCase):
         self.assertIn(cat1.ID, clan.pregnancy_data.keys())
         self.assertEqual(clan.pregnancy_data[cat1.ID]["second_parent"], cat2.ID)
 
-    @patch('scripts.cat_relations.relation_events.Relation_Events.get_kits_chance')
+    @patch('scripts.events_module.relation_events.Relation_Events.get_kits_chance')
     def test_single_cat_male(self, get_kits_chance):
         # given
         relation_events = Relation_Events()

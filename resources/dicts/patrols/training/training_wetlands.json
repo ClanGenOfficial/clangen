@@ -59,14 +59,14 @@
 		"chance_of_success":50,
 		"exp":20,
 		"success_text":[
-			"p_l fishes their clanmate up from the swamp, and settles down to groom the water from their pelt, everyone relieved to have gotten off so lightly.",
+			"p_l fishes their Clanmate up from the swamp, and settles down to groom the water from their pelt, everyone relieved to have gotten off so lightly.",
 			"p_l leaps into the water, lifting r_c for long enough for the other cat to get back to shore.",
 			"Not letting themselves panic, s_c darts away for a branch, shoving it into the water and giving the shocked and waterlogged r_c something to cling to.",
-			"s_c calls to their disorientated clanmate, helping r_c find the shoreline as the swamped cat struggles back to dry land."
+			"s_c calls to their disorientated Clanmate, helping r_c find the shoreline as the swamped cat struggles back to dry land."
 		],
 		"fail_text":[
-			"The patrol works all day to free their clanmate and gets nothing else done.",
-			"Harshly, s_c tells their clanmate that they're on their own - this patrol is too important to wait for some idiot who got stuck.",
+			"The patrol works all day to free their Clanmate and gets nothing else done.",
+			"Harshly, s_c tells their Clanmate that they're on their own - this patrol is too important to wait for some idiot who got stuck.",
 			"p_l works frantically, but r_c is under the water for too long, and slips away as the patrol tries desperately to find them.",
 			"The patrol eventually manages to rescue r_c, but they need to be helped back to camp, wheezing the water out of their lungs."
 		],
@@ -124,10 +124,10 @@
 		"chance_of_success":50,
 		"exp":20,
 		"success_text":[
-			"Their clanmates come running at their yowls, and r_c is soon back on dry land, shaken but unharmed. The patrol settles down as everyone comforts each other.",
+			"Their Clanmates come running at their yowls, and r_c is soon back on dry land, shaken but unharmed. The patrol settles down as everyone comforts each other.",
 			"p_l leaps into the water, lifting r_c for long enough for the other cat to get back to shore.",
 			"Not letting themselves panic, s_c darts away for a branch, shoving it into the water and giving the shocked and waterlogged r_c something to cling to.",
-			"s_c calls to their disorientated clanmate, helping r_c find the shoreline as the swamped cat struggles back to dry land. r_c holds their voice in their mind, letting it lead them back to safety."
+			"s_c calls to their disorientated Clanmate, helping r_c find the shoreline as the swamped cat struggles back to dry land. r_c holds their voice in their mind, letting it lead them back to safety."
 		],
 		"fail_text":[
 			"The patrol works all day to free r_c and gets nothing else done.",

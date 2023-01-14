@@ -106,9 +106,9 @@
     "chance_of_success": 90,
     "exp": 20,
     "success_text": [
-        "Their clanmates come running at their yowls, and r_c is soon freed, shaken but unharmed. The patrol settles down as everyone comforts each other.",
+        "Their Clanmates come running at their yowls, and r_c is soon freed, shaken but unharmed. The patrol settles down as everyone comforts each other.",
         "p_l tugs on just the right branch, lifting the pile off of r_c for long enough for the other cat to scramble free.",
-        "Without letting themselves panic, s_c carefully assesses the branches trapping their clanmate, then throws their weight onto one. It acts as a lever, forcing the entire pile up and allowing r_c to scrabble free, shaken but grateful.",
+        "Without letting themselves panic, s_c carefully assesses the branches trapping their Clanmate, then throws their weight onto one. It acts as a lever, forcing the entire pile up and allowing r_c to scrabble free, shaken but grateful.",
         "Creeping in as close as possible, s_c purrs to r_c, keeping them calm as the patrol carefully works to remove the branches pinning them down. r_c blinks up at them, holding on to their presence in the scary situation."
     ],
     "fail_text": [
@@ -146,7 +146,7 @@
         null
     ],
     "fail_text": [
-        "Pinned under the branches, r_c yowls until their voice is hoarse and their throat is sore, and thankfully, a patrol passes by after a few hours and frees their hapless clanmate.",
+        "Pinned under the branches, r_c yowls until their voice is hoarse and their throat is sore, and thankfully, a patrol passes by after a few hours and frees their hapless Clanmate.",
         null,
         "Hurt and wheezing, r_c does their best to hang on and wait for a patrol, but they succumb to their injuries and drift to StarClan alone.",
         "r_c eventually manages to pull themselves free, but they're battered and injured. It's all they can do to find a bush to shelter under through the night in the cold forest until a patrol finds them the next morning and helps them to the medicine den."
