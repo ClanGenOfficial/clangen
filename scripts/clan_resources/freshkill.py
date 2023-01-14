@@ -150,17 +150,19 @@ class Freshkill_Pile():
         old_nutrition_info = deepcopy(self.nutrition_info)
         self.nutrition_info = {}
 
-        # TODO: check nutrition information from dead cats are removed
         for cat in living_cats:
             # update the nutrition_info
             if cat.ID in old_nutrition_info:
                 self.nutrition_info[cat.ID] = old_nutrition_info[cat.ID] 
-                # check if the max_amount is correct, otherwise update
+                # check if the max_score is correct, otherwise update
                 if cat.moons == 6:
-                    self.nutrition_info[cat.ID].max_amount = PREY_REQUIREMENT[str(cat.status)] * 3
-                # TODO: maybe find a better way to handle this
-                if cat.moons >= 120 and str(cat.status) == "elder":
-                    self.nutrition_info[cat.ID].max_amount = PREY_REQUIREMENT[str(cat.status)] * 2
+                    self.nutrition_info[cat.ID].max_score = PREY_REQUIREMENT[str(cat.status)] * 3
+                    self.nutrition_info[cat.ID].current_score += PREY_REQUIREMENT[str(cat.status)]
+                elif cat.moons == 12:
+                    self.nutrition_info[cat.ID].max_score = PREY_REQUIREMENT[str(cat.status)] * 3
+                    self.nutrition_info[cat.ID].current_score += PREY_REQUIREMENT[str(cat.status)]
+                elif cat.moons >= 120 and str(cat.status) == "elder":
+                    self.nutrition_info[cat.ID].max_score = PREY_REQUIREMENT[str(cat.status)] * 2
             else:
                 self.add_cat_to_nutrition(cat)
 
