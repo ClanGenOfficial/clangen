@@ -27,7 +27,7 @@ class Freshkill_Events():
         elif nutr.percentage <= 50:
             # if percentage is 50 or lower, the cat will gain illnesses
             # the elif statement above will prevent, that a dead cat will get an illness
-            print("TODO - injury")
+            print("TODO - illness")
 
 
     def handle_amount_freshkill_pile(self, freshkill_pile, living_cats):

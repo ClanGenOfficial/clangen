@@ -130,6 +130,10 @@ class Clan():
             self.pregnancy_data = {}
             self.reputation = 50
             self.starting_members = starting_members
+            if game_mode in ['expanded', 'cruel season']:
+                self.freshkill_pile = Freshkill_Pile()
+            else:
+                self.freshkill_pile = None
 
             self.faded_ids = []  # Stores ID's of faded cats, to ensure these IDs aren't reused.
 
@@ -701,7 +705,7 @@ class Clan():
             clan.freshkill_pile = Freshkill_Pile()
 
     def save_freshkill_pile(self, clan):
-        if not clan.freshkill_pile or clan.game_mode == "classic":
+        if clan.game_mode == "classic" or not clan.freshkill_pile:
             return
 
         try:
