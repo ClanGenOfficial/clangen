@@ -313,7 +313,7 @@ class Relation_Events():
         no_hit = int(random.random() * chance)
         if no_hit:
             return
-        print("A KIT IS BORN")
+        # print("A KIT IS BORN")
 
         # even with no_gendered_breeding on a male cat with no second parent should not be count as pregnant
         # instead, the cat should get the kit instantly
@@ -768,7 +768,7 @@ class Relation_Events():
         if chance > 20 > living_cats:
             chance -= 10
 
-        print("CHANCE", chance)
+        # print("CHANCE", chance)
         return chance
 
     def get_affair_chance(self, mate_relation, affair_relation):
@@ -878,7 +878,7 @@ class Relation_Events():
             # remove scars
             kit.scars.clear()
 
-            # try to give them a permanent condition. 1/100 chance
+            # try to give them a permanent condition. 1/90 chance
             if not int(random.random() * 90) and game.clan.game_mode != 'classic':
                 kit.congenital_condition(kit)
                 for condition in kit.permanent_condition:

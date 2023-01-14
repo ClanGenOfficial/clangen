@@ -252,7 +252,7 @@ class PatrolScreen(Screens):
 
                 if self.patrol_type == 'general':
                     text = 'random patrol type'
-                if self.patrol_type == 'training' and med is False:
+                elif self.patrol_type == 'training' and med is False:
                     text = 'training'
                 elif self.patrol_type == 'border' and med is False:
                     text = 'border'
@@ -266,6 +266,8 @@ class PatrolScreen(Screens):
                         self.elements['paw'].disable()
                     else:
                         text = 'herb gathering'
+                else:
+                    text = ""
 
                 self.elements['info'] = pygame_gui.elements.UITextBox(
                     text, pygame.Rect((250, 525), (300, 400)), object_id=get_text_box_theme()
@@ -786,8 +788,6 @@ class PatrolScreen(Screens):
         if self.selected_cat is not None:
             # Now, if the selected cat is not None, we rebuild everything with the correct cat info
             # Selected Cat Image
-            self.selected_apprentice_index = 0
-
             self.elements["selected_image"] = pygame_gui.elements.UIImage(pygame.Rect((320, 175), (150, 150)),
                                                                           self.selected_cat.large_sprite)
 
@@ -848,13 +848,15 @@ class PatrolScreen(Screens):
                     relation = 'mentor'
 
                 elif self.selected_cat.apprentice:
+                    if self.selected_apprentice_index > len(self.selected_cat.apprentice) - 1:
+                        self.selected_apprentice_index = 0
                     self.app_mentor = Cat.fetch_cat(self.selected_cat.apprentice[self.selected_apprentice_index])
                     relation = 'apprentice'
                 else:
                     self.app_mentor = None
                     self.elements['app_mentor_frame'].hide()
 
-                # Failsafe, if apprentice or mentor is set to none. It should never happen.
+                # Failsafe, if apprentice or mentor is set to none.
                 if self.app_mentor is not None:
                     name = str(self.app_mentor.name)  # get name
                     if 11 <= len(name):  # check name length

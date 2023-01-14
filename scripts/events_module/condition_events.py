@@ -676,7 +676,7 @@ class Condition_Events():
         }
 
         if not triggered and not cat.dead and not cat.retired and cat.status not in \
-                ['leader', 'medicine cat', 'kitten'] and game.settings['retirement'] is False:
+                ['leader', 'medicine cat', 'kitten', 'medicine cat apprentice'] and game.settings['retirement'] is False:
             for condition in cat.permanent_condition:
                 if cat.permanent_condition[condition]['severity'] == 'major':
                     chance = int(retire_chances.get(cat.age))
@@ -699,7 +699,7 @@ class Condition_Events():
                             event += f"They are given the name {cat.name.prefix}{cat.name.suffix} in honor " \
                                      f"of their contributions to {game.clan.name}Clan."
 
-                        cat.status_change('elder')
+                        cat.retire_cat()
                         game.ranks_changed_timeskip = True
                         event_list.append(event)
 
@@ -722,7 +722,7 @@ class Condition_Events():
                         event += f"They are given the name {cat.name.prefix}{cat.name.suffix} in honor " \
                                  f"of their contributions to {game.clan.name}Clan."
 
-                    cat.status_change('elder')
+                    cat.retire_cat()
                     game.ranks_changed_timeskip = True
                     event_list.append(event)
 
