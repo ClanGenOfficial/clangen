@@ -1,6 +1,10 @@
-import ujson
 import unittest
-from mock import patch
+from unittest.mock import patch
+
+try:
+    import ujson
+except ImportError:
+    import json as ujson
 
 from scripts.cat.cats import Cat
 from scripts.conditions import Illness, Injury, medical_cats_condition_fulfilled

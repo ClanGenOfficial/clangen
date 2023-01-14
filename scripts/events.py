@@ -1335,7 +1335,8 @@ class Events():
                 involved_cats = [kit.ID]
                 kit_text = [
                     f'{name} finds an abandoned kit and names them {kit.name}.',
-                    f'A loner brings their kit named {kit.name.prefix} to the clan, stating they no longer can care for them.'
+                    f'A loner brings their kit named {kit.name.prefix} '
+                    f'to the clan, stating they no longer can care for them.'
                 ]
                 text = choice(kit_text)
                 # If it's the first one, there is also the cat that found them to be added to the involved list
@@ -1495,10 +1496,11 @@ class Events():
                     backstory=backstory_choice,
                     other_clan=otherclan
                 )
-                involved_cats = [created_cats[0].ID, cat.ID]
+                involved_cats = [c.ID for c in created_cats] + [cat.ID]
                 if backstory == 'abandoned3':
                     a_kit_text = ([
-                        f'A {otherclan}Clan queen decides to leave their litter with you. {str(parent1)} takes them as their own.'
+                        f'A {otherclan}Clan queen decides to leave their litter with you. {str(parent1)} '
+                        f'takes them as their own.'
                     ])
                     a_kit_text = choice(a_kit_text)
                     # game.other_clans_events_list.append(a_kit_text)
