@@ -104,7 +104,7 @@
 {
     "patrol_id": "fst_med_herbs1",
     "biome": "forest",
-    "season": "Any",
+    "season": "greenleaf",
     "tags": ["med_cat", "apprentice", "med_only", "herb", "dandelion"],
     "intro_text": "p_l and app1 are going out to gather dandelions. app1 asks their mentor what they'll do if the rabbits have eaten all of it. p_l responds that they'll cross that river when they get to it.",
     "decline_text": "A cat grabs p_l's attention before they can leave.",
@@ -129,7 +129,7 @@
 {
     "patrol_id": "fst_med_herbs2",
     "biome": "forest",
-    "season": "Any",
+    "season": "greenleaf",
     "tags": ["med_cat", "herb", "mullein", "no_app"],
     "intro_text": "p_l is on a mission to find herbs. They know a nice place where mullein grows and it's always good to have some on paw for coughs and sore throats.",
     "decline_text": "A cat grabs p_l's attention before they can leave camp.",
@@ -154,7 +154,7 @@
 {
     "patrol_id": "fst_med_herbs3",
     "biome": "forest",
-    "season": "Any",
+    "season": "greenleaf",
     "tags": ["med_cat", "warrior", "herb", "burdock", "dislike"],
     "intro_text": "p_l needs to go and gather some burdock root. They take along what warriors they can find around camp to help gather and carry the roots back.",
     "decline_text": "A cat grabs p_l's attention before they can leave.",
