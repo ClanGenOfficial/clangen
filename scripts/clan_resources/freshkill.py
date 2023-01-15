@@ -164,16 +164,18 @@ class Freshkill_Pile():
     def feed_group(self, group, status_):
         """Handle the feeding of a specific group of cats, the order is already set."""
         # ration_prey < healthy warrior will only eat half of the food they need
-        ration_prey = True # TODO: handled with a setting
+        ration_prey = False # TODO: handled with a setting
 
         for cat in group:
-            needed_prey = PREY_REQUIREMENT[status_]
+            feeding_amount = PREY_REQUIREMENT[status_]
+            needed_amount = feeding_amount
             if cat.is_ill() or cat.is_injured():
-                needed_prey += CONDITION_INCREASE
+                feeding_amount += CONDITION_INCREASE
+                needed_amount = feeding_amount
             else:
                 if ration_prey and status_ == "warrior":
-                    needed_prey = needed_prey/2
-            self.feed_cat(cat, needed_prey)
+                    feeding_amount = feeding_amount/2
+            self.feed_cat(cat, feeding_amount, needed_amount)
 
     def tactic_less_nutrition(self, group, status_):
         """With this tactic, the cats with the lowest nutrition will be feed first."""
@@ -183,18 +185,21 @@ class Freshkill_Pile():
 
         for k, v in sorted_nutrition:
             cat = Cat.all_cats[k]
-            needed_prey = PREY_REQUIREMENT[status_]
+            feeding_amount = PREY_REQUIREMENT[status_]
+            needed_amount = feeding_amount
             if cat.is_ill() or cat.is_injured():
-                needed_prey += CONDITION_INCREASE
+                feeding_amount += CONDITION_INCREASE
+                needed_amount = feeding_amount
             else:
                 if ration_prey and status_ == "warrior":
-                    needed_prey = needed_prey/2
-            self.feed_cat(cat,needed_prey)
+                    feeding_amount = feeding_amount/2
+            self.feed_cat(cat, feeding_amount, needed_amount)
 
-    def feed_cat(self, cat, amount):
+    def feed_cat(self, cat, amount, actual_needed):
         """Handle the feeding process."""
         previous_amount = amount
         remaining_amount = amount
+        amount_difference = actual_needed - amount
         order = ["expires_in_1", "expires_in_2", "expires_in_3", "expires_in_4"]
         for key in order:
             remaining_amount = self.take_from_pile(key, remaining_amount)
@@ -202,20 +207,20 @@ class Freshkill_Pile():
             previous_amount = remaining_amount
 
         if remaining_amount > 0:
-            self.nutrition_info[cat.ID].current_score -= remaining_amount
+            self.nutrition_info[cat.ID].current_score -= (remaining_amount + amount_difference)
 
-    def take_from_pile(self, pile_group, needed_amount):
+    def take_from_pile(self, pile_group, given_amount):
         """Take the amount from the pile group. Returns the rest of the original needed amount."""
-        if needed_amount == 0:
-            return needed_amount
+        if given_amount == 0:
+            return given_amount
 
-        remaining_amount = needed_amount
-        if self.pile[pile_group] >= needed_amount:
-            self.pile[pile_group] -= needed_amount
-            self.total_amount -= needed_amount
+        remaining_amount = given_amount
+        if self.pile[pile_group] >= given_amount:
+            self.pile[pile_group] -= given_amount
+            self.total_amount -= given_amount
             remaining_amount = 0
         elif self.pile[pile_group] > 0:
-            remaining_amount = needed_amount - self.pile[pile_group]
+            remaining_amount = given_amount - self.pile[pile_group]
             self.total_amount -= self.pile[pile_group]
             self.pile[pile_group] = 0
 
