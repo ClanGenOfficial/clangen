@@ -252,7 +252,7 @@ class PatrolScreen(Screens):
 
                 if self.patrol_type == 'general':
                     text = 'random patrol type'
-                if self.patrol_type == 'training' and med is False:
+                elif self.patrol_type == 'training' and med is False:
                     text = 'training'
                 elif self.patrol_type == 'border' and med is False:
                     text = 'border'

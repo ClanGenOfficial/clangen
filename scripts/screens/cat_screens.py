@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+# -*- coding: ascii -*-
 from random import choice
 
 import pygame
@@ -106,7 +108,7 @@ def bs_blurb_text(cat):
     if backstory == 'kittypet1':
         bs_blurb = "This cat joined the Clan by choice after living life with Twolegs as a kittypet."
     if backstory == 'kittypet2':
-        bs_blurb = "This cat used to live on something called a “boat” with Twolegs, but decided to join the Clan."
+        bs_blurb = "This cat used to live on something called a "boat" with Twolegs, but decided to join the Clan."
     if backstory == 'rogue1':
         bs_blurb = "This cat joined the Clan by choice after living life as a rogue."
     if backstory == 'rogue2':
@@ -1708,8 +1710,8 @@ class ProfileScreen(Screens):
                                                        starting_height=2, object_id="#switch_med_app_button")
                 close_button_location = (226, 610)
             # Switch med apprentice to warrior apprentice
-            elif self.the_cat.status in [
-                'medicine cat apprentice'] and not self.the_cat.dead and not self.the_cat.outside:
+            elif self.the_cat.status in ['medicine cat apprentice'] and not self.the_cat.dead and \
+                    not self.the_cat.outside:
                 self.toggle_med_button = UIImageButton(pygame.Rect((226, 558), (172, 52)), "",
                                                        starting_height=2, object_id="#switch_warrior_app_button")
                 close_button_location = (226, 610)
@@ -1722,7 +1724,8 @@ class ProfileScreen(Screens):
             elif self.the_cat.status in ['medicine cat', 'leader'] and \
                     not self.the_cat.dead and \
                     not self.the_cat.outside and \
-                    self.the_cat.age != 'elder':
+                    self.the_cat.age != 'elder' and \
+                    not self.the_cat.retired:  # Retired is flipped true if that cat retired due to health conditions.
                 self.toggle_med_button = UIImageButton(pygame.Rect((226, 558), (172, 36)), "",
                                                        starting_height=2, object_id="#switch_warrior_button")
                 close_button_location = (226, 594)

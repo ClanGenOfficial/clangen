@@ -699,7 +699,7 @@ class Condition_Events():
                             event += f"They are given the name {cat.name.prefix}{cat.name.suffix} in honor " \
                                      f"of their contributions to {game.clan.name}Clan."
 
-                        cat.status_change('elder')
+                        cat.retire_cat()
                         game.ranks_changed_timeskip = True
                         event_list.append(event)
 
@@ -722,7 +722,7 @@ class Condition_Events():
                         event += f"They are given the name {cat.name.prefix}{cat.name.suffix} in honor " \
                                  f"of their contributions to {game.clan.name}Clan."
 
-                    cat.status_change('elder')
+                    cat.retire_cat()
                     game.ranks_changed_timeskip = True
                     event_list.append(event)
 
