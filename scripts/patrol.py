@@ -841,29 +841,32 @@ class Patrol():
     def handle_prey(self, outcome_nr):
         """Handle the amount of prey which was caught and add it to the freshkill pile of the clan."""
         no_prey_tags = ["no_prey1", "no_prey2", "no_prey3", "no_prey4"]
-
-        for nr in range(len(no_prey_tags)):
-            if f"no_herbs{nr}" in patrol.patrol_event.tags and outcome_nr == nr:
-                return
+        prey_types = {
+            "small_prey" : PREY_REQUIREMENT["warrior"], 
+            "medium_prey" : PREY_REQUIREMENT["warrior"]*2 , 
+            "large_prey" : PREY_REQUIREMENT["warrior"]*3, 
+            "huge_prey" : PREY_REQUIREMENT["warrior"]*4
+        }
 
         prey_amount_per_cat = 0
         total_amount = 0
 
-        if "small_prey" in patrol.patrol_event.tags:
-            prey_amount_per_cat = PREY_REQUIREMENT["warrior"]
-        if "medium_prey" in patrol.patrol_event.tags:
-            prey_amount_per_cat = PREY_REQUIREMENT["warrior"] * 2
-        if "large_prey" in patrol.patrol_event.tags:
-            prey_amount_per_cat = PREY_REQUIREMENT["warrior"] * 3
-        if "huge_prey" in patrol.patrol_event.tags:
-            prey_amount_per_cat = PREY_REQUIREMENT["warrior"] * 4
+        for nr in range(len(no_prey_tags)):
+            if f"no_prey{nr}" in patrol.patrol_event.tags and outcome_nr == nr:
+                return
+
+        # check hat kind of prey type this succeeded patrol event has
+        for prey_type, amount in prey_types.items(): 
+            current_tag = prey_type + str(outcome_nr)
+            if current_tag in patrol.patrol_event.tags:
+                prey_amount_per_cat = amount
+                break
 
         for cat in self.patrol_cats:
             total_amount += prey_amount_per_cat
-            
             # add bonus of certain traits
-            if cat.trait in Cat.skill_groups["hunter"]:
-                bonus_amount = HUNTER_EXP_BONUS[cat.experience_level] * HUNTER_BONUS[cat.trait]
+            if cat.trait in Cat.skill_groups["hunt"]:
+                total_amount += HUNTER_EXP_BONUS[cat.experience_level] * HUNTER_BONUS[cat.trait]
 
         # add additional bonus of certain traits
         if "fantastic_hunter" in self.patrol_skills:
