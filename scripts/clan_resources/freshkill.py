@@ -83,26 +83,12 @@ class Freshkill_Pile():
             self.total_amount = 0
         self.nutrition_info = {}
 
-    def add_cat_to_nutrition(self, cat):
-        """Add a cat to the nutrition info"""
-        nutrition = Nutrition()
-        factor = 3
-        if str(cat.status) in ["kitten", "elder"]:
-            factor = 2
-
-        max_score = PREY_REQUIREMENT[str(cat.status)] * factor
-        nutrition.max_score = max_score
-        nutrition.current_score = max_score
-        nutrition.percentage = 100
-
-        self.nutrition_info[cat.ID] = nutrition
-
     def add_freshkill(self, amount):
         """Add new fresh kill to the pile."""
         self.pile["expires_in_4"] += amount
 
     def time_skip(self, living_cats):
-        """Handle the time skip for the freshkill pile."""
+        """Handle the time skip for the freshkill pile, including feeding the cats."""
         previous_amount = 0
         # update the freshkill pile
         for key, value in self.pile.items():
@@ -145,38 +131,13 @@ class Freshkill_Pile():
             else:
                 self.feed_group(relevant_group, status_)
 
-    def update_nutrition(self, living_cats):
-        """Update the nutrition information."""
-        old_nutrition_info = deepcopy(self.nutrition_info)
-        self.nutrition_info = {}
-
-        for cat in living_cats:
-            # update the nutrition_info
-            if cat.ID in old_nutrition_info:
-                self.nutrition_info[cat.ID] = old_nutrition_info[cat.ID] 
-                # check if the max_score is correct, otherwise update
-                if cat.moons == 6:
-                    self.nutrition_info[cat.ID].max_score = PREY_REQUIREMENT[str(cat.status)] * 3
-                    self.nutrition_info[cat.ID].current_score += PREY_REQUIREMENT[str(cat.status)]
-                elif cat.moons == 12:
-                    self.nutrition_info[cat.ID].max_score = PREY_REQUIREMENT[str(cat.status)] * 3
-                    self.nutrition_info[cat.ID].current_score += PREY_REQUIREMENT[str(cat.status)]
-                elif cat.moons >= 120 and str(cat.status) == "elder":
-                    self.nutrition_info[cat.ID].max_score = PREY_REQUIREMENT[str(cat.status)] * 2
-            else:
-                self.add_cat_to_nutrition(cat)
-
-    def feed_group(self, group, status_):
-        """Handle the feeding of a specific group of cats, the order is already set."""
-        for cat in group:
-            needed_prey = PREY_REQUIREMENT[status_]
-            if cat.is_ill() or cat.is_injured():
-                needed_prey += CONDITION_INCREASE
-            self.feed_cat(cat, needed_prey)
+    # ---------------------------------------------------------------------------- #
+    #                               helper functions                               #
+    # ---------------------------------------------------------------------------- #
 
     def handle_not_enough_food(self, group, status_):
         """Handle the situation where there is not enough food for this group."""
-        tactic = None
+        tactic = None # TODO: handle with a setting
         if tactic == "younger_first":
             sorted_group = sorted(group, key=lambda x: x.moons)
             self.feed_group(sorted_group, status_)
@@ -200,15 +161,34 @@ class Freshkill_Pile():
         else:
             self.feed_group(group, status_)
 
+    def feed_group(self, group, status_):
+        """Handle the feeding of a specific group of cats, the order is already set."""
+        # ration_prey < healthy warrior will only eat half of the food they need
+        ration_prey = True # TODO: handled with a setting
+
+        for cat in group:
+            needed_prey = PREY_REQUIREMENT[status_]
+            if cat.is_ill() or cat.is_injured():
+                needed_prey += CONDITION_INCREASE
+            else:
+                if ration_prey and status_ == "warrior":
+                    needed_prey = needed_prey/2
+            self.feed_cat(cat, needed_prey)
+
     def tactic_less_nutrition(self, group, status_):
         """With this tactic, the cats with the lowest nutrition will be feed first."""
         sorted_nutrition = sorted(self.nutrition_info.items(), key=lambda x: x[1].percentage)
+        # ration_prey < warrior will only eat half of the food they need
+        ration_prey = True # TODO: handled with a setting
 
         for k, v in sorted_nutrition:
             cat = Cat.all_cats[k]
             needed_prey = PREY_REQUIREMENT[status_]
             if cat.is_ill() or cat.is_injured():
                 needed_prey += CONDITION_INCREASE
+            else:
+                if ration_prey and status_ == "warrior":
+                    needed_prey = needed_prey/2
             self.feed_cat(cat,needed_prey)
 
     def feed_cat(self, cat, amount):
@@ -240,3 +220,42 @@ class Freshkill_Pile():
             self.pile[pile_group] = 0
 
         return remaining_amount
+
+    # ---------------------------------------------------------------------------- #
+    #                              nutrition relevant                              #
+    # ---------------------------------------------------------------------------- #
+
+    def update_nutrition(self, living_cats):
+        """Update the nutrition information."""
+        old_nutrition_info = deepcopy(self.nutrition_info)
+        self.nutrition_info = {}
+
+        for cat in living_cats:
+            # update the nutrition_info
+            if cat.ID in old_nutrition_info:
+                self.nutrition_info[cat.ID] = old_nutrition_info[cat.ID] 
+                # check if the max_score is correct, otherwise update
+                if cat.moons == 6:
+                    self.nutrition_info[cat.ID].max_score = PREY_REQUIREMENT[str(cat.status)] * 3
+                    self.nutrition_info[cat.ID].current_score += PREY_REQUIREMENT[str(cat.status)]
+                elif cat.moons == 12:
+                    self.nutrition_info[cat.ID].max_score = PREY_REQUIREMENT[str(cat.status)] * 3
+                    self.nutrition_info[cat.ID].current_score += PREY_REQUIREMENT[str(cat.status)]
+                elif cat.moons >= 120 and str(cat.status) == "elder":
+                    self.nutrition_info[cat.ID].max_score = PREY_REQUIREMENT[str(cat.status)] * 2
+            else:
+                self.add_cat_to_nutrition(cat)
+
+    def add_cat_to_nutrition(self, cat):
+        """Add a cat to the nutrition info"""
+        nutrition = Nutrition()
+        factor = 3
+        if str(cat.status) in ["kitten", "elder"]:
+            factor = 2
+
+        max_score = PREY_REQUIREMENT[str(cat.status)] * factor
+        nutrition.max_score = max_score
+        nutrition.current_score = max_score
+        nutrition.percentage = 100
+
+        self.nutrition_info[cat.ID] = nutrition
