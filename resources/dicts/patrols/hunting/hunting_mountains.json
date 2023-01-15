@@ -346,7 +346,10 @@
         "tags": [
             "hunting",
             "battle_injury",
-            "scar"
+            "scar",
+			"medium_prey0",
+			"medium_prey1",
+			"large_prey3"
         ],
         "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from just beyond a rock fall.",
         "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
@@ -389,7 +392,10 @@
             "hunting",
             "battle_injury",
             "scar",
-            "death"
+            "death",
+			"medium_prey0",
+			"medium_prey1",
+			"large_prey3"
         ],
         "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from just beyond a rock fall.",
         "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
