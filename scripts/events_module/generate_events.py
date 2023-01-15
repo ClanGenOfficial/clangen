@@ -254,11 +254,6 @@ Tagging Guidelines: (if you add more tags, please add guidelines for them here)
 
 “clan_kits” < clan must have kits for this event to appear
 
-"yearly" < mark this event to occur 100% of the time on the first month of the tagged season. Not used for injury or death events. 
-
-rel_down_self < event decreases tagged relationship parameter clan wide. Not used for injury or death events.
-rel_up_self < event increases tagged relationship parameter clan wide. Not used for injury or death events.
-
 mc_to_rc < change mc's relationship values towards rc
 rc_to_mc < change rc's relationship values towards mc
 to_both < change both cat's relationship values
@@ -266,14 +261,5 @@ to_both < change both cat's relationship values
 Tagged relationship parameters are: "romantic", "platonic", "comfort", "respect", "trust", "dislike", "jealousy", 
 Add “neg_” in front of parameter to make it a negative value change (i.e. “neg_romantic”, “neg_platonic”, ect)
 
-"single_cat" < marks events that have one version that triggers for a list of cats, and this version that triggers for a single cat
-
-"multi_cat" < marks events triggering for multiple cats e.g many apprentices being named at once
-
-Use these to determine what corruption level the main cat should have, if relevant
-“corruption_low” - main cat generally cares for the wellbeing of others and avoids hurting other cats, even if it benefits them to do so.
-“corruption_mid” - main cat cares more for their own wellbeing.  Does not necessarily want to hurt others, but will not explicitly avoid it if it benefits them.
-“corruption_high” - main cat doesn't care about the wellbeing of others and will happily hurt other cats if it benefits them.
-You can mix and match corruption tags if you feel an event is on the line between two of them, the code will allow the event for a cat with either of the corruption levels tagged
 
 """
