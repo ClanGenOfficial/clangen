@@ -396,10 +396,10 @@ class TestUpdateMentor(unittest.TestCase):
 
         # when
         self.assertTrue(app in mentor.apprentice and app not in mentor.former_apprentices)
-        self.assertTrue(app.mentor is mentor)
+        self.assertIs(app.mentor, mentor)
         app.exiled = True
         app.update_mentor()
 
         # then
         self.assertTrue(app not in mentor.apprentice and app in mentor.former_apprentices)
-        self.assertTrue(app.mentor is None)
+        self.assertIsNone(app.mentor)

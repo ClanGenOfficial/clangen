@@ -676,7 +676,7 @@ class Condition_Events():
         }
 
         if not triggered and not cat.dead and not cat.retired and cat.status not in \
-                ['leader', 'medicine cat', 'kitten'] and game.settings['retirement'] is False:
+                ['leader', 'medicine cat', 'kitten', 'medicine cat apprentice'] and game.settings['retirement'] is False:
             for condition in cat.permanent_condition:
                 if cat.permanent_condition[condition]['severity'] == 'major':
                     chance = int(retire_chances.get(cat.age))

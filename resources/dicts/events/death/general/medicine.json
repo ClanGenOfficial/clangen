@@ -12,8 +12,8 @@
     {
         "camp": "any",
         "tags": ["other_cat", "other_clan", "rel_down", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "respect", "trust"],
-        "death_text": "m_c was killed by a o_c warrior while pulling an injured clanmate away from battle.",
-        "history_text": ["m_c was killed by a o_c warrior while trying to aid an injured clanmate.", null],
+        "death_text": "m_c was killed by a o_c warrior while pulling an injured Clanmate away from battle.",
+        "history_text": ["m_c was killed by a o_c warrior while trying to aid an injured Clanmate.", null],
         "cat_trait": ["compassionate", "calm", "bold", "ambitious", "daring", "fierce", "empathetic", "loving", "loyal", "responsible", "thoughtful"],
         "cat_skill": null,
         "other_cat_trait": null,
