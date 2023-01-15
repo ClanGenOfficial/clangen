@@ -78,7 +78,7 @@ class Freshkill_Events():
             heal = True
 
         elif nutr.percentage > 30 and cat.is_ill() and "starving" in cat.illnesses:
-            if nutr.percentage < 70:
+            if nutr.percentage < 70 and "malnourished" not in cat.illnesses:
                 cat.get_ill("malnourished")
                 needed_tags = ["starving_healed"]
                 illness = "starving"
