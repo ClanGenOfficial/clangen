@@ -105,7 +105,7 @@ class Freshkill_Events():
 
         if heal:
             cat.illnesses.pop(illness)
-        else:
+        elif not heal and illness:
             cat.get_ill(illness)
 
         final_events = self.get_filtered_possibilities(possible_events, needed_tags, cat, other_cat)        

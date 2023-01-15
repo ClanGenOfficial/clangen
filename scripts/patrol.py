@@ -840,7 +840,7 @@ class Patrol():
 
     def handle_prey(self, outcome_nr):
         """Handle the amount of prey which was caught and add it to the freshkill pile of the clan."""
-        no_prey_tags = ["no_prey1", "no_prey2", "no_prey3", "no_prey4"]
+        no_prey_tags = ["no_prey0", "no_prey1", "no_prey2", "no_prey3"]
         prey_types = {
             "small_prey" : PREY_REQUIREMENT["warrior"], 
             "medium_prey" : PREY_REQUIREMENT["warrior"]*2 , 
@@ -851,14 +851,14 @@ class Patrol():
         prey_amount_per_cat = 0
         total_amount = 0
 
-        for nr in range(len(no_prey_tags)):
-            if f"no_prey{nr}" in patrol.patrol_event.tags and outcome_nr == nr:
+        for tag in no_prey_tags:
+            if tag in patrol.patrol_event.tags and outcome_nr == tag:
                 return
 
         # check hat kind of prey type this succeeded patrol event has
-        for prey_type, amount in prey_types.items(): 
+        for prey_type, amount in prey_types.items():
             current_tag = prey_type + str(outcome_nr)
-            if current_tag in patrol.patrol_event.tags:
+            if current_tag in patrol.patrol_event.tags or prey_type in patrol.patrol_event.tags:
                 prey_amount_per_cat = amount
                 break
 
@@ -877,6 +877,8 @@ class Patrol():
             total_amount = total_amount * (HUNTER_BONUS["good_hunter"] / 10)
 
         game.clan.freshkill_pile.add_freshkill(total_amount)
+        if total_amount > 0:
+            self.results_text.append(f"Patrol managed to catch {total_amount} prey.")
 
     def handle_clan_relations(self, difference):
         """

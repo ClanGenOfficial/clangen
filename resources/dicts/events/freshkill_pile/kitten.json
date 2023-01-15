@@ -52,7 +52,7 @@
 	{
 		"camp": "any",
 		"tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "starving"],
-		"death_text": "m_c's stomach rumbles loudly, but they try to hide the fact, that they are starting.",
+		"death_text": "m_c's stomach rumbles loudly, but they try to hide the fact, that they are starving.",
 		"history_text": [null, null],
 		"cat_trait": ["quiet", "nervous", "insecure"],
 		"cat_skill": null,

@@ -3,7 +3,7 @@
         "patrol_id": "gen_hunt_mouse1",
         "biome": "Any",
         "season": "Any",
-        "tags": ["hunting"],
+        "tags": ["hunting", "small_prey"],
         "intro_text": "Your patrol catches scent of a mouse nearby.",
         "success_text": [
             "r_c locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. r_c waggles their haunches and leaps, pinning the mouse beneath a paw as they make the killing bite.",
@@ -43,7 +43,7 @@
         "patrol_id": "gen_hunt_rat1",
         "biome": "Any",
         "season": "Any",
-        "tags": ["hunting", "big_prey"],
+        "tags": ["hunting", "medium_prey0", "medium_prey1", "large_prey2"],
         "intro_text": "Your patrol comes across a large rat.",
         "success_text": [
             "Your patrol catches the rat! More freshkill!",
@@ -64,7 +64,7 @@
         "patrol_id": "gen_hunt_hare1",
         "biome": "Any",
         "season": "Any",
-        "tags": ["hunting", "big_prey"],
+        "tags": ["hunting", "large_prey"],
         "intro_text": "Your patrol comes across a large hare.",
         "success_text": [
             "Your patrol catches the hare!",
@@ -105,7 +105,7 @@
         "patrol_id": "gen_hunt_squirrel1",
         "biome": "Any",
         "season": "Any",
-        "tags": ["hunting", "small_prey"],
+        "tags": ["hunting", "medium_prey"],
         "intro_text": "Your patrol comes across a squirrel. It's engrossed in nibbling at a morsel beneath a tree.",
         "success_text": [
             "Stealthily, r_c stalks forward. The squirrel has no idea what's coming as the cat pounces on it and breaks its neck. r_c sends a silent thanks to StarClan for this prey.",
@@ -125,7 +125,7 @@
         "patrol_id": "gen_hunt_fish1",
         "biome": "Any",
         "season": "Any",
-        "tags": ["hunting", "small_prey"],
+        "tags": ["hunting", "medium_prey"],
         "intro_text": "Your patrol glimpses the shadow of a fish as they pad past a stream.",
         "success_text": [
             "r_c very carefully walks to the water's edge and waits for their chance. When the fish is near, they hook it out of the water with their claws. More freshkill!",
@@ -147,7 +147,7 @@
         "patrol_id": "gen_hunt_fish2",
         "biome": "Any",
         "season": "Any",
-        "tags": ["hunting", "big_prey"],
+        "tags": ["hunting", "large_prey"],
         "intro_text": "Your patrol sees the shadow of a school of fish in the river.",
         "decline_text": "Your patrol ignores the fish.",
         "chance_of_success": 50,
@@ -171,7 +171,7 @@
         "patrol_id": "gen_hunt_rabbit1",
         "biome": "Any",
         "season": "Any",
-        "tags": ["hunting", "poison_clan"],
+        "tags": ["hunting", "poison_clan", "large_prey0"],
         "intro_text": "r_c spots a rabbit up ahead but it seems to be acting strange. The patrol can see its tremors from a few fox-lengths away.",
         "success_text": [
             "r_c catches the rabbit and it is eaten as normal.",
@@ -195,7 +195,7 @@
         "patrol_id": "gen_hunt_rabbit2",
         "biome": "Any",
         "season": "Any",
-        "tags": ["hunting", "trust", "minor_injury", "big_prey"],
+        "tags": ["hunting", "trust", "minor_injury", "large_prey"],
         "intro_text": "A rabbit bursts out from cover, startled by the patrol.",
         "decline_text": "They watch it go, just as startled.",
         "chance_of_success": 40,
@@ -219,7 +219,7 @@
         "patrol_id": "gen_hunt_vision1",
         "biome": "Any",
         "season": "Any",
-        "tags": ["hunting", "respect", "trust", "jealousy"],
+        "tags": ["hunting", "respect", "trust", "jealousy", "medium_prey"],
         "intro_text": "As the patrol spreads out to hunt, r_c admits they think they had a vision from StarClan last night.",
         "decline_text": "The patrol doesn't talk about the vision.",
         "chance_of_success": 40,
@@ -227,8 +227,7 @@
         "success_text": [
             "The patrol talks to them about whether it was a real vision as they hunt.",
             "p_l takes r_c aside, giving them the full benefits of p_l's seniority and experience as they discuss r_c's vision.",
-            "s_c chooses to hunt with r_c, the spiritual warrior gently guiding the conversation. r_c feels deeply privileged and far more at peace after confiding in them.",
-            null
+            "s_c chooses to hunt with r_c, the spiritual warrior gently guiding the conversation. r_c feels deeply privileged and far more at peace after confiding in them."
         ],
         "fail_text": [
             "No one can make sense of the vision.",
@@ -244,7 +243,7 @@
     "patrol_id": "gen_hunt_vision2",
     "biome": "Any",
     "season": "Any",
-    "tags": ["hunting"],
+    "tags": ["hunting", "large_prey1", "large_prey2"],
     "intro_text": "As they head out to hunt, r_c thinks about the dream they had last night... was it sent by StarClan?",
     "decline_text": "They push it from their mind.",
     "chance_of_success": 40,
@@ -252,8 +251,7 @@
     "success_text": [
         "It definitely distracts them from the hunt, but r_c uses the time by themselves to put their thoughts in order. It was a sign from their ancestors. Now they need to figure out what to do next.",
         "Somehow hunting brings r_c to almost a meditative state, and not only are they fairly confident of their next steps having been given this vision, but they also bring back a good haul to the prey pile.",
-        "s_c often feels like StarClan walks with them, and this is just another instance on the path. They use the solo patrol to collect their thoughts, and by the time they pad home with a good catch, they're ready for the next step their vision hinted at.",
-        null
+        "s_c often feels like StarClan walks with them, and this is just another instance on the path. They use the solo patrol to collect their thoughts, and by the time they pad home with a good catch, they're ready for the next step their vision hinted at."
     ],
     "fail_text": [
         "r_c can't make sense of the vision."
@@ -268,7 +266,7 @@
     "patrol_id": "gen_hunt_sneakprey1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["hunting", "trust", "respect", "disrespect", "distrust", "no_app", "clan_to_r_c"],
+    "tags": ["hunting", "trust", "respect", "disrespect", "distrust", "no_app", "clan_to_r_c", "large_prey0", "huge_prey1"],
     "intro_text": "r_c is tempted to eat the prey they just caught.",
     "decline_text": "r_c decides against breaking the warrior code",
     "chance_of_success": 50,
@@ -289,7 +287,7 @@
     "patrol_id": "gen_hunt_sneakprey2",
     "biome": "Any",
     "season": "Any",
-    "tags": ["hunting", "apprentice", "trust", "respect", "disrespect", "distrust", "clan_to_r_c"],
+    "tags": ["hunting", "apprentice", "trust", "respect", "disrespect", "distrust", "clan_to_r_c", "large_prey0", "huge_prey1"],
     "intro_text": "r_c is tempted to eat the prey they just caught.",
     "decline_text": "r_c decides against breaking the warrior code",
     "chance_of_success": 50,
@@ -310,7 +308,7 @@
     "patrol_id": "gen_hunt_sneakprey3",
     "biome": "Any",
     "season": "Any",
-    "tags": ["hunting", "trust", "dislike", "respect", "disrespect", "distrust", "no_app", "clan_to_r_c", "patrol_to_r_c"],
+    "tags": ["hunting", "trust", "dislike", "respect", "disrespect", "distrust", "no_app", "clan_to_r_c", "patrol_to_r_c", "large_prey0", "huge_prey1"],
     "intro_text": "r_c is tempted to eat the prey they just caught.",
     "decline_text": "r_c decides against breaking the warrior code",
     "chance_of_success": 50,
@@ -332,7 +330,7 @@
     "patrol_id": "gen_hunt_sneakprey4",
     "biome": "Any",
     "season": "Any",
-    "tags": ["hunting", "trust", "dislike", "apprentice", "respect", "disrespect", "distrust", "clan_to_r_c", "patrol_to_r_c"],
+    "tags": ["hunting", "trust", "dislike", "apprentice", "respect", "disrespect", "distrust", "clan_to_r_c", "patrol_to_r_c", "medium_prey0", "huge_prey1"],
     "intro_text": "r_c is tempted to eat the prey they just caught.",
     "decline_text": "r_c decides against breaking the warrior code",
     "chance_of_success": 50,

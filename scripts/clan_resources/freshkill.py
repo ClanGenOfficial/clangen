@@ -94,7 +94,6 @@ class Freshkill_Pile():
 
     def add_freshkill(self, amount):
         """Add new fresh kill to the pile."""
-        print(f"ADDING: {amount} amount of fresh kill.")
         self.pile["expires_in_4"] += amount
 
     def time_skip(self, living_cats):
@@ -107,6 +106,7 @@ class Freshkill_Pile():
         self.total_amount = sum(self.pile.values())
 
         self.feed_cats(living_cats)
+        print(f"REMAINING AMOUNT: {self.total_amount} (needed: {self.amount_food_needed()})")
 
     def feed_cats(self, living_cats):
         """Handles to feed all living cats. This happens before the aging up."""
@@ -141,19 +141,19 @@ class Freshkill_Pile():
             else:
                 self.feed_group(relevant_group, status_)
 
-    def clan_has_enough_food(self):
-        """Check if the amount of the prey is enough for one moon."""
-        enough_prey = False
-
+    def amount_food_needed(self):
+        """Returns the amount of prey which the clan needs."""
         living_cats = list(filter(lambda cat_: not cat_.dead and not cat_.outside , Cat.all_cats.values()))
         sick_cats = [cat for cat in living_cats if cat.is_injured() or cat.is_ill()]
         queens = get_queens(living_cats, Cat.all_cats)
 
         needed_prey = [PREY_REQUIREMENT[cat.status] for cat in living_cats]
         needed_prey = sum(needed_prey) + len(sick_cats) * CONDITION_INCREASE + len(queens) * (PREY_REQUIREMENT["queen"] - PREY_REQUIREMENT["warrior"])
-        enough_prey = needed_prey <= self.total_amount
+        return needed_prey
 
-        return enough_prey
+    def clan_has_enough_food(self):
+        """Check if the amount of the prey is enough for one moon."""
+        return self.amount_food_needed() <= self.total_amount
 
     # ---------------------------------------------------------------------------- #
     #                               helper functions                               #
@@ -203,11 +203,14 @@ class Freshkill_Pile():
 
     def tactic_less_nutrition(self, group, status_):
         """With this tactic, the cats with the lowest nutrition will be feed first."""
+        group_ids = [cat.id for cat in group]
         sorted_nutrition = sorted(self.nutrition_info.items(), key=lambda x: x[1].percentage)
         # ration_prey < warrior will only eat half of the food they need
         ration_prey = True # TODO: handled with a setting
 
         for k, v in sorted_nutrition:
+            if k not in group_ids:
+                continue
             cat = Cat.all_cats[k]
             feeding_amount = PREY_REQUIREMENT[status_]
             needed_amount = feeding_amount
