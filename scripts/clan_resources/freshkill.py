@@ -141,6 +141,20 @@ class Freshkill_Pile():
             else:
                 self.feed_group(relevant_group, status_)
 
+    def clan_has_enough_food(self):
+        """Check if the amount of the prey is enough for one moon."""
+        enough_prey = False
+
+        living_cats = list(filter(lambda cat_: not cat_.dead and not cat_.outside , Cat.all_cats.values()))
+        sick_cats = [cat for cat in living_cats if cat.is_injured() or cat.is_ill()]
+        queens = get_queens(living_cats, Cat.all_cats)
+
+        needed_prey = [PREY_REQUIREMENT[cat.status] for cat in living_cats]
+        needed_prey = sum(needed_prey) + len(sick_cats) * CONDITION_INCREASE + len(queens) * (PREY_REQUIREMENT["queen"] - PREY_REQUIREMENT["warrior"])
+        enough_prey = needed_prey <= self.total_amount
+
+        return enough_prey
+
     # ---------------------------------------------------------------------------- #
     #                               helper functions                               #
     # ---------------------------------------------------------------------------- #
