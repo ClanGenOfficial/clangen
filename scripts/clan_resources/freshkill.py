@@ -29,6 +29,15 @@ FEEDING_ORDER = [
     "leader"
 ]
 
+HUNTER_BONUS = {"fantastic_hunter": 3, "great_hunter": 2, "good_hunter": 1}
+HUNTER_EXP_BONUS = {
+    "very_low": 1,
+    "low": 2,
+    "average": 3,
+    "high": 4,
+    "master": 5,
+    "max": 7
+}
 
 class Nutrition():
     """All the information about nutrition from one cat."""
@@ -49,7 +58,7 @@ class Nutrition():
     @property
     def current_score(self):
         return self._current_score
-    
+
     @current_score.setter
     def current_score(self, value):
         if value > self.max_score:
@@ -85,6 +94,7 @@ class Freshkill_Pile():
 
     def add_freshkill(self, amount):
         """Add new fresh kill to the pile."""
+        print(f"ADDING: {amount} amount of fresh kill.")
         self.pile["expires_in_4"] += amount
 
     def time_skip(self, living_cats):
@@ -97,7 +107,7 @@ class Freshkill_Pile():
         self.total_amount = sum(self.pile.values())
 
         self.feed_cats(living_cats)
-        
+
     def feed_cats(self, living_cats):
         """Handles to feed all living cats. This happens before the aging up."""
         self.update_nutrition(living_cats)
@@ -121,7 +131,7 @@ class Freshkill_Pile():
                 relevant_group = [cat for cat in living_cats if str(cat.status) == status_]
                 # remove all cats, which are also queens
                 relevant_group = [cat for cat in relevant_group if cat not in relevant_queens]
-            
+
             sick_cats = [cat for cat in relevant_group if cat.is_injured() or cat.is_ill()]
             needed_prey = len(relevant_group) * PREY_REQUIREMENT[status_] + len(sick_cats) * CONDITION_INCREASE
             enough_prey = needed_prey <= self.total_amount
@@ -141,14 +151,14 @@ class Freshkill_Pile():
         if tactic == "younger_first":
             sorted_group = sorted(group, key=lambda x: x.moons)
             self.feed_group(sorted_group, status_)
-        
+
         elif tactic == "less_nutrition_first":
             self.tactic_less_nutrition(group, status_)
-        
+
         elif tactic == "more_experience_first":
             sorted_group = sorted(group, key=lambda x: x.experience, reverse=True)
             self.feed_group(sorted_group, status_)
-        
+
         elif tactic == "hunter_first":
             ranking = {
                 "fantastic hunter": 0,
@@ -157,7 +167,7 @@ class Freshkill_Pile():
             }
             sorted_group = sorted(group, key=lambda x: ranking[x.skill] if x.skill in ranking else 3)
             self.feed_group(sorted_group, status_)
-        
+
         else:
             self.feed_group(group, status_)
 
@@ -238,7 +248,7 @@ class Freshkill_Pile():
         for cat in living_cats:
             # update the nutrition_info
             if cat.ID in old_nutrition_info:
-                self.nutrition_info[cat.ID] = old_nutrition_info[cat.ID] 
+                self.nutrition_info[cat.ID] = old_nutrition_info[cat.ID]
                 # check if the max_score is correct, otherwise update
                 if cat.moons == 6:
                     self.nutrition_info[cat.ID].max_score = PREY_REQUIREMENT[str(cat.status)] * 3
