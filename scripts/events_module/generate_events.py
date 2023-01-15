@@ -187,4 +187,10 @@ Use these to determine what corruption level the main cat should have, if releva
 “corruption_high” - main cat doesn't care about the wellbeing of others and will happily hurt other cats if it benefits them.
 You can mix and match corruption tags if you feel an event is on the line between two of them, the code will allow the event for a cat with either of the corruption levels tagged
 
+"death" < main cat will die, this tag is used by the freshkill pile events
+"malnourished" < main cat will get the illness malnourished, this tag is used by the freshkill pile events
+"starving" < main cat will get the illness starving, this tag is used by the freshkill pile events
+"malnourished_healed" < main cat will be healed from malnourished, this tag is used by the freshkill pile events
+"starving_healed" < main cat will be healed from starving, this tag is used by the freshkill pile events
+
 """

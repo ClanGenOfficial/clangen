@@ -552,7 +552,7 @@
         ]
     },
     "malnourished": {
-        "severity": "major",
+        "severity": "minor",
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -569,8 +569,8 @@
             "senior adult": 0,
             "elder": 0
         },
-        "duration": 1,
-        "medicine_duration": 1,
+        "duration": 100,
+        "medicine_duration": 100,
         "infectiousness": 0,
         "risks": [],
         "herbs": [
@@ -595,8 +595,8 @@
             "senior adult": 0,
             "elder": 0
         },
-        "duration": 1,
-        "medicine_duration": 1,
+        "duration": 100,
+        "medicine_duration": 100,
         "infectiousness": 0,
         "risks": [],
         "herbs": [
