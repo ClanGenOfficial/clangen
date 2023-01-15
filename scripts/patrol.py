@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+# -*- coding: ascii -*-
 from random import choice, randint, choices
 from math import floor
 
@@ -1397,33 +1399,33 @@ class PatrolEvent():
         same for: "gone" (r_c leaves the clan), "disaster_gone" (all leave the clan), "multi_gone" (2-4 cats leave the clan)
 
         #!FOR INJURIES, SEE CONDITIONS LIST FOR TAGGING
-        Tag all injury patrols that should give a scar with “scar” to ensure that classic mode will still scar the cat.
+        Tag all injury patrols that should give a scar with "scar" to ensure that classic mode will still scar the cat.
         If you'd like a patrol to have an injury from one of the injury pools, tag with the pool name
-        If you want to specify a certain condition, tag both with “injury” and the condition
+        If you want to specify a certain condition, tag both with "injury" and the condition
         This will work with any condition whether they are an illness, injury, or perm condition
-        If you want to ensure that a cat cannot die from the condition, tag with “non_lethal”
+        If you want to ensure that a cat cannot die from the condition, tag with "non_lethal"
         Keep in mind that minor injuries are already non lethal by default and permanent conditions will not be affected by this tag.
-        These tags will stack! So you could tag a patrol as “blunt_force_injury”, “injury”, “water in their lungs” to give all the 
+        These tags will stack! So you could tag a patrol as "blunt_force_injury", "injury", "water in their lungs" to give all the 
         conditions from blunt_force_injury AND water in their lungs as possible conditions for that patrol. 
-        Keep in mind that the “non_lethal” tag will apply to ALL the conditions for that patrol.
+        Keep in mind that the "non_lethal" tag will apply to ALL the conditions for that patrol.
         Right now, nonlethal shock is auto applied to all cats present when another cat dies. This may change in the future.
 
         HERB TAGGING:
         herbs are given on successes only
-        “random_herbs” <give a random assortment of herbs
+        "random_herbs" <give a random assortment of herbs
         
-        “herbs” < use to mark that this patrol gives a specific herb, use in conjunction with a herb tag. 
+        "herbs" < use to mark that this patrol gives a specific herb, use in conjunction with a herb tag. 
         
         Herb tags:
          reference herbs.json, you can use any herb name listed there
         
-        “many_herbs#” < to cause the patrol to give a large number of herbs automatically. Replace the # with the 
+        "many_herbs#" < to cause the patrol to give a large number of herbs automatically. Replace the # with the 
         outcome number (i.e. if you want success outcome 3 - which is the skill success - to give lots of herbs, then 
-        use “many_herbs3”)
+        use "many_herbs3")
         
         "no_herbs#" < to cause the patrol to give no herbs on a certain outcome, while still giving herbs on other 
         outcomes. Replace the # with the outcome number (i.e. if you want success outcome 3 - which is the skill 
-        success - to give no herbs, then use “no_herbs3”)
+        success - to give no herbs, then use "no_herbs3")
 
 
 
@@ -1462,16 +1464,16 @@ class PatrolEvent():
         ^^^ On a success, the above tagged values will increase (or if values are dislike and jealousy, 
         they will decrease).  On a fail, the tagged values will decrease (or if values are dislike and jealousy, they will increase)
         
-        “sacrificial” is for fail outcomes where a cat valiantly sacrifices themselves for the clan 
-        (such as the single cat big dog patrol) this will give the tagged for group (“clan_to_r_c”, “patrol_to_r_c”, ect) 
+        "sacrificial" is for fail outcomes where a cat valiantly sacrifices themselves for the clan 
+        (such as the single cat big dog patrol) this will give the tagged for group ("clan_to_r_c", "patrol_to_r_c", ect) 
         a big boost to respect and trust in that cat even though they failed (if the cat survives lol) Other tagged for values 
         will be disregarded for these fail outcomes.
-        “pos_fail” is for if you want the tagged relationship values to still be positive on a failure, rather than negative.
+        "pos_fail" is for if you want the tagged relationship values to still be positive on a failure, rather than negative.
         
-        “big_change” is for if you want the values to increment by a larger number.  This will make all tagged relationship values change by 10 instead of 5
+        "big_change" is for if you want the values to increment by a larger number.  This will make all tagged relationship values change by 10 instead of 5
         
-        “no_change_fail” to set all relationship value changes to 0 on fail outcomes
-        “no_change_success” to set all relationship value changes to 0 on success outcomes
+        "no_change_fail" to set all relationship value changes to 0 on fail outcomes
+        "no_change_success" to set all relationship value changes to 0 on success outcomes
 
         """
 

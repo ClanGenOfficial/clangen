@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: ascii -*-
 """This is not a unittest scripts so mybe this shouldn't be in /tests/...
 Alternatively to Python, the 'file' command on linux can also check encoding.
 
