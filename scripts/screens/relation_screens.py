@@ -1617,28 +1617,32 @@ class RelationshipScreen(Screens):
             self.inspect_cat_elements["image"] = pygame_gui.elements.UIImage(pygame.Rect((75, 145), (150, 150)),
                                                                              self.inspect_cat.large_sprite)
 
-            # Family Dot
-            # Only show family dot on cousins if first cousin mates are disabled.
-            if game.settings['first_cousin_mates']:
-                check_cousins = False
-            else:
-                check_cousins = self.inspect_cat.is_cousin(self.the_cat)
-
-            if self.inspect_cat.is_uncle_aunt(self.the_cat) or self.the_cat.is_uncle_aunt(self.inspect_cat) \
-                    or self.inspect_cat.is_grandparent(self.the_cat) or \
-                    self.the_cat.is_grandparent(self.inspect_cat) or \
-                    self.inspect_cat.is_parent(self.the_cat) or \
-                    self.the_cat.is_parent(self.inspect_cat) or \
-                    self.inspect_cat.is_sibling(self.the_cat) or check_cousins:
-                self.inspect_cat_elements['family'] = pygame_gui.elements.UIImage(pygame.Rect((45, 150), (18, 18)),
-                                                                                  image_cache.load_image(
-                                                                                      "resources/images/dot_big.png").convert_alpha())
-
+            related = False
             # Mate Heart
             if self.the_cat.mate is not None and self.the_cat.mate != '' and self.inspect_cat.ID == self.the_cat.mate:
                 self.inspect_cat_elements["mate"] = pygame_gui.elements.UIImage(pygame.Rect((45, 150), (22, 20)),
                                                                                 image_cache.load_image(
                                                                                     "resources/images/heart_big.png").convert_alpha())
+            else:
+                # Family Dot
+                # Only show family dot on cousins if first cousin mates are disabled.
+                if game.settings['first_cousin_mates']:
+                    check_cousins = False
+                else:
+                    check_cousins = self.inspect_cat.is_cousin(self.the_cat)
+
+                if self.inspect_cat.is_uncle_aunt(self.the_cat) or self.the_cat.is_uncle_aunt(self.inspect_cat) \
+                        or self.inspect_cat.is_grandparent(self.the_cat) or \
+                        self.the_cat.is_grandparent(self.inspect_cat) or \
+                        self.inspect_cat.is_parent(self.the_cat) or \
+                        self.the_cat.is_parent(self.inspect_cat) or \
+                        self.inspect_cat.is_sibling(self.the_cat) or check_cousins:
+                    related = True
+                    self.inspect_cat_elements['family'] = pygame_gui.elements.UIImage(pygame.Rect((45, 150), (18, 18)),
+                                                                                      image_cache.load_image(
+                                                                                          "resources/images/dot_big.png").convert_alpha())
+
+
 
             # Gender
             if self.inspect_cat.genderalign == 'female':
@@ -1683,32 +1687,33 @@ class RelationshipScreen(Screens):
                 col2 += "mate: none\n"
 
             # Relation info:
-            if self.the_cat.is_uncle_aunt(self.inspect_cat):
-                if self.inspect_cat.genderalign in ['female', 'trans female']:
-                    col2 += "related: niece"
-                elif self.inspect_cat.genderalign in ['male', 'trans male']:
-                    col2 += "related: nephew"
-                else:
-                    col2 += "related: sibling's child\n"
-            elif self.inspect_cat.is_uncle_aunt(self.the_cat):
-                if self.inspect_cat.genderalign in ['female', 'trans female']:
-                    col2 += "related: aunt"
-                elif self.inspect_cat.genderalign in ['male', 'trans male']:
-                    col2 += "related: uncle"
-                else:
-                    col2 += "related: parent's sibling"
-            elif self.inspect_cat.is_grandparent(self.the_cat):
-                col2 += "related: grandparent"
-            elif self.the_cat.is_grandparent(self.inspect_cat):
-                col2 += "related: grandchild"
-            elif self.inspect_cat.is_parent(self.the_cat):
-                col2 += "related: parent"
-            elif self.the_cat.is_parent(self.inspect_cat):
-                col2 += "related: child"
-            elif self.inspect_cat.is_sibling(self.the_cat) or self.the_cat.is_sibling(self.inspect_cat):
-                col2 += "related: sibling"
-            elif not game.settings["first_cousin_mates"] and self.inspect_cat.is_cousin(self.the_cat):
-                col2 += "related: cousin"
+            if related:
+                if self.the_cat.is_uncle_aunt(self.inspect_cat):
+                    if self.inspect_cat.genderalign in ['female', 'trans female']:
+                        col2 += "related: niece"
+                    elif self.inspect_cat.genderalign in ['male', 'trans male']:
+                        col2 += "related: nephew"
+                    else:
+                        col2 += "related: sibling's child\n"
+                elif self.inspect_cat.is_uncle_aunt(self.the_cat):
+                    if self.inspect_cat.genderalign in ['female', 'trans female']:
+                        col2 += "related: aunt"
+                    elif self.inspect_cat.genderalign in ['male', 'trans male']:
+                        col2 += "related: uncle"
+                    else:
+                        col2 += "related: parent's sibling"
+                elif self.inspect_cat.is_grandparent(self.the_cat):
+                    col2 += "related: grandparent"
+                elif self.the_cat.is_grandparent(self.inspect_cat):
+                    col2 += "related: grandchild"
+                elif self.inspect_cat.is_parent(self.the_cat):
+                    col2 += "related: parent"
+                elif self.the_cat.is_parent(self.inspect_cat):
+                    col2 += "related: child"
+                elif self.inspect_cat.is_sibling(self.the_cat) or self.the_cat.is_sibling(self.inspect_cat):
+                    col2 += "related: sibling"
+                elif not game.settings["first_cousin_mates"] and self.inspect_cat.is_cousin(self.the_cat):
+                    col2 += "related: cousin"
 
             self.inspect_cat_elements["col2"] = UITextBoxTweaked(col2, pygame.Rect((150, 335), (85, -1)),
                                                                  object_id="#cat_profile_info_box",
@@ -1833,33 +1838,35 @@ class RelationshipScreen(Screens):
                                                                                                  (18, 18)),
                                                                                      gender_icon)
 
-        # FAMILY DOT
-
-        # Only show family dot on cousins if first cousin mates are disabled.
-        if game.settings['first_cousin_mates']:
-            check_cousins = False
-        else:
-            check_cousins = the_relationship.cat_to.is_cousin(self.the_cat)
-
-        if the_relationship.cat_to.is_uncle_aunt(self.the_cat) or self.the_cat.is_uncle_aunt(the_relationship.cat_to) \
-                or the_relationship.cat_to.is_grandparent(self.the_cat) or \
-                self.the_cat.is_grandparent(the_relationship.cat_to) or \
-                the_relationship.cat_to.is_parent(self.the_cat) or \
-                self.the_cat.is_parent(the_relationship.cat_to) or \
-                the_relationship.cat_to.is_sibling(self.the_cat) or check_cousins:
-            self.relation_list_elements['relation_icon' + str(i)] = pygame_gui.elements.UIImage(pygame.Rect((pos_x + 5,
-                                                                                                             pos_y + 5),
-                                                                                                            (9, 9)),
-                                                                                                image_cache.load_image(
-                                                                                                    "resources/images/dot_big.png").convert_alpha())
-
+        related = False
         # MATE
         if self.the_cat.mate is not None and self.the_cat.mate != '' and the_relationship.cat_to.ID == self.the_cat.mate:
+
             self.relation_list_elements['mate_icon' + str(i)] = pygame_gui.elements.UIImage(
                 pygame.Rect((pos_x + 5, pos_y + 5),
                             (11, 10)),
                 image_cache.load_image(
                     "resources/images/heart_big.png").convert_alpha())
+        else:
+            # FAMILY DOT
+            # Only show family dot on cousins if first cousin mates are disabled.
+            if game.settings['first_cousin_mates']:
+                check_cousins = False
+            else:
+                check_cousins = the_relationship.cat_to.is_cousin(self.the_cat)
+
+            if the_relationship.cat_to.is_uncle_aunt(self.the_cat) or self.the_cat.is_uncle_aunt(the_relationship.cat_to) \
+                    or the_relationship.cat_to.is_grandparent(self.the_cat) or \
+                    self.the_cat.is_grandparent(the_relationship.cat_to) or \
+                    the_relationship.cat_to.is_parent(self.the_cat) or \
+                    self.the_cat.is_parent(the_relationship.cat_to) or \
+                    the_relationship.cat_to.is_sibling(self.the_cat) or check_cousins:
+                related = True
+                self.relation_list_elements['relation_icon' + str(i)] = pygame_gui.elements.UIImage(pygame.Rect((pos_x + 5,
+                                                                                                                 pos_y + 5),
+                                                                                                                (9, 9)),
+                                                                                                    image_cache.load_image(
+                                                                                                        "resources/images/dot_big.png").convert_alpha())
 
         # ------------------------------------------------------------------------------------------------------------ #
         # RELATION BARS
@@ -1874,7 +1881,18 @@ class RelationshipScreen(Screens):
         both_adult = the_relationship.cat_to.age in adult_ages and self.the_cat.age in adult_ages
         check_age = both_adult or same_age
 
-        if the_relationship.romantic_love > 49 and check_age:
+        # If they are not both adults, or the same age, OR they are related, don't display any romantic affection,
+        # even if they somehow have some. They should not be able to get any, but it never hurts to check.
+        if not check_age or related:
+            display_romantic = 0
+            # Print, just for bug checking. Again, they should not be able to get love towards their relative.
+            if the_relationship.romantic_love and related:
+                print(str(self.the_cat.name) + " has " + str(the_relationship.romantic_love) + " romantic love "
+                      "towards their relative, " + str(the_relationship.cat_to.name))
+        else:
+            display_romantic = the_relationship.romantic_love
+
+        if display_romantic > 49:
             text = "romantic love:"
         else:
             text = "romantic like:"
@@ -1887,7 +1905,7 @@ class RelationshipScreen(Screens):
                                                                                            pos_y + 65 + (
                                                                                                    barbar * bar_count)),
                                                                                           (94, 10)),
-                                                                              the_relationship.romantic_love,
+                                                                              display_romantic,
                                                                               positive_trait=True,
                                                                               dark_mode=game.settings['dark mode']
                                                                               )

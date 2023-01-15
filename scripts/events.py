@@ -830,8 +830,7 @@ class Events():
                     str(random_honor) + "."
                 ])
                 if cat.trait == 'bloodthirsty':
-                    ceremony.extend([
-                                        str(cat.name.prefix) + "paw has worked long and hard to earn their warrior name but " + str(
+                    ceremony.extend([str(cat.name.prefix) + "paw has worked long and hard to earn their warrior name but " + str(
                                             game.clan.leader.name) + " can't help but to shiver in unease as they name them " + str(
                                             cat.name) + " after their " + str(random_honor) + "."])
             else:
@@ -849,7 +848,8 @@ class Events():
                 "Newly-made apprentice " + str(cat.name) +
                 " touched noses with their new mentor, " +
                 mentor_name + ".",
-                str(cat.name) + " carefully touches noses with their new mentor, " + mentor_name + ", looking quite intimidated and nervous."
+                str(cat.name) + " carefully touches noses with their new mentor, " + mentor_name + ", looking quite intimidated and nervous.",
+                str(cat.name) + " excitedly touches noses with their new mentor, " + mentor_name + ", looking quite eager to start training."
             ])
             if cat.parent1 is not None and str(
                     cat_class.all_cats[cat.parent1].name) != str(
@@ -1328,7 +1328,8 @@ class Events():
                 involved_cats = [kit.ID]
                 kit_text = [
                     f'{name} finds an abandoned kit and names them {kit.name}.',
-                    f'A loner brings their kit named {kit.name.prefix} to the clan, stating they no longer can care for them.'
+                    f'A loner brings their kit named {kit.name.prefix} '
+                    f'to the clan, stating they no longer can care for them.'
                 ]
                 text = choice(kit_text)
                 # If it's the first one, there is also the cat that found them to be added to the involved list
@@ -1488,10 +1489,11 @@ class Events():
                     backstory=backstory_choice,
                     other_clan=otherclan
                 )
-                involved_cats = [created_cats[0].ID, cat.ID]
+                involved_cats = [c.ID for c in created_cats] + [cat.ID]
                 if backstory == 'abandoned3':
                     a_kit_text = ([
-                        f'A {otherclan}Clan queen decides to leave their litter with you. {str(parent1)} takes them as their own.'
+                        f'A {otherclan}Clan queen decides to leave their litter with you. {str(parent1)} '
+                        f'takes them as their own.'
                     ])
                     a_kit_text = choice(a_kit_text)
                     # game.other_clans_events_list.append(a_kit_text)

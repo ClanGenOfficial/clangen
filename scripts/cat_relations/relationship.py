@@ -121,7 +121,7 @@ class Relationship():
             string_to_replace = '(' + action[action.find("(") + 1:action.find(")")] + ')'
             self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name))
             game.cur_events_list.append(Single_Event(
-                f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)", "relation",
+                f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)", ["relation", "interaction"],
                 [self.cat_to.ID, self.cat_from.ID]))
             return
         elif self.cat_from.exiled and not self.cat_to.exiled:
@@ -129,7 +129,7 @@ class Relationship():
             string_to_replace = '(' + action[action.find("(") + 1:action.find(")")] + ')'
             self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name))
             game.cur_events_list.append(Single_Event(
-                f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)", "relation",
+                f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)", ["relation", "interaction"],
                 [self.cat_to.ID, self.cat_from.ID]))
             return
         elif self.cat_from.exiled and self.cat_to.exiled:
@@ -137,7 +137,7 @@ class Relationship():
             string_to_replace = '(' + action[action.find("(") + 1:action.find(")")] + ')'
             self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name))
             game.cur_events_list.append(Single_Event(
-                f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)", "relation",
+                f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)", ["relation", "interaction"],
                 [self.cat_to.ID, self.cat_from.ID]))
             return
 
