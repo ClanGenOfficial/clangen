@@ -15,13 +15,16 @@ class GenerateEvents:
     def get_event_dicts(event_triggered, cat_type, biome):
         events = None
         try:
+            file_path = f"{resource_directory}{event_triggered}/{cat_type}.json"
+            if biome:
+                file_path = f"{resource_directory}{event_triggered}/{biome}/{cat_type}.json"
             with open(
-                f"{resource_directory}{event_triggered}/{biome}/{cat_type}.json",
+                file_path,
                 "r",
             ) as read_file:
                 events = ujson.loads(read_file.read())
         except:
-            print(f"ERROR: Unable to load events for {cat_type} from biome {biome}.")
+            print(f"ERROR: Unable to load {event_triggered} events for {cat_type} from biome {biome}.")
 
         return events
 
@@ -53,11 +56,15 @@ class GenerateEvents:
         if cat_type in ["medicine cat", "medicine cat apprentice"]:
             cat_type = "medicine"
 
-        event_list.extend(
-            self.generate_events(
-                self.get_event_dicts(event_type, cat_type, "general")
+        biome = None
+        if event_type != "freshkill_pile":
+            biome = game.clan.biome.lower()
+
+            event_list.extend(
+                self.generate_events(
+                    self.get_event_dicts(event_type, cat_type, "general")
+                )
             )
-        )
 
         # skip the rest of the loading if there is an unrecognised cat type
         if cat_type not in game.clan.CAT_TYPES:
@@ -70,7 +77,7 @@ class GenerateEvents:
             event_list.extend(
                 self.generate_events(
                     self.get_event_dicts(
-                        event_type, cat_type, game.clan.biome.lower()
+                        event_type, cat_type, biome
                     )
                 )
             )
@@ -79,27 +86,27 @@ class GenerateEvents:
                 event_list.extend(
                     self.generate_events(
                         self.get_event_dicts(
-                            event_type, "warrior", game.clan.biome.lower()
+                            event_type, "warrior", biome
                         )
                     )
                 )
 
             if cat_type not in ["kitten", "leader"]:
-                event_list.extend(
-                    self.generate_events(
-                        self.get_event_dicts(event_type, "general", "general")
+                if event_type != "freshkill_pile":
+                    event_list.extend(
+                        self.generate_events(
+                            self.get_event_dicts(event_type, "general", "general")
+                        )
                     )
-                )
                 event_list.extend(
                     self.generate_events(
                         self.get_event_dicts(
-                            event_type, "general", game.clan.biome.lower()
+                            event_type, "general", biome
                         )
                     )
                 )
 
         return event_list
-
 
 class SingleEvent:
     def __init__(
@@ -122,7 +129,7 @@ class SingleEvent:
         self.cat_skill = cat_skill
         self.other_cat_trait = other_cat_trait
         self.other_cat_skill = other_cat_skill
-        
+
         # for injury event
         self.injury = injury
 

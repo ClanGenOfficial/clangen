@@ -48,5 +48,25 @@
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
+	},
+	{
+		"camp": "any",
+		"tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "starving"],
+		"death_text": "m_c's stomach rumbles loudly, but they try to hide the fact, that they are starting.",
+		"history_text": [null, null],
+		"cat_trait": ["quiet", "nervous", "insecure"],
+		"cat_skill": null,
+		"other_cat_trait": null,
+		"other_cat_skill": null
+	},
+	{
+		"camp": "any",
+		"tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "starving"],
+		"death_text": "m_c demand r_c to bring them prey, because they are really hungry.",
+		"history_text": [null, null],
+		"cat_trait": ["bossy", "impulsive", "attention-seeker", "noisy"],
+		"cat_skill": null,
+		"other_cat_trait": null,
+		"other_cat_skill": null
 	}
 ]
