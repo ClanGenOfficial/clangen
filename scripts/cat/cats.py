@@ -2203,6 +2203,9 @@ class Cat():
         try:
             with open('saves/' + game.clan.name + '/faded_cats/' + cat + ".json", 'r') as read_file:
                 cat_info = ujson.loads(read_file.read())
+        except AttributeError: # If loading cats is attempted before the clan is loaded, we would need to use this.
+            with open('saves/' + game.switches['clan_list'][0] + '/faded_cats/' + cat + ".json", 'r') as read_file:
+                cat_info = ujson.loads(read_file.read())
         except:
             print("Error in loading faded cat")
             return False
