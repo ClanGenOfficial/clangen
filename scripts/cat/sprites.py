@@ -235,7 +235,7 @@ class Sprites():
 
 
 sprites = Sprites(50)
-tiles = Sprites(64)
+#tiles = Sprites(64)
 
 for x in [
     'lineart', 'singlecolours', 'speckledcolours', 'tabbycolours',
@@ -266,8 +266,8 @@ for sprite in [
 ]:
     sprites.spritesheet(f"sprites/paralyzed/{sprite}.png", sprite)
 
-for x in ['dithered']:
-    tiles.spritesheet(f"sprites/{x}.png", x)
+# for x in ['dithered']:
+#     tiles.spritesheet(f"sprites/{x}.png", x)
 
 # Line art
 sprites.make_group('lineart', (0, 0), 'lines', sprites_y=5)
@@ -283,12 +283,18 @@ for a, i in enumerate(
         ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE']):
     sprites.make_group('eyes', (a, 0), f'eyes{i}')
     sprites.make_group('eyesextra', (a, 0), f'eyesextra{i}', sprites_y=2)
-sprites.make_group('eyes', (0, 1), 'eyesDARKBLUE')
-sprites.make_group('eyes', (1, 1), 'eyesBLUEYELLOW')
-sprites.make_group('eyes', (2, 1), 'eyesBLUEGREEN')
-sprites.make_group('eyesextra', (0, 1), 'eyesextraDARKBLUE', sprites_y=2)
-sprites.make_group('eyesextra', (1, 1), 'eyesextraBLUEYELLOW', sprites_y=2)
-sprites.make_group('eyesextra', (2, 1), 'eyesextraBLUEGREEN', sprites_y=2)
+for a, i in enumerate(
+        ['DARKBLUE', 'GREY', 'CYAN', 'EMERALD', 'HEATHERBLUE', 'SUNLITICE']):
+    sprites.make_group('eyes', (a, 1), f'eyes{i}')
+    sprites.make_group('eyesextra', (a, 1), f'eyesextra{i}', sprites_y=2)
+for a, i in enumerate(
+        ['COPPER', 'SAGE', 'BLUE2', 'PALEBLUE', 'BLUEYELLOW', 'BLUEGREEN']):
+    sprites.make_group('eyes', (a, 2), f'eyes{i}')
+    sprites.make_group('eyesextra', (a, 2), f'eyesextra{i}', sprites_y=2)
+for a, i in enumerate(
+        ['PALEYELLOW', 'GOLD', 'GREENYELLOW']):
+    sprites.make_group('eyes', (a, 3), f'eyes{i}')
+    sprites.make_group('eyesextra', (a, 3), f'eyesextra{i}', sprites_y=2)
 
 for a, i in enumerate(['FULLWHITE', 'ANY', 'TUXEDO', 'LITTLE', 'COLOURPOINT', 'VAN', 'ANY2']):
     sprites.make_group('whitepatches', (a, 0), f'white{i}')
@@ -595,7 +601,7 @@ sprites.make_group('skinextra', (3, 2), 'skinextraDARKBLUE', sprites_y=2)
 sprites.make_group('skinextra', (4, 2), 'skinextraBLUE', sprites_y=2)
 sprites.make_group('skinextra', (5, 2), 'skinextraLIGHTBLUE', sprites_y=2)
 
-tiles.make_group('dithered', (0, 0), 'terrain')
-tiles.make_group('dithered', (1, 0), 'terraintwo')
+# tiles.make_group('dithered', (0, 0), 'terrain')
+# tiles.make_group('dithered', (1, 0), 'terraintwo')
 
 sprites.load_scars()
