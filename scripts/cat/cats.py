@@ -408,21 +408,20 @@ class Cat():
         """
         self.injuries.clear()
         self.illnesses.clear()
-        if self.status == 'leader' and game.clan.leader_lives > 0:
-            return ""
-        elif self.status == 'leader' and game.clan.leader_lives > 0:
-            return ""
-        elif self.status == 'leader' and game.clan.leader_lives <= 0:
-            self.dead = True
-            game.clan.leader_lives = 0
-            if game.clan.instructor.df is False:
-                text = 'They have lost their last life and has travelled to StarClan.'
-                # game.birth_death_events_list.append(text)
-                return text
-            else:
-                text = 'They has lost their last life and has travelled to the Dark Forest.'
-                # game.birth_death_events_list.append(text)
-                return text
+        if self.status == 'leader':
+            if game.clan.leader_lives > 0:
+                return ""
+            elif game.clan.leader_lives <= 0:
+                self.dead = True
+                game.clan.leader_lives = 0
+                if game.clan.instructor.df is False:
+                    text = 'They have lost their last life and has travelled to StarClan.'
+                    # game.birth_death_events_list.append(text)
+                    return text
+                else:
+                    text = 'They has lost their last life and has travelled to the Dark Forest.'
+                    # game.birth_death_events_list.append(text)
+                    return text
         else:
             self.dead = True
 
@@ -1792,6 +1791,15 @@ class Cat():
         if new_mentor:
             self.__remove_mentor()
             self.__add_mentor(new_mentor)
+
+        # Check if current mentor is valid
+        if self.mentor:
+            mentor_cat = Cat.fetch_cat(self.mentor)  # This will return None if there is no current mentor
+            if not self.is_valid_mentor(mentor_cat):
+                self.__remove_mentor()
+            elif self.ID not in mentor_cat.apprentice:
+                mentor_cat.apprentice.append(self.ID)
+
         # Need to pick a random mentor if not specified
         if not self.mentor:
             potential_mentors = []
@@ -1808,13 +1816,7 @@ class Cat():
                 new_mentor = choice(potential_mentors)
             if new_mentor:
                 self.__add_mentor(new_mentor.ID)
-        # Check if current mentor is valid
-        if self.mentor:
-            mentor_cat = Cat.fetch_cat(self.mentor)  # This will return None if there is no current mentor
-            if not self.is_valid_mentor(mentor_cat):
-                self.__remove_mentor()
-            if self.ID not in mentor_cat.apprentice:
-                mentor_cat.apprentice.append(self.ID)
+
 
 
 # ---------------------------------------------------------------------------- #
