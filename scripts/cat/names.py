@@ -191,7 +191,7 @@ class Name():
         'BLUE': ['Blue', 'Blue', 'Ice', 'Sky', 'Lake', 'Frost', 'Water'],
         'DARKBLUE': ['Blue', 'Sky', 'Lake', 'Berry', 'Dark', 'Water', 'Deep'],
         'BLUEYELLOW': ['Yellow', 'Blue', 'Odd', 'One', 'Moon'],
-        'BLUEGREEN': ['Green', 'Blue', 'Odd', 'One', 'Clover']
+        'BLUEGREEN': ['Green', 'Blue', 'Odd', 'One', 'Clover'],
         'GREY': ['Grey', 'Stone', 'Silver', 'Ripple', 'Moon', 'Rain', 'Storm'],
         'CYAN': ['Sky', 'Blue', 'River', 'Rapid', 'Green'],
         'EMERALD': ['Emerald', 'Green', 'Shine', 'Blue', 'Pine'],
