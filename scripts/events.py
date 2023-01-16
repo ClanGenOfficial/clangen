@@ -1597,7 +1597,7 @@ class Events():
 
         # chance to kill leader: 1/100
         if not int(
-                random.random() * 1) and cat.status == 'leader' and not triggered_death and not cat.not_working():
+                random.random() * 100) and cat.status == 'leader' and not triggered_death and not cat.not_working():
             self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
             triggered_death = True
 
