@@ -703,7 +703,8 @@ class ProfileScreen(Screens):
 
         previous_cat = 0
         next_cat = 0
-        if self.the_cat.dead and not is_instructor and self.the_cat.df == game.clan.instructor.df:
+        if self.the_cat.dead and not is_instructor and self.the_cat.df == game.clan.instructor.df and \
+                not (self.the_cat.outside or self.the_cat.exiled):
             previous_cat = game.clan.instructor.ID
 
         if is_instructor:

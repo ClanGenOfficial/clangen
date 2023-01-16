@@ -144,19 +144,8 @@ class Events():
         # age up the clan
         game.clan.age += 1
 
-        # autosave
-        if game.settings.get('autosave') is True and game.clan.age % 5 == 0:
-            game.save_cats()
-            game.clan.save_clan()
-            game.clan.save_pregnancy(game.clan)
-
-        # change season
-        game.clan.current_season = game.clan.seasons[game.clan.age % 12]
-
         self.herb_destruction()
         self.herb_gather()
-
-        game.event_scroll_ct = 0
 
         if game.clan.game_mode in ["expanded", "cruel season"]:
             amount_per_med = get_amount_cat_for_one_medic(game.clan)
@@ -186,6 +175,7 @@ class Events():
                     random_cat = str(random.choice(list(Cat.all_cats.keys())))
 
                     if Cat.all_cats[random_cat].dead or Cat.all_cats[random_cat].outside:
+                        random_count += 1
                         continue
                     elif Cat.all_cats[random_cat].status != 'warrior':
                         random_count += 1
@@ -1699,20 +1689,19 @@ class Events():
         triggered_death = False
         # choose other cat
         possible_other_cats = list(filter(
-            lambda c: not c.dead and not c.outside, Cat.all_cats.values()
+            lambda c: not c.dead and not c.outside and (c.ID != cat.ID), Cat.all_cats.values()
         ))
 
-        other_cat = choice(possible_other_cats)
-        countdown = int(len(Cat.all_cats) / 2)
-        while cat == other_cat or other_cat.dead or other_cat.outside:
-            other_cat = choice(list(Cat.all_cats.values()))
-            countdown -= 1
-            if countdown <= 0:
-                return
+        # If there are possible other cats...
+        if possible_other_cats:
+            other_cat = choice(possible_other_cats)
 
-        if cat.status in ["apprentice", "medicine cat apprentice"] and not int(random.random() * 3):
-            if cat.mentor is not None:
-                other_cat = Cat.fetch_cat(cat.mentor)
+            if cat.status in ["apprentice", "medicine cat apprentice"] and not int(random.random() * 3):
+                if cat.mentor is not None:
+                    other_cat = Cat.fetch_cat(cat.mentor)
+        else:
+            # Otherwise, other_cat is None
+            other_cat = None
 
         # check if clan has kits, if True then clan has kits
         alive_kits = list(filter(

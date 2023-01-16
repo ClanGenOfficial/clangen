@@ -403,25 +403,26 @@ class Cat():
         that grief messages will align with body status
 
         died_by_condition - defaults to False, use this to mark if the cat is dying via a condition.
+
+        May return some additional text to add to the death event.
         """
         self.injuries.clear()
         self.illnesses.clear()
         if self.status == 'leader' and game.clan.leader_lives > 0:
-            return
+            return ""
         elif self.status == 'leader' and game.clan.leader_lives > 0:
-            return
+            return ""
         elif self.status == 'leader' and game.clan.leader_lives <= 0:
             self.dead = True
             game.clan.leader_lives = 0
             if game.clan.instructor.df is False:
-                text = str(game.clan.leader.name) + ' has lost their last life and has travelled to StarClan.'
+                text = 'They have lost their last life and has travelled to StarClan.'
                 # game.birth_death_events_list.append(text)
-                game.cur_events_list.append(Single_Event(text, "birth_death", game.clan.leader.ID))
+                return text
             else:
-                text = str(
-                    game.clan.leader.name) + ' has lost their last life and has travelled to the Dark Forest.'
+                text = 'They has lost their last life and has travelled to the Dark Forest.'
                 # game.birth_death_events_list.append(text)
-                game.cur_events_list.append(Single_Event(text, "birth_death", game.clan.leader.ID))
+                return text
         else:
             self.dead = True
 
@@ -445,6 +446,8 @@ class Cat():
 
         if game.clan.game_mode != 'classic':
             self.grief(body)
+
+        return ""
 
     def grief(self, body: bool):
         """
@@ -1803,7 +1806,8 @@ class Cat():
                 new_mentor = choice(priority_mentors)
             elif potential_mentors:  # length of list > 0
                 new_mentor = choice(potential_mentors)
-            self.__add_mentor(new_mentor.ID)
+            if new_mentor:
+                self.__add_mentor(new_mentor.ID)
         # Check if current mentor is valid
         if self.mentor:
             mentor_cat = Cat.fetch_cat(self.mentor)  # This will return None if there is no current mentor
