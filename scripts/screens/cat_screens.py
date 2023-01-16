@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+# -*- coding: ascii -*-
 from random import choice
 
 import pygame
@@ -106,7 +108,7 @@ def bs_blurb_text(cat):
     if backstory == 'kittypet1':
         bs_blurb = "This cat joined the Clan by choice after living life with Twolegs as a kittypet."
     if backstory == 'kittypet2':
-        bs_blurb = "This cat used to live on something called a “boat” with Twolegs, but decided to join the Clan."
+        bs_blurb = 'This cat used to live on something called a "boat" with Twolegs, but decided to join the Clan.'
     if backstory == 'rogue1':
         bs_blurb = "This cat joined the Clan by choice after living life as a rogue."
     if backstory == 'rogue2':
