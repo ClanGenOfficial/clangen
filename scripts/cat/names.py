@@ -192,6 +192,18 @@ class Name():
         'DARKBLUE': ['Blue', 'Sky', 'Lake', 'Berry', 'Dark', 'Water', 'Deep'],
         'BLUEYELLOW': ['Yellow', 'Blue', 'Odd', 'One', 'Moon'],
         'BLUEGREEN': ['Green', 'Blue', 'Odd', 'One', 'Clover']
+        'GREY': ['Grey', 'Stone', 'Silver', 'Ripple', 'Moon', 'Rain', 'Storm'],
+        'CYAN': ['Sky', 'Blue', 'River', 'Rapid', 'Green'],
+        'EMERALD': ['Emerald', 'Green', 'Shine', 'Blue', 'Pine'],
+        'PALEBLUE': ['Sky', 'River', 'Ripple', 'Day', 'Cloud'],
+        'PALEYELLOW': ['Yellow', 'Sun', 'Gold', 'Ray', 'Pale'],
+        'GOLD': ['Gold', 'Sun', 'Amber', 'Sap', 'Honey'],
+        'HEATHERBLUE': ['Heather', 'Lilac', 'Blue', 'Rosemary', 'Lavender'],
+        'COPPER': ['Copper', 'Red', 'Amber', 'Brown', 'Fire'],
+        'SAGE': ['Sage', 'Leaf', 'Olive', 'Bush', 'Clove'],
+        'BLUE2': ['Blue', 'Blue', 'Ice', 'Sky', 'Lake', 'Frost', 'Water'],
+        'SUNLITICE': ['Sun', 'Ice', 'Frost', 'Sunrise', 'Dawn', 'Dusk'],
+        'GREENYELLOW': ['Tawny', 'Hazel', 'Gold', 'Daisy', 'Sand']
     }
 
     loner_names = [
