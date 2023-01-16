@@ -235,7 +235,7 @@ class Sprites():
 
 
 sprites = Sprites(50)
-tiles = Sprites(64)
+#tiles = Sprites(64)
 
 for x in [
     'lineart', 'singlecolours', 'speckledcolours', 'tabbycolours',
@@ -266,8 +266,8 @@ for sprite in [
 ]:
     sprites.spritesheet(f"sprites/paralyzed/{sprite}.png", sprite)
 
-for x in ['dithered']:
-    tiles.spritesheet(f"sprites/{x}.png", x)
+# for x in ['dithered']:
+#     tiles.spritesheet(f"sprites/{x}.png", x)
 
 # Line art
 sprites.make_group('lineart', (0, 0), 'lines', sprites_y=5)
@@ -595,7 +595,7 @@ sprites.make_group('skinextra', (3, 2), 'skinextraDARKBLUE', sprites_y=2)
 sprites.make_group('skinextra', (4, 2), 'skinextraBLUE', sprites_y=2)
 sprites.make_group('skinextra', (5, 2), 'skinextraLIGHTBLUE', sprites_y=2)
 
-tiles.make_group('dithered', (0, 0), 'terrain')
-tiles.make_group('dithered', (1, 0), 'terraintwo')
+# tiles.make_group('dithered', (0, 0), 'terrain')
+# tiles.make_group('dithered', (1, 0), 'terraintwo')
 
 sprites.load_scars()
