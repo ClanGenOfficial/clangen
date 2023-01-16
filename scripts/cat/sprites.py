@@ -283,12 +283,18 @@ for a, i in enumerate(
         ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE']):
     sprites.make_group('eyes', (a, 0), f'eyes{i}')
     sprites.make_group('eyesextra', (a, 0), f'eyesextra{i}', sprites_y=2)
-sprites.make_group('eyes', (0, 1), 'eyesDARKBLUE')
-sprites.make_group('eyes', (1, 1), 'eyesBLUEYELLOW')
-sprites.make_group('eyes', (2, 1), 'eyesBLUEGREEN')
-sprites.make_group('eyesextra', (0, 1), 'eyesextraDARKBLUE', sprites_y=2)
-sprites.make_group('eyesextra', (1, 1), 'eyesextraBLUEYELLOW', sprites_y=2)
-sprites.make_group('eyesextra', (2, 1), 'eyesextraBLUEGREEN', sprites_y=2)
+for a, i in enumerate(
+        ['DARKBLUE', 'GREY', 'CYAN', 'EMERALD', 'HEATHERBLUE', 'SUNLITICE']):
+    sprites.make_group('eyes', (a, 1), f'eyes{i}')
+    sprites.make_group('eyesextra', (a, 1), f'eyesextra{i}', sprites_y=2)
+for a, i in enumerate(
+        ['COPPER', 'SAGE', 'BLUE2', 'PALEBLUE', 'BLUEYELLOW', 'BLUEGREEN']):
+    sprites.make_group('eyes', (a, 2), f'eyes{i}')
+    sprites.make_group('eyesextra', (a, 2), f'eyesextra{i}', sprites_y=2)
+for a, i in enumerate(
+        ['PALEYELLOW', 'GOLD', 'GREENYELLOW']):
+    sprites.make_group('eyes', (a, 3), f'eyes{i}')
+    sprites.make_group('eyesextra', (a, 3), f'eyesextra{i}', sprites_y=2)
 
 for a, i in enumerate(['FULLWHITE', 'ANY', 'TUXEDO', 'LITTLE', 'COLOURPOINT', 'VAN', 'ANY2']):
     sprites.make_group('whitepatches', (a, 0), f'white{i}')
