@@ -32,12 +32,6 @@ class Events():
 
     def one_moon(self):
         game.cur_events_list = []
-        game.relation_events_list = []
-        game.ceremony_events_list = []
-        game.birth_death_events_list = []
-        game.health_events_list = []
-        game.other_clans_events_list = []
-        game.misc_events_list = []
         game.herb_events_list = []
         game.switches['saved_clan'] = False
         self.new_cat_invited = False
@@ -1711,9 +1705,9 @@ class Events():
             Cat.all_cats.values()
         ))
 
-        # chance to kill leader
+        # chance to kill leader: 1/100
         if not int(
-                random.random() * 100) and cat.status == 'leader' and not triggered_death and not cat.not_working():  # 1/80
+                random.random() * 100) and cat.status == 'leader' and not triggered_death and not cat.not_working():
             self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
             triggered_death = True
 
