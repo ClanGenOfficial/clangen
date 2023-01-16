@@ -32,12 +32,6 @@ class Events():
 
     def one_moon(self):
         game.cur_events_list = []
-        game.relation_events_list = []
-        game.ceremony_events_list = []
-        game.birth_death_events_list = []
-        game.health_events_list = []
-        game.other_clans_events_list = []
-        game.misc_events_list = []
         game.herb_events_list = []
         game.switches['saved_clan'] = False
         self.new_cat_invited = False
