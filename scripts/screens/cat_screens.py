@@ -756,6 +756,8 @@ class ProfileScreen(Screens):
 
         # EYE COLOR
         output += 'eyes: ' + the_cat.eye_colour.lower()
+        if the_cat.eye_colour2:
+            output = output + ' and ' + the_cat.eye_colour2.lower()
         # NEWLINE ----------
         output += "\n"
 
