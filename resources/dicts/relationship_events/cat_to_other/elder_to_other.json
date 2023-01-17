@@ -82,5 +82,11 @@
         "neutral": [],
         "friendly": [],
         "close": []
+    },
+    "mediator": {
+        "unfriendly": [],
+        "neutral": [],
+        "friendly": [],
+        "close": []
     }
 }

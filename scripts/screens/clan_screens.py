@@ -270,7 +270,7 @@ class ClanScreen(Screens):
                 'medicine cat apprentice', 'medicine cat'
             ]:
                 Cat.all_cats[x].placement = choice(p['medicine place'])
-            elif Cat.all_cats[x].status == 'warrior':
+            elif Cat.all_cats[x].status in ['warrior', 'mediator']:
                 if i < 15:
                     Cat.all_cats[x].placement = choice([
                         choice(p['warrior place']),

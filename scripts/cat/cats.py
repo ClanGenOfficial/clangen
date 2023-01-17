@@ -64,6 +64,20 @@ class Cat():
         'elder': [120, 300]
     }
 
+    # This in is in reverse order: top of the list at the bottom
+    rank_sort_order = [
+        "kitten",
+        "elder",
+        "apprentice",
+        "warrior",
+        "mediator apprentice",
+        "mediator",
+        "medicine cat apprentice",
+        "medicine cat",
+        "deputy",
+        "leader"
+    ]
+
     gender_tags = {'female': 'F', 'male': 'M'}
 
     skills = [
@@ -451,7 +465,6 @@ class Cat():
 
         return text
 
-
     def grief(self, body: bool):
         """
         compiles grief moon event text
@@ -641,7 +654,6 @@ class Cat():
                 possible_strings.clear()
                 text = None
 
-
     def familial_grief(self, living_cat: Cat, body: str, neg: bool = False):
         """
         returns relevant grief strings for family members, if no relevant strings then returns None
@@ -724,7 +736,7 @@ class Cat():
             if game.clan is not None:
                 game.clan.new_medicine_cat(self)
 
-        if self.status == 'elder':
+        elif self.status == 'elder':
             self.update_mentor()
             self.skill = choice(self.elder_skills)
 
@@ -744,6 +756,10 @@ class Cat():
                 if game.clan.deputy.ID == self.ID:
                     game.clan.deputy = None
                     game.clan.deputy_predecessors += 1
+
+        elif self.status == 'mediator':
+            pass
+
 
         # update class dictionary
         self.all_cats[self.ID] = self
@@ -1782,7 +1798,6 @@ class Cat():
                 self.__add_mentor(new_mentor.ID)
 
 
-
 # ---------------------------------------------------------------------------- #
 #                                 relationships                                #
 # ---------------------------------------------------------------------------- #
@@ -2227,22 +2242,8 @@ class Cat():
 
     @staticmethod
     def rank_order(cat: Cat):
-        if cat.status == "leader":
-            return 8
-        elif cat.status == "deputy":
-            return 7
-        elif cat.status == "medicine cat":
-            return 6
-        elif cat.status == "medicine cat apprentice":
-            return 5
-        elif cat.status == "warrior":
-            return 4
-        elif cat.status == "apprentice":
-            return 3
-        elif cat.status == "elder":
-            return 2
-        elif cat.status == "kitten":
-            return 1
+        if cat.status in Cat.rank_sort_order:
+            return Cat.rank_sort_order.index(cat.status)
         else:
             return 0
 

@@ -301,6 +301,12 @@ class ProfileScreen(Screens):
                 self.change_screen('ceremony screen')
             elif event.ui_element == self.profile_elements["med_den"]:
                 self.change_screen('med den screen')
+            elif event.ui_element == self.profile_elements["mediator_den"]:
+                self.change_screen('mediation screen')
+            elif event.ui_element == self.profile_elements["mediator_button"]:
+                self.the_cat.status_change('mediator', resort=True)
+                self.clear_profile()
+                self.build_profile()
             else:
                 self.handle_tab_events(event)
 
@@ -550,6 +556,12 @@ class ProfileScreen(Screens):
             or for changes in the profile."""
         self.the_cat = Cat.all_cats.get(game.switches["cat"])
 
+        #Temp Mediator button
+        self.profile_elements["mediator_button"] = pygame_gui.elements.UIButton(pygame.Rect((500, 120), (-1, -1)),
+                                                                                "switch to mediator")
+        if self.the_cat.status not in ["warrior", "elder"]:
+            self.profile_elements["mediator_button"].disable()
+
         # use these attributes to create differing profiles for starclan cats etc.
         is_sc_instructor = False
         is_df_instructor = False
@@ -621,12 +633,24 @@ class ProfileScreen(Screens):
                                                          "",
                                                          object_id="#med_den_button"
                                                          )
-        self.profile_elements["med_den"].hide()
         if not (self.the_cat.dead or self.the_cat.outside) and (
                 self.the_cat.status in ['medicine cat', 'medicine cat apprentice'] or
                 self.the_cat.is_ill() or
                 self.the_cat.is_injured()):
             self.profile_elements["med_den"].show()
+        else:
+            self.profile_elements["med_den"].hide()
+
+        # If a cat if a mediator, show the mediator button
+        self.profile_elements["mediator_den"] = UIImageButton(pygame.Rect
+                                                              ((100, 380), (151, 28)),
+                                                              "Mediation")
+        if not (self.the_cat.dead or self.the_cat.outside) and \
+                self.the_cat.status in ['mediator']:
+            self.profile_elements["mediator_den"].show()
+        else:
+            self.profile_elements["mediator_den"].hide()
+
 
         # Determine where the next and previous cat buttons lead
         self.determine_previous_and_next_cat()

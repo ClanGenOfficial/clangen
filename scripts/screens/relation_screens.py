@@ -2048,3 +2048,22 @@ class RelationshipScreen(Screens):
 
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]
+
+
+class MediationScreen(Screens):
+    def __init__(self, name=None):
+        super().__init__(name)
+        self.back_button = None
+
+    def handle_event(self, event):
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            if event.ui_element == self.back_button:
+                self.change_screen('profile screen')
+
+    def screen_switches(self):
+        self.back_button = UIImageButton(pygame.Rect((25, 25), (105, 30)), "", object_id="#back_button")
+
+    def exit_screen(self):
+        self.back_button.kill()
+        del self.back_button
+

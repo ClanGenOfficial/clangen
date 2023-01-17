@@ -127,5 +127,11 @@
             "feels like they'll never accomplish as much as (cat)."
         ],
         "close": []
+    },
+    "mediator": {
+        "unfriendly": [],
+        "neutral": [],
+        "friendly": [],
+        "close": []
     }
 }

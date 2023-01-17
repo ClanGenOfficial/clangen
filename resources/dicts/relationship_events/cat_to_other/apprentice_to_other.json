@@ -186,5 +186,11 @@
             "asks (cat) for help resolving an argument with a friend.",
             "tells (cat) that they're an amazing storyteller."
         ]
+    },
+    "mediator": {
+        "unfriendly": [],
+        "neutral": [],
+        "friendly": [],
+        "close": []
     }
 }

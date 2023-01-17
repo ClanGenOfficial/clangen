@@ -131,5 +131,11 @@
             "talks with (cat) about difficult decisions.",
             "tells (cat) about their last encounter with StarClan."
         ]
+    },
+    "mediator": {
+        "unfriendly": [],
+        "neutral": [],
+        "friendly": [],
+        "close": []
     }
 }

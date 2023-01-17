@@ -128,5 +128,11 @@
             "feels like they'll never accomplish as much as (cat).",
             "tells (cat) about their last encounter with StarClan."
         ]
+    },
+    "mediator": {
+        "unfriendly": [],
+        "neutral": [],
+        "friendly": [],
+        "close": []
     }
 }

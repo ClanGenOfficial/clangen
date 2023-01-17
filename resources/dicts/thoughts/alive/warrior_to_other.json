@@ -8,6 +8,7 @@
         "leader": [],
         "deputy": [],
         "elder": [],
+        "mediator": [],
         "all": []
     },
     "alive": {
@@ -23,6 +24,7 @@
         "leader": [],
         "deputy": [],
         "elder": [],
+        "mediator": [],
         "all": []
     },
     "all": [
