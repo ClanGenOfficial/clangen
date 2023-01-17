@@ -206,7 +206,7 @@
     "success_text": [
         "r_c heads off to map out a field of boulders they've always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of their home turf. It's always worth making sure their mental map is up to date.",
         "r_c rounds a corner and stumbles across a tiny, perfect, sheltered gully, thick with bushes and prey scent.",
-        "s_c rounds a corner and stumbles across a  tiny, perfect, sheltered gully, thick with bushes and prey scent. Further investigation shows it will be sheltered from almost all wind directions, and s_c purrs. This reliable prey source will be important during Leaf-bare.",
+        "s_c rounds a corner and stumbles across a  tiny, perfect, sheltered gully, thick with bushes and prey scent. Further investigation shows it will be sheltered from almost all wind directions, and s_c purrs. This reliable prey source will be important during leaf-bare.",
         "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way."
     ],
     "fail_text": [
@@ -233,7 +233,7 @@
     "success_text": [
         "r_c heads off to map out a field of boulders they've always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of their home turf. It's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
         "r_c rounds a corner and stumbles across a tiny, perfect, sheltered gully, thick with bushes and prey scent. Purring, they take the opportunity for a small moment of peace, stretching out in the shade to relax.",
-        "s_c rounds a corner and stumbles across a tiny, perfect, sheltered gully, thick with bushes and prey scent. Further investigation shows it will be sheltered from almost all wind directions, and s_c purrs. This reliable prey source will be important during Leaf-bare, and its discovery helps to ease one of the many worries on the deputy's mind.",
+        "s_c rounds a corner and stumbles across a tiny, perfect, sheltered gully, thick with bushes and prey scent. Further investigation shows it will be sheltered from almost all wind directions, and s_c purrs. This reliable prey source will be important during leaf-bare, and its discovery helps to ease one of the many worries on the deputy's mind.",
         "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way."
     ],
     "fail_text": [
@@ -260,7 +260,7 @@
     "success_text": [
         "r_c heads off to map out a field of boulders they've always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of their home turf. It's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
         "r_c rounds a corner and stumbles across a tiny, perfect, sheltered gully, thick with bushes and prey scent. Purring, they take the opportunity for a small moment of peace, stretching out in the shade to relax.",
-        "s_c rounds a corner and stumbles across a tiny, perfect, sheltered gully, thick with bushes and prey scent. Further investigation shows it will be sheltered from almost all wind directions, and s_c purrs. This reliable prey source will be important during Leaf-bare, and its discovery helps to ease one of the many worries on the leader's mind.",
+        "s_c rounds a corner and stumbles across a tiny, perfect, sheltered gully, thick with bushes and prey scent. Further investigation shows it will be sheltered from almost all wind directions, and s_c purrs. This reliable prey source will be important during leaf-bare, and its discovery helps to ease one of the many worries on the leader's mind.",
         "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way."
     ],
     "fail_text": [
@@ -566,7 +566,7 @@
 	"success_text": [
     	"app1 screws up their face in confusion - weren't they here to learn about hummingbirds, not eagles? p_l, in a low whisper, carefully points out the tiny nest sitting in the shadow of the big one. Hummingbirds use the big predator's nest to conceal and protect their own tiny ones, they explain.",
     	"p_l tells app1 to watch carefully - not the rowdy eagle nest, but the tiny home in its shadow, where a female hummingbird climbs out and takes to the wing, headed for the mountain meadows. app1's jaw drops as she whizzes past, nearly soundless, blindingly fast, and zigzagging through the trees in a way app1 swore was impossible for birds.",
-    	"As they hide, watching the hummingbird nest in the shadow of the eagle nest, s_c tells app1 how the hummingbird arrival signals the start of Greenleaf, and how the Clan will know it's Leaf-fall when the birds leave their territory. The more hummingbirds there are that year, the better a Greenleaf it'll be."
+    	"As they hide, watching the hummingbird nest in the shadow of the eagle nest, s_c tells app1 how the hummingbird arrival signals the start of Greenleaf, and how the Clan will know it's leaf-fall when the birds leave their territory. The more hummingbirds there are that year, the better a Greenleaf it'll be."
 	],
 	"fail_text": [
     	"app1 refuses to believe that going near an eagle nest could ever possibly be safe and flatly refuses to go.",
@@ -620,7 +620,7 @@
 	"success_text": [
     	"app1 screws up their face in confusion - weren't they here to learn about hummingbirds, not eagles? p_l, in a low whisper, carefully points out the tiny nest sitting in the shadow of the big one. Hummingbirds use the big predator's nest to conceal and protect their own tiny ones, they explain, astonishing app2.",
     	"p_l tells the apprentices to watch carefully - not the rowdy eagle nest, but the tiny home in its shadow, where a female hummingbird climbs out and takes to the wing, headed for the mountain meadows. app1's jaw drops as she whizzes past, nearly soundless, blindingly fast, and zigzagging through the trees in a way app1 swore was impossible for birds.",
-    	"As they hide, watching the hummingbird nest in the shadow of the eagle nest, s_c tells the apprentices how the hummingbird arrival signals the start of Greenleaf, and how the Clan will know it's Leaf-fall when the birds leave their territory. The more hummingbirds there are that year, the better a Greenleaf it'll be."
+    	"As they hide, watching the hummingbird nest in the shadow of the eagle nest, s_c tells the apprentices how the hummingbird arrival signals the start of Greenleaf, and how the Clan will know it's leaf-fall when the birds leave their territory. The more hummingbirds there are that year, the better a Greenleaf it'll be."
 	],
 	"fail_text": [
     	"app1 refuses to believe that going near an eagle nest could ever possibly be safe and flatly refuses to go. app2 tries to comfort them, but the patrol is called off.",

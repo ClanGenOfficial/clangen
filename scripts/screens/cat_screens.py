@@ -657,7 +657,7 @@ class ProfileScreen(Screens):
             if is_sc_instructor:
                 self.profile_elements["prevent_fading_text"] = pygame_gui.elements.UILabel(
                     pygame.Rect((85, 390), (-1, 30)),
-                    "The Starclan Guide will never fade",
+                    "The StarClan Guide will never fade",
                     object_id=get_text_box_theme("#cat_profile_info_box"))
             elif is_df_instructor:
                 self.profile_elements["prevent_fading_text"] = pygame_gui.elements.UILabel(
@@ -2395,10 +2395,10 @@ class CeremonyScreen(Screens):
                              cat.virtues[8] + '.'
         else:
             if cat.trait == "bloodthirsty":
-                prev_lead_text = prev_lead + ' one of Starclan\'s oldest leaders, looks at the new leader with a conflicted expression. They give a last life, the gift of ' + \
+                prev_lead_text = prev_lead + ' one of StarClan\'s oldest leaders, looks at the new leader with a conflicted expression. They give a last life, the gift of ' + \
                              cat.virtues[8] + '.'
             else:
-                prev_lead_text = prev_lead + ' one of Starclan\'s oldest leaders, looks at the new leader with pride. They give a last life, the gift of ' + \
+                prev_lead_text = prev_lead + ' one of StarClan\'s oldest leaders, looks at the new leader with pride. They give a last life, the gift of ' + \
                                 cat.virtues[8] + '.'
         if known[8]:
             if cat.trait == "bloodthirsty":
