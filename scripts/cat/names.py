@@ -43,6 +43,10 @@ class Name():
         'Calico': ['stripe', 'dapple', 'patch', 'patch'],
         'Smoke': ['fade', 'dusk', 'dawn', 'smoke'],
         'Ticked': ['spots', 'pelt', 'speckle', 'freckle'],
+        'Mackerel': ['stripe', 'feather', 'leaf', 'stripe', 'fern'],
+        'Classic': ['stripe', 'feather', 'leaf', 'stripe', 'fern'],
+        'Sokoke': ['stripe', 'feather', 'leaf', 'stripe', 'fern'],
+        'Agouti': ['back', 'pelt', 'fur']
     }
 
     tortie_pelt_suffixes = {
@@ -147,7 +151,7 @@ class Name():
             'Grey', 'Shade', 'Raven', 'Crow', 'Stone', 'Dark', 'Night',
             'Smoke', 'Shadow'
         ],
-        'BLACK': [
+        'GHOST': [
             'Black', 'Black', 'Shade', 'Crow', 'Raven', 'Ebony', 'Dark',
             'Night', 'Shadow', 'Scorch', 'Midnight'
         ],
@@ -180,7 +184,11 @@ class Name():
             'Acorn', 'Mud', "Deer"
         ],
         'DARKBROWN':
-        ['Brown', 'Shade', 'Dark', 'Night', 'Russet', 'Rowan', 'Mud']}
+        ['Brown', 'Shade', 'Dark', 'Night', 'Russet', 'Rowan', 'Mud'],
+        'BLACK': [
+            'Black', 'Black', 'Shade', 'Crow', 'Raven', 'Ebony', 'Dark',
+            'Night', 'Shadow', 'Scorch', 'Midnight'
+        ]}
 
     eye_prefixes = {
         'YELLOW': ['Yellow', 'Moon', 'Daisy', 'Honey', 'Light'],
@@ -203,7 +211,7 @@ class Name():
         'SAGE': ['Sage', 'Leaf', 'Olive', 'Bush', 'Clove'],
         'BLUE2': ['Blue', 'Blue', 'Ice', 'Sky', 'Lake', 'Frost', 'Water'],
         'SUNLITICE': ['Sun', 'Ice', 'Frost', 'Sunrise', 'Dawn', 'Dusk'],
-        'YELLOWGREEN': ['Tawny', 'Hazel', 'Gold', 'Daisy', 'Sand']
+        'GREENYELLOW': ['Tawny', 'Hazel', 'Gold', 'Daisy', 'Sand']
     }
 
     loner_names = [
