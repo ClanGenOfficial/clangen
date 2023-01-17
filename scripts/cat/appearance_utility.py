@@ -148,10 +148,15 @@ def init_eyes(cat):
             ])
         hit = randint(0, 200)
         if hit == 0:
-            cat.eye_colour2 = choice(eye_colours)
-            #force second color to be different
-            while cat.eye_colour2 == cat.eye_colour: 
-                cat.eye_colour2 = choice(eye_colours)
+            if cat.eye_colour in yellow_eyes:
+                eye_choice = choice([blue_eyes, green_eyes])
+                cat.eye_colour2 = choice(eye_choice)
+            elif cat.eye_colour in blue_eyes:
+                eye_choice = choice([yellow_eyes, green_eyes])
+                cat.eye_colour2 = choice(eye_choice)
+            elif cat.eye_colour in green_eyes:
+                eye_choice = choice([yellow_eyes, blue_eyes])
+                cat.eye_colour2 = choice(eye_choice)
 
 
 def init_pelt(cat):
@@ -275,6 +280,14 @@ def init_pattern(cat):
             cat.tortiepattern = 'tortiesmoke'
         elif cat.tortiebase == 'speckled':
             cat.tortiepattern = 'tortiespeckled'
+        elif cat.tortiebase == 'mackerel':
+            cat.tortiepattern = 'tortiemackerel'
+        elif cat.tortiebase == 'classic':
+            cat.tortiepattern = 'tortieclassic'
+        elif cat.tortiebase == 'sokoke':
+            cat.tortiepattern = 'tortiesokoke'
+        elif cat.tortiebase == 'agouti':
+            cat.tortiepattern = 'tortieagouti'
         else:
             cat.tortiepattern = 'tortietabby'
     else:
@@ -282,7 +295,7 @@ def init_pattern(cat):
         cat.tortiepattern = None
         cat.tortiecolour = None
     if cat.pelt.name in ['Calico', 'Tortie'] and cat.pelt.colour is not None:
-        if cat.pelt.colour in ["BLACK", "DARKBROWN"]:
+        if cat.pelt.colour in ["BLACK", "DARKBROWN", "GHOST"]:
             cat.pattern = choice(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR', 'GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR',
                                     'DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR'])
         elif cat.pelt.colour in ["DARKGREY", "BROWN"]:
