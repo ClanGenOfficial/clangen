@@ -636,7 +636,6 @@ class Events():
                     else:
                         chance = int(random.random() * 41)
 
-                    chance = 1
                     if chance in range(1, 10):
                         if cat.trait in ['polite', 'quiet', 'sweet', 'daydreamer']:
                             chance = 1
