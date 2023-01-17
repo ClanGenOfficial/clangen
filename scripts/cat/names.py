@@ -203,7 +203,7 @@ class Name():
         'SAGE': ['Sage', 'Leaf', 'Olive', 'Bush', 'Clove'],
         'BLUE2': ['Blue', 'Blue', 'Ice', 'Sky', 'Lake', 'Frost', 'Water'],
         'SUNLITICE': ['Sun', 'Ice', 'Frost', 'Sunrise', 'Dawn', 'Dusk'],
-        'GREENYELLOW': ['Tawny', 'Hazel', 'Gold', 'Daisy', 'Sand']
+        'YELLOWGREEN': ['Tawny', 'Hazel', 'Gold', 'Daisy', 'Sand']
     }
 
     loner_names = [
