@@ -562,6 +562,7 @@ class Events():
                         text = f'{str(game.clan.deputy.name)} has received their nine lives and became the ' \
                                f'new leader of the Clan. They feel like they are not ready for this new ' \
                                f'responsibility, but will try their best to do what is right for the Clan.'
+
                 # game.ceremony_events_list.append(text)
                 text += f"\nVisit {str(game.clan.deputy.name)}'s profile to see their full leader ceremony."
 
@@ -635,6 +636,7 @@ class Events():
                     else:
                         chance = int(random.random() * 41)
 
+                    chance = 1
                     if chance in range(1, 10):
                         if cat.trait in ['polite', 'quiet', 'sweet', 'daydreamer']:
                             chance = 1
