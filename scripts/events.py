@@ -562,6 +562,7 @@ class Events():
                         text = f'{str(game.clan.deputy.name)} has received their nine lives and became the ' \
                                f'new leader of the Clan. They feel like they are not ready for this new ' \
                                f'responsibility, but will try their best to do what is right for the Clan.'
+
                 # game.ceremony_events_list.append(text)
                 text += f"\nVisit {str(game.clan.deputy.name)}'s profile to see their full leader ceremony."
 
