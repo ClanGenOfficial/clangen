@@ -413,7 +413,7 @@ class Cat():
         text = ""
         if self.status == 'leader':
             if game.clan.leader_lives > 0:
-                return
+                return ""
             elif game.clan.leader_lives <= 0:
                 self.dead = True
                 game.clan.leader_lives = 0
