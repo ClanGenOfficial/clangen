@@ -234,6 +234,118 @@ class Bengal():
         else:
             return f"{self.colour} bengal{self.length}"
 
+class Mackerel():
+    name = "Mackerel"
+    sprites = {1: 'mackerel', 2: 'white'}
+    white_patches = [
+        'LITTLE', 'LITTLECREAMY', 'LIGHTTUXEDO', 'BUZZARDFANG', 'TIP', 'BLAZE', 
+        'BIB', 'VEE', 'PAWS', 'BELLY', 'TAILTIP', 'TOES', 'BROKENBLAZE', 'LILTWO',
+        'SCOURGE', 'TOESTAIL', 'RAVENPAW', 'HONEY',
+        'TUXEDO', 'TUXEDOCREAMY', 'FANCY', 'UNDERS', 'DAMIEN', 'SKUNK',
+        'MITAINE', 'SQUEAKS', 'STAR',
+        'ANY', 'ANYCREAMY', 'ANY2', 'ANY2CREAMY', 'BROKEN', 'FRECKLES', 'RINGTAIL', 
+        'HALFFACE', 'PANTS2', 'GOATEE', 'PRINCE', 'FAROFA', 'MISTER', 'PANTS', 
+        'REVERSEPANTS', 'HALFWHITE', 'APPALOOSA', 'PIEBALD', 'CURVED', 'GLASS', 
+        'VAN', 'VANCREAMY', 'ONEEAR', 'LIGHTSONG', 'TAIL', 'HEART', 'MOORISH',
+        'MASKMANTLE', 'APRON', 'CAPSADDLE',
+        'COLOURPOINT', 'COLOURPOINTCREAMY', 'RAGDOLL', 'SEPIAPOINT', 'MINKPOINT', 
+        'SEALPOINT','VITILIGO', 'VITILIGO2'
+
+    ]
+    def __init__(self, colour, white, length):
+        self.white = white  # boolean; does cat have white on it or no
+        self.colour = colour
+        self.length = length
+    def __repr__(self):
+        if self.white:
+            return f"white and {self.colour} mackerel tabby{self.length}"
+        else:
+            return f"{self.colour} mackerel tabby{self.length}"
+
+class Classic():
+    name = "Classic"
+    sprites = {1: 'classic', 2: 'white'}
+    white_patches = [
+        'LITTLE', 'LITTLECREAMY', 'LIGHTTUXEDO', 'BUZZARDFANG', 'TIP', 'BLAZE', 
+        'BIB', 'VEE', 'PAWS', 'BELLY', 'TAILTIP', 'TOES', 'BROKENBLAZE', 'LILTWO',
+        'SCOURGE', 'TOESTAIL', 'RAVENPAW', 'HONEY',
+        'TUXEDO', 'TUXEDOCREAMY', 'FANCY', 'UNDERS', 'DAMIEN', 'SKUNK',
+        'MITAINE', 'SQUEAKS', 'STAR',
+        'ANY', 'ANYCREAMY', 'ANY2', 'ANY2CREAMY', 'BROKEN', 'FRECKLES', 'RINGTAIL', 
+        'HALFFACE', 'PANTS2', 'GOATEE', 'PRINCE', 'FAROFA', 'MISTER', 'PANTS', 
+        'REVERSEPANTS', 'HALFWHITE', 'APPALOOSA', 'PIEBALD', 'CURVED', 'GLASS', 
+        'VAN', 'VANCREAMY', 'ONEEAR', 'LIGHTSONG', 'TAIL', 'HEART', 'MOORISH',
+        'MASKMANTLE', 'APRON', 'CAPSADDLE',
+        'COLOURPOINT', 'COLOURPOINTCREAMY', 'RAGDOLL', 'SEPIAPOINT', 'MINKPOINT', 
+        'SEALPOINT','VITILIGO', 'VITILIGO2'
+
+    ]
+    def __init__(self, colour, white, length):
+        self.white = white  # boolean; does cat have white on it or no
+        self.colour = colour
+        self.length = length
+    def __repr__(self):
+        if self.white:
+            return f"white and {self.colour} classic tabby{self.length}"
+        else:
+            return f"{self.colour} classic tabby{self.length}"
+
+class Sokoke():
+    name = "Sokoke"
+    sprites = {1: 'sokoke', 2: 'white'}
+    white_patches = [
+        'LITTLE', 'LITTLECREAMY', 'LIGHTTUXEDO', 'BUZZARDFANG', 'TIP', 'BLAZE', 
+        'BIB', 'VEE', 'PAWS', 'BELLY', 'TAILTIP', 'TOES', 'BROKENBLAZE', 'LILTWO',
+        'SCOURGE', 'TOESTAIL', 'RAVENPAW', 'HONEY',
+        'TUXEDO', 'TUXEDOCREAMY', 'FANCY', 'UNDERS', 'DAMIEN', 'SKUNK',
+        'MITAINE', 'SQUEAKS', 'STAR',
+        'ANY', 'ANYCREAMY', 'ANY2', 'ANY2CREAMY', 'BROKEN', 'FRECKLES', 'RINGTAIL', 
+        'HALFFACE', 'PANTS2', 'GOATEE', 'PRINCE', 'FAROFA', 'MISTER', 'PANTS', 
+        'REVERSEPANTS', 'HALFWHITE', 'APPALOOSA', 'PIEBALD', 'CURVED', 'GLASS', 
+        'VAN', 'VANCREAMY', 'ONEEAR', 'LIGHTSONG', 'TAIL', 'HEART', 'MOORISH',
+        'MASKMANTLE', 'APRON', 'CAPSADDLE',
+        'COLOURPOINT', 'COLOURPOINTCREAMY', 'RAGDOLL', 'SEPIAPOINT', 'MINKPOINT', 
+        'SEALPOINT','VITILIGO', 'VITILIGO2'
+
+    ]
+    def __init__(self, colour, white, length):
+        self.white = white  # boolean; does cat have white on it or no
+        self.colour = colour
+        self.length = length
+    def __repr__(self):
+        if self.white:
+            return f"white and {self.colour} sokoke tabby{self.length}"
+        else:
+            return f"{self.colour} sokoke tabby{self.length}"
+
+class Agouti():
+    name = "Agouti"
+    sprites = {1: 'agouti', 2: 'white'}
+    white_patches = [
+        'LITTLE', 'LITTLECREAMY', 'LIGHTTUXEDO', 'BUZZARDFANG', 'TIP', 'BLAZE', 
+        'BIB', 'VEE', 'PAWS', 'BELLY', 'TAILTIP', 'TOES', 'BROKENBLAZE', 'LILTWO',
+        'SCOURGE', 'TOESTAIL', 'RAVENPAW', 'HONEY',
+        'TUXEDO', 'TUXEDOCREAMY', 'FANCY', 'UNDERS', 'DAMIEN', 'SKUNK',
+        'MITAINE', 'SQUEAKS', 'STAR',
+        'ANY', 'ANYCREAMY', 'ANY2', 'ANY2CREAMY', 'BROKEN', 'FRECKLES', 'RINGTAIL', 
+        'HALFFACE', 'PANTS2', 'GOATEE', 'PRINCE', 'FAROFA', 'MISTER', 'PANTS', 
+        'REVERSEPANTS', 'HALFWHITE', 'APPALOOSA', 'PIEBALD', 'CURVED', 'GLASS', 
+        'VAN', 'VANCREAMY', 'ONEEAR', 'LIGHTSONG', 'TAIL', 'HEART', 'MOORISH',
+        'MASKMANTLE', 'APRON', 'CAPSADDLE',
+        'COLOURPOINT', 'COLOURPOINTCREAMY', 'RAGDOLL', 'SEPIAPOINT', 'MINKPOINT', 
+        'SEALPOINT','VITILIGO', 'VITILIGO2'
+
+    ]
+    def __init__(self, colour, white, length):
+        self.white = white  # boolean; does cat have white on it or no
+        self.colour = colour
+        self.length = length
+    def __repr__(self):
+        if self.white:
+            return f"white and {self.colour} agouti{self.length}"
+        else:
+            return f"{self.colour} agouti{self.length}"
+
 class Tortie():
     name = "Tortie"
     sprites = {1: 'tortie', 2: 'white'}
@@ -326,18 +438,26 @@ collars = [
 ]
 
 pelt_names_F = ["SingleColour", "SingleColour", "TwoColour", "Tabby", "Tortie", "Calico",
-    "Tabby", "TwoColour", "Speckled", "Marbled", "Bengal", "Rosette", "Smoke", "Ticked"]
-pelt_names_M = ["SingleColour", "SingleColour", "TwoColour", "Tabby", "Tabby", "Speckled",
-    "TwoColour", "Marbled", "Bengal", "Rosette", "Smoke", "Ticked"]
+     "TwoColour", "Speckled", "Marbled", "Bengal", "Rosette", "Smoke", "Ticked",
+    "Mackerel", "Classic", "Sokoke", "Agouti"]
+pelt_names_M = ["SingleColour", "SingleColour", "TwoColour", "Tabby", "Speckled",
+    "TwoColour", "Marbled", "Bengal", "Rosette", "Smoke", "Ticked", "Mackerel", "Classic", 
+    "Sokoke", "Agouti"]
+
+tabbies = ["Tabby", "Ticked", "Mackerel", "Classic", "Sokoke", "Agouti"]
+spotted = ["Speckled", "Rosette"]
+plain = ["SingleColour", "TwoColour", "Smoke"]
+exotic = ["Bengal", "Marbled"]
 
 # SPRITE NAMES
 single_colours = [
-    'WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'BLACK', 'PALEGINGER',
-    'GOLDEN', 'GINGER', 'DARKGINGER', 'CREAM', 'LIGHTBROWN', 'BROWN', 'DARKBROWN'
+    'WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'PALEGINGER',
+    'GOLDEN', 'GINGER', 'DARKGINGER', 'CREAM', 'LIGHTBROWN', 'BROWN', 'DARKBROWN', 'BLACK'
 ]
 eye_sprites = [
     'YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE', 'DARKBLUE', 'BLUEYELLOW', 'BLUEGREEN',
-    'GREY', 'CYAN', 'EMERALD', 'PALEBLUE', 'PALEYELLOW', 'GOLD', 'HEATHERBLUE', 'COPPER', 'SAGE', 'BLUE2', 'SUNLITICE', 'YELLOWGREEN'
+    'GREY', 'CYAN', 'EMERALD', 'PALEBLUE', 'PALEYELLOW', 'GOLD', 'HEATHERBLUE', 'COPPER', 'SAGE', 'BLUE2', 
+    'SUNLITICE', 'YELLOWGREEN'
 ]
 little_white = ['LITTLE', 'LITTLECREAMY', 'LIGHTTUXEDO', 'BUZZARDFANG', 'TIP', 'BLAZE', 'BIB', 'VEE', 'PAWS', 
     'BELLY', 'TAILTIP', 'TOES', 'BROKENBLAZE', 'LILTWO', 'SCOURGE', 'TOESTAIL', 'RAVENPAW', 'HONEY']
@@ -346,7 +466,8 @@ high_white = ['ANY', 'ANYCREAMY', 'ANY2', 'ANY2CREAMY', 'BROKEN', 'FRECKLES', 'R
     'GOATEE', 'PRINCE', 'FAROFA', 'MISTER', 'PANTS', 'REVERSEPANTS', 'HALFWHITE', 'APPALOOSA', 'PIEBALD',
     'CURVED', 'GLASS', 'MASKMANTLE']
 mostly_white = ['VAN', 'VANCREAMY', 'ONEEAR', 'LIGHTSONG', 'TAIL', 'HEART', 'MOORISH', 'APRON', 'CAPSADDLE']
-point_markings = ['COLOURPOINT', 'COLOURPOINTCREAMY', 'RAGDOLL', 'KARPATI']
+point_markings = ['COLOURPOINT', 'COLOURPOINTCREAMY', 'RAGDOLL', 'KARPATI', 'SEPIAPOINT', 'MINKPOINT', 
+    'SEALPOINT']
 vit = ['VITILIGO', 'VITILIGO2']
 white_sprites = [
     little_white, mid_white, high_white, mostly_white, point_markings, vit, 'FULLWHITE', 'EXTRA', 'POINTMARK'
@@ -435,6 +556,38 @@ def choose_pelt(gender,colour=None,white=None,pelt=None,length=None,determined=F
             return Bengal(choice(pelt_colours), white, length)
         else:
             return Bengal(colour, white, length)
+    elif pelt == "Mackerel":
+        if colour is None and white is None:
+            return Mackerel(choice(pelt_colours), choice([False, True]),
+                             length)
+        elif colour is None:
+            return Mackerel(choice(pelt_colours), white, length)
+        else:
+            return Mackerel(colour, white, length)
+    elif pelt == "Classic":
+        if colour is None and white is None:
+            return Classic(choice(pelt_colours), choice([False, True]),
+                             length)
+        elif colour is None:
+            return Classic(choice(pelt_colours), white, length)
+        else:
+            return Classic(colour, white, length)
+    elif pelt == "Sokoke":
+        if colour is None and white is None:
+            return Sokoke(choice(pelt_colours), choice([False, True]),
+                             length)
+        elif colour is None:
+            return Sokoke(choice(pelt_colours), white, length)
+        else:
+            return Sokoke(colour, white, length)
+    elif pelt == "Agouti":
+        if colour is None and white is None:
+            return Agouti(choice(pelt_colours), choice([False, True]),
+                             length)
+        elif colour is None:
+            return Agouti(choice(pelt_colours), white, length)
+        else:
+            return Agouti(colour, white, length)
     elif pelt == "Tortie":
         if white is None:
             return Tortie(choice([False, True]), length)
