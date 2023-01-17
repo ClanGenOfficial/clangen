@@ -182,13 +182,16 @@ def init_pelt(cat):
     par2_colour = par2.pelt.colour
     white = False
     pelt_choice = []
+    tortie_base_choice = []
     length_choice = []
     direct_inherit = randint(0, 10)
-    tortie_chance = choice(True, False)
+    if par1_colour in [ginger_colours, black_colours]:
+        tortie_chanceF = choice(True, False)
+        tortie_chanceM = randint(0, 200)
 
     if par1 and not par2:
         if direct_inherit == 1:
-            choose_pelt(par1.gender, par1_colour, par1.pelt.white, par1.pelt.name, par1.pelt.length)
+            choose_pelt(cat.gender, par1_colour, par1.pelt.white, par1.pelt.name, par1.pelt.length)
         if par1.pelt.white:
             white = True
         if par1.pelt in tabbies:
@@ -199,7 +202,39 @@ def init_pelt(cat):
             pelt_choice = random.choices(pelt_categories, weights=(25, 25, 45, 5, 0))
         elif par1.pelt in exotic:
             pelt_choice = random.choices(pelt_categories, weights=(20, 20, 20, 40, 0))
-        
+        elif par1.pelt in torties:
+            if par1.tortiebase.capitalize() in tabbies:
+                pelt_choice = random.choices(pelt_categories, weights=(35, 20, 20, 5, 0))
+            elif par1.tortiebase.capitalize() in spotted:
+                pelt_choice = random.choices(pelt_categories, weights=(30, 45, 20, 5, 0))
+            elif par1.tortiebase.capitalize() in plain:
+                pelt_choice = random.choices(pelt_categories, weights=(25, 25, 45, 5, 0))
+            elif par1.tortiebase.capitalize() in exotic:
+                pelt_choice = random.choices(pelt_categories, weights=(20, 20, 20, 40, 0))
+    if par1 and par2:
+        if direct_inherit == 1:
+            choose_pelt(cat.gender, par1_colour, par1.pelt.white, par1.pelt.name, par1.pelt.length, pelt_category[par1])
+        elif direct_inherit == 2:
+            choose_pelt(cat.gender, par2_colour, par2.pelt.white, par2.pelt.name, par2.pelt.length, pelt_category[par2])
+        if par1.pelt.white:
+            white = True
+        if par1.pelt in tabbies:
+            pelt_choice = random.choices(pelt_categories, weights=(35, 20, 20, 5, 0))
+        elif par1.pelt in spotted:
+            pelt_choice = random.choices(pelt_categories, weights=(30, 45, 20, 5, 0))
+        elif par1.pelt in plain:
+            pelt_choice = random.choices(pelt_categories, weights=(25, 25, 45, 5, 0))
+        elif par1.pelt in exotic:
+            pelt_choice = random.choices(pelt_categories, weights=(20, 20, 20, 40, 0))
+        elif par1.pelt in torties:
+            if par1.tortiebase.capitalize() in tabbies:
+                pelt_choice = random.choices(pelt_categories, weights=(35, 20, 20, 5, 0))
+            elif par1.tortiebase.capitalize() in spotted:
+                pelt_choice = random.choices(pelt_categories, weights=(30, 45, 20, 5, 0))
+            elif par1.tortiebase.capitalize() in plain:
+                pelt_choice = random.choices(pelt_categories, weights=(25, 25, 45, 5, 0))
+            elif par1.tortiebase.capitalize() in exotic:
+                pelt_choice = random.choices(pelt_categories, weights=(20, 20, 20, 40, 0))
 """
 def init_sprite(cat):
     if cat.pelt is None:
@@ -455,6 +490,8 @@ def init_white_patches(cat):
                         cat.white_patches = choice(mostly_white)
             if cat.pelt.name == 'Calico' and not cat.pelt.white:
                 cat.pelt.name = 'Tortie'
+            elif cat.pelt.name == 'Tortie' and cat.white_patches in [high_white, mostly_white]:
+                cat.pelt.name == 'Calico'
                 
         # regular non-inheritance white patches generation
         else:
@@ -505,6 +542,8 @@ def init_white_patches(cat):
         cat.pelt.white = False
         if cat.pelt.name == "Calico":
             cat.pelt.name = "Tortie"
+        elif cat.pelt.name == 'Tortie' and cat.white_patches in [high_white, mostly_white]:
+                cat.pelt.name == 'Calico'
 
 
 def init_tint(cat):

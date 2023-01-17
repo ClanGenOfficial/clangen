@@ -392,8 +392,9 @@ class Calico():
 
 # ATTRIBUTES, including non-pelt related
 pelt_colours = [
-    'WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'BLACK', 'PALEGINGER',
-    'GOLDEN', 'GINGER', 'DARKGINGER', 'CREAM', 'LIGHTBROWN', 'BROWN', 'DARKBROWN'
+    'WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'PALEGINGER',
+    'GOLDEN', 'GINGER', 'DARKGINGER', 'CREAM', 'LIGHTBROWN', 'BROWN', 'DARKBROWN',
+    'BLACK'
 ]
 pelt_c_no_white = [
     'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'PALEGINGER', 'GOLDEN',
@@ -484,7 +485,7 @@ skin_sprites = ['BLACK', 'RED', 'PINK', 'DARKBROWN', 'BROWN', 'LIGHTBROWN', 'DAR
 
 
 # CHOOSING PELT
-def choose_pelt(gender, colour=None, white=None, pelt=None, length=None, determined=False):
+def choose_pelt(gender, colour=None, white=None, pelt=None, length=None, category=None, determined=False):
     if pelt is None:
         a = randint(0, 100)
         if a != 1:
