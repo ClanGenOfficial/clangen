@@ -173,6 +173,7 @@ class Cat():
         self.pelt = pelt
         self.tint = None
         self.eye_colour = eye_colour
+        self.eye_colour2 = None
         self.scars = []
         self.former_mentor = []
         self.patrol_with_mentor = 0

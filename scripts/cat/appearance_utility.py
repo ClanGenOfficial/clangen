@@ -131,10 +131,7 @@ def plural_acc_names(accessory, plural, singular):
 
 def init_eyes(cat):
     if cat.eye_colour is not None:
-        return
-    hit = randint(0, 200)
-    if hit == 1:
-        cat.eye_colour = choice(["BLUEYELLOW", "BLUEGREEN"])
+        return   
     else:
         if cat.parent1 is None:
             cat.eye_colour = choice(eye_colours)
@@ -149,6 +146,12 @@ def init_eyes(cat):
                 par1.eye_colour, par2.eye_colour,
                 choice(eye_colours)
             ])
+        hit = randint(0, 200)
+        if hit == 0:
+            cat.eye_colour2 = choice(eye_colours)
+            #force second color to be different
+            while cat.eye_colour2 == cat.eye_colour: 
+                cat.eye_colour2 = choice(eye_colours)
 
 
 def init_pelt(cat):
@@ -168,8 +171,36 @@ def init_pelt(cat):
                                 choice([par1.pelt.name, par2.pelt.name, None]), choice([par1.pelt.length, par2.pelt.length, None]))                  
     else:
         cat.pelt = choose_pelt(cat.gender)
+"""
+    # new pelt inheritance
+    if cat.parent1 in cat.all_cats.keys():
+        par1 = cat.all_cats[cat.parent1]
+    if cat.parent2 in cat.all_cats.keys():
+        par2 = cat.all_cats[cat.parent2]
 
+    par1_colour = par1.pelt.colour
+    par2_colour = par2.pelt.colour
+    white = False
+    pelt_choice = []
+    length_choice = []
+    direct_inherit = randint(0, 10)
+    tortie_chance = choice(True, False)
 
+    if par1 and not par2:
+        if direct_inherit == 1:
+            choose_pelt(par1.gender, par1_colour, par1.pelt.white, par1.pelt.name, par1.pelt.length)
+        if par1.pelt.white:
+            white = True
+        if par1.pelt in tabbies:
+            pelt_choice = random.choices(pelt_categories, weights=(35, 20, 20, 5, 0))
+        elif par1.pelt in spotted:
+            pelt_choice = random.choices(pelt_categories, weights=(30, 45, 20, 5, 0))
+        elif par1.pelt in plain:
+            pelt_choice = random.choices(pelt_categories, weights=(25, 25, 45, 5, 0))
+        elif par1.pelt in exotic:
+            pelt_choice = random.choices(pelt_categories, weights=(20, 20, 20, 40, 0))
+        
+"""
 def init_sprite(cat):
     if cat.pelt is None:
         init_pelt(cat)
