@@ -403,13 +403,13 @@ for a, i in enumerate(['LIGHTBROWN', 'BROWN', 'DARKBROWN', 'BLACK']):
     sprites.make_group('smokeextra', (a, 2), f'smokeextra{i}', sprites_y=2)
 # ticked
 for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST']):
-    sprites.make_group('tickedcolors', (a, 0), f'ticked{i}')
+    sprites.make_group('tickedcolours', (a, 0), f'ticked{i}')
     sprites.make_group('tickedextra', (a, 0), f'tickedextra{i}', sprites_y=2)
 for a, i in enumerate(['PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'CREAM']):
-    sprites.make_group('tickedcolors', (a, 1), f'ticked{i}')
+    sprites.make_group('tickedcolours', (a, 1), f'ticked{i}')
     sprites.make_group('tickedextra', (a, 1), f'tickedextra{i}', sprites_y=2)
 for a, i in enumerate(['LIGHTBROWN', 'BROWN', 'DARKBROWN', 'BLACK']):
-    sprites.make_group('tickedcolors', (a, 2), f'ticked{i}')
+    sprites.make_group('tickedcolours', (a, 2), f'ticked{i}')
     sprites.make_group('tickedextra', (a, 2), f'tickedextra{i}', sprites_y=2)
 # speckled
 for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST']):

@@ -448,12 +448,18 @@ tabbies = ["Tabby", "Ticked", "Mackerel", "Classic", "Sokoke", "Agouti"]
 spotted = ["Speckled", "Rosette"]
 plain = ["SingleColour", "TwoColour", "Smoke"]
 exotic = ["Bengal", "Marbled"]
+torties = ["Tortie", "Calico"]
+pelt_categories = [tabbies, spotted, plain, exotic, torties]
 
 # SPRITE NAMES
 single_colours = [
     'WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'PALEGINGER',
     'GOLDEN', 'GINGER', 'DARKGINGER', 'CREAM', 'LIGHTBROWN', 'BROWN', 'DARKBROWN', 'BLACK'
 ]
+ginger_colours = ['PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'CREAM']
+black_colours = ['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'BLACK']
+brown_colours = ['LIGHTBROWN', 'BROWN', 'DARKBROWN', 'BLACK']
+colour_categories = [ginger_colours, black_colours, brown_colours]
 eye_sprites = [
     'YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE', 'DARKBLUE', 'BLUEYELLOW', 'BLUEGREEN',
     'GREY', 'CYAN', 'EMERALD', 'PALEBLUE', 'PALEYELLOW', 'GOLD', 'HEATHERBLUE', 'COPPER', 'SAGE', 'BLUE2', 
@@ -478,7 +484,7 @@ skin_sprites = ['BLACK', 'RED', 'PINK', 'DARKBROWN', 'BROWN', 'LIGHTBROWN', 'DAR
 
 
 # CHOOSING PELT
-def choose_pelt(gender,colour=None,white=None,pelt=None,length=None,determined=False):
+def choose_pelt(gender, colour=None, white=None, pelt=None, length=None, determined=False):
     if pelt is None:
         a = randint(0, 100)
         if a != 1:
@@ -627,6 +633,14 @@ def describe_color(pelt, tortiecolour, tortiepattern, white_patches):
             color_name = color_name + ' ticked tabby'
         elif pelt.name == "Smoke":
             color_name = color_name + ' smoke'
+        elif pelt.name == "Mackerel":
+            color_name = color_name + ' mackerel tabby'
+        elif pelt.name == "Classic":
+            color_name = color_name + ' classic tabby'
+        elif pelt.name == "Sokoke":
+            color_name = color_name + ' sokoke tabby'
+        elif pelt.name == "Agouti":
+            color_name = color_name + ' agouti'
 
         elif pelt.name == "Tortie":
             if tortiepattern not in ["tortiesolid", "tortiesmoke"]:
