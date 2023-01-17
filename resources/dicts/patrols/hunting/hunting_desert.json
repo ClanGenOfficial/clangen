@@ -6,20 +6,20 @@
         "tags": [
             "hunting"
         ],
-        "intro_text": "The patrol approaches a very strange twoleg place. Gigantic metal leaves lie in unnatural rows, shading the desert beneath them, metal tree branches snake straightly across the ground, and a little twoleg hut sits in one corner, seemingly abandoned.",
+        "intro_text": "The patrol approaches a very strange Twolegplace. Gigantic metal leaves lie in unnatural rows, shading the desert beneath them, metal tree branches snake straightly across the ground, and a little Twoleg hut sits in one corner, seemingly abandoned.",
         "decline_text": "The patrol decides to hunt elsewhere.",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": [
-            "The patrol has a successful hunt. While twolegs seem to have built this metal forest, they've also apparently abandoned it.",
-            "The shade of the metal forest offers countless desert creatures as possible prey, and the cats have a very successful hunt, hiding from the sunlight under twoleg leaves."
+            "The patrol has a successful hunt. While Twolegs seem to have built this metal forest, they've also apparently abandoned it.",
+            "The shade of the metal forest offers countless desert creatures as possible prey, and the cats have a very successful hunt, hiding from the sunlight under Twoleg leaves."
         ],
         "fail_text": [
             "The patrol tries, but the unnatural environment causes everyone to be on edge, and their hunt is unsuccessful."
         ],
         "min_cats": 1,
         "max_cats": 3,
-        "antagonize_text": "The cats leap onto a twoleg metal leaf, sending it over with a mighty crash. This is c_n territory, not twoleg!",
+        "antagonize_text": "The cats leap onto a Twoleg metal leaf, sending it over with a mighty crash. This is c_n territory, not Twoleg!",
         "antagonize_fail_text": "Your cats try to knock over a metal leaf, but there aren't enough of them to force it over."
     },
     {
@@ -29,21 +29,21 @@
         "tags": [
             "hunting"
         ],
-        "intro_text": "The patrol approaches a very strange twoleg place. Gigantic metal leaves lie in unnatural rows, shading the desert beneath them, metal tree branches snake straightly across the ground, and a little twoleg hut sits in one corner, seemingly abandoned.",
+        "intro_text": "The patrol approaches a very strange Twolegplace. Gigantic metal leaves lie in unnatural rows, shading the desert beneath them, metal tree branches snake straightly across the ground, and a little Twoleg hut sits in one corner, seemingly abandoned.",
         "decline_text": "The patrol decides to hunt elsewhere.",
         "chance_of_success": 60,
         "exp": 20,
         "success_text": [
             "The patrol cats split up, using sentries to ensure that nothing disturbs their hunts.",
-            "The shade of the metal forest offers countless desert creatures as possible prey, and the cats have a very successful hunt, hiding from the sunlight under twoleg leaves. "
+            "The shade of the metal forest offers countless desert creatures as possible prey, and the cats have a very successful hunt, hiding from the sunlight under Twoleg leaves. "
         ],
         "fail_text": [
             "The patrol tries, but the unnatural environment causes everyone to be on edge, and their hunt is unsuccessful."
         ],
         "min_cats": 4,
         "max_cats": 6,
-        "antagonize_text": "The cats leap onto a twoleg metal leaf, sending it over with a mighty crash. This is c_n territory, not twoleg!",
-        "antagonize_fail_text": "The cats try to knock over a metal leaf. It works, but several members of the patrol spring backward, yowling in pain - the twolegs have trapped the leaf, storing fire that does not burn in it!"
+        "antagonize_text": "The cats leap onto a Twoleg metal leaf, sending it over with a mighty crash. This is c_n territory, not Twoleg!",
+        "antagonize_fail_text": "The cats try to knock over a metal leaf. It works, but several members of the patrol spring backward, yowling in pain - the Twolegs have trapped the leaf, storing fire that does not burn in it!"
     },
     {
         "patrol_id": "dst_hunt_strange1",
@@ -193,7 +193,7 @@
         "exp": 20,
         "success_text": [
             "r_c heads off to one of their favorite spots in the desert, a dry river bed with plenty of trees and bushes providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that hare thought.",
-            "r_c finds a fat, dumb, slow ground squirrel, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their clanmates.",
+            "r_c finds a fat, dumb, slow ground squirrel, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their Clanmates.",
             "s_c gets the chance to try out an idea they've been sitting on for a while. There's a nest of lizards that they've spotted that've chosen a particularly bad home, and they manage to reach down into one of the rock refuges, fishing out small reptiles by the handful.",
             "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
         ],
@@ -248,7 +248,7 @@
         "exp": 20,
         "success_text": [
             "r_c heads off to one of their favorite spots in the desert, a dry river bed with plenty of trees and bushes providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that hare thought. They snicker to themselves as they pad back to camp.",
-            "r_c finds a fat, dumb, slow ground squirrel, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their clanmates. Purring, they take the opportunity for a small moment of peace, relaxing with their friends.",
+            "r_c finds a fat, dumb, slow ground squirrel, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their Clanmates. Purring, they take the opportunity for a small moment of peace, relaxing with their friends.",
             "s_c gets the chance to try out an idea they've been sitting on for a while. There's a nest of lizards that they've spotted that've chosen a particularly bad home, and they manage to reach down into one of the rock refuges, fishing out small reptiles by the handful. This is a good spot to remember when c_n hits hard times in Greenleaf.",
             "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
         ],
@@ -303,7 +303,7 @@
         "exp": 20,
         "success_text": [
             "r_c heads off to one of their favorite spots in the desert, a dry river bed with plenty of trees and bushes providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that hare thought. They snicker to themselves as they pad back to camp.",
-            "r_c finds a fat, dumb, slow ground squirrel, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their clanmates. Purring, they take the opportunity for a small moment of peace, relaxing with their friends.",
+            "r_c finds a fat, dumb, slow ground squirrel, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their Clanmates. Purring, they take the opportunity for a small moment of peace, relaxing with their friends.",
             "s_c gets the chance to try out an idea they've been sitting on for a while. There's a nest of lizards that they've spotted that've chosen a particularly bad home, and they manage to reach down into one of the rock refuges, fishing out small reptiles by the handful. This is a good spot to remember when c_n hits hard times in Greenleaf.",
             "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
         ],
@@ -359,7 +359,7 @@
         "exp": 20,
         "success_text": [
             "r_c immediately turns and heads for home to report this to their leader, alarmed by the sudden presence of Twolegs in their territory.",
-            "Slyly, r_c uses the unusual presence of the weird twolegs to help their hunt, hiding on the outskirts of the area and waiting for the Twolegs to flush prey towards them. It works, and they leave the Twolegs to their business.",
+            "Slyly, r_c uses the unusual presence of the weird Twolegs to help their hunt, hiding on the outskirts of the area and waiting for the Twolegs to flush prey towards them. It works, and they leave the Twolegs to their business.",
             "s_c spots the Twolegs unloading metal boxes from their monsters, and recognises that it can't be anything good, leaving immediately.",
             "s_c spits in the Twolegs' direction and picking a different place to hunt."
         ],
@@ -420,9 +420,9 @@
         "exp": 20,
         "success_text": [
             "Your patrol immediately turns and heads for home to report this to their leader, alarmed by the sudden presence of Twolegs in their territory.",
-            "Slyly, the cats use the unusual presence of the weird twolegs to help their hunt, hiding on the outskirts of the area and waiting for the Twolegs to flush prey towards them. It works, and they leave the Twolegs to their business.",
+            "Slyly, the cats use the unusual presence of the weird Twolegs to help their hunt, hiding on the outskirts of the area and waiting for the Twolegs to flush prey towards them. It works, and they leave the Twolegs to their business.",
             "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol to leave. Now.",
-            "s_c stops anyone from going near the twolegs, repeating that true warriors have nothing to do with Twolegs and their monsters, and the patrol leaves back into the desert."
+            "s_c stops anyone from going near the Twolegs, repeating that true warriors have nothing to do with Twolegs and their monsters, and the patrol leaves back into the desert."
         ],
         "fail_text": [
             null,
@@ -481,9 +481,9 @@
         "exp": 20,
         "success_text": [
             "Your patrol immediately turns and heads for home to report this to their leader, alarmed by the sudden presence of Twolegs in their territory.",
-            "Slyly, the cats use the unusual presence of the weird twolegs to help their hunt, hiding on the outskirts of the area and waiting for the Twolegs to flush prey towards them. It works, and they leave the Twolegs to their business.",
+            "Slyly, the cats use the unusual presence of the weird Twolegs to help their hunt, hiding on the outskirts of the area and waiting for the Twolegs to flush prey towards them. It works, and they leave the Twolegs to their business.",
             "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol to leave. Now.",
-            "s_c stops anyone from going near the twolegs, repeating that true warriors have nothing to do with Twolegs and their monsters, and the patrol leaves back into the desert."
+            "s_c stops anyone from going near the Twolegs, repeating that true warriors have nothing to do with Twolegs and their monsters, and the patrol leaves back into the desert."
         ],
         "fail_text": [
             null,
@@ -676,7 +676,7 @@
             "Making the smart choice, r_c doesn't move from the shade, taking a good long nap in the heat.",
             null,
             "r_c starts feeling confused and fuzzy as they walk, but ignore it. It takes them too long to recognise the symptoms of heat exhaustion, and when they do it's too late, with r_c stranded far from shade. Dizzy and retching, they collapse on the desert sands.,",
-            "r_c collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a clanmate finds them that they're able to totter home shakily."
+            "r_c collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a Clanmate finds them that they're able to totter home shakily."
         ],
         "win_skills": [
             "very smart",
@@ -732,7 +732,7 @@
             "Making the smart choice, app1 doesn't move from the shade, taking a good long nap in the heat.",
             "Refusing to stop hunting, app1 bodly decides to go into a canyon where it'll be cooler. They don't find any prey, but don't overheat either.",
             "app1 doesn't make it back to camp. A patrol sent out for them find their body, collapsed in a shadeless part of the territory and already starting to dry out and mummify.",
-            "app1 collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a clanmate finds them that they're able to totter home shakily.",
+            "app1 collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a Clanmate finds them that they're able to totter home shakily.",
             "When s_c doesn't return to camp that evening, a search party goes out for them. They find app1 collapsed and badly affected by heat stroke, and carry them back to camp where their might be a way to help them. However, app1's breathing stops on the journey home, and they slip to StarClan.",
             "When s_c doesn't return to camp that evening, a search party goes out for them. They find app1 collapsed and badly affected by heat stroke, and carry them back to camp where their might be a way to help them."
         ],
@@ -796,7 +796,7 @@
             "Making the smart choice, r_c doesn't move from the shade, taking a good long nap in the heat.",
             null,
             null,
-            "r_c collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a clanmate finds them that they're able to totter home shakily."
+            "r_c collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a Clanmate finds them that they're able to totter home shakily."
         ],
         "win_skills": [
             "very smart",
@@ -851,7 +851,7 @@
             "Making the smart choice, app1 doesn't move from the shade, taking a good long nap in the heat.",
             null,
             "app1 doesn't make it back to camp. A patrol sent out for them find their body, collapsed in a shadeless part of the territory and already starting to dry out and mummify.",
-            "app1 collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a clanmate finds them that they're able to totter home shakily."
+            "app1 collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a Clanmate finds them that they're able to totter home shakily."
         ],
         "win_skills": [
             "very smart",
@@ -909,7 +909,7 @@
             "Making the smart choice, r_c doesn't move from the shade, taking a good long nap in the heat.",
             null,
             null,
-            "r_c collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a clanmate finds them that they're able to totter home shakily."
+            "r_c collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a Clanmate finds them that they're able to totter home shakily."
         ],
         "win_skills": [
             "very smart",
@@ -964,7 +964,7 @@
             "Making the smart choice, app1 doesn't move from the shade, taking a good long nap in the heat.",
             null,
             "app1 doesn't make it back to camp. A patrol sent out for them find their body, collapsed in a shadeless part of the territory and already starting to dry out and mummify.",
-            "app1 collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a clanmate finds them that they're able to totter home shakily."
+            "app1 collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a Clanmate finds them that they're able to totter home shakily."
         ],
         "win_skills": [
             "very smart",

@@ -168,7 +168,8 @@ class Game():
         'den labels': True,
         'fading': True,
         "save_faded_copy": False,
-        'favorite sub tab': None
+        'favorite sub tab': None,
+        'first_cousin_mates': True
     }  # The current settings
     setting_lists = {
         'no gendered breeding': [False, True],
@@ -192,7 +193,8 @@ class Game():
         'den labels': [False, True],
         'favorite sub tab': sub_tab_list,
         'fading': [True, False],
-        'save_faded_copy': [False, True]
+        'save_faded_copy': [False, True],
+        'first_cousin_mates': [True, False]
     }  # Lists of possible options for each setting
     settings_changed = False
 
@@ -358,6 +360,7 @@ class Game():
                 "spirit_elder": inter_cat.age_sprites['elder'],
                 "spirit_dead": inter_cat.age_sprites['dead'],
                 "eye_colour": inter_cat.eye_colour,
+                "eye_colour2": inter_cat.eye_colour2 if inter_cat.eye_colour2 else None,
                 "reverse": inter_cat.reverse,
                 "white_patches": inter_cat.white_patches,
                 "pattern": inter_cat.pattern,
@@ -381,8 +384,6 @@ class Game():
                 "life_givers": inter_cat.life_givers if inter_cat.life_givers else [],
                 "known_life_givers": inter_cat.known_life_givers if inter_cat.known_life_givers else [],
                 "virtues": inter_cat.virtues if inter_cat.virtues else [],
-                "retired": inter_cat.retired if inter_cat.retired else False,
-                "outside": inter_cat.outside,
                 "retired": inter_cat.retired if inter_cat.retired else False,
                 "faded_offspring": inter_cat.faded_offspring,
                 "opacity": inter_cat.opacity,

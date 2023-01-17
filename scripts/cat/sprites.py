@@ -235,17 +235,19 @@ class Sprites():
 
 
 sprites = Sprites(50)
-tiles = Sprites(64)
+#tiles = Sprites(64)
 
 for x in [
     'lineart', 'singlecolours', 'speckledcolours', 'tabbycolours',
-    'whitepatches', 'eyes', 'singleextra', 'tabbyextra',
-    'speckledextra', 'whiteextra', 'eyesextra', 'skin',
+    'whitepatches', 'eyes', 'singleextra', 'tabbyextra', 'eyes2',
+    'speckledextra', 'whiteextra', 'eyesextra', 'eyes2extra', 'skin',
     'skinextra', 'scars', 'scarsextra', 'whitenewextra', 'whitepatchesnew',
     'scarsdark', 'scarsdarkextra', 'collars', 'collarsextra',
     'bellcollars', 'bellcollarsextra', 'bowcollars', 'bowcollarsextra',
     'speckledcolours2', 'speckledextra2', 'tabbycolours2', 'tabbyextra2',
-    'rosettecolours', 'rosetteextra', 'smokecolours', 'smokeextra', 'tickedcolors', 'tickedextra',
+    'rosettecolours', 'rosetteextra', 'smokecolours', 'smokeextra', 'tickedcolours', 'tickedextra',
+    'mackerelcolours', 'classiccolours', 'sokokecolours', 'agouticolours', 'mackerelextra',
+    'classicextra', 'sokokeextra', 'agoutiextra',
     'whitepatches3', 'whitepatches3extra', 'whitepatches4', 'whitepatches4extra',
     'Newscars', 'Newscarsextra', 'shaders', 'lineartdead',
     'tortiecolourssolid', 'tortiecolourstabby', 'tortiecoloursbengal', 'tortiecoloursmarbled',
@@ -266,8 +268,8 @@ for sprite in [
 ]:
     sprites.spritesheet(f"sprites/paralyzed/{sprite}.png", sprite)
 
-for x in ['dithered']:
-    tiles.spritesheet(f"sprites/{x}.png", x)
+# for x in ['dithered']:
+#     tiles.spritesheet(f"sprites/{x}.png", x)
 
 # Line art
 sprites.make_group('lineart', (0, 0), 'lines', sprites_y=5)
@@ -283,13 +285,28 @@ for a, i in enumerate(
         ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE']):
     sprites.make_group('eyes', (a, 0), f'eyes{i}')
     sprites.make_group('eyesextra', (a, 0), f'eyesextra{i}', sprites_y=2)
-sprites.make_group('eyes', (0, 1), 'eyesDARKBLUE')
-sprites.make_group('eyes', (1, 1), 'eyesBLUEYELLOW')
-sprites.make_group('eyes', (2, 1), 'eyesBLUEGREEN')
-sprites.make_group('eyesextra', (0, 1), 'eyesextraDARKBLUE', sprites_y=2)
-sprites.make_group('eyesextra', (1, 1), 'eyesextraBLUEYELLOW', sprites_y=2)
-sprites.make_group('eyesextra', (2, 1), 'eyesextraBLUEGREEN', sprites_y=2)
+    sprites.make_group('eyes2', (a, 0), f'eyes2{i}')
+    sprites.make_group('eyes2extra', (a, 0), f'eyes2extra{i}', sprites_y=2)
+for a, i in enumerate(
+        ['DARKBLUE', 'GREY', 'CYAN', 'EMERALD', 'HEATHERBLUE', 'SUNLITICE']):
+    sprites.make_group('eyes', (a, 1), f'eyes{i}')
+    sprites.make_group('eyesextra', (a, 1), f'eyesextra{i}', sprites_y=2)
+    sprites.make_group('eyes2', (a, 1), f'eyes2{i}')
+    sprites.make_group('eyes2extra', (a, 1), f'eyes2extra{i}', sprites_y=2)
+for a, i in enumerate(
+        ['COPPER', 'SAGE', 'BLUE2', 'PALEBLUE', 'BLUEYELLOW', 'BLUEGREEN']):
+    sprites.make_group('eyes', (a, 2), f'eyes{i}')
+    sprites.make_group('eyesextra', (a, 2), f'eyesextra{i}', sprites_y=2)
+    sprites.make_group('eyes2', (a, 2), f'eyes2{i}')
+    sprites.make_group('eyes2extra', (a, 2), f'eyes2extra{i}', sprites_y=2)
+for a, i in enumerate(
+        ['PALEYELLOW', 'GOLD', 'GREENYELLOW']):
+    sprites.make_group('eyes', (a, 3), f'eyes{i}')
+    sprites.make_group('eyesextra', (a, 3), f'eyesextra{i}', sprites_y=2)
+    sprites.make_group('eyes2', (a, 3), f'eyes2{i}')
+    sprites.make_group('eyes2extra', (a, 3), f'eyes2extra{i}', sprites_y=2)
 
+# white patches
 for a, i in enumerate(['FULLWHITE', 'ANY', 'TUXEDO', 'LITTLE', 'COLOURPOINT', 'VAN', 'ANY2']):
     sprites.make_group('whitepatches', (a, 0), f'white{i}')
     sprites.make_group('whiteextra', (a, 0), f'whiteextra{i}', sprites_y=2)
@@ -386,13 +403,13 @@ for a, i in enumerate(['LIGHTBROWN', 'BROWN', 'DARKBROWN', 'BLACK']):
     sprites.make_group('smokeextra', (a, 2), f'smokeextra{i}', sprites_y=2)
 # ticked
 for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST']):
-    sprites.make_group('tickedcolors', (a, 0), f'ticked{i}')
+    sprites.make_group('tickedcolours', (a, 0), f'ticked{i}')
     sprites.make_group('tickedextra', (a, 0), f'tickedextra{i}', sprites_y=2)
 for a, i in enumerate(['PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'CREAM']):
-    sprites.make_group('tickedcolors', (a, 1), f'ticked{i}')
+    sprites.make_group('tickedcolours', (a, 1), f'ticked{i}')
     sprites.make_group('tickedextra', (a, 1), f'tickedextra{i}', sprites_y=2)
 for a, i in enumerate(['LIGHTBROWN', 'BROWN', 'DARKBROWN', 'BLACK']):
-    sprites.make_group('tickedcolors', (a, 2), f'ticked{i}')
+    sprites.make_group('tickedcolours', (a, 2), f'ticked{i}')
     sprites.make_group('tickedextra', (a, 2), f'tickedextra{i}', sprites_y=2)
 # speckled
 for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST']):
@@ -414,6 +431,46 @@ for a, i in enumerate(['PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'CREAM'])
 for a, i in enumerate(['LIGHTBROWN', 'BROWN', 'DARKBROWN', 'BLACK']):
     sprites.make_group('speckledcolours2', (a, 2), f'bengal{i}')
     sprites.make_group('speckledextra2', (a, 2), f'bengalextra{i}', sprites_y=2)
+# mackerel
+for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST']):
+    sprites.make_group('mackerelcolours', (a, 0), f'mackerel{i}')
+    sprites.make_group('mackerelextra', (a, 0), f'mackerelextra{i}', sprites_y=2)
+for a, i in enumerate(['PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'CREAM']):
+    sprites.make_group('mackerelcolours', (a, 1), f'mackerel{i}')
+    sprites.make_group('mackerelextra', (a, 1), f'mackerelextra{i}', sprites_y=2)
+for a, i in enumerate(['LIGHTBROWN', 'BROWN', 'DARKBROWN', 'BLACK']):
+    sprites.make_group('mackerelcolours', (a, 2), f'mackerel{i}')
+    sprites.make_group('mackerelextra', (a, 2), f'mackerelextra{i}', sprites_y=2)
+# classic
+for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST']):
+    sprites.make_group('classiccolours', (a, 0), f'classic{i}')
+    sprites.make_group('classicextra', (a, 0), f'classicextra{i}', sprites_y=2)
+for a, i in enumerate(['PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'CREAM']):
+    sprites.make_group('classiccolours', (a, 1), f'classic{i}')
+    sprites.make_group('classicextra', (a, 1), f'classicextra{i}', sprites_y=2)
+for a, i in enumerate(['LIGHTBROWN', 'BROWN', 'DARKBROWN', 'BLACK']):
+    sprites.make_group('classiccolours', (a, 2), f'classic{i}')
+    sprites.make_group('classicextra', (a, 2), f'classicextra{i}', sprites_y=2)
+# sokoke
+for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST']):
+    sprites.make_group('sokokecolours', (a, 0), f'sokoke{i}')
+    sprites.make_group('sokokeextra', (a, 0), f'sokokeextra{i}', sprites_y=2)
+for a, i in enumerate(['PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'CREAM']):
+    sprites.make_group('sokokecolours', (a, 1), f'sokoke{i}')
+    sprites.make_group('sokokeextra', (a, 1), f'sokokeextra{i}', sprites_y=2)
+for a, i in enumerate(['LIGHTBROWN', 'BROWN', 'DARKBROWN', 'BLACK']):
+    sprites.make_group('sokokecolours', (a, 2), f'sokoke{i}')
+    sprites.make_group('sokokeextra', (a, 2), f'sokokeextra{i}', sprites_y=2)
+# agouti
+for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST']):
+    sprites.make_group('agouticolours', (a, 0), f'agouti{i}')
+    sprites.make_group('agoutiextra', (a, 0), f'agoutiextra{i}', sprites_y=2)
+for a, i in enumerate(['PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'CREAM']):
+    sprites.make_group('agouticolours', (a, 1), f'agouti{i}')
+    sprites.make_group('agoutiextra', (a, 1), f'agoutiextra{i}', sprites_y=2)
+for a, i in enumerate(['LIGHTBROWN', 'BROWN', 'DARKBROWN', 'BLACK']):
+    sprites.make_group('agouticolours', (a, 2), f'agouti{i}')
+    sprites.make_group('agoutiextra', (a, 2), f'agoutiextra{i}', sprites_y=2)
 # new torties
 # solids
 for a, i in enumerate(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR']):
@@ -595,7 +652,7 @@ sprites.make_group('skinextra', (3, 2), 'skinextraDARKBLUE', sprites_y=2)
 sprites.make_group('skinextra', (4, 2), 'skinextraBLUE', sprites_y=2)
 sprites.make_group('skinextra', (5, 2), 'skinextraLIGHTBLUE', sprites_y=2)
 
-tiles.make_group('dithered', (0, 0), 'terrain')
-tiles.make_group('dithered', (1, 0), 'terraintwo')
+# tiles.make_group('dithered', (0, 0), 'terrain')
+# tiles.make_group('dithered', (1, 0), 'terraintwo')
 
 sprites.load_scars()

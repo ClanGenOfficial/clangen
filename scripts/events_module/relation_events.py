@@ -313,7 +313,7 @@ class Relation_Events():
         no_hit = int(random.random() * chance)
         if no_hit:
             return
-        print("A KIT IS BORN")
+        # print("A KIT IS BORN")
 
         # even with no_gendered_breeding on a male cat with no second parent should not be count as pregnant
         # instead, the cat should get the kit instantly
@@ -422,7 +422,7 @@ class Relation_Events():
                                f"{str(cat.name)} had a {insert} and refused to talk about their progenitor.",
                                f"{str(cat.name)} had a {insert} and is absolutely refusing to talk about it or acknowledge it at all.",
                                f"{str(cat.name)} doesn't feel ready to be a parent of this {insert}. But they promise to the tiny flailing limbs by their side that they'll do their best, they swear on StarClan itself.",
-                               f"No one knows who {str(cat.name)} has had their {insert} with, but they seem very happy watching over their little offspring in the nursery",
+                               f"No one knows who {str(cat.name)} has had their {insert} with, but they seem very happy watching over their little offspring in the nursery.",
                                f"Whenever someone asks whether {str(cat.name)} will be alright raising their {insert} alone, they just smile, and reply that everything is going to work out fine.",
                                f"A {insert}! {str(cat.name)} welcomes them happily, and seems unperturbed by the lack of a partner in the nursery with them."
                                ]
@@ -768,7 +768,7 @@ class Relation_Events():
         if chance > 20 > living_cats:
             chance -= 10
 
-        print("CHANCE", chance)
+        # print("CHANCE", chance)
         return chance
 
     def get_affair_chance(self, mate_relation, affair_relation):
@@ -878,7 +878,7 @@ class Relation_Events():
             # remove scars
             kit.scars.clear()
 
-            # try to give them a permanent condition. 1/100 chance
+            # try to give them a permanent condition. 1/90 chance
             if not int(random.random() * 90) and game.clan.game_mode != 'classic':
                 kit.congenital_condition(kit)
                 for condition in kit.permanent_condition:

@@ -281,6 +281,11 @@ class SettingsScreen(Screens):
             self.settings_changed = True
             self.update_save_button()
             self.refresh_checkboxes()
+        elif event.ui_element == self.checkboxes['first_cousin_mates']:
+            game.switch_setting('first_cousin_mates')
+            self.settings_changed = True
+            self.update_save_button()
+            self.refresh_checkboxes()
 
     def handle_general_events(self, event):
         if event.ui_element == self.checkboxes['dark mode']:
@@ -531,6 +536,10 @@ class SettingsScreen(Screens):
             "Allow romantic interactions with former apprentices/mentor",
             pygame.Rect((x_value, 376), (500, 50)), object_id=get_text_box_theme("#setting_text_box")
         )
+        self.checkboxes_text['first_cousin_mates'] = pygame_gui.elements.UITextBox(
+            "Allow first cousins to become mates/have romantic interactions",
+            pygame.Rect((x_value, 415), (500, 50)), object_id=get_text_box_theme("#setting_text_box")
+        )
 
         self.checkboxes_text['instr'] = pygame_gui.elements.UITextBox(
             "Change the relationship settings of your game here",
@@ -587,7 +596,8 @@ class SettingsScreen(Screens):
                 "",
                 object_id=box_type,
                 container=self.checkboxes_text["container"],
-                tool_tip_text='Camp backgrounds will match with the mode. Nighttime for Dark mode and daytime for Light mode.'
+                tool_tip_text='Camp backgrounds will match with the mode: '
+                              'nighttime for Dark mode and daytime for Light mode.'
             )
             n += 1
             # Enable clan page background
@@ -770,6 +780,14 @@ class SettingsScreen(Screens):
                 box_type = "#unchecked_checkbox"
             self.checkboxes['romantic with former mentor'] = UIImageButton(pygame.Rect((x_value, 376), (34, 34)), "",
                                                                            object_id=box_type)
+            # Allow romantic interations with first cousins:
+            if game.settings['first_cousin_mates']:
+                box_type = "#checked_checkbox"
+            else:
+                box_type = "#unchecked_checkbox"
+            self.checkboxes['first_cousin_mates'] = UIImageButton(pygame.Rect((x_value, 415), (34, 34)), "",
+                                                                           object_id=box_type)
+
 
         # CHECKBOXES (ehhh) FOR LANGUAGES
         elif self.sub_menu == 'language':

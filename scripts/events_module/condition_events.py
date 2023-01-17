@@ -145,14 +145,27 @@ class Condition_Events():
                     if season not in event.tags:
                         continue
 
-                    if "other_cat_leader" in event.tags and other_cat.status != "leader":
-                        continue
-                    if "other_cat_mentor" in event.tags and cat.mentor != other_cat.ID:
-                        continue
-                    if "other_cat_adult" in event.tags and other_cat.age in ["elder", "kitten"]:
-                        continue
-                    if "other_cat_kit" in event.tags and other_cat.age != 'kitten':
-                        continue
+                    if other_cat:
+                        if "other_cat_leader" in event.tags and other_cat.status != "leader":
+                            continue
+                        if "other_cat_mentor" in event.tags and cat.mentor != other_cat.ID:
+                            continue
+                        if "other_cat_adult" in event.tags and other_cat.age in ["elder", "kitten"]:
+                            continue
+                        if "other_cat_kit" in event.tags and other_cat.age != 'kitten':
+                            continue
+
+                        if event.other_cat_trait is not None:
+                            if other_cat.trait not in event.other_cat_trait and int(random.random() * 10):
+                                continue
+
+                        if event.other_cat_skill is not None:
+                            if other_cat.skill not in event.other_cat_skill and int(random.random() * 10):
+                                continue
+
+                    else:
+                        if "other_cat" in event.tags:
+                            continue
 
                     if "clan_kits" in event.tags and not alive_kits:
                         continue
@@ -163,14 +176,6 @@ class Condition_Events():
 
                     if event.cat_skill is not None:
                         if cat.skill not in event.cat_skill and int(random.random() * 10):
-                            continue
-
-                    if event.other_cat_trait is not None:
-                        if other_cat.trait not in event.other_cat_trait and int(random.random() * 10):
-                            continue
-
-                    if event.other_cat_skill is not None:
-                        if other_cat.skill not in event.other_cat_skill and int(random.random() * 10):
                             continue
 
                     if event.injury == 'mangled tail' and ('NOTAIL' in cat.scars or 'HALFTAIL' in cat.scars):
@@ -676,7 +681,7 @@ class Condition_Events():
         }
 
         if not triggered and not cat.dead and not cat.retired and cat.status not in \
-                ['leader', 'medicine cat', 'kitten'] and game.settings['retirement'] is False:
+                ['leader', 'medicine cat', 'kitten', 'medicine cat apprentice'] and game.settings['retirement'] is False:
             for condition in cat.permanent_condition:
                 if cat.permanent_condition[condition]['severity'] == 'major':
                     chance = int(retire_chances.get(cat.age))

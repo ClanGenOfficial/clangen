@@ -45,11 +45,11 @@
         "The patrol shadows the dog, sending a message back to warn camp. It's an exhausting and stressful day, but by the time night falls they've confirmed that the dog is leaving the local area, and the patrol has assured c_n's safety.",
         "Your patrol gathers their courage and valiantly tries to lead away the dog. With such a small group of cats, they can only lead it a short distance, but it's better than nothing.",
         "s_c sets up a careful ambush ahead of the dog, and the surprising, darting attack bloodies the dog's flank, dissuading it from heading further into c_n territory.",
-        "s_c selflessly takes the lion's share of the run the patrol leads the dog on, exhausting themselves almost to the point of danger, but leading the dog far away from c_n borders. Their clanmates support them on the long walk home once it's all over, their purrs mixing with s_c exhausted pants."],
+        "s_c selflessly takes the lion's share of the run the patrol leads the dog on, exhausting themselves almost to the point of danger, but leading the dog far away from c_n borders. Their Clanmates support them on the long walk home once it's all over, their purrs mixing with s_c exhausted pants."],
     "fail_text": [
         "The patrol tries to keep watch on the dog from a distance, but it spots the cats and they have to scatter. Everyone escapes just fine, but they lose track of the dog. It could be anywhere still out there, lurking, waiting to attack.",
         "s_c tries to take the lion's share of the effort to lead the dog away, but their strength fails them and the rest of the patrol needs to rescue them, cutting short the results of the patrol. Instead, everyone knows the dog could still be lurking on their borders.",
-        "The patrol tries to lead the dog away from the Clan's borders, but with so few cats it's impossible to cover each other's backs. r_c falls to the dog as the rest of the patrol runs for their lives back to camp, terrified out of their pelts and mourning their clanmate.",
+        "The patrol tries to lead the dog away from the Clan's borders, but with so few cats it's impossible to cover each other's backs. r_c falls to the dog as the rest of the patrol runs for their lives back to camp, terrified out of their pelts and mourning their Clanmate.",
         "The patrol tries bravely to lead the dog away from c_n borders, but with so few cats it's impossible to cover each other's backs. r_c gets caught while running and it's all the rest of the patrol can do to distract the dog long enough to get r_c to safety."
     ],
     "win_skills": ["excellent fighter"],
@@ -79,11 +79,11 @@
         "They decide that no cat is going to be surprised by this predator again, and the patrol shadows the dog, sending a message to warn camp. With enough cats to keep watch, rest, track, and send messages forward and back from camp, c_n is kept safe from the wandering dog.",
         "Your patrol gathers their courage and valiantly drives away the dog. Together, working as one, and with all the strength of StarClan behind them, the patrol presses the dog. By keeping up a series of small skirmishes through the entire day, they drive it all the way off c_n territory.",
         "s_c has just enough time to yell out a plan, leading the whole large patrol in a skillful battle plan against the dog that protects the cats from the chance of injury. The dog tucks tail, and runs for more friendly lands.",
-        "s_c selflessly throw themselves into the fight, and every time the dog tries to grab at their clanmates, they're there with claws, fur puffed out to twice their normal size. With s_c defending them, the patrol drives the dog off, yowling triumphantly."
+        "s_c selflessly throw themselves into the fight, and every time the dog tries to grab at their Clanmates, they're there with claws, fur puffed out to twice their normal size. With s_c defending them, the patrol drives the dog off, yowling triumphantly."
 ],
     "fail_text": [
         "The patrol tries to keep watch on the dog from a distance, but it spots the cats and they have to scatter. It's not as bad as it could've been though, r_c manages to keep track of the dog's position, and it doesn't come any further into c_n territory.",
-        "s_c tries to protect their clanmates, but it gets in the way of the attack. Without everyone committed to driving the dog off, the patrol has to fall back, but they do so in good order.",
+        "s_c tries to protect their Clanmates, but it gets in the way of the attack. Without everyone committed to driving the dog off, the patrol has to fall back, but they do so in good order.",
         "With so many cats all working as one, the dog started to get beaten back. But just as the tide of the fight seems about to turn, one lucky strike hits r_c, and those vicious jaws take them to StarClan.",
         "The patrol fights bravely, but you only need to be unlucky once. r_c gets taken out of the fight with one snap of the beast's huge jaws. The rest of the patrol rallies to defend them, and r_c is safely helped back to camp, where the medicine den awaits."
     ],
@@ -141,7 +141,7 @@
     "exp": 10,
     "success_text": [
         "p_l hisses at the small dog, and the rest of their small team back them up. The dog skitters back, yapping loudly, apparently shocked by the display, and the patrol breaks out into yowls and caterwauls, screaming until the small beast's nerve breaks, and it runs from the c_n border into the distance.", 
-        "The patrol paces towards the small dog, claws out, fur up, backed up with the courage of their clanmates. The dog breaks into a barking fit, but that's their opportunity to attack, covering each other as they push the creature away from their lands.", 
+        "The patrol paces towards the small dog, claws out, fur up, backed up with the courage of their Clanmates. The dog breaks into a barking fit, but that's their opportunity to attack, covering each other as they push the creature away from their lands.", 
         "s_c calls out a battle plan, and the cats flow into it, carefully covering each other and driving the dog backwards until its nerve breaks, it tucks tail, and it runs from c_n territory headed deep into the wilderness."],
     "fail_text": [
         "All r_c's attempts to drive the small dog off only send it into greater and greater fits of excitement, until the only thing to do is wait exasperatedly in a safe spot until the beast calms down.", 
@@ -167,7 +167,7 @@
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
-        "The patrol paces towards the small dog, claws out, fur up, backed up with the courage of their clanmates. The dog breaks into a barking fit, but that's their opportunity to attack, covering each other as they push the creature away from their lands.", 
+        "The patrol paces towards the small dog, claws out, fur up, backed up with the courage of their Clanmates. The dog breaks into a barking fit, but that's their opportunity to attack, covering each other as they push the creature away from their lands.", 
         "Mobbed by cats and near blind with the blood in its eyes, the dog flees from c_n, yelping pitifully.", 
         "s_c calls out a battle plan, and the cats flow into it, carefully covering each other and driving the dog backwards until its nerve breaks, it tucks tail, and it runs from c_n territory headed deep into the wilderness."],
     "fail_text": [
