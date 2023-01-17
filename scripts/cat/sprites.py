@@ -239,8 +239,8 @@ sprites = Sprites(50)
 
 for x in [
     'lineart', 'singlecolours', 'speckledcolours', 'tabbycolours',
-    'whitepatches', 'eyes', 'singleextra', 'tabbyextra',
-    'speckledextra', 'whiteextra', 'eyesextra', 'skin',
+    'whitepatches', 'eyes', 'singleextra', 'tabbyextra', 'eyes2',
+    'speckledextra', 'whiteextra', 'eyesextra', 'eyes2extra', 'skin',
     'skinextra', 'scars', 'scarsextra', 'whitenewextra', 'whitepatchesnew',
     'scarsdark', 'scarsdarkextra', 'collars', 'collarsextra',
     'bellcollars', 'bellcollarsextra', 'bowcollars', 'bowcollarsextra',
