@@ -1719,9 +1719,6 @@ class Cat():
             if new_mentor:
                 self.__add_mentor(new_mentor.ID)
 
-        ob = Cat.fetch_cat(self.mentor)
-        print(str(self.name), str(ob.name))
-
     def __remove_mentor(self):
         """Should only be called by update_mentor, also sets fields on mentor."""
         if not self.mentor:
