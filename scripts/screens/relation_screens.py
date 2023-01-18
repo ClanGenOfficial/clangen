@@ -1224,7 +1224,7 @@ class ChooseMateScreen(Screens):
 
         if 10 <= romantic_love <= 30:
             heart_number = 1
-        elif 41 <= romantic_love <= 80:
+        elif 31 <= romantic_love <= 80:
             heart_number = 2
         elif 81 <= romantic_love:
             heart_number = 3
