@@ -1624,7 +1624,7 @@ class Events():
 
         # disaster death chance
         if game.settings.get('disasters') and not triggered_death:
-            if not random.getrandbits(10):  # 1/1024
+            if not random.getrandbits(9):  # 1/512
                 triggered_death = True
                 self.handle_disasters(cat)
 
