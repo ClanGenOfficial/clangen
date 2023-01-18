@@ -2141,6 +2141,10 @@ class Cat():
             except:
                 print(f'WARNING: There was an error reading the relationship file of cat #{self}.')
 
+    @staticmethod
+    def mediate_relationship(cat1, cat2, sabotage=False):
+        pass
+
     def set_faded(self):
         """This function is for cats that are faded. It will set the sprite and the faded tag"""
         self.faded = True

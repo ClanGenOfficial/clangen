@@ -557,10 +557,10 @@ class ProfileScreen(Screens):
         self.the_cat = Cat.all_cats.get(game.switches["cat"])
 
         #Temp Mediator button
-        self.profile_elements["mediator_button"] = pygame_gui.elements.UIButton(pygame.Rect((500, 120), (-1, -1)),
+        self.profile_elements["mediator_button"] = pygame_gui.elements.UIButton(pygame.Rect((500, 380), (-1, -1)),
                                                                                 "switch to mediator")
         if self.the_cat.status not in ["warrior", "elder"]:
-            self.profile_elements["mediator_button"].disable()
+            self.profile_elements["mediator_button"].hide()
 
         # use these attributes to create differing profiles for starclan cats etc.
         is_sc_instructor = False
@@ -643,7 +643,7 @@ class ProfileScreen(Screens):
 
         # If a cat if a mediator, show the mediator button
         self.profile_elements["mediator_den"] = UIImageButton(pygame.Rect
-                                                              ((100, 380), (151, 28)),
+                                                              ((350, 110), (100, 28)),
                                                               "Mediation")
         if not (self.the_cat.dead or self.the_cat.outside) and \
                 self.the_cat.status in ['mediator']:

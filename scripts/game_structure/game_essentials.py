@@ -29,6 +29,7 @@ class Game():
     #relation_scroll_ct = 0
 
     ranks_changed_timeskip = False  # Flag for when a cat's status changes occurs during a timeskip.
+    mediated = False  # Flag for when you have mediated this moon
 
     cur_events_list = []
     ceremony_events_list = []

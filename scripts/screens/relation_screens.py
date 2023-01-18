@@ -2135,17 +2135,21 @@ class MediationScreen(Screens):
                                                       "resources/images/mediation_selection_bg.png").convert_alpha())
         self.cat_bg.disable()
 
-        self.mediate_button = pygame_gui.elements.UIButton(pygame.Rect((290, 345), (100, 30)), "Mediate")
-        self.sabatoge_button = pygame_gui.elements.UIButton(pygame.Rect((400, 345), (100, 30)), "Sabatoge")
+        self.mediate_button = pygame_gui.elements.UIButton(pygame.Rect((280, 335), (105, 30)), "",
+                                                           object_id="#mediate_button")
+        self.sabatoge_button = pygame_gui.elements.UIButton(pygame.Rect((400, 335), (109, 30)), "",
+                                                            object_id="#sabotage_button")
 
-        self.next_med = UIImageButton(pygame.Rect((476, 280), (34, 34)), "", object_id="#arrow_right_button")
-        self.last_med = UIImageButton(pygame.Rect((280, 280), (34, 34)), "", object_id="#arrow_left_button")
+        self.next_med = UIImageButton(pygame.Rect((476, 270), (34, 34)), "", object_id="#arrow_right_button")
+        self.last_med = UIImageButton(pygame.Rect((280, 270), (34, 34)), "", object_id="#arrow_left_button")
 
         self.next_page = UIImageButton(pygame.Rect((433, 612), (34, 34)), "", object_id="#relation_list_next")
         self.previous_page = UIImageButton(pygame.Rect((333, 612), (34, 34)), "", object_id="#relation_list_previous")
 
-        self.deselect_1 = pygame_gui.elements.UIButton(pygame.Rect((100, 430), (100, -1)), "Deselect")
-        self.deselect_2 = pygame_gui.elements.UIButton(pygame.Rect((600, 430), (100, -1)), "Deselect")
+        self.deselect_1 = pygame_gui.elements.UIButton(pygame.Rect((87, 432), (127, 30)), "",
+                                                       object_id="#remove_cat_button")
+        self.deselect_2 = pygame_gui.elements.UIButton(pygame.Rect((587, 432), (127, 30)), "",
+                                                       object_id="#remove_cat_button")
 
         self.update_mediator_info()
 
@@ -2167,13 +2171,13 @@ class MediationScreen(Screens):
                 self.selected_cat_2 = None
                 self.update_selected_cats()
 
-            self.mediator_elements["mediator_image"] = pygame_gui.elements.UIImage(pygame.Rect((x_value, 100), (150, 150)),
+            self.mediator_elements["mediator_image"] = pygame_gui.elements.UIImage(pygame.Rect((x_value, 90), (150, 150)),
                                                                                    mediator.large_sprite)
 
             name = str(mediator.name)
             if len(name) > 17:
                 name = name[:15] + "..."
-            self.mediator_elements["name"] = pygame_gui.elements.UILabel(pygame.Rect((x_value, 250), (150, -1)),
+            self.mediator_elements["name"] = pygame_gui.elements.UILabel(pygame.Rect((x_value, 240), (150, -1)),
                                                                          name,
                                                                          object_id=get_text_box_theme())
 
@@ -2189,7 +2193,7 @@ class MediationScreen(Screens):
                 self.sabatoge_button.enable()
 
             self.mediator_elements["details"] = UITextBoxTweaked(text,
-                                                                 pygame.Rect((x_value, 280), (155, 50)),
+                                                                 pygame.Rect((x_value, 270), (155, 50)),
                                                                  object_id=get_text_box_theme("#cat_patrol_info_box"),
                                                                  line_spacing=0.75)
 
@@ -2207,6 +2211,7 @@ class MediationScreen(Screens):
             self.last_med.disable()
             self.next_med.disable()
 
+        self.update_buttons()
         self.update_list_cats()
 
     def update_list_cats(self):
@@ -2255,6 +2260,8 @@ class MediationScreen(Screens):
 
         self.draw_info_block(self.selected_cat_1, (50, 80))
         self.draw_info_block(self.selected_cat_2, (550, 80))
+
+        self.update_buttons()
 
     def draw_info_block(self, cat, starting_pos: tuple):
         if not cat:
@@ -2392,7 +2399,6 @@ class MediationScreen(Screens):
                                                                                                            (150, -1)),
                                                                                                f"~~{name}'s feelings~~",
                                                                                                object_id="#cat_patrol_info_box")
-
 
             if other_cat.ID in cat.relationships:
                 the_relationship = cat.relationships[other_cat.ID]
@@ -2565,7 +2571,17 @@ class MediationScreen(Screens):
 
 
     def update_buttons(self):
-        pass
+        if self.selected_mediator is not None:
+            invalid_mediator = self.mediators[self.selected_mediator].not_working()
+        else:
+            invalid_mediator = True
+
+        if game.mediated or invalid_mediator or not self.selected_cat_1 or not self.selected_cat_2:
+            self.mediate_button.disable()
+            self.sabatoge_button.disable()
+        else:
+            self.mediate_button.enable()
+            self.sabatoge_button.enable()
 
     def exit_screen(self):
         self.selected_cat_1 = None
