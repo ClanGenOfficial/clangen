@@ -8,7 +8,7 @@ from .organizational_screens import\
 from .patrol_screens import PatrolScreen
 from .relation_screens import\
     RelationshipScreen, ChooseMateScreen, ViewChildrenScreen, ChooseMentorScreen
-from .world_screens import OutsideClanScreen
+from .world_screens import OutsideClanScreen, UnknownResScreen
 
 # ---------------------------------------------------------------------------- #
 #                                  UI RULES                                    #
@@ -93,4 +93,4 @@ view_children_screen = ViewChildrenScreen('see kits screen')
 # ---------------------------------------------------------------------------- #
 
 outside_clan_screen = OutsideClanScreen('other screen')
-# map_screen = MapScreen('map screen')
+unknown_residence_screen = UnknownResScreen('unknown residence screen')

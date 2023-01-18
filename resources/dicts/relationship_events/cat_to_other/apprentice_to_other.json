@@ -21,7 +21,7 @@
             "mocks (cat) for smelling like gross herbs.",
             "mocks (cat) for smelling like mouse bile.",
             "doesn't like how (cat) has been talking about their mentor.",
-            "looks down on (cat), there's no way they could ever be a useful medicine cat.",
+            "looks down on (cat), because there's no way they could ever be a useful medicine cat.",
             "is jealous that (cat) gets to do cool super secret medicine cat things."
         ],
         "neutral": [
@@ -29,7 +29,7 @@
             "has been listening to (cat) talk about how difficult herb memorization is.",
             "is jealous that (cat) was praised by the leader.",
             "doesn't like how (cat) has been talking about their mentor.",
-            "thinks it's unfair that (cat) always gets to go to gatherings.",
+            "thinks it's unfair that (cat) always gets to go to Gatherings.",
             "is jealous that (cat) gets to do cool super secret medicine cat things."
         ],
         "friendly": [
@@ -39,7 +39,7 @@
         ],
         "close": [
             "comforts (cat) after a hard day's training.",
-            "gently grooms some cobwebs off of (cat)'s fur.",
+            "gently grooms some cobwebs off  (cat)'s fur.",
             "tells (cat) that they'll be an amazing medicine cat someday."
         ]
     },

@@ -43,6 +43,10 @@ class Name():
         'Calico': ['stripe', 'dapple', 'patch', 'patch'],
         'Smoke': ['fade', 'dusk', 'dawn', 'smoke'],
         'Ticked': ['spots', 'pelt', 'speckle', 'freckle'],
+        'Mackerel': ['stripe', 'feather', 'leaf', 'stripe', 'fern'],
+        'Classic': ['stripe', 'feather', 'leaf', 'stripe', 'fern'],
+        'Sokoke': ['stripe', 'feather', 'leaf', 'stripe', 'fern'],
+        'Agouti': ['back', 'pelt', 'fur']
     }
 
     tortie_pelt_suffixes = {
@@ -147,7 +151,7 @@ class Name():
             'Grey', 'Shade', 'Raven', 'Crow', 'Stone', 'Dark', 'Night',
             'Smoke', 'Shadow'
         ],
-        'BLACK': [
+        'GHOST': [
             'Black', 'Black', 'Shade', 'Crow', 'Raven', 'Ebony', 'Dark',
             'Night', 'Shadow', 'Scorch', 'Midnight'
         ],
@@ -180,7 +184,11 @@ class Name():
             'Acorn', 'Mud', "Deer"
         ],
         'DARKBROWN':
-        ['Brown', 'Shade', 'Dark', 'Night', 'Russet', 'Rowan', 'Mud']}
+        ['Brown', 'Shade', 'Dark', 'Night', 'Russet', 'Rowan', 'Mud'],
+        'BLACK': [
+            'Black', 'Black', 'Shade', 'Crow', 'Raven', 'Ebony', 'Dark',
+            'Night', 'Shadow', 'Scorch', 'Midnight'
+        ]}
 
     eye_prefixes = {
         'YELLOW': ['Yellow', 'Moon', 'Daisy', 'Honey', 'Light'],
@@ -191,7 +199,19 @@ class Name():
         'BLUE': ['Blue', 'Blue', 'Ice', 'Sky', 'Lake', 'Frost', 'Water'],
         'DARKBLUE': ['Blue', 'Sky', 'Lake', 'Berry', 'Dark', 'Water', 'Deep'],
         'BLUEYELLOW': ['Yellow', 'Blue', 'Odd', 'One', 'Moon'],
-        'BLUEGREEN': ['Green', 'Blue', 'Odd', 'One', 'Clover']
+        'BLUEGREEN': ['Green', 'Blue', 'Odd', 'One', 'Clover'],
+        'GREY': ['Grey', 'Stone', 'Silver', 'Ripple', 'Moon', 'Rain', 'Storm'],
+        'CYAN': ['Sky', 'Blue', 'River', 'Rapid', 'Green'],
+        'EMERALD': ['Emerald', 'Green', 'Shine', 'Blue', 'Pine'],
+        'PALEBLUE': ['Sky', 'River', 'Ripple', 'Day', 'Cloud'],
+        'PALEYELLOW': ['Yellow', 'Sun', 'Gold', 'Ray', 'Pale'],
+        'GOLD': ['Gold', 'Sun', 'Amber', 'Sap', 'Honey'],
+        'HEATHERBLUE': ['Heather', 'Lilac', 'Blue', 'Rosemary', 'Lavender'],
+        'COPPER': ['Copper', 'Red', 'Amber', 'Brown', 'Fire'],
+        'SAGE': ['Sage', 'Leaf', 'Olive', 'Bush', 'Clove'],
+        'BLUE2': ['Blue', 'Blue', 'Ice', 'Sky', 'Lake', 'Frost', 'Water'],
+        'SUNLITICE': ['Sun', 'Ice', 'Frost', 'Sunrise', 'Dawn', 'Dusk'],
+        'GREENYELLOW': ['Tawny', 'Hazel', 'Gold', 'Daisy', 'Sand']
     }
 
     loner_names = [

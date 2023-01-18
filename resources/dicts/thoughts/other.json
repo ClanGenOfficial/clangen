@@ -71,9 +71,9 @@
         ],
         "adult": [
             "Is scouting out locations for a new den",
-            "Nearly got caught in a twoleg trap!",
-            "Got pet by a twoleg ",
-            "Stayed in a twoleg den for a couple of days for food",
+            "Nearly got caught in a Twoleg trap!",
+            "Got pet by a Twoleg ",
+            "Stayed in a Twoleg den for a couple of days for food",
             "Was almost eaten by a monster",
             "Is playing with kits"
         ],
@@ -116,7 +116,7 @@
             "Is lurking in c_n territory"
         ],
         "elder": [
-            "Thinks about finding some twolegs to help them in their old age",
+            "Thinks about finding some Twolegs to help them in their old age",
             "Thinks their joints are aching too much to hunt today",
             "Wonders if they can carry on"
         ]
