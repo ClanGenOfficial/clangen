@@ -1124,14 +1124,14 @@ class Events():
                             f"{name} earned a scar fighting {choice(danger)} on {leader_name}'s orders.",
                             f"{name} earned a scar defending the territory from outsiders.",
                             f"{name} earned a scar protecting the leader.",
-                            f"{name} is wounded during a harsh training exercise led by {leader_name}.",
-                            f"{name} is injured during an unsupervised training exercise.",
-                            f"{name} is hurt by enemy warriors after being ordered by {leader_name} to go over the border.",
-                            f"{name} is injured after being ordered by {leader_name} to check out a Twoleg object.",
-                            f"{name} is battered while fighting a Clanmate after {leader_name} encouraged a fight.",
-                            f"{name} is injured by {leader_name} for disobeying orders.",
-                            f"{name} is injured by {leader_name} for speaking out against them.",
-                            f"{name} is cruelly injured by {leader_name} to make an example out of them.",
+                            f"{name} was wounded during a harsh training exercise led by {leader_name}.",
+                            f"{name} was injured during an unsupervised training exercise.",
+                            f"{name} was hurt by enemy warriors after being ordered by {leader_name} to go over the border.",
+                            f"{name} was injured after being ordered by {leader_name} to check out a Twoleg object.",
+                            f"{name} was battered while fighting a Clanmate after {leader_name} encouraged a fight.",
+                            f"{name} was injured by {leader_name} for disobeying orders.",
+                            f"{name} was injured by {leader_name} for speaking out against them.",
+                            f"{name} was cruelly injured by {leader_name} to make an example out of them.",
                         ]
                     )
         if scar_text:
@@ -1574,7 +1574,7 @@ class Events():
         triggered_death = False
         # choose other cat
         possible_other_cats = list(filter(
-            lambda c: not c.dead and not c.outside and (c.ID != cat.ID), Cat.all_cats.values()
+            lambda c: not c.dead and not c.exiled and not c.outside and (c.ID != cat.ID), Cat.all_cats.values()
         ))
 
         # If there are possible other cats...
@@ -1624,7 +1624,7 @@ class Events():
 
         # disaster death chance
         if game.settings.get('disasters') and not triggered_death:
-            if not random.getrandbits(10):  # 1/1024
+            if not random.getrandbits(9):  # 1/512
                 triggered_death = True
                 self.handle_disasters(cat)
 

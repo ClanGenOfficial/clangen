@@ -30,7 +30,10 @@
     "alive": {
         "kitten": [],
         "medicine cat apprentice": [],
-        "apprentice": [],
+        "apprentice": [
+            "Wonders if r_c would have been a better healer",
+            "Wishes they understood the apprentice's inside jokes"
+        ],
         "warrior": [],
         "medicine cat": [],
         "leader": [],
