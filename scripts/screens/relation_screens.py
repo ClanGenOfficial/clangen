@@ -1247,7 +1247,7 @@ class ChooseMateScreen(Screens):
 
         if 10 <= romantic_love <= 30:
             heart_number = 1
-        elif 41 <= romantic_love <= 80:
+        elif 31 <= romantic_love <= 80:
             heart_number = 2
         elif 81 <= romantic_love:
             heart_number = 3
@@ -2170,8 +2170,11 @@ class MediationScreen(Screens):
             self.mediator_elements["mediator_image"] = pygame_gui.elements.UIImage(pygame.Rect((x_value, 100), (150, 150)),
                                                                                    mediator.large_sprite)
 
+            name = str(mediator.name)
+            if len(name) > 17:
+                name = name[:15] + "..."
             self.mediator_elements["name"] = pygame_gui.elements.UILabel(pygame.Rect((x_value, 250), (150, -1)),
-                                                                         str(mediator.name),
+                                                                         name,
                                                                          object_id=get_text_box_theme())
 
             text = mediator.trait + "\n" + mediator.skill
@@ -2271,8 +2274,11 @@ class MediationScreen(Screens):
         self.selected_cat_elements["cat_image" + tag] = pygame_gui.elements.UIImage(pygame.Rect((x + 50, y + 7), (100, 100)),
                                                                                     cat.big_sprite)
 
+        name = str(cat.name)
+        if len(name) > 17:
+            name = name[:15] + "..."
         self.selected_cat_elements["name" + tag] = pygame_gui.elements.UILabel(pygame.Rect((x, y + 100), (200, 30)),
-                                                                               str(cat.name),
+                                                                               name,
                                                                                object_id="text_box")
 
         # Gender
@@ -2321,8 +2327,13 @@ class MediationScreen(Screens):
                     image_cache.load_image(
                         "resources/images/dot_big.png").convert_alpha())
 
-        col1 = cat.trait
-        self.selected_cat_elements["col1" + tag] = UITextBoxTweaked(col1, pygame.Rect((x + 20, y + 125), (80, -1)),
+        col1 = str(cat.moons)
+        if cat.moons == 1:
+            col1 += " moon"
+        else:
+            col1 += " moons"
+        col1 += "\n" + cat.trait
+        self.selected_cat_elements["col1" + tag] = UITextBoxTweaked(col1, pygame.Rect((x + 23, y + 126), (80, -1)),
                                                                     object_id="#cat_profile_info_box",
                                                                     line_spacing=0.75)
 
@@ -2364,7 +2375,7 @@ class MediationScreen(Screens):
             elif not game.settings["first_cousin_mates"] and other_cat.is_cousin(cat):
                 col2 += "cousin"
 
-        self.selected_cat_elements["col2" + tag] = UITextBoxTweaked(col2, pygame.Rect((x + 110, y + 125), (80, -1)),
+        self.selected_cat_elements["col2" + tag] = UITextBoxTweaked(col2, pygame.Rect((x + 110, y + 126), (80, -1)),
                                                                     object_id="#cat_profile_info_box",
                                                                     line_spacing=0.75)
 
@@ -2373,9 +2384,13 @@ class MediationScreen(Screens):
 
         if other_cat:
 
+
+            name = str(cat.name)
+            if len(name) > 13:
+                name = name[:10] + ".."
             self.selected_cat_elements[f"relation_heading{tag}"] = pygame_gui.elements.UILabel(pygame.Rect((x + 20, y + 157),
                                                                                                            (150, -1)),
-                                                                                               f"~~{cat.name}'s feelings~~",
+                                                                                               f"~~{name}'s feelings~~",
                                                                                                object_id="#cat_patrol_info_box")
 
 
