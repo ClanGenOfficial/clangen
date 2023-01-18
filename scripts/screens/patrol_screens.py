@@ -912,3 +912,4 @@ class PatrolScreen(Screens):
         # Removes duplicates.
         patrol_set = list(patrol_list)
         return ", ".join(patrol_set)
+

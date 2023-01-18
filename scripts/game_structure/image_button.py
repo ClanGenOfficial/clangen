@@ -314,7 +314,9 @@ class UIRelationStatusBar():
             else:
                 overlay_path += "relations_border_dots.png"
 
-        self.overlay = pygame_gui.elements.UIImage(relative_rect, image_cache.load_image(overlay_path).convert_alpha())
+        image = pygame.transform.scale(image_cache.load_image(overlay_path).convert_alpha(), (relative_rect[2], relative_rect[3]))
+
+        self.overlay = pygame_gui.elements.UIImage(relative_rect, image)
 
     def kill(self):
         self.status_bar.kill()
