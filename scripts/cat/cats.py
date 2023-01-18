@@ -2143,7 +2143,91 @@ class Cat():
 
     @staticmethod
     def mediate_relationship(cat1, cat2, sabotage=False):
-        pass
+        # Gather some important info
+
+        if cat1.ID in cat2.relationships:
+            relationship = cat1.relationships[cat2.ID]
+        else:
+            relationship = cat1.create_one_relationship(cat2)
+
+        if cat2.ID in cat1.relationships:
+            relationship2 = cat2.relationships[cat1.ID]
+        else:
+            relationship2 = cat2.create_one_relationship(cat1)
+
+        mates = False
+        if relationship.cat_to.mate == relationship.cat_from.ID:
+            mates = True
+
+        # Relation Checking
+        direct_related = relationship.cat_to.is_sibling(relationship.cat_from) or \
+                         relationship.cat_from.is_parent(relationship.cat_to) \
+                         or relationship.cat_to.is_parent(relationship.cat_from)
+        indirect_related = relationship.cat_from.is_uncle_aunt(relationship.cat_to) or \
+                           relationship.cat_to.is_uncle_aunt(relationship.cat_from)
+
+        if not game.settings["first_cousin_mates"]:
+            indirect_related = indirect_related or relationship.cat_from.is_cousin(relationship.cat_to)
+
+        related = direct_related or indirect_related
+
+        # Check for both adults, or same age catagory:
+        if relationship.cat_to.age == relationship.cat_from.age or (relationship.cat_to.age not
+                                                                    in ['kitten', 'adolescent'] and
+                                                                    relationship.cat_from.age not in
+                                                                    ['kitten', 'adolescent']):
+            valid_age = True
+        else:
+            valid_age = False
+
+        # Gather the other relationship
+        relation2 = relationship.opposite_relationship
+
+        output = ""
+
+        effect = 0
+        # Effect on romantic like
+        # Special Chance for mates
+        if mates:
+            effect = randint(2, 15)
+        elif not related and valid_age:
+            effect = randint(0, 7)
+
+        if effect > 0:
+            if sabotage:
+                output += f"Romantic interest decreased by {effect}\n"
+                effect = -effect
+            else:
+                output += f"Romantic interest increased by {effect}\n"
+            relationship.romantic_love = Cat.effect_relation(relationship.romantic_love, effect)
+            relationship2.romantic_love = Cat.effect_relation(relationship2.romantic_love, effect)
+
+
+        #plantonic like
+        effect = randint(3, 15)
+        if effect > 0:
+            if sabotage:
+                output += f"Platonic love decreased by {effect}\n"
+                effect = -effect
+            else:
+                output += f"Plantonic love increased by {effect}\n"
+            relationship.platonic_like = Cat.effect_relation(relationship.platonic_like, effect)
+            relationship2.platonic_like = Cat.effect_relation(relationship2.platonic_like, effect)
+
+
+        return output
+
+    @staticmethod
+    def effect_relation(current_value, effect):
+        if effect < 0:
+            if abs(effect) >= current_value:
+                return 0
+
+        if effect > 0:
+            if current_value + effect >= 100:
+                return 100
+
+        return current_value + effect
 
     def set_faded(self):
         """This function is for cats that are faded. It will set the sprite and the faded tag"""

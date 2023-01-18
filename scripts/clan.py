@@ -313,7 +313,8 @@ class Clan():
             "camp_site_2": self.camp_site[1],
             "gamemode": self.game_mode,
             "instructor": self.instructor.ID,
-            "reputation": self.reputation
+            "reputation": self.reputation,
+            "mediated": game.mediated
         }
 
         # LEADER DATA
@@ -613,6 +614,10 @@ class Clan():
             for cat in clan_data["patrolled_cats"]:
                 if cat in Cat.all_cats:
                     game.patrolled.append(Cat.all_cats[cat])
+
+        #Mediated flag
+        if "mediated" in clan_data:
+            game.mediated = clan_data["mediated"]
 
 
         self.load_pregnancy(game.clan)

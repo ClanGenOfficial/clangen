@@ -2086,6 +2086,11 @@ class MediationScreen(Screens):
             elif event.ui_element == self.deselect_2:
                 self.selected_cat_2 = None
                 self.update_selected_cats()
+            elif event.ui_element == self.mediate_button:
+                game.mediated = True
+                output = Cat.mediate_relationship(self.selected_cat_1, self.selected_cat_2)
+                print(output)
+                self.update_selected_cats()
             elif event.ui_element in self.cat_buttons:
                 if event.ui_element.return_cat_object() not in [self.selected_cat_1, self.selected_cat_2]:
                     if pygame.key.get_mods() & pygame.KMOD_SHIFT:
