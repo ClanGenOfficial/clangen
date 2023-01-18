@@ -1132,7 +1132,7 @@ null
     "biome": "forest",
     "season": "Any",
     "tags": ["hunting", "small_prey"],
-    "intro_text": "As r_c tears through the forest, stretching their legs on a  run, they spot movement out of the corner of their eye.",
+    "intro_text": "As r_c tears through the forest, stretching their legs on a run, they spot movement out of the corner of their eye.",
     "decline_text": "They keep going, not wanting to slow down.",
     "chance_of_success": 50,
     "exp": 10,

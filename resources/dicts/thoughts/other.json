@@ -164,10 +164,16 @@
             "Wishes they weren't as used to this as they are",
             "Got even more lost than they were before",
             "Worries their Clan thinks they're a runaway traitor",
-            "Finds comfort in their solitude"
+            "Finds comfort in their solitude",
+            "Is wandering thru the forest",
+            "Is trying to get back to c_n as soon as possible",
+            "Wonders how they will survive without their clanmates",
+            "Is missing r_c",
+            "Is scared that they will never be found"
         ],
         "kitten": [
-            "Misses playing moss ball"
+            "Misses playing moss ball",
+            "Is looking desperately for their mother"
         ],
         "apprentice": [
             "Is missing their mentor's guidance",
