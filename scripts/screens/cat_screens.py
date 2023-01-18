@@ -1698,7 +1698,7 @@ class ProfileScreen(Screens):
                                                           starting_height=2, object_id="#promote_deputy_button")
                 self.toggle_deputy_button.disable()
 
-            if self.the_cat.status in ['elder', 'kitten', 'apprentice', 'medicine cat apprentice']:
+            if self.the_cat.status in ['elder', 'kitten', 'apprentice', 'medicine cat apprentice'] or self.the_cat.dead or self.the_cat.exiled or self.the_cat.outside:
                 self.retire_button.disable()
             else:
                 self.retire_button.enable()
