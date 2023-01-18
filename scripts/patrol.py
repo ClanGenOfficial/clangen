@@ -1051,8 +1051,8 @@ class Patrol():
                     # add litter if the kits text is rolled
                     if litter_choice == True:
                         new_backstory = 'outsider_roots2'
-                        created_cats = self.create_new_cat(loner=True, loner_name=True, backstory=new_backstory,
-                                                           litter=True, relevant_cat=new_cat)
+                        created_cats.extend(self.create_new_cat(loner=True, loner_name=True, backstory=new_backstory,
+                                                           litter=True, relevant_cat=new_cat))
                     if major_injury:
                         new_cat.get_injured("broken bone")
                 else:  # new loner
@@ -1064,8 +1064,8 @@ class Patrol():
                     # add litter if the kits text is rolled
                     if litter_choice == True:
                         new_backstory = 'outsider_roots2'
-                        created_cats = self.create_new_cat(loner=True, loner_name=True, backstory=new_backstory,
-                                                           litter=True, relevant_cat=new_cat)
+                        created_cats.extend(self.create_new_cat(loner=True, loner_name=True, backstory=new_backstory,
+                                                           litter=True, relevant_cat=new_cat))
                     if major_injury:
                         new_cat.get_injured("broken bone")
 
@@ -1079,16 +1079,17 @@ class Patrol():
                 # add litter if the kits text is rolled
                 if litter_choice == True:
                     new_backstory = 'outsider_roots2'
-                    created_cats = self.create_new_cat(loner=True, loner_name=True, backstory=new_backstory,
-                                                       litter=True, relevant_cat=new_cat)
+                    created_cats.extend(self.create_new_cat(loner=True, loner_name=True, backstory=new_backstory,
+                                                       litter=True, relevant_cat=new_cat))
             elif "new_cat_queen" in tags:
+                created_cats = []
                 kittypet = choice([True, False])
                 if "kittypet" in self.patrol_event.patrol_id:
                     kittypet = True
                 if kittypet is True:
                     new_backstory = choice(['kittypet1', 'kittypet2'])
-                    created_cats = self.create_new_cat(loner=False, loner_name=True, kittypet=True, queen=True,
-                                                       backstory=new_backstory)
+                    created_cats.extend(self.create_new_cat(loner=False, loner_name=True, kittypet=True, queen=True,
+                                                       backstory=new_backstory))
                     new_cat = created_cats[0]
                     if game.clan.game_mode != 'classic':
                         new_cat.get_injured("recovering from birth")
@@ -1096,29 +1097,30 @@ class Patrol():
                     new_backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2',
                                             'ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
                                             'tragedy_survivor'])
-                    created_cats = self.create_new_cat(loner=True, loner_name=True, kittypet=False, queen=True,
-                                                       backstory=new_backstory)
+                    created_cats.extend(self.create_new_cat(loner=True, loner_name=True, kittypet=False, queen=True,
+                                                       backstory=new_backstory))
                     new_cat = created_cats[0]
                     if game.clan.game_mode != 'classic':
                         new_cat.get_injured("recovering from birth")
                 if "new_cat_kits" in tags:
                     if "new_cat_newborn" in tags:
                         new_backstory = 'outsider_roots2'
-                        created_cats = self.create_new_cat(loner=False, loner_name=True, backstory=new_backstory,
-                                                           litter=True, relevant_cat=new_cat, age='newborn')
+                        created_cats.extend(self.create_new_cat(loner=False, loner_name=True, backstory=new_backstory,
+                                                           litter=True, relevant_cat=new_cat, age='newborn'))
                     else:
                         new_backstory = 'outsider_roots2'
-                        created_cats = self.create_new_cat(loner=False, loner_name=True, backstory=new_backstory,
-                                                           litter=True, relevant_cat=new_cat)
+                        created_cats.extend(self.create_new_cat(loner=False, loner_name=True, backstory=new_backstory,
+                                                           litter=True, relevant_cat=new_cat))
 
             elif "new_cat_kits" in tags:  # new kits
+                created_cats = []
                 kittypet = choice([True, False])
                 if "kittypet" in self.patrol_event.patrol_id:
                     kittypet = True
                 if kittypet is True:
                     new_backstory = choice(['kittypet1', 'kittypet2'])
-                    created_cats = self.create_new_cat(loner=False, loner_name=True, kittypet=True, queen=True,
-                                                       backstory=new_backstory)
+                    created_cats.extend(self.create_new_cat(loner=False, loner_name=True, kittypet=True, queen=True,
+                                                       backstory=new_backstory))
                     new_cat = created_cats[0]
                     new_cat.name.prefix = "unnamed"
                     new_cat.name.suffix = " queen"
@@ -1128,19 +1130,19 @@ class Patrol():
                     new_backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2',
                                             'ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
                                             'tragedy_survivor'])
-                    created_cats = self.create_new_cat(loner=True, loner_name=True, kittypet=False, queen=True,
-                                                       backstory=new_backstory)
+                    created_cats.extend(self.create_new_cat(loner=True, loner_name=True, kittypet=False, queen=True,
+                                                       backstory=new_backstory))
                     new_cat = created_cats[0]
                     new_cat.name.prefix = "unnamed"
                     new_cat.name.suffix = " queen"
                     new_cat.outside = True
                     new_cat.dead = True
                 if "new_cat_newborn" in tags:
-                    created_cats = self.create_new_cat(loner=False, loner_name=True, backstory='orphaned',
-                                                       litter=True, age='newborn', relevant_cat=new_cat)
+                    created_cats.extend(self.create_new_cat(loner=False, loner_name=True, backstory='orphaned',
+                                                       litter=True, age='newborn', relevant_cat=new_cat))
                 else:
-                    created_cats = self.create_new_cat(loner=False, loner_name=True, backstory='orphaned',
-                                                       litter=True, relevant_cat=new_cat)
+                    created_cats.extend(self.create_new_cat(loner=False, loner_name=True, backstory='orphaned',
+                                                       litter=True, relevant_cat=new_cat))
 
             elif "new_cat_apprentice" in tags:
                 kittypet = choice([True, False])
