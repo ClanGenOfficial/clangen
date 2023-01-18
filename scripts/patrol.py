@@ -875,11 +875,13 @@ class Patrol():
         """
         reputation with outsiders
         """
-        if "no_change_fail_rep" in self.patrol_event.tags:
+        if "no_change_fail_rep" in self.patrol_event.tags and not self.success:
             difference = 0
         change_clan_reputation(difference)
         if difference > 0:
             insert = "improved"
+        elif difference == 0:
+            insert = "remained neutral"
         else:
             insert = "worsened"
         self.results_text.append(f"Your Clan's reputation towards Outsiders has {insert}.")
