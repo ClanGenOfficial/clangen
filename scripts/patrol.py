@@ -1495,12 +1495,12 @@ class PatrolEvent():
          reference herbs.json, you can use any herb name listed there
         
         "many_herbs#" < to cause the patrol to give a large number of herbs automatically. Numbering starts at 0. 
-        Replace the # with the outcome number (i.e. if you want success[1] - which is the skill success - to give lots of herbs, then 
-        use "many_herbs1")
+        Replace the # with the outcome number (i.e. if you want success[2] - which is the skill success - to give lots of herbs, then 
+        use "many_herbs2")
         
         "no_herbs#" < to cause the patrol to give no herbs on a certain outcome, while still giving herbs on other 
-        outcomes. Numbering starts at 0. Replace the # with the outcome number (i.e. if you want success[1] - which is the skill 
-        success - to give no herbs, then use "no_herbs1")
+        outcomes. Numbering starts at 0. Replace the # with the outcome number (i.e. if you want success[2] - which is the skill 
+        success - to give no herbs, then use "no_herbs2")
 
         - TO SPECIFY -
         "two_apprentices" is for patrols with two apprentices (at least) in them. It works with the "apprentice" tag. 
