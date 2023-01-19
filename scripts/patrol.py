@@ -788,8 +788,8 @@ class Patrol():
 
     def handle_herbs(self, outcome):
         herbs_gotten = []
-        no_herbs_tags = ["no_herbs1", "no_herbs2", "no_herbs3", "no_herbs4"]
-        many_herbs_tags = ["many_herbs1", "many_herbs2", "many_herbs3", "many_herbs4"]
+        no_herbs_tags = ["no_herbs0", "no_herbs1", "no_herbs2", "no_herbs3"]
+        many_herbs_tags = ["many_herbs0", "many_herbs1", "many_herbs2", "many_herbs3"]
 
         for x in range(len(no_herbs_tags)):
             if f"no_herbs{x}" in patrol.patrol_event.tags and outcome == x:
@@ -1494,13 +1494,13 @@ class PatrolEvent():
         Herb tags:
          reference herbs.json, you can use any herb name listed there
         
-        "many_herbs#" < to cause the patrol to give a large number of herbs automatically. Replace the # with the 
-        outcome number (i.e. if you want success outcome 3 - which is the skill success - to give lots of herbs, then 
-        use "many_herbs3")
+        "many_herbs#" < to cause the patrol to give a large number of herbs automatically. Numbering starts at 0. 
+        Replace the # with the outcome number (i.e. if you want success[2] - which is the skill success - to give lots of herbs, then 
+        use "many_herbs2")
         
         "no_herbs#" < to cause the patrol to give no herbs on a certain outcome, while still giving herbs on other 
-        outcomes. Replace the # with the outcome number (i.e. if you want success outcome 3 - which is the skill 
-        success - to give no herbs, then use "no_herbs3")
+        outcomes. Numbering starts at 0. Replace the # with the outcome number (i.e. if you want success[2] - which is the skill 
+        success - to give no herbs, then use "no_herbs2")
 
         - TO SPECIFY -
         "two_apprentices" is for patrols with two apprentices (at least) in them. It works with the "apprentice" tag. 
