@@ -341,7 +341,8 @@ class StarClanScreen(Screens):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.dark_forest_button:
                 self.change_screen('dark forest screen')
-
+            elif event.ui_element == self.unknown_residence_button:
+                self.change_screen('unknown residence screen')
             elif event.ui_element == self.next_page_button:
                 self.list_page += 1
                 self.update_page()
@@ -400,6 +401,7 @@ class StarClanScreen(Screens):
         self.hide_menu_buttons()
         self.starclan_button.kill()
         self.dark_forest_button.kill()
+        self.unknown_residence_button.kill()
         self.next_page_button.kill()
         self.previous_page_button.kill()
         self.page_number.kill()
@@ -434,9 +436,11 @@ class StarClanScreen(Screens):
         self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((421, 142), (147, 23)),
                                                               object_id="#search_entry_box")
 
-        self.starclan_button = UIImageButton(pygame.Rect((150, 135), (34, 34)), "", object_id="#starclan_button")
+        self.starclan_button = UIImageButton(pygame.Rect((115, 135), (34, 34)), "", object_id="#starclan_button")
         self.starclan_button.disable()
-        self.dark_forest_button = UIImageButton(pygame.Rect((115, 135), (34, 34)), "", object_id="#dark_forest_button")
+        self.unknown_residence_button = UIImageButton(pygame.Rect((149, 135), (34, 34)), "",
+                                                      object_id="#unknown_residence_button")
+        self.dark_forest_button = UIImageButton(pygame.Rect((183, 135), (34, 34)), "", object_id="#dark_forest_button")
         self.next_page_button = UIImageButton(pygame.Rect((456, 595), (34, 34)), "", object_id="#arrow_right_button")
         self.previous_page_button = UIImageButton(pygame.Rect((310, 595), (34, 34)), "", object_id="#arrow_left_button")
         self.page_number = pygame_gui.elements.UITextBox("", pygame.Rect((340, 595),
@@ -616,7 +620,8 @@ class DFScreen(Screens):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.starclan_button:
                 self.change_screen('starclan screen')
-
+            elif event.ui_element == self.unknown_residence_button:
+                self.change_screen('unknown residence screen')
             elif event.ui_element == self.next_page_button:
                 self.list_page += 1
                 self.update_page()
@@ -676,6 +681,7 @@ class DFScreen(Screens):
         self.hide_menu_buttons()
         self.starclan_button.kill()
         self.dark_forest_button.kill()
+        self.unknown_residence_button.kill()
         self.next_page_button.kill()
         self.previous_page_button.kill()
         self.page_number.kill()
@@ -711,8 +717,10 @@ class DFScreen(Screens):
         self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((421, 142), (147, 23)),
                                                               object_id="#search_entry_box")
 
-        self.starclan_button = UIImageButton(pygame.Rect((150, 135), (34, 34)), "", object_id="#starclan_button")
-        self.dark_forest_button = UIImageButton(pygame.Rect((115, 135), (34, 34)), "", object_id="#dark_forest_button")
+        self.starclan_button = UIImageButton(pygame.Rect((115, 135), (34, 34)), "", object_id="#starclan_button")
+        self.unknown_residence_button = UIImageButton(pygame.Rect((149, 135), (34, 34)), "",
+                                                      object_id="#unknown_residence_button")
+        self.dark_forest_button = UIImageButton(pygame.Rect((183, 135), (34, 34)), "", object_id="#dark_forest_button")
         self.dark_forest_button.disable()
         self.next_page_button = UIImageButton(pygame.Rect((456, 595), (34, 34)), "", object_id="#arrow_right_button")
         self.previous_page_button = UIImageButton(pygame.Rect((310, 595), (34, 34)), "", object_id="#arrow_left_button")

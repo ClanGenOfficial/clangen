@@ -8,20 +8,20 @@
             "medium_prey0",
             "large_prey1"
         ],
-        "intro_text": "The patrol approaches a very strange twoleg place. Gigantic metal leaves lie in unnatural rows, shading the desert beneath them, metal tree branches snake straightly across the ground, and a little twoleg hut sits in one corner, seemingly abandoned.",
+        "intro_text": "The patrol approaches a very strange Twolegplace. Gigantic metal leaves lie in unnatural rows, shading the desert beneath them, metal tree branches snake straightly across the ground, and a little Twoleg hut sits in one corner, seemingly abandoned.",
         "decline_text": "The patrol decides to hunt elsewhere.",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": [
-            "The patrol has a successful hunt. While twolegs seem to have built this metal forest, they've also apparently abandoned it.",
-            "The shade of the metal forest offers countless desert creatures as possible prey, and the cats have a very successful hunt, hiding from the sunlight under twoleg leaves."
+            "The patrol has a successful hunt. While Twolegs seem to have built this metal forest, they've also apparently abandoned it.",
+            "The shade of the metal forest offers countless desert creatures as possible prey, and the cats have a very successful hunt, hiding from the sunlight under Twoleg leaves."
         ],
         "fail_text": [
             "The patrol tries, but the unnatural environment causes everyone to be on edge, and their hunt is unsuccessful."
         ],
         "min_cats": 1,
         "max_cats": 3,
-        "antagonize_text": "The cats leap onto a twoleg metal leaf, sending it over with a mighty crash. This is c_n territory, not twoleg!",
+        "antagonize_text": "The cats leap onto a Twoleg metal leaf, sending it over with a mighty crash. This is c_n territory, not Twoleg!",
         "antagonize_fail_text": "Your cats try to knock over a metal leaf, but there aren't enough of them to force it over."
     },
     {
@@ -33,21 +33,21 @@
             "medium_prey0",
             "large_prey1"
         ],
-        "intro_text": "The patrol approaches a very strange twoleg place. Gigantic metal leaves lie in unnatural rows, shading the desert beneath them, metal tree branches snake straightly across the ground, and a little twoleg hut sits in one corner, seemingly abandoned.",
+        "intro_text": "The patrol approaches a very strange Twolegplace. Gigantic metal leaves lie in unnatural rows, shading the desert beneath them, metal tree branches snake straightly across the ground, and a little Twoleg hut sits in one corner, seemingly abandoned.",
         "decline_text": "The patrol decides to hunt elsewhere.",
         "chance_of_success": 60,
         "exp": 20,
         "success_text": [
             "The patrol cats split up, using sentries to ensure that nothing disturbs their hunts.",
-            "The shade of the metal forest offers countless desert creatures as possible prey, and the cats have a very successful hunt, hiding from the sunlight under twoleg leaves. "
+            "The shade of the metal forest offers countless desert creatures as possible prey, and the cats have a very successful hunt, hiding from the sunlight under Twoleg leaves. "
         ],
         "fail_text": [
             "The patrol tries, but the unnatural environment causes everyone to be on edge, and their hunt is unsuccessful."
         ],
         "min_cats": 4,
         "max_cats": 6,
-        "antagonize_text": "The cats leap onto a twoleg metal leaf, sending it over with a mighty crash. This is c_n territory, not twoleg!",
-        "antagonize_fail_text": "The cats try to knock over a metal leaf. It works, but several members of the patrol spring backward, yowling in pain - the twolegs have trapped the leaf, storing fire that does not burn in it!"
+        "antagonize_text": "The cats leap onto a Twoleg metal leaf, sending it over with a mighty crash. This is c_n territory, not Twoleg!",
+        "antagonize_fail_text": "The cats try to knock over a metal leaf. It works, but several members of the patrol spring backward, yowling in pain - the Twolegs have trapped the leaf, storing fire that does not burn in it!"
     },
     {
         "patrol_id": "dst_hunt_strange1",
@@ -378,7 +378,7 @@
         "exp": 20,
         "success_text": [
             "r_c immediately turns and heads for home to report this to their leader, alarmed by the sudden presence of Twolegs in their territory.",
-            "Slyly, r_c uses the unusual presence of the weird twolegs to help their hunt, hiding on the outskirts of the area and waiting for the Twolegs to flush prey towards them. It works, and they leave the Twolegs to their business.",
+            "Slyly, r_c uses the unusual presence of the weird Twolegs to help their hunt, hiding on the outskirts of the area and waiting for the Twolegs to flush prey towards them. It works, and they leave the Twolegs to their business.",
             "s_c spots the Twolegs unloading metal boxes from their monsters, and recognises that it can't be anything good, leaving immediately.",
             "s_c spits in the Twolegs' direction and picking a different place to hunt."
         ],
@@ -439,9 +439,9 @@
         "exp": 20,
         "success_text": [
             "Your patrol immediately turns and heads for home to report this to their leader, alarmed by the sudden presence of Twolegs in their territory.",
-            "Slyly, the cats use the unusual presence of the weird twolegs to help their hunt, hiding on the outskirts of the area and waiting for the Twolegs to flush prey towards them. It works, and they leave the Twolegs to their business.",
+            "Slyly, the cats use the unusual presence of the weird Twolegs to help their hunt, hiding on the outskirts of the area and waiting for the Twolegs to flush prey towards them. It works, and they leave the Twolegs to their business.",
             "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol to leave. Now.",
-            "s_c stops anyone from going near the twolegs, repeating that true warriors have nothing to do with Twolegs and their monsters, and the patrol leaves back into the desert."
+            "s_c stops anyone from going near the Twolegs, repeating that true warriors have nothing to do with Twolegs and their monsters, and the patrol leaves back into the desert."
         ],
         "fail_text": [
             null,
@@ -500,9 +500,9 @@
         "exp": 20,
         "success_text": [
             "Your patrol immediately turns and heads for home to report this to their leader, alarmed by the sudden presence of Twolegs in their territory.",
-            "Slyly, the cats use the unusual presence of the weird twolegs to help their hunt, hiding on the outskirts of the area and waiting for the Twolegs to flush prey towards them. It works, and they leave the Twolegs to their business.",
+            "Slyly, the cats use the unusual presence of the weird Twolegs to help their hunt, hiding on the outskirts of the area and waiting for the Twolegs to flush prey towards them. It works, and they leave the Twolegs to their business.",
             "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol to leave. Now.",
-            "s_c stops anyone from going near the twolegs, repeating that true warriors have nothing to do with Twolegs and their monsters, and the patrol leaves back into the desert."
+            "s_c stops anyone from going near the Twolegs, repeating that true warriors have nothing to do with Twolegs and their monsters, and the patrol leaves back into the desert."
         ],
         "fail_text": [
             null,

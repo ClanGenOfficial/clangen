@@ -1409,10 +1409,10 @@
         "chance_of_success": 50,
         "exp": 10,
         "success_text": [
-            "Despite the snow, the patrol manages to hunt successfully, finding the swamp still busy with birds oblivious to Leaf-bare. With the wetlands to provide there's more than enough to bring a good haul back to c_n, and as p_l leads them home there's a sense of security and competence driving them onwards.",
+            "Despite the snow, the patrol manages to hunt successfully, finding the swamp still busy with birds oblivious to leaf-bare. With the wetlands to provide there's more than enough to bring a good haul back to c_n, and as p_l leads them home there's a sense of security and competence driving them onwards.",
             null,
             "Everyone looks admiringly at s_c by the end of the afternoon. Every cat carries something home, but nearly all of it was caught by s_c.",
-            "s_c really keeps the patrol on task and motivated through the sharp cold of the Leaf-bare morning, not through authority or commands, but with a gentle voice and compassionate understanding that encourages every cat to do their best for c_n."
+            "s_c really keeps the patrol on task and motivated through the sharp cold of the leaf-bare morning, not through authority or commands, but with a gentle voice and compassionate understanding that encourages every cat to do their best for c_n."
         ],
         "fail_text": [
             "The prey must be hiding; the patrol catches nothing. As a snowstorm descends and visibility drops, the patrol retreats to a chump of tangled trees, their pelts and tails and legs all tightly wrapped into one indistinguishable kitty cat ball while they wait for the storm to blow over.",
@@ -1442,7 +1442,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": [
-            "r_c caught a chill while hunting in Leaf-bare.",
+            "r_c caught a chill while hunting in leaf-bare.",
             null
         ]
     },
@@ -1489,7 +1489,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": [
-            "r_c caught a chill while hunting in Leaf-bare.",
+            "r_c caught a chill while hunting in leaf-bare.",
             null
         ]
     },
@@ -1543,7 +1543,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": [
-            "r_c caught a chill while hunting in Leaf-bare.",
+            "r_c caught a chill while hunting in leaf-bare.",
             null
         ]
     },

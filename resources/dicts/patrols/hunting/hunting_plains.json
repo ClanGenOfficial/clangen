@@ -83,17 +83,17 @@
             "hunting",
             "medium_prey"
         ],
-        "intro_text": "As the patrol travels the territory, they come upon a strange metal forest that the twolegs have built.  Smooth, white tree trunks rise up into the sky, completely bare apart from the very top, where three massive branches grow outwards and spin in slow circles. A low hum permeates the air.",
+        "intro_text": "As the patrol travels the territory, they come upon a strange metal forest that the Twoleg have built.  Smooth, white tree trunks rise up into the sky, completely bare apart from the very top, where three massive branches grow outwards and spin in slow circles. A low hum permeates the air.",
         "decline_text": "The patrol decides to hunt elsewhere",
         "chance_of_success": 60,
         "exp": 10,
         "success_text": [
             "The patrol moves among the white trunks, checking the ground underneath them.  Sometimes dead birds can be found scattered about in this area and if not yet rotten, make for acceptable freshkill.  They manage to find some carcasses worth taking.",
-            "This place is unnerving and the patrol hunts carefully and cautiously, keeping an eye out for twolegs all the while."
+            "This place is unnerving and the patrol hunts carefully and cautiously, keeping an eye out for Twoleg all the while."
         ],
         "fail_text": [
             "This place is unnerving and the patrol can't stand the tense atmosphere and grating, constant noise. They don't stay long enough to find prey.",
-            "The patrol considers their options. s_c is adamant that they find somewhere else to hunt. It's not safe here and the threat of twolegs is too high. They decide to move on but struggle to find any prey during the rest of the patrol."
+            "The patrol considers their options. s_c is adamant that they find somewhere else to hunt. It's not safe here and the threat of Twoleg is too high. They decide to move on but struggle to find any prey during the rest of the patrol."
         ],
         "fail_trait": [
             "strict",
@@ -103,7 +103,7 @@
         ],
         "min_cats": 1,
         "max_cats": 6,
-        "antagonize_text": "The patrol is frustrated by this seemingly permanent proof of twolegs on their territory and takes the time to thoroughly and aggressively mark the area. There. That will show the twolegs whose land this is.",
+        "antagonize_text": "The patrol is frustrated by this seemingly permanent proof of Twoleg on their territory and takes the time to thoroughly and aggressively mark the area. There. That will show the Twoleg whose land this is.",
         "antagonize_fail_text": "The atmosphere in this place is eerie and r_c takes out their tenseness on one of the white trunks.  A few shallow scrapes are left on the surface, but little other evidence of their aggression remains."
     },
     {
@@ -1558,7 +1558,7 @@
             "Despite the snow, the patrol manages to hunt successfully, finding mice scurrying along paths worn in through the snow. Only a couple, but in this season, that's more than enough to count as a success, and as p_l leads them home there's a sense of security and competence driving them onwards.",
             null,
             "Everyone looks admiringly at s_c by the end of the afternoon. Every cat carries something home, but nearly all of it was caught by s_c.",
-            "s_c really keeps the patrol on task and motivated through the sharp cold of the Leaf-bare morning, not through authority or commands, but with a gentle voice and compassionate understanding that encourages every cat to do their best for c_n."
+            "s_c really keeps the patrol on task and motivated through the sharp cold of the leaf-bare morning, not through authority or commands, but with a gentle voice and compassionate understanding that encourages every cat to do their best for c_n."
         ],
         "fail_text": [
             "The prey must be hiding; the patrol catches nothing. As a snowstorm descends and visibility drops, the patrol clumps together in a dip on the plains, their pelts and tails and legs all tightly wrapped into one indistinguishable kitty cat ball.",
@@ -1588,7 +1588,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": [
-            "r_c caught a chill while hunting in Leaf-bare.",
+            "r_c caught a chill while hunting in leaf-bare.",
             null
         ]
     },
@@ -1636,7 +1636,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": [
-            "r_c caught a chill while hunting in Leaf-bare.",
+            "r_c caught a chill while hunting in leaf-bare.",
             null
         ]
     },
@@ -1692,9 +1692,9 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": [
-            "r_c caught a chill while hunting in Leaf-bare.",
+            "r_c caught a chill while hunting in leaf-bare.",
             "r_c froze to death while hunting in a storm.",
-            "froze to death while hunting"
+                "froze to death while hunting"
         ]
     },
     {
@@ -2321,7 +2321,7 @@
             "large_prey2",
             "large_prey3"
         ],
-        "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a pronghorn carcass, either a small doe or one of last Newleaf's fawns. It's impossible to say whether the fox killed it or found it.",
+        "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a pronghorn carcass, either a small doe or one of last newleaf's fawns. It's impossible to say whether the fox killed it or found it.",
         "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 30,
         "exp": 20,
@@ -2389,7 +2389,7 @@
             "large_prey2",
             "large_prey3"
         ],
-        "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a pronghorn carcass, either a small doe or one of last Newleaf's fawns. It's impossible to say whether the fox killed it or found it.",
+        "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a pronghorn carcass, either a small doe or one of last newleaf's fawns. It's impossible to say whether the fox killed it or found it.",
         "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 60,
         "exp": 20,
@@ -2455,7 +2455,7 @@
             "large_prey2",
             "large_prey3"
         ],
-        "intro_text": "r_c catches the scent of a red fox. Tracking it, they find the animal feeding on a pronghorn carcass, either a small doe or one of last Newleaf's fawns. It's impossible to say whether the fox killed it or found it.",
+        "intro_text": "r_c catches the scent of a red fox. Tracking it, they find the animal feeding on a pronghorn carcass, either a small doe or one of last newleaf's fawns. It's impossible to say whether the fox killed it or found it.",
         "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 10,
         "exp": 30,
@@ -3162,7 +3162,7 @@
             "large_prey2",
             "large_prey3"
         ],
-        "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find a swift fox feeding on a cow carcass, either a small female or one of last Newleaf's calves. The cat-sized predator definitely didn't kill this massive hunk of freshkill.",
+        "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find a swift fox feeding on a cow carcass, either a small female or one of last newleaf's calves. The cat-sized predator definitely didn't kill this massive hunk of freshkill.",
         "decline_text": "Your patrol decides not to quarrel with the fox - bigger predators will be attracted here. Best to leave sooner rather than later.",
         "chance_of_success": 50,
         "exp": 20,
@@ -3234,7 +3234,7 @@
             "large_prey2",
             "large_prey3"
         ],
-        "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find a swift fox feeding on a cow carcass, either a small female or one of last Newleaf's calves. It's impossible to say whether the fox killed it or found it.",
+        "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find a swift fox feeding on a cow carcass, either a small female or one of last newleaf's calves. It's impossible to say whether the fox killed it or found it.",
         "decline_text": "Your patrol decides not to quarrel with the fox - bigger predators will be attracted here. Best to leave sooner rather than later.",
         "chance_of_success": 80,
         "exp": 20,
@@ -3304,7 +3304,7 @@
             "large_prey2",
             "large_prey3"
         ],
-        "intro_text": "r_c catches the scent of a red fox. Tracking it, they find a swift fox feeding on a cow carcass, either a small female or one of last Newleaf's calves. It's impossible to say whether the fox killed it or found it.",
+        "intro_text": "r_c catches the scent of a red fox. Tracking it, they find a swift fox feeding on a cow carcass, either a small female or one of last newleaf's calves. It's impossible to say whether the fox killed it or found it.",
         "decline_text": "r_c decides not to quarrel with the fox - bigger predators will be attracted here. Best to leave sooner rather than later.",
         "chance_of_success": 40,
         "exp": 30,
@@ -3380,7 +3380,7 @@
         "chance_of_success": 30,
         "exp": 30,
         "success_text": [
-            "The red vixen smells of milk, and hopefully by driving her out of the territory, her litter this Newleaf won't be a threat to the Clan. If they don't starve, c_n will hunt them down - they do not share territory with foxes.",
+            "The red vixen smells of milk, and hopefully by driving her out of the territory, her litter this newleaf won't be a threat to the Clan. If they don't starve, c_n will hunt them down - they do not share territory with foxes.",
             "Your patrol drives away the fox, seeks out her den, and kills her young cubs. It's brutal, but these fluffy baby foxes would one day have grown to be kit-killers and thieves.",
             "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
             "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
@@ -3509,7 +3509,7 @@
         "chance_of_success": 20,
         "exp": 50,
         "success_text": [
-            "The red vixen smells of milk, and hopefully by driving her out of the territory, her litter this Newleaf won't be a threat to the Clan. If they don't starve, c_n will hunt them down - they do not share territory with foxes.",
+            "The red vixen smells of milk, and hopefully by driving her out of the territory, her litter this newleaf won't be a threat to the Clan. If they don't starve, c_n will hunt them down - they do not share territory with foxes.",
             null,
             "s_c displays incredible skill, driving the mother vixen and her brood out of the forest all by themselves. Now neither the fox nor her dependent cubs pose a threat to the Clan. They swell with pride, feeling the confidence of knowing that they're truly one of the best fighters c_n has ever produced.",
             "A brilliant battle move by s_c knocks the vixen off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in their pelt to do it alone."
@@ -3771,7 +3771,7 @@
         "exp": 30,
         "success_text": [
             "The vixen smells like the prey she's been poaching to feed her litter. She's stolen from c_n for the last time, and the patrol drives her from their territory, yowling their anger and fury.",
-            "Your patrol drives away the fox, and seeks out her den, but her Leaf-fall cubs are near full-grown and scatter into the wilderness. Hopefully Leaf-bare takes care of them.",
+            "Your patrol drives away the fox, and seeks out her den, but her leaf-fall cubs are near full-grown and scatter into the wilderness. Hopefully leaf-bare takes care of them.",
             "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
             "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
         ],
@@ -3836,8 +3836,8 @@
         "chance_of_success": 60,
         "exp": 30,
         "success_text": [
-            "Led by p_l and with a heap of cooperation and teamwork, the patrol drives away the fox, and seeks out her den. But her cubs are near full-grown with the bounty of Leaf-fall, and scatter from the patrol into the wilderness. Hopefully Leaf-bare takes care of them.",
-            "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the mother vixen and ending the threat to the Clan that she poses. The patrol drives her near-full grown litter of fox cubs out from the territory. Hopefully the coming Leaf-bare will take care of them.",
+            "Led by p_l and with a heap of cooperation and teamwork, the patrol drives away the fox, and seeks out her den. But her cubs are near full-grown with the bounty of leaf-fall, and scatter from the patrol into the wilderness. Hopefully leaf-bare takes care of them.",
+            "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the mother vixen and ending the threat to the Clan that she poses. The patrol drives her near-full grown litter of fox cubs out from the territory. Hopefully the coming leaf-bare will take care of them.",
             "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her cubs pose a threat to c_n.",
             "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
         ],
@@ -3898,7 +3898,7 @@
         "chance_of_success": 20,
         "exp": 50,
         "success_text": [
-            "It takes r_c's every scrap of bravery and strength to drive away the vixen - her near grown litter, fat on the bounty of Leaf-fall, is a challenge for another day. c_n will have to deal with the young foxes now roaming motherless in their woods, before they start to compete for prey in Leaf-bare.",
+            "It takes r_c's every scrap of bravery and strength to drive away the vixen - her near grown litter, fat on the bounty of leaf-fall, is a challenge for another day. c_n will have to deal with the young foxes now roaming motherless in their woods, before they start to compete for prey in leaf-bare.",
             null,
             "s_c displays incredible skill, driving the mother vixen and her brood out of the forest all by themselves. Now neither the fox nor her cubs pose a threat to the Clan. They swell with pride, feeling the confidence of knowing that they're truly one of the best fighters c_n has ever produced.",
             "A brilliant battle move by s_c at a critical moment knocks the vixen off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in their pelt to do it alone."
@@ -3964,7 +3964,7 @@
         "chance_of_success": 30,
         "exp": 30,
         "success_text": [
-            "The swift vixen smells of milk, and hopefully by driving her out of the territory, her litter this Newleaf won't be a threat to the Clan. If they don't starve, c_n will hunt them down - they do not share territory with foxes.",
+            "The swift vixen smells of milk, and hopefully by driving her out of the territory, her litter this newleaf won't be a threat to the Clan. If they don't starve, c_n will hunt them down - they do not share territory with foxes.",
             "Your patrol drives away the fox, seeks out her den, and kills her young cubs. It's brutal, but these fluffy baby foxes would one day have grown to be kit-killers and thieves.",
             "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
             "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
@@ -4093,7 +4093,7 @@
         "chance_of_success": 20,
         "exp": 50,
         "success_text": [
-            "The swift vixen smells of milk, and hopefully by driving her out of the territory, her litter this Newleaf won't be a threat to the Clan. If they don't starve, c_n will hunt them down - they do not share territory with foxes.",
+            "The swift vixen smells of milk, and hopefully by driving her out of the territory, her litter this newleaf won't be a threat to the Clan. If they don't starve, c_n will hunt them down - they do not share territory with foxes.",
             null,
             "s_c displays incredible skill, driving the mother vixen and her brood out of the forest all by themselves. Now neither the fox nor her dependent cubs pose a threat to the Clan. They swell with pride, feeling the confidence of knowing that they're truly one of the best fighters c_n has ever produced.",
             "A brilliant battle move by s_c knocks the vixen off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in their pelt to do it alone."
@@ -4355,7 +4355,7 @@
         "exp": 30,
         "success_text": [
             "The vixen smells like the prey she's been poaching to feed her litter. She's stolen from c_n for the last time, and the patrol drives her from their territory, yowling their anger and fury.",
-            "Your patrol drives away the fox, and seeks out her den, but her Leaf-fall cubs are near full-grown and scatter into the wilderness. Hopefully Leaf-bare takes care of them.",
+            "Your patrol drives away the fox, and seeks out her den, but her leaf-fall cubs are near full-grown and scatter into the wilderness. Hopefully leaf-bare takes care of them.",
             "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
             "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
         ],
@@ -4420,8 +4420,8 @@
         "chance_of_success": 60,
         "exp": 30,
         "success_text": [
-            "Led by p_l and with a heap of cooperation and teamwork, the patrol drives away the fox, and seeks out her den. But her cubs are near full-grown with the bounty of Leaf-fall, and scatter from the patrol into the wilderness. Hopefully Leaf-bare takes care of them.",
-            "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the mother vixen and ending the threat to the Clan that she poses. The patrol drives her near-full grown litter of fox cubs out from the territory. Hopefully the coming Leaf-bare will take care of them.",
+            "Led by p_l and with a heap of cooperation and teamwork, the patrol drives away the fox, and seeks out her den. But her cubs are near full-grown with the bounty of leaf-fall, and scatter from the patrol into the wilderness. Hopefully leaf-bare takes care of them.",
+            "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the mother vixen and ending the threat to the Clan that she poses. The patrol drives her near-full grown litter of fox cubs out from the territory. Hopefully the coming leaf-bare will take care of them.",
             "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her cubs pose a threat to c_n.",
             "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
         ],
@@ -4481,7 +4481,7 @@
         "chance_of_success": 20,
         "exp": 50,
         "success_text": [
-            "It takes r_c's every scrap of bravery and strength to drive away the vixen - her near grown litter, fat on the bounty of Leaf-fall, is a challenge for another day. c_n will have to deal with the young foxes now roaming motherless in their woods, before they start to compete for prey in Leaf-bare.",
+            "It takes r_c's every scrap of bravery and strength to drive away the vixen - her near grown litter, fat on the bounty of leaf-fall, is a challenge for another day. c_n will have to deal with the young foxes now roaming motherless in their woods, before they start to compete for prey in leaf-bare.",
             null,
             "s_c displays incredible skill, driving the mother vixen and her brood out of the forest all by themselves. Now neither the fox nor her cubs pose a threat to the Clan. They swell with pride, feeling the confidence of knowing that they're truly one of the best fighters c_n has ever produced.",
             "A brilliant battle move by s_c at a critical moment knocks the vixen off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in their pelt to do it alone."

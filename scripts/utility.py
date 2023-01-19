@@ -441,6 +441,10 @@ def update_sprite(cat):
             new_sprite.blit(
                 sprites.sprites['eyesextra' + cat.eye_colour +
                                 str(cat.age_sprites[cat.age])], (0, 0))
+            if cat.eye_colour2 != None:
+                new_sprite.blit(
+                sprites.sprites['eyes2extra' + cat.eye_colour2 +
+                                str(cat.age_sprites[cat.age])], (0, 0))
             for scar in cat.scars:
                 if scar in scars1:
                     new_sprite.blit(
@@ -456,6 +460,10 @@ def update_sprite(cat):
         else:
             new_sprite.blit(
                 sprites.sprites['eyes' + cat.eye_colour +
+                                str(cat.age_sprites[cat.age])], (0, 0))
+            if cat.eye_colour2 != None:
+                new_sprite.blit(
+                sprites.sprites['eyes2' + cat.eye_colour2 +
                                 str(cat.age_sprites[cat.age])], (0, 0))
             for scar in cat.scars:
                 if scar in scars1:
@@ -478,12 +486,24 @@ def update_sprite(cat):
                 new_sprite.blit(
                     sprites.sprites['shaders' +
                                     str(cat.age_sprites[cat.age] + 9)],
+                    (0, 0),
+                    special_flags=pygame.BLEND_RGB_MULT)
+                new_sprite.blit(
+                    sprites.sprites['lighting' +
+                                    str(cat.age_sprites[cat.age] + 9)],
                     (0, 0))
             else:
                 new_sprite.blit(
                     sprites.sprites['shaders' +
-                                    str(cat.age_sprites[cat.age])], (0, 0))
-        elif not cat.dead:
+                                    str(cat.age_sprites[cat.age])], (0, 0),
+                    special_flags=pygame.BLEND_RGB_MULT)
+                new_sprite.blit(
+                    sprites.sprites['lighting' +
+                                    str(cat.age_sprites[cat.age])],
+                    (0, 0))
+
+
+        if not cat.dead:
             if cat.pelt.length == 'long' and cat.status not in [
                 'kitten', 'apprentice', 'medicine cat apprentice'
             ] or cat.age == 'elder':
