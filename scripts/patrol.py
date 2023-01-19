@@ -875,9 +875,13 @@ class Patrol():
         """
         reputation with outsiders
         """
+        if "no_change_fail_rep" in self.patrol_event.tags and not self.success:
+            difference = 0
         change_clan_reputation(difference)
         if difference > 0:
             insert = "improved"
+        elif difference == 0:
+            insert = "remained neutral"
         else:
             insert = "worsened"
         self.results_text.append(f"Your Clan's reputation towards Outsiders has {insert}.")
@@ -1544,6 +1548,8 @@ class PatrolEvent():
         
         "no_change_fail" to set all relationship value changes to 0 on fail outcomes
         "no_change_success" to set all relationship value changes to 0 on success outcomes
+
+        "no_change_fail_rep" is for when rep should not change when a new_cat patrol fails
 
         -- WHEN WRIING --   
         Event text should be kept to 350 characters at the maximum to keep it easily readable and concise.

@@ -469,12 +469,24 @@ def update_sprite(cat):
                 new_sprite.blit(
                     sprites.sprites['shaders' +
                                     str(cat.age_sprites[cat.age] + 9)],
+                    (0, 0),
+                    special_flags=pygame.BLEND_RGB_MULT)
+                new_sprite.blit(
+                    sprites.sprites['lighting' +
+                                    str(cat.age_sprites[cat.age] + 9)],
                     (0, 0))
             else:
                 new_sprite.blit(
                     sprites.sprites['shaders' +
-                                    str(cat.age_sprites[cat.age])], (0, 0))
-        elif not cat.dead:
+                                    str(cat.age_sprites[cat.age])], (0, 0),
+                    special_flags=pygame.BLEND_RGB_MULT)
+                new_sprite.blit(
+                    sprites.sprites['lighting' +
+                                    str(cat.age_sprites[cat.age])],
+                    (0, 0))
+
+
+        if not cat.dead:
             if cat.pelt.length == 'long' and cat.status not in [
                 'kitten', 'apprentice', 'medicine cat apprentice'
             ] or cat.age == 'elder':
