@@ -1,6 +1,17 @@
 {
     "adventurous": [
-        "Heads out of Clan territories to look for new herbs"
+        "Heads out of Clan territories to look for new herbs",
+        "Purposefully planted herbs in hard-to-reach areas",
+        "Purposefully planted herbs in hard-to-reach areas",
+        "Is exploring unclaimed lands while searching for herbs",
+        "Climbed a tree to gather alder bark instead of clawing the trunk",
+        "Thinks about visiting StarClan, just to explore their hunting grounds",
+        "Asks the deputy to go on patrol",
+        "Begs the leader to give them the bounciest kit as their apprentice",
+        "Is showing the kits herbs by taking them on adventures in the territory",
+        "Helps the leader with their duties while the deputy is on patrol",
+        "Offers to help the queens with badger rides for the kits",
+        "Uses extra herbs just to go gather more"
     ],
     "altruistic": [
         "Declines to eat when prey is low"
@@ -15,7 +26,19 @@
         "Insists only on treating cats who need it",
         "Is ripping some leaves to shreds",
         "Debates becoming a warrior",
-        "Gives the wrong herbs to a warrior on purpose"
+        "Gives the wrong herbs to a warrior on purpose",
+        "Wishes they weren't confined to this life",
+        "Is stocking up on deathberries",
+        "Is stocking up on yew berries",
+        "Is stocking up on nightshade",
+        "Is stocking up on watermint",
+        "Put herbs in prey to give cats stomach aches",
+        "Refused to treat anyone today",
+        "Is upset that they can't fight alongside the warriors",
+        "Wishes to fight alongside the warriors",
+        "Thinks they'd be an amazing leader",
+        "Talks to the leader and deputy about war",
+        "Ignored the low herb stocks, instead practicing battle moves"
     ],
     "bold": [
         "Decides to try a new herb as treatment for an injury"
@@ -58,7 +81,14 @@
     ],
     "lonesome": [
         "Is wishing they could have a mate and kits",
-        "Wishes their Clanmates could understand their struggles"
+        "Wishes their Clanmates could understand their struggles",
+        "Wishes there were more medicine cats in the clan",
+        "Wonders why the warriors won't share prey with them",
+        "Wishes they could make friends with someone",
+        "Wishes the warriors shared an interest in herbs",
+        "Wants to talk to the leader about having a new apprentice",
+        "Wishes for an apprentice, as they're a bit lonely",
+        "Hasn't talked to any warriors for a few days"
     ],
     "loving": [
         "Watches over some newborn kits"

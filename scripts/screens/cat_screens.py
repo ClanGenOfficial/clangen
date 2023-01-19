@@ -657,7 +657,7 @@ class ProfileScreen(Screens):
             if is_sc_instructor:
                 self.profile_elements["prevent_fading_text"] = pygame_gui.elements.UILabel(
                     pygame.Rect((85, 390), (-1, 30)),
-                    "The Starclan Guide will never fade",
+                    "The StarClan Guide will never fade",
                     object_id=get_text_box_theme("#cat_profile_info_box"))
             elif is_df_instructor:
                 self.profile_elements["prevent_fading_text"] = pygame_gui.elements.UILabel(
@@ -756,6 +756,8 @@ class ProfileScreen(Screens):
 
         # EYE COLOR
         output += 'eyes: ' + the_cat.eye_colour.lower()
+        if the_cat.eye_colour2:
+            output = output + ' and ' + the_cat.eye_colour2.lower()
         # NEWLINE ----------
         output += "\n"
 
@@ -1696,7 +1698,7 @@ class ProfileScreen(Screens):
                                                           starting_height=2, object_id="#promote_deputy_button")
                 self.toggle_deputy_button.disable()
 
-            if self.the_cat.status in ['elder', 'kitten', 'apprentice', 'medicine cat apprentice']:
+            if self.the_cat.status in ['elder', 'kitten', 'apprentice', 'medicine cat apprentice'] or self.the_cat.dead or self.the_cat.exiled or self.the_cat.outside:
                 self.retire_button.disable()
             else:
                 self.retire_button.enable()
@@ -2395,10 +2397,10 @@ class CeremonyScreen(Screens):
                              cat.virtues[8] + '.'
         else:
             if cat.trait == "bloodthirsty":
-                prev_lead_text = prev_lead + ' one of Starclan\'s oldest leaders, looks at the new leader with a conflicted expression. They give a last life, the gift of ' + \
+                prev_lead_text = prev_lead + ' one of StarClan\'s oldest leaders, looks at the new leader with a conflicted expression. They give a last life, the gift of ' + \
                              cat.virtues[8] + '.'
             else:
-                prev_lead_text = prev_lead + ' one of Starclan\'s oldest leaders, looks at the new leader with pride. They give a last life, the gift of ' + \
+                prev_lead_text = prev_lead + ' one of StarClan\'s oldest leaders, looks at the new leader with pride. They give a last life, the gift of ' + \
                                 cat.virtues[8] + '.'
         if known[8]:
             if cat.trait == "bloodthirsty":

@@ -360,6 +360,7 @@ class Game():
                 "spirit_elder": inter_cat.age_sprites['elder'],
                 "spirit_dead": inter_cat.age_sprites['dead'],
                 "eye_colour": inter_cat.eye_colour,
+                "eye_colour2": inter_cat.eye_colour2 if inter_cat.eye_colour2 else None,
                 "reverse": inter_cat.reverse,
                 "white_patches": inter_cat.white_patches,
                 "pattern": inter_cat.pattern,
