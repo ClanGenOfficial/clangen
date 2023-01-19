@@ -17,8 +17,12 @@ def get_queens(living_cats, all_cats):
 		if str(living_cat_.status) != 'kitten' or living_cat_.parent1 is None:
 			continue
 
-		parent_1 = all_cats[living_cat_.parent1]
-		parent_2 = all_cats[living_cat_.parent2]
+		parent_1 = None
+		parent_2 = None
+		if living_cat_.parent1:
+			parent_1 = all_cats[living_cat_.parent1]
+		if living_cat_.parent2:
+			parent_2 = all_cats[living_cat_.parent2]
 		if parent_1.gender == 'male':
 			if parent_2 is None or parent_2.gender == 'male':
 				queens.append(parent_1)
