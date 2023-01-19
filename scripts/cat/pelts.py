@@ -504,6 +504,8 @@ def choose_pelt(gender, colour=None, white=None, pelt=None, length=None, categor
         a = randint(0, 200)
         if a != 1:
             pelt = choice(pelt_names_M)
+    if category:
+        pelt = choice(category)
     if length is None:
         length = choice(pelt_length)
     if pelt == "SingleColour":
