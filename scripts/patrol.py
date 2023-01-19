@@ -788,8 +788,8 @@ class Patrol():
 
     def handle_herbs(self, outcome):
         herbs_gotten = []
-        no_herbs_tags = ["no_herbs1", "no_herbs2", "no_herbs3", "no_herbs4"]
-        many_herbs_tags = ["many_herbs1", "many_herbs2", "many_herbs3", "many_herbs4"]
+        no_herbs_tags = ["no_herbs0", "no_herbs1", "no_herbs2", "no_herbs3"]
+        many_herbs_tags = ["many_herbs0", "many_herbs1", "many_herbs2", "many_herbs3"]
 
         for x in range(len(no_herbs_tags)):
             if f"no_herbs{x}" in patrol.patrol_event.tags and outcome == x:
@@ -875,9 +875,13 @@ class Patrol():
         """
         reputation with outsiders
         """
+        if "no_change_fail_rep" in self.patrol_event.tags and not self.success:
+            difference = 0
         change_clan_reputation(difference)
         if difference > 0:
             insert = "improved"
+        elif difference == 0:
+            insert = "remained neutral"
         else:
             insert = "worsened"
         self.results_text.append(f"Your Clan's reputation towards Outsiders has {insert}.")
@@ -1049,8 +1053,8 @@ class Patrol():
                     # add litter if the kits text is rolled
                     if litter_choice == True:
                         new_backstory = 'outsider_roots2'
-                        created_cats = self.create_new_cat(loner=True, loner_name=True, backstory=new_backstory,
-                                                           litter=True, relevant_cat=new_cat)
+                        created_cats.extend(self.create_new_cat(loner=True, loner_name=True, backstory=new_backstory,
+                                                           litter=True, relevant_cat=new_cat))
                     if major_injury:
                         new_cat.get_injured("broken bone")
                 else:  # new loner
@@ -1062,8 +1066,8 @@ class Patrol():
                     # add litter if the kits text is rolled
                     if litter_choice == True:
                         new_backstory = 'outsider_roots2'
-                        created_cats = self.create_new_cat(loner=True, loner_name=True, backstory=new_backstory,
-                                                           litter=True, relevant_cat=new_cat)
+                        created_cats.extend(self.create_new_cat(loner=True, loner_name=True, backstory=new_backstory,
+                                                           litter=True, relevant_cat=new_cat))
                     if major_injury:
                         new_cat.get_injured("broken bone")
 
@@ -1077,16 +1081,17 @@ class Patrol():
                 # add litter if the kits text is rolled
                 if litter_choice == True:
                     new_backstory = 'outsider_roots2'
-                    created_cats = self.create_new_cat(loner=True, loner_name=True, backstory=new_backstory,
-                                                       litter=True, relevant_cat=new_cat)
+                    created_cats.extend(self.create_new_cat(loner=True, loner_name=True, backstory=new_backstory,
+                                                       litter=True, relevant_cat=new_cat))
             elif "new_cat_queen" in tags:
+                created_cats = []
                 kittypet = choice([True, False])
                 if "kittypet" in self.patrol_event.patrol_id:
                     kittypet = True
                 if kittypet is True:
                     new_backstory = choice(['kittypet1', 'kittypet2'])
-                    created_cats = self.create_new_cat(loner=False, loner_name=True, kittypet=True, queen=True,
-                                                       backstory=new_backstory)
+                    created_cats.extend(self.create_new_cat(loner=False, loner_name=True, kittypet=True, queen=True,
+                                                       backstory=new_backstory))
                     new_cat = created_cats[0]
                     if game.clan.game_mode != 'classic':
                         new_cat.get_injured("recovering from birth")
@@ -1094,29 +1099,30 @@ class Patrol():
                     new_backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2',
                                             'ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
                                             'tragedy_survivor'])
-                    created_cats = self.create_new_cat(loner=True, loner_name=True, kittypet=False, queen=True,
-                                                       backstory=new_backstory)
+                    created_cats.extend(self.create_new_cat(loner=True, loner_name=True, kittypet=False, queen=True,
+                                                       backstory=new_backstory))
                     new_cat = created_cats[0]
                     if game.clan.game_mode != 'classic':
                         new_cat.get_injured("recovering from birth")
                 if "new_cat_kits" in tags:
                     if "new_cat_newborn" in tags:
                         new_backstory = 'outsider_roots2'
-                        created_cats = self.create_new_cat(loner=False, loner_name=True, backstory=new_backstory,
-                                                           litter=True, relevant_cat=new_cat, age='newborn')
+                        created_cats.extend(self.create_new_cat(loner=False, loner_name=True, backstory=new_backstory,
+                                                           litter=True, relevant_cat=new_cat, age='newborn'))
                     else:
                         new_backstory = 'outsider_roots2'
-                        created_cats = self.create_new_cat(loner=False, loner_name=True, backstory=new_backstory,
-                                                           litter=True, relevant_cat=new_cat)
+                        created_cats.extend(self.create_new_cat(loner=False, loner_name=True, backstory=new_backstory,
+                                                           litter=True, relevant_cat=new_cat))
 
             elif "new_cat_kits" in tags:  # new kits
+                created_cats = []
                 kittypet = choice([True, False])
                 if "kittypet" in self.patrol_event.patrol_id:
                     kittypet = True
                 if kittypet is True:
                     new_backstory = choice(['kittypet1', 'kittypet2'])
-                    created_cats = self.create_new_cat(loner=False, loner_name=True, kittypet=True, queen=True,
-                                                       backstory=new_backstory)
+                    created_cats.extend(self.create_new_cat(loner=False, loner_name=True, kittypet=True, queen=True,
+                                                       backstory=new_backstory))
                     new_cat = created_cats[0]
                     new_cat.name.prefix = "unnamed"
                     new_cat.name.suffix = " queen"
@@ -1126,19 +1132,19 @@ class Patrol():
                     new_backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2',
                                             'ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
                                             'tragedy_survivor'])
-                    created_cats = self.create_new_cat(loner=True, loner_name=True, kittypet=False, queen=True,
-                                                       backstory=new_backstory)
+                    created_cats.extend(self.create_new_cat(loner=True, loner_name=True, kittypet=False, queen=True,
+                                                       backstory=new_backstory))
                     new_cat = created_cats[0]
                     new_cat.name.prefix = "unnamed"
                     new_cat.name.suffix = " queen"
                     new_cat.outside = True
                     new_cat.dead = True
                 if "new_cat_newborn" in tags:
-                    created_cats = self.create_new_cat(loner=False, loner_name=True, backstory='orphaned',
-                                                       litter=True, age='newborn', relevant_cat=new_cat)
+                    created_cats.extend(self.create_new_cat(loner=False, loner_name=True, backstory='orphaned',
+                                                       litter=True, age='newborn', relevant_cat=new_cat))
                 else:
-                    created_cats = self.create_new_cat(loner=False, loner_name=True, backstory='orphaned',
-                                                       litter=True, relevant_cat=new_cat)
+                    created_cats.extend(self.create_new_cat(loner=False, loner_name=True, backstory='orphaned',
+                                                       litter=True, relevant_cat=new_cat))
 
             elif "new_cat_apprentice" in tags:
                 kittypet = choice([True, False])
@@ -1488,13 +1494,13 @@ class PatrolEvent():
         Herb tags:
          reference herbs.json, you can use any herb name listed there
         
-        "many_herbs#" < to cause the patrol to give a large number of herbs automatically. Replace the # with the 
-        outcome number (i.e. if you want success outcome 3 - which is the skill success - to give lots of herbs, then 
-        use "many_herbs3")
+        "many_herbs#" < to cause the patrol to give a large number of herbs automatically. Numbering starts at 0. 
+        Replace the # with the outcome number (i.e. if you want success[2] - which is the skill success - to give lots of herbs, then 
+        use "many_herbs2")
         
         "no_herbs#" < to cause the patrol to give no herbs on a certain outcome, while still giving herbs on other 
-        outcomes. Replace the # with the outcome number (i.e. if you want success outcome 3 - which is the skill 
-        success - to give no herbs, then use "no_herbs3")
+        outcomes. Numbering starts at 0. Replace the # with the outcome number (i.e. if you want success[2] - which is the skill 
+        success - to give no herbs, then use "no_herbs2")
 
         - TO SPECIFY -
         "two_apprentices" is for patrols with two apprentices (at least) in them. It works with the "apprentice" tag. 
@@ -1542,6 +1548,8 @@ class PatrolEvent():
         
         "no_change_fail" to set all relationship value changes to 0 on fail outcomes
         "no_change_success" to set all relationship value changes to 0 on success outcomes
+
+        "no_change_fail_rep" is for when rep should not change when a new_cat patrol fails
 
         -- WHEN WRIING --   
         Event text should be kept to 350 characters at the maximum to keep it easily readable and concise.

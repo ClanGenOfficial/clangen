@@ -10,7 +10,7 @@
             "The patrol convinces the loner to join the Clan, and they join with their litter of kits."
     ],
     "fail_text": [
-            "The loner decides against joining."
+            "The loner decides against joining after hearing more about Clan life."
     ],
     "decline_text": "Your patrol decides not to confront the loner.",
     "antagonize_text": "Your patrol drives the loner off of the territory.",
@@ -49,7 +49,7 @@
     "patrol_id": "gen_bord_newcat3",
     "biome": "Any",
     "season": "Any",
-    "tags": ["border", "new_cat", "new_cat_adult", "new_cat_majorinjury", "reputation"],
+    "tags": ["border", "new_cat", "new_cat_adult", "new_cat_majorinjury", "reputation", "no_change_fail_rep"],
     "intro_text": "r_c finds a wounded cat near the thunderpath.",
     "success_text": [
         "The patrol approaches the injured cat and sees signs of life. They gingerly pick up the cat and take them back to camp to be treated by the medicine cat. The cat is grateful for their help and decides to join the Clan."
@@ -72,7 +72,7 @@
     "patrol_id": "gen_bord_newkit1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["border", "new_cat", "new_cat_kit", "reputation"],
+    "tags": ["border", "new_cat", "new_cat_kit", "reputation", "no_change_fail_rep"],
     "intro_text": "r_c finds an abandoned kit whose parents are nowhere to be found.",
     "success_text": [
         "The kit is taken back to camp and nursed back to health."
@@ -143,7 +143,7 @@
     "patrol_id": "gen_med_rescue1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["med_cat", "med_only", "new_cat", "new_cat_queen", "new_cat_kits", "new_cat_newborn"],
+    "tags": ["med_cat", "med_only", "new_cat", "new_cat_queen", "new_cat_kits", "new_cat_newborn", "no_change_fail_rep"],
     "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
     "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, they go back to c_n to ask for help and guidance.",
     "chance_of_success": 45,
@@ -168,7 +168,7 @@
     "patrol_id": "gen_med_rescue2",
     "biome": "Any",
     "season": "Any",
-    "tags": ["med_cat", "med_only", "new_cat", "new_cat_kits", "new_cat_newborn"],
+    "tags": ["med_cat", "med_only", "new_cat", "new_cat_kits", "new_cat_newborn", "no_change_fail_rep"],
     "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
     "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, they go back to c_n to ask for help and guidance.",
     "chance_of_success": 45,
@@ -193,7 +193,7 @@
     "patrol_id": "gen_med_rescuesolo1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["med_cat", "med_only", "no_app", "new_cat", "new_cat_queen", "new_cat_kits", "new_cat_newborn"],
+    "tags": ["med_cat", "med_only", "no_app", "new_cat", "new_cat_queen", "new_cat_kits", "new_cat_newborn", "no_change_fail_rep"],
     "intro_text": "While searching for some specific herbs p_l is startled by weird sounds and whispers on the wind.",
     "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, they go back to c_n to ask for help and guidance.",
     "chance_of_success": 45,
@@ -218,7 +218,7 @@
     "patrol_id": "gen_med_rescuesolo2",
     "biome": "Any",
     "season": "Any",
-    "tags": ["med_cat", "med_only", "no_app", "new_cat", "new_cat_kits", "new_cat_newborn"],
+    "tags": ["med_cat", "med_only", "no_app", "new_cat", "new_cat_kits", "new_cat_newborn", "no_change_fail_rep"],
     "intro_text": "While searching for some specific herbs p_l is startled by weird sounds and whispers on the wind.",
     "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, they go back to c_n to ask for help and guidance.",
     "chance_of_success": 45,
@@ -243,7 +243,7 @@
     "patrol_id": "gen_med_rescuesoloapp1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["med_cat", "med_only", "apprentice", "new_cat", "new_cat_queen", "new_cat_kits", "new_cat_newborn"],
+    "tags": ["med_cat", "med_only", "apprentice", "new_cat", "new_cat_queen", "new_cat_kits", "new_cat_newborn", "no_change_fail_rep"],
     "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
     "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, they go back to c_n to ask for help and guidance.",
     "chance_of_success": 45,
@@ -268,7 +268,7 @@
     "patrol_id": "gen_med_rescuesoloapp2",
     "biome": "Any",
     "season": "Any",
-    "tags": ["med_cat", "med_only", "apprentice", "new_cat", "new_cat_kits", "new_cat_newborn"],
+    "tags": ["med_cat", "med_only", "apprentice", "new_cat", "new_cat_kits", "new_cat_newborn", "no_change_fail_rep"],
     "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
     "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, they go back to c_n to ask for help and guidance.",
     "chance_of_success": 45,
