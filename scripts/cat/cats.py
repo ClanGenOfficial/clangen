@@ -327,13 +327,13 @@ class Cat():
             self.genderalign = self.gender
 
         # APPEARANCE
-        init_eyes(self)
         init_pelt(self)
         init_tint(self)
         init_sprite(self)
         init_scars(self)
         init_accessories(self)
         init_white_patches(self)
+        init_eyes(self)
         init_pattern(self)
 
         # NAME
