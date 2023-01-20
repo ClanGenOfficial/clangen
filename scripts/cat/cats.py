@@ -1,5 +1,5 @@
 from __future__ import annotations
-from random import choice, randint
+from random import choice, randint, sample
 from typing import Dict, List, Any
 import math
 import os.path
@@ -2142,80 +2142,148 @@ class Cat():
                 print(f'WARNING: There was an error reading the relationship file of cat #{self}.')
 
     @staticmethod
-    def mediate_relationship(cat1, cat2, sabotage=False):
+    def mediate_relationship(mediator, cat1, cat2, sabotage=False):
         # Gather some important info
 
+        # Gathering the relationships.
         if cat1.ID in cat2.relationships:
-            relationship = cat1.relationships[cat2.ID]
+            rel1 = cat1.relationships[cat2.ID]
         else:
-            relationship = cat1.create_one_relationship(cat2)
+            rel1 = cat1.create_one_relationship(cat2)
 
         if cat2.ID in cat1.relationships:
-            relationship2 = cat2.relationships[cat1.ID]
+            rel2 = cat2.relationships[cat1.ID]
         else:
-            relationship2 = cat2.create_one_relationship(cat1)
+            rel2 = cat2.create_one_relationship(cat1)
 
-        mates = False
-        if relationship.cat_to.mate == relationship.cat_from.ID:
+        # Are they mates?
+        if rel1.cat_to.mate == rel1.cat_from.ID:
             mates = True
+        else:
+            mates = False
 
         # Relation Checking
-        direct_related = relationship.cat_to.is_sibling(relationship.cat_from) or \
-                         relationship.cat_from.is_parent(relationship.cat_to) \
-                         or relationship.cat_to.is_parent(relationship.cat_from)
-        indirect_related = relationship.cat_from.is_uncle_aunt(relationship.cat_to) or \
-                           relationship.cat_to.is_uncle_aunt(relationship.cat_from)
-
+        direct_related = cat1.is_sibling(cat2) or cat1.is_parent(cat2) or cat2.is_parent(cat1)
+        indirect_related = cat1.is_uncle_aunt(cat2) or \
+                           cat2.is_uncle_aunt(cat1)
         if not game.settings["first_cousin_mates"]:
-            indirect_related = indirect_related or relationship.cat_from.is_cousin(relationship.cat_to)
-
+            indirect_related = indirect_related or cat1.is_cousin(cat2)
         related = direct_related or indirect_related
 
         # Check for both adults, or same age catagory:
-        if relationship.cat_to.age == relationship.cat_from.age or (relationship.cat_to.age not
-                                                                    in ['kitten', 'adolescent'] and
-                                                                    relationship.cat_from.age not in
-                                                                    ['kitten', 'adolescent']):
+        if cat1.age == cat2.age or (cat1.age not in ['kitten', 'adolescent'] and
+                                    cat2.age not in ['kitten', 'adolescent']):
             valid_age = True
         else:
             valid_age = False
 
-        # Gather the other relationship
-        relation2 = relationship.opposite_relationship
-
+        #Output string.
         output = ""
 
-        effect = 0
-        # Effect on romantic like
-        # Special Chance for mates
-        if mates:
-            effect = randint(2, 15)
-        elif not related and valid_age:
-            effect = randint(0, 7)
+        # determine the traits to effect
+        pos_traits = ["platonic", "respect", "comfortable", "trust"]
+        if mates or (valid_age and not related):
+            pos_traits.append("romantic")
 
-        if effect > 0:
-            if sabotage:
-                output += f"Romantic interest decreased by {effect}\n"
-                effect = -effect
-            else:
-                output += f"Romantic interest increased by {effect}\n"
-            relationship.romantic_love = Cat.effect_relation(relationship.romantic_love, effect)
-            relationship2.romantic_love = Cat.effect_relation(relationship2.romantic_love, effect)
+        neg_traits = ["dislike", "jealousy"]
 
+        # Determine the number of positive traits to effect, and choose the traits
+        chosen_pos = sample(pos_traits, k=randint(2, len(pos_traits)))
 
-        #plantonic like
-        effect = randint(3, 15)
-        if effect > 0:
-            if sabotage:
-                output += f"Platonic love decreased by {effect}\n"
-                effect = -effect
-            else:
-                output += f"Plantonic love increased by {effect}\n"
-            relationship.platonic_like = Cat.effect_relation(relationship.platonic_like, effect)
-            relationship2.platonic_like = Cat.effect_relation(relationship2.platonic_like, effect)
+        # Determine netative trains effected
+        neg_traits = sample(neg_traits, k=randint(1, 2))
 
+        #Effects on traits
+        for trait in chosen_pos + neg_traits:
+            if trait == "romantic":
+                if mates:
+                    ran = (5, 20)
+                else:
+                    ran = (3, 16)
+
+                if sabotage:
+                    rel1.romantic_love = Cat.effect_relation(rel1.romantic_love, -randint(ran[0], ran[1]))
+                    rel2.romantic_love = Cat.effect_relation(rel1.romantic_love, -randint(ran[0], ran[1]))
+                    output += f"Romantic interest decreased!\n"
+                else:
+                    rel1.romantic_love = Cat.effect_relation(rel1.romantic_love, randint(ran[0], ran[1]))
+                    rel2.romantic_love = Cat.effect_relation(rel1.romantic_love, randint(ran[0], ran[1]))
+                    output += f"Romantic interest increased!\n"
+
+            elif trait == "platonic":
+                ran = (3, 16)
+
+                if sabotage:
+                    rel1.platonic_like = Cat.effect_relation(rel1.platonic_like, -randint(ran[0], ran[1]))
+                    rel2.platonic_like = Cat.effect_relation(rel1.platonic_like, -randint(ran[0], ran[1]))
+                    output += f"Platonic like decreased. "
+                else:
+                    rel1.platonic_like = Cat.effect_relation(rel1.platonic_like, randint(ran[0], ran[1]))
+                    rel2.platonic_like = Cat.effect_relation(rel1.platonic_like, randint(ran[0], ran[1]))
+                    output += f"Platonic like increased. "
+
+            elif trait == "respect":
+                ran = (3, 16)
+
+                if sabotage:
+                    rel1.admiration = Cat.effect_relation(rel1.admiration, -randint(ran[0], ran[1]))
+                    rel2.admiration = Cat.effect_relation(rel2.admiration, -randint(ran[0], ran[1]))
+                    output += f"Respect decreased. "
+                else:
+                    rel1.admiration = Cat.effect_relation(rel1.admiration, randint(ran[0], ran[1]))
+                    rel2.admiration= Cat.effect_relation(rel2.admiration, randint(ran[0], ran[1]))
+                    output += f"Respect increased. "
+
+            elif trait == "comfortable":
+                ran = (3, 16)
+
+                if sabotage:
+                    rel1.comfortable = Cat.effect_relation(rel1.comfortable, -randint(ran[0], ran[1]))
+                    rel2.comfortable = Cat.effect_relation(rel2.comfortable, -randint(ran[0], ran[1]))
+                    output += f"Comfortable decreased. "
+                else:
+                    rel1.comfortable = Cat.effect_relation(rel1.comfortable, randint(ran[0], ran[1]))
+                    rel2.comfortable = Cat.effect_relation(rel2.comfortable, randint(ran[0], ran[1]))
+                    output += f"Comfortable increased. "
+
+            elif trait == "admiration":
+                ran = (3, 16)
+
+                if sabotage:
+                    rel1.trust = Cat.effect_relation(rel1.trust, -randint(ran[0], ran[1]))
+                    rel2.trust = Cat.effect_relation(rel2.trust, -randint(ran[0], ran[1]))
+                    output += f"Trust decreased. "
+                else:
+                    rel1.admiration = Cat.effect_relation(rel1.trust, randint(ran[0], ran[1]))
+                    rel2.admiration = Cat.effect_relation(rel2.trust, randint(ran[0], ran[1]))
+                    output += f"Trust increased. "
+
+            elif trait == "dislike":
+                ran = (3, 20)
+
+                if sabotage:
+                    rel1.dislike = Cat.effect_relation(rel1.dislike, randint(ran[0], ran[1]))
+                    rel2.dislike = Cat.effect_relation(rel2.dislike, randint(ran[0], ran[1]))
+                    output += f"Dislike increased. "
+                else:
+                    rel1.dislike = Cat.effect_relation(rel1.dislike, -randint(ran[0], ran[1]))
+                    rel2.dislike = Cat.effect_relation(rel2.dislike, -randint(ran[0], ran[1]))
+                    output += f"Dislike decreased . "
+
+            elif trait == "jealousy":
+                ran = (3, 15)
+
+                if sabotage:
+                    rel1.jealousy = Cat.effect_relation(rel1.jealousy, randint(ran[0], ran[1]))
+                    rel2.jealousy = Cat.effect_relation(rel2.jealousy, randint(ran[0], ran[1]))
+                    output += f"Jealousy increased. "
+                else:
+                    rel1.jealousy = Cat.effect_relation(rel1.jealousy, -randint(ran[0], ran[1]))
+                    rel2.jealousy = Cat.effect_relation(rel2.jealousy, -randint(ran[0], ran[1]))
+                    output += f"Jealousy decreased . "
 
         return output
+
 
     @staticmethod
     def effect_relation(current_value, effect):

@@ -2088,8 +2088,16 @@ class MediationScreen(Screens):
                 self.update_selected_cats()
             elif event.ui_element == self.mediate_button:
                 game.mediated = True
-                output = Cat.mediate_relationship(self.selected_cat_1, self.selected_cat_2)
-                print(output)
+                output = Cat.mediate_relationship(
+                    self.mediators[self.selected_mediator], self.selected_cat_1, self.selected_cat_2)
+                self.results.set_text(output)
+                self.update_selected_cats()
+            elif event.ui_element == self.sabotoge_button:
+                game.mediated = True
+                output = Cat.mediate_relationship(
+                    self.mediators[self.selected_mediator], self.selected_cat_1, self.selected_cat_2,
+                    sabotage=True)
+                self.results.set_text(output)
                 self.update_selected_cats()
             elif event.ui_element in self.cat_buttons:
                 if event.ui_element.return_cat_object() not in [self.selected_cat_1, self.selected_cat_2]:
@@ -2142,7 +2150,7 @@ class MediationScreen(Screens):
 
         self.mediate_button = pygame_gui.elements.UIButton(pygame.Rect((280, 335), (105, 30)), "",
                                                            object_id="#mediate_button")
-        self.sabatoge_button = pygame_gui.elements.UIButton(pygame.Rect((400, 335), (109, 30)), "",
+        self.sabotoge_button = pygame_gui.elements.UIButton(pygame.Rect((400, 335), (109, 30)), "",
                                                             object_id="#sabotage_button")
 
         self.next_med = UIImageButton(pygame.Rect((476, 270), (34, 34)), "", object_id="#arrow_right_button")
@@ -2155,6 +2163,12 @@ class MediationScreen(Screens):
                                                        object_id="#remove_cat_button")
         self.deselect_2 = pygame_gui.elements.UIButton(pygame.Rect((587, 432), (127, 30)), "",
                                                        object_id="#remove_cat_button")
+
+        self.results = UITextBoxTweaked("", pygame.Rect((280, 370), (229, 100)),
+                                        object_id=get_text_box_theme("#cat_patrol_info_box"),
+                                        line_spacing=0.75)
+        if game.mediated:
+            self.results.set_text("You've already mediated/sabotaged this moon!")
 
         self.update_mediator_info()
 
@@ -2191,11 +2205,11 @@ class MediationScreen(Screens):
             if mediator.not_working():
                 text += "\nThis cat isn't able to work"
                 self.mediate_button.disable()
-                self.sabatoge_button.disable()
+                self.sabotoge_button.disable()
             else:
                 text += "\nThis cat can work"
                 self.mediate_button.enable()
-                self.sabatoge_button.enable()
+                self.sabotoge_button.enable()
 
             self.mediator_elements["details"] = UITextBoxTweaked(text,
                                                                  pygame.Rect((x_value, 270), (155, 50)),
@@ -2583,10 +2597,10 @@ class MediationScreen(Screens):
 
         if game.mediated or invalid_mediator or not self.selected_cat_1 or not self.selected_cat_2:
             self.mediate_button.disable()
-            self.sabatoge_button.disable()
+            self.sabotoge_button.disable()
         else:
             self.mediate_button.enable()
-            self.sabatoge_button.enable()
+            self.sabotoge_button.enable()
 
     def exit_screen(self):
         self.selected_cat_1 = None
@@ -2615,8 +2629,8 @@ class MediationScreen(Screens):
         del self.cat_bg
         self.mediate_button.kill()
         del self.mediate_button
-        self.sabatoge_button.kill()
-        del self.sabatoge_button
+        self.sabotoge_button.kill()
+        del self.sabotoge_button
         self.last_med.kill()
         del self.last_med
         self.next_med.kill()
@@ -2629,6 +2643,9 @@ class MediationScreen(Screens):
         del self.next_page
         self.previous_page.kill()
         del self.previous_page
+        self.results.kill()
+        del self.results
+
 
 
     def chunks(self, L, n):
