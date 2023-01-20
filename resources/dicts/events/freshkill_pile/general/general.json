@@ -1,0 +1,21 @@
+[
+	{
+        "injury": "bite-wound",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was bitten by a snake and miraculously survived!",
+        "history_text": [
+            "m_c was scarred by a snake bite.",
+            "m_c died after they were bit by a snake.",
+            "bit by a snake"
+        ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    }
+]

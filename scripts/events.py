@@ -52,9 +52,9 @@ class Events():
             relevant_cats = [cat for cat in Cat.all_cats.copy().values() if cat.is_alive() and not cat.exiled and not cat.outside]
             game.clan.freshkill_pile.time_skip(relevant_cats)
             # handle freshkill pile events, after feeding
-            #self.freshkill_events.handle_amount_freshkill_pile(game.clan.freshkill_pile, relevant_cats)
-            #if not game.clan.freshkill_pile.clan_has_enough_food():
-            #	game.cur_events_list.insert(0, Single_Event(f"{game.clan.name}Clan has not enough food for the next moon!"))    
+            self.freshkill_events.handle_amount_freshkill_pile(game.clan.freshkill_pile, relevant_cats)
+            if not game.clan.freshkill_pile.clan_has_enough_food():
+                game.cur_events_list.insert(0, Single_Event(f"{game.clan.name}Clan has not enough food for the next moon!"))    
 
         for cat in Cat.all_cats.copy().values():
             if not cat.outside:
@@ -159,7 +159,6 @@ class Events():
                 string = f"{game.clan.name}Clan does not have enough healthy medicine cats! Cats will be sick/hurt " \
                          f"for longer and have a higher chance of dying. "
                 game.cur_events_list.insert(0, Single_Event(string, "health"))
-                # game.health_events_list.insert(0, string)
         else:
             has_med = any(
                 str(cat.status) in {"medicine cat", "medicine cat apprentice"}
@@ -168,7 +167,6 @@ class Events():
             if not has_med:
                 string = f"{game.clan.name}Clan has no medicine cat!"
                 game.cur_events_list.insert(0, Single_Event(string, "health"))
-                # game.health_events_list.insert(0, string)
 
         # Promote leader and deputy, if needed.
         self.check_and_promote_leader()
@@ -450,10 +448,10 @@ class Events():
             return
 
         # handle nutrition amount (CARE: the cats has to be fed before - should be handled in "one_moon" function)
-        #if game.clan.game_mode in ['expanded', 'cruel season'] and game.clan.freshkill_pile:
-        #	self.freshkill_events.handle_nutrient(cat, game.clan.freshkill_pile.nutrition_info)
-        #	if cat.dead:
-        #		return
+        if game.clan.game_mode in ['expanded', 'cruel season'] and game.clan.freshkill_pile:
+            self.freshkill_events.handle_nutrient(cat, game.clan.freshkill_pile.nutrition_info)
+            if cat.dead:
+                return
 
         # prevent injured or sick cats from unrealistic clan events
         if cat.is_ill() or cat.is_injured():

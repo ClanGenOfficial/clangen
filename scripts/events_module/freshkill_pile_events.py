@@ -23,7 +23,7 @@ class Freshkill_Events():
             return
 
         nutr = nutrition_info[cat.ID]
-        possible_events = self.generate_events.possible_events(cat.status, cat.age, "freshkill_pile")
+        possible_events = self.generate_events.possible_events(cat.status, cat.age, "nutrition")
 
         # get the other needed information and values
         possible_other_cats = list(filter(
@@ -72,7 +72,7 @@ class Freshkill_Events():
             return
 
         # change health status according to nutrient status
-        if nutr.percentage > 70 and cat.is_ill() and "malnourished" in cat.illnesses:
+        elif nutr.percentage > 70 and cat.is_ill() and "malnourished" in cat.illnesses:
             needed_tags = ["malnourished_healed"]
             illness = "malnourished"
             heal = True
@@ -106,6 +106,7 @@ class Freshkill_Events():
         if heal:
             cat.illnesses.pop(illness)
         elif not heal and illness:
+            print(f"{cat.name} got ill {illness}")
             cat.get_ill(illness)
 
         final_events = self.get_filtered_possibilities(possible_events, needed_tags, cat, other_cat)        
@@ -125,6 +126,63 @@ class Freshkill_Events():
         """
         print("TODO - events if the amount of prey is too much")
 
+        # get different resources
+        cat = random.choice(living_cats)
+        other_cat = None
+        if len(living_cats) > 1:
+            other_cat = random.choice(living_cats)
+            while other_cat.ID == cat.ID:
+                other_cat = random.choice(living_cats)
+
+        possible_events = self.generate_events.possible_events(cat.status, cat.age, "freshkill_pile")
+        possible_tasks = ["death", "reduce", "injury"]
+        needed_tags = []
+
+        # randomly choose which tags are needed
+        choice = random.choice(possible_tasks)
+        double_event = random.choice([True, False])
+        if choice == "death":
+            needed_tags.append("death")
+            needed_tags.append("multi_death")
+        elif choice == "injury":
+            needed_tags.append("injury")
+        if (double_event and choice != "reduce") or choice == "reduce":
+            needed_tags.append("reduce_half")
+            needed_tags.append("reduce_quarter")
+            if double_event and choice == "reduce":
+                injury = random.choice([True, False])
+                if injury:
+                    needed_tags.append("injury")
+                else:
+                    needed_tags.append("death")
+                    needed_tags.append("multi_death")
+
+        final_events = self.get_filtered_possibilities(possible_events, needed_tags, cat, other_cat)  
+        
+        if len(final_events) <= 0:
+            return
+
+        # remove events with the "much_prey" tag, if the condition is not fulfilled
+        # TODO
+
+        # get the event and trigger certain things
+        chosen_event = (random.choice(final_events))
+        event_text = event_text_adjust(Cat, chosen_event.event_text, cat, other_cat)
+        self.save_history_death_strings(chosen_event,cat,other_cat)
+
+        # if a food is stolen, remove the food
+        # TODO
+
+        types = ["miscellaneous"]
+        if chosen_event.injury:
+            types.append("health")
+        if "death" in chosen_event.tags:
+            types.append("birth_death")
+        
+        if "other_cat" in chosen_event.tags:
+            game.cur_events_list.append(Single_Event(event_text, types, [cat, other_cat]))
+        else:
+            game.cur_events_list.append(Single_Event(event_text, types, [cat]))
 
     # ---------------------------------------------------------------------------- #
     #                                helper function                               #
@@ -158,3 +216,35 @@ class Freshkill_Events():
                     not event.other_cat_skill and not event.cat_skill:
                     final_events.append(event)
         return final_events
+
+    def save_history_death_strings(self, event, cat, other_cat):
+        """Save the possible death or history strings for a given event."""
+
+        # if the length of the history text is 3, these are only possibilities
+        if event.history_text is not None and len(event.history_text) == 3:
+            if event.history_text[0] is not None:
+                history_text = event_text_adjust(Cat, event.history_text[0], cat, other_cat)
+                cat.possible_scar = str(history_text)
+            if event.history_text[1] is not None and cat.status != "leader":
+                history_text = event_text_adjust(Cat, event.history_text[1], cat, other_cat)
+                cat.possible_death = str(history_text)
+            elif event.history_text[2] is not None and cat.status == "leader":
+                history_text = event_text_adjust(Cat, event.history_text[2], cat, other_cat)
+                cat.possible_death = str(history_text)
+
+        # if the length of the history text is 2, this means the event is a instant death event
+        if event.history_text is not None and len(event.history_text) == 2:
+            if event.history_text[0] is not None:
+                history_text = event_text_adjust(Cat, event.history_text[0], cat, other_cat)
+                cat.possible_scar = str(history_text)
+            if event.history_text[1] is not None and cat.status == "leader":
+                history_text = event_text_adjust(Cat, event.history_text[1], cat, other_cat)
+                cat.possible_death = str(history_text)
+
+                if cat.status == "leader":
+                    game.clan.leader_lives -= 1
+                cat.die()
+                cat.died_by.append(history_text)
+
+        if event.injury:
+            cat.get_injured(event.injury)
