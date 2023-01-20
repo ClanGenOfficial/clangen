@@ -43,4 +43,3 @@ def test():
 
 if __name__ == "__main__":
     test()
-    print("Done, woo yeah woo yeah")

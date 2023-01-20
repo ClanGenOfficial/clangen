@@ -550,5 +550,57 @@
             "thyme",
             "poppy"
         ]
+    },
+    "malnourished": {
+        "severity": "minor",
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "medicine_mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "duration": 100,
+        "medicine_duration": 100,
+        "infectiousness": 0,
+        "risks": [],
+        "herbs": [
+            "thyme"
+        ]
+    },
+    "starving": {
+        "severity": "severe",
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "medicine_mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "duration": 100,
+        "medicine_duration": 100,
+        "infectiousness": 0,
+        "risks": [],
+        "herbs": [
+            "thyme"
+        ]
     }
 }

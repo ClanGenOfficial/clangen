@@ -8,6 +8,7 @@ from scripts.game_structure.game_essentials import *
 from scripts.cat.names import *
 from scripts.cat.cats import *
 from scripts.cat.pelts import *
+from scripts.clan_resources.freshkill import PREY_REQUIREMENT, HUNTER_EXP_BONUS, HUNTER_BONUS
 
 # ---------------------------------------------------------------------------- #
 #                              PATROL CLASS START                              #
@@ -133,7 +134,6 @@ class Patrol():
                 self.app6_name = str(self.patrol_apprentices[5].name)
 
         self.other_clan = choice(game.clan.all_clans)
-        # print(self.patrol_total_experience)
 
     def get_possible_patrols(self, current_season, biome, all_clans, patrol_type,
                              game_setting_disaster=game.settings['disasters']):
@@ -154,7 +154,6 @@ class Patrol():
         clan_allies = False
         clan_size = int(len(game.clan.clan_cats))
         chance = 0
-        # print(str(self.patrol_statuses))
         # assigning other_clan relations
         if clan_relations > 17:
             clan_allies = True
@@ -327,7 +326,6 @@ class Patrol():
                 else:
                     if not self.patrol_random_cat.is_potential_mate(self.patrol_leader, for_patrol=True):
                         continue
-            # print(str(patrol.patrol_id))
             final_patrols.append(patrol)
 
         return final_patrols
@@ -399,7 +397,6 @@ class Patrol():
 
         c = randint(0, 100)
         outcome = int(random.getrandbits(4))
-        print(str(self.patrol_event.patrol_id))
 
         # ---------------------------------------------------------------------------- #
         #                                   SUCCESS                                    #
@@ -458,6 +455,7 @@ class Patrol():
             self.handle_relationships()
             if game.clan.game_mode != 'classic' and not antagonize:
                 self.handle_herbs(n)
+                self.handle_prey(n)
             self.final_success = self.patrol_event.success_text[n]
             if antagonize:
                 self.antagonize = self.patrol_event.antagonize_text
@@ -549,7 +547,6 @@ class Patrol():
         base_exp = 0
         if "max" in self.experience_levels:
             max_boost = 10
-            print("Max cat detected")
         else:
             max_boost = 0
         patrol_exp = self.patrol_event.exp
@@ -807,40 +804,30 @@ class Patrol():
                 herbs_gotten.append(str(herb).replace('_', ' '))
                 if not large_amount:
                     amount_gotten = choices([1, 2, 3], [1, 3, 2], k=1)
-                    print(game.clan.herbs)
                     if herb in game.clan.herbs.keys():
                         game.clan.herbs[herb] += amount_gotten[0] * len(patrol.patrol_cats)
                     else:
                         game.clan.herbs.update({herb: amount_gotten[0] * len(patrol.patrol_cats)})
-                    print(herb, amount_gotten * len(patrol.patrol_cats))
                 else:
-                    print(game.clan.herbs)
                     if herb in game.clan.herbs.keys():
                         game.clan.herbs[herb] += large_amount * len(patrol.patrol_cats)
                     else:
                         game.clan.herbs.update({herb: large_amount})
-                    print(herb, large_amount * len(patrol.patrol_cats))
-                print(game.clan.herbs)
         elif "herb" in patrol.patrol_event.tags:
             for tag in patrol.patrol_event.tags:
                 if tag in HERBS:
                     herbs_gotten.append(str(tag).replace('_', ' '))
                     if not large_amount:
                         amount_gotten = choices([1, 2, 3], [1, 3, 2], k=1)
-                        print(game.clan.herbs)
                         if tag in game.clan.herbs.keys():
                             game.clan.herbs[tag] += amount_gotten[0] * len(patrol.patrol_cats)
                         else:
                             game.clan.herbs.update({tag: amount_gotten[0] * len(patrol.patrol_cats)})
-                        print(tag, amount_gotten[0] * len(patrol.patrol_cats))
                     else:
-                        print(game.clan.herbs)
                         if tag in game.clan.herbs.keys():
                             game.clan.herbs[tag] += large_amount * len(patrol.patrol_cats)
                         else:
                             game.clan.herbs.update({tag: large_amount * len(patrol.patrol_cats)})
-                        print(tag, large_amount * len(patrol.patrol_cats))
-                    print(game.clan.herbs)
         if herbs_gotten:
             if len(herbs_gotten) == 1 and herbs_gotten[0] != 'cobwebs':
                 insert = f"{herbs_gotten[0]} was"
@@ -852,6 +839,43 @@ class Patrol():
                 insert = f"{', '.join(herbs_gotten[:-1])}, and {herbs_gotten[-1]} were"
             game.herb_events_list.append(f"{insert.capitalize()} gathered on a patrol.")
             self.results_text.append(f"{insert.capitalize()} gathered during this patrol.")
+
+    def handle_prey(self, outcome_nr):
+        """Handle the amount of prey which was caught and add it to the freshkill pile of the clan."""
+        prey_types = {
+            "small_prey" : PREY_REQUIREMENT["warrior"], 
+            "medium_prey" : PREY_REQUIREMENT["warrior"]*2 , 
+            "large_prey" : PREY_REQUIREMENT["warrior"]*3, 
+            "huge_prey" : PREY_REQUIREMENT["warrior"]*4
+        }
+
+        prey_amount_per_cat = 0
+        total_amount = 0
+
+        # check hat kind of prey type this succeeded patrol event has
+        for prey_type, amount in prey_types.items():
+            current_tag = prey_type + str(outcome_nr)
+            if current_tag in patrol.patrol_event.tags or prey_type in patrol.patrol_event.tags:
+                prey_amount_per_cat = amount
+                break
+
+        for cat in self.patrol_cats:
+            total_amount += prey_amount_per_cat
+            # add bonus of certain traits
+            if cat.trait in Cat.skill_groups["hunt"]:
+                total_amount += HUNTER_EXP_BONUS[cat.experience_level] * HUNTER_BONUS[cat.trait]
+
+        # add additional bonus of certain traits
+        if "fantastic_hunter" in self.patrol_skills:
+            total_amount = total_amount * (HUNTER_BONUS["fantastic_hunter"] / 10)
+        elif "great_hunter" in self.patrol_skills:
+            total_amount = total_amount * (HUNTER_BONUS["great_hunter"] / 10)
+        elif "good_hunter" in self.patrol_skills:
+            total_amount = total_amount * (HUNTER_BONUS["good_hunter"] / 10)
+
+        game.clan.freshkill_pile.add_freshkill(total_amount)
+        if total_amount > 0:
+            self.results_text.append(f"Patrol managed to catch a total amount of {total_amount} prey.")
 
     def handle_clan_relations(self, difference):
         """

@@ -8,174 +8,111 @@ from scripts.game_structure.game_essentials import game
 
 resource_directory = "resources/dicts/events/"
 
+# ---------------------------------------------------------------------------- #
+#                     Tagging Guidelines can be found below                    #
+# ---------------------------------------------------------------------------- #
 
 class GenerateEvents:
     @staticmethod
     def get_event_dicts(event_triggered, cat_type, biome):
         events = None
         try:
+            file_path = f"{resource_directory}{event_triggered}/{cat_type}.json"
+            if biome:
+                file_path = f"{resource_directory}{event_triggered}/{biome}/{cat_type}.json"
             with open(
-                f"{resource_directory}{event_triggered}/{biome}/{cat_type}.json",
+                file_path,
                 "r",
             ) as read_file:
                 events = ujson.loads(read_file.read())
         except:
-            print(f"Error: Unable to load events for {cat_type} from biome {biome}.")
+            print(f"ERROR: Unable to load {event_triggered} events for {cat_type} from biome {biome}.")
 
         return events
 
-    def possible_injury_events(self, cat_type, age):
+    def generate_events(self, events_dict):
+        event_list = []
+        for event in events_dict:
+            event_text = event["event_text"] if "event_text" in event else None
+            if not event_text:
+                event_text = event["death_text"] if "death_text" in event else None
 
+            if not event_text:
+                print(f"WARNING: some events resources which are used in generate_events. Have no 'event_text'.")
+            event = SingleEvent(
+                camp="any",
+                tags=event["tags"],
+                event_text=event_text,
+                history_text=event["history_text"],
+                cat_trait=event["cat_trait"],
+                cat_skill=event["cat_skill"],
+                other_cat_trait=event["other_cat_trait"],
+                other_cat_skill=event["other_cat_skill"],
+                injury=event["injury"] if "injury" in event else None,
+            )
+            event_list.append(event)
+        return event_list
+
+    def possible_events(self, cat_type, age, event_type):
         event_list = []
         if cat_type in ["medicine cat", "medicine cat apprentice"]:
             cat_type = "medicine"
 
-        event_list.extend(
-            self.generate_injury_event(
-                GenerateEvents.get_event_dicts("injury", cat_type, "general")
+        biome = None
+        if event_type != "freshkill_pile":
+            biome = game.clan.biome.lower()
+
+            event_list.extend(
+                self.generate_events(
+                    self.get_event_dicts(event_type, cat_type, "general")
+                )
             )
-        )
 
         # skip the rest of the loading if there is an unrecognised cat type
         if cat_type not in game.clan.CAT_TYPES:
-            print(
-                f"WARNING: unrecognised cat status {cat_type} in generate_events. Have you added it to CAT_TYPES in clan.py?"
-            )
+            print(f"WARNING: unrecognised cat status {cat_type} in generate_events. Have you added it to CAT_TYPES in clan.py?")
 
         elif game.clan.biome not in game.clan.BIOME_TYPES:
-            print(
-                f"WARNING: unrecognised biome {game.clan.biome} in generate_events. Have you added it to BIOME_TYPES in clan.py?"
-            )
+            print(f"WARNING: unrecognised biome {game.clan.biome} in generate_events. Have you added it to BIOME_TYPES in clan.py?")
 
         else:
             event_list.extend(
-                self.generate_injury_event(
-                    GenerateEvents.get_event_dicts(
-                        "injury", cat_type, game.clan.biome.lower()
+                self.generate_events(
+                    self.get_event_dicts(
+                        event_type, cat_type, biome
                     )
                 )
             )
 
             if cat_type in ["apprentice", "deputy", "leader"]:
                 event_list.extend(
-                    self.generate_injury_event(
-                        GenerateEvents.get_event_dicts(
-                            "injury", "warrior", game.clan.biome.lower()
+                    self.generate_events(
+                        self.get_event_dicts(
+                            event_type, "warrior", biome
                         )
                     )
                 )
 
             if cat_type not in ["kitten", "leader"]:
-                event_list.extend(
-                    self.generate_injury_event(
-                        GenerateEvents.get_event_dicts("injury", "general", "general")
+                if event_type != "freshkill_pile":
+                    event_list.extend(
+                        self.generate_events(
+                            self.get_event_dicts(event_type, "general", "general")
+                        )
                     )
-                )
                 event_list.extend(
-                    self.generate_injury_event(
-                        GenerateEvents.get_event_dicts(
-                            "injury", "general", game.clan.biome.lower()
+                    self.generate_events(
+                        self.get_event_dicts(
+                            event_type, "general", biome
                         )
                     )
                 )
 
         return event_list
 
-    def generate_injury_event(self, events_dict):
-        injury_list = []
-        for event in events_dict:
-            injury_event = InjuryEvent(
-                injury=event["injury"],
-                tags=event["tags"],
-                event_text=event["event_text"],
-                history_text=event["history_text"],
-                cat_trait=event["cat_trait"],
-                cat_skill=event["cat_skill"],
-                other_cat_trait=event["other_cat_trait"],
-                other_cat_skill=event["other_cat_skill"],
-            )
-            injury_list.append(injury_event)
-        return injury_list
-
-    def possible_death_events(self, cat_type, age):
-
-        event_list = []
-        if cat_type in ["medicine cat", "medicine cat apprentice"]:
-            cat_type = "medicine"
-
-        event_list.extend(
-            self.generate_death_events(
-                GenerateEvents.get_event_dicts("death", cat_type, "general")
-            )
-        )
-
-        # skip the rest of the loading if there is an unrecognised cat type
-        if cat_type not in game.clan.CAT_TYPES:
-            print(
-                f"WARNING: unrecognised cat status {cat_type} in generate_events. Have you added it to CAT_TYPES in clan.py?"
-            )
-
-        elif game.clan.biome not in game.clan.BIOME_TYPES:
-            print(
-                f"WARNING: unrecognised biome {game.clan.biome} in generate_events. Have you added it to BIOME_TYPES in clan.py?"
-            )
-
-        else:
-            event_list.extend(
-                self.generate_death_events(
-                    GenerateEvents.get_event_dicts(
-                        "death", cat_type, game.clan.biome.lower()
-                    )
-                )
-            )
-
-            if cat_type in ["apprentice", "deputy", "leader"]:
-                event_list.extend(
-                    self.generate_death_events(
-                        GenerateEvents.get_event_dicts(
-                            "death", "warrior", game.clan.biome.lower()
-                        )
-                    )
-                )
-
-            if cat_type not in ["kitten", "leader"]:
-                event_list.extend(
-                    self.generate_death_events(
-                        GenerateEvents.get_event_dicts("death", "general", "general")
-                    )
-                )
-                event_list.extend(
-                    self.generate_death_events(
-                        GenerateEvents.get_event_dicts(
-                            "death", "general", game.clan.biome.lower()
-                        )
-                    )
-                )
-
-        return event_list
-
-    def generate_death_events(self, events_dict):
-        death_list = []
-        for event in events_dict:
-            death_event = DeathEvent(
-                camp=event["camp"],
-                tags=event["tags"],
-                death_text=event["death_text"],
-                history_text=event["history_text"],
-                cat_trait=event["cat_trait"],
-                cat_skill=event["cat_skill"],
-                other_cat_trait=event["other_cat_trait"],
-                other_cat_skill=event["other_cat_skill"],
-            )
-            death_list.append(death_event)
-
-        return death_list
-
-
-class InjuryEvent:
+class SingleEvent:
     def __init__(
         self,
-        injury=None,
         camp="any",
         tags=None,
         event_text="",
@@ -184,8 +121,8 @@ class InjuryEvent:
         cat_skill=None,
         other_cat_trait=None,
         other_cat_skill=None,
+        injury=None,
     ):
-        self.injury = injury
         self.camp = camp
         self.tags = tags
         self.event_text = event_text
@@ -195,27 +132,8 @@ class InjuryEvent:
         self.other_cat_trait = other_cat_trait
         self.other_cat_skill = other_cat_skill
 
-
-class DeathEvent:
-    def __init__(
-        self,
-        camp,
-        tags=None,
-        death_text="",
-        history_text=None,
-        cat_trait=None,
-        cat_skill=None,
-        other_cat_trait=None,
-        other_cat_skill=None,
-    ):
-        self.camp = camp
-        self.tags = tags
-        self.death_text = death_text
-        self.history_text = history_text
-        self.cat_trait = cat_trait
-        self.cat_skill = cat_skill
-        self.other_cat_trait = other_cat_trait
-        self.other_cat_skill = other_cat_skill
+        # for injury event
+        self.injury = injury
 
 
 """
@@ -263,5 +181,11 @@ to_both < change both cat's relationship values
 Tagged relationship parameters are: "romantic", "platonic", "comfort", "respect", "trust", "dislike", "jealousy", 
 Add "neg_" in front of parameter to make it a negative value change (i.e. "neg_romantic", "neg_platonic", ect)
 
+
+"death" < main cat will die, this tag is used by the freshkill pile events
+"malnourished" < main cat will get the illness malnourished, this tag is used by the freshkill pile events
+"starving" < main cat will get the illness starving, this tag is used by the freshkill pile events
+"malnourished_healed" < main cat will be healed from malnourished, this tag is used by the freshkill pile events
+"starving_healed" < main cat will be healed from starving, this tag is used by the freshkill pile events
 
 """

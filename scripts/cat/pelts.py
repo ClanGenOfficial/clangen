@@ -499,7 +499,7 @@ def choose_pelt(gender, colour=None, white=None, pelt=None, length=None, categor
         else:
             pelt = choice(pelt_names_F)
             if gender == 'male' and pelt in ['Tortie', 'Calico']:
-                print("Male tortie/calico!")
+                print("INFO: Male tortie/calico!")
     elif pelt in ['Tortie', 'Calico'] and gender == 'male' and not determined:
         a = randint(0, 200)
         if a != 1:
