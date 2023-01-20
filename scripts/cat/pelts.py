@@ -493,7 +493,7 @@ skin_sprites = ['BLACK', 'RED', 'PINK', 'DARKBROWN', 'BROWN', 'LIGHTBROWN', 'DAR
 # CHOOSING PELT
 def choose_pelt(gender, colour=None, white=None, pelt=None, length=None, category=None, determined=False):
     if pelt is None:
-        a = randint(0, 100)
+        '''a = randint(0, 100)
         if a != 1:
             pelt = choice(pelt_names_F) if gender == "female" else choice(pelt_names_M)
         else:
@@ -503,9 +503,9 @@ def choose_pelt(gender, colour=None, white=None, pelt=None, length=None, categor
     elif pelt in ['Tortie', 'Calico'] and gender == 'male' and not determined:
         a = randint(0, 200)
         if a != 1:
-            pelt = choice(pelt_names_M)
-    if category:
-        pelt = choice(category)
+            pelt = choice(pelt_names_M)'''
+        if category:
+            pelt = choice(category)
     if length is None:
         length = choice(pelt_length)
     if pelt == "SingleColour":

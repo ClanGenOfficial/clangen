@@ -194,26 +194,26 @@ def init_pelt(cat):
             par2 = cat.all_cats[cat.parent2]
         # setting parent pelt categories
         if par1 != None:
-            if par1.pelt.name in tabbies:
+            if par1.pelt in tabbies:
                 par1_peltcategory = tabbies
-            elif par1.pelt.name in spotted:
+            elif par1.pelt in spotted:
                 par1_peltcategory = spotted
-            elif par1.pelt.name in plain:
+            elif par1.pelt in plain:
                 par1_peltcategory = plain
-            elif par1.pelt.name in exotic:
+            elif par1.pelt in exotic:
                 par1_peltcategory = exotic
-            elif par1.pelt.name in torties:
+            elif par1.pelt in torties:
                 par1_peltcategory = torties
         if par2 != None:
-            if par2.pelt.name in tabbies:
+            if par2.pelt in tabbies:
                 par2_peltcategory = tabbies
-            elif par2.pelt.name in spotted:
+            elif par2.pelt in spotted:
                 par2_peltcategory = spotted
-            elif par2.pelt.name in plain:
+            elif par2.pelt in plain:
                 par2_peltcategory = plain
-            elif par2.pelt.name in exotic:
+            elif par2.pelt in exotic:
                 par2_peltcategory = exotic
-            elif par2.pelt.name in torties:
+            elif par2.pelt in torties:
                 par2_peltcategory = torties
         if par1 != None:
             par1_colour = par1.pelt.colour
@@ -222,6 +222,7 @@ def init_pelt(cat):
         white = False
         pelt_choice = None
         tortiebase_choice = None
+        colour_choice = None
         tortie = False
         length_choice = None
         direct_inherit = randint(0, 10)
@@ -240,10 +241,10 @@ def init_pelt(cat):
         # just gonna go ahead and decide if the cat is a tortie here
         if cat.gender == 'female' and tortie_chanceF:
             tortie = True
-            cat.pelt.name == 'Calico' # set to calico bc it'll be set to tortie if they don't have enough white later
-        elif cat.gender == 'male' and tortie_chanceM:
+            cat.pelt = 'Calico' # set to calico bc it'll be set to tortie if they don't have enough white later
+        elif cat.gender == 'male' and tortie_chanceM == 1:
             tortie = True
-            cat.pelt.name == 'Calico'
+            cat.pelt = 'Calico'
 
         # no parents, pretty random
         if not par1 and not par2:
@@ -251,28 +252,29 @@ def init_pelt(cat):
             if tortie:
                 choice_ = choice(pelt_choice)
                 cat.tortiebase = choice(choice_)
+                colour_choice = tortiecolours
             else:
                 choice_ = choice(pelt_choice)
-                choose_pelt(cat.gender, category=choice(choice_))        
+                choose_pelt(cat.gender, category=choice(choice_)) 
 
         # pelt name inheritance or tortiebase for torties
         elif par1 and not par2: # for only one parent
             if direct_inherit == 1: # inherit directly from parent 1
-                if par1.pelt.name not in torties:
+                if par1.pelt not in torties:
                     choose_pelt(cat.gender, par1_colour, par1.pelt.white, par1.pelt.name, par1.pelt.length, par1_peltcategory)
-                elif par1.pelt.name in torties and cat.pelt.name in torties:
+                elif par1.pelt in torties and cat.pelt in torties:
                     choose_pelt(cat.gender, par1_colour, par1.pelt.white, par1.pelt.name, par1.pelt.length, par1_peltcategory)
             if par1.pelt.white:
                 white = True
-            if par1.pelt.name in tabbies:
+            if par1.pelt in tabbies:
                 pelt_choice = random.choices(pelt_categories, weights=(35, 20, 20, 5, 0))
-            elif par1.pelt.name in spotted:
+            elif par1.pelt in spotted:
                 pelt_choice = random.choices(pelt_categories, weights=(30, 45, 20, 5, 0))
-            elif par1.pelt.name in plain:
+            elif par1.pelt in plain:
                 pelt_choice = random.choices(pelt_categories, weights=(25, 25, 45, 5, 0))
-            elif par1.pelt.name in exotic:
+            elif par1.pelt in exotic:
                 pelt_choice = random.choices(pelt_categories, weights=(20, 20, 20, 40, 0))
-            elif par1.pelt.name in torties:
+            elif par1.pelt in torties:
                 if par1.tortiebase.capitalize() in tabbies:
                     tortiebase_choice = random.choices(pelt_categories, weights=(35, 20, 20, 5, 0))
                 elif par1.tortiebase.capitalize() in spotted:
@@ -283,7 +285,7 @@ def init_pelt(cat):
                     tortiebase_choice = random.choices(pelt_categories, weights=(20, 20, 20, 40, 0))
 
             # just doing one parent colour here too
-            if cat.pelt.name in torties:
+            if cat.pelt in torties:
                 cat.pelt.colour = choice(tortiecolours)
             else:
                 colour_choice = random.choices(colour_categories, weights=(33, 33, 33))
@@ -299,27 +301,27 @@ def init_pelt(cat):
         # choosing pelt again
         elif par1 and par2: # for both parents
             if direct_inherit == 1: # inherit directly from parent 1
-                if par1.pelt.name not in torties:
+                if par1.pelt not in torties:
                     choose_pelt(cat.gender, par1_colour, par1.pelt.white, par1.pelt.name, par1.pelt.length, par1_peltcategory)
-                elif par1.pelt.name in torties and cat.pelt.name in torties:
+                elif par1.pelt in torties and cat.pelt in torties:
                     choose_pelt(cat.gender, par1_colour, par1.pelt.white, par1.pelt.name, par1.pelt.length, par1_peltcategory)
             elif direct_inherit == 2: # inherit directly from parent 2
-                if par2.pelt.name not in torties:
+                if par2.pelt not in torties:
                     choose_pelt(cat.gender, par2_colour, par2.pelt.white, par2.pelt.name, par2.pelt.length, par2_peltcategory)
-                elif par2.pelt.name in torties and cat.pelt.name in torties:
+                elif par2.pelt in torties and cat.pelt in torties:
                     choose_pelt(cat.gender, par2_colour, par2.pelt.white, par2.pelt.name, par2.pelt.length, par2_peltcategory)
             if par1.pelt.white or par2.pelt.white:
                 white = True
-            if par1.pelt.name in tabbies:
-                if par2.pelt.name in tabbies:
+            if par1.pelt in tabbies:
+                if par2.pelt in tabbies:
                     pelt_choice = random.choices(pelt_categories, weights=(50, 28, 28, 4, 0))
-                elif par2.pelt.name in spotted:
+                elif par2.pelt in spotted:
                     pelt_choice = random.choices(pelt_categories, weights=(40, 40, 16, 4, 0))
-                elif par2.pelt.name in plain:
+                elif par2.pelt in plain:
                     pelt_choice = random.choices(pelt_categories, weights=(40, 16, 40, 4, 0))
-                elif par2.pelt.name in exotic:
+                elif par2.pelt in exotic:
                     pelt_choice = random.choices(pelt_categories, weights=(40, 15, 15, 30, 0))
-                elif par2.pelt.name in torties:
+                elif par2.pelt in torties:
                     if par2.tortiebase.capitalize() in tabbies:
                         tortiebase_choice = random.choices(pelt_categories, weights=(50, 28, 28, 4, 0))
                     elif par2.tortiebase.capitalize() in spotted:
@@ -328,16 +330,16 @@ def init_pelt(cat):
                         tortiebase_choice = random.choices(pelt_categories, weights=(40, 16, 40, 4, 0))
                     elif par2.tortiebase.capitalize() in exotic:
                         tortiebase_choice = random.choices(pelt_categories, weights=(40, 15, 15, 30, 0))
-            elif par1.pelt.name in spotted:
-                if par2.pelt.name in tabbies:
+            elif par1.pelt in spotted:
+                if par2.pelt in tabbies:
                     pelt_choice = random.choices(pelt_categories, weights=(40, 40, 16, 4, 0))
-                elif par2.pelt.name in spotted:
+                elif par2.pelt in spotted:
                     pelt_choice = random.choices(pelt_categories, weights=(28, 50, 28, 4, 0))
-                elif par2.pelt.name in plain:
+                elif par2.pelt in plain:
                     pelt_choice = random.choices(pelt_categories, weights=(16, 40, 40, 4, 0))
-                elif par2.pelt.name in exotic:
+                elif par2.pelt in exotic:
                     pelt_choice = random.choices(pelt_categories, weights=(15, 40, 15, 30, 0))
-                elif par2.pelt.name in torties:
+                elif par2.pelt in torties:
                     if par2.tortiebase.capitalize() in tabbies:
                         tortiebase_choice = random.choices(pelt_categories, weights=(40, 40, 16, 4, 0))
                     elif par2.tortiebase.capitalize() in spotted:
@@ -346,16 +348,16 @@ def init_pelt(cat):
                         tortiebase_choice = random.choices(pelt_categories, weights=(16, 40, 40, 4, 0))
                     elif par2.tortiebase.capitalize() in exotic:
                         tortiebase_choice = random.choices(pelt_categories, weights=(15, 40, 15, 30, 0))
-            elif par1.pelt.name in plain:
-                if par2.pelt.name in tabbies:
+            elif par1.pelt in plain:
+                if par2.pelt in tabbies:
                     pelt_choice = random.choices(pelt_categories, weights=(40, 16, 40, 4, 0))
-                elif par2.pelt.name in spotted:
+                elif par2.pelt in spotted:
                     pelt_choice = random.choices(pelt_categories, weights=(16, 40, 40, 4, 0))
-                elif par2.pelt.name in plain:
+                elif par2.pelt in plain:
                     pelt_choice = random.choices(pelt_categories, weights=(28, 28, 50, 4, 0))
-                elif par2.pelt.name in exotic:
+                elif par2.pelt in exotic:
                     pelt_choice = random.choices(pelt_categories, weights=(15, 15, 40, 30, 0))
-                elif par2.pelt.name in torties:
+                elif par2.pelt in torties:
                     if par2.tortiebase.capitalize() in tabbies:
                         tortiebase_choice = random.choices(pelt_categories, weights=(40, 16, 40, 4, 0))
                     elif par2.tortiebase.capitalize() in spotted:
@@ -364,16 +366,16 @@ def init_pelt(cat):
                         tortiebase_choice = random.choices(pelt_categories, weights=(28, 28, 50, 4, 0))
                     elif par2.tortiebase.capitalize() in exotic:
                         tortiebase_choice = random.choices(pelt_categories, weights=(15, 15, 40, 30, 0))
-            elif par1.pelt.name in exotic:
-                if par2.pelt.name in tabbies:
+            elif par1.pelt in exotic:
+                if par2.pelt in tabbies:
                     pelt_choice = random.choices(pelt_categories, weights=(40, 15, 15, 30, 0))
-                elif par2.pelt.name in spotted:
+                elif par2.pelt in spotted:
                     pelt_choice = random.choices(pelt_categories, weights=(15, 40, 15, 30, 0))
-                elif par2.pelt.name in plain:
+                elif par2.pelt in plain:
                     pelt_choice = random.choices(pelt_categories, weights=(28, 28, 50, 4, 0))
-                elif par2.pelt.name in exotic:
+                elif par2.pelt in exotic:
                     pelt_choice = random.choices(pelt_categories, weights=(20, 20, 20, 40, 0))
-                elif par2.pelt.name in torties:
+                elif par2.pelt in torties:
                     if par2.tortiebase.capitalize() in tabbies:
                         tortiebase_choice = random.choices(pelt_categories, weights=(40, 15, 15, 30, 0))
                     elif par2.tortiebase.capitalize() in spotted:
@@ -382,17 +384,17 @@ def init_pelt(cat):
                         tortiebase_choice = random.choices(pelt_categories, weights=(28, 28, 50, 4, 0))
                     elif par2.tortiebase.capitalize() in exotic:
                         tortiebase_choice = random.choices(pelt_categories, weights=(20, 20, 20, 40, 0))
-            elif par1.pelt.name in torties:
+            elif par1.pelt in torties:
                 if par1.tortiebase.capitalize() in tabbies:
-                    if par2.pelt.name in tabbies:
+                    if par2.pelt in tabbies:
                         pelt_choice = random.choices(pelt_categories, weights=(50, 28, 28, 4, 0))
-                    elif par2.pelt.name in spotted:
+                    elif par2.pelt in spotted:
                         pelt_choice = random.choices(pelt_categories, weights=(40, 40, 16, 4, 0))
-                    elif par2.pelt.name in plain:
+                    elif par2.pelt in plain:
                         pelt_choice = random.choices(pelt_categories, weights=(40, 16, 40, 4, 0))
-                    elif par2.pelt.name in exotic:
+                    elif par2.pelt in exotic:
                         pelt_choice = random.choices(pelt_categories, weights=(40, 15, 15, 30, 0))
-                    elif par2.pelt.name in torties:
+                    elif par2.pelt in torties:
                         if par2.tortiebase.capitalize() in tabbies:
                             tortiebase_choice = random.choices(pelt_categories, weights=(50, 28, 28, 4, 0))
                         elif par2.tortiebase.capitalize() in spotted:
@@ -402,15 +404,15 @@ def init_pelt(cat):
                         elif par2.tortiebase.capitalize() in exotic:
                             tortiebase_choice = random.choices(pelt_categories, weights=(40, 15, 15, 30, 0))
                 elif par1.tortiebase.capitalize() in spotted:
-                    if par2.pelt.name in tabbies:
+                    if par2.pelt in tabbies:
                         pelt_choice = random.choices(pelt_categories, weights=(40, 40, 16, 4, 0))
-                    elif par2.pelt.name in spotted:
+                    elif par2.pelt in spotted:
                         pelt_choice = random.choices(pelt_categories, weights=(28, 50, 28, 4, 0))
-                    elif par2.pelt.name in plain:
+                    elif par2.pelt in plain:
                         pelt_choice = random.choices(pelt_categories, weights=(16, 40, 40, 4, 0))
-                    elif par2.pelt.name in exotic:
+                    elif par2.pelt in exotic:
                         pelt_choice = random.choices(pelt_categories, weights=(15, 40, 15, 30, 0))
-                    elif par2.pelt.name in torties:
+                    elif par2.pelt in torties:
                         if par2.tortiebase.capitalize() in tabbies:
                             tortiebase_choice = random.choices(pelt_categories, weights=(40, 40, 16, 4, 0))
                         elif par2.tortiebase.capitalize() in spotted:
@@ -420,15 +422,15 @@ def init_pelt(cat):
                         elif par2.tortiebase.capitalize() in exotic:
                             tortiebase_choice = random.choices(pelt_categories, weights=(15, 40, 15, 30, 0))
                 elif par1.tortiebase.capitalize() in plain:
-                    if par2.pelt.name in tabbies:
+                    if par2.pelt in tabbies:
                         pelt_choice = random.choices(pelt_categories, weights=(40, 16, 40, 4, 0))
-                    elif par2.pelt.name in spotted:
+                    elif par2.pelt in spotted:
                         pelt_choice = random.choices(pelt_categories, weights=(16, 40, 40, 4, 0))
-                    elif par2.pelt.name in plain:
+                    elif par2.pelt in plain:
                         pelt_choice = random.choices(pelt_categories, weights=(28, 28, 50, 4, 0))
-                    elif par2.pelt.name in exotic:
+                    elif par2.pelt in exotic:
                         pelt_choice = random.choices(pelt_categories, weights=(15, 15, 40, 30, 0))
-                    elif par2.pelt.name in torties:
+                    elif par2.pelt in torties:
                         if par2.tortiebase.capitalize() in tabbies:
                             tortiebase_choice = random.choices(pelt_categories, weights=(40, 16, 40, 4, 0))
                         elif par2.tortiebase.capitalize() in spotted:
@@ -438,15 +440,15 @@ def init_pelt(cat):
                         elif par2.tortiebase.capitalize() in exotic:
                             tortiebase_choice = random.choices(pelt_categories, weights=(15, 15, 40, 30, 0))
                 elif par1.tortiebase.capitalize() in exotic:
-                    if par2.pelt.name in tabbies:
+                    if par2.pelt in tabbies:
                         pelt_choice = random.choices(pelt_categories, weights=(40, 15, 15, 30, 0))
-                    elif par2.pelt.name in spotted:
+                    elif par2.pelt in spotted:
                         pelt_choice = random.choices(pelt_categories, weights=(15, 40, 15, 30, 0))
-                    elif par2.pelt.name in plain:
+                    elif par2.pelt in plain:
                         pelt_choice = random.choices(pelt_categories, weights=(28, 28, 50, 4, 0))
-                    elif par2.pelt.name in exotic:
+                    elif par2.pelt in exotic:
                         pelt_choice = random.choices(pelt_categories, weights=(20, 20, 20, 40, 0))
-                    elif par2.pelt.name in torties:
+                    elif par2.pelt in torties:
                         if par2.tortiebase.capitalize() in tabbies:
                             tortiebase_choice = random.choices(pelt_categories, weights=(40, 15, 15, 30, 0))
                         elif par2.tortiebase.capitalize() in spotted:
@@ -456,7 +458,7 @@ def init_pelt(cat):
                         elif par2.tortiebase.capitalize() in exotic:
                             tortiebase_choice = random.choices(pelt_categories, weights=(20, 20, 20, 40, 0))
             # pelt chosen, continue to color
-            if cat.pelt.name in torties:
+            if cat.pelt in torties:
                 if par1_colour in black_colours:
                     if par2_colour in black_colours:
                         colour_choice = random.choices(colour_categories, weights=(70, 0, 30))
@@ -518,16 +520,18 @@ def init_pelt(cat):
                     length_choice = random.choices(pelt_length, weights=(10, 25, 65))
         
         # now.. choose
-        if tortie:
-            choiceb = choice(tortiebase_choice)
-            cat.tortiebase = choice(choiceb)
-        else:
-            choicep = choice(pelt_choice)
-            cat_pelt = choice(choicep)
-        choicec = choice(colour_choice)
-        cat_pelt_c = choice(choicec)
-        cat_pelt_l = choice(length_choice)
-        choose_pelt(cat.gender, cat_pelt_c, white, cat_pelt, cat_pelt_l)
+        if not cat.pelt:
+            choicec = choice(colour_choice)
+            cat_pelt_c = choice(choicec)
+            cat_pelt_l = choice(length_choice)
+            if tortie and not cat.tortiebase:
+                choiceb = choice(tortiebase_choice)
+                cat.tortiebase = choice(choiceb)
+                cat_pelt = 'Calico'
+            else:
+                choicep = choice(pelt_choice)
+                cat_pelt = choice(choicep)
+            choose_pelt(cat.gender, cat_pelt_c, white, cat_pelt, cat_pelt_l)
 
 def init_sprite(cat):
     if cat.pelt is None:
