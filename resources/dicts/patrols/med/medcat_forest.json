@@ -105,7 +105,7 @@
     "patrol_id": "fst_med_herbs1",
     "biome": "forest",
     "season": "Any",
-    "tags": ["med_cat", "apprentice", "med_only", "herb", "dandelion"],
+    "tags": ["med_cat", "apprentice", "med_only", "herb", "dandelion", "many_herbs1"],
     "intro_text": "p_l and app1 are going out to gather dandelions. app1 asks their mentor what they'll do if the rabbits have eaten all of it. p_l responds that they'll cross that river when they get to it.",
     "decline_text": "A cat grabs p_l's attention before they can leave.",
     "chance_of_success": 60,
@@ -137,7 +137,7 @@
     "exp": 10,
     "success_text": [
         "p_l is relieved to find that the mullein is still intact. They knock a stray weevil off of a leaf as they're gathering the herb.",
-        "Not only is the mullein intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l purrs in satisfaction - seems like they've caught two prey in one blow on this trip."
+        "Not only is the mullein intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l purrs in satisfaction - seems like they've caught two prey in one blow on this trip. They'll remember that plantain for later."
     ],
     "fail_text": [
         "p_l reaches the mullein plant that the Clan has used for many seasons and finds that it's being torn to shreds by bugs. They hiss in exasperation and bat some of the leaf bugs off the plant. Maybe it'll grow back next newleaf."
@@ -155,7 +155,7 @@
     "patrol_id": "fst_med_herbs3",
     "biome": "forest",
     "season": "Any",
-    "tags": ["med_cat", "warrior", "herb", "burdock", "dislike"],
+    "tags": ["med_cat", "warrior", "herb", "burdock", "dislike", "many_herbs1"],
     "intro_text": "p_l needs to go and gather some burdock root. They take along what warriors they can find around camp to help gather and carry the roots back.",
     "decline_text": "A cat grabs p_l's attention before they can leave.",
     "chance_of_success": 50,
