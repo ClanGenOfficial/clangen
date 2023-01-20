@@ -398,7 +398,7 @@
     "patrol_id": "gen_med_herbs_leaf-fall2",
     "biome": "Any",
     "season": "leaf-fall",
-    "tags": ["med_cat", "warrior", "herb", "catmint", "respect", "trust", "no_leader", "no_change_fail"],
+    "tags": ["med_cat", "warrior", "herb", "catmint", "respect", "trust", "no_leader", "no_change_fail", "many_herbs1"],
     "intro_text": "Sensing the cold nip of leaf-bare on the wind, p_l requests the help of any warriors they can find to stock up on some essential herbs before the frost takes them.",
     "decline_text": "It turns out that the leader has another urgent task for the Clan's warriors; the herbs will have to wait.",
     "chance_of_success": 70,
