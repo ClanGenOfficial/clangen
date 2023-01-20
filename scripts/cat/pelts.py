@@ -358,9 +358,9 @@ class Tortie():
         'SEALPOINT','VITILIGO', 'VITILIGO2'
         ]
 
-    def __init__(self, colour, white, length):
+    def __init__(self, white, length):
         self.white = white  # boolean; does cat have white on it or no
-        self.colour = colour
+        self.colour = choice(tortiecolours)
         self.length = length
 
     def __repr__(self):
@@ -379,8 +379,8 @@ class Calico():
         'VAN', 'VANCREAMY', 'ONEEAR', 'LIGHTSONG', 'TAIL', 'HEART', 'MOORISH',
         'MASKMANTLE', 'APRON', 'CAPSADDLE'
     ]
-    def __init__(self, length, colour):
-        self.colour = colour
+    def __init__(self, length):
+        self.colour = choice(tortiecolours)
         self.length = length
         self.white = True
 
@@ -598,20 +598,12 @@ def choose_pelt(colour=None, white=None, pelt=None, length=None, category=None, 
         else:
             return Agouti(colour, white, length)
     elif pelt == 'Tortie':
-        if colour is None and white is None:
-            return Tortie(choice(tortiecolours), choice([False, True]),
-                             length)
-        elif colour is None:
-            return Tortie(choice(tortiecolours), white, length)
+        if white is None:
+            return Tortie(choice([False, True]), length)
         else:
-            return Tortie(colour, white, length)
-    elif pelt == 'Calico':
-        if colour is None:
-            return Calico(choice(tortiecolours), length)
-        else:
-            return Calico(colour, length)
+            return Tortie(white, length)
     else:
-        return Calico(colour, length)
+        return Calico(length)
 
 def describe_color(pelt, tortiecolour, tortiepattern, white_patches):
         color_name = ''
