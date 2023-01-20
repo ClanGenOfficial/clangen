@@ -22,6 +22,7 @@ class Clan():
         "deputy",
         "leader",
         "elder",
+        "mediator",
         "general",
     ]
 

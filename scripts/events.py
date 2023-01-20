@@ -40,7 +40,7 @@ class Events():
         game.patrolled.clear()
 
         if any(str(cat.status) in {'leader', 'deputy', 'warrior', 'medicine cat', 'medicine cat apprentice',
-                                   'apprentice'}
+                                   'apprentice', 'mediator', 'mediator apprentice'}
                and not cat.dead and not cat.outside for cat in Cat.all_cats.values()):
             game.switches['no_able_left'] = False
 
