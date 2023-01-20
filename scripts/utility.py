@@ -366,23 +366,23 @@ def update_sprite(cat):
     if cat.pelt is None:
         if cat.parent1 is None:
             # If pelt has not been picked manually, this function chooses one based on possible inheritances
-            cat.pelt = choose_pelt(cat.gender)
+            cat.pelt = choose_pelt()
         elif cat.parent2 is None and cat.parent1 in cat.all_cats.keys():
             # 1 in 3 chance to inherit a single parent's pelt
             par1 = cat.all_cats[cat.parent1]
-            cat.pelt = choose_pelt(cat.gender, choice([par1.pelt.colour, None]), choice([par1.pelt.white, None]),
+            cat.pelt = choose_pelt(choice([par1.pelt.colour, None]), choice([par1.pelt.white, None]),
                                    choice([par1.pelt.name, None]),
                                    choice([par1.pelt.length, None]))
         if cat.parent1 in cat.all_cats.keys() and cat.parent2 in cat.all_cats.keys():
             # 2 in 3 chance to inherit either parent's pelt
             par1 = cat.all_cats[cat.parent1]
             par2 = cat.all_cats[cat.parent2]
-            cat.pelt = choose_pelt(cat.gender, choice([par1.pelt.colour, par2.pelt.colour, None]),
+            cat.pelt = choose_pelt(choice([par1.pelt.colour, par2.pelt.colour, None]),
                                    choice([par1.pelt.white, par2.pelt.white, None]),
                                    choice([par1.pelt.name, par2.pelt.name, None]),
                                    choice([par1.pelt.length, par2.pelt.length, None]))
         else:
-            cat.pelt = choose_pelt(cat.gender)
+            cat.pelt = choose_pelt()
 
             # THE SPRITE UPDATE
     # draw colour & style
