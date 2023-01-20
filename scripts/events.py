@@ -7,6 +7,7 @@ from scripts.events_module.relation_events import *
 from scripts.game_structure.load_cat import *
 from scripts.events_module.condition_events import Condition_Events
 from scripts.events_module.death_events import Death_Events
+from scripts.events_module.freshkill_pile_events import Freshkill_Events
 from scripts.event_class import Single_Event
 
 
@@ -29,6 +30,7 @@ class Events():
         self.relation_events = Relation_Events()
         self.condition_events = Condition_Events()
         self.death_events = Death_Events()
+        self.freshkill_events = Freshkill_Events()
 
     def one_moon(self):
         game.cur_events_list = []
@@ -44,6 +46,15 @@ class Events():
             game.switches['no_able_left'] = False
 
         self.relation_events.handle_pregnancy_age(game.clan)
+
+        if game.clan.game_mode in ['expanded', 'cruel season'] and game.clan.freshkill_pile:
+            # feed the cats and update the nutrient status
+            relevant_cats = [cat for cat in Cat.all_cats.copy().values() if cat.is_alive() and not cat.exiled and not cat.outside]
+            game.clan.freshkill_pile.time_skip(relevant_cats)
+            # handle freshkill pile events, after feeding
+            #self.freshkill_events.handle_amount_freshkill_pile(game.clan.freshkill_pile, relevant_cats)
+            #if not game.clan.freshkill_pile.clan_has_enough_food():
+            #	game.cur_events_list.insert(0, Single_Event(f"{game.clan.name}Clan has not enough food for the next moon!"))    
 
         for cat in Cat.all_cats.copy().values():
             if not cat.outside:
@@ -353,7 +364,6 @@ class Events():
             event = f"The medicine den nests have been refreshed with new moss from the herb stores."
             game.herb_events_list.append(event)
             game.cur_events_list.append(Single_Event(event, "health"))
-            print('moss -', herb_amount)
 
         elif not int(random.random() * 80) and sum(game.clan.herbs.values()) > 0 and len(meds) > 0:
 
@@ -403,8 +413,6 @@ class Events():
 
             # Deal with fading the cat if they are old enough.
             if cat.dead_for > age_to_fade:
-                print(str(cat.name) + " is fading away...")
-                print("dead_for: " + str(cat.dead_for))
                 # If order not to add a cat to the faded list twice, we can't remove them or add them to
                 # faded cat list here. Rather, they are added to a list of cats that will be "faded" at the next save.
 
@@ -440,6 +448,12 @@ class Events():
             cat.dead_for += 1
             self.handle_fading(cat)  # Deal with fading.
             return
+
+        # handle nutrition amount (CARE: the cats has to be fed before - should be handled in "one_moon" function)
+        #if game.clan.game_mode in ['expanded', 'cruel season'] and game.clan.freshkill_pile:
+        #	self.freshkill_events.handle_nutrient(cat, game.clan.freshkill_pile.nutrition_info)
+        #	if cat.dead:
+        #		return
 
         # prevent injured or sick cats from unrealistic clan events
         if cat.is_ill() or cat.is_injured():
@@ -1046,7 +1060,7 @@ class Events():
                         if scar in scar_pool:
                             scar_pool.remove(scar)  # No doubles
                     except ValueError as e:
-                        print(f"Failed to exclude scar from pool: {e}")
+                        print(f"ERROR: Failed to exclude scar from pool: {e}")
 
         # Always possible scar events
         if scar_chance > random.random():
@@ -1809,7 +1823,6 @@ class Events():
 
         # if large amount of the population is already sick, stop spreading
         if already_sick_count >= alive_count * .25:
-            # print('CURRENT SICK COUNT TOO HIGH', already_sick_count, alive_count)
             return
 
         meds = get_med_cats(Cat)
@@ -1861,7 +1874,6 @@ class Events():
                     event = f'{illness_name} has spread around the camp. ' \
                             f'{", ".join(infected_names[:-1])}, and {infected_names[-1]} have been infected.'
 
-                print('OUTBREAK - PANDEMIC ALERT')
                 game.cur_events_list.append(Single_Event(event, "health", involved_cats))
                 # game.health_events_list.append(event)
                 break

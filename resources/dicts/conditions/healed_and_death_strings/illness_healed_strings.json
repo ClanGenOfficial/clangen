@@ -76,5 +76,7 @@
         "m_c wakes one day, after moons of numbness, and feels as though the world is less dull.",
         "m_c tells themself that they can't let these feelings consume them, instead they have to learn to live with it.",
         "m_c picks themself up out of their nest and begins the day anew, a fresh conviction in their heart."
-    ]
+    ],
+	"malnourished": ["WARNING: this string should never appear, nutrition are handled only in freshkill events."],
+	"starving": ["WARNING: this string should never appear, nutrition are handled only in freshkill events."]
 }
