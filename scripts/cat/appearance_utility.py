@@ -148,18 +148,23 @@ def init_eyes(cat):
                 par1.eye_colour, par2.eye_colour,
                 choice(eye_colours)
             ])
-        num = 200
+        num = 120
         if cat.white_patches in [high_white, mostly_white, 'FULLWHITE'] or cat.pelt.colour == 'WHITE':
-            num -= 100
+            num = num - 90
+        if cat.white_patches == 'FULLWHITE' or cat.pelt.colour == 'WHITE':
+            num =- 10
         if par1:
             if par1.eye_colour2:
-                num = num - 20
+                num =- 10
         if par2:
             if par2.eye_colour2:
-                num = num - 20
-
+                num =- 10
+        if num < 0:
+            num = 1
+        print("Het chance: 0/" + str(num))
         hit = randint(0, num)
         if hit == 0:
+            print("Hit!")
             if cat.eye_colour in yellow_eyes:
                 eye_choice = choice([blue_eyes, green_eyes])
                 cat.eye_colour2 = choice(eye_choice)
@@ -219,7 +224,7 @@ def init_pelt(cat):
                 par2_peltcategory = torties
         if par1 != None:
             par1_colour = par1.pelt.colour
-        if par1 != None:
+        if par2 != None:
             par2_colour = par2.pelt.colour
         white = False
         pelt_choice = None
