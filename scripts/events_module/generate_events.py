@@ -192,10 +192,12 @@ Following tags are used for nutrition events:
 Following tags are used for freshkill pile events:
 "death" < main cat will die
 "multi_death" < as described above
+"injury" < main cat get injured
+"multi_injury" < use to indicate that two cats get injured.
 "much_prey" < this event will be triggered when the pile is extremely full 
 "reduce_half" < reduce prey amount of the freshkill pile by a half
 "reduce_quarter" < reduce prey amount of the freshkill pile by a quarter
-"injury" < the main cat will be injured
+"reduce_eighth" < reduce prey amount of the freshkill pile by a eighth
 "other_cat" < there is a second cat in this event
 
 """

@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import sys
 import os
-import traceback
 directory = os.path.dirname(__file__)
 if directory:
     os.chdir(directory)
