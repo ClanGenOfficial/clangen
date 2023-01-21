@@ -2186,7 +2186,7 @@ class Cat():
         #Output string.
         output = ""
 
-        if abs(cat1.age - cat2.age) > 80:
+        if abs(cat1.moons - cat2.moons) > 80:
             age_diff = False
         else:
             age_diff = True
