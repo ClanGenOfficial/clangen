@@ -760,6 +760,8 @@ class Cat():
         elif self.status == 'mediator':
             pass
 
+        elif self.status == 'mediator apprentice':
+            self.update_mentor()
 
         # update class dictionary
         self.all_cats[self.ID] = self
@@ -1689,6 +1691,9 @@ class Cat():
                 'leader', 'deputy', 'warrior'
         ]:
             return False
+        if self.status == 'mediator apprentice' and potential_mentor.status != 'mediator':
+            return False
+
         # If not an app, don't need a mentor
         if 'apprentice' not in self.status:
             return False
@@ -1765,7 +1770,8 @@ class Cat():
             print("Everything is terrible!! (new_mentor {new_mentor} is a Cat D:)")
             return
         # Check if cat can have a mentor
-        illegible_for_mentor = self.dead or self.outside or self.exiled or self.status != "apprentice"
+        illegible_for_mentor = self.dead or self.outside or self.exiled or self.status not in ["apprentice",
+                                                                                               "mediator apprentice"]
         if illegible_for_mentor:
             self.__remove_mentor()
             return
@@ -2180,9 +2186,14 @@ class Cat():
         #Output string.
         output = ""
 
+        if abs(cat1.age - cat2.age) > 80:
+            age_diff = False
+        else:
+            age_diff = True
+
         # determine the traits to effect
         pos_traits = ["platonic", "respect", "comfortable", "trust"]
-        if mates or (valid_age and not related):
+        if mates or (valid_age and not related and age_diff):
             pos_traits.append("romantic")
 
         neg_traits = ["dislike", "jealousy"]

@@ -7,6 +7,7 @@ class Name():
         "kitten": "kit",
         "apprentice": "paw",
         "medicine cat apprentice": "paw",
+        "mediator apprentice": "paw",
         "leader": "star"
     }
     normal_suffixes = [  # common suffixes

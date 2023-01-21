@@ -21,6 +21,7 @@
         "deputy": [],
         "elder": [],
         "mediator": [],
+        "mediator apprentice": [],
         "all": []
     },
     "alive": {
@@ -33,6 +34,7 @@
         "deputy": [],
         "elder": [],
         "mediator": [],
+        "mediator apprentice": [],
         "all": []
     },
     "all":[]

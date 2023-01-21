@@ -661,6 +661,11 @@ class Events():
                     self.ceremony_accessory = True
                     self.gain_accessories(cat)
 
+                elif cat.status == 'mediator apprentice':
+                    self.ceremony(cat, 'mediator', ' has completed their mediator training')
+                    self.ceremony_accessory = True
+                    self.gain_accessories(cat)
+
     def ceremony(self, cat, promoted_to, ceremony_text):
         # ---------------------------------------------------------------------------- #
         #                      promote cats and add to event list                      #
@@ -790,6 +795,12 @@ class Events():
                      f"{cat.name.prefix}paw their full name of {cat.name}. They both share the rest of the night "
                      "with StarClan, celebrating their good fortune in having another medicine cat."])
 
+        elif promoted_to == 'mediator':
+                ceremony.extend(
+                    [f"{cat.name.prefix}paw have proven themselves skilled at handling the clan's disputes. "
+                     f"They are given the name {cat.name}, and the clan honors their new mediator.",
+                     f"{cat.name} is welcomed as full mediator of the Clan"])
+
         elif promoted_to == 'elder' and not leader_dead:
             involved_cats.append(game.clan.leader.ID)
             ceremony.extend([
@@ -804,9 +815,7 @@ class Events():
                 str(cat.name) + " wished to join the elders. "
                 "The Clan honors them and all the service they have given to them."
             ])
-        if (
-                promoted_to == 'warrior' or promoted_to == 'apprentice' or promoted_to == 'medicine cat apprentice'
-                or promoted_to == 'medicine cat' or promoted_to == 'elder'):
+        if promoted_to in ['warrior', 'apprentice', 'medicine cat apprentice', 'medicine cat', 'elder', 'mediator']:
             ceremony_text = choice(ceremony)
             game.cur_events_list.append(Single_Event(ceremony_text, "ceremony", involved_cats))
             # game.ceremony_events_list.append(ceremony_text)

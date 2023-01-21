@@ -134,5 +134,11 @@
         "neutral": [],
         "friendly": [],
         "close": []
+    },
+    "mediator apprentice": {
+        "unfriendly": [],
+        "neutral": [],
+        "friendly": [],
+        "close": []
     }
 }

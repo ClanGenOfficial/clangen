@@ -29,6 +29,8 @@ class GenerateEvents:
         event_list = []
         if cat_type in ["medicine cat", "medicine cat apprentice"]:
             cat_type = "medicine"
+        elif cat_type in ["mediator", "mediator apprentice"]:
+            cat_type = "mediator"
 
         event_list.extend(
             self.generate_injury_event(

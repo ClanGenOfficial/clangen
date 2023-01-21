@@ -304,7 +304,10 @@ class ProfileScreen(Screens):
             elif event.ui_element == self.profile_elements["mediator_den"]:
                 self.change_screen('mediation screen')
             elif event.ui_element == self.profile_elements["mediator_button"]:
-                self.the_cat.status_change('mediator', resort=True)
+                if self.the_cat.status in ["apprentice", "medicine cat apprentice"]:
+                    self.the_cat.status_change('mediator apprentice', resort=True)
+                else:
+                    self.the_cat.status_change('mediator', resort=True)
                 self.clear_profile()
                 self.build_profile()
             else:
@@ -559,7 +562,7 @@ class ProfileScreen(Screens):
         #Temp Mediator button
         self.profile_elements["mediator_button"] = pygame_gui.elements.UIButton(pygame.Rect((500, 380), (-1, -1)),
                                                                                 "switch to mediator")
-        if self.the_cat.status not in ["warrior", "elder"]:
+        if self.the_cat.status not in ["warrior", "elder", "apprentice", "medicine cat apprentice"]:
             self.profile_elements["mediator_button"].hide()
 
         # use these attributes to create differing profiles for starclan cats etc.
@@ -646,7 +649,7 @@ class ProfileScreen(Screens):
                                                               ((350, 110), (100, 28)),
                                                               "Mediation")
         if not (self.the_cat.dead or self.the_cat.outside) and \
-                self.the_cat.status in ['mediator']:
+                self.the_cat.status in ['mediator', 'mediator apprentice']:
             self.profile_elements["mediator_den"].show()
         else:
             self.profile_elements["mediator_den"].hide()
