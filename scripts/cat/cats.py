@@ -2215,11 +2215,11 @@ class Cat():
                 if sabotage:
                     rel1.romantic_love = Cat.effect_relation(rel1.romantic_love, -randint(ran[0], ran[1]))
                     rel2.romantic_love = Cat.effect_relation(rel1.romantic_love, -randint(ran[0], ran[1]))
-                    output += f"Romantic interest decreased!\n"
+                    output += f"Romantic interest decreased. "
                 else:
                     rel1.romantic_love = Cat.effect_relation(rel1.romantic_love, randint(ran[0], ran[1]))
                     rel2.romantic_love = Cat.effect_relation(rel1.romantic_love, randint(ran[0], ran[1]))
-                    output += f"Romantic interest increased!\n"
+                    output += f"Romantic interest increased. "
 
             elif trait == "platonic":
                 ran = (3, 16)

@@ -1,3 +1,4 @@
+import random
 from random import randrange
 
 from scripts.cat.cats import *
@@ -49,7 +50,24 @@ class Events():
         for cat in Cat.all_cats.copy().values():
             if not cat.outside:
                 self.one_moon_cat(cat)
-            else:
+
+                # If the cat is a mediator, check if they visited other clans
+                if cat.status in ["mediator", "mediator apprentice"]:
+                    if not int(random.random() * 15):
+                        increase = randint(-2, 6)
+                        clan = choice(game.clan.all_clans)
+                        clan.relations += increase
+                        text = f"{cat.name} travels to {clan} to resolve some recent disputes. "
+                        if increase > 0:
+                            game.cur_events_list.append(Single_Event(text, "other_clans", cat.ID))
+                        elif increase == 0:
+                            game.cur_events_list.append(Single_Event(text + "However, no progress is made.",
+                                                                     "other_clans", cat.ID))
+                        elif increase < 0:
+                            game.cur_events_list.append(Single_Event(text + f"However, it seems {cat.name} "
+                                                                            f"only made things worse",
+                                                                     "other_clans", cat.ID))
+        else:
                 # ---------------------------------------------------------------------------- #
                 #                              exiled cat events                               #
                 # ---------------------------------------------------------------------------- #
