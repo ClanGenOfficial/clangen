@@ -78,7 +78,7 @@ if clan_list:
         load_cats()
         clan_class.load_clan()
     except Exception as e:
-        print(traceback.format_exc())
+        print("ERROR: \n",traceback.format_exc())
         if not game.switches['error_message']:
             game.switches[
                 'error_message'] = 'There was an error loading the cats file!'
@@ -89,7 +89,6 @@ if clan_list:
         game.map_info = {}
     except:
         game.map_info = load_map("Fallback")
-        print("Default map loaded.")
         """
 
 # LOAD settings

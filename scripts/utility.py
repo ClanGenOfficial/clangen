@@ -10,6 +10,25 @@ from scripts.cat.sprites import *
 from scripts.cat.pelts import *
 from scripts.game_structure.game_essentials import *
 
+def get_queens(living_cats, all_cats):
+	"""Returns a list with all cats with the 'status' queen."""
+	queens = []
+	for living_cat_ in living_cats:
+		if str(living_cat_.status) != 'kitten' or living_cat_.parent1 is None:
+			continue
+
+		parent_1 = None
+		parent_2 = None
+		if living_cat_.parent1:
+			parent_1 = all_cats[living_cat_.parent1]
+		if living_cat_.parent2:
+			parent_2 = all_cats[living_cat_.parent2]
+		if parent_1.gender == 'male':
+			if parent_2 is None or parent_2.gender == 'male':
+				queens.append(parent_1)
+		else:
+			queens.append(parent_1)
+	return queens
 
 def get_med_cats(Cat, working=True):
     """
@@ -79,8 +98,6 @@ def change_clan_relations(other_clan, difference=0):
     # change the value
     clan_relations += difference
     game.clan.all_clans[y].relations = clan_relations
-    print('CLAN RELATIONS:', other_clan.name, difference)
-
 
 # ---------------------------------------------------------------------------- #
 #                       Relationship / Traits / Relative                       #
@@ -582,8 +599,7 @@ def update_sprite(cat):
                     sprites.sprites['collars' + cat.accessory +
                                     str(cat.age_sprites[cat.age])], (0, 0))
     except (TypeError, KeyError):
-        print(f"Failed to load cat ID #{cat}'s sprite:")
-        print(traceback.format_exc())
+        print(f"ERROR: Failed to load cat ID #{cat}'s sprite:\n", traceback.format_exc())
 
         # Placeholder image
         new_sprite.blit(

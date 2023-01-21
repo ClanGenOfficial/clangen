@@ -1,0 +1,12 @@
+[
+	{
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "death"],
+        "death_text": "m_c can feel they have no energy, not to stand up and not to remain longer here.",
+        "history_text": [null, "m_c lost a life due hunger."],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    }
+]

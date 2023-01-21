@@ -25,7 +25,7 @@ class Sprites():
             with open("sprites/dicts/tint.json", 'r') as read_file:
                 Sprites.cat_tints = ujson.loads(read_file.read())
         except:
-            print("Error Reading Tints")
+            print("ERROR: Reading Tints")
 
     def spritesheet(self, a_file, name):
         """

@@ -62,7 +62,6 @@ class EventsScreen(Screens):
                 if get_living_cat_count(Cat) == 0:
                     GameOver('events screen')
 
-                # print(get_living_cat_count(Cat))
                 self.event_display_type = 'all events'
                 self.all_events_button.disable()
                 self.all_events = [x for x in game.cur_events_list if "interaction" not in x.types]
@@ -431,7 +430,6 @@ class EventsScreen(Screens):
         i = 0
         y = 0
         for ev in self.display_events:
-            #print(ev.text)
             if isinstance(ev.text, str):  # Check to make sure text is a string.
                 self.display_events_elements["event" + str(i)] = pygame_gui.elements.UITextBox(ev.text,
                                                                                                pygame.Rect((0, y), (box_length - 20, -1)),
@@ -527,21 +525,3 @@ class EventsScreen(Screens):
     def make_events_container(self):
         """ In its own function so that there is only one place the box size is set"""
         self.event_container = pygame_gui.elements.UIScrollingContainer(pygame.Rect((216, 276), (514, 350)))
-
-
-
-'''class SingleEventScreen(Screens):
-
-    def on_use(self):
-        # LAYOUT
-        if game.switches['event'] is not None:
-            events_class.all_events[game.switches['event']].page()
-
-        # buttons
-        buttons.draw_button(('center', -150),
-                            text='Continue',
-                            cur_screen='events screen')
-
-    def screen_switches(self):
-        pass
-'''
