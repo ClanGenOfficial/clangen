@@ -330,7 +330,7 @@
     "exp": 10,
     "success_text": [
         "p_l is relieved to find that the mullein is still intact. They knock a stray weevil off of a leaf as they're gathering the herb.",
-        "Not only is the mullein intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l purrs in satisfaction - seems like they've caught two prey in one blow on this trip."
+        "Not only is the mullein intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l purrs in satisfaction - seems like they've caught two prey in one blow on this trip. They'll remember that plantain for later."
     ],
     "fail_text": [
         "p_l reaches the mullein plant that the Clan has used for many seasons and finds that it's being torn to shreds by bugs. They hiss in exasperation and bat some of the leaf bugs off the plant. Maybe it'll grow back next newleaf."

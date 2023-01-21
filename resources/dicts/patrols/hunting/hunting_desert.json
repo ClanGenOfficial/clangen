@@ -4,7 +4,9 @@
         "biome": "desert",
         "season": "Any",
         "tags": [
-            "hunting"
+            "hunting",
+            "medium_prey0",
+            "large_prey1"
         ],
         "intro_text": "The patrol approaches a very strange Twolegplace. Gigantic metal leaves lie in unnatural rows, shading the desert beneath them, metal tree branches snake straightly across the ground, and a little Twoleg hut sits in one corner, seemingly abandoned.",
         "decline_text": "The patrol decides to hunt elsewhere.",
@@ -27,7 +29,9 @@
         "biome": "desert",
         "season": "Any",
         "tags": [
-            "hunting"
+            "hunting",
+            "medium_prey0",
+            "large_prey1"
         ],
         "intro_text": "The patrol approaches a very strange Twolegplace. Gigantic metal leaves lie in unnatural rows, shading the desert beneath them, metal tree branches snake straightly across the ground, and a little Twoleg hut sits in one corner, seemingly abandoned.",
         "decline_text": "The patrol decides to hunt elsewhere.",
@@ -50,7 +54,11 @@
         "biome": "desert",
         "season": "Any",
         "tags": [
-            "hunting"
+            "hunting",
+            "medium_prey0",
+            "medium_prey1",
+            "large_prey2",
+            "large_prey3"
         ],
         "intro_text": "The patrol looks around for something to disguise their scent while hunting.",
         "decline_text": "On second thought, maybe not.",
@@ -87,7 +95,11 @@
         "biome": "desert",
         "season": "Any",
         "tags": [
-            "hunting"
+            "hunting",
+            "medium_prey0",
+            "medium_prey1",
+            "large_prey2",
+            "large_prey3"
         ],
         "intro_text": "r_c looks around for something to disguise their scent while hunting.",
         "decline_text": "On second thought, maybe not.",
@@ -127,7 +139,10 @@
             "hunting",
             "apprentice",
             "injury",
-            "scar"
+            "scar",
+            "medium_prey0",
+            "large_prey1",
+            "large_prey2"
         ],
         "intro_text": "r_c's mentor assesses them by sending them on a solo hunt.",
         "decline_text": "r_c asks their mentor to do the assessment some other time.",
@@ -185,7 +200,8 @@
         "biome": "desert",
         "season": "Any",
         "tags": [
-            "hunting"
+            "hunting",
+            "medium_prey"
         ],
         "intro_text": "r_c heads out into the desert alone, wanting to sink their teeth into some prey and have some time to themselves.",
         "decline_text": "r_c turns back to camp, deciding that a group hunt would be more effective.",
@@ -240,7 +256,9 @@
         "season": "Any",
         "tags": [
             "hunting",
-            "deputy"
+            "deputy",
+            "apprentice",
+            "medium_prey"
         ],
         "intro_text": "r_c heads out into the desert alone, wanting to sink their teeth into some prey and have some time to themselves.",
         "decline_text": "r_c turns back to camp, deciding that a group hunt would be more effective.",
@@ -295,7 +313,8 @@
         "season": "Any",
         "tags": [
             "hunting",
-            "leader"
+            "leader",
+            "medium_prey"
         ],
         "intro_text": "r_c heads out into the desert  alone, wanting to sink their teeth into some prey and have some time to themselves.",
         "decline_text": "r_c turns back to camp, deciding that a group hunt would be more effective.",
@@ -473,7 +492,7 @@
         "tags": [
             "hunting",
             "gone",
-            "big_prey"
+            "small_prey"
         ],
         "intro_text": "r_c encounters a swarm of Twolegs, gathered in a dry riverbed.",
         "decline_text": "Your patrol decides to hunt elsewhere.",
@@ -537,7 +556,7 @@
             "retirement",
             "injury",
             "hunting",
-            "small_prey"
+            "medium_prey"
         ],
         "intro_text": "The patrol comes across a thunderpath running through the desert.",
         "decline_text": "They decide it is better not to cross.",
@@ -585,7 +604,7 @@
         "history_text": [
             "r_c was heavily injured by a monster, and carries the scars from it.",
             "r_c was hit by a monster and killed.",
-        "were hit by a monster"
+            "were hit by a monster"
         ]
     },
     {
@@ -598,8 +617,8 @@
             "retirement",
             "injury",
             "hunting",
-            "small_prey",
-            "cruel_season"
+            "cruel_season",
+            "medium_prey"
         ],
         "intro_text": "The patrol comes across a thunderpath running through the desert.",
         "decline_text": "They decide it is better not to cross.",
@@ -647,7 +666,7 @@
         "history_text": [
             "r_c was heavily injured by a monster, and carries the scars from it.",
             "r_c was hit by a monster and killed.",
-        "were hit by a monster"
+            "were hit by a monster"
         ]
     },
     {
@@ -660,7 +679,8 @@
             "death",
             "small_prey",
             "warrior",
-            "no_app"
+            "no_app",
+            "small_prey"
         ],
         "intro_text": "The sun beats down on the desert, driving every creature away from it's gaze with blinding heat.",
         "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until they can return back to camp.",
@@ -716,7 +736,8 @@
             "hunting",
             "illness",
             "death",
-            "apprentice"
+            "apprentice",
+            "small_prey"
         ],
         "intro_text": "The sun beats down on the desert, driving every creature away from it's gaze with blinding heat.",
         "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until they can return back to camp.",
@@ -778,9 +799,9 @@
             "hunting",
             "illness",
             "death",
-            "small_prey",
             "warrior",
-            "no_app"
+            "no_app",
+            "small_prey"
         ],
         "intro_text": "The sun beats down on the desert, driving every creature away from it's gaze with blinding heat.",
         "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until they can return back to camp.",
@@ -835,7 +856,8 @@
             "hunting",
             "illness",
             "death",
-            "apprentice"
+            "apprentice",
+            "small_prey"
         ],
         "intro_text": "The sun beats down on the desert, driving every creature away from it's gaze with blinding heat.",
         "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until they can return back to camp.",
@@ -893,7 +915,8 @@
             "death",
             "small_prey",
             "warrior",
-            "no_app"
+            "no_app",
+            "small_prey"
         ],
         "intro_text": "The sun beats down on the desert, driving every creature away from it's gaze with blinding heat.",
         "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until they can return back to camp.",
@@ -948,7 +971,8 @@
             "hunting",
             "illness",
             "death",
-            "apprentice"
+            "apprentice",
+            "small_prey"
         ],
         "intro_text": "The sun beats down on the desert, driving every creature away from it's gaze with blinding heat.",
         "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until they can return back to camp.",

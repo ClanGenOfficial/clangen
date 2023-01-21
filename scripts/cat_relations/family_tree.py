@@ -24,7 +24,6 @@
 # max_iter = 5
 #
 # for i in range(0, max_iter):
-#     print(i)
 #     temp = ancestry[ancestry['recorded_ind'] == 0]
 #
 #     if len(temp) == 0:      # Break loop when all individuals have been recorded
