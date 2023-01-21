@@ -332,7 +332,7 @@ class Name():
                 self.prefix = random.choice(self.normal_prefixes)
                     
         # Set suffix
-        while self.suffix is None or self.suffix == self.prefix.casefold():
+        while self.suffix is None or self.suffix == self.prefix.casefold() or str(self.suffix) in self.prefix.casefold():
             if pelt is None or pelt == 'SingleColour':
                 self.suffix = random.choice(self.normal_suffixes)
             else:
