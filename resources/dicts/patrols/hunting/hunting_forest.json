@@ -5194,5 +5194,364 @@
 		"history_text": [
 			"r_c carries a scar from a solo fight with a gray vixen."
 		]
-	}
+	},
+	{
+        "patrol_id": "fst_hunt_genmouse1",
+        "biome": "forest",
+        "season": "newleaf",
+        "tags": [
+            "hunting", "no_app", "medium_prey"
+        ],
+        "intro_text": "r_c catches scent of a mouse nearby. A perfect opportunity to pick up one of the first bounties newleaf brings to the forest.",
+        "decline_text": "Your patrol ignores the mouse.",
+        "success_text": [
+            "r_c locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. r_c waggles their haunches and leaps, pinning the mouse beneath a paw as they make the killing bite.",
+            "r_c pinpoints the location of the prey and begins creeping forward. They're almost within pouncing distance when the mouse suddenly bolts. With a lash of their tail, r_c leaps after the mouse, barely snagging it before it reaches a burrow. They purr in satisfaction as prey-blood hits their tongue.",
+			"s_c immediately drops into a practised crouch, shimmying flawlessly along the ground and taking the perfectly plump mouse completely by surprise."
+        ],
+        "fail_text": [
+            "r_c narrowly misses the mouse."
+        ],
+        "chance_of_success": 60,
+        "exp": 10,
+        "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "fst_hunt_genmouse2",
+        "biome": "forest",
+        "season": "greenleaf",
+        "tags": [
+            "hunting", "no_app", "medium_prey"
+        ],
+        "intro_text": "r_c catches scent of a mouse nearby, and feels themselves drool at the idea of greenleaf freshkill. It's a great day for hunting, too, greenleaf bringing life to c_n's woods.",
+        "decline_text": "Your patrol ignores the mouse.",
+        "success_text": [
+            "r_c locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. r_c waggles their haunches and leaps, pinning the mouse beneath a paw as they make the killing bite.",
+            "r_c pinpoints the location of the prey and begins creeping forward. They're almost within pouncing distance when the mouse suddenly bolts. With a lash of their tail, r_c leaps after the mouse, barely snagging it before it reaches a burrow. They purr in satisfaction as prey-blood hits their tongue.",
+			"s_c immediately drops into a practised crouch, shimmying flawlessly along the ground and taking the perfectly plump mouse completely by surprise."
+        ],
+        "fail_text": [
+            "r_c narrowly misses the mouse."
+        ],
+        "chance_of_success": 60,
+        "exp": 10,
+        "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "fst_hunt_genmouse3",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting", "no_app", "medium_prey"
+        ],
+        "intro_text": "r_c catches scent of a mouse nearby. It'll be fat on the nuts and acorns leaf-fall scatters through the forest, and if r_c can only avoid the leaves crunching under their paws it's as good as caught.",
+        "decline_text": "Your patrol ignores the mouse.",
+        "success_text": [
+            "r_c locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. r_c waggles their haunches and leaps, pinning the mouse beneath a paw as they make the killing bite.",
+            "r_c pinpoints the location of the prey and begins creeping forward. They're almost within pouncing distance when the mouse suddenly bolts. With a lash of their tail, r_c leaps after the mouse, barely snagging it before it reaches a burrow. They purr in satisfaction as prey-blood hits their tongue.",
+			"s_c immediately drops into a practised crouch, shimmying flawlessly along the ground and taking the perfectly plump mouse completely by surprise."
+        ],
+        "fail_text": [
+            "r_c narrowly misses the mouse."
+        ],
+        "chance_of_success": 50,
+        "exp": 10,
+        "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "fst_hunt_genmouse4",
+        "biome": "forest",
+        "season": "leaf-bare",
+        "tags": [
+            "hunting", "no_app", "medium_prey"
+        ],
+        "intro_text": "r_c catches scent of a mouse nearby, one that would be greatly appreciated for the freshkill pile.",
+        "decline_text": "Your patrol ignores the mouse.",
+        "success_text": [
+            "r_c locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. r_c waggles their haunches and leaps, pinning the mouse beneath a paw as they make the killing bite.",
+            "r_c pinpoints the location of the prey and begins creeping forward. They're almost within pouncing distance when the mouse suddenly bolts. With a lash of their tail, r_c leaps after the mouse, barely snagging it before it reaches a burrow. They purr in satisfaction as prey-blood hits their tongue.",
+			"s_c immediately drops into a practised crouch, shimmying flawlessly along the ground and taking the perfectly plump mouse completely by surprise."
+        ],
+        "fail_text": [
+            "r_c narrowly misses the mouse."
+        ],
+        "chance_of_success": 30,
+        "exp": 10,
+        "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "fst_hunt_genappmouse1",
+        "biome": "forest",
+        "season": "newleaf",
+        "tags": [
+            "hunting", "apprentice", "medium_prey"
+        ],
+        "intro_text": "app1 catches scent of a mouse nearby. A perfect opportunity to pick up one of the first bounties newleaf brings to the forest.",
+        "decline_text": "Your patrol ignores the mouse.",
+        "chance_of_success": 40,
+        "exp": 20,
+        "success_text": [
+            "r_c pounces on the mouse, with a squeak of surprise from both prey and apprentice.",
+            "app1 leaps onto the mouse, an easy kill! They're really getting the hang of hunting!"
+        ],
+        "fail_text": [
+            "Your patrol narrowly misses the mouse."
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "fst_hunt_genappmouse2",
+        "biome": "forest",
+        "season": "greenleaf",
+        "tags": [
+            "hunting", "apprentice", "medium_prey"
+        ],
+        "intro_text": "app1 catches scent of a mouse nearby. Surely greenleaf is the perfect time to try solo-hunting, everyone always says that this is when the prey wanders right into a cat's jaws.",
+        "decline_text": "Your patrol ignores the mouse.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "r_c pounces on the mouse, with a squeak of surprise from both prey and apprentice.",
+            "app1 leaps onto the mouse, an easy kill! They're really getting the hang of hunting!"
+        ],
+        "fail_text": [
+            "Your patrol narrowly misses the mouse."
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "fst_hunt_genappmouse3",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting", "apprentice", "medium_prey"
+        ],
+        "intro_text": "app1 catches scent of a mouse nearby. They look at the leaf litter on the ground - are they good enough to stalk without being heard?",
+        "decline_text": "Your patrol ignores the mouse.",
+        "chance_of_success": 30,
+        "exp": 30,
+        "success_text": [
+            "r_c pounces on the mouse, with a squeak of surprise from both prey and apprentice.",
+            "app1 leaps onto the mouse, an easy kill! They're really getting the hang of hunting!"
+        ],
+        "fail_text": [
+            "Your patrol narrowly misses the mouse."
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "fst_hunt_genappmouse4",
+        "biome": "forest",
+        "season": "leaf-bare",
+        "tags": [
+            "hunting", "apprentice", "medium_prey"
+        ],
+        "intro_text": "app1 catches scent of a mouse nearby. But they're by themselves, and the chill of leaf-bare has stripped the forest of it's green cloak, can they managed the catch?",
+        "decline_text": "Your patrol ignores the mouse.",
+        "chance_of_success": 10,
+        "exp": 40,
+        "success_text": [
+            "r_c pounces on the mouse, with a squeak of surprise from both prey and apprentice.",
+            "app1 leaps onto the mouse, an easy kill! They're really getting the hang of hunting!"
+        ],
+        "fail_text": [
+            "Your patrol narrowly misses the mouse."
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "gen_hunt_genmentormouse1",
+        "biome": "forest",
+        "season": "newleaf",
+        "tags": [
+            "hunting", "apprentice", "small_prey", "comfort", "trust", "warrior"
+        ],
+        "intro_text": "app1 catches scent of a mouse nearby. p_l tells them it might be the perfect opportunity to pick up one of the first bounties newleaf brings to the forest, and whispers some stalking tips to app1.",
+        "decline_text": "Your patrol ignores the mouse.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "app1 pounces on the mouse, with a squeak of surprise from both prey and apprentice. They look up, holding their freshkill, meeting p_l's eyes with a purr.",
+            "app1 leaps onto the mouse, an easy kill! They're really getting the hang of hunting, p_l tells them, and as the pair head back home there's a happy bounce in app1's steps."
+        ],
+        "fail_text": [
+            "app1 narrowly misses the mouse, their tail drooping sadly as it scurries off into the distance."
+        ],
+        "min_cats": 2,
+        "max_cats": 2,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "gen_hunt_genmentormouse2",
+        "biome": "forest",
+        "season": "greenleaf",
+        "tags": [
+            "hunting", "apprentice", "small_prey", "comfort", "trust", "warrior"
+        ],
+        "intro_text": "app1 catches scent of a mouse nearby. p_l congratulates them, and gives them some tips on where the mouse might be headed. With the heat of greenleaf, their prey is probably headed to a damp gully ahead.",
+        "decline_text": "Your patrol ignores the mouse.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "app1 pounces on the mouse, with a squeak of surprise from both prey and apprentice. They look up, holding their freshkill, meeting p_l's eyes with a purr.",
+            "app1 leaps onto the mouse, an easy kill! They're really getting the hang of hunting, p_l tells them, and as the pair head back home there's a happy bounce in app1's steps."
+        ],
+        "fail_text": [
+            "app1 narrowly misses the mouse, their tail drooping sadly as it scurries off into the distance."
+        ],
+        "min_cats": 2,
+        "max_cats": 2,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "gen_hunt_genmentormouse3",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting", "apprentice", "small_prey", "comfort", "trust", "warrior"
+        ],
+        "intro_text": "app1 catches scent of a mouse nearby. p_l nods, and asks them if app1 remembers their tips on stalking on leaf-fall's, well, fallen leaves.",
+        "decline_text": "Your patrol ignores the mouse.",
+        "chance_of_success": 50,
+        "exp": 20,
+        "success_text": [
+            "app1 pounces on the mouse, with a squeak of surprise from both prey and apprentice. They look up, holding their freshkill, meeting p_l's eyes with a purr.",
+            "app1 leaps onto the mouse, an easy kill! They're really getting the hang of hunting, p_l tells them, and as the pair head back home there's a happy bounce in app1's steps."
+        ],
+        "fail_text": [
+            "app1 narrowly misses the mouse, their tail drooping sadly as it scurries off into the distance."
+        ],
+        "min_cats": 2,
+        "max_cats": 2,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "gen_hunt_genmentormouse4",
+        "biome": "forest",
+        "season": "leaf-bare",
+        "tags": [
+            "hunting", "apprentice", "small_prey", "comfort", "trust", "warrior"
+        ],
+        "intro_text": "app1 catches scent of a mouse nearby. p_l congradulates them, and tries to prepare app1 for the stalk as best they can - if app1 can catch this mouse, this is the season where it will be most valuable for the Clan.",
+        "decline_text": "Your patrol ignores the mouse.",
+        "chance_of_success": 40,
+        "exp": 30,
+        "success_text": [
+            "app1 pounces on the mouse, with a squeak of surprise from both prey and apprentice. They look up, holding their freshkill, meeting p_l's eyes with a purr.",
+            "app1 leaps onto the mouse, an easy kill! They're really getting the hang of hunting, p_l tells them, and as the pair head back home there's a happy bounce in app1's steps."
+        ],
+        "fail_text": [
+            "app1 narrowly misses the mouse, their tail drooping sadly as it scurries off into the distance."
+        ],
+        "min_cats": 2,
+        "max_cats": 2,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "fst_hunt_genmicecrush1",
+        "biome": "forest",
+        "season": "Any",
+        "tags": [
+            "hunting", "no_app", "romantic", "jealousy", "three_apprentices", "medium_prey"
+        ],
+        "intro_text": "r_c catches scent of a mouse nearby. A perfect opportunity to pick up one of the first bounties newleaf brings to the forest.",
+        "decline_text": "Your patrol ignores the mouse.",
+        "success_text": [
+            "r_c locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. r_c waggles their haunches and leaps, pinning the mouse beneath a paw as they make the killing bite.",
+            "r_c pinpoints the location of the prey and begins creeping forward. They're almost within pouncing distance when the mouse suddenly bolts. With a lash of their tail, r_c leaps after the mouse, barely snagging it before it reaches a burrow. They purr in satisfaction as prey-blood hits their tongue.",
+			"s_c immediately drops into a practised crouch, shimmying flawlessly along the ground and taking the perfectly plump mouse completely by surprise."
+        ],
+        "fail_text": [
+            "r_c narrowly misses the mouse."
+        ],
+        "chance_of_success": 60,
+        "exp": 10,
+        "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
+        "min_cats": 2,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "fst_hunt_genmicecrush2",
+        "biome": "forest",
+        "season": "Any",
+        "tags": [
+            "hunting", "no_app", "romantic", "jealousy", "three_apprentices", "medium_prey"
+        ],
+        "intro_text": "r_c catches scent of a mouse nearby. A perfect opportunity to pick up one of the first bounties newleaf brings to the forest.",
+        "decline_text": "Your patrol ignores the mouse.",
+        "success_text": [
+            "r_c locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. r_c waggles their haunches and leaps, pinning the mouse beneath a paw as they make the killing bite.",
+            "r_c pinpoints the location of the prey and begins creeping forward. They're almost within pouncing distance when the mouse suddenly bolts. With a lash of their tail, r_c leaps after the mouse, barely snagging it before it reaches a burrow. They purr in satisfaction as prey-blood hits their tongue.",
+			"s_c immediately drops into a practised crouch, shimmying flawlessly along the ground and taking the perfectly plump mouse completely by surprise."
+        ],
+        "fail_text": [
+            "r_c narrowly misses the mouse."
+        ],
+        "chance_of_success": 60,
+        "exp": 10,
+        "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
+        "min_cats": 2,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "fst_hunt_genmicecrush3",
+        "biome": "forest",
+        "season": "Any",
+        "tags": [
+            "hunting", "no_app", "romantic", "jealousy", "three_apprentices", "medium_prey"
+        ],
+        "intro_text": "r_c catches scent of a mouse nearby. A perfect opportunity to pick up one of the first bounties newleaf brings to the forest.",
+        "decline_text": "Your patrol ignores the mouse.",
+        "success_text": [
+            "r_c locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. r_c waggles their haunches and leaps, pinning the mouse beneath a paw as they make the killing bite.",
+            "r_c pinpoints the location of the prey and begins creeping forward. They're almost within pouncing distance when the mouse suddenly bolts. With a lash of their tail, r_c leaps after the mouse, barely snagging it before it reaches a burrow. They purr in satisfaction as prey-blood hits their tongue.",
+			"s_c immediately drops into a practised crouch, shimmying flawlessly along the ground and taking the perfectly plump mouse completely by surprise."
+        ],
+        "fail_text": [
+            "r_c narrowly misses the mouse."
+        ],
+        "chance_of_success": 60,
+        "exp": 10,
+        "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
+        "min_cats": 2,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    }
 ]

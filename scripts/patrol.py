@@ -301,9 +301,34 @@ class Patrol():
                 if game.clan.game_mode != 'cruel_season':
                     continue
 
+            # one apprentice check
+            if "one_apprentice" in patrol.tags:
+                if len(self.patrol_apprentices) < 1 or len(self.patrol_apprentices) > 1:
+                    continue
+
             # two apprentices check
             if "two_apprentices" in patrol.tags:
                 if len(self.patrol_apprentices) < 2 or len(self.patrol_apprentices) > 2:
+                    continue
+
+            # three apprentices check
+            if "three_apprentices" in patrol.tags:
+                if len(self.patrol_apprentices) < 3 or len(self.patrol_apprentices) > 3:
+                    continue
+
+            # four apprentices check
+            if "four_apprentices" in patrol.tags:
+                if len(self.patrol_apprentices) < 4 or len(self.patrol_apprentices) > 4:
+                    continue
+
+            # five apprentices check
+            if "five_apprentices" in patrol.tags:
+                if len(self.patrol_apprentices) < 5 or len(self.patrol_apprentices) > 5:
+                    continue
+
+            # six apprentices check
+            if "six_apprentices" in patrol.tags:
+                if len(self.patrol_apprentices) < 6 or len(self.patrol_apprentices) > 6:
                     continue
 
             # correct button check
@@ -852,7 +877,7 @@ class Patrol():
         prey_amount_per_cat = 0
         total_amount = 0
 
-        # check hat kind of prey type this succeeded patrol event has
+        # check what kind of prey type this succeeded patrol event has
         for prey_type, amount in prey_types.items():
             current_tag = prey_type + str(outcome_nr)
             if current_tag in patrol.patrol_event.tags or prey_type in patrol.patrol_event.tags:
@@ -1387,6 +1412,7 @@ class PatrolEvent():
 
         """
             hunting patrols - "hunting", "small_prey", "big_prey",
+            #needs to be updated with prey system tags
 
             training patrols - "training",
 
