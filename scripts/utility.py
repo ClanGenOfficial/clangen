@@ -10,23 +10,26 @@ from scripts.cat.sprites import *
 from scripts.cat.pelts import *
 from scripts.game_structure.game_essentials import *
 
-def get_queens(living_cats, all_cats):
+def get_alive_queens(all_cats):
 	"""Returns a list with all cats with the 'status' queen."""
 	queens = []
-	for living_cat_ in living_cats:
-		if str(living_cat_.status) != 'kitten' or living_cat_.parent1 is None:
+	for inter_cat in all_cats.values():
+		if inter_cat.dead:
+			continue
+		if str(inter_cat.status) != 'kitten' or inter_cat.parent1 is None:
 			continue
 
-		parent_1 = None
+		parent_1 = all_cats[inter_cat.parent1]
 		parent_2 = None
-		if living_cat_.parent1:
-			parent_1 = all_cats[living_cat_.parent1]
-		if living_cat_.parent2:
-			parent_2 = all_cats[living_cat_.parent2]
+		if inter_cat.parent2:
+			parent_2 = all_cats[inter_cat.parent2]
+
 		if parent_1.gender == 'male':
-			if parent_2 is None or parent_2.gender == 'male':
+			if (parent_2 is None or parent_2.gender == 'male') and not parent_1.dead:
 				queens.append(parent_1)
-		else:
+			elif parent_2 and not parent_2.dead:
+				queens.append(parent_2)
+		elif not parent_1.dead:
 			queens.append(parent_1)
 	return queens
 
