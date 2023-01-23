@@ -224,7 +224,7 @@ class Name():
         "Riya", "Rocket", "Rolo", "Roman", "Roomba", "Rooster", "Rory", "Rose", "Roselie", "Ruby", "Rudolph", "Rue", "Ruffnut", "Rum",
         "Sadie", "Saki", "Salmon", "Salt", "Sam", "Samantha", "Sandwich", "Sandy", "Sausage", "Schmidt", "Scotch", "Scrooge", "Seamus",
         "Sekhmet", "Seri", "Shampoo", "Shay", "Shimmer", "Shiver", "Silva", "Silver", "Skrunkly", "Sloane", "Slug", "Slushie", "Smoothie",
-        "Smores", "Sneakers", "Snek", "Snotlout", "Socks", "Sofa", "Sol", 'Sonic", "Sophie", "Sorbet", "Sox", "Spam", "Sparky", "Spots",
+        "Smores", "Sneakers", "Snek", "Snotlout", "Socks", "Sofa", "Sol", "Sonic", "Sophie", "Sorbet", "Sox", "Spam", "Sparky", "Spots",
         "Stan", "Star", "Starfish", "Stella", "Steve", "Steven", "Stinky", "Stolas", "Stripes", "Sundae", "Sunny", "Sunset", "Sweet", 
         "Sweetie", "Tabatha", "Tabby", "Tabbytha", "Taco", "Taco Bell", "Tasha", "Tempest", "Tetris", "Teufel", "Tiny", "Toast", "Toffee",
         "Tom", "Tomato", "Tomato Soup", "Toni", "Toothless", "Torque", "Tortilla", "Treasure", "Triscuit", "Trixie", "Trouble", "Tucker",
