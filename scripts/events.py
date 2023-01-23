@@ -53,15 +53,16 @@ class Events():
 
                 # If the cat is a mediator, check if they visited other clans
                 if cat.status in ["mediator", "mediator apprentice"]:
-                    if not int(random.random() * 15):
+                    # 1 /10 chance
+                    if not int(random.random() * 10):
                         increase = randint(-2, 6)
                         clan = choice(game.clan.all_clans)
                         clan.relations += increase
-                        text = f"{cat.name} travels to {clan} to resolve some recent disputes. "
+                        text = f"{cat.name} traveled to {clan} to resolve some recent disputes. "
                         if increase > 0:
                             game.cur_events_list.append(Single_Event(text, "other_clans", cat.ID))
                         elif increase == 0:
-                            game.cur_events_list.append(Single_Event(text + "However, no progress is made.",
+                            game.cur_events_list.append(Single_Event(text + "However, no progress was made.",
                                                                      "other_clans", cat.ID))
                         elif increase < 0:
                             game.cur_events_list.append(Single_Event(text + f"However, it seems {cat.name} "
@@ -615,16 +616,13 @@ class Events():
             if cat.moons == cat_class.age_moons[cat.age][1]:
                 if cat.status == 'kitten':
 
-                    # check if the medicine cat is an elder
-                    has_elder_med = any(
-                        cat.status == 'medicine cat' and cat.age == 'elder'
-                        and not cat.dead and not cat.outside
-                        for cat in Cat.all_cats.values())
+                    med_cat_list = list(filter(lambda x: x.status in ["medicine cat", "medicine cat apprentice"]
+                                               and not x.dead and not x.outside, Cat.all_cats_list))
 
-                    very_old_med = any(
-                        cat.status == 'medicine cat' and cat.moons >= 150
-                        and not cat.dead and not cat.outside
-                        for cat in Cat.all_cats.values())
+                    # check if the medicine cat is an elder
+                    has_elder_med = any(cat.age == 'elder' and cat.status == "medicine cat" for cat in med_cat_list)
+
+                    very_old_med = any(cat.moons >= 150 and cat.status == "medicine cat" for cat in med_cat_list)
 
                     # check if the clan has sufficient med cats
                     if game.clan.game_mode != 'classic':
@@ -634,11 +632,9 @@ class Events():
                     else:
                         has_med = any(str(cat.status) in {"medicine cat", "medicine cat apprentice"}
                                       and not cat.dead and not cat.outside for cat in Cat.all_cats.values())
+
                     # check if a med cat app already exists
-                    has_med_app = any(
-                        cat.status == 'medicine cat apprentice'
-                        and not cat.dead and not cat.outside
-                        for cat in Cat.all_cats.values())
+                    has_med_app = any(cat.status == "medicine cat apprentice" for cat in med_cat_list)
 
                     # assign chance to become med app depending on current med cat and traits
                     if has_elder_med is True and has_med is False:
@@ -663,9 +659,19 @@ class Events():
                         self.ceremony_accessory = True
                         self.gain_accessories(cat)
                     else:
-                        self.ceremony(cat, 'apprentice', ' has started their apprenticeship.')
-                        self.ceremony_accessory = True
-                        self.gain_accessories(cat)
+                        # Chance for mediator apprentice
+                        mediator_list = list(filter(lambda x: x.status == "mediator" and not x.dead
+                                                    and not x.outside, Cat.all_cats_list))
+
+                        # Only become a mediator if there is already one in the clan.
+                        if mediator_list and not int(random.random() * 80):
+                            self.ceremony(cat, 'mediator apprentice', ' has chosen to train as a mediator.')
+                            self.ceremony_accessory = True
+                            self.gain_accessories(cat)
+                        else:
+                            self.ceremony(cat, 'apprentice', ' has started their apprenticeship.')
+                            self.ceremony_accessory = True
+                            self.gain_accessories(cat)
 
                 # promote to warrior
                 elif cat.status == 'apprentice':
@@ -774,7 +780,8 @@ class Events():
                         mentor_name +
                         " as their mentor to make sure that happens.",
                         "Standing proud and tall before their new mentor " + str(
-                            cat.name) + " promises " + mentor_name + " that together they will prove to everyone that they will be the best warrior."
+                            cat.name) + " promises " + mentor_name + " that together they will prove "
+                                                                     "to everyone that they will be the best warrior."
                     ])
 
         elif (promoted_to == 'apprentice') and cat.mentor is None:
@@ -803,21 +810,28 @@ class Events():
         elif (promoted_to == 'medicine cat apprentice') and cat.mentor is None:
             ceremony.extend(["Newly-made medicine cat apprentice " + str(cat.name) +
                              " learns the way of healing through guidance from StarClan."])
+        elif promoted_to == 'mediator apprentice':
+            mentor_name = str(Cat.fetch_cat(cat.mentor).name)
+            involved_cats.append(cat.mentor)
+            ceremony.extend(
+                [f"{cat.name} feel sick at the mere thought of fighting. They decide to train as a mediator, and"
+                 f" {mentor_name} is named as their mentor. ",
+                 f"{cat.name} is fascinated by {mentor_name}'s ability to solve disputes without tooth or claw. They "
+                 f" are eager to learn, and {mentor_name} take them under their wing."])
         elif promoted_to == 'medicine cat':
-                ceremony.extend(
-                    [str(cat.name) + " is taken to speak with StarClan. They are now a full medicine cat of the Clan.",
-                     "The senior medicine cat has thought long and hard about this and gives " + str(cat.name.prefix) +
-                     "paw their full name of " + str(cat.name) + ". StarClan gives their blessing and the stars "
-                     "twinkle in celebration.", 
-                     f"With the stars softly shining and lighting their pelts, the senior medicine cat gives "
-                     f"{cat.name.prefix}paw their full name of {cat.name}. They both share the rest of the night "
-                     "with StarClan, celebrating their good fortune in having another medicine cat."])
-
+            ceremony.extend(
+                [str(cat.name) + " is taken to speak with StarClan. They are now a full medicine cat of the Clan.",
+                 "The senior medicine cat has thought long and hard about this and gives " + str(cat.name.prefix) +
+                 "paw their full name of " + str(cat.name) + ". StarClan gives their blessing and the stars "
+                 "twinkle in celebration.",
+                 f"With the stars softly shining and lighting their pelts, the senior medicine cat gives "
+                 f"{cat.name.prefix}paw their full name of {cat.name}. They both share the rest of the night "
+                 "with StarClan, celebrating their good fortune in having another medicine cat."])
         elif promoted_to == 'mediator':
-                ceremony.extend(
-                    [f"{cat.name.prefix}paw have proven themselves skilled at handling the clan's disputes. "
-                     f"They are given the name {cat.name}, and the clan honors their new mediator.",
-                     f"{cat.name} is welcomed as full mediator of the Clan"])
+            ceremony.extend(
+                [f"{cat.name.prefix}paw have proven themselves skilled at handling the clan's disputes. "
+                 f"They are given the name {cat.name}, and the clan honors their new mediator.",
+                 f"{cat.name} is welcomed as fully trained mediator of the Clan"])
 
         elif promoted_to == 'elder' and not leader_dead:
             involved_cats.append(game.clan.leader.ID)
@@ -833,7 +847,8 @@ class Events():
                 str(cat.name) + " wished to join the elders. "
                 "The Clan honors them and all the service they have given to them."
             ])
-        if promoted_to in ['warrior', 'apprentice', 'medicine cat apprentice', 'medicine cat', 'elder', 'mediator']:
+        if promoted_to in ['warrior', 'apprentice', 'medicine cat apprentice', 'medicine cat', 'elder', 'mediator',
+                           "mediator apprentice"]:
             ceremony_text = choice(ceremony)
             game.cur_events_list.append(Single_Event(ceremony_text, "ceremony", involved_cats))
             # game.ceremony_events_list.append(ceremony_text)
