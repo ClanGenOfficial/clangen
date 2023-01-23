@@ -152,17 +152,17 @@ def init_eyes(cat):
         if cat.white_patches in [high_white, mostly_white, 'FULLWHITE'] or cat.pelt.colour == 'WHITE':
             num = num - 90
         if cat.white_patches == 'FULLWHITE' or cat.pelt.colour == 'WHITE':
-            num =- 10
+            num -= 10
         if par1:
             if par1.eye_colour2:
-                num =- 10
+                num -= 10
         if par2:
             if par2.eye_colour2:
-                num =- 10
+                num -= 10
         if num < 0:
             num = 1
-        print("Het chance: 0/" + str(num))
         hit = randint(0, num)
+        print("Het chance: "+ str(hit) + " / " + str(num))
         if hit == 0:
             print("Hit!")
             if cat.eye_colour in yellow_eyes:
