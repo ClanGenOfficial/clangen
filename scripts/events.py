@@ -190,7 +190,8 @@ class Events():
                 increase = randint(-2, 6)
                 clan = choice(game.clan.all_clans)
                 clan.relations += increase
-                text = f"{cat.name} traveled to {clan} to resolve some recent disputes. "
+                dispute_type = choice(["hunting", "border", "personal", "herb-gathering"])
+                text = f"{cat.name} travels to {clan} to resolve some recent {dispute_type} disputes. "
                 if increase > 0:
                     game.cur_events_list.append(Single_Event(text, "other_clans", cat.ID))
                 elif increase == 0:

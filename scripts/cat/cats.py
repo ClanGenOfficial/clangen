@@ -2176,17 +2176,18 @@ class Cat():
             indirect_related = indirect_related or cat1.is_cousin(cat2)
         related = direct_related or indirect_related
 
-        # Check for both adults, or same age catagory:
+        # Check for both adults, or same age type:
         if cat1.age == cat2.age or (cat1.age not in ['kitten', 'adolescent'] and
                                     cat2.age not in ['kitten', 'adolescent']):
             valid_age = True
         else:
             valid_age = False
 
-        #Output string.
+        # Output string.
         output = ""
 
-        if abs(cat1.moons - cat2.moons) > 80:
+        # Small check to prevent huge age gaps. Will be bypassed if the cats are already mates.
+        if abs(cat1.moons - cat2.moons) > 85:
             age_diff = False
         else:
             age_diff = True
@@ -2242,7 +2243,7 @@ class Cat():
                     output += f"Respect decreased. "
                 else:
                     rel1.admiration = Cat.effect_relation(rel1.admiration, randint(ran[0], ran[1]))
-                    rel2.admiration= Cat.effect_relation(rel2.admiration, randint(ran[0], ran[1]))
+                    rel2.admiration = Cat.effect_relation(rel2.admiration, randint(ran[0], ran[1]))
                     output += f"Respect increased. "
 
             elif trait == "comfortable":
@@ -2251,11 +2252,11 @@ class Cat():
                 if sabotage:
                     rel1.comfortable = Cat.effect_relation(rel1.comfortable, -randint(ran[0], ran[1]))
                     rel2.comfortable = Cat.effect_relation(rel2.comfortable, -randint(ran[0], ran[1]))
-                    output += f"Comfortable decreased. "
+                    output += f"Comfort decreased. "
                 else:
                     rel1.comfortable = Cat.effect_relation(rel1.comfortable, randint(ran[0], ran[1]))
                     rel2.comfortable = Cat.effect_relation(rel2.comfortable, randint(ran[0], ran[1]))
-                    output += f"Comfortable increased. "
+                    output += f"Comfort increased. "
 
             elif trait == "admiration":
                 ran = (3, 16)
