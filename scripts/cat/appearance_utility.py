@@ -162,9 +162,7 @@ def init_eyes(cat):
         if num < 0:
             num = 1
         hit = randint(0, num)
-        print("Het chance: "+ str(hit) + " / " + str(num))
         if hit == 0:
-            print("Hit!")
             if cat.eye_colour in yellow_eyes:
                 eye_choice = choice([blue_eyes, green_eyes])
                 cat.eye_colour2 = choice(eye_choice)
