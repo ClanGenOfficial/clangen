@@ -51,65 +51,49 @@ class Events():
             if not cat.outside:
                 self.one_moon_cat(cat)
 
-                # If the cat is a mediator, check if they visited other clans
-                if cat.status in ["mediator", "mediator apprentice"]:
-                    # 1 /10 chance
-                    if not int(random.random() * 10):
-                        increase = randint(-2, 6)
-                        clan = choice(game.clan.all_clans)
-                        clan.relations += increase
-                        text = f"{cat.name} traveled to {clan} to resolve some recent disputes. "
-                        if increase > 0:
-                            game.cur_events_list.append(Single_Event(text, "other_clans", cat.ID))
-                        elif increase == 0:
-                            game.cur_events_list.append(Single_Event(text + "However, no progress was made.",
-                                                                     "other_clans", cat.ID))
-                        elif increase < 0:
-                            game.cur_events_list.append(Single_Event(text + f"However, it seems {cat.name} "
-                                                                            f"only made things worse",
-                                                                     "other_clans", cat.ID))
-        else:
-                # ---------------------------------------------------------------------------- #
-                #                              exiled cat events                               #
-                # ---------------------------------------------------------------------------- #
-                # aging the cat
-                cat.one_moon()
-                cat.moons += 1
-                if cat.moons == 6:
-                    cat.age = 'adolescent'
-                elif cat.moons == 12:
-                    cat.age = 'adult'
-                elif cat.moons == 100:
-                    cat.age = 'elder'
+                self.mediator_events(cat)
+            else:
+                    # ---------------------------------------------------------------------------- #
+                    #                              exiled cat events                               #
+                    # ---------------------------------------------------------------------------- #
+                    # aging the cat
+                    cat.one_moon()
+                    cat.moons += 1
+                    if cat.moons == 6:
+                        cat.age = 'adolescent'
+                    elif cat.moons == 12:
+                        cat.age = 'adult'
+                    elif cat.moons == 100:
+                        cat.age = 'elder'
 
-                # killing exiled cats
-                if cat.moons > randint(100, 200) and (cat.exiled or cat.outside):
-                    if choice([1, 2, 3, 4, 5]) == 1 and not cat.dead:
-                        cat.dead = True
-                        if cat.exiled:
-                            text = f'Rumors reach your Clan that the exiled {str(cat.name)} has died recently.'
+                    # killing exiled cats
+                    if cat.moons > randint(100, 200) and (cat.exiled or cat.outside):
+                        if choice([1, 2, 3, 4, 5]) == 1 and not cat.dead:
+                            cat.dead = True
+                            if cat.exiled:
+                                text = f'Rumors reach your Clan that the exiled {str(cat.name)} has died recently.'
+                            else:
+                                text = f'Rumors reach your Clan that {str(cat.name)} has died recently.'
+                            game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
+
+                    if cat.exiled and cat.status == 'leader' and not cat.dead and randint(
+                            1, 10) == 1:
+                        game.clan.leader_lives -= 1
+                        if game.clan.leader_lives > 0:
+                            text = f'Rumors reach your Clan that the exiled {str(cat.name)} lost a life recently.'
+                            game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
                         else:
-                            text = f'Rumors reach your Clan that {str(cat.name)} has died recently.'
-                        game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
+                            text = f'Rumors reach your Clan that the exiled {str(cat.name)} has died recently.'
+                            game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
+                            cat.dead = True
 
-                if cat.exiled and cat.status == 'leader' and not cat.dead and randint(
-                        1, 10) == 1:
-                    game.clan.leader_lives -= 1
-                    if game.clan.leader_lives > 0:
-                        text = f'Rumors reach your Clan that the exiled {str(cat.name)} lost a life recently.'
-                        game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
-                    else:
+                    elif cat.exiled and cat.status == 'leader' and not cat.dead and randint(
+                            1, 45) == 1:
+                        game.clan.leader_lives -= 10
+                        cat.dead = True
                         text = f'Rumors reach your Clan that the exiled {str(cat.name)} has died recently.'
                         game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
-                        cat.dead = True
-
-                elif cat.exiled and cat.status == 'leader' and not cat.dead and randint(
-                        1, 45) == 1:
-                    game.clan.leader_lives -= 10
-                    cat.dead = True
-                    text = f'Rumors reach your Clan that the exiled {str(cat.name)} has died recently.'
-                    game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
-                    game.clan.leader_lives = 0
+                        game.clan.leader_lives = 0
 
         # Handle injuries and relationships.
         for cat in Cat.all_cats.values():
@@ -196,6 +180,41 @@ class Events():
             game.save_cats()
             game.clan.save_clan()
             game.clan.save_pregnancy(game.clan)
+
+    def mediator_events(self, cat):
+        """ Check for mediator events """
+        # If the cat is a mediator, check if they visited other clans
+        if cat.status in ["mediator", "mediator apprentice"]:
+            # 1 /10 chance
+            if not int(random.random() * 10):
+                increase = randint(-2, 6)
+                clan = choice(game.clan.all_clans)
+                clan.relations += increase
+                text = f"{cat.name} traveled to {clan} to resolve some recent disputes. "
+                if increase > 0:
+                    game.cur_events_list.append(Single_Event(text, "other_clans", cat.ID))
+                elif increase == 0:
+                    game.cur_events_list.append(Single_Event(text + "However, no progress was made.",
+                                                             "other_clans", cat.ID))
+                elif increase < 0:
+                    game.cur_events_list.append(Single_Event(text + f"However, it seems {cat.name} "
+                                                                    f"only made things worse",
+                                                             "other_clans", cat.ID))
+
+        if game.settings['become_mediator']:
+            # Note: These chances are large since it triggers every moon.
+            # Checking every moon has the effect giving older cats more chances to become a mediator
+            mediator_chance = {
+                "warrior": 10000,
+                "elder": 600
+            }
+            if cat.status in mediator_chance and not int(random.random() * mediator_chance[cat.status]):
+                game.cur_events_list(Single_Event(f"{cat.name} had chosen to use their skills and experience to help "
+                                                  f"solve the clan's disagreements. A meeting is called, and they "
+                                                  f"become the clan's newest mediator. ", "ceremony", cat.ID))
+                cat.status_change("mediator")
+                game.ranks_changed_timeskip = True
+
 
     def herb_gather(self):
         if game.clan.game_mode == 'classic':
