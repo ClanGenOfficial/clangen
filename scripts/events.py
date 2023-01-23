@@ -192,15 +192,17 @@ class Events():
                 clan.relations += increase
                 dispute_type = choice(["hunting", "border", "personal", "herb-gathering"])
                 text = f"{cat.name} travels to {clan} to resolve some recent {dispute_type} disputes. "
-                if increase > 0:
-                    game.cur_events_list.append(Single_Event(text, "other_clans", cat.ID))
+                if increase > 4:
+                    text += f"The meeting goes better than expected, and {cat.name} returns with a plan to solve the " \
+                            f"issue for good."
                 elif increase == 0:
-                    game.cur_events_list.append(Single_Event(text + "However, no progress was made.",
-                                                             "other_clans", cat.ID))
+                    text += "However, no progress was made."
                 elif increase < 0:
-                    game.cur_events_list.append(Single_Event(text + f"However, it seems {cat.name} "
-                                                                    f"only made things worse",
-                                                             "other_clans", cat.ID))
+                    text += f"However, it seems {cat.name} only made {clan} more upset."
+
+                game.cur_events_list(game.cur_events_list.append(Single_Event(text, "other_clans", cat.ID)))
+
+
 
         if game.settings['become_mediator']:
             # Note: These chances are large since it triggers every moon.
