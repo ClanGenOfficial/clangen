@@ -699,7 +699,7 @@
     "patrol_id": "bch_med_herbs3",
     "biome": "beach",
     "season": "Any",
-    "tags": ["med_cat", "warrior", "herb", "juniper", "dislike"],
+    "tags": ["med_cat", "warrior", "herb", "juniper", "dislike", "many_herbs1"],
     "intro_text": "p_l needs to go and gather some juniper berries. They take along what warriors they can find around camp to help gather and carry the berries back.",
     "decline_text": "A cat grabs p_l's attention before they can leave.",
     "chance_of_success": 50,
