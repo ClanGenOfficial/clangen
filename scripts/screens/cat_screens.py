@@ -303,13 +303,6 @@ class ProfileScreen(Screens):
                 self.change_screen('med den screen')
             elif "mediation" in self.profile_elements and event.ui_element == self.profile_elements["mediation"]:
                 self.change_screen('mediation screen')
-            elif event.ui_element == self.profile_elements["mediator_button"]:
-                if self.the_cat.status in ["apprentice", "medicine cat apprentice"]:
-                    self.the_cat.status_change('mediator apprentice', resort=True)
-                else:
-                    self.the_cat.status_change('mediator', resort=True)
-                self.clear_profile()
-                self.build_profile()
             else:
                 self.handle_tab_events(event)
 
@@ -324,14 +317,6 @@ class ProfileScreen(Screens):
                     self.build_profile()
 
     def handle_tab_events(self, event):
-        """Handles buttons presses on the tabs"""
-        if self.open_tab is not None and self.open_tab != 'history' and self.open_tab != 'conditions':
-            if event.ui_element == self.close_tab_button:
-                self.close_current_tab()
-        elif self.open_tab is None:
-            # If no tab is open, don't check any further.
-            return
-
         # Relations Tab
         if self.open_tab == 'relations':
             if event.ui_element == self.see_family_button:
@@ -375,6 +360,16 @@ class ProfileScreen(Screens):
                     self.the_cat.status_change('warrior', resort=True)
                 elif self.the_cat.status == 'mediator':
                     self.the_cat.status_change('warrior')
+                elif self.the_cat.status == 'mediator apprentice':
+                    self.the_cat.status_change('apprentice')
+                self.clear_profile()
+                self.build_profile()
+                self.update_disabled_buttons_and_text()
+            elif event.ui_element == self.switch_mediator_button:
+                if self.the_cat.status in ["apprentice", "medicine cat apprentice"]:
+                    self.the_cat.status_change("mediator apprentice")
+                else:
+                    self.the_cat.status_change("mediator")
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()
@@ -557,12 +552,6 @@ class ProfileScreen(Screens):
         """Rebuild builds the cat profile. Run when you switch cats
             or for changes in the profile."""
         self.the_cat = Cat.all_cats.get(game.switches["cat"])
-
-        #Temp Mediator button
-        self.profile_elements["mediator_button"] = pygame_gui.elements.UIButton(pygame.Rect((500, 380), (-1, -1)),
-                                                                                "switch to mediator")
-        if self.the_cat.status not in ["warrior", "elder", "apprentice", "medicine cat apprentice"]:
-            self.profile_elements["mediator_button"].hide()
 
         # use these attributes to create differing profiles for starclan cats etc.
         is_sc_instructor = False
@@ -1566,9 +1555,6 @@ class ProfileScreen(Screens):
                                                     starting_height=2, object_id="#choose_mate_button")
             self.change_mentor_button = UIImageButton(pygame.Rect((50, 558), (172, 36)), "",
                                                       starting_height=2, object_id="#change_mentor_button")
-            # This button is another option to close the tab, although I've made the opening button also close the tab
-            self.close_tab_button = UIImageButton(pygame.Rect((50, 594), (172, 36)), "",
-                                                  starting_height=2, object_id="#close_tab_button")
             self.update_disabled_buttons_and_text()
 
     def toggle_roles_tab(self):
@@ -1593,9 +1579,9 @@ class ProfileScreen(Screens):
             # These are a placeholders, to be killed and recreated in self.update_disabled_buttons().
             #   This it due to the image switch depending on the cat's status, and the location switch the close button
             #    If you can think of a better way to do this, please fix! 
-            self.toggle_deputy_button = UIImageButton(pygame.Rect((226, 486), (172, 36)), "", visible=False)
-            self.toggle_med_button = UIImageButton(pygame.Rect((226, 558), (172, 52)), "", visible=False)
-            self.close_tab_button = UIImageButton(pygame.Rect((226, 610), (172, 36)), "", visible=False)
+            self.toggle_deputy_button = None
+            self.toggle_med_button = None
+            self.switch_mediator_button = None
             self.update_disabled_buttons_and_text()
 
     def toggle_personal_tab(self):
@@ -1616,10 +1602,6 @@ class ProfileScreen(Screens):
             self.specify_gender_button = UIImageButton(pygame.Rect((402, 538), (172, 36)), "",
                                                        starting_height=2,
                                                        object_id="#specify_gender_button")
-
-            self.close_tab_button = UIImageButton(pygame.Rect((402, 610), (172, 36)), "",
-                                                  object_id="#close_tab_button",
-                                                  starting_height=3)
 
             # These are a placeholders, to be killed and recreated in self.update_disabled_buttons().
             #   This it due to the image switch depending on the cat's status, and the location switch the close button
@@ -1647,8 +1629,6 @@ class ProfileScreen(Screens):
                 tool_tip_text='This cannot be reversed.',
                 starting_height=2,
             )
-            self.close_tab_button = UIImageButton(pygame.Rect((578, 522), (172, 36)), "",
-                                                  starting_height=2, object_id="#close_tab_button")
 
             # These are a placeholders, to be killed and recreated in self.update_disabled_buttons_and_text().
             #   This it due to the image switch depending on the cat's status, and the location switch the close button
@@ -1696,20 +1676,20 @@ class ProfileScreen(Screens):
                 self.promote_leader_button.enable()
 
             # Promote to deputy button
-            deputy = game.clan.deputy
-            if game.clan.deputy is None:
+            if game.clan.deputy and not (game.clan.deputy.outside or game.clan.deputy.dead):
+                deputy = game.clan.deputy
+            elif not game.clan.deputy or game.clan.deputy.outside or game.clan.deputy.dead:
                 deputy = None
-            elif game.clan.deputy.outside:
-                deputy = None
-            elif game.clan.deputy.dead:
+            else:
                 deputy = None
 
             # This one is a bit different. Since the image on the tab depends on the cat's status, we have to
             #   recreate the button.
-            self.toggle_deputy_button.kill()
+            if self.toggle_deputy_button:
+                self.toggle_deputy_button.kill()
             if self.the_cat.status in [
                 'warrior'
-            ] and not self.the_cat.dead and not self.the_cat.outside and deputy is None:
+            ] and not self.the_cat.dead and not self.the_cat.outside and not deputy:
                 self.toggle_deputy_button = UIImageButton(pygame.Rect((226, 486), (172, 36)), "",
                                                           starting_height=2, object_id="#promote_deputy_button")
             elif self.the_cat.status in ['deputy'] and not self.the_cat.dead and not self.the_cat.outside:
@@ -1726,25 +1706,25 @@ class ProfileScreen(Screens):
                 self.retire_button.enable()
 
             # This one is also different, same reasons. This also handles the exit close tab button for this tab
-            close_button_location = (0, 0)
-            self.close_tab_button.kill()
-            self.toggle_med_button.kill()
+            if self.toggle_med_button:
+                self.toggle_med_button.kill()
+
             # Switch apprentice to medicine cat apprentice
-            if self.the_cat.status in ['apprentice', 'mediator apprentice'] and not self.the_cat.dead and not self.the_cat.outside:
+            if self.the_cat.status in ['apprentice'] and not self.the_cat.dead and not self.the_cat.outside:
                 self.toggle_med_button = UIImageButton(pygame.Rect((226, 558), (172, 52)), "",
                                                        starting_height=2, object_id="#switch_med_app_button")
-                close_button_location = (226, 610)
+                next_button_location = [226, 610]
             # Switch med apprentice to warrior apprentice
-            elif self.the_cat.status in ['medicine cat apprentice'] and not self.the_cat.dead and \
-                    not self.the_cat.outside:
+            elif self.the_cat.status in ['medicine cat apprentice', 'mediator apprentice'] and not \
+                    self.the_cat.dead and not self.the_cat.outside:
                 self.toggle_med_button = UIImageButton(pygame.Rect((226, 558), (172, 52)), "",
                                                        starting_height=2, object_id="#switch_warrior_app_button")
-                close_button_location = (226, 610)
+                next_button_location = [226, 610]
             # Switch warrior or elder to med cat.
             elif self.the_cat.status in ['warrior', 'elder'] and not self.the_cat.dead and not self.the_cat.outside:
                 self.toggle_med_button = UIImageButton(pygame.Rect((226, 558), (172, 52)), "",
                                                        starting_height=2, object_id="#switch_med_cat_button")
-                close_button_location = (226, 610)
+                next_button_location = [226, 610]
             # Switch med cat, mediator, or leader to warrior
             elif self.the_cat.status in ['medicine cat', 'leader', 'mediator'] and \
                     not self.the_cat.dead and \
@@ -1753,15 +1733,28 @@ class ProfileScreen(Screens):
                     not self.the_cat.retired:  # Retired is flipped true if that cat retired due to health conditions.
                 self.toggle_med_button = UIImageButton(pygame.Rect((226, 558), (172, 36)), "",
                                                        starting_height=2, object_id="#switch_warrior_button")
-                close_button_location = (226, 594)
+                next_button_location = [226, 594]
             else:
-                # Dummy button so .kill() calls don't fail
-                self.toggle_med_button = pygame_gui.elements.UIButton(pygame.Rect((0, 0), (0, 0)), "", visible=False)
-                close_button_location = (226, 558)
+                self.toggle_med_button = None
+                next_button_location = [226, 558]
 
-            # Draw close button
-            self.close_tab_button = UIImageButton(pygame.Rect(close_button_location, (172, 36)), "",
-                                                  starting_height=2, object_id="#close_tab_button")
+            if self.switch_mediator_button:
+                self.switch_mediator_button.kill()
+
+            if self.the_cat.status in ["warrior", "elder", "medicine cat"]:
+                self.switch_mediator_button = pygame_gui.elements.UIButton(pygame.Rect(tuple(next_button_location),
+                                                                                       (172, 36)),
+                                                                           "Switch to mediator",
+                                                                           starting_height=2)
+            elif self.the_cat.status in ["apprentice", "medicine cat apprentice"]:
+                self.switch_mediator_button = pygame_gui.elements.UIButton(pygame.Rect(tuple(next_button_location),
+                                                                                       (172, 52)),
+                                                                           "Switch to mediator apprentice",
+                                                                           starting_height=2)
+            else:
+                self.switch_mediator_button = None
+
+
         elif self.open_tab == "personal":
 
             # Button to trans or cis the cats.
@@ -1930,23 +1923,22 @@ class ProfileScreen(Screens):
             self.see_relationships_button.kill()
             self.choose_mate_button.kill()
             self.change_mentor_button.kill()
-            self.close_tab_button.kill()
         elif self.open_tab == 'roles':
             self.promote_leader_button.kill()
             self.retire_button.kill()
             self.toggle_deputy_button.kill()
-            self.toggle_med_button.kill()
-            self.close_tab_button.kill()
+            if self.toggle_med_button:
+                self.toggle_med_button.kill()
+            if self.switch_mediator_button:
+                self.switch_mediator_button.kill()
         elif self.open_tab == 'personal':
             self.change_name_button.kill()
             self.specify_gender_button.kill()
-            self.close_tab_button.kill()
             self.cis_trans_button.kill()
             self.toggle_kits.kill()
         elif self.open_tab == 'dangerous':
             self.kill_cat_button.kill()
             self.exile_cat_button.kill()
-            self.close_tab_button.kill()
         elif self.open_tab == 'history':
             self.backstory_background.kill()
             self.sub_tab_1.kill()
@@ -2170,6 +2162,7 @@ class CeremonyScreen(Screens):
                                                   pygame.Rect((0, 0), (550, -1)),
                                                   object_id=get_text_box_theme("#allegiances_box"),
                                                   container=self.scroll_container)
+        self.text.disable()
         self.back_button = UIImageButton(pygame.Rect((25, 25), (105, 30)), "",
                                          object_id="#back_button")
         self.scroll_container.set_scrollable_area_dimensions((680, self.text.rect[3]))

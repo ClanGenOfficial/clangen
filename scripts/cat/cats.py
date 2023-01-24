@@ -711,10 +711,10 @@ class Cat():
 
         # If they have any apprentices, make sure they are still valid:
         if old_status == "medicine cat":
-            for app in self.apprentice:
+            for app in self.apprentice.copy():
                 Cat.fetch_cat(app).update_med_mentor()
         else:
-            for app in self.apprentice:
+            for app in self.apprentice.copy():
                 Cat.fetch_cat(app).update_mentor()
 
         # updates mentors
