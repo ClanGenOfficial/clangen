@@ -643,15 +643,10 @@ class PatrolScreen(Screens):
         self.clear_cat_buttons()  # Clear all the cat buttons
         self.able_cats = []
 
-        # sorting lists
-        med_cats = []
-        warriors = []
-        apprentices = []
-
-        # ASSIGN TO ABLE CATS AND SORT BY RANK
+        # ASSIGN TO ABLE CATS
         for the_cat in Cat.all_cats_list:
             if not the_cat.dead and the_cat.in_camp and the_cat not in game.patrolled and the_cat.status not in [
-                'elder', 'kitten'
+                'elder', 'kitten', 'mediator'
             ] and not the_cat.outside and the_cat not in self.current_patrol and not the_cat.not_working():
                 self.able_cats.append(the_cat)
 
@@ -917,3 +912,4 @@ class PatrolScreen(Screens):
         # Removes duplicates.
         patrol_set = list(patrol_list)
         return ", ".join(patrol_set)
+

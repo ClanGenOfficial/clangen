@@ -8,6 +8,8 @@
         "leader": [],
         "deputy": [],
         "elder": [],
+        "mediator": [],
+        "mediator apprentice": [],
         "all": []
     },
     "alive": {
@@ -35,6 +37,8 @@
             "Plans to help the elders with their ticks",
             "Is helping to repair the elder's den"
         ],
+        "mediator": [],
+        "mediator apprentice": [],
         "all": []
     },
     "all": [

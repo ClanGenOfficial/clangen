@@ -57,6 +57,8 @@ class GenerateEvents:
         event_list = []
         if cat_type in ["medicine cat", "medicine cat apprentice"]:
             cat_type = "medicine"
+        elif cat_type in ["mediator", "mediator apprentice"]:
+            cat_type = "mediator"
 
         biome = None
         if event_type != "freshkill_pile":
