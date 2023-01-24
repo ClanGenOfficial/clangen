@@ -837,6 +837,7 @@ class StatsScreen(Screens):
         kit_num = 0
         elder_num = 0
         starclan_num = 0
+        medcat_num = 0
         for cat in Cat.all_cats.values():
             if not cat.dead:
                 living_num += 1
@@ -848,10 +849,13 @@ class StatsScreen(Screens):
                     kit_num += 1
                 elif cat.status == 'elder':
                     elder_num += 1
+                elif cat.status == 'medicine cat':
+                    medcat_num += 1
             else:
                 starclan_num += 1
 
         stats_text = "Number of Living Cats: " + str(living_num) + "\n\n" + \
+                     "Number of Med. Cats: " + str(medcat_num) + "\n\n" + \
                      "Number of Warriors: " + str(warriors_num) + "\n\n" + \
                      "Number of Apprentices: " + str(app_num) + "\n\n" + \
                      "Number of Kits: " + str(kit_num) + "\n\n" + \
