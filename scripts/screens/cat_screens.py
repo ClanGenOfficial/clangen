@@ -2416,10 +2416,10 @@ class CeremonyScreen(Screens):
                              cat.virtues[8] + '.'
         else:
             if cat.trait == "bloodthirsty":
-                prev_lead_text = prev_lead + ' one of StarClan\'s oldest leaders, looks at the new leader with a conflicted expression. They give a last life, the gift of ' + \
+                prev_lead_text = prev_lead + ', one of StarClan\'s oldest leaders, looks at the new leader with a conflicted expression. They give a last life, the gift of ' + \
                              cat.virtues[8] + '.'
             else:
-                prev_lead_text = prev_lead + ' one of StarClan\'s oldest leaders, looks at the new leader with pride. They give a last life, the gift of ' + \
+                prev_lead_text = prev_lead + ', one of StarClan\'s oldest leaders, looks at the new leader with pride. They give a last life, the gift of ' + \
                                 cat.virtues[8] + '.'
         if known[8]:
             if cat.trait == "bloodthirsty":

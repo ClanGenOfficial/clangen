@@ -947,7 +947,7 @@ class Cat():
         other_cat = random.choice(list(all_cats.keys()))
 
         # get other cat
-        while other_cat == self and len(all_cats) > 1:
+        while other_cat == self.ID and len(all_cats) > 1:
             other_cat = random.choice(list(all_cats.keys()))
         other_cat = all_cats.get(other_cat)
 
