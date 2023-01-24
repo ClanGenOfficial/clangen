@@ -373,6 +373,8 @@ class ProfileScreen(Screens):
                     self.the_cat.status_change('medicine cat', resort=True)
                 elif self.the_cat.status == 'leader':
                     self.the_cat.status_change('warrior', resort=True)
+                elif self.the_cat.status == 'mediator':
+                    self.the_cat.status_change('warrior')
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()
@@ -1718,7 +1720,7 @@ class ProfileScreen(Screens):
                                                           starting_height=2, object_id="#promote_deputy_button")
                 self.toggle_deputy_button.disable()
 
-            if self.the_cat.status in ['elder', 'kitten', 'apprentice', 'medicine cat apprentice']:
+            if self.the_cat.status in ['elder', 'kitten', 'apprentice', 'medicine cat apprentice', 'mediator apprentice']:
                 self.retire_button.disable()
             else:
                 self.retire_button.enable()
@@ -1728,7 +1730,7 @@ class ProfileScreen(Screens):
             self.close_tab_button.kill()
             self.toggle_med_button.kill()
             # Switch apprentice to medicine cat apprentice
-            if self.the_cat.status in ['apprentice'] and not self.the_cat.dead and not self.the_cat.outside:
+            if self.the_cat.status in ['apprentice', 'mediator apprentice'] and not self.the_cat.dead and not self.the_cat.outside:
                 self.toggle_med_button = UIImageButton(pygame.Rect((226, 558), (172, 52)), "",
                                                        starting_height=2, object_id="#switch_med_app_button")
                 close_button_location = (226, 610)
@@ -1743,8 +1745,8 @@ class ProfileScreen(Screens):
                 self.toggle_med_button = UIImageButton(pygame.Rect((226, 558), (172, 52)), "",
                                                        starting_height=2, object_id="#switch_med_cat_button")
                 close_button_location = (226, 610)
-            # Switch med cat to warrior
-            elif self.the_cat.status in ['medicine cat', 'leader'] and \
+            # Switch med cat, mediator, or leader to warrior
+            elif self.the_cat.status in ['medicine cat', 'leader', 'mediator'] and \
                     not self.the_cat.dead and \
                     not self.the_cat.outside and \
                     self.the_cat.age != 'elder' and \

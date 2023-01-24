@@ -200,7 +200,7 @@ class Events():
                 elif increase < 0:
                     text += f"However, it seems {cat.name} only made {clan} more upset."
 
-                game.cur_events_list(game.cur_events_list.append(Single_Event(text, "other_clans", cat.ID)))
+                game.cur_events_list.append(Single_Event(text, "other_clans", cat.ID))
 
         if game.settings['become_mediator']:
             # Note: These chances are large since it triggers every moon.

@@ -709,6 +709,14 @@ class Cat():
         self.status = new_status
         self.name.status = new_status
 
+        # If they have any apprentices, make sure they are still valid:
+        if old_status == "medicine cat":
+            for app in self.apprentice:
+                Cat.fetch_cat(app).update_med_mentor()
+        else:
+            for app in self.apprentice:
+                Cat.fetch_cat(app).update_mentor()
+
         # updates mentors
         if self.status == 'apprentice':
             self.update_mentor()
