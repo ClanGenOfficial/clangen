@@ -859,7 +859,10 @@ class Patrol():
             elif len(herbs_gotten) == 1 and herbs_gotten[0] == 'cobwebs':
                 insert = f"{herbs_gotten[0]} were"
             elif len(herbs_gotten) == 2:
-                insert = f"{herbs_gotten[0]} and {herbs_gotten[1]} were"
+                if str(herbs_gotten[0]) == str(herbs_gotten[1]):
+                    insert = f"{herbs_gotten[0]} was"
+                else:
+                    insert = f"{herbs_gotten[0]} and {herbs_gotten[1]} were"
             else:
                 insert = f"{', '.join(herbs_gotten[:-1])}, and {herbs_gotten[-1]} were"
             game.herb_events_list.append(f"{insert.capitalize()} gathered on a patrol.")
@@ -909,7 +912,7 @@ class Patrol():
         if "other_clan" in self.patrol_event.tags:
             other_clan = patrol.other_clan
             change_clan_relations(other_clan, difference)
-            if difference > 0:
+            if difference > 0 and self.patrol_event.patrol_id != "gen_bord_otherclan3":
                 insert = "improved"
             else:
                 insert = "worsened"
@@ -1262,7 +1265,8 @@ class Patrol():
                     if major_injury:
                         new_cat.get_injured("broken bone")
             for cat in created_cats:
-                self.results_text.append(f"{cat.name} has joined the Clan.")
+                if cat.name.prefix != "unnamed":
+                    self.results_text.append(f"{cat.name} has joined the Clan.")
 
     def create_new_cat(self,
                        loner=False,

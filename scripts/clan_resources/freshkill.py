@@ -8,6 +8,8 @@ PREY_REQUIREMENT = {
     "deputy": 3,
     "medicine cat": 2,
     "medicine cat apprentice": 1.5,
+    "mediator apprentice": 1.5,
+    "mediator": 2,
     "warrior": 3,
     "apprentice": 1.5,
     "elder": 1.5,
@@ -24,7 +26,9 @@ FEEDING_ORDER = [
     "medicine cat",
     "medicine cat apprentice",
     "apprentice",
+    "mediator apprentice",
     "warrior",
+    "mediator",
     "deputy",
     "leader"
 ]
