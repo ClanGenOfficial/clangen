@@ -3748,6 +3748,29 @@
                 "path":"resources/images/buttons/sabotage_unavailable.png"
             }
         }
+  },
+  "#mediation_button":
+  {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/mediation.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/mediation_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/mediation_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/mediation_unavailable.png"
+            }
+        }
   }
 }
 

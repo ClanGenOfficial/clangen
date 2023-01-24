@@ -1,7 +1,7 @@
 from math import ceil
 
-import pygame
 import pygame_gui.elements
+from random import choice
 
 from .base_screens import Screens, cat_profiles
 
@@ -2092,6 +2092,7 @@ class MediationScreen(Screens):
                     self.mediators[self.selected_mediator], self.selected_cat_1, self.selected_cat_2)
                 self.results.set_text(output)
                 self.update_selected_cats()
+                self.update_mediator_info()
             elif event.ui_element == self.sabotoge_button:
                 game.mediated = True
                 output = Cat.mediate_relationship(
@@ -2099,18 +2100,24 @@ class MediationScreen(Screens):
                     sabotage=True)
                 self.results.set_text(output)
                 self.update_selected_cats()
+                self.update_mediator_info()
+            elif event.ui_element == self.random1:
+                self.selected_cat_1 = self.random_cat()
+                if pygame.key.get_mods() & pygame.KMOD_SHIFT:
+                    self.selected_cat_2 = self.random_cat()
+                self.update_selected_cats()
+            elif event.ui_element == self.random2:
+                self.selected_cat_2 = self.random_cat()
+                if pygame.key.get_mods() & pygame.KMOD_SHIFT:
+                    self.selected_cat_1 = self.random_cat()
+                self.update_selected_cats()
             elif event.ui_element in self.cat_buttons:
                 if event.ui_element.return_cat_object() not in [self.selected_cat_1, self.selected_cat_2]:
-                    if pygame.key.get_mods() & pygame.KMOD_SHIFT:
+                    if pygame.key.get_mods() & pygame.KMOD_SHIFT or not self.selected_cat_1:
                         self.selected_cat_1 = event.ui_element.return_cat_object()
-                        self.update_selected_cats()
                     else:
-                        if not self.selected_cat_1:
-                            self.selected_cat_1 = event.ui_element.return_cat_object()
-                            self.update_selected_cats()
-                        else:
-                            self.selected_cat_2 = event.ui_element.return_cat_object()
-                            self.update_selected_cats()
+                        self.selected_cat_2 = event.ui_element.return_cat_object()
+                    self.update_selected_cats()
 
 
     def screen_switches(self):
@@ -2159,19 +2166,29 @@ class MediationScreen(Screens):
         self.next_page = UIImageButton(pygame.Rect((433, 612), (34, 34)), "", object_id="#relation_list_next")
         self.previous_page = UIImageButton(pygame.Rect((333, 612), (34, 34)), "", object_id="#relation_list_previous")
 
-        self.deselect_1 = pygame_gui.elements.UIButton(pygame.Rect((87, 432), (127, 30)), "",
+        self.deselect_1 = pygame_gui.elements.UIButton(pygame.Rect((68, 434), (127, 30)), "",
                                                        object_id="#remove_cat_button")
-        self.deselect_2 = pygame_gui.elements.UIButton(pygame.Rect((587, 432), (127, 30)), "",
+        self.deselect_2 = pygame_gui.elements.UIButton(pygame.Rect((605, 434), (127, 30)), "",
                                                        object_id="#remove_cat_button")
 
         self.results = UITextBoxTweaked("", pygame.Rect((280, 370), (229, 100)),
                                         object_id=get_text_box_theme("#cat_patrol_info_box"),
                                         line_spacing=0.75)
+
+        self.random1 = UIImageButton(pygame.Rect((198, 432), (34, 34)), "", object_id="#random_dice_button")
+        self.random2 = UIImageButton(pygame.Rect((568, 432), (34, 34)), "", object_id="#random_dice_button")
+
         if game.mediated:
             self.results.set_text("You've already mediated/sabotaged this moon!")
 
         self.update_mediator_info()
 
+    def random_cat(self):
+        if self.selected_cat_list():
+            random_list = list(filter(lambda x: x.ID not in self.selected_cat_list(), self.all_cats_list))
+        else:
+            random_list = self.all_cats_list
+        return choice(random_list)
 
     def update_mediator_info(self):
         for ele in self.mediator_elements:
@@ -2200,7 +2217,7 @@ class MediationScreen(Screens):
                                                                          name,
                                                                          object_id=get_text_box_theme())
 
-            text = mediator.trait + "\n" + mediator.skill
+            text = mediator.trait + "\n" + mediator.experience_level
 
             if mediator.not_working():
                 text += "\nThis cat isn't able to work"
@@ -2234,9 +2251,9 @@ class MediationScreen(Screens):
         self.update_list_cats()
 
     def update_list_cats(self):
-        self.all_cats = list(filter(lambda x: (x.ID != self.mediators[self.selected_mediator].ID)
+        self.all_cats_list = list(filter(lambda x: (x.ID != self.mediators[self.selected_mediator].ID)
                                     and not x.dead and not x.outside, Cat.all_cats_list))
-        self.all_cats = self.chunks(self.all_cats, 24)
+        self.all_cats = self.chunks(self.all_cats_list, 24)
 
         self.update_page()
 
@@ -2645,8 +2662,10 @@ class MediationScreen(Screens):
         del self.previous_page
         self.results.kill()
         del self.results
-
-
+        self.random1.kill()
+        del self.random1
+        self.random2.kill()
+        del self.random2
 
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]

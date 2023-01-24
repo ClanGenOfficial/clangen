@@ -202,8 +202,6 @@ class Events():
 
                 game.cur_events_list(game.cur_events_list.append(Single_Event(text, "other_clans", cat.ID)))
 
-
-
         if game.settings['become_mediator']:
             # Note: These chances are large since it triggers every moon.
             # Checking every moon has the effect giving older cats more chances to become a mediator

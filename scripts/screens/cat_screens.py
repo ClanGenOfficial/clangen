@@ -211,7 +211,6 @@ class ProfileScreen(Screens):
 
     def __init__(self, name=None):
         super().__init__(name)
-        self.leader_ceremony_button = None
         self.help_button = None
         self.open_sub_tab = None
         self.editing_notes = False
@@ -297,11 +296,12 @@ class ProfileScreen(Screens):
                 self.toggle_history_tab()
             elif event.ui_element == self.conditions_tab_button:
                 self.toggle_conditions_tab()
-            elif event.ui_element == self.leader_ceremony_button:
+            elif "leader_ceremony" in self.profile_elements and \
+                    event.ui_element == self.profile_elements["leader_ceremony"]:
                 self.change_screen('ceremony screen')
             elif event.ui_element == self.profile_elements["med_den"]:
                 self.change_screen('med den screen')
-            elif event.ui_element == self.profile_elements["mediator_den"]:
+            elif "mediation" in self.profile_elements and event.ui_element == self.profile_elements["mediation"]:
                 self.change_screen('mediation screen')
             elif event.ui_element == self.profile_elements["mediator_button"]:
                 if self.the_cat.status in ["apprentice", "medicine cat apprentice"]:
@@ -532,9 +532,6 @@ class ProfileScreen(Screens):
         if self.user_notes:
             self.user_notes = 'Click the check mark to enter notes about your cat!'
 
-        if self.leader_ceremony_button:
-            self.leader_ceremony_button.kill()
-
         for box in self.checkboxes:
             self.checkboxes[box].kill()
         self.checkboxes = {}
@@ -644,16 +641,6 @@ class ProfileScreen(Screens):
         else:
             self.profile_elements["med_den"].hide()
 
-        # If a cat if a mediator, show the mediator button
-        self.profile_elements["mediator_den"] = UIImageButton(pygame.Rect
-                                                              ((350, 110), (100, 28)),
-                                                              "Mediation")
-        if not (self.the_cat.dead or self.the_cat.outside) and \
-                self.the_cat.status in ['mediator', 'mediator apprentice']:
-            self.profile_elements["mediator_den"].show()
-        else:
-            self.profile_elements["mediator_den"].hide()
-
 
         # Determine where the next and previous cat buttons lead
         self.determine_previous_and_next_cat()
@@ -673,11 +660,17 @@ class ProfileScreen(Screens):
             self.load_user_notes()
 
         if self.the_cat.status == 'leader' and not self.the_cat.dead:
-            self.leader_ceremony_button = UIImageButton(pygame.Rect(
+            self.profile_elements["leader_ceremony"] = UIImageButton(pygame.Rect(
                 (383, 110), (34, 34)),
                 "",
                 object_id="#leader_ceremony_button",
                 tool_tip_text="Leader Ceremony"
+            )
+        elif self.the_cat.status in ["mediator", "mediator apprentice"]:
+            self.profile_elements["mediation"] = UIImageButton(pygame.Rect(
+                (383, 110), (34, 34)),
+                "",
+                object_id="#mediation_button",
             )
 
         if game.settings["fading"]:
