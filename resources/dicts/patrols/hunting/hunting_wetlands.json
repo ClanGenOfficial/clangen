@@ -1076,7 +1076,8 @@
         "antagonize_fail_text": null,
         "history_text": [
             "r_c was heavily injured by a monster, and carries the scars from it.",
-            "r_c was hit by a monster and killed."
+            "r_c was hit by a monster and killed.",
+            "hit by a monster"
         ]
     },
     {
@@ -1137,7 +1138,8 @@
         "antagonize_fail_text": null,
         "history_text": [
             "r_c was heavily injured by a monster, and carries the scars from it.",
-            "r_c was hit by a monster and killed."
+            "r_c was hit by a monster and killed.",
+            "deliberately hit by a monster"
         ]
     },
     {
@@ -2678,7 +2680,7 @@
     "patrol_id": "wtlnd_hunt_redfox_steal3",
     "biome": "wetland",
     "season": "Any",
-    "tags": ["hunting", "medium_prey", "fighting", "death", "scar", "big_bite_injury",  "clan_to_patrol", "respect"],
+    "tags": ["hunting", "medium_prey", "fighting", "scar", "big_bite_injury",  "clan_to_patrol", "respect"],
     "intro_text": "r_c catches the scent of a fox - but is it red, or gray? And is it worth a fight if they encounter it?",
     "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
     "chance_of_success": 30,
@@ -2844,7 +2846,7 @@
     "patrol_id": "wtlnd_hunt_swiftfox_newleafscavenge2",
     "biome": "wetland",
     "season": "newleaf",
-    "tags": ["hunting", "medium_prey", "fighting", "scar", "death", "no_body", "small_bite_injury"],
+    "tags": ["hunting", "medium_prey", "fighting", "scar", "death", "no_body", "all_lives", "small_bite_injury"],
     "intro_text": "r_c catches the scent of a fox. Tracking it, they find a swift fox feeding on a fish about as big as it is. The cat-sized predator definitely didn't kill this.",
     "decline_text": "r_c decides not to quarrel with the fox. There're plenty of fish in the river for everyone, and it's best to focus on feeding the Clan rather than quarreling.",
     "chance_of_success": 70,
@@ -2852,7 +2854,7 @@
     "success_text": [
     "r_c approaches the kill, fur puffed up. The swift fox grumbles, but with a hiss both animals agree to disagree, feeding from opposite ends of the calf without further trouble. r_c is able to find some decent scraps to carry back to camp, though with only them there they can't bring back as much meat as they'd like.",
     null,
-    "Watching the swift fox at the carcass, s_c notices it stripping meat from the calf and caching it in little holes, and starts to copy it. The bigger predators will return to claim the calf soon, but by the time they do s_c will have hidden away the choicest morsels to fetch later.",
+    "Watching the swift fox at the carcass, s_c notices it stripping meat from the fish and caching it in little holes, and starts to copy it. The bigger predators will return to claim the fish soon, but by the time they do s_c will have hidden away the choicest morsels to fetch later.",
     "With great care, aware that the kill's original owner must be somewhere about, s_c snatches the first large scrap they find and leaves the swift fox to risk the wrath of the bigger predators."
     ],
     "fail_text": [
@@ -2873,7 +2875,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c carries a scar from fighting with a swift fox.",
-        "While scavenging alone, r_c was killed by a predator they didn't see."
+        "While scavenging alone, r_c was killed by a predator they didn't see.",
+        "taken by an alligator"
     ]
 },
 {
@@ -2908,7 +2911,7 @@
     "patrol_id": "wtlnd_hunt_swiftfox_greenleafscavenge2",
     "biome": "wetland",
     "season": "greenleaf",
-    "tags": ["hunting", "medium_prey", "fighting", "scar", "death", "no_body", "small_bite_injury"],
+    "tags": ["hunting", "medium_prey", "fighting", "scar", "death", "no_body", "all_lives", "small_bite_injury"],
     "intro_text": "r_c catches the scent of a fox. Tracking it, they find a swift fox feeding on a fish about as big as it is. The cat-sized predator definitely didn't kill this.",
     "decline_text": "r_c decides not to quarrel with the fox. There're plenty of fish in the river for everyone, and it's best to focus on feeding the Clan rather than quarreling.",
     "chance_of_success": 70,
@@ -2937,7 +2940,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c carries a scar from fighting with a swift fox.",
-        "While scavenging alone, r_c was killed by a predator they didn't see."
+        "While scavenging alone, r_c was killed by a predator they didn't see.",
+        "taken by an alligator"
     ]
 },
 {
@@ -2972,7 +2976,7 @@
     "patrol_id": "wtlnd_hunt_swiftfox_leaf-fallscavenge2",
     "biome": "wetland",
     "season": "leaf-fall",
-    "tags": ["hunting", "medium_prey", "fighting", "scar", "death", "no_body", "small_bite_injury"],
+    "tags": ["hunting", "medium_prey", "fighting", "scar", "death", "no_body", "all_lives", "small_bite_injury"],
     "intro_text": "r_c catches the scent of a fox. Tracking it, they find a swift fox feeding on a fish about as big as it is. The cat-sized predator definitely didn't kill this.",
     "decline_text": "r_c decides not to quarrel with the fox. There're plenty of fish in the river for everyone, and it's best to focus on feeding the Clan rather than quarreling.",
     "chance_of_success": 70,
@@ -3001,7 +3005,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c carries a scar from fighting with a swift fox.",
-        "While scavenging alone, r_c was killed by a predator they didn't see."
+        "While scavenging alone, r_c was killed by a predator they didn't see.",
+        "taken by an alligator"
     ]
 },
 {
@@ -3036,7 +3041,7 @@
     "patrol_id": "wtlnd_hunt_swiftfox_leaf-barescavenge2",
     "biome": "wetland",
     "season": "leaf-bare",
-    "tags": ["hunting", "medium_prey", "fighting", "scar", "death", "no_body", "small_bite_injury"],
+    "tags": ["hunting", "medium_prey", "fighting", "scar", "death", "no_body", "all_lives", "small_bite_injury"],
     "intro_text": "r_c catches the scent of a fox. Tracking it, they find a swift fox feeding on a fish about as big as it is. Roughly equal in size to r_c, the swift fox definitely didn't bring down this feast themselves.",
     "decline_text": "r_c decides not to quarrel with the fox. There're plenty of fish in the river for everyone, and it's best to focus on feeding the Clan rather than quarreling.",
     "chance_of_success": 50,
@@ -3065,7 +3070,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c carries a scar from fighting with a swift fox.",
-        "While scavenging alone, r_c was killed by a predator they didn't see."
+        "While scavenging alone, r_c was killed by a predator they didn't see.",
+        "taken by an alligator"
     ]
 },
 {
@@ -4219,7 +4225,7 @@
     "patrol_id": "wtlnd_hunt_swiftfox_newleafscavenge2",
     "biome": "wetland",
     "season": "newleaf",
-    "tags": ["hunting", "medium_prey", "fighting", "scar", "death", "no_body", "small_bite_injury"],
+    "tags": ["hunting", "medium_prey", "fighting", "scar", "death", "no_body", "all_lives", "small_bite_injury"],
     "intro_text": "r_c catches the scent of a fox. Tracking it, they find a swift fox feeding on a fish about as big as it is. The cat-sized predator definitely didn't kill this.",
     "decline_text": "r_c decides not to quarrel with the fox. There're plenty of fish in the river for everyone, and it's best to focus on feeding the Clan rather than quarreling.",
     "chance_of_success": 70,
@@ -4227,7 +4233,7 @@
     "success_text": [
     "r_c approaches the kill, fur puffed up. The swift fox grumbles, but with a hiss both animals agree to disagree, feeding from opposite ends of the calf without further trouble. r_c is able to find some decent scraps to carry back to camp, though with only them there they can't bring back as much meat as they'd like.",
     null,
-    "Watching the swift fox at the carcass, s_c notices it stripping meat from the calf and caching it in little holes, and starts to copy it. The bigger predators will return to claim the calf soon, but by the time they do s_c will have hidden away the choicest morsels to fetch later.",
+    "Watching the swift fox at the carcass, s_c notices it stripping meat from the fish and caching it in little holes, and starts to copy it. The bigger predators will return to claim the fish soon, but by the time they do s_c will have hidden away the choicest morsels to fetch later.",
     "With great care, aware that the kill's original owner must be somewhere about, s_c snatches the first large scrap they find and leaves the swift fox to risk the wrath of the bigger predators."
     ],
     "fail_text": [
@@ -4248,7 +4254,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c carries a scar from fighting with a swift fox.",
-        "While scavenging alone, r_c was killed by a predator they didn't see."
+        "While scavenging alone, r_c was killed by a predator they didn't see.",
+        "taken by an alligator"
     ]
 },
 {
@@ -4283,7 +4290,7 @@
     "patrol_id": "wtlnd_hunt_swiftfox_greenleafscavenge2",
     "biome": "wetland",
     "season": "greenleaf",
-    "tags": ["hunting", "medium_prey", "fighting", "scar", "death", "no_body", "small_bite_injury"],
+    "tags": ["hunting", "medium_prey", "fighting", "scar", "death", "no_body", "all_lives", "small_bite_injury"],
     "intro_text": "r_c catches the scent of a fox. Tracking it, they find a swift fox feeding on a fish about as big as it is. The cat-sized predator definitely didn't kill this.",
     "decline_text": "r_c decides not to quarrel with the fox. There're plenty of fish in the river for everyone, and it's best to focus on feeding the Clan rather than quarreling.",
     "chance_of_success": 70,
@@ -4295,7 +4302,7 @@
     "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. But then they're stuck, unwilling to let go and risk being bitten. They're dragged through the swamp, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the fish."
     ],
     "fail_text": [
-"r_c muscles in as the swft fox gives way to the bigger predator, but the carcass is rotten and worthless.",
+    "r_c muscles in as the swft fox gives way to the bigger predator, but the carcass is rotten and worthless.",
     "The swift fox gives up the kill, but s_c pursues it anyway, until the fox turns and threatens with snapping teeth. s_c dances out of the way, but when they return, another predator has already snapped up the abandoned fish.",
     "r_c starts arguing with the fox over the fish. Neither sees the alligator coming.",
     "Puffed up, r_c approaches the swift fox. But there's only one of them, and the fox is their equal in size and weight. instead of running or giving it, it snarls, and attacks. r_c gives just as good as they get, and both animals end up limping away from the kill.",
@@ -4312,7 +4319,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c carries a scar from fighting with a swift fox.",
-        "While scavenging alone, r_c was killed by a predator they didn't see."
+        "While scavenging alone, r_c was killed by a predator they didn't see.",
+        "taken by an alligator"
     ]
 },
 {
@@ -4347,7 +4355,7 @@
     "patrol_id": "wtlnd_hunt_swiftfox_leaf-fallscavenge2",
     "biome": "wetland",
     "season": "leaf-fall",
-    "tags": ["hunting", "medium_prey", "fighting", "scar", "death", "no_body", "small_bite_injury"],
+    "tags": ["hunting", "medium_prey", "fighting", "scar", "death", "no_body", "all_lives", "small_bite_injury"],
     "intro_text": "r_c catches the scent of a fox. Tracking it, they find a swift fox feeding on a fish about as big as it is. The cat-sized predator definitely didn't kill this.",
     "decline_text": "r_c decides not to quarrel with the fox. There're plenty of fish in the river for everyone, and it's best to focus on feeding the Clan rather than quarreling.",
     "chance_of_success": 70,
@@ -4376,7 +4384,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c carries a scar from fighting with a swift fox.",
-        "While scavenging alone, r_c was killed by a predator they didn't see."
+        "While scavenging alone, r_c was killed by a predator they didn't see.",
+        "taken by an alligator"
     ]
 },
 {
@@ -4411,7 +4420,7 @@
     "patrol_id": "wtlnd_hunt_swiftfox_leaf-barescavenge2",
     "biome": "wetland",
     "season": "leaf-bare",
-    "tags": ["hunting", "medium_prey", "fighting", "scar", "death", "no_body", "small_bite_injury"],
+    "tags": ["hunting", "medium_prey", "fighting", "scar", "death", "no_body", "all_lives", "small_bite_injury"],
     "intro_text": "r_c catches the scent of a fox. Tracking it, they find a swift fox feeding on a fish about as big as it is. Roughly equal in size to r_c, the swift fox definitely didn't bring down this feast themselves.",
     "decline_text": "r_c decides not to quarrel with the fox. There're plenty of fish in the river for everyone, and it's best to focus on feeding the Clan rather than quarreling.",
     "chance_of_success": 50,
@@ -4440,7 +4449,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c carries a scar from fighting with a swift fox.",
-        "While scavenging alone, r_c was killed by a predator they didn't see."
+        "While scavenging alone, r_c was killed by a predator they didn't see.",
+        "taken by an alligator"
     ]
 },
 {

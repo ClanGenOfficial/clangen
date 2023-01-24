@@ -875,6 +875,155 @@
     ]
 },
 {
+    "patrol_id": "wtlnd_bord_flashflooddis1",
+    "biome": "wetlands",
+    "season": "Any",
+    "tags": [
+        "border",
+        "disaster",
+        "respect",
+        "trust"
+    ],
+    "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
+    "decline_text": "Your patrol decides to head back early.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "While it's pretty gray up there, the promised rain never comes.",
+        "The cats become wet from the rain but otherwise the patrol is successful.",
+        "s_c makes a careful judgment, and the patrol keeps going. They stick to solid ground, sometimes routing themselves through the trees as the rain begins to pour around them.",
+        "It's not worth the risk - s_c convinces the patrol to head for home."
+    ],
+    "fail_text": [
+        null,
+        null,
+        "There is a downpour and a sudden flood from the overflowing river in the swamp sweeps all of the cats in the patrol away.",
+        null
+    ],
+    "win_skills": [
+        "very smart",
+        "extremely smart"
+    ],
+    "win_trait": [
+        "careful",
+        "insecure",
+        "nervous"
+    ],
+    "fail_skills": [
+        "None"
+    ],
+    "fail_trait": [
+        "None"
+    ],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        null,
+        "This cat was drowned by floodwaters."
+    ]
+},
+{
+    "patrol_id": "wtlnd_bord_flashflooddis2",
+    "biome": "wetlands",
+    "season": "Any",
+    "tags": [
+        "border",
+        "disaster"
+    ],
+    "intro_text": "There are dark clouds in the horizon and r_c wonders if they should continue.",
+    "decline_text": "Your patrol decides to head back early.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "While it's pretty gray up there, the promised rain never comes.",
+        "r_c becomes wet from the rain but otherwise the patrol is successful.",
+        "s_c makes a careful judgment, and keeps going. They stick to solid ground, sometimes routing themselves through the trees as the rain begins to pour around them.",
+        "It's not worth the risk - s_c heads for home."
+    ],
+    "fail_text": [
+        null,
+        null,
+        "There is a downpour and a sudden flood from the overflowing river in the swamp sweeps r_c away.",
+        null
+    ],
+    "win_skills": [
+        "very smart",
+        "extremely smart"
+    ],
+    "win_trait": [
+        "careful",
+        "insecure",
+        "nervous"
+    ],
+    "fail_skills": [
+        "None"
+    ],
+    "fail_trait": [
+        "None"
+    ],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        null,
+        "r_c was drowned by floodwaters."
+    ]
+},
+{
+    "patrol_id": "wtlnd_bord_flashflooddis3",
+    "biome": "wetlands",
+    "season": "leafbare",
+    "tags": [
+        "border",
+        "disaster",
+        "big_prey",
+        "respect",
+        "trust",
+        "platonic"
+    ],
+    "intro_text": "As the patrol crosses a muddy bog, shivering with the cold, there's a creaking, rushing sound, like a wave - but the swamp shouldn't have any waves.",
+    "decline_text": "Your patrol scrambles back the way they came, fluffed up and panting.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "The cats leap forward, dashing to the other side of the bog and up into the trees. They make it in time to watch the swamp get lost under a tide of water from inland.",
+        null,
+        "s_c shouts to get back! The patrol scrambles back the way they came and watches the swamp disappear under a flood of water. It leaves behind a changed landscape, tons of debris - and a large dead sheep. Your cats pounce on the opportunity to scavenge.",
+        "s_c shrieks at the strange sound, paws digging into the mud as they turn and run for home. The rest of the patrol yowls at them to stop, running after them, but s_c is proven right when the swamp disappears under a flood of water from inland. They've saved them all."
+    ],
+    "fail_text": [
+        null,
+        null,
+        "The cats are in the middle of the bog when the flood hits them, freezing water rushing past, sweeping them straight out into the churning river, under it's ice.",
+        null
+    ],
+    "win_skills": [
+        "extremely smart"
+    ],
+    "win_trait": [
+        "careful",
+        "insecure",
+        "nervous"
+    ],
+    "fail_skills": [
+        "None"
+    ],
+    "fail_trait": [
+        "None"
+    ],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        null,
+        "This cat was killed by a flood."
+    ]
+},
+{
     "patrol_id": "fst_bord_roguedis1",
     "biome": "forest",
     "season": "Any",

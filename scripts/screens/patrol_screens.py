@@ -453,6 +453,28 @@ class PatrolScreen(Screens):
             s += index + 3
         text = text.replace('c_n', str(game.clan.name) + 'Clan')
 
+        #Prey lists for forest random prey patrols
+        fst_tinyprey_singlular = ['shrew', 'robin', 'vole', 'dormouse', 'blackbird',
+                     'wood mouse', 'lizard', 'tiny grass snake', 'finch', 'sparrow', 
+                     'small bird', 'young rat', 'young hedgehog', 'big beetle', 'woodrat',
+                     'white-footed mouse', 'golden mouse', 'young squirrel', 'chipmunk', ]
+        text = text.replace('f_tp_s', str(fst_tinyprey_singlular))
+
+        fst_tinyprey_plural = ['mice', 'mice', 'mice', 'shrews', 'robins', 'voles', 'mice', 'blackbirds',
+                     'mice', 'mice', 'lizards', 'small birds', 'small birds', 'sparrows', 
+                     'sleepy dormice', 'chipmunks', 'woodrats', ]
+        text = text.replace('f_tp_p', str(fst_tinyprey_plural))
+
+        fst_midprey_singlular = ['plump shrew', 'woodpecker', 'mole', 'fat dormouse', 'blackbird',
+                     'field vole', 'big lizard', 'grass snake', 'half-grown rabbit', 'hedgehog', 
+                     'red squirrel', 'grey squirrel', 'rat', 'flying squirrel', 'kingfisher', ]
+        text = text.replace('f_mp_s', str(fst_midprey_singlular))
+
+        fst_midprey_plural = ['plump shrews', 'woodpeckers', 'moles', 'blackbirds',
+                     'field voles', 'big lizards', 'grass snakes', 'half-grown rabbits', 'hedgehogs', 
+                     'red squirrels', 'grey squirrels', 'rats', ]
+        text = text.replace('f_mp_p', str(fst_midprey_plural))
+
         sign_list = ['strangely-patterned stone', 'sharp stick', 'prey bone', 'cloud shaped like a cat',
                      'tuft of red fur', 'red feather', 'brown feather', 'black feather', 'white feather',
                      'star-shaped leaf',

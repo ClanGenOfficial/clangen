@@ -2691,7 +2691,7 @@
     "patrol_id": "bch_hunt_redfox_steal3",
     "biome": "beach",
     "season": "Any",
-    "tags": ["hunting", "small_prey", "fighting", "death", "scar", "big_bite_injury",  "clan_to_patrol", "respect"],
+    "tags": ["hunting", "small_prey", "fighting", "scar", "big_bite_injury",  "clan_to_patrol", "respect"],
     "intro_text": "r_c catches the scent of a fox - but is it red, or gray? And is it worth a fight if they encounter it?",
     "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
     "chance_of_success": 30,

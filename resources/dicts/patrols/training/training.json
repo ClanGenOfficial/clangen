@@ -256,7 +256,7 @@
     "patrol_id": "gen_train_vision1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "respect", "trust", "jealousy", "big_change", "s_c_to_r_c", "patrol_to_r_c"],
+    "tags": ["training", "warrior", "respect", "trust", "jealousy", "big_change", "s_c_to_r_c", "patrol_to_r_c"],
     "intro_text": "As the patrol gathers together to train under p_l's leadership, r_c admits they think they had a vision from StarClan last night.",
     "decline_text": "The patrol doesn't talk about the vision.",
     "chance_of_success": 70,
@@ -300,6 +300,27 @@
     "antagonize_fail_text": null
 },
 {
+    "patrol_id": "gen_train_vision3",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "two_apprentices", "dislike", "platonic", "jealousy", "big_change"],
+    "intro_text": "As app1 and app2 collect moss for the elder's den, app2 admits that the strange dreams they've been having is why they kicked app1 in the night.",
+    "decline_text": "The apprentices don't talk about the dreams.",
+    "chance_of_success": 70,
+    "exp": 20,
+    "success_text": [
+        "It's alright, app1 assures app2. It wasn't on purpose - maybe they could head to the medicine den after this, there're heaps of herbs to help app2 sleep, and this totally explains why they've been yawning so much during training.",
+        "That's kinda odd. app1 hastens to add that that doens't mean it's bad, but maybe they should tell their mentors about this. Maybe it's something to do with StarClan?"
+    ],
+    "fail_text": [
+        "That's super weird, app1 tells them. Does app2's mentor know that they're so weird?"
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
     "patrol_id": "gen_train_ghost1",
     "biome": "Any",
     "season": "Any",
@@ -317,7 +338,7 @@
             "A branch snaps and the whole patrol runs back to camp. Later an argument starts about what caused the noise."
     ],
     "win_skills": ["strong connection to StarClan"],
-    "min_cats": 2,
+    "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null
@@ -343,7 +364,7 @@
     ],
     "win_trait": ["charismatic", "childish", "confident", "playful", "shameless", "strange"],
     "fail_trait": ["ambitious", "bloodthirsty", "childish", "cold", "confident", "fierce", "insecure","troublesome"],
-    "min_cats": 2,
+    "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null

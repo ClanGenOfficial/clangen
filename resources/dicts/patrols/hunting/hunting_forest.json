@@ -2435,7 +2435,7 @@
 		"history_text": [
 			"r_c caught a chill while hunting in leaf-bare.",
 			"r_c froze to death while hunting in a storm.",
-    			"froze to death while hunting"
+    		"froze to death while hunting"
 		]
 	},
 	{
@@ -5480,76 +5480,209 @@
         "antagonize_fail_text": null
     },
 	{
-        "patrol_id": "fst_hunt_genmicecrush1",
+        "patrol_id": "fst_hunt_mice_ohnotheyrehot1",
         "biome": "forest",
-        "season": "Any",
+        "season": "newleaf",
         "tags": [
-            "hunting", "no_app", "romantic", "jealousy", "three_apprentices", "medium_prey"
+            "hunting", "romantic", "respect", "pos_jealous", "pos_dislike", "patrol_to_r_c", "medium_prey"
         ],
-        "intro_text": "r_c catches scent of a mouse nearby. A perfect opportunity to pick up one of the first bounties newleaf brings to the forest.",
-        "decline_text": "Your patrol ignores the mouse.",
+        "intro_text": "As the patrol heads out into the forest to hunt, r_c seems to be absolutely unconcerned with their duties, instead ambling along as through the prey is going to waltz into their paws.",
+        "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
+        "chance_of_success": 60,
+        "exp": 20,
         "success_text": [
-            "r_c locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. r_c waggles their haunches and leaps, pinning the mouse beneath a paw as they make the killing bite.",
-            "r_c pinpoints the location of the prey and begins creeping forward. They're almost within pouncing distance when the mouse suddenly bolts. With a lash of their tail, r_c leaps after the mouse, barely snagging it before it reaches a burrow. They purr in satisfaction as prey-blood hits their tongue.",
-			"s_c immediately drops into a practised crouch, shimmying flawlessly along the ground and taking the perfectly plump mouse completely by surprise."
+            "r_c makes it look easy, and when the patrol is done mousing everyone else ends up carrying catches mostly brought down by them. They lead the way back to camp, sauntering with a distinctly smug sway of their hips.",
+            null,
+			"Of course s_c is unconcerned, s_c knows their own skills well, and mice? not a challenge. After their fifth catch the rest of the patrol is forced to admit they might have a point about not needing to worry.",
+            "As the patrol settles in, tracking mouse scent mostly, s_c wanders back, and as they put a paw down the ground squeaks. They lean down, jaws snapping, and meet the eyes of the rest of the patrol with an insolent smirk."
         ],
         "fail_text": [
-            "r_c narrowly misses the mouse."
+            "r_c doesn't bring much home, impressing nobody."
         ],
-        "chance_of_success": 60,
-        "exp": 10,
         "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
-        "min_cats": 2,
+		"win_trait": ["bold", "charismatic", "childish", "confident", "daring", "fierce", "shameless", "troublesome"],
+        "min_cats": 3,
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null
     },
 	{
-        "patrol_id": "fst_hunt_genmicecrush2",
+        "patrol_id": "fst_hunt_mice_ohnotheyrehot2",
         "biome": "forest",
-        "season": "Any",
+        "season": "greenleaf",
         "tags": [
-            "hunting", "no_app", "romantic", "jealousy", "three_apprentices", "medium_prey"
+            "hunting", "romantic", "respect", "pos_jealous", "pos_dislike", "patrol_to_r_c", "medium_prey"
         ],
-        "intro_text": "r_c catches scent of a mouse nearby. A perfect opportunity to pick up one of the first bounties newleaf brings to the forest.",
-        "decline_text": "Your patrol ignores the mouse.",
+        "intro_text": "As the patrol heads out into the forest to hunt, r_c seems to be absolutely unconcerned with their duties, instead ambling along as through the prey is going to waltz into their paws.",
+        "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
+        "chance_of_success": 60,
+        "exp": 20,
         "success_text": [
-            "r_c locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. r_c waggles their haunches and leaps, pinning the mouse beneath a paw as they make the killing bite.",
-            "r_c pinpoints the location of the prey and begins creeping forward. They're almost within pouncing distance when the mouse suddenly bolts. With a lash of their tail, r_c leaps after the mouse, barely snagging it before it reaches a burrow. They purr in satisfaction as prey-blood hits their tongue.",
-			"s_c immediately drops into a practised crouch, shimmying flawlessly along the ground and taking the perfectly plump mouse completely by surprise."
+            "r_c makes it look easy, and when the patrol is done mousing everyone else ends up carrying catches mostly brought down by them. They lead the way back to camp, sauntering with a distinctly smug sway of their hips.",
+            null,
+			"Of course s_c is unconcerned, s_c knows their own skills well, and mice? not a challenge. After their fifth catch the rest of the patrol is forced to admit they might have a point about not needing to worry.",
+            "As the patrol settles in, tracking mouse scent mostly, s_c wanders back, and as they put a paw down the ground squeaks. They lean down, jaws snapping, and meet the eyes of the rest of the patrol with an insolent smirk."
         ],
         "fail_text": [
-            "r_c narrowly misses the mouse."
+            "r_c doesn't bring much home, impressing nobody."
         ],
-        "chance_of_success": 60,
-        "exp": 10,
         "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
-        "min_cats": 2,
+		"win_trait": ["bold", "charismatic", "childish", "confident", "daring", "fierce", "shameless", "troublesome"],
+        "min_cats": 3,
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null
     },
 	{
-        "patrol_id": "fst_hunt_genmicecrush3",
+        "patrol_id": "fst_hunt_mice_ohnotheyrehot3",
         "biome": "forest",
-        "season": "Any",
+        "season": "leaf-fall",
         "tags": [
-            "hunting", "no_app", "romantic", "jealousy", "three_apprentices", "medium_prey"
+            "hunting", "romantic", "respect", "pos_jealous", "pos_dislike", "patrol_to_r_c", "medium_prey"
         ],
-        "intro_text": "r_c catches scent of a mouse nearby. A perfect opportunity to pick up one of the first bounties newleaf brings to the forest.",
-        "decline_text": "Your patrol ignores the mouse.",
+        "intro_text": "As the patrol heads out into the forest to hunt, r_c seems to be absolutely unconcerned with their duties, instead ambling along as through the prey is going to waltz into their paws.",
+        "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
+        "chance_of_success": 50,
+        "exp": 20,
         "success_text": [
-            "r_c locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. r_c waggles their haunches and leaps, pinning the mouse beneath a paw as they make the killing bite.",
-            "r_c pinpoints the location of the prey and begins creeping forward. They're almost within pouncing distance when the mouse suddenly bolts. With a lash of their tail, r_c leaps after the mouse, barely snagging it before it reaches a burrow. They purr in satisfaction as prey-blood hits their tongue.",
-			"s_c immediately drops into a practised crouch, shimmying flawlessly along the ground and taking the perfectly plump mouse completely by surprise."
+            "r_c makes it look easy, and when the patrol is done mousing everyone else ends up carrying catches mostly brought down by them. They lead the way back to camp, sauntering with a distinctly smug sway of their hips.",
+            null,
+			"Of course s_c is unconcerned, s_c knows their own skills well, and mice? not a challenge. After their fifth catch the rest of the patrol is forced to admit they might have a point about not needing to worry.",
+            "As the patrol settles in, tracking mouse scent mostly, s_c wanders back, and as they put a paw down the ground squeaks. They lean down, jaws snapping, and meet the eyes of the rest of the patrol with an insolent smirk."
         ],
         "fail_text": [
-            "r_c narrowly misses the mouse."
+            "r_c doesn't bring much home, impressing nobody."
         ],
-        "chance_of_success": 60,
-        "exp": 10,
         "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
-        "min_cats": 2,
+		"win_trait": ["bold", "charismatic", "childish", "confident", "daring", "fierce", "shameless", "troublesome"],
+        "min_cats": 3,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "fst_hunt_mice_ohnotheyrehot4",
+        "biome": "forest",
+        "season": "leaf-bare",
+        "tags": [
+            "hunting", "romantic", "respect", "pos_jealous", "pos_dislike", "patrol_to_r_c", "medium_prey"
+        ],
+        "intro_text": "As the patrol heads out into the forest to hunt, r_c seems to be absolutely unconcerned with their duties, instead ambling along as through the prey is going to waltz into their paws.",
+        "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
+        "chance_of_success": 20,
+        "exp": 20,
+        "success_text": [
+            "r_c makes it look easy, and when the patrol is done mousing everyone else ends up carrying catches mostly brought down by them. They lead the way back to camp, sauntering with a distinctly smug sway of their hips.",
+            null,
+			"Of course s_c is unconcerned, s_c knows their own skills well, and mice? not a challenge. After their fifth catch the rest of the patrol is forced to admit they might have a point about not needing to worry.",
+            "As the patrol settles in, tracking mouse scent mostly, s_c wanders back, and as they put a paw down the ground squeaks. They lean down, jaws snapping, and meet the eyes of the rest of the patrol with an insolent smirk."
+        ],
+        "fail_text": [
+            "r_c doesn't bring much home, impressing nobody."
+        ],
+        "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
+		"win_trait": ["bold", "charismatic", "childish", "confident", "daring", "fierce", "shameless", "troublesome"],
+        "min_cats": 3,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "fst_hunt_mice1",
+        "biome": "forest",
+        "season": "newleaf",
+        "tags": [
+            "hunting", "respect", "patrol_to_r_c", "medium_prey0", "large_prey1", "large_prey2"
+        ],
+        "intro_text": "As the patrol heads out into the forest to hunt, r_c suggests a good sheltered gully. It's a little far from camp, but the hunting around there is good, particularly for mice.",
+        "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "As they arrive, the patrol startles two mice, and r_c manages to react quick enough with an inelegant pounce to kill one. It's a good omen for the rest of the morning's work, which proves to be a productive and satisfying hunt.",
+            "Your cats sneak into the hunting grounds, ears rotating as different spots catch their interest. r_c's suggestion proves to be a fruitful hunting ground, one that c_n hasn't used for a while and whose creatures (as predicted, nearly all mice) have lost their edge of wariness. It's a good hunt.",
+			"These are the times that it really pays to have a hunter of s_c's caliber on the patrol - they really go above and beyond, impressing everyone and leaving a trail of terror among the local mice."
+        ],
+        "fail_text": [
+            "Ah. r_c's suggested hunting grounds don't work out, not that anyone blames them for it."
+        ],
+        "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
+        "min_cats": 3,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "fst_hunt_mice2",
+        "biome": "forest",
+        "season": "greenleaf",
+        "tags": [
+            "hunting", "respect", "patrol_to_r_c", "medium_prey0", "large_prey1", "large_prey2"
+        ],
+        "intro_text": "As the patrol heads out into the forest to hunt, r_c suggests a good sheltered gully. It's a little far from camp, but the hunting around there is good, particularly for mice.",
+        "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "As they arrive, the patrol startles two mice, and r_c manages to react quick enough with an inelegant pounce to kill one. It's a good omen for the rest of the morning's work, which proves to be a productive and satisfying hunt.",
+            "Your cats sneak into the hunting grounds, ears rotating as different spots catch their interest. r_c's suggestion proves to be a fruitful hunting ground, one that c_n hasn't used for a while and whose creatures (as predicted, nearly all mice) have lost their edge of wariness. It's a good hunt.",
+			"These are the times that it really pays to have a hunter of s_c's caliber on the patrol - they really go above and beyond, impressing everyone and leaving a trail of terror among the local mice."
+        ],
+        "fail_text": [
+            "Ah. r_c's suggested hunting grounds don't work out, not that anyone blames them for it."
+        ],
+        "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
+        "min_cats": 3,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "fst_hunt_mice3",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting", "respect", "patrol_to_r_c", "medium_prey0", "large_prey1", "large_prey2"
+        ],
+        "intro_text": "As the patrol heads out into the forest to hunt, r_c suggests a good sheltered gully. It's a little far from camp, but the hunting around there is good, particularly for mice.",
+        "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "As they arrive, the patrol startles two mice, and r_c manages to react quick enough with an inelegant pounce to kill one. It's a good omen for the rest of the morning's work, which proves to be a productive and satisfying hunt.",
+            "Your cats sneak into the hunting grounds, ears rotating as different spots catch their interest. r_c's suggestion proves to be a fruitful hunting ground, one that c_n hasn't used for a while and whose creatures (as predicted, nearly all mice) have lost their edge of wariness. It's a good hunt.",
+			"These are the times that it really pays to have a hunter of s_c's caliber on the patrol - they really go above and beyond, impressing everyone and leaving a trail of terror among the local mice."
+        ],
+        "fail_text": [
+            "Ah. r_c's suggested hunting grounds don't work out, not that anyone blames them for it."
+        ],
+        "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
+        "min_cats": 3,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "fst_hunt_mice4",
+        "biome": "forest",
+        "season": "leaf-bare",
+        "tags": [
+            "hunting", "respect", "patrol_to_r_c", "medium_prey0", "large_prey1", "large_prey2"
+        ],
+        "intro_text": "As the patrol heads out into the forest to hunt, r_c suggests a good sheltered gully. It's a little far from camp, and the walk will be chilly, but the hunting around there is good, particularly for mice.",
+        "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
+        "chance_of_success": 40,
+        "exp": 20,
+        "success_text": [
+            "As they arrive, the patrol startles two mice, and r_c manages to react quick enough with an inelegant pounce to kill one. It's a good omen for the rest of the morning's work, which proves to be a productive and satisfying hunt.",
+            "Your cats sneak into the hunting grounds, ears rotating as different spots catch their interest. r_c's suggestion proves to be a fruitful hunting ground, one that c_n hasn't used for a while and whose creatures (as predicted, nearly all mice) have lost their edge of wariness. It's a good hunt.",
+			"These are the times that it really pays to have a hunter of s_c's caliber on the patrol - they really go above and beyond, impressing everyone and leaving a trail of terror among the local mice."
+        ],
+        "fail_text": [
+            "Ah. r_c's suggested hunting grounds don't work out, not that anyone blames them for it."
+        ],
+        "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
+        "min_cats": 3,
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null

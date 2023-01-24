@@ -465,8 +465,8 @@
             "distrust",
             "clan_to_r_c",
             "patrol_to_r_c",
-            "medium_prey0",
-            "huge_prey1"
+            "small_prey0",
+            "large_prey1"
         ],
         "intro_text": "r_c is tempted to eat the prey they just caught.",
         "decline_text": "r_c decides against breaking the warrior code",
