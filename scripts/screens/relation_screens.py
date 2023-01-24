@@ -636,7 +636,7 @@ class ViewChildrenScreen(Screens):
                                                                               object_id="#cat_patrol_info_box")
 
         else:
-            print(f'Error: cat {str(self.the_cat.mate)} not found',
+            print(f'ERROR: cat {str(self.the_cat.mate)} not found',
                   (342, 165))
 
         # OFFSPRING
@@ -1224,7 +1224,7 @@ class ChooseMateScreen(Screens):
 
         if 10 <= romantic_love <= 30:
             heart_number = 1
-        elif 41 <= romantic_love <= 80:
+        elif 31 <= romantic_love <= 80:
             heart_number = 2
         elif 81 <= romantic_love:
             heart_number = 3

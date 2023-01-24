@@ -25,7 +25,7 @@ class Sprites():
             with open("sprites/dicts/tint.json", 'r') as read_file:
                 Sprites.cat_tints = ujson.loads(read_file.read())
         except:
-            print("Error Reading Tints")
+            print("ERROR: Reading Tints")
 
     def spritesheet(self, a_file, name):
         """
@@ -249,14 +249,14 @@ for x in [
     'mackerelcolours', 'classiccolours', 'sokokecolours', 'agouticolours', 'mackerelextra',
     'classicextra', 'sokokeextra', 'agoutiextra',
     'whitepatches3', 'whitepatches3extra', 'whitepatches4', 'whitepatches4extra',
-    'Newscars', 'Newscarsextra', 'shaders', 'lineartdead',
+    'Newscars', 'Newscarsextra', 'shadersnewwhite', 'lineartdead',
     'tortiecolourssolid', 'tortiecolourstabby', 'tortiecoloursbengal', 'tortiecoloursmarbled',
     'tortiecoloursticked', 'tortiecolourssmoke', 'tortiecoloursrosette', 'tortiecoloursspeckled',
     'tortiecoloursmackerel', 'tortiecoloursclassic', 'tortiecolourssokoke', 'tortiecoloursagouti',
     'tortiesextrasolid', 'tortiesextratabby', 'tortiesextrabengal', 'tortiesextramarbled', 'tortiesextraticked',
     'tortiesextrasmoke', 'tortiesextrarosette', 'tortiesextraspeckled',
     'tortiesextramackerel', 'tortiesextraclassic', 'tortiesextrasokoke', 'tortiesextraagouti',
-    'medcatherbs', 'medcatherbsextra', 'lineartdf', 'eyes_df', 'eyesextra_df'
+    'medcatherbs', 'medcatherbsextra', 'lineartdf', 'eyes_df', 'eyesextra_df', 'lightingnew'
 
 ]:
     sprites.spritesheet(f"sprites/{x}.png", x)
@@ -279,7 +279,9 @@ sprites.make_group('Paralyzed_lineart', (0, 0),
                    'p_lines',
                    sprites_x=1,
                    sprites_y=1)
-sprites.make_group('shaders', (0, 0), 'shaders', sprites_y=5)
+sprites.make_group('shadersnewwhite', (0, 0), 'shaders', sprites_y=5)
+sprites.make_group('lightingnew', (0, 0), 'lighting', sprites_y=5)
+
 sprites.make_group('lineartdead', (0, 0), 'lineartdead', sprites_y=5)
 sprites.make_group('lineartdf', (0, 0), 'lineartdf', sprites_y=5)
 
@@ -345,7 +347,7 @@ for a, i in enumerate(
     sprites.make_group('whitepatches3', (a, 3), f'white{i}')
     sprites.make_group('whitepatches3extra', (a, 3), f'whiteextra{i}', sprites_y=2)
 
-# beejeans white patches
+# beejeans white patches + perrio's point marks
 for a, i in enumerate(['PANTS', 'REVERSEPANTS', 'SKUNK', 'KARPATI', 'HALFWHITE', 'APPALOOSA', 'PIEBALD', 'CURVED']):
     sprites.make_group('whitepatches4', (a, 0), 'white' + i)
     sprites.make_group('whitepatches4extra', (a, 0), 'whiteextra' + i, sprites_y=2)

@@ -341,13 +341,13 @@ class Cat():
             self.genderalign = self.gender
 
         # APPEARANCE
-        init_eyes(self)
         init_pelt(self)
         init_tint(self)
         init_sprite(self)
         init_scars(self)
         init_accessories(self)
         init_white_patches(self)
+        init_eyes(self)
         init_pattern(self)
 
         # NAME
@@ -433,9 +433,9 @@ class Cat():
                 self.dead = True
                 game.clan.leader_lives = 0
                 if game.clan.instructor.df is False:
-                    text = 'They\'ve lost their last life and has travelled to StarClan.'
+                    text = 'They\'ve lost their last life and have travelled to StarClan.'
                 else:
-                    text = 'They\'ve has lost their last life and has travelled to the Dark Forest.'
+                    text = 'They\'ve has lost their last life and have travelled to the Dark Forest.'
         else:
             self.dead = True
 
@@ -776,8 +776,6 @@ class Cat():
 
         # If we have it sorted by rank, we also need to re-sort
         if game.sort_type == "rank" and resort:
-            print(str(self.name))
-            print("sorting...")
             Cat.sort_cats()
 
     def update_traits(self):
@@ -873,6 +871,46 @@ class Cat():
         description = str(self.pelt.length).lower() + '-furred'
         description += ' ' + describe_color(self.pelt, self.tortiecolour, self.tortiepattern, self.white_patches) + ' ' + sex
         return description
+
+    def describe_eyes(self):
+        colour = str(self.eye_colour).lower()
+        colour2 = str(self.eye_colour2).lower()
+
+        if colour == 'palegreen':
+            colour = 'pale green'
+        elif colour == 'darkblue':
+            colour = 'dark blue'
+        elif colour == 'paleblue':
+            colour = 'pale blue'
+        elif colour == 'paleyellow':
+            colour = 'pale yellow'
+        elif colour == 'heatherblue':
+            colour = 'heather blue'
+        elif colour == 'blue2':
+            colour = 'blue'
+        elif colour == 'sunlitice':
+            colour = 'sunlit ice'
+        elif colour == 'greenyellow':
+            colour = 'green-yellow'
+        if self.eye_colour2 != None:
+            if colour2 == 'palegreen':
+                colour2 = 'pale green'
+            if colour2 == 'darkblue':
+                colour2 = 'dark blue'
+            if colour2 == 'paleblue':
+                colour2 = 'pale blue'
+            if colour2 == 'paleyellow':
+                colour2 = 'pale yellow'
+            if colour2 == 'heatherblue':
+                colour2 = 'heather blue'
+            if colour2 == 'blue2':
+                colour2 = 'blue'
+            if colour2 == 'sunlitice':
+                colour2 = 'sunlit ice'
+            if colour2 == 'greenyellow':
+                colour2 = 'green-yellow'
+            colour = colour + ' and ' + colour2
+        return colour
 
 # ---------------------------------------------------------------------------- #
 #                              moon skip functions                             #
@@ -1030,7 +1068,7 @@ class Cat():
                     chance = randint(0, 5)
                     mentor = Cat.fetch_cat(self.former_mentor[-1])
                     if not mentor:
-                        print("error - mentor not found")
+                        print("WARNING: mentor not found")
                         return
                     # give skill from mentor, this is a higher chance of happening than the warrior has
                     # bc med cats have no patrol_with_mentor modifier
@@ -1057,7 +1095,7 @@ class Cat():
                     chance = randint(0, 9) + int(self.patrol_with_mentor)
                     mentor = Cat.fetch_cat(self.former_mentor[-1])
                     if not mentor:
-                        print("error - mentor not found")
+                        print("WARNING: mentor not found")
                         return
                     # give skill from mentor
                     if chance >= 9:
@@ -1428,7 +1466,6 @@ class Cat():
                         game.clan.herbs.pop(herb_used)
                     avoided = True
                     text = f"{str(herb_used).capitalize()} was used to stop blood loss for {self.name}."
-                    print(herb_used)
                     game.herb_events_list.append(text)
 
             if not avoided:
@@ -1663,8 +1700,7 @@ class Cat():
                     self.permanent_condition = rel_data.get("permanent conditions")
 
         except Exception as e:
-            print(e)
-            print(f'WARNING: There was an error reading the condition file of cat #{self}.')
+            print(f"WARNING: There was an error reading the condition file of cat #{self}.\n", e)
 
 
 # ---------------------------------------------------------------------------- #
@@ -2463,7 +2499,6 @@ class Cat():
     @staticmethod
     def load_faded_cat(cat: str):
         """Loads a faded cat, returning the cat object. This object is saved nowhere else. """
-        #print("Attempting to load faded cat")
         try:
             with open('saves/' + game.clan.name + '/faded_cats/' + cat + ".json", 'r') as read_file:
                 cat_info = ujson.loads(read_file.read())
@@ -2471,7 +2506,7 @@ class Cat():
             with open('saves/' + game.switches['clan_list'][0] + '/faded_cats/' + cat + ".json", 'r') as read_file:
                 cat_info = ujson.loads(read_file.read())
         except:
-            print("Error in loading faded cat")
+            print("ERROR: in loading faded cat")
             return False
 
         cat_ob = Cat(ID=cat_info["ID"], prefix=cat_info["name_prefix"], suffix=cat_info["name_suffix"],
@@ -2484,8 +2519,6 @@ class Cat():
         cat_ob.faded_offspring = cat_info["faded_offspring"]
         cat_ob.faded = True
 
-        #print(str(cat_ob.name) + " has been loaded")
-
         return cat_ob
 
     # ---------------------------------------------------------------------------- #
@@ -2496,7 +2529,6 @@ class Cat():
     def sort_cats():
         if game.sort_type == "age":
             Cat.all_cats_list.sort(key=lambda x: Cat.get_adjusted_age(x))
-            print("sort")
         elif game.sort_type == "reverse_age":
             Cat.all_cats_list.sort(key=lambda x: Cat.get_adjusted_age(x), reverse=True)
         elif game.sort_type == "id":

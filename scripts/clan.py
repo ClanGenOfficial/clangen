@@ -1,5 +1,6 @@
 from scripts.cat.cats import *
 from scripts.game_structure.load_cat import *
+from scripts.clan_resources.freshkill import Freshkill_Pile, Nutrition
 from os import path
 
 try:
@@ -130,6 +131,10 @@ class Clan():
             self.pregnancy_data = {}
             self.reputation = 50
             self.starting_members = starting_members
+            if game_mode in ['expanded', 'cruel season']:
+                self.freshkill_pile = Freshkill_Pile()
+            else:
+                self.freshkill_pile = None
 
             self.faded_ids = []  # Stores ID's of faded cats, to ensure these IDs aren't reused.
 
@@ -358,6 +363,8 @@ class Clan():
         clan_data["other_clan_temperament"] = ",".join([str(i.temperament) for i in self.all_clans])
 
         self.save_herbs(game.clan)
+        if game.clan.game_mode in ['expanded', 'cruel season']:
+            self.save_freshkill_pile(game.clan)
 
         with open(f'saves/{self.name}clan.json', 'w') as write_file:
             json_string = ujson.dumps(clan_data, indent=4)
@@ -369,7 +376,6 @@ class Clan():
                 list_data = list_data + game.switches['clan_list'][i] + "\n"
         with open('saves/clanlist.txt', 'w') as write_file:
             write_file.write(list_data)
-
 
     def load_clan(self):
         if os.path.exists('saves/' + game.switches['clan_list'][0] + 'clan.json'):
@@ -522,7 +528,7 @@ class Clan():
                 game.clan.add_cat(Cat.all_cats[cat])
                 game.clan.add_to_starclan(Cat.all_cats[cat])
             else:
-                print('Cat not found:', cat)
+                print('WARNING: Cat not found:', cat)
         self.load_pregnancy(game.clan)
         game.switches['error_message'] = ''
 
@@ -603,7 +609,7 @@ class Clan():
                 game.clan.add_cat(Cat.all_cats[cat])
                 game.clan.add_to_starclan(Cat.all_cats[cat])
             else:
-                print('Cat not found:', cat)
+                print('WARNING: Cat not found:', cat)
 
         if "faded_cats" in clan_data:
             if clan_data["faded_cats"].strip():  # Check for empty string
@@ -623,6 +629,8 @@ class Clan():
 
         self.load_pregnancy(game.clan)
         self.load_herbs(game.clan)
+        if game.clan.game_mode in ['expanded', 'cruel season']:
+            self.load_freshkill_pile(game.clan)
         game.switches['error_message'] = ''
 
     def load_herbs(self, clan):
@@ -654,7 +662,7 @@ class Clan():
                 json_string = ujson.dumps(clan.herbs, indent=4)
                 file.write(json_string)
         except:
-            print(f"Saving the herb data didn't work.")
+            print(f"ERROR: Saving the herb data didn't work.")
 
     def load_pregnancy(self, clan):
         if not game.clan.name:
@@ -675,8 +683,57 @@ class Clan():
                 json_string = ujson.dumps(clan.pregnancy_data, indent=4)
                 file.write(json_string)
         except:
-            print(f"Saving the pregnancy data didn't work.")
+            print(f"ERROR: Saving the pregnancy data didn't work.")
 
+    def load_freshkill_pile(self, clan):
+        if not game.clan.name or clan.game_mode == 'classic':
+            return
+
+        file_path = f"saves/{game.clan.name}/freshkill_pile.json"
+        try:
+            if os.path.exists(file_path):
+                with open(file_path, 'r') as read_file:
+                    pile = ujson.load(read_file)
+                    clan.freshkill_pile = Freshkill_Pile(pile)
+
+                file_path = f"saves/{game.clan.name}/nutrition_info.json"
+                if os.path.exists(file_path) and clan.freshkill_pile:
+                    with open(file_path, 'r') as read_file:
+                        nutritions = ujson.load(read_file)
+                        for k, nutr in nutritions.items():
+                            nutrition = Nutrition()
+                            nutrition.max_score = nutr['max_score']
+                            nutrition.current_score = nutr['current_score']
+                            clan.freshkill_pile.nutrition_info[k] = nutrition
+            else:
+                clan.freshkill_pile = Freshkill_Pile()
+        except:
+            clan.freshkill_pile = Freshkill_Pile()
+
+    def save_freshkill_pile(self, clan):
+        if clan.game_mode == "classic" or not clan.freshkill_pile:
+            return
+
+        try:
+            with open(f"saves/{game.clan.name}/freshkill_pile.json", 'w') as rel_file:
+                json_string = ujson.dumps(clan.freshkill_pile.pile, indent = 4)
+                rel_file.write(json_string)
+        except:
+            print(f"ERROR: Saving the freshkill pile didn't work.")
+
+        try:
+            with open(f"saves/{game.clan.name}/nutrition_info.json", 'w') as rel_file:
+                data = {}
+                for k, nutr in clan.freshkill_pile.nutrition_info.items():
+                    data[k] = {
+                        "max_score": nutr.max_score,
+                        "current_score": nutr.current_score,
+                        "percentage": nutr.percentage,
+                    }
+                json_string = ujson.dumps(data, indent = 4)
+                rel_file.write(json_string)
+        except:
+            print(f"ERROR: Saving nutrition information of the freshkill pile didn't work.")
 
 class OtherClan():
 

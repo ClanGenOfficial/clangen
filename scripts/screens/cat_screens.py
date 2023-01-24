@@ -766,9 +766,7 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # EYE COLOR
-        output += 'eyes: ' + the_cat.eye_colour.lower()
-        if the_cat.eye_colour2:
-            output = output + ' and ' + the_cat.eye_colour2.lower()
+        output += 'eyes: ' + str(the_cat.describe_eyes())
         # NEWLINE ----------
         output += "\n"
 
@@ -945,6 +943,18 @@ class ProfileScreen(Screens):
         # NEWLINE ----------
         output += "\n"
 
+        # NUTRITION INFO (if the game is in the correct mode)
+        if game.clan.game_mode in ["expanded", "cruel season"] and the_cat.is_alive():
+            nutr = None
+            if the_cat.ID in game.clan.freshkill_pile.nutrition_info:
+                nutr = game.clan.freshkill_pile.nutrition_info[the_cat.ID]
+            if nutr:
+                output += "\n"
+                output += f"nutrition status: {round(nutr.percentage, 1)}%\n"
+            else:
+                output += "\n"
+                output += f"nutrition status: 100%\n"
+
         if the_cat.is_disabled():
             for condition in the_cat.permanent_condition:
                 if the_cat.permanent_condition[condition]['born_with'] is True and \
@@ -1078,8 +1088,7 @@ class ProfileScreen(Screens):
                 if str(self.the_cat.ID) in rel_data:
                     self.user_notes = rel_data.get(str(self.the_cat.ID))
         except Exception as e:
-            print(e)
-            print(f'WARNING: there was an error reading the Notes file of cat #{self.the_cat.ID}.')
+            print(f"ERROR: there was an error reading the Notes file of cat #{self.the_cat.ID}.\n", e)
 
     def toggle_history_sub_tab(self):
         """To toggle the history-sub-tab"""
@@ -1700,7 +1709,7 @@ class ProfileScreen(Screens):
                                                           starting_height=2, object_id="#promote_deputy_button")
                 self.toggle_deputy_button.disable()
 
-            if self.the_cat.status in ['elder', 'kitten', 'apprentice', 'medicine cat apprentice', 'mediator apprentice']:
+            if self.the_cat.status in ['elder', 'kitten', 'apprentice', 'medicine cat apprentice', 'mediator apprentice'] or self.the_cat.dead or self.the_cat.exiled or self.the_cat.outside:
                 self.retire_button.disable()
             else:
                 self.retire_button.enable()
