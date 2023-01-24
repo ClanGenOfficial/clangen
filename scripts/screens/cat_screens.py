@@ -1741,15 +1741,10 @@ class ProfileScreen(Screens):
             if self.switch_mediator_button:
                 self.switch_mediator_button.kill()
 
-            if self.the_cat.status in ["warrior", "elder", "medicine cat"]:
+            if self.the_cat.status in ["warrior", "elder", "medicine cat", "apprentice", "medicine cat apprentice"]:
                 self.switch_mediator_button = pygame_gui.elements.UIButton(pygame.Rect(tuple(next_button_location),
                                                                                        (172, 36)),
                                                                            "Switch to mediator",
-                                                                           starting_height=2)
-            elif self.the_cat.status in ["apprentice", "medicine cat apprentice"]:
-                self.switch_mediator_button = pygame_gui.elements.UIButton(pygame.Rect(tuple(next_button_location),
-                                                                                       (172, 52)),
-                                                                           "Switch to mediator apprentice",
                                                                            starting_height=2)
             else:
                 self.switch_mediator_button = None
