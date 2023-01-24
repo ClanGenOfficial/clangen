@@ -782,8 +782,8 @@ class Events():
 
                 "Interested in herbs even in their kithood, " + str(cat.name) + " is eager to be apprenticed to "
                 + mentor_name + ".",
-                "Interested in all the myths and stories told by the elders and queens " +
-                str(cat.name) + " decides to become a medicine cat apprentice hoping to someday speak to "
+                "Interested in all the myths and stories told by the elders and queens, " +
+                str(cat.name) + " decides to become a medicine cat apprentice, hoping to someday speak to "
                                 "those gone before. " + mentor_name + " loves their determination and eagerness "
                                 "to learn and agrees to take them on as their apprentice.",
                                 "The thought alone of fighting and hurting another cat makes " + str(cat.name) +
