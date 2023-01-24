@@ -359,17 +359,17 @@ class ProfileScreen(Screens):
                 elif self.the_cat.status == 'leader':
                     self.the_cat.status_change('warrior', resort=True)
                 elif self.the_cat.status == 'mediator':
-                    self.the_cat.status_change('warrior')
+                    self.the_cat.status_change('warrior', resort=True)
                 elif self.the_cat.status == 'mediator apprentice':
-                    self.the_cat.status_change('apprentice')
+                    self.the_cat.status_change('apprentice', resort=True)
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()
             elif event.ui_element == self.switch_mediator_button:
                 if self.the_cat.status in ["apprentice", "medicine cat apprentice"]:
-                    self.the_cat.status_change("mediator apprentice")
+                    self.the_cat.status_change("mediator apprentice", resort=True)
                 else:
-                    self.the_cat.status_change("mediator")
+                    self.the_cat.status_change("mediator", resort=True)
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()

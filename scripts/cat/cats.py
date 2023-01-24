@@ -766,7 +766,7 @@ class Cat():
                     game.clan.deputy_predecessors += 1
 
         elif self.status == 'mediator':
-            pass
+            self.update_mentor()
 
         elif self.status == 'mediator apprentice':
             self.update_mentor()
@@ -931,7 +931,7 @@ class Cat():
         self.update_traits()
         self.in_camp = 1
 
-        if self.status == 'apprentice':
+        if self.status in ['apprentice', 'mediator apprentice']:
             self.update_mentor()
         elif self.status == 'medicine cat apprentice':
             self.update_med_mentor()
