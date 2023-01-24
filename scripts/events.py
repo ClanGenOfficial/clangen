@@ -1600,9 +1600,16 @@ class Events():
                     alive_count = len(alive_cats)
 
                 max_infected = int(alive_count / 2)  # 1/2 of alive cats
+                # If the maximum infected is less than two, you are allowed to infect all the cats
+                if max_infected < 2:
+                    max_infected = alive_cats
+                # However, if you still don't have two cats to infect - return, outbreak canceled.
+                if max_infected < 2:
+                    return
+
                 weights = []
                 population = []
-                for n in range(2, max_infected):
+                for n in range(2, max_infected + 1):
                     population.append(n)
                     weight = 1 / (0.75 * n)  # Lower chance for more infected cats
                     weights.append(weight)
