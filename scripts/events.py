@@ -782,8 +782,8 @@ class Events():
 
                 "Interested in herbs even in their kithood, " + str(cat.name) + " is eager to be apprenticed to "
                 + mentor_name + ".",
-                "Interested in all the myths and stories told by the elders and queens " +
-                str(cat.name) + " decides to become a medicine cat apprentice hoping to someday speak to "
+                "Interested in all the myths and stories told by the elders and queens, " +
+                str(cat.name) + " decides to become a medicine cat apprentice, hoping to someday speak to "
                                 "those gone before. " + mentor_name + " loves their determination and eagerness "
                                 "to learn and agrees to take them on as their apprentice.",
                                 "The thought alone of fighting and hurting another cat makes " + str(cat.name) +
@@ -1848,9 +1848,16 @@ class Events():
                     alive_count = len(alive_cats)
 
                 max_infected = int(alive_count / 2)  # 1/2 of alive cats
+                # If there are less than two cat to infect, you are allowed to infect all the cats
+                if max_infected < 2:
+                    max_infected = alive_count
+                # If, event with all the cats, there is less than two cats to infect, cancel outbreak. 
+                if max_infected < 2:
+                    return
+
                 weights = []
                 population = []
-                for n in range(2, max_infected):
+                for n in range(2, max_infected + 1):
                     population.append(n)
                     weight = 1 / (0.75 * n)  # Lower chance for more infected cats
                     weights.append(weight)

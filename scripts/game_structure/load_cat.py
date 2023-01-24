@@ -36,7 +36,7 @@ def json_load():
     # create new cat objects
     for i, cat in enumerate(cat_data):
         try:
-            new_pelt = choose_pelt(cat["gender"], cat["pelt_color"],
+            new_pelt = choose_pelt(cat["pelt_color"],
                                 cat["pelt_white"], cat["pelt_name"],
                                 cat["pelt_length"], True)
             new_cat = Cat(ID=cat["ID"],

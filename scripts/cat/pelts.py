@@ -360,8 +360,7 @@ class Tortie():
 
     def __init__(self, white, length):
         self.white = white  # boolean; does cat have white on it or no
-        self.colour = choice(["SILVER", "GREY", "DARKGREY", "GHOST",
-                              "LIGHTBROWN", "BROWN", "DARKBROWN", "BLACK"])
+        self.colour = choice(tortiecolours)
         self.length = length
 
     def __repr__(self):
@@ -381,8 +380,7 @@ class Calico():
         'MASKMANTLE', 'APRON', 'CAPSADDLE'
     ]
     def __init__(self, length):
-        self.colour = choice(["SILVER", "GREY", "DARKGREY", "GHOST",
-                              "LIGHTBROWN", "BROWN", "DARKBROWN", "BLACK"])
+        self.colour = choice(tortiecolours)
         self.length = length
         self.white = True
 
@@ -392,12 +390,13 @@ class Calico():
 
 # ATTRIBUTES, including non-pelt related
 pelt_colours = [
-    'WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'BLACK', 'PALEGINGER',
-    'GOLDEN', 'GINGER', 'DARKGINGER', 'CREAM', 'LIGHTBROWN', 'BROWN', 'DARKBROWN'
+    'WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'PALEGINGER',
+    'GOLDEN', 'GINGER', 'DARKGINGER', 'CREAM', 'LIGHTBROWN', 'BROWN', 'DARKBROWN',
+    'BLACK'
 ]
 pelt_c_no_white = [
-    'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'BLACK', 'PALEGINGER', 'GOLDEN',
-    'GINGER', 'DARKGINGER', 'CREAM', 'LIGHTBROWN', 'BROWN', 'DARKBROWN'
+    'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'PALEGINGER', 'GOLDEN',
+    'GINGER', 'DARKGINGER', 'CREAM', 'LIGHTBROWN', 'BROWN', 'DARKBROWN', 'BLACK'
 ]
 pelt_c_no_bw = [
     'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'PALEGINGER', 'GOLDEN', 'GINGER',
@@ -413,7 +412,7 @@ tortiebases = ['single', 'tabby', 'bengal', 'marbled', 'ticked', 'smoke', 'roset
     'classic', 'sokoke', 'agouti']
 tortiecolours = ["SILVER", "GREY", "DARKGREY", "BLACK", "GHOST", "LIGHTBROWN", "BROWN", "DARKBROWN"]
 
-pelt_length = ["short", "medium", "medium", "long"]
+pelt_length = ["short", "medium", "long"]
 eye_colours = ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE', 'DARKBLUE', 'GREY', 'CYAN', 'EMERALD', 'PALEBLUE', 
     'PALEYELLOW', 'GOLD', 'HEATHERBLUE', 'COPPER', 'SAGE', 'BLUE2', 'SUNLITICE', 'GREENYELLOW']
 yellow_eyes = ['YELLOW', 'AMBER', 'PALEYELLOW', 'GOLD', 'COPPER', 'GREENYELLOW']
@@ -482,7 +481,7 @@ point_markings = ['COLOURPOINT', 'COLOURPOINTCREAMY', 'RAGDOLL', 'KARPATI', 'SEP
     'SEALPOINT']
 vit = ['VITILIGO', 'VITILIGO2']
 white_sprites = [
-    little_white, mid_white, high_white, mostly_white, point_markings, vit, 'FULLWHITE', 'EXTRA', 'POINTMARK'
+    little_white, mid_white, high_white, mostly_white, point_markings, vit, 'FULLWHITE', 'EXTRA'
 ]
 
 skin_sprites = ['BLACK', 'RED', 'PINK', 'DARKBROWN', 'BROWN', 'LIGHTBROWN', 'DARK', 'DARKGREY', 'GREY', 'DARKSALMON',
@@ -490,69 +489,67 @@ skin_sprites = ['BLACK', 'RED', 'PINK', 'DARKBROWN', 'BROWN', 'LIGHTBROWN', 'DAR
 
 
 # CHOOSING PELT
-def choose_pelt(gender, colour=None, white=None, pelt=None, length=None, determined=False):
+def choose_pelt(colour=None, white=None, pelt=None, length=None, category=None, determined=False):
+    colour = colour
+    white = white
+    pelt = pelt
+    length = length
+    category = category
     if pelt is None:
-        a = randint(0, 100)
-        if a != 1:
-            pelt = choice(pelt_names_F) if gender == "female" else choice(pelt_names_M)
-        else:
-            pelt = choice(pelt_names_F)
-            if gender == 'male' and pelt in ['Tortie', 'Calico']:
-                print("INFO: Male tortie/calico!")
-    elif pelt in ['Tortie', 'Calico'] and gender == 'male' and not determined:
-        a = randint(0, 200)
-        if a != 1:
-            pelt = choice(pelt_names_M)
+        if category != None:
+            pelt = choice(category)
+    else:
+        pelt = pelt
     if length is None:
         length = choice(pelt_length)
-    if pelt == "SingleColour":
+    if pelt == 'SingleColour':
         if colour is None and not white:
             return SingleColour(choice(pelt_colours), length)
         elif colour is None:
             return SingleColour("WHITE", length)
         else:
             return SingleColour(colour, length)
-    elif pelt == "TwoColour":
+    elif pelt == 'TwoColour':
         if colour is None:
             return TwoColour(choice(pelt_c_no_white), length)
         else:
             return TwoColour(colour, length)
-    elif pelt == "Tabby":
+    elif pelt == 'Tabby':
         if colour is None and white is None:
             return Tabby(choice(pelt_colours), choice([False, True]), length)
         elif colour is None:
             return Tabby(choice(pelt_colours), white, length)
         else:
             return Tabby(colour, white, length)
-    elif pelt == "Marbled":
+    elif pelt == 'Marbled':
         if colour is None and white is None:
             return Marbled(choice(pelt_colours), choice([False, True]), length)
         elif colour is None:
             return Marbled(choice(pelt_colours), white, length)
         else:
             return Marbled(colour, white, length)
-    elif pelt == "Rosette":
+    elif pelt == 'Rosette':
         if colour is None and white is None:
             return Rosette(choice(pelt_colours), choice([False, True]), length)
         elif colour is None:
             return Rosette(choice(pelt_colours), white, length)
         else:
             return Rosette(colour, white, length)
-    elif pelt == "Smoke":
+    elif pelt == 'Smoke':
         if colour is None and white is None:
             return Smoke(choice(pelt_colours), choice([False, True]), length)
         elif colour is None:
             return Smoke(choice(pelt_colours), white, length)
         else:
             return Smoke(colour, white, length)
-    elif pelt == "Ticked":
+    elif pelt == 'Ticked':
         if colour is None and white is None:
             return Ticked(choice(pelt_colours), choice([False, True]), length)
         elif colour is None:
             return Ticked(choice(pelt_colours), white, length)
         else:
             return Ticked(colour, white, length)
-    elif pelt == "Speckled":
+    elif pelt == 'Speckled':
         if colour is None and white is None:
             return Speckled(choice(pelt_colours), choice([False, True]),
                             length)
@@ -560,7 +557,7 @@ def choose_pelt(gender, colour=None, white=None, pelt=None, length=None, determi
             return Speckled(choice(pelt_colours), white, length)
         else:
             return Speckled(colour, white, length)
-    elif pelt == "Bengal":
+    elif pelt == 'Bengal':
         if colour is None and white is None:
             return Bengal(choice(pelt_colours), choice([False, True]),
                              length)
@@ -568,7 +565,7 @@ def choose_pelt(gender, colour=None, white=None, pelt=None, length=None, determi
             return Bengal(choice(pelt_colours), white, length)
         else:
             return Bengal(colour, white, length)
-    elif pelt == "Mackerel":
+    elif pelt == 'Mackerel':
         if colour is None and white is None:
             return Mackerel(choice(pelt_colours), choice([False, True]),
                              length)
@@ -576,7 +573,7 @@ def choose_pelt(gender, colour=None, white=None, pelt=None, length=None, determi
             return Mackerel(choice(pelt_colours), white, length)
         else:
             return Mackerel(colour, white, length)
-    elif pelt == "Classic":
+    elif pelt == 'Classic':
         if colour is None and white is None:
             return Classic(choice(pelt_colours), choice([False, True]),
                              length)
@@ -584,7 +581,7 @@ def choose_pelt(gender, colour=None, white=None, pelt=None, length=None, determi
             return Classic(choice(pelt_colours), white, length)
         else:
             return Classic(colour, white, length)
-    elif pelt == "Sokoke":
+    elif pelt == 'Sokoke':
         if colour is None and white is None:
             return Sokoke(choice(pelt_colours), choice([False, True]),
                              length)
@@ -592,7 +589,7 @@ def choose_pelt(gender, colour=None, white=None, pelt=None, length=None, determi
             return Sokoke(choice(pelt_colours), white, length)
         else:
             return Sokoke(colour, white, length)
-    elif pelt == "Agouti":
+    elif pelt == 'Agouti':
         if colour is None and white is None:
             return Agouti(choice(pelt_colours), choice([False, True]),
                              length)
@@ -600,7 +597,7 @@ def choose_pelt(gender, colour=None, white=None, pelt=None, length=None, determi
             return Agouti(choice(pelt_colours), white, length)
         else:
             return Agouti(colour, white, length)
-    elif pelt == "Tortie":
+    elif pelt == 'Tortie':
         if white is None:
             return Tortie(choice([False, True]), length)
         else:

@@ -327,13 +327,13 @@ class Cat():
             self.genderalign = self.gender
 
         # APPEARANCE
-        init_eyes(self)
         init_pelt(self)
         init_tint(self)
         init_sprite(self)
         init_scars(self)
         init_accessories(self)
         init_white_patches(self)
+        init_eyes(self)
         init_pattern(self)
 
         # NAME
@@ -845,6 +845,46 @@ class Cat():
         description = str(self.pelt.length).lower() + '-furred'
         description += ' ' + describe_color(self.pelt, self.tortiecolour, self.tortiepattern, self.white_patches) + ' ' + sex
         return description
+
+    def describe_eyes(self):
+        colour = str(self.eye_colour).lower()
+        colour2 = str(self.eye_colour2).lower()
+
+        if colour == 'palegreen':
+            colour = 'pale green'
+        elif colour == 'darkblue':
+            colour = 'dark blue'
+        elif colour == 'paleblue':
+            colour = 'pale blue'
+        elif colour == 'paleyellow':
+            colour = 'pale yellow'
+        elif colour == 'heatherblue':
+            colour = 'heather blue'
+        elif colour == 'blue2':
+            colour = 'blue'
+        elif colour == 'sunlitice':
+            colour = 'sunlit ice'
+        elif colour == 'greenyellow':
+            colour = 'green-yellow'
+        if self.eye_colour2 != None:
+            if colour2 == 'palegreen':
+                colour2 = 'pale green'
+            if colour2 == 'darkblue':
+                colour2 = 'dark blue'
+            if colour2 == 'paleblue':
+                colour2 = 'pale blue'
+            if colour2 == 'paleyellow':
+                colour2 = 'pale yellow'
+            if colour2 == 'heatherblue':
+                colour2 = 'heather blue'
+            if colour2 == 'blue2':
+                colour2 = 'blue'
+            if colour2 == 'sunlitice':
+                colour2 = 'sunlit ice'
+            if colour2 == 'greenyellow':
+                colour2 = 'green-yellow'
+            colour = colour + ' and ' + colour2
+        return colour
 
 # ---------------------------------------------------------------------------- #
 #                              moon skip functions                             #
