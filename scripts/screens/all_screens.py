@@ -7,7 +7,7 @@ from .organizational_screens import\
     StartScreen, SettingsScreen, SwitchClanScreen, StatsScreen
 from .patrol_screens import PatrolScreen
 from .relation_screens import\
-    RelationshipScreen, ChooseMateScreen, ViewChildrenScreen, ChooseMentorScreen
+    RelationshipScreen, ChooseMateScreen, ViewChildrenScreen, ChooseMentorScreen, MediationScreen
 from .world_screens import OutsideClanScreen, UnknownResScreen
 
 # ---------------------------------------------------------------------------- #
@@ -87,6 +87,7 @@ choose_mate_screen = ChooseMateScreen('choose mate screen')
 choose_mentor_screen = ChooseMentorScreen('choose mentor screen')
 relationship_screen = RelationshipScreen('relationship screen')
 view_children_screen = ViewChildrenScreen('see kits screen')
+mediation_screen = MediationScreen("mediation screen")
 
 # ---------------------------------------------------------------------------- #
 #                               world_screens.py                               #
