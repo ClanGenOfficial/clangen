@@ -7,6 +7,7 @@ class Name():
         "kitten": "kit",
         "apprentice": "paw",
         "medicine cat apprentice": "paw",
+        "mediator apprentice": "paw",
         "leader": "star"
     }
     normal_suffixes = [  # common suffixes
@@ -294,7 +295,7 @@ class Name():
                     self.suffix = random.choice(self.normal_suffixes)
 
     def __repr__(self):
-        if self.status in ["deputy", "warrior", "medicine cat", "elder"]:
+        if self.status in ["deputy", "warrior", "medicine cat", "elder", "mediator"]:
             return self.prefix + self.suffix
         else:
             return self.prefix + self.special_suffixes[self.status]

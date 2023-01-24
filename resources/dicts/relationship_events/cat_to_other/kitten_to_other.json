@@ -175,5 +175,17 @@
         "close": [
             "won't stop copying everything (cat) does."
         ]
+    },
+    "mediator": {
+        "unfriendly": [],
+        "neutral": [],
+        "friendly": [],
+        "close": []
+    },
+    "mediator apprentice": {
+        "unfriendly": [],
+        "neutral": [],
+        "friendly": [],
+        "close": []
     }
 }
