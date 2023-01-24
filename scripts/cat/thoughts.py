@@ -98,24 +98,25 @@ def get_alive_thoughts(cat, other_cat):
     if cat.status == 'apprentice':
         thoughts += get_apprentice_thoughts(cat,other_cat)
 
-    if cat.status == 'medicine cat apprentice':
+    elif cat.status == 'medicine cat apprentice':
         thoughts += get_med_apprentice_thoughts(cat,other_cat)
 
-    if cat.status == 'elder':
+    elif cat.status == 'elder':
         thoughts += get_elder_thoughts(cat,other_cat)
 
-    if cat.status == 'medicine cat':
+    elif cat.status == 'medicine cat':
         thoughts += get_med_thoughts(cat,other_cat)
 
-    if cat.status == 'deputy':
+    elif cat.status == 'deputy':
         thoughts += get_deputy_thoughts(cat, other_cat)
 
-    if cat.status == 'leader':
+    elif cat.status == 'leader':
         thoughts += get_leader_thoughts(cat, other_cat)
 
-    if cat.status == 'warrior':
+    elif cat.status == 'warrior':
         thoughts += get_warrior_thoughts(cat, other_cat)
         thoughts += get_warrior_trait_role_thoughts(cat, other_cat)
+
 
     return thoughts
 

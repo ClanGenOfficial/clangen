@@ -212,7 +212,7 @@ class ClanScreen(Screens):
             game.clan.medicine_cat.placement = choice(p['medicine place'])
         for x in game.clan.clan_cats:
             i = randint(0, 20)
-            if Cat.all_cats[x].status == 'apprentice':
+            if Cat.all_cats[x].status in ['apprentice', 'mediator apprentice']:
                 if i < 13:
                     Cat.all_cats[x].placement = choice([
                         choice(p['apprentice place']),
@@ -267,7 +267,7 @@ class ClanScreen(Screens):
                 'medicine cat apprentice', 'medicine cat'
             ]:
                 Cat.all_cats[x].placement = choice(p['medicine place'])
-            elif Cat.all_cats[x].status == 'warrior':
+            elif Cat.all_cats[x].status in ['warrior', 'mediator']:
                 if i < 15:
                     Cat.all_cats[x].placement = choice([
                         choice(p['warrior place']),
@@ -1161,10 +1161,13 @@ class AllegiancesScreen(Screens):
             if not the_cat.dead and not the_cat.outside:
                 living_cats.append(the_cat)
         living_meds = []
-        for the_cat in Cat.all_cats.values():
-            if the_cat.status == 'medicine cat' and not the_cat.dead \
-                    and not the_cat.outside:
+        for the_cat in living_cats:
+            if the_cat.status == 'medicine cat':
                 living_meds.append(the_cat)
+        living_mediators = []
+        for the_cat in living_cats:
+            if the_cat.status == 'mediator':
+                living_mediators.append(the_cat)
 
         # Pull the clan leaders
         leader = []
@@ -1208,6 +1211,11 @@ class AllegiancesScreen(Screens):
                         ['', '      Apprentices: ' + app_names[:-2]])
         cat_count = self._extracted_from_screen_switches_24(
             living_cats, 'medicine cat', '<b><u>MEDICINE CATS</u></b>')
+
+        if living_mediators:
+            self._extracted_from_screen_switches_24(
+                living_cats, 'mediator', '<b><u>MEDIATORS:</u></b>')
+
         queens = get_alive_queens(Cat.all_cats)
         queens = [cat.ID for cat in queens]
         cat_count = 0
@@ -1243,7 +1251,7 @@ class AllegiancesScreen(Screens):
         cat_count = 0
         for living_cat___ in living_cats:
             if str(living_cat___.status) in [
-                'apprentice', 'medicine cat apprentice'
+                'apprentice', 'medicine cat apprentice', 'mediator apprentice'
             ]:
                 if cat_count == 0:
                     self.allegiance_list.append([

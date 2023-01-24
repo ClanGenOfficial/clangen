@@ -338,6 +338,11 @@ class SettingsScreen(Screens):
             self.settings_changed = True
             self.update_save_button()
             self.refresh_checkboxes()
+        elif event.ui_element == self.checkboxes['become_mediator']:
+            game.switch_setting('become_mediator')
+            self.settings_changed = True
+            self.update_save_button()
+            self.refresh_checkboxes()
 
     def handle_lang_events(self, event):
         if event.ui_element == self.checkboxes['english']:
@@ -480,6 +485,14 @@ class SettingsScreen(Screens):
         n += 1
         self.checkboxes_text['fade_copy'] = pygame_gui.elements.UITextBox(
             "Save a complete copy of faded cats information",
+            pygame.Rect((x_value, n * y_spacing), (500, 50)),
+            container=self.checkboxes_text["container"],
+            object_id=get_text_box_theme("#setting_text_box")
+        )
+
+        n += 1
+        self.checkboxes_text['become_mediator'] = pygame_gui.elements.UITextBox(
+            "Allow warriors and elders to choose to become mediators",
             pygame.Rect((x_value, n * y_spacing), (500, 50)),
             container=self.checkboxes_text["container"],
             object_id=get_text_box_theme("#setting_text_box")
@@ -723,6 +736,20 @@ class SettingsScreen(Screens):
                 object_id=box_type,
                 container=self.checkboxes_text["container"],
                 tool_tip_text="A complete copy of faded cat save info will be saved in plain-text."
+            )
+
+            n += 1
+            # Allow cats to fade
+            if game.settings['become_mediator']:
+                box_type = "#checked_checkbox"
+            else:
+                box_type = "#unchecked_checkbox"
+            self.checkboxes['become_mediator'] = UIImageButton(
+                pygame.Rect((x_value, n * y_spacing), (34, 34)),
+                "",
+                object_id=box_type,
+                container=self.checkboxes_text["container"],
+                tool_tip_text="Warriors and elders will have a chance to become elders upon timeskip."
             )
 
         # CHECKBOXES FOR RELATION SETTINGS #################################################################

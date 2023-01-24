@@ -113,7 +113,8 @@
     },
     "#cat_patrol_info_box": {
         "colours": {
-            "dark_bg": "#00000000"
+            "dark_bg": "#00000000",
+            "normal_text": "#000000"
         },
         "font": {
             "name": "notosans",

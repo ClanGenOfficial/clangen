@@ -14,6 +14,8 @@
         "leader": [],
         "deputy": [],
         "elder": [],
+        "mediator": [],
+        "mediator apprentice": [],
         "all": []
     },
     "alive": {
@@ -27,6 +29,8 @@
         "elder": [
             "Was nipped on the rump by an elder for being naughty"
         ],
+        "mediator": [],
+        "mediator apprentice": [],
         "all": []
     },
     "all": [
