@@ -59,7 +59,11 @@ class Name():
         'tortieticked': ['spots', 'pelt', 'speckle', 'freckle'],
         'tortiesmoke': ['fade', 'dusk', 'dawn', 'smoke'],
         'tortierosette': ['dapple', 'speckle', 'spots', 'dapple', 'fern', 'freckle'],
-        'tortiespeckled': ['dapple', 'speckle', 'spot', 'speck', 'freckle']
+        'tortiespeckled': ['dapple', 'speckle', 'spot', 'speck', 'freckle'],
+        'tortiemackerel': ['stripe', 'feather', 'fern', 'shade'],
+        'tortieclassic': ['stripe', 'feather', 'fern'],
+        'tortiesokoke': ['stripe', 'feather', 'fern', 'shade', 'dapple'],
+        'tortieagouti': ['back', 'pelt', 'fur', 'dapple', 'splash']
     }
 
     normal_prefixes = [
@@ -116,7 +120,7 @@ class Name():
             'River', 'Blizzard', 'Flurry', 'Bone', 'Bleak', 'Stone', 'Pebble', 'Heather', 'Warm', 'Arctic'
         ],
         'GREY': [
-            'Grey', 'Grey', 'Ash', 'Ashen', 'Cinder', 'Rock', 'Stone', 'Shade', 'Mouse', 'Smoke', 'Smokey', 'Shadow', "Fog", 'Bone', 
+            'Grey', 'Grey', 'Ash', 'Ashen', 'Cinder', 'Rock', 'Stone', 'Shade', 'Mouse', 'Smoke', 'Smoky', 'Shadow', "Fog", 'Bone', 
             'Bleak', 'Rain', 'Storm', 'Soot', 'Pebble', 'Mist', 'Misty', 'Heather',
         ],
         'DARKGREY': [
@@ -172,10 +176,8 @@ class Name():
         'GREEN': ['Green', 'Fern', 'Weed', 'Holly', 'Clover', 'Olive'],
         'BLUE': ['Blue', 'Blue', 'Ice', 'Sky', 'Lake', 'Frost', 'Water', 'Sea'],
         'DARKBLUE': ['Dark', 'Blue', 'Sky', 'Lake', 'Berry', 'Water', 'Deep'],
-        'BLUEYELLOW': ['Blue', 'Yellow', 'Odd', 'One', 'Moon'],
-        'BLUEGREEN': ['Blue', 'Green', 'Odd', 'One', 'Clover', 'Weed'],
         'GREY': ['Grey', 'Stone', 'Silver', 'Ripple', 'Moon', 'Rain', 'Storm', 'Heather'],
-        'CYAN': ['Sky', 'Blue', 'River', 'Rapid', 'Green', 'Sea'],
+        'CYAN': ['Sky', 'Blue', 'River', 'Rapid', 'Sea'],
         'EMERALD': ['Emerald', 'Green', 'Shine', 'Blue', 'Pine', 'Weed'],
         'PALEBLUE': ['Pale', 'Blue', 'Sky', 'River', 'Ripple', 'Day', 'Cloud', 'Sea'],
         'PALEYELLOW': ['Pale', 'Yellow', 'Sun', 'Gold', 'Ray'],
@@ -279,7 +281,7 @@ class Name():
                 self.prefix = random.choice(self.normal_prefixes)
                     
         # Set suffix
-        while self.suffix is None or self.suffix == self.prefix.casefold() or str(self.suffix) in self.prefix.casefold():
+        while self.suffix is None or self.suffix == self.prefix.casefold() or str(self.suffix) in self.prefix.casefold() and not str(self.suffix) == '':
             if pelt is None or pelt == 'SingleColour':
                 self.suffix = random.choice(self.normal_suffixes)
             else:
