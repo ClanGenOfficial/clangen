@@ -64,8 +64,8 @@ class Name():
 
     normal_prefixes = [
         'Acacia', 'Adder', 'Alder', 'Algae', 'Aloe', 'Ant', 'Antler', 'Apple', 'Apricot', 'Arc', 'Arch', 'Aspen', 'Aster', 'Autumn',
-        'Badger', 'Barley', 'Basil', 'Bass', 'Bay', 'Bayou', 'Beam', 'Bear', 'Beaver', 'Bee', 'Beech', 'Beetle', 'Bella', 'Berry',
-        'Big', 'Billy', 'Birch', 'Bird', 'Bite', 'Bitter', 'Bittern', 'Bleak', 'Blight', 'Blink', 'Bliss', 'Blizzard', 'Bloom',
+        'Badger', 'Barley', 'Basil', 'Bass', 'Bay', 'Bayou', 'Beam', 'Bear', 'Beaver', 'Bee', 'Beech', 'Beetle', 'Berry',
+        'Big', 'Birch', 'Bird', 'Bite', 'Bitter', 'Bittern', 'Bleak', 'Blight', 'Blink', 'Bliss', 'Blizzard', 'Bloom',
         'Blossom', 'Blotch', 'Bluebell', 'Bluff', 'Bog', 'Bold', 'Borage', 'Bough', 'Boulder', 'Bounce', 'Bracken', 'Bramble', 
         'Brave', 'Breeze', 'Briar', 'Bright', 'Brindle', 'Bristle', 'Broken', 'Brook', 'Brush', 'Bubble', 'Bubbling', 'Buck', 
         'Bug', 'Bumble', 'Burdock', 'Burr', 'Bush', 'Buzzard', 'Carp', 'Cedar', 'Chaffinch', 'Char', 'Chasing', 'Cheetah', 'Cherry',
@@ -78,7 +78,7 @@ class Name():
         'Ferret', 'Fidget', 'Fierce', 'Fin', 'Finch', 'Fir', 'Fish', 'Flail', 'Flash', 'Flax', 'Fleck', 'Fleet', 'Flicker', 
         'Flight', 'Flint', 'Flip', 'Flood', 'Flower', 'Flutter', 'Fluttering', 'Fly', 'Foam', 'Fog', 'Forest', 'Freckle', 'Fringe',
         'Frog', 'Frond', 'Furled', 'Furze', 'Fuzzy', 'Gale', 'Gander', 'Gannet', 'Gem', 'Giant', 'Gill', 'Gleam', 'Glow', 'Goose',
-        'Gorge', 'Gorse', 'Grass', 'Gravel', 'Grouse', 'Gull', 'Gust', 'Hail', 'Half', 'Hare', 'Harry', 'Harvest', 'Harvey', 
+        'Gorge', 'Gorse', 'Grass', 'Gravel', 'Grouse', 'Gull', 'Gust', 'Hail', 'Half', 'Hare', 'Harvest',
         'Hatch', 'Haven', 'Hawk', 'Hay', 'Haze', 'Heath', 'Heavy', 'Hedge', 'Hen', 'Heron', 'Hill', 'Hoarse', 'Hollow', 'Holly',
         'Honey', 'Hoot', 'Hop', 'Hope', 'Hornet', 'Hound', 'Iris', 'Ivy', 'Jackdaw', 'Jagged', 'Jay', 'Jump', 'Juniper', 'Kestrel',
         'Kink', 'Kite', 'Lake', 'Lapping', 'Larch', 'Lark', 'Laurel', 'Lavender', 'Leaf', 'Leap', 'Leopard', 'Lichen', 'Light',
@@ -87,10 +87,10 @@ class Name():
         'Milk', 'Milkweed', 'Mink', 'Minnow', 'Mistle', 'Mite', 'Mock', 'Mole', 'Monkey', 'Moon', 'Moor', 'Morning', 'Moss', 
         'Mossy', 'Moth', 'Mottle', 'Mottled', 'Mouse', 'Mumble', 'Murk', 'Myrtle', 'Nacre', 'Narrow', 'Nectar', 'Needle', 'Nettle',
         'Newt', 'Nut', 'Oat', 'Odd', 'One', 'Orange', 'Osprey', 'Pansy', 'Panther', 'Parsley', 'Partridge', 'Patch', 'Peak', 
-        'Pear', 'Peat', 'Peat', 'Perch', 'Petal', 'Pheasant', 'Pigeon', 'Pike', 'Pine', 'Pink', 'Piper', 'Plover', 'Plum', 'Pod',
+        'Pear', 'Peat', 'Perch', 'Petal', 'Pheasant', 'Pigeon', 'Pike', 'Pine', 'Pink', 'Piper', 'Plover', 'Plum', 'Pod',
         'Pond', 'Pool', 'Poppy', 'Posy', 'Pounce', 'Prance', 'Prickle', 'Prim', 'Primrose', 'Puddle', 'Python', 'Quail', 'Quick',
         'Quiet', 'Quill', 'Rabbit', 'Raccoon', 'Ragged', 'Rain', 'Rainswept', 'Rambling', 'Rat', 'Rattle', 'Raven', 'Reed', 
-        'Ridge', 'Rift', 'Riley', 'Ripple', 'Rising', 'River', 'Roach', 'Rook', 'Root', 'Rose', 'Rosy', 'Rot', 'Rowan', 'Rubble',
+        'Ridge', 'Rift', 'Ripple', 'Rising', 'River', 'Roach', 'Rook', 'Root', 'Rose', 'Rosy', 'Rot', 'Rowan', 'Rubble',
         'Running', 'Rush', 'Rye', 'Sage', 'Scar', 'Scorch', 'Sea', 'Sedge', 'Seed', 'Shard', 'Sharp', 'Shattered', 'Sheep', 
         'Shell', 'Shimmer', 'Shining', 'Shivering', 'Short', 'Shred', 'Shrew', 'Shy', 'Silk', 'Silt', 'Skip', 'Sky', 'Slate', 
         'Sleek', 'Sleet', 'Slight', 'Sloe', 'Slope', 'Small', 'Snail', 'Snake', 'Snap', 'Sneeze', 'Snip', 'Snook', 'Soft', 'Song',
@@ -98,7 +98,7 @@ class Name():
         'Squirrel', 'Starling', 'Steam', 'Stem', 'Stoat', 'Stork', 'Stream', 'Strike', 'Stripe', 'Strong', 'Stump', 
         'Stumpy', 'Sunny', 'Swallow', 'Swamp', 'Sweet', 'Swift', 'Tall', 'Talon', 'Tangle', 'Tansy', 'Tawny', 'Thistle', 'Thorn',
         'Thrift', 'Thrush', 'Thunder', 'Thyme', 'Tiger', 'Timber', 'Tiny', 'Tip', 'Toad', 'Torn', 'Trout', 'Tuft', 'Tulip', 
-        'Tumble', 'Turtle', 'Twisted', 'Vine', 'Vixen', 'Warm', 'Wasp', 'Wave', 'Weasel', 'Web', 'Wet', 'Wheat', 'Whirl', 'Whisker',
+        'Tumble', 'Turtle', 'Twisted', 'Vine', 'Vixen', 'Warm', 'Wasp', 'Wave', 'Weasel', 'Web', 'Weed', 'Wet', 'Wheat', 'Whirl', 'Whisker',
         'Whisper', 'Whispering', 'Whistle', 'Whorl', 'Wild', 'Willow', 'Wind', 'Wish', 'Wisteria', 'Wolf', 'Wood', 'Wren', 'Yarrow', 'Yew'
     ]
 
