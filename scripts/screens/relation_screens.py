@@ -2380,11 +2380,11 @@ class MediationScreen(Screens):
                                                                     object_id="#cat_profile_info_box",
                                                                     line_spacing=0.75)
 
-        if cat.mate and other_cat:
-            if cat.mate == other_cat.ID:
-                col2 = f"{Cat.fetch_cat(cat.mate).name}'s mate"
-            else:
-                col2 = "has a mate"
+        if cat.mate:
+            col2 = "has a mate"
+            if other_cat:
+                if cat.mate == other_cat.ID:
+                    col2 = f"{Cat.fetch_cat(cat.mate).name}'s mate"
         else:
             col2 = "mate: none"
 
