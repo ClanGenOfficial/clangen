@@ -1750,7 +1750,8 @@ class ProfileScreen(Screens):
             if self.switch_mediator_button:
                 self.switch_mediator_button.kill()
 
-            if self.the_cat.status in ["warrior", "elder", "medicine cat", "apprentice", "medicine cat apprentice"]:
+            if self.the_cat.status in ["warrior", "elder", "medicine cat", "apprentice", "medicine cat apprentice"]\
+                    and not self.the_cat.dead and not self.the_cat.outside:
                 self.switch_mediator_button = pygame_gui.elements.UIButton(pygame.Rect(tuple(next_button_location),
                                                                                        (172, 36)),
                                                                            "Switch to mediator",
