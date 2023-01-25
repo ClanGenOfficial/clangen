@@ -1151,8 +1151,6 @@ class Patrol():
                     created_cats.extend(self.create_new_cat(loner=False, loner_name=True, kittypet=True, queen=True,
                                                        backstory=new_backstory))
                     new_cat = created_cats[0]
-                    new_cat.name.prefix = "unnamed"
-                    new_cat.name.suffix = " queen"
                     new_cat.outside = True
                     new_cat.dead = True
                 else:
@@ -1260,12 +1258,6 @@ class Patrol():
         if "new_cat_female" in tags:
             gender = 'female'
 
-        if queen:
-            if game.settings['no gendered breeding']:
-                gender = gender
-            else:
-                gender = 'female'
-
         if not litter and not kit:
             if age == 'young':
                 age = randint(6, 11)
@@ -1273,6 +1265,14 @@ class Patrol():
                 age = randint(100, 150)
             else:
                 age = randint(12, 99)
+
+        if queen:
+            if game.settings['no gendered breeding']:
+                gender = gender
+            else:
+                gender = 'female'
+            if age < 16:
+                age = 16
 
         if litter or kit:
             if age == 'newborn':
