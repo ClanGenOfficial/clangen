@@ -1982,7 +1982,7 @@
         "The mother red fox's snapping jaws leave r_c dripping blood into the mud, and force the patrol to back off.",
         null,
         "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the red vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up on the fight.",
-        "As their hunt descends into a full on battle with the red vixen, p_l takes a blow meant for one of their clanmates, losing a life."
+        "As their hunt descends into a full on battle with the red vixen, p_l takes a blow meant for one of their Clanmates, losing a life."
         ],
         "win_skills": ["excellent fighter"],
         "win_trait": ["adventurous", "altruistic", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "responsible", "righteous", "troublesome", "vengeful"],
@@ -2092,7 +2092,7 @@
         "The mother red fox's snapping jaws leave r_c dripping blood into the mud, and force the patrol to back off.",
         null,
         "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the red vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up on the fight.",
-        "As their hunt descends into a full on battle with the red vixen, p_l takes a blow meant for one of their clanmates, losing a life."
+        "As their hunt descends into a full on battle with the red vixen, p_l takes a blow meant for one of their Clanmates, losing a life."
         ],
         "win_skills": ["excellent fighter"],
         "win_trait": ["adventurous", "altruistic", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "responsible", "righteous", "troublesome", "vengeful"],
@@ -2202,7 +2202,7 @@
         "The mother red fox's snapping jaws leave r_c dripping blood into the mud, and force the patrol to back off.",
         null,
         "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the red vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up on the fight.",
-        "As their hunt descends into a full on battle with the red vixen, p_l takes a blow meant for one of their clanmates, losing a life."
+        "As their hunt descends into a full on battle with the red vixen, p_l takes a blow meant for one of their Clanmates, losing a life."
         ],
         "win_skills": ["excellent fighter"],
         "win_trait": ["adventurous", "altruistic", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "responsible", "righteous", "troublesome", "vengeful"],
@@ -2628,7 +2628,7 @@
         null,
         "p_l leads the patrol to the end of the scent trail, where a red fox sits plucking the feathers off a plump duck. With careful signals, the cats set up an ambush, but they aren't careful enough, and with a snarl the fox takes a bite at r_c as it flees with its dinner.",
         null,
-        "The patrol tracks down a red fox, and spots that it's holding freshkill. However, s_c bursts from cover without warning, trying to intimidate the fox, and the overconfident attack ends in disaster as the fox bites s_c, leaving the rest of the patrol to rescue their annoying clanmate as the fox runs off with what could've been their dinner."
+        "The patrol tracks down a red fox, and spots that it's holding freshkill. However, s_c bursts from cover without warning, trying to intimidate the fox, and the overconfident attack ends in disaster as the fox bites s_c, leaving the rest of the patrol to rescue their annoying Clanmate as the fox runs off with what could've been their dinner."
     ],
     "win_skills": ["good hunter", "great hunter", "fantastic hunter", "good fighter", "great fighter", "excellent fighter"],
     "win_trait": ["altruistic", "calm", "careful", "faithful", "insecure", "loyal", "nervous", "patient", "responsible", "righteous", "thoughtful", "wise"],
@@ -2664,7 +2664,7 @@
         null,
         "p_l leads the patrol to the end of the scent trail, where a red fox sits plucking the feathers off a plump duck. With careful signals, the cats set up an ambush, but they aren't careful enough, and with a snarl the fox takes a bite at r_c as it flees with its dinner.",
         null,
-        "The patrol tracks down a red fox, and spots that it's holding freshkill. However, s_c bursts from cover without warning, trying to intimidate the fox, and the overconfident attack ends in disaster as the fox bites s_c, leaving the rest of the patrol to rescue their annoying clanmate as the fox runs off with what could've been their dinner."
+        "The patrol tracks down a red fox, and spots that it's holding freshkill. However, s_c bursts from cover without warning, trying to intimidate the fox, and the overconfident attack ends in disaster as the fox bites s_c, leaving the rest of the patrol to rescue their annoying Clanmate as the fox runs off with what could've been their dinner."
     ],
     "win_skills": ["good hunter", "great hunter", "fantastic hunter", "good fighter", "great fighter", "excellent fighter"],
     "win_trait": ["altruistic", "calm", "careful", "faithful", "insecure", "loyal", "nervous", "patient", "responsible", "righteous", "thoughtful", "wise"],
@@ -2832,7 +2832,7 @@
     "Responsibly, s_c keeps the patrol moving once they take the fish from the unfortunate-but-unable-to-complain swift fox. They don't find anything, but with the stolen fish the afternoon hasn't been a completely wasted hunting trip."
     ],
     "fail_text": [
-    "The swift fox gives way easily to the bigger canivores, but the fish carcass is rotten, too rotten for the clan cats to want to touch.",
+    "The swift fox gives way easily to the bigger canivores, but the fish carcass is rotten, too rotten for the Clan cats to want to touch.",
     "The swift fox gives up the kill, but s_c pursues it anyway, until the fox turns and threatens with snapping teeth. s_c calls the rest of the patrol for backup and no one is injured, but by the time they get back to the kill a different predator has absconded with the fish."
     ],
     "win_skills": ["smart", "very smart", "extremely smart"],
@@ -2897,7 +2897,7 @@
     "Responsibly, s_c keeps the patrol moving once they take the fish from the unfortunate-but-unable-to-complain swift fox. They don't find anything, but with the stolen fish the afternoon hasn't been a completely wasted hunting trip."
     ],
     "fail_text": [
-    "The swift fox gives way easily to the bigger canivores, but the fish carcass is rotten, too rotten for the clan cats to want to touch.",
+    "The swift fox gives way easily to the bigger canivores, but the fish carcass is rotten, too rotten for the Clan cats to want to touch.",
     "The swift fox gives up the kill, but s_c pursues it anyway, until the fox turns and threatens with snapping teeth. s_c calls the rest of the patrol for backup and no one is injured, but by the time they get back to the kill a different predator has absconded with the fish."
     ],
     "win_skills": ["smart", "very smart", "extremely smart"],
@@ -2962,7 +2962,7 @@
     "Responsibly, s_c keeps the patrol moving once they take the fish from the unfortunate-but-unable-to-complain swift fox. They don't find anything, but with the stolen fish the afternoon hasn't been a completely wasted hunting trip."
     ],
     "fail_text": [
-    "The swift fox gives way easily to the bigger canivores, but the fish carcass is rotten, too rotten for the clan cats to want to touch.",
+    "The swift fox gives way easily to the bigger canivores, but the fish carcass is rotten, too rotten for the Clan cats to want to touch.",
     "The swift fox gives up the kill, but s_c pursues it anyway, until the fox turns and threatens with snapping teeth. s_c calls the rest of the patrol for backup and no one is injured, but by the time they get back to the kill a different predator has absconded with the fish."
     ],
     "win_skills": ["smart", "very smart", "extremely smart"],
@@ -3027,7 +3027,7 @@
     "Responsibly, s_c keeps the patrol moving once they take the fish from the unfortunate-but-unable-to-complain swift fox. They don't find anything, but with the stolen fish the afternoon hasn't been a completely wasted hunting trip."
     ],
     "fail_text": [
-    "The swift fox gives way easily to the bigger canivores, but the fish carcass is rotten, too rotten for the clan cats to want to touch.",
+    "The swift fox gives way easily to the bigger canivores, but the fish carcass is rotten, too rotten for the Clan cats to want to touch.",
     "The swift fox gives up the kill, but s_c pursues it anyway, until the fox turns and threatens with snapping teeth. s_c calls the rest of the patrol for backup and no one is injured, but by the time they get back to the kill a different predator has absconded with the fish."
     ],
     "win_skills": ["smart", "very smart", "extremely smart"],
@@ -3119,7 +3119,7 @@
         "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. But then they're stuck, unwilling to let go and risk being bitten. They're dragged through the swamp, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the fish."
     ],
     "fail_text": [
-    "r_c freezes, and carefully creeps back into cover. A kit fox is small enough to inevitably startle and run from them, but if they play this right... but not, the kit fox has spotted them, and flees form the cat. At least that's one less competitior in c_n's hunting grounds?"
+    "r_c freezes, and carefully creeps back into cover. A kit fox is small enough to inevitably startle and run from them, but if they play this right... but not, the kit fox has spotted them, and flees from the cat. At least that's one less competitior in c_n's hunting grounds?"
     ],
     "win_skills": ["good fighter", "great fighter", "excellent fighter"],
     "win_trait": ["altruistic", "patient", "responsible", "thoughtful", "wise", "calm", "careful", "insecure", "nervous", "sneaky"],
@@ -3361,7 +3361,7 @@
         "The mother red fox's snapping jaws leave r_c dripping blood into the mud, and force the patrol to back off.",
         null,
         "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the red vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up on the fight.",
-        "As their hunt descends into a full on battle with the red vixen, p_l takes a blow meant for one of their clanmates, losing a life."
+        "As their hunt descends into a full on battle with the red vixen, p_l takes a blow meant for one of their Clanmates, losing a life."
         ],
         "win_skills": ["excellent fighter"],
         "win_trait": ["adventurous", "altruistic", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "responsible", "righteous", "troublesome", "vengeful"],
@@ -3471,7 +3471,7 @@
         "The mother red fox's snapping jaws leave r_c dripping blood into the mud, and force the patrol to back off.",
         null,
         "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the red vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up on the fight.",
-        "As their hunt descends into a full on battle with the red vixen, p_l takes a blow meant for one of their clanmates, losing a life."
+        "As their hunt descends into a full on battle with the red vixen, p_l takes a blow meant for one of their Clanmates, losing a life."
         ],
         "win_skills": ["excellent fighter"],
         "win_trait": ["adventurous", "altruistic", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "responsible", "righteous", "troublesome", "vengeful"],
@@ -3581,7 +3581,7 @@
         "The mother red fox's snapping jaws leave r_c dripping blood into the mud, and force the patrol to back off.",
         null,
         "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the red vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up on the fight.",
-        "As their hunt descends into a full on battle with the red vixen, p_l takes a blow meant for one of their clanmates, losing a life."
+        "As their hunt descends into a full on battle with the red vixen, p_l takes a blow meant for one of their Clanmates, losing a life."
         ],
         "win_skills": ["excellent fighter"],
         "win_trait": ["adventurous", "altruistic", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "responsible", "righteous", "troublesome", "vengeful"],
@@ -4007,7 +4007,7 @@
         null,
         "p_l leads the patrol to the end of the scent trail, where a red fox sits plucking the feathers off a plump duck. With careful signals, the cats set up an ambush, but they aren't careful enough, and with a snarl the fox takes a bite at r_c as it flees with its dinner.",
         null,
-        "The patrol tracks down a red fox, and spots that it's holding freshkill. However, s_c bursts from cover without warning, trying to intimidate the fox, and the overconfident attack ends in disaster as the fox bites s_c, leaving the rest of the patrol to rescue their annoying clanmate as the fox runs off with what could've been their dinner."
+        "The patrol tracks down a red fox, and spots that it's holding freshkill. However, s_c bursts from cover without warning, trying to intimidate the fox, and the overconfident attack ends in disaster as the fox bites s_c, leaving the rest of the patrol to rescue their annoying Clanmate as the fox runs off with what could've been their dinner."
     ],
     "win_skills": ["good hunter", "great hunter", "fantastic hunter", "good fighter", "great fighter", "excellent fighter"],
     "win_trait": ["altruistic", "calm", "careful", "faithful", "insecure", "loyal", "nervous", "patient", "responsible", "righteous", "thoughtful", "wise"],
@@ -4043,7 +4043,7 @@
         null,
         "p_l leads the patrol to the end of the scent trail, where a red fox sits plucking the feathers off a plump duck. With careful signals, the cats set up an ambush, but they aren't careful enough, and with a snarl the fox takes a bite at r_c as it flees with its dinner.",
         null,
-        "The patrol tracks down a red fox, and spots that it's holding freshkill. However, s_c bursts from cover without warning, trying to intimidate the fox, and the overconfident attack ends in disaster as the fox bites s_c, leaving the rest of the patrol to rescue their annoying clanmate as the fox runs off with what could've been their dinner."
+        "The patrol tracks down a red fox, and spots that it's holding freshkill. However, s_c bursts from cover without warning, trying to intimidate the fox, and the overconfident attack ends in disaster as the fox bites s_c, leaving the rest of the patrol to rescue their annoying Clanmate as the fox runs off with what could've been their dinner."
     ],
     "win_skills": ["good hunter", "great hunter", "fantastic hunter", "good fighter", "great fighter", "excellent fighter"],
     "win_trait": ["altruistic", "calm", "careful", "faithful", "insecure", "loyal", "nervous", "patient", "responsible", "righteous", "thoughtful", "wise"],
@@ -4211,7 +4211,7 @@
     "Responsibly, s_c keeps the patrol moving once they take the fish from the unfortunate-but-unable-to-complain swift fox. They don't find anything, but with the stolen fish the afternoon hasn't been a completely wasted hunting trip."
     ],
     "fail_text": [
-    "The swift fox gives way easily to the bigger canivores, but the fish carcass is rotten, too rotten for the clan cats to want to touch.",
+    "The swift fox gives way easily to the bigger canivores, but the fish carcass is rotten, too rotten for the Clan cats to want to touch.",
     "The swift fox gives up the kill, but s_c pursues it anyway, until the fox turns and threatens with snapping teeth. s_c calls the rest of the patrol for backup and no one is injured, but by the time they get back to the kill a different predator has absconded with the fish."
     ],
     "win_skills": ["smart", "very smart", "extremely smart"],
@@ -4276,7 +4276,7 @@
     "Responsibly, s_c keeps the patrol moving once they take the fish from the unfortunate-but-unable-to-complain swift fox. They don't find anything, but with the stolen fish the afternoon hasn't been a completely wasted hunting trip."
     ],
     "fail_text": [
-    "The swift fox gives way easily to the bigger canivores, but the fish carcass is rotten, too rotten for the clan cats to want to touch.",
+    "The swift fox gives way easily to the bigger canivores, but the fish carcass is rotten, too rotten for the Clan cats to want to touch.",
     "The swift fox gives up the kill, but s_c pursues it anyway, until the fox turns and threatens with snapping teeth. s_c calls the rest of the patrol for backup and no one is injured, but by the time they get back to the kill a different predator has absconded with the fish."
     ],
     "win_skills": ["smart", "very smart", "extremely smart"],
@@ -4341,7 +4341,7 @@
     "Responsibly, s_c keeps the patrol moving once they take the fish from the unfortunate-but-unable-to-complain swift fox. They don't find anything, but with the stolen fish the afternoon hasn't been a completely wasted hunting trip."
     ],
     "fail_text": [
-    "The swift fox gives way easily to the bigger canivores, but the fish carcass is rotten, too rotten for the clan cats to want to touch.",
+    "The swift fox gives way easily to the bigger canivores, but the fish carcass is rotten, too rotten for the Clan cats to want to touch.",
     "The swift fox gives up the kill, but s_c pursues it anyway, until the fox turns and threatens with snapping teeth. s_c calls the rest of the patrol for backup and no one is injured, but by the time they get back to the kill a different predator has absconded with the fish."
     ],
     "win_skills": ["smart", "very smart", "extremely smart"],
@@ -4406,7 +4406,7 @@
     "Responsibly, s_c keeps the patrol moving once they take the fish from the unfortunate-but-unable-to-complain swift fox. They don't find anything, but with the stolen fish the afternoon hasn't been a completely wasted hunting trip."
     ],
     "fail_text": [
-    "The swift fox gives way easily to the bigger canivores, but the fish carcass is rotten, too rotten for the clan cats to want to touch.",
+    "The swift fox gives way easily to the bigger canivores, but the fish carcass is rotten, too rotten for the Clan cats to want to touch.",
     "The swift fox gives up the kill, but s_c pursues it anyway, until the fox turns and threatens with snapping teeth. s_c calls the rest of the patrol for backup and no one is injured, but by the time they get back to the kill a different predator has absconded with the fish."
     ],
     "win_skills": ["smart", "very smart", "extremely smart"],
@@ -4498,7 +4498,7 @@
         "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. But then they're stuck, unwilling to let go and risk being bitten. They're dragged through the swamp, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the fish."
     ],
     "fail_text": [
-    "r_c freezes, and carefully creeps back into cover. A kit fox is small enough to inevitably startle and run from them, but if they play this right... but not, the kit fox has spotted them, and flees form the cat. At least that's one less competitior in c_n's hunting grounds?"
+    "r_c freezes, and carefully creeps back into cover. A kit fox is small enough to inevitably startle and run from them, but if they play this right... but not, the kit fox has spotted them, and flees from the cat. At least that's one less competitior in c_n's hunting grounds?"
     ],
     "win_skills": ["good fighter", "great fighter", "excellent fighter"],
     "win_trait": ["altruistic", "patient", "responsible", "thoughtful", "wise", "calm", "careful", "insecure", "nervous", "sneaky"],

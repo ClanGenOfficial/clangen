@@ -483,7 +483,7 @@
     "chance_of_success": 80,
     "exp": 20,
     "success_text": [
-        "Everyone has a nice practice session and their coordination with, and trust in, their Clanmates grows stronger.",
+        "Everyone has a nice practice session and their coordination and trust in their Clanmates grows stronger.",
         null,
         "s_c takes charge and coordinates exercises for the training patrol. Soon cats are using each other as springboards, practicing breaking a Clanmates' fall, and working on treading exactly in each other's pawsteps."
     ],
@@ -506,7 +506,7 @@
     "chance_of_success": 80,
     "exp": 20,
     "success_text": [
-        "Both cats have a nice practice session and their coordination with, and trust of, each other grows stronger.",
+        "Both cats have a nice practice session, and their trust and coordination with each other grows stronger.",
         null,
         "s_c takes charge and coordinates exercises for the duo. They practice mirroring each other, until by the end of the afternoon they can almost act as one cat."
     ],

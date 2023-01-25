@@ -1486,7 +1486,7 @@
             "The patrol tries to intimidate the bird away from its catch, but s_c has another idea in the back of their mind, and when the bird turns its back to screech at another member of the patrol, s_c leaps for its throat. c_n will feast tonight, on both the fish the eagle caught for them, and the bird itself."
         ],
         "fail_text": [
-            "The patrol waits around, keen to try scavenge form the eagle's scraps, but the bird is as hungry as the Clan cats, and nothing but the odd scale and bone is left.",
+            "The patrol waits around, keen to try scavenge from the eagle's scraps, but the bird is as hungry as the Clan cats, and nothing but the odd scale and bone is left.",
             null,
             "The patrol decides to fight the eagle for possession of the prey, but the massive aerial predator is too much for the starving c_n cats, and it kills r_c in the battle.",
             "The patrol decides to fight the eagle for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat.",
@@ -1546,7 +1546,7 @@
             "The patrol tries to intimidate the bird away from its catch, but s_c has another idea in the back of their mind, and when the bird turns its back to screech at another member of the patrol, s_c leaps for its throat. c_n will feast tonight, on both the fish the eagle caught for them, and the bird itself."
         ],
         "fail_text": [
-            "The patrol waits around, keen to try scavenge form the eagle's scraps, but the bird is as hungry as the Clan cats, and nothing but the odd scale and bone is left.",
+            "The patrol waits around, keen to try scavenge from the eagle's scraps, but the bird is as hungry as the Clan cats, and nothing but the odd scale and bone is left.",
             null,
             null,
             "The patrol decides to fight the eagle for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat.",
@@ -1607,7 +1607,7 @@
             "The patrol tries to intimidate the bird away from its catch, but s_c has another idea in the back of their mind, and when the bird turns its back to screech at another member of the patrol, s_c leaps for its throat. c_n will feast tonight, on both the fish the eagle caught for them, and the bird itself."
         ],
         "fail_text": [
-            "The patrol waits around, keen to try scavenge form the eagle's scraps, but the bird is as hungry as the Clan cats, and nothing but the odd scale and bone is left.",
+            "The patrol waits around, keen to try scavenge from the eagle's scraps, but the bird is as hungry as the Clan cats, and nothing but the odd scale and bone is left.",
             "Far too keen to try and prove themselves against the king of the skies, s_c leaps for the eagle and startles it into flight with it's massive catch, and the opportunity is lost.",
             "The patrol decides to fight the eagle for possession of the prey, but the massive aerial predator is too much for the starving c_n cats, and it kills r_c in the battle.",
             "The patrol decides to fight the eagle for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat.",
@@ -1668,7 +1668,7 @@
             "The patrol tries to intimidate the bird away from its catch, but s_c has another idea in the back of their mind, and when the bird turns its back to screech at another member of the patrol, s_c leaps for its throat. c_n will feast tonight, on both the fish the eagle caught for them, and the bird itself."
         ],
         "fail_text": [
-            "The patrol waits around, keen to try scavenge form the eagle's scraps, but the bird is as hungry as the Clan cats, and nothing but the odd scale and bone is left.",
+            "The patrol waits around, keen to try scavenge from the eagle's scraps, but the bird is as hungry as the Clan cats, and nothing but the odd scale and bone is left.",
             "Far too keen to try and prove themselves against the king of the skies, s_c leaps for the eagle and startles it into flight with it's massive catch, and the opportunity is lost.",
             "The patrol decides to fight the eagle for possession of the prey, but the massive aerial predator is too much for the starving c_n cats, and it kills r_c in the battle.",
             "The patrol decides to fight the eagle for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat.",
@@ -2461,7 +2461,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_fox_greenleafleafscavenge2",
+        "patrol_id": "mtn_hunt_fox_greenleafscavenge2",
         "biome": "mountainous",
         "season": "greenleaf",
         "tags": [
