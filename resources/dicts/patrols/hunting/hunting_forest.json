@@ -633,7 +633,7 @@
 			"large_prey3"
 		],
 		"intro_text": "r_c hears distant howling and wonders whether to investigate the noise.",
-		"decline_text": "r_cl decides not to investigate the source of the noise.  Whatever is making it will not be friendly to them and they are only one cat.",
+		"decline_text": "r_c decides not to investigate the source of the noise.  Whatever is making it will not be friendly to them and they are only one cat.",
 		"chance_of_success": 10,
 		"exp": 40,
 		"success_text": [
