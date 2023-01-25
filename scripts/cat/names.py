@@ -227,7 +227,7 @@ class Name():
         "Tasha", "Tempest", "Tetris", "Teufel", "Tiny", "Toast", "Toffee", "Tom", "Tomato", "Tomato Soup", "Toni", "Toothless", "Torque", "Tortilla", 
         "Treasure", "Triscuit", "Trixie", "Trouble", "Tucker", "Tuffnut", "Tumble", "Turbo", "Twilight", "Twister", "Twix", "Toastee", "Taurus", "Ula", "Union",
         "Uriel", "Vanilla", "Vaxx", "Venture", "Via", "Vida", "Viktor", "Vinnie", "Vinyl", "Violet", "Vivienne", "Void", "Voltage", "Vox", "Virgo", "Wanda", "Webby",
-        "Wendy", "Whiskers", "Whisper", "Wigglebottom", "Wigglebutt", "Windy", "Wishbone", "Wisp", "Wisteria", "Worm", "X'ek", "Zelda", "Zim", "Zoe"
+        "Wendy", "Whiskers", "Whisper", "Wigglebutt", "Windy", "Wishbone", "Wisp", "Wisteria", "Worm", "X'ek", "Zelda", "Zim", "Zoe"
     ]
 
     if os.path.exists('saves/prefixlist.txt'):
