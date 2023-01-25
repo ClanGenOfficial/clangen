@@ -62,7 +62,6 @@ class Events():
             if not cat.outside:
                 self.one_moon_cat(cat)
 
-                self.mediator_events(cat)
             else:
                     # ---------------------------------------------------------------------------- #
                     #                              exiled cat events                               #
@@ -217,11 +216,11 @@ class Events():
             # Note: These chances are large since it triggers every moon.
             # Checking every moon has the effect giving older cats more chances to become a mediator
             mediator_chance = {
-                "warrior": 10000,
-                "elder": 600
+                "warrior": 5000,
+                "elder": 400
             }
             if cat.status in mediator_chance and not int(random.random() * mediator_chance[cat.status]):
-                game.cur_events_list(Single_Event(f"{cat.name} had chosen to use their skills and experience to help "
+                game.cur_events_list.append(Single_Event(f"{cat.name} had chosen to use their skills and experience to help "
                                                   f"solve the clan's disagreements. A meeting is called, and they "
                                                   f"become the clan's newest mediator. ", "ceremony", cat.ID))
                 cat.status_change("mediator")
@@ -488,6 +487,9 @@ class Events():
             cat.dead_for += 1
             self.handle_fading(cat)  # Deal with fading.
             return
+
+        #Handle Mediator Events
+        self.mediator_events(cat)
 
         # handle nutrition amount (CARE: the cats has to be fed before - should be handled in "one_moon" function)
         #if game.clan.game_mode in ['expanded', 'cruel season'] and game.clan.freshkill_pile:

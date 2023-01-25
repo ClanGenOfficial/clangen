@@ -27,7 +27,7 @@
         "Volunteered to stand guard of the camp",
         "Gives some plump fresh-kill to a Clanmate instead",
         "Shares the best hunting spots with the other warriors",
-        "Does their Clanmates chores with a smile on their face",
+        "Does their Clanmates' chores with a smile on their face",
         "Offers a helping paw, even after a night of bad sleep",
         "Feels their kindness might be taken advantage of every now and then"
     ],
@@ -157,7 +157,7 @@
         "Stuck their tongue out at a mouse that escaped their pounce while hunting",
         "Makes immature jokes all day, leaving everyone else rolling their eyes",
         "Doesn't want to share a piece of fresh-kill",
-        "Cries because they stepped on a bug"
+        "Has felt bad all day about stepping on a bug"
     ],
     "cold": [
         "Is hissing in frustration",
@@ -166,7 +166,7 @@
         "Notices that their Clanmates have been nervous around them lately",
         "Is scolding the apprentices over something slight",
         "Is pushing around the apprentices",
-        "Barates an apprentice for not doing their chores because they overslept",
+        "Berates an apprentice for not doing their chores because they overslept",
         "Doesn't say thank you when offered a piece of fresh-kill",
         "Turns away without saying a word when a Clanmate vents to them",
         "Thinks the leader should be harsher on codebreakers",
@@ -260,9 +260,9 @@
         "Is showing off their battle moves",
         "Is offering to lead the patrol today",
         "Wishes they had more scars",
-        "Pounced on a Clanmate unexpectedly, saying how its just target practice",
+        "Pounced on a Clanmate unexpectedly, meowing about how they should be ready at any moment",
         "Has been waiting for a war to finally happen",
-        "Tears up their fresh-kill far too violently for other's liking",
+        "Tears up their fresh-kill far too violently for others' liking",
         "Doesn't understand why the other warriors don't want to train with them"
     ],
     "insecure": [
@@ -275,7 +275,7 @@
         "Was scared by an owl last night and is too embarrassed to tell anyone",
         "Wonders if their fur is unkempt and whether or not others can notice",
         "Is busy sharpening their claws, thinking others might like them more if they look stronger",
-        "Cried from worry that they aren't contributing enough, but hid their face when someone walked in",
+        "Worries that they aren't contributing enough",
         "Thinks about all the mistakes they've made"
     ],
     "lonesome": [
@@ -452,8 +452,8 @@
         "Leaves camp, not telling anyone what they're about to do",
         "Is snooping around once again",
         "Is creeping cats out by appearing from nowhere",
-        "Knows that they'd be no match for even the most paranoid rabbit",
-        "Hasn't been seen in a hot while"
+        "Knows that even the most paranoid rabbit would be no match for them",
+        "Hasn't been seen in a while"
     ],
     "strange": [
         "Is telling every cat about their weird dreams",
@@ -475,7 +475,7 @@
         "Drawing symbols in the dirt with their claws",
         "Paces back and forth",
         "Is zoned out",
-        "Is barking like a dog. Somehow.",
+        "Is barking like a dog - somehow",
         "Was found talking to a tree the other day",
         "Was walking on their forelimbs for a bit",
         "Seems to have come up with their own secret language",
