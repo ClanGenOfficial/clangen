@@ -1,0 +1,29 @@
+{
+    "dead": {
+        "kitten": [],
+        "medicine cat apprentice": [],
+        "apprentice": [],
+        "warrior": [],
+        "medicine cat": [],
+        "leader": [],
+        "deputy": [],
+        "elder": [],
+        "mediator": [],
+        "mediator apprentice": [],
+        "all": []
+    },
+    "alive": {
+        "kitten": [],
+        "medicine cat apprentice": [],
+        "apprentice": [],
+        "warrior": [],
+        "medicine cat": [],
+        "leader": [],
+        "deputy": [],
+        "elder": [],
+        "mediator": [],
+        "mediator apprentice": [],
+        "all": []
+    },
+    "all": []
+}

@@ -663,6 +663,8 @@ class ProfileScreen(Screens):
                 "",
                 object_id="#mediation_button",
             )
+            if self.the_cat.dead or self.the_cat.outside:
+                self.profile_elements["mediation"].disable()
 
         if game.settings["fading"]:
             if is_sc_instructor:
