@@ -510,7 +510,13 @@ def white_patches_inheritance(cat, parents: tuple):
 
     par_whitepatches = set()
     for p in parents:
-        par_whitepatches.add(p.white_patches)
+        if p:
+            par_whitepatches.add(p.white_patches)
+
+    if not par_whitepatches:
+        print("Error - no parents. Randomizing white patches.")
+        randomize_white_patches(cat)
+        return
 
     # Direct inheritance
     if not randint(0, 10):
@@ -565,7 +571,7 @@ def randomize_white_patches(cat):
 
     white_list = [little_white, mid_white, high_white, mostly_white, point_markings, ['FULLWHITE']]
     chosen_white_patches = choice(
-        random.choices(white_list, weights=(10, 10, 10, 10, 2, 1), k=1)[0]
+        random.choices(white_list, weights=(10, 10, 10, 10, 5, 1), k=1)[0]
     )
 
     cat.white_patches = chosen_white_patches
