@@ -173,85 +173,98 @@ def init_eyes(cat):
                 eye_choice = choice([yellow_eyes, blue_eyes])
                 cat.eye_colour2 = choice(eye_choice)
 
+def pelt_inheritance(cat, parents: tuple):
+    # setting parent pelt categories
+    #We are using a set, since we don't need this to be ordered, and sets deal with removing duplicates.
+    par_peltcategories = set()
+    par_peltcolours = set()
+    par_pelts = []
+    for p in parents:
+        if p:
+            #Gather all the pelts in the parents pelt catogories
+            if p.pelt.name in tabbies:
+                par_peltcategories.update(tabbies)
+            elif p.pelt.name in spotted:
+                par_peltcategories.update(spotted)
+            elif p.pelt.name in plain:
+                par_peltcategories.update(plain)
+            elif p.pelt.name in exotic:
+                par_peltcategories.update(exotic)
+            elif p.pelt.name in torties:
+                par_peltcategories.update(torties)
+
+            #Gather pelt color.
+            par_peltcolours.add(p.pelt.colour)
+
+            #Gather exact pelts
+            par_pelts.append(p.pelt)
+
+        #If this list is empty, something went wrong.
+        if not par_peltcolours:
+            print("Error - no parents")
+            return
+
+        # There is a 1/15 chance for kits to have the exact same pelt as their parents.
+        if not randint(0, 15):  # 1/15 chance
+            selected = choice(par_pelts)
+            cat.pelt = choose_pelt(selected.pelt.colour, selected.pelt.white, selected.pelt.name,
+                                   selected.pelt.length)
+            return
+
+        #Determine pelt. If the cat it later determined to be tortie, this will be the base coat.
+
+
+        #Tortie chance
+        tortie_chance_f = 2  #There is a default 1/4 chance for tortie
+        tortie_chance_m = 9
+        for c in par_peltcolours:
+            if c in ginger_colours + black_colours:
+                tortie_chance_f = 1
+                tortie_chance_m -= 1
+
+        #Determine tortie:
+        if cat.gender == "female"
+            torbie = random.getrandbits(tortie_chance_f) == 1
+        else:
+            torbie = random.getrandbits(tortie_chance_m) == 1
+
+
+
+
+
+
+
+
+
+def randomize_pelt(cat):
+    pass
+
 def init_pelt(cat):
-    '''if cat.parent2 is None and cat.parent1 in cat.all_cats.keys():
-        # 1 in 3 chance to inherit a single parent's pelt
-        par1 = cat.all_cats[cat.parent1]
-        cat.pelt = choose_pelt(cat.gender, choice([par1.pelt.colour, None]), choice([par1.pelt.white, None]), choice([par1.pelt.name, None]),
-                                choice([par1.pelt.length, None]))
-    if cat.parent1 in cat.all_cats.keys() and cat.parent2 in cat.all_cats.keys():
-        # 2 in 3 chance to inherit either parent's pelt
-        par1 = cat.all_cats[cat.parent1]
-        par2 = cat.all_cats[cat.parent2]
-        cat.pelt = choose_pelt(cat.gender, choice([par1.pelt.colour, par2.pelt.colour, None]), choice([par1.pelt.white, par2.pelt.white, None]),
-                                choice([par1.pelt.name, par2.pelt.name, None]), choice([par1.pelt.length, par2.pelt.length, None]))                  
-    else:
-        cat.pelt = choose_pelt(cat.gender)'''
     if cat.pelt is not None:
         return cat.pelt
     else:
-        # new pelt inheritance
+        # Grab Parents
         par1 = None
         par2 = None
-        if cat.parent1 in cat.all_cats.keys():
-            par1 = cat.all_cats[cat.parent1]
-        if cat.parent2 in cat.all_cats.keys():
+        if cat.parent1 in cat.all_cats:
+            par1 = cat.all_cats[cat.parent2]
+        if cat.parent2 in cat.all_cats:
             par2 = cat.all_cats[cat.parent2]
-        # setting parent pelt categories
-        if par1 != None:
-            if par1.pelt.name in tabbies:
-                par1_peltcategory = tabbies
-            elif par1.pelt.name in spotted:
-                par1_peltcategory = spotted
-            elif par1.pelt.name in plain:
-                par1_peltcategory = plain
-            elif par1.pelt.name in exotic:
-                par1_peltcategory = exotic
-            elif par1.pelt.name in torties:
-                par1_peltcategory = torties
-        if par2 != None:
-            if par2.pelt.name in tabbies:
-                par2_peltcategory = tabbies
-            elif par2.pelt.name in spotted:
-                par2_peltcategory = spotted
-            elif par2.pelt.name in plain:
-                par2_peltcategory = plain
-            elif par2.pelt.name in exotic:
-                par2_peltcategory = exotic
-            elif par2.pelt.name in torties:
-                par2_peltcategory = torties
-        if par1 != None:
-            par1_colour = par1.pelt.colour
-        if par2 != None:
-            par2_colour = par2.pelt.colour
+
+        if par1 or par2:
+            #If the cat has parents, use inheritance to decide pelt.
+            pelt_inheritance(cat, (par1, par2))
+        else:
+
+
         white = False
         pelt_choice = None
         colour_choice = None
-        tortie_chanceM = 0
-        tortie_chanceF = False
+
         tortie = False
         length_choice = None
         direct_inherit = randint(0, 10)
-        if par1 != None:
-            if par1_colour in [ginger_colours, black_colours] and not par2:
-                tortie_chanceF = choice([True, False])
-                tortie_chanceM = random.getrandbits(8)
-            elif par1 != None and par2 != None and par1_colour in ginger_colours and par2_colour in black_colours\
-                or par1_colour in black_colours and par2_colour in ginger_colours:
-                tortie_chanceF = choice([True, False])
-                tortie_chanceM = random.getrandbits(7)
-        else:
-            tortie_chanceF = choice([True, False, False])
-            tortie_chanceM = random.getrandbits(8)
 
-        # just gonna go ahead and decide if the cat is a tortie here
-        if cat.gender == 'female' and tortie_chanceF:
-            pelt_choice = torties
-        elif cat.gender == 'male' and tortie_chanceM == 1:
-            pelt_choice = torties
-
-        if pelt_choice == torties:
-            tortie = True
 
         # no parents, pretty random
         if not par1 and not par2:
