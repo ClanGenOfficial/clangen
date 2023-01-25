@@ -749,7 +749,7 @@ class SettingsScreen(Screens):
                 "",
                 object_id=box_type,
                 container=self.checkboxes_text["container"],
-                tool_tip_text="Warriors and elders will have a chance to become elders upon timeskip."
+                tool_tip_text="Warriors and elders will have a chance to become mediators upon timeskip."
             )
 
         # CHECKBOXES FOR RELATION SETTINGS #################################################################

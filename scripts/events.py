@@ -62,7 +62,6 @@ class Events():
             if not cat.outside:
                 self.one_moon_cat(cat)
 
-                self.mediator_events(cat)
             else:
                     # ---------------------------------------------------------------------------- #
                     #                              exiled cat events                               #
@@ -488,6 +487,9 @@ class Events():
             cat.dead_for += 1
             self.handle_fading(cat)  # Deal with fading.
             return
+
+        #Handle Mediator Events
+        self.mediator_events(cat)
 
         # handle nutrition amount (CARE: the cats has to be fed before - should be handled in "one_moon" function)
         #if game.clan.game_mode in ['expanded', 'cruel season'] and game.clan.freshkill_pile:
