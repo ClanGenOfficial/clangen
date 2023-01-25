@@ -26,7 +26,7 @@ class Name():
         "flame", "flight", "flood", "flower", "fox", "frost", "gaze", "goose", "gorse", "grass", "hail", "hare", "hawk", "haze",
         "heather", "hollow", "holly", "horse", "ice", "ivy", "jaw", "jay", "jump", "kite", "lake", "larch", "leaf", "leap", 
         "leaves", "leg", "light", "lightning", "lilac", "lily", "lotus", "mask", "minnow", "mist", "moth", "moon", "moss", "mouse",
-        "muzzle", "needle", "nettle", "night", "noise", "nose", "nut", "pad", "patch", "path", "paws", "peak", "petal", "pond",
+        "muzzle", "needle", "nettle", "night", "noise", "nose", "nut", "pad", "patch", "path", "peak", "petal", "pond",
         "pool", "poppy", "pounce", "puddle", "rain", "rapid", "ripple", "river", "roar", "rose", "rump", "run", "runner", "scar",
         "scratch", "seed", "shade", "shadow", "shell", "shine", "sight", "skip", "sky", "slip", "snout", "snow", "song", "spark",
         "speck", "speckle", "spirit", "splash", "spot", "spots", "spring", "stalk", "stem", "step", "stone", "storm", "streak",
