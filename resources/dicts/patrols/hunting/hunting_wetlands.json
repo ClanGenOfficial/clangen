@@ -1212,7 +1212,6 @@
             "retirement",
             "injury",
             "hunting",
-            "big_prey",
             "cruel_season",
             "large_prey"
         ],
@@ -1270,7 +1269,7 @@
         "season": "greenleaf",
         "tags": [
             "hunting",
-            "big_prey",
+            "large_prey",
             "rel_patrol",
             "platonic"
         ],
