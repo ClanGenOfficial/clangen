@@ -26,7 +26,7 @@ class Name():
         "flame", "flight", "flood", "flower", "fox", "frost", "gaze", "goose", "gorse", "grass", "hail", "hare", "hawk", "haze",
         "heather", "hollow", "holly", "horse", "ice", "ivy", "jaw", "jay", "jump", "kite", "lake", "larch", "leaf", "leap", 
         "leaves", "leg", "light", "lightning", "lilac", "lily", "lotus", "mask", "minnow", "mist", "moth", "moon", "moss", "mouse",
-        "muzzle", "needle", "nettle", "night", "noise", "nose", "nut", "pad", "patch", "path", "paws", "peak", "petal", "pond",
+        "muzzle", "needle", "nettle", "night", "noise", "nose", "nut", "pad", "patch", "path", "peak", "petal", "pond",
         "pool", "poppy", "pounce", "puddle", "rain", "rapid", "ripple", "river", "roar", "rose", "rump", "run", "runner", "scar",
         "scratch", "seed", "shade", "shadow", "shell", "shine", "sight", "skip", "sky", "slip", "snout", "snow", "song", "spark",
         "speck", "speckle", "spirit", "splash", "spot", "spots", "spring", "stalk", "stem", "step", "stone", "storm", "streak",
@@ -59,13 +59,17 @@ class Name():
         'tortieticked': ['spots', 'pelt', 'speckle', 'freckle'],
         'tortiesmoke': ['fade', 'dusk', 'dawn', 'smoke'],
         'tortierosette': ['dapple', 'speckle', 'spots', 'dapple', 'fern', 'freckle'],
-        'tortiespeckled': ['dapple', 'speckle', 'spot', 'speck', 'freckle']
+        'tortiespeckled': ['dapple', 'speckle', 'spot', 'speck', 'freckle'],
+        'tortiemackerel': ['stripe', 'feather', 'fern', 'shade'],
+        'tortieclassic': ['stripe', 'feather', 'fern'],
+        'tortiesokoke': ['stripe', 'feather', 'fern', 'shade', 'dapple'],
+        'tortieagouti': ['back', 'pelt', 'fur', 'dapple', 'splash']
     }
 
     normal_prefixes = [
         'Acacia', 'Adder', 'Alder', 'Algae', 'Aloe', 'Ant', 'Antler', 'Apple', 'Apricot', 'Arc', 'Arch', 'Aspen', 'Aster', 'Autumn',
-        'Badger', 'Barley', 'Basil', 'Bass', 'Bay', 'Bayou', 'Beam', 'Bear', 'Beaver', 'Bee', 'Beech', 'Beetle', 'Bella', 'Berry',
-        'Big', 'Billy', 'Birch', 'Bird', 'Bite', 'Bitter', 'Bittern', 'Bleak', 'Blight', 'Blink', 'Bliss', 'Blizzard', 'Bloom',
+        'Badger', 'Barley', 'Basil', 'Bass', 'Bay', 'Bayou', 'Beam', 'Bear', 'Beaver', 'Bee', 'Beech', 'Beetle', 'Berry',
+        'Big', 'Birch', 'Bird', 'Bite', 'Bitter', 'Bittern', 'Bleak', 'Blight', 'Blink', 'Bliss', 'Blizzard', 'Bloom',
         'Blossom', 'Blotch', 'Bluebell', 'Bluff', 'Bog', 'Bold', 'Borage', 'Bough', 'Boulder', 'Bounce', 'Bracken', 'Bramble', 
         'Brave', 'Breeze', 'Briar', 'Bright', 'Brindle', 'Bristle', 'Broken', 'Brook', 'Brush', 'Bubble', 'Bubbling', 'Buck', 
         'Bug', 'Bumble', 'Burdock', 'Burr', 'Bush', 'Buzzard', 'Carp', 'Cedar', 'Chaffinch', 'Char', 'Chasing', 'Cheetah', 'Cherry',
@@ -78,7 +82,7 @@ class Name():
         'Ferret', 'Fidget', 'Fierce', 'Fin', 'Finch', 'Fir', 'Fish', 'Flail', 'Flash', 'Flax', 'Fleck', 'Fleet', 'Flicker', 
         'Flight', 'Flint', 'Flip', 'Flood', 'Flower', 'Flutter', 'Fluttering', 'Fly', 'Foam', 'Fog', 'Forest', 'Freckle', 'Fringe',
         'Frog', 'Frond', 'Furled', 'Furze', 'Fuzzy', 'Gale', 'Gander', 'Gannet', 'Gem', 'Giant', 'Gill', 'Gleam', 'Glow', 'Goose',
-        'Gorge', 'Gorse', 'Grass', 'Gravel', 'Grouse', 'Gull', 'Gust', 'Hail', 'Half', 'Hare', 'Harry', 'Harvest', 'Harvey', 
+        'Gorge', 'Gorse', 'Grass', 'Gravel', 'Grouse', 'Gull', 'Gust', 'Hail', 'Half', 'Hare', 'Harvest',
         'Hatch', 'Haven', 'Hawk', 'Hay', 'Haze', 'Heath', 'Heavy', 'Hedge', 'Hen', 'Heron', 'Hill', 'Hoarse', 'Hollow', 'Holly',
         'Honey', 'Hoot', 'Hop', 'Hope', 'Hornet', 'Hound', 'Iris', 'Ivy', 'Jackdaw', 'Jagged', 'Jay', 'Jump', 'Juniper', 'Kestrel',
         'Kink', 'Kite', 'Lake', 'Lapping', 'Larch', 'Lark', 'Laurel', 'Lavender', 'Leaf', 'Leap', 'Leopard', 'Lichen', 'Light',
@@ -87,10 +91,10 @@ class Name():
         'Milk', 'Milkweed', 'Mink', 'Minnow', 'Mistle', 'Mite', 'Mock', 'Mole', 'Monkey', 'Moon', 'Moor', 'Morning', 'Moss', 
         'Mossy', 'Moth', 'Mottle', 'Mottled', 'Mouse', 'Mumble', 'Murk', 'Myrtle', 'Nacre', 'Narrow', 'Nectar', 'Needle', 'Nettle',
         'Newt', 'Nut', 'Oat', 'Odd', 'One', 'Orange', 'Osprey', 'Pansy', 'Panther', 'Parsley', 'Partridge', 'Patch', 'Peak', 
-        'Pear', 'Peat', 'Peat', 'Perch', 'Petal', 'Pheasant', 'Pigeon', 'Pike', 'Pine', 'Pink', 'Piper', 'Plover', 'Plum', 'Pod',
+        'Pear', 'Peat', 'Perch', 'Petal', 'Pheasant', 'Pigeon', 'Pike', 'Pine', 'Pink', 'Piper', 'Plover', 'Plum', 'Pod',
         'Pond', 'Pool', 'Poppy', 'Posy', 'Pounce', 'Prance', 'Prickle', 'Prim', 'Primrose', 'Puddle', 'Python', 'Quail', 'Quick',
         'Quiet', 'Quill', 'Rabbit', 'Raccoon', 'Ragged', 'Rain', 'Rainswept', 'Rambling', 'Rat', 'Rattle', 'Raven', 'Reed', 
-        'Ridge', 'Rift', 'Riley', 'Ripple', 'Rising', 'River', 'Roach', 'Rook', 'Root', 'Rose', 'Rosy', 'Rot', 'Rowan', 'Rubble',
+        'Ridge', 'Rift', 'Ripple', 'Rising', 'River', 'Roach', 'Rook', 'Root', 'Rose', 'Rosy', 'Rot', 'Rowan', 'Rubble',
         'Running', 'Rush', 'Rye', 'Sage', 'Scar', 'Scorch', 'Sea', 'Sedge', 'Seed', 'Shard', 'Sharp', 'Shattered', 'Sheep', 
         'Shell', 'Shimmer', 'Shining', 'Shivering', 'Short', 'Shred', 'Shrew', 'Shy', 'Silk', 'Silt', 'Skip', 'Sky', 'Slate', 
         'Sleek', 'Sleet', 'Slight', 'Sloe', 'Slope', 'Small', 'Snail', 'Snake', 'Snap', 'Sneeze', 'Snip', 'Snook', 'Soft', 'Song',
@@ -98,7 +102,7 @@ class Name():
         'Squirrel', 'Starling', 'Steam', 'Stem', 'Stoat', 'Stork', 'Stream', 'Strike', 'Stripe', 'Strong', 'Stump', 
         'Stumpy', 'Sunny', 'Swallow', 'Swamp', 'Sweet', 'Swift', 'Tall', 'Talon', 'Tangle', 'Tansy', 'Tawny', 'Thistle', 'Thorn',
         'Thrift', 'Thrush', 'Thunder', 'Thyme', 'Tiger', 'Timber', 'Tiny', 'Tip', 'Toad', 'Torn', 'Trout', 'Tuft', 'Tulip', 
-        'Tumble', 'Turtle', 'Twisted', 'Vine', 'Vixen', 'Warm', 'Wasp', 'Wave', 'Weasel', 'Web', 'Wet', 'Wheat', 'Whirl', 'Whisker',
+        'Tumble', 'Turtle', 'Twisted', 'Vine', 'Vixen', 'Warm', 'Wasp', 'Wave', 'Weasel', 'Web', 'Weed', 'Wet', 'Wheat', 'Whirl', 'Whisker',
         'Whisper', 'Whispering', 'Whistle', 'Whorl', 'Wild', 'Willow', 'Wind', 'Wish', 'Wisteria', 'Wolf', 'Wood', 'Wren', 'Yarrow', 'Yew'
     ]
 
@@ -116,7 +120,7 @@ class Name():
             'River', 'Blizzard', 'Flurry', 'Bone', 'Bleak', 'Stone', 'Pebble', 'Heather', 'Warm', 'Arctic'
         ],
         'GREY': [
-            'Grey', 'Grey', 'Ash', 'Ashen', 'Cinder', 'Rock', 'Stone', 'Shade', 'Mouse', 'Smoke', 'Smokey', 'Shadow', "Fog", 'Bone', 
+            'Grey', 'Grey', 'Ash', 'Ashen', 'Cinder', 'Rock', 'Stone', 'Shade', 'Mouse', 'Smoke', 'Smoky', 'Shadow', "Fog", 'Bone', 
             'Bleak', 'Rain', 'Storm', 'Soot', 'Pebble', 'Mist', 'Misty', 'Heather',
         ],
         'DARKGREY': [
@@ -172,10 +176,8 @@ class Name():
         'GREEN': ['Green', 'Fern', 'Weed', 'Holly', 'Clover', 'Olive'],
         'BLUE': ['Blue', 'Blue', 'Ice', 'Sky', 'Lake', 'Frost', 'Water', 'Sea'],
         'DARKBLUE': ['Dark', 'Blue', 'Sky', 'Lake', 'Berry', 'Water', 'Deep'],
-        'BLUEYELLOW': ['Blue', 'Yellow', 'Odd', 'One', 'Moon'],
-        'BLUEGREEN': ['Blue', 'Green', 'Odd', 'One', 'Clover', 'Weed'],
         'GREY': ['Grey', 'Stone', 'Silver', 'Ripple', 'Moon', 'Rain', 'Storm', 'Heather'],
-        'CYAN': ['Sky', 'Blue', 'River', 'Rapid', 'Green', 'Sea'],
+        'CYAN': ['Sky', 'Blue', 'River', 'Rapid', 'Sea'],
         'EMERALD': ['Emerald', 'Green', 'Shine', 'Blue', 'Pine', 'Weed'],
         'PALEBLUE': ['Pale', 'Blue', 'Sky', 'River', 'Ripple', 'Day', 'Cloud', 'Sea'],
         'PALEYELLOW': ['Pale', 'Yellow', 'Sun', 'Gold', 'Ray'],
@@ -215,7 +217,7 @@ class Name():
         "Mr. Wigglebottom", "Mucha", "Murder", "Mushroom", "Mitaine", "Myko", "Neel", "Nagi", "Nakeena", "Neil", "Nemo", "Nessie", "Nick", "Nightmare", "Nikki",
         "Niles", "Ninja", "Nintendo", "Nisha", "Nitro", "Noodle", "Norman" "Nova", "Nugget", "Nuggets", "Nuka", "Nutella", "O'Leary", "Oakley", "Oapie", "Obi Wan",
         "Old Man Sam", "Oleander", "Olga", "Oliver", "Oliva", "Ollie", "Omelet", "Onyx", "Oops", "Ophelia", "Oreo", "Orion", "Oscar", "Owen", "Peach", "Peanut",
-        "Peanut Wigglebottom",  "Peanut Wigglebutt", "Pear", "Pearl", "Pecan", "Penny", "Peony", "Pepper", "Pichi", "Pickles", "Pikachu", "Ping", "Ping Pong",
+        "Peanut Wigglebutt", "Pear", "Pearl", "Pecan", "Penny", "Peony", "Pepper", "Pichi", "Pickles", "Pikachu", "Ping", "Ping Pong",
         "Pip", "Piper", "Pipsqueak", "Pocket", "Poki", "Polly", "Pong", "Poopy", "Porsche", "Potato", "Prickle", "Princess", "Pumpernickel", "Punk", "Purdy",
         "Purry", "Pisces", "Pushee", "Quagmire", "Quake", "Queen", "Queenie", "Queeny", "Queso", "Queso Ruby", "Quest", "Quickie", "Quimby",
         "Quinn", "Quino", "Quinzee", "Quesadilla", "Ramble", "Randy", "Rarity", "Rat", "Ray", "Reese", "Reeses Puff", "Ren", "Rio", "Riot", "River",
@@ -227,7 +229,7 @@ class Name():
         "Tasha", "Tempest", "Tetris", "Teufel", "Tiny", "Toast", "Toffee", "Tom", "Tomato", "Tomato Soup", "Toni", "Toothless", "Torque", "Tortilla", 
         "Treasure", "Triscuit", "Trixie", "Trouble", "Tucker", "Tuffnut", "Tumble", "Turbo", "Twilight", "Twister", "Twix", "Toastee", "Taurus", "Ula", "Union",
         "Uriel", "Vanilla", "Vaxx", "Venture", "Via", "Vida", "Viktor", "Vinnie", "Vinyl", "Violet", "Vivienne", "Void", "Voltage", "Vox", "Virgo", "Wanda", "Webby",
-        "Wendy", "Whiskers", "Whisper", "Wigglebottom", "Wigglebutt", "Windy", "Wishbone", "Wisp", "Wisteria", "Worm", "X'ek", "Zelda", "Zim", "Zoe"
+        "Wendy", "Whiskers", "Whisper", "Wigglebutt", "Windy", "Wishbone", "Wisp", "Wisteria", "Worm", "X'ek", "Zelda", "Zim", "Zoe"
     ]
 
     if os.path.exists('saves/prefixlist.txt'):
@@ -279,7 +281,7 @@ class Name():
                 self.prefix = random.choice(self.normal_prefixes)
                     
         # Set suffix
-        while self.suffix is None or self.suffix == self.prefix.casefold() or str(self.suffix) in self.prefix.casefold():
+        while self.suffix is None or self.suffix == self.prefix.casefold() or str(self.suffix) in self.prefix.casefold() and not str(self.suffix) == '':
             if pelt is None or pelt == 'SingleColour':
                 self.suffix = random.choice(self.normal_suffixes)
             else:
