@@ -286,12 +286,12 @@
     "biome": "plains",
     "season": "Any",
     "tags": ["training", "apprentice", "trust", "comfort", "dislike", "warrior"],
-    "intro_text": "p_l takes them both out to see a herd of bison a patrol spotted moving through c_n's territory.",
+    "intro_text": "p_l takes them both out to see a herd of bison that a patrol spotted moving through c_n's territory.",
     "decline_text": "When they get there, they can't find it, and the lesson fails.",
     "chance_of_success": 80,
     "exp": 15,
     "success_text": [
-            "app1 has their view blocked by the long grass and flat ground. But the rumble they feel through their pawpads, footsteps, bellows so loud they can be felt through the ground, it all stresses just how huge the thunderbeasts are.",
+            "app1 has their view blocked by the long grass and flat ground. But the rumble they feel through their pawpads, the footsteps, the bellows so loud they can be felt through the ground, it all stresses just how huge the thunderbeasts are.",
             "The rumble app1 feels through the ground confuses them, until p_l tells them that it's footsteps. Footsteps. Awed, the apprentice creeps forward to catch a glimpse of the bison, pelt standing on end.",
             "As the herd moves slowly and invisibly around them in the grass, felt only by the thump-thud of their hoofsteps, s_c brings app1 in close and tells them the story of how the great thunderbeasts protect the plains, channeling thunder in their horns and earthquakes in their hooves, so that neither may come to hurt c_n while they are near."
     ],
@@ -313,12 +313,12 @@
     "biome": "plains",
     "season": "Any",
     "tags": ["training", "apprentice", "trust", "comfort", "dislike", "warrior"],
-    "intro_text": "p_l takes them both out to see a herd of bison a patrol spotted moving through c_n's territory.",
+    "intro_text": "p_l takes them both out to see a herd of bison that a patrol spotted moving through c_n's territory.",
     "decline_text": "When they get there, they can't find it, and the lesson fails.",
     "chance_of_success": 80,
     "exp": 15,
     "success_text": [
-            "app1 has their view blocked by the long grass and flat ground. But the rumble they feel through their pawpads, footsteps, bellows so loud they can be felt through the ground, it all stresses just how huge the thunderbeasts are.",
+            "app1 has their view blocked by the long grass and flat ground. But the rumble they feel through their pawpads, the footsteps, the bellows so loud they can be felt through the ground, it all stresses just how huge the thunderbeasts are.",
             "The rumble app1 feels through the ground confuses them, until p_l tells them that it's footsteps. Footsteps. Awed, the apprentice creeps forward to catch a glimpse of the bison, pelt standing on end.",
             "s_c points out the danger of the huge, ground shaking creatures. A bison has never come after a cat, but if a cat puts itself in their way, there's no coming back from that mistake. The thunderbeasts wander slowly around the cats, while s_c teaches and app1 tries to look brave."
     ],
@@ -340,12 +340,12 @@
     "biome": "plains",
     "season": "Any",
     "tags": ["training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
-    "intro_text": "p_l takes them out to see a herd of bison a patrol spotted moving through c_n's territory.",
+    "intro_text": "p_l takes them out to see a herd of bison that a patrol spotted moving through c_n's territory.",
     "decline_text": "When they get there, they can't find it, and the lesson fails.",
     "chance_of_success": 90,
     "exp": 20,
     "success_text": [
-            "app1 has their view blocked by the long grass and flat ground. But the rumble they feel through their pawpads, footsteps, bellows so loud they can be felt through the ground, it all stresses just how huge the thunderbeasts are, and they share a wide eyed look with app2.",
+            "app1 has their view blocked by the long grass and flat ground. But the rumble they feel through their pawpads, the footsteps, the bellows so loud they can be felt through the ground, it all stresses just how huge the thunderbeasts are, and they share a wide eyed look with app2.",
             "The rumble app1 feels through the ground confuses them, until p_l tells them that it's footsteps. Footsteps. Awed, the apprentices creep forward to catch a glimpse of the bison, app1's pelt brushing up against app2's as both their fur stands on end and they huddle together.",
             "As the herd moves slowly and invisibly around them in the grass, felt only by the thump-thud of their hoofsteps, s_c brings app1 and app2 in close and tells them the story of how the great thunderbeasts protect the plains, channeling thunder in their horns and earthquakes in their hooves, so that neither may come to hurt c_n while they are near."
     ],
@@ -367,12 +367,12 @@
     "biome": "plains",
     "season": "Any",
     "tags": ["training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
-    "intro_text": "p_l takes them out to see a herd of bison a patrol spotted moving through c_n's territory.",
+    "intro_text": "p_l takes them out to see a herd of bison that a patrol spotted moving through c_n's territory.",
     "decline_text": "When they get there, they can't find it, and the lesson fails.",
     "chance_of_success": 90,
     "exp": 15,
     "success_text": [
-            "app1 has their view blocked by the long grass and flat ground. But the rumble they feel through their pawpads, footsteps, bellows so loud they can be felt through the ground, it all stresses just how huge the thunderbeasts are, and they share a wide eyed look with app2.",
+            "app1 has their view blocked by the long grass and flat ground. But the rumble they feel through their pawpads, the footsteps, the bellows so loud they can be felt through the ground, it all stresses just how huge the thunderbeasts are, and they share a wide eyed look with app2.",
             "The rumble app1 feels through the ground confuses them, until p_l tells them that it's footsteps. Footsteps. Awed, the apprentices creep forward to catch a glimpse of the bison, app1's pelt brushing up against app2's as both their fur stands on end and they huddle together.",
             "s_c points out the danger of the huge, ground shaking creatures. A bison has never come after a cat, but if a cat puts itself in their way, there's no coming back from that mistake. The thunderbeasts wander slowly around the cats, while s_c teaches and app1 tries to look brave for app2, who looks like they want to sink into the grass and disappear."
     ],

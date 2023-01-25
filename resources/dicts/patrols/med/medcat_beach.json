@@ -923,7 +923,7 @@
     "biome": "beach",
     "season": "leaf-bare",
     "tags": ["med_only", "cold_injury", "scar", "med_cat", "herb", "blackberry", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
-    "intro_text": "Hmm. p_l heads out, deciding that c_n needs more blackberry leaves in their stores and bringing app1 along.",
+    "intro_text": "Hmm. p_l heads out with app1, deciding that c_n needs more blackberry leaves in their stores.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 40,
     "exp": 30,
@@ -1348,7 +1348,7 @@
     "chance_of_success": 40,
     "exp": 30,
     "success_text": [
-            "As they walk, p_l teaches app1 about how crucial catmint is for treating coughs, and how although its scent hold drugged pleasure for cats, part of the responsibility of being a medicine cat is avoiding becoming caught in its pleasent haze. The medicine cats carefully pick out catmint from its known hiding places, carting it back to camp where it will protect the Clan.",
+            "As they walk, p_l teaches app1 about how crucial catmint is for treating coughs, and how although its scent hold drugged pleasure for cats, part of the responsibility of being a medicine cat is avoiding becoming caught in its pleasant haze. The medicine cats carefully pick out catmint from its known hiding places, carting it back to camp where it will protect the Clan.",
             "Fortunately, catmint starts trying to take over as much ground as possible as soon as it possibly can, and it's already enough of the way through newleaf to go harvest from its young leaves. p_l instructs app1 in how one judges these things, to try and promote the most growth from the precious plant while still bringing hom the greatest harvest.",
             "s_c has a couple favourite catmint plants, and goes to check whether they've regrown this newleaf. Two haven't, but another two have and prove enough for a great harvest to take back to camp with app1."
 ],
@@ -1426,7 +1426,7 @@
     "chance_of_success": 40,
     "exp": 30,
     "success_text": [
-            "As they walk, p_l teaches app1 about how crucial catmint is for treating coughs, and how although its scent hold drugged pleasure for cats, part of the responsibility of being a medicine cat is avoiding becoming caught in its pleasent haze. The medicine cats carefully pick out catmint from its known hiding places, carting it back to camp where it will protect the Clan.",
+            "As they walk, p_l teaches app1 about how crucial catmint is for treating coughs, and how although its scent hold drugged pleasure for cats, part of the responsibility of being a medicine cat is avoiding becoming caught in its pleasant haze. The medicine cats carefully pick out catmint from its known hiding places, carting it back to camp where it will protect the Clan.",
             "It takes a morning full of careful searching, but eventually one of the catmint plants p_l remembers from seasons past is revisited, and it's growing well. p_l avoids taking the flowers, giving the plant the case to spread catmint seed for the future, and app1 actually helps the plant along by carefully picking up some of it's seeds and burying them nearby.",
             "s_c has a couple of baby catmint plants they've been leaving alone through newleaf, and with greenleaf here goes to check on them to see if they're harvestable. They are, and s_c is able to bring huge quantities of the valuable herb home with app1's help."
 ],
@@ -1504,7 +1504,7 @@
     "chance_of_success": 40,
     "exp": 30,
     "success_text": [
-            "As they walk, p_l teaches app1 about how crucial catmint is for treating coughs, and how although its scent hold drugged pleasure for cats, part of the responsibility of being a medicine cat is avoiding becoming caught in its pleasent haze. The medicine cats carefully pick out catmint from its known hiding places, carting it back to camp where it will protect the Clan.",
+            "As they walk, p_l teaches app1 about how crucial catmint is for treating coughs, and how although its scent hold drugged pleasure for cats, part of the responsibility of being a medicine cat is avoiding becoming caught in its pleasant haze. The medicine cats carefully pick out catmint from its known hiding places, carting it back to camp where it will protect the Clan.",
             "Leaf-fall indicates the last of the catmint harvest, and p_l works hard to bring some home before the plants wilt and lose their potency, showing app1 how some of the stems are already starting to look discoloured. Frost doesn't agree with catmint.",
             "s_c makes a circuit visiting all the known catmint plants in c_n's territory. While some are already wilting from frost, there's more than enough to harvest and bring back to the herb stores, and showing app1 all the plants will prepare them for trying to refind catmint in newleaf."
 ],
@@ -1775,7 +1775,7 @@
     "biome": "beach",
     "season": "leaf-fall",
     "tags": ["med_only", "herb", "daisy", "many_herbs1", "many_herbs2", "med_cat"],
-    "intro_text": "There's still time this leaf-fall to store away a good hervest of dried-but-potent daisy leaves, in case c_n's elders need it for their joints or cats need to unexpectedly travel.",
+    "intro_text": "There's still time this leaf-fall to store away a good harvest of dried-but-potent daisy leaves, in case c_n's elders need it for their joints or cats need to unexpectedly travel.",
     "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
     "chance_of_success": 70,
     "exp": 10,
@@ -1801,7 +1801,7 @@
     "biome": "beach",
     "season": "leaf-fall",
     "tags": ["med_only", "med_cat", "herb", "daisy", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
-    "intro_text": "There's still time this leaf-fall to store away a good hervest of dried-but-potent daisy leaves, in case c_n's elders need it for their joints or cats need to unexpectedly travel. p_l brings app1 along for a lesson.",
+    "intro_text": "There's still time this leaf-fall to store away a good harvest of dried-but-potent daisy leaves, in case c_n's elders need it for their joints or cats need to unexpectedly travel. p_l brings app1 along for a lesson.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 70,
     "exp": 20,
@@ -1827,7 +1827,7 @@
     "biome": "beach",
     "season": "leaf-fall",
     "tags": ["med_cat", "warrior", "herb", "daisy", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
-    "intro_text": "There's still time this leaf-fall to store away a good hervest of dried-but-potent daisy leaves, in case c_n's elders need it for their joints or cats need to unexpectedly travel. p_l assembles a little group of warriors to help them carry the herbs.",
+    "intro_text": "There's still time this leaf-fall to store away a good harvest of dried-but-potent daisy leaves, in case c_n's elders need it for their joints or cats need to unexpectedly travel. p_l assembles a little group of warriors to help them carry the herbs.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
     "exp": 10,
@@ -1954,7 +1954,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. The white milk in their roots and stems keeps for a long time and is potent at helping heal poisonings, while their weaker but faster acting leaves can be chewed into poultrices. Even the fluffy dandelion heads are useful as a c_n kitten's favourite short lived toy.",
+            "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. The white milk in their roots and stems keeps for a long time and is a potent cure for poison, while their leaves are weaker but fast-acting and can be chewed into poultices. Even the fluffy dandelion heads are useful as a c_n kitten's favourite short lived toy.",
             "It's a successful gathering mission, with p_l striding back to camp with a great haul of entire dandelion plants. Later they'll sort the leaves and roots to be stored seperately, the leaves remain fresh for a far shorter time.",
             "With warmth in the air and ground, s_c doesn't need to try very hard to find an excellent haul of dandelions to bring back to camp."
 ],
@@ -1980,7 +1980,7 @@
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-            "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. The white milk in their roots and stems keeps for a long time and is potent at helping heal poisonings, while their weaker but faster acting leaves can be chewed into poultrices. Even the fluffy dandelion heads are useful as a c_n kitten's favourite short lived toy, and p_l smiles, remembering seeing app1 playing with them only a few moons ago. They're growing up so fast.",
+            "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. The white milk in their roots and stems keeps for a long time and is a potent cure for poison, while their leaves are weaker but fast-acting and can be chewed into poultices. Even the fluffy dandelion heads are useful as a c_n kitten's favourite short lived toy, and p_l smiles, remembering seeing app1 playing with them only a few moons ago. They're growing up so fast.",
             "It's a successful gathering mission, with p_l striding back to camp with a great haul of entire dandelion plants. Later they'll teach app1 to sort the leaves and roots to be stored seperately, the leaves remain fresh for a far shorter time.",
             "With warmth in the air and ground, s_c doesn't need to try very hard to find an excellent haul of dandelions to bring back to camp. Instead they let app1 take the lead in finding the herb plants, praising them for all the progress they've made in herbcraft."
 ],
@@ -2006,7 +2006,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. The white milk in their roots and stems keeps for a long time and is potent at helping heal poisonings, while their weaker but faster acting leaves can be chewed into poultrices. Even the fluffy dandelion heads are useful as a c_n kitten's favourite short lived toy, and the warriors share nursery memories about them as they gather.",
+            "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. The white milk in their roots and stems keeps for a long time and is a potent cure for poison, while their leaves are weaker but fast-acting and can be chewed into poultices. Even the fluffy dandelion heads are useful as a c_n kitten's favourite short lived toy, and the warriors share nursery memories about them as they gather.",
             "It's a successful gathering mission, with p_l striding back to camp with a great haul of entire dandelion plants. Later they'll sort the leaves and roots to be stored seperately, the leaves remain fresh for a far shorter time, but for now they make sure to thank the warriors that've helped them bring home so many.",
             "With warmth in the air and ground, s_c doesn't need to try very hard to find an excellent haul of dandelions to bring back to camp. They help the warriors carefully pluck fluffy dandelions heads to bring back for the nursery."
 ],
@@ -2032,7 +2032,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. The white milk in their roots and stems keeps for a long time and is potent at helping heal poisonings, while their weaker but faster acting leaves can be chewed into poultrices. Even the fluffy dandelion heads are useful as a c_n kitten's favourite short lived toy.",
+            "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. The white milk in their roots and stems keeps for a long time and is a potent cure for poison, while their leaves are weaker but fast-acting and can be chewed into poultices. Even the fluffy dandelion heads are useful as a c_n kitten's favourite short lived toy.",
             "It's a successful gathering mission, with p_l striding back to camp with a great haul of entire dandelion plants. Later they'll sort the leaves and roots to be stored seperately, the leaves remain fresh for a far shorter time.",
             "With warmth in the air and ground, s_c doesn't need to try very hard to find an excellent haul of dandelions to bring back to camp."
 ],
@@ -2058,7 +2058,7 @@
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-            "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. The white milk in their roots and stems keeps for a long time and is potent at helping heal poisonings, while their weaker but faster acting leaves can be chewed into poultrices. Even the fluffy dandelion heads are useful as a c_n kitten's favourite short lived toy, and p_l smiles, remembering seeing app1 playing with them only a few moons ago. They're growing up so fast.",
+            "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. The white milk in their roots and stems keeps for a long time and is a potent cure for poison, while their leaves are weaker but fast-acting and can be chewed into poultices. Even the fluffy dandelion heads are useful as a c_n kitten's favourite short lived toy, and p_l smiles, remembering seeing app1 playing with them only a few moons ago. They're growing up so fast.",
             "It's a successful gathering mission, with p_l striding back to camp with a great haul of entire dandelion plants. Later they'll teach app1 to sort the leaves and roots to be stored seperately, the leaves remain fresh for a far shorter time.",
             "With warmth in the air and ground, s_c doesn't need to try very hard to find an excellent haul of dandelions to bring back to camp. Instead they let app1 take the lead in finding the herb plants, praising them for all the progress they've made in herbcraft."
 ],
@@ -2084,7 +2084,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. The white milk in their roots and stems keeps for a long time and is potent at helping heal poisonings, while their weaker but faster acting leaves can be chewed into poultrices. Even the fluffy dandelion heads are useful as a c_n kitten's favourite short lived toy, and the warriors share nursery memories about them as they gather.",
+            "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. The white milk in their roots and stems keeps for a long time and is a potent cure for poison, while their leaves are weaker but fast-acting and can be chewed into poultices. Even the fluffy dandelion heads are useful as a c_n kitten's favourite short lived toy, and the warriors share nursery memories about them as they gather.",
             "It's a successful gathering mission, with p_l striding back to camp with a great haul of entire dandelion plants. Later they'll sort the leaves and roots to be stored seperately, the leaves remain fresh for a far shorter time, but for now they make sure to thank the warriors that've helped them bring home so many.",
             "With warmth in the air and ground, s_c doesn't need to try very hard to find an excellent haul of dandelions to bring back to camp. They help the warriors carefully pluck fluffy dandelions heads to bring back for the nursery."
     ],
@@ -2110,7 +2110,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. The white milk in their roots and stems keeps for a long time and is potent at helping heal poisonings, while their weaker but faster acting leaves can be chewed into poultrices. Even the fluffy dandelion heads are useful as a c_n kitten's favourite short lived toy.",
+            "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. The white milk in their roots and stems keeps for a long time and is a potent cure for poison, while their leaves are weaker but fast-acting and can be chewed into poultices. Even the fluffy dandelion heads are useful as a c_n kitten's favourite short lived toy.",
             "It's a successful gathering mission, with p_l striding back to camp with a great haul of entire dandelion plants. Later they'll sort the leaves and roots to be stored seperately, the leaves remain fresh for a far shorter time.",
             "With warmth in the air and ground, s_c doesn't need to try very hard to find an excellent haul of dandelions to bring back to camp."
 ],
@@ -2136,7 +2136,7 @@
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-            "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. The white milk in their roots and stems keeps for a long time and is potent at helping heal poisonings, while their weaker but faster acting leaves can be chewed into poultrices. Even the fluffy dandelion heads are useful as a c_n kitten's favourite short lived toy, and p_l smiles, remembering seeing app1 playing with them only a few moons ago. They're growing up so fast.",
+            "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. The white milk in their roots and stems keeps for a long time and is a potent cure for poison, while their leaves are weaker but fast-acting and can be chewed into poultices. Even the fluffy dandelion heads are useful as a c_n kitten's favourite short lived toy, and p_l smiles, remembering seeing app1 playing with them only a few moons ago. They're growing up so fast.",
             "It's a successful gathering mission, with p_l striding back to camp with a great haul of entire dandelion plants. Later they'll teach app1 to sort the leaves and roots to be stored seperately, the leaves remain fresh for a far shorter time.",
             "With warmth in the air and ground, s_c doesn't need to try very hard to find an excellent haul of dandelions to bring back to camp. Instead they let app1 take the lead in finding the herb plants, praising them for all the progress they've made in herbcraft."
 ],
@@ -2162,7 +2162,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. The white milk in their roots and stems keeps for a long time and is potent at helping heal poisonings, while their weaker but faster acting leaves can be chewed into poultrices. Even the fluffy dandelion heads are useful as a c_n kitten's favourite short lived toy, and the warriors share nursery memories about them as they gather.",
+            "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. The white milk in their roots and stems keeps for a long time and is a potent cure for poison, while their leaves are weaker but fast-acting and can be chewed into poultices. Even the fluffy dandelion heads are useful as a c_n kitten's favourite short lived toy, and the warriors share nursery memories about them as they gather.",
             "It's a successful gathering mission, with p_l striding back to camp with a great haul of entire dandelion plants. Later they'll sort the leaves and roots to be stored seperately, the leaves remain fresh for a far shorter time, but for now they make sure to thank the warriors that've helped them bring home so many.",
             "With warmth in the air and ground, s_c doesn't need to try very hard to find an excellent haul of dandelions to bring back to camp. They help the warriors carefully pluck fluffy dandelions heads to bring back for the nursery."
     ],
@@ -2284,7 +2284,7 @@
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
-            "Elder leaves being used to sooth sprains and elder leaves having to be gathered in a way that risks sprains is truly one of StarClan's little ironies, p_l reflects.",
+            "Elder leaves being used to soothe sprains and elder leaves having to be gathered in a way that risks sprains is truly one of StarClan's little ironies, p_l reflects.",
             "p_l manages to gather more than they were expecting - the tree they chose is in a good spot and has begun its newleaf growth early and vigoriously.",
             "s_c has managed to discover, with time and experience, that elder leaf picking is actually better handled by chewing off several low hanging thin branches and carting those back to camp instead."
 ],
@@ -2313,7 +2313,7 @@
     "chance_of_success": 60,
     "exp": 20,
     "success_text": [
-            "Elder leaves being used to sooth sprains and elder leaves having to be gathered in a way that risks sprains is truly one of StarClan's little ironies, p_l reflects. app1 is more occupied climbing the tree, and p_l isn't going to disuade them from the pride they feel plucking from the highest branches, even if those leaves aren't anymore potent than the ones at the bottom of the tree.",
+            "Elder leaves being used to soothe sprains and elder leaves having to be gathered in a way that risks sprains is truly one of StarClan's little ironies, p_l reflects. app1 is more occupied climbing the tree, and p_l isn't going to disuade them from the pride they feel plucking from the highest branches, even if those leaves aren't anymore potent than the ones at the bottom of the tree.",
             "p_l manages to gather more than they were expecting - the tree they chose is in a good spot and has begun its newleaf growth early and vigoriously, a great demonstration to app1 about why they came here and not anywhere else.",
             "s_c has managed to discover, with time and experience, that elder leaf picking is actually better handled by chewing off several low hanging thin branches and carting those back to camp instead. They pass on the trick to app1, and once they're back at camp both medicine cats strip off the leaves and give them a quick wash."
 ],
@@ -2342,7 +2342,7 @@
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
-            "Elder leaves being used to sooth sprains and elder leaves having to be gathered in a way that risks sprains is truly one of StarClan's little ironies, p_l reflects. They share the little joke with the patrol, and the cats murrp with amusement, but it also reminds everyone to be careful as they strip leaves from the tree.",
+            "Elder leaves being used to soothe sprains and elder leaves having to be gathered in a way that risks sprains is truly one of StarClan's little ironies, p_l reflects. They share the little joke with the patrol, and the cats murrp with amusement, but it also reminds everyone to be careful as they strip leaves from the tree.",
             "p_l manages to gather more than they were expecting - the tree they chose is in a good spot and has begun its newleaf growth early and vigoriously. The patrol chats and jokes to one another as they get to work plucking leaves to bring a impressive haul home.",
             "s_c has managed to discover, with time and experience, that elder leaf picking is actually better handled by chewing off several low hanging thin branches and carting those back to camp instead. With so many assistants they can bring a truely massive haul home, where the rest of the patrol helps them strip the leaves and carefully store them."
 ],
@@ -2371,8 +2371,8 @@
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
-            "Elder leaves being used to sooth sprains and elder leaves having to be gathered in a way that risks sprains is truly one of StarClan's little ironies, p_l reflects.",
-            "The tree, growing in a shletered spot without huge amounts of wind, has branches that extend to a whisker-length above the ground, making gathering simple in the warm greenleaf sun.",
+            "Elder leaves being used to soothe sprains and elder leaves having to be gathered in a way that risks sprains is truly one of StarClan's little ironies, p_l reflects.",
+            "The tree, growing in a sheltered spot without huge amounts of wind, has branches that extend to a whisker-length above the ground, making gathering simple in the warm greenleaf sun.",
             "s_c has managed to discover, with time and experience, that elder leaf picking is actually better handled by chewing off several low hanging thin branches and carting those back to camp instead."
 ],
     "fail_text": [
@@ -2400,8 +2400,8 @@
     "chance_of_success": 60,
     "exp": 20,
     "success_text": [
-            "Elder leaves being used to sooth sprains and elder leaves having to be gathered in a way that risks sprains is truly one of StarClan's little ironies, p_l reflects. app1 is more occupied climbing the tree, and p_l isn't going to disuade them from the pride they feel plucking from the highest branches, even if those leaves aren't anymore potent than the ones at the bottom of the tree.",
-            "The tree, growing in a shletered spot without huge amounts of wind, has branches that extend to a whisker-length above the ground, making gathering simple in the warm greenleaf sun. They even stop for a nap before going home, app1 stretching out and ripping at the ground with their claws indulgently.",
+            "Elder leaves being used to soothe sprains and elder leaves having to be gathered in a way that risks sprains is truly one of StarClan's little ironies, p_l reflects. app1 is more occupied climbing the tree, and p_l isn't going to disuade them from the pride they feel plucking from the highest branches, even if those leaves aren't anymore potent than the ones at the bottom of the tree.",
+            "The tree, growing in a sheltered spot without huge amounts of wind, has branches that extend to a whisker-length above the ground, making gathering simple in the warm greenleaf sun. They even stop for a nap before going home, app1 stretching out and ripping at the ground with their claws indulgently.",
             "s_c has managed to discover, with time and experience, that elder leaf picking is actually better handled by chewing off several low hanging thin branches and carting those back to camp instead. They pass on the trick to app1, and once they're back at camp both medicine cats strip off the leaves and give them a quick wash."
 ],
     "fail_text": [
@@ -2429,8 +2429,8 @@
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
-            "Elder leaves being used to sooth sprains and elder leaves having to be gathered in a way that risks sprains is truly one of StarClan's little ironies, p_l reflects. They share the little joke with the patrol, and the cats murrp with amusement, but it also reminds everyone to be careful as they strip leaves from the tree.",
-            "The tree, growing in a shletered spot without huge amounts of wind, has branches that extend to a whisker-length above the ground, making gathering simple in the warm greenleaf sun. It makes the patrol an easy mission, with the cats taking the opportunity to hang out an socialise as much as herb-gather.",
+            "Elder leaves being used to soothe sprains and elder leaves having to be gathered in a way that risks sprains is truly one of StarClan's little ironies, p_l reflects. They share the little joke with the patrol, and the cats murrp with amusement, but it also reminds everyone to be careful as they strip leaves from the tree.",
+            "The tree, growing in a sheltered spot without huge amounts of wind, has branches that extend to a whisker-length above the ground, making gathering simple in the warm greenleaf sun. It makes the patrol an easy mission, with the cats taking the opportunity to hang out an socialise as much as herb-gather.",
             "s_c has managed to discover, with time and experience, that elder leaf picking is actually better handled by chewing off several low hanging thin branches and carting those back to camp instead. With so many assistants they can bring a truely massive haul home, where the rest of the patrol helps them strip the leaves and carefully store them."
     ],
     "fail_text": [
@@ -2458,7 +2458,7 @@
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
-            "Elder leaves being used to sooth sprains and elder leaves having to be gathered in a way that risks sprains is truly one of StarClan's little ironies, p_l reflects.",
+            "Elder leaves being used to soothe sprains and elder leaves having to be gathered in a way that risks sprains is truly one of StarClan's little ironies, p_l reflects.",
             "Ignoring the leaves piled up at the tree's base, which lack any herbal potency, p_l instead gets a good crop, choosing leaves as close to green as possible for maximum usefulness, which p_l finds tends to fade the more red the leaf-fall elder leaves get.",
             "s_c has managed to discover, with time and experience, that elder leaf picking is actually better handled by chewing off several low hanging thin branches and carting those back to camp instead."
 ],
@@ -2487,7 +2487,7 @@
     "chance_of_success": 60,
     "exp": 20,
     "success_text": [
-            "Elder leaves being used to sooth sprains and elder leaves having to be gathered in a way that risks sprains is truly one of StarClan's little ironies, p_l reflects. app1 is more occupied climbing the tree, and p_l isn't going to disuade them from the pride they feel plucking from the highest branches, even if those leaves aren't anymore potent than the ones at the bottom of the tree.",
+            "Elder leaves being used to soothe sprains and elder leaves having to be gathered in a way that risks sprains is truly one of StarClan's little ironies, p_l reflects. app1 is more occupied climbing the tree, and p_l isn't going to disuade them from the pride they feel plucking from the highest branches, even if those leaves aren't anymore potent than the ones at the bottom of the tree.",
             "Ignoring the leaves piled up at the tree's base, which lack any herbal potency, p_l instead gets a good crop, choosing leaves as close to green as possible for maximum usefulness, which p_l finds tends to fade the more red the leaf-fall elder leaves get. app1 soaks up the information, filing it away in their ever-increasing herbcraft knowledge.",
             "s_c has managed to discover, with time and experience, that elder leaf picking is actually better handled by chewing off several low hanging thin branches and carting those back to camp instead. They pass on the trick to app1, and once they're back at camp both medicine cats strip off the leaves and give them a quick wash."
 ],
@@ -2516,7 +2516,7 @@
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
-            "Elder leaves being used to sooth sprains and elder leaves having to be gathered in a way that risks sprains is truly one of StarClan's little ironies, p_l reflects. They share the little joke with the patrol, and the cats murrp with amusement, but it also reminds everyone to be careful as they strip leaves from the tree.",
+            "Elder leaves being used to soothe sprains and elder leaves having to be gathered in a way that risks sprains is truly one of StarClan's little ironies, p_l reflects. They share the little joke with the patrol, and the cats murrp with amusement, but it also reminds everyone to be careful as they strip leaves from the tree.",
             "Ignoring the leaves piled up at the tree's base, which lack any herbal potency, p_l instead gets a good crop, choosing leaves as close to green as possible for maximum usefulness, which p_l finds tends to fade the more red the leaf-fall elder leaves get. The wrriors are less selective, but the sheer quantity p_l is able to bring back to camp with their help more than makes up for it.",
             "s_c has managed to discover, with time and experience, that elder leaf picking is actually better handled by chewing off several low hanging thin branches and carting those back to camp instead. With so many assistants they can bring a truely massive haul home, where the rest of the patrol helps them strip the leaves and carefully store them."
     ],
@@ -2884,7 +2884,7 @@
     "exp": 20,
     "success_text": [
             "Even evergreens make sure to send out new leaves in newleaf, and p_l snips off the new, still soft needles, taking them home for c_n with app1 and teaching the apprentice about juniper's many uses.",
-            "Juniper needles are useful for so many things, from claming minds and easing breathing to soothing aching bellies and as a traveling herb. Really, p_l will always feel better having a good solid store of the stuff to use, and this patrol has been very successful at bringing tons of them home. They make sure to send app1 off with a little sprig of juniper to bring its pleasent scent to their nest, and a lot of praise.",
+            "Juniper needles are useful for so many things, from claming minds and easing breathing to soothing aching bellies and as a traveling herb. Really, p_l will always feel better having a good solid store of the stuff to use, and this patrol has been very successful at bringing tons of them home. They make sure to send app1 off with a little sprig of juniper to bring its pleasant scent to their nest, and a lot of praise.",
             "s_c trots off to a good juniper tree, hopping onto a low branch to harvest its needles. As they work, they chat to app1 about juniper's calming effects. This is one of the few herbs their Clanmates compete to go on patrols to help collect, everyone likes the scent."
 ],
     "fail_text": [
@@ -2910,7 +2910,7 @@
     "exp": 10,
     "success_text": [
             "Even evergreens make sure to send out new leaves in newleaf, and p_l snips off the new, still soft needles, taking them home for c_n. The warriors really help p_l carry more than they could ever dream of by themselves, and p_l is happy to give up some needles for the dens in exchange.",
-            "Juniper needles are useful for so many things, from claming minds and easing breathing to soothing aching bellies and as a traveling herb. Really, p_l will always feel better having a good solid store of the stuff to use, and this patrol has been very successful at bringing tons of them home. They make sure to thank their team, and send them off with a couple sprigs to carry pleasent scents to their dens.",
+            "Juniper needles are useful for so many things, from claming minds and easing breathing to soothing aching bellies and as a traveling herb. Really, p_l will always feel better having a good solid store of the stuff to use, and this patrol has been very successful at bringing tons of them home. They make sure to thank their team, and send them off with a couple sprigs to carry pleasant scents to their dens.",
             "s_c trots off to a good juniper tree, hopping onto a low branch to harvest its needles. Their patrol follows their lead, pulling twigs off, although a couple times s_c does need to remind them that the carpet of dead needles on the ground wouldn't be useful for the herb stores."
 ],
     "fail_text": [
@@ -2930,7 +2930,7 @@
     "biome": "beach",
     "season": "greenleaf",
     "tags": ["med_only", "herb", "juniper", "many_herbs1", "many_herbs2", "med_cat"],
-    "intro_text": "p_l head out to find a juniper tree, wanting to restock on its needles.",
+    "intro_text": "p_l heads out to find a juniper tree, wanting to restock on its needles.",
     "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
     "chance_of_success": 70,
     "exp": 10,
@@ -2956,13 +2956,13 @@
     "biome": "beach",
     "season": "greenleaf",
     "tags": ["med_only", "med_cat", "herb", "juniper", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
-    "intro_text": "p_l head out to find a juniper tree, wanting to restock on its needles. It's also a good opportunity for app1 to learn more about the plant.",
+    "intro_text": "p_l heads out to find a juniper tree, wanting to restock on its needles. It's also a good opportunity for app1 to learn more about the plant.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
             "p_l and app1 find a likely looking juniper tree and collects a decent amount of needles from it with a minimum of fuss.",
-            "Juniper needles are useful for so many things, from claming minds and easing breathing to soothing aching bellies and as a traveling herb. Really, p_l will always feel better having a good solid store of the stuff to use, and this patrol has been very successful at bringing tons of them home. They make sure to send app1 off with a little sprig of juniper to bring its pleasent scent to their nest, and a lot of praise.",
+            "Juniper needles are useful for so many things, from claming minds and easing breathing to soothing aching bellies and as a traveling herb. Really, p_l will always feel better having a good solid store of the stuff to use, and this patrol has been very successful at bringing tons of them home. They make sure to send app1 off with a little sprig of juniper to bring its pleasant scent to their nest, and a lot of praise.",
             "s_c trots off to a good juniper tree, hopping onto a low branch to harvest its needles. As they work, they chat to app1 about juniper's calming effects. This is one of the few herbs their Clanmates compete to go on patrols to help collect, everyone likes the scent."
 ],
     "fail_text": [
@@ -2982,13 +2982,13 @@
     "biome": "beach",
     "season": "greenleaf",
     "tags": ["med_cat", "warrior", "herb", "juniper", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
-    "intro_text": "p_l head out to find a juniper tree, wanting to restock on its needles. Some of their Clanmates volunteer to come with them, hoping to keep a few pleasently smelling needles for scenting their own nests, though they'll have to be careful about placing them so the needles don't spike anyone.",
+    "intro_text": "p_l heads out to find a juniper tree, wanting to restock on its needles. Some of their Clanmates volunteer to come with them, hoping to keep a few pleasantly smelling needles for scenting their own nests, though they'll have to be careful about placing them so the needles don't spike anyone.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
             "The patrol finds a likely looking juniper tree and collects a decent amount of needles from it with a minimum of fuss.",
-            "Juniper needles are useful for so many things, from claming minds and easing breathing to soothing aching bellies and as a traveling herb. Really, p_l will always feel better having a good solid store of the stuff to use, and this patrol has been very successful at bringing tons of them home. They make sure to thank their team, and send them off with a couple sprigs to carry pleasent scents to their dens.",
+            "Juniper needles are useful for so many things, from claming minds and easing breathing to soothing aching bellies and as a traveling herb. Really, p_l will always feel better having a good solid store of the stuff to use, and this patrol has been very successful at bringing tons of them home. They make sure to thank their team, and send them off with a couple sprigs to carry pleasant scents to their dens.",
             "s_c trots off to a good juniper tree, hopping onto a low branch to harvest its needles. Their patrol follows their lead, pulling twigs off, although a couple times s_c does need to remind them that the carpet of dead needles on the ground wouldn't be useful for the herb stores."
     ],
     "fail_text": [
@@ -3013,7 +3013,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "Leaf-fall brings with it gleaming dots of blue as the juniper trees deck themselves with their hard-fleshed berries, wafting their pleasent scent from their branches. There's a lot to enjoy about gathering them.",
+            "Leaf-fall brings with it gleaming dots of blue as the juniper trees deck themselves with their hard-fleshed berries, wafting their pleasant scent from their branches. There's a lot to enjoy about gathering them.",
             "Juniper berries are useful for so many things, from claming minds and easing breathing to soothing aching bellies and as a traveling herb. Really, p_l will always feel better having a good solid store of the stuff to use, especially because the berries keep forever in the herb stores, and this patrol has been very successful at bringing tons of them home.",
             "s_c follows not their eyes, but their nose, tracking the juniper trees by the scent of their fragrant berries to find an excellent crop."
 ],
@@ -3039,7 +3039,7 @@
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-            "Leaf-fall brings with it gleaming dots of blue as the juniper trees deck themselves with their hard-fleshed berries, wafting their pleasent scent from their branches. There's a lot to enjoy about gathering them, and p_l spends a quiet but happy afternoon with app1.",
+            "Leaf-fall brings with it gleaming dots of blue as the juniper trees deck themselves with their hard-fleshed berries, wafting their pleasant scent from their branches. There's a lot to enjoy about gathering them, and p_l spends a quiet but happy afternoon with app1.",
             "Juniper berries are useful for so many things, from claming minds and easing breathing to soothing aching bellies and as a traveling herb. Really, p_l will always feel better having a good solid store of the stuff to use, and this patrol has been very successful at bringing tons of them home. app1 is extremely curious that the berries will store so well, and p_l teaches them that the evergreen tree produces very different fruit than most berry bushes.",
             "s_c follows not their eyes, but their nose, tracking the juniper trees by the scent of their fragrant berries to find an excellent crop."
 ],
@@ -3065,8 +3065,8 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "Leaf-fall brings with it gleaming dots of blue as the juniper trees deck themselves with their hard-fleshed berries, wafting their pleasent scent from their branches. There's a lot to enjoy about gathering them, especially with such a companionable group of cats to work with.",
-            "Juniper berries are useful for so many things, from claming minds and easing breathing to soothing aching bellies and as a traveling herb. Really, p_l will always feel better having a good solid store of the stuff to use, and this patrol has been very successful at bringing tons of them home. They make sure to thank their team, though the warrior aren't allowed to keep any of the pleasent smelling crop for themselves.",
+            "Leaf-fall brings with it gleaming dots of blue as the juniper trees deck themselves with their hard-fleshed berries, wafting their pleasant scent from their branches. There's a lot to enjoy about gathering them, especially with such a companionable group of cats to work with.",
+            "Juniper berries are useful for so many things, from claming minds and easing breathing to soothing aching bellies and as a traveling herb. Really, p_l will always feel better having a good solid store of the stuff to use, and this patrol has been very successful at bringing tons of them home. They make sure to thank their team, though the warrior aren't allowed to keep any of the pleasant smelling crop for themselves.",
             "s_c follows not their eyes, but their nose, tracking the juniper trees by the scent of their fragrant berries to find an excellent crop."
     ],
     "fail_text": [
@@ -3815,7 +3815,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "The low-growing marigold creeps across the ground, spotted by its strange leaves that look like they're pretending to be small fern fronds from a distance.",
+            "The low-growing marigold creeps across the ground, recognizable by its strange leaves that look like they're pretending to be small fern fronds from a distance.",
             "It stops infection, bleeding, and sore joints - why would any medicine cat ever want to risk running out of it? p_l brings back as much marigold as they can stuff into their mouth.",
             "s_c finds a patch of marigold, harvests its best leaves, and pads home, unaware of how much of their success rests on their talent for herb gathering."
 ],
@@ -3841,7 +3841,7 @@
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-            "The low-growing marigold creeps across the ground, spotted by its strange leaves that look like they're pretending to be small fern fronds from a distance. p_l makes sure to point them out to app1, leaf shape is the best way to distinguish marigold before they start flowering.",
+            "The low-growing marigold creeps across the ground, recognizable by its strange leaves that look like they're pretending to be small fern fronds from a distance. p_l makes sure to point them out to app1, leaf shape is the best way to distinguish marigold before they start flowering.",
             "It stops infection, bleeding, and sore joints - why would any medicine cat ever want to risk running out of it? p_l brings back as much marigold as they can stuff into their mouth, and app1 actually drops some of the leaves they carry on the way back to camp, a little over-ambitious with how much they can carry.",
             "s_c finds a patch of marigold, harvests its best leaves, and pads home, unaware of how much of their success rests on their talent for herb gathering. app1 watches, trying to soak up their skills."
 ],
@@ -3867,8 +3867,8 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "The low-growing marigold creeps across the ground, spotted by its strange leaves that look like they're pretending to be small fern fronds from a distance. The non-medicine cats wander straight past them, and have to be gently called back by p_l to harvest them.",
-            "It stops infection, bleeding, and sore joints - why would any medicine cat ever want to risk running out of it? p_l brings back as much marigold as they can stuff into their mouth. The warriors helping them don't understand the importance, but obliging follow p_l's example.",
+            "The low-growing marigold creeps across the ground, recognizable by its strange leaves that look like they're pretending to be small fern fronds from a distance. The non-medicine cats wander straight past them, and have to be gently called back by p_l to harvest them.",
+            "It stops infection, bleeding, and sore joints - why would any medicine cat ever want to risk running out of it? p_l brings back as much marigold as they can stuff into their mouth. The warriors helping them don't understand the importance, but obligingly follow p_l's example.",
             "s_c finds a patch of marigold, harvests its best leaves, and pads home, unaware of how much of their success rests on their talent for herb gathering. The patrol is also unaware, but it certainly helps their faith in their medicine cat to see them succeed with such competence."
 ],
     "fail_text": [
@@ -3946,7 +3946,7 @@
     "exp": 10,
     "success_text": [
             "The low-growing marigold creeps across the ground, spotted less by its strange leaves that look like they're pretending to be small fern fronds from a distance, and more by their explosively sunset-coloured flowers. Even the warriors understand how to identify marigold in full bloom.",
-            "It stops infection, bleeding, and sore joints - why would any medicine cat ever want to risk running out of it? p_l brings back as much marigold as they can stuff into their mouth. The warriors helping them don't understand the importance, but obliging follow p_l's example.",
+            "It stops infection, bleeding, and sore joints - why would any medicine cat ever want to risk running out of it? p_l brings back as much marigold as they can stuff into their mouth. The warriors helping them don't understand the importance, but obligingly follow p_l's example.",
             "s_c finds a patch of marigold, harvests its best leaves and flowers, and pads home, unaware of how much of their success rests on their talent for herb gathering. The patrol is also unaware, but it certainly helps their faith in their medicine cat to see them succeed with such competence."
     ],
     "fail_text": [
@@ -4024,7 +4024,7 @@
     "exp": 10,
     "success_text": [
             "The low-growing marigold creeps across the ground, spotted less by its strange leaves that look like they're pretending to be small fern fronds from a distance, and more by their explosively sunset-coloured flowers. Time to collect these while they're still here, and every cat returns to camp carrying some.",
-            "It stops infection, bleeding, and sore joints - why would any medicine cat ever want to risk running out of it? p_l brings back as much marigold as they can stuff into their mouth. The warriors helping them don't understand the importance, but obliging follow p_l's example.",
+            "It stops infection, bleeding, and sore joints - why would any medicine cat ever want to risk running out of it? p_l brings back as much marigold as they can stuff into their mouth. The warriors helping them don't understand the importance, but obligingly follow p_l's example.",
             "s_c finds a patch of marigold, harvests its best leaves and flowers, and pads home, unaware of how much of their success rests on their talent for herb gathering. The patrol is also unaware, but it certainly helps their faith in their medicine cat to see them succeed with such competence."
     ],
     "fail_text": [
@@ -4190,7 +4190,7 @@
     "exp": 10,
     "success_text": [
             "It's hard to identify mullein while it's small, but p_l finds a plant or two for each member of their patrol and rips down their central stalks, carrying them back to camp to trim the leaves off later.",
-            "Easing the lungs of those with weaker chest muscles or infections, helping with certain sorts of pain, and being used to treat unhappy guts, mullein is a good herb to keep in stock, though it doesn't have the glamour of catmint or the rarity of lungwort. The warriors helping p_l don't understand the importance, but obliging help them harvest it.",
+            "Easing the lungs of those with weaker chest muscles or infections, helping with certain sorts of pain, and being used to treat unhappy guts, mullein is a good herb to keep in stock, though it doesn't have the glamour of catmint or the rarity of lungwort. The warriors helping p_l don't understand the importance, but obligingly help them harvest it.",
             "The always-reliable s_c spots mullein plants growing plenty of leaves on their strange central stems, and knocks them over so that the entire bundle can be carried home by the patrol."
 ],
     "fail_text": [
@@ -4268,7 +4268,7 @@
     "exp": 10,
     "success_text": [
             "p_l spots the mullelin plants by scrambling up onto a low rock and looking for their dumb fat stems starting to poke over all the other plants. They hop down to trot over and harvest them with the rest of the patrol.",
-            "Easing the lungs of those with weaker chest muscles or infections, helping with certain sorts of pain, and being used to treat unhappy guts, mullein is a good herb to keep in stock, though it doesn't have the glamour of catmint or the rarity of lungwort. The warriors helping p_l don't understand the importance, but obliging help them harvest it.",
+            "Easing the lungs of those with weaker chest muscles or infections, helping with certain sorts of pain, and being used to treat unhappy guts, mullein is a good herb to keep in stock, though it doesn't have the glamour of catmint or the rarity of lungwort. The warriors helping p_l don't understand the importance, but obligingly help them harvest it.",
             "The always-reliable s_c spots mullein plants growing plenty of leaves on their strange central stems, and knocks them over so that the entire bundle can be carried home by the patrol."
     ],
     "fail_text": [
@@ -4346,7 +4346,7 @@
     "exp": 10,
     "success_text": [
             "With all the towering height obtained in newleaf, greenleaf, and now leaf-fall, it almost makes sense why mullein dies off in leaf-bare - otherwise the plants would surely topple over. p_l asks their patrol to shove this one over to get at its leaves.",
-            "Easing the lungs of those with weaker chest muscles or infections, helping with certain sorts of pain, and being used to treat unhappy guts, mullein is a good herb to keep in stock, though it doesn't have the glamour of catmint or the rarity of lungwort. The warriors helping p_l don't understand the importance, but obliging help them harvest it.",
+            "Easing the lungs of those with weaker chest muscles or infections, helping with certain sorts of pain, and being used to treat unhappy guts, mullein is a good herb to keep in stock, though it doesn't have the glamour of catmint or the rarity of lungwort. The warriors helping p_l don't understand the importance, but obligingly help them harvest it.",
             "The always-reliable s_c spots mullein plants growing plenty of leaves on their strange central stems, and knocks them over so that the entire bundle can be carried home by the patrol."
     ],
     "fail_text": [
@@ -4527,7 +4527,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "Picking only the green leaves proves challenging, but not impossible, and with careful effort p_l still manage to bring a decent number home.",
+            "Picking only the green leaves proves challenging, but not impossible, and with careful effort p_l still manages to bring a decent number home.",
             "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine den, and they're always happy to bring a good crop of them back to the herb stores.",
             "s_c spots an oak tree that's valiantly trying to sprout leaves from a half fallen branch, one of the casualties of last leaf-bare, and heads to harvest from that, taking the safe option of plucking leaves from the ground."
 ],
@@ -4553,7 +4553,7 @@
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-            "Picking only the green leaves proves challenging, but not impossible, and with careful effort p_l still manage to bring a decent number home. app1 takes on the lesson about leaf colour quickly, impressing p_l with their efforts to learn herbcraft.",
+            "Picking only the green leaves proves challenging, but not impossible, and with careful effort p_l still manages to bring a decent number home. app1 takes on the lesson about leaf colour quickly, impressing p_l with their efforts to learn herbcraft.",
             "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine den, and they're always happy to bring a good crop of them back to the herb stores. They use the afternoon to give app1 the chance to lead their expidition, allowing the apprentice to swell with confidence.",
             "s_c spots an oak tree that's valiantly trying to sprout leaves from a half fallen branch, one of the casualties of last leaf-bare, and heads to harvest from that, taking the safe option of plucking leaves from the ground. app1 asks them if the damaged branch will produce less potent leaves, but s_c doens't think so - if the leaves are growing here at all they should be the same."
 ],
@@ -4579,7 +4579,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "Picking only the green leaves proves challenging, but not impossible, and with careful effort p_l still manage to bring a decent number home, especially with the warriors there, who turn it into a competition between themselves.",
+            "Picking only the green leaves proves challenging, but not impossible, and with careful effort p_l still manages to bring a decent number home, especially with the warriors there, who turn it into a competition between themselves.",
             "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine den, and they're always happy to bring a good crop of them back to the herb stores. Their Clanmates are, as expected, a huge help carrying everything back home.",
             "s_c spots an oak tree that's valiantly trying to sprout leaves from a half fallen branch, one of the casualties of last leaf-bare, and heads to harvest from that, taking the safe option of plucking leaves from the ground. It's less entertaining for the warriors heping them, but the cats still make a nice easy afternoon of it."
     ],
@@ -5125,7 +5125,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "Ugh. The ragwort p_l find is flowering, and the terrible taste of the plant leaks into the air as scent from its yellow flowers. There a chorus of long suffering sighs as the cats get to work, accomplishing their unpleasent task professionally but without any joy.",
+            "Ugh. The ragwort p_l find is flowering, and the terrible taste of the plant leaks into the air as scent from its yellow flowers. There a chorus of long suffering sighs as the cats get to work, accomplishing their unpleasant task professionally but without any joy.",
             "Ragwort brings strength to cats who need it, and eases aching joints, but StarClan it tastes absolutely foul. p_l's pleased with their harvest, but really wishes they had a way to bring it back to camp that didn't need them to carry it in their mouth, a sentiment that the patrol helping them definitely shares, at length, very descriptively.",
             "s_c has discovered a trick to harvesting the bountiful but foul ragwort, using their claws to tear leaves from the plant and then carefully carrying them back to camp without chewing or salivating. Some of the warriors are too impatient to follow their lead, and end up suffering the taste of ragwort as the patrol brings back loads of the leaves."
     ],
@@ -5203,7 +5203,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "Ugh. The ragwort p_l find is flowering, and the terrible taste of the plant leaks into the air as scent from its yellow flowers. There a chorus of long suffering sighs as the cats get to work, accomplishing their unpleasent task professionally but without any joy.",
+            "Ugh. The ragwort p_l find is flowering, and the terrible taste of the plant leaks into the air as scent from its yellow flowers. There a chorus of long suffering sighs as the cats get to work, accomplishing their unpleasant task professionally but without any joy.",
             "Ragwort brings strength to cats who need it, and eases aching joints, but StarClan it tastes absolutely foul. p_l's pleased with their harvest, but really wishes they had a way to bring it back to camp that didn't need them to carry it in their mouth, a sentiment that the patrol helping them definitely shares, at length, very descriptively.",
             "s_c has discovered a trick to harvesting the bountiful but foul ragwort, using their claws to tear leaves from the plant and then carefully carrying them back to camp without chewing or salivating. Some of the warriors are too impatient to follow their lead, and end up suffering the taste of ragwort as the patrol brings back loads of the leaves."
     ],
@@ -5632,7 +5632,7 @@
     "exp": 10,
     "success_text": [
             "With the drizzle hiding scents, p_l almost walks straight past the thyme plant - but they stop, retrace their steps, and settle down to harvest it.",
-            "It calms racing hearts and minds, bringing cats back from the shock of loss or injury. Thyme is always both helpful and pleasent to have around, and p_l makes sure to organise the herb stores so that the scent wafts near their nest.",
+            "It calms racing hearts and minds, bringing cats back from the shock of loss or injury. Thyme is always both helpful and pleasant to have around, and p_l makes sure to organise the herb stores so that the scent wafts near their nest.",
             "Thyme, thyme, thyme, there's never enough thyme. s_c snorts at their little joke, mouth crammed full of the herb."
 ],
     "fail_text": [
@@ -5658,7 +5658,7 @@
     "exp": 20,
     "success_text": [
             "With the drizzle hiding scents, p_l almost walks straight past the thyme plant - but they stop, retrace their steps, and settle down to harvest it, making sure app1 understands how to avoid the mistake p_l almost made.",
-            "It calms racing hearts and minds, bringing cats back from the shock of loss or injury. Thyme is always both helpful and pleasent to have around, and p_l makes sure to organise the herb stores so that the scent wafts near the nests they and app1 curl up in at night.",
+            "It calms racing hearts and minds, bringing cats back from the shock of loss or injury. Thyme is always both helpful and pleasant to have around, and p_l makes sure to organise the herb stores so that the scent wafts near the nests they and app1 curl up in at night.",
             "Thyme, thyme, thyme, there's never enough thyme. s_c snorts at their little joke, putting down the herbs they carry to explain it to app1."
 ],
     "fail_text": [
@@ -5684,7 +5684,7 @@
     "exp": 10,
     "success_text": [
             "With the drizzle hiding scents, p_l almost walks straight past the thyme plant - but one of the warriors calls them over. Thanks to its calming, well loved scent, medicine cats aren't the only Clanmembers who can identify this plant.",
-            "It calms racing hearts and minds, bringing cats back from the shock of loss or injury. Thyme is always both helpful and pleasent to have around, and p_l decides that this patrol has brought back so much there's no harm in letting the warriors take a stem each for their nests.",
+            "It calms racing hearts and minds, bringing cats back from the shock of loss or injury. Thyme is always both helpful and pleasant to have around, and p_l decides that this patrol has brought back so much there's no harm in letting the warriors take a stem each for their nests.",
             "Thyme, thyme, thyme, there's never enough thyme. s_c snorts at their little joke, putting down the herbs they carry to explain it to the rest of the patrol."
 ],
     "fail_text": [
@@ -5709,8 +5709,8 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "Thankfully they don't have to go far, and being among thyme's calming scent makes gathering it quite pleasent.",
-            "It calms racing hearts and minds, bringing cats back from the shock of loss or injury. Thyme is always both helpful and pleasent to have around, and p_l makes sure to organise the herb stores so that the scent wafts near their nest.",
+            "Thankfully they don't have to go far, and being among thyme's calming scent makes gathering it quite pleasant.",
+            "It calms racing hearts and minds, bringing cats back from the shock of loss or injury. Thyme is always both helpful and pleasant to have around, and p_l makes sure to organise the herb stores so that the scent wafts near their nest.",
             "Thyme, thyme, thyme, there's never enough thyme. s_c snorts at their little joke, mouth crammed full of the herb."
 ],
     "fail_text": [
@@ -5735,8 +5735,8 @@
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-            "Thankfully they don't have to go far, and being among thyme's calming scent makes gathering it quite pleasent. Both app1 and p_l enjoy the chance for a peaceful afternoon.",
-            "It calms racing hearts and minds, bringing cats back from the shock of loss or injury. Thyme is always both helpful and pleasent to have around, and p_l makes sure to organise the herb stores so that the scent wafts near the nests they and app1 curl up in at night.",
+            "Thankfully they don't have to go far, and being among thyme's calming scent makes gathering it quite pleasant. Both app1 and p_l enjoy the chance for a peaceful afternoon.",
+            "It calms racing hearts and minds, bringing cats back from the shock of loss or injury. Thyme is always both helpful and pleasant to have around, and p_l makes sure to organise the herb stores so that the scent wafts near the nests they and app1 curl up in at night.",
             "Thyme, thyme, thyme, there's never enough thyme. s_c snorts at their little joke, putting down the herbs they carry to explain it to app1."
 ],
     "fail_text": [
@@ -5761,8 +5761,8 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "Thankfully they don't have to go far, and being among thyme's calming scent makes gathering it quite pleasent as the patrol settles in to nip off its leaves.",
-            "It calms racing hearts and minds, bringing cats back from the shock of loss or injury. Thyme is always both helpful and pleasent to have around, and p_l decides that this patrol has brought back so much there's no harm in letting the warriors take a stem each for their nests.",
+            "Thankfully they don't have to go far, and being among thyme's calming scent makes gathering it quite pleasant as the patrol settles in to nip off its leaves.",
+            "It calms racing hearts and minds, bringing cats back from the shock of loss or injury. Thyme is always both helpful and pleasant to have around, and p_l decides that this patrol has brought back so much there's no harm in letting the warriors take a stem each for their nests.",
             "Thyme, thyme, thyme, there's never enough thyme. s_c snorts at their little joke, putting down the herbs they carry to explain it to the rest of the patrol."
     ],
     "fail_text": [
@@ -5788,7 +5788,7 @@
     "exp": 10,
     "success_text": [
             "The urgency drains out of p_l as they sit amongst the calming thyme, and it's not just the herb stores that'll feel the benefit of this gathering trip.",
-            "It calms racing hearts and minds, bringing cats back from the shock of loss or injury. Thyme is always both helpful and pleasent to have around, and p_l makes sure to organise the herb stores so that the scent wafts near their nest.",
+            "It calms racing hearts and minds, bringing cats back from the shock of loss or injury. Thyme is always both helpful and pleasant to have around, and p_l makes sure to organise the herb stores so that the scent wafts near their nest.",
             "Thyme, thyme, thyme, there's never enough thyme. s_c snorts at their little joke, mouth crammed full of the herb."
 ],
     "fail_text": [
@@ -5814,7 +5814,7 @@
     "exp": 20,
     "success_text": [
             "The urgency drains out of the medicine cats as they sit amongst the calming thyme, and it's not just the herb stores that'll feel the benefit of this gathering trip.",
-            "It calms racing hearts and minds, bringing cats back from the shock of loss or injury. Thyme is always both helpful and pleasent to have around, and p_l makes sure to organise the herb stores so that the scent wafts near the nests they and app1 curl up in at night.",
+            "It calms racing hearts and minds, bringing cats back from the shock of loss or injury. Thyme is always both helpful and pleasant to have around, and p_l makes sure to organise the herb stores so that the scent wafts near the nests they and app1 curl up in at night.",
             "Thyme, thyme, thyme, there's never enough thyme. s_c snorts at their little joke, putting down the herbs they carry to explain it to app1."
 ],
     "fail_text": [
@@ -5840,7 +5840,7 @@
     "exp": 10,
     "success_text": [
             "The urgency drains out of the patrol as they sit amongst the calming thyme, and it's not just the herb stores that'll feel the benefit of this gathering trip.",
-            "It calms racing hearts and minds, bringing cats back from the shock of loss or injury. Thyme is always both helpful and pleasent to have around, and p_l decides that this patrol has brought back so much there's no harm in letting the warriors take a stem each for their nests.",
+            "It calms racing hearts and minds, bringing cats back from the shock of loss or injury. Thyme is always both helpful and pleasant to have around, and p_l decides that this patrol has brought back so much there's no harm in letting the warriors take a stem each for their nests.",
             "Thyme, thyme, thyme, there's never enough thyme. s_c snorts at their little joke, putting down the herbs they carry to explain it to the rest of the patrol."
     ],
     "fail_text": [

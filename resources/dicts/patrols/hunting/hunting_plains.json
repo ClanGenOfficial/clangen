@@ -2148,7 +2148,7 @@
         "The mother fox is vicious and determined, and the small patrol is beaten back. But this forest is c_n's and they haven't given up. They may have lost this battle, but c_n will win this war.",
         "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the rest of the patrol have to rescue them from the vixen.",
         "Never threaten a mother's young - the vixen kills r_c in the skirmish.",
-        "The mother fox's snapping jaws leave r_c dripping blood onto the leaf litter, and force the patrol to back off.",
+        "The mother fox's snapping jaws leave r_c dripping blood onto the grass, forcing the patrol to back off.",
         null,
         "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up on the fight.",
         "As their hunt descends into a full on battle with the vixen, p_l takes a blow meant for one of their Clanmates, losing a life."
@@ -2258,7 +2258,7 @@
         "The mother fox is vicious and determined, and the small patrol is beaten back. But this forest is c_n's and they haven't given up. They may have lost this battle, but c_n will win this war.",
         "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the rest of the patrol have to rescue them from the vixen.",
         "Never threaten a mother's young - the vixen kills r_c in the skirmish.",
-        "The mother fox's snapping jaws leave r_c dripping blood onto the leaf litter, and force the patrol to back off.",
+        "The mother fox's snapping jaws leave r_c dripping blood onto the grass, forcing the patrol to back off.",
         null,
         "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up on the fight.",
         "As their hunt descends into a full on battle with the vixen, p_l takes a blow meant for one of their Clanmates, losing a life."
@@ -2368,7 +2368,7 @@
         "The mother fox is vicious and determined, and the small patrol is beaten back. But this forest is c_n's and they haven't given up. They may have lost this battle, but c_n will win this war.",
         "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the rest of the patrol have to rescue them from the vixen.",
         "Never threaten a mother's young - the vixen kills r_c in the skirmish.",
-        "The mother fox's snapping jaws leave r_c dripping blood onto the leaf litter, and force the patrol to back off.",
+        "The mother fox's snapping jaws leave r_c dripping blood onto the grass, forcing the patrol to back off.",
         null,
         "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up on the fight.",
         "As their hunt descends into a full on battle with the vixen, p_l takes a blow meant for one of their Clanmates, losing a life."
@@ -2477,7 +2477,7 @@
         "The mother fox is vicious and determined, and the small patrol is beaten back. But this forest is c_n's and they haven't given up. They may have lost this battle, but c_n will win this war.",
         "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the rest of the patrol have to rescue them from the vixen.",
         "Never threaten a mother's young - the vixen kills r_c in the skirmish.",
-        "The mother fox's snapping jaws leave r_c dripping blood onto the leaf litter, and force the patrol to back off.",
+        "The mother fox's snapping jaws leave r_c dripping blood onto the grass, forcing the patrol to back off.",
         null,
         "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up on the fight.",
         "As their hunt descends into a full on battle with the vixen, p_l takes a blow meant for one of their Clanmates, losing a life."
@@ -2862,7 +2862,7 @@
         "chance_of_success": 50,
         "exp": 25,
         "success_text": [
-                "After a good long session of confusion, the patrol manages to work out that the creature they're tracking (or seeing, really, it has such long legs it pokes out of the grass) is almost certainly a maned wolf, a nearly mythical creature. They're all a little uncomfortable, watching an upsized red fox with the legs of a deer amble around their territory, but it's also a little thrilling, to follow such an unusual and rarely seen creature.",
+                "After a good long session of confusion, the patrol manages to work out that the towering creature they're tracking is almost certainly a maned wolf, a nearly mythical creature. They're all a little uncomfortable, watching an upsized red fox with the legs of a deer amble around their territory, but it's also a little thrilling to follow such an unusual and rarely seen creature.",
                 "The rumours are true - it seems to mostly be hunting for tiny mouse prey, not large things, despite it's massive size. This must be a maned wolf, and just being able to name the odd thing makes it feel so much less threatening. The cats remind each other of the tales sometimes shared in the nursery, of the tallest predator on the plains being one of the shyest.",
                 "s_c is able to recalled some of the stories that get told about the maned wolf, of how it stole its legs from a deer for speed and power, but in doing so also accidentally took the deer's flightiness. Ever since then it has been the tallest and shyest creature on the grasslands.",
                 "Boldly, s_c jumps down to go check the potential threat out, and unwilling to leave their Clanmate in danger, the rest of the patrol follows. s_c refuses to let themselves be intimidated by the huge foxish thing, and bounds up to it, knowing courage can overcome things raw strength cannot. The weird creature skitters away from the incoming patrol, trotting off in a tangle of too long legs."
