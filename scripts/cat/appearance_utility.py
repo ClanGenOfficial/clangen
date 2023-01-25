@@ -130,7 +130,7 @@ def plural_acc_names(accessory, plural, singular):
 
 
 def init_eyes(cat):
-    if cat.eye_colour is not None:
+    if cat.eye_colour:
         return   
     else:
         par1 = None
@@ -549,7 +549,7 @@ def white_patches_inheritance(cat, parents: tuple):
 
     # A quick check to make sure all the weights aren't 0
     if all([x == 0 for x in weights]):
-        weights = [1, 1, 1, 1, 1, 1]
+        weights = [10, 10, 10, 10, 2, 1]  #Default weights
 
     chosen_white_patches = choice(
         random.choices(white_list, weights=weights, k=1)[0]
