@@ -86,28 +86,40 @@ class ClanScreen(Screens):
         # Den Labels
         # Redo the locations, so that it uses layout on the clan page
         self.warrior_den_label = pygame_gui.elements.UIImage(
-            pygame.Rect(game.clan.cur_layout["warrior den"], (121, 28)),
-            image_cache.load_image('resources/images/warrior_den.png'))
-        self.leader_den_label = pygame_gui.elements.UIImage(pygame.Rect(game.clan.cur_layout["leader den"], (112, 28)),
-                                                            image_cache.load_image('resources/images/leader_den.png'))
+            pygame.Rect(game.clan.cur_layout["warrior den"], (242, 56)),
+            pygame.transform.scale(
+                image_cache.load_image('resources/images/warrior_den.png'),
+                (242, 56)))
+        self.leader_den_label = pygame_gui.elements.UIImage(pygame.Rect(game.clan.cur_layout["leader den"], (224, 56)),
+                                                            pygame.transform.scale(
+                                                                image_cache.load_image('resources/images/leader_den.png'),
+                                                                (224, 56)))
         self.med_den_label = UIImageButton(pygame.Rect(
-            game.clan.cur_layout["medicine den"], (151, 28)),
+            game.clan.cur_layout["medicine den"], (302, 56)),
             "",
             object_id="#med_den_button"
         )
-        self.elder_den_label = pygame_gui.elements.UIImage(pygame.Rect(game.clan.cur_layout["elder den"], (103, 28)),
-                                                           image_cache.load_image('resources/images/elder_den.png'))
-        self.nursery_label = pygame_gui.elements.UIImage(pygame.Rect(game.clan.cur_layout['nursery'], (80, 28)),
-                                                         image_cache.load_image('resources/images/nursery_den.png'))
-        self.clearing_label = pygame_gui.elements.UIImage(pygame.Rect(game.clan.cur_layout['clearing'], (81, 28)),
-                                                          image_cache.load_image('resources/images/clearing.png'))
-        self.app_den_label = pygame_gui.elements.UIImage(pygame.Rect(game.clan.cur_layout['apprentice den'], (147, 28)),
-                                                         image_cache.load_image('resources/images/app_den.png'))
+        self.elder_den_label = pygame_gui.elements.UIImage(pygame.Rect(game.clan.cur_layout["elder den"], (206, 56)),
+                                                           pygame.transform.scale(
+                                                               image_cache.load_image('resources/images/elder_den.png'),
+                                                               (206, 56)))
+        self.nursery_label = pygame_gui.elements.UIImage(pygame.Rect(game.clan.cur_layout['nursery'], (160, 56)),
+                                                         pygame.transform.scale(
+                                                             image_cache.load_image('resources/images/nursery_den.png'),
+                                                         (160, 56)))
+        self.clearing_label = pygame_gui.elements.UIImage(pygame.Rect(game.clan.cur_layout['clearing'], (162, 56)),
+                                                          pygame.transform.scale(
+                                                              image_cache.load_image('resources/images/clearing.png'),
+                                                          (162, 56)))
+        self.app_den_label = pygame_gui.elements.UIImage(pygame.Rect(game.clan.cur_layout['apprentice den'], (294, 56)),
+                                                         pygame.transform.scale(
+                                                            image_cache.load_image('resources/images/app_den.png'),
+                                                         (294, 56)))
 
         # Draw the toggle and text
-        self.label_toggle = UIImageButton(pygame.Rect((25, 641), (34, 34)), "", object_id="#checked_checkbox")
+        self.label_toggle = UIImageButton(pygame.Rect((50, 1282), (64, 64)), "", object_id="#checked_checkbox")
         self.show_den_text = pygame_gui.elements.UITextBox("<font color=#000000>Show Den Labels</font>",
-                                                           pygame.Rect((60, 647), (145, 25)),
+                                                           pygame.Rect((120, 1294), (290, 50)),
                                                            object_id="#save_text_box")
 
         # Creates and places the cat sprites.
@@ -126,15 +138,15 @@ class ClanScreen(Screens):
 
                 try:
                     self.cat_buttons.append(
-                        UISpriteButton(pygame.Rect(tuple(Cat.all_cats[x].placement), (50, 50)), Cat.all_cats[x].sprite,
+                        UISpriteButton(pygame.Rect(tuple(Cat.all_cats[x].placement), (100, 100)), Cat.all_cats[x].big_sprite,
                                        cat_id=x)
                     )
                 except:
                     print(f"ERROR: placing {str(Cat.all_cats[x].name)}\'s sprite on Clan page")
 
-        self.save_button = UIImageButton(pygame.Rect(((343, 625), (114, 30))), "", object_id="#save_button")
+        self.save_button = UIImageButton(pygame.Rect(((686, 1250), (228, 60))), "", object_id="#save_button")
 
-        self.save_text = pygame_gui.elements.UITextBox("", pygame.Rect(320, 660, 160, 20),
+        self.save_text = pygame_gui.elements.UITextBox("", pygame.Rect(640, 1320, 320, 40),
                                                        object_id="#save_text_box")
         self.update_buttons_and_text()
 
@@ -194,13 +206,13 @@ class ClanScreen(Screens):
             all_backgrounds.append(platform_dir)
 
         self.newleaf_bg = pygame.transform.scale(
-            pygame.image.load(all_backgrounds[0]).convert(), (800, 700))
+            pygame.image.load(all_backgrounds[0]).convert(), (1600, 1400))
         self.greenleaf_bg = pygame.transform.scale(
-            pygame.image.load(all_backgrounds[1]).convert(), (800, 700))
+            pygame.image.load(all_backgrounds[1]).convert(), (1600, 1400))
         self.leafbare_bg = pygame.transform.scale(
-            pygame.image.load(all_backgrounds[2]).convert(), (800, 700))
+            pygame.image.load(all_backgrounds[2]).convert(), (1600, 1400))
         self.leaffall_bg = pygame.transform.scale(
-            pygame.image.load(all_backgrounds[3]).convert(), (800, 700))
+            pygame.image.load(all_backgrounds[3]).convert(), (1600, 1400))
 
     def choose_cat_postions(self):
         """Determines the postions of cat on the clan screen."""
@@ -291,7 +303,7 @@ class ClanScreen(Screens):
 
         self.label_toggle.kill()
         if game.settings['den labels']:
-            self.label_toggle = UIImageButton(pygame.Rect((25, 641), (34, 34)), "", object_id="#checked_checkbox")
+            self.label_toggle = UIImageButton(pygame.Rect((50, 1282), (68, 68)), "", object_id="#checked_checkbox")
             self.warrior_den_label.show()
             self.clearing_label.show()
             self.nursery_label.show()
@@ -300,7 +312,7 @@ class ClanScreen(Screens):
             self.med_den_label.show()
             self.elder_den_label.show()
         else:
-            self.label_toggle = UIImageButton(pygame.Rect((25, 641), (34, 34)), "", object_id="#unchecked_checkbox")
+            self.label_toggle = UIImageButton(pygame.Rect((50, 1282), (68, 68)), "", object_id="#unchecked_checkbox")
             self.warrior_den_label.hide()
             self.clearing_label.hide()
             self.nursery_label.hide()
