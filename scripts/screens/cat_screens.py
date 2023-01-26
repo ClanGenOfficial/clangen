@@ -484,31 +484,31 @@ class ProfileScreen(Screens):
         self.the_cat = Cat.all_cats.get(game.switches['cat'])
 
         # Set up the menu buttons, which appear on all cat profile images.
-        self.next_cat_button = UIImageButton(pygame.Rect((622, 25), (153, 30)), "", object_id="#next_cat_button")
-        self.previous_cat_button = UIImageButton(pygame.Rect((25, 25), (153, 30)), "", object_id="#previous_cat_button")
-        self.back_button = UIImageButton(pygame.Rect((25, 60), (105, 30)), "", object_id="#back_button")
-        self.relations_tab_button = UIImageButton(pygame.Rect((48, 420), (176, 30)), "",
+        self.next_cat_button = UIImageButton(pygame.Rect((1244, 50), (306, 60)), "", object_id="#next_cat_button")
+        self.previous_cat_button = UIImageButton(pygame.Rect((50, 50), (306, 60)), "", object_id="#previous_cat_button")
+        self.back_button = UIImageButton(pygame.Rect((50, 120), (210, 60)), "", object_id="#back_button")
+        self.relations_tab_button = UIImageButton(pygame.Rect((96, 840), (352, 60)), "",
                                                   object_id="#relations_tab_button")
-        self.roles_tab_button = UIImageButton(pygame.Rect((224, 420), (176, 30)), "", object_id="#roles_tab_button")
-        self.personal_tab_button = UIImageButton(pygame.Rect((400, 420), (176, 30)), "",
+        self.roles_tab_button = UIImageButton(pygame.Rect((448, 840), (352, 60)), "", object_id="#roles_tab_button")
+        self.personal_tab_button = UIImageButton(pygame.Rect((800, 840), (352, 60)), "",
                                                  object_id="#personal_tab_button")
-        self.dangerous_tab_button = UIImageButton(pygame.Rect((576, 420), (176, 30)), "",
+        self.dangerous_tab_button = UIImageButton(pygame.Rect((1152, 840), (352, 60)), "",
                                                   object_id="#dangerous_tab_button")
 
-        self.backstory_tab_button = UIImageButton(pygame.Rect((48, 622), (176, 30)), "",
+        self.backstory_tab_button = UIImageButton(pygame.Rect((96, 1244), (352, 60)), "",
                                                   object_id="#backstory_tab_button")
 
         self.conditions_tab_button = UIImageButton(
-            pygame.Rect((224, 622), (176, 30)),
+            pygame.Rect((448, 1244), (352, 60)),
             "",
             object_id="#conditions_tab_button"
         )
 
-        self.placeholder_tab_3 = UIImageButton(pygame.Rect((400, 622), (176, 30)), "",
+        self.placeholder_tab_3 = UIImageButton(pygame.Rect((800, 1244), (352, 60)), "",
                                                object_id="#cat_tab_3_blank_button", starting_height=1)
         self.placeholder_tab_3.disable()
 
-        self.placeholder_tab_4 = UIImageButton(pygame.Rect((576, 622), (176, 30)), "",
+        self.placeholder_tab_4 = UIImageButton(pygame.Rect((1152, 1244), (352, 60)), "",
                                                object_id="#cat_tab_4_blank_button")
         self.placeholder_tab_4.disable()
 
@@ -571,24 +571,24 @@ class ProfileScreen(Screens):
             self.the_cat.thought = "Hello. I am here to drag the dead cats of " + game.clan.name + "Clan into the Dark Forest."
 
         # Write cat name
-        self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(cat_name, pygame.Rect((25, 140), (750, 40)),
+        self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(cat_name, pygame.Rect((50, 280), (1500, 80)),
                                                                           object_id=get_text_box_theme(
                                                                               "#cat_profile_name_box"))
 
         # Write cat thought
         self.profile_elements["cat_thought"] = pygame_gui.elements.UITextBox(self.the_cat.thought,
-                                                                             pygame.Rect((100, 170), (600, 40)),
+                                                                             pygame.Rect((200, 340), (1200, 80)),
                                                                              wrap_to_height=True,
                                                                              object_id=get_text_box_theme(
                                                                                  "#cat_profile_thoughts_box"))
 
         self.profile_elements["cat_info_column1"] = UITextBoxTweaked(self.generate_column1(self.the_cat),
-                                                                     pygame.Rect((300, 230), (180, 180)),
+                                                                     pygame.Rect((600, 460), (360, 360)),
                                                                      object_id=get_text_box_theme(
                                                                          "#cat_profile_info_box"),
                                                                      line_spacing=0.95)
         self.profile_elements["cat_info_column2"] = UITextBoxTweaked(self.generate_column2(self.the_cat),
-                                                                     pygame.Rect((490, 230), (230, 180)),
+                                                                     pygame.Rect((980, 460), (460, 360)),
                                                                      object_id=get_text_box_theme(
                                                                          "#cat_profile_info_box"),
                                                                      line_spacing=0.95)
@@ -597,30 +597,32 @@ class ProfileScreen(Screens):
         self.update_platform()
         if game.settings['backgrounds']:
             if game.clan.current_season == 'Newleaf':
-                self.profile_elements["background"] = pygame_gui.elements.UIImage(pygame.Rect((55, 200), (240, 210)),
+                self.profile_elements["background"] = pygame_gui.elements.UIImage(pygame.Rect((110, 400), (480, 420)),
                                                                                   self.newleaf_plt)
                 self.profile_elements["background"].disable()
             elif game.clan.current_season == 'Greenleaf':
-                self.profile_elements["background"] = pygame_gui.elements.UIImage(pygame.Rect((55, 200), (240, 210)),
+                self.profile_elements["background"] = pygame_gui.elements.UIImage(pygame.Rect((110, 400), (480, 420)),
                                                                                   self.greenleaf_plt)
                 self.profile_elements["background"].disable()
             elif game.clan.current_season == 'Leaf-bare':
-                self.profile_elements["background"] = pygame_gui.elements.UIImage(pygame.Rect((55, 200), (240, 210)),
+                self.profile_elements["background"] = pygame_gui.elements.UIImage(pygame.Rect((110, 400), (480, 420)),
                                                                                   self.leafbare_plt)
                 self.profile_elements["background"].disable()
             elif game.clan.current_season == 'Leaf-fall':
-                self.profile_elements["background"] = pygame_gui.elements.UIImage(pygame.Rect((55, 200), (240, 210)),
+                self.profile_elements["background"] = pygame_gui.elements.UIImage(pygame.Rect((110, 400), (480, 420)),
                                                                                   self.leaffall_plt)
                 self.profile_elements["background"].disable()
 
         # Create cat image object
-        self.profile_elements["cat_image"] = pygame_gui.elements.UIImage(pygame.Rect((100, 200), (150, 150)),
-                                                                         self.the_cat.large_sprite)
+        self.profile_elements["cat_image"] = pygame_gui.elements.UIImage(pygame.Rect((200, 400), (300, 300)),
+                                                                         pygame.transform.scale(
+                                                                             self.the_cat.large_sprite,
+                                                                             (300, 300)))
         self.profile_elements["cat_image"].disable()
 
         # if cat is a med or med app, show button for their den
         self.profile_elements["med_den"] = UIImageButton(pygame.Rect
-                                                         ((100, 380), (151, 28)),
+                                                         ((200, 760), (302, 56)),
                                                          "",
                                                          object_id="#med_den_button"
                                                          )
@@ -652,7 +654,7 @@ class ProfileScreen(Screens):
 
         if self.the_cat.status == 'leader' and not self.the_cat.dead:
             self.profile_elements["leader_ceremony"] = UIImageButton(pygame.Rect(
-                (383, 110), (34, 34)),
+                (766, 220), (68, 68)),
                 "",
                 object_id="#leader_ceremony_button",
                 tool_tip_text="Leader Ceremony"

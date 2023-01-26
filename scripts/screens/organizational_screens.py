@@ -19,6 +19,7 @@ class StartScreen(Screens):
         super().__init__(name)
         self.warning_label = None
         self.bg = pygame.image.load("resources/images/menu.png").convert()
+        self.bg = pygame.transform.scale(self.bg, (1600, 1400))
 
     def handle_event(self, event):
         '''This is where events that occur on this page are handled.
@@ -51,22 +52,22 @@ class StartScreen(Screens):
         self.hide_menu_buttons()
         # Create buttons
 
-        self.continue_button = UIImageButton(pygame.Rect((70, 310), (192, 35)), "",
-                                             object_id=pygame_gui.core.ObjectID(object_id="#continue_button"))
-        self.switch_clan_button = UIImageButton(pygame.Rect((70, 355), (192, 35)), "",
-                                                object_id=pygame_gui.core.ObjectID(object_id="#switch_clan_button"))
-        self.new_clan_button = UIImageButton(pygame.Rect((70, 400), (192, 35)), "",
-                                             object_id=pygame_gui.core.ObjectID(object_id="#new_clan_button"))
-        self.settings_button = UIImageButton(pygame.Rect((70, 445), (192, 35)), "",
-                                             object_id=pygame_gui.core.ObjectID(object_id="#settings_button"))
+        self.continue_button = UIImageButton(pygame.Rect((140, 620), (384, 70)), "",
+                                             object_id="#continue_button")
+        self.switch_clan_button = UIImageButton(pygame.Rect((140, 710), (384, 70)), "",
+                                                object_id="#switch_clan_button")
+        self.new_clan_button = UIImageButton(pygame.Rect((140, 800), (384, 70)), "",
+                                             object_id="#new_clan_button")
+        self.settings_button = UIImageButton(pygame.Rect((140, 890), (384, 70)), "",
+                                             object_id="#settings_button")
 
-        self.error_label = pygame_gui.elements.UILabel(pygame.Rect(50, 50, 700, -1), "",
+        self.error_label = pygame_gui.elements.UILabel(pygame.Rect(100, 100, 1400, -1), "",
                                                        object_id="#save_text_box")
         self.error_label.hide()
 
         self.warning_label = pygame_gui.elements.UITextBox(
             "Warning: this game includes some mild descriptions of gore.",
-            pygame.Rect((50, 622), (700, 30)),
+            pygame.Rect((100, 1244), (1400, 60)),
             object_id="#default_dark"
         )
 

@@ -20,7 +20,7 @@ VERSION_NUMBER = "Ver. 0.5.0dev"
 pygame.init()
 
 # initialize pygame_gui manager, and load themes
-manager = pygame_gui.ui_manager.UIManager((800, 700), 'resources/defaults.json')
+manager = pygame_gui.ui_manager.UIManager((1600, 1400), 'resources/defaults.json')
 manager.add_font_paths(
     font_name='notosans',
     regular_path='resources/fonts/NotoSans-Medium.ttf',
@@ -102,10 +102,10 @@ sprites.load_scars()
 start_screen.screen_switches()
 
 #Version Number
-version_number = pygame_gui.elements.UILabel(pygame.Rect((750, 675), (-1, -1)), VERSION_NUMBER,
+version_number = pygame_gui.elements.UILabel(pygame.Rect((1500, 1350), (-1, -1)), VERSION_NUMBER,
                                              object_id=get_text_box_theme())
 # Adjust position
-version_number.set_position((800 - version_number.get_relative_rect()[2] - 4, 700 - version_number.get_relative_rect()[3]))
+version_number.set_position((1600 - version_number.get_relative_rect()[2] - 8, 1400 - version_number.get_relative_rect()[3]))
 
 while True:
     time_delta = clock.tick(30) / 1000.0
