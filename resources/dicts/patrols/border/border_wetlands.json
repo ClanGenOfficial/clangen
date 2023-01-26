@@ -1318,7 +1318,7 @@
     {
         "patrol_id": "wtlnd_bord_flashflood7",
         "biome": "wetlands",
-        "season": "leafbare",
+        "season": "leaf-bare",
         "tags": [
             "border",
             "disaster",
@@ -1369,7 +1369,7 @@
     {
         "patrol_id": "wtlnd_bord_flashflood8",
         "biome": "wetlands",
-        "season": "leafbare",
+        "season": "leaf-bare",
         "tags": [
             "border",
             "death",

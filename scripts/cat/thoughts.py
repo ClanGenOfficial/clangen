@@ -303,7 +303,7 @@ def get_warrior_thoughts(cat, other_cat):
             ]
         elif cat.trait == 'thoughtful':
             thoughts += [
-                'Gave an elder their favorite piece of fresh kill',
+                'Gave an elder their favorite piece of fresh-kill',
                 'Is making sure that the elders all have fresh bedding'
             ]
         elif cat.trait == 'troublesome':
@@ -484,8 +484,8 @@ def get_warrior_trait_role_thoughts(cat, other_cat):
         # checks for specific roles
         if other_cat.status == 'elder':
             thoughts += [
-                'Is taking fresh kill to the elders and queens',
-                'Gave their share of fresh kill to the elders',
+                'Is taking fresh-kill to the elders and queens',
+                'Gave their share of fresh-kill to the elders',
                 'Is putting mousebile on the elder\'s ticks'
             ]
         elif other_cat.status == 'kitten':
@@ -590,7 +590,7 @@ def get_warrior_trait_role_thoughts(cat, other_cat):
         # checks for specific roles
         if other_cat.status == 'elder':
             thoughts += [
-                'Gave an elder their favorite piece of fresh kill',
+                'Gave an elder their favorite piece of fresh-kill',
                 'Is making sure that the elders all have fresh bedding'
             ]
         elif other_cat.status == 'queen':
