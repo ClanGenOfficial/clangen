@@ -2038,31 +2038,28 @@ class ChangeNameScreen(Screens):
 
         self.the_cat = Cat.all_cats.get(game.switches['cat'])
 
-        self.heading = pygame_gui.elements.UITextBox("-Change Name-", pygame.Rect((100, 130), (600, 40)),
+        self.heading = pygame_gui.elements.UITextBox("-Change Name-", pygame.Rect((200, 260), (1200, 80)),
                                                      object_id=get_text_box_theme())
 
-        self.name_changed = pygame_gui.elements.UITextBox("Name Changed!", pygame.Rect((100, 350), (600, 40)),
+        self.name_changed = pygame_gui.elements.UITextBox("Name Changed!", pygame.Rect((200, 700), (1200, 80)),
                                                           visible=False,
                                                           object_id=get_text_box_theme())
 
-        self.done_button = UIImageButton(pygame.Rect((365, 282), (77, 30)), "",
+        self.done_button = UIImageButton(pygame.Rect((730, 564), (154, 60)), "",
                                          object_id=pygame_gui.core.ObjectID(object_id="#done_button"))
-        self.back_button = UIImageButton(pygame.Rect((25, 25), (105, 30)), "",
+        self.back_button = UIImageButton(pygame.Rect((50, 50), (210, 60)), "",
                                          object_id=pygame_gui.core.ObjectID(object_id="#back_button"))
 
-        self.test_button = UIImageButton(pygame.Rect((350, 350), (180, 180)), "",
-                                         object_id=pygame_gui.core.ObjectID(object_id="#image_button"), visible=False)
-
-        self.prefix_entry_box = pygame_gui.elements.UITextEntryLine(pygame.Rect((220, 200), (180, 30)),
+        self.prefix_entry_box = pygame_gui.elements.UITextEntryLine(pygame.Rect((440, 400), (360, 60)),
                                                                     placeholder_text=self.the_cat.name.prefix)
         if self.the_cat.name.status in ["apprentice", "leader", "medicine cat apprentice", "kitten"]:
-            self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(pygame.Rect((400, 200), (180, 30)),
+            self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(pygame.Rect((800, 400), (360, 60)),
                                                                         placeholder_text=
                                                                         self.the_cat.name.special_suffixes[
                                                                             self.the_cat.name.status])
             self.suffix_entry_box.disable()  # You can't change a special suffix
         else:
-            self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(pygame.Rect((400, 200), (180, 30)),
+            self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(pygame.Rect((800, 400), (360, 60)),
                                                                         placeholder_text=self.the_cat.name.suffix)
 
     def exit_screen(self):
