@@ -790,7 +790,7 @@
         "exp": 20,
         "success_text": [
             "They're interrupted by Twolegs wandering through the woods a couple times, but it's a successful hunt.",
-            "A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for r_c. They fetch p_l, and both cats investigate the food, loudly proclaiming how much better fresh kill is, but both a little thrilled by the experience.",
+            "A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for r_c. They fetch p_l, and both cats investigate the food, loudly proclaiming how much better fresh-kill is, but both a little thrilled by the experience.",
             "s_c shows the other cat all around the outskirts of the Twoleg dens, showing off how much they know about the strange animals and their weird behavior, and enjoying getting to feel clever.",
             "It's a strange adventure, odd and weird and a little thrilling. s_c takes the lead, but both s_c and r_c are wide eyed and a little scared, in a fun way."
         ],
@@ -857,7 +857,7 @@
         "exp": 20,
         "success_text": [
             "They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall it works out.",
-            "A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for app2. They fetch app1, and both apprentices loudly proclaim how much better fresh kill is, but both are also wide eyed and thrilled by the experience.",
+            "A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for app2. They fetch app1, and both apprentices loudly proclaim how much better fresh-kill is, but both are also wide eyed and thrilled by the experience.",
             null,
             "Tail lashing excitedly, app1 hunts in the strange, forbidden land, ducking around corners and crawling over gardens with their belly low to the ground. app2 tries to be even sneakier, and so app1 ups their game, until they're both probably the most obvious pair of cats in the neighborhood."
         ],
@@ -1405,7 +1405,7 @@
 			"medium_prey2",
 			"large_prey3"
         ],
-        "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something nice for the freshkill pile.",
+        "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the snow dies down.",
         "chance_of_success": 50,
         "exp": 10,
@@ -1457,14 +1457,14 @@
 			"medium_prey1",
 			"large_prey2"
         ],
-        "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something nice for the freshkill pile.",
+        "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the snow dies down.",
         "chance_of_success": 40,
         "exp": 10,
         "success_text": [
             "Despite the snow, r_c manages to hunt successfully, finding the normal birds still out fishing the swamps.",
             null,
-            "s_c really shows their talent, bringing a nice eel back to camp for the freshkill pile."
+            "s_c really shows their talent, bringing a nice eel back to camp for the fresh-kill pile."
         ],
         "fail_text": [
             null,
@@ -1506,7 +1506,7 @@
             "romantic",
             "no_app"
         ],
-        "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something nice for the freshkill pile.",
+        "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the snow dies down.",
         "chance_of_success": 50,
         "exp": 10,

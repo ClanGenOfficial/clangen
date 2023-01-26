@@ -66,7 +66,7 @@
         ],
         "intro_text": "Your patrol comes across a large rat.",
         "success_text": [
-            "Your patrol catches the rat! More freshkill!",
+            "Your patrol catches the rat! More fresh-kill!",
             "The rat rears up and hisses at r_c, but while it's distracted, p_l takes it out with a quick strike.",
             "The rat is huge and quick, but s_c is quicker, bringing it down just before it scurries out of reach. Everyone gathers around them in congratulations of the skillful kill."
         ],
@@ -180,7 +180,7 @@
         ],
         "intro_text": "Your patrol glimpses the shadow of a fish as they pad past a stream.",
         "success_text": [
-            "r_c very carefully walks to the water's edge and waits for their chance. When the fish is near, they hook it out of the water with their claws. More freshkill!",
+            "r_c very carefully walks to the water's edge and waits for their chance. When the fish is near, they hook it out of the water with their claws. More fresh-kill!",
             "r_c pads closer to the water's edge, careful to keep their shadow away from the water. The fish doesn't seem to notice them and darts too close. r_c's paw flashes into the water and the fish flops onto the bank. r_c kills it and happily carries it back to camp."
         ],
         "fail_text": [

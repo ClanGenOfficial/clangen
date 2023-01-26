@@ -299,7 +299,7 @@ def change_relationship_values(cats_to,
 def event_text_adjust(Cat, text, cat, other_cat=None, other_clan_name=None, keep_m_c=False):
     danger = ["a rogue", "a dog", "a fox", "an otter", "a rat", "a hawk", "an enemy warrior", "a badger"]
     tail_danger = ["a rogue", "a dog", "a fox", "an otter", "a rat", "a hawk",
-                   "an enemy warrior", "a badger", "a twoleg trap"]
+                   "an enemy warrior", "a badger", "a Twoleg trap"]
 
     danger_choice = choice(danger)
     tail_choice = choice(tail_danger)

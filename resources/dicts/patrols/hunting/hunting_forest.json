@@ -47,7 +47,7 @@
 		"success_text": [
 			"The patrol examines the porcupine, eventually deciding that they shouldn't risk the potential injury it could cause.",
 			"The porcupine rattles its quills viciously, the patrol heeds its warning and gives it space.",
-			"s_c sets up an ambush, devising a clever plan to take the porcupine by surprise and attack it before it can whip its quills into anyone's pelt.  The Clan will be impressed by this hefty freshkill.",
+			"s_c sets up an ambush, devising a clever plan to take the porcupine by surprise and attack it before it can whip its quills into anyone's pelt.  The Clan will be impressed by this hefty fresh-kill.",
 			"s_c has the ingenious idea to follow the porcupine from a distance and collect dropped quills to bring back to camp. The quills could be woven into the Clan's defenses to strengthen them."
 		],
 		"fail_text": [
@@ -105,7 +105,7 @@
 		"success_text": [
 			"The patrol examines the porcupine, eventually deciding that they shouldn't risk the potential injury it could cause.",
 			"The porcupine rattles its quills viciously, the patrol heeds its warning and gives it space.",
-			"s_c sets up an ambush, devising a clever plan to take the porcupine by surprise and attack it before it can whip its quills into anyone's pelt.  The Clan will be impressed by this hefty freshkill.",
+			"s_c sets up an ambush, devising a clever plan to take the porcupine by surprise and attack it before it can whip its quills into anyone's pelt.  The Clan will be impressed by this hefty fresh-kill.",
 			"s_c has the ingenious idea to follow the porcupine from a distance and collect dropped quills to bring back to camp.  The quills could be woven into the Clan's defenses to strengthen them."
 		],
 		"fail_text": [
@@ -274,7 +274,7 @@
 		"chance_of_success": 60,
 		"exp": 10,
 		"success_text": [
-			"The patrol flushes a gopher out of the burrow! More fresh kill!",
+			"The patrol flushes a gopher out of the burrow! More fresh-kill!",
 			"Inside the burrow is a rabbit, curled up and alone. Perhaps a buck recently kicked from his birth warren? Whatever the case, this rabbit will feed the Clan now."
 		],
 		"fail_text": [
@@ -312,7 +312,7 @@
 		"chance_of_success": 40,
 		"exp": 10,
 		"success_text": [
-			"r_c flushes a gopher out of the burrow! More fresh kill!",
+			"r_c flushes a gopher out of the burrow! More fresh-kill!",
 			"Inside the burrow is a rabbit, curled up and alone. Perhaps a buck recently kicked from his birth warren? Whatever the case, this rabbit will feed the Clan now."
 		],
 		"fail_text": [
@@ -526,7 +526,7 @@
 		"chance_of_success": 40,
 		"exp": 30,
 		"success_text": [
-			"The patrol tracks the noise and discovers a wolf eating from its kill. This is a predator they cannot fight and more wolves may be nearby, the patrol decides to return to camp and report the intruder to the leader, perhaps they can return later to take what freshkill is left behind.",
+			"The patrol tracks the noise and discovers a wolf eating from its kill. This is a predator they cannot fight and more wolves may be nearby, the patrol decides to return to camp and report the intruder to the leader, perhaps they can return later to take what fresh-kill is left behind.",
 			"The patrol tracks the noise and finds a mostly stripped carcass covered in the scent of wolves. They quickly scavenge what little is left and leave before the predators can return.",
 			"The noise leads them to a wolf, eating from its kill. s_c instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the wolf eats its fill and disappears into the forest. When s_c deems it safe, the patrol takes their turn stripping the leftover meat from the bones.",
 			"The noise leads them to a wolf, eating from its kill. s_c instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the wolf eats its fill and disappears into the forest. When s_c deems it safe, the patrol takes their turn stripping the leftover meat from the bones."
@@ -582,7 +582,7 @@
 		"chance_of_success": 20,
 		"exp": 30,
 		"success_text": [
-			"The patrol tracks the noise and discovers a wolf eating from its kill. This is a predator they cannot fight and more wolves may be nearby, the patrol decides to return to camp and report the intruder to the leader, perhaps they can return later to take what little freshkill is left behind.",
+			"The patrol tracks the noise and discovers a wolf eating from its kill. This is a predator they cannot fight and more wolves may be nearby, the patrol decides to return to camp and report the intruder to the leader, perhaps they can return later to take what little fresh-kill is left behind.",
 			"The patrol tracks the noise and finds a mostly stripped carcass covered in the scent of wolves. They quickly scavenge what little is left and leave before the predators can return.",
 			"The noise leads them to a wolf, scavenging from a carcass. s_c instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the wolf eats its fill and disappears into the forest. When s_c deems it safe, the patrol takes their turn stripping the leftover meat from the bones.",
 			"The noise leads them to a wolf, scavenging from a carcass. s_c instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the wolf eats its fill and disappears into the forest. When s_c deems it safe, the patrol takes their turn stripping the leftover meat from the bones."
@@ -1457,7 +1457,7 @@
 		"exp": 20,
 		"success_text": [
 			"They're interrupted by Twolegs wandering through the woods a couple times, but it's a successful hunt.",
-			"A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for r_c. They fetch p_l, and both cats investigate the food, loudly proclaiming how much better fresh kill is, but both a little thrilled by the experience.",
+			"A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for r_c. They fetch p_l, and both cats investigate the food, loudly proclaiming how much better fresh-kill is, but both a little thrilled by the experience.",
 			"s_c shows the other cat all around the outskirts of the Twoleg dens, showing off how much they know about the strange animals and their weird behavior, and enjoying getting to feel clever.",
 			"It's a strange adventure, odd and weird and a little thrilling. s_c takes the lead, but both s_c and r_c are wide eyed and a little scared, in a fun way."
 		],
@@ -1525,7 +1525,7 @@
 		"exp": 20,
 		"success_text": [
 			"They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall it works out.",
-			"A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for app2. They fetch app1, and both apprentices loudly proclaim how much better fresh kill is, but both are also wide eyed and thrilled by the experience.",
+			"A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for app2. They fetch app1, and both apprentices loudly proclaim how much better fresh-kill is, but both are also wide eyed and thrilled by the experience.",
 			null,
 			"Tail lashing excitedly, app1 hunts in the strange, forbidden land, ducking around corners and crawling over gardens with their belly low to the ground. app2 tries to be even sneakier, and so app1 ups their game, until they're both probably the most obvious pair of cats in the neighborhood."
 		],
@@ -2245,7 +2245,7 @@
 		"chance_of_success": 50,
 		"exp": 10,
 		"success_text": [
-			"The patrol interprets the purpose of the object. It seems like Twolegs light their freshkill on fire before eating it! How strange.",
+			"The patrol interprets the purpose of the object. It seems like Twolegs light their fresh-kill on fire before eating it! How strange.",
 			null,
 			"s_c looks closely at the Twoleg object, studying it, wondering how specifically the Twolegs harness and contain the power of fire without it escaping. Wouldn't it be wonderful if c_n could do that?"
 		],
@@ -2290,7 +2290,7 @@
 			"medium_prey2",
 			"large_prey3"
 		],
-		"intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something, anything, for the freshkill pile.",
+		"intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something, anything, for the fresh-kill pile.",
 		"decline_text": "They decide to turn back and wait until the snow dies down.",
 		"chance_of_success": 50,
 		"exp": 10,
@@ -2343,14 +2343,14 @@
 			"medium_prey1",
 			"large_prey2"
 		],
-		"intro_text": "It starts snowing soon after r_c sets out, trying to bring back something, anything, for the freshkill pile.",
+		"intro_text": "It starts snowing soon after r_c sets out, trying to bring back something, anything, for the fresh-kill pile.",
 		"decline_text": "They decide to turn back and wait until the snow dies down.",
 		"chance_of_success": 40,
 		"exp": 10,
 		"success_text": [
 			"Despite the snow, r_c manages to hunt successfully, finding a mouse underneath the leaf litter. Only one, but in this season, that's more than enough to count as a success.",
 			null,
-			"s_c really shows their talent, bringing a clutch of mice back to camp for the freshkill pile."
+			"s_c really shows their talent, bringing a clutch of mice back to camp for the fresh-kill pile."
 		],
 		"fail_text": [
 			null,
@@ -2395,7 +2395,7 @@
 			"cold_injury",
 			"small_prey"
 		],
-		"intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something, anything, for the freshkill pile.",
+		"intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something, anything, for the fresh-kill pile.",
 		"decline_text": "They decide to turn back and wait until the snow dies down.",
 		"chance_of_success": 50,
 		"exp": 10,
