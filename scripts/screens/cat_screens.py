@@ -1820,7 +1820,7 @@ class ProfileScreen(Screens):
                                                                         'where your Clan goes after death. ',
                                                           starting_height=2)
                 else:
-                    self.exile_cat_button = UIImageButton(pygame.Rect((1156, 900), (172, 92)),
+                    self.exile_cat_button = UIImageButton(pygame.Rect((1156, 900), (344, 92)),
                                                           "",
                                                           object_id=object_id,
                                                           starting_height=2)
