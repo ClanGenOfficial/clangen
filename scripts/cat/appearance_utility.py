@@ -200,7 +200,11 @@ def pelt_inheritance(cat, parents: tuple):
             par_pelts.append(p.pelt)
 
             #Gather if they have white in their pelt.
-            par_white.append(bool(p.white_patches))
+            par_white.append(p.pelt.white)
+
+        # If order for white patches to work correctly, we also want to randomly generate a "pelt_white"
+        # for each "None" parent (missing or unknown parent)
+        par_white.append(bool(random.getrandbits(1)))
 
         #If this list is empty, something went wrong.
         if not par_peltcolours:
@@ -315,16 +319,20 @@ def pelt_inheritance(cat, parents: tuple):
         if all([x == 0 for x in weights]):
             weights = [1, 1, 1]
 
-        chosen_pelt_length = random.choices(pelt_length, weights = weights, k = 1)[0]
+        chosen_pelt_length = random.choices(pelt_length, weights=weights, k=1)[0]
 
         # ------------------------------------------------------------------------------------------------------------#
         #   PELT WHITE
         # ------------------------------------------------------------------------------------------------------------#
 
-        chance = 5
+        # There is 94 percentage points that can be added by
+        # parents having white. If we have more than two, this
+        # will keep that the same.
+        percentage_add_per_parent = int(94 / len(par_white))
+        chance = 3
         for p_ in par_white:
             if p:
-                chance += 45
+                chance += percentage_add_per_parent
 
         chosen_white = random.randint(1, 100) <= chance
 
@@ -333,7 +341,7 @@ def pelt_inheritance(cat, parents: tuple):
 
         # SET THE PELT
         cat.pelt = choose_pelt(chosen_pelt_color, chosen_white, chosen_pelt, chosen_pelt_length)
-        cat.tortie_base = chosen_tortie_base # This will be none if the cat isn't a tortie.
+        cat.tortie_base = chosen_tortie_base  # This will be none if the cat isn't a tortie.
 
 def randomize_pelt(cat):
     # ------------------------------------------------------------------------------------------------------------#
@@ -553,9 +561,13 @@ def white_patches_inheritance(cat, parents: tuple):
         for x in range(0, len(weights)):
             weights[x] += add_weights[x]
 
-    # A quick check to make sure all the weights aren't 0
+    # If all the weights are still 0, that means none of the parents have white patches.
     if all([x == 0 for x in weights]):
-        weights = [10, 10, 10, 10, 2, 1]  #Default weights
+        if any([not x for x in parents]):  # If any of the parents are None (unknown), use the following distribution:
+            weights = [20, 10, 10, 5, 5, 0]
+        else:
+            # Otherwise, all parents are known and don't have any white patches. Focus distribution on little_white.
+            weights = [50, 5, 0, 0, 0, 0]
 
     chosen_white_patches = choice(
         random.choices(white_list, weights=weights, k=1)[0]
