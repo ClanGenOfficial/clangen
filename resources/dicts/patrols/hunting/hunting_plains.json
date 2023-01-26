@@ -2129,7 +2129,7 @@
     ]
 },
 {
-    "patrol_id": "pln_hunt_vixen1",
+    "patrol_id": "pln_hunt_redvixen1",
     "biome": "plains",
     "season": "newleaf",
     "tags": ["fighting", "death", "scar", "big_bite_injury", "respect", "trust",  "clan_to_r_c", "patrol_to_r_c", "clan_to_patrol"],
@@ -2139,18 +2139,18 @@
     "exp": 30,
     "success_text": [
         "The red vixen smells of milk, and hopefully by driving her out of the territory, her litter this newleaf won't be a threat to the Clan. If they don't starve, c_n will hunt them down - they do not share territory with foxes.",
-        "Your patrol drives away the fox, seeks out her den, and kills her young cubs. It's brutal, but these fluffy baby foxes would one day have grown to be kit-killers and thieves.",
-        "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
-        "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
+        "Your patrol drives away the red fox, seeks out her den, and kills her young cubs. It's brutal, but these fluffy baby foxes would one day have grown to be kit-killers and thieves.",
+        "s_c displays incredible skill, driving the mother red vixen out of the territory almost by themselves. Now neither the fox nor her cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
+        "The patrol overcomes the red vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
     ],
     "fail_text": [
-        "The mother fox is vicious and determined, and the small patrol is beaten back. But this forest is c_n's and they haven't given up. They may have lost this battle, but c_n will win this war.",
-        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the rest of the patrol have to rescue them from the vixen.",
-        "Never threaten a mother's young - the vixen kills r_c in the skirmish.",
-        "The mother fox's snapping jaws leave r_c dripping blood onto the grass, forcing the patrol to back off.",
+        "The mother red fox is vicious and determined, and the small patrol is beaten back. But these plains is c_n's and they haven't given up. They may have lost this battle, but c_n will win this war.",
+        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the rest of the patrol have to rescue them from the red vixen.",
+        "Never threaten a mother's young - the red vixen kills r_c in the skirmish.",
+        "The mother red fox's snapping jaws leave r_c dripping blood onto the grass, forcing the patrol to back off.",
         null,
-        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up on the fight.",
-        "As their hunt descends into a full on battle with the vixen, p_l takes a blow meant for one of their Clanmates, losing a life."
+        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the red vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up on the fight.",
+        "As their hunt descends into a full on battle with a red vixen determined to protect her young, p_l takes a blow meant for one of their Clanmates, losing a life."
     ],
     "win_skills": ["excellent fighter"],
     "win_trait": ["adventurous", "altruistic", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "responsible", "righteous", "troublesome", "vengeful"],
@@ -2167,7 +2167,7 @@
     ]
 },
 {
-    "patrol_id": "pln_hunt_vixen2",
+    "patrol_id": "pln_hunt_redvixen2",
     "biome": "plains",
     "season": "newleaf",
     "tags": ["fighting", "scar", "big_bite_injury", "respect", "trust",  "clan_to_r_c", "patrol_to_r_c", "clan_to_patrol"],
@@ -2176,18 +2176,18 @@
     "chance_of_success": 60,
     "exp": 30,
     "success_text": [
-        "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away the fox, seeks out her den, and kills her young cubs. The forest will be safe from both the threat the vixen posed this season, and the threat her cubs would've given c_n in the seasons to come.",
-        "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the mother vixen and ending the threat to the Clan that she and her cubs pose.",
-        "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her dependent cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
-        "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
+        "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away a red fox vixen, seeking out her den and killing her young cubs. The plains will be safe from both the threat the vixen posed this season, and the threat her cubs would've given c_n in the seasons to come.",
+        "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, finding and killing a mother red vixen and ending the threat to the Clan that she and her cubs pose.",
+        "s_c displays incredible skill, driving the mother red vixen they track down out of the territory almost by themselves. Now neither the fox nor her dependent cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
+        "The patrol hunts down and overcomes the red vixen they discover, driving her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
     ],
     "fail_text": [
-        "The mother fox is vicious and determined. Although they lose this battle, through teamwork the cats manage to retreat without injury.",
-        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the rest of the patrol have to rescue them from the vixen.",
+        "The mother red fox is vicious and determined. Although they lose this battle, through teamwork the cats manage to retreat without injury.",
+        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the rest of the patrol have to rescue them from the red vixen.",
         null,
-        "r_c is left wounded as the patrol and the mother vixen fight to a stalemate. Hopefully they've given the fox mother a reason not to return to this part of the forest.",
+        "r_c is left wounded as the patrol and the mother red vixen fight to a stalemate. Hopefully they've given the fox mother a reason not to return to this part of the forest.",
         null,
-        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up on the fight."
+        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the red vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up on the fight."
     ],
     "win_skills": ["excellent fighter"],
     "win_trait": ["adventurous", "altruistic", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "responsible", "righteous", "troublesome", "vengeful"],
@@ -2202,7 +2202,7 @@
     ]
 },
 {
-    "patrol_id": "pln_hunt_vixen3",
+    "patrol_id": "pln_hunt_redvixen3",
     "biome": "plains",
     "season": "newleaf",
     "tags": ["fighting", "death", "scar", "big_bite_injury", "respect", "trust", "clan_to_patrol", "no_body"],
@@ -2213,14 +2213,14 @@
     "success_text": [
         "The red vixen smells of milk, and hopefully by driving her out of the territory, her litter this newleaf won't be a threat to the Clan. If they don't starve, c_n will hunt them down - they do not share territory with foxes.",
         null,
-        "s_c displays incredible skill, driving the mother vixen and her brood out of the forest all by themselves. Now neither the fox nor her dependent cubs pose a threat to the Clan. They swell with pride, feeling the confidence of knowing that they're truly one of the best fighters c_n has ever produced.",
-        "A brilliant battle move by s_c knocks the vixen off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in their pelt to do it alone."
+        "s_c displays incredible skill, driving the mother red vixen and her brood out of c_n's plains all by themselves. Now neither the fox nor her dependent cubs pose a threat to the Clan. They swell with pride, feeling the confidence of knowing that they're truly one of the best fighters c_n has ever produced.",
+        "A brilliant battle move by s_c knocks the red vixen they find off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in their pelt to do it alone."
     ],
     "fail_text": [
         null,
         null,
-        "Never threaten a mother's young - the vixen kills r_c in the skirmish, and carries off the body to feed her litter.",
-        "The mother fox's snapping jaws leave r_c dripping blood onto the leaf litter, and barely able to escape further injury.",
+        "Never threaten a mother's young - the red vixen kills r_c in the skirmish, and carries off the body to feed her litter.",
+        "The mother red fox's snapping jaws leave r_c dripping blood onto the leaf litter, and barely able to escape further injury.",
         null,
         "s_c is determined to win, but the vixen is determined to live, and that makes all the difference. s_c ends up pinned in a defensible hiding spot, bleeding and terrified, until the vixen judges them no longer a threat and continues on her way."
     ],
@@ -2239,7 +2239,7 @@
     ]
 },
 {
-    "patrol_id": "pln_hunt_vixen4",
+    "patrol_id": "pln_hunt_redvixen4",
     "biome": "plains",
     "season": "greenleaf",
     "tags": ["fighting", "death", "scar", "big_bite_injury", "respect", "trust",  "clan_to_r_c", "patrol_to_r_c", "clan_to_patrol"],
@@ -2250,17 +2250,17 @@
     "success_text": [
         "The red vixen smells of milk and blood. Hopefully by driving her out of the territory, the litter she has been raising this Greenleaf won't be a threat to the Clan. If they don't starve, c_n will hunt them down - they do not share with foxes.",
         "Your patrol drives away the fox, seeks out her den, and kills her cubs. It's brutal, but these fluffy small foxes would one day have grown to be kit-killers and thieves.",
-        "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her dependent cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
-        "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
+        "s_c displays incredible skill, driving the mother red vixen they track down out of the territory almost by themselves. Now neither the fox nor her dependent cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
+        "The patrol hunts down and overcomes the red vixen they discover, driving her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
     ],
     "fail_text": [
-        "The mother fox is vicious and determined, and the small patrol is beaten back. But this forest is c_n's and they haven't given up. They may have lost this battle, but c_n will win this war.",
-        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the rest of the patrol have to rescue them from the vixen.",
-        "Never threaten a mother's young - the vixen kills r_c in the skirmish.",
-        "The mother fox's snapping jaws leave r_c dripping blood onto the grass, forcing the patrol to back off.",
+        "The mother red fox is vicious and determined, and the small patrol is beaten back. But this forest is c_n's and they haven't given up. They may have lost this battle, but c_n will win this war.",
+        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the rest of the patrol have to rescue them from the red vixen.",
+        "Never threaten a mother's young - the red vixen kills r_c in the skirmish.",
+        "The mother red fox's snapping jaws leave r_c dripping blood onto the grass, forcing the patrol to back off.",
         null,
-        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up on the fight.",
-        "As their hunt descends into a full on battle with the vixen, p_l takes a blow meant for one of their Clanmates, losing a life."
+        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the red vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up on the fight.",
+        "As their hunt descends into a full on battle with a red vixen determined to protect her young, p_l takes a blow meant for one of their Clanmates, losing a life."
     ],
     "win_skills": ["excellent fighter"],
     "win_trait": ["adventurous", "altruistic", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "responsible", "righteous", "troublesome", "vengeful"],
@@ -2277,7 +2277,7 @@
     ]    
 },
 {
-    "patrol_id": "pln_hunt_vixen5",
+    "patrol_id": "pln_hunt_redvixen5",
     "biome": "plains",
     "season": "greenleaf",
     "tags": ["fighting", "scar", "big_bite_injury", "respect", "trust",  "clan_to_r_c", "patrol_to_r_c", "clan_to_patrol"],
@@ -2287,17 +2287,17 @@
     "exp": 30,
     "success_text": [
         "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away the fox, seeks out her den, and kills her growing cubs. The forest will be safe from both the threat the vixen posed this season, and the threat her cubs would've given c_n in the seasons to come.",
-        "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the mother vixen and ending the threat to the Clan that she and her cubs pose.",
-        "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her dependent cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
-        "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
+        "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, finding and killing a mother red vixen and ending the threat to the Clan that she and her cubs pose.",
+        "s_c displays incredible skill, driving the mother red vixen they track down out of the territory almost by themselves. Now neither the fox nor her dependent cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
+        "The patrol hunts down and overcomes the red vixen they discover, driving her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
     ],
     "fail_text": [
-        "The mother fox is vicious and determined. Although they lose this battle, through teamwork the cats manage to retreat without injury.",
-        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the rest of the patrol have to rescue them from the vixen.",
+        "The mother red fox is vicious and determined. Although they lose this battle, through teamwork the cats manage to retreat without injury.",
+        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the rest of the patrol have to rescue them from the red vixen.",
         null,
-        "r_c is left wounded as the patrol and the mother vixen fight to a stalemate. Hopefully they've given the fox mother a reason not to return to this part of the forest.",
+        "r_c is left wounded as the patrol and the mother red vixen fight to a stalemate. Hopefully they've given the fox mother a reason not to return to this part of the forest.",
         null,
-        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up on the fight."
+        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the red vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up on the fight."
     ],
     "win_skills": ["excellent fighter"],
     "win_trait": ["adventurous", "altruistic", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "responsible", "righteous", "troublesome", "vengeful"],
@@ -2312,7 +2312,7 @@
     ]
 },
 {
-    "patrol_id": "pln_hunt_vixen6",
+    "patrol_id": "pln_hunt_redvixen6",
     "biome": "plains",
     "season": "greenleaf",
     "tags": ["fighting", "death", "scar", "big_bite_injury", "respect", "trust", "clan_to_patrol", "no_body"],
@@ -2323,14 +2323,14 @@
     "success_text": [
         "The red vixen smells of milk and blood. Hopefully by driving her out of the territory, the litter she has been raising this Greenleaf won't be a threat to the Clan.",
         null,
-        "s_c displays incredible skill, driving the mother vixen and her brood out of the forest all by themselves. Now neither the fox nor her dependent cubs pose a threat to the Clan. They swell with pride, feeling the confidence of knowing that they're truly one of the best fighters c_n has ever produced.",
-        "A brilliant battle move by s_c at a critical moment knocks the vixen off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in their pelt to do it alone."
+        "s_c displays incredible skill, driving the mother red vixen and her brood out of c_n's plains all by themselves. Now neither the fox nor her dependent cubs pose a threat to the Clan. They swell with pride, feeling the confidence of knowing that they're truly one of the best fighters c_n has ever produced.",
+        "A brilliant battle move by s_c at a critical moment knocks the red vixen they find off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in their pelt to do it alone."
     ],
     "fail_text": [
         null,
         null,
-        "Never threaten a mother's young - the vixen kills r_c in the skirmish, and carries off the body to feed her litter.",
-        "The mother fox's snapping jaws leave r_c dripping blood onto the leaf litter, and barely able to escape further injury.",
+        "Never threaten a mother's young - the red vixen kills r_c in the skirmish, and carries off the body to feed her litter.",
+        "The mother red fox's snapping jaws leave r_c dripping blood onto the leaf litter, and barely able to escape further injury.",
         null,
         "s_c is determined to win, but the vixen is determined to live, and that makes all the difference. s_c ends up pinned in a defensible hiding spot, bleeding and terrified, until the vixen judges them no longer a threat and continues on her way."
     ],
@@ -2349,7 +2349,7 @@
     ]
 },
 {
-    "patrol_id": "pln_hunt_vixen7",
+    "patrol_id": "pln_hunt_redvixen7",
     "biome": "plains",
     "season": "leaf-fall",
     "tags": ["fighting", "death", "scar", "big_bite_injury", "respect", "trust",  "clan_to_r_c", "patrol_to_r_c", "clan_to_patrol"],
@@ -2358,19 +2358,19 @@
     "chance_of_success": 30,
     "exp": 30,
     "success_text": [
-        "The vixen smells like the prey she's been poaching to feed her litter. She's stolen from c_n for the last time, and the patrol drives her from their territory, yowling their anger and fury.",
-        "Your patrol drives away the fox, and seeks out her den, but her leaf-fall cubs are near full-grown and scatter into the wilderness. Hopefully leaf-bare takes care of them.",
-        "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
-        "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
+        "The red vixen smells like the prey she's been poaching to feed her litter. She's stolen from c_n for the last time, and the patrol drives her from their territory, yowling their anger and fury.",
+        "Your patrol drives away the red fox, and seeks out her den, but her leaf-fall cubs are near full-grown and scatter into the wilderness. Hopefully leaf-bare takes care of them.",
+        "s_c displays incredible skill, driving the mother red vixen they track down out of the territory almost by themselves. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
+        "The patrol hunts down and overcomes the red vixen they discover, driving her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
     ],
     "fail_text": [
-        "The mother fox is vicious and determined, and the small patrol is beaten back. But this forest is c_n's and they haven't given up. They may have lost this battle, but c_n will win this war.",
-        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the rest of the patrol have to rescue them from the vixen.",
-        "Never threaten a mother's young - the vixen kills r_c in the skirmish.",
-        "The mother fox's snapping jaws leave r_c dripping blood onto the grass, forcing the patrol to back off.",
+        "The mother red fox is vicious and determined, and the small patrol is beaten back. But this forest is c_n's and they haven't given up. They may have lost this battle, but c_n will win this war.",
+        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the rest of the patrol have to rescue them from the red vixen.",
+        "Never threaten a mother's young - the red vixen kills r_c in the skirmish.",
+        "The mother red fox's snapping jaws leave r_c dripping blood onto the grass, forcing the patrol to back off.",
         null,
-        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up on the fight.",
-        "As their hunt descends into a full on battle with the vixen, p_l takes a blow meant for one of their Clanmates, losing a life."
+        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the red vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up on the fight.",
+        "As their hunt descends into a full on battle with a red vixen determined to protect her young, p_l takes a blow meant for one of their Clanmates, losing a life."
     ],
     "win_skills": ["excellent fighter"],
     "win_trait": ["adventurous", "altruistic", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "responsible", "righteous", "troublesome", "vengeful"],
@@ -2387,7 +2387,7 @@
     ]
 },
 {
-    "patrol_id": "pln_hunt_vixen8",
+    "patrol_id": "pln_hunt_redvixen8",
     "biome": "plains",
     "season": "leaf-fall",
     "tags": ["fighting", "scar", "big_bite_injury", "respect", "trust",  "clan_to_r_c", "patrol_to_r_c", "clan_to_patrol"],
@@ -2398,15 +2398,15 @@
     "success_text": [
         "Led by p_l and with a heap of cooperation and teamwork, the patrol drives away the fox, and seeks out her den. But her cubs are near full-grown with the bounty of leaf-fall, and scatter from the patrol into the wilderness. Hopefully leaf-bare takes care of them.",
         "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the mother vixen and ending the threat to the Clan that she poses. The patrol drives her near-full grown litter of fox cubs out from the territory. Hopefully the coming leaf-bare will take care of them.",
-        "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her cubs pose a threat to c_n.",
-        "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
+        "s_c displays incredible skill, driving the mother red vixen they track down out of the territory almost by themselves. Now neither the fox nor her cubs pose a threat to c_n.",
+        "The patrol hunts down and overcomes the red vixen they discover, driving her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
     ],
     "fail_text": [
-        "The mother fox is vicious and determined. Although they lose this battle, through teamwork the cats manage to retreat without injury.",
+        "The mother red fox is vicious and determined. Although they lose this battle, through teamwork the cats manage to retreat without injury.",
         null,
-        "r_c is left wounded as the patrol and the mother vixen fight to a stalemate. Hopefully they've given the fox mother a reason not to return to this part of the forest.",
+        "r_c is left wounded as the patrol and the mother red vixen fight to a stalemate. Hopefully they've given the fox mother a reason not to return to this part of the forest.",
         null,
-        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up the fight."
+        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the red vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up the fight."
     ],
     "win_skills": ["excellent fighter"],
     "win_trait": ["adventurous", "altruistic", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "responsible", "righteous", "troublesome", "vengeful"],
@@ -2421,7 +2421,7 @@
     ]
 },
 {
-    "patrol_id": "pln_hunt_vixen9",
+    "patrol_id": "pln_hunt_redvixen9",
     "biome": "plains",
     "season": "leaf-fall",
     "tags": ["fighting", "death", "scar", "big_bite_injury", "respect", "trust", "clan_to_patrol", "no_body"],
@@ -2430,16 +2430,16 @@
     "chance_of_success": 20,
     "exp": 50,
     "success_text": [
-        "It takes r_c's every scrap of bravery and strength to drive away the vixen - her near grown litter, fat on the bounty of leaf-fall, is a challenge for another day. c_n will have to deal with the young foxes now roaming motherless in their woods, before they start to compete for prey in leaf-bare.",
+        "It takes r_c's every scrap of bravery and strength to drive away the red vixen - her near grown litter, fat on the bounty of leaf-fall, is a challenge for another day. c_n will have to deal with the young foxes now roaming motherless in their woods, before they start to compete for prey in leaf-bare.",
         null,
-        "s_c displays incredible skill, driving the mother vixen and her brood out of the forest all by themselves. Now neither the fox nor her cubs pose a threat to the Clan. They swell with pride, feeling the confidence of knowing that they're truly one of the best fighters c_n has ever produced.",
-        "A brilliant battle move by s_c at a critical moment knocks the vixen off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in their pelt to do it alone."
+        "s_c displays incredible skill, driving the mother red vixen and her brood out of c_n's plains all by themselves. Now neither the fox nor her cubs pose a threat to the Clan. They swell with pride, feeling the confidence of knowing that they're truly one of the best fighters c_n has ever produced.",
+        "A brilliant battle move by s_c at a critical moment knocks the red vixen they find off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in their pelt to do it alone."
     ],
     "fail_text": [
         null,
         null,
-        "Never threaten a mother's young - the vixen kills r_c in the skirmish, and carries off the body to feed her litter.",
-        "The mother fox's snapping jaws leave r_c dripping blood onto the leaf litter, and barely able to escape further injury.",
+        "Never threaten a mother's young - the red vixen kills r_c in the skirmish, and carries off the body to feed her litter.",
+        "The mother red fox's snapping jaws leave r_c dripping blood onto the leaf litter, and barely able to escape further injury.",
         null,
         "s_c is determined to win, but the vixen is determined to live, and that makes all the difference. s_c ends up pinned in a defensible hiding spot, bleeding and terrified, until the vixen judges them no longer a threat and continues on her way."
     ],
@@ -2458,41 +2458,189 @@
     ]
 },
 {
-    "patrol_id": "pln_hunt_vixenswift1",
+    "patrol_id": "pln_hunt_swiftfox_newleafvixen1",
     "biome": "plains",
     "season": "newleaf",
-    "tags": ["fighting", "death", "scar", "small_bite_injury", "respect", "trust",  "clan_to_r_c", "patrol_to_r_c", "clan_to_patrol"],
+    "tags": ["hunting", "comfort", "respect", "rel_patrol"],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or swift?",
     "decline_text": "Your patrol decides not to pursue the fox.",
-    "chance_of_success": 30,
+    "chance_of_success": 70,
     "exp": 30,
     "success_text": [
-        "The swift vixen smells of milk, and hopefully by driving her out of the territory, her litter this newleaf won't be a threat to the Clan. If they don't starve, c_n will hunt them down - they do not share territory with foxes.",
-        "Your patrol drives away the fox, seeks out her den, and kills her young cubs. It's brutal, but these fluffy baby foxes would one day have grown to be kit-killers and thieves.",
-        "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
-        "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
+    "Anticipating the coming greenleaf, this swift fox is checking for a suitable burrow for her litter. And that burrow will not be in c_n's territory. The patrol makes that clear, screaming and charging at her until the fox flees beyond their borders, away from where her cubs could threaten the Clan.",
+    "This swift vixen is looking for a place to den, and the patrol sets up an ambush. She crossed their borders, but she won't cross back over them again, and with her life ends the threat her cubs would have posed to c_n's kits.",
+    "s_c holds the patrol back until the swift fox's yips bring her mate, than the patrol strikes. While the vixen flees, her mate fights, and against warriors he doesn't stand a chance."
     ],
     "fail_text": [
-        "The mother fox is vicious and determined, and the small patrol is beaten back. But this forest is c_n's and they haven't given up. They may have lost this battle, but c_n will win this war.",
-        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the rest of the patrol have to rescue them from the vixen.",
-        "Never threaten a mother's young - the vixen kills r_c in the skirmish.",
-        "The mother fox's snapping jaws leave r_c dripping blood onto the grass, forcing the patrol to back off.",
-        null,
-        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up on the fight.",
-        "As their hunt descends into a full on battle with the vixen, p_l takes a blow meant for one of their Clanmates, losing a life."
+    "The swift fox spots the patrol coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small canivore gets its name."
     ],
-    "win_skills": ["excellent fighter"],
-    "win_trait": ["adventurous", "altruistic", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "responsible", "righteous", "troublesome", "vengeful"],
-    "fail_skills": ["good fighter"],
+    "win_skills": ["smart", "very smart", "extremely smart"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
     "fail_trait": ["None"],
     "min_cats": 2,
-    "max_cats": 3,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "pln_hunt_swiftfox_newleafvixen2",
+    "biome": "plains",
+    "season": "newleaf",
+    "tags": ["hunting", "fighting", "scar", "respect", "clan_to_r_c", "small_bite_injury"],
+    "intro_text": "r_c catches the scent of a fox - but is it red, or swift?",
+    "decline_text": "Your patrol decides not to pursue the fox.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "success_text": [
+    "This swift vixen is scouting out potential dens for greenleaf, r_c realises, and rushes to warn her off. Forget about hunting, driving off this vixen before she sets up a den within c_n's borders is more important.",
+    "This swift vixen is scouting out potential dens for greenleaf, r_c realises. This could be bad, and r_c gives up on the hunt, instead following the vixen, yowling and hissing, using their persistance to warn her off from trying to live here.",
+    "s_c positions themselves down a burrow in the vixen's path, and as the swift fox approaches s_c bursts from it, pinning her down and using surprise to get in a crucial blow to her throat."
+    ],
+    "fail_text": [
+    "The swift fox spots r_c coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small canivore gets its name.",
+    null,
+    null,
+    "Puffed up, r_c approaches the swift fox. But there's only one of them, and the fox is their equal in size and weight. instead of running or giving up, it snarls, and attacks. r_c gives just as good as they get, and both animals end up limping away."
+    ],
+    "win_skills": ["smart", "very smart", "extremely smart", "good fighter", "great fighter", "excellent fighter"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
     "history_text": [
-        "r_c carries a scar from a fox fight.",
-        "r_c fell in battle with a fox.",
-        "died in battle with a fox"
+        "r_c carries a scar from fighting with a swift fox."
+    ]
+},
+{
+    "patrol_id": "pln_hunt_swiftfox_greenleafvixen1",
+    "biome": "plains",
+    "season": "greenleaf",
+    "tags": ["hunting", "comfort", "respect", "rel_patrol", "fighting", "scar", "big_bite_injury"],
+    "intro_text": "Your patrol catches the scent of a fox - but is it red, or swift?",
+    "decline_text": "Your patrol decides not to pursue the fox.",
+    "chance_of_success": 50,
+    "exp": 30,
+    "success_text": [
+    "The patrol charges the vixen, and she runs, leaving the scent of milk in the air behind her. Though they don't know where her cubs are hidden, without their mother they won't pose a threat to the Clan.",
+    "The patrol sneaks closer, until p_l realises that the vixen is approaching her den - a den when cubs must surely hide. A competitor denning within c_n's borders is an outrage, and the patrol leaps to attack, pinning the vixen in a mess of boulders.",
+    "s_c holds the patrol back until they spot the vixen's mate, approaching with poached prey in his jaws. Together, the cats ambush the foxes, bursting from cover with claws unshealthed as a vicious fight starts. But warriors fight as a team, and the foxes do not, and one flees, abandoning its mate to the fury of c_n."
+    ],
+    "fail_text": [
+    "The swift fox spots the patrol coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small canivore gets its name.",
+    null,
+    null,
+    "As the patrol descends on the swift vixen, her scream of surprise brings in her mate, changing the odds. The male bursts out from cover and sinks his teeth into r_c, both foxes using the patrol switching to r_c's defence as their signal to flee."
+    ],
+    "win_skills": ["smart", "very smart", "extremely smart", "good fighter", "great fighter", "excellent fighter"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        "r_c was marked by a fight with a swift fox vixen."
+    ]
+},
+{
+    "patrol_id": "pln_hunt_swiftfox_greenleafvixen2",
+    "biome": "plains",
+    "season": "greenleaf",
+    "tags": ["hunting", "fighting", "scar", "respect", "clan_to_r_c", "small_bite_injury"],
+    "intro_text": "r_c catches the scent of a fox - but is it red, or swift?",
+    "decline_text": "Your patrol decides not to pursue the fox.",
+    "chance_of_success": 20,
+    "exp": 30,
+    "success_text": [
+    "Sneaking closer, r_c realises that the wind carries the scent of milk from the vixen. It's a swift fox - and she has cubs. Eventually she leaves the area, and r_c begins the hunt, checking every burrow, every crevice, every hole until they find the tiny fox cubs. Killing them protects the Clan, they remind themselves.",
+    "This swift vixen has a den, r_c realises, one perched just under a lone tree. Once the vixen leaves, r_c digs around it to bury the den and its contents. No swift cubs will be raised within c_n's borders.",
+    "s_c scents the air, following the milk scent of the mother swift fox from afar. It means they can position themselves for the perfect ambush, leaping from cover to fasten their teeth in her throat."
+    ],
+    "fail_text": [
+    "The swift fox spots r_c coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small canivore gets its name.",
+    null,
+    null,
+    "As r_c descends on the swift vixen, her scream of surprise brings in her mate, changing the odds. The male bursts out from cover and sinks his teeth into r_c, both foxes using the chance to flee."
+    ],
+    "win_skills": ["smart", "very smart", "extremely smart", "good fighter", "great fighter", "excellent fighter"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        "r_c was marked by a fight with a swift fox vixen."
+    ]
+},
+{
+    "patrol_id": "pln_hunt_swiftfox_leaf-fallvixen1",
+    "biome": "plains",
+    "season": "leaf-fall",
+    "tags": ["hunting", "large_prey1", "huge_prey2", "comfort", "respect", "rel_patrol", "fighting", "scar", "big_bite_injury"],
+    "intro_text": "Your patrol catches the scent of a fox - but is it red, or swift?",
+    "decline_text": "Your patrol decides not to pursue the fox.",
+    "chance_of_success": 70,
+    "exp": 30,
+    "success_text": [
+    "The patrol charges the swift vixen, and she runs, leaving the scent of milk in the air behind her. But they don't know where her cubs might've been hidden, and they'll be old enough to survive without her - this bodes ill for leaf-bare.",
+    "The patrol sneaks closer, until p_l realises that the swift vixen is approaching her den. Her cubs, nearly full grown on prey stolen from c_n's territory, poke their heads out, and the cats yowl in outrage. They charge the den, killing two of the cubs before the vixen runs with her third.",
+    "s_c holds the patrol back until they spot the swift vixen's mate, approaching with poached prey in his jaws. Together, the cats ambush the foxes, bursting from cover with claws unshealthed as a vicious fight starts. But warriors fight as a team, and the foxes do not, and one flees, abandoning its mate and cubs to the fury of c_n."
+    ],
+    "fail_text": [
+    "The swift fox spots the patrol coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small canivore gets its name.",
+    null,
+    null,
+    "As the patrol descends on the swift vixen, her scream of surprise brings in her mate, changing the odds. The male bursts out from cover and sinks his teeth into r_c, both foxes using the patrol switching to r_c's defence as their signal to flee."
+    ],
+    "win_skills": ["smart", "very smart", "extremely smart", "good fighter", "great fighter", "excellent fighter"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        "r_c was marked by a fight with a swift fox vixen."
+    ]
+},
+{
+    "patrol_id": "pln_hunt_swiftfox_leaf-fallvixen2",
+    "biome": "plains",
+    "season": "leaf-fall",
+    "tags": ["hunting", "medium_prey0", "large_prey2", "fighting", "scar", "respect", "clan_to_r_c", "small_bite_injury"],
+    "intro_text": "r_c catches the scent of a fox - but is it red, or swift?",
+    "decline_text": "Your patrol decides not to pursue the fox.",
+    "chance_of_success": 40,
+    "exp": 30,
+    "success_text": [
+    "Sneaking closer, r_c realises that the wind carries the scent of milk from the vixen. It's a swift fox - and she has cubs. Eventually she leaves the area, and r_c begins the hunt, checking every burrow, every crevice, every hole until they stumble over the den. Two of the cubs flee into the grasslands, while the third falls to r_c's claws.",
+    "This swift vixen has a den, r_c realises, one perched just under a lone tree. Once the vixen leaves, r_c digs around it to bury the den and its contents. No swift cubs will be raised within c_n's borders.",
+    "s_c scents the air, following the milk scent of the mother swift fox from afar. It means they can position themselves for the perfect ambush, leaping from cover to fasten their teeth in her throat. Her cubs will be old enough to survive without her, but this vixen will never raise kitten killers again."
+    ],
+    "fail_text": [
+    "The swift fox spots r_c coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small canivore gets its name.",
+    null,
+    null,
+    "As r_c descends on the swift vixen, her scream of surprise brings in her mate, changing the odds. The male bursts out from cover and sinks his teeth into r_c, both foxes using the chance to flee."
+    ],
+    "win_skills": ["smart", "very smart", "extremely smart", "good fighter", "great fighter", "excellent fighter"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        "r_c was marked by a fight with a swift fox vixen."
     ]
 },
 {
