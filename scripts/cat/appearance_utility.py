@@ -339,12 +339,12 @@ def pelt_inheritance(cat, parents: tuple):
         chosen_white = random.randint(1, 100) <= chance
 
         # Adjustments to pelt chosen based on if the pelt has white in it or not.
-        if chosen_pelt == ["TwoColour", "SingleColour"]:
+        if chosen_pelt in ["TwoColour", "SingleColour"]:
             if chosen_white:
                 chosen_pelt = "TwoColour"
             else:
                 chosen_white = "SingleColour"
-        elif chosen_pelt == Calico:
+        elif chosen_pelt == "Calico":
             if not chosen_white:
                 chosen_pelt = "Torbie"
 
@@ -401,12 +401,12 @@ def randomize_pelt(cat):
     chosen_white = random.randint(1, 100) <= 40
 
     # Adjustments to pelt chosen based on if the pelt has white in it or not.
-    if chosen_pelt == ["TwoColour", "SingleColour"]:
+    if chosen_pelt in ["TwoColour", "SingleColour"]:
         if chosen_white:
             chosen_pelt = "TwoColour"
         else:
             chosen_white = "SingleColour"
-    elif chosen_pelt == Calico:
+    elif chosen_pelt == "Calico":
         if not chosen_white:
             chosen_pelt = "Torbie"
 
