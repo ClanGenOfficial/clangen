@@ -2431,7 +2431,7 @@ class Cat():
                                                        personality_bonus)
                     rel2.dislike = Cat.effect_relation(rel2.dislike, -(randint(ran[0], ran[1]) + bonus) -
                                                        personality_bonus)
-                    output += f"Dislike decreased . "
+                    output += f"Dislike decreased. "
 
             elif trait == "jealousy":
                 ran = (4, 9)

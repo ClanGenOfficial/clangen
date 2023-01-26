@@ -73,7 +73,7 @@ class Events():
                         cat.age = 'adolescent'
                     elif cat.moons == 12:
                         cat.age = 'adult'
-                    elif cat.moons == 100:
+                    elif cat.moons == 120:
                         cat.age = 'elder'
 
                     # killing exiled cats

@@ -1237,7 +1237,7 @@ class Patrol():
                     if major_injury:
                         new_cat.get_injured("broken bone")
             for cat in created_cats:
-                if cat.name.prefix != "unnamed":
+                if cat.name.prefix != "unnamed" and not cat.dead:
                     self.results_text.append(f"{cat.name} has joined the Clan.")
 
     def create_new_cat(self,
