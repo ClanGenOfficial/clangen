@@ -493,15 +493,24 @@ class PatrolScreen(Screens):
         self.patrol_stage = 'patrol_events'
 
         # Layout images
-        self.elements['event_bg'] = pygame_gui.elements.UIImage(pygame.Rect((381, 165), (354, 270)),
+        self.elements['event_bg'] = pygame_gui.elements.UIImage(pygame.Rect((762, 330), (708, 540)),
+                                                                pygame.transform.scale(
                                                                 pygame.image.load(
-                                                                    "resources/images/patrol_event_frame.png").convert_alpha())
-        self.elements['info_bg'] = pygame_gui.elements.UIImage(pygame.Rect((90, 456), (420, 204)),
+                                                                    "resources/images/patrol_event_frame.png").convert_alpha(),
+                                                                    (708, 540)
+                                                                ))
+        self.elements['info_bg'] = pygame_gui.elements.UIImage(pygame.Rect((180, 912), (840, 408)),
+                                                               pygame.transform.scale(
                                                                pygame.image.load(
-                                                                   "resources/images/patrol_info.png").convert_alpha())
-        self.elements['image_frame'] = pygame_gui.elements.UIImage(pygame.Rect((65, 140), (320, 320)),
+                                                                   "resources/images/patrol_info.png").convert_alpha(),
+                                                                   (840, 408)
+                                                               ))
+        self.elements['image_frame'] = pygame_gui.elements.UIImage(pygame.Rect((130, 280), (650, 640)),
+                                                                   pygame.transform.scale(
                                                                    pygame.image.load(
-                                                                       "resources/images/patrol_sprite_frame.png").convert_alpha())
+                                                                       "resources/images/patrol_sprite_frame.png").convert_alpha(),
+                                                                       (650, 640)
+                                                                   ))
 
         # Add selected cats to the patrol.
         patrol.add_patrol_cats(self.current_patrol)
@@ -528,9 +537,11 @@ class PatrolScreen(Screens):
 
         try:
             self.elements['intro_image'] = pygame_gui.elements.UIImage(
-                pygame.Rect((75, 150), (300, 300)),
+                pygame.Rect((150, 300), (600, 600)),
+                pygame.transform.scale(
                 pygame.image.load(
-                    f"resources/images/patrol_art/{file}_general_intro.png").convert_alpha()
+                    f"resources/images/patrol_art/{file}_general_intro.png").convert_alpha(),
+                    (600, 600))
             )
         except:
             print('ERROR: could not display patrol image')
@@ -544,7 +555,7 @@ class PatrolScreen(Screens):
         # Prepare Intro Text
         # adjusting text for solo patrols
         intro_text = self.adjust_patrol_text(patrol.patrol_event.intro_text, patrol_size)
-        self.elements["patrol_text"] = UITextBoxTweaked(intro_text, pygame.Rect((385, 175), (325, 270)),
+        self.elements["patrol_text"] = UITextBoxTweaked(intro_text, pygame.Rect((770, 350), (660, 540)),
                                                         object_id="#patrol_text_box")
         # Patrol Info
         # TEXT CATEGORIES AND CHECKING FOR REPEATS
@@ -565,32 +576,32 @@ class PatrolScreen(Screens):
             f'patrol leader: {patrol.patrol_leader_name} \n'
             f'patrol members: {self.get_list_text(members)} \n'
             f'patrol skills: {self.get_list_text(skills)} \n'
-            f'patrol traits: {self.get_list_text(traits)}', pygame.Rect((105, 460), (240, 200)),
+            f'patrol traits: {self.get_list_text(traits)}', pygame.Rect((210, 920), (480, 400)),
             object_id="#cat_profile_info_box")
 
         # Draw Patrol Cats
-        pos_x = 400
-        pos_y = 475
+        pos_x = 800
+        pos_y = 950
         for u in range(6):
             if u < len(patrol.patrol_cats):
-                self.elements["cat" + str(u)] = pygame_gui.elements.UIImage(pygame.Rect((pos_x, pos_y), (50, 50)),
+                self.elements["cat" + str(u)] = pygame_gui.elements.UIImage(pygame.Rect((pos_x, pos_y), (100, 100)),
                                                                             patrol.patrol_cats[u].sprite)
-                pos_x += 50
-                if pos_x > 450:
-                    pos_y += 50
-                    pos_x = 400
+                pos_x += 100
+                if pos_x > 900:
+                    pos_y += 100
+                    pos_x = 800
             else:
                 break
 
         ##################### Buttons:
-        self.elements["proceed"] = UIImageButton(pygame.Rect((550, 433), (172, 30)), "",
+        self.elements["proceed"] = UIImageButton(pygame.Rect((1100, 866), (344, 60)), "",
                                                  object_id="#proceed_button",
                                                  starting_height=2)
-        self.elements["not_proceed"] = UIImageButton(pygame.Rect((550, 461), (172, 30)), "",
+        self.elements["not_proceed"] = UIImageButton(pygame.Rect((1100, 922), (344, 60)), "",
                                                      object_id="#not_proceed_button",
                                                      starting_height=2)
 
-        self.elements["antagonize"] = UIImageButton(pygame.Rect((550, 490), (172, 36)), "",
+        self.elements["antagonize"] = UIImageButton(pygame.Rect((1100, 980), (344, 60)), "",
                                                     object_id="#antagonize_button")
         if patrol.patrol_event.antagonize_text is None:
             self.elements["antagonize"].hide()
@@ -603,9 +614,9 @@ class PatrolScreen(Screens):
         For do not Proceed: user_input = "nopro" or "notproceed" """
         self.patrol_stage = "patrol_complete"
 
-        self.elements["clan_return"] = UIImageButton(pygame.Rect((400, 137), (162, 30)), "",
+        self.elements["clan_return"] = UIImageButton(pygame.Rect((800, 274), (324, 60)), "",
                                                      object_id="#return_to_clan")
-        self.elements['patrol_again'] = UIImageButton(pygame.Rect((560, 137), (162, 30)), "",
+        self.elements['patrol_again'] = UIImageButton(pygame.Rect((1120, 274), (324, 60)), "",
                                                       object_id="#patrol_again")
 
         if user_input in ["antag", "antagonize"]:
@@ -631,7 +642,7 @@ class PatrolScreen(Screens):
         display_text = self.adjust_patrol_text(display_text, len(patrol.patrol_cats))
 
         self.elements["patrol_results"] = pygame_gui.elements.UITextBox("",
-                                                                        pygame.Rect((550, 500), (172, 150)),
+                                                                        pygame.Rect((1100, 1000), (344, 150)),
                                                                         object_id=get_text_box_theme("#cat_patrol_info_box")
                                                                         )
         self.elements["patrol_results"].set_text(patrol.results())
@@ -708,7 +719,7 @@ class PatrolScreen(Screens):
             pos_x = 1050
             i = 0
             for cat in self.current_patrol:
-                self.cat_buttons["patrol_cat" + str(i)] = UISpriteButton(pygame.Rect((pos_x, pos_y), (50, 50)),
+                self.cat_buttons["patrol_cat" + str(i)] = UISpriteButton(pygame.Rect((pos_x, pos_y), (100, 100)),
                                                                          cat.sprite, cat_object=cat)
                 pos_x += 150
                 if pos_x >= 1450:

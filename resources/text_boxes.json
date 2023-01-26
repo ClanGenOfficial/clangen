@@ -224,7 +224,8 @@
     },
     "#patrol_text_box": {
         "misc": {
-            "text_horiz_alignment": "left"
+            "text_horiz_alignment": "left",
+            "padding": "10,10"
         }
     },
     "#header_text_box": {
