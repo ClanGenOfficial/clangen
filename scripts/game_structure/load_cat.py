@@ -48,7 +48,8 @@ def json_load():
                         parent2=cat["parent2"],
                         moons=cat["moons"],
                         eye_colour=cat["eye_colour"] if cat["eye_colour"] not in ["BLUEYELLOW", "BLUEGREEN"] else "BLUE",
-                        pelt=new_pelt)
+                        pelt=new_pelt,
+                        loading_cat=True)
             new_cat.eye_colour2 = cat["eye_colour2"] if "eye_colour2" in cat else None
             new_cat.age = cat["age"]
             new_cat.genderalign = cat["gender_align"]

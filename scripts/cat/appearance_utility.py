@@ -200,7 +200,11 @@ def pelt_inheritance(cat, parents: tuple):
             par_pelts.append(p.pelt)
 
             #Gather if they have white in their pelt.
-            par_white.append(bool(p.white_patches))
+            par_white.append(p.pelt.white)
+        else:
+            # If order for white patches to work correctly, we also want to randomly generate a "pelt_white"
+            # for each "None" parent (missing or unknown parent)
+            par_white.append(bool(random.getrandbits(1)))
 
         #If this list is empty, something went wrong.
         if not par_peltcolours:
@@ -267,27 +271,29 @@ def pelt_inheritance(cat, parents: tuple):
                 chosen_tortie_base = "Single"
             chosen_pelt = random.choice(torties)
 
-
         # ------------------------------------------------------------------------------------------------------------#
         #   PELT COLOUR
         # ------------------------------------------------------------------------------------------------------------#
-        weights = [0, 0, 0]  # Weights for each pelt group. It goes: (ginger_colours, black_colours, brown_colours)
+        # Weights for each colour group. It goes: (ginger_colours, black_colours, white_colours, brown_colours)
+        weights = [0, 0, 0, 0]
         for p_ in par_peltcolours:
             if p_ in ginger_colours:
-                add_weight = (35, 0, 15)
+                add_weight = (40, 0, 0, 15)
             elif p_ in black_colours:
-                add_weight = (0, 35, 15)
+                add_weight = (0, 40, 5, 10)
+            elif p_ in white_colours:
+                add_weight = (0, 5, 40, 0)
             elif p_ in brown_colours:
-                add_weight = (15, 15, 35)
+                add_weight = (15, 5, 0, 35)
             else:
-                add_weight = (0, 0, 0)
+                add_weight = (0, 0, 0, 0)
 
             for x in range(0, len(weights)):
                 weights[x] += add_weight[x]
 
             # A quick check to make sure all the weights aren't 0
             if all([x == 0 for x in weights]):
-                weights = [1, 1, 1]
+                weights = [1, 1, 1, 1]
 
         chosen_pelt_color = choice(
             random.choices(colour_categories, weights=weights, k = 1)[0]
@@ -315,25 +321,36 @@ def pelt_inheritance(cat, parents: tuple):
         if all([x == 0 for x in weights]):
             weights = [1, 1, 1]
 
-        chosen_pelt_length = random.choices(pelt_length, weights = weights, k = 1)[0]
+        chosen_pelt_length = random.choices(pelt_length, weights=weights, k=1)[0]
 
         # ------------------------------------------------------------------------------------------------------------#
         #   PELT WHITE
         # ------------------------------------------------------------------------------------------------------------#
 
-        chance = 5
+        # There is 94 percentage points that can be added by
+        # parents having white. If we have more than two, this
+        # will keep that the same.
+        percentage_add_per_parent = int(94 / len(par_white))
+        chance = 3
         for p_ in par_white:
             if p:
-                chance += 45
+                chance += percentage_add_per_parent
 
         chosen_white = random.randint(1, 100) <= chance
 
-        if chosen_white and chosen_pelt == "Torbie":
-            chosen_pelt = "Calico"
+        # Adjustments to pelt chosen based on if the pelt has white in it or not.
+        if chosen_pelt in ["TwoColour", "SingleColour"]:
+            if chosen_white:
+                chosen_pelt = "TwoColour"
+            else:
+                chosen_white = "SingleColour"
+        elif chosen_pelt == "Calico":
+            if not chosen_white:
+                chosen_pelt = "Torbie"
 
         # SET THE PELT
         cat.pelt = choose_pelt(chosen_pelt_color, chosen_white, chosen_pelt, chosen_pelt_length)
-        cat.tortie_base = chosen_tortie_base # This will be none if the cat isn't a tortie.
+        cat.tortie_base = chosen_tortie_base  # This will be none if the cat isn't a tortie.
 
 def randomize_pelt(cat):
     # ------------------------------------------------------------------------------------------------------------#
@@ -381,8 +398,17 @@ def randomize_pelt(cat):
     # ------------------------------------------------------------------------------------------------------------#
 
 
-    chosen_white = random.randint(1, 100) <= 35
+    chosen_white = random.randint(1, 100) <= 40
 
+    # Adjustments to pelt chosen based on if the pelt has white in it or not.
+    if chosen_pelt in ["TwoColour", "SingleColour"]:
+        if chosen_white:
+            chosen_pelt = "TwoColour"
+        else:
+            chosen_white = "SingleColour"
+    elif chosen_pelt == "Calico":
+        if not chosen_white:
+            chosen_pelt = "Torbie"
 
     cat.pelt = choose_pelt(chosen_pelt_color, chosen_white, chosen_pelt, chosen_pelt_length)
     cat.tortie_base = chosen_tortie_base  # This will be none if the cat isn't a tortie.
@@ -510,20 +536,17 @@ def white_patches_inheritance(cat, parents: tuple):
 
     par_whitepatches = set()
     for p in parents:
-        if p:
+        if p and p.white_patches:
             par_whitepatches.add(p.white_patches)
 
-    if not par_whitepatches:
+    if not parents:
         print("Error - no parents. Randomizing white patches.")
         randomize_white_patches(cat)
         return
 
-    # Direct inheritance
-    if not randint(0, 10):
-        chosen_white_patches = choice(list(par_whitepatches))
-        if not chosen_white_patches:
-            cat.pelt.white = False
-        cat.white_patches = chosen_white_patches
+    # Direct inheritance. Will only work if at least one parent has white patches, otherwise continue on.
+    if par_whitepatches and not randint(0, 10):
+        cat.white_patches = choice(list(par_whitepatches))
         return
 
     vit_chance = not randint(0, 40)
@@ -553,9 +576,23 @@ def white_patches_inheritance(cat, parents: tuple):
         for x in range(0, len(weights)):
             weights[x] += add_weights[x]
 
-    # A quick check to make sure all the weights aren't 0
-    if all([x == 0 for x in weights]):
-        weights = [10, 10, 10, 10, 2, 1]  #Default weights
+
+    # If all the weights are still 0, that means none of the parents have white patches.
+    if not any(weights):
+        if not all(parents):  # If any of the parents are None (unknown), use the following distribution:
+            weights = [20, 10, 10, 5, 5, 0]
+        else:
+            # Otherwise, all parents are known and don't have any white patches. Focus distribution on little_white.
+            weights = [50, 5, 0, 0, 0, 0]
+
+    # Adjust weights for torties, since they can't have anything greater than mid_white:
+    if cat.pelt.name == "Tortie":
+        weights = weights[:2] + [0, 0, 0, 0]
+        # Another check to make sure not all the values are zero. This should never happen, but better
+        # safe then sorry.
+        if not any(weights):
+            weights = [2, 1, 0, 0, 0, 0]
+
 
     chosen_white_patches = choice(
         random.choices(white_list, weights=weights, k=1)[0]
@@ -569,9 +606,16 @@ def randomize_white_patches(cat):
         cat.white_patches = choice(vit)
         return
 
+    # Adjust weights for torties, since they can't have anything greater than mid_white:
+    if cat.pelt.name == "Tortie":
+        weights = (2, 1, 0, 0, 0, 0)
+    else:
+        weights = (10, 10, 10, 10, 5, 1)
+
+
     white_list = [little_white, mid_white, high_white, mostly_white, point_markings, ['FULLWHITE']]
     chosen_white_patches = choice(
-        random.choices(white_list, weights=(10, 10, 10, 10, 5, 1), k=1)[0]
+        random.choices(white_list, weights=weights, k=1)[0]
     )
 
     cat.white_patches = chosen_white_patches
@@ -584,7 +628,7 @@ def init_white_patches(cat):
     if cat.white_patches:
         return
 
-    if cat.pelt.white is True:
+    if cat.pelt.white:
 
         par1 = None
         par2 = None

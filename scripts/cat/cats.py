@@ -146,7 +146,7 @@ class Cat():
                  moons=None,
                  example=False,
                  faded=False, # Set this to True if you are loading a faded cat. This will prevent the cat from being added to the list
-                 age="" # Only used for faded cats, to choose the correct sprite
+                 loading_cat=False #Set to true if you are loading a cat at start-up.
                  ):
 
         # This must be at the top. It's a smaller list of things to init, which is only for faded cats
@@ -233,6 +233,14 @@ class Cat():
         self.virtues = []
         self.no_kits = False
         self.paralyzed = False
+        self.age_sprites = {
+            "kitten": None,
+            "adolescent": None,
+            "young adult": None,
+            "adult": None,
+            "senior adult": None,
+            "elder": None
+        }
 
         self.opacity = 100
         self.prevent_fading = False #Prevents a cat from fading.
@@ -320,35 +328,56 @@ class Cat():
             self.gender = choice(["female", "male"])
         self.g_tag = self.gender_tags[self.gender]
 
-        # trans cat chances
-        trans_chance = randint(0, 50)
-        nb_chance = randint(0, 75)
-        if self.gender == "female" and not self.age == 'kitten':
-            if trans_chance == 1:
-                self.genderalign = "trans male"
-            elif nb_chance == 1:
-                self.genderalign = "nonbinary"
+        # These things should only run when generating a new cat, rather than loading one in.
+        if not loading_cat:
+            # trans cat chances
+            trans_chance = randint(0, 50)
+            nb_chance = randint(0, 75)
+            if self.gender == "female" and not self.age == 'kitten':
+                if trans_chance == 1:
+                    self.genderalign = "trans male"
+                elif nb_chance == 1:
+                    self.genderalign = "nonbinary"
+                else:
+                    self.genderalign = self.gender
+            elif self.gender == "male" and not self.age == 'kitten':
+                if trans_chance == 1:
+                    self.genderalign = "trans female"
+                elif nb_chance == 1:
+                    self.genderalign = "nonbinary"
+                else:
+                    self.genderalign = self.gender
             else:
                 self.genderalign = self.gender
-        elif self.gender == "male" and not self.age == 'kitten':
-            if trans_chance == 1:
-                self.genderalign = "trans female"
-            elif nb_chance == 1:
-                self.genderalign = "nonbinary"
-            else:
-                self.genderalign = self.gender
-        else:
-            self.genderalign = self.gender
 
-        # APPEARANCE
-        init_pelt(self)
-        init_tint(self)
-        init_sprite(self)
-        init_scars(self)
-        init_accessories(self)
-        init_white_patches(self)
-        init_eyes(self)
-        init_pattern(self)
+            # APPEARANCE
+            init_pelt(self)
+            init_tint(self)
+            init_sprite(self)
+            init_scars(self)
+            init_accessories(self)
+            init_white_patches(self)
+            init_eyes(self)
+            init_pattern(self)
+
+            # experience and current patrol status
+            if self.age in ['kitten']:
+                self.experience = 0
+            elif self.age in ['adolescent']:
+                self.experience = randint(0, 19)
+            elif self.age in ['young adult']:
+                self.experience = randint(10, 40)
+            elif self.age in ['adult']:
+                self.experience = randint(20, 50)
+            elif self.age in ['senior adult']:
+                self.experience = randint(30, 60)
+            elif self.age in ['elder']:
+                self.experience = randint(40, 70)
+            else:
+                self.experience = 0
+
+        #In camp status
+        self.in_camp = 1
 
         # NAME
         if self.pelt is not None:
@@ -367,27 +396,10 @@ class Cat():
         self.big_sprite = None
         self.large_sprite = None
 
-        # experience and current patrol status
-        self.in_camp = 1
-        if self.age in ['kitten']:
-            self.experience = 0
-        elif self.age in ['adolescent']:
-            self.experience = randint(0, 19)
-        elif self.age in ['young adult']:
-            self.experience = randint(10, 40)
-        elif self.age in ['adult']:
-            self.experience = randint(20, 50)
-        elif self.age in ['senior adult']:
-            self.experience = randint(30, 60)
-        elif self.age in ['elder']:
-            self.experience = randint(40, 70)
-        else:
-            self.experience = 0
-
         # SAVE CAT INTO ALL_CATS DICTIONARY IN CATS-CLASS
         self.all_cats[self.ID] = self
 
-        if self.ID != "0":
+        if self.ID not in ["0", None]:
             Cat.insert_cat(self)
 
     def __repr__(self):
@@ -2431,7 +2443,7 @@ class Cat():
                                                        personality_bonus)
                     rel2.dislike = Cat.effect_relation(rel2.dislike, -(randint(ran[0], ran[1]) + bonus) -
                                                        personality_bonus)
-                    output += f"Dislike decreased . "
+                    output += f"Dislike decreased. "
 
             elif trait == "jealousy":
                 ran = (4, 9)
