@@ -93,7 +93,7 @@
             "border_width": "0",
             "shadow_width": "0",
             "text_horiz_alignment": "left",
-            "padding": "0,0"
+            "padding": "0,8"
         }
     },
     "#cat_profile_info_box_dark":
