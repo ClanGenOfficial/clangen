@@ -536,7 +536,7 @@ def white_patches_inheritance(cat, parents: tuple):
 
     par_whitepatches = set()
     for p in parents:
-        if p.white_patches:
+        if p and p.white_patches:
             par_whitepatches.add(p.white_patches)
 
     if not par_whitepatches:
