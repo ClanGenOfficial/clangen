@@ -36,7 +36,7 @@ def json_load():
     # create new cat objects
     for i, cat in enumerate(cat_data):
         try:
-            new_pelt = choose_pelt(cat["gender"], cat["pelt_color"],
+            new_pelt = choose_pelt(cat["pelt_color"],
                                 cat["pelt_white"], cat["pelt_name"],
                                 cat["pelt_length"], True)
             new_cat = Cat(ID=cat["ID"],
@@ -48,7 +48,8 @@ def json_load():
                         parent2=cat["parent2"],
                         moons=cat["moons"],
                         eye_colour=cat["eye_colour"] if cat["eye_colour"] not in ["BLUEYELLOW", "BLUEGREEN"] else "BLUE",
-                        pelt=new_pelt)
+                        pelt=new_pelt,
+                        loading_cat=True)
             new_cat.eye_colour2 = cat["eye_colour2"] if "eye_colour2" in cat else None
             new_cat.age = cat["age"]
             new_cat.genderalign = cat["gender_align"]

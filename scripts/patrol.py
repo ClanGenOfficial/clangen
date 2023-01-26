@@ -517,7 +517,7 @@ class Patrol():
                 self.handle_deaths(self.patrol_leader)
             elif n == 3 or n == 5:
                 if game.clan.game_mode == 'classic':
-                    self.handle_scars()
+                    self.handle_scars(n)
                 else:
                     self.handle_conditions(n)
             if self.patrol_event.tags is not None:
@@ -771,15 +771,22 @@ class Patrol():
                 elif new_condition in PERMANENT:
                     cat.get_permanent_condition(new_condition)
 
-    def handle_scars(self):
+    def handle_scars(self, outcome):
         if self.patrol_event.tags is not None:
             if "scar" in self.patrol_event.tags:
+                cat = None
+                if outcome == 3:
+                    cat = self.patrol_random_cat
+                elif outcome == 5:
+                    cat = self.patrol_stat_cat
                 if len(self.patrol_random_cat.scars) < 4:
                     self.patrol_random_cat.scars.append(choice(
                         [choice(scars1)]))
                     if len(self.patrol_event.history_text) >= 1:
+                        adjust_text = self.patrol_event.history_text[0]
+                        adjust_text = adjust_text.replace("r_c", str(cat.name))
                         self.patrol_random_cat.scar_event.append(
-                            f'{self.patrol_event.history_text[0]}')
+                            f'{adjust_text}')
                     else:
                         self.patrol_random_cat.death_event.append(f'This cat gained a scar while patrolling.')
 
@@ -834,7 +841,10 @@ class Patrol():
             elif len(herbs_gotten) == 1 and herbs_gotten[0] == 'cobwebs':
                 insert = f"{herbs_gotten[0]} were"
             elif len(herbs_gotten) == 2:
-                insert = f"{herbs_gotten[0]} and {herbs_gotten[1]} were"
+                if str(herbs_gotten[0]) == str(herbs_gotten[1]):
+                    insert = f"{herbs_gotten[0]} was"
+                else:
+                    insert = f"{herbs_gotten[0]} and {herbs_gotten[1]} were"
             else:
                 insert = f"{', '.join(herbs_gotten[:-1])}, and {herbs_gotten[-1]} were"
             game.herb_events_list.append(f"{insert.capitalize()} gathered on a patrol.")
@@ -884,7 +894,7 @@ class Patrol():
         if "other_clan" in self.patrol_event.tags:
             other_clan = patrol.other_clan
             change_clan_relations(other_clan, difference)
-            if difference > 0:
+            if difference > 0 and self.patrol_event.patrol_id != "gen_bord_otherclan3":
                 insert = "improved"
             else:
                 insert = "worsened"
@@ -1148,8 +1158,6 @@ class Patrol():
                     created_cats.extend(self.create_new_cat(loner=False, loner_name=True, kittypet=True, queen=True,
                                                        backstory=new_backstory))
                     new_cat = created_cats[0]
-                    new_cat.name.prefix = "unnamed"
-                    new_cat.name.suffix = " queen"
                     new_cat.outside = True
                     new_cat.dead = True
                 else:
@@ -1229,7 +1237,8 @@ class Patrol():
                     if major_injury:
                         new_cat.get_injured("broken bone")
             for cat in created_cats:
-                self.results_text.append(f"{cat.name} has joined the Clan.")
+                if cat.name.prefix != "unnamed" and not cat.dead:
+                    self.results_text.append(f"{cat.name} has joined the Clan.")
 
     def create_new_cat(self,
                        loner=False,
@@ -1256,12 +1265,6 @@ class Patrol():
         if "new_cat_female" in tags:
             gender = 'female'
 
-        if queen:
-            if game.settings['no gendered breeding']:
-                gender = gender
-            else:
-                gender = 'female'
-
         if not litter and not kit:
             if age == 'young':
                 age = randint(6, 11)
@@ -1269,6 +1272,14 @@ class Patrol():
                 age = randint(100, 150)
             else:
                 age = randint(12, 99)
+
+        if queen:
+            if game.settings['no gendered breeding']:
+                gender = gender
+            else:
+                gender = 'female'
+            if age < 16:
+                age = 16
 
         if litter or kit:
             if age == 'newborn':

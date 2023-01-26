@@ -1,4 +1,4 @@
-from scripts.utility import get_queens
+from scripts.utility import get_alive_queens
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import *
 from copy import deepcopy
@@ -9,6 +9,8 @@ PREY_REQUIREMENT = {
     "deputy": 3,
     "medicine cat": 2,
     "medicine cat apprentice": 1.5,
+    "mediator apprentice": 1.5,
+    "mediator": 2,
     "warrior": 3,
     "apprentice": 1.5,
     "elder": 1.5,
@@ -25,7 +27,9 @@ FEEDING_ORDER = [
     "medicine cat",
     "medicine cat apprentice",
     "apprentice",
+    "mediator apprentice",
     "warrior",
+    "mediator",
     "deputy",
     "leader"
 ]
@@ -126,7 +130,7 @@ class Freshkill_Pile():
         self.update_nutrition(living_cats)
 
         relevant_group = []
-        queens = get_queens(living_cats, Cat.all_cats)
+        queens = get_alive_queens(Cat.all_cats)
         relevant_queens = []
         for queen in queens:
             kits = queen.get_children()
@@ -158,7 +162,7 @@ class Freshkill_Pile():
         """Returns the amount of prey which the clan needs."""
         living_cats = list(filter(lambda cat_: not cat_.dead and not cat_.outside , Cat.all_cats.values()))
         sick_cats = [cat for cat in living_cats if cat.is_injured() or cat.is_ill()]
-        queens = get_queens(living_cats, Cat.all_cats)
+        queens = get_alive_queens(Cat.all_cats)
 
         needed_prey = [PREY_REQUIREMENT[cat.status] for cat in living_cats]
         needed_prey = sum(needed_prey) + len(sick_cats) * CONDITION_INCREASE + len(queens) * (PREY_REQUIREMENT["queen"] - PREY_REQUIREMENT["warrior"])

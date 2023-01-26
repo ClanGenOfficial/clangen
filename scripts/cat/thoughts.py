@@ -74,57 +74,66 @@ def get_dead_thoughts(cat, other_cat):
 def get_alive_thoughts(cat, other_cat):
     thoughts = []
     thoughts += GENERAL_ALIVE
+    thoughts += GENERAL_TO_OTHER["all"]
+
+    if other_cat.dead:
+        first_key = "dead"
+    else:
+        first_key = "alive"
     thoughts += get_family_thoughts(cat, other_cat)
+    thoughts += GENERAL_TO_OTHER[first_key]["all"]
 
-    if cat.status == 'kitten':
-        thoughts += get_kitten_thoughts(cat,other_cat)
+    try:
+        thoughts += GENERAL_TO_OTHER["alive"][other_cat.status]
+    except KeyError:
+        print("GENERAL_TO_OTHER does not have key " + other_cat.status)
 
-    # kitten and warrior apprentice thoughts
-    if cat.status != 'medicine cat apprentice' and cat.status != 'warrior' and cat.status != 'deputy' and cat.status != 'medicine cat' and cat.status != 'leader' and cat.status != 'elder' and cat.status != 'queen':
-        thoughts += [
-            'Wonders what their full name will be',
-            'Pretends to be a warrior',
-            "Practices the hunting crouch",
-            'Pretends to fight an enemy warrior',
-            'Wants to be a warrior already!',
-            'Can\'t wait to be a warrior',
-            'Is pretending to be deputy',
-        ]
-        # checks for specific roles
-        if other_cat.status == 'elder':
-            thoughts += ['Is helping the elders with their ticks']
+    try:
+        if cat.status == 'kitten':
+            thoughts += get_kitten_thoughts(cat,other_cat)
 
+        elif cat.status == 'apprentice':
+            thoughts += get_apprentice_thoughts(cat,other_cat)
 
-    if cat.status == 'apprentice':
-        thoughts += get_apprentice_thoughts(cat,other_cat)
+        elif cat.status == 'medicine cat apprentice':
+            thoughts += get_med_apprentice_thoughts(cat, other_cat)
 
-    if cat.status == 'medicine cat apprentice':
-        thoughts += get_med_apprentice_thoughts(cat,other_cat)
+        elif cat.status == "mediator apprentice":
+            thoughts += get_mediator_app_thoughts(cat, other_cat)
 
-    if cat.status == 'elder':
-        thoughts += get_elder_thoughts(cat,other_cat)
+        elif cat.status == 'mediator':
+            thoughts += get_mediator_thoughts(cat, other_cat)
 
-    if cat.status == 'medicine cat':
-        thoughts += get_med_thoughts(cat,other_cat)
+        elif cat.status == 'elder':
+            thoughts += get_elder_thoughts(cat,other_cat)
 
-    if cat.status == 'deputy':
-        thoughts += get_deputy_thoughts(cat, other_cat)
+        elif cat.status == 'medicine cat':
+            thoughts += get_med_thoughts(cat,other_cat)
 
-    if cat.status == 'leader':
-        thoughts += get_leader_thoughts(cat, other_cat)
+        elif cat.status == 'deputy':
+            thoughts += get_deputy_thoughts(cat, other_cat)
 
-    if cat.status == 'warrior':
-        thoughts += get_warrior_thoughts(cat, other_cat)
-        thoughts += get_warrior_trait_role_thoughts(cat, other_cat)
+        elif cat.status == 'leader':
+            thoughts += get_leader_thoughts(cat, other_cat)
+
+        elif cat.status == 'warrior':
+            thoughts += get_warrior_thoughts(cat, other_cat)
+            thoughts += get_warrior_trait_role_thoughts(cat, other_cat)
+    except Exception as e:
+        print("Error loading rank thoughts. ")
+        print(e)
+
 
     return thoughts
 
 def get_kitten_thoughts(cat, other_cat):
     thoughts = []
     thoughts += KITTEN_GENERAL["all"]
+
     first_key = "alive"
     if other_cat.dead:
         first_key = "dead"
+
     second_key = other_cat.status
     # checks for specific roles
     thoughts += KITTEN_GENERAL[first_key]["all"]
@@ -135,18 +144,59 @@ def get_kitten_thoughts(cat, other_cat):
     thoughts += KITTEN_TRAITS[trait]
     return thoughts
 
+def get_mediator_thoughts(cat, other_cat):
+    thoughts = []
+    thoughts += MEDIATOR_GENERAL["all"]
+
+    if other_cat.dead:
+        first_key = "dead"
+    else:
+        first_key = "alive"
+
+
+    second_key = other_cat.status
+    # checks for specific roles
+    thoughts += MEDIATOR_GENERAL[first_key]["all"]
+    thoughts += MEDIATOR_GENERAL[first_key][second_key]
+
+    trait = cat.trait
+    thoughts += MEDIATOR_TRAITS[trait]
+
+    return thoughts
+
+def get_mediator_app_thoughts(cat, other_cat):
+    thoughts = []
+    thoughts += MEDIATOR_APP_GENERAL["all"]
+
+    if other_cat.dead:
+        first_key = "dead"
+    else:
+        first_key = "alive"
+
+
+    second_key = other_cat.status
+    # checks for specific roles
+    thoughts += MEDIATOR_APP_GENERAL[first_key]["all"]
+    thoughts += MEDIATOR_APP_GENERAL[first_key][second_key]
+
+    trait = cat.trait
+    thoughts += MEDIATOR_APP_TRAITS[trait]
+
+    return thoughts
+
 def get_apprentice_thoughts(cat, other_cat):
     thoughts = []
     thoughts += APPR_GENERAL["all"]
     first_key = "alive"
     if other_cat.dead:
         first_key = "dead"
+
     second_key = other_cat.status
     # checks for specific roles
     thoughts += APPR_GENERAL[first_key]["all"]
     thoughts += APPR_GENERAL[first_key][second_key]
-    
-    # checks for specific traits 
+
+    # checks for specific traits
     trait = cat.trait
     thoughts += APPR_TRAITS[trait]
 
@@ -648,9 +698,21 @@ with open(f"{resource_directory}family.json", 'r', encoding='ascii') as read_fil
 
 in_depth_path = "alive/"
 
+GENERAL_TO_OTHER = None
+with open(f"{resource_directory}{in_depth_path}1_all_to_other.json", 'r') as read_file:
+    GENERAL_TO_OTHER = ujson.loads(read_file.read())
+
 KITTEN_GENERAL = None
 with open(f"{resource_directory}{in_depth_path}kitten_to_other.json", 'r') as read_file:
     KITTEN_GENERAL = ujson.loads(read_file.read())
+
+MEDIATOR_GENERAL = None
+with open(f"{resource_directory}{in_depth_path}mediator_to_other.json", 'r') as read_file:
+    MEDIATOR_GENERAL = ujson.loads(read_file.read())
+
+MEDIATOR_APP_GENERAL = None
+with open(f"{resource_directory}{in_depth_path}mediator_apprentice_to_other.json", 'r') as read_file:
+    MEDIATOR_APP_GENERAL = ujson.loads(read_file.read())
 
 APPR_GENERAL = None
 with open(f"{resource_directory}{in_depth_path}apprentice_to_other.json", 'r') as read_file:
@@ -717,3 +779,11 @@ with open(f"{resource_directory}{traits_path}leader.json", 'r', encoding='ascii'
 ELDER_TRAITS = None
 with open(f"{resource_directory}{traits_path}elder.json", 'r', encoding='ascii') as read_file:
     ELDER_TRAITS = ujson.loads(read_file.read())
+
+MEDIATOR_TRAITS = None
+with open(f"{resource_directory}{traits_path}mediator.json", 'r', encoding='ascii') as read_file:
+    MEDIATOR_TRAITS = ujson.loads(read_file.read())
+
+MEDIATOR_APP_RAITS = None
+with open(f"{resource_directory}{traits_path}mediator_apprentice.json", 'r', encoding='ascii') as read_file:
+    MEDIATOR_APP_TRAITS = ujson.loads(read_file.read())

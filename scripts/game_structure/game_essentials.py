@@ -13,9 +13,9 @@ from pygame_gui.elements import UIWindow
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
 
 
-screen_x = 800
-screen_y = 700
-screen = pygame.display.set_mode((screen_x, screen_y), pygame.HWSURFACE)
+screen_x = 1600
+screen_y = 1400
+screen = pygame.display.set_mode((screen_x, screen_y), pygame.HWSURFACE|pygame.RESIZABLE|pygame.SCALED)
 pygame.display.set_caption('Clan Generator')
 
 # G A M E
@@ -29,6 +29,7 @@ class Game():
     #relation_scroll_ct = 0
 
     ranks_changed_timeskip = False  # Flag for when a cat's status changes occurs during a timeskip.
+    mediated = False  # Flag for when you have mediated this moon
 
     cur_events_list = []
     ceremony_events_list = []
@@ -169,7 +170,8 @@ class Game():
         'fading': True,
         "save_faded_copy": False,
         'favorite sub tab': None,
-        'first_cousin_mates': True
+        'first_cousin_mates': True,
+        'become_mediator': False
     }  # The current settings
     setting_lists = {
         'no gendered breeding': [False, True],
@@ -194,7 +196,8 @@ class Game():
         'favorite sub tab': sub_tab_list,
         'fading': [True, False],
         'save_faded_copy': [False, True],
-        'first_cousin_mates': [True, False]
+        'first_cousin_mates': [True, False],
+        'become_mediator': [False, True]
     }  # Lists of possible options for each setting
     settings_changed = False
 

@@ -8,6 +8,8 @@
         "leader": [],
         "deputy": [],
         "elder": [],
+        "mediator": [],
+        "mediator apprentice": [],
         "all": [
             "Wishes they could visit r_c in StarClan",
             "Was given a prophecy by r_c",
@@ -33,6 +35,8 @@
         "leader": [],
         "deputy": [],
         "elder": [],
+        "mediator": [],
+        "mediator apprentice": [],
         "all": []
     },
     "all": [

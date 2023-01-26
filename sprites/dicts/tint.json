@@ -7,14 +7,15 @@
     "SILVER": "cool",
     "GREY": "monochrome",
     "DARKGREY": "monochrome",
-    "BLACK": "monochrome",
+    "GHOST": "monochrome",
     "PALEGINGER": "warm",
     "GOLDEN": "warm",
     "GINGER": "warm",
     "CREAM": "warm",
     "LIGHTBROWN": "warm",
     "DARKBROWN": "warm",
-    "BROWN": "warm"
+    "BROWN": "warm",
+    "BLACK": "monochrome"
   },
   "possible_tints": {
     "basic": ["pink", "gray", "red", "black", "orange", "none"],
