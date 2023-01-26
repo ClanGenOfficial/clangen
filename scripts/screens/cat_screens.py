@@ -2102,20 +2102,20 @@ class ChangeGenderScreen(Screens):
 
         self.header = pygame_gui.elements.UITextBox("-Change Gender-\nYou can set this to anything. "
                                                     "Gender alignment does not effect gameplay",
-                                                    pygame.Rect((100, 130), (600, -1)),
+                                                    pygame.Rect((200, 260), (1200, -1)),
                                                     object_id=get_text_box_theme())
         self.gender_changed = pygame_gui.elements.UITextBox("Gender Changed!",
-                                                            pygame.Rect((100, 240), (600, 40)),
+                                                            pygame.Rect((200, 480), (1200, 80)),
                                                             object_id=get_text_box_theme(),
                                                             visible=False)
         self.the_cat = Cat.all_cats.get(game.switches['cat'])
 
-        self.done_button = UIImageButton(pygame.Rect((365, 282), (77, 30)), "",
+        self.done_button = UIImageButton(pygame.Rect((730, 564), (154, 70)), "",
                                          object_id="#done_button")
-        self.back_button = UIImageButton(pygame.Rect((25, 25), (105, 30)), "",
+        self.back_button = UIImageButton(pygame.Rect((50, 50), (210, 60)), "",
                                          object_id="#back_button")
 
-        self.gender_entry_box = pygame_gui.elements.UITextEntryLine(pygame.Rect((300, 200), (200, 24)),
+        self.gender_entry_box = pygame_gui.elements.UITextEntryLine(pygame.Rect((600, 400), (400, 48)),
                                                                     placeholder_text=self.the_cat.genderalign)
 
     def exit_screen(self):
