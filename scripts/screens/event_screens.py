@@ -71,60 +71,66 @@ class EventsScreen(Screens):
                     self.ceremony_alert.kill()
                 self.ceremony_events = [x for x in game.cur_events_list if "ceremony" in x.types]
                 if self.ceremony_events:
-                    self.ceremony_alert = pygame_gui.elements.UIImage(pygame.Rect((44, 340), (4, 22)),
+                    self.ceremony_alert = pygame_gui.elements.UIImage(pygame.Rect((88, 680), (8, 44)),
+                                                                      pygame.transform.scale(
                                                                       image_cache.load_image(
                                                                           "resources/images/alert_mark.png"
-                                                                      ))
+                                                                      ), (8, 44)))
 
                 if self.birth_death_alert:
                     self.birth_death_alert.kill()
                 self.birth_death_events_button.enable()
                 self.birth_death_events = [x for x in game.cur_events_list if "birth_death" in x.types]
                 if self.birth_death_events:
-                    self.birth_death_alert = pygame_gui.elements.UIImage(pygame.Rect((44, 390), (4, 22)),
+                    self.birth_death_alert = pygame_gui.elements.UIImage(pygame.Rect((88, 780), (8, 44)),
+                                                                         pygame.transform.scale(
                                                                          image_cache.load_image(
                                                                              "resources/images/alert_mark.png"
-                                                                         ))
+                                                                         ), (8, 44)))
 
                 if self.relation_alert:
                     self.relation_alert.kill()
                 self.relationship_events_button.enable()
                 self.relation_events = [x for x in game.cur_events_list if "relation" in x.types]
                 if self.relation_events:
-                    self.relation_alert = pygame_gui.elements.UIImage(pygame.Rect((44, 440), (4, 22)),
+                    self.relation_alert = pygame_gui.elements.UIImage(pygame.Rect((88, 880), (8, 44)),
+                                                                      pygame.transform.scale(
                                                                       image_cache.load_image(
                                                                           "resources/images/alert_mark.png"
-                                                                      ))
+                                                                      ), (8, 44)))
 
                 if self.health_alert:
                     self.health_alert.kill()
                 self.health_events_button.enable()
                 self.health_events = [x for x in game.cur_events_list if "health" in x.types]
                 if self.health_events:
-                    self.health_alert = pygame_gui.elements.UIImage(pygame.Rect((44, 490), (4, 22)),
+                    self.health_alert = pygame_gui.elements.UIImage(pygame.Rect((88, 980), (8, 44)),
+                                                                    pygame.transform.scale(
                                                                     image_cache.load_image(
                                                                         "resources/images/alert_mark.png"
-                                                                    ))
+                                                                    ), (8, 44)))
 
                 if self.other_clans_alert:
                     self.other_clans_alert.kill()
                 self.other_clans_events_button.enable()
                 self.other_clans_events = [x for x in game.cur_events_list if "other_clans" in x.types]
                 if self.other_clans_events:
-                    self.other_clans_alert = pygame_gui.elements.UIImage(pygame.Rect((44, 540), (4, 22)),
+                    self.other_clans_alert = pygame_gui.elements.UIImage(pygame.Rect((88, 1080), (8, 44)),
+                                                                         pygame.transform.scale(
                                                                          image_cache.load_image(
                                                                              "resources/images/alert_mark.png"
-                                                                         ))
+                                                                         ), (8, 44)))
 
                 if self.misc_alert:
                     self.misc_alert.kill()
                 self.misc_events_button.enable()
                 self.misc_events = [x for x in game.cur_events_list if "misc" in x.types]
                 if self.misc_events:
-                    self.misc_alert = pygame_gui.elements.UIImage(pygame.Rect((44, 590), (4, 22)),
+                    self.misc_alert = pygame_gui.elements.UIImage(pygame.Rect((88, 1180), (8, 44)),
+                                                                  pygame.transform.scale(
                                                                   image_cache.load_image(
                                                                       "resources/images/alert_mark.png"
-                                                                  ))
+                                                                  ), (8, 44)))
 
                 if self.event_display_type == "all events":
                     # if events list is empty, add a single message the says nothing interesting happened
@@ -217,15 +223,15 @@ class EventsScreen(Screens):
 
         self.heading = pygame_gui.elements.UITextBox("Check this page to see which events are currently happening in the "
                                                      "Clan",
-                                                     pygame.Rect((100, 110), (600, 40)),
+                                                     pygame.Rect((200, 220), (1200, 80)),
                                                      object_id=get_text_box_theme())
         self.season = pygame_gui.elements.UITextBox(f'Current season: {str(game.clan.current_season)}',
-                                                    pygame.Rect((100, 140), (600, 40)),
+                                                    pygame.Rect((200, 280), (1200, 80)),
                                                     object_id=get_text_box_theme())
         self.clan_age = pygame_gui.elements.UITextBox("",
-                                                      pygame.Rect((100, 170), (600, 40)),
+                                                      pygame.Rect((200, 340), (1200, 80)),
                                                       object_id=get_text_box_theme())
-        self.events_frame = pygame_gui.elements.UIImage(pygame.Rect((206, 266), (534, 370)),
+        self.events_frame = pygame_gui.elements.UIImage(pygame.Rect((412, 532), (1068, 740)),
                                                         image_cache.load_image(
                                                             "resources/images/event_page_frame.png").convert_alpha())
         self.events_frame.disable()
@@ -235,7 +241,7 @@ class EventsScreen(Screens):
         if game.clan.age != 1:
             self.clan_age.set_text(f'Clan age: {str(game.clan.age)} moons')
 
-        self.timeskip_button = UIImageButton(pygame.Rect((310, 218), (180, 30)), "", object_id="#timeskip_button")
+        self.timeskip_button = UIImageButton(pygame.Rect((620, 436), (360, 60)), "", object_id="#timeskip_button")
 
         # commenting out for now as there seems to be a consensus that it isn't needed anymore?
         #if game.clan.closed_borders:
@@ -247,31 +253,31 @@ class EventsScreen(Screens):
 
         # Sets up the buttons to switch between the event types.
         self.all_events_button = UIImageButton(
-            pygame.Rect((60, 286,), (150, 30)),
+            pygame.Rect((120, 570), (300, 60)),
             "",
             object_id="#all_events_button")
         self.ceremonies_events_button = UIImageButton(
-            pygame.Rect((60, 336), (150, 30)),
+            pygame.Rect((120, 672), (300, 60)),
             "",
             object_id="#ceremony_events_button")
         self.birth_death_events_button = UIImageButton(
-            pygame.Rect((60, 386), (150, 30)),
+            pygame.Rect((120, 772), (300, 60)),
             "",
             object_id="#birth_death_events_button")
         self.relationship_events_button = UIImageButton(
-            pygame.Rect((60, 436), (150, 30)),
+            pygame.Rect((120, 872), (300, 60)),
             "",
             object_id="#relationship_events_button")
         self.health_events_button = UIImageButton(
-            pygame.Rect((60, 486), (150, 30)),
+            pygame.Rect((120, 972), (300, 60)),
             "",
             object_id="#health_events_button")
         self.other_clans_events_button = UIImageButton(
-            pygame.Rect((60, 536), (150, 30)),
+            pygame.Rect((120, 1072), (300, 60)),
             "",
             object_id="#other_clans_events_button")
         self.misc_events_button = UIImageButton(
-            pygame.Rect((60, 586), (150, 30)),
+            pygame.Rect((120, 1172), (300, 60)),
             "",
             object_id="#misc_events_button")
 
@@ -443,13 +449,13 @@ class EventsScreen(Screens):
                     if game.settings["dark mode"]:
                         self.display_events_elements["shading" + str(i)] = pygame_gui.elements.UIImage(
                             pygame.Rect((0, y),
-                                        (box_length + 50, self.display_events_elements["event" + str(i)].get_relative_rect()[3] + 35)),
+                                        (box_length + 100, self.display_events_elements["event" + str(i)].get_relative_rect()[3] + 70)),
                             image_cache.load_image("resources/images/shading_dark.png"), container=self.event_container)
                     else:
                         self.display_events_elements["shading" + str(i)] = pygame_gui.elements.UIImage(
                             pygame.Rect((0, y),
-                                        (box_length + 50,
-                                         self.display_events_elements["event" + str(i)].get_relative_rect()[3] + 35)),
+                                        (box_length + 100,
+                                         self.display_events_elements["event" + str(i)].get_relative_rect()[3] + 70)),
                             image_cache.load_image("resources/images/shading.png"), container=self.event_container)
 
                     self.display_events_elements["shading" + str(i)].disable()
@@ -457,11 +463,11 @@ class EventsScreen(Screens):
                 y += self.display_events_elements["event" + str(i)].get_relative_rect()[3]
 
                 self.involved_cat_buttons.append(IDImageButton(pygame.Rect(
-                    (self.event_container.get_relative_rect()[2] - 40, y - 5), (34, 34)),
+                    (self.event_container.get_relative_rect()[2] - 80, y - 10), (68, 68)),
                     ids=ev.cats_involved, container=self.event_container, layer_starting_height=2,
                     object_id="#events_cat_button"))
 
-                y += 35
+                y += 68
                 i += 1
 
 
@@ -504,9 +510,9 @@ class EventsScreen(Screens):
                         name = name[:9] + ".."
 
                     self.cat_profile_buttons.append(
-                        IDImageButton(pygame.Rect((pressed_button_pos[0] - (120 * i) - 1,
-                                                   pressed_button_pos[1] + 2),
-                                                   (116, 30)),
+                        IDImageButton(pygame.Rect((pressed_button_pos[0] - (240 * i) - 1,
+                                                   pressed_button_pos[1] + 4),
+                                                   (232, 60)),
                                       text=name, ids=ev, container=self.event_container,
                                       object_id="#events_cat_profile_button")
                     )
@@ -524,4 +530,4 @@ class EventsScreen(Screens):
 
     def make_events_container(self):
         """ In its own function so that there is only one place the box size is set"""
-        self.event_container = pygame_gui.elements.UIScrollingContainer(pygame.Rect((216, 276), (514, 350)))
+        self.event_container = pygame_gui.elements.UIScrollingContainer(pygame.Rect((432, 552), (1028, 700)))
