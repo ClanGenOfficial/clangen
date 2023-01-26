@@ -620,11 +620,11 @@ class DFScreen(Screens):
         self.filter_by_closed = None
         self.df_bg = pygame.transform.scale(
             pygame.image.load("resources/images/darkforestbg.png").convert(),
-            (800, 700))
+            (1600, 1400))
         self.search_bar_image = pygame.transform.scale(
-            pygame.image.load("resources/images/search_bar.png").convert_alpha(), (228, 34))
+            pygame.image.load("resources/images/search_bar.png").convert_alpha(), (456, 68))
         self.clan_name_bg = pygame.transform.scale(
-            image_cache.load_image("resources/images/clan_name_bg.png").convert_alpha(), (180, 35))
+            image_cache.load_image("resources/images/clan_name_bg.png").convert_alpha(), (360, 68))
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -724,18 +724,19 @@ class DFScreen(Screens):
         cat_profiles()
         self.get_dead_cats()
 
-        self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((421, 142), (147, 23)),
+        self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((842, 284), (294, 46)),
                                                               object_id="#search_entry_box")
 
-        self.starclan_button = UIImageButton(pygame.Rect((115, 135), (34, 34)), "", object_id="#starclan_button")
-        self.unknown_residence_button = UIImageButton(pygame.Rect((149, 135), (34, 34)), "",
+        self.starclan_button = UIImageButton(pygame.Rect((230, 270), (68, 68)), "", object_id="#starclan_button")
+        self.unknown_residence_button = UIImageButton(pygame.Rect((298, 270), (68, 68)), "",
                                                       object_id="#unknown_residence_button")
-        self.dark_forest_button = UIImageButton(pygame.Rect((183, 135), (34, 34)), "", object_id="#dark_forest_button")
+        self.dark_forest_button = UIImageButton(pygame.Rect((366, 270), (68, 68)), "", object_id="#dark_forest_button")
         self.dark_forest_button.disable()
-        self.next_page_button = UIImageButton(pygame.Rect((456, 595), (34, 34)), "", object_id="#arrow_right_button")
-        self.previous_page_button = UIImageButton(pygame.Rect((310, 595), (34, 34)), "", object_id="#arrow_left_button")
-        self.page_number = pygame_gui.elements.UITextBox("", pygame.Rect((340, 595),
-                                                                         (110, 30)))  # Text will be filled in later
+        self.next_page_button = UIImageButton(pygame.Rect((912, 1190), (68, 68)), "", object_id="#arrow_right_button")
+        self.previous_page_button = UIImageButton(pygame.Rect((620, 1190), (68, 68)), "",
+                                                  object_id="#arrow_left_button")
+        self.page_number = pygame_gui.elements.UITextBox("", pygame.Rect((680, 1190),
+                                                                         (220, 60)))
 
         self.set_disabled_menu_buttons(["starclan_screen"])
         self.update_heading_text("Dark Forest")
@@ -743,40 +744,40 @@ class DFScreen(Screens):
 
         self.update_search_cats("")  # This will list all the cats, and create the button objects.
 
-        x_pos = 576
-        y_pos = 135
+        x_pos = 1152
+        y_pos = 270
         self.filter_by_closed = UIImageButton(
-            pygame.Rect((x_pos, y_pos), (98, 34)),
+            pygame.Rect((x_pos, y_pos), (196, 68)),
             "",
             object_id="#filter_by_closed_button",
             tool_tip_text="By default, cats are sorted by rank."
         )
         self.filter_by_open = UIImageButton(
-            pygame.Rect((x_pos, y_pos), (98, 34)),
+            pygame.Rect((x_pos, y_pos), (196, 68)),
             "",
             object_id="#filter_by_open_button",
         )
         self.filter_by_open.hide()
-        y_pos += 34
+        y_pos += 68
 
         self.filter_rank = UIImageButton(
-            pygame.Rect((x_pos - 2, y_pos), (102, 29)),
+            pygame.Rect((x_pos - 2, y_pos), (204, 58)),
             "",
             object_id="#filter_rank_button",
             starting_height=2
         )
         self.filter_rank.hide()
-        y_pos += 29
+        y_pos += 58
         self.filter_age = UIImageButton(
-            pygame.Rect((x_pos - 2, y_pos), (102, 29)),
+            pygame.Rect((x_pos - 2, y_pos), (204, 58)),
             "",
             object_id="#filter_age_button",
             starting_height=2
         )
         self.filter_age.hide()
-        y_pos += 29
+        y_pos += 58
         self.filter_id = UIImageButton(
-            pygame.Rect((x_pos - 2, y_pos), (102, 29)),
+            pygame.Rect((x_pos - 2, y_pos), (204, 58)),
             "",
             object_id="#filter_ID_button",
             starting_height=2
@@ -822,10 +823,8 @@ class DFScreen(Screens):
             self.previous_page_button.enable()
             self.next_page_button.enable()
 
-        self.page_number.kill()
-        self.page_number = pygame_gui.elements.UITextBox("<font color='#FFFFFF'>" + str(self.list_page) + "/" +
-                                                         str(self.all_pages) + "</font>",
-                                                         pygame.Rect((340, 595), (110, 30)))
+        self.page_number.set_text("<font color='#FFFFFF'>" + str(self.list_page) + "/" +
+                                  str(self.all_pages) + "</font>")
 
         # Remove the images for currently listed cats
         for cat in self.display_cats:
@@ -839,12 +838,13 @@ class DFScreen(Screens):
         # Generate object for the current cats
         pos_x = 0
         pos_y = 0
-        if self.current_listed_cats != []:
+        if self.current_listed_cats:
             for cat in self.chunks(self.current_listed_cats, 20)[self.list_page - 1]:
                 update_sprite(cat)
                 self.display_cats.append(
-                    UISpriteButton(pygame.Rect((130 + pos_x, 180 + pos_y), (50, 50)),
-                                   cat.sprite,
+                    UISpriteButton(pygame.Rect
+                                   ((260 + pos_x, 360 + pos_y), (100, 100)),
+                                   cat.big_sprite,
                                    cat.ID,
                                    starting_height=1))
 
@@ -854,11 +854,11 @@ class DFScreen(Screens):
                     name = short_name + '...'
                 self.cat_names.append(pygame_gui.elements.UITextBox("<font color='#FFFFFF'>" + name + "</font>"
                                                                     ,
-                                                                    pygame.Rect((80 + pos_x, 230 + pos_y), (150, 30))))
-                pos_x += 120
-                if pos_x >= 600:
+                                                                    pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60))))
+                pos_x += 240
+                if pos_x >= 1200:
                     pos_x = 0
-                    pos_y += 100
+                    pos_y += 200
 
     def on_use(self):
         bg = self.df_bg
@@ -871,7 +871,7 @@ class DFScreen(Screens):
 
         screen.blit(bg, (0, 0))
 
-        screen.blit(ListScreen.search_bar, (348, 135))
+        screen.blit(ListScreen.search_bar, (696, 270))
 
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]
@@ -884,7 +884,7 @@ class ListScreen(Screens):
     cat_names = []
 
     search_bar = pygame.transform.scale(pygame.image.load("resources/images/search_bar.png").convert_alpha(),
-                                        (228, 34))
+                                        (456, 68))
     previous_search_text = ""
 
     def __init__(self, name=None):
@@ -975,16 +975,17 @@ class ListScreen(Screens):
         cat_profiles()
         self.get_living_cats()
 
-        self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((421, 142), (147, 23)),
+        self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((642, 284), (294, 46)),
                                                               object_id="#search_entry_box")
 
-        self.your_clan_button = UIImageButton(pygame.Rect((115, 135), (34, 34)), "", object_id="#your_clan_button")
+        self.your_clan_button = UIImageButton(pygame.Rect((230, 270), (68, 68)), "", object_id="#your_clan_button")
         self.your_clan_button.disable()
-        self.outside_clan_button = UIImageButton(pygame.Rect((149, 135), (34, 34)), "",
+        self.outside_clan_button = UIImageButton(pygame.Rect((298, 270), (68, 68)), "",
                                                  object_id="#outside_clan_button")
-        self.next_page_button = UIImageButton(pygame.Rect((456, 595), (34, 34)), "", object_id="#arrow_right_button")
-        self.previous_page_button = UIImageButton(pygame.Rect((310, 595), (34, 34)), "", object_id="#arrow_left_button")
-        self.page_number = pygame_gui.elements.UITextBox("", pygame.Rect((340, 595), (110, 30)),
+        self.next_page_button = UIImageButton(pygame.Rect((912, 1190), (68, 68)), "", object_id="#arrow_right_button")
+        self.previous_page_button = UIImageButton(pygame.Rect((620, 1190), (68, 68)), "",
+                                                  object_id="#arrow_left_button")
+        self.page_number = pygame_gui.elements.UITextBox("", pygame.Rect((680, 1190), (220, 60)),
                                                          object_id=get_text_box_theme())  # Text will be filled in later
 
         self.set_disabled_menu_buttons(["list_screen"])
@@ -992,41 +993,40 @@ class ListScreen(Screens):
         self.show_menu_buttons()
         self.update_search_cats("")  # This will list all the cats, and create the button objects.
 
-        # set up the filter buttons
-        x_pos = 576
-        y_pos = 135
+        x_pos = 1152
+        y_pos = 270
         self.filter_by_closed = UIImageButton(
-            pygame.Rect((x_pos, y_pos), (98, 34)),
+            pygame.Rect((x_pos, y_pos), (196, 68)),
             "",
             object_id="#filter_by_closed_button",
             tool_tip_text="By default, cats are sorted by rank."
         )
         self.filter_by_open = UIImageButton(
-            pygame.Rect((x_pos, y_pos), (98, 34)),
+            pygame.Rect((x_pos, y_pos), (196, 68)),
             "",
             object_id="#filter_by_open_button",
         )
         self.filter_by_open.hide()
-        y_pos += 34
+        y_pos += 68
 
         self.filter_rank = UIImageButton(
-            pygame.Rect((x_pos - 2, y_pos), (102, 29)),
+            pygame.Rect((x_pos - 2, y_pos), (204, 58)),
             "",
             object_id="#filter_rank_button",
             starting_height=2
         )
         self.filter_rank.hide()
-        y_pos += 29
+        y_pos += 58
         self.filter_age = UIImageButton(
-            pygame.Rect((x_pos - 2, y_pos), (102, 29)),
+            pygame.Rect((x_pos - 2, y_pos), (204, 58)),
             "",
             object_id="#filter_age_button",
             starting_height=2
         )
         self.filter_age.hide()
-        y_pos += 29
+        y_pos += 58
         self.filter_id = UIImageButton(
-            pygame.Rect((x_pos - 2, y_pos), (102, 29)),
+            pygame.Rect((x_pos - 2, y_pos), (204, 58)),
             "",
             object_id="#filter_ID_button",
             starting_height=2
@@ -1113,8 +1113,9 @@ class ListScreen(Screens):
             for cat in self.chunks(self.current_listed_cats, 20)[self.list_page - 1]:
                 update_sprite(cat)
                 self.display_cats.append(
-                    UISpriteButton(pygame.Rect((130 + pos_x, 180 + pos_y), (50, 50)),
-                                   cat.sprite,
+                    UISpriteButton(pygame.Rect
+                                   ((260 + pos_x, 360 + pos_y), (100, 100)),
+                                   cat.big_sprite,
                                    cat.ID,
                                    starting_height=1))
 
@@ -1123,12 +1124,12 @@ class ListScreen(Screens):
                     short_name = str(cat.name)[0:12]
                     name = short_name + '...'
                 self.cat_names.append(pygame_gui.elements.UITextBox(name,
-                                                                    pygame.Rect((80 + pos_x, 230 + pos_y), (150, 30)),
+                                                                    pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60)),
                                                                     object_id=get_text_box_theme()))
-                pos_x += 120
-                if pos_x >= 600:
+                pos_x += 240
+                if pos_x >= 1200:
                     pos_x = 0
-                    pos_y += 100
+                    pos_y += 200
 
     def on_use(self):
 
@@ -1137,7 +1138,7 @@ class ListScreen(Screens):
             self.update_search_cats(self.search_bar.get_text())
         self.previous_search_text = self.search_bar.get_text()
 
-        screen.blit(ListScreen.search_bar, (348, 135))
+        screen.blit(ListScreen.search_bar, (696, 270))
 
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]
