@@ -539,7 +539,7 @@ def white_patches_inheritance(cat, parents: tuple):
         if p and p.white_patches:
             par_whitepatches.add(p.white_patches)
 
-    if not par_whitepatches:
+    if not parents:
         print("Error - no parents. Randomizing white patches.")
         randomize_white_patches(cat)
         return
