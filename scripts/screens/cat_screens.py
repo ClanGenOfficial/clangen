@@ -2154,25 +2154,25 @@ class CeremonyScreen(Screens):
         self.the_cat = Cat.all_cats.get(game.switches['cat'])
         if (self.the_cat.status == 'leader' and not self.the_cat.dead):
             self.header = pygame_gui.elements.UITextBox(str(self.the_cat.name) + '\'s Leadership Ceremony',
-                                                        pygame.Rect((100, 90), (600, -1)),
+                                                        pygame.Rect((200, 180), (1200, -1)),
                                                         object_id=get_text_box_theme())
         else:
             self.header = pygame_gui.elements.UITextBox(str(self.the_cat.name) + ' has no ceremonies to view.',
-                                                        pygame.Rect((100, 90), (600, -1)),
+                                                        pygame.Rect((200, 180), (1200, -1)),
                                                         object_id=get_text_box_theme())
         if (self.the_cat.status == 'leader' and not self.the_cat.dead):
             self.life_text = self.handle_leadership_ceremony(self.the_cat)
         else:
             self.life_text = ""
-        self.scroll_container = pygame_gui.elements.UIScrollingContainer(pygame.Rect((50, 150), (700, 500)))
+        self.scroll_container = pygame_gui.elements.UIScrollingContainer(pygame.Rect((100, 300), (1400, 1000)))
         self.text = pygame_gui.elements.UITextBox(self.life_text,
-                                                  pygame.Rect((0, 0), (550, -1)),
+                                                  pygame.Rect((0, 0), (1100, -1)),
                                                   object_id=get_text_box_theme("#allegiances_box"),
                                                   container=self.scroll_container)
         self.text.disable()
-        self.back_button = UIImageButton(pygame.Rect((25, 25), (105, 30)), "",
+        self.back_button = UIImageButton(pygame.Rect((50, 50), (210, 60)), "",
                                          object_id="#back_button")
-        self.scroll_container.set_scrollable_area_dimensions((680, self.text.rect[3]))
+        self.scroll_container.set_scrollable_area_dimensions((1360, self.text.rect[3]))
 
     def exit_screen(self):
         self.header.kill()
