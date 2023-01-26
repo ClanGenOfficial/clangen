@@ -1157,7 +1157,7 @@ class AllegiancesScreen(Screens):
     def screen_switches(self):
         # Heading
         self.heading = pygame_gui.elements.UITextBox(f'{game.clan.name}Clan Allegiances',
-                                                     pygame.Rect((30, 110), (400, 40)),
+                                                     pygame.Rect((60, 220), (800, 80)),
                                                      object_id=get_text_box_theme("#allegiances_header_text_box"))
 
         # Set Menu Buttons.
@@ -1311,16 +1311,16 @@ class AllegiancesScreen(Screens):
             living_cats, 'kitten', '<b><u>KITS</u></b>')
 
 
-        self.scroll_container = pygame_gui.elements.UIScrollingContainer(pygame.Rect((50, 150), (700, 500)))
+        self.scroll_container = pygame_gui.elements.UIScrollingContainer(pygame.Rect((100, 300), (1400, 1000)))
         self.ranks_box = pygame_gui.elements.UITextBox("\n".join([i[0] for i in self.allegiance_list]),
-                                                       pygame.Rect((0, 0), (150, -1)),
+                                                       pygame.Rect((0, 0), (300, -1)),
                                                        object_id=get_text_box_theme("#allegiances_box"),
                                                        container=self.scroll_container)
         self.cat_names_box = pygame_gui.elements.UITextBox("\n".join([i[1] for i in self.allegiance_list]),
-                                                           pygame.Rect((150, 0), (550, -1)),
+                                                           pygame.Rect((300, 0), (1100, -1)),
                                                            object_id=get_text_box_theme("#allegiances_box"),
                                                            container=self.scroll_container)
-        self.scroll_container.set_scrollable_area_dimensions((680, self.cat_names_box.rect[3]))
+        self.scroll_container.set_scrollable_area_dimensions((1360, self.cat_names_box.rect[3]))
 
         self.ranks_box.disable()
         self.cat_names_box.disable()
@@ -1466,27 +1466,27 @@ class MedDenScreen(Screens):
 
     def screen_switches(self):
         self.hide_menu_buttons()
-        self.back_button = UIImageButton(pygame.Rect((25, 25), (105, 30)), "", object_id="#back_button")
-        self.next_med = UIImageButton(pygame.Rect((645, 278), (34, 34)), "", object_id="#arrow_right_button")
-        self.last_med = UIImageButton(pygame.Rect((600, 278), (34, 34)), "", object_id="#arrow_left_button")
+        self.back_button = UIImageButton(pygame.Rect((50, 50), (210, 60)), "", object_id="#back_button")
+        self.next_med = UIImageButton(pygame.Rect((1290, 556), (68, 68)), "", object_id="#arrow_right_button")
+        self.last_med = UIImageButton(pygame.Rect((1200, 556), (68, 68)), "", object_id="#arrow_left_button")
 
         if game.clan.game_mode != 'classic':
-            self.last_page = UIImageButton(pygame.Rect((330, 636), (34, 34)), "", object_id="#arrow_left_button")
-            self.next_page = UIImageButton(pygame.Rect((476, 636), (34, 34)), "", object_id="#arrow_right_button")
+            self.last_page = UIImageButton(pygame.Rect((660, 1272), (68, 68)), "", object_id="#arrow_left_button")
+            self.next_page = UIImageButton(pygame.Rect((952, 1272), (34, 34)), "", object_id="#arrow_right_button")
 
             self.hurt_sick_title = pygame_gui.elements.UITextBox(
                 "Hurt & Sick Cats",
-                pygame.Rect((140, 410), (200, 30)),
+                pygame.Rect((280, 820), (400, 60)),
                 object_id=get_text_box_theme("#cat_profile_name_box")
             )
             self.log_title = pygame_gui.elements.UITextBox(
                 "Medicine Den Log",
-                pygame.Rect((140, 410), (200, 30)),
+                pygame.Rect((280, 820), (400, 60)),
                 object_id=get_text_box_theme("#cat_profile_name_box")
             )
             self.log_title.hide()
             self.cat_bg = pygame_gui.elements.UIImage(pygame.Rect
-                                                      ((140, 440), (560, 200)),
+                                                      ((280, 880), (1120, 400)),
                                                       pygame.image.load(
                                                           "resources/images/sick_hurt_bg.png").convert_alpha())
             self.cat_bg.disable()
@@ -1495,32 +1495,32 @@ class MedDenScreen(Screens):
             self.log_box = pygame_gui.elements.UITextBox(
                 f"{f'<br><img src={img_path}><br>'.join(log_text)}<br>",
                 pygame.Rect
-                ((150, 450), (540, 180)),
+                ((300, 900), (1080, 360)),
                 object_id="#med_den_log_box",
             )
             self.log_box.hide()
             self.cats_tab = UIImageButton(pygame.Rect
-                                          ((109, 462), (35, 75)),
+                                          ((218, 924), (68, 150)),
                                           "",
                                           object_id="#hurt_sick_cats_button"
                                           )
             self.cats_tab.disable()
             self.log_tab = UIImageButton(pygame.Rect
-                                         ((109, 552), (35, 64)),
+                                         ((218, 1104), (68, 128)),
                                          "",
                                          object_id="#med_den_log_button"
                                          )
             self.in_den_tab = UIImageButton(pygame.Rect
-                                            ((370, 409), (75, 35)),
+                                            ((740, 818), (150, 70)),
                                             "",
                                             object_id="#in_den_tab")
             self.in_den_tab.disable()
             self.out_den_tab = UIImageButton(pygame.Rect
-                                             ((460, 409), (112, 35)),
+                                             ((920, 818), (224, 70)),
                                              "",
                                              object_id="#out_den_tab")
             self.minor_tab = UIImageButton(pygame.Rect
-                                           ((587, 409), (70, 35)),
+                                           ((1174, 818), (140, 70)),
                                            "",
                                            object_id="#minor_tab")
             self.tab_showing = self.in_den_tab
@@ -1581,7 +1581,7 @@ class MedDenScreen(Screens):
 
         self.meds_messages = UITextBoxTweaked(
             "",
-            pygame.Rect((108, 320), (600, 80)),
+            pygame.Rect((216, 620), (1200, 160)),
             object_id=get_text_box_theme("#med_messages_box"),
             line_spacing=1
         )
@@ -1713,21 +1713,21 @@ class MedDenScreen(Screens):
 
         for cat in self.display_med:
             self.med_cat = UISpriteButton(pygame.Rect
-                                          ((435, 165), (150, 150)),
-                                          cat.sprite,
+                                          ((870, 330), (300, 300)),
+                                          cat.large_sprite,
                                           cat_object=cat)
             name = str(cat.name)
             if len(name) >= 20:
                 short_name = str(cat.name)[0:18]
                 name = short_name + '...'
             self.med_name = pygame_gui.elements.ui_label.UILabel(pygame.Rect
-                                                                 ((590, 155), (100, 30)),
+                                                                 ((1180, 310), (200, 60)),
                                                                  name,
                                                                  object_id=get_text_box_theme()
                                                                  )
             self.med_info = UITextBoxTweaked(
                 "",
-                pygame.Rect((580, 185), (120, 120)),
+                pygame.Rect((1160, 370), (240, 240)),
                 object_id=get_text_box_theme("#cat_patrol_info_box"),
                 line_spacing=1
             )
@@ -1784,8 +1784,8 @@ class MedDenScreen(Screens):
             else:
                 self.last_page.enable()
 
-        pos_x = 175
-        pos_y = 460
+        pos_x = 350
+        pos_y = 920
         i = 0
         for cat in self.display_cats:
             condition_list = []
@@ -1798,12 +1798,12 @@ class MedDenScreen(Screens):
             conditions = ",<br>".join(condition_list)
 
             self.cat_buttons["able_cat" + str(i)] = UISpriteButton(pygame.Rect
-                                                                   ((pos_x, pos_y), (50, 50)),
-                                                                   cat.sprite,
+                                                                   ((pos_x, pos_y), (100, 100)),
+                                                                   cat.big_sprite,
                                                                    cat_object=cat)
 
             self.conditions_hover["able_cat" + str(i)] = UIImageButton(pygame.Rect
-                                                                       ((pos_x - 30, pos_y + 50), (110, 30)),
+                                                                       ((pos_x - 60, pos_y + 100), (220, 60)),
                                                                        "",
                                                                        object_id="#blank_button",
                                                                        tool_tip_text=conditions)
@@ -1812,13 +1812,13 @@ class MedDenScreen(Screens):
                 short_name = str(cat.name)[0:9]
                 name = short_name + '...'
             self.cat_names.append(pygame_gui.elements.UITextBox(name,
-                                                                pygame.Rect((pos_x - 30, pos_y + 50), (110, 30)),
+                                                                pygame.Rect((pos_x - 60, pos_y + 100), (220, 60)),
                                                                 object_id="text_box"))
 
-            pos_x += 100
-            if pos_x >= 670:
-                pos_x = 175
-                pos_y += 80
+            pos_x += 200
+            if pos_x >= 1340:
+                pos_x = 350
+                pos_y += 160
             i += 1
 
     def draw_med_den(self):
@@ -1835,7 +1835,7 @@ class MedDenScreen(Screens):
             herb_display = "<br>".join(sorted(herb_list))
 
             self.den_base = UIImageButton(pygame.Rect
-                                          ((108, 95), (396, 224)),
+                                          ((216, 190), (792, 448)),
                                           "",
                                           object_id="#med_cat_den_hover",
                                           tool_tip_text=herb_display
@@ -1862,7 +1862,7 @@ class MedDenScreen(Screens):
 
             herb_display = "<br>".join(holding_pairs)
             self.den_base = UIImageButton(pygame.Rect
-                                          ((108, 95), (396, 224)),
+                                          ((216, 190), (792, 448)),
                                           "",
                                           object_id="#med_cat_den_hover_big",
                                           tool_tip_text=herb_display
@@ -1872,22 +1872,28 @@ class MedDenScreen(Screens):
         for herb in herbs:
             if herb == 'cobwebs':
                 self.herbs["cobweb1"] = pygame_gui.elements.UIImage(pygame.Rect
-                                                                    ((108, 95), (396, 224)),
+                                                                    ((216, 190), (792, 448)),
+                                                                    pygame.transform.scale(
                                                                     pygame.image.load(
-                                                                        "resources/images/med_cat_den/cobweb1.png").convert_alpha()
-                                                                    )
+                                                                        "resources/images/med_cat_den/cobweb1.png").convert_alpha(),
+                                                                        (792, 448)
+                                                                    ))
                 if herbs["cobwebs"] > 1:
                     self.herbs["cobweb2"] = pygame_gui.elements.UIImage(pygame.Rect
-                                                                        ((108, 95), (396, 224)),
+                                                                        ((216, 190), (792, 448)),
+                                                                        pygame.transform.scale(
                                                                         pygame.image.load(
-                                                                            "resources/images/med_cat_den/cobweb2.png").convert_alpha()
-                                                                        )
+                                                                            "resources/images/med_cat_den/cobweb2.png").convert_alpha(),
+                                                                            (792, 448)
+                                                                        ))
                 continue
             self.herbs[herb] = pygame_gui.elements.UIImage(pygame.Rect
-                                                           ((108, 95), (396, 224)),
+                                                           ((216, 190), (792, 448)),
+                                                           pygame.transform.scale(
                                                            pygame.image.load(
-                                                               f"resources/images/med_cat_den/{herb}.png").convert_alpha()
-                                                           )
+                                                               f"resources/images/med_cat_den/{herb}.png").convert_alpha(),
+                                                               (792, 448)
+                                                           ))
 
     def exit_screen(self):
         self.meds_messages.kill()
