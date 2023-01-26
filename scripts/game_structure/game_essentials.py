@@ -15,7 +15,7 @@ from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
 
 screen_x = 1600
 screen_y = 1400
-screen = pygame.display.set_mode((screen_x, screen_y), pygame.HWSURFACE|pygame.RESIZABLE|pygame.SCALED)
+screen = pygame.display.set_mode((screen_x, screen_y), pygame.FULLSCREEN|pygame.SCALED)
 pygame.display.set_caption('Clan Generator')
 
 # G A M E
