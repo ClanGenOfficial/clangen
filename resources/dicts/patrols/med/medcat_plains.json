@@ -34,7 +34,7 @@
     "chance_of_success": 65,
     "exp": 10,
     "success_text": [
-        "app1 is focused and attentive. p_l is confident that next time when there is an emergency app1 will be able to find those herbs both under and above ground without them if needed.",
+        "app1 is focused and attentive. p_l is confident that next time there is an emergency, app1 will be able to find those herbs both under and above ground without them if needed.",
         "As p_l is explaining why and where the herbs are growing, app1 lets out a shout. To p_l's surprise they have found a previously unknown patch of an uncommon herb. Stunned and filled with pride that they found and recognized the herb, p_l promises them the first pick of fresh kill.",
         null,
         null
@@ -818,7 +818,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "Careful now. p_l finds the blackberry bramble, utterly coated in berries. This is the season for blackberry berry picking, and time to leave the leaves alone in anticipation of the coming leaf-bare. The berries are a poor substitute for the leaves, but a medicine cat has to think of the future.",
+            "Careful now. p_l finds the blackberry bramble, utterly coated in berries. This is the season for blackberry picking, and time to leave the leaves alone in anticipation of the coming leaf-bare. The berries are a poor substitute for the leaves, but a medicine cat has to think of the future.",
             "Perfect - there's a good crop of blackberries just waiting for them, and the bramble seems to be sending out new exploratory branches too, promising more growth in the future. Setting the leaves out to dry before they're put away in the herb stores, p_l purrs at the sight of their harvest.",
             "s_c falls into the meditative state that herb-gathering brings, and they hum to themselves as they work, crisply plucking from the blackberry brambles."
 ],
@@ -844,7 +844,7 @@
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-            "Careful now. p_l finds the blackberry bramble, utterly coated in berries. This is the season for blackberry berry picking, and time to leave the leaves alone in anticipation of the coming leaf-bare. The berries are a poor substitute for the leaves, but a medicine cat has to think of the future, p_l teaches app1.",
+            "Careful now. p_l finds the blackberry bramble, utterly coated in berries. This is the season for blackberry picking, and time to leave the leaves alone in anticipation of the coming leaf-bare. The berries are a poor substitute for the leaves, but a medicine cat has to think of the future, p_l teaches app1.",
             "Perfect - there's a good crop of blackberries just waiting for them, and the bramble seems to be sending out new exploratory branches too, promising more growth in the future. Seeing the leaves set out to dry, app1 watching over them diligently, makes p_l feel like they can relax.",
             "s_c falls into the meditative state that herb-gathering brings, and they hum to themselves as they work, crisply plucking from the blackberry brambles. app1 smiles to hear the quiet sound, comforted by the familiar work and tune."
 ],
@@ -870,7 +870,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-           "Careful now. p_l finds the blackberry bramble, utterly coated in berries. This is the season for blackberry berry picking, and time to leave the leaves alone in anticipation of the coming leaf-bare. The berries are a poor substitute for the leaves, but a medicine cat has to think of the future, p_l explains to the warriors.",
+           "Careful now. p_l finds the blackberry bramble, utterly coated in berries. This is the season for blackberry picking, and time to leave the leaves alone in anticipation of the coming leaf-bare. The berries are a poor substitute for the leaves, but a medicine cat has to think of the future, p_l explains to the warriors.",
            "Perfect - there's a good crop of blackberries just waiting for them, and the bramble seems to be sending out new exploratory branches too, promising more growth in the future. Their Clanmates send p_l away for a nap in the sunshine as they organise the berries and p_l smiles appreciatively.",
            "s_c falls into the meditative state that herb-gathering brings, and they hum to themselves as they work, crisply plucking from the blackberry brambles. The patrol follows their lead, and its a relaxed group that wanders back into camp with a massive haul from the blackberry bushes."
     ],
@@ -1227,7 +1227,7 @@
     "exp": 10,
     "success_text": [
             "p_l's pawpads are nearly frozen, trying to dig up burdock in the cold, but somehow they manage it, and it's worth all the effort and misery to know how crucial these fresh herbs could be for the Clan.",
-            "It's very difficult, especially with the plant's leafy half dead for the season, but p_l somehow manages to find a burdock plant and bring it's roots home.",
+            "It's very difficult, especially with the plant's leafy top-half for the season, but p_l somehow manages to find a burdock plant and bring its roots home.",
             "s_c remembers exactly where the burdock plant grew in greenleaf, even if it's buried under snow now. After all, s_c is after the roots, and those are still perfectly harvestable in leaf-bare."
 ],
     "fail_text": [
@@ -1259,7 +1259,7 @@
     "exp": 30,
     "success_text": [
             "p_l's and app1's pawpads are nearly frozen, trying to dig up burdock in the cold, but somehow they manage it, and it's worth all the effort and misery to know how crucial these fresh herbs could be for the Clan.",
-            "It's very difficult, especially with the plant's leafy half dead for the season, but p_l somehow manages to find a burdock plant and bring it's roots home. Laying the thin roots out in a neat pile in the herb stores makes p_l thrum with a contented purr, as does seeing how hard app1 is working to learn herbcraft.",
+            "It's very difficult, especially with the plant's leafy top-half for the season, but p_l somehow manages to find a burdock plant and bring its roots home. Laying the thin roots out in a neat pile in the herb stores makes p_l thrum with a contented purr, as does seeing how hard app1 is working to learn herbcraft.",
             "s_c remembers exactly where the burdock plant grew in greenleaf, even if it's buried under snow now. After all, s_c is after the roots, and those are still perfectly harvestable in leaf-bare."
 ],
     "fail_text": [
@@ -1291,7 +1291,7 @@
     "exp": 10,
     "success_text": [
             "p_l's pawpads are nearly frozen, trying to dig up burdock in the cold, but somehow they manage it, and it's worth all the effort and misery to know how crucial these fresh herbs could be for the Clan. Their Clanmates purr at the sight of the dirty roots.",
-           "It's very difficult, especially with the plant's leafy half dead for the season, but p_l somehow manages to find a burdock plant and bring it's roots home. Laying the thin roots out in a neat pile in the herb stores makes p_l thrum with a contented purr, and their Clanmates smile, appreciating their hard-working medicine cat.",
+           "It's very difficult, especially with the plant's leafy top-half for the season, but p_l somehow manages to find a burdock plant and bring its roots home. Laying the thin roots out in a neat pile in the herb stores makes p_l thrum with a contented purr, and their Clanmates smile, appreciating their hard-working medicine cat.",
             "s_c remembers exactly where the burdock plant grew in greenleaf, even if it's buried under snow now. After all, s_c is after the roots, and those are still perfectly harvestable in leaf-bare."
     ],
     "fail_text": [
@@ -1619,7 +1619,7 @@
     "biome": "plains",
     "season": "newleaf",
     "tags": ["med_only", "herb", "daisy", "many_herbs1", "many_herbs2", "med_cat"],
-    "intro_text": "With the snows of leaf-bare nearly vanished as newleaf wins it's place in the seasonal cycle, p_l heads out to gather daisy leaves.",
+    "intro_text": "With the snows of leaf-bare nearly vanished as newleaf wins its place in the seasonal cycle, p_l heads out to gather daisy leaves.",
     "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
     "chance_of_success": 70,
     "exp": 10,
@@ -1645,7 +1645,7 @@
     "biome": "plains",
     "season": "newleaf",
     "tags": ["med_only", "med_cat", "herb", "daisy", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
-    "intro_text": "With the snows of leaf-bare nearly vanished as newleaf wins it's place in the seasonal cycle, p_l heads out to gather daisy leaves, bringing app1 along for a lesson.",
+    "intro_text": "With the snows of leaf-bare nearly vanished as newleaf wins its place in the seasonal cycle, p_l heads out to gather daisy leaves, bringing app1 along for a lesson.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 70,
     "exp": 20,
@@ -1671,7 +1671,7 @@
     "biome": "plains",
     "season": "newleaf",
     "tags": ["med_cat", "warrior", "herb", "daisy", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
-    "intro_text": "With the snows of leaf-bare nearly vanished as newleaf wins it's place in the seasonal cycle, p_l heads out to gather daisy leaves. They assemble a little group of warriors to help them carry the herbs.",
+    "intro_text": "With the snows of leaf-bare nearly vanished as newleaf wins its place in the seasonal cycle, p_l heads out to gather daisy leaves. They assemble a little group of warriors to help them carry the herbs.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
     "exp": 10,
@@ -3099,7 +3099,7 @@
             "p_l finds a couple of juniper trees with their evergreen leaves shocking against the scarcity of leaf-bare, but none have any branches that are low enough to harvest from safely.",
             null,
             null,
-            "r_c, edging out onto a skinny branch to try get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
+            "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
     ],
     "win_skills": ["keen eye"],
     "win_trait": ["None"],
@@ -3131,7 +3131,7 @@
             "p_l finds a couple of juniper trees with their evergreen leaves shocking against the scarcity of leaf-bare, but none have any branches that are low enough to harvest from safely.",
             null,
             null,
-            "r_c, edging out onto a skinny branch to try get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
+            "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
     ],
     "win_skills": ["keen eye"],
     "win_trait": ["None"],
@@ -3163,7 +3163,7 @@
             "p_l finds a couple of juniper trees with their evergreen leaves shocking against the scarcity of leaf-bare, but none have any branches that are low enough to harvest from safely.",
             null,
             null,
-            "r_c, edging out onto a skinny branch to try get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
+            "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
     ],
     "win_skills": ["keen eye"],
     "win_trait": ["None"],
@@ -4215,7 +4215,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "p_l spots the mullelin plants by scrambling up onto a low rock and looking for their dumb fat stems starting to poke over all the other plants. They hop down to trot over and harvest them.",
+            "p_l spots the mullelin plants by scrambling up onto a low rock and looking for their sapling-like, fat, towering stems starting to poke over all the other plants. They hop down to trot over and harvest them.",
             "Easing the lungs of those with weaker chest muscles or infections, helping with certain sorts of pain, and being used to treat unhappy guts, mullein is a good herb to keep in stock, though it doesn't have the glamour of catmint or the rarity of lungwort.",
             "The always-reliable s_c spots mullein plants growing plenty of leaves on their strange central stems, and knocks them over so that the entire bundle can be carried home."
 ],
@@ -4241,7 +4241,7 @@
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-            "p_l spots the mullelin plants by scrambling up onto a low rock and looking for their dumb fat stems starting to poke over all the other plants. Once they've called app1 up to have a look, they hop down to trot over and harvest them.",
+            "p_l spots the mullelin plants by scrambling up onto a low rock and looking for their sapling-like, fat, towering stems starting to poke over all the other plants. Once they've called app1 up to have a look, they hop down to trot over and harvest them.",
             "Easing the lungs of those with weaker chest muscles or infections, helping with certain sorts of pain, and being used to treat unhappy guts, mullein is a good herb to keep in stock, though it doesn't have the glamour of catmint or the rarity of lungwort. app1 soaks up the lessons on its uses attentively.",
             "The always-reliable s_c spots mullein plants growing plenty of leaves on their strange central stems, and with app1 helping them, knocks them over so that the entire bundle can be carried home."
 ],
@@ -4267,7 +4267,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "p_l spots the mullelin plants by scrambling up onto a low rock and looking for their dumb fat stems starting to poke over all the other plants. They hop down to trot over and harvest them with the rest of the patrol.",
+            "p_l spots the mullelin plants by scrambling up onto a low rock and looking for their sapling-like, fat, towering stems starting to poke over all the other plants. They hop down to trot over and harvest them with the rest of the patrol.",
             "Easing the lungs of those with weaker chest muscles or infections, helping with certain sorts of pain, and being used to treat unhappy guts, mullein is a good herb to keep in stock, though it doesn't have the glamour of catmint or the rarity of lungwort. The warriors helping p_l don't understand the importance, but obligingly help them harvest it.",
             "The always-reliable s_c spots mullein plants growing plenty of leaves on their strange central stems, and knocks them over so that the entire bundle can be carried home by the patrol."
     ],
@@ -4964,7 +4964,7 @@
     "biome": "plains",
     "season": "greenleaf",
     "tags": ["med_cat", "warrior", "herb", "poppy", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
-    "intro_text": "With greenleaf bringing the poppies to seed, and only so much time before the plants die off in leaf-fall, p_l is keen to go collect as much as possible. They bring their Clanmates with them to help, the warriors keen to much sure the Clan is well provisioned with this important herb.",
+    "intro_text": "With greenleaf bringing the poppies to seed, and only so much time before the plants die off in leaf-fall, p_l is keen to go collect as much as possible. They bring their Clanmates with them to help, the warriors keen to make sure the Clan is well provisioned with this important herb.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
     "exp": 10,
@@ -5016,7 +5016,7 @@
     "biome": "plains",
     "season": "newleaf",
     "tags": ["med_only", "med_cat", "herb", "ragwort", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
-    "intro_text": "With newleaf bringing ragwort back on the medicinal menu, p_l heads out to find where the silly plants have decided to sprout this year, explaining to app1 the annoyances of the type of plant that dies completely in leaf-bare and leaves them having to search for all new spots every newleaf.",
+    "intro_text": "With newleaf bringing ragwort back on the medicinal menu, p_l heads out to find where the silly plants have decided to sprout this year. They explain to app1 the annoyances of the type of plant that dies completely in leaf-bare, leaving them having to search for all new spots every newleaf.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 70,
     "exp": 20,
@@ -5223,7 +5223,7 @@
 "patrol_id": "pln_med_gatheringraspberrysolo1",
 "biome": "plains",
 "season": "greenleaf",
-"tags": ["herb", "raspberry", "med_cat", "injury", "poisoned"],
+"tags": ["herb", "raspberry", "no_herbs1", "no_herbs2", "med_cat", "injury", "poisoned"],
 "intro_text": "While gathering herbs, r_c spots a bush of red berries.",
 "decline_text": "r_c decides not to touch the berries.",
 "chance_of_success": 50,
@@ -5252,7 +5252,7 @@
 "patrol_id": "pln_med_gatheringraspberrysolo2",
 "biome": "plains",
 "season": "greenleaf",
-"tags": ["herb", "raspberry", "med_cat", "apprentice", "injury", "poisoned", "death"],
+"tags": ["herb", "raspberry", "no_herbs1", "med_cat", "apprentice", "injury", "poisoned", "death"],
 "intro_text": "While gathering herbs, app1 stumbles upon a bush of red berries.",
 "decline_text": "app1 decides not to touch the berries.",
 "chance_of_success": 50,
@@ -5280,7 +5280,7 @@
 "patrol_id": "pln_med_gatheringraspberrysolo3",
 "biome": "plains",
 "season": "leaf-fall",
-"tags": ["herb", "raspberry", "med_cat", "poisoned", "injury"],
+"tags": ["herb", "raspberry", "no_herbs1", "no_herbs2", "med_cat", "poisoned", "injury"],
 "intro_text": "While gathering herbs, r_c spots a bush of red berries.",
 "decline_text": "r_c decides not to touch the berries.",
 "chance_of_success": 50,
@@ -5309,7 +5309,7 @@
 "patrol_id": "pln_med_gatheringraspberrysolo4",
 "biome": "plains",
 "season": "leaf-fall",
-"tags": ["herb", "raspberry", "med_cat", "apprentice", "injury", "poisoned", "death"],
+"tags": ["herb", "raspberry", "no_herbs1", "med_cat", "apprentice", "injury", "poisoned", "death"],
 "intro_text": "While gathering herbs, app1 stumbles upon a bush of red berries.",
 "decline_text": "app1 decides not to touch the berries.",
 "chance_of_success": 50,

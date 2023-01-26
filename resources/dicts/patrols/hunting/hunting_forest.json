@@ -264,7 +264,7 @@
 		"season": "Any",
 		"tags": [
 			"hunting",
-			"battle_injury",
+			"big_bite_injury",
 			"scar",
 			"fighting",
 			"medium_prey"
@@ -343,7 +343,7 @@
 		"tags": [
 			"hunting",
 			"scar",
-			"battle_injury",
+			"big_bite_injury",
 			"fighting",
 			"death",
 			"no_leader",
@@ -400,7 +400,7 @@
 		"tags": [
 			"hunting",
 			"scar",
-			"battle_injury",
+			"big_bite_injury",
 			"fighting",
 			"death",
 			"no_leader",
@@ -513,7 +513,7 @@
 		"tags": [
 			"hunting",
 			"scar",
-			"battle_injury",
+			"big_bite_injury",
 			"fighting",
 			"death",
 			"no_leader",
@@ -1015,7 +1015,7 @@
 		"season": "Any",
 		"tags": [
 			"hunting",
-			"battle_injury",
+			"big_bite_injury",
 			"scar",
 			"small_prey0",
 			"small_prey1",
@@ -1069,7 +1069,7 @@
 		"season": "Any",
 		"tags": [
 			"hunting",
-			"battle_injury",
+			"big_bite_injury",
 			"scar",
 			"death",
 			"small_prey0",
@@ -4061,7 +4061,7 @@
 			"fighting",
 			"death",
 			"scar",
-			"battle_injury",
+			"big_bite_injury",
 			"respect",
 			"trust",
 			"clan_to_r_c",
@@ -4127,7 +4127,7 @@
 		"tags": [
 			"fighting",
 			"scar",
-			"battle_injury",
+			"big_bite_injury",
 			"respect",
 			"trust",
 			"clan_to_r_c",
@@ -4191,7 +4191,7 @@
 			"fighting",
 			"death",
 			"scar",
-			"battle_injury",
+			"big_bite_injury",
 			"shock",
 			"injury",
 			"respect",
@@ -4258,7 +4258,7 @@
 			"fighting",
 			"death",
 			"scar",
-			"battle_injury",
+			"big_bite_injury",
 			"respect",
 			"trust",
 			"clan_to_r_c",
@@ -4324,7 +4324,7 @@
 		"tags": [
 			"fighting",
 			"scar",
-			"battle_injury",
+			"big_bite_injury",
 			"respect",
 			"trust",
 			"clan_to_r_c",
@@ -4388,7 +4388,7 @@
 			"fighting",
 			"death",
 			"scar",
-			"battle_injury",
+			"big_bite_injury",
 			"shock",
 			"injury",
 			"respect",
@@ -4455,7 +4455,7 @@
 			"fighting",
 			"death",
 			"scar",
-			"battle_injury",
+			"big_bite_injury",
 			"respect",
 			"trust",
 			"clan_to_r_c",
@@ -4521,7 +4521,7 @@
 		"tags": [
 			"fighting",
 			"scar",
-			"battle_injury",
+			"big_bite_injury",
 			"respect",
 			"trust",
 			"clan_to_r_c",
@@ -4583,7 +4583,7 @@
 			"fighting",
 			"death",
 			"scar",
-			"battle_injury",
+			"big_bite_injury",
 			"shock",
 			"injury",
 			"respect",
@@ -4772,7 +4772,7 @@
 		"tags": [
 			"fighting",
 			"scar",
-			"battle_injury",
+			"big_bite_injury",
 			"respect",
 			"trust",
 			"clan_to_patrol"
@@ -4957,7 +4957,7 @@
 		"tags": [
 			"fighting",
 			"scar",
-			"battle_injury",
+			"big_bite_injury",
 			"respect",
 			"trust",
 			"clan_to_patrol"
@@ -5141,7 +5141,7 @@
 		"tags": [
 			"fighting",
 			"scar",
-			"battle_injury",
+			"big_bite_injury",
 			"respect",
 			"trust",
 			"clan_to_patrol"
