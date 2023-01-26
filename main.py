@@ -29,26 +29,14 @@ manager.add_font_paths(
     bold_italic_path='resources/fonts/NotoSans-ExtraBoldItalic.ttf'
 )
 manager.preload_fonts([
-    {'name': 'notosans', 'point_size': 11, 'style': 'regular'},
-    {'name': 'notosans', 'point_size': 11, 'style': 'bold'},
-    {'name': 'notosans', 'point_size': 11, 'style': 'italic'},
-    {'name': 'notosans', 'point_size': 11, 'style': 'bold_italic'},
-    {'name': 'notosans', 'point_size': 13, 'style': 'regular'},
-    {'name': 'notosans', 'point_size': 13, 'style': 'bold'},
-    {'name': 'notosans', 'point_size': 13, 'style': 'italic'},
-    {'name': 'notosans', 'point_size': 13, 'style': 'bold_italic'},
-    {'name': 'notosans', 'point_size': 15, 'style': 'regular'},
-    {'name': 'notosans', 'point_size': 15, 'style': 'bold'},
-    {'name': 'notosans', 'point_size': 15, 'style': 'italic'},
-    {'name': 'notosans', 'point_size': 15, 'style': 'bold_italic'},
-    {'name': 'notosans', 'point_size': 17, 'style': 'regular'},
-    {'name': 'notosans', 'point_size': 17, 'style': 'bold'},
-    {'name': 'notosans', 'point_size': 17, 'style': 'italic'},
-    {'name': 'notosans', 'point_size': 17, 'style': 'bold_italic'},
-    {'name': 'notosans', 'point_size': 20, 'style': 'regular'},
-    {'name': 'notosans', 'point_size': 20, 'style': 'bold'},
-    {'name': 'notosans', 'point_size': 20, 'style': 'italic'},
-    {'name': 'notosans', 'point_size': 20, 'style': 'bold_italic'},
+    {'name': 'notosans', 'point_size': 30, 'style': 'regular'},
+    {'name': 'notosans', 'point_size': 30, 'style': 'bold'},
+    {'name': 'notosans', 'point_size': 30, 'style': 'italic'},
+    {'name': 'notosans', 'point_size': 30, 'style': 'bold_italic'},
+    {'name': 'notosans', 'point_size': 32, 'style': 'regular'},
+    {'name': 'notosans', 'point_size': 32, 'style': 'bold'},
+    {'name': 'notosans', 'point_size': 32, 'style': 'italic'},
+    {'name': 'notosans', 'point_size': 32, 'style': 'bold_italic'},
 ])
 manager.get_theme().load_theme('resources/buttons.json')
 manager.get_theme().load_theme('resources/text_boxes.json')

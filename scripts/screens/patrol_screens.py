@@ -355,7 +355,7 @@ class PatrolScreen(Screens):
                                                 object_id="#skills_cats_tab")
 
         # Remove all button
-        self.elements['remove_all'] = UIImageButton(pygame.Rect((1180, 1254), (248, 70)), "",
+        self.elements['remove_all'] = UIImageButton(pygame.Rect((1120, 1254), (248, 70)), "",
                                                     object_id="#remove_all_button")
 
         # Text box for skills and traits. Hidden for now, and with no text in it
@@ -585,7 +585,7 @@ class PatrolScreen(Screens):
         for u in range(6):
             if u < len(patrol.patrol_cats):
                 self.elements["cat" + str(u)] = pygame_gui.elements.UIImage(pygame.Rect((pos_x, pos_y), (100, 100)),
-                                                                            patrol.patrol_cats[u].sprite)
+                                                                            patrol.patrol_cats[u].big_sprite)
                 pos_x += 100
                 if pos_x > 900:
                     pos_y += 100
@@ -704,7 +704,8 @@ class PatrolScreen(Screens):
         i = 0
         for cat in display_cats:
             self.cat_buttons["able_cat" + str(i)] = UISpriteButton(pygame.Rect((pos_x, pos_y), (100, 100)),
-                                                                   cat.big_sprite, cat_object=cat)
+                                                                   pygame.transform.scale(cat.large_sprite, (100, 100))
+                                                                   , cat_object=cat)
             pos_x += 100
             if pos_x >= 600:
                 pos_x = 100
@@ -720,7 +721,8 @@ class PatrolScreen(Screens):
             i = 0
             for cat in self.current_patrol:
                 self.cat_buttons["patrol_cat" + str(i)] = UISpriteButton(pygame.Rect((pos_x, pos_y), (100, 100)),
-                                                                         cat.sprite, cat_object=cat)
+                                                                         pygame.transform.scale(cat.large_sprite,
+                                                                         (100, 100)), cat_object=cat)
                 pos_x += 150
                 if pos_x >= 1450:
                     pos_x = 1050
@@ -800,7 +802,9 @@ class PatrolScreen(Screens):
             # Now, if the selected cat is not None, we rebuild everything with the correct cat info
             # Selected Cat Image
             self.elements["selected_image"] = pygame_gui.elements.UIImage(pygame.Rect((640, 350), (300, 300)),
-                                                                          self.selected_cat.large_sprite)
+                                                                          pygame.transform.scale(
+                                                                              self.selected_cat.large_sprite,
+                                                                              (300, 300)))
 
             name = str(self.selected_cat.name)  # get name
             if 14 <= len(name) >= 16:  # check name length
@@ -826,7 +830,8 @@ class PatrolScreen(Screens):
                                                                               self.mate_frame)
                     mate = Cat.fetch_cat(self.selected_cat.mate)
                     self.elements['mate_image'] = pygame_gui.elements.UIImage(pygame.Rect((300, 400), (200, 200)),
-                                                                              mate.large_sprite)
+                                                                              pygame.transform.scale(
+                                                                                  mate.large_sprite, (200, 200)))
                     # Check for name length
                     name = str(mate.name)  # get name
                     if 11 <= len(name):  # check name length
@@ -883,7 +888,9 @@ class PatrolScreen(Screens):
                         object_id=get_text_box_theme(
                             "#cat_patrol_info_box"))
                     self.elements['app_mentor_image'] = pygame_gui.elements.UIImage(pygame.Rect((1100, 400), (200, 200)),
-                                                                                    self.app_mentor.large_sprite)
+                                                                                    pygame.transform.scale(
+                                                                                        self.app_mentor.large_sprite,
+                                                                                        (200, 200)))
 
                     # Button to switch to that cat
                     self.elements['app_mentor_button'] = UIImageButton(pygame.Rect((1096, 712), (208, 52)), "",

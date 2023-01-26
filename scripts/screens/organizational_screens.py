@@ -891,7 +891,7 @@ class StatsScreen(Screens):
                      "Number of Elders: " + str(elder_num) + "\n\n" + \
                      "Number of Dead Cats: " + str(starclan_num)
 
-        self.stats_box = pygame_gui.elements.UITextBox(stats_text, pygame.Rect((100, 150), (600, 500)),
+        self.stats_box = pygame_gui.elements.UITextBox(stats_text, pygame.Rect((200, 300), (1200, 1000)),
                                                        self.update_heading_text(f'{game.clan.name}Clan'),
                                                        object_id=get_text_box_theme())
 

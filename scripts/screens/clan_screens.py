@@ -1472,16 +1472,16 @@ class MedDenScreen(Screens):
 
         if game.clan.game_mode != 'classic':
             self.last_page = UIImageButton(pygame.Rect((660, 1272), (68, 68)), "", object_id="#arrow_left_button")
-            self.next_page = UIImageButton(pygame.Rect((952, 1272), (34, 34)), "", object_id="#arrow_right_button")
+            self.next_page = UIImageButton(pygame.Rect((952, 1272), (68, 68)), "", object_id="#arrow_right_button")
 
             self.hurt_sick_title = pygame_gui.elements.UITextBox(
                 "Hurt & Sick Cats",
-                pygame.Rect((280, 820), (400, 60)),
+                pygame.Rect((281, 820), (400, 60)),
                 object_id=get_text_box_theme("#cat_profile_name_box")
             )
             self.log_title = pygame_gui.elements.UITextBox(
                 "Medicine Den Log",
-                pygame.Rect((280, 820), (400, 60)),
+                pygame.Rect((281, 820), (400, 60)),
                 object_id=get_text_box_theme("#cat_profile_name_box")
             )
             self.log_title.hide()
