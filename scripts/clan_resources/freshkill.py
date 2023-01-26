@@ -1,7 +1,8 @@
-from scripts.utility import get_alive_queens
+from scripts.utility import get_alive_clan_queens
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import *
 from copy import deepcopy
+import random
 
 PREY_REQUIREMENT = {
     "leader": 3,
@@ -99,6 +100,18 @@ class Freshkill_Pile():
     def add_freshkill(self, amount):
         """Add new fresh kill to the pile."""
         self.pile["expires_in_4"] += amount
+        self.total_amount += amount
+
+    def remove_freshkill(self, amount, take_random=False):
+        """Remove a certain amount of fresh kill from the pile."""
+        if amount == 0:
+            return
+        order = ["expires_in_1", "expires_in_2", "expires_in_3", "expires_in_4"]
+        if take_random:
+            random.shuffle(order)       
+        for key in order:
+            amount = self.take_from_pile(key, amount)
+        
 
     def time_skip(self, living_cats):
         """Handle the time skip for the freshkill pile, including feeding the cats."""
@@ -117,7 +130,7 @@ class Freshkill_Pile():
         self.update_nutrition(living_cats)
 
         relevant_group = []
-        queens = get_alive_queens(Cat.all_cats)
+        queens = get_alive_clan_queens(Cat.all_cats)
         relevant_queens = []
         for queen in queens:
             kits = queen.get_children()
@@ -149,7 +162,7 @@ class Freshkill_Pile():
         """Returns the amount of prey which the clan needs."""
         living_cats = list(filter(lambda cat_: not cat_.dead and not cat_.outside , Cat.all_cats.values()))
         sick_cats = [cat for cat in living_cats if cat.is_injured() or cat.is_ill()]
-        queens = get_alive_queens(Cat.all_cats)
+        queens = get_alive_clan_queens(Cat.all_cats)
 
         needed_prey = [PREY_REQUIREMENT[cat.status] for cat in living_cats]
         needed_prey = sum(needed_prey) + len(sick_cats) * CONDITION_INCREASE + len(queens) * (PREY_REQUIREMENT["queen"] - PREY_REQUIREMENT["warrior"])

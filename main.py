@@ -20,7 +20,7 @@ VERSION_NUMBER = "Ver. 0.5.0dev"
 pygame.init()
 
 # initialize pygame_gui manager, and load themes
-manager = pygame_gui.ui_manager.UIManager((800, 700), 'resources/defaults.json')
+manager = pygame_gui.ui_manager.UIManager((1600, 1400), 'resources/defaults.json')
 manager.add_font_paths(
     font_name='notosans',
     regular_path='resources/fonts/NotoSans-Medium.ttf',
@@ -29,26 +29,14 @@ manager.add_font_paths(
     bold_italic_path='resources/fonts/NotoSans-ExtraBoldItalic.ttf'
 )
 manager.preload_fonts([
-    {'name': 'notosans', 'point_size': 11, 'style': 'regular'},
-    {'name': 'notosans', 'point_size': 11, 'style': 'bold'},
-    {'name': 'notosans', 'point_size': 11, 'style': 'italic'},
-    {'name': 'notosans', 'point_size': 11, 'style': 'bold_italic'},
-    {'name': 'notosans', 'point_size': 13, 'style': 'regular'},
-    {'name': 'notosans', 'point_size': 13, 'style': 'bold'},
-    {'name': 'notosans', 'point_size': 13, 'style': 'italic'},
-    {'name': 'notosans', 'point_size': 13, 'style': 'bold_italic'},
-    {'name': 'notosans', 'point_size': 15, 'style': 'regular'},
-    {'name': 'notosans', 'point_size': 15, 'style': 'bold'},
-    {'name': 'notosans', 'point_size': 15, 'style': 'italic'},
-    {'name': 'notosans', 'point_size': 15, 'style': 'bold_italic'},
-    {'name': 'notosans', 'point_size': 17, 'style': 'regular'},
-    {'name': 'notosans', 'point_size': 17, 'style': 'bold'},
-    {'name': 'notosans', 'point_size': 17, 'style': 'italic'},
-    {'name': 'notosans', 'point_size': 17, 'style': 'bold_italic'},
-    {'name': 'notosans', 'point_size': 20, 'style': 'regular'},
-    {'name': 'notosans', 'point_size': 20, 'style': 'bold'},
-    {'name': 'notosans', 'point_size': 20, 'style': 'italic'},
-    {'name': 'notosans', 'point_size': 20, 'style': 'bold_italic'},
+    {'name': 'notosans', 'point_size': 30, 'style': 'regular'},
+    {'name': 'notosans', 'point_size': 30, 'style': 'bold'},
+    {'name': 'notosans', 'point_size': 30, 'style': 'italic'},
+    {'name': 'notosans', 'point_size': 30, 'style': 'bold_italic'},
+    {'name': 'notosans', 'point_size': 32, 'style': 'regular'},
+    {'name': 'notosans', 'point_size': 32, 'style': 'bold'},
+    {'name': 'notosans', 'point_size': 32, 'style': 'italic'},
+    {'name': 'notosans', 'point_size': 32, 'style': 'bold_italic'},
 ])
 manager.get_theme().load_theme('resources/buttons.json')
 manager.get_theme().load_theme('resources/text_boxes.json')
@@ -102,10 +90,10 @@ sprites.load_scars()
 start_screen.screen_switches()
 
 #Version Number
-version_number = pygame_gui.elements.UILabel(pygame.Rect((750, 675), (-1, -1)), VERSION_NUMBER,
+version_number = pygame_gui.elements.UILabel(pygame.Rect((1500, 1350), (-1, -1)), VERSION_NUMBER,
                                              object_id=get_text_box_theme())
 # Adjust position
-version_number.set_position((800 - version_number.get_relative_rect()[2] - 4, 700 - version_number.get_relative_rect()[3]))
+version_number.set_position((1600 - version_number.get_relative_rect()[2] - 8, 1400 - version_number.get_relative_rect()[3]))
 
 while True:
     time_delta = clock.tick(30) / 1000.0

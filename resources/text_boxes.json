@@ -9,13 +9,13 @@
         },
         "misc": {
             "shape": "rounded_rectangle",
-            "shape_corner_radius": "3",
+            "shape_corner_radius": "6",
             "shadow_width": "0",
             "padding": "(0,0)"
         },
         "font": {
             "name": "notosans",
-            "size": "15"
+            "size": "30"
         }
     },
     "text_box": {
@@ -25,7 +25,7 @@
         },
         "font": {
             "name": "notosans",
-            "size": "15"
+            "size": "30"
         },
         "misc": {
             "border_width": "0",
@@ -40,7 +40,7 @@
         },
         "font": {
             "name": "notosans",
-            "size": "15"
+            "size": "30"
         },
         "misc": {
             "border_width": "0",
@@ -56,7 +56,7 @@
         },
         "font": {
             "name": "notosans",
-            "size": "15"
+            "size": "30"
         },
         "misc": {
             "border_width": "0",
@@ -71,7 +71,7 @@
         },
         "font": {
             "name": "notosans",
-            "size": "15"
+            "size": "30"
         },
         "misc": {
             "border_width": "0",
@@ -86,13 +86,13 @@
         },
         "font": {
             "name": "notosans",
-            "size": "15"
+            "size": "30"
         },
         "misc": {
             "border_width": "0",
             "shadow_width": "0",
             "text_horiz_alignment": "left",
-            "padding": "0,0"
+            "padding": "0,8"
         }
     },
     "#cat_profile_info_box": {
@@ -102,7 +102,7 @@
         },
         "font": {
             "name": "notosans",
-            "size": "11"
+            "size": "22"
         },
         "misc": {
             "border_width": "0",
@@ -118,7 +118,7 @@
         },
         "font": {
             "name": "notosans",
-            "size": "11"
+            "size": "22"
         },
         "misc": {
             "border_width": "0",
@@ -133,7 +133,7 @@
         },
         "font": {
             "name": "notosans",
-            "size": "20"
+            "size": "40"
         },
         "misc": {
             "border_width": "0",
@@ -148,7 +148,7 @@
         },
         "font": {
             "name": "notosans",
-            "size": "15"
+            "size": "30"
         },
         "misc": {
             "border_width": "0",
@@ -165,14 +165,14 @@
         },
         "font": {
             "name": "notosans",
-            "size": "13"
+            "size": "26"
 
         },
         "misc": {
             "border_width": "0",
             "shadow_width": "0",
             "text_horiz_alignment": "left",
-            "padding": "5,7"
+            "padding": "10,14"
         }
     },
     "#history_tab_entry_box": {
@@ -183,13 +183,13 @@
         },
         "font": {
             "name": "notosans",
-            "size": "13"
+            "size": "26"
         },
         "misc": {
             "border_width": "0",
             "shadow_width": "0",
             "text_horiz_alignment": "left",
-            "padding": "5,7"
+            "padding": "10,14"
         }
     },
     "#clan_header_text_box": {
@@ -199,7 +199,7 @@
         },
         "font": {
             "name": "notosans",
-            "size": "15"
+            "size": "30"
         },
         "misc": {
             "border_width": "0",
@@ -214,7 +214,7 @@
         },
         "font": {
             "name": "notosans",
-            "size": "17"
+            "size": "34"
         },
         "misc": {
             "border_width": "0",
@@ -224,7 +224,8 @@
     },
     "#patrol_text_box": {
         "misc": {
-            "text_horiz_alignment": "left"
+            "text_horiz_alignment": "left",
+            "padding": "10,10"
         }
     },
     "#header_text_box": {
@@ -234,7 +235,7 @@
         },
         "font": {
             "name": "notosans",
-            "size": "17"
+            "size": "34"
         },
         "misc": {
             "border_width": "0",
@@ -249,7 +250,7 @@
         },
         "font": {
             "name": "notosans",
-            "size": "17"
+            "size": "34"
         },
         "misc": {
             "border_width": "0",
@@ -264,7 +265,7 @@
         },
         "font": {
             "name": "notosans",
-            "size": "13"
+            "size": "26"
         },
         "misc": {
             "border_width": "0",
@@ -286,7 +287,7 @@
         },
         "font": {
             "name": "notosans",
-            "size": "14"
+            "size": "28"
         },
         "misc": {
             "border_width": "0",
@@ -302,11 +303,11 @@
         },
         "font": {
             "name": "notosans",
-            "size": "15"
+            "size": "30"
         },
         "misc": {
             "text_horiz_alignment": "left",
-            "padding": "20,20"
+            "padding": "40,40"
         }
     },
     "#search_entry_box": {
@@ -324,7 +325,7 @@
         },
         "font": {
             "name": "notosans",
-            "size": "13"
+            "size": "26"
         }
     },
     "#condition_details_text_box": {
@@ -334,13 +335,13 @@
         },
         "font": {
             "name": "notosans",
-            "size": "11"
+            "size": "22"
         },
         "misc": {
             "border_width": "0",
             "shadow_width": "0",
             "text_horiz_alignment": "center",
-            "padding": "10,10"
+            "padding": "20,20"
         }
     },
     "#med_den_log_box": {
@@ -351,7 +352,7 @@
         },
         "font": {
             "name": "notosans",
-            "size": "13"
+            "size": "26"
 
         },
         "misc": {
@@ -359,8 +360,8 @@
             "shadow_width": "0",
             "text_horiz_alignment": "left",
             "text_vert_alignment": "top",
-            "padding": "7, 0",
-            "text_vert_alignment_padding": "5"
+            "padding": "14, 0",
+            "text_vert_alignment_padding": "10"
         }
     }
 }

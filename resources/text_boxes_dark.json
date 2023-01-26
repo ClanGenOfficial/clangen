@@ -9,7 +9,7 @@
         "font":
         {
             "name": "notosans",
-            "size": "15"
+            "size": "30"
         },
         "misc":
         {
@@ -28,7 +28,7 @@
         "font":
         {
             "name": "notosans",
-            "size": "15"
+            "size": "30"
         },
         "misc":
         {
@@ -48,7 +48,7 @@
         "font":
         {
             "name": "notosans",
-            "size": "15"
+            "size": "30"
         },
         "misc":
         {
@@ -67,7 +67,7 @@
         "font":
         {
             "name": "notosans",
-            "size": "15"
+            "size": "30"
         },
         "misc":
         {
@@ -86,14 +86,14 @@
         "font":
         {
             "name": "notosans",
-            "size": "15"
+            "size": "30"
         },
         "misc":
         {
             "border_width": "0",
             "shadow_width": "0",
             "text_horiz_alignment": "left",
-            "padding": "0,0"
+            "padding": "0,8"
         }
     },
     "#cat_profile_info_box_dark":
@@ -106,7 +106,7 @@
         "font":
         {
             "name": "notosans",
-            "size": "11"
+            "size": "22"
         },
         "misc":
         {
@@ -126,7 +126,7 @@
         "font":
         {
             "name": "notosans",
-            "size": "11"
+            "size": "22"
         },
         "misc":
         {
@@ -147,7 +147,7 @@
         "font":
         {
             "name": "notosans",
-            "size": "20"
+            "size": "40"
         },
         "misc":
         {
@@ -167,7 +167,7 @@
         "font":
         {
             "name": "notosans",
-            "size": "15"
+            "size": "30"
         },
         "misc":
         {
@@ -187,14 +187,14 @@
         "font":
         {
             "name": "notosans",
-            "size": "13"
+            "size": "26"
         },
         "misc":
         {
             "border_width": "0",
             "shadow_width": "0",
             "text_horiz_alignment": "left",
-            "padding": "5,5"
+            "padding": "10,10"
         }
     },
     "#header_text_box_dark":
@@ -207,7 +207,7 @@
         "font":
         {
             "name": "notosans",
-            "size": "17"
+            "size": "34"
         },
         "misc":
         {
@@ -226,7 +226,7 @@
         "font":
         {
             "name": "notosans",
-            "size": "17"
+            "size": "34"
         },
         "misc":
         {
@@ -254,7 +254,7 @@
         "font":
             {
                 "name": "notosans",
-                "size": "13"
+                "size": "26"
             },
         "misc":
             {
