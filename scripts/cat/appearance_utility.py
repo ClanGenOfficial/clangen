@@ -201,10 +201,10 @@ def pelt_inheritance(cat, parents: tuple):
 
             #Gather if they have white in their pelt.
             par_white.append(p.pelt.white)
-
-        # If order for white patches to work correctly, we also want to randomly generate a "pelt_white"
-        # for each "None" parent (missing or unknown parent)
-        par_white.append(bool(random.getrandbits(1)))
+        else:
+            # If order for white patches to work correctly, we also want to randomly generate a "pelt_white"
+            # for each "None" parent (missing or unknown parent)
+            par_white.append(bool(random.getrandbits(1)))
 
         #If this list is empty, something went wrong.
         if not par_peltcolours:
@@ -536,10 +536,10 @@ def white_patches_inheritance(cat, parents: tuple):
 
     par_whitepatches = set()
     for p in parents:
-        if p.white_patches:
+        if p and p.white_patches:
             par_whitepatches.add(p.white_patches)
 
-    if not par_whitepatches:
+    if not parents:
         print("Error - no parents. Randomizing white patches.")
         randomize_white_patches(cat)
         return

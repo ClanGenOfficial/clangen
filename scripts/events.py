@@ -73,7 +73,7 @@ class Events():
                         cat.age = 'adolescent'
                     elif cat.moons == 12:
                         cat.age = 'adult'
-                    elif cat.moons == 100:
+                    elif cat.moons == 120:
                         cat.age = 'elder'
 
                     # killing exiled cats
@@ -747,7 +747,10 @@ class Events():
             TRAITS = None
             with open(f"{resource_directory}ceremony_traits.json", 'r') as read_file:
                 TRAITS = ujson.loads(read_file.read())
-            random_honor = choice(TRAITS[cat.trait])
+            try:
+                random_honor = choice(TRAITS[cat.trait])
+            except KeyError:
+                random_honor = "hard work"
             if not leader_dead and not leader_exiled:
                 involved_cats.append(game.clan.leader.ID)
                 ceremony.extend([
