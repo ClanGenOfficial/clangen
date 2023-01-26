@@ -61,7 +61,7 @@ class GenerateEvents:
             cat_type = "mediator"
 
         biome = None
-        if event_type != "freshkill_pile":
+        if event_type != "nutrition":
             biome = game.clan.biome.lower()
 
             event_list.extend(
@@ -96,7 +96,7 @@ class GenerateEvents:
                 )
 
             if cat_type not in ["kitten", "leader"]:
-                if event_type != "freshkill_pile":
+                if event_type != "nutrition":
                     event_list.extend(
                         self.generate_events(
                             self.get_event_dicts(event_type, "general", "general")
@@ -184,10 +184,22 @@ Tagged relationship parameters are: "romantic", "platonic", "comfort", "respect"
 Add "neg_" in front of parameter to make it a negative value change (i.e. "neg_romantic", "neg_platonic", ect)
 
 
-"death" < main cat will die, this tag is used by the freshkill pile events
-"malnourished" < main cat will get the illness malnourished, this tag is used by the freshkill pile events
-"starving" < main cat will get the illness starving, this tag is used by the freshkill pile events
-"malnourished_healed" < main cat will be healed from malnourished, this tag is used by the freshkill pile events
-"starving_healed" < main cat will be healed from starving, this tag is used by the freshkill pile events
+Following tags are used for nutrition events:
+"death" < main cat will die
+"malnourished" < main cat will get the illness malnourished
+"starving" < main cat will get the illness starving
+"malnourished_healed" < main cat will be healed from malnourished
+"starving_healed" < main cat will be healed from starving
+
+Following tags are used for freshkill pile events:
+"death" < main cat will die
+"multi_death" < as described above
+"injury" < main cat get injured
+"multi_injury" < use to indicate that two cats get injured.
+"much_prey" < this event will be triggered when the pile is extremely full 
+"reduce_half" < reduce prey amount of the freshkill pile by a half
+"reduce_quarter" < reduce prey amount of the freshkill pile by a quarter
+"reduce_eighth" < reduce prey amount of the freshkill pile by a eighth
+"other_cat" < there is a second cat in this event
 
 """
