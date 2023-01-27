@@ -2780,8 +2780,8 @@
     "exp": 10,
     "success_text": [
             "As a plant that grows non-seasonally and without losing any of its green in leaf-bare, while also having a crucial herbal use stopping blood loss, horsetail is a welcome sight in any well-stocked medicine cat den.",
-            "Snapping off the thick horsetail stems near the base of the plant lets p_l drag an entire big long bush back to camp, where they process it down further into small stem sections that're easily stored.",
-            "s_c deftly picks out a horsetail bush, bringing back an impressive addition to the Clan's herb stores."
+            "Snapping off the thick horsetail stems near the base of the plant lets p_l drag an entire big, long shoot back to camp, where they process it down further into small stem sections that're easily stored.",
+            "s_c deftly picks out a horsetail shoot, bringing back an impressive addition to the Clan's herb stores."
 ],
     "fail_text": [
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful."
@@ -2806,8 +2806,8 @@
     "exp": 20,
     "success_text": [
             "p_l doesn't know why horsetail plants lack leaves, but they encourage app1's interest in the topic. As a plant that grows non-seasonally and without losing any of its green in leaf-bare, while also having a crucial herbal use stopping blood loss, horsetail is a welcome sight in any well-stocked medicine cat den.",
-            "Snapping off the thick horsetail stems near the base of the plant lets p_l drag an entire big long bush back to camp, where app1 processes it down further into small stem sections that're easily stored and makes a neat pile in the medicine cat den with them.",
-            "s_c deftly picks out a horsetail bush, bringing back an impressive addition to the Clan's herb stores as they describe the plant's uses to app1."
+            "Snapping off the thick horsetail stem near the base of the plant lets p_l drag an entire big, long shoot back to camp, where app1 processes it down further into small stem sections that're easily stored and makes a neat pile in the medicine cat den with them.",
+            "s_c deftly picks out a horsetail shoot, bringing back an impressive addition to the Clan's herb stores as they describe the plant's uses to app1."
 ],
     "fail_text": [
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and app1 looks up at them with disappointment."
@@ -2832,8 +2832,8 @@
     "exp": 10,
     "success_text": [
             "As a plant that grows non-seasonally and without losing any of its green in leaf-bare, while also having a crucial herbal use stopping blood loss, horsetail is a welcome sight in any well-stocked medicine cat den, and having other cats to help them makes the patrol an easy afternoon's work.",
-            "Snapping off the thick horsetail stems near the base of the plant lets p_l drag an entire big long bush back to camp. The patrol helps pull the massive bush, and several cats in camp fluff up with alarm watching the herb gathering patrol drag it in where they process it down further into small stem sections that're easily stored.",
-            "s_c deftly picks out a horsetail bush, bringing back impressive additions to the Clan's herb stores with the help of the warriors."
+            "Snapping off the thick horsetail stem near the base of the plant lets p_l drag an entire big, long shoot back to camp. The patrol helps pull the massive bush, and several cats in camp fluff up with alarm watching the herb gathering patrol drag it in where they process it down further into small stem sections that're easily stored.",
+            "s_c deftly picks out a horsetail shoot, bringing back impressive additions to the Clan's herb stores with the help of the warriors."
     ],
     "fail_text": [
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful and snappish with each other."
@@ -2935,7 +2935,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "p_l finds a likely looking juniper tree and collects a decent amount of needles from it with a minimum of fuss.",
+            "p_l finds a likely-looking juniper tree and collects a decent amount of needles from it with a minimum of fuss.",
             "Juniper needles are useful for so many things, from calming minds and easing breathing to soothing aching bellies and as a traveling herb. Really, p_l will always feel better having a good solid store of the stuff to use, and this patrol has been very successful at bringing tons of them home.",
             "s_c trots off to a good juniper tree, hopping onto a low branch to harvest its needles."
 ],
@@ -2961,7 +2961,7 @@
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-            "p_l and app1 find a likely looking juniper tree and collects a decent amount of needles from it with a minimum of fuss.",
+            "p_l and app1 find a likely-looking juniper tree and collects a decent amount of needles from it with a minimum of fuss.",
             "Juniper needles are useful for so many things, from calming minds and easing breathing to soothing aching bellies and as a traveling herb. Really, p_l will always feel better having a good solid store of the stuff to use, and this patrol has been very successful at bringing tons of them home. They make sure to send app1 off with a little sprig of juniper to bring its pleasant scent to their nest, and a lot of praise.",
             "s_c trots off to a good juniper tree, hopping onto a low branch to harvest its needles. As they work, they chat to app1 about juniper's calming effects. This is one of the few herbs their Clanmates compete to go on patrols to help collect, everyone likes the scent."
 ],
@@ -2987,7 +2987,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "The patrol finds a likely looking juniper tree and collects a decent amount of needles from it with a minimum of fuss.",
+            "The patrol finds a likely-looking juniper tree and collects a decent amount of needles from it with a minimum of fuss.",
             "Juniper needles are useful for so many things, from calming minds and easing breathing to soothing aching bellies and as a traveling herb. Really, p_l will always feel better having a good solid store of the stuff to use, and this patrol has been very successful at bringing tons of them home. They make sure to thank their team, and send them off with a couple sprigs to carry pleasant scents to their dens.",
             "s_c trots off to a good juniper tree, hopping onto a low branch to harvest its needles. Their patrol follows their lead, pulling twigs off, although a couple times s_c does need to remind them that the carpet of dead needles on the ground wouldn't be useful for the herb stores."
     ],
@@ -3086,7 +3086,7 @@
     "biome": "beach",
     "season": "leaf-bare",
     "tags": ["med_only", "cold_injury", "blunt_force_injury", "scar", "herb", "juniper", "med_cat"],
-    "intro_text": "It's not finding fresh juniper that's the problem. An everygreen plant, they reliably grow through the cold - but they're large shrubs, sometimes large enough to be trees, and climbing in these slippery conditions might be dangerous.",
+    "intro_text": "It's not finding fresh juniper that's the problem. An evergreen plant, they reliably grow through the cold - but they're large shrubs, sometimes large enough to be trees, and climbing in these slippery conditions might be dangerous.",
     "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
     "chance_of_success": 40,
     "exp": 10,
@@ -3118,7 +3118,7 @@
     "biome": "beach",
     "season": "leaf-bare",
     "tags": ["med_only", "med_cat", "cold_injury", "blunt_force_injury", "scar", "herb", "juniper", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
-    "intro_text": "It's not finding fresh juniper that's the problem. An everygreen plant, they reliably grow through the cold - but they're large shrubs, sometimes large enough to be trees, and climbing in these slippery conditions might be dangerous. p_l has a lot of hesitancy about bringing app1 along under these conditions.",
+    "intro_text": "It's not finding fresh juniper that's the problem. An evergreen plant, they reliably grow through the cold - but they're large shrubs, sometimes large enough to be trees, and climbing in these slippery conditions might be dangerous. p_l has a lot of hesitancy about bringing app1 along under these conditions.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 40,
     "exp": 40,
@@ -3150,7 +3150,7 @@
     "biome": "beach",
     "season": "leaf-bare",
     "tags": ["med_cat", "warrior", "cold_injury", "blunt_force_injury", "scar", "herb", "juniper", "big_change", "no_leader", "platonic", "dislike", "respect"],
-    "intro_text": "It's not finding fresh juniper that's the problem. An everygreen plant, they reliably grow through the cold - but they're large shrubs, sometimes large enough to be trees, and climbing in these slippery conditions might be dangerous. Hopefully the warriors accompanying p_l will be able to help.",
+    "intro_text": "It's not finding fresh juniper that's the problem. An evergreen plant, they reliably grow through the cold - but they're large shrubs, sometimes large enough to be trees, and climbing in these slippery conditions might be dangerous. Hopefully the warriors accompanying p_l will be able to help.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 40,
     "exp": 10,
@@ -3187,7 +3187,7 @@
 "chance_of_success": 30,
 "exp": 20,
 "success_text": [
-    "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to replenishing the Clan's stores after the long leaf-bare. For just a second, they feel the weight of their responsibilities lift, and they let out a whoop and stop to play with app1.",
+    "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to replenishing the Clan's stores after the long leaf-bare. For just a second, they feel the weight of their responsibilities lift, and they let out a yowl and stop to play with app1.",
     "app1 listens intently as the hours drift slowly by in their intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort! p_l showers them with praise, app1 feeling like they could burst with accomplishment.",
     "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
     "Night falls, and still s_c insists they keep going - lungwort is the only reliable cure for yellowcough, they can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find those precious speckled leaves."
@@ -3322,10 +3322,10 @@
 "chance_of_success": 30,
 "exp": 20,
 "success_text": [
-    "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest while the growing season is upon them. For just a second, they feel the weight of their responsibilities lift, and they let out a whoop and stop to play with app1.",
+    "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest while the growing season is upon them. For just a second, they feel the weight of their responsibilities lift, and they let out a yowl and stop to play with app1.",
     "app1 listens intently as the hours drift slowly by in their intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort! p_l showers them with praise, app1 feeling like they could burst with accomplishment.",
     "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
-    "Night falls, and still s_c insists they keep going - lungwort is the only reliable cure for yellowcough, they can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find those precious speckled leaves."
+    "Night falls, and still s_c insists they keep going - lungwort is the only reliable cure for yellowcough, they can't let c_n go without. Exhausted, but determined, the medicine cats persist patiently until they find those precious speckled leaves."
 ],
 "fail_text": [
     "Not only do they not find anything, app1 seems to take in absolutely nothing of what p_l is teaching them, and by the time they're back at camp p_l wants to scream."
@@ -3456,7 +3456,7 @@
     "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest before the plant dies back in leaf-bare. For just a second, they feel the weight of their responsibilities lift, and they let out a whoop and stop to play with app1.",
     "app1 listens intently as the hours drift slowly by in their intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort! p_l showers them with praise, app1 feeling like they could burst with accomplishment.",
     "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
-    "Night falls, and still s_c insists they keep going - lungwort is the only reliable cure for yellowcough, they can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find those precious speckled leaves."
+    "Night falls, and still s_c insists they keep going - lungwort is the only reliable cure for yellowcough, they can't let c_n go without. Exhausted, but determined, the medicine cats persist patiently until they find those precious speckled leaves."
 ],
 "fail_text": [
     "Not only do they not find anything, app1 seems to take in absolutely nothing of what p_l is teaching them, and by the time they're back at camp p_l wants to scream."
@@ -4241,7 +4241,7 @@
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-            "p_l spots the mullelin plants by scrambling up onto a low rock and looking for their sapling-like, fat, towering stems starting to poke over all the other plants. Once they've called app1 up to have a look, they hop down to trot over and harvest them.",
+            "p_l spots the mullein plants by scrambling up onto a low rock and looking for their sapling-like, fat, towering stems starting to poke over all the other plants. Once they've called app1 up to have a look, they hop down to trot over and harvest them.",
             "Easing the lungs of those with weaker chest muscles or infections, helping with certain sorts of pain, and being used to treat unhappy guts, mullein is a good herb to keep in stock, though it doesn't have the glamour of catmint or the rarity of lungwort. app1 soaks up the lessons on its uses attentively.",
             "The always-reliable s_c spots mullein plants growing plenty of leaves on their strange central stems, and with app1 helping them, knocks them over so that the entire bundle can be carried home."
 ],
@@ -4496,7 +4496,7 @@
     "biome": "beach",
     "season": "greenleaf",
     "tags": ["med_cat", "warrior", "herb", "oak_leaves", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
-    "intro_text": "greenleaf encourages the oak to reach its full potential, wide and towering, and p_l goes to collect a harvest of its leaves, taking a patrol with them to make the task easier.",
+    "intro_text": "Greenleaf encourages the oak to reach its full potential, wide and towering, and p_l goes to collect a harvest of its leaves, taking a patrol with them to make the task easier.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
     "exp": 10,
@@ -5219,174 +5219,174 @@
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
-{
-"patrol_id": "bch_med_gatheringraspberrysolo1",
-"biome": "beach",
-"season": "greenleaf",
-"tags": ["herb", "raspberry", "no_herbs1", "no_herbs2", "med_cat", "injury", "poisoned"],
-"intro_text": "While gathering herbs, r_c spots a bush of red berries.",
-"decline_text": "r_c decides not to touch the berries.",
-"chance_of_success": 50,
-"exp": 30,
-"success_text": [
-    "r_c identifies them as raspberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit, especially it's leaves.",
-    "r_c knows deathberries when they see them, and slips back to camp to report it to the leader - the warriors will need to be told to avoid this bush.",
-    "It takes little intelligence to recognise deathberries, but a great deal to collect them anyway. If s_c can dry them out, these berries will be sufficient for c_n for years to come. By using their weight to snap off a bush branch, and then carefully carrying it back to camp, s_c manages to bring them safely home."
-],
-"fail_text": [
-    "While r_c thinks they're probably cranberries, they aren't confident enough with the identification to risk being wrong and plucking deathberries instead.",
-    null,
-    null,
-    "While plucking them from the bush, r_c feels one of the berries split in their mouth, and a horrible taste coats their tongue. These aren't raspberries. They rush to force themselves to throw up, and it works, expelling the deathberries from their system, but they're weak and shaky for the rest of the day."
-],
-"win_skills": ["smart", "very smart", "extremely smart"],
-"win_trait": ["None"],
-"fail_skills": ["None"],
-"fail_trait": ["None"],
-"min_cats": 1,
-"max_cats": 1,
-"antagonize_text": null,
-"antagonize_fail_text": null
-},
-{
-"patrol_id": "bch_med_gatheringraspberrysolo2",
-"biome": "beach",
-"season": "greenleaf",
-"tags": ["herb", "raspberry", "no_herbs1", "med_cat", "apprentice", "injury", "poisoned", "death"],
-"intro_text": "While gathering herbs, app1 stumbles upon a bush of red berries.",
-"decline_text": "app1 decides not to touch the berries.",
-"chance_of_success": 50,
-"exp": 30,
-"success_text": [
-    "app1 identifies them as raspberries, and carefully chews off a branch laden with them to bring back to camp. They can't quite remember what raspberries treat, but it's something to do with kitting.",
-    "These. . . could be deathberries. Might be raspberries. But maybe deathberries. It's not worth the risk, they can ask their mentor for more training about it later."
-],
-"fail_text": [
-    "Confidently gathering them and prancing back to camp, app1 is then informed that they've gathered raspberries, not cranberries, and this isn't going to help the Clan's elders with their problems.",
-    null,
-    "app1 plucks the berries, several splitting in their mouth, and tries not to gag at the horrible taste - after all, all the herbs they're trying to learn taste horrible. As they start back to camp, they wobble a little. And then the world goes dark.",
-    "app1 carefully plucks the horrible tasting berries, and as soon as the taste hits their tongue, they realize they've made a terrible mistake. Gagging and throwing up and staggering, they crawl back to camp, weakly hoping their mentor will help them."
-],
-"min_cats": 1,
-"max_cats": 1,
-"antagonize_text": null,
-"antagonize_fail_text": null,
-"history_text": [
+    {
+    "patrol_id": "bch_med_gatheringraspberrysolo1",
+    "biome": "beach",
+    "season": "greenleaf",
+    "tags": ["herb", "raspberry", "no_herbs1", "no_herbs2", "med_cat", "injury", "poisoned"],
+    "intro_text": "While gathering herbs, r_c spots a bush of red berries.",
+    "decline_text": "r_c decides not to touch the berries.",
+    "chance_of_success": 50,
+    "exp": 30,
+    "success_text": [
+        "r_c identifies them as raspberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit, especially it's leaves.",
+        "r_c knows deathberries when they see them, and slips back to camp to report it to the leader - the warriors will need to be told to avoid this bush.",
+        "It takes little intelligence to recognise deathberries, but a great deal to collect them anyway. If s_c can dry them out, these berries will be sufficient for c_n for years to come. By using their weight to snap off a bush branch, and then carefully carrying it back to camp, s_c manages to bring them safely home."
+    ],
+    "fail_text": [
+        "While r_c thinks they're probably cranberries, they aren't confident enough with the identification to risk being wrong and plucking deathberries instead.",
         null,
-        "r_c died before completing their medicine cat training, from accidentally eating deathberries."
-]
-},
-{
-"patrol_id": "bch_med_gatheringraspberrysolo3",
-"biome": "beach",
-"season": "leaf-fall",
-"tags": ["herb", "raspberry", "no_herbs1", "no_herbs2", "med_cat", "poisoned", "injury"],
-"intro_text": "While gathering herbs, r_c spots a bush of red berries.",
-"decline_text": "r_c decides not to touch the berries.",
-"chance_of_success": 50,
-"exp": 30,
-"success_text": [
-    "r_c identifies them as raspberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit, especially it's leaves",
-    "r_c knows deathberries when they see them, and slips back to camp to report it to the leader - the warriors will need to be told to avoid this bush.",
-    "It takes little intelligence to recognise deathberries, but a great deal to collect them anyway. If s_c can dry them out, these berries will be sufficient for c_n for years to come. By using their weight to snap off a bush branch, and then carefully carrying it gingerly back to camp, s_c manages to bring them safely home."
-],
-"fail_text": [
-    "While r_c thinks they're probably cranberries, they aren't confident enough with the identification to risk being wrong and plucking deathberries instead.",
-    null,
-    null,
-    "While plucking them from the bush, r_c feels one of the berries split in their mouth, and a horrible taste coats their tongue. These aren't raspberries. They rush to force themselves to throw up, and it works, expelling the deathberries from their system, but they're weak and shaky for the rest of the day."
-],
-"win_skills": ["smart", "very smart", "extremely smart"],
-"win_trait": ["None"],
-"fail_skills": ["None"],
-"fail_trait": ["None"],
-"min_cats": 1,
-"max_cats": 1,
-"antagonize_text": null,
-"antagonize_fail_text": null
-},
-{
-"patrol_id": "bch_med_gatheringraspberrysolo4",
-"biome": "beach",
-"season": "leaf-fall",
-"tags": ["herb", "raspberry", "no_herbs1", "med_cat", "apprentice", "injury", "poisoned", "death"],
-"intro_text": "While gathering herbs, app1 stumbles upon a bush of red berries.",
-"decline_text": "app1 decides not to touch the berries.",
-"chance_of_success": 50,
-"exp": 30,
-"success_text": [
-    "app1 identifies them as raspberries, and carefully chews off a branch laden with them to bring back to camp. They can't quite remember what raspberries treat, but it's something to do with kitting.",
-    "These... could be deathberries. Might be raspberries. But maybe deathberries. It's not worth the risk, they can ask their mentor for more training about it later."
-],
-"fail_text": [
-    "Confidently gathering them and prancing back to camp, app1 is then informed that they've gathered raspberries, not cranberries, and this isn't going to help the Clan's elders with their problems.",
-    null,
-    "app1 plucks the berries, several splitting in their mouth, and tries not to gag at the horrible taste - after all, all the herbs they're trying to learn taste horrible. As they start back to camp, they wobble a little. And then the world goes dark.",
-    "app1 carefully plucks the horrible tasting berries, and as soon as the taste hits their tongue, they realize they've made a terrible mistake. Gagging, throwing up, and staggering, they crawl back to camp, weakly hoping their mentor will help them."
-],
-"win_skills": ["None"],
-"win_trait": ["None"],
-"fail_skills": ["None"],
-"fail_trait": ["None"],
-"min_cats": 1,
-"max_cats": 1,
-"antagonize_text": null,
-"antagonize_fail_text": null,
-"history_text": [
         null,
-        "r_c died before completing their medicine cat training from accidentally eating deathberries."
-]
-},
-{
-"patrol_id": "bch_med_gatheringrosemary1",
-"biome": "beach",
-"season": "Any",
-"tags": ["med_cat", "apprentice", "herb", "rosemary", "comfort", "trust", "no_change_fail", "injury", "thorn in their paw", "med_only"],
-"intro_text": "p_l has to attend to one of their grimmer jobs as a medicine cat. The grounds where c_n goes to mourn their dead need to be tended. They're bringing along app1 as their assistant for this trip.",
-"decline_text": "Just before the medicine cat can leave, a cat calls for their attention.",
-"chance_of_success": 60,
-"exp": 10,
-"success_text": [
-    "Even though there's nothing different about this place, other than the serenity it was chosen for, p_l always feels that the grief and love their Clanmates express here has seeped into every corner. They tidy the grounds, and collect rosemary. It's appropriate that the plant grows here, when its herbs are used to hide death-scent."
-],
-"fail_text":[
-    null,
-    null,
-    null,
-    "There's a sharp yowl of pain and a string of muttered curses following it. p_l turns around to see app1 holding one of their paws off the ground. It seems that the apprentice stepped on a thorn. Ouch! They'll have to go back to camp and fix that up."
-],
-"min_cats": 2,
-"max_cats": 2,
-"win_skills": null,
-"win_trait": ["None"],
-"antagonize_text": null,
-"antagonize_fail_text": null
-},
-{
-"patrol_id": "bch_med_gatheringrosemary2",
-"biome": "beach",
-"season": "Any",
-"tags": ["med_cat", "warrior", "herb", "rosemary", "comfort", "trust", "no_change_fail", "injury", "thorn in their paw"],
-"intro_text": "p_l has to attend to one of their grimmer jobs as a medicine cat. The grounds where c_n goes to mourn their dead need to be tended. They're bringing along r_c as their assistant for this trip.",
-"decline_text": "Just before the medicine cat can leave, a cat calls for their attention.",
-"chance_of_success": 60,
-"exp": 10,
-"success_text": [
-    "Even though there's nothing different about this place, other than the serenity it was chosen for, p_l always feels that the grief and love their Clanmates express here has seeped into every corner. They tidy the grounds, and collect rosemary. It's appropriate that the plant grows here, when its herbs are used to hide death-scent."
-],
-"fail_text":[
-    null,
-    null,
-    null,
-    "There's a sharp yowl of pain and a string of muttered curses following it. p_l turns around to see r_c holding one of their paws off the ground. It seems that the other cat stepped on a thorn. Ouch! They'll have to go back to camp and fix that up."
-],
-"min_cats": 2,
-"max_cats": 2,
-"win_skills": null,
-"win_trait": ["None"],
-"antagonize_text": null,
-"antagonize_fail_text": null
-},
+        "While plucking them from the bush, r_c feels one of the berries split in their mouth, and a horrible taste coats their tongue. These aren't raspberries. They rush to force themselves to throw up, and it works, expelling the deathberries from their system, but they're weak and shaky for the rest of the day."
+    ],
+    "win_skills": ["smart", "very smart", "extremely smart"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+    },
+    {
+    "patrol_id": "bch_med_gatheringraspberrysolo2",
+    "biome": "beach",
+    "season": "greenleaf",
+    "tags": ["herb", "raspberry", "no_herbs1", "med_cat", "apprentice", "injury", "poisoned", "death"],
+    "intro_text": "While gathering herbs, app1 stumbles upon a bush of red berries.",
+    "decline_text": "app1 decides not to touch the berries.",
+    "chance_of_success": 50,
+    "exp": 30,
+    "success_text": [
+        "app1 identifies them as raspberries, and carefully chews off a branch laden with them to bring back to camp. They can't quite remember what raspberries treat, but it's something to do with kitting.",
+        "These... could be deathberries. Might be raspberries. But maybe deathberries. It's not worth the risk, they can ask their mentor for more training about it later."
+    ],
+    "fail_text": [
+        "Confidently gathering them and prancing back to camp, app1 is then informed that they've gathered raspberries, not cranberries, and this isn't going to help the Clan's elders with their problems.",
+        null,
+        "app1 plucks the berries, several splitting in their mouth, and tries not to gag at the horrible taste - after all, all the herbs they're trying to learn taste horrible. As they start back to camp, they wobble a little. And then the world goes dark.",
+        "app1 carefully plucks the horrible tasting berries, and as soon as the taste hits their tongue, they realize they've made a terrible mistake. Gagging and throwing up and staggering, they crawl back to camp, weakly hoping their mentor will help them."
+    ],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            "r_c died before completing their medicine cat training, from accidentally eating deathberries."
+    ]
+    },
+    {
+    "patrol_id": "bch_med_gatheringraspberrysolo3",
+    "biome": "beach",
+    "season": "leaf-fall",
+    "tags": ["herb", "raspberry", "no_herbs1", "no_herbs2", "med_cat", "poisoned", "injury"],
+    "intro_text": "While gathering herbs, r_c spots a bush of red berries.",
+    "decline_text": "r_c decides not to touch the berries.",
+    "chance_of_success": 50,
+    "exp": 30,
+    "success_text": [
+        "r_c identifies them as raspberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit, especially it's leaves",
+        "r_c knows deathberries when they see them, and slips back to camp to report it to the leader - the warriors will need to be told to avoid this bush.",
+        "It takes little intelligence to recognise deathberries, but a great deal to collect them anyway. If s_c can dry them out, these berries will be sufficient for c_n for years to come. By using their weight to snap off a bush branch, and then carefully carrying it gingerly back to camp, s_c manages to bring them safely home."
+    ],
+    "fail_text": [
+        "While r_c thinks they're probably cranberries, they aren't confident enough with the identification to risk being wrong and plucking deathberries instead.",
+        null,
+        null,
+        "While plucking them from the bush, r_c feels one of the berries split in their mouth, and a horrible taste coats their tongue. These aren't raspberries. They rush to force themselves to throw up, and it works, expelling the deathberries from their system, but they're weak and shaky for the rest of the day."
+    ],
+    "win_skills": ["smart", "very smart", "extremely smart"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+    },
+    {
+    "patrol_id": "bch_med_gatheringraspberrysolo4",
+    "biome": "beach",
+    "season": "leaf-fall",
+    "tags": ["herb", "raspberry", "no_herbs1", "med_cat", "apprentice", "injury", "poisoned", "death"],
+    "intro_text": "While gathering herbs, app1 stumbles upon a bush of red berries.",
+    "decline_text": "app1 decides not to touch the berries.",
+    "chance_of_success": 50,
+    "exp": 30,
+    "success_text": [
+        "app1 identifies them as raspberries, and carefully chews off a branch laden with them to bring back to camp. They can't quite remember what raspberries treat, but it's something to do with kitting.",
+        "These... could be deathberries. Might be raspberries. But maybe deathberries. It's not worth the risk, they can ask their mentor for more training about it later."
+    ],
+    "fail_text": [
+        "Confidently gathering them and prancing back to camp, app1 is then informed that they've gathered raspberries, not cranberries, and this isn't going to help the Clan's elders with their problems.",
+        null,
+        "app1 plucks the berries, several splitting in their mouth, and tries not to gag at the horrible taste - after all, all the herbs they're trying to learn taste horrible. As they start back to camp, they wobble a little. And then the world goes dark.",
+        "app1 carefully plucks the horrible tasting berries, and as soon as the taste hits their tongue, they realize they've made a terrible mistake. Gagging, throwing up, and staggering, they crawl back to camp, weakly hoping their mentor will help them."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            "r_c died before completing their medicine cat training from accidentally eating deathberries."
+    ]
+    },
+    {
+    "patrol_id": "bch_med_gatheringrosemary1",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["med_cat", "apprentice", "herb", "rosemary", "comfort", "trust", "no_change_fail", "injury", "thorn in their paw", "med_only"],
+    "intro_text": "p_l has to attend to one of their grimmer jobs as a medicine cat. The grounds where c_n goes to mourn their dead need to be tended. They're bringing along app1 as their assistant for this trip.",
+    "decline_text": "Just before the medicine cat can leave, a cat calls for their attention.",
+    "chance_of_success": 60,
+    "exp": 10,
+    "success_text": [
+        "Even though there's nothing different about this place, other than the serenity it was chosen for, p_l always feels that the grief and love their Clanmates express here has seeped into every corner. They tidy the grounds, and collect rosemary. It's appropriate that the plant grows here, when its herbs are used to hide death-scent."
+    ],
+    "fail_text":[
+        null,
+        null,
+        null,
+        "There's a sharp yowl of pain and a string of muttered curses following it. p_l turns around to see app1 holding one of their paws off the ground. It seems that the apprentice stepped on a thorn. Ouch! They'll have to go back to camp and fix that up."
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "win_skills": null,
+    "win_trait": ["None"],
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+    },
+    {
+    "patrol_id": "bch_med_gatheringrosemary2",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["med_cat", "warrior", "herb", "rosemary", "comfort", "trust", "no_change_fail", "injury", "thorn in their paw"],
+    "intro_text": "p_l has to attend to one of their grimmer jobs as a medicine cat. The grounds where c_n goes to mourn their dead need to be tended. They're bringing along r_c as their assistant for this trip.",
+    "decline_text": "Just before the medicine cat can leave, a cat calls for their attention.",
+    "chance_of_success": 60,
+    "exp": 10,
+    "success_text": [
+        "Even though there's nothing different about this place, other than the serenity it was chosen for, p_l always feels that the grief and love their Clanmates express here has seeped into every corner. They tidy the grounds, and collect rosemary. It's appropriate that the plant grows here, when its herbs are used to hide death-scent."
+    ],
+    "fail_text":[
+        null,
+        null,
+        null,
+        "There's a sharp yowl of pain and a string of muttered curses following it. p_l turns around to see r_c holding one of their paws off the ground. It seems that the other cat stepped on a thorn. Ouch! They'll have to go back to camp and fix that up."
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "win_skills": null,
+    "win_trait": ["None"],
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+    },
 {
     "patrol_id": "bch_med_gatheringtansy_newleaf1",
     "biome": "beach",
@@ -6000,7 +6000,7 @@
             "s_c, ever eagle-eyed, spots grass that looks suspiciously tall with oddly thick blades. One sniff confirms it as wild garlic, and the patch has heaps for their patrol to harvest."
     ],
     "fail_text": [
-            "Try as they might, p_l can't quite remember the exact shape of the tansy leaves, and isn't going to harvest from plants they haven't confidently identified."
+            "Try as they might, p_l can't quite remember the exact shape of the garlic leaves, and isn't going to harvest from plants they haven't confidently identified."
     ],
     "win_skills": ["keen eye"],
     "win_trait": ["None"],
@@ -6026,7 +6026,7 @@
             "s_c, ever eagle-eyed, spots grass that looks suspiciously tall with oddly thick blades. One sniff confirms it as wild garlic, and the patch has heaps to harvest."
 ],
     "fail_text": [
-            "Try as they might, p_l can't quite remember the exact shape of the tansy leaves, and isn't going to harvest from plants they haven't confidently identified."
+            "Try as they might, p_l can't quite remember the exact shape of the garlic leaves, and isn't going to harvest from plants they haven't confidently identified."
     ],
     "win_skills": ["keen eye"],
     "win_trait": ["None"],
@@ -6052,7 +6052,7 @@
             "s_c, ever eagle-eyed, spots grass that looks suspiciously tall with oddly thick blades. One sniff confirms it as wild garlic, and the patch has heaps to harvest with app1."
 ],
     "fail_text": [
-            "Try as they might, p_l can't quite remember the exact shape of the tansy leaves, and isn't going to harvest from plants they haven't confidently identified."
+            "Try as they might, p_l can't quite remember the exact shape of the garlic leaves, and isn't going to harvest from plants they haven't confidently identified."
     ],
     "win_skills": ["keen eye"],
     "win_trait": ["None"],
@@ -6078,7 +6078,7 @@
             "s_c, ever eagle-eyed, spots grass that looks suspiciously tall with oddly thick blades. One sniff confirms it as wild garlic, and the patch has heaps for their patrol to harvest."
     ],
     "fail_text": [
-            "Try as they might, p_l can't quite remember the exact shape of the tansy leaves, and isn't going to harvest from plants they haven't confidently identified."
+            "Try as they might, p_l can't quite remember the exact shape of the garlic leaves, and isn't going to harvest from plants they haven't confidently identified."
     ],
     "win_skills": ["keen eye"],
     "win_trait": ["None"],
