@@ -10,7 +10,7 @@ from scripts.cat.sprites import *
 from scripts.cat.pelts import *
 from scripts.game_structure.game_essentials import *
 
-def get_alive_queens(all_cats):
+def get_alive_clan_queens(all_cats):
 	"""Returns a list with all cats with the 'status' queen."""
 	queens = []
 	for inter_cat in all_cats.values():
@@ -25,11 +25,12 @@ def get_alive_queens(all_cats):
 			parent_2 = all_cats[inter_cat.parent2]
 
 		if parent_1.gender == 'male':
-			if (parent_2 is None or parent_2.gender == 'male') and not parent_1.dead:
+			if (parent_2 is None or parent_2.gender == 'male') and\
+				not parent_1.dead and not parent_1.exiled and not parent_1.outside:
 				queens.append(parent_1)
-			elif parent_2 and not parent_2.dead:
+			elif parent_2 and not parent_2.dead and not parent_2.exiled and not parent_2.outside:
 				queens.append(parent_2)
-		elif not parent_1.dead:
+		elif not parent_1.dead and not parent_1.dead and not parent_1.exiled and not parent_1.outside:
 			queens.append(parent_1)
 	return queens
 
@@ -298,7 +299,7 @@ def change_relationship_values(cats_to,
 def event_text_adjust(Cat, text, cat, other_cat=None, other_clan_name=None, keep_m_c=False):
     danger = ["a rogue", "a dog", "a fox", "an otter", "a rat", "a hawk", "an enemy warrior", "a badger"]
     tail_danger = ["a rogue", "a dog", "a fox", "an otter", "a rat", "a hawk",
-                   "an enemy warrior", "a badger", "a twoleg trap"]
+                   "an enemy warrior", "a badger", "a Twoleg trap"]
 
     danger_choice = choice(danger)
     tail_choice = choice(tail_danger)

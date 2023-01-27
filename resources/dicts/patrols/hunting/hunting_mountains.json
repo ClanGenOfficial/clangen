@@ -1715,7 +1715,7 @@
             "medium_prey2",
             "large_prey3"
         ],
-        "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something, anything, for the freshkill pile.",
+        "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something, anything, for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the snow dies down.",
         "chance_of_success": 50,
         "exp": 10,
@@ -1771,14 +1771,14 @@
             "medium_prey1",
             "medium_prey2"
         ],
-        "intro_text": "It starts snowing soon after r_c sets out, trying to bring back something, anything, for the freshkill pile.",
+        "intro_text": "It starts snowing soon after r_c sets out, trying to bring back something, anything, for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the snow dies down.",
         "chance_of_success": 40,
         "exp": 10,
         "success_text": [
             "Despite the snow, r_c manages to hunt successfully, finding a mouse in the foothills. Only one, but in this season, that's more than enough to count as a success.",
             null,
-            "s_c really shows their talent, bringing a clutch of mice back to camp for the freshkill pile."
+            "s_c really shows their talent, bringing a clutch of mice back to camp for the fresh-kill pile."
         ],
         "fail_text": [
             null,
@@ -1825,7 +1825,7 @@
             "scar",
             "death"
         ],
-        "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something, anything, for the freshkill pile.",
+        "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something, anything, for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the snow dies down.",
         "chance_of_success": 50,
         "exp": 10,
@@ -1885,7 +1885,7 @@
             "medium_prey2",
             "large_prey3"
         ],
-        "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something for the freshkill pile.",
+        "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the snow dies down.",
         "chance_of_success": 70,
         "exp": 20,
@@ -1939,14 +1939,14 @@
             "small_prey1",
             "medium_prey2"
         ],
-        "intro_text": "It starts snowing soon after r_c sets out, trying to bring back something for the freshkill pile.",
+        "intro_text": "It starts snowing soon after r_c sets out, trying to bring back something for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the snow dies down.",
         "chance_of_success": 60,
         "exp": 20,
         "success_text": [
             "Despite the snow, r_c manages to hunt successfully, ambushing a blackbird as it feast on leaf-fall berries.",
             null,
-            "s_c really shows their talent, bringing a clutch of mice back to camp for the freshkill pile."
+            "s_c really shows their talent, bringing a clutch of mice back to camp for the fresh-kill pile."
         ],
         "fail_text": [
             "The prey must be hiding; r_c catches nothing. Curled up in a sheltered tunnel, they let the storm pass them by outside.",
@@ -1991,7 +1991,7 @@
             "cold_injury",
             "scar"
         ],
-        "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something for the freshkill pile.",
+        "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the snow dies down.",
         "chance_of_success": 70,
         "exp": 10,
@@ -2050,7 +2050,7 @@
             "medium_prey2",
             "large_prey3"
         ],
-        "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something for the freshkill pile.",
+        "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the snow dies down.",
         "chance_of_success": 70,
         "exp": 20,
@@ -2104,14 +2104,14 @@
             "medium_prey1",
             "medium_prey2"
         ],
-        "intro_text": "It starts snowing soon after r_c sets out, trying to bring back something for the freshkill pile.",
+        "intro_text": "It starts snowing soon after r_c sets out, trying to bring back something for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the snow dies down.",
         "chance_of_success": 60,
         "exp": 20,
         "success_text": [
             "Despite the snow, r_c manages to hunt successfully, finding the scraps of a dead squirrel emerging from the ice of leaf-bare as the thaw of newleaf wins the eternal battle of the seasons.",
             null,
-            "s_c really shows their talent, bringing a clutch of mice back to camp for the freshkill pile."
+            "s_c really shows their talent, bringing a clutch of mice back to camp for the fresh-kill pile."
         ],
         "fail_text": [
             "The prey must be hiding; r_c catches nothing. Curled up in a sheltered tunnel, they let the storm pass them by outside.",
@@ -2156,7 +2156,7 @@
             "big_change",
             "scar"
         ],
-        "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something for the freshkill pile.",
+        "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the snow dies down.",
         "chance_of_success": 70,
         "exp": 10,

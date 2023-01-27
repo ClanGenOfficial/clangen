@@ -17,54 +17,56 @@ class Screens():
     # menu buttons are used very often, so they are generated here.
     menu_buttons = {
         "events_screen": UIImageButton(
-            pygame.Rect((246, 60), (82, 30)),
+            pygame.Rect((492, 120), (164, 60)),
             "",
             visible=False,
             object_id="#events_menu_button"
         ),
         "clan_screen": UIImageButton(
-            pygame.Rect((328, 60), (58, 30)),
+            pygame.Rect((656, 120), (116, 60)),
             "",
             visible=False,
             object_id="#clan_menu_button"),
         "starclan_screen": UIImageButton(
-            pygame.Rect((386, 60), (88, 30)),
+            pygame.Rect((772, 120), (176, 60)),
             "",
             visible=False,
             object_id="#starclan_menu_button"),
         "patrol_screen": UIImageButton(
-            pygame.Rect((474, 60), (80, 30)),
+            pygame.Rect((948, 120), (160, 60)),
             "",
             visible=False,
             object_id="#patrol_menu_button"),
         "main_menu": UIImageButton(
-            pygame.Rect((25, 25), (153, 30)),
+            pygame.Rect((50, 50), (306, 60)),
             "",
             visible=False,
             object_id="#main_menu_button"),
         "list_screen": UIImageButton(
-            pygame.Rect((676, 60), (99, 30)),
+            pygame.Rect((1352, 120), (198, 60)),
             "",
             visible=False,
             object_id="#list_button"),
         "allegiances": UIImageButton(
-            pygame.Rect((657, 25), (118, 30)),
+            pygame.Rect((1314, 50), (236, 60)),
             "",
             visible=False,
             object_id="#allegiances_button"),
         "stats": UIImageButton(
-            pygame.Rect((25, 60), (81, 30)),
+            pygame.Rect((50, 120), (162, 60)),
             "",
             visible=False,
             object_id="#stats_button"),
         "name_background": pygame_gui.elements.UIImage(
-            pygame.Rect((310, 25), (180, 35)),
-            image_cache.load_image(
-                "resources/images/clan_name_bg.png").convert_alpha(),
+            pygame.Rect((620, 50), (360, 70)),
+            pygame.transform.scale(
+                image_cache.load_image(
+                    "resources/images/clan_name_bg.png").convert_alpha(),
+                (360, 70)),
             visible=False),
         "heading": pygame_gui.elements.UITextBox(
             "",
-            pygame.Rect((310, 27), (180, 35)),
+            pygame.Rect((620, 54), (360, 70)),
             visible=False,
             object_id="#menu_header_text_box")
     }
