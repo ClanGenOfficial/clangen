@@ -18,6 +18,41 @@ screen_y = 1400
 screen = pygame.display.set_mode((screen_x, screen_y), pygame.FULLSCREEN|pygame.SCALED)
 pygame.display.set_caption('Clan Generator')
 
+pygame.init()
+
+def load_manager(res: tuple):
+    # initialize pygame_gui manager, and load themes
+    manager = pygame_gui.ui_manager.UIManager((1600, 1400), 'resources/defaults.json')
+    manager.add_font_paths(
+        font_name='notosans',
+        regular_path='resources/fonts/NotoSans-Medium.ttf',
+        bold_path='resources/fonts/NotoSans-ExtraBold.ttf',
+        italic_path='resources/fonts/NotoSans-MediumItalic.ttf',
+        bold_italic_path='resources/fonts/NotoSans-ExtraBoldItalic.ttf'
+    )
+    manager.preload_fonts([
+        {'name': 'notosans', 'point_size': 30, 'style': 'regular'},
+        {'name': 'notosans', 'point_size': 30, 'style': 'bold'},
+        {'name': 'notosans', 'point_size': 30, 'style': 'italic'},
+        {'name': 'notosans', 'point_size': 30, 'style': 'bold_italic'},
+        {'name': 'notosans', 'point_size': 32, 'style': 'regular'},
+        {'name': 'notosans', 'point_size': 32, 'style': 'bold'},
+        {'name': 'notosans', 'point_size': 32, 'style': 'italic'},
+        {'name': 'notosans', 'point_size': 32, 'style': 'bold_italic'},
+    ])
+    manager.get_theme().load_theme('resources/buttons.json')
+    manager.get_theme().load_theme('resources/text_boxes.json')
+    manager.get_theme().load_theme('resources/text_boxes_dark.json')
+    manager.get_theme().load_theme('resources/vertical_scroll_bar.json')
+    manager.get_theme().load_theme('resources/windows.json')
+    manager.get_theme().load_theme('resources/tool_tips.json')
+
+    return manager
+
+
+MANAGER = load_manager((screen_x, screen_y))
+
+
 # G A M E
 class Game():
     max_name_length = 10

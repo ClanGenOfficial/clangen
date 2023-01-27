@@ -59,24 +59,24 @@ class StartScreen(Screens):
         # Create buttons
 
         self.continue_button = UIImageButton(pygame.Rect((140, 620), (384, 70)), "",
-                                             object_id="#continue_button")
+                                             object_id="#continue_button", manager=MANAGER)
         self.switch_clan_button = UIImageButton(pygame.Rect((140, 710), (384, 70)), "",
-                                                object_id="#switch_clan_button")
+                                                object_id="#switch_clan_button", manager=MANAGER)
         self.new_clan_button = UIImageButton(pygame.Rect((140, 800), (384, 70)), "",
-                                             object_id="#new_clan_button")
+                                             object_id="#new_clan_button", manager=MANAGER)
         self.settings_button = UIImageButton(pygame.Rect((140, 890), (384, 70)), "",
-                                             object_id="#settings_button")
+                                             object_id="#settings_button", manager=MANAGER)
         self.quit = UIImageButton(pygame.Rect((140, 980), (384, 70)), "",
-                                             object_id="#quit_button")
+                                             object_id="#quit_button", manager=MANAGER)
 
         self.error_label = pygame_gui.elements.UILabel(pygame.Rect(100, 100, 1400, -1), "",
-                                                       object_id="#save_text_box")
+                                                       object_id="#save_text_box", manager=MANAGER)
         self.error_label.hide()
 
         self.warning_label = pygame_gui.elements.UITextBox(
             "Warning: this game includes some mild descriptions of gore.",
             pygame.Rect((100, 1244), (1400, 60)),
-            object_id="#default_dark"
+            object_id="#default_dark", manager=MANAGER
         )
 
         if game.clan is not None and game.switches['error_message'] == '':
@@ -134,13 +134,13 @@ class SwitchClanScreen(Screens):
         self.screen = pygame.transform.scale(pygame.image.load("resources/images/clan_saves_frame.png").convert_alpha(),
                                              (440, 750))
         self.main_menu = UIImageButton(pygame.Rect((50, 50), (306, 60)), "",
-                                       object_id="#main_menu_button")
+                                       object_id="#main_menu_button", manager=MANAGER)
         self.info = pygame_gui.elements.UITextBox(
             'Note: This will close the game.\n When you open it next, it should have the new clan.',
-            pygame.Rect((200, 1080), (1200, 140)), object_id=get_text_box_theme())
+            pygame.Rect((200, 1080), (1200, 140)), object_id=get_text_box_theme(), manager=MANAGER)
 
         self.current_clan = pygame_gui.elements.UITextBox("", pygame.Rect((200, 200), (1200, 140)),
-                                                          object_id=get_text_box_theme())
+                                                          object_id=get_text_box_theme(), manager=MANAGER)
         if game.clan:
             self.current_clan.set_text(f"The currently loaded clan is {game.clan.name}Clan")
         else:
@@ -155,7 +155,7 @@ class SwitchClanScreen(Screens):
         for clan in self.clan_list[1:]:
             self.clan_name.append(clan)
             self.clan_buttons.append(pygame_gui.elements.UIButton(pygame.Rect((600, y_pos), (400, 78)), clan + "Clan",
-                                                                  object_id="#saved_clan"))
+                                                                  object_id="#saved_clan", manager=MANAGER))
             y_pos += 82
             i += 1
             if i >= 7:
@@ -374,18 +374,18 @@ class SettingsScreen(Screens):
     def screen_switches(self):
         self.settings_changed = False
         self.general_settings_button = UIImageButton(pygame.Rect((200, 200), (300, 60)),
-                                                     "", object_id="#general_settings_button")
+                                                     "", object_id="#general_settings_button", manager=MANAGER)
         self.relation_settings_button = UIImageButton(pygame.Rect((500, 200), (300, 60)),
-                                                      "", object_id="#relation_settings_button")
+                                                      "", object_id="#relation_settings_button", manager=MANAGER)
         self.info_button = UIImageButton(pygame.Rect((800, 200), (300, 60)),
-                                         "", object_id="#info_settings_button")
+                                         "", object_id="#info_settings_button", manager=MANAGER)
         self.language_button = UIImageButton(pygame.Rect((1100, 200), (300, 60)),
-                                             "", object_id="#lang_settings_button")
+                                             "", object_id="#lang_settings_button", manager=MANAGER)
         self.save_settings_button = UIImageButton(pygame.Rect((654, 1100), (292, 60)),
-                                                  "", object_id="#save_settings_button")
+                                                  "", object_id="#save_settings_button", manager=MANAGER)
         self.update_save_button()
         self.main_menu_button = UIImageButton(pygame.Rect((50, 50), (305, 60)),
-                                              "", object_id="#main_menu_button")
+                                              "", object_id="#main_menu_button", manager=MANAGER)
         self.sub_menu = 'general'
         self.open_general_settings()
 
@@ -432,56 +432,57 @@ class SettingsScreen(Screens):
         n = 0
 
         self.checkboxes_text["container"] = pygame_gui.elements.UIScrollingContainer(pygame.Rect((0, 440),
-                                                                                                 (1400, 600)))
+                                                                                                 (1400, 600)),
+                                                                                     manager=MANAGER)
 
         self.checkboxes_text['dark mode'] = pygame_gui.elements.UITextBox(
             "Dark Mode", pygame.Rect((x_value, n * y_spacing), (1000, 78)),
             container= self.checkboxes_text["container"],
-            object_id=get_text_box_theme("#setting_text_box"),
+            object_id=get_text_box_theme("#setting_text_box"), manager=MANAGER
         )
         n += 1
         self.checkboxes_text['backgrounds'] = pygame_gui.elements.UITextBox(
             "Enable Clan page background", pygame.Rect((x_value, n * y_spacing), (1000, 78)),
             container=self.checkboxes_text["container"],
-            object_id=get_text_box_theme("#setting_text_box")
+            object_id=get_text_box_theme("#setting_text_box"), manager=MANAGER
         )
         n += 1
         self.checkboxes_text['autosave'] = pygame_gui.elements.UITextBox(
             "Automatically save every five moons", pygame.Rect((x_value, n * y_spacing), (1000, 78)),
             container=self.checkboxes_text["container"],
-            object_id=get_text_box_theme("#setting_text_box")
+            object_id=get_text_box_theme("#setting_text_box"), manager=MANAGER
         )
         n += 1
         self.checkboxes_text['disasters'] = pygame_gui.elements.UITextBox(
             "Allow mass extinction events", pygame.Rect((x_value, n * y_spacing), (1000, 78)),
             container=self.checkboxes_text["container"],
-            object_id=get_text_box_theme("#setting_text_box")
+            object_id=get_text_box_theme("#setting_text_box"), manager=MANAGER
         )
         n += 1
         self.checkboxes_text['retirement'] = pygame_gui.elements.UITextBox(
             "Cats will never retire due to a permanent condition", pygame.Rect((x_value, n * y_spacing), (1000, 78)),
             container=self.checkboxes_text["container"],
-            object_id=get_text_box_theme("#setting_text_box")
+            object_id=get_text_box_theme("#setting_text_box"), manager=MANAGER
         )
         n += 1
         self.checkboxes_text['shaders'] = pygame_gui.elements.UITextBox(
             "Enable Shaders", pygame.Rect((x_value, n * y_spacing), (1000, 78)),
             container=self.checkboxes_text["container"],
-            object_id=get_text_box_theme("#setting_text_box")
+            object_id=get_text_box_theme("#setting_text_box"), manager=MANAGER
         )
         n += 1
         self.checkboxes_text['hotkey display'] = pygame_gui.elements.UITextBox(
             "Display hotkeys on text buttons -- NOT IMPLEMENTED",
             pygame.Rect((x_value, n * y_spacing), (1000, 78)),
             container=self.checkboxes_text["container"],
-            object_id=get_text_box_theme("#setting_text_box")
+            object_id=get_text_box_theme("#setting_text_box"), manager=MANAGER
         )
         n += 1
         self.checkboxes_text['deputy'] = pygame_gui.elements.UITextBox(
             "Allow leaders to automatically choose a new deputy",
             pygame.Rect((x_value, n * y_spacing), (1000, 78)),
             container=self.checkboxes_text["container"],
-            object_id=get_text_box_theme("#setting_text_box")
+            object_id=get_text_box_theme("#setting_text_box"), manager=MANAGER
         )
 
         n += 1
@@ -489,7 +490,7 @@ class SettingsScreen(Screens):
             "Allow dead cats to fade away",
             pygame.Rect((x_value, n * y_spacing), (1000, 78)),
             container=self.checkboxes_text["container"],
-            object_id=get_text_box_theme("#setting_text_box")
+            object_id=get_text_box_theme("#setting_text_box"), manager=MANAGER
         )
 
         n += 1
@@ -497,7 +498,7 @@ class SettingsScreen(Screens):
             "Save a complete copy of faded cats information",
             pygame.Rect((x_value, n * y_spacing), (1000, 78)),
             container=self.checkboxes_text["container"],
-            object_id=get_text_box_theme("#setting_text_box")
+            object_id=get_text_box_theme("#setting_text_box"), manager=MANAGER
         )
 
         n += 1
@@ -505,7 +506,7 @@ class SettingsScreen(Screens):
             "Allow warriors and elders to choose to become mediators",
             pygame.Rect((x_value, n * y_spacing), (1000, 78)),
             container=self.checkboxes_text["container"],
-            object_id=get_text_box_theme("#setting_text_box")
+            object_id=get_text_box_theme("#setting_text_box"), manager=MANAGER
         )
 
         # This makes sure scrolling works properly.
@@ -517,7 +518,7 @@ class SettingsScreen(Screens):
 
         self.checkboxes_text['instr'] = pygame_gui.elements.UITextBox(
             "Change the general settings of your game here", pygame.Rect((200, 320), (1200, 100)),
-            object_id=get_text_box_theme())
+            object_id=get_text_box_theme(), manager=MANAGER)
 
         # This is where the acual checkboxes are created. I don't like
         #   how this is seperated from the text boxes, but I've spent too much time to rewrite it. 
@@ -538,35 +539,35 @@ class SettingsScreen(Screens):
         self.checkboxes_text['random relation'] = pygame_gui.elements.UITextBox(
             "Randomize relationship values when creating clan",
             pygame.Rect((x_value, 440), (1000, 100)),
-            object_id=get_text_box_theme("#setting_text_box")
+            object_id=get_text_box_theme("#setting_text_box"), manager=MANAGER
         )
         self.checkboxes_text['affair'] = pygame_gui.elements.UITextBox(
             "Allow affairs and mate switches based on relationships",
             pygame.Rect((x_value, 518), (1000, 100)),
-            object_id=get_text_box_theme("#setting_text_box")
+            object_id=get_text_box_theme("#setting_text_box"), manager=MANAGER
         )
         self.checkboxes_text['no gendered breeding'] = pygame_gui.elements.UITextBox(
             "Allow couples to birth kittens despite same-sex status",
             pygame.Rect((x_value, 596), (1200, 100)),
-            object_id=get_text_box_theme("#setting_text_box")
+            object_id=get_text_box_theme("#setting_text_box"), manager=MANAGER
         )
         self.checkboxes_text['no unknown fathers'] = pygame_gui.elements.UITextBox(
             "Allow unmated cats to have offspring.",
             pygame.Rect((x_value, 674), (1000, 100)),
-            object_id=get_text_box_theme("#setting_text_box")
+            object_id=get_text_box_theme("#setting_text_box"), manager=MANAGER
         )
         self.checkboxes_text['romantic with former mentor'] = pygame_gui.elements.UITextBox(
             "Allow romantic interactions with former apprentices/mentor",
-            pygame.Rect((x_value, 752), (1000, 100)), object_id=get_text_box_theme("#setting_text_box")
+            pygame.Rect((x_value, 752), (1000, 100)), object_id=get_text_box_theme("#setting_text_box"), manager=MANAGER
         )
         self.checkboxes_text['first_cousin_mates'] = pygame_gui.elements.UITextBox(
             "Allow first cousins to become mates/have romantic interactions",
-            pygame.Rect((x_value, 830), (1000, 100)), object_id=get_text_box_theme("#setting_text_box")
+            pygame.Rect((x_value, 830), (1000, 100)), object_id=get_text_box_theme("#setting_text_box"), manager=MANAGER
         )
 
         self.checkboxes_text['instr'] = pygame_gui.elements.UITextBox(
             "Change the relationship settings of your game here",
-            pygame.Rect((200, 320), (1200, 100)), object_id=get_text_box_theme())
+            pygame.Rect((200, 320), (1200, 100)), object_id=get_text_box_theme(), manager=MANAGER)
 
         self.refresh_checkboxes()
 
@@ -580,7 +581,8 @@ class SettingsScreen(Screens):
 
         self.checkboxes_text['info_text_box'] = pygame_gui.elements.UITextBox(self.info_text,
                                                                               pygame.Rect((200, 300), (1200, 1000)),
-                                                                              object_id=get_text_box_theme())
+                                                                              object_id=get_text_box_theme(),
+                                                                              manager=MANAGER)
 
     def open_lang_settings(self):
         """Open Language Settings"""
@@ -592,7 +594,7 @@ class SettingsScreen(Screens):
 
         self.checkboxes_text['instr'] = pygame_gui.elements.UITextBox(
             "Change the languange of the game here. This has not been implemented yet.",
-            pygame.Rect((200, 320), (1200, 100)), object_id=get_text_box_theme())
+            pygame.Rect((200, 320), (1200, 100)), object_id=get_text_box_theme(), manager=MANAGER)
 
         self.refresh_checkboxes()
 
@@ -618,7 +620,7 @@ class SettingsScreen(Screens):
                 pygame.Rect((x_value, n * y_spacing), (68, 68)),
                 "",
                 object_id=box_type,
-                container=self.checkboxes_text["container"],
+                container=self.checkboxes_text["container"], manager=MANAGER,
                 tool_tip_text='Camp backgrounds will match with the mode: '
                               'nighttime for Dark mode and daytime for Light mode.'
             )
@@ -632,7 +634,7 @@ class SettingsScreen(Screens):
                 pygame.Rect((x_value, n * y_spacing), (68, 68)),
                 "",
                 object_id=box_type,
-                container=self.checkboxes_text["container"],
+                container=self.checkboxes_text["container"], manager=MANAGER,
                 tool_tip_text='Even with this off, the camp you choose will still affect the events you encounter.'
             )
 
@@ -645,7 +647,7 @@ class SettingsScreen(Screens):
             self.checkboxes['autosave'] = UIImageButton(
                 pygame.Rect((x_value, n * y_spacing), (68, 68)),
                 "",
-                container=self.checkboxes_text["container"],
+                container=self.checkboxes_text["container"], manager=MANAGER,
                 object_id=box_type
             )
 
@@ -659,7 +661,7 @@ class SettingsScreen(Screens):
                 (pygame.Rect((x_value, n * y_spacing), (68, 68)),
                  "",
                  object_id=box_type,
-                 container=self.checkboxes_text["container"],
+                 container=self.checkboxes_text["container"], manager=MANAGER,
                  tool_tip_text='This may result in up to 1/3rd of your Clan dying in one moon.'
                  )
 
@@ -673,7 +675,7 @@ class SettingsScreen(Screens):
                 pygame.Rect((x_value, n * y_spacing), (68, 68)),
                 "",
                 object_id=box_type,
-                container=self.checkboxes_text["container"],
+                container=self.checkboxes_text["container"], manager=MANAGER,
                 tool_tip_text='When this setting is off, cats with permanent conditions will choose whether or not '
                               'they want to retire. '
             )
@@ -688,7 +690,7 @@ class SettingsScreen(Screens):
                 pygame.Rect((x_value, n * y_spacing), (68, 68)),
                 "",
                 object_id=box_type,
-                container=self.checkboxes_text["container"],
+                container=self.checkboxes_text["container"], manager=MANAGER,
                 tool_tip_text='This will add a shading layer onto the cat sprites.'
             )
 
@@ -701,7 +703,7 @@ class SettingsScreen(Screens):
             self.checkboxes['hotkey display'] = UIImageButton(
                 pygame.Rect((x_value, n * y_spacing), (68, 68)),
                 "",
-                container=self.checkboxes_text["container"],
+                container=self.checkboxes_text["container"], manager=MANAGER,
                 object_id=box_type,
             )
 
@@ -715,7 +717,7 @@ class SettingsScreen(Screens):
                 pygame.Rect((x_value, n * y_spacing), (68, 68)),
                 "",
                 object_id=box_type,
-                container=self.checkboxes_text["container"],
+                container=self.checkboxes_text["container"], manager=MANAGER,
                 tool_tip_text="The warrior code rules will be taken into account when choosing a deputy."
             )
 
@@ -729,7 +731,7 @@ class SettingsScreen(Screens):
                 pygame.Rect((x_value, n * y_spacing), (68, 68)),
                 "",
                 object_id=box_type,
-                container=self.checkboxes_text["container"],
+                container=self.checkboxes_text["container"], manager=MANAGER,
                 tool_tip_text="After 302 moons, dead cats will be unloaded, and saved separately. "
                               "No family relations will be lost."
             )
@@ -744,7 +746,7 @@ class SettingsScreen(Screens):
                 pygame.Rect((x_value, n * y_spacing), (68, 68)),
                 "",
                 object_id=box_type,
-                container=self.checkboxes_text["container"],
+                container=self.checkboxes_text["container"], manager=MANAGER,
                 tool_tip_text="A complete copy of faded cat save info will be saved in plain-text."
             )
 
@@ -758,7 +760,7 @@ class SettingsScreen(Screens):
                 pygame.Rect((x_value, n * y_spacing), (68, 68)),
                 "",
                 object_id=box_type,
-                container=self.checkboxes_text["container"],
+                container=self.checkboxes_text["container"], manager=MANAGER,
                 tool_tip_text="Warriors and elders will have a chance to become mediators upon timeskip."
             )
 
@@ -773,7 +775,7 @@ class SettingsScreen(Screens):
             self.checkboxes['random relation'] = UIImageButton(
                 pygame.Rect((x_value, 440), (68, 68)),
                 "",
-                object_id=box_type,
+                object_id=box_type, manager=MANAGER,
                 tool_tip_text="Clan founder cats will start the game with established relationships."
             )
             # Allow affairs and mate switches based on relationship
@@ -784,7 +786,7 @@ class SettingsScreen(Screens):
             self.checkboxes['affair'] = UIImageButton(
                 pygame.Rect((x_value, 518), (68, 68)),
                 "",
-                object_id=box_type,
+                object_id=box_type, manager=MANAGER,
                 tool_tip_text="Cats may have kits before mating regardless of the Un-mated Cat Offspring setting."
             )
 
@@ -796,7 +798,7 @@ class SettingsScreen(Screens):
             self.checkboxes['no gendered breeding'] = UIImageButton(
                 pygame.Rect((x_value, 596), (68, 68)),
                 "",
-                object_id=box_type,
+                object_id=box_type, manager=MANAGER,
                 tool_tip_text="A cat's biological sex will no longer be a constraining factor for pregnancies."
             )
             # Allow unmated cats to have offspring
@@ -807,7 +809,7 @@ class SettingsScreen(Screens):
             self.checkboxes['no unknown fathers'] = UIImageButton(
                 pygame.Rect((x_value, 674), (68, 68)),
                 "",
-                object_id=box_type,
+                object_id=box_type, manager=MANAGER,
                 tool_tip_text="This setting will not affect the Affairs setting."
             )
             # Allow romantic interactions with former apprentices/mentor
@@ -816,24 +818,24 @@ class SettingsScreen(Screens):
             else:
                 box_type = "#unchecked_checkbox"
             self.checkboxes['romantic with former mentor'] = UIImageButton(pygame.Rect((x_value, 752), (68, 68)), "",
-                                                                           object_id=box_type)
+                                                                           object_id=box_type, manager=MANAGER)
             # Allow romantic interations with first cousins:
             if game.settings['first_cousin_mates']:
                 box_type = "#checked_checkbox"
             else:
                 box_type = "#unchecked_checkbox"
             self.checkboxes['first_cousin_mates'] = UIImageButton(pygame.Rect((x_value, 830), (68, 68)), "",
-                                                                           object_id=box_type)
+                                                                           object_id=box_type, manager=MANAGER)
 
 
         # CHECKBOXES (ehhh) FOR LANGUAGES
         elif self.sub_menu == 'language':
             self.checkboxes['english'] = UIImageButton(pygame.Rect((620, 400), (360, 102)), "",
-                                                       object_id="#english_lang_button")
+                                                       object_id="#english_lang_button", manager=MANAGER)
             self.checkboxes['spanish'] = UIImageButton(pygame.Rect((620, 502), (360, 74)), "",
-                                                       object_id="#spanish_lang_button")
+                                                       object_id="#spanish_lang_button", manager=MANAGER)
             self.checkboxes['german'] = UIImageButton(pygame.Rect((620, 576), (360, 74)), "",
-                                                      object_id="#german_lang_button")
+                                                      object_id="#german_lang_button", manager=MANAGER)
 
             if game.settings['language'] == 'english':
                 self.checkboxes['english'].disable()
@@ -900,7 +902,7 @@ class StatsScreen(Screens):
                      "Number of Dead Cats: " + str(starclan_num)
 
         self.stats_box = pygame_gui.elements.UITextBox(stats_text, pygame.Rect((200, 300), (1200, 1000)),
-                                                       self.update_heading_text(f'{game.clan.name}Clan'),
+                                                       manager=MANAGER,
                                                        object_id=get_text_box_theme())
 
     def exit_screen(self):

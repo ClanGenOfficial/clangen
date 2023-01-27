@@ -115,17 +115,17 @@ class OutsideClanScreen(Screens):
         self.get_living_cats()
 
         self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((642, 284), (294, 46)),
-                                                              object_id="#search_entry_box")
+                                                              object_id="#search_entry_box", manager=MANAGER)
 
         self.your_clan_button = UIImageButton(pygame.Rect((230, 270), (68, 68)), "", object_id="#your_clan_button")
         self.outside_clan_button = UIImageButton(pygame.Rect((298, 270), (68, 68)), "",
-                                                 object_id="#outside_clan_button")
+                                                 object_id="#outside_clan_button", manager=MANAGER)
         self.outside_clan_button.disable()
         self.next_page_button = UIImageButton(pygame.Rect((912, 1190), (68, 68)), "", object_id="#arrow_right_button")
         self.previous_page_button = UIImageButton(pygame.Rect((620, 1190), (68, 68)), "",
-                                                  object_id="#arrow_left_button")
+                                                  object_id="#arrow_left_button", manager=MANAGER)
         self.page_number = pygame_gui.elements.UITextBox("", pygame.Rect((680, 1190), (220, 60)),
-                                                         object_id=get_text_box_theme())  # Text will be filled in later
+                                                         object_id=get_text_box_theme(), manager=MANAGER)  # Text will be filled in later
 
         self.set_disabled_menu_buttons(["list_screen"])
         self.update_heading_text('<font size=6.5>Cats Outside The Clan</font>')
@@ -138,12 +138,12 @@ class OutsideClanScreen(Screens):
             pygame.Rect((x_pos, y_pos), (196, 68)),
             "",
             object_id="#filter_by_closed_button",
-            tool_tip_text="By default, cats are sorted by rank."
+            tool_tip_text="By default, cats are sorted by rank.", manager=MANAGER
         )
         self.filter_by_open = UIImageButton(
             pygame.Rect((x_pos, y_pos), (196, 68)),
             "",
-            object_id="#filter_by_open_button",
+            object_id="#filter_by_open_button", manager=MANAGER
         )
         self.filter_by_open.hide()
         y_pos += 68
@@ -152,7 +152,7 @@ class OutsideClanScreen(Screens):
             pygame.Rect((x_pos - 2, y_pos), (204, 58)),
             "",
             object_id="#filter_rank_button",
-            starting_height=2
+            starting_height=2, manager=MANAGER
         )
         self.filter_rank.hide()
         y_pos += 58
@@ -160,7 +160,7 @@ class OutsideClanScreen(Screens):
             pygame.Rect((x_pos - 2, y_pos), (204, 58)),
             "",
             object_id="#filter_age_button",
-            starting_height=2
+            starting_height=2, manager=MANAGER
         )
         self.filter_age.hide()
         y_pos += 58
@@ -168,7 +168,7 @@ class OutsideClanScreen(Screens):
             pygame.Rect((x_pos - 2, y_pos), (204, 58)),
             "",
             object_id="#filter_ID_button",
-            starting_height=2
+            starting_height=2, manager=MANAGER
         )
         self.filter_id.hide()
 
@@ -255,7 +255,7 @@ class OutsideClanScreen(Screens):
                                    ((260 + pos_x, 360 + pos_y), (100, 100)),
                                    cat.big_sprite,
                                    cat.ID,
-                                   starting_height=1))
+                                   starting_height=1, manager=MANAGER))
 
                 name = str(cat.name)
                 if len(name) >= 13:
@@ -263,7 +263,7 @@ class OutsideClanScreen(Screens):
                     name = short_name + '...'
                 self.cat_names.append(pygame_gui.elements.UITextBox(name,
                                                                     pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60)),
-                                                                    object_id=get_text_box_theme()))
+                                                                    object_id=get_text_box_theme(), manager=MANAGER))
                 pos_x += 240
                 if pos_x >= 1200:
                     pos_x = 0
@@ -402,18 +402,19 @@ class UnknownResScreen(Screens):
         self.get_dead_cats()
 
         self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((842, 284), (294, 46)),
-                                                              object_id="#search_entry_box")
+                                                              object_id="#search_entry_box", manager=MANAGER)
 
         self.starclan_button = UIImageButton(pygame.Rect((230, 270), (68, 68)), "", object_id="#starclan_button")
         self.unknown_residence_button = UIImageButton(pygame.Rect((298, 270), (68, 68)), "",
-                                                      object_id="#unknown_residence_button")
+                                                      object_id="#unknown_residence_button", manager=MANAGER)
         self.unknown_residence_button.disable()
-        self.dark_forest_button = UIImageButton(pygame.Rect((366, 270), (68, 68)), "", object_id="#dark_forest_button")
+        self.dark_forest_button = UIImageButton(pygame.Rect((366, 270), (68, 68)), "",
+                                                object_id="#dark_forest_button", manager=MANAGER)
         self.next_page_button = UIImageButton(pygame.Rect((912, 1190), (68, 68)), "", object_id="#arrow_right_button")
         self.previous_page_button = UIImageButton(pygame.Rect((620, 1190), (68, 68)), "",
                                                   object_id="#arrow_left_button")
         self.page_number = pygame_gui.elements.UITextBox("", pygame.Rect((680, 1190),
-                                                                         (220, 60)))  # Text will be filled in later
+                                                                         (220, 60)), manager=MANAGER)  # Text will be filled in later
 
         self.set_disabled_menu_buttons(["starclan_screen"])
         self.update_heading_text("StarClan")
@@ -427,12 +428,12 @@ class UnknownResScreen(Screens):
             pygame.Rect((x_pos, y_pos), (196, 68)),
             "",
             object_id="#filter_by_closed_button",
-            tool_tip_text="By default, cats are sorted by rank."
+            tool_tip_text="By default, cats are sorted by rank.", manager=MANAGER
         )
         self.filter_by_open = UIImageButton(
             pygame.Rect((x_pos, y_pos), (196, 68)),
             "",
-            object_id="#filter_by_open_button",
+            object_id="#filter_by_open_button", manager=MANAGER
         )
         self.filter_by_open.hide()
         y_pos += 68
@@ -441,7 +442,7 @@ class UnknownResScreen(Screens):
             pygame.Rect((x_pos - 2, y_pos), (204, 58)),
             "",
             object_id="#filter_rank_button",
-            starting_height=2
+            starting_height=2, manager=MANAGER
         )
         self.filter_rank.hide()
         y_pos += 58
@@ -449,7 +450,7 @@ class UnknownResScreen(Screens):
             pygame.Rect((x_pos - 2, y_pos), (204, 58)),
             "",
             object_id="#filter_age_button",
-            starting_height=2
+            starting_height=2, manager=MANAGER
         )
         self.filter_age.hide()
         y_pos += 58
@@ -457,7 +458,7 @@ class UnknownResScreen(Screens):
             pygame.Rect((x_pos - 2, y_pos), (204, 58)),
             "",
             object_id="#filter_ID_button",
-            starting_height=2
+            starting_height=2, manager=MANAGER
         )
         self.filter_id.hide()
 
@@ -522,7 +523,7 @@ class UnknownResScreen(Screens):
                                    ((260 + pos_x, 360 + pos_y), (100, 100)),
                                    cat.big_sprite,
                                    cat.ID,
-                                   starting_height=1))
+                                   starting_height=1, manager=MANAGER))
 
                 name = str(cat.name)
                 if len(name) >= 13:
@@ -530,7 +531,8 @@ class UnknownResScreen(Screens):
                     name = short_name + '...'
                 self.cat_names.append(pygame_gui.elements.UITextBox("<font color='#FFFFFF'>" + name + "</font>"
                                                                     ,
-                                                                    pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60))))
+                                                                    pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60))
+                                                                    , manager=MANAGER))
                 pos_x += 240
                 if pos_x >= 1200:
                     pos_x = 0

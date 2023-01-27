@@ -79,40 +79,42 @@ class ChooseMentorScreen(Screens):
 
         self.heading = pygame_gui.elements.UITextBox("Choose a new mentor for " + str(self.the_cat.name),
                                                      pygame.Rect((300, 50), (1000, 80)),
-                                                     object_id=get_text_box_theme("#header_text_box"))
+                                                     object_id=get_text_box_theme("#header_text_box"), manager=MANAGER)
         self.info = UITextBoxTweaked("If an apprentice is 6 moons old and their mentor is changed, they "
                                      "will not be listed as a former apprentice on their old mentor's "
                                      "profile. An apprentice's mentor can have an influence on their "
                                      "trait and skill later in life.\nChoose your mentors wisely",
                                      pygame.Rect((360, 120), (880, 200)), line_spacing=0.95,
-                                     object_id=get_text_box_theme("#cat_patrol_info_box"))
+                                     object_id=get_text_box_theme("#cat_patrol_info_box"), manager=MANAGER)
         if self.mentor is not None:
             self.current_mentor_text = pygame_gui.elements.UITextBox(f"{str(self.the_cat.name)}'s current mentor is "
                                                                     f"{str(self.mentor.name)}",
                                                                     pygame.Rect((460, 260), (680, 60)),
-                                                                    object_id=get_text_box_theme("#cat_patrol_info_box"))
+                                                                    object_id=get_text_box_theme("#cat_patrol_info_box")
+                                                                    , manager=MANAGER)
         else:
             self.current_mentor_text = pygame_gui.elements.UITextBox(f"{str(self.the_cat.name)} does not have a mentor",
                                                                     pygame.Rect((460, 260), (680, 60)),
-                                                                    object_id=get_text_box_theme("#cat_patrol_info_box"))
+                                                                    object_id=get_text_box_theme("#cat_patrol_info_box")
+                                                                    , manager=MANAGER)
 
         # Layout Images:
         self.mentor_frame = pygame_gui.elements.UIImage(pygame.Rect((80, 226), (562, 394)),
                                                         pygame.transform.scale(
                                                         image_cache.load_image(
                                                             "resources/images/choosing_cat1_frame_ment.png").convert_alpha(),
-                                                            (562, 394)))
+                                                            (562, 394)), manager=MANAGER)
         self.app_frame = pygame_gui.elements.UIImage(pygame.Rect((960, 226), (562, 394)),
                                                      pygame.transform.scale(
                                                      image_cache.load_image(
                                                          "resources/images/choosing_cat2_frame_ment.png").convert_alpha(),
-                                                         (562, 394)))
+                                                         (562, 394)), manager=MANAGER)
 
         self.mentor_icon = pygame_gui.elements.UIImage(pygame.Rect((630, 320), (343, 228)),
                                                        pygame.transform.scale(
                                                        image_cache.load_image(
                                                            "resources/images/mentor.png").convert_alpha(),
-                                                           (343, 228)))
+                                                           (343, 228)), manager=MANAGER)
 
         self.previous_cat_button = UIImageButton(pygame.Rect((50, 50), (306, 60)), "", object_id="#previous_cat_button")
         self.next_cat_button = UIImageButton(pygame.Rect((1244, 50), (306, 60)), "", object_id="#next_cat_button")
@@ -122,15 +124,16 @@ class ChooseMentorScreen(Screens):
             self.current_mentor_warning = pygame_gui.elements.UITextBox("<font color=#FF0000>Current mentor selected</font>"
                                                                         , pygame.Rect((600, 680), (400, 60)),
                                                                         object_id=get_text_box_theme(
-                                                                            "#cat_patrol_info_box"))
+                                                                            "#cat_patrol_info_box"), manager=MANAGER)
         else:
             self.current_mentor_warning = pygame_gui.elements.UITextBox("<font color=#FF0000>No mentor selected</font>"
                                                                         , pygame.Rect((600, 680), (400, 60)),
                                                                         object_id=get_text_box_theme(
-                                                                            "#cat_patrol_info_box"))
+                                                                            "#cat_patrol_info_box"), manager=MANAGER)
         self.previous_page_button = UIImageButton(pygame.Rect((630, 1160), (68, 68)), "",
-                                                  object_id="#relation_list_previous")
-        self.next_page_button = UIImageButton(pygame.Rect((902, 1160), (68, 68)), "", object_id="#relation_list_next")
+                                                  object_id="#relation_list_previous", manager=MANAGER)
+        self.next_page_button = UIImageButton(pygame.Rect((902, 1160), (68, 68)), "",
+                                              object_id="#relation_list_next", manager=MANAGER)
 
         self.update_apprentice()  # Draws the current apprentice
         self.update_selected_cat()  # Updates the image and details of selected cat
@@ -197,7 +200,9 @@ class ChooseMentorScreen(Screens):
                 f"{str(self.the_cat.name)} does not have a mentor")
         self.apprentice_details["apprentice_image"] = pygame_gui.elements.UIImage(pygame.Rect((1200, 300), (300, 300)),
                                                                                   pygame.transform.scale(
-                                                                                  self.the_cat.large_sprite, (300, 300)))
+                                                                                  self.the_cat.large_sprite,
+                                                                                      (300, 300)),
+                                                                                  manager=MANAGER)
 
         info = self.the_cat.age + "\n" + self.the_cat.status + "\n" + self.the_cat.genderalign + \
                "\n" + self.the_cat.trait + "\n" + self.the_cat.skill
@@ -205,7 +210,7 @@ class ChooseMentorScreen(Screens):
             info,
             pygame.Rect((980, 340), (200, 200)),
             object_id="#cat_patrol_info_box",
-            line_spacing=0.95)
+            line_spacing=0.95, manager=MANAGER)
 
         name = str(self.the_cat.name)  # get name
         if 11 <= len(name):  # check name length
@@ -214,7 +219,7 @@ class ChooseMentorScreen(Screens):
         self.apprentice_details["apprentice_name"] = pygame_gui.elements.ui_label.UILabel(
             pygame.Rect((1240, 230), (220, 60)),
             name,
-            object_id="#header_text_box")
+            object_id="#header_text_box", manager=MANAGER)
 
         self.find_next_previous_cats()  # Determine where the next and previous cat buttons lead
 
@@ -303,7 +308,7 @@ class ChooseMentorScreen(Screens):
             self.selected_details["selected_image"] = pygame_gui.elements.UIImage(pygame.Rect((100, 300), (300, 300)),
                                                                                   pygame.transform.scale(
                                                                                   self.selected_mentor.large_sprite,
-                                                                                      (300, 300)))
+                                                                                      (300, 300)), manager=MANAGER)
 
             info = self.selected_mentor.age + "\n" + self.selected_mentor.status + "\n" + \
                 self.selected_mentor.genderalign + "\n" + self.selected_mentor.trait + "\n" + \
@@ -315,7 +320,7 @@ class ChooseMentorScreen(Screens):
             self.selected_details["selected_info"] = UITextBoxTweaked(info,
                                                                     pygame.Rect((420, 340), (210, 230)),
                                                                     object_id="#cat_patrol_info_box",
-                                                                    line_spacing=0.95)
+                                                                    line_spacing=0.95, manager=MANAGER)
 
             name = str(self.selected_mentor.name)  # get name
             if 11 <= len(name):  # check name length
@@ -324,7 +329,7 @@ class ChooseMentorScreen(Screens):
             self.selected_details["mentor_name"] = pygame_gui.elements.ui_label.UILabel(
                 pygame.Rect((130, 230), (220, 60)),
                 name,
-                object_id="#header_text_box")
+                object_id="#header_text_box", manager=MANAGER)
 
     def update_cat_list(self):
         """Updates the cat sprite buttons. """
@@ -362,7 +367,7 @@ class ChooseMentorScreen(Screens):
         i = 0
         for cat in display_cats:
             self.cat_list_buttons["cat" + str(i)] = UISpriteButton(pygame.Rect((200 + pos_x, 730 + pos_y), (100, 100)),
-                                                                   cat.big_sprite, cat_object=cat)
+                                                                   cat.big_sprite, cat_object=cat, manager=MANAGER)
             pos_x += 120
             if pos_x >= 1100:
                 pos_x = 0
@@ -454,19 +459,22 @@ class ViewChildrenScreen(Screens):
         """Set up things that are always on the page"""
 
         cat_profiles()
-        self.previous_cat_button = UIImageButton(pygame.Rect((50, 50), (306, 60)), "", object_id="#previous_cat_button")
-        self.next_cat_button = UIImageButton(pygame.Rect((1244, 60), (306, 60)), "", object_id="#next_cat_button")
-        self.back_button = UIImageButton(pygame.Rect((50, 1290), (210, 60)), "", object_id="#back_button")
+        self.previous_cat_button = UIImageButton(pygame.Rect((50, 50), (306, 60)), "",
+                                                 object_id="#previous_cat_button", manager=MANAGER)
+        self.next_cat_button = UIImageButton(pygame.Rect((1244, 60), (306, 60)), "",
+                                             object_id="#next_cat_button", manager=MANAGER)
+        self.back_button = UIImageButton(pygame.Rect((50, 1290), (210, 60)), "",
+                                         object_id="#back_button", manager=MANAGER)
 
         self.previous_sibling_page = UIImageButton(pygame.Rect((800, 600), (68, 68)), "",
-                                                   object_id="#relation_list_previous")
+                                                   object_id="#relation_list_previous", manager=MANAGER)
         self.next_sibling_page = UIImageButton(pygame.Rect((1000, 600), (68, 68)), "",
-                                               object_id="#relation_list_next")
+                                               object_id="#relation_list_next", manager=MANAGER)
 
         self.previous_offspring_page = UIImageButton(pygame.Rect((800, 1160), (68, 68)), "",
-                                                     object_id="#relation_list_previous")
+                                                     object_id="#relation_list_previous", manager=MANAGER)
         self.next_offspring_page = UIImageButton(pygame.Rect((1000, 1160), (68, 68)), "",
-                                                 object_id="#relation_list_next")
+                                                 object_id="#relation_list_next", manager=MANAGER)
 
         self.family_setup()
 
@@ -512,17 +520,19 @@ class ViewChildrenScreen(Screens):
         # heading
         self.family_elements["header"] = pygame_gui.elements.UITextBox(f"Family of {self.the_cat.name}",
                                                                        pygame.Rect((200, 56), (1200, 100)),
-                                                                       object_id=get_text_box_theme("#header_text_box"))
+                                                                       object_id=get_text_box_theme("#header_text_box")
+                                                                       , manager=MANAGER)
 
         # Draw parents
         # Parent 1
         if self.the_cat.parent1 is None:
             self.family_elements['parent1'] = pygame_gui.elements.UITextBox("Unknown", pygame.Rect((180, 390), (120, 80)),
-                                                                            object_id="#cat_patrol_info_box")
+                                                                            object_id="#cat_patrol_info_box"
+                                                                            , manager=MANAGER)
         elif self.the_cat.parent1 in Cat.all_cats:
             self.family_elements['parent1_image'] = UISpriteButton(pygame.Rect((190, 290), (100, 100)),
                                                                    Cat.all_cats[self.the_cat.parent1].sprite,
-                                                                   cat_id=self.the_cat.parent1)
+                                                                   cat_id=self.the_cat.parent1, manager=MANAGER)
             if Cat.all_cats[self.the_cat.parent1].faded:
                 #Disable the button for tagged, but not yet saved, faded cats
                 self.family_elements['parent1_image'].disable()
@@ -533,12 +543,13 @@ class ViewChildrenScreen(Screens):
                 name = short_name + '...'
             self.family_elements["parent1_name"] = pygame_gui.elements.UITextBox(name,
                                                                                  pygame.Rect((180, 390), (120, 60)),
-                                                                                 object_id="#cat_patrol_info_box")
+                                                                                 object_id="#cat_patrol_info_box"
+                                                                                 , manager=MANAGER)
         else:
             parent_ob = Cat.load_faded_cat(self.the_cat.parent1)
             if parent_ob:
                 self.family_elements['parent1_image'] = UISpriteButton(pygame.Rect((180, 290), (100, 100)),
-                                                                       parent_ob.big_sprite)
+                                                                       parent_ob.big_sprite, manager=MANAGER)
                 self.family_elements["parent1_image"].disable() #There is no profile for faded cats.
 
                 name = str(parent_ob.name)
@@ -547,21 +558,23 @@ class ViewChildrenScreen(Screens):
                     name = short_name + '...'
                 self.family_elements["parent1_name"] = pygame_gui.elements.UITextBox(name,
                                                                                      pygame.Rect((180, 390), (120, 60)),
-                                                                                     object_id="#cat_patrol_info_box")
+                                                                                     object_id="#cat_patrol_info_box"
+                                                                                     , manager=MANAGER)
             else:
                 self.family_elements["parent1"] = pygame_gui.elements.UITextBox(
                     f'Error: cat {str(self.the_cat.parent1)} not found',
                     pygame.Rect((90, 165), (60, 30)),
-                    object_id="#cat_patrol_info_box")
+                    object_id="#cat_patrol_info_box", manager=MANAGER)
 
         # Parent 2
         if self.the_cat.parent2 is None:
             self.family_elements['parent2'] = pygame_gui.elements.UITextBox("Unknown", pygame.Rect((180, 516), (120, 80)),
-                                                                            object_id="#cat_patrol_info_box")
+                                                                            object_id="#cat_patrol_info_box",
+                                                                            manager=MANAGER)
         elif self.the_cat.parent2 in Cat.all_cats:
             self.family_elements['parent2_image'] = UISpriteButton(pygame.Rect((190, 420), (100, 100)),
                                                                    Cat.all_cats[self.the_cat.parent2].big_sprite,
-                                                                   cat_id=self.the_cat.parent2)
+                                                                   cat_id=self.the_cat.parent2, manager=MANAGER)
             if Cat.all_cats[self.the_cat.parent2].faded:
                 # Disable the button for tagged, but not yet saved, faded cats
                 self.family_elements['parent2_image'].disable()
@@ -572,13 +585,14 @@ class ViewChildrenScreen(Screens):
                 name = short_name + '...'
             self.family_elements["parent2_name"] = pygame_gui.elements.UITextBox(name,
                                                                                  pygame.Rect((180, 516), (120, 60)),
-                                                                                 object_id="#cat_patrol_info_box")
+                                                                                 object_id="#cat_patrol_info_box"
+                                                                                 , manager=MANAGER)
         else:
             # Check for faded parent
             parent_ob = Cat.load_faded_cat(self.the_cat.parent2)
             if parent_ob:
                 self.family_elements['parent2_image'] = UISpriteButton(pygame.Rect((190, 420), (100, 100)),
-                                                                       parent_ob.big_sprite)
+                                                                       parent_ob.big_sprite, manager=MANAGER)
                 self.family_elements["parent2_image"].disable()  # There is no profile for faded cats.
 
                 name = str(parent_ob.name)
@@ -587,12 +601,13 @@ class ViewChildrenScreen(Screens):
                     name = short_name + '...'
                 self.family_elements["parent2_name"] = pygame_gui.elements.UITextBox(name,
                                                                                      pygame.Rect((180, 516), (120, 60)),
-                                                                                     object_id="#cat_patrol_info_box")
+                                                                                     object_id="#cat_patrol_info_box"
+                                                                                     , manager=MANAGER)
             else:
                 self.family_elements["parent2"] = pygame_gui.elements.UITextBox(
                     f'Error: cat {str(self.the_cat.parent2)} not found',
                     pygame.Rect((180, 500), (120, 60)),
-                    object_id="#cat_patrol_info_box")
+                    object_id="#cat_patrol_info_box", manager=MANAGER)
 
         # Siblings
         # Get siblings.
@@ -638,7 +653,7 @@ class ViewChildrenScreen(Screens):
         elif self.the_cat.mate in Cat.all_cats:
             self.family_elements["mate_image"] = UISpriteButton(pygame.Rect((196, 916), (100, 100)),
                                                                 Cat.all_cats[self.the_cat.mate].big_sprite,
-                                                                cat_id=self.the_cat.mate)
+                                                                cat_id=self.the_cat.mate, manager=MANAGER)
 
             name = str(Cat.all_cats[self.the_cat.mate].name)
             if len(name) >= 9:
@@ -646,7 +661,8 @@ class ViewChildrenScreen(Screens):
                 name = short_name + '...'
             self.family_elements["mate_name"] = pygame_gui.elements.UITextBox(name,
                                                                               pygame.Rect((180, 1016), (120, 60)),
-                                                                              object_id="#cat_patrol_info_box")
+                                                                              object_id="#cat_patrol_info_box"
+                                                                              , manager=MANAGER)
 
         else:
             print(f'ERROR: cat {str(self.the_cat.mate)} not found',
@@ -743,7 +759,7 @@ class ViewChildrenScreen(Screens):
         for cat in display_cats:
             self.sibling_elements["sibling" + str(i)] = UISpriteButton(pygame.Rect((pos_x, pos_y), (100, 100)),
                                                                        cat.big_sprite,
-                                                                       cat_id=cat.ID)
+                                                                       cat_id=cat.ID, manager=MANAGER)
             if cat.faded:
                 self.sibling_elements["sibling" + str(i)].disable()
 
@@ -755,7 +771,8 @@ class ViewChildrenScreen(Screens):
                                                                                            pygame.Rect(
                                                                                                (pos_x - 5, pos_y + 100),
                                                                                                (110, 40)),
-                                                                                           object_id="#cat_patrol_info_box")
+                                                                                           object_id="#cat_patrol_info_box"
+                                                                                           , manager=MANAGER)
             pos_x += 120
             if pos_x > 1400:
                 pos_y += 120
@@ -796,7 +813,7 @@ class ViewChildrenScreen(Screens):
         for cat in display_cats:
             self.offspring_elements["offspring" + str(i)] = UISpriteButton(pygame.Rect((pos_x, pos_y), (100, 100)),
                                                                            cat.big_sprite,
-                                                                           cat_id=cat.ID)
+                                                                           cat_id=cat.ID, manager=MANAGER)
             if cat.faded:
                 self.offspring_elements["offspring" + str(i)].disable()
 
@@ -808,7 +825,8 @@ class ViewChildrenScreen(Screens):
                                                                                                pygame.Rect(
                                                                                                    (pos_x - 5, pos_y + 100),
                                                                                                    (110, 40)),
-                                                                                               object_id="#cat_patrol_info_box")
+                                                                                               object_id="#cat_patrol_info_box"
+                                                                                               , manager=MANAGER)
             pos_x += 120
             if pos_x > 1400:
                 pos_y += 140
