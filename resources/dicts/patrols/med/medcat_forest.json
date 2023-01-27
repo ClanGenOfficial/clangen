@@ -1430,7 +1430,7 @@
                 "Maybe they're coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and it feels like a wasted afternoon. They avoid snapping at app1, who seems unable to identify the common herb, but it's a near thing.",
                 null,
                 null,
-                "r_c digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. The cold had leeched all the heat from their pelt, and they arrive back at camp miserable."
+                "The patrol digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. r_c in particular is shivering and chilled to the bone by the time they return, empty-pawed and miserable."
         ],
         "win_skills": ["keen eye"],
         "win_trait": ["None"],
@@ -1462,7 +1462,7 @@
                 "Maybe they're coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and no one else on the patrol is very helpful either. They return to camp without any burdock, prickling with frustration.",
                 null,
                 null,
-                "r_c digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. The cold had leeched all the heat from their pelt, and they arrive back at camp miserable."
+                "The patrol digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. r_c in particular is shivering and chilled to the bone by the time they return, empty-pawed and miserable."
         ],
         "win_skills": ["keen eye"],
         "win_trait": ["None"],
@@ -2191,7 +2191,7 @@
         "biome": "forest",
         "season": "greenleaf",
         "tags": ["med_only", "herb", "dandelion", "many_herbs1", "many_herbs2", "med_cat"],
-        "intro_text": "greenleaf's bounty means that finding dandelions shouldn't be any trouble. ",
+        "intro_text": "Greenleaf's bounty means that finding dandelions shouldn't be any trouble. ",
         "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
         "chance_of_success": 70,
         "exp": 10,
@@ -2217,7 +2217,7 @@
         "biome": "forest",
         "season": "greenleaf",
         "tags": ["med_only", "med_cat", "herb", "dandelion", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
-        "intro_text": "greenleaf's bounty means that finding dandelions shouldn't be any trouble.  p_l heads out to look for them, taking app1 to learn about one of the most useful common herbs in the medicine cat aresenal.",
+        "intro_text": "Greenleaf's bounty means that finding dandelions shouldn't be any trouble.  p_l heads out to look for them, taking app1 to learn about one of the most useful common herbs in the medicine cat aresenal.",
         "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
         "chance_of_success": 70,
         "exp": 20,
@@ -2243,7 +2243,7 @@
         "biome": "forest",
         "season": "greenleaf",
         "tags": ["med_cat", "warrior", "herb", "dandelion", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
-        "intro_text": "greenleaf's bounty means that finding dandelions shouldn't be any trouble. p_l heads out to look for them, bringing a group of their Clanmates along for the gathering patrol.",
+        "intro_text": "Greenleaf's bounty means that finding dandelions shouldn't be any trouble. p_l heads out to look for them, bringing a group of their Clanmates along for the gathering patrol.",
         "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 70,
         "exp": 10,

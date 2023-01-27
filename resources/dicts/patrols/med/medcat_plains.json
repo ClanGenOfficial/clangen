@@ -1266,7 +1266,7 @@
             "Maybe they're coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and it feels like a wasted afternoon. They avoid snapping at app1, who seems unable to identify the common herb, but it's a near thing.",
             null,
             null,
-            "r_c digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. The cold had leeched all the heat from their pelt, and they arrive back at camp miserable."
+            "The patrol digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. r_c in particular is shivering and chilled to the bone by the time they return, empty-pawed and miserable."
     ],
     "win_skills": ["keen eye"],
     "win_trait": ["None"],
@@ -1298,7 +1298,7 @@
             "Maybe they're coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and no one else on the patrol is very helpful either. They return to camp without any burdock, prickling with frustration.",
             null,
             null,
-            "r_c digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. The cold had leeched all the heat from their pelt, and they arrive back at camp miserable."
+            "The patrol digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. r_c in particular is shivering and chilled to the bone by the time they return, empty-pawed and miserable."
     ],
     "win_skills": ["keen eye"],
     "win_trait": ["None"],
