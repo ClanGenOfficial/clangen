@@ -33,6 +33,11 @@ class StartScreen(Screens):
                 self.change_screen('make clan screen')
             elif event.ui_element == self.settings_button:
                 self.change_screen('settings screen')
+            elif event.ui_element == self.quit:
+                pygame.display.quit()
+                pygame.quit()
+                exit()
+
 
     def on_use(self):
         # have to blit this manually or else hover input doesn't get read properly
@@ -46,6 +51,7 @@ class StartScreen(Screens):
         self.settings_button.kill()
         self.error_label.kill()
         self.warning_label.kill()
+        self.quit.kill()
 
     def screen_switches(self):
         # Make those unslightly menu button hide away
@@ -60,6 +66,8 @@ class StartScreen(Screens):
                                              object_id="#new_clan_button")
         self.settings_button = UIImageButton(pygame.Rect((140, 890), (384, 70)), "",
                                              object_id="#settings_button")
+        self.quit = UIImageButton(pygame.Rect((140, 980), (384, 70)), "",
+                                             object_id="#quit_button")
 
         self.error_label = pygame_gui.elements.UILabel(pygame.Rect(100, 100, 1400, -1), "",
                                                        object_id="#save_text_box")
