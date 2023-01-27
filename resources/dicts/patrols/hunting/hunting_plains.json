@@ -1697,7 +1697,7 @@
     ]
 },
 {
-    "patrol_id": "pln_hunt_fox_newleafscavenge1",
+    "patrol_id": "pln_hunt_redfox_newleafscavenge1",
     "biome": "plains",
     "season": "newleaf",
     "tags": ["hunting", "large_prey", "fighting", "scar", "big_bite_injury", "clan_to_patrol", "respect", "rel_patrol"],
@@ -1733,7 +1733,7 @@
     ]
 },
 {
-    "patrol_id": "pln_hunt_fox_newleafscavenge2",
+    "patrol_id": "pln_hunt_redfox_newleafscavenge2",
     "biome": "plains",
     "season": "newleaf",
     "tags": ["hunting", "large_prey", "fighting", "scar", "big_bite_injury", "clan_to_patrol", "respect", "rel_patrol"],
@@ -1768,7 +1768,7 @@
     ]
 },
 {
-    "patrol_id": "pln_hunt_fox_newleafscavenge3",
+    "patrol_id": "pln_hunt_redfox_newleafscavenge3",
     "biome": "plains",
     "season": "newleaf",
     "tags": ["hunting", "large_prey", "fighting", "scar", "big_bite_injury", "clan_to_patrol", "respect"],
@@ -1805,7 +1805,7 @@
     ]
 },
 {
-    "patrol_id": "pln_hunt_fox_greenleafscavenge1",
+    "patrol_id": "pln_hunt_redfox_greenleafscavenge1",
     "biome": "plains",
     "season": "greenleaf",
     "tags": ["hunting", "large_prey", "fighting", "scar", "big_bite_injury", "clan_to_patrol", "respect", "rel_patrol"],
@@ -1841,7 +1841,7 @@
     ]
 },
 {
-    "patrol_id": "pln_hunt_fox_greenleafleafscavenge2",
+    "patrol_id": "pln_hunt_redfox_greenleafleafscavenge2",
     "biome": "plains",
     "season": "greenleaf",
     "tags": ["hunting", "large_prey", "fighting", "scar", "injury", "big_bite_injury", "clan_to_patrol", "respect", "rel_patrol"],
@@ -1876,7 +1876,7 @@
     ]
 },
 {
-    "patrol_id": "pln_hunt_fox_greenleafscavenge3",
+    "patrol_id": "pln_hunt_redfox_greenleafscavenge3",
     "biome": "plains",
     "season": "greenleaf",
     "tags": ["hunting", "large_prey", "fighting", "scar", "big_bite_injury", "clan_to_patrol", "respect"],
@@ -1913,7 +1913,7 @@
     ]
 },
 {
-    "patrol_id": "pln_hunt_fox_leaf-fallscavenge1",
+    "patrol_id": "pln_hunt_redfox_leaf-fallscavenge1",
     "biome": "plains",
     "season": "leaf-fall",
     "tags": ["hunting", "large_prey", "fighting", "scar", "big_bite_injury", "clan_to_patrol", "respect", "rel_patrol"],
@@ -1949,7 +1949,7 @@
     ]
 },
 {
-    "patrol_id": "pln_hunt_fox_leaf-fallscavenge2",
+    "patrol_id": "pln_hunt_redfox_leaf-fallscavenge2",
     "biome": "plains",
     "season": "leaf-fall",
     "tags": ["hunting", "large_prey", "fighting", "scar", "big_bite_injury", "clan_to_patrol", "respect", "rel_patrol"],
@@ -1984,7 +1984,7 @@
     ]
 },
 {
-    "patrol_id": "pln_hunt_fox_leaf-fallscavenge3",
+    "patrol_id": "pln_hunt_redfox_leaf-fallscavenge3",
     "biome": "plains",
     "season": "leaf-fall",
     "tags": ["hunting", "large_prey", "fighting", "scar", "big_bite_injury", "clan_to_patrol", "respect"],
@@ -2021,7 +2021,7 @@
     ]
 },
 {
-    "patrol_id": "pln_hunt_fox_leaf-barescavenge1",
+    "patrol_id": "pln_hunt_redfox_leaf-barescavenge1",
     "biome": "plains",
     "season": "leaf-bare",
     "tags": ["hunting", "large_prey", "fighting", "scar", "big_bite_injury", "clan_to_patrol", "respect", "rel_patrol"],
@@ -2057,7 +2057,7 @@
     ]
 },
 {
-    "patrol_id": "pln_hunt_fox_leaf-barescavenge2",
+    "patrol_id": "pln_hunt_redfox_leaf-barescavenge2",
     "biome": "plains",
     "season": "leaf-bare",
     "tags": ["hunting", "large_prey", "fighting", "scar", "big_bite_injury", "clan_to_patrol", "respect", "rel_patrol"],
@@ -2092,7 +2092,7 @@
     ]
 },
 {
-    "patrol_id": "pln_hunt_fox_leaf-barescavenge3",
+    "patrol_id": "pln_hunt_redfox_leaf-barescavenge3",
     "biome": "plains",
     "season": "leaf-bare",
     "tags": ["hunting", "large_prey", "fighting", "scar", "big_bite_injury", "clan_to_patrol", "respect"],
@@ -2644,18 +2644,45 @@
     ]
 },
 {
-	"patrol_id": "pln_hunt_kitfox_newleafscavenge2",
+	"patrol_id": "pln_hunt_kitfox_scavenge1",
+	"biome": "plains",
+	"season": "Any",
+	"tags": ["hunting", "small_prey"],
+	"intro_text": "r_c catches the scent of a fox. Tracking it down, the cats spot a kit fox wandering through the grass, carrying a mouse in its jaws.",
+	"decline_text": "That's an insignificant amount of fresh-kill to start a fight over.",
+	"chance_of_success": 70,
+	"exp": 10,
+	"success_text": [
+	"Your hunters chase after it, spitting and hissing as the smaller predator tries to run. But a patrol full of cats is faster, and the fox soon decides that it'd prefer to give up the mouse rather than fight. It's an insignificant amount of fresh-kill, but hopefully a permanent lesson for a fox on stealing from c_n.",
+	"The kit fox isn't crazy, and immediately drops the mouse, running for its life from the patrol." ,
+	"s_c pounces, snarling, and the fox turns tail with a yelp. Only s_c isn't alone, and cats circle the fox as it turns and snarls and yelps for mercy, holding it their until they're very sure it will never dare sneak across c_n's borders again.",
+	"s_c wanders up to the kit fox, swagger in their step as they take the opportunity to be the bigger predator for once in their life. The kit fox takes one look at the patrol backing s_c up and decides it's time to be elsewhere as fast as its legs can take it, leaving the single skinny mouse it stole behind."
+	],
+	"fail_text": [
+	"The patrol approaches the kit fox, who spots them and sets off at full speed. It's not worth following them, not over a single mouse."
+	],
+	"win_skills": ["good fighter", "great fighter", "excellent fighter"],
+	"win_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "loyal", "playful", "righteous", "shameless", "strict", "troublesome", "vengeful"],
+	"fail_skills": ["None"],
+	"fail_trait": ["None"],
+	"min_cats": 2,
+	"max_cats": 6,
+	"antagonize_text": null,
+	"antagonize_fail_text": null
+},
+{
+	"patrol_id": "pln_hunt_kitfox_scavenge2",
 	"biome": "plains",
 	"season": "Any",
 	"tags": ["hunting", "small_prey", "fighting", "scar", "small_bite_injury"],
 	"intro_text": "r_c catches the scent of a fox. Tracking it down, they spot a kit fox wandering through the grass, carrying a mouse in its jaws.",
-	"decline_text": "That's an insignificant amount of freshkill to start a fight over.",
+	"decline_text": "That's an insignificant amount of fresh-kill to start a fight over.",
 	"chance_of_success": 70,
 	"exp": 10,
 	"success_text": [
-	"r_c chases after it, spitting and hissing as the smaller predator tries to run. But r_c is faster, and the fox soon decides that it'd prefer to give up the mouse rather than fight. Puffed up and proud, r_c trots back to camp with the addition for the freshkill pile.",
-	"The kit fox locks eyes with r_c as they emerge from the grass, weighing up its options against the cat of equal size and stature to it. There's a long, tense moment as both puff up, ready for a fight, but the fox's nerve breaks first and it runs, leaving r_c with the mouse." ,
-	"s_c pounces, snarling, and the fox turns tail with a yelp. Only s_c uses that moment to grab that fluffy tail and shake, until the fox gives up its prey and turns to bite. They dart backwards, and that's as much fight as the fox had in them - the fox runs, and s_c has won the mouse..",
+	"r_c chases after it, spitting and hissing as the smaller predator tries to run. But r_c is faster, and the fox soon decides that it'd prefer to give up the mouse rather than fight. Puffed up and proud, r_c trots back to camp with the addition for the fresh-kill pile.",
+	"The kit fox locks eyes with r_c as they emerge from the grass, weighing up its options against the bigger cat. There's a long, tense moment as both puff up, ready for a fight, but the fox's nerve breaks first and it runs, leaving r_c with the mouse." ,
+	"s_c pounces, snarling, and the fox turns tail with a yelp. Only s_c uses that moment to grab that fluffy tail and shake, until the fox gives up its prey and turns to bite. They dart backwards, and that's as much fight as the fox had in them - the fox runs, and s_c has won the mouse.",
 	"s_c wanders up to the kit fox, swagger in their step as they take the opportunity to be the bigger predator for once in their life. It looks like it's going to fight for a second, but s_c's confidence intimidates it into dropping the mouse and fleeing back into the long grass."
 	],
 	"fail_text": [
@@ -2682,7 +2709,7 @@
 	"biome": "plains",
 	"season": "newleaf",
 	"tags": ["hunting", "large_prey", "comfort", "respect", "rel_patrol"],
-	"intro_text": "Your patrol catches the scent of a fox. Tracking it, they find a swift fox feeding on a calf carcass. The cat-sized predator definitely didn't kill this massive hunk of freshkill.",
+	"intro_text": "Your patrol catches the scent of a fox. Tracking it, they find a swift fox feeding on a calf carcass. The cat-sized predator definitely didn't kill this massive hunk of fresh-kill.",
 	"decline_text": "Your patrol decides not to quarrel with the fox - bigger predators will be attracted here. Best to leave sooner rather than later.",
 	"chance_of_success": 70,
 	"exp": 20,
@@ -2710,7 +2737,7 @@
 	"biome": "plains",
 	"season": "newleaf",
 	"tags": ["hunting", "small_prey", "fighting", "scar", "death", "no_body", "small_bite_injury"],
-	"intro_text": "r_c catches the scent of a fox. Tracking it, they find a swift fox feeding on a calf carcass. The cat-sized predator definitely didn't kill this massive hunk of freshkill.",
+	"intro_text": "r_c catches the scent of a fox. Tracking it, they find a swift fox feeding on a calf carcass. The cat-sized predator definitely didn't kill this massive hunk of fresh-kill.",
 	"decline_text": "r_c decides not to quarrel with the fox - bigger predators will be attracted here. Best to leave sooner rather than later.",
 	"chance_of_success": 70,
 	"exp": 10,
@@ -2747,7 +2774,7 @@
 	"biome": "plains",
 	"season": "greenleaf",
 	"tags": ["hunting", "large_prey", "comfort", "respect", "rel_patrol"],
-	"intro_text": "Your patrol catches the scent of a fox. Tracking it, they find a swift fox feeding on a calf carcass. The cat-sized predator definitely didn't kill this massive hunk of freshkill.",
+	"intro_text": "Your patrol catches the scent of a fox. Tracking it, they find a swift fox feeding on a calf carcass. The cat-sized predator definitely didn't kill this massive hunk of fresh-kill.",
 	"decline_text": "Your patrol decides not to quarrel with the fox - bigger predators will be attracted here. Best to leave sooner rather than later.",
 	"chance_of_success": 70,
 	"exp": 20,
@@ -2775,7 +2802,7 @@
 	"biome": "plains",
 	"season": "greenleaf",
 	"tags": ["hunting", "small_prey", "fighting", "scar", "death", "no_body", "small_bite_injury"],
-	"intro_text": "r_c catches the scent of a fox. Tracking it, they find a swift fox feeding on a calf carcass. The cat-sized predator definitely didn't kill this massive hunk of freshkill.",
+	"intro_text": "r_c catches the scent of a fox. Tracking it, they find a swift fox feeding on a calf carcass. The cat-sized predator definitely didn't kill this massive hunk of fresh-kill.",
 	"decline_text": "r_c decides not to quarrel with the fox - bigger predators will be attracted here. Best to leave sooner rather than later.",
 	"chance_of_success": 70,
 	"exp": 10,
@@ -2812,7 +2839,7 @@
 	"biome": "plains",
 	"season": "leaf-fall",
 	"tags": ["hunting", "large_prey", "comfort", "respect", "rel_patrol"],
-	"intro_text": "Your patrol catches the scent of a fox. Tracking it, they find a swift fox feeding on a calf carcass. The cat-sized predator definitely didn't kill this massive hunk of freshkill.",
+	"intro_text": "Your patrol catches the scent of a fox. Tracking it, they find a swift fox feeding on a calf carcass. The cat-sized predator definitely didn't kill this massive hunk of fresh-kill.",
 	"decline_text": "Your patrol decides not to quarrel with the fox - bigger predators will be attracted here. Best to leave sooner rather than later.",
 	"chance_of_success": 70,
 	"exp": 20,
@@ -2840,7 +2867,7 @@
 	"biome": "plains",
 	"season": "leaf-fall",
 	"tags": ["hunting", "small_prey", "fighting", "scar", "death", "no_body", "small_bite_injury"],
-	"intro_text": "r_c catches the scent of a fox. Tracking it, they find a swift fox feeding on a calf carcass. The cat-sized predator definitely didn't kill this massive hunk of freshkill.",
+	"intro_text": "r_c catches the scent of a fox. Tracking it, they find a swift fox feeding on a calf carcass. The cat-sized predator definitely didn't kill this massive hunk of fresh-kill.",
 	"decline_text": "r_c decides not to quarrel with the fox - bigger predators will be attracted here. Best to leave sooner rather than later.",
 	"chance_of_success": 70,
 	"exp": 10,
@@ -2877,7 +2904,7 @@
 	"biome": "plains",
 	"season": "leaf-bare",
 	"tags": ["hunting", "large_prey", "comfort", "respect", "rel_patrol"],
-	"intro_text": "Your patrol catches the scent of a fox. Tracking it, they find a swift fox feeding on a cow carcass, either a small female or one of last Newleaf's calves. The cat-sized predator definitely didn't kill this massive hunk of freshkill.",
+	"intro_text": "Your patrol catches the scent of a fox. Tracking it, they find a swift fox feeding on a cow carcass, either a small female or one of last Newleaf's calves. The cat-sized predator definitely didn't kill this massive hunk of fresh-kill.",
 	"decline_text": "Your patrol decides not to quarrel with the fox - bigger predators will be attracted here. Best to leave sooner rather than later.",
 	"chance_of_success": 60,
 	"exp": 20,
@@ -3038,8 +3065,8 @@
         "exp": 30,
         "success_text": [
                 "Looking out over their full six cat patrol, p_l decides it's worth it. The cats fall into battle, decending onto the maned wolf and battering it, using teamwork to pull at its long legs and fox tail, as the wolf turns in skipping circles, yelping. It flees before them, leaving the triumphant cats with a single mouse for all that effort. Great.",
-                "With a sigh, p_l recognises that having a maned wolf poaching from c_n's hunting grounds will become a problem pretty quickly. Their six cat patrol might be the best way to solve the problem before it begins. All the cats, tense and ready, wait to ambush the wolf as it hunts, and manage to drive it out of the territory before it manages to catch more than a mouse. The stolen mouse is returned to c_n's freshkill pile, where it belongs.",
-                "While they'd hardly expected to need their skills on a hunting patrol, s_c is able to set up an excellent battle plan. It's only halfway through ambushing the beast that the patrol realises its a maned wolf, which makes their job inifinitely easier, as they drive away the timid predator from c_n territory with enough time left over to bring a mouse or two back for the freshkill pile before sundown."
+                "With a sigh, p_l recognises that having a maned wolf poaching from c_n's hunting grounds will become a problem pretty quickly. Their six cat patrol might be the best way to solve the problem before it begins. All the cats, tense and ready, wait to ambush the wolf as it hunts, and manage to drive it out of the territory before it manages to catch more than a mouse. The stolen mouse is returned to c_n's fresh-kill pile, where it belongs.",
+                "While they'd hardly expected to need their skills on a hunting patrol, s_c is able to set up an excellent battle plan. It's only halfway through ambushing the beast that the patrol realises its a maned wolf, which makes their job inifinitely easier, as they drive away the timid predator from c_n territory with enough time left over to bring a mouse or two back for the fresh-kill pile before sundown."
         ],
         "fail_text": [
                 "Looking out over their full six cat patrol, p_l decides it's worth it. The cats fall into battle, decending onto the maned wolf and battering it, using teamwork to pull at its long legs and fox tail, as the wolf turns in skipping circles, yelping. It flees before them, leaving the triumphant cats with... a fruit? All that effort for a sodding useless fruit?!",

@@ -1025,7 +1025,7 @@
         "biome": "desert",
         "season": "leaf-bare",
         "tags": ["hunting", "large_prey", "comfort", "trust", "platonic", "rel_patrol", "patrol_to_p_l", "patrol_to_r_c"],
-        "intro_text": "It starts raining soon after the patrol sets out, trying to bring back something nice for the freshkill pile.",
+        "intro_text": "It starts raining soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the rain dies down.",
         "chance_of_success": 50,
         "exp": 20,
@@ -1056,7 +1056,7 @@
         "biome": "desert",
         "season": "leaf-bare",
         "tags": ["hunting", "medium_prey"],
-        "intro_text": "It starts raining soon after r_c sets out, trying to bring back something nice for the freshkill pile.",
+        "intro_text": "It starts raining soon after r_c sets out, trying to bring back something nice for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the rain dies down.",
         "chance_of_success": 40,
         "exp": 10,
@@ -1086,7 +1086,7 @@
         "biome": "desert",
         "season": "leaf-bare",
         "tags": ["hunting", "comfort", "trust", "rel_patrol", "romantic", "no_app"],
-        "intro_text": "It starts raining soon after the patrol sets out, trying to bring back something nice for the freshkill pile.",
+        "intro_text": "It starts raining soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the rain dies down.",
         "chance_of_success": 50,
         "exp": 10,
@@ -1125,7 +1125,7 @@
         "Outraged, your cats charge the poacher, determined to rip its pelt off. No one steals from c_n! The fox jumps, starled, and streaks for the horizon, but with a full patrol your cats chase it until it drops the hare and crosses the border. Hrumph! Though it's only a small haul of prey for a hunting patrol, at least they've gotten rid of the prey thief.",
         "With many cats, they're able to catch the swift fox, even though it lives up to its name. It might be swift, but its not much else, and your patrol manages to pull it down and kill the intruder, protecting c_n's lands. Oh, and they also win that hare too.",
         "s_c stops them before the patrol can start haring off after the swift fox. Instead, the cats sneak up on it, not allowing it to deploy its speed to escape. It's a successful strategy, and together they're able to bring down the fox, winning both the prey it poached and the chance to eliminate a thief.",
-        "s_c leads the charge! Their boldness sends the swift fox running, and though they lose the fox in a tumble of blouders the cats can at least bring the hare home for the freshkill pile."
+        "s_c leads the charge! Their boldness sends the swift fox running, and though they lose the fox in a tumble of blouders the cats can at least bring the hare home for the fresh-kill pile."
         ],
         "fail_text": [
         "The swift fox spots the patrol coming and scarpers, tucking tail and fleeing across the horizon in an example of where the small canivore gets its name."
@@ -1149,7 +1149,7 @@
         "chance_of_success": 60,
         "exp": 20,
         "success_text": [
-        "r_c charges the fox, puffed up and snarling! The fox turns tail and runs, dropping the hare in the process, and r_c retreives the poached prey for c_n's freshkill pile.",
+        "r_c charges the fox, puffed up and snarling! The fox turns tail and runs, dropping the hare in the process, and r_c retreives the poached prey for c_n's fresh-kill pile.",
         "The swift fox is tired from its hunt, and not capable of living up to its name. r_c catches it in a chase, and claims the hare back for c_n, leaving the fox with a bloodied nose. That'll teach it!",
         "r_c sneaks up on the fox, approaching through the cover of thornbushes. They burst out, snarling with claws extended, and batter the fox as it screams in surprise, dropping it's stolen prey and jumping backwards. Only it flinches back into more thornbushes, and r_c picks up the dropped hare and pads back to camp, leaving the thief to struggle out of the thorns by itself.",
         "It makes r_c's blood boil, watching the fox carry away prey it's stolen from c_n's mouths. They creep between the fox and a ravine, waiting until the perfect moment, until they're able to burst from cover, snatching back the hare as the fox tumbles into the steep gash in the ground."
@@ -1241,7 +1241,7 @@
         "exp": 30,
         "success_text": [
         "The patrol charges the vixen, and she runs, leaving the scent of milk in the air behind her. Though they don't know where her cubs are hidden, without their mother they won't pose a threat to the Clan.",
-        "The patrol sneaks closer, until p_l realises that the vixen is approaching her den - a den when cubs must surely hide. A competitor denning within c_n's borders is an outrage, and the patrol leaps to attack, pinning the vixen in a mess of boulders. Her body, and that of her cubs, will go to the freshkill pile tonight.",
+        "The patrol sneaks closer, until p_l realises that the vixen is approaching her den - a den when cubs must surely hide. A competitor denning within c_n's borders is an outrage, and the patrol leaps to attack, pinning the vixen in a mess of boulders. Her body, and that of her cubs, will go to the fresh-kill pile tonight.",
         "s_c holds the patrol back until they spot the vixen's mate, approaching with poached prey in his jaws. Together, the cats ambush the foxes, bursting from cover with claws unshealthed as a vicious fight starts. But warriors fight as a team, and the foxes do not, and one flees, abandoning its mate to the fury of c_n."
         ],
         "fail_text": [
@@ -1362,56 +1362,52 @@
     	"patrol_id": "dst_hunt_kitfox_scavenge1",
     	"biome": "desert",
     	"season": "Any",
-    	"tags": ["hunting", "huge_prey", "fighting", "scar", "small_bite_injury", "clan_to_patrol", "respect", "rel_patrol"],
+    	"tags": ["hunting", "huge_prey", "fighting", "injury", "sprain", "clan_to_patrol", "respect", "rel_patrol"],
     	"intro_text": "Your patrol catches the scent of a fox. Tracking it, they find a kit fox feeding on a young collared peccary, a bit too big to be called a piglet. It looks like this youngster got on the wrong side of the dominant boar of its group. The kit fox is barely strong enough to open the carcass.",
     	"decline_text": "Your patrol decides the boar is probably coming back, and they don't want to be here when it arrives to feed on its victim.",
     	"chance_of_success": 70,
     	"exp": 20,
     	"success_text": [
-    	"One tiny kit fox against your cats? No contest, and the fox knows it. As soon as it sees them it trots off, leaving the cats to brings as much of the peccary back to camp as they can possibly carry.",
+    	"One tiny kit fox against your cats? No contest, and the fox knows it. As soon as it sees them it trots off, leaving the cats to bring as much of the peccary back to camp as they can possibly carry.",
     	"The kit fox gives way to the bigger cats, melting away into the scrubby dry bush as your cats bring as much of this feast as they can back to the Clan. It knows that the patrol will leave more than enough scraps behind to fill its belly full of pork.",
     	"s_c is smart enough to stop anyone from pursuing the kit fox as it melts away before them. There's no point - the peccary carcass is the real prize here, and the patrol should focused on bringing its meat back for the Clan.",
-    	"The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
+    	"The kit fox is irrelevant, and vanishes as soon as it sees the bigger predators coming to claim the carcass. Instead s_c focuses on maintaining a watch for other challengers, and their vigilence means the patrol sees the boar coming to cannibalise its victim from far off, making off with as much of the carcass as they can carry before it spots them."
     	],
     	"fail_text": [
     	"One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also no contest, and the patrol wisely backs off as the boar begins to cannibalise its victim.",
     	null,
     	null,
-    	"One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also no contest, and as the patrol flees r_c "
+    	"One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also no contest, and as the patrol flees r_c feels something pull painfully in their leg."
     	],
     	"win_skills": ["smart", "very smart", "extremely smart"],
     	"win_trait": ["adventurous", "altruistic", "ambitious", "confident", "daring", "fierce", "responsible", "righteous"],
         "fail_skills": ["None"],
-        "fail_trait": ["troublesome", "vengeful", "bloodthirsty", "bold"],
+        "fail_trait": ["None"],
     	"min_cats": 2,
     	"max_cats": 3,
     	"antagonize_text": null,
-    	"antagonize_fail_text": null,
-    	"history_text": [
-        	"r_c carries a scar from a peccary boar.",
-        	null
-    	]
+    	"antagonize_fail_text": null
 	},
 	{
     	"patrol_id": "dst_hunt_kitfox_scavenge2",
     	"biome": "desert",
     	"season": "Any",
-    	"tags": ["hunting", "huge_prey", "fighting", "scar", "injury", "clan_to_patrol", "respect", "rel_patrol"],
+    	"tags": ["hunting", "huge_prey", "fighting", "injury", "sprain", "clan_to_patrol", "respect", "rel_patrol"],
     	"intro_text": "Your patrol catches the scent of a fox. Tracking it, they find a kit fox feeding on a young collared peccary, a bit too big to be called a piglet. It looks like this youngster got on the wrong side of the dominant boar of its group. The kit fox is barely strong enough to open the carcass.",
     	"decline_text": "Your patrol decides the boar is probably coming back, and they don't want to be here when it arrives to feed on its victim.",
     	"chance_of_success": 90,
     	"exp": 20,
     	"success_text": [
-        "One tiny kit fox against your cats? No contest, and the fox knows it. As soon as it sees them it trots off, leaving the cats to brings as much of the peccary back to camp as they can possibly carry.",
+        "One tiny kit fox against your cats? No contest, and the fox knows it. As soon as it sees them it trots off, leaving the cats to bring as much of the peccary back to camp as they can possibly carry.",
     	"The kit fox gives way to the bigger cats, melting away into the scrubby dry bush as your cats bring as much of this feast as they can back to the Clan. It knows that the patrol will leave more than enough scraps behind to fill its belly full of pork.",
     	"s_c is smart enough to stop anyone from pursuing the kit fox as it melts away before them. There's no point - the peccary carcass is the real prize here, and the patrol should focused on bringing its meat back for the Clan.",
-    	"The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. Holding on grimly, s_c's daring move gives the rest of the patrol the opportunity needed to bring the fox down for good."
+    	"The kit fox is irrelevant, and vanishes as soon as it sees the bigger predators coming to claim the carcass. Instead s_c focuses on maintaining a watch for other challengers, and their vigilence means the patrol sees the boar coming to cannibalise its victim from far off, making off with as much of the carcass as they can carry before it spots them."
     	],
     	"fail_text": [
     	"One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also no contest, and the patrol wisely backs off as the boar begins to cannibalise its victim.",
     	null,
     	null,
-    	"The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den."
+    	"One tiny kit fox against your cats? No contest. Your cats against the boar coming snuffling back? Also no contest, and as the patrol flees r_c feels something pull painfully in their leg."
     	],
     	"win_skills": ["smart", "very smart", "extremely smart"],
     	"win_trait": ["adventurous", "altruistic", "ambitious", "confident", "daring", "fierce", "responsible", "righteous"],
@@ -1420,33 +1416,28 @@
     	"min_cats": 4,
     	"max_cats": 6,
     	"antagonize_text": null,
-    	"antagonize_fail_text": null,
-    	"history_text": [
-        	"r_c carries a scar from a peccary boar."
-    	]
+    	"antagonize_fail_text": null
 	},
 	{
     	"patrol_id": "dst_hunt_kitfox_scavenge3",
     	"biome": "desert",
     	"season": "Any",
-    	"tags": ["hunting", "huge_prey", "fighting", "scar", "injury", "clan_to_patrol", "respect"],
+    	"tags": ["hunting", "huge_prey", "fighting", "death", "no_body", "all_lives", "injury", "sprain", "clan_to_patrol", "respect"],
     	"intro_text": "r_c catches the scent of a fox. Tracking it, they find a kit fox feeding on a young collared peccary, a bit too big to be called a piglet. It looks like this youngster got on the wrong side of the dominant boar of its group. The kit fox is barely strong enough to open the carcass.",
     	"decline_text": "r_c decides the boar is probably coming back, and they don't want to be here when it arrives to feed on its victim.",
     	"chance_of_success": 30,
     	"exp": 30,
     	"success_text": [
-    	"r_c smaller, alone, and half its weight, but the fox has a prize they're willing to fight for. With a prayer to Starclan they throw themselves into battle. The fox, already stuffed full and unwilling to lose blood over it, leaves the kill with a grumble.",
-        	null,
-        	"s_c uses every trick in their talented fighting skillset to attack the fox with no one to watch their flank, until the perfect opportunity opens up and they pounce onto the fox's back, digging in their claws. It's a wild ride through the forest until the fox bucks them off, but it wins them the peccary carcass.",
-    	    "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. But then they're stuck, unwilling to let go and risk being bitten. They're dragged through the forest, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the peccary."
+            "One tiny kit fox? r-c sees it off with a pawswipe, not interested in trying to take the fox as prey when the peccary carcass exists. They try to bring as much of the peccary back to camp as they can possibly carry.",
+            "The kit fox gives way to the bigger cat, melting away into the scrubby dry bush as r_c brings as much of the feast as they can back to the Clan. It knows that the cat will leave more than enough scraps behind to fill its belly full of pork.",
+            "s_c is smart enough to stop themselves from pursuing the kit fox as it melts away before them. There's no point - the peccary carcass is the real prize here, and s_c is focused on bringing its meat back for the Clan.",
+            "The kit fox is irrelevant, and vanishes as soon as it sees the bigger predators coming to claim the carcass. Instead s_c focuses on maintaining a watch for other challengers, and their vigilence means they see the boar coming to cannibalise its victim from far off, making off with as much of the carcass as they can carry before it spots them."
     	],
     	"fail_text": [
     	"Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
-    	null,
-    	"Fiercely, r_c throws themselves at the fox, determined to win the peccary prize. But the fox values it just as dearly, and manages to get a good grip on r_c, shaking them to pieces and killing them.",
-    	"r_c launches into battle, but is caught with a nasty bite, and retreats to limp back home. The fox doesn't follow, happy enough to eat the peccary instead of the foolish cat.",
-    	null,
-    	"s_c is overconfident in their attack and the fox manages to sink their teeth into them. They retreat, bleeding and in pain, and the fox settles back down to its meal."
+        null,
+    	"One tiny kit fox against r_c? No contest. r_c settles in to open the carcass, but is caught unawares by the boar returning to reclaim it, and is killed and eaten by the boar.",
+    	"One tiny kit fox against your cats? No contest. r_c against the boar coming snuffling back? Also no contest, and as the patrol flees r_c feels something pull painfully in their leg."
     	],
     	"win_skills": ["smart", "very smart", "extremely smart", "good fighter", "great fighter", "excellent fighter"],
     	"win_trait": ["adventurous", "altruistic", "ambitious", "confident", "daring", "fierce", "responsible", "righteous"],
@@ -1457,10 +1448,104 @@
     	"antagonize_text": null,
     	"antagonize_fail_text": null,
     	"history_text": [
-        	"r_c carries a scar from a peccary boar.",
+        	null,
         	"r_c fell when they were surprised by a peccary boar.",
-            "were gored by a peccary boar"
+            "were gored and eaten by a peccary boar"
     	]
-	}
+	},
+    {
+        "patrol_id": "dst_hunt_kitfox_steal1",
+        "biome": "desert",
+        "season": "Any",
+        "tags": ["hunting", "fighting", "scar", "small_bite_injury", "medium_prey", "trust"],
+        "intro_text": "r_c catches the scent of a fox. Tracking it down, the cats spot a kit fox wandering through their territory, carrying a mouse in its jaws.",
+        "decline_text": "That's an insignificant amount of fresh-kill to start a fight over.",
+        "chance_of_success": 70,
+        "exp": 15,
+        "success_text": [
+        "The hunters melt into the thorny scrubland and surround the smaller predator. By the time it scents them, it's too late. While the hunters will happily accept the mouse it carried, the fox was the prey they were actually after.",
+        "The kit fox isn't crazy, and immediately drops the mouse, running for its life from the patrol. But your patrol is fster, though it exhausts them, and together they bring down the small fox for the fresh-kill pile.",
+        "s_c pounces, snarling, and the fox turns tail with a yelp. Only s_c isn't alone, and cats circle the fox as it turns and snarls, darting in to finish it off without mercy. Kit foxes not only steal prey, for c_n, they are prey.",
+        "It takes a certain level of swagger to take on another predator, but s_c has that swagger in spades, and they take the lead hunting down the kit fox, fearless as they win not just the mouse it stole, but the kit fox itself for c_n's fresh-kill pile."
+        ],
+        "fail_text": [
+        "The patrol approaches the kit fox, who spots them and sets off at full speed. It's not worth following them, not with the fox having a headstart.",
+        null,
+        null,
+        "With a massive yowl, r_c charges the fox. It bares its teeth, unwilling to give up its hard won prey without a fight, and one wrong step puts r_c's pelt in range of those little jaws, as the small kit fox tries to live up to the reputation of its bigger and stronger relatives."
+        ],
+        "win_skills": ["good fighter", "great fighter", "excellent fighter"],
+        "win_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "loyal", "playful", "righteous", "shameless", "strict", "troublesome", "vengeful"],
+        "fail_skills": ["None"],
+        "fail_trait": ["None"],
+        "min_cats": 2,
+        "max_cats": 4,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+    	"history_text": [
+        	"r_c was scarred by a kit fox."
+    	]
+    },
+    {
+        "patrol_id": "dst_hunt_kitfox_steal2",
+        "biome": "desert",
+        "season": "Any",
+        "tags": ["hunting", "large_prey", "fighting", "scar", "small_bite_injury"],
+        "intro_text": "r_c catches the scent of a fox. Tracking it down, they spot a kit fox wandering through their territory, carrying a mouse in its jaws.",
+        "decline_text": "That's an insignificant amount of fresh-kill to start a fight over.",
+        "chance_of_success": 50,
+        "exp": 25,
+        "success_text": [
+        "The hunter melts into the thorny scrubland and sneaks towards the smaller predator. By the time it scents them, it's too late. While r_c will happily accept the mouse it carried, the fox was the prey they were actually after.",
+        "The kit fox locks eyes with r_c as they emerge from the grass, weighing up its options against the bigger cat. r_c doesn't hesitate, leaps to attack it, and with their skill they're able to bring down the kit fox. It should have run from them - trying to keep its mouse means r_c will be able to add both to the fresh-kill pile." ,
+        "s_c pounces, snarling, and the fox turns tail with a yelp. But they're prepared for the fox trying to flee, and leap fast and low to the gorund, slamming their teeth into the fox's throat. Kit foxes not only steal prey, for c_n, they are prey.",
+        "It takes a certain level of swagger to take on another predator, but s_c has that swagger in spades, fearless as they win not just the mouse it stole, but the kit fox itself for c_n's fresh-kill pile."
+        ],
+        "fail_text": [
+        "The patrol approaches the kit fox, who spots them and sets off at full speed. It's not worth following them, not with the fox having a headstart.",
+        null,
+        null,
+        "With a massive yowl, r_c charges the fox. It bares its teeth, unwilling to give up its hard won prey without a fight, and one wrong step puts r_c's pelt in range of those little jaws, as the small kit fox tries to live up to the reputation of its bigger and stronger relatives."
+        ],
+        "win_skills": ["good fighter", "great fighter", "excellent fighter"],
+        "win_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "loyal", "playful", "righteous", "shameless", "strict", "troublesome", "vengeful"],
+        "fail_skills": ["None"],
+        "fail_trait": ["None"],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from a fight with a kit fox.",
+            null
+        ]
+    },
+    {
+        "patrol_id": "dst_hunt_kitfox_steal3",
+        "biome": "desert",
+        "season": "Any",
+        "tags": ["hunting", "small_prey", "trust"],
+        "intro_text": "r_c catches the scent of a fox. Tracking it down, the cats spot a kit fox wandering through their territory, carrying a mouse in its jaws.",
+        "decline_text": "That's an insignificant amount of fresh-kill to start a fight over.",
+        "chance_of_success": 90,
+        "exp": 15,
+        "success_text": [
+        "The hunters melt into the thorny scrubland and surround the smaller predator. By the time it scents them, it's too late. While the hunters will happily accept the mouse it carried, the fox was the prey they were actually after.",
+        "The kit fox isn't crazy, and immediately drops the mouse, running for its life from the patrol. But your patrol is fster, though it exhausts them, and together they bring down the small fox for the fresh-kill pile.",
+        "s_c pounces, snarling, and the fox turns tail with a yelp. Only s_c isn't alone, and cats circle the fox as it turns and snarls, darting in to finish it off without mercy. Kit foxes not only steal prey, for c_n, they are prey.",
+        "It takes a certain level of swagger to take on another predator, but s_c has that swagger in spades, and they take the lead hunting down the kit fox, fearless as they win not just the mouse it stole, but the kit fox itself for c_n's fresh-kill pile."
+        ],
+        "fail_text": [
+        "The patrol approaches the kit fox, who spots them and sets off at full speed. It's not worth following them, not with the fox having a headstart."
+        ],
+        "win_skills": ["good fighter", "great fighter", "excellent fighter"],
+        "win_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "loyal", "playful", "righteous", "shameless", "strict", "troublesome", "vengeful"],
+        "fail_skills": ["None"],
+        "fail_trait": ["None"],
+        "min_cats": 5,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    }
 
 ]
