@@ -2628,7 +2628,7 @@
             "s_c has a good eye for these things, and snips off the best and most lush goldenrod to take back for the Clan's stores."
 ],
     "fail_text": [
-            "p_l is distracted today, and it effects their work. The patrol is unsuccessful."
+            "p_l is distracted today, and it affects their work. The patrol is unsuccessful."
     ],
     "win_skills": ["keen eye"],
     "win_trait": ["None"],
@@ -2654,7 +2654,7 @@
             "s_c has a good eye for these things, and snips off the best and most lush goldenrod to take back for the Clan's stores. As they do they instruct app1 in how to judge the quality of each stem, and how each bush will contain both ideal and bad examples, either of which could be harvested."
 ],
     "fail_text": [
-            "p_l is distracted today, and it effects their work. The patrol is unsuccessful, and app1 looks up at them with disappointment."
+            "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and app1 looks up at them with disappointment."
     ],
     "win_skills": ["keen eye"],
     "win_trait": ["None"],
@@ -2680,7 +2680,7 @@
             "s_c has a good eye for these things, and snips off the best and most lush goldenrod to take back for the Clan's stores. They control what is harvested, while their team works to efficiently carry the herb back to camp, deferring to s_c's expertise."
     ],
     "fail_text": [
-            "p_l is distracted today, and it effects their work. The patrol is unsuccessful and snappish with each other."
+            "p_l is distracted today, and it affects their work. The patrol is unsuccessful and snappish with each other."
     ],
     "win_skills": ["keen eye"],
     "win_trait": ["None"],
@@ -2706,7 +2706,7 @@
             "s_c has a good eye for these things, and snips off the best and most lush goldenrod to take back for the Clan's stores."
 ],
     "fail_text": [
-            "p_l is distracted today, and it effects their work. The patrol is unsuccessful."
+            "p_l is distracted today, and it affects their work. The patrol is unsuccessful."
     ],
     "win_skills": ["keen eye"],
     "win_trait": ["None"],
@@ -2732,7 +2732,7 @@
             "s_c has a good eye for these things, and snips off the best and most lush goldenrod to take back for the Clan's stores. As they do they instruct app1 in how to judge the quality of each stem, and how each bush will contain both ideal and bad examples, either of which could be harvested."
 ],
     "fail_text": [
-            "p_l is distracted today, and it effects their work. The patrol is unsuccessful, and app1 looks up at them with disappointment."
+            "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and app1 looks up at them with disappointment."
     ],
     "win_skills": ["keen eye"],
     "win_trait": ["None"],
@@ -2758,7 +2758,7 @@
             "s_c has a good eye for these things, and snips off the best and most lush goldenrod to take back for the Clan's stores. They control what is harvested, while their team works to efficiently carry the herb back to camp, deferring to s_c's expertise."
     ],
     "fail_text": [
-            "p_l is distracted today, and it effects their work. The patrol is unsuccessful and snappish with each other."
+            "p_l is distracted today, and it affects their work. The patrol is unsuccessful and snappish with each other."
     ],
     "win_skills": ["keen eye"],
     "win_trait": ["None"],
@@ -2784,7 +2784,7 @@
             "s_c deftly picks out a horsetail bush, bringing back an impressive addition to the Clan's herb stores."
 ],
     "fail_text": [
-            "p_l is distracted today, and it effects their work. The patrol is unsuccessful."
+            "p_l is distracted today, and it affects their work. The patrol is unsuccessful."
     ],
     "win_skills": ["keen eye"],
     "win_trait": ["None"],
@@ -2810,7 +2810,7 @@
             "s_c deftly picks out a horsetail bush, bringing back an impressive addition to the Clan's herb stores as they describe the plant's uses to app1."
 ],
     "fail_text": [
-            "p_l is distracted today, and it effects their work. The patrol is unsuccessful, and app1 looks up at them with disappointment."
+            "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and app1 looks up at them with disappointment."
     ],
     "win_skills": ["keen eye"],
     "win_trait": ["None"],
@@ -2836,7 +2836,7 @@
             "s_c deftly picks out a horsetail bush, bringing back impressive additions to the Clan's herb stores with the help of the warriors."
     ],
     "fail_text": [
-            "p_l is distracted today, and it effects their work. The patrol is unsuccessful and snappish with each other."
+            "p_l is distracted today, and it affects their work. The patrol is unsuccessful and snappish with each other."
     ],
     "win_skills": ["keen eye"],
     "win_trait": ["None"],
@@ -3664,7 +3664,7 @@
             "s_c has a good eye for these things, finding an excellent patch of mallow."
 ],
     "fail_text": [
-            "p_l is distracted today, and it effects their work. The patrol is unsuccessful."
+            "p_l is distracted today, and it affects their work. The patrol is unsuccessful."
     ],
     "win_skills": ["keen eye"],
     "win_trait": ["None"],
@@ -3690,7 +3690,7 @@
             "s_c has a good eye for these things, finding an excellent patch of mallow. As they do they instruct app1 in how to judge the quality of each stem, and how each bush will contain both ideal and bad examples, either of which could be harvested."
 ],
     "fail_text": [
-            "p_l is distracted today, and it effects their work. The patrol is unsuccessful, and app1 looks up at them with disappointment."
+            "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and app1 looks up at them with disappointment."
     ],
     "win_skills": ["keen eye"],
     "win_trait": ["None"],
@@ -3716,7 +3716,7 @@
             "s_c has a good eye for these things, finding an excellent patch of mallow. They control what is harvested, while their team works to efficiently carry the herb back to camp, deferring to s_c's expertise."
     ],
     "fail_text": [
-            "p_l is distracted today, and it effects their work. The patrol is unsuccessful and snappish with each other."
+            "p_l is distracted today, and it affects their work. The patrol is unsuccessful and snappish with each other."
     ],
     "win_skills": ["keen eye"],
     "win_trait": ["None"],
@@ -3742,7 +3742,7 @@
             "s_c has a good eye for these things, finding an excellent patch of mallow."
 ],
     "fail_text": [
-            "p_l is distracted today, and it effects their work. The patrol is unsuccessful."
+            "p_l is distracted today, and it affects their work. The patrol is unsuccessful."
     ],
     "win_skills": ["keen eye"],
     "win_trait": ["None"],
@@ -3768,7 +3768,7 @@
             "s_c has a good eye for these things, finding an excellent patch of mallow. As they do they instruct app1 in how to judge the quality of each stem, and how each bush will contain both ideal and bad examples, either of which could be harvested."
 ],
     "fail_text": [
-            "p_l is distracted today, and it effects their work. The patrol is unsuccessful, and app1 looks up at them with disappointment."
+            "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and app1 looks up at them with disappointment."
     ],
     "win_skills": ["keen eye"],
     "win_trait": ["None"],
@@ -3794,7 +3794,7 @@
             "s_c has a good eye for these things, finding an excellent patch of mallow. They control what is harvested, while their team works to efficiently carry the herb back to camp, deferring to s_c's expertise."
     ],
     "fail_text": [
-            "p_l is distracted today, and it effects their work. The patrol is unsuccessful and snappish with each other."
+            "p_l is distracted today, and it affects their work. The patrol is unsuccessful and snappish with each other."
     ],
     "win_skills": ["keen eye"],
     "win_trait": ["None"],
@@ -3898,7 +3898,7 @@
             "s_c finds a patch of marigold, harvests its best leaves and flowers, and pads home, unaware of how much of their success rests on their talent for herb gathering."
 ],
     "fail_text": [
-            "p_l is distracted today, and it effects their work. The patrol is unsuccessful."
+            "p_l is distracted today, and it affects their work. The patrol is unsuccessful."
     ],
     "win_skills": ["keen eye"],
     "win_trait": ["None"],
@@ -3924,7 +3924,7 @@
             "s_c finds a patch of marigold, harvests its best leaves and flowers, and pads home, unaware of how much of their success rests on their talent for herb gathering. app1 watches, trying to soak up their skills."
 ],
     "fail_text": [
-            "p_l is distracted today, and it effects their work. The patrol is unsuccessful, and app1 looks up at them with disappointment."
+            "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and app1 looks up at them with disappointment."
     ],
     "win_skills": ["keen eye"],
     "win_trait": ["None"],
@@ -3950,7 +3950,7 @@
             "s_c finds a patch of marigold, harvests its best leaves and flowers, and pads home, unaware of how much of their success rests on their talent for herb gathering. The patrol is also unaware, but it certainly helps their faith in their medicine cat to see them succeed with such competence."
     ],
     "fail_text": [
-            "p_l is distracted today, and it effects their work. The patrol is unsuccessful and snappish with each other."
+            "p_l is distracted today, and it affects their work. The patrol is unsuccessful and snappish with each other."
     ],
     "win_skills": ["keen eye"],
     "win_trait": ["None"],
@@ -3976,7 +3976,7 @@
             "s_c finds a patch of marigold, harvests its best leaves and flowers, and pads home, unaware of how much of their success rests on their talent for herb gathering."
 ],
     "fail_text": [
-            "p_l is distracted today, and it effects their work. The patrol is unsuccessful."
+            "p_l is distracted today, and it affects their work. The patrol is unsuccessful."
     ],
     "win_skills": ["keen eye"],
     "win_trait": ["None"],
@@ -4002,7 +4002,7 @@
             "s_c finds a patch of marigold, harvests its best leaves and flowers, and pads home, unaware of how much of their success rests on their talent for herb gathering. app1 watches, trying to soak up their skills."
 ],
     "fail_text": [
-            "p_l is distracted today, and it effects their work. The patrol is unsuccessful, and app1 looks up at them with disappointment."
+            "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and app1 looks up at them with disappointment."
     ],
     "win_skills": ["keen eye"],
     "win_trait": ["None"],
@@ -4028,7 +4028,7 @@
             "s_c finds a patch of marigold, harvests its best leaves and flowers, and pads home, unaware of how much of their success rests on their talent for herb gathering. The patrol is also unaware, but it certainly helps their faith in their medicine cat to see them succeed with such competence."
     ],
     "fail_text": [
-            "p_l is distracted today, and it effects their work. The patrol is unsuccessful and snappish with each other."
+            "p_l is distracted today, and it affects their work. The patrol is unsuccessful and snappish with each other."
     ],
     "win_skills": ["keen eye"],
     "win_trait": ["None"],
