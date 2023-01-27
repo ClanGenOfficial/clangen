@@ -1,0 +1,105 @@
+[
+	{
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+			"reduce_half"
+        ],
+        "event_text": 
+			"The Clan gathered much food to be secure for bad times, the more the better, but after one night the fresh-kill pile was drastically reduced and paw prints where found at the ground.",
+        "history_text": [
+			null,
+			null
+		],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+	{
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+			"death",
+			"reduce_half"
+        ],
+        "event_text": 
+			"m_c noticed a weird noise and woke up in the middle of the night. They looked for the source and saw a big canine like animal above the fresh-kill pile. The animal noticed m_c, turned around and snapped at their throat. It all happened so fast, m_c couldn't warn the Clan anymore and the fresh-kill pile was plundered.",
+        "history_text": [
+			"Was killed by a fox.",
+			"Lost a life to a fox."
+		],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+	{
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+			"multi_death",
+			"reduce_eighth"
+        ],
+        "event_text": 
+			"m_c just wanted to take a prey from the fresh-kill pile, as they saw a swarm of rats crawling over it. As they fought against the swarm, they called r_c for help. Both managed to secure the prey from the rats, but not without losses.",
+        "history_text": [
+			"Was killed by a swarm of rats, while defending the fresh-kill pile.",
+			"a swarm of rats, while defending the fresh-kill pile"
+		],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+	},
+	{
+		"injury": "rat bite",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+			"multi_injury",
+			"reduce_eighth"
+        ],
+        "event_text": 
+			"m_c just wanted to take a prey from the fresh-kill pile, as they saw a swarm of rats crawling over it. As they fought against the swarm, they called r_c for help. Both managed to secure the prey from the rats, but got injured.",
+        "history_text": [
+			"Was hurt while defending the fresh-kill pile from a swarm of rats.",
+			"Died from their wounds after defending the fresh-kill pile from a swarm of rats.",
+			"defending the fresh-kill pile from a swarm of rats"
+		],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+	},
+	{
+		"injury": "rat bite",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+			"injury",
+			"reduce_eighth"
+        ],
+        "event_text": 
+			"m_c just wanted to take a prey from the fresh-kill pile, as they saw a swarm of rats crawling over it. As they fought against the swarm. m_c managed to secure the prey from the rats, but got injured.",
+        "history_text": [
+			"Was hurt while defending the fresh-kill pile from a swarm of rats.",
+			"Died from their wounds after defending the fresh-kill pile from a swarm of rats.",
+			"defending the fresh-kill pile from a swarm of rats"
+		],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+	}
+]

@@ -7,7 +7,7 @@ from .base_screens import Screens, cat_profiles
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.image_button import UISpriteButton, UIImageButton
-from scripts.utility import get_text_box_theme, update_sprite, get_living_cat_count, get_alive_queens, get_med_cats
+from scripts.utility import get_text_box_theme, update_sprite, get_living_cat_count, get_alive_clan_queens, get_med_cats
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import *
 from .cat_screens import ProfileScreen
@@ -1238,7 +1238,7 @@ class AllegiancesScreen(Screens):
             self._extracted_from_screen_switches_24(
                 living_cats, 'mediator', '<b><u>MEDIATORS:</u></b>')
 
-        queens = get_alive_queens(Cat.all_cats)
+        queens = get_alive_clan_queens(Cat.all_cats)
         queens = [cat.ID for cat in queens]
         cat_count = 0
         for living_cat__ in living_cats:

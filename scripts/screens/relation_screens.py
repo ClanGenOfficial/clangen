@@ -1956,8 +1956,7 @@ class RelationshipScreen(Screens):
             display_romantic = 0
             # Print, just for bug checking. Again, they should not be able to get love towards their relative.
             if the_relationship.romantic_love and related:
-                print(str(self.the_cat.name) + " has " + str(the_relationship.romantic_love) + " romantic love "
-                      "towards their relative, " + str(the_relationship.cat_to.name))
+                print(f"ERROR: {self.the_cat.name} has {the_relationship.romantic_love} romantic love towards their relative, {the_relationship.cat_to.name}")
         else:
             display_romantic = the_relationship.romantic_love
 

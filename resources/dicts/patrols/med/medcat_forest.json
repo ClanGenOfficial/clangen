@@ -50,7 +50,7 @@
     "exp": 10,
     "success_text": [
         "app1 is focused and attentive. p_l is confident that next time when there is an emergency app1 will be able to find those herbs without them if needed.",
-        "As p_l is explaining why and where the herbs are growing, app1 lets out a shout. To p_l's surprise they have found a previously unknown patch of an uncommon herb. Stunned and filled with pride that they found and recognized the herb, p_l promises them the first pick of fresh kill.",
+        "As p_l is explaining why and where the herbs are growing, app1 lets out a shout. To p_l's surprise they have found a previously unknown patch of an uncommon herb. Stunned and filled with pride that they found and recognized the herb, p_l promises them the first pick of fresh-kill.",
         null,
         null
     ],
@@ -353,7 +353,7 @@
     "biome": "forest",
     "season": "greenleaf",
     "tags": ["med_cat", "herb", "lungwort", "no_app", "clan_to_patrol", "respect", "injury", "sore"],
-    "intro_text": "p_l is on a mission to find lungwort now that Greenleaf is here. As the only reliable cure for yellowcough, they're determined that c_n stock up on it.",
+    "intro_text": "p_l is on a mission to find lungwort now that greenleaf is here. As the only reliable cure for yellowcough, they're determined that c_n stock up on it.",
     "decline_text": "A cat grabs p_l's attention before they can leave camp.",
     "chance_of_success": 30,
     "exp": 20,
@@ -398,7 +398,7 @@
         "lungwort",
         "dislike", "injury", "sore", "many_herbs1"
     ],
-    "intro_text": "p_l is on a mission to find lungwort now that Greenleaf is here. As the only reliable cure for yellowcough, they're determined that c_n won't run out of it. They take along a warrior escort to help.",
+    "intro_text": "p_l is on a mission to find lungwort now that greenleaf is here. As the only reliable cure for yellowcough, they're determined that c_n won't run out of it. They take along a warrior escort to help.",
     "decline_text": "A cat grabs p_l's attention before they can leave.",
     "chance_of_success": 30,
     "exp": 20,
@@ -670,7 +670,7 @@
         "p_l_to_r_c",
         "s_c_to_r_c"
     ],
-    "intro_text": "p_l goes out with a warrior escort, both for safety as they look to take advantage of the Greenleaf growing season, and for carrying capacity should they find anything.",
+    "intro_text": "p_l goes out with a warrior escort, both for safety as they look to take advantage of the greenleaf growing season, and for carrying capacity should they find anything.",
     "decline_text": "Their escort is called away on a different mission, and p_l decides to reorganize the herb store instead.",
     "chance_of_success": 60,
     "exp": 10,
@@ -717,7 +717,7 @@
         "p_l_to_r_c",
         "s_c_to_r_c"
     ],
-    "intro_text": "p_l heads out, leading a patrol of medicine cats to go find some of the bounty of Greenleaf.",
+    "intro_text": "p_l heads out, leading a patrol of medicine cats to go find some of the bounty of greenleaf.",
     "decline_text": ". . . And they're called back almost immediately, as one of the elders starts hacking up something.",
     "chance_of_success": 60,
     "exp": 10,
