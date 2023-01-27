@@ -110,6 +110,7 @@ while True:
         game.all_screens[game.last_screen_forupdate].exit_screen()
         game.all_screens[game.current_screen].screen_switches()
         game.switch_screens = False
+
     # END FRAME
     MANAGER.draw_ui(screen)
 
