@@ -2464,7 +2464,7 @@
 			"Your cats are smaller but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
 			null,
 			"s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until it gives up and runs.",
-			"The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and it's snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
+			"The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
 		],
 		"fail_text": [
 			"Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
@@ -2876,7 +2876,7 @@
 			"Your cats are smaller but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
 			null,
 			"s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until it gives up and runs.",
-			"The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and it's snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
+			"The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
 		],
 		"fail_text": [
 			"Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
@@ -3681,7 +3681,7 @@
 			"The cats are only just smaller and outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
 			null,
 			"s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until it gives up and runs.",
-			"The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and it's snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
+			"The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
 		],
 		"fail_text": [
 			"Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
@@ -3880,7 +3880,7 @@
 			"The cats are only just smaller and outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
 			null,
 			"s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until it gives up and runs.",
-			"The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and it's snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
+			"The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
 		],
 		"fail_text": [
 			"Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
@@ -5257,7 +5257,7 @@
         "success_text": [
             "r_c locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. r_c waggles their haunches and leaps, pinning the mouse beneath a paw as they make the killing bite.",
             "r_c pinpoints the location of the prey and begins creeping forward. They're almost within pouncing distance when the mouse suddenly bolts. With a lash of their tail, r_c leaps after the mouse, barely snagging it before it reaches a burrow. They purr in satisfaction as prey-blood hits their tongue.",
-			"s_c immediately drops into a practised crouch, shimmying flawlessly along the ground and taking the perfectly plump mouse completely by surprise."
+			"s_c immediately drops into a practiced crouch, shimmying flawlessly along the ground and taking the perfectly plump mouse completely by surprise."
         ],
         "fail_text": [
             "r_c narrowly misses the mouse."
@@ -5277,7 +5277,7 @@
         "tags": [
             "hunting", "no_app", "medium_prey"
         ],
-        "intro_text": "r_c catches scent of a mouse nearby, one that would be greatly appreciated for the fresh-kill pile.",
+        "intro_text": "r_c catches scent of a mouse nearby - one that would be greatly appreciated for the fresh-kill pile.",
         "decline_text": "Your patrol ignores the mouse.",
         "success_text": [
             "r_c locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. r_c waggles their haunches and leaps, pinning the mouse beneath a paw as they make the killing bite.",

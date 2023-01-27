@@ -1703,16 +1703,7 @@
         "biome": "mountainous",
         "season": "leaf-bare",
         "tags": [
-            "hunting",
-            "comfort",
-            "trust",
-            "patrol_to_p_l",
-            "patrol_to_r_c",
-            "cold_injury",
-            "scar",
-            "small_prey0",
-            "medium_prey1",
-            "medium_prey2",
+            "hunting", "comfort", "trust", "patrol_to_p_l", "patrol_to_r_c", "cold_injury", "scar", "small_prey0", "medium_prey1", "medium_prey2",
             "large_prey3"
         ],
         "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something, anything, for the fresh-kill pile.",
