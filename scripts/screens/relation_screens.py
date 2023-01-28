@@ -2451,9 +2451,9 @@ class MediationScreen(Screens):
                     other_cat.is_sibling(cat) or check_cousins:
                 related = True
                 self.selected_cat_elements['relation_icon' + tag] = pygame_gui.elements.UIImage(
-                    pygame.Rect((x + 28,
+                    scale(pygame.Rect((x + 28,
                                  y + 28),
-                                (36, 36)),
+                                (36, 36))),
                     pygame.transform.scale(
                         image_cache.load_image(
                             "resources/images/dot_big.png").convert_alpha(),

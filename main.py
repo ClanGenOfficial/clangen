@@ -5,6 +5,7 @@ import traceback
 directory = os.path.dirname(__file__)
 if directory:
     os.chdir(directory)
+
 from scripts.game_structure.load_cat import *
 from scripts.cat.sprites import sprites
 from scripts.clan import clan_class
@@ -49,10 +50,6 @@ if clan_list:
         """
 
 # LOAD settings
-if not os.path.exists('saves/settings.txt'):
-    with open('saves/settings.txt', 'w') as write_file:
-        write_file.write('')
-game.load_settings()
 
 sprites.load_scars()
 
@@ -71,8 +68,6 @@ while True:
             screen.fill((57, 50, 36))
         else:
             screen.fill((206, 194, 168))
-
-    mouse.check_pos()
 
     # Draw screens
     # This occurs before events are handled to stop pygame_gui buttons from blinking.
