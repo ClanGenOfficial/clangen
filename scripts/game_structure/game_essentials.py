@@ -608,6 +608,11 @@ class GameOver(UIWindow):
 
 game = Game()
 
+if not os.path.exists('saves/clanlist.txt'):
+    os.makedirs('saves', exist_ok=True)
+    with open('saves/clanlist.txt', 'w') as write_file:
+        write_file.write('')
+
 if not os.path.exists('saves/settings.txt'):
     with open('saves/settings.txt', 'w') as write_file:
         write_file.write('')
