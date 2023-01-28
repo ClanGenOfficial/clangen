@@ -251,8 +251,8 @@ class OutsideClanScreen(Screens):
             for cat in self.chunks(self.current_listed_cats, 20)[self.list_page - 1]:
                 update_sprite(cat)
                 self.display_cats.append(
-                    UISpriteButton(pygame.Rect
-                                   ((260 + pos_x, 360 + pos_y), (100, 100)),
+                    UISpriteButton(scale(pygame.Rect
+                                   ((260 + pos_x, 360 + pos_y), (100, 100))),
                                    cat.big_sprite,
                                    cat.ID,
                                    starting_height=1, manager=MANAGER))

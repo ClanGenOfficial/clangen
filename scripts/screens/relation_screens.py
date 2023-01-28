@@ -1225,10 +1225,12 @@ class ChooseMateScreen(Screens):
                                                           object_id="#cat_patrol_info_box",
                                                           line_spacing=0.95)
             # Display message
+
+            pixel_font_size = int(22/1400 * screen_y)
             if self.the_cat.gender == self.selected_cat.gender and not game.settings[
                 'no gendered breeding']:
                 self.kitten_message.set_text(
-                    "<font pixel_size=11> (this pair will not be able to have kittens) </font>")
+                    f"<font pixel_size={pixel_font_size}> (this pair will not be able to have kittens) </font>")
                 self.kitten_message.show()
             else:
                 self.kitten_message.hide()

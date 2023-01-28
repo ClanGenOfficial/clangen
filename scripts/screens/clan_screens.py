@@ -1325,14 +1325,17 @@ class AllegiancesScreen(Screens):
 
         self.scroll_container = pygame_gui.elements.UIScrollingContainer(scale(pygame.Rect((100, 300), (1400, 1000)))
                                                                          , manager=MANAGER)
-        self.ranks_box = pygame_gui.elements.UITextBox("\n".join([i[0] for i in self.allegiance_list]),
-                                                       scale(pygame.Rect((0, 0), (300, -1))),
-                                                       object_id=get_text_box_theme("#allegiances_box"),
-                                                       container=self.scroll_container, manager=MANAGER)
         self.cat_names_box = pygame_gui.elements.UITextBox("\n".join([i[1] for i in self.allegiance_list]),
                                                            scale(pygame.Rect((300, 0), (1100, -1))),
                                                            object_id=get_text_box_theme("#allegiances_box"),
                                                            container=self.scroll_container, manager=MANAGER)
+
+        self.ranks_box = pygame_gui.elements.UITextBox("\n".join([i[0] for i in self.allegiance_list]),
+                                                       scale(pygame.Rect((0, 0), (300, -1))),
+                                                       object_id=get_text_box_theme("#allegiances_box"),
+                                                       container=self.scroll_container, manager=MANAGER)
+
+
         self.scroll_container.set_scrollable_area_dimensions((1360/1600 * screen_x, self.cat_names_box.rect[3]))
 
         self.ranks_box.disable()
