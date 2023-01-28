@@ -130,12 +130,12 @@ class SwitchClanScreen(Screens):
 
     def screen_switches(self):
         self.screen = pygame.transform.scale(pygame.image.load("resources/images/clan_saves_frame.png").convert_alpha(),
-                                             (440, 750))
+                                             (440/1600 * screen_x, 750/1400 * screen_y))
         self.main_menu = UIImageButton(scale(pygame.Rect((50, 50), (306, 60))), "",
                                        object_id="#main_menu_button", manager=MANAGER)
         self.info = pygame_gui.elements.UITextBox(
             'Note: This will close the game.\n When you open it next, it should have the new clan.',
-            scale(pygame.Rect((200, 1080), (1200, 140)), object_id=get_text_box_theme(), manager=MANAGER))
+            scale(pygame.Rect((200, 1080), (1200, 140))), object_id=get_text_box_theme(), manager=MANAGER)
 
         self.current_clan = pygame_gui.elements.UITextBox("", scale(pygame.Rect((200, 200), (1200, 140))),
                                                           object_id=get_text_box_theme(), manager=MANAGER)
