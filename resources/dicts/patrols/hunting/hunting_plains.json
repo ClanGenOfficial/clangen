@@ -2644,7 +2644,7 @@
     ]
 },
 {
-	"patrol_id": "pln_hunt_kitfox_scavenge1",
+	"patrol_id": "pln_hunt_kitfox_steal1",
 	"biome": "plains",
 	"season": "Any",
 	"tags": ["hunting", "small_prey"],
@@ -2671,7 +2671,7 @@
 	"antagonize_fail_text": null
 },
 {
-	"patrol_id": "pln_hunt_kitfox_scavenge2",
+	"patrol_id": "pln_hunt_kitfox_steal2",
 	"biome": "plains",
 	"season": "Any",
 	"tags": ["hunting", "small_prey", "fighting", "scar", "small_bite_injury"],

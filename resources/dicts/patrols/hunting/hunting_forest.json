@@ -5227,7 +5227,7 @@
         "tags": [
             "hunting", "no_app", "medium_prey"
         ],
-        "intro_text": "r_c catches scent of a mouse nearby, and feels themselves drool at the idea of greenleaf freshkill. It's a great day for hunting, too, greenleaf bringing life to c_n's woods.",
+        "intro_text": "r_c catches scent of a mouse nearby, and feels themselves drool at the idea of greenleaf fresh-kill. It's a great day for hunting, too, greenleaf bringing life to c_n's woods.",
         "decline_text": "Your patrol ignores the mouse.",
         "success_text": [
             "r_c locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. r_c waggles their haunches and leaps, pinning the mouse beneath a paw as they make the killing bite.",
@@ -5277,7 +5277,7 @@
         "tags": [
             "hunting", "no_app", "medium_prey"
         ],
-        "intro_text": "r_c catches scent of a mouse nearby, one that would be greatly appreciated for the freshkill pile.",
+        "intro_text": "r_c catches scent of a mouse nearby, one that would be greatly appreciated for the fresh-kill pile.",
         "decline_text": "Your patrol ignores the mouse.",
         "success_text": [
             "r_c locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. r_c waggles their haunches and leaps, pinning the mouse beneath a paw as they make the killing bite.",
@@ -5399,7 +5399,7 @@
         "chance_of_success": 60,
         "exp": 20,
         "success_text": [
-            "app1 pounces on the mouse, with a squeak of surprise from both prey and apprentice. They look up, holding their freshkill, meeting p_l's eyes with a purr.",
+            "app1 pounces on the mouse, with a squeak of surprise from both prey and apprentice. They look up, holding their fresh-kill, meeting p_l's eyes with a purr.",
             "app1 leaps onto the mouse, an easy kill! They're really getting the hang of hunting, p_l tells them, and as the pair head back home there's a happy bounce in app1's steps."
         ],
         "fail_text": [
@@ -5422,7 +5422,7 @@
         "chance_of_success": 60,
         "exp": 20,
         "success_text": [
-            "app1 pounces on the mouse, with a squeak of surprise from both prey and apprentice. They look up, holding their freshkill, meeting p_l's eyes with a purr.",
+            "app1 pounces on the mouse, with a squeak of surprise from both prey and apprentice. They look up, holding their fresh-kill, meeting p_l's eyes with a purr.",
             "app1 leaps onto the mouse, an easy kill! They're really getting the hang of hunting, p_l tells them, and as the pair head back home there's a happy bounce in app1's steps."
         ],
         "fail_text": [
@@ -5445,7 +5445,7 @@
         "chance_of_success": 50,
         "exp": 20,
         "success_text": [
-            "app1 pounces on the mouse, with a squeak of surprise from both prey and apprentice. They look up, holding their freshkill, meeting p_l's eyes with a purr.",
+            "app1 pounces on the mouse, with a squeak of surprise from both prey and apprentice. They look up, holding their fresh-kill, meeting p_l's eyes with a purr.",
             "app1 leaps onto the mouse, an easy kill! They're really getting the hang of hunting, p_l tells them, and as the pair head back home there's a happy bounce in app1's steps."
         ],
         "fail_text": [
@@ -5468,7 +5468,7 @@
         "chance_of_success": 40,
         "exp": 30,
         "success_text": [
-            "app1 pounces on the mouse, with a squeak of surprise from both prey and apprentice. They look up, holding their freshkill, meeting p_l's eyes with a purr.",
+            "app1 pounces on the mouse, with a squeak of surprise from both prey and apprentice. They look up, holding their fresh-kill, meeting p_l's eyes with a purr.",
             "app1 leaps onto the mouse, an easy kill! They're really getting the hang of hunting, p_l tells them, and as the pair head back home there's a happy bounce in app1's steps."
         ],
         "fail_text": [
