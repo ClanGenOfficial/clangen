@@ -5,6 +5,7 @@ import traceback
 directory = os.path.dirname(__file__)
 if directory:
     os.chdir(directory)
+
 from scripts.game_structure.load_cat import *
 from scripts.cat.sprites import sprites
 from scripts.clan import clan_class
@@ -23,11 +24,6 @@ clock = pygame.time.Clock()
 pygame.display.set_icon(pygame.image.load('resources/images/icon.png'))
 
 # LOAD cats & clan
-if not os.path.exists('saves/clanlist.txt'):
-    os.makedirs('saves', exist_ok=True)
-    with open('saves/clanlist.txt', 'w') as write_file:
-        write_file.write('')
-
 clan_list = game.read_clans()
 if clan_list:
     game.switches['clan_list'] = clan_list
@@ -49,10 +45,6 @@ if clan_list:
         """
 
 # LOAD settings
-if not os.path.exists('saves/settings.txt'):
-    with open('saves/settings.txt', 'w') as write_file:
-        write_file.write('')
-game.load_settings()
 
 sprites.load_scars()
 
@@ -71,8 +63,6 @@ while True:
             screen.fill((57, 50, 36))
         else:
             screen.fill((206, 194, 168))
-
-    mouse.check_pos()
 
     # Draw screens
     # This occurs before events are handled to stop pygame_gui buttons from blinking.
