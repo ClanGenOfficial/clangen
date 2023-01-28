@@ -876,7 +876,7 @@ class StatsScreen(Screens):
         starclan_num = 0
         medcat_num = 0
         for cat in Cat.all_cats.values():
-            if not cat.dead:
+            if not cat.dead and not cat.outside:
                 living_num += 1
                 if cat.status == 'warrior':
                     warriors_num += 1
