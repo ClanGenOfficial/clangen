@@ -456,7 +456,7 @@
     ]
 },
 {
-    "patrol_id": "gen_gen_curiouskittypet1",
+    "patrol_id": "gen_bord_curiouskittypet1",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat", "reputation", "scar", "battle_injury", "new_cat_adult"],
@@ -488,7 +488,7 @@
     ]
 },
 {
-    "patrol_id": "gen_gen_injuredcat1",
+    "patrol_id": "gen_bord_injuredcat1",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat", "reputation", "new_cat_adult", "new_cat_majorinjury"],
