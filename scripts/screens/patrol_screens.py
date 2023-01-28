@@ -923,7 +923,7 @@ class PatrolScreen(Screens):
                                                                                       object_id="#arrow_left_button",
                                                                                       manager=MANAGER)
                         self.elements['cycle_app_mentor_right_button'] = UIImageButton(
-                            scale(pygame.Rect((1236, 780), (68, 68)), "", object_id="#arrow_right_button", manager=MANAGER))
+                            scale(pygame.Rect((1236, 780), (68, 68))), "", object_id="#arrow_right_button", manager=MANAGER)
                         self.update_button()
 
     def clear_page(self):

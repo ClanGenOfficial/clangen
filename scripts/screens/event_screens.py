@@ -510,9 +510,9 @@ class EventsScreen(Screens):
                         name = name[:9] + ".."
 
                     self.cat_profile_buttons.append(
-                        IDImageButton(scale(pygame.Rect((pressed_button_pos[0] - (240 * i) - 1,
+                        IDImageButton(pygame.Rect((pressed_button_pos[0] - (240/1600 * screen_x * i) - 1,
                                                    pressed_button_pos[1] + 4),
-                                                   (232, 60))),
+                                                   (232/1600 * screen_x, 60/1400 * screen_y)),
                                       text=name, ids=ev, container=self.event_container,
                                       object_id="#events_cat_profile_button", manager=MANAGER))
                     # There is only room for about four buttons.
