@@ -1504,11 +1504,14 @@ class MedDenScreen(Screens):
                                                       , manager=MANAGER)
             self.cat_bg.disable()
             log_text = game.herb_events_list.copy()
-            img_path = "resources/images/spacer.png"
+            if game.settings["fullscreen"]:
+                img_path = "resources/images/spacer.png"
+            else:
+                img_path = "resources/images/spacer_small.png"
             self.log_box = pygame_gui.elements.UITextBox(
                 f"{f'<br><img src={img_path}><br>'.join(log_text)}<br>",
-                pygame.Rect
-                ((300, 900), (1080, 360)),
+                scale(pygame.Rect
+                ((300, 900), (1080, 360))),
                 object_id="#med_den_log_box", manager=MANAGER
             )
             self.log_box.hide()
