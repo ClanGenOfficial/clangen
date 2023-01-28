@@ -450,9 +450,41 @@
     "antagonize_text": null,
     "antagonize_fail_text": null,
     "history_text": [
-            null,
-            "This cat died from being ambushed by rogues.",
+        null,
+        "This cat died from being ambushed by rogues.",
         "were killed in a rogue ambush"
+    ]
+},
+{
+    "patrol_id": "gen_gen_curiouskittypet1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["border", "new_cat", "reputation", "scar", "battle_injury", "new_cat_adult"],
+    "intro_text": "As the patrol is checking the border lines, they hear the unmistakable sound of a cat traipsing through Clan territory.",
+    "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "success_text": [
+        "The patrol approaches warily and comes upon a kittypet that's sniffing around. The kittypet notices their arrival and brightly says that they've heard about the Clan and wish to join. The patrol agrees to take them back to camp.",
+        "The patrol follows the noise and comes upon a kittypet that's sniffing around. The kittypet notices them and bundles towards the patrol, whose pelts bush out in surprise. The kittypet quickly begins a story about how they've been training for <i>days</i> now and they're finally ready to join c_n. Well alright then!",
+        "The patrol follows the noise and comes upon a kittypet that's sniffing around. The kittypet turns and bristles, hissing at the patrol. s_c calls out a greeting to them and engages them in conversation, which seems to calm them down. They even agree when s_c asks if they'd like to join the Clan!"
+    ],
+    "fail_text": [
+        "The patrol follows the sound, intent on finding the intruder. They come upon a kittypet sniffing around. When the kittypet notices them, however, it turns tail and makes a hasty getaway. At least it's off the territory now.",
+        "The patrol follows the sound, intent on finding the intruder. They come upon a kittypet sniffing around. They're about to approach calmly when s_c lets out a yowl and rushes towards the kittypet, who quickly turns tail.",
+        null,
+        "The patrol follows the sound, ready to confront the intruder. They come upon a large kittypet that's sniffing around. They begin to approach, but the kittypet immediately turns on them. r_c doesn't have enough time to move as the kittypet launches a quick attack. p_l bats the kittypet away and helps r_c back to camp."
+    ],
+    "win_skills": ["good speaker", "great speaker", "excellent speaker"],
+    "win_trait": null,
+    "fail_skills": ["None"],
+    "fail_trait": ["vengeful", "bloodthirsty"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            "This cat gained a scar from a fight with an angry kittypet."
     ]
 }
 ]
