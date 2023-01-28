@@ -2079,7 +2079,7 @@
         "chance_of_success": 30,
         "exp": 30,
         "success_text": [
-        "The red vixen smells of milk and blood. Hopefully by driving her out of the territory, the litter she has been raising this Greenleaf won't be a threat to the Clan. If they don't starve, c_n will hunt them down - they do not share with foxes.",
+        "The red vixen smells of milk and blood. Hopefully by driving her out of the territory, the litter she has been raising this greenleaf won't be a threat to the Clan. If they don't starve, c_n will hunt them down - they do not share with foxes.",
         "Your patrol drives away the red fox, seeks out her den, and kills her cubs. It's brutal, but these fluffy small foxes would one day have grown to be kit-killers and thieves.",
         "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the red fox nor her dependent cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
         "The patrol overcomes the red vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
@@ -2152,7 +2152,7 @@
         "chance_of_success": 10,
         "exp": 50,
         "success_text": [
-        "The red vixen smells of milk and blood. Hopefully by driving her out of the territory, the litter she has been raising this Greenleaf won't be a threat to the Clan.",
+        "The red vixen smells of milk and blood. Hopefully by driving her out of the territory, the litter she has been raising this greenleaf won't be a threat to the Clan.",
         null,
         "s_c displays incredible skill, driving the mother vixen and her brood out of c_n's swamps all by themselves. Now neither the red fox nor her dependent cubs pose a threat to the Clan. They swell with pride, feeling the confidence of knowing that they're truly one of the best fighters c_n has ever produced.",
         "A brilliant battle move by s_c at a critical moment knocks the red vixen off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in their pelt to do it alone."
@@ -2475,7 +2475,7 @@
         "chance_of_success": 50,
         "exp": 50,
         "success_text": [
-        "r_c finds a gray vixen smelling of milk and blood. Hopefully by driving her out of the territory, the litter she has been raising this Greenleaf won't be a threat to the Clan.",
+        "r_c finds a gray vixen smelling of milk and blood. Hopefully by driving her out of the territory, the litter she has been raising this greenleaf won't be a threat to the Clan.",
         null,
         "s_c displays incredible skill, driving the mother vixen and her brood out of c_n's swamps all by themselves. Now neither the gray fox nor her dependent cubs pose a threat to the Clan. They swell with pride, returning to camp knowing there's one less competitor poaching c_n's prey.",
         "They're nearly of equal height, with s_c's bold aggression making up for the weight that the gray vixen has on them, and the stand off is resolved when s_c charges the gray fox and she chooses flight over fight."
@@ -3458,7 +3458,7 @@
         "chance_of_success": 30,
         "exp": 30,
         "success_text": [
-        "The red vixen smells of milk and blood. Hopefully by driving her out of the territory, the litter she has been raising this Greenleaf won't be a threat to the Clan. If they don't starve, c_n will hunt them down - they do not share with foxes.",
+        "The red vixen smells of milk and blood. Hopefully by driving her out of the territory, the litter she has been raising this greenleaf won't be a threat to the Clan. If they don't starve, c_n will hunt them down - they do not share with foxes.",
         "Your patrol drives away the red fox, seeks out her den, and kills her cubs. It's brutal, but these fluffy small foxes would one day have grown to be kit-killers and thieves.",
         "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the red fox nor her dependent cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
         "The patrol overcomes the red vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
@@ -3531,7 +3531,7 @@
         "chance_of_success": 10,
         "exp": 50,
         "success_text": [
-        "The red vixen smells of milk and blood. Hopefully by driving her out of the territory, the litter she has been raising this Greenleaf won't be a threat to the Clan.",
+        "The red vixen smells of milk and blood. Hopefully by driving her out of the territory, the litter she has been raising this greenleaf won't be a threat to the Clan.",
         null,
         "s_c displays incredible skill, driving the mother vixen and her brood out of c_n's swamps all by themselves. Now neither the red fox nor her dependent cubs pose a threat to the Clan. They swell with pride, feeling the confidence of knowing that they're truly one of the best fighters c_n has ever produced.",
         "A brilliant battle move by s_c at a critical moment knocks the red vixen off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in their pelt to do it alone."
@@ -3854,7 +3854,7 @@
         "chance_of_success": 50,
         "exp": 50,
         "success_text": [
-        "r_c finds a gray vixen smelling of milk and blood. Hopefully by driving her out of the territory, the litter she has been raising this Greenleaf won't be a threat to the Clan.",
+        "r_c finds a gray vixen smelling of milk and blood. Hopefully by driving her out of the territory, the litter she has been raising this greenleaf won't be a threat to the Clan.",
         null,
         "s_c displays incredible skill, driving the mother vixen and her brood out of c_n's swamps all by themselves. Now neither the gray fox nor her dependent cubs pose a threat to the Clan. They swell with pride, returning to camp knowing there's one less competitor poaching c_n's prey.",
         "They're nearly of equal height, with s_c's bold aggression making up for the weight that the gray vixen has on them, and the stand off is resolved when s_c charges the gray fox and she chooses flight over fight."

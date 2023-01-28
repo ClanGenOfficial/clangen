@@ -356,7 +356,7 @@
 		"chance_of_success": 50,
 		"exp": 30,
 		"success_text": [
-			"The patrol tracks the noise and discovers a coyote scavenging off a carcass. This is a predator they cannot fight, the patrol decides to return to camp and report the intruder to the leader, perhaps they can return later to take what the coyote leaves behind.",
+			"The patrol tracks the noise and discovers a coyote scavenging off a carcass. This is a predator they cannot fight, the patrol decides to return to camp and report the intruder to the leader. Perhaps they can return later to take what the coyote leaves behind.",
 			"The patrol tracks the noise and finds a mostly stripped carcass covered in the scent of coyote. They quickly scavenge what little is left and leave before the predator can return.",
 			"The patrol follows the noise to a coyote who quickly spots them in the brush. A fight ensues and thanks to the skills of s_c, the coyote eventually runs away, deeming the carcass they had been scavenging from to not be worth the hassle.  Your patrol brings back what meat had still been left.",
 			"The noise leads them to a coyote, scavenging from a carcass. s_c instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the coyote eats its fill and disappears into the forest. When s_c deems it safe, the patrol takes their turn stripping the leftover meat from the bones."
@@ -413,7 +413,7 @@
 		"chance_of_success": 30,
 		"exp": 30,
 		"success_text": [
-			"The patrol tracks the noise and discovers a coyote scavenging off a carcass. This is a predator they cannot fight, the patrol decides to return to camp and report the intruder to the leader, perhaps they can return later to take what the coyote leaves behind.",
+			"The patrol tracks the noise and discovers a coyote scavenging off a carcass. This is a predator they cannot fight, the patrol decides to return to camp and report the intruder to the leader. Perhaps they can return later to take what the coyote leaves behind.",
 			"The patrol tracks the noise and finds a mostly stripped carcass covered in the scent of coyote. They quickly scavenge what little is left and leave before the predator can return.",
 			"The noise leads them to a coyote, scavenging from a carcass. s_c instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the coyote eats its fill and disappears into the forest. When s_c deems it safe, the patrol takes their turn stripping the leftover meat from the bones.",
 			"The noise leads them to a coyote, scavenging from a carcass. s_c instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the coyote eats its fill and disappears into the forest. When s_c deems it safe, the patrol takes their turn stripping the leftover meat from the bones."
@@ -526,7 +526,7 @@
 		"chance_of_success": 40,
 		"exp": 30,
 		"success_text": [
-			"The patrol tracks the noise and discovers a wolf eating from its kill. This is a predator they cannot fight and more wolves may be nearby, the patrol decides to return to camp and report the intruder to the leader, perhaps they can return later to take what fresh-kill is left behind.",
+			"The patrol tracks the noise and discovers a wolf eating from its kill. This is a predator they cannot fight and more wolves may be nearby, the patrol decides to return to camp and report the intruder to the leader. Perhaps they can return later to take what fresh-kill is left behind.",
 			"The patrol tracks the noise and finds a mostly stripped carcass covered in the scent of wolves. They quickly scavenge what little is left and leave before the predators can return.",
 			"The noise leads them to a wolf, eating from its kill. s_c instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the wolf eats its fill and disappears into the forest. When s_c deems it safe, the patrol takes their turn stripping the leftover meat from the bones.",
 			"The noise leads them to a wolf, eating from its kill. s_c instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the wolf eats its fill and disappears into the forest. When s_c deems it safe, the patrol takes their turn stripping the leftover meat from the bones."
@@ -582,7 +582,7 @@
 		"chance_of_success": 20,
 		"exp": 30,
 		"success_text": [
-			"The patrol tracks the noise and discovers a wolf eating from its kill. This is a predator they cannot fight and more wolves may be nearby, the patrol decides to return to camp and report the intruder to the leader, perhaps they can return later to take what little fresh-kill is left behind.",
+			"The patrol tracks the noise and discovers a wolf eating from its kill. This is a predator they cannot fight and more wolves may be nearby, the patrol decides to return to camp and report the intruder to the leader. Perhaps they can return later to take what little fresh-kill is left behind.",
 			"The patrol tracks the noise and finds a mostly stripped carcass covered in the scent of wolves. They quickly scavenge what little is left and leave before the predators can return.",
 			"The noise leads them to a wolf, scavenging from a carcass. s_c instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the wolf eats its fill and disappears into the forest. When s_c deems it safe, the patrol takes their turn stripping the leftover meat from the bones.",
 			"The noise leads them to a wolf, scavenging from a carcass. s_c instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the wolf eats its fill and disappears into the forest. When s_c deems it safe, the patrol takes their turn stripping the leftover meat from the bones."
@@ -2464,7 +2464,7 @@
 			"Your cats are smaller but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
 			null,
 			"s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until it gives up and runs.",
-			"The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and it's snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
+			"The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
 		],
 		"fail_text": [
 			"Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
@@ -2876,7 +2876,7 @@
 			"Your cats are smaller but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
 			null,
 			"s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until it gives up and runs.",
-			"The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and it's snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
+			"The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
 		],
 		"fail_text": [
 			"Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
@@ -3681,7 +3681,7 @@
 			"The cats are only just smaller and outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
 			null,
 			"s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until it gives up and runs.",
-			"The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and it's snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
+			"The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
 		],
 		"fail_text": [
 			"Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
@@ -3880,7 +3880,7 @@
 			"The cats are only just smaller and outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
 			null,
 			"s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until it gives up and runs.",
-			"The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and it's snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
+			"The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
 		],
 		"fail_text": [
 			"Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
@@ -5257,7 +5257,7 @@
         "success_text": [
             "r_c locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. r_c waggles their haunches and leaps, pinning the mouse beneath a paw as they make the killing bite.",
             "r_c pinpoints the location of the prey and begins creeping forward. They're almost within pouncing distance when the mouse suddenly bolts. With a lash of their tail, r_c leaps after the mouse, barely snagging it before it reaches a burrow. They purr in satisfaction as prey-blood hits their tongue.",
-			"s_c immediately drops into a practised crouch, shimmying flawlessly along the ground and taking the perfectly plump mouse completely by surprise."
+			"s_c immediately drops into a practiced crouch, shimmying flawlessly along the ground and taking the perfectly plump mouse completely by surprise."
         ],
         "fail_text": [
             "r_c narrowly misses the mouse."
@@ -5484,7 +5484,7 @@
         "biome": "forest",
         "season": "newleaf",
         "tags": [
-            "hunting", "romantic", "respect", "pos_jealous", "pos_dislike", "patrol_to_r_c", "medium_prey"
+            "hunting", "romantic", "respect", "pos_jealous", "pos_dislike", "p_l_to_r_c", "medium_prey"
         ],
         "intro_text": "As the patrol heads out into the forest to hunt, r_c seems to be absolutely unconcerned with their duties, instead ambling along as through the prey is going to waltz into their paws.",
         "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
@@ -5511,7 +5511,7 @@
         "biome": "forest",
         "season": "greenleaf",
         "tags": [
-            "hunting", "romantic", "respect", "pos_jealous", "pos_dislike", "patrol_to_r_c", "medium_prey"
+            "hunting", "romantic", "respect", "pos_jealous", "pos_dislike", "p_l_to_r_c", "medium_prey"
         ],
         "intro_text": "As the patrol heads out into the forest to hunt, r_c seems to be absolutely unconcerned with their duties, instead ambling along as through the prey is going to waltz into their paws.",
         "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
@@ -5538,7 +5538,7 @@
         "biome": "forest",
         "season": "leaf-fall",
         "tags": [
-            "hunting", "romantic", "respect", "pos_jealous", "pos_dislike", "patrol_to_r_c", "medium_prey"
+            "hunting", "romantic", "respect", "pos_jealous", "pos_dislike", "p_l_to_r_c", "medium_prey"
         ],
         "intro_text": "As the patrol heads out into the forest to hunt, r_c seems to be absolutely unconcerned with their duties, instead ambling along as through the prey is going to waltz into their paws.",
         "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
@@ -5565,7 +5565,7 @@
         "biome": "forest",
         "season": "leaf-bare",
         "tags": [
-            "hunting", "romantic", "respect", "pos_jealous", "pos_dislike", "patrol_to_r_c", "medium_prey"
+            "hunting", "romantic", "respect", "pos_jealous", "pos_dislike", "p_l_to_r_c", "medium_prey"
         ],
         "intro_text": "As the patrol heads out into the forest to hunt, r_c seems to be absolutely unconcerned with their duties, instead ambling along as through the prey is going to waltz into their paws.",
         "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",

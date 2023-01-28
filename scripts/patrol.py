@@ -167,9 +167,9 @@ class Patrol():
             small_clan = False
         else:
             small_clan = True
-        regular_chance = int(random.getrandbits(2))
-        hostile_chance = int(random.getrandbits(5))
-        welcoming_chance = int(random.getrandbits(1))
+        regular_chance = int(random.getrandbits(1))
+        hostile_chance = int(random.getrandbits(3))
+        welcoming_chance = 1 # this sets the new cat patrols to always possible
         if reputation in range(1, 30):
             hostile_rep = True
             if small_clan:
@@ -1201,8 +1201,6 @@ class Patrol():
                     created_cats.extend(self.create_new_cat(loner=True, loner_name=True, kittypet=False, queen=True,
                                                        backstory=new_backstory))
                     new_cat = created_cats[0]
-                    new_cat.name.prefix = "unnamed"
-                    new_cat.name.suffix = " queen"
                     new_cat.outside = True
                     new_cat.dead = True
                 if "new_cat_newborn" in tags:
@@ -1271,7 +1269,7 @@ class Patrol():
                     if major_injury:
                         new_cat.get_injured("broken bone")
             for cat in created_cats:
-                if cat.name.prefix != "unnamed" and not cat.dead:
+                if not cat.outside:
                     self.results_text.append(f"{cat.name} has joined the Clan.")
 
     def create_new_cat(self,

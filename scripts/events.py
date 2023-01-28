@@ -1761,7 +1761,7 @@ class Events():
                 ' are killed after a badger attack.',
                 ' die to a greencough outbreak.',
                 ' are taken away by Twolegs.',
-                ' eat tainted freshkill and die.',
+                ' eat tainted fresh-kill and die.',
             ])
             if game.clan.current_season == 'Leaf-bare':
                 disaster.extend([
