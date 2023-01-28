@@ -59,7 +59,7 @@ class Events():
             #     game.cur_events_list.insert(0, Single_Event(f"{game.clan.name}Clan has not enough food for the next moon!"))    
 
         for cat in Cat.all_cats.copy().values():
-            if not cat.outside:
+            if not cat.outside or cat.dead:
                 self.one_moon_cat(cat)
 
             else:
