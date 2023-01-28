@@ -505,7 +505,8 @@ class MakeClanScreen(Screens):
 
         # CAT IMAGES
         for u in range(6):
-            self.elements["cat" + str(u)].kill()
+            if "cat" + str(u) in self.elements:
+                self.elements["cat" + str(u)].kill()
             if game.choose_cats[u] == selected:
                 self.elements["cat" + str(u)] = self.elements["cat" + str(u)] = UISpriteButton(
                     scale(pygame.Rect((540, 400), (300, 300))), pygame.transform.scale(game.choose_cats[u].large_sprite, (300, 300)),
@@ -519,7 +520,8 @@ class MakeClanScreen(Screens):
                                                                game.choose_cats[u].large_sprite,
                                                                cat_object=game.choose_cats[u], manager=MANAGER)
         for u in range(6, 12):
-            self.elements["cat" + str(u)].kill()
+            if "cat" + str(u) in self.elements:
+                self.elements["cat" + str(u)].kill()
             if game.choose_cats[u] == selected:
                 self.elements["cat" + str(u)] = self.elements["cat" + str(u)] = UISpriteButton(
                     scale(pygame.Rect((540, 400), (300, 300))), pygame.transform.scale(game.choose_cats[u].large_sprite, (300, 300)),
@@ -647,16 +649,7 @@ class MakeClanScreen(Screens):
         self.elements['next_step'].disable()
 
         # draw cats to choose from
-        column_poss = [100, 200]
-
-        for u in range(6):
-            self.elements["cat" + str(u)] = UISpriteButton(scale(pygame.Rect((column_poss[0], 260 + 100 * u), (100, 100))),
-                                                           game.choose_cats[u].large_sprite,
-                                                           cat_object=game.choose_cats[u], manager=MANAGER)
-        for u in range(6, 12):
-            self.elements["cat" + str(u)] = UISpriteButton(scale(pygame.Rect((column_poss[1], 260 + 100 * (u - 6)), (100, 100))),
-                                                           game.choose_cats[u].large_sprite,
-                                                           cat_object=game.choose_cats[u], manager=MANAGER)
+        self.refresh_cat_images_and_info()
 
     def open_choose_deputy(self):
         """Open sub-page to select deputy."""
@@ -693,29 +686,7 @@ class MakeClanScreen(Screens):
         self.elements['next_step'].disable()
 
         # draw cats to choose from
-        column_poss = [100, 200]
-
-        for u in range(6):
-            if game.choose_cats[u] == self.leader:
-                self.elements["cat" + str(u)] = UISpriteButton(
-                    scale(pygame.Rect((1400, 250 + 100 * (u - 6)), (100, 100))),
-                    game.choose_cats[u].large_sprite,
-                    cat_object=game.choose_cats[u], manager=MANAGER)
-            else:
-                self.elements["cat" + str(u)] = UISpriteButton(scale(pygame.Rect((column_poss[0], 260 + 100 * u), (100, 100))),
-                                                               game.choose_cats[u].large_sprite,
-                                                               cat_object=game.choose_cats[u], manager=MANAGER)
-        for u in range(6, 12):
-            if game.choose_cats[u] == self.leader:
-                self.elements["cat" + str(u)] = UISpriteButton(
-                    scale(pygame.Rect((1400, 250 + 100 * (u - 6)), (100, 100))),
-                    game.choose_cats[u].large_sprite,
-                    cat_object=game.choose_cats[u], manager=MANAGER)
-            else:
-                self.elements["cat" + str(u)] = UISpriteButton(
-                    scale(pygame.Rect((column_poss[1], 260 + 100 * (u - 6)), (100, 100))),
-                    game.choose_cats[u].large_sprite,
-                    cat_object=game.choose_cats[u], manager=MANAGER)
+        self.refresh_cat_images_and_info()
 
     def open_choose_med_cat(self):
         self.clear_all_page()
@@ -752,29 +723,7 @@ class MakeClanScreen(Screens):
         self.elements['next_step'].disable()
 
         # draw cats to choose from
-        column_poss = [100, 200]
-
-        for u in range(6):
-            if game.choose_cats[u] in [self.leader, self.deputy]:
-                self.elements["cat" + str(u)] = UISpriteButton(
-                    scale(pygame.Rect((1400, 250 + 100 * (u - 6)), (100, 100))),
-                    game.choose_cats[u].large_sprite,
-                    cat_object=game.choose_cats[u], manager=MANAGER)
-            else:
-                self.elements["cat" + str(u)] = UISpriteButton(scale(pygame.Rect((column_poss[0], 260 + 100 * u), (100, 100))),
-                                                               game.choose_cats[u].large_sprite,
-                                                               cat_object=game.choose_cats[u], manager=MANAGER)
-        for u in range(6, 12):
-            if game.choose_cats[u] in [self.leader, self.deputy]:
-                self.elements["cat" + str(u)] = UISpriteButton(
-                    scale(pygame.Rect((1400, 250 + 100 * (u - 6)), (100, 100))),
-                    game.choose_cats[u].large_sprite,
-                    cat_object=game.choose_cats[u], manager=MANAGER)
-            else:
-                self.elements["cat" + str(u)] = UISpriteButton(
-                    scale(pygame.Rect((column_poss[1], 260 + 100 * (u - 6)), (100, 100))),
-                    game.choose_cats[u].large_sprite,
-                    cat_object=game.choose_cats[u], manager=MANAGER)
+        self.refresh_cat_images_and_info()
 
     def open_choose_members(self):
         self.clear_all_page()
@@ -810,29 +759,7 @@ class MakeClanScreen(Screens):
         self.elements['next_step'].disable()
 
         # draw cats to choose from
-        column_poss = [100, 200]
-
-        for u in range(6):
-            if game.choose_cats[u] in [self.leader, self.deputy, self.med_cat]:
-                self.elements["cat" + str(u)] = UISpriteButton(
-                    scale(pygame.Rect((1400, 250 + 100 * (u - 6)), (100, 100))),
-                    game.choose_cats[u].large_sprite,
-                    cat_object=game.choose_cats[u], manager=MANAGER)
-            else:
-                self.elements["cat" + str(u)] = UISpriteButton(scale(pygame.Rect((column_poss[0], 260 + 100 * u), (100, 100))),
-                                                               game.choose_cats[u].large_sprite,
-                                                               cat_object=game.choose_cats[u], manager=MANAGER)
-        for u in range(6, 12):
-            if game.choose_cats[u] in [self.leader, self.deputy, self.med_cat]:
-                self.elements["cat" + str(u)] = UISpriteButton(
-                    scale(pygame.Rect((1400, 250 + 100 * (u - 6)), (100, 100))),
-                    game.choose_cats[u].large_sprite,
-                    cat_object=game.choose_cats[u], manager=MANAGER)
-            else:
-                self.elements["cat" + str(u)] = UISpriteButton(
-                    scale(pygame.Rect((column_poss[1], 260 + 100 * (u - 6)), (100, 100))),
-                    game.choose_cats[u].large_sprite,
-                    cat_object=game.choose_cats[u], manager=MANAGER)
+        self.refresh_cat_images_and_info()
 
         # This is doing the same thing again, but it's needed to make the "last step button work"
         self.refresh_cat_images_and_info()
