@@ -254,8 +254,6 @@ class SettingsScreen(Screens):
                 return
             elif event.ui_element == self.language_button:
                 self.open_lang_settings()
-
-
             if self.sub_menu == 'general':
                 self.handle_general_events(event)
             elif self.sub_menu == 'relation':
@@ -351,6 +349,14 @@ class SettingsScreen(Screens):
             self.settings_changed = True
             self.update_save_button()
             self.refresh_checkboxes()
+        elif event.ui_element == self.checkboxes_text["fullscreen"]:
+            game.switch_setting('fullscreen')
+            game.save_settings()
+            pygame.display.quit()
+            pygame.quit()
+            exit()
+
+
 
     def handle_lang_events(self, event):
         if event.ui_element == self.checkboxes['english']:
@@ -421,6 +427,10 @@ class SettingsScreen(Screens):
         self.sub_menu = 'general'
         self.save_settings_button.show()
 
+        self.checkboxes_text["fullscreen"] = pygame_gui.elements.UIButton(scale(pygame.Rect((700, 280), (-1, -1))),
+                                                                          "Toggle Fullscreen",
+                                                                          tool_tip_text="This will close the game.")
+
 
         # Text_boxes:
         # For consistency's sake, use the name of the setting as the key for the
@@ -430,7 +440,7 @@ class SettingsScreen(Screens):
         n = 0
 
         self.checkboxes_text["container"] = pygame_gui.elements.UIScrollingContainer(scale(pygame.Rect((0, 440),
-                                                                                                 (1400, 600))),
+                                                                                     (1400, 600))),
                                                                                      manager=MANAGER)
 
         self.checkboxes_text['dark mode'] = pygame_gui.elements.UITextBox(
@@ -511,6 +521,8 @@ class SettingsScreen(Screens):
         for box in self.checkboxes_text:
             if box != "container":
                 self.checkboxes_text[box].disable()
+
+        self.checkboxes_text["fullscreen"].enable()
 
         self.checkboxes_text["container"].set_scrollable_area_dimensions((1360/1600 * screen_x, n * y_spacing + 80/1400 * screen_y))
 

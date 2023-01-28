@@ -20,9 +20,11 @@ class OutsideClanScreen(Screens):
     display_cats = []  # Holds the cat sprite objects
     cat_names = []  # Holds the cat name text-box objects
 
-    search_bar_image = pygame.transform.scale(pygame.image.load(
-        "resources/images/search_bar.png").convert_alpha(), (456/1600 * screen_x, 68/1400 * screen_y))
     previous_search_text = ""
+
+    def load_images(self):
+        self.search_bar_image = pygame.transform.scale(pygame.image.load(
+            "resources/images/search_bar.png").convert_alpha(), (456 / 1600 * screen_x, 68 / 1400 * screen_y))
 
     def __init__(self, name=None):
         super().__init__(name)
@@ -40,6 +42,7 @@ class OutsideClanScreen(Screens):
         self.living_cats = None
         self.all_pages = None
         self.current_listed_cats = None
+        self.load_images()
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -300,6 +303,9 @@ class UnknownResScreen(Screens):
         self.filter_rank = None
         self.filter_by_open = None
         self.filter_by_closed = None
+        self.load_images()
+
+    def load_images(self):
         self.search_bar_image = pygame.transform.scale(
             pygame.image.load("resources/images/search_bar.png").convert_alpha(), (228, 34))
         self.clan_name_bg = pygame.transform.scale(
@@ -309,8 +315,8 @@ class UnknownResScreen(Screens):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.dark_forest_button:
                 self.change_screen('dark forest screen')
-            elif event.ui_element == self.unknown_residence_button:
-                self.change_screen('unknown residence screen')
+            elif event.ui_element == self.starclan_button:
+                self.change_screen('starclan screen')
             elif event.ui_element == self.next_page_button:
                 self.list_page += 1
                 self.update_page()
@@ -544,6 +550,6 @@ class UnknownResScreen(Screens):
             self.update_search_cats(self.search_bar.get_text())
         self.previous_search_text = self.search_bar.get_text()
 
-        screen.blit(OutsideClanScreen.search_bar_image, (696/1600 * screen_x, 270/1400 * screen_y))
+        screen.blit(self.search_bar_image, (696/1600 * screen_x, 270/1400 * screen_y))
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]
