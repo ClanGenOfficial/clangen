@@ -2288,7 +2288,7 @@ class Cat():
         else:
             apply_bonus = True
             # EX gain on success
-            EX_gain = randint(5, 15)
+            EX_gain = randint(5, 12)
 
             gm_modifier = 1
             if game.clan.game_mode == 'expanded':
@@ -2349,7 +2349,7 @@ class Cat():
 
             if trait == "romantic":
                 if mates:
-                    ran = (5, 14)
+                    ran = (5, 10)
                 else:
                     ran = (4, 6)
 
