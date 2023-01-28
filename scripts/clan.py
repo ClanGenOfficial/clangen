@@ -129,7 +129,7 @@ class Clan():
             self.camp_bg = camp_bg
             self.game_mode = game_mode
             self.pregnancy_data = {}
-            self.reputation = 75
+            self.reputation = 80
             self.starting_members = starting_members
             if game_mode in ['expanded', 'cruel season']:
                 self.freshkill_pile = Freshkill_Pile()
