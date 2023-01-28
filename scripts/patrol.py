@@ -163,7 +163,7 @@ class Patrol():
             clan_neutral = True
         other_clan_chance = 1  # this is just for separating them a bit from the other patrols, it means they can always happen
         # chance for each kind of loner event to occur
-        if clan_size > 15:
+        if clan_size > 20:
             small_clan = False
         else:
             small_clan = True
