@@ -22,10 +22,10 @@
         },
         "font": {
             "name": "notosans",
-            "size": "30"
+            "size": "15"
         },
         "misc": {
-            "border_width": "24",
+            "border_width": "12",
             "shadow_width": "0"
         }
     }

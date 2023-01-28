@@ -10,6 +10,14 @@ from scripts.cat.sprites import *
 from scripts.cat.pelts import *
 from scripts.game_structure.game_essentials import *
 
+def scale(rect):
+    rect[0] = round(rect[0]/1600 * screen_x) if rect[0] > 0 else rect[0]
+    rect[1] = round(rect[1]/1400 * screen_y) if rect[1] > 0 else rect[1]
+    rect[2] = round(rect[2] / 1600 * screen_x) if rect[2] > 0 else rect[0]
+    rect[3] = round(rect[3] / 1400 * screen_y) if rect[3] > 0 else rect[0]
+    return rect
+
+
 def get_alive_clan_queens(all_cats):
 	"""Returns a list with all cats with the 'status' queen."""
 	queens = []
