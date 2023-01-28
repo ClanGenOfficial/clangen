@@ -1331,7 +1331,7 @@ class ProfileScreen(Screens):
         self.the_cat = Cat.all_cats.get(game.switches['cat'])
 
         # tracks the position of the detail boxes
-        x_pos = 14
+        x_pos = 28
 
         # tracks the number of boxes so that we don't go out of bounds
         count = 0
@@ -1897,8 +1897,8 @@ class ProfileScreen(Screens):
                 if self.help_button:
                     self.help_button.kill()
 
-                self.help_button = UIImageButton(pygame.Rect(
-                    (104, 1168), (68, 68)),
+                self.help_button = UIImageButton(scale(pygame.Rect(
+                    (104, 1168), (68, 68))),
                     "",
                     object_id="#help_button", manager=MANAGER,
                     tool_tip_text="The notes section has limited html capabilities.<br>"
@@ -1915,8 +1915,8 @@ class ProfileScreen(Screens):
 
                 )
                 if self.editing_notes is True:
-                    self.save_text = UIImageButton(pygame.Rect(
-                        (104, 1028), (68, 68)),
+                    self.save_text = UIImageButton(scale(pygame.Rect(
+                        (104, 1028), (68, 68))),
                         "",
                         object_id="#unchecked_checkbox",
                         tool_tip_text='lock and save text', manager=MANAGER
@@ -1928,8 +1928,8 @@ class ProfileScreen(Screens):
                         object_id='#history_tab_entry_box', manager=MANAGER
                     )
                 else:
-                    self.edit_text = UIImageButton(pygame.Rect(
-                        (104, 1028), (68, 68)),
+                    self.edit_text = UIImageButton(scale(pygame.Rect(
+                        (104, 1028), (68, 68))),
                         "",
                         object_id="#checked_checkbox_smalltooltip",
                         tool_tip_text='edit text', manager=MANAGER

@@ -2429,8 +2429,8 @@ class MediationScreen(Screens):
         # MATE
         if other_cat and cat.mate and cat.mate == other_cat.ID:
             self.selected_cat_elements['mate_icon' + tag] = pygame_gui.elements.UIImage(
-                scale(pygame.Rect((x + 28, y + 28)),
-                            (44, 40)),
+                scale(pygame.Rect((x + 28, y + 28),
+                            (44, 40))),
                 pygame.transform.scale(
                     image_cache.load_image(
                         "resources/images/heart_big.png").convert_alpha(),
