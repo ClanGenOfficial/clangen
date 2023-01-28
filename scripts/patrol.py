@@ -163,7 +163,7 @@ class Patrol():
             clan_neutral = True
         other_clan_chance = 1  # this is just for separating them a bit from the other patrols, it means they can always happen
         # chance for each kind of loner event to occur
-        if clan_size > 15:
+        if clan_size > 20:
             small_clan = False
         else:
             small_clan = True
@@ -1403,7 +1403,7 @@ class PatrolEvent():
 
             med patrols - "med_cat", "herb", "random_herbs", "many_herbs#"
             
-            new cat tags -                                                                                              
+            new cat tags - ("kittypet" in the patrol ID will make the cat a kittypet no matter what)                                                              
             "new_cat", "new_cat_med", "new_cat_queen", "new_cat_female", "new_cat_tom", "new_cat_neutered",
             "new_cat_elder", "new_cat_majorinjury", "new_cat_kit", "new_cat_kits", "new_cat_newborn",
             "new_cat_apprentice", "new_cat_adult",

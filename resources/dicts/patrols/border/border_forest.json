@@ -29,7 +29,7 @@
         "history_text": [
             "This cat was badly scarred when rogues ambushed their patrol.",
             "This cat was killed when rogues ambushed their patrol.",
-            "rogues ambushed their patrol."
+            "rogues ambushed their patrol"
         ]
     },
     {
@@ -60,7 +60,7 @@
         "history_text": [
             null,
             "This cat was killed when rogues ambushed them while on a solo patrol.",
-            "rogues ambushed their patrol."
+            "rogues ambushed their patrol"
         ]
     },
     {
@@ -93,7 +93,7 @@
         "history_text": [
             "r_c was badly scarred when rogues attacked their patrol.",
             "This cat was killed when rogues attacked their patrol.",
-            "killed when rogues attacked their patrol."
+            "killed when rogues attacked their patrol"
         ]
     },
     {
