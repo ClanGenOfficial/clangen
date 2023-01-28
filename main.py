@@ -5,6 +5,7 @@ import traceback
 directory = os.path.dirname(__file__)
 if directory:
     os.chdir(directory)
+
 from scripts.game_structure.load_cat import *
 from scripts.cat.sprites import sprites
 from scripts.clan import clan_class
@@ -14,37 +15,6 @@ import pygame
 
 # Version Number to be displayed.
 VERSION_NUMBER = "Ver. 0.5.0dev"
-
-# from scripts.world import load_map
-
-pygame.init()
-
-# initialize pygame_gui manager, and load themes
-manager = pygame_gui.ui_manager.UIManager((1600, 1400), 'resources/defaults.json')
-manager.add_font_paths(
-    font_name='notosans',
-    regular_path='resources/fonts/NotoSans-Medium.ttf',
-    bold_path='resources/fonts/NotoSans-ExtraBold.ttf',
-    italic_path='resources/fonts/NotoSans-MediumItalic.ttf',
-    bold_italic_path='resources/fonts/NotoSans-ExtraBoldItalic.ttf'
-)
-manager.preload_fonts([
-    {'name': 'notosans', 'point_size': 30, 'style': 'regular'},
-    {'name': 'notosans', 'point_size': 30, 'style': 'bold'},
-    {'name': 'notosans', 'point_size': 30, 'style': 'italic'},
-    {'name': 'notosans', 'point_size': 30, 'style': 'bold_italic'},
-    {'name': 'notosans', 'point_size': 32, 'style': 'regular'},
-    {'name': 'notosans', 'point_size': 32, 'style': 'bold'},
-    {'name': 'notosans', 'point_size': 32, 'style': 'italic'},
-    {'name': 'notosans', 'point_size': 32, 'style': 'bold_italic'},
-])
-manager.get_theme().load_theme('resources/buttons.json')
-manager.get_theme().load_theme('resources/text_boxes.json')
-manager.get_theme().load_theme('resources/text_boxes_dark.json')
-manager.get_theme().load_theme('resources/vertical_scroll_bar.json')
-manager.get_theme().load_theme('resources/windows.json')
-manager.get_theme().load_theme('resources/tool_tips.json')
-
 
 # import all screens for initialization (Note - must be done after pygame_gui manager is created)
 from scripts.screens.all_screens import *
@@ -80,10 +50,6 @@ if clan_list:
         """
 
 # LOAD settings
-if not os.path.exists('saves/settings.txt'):
-    with open('saves/settings.txt', 'w') as write_file:
-        write_file.write('')
-game.load_settings()
 
 sprites.load_scars()
 
@@ -102,8 +68,6 @@ while True:
             screen.fill((57, 50, 36))
         else:
             screen.fill((206, 194, 168))
-
-    mouse.check_pos()
 
     # Draw screens
     # This occurs before events are handled to stop pygame_gui buttons from blinking.
@@ -126,14 +90,14 @@ while True:
         # F2 turns toggles visual debug mode for pygame_gui, allowed for easier bug fixes.
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_F2:
-                if not manager.visual_debug_active:
-                    manager.set_visual_debug_mode(True)
+                if not MANAGER.visual_debug_active:
+                    MANAGER.set_visual_debug_mode(True)
                 else:
-                    manager.set_visual_debug_mode(False)
+                    MANAGER.set_visual_debug_mode(False)
 
-        manager.process_events(event)
+        MANAGER.process_events(event)
 
-    manager.update(time_delta)
+    MANAGER.update(time_delta)
 
     # update
     game.update_game()
@@ -141,7 +105,8 @@ while True:
         game.all_screens[game.last_screen_forupdate].exit_screen()
         game.all_screens[game.current_screen].screen_switches()
         game.switch_screens = False
+
     # END FRAME
-    manager.draw_ui(screen)
+    MANAGER.draw_ui(screen)
 
     pygame.display.update()
