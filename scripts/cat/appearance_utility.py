@@ -212,8 +212,8 @@ def pelt_inheritance(cat, parents: tuple):
             randomize_pelt(cat)
             return
 
-        # There is a 1/15 chance for kits to have the exact same pelt as one of their parents
-        if not randint(0, 15):  # 1/15 chance
+        # There is a 1/10 chance for kits to have the exact same pelt as one of their parents
+        if not randint(0, 10):  # 1/15 chance
             selected = choice(par_pelts)
             cat.pelt = choose_pelt(selected.colour, selected.white, selected.name,
                                    selected.length)
