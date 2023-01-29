@@ -229,11 +229,11 @@ def pelt_inheritance(cat, parents: tuple):
             if p_ in tabbies:
                 add_weight = (45, 10, 5, 7)
             elif p_ in spotted:
-                add_weight = (10, 45, 10, 5)
+                add_weight = (10, 45, 5, 5)
             elif p_ in plain:
                 add_weight = (5, 5, 45, 0)
             elif p_ in exotic:
-                add_weight = (20, 20, 5, 40)
+                add_weight = (20, 20, 1, 40)
             else:
                 add_weight = (0, 0, 0, 0)
 
