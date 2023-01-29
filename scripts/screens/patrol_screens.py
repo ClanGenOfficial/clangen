@@ -638,7 +638,7 @@ class PatrolScreen(Screens):
                                                      object_id="#not_proceed_button",
                                                      starting_height=2, manager=MANAGER)
 
-        self.elements["antagonize"] = UIImageButton(scale(pygame.Rect((1100, 980), (344, 60))), "",
+        self.elements["antagonize"] = UIImageButton(scale(pygame.Rect((1100, 980), (344, 72))), "",
                                                     object_id="#antagonize_button", manager=MANAGER)
         if patrol.patrol_event.antagonize_text is None:
             self.elements["antagonize"].hide()

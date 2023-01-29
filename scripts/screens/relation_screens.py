@@ -766,12 +766,12 @@ class ViewChildrenScreen(Screens):
             if len(name) >= 7:
                 short_name = str(cat.name)[0:6]
                 name = short_name + '...'
-            self.sibling_elements["sibling_name" + str(i)] = pygame_gui.elements.UITextBox(name,
-                                                                                           scale(pygame.Rect(
+            self.sibling_elements["sibling_name" + str(i)] = pygame_gui.elements.UILabel(scale(pygame.Rect(
                                                                                                (pos_x - 5, pos_y + 100),
-                                                                                               (110, 40))),
+                                                                                               (110, 40))), name,
                                                                                            object_id="#cat_patrol_info_box"
                                                                                            , manager=MANAGER)
+
             pos_x += 120
             if pos_x > 1400:
                 pos_y += 120
@@ -820,12 +820,12 @@ class ViewChildrenScreen(Screens):
             if 6 <= len(name) >= 9:
                 short_name = str(cat.name)[0:5]
                 name = short_name + '...'
-            self.offspring_elements["offspring_name" + str(i)] = pygame_gui.elements.UITextBox(name,
-                                                                                               scale(pygame.Rect(
+            self.offspring_elements["offspring_name" + str(i)] = pygame_gui.elements.UILabel(scale(pygame.Rect(
                                                                                                    (pos_x - 5, pos_y + 100),
-                                                                                                   (110, 40))),
+                                                                                                   (110, 40))), name,
                                                                                                object_id="#cat_patrol_info_box"
                                                                                                , manager=MANAGER)
+
             pos_x += 120
             if pos_x > 1400:
                 pos_y += 140
@@ -2429,8 +2429,8 @@ class MediationScreen(Screens):
         # MATE
         if other_cat and cat.mate and cat.mate == other_cat.ID:
             self.selected_cat_elements['mate_icon' + tag] = pygame_gui.elements.UIImage(
-                scale(pygame.Rect((x + 28, y + 28)),
-                            (44, 40)),
+                scale(pygame.Rect((x + 28, y + 28),
+                            (44, 40))),
                 pygame.transform.scale(
                     image_cache.load_image(
                         "resources/images/heart_big.png").convert_alpha(),
@@ -2451,9 +2451,9 @@ class MediationScreen(Screens):
                     other_cat.is_sibling(cat) or check_cousins:
                 related = True
                 self.selected_cat_elements['relation_icon' + tag] = pygame_gui.elements.UIImage(
-                    pygame.Rect((x + 28,
+                    scale(pygame.Rect((x + 28,
                                  y + 28),
-                                (36, 36)),
+                                (36, 36))),
                     pygame.transform.scale(
                         image_cache.load_image(
                             "resources/images/dot_big.png").convert_alpha(),
@@ -2521,7 +2521,7 @@ class MediationScreen(Screens):
             if len(name) > 13:
                 name = name[:10] + ".."
             self.selected_cat_elements[f"relation_heading{tag}"] = pygame_gui.elements.UILabel(scale(pygame.Rect((x + 40, y + 314),
-                                                                                                           (300, 30))),
+                                                                                                           (320, -1))),
                                                                                                f"~~{name}'s feelings~~",
                                                                                                object_id="#cat_patrol_info_box")
 
