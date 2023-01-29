@@ -2487,3 +2487,11 @@ class CeremonyScreen(Screens):
             if event.ui_element == self.back_button:
                 self.change_screen('profile screen')
         return
+
+class RoleScreen(Screens):
+
+    def screen_switches(self):
+        pass
+
+    def exit_screen(self):
+        pass

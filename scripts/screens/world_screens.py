@@ -306,8 +306,8 @@ class UnknownResScreen(Screens):
         self.load_images()
 
     def load_images(self):
-        self.search_bar_image = pygame.transform.scale(
-            pygame.image.load("resources/images/search_bar.png").convert_alpha(), (228, 34))
+        self.search_bar_image = pygame.transform.scale(pygame.image.load(
+            "resources/images/search_bar.png").convert_alpha(), (456 / 1600 * screen_x, 68 / 1400 * screen_y))
         self.clan_name_bg = pygame.transform.scale(
             image_cache.load_image("resources/images/clan_name_bg.png").convert_alpha(), (360, 70))
 
