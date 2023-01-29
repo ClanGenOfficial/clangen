@@ -2202,7 +2202,7 @@ class CeremonyScreen(Screens):
         self.text.disable()
         self.back_button = UIImageButton(scale(pygame.Rect((50, 50), (210, 60))), "",
                                          object_id="#back_button", manager=MANAGER)
-        self.scroll_container.set_scrollable_area_dimensions((1360, self.text.rect[3]), manager=MANAGER)
+        self.scroll_container.set_scrollable_area_dimensions((1360/1600 * screen_x, self.text.rect[3]))
 
     def exit_screen(self):
         self.header.kill()

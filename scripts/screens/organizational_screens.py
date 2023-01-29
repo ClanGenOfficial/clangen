@@ -524,7 +524,7 @@ class SettingsScreen(Screens):
 
         self.checkboxes_text["fullscreen"].enable()
 
-        self.checkboxes_text["container"].set_scrollable_area_dimensions((1360/1600 * screen_x, n * y_spacing + 80/1400 * screen_y))
+        self.checkboxes_text["container"].set_scrollable_area_dimensions((1360/1600 * screen_x, (n * y_spacing + 80)/1400 * screen_y))
 
         self.checkboxes_text['instr'] = pygame_gui.elements.UITextBox(
             "Change the general settings of your game here", scale(pygame.Rect((200, 320), (1200, 100))),
