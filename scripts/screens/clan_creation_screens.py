@@ -41,6 +41,7 @@ class MakeClanScreen(Screens):
                          "This mode has everything in Classic Mode as well as more management-focused features.<br><br>" \
                          "New features include:<br>" \
                          "- Illnesses, Injuries, and Permanent Conditions<br>" \
+                         "- Herb gathering and treatment<br>" \
                          "- Ability to choose patrol type<br><br>" \
                          "With this mode you'll be making the important clan-life decisions."
 
