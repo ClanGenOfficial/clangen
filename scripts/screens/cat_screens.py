@@ -2762,7 +2762,9 @@ class RoleScreen(Screens):
         elif self.the_cat.status == "mediator apprentice":
             output = f"{self.the_cat.name} is a <b>mediator apprentice</b>, training to become a full mediator. " \
                      f"Mediators are in charge of handling disagreements both within the clan and between clans. " \
-                     f"Mediator apprentices are often chosen for their quick thinking and steady personality. "
+                     f"Mediator apprentices are often chosen for their quick thinking and steady personality. " \
+                     f"Apprentices take the suffix \"paw\", " \
+                     f"to represent the path their paws take towards adulthood. "
         elif self.the_cat.status == "kitten":
             output = f"{self.the_cat.name} is a <b>kitten</b>. All cats below the age of six moons are " \
                      f"considered kits. Kits " \
