@@ -347,48 +347,59 @@ class Events():
 
         elif allies and not int(random.random() * 5):
             chosen_ally = choice(allies)
-            index = randrange(1, int(len(herbs.keys())))
-            count = 0
-            herb_given = None
-            for herb in herbs:
-                count += 1
-                if count == index:
-                    herb_given = herb
-                    break
-            if herbs[herb_given] > 2:
-                herb_amount = randrange(1, int(herbs[herb_given] - 1))
-                # deplete the herb
-                herbs[herb_given] -= herb_amount
-
+            if len(herbs.keys()) == 0:
+                # If you have no herbs, you can't give any to a clan. Special events for that.
                 possible_events = [
-                    f"The {chosen_ally.name}Clan medicine cat comes asking if your Clan has any {str(herb_given).replace('_', ' ')} to spare. "
-                    f"Graciously, your Clan decides to aid their allies and share the herbs.",
-                    f"The medicine cat apprentice from {chosen_ally.name}Clan comes asking for {str(herb_given).replace('_', ' ')}. "
-                    f"They refuse to say why their Clan needs them but your Clan still provides them with {str(herb_given).replace('_', ' ')}."
+                    f"The {chosen_ally.name}Clan medicine cat comes asking if your Clan has any herbs to spare. "
+                    f"Unfortunately, your stocks are bare, and you are unable to provide any help. ",
+                    f"A medicine cat from {chosen_ally.name}Clan comes comes to your Clan, asking for herbs "
+                    f"to heal their sick Clanmates. Your Clan quickly shoos them away, not willing to "
+                    f"admit that they don't have a single herb in their stores. "
                 ]
-                if herb_given == 'lungwort':
-                    possible_events.extend([
-                        f"The {chosen_ally.name}Clan medicine cat apprentice comes to your camp, pleading for help "
-                        f"with a yellowcough epidemic. Your Clan provides the cat with some of their extra lungwort.",
-                        f"A medicine cat from {chosen_ally.name}Clan comes to your Clan, asking for lungwort to heal a "
-                        f"case of yellowcough. Your Clan has some extra, and so decides to share with their allies."
-                    ])
-                chosen_ally.relations += 5
+                chosen_ally.relations -= 2
             else:
-                possible_events = [
-                    f"The {chosen_ally.name}Clan medicine cat comes asking if your Clan has any {str(herb_given).replace('_', ' ')} to spare, "
-                    f"your Clan only has enough for themselves however and they refuse to share.",
-                    f"The medicine cat apprentice from {chosen_ally.name}Clan comes asking for herbs. They refuse to "
-                    f"say why their Clan needs them and your Clan decides not to share their precious few {str(herb_given).replace('_', ' ')}."
-                ]
-                if herb_given == 'lungwort':
-                    possible_events.extend([
-                        f"The {chosen_ally.name}Clan medicine cat apprentice comes to your camp, pleading for help with"
-                        f" a yellowcough epidemic. Your Clan can't spare the precious herb however, and turns them away.",
-                        f"A medicine cat from {chosen_ally.name}Clan comes to your Clan, asking for lungwort to heal "
-                        f"a case of yellowcough. However, your Clan has no extra lungwort to give."
-                    ])
-                chosen_ally.relations -= 5
+                index = randrange(1, int(len(herbs.keys())) + 1)
+                count = 0
+                herb_given = None
+                for herb in herbs:
+                    count += 1
+                    if count == index:
+                        herb_given = herb
+                        break
+                if herbs[herb_given] > 2:
+                    herb_amount = randrange(1, int(herbs[herb_given] - 1))
+                    # deplete the herb
+                    herbs[herb_given] -= herb_amount
+
+                    possible_events = [
+                        f"The {chosen_ally.name}Clan medicine cat comes asking if your Clan has any {str(herb_given).replace('_', ' ')} to spare. "
+                        f"Graciously, your Clan decides to aid their allies and share the herbs.",
+                        f"The medicine cat apprentice from {chosen_ally.name}Clan comes asking for {str(herb_given).replace('_', ' ')}. "
+                        f"They refuse to say why their Clan needs them but your Clan still provides them with {str(herb_given).replace('_', ' ')}."
+                    ]
+                    if herb_given == 'lungwort':
+                        possible_events.extend([
+                            f"The {chosen_ally.name}Clan medicine cat apprentice comes to your camp, pleading for help "
+                            f"with a yellowcough epidemic. Your Clan provides the cat with some of their extra lungwort.",
+                            f"A medicine cat from {chosen_ally.name}Clan comes to your Clan, asking for lungwort to heal a "
+                            f"case of yellowcough. Your Clan has some extra, and so decides to share with their allies."
+                        ])
+                    chosen_ally.relations += 5
+                else:
+                    possible_events = [
+                        f"The {chosen_ally.name}Clan medicine cat comes asking if your Clan has any {str(herb_given).replace('_', ' ')} to spare, "
+                        f"your Clan only has enough for themselves however and they refuse to share.",
+                        f"The medicine cat apprentice from {chosen_ally.name}Clan comes asking for herbs. They refuse to "
+                        f"say why their Clan needs them and your Clan decides not to share their precious few {str(herb_given).replace('_', ' ')}."
+                    ]
+                    if herb_given == 'lungwort':
+                        possible_events.extend([
+                            f"The {chosen_ally.name}Clan medicine cat apprentice comes to your camp, pleading for help with"
+                            f" a yellowcough epidemic. Your Clan can't spare the precious herb however, and turns them away.",
+                            f"A medicine cat from {chosen_ally.name}Clan comes to your Clan, asking for lungwort to heal "
+                            f"a case of yellowcough. However, your Clan has no extra lungwort to give."
+                        ])
+                    chosen_ally.relations -= 5
             event = choice(possible_events)
             game.herb_events_list.append(event)
             game.cur_events_list.append(Single_Event(event, "health"))

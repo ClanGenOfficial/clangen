@@ -161,7 +161,7 @@ class Name():
             'Hazel', 'Vole', 'Branch', 'Warm', 'Robin', 'Almond', 'Acorn', 'Bark'
         ],
         'BROWN': [
-            'Brown', 'Oak', 'Mouse', 'Dark', 'Shade', 'Russet', 'Dust', 'Dusty' 'Acorn', 'Mud', 'Deer', 'Fawn', 'Doe', 'Stag',
+            'Brown', 'Oak', 'Mouse', 'Dark', 'Shade', 'Russet', 'Dust', 'Dusty', 'Acorn', 'Mud', 'Deer', 'Fawn', 'Doe', 'Stag',
             'Twig', 'Owl', 'Otter', 'Log', 'Vole', 'Branch', 'Hazel', 'Robin', 'Acorn', 'Bark'
         ],
         'DARKBROWN': [
