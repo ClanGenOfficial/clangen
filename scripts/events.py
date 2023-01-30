@@ -231,7 +231,7 @@ class Events():
             print(game.clan.herbs)
             for herb in herbs:
                 adjust_by = random.choices([-2, -1, 0, 1, 2], [1, 2, 3, 2, 1], k=1)
-                print(adjust_by)
+                # print(adjust_by)
                 game.clan.herbs[herb] += adjust_by[0]
                 if game.clan.herbs[herb] <= 0:
                     game.clan.herbs.pop(herb)
@@ -261,7 +261,7 @@ class Events():
                             amount = random.choices([1, 2, 3], [3, 3, 1], k=1)
                         else:
                             amount = random.choices([1, 2], [4, 1], k=1)
-                        print(amount)
+                        # print(amount)
                         if herb in game.clan.herbs.keys():
                             game.clan.herbs[herb] += amount[0]
                         else:
