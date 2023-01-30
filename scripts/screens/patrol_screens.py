@@ -217,31 +217,6 @@ class PatrolScreen(Screens):
                 self.elements['claws'].enable()
                 self.elements['herb'].enable()
 
-            if len(self.current_patrol) >= 6 or len(self.able_cats) < 1:
-                self.elements['add_one'].disable()
-                self.elements["random"].disable()
-            if len(self.current_patrol) > 3 or len(self.able_cats) < 3:
-                self.elements['add_three'].disable()
-            if len(self.current_patrol) >= 1 or len(self.able_cats) < 6:
-                self.elements['add_six'].disable()
-
-                # Update the availability of the tab buttons
-            if self.patrol_screen == 'patrol_cats':
-                self.elements['patrol_tab'].disable()
-                self.elements['skills'].enable()
-            elif self.patrol_screen == 'skills':
-                self.elements['patrol_tab'].enable()
-                self.elements['skills'].disable()
-
-            if self.patrol_screen == 'patrol_cats':
-                self.elements['patrol_tab'].disable()
-                self.elements['skills'].enable()
-            elif self.patrol_screen == 'skills':
-                self.elements['patrol_tab'].enable()
-                self.elements['skills'].disable()
-
-            if game.clan.game_mode != 'classic':
-
                 # making sure meds don't get the option for other patrols
                 med = False
                 for cat in self.current_patrol:
@@ -277,6 +252,34 @@ class PatrolScreen(Screens):
                 self.elements['info'] = pygame_gui.elements.UITextBox(
                     text, scale(pygame.Rect((500, 1050), (600, 800))), object_id=get_text_box_theme(), manager=MANAGER
                 )
+            else:
+                self.elements['paw'].hide()
+                self.elements['mouse'].hide()
+                self.elements['claws'].hide()
+                self.elements['herb'].hide()
+
+            if len(self.current_patrol) >= 6 or len(self.able_cats) < 1:
+                self.elements['add_one'].disable()
+                self.elements["random"].disable()
+            if len(self.current_patrol) > 3 or len(self.able_cats) < 3:
+                self.elements['add_three'].disable()
+            if len(self.current_patrol) >= 1 or len(self.able_cats) < 6:
+                self.elements['add_six'].disable()
+
+                # Update the availability of the tab buttons
+            if self.patrol_screen == 'patrol_cats':
+                self.elements['patrol_tab'].disable()
+                self.elements['skills'].enable()
+            elif self.patrol_screen == 'skills':
+                self.elements['patrol_tab'].enable()
+                self.elements['skills'].disable()
+
+            if self.patrol_screen == 'patrol_cats':
+                self.elements['patrol_tab'].disable()
+                self.elements['skills'].enable()
+            elif self.patrol_screen == 'skills':
+                self.elements['patrol_tab'].enable()
+                self.elements['skills'].disable()
 
             if self.selected_cat != None:
                 if 'cycle_app_mentor_right_button' in self.elements and 'cycle_app_mentor_left_button' in self.elements:
