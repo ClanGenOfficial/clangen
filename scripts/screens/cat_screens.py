@@ -2379,7 +2379,7 @@ class RoleScreen(Screens):
             elif event.ui_element == self.switch_med_app:
                 self.the_cat.status_change("medicine cat apprentice", resort=True)
                 self.update_selected_cat()
-            elif event.ui_element == self.switch_warrior_app:
+            elif event.ui_element == self.switch_mediator_app:
                 self.the_cat.status_change("mediator apprentice", resort=True)
                 self.update_selected_cat()
 
