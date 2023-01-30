@@ -285,15 +285,15 @@ def pelt_inheritance(cat, parents: tuple):
     weights = [0, 0, 0, 0]
     for p_ in par_peltcolours:
         if p_ in ginger_colours:
-            add_weight = (40, 0, 0, 5)
+            add_weight = (40, 0, 0, 10)
         elif p_ in black_colours:
             add_weight = (0, 40, 2, 5)
         elif p_ in white_colours:
             add_weight = (0, 5, 40, 0)
         elif p_ in brown_colours:
-            add_weight = (15, 5, 0, 35)
+            add_weight = (10, 5, 0, 35)
         elif p_ is None:
-            add_weight = (10, 10, 10, 10)
+            add_weight = (40, 40, 40, 40)
         else:
             add_weight = (0, 0, 0, 0)
 
