@@ -1071,7 +1071,6 @@ class Cat():
         # also adds a chance for cat to take a skill similar to their mentor"""
 
         if self.skill == '???':
-            print(str(self.name))
             # assign skill to new medicine cat
             if self.status == 'medicine cat' and self.skill not in self.med_skills:
                 # skill groups they can take from
