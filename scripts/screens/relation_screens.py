@@ -2521,7 +2521,7 @@ class MediationScreen(Screens):
             if len(name) > 13:
                 name = name[:10] + ".."
             self.selected_cat_elements[f"relation_heading{tag}"] = pygame_gui.elements.UILabel(scale(pygame.Rect((x + 40, y + 314),
-                                                                                                           (300, 30))),
+                                                                                                           (320, -1))),
                                                                                                f"~~{name}'s feelings~~",
                                                                                                object_id="#cat_patrol_info_box")
 
