@@ -1090,14 +1090,12 @@ class Cat():
                                 possible_skill = self.skill_groups.get(x)
                                 self.skill = choice(possible_skill)
                                 self.mentor_influence.append(self.skill)
-                    # don't give skill from mentor
-                    else:
-                        self.skill = choice(self.med_skills)
-                        self.mentor_influence.append('None')
-                # if they didn't haave a mentor, give random skill
-                else:
-                    self.skill = choice(self.med_skills)
-                    self.mentor_influence.append('None')
+                                return
+
+                # Will only be reached if a mentor skill was not applied.
+                self.skill = choice(self.med_skills)
+                self.mentor_influence.append('None')
+
             # assign skill to new warrior
             elif self.status == 'warrior':
                 # possible skill groups they can take from
