@@ -321,6 +321,8 @@ def pelt_inheritance(cat, parents: tuple):
                 add_weight = (25, 50, 25)
             elif p_ == "long":
                 add_weight = (2, 10, 50)
+            elif p_ is None:
+                add_weight = (10, 10, 10)
             else:
                 add_weight = (0, 0, 0)
 
