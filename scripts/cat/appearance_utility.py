@@ -206,6 +206,12 @@ def pelt_inheritance(cat, parents: tuple):
             # for each "None" parent (missing or unknown parent)
             par_white.append(bool(random.getrandbits(1)))
 
+            # Append None
+            # Gather pelt color.
+            par_peltcolours.add(None)
+            par_peltlength.add(None)
+            par_peltnames.add(None)
+
         #If this list is empty, something went wrong.
         if not par_peltcolours:
             print("Error - no parents: pelt randomized")
@@ -227,13 +233,15 @@ def pelt_inheritance(cat, parents: tuple):
         weights = [0, 0, 0, 0]  #Weights for each pelt group. It goes: (tabbies, spotted, plain, exotic)
         for p_ in par_peltnames:
             if p_ in tabbies:
-                add_weight = (45, 10, 5, 7)
+                add_weight = (50, 10, 5, 7)
             elif p_ in spotted:
-                add_weight = (10, 45, 5, 5)
+                add_weight = (10, 50, 5, 5)
             elif p_ in plain:
-                add_weight = (5, 5, 45, 0)
+                add_weight = (5, 5, 50, 0)
             elif p_ in exotic:
-                add_weight = (20, 20, 1, 40)
+                add_weight = (15, 15, 1, 45)
+            elif p_ is None:  # If there is at least one unknown parent, a None will be added to the set.
+                add_weight = (35, 20, 30, 15)
             else:
                 add_weight = (0, 0, 0, 0)
 
@@ -250,7 +258,7 @@ def pelt_inheritance(cat, parents: tuple):
         )
 
         # Tortie chance
-        tortie_chance_f = 3  # There is a default chance for female tortie
+        tortie_chance_f = 4  # There is a default chance for female tortie
         tortie_chance_m = 9
         for p_ in par_pelts:
             if p_.colour in ginger_colours + black_colours:
@@ -278,13 +286,15 @@ def pelt_inheritance(cat, parents: tuple):
         weights = [0, 0, 0, 0]
         for p_ in par_peltcolours:
             if p_ in ginger_colours:
-                add_weight = (40, 0, 0, 10)
+                add_weight = (40, 0, 0, 5)
             elif p_ in black_colours:
                 add_weight = (0, 40, 2, 5)
             elif p_ in white_colours:
                 add_weight = (0, 5, 40, 0)
             elif p_ in brown_colours:
                 add_weight = (15, 5, 0, 35)
+            elif p_ is None:
+                add_weight = (10, 10, 10, 10)
             else:
                 add_weight = (0, 0, 0, 0)
 
@@ -311,6 +321,8 @@ def pelt_inheritance(cat, parents: tuple):
                 add_weight = (25, 50, 25)
             elif p_ == "long":
                 add_weight = (2, 10, 50)
+            elif p_ is None:
+                add_weight = (10, 10, 10)
             else:
                 add_weight = (0, 0, 0)
 
