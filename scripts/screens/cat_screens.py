@@ -2723,7 +2723,9 @@ class RoleScreen(Screens):
                      f"The deputy is the second in command, " \
                      f"just below the leader. They advise the leader and organize daily patrols, " \
                      f"alongside normal warrior duties. Typically, a deputy is personally appointed by the current " \
-                     f"leader.  The deputy succeeds the leader if they die or retire. "
+                     f"leader. As dictated by the Warrior Code, all deputies must train at least one apprentice " \
+                     f"before appointment.  " \
+                     f"The deputy succeeds the leader if they die or retire. "
         elif self.the_cat.status == "medicine cat":
             output = f"{self.the_cat.name} is a <b>medicine cat</b>. Medicine cats are the healers of the clan. " \
                      f"They treat " \
@@ -2734,23 +2736,23 @@ class RoleScreen(Screens):
         elif self.the_cat.status == "mediator":
             output = f"{self.the_cat.name} is a <b>mediator</b>. Mediators are not typically required " \
                      f"to hunt or fight for " \
-                     f"the clan. Rather, mediators are charged with handling disagreements between " \
-                     f"Clanmates and disputes between clans. Some mediators train as apprentices to serve their clan " \
-                     f", while others may to become mediators later in life. "
+                     f"the Clan. Rather, mediators are charged with handling disagreements between " \
+                     f"Clanmates and disputes between Clans. Some mediators train as apprentices to serve their Clan, " \
+                     f"while others may choose to become mediators later in life. "
         elif self.the_cat.status == "elder":
-            output = f"{self.the_cat.name} is an <b>elder</b>. They have spent many moons serving their clan, " \
+            output = f"{self.the_cat.name} is an <b>elder</b>. They have spent many moons serving their Clan, " \
                      f"and have earned " \
-                     f"many moons of rest. Sometimes, cats may retire due to disability or injury. Whatever the " \
+                     f"many moons of rest. Elders are essential to passing down the oral tradition of the Clan. " \
+                     f"Sometimes, cats may retire due to disability or injury. Whatever the " \
                      f"circumstance of their retirement, elders are held in high esteem in the Clan, and always eat " \
                      f"before Warriors and Medicine Cats. "
         elif self.the_cat.status == "apprentice":
             output = f"{self.the_cat.name} is an <b>apprentice</b>, in training to become a Warrior. " \
-                     f"Kits can be made Warrior " \
-                     f"apprentices at six moons of age, where they will learn how to hunt and fight for their clan. " \
-                     f"Typically, the training of an apprentice is entrusted to an single warrior - their " \
-                     f"mentor. To build character, apprentices are often assigned the unpleasant and grunt tasks of " \
-                     f"clan life. Apprentices take the suffix \"paw\", to represent the path their paws take towards " \
-                     f"adulthood. "
+                     f"Kits can be made Warrior apprentices at six moons of age, where they will learn how " \
+                     f"to hunt and fight for their clan. Typically, the training of an apprentice is entrusted " \
+                     f"to an single warrior - their mentor. To build character, apprentices are often assigned " \
+                     f"the unpleasant and grunt tasks of clan life. Apprentices take the suffix \"paw\", " \
+                     f"to represent the path their paws take towards adulthood. "
         elif self.the_cat.status == "medicine cat apprentice":
             output = f"{self.the_cat.name} is a <b>medicine cat apprentice</b>, training to become a full medicine cat. " \
                      f"Kits can be made medicine cat apprentices at six moons of age, where they will learn how to " \
@@ -2759,9 +2761,8 @@ class RoleScreen(Screens):
                      f"-paw, to represent the path their paws take towards adulthood."
         elif self.the_cat.status == "mediator apprentice":
             output = f"{self.the_cat.name} is a <b>mediator apprentice</b>, training to become a full mediator. " \
-                     f"Mediators " \
-                     f"are in charge of handling disagreements both within the clan and between clans. Mediator " \
-                     f"apprentices are often chosen for their quick thinking and calm personality. "
+                     f"Mediators are in charge of handling disagreements both within the clan and between clans. " \
+                     f"Mediator apprentices are often chosen for their quick thinking and steady personality. "
         elif self.the_cat.status == "kitten":
             output = f"{self.the_cat.name} is a <b>kitten</b>. All cats below the age of six moons are " \
                      f"considered kits. Kits " \
