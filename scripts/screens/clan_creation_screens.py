@@ -513,22 +513,22 @@ class MakeClanScreen(Screens):
                     cat_object=game.choose_cats[u])
             elif game.choose_cats[u] in [self.leader, self.deputy, self.med_cat] + self.members:
                 self.elements["cat" + str(u)] = UISpriteButton(scale(pygame.Rect((1300, 250 + 100 * u), (100, 100))),
-                                                               game.choose_cats[u].large_sprite,
+                                                               game.choose_cats[u].big_sprite,
                                                                cat_object=game.choose_cats[u], manager=MANAGER)
             else:
                 self.elements["cat" + str(u)] = UISpriteButton(scale(pygame.Rect((column_poss[0], 260 + 100 * u), (100, 100))),
-                                                               game.choose_cats[u].large_sprite,
+                                                               game.choose_cats[u].big_sprite,
                                                                cat_object=game.choose_cats[u], manager=MANAGER)
         for u in range(6, 12):
             if "cat" + str(u) in self.elements:
                 self.elements["cat" + str(u)].kill()
             if game.choose_cats[u] == selected:
                 self.elements["cat" + str(u)] = self.elements["cat" + str(u)] = UISpriteButton(
-                    scale(pygame.Rect((540, 400), (300, 300))), pygame.transform.scale(game.choose_cats[u].large_sprite, (300, 300)),
+                    scale(pygame.Rect((540, 400), (300, 300))), pygame.transform.scale(game.choose_cats[u].big_sprite, (300, 300)),
                     cat_object=game.choose_cats[u], manager=MANAGER)
             elif game.choose_cats[u] in [self.leader, self.deputy, self.med_cat] + self.members:
                 self.elements["cat" + str(u)] = UISpriteButton(scale(pygame.Rect((1400, 250 + 100 * (u - 6)), (100, 100))),
-                                                               game.choose_cats[u].large_sprite,
+                                                               game.choose_cats[u].big_sprite,
                                                                cat_object=game.choose_cats[u], manager=MANAGER)
             else:
                 self.elements["cat" + str(u)] = UISpriteButton(
@@ -737,7 +737,7 @@ class MakeClanScreen(Screens):
         self.elements["name_backdrop"] = pygame_gui.elements.UIImage(scale(pygame.Rect((584, 200), (432, 100))),
                                                                      MakeClanScreen.clan_frame_img, manager=MANAGER)
         self.elements["clan_name"] = pygame_gui.elements.UITextBox(self.clan_name + "Clan",
-                                                                   scale(pygame.Rect((585, 210), (432, 100))),
+                                                                   scale(pygame.Rect((585, 220), (432, 100))),
                                                                    object_id="#clan_header_text_box", manager=MANAGER)
 
         # info for chosen cats:
