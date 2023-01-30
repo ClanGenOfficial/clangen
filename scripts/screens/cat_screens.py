@@ -2495,7 +2495,7 @@ class RoleScreen(Screens):
 
         self.selected_cat_elements["role_blurb"] = pygame_gui.elements.UITextBox(self.get_role_blurb(),
                                                                                  scale(pygame.Rect((340, 400),(1120, 270))),
-                                                                                 object_id=get_text_box_theme("#role_blurb"),
+                                                                                 object_id="#role_blurb",
                                                                                  manager=MANAGER)
 
         if self.the_cat.status == "leader":
