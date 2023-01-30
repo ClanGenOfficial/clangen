@@ -2768,7 +2768,7 @@ class RoleScreen(Screens):
                      f"considered kits. Kits " \
                      f"are prohibited from leaving camp in order to protect them from the dangers of the wild. " \
                      f"Although they don't have any official duties in the Clan, they are excepted to learn the " \
-                     f"legends and traditions of their Clan. They are protected by every cat in the clan; kits always " \
+                     f"legends and traditions of their Clan. They are protected by every cat in the clan and always " \
                      f"eat first. Kit take the suffix \"kit\""
         else:
             output = f"{self.the_cat.name} has an unknown rank. I guess they want to make their own way in life! "
