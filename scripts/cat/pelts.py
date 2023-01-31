@@ -185,6 +185,20 @@ class Agouti():
         else:
             return f"{self.colour} agouti{self.length}"
 
+class Singlestripe():
+    name = "Singlestripe"
+    sprites = {1: 'singlestripe', 2: 'white'}
+
+    def __init__(self, colour, white, length):
+        self.white = white  # boolean; does cat have white on it or no
+        self.colour = colour
+        self.length = length
+    def __repr__(self):
+        if self.white:
+            return f"white and {self.colour} singlestripe{self.length}"
+        else:
+            return f"{self.colour} singlestripe{self.length}"
+
 class Tortie():
     name = "Tortie"
     sprites = {1: 'tortie', 2: 'white'}
@@ -234,7 +248,7 @@ patch_colours = ['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR', 'GOLDONE', 'GOLD
     'GOLDTHREE', 'GOLDFOUR', 'GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR',
     'DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR', 'CREAMONE', 'CREAMTWO', 'CREAMTHREE', 'CREAMFOUR']
 tortiebases = ['single', 'tabby', 'bengal', 'marbled', 'ticked', 'smoke', 'rosette', 'speckled', 'mackerel',
-    'classic', 'sokoke', 'agouti']
+    'classic', 'sokoke', 'agouti', 'singlestripe']
 tortiecolours = ["SILVER", "GREY", "DARKGREY", "BLACK", "GHOST", "LIGHTBROWN", "BROWN", "DARKBROWN"]
 
 pelt_length = ["short", "medium", "long"]
@@ -267,16 +281,9 @@ collars = [
     "PURPLEBOW", "MULTIBOW"
 ]
 
-pelt_names_F = ["SingleColour", "SingleColour", "TwoColour", "Tabby", "Tortie", "Calico",
-     "TwoColour", "Speckled", "Marbled", "Bengal", "Rosette", "Smoke", "Ticked",
-    "Mackerel", "Classic", "Sokoke", "Agouti"]
-pelt_names_M = ["SingleColour", "SingleColour", "TwoColour", "Tabby", "Speckled",
-    "TwoColour", "Marbled", "Bengal", "Rosette", "Smoke", "Ticked", "Mackerel", "Classic", 
-    "Sokoke", "Agouti"]
-
 tabbies = ["Tabby", "Ticked", "Mackerel", "Classic", "Sokoke", "Agouti"]
 spotted = ["Speckled", "Rosette"]
-plain = ["SingleColour", "TwoColour", "Smoke"]
+plain = ["SingleColour", "TwoColour", "Smoke", "Singlestripe"]
 exotic = ["Bengal", "Marbled"]
 torties = ["Tortie", "Calico"]
 pelt_categories = [tabbies, spotted, plain, exotic, torties]
@@ -423,6 +430,14 @@ def choose_pelt(colour=None, white=None, pelt=None, length=None, category=None, 
             return Agouti(choice(pelt_colours), white, length)
         else:
             return Agouti(colour, white, length)
+    elif pelt == 'Singlestripe':
+        if colour is None and white is None:
+            return Singlestripe(choice(pelt_colours), choice([False, True]),
+                             length)
+        elif colour is None:
+            return Singlestripe(choice(pelt_colours), white, length)
+        else:
+            return Singlestripe(colour, white, length)
     elif pelt == 'Tortie':
         if white is None:
             return Tortie(choice([False, True]), length)
@@ -470,6 +485,8 @@ def describe_color(pelt, tortiecolour, tortiepattern, white_patches):
             color_name = color_name + ' sokoke tabby'
         elif pelt.name == "Agouti":
             color_name = color_name + ' agouti'
+        elif pelt.name == "Singlestripe":
+            color_name = color_name + ' with a dorsal stripe'
 
         elif pelt.name == "Tortie":
             if tortiepattern not in ["tortiesolid", "tortiesmoke"]:

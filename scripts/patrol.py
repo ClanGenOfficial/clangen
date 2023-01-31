@@ -885,8 +885,8 @@ class Patrol():
             total_amount = total_amount * (HUNTER_BONUS["good_hunter"] / 10)
 
         game.clan.freshkill_pile.add_freshkill(total_amount)
-        if total_amount > 0:
-            self.results_text.append(f"Patrol managed to catch a total amount of {total_amount} prey.")
+        '''if total_amount > 0:
+            self.results_text.append(f"Patrol managed to catch a total amount of {total_amount} prey.")'''
 
     def handle_clan_relations(self, difference):
         """
