@@ -2304,9 +2304,14 @@ class Cat():
                 lvl_modifier = 1
             mediator.experience += EX_gain / lvl_modifier / gm_modifier
 
+        no_romantic = False
+        if not game.settings['romantic with former mentor']:
+            if cat2.ID in cat1.former_apprentices or cat1.ID in cat2.former_apprentices:
+                no_romantic = True
+
         # determine the traits to effect
         pos_traits = ["platonic", "respect", "comfortable", "trust"]
-        if mates or (valid_age and not related and age_diff):
+        if mates or (valid_age and not related and age_diff and not no_romantic):
             pos_traits.append("romantic")
 
         neg_traits = ["dislike", "jealousy"]

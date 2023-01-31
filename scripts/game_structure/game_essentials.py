@@ -638,16 +638,7 @@ def load_manager(res: tuple):
         italic_path='resources/fonts/NotoSans-MediumItalic.ttf',
         bold_italic_path='resources/fonts/NotoSans-ExtraBoldItalic.ttf'
     )
-    manager.preload_fonts([
-        {'name': 'notosans', 'point_size': 30, 'style': 'regular'},
-        {'name': 'notosans', 'point_size': 30, 'style': 'bold'},
-        {'name': 'notosans', 'point_size': 30, 'style': 'italic'},
-        {'name': 'notosans', 'point_size': 30, 'style': 'bold_italic'},
-        {'name': 'notosans', 'point_size': 32, 'style': 'regular'},
-        {'name': 'notosans', 'point_size': 32, 'style': 'bold'},
-        {'name': 'notosans', 'point_size': 32, 'style': 'italic'},
-        {'name': 'notosans', 'point_size': 32, 'style': 'bold_italic'},
-    ])
+
 
     if res[0] > 800:
         manager.get_theme().load_theme('resources/defaults.json')
@@ -657,6 +648,16 @@ def load_manager(res: tuple):
         manager.get_theme().load_theme('resources/vertical_scroll_bar.json')
         manager.get_theme().load_theme('resources/windows.json')
         manager.get_theme().load_theme('resources/tool_tips.json')
+
+        manager.preload_fonts([
+            {'name': 'notosans', 'point_size': 30, 'style': 'italic'},
+            {'name': 'notosans', 'point_size': 26, 'style': 'italic'},
+            {'name': 'notosans', 'point_size': 30, 'style': 'bold'},
+            {'name': 'notosans', 'point_size': 26, 'style': 'bold'},
+            {'name': 'notosans', 'point_size': 22, 'style': 'bold'},
+        ])
+
+
     else:
         manager.get_theme().load_theme('resources/defaults_small.json')
         manager.get_theme().load_theme('resources/buttons_small.json')
@@ -665,6 +666,14 @@ def load_manager(res: tuple):
         manager.get_theme().load_theme('resources/vertical_scroll_bar.json')
         manager.get_theme().load_theme('resources/windows.json')
         manager.get_theme().load_theme('resources/tool_tips_small.json')
+
+        manager.preload_fonts([
+            {'name': 'notosans', 'point_size': 11, 'style': 'bold'},
+            {'name': 'notosans', 'point_size': 13, 'style': 'bold'},
+            {'name': 'notosans', 'point_size': 15, 'style': 'bold'},
+            {'name': 'notosans', 'point_size': 13, 'style': 'italic'},
+            {'name': 'notosans', 'point_size': 15, 'style': 'italic'}
+        ])
 
     return manager
 
