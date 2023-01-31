@@ -1879,7 +1879,7 @@
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-        "While a gray fox is bigger and far stockier than the cats, the delicious stentch of whatever-it-is makes the patrols' eyes go wide, and they leap to claim possession of it. Outnumbered and already full of stinky nonsense, the gray fox leaves the beach, scrambling up a cliff as the cats give in to instinct and roll around in the glorious smell.",
+        "While a gray fox is bigger and far stockier than the cats, the delicious stench of whatever-it-is makes the patrols' eyes go wide, and they leap to claim possession of it. Outnumbered and already full of stinky nonsense, the gray fox leaves the beach, scrambling up a cliff as the cats give in to instinct and roll around in the glorious smell.",
         "A gray fox is bigger than them, yes... but only just, and that carcass smells divine. The cats creep up on the fox, using the dunes for cover, and wait until the fox has its head buried in the carcass to attack. The ambush sends the competing predator fleeing, and leaves the cats to claim the heavenly stinky food.",
         "s_c shows their strength, leading the fight against the gray fox. By working together and keeping it distracted, the cats harry and harass the fox until it gives up and runs.",
         "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
@@ -1915,7 +1915,7 @@
     "chance_of_success": 90,
     "exp": 20,
     "success_text": [
-        "While a gray fox is bigger and far stockier than the cats, the delicious stentch of whatever-it-is makes the patrols' eyes go wide, and they leap to claim possession of it. Heavily outnumbered and already full of stinky nonsense, the gray fox leaves the beach, scrambling up a cliff as the cats give in to instinct and roll around in the glorious smell.",
+        "While a gray fox is bigger and far stockier than the cats, the delicious stench of whatever-it-is makes the patrols' eyes go wide, and they leap to claim possession of it. Heavily outnumbered and already full of stinky nonsense, the gray fox leaves the beach, scrambling up a cliff as the cats give in to instinct and roll around in the glorious smell.",
         "A gray fox is bigger than them, yes... but only just, and that carcass smells divine. The cats creep up on the fox, using the dunes for cover, and wait until the fox has its head buried in the carcass to attack. The ambush sends the competing predator fleeing, and leaves the cats to claim the heavenly stinky food.",
         "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until s_c lands a crucial blow, snapping a tendon in one of the fox's hindlegs. The fox runs, but there's no way it'll live long with such a crippling injury.",
         "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. Holding on grimly, s_c's daring move gives the rest of the patrol the opportunity needed to bring the fox down for good."
@@ -1943,7 +1943,7 @@
     "chance_of_success": 50,
     "exp": 30,
     "success_text": [
-        "While a gray fox is bigger and far stockier than r_c, the delicious stentch of whatever-it-is makes their eyes go wide, and they leap to claim some of it for themselves and c_n. It's such a big lump that the fox doesn't seem to mind sharing.",
+        "While a gray fox is bigger and far stockier than r_c, the delicious stench of whatever-it-is makes their eyes go wide, and they leap to claim some of it for themselves and c_n. It's such a big lump that the fox doesn't seem to mind sharing.",
         "A gray fox is bigger than them, yes... but only just, and that carcass smells divine. r_c creeps up on the fox, using the dunes for cover, and waits until the fox has its head buried in the carcass to attack. The ambush sends the competing predator fleeing, and leaves r_c to claim the heavenly stinky food.",
         "s_c uses every trick in their talented fighting skillset to attack the fox with no one to watch their flank, until the perfect opportunity opens up and they pounce onto the fox's back, digging in their claws. It's enough to convince the gray to back off, and s_c claims a seat at the carcass.",
         "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. But then they're stuck, unwilling to let go and risk being bitten. They're dragged along the beach, sand casing their pelt, until the fox finally throws them off and the battered s_c goes back to proudly claim the carcass."
@@ -2697,7 +2697,7 @@
     "chance_of_success": 30,
     "exp": 20,
     "success_text": [
-        "Spotting the red fox they've tracked dipping into a shletered cove, r_c hangs back, sneaking around until they spot the fox burying a fish for later. They simply wait for it to finish and leave, then creep in to steal the fox's hard work, bringing the prize back to camp for the fresh-kill pile. Sometimes winning a battle doesn't require fighting.",
+        "Spotting the red fox they've tracked dipping into a sheltered cove, r_c hangs back, sneaking around until they spot the fox burying a fish for later. They simply wait for it to finish and leave, then creep in to steal the fox's hard work, bringing the prize back to camp for the fresh-kill pile. Sometimes winning a battle doesn't require fighting.",
         null,
         "It requires s_c to use some of their best tricks, but they sneak close to the red fox at the end of the scent trail, eyes on the fish the fox carries. The creature puts down its fresh-kill to start digging at a dune, and s_c takes the opportunity, grabbing the fish and running. It's a good prize, and they feel proud to present it to the elders when they pad into camp, tired but satisfied.",
         "It's a situation that calls for careful calm, not implusive action. s_c tracks down a red fox at the end of the scent trail, holding a young seagull, and waits carefully. Eventually, as the fox starts to hunt at a different beach, it drops its fresh-kill to try win more. s_c carefully snatches it while the fox is distracted, and trots back to camp having successfully outwitted the competing predator."
@@ -2800,7 +2800,7 @@
     "chance_of_success": 50,
     "exp": 15,
     "success_text": [
-        "Spotting the gray fox they've tracked dipping into a shletered cove, r_c hangs back, sneaking around until they spot the fox caching a bird kill in an old log a storm washed in moons ago. They simply wait for it to finish and leave, then creep in to steal the fox's hard work, bringing the prize back to camp for the fresh-kill pile. Sometimes winning a battle doesn't require fighting.",
+        "Spotting the gray fox they've tracked dipping into a sheltered cove, r_c hangs back, sneaking around until they spot the fox caching a bird kill in an old log a storm washed in moons ago. They simply wait for it to finish and leave, then creep in to steal the fox's hard work, bringing the prize back to camp for the fresh-kill pile. Sometimes winning a battle doesn't require fighting.",
         null,
         "s_c tracks down a gray fox, and carefully cosiders it as an opponent. Stocky, yes, but they finally decide they can take it, and burst from cover, using surprise to get in a couple vicious swipes to the fox's face while its jaws are still full of prey. Yelping, the gray fox retreats from the cat, unwilling to risk more split blood, and s_c picks up the rat it carried with a proud grin.",
         "It's a situation that calls for careful calm, not implusive action. s_c tracks down a gray fox at the end of the scent trail, holding a little plump mouse, and waits carefully. Eventually, the fox tries to cache its fresh-kill in a little hole. s_c picks it up once the fox leaves, strolling back to camp having successfully outwitted the competing predator."
