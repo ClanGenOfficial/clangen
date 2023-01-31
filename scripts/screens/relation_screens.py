@@ -2135,6 +2135,7 @@ class MediationScreen(Screens):
         self.cat_buttons = []
         self.page = 1
         self.selected_cat_elements = {}
+        self.allow_romantic = True
 
     def handle_event(self, event):
 
@@ -2153,6 +2154,12 @@ class MediationScreen(Screens):
             elif event.ui_element == self.previous_page:
                 self.page -= 1
                 self.update_page()
+            elif event.ui_element == self.romantic_checkbox:
+                if self.allow_romantic:
+                    self.allow_romantic = False
+                else:
+                    self.allow_romantic = True
+                self.update_buttons()
             elif event.ui_element == self.deselect_1:
                 self.selected_cat_1 = None
                 self.update_selected_cats()
@@ -2160,16 +2167,18 @@ class MediationScreen(Screens):
                 self.selected_cat_2 = None
                 self.update_selected_cats()
             elif event.ui_element == self.mediate_button:
-                game.mediated = True
+                #game.mediated = True
                 output = Cat.mediate_relationship(
-                    self.mediators[self.selected_mediator], self.selected_cat_1, self.selected_cat_2)
+                    self.mediators[self.selected_mediator], self.selected_cat_1, self.selected_cat_2,
+                    self.allow_romantic)
                 self.results.set_text(output)
                 self.update_selected_cats()
                 self.update_mediator_info()
             elif event.ui_element == self.sabotoge_button:
-                game.mediated = True
+                #game.mediated = True
                 output = Cat.mediate_relationship(
                     self.mediators[self.selected_mediator], self.selected_cat_1, self.selected_cat_2,
+                    self.allow_romantic,
                     sabotage=True)
                 self.results.set_text(output)
                 self.update_selected_cats()
@@ -2235,10 +2244,20 @@ class MediationScreen(Screens):
                                                   )
         self.cat_bg.disable()
 
-        self.mediate_button = UIImageButton(scale(pygame.Rect((560, 670), (210, 60))), "",
-                                                           object_id="#mediate_button")
-        self.sabotoge_button = UIImageButton(scale(pygame.Rect((800, 670), (218, 60))), "",
-                                                            object_id="#sabotage_button")
+        # Will be overwritten
+        self.romantic_checkbox = None
+        self.romantic_checkbox_text = pygame_gui.elements.UILabel(scale(pygame.Rect((737, 650), (200, 40))),
+                                                                  "Allow romantic",
+                                                                  object_id=get_text_box_theme("#cat_profile_info_box"),
+                                                                  manager=MANAGER)
+
+
+        self.mediate_button = UIImageButton(scale(pygame.Rect((560, 700), (210, 60))), "",
+                                                           object_id="#mediate_button",
+                                            manager=MANAGER)
+        self.sabotoge_button = UIImageButton(scale(pygame.Rect((800, 700), (218, 60))), "",
+                                                            object_id="#sabotage_button",
+                                             manager=MANAGER)
 
         self.next_med = UIImageButton(scale(pygame.Rect((952, 540), (68, 68))), "", object_id="#arrow_right_button")
         self.last_med = UIImageButton(scale(pygame.Rect((560, 540), (68, 68))), "", object_id="#arrow_left_button")
@@ -2251,7 +2270,7 @@ class MediationScreen(Screens):
         self.deselect_2 = UIImageButton(scale(pygame.Rect((1210, 868), (254, 60))), "",
                                                        object_id="#remove_cat_button")
 
-        self.results = UITextBoxTweaked("", scale(pygame.Rect((560, 740), (458, 200))),
+        self.results = UITextBoxTweaked("", scale(pygame.Rect((560, 770), (458, 200))),
                                         object_id=get_text_box_theme("#cat_patrol_info_box"),
                                         line_spacing=0.75)
 
@@ -2261,6 +2280,7 @@ class MediationScreen(Screens):
         if game.mediated:
             self.results.set_text("You've already mediated/sabotaged this moon!")
 
+        self.update_buttons()
         self.update_mediator_info()
 
     def random_cat(self):
@@ -2294,7 +2314,7 @@ class MediationScreen(Screens):
             name = str(mediator.name)
             if len(name) > 17:
                 name = name[:15] + "..."
-            self.mediator_elements["name"] = pygame_gui.elements.UILabel(scale(pygame.Rect((x_value, 480), (300, 40))),
+            self.mediator_elements["name"] = pygame_gui.elements.UILabel(scale(pygame.Rect((x_value - 10, 480), (320, -1))),
                                                                          name,
                                                                          object_id=get_text_box_theme())
 
@@ -2708,6 +2728,19 @@ class MediationScreen(Screens):
             self.mediate_button.enable()
             self.sabotoge_button.enable()
 
+        if self.romantic_checkbox:
+            self.romantic_checkbox.kill()
+
+        if self.allow_romantic:
+            self.romantic_checkbox = UIImageButton(scale(pygame.Rect((642, 635),(68, 68))), "",
+                                                   object_id="#checked_checkbox",
+                                                   tool_tip_text="Allow effects on romantic like, if possible. ",
+                                                   manager=MANAGER)
+        else:
+            self.romantic_checkbox = UIImageButton(scale(pygame.Rect((642, 635), (68, 68))), "",
+                                                   object_id="#unchecked_checkbox",
+                                                   tool_tip_text="Allow effects on romantic like, if possible. ",
+                                                   manager=MANAGER)
     def exit_screen(self):
         self.selected_cat_1 = None
         self.selected_cat_2 = None
@@ -2755,6 +2788,11 @@ class MediationScreen(Screens):
         del self.random1
         self.random2.kill()
         del self.random2
+        if self.romantic_checkbox:
+            self.romantic_checkbox.kill()
+            del self.romantic_checkbox
+        self.romantic_checkbox_text.kill()
+        del self.romantic_checkbox_text
 
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]
