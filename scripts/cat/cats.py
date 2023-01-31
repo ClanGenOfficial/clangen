@@ -750,6 +750,11 @@ class Cat():
                         game.clan.leader = None
                         game.clan.leader_predecessors += 1
 
+            if game.clan.deputy:
+                if game.clan.deputy.ID == self.ID:
+                    game.clan.deputy = None
+                    game.clan.deputy_predecessors += 1
+
         elif self.status == 'medicine cat':
             self.update_med_mentor()
             self.update_skill()
@@ -1114,14 +1119,10 @@ class Cat():
                                 possible_skill = self.skill_groups.get(x)
                                 self.skill = choice(possible_skill)
                                 self.mentor_influence.append(self.skill)
-                    # don't give skill from mentor
-                    else:
-                        self.skill = choice(self.skills)
-                        self.mentor_influence.append('None')
-                # if they didn't have a mentor, give random skill
-                else:
-                    self.skill = choice(self.skills)
-                    self.mentor_influence.append('None')
+                                return
+
+                self.skill = choice(self.skills)
+                self.mentor_influence.append('None')
 
             # assign new skill to elder
             elif self.status == 'elder':

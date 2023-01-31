@@ -2167,7 +2167,7 @@ class MediationScreen(Screens):
                 self.selected_cat_2 = None
                 self.update_selected_cats()
             elif event.ui_element == self.mediate_button:
-                #game.mediated = True
+                game.mediated = True
                 output = Cat.mediate_relationship(
                     self.mediators[self.selected_mediator], self.selected_cat_1, self.selected_cat_2,
                     self.allow_romantic)
@@ -2175,7 +2175,7 @@ class MediationScreen(Screens):
                 self.update_selected_cats()
                 self.update_mediator_info()
             elif event.ui_element == self.sabotoge_button:
-                #game.mediated = True
+                game.mediated = True
                 output = Cat.mediate_relationship(
                     self.mediators[self.selected_mediator], self.selected_cat_1, self.selected_cat_2,
                     self.allow_romantic,
