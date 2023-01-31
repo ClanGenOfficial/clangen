@@ -430,6 +430,14 @@ def choose_pelt(colour=None, white=None, pelt=None, length=None, category=None, 
             return Agouti(choice(pelt_colours), white, length)
         else:
             return Agouti(colour, white, length)
+    elif pelt == 'Singlestripe':
+        if colour is None and white is None:
+            return Singlestripe(choice(pelt_colours), choice([False, True]),
+                             length)
+        elif colour is None:
+            return Singlestripe(choice(pelt_colours), white, length)
+        else:
+            return Singlestripe(colour, white, length)
     elif pelt == 'Tortie':
         if white is None:
             return Tortie(choice([False, True]), length)
@@ -477,6 +485,8 @@ def describe_color(pelt, tortiecolour, tortiepattern, white_patches):
             color_name = color_name + ' sokoke tabby'
         elif pelt.name == "Agouti":
             color_name = color_name + ' agouti'
+        elif pelt.name == "Singlestripe":
+            color_name = color_name + ' with a dorsal stripe'
 
         elif pelt.name == "Tortie":
             if tortiepattern not in ["tortiesolid", "tortiesmoke"]:
