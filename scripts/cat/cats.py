@@ -2202,7 +2202,7 @@ class Cat():
                 print(f'WARNING: There was an error reading the relationship file of cat #{self}.')
 
     @staticmethod
-    def mediate_relationship(mediator, cat1, cat2, sabotage=False):
+    def mediate_relationship(mediator, cat1, cat2, allow_romantic, sabotage=False):
         # Gather some important info
 
         # Gathering the relationships.
@@ -2304,14 +2304,14 @@ class Cat():
                 lvl_modifier = 1
             mediator.experience += EX_gain / lvl_modifier / gm_modifier
 
-        no_romantic = False
+        no_romantic_mentor = False
         if not game.settings['romantic with former mentor']:
             if cat2.ID in cat1.former_apprentices or cat1.ID in cat2.former_apprentices:
-                no_romantic = True
+                no_romantic_mentor = True
 
         # determine the traits to effect
         pos_traits = ["platonic", "respect", "comfortable", "trust"]
-        if mates or (valid_age and not related and age_diff and not no_romantic):
+        if allow_romantic and (mates or (valid_age and not related and age_diff and not no_romantic_mentor)):
             pos_traits.append("romantic")
 
         neg_traits = ["dislike", "jealousy"]
