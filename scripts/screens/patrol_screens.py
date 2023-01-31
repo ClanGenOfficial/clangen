@@ -572,7 +572,7 @@ class PatrolScreen(Screens):
         # Prepare Intro Text
         # adjusting text for solo patrols
         intro_text = self.adjust_patrol_text(patrol.patrol_event.intro_text, patrol_size)
-        self.elements["patrol_text"] = UITextBoxTweaked(intro_text, scale(pygame.Rect((770, 350), (660, 540))),
+        self.elements["patrol_text"] = UITextBoxTweaked(intro_text, scale(pygame.Rect((770, 350), (660, 500))),
                                                         object_id="#patrol_text_box", manager=MANAGER)
         # Patrol Info
         # TEXT CATEGORIES AND CHECKING FOR REPEATS
