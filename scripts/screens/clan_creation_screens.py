@@ -41,6 +41,7 @@ class MakeClanScreen(Screens):
                          "This mode has everything in Classic Mode as well as more management-focused features.<br><br>" \
                          "New features include:<br>" \
                          "- Illnesses, Injuries, and Permanent Conditions<br>" \
+                         "- Herb gathering and treatment<br>" \
                          "- Ability to choose patrol type<br><br>" \
                          "With this mode you'll be making the important clan-life decisions."
 
@@ -809,7 +810,8 @@ class MakeClanScreen(Screens):
     def open_clan_saved_screen(self):
         self.clear_all_page()
         self.sub_screen = 'saved screen'
-        self.elements["leader_image"] = pygame_gui.elements.UIImage(scale(pygame.Rect((screen_x / 2 - 100, 240), (200, 200))),
+
+        self.elements["leader_image"] = pygame_gui.elements.UIImage(scale(pygame.Rect((700, 240), (200, 200))),
                                                                     pygame.transform.scale(
                                                                         game.clan.leader.large_sprite,
                                                                         (200, 200)), manager=MANAGER)

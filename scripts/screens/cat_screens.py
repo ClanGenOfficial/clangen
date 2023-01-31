@@ -906,7 +906,7 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # NUTRITION INFO (if the game is in the correct mode)
-        if game.clan.game_mode in ["expanded", "cruel season"] and the_cat.is_alive():
+        '''if game.clan.game_mode in ["expanded", "cruel season"] and the_cat.is_alive():
             nutr = None
             if the_cat.ID in game.clan.freshkill_pile.nutrition_info:
                 nutr = game.clan.freshkill_pile.nutrition_info[the_cat.ID]
@@ -915,7 +915,7 @@ class ProfileScreen(Screens):
                 output += f"nutrition status: {round(nutr.percentage, 1)}%\n"
             else:
                 output += "\n"
-                output += f"nutrition status: 100%\n"
+                output += f"nutrition status: 100%\n"'''
 
         if the_cat.is_disabled():
             for condition in the_cat.permanent_condition:
@@ -1621,7 +1621,8 @@ class ProfileScreen(Screens):
             else:
                 self.choose_mate_button.enable()
 
-            if self.the_cat.status not in ['apprentice', 'medicine cat apprentice'] or self.the_cat.dead:
+            if self.the_cat.status not in ['apprentice', 'medicine cat apprentice'] or self.the_cat.dead \
+                    or self.the_cat.outside:
                 self.change_mentor_button.disable()
             else:
                 self.change_mentor_button.enable()

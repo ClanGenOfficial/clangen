@@ -50,7 +50,9 @@
             "chats with (cat) about their day.",
             "appreciates (cat) telling them that they had a feather stuck to their face.",
             "greets (cat) as they're exiting the warriors' den.",
-            "chats quietly with (cat) while they're both on camp guard duty."
+            "chats quietly with (cat) while they're both on camp guard duty.",
+            "quickly apologizes after bumping into (cat). They have a small laugh about it.",
+            "mews congratulations to (cat) for a job well done."
         ],
         "dislike": [
             "divides (cat) into extra patrols.",
@@ -65,7 +67,9 @@
             "is boasting about their accomplishments to (cat), but (cat) isn't impressed.",
             "bickered about something trivial with (cat).",
             "thinks that (cat) has been behaving stuck up and rude.",
-            "is dissatisfied that (cat) can't seem to get rid of their chronic pain."
+            "is dissatisfied that (cat) can't seem to get rid of their chronic pain.",
+            "had a disagreement with (cat) about something or other.",
+            "bristles after being scolded by (cat)."
         ],
         "admiration": [
             "is watching (cat) perform an almost-decent hunting crouch.",
@@ -159,7 +163,9 @@
             "listens to (cat) talk about what life was like when they were young.",
             "asks (cat) if they're really going to be the leader someday.",
             "greets (cat) as they're exiting the warriors' den.",
-            "chats quietly with (cat) while they're both on camp guard duty."
+            "chats quietly with (cat) while they're both on camp guard duty.",
+            "quickly apologizes after bumping into (cat). They have a small laugh about it.",
+            "mews congratulations to (cat) for a job well done."
         ],
         "dislike": [
             "divides (cat) into extra patrols.",
@@ -172,7 +178,8 @@
             "prays that they aren't on patrol with (cat) tomorrow.",
             "bickered about something trivial with (cat).",
             "is dissatisfied that (cat) can't seem to get rid of their chronic pain.",
-            "said something that rubbed (cat) the wrong way."
+            "said something that rubbed (cat) the wrong way.",
+            "had a disagreement with (cat) about something or other."
 
         ],
         "admiration": [

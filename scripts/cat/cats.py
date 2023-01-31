@@ -750,6 +750,11 @@ class Cat():
                         game.clan.leader = None
                         game.clan.leader_predecessors += 1
 
+            if game.clan.deputy:
+                if game.clan.deputy.ID == self.ID:
+                    game.clan.deputy = None
+                    game.clan.deputy_predecessors += 1
+
         elif self.status == 'medicine cat':
             self.update_med_mentor()
             self.update_skill()
@@ -1114,14 +1119,10 @@ class Cat():
                                 possible_skill = self.skill_groups.get(x)
                                 self.skill = choice(possible_skill)
                                 self.mentor_influence.append(self.skill)
-                    # don't give skill from mentor
-                    else:
-                        self.skill = choice(self.skills)
-                        self.mentor_influence.append('None')
-                # if they didn't have a mentor, give random skill
-                else:
-                    self.skill = choice(self.skills)
-                    self.mentor_influence.append('None')
+                                return
+
+                self.skill = choice(self.skills)
+                self.mentor_influence.append('None')
 
             # assign new skill to elder
             elif self.status == 'elder':
@@ -2202,7 +2203,7 @@ class Cat():
                 print(f'WARNING: There was an error reading the relationship file of cat #{self}.')
 
     @staticmethod
-    def mediate_relationship(mediator, cat1, cat2, sabotage=False):
+    def mediate_relationship(mediator, cat1, cat2, allow_romantic, sabotage=False):
         # Gather some important info
 
         # Gathering the relationships.
@@ -2304,9 +2305,14 @@ class Cat():
                 lvl_modifier = 1
             mediator.experience += EX_gain / lvl_modifier / gm_modifier
 
+        no_romantic_mentor = False
+        if not game.settings['romantic with former mentor']:
+            if cat2.ID in cat1.former_apprentices or cat1.ID in cat2.former_apprentices:
+                no_romantic_mentor = True
+
         # determine the traits to effect
         pos_traits = ["platonic", "respect", "comfortable", "trust"]
-        if mates or (valid_age and not related and age_diff):
+        if allow_romantic and (mates or (valid_age and not related and age_diff and not no_romantic_mentor)):
             pos_traits.append("romantic")
 
         neg_traits = ["dislike", "jealousy"]

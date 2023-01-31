@@ -159,7 +159,7 @@ class Patrol():
             clan_allies = True
         elif clan_relations < 7:
             clan_hostile = True
-        elif clan_relations in range(7, 17):
+        elif 7 <= clan_relations <= 17:
             clan_neutral = True
         other_clan_chance = 1  # this is just for separating them a bit from the other patrols, it means they can always happen
         # chance for each kind of loner event to occur
@@ -170,19 +170,19 @@ class Patrol():
         regular_chance = int(random.getrandbits(1))
         hostile_chance = int(random.getrandbits(3))
         welcoming_chance = 1 # this sets the new cat patrols to always possible
-        if reputation in range(1, 30):
+        if 1 <= reputation <= 30:
             hostile_rep = True
             if small_clan:
                 chance = welcoming_chance
             else:
                 chance = hostile_chance
-        elif reputation in range(31, 70):
+        elif 31 <= reputation <= 70:
             neutral_rep = True
             if small_clan:
                 chance = welcoming_chance
             else:
                 chance = regular_chance
-        elif reputation in range(71, 100) or reputation > 100:
+        elif reputation >= 71:
             welcoming_rep = True
             chance = welcoming_chance
 
@@ -644,36 +644,37 @@ class Patrol():
             if cats_dying >= len(self.patrol_cats):
                 cats_dying = int(len(self.patrol_cats) - 1)
             for d in range(0, cats_dying):
+                cat = self.patrol_cats[d]
                 if self.patrol_cats[d].status == 'leader':
                     if 'all_lives' in self.patrol_event.tags:
                         game.clan.leader_lives -= 10
-                        self.results_text.append(f"{self.patrol_cats[d].name} lost all their lives.")
+                        self.results_text.append(f"{cat.name} lost all their lives.")
                     elif "some_lives" in self.patrol_event.tags:
                         if game.clan.leader_lives > 2:
                             current_lives = int(game.clan.leader_lives)
                             game.clan.leader_lives -= random.randrange(1, current_lives - 1)
-                            self.results_text.append(f"{self.patrol_cats[d].name} lost some of their lives.")
+                            self.results_text.append(f"{cat.name} lost some of their lives.")
                         else:
-                            self.results_text.append(f"{self.patrol_cats[d].name} lost one life.")
+                            self.results_text.append(f"{cat.name} lost one life.")
                             game.clan.leader_lives -= 1
                     else:
-                        self.results_text.append(f"{self.patrol_cats[d].name} lost all their lives.")
+                        self.results_text.append(f"{cat.name} lost all their lives.")
                         game.clan.leader_lives -= 10
                 else:
-                    self.results_text.append(f"{self.patrol_cats[d].name} died.")
-                    self.patrol_cats[d].die(body)
-                if len(self.patrol_event.history_text) >= 2 and self.patrol_cats[d].status != 'leader':
-                    self.patrol_cats[d].died_by.append(
-                        event_text_adjust(Cat, f'{self.patrol_event.history_text[1]}', self.patrol_cats[d],
-                                          self.patrol_cats[d]))
+                    self.results_text.append(f"{cat.name} died.")
+                if len(self.patrol_event.history_text) >= 2 and cat.status != 'leader':
+                    cat.died_by.append(
+                        event_text_adjust(Cat, f'{self.patrol_event.history_text[1]}', cat,
+                                          cat))
                 elif len(self.patrol_event.history_text) >= 2 and self.patrol_cats[d].status == 'leader':
-                    self.patrol_cats[d].died_by.append(
-                        event_text_adjust(Cat, f'{self.patrol_event.history_text[2]}', self.patrol_cats[d],
-                                          self.patrol_cats[d]))
+                    cat.died_by.append(
+                        event_text_adjust(Cat, f'{self.patrol_event.history_text[2]}', cat,
+                                          cat))
                 elif cat.status != 'leader':
                     cat.died_by.append(f'This cat died while patrolling.')
                 else:
                     cat.died_by.append(f'died while patrolling')
+                cat.die()
 
         # cats disappearing on patrol is also handled under this def for simplicity's sake
         elif "gone" in self.patrol_event.tags:
@@ -885,8 +886,8 @@ class Patrol():
             total_amount = total_amount * (HUNTER_BONUS["good_hunter"] / 10)
 
         game.clan.freshkill_pile.add_freshkill(total_amount)
-        if total_amount > 0:
-            self.results_text.append(f"Patrol managed to catch a total amount of {total_amount} prey.")
+        '''if total_amount > 0:
+            self.results_text.append(f"Patrol managed to catch a total amount of {total_amount} prey.")'''
 
     def handle_clan_relations(self, difference):
         """
