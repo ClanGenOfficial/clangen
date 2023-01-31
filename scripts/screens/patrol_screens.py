@@ -660,7 +660,7 @@ class PatrolScreen(Screens):
         display_text = self.adjust_patrol_text(display_text, len(patrol.patrol_cats))
 
         self.elements["patrol_results"] = pygame_gui.elements.UITextBox("",
-                                                                        scale(pygame.Rect((1100, 1000), (344, 150))),
+                                                                        scale(pygame.Rect((1100, 1000), (344, 300))),
                                                                         object_id=get_text_box_theme("#cat_patrol_info_box")
                                                                         , manager=MANAGER)
         self.elements["patrol_results"].set_text(patrol.results())
