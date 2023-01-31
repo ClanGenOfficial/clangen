@@ -12,15 +12,15 @@
         "finds the way (cat) acts increasingly uncomfortable.",
         "said something that rubbed (cat) the wrong way.",
         "caught (cat) complaining about them behind their back.",
-        "shudders at the sound of (cat)'s voice."
+        "shudders at the sound of (cat)'s voice.",
+        "had a huge argument with (cat).",
+        "had a fight with (cat)."
     ],
     "neutral": [
         "complains about something (cat) did.",
         "is telling a story to (cat).",
         "is talking with (cat).",
         "is sharing prey with (cat).",
-        "had a huge argument with (cat).",
-        "had a fight with (cat).",
         "thinks that the prey (cat) is biting into on the other side of camp looks delicious.",
         "called (cat) the wrong name.",
         "saw (cat) take the last piece of prey from the fresh-kill pile.",
@@ -40,7 +40,11 @@
         "offers to groom a hard-to-reach place for (cat), who thanks them earnestly.",
         "is letting (cat) share their troubles with them, hoping they'll feel better afterwards.",
         "reminds (cat) to grab something from the fresh-kill pile if they haven't already.",
-        "shares a joke about a neighboring Clan with (cat)."
+        "shares a joke about a neighboring Clan with (cat).",
+        "had a disagreement with (cat) about something or other.",
+        "bristles after being scolded by (cat).",
+        "quickly apologizes after bumping into (cat). They have a small laugh about it.",
+        "mews congratulations to (cat) for a job well done."
 
     ],
     "friendly": [

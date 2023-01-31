@@ -789,8 +789,8 @@ class ViewChildrenScreen(Screens):
             self.previous_sibling_page.disable()
             self.next_sibling_page.enable()
         else:
-            self.previous_offspring_page.enable()
-            self.next_offspring_page.enable()
+            self.previous_sibling_page.enable()
+            self.next_sibling_page.enable()
 
     def update_offspring_page(self):
         """Updates the offspring page"""
