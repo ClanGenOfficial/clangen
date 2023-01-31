@@ -486,7 +486,7 @@ def describe_color(pelt, tortiecolour, tortiepattern, white_patches):
         elif pelt.name == "Agouti":
             color_name = color_name + ' agouti'
         elif pelt.name == "Singlestripe":
-            color_name = color_name + ' with a dorsal stripe'
+            color_name = color_name + ', with a dorsal stripe,'
 
         elif pelt.name == "Tortie":
             if tortiepattern not in ["tortiesolid", "tortiesmoke"]:
