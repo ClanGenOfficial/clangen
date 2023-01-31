@@ -2202,8 +2202,6 @@ class MediationScreen(Screens):
 
         self.page = 1
 
-        print(self.mediators)
-
         if self.mediators:
             if Cat.fetch_cat(game.switches["cat"]) in self.mediators:
                 self.selected_mediator = self.mediators.index(Cat.fetch_cat(game.switches["cat"]))
@@ -2465,20 +2463,22 @@ class MediationScreen(Screens):
         else:
             col1 += " moons"
         col1 += "\n" + cat.trait
-        self.selected_cat_elements["col1" + tag] = UITextBoxTweaked(col1, scale(pygame.Rect((x + 46, y + 252), (160, -1))),
+        self.selected_cat_elements["col1" + tag] = UITextBoxTweaked(col1, scale(pygame.Rect((x + 42, y + 252), (160, -1))),
                                                                     object_id="#cat_profile_info_box",
                                                                     line_spacing=0.75)
 
+        mates = False
         if cat.mate:
             col2 = "has a mate"
             if other_cat:
                 if cat.mate == other_cat.ID:
+                    mates = True
                     col2 = f"{Cat.fetch_cat(cat.mate).name}'s mate"
         else:
             col2 = "mate: none"
 
         # Relation info:
-        if related and other_cat:
+        if related and other_cat and not mates:
             col2 += "\n"
             if other_cat.is_uncle_aunt(cat):
                 if cat.genderalign in ['female', 'trans female']:
@@ -2507,7 +2507,7 @@ class MediationScreen(Screens):
             elif not game.settings["first_cousin_mates"] and other_cat.is_cousin(cat):
                 col2 += "cousin"
 
-        self.selected_cat_elements["col2" + tag] = UITextBoxTweaked(col2, scale(pygame.Rect((x + 220, y + 252), (160, -1))),
+        self.selected_cat_elements["col2" + tag] = UITextBoxTweaked(col2, scale(pygame.Rect((x + 220, y + 252), (161, -1))),
                                                                     object_id="#cat_profile_info_box",
                                                                     line_spacing=0.75)
 

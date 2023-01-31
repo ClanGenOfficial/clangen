@@ -159,7 +159,7 @@ class Patrol():
             clan_allies = True
         elif clan_relations < 7:
             clan_hostile = True
-        elif clan_relations in range(7, 17):
+        elif 7 <= clan_relations <= 17:
             clan_neutral = True
         other_clan_chance = 1  # this is just for separating them a bit from the other patrols, it means they can always happen
         # chance for each kind of loner event to occur

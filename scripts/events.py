@@ -1261,20 +1261,20 @@ class Events():
 
         reputation = game.clan.reputation
         # hostile
-        if reputation in range(1, 30):
+        if 1 <= reputation <= 30:
             if clan_size < 10:
                 chance = base_chance
             else:
                 rep_adjust = int(reputation / 2)
                 chance = base_chance + int(300 / rep_adjust)
         # neutral
-        elif reputation in range(31, 70):
+        elif 31 <= reputation <= 70:
             if clan_size < 10:
                 chance = base_chance - reputation
             else:
                 chance = base_chance
         # welcoming
-        elif reputation in range(71, 100):
+        elif 71 <= reputation <= 100:
             chance = base_chance - reputation
 
         if randint(1, chance) == 1 and cat.age != 'kitten' and cat.age != 'adolescent' and not self.new_cat_invited:
