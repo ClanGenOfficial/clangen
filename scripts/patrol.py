@@ -159,7 +159,7 @@ class Patrol():
             clan_allies = True
         elif clan_relations < 7:
             clan_hostile = True
-        elif clan_relations in range(7, 17):
+        elif 7 <= clan_relations <= 17:
             clan_neutral = True
         other_clan_chance = 1  # this is just for separating them a bit from the other patrols, it means they can always happen
         # chance for each kind of loner event to occur
@@ -911,8 +911,8 @@ class Patrol():
             total_amount = total_amount * (HUNTER_BONUS["good_hunter"] / 10)
 
         game.clan.freshkill_pile.add_freshkill(total_amount)
-        if total_amount > 0:
-            self.results_text.append(f"Patrol managed to catch a total amount of {total_amount} prey.")
+        '''if total_amount > 0:
+            self.results_text.append(f"Patrol managed to catch a total amount of {total_amount} prey.")'''
 
     def handle_clan_relations(self, difference):
         """
