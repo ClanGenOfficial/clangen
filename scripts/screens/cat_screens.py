@@ -1621,7 +1621,7 @@ class ProfileScreen(Screens):
             else:
                 self.choose_mate_button.enable()
 
-            if self.the_cat.status not in ['apprentice', 'medicine cat apprentice'] or self.the_cat.dead
+            if self.the_cat.status not in ['apprentice', 'medicine cat apprentice'] or self.the_cat.dead \
                     or self.the_cat.outside:
                 self.change_mentor_button.disable()
             else:
