@@ -526,7 +526,7 @@ def init_pattern(cat):
         elif cat.tortiebase == 'agouti':
             cat.tortiepattern = 'tortieagouti'
         else:
-            cat.tortiepattern = 'tortietabby'
+            cat.tortiepattern = choice(['tortietabby', 'tortiemackerel', 'tortieclassic'])
     else:
         cat.tortiebase = None
         cat.tortiepattern = None
