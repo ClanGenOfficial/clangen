@@ -810,7 +810,8 @@ class MakeClanScreen(Screens):
     def open_clan_saved_screen(self):
         self.clear_all_page()
         self.sub_screen = 'saved screen'
-        self.elements["leader_image"] = pygame_gui.elements.UIImage(scale(pygame.Rect((screen_x / 2 - 100, 240), (200, 200))),
+
+        self.elements["leader_image"] = pygame_gui.elements.UIImage(scale(pygame.Rect((700, 240), (200, 200))),
                                                                     pygame.transform.scale(
                                                                         game.clan.leader.large_sprite,
                                                                         (200, 200)), manager=MANAGER)
