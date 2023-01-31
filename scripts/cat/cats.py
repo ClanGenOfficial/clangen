@@ -750,6 +750,11 @@ class Cat():
                         game.clan.leader = None
                         game.clan.leader_predecessors += 1
 
+            if game.clan.deputy:
+                if game.clan.deputy.ID == self.ID:
+                    game.clan.deputy = None
+                    game.clan.deputy_predecessors += 1
+
         elif self.status == 'medicine cat':
             self.update_med_mentor()
             self.update_skill()
