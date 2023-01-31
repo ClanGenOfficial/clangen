@@ -1119,14 +1119,10 @@ class Cat():
                                 possible_skill = self.skill_groups.get(x)
                                 self.skill = choice(possible_skill)
                                 self.mentor_influence.append(self.skill)
-                    # don't give skill from mentor
-                    else:
-                        self.skill = choice(self.skills)
-                        self.mentor_influence.append('None')
-                # if they didn't have a mentor, give random skill
-                else:
-                    self.skill = choice(self.skills)
-                    self.mentor_influence.append('None')
+                                return
+
+                self.skill = choice(self.skills)
+                self.mentor_influence.append('None')
 
             # assign new skill to elder
             elif self.status == 'elder':
