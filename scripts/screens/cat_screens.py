@@ -1547,10 +1547,10 @@ class ProfileScreen(Screens):
         else:
             self.open_tab = 'roles'
 
-            self.manage_roles = pygame_gui.elements.UIButton(scale(pygame.Rect((452, 900), (344, 72))),
-                                                             "Manage Roles",
-                                                             starting_height=2
-                                                             , manager=MANAGER)
+            self.manage_roles = UIImageButton(scale(pygame.Rect((452, 900), (344, 72))),
+                                             "", object_id="#manage_roles_button",
+                                             starting_height=2
+                                             , manager=MANAGER)
             self.update_disabled_buttons_and_text()
 
     def toggle_personal_tab(self):
@@ -2418,27 +2418,29 @@ class RoleScreen(Screens):
                                             manager=MANAGER)
 
         # ADULT CAT ROLES
-        self.switch_warrior = UIImageButton(scale(pygame.Rect((460, 720), (334, 72))), "",
+        self.switch_warrior = UIImageButton(scale(pygame.Rect((451, 720), (344, 72))), "",
                                             object_id="#switch_warrior_button",
                                             manager=MANAGER)
-        self.retire = UIImageButton(scale(pygame.Rect((460, 792), (334, 72))), "",
+        self.retire = UIImageButton(scale(pygame.Rect((451, 792), (334, 72))), "",
                                     object_id="#retire_button",
                                     manager=MANAGER)
-        self.switch_med_cat = UIImageButton(scale(pygame.Rect((814, 720), (334, 104))), "",
+        self.switch_med_cat = UIImageButton(scale(pygame.Rect((805, 720), (344, 104))), "",
                                             object_id="#switch_med_cat_button",
                                             manager=MANAGER)
-        self.switch_mediator = UIImageButton(scale(pygame.Rect((814, 824), (335, 72))), "Switch Mediator",
+        self.switch_mediator = UIImageButton(scale(pygame.Rect((805, 824), (344, 72))), "",
+                                             object_id="#switch_mediator_button",
                                              manager=MANAGER)
 
 
         #In-TRAINING ROLES:
-        self.switch_warrior_app = UIImageButton(scale(pygame.Rect((1168, 720), (334, 104))), "",
+        self.switch_warrior_app = UIImageButton(scale(pygame.Rect((1159, 720), (344, 104))), "",
                                                 object_id="#switch_warrior_app_button",
                                                 manager=MANAGER)
-        self.switch_med_app = UIImageButton(scale(pygame.Rect((1168, 824), (334, 104))), "",
+        self.switch_med_app = UIImageButton(scale(pygame.Rect((1159, 824), (344, 104))), "",
                                             object_id="#switch_med_app_button",
                                             manager=MANAGER)
-        self.switch_mediator_app = UIImageButton(scale(pygame.Rect((1168, 928), (334, 104))), "Switch Mediator Apprentice",
+        self.switch_mediator_app = UIImageButton(scale(pygame.Rect((1159, 928), (344, 104))), "",
+                                                 object_id="#switch_mediator_app_button",
                                                  manager=MANAGER)
 
         self.update_selected_cat()
@@ -2500,11 +2502,15 @@ class RoleScreen(Screens):
                                                                                  manager=MANAGER)
 
         if self.the_cat.status == "leader":
-            icon_path = "resources/images/buttons/leader_icon.png"
+            icon_path = "resources/images/leader_icon.png"
         elif self.the_cat.status == "deputy":
-            icon_path = "resources/images/buttons/deputy_icon.png"
+            icon_path = "resources/images/deputy_icon.png"
+        elif self.the_cat.status == "medicine cat":
+            icon_path = "resources/images/medic_icon.png"
+        elif self.the_cat.status == "medicine cat apprentice":
+            icon_path = "resources/images/medic_app_icon.png"
         else:
-            icon_path = "resources/images/buttons/buttonrank.png"
+            icon_path = "resources/images/buttonrank.png"
 
         self.selected_cat_elements["role_icon"] = pygame_gui.elements.UIImage(scale(pygame.Rect((165, 462), (156, 156))),
                                                                               pygame.transform.scale(
@@ -2598,7 +2604,8 @@ class RoleScreen(Screens):
             self.promote_deputy.disable()
 
             # ADULT CAT ROLES
-            if self.the_cat.retired:  # Keep cats that have retired due to health from being switched to warrior
+            # Keep cats that have retired due to health from being switched to warrior
+            if self.the_cat.retired or self.the_cat.age == "elder":
                 self.switch_warrior.disable()
             else:
                 self.switch_warrior.enable()
@@ -2622,7 +2629,8 @@ class RoleScreen(Screens):
                 self.promote_deputy.disable()
 
             # ADULT CAT ROLES
-            if self.the_cat.retired: # Keep cats that have retired due to health from being switched to warrior
+            # Keep cats that have retired due to health from being switched to warrior
+            if self.the_cat.retired or self.the_cat.age == "elder":
                 self.switch_warrior.disable()
             else:
                 self.switch_warrior.enable()

@@ -427,10 +427,6 @@ class SettingsScreen(Screens):
         self.sub_menu = 'general'
         self.save_settings_button.show()
 
-        self.checkboxes_text["fullscreen"] = pygame_gui.elements.UIButton(scale(pygame.Rect((700, 280), (-1, -1))),
-                                                                          "Toggle Fullscreen",
-                                                                          tool_tip_text="This will close the game.")
-
 
         # Text_boxes:
         # For consistency's sake, use the name of the setting as the key for the
@@ -442,6 +438,15 @@ class SettingsScreen(Screens):
         self.checkboxes_text["container"] = pygame_gui.elements.UIScrollingContainer(scale(pygame.Rect((0, 440),
                                                                                      (1400, 600))),
                                                                                      manager=MANAGER)
+
+        self.checkboxes_text["fullscreen"] = UIImageButton(scale(pygame.Rect((628, n * y_spacing), (316, 72))),
+                                                          "",
+                                                          object_id="#toggle_fullscreen_button",
+                                                          container=self.checkboxes_text["container"],
+                                                          tool_tip_text="This will close the game. "
+                                                                        "When you reopen it, fullscreen"
+                                                                        " will be toggled. ")
+        n += 1
 
         self.checkboxes_text['dark mode'] = pygame_gui.elements.UITextBox(
             "Dark Mode", scale(pygame.Rect((x_value, n * y_spacing), (1000, 78))),
@@ -621,6 +626,8 @@ class SettingsScreen(Screens):
             x_value = 340
             y_spacing = 78
             n = 0
+
+            n += 1  # To leave room for the toggle fullscreen button
 
             if game.settings['dark mode']:
                 box_type = "#checked_checkbox"

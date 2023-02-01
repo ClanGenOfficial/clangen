@@ -123,7 +123,7 @@ class Freshkill_Pile():
         self.total_amount = sum(self.pile.values())
 
         self.feed_cats(living_cats)
-        print(f"REMAINING AMOUNT: {self.total_amount} (needed: {self.amount_food_needed()})")
+        # print(f"REMAINING AMOUNT: {self.total_amount} (needed: {self.amount_food_needed()})")
 
     def feed_cats(self, living_cats):
         """Handles to feed all living cats. This happens before the aging up."""
