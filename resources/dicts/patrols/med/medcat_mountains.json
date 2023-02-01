@@ -1503,7 +1503,7 @@
 "exp": 20,
 "success_text": [
     "p_l finds lots of cobwebs and gathers them with sticks. The apprentice works hard with their mentor to gather as many as possible, their eyes glittering with joy and pride.",
-    "p_l  goes to their favorite cobweb gathering places. Several cats in the camp startle when they pass by them as they are unable to see p_l and app1 underneath the many cobwebs they have gathered."
+    "p_l goes to their favorite cobweb gathering places. Several cats in the camp startle when they pass by them as they are unable to see p_l and app1 underneath the many cobwebs they have gathered."
 ],
 "fail_text": [
     "app1 doesn't seem to be able to focus today, and p_l isn't much better off, tired from teaching their apprentice and caring for their patients. After app1 accidentally ruins a cobweb while playing with it, p_l decides to call the whole thing off and try again another day."
@@ -1523,7 +1523,7 @@
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-            "p_l mrrps with laughter, watching r_c parade around with such a big bundle of cobwebs they keep colliding with things in their path they can't see. The entire patrol has gotten a wonderful haul, and it's a very pleased medicine cat that leads them back to camp.",
+            "p_l <i>mrrp</i>s with laughter, watching r_c parade around with such a big bundle of cobwebs that they keep colliding with things in their path they can't see. The entire patrol has gotten a wonderful haul, and it's a very pleased medicine cat that leads them back to camp.",
            "The patrol brings back a truly massive haul, and in good humour too, laughing as they set down their sticks of spun up webbing in the medicine cat den. p_l joins everyone as they sit down to share tongues, ridding their pelts of dust and the odd spider as the cats catch up with each other and enjoy the day.",
            "p_l's keen eyes have a knack for spotting the gossemer thin strings of cobwebs, and with the patrol there to follow their lead it's a very successful gathering mission."
     ],
@@ -1550,7 +1550,7 @@
     "exp": 20,
     "success_text": [
             "It makes app1 laugh, muffled through their own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, app2 seems to lighten up every situation.",
-            "Murrping with laughter, app1 clacks the stick they hold in their own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the apprentices muffled purrs and laughs."
+            "<i>Murrp</i>ing with laughter, app1 clacks the stick they hold in their own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the apprentices muffled purrs and laughs."
     ],
     "fail_text": [
             "p_l decides they should be above such childish antics."
@@ -1575,7 +1575,7 @@
     "exp": 20,
     "success_text": [
             "app3 ignores it, but it makes p_l laugh, muffled through their own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, app2 seems to lighten up every situation.",
-            "Murrping with laughter, p_l clacks the stick they hold in their own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the apprentices muffled purrs and laughs, though app3 seems solely focused on the chore, content to let the others muck about so long as everything gets done."
+            "<i>Murrp</i>ing with laughter, p_l clacks the stick they hold in their own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the apprentices muffled purrs and laughs, though app3 seems solely focused on the chore, content to let the others muck about so long as everything gets done."
     ],
     "fail_text": [
             "p_l decides they should be above such childish antics."
@@ -1625,7 +1625,7 @@
     "exp": 20,
     "success_text": [
             "The other apprentices ignore it, but it makes p_l laugh, muffled through their own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, app2 seems to lighten up every situation.",
-            "Murrping with laughter, ap_l clacks the stick they hold in their own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the two's muffled purrs and laughs, though the other apprentices seems solely focused on the chore, content to let the others muck about so long as everything gets done."
+            "<i>Murrp</i>ing with laughter, ap_l clacks the stick they hold in their own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the two's muffled purrs and laughs, though the other apprentices seems solely focused on the chore, content to let the others muck about so long as everything gets done."
     ],
     "fail_text": [
             "p_l decides they should be above such childish antics."
@@ -1675,7 +1675,7 @@
     "exp": 20,
     "success_text": [
             "The other apprentices ignore it, but it makes p_l laugh, muffled through their own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, app2 seems to lighten up every situation.",
-            "Murrping with laughter, ap_l clacks the stick they hold in their own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the two's muffled purrs and laughs, though the other apprentices seems solely focused on the chore, content to let the others muck about so long as everything gets done."
+            "<i>Murrp</i>ing with laughter, ap_l clacks the stick they hold in their own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the two's muffled purrs and laughs, though the other apprentices seems solely focused on the chore, content to let the others muck about so long as everything gets done."
     ],
     "fail_text": [
             "p_l decides they should be above such childish antics."
@@ -1725,7 +1725,7 @@
     "exp": 20,
     "success_text": [
             "The other apprentices ignore it, but it makes p_l laugh, muffled through their own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, app2 seems to lighten up every situation.",
-            "Murrping with laughter, ap_l clacks the stick they hold in their own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the two's muffled purrs and laughs, though the other apprentices seems solely focused on the chore, content to let the others muck about so long as everything gets done."
+            "<i>Murrp</i>ing with laughter, ap_l clacks the stick they hold in their own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the two's muffled purrs and laughs, though the other apprentices seems solely focused on the chore, content to let the others muck about so long as everything gets done."
     ],
     "fail_text": [
             "p_l decides they should be above such childish antics."
@@ -1826,9 +1826,9 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-           "Daisies may seem like part of the everyday carpet of greenery, present everywhere from rocks to fields to at the foot of trees, but that doesn't make their leaves any less useful. And there's some dandelion nearby - perfect. With a larger patrol, the cats bring back a good haul, and p_l makes sure to thank everyone for their assistance.",
-           "A patch of sunlight has brought newleaf's bounty early to the corner p_l harvests from, the daisy's leaves growing long and healthy among a patch of dandelion. They can be proud of the morning's work, and are full of thanks for their assistants who've made the process so much easier.",
-            "Daisies aren't hard to find in the warmer seasons, popping up all over the place with dandelions next to them. s_c collects enough that they have trouble not dropping any on the way back to camp. The patrol, filled with gossip and chatter on the way out and daisy leaves on the trip back, is an easy and enjoyable afternoon."
+        "Daisies may seem like part of the everyday carpet of greenery, present everywhere from rocks to fields to at the foot of trees, but that doesn't make their leaves any less useful. And there's some dandelion nearby - perfect. With a larger patrol, the cats bring back a good haul, and p_l makes sure to thank everyone for their assistance.",
+        "A patch of sunlight has brought newleaf's bounty early to the corner p_l harvests from, the daisy's leaves growing long and healthy among a patch of dandelion. They can be proud of the morning's work, and are full of thanks for their assistants who've made the process so much easier.",
+        "Daisies aren't hard to find in the warmer seasons, popping up all over the place with dandelions next to them. s_c collects enough that they have trouble not dropping any on the way back to camp. The patrol, filled with gossip and chatter on the way out and daisy leaves on the trip back, is an easy and enjoyable afternoon."
 ],
     "fail_text": [
             "With the warriors more interested in hunting whatever has been snacking on the daisies than helping p_l find any more plants, it's a frustrating and unproductive afternoon."
