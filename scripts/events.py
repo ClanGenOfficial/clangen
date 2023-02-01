@@ -228,7 +228,7 @@ class Events():
     def herb_gather(self):
         if game.clan.game_mode == 'classic':
             herbs = game.clan.herbs.copy()
-            print(game.clan.herbs)
+            #print(game.clan.herbs)
             for herb in herbs:
                 adjust_by = random.choices([-2, -1, 0, 1, 2], [1, 2, 3, 2, 1], k=1)
                 # print(adjust_by)
@@ -242,7 +242,7 @@ class Events():
         else:
             event_list = []
             meds_available = get_med_cats(Cat)
-            print(game.clan.herbs)
+            #print(game.clan.herbs)
             for med in meds_available:
                 if game.clan.current_season in ['Newleaf', 'Greenleaf']:
                     amount = random.choices([0, 1, 2, 3], [1, 2, 2, 2], k=1)
@@ -285,7 +285,7 @@ class Events():
                         event_list.append(f"{med.name} could not find any herbs this moon.")
                         return
             game.herb_events_list.extend(event_list)
-            print(game.clan.herbs)
+            #print(game.clan.herbs)
 
     def herb_destruction(self):
         allies = []
