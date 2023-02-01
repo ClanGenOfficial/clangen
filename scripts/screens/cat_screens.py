@@ -2220,7 +2220,7 @@ class CeremonyScreen(Screens):
                 kit_text = kit + ' introduces themself and bounds up to the new leader, reaching up on their hind legs to give them a new life for ' + \
                         cat.virtues[2] + '.'
         if known[3]:
-            if cat.trait == "bloodthisty":
+            if cat.trait == "bloodthirsty":
                 warrior2_text = 'Another cat approaches. ' + warrior2 + ' steps forward to give ' + dep_name + ' a life for ' + \
                             cat.virtues[3] + '. ' + dep_name + ' yowls in pain as the life rushes into them.'
             else:
@@ -2423,6 +2423,8 @@ class RoleScreen(Screens):
                                             manager=MANAGER)
         self.retire = UIImageButton(scale(pygame.Rect((451, 792), (334, 72))), "",
                                     object_id="#retire_button",
+                                    tool_tip_text="If a cat is retired, you will be "
+                                                  "unable to switch them to warrior status. ",
                                     manager=MANAGER)
         self.switch_med_cat = UIImageButton(scale(pygame.Rect((805, 720), (344, 104))), "",
                                             object_id="#switch_med_cat_button",

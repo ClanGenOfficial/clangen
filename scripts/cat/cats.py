@@ -765,6 +765,11 @@ class Cat():
             self.update_mentor()
             self.skill = choice(self.elder_skills)
 
+            # Ideally, this should also be triggered for cats that retired due to
+            # health conditions. However, it is currently being triggered for all elders to
+            # prevent "unretiring" by switching to med or mediator, then warrior.
+            self.retired = True
+
             # Will remove them from the clan med cat variables, if they are a med cat
             if old_status == "medicine cat":
                 game.clan.remove_med_cat(self)
