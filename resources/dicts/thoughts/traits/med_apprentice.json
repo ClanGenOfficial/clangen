@@ -99,5 +99,51 @@
     "wise": [
         "Is giving somber advice to a fellow apprentice",
         "Was sought out by another apprentice recently for their wisdom"
+    ],
+    "sarcastic": [
+        "Tells their unimpressed mentor a sarcastic joke"
+    ],
+    "challenge-seeker": [
+        "Asks their mentor if their training can be extr-hard"
+    ],
+    "competitive": [
+        "Plans out a competition for all the apprentices, determined to win"],
+    "blunt": [
+        "Tells their mentor they can't train today, but doesn't give a reason"
+    ],
+    "considerate": [
+        "Asks their mentor to double check that everyone is okay"
+    ],
+    "optimistic": [
+        "Is hopeful they'll finish training with flying colours!"
+    ],
+    "energetic": [
+        "Asks their mentor to race them!"
+    ],
+    "bland": [
+        "Trains like everyone else, every single day"],
+    "jerk": [
+        "Is looking for a pair to sabotage, out of boredom"
+    ],
+    "soft-spoken": [
+        "Is asked by their mentor to repeat something they said"
+    ],
+    "dreamy": [
+        "Asks their mentor if they want to be a bird"
+    ],
+    "dramatic": [
+        "Complains loudly about training"
+    ],
+    "wholesome": [
+        "Is remembering their first medicine meeting!"
+    ],
+    "romantic": [
+        "Flirts with the other apprentices, even after getting told off"
+    ],
+    "imaginative": [
+        "Dreams about being a warrior apprentice instead"
+    ],
+    "timid": [
+        "Is too shy to meet the other apprentices"
     ]
 }
