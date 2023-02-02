@@ -195,6 +195,7 @@ class SettingsScreen(Screens):
                 "as long as you don't claim the sprites as your own creations or sell them for any reason.<br><br>" \
                 "<b>Original creator:</b> <i>just-some-cat.tumblr.com (anju)</i><br><br>" \
                 "<b>Fan edit made by:</b> <i>SableSteel</i><br>" \
+                "<b>Mod made by:</b> <i>Meltedcandles</i><br>" \
                 "<b>With contributions from:</b><br><i>" \
                 "Blackfur<br>" \
                 "coffee<br>" \
