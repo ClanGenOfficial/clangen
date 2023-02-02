@@ -241,7 +241,7 @@ for x in [
     'lineart', 'singlecolours', 'speckledcolours', 'tabbycolours',
     'whitepatches', 'blackwhitepatches', 'eyes', 'singleextra', 'tabbyextra', 'eyes2',
     'speckledextra', 'whiteextra', 'blackwhiteextra', 'eyesextra', 'eyes2extra', 'skin',
-    'skinextra', 'scars', 'scarsextra', 'whitenewextra', 'blackwhitenewextra', 'whitepatchesnew', 'blackwhitepatchesnew'
+    'skinextra', 'scars', 'scarsextra', 'whitenewextra', 'blackwhitenewextra', 'whitepatchesnew', 'blackwhitepatchesnew',
     'scarsdark', 'scarsdarkextra', 'collars', 'collarsextra',
     'bellcollars', 'bellcollarsextra', 'bowcollars', 'bowcollarsextra',
     'speckledcolours2', 'speckledextra2', 'tabbycolours2', 'tabbyextra2',
@@ -249,7 +249,7 @@ for x in [
     'mackerelcolours', 'classiccolours', 'sokokecolours', 'agouticolours', 'singlestripecolours',
     'mackerelextra', 'classicextra', 'sokokeextra', 'agoutiextra', 'singlestripeextra',
     'whitepatches3', 'blackwhitepatches3', 'whitepatches3extra', 'blackwhitepatches3extra', 'whitepatches4', 'blackwhitepatches4', 'whitepatches4extra',
-    'blackwhitepatches4extra'
+    'blackwhitepatches4extra',
     'Newscars', 'Newscarsextra', 'shadersnewwhite', 'lineartdead',
     'tortiecolourssolid', 'tortiecolourstabby', 'tortiecoloursbengal', 'tortiecoloursmarbled',
     'tortiecoloursticked', 'tortiecolourssmoke', 'tortiecoloursrosette', 'tortiecoloursspeckled',
