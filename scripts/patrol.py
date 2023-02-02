@@ -167,9 +167,9 @@ class Patrol():
             small_clan = False
         else:
             small_clan = True
-        regular_chance = int(random.getrandbits(1))
-        hostile_chance = int(random.getrandbits(3))
-        welcoming_chance = 1 # this sets the new cat patrols to always possible
+        regular_chance = int(random.getrandbits(2))
+        hostile_chance = int(random.getrandbits(5))
+        welcoming_chance = int(random.getrandbits(1))
         if 1 <= reputation <= 30:
             hostile_rep = True
             if small_clan:
