@@ -2653,7 +2653,7 @@ class Cat():
 # Twelve example cats
 def create_example_cats():
     e = random.sample(range(12), 3)
-    not_allowed = ['NOPAW', 'NOTAIL', 'HALFTAIL', 'NOEAR', 'BOTHBLIND', 'RIGHTBLIND', 'LEFTBLIND', 'BRIGHTHEART'
+    not_allowed = ['NOPAW', 'NOTAIL', 'HALFTAIL', 'NOEAR', 'BOTHBLIND', 'RIGHTBLIND', 'LEFTBLIND', 'BRIGHTHEART',
                    'NOLEFTEAR', 'NORIGHTEAR', 'MANLEG']
     for a in range(12):
         if a in e:
@@ -2663,10 +2663,10 @@ def create_example_cats():
                 ['kitten', 'apprentice', 'warrior', 'warrior', 'elder']))
         if game.choose_cats[a].moons >= 160:
             game.choose_cats[a].moons = choice(range(120, 155))
-        for scar in not_allowed:
-            if scar in game.choose_cats[a].scars:
+        for scar in game.choose_cats[a].scars:
+            if scar in not_allowed:
                 game.choose_cats[a].scars.remove(scar)
-            update_sprite(game.choose_cats[a])
+        update_sprite(game.choose_cats[a])
 
 
 # CAT CLASS ITEMS

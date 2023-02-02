@@ -167,9 +167,9 @@ class Patrol():
             small_clan = False
         else:
             small_clan = True
-        regular_chance = int(random.getrandbits(1))
-        hostile_chance = int(random.getrandbits(3))
-        welcoming_chance = 1 # this sets the new cat patrols to always possible
+        regular_chance = int(random.getrandbits(2))
+        hostile_chance = int(random.getrandbits(5))
+        welcoming_chance = int(random.getrandbits(1))
         if 1 <= reputation <= 30:
             hostile_rep = True
             if small_clan:
@@ -460,7 +460,7 @@ class Patrol():
             if self.patrol_event.tags is not None:
                 if "kits" in self.patrol_event.tags:
                     litter_choice = choice([True, False])
-                    if litter_choice == True:
+                    if litter_choice:
                         n = 1
                     else:
                         n = 0
@@ -1102,6 +1102,7 @@ class Patrol():
 
     def add_new_cats(self, litter_choice):
         tags = self.patrol_event.tags
+        litter_choice = litter_choice
         if "new_cat" in tags:
             if "new_cat_majorinjury" in tags and game.clan.game_mode != 'classic':
                 major_injury = True
@@ -1121,7 +1122,7 @@ class Patrol():
                                                        backstory=choice(['kittypet1', 'kittypet2']))
                     new_cat = created_cats[0]
                     # add litter if the kits text is rolled
-                    if litter_choice == True:
+                    if litter_choice:
                         new_backstory = 'outsider_roots2'
                         created_cats.extend(self.create_new_cat(loner=True, loner_name=True, backstory=new_backstory,
                                                            litter=True, relevant_cat=new_cat))
@@ -1134,7 +1135,7 @@ class Patrol():
                     created_cats = self.create_new_cat(loner=True, kittypet=False, backstory=new_backstory)
                     new_cat = created_cats[0]
                     # add litter if the kits text is rolled
-                    if litter_choice == True:
+                    if litter_choice:
                         new_backstory = 'outsider_roots2'
                         created_cats.extend(self.create_new_cat(loner=True, loner_name=True, backstory=new_backstory,
                                                            litter=True, relevant_cat=new_cat))
@@ -1149,7 +1150,7 @@ class Patrol():
                 new_cat = created_cats[0]
                 new_cat.skill = choice(['good healer', 'great healer', 'fantastic healer'])
                 # add litter if the kits text is rolled
-                if litter_choice == True:
+                if litter_choice:
                     new_backstory = 'outsider_roots2'
                     created_cats.extend(self.create_new_cat(loner=True, loner_name=True, backstory=new_backstory,
                                                        litter=True, relevant_cat=new_cat))
