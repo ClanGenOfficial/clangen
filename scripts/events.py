@@ -40,6 +40,10 @@ class Events():
         game.switches['saved_clan'] = False
         self.new_cat_invited = False
 
+        # This is a bandaid solution, and isn't perfect. But this will help reputation from growing without limit.
+        if game.clan.reputation > 100:
+            game.clan.reputation = 100
+
         game.patrolled.clear()
 
         if any(str(cat.status) in {'leader', 'deputy', 'warrior', 'medicine cat', 'medicine cat apprentice',
@@ -1548,6 +1552,14 @@ class Events():
             # give apprentice aged cat a mentor
             if new_cat.age == 'adolescent':
                 new_cat.update_mentor()
+
+            # Remove disabling scars, if they generated. 
+            not_allowed = ['NOPAW', 'NOTAIL', 'HALFTAIL', 'NOEAR', 'BOTHBLIND', 'RIGHTBLIND', 'LEFTBLIND',
+                           'BRIGHTHEART', 'NOLEFTEAR', 'NORIGHTEAR', 'MANLEG']
+            for scar in new_cat.scars:
+                if scar in not_allowed:
+                    new_cat.scars.remove(scar)
+
 
             # chance to give the new cat a permanent condition, higher chance for found kits and litters
             if game.clan.game_mode != 'classic':
