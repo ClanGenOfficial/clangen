@@ -41,5 +41,27 @@
     "thoughtful": [],
     "troublesome": [],
     "vengeful": [],
-    "wise": []
+    "wise": [],
+    "sarcastic": [],
+    "challenge-seeker": [],
+    "competitive": [],
+    "blunt": [
+        "Tells two hopeful cats their relationship is incompatible"
+    ],
+    "considerate": [
+        "Believes they are the most fit for this job!"
+    ],
+    "optimistic": [],
+    "energetic": [],
+    "bland": [],
+    "jerk": [
+        "Doesn't think mediation is really for them"
+    ],
+    "soft-spoken": [],
+    "dreamy": [],
+    "dramatic": [],
+    "wholesome": [],
+    "romantic": [],
+    "imaginative": [],
+    "timid": []
 }
