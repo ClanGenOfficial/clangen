@@ -239,16 +239,17 @@ sprites = Sprites(50)
 
 for x in [
     'lineart', 'singlecolours', 'speckledcolours', 'tabbycolours',
-    'whitepatches', 'eyes', 'singleextra', 'tabbyextra', 'eyes2',
-    'speckledextra', 'whiteextra', 'eyesextra', 'eyes2extra', 'skin',
-    'skinextra', 'scars', 'scarsextra', 'whitenewextra', 'whitepatchesnew',
+    'whitepatches', 'blackwhitepatches', 'eyes', 'singleextra', 'tabbyextra', 'eyes2',
+    'speckledextra', 'whiteextra', 'blackwhiteextra', 'eyesextra', 'eyes2extra', 'skin',
+    'skinextra', 'scars', 'scarsextra', 'whitenewextra', 'blackwhitenewextra', 'whitepatchesnew', 'blackwhitepatchesnew'
     'scarsdark', 'scarsdarkextra', 'collars', 'collarsextra',
     'bellcollars', 'bellcollarsextra', 'bowcollars', 'bowcollarsextra',
     'speckledcolours2', 'speckledextra2', 'tabbycolours2', 'tabbyextra2',
     'rosettecolours', 'rosetteextra', 'smokecolours', 'smokeextra', 'tickedcolours', 'tickedextra',
     'mackerelcolours', 'classiccolours', 'sokokecolours', 'agouticolours', 'singlestripecolours',
     'mackerelextra', 'classicextra', 'sokokeextra', 'agoutiextra', 'singlestripeextra',
-    'whitepatches3', 'whitepatches3extra', 'whitepatches4', 'whitepatches4extra',
+    'whitepatches3', 'blackwhitepatches3', 'whitepatches3extra', 'blackwhitepatches3extra', 'whitepatches4', 'blackwhitepatches4', 'whitepatches4extra',
+    'blackwhitepatches4extra'
     'Newscars', 'Newscarsextra', 'shadersnewwhite', 'lineartdead',
     'tortiecolourssolid', 'tortiecolourstabby', 'tortiecoloursbengal', 'tortiecoloursmarbled',
     'tortiecoloursticked', 'tortiecolourssmoke', 'tortiecoloursrosette', 'tortiecoloursspeckled',
