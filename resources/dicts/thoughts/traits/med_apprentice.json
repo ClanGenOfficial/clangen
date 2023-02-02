@@ -104,10 +104,11 @@
         "Tells their unimpressed mentor a sarcastic joke"
     ],
     "challenge-seeker": [
-        "Asks their mentor if their training can be extr-hard"
+        "Asks their mentor if their training can be extra-hard"
     ],
     "competitive": [
-        "Plans out a competition for all the apprentices, determined to win"],
+        "Plans out a competition for all the apprentices, determined to win"
+    ],
     "blunt": [
         "Tells their mentor they can't train today, but doesn't give a reason"
     ],
@@ -121,9 +122,10 @@
         "Asks their mentor to race them!"
     ],
     "bland": [
-        "Trains like everyone else, every single day"],
+        "Trains like everyone else, every single day"
+    ],
     "jerk": [
-        "Is looking for a pair to sabotage, out of boredom"
+        "Wants to put a worm in someone's herbs"
     ],
     "soft-spoken": [
         "Is asked by their mentor to repeat something they said"
