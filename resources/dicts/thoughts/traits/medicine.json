@@ -138,5 +138,53 @@
     ],
     "wise": [
         "Tells an ancient tale about StarClan"
+    ],
+    "sarcastic": [
+        "Rolls their eyes at an annoying patient"
+    ],
+    "challenge-seeker": [
+        "Groans in the fact that sorting herbs is boring"
+    ],
+    "competitive": [
+        "Timed themselves sorting herbs, and aims to beat that time!"
+    ],
+    "blunt": [
+        "Reveals a cat's condition in the flattest way possible"
+    ],
+    "considerate": [
+        "Makes sure the cat they're treating is extra okay!"
+    ],
+    "optimistic": [
+        "Waits patiently for a sign from StarClan... Any day now!"
+    ],
+    "energetic": [
+        "Is seeing how fast they can sort herbs"
+    ],
+    "bland": [
+        "Goes on a herb patrol because they have nothing better to do"
+    ],
+    "jerk": [
+        "Refused to treat a cat they simply didn't like"
+    ],
+    "soft-spoken": [
+        "Quietly talks to themselves about herbs"
+    ],
+    "dreamy": [
+        "Sings to a stressed cat to calm their nerves"
+    ],
+    "dramatic": [
+        "Refuses to enter the medicine den because of a bug"
+    ],
+    "wholesome": [
+        "Gives a cat extra poppy seeds since they asked nicely"
+    ],
+    "romantic": [
+        "Flirts with another cat despite not being able to have a mate"
+    ],
+    "imaginative": [
+        "Wonders what life would be like if they hadn't chosen this path"
+    ],
+    "timid": [
+        "Is quietly sorting herbs"
     ]
 }
