@@ -337,7 +337,9 @@ for a, i in enumerate(['FULLBLACK', 'BLACKANY', 'BLACKTUXEDO', 'BLACKLITTLE', 'B
     sprites.make_group('blackwhiteextra', (a, 0), f'whiteextra{i}', sprites_y=2)
 for a, i in enumerate([
     'BLACKONEEAR', 'BLACKBROKEN', 'BLACKLIGHTTUXEDO', 'BLACKBUZZARDFANG', 'BLACKRAGDOLL',
-    'BLACKLIGHTSONG', 'BLACKVITILIGO']
+    'BLACKLIGHTSONG', 'BLACKVITILIGO']):
+    sprites.make_group('blackwhitepatches', (a, 1), f'white{i}')
+    sprites.make_group('blackwhiteextra', (a, 1), f'whiteextra{i}', sprites_y=2)
 
 # ryos white patches
 for a, i in enumerate(
