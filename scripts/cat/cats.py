@@ -27,29 +27,39 @@ from scripts.event_class import Single_Event
 
 class Cat():
     used_screen = screen
-    traits = [
+    traits = [ # regular
         'adventurous', 'altruistic', 'ambitious', 'bloodthirsty', 'bold',
         'calm', 'careful', 'charismatic', 'childish', 'cold', 'compassionate',
         'confident', 'daring', 'empathetic', 'faithful', 'fierce', 'insecure',
         'lonesome', 'loving', 'loyal', 'nervous', 'patient', 'playful',
         'responsible', 'righteous', 'shameless', 'sneaky', 'strange', 'strict',
-        'thoughtful', 'troublesome', 'vengeful', 'wise'
+        'thoughtful', 'troublesome', 'vengeful', 'wise',
+        # mine
+        'sarcastic', 'challenge-seeker', 'competitive', 'blunt', 'considerate',
+        'optimistic', 'energetic', 'bland', 'jerk', 'soft-spoken', 'dreamy',
+        'dramatic', 'wholesome', 'romantic', 'imaginative', 'timid'
+        
     ]
-    kit_traits = [
+    kit_traits = [ # regular
         'attention-seeker', 'bossy', 'bouncy', 'bullying', 'charming',
         'daring', 'daydreamer', 'impulsive', 'inquisitive', 'insecure',
-        'nervous', 'noisy', 'polite', 'quiet', 'sweet', 'troublesome'
+        'nervous', 'noisy', 'polite', 'quiet', 'sweet', 'troublesome',
+        # mine
+        'cheeky', 'impolite', 'helpful', 'picky', 'timid'
     ]
     personality_groups = {
         'Outgoing': ['adventurous', 'bold', 'charismatic', 'childish', 'confident', 'daring',
-                        'playful', 'righteous', 'attention-seeker', 'bouncy', 'charming', 'noisy'],
+                        'playful', 'righteous', 'attention-seeker', 'bouncy', 'charming', 'noisy',
+                        'challenge-seeker','competitive', 'energetic', 'dramatic', 'romantic'],
         'Benevolent': ['altruistic', 'compassionate', 'empathetic', 'faithful', 'loving',
                         'patient', 'responsible', 'thoughtful', 'wise', 'inquisitive',
-                        'polite', 'sweet'],
+                        'polite', 'sweet', 'helpful', 'considerate', 'optimistic', 'wholesome'],
         'Abrasive': ['ambitious', 'bloodthirsty', 'cold', 'fierce', 'shameless', 'strict',
-                        'troublesome', 'vengeful', 'bossy', 'bullying', 'impulsive'],
+                        'troublesome', 'vengeful', 'bossy', 'bullying', 'impulsive', 'cheeky', 'impolite',
+                        'blunt', 'sarcastic', 'jerk', 'picky'],
         'Reserved': ['calm', 'careful', 'insecure', 'lonesome', 'loyal', 'nervous', 'sneaky',
-                        'strange', 'daydreamer', 'quiet'],
+                        'strange', 'daydreamer', 'quiet', 'bland', 'soft-spoken', 'dreamy', 'imaginative',
+                        'timid'],
         }
     ages = [
         'kitten', 'adolescent', 'young adult', 'adult', 'senior adult',
@@ -497,11 +507,12 @@ class Cat():
 
         # major, cat won't patrol
         grief_major = [
-            'loving', 'compassionate', 'empathetic', 'insecure', 'lonesome', 'nervous'
+            'loving', 'compassionate', 'empathetic', 'insecure', 'lonesome', 'nervous', 'timid', 'wholesome', 'considerate'
         ]
         # minor, cat will patrol
         grief_minor = [
-            'daring', 'cold', 'bold', 'ambitious', 'bloodthirsty', 'responsible', 'loyal', 'strict', 'vengeful'
+            'daring', 'cold', 'bold', 'ambitious', 'bloodthirsty', 'responsible', 'loyal', 'strict', 'vengeful', 'jerk',
+            'sarcastic'
         ]
 
         text = None
