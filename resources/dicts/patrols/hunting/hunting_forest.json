@@ -38,8 +38,7 @@
 			"quilled by a porcupine",
 			"scar",
 			"death",
-			"huge_prey2",
-			"huge_prey3"
+			"huge_prey2"
 		],
 		"intro_text": "r_c encounters a porcupine, bristling with quills.",
 		"decline_text": "The patrol steers clear of the porcupine.",
@@ -265,7 +264,7 @@
 		"season": "Any",
 		"tags": [
 			"hunting",
-			"battle_injury",
+			"big_bite_injury",
 			"scar",
 			"fighting",
 			"medium_prey"
@@ -344,7 +343,7 @@
 		"tags": [
 			"hunting",
 			"scar",
-			"battle_injury",
+			"big_bite_injury",
 			"fighting",
 			"death",
 			"no_leader",
@@ -357,7 +356,7 @@
 		"chance_of_success": 50,
 		"exp": 30,
 		"success_text": [
-			"The patrol tracks the noise and discovers a coyote scavenging off a carcass. This is a predator they cannot fight, the patrol decides to return to camp and report the intruder to the leader, perhaps they can return later to take what the coyote leaves behind.",
+			"The patrol tracks the noise and discovers a coyote scavenging off a carcass. This is a predator they cannot fight, the patrol decides to return to camp and report the intruder to the leader. Perhaps they can return later to take what the coyote leaves behind.",
 			"The patrol tracks the noise and finds a mostly stripped carcass covered in the scent of coyote. They quickly scavenge what little is left and leave before the predator can return.",
 			"The patrol follows the noise to a coyote who quickly spots them in the brush. A fight ensues and thanks to the skills of s_c, the coyote eventually runs away, deeming the carcass they had been scavenging from to not be worth the hassle.  Your patrol brings back what meat had still been left.",
 			"The noise leads them to a coyote, scavenging from a carcass. s_c instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the coyote eats its fill and disappears into the forest. When s_c deems it safe, the patrol takes their turn stripping the leftover meat from the bones."
@@ -401,7 +400,7 @@
 		"tags": [
 			"hunting",
 			"scar",
-			"battle_injury",
+			"big_bite_injury",
 			"fighting",
 			"death",
 			"no_leader",
@@ -414,7 +413,7 @@
 		"chance_of_success": 30,
 		"exp": 30,
 		"success_text": [
-			"The patrol tracks the noise and discovers a coyote scavenging off a carcass. This is a predator they cannot fight, the patrol decides to return to camp and report the intruder to the leader, perhaps they can return later to take what the coyote leaves behind.",
+			"The patrol tracks the noise and discovers a coyote scavenging off a carcass. This is a predator they cannot fight, the patrol decides to return to camp and report the intruder to the leader. Perhaps they can return later to take what the coyote leaves behind.",
 			"The patrol tracks the noise and finds a mostly stripped carcass covered in the scent of coyote. They quickly scavenge what little is left and leave before the predator can return.",
 			"The noise leads them to a coyote, scavenging from a carcass. s_c instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the coyote eats its fill and disappears into the forest. When s_c deems it safe, the patrol takes their turn stripping the leftover meat from the bones.",
 			"The noise leads them to a coyote, scavenging from a carcass. s_c instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the coyote eats its fill and disappears into the forest. When s_c deems it safe, the patrol takes their turn stripping the leftover meat from the bones."
@@ -514,7 +513,7 @@
 		"tags": [
 			"hunting",
 			"scar",
-			"battle_injury",
+			"big_bite_injury",
 			"fighting",
 			"death",
 			"no_leader",
@@ -527,7 +526,7 @@
 		"chance_of_success": 40,
 		"exp": 30,
 		"success_text": [
-			"The patrol tracks the noise and discovers a wolf eating from its kill. This is a predator they cannot fight and more wolves may be nearby, the patrol decides to return to camp and report the intruder to the leader, perhaps they can return later to take what fresh-kill is left behind.",
+			"The patrol tracks the noise and discovers a wolf eating from its kill. This is a predator they cannot fight and more wolves may be nearby, the patrol decides to return to camp and report the intruder to the leader. Perhaps they can return later to take what fresh-kill is left behind.",
 			"The patrol tracks the noise and finds a mostly stripped carcass covered in the scent of wolves. They quickly scavenge what little is left and leave before the predators can return.",
 			"The noise leads them to a wolf, eating from its kill. s_c instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the wolf eats its fill and disappears into the forest. When s_c deems it safe, the patrol takes their turn stripping the leftover meat from the bones.",
 			"The noise leads them to a wolf, eating from its kill. s_c instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the wolf eats its fill and disappears into the forest. When s_c deems it safe, the patrol takes their turn stripping the leftover meat from the bones."
@@ -583,7 +582,7 @@
 		"chance_of_success": 20,
 		"exp": 30,
 		"success_text": [
-			"The patrol tracks the noise and discovers a wolf eating from its kill. This is a predator they cannot fight and more wolves may be nearby, the patrol decides to return to camp and report the intruder to the leader, perhaps they can return later to take what little fresh-kill is left behind.",
+			"The patrol tracks the noise and discovers a wolf eating from its kill. This is a predator they cannot fight and more wolves may be nearby, the patrol decides to return to camp and report the intruder to the leader. Perhaps they can return later to take what little fresh-kill is left behind.",
 			"The patrol tracks the noise and finds a mostly stripped carcass covered in the scent of wolves. They quickly scavenge what little is left and leave before the predators can return.",
 			"The noise leads them to a wolf, scavenging from a carcass. s_c instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the wolf eats its fill and disappears into the forest. When s_c deems it safe, the patrol takes their turn stripping the leftover meat from the bones.",
 			"The noise leads them to a wolf, scavenging from a carcass. s_c instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the wolf eats its fill and disappears into the forest. When s_c deems it safe, the patrol takes their turn stripping the leftover meat from the bones."
@@ -634,7 +633,7 @@
 			"large_prey3"
 		],
 		"intro_text": "r_c hears distant howling and wonders whether to investigate the noise.",
-		"decline_text": "r_cl decides not to investigate the source of the noise.  Whatever is making it will not be friendly to them and they are only one cat.",
+		"decline_text": "r_c decides not to investigate the source of the noise.  Whatever is making it will not be friendly to them and they are only one cat.",
 		"chance_of_success": 10,
 		"exp": 40,
 		"success_text": [
@@ -1016,7 +1015,7 @@
 		"season": "Any",
 		"tags": [
 			"hunting",
-			"battle_injury",
+			"big_bite_injury",
 			"scar",
 			"small_prey0",
 			"small_prey1",
@@ -1070,7 +1069,7 @@
 		"season": "Any",
 		"tags": [
 			"hunting",
-			"battle_injury",
+			"big_bite_injury",
 			"scar",
 			"death",
 			"small_prey0",
@@ -2436,7 +2435,7 @@
 		"history_text": [
 			"r_c caught a chill while hunting in leaf-bare.",
 			"r_c froze to death while hunting in a storm.",
-    			"froze to death while hunting"
+    		"froze to death while hunting"
 		]
 	},
 	{
@@ -2465,7 +2464,7 @@
 			"Your cats are smaller but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
 			null,
 			"s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until it gives up and runs.",
-			"The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and it's snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
+			"The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
 		],
 		"fail_text": [
 			"Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
@@ -2877,7 +2876,7 @@
 			"Your cats are smaller but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
 			null,
 			"s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until it gives up and runs.",
-			"The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and it's snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
+			"The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
 		],
 		"fail_text": [
 			"Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
@@ -3682,7 +3681,7 @@
 			"The cats are only just smaller and outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
 			null,
 			"s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until it gives up and runs.",
-			"The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and it's snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
+			"The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
 		],
 		"fail_text": [
 			"Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
@@ -3881,7 +3880,7 @@
 			"The cats are only just smaller and outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
 			null,
 			"s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until it gives up and runs.",
-			"The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and it's snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
+			"The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
 		],
 		"fail_text": [
 			"Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
@@ -4062,7 +4061,7 @@
 			"fighting",
 			"death",
 			"scar",
-			"battle_injury",
+			"big_bite_injury",
 			"respect",
 			"trust",
 			"clan_to_r_c",
@@ -4083,7 +4082,7 @@
 			"The mother red fox is vicious and determined, and the small patrol is beaten back. But this forest is c_n's and they haven't given up. They may have lost this battle, but c_n will win this war.",
 			"s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarasses them deeply the rest of the patrol have to rescue them from the red vixen.",
 			"Never threaten a mother's young - the red vixen kills r_c in the skirmish.",
-			"The mother red fox's snapping jaws leave r_c dripping blood onto the leaf litter, and force the patrol to back off.",
+			"The mother red fox's snapping jaws leave r_c dripping blood onto the leaf litter, forcing the patrol to back off.",
 			null,
 			"s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the red vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up on the fight.",
 			"As their hunt descends into a full on battle with the red vixen, p_l takes a blow meant for one of their Clanmates, losing a life."
@@ -4128,7 +4127,7 @@
 		"tags": [
 			"fighting",
 			"scar",
-			"battle_injury",
+			"big_bite_injury",
 			"respect",
 			"trust",
 			"clan_to_r_c",
@@ -4192,7 +4191,7 @@
 			"fighting",
 			"death",
 			"scar",
-			"battle_injury",
+			"big_bite_injury",
 			"shock",
 			"injury",
 			"respect",
@@ -4259,7 +4258,7 @@
 			"fighting",
 			"death",
 			"scar",
-			"battle_injury",
+			"big_bite_injury",
 			"respect",
 			"trust",
 			"clan_to_r_c",
@@ -4280,7 +4279,7 @@
 			"The mother red fox is vicious and determined, and the small patrol is beaten back. But this forest is c_n's and they haven't given up. They may have lost this battle, but c_n will win this war.",
 			"s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarasses them deeply the rest of the patrol have to rescue them from the red vixen.",
 			"Never threaten a mother's young - the red vixen kills r_c in the skirmish.",
-			"The mother red fox's snapping jaws leave r_c dripping blood onto the leaf litter, and force the patrol to back off.",
+			"The mother red fox's snapping jaws leave r_c dripping blood onto the leaf litter, forcing the patrol to back off.",
 			null,
 			"s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the red vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up on the fight.",
 			"As their hunt descends into a full on battle with the red vixen, p_l takes a blow meant for one of their Clanmates, losing a life."
@@ -4325,7 +4324,7 @@
 		"tags": [
 			"fighting",
 			"scar",
-			"battle_injury",
+			"big_bite_injury",
 			"respect",
 			"trust",
 			"clan_to_r_c",
@@ -4389,7 +4388,7 @@
 			"fighting",
 			"death",
 			"scar",
-			"battle_injury",
+			"big_bite_injury",
 			"shock",
 			"injury",
 			"respect",
@@ -4456,7 +4455,7 @@
 			"fighting",
 			"death",
 			"scar",
-			"battle_injury",
+			"big_bite_injury",
 			"respect",
 			"trust",
 			"clan_to_r_c",
@@ -4477,7 +4476,7 @@
 			"The mother red fox is vicious and determined, and the small patrol is beaten back. But this forest is c_n's and they haven't given up. They may have lost this battle, but c_n will win this war.",
 			"s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarasses them deeply the rest of the patrol have to rescue them from the red vixen.",
 			"Never threaten a mother's young - the red vixen kills r_c in the skirmish.",
-			"The mother red fox's snapping jaws leave r_c dripping blood onto the leaf litter, and force the patrol to back off.",
+			"The mother red fox's snapping jaws leave r_c dripping blood onto the leaf litter, forcing the patrol to back off.",
 			null,
 			"s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the red vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up on the fight.",
 			"As their hunt descends into a full on battle with the red vixen, p_l takes a blow meant for one of their Clanmates, losing a life."
@@ -4522,7 +4521,7 @@
 		"tags": [
 			"fighting",
 			"scar",
-			"battle_injury",
+			"big_bite_injury",
 			"respect",
 			"trust",
 			"clan_to_r_c",
@@ -4584,7 +4583,7 @@
 			"fighting",
 			"death",
 			"scar",
-			"battle_injury",
+			"big_bite_injury",
 			"shock",
 			"injury",
 			"respect",
@@ -4773,7 +4772,7 @@
 		"tags": [
 			"fighting",
 			"scar",
-			"battle_injury",
+			"big_bite_injury",
 			"respect",
 			"trust",
 			"clan_to_patrol"
@@ -4958,7 +4957,7 @@
 		"tags": [
 			"fighting",
 			"scar",
-			"battle_injury",
+			"big_bite_injury",
 			"respect",
 			"trust",
 			"clan_to_patrol"
@@ -5142,7 +5141,7 @@
 		"tags": [
 			"fighting",
 			"scar",
-			"battle_injury",
+			"big_bite_injury",
 			"respect",
 			"trust",
 			"clan_to_patrol"
@@ -5195,5 +5194,497 @@
 		"history_text": [
 			"r_c carries a scar from a solo fight with a gray vixen."
 		]
-	}
+	},
+	{
+        "patrol_id": "fst_hunt_genmouse1",
+        "biome": "forest",
+        "season": "newleaf",
+        "tags": [
+            "hunting", "no_app", "medium_prey"
+        ],
+        "intro_text": "r_c catches scent of a mouse nearby. A perfect opportunity to pick up one of the first bounties newleaf brings to the forest.",
+        "decline_text": "Your patrol ignores the mouse.",
+        "success_text": [
+            "r_c locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. r_c waggles their haunches and leaps, pinning the mouse beneath a paw as they make the killing bite.",
+            "r_c pinpoints the location of the prey and begins creeping forward. They're almost within pouncing distance when the mouse suddenly bolts. With a lash of their tail, r_c leaps after the mouse, barely snagging it before it reaches a burrow. They purr in satisfaction as prey-blood hits their tongue.",
+			"s_c immediately drops into a practised crouch, shimmying flawlessly along the ground and taking the perfectly plump mouse completely by surprise."
+        ],
+        "fail_text": [
+            "r_c narrowly misses the mouse."
+        ],
+        "chance_of_success": 60,
+        "exp": 10,
+        "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "fst_hunt_genmouse2",
+        "biome": "forest",
+        "season": "greenleaf",
+        "tags": [
+            "hunting", "no_app", "medium_prey"
+        ],
+        "intro_text": "r_c catches scent of a mouse nearby, and feels themselves drool at the idea of greenleaf fresh-kill. It's a great day for hunting, too, greenleaf bringing life to c_n's woods.",
+        "decline_text": "Your patrol ignores the mouse.",
+        "success_text": [
+            "r_c locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. r_c waggles their haunches and leaps, pinning the mouse beneath a paw as they make the killing bite.",
+            "r_c pinpoints the location of the prey and begins creeping forward. They're almost within pouncing distance when the mouse suddenly bolts. With a lash of their tail, r_c leaps after the mouse, barely snagging it before it reaches a burrow. They purr in satisfaction as prey-blood hits their tongue.",
+			"s_c immediately drops into a practised crouch, shimmying flawlessly along the ground and taking the perfectly plump mouse completely by surprise."
+        ],
+        "fail_text": [
+            "r_c narrowly misses the mouse."
+        ],
+        "chance_of_success": 60,
+        "exp": 10,
+        "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "fst_hunt_genmouse3",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting", "no_app", "medium_prey"
+        ],
+        "intro_text": "r_c catches scent of a mouse nearby. It'll be fat on the nuts and acorns leaf-fall scatters through the forest, and if r_c can only avoid the leaves crunching under their paws it's as good as caught.",
+        "decline_text": "Your patrol ignores the mouse.",
+        "success_text": [
+            "r_c locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. r_c waggles their haunches and leaps, pinning the mouse beneath a paw as they make the killing bite.",
+            "r_c pinpoints the location of the prey and begins creeping forward. They're almost within pouncing distance when the mouse suddenly bolts. With a lash of their tail, r_c leaps after the mouse, barely snagging it before it reaches a burrow. They purr in satisfaction as prey-blood hits their tongue.",
+			"s_c immediately drops into a practiced crouch, shimmying flawlessly along the ground and taking the perfectly plump mouse completely by surprise."
+        ],
+        "fail_text": [
+            "r_c narrowly misses the mouse."
+        ],
+        "chance_of_success": 50,
+        "exp": 10,
+        "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "fst_hunt_genmouse4",
+        "biome": "forest",
+        "season": "leaf-bare",
+        "tags": [
+            "hunting", "no_app", "medium_prey"
+        ],
+        "intro_text": "r_c catches scent of a mouse nearby, one that would be greatly appreciated for the fresh-kill pile.",
+        "decline_text": "Your patrol ignores the mouse.",
+        "success_text": [
+            "r_c locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. r_c waggles their haunches and leaps, pinning the mouse beneath a paw as they make the killing bite.",
+            "r_c pinpoints the location of the prey and begins creeping forward. They're almost within pouncing distance when the mouse suddenly bolts. With a lash of their tail, r_c leaps after the mouse, barely snagging it before it reaches a burrow. They purr in satisfaction as prey-blood hits their tongue.",
+			"s_c immediately drops into a practised crouch, shimmying flawlessly along the ground and taking the perfectly plump mouse completely by surprise."
+        ],
+        "fail_text": [
+            "r_c narrowly misses the mouse."
+        ],
+        "chance_of_success": 30,
+        "exp": 10,
+        "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "fst_hunt_genappmouse1",
+        "biome": "forest",
+        "season": "newleaf",
+        "tags": [
+            "hunting", "apprentice", "medium_prey"
+        ],
+        "intro_text": "app1 catches scent of a mouse nearby. A perfect opportunity to pick up one of the first bounties newleaf brings to the forest.",
+        "decline_text": "Your patrol ignores the mouse.",
+        "chance_of_success": 40,
+        "exp": 20,
+        "success_text": [
+            "r_c pounces on the mouse, with a squeak of surprise from both prey and apprentice.",
+            "app1 leaps onto the mouse, an easy kill! They're really getting the hang of hunting!"
+        ],
+        "fail_text": [
+            "Your patrol narrowly misses the mouse."
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "fst_hunt_genappmouse2",
+        "biome": "forest",
+        "season": "greenleaf",
+        "tags": [
+            "hunting", "apprentice", "medium_prey"
+        ],
+        "intro_text": "app1 catches scent of a mouse nearby. Surely greenleaf is the perfect time to try solo-hunting, everyone always says that this is when the prey wanders right into a cat's jaws.",
+        "decline_text": "Your patrol ignores the mouse.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "r_c pounces on the mouse, with a squeak of surprise from both prey and apprentice.",
+            "app1 leaps onto the mouse, an easy kill! They're really getting the hang of hunting!"
+        ],
+        "fail_text": [
+            "Your patrol narrowly misses the mouse."
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "fst_hunt_genappmouse3",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting", "apprentice", "medium_prey"
+        ],
+        "intro_text": "app1 catches scent of a mouse nearby. They look at the leaf litter on the ground - are they good enough to stalk without being heard?",
+        "decline_text": "Your patrol ignores the mouse.",
+        "chance_of_success": 30,
+        "exp": 30,
+        "success_text": [
+            "r_c pounces on the mouse, with a squeak of surprise from both prey and apprentice.",
+            "app1 leaps onto the mouse, an easy kill! They're really getting the hang of hunting!"
+        ],
+        "fail_text": [
+            "Your patrol narrowly misses the mouse."
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "fst_hunt_genappmouse4",
+        "biome": "forest",
+        "season": "leaf-bare",
+        "tags": [
+            "hunting", "apprentice", "medium_prey"
+        ],
+        "intro_text": "app1 catches scent of a mouse nearby. But they're by themselves, and the chill of leaf-bare has stripped the forest of it's green cloak, can they managed the catch?",
+        "decline_text": "Your patrol ignores the mouse.",
+        "chance_of_success": 10,
+        "exp": 40,
+        "success_text": [
+            "r_c pounces on the mouse, with a squeak of surprise from both prey and apprentice.",
+            "app1 leaps onto the mouse, an easy kill! They're really getting the hang of hunting!"
+        ],
+        "fail_text": [
+            "Your patrol narrowly misses the mouse."
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "gen_hunt_genmentormouse1",
+        "biome": "forest",
+        "season": "newleaf",
+        "tags": [
+            "hunting", "apprentice", "small_prey", "comfort", "trust", "warrior"
+        ],
+        "intro_text": "app1 catches scent of a mouse nearby. p_l tells them it might be the perfect opportunity to pick up one of the first bounties newleaf brings to the forest, and whispers some stalking tips to app1.",
+        "decline_text": "Your patrol ignores the mouse.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "app1 pounces on the mouse, with a squeak of surprise from both prey and apprentice. They look up, holding their fresh-kill, meeting p_l's eyes with a purr.",
+            "app1 leaps onto the mouse, an easy kill! They're really getting the hang of hunting, p_l tells them, and as the pair head back home there's a happy bounce in app1's steps."
+        ],
+        "fail_text": [
+            "app1 narrowly misses the mouse, their tail drooping sadly as it scurries off into the distance."
+        ],
+        "min_cats": 2,
+        "max_cats": 2,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "gen_hunt_genmentormouse2",
+        "biome": "forest",
+        "season": "greenleaf",
+        "tags": [
+            "hunting", "apprentice", "small_prey", "comfort", "trust", "warrior"
+        ],
+        "intro_text": "app1 catches scent of a mouse nearby. p_l congratulates them, and gives them some tips on where the mouse might be headed. With the heat of greenleaf, their prey is probably headed to a damp gully ahead.",
+        "decline_text": "Your patrol ignores the mouse.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "app1 pounces on the mouse, with a squeak of surprise from both prey and apprentice. They look up, holding their fresh-kill, meeting p_l's eyes with a purr.",
+            "app1 leaps onto the mouse, an easy kill! They're really getting the hang of hunting, p_l tells them, and as the pair head back home there's a happy bounce in app1's steps."
+        ],
+        "fail_text": [
+            "app1 narrowly misses the mouse, their tail drooping sadly as it scurries off into the distance."
+        ],
+        "min_cats": 2,
+        "max_cats": 2,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "gen_hunt_genmentormouse3",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting", "apprentice", "small_prey", "comfort", "trust", "warrior"
+        ],
+        "intro_text": "app1 catches scent of a mouse nearby. p_l nods, and asks them if app1 remembers their tips on stalking on leaf-fall's, well, fallen leaves.",
+        "decline_text": "Your patrol ignores the mouse.",
+        "chance_of_success": 50,
+        "exp": 20,
+        "success_text": [
+            "app1 pounces on the mouse, with a squeak of surprise from both prey and apprentice. They look up, holding their fresh-kill, meeting p_l's eyes with a purr.",
+            "app1 leaps onto the mouse, an easy kill! They're really getting the hang of hunting, p_l tells them, and as the pair head back home there's a happy bounce in app1's steps."
+        ],
+        "fail_text": [
+            "app1 narrowly misses the mouse, their tail drooping sadly as it scurries off into the distance."
+        ],
+        "min_cats": 2,
+        "max_cats": 2,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "gen_hunt_genmentormouse4",
+        "biome": "forest",
+        "season": "leaf-bare",
+        "tags": [
+            "hunting", "apprentice", "small_prey", "comfort", "trust", "warrior"
+        ],
+        "intro_text": "app1 catches scent of a mouse nearby. p_l congratulates them, and tries to prepare app1 for the stalk as best they can - if app1 can catch this mouse, this is the season where it will be most valuable for the Clan.",
+        "decline_text": "Your patrol ignores the mouse.",
+        "chance_of_success": 40,
+        "exp": 30,
+        "success_text": [
+            "app1 pounces on the mouse, with a squeak of surprise from both prey and apprentice. They look up, holding their fresh-kill, meeting p_l's eyes with a purr.",
+            "app1 leaps onto the mouse, an easy kill! They're really getting the hang of hunting, p_l tells them, and as the pair head back home there's a happy bounce in app1's steps."
+        ],
+        "fail_text": [
+            "app1 narrowly misses the mouse, their tail drooping sadly as it scurries off into the distance."
+        ],
+        "min_cats": 2,
+        "max_cats": 2,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "fst_hunt_mice_ohnotheyrehot1",
+        "biome": "forest",
+        "season": "newleaf",
+        "tags": [
+            "hunting", "romantic", "respect", "pos_jealous", "pos_dislike", "p_l_to_r_c", "medium_prey"
+        ],
+        "intro_text": "As the patrol heads out into the forest to hunt, r_c seems to be absolutely unconcerned with their duties, instead ambling along as through the prey is going to waltz into their paws.",
+        "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "r_c makes it look easy, and when the patrol is done mousing everyone else ends up carrying catches mostly brought down by them. They lead the way back to camp, sauntering with a distinctly smug sway of their hips.",
+            null,
+			"Of course s_c is unconcerned, s_c knows their own skills well, and mice? not a challenge. After their fifth catch the rest of the patrol is forced to admit they might have a point about not needing to worry.",
+            "As the patrol settles in, tracking mouse scent mostly, s_c wanders back, and as they put a paw down the ground squeaks. They lean down, jaws snapping, and meet the eyes of the rest of the patrol with an insolent smirk."
+        ],
+        "fail_text": [
+            "r_c doesn't bring much home, impressing nobody."
+        ],
+        "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
+		"win_trait": ["bold", "charismatic", "childish", "confident", "daring", "fierce", "shameless", "troublesome"],
+        "min_cats": 3,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "fst_hunt_mice_ohnotheyrehot2",
+        "biome": "forest",
+        "season": "greenleaf",
+        "tags": [
+            "hunting", "romantic", "respect", "pos_jealous", "pos_dislike", "p_l_to_r_c", "medium_prey"
+        ],
+        "intro_text": "As the patrol heads out into the forest to hunt, r_c seems to be absolutely unconcerned with their duties, instead ambling along as through the prey is going to waltz into their paws.",
+        "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "r_c makes it look easy, and when the patrol is done mousing everyone else ends up carrying catches mostly brought down by them. They lead the way back to camp, sauntering with a distinctly smug sway of their hips.",
+            null,
+			"Of course s_c is unconcerned, s_c knows their own skills well, and mice? not a challenge. After their fifth catch the rest of the patrol is forced to admit they might have a point about not needing to worry.",
+            "As the patrol settles in, tracking mouse scent mostly, s_c wanders back, and as they put a paw down the ground squeaks. They lean down, jaws snapping, and meet the eyes of the rest of the patrol with an insolent smirk."
+        ],
+        "fail_text": [
+            "r_c doesn't bring much home, impressing nobody."
+        ],
+        "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
+		"win_trait": ["bold", "charismatic", "childish", "confident", "daring", "fierce", "shameless", "troublesome"],
+        "min_cats": 3,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "fst_hunt_mice_ohnotheyrehot3",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting", "romantic", "respect", "pos_jealous", "pos_dislike", "p_l_to_r_c", "medium_prey"
+        ],
+        "intro_text": "As the patrol heads out into the forest to hunt, r_c seems to be absolutely unconcerned with their duties, instead ambling along as through the prey is going to waltz into their paws.",
+        "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
+        "chance_of_success": 50,
+        "exp": 20,
+        "success_text": [
+            "r_c makes it look easy, and when the patrol is done mousing everyone else ends up carrying catches mostly brought down by them. They lead the way back to camp, sauntering with a distinctly smug sway of their hips.",
+            null,
+			"Of course s_c is unconcerned, s_c knows their own skills well, and mice? not a challenge. After their fifth catch the rest of the patrol is forced to admit they might have a point about not needing to worry.",
+            "As the patrol settles in, tracking mouse scent mostly, s_c wanders back, and as they put a paw down the ground squeaks. They lean down, jaws snapping, and meet the eyes of the rest of the patrol with an insolent smirk."
+        ],
+        "fail_text": [
+            "r_c doesn't bring much home, impressing nobody."
+        ],
+        "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
+		"win_trait": ["bold", "charismatic", "childish", "confident", "daring", "fierce", "shameless", "troublesome"],
+        "min_cats": 3,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "fst_hunt_mice_ohnotheyrehot4",
+        "biome": "forest",
+        "season": "leaf-bare",
+        "tags": [
+            "hunting", "romantic", "respect", "pos_jealous", "pos_dislike", "p_l_to_r_c", "medium_prey"
+        ],
+        "intro_text": "As the patrol heads out into the forest to hunt, r_c seems to be absolutely unconcerned with their duties, instead ambling along as through the prey is going to waltz into their paws.",
+        "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
+        "chance_of_success": 20,
+        "exp": 20,
+        "success_text": [
+            "r_c makes it look easy, and when the patrol is done mousing everyone else ends up carrying catches mostly brought down by them. They lead the way back to camp, sauntering with a distinctly smug sway of their hips.",
+            null,
+			"Of course s_c is unconcerned, s_c knows their own skills well, and mice? not a challenge. After their fifth catch the rest of the patrol is forced to admit they might have a point about not needing to worry.",
+            "As the patrol settles in, tracking mouse scent mostly, s_c wanders back, and as they put a paw down the ground squeaks. They lean down, jaws snapping, and meet the eyes of the rest of the patrol with an insolent smirk."
+        ],
+        "fail_text": [
+            "r_c doesn't bring much home, impressing nobody."
+        ],
+        "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
+		"win_trait": ["bold", "charismatic", "childish", "confident", "daring", "fierce", "shameless", "troublesome"],
+        "min_cats": 3,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "fst_hunt_mice1",
+        "biome": "forest",
+        "season": "newleaf",
+        "tags": [
+            "hunting", "respect", "patrol_to_r_c", "medium_prey0", "large_prey1", "large_prey2"
+        ],
+        "intro_text": "As the patrol heads out into the forest to hunt, r_c suggests a good sheltered gully. It's a little far from camp, but the hunting around there is good, particularly for mice.",
+        "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "As they arrive, the patrol startles two mice, and r_c manages to react quick enough with an inelegant pounce to kill one. It's a good omen for the rest of the morning's work, which proves to be a productive and satisfying hunt.",
+            "Your cats sneak into the hunting grounds, ears rotating as different spots catch their interest. r_c's suggestion proves to be a fruitful hunting ground, one that c_n hasn't used for a while and whose creatures (as predicted, nearly all mice) have lost their edge of wariness. It's a good hunt.",
+			"These are the times that it really pays to have a hunter of s_c's caliber on the patrol - they really go above and beyond, impressing everyone and leaving a trail of terror among the local mice."
+        ],
+        "fail_text": [
+            "Ah. r_c's suggested hunting grounds don't work out, not that anyone blames them for it."
+        ],
+        "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
+        "min_cats": 3,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "fst_hunt_mice2",
+        "biome": "forest",
+        "season": "greenleaf",
+        "tags": [
+            "hunting", "respect", "patrol_to_r_c", "medium_prey0", "large_prey1", "large_prey2"
+        ],
+        "intro_text": "As the patrol heads out into the forest to hunt, r_c suggests a good sheltered gully. It's a little far from camp, but the hunting around there is good, particularly for mice.",
+        "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "As they arrive, the patrol startles two mice, and r_c manages to react quick enough with an inelegant pounce to kill one. It's a good omen for the rest of the morning's work, which proves to be a productive and satisfying hunt.",
+            "Your cats sneak into the hunting grounds, ears rotating as different spots catch their interest. r_c's suggestion proves to be a fruitful hunting ground, one that c_n hasn't used for a while and whose creatures (as predicted, nearly all mice) have lost their edge of wariness. It's a good hunt.",
+			"These are the times that it really pays to have a hunter of s_c's caliber on the patrol - they really go above and beyond, impressing everyone and leaving a trail of terror among the local mice."
+        ],
+        "fail_text": [
+            "Ah. r_c's suggested hunting grounds don't work out, not that anyone blames them for it."
+        ],
+        "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
+        "min_cats": 3,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "fst_hunt_mice3",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting", "respect", "patrol_to_r_c", "medium_prey0", "large_prey1", "large_prey2"
+        ],
+        "intro_text": "As the patrol heads out into the forest to hunt, r_c suggests a good sheltered gully. It's a little far from camp, but the hunting around there is good, particularly for mice.",
+        "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "As they arrive, the patrol startles two mice, and r_c manages to react quick enough with an inelegant pounce to kill one. It's a good omen for the rest of the morning's work, which proves to be a productive and satisfying hunt.",
+            "Your cats sneak into the hunting grounds, ears rotating as different spots catch their interest. r_c's suggestion proves to be a fruitful hunting ground, one that c_n hasn't used for a while and whose creatures (as predicted, nearly all mice) have lost their edge of wariness. It's a good hunt.",
+			"These are the times that it really pays to have a hunter of s_c's caliber on the patrol - they really go above and beyond, impressing everyone and leaving a trail of terror among the local mice."
+        ],
+        "fail_text": [
+            "Ah. r_c's suggested hunting grounds don't work out, not that anyone blames them for it."
+        ],
+        "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
+        "min_cats": 3,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+	{
+        "patrol_id": "fst_hunt_mice4",
+        "biome": "forest",
+        "season": "leaf-bare",
+        "tags": [
+            "hunting", "respect", "patrol_to_r_c", "medium_prey0", "large_prey1", "large_prey2"
+        ],
+        "intro_text": "As the patrol heads out into the forest to hunt, r_c suggests a good sheltered gully. It's a little far from camp, and the walk will be chilly, but the hunting around there is good, particularly for mice.",
+        "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
+        "chance_of_success": 40,
+        "exp": 20,
+        "success_text": [
+            "As they arrive, the patrol startles two mice, and r_c manages to react quick enough with an inelegant pounce to kill one. It's a good omen for the rest of the morning's work, which proves to be a productive and satisfying hunt.",
+            "Your cats sneak into the hunting grounds, ears rotating as different spots catch their interest. r_c's suggestion proves to be a fruitful hunting ground, one that c_n hasn't used for a while and whose creatures (as predicted, nearly all mice) have lost their edge of wariness. It's a good hunt.",
+			"These are the times that it really pays to have a hunter of s_c's caliber on the patrol - they really go above and beyond, impressing everyone and leaving a trail of terror among the local mice."
+        ],
+        "fail_text": [
+            "Ah. r_c's suggested hunting grounds don't work out, not that anyone blames them for it."
+        ],
+        "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
+        "min_cats": 3,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    }
 ]
