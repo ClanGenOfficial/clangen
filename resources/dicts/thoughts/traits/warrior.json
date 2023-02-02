@@ -554,5 +554,41 @@
         "Feels completely at peace with the way things are",
         "Has been coming up with complicated riddles for fun",
         "Instills their wisdom to some rowdy apprentices"        
+    ],
+    "sarcastic": [
+        "Makes an unnessary sarcastic comment towards another cat's appearance",
+        "Rolls their eyes as another cat talks about something they don't care about",
+        "Is mocking a poor cat for a mistake in a recent hunt",
+        "Knows that nobody can tell if they're being sarcastic or geniune",
+        "Always seems to have a witty comment for any situation",
+        "Can't seem to take anything seriously",
+        "Always seems to have a reply to everything",
+        "Is feeling proud of their sarcastic comment earlier",
+        "Always says it how it is, in the meanest way possible",
+        "Frowns as someone groans at their sarcastic comment... That's their thing!"
+    ],
+    "challenge-seeker": [
+        "Seems restless today",
+        "Is trying to be the first one to accomplish a difficult challenge",
+        "Challenges another cat with a confindent grin",
+        "Climbed up a tree and down it again for fun",
+        "Is proud of their many accomplishments!"
+    ],
+    "competitive": [
+        "Turned a hunting patrol into a competition",
+        "Turned a border patrol into a competition",
+        "Is boasting about winning a game of moss-ball",
+        "Absolutely will not settle for second place",
+        "Challenges another cat to a race",
+        "Proves once again that they are better at racing than everyone else"
+    ],
+    "blunt": [
+        "Says something totally insensitive and brutally honest",
+        "Doesn't seem to realise how much their words hurt others",
+        "Tells a younger cat the cold and hard truth",
+        "Is confused on why nobody likes them"
+    ],
+    "considerate": [
+        "Constantly tells everyone that if they don't have anything nice to say, don't say it!"
     ]
 }
