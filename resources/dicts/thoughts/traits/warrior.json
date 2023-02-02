@@ -586,9 +586,20 @@
         "Says something totally insensitive and brutally honest",
         "Doesn't seem to realise how much their words hurt others",
         "Tells a younger cat the cold and hard truth",
-        "Is confused on why nobody likes them"
+        "Is confused on why nobody likes them",
+        "Let a cat know how much they hate them"
     ],
     "considerate": [
-        "Constantly tells everyone that if they don't have anything nice to say, don't say it!"
+        "Constantly tells everyone that if they don't have anything nice to say, don't say it!",
+        "Recently offered to take a cat to the medicine den for their sore paw",
+        "Saw a cat enter the medicine den and is wondering if they are okay",
+        "Let a friend know how much they love them",
+        "Is proud to be a cat that others come to for help!",
+        "Making sure nobody judges prey by it's colour!"
+    ],
+    "optimistic": [
+        "Tells a sad cat to look on the bright side",
+        "Can always find the silver lining, somehow",
+        "Reminds yet another cat that every cloud has a silver lining"
     ]
 }
