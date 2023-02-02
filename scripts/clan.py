@@ -323,6 +323,11 @@ class Clan():
             "mediated": game.mediated
         }
 
+        if self.reputation > 100:
+            self.reputation = 100
+        elif self.reputation < 0:
+            self.reputation = 0
+
         # LEADER DATA
         if self.leader:
             clan_data["leader"] = self.leader.ID
