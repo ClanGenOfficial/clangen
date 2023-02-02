@@ -74,5 +74,24 @@
         "Thinks they saw a StarClan cat in their dreams",
         "Is scrambling the medicine cat's herbs!",
         "Is pretending to be the medicine cat"
+    ],
+    "cheeky": [
+        "Blows a raspberry at r_c",
+        "Steals some herbs from the medicine den to eat",
+        "Compares their height to their parents",
+        "Pounces on another cat, then runs away"
+    ],
+    "impolite": [
+        "Can't stop using the word 'foxheart' after hearing a warrior say it"
+    ],
+    "helpful": [
+        "Wonders if they might be able to become a mediator when they're older",
+        "Helps the medicine cat with herbs"
+    ],
+    "picky": [
+        "Refuses to eat a perfectly good mouse"
+    ],
+    "timid": [
+        "Hides behind their parent after leaving the nursery"
     ]
 }
