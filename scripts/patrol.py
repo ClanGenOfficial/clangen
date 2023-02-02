@@ -301,9 +301,34 @@ class Patrol():
                 if game.clan.game_mode != 'cruel_season':
                     continue
 
+            # one apprentice check
+            if "one_apprentice" in patrol.tags:
+                if len(self.patrol_apprentices) < 1 or len(self.patrol_apprentices) > 1:
+                    continue
+
             # two apprentices check
             if "two_apprentices" in patrol.tags:
                 if len(self.patrol_apprentices) < 2 or len(self.patrol_apprentices) > 2:
+                    continue
+
+            # three apprentices check
+            if "three_apprentices" in patrol.tags:
+                if len(self.patrol_apprentices) < 3 or len(self.patrol_apprentices) > 3:
+                    continue
+
+            # four apprentices check
+            if "four_apprentices" in patrol.tags:
+                if len(self.patrol_apprentices) < 4 or len(self.patrol_apprentices) > 4:
+                    continue
+
+            # five apprentices check
+            if "five_apprentices" in patrol.tags:
+                if len(self.patrol_apprentices) < 5 or len(self.patrol_apprentices) > 5:
+                    continue
+
+            # six apprentices check
+            if "six_apprentices" in patrol.tags:
+                if len(self.patrol_apprentices) < 6 or len(self.patrol_apprentices) > 6:
                     continue
 
             # correct button check
@@ -398,7 +423,8 @@ class Patrol():
 
         c = randint(0, 100)
         outcome = int(random.getrandbits(4))
-
+        print(str(self.patrol_event.patrol_id))
+        
         # ---------------------------------------------------------------------------- #
         #                                   SUCCESS                                    #
         # ---------------------------------------------------------------------------- #
@@ -864,7 +890,7 @@ class Patrol():
         prey_amount_per_cat = 0
         total_amount = 0
 
-        # check hat kind of prey type this succeeded patrol event has
+        # check what kind of prey type this succeeded patrol event has
         for prey_type, amount in prey_types.items():
             current_tag = prey_type + str(outcome_nr)
             if current_tag in patrol.patrol_event.tags or prey_type in patrol.patrol_event.tags:
@@ -945,12 +971,16 @@ class Patrol():
                 platonic_like = n
             if "dislike" in self.patrol_event.tags:
                 dislike = -n
+            if "pos_dislike" in self.patrol_event.tags:
+                dislike = n
             if "respect" in self.patrol_event.tags:
                 admiration = n
             if "comfort" in self.patrol_event.tags:
                 comfortable = n
             if "jealous" in self.patrol_event.tags:
                 jealousy = -n
+            if "pos_jealous" in self.patrol_event.tags:
+                jealousy = n
             if "trust" in self.patrol_event.tags:
                 trust = n
 
@@ -968,12 +998,16 @@ class Patrol():
                 platonic_like = -n
             if "dislike" in self.patrol_event.tags:
                 dislike = n
+            if "pos_dislike" in self.patrol_event.tags:
+                dislike = -n
             if "disrespect" in self.patrol_event.tags:
                 admiration = -n
             if "comfort" in self.patrol_event.tags:
                 comfortable = -n
             if "jealous" in self.patrol_event.tags:
                 jealousy = n
+            if "pos_jealous" in self.patrol_event.tags:
+                jealousy = -n
             if "distrust" in self.patrol_event.tags:
                 trust = -n
 
@@ -1397,7 +1431,7 @@ class PatrolEvent():
         self.history_text = history_text
 
         """
-            hunting patrols - "hunting", "small_prey", "big_prey",
+            hunting patrols - "hunting", "small_prey", "medium_prey", "large_prey", "huge_prey"
 
             training patrols - "training",
 
@@ -1416,7 +1450,7 @@ class PatrolEvent():
             "death", "disaster", "multi_deaths", "no_body", "cruel_season", "gone", "multi_gone", "disaster_gone",
 
             relationship tags - 
-            "romantic", "platonic", "comfort", "respect", "trust", "dislike", "jealousy", "distrust", "disrespect",
+            "romantic", "platonic", "comfort", "respect", "trust", "dislike", "pos_dislike", "jealous", "pos_jealous", "distrust", "disrespect",
             "apprentice", "two_apprentices", "three_apprentices", "warrior", "no_app", "med_only", "no_leader",
             "no_deputy", "leader", "deputy",
 
@@ -1488,8 +1522,8 @@ class PatrolEvent():
         they all apply or some apply.
 
         descriptors:
-        Descriptors should be one word and a number, starting at 1 and incrementing up (i.e. mtn_nl_hunt_mouse1 then 
-        mtn_nl_hunt_mouse2 for another patrol involving a mouse. If you then make a new patrol that is not mouse 
+        Descriptors should be one word and a number, starting at 1 and incrementing up (i.e. mtn_hunt_mouse1 then 
+        mtn_hunt_mouse2 for another patrol involving a mouse. If you then make a new patrol that is not mouse 
         related, choose a different descriptor word and start over again at 1) try to keep descriptor words unique from 
         other descriptors being used to make identification and sorting easier. 
 
@@ -1538,14 +1572,20 @@ class PatrolEvent():
         success - to give no herbs, then use "no_herbs2")
 
         - TO SPECIFY -
-        "two_apprentices" is for patrols with two apprentices (at least) in them. It works with the "apprentice" tag. 
+        "one_apprentice" is for patrols with one apprentice in them. It works with the "apprentice" tag. 
+        "two_apprentices" is for patrols with two apprentices in them. It works with the "apprentice" tag. 
+        "three_apprentices" is for patrols with two apprentices in them. It works with the "apprentice" tag. 
+        "four_apprentices" is for patrols with two apprentices in them. It works with the "apprentice" tag. 
+        "five_apprentices" is for patrols with two apprentices in them. It works with the "apprentice" tag. 
+        "six_apprentices" is for patrols with two apprentices in them. It works with the "apprentice" tag. 
+
         "rel_two_apps" is for patrols with relationship changes between app1 and app2 that don't affect the rest of the 
-        patrol, and also works with "two_apprentices" and "apprentice".
+        patrol, and also works with "two_apprentices" (or any of the higher numbered apprentice specifers) and "apprentice".
 
         "warrior" is used to specify that the patrol should only trigger with at least 1 warrior in it. 
         "no_app" is for when no apps should be on the patrol
 
-        - RELATIONSHIP TAGGS -
+        - RELATIONSHIP TAGS -
         I think all of these can be used together. the tag for which relationships are increased should ALSO be used
         # whole clan gains relationship towards p_l - "clan_to_p_l"
         # whole clan gains relationship towards s_c - "clan_to_r_c" (triggers to be s_c if s_c is present)
@@ -1565,8 +1605,10 @@ class PatrolEvent():
         "comfort" < change comfort value
         "respect" < change admiration/respect value
         "trust" < change trust value
-        "dislike" < change dislike value
-        "jealousy < change jealousy value
+        "dislike" < change dislike value (decrease on success, increase on fail)
+        "pos_dislike" < change dislike value (increase on success, decrease on fail)
+        "jealous" < change jealousy value (decrease on success, increase on fail)
+        "pos_jealous" < change jealous value (increase on success, decrease on fail)
         "distrust" < always decrease trust
         "disrespect" < always decrease respect
         
@@ -1585,6 +1627,15 @@ class PatrolEvent():
         "no_change_success" to set all relationship value changes to 0 on success outcomes
 
         "no_change_fail_rep" is for when rep should not change when a new_cat patrol fails
+
+        - PREY TAGS -
+        If there is no tag, there will be no prey 
+        There are 4 tag types "small_prey", "medium_prey", "large_prey" and "huge_prey". 
+        If you want to differentiate between the success texts how much prey each success will get, you have to use the tag and then add the index of the sentence you want the prey to
+        E.g. 3 successful outcome texts -> "small_prey0", "medium_prey1", "medium_prey2"
+
+        We want a mix of medium_prey and large_prey under normal conditions.
+
 
         -- WHEN WRIING --   
         Event text should be kept to 350 characters at the maximum to keep it easily readable and concise.
