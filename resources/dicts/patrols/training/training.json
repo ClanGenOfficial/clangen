@@ -148,7 +148,7 @@
     "patrol_id": "gen_train_sunny3",
     "biome": "Any",
     "season": "Any",
-    "tags": ["platonic", "romantic", "no_app", "training"],
+    "tags": ["platonic", "romantic", "big_change", "no_app", "training"],
     "intro_text": "p_l and r_c find a nice spot to sun themselves.",
     "decline_text": "They decide to stay focused instead.",
     "chance_of_success": 90,
@@ -173,7 +173,7 @@
     "patrol_id": "gen_train_sunny4",
     "biome": "Any",
     "season": "Any",
-    "tags": ["platonic", "romantic", "apprentice", "two_apprentices", "training"],
+    "tags": ["big_change", "platonic", "romantic", "apprentice", "two_apprentices", "training"],
     "intro_text": "app1 and app2 find a nice spot to sun themselves.",
     "decline_text": "They decide to stay focused instead.",
     "chance_of_success": 90,
@@ -256,7 +256,7 @@
     "patrol_id": "gen_train_vision1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "respect", "trust", "jealousy", "big_change", "s_c_to_r_c", "patrol_to_r_c"],
+    "tags": ["training", "warrior", "respect", "trust", "jealousy", "big_change", "s_c_to_r_c", "patrol_to_r_c"],
     "intro_text": "As the patrol gathers together to train under p_l's leadership, r_c admits they think they had a vision from StarClan last night.",
     "decline_text": "The patrol doesn't talk about the vision.",
     "chance_of_success": 70,
@@ -300,6 +300,27 @@
     "antagonize_fail_text": null
 },
 {
+    "patrol_id": "gen_train_vision3",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "two_apprentices", "dislike", "platonic", "jealousy", "big_change"],
+    "intro_text": "As app1 and app2 collect moss for the elder's den, app2 admits that the strange dreams they've been having is why they kicked app1 in the night.",
+    "decline_text": "The apprentices don't talk about the dreams.",
+    "chance_of_success": 70,
+    "exp": 20,
+    "success_text": [
+        "It's alright, app1 assures app2. It wasn't on purpose - maybe they could head to the medicine den after this, there're heaps of herbs to help app2 sleep, and this totally explains why they've been yawning so much during training.",
+        "That's kinda odd. app1 hastens to add that that doens't mean it's bad, but maybe they should tell their mentors about this. Maybe it's something to do with StarClan?"
+    ],
+    "fail_text": [
+        "That's super weird, app1 tells them. Does app2's mentor know that they're so weird?"
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
     "patrol_id": "gen_train_ghost1",
     "biome": "Any",
     "season": "Any",
@@ -317,7 +338,7 @@
             "A branch snaps and the whole patrol runs back to camp. Later an argument starts about what caused the noise."
     ],
     "win_skills": ["strong connection to StarClan"],
-    "min_cats": 2,
+    "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null
@@ -343,7 +364,7 @@
     ],
     "win_trait": ["charismatic", "childish", "confident", "playful", "shameless", "strange"],
     "fail_trait": ["ambitious", "bloodthirsty", "childish", "cold", "confident", "fierce", "insecure","troublesome"],
-    "min_cats": 2,
+    "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null
@@ -456,13 +477,13 @@
     "patrol_id": "gen_train_teamwork1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "platonic", "trust", "no_change_fail"],
+    "tags": ["training", "big_change", "platonic", "trust", "no_change_fail"],
     "intro_text": "p_l suggests this might be a good chance for the cats to practice teamwork.",
     "decline_text": "They decide to focus on working on a different skill instead.",
     "chance_of_success": 80,
     "exp": 20,
     "success_text": [
-        "Everyone has a nice practice session and their coordination with, and trust in, their Clanmates grows stronger.",
+        "Everyone has a nice practice session and their coordination and trust in their Clanmates grows stronger.",
         null,
         "s_c takes charge and coordinates exercises for the training patrol. Soon cats are using each other as springboards, practicing breaking a Clanmates' fall, and working on treading exactly in each other's pawsteps."
     ],
@@ -479,13 +500,13 @@
     "patrol_id": "gen_train_teamwork2",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "platonic", "trust", "no_app", "big_change", "no_change_fail"],
+    "tags": ["training", "big_change", "platonic", "trust", "no_app", "big_change", "no_change_fail"],
     "intro_text": "p_l suggests this might be a good chance to practice teamwork with r_c.",
     "decline_text": "They decide to focus on working on a different skill instead.",
     "chance_of_success": 80,
     "exp": 20,
     "success_text": [
-        "Both cats have a nice practice session and their coordination with, and trust of, each other grows stronger.",
+        "Both cats have a nice practice session, and their trust and coordination with each other grows stronger.",
         null,
         "s_c takes charge and coordinates exercises for the duo. They practice mirroring each other, until by the end of the afternoon they can almost act as one cat."
     ],
@@ -502,7 +523,7 @@
     "patrol_id": "gen_train_teamwork3",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "platonic", "trust", "apprentice", "no_change_fail"],
+    "tags": ["training", "big_change", "platonic", "trust", "apprentice", "one_apprentice", "no_change_fail"],
     "intro_text": "p_l suggests this might be a good chance for the cats to practice teamwork, particularly with app1.",
     "decline_text": "They decide to focus on working on a different skill instead.",
     "chance_of_success": 80,
@@ -525,7 +546,7 @@
     "patrol_id": "gen_train_teamwork4",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "platonic", "trust", "warrior", "apprentice"],
+    "tags": ["training", "big_change", "platonic", "trust", "warrior", "apprentice"],
     "intro_text": "p_l suggests this might be a good chance to practice teamwork with app1.",
     "decline_text": "They decide to focus on working on a different skill instead.",
     "chance_of_success": 80,
@@ -545,10 +566,33 @@
     "antagonize_fail_text": null
 },
 {
+    "patrol_id": "gen_train_teamwork5",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "big_change", "platonic", "romantic", "apprentice", "two_apprentices", "warrior", "rel_two_apps", "no_change_fail"],
+    "intro_text": "As p_l sets the cats up to practise together, app1 and app2 sit in the back, hiding their lashing tails as they plan their prank.",
+    "decline_text": "They decide to focus on working on a different skill instead.",
+    "chance_of_success": 80,
+    "exp": 20,
+    "success_text": [
+        "In a brilliant example of teamwork and coordination, app1 manages to push p_l at just the right moment to trip them over app2, sending the warrior careening down the bank into debris. Both apprentices fall over laughing.",
+        "This isn't what teamwork is supposed to be used for, p_l admonishes them, but neither apprentice can take them seriously while their upside down.",
+        "s_c notices the apprentices, err, enthusiasm, and gently redirects them. They end up having a marvelous afternoon, feeling mature and just as skilled as the warriors around them."
+    ],
+    "fail_text": [
+            "Unfortunately, p_l sees their whispers and seperates the two apprentices, preventing their plot."
+    ],
+    "win_skills": ["great teacher", "fantastic teacher"],
+    "min_cats": 4,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
     "patrol_id": "gen_train_huntingskill1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "platonic", "trust"],
+    "tags": ["training", "no_app", "platonic", "trust"],
     "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques.",
     "decline_text": "They decide to focus on working on a different skill instead.",
     "chance_of_success": 80,
@@ -594,11 +638,11 @@
     "patrol_id": "gen_train_huntingskill3",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "platonic", "trust", "apprentice"],
+    "tags": ["training", "platonic", "trust", "warrior", "one_apprentice", "apprentice"],
     "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques, particularly with app1 present.",
     "decline_text": "They decide to focus on working on a different skill instead.",
     "chance_of_success": 80,
-    "exp": 20,
+    "exp": 30,
     "success_text": [
         "Everyone has a nice practice session, picking up a nice selection of new tricks to try out on their next hunting patrol. app1 really gets into it, and is praised for their focus and enthusiasm.",
         null,
@@ -621,7 +665,7 @@
     "intro_text": "p_l suggests this might be a good chance to practice new hunting techniques with app1.",
     "decline_text": "They decide to focus on working on a different skill instead.",
     "chance_of_success": 80,
-    "exp": 20,
+    "exp": 30,
     "success_text": [
         "Both cats have a nice practice session, with app1 soaking up all p_l's best tips and tricks.",
         null,
@@ -637,10 +681,102 @@
     "antagonize_fail_text": null
 },
 {
+    "patrol_id": "gen_train_huntingskill5",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "platonic", "trust", "warrior", "two_apprentices", "apprentice"],
+    "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques, particularly with apprentices present.",
+    "decline_text": "They decide to focus on working on a different skill instead.",
+    "chance_of_success": 80,
+    "exp": 30,
+    "success_text": [
+        "Everyone has a nice practice session, picking up a nice selection of new tricks to try out on their next hunting patrol. app1 really gets into it, and is praised for their focus and enthusiasm.",
+        null,
+        "s_c takes charge and coordinates exercises for the training patrol. Soon cats are practicing stalking on each other, sharing tips about different terrain types, and discussing prey selection."
+    ],
+    "fail_text": [
+        "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
+    ],
+    "win_skills": ["good teacher", "great teacher", "fantastic teacher", "good hunter", "great hunter", "fantastic hunter"],
+    "min_cats": 3,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_train_huntingskill6",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "platonic", "trust", "warrior", "three_apprentices", "apprentice"],
+    "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques, particularly with apprentices present.",
+    "decline_text": "They decide to focus on working on a different skill instead.",
+    "chance_of_success": 80,
+    "exp": 30,
+    "success_text": [
+        "Everyone has a nice practice session, picking up a nice selection of new tricks to try out on their next hunting patrol. app1 really gets into it, and is praised for their focus and enthusiasm.",
+        null,
+        "s_c takes charge and coordinates exercises for the training patrol. Soon cats are practicing stalking on each other, sharing tips about different terrain types, and discussing prey selection."
+    ],
+    "fail_text": [
+        "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
+    ],
+    "win_skills": ["good teacher", "great teacher", "fantastic teacher", "good hunter", "great hunter", "fantastic hunter"],
+    "min_cats": 3,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_train_huntingskill7",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "platonic", "trust", "warrior", "four_apprentices", "apprentice"],
+    "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques, particularly with apprentices present.",
+    "decline_text": "They decide to focus on working on a different skill instead.",
+    "chance_of_success": 80,
+    "exp": 30,
+    "success_text": [
+        "Everyone has a nice practice session, picking up a nice selection of new tricks to try out on their next hunting patrol. app1 really gets into it, and is praised for their focus and enthusiasm.",
+        null,
+        "s_c takes charge and coordinates exercises for the training patrol. Soon cats are practicing stalking on each other, sharing tips about different terrain types, and discussing prey selection."
+    ],
+    "fail_text": [
+        "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
+    ],
+    "win_skills": ["good teacher", "great teacher", "fantastic teacher", "good hunter", "great hunter", "fantastic hunter"],
+    "min_cats": 3,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_train_huntingskill8",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "platonic", "trust", "warrior", "five_apprentices", "apprentice"],
+    "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques, particularly with apprentices present.",
+    "decline_text": "They decide to focus on working on a different skill instead.",
+    "chance_of_success": 80,
+    "exp": 30,
+    "success_text": [
+        "Everyone has a nice practice session, picking up a nice selection of new tricks to try out on their next hunting patrol. app1 really gets into it, and is praised for their focus and enthusiasm.",
+        null,
+        "s_c takes charge and coordinates exercises for the training patrol. Soon cats are practicing stalking on each other, sharing tips about different terrain types, and discussing prey selection."
+    ],
+    "fail_text": [
+        "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
+    ],
+    "win_skills": ["good teacher", "great teacher", "fantastic teacher", "good hunter", "great hunter", "fantastic hunter"],
+    "min_cats": 3,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
     "patrol_id": "gen_train_fightingskill1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "platonic", "trust"],
+    "tags": ["training", "no_app", "platonic", "trust"],
     "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques.",
     "decline_text": "They decide to focus on working on a different skill instead.",
     "chance_of_success": 80,
@@ -686,11 +822,11 @@
     "patrol_id": "gen_train_fightingskill3",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "platonic", "trust", "apprentice"],
+    "tags": ["training", "platonic", "trust", "warrior", "one_apprentice", "apprentice"],
     "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques, particularly with app1 here to learn from them.",
     "decline_text": "They decide to focus on working on a different skill instead.",
     "chance_of_success": 80,
-    "exp": 20,
+    "exp": 30,
     "success_text": [
         "Everyone has a nice practice session, picking up a nice selection of new tricks to try out in their next skirmish. app1 really gets into it, and is praised for their focus and enthusiasm.",
         null,
@@ -713,7 +849,7 @@
     "intro_text": "p_l suggests this might be a good chance to practice new fighting techniques with app1.",
     "decline_text": "They decide to focus on working on a different skill instead.",
     "chance_of_success": 80,
-    "exp": 20,
+    "exp": 30,
     "success_text": [
         "Both cats have a nice practice session, with app1 soaking up all p_l's best tips and tricks.",
         null,
@@ -729,10 +865,102 @@
     "antagonize_fail_text": null
 },
 {
+    "patrol_id": "gen_train_fightingskill5",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "platonic", "trust", "warrior", "two_apprentices", "apprentice"],
+    "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques, particularly with the apprentices here to learn from them.",
+    "decline_text": "They decide to focus on working on a different skill instead.",
+    "chance_of_success": 80,
+    "exp": 30,
+    "success_text": [
+        "Everyone has a nice practice session, picking up a nice selection of new tricks to try out in their next skirmish. app1 really gets into it, and is praised for their focus and enthusiasm.",
+        null,
+        "s_c takes charge and coordinates exercises for the training patrol. Soon cats are practicing trips, tricks, and tumbles."
+    ],
+    "fail_text": [
+            "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
+    ],
+    "win_skills": ["good teacher", "great teacher", "fantastic teacher", "good fighter", "great fighter", "excellent fighter"],
+    "min_cats": 3,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_train_fightingskill6",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "platonic", "trust", "warrior", "three_apprentices", "apprentice"],
+    "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques, particularly with the apprentices here to learn from them.",
+    "decline_text": "They decide to focus on working on a different skill instead.",
+    "chance_of_success": 80,
+    "exp": 30,
+    "success_text": [
+        "Everyone has a nice practice session, picking up a nice selection of new tricks to try out in their next skirmish. app1 really gets into it, and is praised for their focus and enthusiasm.",
+        null,
+        "s_c takes charge and coordinates exercises for the training patrol. Soon cats are practicing trips, tricks, and tumbles."
+    ],
+    "fail_text": [
+            "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
+    ],
+    "win_skills": ["good teacher", "great teacher", "fantastic teacher", "good fighter", "great fighter", "excellent fighter"],
+    "min_cats": 3,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_train_fightingskill7",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "platonic", "trust", "warrior", "four_apprentices", "apprentice"],
+    "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques, particularly with the apprentices here to learn from them.",
+    "decline_text": "They decide to focus on working on a different skill instead.",
+    "chance_of_success": 80,
+    "exp": 30,
+    "success_text": [
+        "Everyone has a nice practice session, picking up a nice selection of new tricks to try out in their next skirmish. app1 really gets into it, and is praised for their focus and enthusiasm.",
+        null,
+        "s_c takes charge and coordinates exercises for the training patrol. Soon cats are practicing trips, tricks, and tumbles."
+    ],
+    "fail_text": [
+            "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
+    ],
+    "win_skills": ["good teacher", "great teacher", "fantastic teacher", "good fighter", "great fighter", "excellent fighter"],
+    "min_cats": 3,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_train_fightingskill8",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "platonic", "trust", "warrior", "five_apprentices", "apprentice"],
+    "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques, particularly with the apprentices here to learn from them.",
+    "decline_text": "They decide to focus on working on a different skill instead.",
+    "chance_of_success": 80,
+    "exp": 30,
+    "success_text": [
+        "Everyone has a nice practice session, picking up a nice selection of new tricks to try out in their next skirmish. app1 really gets into it, and is praised for their focus and enthusiasm.",
+        null,
+        "s_c takes charge and coordinates exercises for the training patrol. Soon cats are practicing trips, tricks, and tumbles."
+    ],
+    "fail_text": [
+            "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
+    ],
+    "win_skills": ["good teacher", "great teacher", "fantastic teacher", "good fighter", "great fighter", "excellent fighter"],
+    "min_cats": 3,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
     "patrol_id": "gen_train_huntingromance1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "platonic", "romantic", "no_app", "big_change", "no_change_fail"],
+    "tags": ["training", "big_change", "platonic", "romantic", "no_app", "big_change", "no_change_fail"],
     "intro_text": "p_l suggests this might be a good chance to practice new hunting techniques with r_c.",
     "decline_text": "They decide to focus on working on a different skill instead.",
     "chance_of_success": 70,
@@ -755,7 +983,7 @@
     "patrol_id": "gen_train_fightingromance1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "platonic", "romantic", "trust", "no_app", "big_change", "no_change_fail"],
+    "tags": ["training", "big_change", "platonic", "romantic", "trust", "no_app", "big_change", "no_change_fail"],
     "intro_text": "p_l suggests this might be a good chance to practice new fighting techniques with r_c.",
     "decline_text": "They decide to focus on working on a different skill instead.",
     "chance_of_success": 70,
@@ -778,7 +1006,7 @@
     "patrol_id": "gen_train_smartromance1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "platonic", "romantic", "no_app", "no_change_fail", "big_change"],
+    "tags": ["training", "big_change", "platonic", "romantic", "no_app", "no_change_fail", "big_change"],
     "intro_text": "As they wander aimlessly towards the sparring area for a training session, r_c stops p_l and asks for their advice with something.",
     "decline_text": "It's not the right time for this conversation, maybe once they're back at camp.",
     "chance_of_success": 70,
@@ -801,7 +1029,7 @@
     "patrol_id": "gen_train_speakingromance1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "platonic", "romantic", "no_app", "big_change", "no_change_fail"],
+    "tags": ["training", "big_change", "platonic", "romantic", "no_app", "big_change", "no_change_fail"],
     "intro_text": "Quietly, r_c brings p_l aside as they work on their chores, asking for help with wording something difficult.",
     "decline_text": "Both of them are interrupted by a request form a Clanmate - this conversation will have to wait.",
     "chance_of_success": 70,
@@ -824,7 +1052,7 @@
     "patrol_id": "gen_train_teachingromance1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "platonic", "romantic", "no_app", "big_change"],
+    "tags": ["training", "big_change", "platonic", "romantic", "no_app", "big_change"],
     "intro_text": "During an odd moment of downtime, r_c asks p_l if they think they're a good teacher.",
     "decline_text": "They're interrupted by some Clanmates who need help, and go off to attend to their duties.",
     "chance_of_success": 70,
@@ -847,7 +1075,7 @@
     "patrol_id": "gen_train_starclanromance1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "platonic", "romantic", "no_app"],
+    "tags": ["training", "big_change", "platonic", "romantic", "no_app"],
     "intro_text": "p_l gets taken aside by r_c as they ask why they feel like StarClan ignores them.",
     "decline_text": "Neither of them have the time for such a conversation today - it'll have to wait.",
     "chance_of_success": 70,

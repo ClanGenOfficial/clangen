@@ -59,7 +59,7 @@
 	"chance_of_success":65,
 	"exp":10,
 	"success_text":[
-		"app1 is focused and attentive. p_l is confident that next time when there is an emergency app1 will be able to find those herbs both under and above ground without them if needed.",
+		"app1 is focused and attentive. p_l is confident that next time there is an emergency, app1 will be able to find those herbs both under and above ground without them if needed.",
 		"As p_l is explaining why and where the herbs are growing, app1 lets out a shout. To p_l's surprise they have found a previously unknown patch of an uncommon herb. Stunned and filled with pride that they found and recognized the herb, p_l promises them the first pick of fresh-kill.",
 		null,
 		null
@@ -691,7 +691,7 @@
 {
 	"patrol_id":"dst_med_romance2",
 	"biome":"desert",
-	"season":"newleaf",
+	"season":"leaf-bare",
 	"tags":[
 		"med_cat",
 		"med_only",
@@ -707,7 +707,7 @@
 	"chance_of_success":60,
 	"exp":10,
 	"success_text":[
-		"The ground is slippery with damp, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
+		"The ground is slippery and damp, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
 		null,
 		"s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
 	],
@@ -890,12 +890,12 @@
 		"p_l_to_r_c",
 		"s_c_to_r_c"
 	],
-	"intro_text":"p_l heads out, leading a patrol of medicine cats to go stock up on the ripening harvest available in leaf-fall.",
+	"intro_text":"p_l heads out, leading a patrol of medicine cats to go stock up on the first harvests available in leaf-fall.",
 	"decline_text":". . .And they're called back almost immediately, as one of the elders starts hacking up something.",
 	"chance_of_success":60,
 	"exp":10,
 	"success_text":[
-		"The ground is slippery with damp, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
+		"The ground is slippery and damp, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
 		null,
 		"s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
 	],
