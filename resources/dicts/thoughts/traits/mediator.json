@@ -61,5 +61,33 @@
         "Wishes to break up a sickeningly lovey dovey couple",
         "Is sitting back and watching an argument take place"
     ],
-    "wise": []
+    "wise": [],
+    "sarcastic": [
+        "Wishes to break up a sickeningly lovey dovey couple",
+    ],
+    "challenge-seeker": [],
+    "competitive": [],
+    "blunt": [
+        "Tells two hopeful cats their relationship is incompatible"
+    ],
+    "considerate": [
+        "Believes they are the most fit for this job!"
+    ],
+    "optimistic": [],
+    "energetic": [],
+    "bland": [],
+    "jerk": [
+        "Is looking for a pair to sabotage, out of boredom"
+    ],
+    "soft-spoken": [],
+    "dreamy": [],
+    "dramatic": [],
+    "wholesome": [
+        "Wonders why everyone can't just get along"
+    ],
+    "romantic": [
+        "Is wondering if they can make two cats instantly fall in love"
+    ],
+    "imaginative": [],
+    "timid": []
 }
