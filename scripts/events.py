@@ -62,6 +62,8 @@ class Events():
             self.freshkill_events.handle_amount_freshkill_pile(game.clan.freshkill_pile, relevant_cats)
             if not game.clan.freshkill_pile.clan_has_enough_food():
                 game.cur_events_list.insert(0, Single_Event(f"{game.clan.name}Clan has not enough food for the next moon!"))    
+            needed_amount = game.clan.freshkill_pile.amount_food_needed()
+            print(f"current freshkill amount: {game.clan.freshkill_pile.total_amount}, needed {needed_amount}")
 
         for cat in Cat.all_cats.copy().values():
             if not cat.outside or cat.dead:
@@ -523,10 +525,10 @@ class Events():
         self.mediator_events(cat)
 
         # handle nutrition amount (CARE: the cats has to be fed before - should be handled in "one_moon" function)
-        if game.clan.game_mode in ['expanded', 'cruel season'] and game.clan.freshkill_pile:
-            self.freshkill_events.handle_nutrient(cat, game.clan.freshkill_pile.nutrition_info)
-            if cat.dead:
-                return
+        #if game.clan.game_mode in ['expanded', 'cruel season'] and game.clan.freshkill_pile:
+        #    self.freshkill_events.handle_nutrient(cat, game.clan.freshkill_pile.nutrition_info)
+        #    if cat.dead:
+        #        return
 
         # prevent injured or sick cats from unrealistic clan events
         if cat.is_ill() or cat.is_injured():
