@@ -1938,11 +1938,8 @@ class Cat():
         else:
             if self.is_sibling(other_cat) or other_cat.is_sibling(self):
                         return False
-
-        if self.age != other_cat.age:
-            return False
         
-        if abs(self.moons - other_cat.moons) >= 40:
+        if abs(self.moons - other_cat.moons) > 40:
             return False
 
         return True
@@ -2009,11 +2006,8 @@ class Cat():
         else:
             if self.is_sibling(other_cat) or other_cat.is_sibling(self):
                         return False
-
-        if self.age != other_cat.age:
-            return False
         
-        if abs(self.moons - other_cat.moons) >= 40:
+        if abs(self.moons - other_cat.moons) > 40:
             return False
 
         return True
