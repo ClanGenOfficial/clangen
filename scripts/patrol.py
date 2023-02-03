@@ -892,7 +892,7 @@ class Patrol():
             "huge_prey" : PREY_REQUIREMENT["warrior"]*4
         }
 
-        if not self.success:
+        if not self.success and "hunting" in patrol.patrol_event.tags:
             cancel_tags = ["no_fail_prey", "poison_clan", "death", "disaster", "multi_deaths", "no_body", "cruel_season", "gone", "multi_gone", "disaster_gone"]
             relevant_patrol_tags = [tag for tag in patrol.patrol_event.tags if tag in cancel_tags]
             if len(relevant_patrol_tags) == 0:
