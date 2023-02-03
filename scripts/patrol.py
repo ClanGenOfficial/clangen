@@ -219,7 +219,9 @@ class Patrol():
         possible_patrols.extend(self.generate_patrol_events(MEDCAT))
 
         if game_setting_disaster:
-            possible_patrols.extend(self.generate_patrol_events(DISASTER))
+            dis_chance = int(random.getrandbits(3)) # disaster patrol chance
+            if dis_chance == 1:
+                possible_patrols.extend(self.generate_patrol_events(DISASTER))
 
         # new cat patrols
         if chance == 1:
@@ -1110,7 +1112,11 @@ class Patrol():
                 major_injury = False
             if "new_cat_kit" in tags:  # new kit
                 backstory_choice = choice(['abandoned2', 'abandoned1', 'abandoned3'])
-                created_cats = self.create_new_cat(loner=False, loner_name=False, kittypet=choice([True, False]),
+                if backstory_choice == 'abandoned2':
+                    kittypet = True
+                else:
+                    kittypet = False
+                created_cats = self.create_new_cat(loner=False, loner_name=False, kittypet=kittypet,
                                                    kit=True, backstory=backstory_choice)
                 new_cat = created_cats[0]
 
