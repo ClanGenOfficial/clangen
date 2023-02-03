@@ -49,12 +49,12 @@ class Freshkill_Pile():
             self.total_amount = total
         else:
             self.pile = {
-                "expires_in_4": 0,
+                "expires_in_4": GAME_CONFIG["freshkill"]["hunter_exp_bonus"],
                 "expires_in_3": 0,
                 "expires_in_2": 0,
                 "expires_in_1": 0,
             }
-            self.total_amount = 0
+            self.total_amount = GAME_CONFIG["freshkill"]["hunter_exp_bonus"]
         self.nutrition_info = {}
 
     def add_freshkill(self, amount):

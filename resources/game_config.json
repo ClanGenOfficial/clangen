@@ -1,5 +1,6 @@
 {
 	"freshkill":{
+		"start_amount": 60,
 		"auto_warrior_prey": [1,2],
 		"auto_apprentice_prey": [0,2],
 		"condition_increase": 0.5,
@@ -39,6 +40,7 @@
 			"max": 7
 		},
 		"comment": [
+			"start_amount defines the amount of prey when a new freshkill-pile is made",
 			"The auto parameters are for the prey each moon, each healthy warrior/apprentice will catch an amount of between these two values of prey.",
 			"hunter_bonus is the factor which is be used to multiply on a hunting patrol.",
 			"hunter_exp_bonus is the additional prey which will be added on a hunting patrol."

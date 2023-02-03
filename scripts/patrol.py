@@ -898,7 +898,7 @@ class Patrol():
             if len(relevant_patrol_tags) == 0:
                 amount = int(PREY_REQUIREMENT["warrior"] * len(self.patrol_cats) / 2)
                 game.clan.freshkill_pile.add_freshkill(amount)
-                self.results_text.append(f"The patrol still manages some amount of prey.")
+                self.results_text.append(f"The patrol still manages to catch some amount of prey.")
             return
 
         prey_amount_per_cat = 0
