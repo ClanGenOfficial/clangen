@@ -1881,7 +1881,7 @@ class Cat():
                                other_cat: Cat,
                                for_love_interest: bool,
                                former_mentor_setting: bool,
-                               for_patrol: bool):
+                               for_patrol: bool = False):
         """Checks if this cat is a free and potential mate for the other cat."""
         # checks if affairs are turned on
         affair = False
@@ -1915,7 +1915,6 @@ class Cat():
                 else:
                     return True
         else:
-
             if self.mate or other_cat.mate and not for_love_interest:
                 return False
 
