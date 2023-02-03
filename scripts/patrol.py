@@ -893,7 +893,7 @@ class Patrol():
         }
 
         if not self.success:
-            cancel_tags = ["no_fail_prey", "poison_clan", "death", "multi_deaths", "gone"]
+            cancel_tags = ["no_fail_prey", "poison_clan", "death", "disaster", "multi_deaths", "no_body", "cruel_season", "gone", "multi_gone", "disaster_gone"]
             relevant_patrol_tags = [tag for tag in patrol.patrol_event.tags if tag in cancel_tags]
             if len(relevant_patrol_tags) == 0:
                 amount = int(PREY_REQUIREMENT["warrior"] * len(self.patrol_cats) / 2)
@@ -1656,7 +1656,9 @@ class PatrolEvent():
         E.g. 3 successful outcome texts -> "small_prey0", "medium_prey1", "medium_prey2"
 
         There will be auto prey for failed hunts to stop the auto, following tags do not allow auto prey:
-        > "no_fail_prey", "death", "multi_deaths", "poison_clan", "gone"
+        > "no_fail_prey"
+        + all disaster tags ("death", "disaster", "multi_deaths", "no_body", "cruel_season", "gone", "multi_gone", "disaster_gone")
+        + "poison_clan"
 
         We want a mix of medium_prey and large_prey under normal conditions.
 
