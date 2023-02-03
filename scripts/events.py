@@ -1556,9 +1556,9 @@ class Events():
             # Remove disabling scars, if they generated. 
             not_allowed = ['NOPAW', 'NOTAIL', 'HALFTAIL', 'NOEAR', 'BOTHBLIND', 'RIGHTBLIND', 'LEFTBLIND',
                            'BRIGHTHEART', 'NOLEFTEAR', 'NORIGHTEAR', 'MANLEG']
-            for scar in game.choose_cats[a].scars:
+            for scar in new_cat.scars:
                 if scar in not_allowed:
-                    game.choose_cats[a].scars.remove(scar)
+                    new_cat.scars.remove(scar)
 
 
             # chance to give the new cat a permanent condition, higher chance for found kits and litters

@@ -370,6 +370,7 @@ class ProfileScreen(Screens):
                     self.the_cat.thought = "Is shocked that they have been exiled"
                     for app in self.the_cat.apprentice:
                         Cat.fetch_cat(app).update_mentor()
+                    self.the_cat.update_mentor()
                     self.clear_profile()
                     self.build_profile()
                     self.update_disabled_buttons_and_text()
