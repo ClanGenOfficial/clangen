@@ -1892,6 +1892,11 @@ class Cat():
         if (self.moons < 14 or other_cat.moons < 14) and not for_love_interest:
             return False
 
+        age_restricted_ages = ["kitten", "adolescent"]
+        if self.age in age_restricted_ages or other_cat.age in age_restricted_ages:
+            if self.age != other_cat.age:
+                return False
+
         # check for current mate
         # if the cat has a mate, they are not open for a new mate
         if not for_love_interest and self.mate:
