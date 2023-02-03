@@ -58,9 +58,10 @@ class Events():
             relevant_cats = [cat for cat in Cat.all_cats.copy().values() if cat.is_alive() and not cat.exiled and not cat.outside]
             game.clan.freshkill_pile.time_skip(relevant_cats)
             # handle freshkill pile events, after feeding
-            # self.freshkill_events.handle_amount_freshkill_pile(game.clan.freshkill_pile, relevant_cats)
-            # if not game.clan.freshkill_pile.clan_has_enough_food():
-            #     game.cur_events_list.insert(0, Single_Event(f"{game.clan.name}Clan has not enough food for the next moon!"))    
+            self.get_moon_freshkill()
+            self.freshkill_events.handle_amount_freshkill_pile(game.clan.freshkill_pile, relevant_cats)
+            if not game.clan.freshkill_pile.clan_has_enough_food():
+                game.cur_events_list.insert(0, Single_Event(f"{game.clan.name}Clan has not enough food for the next moon!"))    
 
         for cat in Cat.all_cats.copy().values():
             if not cat.outside or cat.dead:
@@ -228,6 +229,24 @@ class Events():
                 cat.status_change("mediator")
                 game.ranks_changed_timeskip = True
 
+    def get_moon_freshkill(self):
+        """Adding auto freshkill for the current moon."""
+        healthy_hunter = list(filter(
+            lambda c: c.status in ['warrior', 'apprentice', 'leader', 'deputy'] and not c.dead and not c.outside and not c.exiled and not c.not_working()
+            , Cat.all_cats.values()
+        ))
+
+        prey_amount = 0
+        for cat in healthy_hunter:
+            lower_value = GAME_CONFIG["freshkill"]["auto_warrior_prey"][0]
+            upper_value = GAME_CONFIG["freshkill"]["auto_warrior_prey"][1]
+            if cat.status == "apprentice":
+                lower_value = GAME_CONFIG["freshkill"]["auto_apprentice_prey"][0]
+                upper_value = GAME_CONFIG["freshkill"]["auto_apprentice_prey"][1]
+
+            prey_amount += randint(lower_value, upper_value)
+        print(f"ADDING {prey_amount} to pile. warrior_amount = {len(healthy_hunter)}")
+        game.clan.freshkill_pile.add_freshkill(prey_amount)
 
     def herb_gather(self):
         if game.clan.game_mode == 'classic':
@@ -505,10 +524,10 @@ class Events():
         self.mediator_events(cat)
 
         # handle nutrition amount (CARE: the cats has to be fed before - should be handled in "one_moon" function)
-        #if game.clan.game_mode in ['expanded', 'cruel season'] and game.clan.freshkill_pile:
-        #    self.freshkill_events.handle_nutrient(cat, game.clan.freshkill_pile.nutrition_info)
-        #    if cat.dead:
-        #        return
+        if game.clan.game_mode in ['expanded', 'cruel season'] and game.clan.freshkill_pile:
+            self.freshkill_events.handle_nutrient(cat, game.clan.freshkill_pile.nutrition_info)
+            if cat.dead:
+                return
 
         # prevent injured or sick cats from unrealistic clan events
         if cat.is_ill() or cat.is_injured():
@@ -2119,3 +2138,11 @@ class Events():
 
 
 events_class = Events()
+
+# ---------------------------------------------------------------------------- #
+#                                LOAD RESOURCES                                #
+# ---------------------------------------------------------------------------- #
+
+GAME_CONFIG = None
+with open(f"resources/game_config.json", 'r') as read_file:
+    GAME_CONFIG = ujson.loads(read_file.read())

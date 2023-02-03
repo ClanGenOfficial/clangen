@@ -1,0 +1,9 @@
+{
+	"freshkill":{
+		"auto_warrior_prey": [1,2],
+		"auto_apprentice_prey": [0,2],
+		"comment": [
+			"The auto parameters are for the prey each moon, each healthy warrior/apprentice will catch an amount of between these two values of prey."
+		]
+	}
+}
