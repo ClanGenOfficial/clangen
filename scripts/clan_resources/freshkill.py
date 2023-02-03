@@ -72,7 +72,6 @@ class Freshkill_Pile():
         for key in order:
             amount = self.take_from_pile(key, amount)
         
-
     def time_skip(self, living_cats):
         """Handle the time skip for the freshkill pile, including feeding the cats."""
         previous_amount = 0
@@ -83,7 +82,6 @@ class Freshkill_Pile():
         self.total_amount = sum(self.pile.values())
 
         self.feed_cats(living_cats)
-        # print(f"REMAINING AMOUNT: {self.total_amount} (needed: {self.amount_food_needed()})")
 
     def feed_cats(self, living_cats):
         """Handles to feed all living cats. This happens before the aging up."""
@@ -136,8 +134,19 @@ class Freshkill_Pile():
     #                               helper functions                               #
     # ---------------------------------------------------------------------------- #
 
-    def handle_not_enough_food(self, group, status_):
-        """Handle the situation where there is not enough food for this group."""
+    def handle_not_enough_food(self, group: list, status_ : str):
+        """Handle the situation where there is not enough food for this group.
+
+            Parameters
+            ----------
+            group : list
+                the list of cats which should be fed
+            status_ : str
+                the status of each cat of the group
+
+            Returns
+            -------
+        """
         tactic = None # TODO: handle with a setting
         if tactic == "younger_first":
             sorted_group = sorted(group, key=lambda x: x.moons)
@@ -162,8 +171,19 @@ class Freshkill_Pile():
         else:
             self.feed_group(group, status_)
 
-    def feed_group(self, group, status_):
-        """Handle the feeding of a specific group of cats, the order is already set."""
+    def feed_group(self, group: list, status_: str):
+        """Handle the feeding of a specific group of cats, the order is already set.
+
+            Parameters
+            ----------
+            group : list
+                the list of cats which should be fed
+            status_ : str
+                the status of each cat of the group
+
+            Returns
+            -------
+        """
         # ration_prey < healthy warrior will only eat half of the food they need
         ration_prey = False # TODO: handled with a setting
 
@@ -176,14 +196,16 @@ class Freshkill_Pile():
             else:
                 if ration_prey and status_ == "warrior":
                     feeding_amount = feeding_amount/2
+            lot_more_prey = self.amount_food_needed() < self.total_amount * 1.5
+            if lot_more_prey and self.nutrition_info[cat.ID].percentage < 100:
+                feeding_amount += 1
             self.feed_cat(cat, feeding_amount, needed_amount)
 
     def tactic_less_nutrition(self, group, status_):
         """With this tactic, the cats with the lowest nutrition will be feed first."""
         group_ids = [cat.id for cat in group]
         sorted_nutrition = sorted(self.nutrition_info.items(), key=lambda x: x[1].percentage)
-        # ration_prey < warrior will only eat half of the food they need
-        ration_prey = True # TODO: handled with a setting
+        ration_prey = False # TODO: handled with a setting
 
         for k, v in sorted_nutrition:
             if k not in group_ids:
