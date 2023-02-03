@@ -1906,7 +1906,12 @@ class Cat():
             return False
 
         # check for mentor
-        is_former_mentor = (other_cat.ID in self.former_apprentices or self.ID in other_cat.former_apprentices)
+        self_apprentices_ids = [app.ID for app in self.former_apprentices]
+        self_apprentices_ids += [app.ID for app in self.apprentice]
+
+        other_apprentice_ids = [app.ID for app in other_cat.former_apprentices]
+        other_apprentice_ids += [app.ID for app in other_cat.apprentice]
+        is_former_mentor = (other_cat.ID in self_apprentices_ids or self.ID in other_apprentice_ids)
         if is_former_mentor and not former_mentor_setting:
             return False
 
