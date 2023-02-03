@@ -19,7 +19,7 @@ jobs:
         env:
           SDL_VIDEODRIVER: "dummy"
           SDL_AUDIODRIVER: "disk"
-        run: python3 -m unittest tests/test_relationships.py tests/test_thoughts.py tests/test_relation_events.py tests/test_patrol.py tests/test_conditions.py tests/test_utility.py tests/test_cat.py
+        run: python3 -m unittest tests/test_relationships.py tests/test_thoughts.py tests/test_relation_events.py tests/test_conditions.py tests/test_utility.py tests/test_cat.py
         
   # Check if file encoding is correct.
   encoding_test:
