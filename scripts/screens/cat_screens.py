@@ -2361,6 +2361,7 @@ class RoleScreen(Screens):
                     Cat.sort_cats()
                 self.update_selected_cat()
             elif event.ui_element == self.promote_deputy:
+                game.clan.deputy = self.the_cat
                 self.the_cat.status_change("deputy", resort=True)
                 self.update_selected_cat()
             elif event.ui_element == self.switch_warrior:
