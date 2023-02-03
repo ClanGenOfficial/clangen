@@ -4,46 +4,6 @@ from scripts.game_structure.game_essentials import *
 from copy import deepcopy
 import random
 
-PREY_REQUIREMENT = {
-    "leader": 3,
-    "deputy": 3,
-    "medicine cat": 2,
-    "medicine cat apprentice": 1.5,
-    "mediator apprentice": 1.5,
-    "mediator": 2,
-    "warrior": 3,
-    "apprentice": 1.5,
-    "elder": 1.5,
-    "queen": 4,
-    "kitten": 0.5,
-}
-
-CONDITION_INCREASE = 0.5
-
-FEEDING_ORDER = [
-    "kitten",
-    "queen",
-    "elder",
-    "medicine cat",
-    "medicine cat apprentice",
-    "apprentice",
-    "mediator apprentice",
-    "warrior",
-    "mediator",
-    "deputy",
-    "leader"
-]
-
-HUNTER_BONUS = {"fantastic_hunter": 3, "great_hunter": 2, "good_hunter": 1}
-HUNTER_EXP_BONUS = {
-    "very_low": 1,
-    "low": 2,
-    "average": 3,
-    "high": 4,
-    "master": 5,
-    "max": 7
-}
-
 class Nutrition():
     """All the information about nutrition from one cat."""
 
@@ -308,3 +268,19 @@ class Freshkill_Pile():
         nutrition.percentage = 100
 
         self.nutrition_info[cat.ID] = nutrition
+
+
+
+# ---------------------------------------------------------------------------- #
+#                                LOAD RESOURCES                                #
+# ---------------------------------------------------------------------------- #
+
+GAME_CONFIG = None
+with open(f"resources/game_config.json", 'r') as read_file:
+    GAME_CONFIG = ujson.loads(read_file.read())
+
+PREY_REQUIREMENT = GAME_CONFIG["freshkill"]["prey_requirement"]
+CONDITION_INCREASE = GAME_CONFIG["freshkill"]["condition_increase"]
+FEEDING_ORDER = GAME_CONFIG["freshkill"]["feeding_order"]
+HUNTER_BONUS = GAME_CONFIG["freshkill"]["hunter_bonus"]
+HUNTER_EXP_BONUS = GAME_CONFIG["freshkill"]["hunter_exp_bonus"]

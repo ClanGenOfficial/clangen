@@ -245,7 +245,6 @@ class Events():
                 upper_value = GAME_CONFIG["freshkill"]["auto_apprentice_prey"][1]
 
             prey_amount += randint(lower_value, upper_value)
-        print(f"ADDING {prey_amount} to pile. warrior_amount = {len(healthy_hunter)}")
         game.clan.freshkill_pile.add_freshkill(prey_amount)
 
     def herb_gather(self):
