@@ -377,7 +377,7 @@ class ChooseMentorScreen(Screens):
     def update_buttons(self):
         """Updates the status of buttons. """
         # Disable to enable the choose mentor button
-        if self.selected_mentor.ID == self.the_cat.mentor or not self.selected_mentor:
+        if not self.selected_mentor or self.selected_mentor.ID == self.the_cat.mentor:
             self.confirm_mentor.disable()
             self.current_mentor_warning.show()
         else:
