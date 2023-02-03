@@ -1875,16 +1875,18 @@ class Cat():
         """Add aditional information to call the check."""
         former_mentor_setting = game.settings['romantic with former mentor']
         for_patrol = for_patrol
-        if for_patrol:
-            return self._patrol_potential_mate(other_cat, for_love_interest, former_mentor_setting)
-        else:
-            return self._intern_potential_mate(other_cat, for_love_interest, former_mentor_setting)
+        return self._intern_potential_mate(other_cat, for_love_interest, former_mentor_setting, for_patrol)
 
     def _intern_potential_mate(self,
                                other_cat: Cat,
                                for_love_interest: bool,
-                               former_mentor_setting: bool):
+                               former_mentor_setting: bool,
+                               for_patrol: bool):
         """Checks if this cat is a free and potential mate for the other cat."""
+        # checks if affairs are turned on
+        affair = False
+        if game.settings['affair']:
+            affair = True
         # just to be sure, check if it is not the same cat
         if self.ID == other_cat.ID:
             return False
@@ -1904,82 +1906,18 @@ class Cat():
 
         # check for current mate
         # if the cat has a mate, they are not open for a new mate
-        if not for_love_interest and self.mate:
-            return False
-
-        if self.mate or other_cat.mate:
-            return False
-
-        # check for mentor
-        self_apprentices_ids = self.former_apprentices + self.apprentice
-        other_apprentice_ids = other_cat.former_apprentices + other_cat.apprentice
-        is_former_mentor = (other_cat.ID in self_apprentices_ids or self.ID in other_apprentice_ids)
-        if is_former_mentor and not former_mentor_setting:
-            return False
-
-        # Relationship checks
-        # Apparently, parent2 can't exist without parent1, so we only need to check parent1
-        if self.parent1 or other_cat.parent1:
-            # Check for relation via other_cat's parents (parent/grandparent)
-            if other_cat.parent1:
-                if self.is_grandparent(other_cat) or self.is_parent(other_cat):
+        if for_patrol:
+            if self.mate or other_cat.mate:
+                if not for_love_interest:
                     return False
-                # Check for uncle/aunt via self's sibs & other's parents
-                if self.siblings:
-                    if self.is_uncle_aunt(other_cat):
-                        return False
-                # Check for sibs via self's parents and other_cat's parents
-                if self.parent1:
-                    if self.is_sibling(other_cat) or other_cat.is_sibling(self):
-                        return False
-
-            # Check for relation via self's parents (parent/grandparent)
-            if self.parent1:
-                if other_cat.is_grandparent(self) or other_cat.is_parent(self):
+                elif not affair:
                     return False
-                # Check for uncle/aunt via other_cat's sibs & self's parents
-                if other_cat.siblings:
-                    if other_cat.is_uncle_aunt(self):
-                        return False
-
-            # Only need to check one.
-            if not game.settings['first_cousin_mates']:
-                if self.is_cousin(other_cat):
-                    return False
-
+                else:
+                    return True
         else:
-            if self.is_sibling(other_cat) or other_cat.is_sibling(self):
-                        return False
-        
-        if abs(self.moons - other_cat.moons) > 40:
-            return False
 
-        return True
-
-    def _patrol_potential_mate(self,
-                               other_cat: Cat,
-                               for_love_interest: bool,
-                               former_mentor_setting: bool):
-        """Checks if this cat can go on romantic patrols with the other cat."""
-        # just to be sure, check if it is not the same cat
-        affair = False
-        if game.settings['affair']:
-            affair = True
-        if self.ID == other_cat.ID:
-            return False
-
-        # check exiled, outside, and dead cats
-        if self.dead or self.outside or other_cat.dead or other_cat.outside:
-            return False
-
-        # check for age
-        if (self.moons < 14 or other_cat.moons < 14) and not for_love_interest:
-            return False
-
-        # check for current mate
-        # if the cat has a mate, they are not open for a new mate UNLESS AFFAIRS ARE ON
-        if not affair and self.mate:
-            return False
+            if self.mate or other_cat.mate and not for_love_interest:
+                return False
 
         # check for mentor
         is_former_mentor = (other_cat.ID in self.former_apprentices or self.ID in other_cat.former_apprentices)
@@ -2011,6 +1949,7 @@ class Cat():
                     if other_cat.is_uncle_aunt(self):
                         return False
 
+            # Only need to check one.
             if not game.settings['first_cousin_mates']:
                 if self.is_cousin(other_cat):
                     return False
