@@ -750,7 +750,8 @@ class Cat():
                         game.clan.leader = None
                         game.clan.leader_predecessors += 1
 
-            if game.clan.deputy:
+			# don't remove the check for game.clan, this is needed for tests
+            if game.clan and game.clan.deputy:
                 if game.clan.deputy.ID == self.ID:
                     game.clan.deputy = None
                     game.clan.deputy_predecessors += 1
@@ -1898,6 +1899,11 @@ class Cat():
         if (self.moons < 14 or other_cat.moons < 14) and not for_love_interest:
             return False
 
+        age_restricted_ages = ["kitten", "adolescent"]
+        if self.age in age_restricted_ages or other_cat.age in age_restricted_ages:
+            if self.age != other_cat.age:
+                return False
+
         # check for current mate
         # if the cat has a mate, they are not open for a new mate
         if for_patrol:
@@ -1911,7 +1917,6 @@ class Cat():
         else:
             if self.mate or other_cat.mate and not for_love_interest:
                 return False
-
 
         # check for mentor
         is_former_mentor = (other_cat.ID in self.former_apprentices or self.ID in other_cat.former_apprentices)
@@ -1951,11 +1956,8 @@ class Cat():
         else:
             if self.is_sibling(other_cat) or other_cat.is_sibling(self):
                         return False
-
-        if self.age != other_cat.age:
-            return False
         
-        if abs(self.moons - other_cat.moons) >= 40:
+        if abs(self.moons - other_cat.moons) > 40:
             return False
 
         return True

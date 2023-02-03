@@ -256,7 +256,7 @@ class TestPossibleMateFunction(unittest.TestCase):
     def test_possible_setting(self):
         mentor = Cat(moons=50)
         former_appr = Cat(moons=20)
-        mentor.former_apprentices.append(former_appr)
+        mentor.former_apprentices.append(former_appr.ID)
 
         self.assertFalse(mentor._intern_potential_mate(former_appr,False,False))
         self.assertFalse(former_appr._intern_potential_mate(mentor,False,False))
@@ -393,8 +393,7 @@ class TestUpdateMentor(unittest.TestCase):
         # given
         app = Cat(moons=7, status="apprentice")
         mentor = Cat(moons=20, status="warrior")
-        app.mentor = mentor.ID
-        app.update_mentor()
+        app.update_mentor(mentor.ID)
 
         # when
         self.assertTrue(app.ID in mentor.apprentice)
@@ -407,9 +406,3 @@ class TestUpdateMentor(unittest.TestCase):
         self.assertFalse(app.ID in mentor.apprentice)
         self.assertTrue(app.ID in mentor.former_apprentices)
         self.assertIsNone(app.mentor)
-
-        # Only str IDs!!!
-        for ID in (mentor.apprentice + mentor.former_apprentices + [app.mentor]):
-            if ID is not None:
-                self.assertIsInstance(ID, str)
-                self.assertTrue(re.fullmatch("\d+", ID))

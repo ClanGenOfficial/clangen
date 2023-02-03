@@ -69,7 +69,7 @@ class TestsMedCondition(unittest.TestCase):
 
         med = Cat(moons=20)
         med.status = "medicine cat"
-        med.injury = Injury("splinter",1,1,1,[],[])
+        med.injuries["splinter"] = {"severity": "minor"}
 
         all_cats = [cat1, med]
         self.assertTrue(medical_cats_condition_fulfilled(all_cats, 15))
@@ -80,7 +80,7 @@ class TestsMedCondition(unittest.TestCase):
 
         med = Cat(moons=20)
         med.status = "medicine cat"
-        med.injury = Injury("broken bone",1,1,1,[],[])
+        med.injuries["broken bone"] = {"severity": "severe"}
 
         all_cats = [cat1, med]
         self.assertFalse(medical_cats_condition_fulfilled(all_cats, 15))
@@ -91,7 +91,7 @@ class TestsMedCondition(unittest.TestCase):
 
         med = Cat(moons=20)
         med.status = "medicine cat"
-        med.illness = Illness("running nose",1,1,1,1,1,[])
+        med.illnesses["running nose"] = {"severity": "minor"}
 
         all_cats = [cat1, med]
         self.assertTrue(medical_cats_condition_fulfilled(all_cats, 15))
@@ -102,7 +102,7 @@ class TestsMedCondition(unittest.TestCase):
 
         med = Cat(moons=20)
         med.status = "medicine cat"
-        med.illness = Illness("whitecough",1,1,1,1,1,[])
+        med.illnesses["greencough"] = {"severity": "severe"}
 
         all_cats = [cat1, med]
         self.assertFalse(medical_cats_condition_fulfilled(all_cats, 15))
