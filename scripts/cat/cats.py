@@ -750,6 +750,11 @@ class Cat():
                         game.clan.leader = None
                         game.clan.leader_predecessors += 1
 
+            if game.clan.deputy:
+                if game.clan.deputy.ID == self.ID:
+                    game.clan.deputy = None
+                    game.clan.deputy_predecessors += 1
+
         elif self.status == 'medicine cat':
             self.update_med_mentor()
             self.update_skill()
@@ -759,6 +764,11 @@ class Cat():
         elif self.status == 'elder':
             self.update_mentor()
             self.skill = choice(self.elder_skills)
+
+            # Ideally, this should also be triggered for cats that retired due to
+            # health conditions. However, it is currently being triggered for all elders to
+            # prevent "unretiring" by switching to med or mediator, then warrior.
+            self.retired = True
 
             # Will remove them from the clan med cat variables, if they are a med cat
             if old_status == "medicine cat":
@@ -1090,14 +1100,12 @@ class Cat():
                                 possible_skill = self.skill_groups.get(x)
                                 self.skill = choice(possible_skill)
                                 self.mentor_influence.append(self.skill)
-                    # don't give skill from mentor
-                    else:
-                        self.skill = choice(self.med_skills)
-                        self.mentor_influence.append('None')
-                # if they didn't haave a mentor, give random skill
-                else:
-                    self.skill = choice(self.med_skills)
-                    self.mentor_influence.append('None')
+                                return
+
+                # Will only be reached if a mentor skill was not applied.
+                self.skill = choice(self.med_skills)
+                self.mentor_influence.append('None')
+
             # assign skill to new warrior
             elif self.status == 'warrior':
                 # possible skill groups they can take from
@@ -1116,14 +1124,10 @@ class Cat():
                                 possible_skill = self.skill_groups.get(x)
                                 self.skill = choice(possible_skill)
                                 self.mentor_influence.append(self.skill)
-                    # don't give skill from mentor
-                    else:
-                        self.skill = choice(self.skills)
-                        self.mentor_influence.append('None')
-                # if they didn't have a mentor, give random skill
-                else:
-                    self.skill = choice(self.skills)
-                    self.mentor_influence.append('None')
+                                return
+
+                self.skill = choice(self.skills)
+                self.mentor_influence.append('None')
 
             # assign new skill to elder
             elif self.status == 'elder':
@@ -1804,9 +1808,9 @@ class Cat():
         mentor_cat = Cat.fetch_cat(self.mentor)
         if self.ID in mentor_cat.apprentice:
             mentor_cat.apprentice.remove(self.ID)
-        if self.ID not in mentor_cat.former_apprentices:
+        if self.moons > 6 and self.ID not in mentor_cat.former_apprentices:
             mentor_cat.former_apprentices.append(self.ID)
-        if mentor_cat.ID not in self.former_mentor:
+        if self.moons > 6 and mentor_cat.ID not in self.former_mentor:
             self.former_mentor.append(mentor_cat.ID)
         self.mentor = None
 
@@ -2205,7 +2209,7 @@ class Cat():
                 print(f'WARNING: There was an error reading the relationship file of cat #{self}.')
 
     @staticmethod
-    def mediate_relationship(mediator, cat1, cat2, sabotage=False):
+    def mediate_relationship(mediator, cat1, cat2, allow_romantic, sabotage=False):
         # Gather some important info
 
         # Gathering the relationships.
@@ -2289,7 +2293,7 @@ class Cat():
         else:
             apply_bonus = True
             # EX gain on success
-            EX_gain = randint(5, 15)
+            EX_gain = randint(5, 12)
 
             gm_modifier = 1
             if game.clan.game_mode == 'expanded':
@@ -2307,9 +2311,14 @@ class Cat():
                 lvl_modifier = 1
             mediator.experience += EX_gain / lvl_modifier / gm_modifier
 
+        no_romantic_mentor = False
+        if not game.settings['romantic with former mentor']:
+            if cat2.ID in cat1.former_apprentices or cat1.ID in cat2.former_apprentices:
+                no_romantic_mentor = True
+
         # determine the traits to effect
         pos_traits = ["platonic", "respect", "comfortable", "trust"]
-        if mates or (valid_age and not related and age_diff):
+        if allow_romantic and (mates or (valid_age and not related and age_diff and not no_romantic_mentor)):
             pos_traits.append("romantic")
 
         neg_traits = ["dislike", "jealousy"]
@@ -2340,9 +2349,9 @@ class Cat():
                 elif mediator.experience_level == "high":
                     bonus = randint(1, 3)
                 elif mediator.experience_level == "master":
-                    bonus = randint(3, 5)
+                    bonus = randint(3, 4)
                 elif mediator.experience_level == "max":
-                    bonus = randint(4, 6)
+                    bonus = randint(4, 5)
                 else:
                     bonus = 0  # Average gets no bonus.
             else:
@@ -2350,9 +2359,9 @@ class Cat():
 
             if trait == "romantic":
                 if mates:
-                    ran = (6, 18)
+                    ran = (5, 10)
                 else:
-                    ran = (4, 9)
+                    ran = (4, 6)
 
                 if sabotage:
                     rel1.romantic_love = Cat.effect_relation(rel1.romantic_love, -(randint(ran[0], ran[1]) + bonus) +
@@ -2368,7 +2377,7 @@ class Cat():
                     output += f"Romantic interest increased. "
 
             elif trait == "platonic":
-                ran = (4, 9)
+                ran = (4, 6)
 
                 if sabotage:
                     rel1.platonic_like = Cat.effect_relation(rel1.platonic_like, -(randint(ran[0], ran[1]) + bonus) +
@@ -2384,7 +2393,7 @@ class Cat():
                     output += f"Platonic like increased. "
 
             elif trait == "respect":
-                ran = (4, 9)
+                ran = (4, 6)
 
                 if sabotage:
                     rel1.admiration = Cat.effect_relation(rel1.admiration, -(randint(ran[0], ran[1]) + bonus) +
@@ -2400,7 +2409,7 @@ class Cat():
                     output += f"Respect increased. "
 
             elif trait == "comfortable":
-                ran = (4, 9)
+                ran = (4, 6)
 
                 if sabotage:
                     rel1.comfortable = Cat.effect_relation(rel1.comfortable, -(randint(ran[0], ran[1]) + bonus) +
@@ -2416,7 +2425,7 @@ class Cat():
                     output += f"Comfort increased. "
 
             elif trait == "admiration":
-                ran = (4, 9)
+                ran = (4, 6)
 
                 if sabotage:
                     rel1.trust = Cat.effect_relation(rel1.trust, -(randint(ran[0], ran[1]) + bonus) +
@@ -2432,7 +2441,7 @@ class Cat():
                     output += f"Trust increased. "
 
             elif trait == "dislike":
-                ran = (4, 10)
+                ran = (4, 9)
                 if sabotage:
                     rel1.dislike = Cat.effect_relation(rel1.dislike, (randint(ran[0], ran[1]) + bonus) -
                                                        personality_bonus)
@@ -2447,7 +2456,7 @@ class Cat():
                     output += f"Dislike decreased. "
 
             elif trait == "jealousy":
-                ran = (4, 9)
+                ran = (4, 6)
 
                 if sabotage:
                     rel1.jealousy = Cat.effect_relation(rel1.jealousy, (randint(ran[0], ran[1]) + bonus) -
@@ -2645,7 +2654,7 @@ class Cat():
 # Twelve example cats
 def create_example_cats():
     e = random.sample(range(12), 3)
-    not_allowed = ['NOPAW', 'NOTAIL', 'HALFTAIL', 'NOEAR', 'BOTHBLIND', 'RIGHTBLIND', 'LEFTBLIND', 'BRIGHTHEART'
+    not_allowed = ['NOPAW', 'NOTAIL', 'HALFTAIL', 'NOEAR', 'BOTHBLIND', 'RIGHTBLIND', 'LEFTBLIND', 'BRIGHTHEART',
                    'NOLEFTEAR', 'NORIGHTEAR', 'MANLEG']
     for a in range(12):
         if a in e:
@@ -2655,10 +2664,10 @@ def create_example_cats():
                 ['kitten', 'apprentice', 'warrior', 'warrior', 'elder']))
         if game.choose_cats[a].moons >= 160:
             game.choose_cats[a].moons = choice(range(120, 155))
-        for scar in not_allowed:
-            if scar in game.choose_cats[a].scars:
+        for scar in game.choose_cats[a].scars:
+            if scar in not_allowed:
                 game.choose_cats[a].scars.remove(scar)
-            update_sprite(game.choose_cats[a])
+        update_sprite(game.choose_cats[a])
 
 
 # CAT CLASS ITEMS

@@ -10,6 +10,15 @@ from scripts.cat.sprites import *
 from scripts.cat.pelts import *
 from scripts.game_structure.game_essentials import *
 
+def scale(rect):
+    rect[0] = round(rect[0]/1600 * screen_x) if rect[0] > 0 else rect[0]
+    rect[1] = round(rect[1]/1400 * screen_y) if rect[1] > 0 else rect[1]
+    rect[2] = round(rect[2] / 1600 * screen_x) if rect[2] > 0 else rect[2]
+    rect[3] = round(rect[3] / 1400 * screen_y) if rect[3] > 0 else rect[3]
+
+    return rect
+
+
 def get_alive_clan_queens(all_cats):
 	"""Returns a list with all cats with the 'status' queen."""
 	queens = []
@@ -299,7 +308,7 @@ def change_relationship_values(cats_to,
 def event_text_adjust(Cat, text, cat, other_cat=None, other_clan_name=None, keep_m_c=False):
     danger = ["a rogue", "a dog", "a fox", "an otter", "a rat", "a hawk", "an enemy warrior", "a badger"]
     tail_danger = ["a rogue", "a dog", "a fox", "an otter", "a rat", "a hawk",
-                   "an enemy warrior", "a badger", "a twoleg trap"]
+                   "an enemy warrior", "a badger", "a Twoleg trap"]
 
     danger_choice = choice(danger)
     tail_choice = choice(tail_danger)

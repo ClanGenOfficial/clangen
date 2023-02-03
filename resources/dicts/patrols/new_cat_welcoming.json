@@ -95,7 +95,7 @@
     "patrol_id": "gen_gen_newmed1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["border", "new_cat", "reputation", "new_cat_med", "no_change_fail_rep"],
+    "tags": ["border", "new_cat", "reputation", "new_cat_med", "no_change_fail_rep", "kits"],
     "intro_text": "r_c finds a loner who offers their healing skills in exchange for shelter.",
     "success_text": [
         "The new medicine cat is welcomed into the Clan.",
@@ -320,6 +320,67 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_bord_curiouskittypet1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["border", "new_cat", "reputation", "scar", "battle_injury", "new_cat_adult"],
+    "intro_text": "As the patrol is checking the border lines, they hear the unmistakable sound of a cat traipsing through Clan territory.",
+    "decline_text": "They decide to leave it alone. It's probably just another Clanmate out in the territory.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "success_text": [
+        "The patrol approaches warily and comes upon a kittypet that's sniffing around. The kittypet notices their arrival and brightly says that they've heard about the Clan and wish to join. The patrol agrees to take them back to camp.",
+        "The patrol follows the noise and comes upon a kittypet that's sniffing around. The kittypet notices them and bundles towards the patrol, whose pelts bush out in surprise. The kittypet quickly begins a story about how they've been training for <i>days</i> now and they're finally ready to join c_n. Well alright then!",
+        "The patrol follows the noise and comes upon a kittypet that's sniffing around. The kittypet turns and bristles, hissing at the patrol. s_c calls out a greeting to them and engages them in conversation, which seems to calm them down. They even agree when s_c asks if they'd like to join the Clan!"
+    ],
+    "fail_text": [
+        "The patrol follows the sound, intent on finding the intruder. They come upon a kittypet sniffing around. When the kittypet notices them, however, it turns tail and makes a hasty getaway. At least it's off the territory now.",
+        "The patrol follows the sound, intent on finding the intruder. They come upon a kittypet sniffing around. They're about to approach calmly when s_c lets out a yowl and rushes towards the kittypet, who quickly turns tail.",
+        null,
+        "The patrol follows the sound, ready to confront the intruder. They come upon a large kittypet that's sniffing around. They begin to approach, but the kittypet immediately turns on them. r_c doesn't have enough time to move as the kittypet launches a quick attack. p_l bats the kittypet away and helps r_c back to camp."
+    ],
+    "win_skills": ["good speaker", "great speaker", "excellent speaker"],
+    "win_trait": null,
+    "fail_skills": ["None"],
+    "fail_trait": ["vengeful", "bloodthirsty"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            "This cat gained a scar from a fight with an angry kittypet."
+    ]
+},
+{
+    "patrol_id": "gen_bord_injuredcat1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["border", "new_cat", "reputation", "new_cat_adult", "new_cat_majorinjury"],
+    "intro_text": "The patrol is checking along the border lines when they hear a startling sound - a hiss of pain? They quickly follow the sound to the source. It's a loner, and they appear to be injured.",
+    "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "success_text": [
+        "The patrol approaches cautiously. The loner draws themself up, but doing so causes them to let out another hiss. p_l offers to bring them to camp. Though they seem hesitant, the loner agrees.",
+        "The patrol approaches cautiously. The loner lifts their head and asks for help. p_l agrees. They can't leave a fellow cat to die.",
+        "The loner hisses defensively as the patrol comes closer. s_c speaks soothingly to the loner, assuring them that they mean no harm and simply want to help. The loner seems distrustful, but allows p_l to help them back to camp."
+    ],
+    "fail_text": [
+        "The patrol warily approaches the loner, who doesn't seem to notice them. It's obvious that the cat is bleeding out. p_l attempts to staunch the bleeding and carry the cat to camp, but it's no use. Hopefully the loner didn't suffer too much."
+    ],
+    "win_skills": ["good speaker", "great speaker", "excellent speaker"],
+    "win_trait": null,
+    "fail_skills": ["None"],
+    "fail_trait": null,
+    "min_cats": 1,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null
+    ]
 }
 ]
 

@@ -4,7 +4,7 @@ from random import choice
 
 import pygame
 
-from scripts.utility import update_sprite, event_text_adjust
+from scripts.utility import update_sprite, event_text_adjust, scale
 
 from .base_screens import Screens, cat_profiles
 
@@ -329,55 +329,8 @@ class ProfileScreen(Screens):
                 self.change_screen('choose mentor screen')
         # Roles Tab
         elif self.open_tab == 'roles':
-            if event.ui_element == self.promote_leader_button:
-                game.clan.new_leader(self.the_cat)
-                self.clear_profile()
-                self.build_profile()
-                self.update_disabled_buttons_and_text()
-                # The resort can go in the status_change function for the others, but if must be here for leader
-                if game.sort_type == "rank":
-                    Cat.sort_cats()
-            elif event.ui_element == self.toggle_deputy_button:
-                if self.the_cat.status == 'warrior':
-                    self.the_cat.status_change('deputy', resort=True)
-                    game.clan.deputy = self.the_cat
-                elif self.the_cat.status == 'deputy':
-                    self.the_cat.status_change('warrior', resort=True)
-                    game.clan.deputy = None
-                self.clear_profile()
-                self.build_profile()
-                self.update_disabled_buttons_and_text()
-            elif event.ui_element == self.toggle_med_button:
-                if self.the_cat.status == 'medicine cat apprentice':
-                    self.the_cat.status_change('apprentice', resort=True)
-                elif self.the_cat.status == "apprentice":
-                    self.the_cat.status_change('medicine cat apprentice', resort=True)
-                elif self.the_cat.status == 'medicine cat':
-                    self.the_cat.status_change('warrior', resort=True)
-                elif self.the_cat.status in ['warrior', 'elder']:
-                    self.the_cat.status_change('medicine cat', resort=True)
-                elif self.the_cat.status == 'leader':
-                    self.the_cat.status_change('warrior', resort=True)
-                elif self.the_cat.status == 'mediator':
-                    self.the_cat.status_change('warrior', resort=True)
-                elif self.the_cat.status == 'mediator apprentice':
-                    self.the_cat.status_change('apprentice', resort=True)
-                self.clear_profile()
-                self.build_profile()
-                self.update_disabled_buttons_and_text()
-            elif event.ui_element == self.switch_mediator_button:
-                if self.the_cat.status in ["apprentice", "medicine cat apprentice"]:
-                    self.the_cat.status_change("mediator apprentice", resort=True)
-                else:
-                    self.the_cat.status_change("mediator", resort=True)
-                self.clear_profile()
-                self.build_profile()
-                self.update_disabled_buttons_and_text()
-            elif event.ui_element == self.retire_button:
-                self.the_cat.status_change('elder', resort=True)
-                self.clear_profile()
-                self.build_profile()
-                self.update_disabled_buttons_and_text()
+            if event.ui_element == self.manage_roles:
+                self.change_screen('role screen')
         # Personal Tab
         elif self.open_tab == 'personal':
             if event.ui_element == self.change_name_button:
@@ -417,6 +370,7 @@ class ProfileScreen(Screens):
                     self.the_cat.thought = "Is shocked that they have been exiled"
                     for app in self.the_cat.apprentice:
                         Cat.fetch_cat(app).update_mentor()
+                    self.the_cat.update_mentor()
                     self.clear_profile()
                     self.build_profile()
                     self.update_disabled_buttons_and_text()
@@ -484,32 +438,36 @@ class ProfileScreen(Screens):
         self.the_cat = Cat.all_cats.get(game.switches['cat'])
 
         # Set up the menu buttons, which appear on all cat profile images.
-        self.next_cat_button = UIImageButton(pygame.Rect((1244, 50), (306, 60)), "", object_id="#next_cat_button")
-        self.previous_cat_button = UIImageButton(pygame.Rect((50, 50), (306, 60)), "", object_id="#previous_cat_button")
-        self.back_button = UIImageButton(pygame.Rect((50, 120), (210, 60)), "", object_id="#back_button")
-        self.relations_tab_button = UIImageButton(pygame.Rect((96, 840), (352, 60)), "",
-                                                  object_id="#relations_tab_button")
-        self.roles_tab_button = UIImageButton(pygame.Rect((448, 840), (352, 60)), "", object_id="#roles_tab_button")
-        self.personal_tab_button = UIImageButton(pygame.Rect((800, 840), (352, 60)), "",
-                                                 object_id="#personal_tab_button")
-        self.dangerous_tab_button = UIImageButton(pygame.Rect((1152, 840), (352, 60)), "",
-                                                  object_id="#dangerous_tab_button")
+        self.next_cat_button = UIImageButton(scale(pygame.Rect((1244, 50), (306, 60))), "", object_id="#next_cat_button"
+                                             , manager=MANAGER)
+        self.previous_cat_button = UIImageButton(scale(pygame.Rect((50, 50), (306, 60))), "", object_id="#previous_cat_button"
+                                                 , manager=MANAGER)
+        self.back_button = UIImageButton(scale(pygame.Rect((50, 120), (210, 60))), "", object_id="#back_button"
+                                         , manager=MANAGER)
+        self.relations_tab_button = UIImageButton(scale(pygame.Rect((96, 840), (352, 60))), "",
+                                                  object_id="#relations_tab_button", manager=MANAGER)
+        self.roles_tab_button = UIImageButton(scale(pygame.Rect((448, 840), (352, 60))), "", object_id="#roles_tab_button"
+                                              , manager=MANAGER)
+        self.personal_tab_button = UIImageButton(scale(pygame.Rect((800, 840), (352, 60))), "",
+                                                 object_id="#personal_tab_button", manager=MANAGER)
+        self.dangerous_tab_button = UIImageButton(scale(pygame.Rect((1152, 840), (352, 60))), "",
+                                                  object_id="#dangerous_tab_button", manager=MANAGER)
 
-        self.backstory_tab_button = UIImageButton(pygame.Rect((96, 1244), (352, 60)), "",
-                                                  object_id="#backstory_tab_button")
+        self.backstory_tab_button = UIImageButton(scale(pygame.Rect((96, 1244), (352, 60))), "",
+                                                  object_id="#backstory_tab_button", manager=MANAGER)
 
         self.conditions_tab_button = UIImageButton(
-            pygame.Rect((448, 1244), (352, 60)),
+            scale(pygame.Rect((448, 1244), (352, 60))),
             "",
-            object_id="#conditions_tab_button"
+            object_id="#conditions_tab_button", manager=MANAGER
         )
 
-        self.placeholder_tab_3 = UIImageButton(pygame.Rect((800, 1244), (352, 60)), "",
-                                               object_id="#cat_tab_3_blank_button", starting_height=1)
+        self.placeholder_tab_3 = UIImageButton(scale(pygame.Rect((800, 1244), (352, 60))), "",
+                                               object_id="#cat_tab_3_blank_button", starting_height=1, manager=MANAGER)
         self.placeholder_tab_3.disable()
 
-        self.placeholder_tab_4 = UIImageButton(pygame.Rect((1152, 1244), (352, 60)), "",
-                                               object_id="#cat_tab_4_blank_button")
+        self.placeholder_tab_4 = UIImageButton(scale(pygame.Rect((1152, 1244), (352, 60))), "",
+                                               object_id="#cat_tab_4_blank_button", manager=MANAGER)
         self.placeholder_tab_4.disable()
 
         self.build_profile()
@@ -571,61 +529,62 @@ class ProfileScreen(Screens):
             self.the_cat.thought = "Hello. I am here to drag the dead cats of " + game.clan.name + "Clan into the Dark Forest."
 
         # Write cat name
-        self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(cat_name, pygame.Rect((50, 280), (1500, 80)),
+        self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(cat_name, scale(pygame.Rect((50, 280), (1500, 80))),
                                                                           object_id=get_text_box_theme(
-                                                                              "#cat_profile_name_box"))
+                                                                              "#cat_profile_name_box"), manager=MANAGER)
 
         # Write cat thought
         self.profile_elements["cat_thought"] = pygame_gui.elements.UITextBox(self.the_cat.thought,
-                                                                             pygame.Rect((200, 340), (1200, 80)),
+                                                                             scale(pygame.Rect((200, 340), (1200, 80))),
                                                                              wrap_to_height=True,
                                                                              object_id=get_text_box_theme(
-                                                                                 "#cat_profile_thoughts_box"))
+                                                                                 "#cat_profile_thoughts_box")
+                                                                             , manager=MANAGER)
 
         self.profile_elements["cat_info_column1"] = UITextBoxTweaked(self.generate_column1(self.the_cat),
-                                                                     pygame.Rect((600, 460), (360, 360)),
+                                                                     scale(pygame.Rect((600, 460), (360, 360))),
                                                                      object_id=get_text_box_theme(
                                                                          "#cat_profile_info_box"),
-                                                                     line_spacing=0.95)
+                                                                     line_spacing=0.95, manager=MANAGER)
         self.profile_elements["cat_info_column2"] = UITextBoxTweaked(self.generate_column2(self.the_cat),
-                                                                     pygame.Rect((980, 460), (460, 360)),
+                                                                     scale(pygame.Rect((980, 460), (460, 360))),
                                                                      object_id=get_text_box_theme(
                                                                          "#cat_profile_info_box"),
-                                                                     line_spacing=0.95)
+                                                                     line_spacing=0.95, manager=MANAGER)
 
         # Set the cat backgrounds.
         self.update_platform()
         if game.settings['backgrounds']:
             if game.clan.current_season == 'Newleaf':
-                self.profile_elements["background"] = pygame_gui.elements.UIImage(pygame.Rect((110, 400), (480, 420)),
-                                                                                  self.newleaf_plt)
+                self.profile_elements["background"] = pygame_gui.elements.UIImage(scale(pygame.Rect((110, 400), (480, 420))),
+                                                                                  self.newleaf_plt, manager=MANAGER)
                 self.profile_elements["background"].disable()
             elif game.clan.current_season == 'Greenleaf':
-                self.profile_elements["background"] = pygame_gui.elements.UIImage(pygame.Rect((110, 400), (480, 420)),
-                                                                                  self.greenleaf_plt)
+                self.profile_elements["background"] = pygame_gui.elements.UIImage(scale(pygame.Rect((110, 400), (480, 420))),
+                                                                                  self.greenleaf_plt, manager=MANAGER)
                 self.profile_elements["background"].disable()
             elif game.clan.current_season == 'Leaf-bare':
-                self.profile_elements["background"] = pygame_gui.elements.UIImage(pygame.Rect((110, 400), (480, 420)),
-                                                                                  self.leafbare_plt)
+                self.profile_elements["background"] = pygame_gui.elements.UIImage(scale(pygame.Rect((110, 400), (480, 420))),
+                                                                                  self.leafbare_plt, manager=MANAGER)
                 self.profile_elements["background"].disable()
             elif game.clan.current_season == 'Leaf-fall':
-                self.profile_elements["background"] = pygame_gui.elements.UIImage(pygame.Rect((110, 400), (480, 420)),
-                                                                                  self.leaffall_plt)
+                self.profile_elements["background"] = pygame_gui.elements.UIImage(scale(pygame.Rect((110, 400), (480, 420))),
+                                                                                  self.leaffall_plt, manager=MANAGER)
                 self.profile_elements["background"].disable()
 
         # Create cat image object
-        self.profile_elements["cat_image"] = pygame_gui.elements.UIImage(pygame.Rect((200, 400), (300, 300)),
+        self.profile_elements["cat_image"] = pygame_gui.elements.UIImage(scale(pygame.Rect((200, 400), (300, 300))),
                                                                          pygame.transform.scale(
                                                                              self.the_cat.large_sprite,
-                                                                             (300, 300)))
+                                                                             (300, 300)), manager=MANAGER)
         self.profile_elements["cat_image"].disable()
 
         # if cat is a med or med app, show button for their den
-        self.profile_elements["med_den"] = UIImageButton(pygame.Rect
-                                                         ((200, 760), (302, 56)),
+        self.profile_elements["med_den"] = UIImageButton(scale(pygame.Rect
+                                                         ((200, 760), (302, 56))),
                                                          "",
                                                          object_id="#med_den_button"
-                                                         )
+                                                         , manager=MANAGER)
         if not (self.the_cat.dead or self.the_cat.outside) and (
                 self.the_cat.status in ['medicine cat', 'medicine cat apprentice'] or
                 self.the_cat.is_ill() or
@@ -653,17 +612,17 @@ class ProfileScreen(Screens):
             self.load_user_notes()
 
         if self.the_cat.status == 'leader' and not self.the_cat.dead:
-            self.profile_elements["leader_ceremony"] = UIImageButton(pygame.Rect(
-                (766, 220), (68, 68)),
+            self.profile_elements["leader_ceremony"] = UIImageButton(scale(pygame.Rect(
+                (766, 220), (68, 68))),
                 "",
                 object_id="#leader_ceremony_button",
-                tool_tip_text="Leader Ceremony"
+                tool_tip_text="Leader Ceremony", manager=MANAGER
             )
         elif self.the_cat.status in ["mediator", "mediator apprentice"]:
-            self.profile_elements["mediation"] = UIImageButton(pygame.Rect(
-                (766, 220), (68, 68)),
+            self.profile_elements["mediation"] = UIImageButton(scale(pygame.Rect(
+                (766, 220), (68, 68))),
                 "",
-                object_id="#mediation_button",
+                object_id="#mediation_button", manager=MANAGER
             )
             if self.the_cat.dead or self.the_cat.outside:
                 self.profile_elements["mediation"].disable()
@@ -671,19 +630,19 @@ class ProfileScreen(Screens):
         if game.settings["fading"]:
             if is_sc_instructor:
                 self.profile_elements["prevent_fading_text"] = pygame_gui.elements.UILabel(
-                    pygame.Rect((170, 780), (-1, 60)),
+                    scale(pygame.Rect((170, 780), (-1, 60))),
                     "The StarClan Guide will never fade",
-                    object_id=get_text_box_theme("#cat_profile_info_box"))
+                    object_id=get_text_box_theme("#cat_profile_info_box"), manager=MANAGER)
             elif is_df_instructor:
                 self.profile_elements["prevent_fading_text"] = pygame_gui.elements.UILabel(
-                    pygame.Rect((160, 780), (-1, 60)),
+                    scale(pygame.Rect((160, 780), (-1, 60))),
                     "The Dark Forest Guide will never fade",
-                    object_id=get_text_box_theme("#cat_profile_info_box"))
+                    object_id=get_text_box_theme("#cat_profile_info_box"), manager=MANAGER)
             elif self.the_cat.dead:
                 self.profile_elements["prevent_fading_text"] = pygame_gui.elements.UILabel(
-                    pygame.Rect((272, 774), (-1, 60)),
+                    scale(pygame.Rect((272, 774), (-1, 60))),
                     "Prevent Fading",
-                    object_id=get_text_box_theme())
+                    object_id=get_text_box_theme(), manager=MANAGER)
 
         self.update_toggle_buttons()
 
@@ -699,13 +658,13 @@ class ProfileScreen(Screens):
             else:
                 box_type = "#unchecked_checkbox"
 
-            self.checkboxes["prevent_fading"] = UIImageButton(pygame.Rect((200, 770), (68, 68)), "",
+            self.checkboxes["prevent_fading"] = UIImageButton(scale(pygame.Rect((200, 770), (68, 68))), "",
                                                               starting_height=2,
                                                               tool_tip_text="Prevents a cat from fading away."
                                                                             " If unchecked, and the cat has been dead "
                                                                             "for longer than 302 moons, they will fade "
                                                                             "on the next timeskip.",
-                                                              object_id=box_type)
+                                                              object_id=box_type, manager=MANAGER)
             if game.clan.instructor.ID == self.the_cat.ID:
                 self.checkboxes["prevent_fading"].hide()
 
@@ -948,7 +907,7 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # NUTRITION INFO (if the game is in the correct mode)
-        if game.clan.game_mode in ["expanded", "cruel season"] and the_cat.is_alive():
+        '''if game.clan.game_mode in ["expanded", "cruel season"] and the_cat.is_alive():
             nutr = None
             if the_cat.ID in game.clan.freshkill_pile.nutrition_info:
                 nutr = game.clan.freshkill_pile.nutrition_info[the_cat.ID]
@@ -957,7 +916,7 @@ class ProfileScreen(Screens):
                 output += f"nutrition status: {round(nutr.percentage, 1)}%\n"
             else:
                 output += "\n"
-                output += f"nutrition status: 100%\n"
+                output += f"nutrition status: 100%\n"'''
 
         if the_cat.is_disabled():
             for condition in the_cat.permanent_condition:
@@ -1000,35 +959,40 @@ class ProfileScreen(Screens):
             pass
         else:
             self.open_tab = 'history'
-            self.backstory_background = pygame_gui.elements.UIImage(pygame.Rect((178, 930), (1240, 314)),
+            self.backstory_background = pygame_gui.elements.UIImage(scale(pygame.Rect((178, 930), (1240, 314))),
                                                                     self.backstory_tab)
             self.backstory_background.disable()
-            self.sub_tab_1 = UIImageButton(pygame.Rect((1418, 950), (84, 60)), "", object_id="#sub_tab_1_button")
+            self.sub_tab_1 = UIImageButton(scale(pygame.Rect((1418, 950), (84, 60))), "", object_id="#sub_tab_1_button"
+                                           , manager=MANAGER)
             self.sub_tab_1.disable()
-            self.sub_tab_2 = UIImageButton(pygame.Rect((1418, 1024), (84, 60)), "", object_id="#sub_tab_2_button")
+            self.sub_tab_2 = UIImageButton(scale(pygame.Rect((1418, 1024), (84, 60))), "", object_id="#sub_tab_2_button"
+                                           , manager=MANAGER)
             self.sub_tab_2.disable()
-            self.sub_tab_3 = UIImageButton(pygame.Rect((1418, 1098), (84, 60)), "", object_id="#sub_tab_3_button")
+            self.sub_tab_3 = UIImageButton(scale(pygame.Rect((1418, 1098), (84, 60))), "", object_id="#sub_tab_3_button"
+                                           , manager=MANAGER)
             self.sub_tab_3.disable()
-            self.sub_tab_4 = UIImageButton(pygame.Rect((1418, 1172), (84, 60)), "", object_id="#sub_tab_4_button")
+            self.sub_tab_4 = UIImageButton(scale(pygame.Rect((1418, 1172), (84, 60))), "", object_id="#sub_tab_4_button"
+                                           , manager=MANAGER)
             self.sub_tab_4.disable()
             self.fav_tab = UIImageButton(
-                pygame.Rect((105, 960), (56, 56)),
+                scale(pygame.Rect((105, 960), (56, 56))),
                 "",
                 object_id="#fav_star",
-                tool_tip_text='un-favorite this tab'
+                tool_tip_text='un-favorite this tab', manager=MANAGER
             )
             self.not_fav_tab = UIImageButton(
-                pygame.Rect((105, 960), (56, 56)),
+                scale(pygame.Rect((105, 960), (56, 56))),
                 "",
                 object_id="#not_fav_star",
-                tool_tip_text='favorite this tab'
+                tool_tip_text='favorite this tab', manager=MANAGER
             )
 
             if self.open_sub_tab != 'life events':
                 self.toggle_history_sub_tab()
             else:
                 # This will be overwritten in update_disabled_buttons_and_text()
-                self.history_text_box = pygame_gui.elements.UITextBox("", pygame.Rect((80, 480), (615, 142)))
+                self.history_text_box = pygame_gui.elements.UITextBox("", scale(pygame.Rect((80, 480), (615, 142)))
+                                                                      , manager=MANAGER)
                 self.update_disabled_buttons_and_text()
 
     def toggle_user_notes_tab(self):
@@ -1038,15 +1002,15 @@ class ProfileScreen(Screens):
             self.user_notes = 'Click the check mark to enter notes about your cat!'
 
         self.notes_entry = pygame_gui.elements.UITextEntryBox(
-            pygame.Rect((200, 946), (1200, 298)),
+            scale(pygame.Rect((200, 946), (1200, 298))),
             initial_text=self.user_notes,
-            object_id='#history_tab_text_box'
+            object_id='#history_tab_text_box', manager=MANAGER
         )
 
         self.display_notes = UITextBoxTweaked(self.user_notes,
-                                              pygame.Rect((200, 946), (120, 298)),
+                                              scale(pygame.Rect((200, 946), (120, 298))),
                                               object_id="#history_tab_text_box",
-                                              line_spacing=1)
+                                              line_spacing=1, manager=MANAGER)
 
         self.update_disabled_buttons_and_text()
 
@@ -1288,41 +1252,40 @@ class ProfileScreen(Screens):
         else:
             self.open_tab = 'conditions'
             self.right_arrow = UIImageButton(
-                pygame.Rect((1418, 1080), (68, 68)),
+                scale(pygame.Rect((1418, 1080), (68, 68))),
                 "",
-                object_id='#arrow_right_button'
+                object_id='#arrow_right_button', manager=MANAGER
             )
             self.left_arrow = UIImageButton(
-                pygame.Rect((118, 1080), (68, 68)),
+                scale(pygame.Rect((118, 1080), (68, 68))),
                 "",
                 object_id='#arrow_left_button'
             )
             self.conditions_background = pygame_gui.elements.UIImage(
-                pygame.Rect((178, 942), (1248, 302)),
+                scale(pygame.Rect((178, 942), (1248, 302))),
                 self.conditions_tab
             )
-            manager = pygame_gui.UIManager((1600, 1400), 'resources/defaults.json')
+
             self.first_page_visible = True
             self.first_page = pygame_gui.core.UIContainer(
-                pygame.Rect((178, 942), (1248, 302)),
-                manager,
+                scale(pygame.Rect((178, 942), (1248, 302))),
+                MANAGER,
                 visible=self.first_page_visible)
 
             # holds next four conditions, displays only once arrow button is hit
             self.second_page_visible = False
             self.second_page = pygame_gui.core.UIContainer(
-                pygame.Rect((178, 942), (1248, 302)),
-                manager,
+                scale(pygame.Rect((178, 942), (1248, 302))),
+                MANAGER,
                 visible=self.second_page_visible)
             # This will be overwritten in update_disabled_buttons_and_text()
             self.update_disabled_buttons_and_text()
 
     def get_conditions(self):
         self.the_cat = Cat.all_cats.get(game.switches['cat'])
-        manager = pygame_gui.UIManager((1600, 1400), 'resources/defaults.json')
 
         # tracks the position of the detail boxes
-        x_pos = 14
+        x_pos = 28
 
         # tracks the number of boxes so that we don't go out of bounds
         count = 0
@@ -1332,16 +1295,16 @@ class ProfileScreen(Screens):
         # holds first four conditions, default display
         self.first_page_visible = True
         self.first_page = pygame_gui.core.UIContainer(
-            pygame.Rect((178, 942), (1248, 302)),
-            manager,
+            scale(pygame.Rect((178, 942), (1248, 302))),
+            MANAGER,
             visible=self.first_page_visible)
         container = self.first_page
 
         # holds next four conditions, displays only once arrow button is hit
         self.second_page_visible = False
         self.second_page = pygame_gui.core.UIContainer(
-            pygame.Rect((178, 942), (1248, 302)),
-            manager,
+            scale(pygame.Rect((178, 942), (1248, 302))),
+            MANAGER,
             visible=self.second_page_visible)
 
         # check for permanent conditions and create their detail boxes
@@ -1359,8 +1322,8 @@ class ProfileScreen(Screens):
                     x_pos = 28
                 # display the detail box
                 self.condition_box = pygame_gui.elements.UIImage(
-                    pygame.Rect((x_pos, 25), (280, 276)),
-                    self.condition_details_box,
+                    scale(pygame.Rect((x_pos, 25), (280, 276))),
+                    self.condition_details_box, manager=MANAGER,
                     container=container)
                 # display the detail text
                 y_adjust = 60
@@ -1369,19 +1332,19 @@ class ProfileScreen(Screens):
                     y_adjust += 38
                 self.condition_name_text = UITextBoxTweaked(
                     condition,
-                    pygame.Rect((x_pos, 26), (276, -1)),
+                    scale(pygame.Rect((x_pos, 26), (276, -1))),
                     line_spacing=.90,
                     object_id="text_box",
-                    container=container
+                    container=container, manager=MANAGER
                 )
                 # details
                 text = self.get_condition_details(condition)
                 self.condition_detail_text = UITextBoxTweaked(
                     text,
-                    pygame.Rect((x_pos, y_adjust), (276, 276)),
+                    scale(pygame.Rect((x_pos, y_adjust), (276, 276))),
                     line_spacing=.90,
                     object_id="#condition_details_text_box",
-                    container=container
+                    container=container, manager=MANAGER
                 )
                 # adjust the x_pos for the next box
                 x_pos += 304
@@ -1398,9 +1361,9 @@ class ProfileScreen(Screens):
                     x_pos = 28
                 # display the detail box
                 self.condition_box = pygame_gui.elements.UIImage(
-                    pygame.Rect((x_pos, 26), (280, 276)),
+                    scale(pygame.Rect((x_pos, 26), (280, 276))),
                     self.condition_details_box,
-                    container=container
+                    container=container, manager=MANAGER
                 )
                 # display the detail text
                 y_adjust = 60
@@ -1409,19 +1372,19 @@ class ProfileScreen(Screens):
                     y_adjust += 38
                 self.condition_name_text = UITextBoxTweaked(
                     injury,
-                    pygame.Rect((x_pos, 26), (276, -1)),
+                    scale(pygame.Rect((x_pos, 26), (276, -1))),
                     line_spacing=.90,
                     object_id="text_box",
-                    container=container
+                    container=container, manager=MANAGER
                 )
                 # details
                 text = self.get_condition_details(injury)
                 self.condition_detail_text = UITextBoxTweaked(
                     text,
-                    pygame.Rect((x_pos, y_adjust), (276, 276)),
+                    scale(pygame.Rect((x_pos, y_adjust), (276, 276))),
                     line_spacing=.90,
                     object_id="#condition_details_text_box",
-                    container=container
+                    container=container, manager=MANAGER
                 )
                 # adjust the x_pos for the next box
                 x_pos += 304
@@ -1441,9 +1404,9 @@ class ProfileScreen(Screens):
                     x_pos = 28
                 # display the detail box
                 self.condition_box = pygame_gui.elements.UIImage(
-                    pygame.Rect((x_pos, 26), (280, 276)),
+                    scale(pygame.Rect((x_pos, 26), (280, 276))),
                     self.condition_details_box,
-                    container=container
+                    container=container, manager=MANAGER
                 )
                 # display the detail text
                 y_adjust = 60
@@ -1452,19 +1415,19 @@ class ProfileScreen(Screens):
                     y_adjust += 36
                 self.condition_name_text = UITextBoxTweaked(
                     illness,
-                    pygame.Rect((x_pos, 26), (276, -1)),
+                    scale(pygame.Rect((x_pos, 26), (276, -1))),
                     line_spacing=.90,
                     object_id="text_box",
-                    container=container
+                    container=container, manager=MANAGER
                 )
                 # details
                 text = self.get_condition_details(illness)
                 self.condition_detail_text = UITextBoxTweaked(
                     text,
-                    pygame.Rect((x_pos, y_adjust), (276, 276)),
+                    scale(pygame.Rect((x_pos, y_adjust), (276, 276))),
                     line_spacing=.90,
                     object_id="#condition_details_text_box",
-                    container=container
+                    container=container, manager=MANAGER
                 )
                 # adjust the x_pos for the next box
                 x_pos += 304
@@ -1560,14 +1523,16 @@ class ProfileScreen(Screens):
             pass
         else:
             self.open_tab = 'relations'
-            self.see_family_button = UIImageButton(pygame.Rect((100, 900), (344, 72)), "",
-                                                   starting_height=2, object_id="#see_family_button")
-            self.see_relationships_button = UIImageButton(pygame.Rect((100, 972), (344, 72)), "",
-                                                          starting_height=2, object_id="#see_relationships_button")
-            self.choose_mate_button = UIImageButton(pygame.Rect((100, 1044), (344, 72)), "",
-                                                    starting_height=2, object_id="#choose_mate_button")
-            self.change_mentor_button = UIImageButton(pygame.Rect((100, 1116), (344, 72)), "",
-                                                      starting_height=2, object_id="#change_mentor_button")
+            self.see_family_button = UIImageButton(scale(pygame.Rect((100, 900), (344, 72))), "",
+                                                   starting_height=2, object_id="#see_family_button", manager=MANAGER)
+            self.see_relationships_button = UIImageButton(scale(pygame.Rect((100, 972), (344, 72))), "",
+                                                          starting_height=2, object_id="#see_relationships_button"
+                                                          , manager=MANAGER)
+            self.choose_mate_button = UIImageButton(scale(pygame.Rect((100, 1044), (344, 72))), "",
+                                                    starting_height=2, object_id="#choose_mate_button", manager=MANAGER)
+            self.change_mentor_button = UIImageButton(scale(pygame.Rect((100, 1116), (344, 72))), "",
+                                                      starting_height=2, object_id="#change_mentor_button"
+                                                      , manager=MANAGER)
             self.update_disabled_buttons_and_text()
 
     def toggle_roles_tab(self):
@@ -1582,19 +1547,11 @@ class ProfileScreen(Screens):
             pass
         else:
             self.open_tab = 'roles'
-            self.promote_leader_button = UIImageButton(pygame.Rect((452, 900), (344, 72)), "",
-                                                       starting_height=2, object_id="#promote_leader_button")
 
-            self.retire_button = UIImageButton(pygame.Rect((452, 1044), (344, 72)), "", starting_height=2,
-                                               object_id="#retire_button",
-                                               tool_tip_text="This cannot be undone")
-
-            # These are a placeholders, to be killed and recreated in self.update_disabled_buttons().
-            #   This it due to the image switch depending on the cat's status, and the location switch the close button
-            #    If you can think of a better way to do this, please fix! 
-            self.toggle_deputy_button = None
-            self.toggle_med_button = None
-            self.switch_mediator_button = None
+            self.manage_roles = UIImageButton(scale(pygame.Rect((452, 900), (344, 72))),
+                                             "", object_id="#manage_roles_button",
+                                             starting_height=2
+                                             , manager=MANAGER)
             self.update_disabled_buttons_and_text()
 
     def toggle_personal_tab(self):
@@ -1609,12 +1566,12 @@ class ProfileScreen(Screens):
             pass
         else:
             self.open_tab = 'personal'
-            self.change_name_button = UIImageButton(pygame.Rect((804, 900), (344, 72)), "",
+            self.change_name_button = UIImageButton(scale(pygame.Rect((804, 900), (344, 72))), "",
                                                     starting_height=2,
-                                                    object_id="#change_name_button")
-            self.specify_gender_button = UIImageButton(pygame.Rect((804, 1076), (344, 72)), "",
+                                                    object_id="#change_name_button", manager=MANAGER)
+            self.specify_gender_button = UIImageButton(scale(pygame.Rect((804, 1076), (344, 72))), "",
                                                        starting_height=2,
-                                                       object_id="#specify_gender_button")
+                                                       object_id="#specify_gender_button", manager=MANAGER)
 
             # These are a placeholders, to be killed and recreated in self.update_disabled_buttons().
             #   This it due to the image switch depending on the cat's status, and the location switch the close button
@@ -1636,11 +1593,11 @@ class ProfileScreen(Screens):
         else:
             self.open_tab = 'dangerous'
             self.kill_cat_button = UIImageButton(
-                pygame.Rect((1156, 972), (344, 72)),
+                scale(pygame.Rect((1156, 972), (344, 72))),
                 "",
                 object_id="#kill_cat_button",
                 tool_tip_text='This cannot be reversed.',
-                starting_height=2,
+                starting_height=2, manager=MANAGER
             )
 
             # These are a placeholders, to be killed and recreated in self.update_disabled_buttons_and_text().
@@ -1665,99 +1622,17 @@ class ProfileScreen(Screens):
             else:
                 self.choose_mate_button.enable()
 
-            if self.the_cat.status not in ['apprentice', 'medicine cat apprentice'] or self.the_cat.dead:
+            if self.the_cat.status not in ['apprentice', 'medicine cat apprentice'] or self.the_cat.dead \
+                    or self.the_cat.outside:
                 self.change_mentor_button.disable()
             else:
                 self.change_mentor_button.enable()
         # Roles Tab
         elif self.open_tab == 'roles':
-            if game.clan.leader:
-                leader_dead = game.clan.leader.dead
+            if self.the_cat.dead or self.the_cat.outside:
+                self.manage_roles.disable()
             else:
-                leader_dead = True
-
-            if self.the_cat.status not in [
-                'warrior'] or self.the_cat.dead or not leader_dead or self.the_cat.exiled:
-                self.promote_leader_button.disable()
-            else:
-                self.promote_leader_button.enable()
-
-            # Promote to deputy button
-            if game.clan.deputy and not (game.clan.deputy.outside or game.clan.deputy.dead):
-                deputy = game.clan.deputy
-            elif not game.clan.deputy or game.clan.deputy.outside or game.clan.deputy.dead:
-                deputy = None
-            else:
-                deputy = None
-
-            # This one is a bit different. Since the image on the tab depends on the cat's status, we have to
-            #   recreate the button.
-            if self.toggle_deputy_button:
-                self.toggle_deputy_button.kill()
-            if self.the_cat.status in [
-                'warrior'
-            ] and not self.the_cat.dead and not self.the_cat.outside and not deputy:
-                self.toggle_deputy_button = UIImageButton(pygame.Rect((452, 972), (344, 72)), "",
-                                                          starting_height=2, object_id="#promote_deputy_button")
-            elif self.the_cat.status in ['deputy'] and not self.the_cat.dead and not self.the_cat.outside:
-                self.toggle_deputy_button = UIImageButton(pygame.Rect((452, 972), (344, 72)), "",
-                                                          starting_height=2, object_id="#demote_deputy_button")
-            else:
-                self.toggle_deputy_button = UIImageButton(pygame.Rect((452, 972), (344, 72)), "",
-                                                          starting_height=2, object_id="#promote_deputy_button")
-                self.toggle_deputy_button.disable()
-
-            if self.the_cat.status in \
-                    ['elder', 'kitten', 'apprentice', 'medicine cat apprentice', 'mediator apprentice'] \
-                    or self.the_cat.dead or self.the_cat.exiled or self.the_cat.outside:
-                self.retire_button.disable()
-            else:
-                self.retire_button.enable()
-
-            # This one is also different, same reasons. This also handles the exit close tab button for this tab
-            if self.toggle_med_button:
-                self.toggle_med_button.kill()
-
-            # Switch apprentice to medicine cat apprentice
-            if self.the_cat.status in ['apprentice'] and not self.the_cat.dead and not self.the_cat.outside:
-                self.toggle_med_button = UIImageButton(pygame.Rect((452, 1116), (344, 104)), "",
-                                                       starting_height=2, object_id="#switch_med_app_button")
-                next_button_location = [452, 1220]
-            # Switch med apprentice to warrior apprentice
-            elif self.the_cat.status in ['medicine cat apprentice', 'mediator apprentice'] and not \
-                    self.the_cat.dead and not self.the_cat.outside:
-                self.toggle_med_button = UIImageButton(pygame.Rect((452, 1116), (344, 104)), "",
-                                                       starting_height=2, object_id="#switch_warrior_app_button")
-                next_button_location = [452, 1220]
-            # Switch warrior or elder to med cat.
-            elif self.the_cat.status in ['warrior', 'elder'] and not self.the_cat.dead and not self.the_cat.outside:
-                self.toggle_med_button = UIImageButton(pygame.Rect((452, 1116), (344, 104)), "",
-                                                       starting_height=2, object_id="#switch_med_cat_button")
-                next_button_location = [452, 1220]
-            # Switch med cat, mediator, or leader to warrior
-            elif self.the_cat.status in ['medicine cat', 'leader', 'mediator'] and \
-                    not self.the_cat.dead and \
-                    not self.the_cat.outside and \
-                    self.the_cat.age != 'elder' and \
-                    not self.the_cat.retired:  # Retired is flipped true if that cat retired due to health conditions.
-                self.toggle_med_button = UIImageButton(pygame.Rect((452, 1116), (344, 72)), "",
-                                                       starting_height=2, object_id="#switch_warrior_button")
-                next_button_location = [452, 1188]
-            else:
-                self.toggle_med_button = None
-                next_button_location = [452, 1116]
-
-            if self.switch_mediator_button:
-                self.switch_mediator_button.kill()
-
-            if self.the_cat.status in ["warrior", "elder", "medicine cat", "apprentice", "medicine cat apprentice"]\
-                    and not self.the_cat.dead and not self.the_cat.outside:
-                self.switch_mediator_button = pygame_gui.elements.UIButton(pygame.Rect(tuple(next_button_location),
-                                                                                       (344, 72)),
-                                                                           "Switch to mediator",
-                                                                           starting_height=2)
-            else:
-                self.switch_mediator_button = None
+                self.manage_roles.enable()
 
 
         elif self.open_tab == "personal":
@@ -1766,17 +1641,21 @@ class ProfileScreen(Screens):
             if self.cis_trans_button:
                 self.cis_trans_button.kill()
             if self.the_cat.gender == "female" and self.the_cat.genderalign in ['male', 'female']:
-                self.cis_trans_button = UIImageButton(pygame.Rect((804, 972), (344, 104)), "",
-                                                      starting_height=2, object_id="#change_trans_male_button")
+                self.cis_trans_button = UIImageButton(scale(pygame.Rect((804, 972), (344, 104))), "",
+                                                      starting_height=2, object_id="#change_trans_male_button",
+                                                      manager=MANAGER)
             elif self.the_cat.gender == "male" and self.the_cat.genderalign in ['male', 'female']:
-                self.cis_trans_button = UIImageButton(pygame.Rect((804, 972), (344, 104)), "",
-                                                      starting_height=2, object_id="#change_trans_female_button")
+                self.cis_trans_button = UIImageButton(scale(pygame.Rect((804, 972), (344, 104))), "",
+                                                      starting_height=2, object_id="#change_trans_female_button",
+                                                      manager=MANAGER)
             elif self.the_cat.genderalign != "female" and self.the_cat.genderalign != "male":
-                self.cis_trans_button = UIImageButton(pygame.Rect((804, 972), (344, 104)), "",
-                                                      starting_height=2, object_id="#change_cis_button")
+                self.cis_trans_button = UIImageButton(scale(pygame.Rect((804, 972), (344, 104))), "",
+                                                      starting_height=2, object_id="#change_cis_button",
+                                                      manager=MANAGER)
             else:
-                self.cis_trans_button = UIImageButton(pygame.Rect((804, 972), (344, 104)), "",
-                                                      starting_height=2, object_id="#change_cis_button")
+                self.cis_trans_button = UIImageButton(scale(pygame.Rect((804, 972), (344, 104))), "",
+                                                      starting_height=2, object_id="#change_cis_button",
+                                                      manager=MANAGER)
                 self.cis_trans_button.disable()
 
             # Button to prevent kits:
@@ -1784,14 +1663,17 @@ class ProfileScreen(Screens):
                 self.toggle_kits.kill()
             if self.the_cat.age in ['young adult', 'adult', 'senior adult', 'elder'] and not self.the_cat.dead:
                 if self.the_cat.no_kits:
-                    self.toggle_kits = UIImageButton(pygame.Rect((804, 1148), (344, 72)), "",
-                                                     starting_height=2, object_id="#allow_kits_button")
+                    self.toggle_kits = UIImageButton(scale(pygame.Rect((804, 1148), (344, 72))), "",
+                                                     starting_height=2, object_id="#allow_kits_button",
+                                                     manager=MANAGER)
                 else:
-                    self.toggle_kits = UIImageButton(pygame.Rect((804, 1148), (344, 72)), "",
-                                                     starting_height=2, object_id="#prevent_kits_button")
+                    self.toggle_kits = UIImageButton(scale(pygame.Rect((804, 1148), (344, 72))), "",
+                                                     starting_height=2, object_id="#prevent_kits_button",
+                                                     manager=MANAGER)
             else:
-                self.toggle_kits = UIImageButton(pygame.Rect((804, 1148), (344, 72)), "",
-                                                 starting_height=2, object_id="#prevent_kits_button")
+                self.toggle_kits = UIImageButton(scale(pygame.Rect((804, 1148), (344, 72))), "",
+                                                 starting_height=2, object_id="#prevent_kits_button",
+                                                 manager=MANAGER)
                 self.toggle_kits.disable()
         # Dangerous Tab
         elif self.open_tab == 'dangerous':
@@ -1801,11 +1683,11 @@ class ProfileScreen(Screens):
                 self.exile_cat_button.kill()
             if not self.the_cat.dead:
                 self.exile_cat_button = UIImageButton(
-                    pygame.Rect((1156, 900), (344, 72)),
+                    scale(pygame.Rect((1156, 900), (344, 72))),
                     "",
                     object_id="#exile_cat_button",
                     tool_tip_text='This cannot be reversed.',
-                    starting_height=2)
+                    starting_height=2, manager=MANAGER)
                 if self.the_cat.exiled or self.the_cat.outside:
                     self.exile_cat_button.disable()
             elif self.the_cat.dead:
@@ -1813,24 +1695,24 @@ class ProfileScreen(Screens):
                 if self.the_cat.df:
                     object_id = "#guide_sc_button"
                 if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID:
-                    self.exile_cat_button = UIImageButton(pygame.Rect((1156, 900), (344, 92)),
+                    self.exile_cat_button = UIImageButton(scale(pygame.Rect((1156, 900), (344, 92))),
                                                           "",
                                                           object_id=object_id,
                                                           tool_tip_text='Changing where this cat resides will change '
                                                                         'where your Clan goes after death. ',
-                                                          starting_height=2)
+                                                          starting_height=2, manager=MANAGER)
                 else:
-                    self.exile_cat_button = UIImageButton(pygame.Rect((1156, 900), (344, 92)),
+                    self.exile_cat_button = UIImageButton(scale(pygame.Rect((1156, 900), (344, 92))),
                                                           "",
                                                           object_id=object_id,
-                                                          starting_height=2)
+                                                          starting_height=2, manager=MANAGER)
             else:
                 self.exile_cat_button = UIImageButton(
-                    pygame.Rect((1156, 900), (344, 72)),
+                    scale(pygame.Rect((1156, 900), (344, 72))),
                     "",
                     object_id="#exile_cat_button",
                     tool_tip_text='This cannot be reversed.',
-                    starting_height=2)
+                    starting_height=2, manager=MANAGER)
                 self.exile_cat_button.disable()
 
             if not self.the_cat.dead and not self.the_cat.exiled and not self.the_cat.outside:
@@ -1852,9 +1734,9 @@ class ProfileScreen(Screens):
                 self.sub_tab_2.enable()
                 self.history_text_box.kill()
                 self.history_text_box = UITextBoxTweaked(self.get_all_history_text(),
-                                                         pygame.Rect((200, 946), (1200, 298)),
+                                                         scale(pygame.Rect((200, 946), (1200, 298))),
                                                          object_id="#history_tab_text_box",
-                                                         line_spacing=1)
+                                                         line_spacing=1, manager=MANAGER)
             elif self.open_sub_tab == 'user notes':
                 self.sub_tab_1.enable()
                 self.sub_tab_2.disable()
@@ -1871,10 +1753,10 @@ class ProfileScreen(Screens):
                 if self.help_button:
                     self.help_button.kill()
 
-                self.help_button = UIImageButton(pygame.Rect(
-                    (104, 1168), (68, 68)),
+                self.help_button = UIImageButton(scale(pygame.Rect(
+                    (104, 1168), (68, 68))),
                     "",
-                    object_id="#help_button",
+                    object_id="#help_button", manager=MANAGER,
                     tool_tip_text="The notes section has limited html capabilities.<br>"
                                   "Use the following commands with < and > in place of the apostrophes.<br>"
                                   "-'br' to start a new line.<br>"
@@ -1889,30 +1771,30 @@ class ProfileScreen(Screens):
 
                 )
                 if self.editing_notes is True:
-                    self.save_text = UIImageButton(pygame.Rect(
-                        (104, 1028), (68, 68)),
+                    self.save_text = UIImageButton(scale(pygame.Rect(
+                        (104, 1028), (68, 68))),
                         "",
                         object_id="#unchecked_checkbox",
-                        tool_tip_text='lock and save text'
+                        tool_tip_text='lock and save text', manager=MANAGER
                     )
 
                     self.notes_entry = pygame_gui.elements.UITextEntryBox(
-                        pygame.Rect((200, 946), (1200, 298)),
+                        scale(pygame.Rect((200, 946), (1200, 298))),
                         initial_text=self.user_notes,
-                        object_id='#history_tab_entry_box'
+                        object_id='#history_tab_entry_box', manager=MANAGER
                     )
                 else:
-                    self.edit_text = UIImageButton(pygame.Rect(
-                        (104, 1028), (68, 68)),
+                    self.edit_text = UIImageButton(scale(pygame.Rect(
+                        (104, 1028), (68, 68))),
                         "",
                         object_id="#checked_checkbox_smalltooltip",
-                        tool_tip_text='edit text'
+                        tool_tip_text='edit text', manager=MANAGER
                     )
 
                     self.display_notes = UITextBoxTweaked(self.user_notes,
-                                                          pygame.Rect((200, 946), (1200, 298)),
+                                                          scale(pygame.Rect((200, 946), (1200, 298))),
                                                           object_id="#history_tab_text_box",
-                                                          line_spacing=1)
+                                                          line_spacing=1, manager=MANAGER)
 
         # Conditions Tab
         elif self.open_tab == 'conditions':
@@ -1932,13 +1814,7 @@ class ProfileScreen(Screens):
             self.choose_mate_button.kill()
             self.change_mentor_button.kill()
         elif self.open_tab == 'roles':
-            self.promote_leader_button.kill()
-            self.retire_button.kill()
-            self.toggle_deputy_button.kill()
-            if self.toggle_med_button:
-                self.toggle_med_button.kill()
-            if self.switch_mediator_button:
-                self.switch_mediator_button.kill()
+            self.manage_roles.kill()
         elif self.open_tab == 'personal':
             self.change_name_button.kill()
             self.specify_gender_button.kill()
@@ -2038,29 +1914,32 @@ class ChangeNameScreen(Screens):
 
         self.the_cat = Cat.all_cats.get(game.switches['cat'])
 
-        self.heading = pygame_gui.elements.UITextBox("-Change Name-", pygame.Rect((200, 260), (1200, 80)),
-                                                     object_id=get_text_box_theme())
+        self.heading = pygame_gui.elements.UITextBox("-Change Name-", scale(pygame.Rect((200, 260), (1200, 80))),
+                                                     object_id=get_text_box_theme(), manager=MANAGER)
 
-        self.name_changed = pygame_gui.elements.UITextBox("Name Changed!", pygame.Rect((200, 700), (1200, 80)),
+        self.name_changed = pygame_gui.elements.UITextBox("Name Changed!", scale(pygame.Rect((200, 700), (1200, 80))),
                                                           visible=False,
-                                                          object_id=get_text_box_theme())
+                                                          object_id=get_text_box_theme(), manager=MANAGER)
 
-        self.done_button = UIImageButton(pygame.Rect((730, 564), (154, 60)), "",
-                                         object_id=pygame_gui.core.ObjectID(object_id="#done_button"))
-        self.back_button = UIImageButton(pygame.Rect((50, 50), (210, 60)), "",
-                                         object_id=pygame_gui.core.ObjectID(object_id="#back_button"))
+        self.done_button = UIImageButton(scale(pygame.Rect((730, 564), (154, 60))), "",
+                                         object_id="#done_button", manager=MANAGER)
+        self.back_button = UIImageButton(scale(pygame.Rect((50, 50), (210, 60))), "",
+                                         object_id="#back_button", manager=MANAGER)
 
-        self.prefix_entry_box = pygame_gui.elements.UITextEntryLine(pygame.Rect((440, 400), (360, 60)),
-                                                                    placeholder_text=self.the_cat.name.prefix)
+        self.prefix_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((440, 400), (360, 60))),
+                                                                    placeholder_text=self.the_cat.name.prefix
+                                                                    , manager=MANAGER)
         if self.the_cat.name.status in ["apprentice", "leader", "medicine cat apprentice", "kitten"]:
-            self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(pygame.Rect((800, 400), (360, 60)),
+            self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((800, 400), (360, 60))),
                                                                         placeholder_text=
                                                                         self.the_cat.name.special_suffixes[
-                                                                            self.the_cat.name.status])
+                                                                            self.the_cat.name.status]
+                                                                        , manager=MANAGER)
             self.suffix_entry_box.disable()  # You can't change a special suffix
         else:
-            self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(pygame.Rect((800, 400), (360, 60)),
-                                                                        placeholder_text=self.the_cat.name.suffix)
+            self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((800, 400), (360, 60))),
+                                                                        placeholder_text=self.the_cat.name.suffix
+                                                                        , manager=MANAGER)
 
     def exit_screen(self):
         self.prefix_entry_box.kill()
@@ -2102,21 +1981,22 @@ class ChangeGenderScreen(Screens):
 
         self.header = pygame_gui.elements.UITextBox("-Change Gender-\nYou can set this to anything. "
                                                     "Gender alignment does not effect gameplay",
-                                                    pygame.Rect((200, 260), (1200, -1)),
-                                                    object_id=get_text_box_theme())
+                                                    scale(pygame.Rect((200, 260), (1200, -1))),
+                                                    object_id=get_text_box_theme(), manager=MANAGER)
         self.gender_changed = pygame_gui.elements.UITextBox("Gender Changed!",
-                                                            pygame.Rect((200, 480), (1200, 80)),
+                                                            scale(pygame.Rect((200, 480), (1200, 80))),
                                                             object_id=get_text_box_theme(),
-                                                            visible=False)
+                                                            visible=False, manager=MANAGER)
         self.the_cat = Cat.all_cats.get(game.switches['cat'])
 
-        self.done_button = UIImageButton(pygame.Rect((730, 564), (154, 70)), "",
-                                         object_id="#done_button")
-        self.back_button = UIImageButton(pygame.Rect((50, 50), (210, 60)), "",
-                                         object_id="#back_button")
+        self.done_button = UIImageButton(scale(pygame.Rect((730, 564), (154, 70))), "",
+                                         object_id="#done_button", manager=MANAGER)
+        self.back_button = UIImageButton(scale(pygame.Rect((50, 50), (210, 60))), "",
+                                         object_id="#back_button", manager=MANAGER)
 
-        self.gender_entry_box = pygame_gui.elements.UITextEntryLine(pygame.Rect((600, 400), (400, 48)),
-                                                                    placeholder_text=self.the_cat.genderalign)
+        self.gender_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((600, 400), (400, 48))),
+                                                                    placeholder_text=self.the_cat.genderalign
+                                                                    , manager=MANAGER)
 
     def exit_screen(self):
         self.header.kill()
@@ -2154,25 +2034,25 @@ class CeremonyScreen(Screens):
         self.the_cat = Cat.all_cats.get(game.switches['cat'])
         if (self.the_cat.status == 'leader' and not self.the_cat.dead):
             self.header = pygame_gui.elements.UITextBox(str(self.the_cat.name) + '\'s Leadership Ceremony',
-                                                        pygame.Rect((200, 180), (1200, -1)),
-                                                        object_id=get_text_box_theme())
+                                                        scale(pygame.Rect((200, 180), (1200, -1))),
+                                                        object_id=get_text_box_theme(), manager=MANAGER)
         else:
             self.header = pygame_gui.elements.UITextBox(str(self.the_cat.name) + ' has no ceremonies to view.',
-                                                        pygame.Rect((200, 180), (1200, -1)),
-                                                        object_id=get_text_box_theme())
+                                                        scale(pygame.Rect((200, 180), (1200, -1))),
+                                                        object_id=get_text_box_theme(), manager=MANAGER)
         if (self.the_cat.status == 'leader' and not self.the_cat.dead):
             self.life_text = self.handle_leadership_ceremony(self.the_cat)
         else:
             self.life_text = ""
-        self.scroll_container = pygame_gui.elements.UIScrollingContainer(pygame.Rect((100, 300), (1400, 1000)))
+        self.scroll_container = pygame_gui.elements.UIScrollingContainer(scale(pygame.Rect((100, 300), (1400, 1000))))
         self.text = pygame_gui.elements.UITextBox(self.life_text,
-                                                  pygame.Rect((0, 0), (1100, -1)),
+                                                  scale(pygame.Rect((0, 0), (1100, -1))),
                                                   object_id=get_text_box_theme("#allegiances_box"),
-                                                  container=self.scroll_container)
+                                                  container=self.scroll_container, manager=MANAGER)
         self.text.disable()
-        self.back_button = UIImageButton(pygame.Rect((50, 50), (210, 60)), "",
-                                         object_id="#back_button")
-        self.scroll_container.set_scrollable_area_dimensions((1360, self.text.rect[3]))
+        self.back_button = UIImageButton(scale(pygame.Rect((50, 50), (210, 60))), "",
+                                         object_id="#back_button", manager=MANAGER)
+        self.scroll_container.set_scrollable_area_dimensions((1360/1600 * screen_x, self.text.rect[3]))
 
     def exit_screen(self):
         self.header.kill()
@@ -2341,7 +2221,7 @@ class CeremonyScreen(Screens):
                 kit_text = kit + ' introduces themself and bounds up to the new leader, reaching up on their hind legs to give them a new life for ' + \
                         cat.virtues[2] + '.'
         if known[3]:
-            if cat.trait == "bloodthisty":
+            if cat.trait == "bloodthirsty":
                 warrior2_text = 'Another cat approaches. ' + warrior2 + ' steps forward to give ' + dep_name + ' a life for ' + \
                             cat.virtues[3] + '. ' + dep_name + ' yowls in pain as the life rushes into them.'
             else:
@@ -2457,3 +2337,529 @@ class CeremonyScreen(Screens):
             if event.ui_element == self.back_button:
                 self.change_screen('profile screen')
         return
+
+class RoleScreen(Screens):
+    the_cat = None
+    selected_cat_elements = {}
+    buttons = {}
+    next_cat = None
+    previous_cat = None
+
+    def handle_event(self, event):
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            if event.ui_element == self.back_button:
+                self.change_screen("profile screen")
+            elif event.ui_element == self.next_cat_button:
+                game.switches["cat"] = self.next_cat
+                self.update_selected_cat()
+            elif event.ui_element == self.previous_cat_button:
+                game.switches["cat"] = self.previous_cat
+                self.update_selected_cat()
+            elif event.ui_element == self.promote_leader:
+                game.clan.new_leader(self.the_cat)
+                if game.sort_type == "rank":
+                    Cat.sort_cats()
+                self.update_selected_cat()
+            elif event.ui_element == self.promote_deputy:
+                game.clan.deputy = self.the_cat
+                self.the_cat.status_change("deputy", resort=True)
+                self.update_selected_cat()
+            elif event.ui_element == self.switch_warrior:
+                self.the_cat.status_change("warrior", resort=True)
+                self.update_selected_cat()
+            elif event.ui_element == self.switch_med_cat:
+                self.the_cat.status_change("medicine cat", resort=True)
+                self.update_selected_cat()
+            elif event.ui_element == self.retire:
+                self.the_cat.status_change("elder", resort=True)
+                self.update_selected_cat()
+            elif event.ui_element == self.switch_mediator:
+                self.the_cat.status_change("mediator", resort=True)
+                self.update_selected_cat()
+            elif event.ui_element == self.switch_warrior_app:
+                self.the_cat.status_change("apprentice", resort=True)
+                self.update_selected_cat()
+            elif event.ui_element == self.switch_med_app:
+                self.the_cat.status_change("medicine cat apprentice", resort=True)
+                self.update_selected_cat()
+            elif event.ui_element == self.switch_mediator_app:
+                self.the_cat.status_change("mediator apprentice", resort=True)
+                self.update_selected_cat()
+
+    def screen_switches(self):
+
+        self.next_cat_button = UIImageButton(scale(pygame.Rect((1244, 50), (306, 60))), "", object_id="#next_cat_button"
+                                             , manager=MANAGER)
+        self.previous_cat_button = UIImageButton(scale(pygame.Rect((50, 50), (306, 60))), "",
+                                                 object_id="#previous_cat_button"
+                                                 , manager=MANAGER)
+        self.back_button = UIImageButton(scale(pygame.Rect((50, 120), (210, 60))), "", object_id="#back_button"
+                                         , manager=MANAGER)
+
+        # Create the buttons
+        self.bar = pygame_gui.elements.UIImage(scale(pygame.Rect((96, 700), (1408, 20))),
+                                               pygame.transform.scale(
+                                                   image_cache.load_image("resources/images/bar.png"),
+                                                   (1408/1600 * screen_x, 20/1400 * screen_y)
+                                               ), manager=MANAGER)
+
+        self.blurb_background = pygame_gui.elements.UIImage(scale(pygame.Rect
+                                                          ((100, 390), (1400, 300))),
+                                                          pygame.transform.scale(
+                                                              pygame.image.load(
+                                                                  "resources/images/mediation_selection_bg.png").convert_alpha(),
+                                                              (1400, 300))
+                                                          )
+
+        #LEADERSHIP
+        self.promote_leader = UIImageButton(scale(pygame.Rect((96, 720), (344, 72))), "",
+                                            object_id="#promote_leader_button",
+                                            manager=MANAGER)
+        self.promote_deputy = UIImageButton(scale(pygame.Rect((96, 792), (344, 72))), "",
+                                            object_id="#promote_deputy_button",
+                                            manager=MANAGER)
+
+        # ADULT CAT ROLES
+        self.switch_warrior = UIImageButton(scale(pygame.Rect((451, 720), (344, 72))), "",
+                                            object_id="#switch_warrior_button",
+                                            manager=MANAGER)
+        self.retire = UIImageButton(scale(pygame.Rect((451, 792), (334, 72))), "",
+                                    object_id="#retire_button",
+                                    tool_tip_text="If a cat is retired, you will be "
+                                                  "unable to switch them to warrior status. ",
+                                    manager=MANAGER)
+        self.switch_med_cat = UIImageButton(scale(pygame.Rect((805, 720), (344, 104))), "",
+                                            object_id="#switch_med_cat_button",
+                                            manager=MANAGER)
+        self.switch_mediator = UIImageButton(scale(pygame.Rect((805, 824), (344, 72))), "",
+                                             object_id="#switch_mediator_button",
+                                             manager=MANAGER)
+
+
+        #In-TRAINING ROLES:
+        self.switch_warrior_app = UIImageButton(scale(pygame.Rect((1159, 720), (344, 104))), "",
+                                                object_id="#switch_warrior_app_button",
+                                                manager=MANAGER)
+        self.switch_med_app = UIImageButton(scale(pygame.Rect((1159, 824), (344, 104))), "",
+                                            object_id="#switch_med_app_button",
+                                            manager=MANAGER)
+        self.switch_mediator_app = UIImageButton(scale(pygame.Rect((1159, 928), (344, 104))), "",
+                                                 object_id="#switch_mediator_app_button",
+                                                 manager=MANAGER)
+
+        self.update_selected_cat()
+
+    def update_selected_cat(self):
+        for ele in self.selected_cat_elements:
+            self.selected_cat_elements[ele].kill()
+        self.selected_cat_elements = {}
+
+        self.the_cat = Cat.fetch_cat(game.switches['cat'])
+
+        self.selected_cat_elements["cat_image"] = pygame_gui.elements.UIImage(
+            scale(pygame.Rect((490, 80), (300, 300))),
+            pygame.transform.scale(
+                self.the_cat.big_sprite, (300, 300)),
+            manager=MANAGER
+        )
+
+        name = str(self.the_cat.name)
+        if len(name) > 17:
+            name = name[:14] + "..."
+        self.selected_cat_elements["cat_name"] = pygame_gui.elements.UILabel(scale(pygame.Rect((790, 140), (320, -1))),
+                                                                             name,
+                                                                             object_id=get_text_box_theme())
+
+        text = f"<b>{self.the_cat.status}</b>\n{self.the_cat.trait}\n"
+
+        text += f"{self.the_cat.moons} "
+
+        if self.the_cat.moons == 1:
+            text += "moon  |  "
+        else:
+            text += "moons  |  "
+
+        text += self.the_cat.genderalign + "\n"
+
+        if self.the_cat.mentor:
+            text += "mentor: "
+            mentor = Cat.fetch_cat(self.the_cat.mentor)
+            if mentor:
+                text += str(mentor.name)
+
+        if self.the_cat.apprentice:
+            if len(self.the_cat.apprentice) > 1:
+                text += "apprentices: "
+            else:
+                text += "apprentice: "
+
+            text += ", ".join([str(Cat.fetch_cat(x).name) for x in
+                               self.the_cat.apprentice if Cat.fetch_cat(x)])
+
+        self.selected_cat_elements["cat_details"] = UITextBoxTweaked(text, scale(pygame.Rect((790, 200), (320, 188))),
+                                                                     object_id=get_text_box_theme("#cat_patrol_info_box"),
+                                                                     manager=MANAGER, line_spacing=0.95)
+
+        self.selected_cat_elements["role_blurb"] = pygame_gui.elements.UITextBox(self.get_role_blurb(),
+                                                                                 scale(pygame.Rect((340, 400),(1120, 270))),
+                                                                                 object_id="#role_blurb",
+                                                                                 manager=MANAGER)
+
+        if self.the_cat.status == "leader":
+            icon_path = "resources/images/leader_icon.png"
+        elif self.the_cat.status == "deputy":
+            icon_path = "resources/images/deputy_icon.png"
+        elif self.the_cat.status == "medicine cat":
+            icon_path = "resources/images/medic_icon.png"
+        elif self.the_cat.status == "medicine cat apprentice":
+            icon_path = "resources/images/medic_app_icon.png"
+        else:
+            icon_path = "resources/images/buttonrank.png"
+
+        self.selected_cat_elements["role_icon"] = pygame_gui.elements.UIImage(scale(pygame.Rect((165, 462), (156, 156))),
+                                                                              pygame.transform.scale(
+                                                                                  image_cache.load_image(icon_path),
+                                                                                  (156/1600 * screen_x, 156/1400 * screen_y)
+                                                                              ))
+
+        self.determine_previous_and_next_cat()
+        self.update_disabled_buttons()
+
+    def update_disabled_buttons(self):
+        #Previous and next cat button
+        if self.next_cat == 0:
+            self.next_cat_button.disable()
+        else:
+            self.next_cat_button.enable()
+
+        if self.previous_cat == 0:
+            self.previous_cat_button.disable()
+        else:
+            self.previous_cat_button.enable()
+
+
+        if game.clan.leader:
+            leader_invalid = game.clan.leader.dead or game.clan.leader.outside
+        else:
+            leader_invalid = True
+
+        if game.clan.deputy:
+            deputy_invalid = game.clan.deputy.dead or game.clan.deputy.outside
+        else:
+            deputy_invalid = True
+
+        if self.the_cat.status == "apprentice":
+            # LEADERSHIP
+            self.promote_leader.disable()
+            self.promote_deputy.disable()
+
+            # ADULT CAT ROLES
+            self.switch_warrior.disable()
+            self.switch_med_cat.disable()
+            self.switch_mediator.disable()
+            self.retire.disable()
+
+            # In-TRAINING ROLES:
+            self.switch_med_app.enable()
+            self.switch_warrior_app.disable()
+            self.switch_mediator_app.enable()
+        elif self.the_cat.status == "warrior":
+            # LEADERSHIP
+            if leader_invalid:
+                self.promote_leader.enable()
+            else:
+                self.promote_leader.disable()
+
+            if deputy_invalid:
+                self.promote_deputy.enable()
+            else:
+                self.promote_deputy.disable()
+
+            # ADULT CAT ROLES
+            self.switch_warrior.disable()
+            self.switch_med_cat.enable()
+            self.switch_mediator.enable()
+            self.retire.enable()
+
+            # In-TRAINING ROLES:
+            self.switch_med_app.disable()
+            self.switch_warrior_app.disable()
+            self.switch_mediator_app.disable()
+        elif self.the_cat.status == "deputy":
+            if leader_invalid:
+                self.promote_leader.enable()
+            else:
+                self.promote_leader.disable()
+
+            self.promote_deputy.disable()
+
+            # ADULT CAT ROLES
+            self.switch_warrior.enable()
+            self.switch_med_cat.disable()
+            self.switch_mediator.disable()
+            self.retire.enable()
+
+            # In-TRAINING ROLES:
+            self.switch_med_app.disable()
+            self.switch_warrior_app.disable()
+            self.switch_mediator_app.disable()
+        elif self.the_cat.status == "medicine cat":
+            self.promote_leader.disable()
+            self.promote_deputy.disable()
+
+            # ADULT CAT ROLES
+            # Keep cats that have retired due to health from being switched to warrior
+            if self.the_cat.retired or self.the_cat.age == "elder":
+                self.switch_warrior.disable()
+            else:
+                self.switch_warrior.enable()
+            self.switch_med_cat.disable()
+            self.switch_mediator.enable()
+            self.retire.enable()
+
+            # In-TRAINING ROLES:
+            self.switch_med_app.disable()
+            self.switch_warrior_app.disable()
+            self.switch_mediator_app.disable()
+        elif self.the_cat.status == "mediator":
+            if leader_invalid:
+                self.promote_leader.enable()
+            else:
+                self.promote_leader.disable()
+
+            if deputy_invalid:
+                self.promote_deputy.enable()
+            else:
+                self.promote_deputy.disable()
+
+            # ADULT CAT ROLES
+            # Keep cats that have retired due to health from being switched to warrior
+            if self.the_cat.retired or self.the_cat.age == "elder":
+                self.switch_warrior.disable()
+            else:
+                self.switch_warrior.enable()
+            self.switch_med_cat.enable()
+            self.switch_mediator.disable()
+            self.retire.enable()
+
+            # In-TRAINING ROLES:
+            self.switch_med_app.disable()
+            self.switch_warrior_app.disable()
+            self.switch_mediator_app.disable()
+        elif self.the_cat.status == "elder":
+            self.promote_leader.disable()
+            self.promote_deputy.disable()
+
+            # ADULT CAT ROLES
+            self.switch_warrior.disable()
+            self.switch_med_cat.enable()
+            self.switch_mediator.enable()
+            self.retire.disable()
+
+            # In-TRAINING ROLES:
+            self.switch_med_app.disable()
+            self.switch_warrior_app.disable()
+            self.switch_mediator_app.disable()
+        elif self.the_cat.status == "medicine cat apprentice":
+            self.promote_leader.disable()
+            self.promote_deputy.disable()
+
+            # ADULT CAT ROLES
+            self.switch_warrior.disable()
+            self.switch_med_cat.disable()
+            self.switch_mediator.disable()
+            self.retire.disable()
+
+            # In-TRAINING ROLES:
+            self.switch_med_app.disable()
+            self.switch_warrior_app.enable()
+            self.switch_mediator_app.enable()
+        elif self.the_cat.status == "mediator apprentice":
+            self.promote_leader.disable()
+            self.promote_deputy.disable()
+
+            # ADULT CAT ROLES
+            self.switch_warrior.disable()
+            self.switch_med_cat.disable()
+            self.switch_mediator.disable()
+            self.retire.disable()
+
+            # In-TRAINING ROLES:
+            self.switch_med_app.enable()
+            self.switch_warrior_app.enable()
+            self.switch_mediator_app.disable()
+        elif self.the_cat.status == "leader":
+            self.promote_leader.disable()
+            self.promote_deputy.disable()
+
+            # ADULT CAT ROLES
+            if self.the_cat.age != "elder":
+                self.switch_warrior.enable()
+            else:
+                self.switch_warrior.disable()
+            self.switch_med_cat.disable()
+            self.switch_mediator.disable()
+            self.retire.enable()
+
+            # In-TRAINING ROLES:
+            self.switch_med_app.disable()
+            self.switch_warrior_app.disable()
+            self.switch_mediator_app.disable()
+        else:
+            self.promote_leader.disable()
+            self.promote_deputy.disable()
+
+            # ADULT CAT ROLES
+            self.switch_warrior.disable()
+            self.switch_med_cat.disable()
+            self.switch_mediator.disable()
+            self.retire.disable()
+
+            # In-TRAINING ROLES:
+            self.switch_med_app.disable()
+            self.switch_warrior_app.disable()
+            self.switch_mediator_app.disable()
+
+    def get_role_blurb(self):
+        if self.the_cat.status == "warrior":
+            output = f"{self.the_cat.name} is a <b>warrior</b>. Warriors are adult cats who feed and protect their " \
+                     f"Clan. They are trained to hunt and fight in addition to the ways of the warrior code. " \
+                     f"Warriors are essential to the survival of a Clan, and usually make up the bulk of it's members. "
+        elif self.the_cat.status == "leader":
+            output = f"{self.the_cat.name} is the <b>leader</b> of {game.clan.name}Clan. The guardianship of all " \
+                     f"Clan cats has been entrusted to them by Starclan. The leader is the highest " \
+                     f"authority in the Clan. {self.the_cat.name} leads Clan meetings, determines mentors for " \
+                     f"new apprentices, and names new warriors. To help them protect the clan, " \
+                     f"Starclan has given them nine lives. They typically take the suffix \"star\""
+        elif self.the_cat.status == "deputy":
+            output = f"{self.the_cat.name} is {game.clan.name}Clan's <b>deputy</b>. " \
+                     f"The deputy is the second in command, " \
+                     f"just below the leader. They advise the leader and organize daily patrols, " \
+                     f"alongside normal warrior duties. Typically, a deputy is personally appointed by the current " \
+                     f"leader. As dictated by the Warrior Code, all deputies must train at least one apprentice " \
+                     f"before appointment.  " \
+                     f"The deputy succeeds the leader if they die or retire. "
+        elif self.the_cat.status == "medicine cat":
+            output = f"{self.the_cat.name} is a <b>medicine cat</b>. Medicine cats are the healers of the clan. " \
+                     f"They treat " \
+                     f"injuries and illnesses with herbal remedies. Unlike warriors, medicine cats are not expected " \
+                     f"to hunt and fight for the clan. In addition to their healing duties, medicine cats also have " \
+                     f"a special connection to Starclan. Every half-moon, they travel to their clan's holy place " \
+                     f"to commune with Starclan. "
+        elif self.the_cat.status == "mediator":
+            output = f"{self.the_cat.name} is a <b>mediator</b>. Mediators are not typically required " \
+                     f"to hunt or fight for " \
+                     f"the Clan. Rather, mediators are charged with handling disagreements between " \
+                     f"Clanmates and disputes between Clans. Some mediators train as apprentices to serve their Clan, " \
+                     f"while others may choose to become mediators later in life. "
+        elif self.the_cat.status == "elder":
+            output = f"{self.the_cat.name} is an <b>elder</b>. They have spent many moons serving their Clan, " \
+                     f"and have earned " \
+                     f"many moons of rest. Elders are essential to passing down the oral tradition of the Clan. " \
+                     f"Sometimes, cats may retire due to disability or injury. Whatever the " \
+                     f"circumstance of their retirement, elders are held in high esteem in the Clan, and always eat " \
+                     f"before Warriors and Medicine Cats. "
+        elif self.the_cat.status == "apprentice":
+            output = f"{self.the_cat.name} is an <b>apprentice</b>, in training to become a Warrior. " \
+                     f"Kits can be made Warrior apprentices at six moons of age, where they will learn how " \
+                     f"to hunt and fight for their clan. Typically, the training of an apprentice is entrusted " \
+                     f"to an single warrior - their mentor. To build character, apprentices are often assigned " \
+                     f"the unpleasant and grunt tasks of clan life. Apprentices take the suffix \"paw\", " \
+                     f"to represent the path their paws take towards adulthood. "
+        elif self.the_cat.status == "medicine cat apprentice":
+            output = f"{self.the_cat.name} is a <b>medicine cat apprentice</b>, training to become a full medicine cat. " \
+                     f"Kits can be made medicine cat apprentices at six moons of age, where they will learn how to " \
+                     f"heal their Clanmates and  commune with Starclan. Medicine cat apprentices are typically chosen " \
+                     f"for their interest in healing and/or their connecting to Starclan. Apprentices take the suffix " \
+                     f"-paw, to represent the path their paws take towards adulthood."
+        elif self.the_cat.status == "mediator apprentice":
+            output = f"{self.the_cat.name} is a <b>mediator apprentice</b>, training to become a full mediator. " \
+                     f"Mediators are in charge of handling disagreements both within the clan and between clans. " \
+                     f"Mediator apprentices are often chosen for their quick thinking and steady personality. " \
+                     f"Apprentices take the suffix \"paw\", " \
+                     f"to represent the path their paws take towards adulthood. "
+        elif self.the_cat.status == "kitten":
+            output = f"{self.the_cat.name} is a <b>kitten</b>. All cats below the age of six moons are " \
+                     f"considered kits. Kits " \
+                     f"are prohibited from leaving camp in order to protect them from the dangers of the wild. " \
+                     f"Although they don't have any official duties in the Clan, they are excepted to learn the " \
+                     f"legends and traditions of their Clan. They are protected by every cat in the clan and always " \
+                     f"eat first. Kit take the suffix \"kit\""
+        else:
+            output = f"{self.the_cat.name} has an unknown rank. I guess they want to make their own way in life! "
+
+        return output
+
+    def determine_previous_and_next_cat(self):
+        """'Determines where the next and previous buttons point too."""
+
+        is_instructor = False
+        if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID:
+            is_instructor = True
+
+        previous_cat = 0
+        next_cat = 0
+        if self.the_cat.dead and not is_instructor and self.the_cat.df == game.clan.instructor.df and \
+                not (self.the_cat.outside or self.the_cat.exiled):
+            previous_cat = game.clan.instructor.ID
+
+        if is_instructor:
+            next_cat = 1
+
+        for check_cat in Cat.all_cats_list:
+            if check_cat.ID == self.the_cat.ID:
+                next_cat = 1
+            else:
+                if next_cat == 0 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead \
+                        and check_cat.ID != game.clan.instructor.ID and check_cat.outside == self.the_cat.outside and \
+                        check_cat.df == self.the_cat.df and not check_cat.faded:
+                    previous_cat = check_cat.ID
+
+                elif next_cat == 1 and check_cat != self.the_cat.ID and check_cat.dead == self.the_cat.dead \
+                        and check_cat.ID != game.clan.instructor.ID and check_cat.outside == self.the_cat.outside and \
+                        check_cat.df == self.the_cat.df and not check_cat.faded:
+                    next_cat = check_cat.ID
+
+                elif int(next_cat) > 1:
+                    break
+
+        if next_cat == 1:
+            next_cat = 0
+
+        self.next_cat = next_cat
+        self.previous_cat = previous_cat
+
+    def exit_screen(self):
+        self.back_button.kill()
+        del self.back_button
+        self.next_cat_button.kill()
+        del self.next_cat_button
+        self.previous_cat_button.kill()
+        del self.previous_cat_button
+        self.bar.kill()
+        del self.bar
+        self.promote_leader.kill()
+        del self.promote_leader
+        self.promote_deputy.kill()
+        del self.promote_deputy
+        self.switch_warrior.kill()
+        del self.switch_warrior
+        self.switch_med_cat.kill()
+        del self.switch_med_cat
+        self.switch_mediator.kill()
+        del self.switch_mediator
+        self.retire.kill()
+        del self.retire
+        self.switch_med_app.kill()
+        del self.switch_med_app
+        self.switch_warrior_app.kill()
+        del self.switch_warrior_app
+        self.switch_mediator_app.kill()
+        del self.switch_mediator_app
+        self.blurb_background.kill()
+        del self.blurb_background
+
+        for ele in self.selected_cat_elements:
+            self.selected_cat_elements[ele].kill()
+        self.selected_cat_elements = {}
+

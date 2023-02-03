@@ -1,0 +1,32 @@
+{
+    "defaults": {
+        "colours": {
+            "normal_bg": "#655934",
+            "hovered_bg": "#1E1809",
+            "disabled_bg": "#5C5850",
+            "selected_bg": "#655934",
+            "active_bg": "#655934",
+            "normal_text": "#EFE5CE",
+            "hovered_text": "#EFE5CE",
+            "selected_text": "#EFE5CE",
+            "disabled_text": "#EFE5CE",
+            "link_text": "#B68727",
+            "link_hover": "#EFE5CE",
+            "link_selected": "#3A91A6",
+            "text_shadow": "#777777",
+            "normal_border": "#776045",
+            "hovered_border": "#291B0F",
+            "disabled_border": "#706B64",
+            "selected_border": "#776045",
+            "active_border": "#776045"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "15"
+        },
+        "misc": {
+            "border_width": "12",
+            "shadow_width": "0"
+        }
+    }
+}

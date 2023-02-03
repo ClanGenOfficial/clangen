@@ -12,7 +12,7 @@
             "app1 listens carefully as p_l explains where to find the best prey within the rich waters of the pools.",
             "app1 picks up the instruction quicky and is soon hopping from pool to pool, picking out the tasty morsels within.",
             null,
-            "By the end of the patrol s_c is easily fishing freshkill out of the pools, not an ounce of hesitation in their movements."
+            "By the end of the patrol s_c is easily fishing fresh-kill out of the pools, not an ounce of hesitation in their movements."
     ],
     "fail_text": [
             "app1 tries to remember the differences and nuances between the creatures within the pools, but fails to retain any of the information.",
@@ -421,7 +421,7 @@
     "success_text": [
             "The cats go out together in the late of the day, as the gulls fly home to roost. r_c goes through their tricks, showing p_l how they use the direction of the sun to avoid casting a shadow on pools as they fish, as p_l watches with eyes that r_c notices are a bit too admiring for what's just a little trick. They smirk, showing off a little.",
             "It's a long but satisfying training session, with both cats having an in depth chance to test themselves and work on their skills. It ends with them both sitting on a little outlook, watching the sun go down and catching the last of its rays on their pelts. r_c sees p_l watching them instead of the sun, and smiles.",
-            "s_c is a fantastic hunter, and p_l isn't shy about telling them so. They blush, but work through it, showing p_l how to use the scraps of rotten freshkill from camp to attract crabs and fish in the rockpools out of their hidey-holes.",
+            "s_c is a fantastic hunter, and p_l isn't shy about telling them so. They blush, but work through it, showing p_l how to use the scraps of old crowfood from the fresh-kill pile to attract crabs and fish in the rockpools out of their hidey-holes.",
             "p_l marvels at the opportunity to have s_c's time to themselves. s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so."
     ],
     "fail_text": [

@@ -39,7 +39,7 @@
             "noticed that (cat) is falling behind in training and offered to help them catch up.",
             "is excitedly trying to guess what their and (cat)'s warrior names will be.",
             "playfully teases (cat) for missing a catch.",
-            "saved a piece of freshkill that they know is (cat)'s favorite.",
+            "saved a piece of fresh-kill that they know is (cat)'s favorite.",
             "could recognize (cat) just by the sound of their paw steps.",
             "convinces (cat) to help them pull a prank on a Clanmate.",
             "won't stop copying everything (cat) does.",
@@ -50,13 +50,15 @@
             "chats with (cat) about their day.",
             "appreciates (cat) telling them that they had a feather stuck to their face.",
             "greets (cat) as they're exiting the warriors' den.",
-            "chats quietly with (cat) while they're both on camp guard duty."
+            "chats quietly with (cat) while they're both on camp guard duty.",
+            "quickly apologizes after bumping into (cat). They have a small laugh about it.",
+            "mews congratulations to (cat) for a job well done."
         ],
         "dislike": [
             "divides (cat) into extra patrols.",
             "chiding (cat) for being so reckless.",
             "told (cat) to stop padding after them like a lost kit.",
-            "saw (cat) take the last piece of prey from the freshkill pile.",
+            "saw (cat) take the last piece of prey from the fresh-kill pile.",
             "thinks (cat) has a strange sense of humor.",
             "has a disagreement with (cat) over who is the better hunter.",
             "is complaining that (cat) never does anything helpful.",
@@ -65,7 +67,9 @@
             "is boasting about their accomplishments to (cat), but (cat) isn't impressed.",
             "bickered about something trivial with (cat).",
             "thinks that (cat) has been behaving stuck up and rude.",
-            "is dissatisfied that (cat) can't seem to get rid of their chronic pain."
+            "is dissatisfied that (cat) can't seem to get rid of their chronic pain.",
+            "had a disagreement with (cat) about something or other.",
+            "bristles after being scolded by (cat)."
         ],
         "admiration": [
             "is watching (cat) perform an almost-decent hunting crouch.",
@@ -94,7 +98,7 @@
             "is playfully making fun of their mentors with (cat).",
             "settles down next to (cat) to listen to their stories.",
             "playfully teases (cat) for missing a catch.",
-            "settles near (cat) to eat their freshkill."
+            "settles near (cat) to eat their fresh-kill."
         ],
         "jealousy": [
             "thinks that the prey (cat) is biting into on the other side of camp looks delicious.",
@@ -152,14 +156,16 @@
             "settles down next to (cat) to listen to their stories.",
             "playfully teases (cat) for missing a catch.",
             "is thinking about how much (cat) reminds them of their own apprentice days.",
-            "saved a piece of freshkill that they know is (cat)'s favorite.",
+            "saved a piece of fresh-kill that they know is (cat)'s favorite.",
             "convinces (cat) to help them pull a prank on a Clanmate.",
             "helps (cat) pick burrs out of their fur.",
             "is helping (cat) pick burrs out of their fur after the last patrol.",
             "listens to (cat) talk about what life was like when they were young.",
             "asks (cat) if they're really going to be the leader someday.",
             "greets (cat) as they're exiting the warriors' den.",
-            "chats quietly with (cat) while they're both on camp guard duty."
+            "chats quietly with (cat) while they're both on camp guard duty.",
+            "quickly apologizes after bumping into (cat). They have a small laugh about it.",
+            "mews congratulations to (cat) for a job well done."
         ],
         "dislike": [
             "divides (cat) into extra patrols.",
@@ -172,7 +178,8 @@
             "prays that they aren't on patrol with (cat) tomorrow.",
             "bickered about something trivial with (cat).",
             "is dissatisfied that (cat) can't seem to get rid of their chronic pain.",
-            "said something that rubbed (cat) the wrong way."
+            "said something that rubbed (cat) the wrong way.",
+            "had a disagreement with (cat) about something or other."
 
         ],
         "admiration": [
@@ -207,7 +214,7 @@
             "tells (cat) that they'll be an amazing medicine cat someday.",
             "noticed that (cat) is falling behind in training and offered to help them catch up.",
             "is playfully making fun of their mentors with (cat).",
-            "saved a piece of freshkill that they know is (cat)'s favorite."
+            "saved a piece of fresh-kill that they know is (cat)'s favorite."
         ]
     }
 }
