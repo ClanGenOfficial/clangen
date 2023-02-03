@@ -219,7 +219,9 @@ class Patrol():
         possible_patrols.extend(self.generate_patrol_events(MEDCAT))
 
         if game_setting_disaster:
-            possible_patrols.extend(self.generate_patrol_events(DISASTER))
+            dis_chance = int(random.getrandbits(3)) # disaster patrol chance
+            if dis_chance == 1:
+                possible_patrols.extend(self.generate_patrol_events(DISASTER))
 
         # new cat patrols
         if chance == 1:
