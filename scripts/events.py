@@ -461,7 +461,7 @@ class Events():
 
             age_to_fade = 302
             # Handle opacity
-            cat.opacity = int(100 * (1 - (cat.dead_for / age_to_fade) ** 5) + 30)
+            cat.opacity = int(80 * (1 - (cat.dead_for / age_to_fade) ** 5) + 20)
 
             # Deal with fading the cat if they are old enough.
             if cat.dead_for > age_to_fade:
