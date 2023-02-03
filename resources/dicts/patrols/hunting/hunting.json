@@ -62,7 +62,8 @@
             "hunting",
             "medium_prey0",
             "medium_prey1",
-            "large_prey2"
+            "large_prey2",
+            "no_fail_prey"
         ],
         "intro_text": "Your patrol comes across a large rat.",
         "success_text": [

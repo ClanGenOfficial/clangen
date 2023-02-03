@@ -37,7 +37,8 @@
             "medium_prey0",
             "medium_prey1",
             "large_prey2",
-            "large_prey3"
+            "large_prey3",
+            "no_fail_prey"
         ],
         "intro_text": "The patrol looks around for something to disguise their scent while hunting.",
         "decline_text": "On second thought, maybe not.",
@@ -74,7 +75,8 @@
             "medium_prey0",
             "medium_prey1",
             "large_prey2",
-            "large_prey3"
+            "large_prey3",
+            "no_fail_prey"
         ],
         "intro_text": "r_c looks around for something to disguise their scent while hunting.",
         "decline_text": "On second thought, maybe not.",
@@ -120,7 +122,8 @@
             "medium_prey0",
             "medium_prey1",
             "large_prey2",
-            "large_prey3"
+            "large_prey3",
+            "no_fail_prey"
         ],
         "intro_text": "r_c's mentor assesses them by sending them on a solo hunt.",
         "decline_text": "r_c asks their mentor to do the assessment some other time.",
@@ -178,7 +181,8 @@
             "medium_prey0",
             "medium_prey1",
             "large_prey2",
-            "large_prey3"
+            "large_prey3",
+            "no_fail_prey"
         ],
         "intro_text": "r_c heads out onto the mountains alone, wanting to sink their teeth into some prey and have some time to themselves.",
         "decline_text": "r_c turns back to camp, deciding that a group hunt would be more effective.",
@@ -234,7 +238,8 @@
             "medium_prey0",
             "medium_prey1",
             "large_prey2",
-            "large_prey3"
+            "large_prey3",
+            "no_fail_prey"
         ],
         "intro_text": "r_c heads out onto the mountains alone, wanting to sink their teeth into some prey and have some time to themselves.",
         "decline_text": "r_c turns back to camp, deciding that a group hunt would be more effective.",
@@ -293,7 +298,8 @@
             "medium_prey0",
             "medium_prey1",
             "large_prey2",
-            "large_prey3"
+            "large_prey3",
+            "no_fail_prey"
         ],
         "intro_text": "r_c heads out onto the mountains alone, wanting to sink their teeth into some prey and have some time to themselves.",
         "decline_text": "r_c turns back to camp, deciding that a group hunt would be more effective.",
@@ -347,9 +353,9 @@
             "hunting",
             "big_bite_injury",
             "scar",
-			"medium_prey0",
-			"medium_prey1",
-			"large_prey3"
+            "medium_prey0",
+            "medium_prey1",
+            "large_prey3"
         ],
         "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from just beyond a rock fall.",
         "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
@@ -393,9 +399,9 @@
             "big_bite_injury",
             "scar",
             "death",
-			"medium_prey0",
-			"medium_prey1",
-			"large_prey3"
+            "medium_prey0",
+            "medium_prey1",
+            "large_prey3"
         ],
         "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from just beyond a rock fall.",
         "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
@@ -1703,8 +1709,18 @@
         "biome": "mountainous",
         "season": "leaf-bare",
         "tags": [
-            "hunting", "comfort", "trust", "patrol_to_p_l", "patrol_to_r_c", "cold_injury", "scar", "small_prey0", "medium_prey1", "medium_prey2",
-            "large_prey3"
+            "hunting",
+            "comfort",
+            "trust",
+            "patrol_to_p_l",
+            "patrol_to_r_c",
+            "cold_injury",
+            "scar",
+            "small_prey0",
+            "medium_prey1",
+            "medium_prey2",
+            "large_prey3",
+            "no_fail_prey"
         ],
         "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something, anything, for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the snow dies down.",
@@ -1760,7 +1776,8 @@
             "scar",
             "small_prey0",
             "medium_prey1",
-            "medium_prey2"
+            "medium_prey2",
+            "no_fail_prey"
         ],
         "intro_text": "It starts snowing soon after r_c sets out, trying to bring back something, anything, for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the snow dies down.",
@@ -1874,7 +1891,8 @@
             "small_prey0",
             "medium_prey1",
             "medium_prey2",
-            "large_prey3"
+            "large_prey3",
+            "no_fail_prey"
         ],
         "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the snow dies down.",
@@ -1928,7 +1946,8 @@
             "scar",
             "small_prey0",
             "small_prey1",
-            "medium_prey2"
+            "medium_prey2",
+            "no_fail_prey"
         ],
         "intro_text": "It starts snowing soon after r_c sets out, trying to bring back something for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the snow dies down.",
@@ -2039,7 +2058,8 @@
             "small_prey0",
             "medium_prey1",
             "medium_prey2",
-            "large_prey3"
+            "large_prey3",
+            "no_fail_prey"
         ],
         "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the snow dies down.",
@@ -2093,7 +2113,8 @@
             "scar",
             "small_prey0",
             "medium_prey1",
-            "medium_prey2"
+            "medium_prey2",
+            "no_fail_prey"
         ],
         "intro_text": "It starts snowing soon after r_c sets out, trying to bring back something for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the snow dies down.",

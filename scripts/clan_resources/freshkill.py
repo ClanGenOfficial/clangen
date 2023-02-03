@@ -4,46 +4,6 @@ from scripts.game_structure.game_essentials import *
 from copy import deepcopy
 import random
 
-PREY_REQUIREMENT = {
-    "leader": 3,
-    "deputy": 3,
-    "medicine cat": 2,
-    "medicine cat apprentice": 1.5,
-    "mediator apprentice": 1.5,
-    "mediator": 2,
-    "warrior": 3,
-    "apprentice": 1.5,
-    "elder": 1.5,
-    "queen": 4,
-    "kitten": 0.5,
-}
-
-CONDITION_INCREASE = 0.5
-
-FEEDING_ORDER = [
-    "kitten",
-    "queen",
-    "elder",
-    "medicine cat",
-    "medicine cat apprentice",
-    "apprentice",
-    "mediator apprentice",
-    "warrior",
-    "mediator",
-    "deputy",
-    "leader"
-]
-
-HUNTER_BONUS = {"fantastic_hunter": 3, "great_hunter": 2, "good_hunter": 1}
-HUNTER_EXP_BONUS = {
-    "very_low": 1,
-    "low": 2,
-    "average": 3,
-    "high": 4,
-    "master": 5,
-    "max": 7
-}
-
 class Nutrition():
     """All the information about nutrition from one cat."""
 
@@ -89,12 +49,12 @@ class Freshkill_Pile():
             self.total_amount = total
         else:
             self.pile = {
-                "expires_in_4": 0,
+                "expires_in_4": GAME_CONFIG["freshkill"]["start_amount"],
                 "expires_in_3": 0,
                 "expires_in_2": 0,
                 "expires_in_1": 0,
             }
-            self.total_amount = 0
+            self.total_amount = GAME_CONFIG["freshkill"]["start_amount"]
         self.nutrition_info = {}
 
     def add_freshkill(self, amount):
@@ -112,7 +72,6 @@ class Freshkill_Pile():
         for key in order:
             amount = self.take_from_pile(key, amount)
         
-
     def time_skip(self, living_cats):
         """Handle the time skip for the freshkill pile, including feeding the cats."""
         previous_amount = 0
@@ -123,7 +82,6 @@ class Freshkill_Pile():
         self.total_amount = sum(self.pile.values())
 
         self.feed_cats(living_cats)
-        # print(f"REMAINING AMOUNT: {self.total_amount} (needed: {self.amount_food_needed()})")
 
     def feed_cats(self, living_cats):
         """Handles to feed all living cats. This happens before the aging up."""
@@ -176,8 +134,19 @@ class Freshkill_Pile():
     #                               helper functions                               #
     # ---------------------------------------------------------------------------- #
 
-    def handle_not_enough_food(self, group, status_):
-        """Handle the situation where there is not enough food for this group."""
+    def handle_not_enough_food(self, group: list, status_ : str):
+        """Handle the situation where there is not enough food for this group.
+
+            Parameters
+            ----------
+            group : list
+                the list of cats which should be fed
+            status_ : str
+                the status of each cat of the group
+
+            Returns
+            -------
+        """
         tactic = None # TODO: handle with a setting
         if tactic == "younger_first":
             sorted_group = sorted(group, key=lambda x: x.moons)
@@ -202,8 +171,19 @@ class Freshkill_Pile():
         else:
             self.feed_group(group, status_)
 
-    def feed_group(self, group, status_):
-        """Handle the feeding of a specific group of cats, the order is already set."""
+    def feed_group(self, group: list, status_: str):
+        """Handle the feeding of a specific group of cats, the order is already set.
+
+            Parameters
+            ----------
+            group : list
+                the list of cats which should be fed
+            status_ : str
+                the status of each cat of the group
+
+            Returns
+            -------
+        """
         # ration_prey < healthy warrior will only eat half of the food they need
         ration_prey = False # TODO: handled with a setting
 
@@ -216,14 +196,16 @@ class Freshkill_Pile():
             else:
                 if ration_prey and status_ == "warrior":
                     feeding_amount = feeding_amount/2
+            lot_more_prey = self.amount_food_needed() < self.total_amount * 1.5
+            if lot_more_prey and self.nutrition_info[cat.ID].percentage < 100:
+                feeding_amount += 1
             self.feed_cat(cat, feeding_amount, needed_amount)
 
     def tactic_less_nutrition(self, group, status_):
         """With this tactic, the cats with the lowest nutrition will be feed first."""
         group_ids = [cat.id for cat in group]
         sorted_nutrition = sorted(self.nutrition_info.items(), key=lambda x: x[1].percentage)
-        # ration_prey < warrior will only eat half of the food they need
-        ration_prey = True # TODO: handled with a setting
+        ration_prey = False # TODO: handled with a setting
 
         for k, v in sorted_nutrition:
             if k not in group_ids:
@@ -308,3 +290,19 @@ class Freshkill_Pile():
         nutrition.percentage = 100
 
         self.nutrition_info[cat.ID] = nutrition
+
+
+
+# ---------------------------------------------------------------------------- #
+#                                LOAD RESOURCES                                #
+# ---------------------------------------------------------------------------- #
+
+GAME_CONFIG = None
+with open(f"resources/game_config.json", 'r') as read_file:
+    GAME_CONFIG = ujson.loads(read_file.read())
+
+PREY_REQUIREMENT = GAME_CONFIG["freshkill"]["prey_requirement"]
+CONDITION_INCREASE = GAME_CONFIG["freshkill"]["condition_increase"]
+FEEDING_ORDER = GAME_CONFIG["freshkill"]["feeding_order"]
+HUNTER_BONUS = GAME_CONFIG["freshkill"]["hunter_bonus"]
+HUNTER_EXP_BONUS = GAME_CONFIG["freshkill"]["hunter_exp_bonus"]
