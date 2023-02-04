@@ -2,6 +2,7 @@ import pygame
 import os
 
 from .base_screens import Screens
+from sys import exit
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.image_button import UIImageButton

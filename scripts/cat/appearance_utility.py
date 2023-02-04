@@ -529,18 +529,23 @@ def init_pattern(cat):
             cat.tortiepattern = 'tortieagouti'
         else:
             cat.tortiepattern = choice(['tortietabby', 'tortiemackerel', 'tortieclassic'])
+
     else:
         cat.tortiebase = None
         cat.tortiepattern = None
         cat.tortiecolour = None
+
     if cat.pelt.name in torties and cat.pelt.colour is not None:
-        if cat.pelt.colour in ["BLACK", "DARKBROWN", "GHOST"]:
+        print(str(cat.ID), cat.pelt.colour)
+        if cat.pelt.colour in black_colours:
             cat.pattern = choice(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR', 'GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR',
                                     'DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR'])
-        elif cat.pelt.colour in ["DARKGREY", "BROWN"]:
+        elif cat.pelt.colour in brown_colours:
             cat.pattern = choice(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR', 'GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR'])
-        elif cat.pelt.colour in ["SILVER", "GREY", "LIGHTBROWN"]:
+        elif cat.pelt.colour in white_colours + ginger_colours:
             cat.pattern = choice(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR', 'CREAMONE', 'CREAMTWO', 'CREAMTHREE', 'CREAMFOUR'])
+        else:
+            cat.pattern = "GOLDONE"
     else:
         cat.pattern = None
 
