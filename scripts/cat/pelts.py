@@ -442,7 +442,7 @@ def choose_pelt(colour=None, white=None, pelt=None, length=None, category=None, 
             return Singlestripe(colour, white, length)
     elif pelt == 'Tortie':
         if white is None:
-            return Tortie(choice([False, True]), colour, length)
+            return Tortie(colour, choice([False, True]), length)
         else:
             return Tortie(colour, white, length)
     else:
