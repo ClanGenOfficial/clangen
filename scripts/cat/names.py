@@ -242,6 +242,8 @@ class Name():
             for new_name in new_names:
                 if new_name != '':
                     normal_prefixes.append(new_name)
+    else:
+        os.makedirs('saves/prefixlist.txt')
 
     if os.path.exists('saves/suffixlist.txt'):
         with open('saves/suffixlist.txt', 'r') as read_file:
@@ -252,6 +254,8 @@ class Name():
             for new_name in new_names:
                 if new_name != '':
                     normal_suffixes.append(new_name)
+    else:
+        os.makedirs('saves/suffixlist.txt')
 
     def __init__(self,
                  status="warrior",
