@@ -1203,6 +1203,7 @@ class Patrol():
                     new_cat = created_cats[0]
                     new_cat.outside = True
                     new_cat.dead = True
+                    new_cat.thought = "Is so very grateful that their kits survived"
                 if "new_cat_newborn" in tags:
                     created_cats.extend(self.create_new_cat(loner=False, loner_name=True, backstory='orphaned',
                                                        litter=True, age='newborn', relevant_cat=new_cat))
