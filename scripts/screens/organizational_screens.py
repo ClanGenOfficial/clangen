@@ -2,6 +2,7 @@ import pygame
 import os
 
 from .base_screens import Screens
+from sys import exit
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.image_button import UIImageButton
@@ -190,7 +191,7 @@ class SettingsScreen(Screens):
     checkboxes_text = {}
 
     info_text = "<b>Welcome to Warrior Cats clan generator!</b><br><br>" \
-                "This is fan-made generator for the Warrior Cats -book series by Erin Hunter.<br><br>" \
+                "This is fanmade generator for the Warrior Cats -book series by Erin Hunter.<br><br>" \
                 "You're welcome to use the characters and sprites generated in this program, " \
                 "as long as you don't claim the sprites as your own creations or sell them for any reason.<br><br>" \
                 "<b>Original creator:</b> <i>just-some-cat.tumblr.com (anju)</i><br><br>" \
@@ -228,7 +229,7 @@ class SettingsScreen(Screens):
                 "Thank you to the beta testers and all those who have helped with development.<br><br>" \
                 "<b>Thank you for playing!!</b><br><br>" \
                 "Code is licensed under <a href=https://www.mozilla.org/en-US/MPL/2.0/>Mozilla Public License Version 2.0</a><br>" \
-                "Art is liscensed under <a href=https://creativecommons.org/licenses/by-nc/4.0/legalcode>CC-BY-NC 4.0</a> "
+                "Art is licensed under <a href=https://creativecommons.org/licenses/by-nc/4.0/legalcode>CC-BY-NC 4.0</a> "
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_TEXT_BOX_LINK_CLICKED:
@@ -612,7 +613,7 @@ class SettingsScreen(Screens):
         self.save_settings_button.show()
 
         self.checkboxes_text['instr'] = pygame_gui.elements.UITextBox(
-            "Change the languange of the game here. This has not been implemented yet.",
+            "Change the language of the game here. This has not been implemented yet.",
             scale(pygame.Rect((200, 320), (1200, 100))), object_id=get_text_box_theme(), manager=MANAGER)
 
         self.refresh_checkboxes()

@@ -203,9 +203,9 @@ class Tortie():
     name = "Tortie"
     sprites = {1: 'tortie', 2: 'white'}
 
-    def __init__(self, white, length):
+    def __init__(self, colour, white, length):
         self.white = white  # boolean; does cat have white on it or no
-        self.colour = tortiecolours[1]  #Is always overwritten
+        self.colour = colour
         self.length = length
 
     def __repr__(self):
@@ -218,8 +218,8 @@ class Calico():
     name = "Calico"
     sprites = {1: 'calico', 2: 'white'}
 
-    def __init__(self, length):
-        self.colour = choice(tortiecolours)
+    def __init__(self, colour, length):
+        self.colour = colour
         self.length = length
         self.white = True
 
@@ -440,11 +440,11 @@ def choose_pelt(colour=None, white=None, pelt=None, length=None, category=None, 
             return Singlestripe(colour, white, length)
     elif pelt == 'Tortie':
         if white is None:
-            return Tortie(choice([False, True]), length)
+            return Tortie(colour, choice([False, True]), length)
         else:
-            return Tortie(white, length)
+            return Tortie(colour, white, length)
     else:
-        return Calico(length)
+        return Calico(colour, length)
 
 def describe_color(pelt, tortiecolour, tortiepattern, white_patches):
         color_name = ''
