@@ -201,7 +201,7 @@ class Name():
         "Chip", "Chloe", "Chocolate", "Chocolate Chip", "Chris", "Chrissy", "Cinder", "Cinderblock", "Cloe", "Cloud", "Cocoa", "Cocoa Puff", "Coffee",
         "Conan", "Cookie", "Coral", "Cosmo", "Cowbell", "Cowboy", "Crab", "Cracker", "Cream", "Crispy", "Crow", "Crunchwrap", "Crunchy", "Cupcake", "Cooper",
         "Cancer", "Capricorn", "Dakota", "Dan", "Dave", "Deli", "Delilah", "Della", "Delta", "Dewey", "Dirk", "Dog", "Doggo", "Dolly", "Donald", "Dragonfly", "Dreamy", "Duchess", "Dune",
-        "Dunnock" "Eclipse", "Daisy Mae",  "Eda", "Eddie", "Eevee", "Egg", "Ember", "Emerald", "Emi", "Emma", "Emy", "Erica", "Espresso", "Eve", "Evelyn", "Evie",
+        "Dunnock", "Eclipse", "Daisy Mae",  "Eda", "Eddie", "Eevee", "Egg", "Ember", "Emerald", "Emi", "Emma", "Emy", "Erica", "Espresso", "Eve", "Evelyn", "Evie",
         "Evilface", "Erebus", "Fallow", "Fang", "Fawn", "Feather", "Felix", "Fern", "Ferret", "Ferry", "Finch", "Firefly", "Fishleg", "Fishtail", "Fiver", "Flabby",
         "Flower", "Fluffy", "Flutie", "Fork", "Frank", "Frankie", "Frannie", "Fred", "Freddy", "Free", "French", "French Fry", "Frito", "Fry", "Frye", "Gamble", 
         "Gargoyle", "Garnet", "Geode", "George", "Ghost", "Gibby", "Gir", "Gizmo", "Glass", "Glory", "Goose", "Grace", "Grain", "Grasshopper", "Gravy", "Guinness",
