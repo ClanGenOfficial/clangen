@@ -204,7 +204,6 @@ class Tortie():
     sprites = {1: 'tortie', 2: 'white'}
 
     def __init__(self, colour, white, length):
-        print(colour)
         self.white = white  # boolean; does cat have white on it or no
         self.colour = colour
         self.length = length
@@ -220,7 +219,6 @@ class Calico():
     sprites = {1: 'calico', 2: 'white'}
 
     def __init__(self, colour, length):
-        print(colour)
         self.colour = colour
         self.length = length
         self.white = True

@@ -536,7 +536,6 @@ def init_pattern(cat):
         cat.tortiecolour = None
 
     if cat.pelt.name in torties and cat.pelt.colour is not None:
-        print(str(cat.ID), cat.pelt.colour)
         if cat.pelt.colour in black_colours:
             cat.pattern = choice(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR', 'GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR',
                                     'DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR'])
