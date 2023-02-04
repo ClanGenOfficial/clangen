@@ -536,12 +536,21 @@ def init_pattern(cat):
 
     if cat.pelt.name in torties and cat.pelt.colour is not None:
         if cat.pelt.colour in black_colours:
-            cat.pattern = choice(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR', 'GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR',
-                                    'DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR'])
+            cat.pattern = choice(
+                ['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR', 'GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR',
+                 'DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR'])
         elif cat.pelt.colour in brown_colours:
-            cat.pattern = choice(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR', 'GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR'])
-        elif cat.pelt.colour in white_colours + ginger_colours:
-            cat.pattern = choice(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR', 'CREAMONE', 'CREAMTWO', 'CREAMTHREE', 'CREAMFOUR'])
+            cat.pattern = choice(
+                ['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR', 'GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR',
+                 "DARKONE", "DARKTWO", "DARKTHREE", "DARKFOUR"])
+        elif cat.pelt.colour in white_colours:
+            cat.pattern = choice(
+                ['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR', 'CREAMONE', 'CREAMTWO', 'CREAMTHREE', 'CREAMFOUR'])
+        elif cat.pelt.colour in ['DARKGINGER', "GINGER"]:
+            cat.pattern = choice(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR', 'CREAMONE', 'CREAMTWO', 'CREAMTHREE',
+                                  'CREAMFOUR'])
+        elif cat.pelt.colour in ["CREAM", "GOLDEN", "PALEGINGER"]:
+            cat.pattern = choice(['DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR'])
         else:
             cat.pattern = "GOLDONE"
     else:
