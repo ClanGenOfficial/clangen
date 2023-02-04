@@ -387,7 +387,7 @@ class ChooseMentorScreen(Screens):
     def get_valid_mentors(self):
         valid_mentors = []
 
-        if self.the_cat.status in "apprentice":
+        if self.the_cat.status == "apprentice":
             for cat in Cat.all_cats_list:
                 if not cat.dead and not cat.outside and cat.status in [
                             'warrior', 'deputy', 'leader'
