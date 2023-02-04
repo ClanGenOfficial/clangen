@@ -159,7 +159,7 @@ class Patrol():
             clan_allies = True
         elif clan_relations < 7:
             clan_hostile = True
-        elif clan_relations in range(7, 17):
+        elif 7 <= clan_relations <= 17:
             clan_neutral = True
         other_clan_chance = 1  # this is just for separating them a bit from the other patrols, it means they can always happen
         # chance for each kind of loner event to occur
@@ -167,9 +167,9 @@ class Patrol():
             small_clan = False
         else:
             small_clan = True
-        regular_chance = int(random.getrandbits(1))
-        hostile_chance = int(random.getrandbits(3))
-        welcoming_chance = 1 # this sets the new cat patrols to always possible
+        regular_chance = int(random.getrandbits(2))
+        hostile_chance = int(random.getrandbits(5))
+        welcoming_chance = int(random.getrandbits(1))
         if 1 <= reputation <= 30:
             hostile_rep = True
             if small_clan:
@@ -219,7 +219,9 @@ class Patrol():
         possible_patrols.extend(self.generate_patrol_events(MEDCAT))
 
         if game_setting_disaster:
-            possible_patrols.extend(self.generate_patrol_events(DISASTER))
+            dis_chance = int(random.getrandbits(3)) # disaster patrol chance
+            if dis_chance == 1:
+                possible_patrols.extend(self.generate_patrol_events(DISASTER))
 
         # new cat patrols
         if chance == 1:
@@ -301,9 +303,34 @@ class Patrol():
                 if game.clan.game_mode != 'cruel_season':
                     continue
 
+            # one apprentice check
+            if "one_apprentice" in patrol.tags:
+                if len(self.patrol_apprentices) < 1 or len(self.patrol_apprentices) > 1:
+                    continue
+
             # two apprentices check
             if "two_apprentices" in patrol.tags:
                 if len(self.patrol_apprentices) < 2 or len(self.patrol_apprentices) > 2:
+                    continue
+
+            # three apprentices check
+            if "three_apprentices" in patrol.tags:
+                if len(self.patrol_apprentices) < 3 or len(self.patrol_apprentices) > 3:
+                    continue
+
+            # four apprentices check
+            if "four_apprentices" in patrol.tags:
+                if len(self.patrol_apprentices) < 4 or len(self.patrol_apprentices) > 4:
+                    continue
+
+            # five apprentices check
+            if "five_apprentices" in patrol.tags:
+                if len(self.patrol_apprentices) < 5 or len(self.patrol_apprentices) > 5:
+                    continue
+
+            # six apprentices check
+            if "six_apprentices" in patrol.tags:
+                if len(self.patrol_apprentices) < 6 or len(self.patrol_apprentices) > 6:
                     continue
 
             # correct button check
@@ -398,7 +425,8 @@ class Patrol():
 
         c = randint(0, 100)
         outcome = int(random.getrandbits(4))
-
+        print(str(self.patrol_event.patrol_id))
+        
         # ---------------------------------------------------------------------------- #
         #                                   SUCCESS                                    #
         # ---------------------------------------------------------------------------- #
@@ -434,7 +462,7 @@ class Patrol():
             if self.patrol_event.tags is not None:
                 if "kits" in self.patrol_event.tags:
                     litter_choice = choice([True, False])
-                    if litter_choice == True:
+                    if litter_choice:
                         n = 1
                     else:
                         n = 0
@@ -456,7 +484,6 @@ class Patrol():
             self.handle_relationships()
             if game.clan.game_mode != 'classic' and not antagonize:
                 self.handle_herbs(n)
-                self.handle_prey(n)
             self.final_success = self.patrol_event.success_text[n]
             if antagonize:
                 self.antagonize = self.patrol_event.antagonize_text
@@ -537,6 +564,10 @@ class Patrol():
             self.final_fail = self.patrol_event.fail_text[n]
             if antagonize:
                 self.antagonize_fail = self.patrol_event.antagonize_fail_text
+
+        if not antagonize:
+            self.handle_prey(n) 
+
 
     def results(self):
         text = "<br>".join(self.results_text)
@@ -644,36 +675,37 @@ class Patrol():
             if cats_dying >= len(self.patrol_cats):
                 cats_dying = int(len(self.patrol_cats) - 1)
             for d in range(0, cats_dying):
+                cat = self.patrol_cats[d]
                 if self.patrol_cats[d].status == 'leader':
                     if 'all_lives' in self.patrol_event.tags:
                         game.clan.leader_lives -= 10
-                        self.results_text.append(f"{self.patrol_cats[d].name} lost all their lives.")
+                        self.results_text.append(f"{cat.name} lost all their lives.")
                     elif "some_lives" in self.patrol_event.tags:
                         if game.clan.leader_lives > 2:
                             current_lives = int(game.clan.leader_lives)
                             game.clan.leader_lives -= random.randrange(1, current_lives - 1)
-                            self.results_text.append(f"{self.patrol_cats[d].name} lost some of their lives.")
+                            self.results_text.append(f"{cat.name} lost some of their lives.")
                         else:
-                            self.results_text.append(f"{self.patrol_cats[d].name} lost one life.")
+                            self.results_text.append(f"{cat.name} lost one life.")
                             game.clan.leader_lives -= 1
                     else:
-                        self.results_text.append(f"{self.patrol_cats[d].name} lost all their lives.")
+                        self.results_text.append(f"{cat.name} lost all their lives.")
                         game.clan.leader_lives -= 10
                 else:
-                    self.results_text.append(f"{self.patrol_cats[d].name} died.")
-                    self.patrol_cats[d].die(body)
-                if len(self.patrol_event.history_text) >= 2 and self.patrol_cats[d].status != 'leader':
-                    self.patrol_cats[d].died_by.append(
-                        event_text_adjust(Cat, f'{self.patrol_event.history_text[1]}', self.patrol_cats[d],
-                                          self.patrol_cats[d]))
+                    self.results_text.append(f"{cat.name} died.")
+                if len(self.patrol_event.history_text) >= 2 and cat.status != 'leader':
+                    cat.died_by.append(
+                        event_text_adjust(Cat, f'{self.patrol_event.history_text[1]}', cat,
+                                          cat))
                 elif len(self.patrol_event.history_text) >= 2 and self.patrol_cats[d].status == 'leader':
-                    self.patrol_cats[d].died_by.append(
-                        event_text_adjust(Cat, f'{self.patrol_event.history_text[2]}', self.patrol_cats[d],
-                                          self.patrol_cats[d]))
+                    cat.died_by.append(
+                        event_text_adjust(Cat, f'{self.patrol_event.history_text[2]}', cat,
+                                          cat))
                 elif cat.status != 'leader':
                     cat.died_by.append(f'This cat died while patrolling.')
                 else:
                     cat.died_by.append(f'died while patrolling')
+                cat.die()
 
         # cats disappearing on patrol is also handled under this def for simplicity's sake
         elif "gone" in self.patrol_event.tags:
@@ -860,12 +892,23 @@ class Patrol():
             "huge_prey" : PREY_REQUIREMENT["warrior"]*4
         }
 
+        if not self.success and "hunting" in patrol.patrol_event.tags:
+            cancel_tags = ["no_fail_prey", "poison_clan", "death", "disaster", "multi_deaths", "no_body", "cruel_season", "gone", "multi_gone", "disaster_gone"]
+            relevant_patrol_tags = [tag for tag in patrol.patrol_event.tags if tag in cancel_tags]
+            if len(relevant_patrol_tags) == 0:
+                amount = int(PREY_REQUIREMENT["warrior"] * len(self.patrol_cats) / 2)
+                game.clan.freshkill_pile.add_freshkill(amount)
+                self.results_text.append(f"The patrol still manages to catch some amount of prey.")
+            return
+
         prey_amount_per_cat = 0
         total_amount = 0
 
-        # check hat kind of prey type this succeeded patrol event has
+        # check what kind of prey type this succeeded patrol event has
+        prey_size = None
         for prey_type, amount in prey_types.items():
             current_tag = prey_type + str(outcome_nr)
+            prey_size = prey_type.split('_')[0]
             if current_tag in patrol.patrol_event.tags or prey_type in patrol.patrol_event.tags:
                 prey_amount_per_cat = amount
                 break
@@ -886,7 +929,7 @@ class Patrol():
 
         game.clan.freshkill_pile.add_freshkill(total_amount)
         if total_amount > 0:
-            self.results_text.append(f"Patrol managed to catch a total amount of {total_amount} prey.")
+            self.results_text.append(f"Each cat catches a {prey_size} amount of prey.")
 
     def handle_clan_relations(self, difference):
         """
@@ -944,12 +987,16 @@ class Patrol():
                 platonic_like = n
             if "dislike" in self.patrol_event.tags:
                 dislike = -n
+            if "pos_dislike" in self.patrol_event.tags:
+                dislike = n
             if "respect" in self.patrol_event.tags:
                 admiration = n
             if "comfort" in self.patrol_event.tags:
                 comfortable = n
             if "jealous" in self.patrol_event.tags:
                 jealousy = -n
+            if "pos_jealous" in self.patrol_event.tags:
+                jealousy = n
             if "trust" in self.patrol_event.tags:
                 trust = n
 
@@ -967,12 +1014,16 @@ class Patrol():
                 platonic_like = -n
             if "dislike" in self.patrol_event.tags:
                 dislike = n
+            if "pos_dislike" in self.patrol_event.tags:
+                dislike = -n
             if "disrespect" in self.patrol_event.tags:
                 admiration = -n
             if "comfort" in self.patrol_event.tags:
                 comfortable = -n
             if "jealous" in self.patrol_event.tags:
                 jealousy = n
+            if "pos_jealous" in self.patrol_event.tags:
+                jealousy = -n
             if "distrust" in self.patrol_event.tags:
                 trust = -n
 
@@ -1067,6 +1118,7 @@ class Patrol():
 
     def add_new_cats(self, litter_choice):
         tags = self.patrol_event.tags
+        litter_choice = litter_choice
         if "new_cat" in tags:
             if "new_cat_majorinjury" in tags and game.clan.game_mode != 'classic':
                 major_injury = True
@@ -1074,7 +1126,11 @@ class Patrol():
                 major_injury = False
             if "new_cat_kit" in tags:  # new kit
                 backstory_choice = choice(['abandoned2', 'abandoned1', 'abandoned3'])
-                created_cats = self.create_new_cat(loner=False, loner_name=False, kittypet=choice([True, False]),
+                if backstory_choice == 'abandoned2':
+                    kittypet = True
+                else:
+                    kittypet = False
+                created_cats = self.create_new_cat(loner=False, loner_name=False, kittypet=kittypet,
                                                    kit=True, backstory=backstory_choice)
                 new_cat = created_cats[0]
 
@@ -1086,7 +1142,7 @@ class Patrol():
                                                        backstory=choice(['kittypet1', 'kittypet2']))
                     new_cat = created_cats[0]
                     # add litter if the kits text is rolled
-                    if litter_choice == True:
+                    if litter_choice:
                         new_backstory = 'outsider_roots2'
                         created_cats.extend(self.create_new_cat(loner=True, loner_name=True, backstory=new_backstory,
                                                            litter=True, relevant_cat=new_cat))
@@ -1099,7 +1155,7 @@ class Patrol():
                     created_cats = self.create_new_cat(loner=True, kittypet=False, backstory=new_backstory)
                     new_cat = created_cats[0]
                     # add litter if the kits text is rolled
-                    if litter_choice == True:
+                    if litter_choice:
                         new_backstory = 'outsider_roots2'
                         created_cats.extend(self.create_new_cat(loner=True, loner_name=True, backstory=new_backstory,
                                                            litter=True, relevant_cat=new_cat))
@@ -1114,7 +1170,7 @@ class Patrol():
                 new_cat = created_cats[0]
                 new_cat.skill = choice(['good healer', 'great healer', 'fantastic healer'])
                 # add litter if the kits text is rolled
-                if litter_choice == True:
+                if litter_choice:
                     new_backstory = 'outsider_roots2'
                     created_cats.extend(self.create_new_cat(loner=True, loner_name=True, backstory=new_backstory,
                                                        litter=True, relevant_cat=new_cat))
@@ -1396,7 +1452,7 @@ class PatrolEvent():
         self.history_text = history_text
 
         """
-            hunting patrols - "hunting", "small_prey", "big_prey",
+            hunting patrols - "hunting", "small_prey", "medium_prey", "large_prey", "huge_prey"
 
             training patrols - "training",
 
@@ -1415,7 +1471,7 @@ class PatrolEvent():
             "death", "disaster", "multi_deaths", "no_body", "cruel_season", "gone", "multi_gone", "disaster_gone",
 
             relationship tags - 
-            "romantic", "platonic", "comfort", "respect", "trust", "dislike", "jealousy", "distrust", "disrespect",
+            "romantic", "platonic", "comfort", "respect", "trust", "dislike", "pos_dislike", "jealous", "pos_jealous", "distrust", "disrespect",
             "apprentice", "two_apprentices", "three_apprentices", "warrior", "no_app", "med_only", "no_leader",
             "no_deputy", "leader", "deputy",
 
@@ -1487,8 +1543,8 @@ class PatrolEvent():
         they all apply or some apply.
 
         descriptors:
-        Descriptors should be one word and a number, starting at 1 and incrementing up (i.e. mtn_nl_hunt_mouse1 then 
-        mtn_nl_hunt_mouse2 for another patrol involving a mouse. If you then make a new patrol that is not mouse 
+        Descriptors should be one word and a number, starting at 1 and incrementing up (i.e. mtn_hunt_mouse1 then 
+        mtn_hunt_mouse2 for another patrol involving a mouse. If you then make a new patrol that is not mouse 
         related, choose a different descriptor word and start over again at 1) try to keep descriptor words unique from 
         other descriptors being used to make identification and sorting easier. 
 
@@ -1537,14 +1593,20 @@ class PatrolEvent():
         success - to give no herbs, then use "no_herbs2")
 
         - TO SPECIFY -
-        "two_apprentices" is for patrols with two apprentices (at least) in them. It works with the "apprentice" tag. 
+        "one_apprentice" is for patrols with one apprentice in them. It works with the "apprentice" tag. 
+        "two_apprentices" is for patrols with two apprentices in them. It works with the "apprentice" tag. 
+        "three_apprentices" is for patrols with two apprentices in them. It works with the "apprentice" tag. 
+        "four_apprentices" is for patrols with two apprentices in them. It works with the "apprentice" tag. 
+        "five_apprentices" is for patrols with two apprentices in them. It works with the "apprentice" tag. 
+        "six_apprentices" is for patrols with two apprentices in them. It works with the "apprentice" tag. 
+
         "rel_two_apps" is for patrols with relationship changes between app1 and app2 that don't affect the rest of the 
-        patrol, and also works with "two_apprentices" and "apprentice".
+        patrol, and also works with "two_apprentices" (or any of the higher numbered apprentice specifers) and "apprentice".
 
         "warrior" is used to specify that the patrol should only trigger with at least 1 warrior in it. 
         "no_app" is for when no apps should be on the patrol
 
-        - RELATIONSHIP TAGGS -
+        - RELATIONSHIP TAGS -
         I think all of these can be used together. the tag for which relationships are increased should ALSO be used
         # whole clan gains relationship towards p_l - "clan_to_p_l"
         # whole clan gains relationship towards s_c - "clan_to_r_c" (triggers to be s_c if s_c is present)
@@ -1564,8 +1626,10 @@ class PatrolEvent():
         "comfort" < change comfort value
         "respect" < change admiration/respect value
         "trust" < change trust value
-        "dislike" < change dislike value
-        "jealousy < change jealousy value
+        "dislike" < change dislike value (decrease on success, increase on fail)
+        "pos_dislike" < change dislike value (increase on success, decrease on fail)
+        "jealous" < change jealousy value (decrease on success, increase on fail)
+        "pos_jealous" < change jealous value (increase on success, decrease on fail)
         "distrust" < always decrease trust
         "disrespect" < always decrease respect
         
@@ -1584,6 +1648,20 @@ class PatrolEvent():
         "no_change_success" to set all relationship value changes to 0 on success outcomes
 
         "no_change_fail_rep" is for when rep should not change when a new_cat patrol fails
+
+        - PREY TAGS -
+        If there is no tag, there will be no prey if the hunt is successful
+        There are 4 tag types "small_prey", "medium_prey", "large_prey" and "huge_prey". 
+        If you want to differentiate between the success texts how much prey each success will get, you have to use the tag and then add the index of the sentence you want the prey to
+        E.g. 3 successful outcome texts -> "small_prey0", "medium_prey1", "medium_prey2"
+
+        There will be auto prey for failed hunts to stop the auto, following tags do not allow auto prey:
+        > "no_fail_prey"
+        + all disaster tags ("death", "disaster", "multi_deaths", "no_body", "cruel_season", "gone", "multi_gone", "disaster_gone")
+        + "poison_clan"
+
+        We want a mix of medium_prey and large_prey under normal conditions.
+
 
         -- WHEN WRIING --   
         Event text should be kept to 350 characters at the maximum to keep it easily readable and concise.

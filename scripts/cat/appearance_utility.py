@@ -273,9 +273,10 @@ def pelt_inheritance(cat, parents: tuple):
     chosen_tortie_base = None
     if torbie:
         # If it is tortie, the chosen pelt above becomes the base pelt.
-        chosen_tortie_base = chosen_pelt.lower()
-        if chosen_tortie_base == ["TwoColour", "SingleColour"]:
+        chosen_tortie_base = chosen_pelt
+        if chosen_tortie_base in ["TwoColour", "SingleColour"]:
             chosen_tortie_base = "Single"
+        chosen_tortie_base = chosen_tortie_base.lower()
         chosen_pelt = random.choice(torties)
 
     # ------------------------------------------------------------------------------------------------------------#
@@ -357,11 +358,11 @@ def pelt_inheritance(cat, parents: tuple):
             chosen_white = "SingleColour"
     elif chosen_pelt == "Calico":
         if not chosen_white:
-            chosen_pelt = "Torbie"
+            chosen_pelt = "Tortie"
 
     # SET THE PELT
     cat.pelt = choose_pelt(chosen_pelt_color, chosen_white, chosen_pelt, chosen_pelt_length)
-    cat.tortie_base = chosen_tortie_base  # This will be none if the cat isn't a tortie.
+    cat.tortiebase = chosen_tortie_base   # This will be none if the cat isn't a tortie.
 
 def randomize_pelt(cat):
     # ------------------------------------------------------------------------------------------------------------#
@@ -384,9 +385,10 @@ def randomize_pelt(cat):
     chosen_tortie_base = None
     if torbie:
         # If it is tortie, the chosen pelt above becomes the base pelt.
-        chosen_tortie_base = chosen_pelt.lower()
-        if chosen_tortie_base == ["TwoColour", "SingleColour"]:
+        chosen_tortie_base = chosen_pelt
+        if chosen_tortie_base in ["TwoColour", "SingleColour"]:
             chosen_tortie_base = "Single"
+        chosen_tortie_base = chosen_tortie_base.lower()
         chosen_pelt = random.choice(torties)
 
     # ------------------------------------------------------------------------------------------------------------#
@@ -419,10 +421,10 @@ def randomize_pelt(cat):
             chosen_white = "SingleColour"
     elif chosen_pelt == "Calico":
         if not chosen_white:
-            chosen_pelt = "Torbie"
+            chosen_pelt = "Tortie"
 
     cat.pelt = choose_pelt(chosen_pelt_color, chosen_white, chosen_pelt, chosen_pelt_length)
-    cat.tortie_base = chosen_tortie_base  # This will be none if the cat isn't a tortie.
+    cat.tortiebase = chosen_tortie_base   # This will be none if the cat isn't a tortie.
 
 def init_pelt(cat):
     if cat.pelt is not None:
@@ -502,7 +504,7 @@ def init_pattern(cat):
     if cat.pelt.name in torties:
         cat.tortiecolour = cat.pelt.colour
         if cat.tortiebase is None:
-            cat.tortiebase = choice(['single', 'tabby', 'bengal', 'marbled', 'ticked', 'smoke', 'rosette', 'speckled'])
+            cat.tortiebase = choice(tortiebases)
         if cat.tortiebase == 'tabby':
             cat.tortiepattern = 'tortietabby'
         elif cat.tortiebase == 'bengal':
@@ -526,7 +528,7 @@ def init_pattern(cat):
         elif cat.tortiebase == 'agouti':
             cat.tortiepattern = 'tortieagouti'
         else:
-            cat.tortiepattern = 'tortietabby'
+            cat.tortiepattern = choice(['tortietabby', 'tortiemackerel', 'tortieclassic'])
     else:
         cat.tortiebase = None
         cat.tortiepattern = None

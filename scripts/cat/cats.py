@@ -750,6 +750,12 @@ class Cat():
                         game.clan.leader = None
                         game.clan.leader_predecessors += 1
 
+			# don't remove the check for game.clan, this is needed for tests
+            if game.clan and game.clan.deputy:
+                if game.clan.deputy.ID == self.ID:
+                    game.clan.deputy = None
+                    game.clan.deputy_predecessors += 1
+
         elif self.status == 'medicine cat':
             self.update_med_mentor()
             self.update_skill()
@@ -759,6 +765,11 @@ class Cat():
         elif self.status == 'elder':
             self.update_mentor()
             self.skill = choice(self.elder_skills)
+
+            # Ideally, this should also be triggered for cats that retired due to
+            # health conditions. However, it is currently being triggered for all elders to
+            # prevent "unretiring" by switching to med or mediator, then warrior.
+            self.retired = True
 
             # Will remove them from the clan med cat variables, if they are a med cat
             if old_status == "medicine cat":
@@ -1114,14 +1125,10 @@ class Cat():
                                 possible_skill = self.skill_groups.get(x)
                                 self.skill = choice(possible_skill)
                                 self.mentor_influence.append(self.skill)
-                    # don't give skill from mentor
-                    else:
-                        self.skill = choice(self.skills)
-                        self.mentor_influence.append('None')
-                # if they didn't have a mentor, give random skill
-                else:
-                    self.skill = choice(self.skills)
-                    self.mentor_influence.append('None')
+                                return
+
+                self.skill = choice(self.skills)
+                self.mentor_influence.append('None')
 
             # assign new skill to elder
             elif self.status == 'elder':
@@ -1868,16 +1875,18 @@ class Cat():
         """Add aditional information to call the check."""
         former_mentor_setting = game.settings['romantic with former mentor']
         for_patrol = for_patrol
-        if for_patrol:
-            return self._patrol_potential_mate(other_cat, for_love_interest, former_mentor_setting)
-        else:
-            return self._intern_potential_mate(other_cat, for_love_interest, former_mentor_setting)
+        return self._intern_potential_mate(other_cat, for_love_interest, former_mentor_setting, for_patrol)
 
     def _intern_potential_mate(self,
                                other_cat: Cat,
                                for_love_interest: bool,
-                               former_mentor_setting: bool):
+                               former_mentor_setting: bool,
+                               for_patrol: bool = False):
         """Checks if this cat is a free and potential mate for the other cat."""
+        # checks if affairs are turned on
+        affair = False
+        if game.settings['affair']:
+            affair = True
         # just to be sure, check if it is not the same cat
         if self.ID == other_cat.ID:
             return False
@@ -1890,13 +1899,24 @@ class Cat():
         if (self.moons < 14 or other_cat.moons < 14) and not for_love_interest:
             return False
 
+        age_restricted_ages = ["kitten", "adolescent"]
+        if self.age in age_restricted_ages or other_cat.age in age_restricted_ages:
+            if self.age != other_cat.age:
+                return False
+
         # check for current mate
         # if the cat has a mate, they are not open for a new mate
-        if not for_love_interest and self.mate:
-            return False
-
-        if self.mate or other_cat.mate:
-            return False
+        if for_patrol:
+            if self.mate or other_cat.mate:
+                if not for_love_interest:
+                    return False
+                elif not affair:
+                    return False
+                else:
+                    return True
+        else:
+            if self.mate or other_cat.mate and not for_love_interest:
+                return False
 
         # check for mentor
         is_former_mentor = (other_cat.ID in self.former_apprentices or self.ID in other_cat.former_apprentices)
@@ -1936,82 +1956,8 @@ class Cat():
         else:
             if self.is_sibling(other_cat) or other_cat.is_sibling(self):
                         return False
-
-        if self.age != other_cat.age:
-            return False
         
-        if abs(self.moons - other_cat.moons) >= 40:
-            return False
-
-        return True
-
-    def _patrol_potential_mate(self,
-                               other_cat: Cat,
-                               for_love_interest: bool,
-                               former_mentor_setting: bool):
-        """Checks if this cat can go on romantic patrols with the other cat."""
-        # just to be sure, check if it is not the same cat
-        affair = False
-        if game.settings['affair']:
-            affair = True
-        if self.ID == other_cat.ID:
-            return False
-
-        # check exiled, outside, and dead cats
-        if self.dead or self.outside or other_cat.dead or other_cat.outside:
-            return False
-
-        # check for age
-        if (self.moons < 14 or other_cat.moons < 14) and not for_love_interest:
-            return False
-
-        # check for current mate
-        # if the cat has a mate, they are not open for a new mate UNLESS AFFAIRS ARE ON
-        if not affair and self.mate:
-            return False
-
-        # check for mentor
-        is_former_mentor = (other_cat.ID in self.former_apprentices or self.ID in other_cat.former_apprentices)
-        if is_former_mentor and not former_mentor_setting:
-            return False
-
-        # Relationship checks
-        # Apparently, parent2 can't exist without parent1, so we only need to check parent1
-        if self.parent1 or other_cat.parent1:
-            # Check for relation via other_cat's parents (parent/grandparent)
-            if other_cat.parent1:
-                if self.is_grandparent(other_cat) or self.is_parent(other_cat):
-                    return False
-                # Check for uncle/aunt via self's sibs & other's parents
-                if self.siblings:
-                    if self.is_uncle_aunt(other_cat):
-                        return False
-                # Check for sibs via self's parents and other_cat's parents
-                if self.parent1:
-                    if self.is_sibling(other_cat) or other_cat.is_sibling(self):
-                        return False
-
-            # Check for relation via self's parents (parent/grandparent)
-            if self.parent1:
-                if other_cat.is_grandparent(self) or other_cat.is_parent(self):
-                    return False
-                # Check for uncle/aunt via other_cat's sibs & self's parents
-                if other_cat.siblings:
-                    if other_cat.is_uncle_aunt(self):
-                        return False
-
-            if not game.settings['first_cousin_mates']:
-                if self.is_cousin(other_cat):
-                    return False
-
-        else:
-            if self.is_sibling(other_cat) or other_cat.is_sibling(self):
-                        return False
-
-        if self.age != other_cat.age:
-            return False
-        
-        if abs(self.moons - other_cat.moons) >= 40:
+        if abs(self.moons - other_cat.moons) > 40:
             return False
 
         return True
@@ -2202,7 +2148,7 @@ class Cat():
                 print(f'WARNING: There was an error reading the relationship file of cat #{self}.')
 
     @staticmethod
-    def mediate_relationship(mediator, cat1, cat2, sabotage=False):
+    def mediate_relationship(mediator, cat1, cat2, allow_romantic, sabotage=False):
         # Gather some important info
 
         # Gathering the relationships.
@@ -2304,9 +2250,14 @@ class Cat():
                 lvl_modifier = 1
             mediator.experience += EX_gain / lvl_modifier / gm_modifier
 
+        no_romantic_mentor = False
+        if not game.settings['romantic with former mentor']:
+            if cat2.ID in cat1.former_apprentices or cat1.ID in cat2.former_apprentices:
+                no_romantic_mentor = True
+
         # determine the traits to effect
         pos_traits = ["platonic", "respect", "comfortable", "trust"]
-        if mates or (valid_age and not related and age_diff):
+        if allow_romantic and (mates or (valid_age and not related and age_diff and not no_romantic_mentor)):
             pos_traits.append("romantic")
 
         neg_traits = ["dislike", "jealousy"]
@@ -2642,7 +2593,7 @@ class Cat():
 # Twelve example cats
 def create_example_cats():
     e = random.sample(range(12), 3)
-    not_allowed = ['NOPAW', 'NOTAIL', 'HALFTAIL', 'NOEAR', 'BOTHBLIND', 'RIGHTBLIND', 'LEFTBLIND', 'BRIGHTHEART'
+    not_allowed = ['NOPAW', 'NOTAIL', 'HALFTAIL', 'NOEAR', 'BOTHBLIND', 'RIGHTBLIND', 'LEFTBLIND', 'BRIGHTHEART',
                    'NOLEFTEAR', 'NORIGHTEAR', 'MANLEG']
     for a in range(12):
         if a in e:
@@ -2652,10 +2603,10 @@ def create_example_cats():
                 ['kitten', 'apprentice', 'warrior', 'warrior', 'elder']))
         if game.choose_cats[a].moons >= 160:
             game.choose_cats[a].moons = choice(range(120, 155))
-        for scar in not_allowed:
-            if scar in game.choose_cats[a].scars:
+        for scar in game.choose_cats[a].scars:
+            if scar in not_allowed:
                 game.choose_cats[a].scars.remove(scar)
-            update_sprite(game.choose_cats[a])
+        update_sprite(game.choose_cats[a])
 
 
 # CAT CLASS ITEMS

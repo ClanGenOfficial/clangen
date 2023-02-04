@@ -370,6 +370,7 @@ class ProfileScreen(Screens):
                     self.the_cat.thought = "Is shocked that they have been exiled"
                     for app in self.the_cat.apprentice:
                         Cat.fetch_cat(app).update_mentor()
+                    self.the_cat.update_mentor()
                     self.clear_profile()
                     self.build_profile()
                     self.update_disabled_buttons_and_text()
@@ -1547,10 +1548,10 @@ class ProfileScreen(Screens):
         else:
             self.open_tab = 'roles'
 
-            self.manage_roles = pygame_gui.elements.UIButton(scale(pygame.Rect((452, 900), (344, 72))),
-                                                             "Manage Roles",
-                                                             starting_height=2
-                                                             , manager=MANAGER)
+            self.manage_roles = UIImageButton(scale(pygame.Rect((452, 900), (344, 72))),
+                                             "", object_id="#manage_roles_button",
+                                             starting_height=2
+                                             , manager=MANAGER)
             self.update_disabled_buttons_and_text()
 
     def toggle_personal_tab(self):
@@ -1621,7 +1622,8 @@ class ProfileScreen(Screens):
             else:
                 self.choose_mate_button.enable()
 
-            if self.the_cat.status not in ['apprentice', 'medicine cat apprentice'] or self.the_cat.dead:
+            if self.the_cat.status not in ['apprentice', 'medicine cat apprentice'] or self.the_cat.dead \
+                    or self.the_cat.outside:
                 self.change_mentor_button.disable()
             else:
                 self.change_mentor_button.enable()
@@ -1978,7 +1980,7 @@ class ChangeGenderScreen(Screens):
         self.hide_menu_buttons()
 
         self.header = pygame_gui.elements.UITextBox("-Change Gender-\nYou can set this to anything. "
-                                                    "Gender alignment does not effect gameplay",
+                                                    "Gender alignment does not effect gameplay. ",
                                                     scale(pygame.Rect((200, 260), (1200, -1))),
                                                     object_id=get_text_box_theme(), manager=MANAGER)
         self.gender_changed = pygame_gui.elements.UITextBox("Gender Changed!",
@@ -1992,7 +1994,7 @@ class ChangeGenderScreen(Screens):
         self.back_button = UIImageButton(scale(pygame.Rect((50, 50), (210, 60))), "",
                                          object_id="#back_button", manager=MANAGER)
 
-        self.gender_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((600, 400), (400, 48))),
+        self.gender_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((600, 400), (400, 60))),
                                                                     placeholder_text=self.the_cat.genderalign
                                                                     , manager=MANAGER)
 
@@ -2219,7 +2221,7 @@ class CeremonyScreen(Screens):
                 kit_text = kit + ' introduces themself and bounds up to the new leader, reaching up on their hind legs to give them a new life for ' + \
                         cat.virtues[2] + '.'
         if known[3]:
-            if cat.trait == "bloodthisty":
+            if cat.trait == "bloodthirsty":
                 warrior2_text = 'Another cat approaches. ' + warrior2 + ' steps forward to give ' + dep_name + ' a life for ' + \
                             cat.virtues[3] + '. ' + dep_name + ' yowls in pain as the life rushes into them.'
             else:
@@ -2359,6 +2361,7 @@ class RoleScreen(Screens):
                     Cat.sort_cats()
                 self.update_selected_cat()
             elif event.ui_element == self.promote_deputy:
+                game.clan.deputy = self.the_cat
                 self.the_cat.status_change("deputy", resort=True)
                 self.update_selected_cat()
             elif event.ui_element == self.switch_warrior:
@@ -2417,27 +2420,31 @@ class RoleScreen(Screens):
                                             manager=MANAGER)
 
         # ADULT CAT ROLES
-        self.switch_warrior = UIImageButton(scale(pygame.Rect((460, 720), (334, 72))), "",
+        self.switch_warrior = UIImageButton(scale(pygame.Rect((451, 720), (344, 72))), "",
                                             object_id="#switch_warrior_button",
                                             manager=MANAGER)
-        self.retire = UIImageButton(scale(pygame.Rect((460, 792), (334, 72))), "",
+        self.retire = UIImageButton(scale(pygame.Rect((451, 792), (334, 72))), "",
                                     object_id="#retire_button",
+                                    tool_tip_text="If a cat is retired, you will be "
+                                                  "unable to switch them to warrior status. ",
                                     manager=MANAGER)
-        self.switch_med_cat = UIImageButton(scale(pygame.Rect((814, 720), (334, 104))), "",
+        self.switch_med_cat = UIImageButton(scale(pygame.Rect((805, 720), (344, 104))), "",
                                             object_id="#switch_med_cat_button",
                                             manager=MANAGER)
-        self.switch_mediator = UIImageButton(scale(pygame.Rect((814, 824), (335, 72))), "Switch Mediator",
+        self.switch_mediator = UIImageButton(scale(pygame.Rect((805, 824), (344, 72))), "",
+                                             object_id="#switch_mediator_button",
                                              manager=MANAGER)
 
 
         #In-TRAINING ROLES:
-        self.switch_warrior_app = UIImageButton(scale(pygame.Rect((1168, 720), (334, 104))), "",
+        self.switch_warrior_app = UIImageButton(scale(pygame.Rect((1159, 720), (344, 104))), "",
                                                 object_id="#switch_warrior_app_button",
                                                 manager=MANAGER)
-        self.switch_med_app = UIImageButton(scale(pygame.Rect((1168, 824), (334, 104))), "",
+        self.switch_med_app = UIImageButton(scale(pygame.Rect((1159, 824), (344, 104))), "",
                                             object_id="#switch_med_app_button",
                                             manager=MANAGER)
-        self.switch_mediator_app = UIImageButton(scale(pygame.Rect((1168, 928), (334, 104))), "Switch Mediator Apprentice",
+        self.switch_mediator_app = UIImageButton(scale(pygame.Rect((1159, 928), (344, 104))), "",
+                                                 object_id="#switch_mediator_app_button",
                                                  manager=MANAGER)
 
         self.update_selected_cat()
@@ -2499,11 +2506,15 @@ class RoleScreen(Screens):
                                                                                  manager=MANAGER)
 
         if self.the_cat.status == "leader":
-            icon_path = "resources/images/buttons/leader_icon.png"
+            icon_path = "resources/images/leader_icon.png"
         elif self.the_cat.status == "deputy":
-            icon_path = "resources/images/buttons/deputy_icon.png"
+            icon_path = "resources/images/deputy_icon.png"
+        elif self.the_cat.status == "medicine cat":
+            icon_path = "resources/images/medic_icon.png"
+        elif self.the_cat.status == "medicine cat apprentice":
+            icon_path = "resources/images/medic_app_icon.png"
         else:
-            icon_path = "resources/images/buttons/buttonrank.png"
+            icon_path = "resources/images/buttonrank.png"
 
         self.selected_cat_elements["role_icon"] = pygame_gui.elements.UIImage(scale(pygame.Rect((165, 462), (156, 156))),
                                                                               pygame.transform.scale(
@@ -2597,7 +2608,8 @@ class RoleScreen(Screens):
             self.promote_deputy.disable()
 
             # ADULT CAT ROLES
-            if self.the_cat.retired:  # Keep cats that have retired due to health from being switched to warrior
+            # Keep cats that have retired due to health from being switched to warrior
+            if self.the_cat.retired or self.the_cat.age == "elder":
                 self.switch_warrior.disable()
             else:
                 self.switch_warrior.enable()
@@ -2621,7 +2633,8 @@ class RoleScreen(Screens):
                 self.promote_deputy.disable()
 
             # ADULT CAT ROLES
-            if self.the_cat.retired: # Keep cats that have retired due to health from being switched to warrior
+            # Keep cats that have retired due to health from being switched to warrior
+            if self.the_cat.retired or self.the_cat.age == "elder":
                 self.switch_warrior.disable()
             else:
                 self.switch_warrior.enable()
@@ -2714,10 +2727,10 @@ class RoleScreen(Screens):
                      f"Warriors are essential to the survival of a Clan, and usually make up the bulk of it's members. "
         elif self.the_cat.status == "leader":
             output = f"{self.the_cat.name} is the <b>leader</b> of {game.clan.name}Clan. The guardianship of all " \
-                     f"Clan cats has been entrusted to them by Starclan. The leader is the highest " \
-                     f"authority in the Clan. {self.the_cat.name} leads Clan meetings, determines mentors for " \
-                     f"new apprentices, and names new warriors. To help them protect the clan, " \
-                     f"Starclan has given them nine lives. They typically take the suffix \"star\""
+                     f"Clan cats has been entrusted to them by StarClan. The leader is the highest " \
+                     f"authority in the Clan. The leader holds Clan meetings, determines mentors for " \
+                     f"new apprentices, and names new warriors. To help them protect the Clan, " \
+                     f"StarClan has given them nine lives. They typically take the suffix \"star\"."
         elif self.the_cat.status == "deputy":
             output = f"{self.the_cat.name} is {game.clan.name}Clan's <b>deputy</b>. " \
                      f"The deputy is the second in command, " \
@@ -2727,12 +2740,12 @@ class RoleScreen(Screens):
                      f"before appointment.  " \
                      f"The deputy succeeds the leader if they die or retire. "
         elif self.the_cat.status == "medicine cat":
-            output = f"{self.the_cat.name} is a <b>medicine cat</b>. Medicine cats are the healers of the clan. " \
+            output = f"{self.the_cat.name} is a <b>medicine cat</b>. Medicine cats are the healers of the Clan. " \
                      f"They treat " \
                      f"injuries and illnesses with herbal remedies. Unlike warriors, medicine cats are not expected " \
-                     f"to hunt and fight for the clan. In addition to their healing duties, medicine cats also have " \
-                     f"a special connection to Starclan. Every half-moon, they travel to their clan's holy place " \
-                     f"to commune with Starclan. "
+                     f"to hunt and fight for the Clan. In addition to their healing duties, medicine cats also have " \
+                     f"a special connection to StarClan. Every half-moon, they travel to their Clan's holy place " \
+                     f"to commune with StarClan. "
         elif self.the_cat.status == "mediator":
             output = f"{self.the_cat.name} is a <b>mediator</b>. Mediators are not typically required " \
                      f"to hunt or fight for " \
@@ -2747,21 +2760,21 @@ class RoleScreen(Screens):
                      f"circumstance of their retirement, elders are held in high esteem in the Clan, and always eat " \
                      f"before Warriors and Medicine Cats. "
         elif self.the_cat.status == "apprentice":
-            output = f"{self.the_cat.name} is an <b>apprentice</b>, in training to become a Warrior. " \
-                     f"Kits can be made Warrior apprentices at six moons of age, where they will learn how " \
-                     f"to hunt and fight for their clan. Typically, the training of an apprentice is entrusted " \
+            output = f"{self.the_cat.name} is an <b>apprentice</b>, in training to become a warrior. " \
+                     f"Kits can be made warrior apprentices at six moons of age, where they will learn how " \
+                     f"to hunt and fight for their Clan. Typically, the training of an apprentice is entrusted " \
                      f"to an single warrior - their mentor. To build character, apprentices are often assigned " \
-                     f"the unpleasant and grunt tasks of clan life. Apprentices take the suffix \"paw\", " \
+                     f"the unpleasant and grunt tasks of Clan life. Apprentices take the suffix \"paw\", " \
                      f"to represent the path their paws take towards adulthood. "
         elif self.the_cat.status == "medicine cat apprentice":
             output = f"{self.the_cat.name} is a <b>medicine cat apprentice</b>, training to become a full medicine cat. " \
                      f"Kits can be made medicine cat apprentices at six moons of age, where they will learn how to " \
-                     f"heal their Clanmates and  commune with Starclan. Medicine cat apprentices are typically chosen " \
-                     f"for their interest in healing and/or their connecting to Starclan. Apprentices take the suffix " \
+                     f"heal their Clanmates and commune with StarClan. Medicine cat apprentices are typically chosen " \
+                     f"for their interest in healing and/or their connecting to StarClan. Apprentices take the suffix " \
                      f"-paw, to represent the path their paws take towards adulthood."
         elif self.the_cat.status == "mediator apprentice":
             output = f"{self.the_cat.name} is a <b>mediator apprentice</b>, training to become a full mediator. " \
-                     f"Mediators are in charge of handling disagreements both within the clan and between clans. " \
+                     f"Mediators are in charge of handling disagreements both within the Clan and between Clans. " \
                      f"Mediator apprentices are often chosen for their quick thinking and steady personality. " \
                      f"Apprentices take the suffix \"paw\", " \
                      f"to represent the path their paws take towards adulthood. "
@@ -2769,9 +2782,9 @@ class RoleScreen(Screens):
             output = f"{self.the_cat.name} is a <b>kitten</b>. All cats below the age of six moons are " \
                      f"considered kits. Kits " \
                      f"are prohibited from leaving camp in order to protect them from the dangers of the wild. " \
-                     f"Although they don't have any official duties in the Clan, they are excepted to learn the " \
-                     f"legends and traditions of their Clan. They are protected by every cat in the clan and always " \
-                     f"eat first. Kit take the suffix \"kit\""
+                     f"Although they don't have any official duties in the Clan, they are expected to learn the " \
+                     f"legends and traditions of their Clan. They are protected by every cat in the Clan and always " \
+                     f"eat first. Kit take the suffix \"kit\"."
         else:
             output = f"{self.the_cat.name} has an unknown rank. I guess they want to make their own way in life! "
 

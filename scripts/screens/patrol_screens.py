@@ -456,7 +456,7 @@ class PatrolScreen(Screens):
         s = 0
         pos = 0
         for x in range(text.count('c_n')):
-            index = text.index('c_n', s) or text.index("c_n's", s) or text.index('c_n.', s)
+            index = text.index('c_n', s)
             for y in vowels:
                 if str(clan_name).startswith(y):
                     modify = text.split()
@@ -473,6 +473,28 @@ class PatrolScreen(Screens):
                     break
             s += index + 3
         text = text.replace('c_n', str(game.clan.name) + 'Clan')
+
+        #Prey lists for forest random prey patrols
+        fst_tinyprey_singlular = ['shrew', 'robin', 'vole', 'dormouse', 'blackbird',
+                     'wood mouse', 'lizard', 'tiny grass snake', 'finch', 'sparrow', 
+                     'small bird', 'young rat', 'young hedgehog', 'big beetle', 'woodrat',
+                     'white-footed mouse', 'golden mouse', 'young squirrel', 'chipmunk', ]
+        text = text.replace('f_tp_s', str(fst_tinyprey_singlular))
+
+        fst_tinyprey_plural = ['mice', 'mice', 'mice', 'shrews', 'robins', 'voles', 'mice', 'blackbirds',
+                     'mice', 'mice', 'lizards', 'small birds', 'small birds', 'sparrows', 
+                     'sleepy dormice', 'chipmunks', 'woodrats', ]
+        text = text.replace('f_tp_p', str(fst_tinyprey_plural))
+
+        fst_midprey_singlular = ['plump shrew', 'woodpecker', 'mole', 'fat dormouse', 'blackbird',
+                     'field vole', 'big lizard', 'grass snake', 'half-grown rabbit', 'hedgehog', 
+                     'red squirrel', 'grey squirrel', 'rat', 'flying squirrel', 'kingfisher', ]
+        text = text.replace('f_mp_s', str(fst_midprey_singlular))
+
+        fst_midprey_plural = ['plump shrews', 'woodpeckers', 'moles', 'blackbirds',
+                     'field voles', 'big lizards', 'grass snakes', 'half-grown rabbits', 'hedgehogs', 
+                     'red squirrels', 'grey squirrels', 'rats', ]
+        text = text.replace('f_mp_p', str(fst_midprey_plural))
 
         sign_list = ['strangely-patterned stone', 'sharp stick', 'prey bone', 'cloud shaped like a cat',
                      'tuft of red fur', 'red feather', 'brown feather', 'black feather', 'white feather',
@@ -572,7 +594,7 @@ class PatrolScreen(Screens):
         # Prepare Intro Text
         # adjusting text for solo patrols
         intro_text = self.adjust_patrol_text(patrol.patrol_event.intro_text, patrol_size)
-        self.elements["patrol_text"] = UITextBoxTweaked(intro_text, scale(pygame.Rect((770, 350), (660, 540))),
+        self.elements["patrol_text"] = UITextBoxTweaked(intro_text, scale(pygame.Rect((770, 350), (660, 500))),
                                                         object_id="#patrol_text_box", manager=MANAGER)
         # Patrol Info
         # TEXT CATEGORIES AND CHECKING FOR REPEATS
@@ -660,7 +682,7 @@ class PatrolScreen(Screens):
         display_text = self.adjust_patrol_text(display_text, len(patrol.patrol_cats))
 
         self.elements["patrol_results"] = pygame_gui.elements.UITextBox("",
-                                                                        scale(pygame.Rect((1100, 1000), (344, 150))),
+                                                                        scale(pygame.Rect((1100, 1000), (344, 300))),
                                                                         object_id=get_text_box_theme("#cat_patrol_info_box")
                                                                         , manager=MANAGER)
         self.elements["patrol_results"].set_text(patrol.results())
