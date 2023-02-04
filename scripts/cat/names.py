@@ -21,7 +21,7 @@ class Name():
         # regular suffixes
         "acorn", "ash", "aster", "back", "bark", "beam", "bee", "belly", "berry", "bite", "bird", "blaze", "blink", "bloom", 
         "blossom", "blotch", "bounce", "bracken", "branch", "breeze", "briar", "bright", "brook", "burr", "burrow", "bush", "call",
-        "catcher", "cloud", "clouds", "clover", "coral", "crawl", "creek", "cry", "dapple", "daisy", "dawn", "drift", "drop", "dusk", "dust",
+        "catcher", "cloud", "clover", "crawl", "creek", "cry", "dapple", "daisy", "dawn", "drift", "drop", "dusk", "dust",
         "ear", "ears", "eater", "eye", "eyes", "face", "fall", "fang", "fawn", "feather", "fern", "fin", "fire", "fish", "flake",
         "flame", "flight", "flick", "flood", "flower", "fox", "frost", "gaze", "goose", "gorse", "grass", "hail", "hare", "hawk", "haze",
         "heather", "hollow", "holly", "horse", "ice", "ivy", "jaw", "jay", "jump", "kite", "lake", "larch", "leaf", "leap", 
@@ -30,7 +30,7 @@ class Name():
         "pool", "poppy", "pounce", "puddle", "rain", "rapid", "ripple", "river", "roar", "rose", "rump", "run", "runner", "scar",
         "scratch", "seed", "shade", "shadow", "shell", "shine", "sight", "skip", "sky", "slip", "snout", "snow", "song", "spark",
         "speck", "speckle", "spirit", "splash", "spot", "spots", "spring", "stalk", "stem", "step", "stone", "storm", "streak",
-        "stream", "strike", "stripe", "sun", "swipe", "swoop", "talon", "teeth", "thistle", "thorn", "throat", "toe", "tree", 
+        "stream", "strike", "stripe", "sun", "swipe", "swoop", "talon", "tooth", "thistle", "thorn", "throat", "toe", "tree", 
         "throat", "watcher", "water", "wave", "whisper", "whistle", "willow", "wind", "wing", "wish"
     ]
 
