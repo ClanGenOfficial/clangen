@@ -370,6 +370,7 @@ class ProfileScreen(Screens):
                     self.the_cat.thought = "Is shocked that they have been exiled"
                     for app in self.the_cat.apprentice:
                         Cat.fetch_cat(app).update_mentor()
+                    self.the_cat.update_mentor()
                     self.clear_profile()
                     self.build_profile()
                     self.update_disabled_buttons_and_text()
@@ -906,7 +907,7 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # NUTRITION INFO (if the game is in the correct mode)
-        '''if game.clan.game_mode in ["expanded", "cruel season"] and the_cat.is_alive():
+        if game.clan.game_mode in ["expanded", "cruel season"] and the_cat.is_alive():
             nutr = None
             if the_cat.ID in game.clan.freshkill_pile.nutrition_info:
                 nutr = game.clan.freshkill_pile.nutrition_info[the_cat.ID]
@@ -915,7 +916,7 @@ class ProfileScreen(Screens):
                 output += f"nutrition status: {round(nutr.percentage, 1)}%\n"
             else:
                 output += "\n"
-                output += f"nutrition status: 100%\n"'''
+                output += f"nutrition status: 100%\n"
 
         if the_cat.is_disabled():
             for condition in the_cat.permanent_condition:
@@ -1979,7 +1980,7 @@ class ChangeGenderScreen(Screens):
         self.hide_menu_buttons()
 
         self.header = pygame_gui.elements.UITextBox("-Change Gender-\nYou can set this to anything. "
-                                                    "Gender alignment does not effect gameplay",
+                                                    "Gender alignment does not effect gameplay. ",
                                                     scale(pygame.Rect((200, 260), (1200, -1))),
                                                     object_id=get_text_box_theme(), manager=MANAGER)
         self.gender_changed = pygame_gui.elements.UITextBox("Gender Changed!",
@@ -1993,7 +1994,7 @@ class ChangeGenderScreen(Screens):
         self.back_button = UIImageButton(scale(pygame.Rect((50, 50), (210, 60))), "",
                                          object_id="#back_button", manager=MANAGER)
 
-        self.gender_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((600, 400), (400, 48))),
+        self.gender_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((600, 400), (400, 60))),
                                                                     placeholder_text=self.the_cat.genderalign
                                                                     , manager=MANAGER)
 
@@ -2360,6 +2361,7 @@ class RoleScreen(Screens):
                     Cat.sort_cats()
                 self.update_selected_cat()
             elif event.ui_element == self.promote_deputy:
+                game.clan.deputy = self.the_cat
                 self.the_cat.status_change("deputy", resort=True)
                 self.update_selected_cat()
             elif event.ui_element == self.switch_warrior:
@@ -2725,10 +2727,10 @@ class RoleScreen(Screens):
                      f"Warriors are essential to the survival of a Clan, and usually make up the bulk of it's members. "
         elif self.the_cat.status == "leader":
             output = f"{self.the_cat.name} is the <b>leader</b> of {game.clan.name}Clan. The guardianship of all " \
-                     f"Clan cats has been entrusted to them by Starclan. The leader is the highest " \
-                     f"authority in the Clan. {self.the_cat.name} leads Clan meetings, determines mentors for " \
-                     f"new apprentices, and names new warriors. To help them protect the clan, " \
-                     f"Starclan has given them nine lives. They typically take the suffix \"star\""
+                     f"Clan cats has been entrusted to them by StarClan. The leader is the highest " \
+                     f"authority in the Clan. The leader holds Clan meetings, determines mentors for " \
+                     f"new apprentices, and names new warriors. To help them protect the Clan, " \
+                     f"StarClan has given them nine lives. They typically take the suffix \"star\"."
         elif self.the_cat.status == "deputy":
             output = f"{self.the_cat.name} is {game.clan.name}Clan's <b>deputy</b>. " \
                      f"The deputy is the second in command, " \
@@ -2738,12 +2740,12 @@ class RoleScreen(Screens):
                      f"before appointment.  " \
                      f"The deputy succeeds the leader if they die or retire. "
         elif self.the_cat.status == "medicine cat":
-            output = f"{self.the_cat.name} is a <b>medicine cat</b>. Medicine cats are the healers of the clan. " \
+            output = f"{self.the_cat.name} is a <b>medicine cat</b>. Medicine cats are the healers of the Clan. " \
                      f"They treat " \
                      f"injuries and illnesses with herbal remedies. Unlike warriors, medicine cats are not expected " \
-                     f"to hunt and fight for the clan. In addition to their healing duties, medicine cats also have " \
-                     f"a special connection to Starclan. Every half-moon, they travel to their clan's holy place " \
-                     f"to commune with Starclan. "
+                     f"to hunt and fight for the Clan. In addition to their healing duties, medicine cats also have " \
+                     f"a special connection to StarClan. Every half-moon, they travel to their Clan's holy place " \
+                     f"to commune with StarClan. "
         elif self.the_cat.status == "mediator":
             output = f"{self.the_cat.name} is a <b>mediator</b>. Mediators are not typically required " \
                      f"to hunt or fight for " \
@@ -2758,21 +2760,21 @@ class RoleScreen(Screens):
                      f"circumstance of their retirement, elders are held in high esteem in the Clan, and always eat " \
                      f"before Warriors and Medicine Cats. "
         elif self.the_cat.status == "apprentice":
-            output = f"{self.the_cat.name} is an <b>apprentice</b>, in training to become a Warrior. " \
-                     f"Kits can be made Warrior apprentices at six moons of age, where they will learn how " \
-                     f"to hunt and fight for their clan. Typically, the training of an apprentice is entrusted " \
+            output = f"{self.the_cat.name} is an <b>apprentice</b>, in training to become a warrior. " \
+                     f"Kits can be made warrior apprentices at six moons of age, where they will learn how " \
+                     f"to hunt and fight for their Clan. Typically, the training of an apprentice is entrusted " \
                      f"to an single warrior - their mentor. To build character, apprentices are often assigned " \
-                     f"the unpleasant and grunt tasks of clan life. Apprentices take the suffix \"paw\", " \
+                     f"the unpleasant and grunt tasks of Clan life. Apprentices take the suffix \"paw\", " \
                      f"to represent the path their paws take towards adulthood. "
         elif self.the_cat.status == "medicine cat apprentice":
             output = f"{self.the_cat.name} is a <b>medicine cat apprentice</b>, training to become a full medicine cat. " \
                      f"Kits can be made medicine cat apprentices at six moons of age, where they will learn how to " \
-                     f"heal their Clanmates and  commune with Starclan. Medicine cat apprentices are typically chosen " \
-                     f"for their interest in healing and/or their connecting to Starclan. Apprentices take the suffix " \
+                     f"heal their Clanmates and commune with StarClan. Medicine cat apprentices are typically chosen " \
+                     f"for their interest in healing and/or their connecting to StarClan. Apprentices take the suffix " \
                      f"-paw, to represent the path their paws take towards adulthood."
         elif self.the_cat.status == "mediator apprentice":
             output = f"{self.the_cat.name} is a <b>mediator apprentice</b>, training to become a full mediator. " \
-                     f"Mediators are in charge of handling disagreements both within the clan and between clans. " \
+                     f"Mediators are in charge of handling disagreements both within the Clan and between Clans. " \
                      f"Mediator apprentices are often chosen for their quick thinking and steady personality. " \
                      f"Apprentices take the suffix \"paw\", " \
                      f"to represent the path their paws take towards adulthood. "
@@ -2780,9 +2782,9 @@ class RoleScreen(Screens):
             output = f"{self.the_cat.name} is a <b>kitten</b>. All cats below the age of six moons are " \
                      f"considered kits. Kits " \
                      f"are prohibited from leaving camp in order to protect them from the dangers of the wild. " \
-                     f"Although they don't have any official duties in the Clan, they are excepted to learn the " \
-                     f"legends and traditions of their Clan. They are protected by every cat in the clan and always " \
-                     f"eat first. Kit take the suffix \"kit\""
+                     f"Although they don't have any official duties in the Clan, they are expected to learn the " \
+                     f"legends and traditions of their Clan. They are protected by every cat in the Clan and always " \
+                     f"eat first. Kit take the suffix \"kit\"."
         else:
             output = f"{self.the_cat.name} has an unknown rank. I guess they want to make their own way in life! "
 

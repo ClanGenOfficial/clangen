@@ -205,7 +205,7 @@ class Tortie():
 
     def __init__(self, white, length):
         self.white = white  # boolean; does cat have white on it or no
-        self.colour = choice(tortiecolours)
+        self.colour = tortiecolours[1]  #Is always overwritten
         self.length = length
 
     def __repr__(self):

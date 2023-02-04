@@ -219,7 +219,9 @@ class Patrol():
         possible_patrols.extend(self.generate_patrol_events(MEDCAT))
 
         if game_setting_disaster:
-            possible_patrols.extend(self.generate_patrol_events(DISASTER))
+            dis_chance = int(random.getrandbits(3)) # disaster patrol chance
+            if dis_chance == 1:
+                possible_patrols.extend(self.generate_patrol_events(DISASTER))
 
         # new cat patrols
         if chance == 1:
@@ -482,7 +484,6 @@ class Patrol():
             self.handle_relationships()
             if game.clan.game_mode != 'classic' and not antagonize:
                 self.handle_herbs(n)
-                self.handle_prey(n)
             self.final_success = self.patrol_event.success_text[n]
             if antagonize:
                 self.antagonize = self.patrol_event.antagonize_text
@@ -563,6 +564,10 @@ class Patrol():
             self.final_fail = self.patrol_event.fail_text[n]
             if antagonize:
                 self.antagonize_fail = self.patrol_event.antagonize_fail_text
+
+        if not antagonize:
+            self.handle_prey(n) 
+
 
     def results(self):
         text = "<br>".join(self.results_text)
@@ -887,12 +892,23 @@ class Patrol():
             "huge_prey" : PREY_REQUIREMENT["warrior"]*4
         }
 
+        if not self.success and "hunting" in patrol.patrol_event.tags:
+            cancel_tags = ["no_fail_prey", "poison_clan", "death", "disaster", "multi_deaths", "no_body", "cruel_season", "gone", "multi_gone", "disaster_gone"]
+            relevant_patrol_tags = [tag for tag in patrol.patrol_event.tags if tag in cancel_tags]
+            if len(relevant_patrol_tags) == 0:
+                amount = int(PREY_REQUIREMENT["warrior"] * len(self.patrol_cats) / 2)
+                game.clan.freshkill_pile.add_freshkill(amount)
+                self.results_text.append(f"The patrol still manages to catch some amount of prey.")
+            return
+
         prey_amount_per_cat = 0
         total_amount = 0
 
         # check what kind of prey type this succeeded patrol event has
+        prey_size = None
         for prey_type, amount in prey_types.items():
             current_tag = prey_type + str(outcome_nr)
+            prey_size = prey_type.split('_')[0]
             if current_tag in patrol.patrol_event.tags or prey_type in patrol.patrol_event.tags:
                 prey_amount_per_cat = amount
                 break
@@ -912,8 +928,8 @@ class Patrol():
             total_amount = total_amount * (HUNTER_BONUS["good_hunter"] / 10)
 
         game.clan.freshkill_pile.add_freshkill(total_amount)
-        '''if total_amount > 0:
-            self.results_text.append(f"Patrol managed to catch a total amount of {total_amount} prey.")'''
+        if total_amount > 0:
+            self.results_text.append(f"Each cat catches a {prey_size} amount of prey.")
 
     def handle_clan_relations(self, difference):
         """
@@ -1110,7 +1126,11 @@ class Patrol():
                 major_injury = False
             if "new_cat_kit" in tags:  # new kit
                 backstory_choice = choice(['abandoned2', 'abandoned1', 'abandoned3'])
-                created_cats = self.create_new_cat(loner=False, loner_name=False, kittypet=choice([True, False]),
+                if backstory_choice == 'abandoned2':
+                    kittypet = True
+                else:
+                    kittypet = False
+                created_cats = self.create_new_cat(loner=False, loner_name=False, kittypet=kittypet,
                                                    kit=True, backstory=backstory_choice)
                 new_cat = created_cats[0]
 
@@ -1630,10 +1650,15 @@ class PatrolEvent():
         "no_change_fail_rep" is for when rep should not change when a new_cat patrol fails
 
         - PREY TAGS -
-        If there is no tag, there will be no prey 
+        If there is no tag, there will be no prey if the hunt is successful
         There are 4 tag types "small_prey", "medium_prey", "large_prey" and "huge_prey". 
         If you want to differentiate between the success texts how much prey each success will get, you have to use the tag and then add the index of the sentence you want the prey to
         E.g. 3 successful outcome texts -> "small_prey0", "medium_prey1", "medium_prey2"
+
+        There will be auto prey for failed hunts to stop the auto, following tags do not allow auto prey:
+        > "no_fail_prey"
+        + all disaster tags ("death", "disaster", "multi_deaths", "no_body", "cruel_season", "gone", "multi_gone", "disaster_gone")
+        + "poison_clan"
 
         We want a mix of medium_prey and large_prey under normal conditions.
 

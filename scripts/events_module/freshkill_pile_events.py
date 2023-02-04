@@ -190,9 +190,7 @@ class Freshkill_Events():
             reduce_amount = int(freshkill_pile.total_amount / 4)
         elif "reduce_eighth" in chosen_event.tags:
             reduce_amount = int(freshkill_pile.total_amount /8)
-        print(f"pile before: {freshkill_pile.total_amount}, reduce: {reduce_amount}")
         freshkill_pile.remove_freshkill(reduce_amount, take_random=True)
-        print(f"pile after: {freshkill_pile.total_amount}, reduce: {reduce_amount}")
 
         types = ["misc"]
         if chosen_event.injury:
