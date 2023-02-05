@@ -397,6 +397,10 @@ class ChooseMentorScreen(Screens):
             for cat in Cat.all_cats_list:
                 if not cat.dead and not cat.outside and cat.status == 'medicine cat':
                     valid_mentors.append(cat)
+        elif self.the_cat.status == 'mediator apprentice':
+            for cat in Cat.all_cats_list:
+                if not cat.dead and not cat.outside and cat.status == 'mediator':
+                    valid_mentors.append(cat)
 
         return valid_mentors
 
