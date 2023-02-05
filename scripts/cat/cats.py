@@ -1514,7 +1514,7 @@ class Cat():
 
     def get_permanent_condition(self, name, born_with=False, event_triggered=False):
         if name not in PERMANENT:
-            print(f"WARNING: {name} is not in the permanent conditions collection.")
+            print(str(self.name), f"WARNING: {name} is not in the permanent conditions collection.")
             return
 
         # remove accessories if need be
