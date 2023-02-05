@@ -927,9 +927,10 @@ class Patrol():
         elif "good_hunter" in self.patrol_skills:
             total_amount = total_amount * (HUNTER_BONUS["good_hunter"] / 10)
 
-        game.clan.freshkill_pile.add_freshkill(total_amount)
-        if total_amount > 0:
-            self.results_text.append(f"Each cat catches a {prey_size} amount of prey.")
+        if game.clan.game_mode != "classic":
+            game.clan.freshkill_pile.add_freshkill(total_amount)
+            if total_amount > 0:
+                self.results_text.append(f"Each cat catches a {prey_size} amount of prey.")
 
     def handle_clan_relations(self, difference):
         """
