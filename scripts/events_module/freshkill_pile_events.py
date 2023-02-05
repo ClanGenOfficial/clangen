@@ -69,7 +69,7 @@ class Freshkill_Events():
             cat.died_by.append(history_text)
 
             types = ["birth_death"]
-            game.cur_events_list.append(Single_Event(death_text, types, [cat]))
+            game.cur_events_list.append(Single_Event(death_text, types, [cat.ID]))
             return
 
         # change health status according to nutrient status
@@ -116,7 +116,7 @@ class Freshkill_Events():
         chosen_event = (random.choice(final_events))
         event_text = event_text_adjust(Cat, chosen_event.event_text, cat, other_cat, other_clan_name)
         types = ["health"]
-        game.cur_events_list.append(Single_Event(event_text, types, [cat]))
+        game.cur_events_list.append(Single_Event(event_text, types, [cat.ID]))
 
     def handle_amount_freshkill_pile(self, freshkill_pile, living_cats):
         """
@@ -190,9 +190,7 @@ class Freshkill_Events():
             reduce_amount = int(freshkill_pile.total_amount / 4)
         elif "reduce_eighth" in chosen_event.tags:
             reduce_amount = int(freshkill_pile.total_amount /8)
-        print(f"pile before: {freshkill_pile.total_amount}, reduce: {reduce_amount}")
         freshkill_pile.remove_freshkill(reduce_amount, take_random=True)
-        print(f"pile after: {freshkill_pile.total_amount}, reduce: {reduce_amount}")
 
         types = ["misc"]
         if chosen_event.injury:
@@ -202,10 +200,10 @@ class Freshkill_Events():
 
         if "m_c" not in chosen_event.event_text:
             game.cur_events_list.append(Single_Event(event_text, types, []))
-        elif "other_cat" in chosen_event.tags:
-            game.cur_events_list.append(Single_Event(event_text, types, [cat, other_cat]))
+        elif "other_cat" in chosen_event.tags and other_cat:
+            game.cur_events_list.append(Single_Event(event_text, types, [cat.ID, other_cat.ID]))
         else:
-            game.cur_events_list.append(Single_Event(event_text, types, [cat]))
+            game.cur_events_list.append(Single_Event(event_text, types, [cat.ID]))
 
     # ---------------------------------------------------------------------------- #
     #                                helper function                               #

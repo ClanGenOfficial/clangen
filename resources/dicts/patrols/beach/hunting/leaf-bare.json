@@ -1,0 +1,161 @@
+[
+{
+    "patrol_id": "bch_hunt_leafbaresnowstorm1",
+    "biome": "beach",
+    "season": "leaf-bare",
+    "tags": [
+        "hunting",
+        "large_prey",
+        "comfort",
+        "trust",
+        "patrol_to_p_l",
+        "patrol_to_r_c",
+        "cold_injury",
+        "no_fail_prey"
+    ],
+    "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile.",
+    "decline_text": "They decide to turn back and wait until the snow dies down.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "success_text": [
+        "Despite the snow, the patrol manages to hunt successfully, finding crabs running about on the beach, oblivious to leaf-bare. With the sea to provide there's more than enough to bring a good haul back to c_n, and as p_l leads them home there's a sense of security and competence driving them onwards.",
+        null,
+        "Everyone looks admiringly at s_c by the end of the afternoon. Every cat carries something home, but nearly all of it was caught by s_c.",
+        "s_c really keeps the patrol on task and motivated through the sharp cold of the leaf-bare morning, not through authority or commands, but with a gentle voice and compassionate understanding that encourages every cat to do their best for c_n."
+    ],
+    "fail_text": [
+        "The prey must be hiding; the patrol catches nothing. As a snowstorm descends and visibility drops, the patrol retreats to a sea cave, their pelts and tails and legs all tightly wrapped into one indistinguishable kitty cat ball while they wait for the storm to blow over.",
+        null,
+        null,
+        "The prey must be hiding; the patrol catches nothing. As a snowstorm descends and visibility drops, the patrol retreats to a sea cave, their pelts and tails and legs all tightly wrapped into one indistinguishable kitty cat ball. Still, when they return to camp r_c is cold and chilled."
+    ],
+    "win_skills": [
+        "great hunter",
+        "fantastic hunter"
+    ],
+    "win_trait": [
+        "altruistic",
+        "compassionate",
+        "empathetic",
+        "faithful",
+        "loving"
+    ],
+    "fail_skills": [
+        "None"
+    ],
+    "fail_trait": [
+        "None"
+    ],
+    "min_cats": 3,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        "r_c caught a chill while hunting in leaf-bare.",
+        null
+    ]
+},
+{
+    "patrol_id": "bch_hunt_leafbaresnowstorm2",
+    "biome": "beach",
+    "season": "leaf-bare",
+    "tags": [
+        "hunting",
+        "small_prey",
+        "cold_injury",
+        "no_fail_prey"
+    ],
+    "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile.",
+    "decline_text": "They decide to turn back and wait until the snow dies down.",
+    "chance_of_success": 40,
+    "exp": 10,
+    "success_text": [
+        "Despite the snow, r_c manages to hunt successfully, finding the normal number of crabs obliviously scurrying about.",
+        null,
+        "s_c really shows their talent, bringing a clutch of crabs back to camp for the fresh-kill pile."
+    ],
+    "fail_text": [
+        null,
+        null,
+        null,
+        "The prey must be hiding; r_c catches nothing. As a snowstorm descends and visibility drops, they hide in a sea cave, shivering and tightly tucked up against the cold. When they return to camp r_c is cold and chilled, but otherwise unharmed."
+    ],
+    "win_skills": [
+        "great hunter",
+        "fantastic hunter"
+    ],
+    "win_trait": [
+        "None"
+    ],
+    "fail_skills": [
+        "None"
+    ],
+    "fail_trait": [
+        "None"
+    ],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        "r_c caught a chill while hunting in leaf-bare.",
+        null
+    ]
+},
+{
+    "patrol_id": "bch_hunt_leafbaresnowstorm3",
+    "biome": "beach",
+    "season": "leaf-bare",
+    "tags": [
+        "hunting",
+        "small_prey",
+        "comfort",
+        "trust",
+        "rel_patrol",
+        "romantic",
+        "no_app",
+        "cold_injury"
+    ],
+    "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something nice for the fresh-kill pile.",
+    "decline_text": "They decide to turn back and wait until the snow dies down.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "success_text": [
+        "A storm descends, sudden and violent, putting an end to any other thoughts but survival. The cats retreat into a sea cave and cuddle together, sharing what little warmth they have. Each cat takes a turn on the most exposed side of the huddle, selflessly risking themselves.",
+        null,
+        "A storm descends, sudden and violent, putting an end to any other thoughts but survival. s_c keeps everyone's spirits up as the patrol hides in the lee of a cliff where the wind can't get them, until everyone is talking, shaky and unhappy, but keeping each other's spirits up.",
+        "A storm descends, sudden and violent, putting an end to any other thoughts but survival. As the cats hide from the wind, s_c keeps an eye out for everyone. It's a long couple of hours, but with gentle understanding and compassion the cats make it though safely, closer than ever afterwards."
+    ],
+    "fail_text": [
+        null,
+        null,
+        null,
+        "A storm descends, sudden and violent, putting an end to any other thoughts but survival. When the snowstorm leaves, finally, and the cats trudge back home, but r_c hasn't escaped unscathed, their body chilled and refusing to warm up properly."
+    ],
+    "win_skills": [
+        "great speaker",
+        "excellent speaker"
+    ],
+    "win_trait": [
+        "altruistic",
+        "compassionate",
+        "empathetic",
+        "faithful",
+        "loving"
+    ],
+    "fail_skills": [
+        "None"
+    ],
+    "fail_trait": [
+        "None"
+    ],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        "r_c caught a chill while hunting in leaf-bare.",
+        null
+    ]
+}
+]

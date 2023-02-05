@@ -2,6 +2,7 @@ import pygame
 import os
 
 from .base_screens import Screens
+from sys import exit
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.image_button import UIImageButton
@@ -238,6 +239,12 @@ class SettingsScreen(Screens):
             if event.ui_element == self.main_menu_button:
                 self.change_screen('start screen')
                 return
+            if event.ui_element == self.fullscreen_toggle:
+                game.switch_setting('fullscreen')
+                game.save_settings()
+                pygame.display.quit()
+                pygame.quit()
+                exit()
             elif event.ui_element == self.save_settings_button:
                 self.save_settings()
                 game.save_settings()
@@ -350,14 +357,6 @@ class SettingsScreen(Screens):
             self.settings_changed = True
             self.update_save_button()
             self.refresh_checkboxes()
-        elif event.ui_element == self.checkboxes_text["fullscreen"]:
-            game.switch_setting('fullscreen')
-            game.save_settings()
-            pygame.display.quit()
-            pygame.quit()
-            exit()
-
-
 
     def handle_lang_events(self, event):
         if event.ui_element == self.checkboxes['english']:
@@ -388,6 +387,15 @@ class SettingsScreen(Screens):
                                              "", object_id="#lang_settings_button", manager=MANAGER)
         self.save_settings_button = UIImageButton(scale(pygame.Rect((654, 1100), (292, 60))),
                                                   "", object_id="#save_settings_button", manager=MANAGER)
+
+        self.fullscreen_toggle = UIImageButton(scale(pygame.Rect((1234, 50), (316, 72))),
+                                               "",
+                                               object_id="#toggle_fullscreen_button",
+                                               manager=MANAGER,
+                                               tool_tip_text="This will close the game. "
+                                                            "When you reopen, fullscreen"
+                                                            " will be toggled. ")
+
         self.update_save_button()
         self.main_menu_button = UIImageButton(scale(pygame.Rect((50, 50), (305, 60))),
                                               "", object_id="#main_menu_button", manager=MANAGER)
@@ -408,11 +416,19 @@ class SettingsScreen(Screens):
     def exit_screen(self):
         self.clear_sub_settings_buttons_and_text()
         self.general_settings_button.kill()
+        del self.general_settings_button
         self.relation_settings_button.kill()
+        del self.relation_settings_button
         self.info_button.kill()
+        del self.info_button
         self.language_button.kill()
+        del self.language_button
         self.save_settings_button.kill()
+        del self.save_settings_button
         self.main_menu_button.kill()
+        del self.main_menu_button
+        self.fullscreen_toggle.kill()
+        del self.fullscreen_toggle
 
         game.settings = self.settings_at_open
 
@@ -427,10 +443,6 @@ class SettingsScreen(Screens):
         self.clear_sub_settings_buttons_and_text()
         self.sub_menu = 'general'
         self.save_settings_button.show()
-
-        self.checkboxes_text["fullscreen"] = pygame_gui.elements.UIButton(scale(pygame.Rect((700, 280), (-1, -1))),
-                                                                          "Toggle Fullscreen",
-                                                                          tool_tip_text="This will close the game.")
 
 
         # Text_boxes:
@@ -523,8 +535,6 @@ class SettingsScreen(Screens):
             if box != "container":
                 self.checkboxes_text[box].disable()
 
-        self.checkboxes_text["fullscreen"].enable()
-
         self.checkboxes_text["container"].set_scrollable_area_dimensions((1360/1600 * screen_x, (n * y_spacing + 80)/1400 * screen_y))
 
         self.checkboxes_text['instr'] = pygame_gui.elements.UITextBox(
@@ -604,7 +614,7 @@ class SettingsScreen(Screens):
         self.save_settings_button.show()
 
         self.checkboxes_text['instr'] = pygame_gui.elements.UITextBox(
-            "Change the languange of the game here. This has not been implemented yet.",
+            "Change the language of the game here. This has not been implemented yet.",
             scale(pygame.Rect((200, 320), (1200, 100))), object_id=get_text_box_theme(), manager=MANAGER)
 
         self.refresh_checkboxes()

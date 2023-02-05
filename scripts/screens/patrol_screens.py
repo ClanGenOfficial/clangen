@@ -217,31 +217,6 @@ class PatrolScreen(Screens):
                 self.elements['claws'].enable()
                 self.elements['herb'].enable()
 
-            if len(self.current_patrol) >= 6 or len(self.able_cats) < 1:
-                self.elements['add_one'].disable()
-                self.elements["random"].disable()
-            if len(self.current_patrol) > 3 or len(self.able_cats) < 3:
-                self.elements['add_three'].disable()
-            if len(self.current_patrol) >= 1 or len(self.able_cats) < 6:
-                self.elements['add_six'].disable()
-
-                # Update the availability of the tab buttons
-            if self.patrol_screen == 'patrol_cats':
-                self.elements['patrol_tab'].disable()
-                self.elements['skills'].enable()
-            elif self.patrol_screen == 'skills':
-                self.elements['patrol_tab'].enable()
-                self.elements['skills'].disable()
-
-            if self.patrol_screen == 'patrol_cats':
-                self.elements['patrol_tab'].disable()
-                self.elements['skills'].enable()
-            elif self.patrol_screen == 'skills':
-                self.elements['patrol_tab'].enable()
-                self.elements['skills'].disable()
-
-            if game.clan.game_mode != 'classic':
-
                 # making sure meds don't get the option for other patrols
                 med = False
                 for cat in self.current_patrol:
@@ -277,6 +252,34 @@ class PatrolScreen(Screens):
                 self.elements['info'] = pygame_gui.elements.UITextBox(
                     text, scale(pygame.Rect((500, 1050), (600, 800))), object_id=get_text_box_theme(), manager=MANAGER
                 )
+            else:
+                self.elements['paw'].hide()
+                self.elements['mouse'].hide()
+                self.elements['claws'].hide()
+                self.elements['herb'].hide()
+
+            if len(self.current_patrol) >= 6 or len(self.able_cats) < 1:
+                self.elements['add_one'].disable()
+                self.elements["random"].disable()
+            if len(self.current_patrol) > 3 or len(self.able_cats) < 3:
+                self.elements['add_three'].disable()
+            if len(self.current_patrol) >= 1 or len(self.able_cats) < 6:
+                self.elements['add_six'].disable()
+
+                # Update the availability of the tab buttons
+            if self.patrol_screen == 'patrol_cats':
+                self.elements['patrol_tab'].disable()
+                self.elements['skills'].enable()
+            elif self.patrol_screen == 'skills':
+                self.elements['patrol_tab'].enable()
+                self.elements['skills'].disable()
+
+            if self.patrol_screen == 'patrol_cats':
+                self.elements['patrol_tab'].disable()
+                self.elements['skills'].enable()
+            elif self.patrol_screen == 'skills':
+                self.elements['patrol_tab'].enable()
+                self.elements['skills'].disable()
 
             if self.selected_cat != None:
                 if 'cycle_app_mentor_right_button' in self.elements and 'cycle_app_mentor_left_button' in self.elements:
@@ -453,7 +456,7 @@ class PatrolScreen(Screens):
         s = 0
         pos = 0
         for x in range(text.count('c_n')):
-            index = text.index('c_n', s) or text.index("c_n's", s) or text.index('c_n.', s)
+            index = text.index('c_n', s)
             for y in vowels:
                 if str(clan_name).startswith(y):
                     modify = text.split()
@@ -470,6 +473,28 @@ class PatrolScreen(Screens):
                     break
             s += index + 3
         text = text.replace('c_n', str(game.clan.name) + 'Clan')
+
+        #Prey lists for forest random prey patrols
+        fst_tinyprey_singlular = ['shrew', 'robin', 'vole', 'dormouse', 'blackbird',
+                     'wood mouse', 'lizard', 'tiny grass snake', 'finch', 'sparrow', 
+                     'small bird', 'young rat', 'young hedgehog', 'big beetle', 'woodrat',
+                     'white-footed mouse', 'golden mouse', 'young squirrel', 'chipmunk', ]
+        text = text.replace('f_tp_s', str(fst_tinyprey_singlular))
+
+        fst_tinyprey_plural = ['mice', 'mice', 'mice', 'shrews', 'robins', 'voles', 'mice', 'blackbirds',
+                     'mice', 'mice', 'lizards', 'small birds', 'small birds', 'sparrows', 
+                     'sleepy dormice', 'chipmunks', 'woodrats', ]
+        text = text.replace('f_tp_p', str(fst_tinyprey_plural))
+
+        fst_midprey_singlular = ['plump shrew', 'woodpecker', 'mole', 'fat dormouse', 'blackbird',
+                     'field vole', 'big lizard', 'grass snake', 'half-grown rabbit', 'hedgehog', 
+                     'red squirrel', 'grey squirrel', 'rat', 'flying squirrel', 'kingfisher', ]
+        text = text.replace('f_mp_s', str(fst_midprey_singlular))
+
+        fst_midprey_plural = ['plump shrews', 'woodpeckers', 'moles', 'blackbirds',
+                     'field voles', 'big lizards', 'grass snakes', 'half-grown rabbits', 'hedgehogs', 
+                     'red squirrels', 'grey squirrels', 'rats', ]
+        text = text.replace('f_mp_p', str(fst_midprey_plural))
 
         sign_list = ['strangely-patterned stone', 'sharp stick', 'prey bone', 'cloud shaped like a cat',
                      'tuft of red fur', 'red feather', 'brown feather', 'black feather', 'white feather',
@@ -569,7 +594,7 @@ class PatrolScreen(Screens):
         # Prepare Intro Text
         # adjusting text for solo patrols
         intro_text = self.adjust_patrol_text(patrol.patrol_event.intro_text, patrol_size)
-        self.elements["patrol_text"] = UITextBoxTweaked(intro_text, scale(pygame.Rect((770, 350), (660, 540))),
+        self.elements["patrol_text"] = UITextBoxTweaked(intro_text, scale(pygame.Rect((770, 350), (660, 500))),
                                                         object_id="#patrol_text_box", manager=MANAGER)
         # Patrol Info
         # TEXT CATEGORIES AND CHECKING FOR REPEATS
@@ -657,7 +682,7 @@ class PatrolScreen(Screens):
         display_text = self.adjust_patrol_text(display_text, len(patrol.patrol_cats))
 
         self.elements["patrol_results"] = pygame_gui.elements.UITextBox("",
-                                                                        scale(pygame.Rect((1100, 1000), (344, 150))),
+                                                                        scale(pygame.Rect((1100, 1000), (344, 300))),
                                                                         object_id=get_text_box_theme("#cat_patrol_info_box")
                                                                         , manager=MANAGER)
         self.elements["patrol_results"].set_text(patrol.results())
@@ -677,7 +702,7 @@ class PatrolScreen(Screens):
         # ASSIGN TO ABLE CATS
         for the_cat in Cat.all_cats_list:
             if not the_cat.dead and the_cat.in_camp and the_cat not in game.patrolled and the_cat.status not in [
-                'elder', 'kitten', 'mediator'
+                'elder', 'kitten', 'mediator', 'mediator apprentice'
             ] and not the_cat.outside and the_cat not in self.current_patrol and not the_cat.not_working():
                 self.able_cats.append(the_cat)
 

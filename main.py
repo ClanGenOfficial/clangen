@@ -14,7 +14,7 @@ import pygame_gui
 import pygame
 
 # Version Number to be displayed.
-VERSION_NUMBER = "Ver. 0.5.0dev"
+VERSION_NUMBER = "Ver. 0.6.0dev"
 
 # import all screens for initialization (Note - must be done after pygame_gui manager is created)
 from scripts.screens.all_screens import *

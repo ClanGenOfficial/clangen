@@ -1,0 +1,1813 @@
+[
+    {
+        "patrol_id": "pln_hunt_prairiedog1",
+        "biome": "plains",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "medium_prey"
+        ],
+        "intro_text": "Your patrol comes across a prairie dog.",
+        "success_text": [
+            "Your patrol catches the prairie dog!"
+        ],
+        "fail_text": [
+            "Your patrol narrowly misses the prairie dog."
+        ],
+        "decline_text": "Your patrol decides to look for other prey.",
+        "chance_of_success": 50,
+        "exp": 10,
+        "win_skills": [
+            "great hunter",
+            "fantastic hunter"
+        ],
+        "min_cats": 1,
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "pln_hunt_twolegplace1",
+        "biome": "plains",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "medium_prey"
+        ],
+        "intro_text": "The patrol approaches a little Twoleg nest on the prairie while hunting. Next to it, a strange tower makes a soft thump, its wooden leaves circling slowly in the wind.",
+        "decline_text": "The patrol decides to hunt elsewhere.",
+        "chance_of_success": 40,
+        "exp": 10,
+        "success_text": [
+            "The patrol has a successful hunt, avoiding any Twolegs.",
+            "The patrol finds some astonishingly fat chickens running around the Twoleg nest, and helps themselves to one."
+        ],
+        "fail_text": [
+            "Twoleg kits scare the patrol away."
+        ],
+        "min_cats": 1,
+        "max_cats": 3,
+        "antagonize_text": "A Twoleg kit approaches the patrol, and they send it away squawking with it's blood on their claws.",
+        "antagonize_fail_text": "The Twoleg kits wandering around are unimpressed by the patrol and chase the cats for fun."
+    },
+    {
+        "patrol_id": "pln_hunt_twolegplace2",
+        "biome": "plains",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "medium_prey0",
+            "large_prey1"
+        ],
+        "intro_text": "The patrol approaches a little Twoleg nest on the prairie while hunting. Next to it, a strange tower makes a soft thump, its leaves circling slowly in the wind.",
+        "decline_text": "The patrol decides to hunt elsewhere.",
+        "chance_of_success": 60,
+        "exp": 10,
+        "success_text": [
+            "The patrol cats split up, using sentries to ensure that the Twolegs don't disturb their hunts.",
+            "The patrol finds some astonishingly fat chickens running around the Twoleg nest, and helps themselves to as many as they can carry."
+        ],
+        "fail_text": [
+            "Twoleg kits stomp through the long grass, scaring away prey and ruining the hunt."
+        ],
+        "min_cats": 4,
+        "max_cats": 6,
+        "antagonize_text": "Finding a Twoleg kit wandering alone, the cats harass it until it flees squawking, it's blood on their claws.",
+        "antagonize_fail_text": "The Twoleg kits wandering around are unimpressed by the patrol and chase the cats for fun."
+    },
+    {
+        "patrol_id": "pln_hunt_windmill1",
+        "biome": "plains",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "medium_prey"
+        ],
+        "intro_text": "As the patrol travels the territory, they come upon a strange metal forest that the Twoleg have built.  Smooth, white tree trunks rise up into the sky, completely bare apart from the very top, where three massive branches grow outwards and spin in slow circles. A low hum permeates the air.",
+        "decline_text": "The patrol decides to hunt elsewhere",
+        "chance_of_success": 60,
+        "exp": 10,
+        "success_text": [
+            "The patrol moves among the white trunks, checking the ground underneath them.  Sometimes dead birds can be found scattered about in this area and if not yet rotten, make for acceptable fresh-kill.  They manage to find some carcasses worth taking.",
+            "This place is unnerving and the patrol hunts carefully and cautiously, keeping an eye out for Twoleg all the while."
+        ],
+        "fail_text": [
+            "This place is unnerving and the patrol can't stand the tense atmosphere and grating, constant noise. They don't stay long enough to find prey.",
+            "The patrol considers their options. s_c is adamant that they find somewhere else to hunt. It's not safe here and the threat of Twoleg is too high. They decide to move on but struggle to find any prey during the rest of the patrol."
+        ],
+        "fail_trait": [
+            "strict",
+            "careful",
+            "nervous",
+            "insecure"
+        ],
+        "min_cats": 1,
+        "max_cats": 6,
+        "antagonize_text": "The patrol is frustrated by this seemingly permanent proof of Twoleg on their territory and takes the time to thoroughly and aggressively mark the area. There. That will show the Twoleg whose land this is.",
+        "antagonize_fail_text": "The atmosphere in this place is eerie and r_c takes out their tenseness on one of the white trunks.  A few shallow scrapes are left on the surface, but little other evidence of their aggression remains."
+    },
+    {
+        "patrol_id": "pln_hunt_burrow1",
+        "biome": "plains",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "big_bite_injury",
+            "scar",
+            "fighting",
+            "large_prey"
+        ],
+        "intro_text": "The patrol finds a small burrow in the ground with a strange scent. They hesitate, unsure if this is worth checking.",
+        "decline_text": "The patrol decides to avoid the burrow. There's no telling what could await inside.",
+        "chance_of_success": 60,
+        "exp": 10,
+        "success_text": [
+            "The patrol flushes a gopher out of the burrow! More fresh-kill!",
+            "Inside the burrow is a rabbit, curled up and alone. Perhaps a buck recently kicked from his birth warren? Whatever the case, this rabbit will feed the Clan now."
+        ],
+        "fail_text": [
+            "The burrow turns out to be empty - the smell nothing but stale air and a slight tang of sickness. Whatever used to live here is gone now. Checking the burrow was a waste of time.",
+            "s_c sticks their nose into the hole only to come face to face with a skunk! The whole patrol is sprayed!",
+            null,
+            "Oh no! The burrow was home to a wolverine, now angry at the disturbance. The patrol bolts away to escape its wrath, but r_c doesn't quite move fast enough and is caught in its claws until another cat turns back to help."
+        ],
+        "fail_trait": [
+            "bold",
+            "ambitious",
+            "childish",
+            "impulsive"
+        ],
+        "min_cats": 2,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c was scarred after an unfortunate encounter with a wolverine."
+        ]
+    },
+    {
+        "patrol_id": "pln_hunt_burrow2",
+        "biome": "plains",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "death",
+            "fighting",
+            "large_prey"
+        ],
+        "intro_text": "The patrol finds a small burrow in the ground with a strange scent. They hesitate, unsure if this is worth checking.",
+        "decline_text": "The patrol decides to avoid the burrow. There's no telling what could await inside.",
+        "chance_of_success": 40,
+        "exp": 10,
+        "success_text": [
+            "r_c flushes a gopher out of the burrow! More fresh-kill!",
+            "Inside the burrow is a rabbit, curled up and alone. Perhaps a buck recently kicked from his birth warren? Whatever the case, this rabbit will feed the Clan now."
+        ],
+        "fail_text": [
+            "The burrow turns out to be empty - the smell nothing but stale air and a slight tang of sickness. Whatever used to live here is gone now. Checking the burrow was a waste of time.",
+            "s_c sticks their nose into the hole only to come face to face with a skunk! The whole patrol is sprayed!",
+            "Oh no! The burrow was home to a wolverine, now angry at the disturbance. r_c bolts away to escape its wrath, but doesn't quite move fast enough and is caught in its claws.  With no other cats around to help, r_c is quickly killed by the predator."
+        ],
+        "fail_trait": [
+            "bold",
+            "ambitious",
+            "childish",
+            "impulsive"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            null,
+            "r_c was killed after an unfortunate experience with a wolverine.",
+            "were killed by a wolverine"
+        ]
+    },
+    {
+        "patrol_id": "pln_hunt_strange1",
+        "biome": "plains",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "medium_prey0",
+            "medium_prey1",
+            "large_prey2",
+            "large_prey3",
+            "no_fail_prey"
+        ],
+        "intro_text": "The patrol looks around for something to disguise their scent while hunting.",
+        "decline_text": "On second thought, maybe not.",
+        "chance_of_success": 50,
+        "exp": 20,
+        "success_text": [
+            "They can't think of anything that would work, but their hunt goes well regardless.",
+            "A fragrant shrub will do! The plan works and their hunt goes well.",
+            "s_c leads them to some rabbit droppings in the grass - it's not clean, but it's extremely effective, and the patrol hunts well.",
+            "s_c tells the patrol to roll in a patch of garlic to disguise their scent, which works perfectly. It's a funny taste to wash off their pelts though."
+        ],
+        "fail_text": [
+            "The patrol finds nothing to disguise their scent, and no prey either.",
+            "The patrol finds no prey; it seems like all the prey was scared off because of their stench!"
+        ],
+        "win_skills": [
+            "very smart",
+            "extremely smart"
+        ],
+        "win_trait": [
+            "strange"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 2,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "pln_hunt_strange2",
+        "biome": "plains",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "medium_prey0",
+            "medium_prey1",
+            "large_prey2",
+            "large_prey3",
+            "no_fail_prey"
+        ],
+        "intro_text": "r_c looks around for something to disguise their scent while hunting.",
+        "decline_text": "On second thought, maybe not.",
+        "chance_of_success": 50,
+        "exp": 20,
+        "success_text": [
+            "They can't think of anything that would work, but their hunt goes well regardless.",
+            null,
+            "s_c finds some rabbit droppings in the grass - it's not clean, but it's extremely effective, and the hunt goes well.",
+            "s_c rolls in a patch of garlic to disguise their scent, which works perfectly. It's a funny taste to wash off their pelt though."
+        ],
+        "fail_text": [
+            "The patrol finds nothing to disguise their scent, and no prey either.",
+            "r_c finds no prey; it seems like all the prey was scared off because of their stench!"
+        ],
+        "win_skills": [
+            "very smart",
+            "extremely smart"
+        ],
+        "win_trait": [
+            "strange"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "pln_hunt_solo1",
+        "biome": "plains",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "apprentice",
+            "minor_injury",
+            "scar",
+            "medium_prey",
+            "no_fail_prey"
+        ],
+        "intro_text": "r_c's mentor assesses them by sending them on a solo hunt.",
+        "decline_text": "r_c asks their mentor to do the assessment some other time.",
+        "chance_of_success": 40,
+        "exp": 20,
+        "success_text": [
+            "r_c manages a skillful catch, and brings it back to the camp to show everyone!",
+            "r_c focuses completely on their test, slipping into a cleareyed, razor focused routine of catch and stash, catch and stash. Eventually they've caught enough to need their mentor's help carrying it back to camp, and the feeling seeing their prey stock the fresh-kill pile - they feel ready to burst with happiness!",
+            null,
+            "It's a terrible day for hunting, the prey running sparse and alert. But s_c takes their time and doesn't let the conditions discourage them, until eventually the perfect opportunity falls into place and they pull off a perfect catch!"
+        ],
+        "fail_text": [
+            "Hunting is poor, and while r_c's mentor is disappointed, they don't expect r_c to be able to catch what isn't there.",
+            "s_c is too hasty, bouncing after first one prey, then another, and it ends with them empty pawed and exhausted. Their mentor is disappointed - they clearly need more training.",
+            null,
+            "While on the hunt, r_c tumbles right down an empty badger sett while their attention is elsewhere. Bruised and sore, r_c has to report to the medicine cat den when they return to camp."
+        ],
+        "win_skills": [
+            "None"
+        ],
+        "win_trait": [
+            "calm",
+            "careful",
+            "insecure",
+            "lonesome",
+            "loyal",
+            "nervous",
+            "sneaky",
+            "strange",
+            "patient",
+            "thoughtful",
+            "wise"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "adventurous",
+            "bold",
+            "charismatic",
+            "childish",
+            "confident",
+            "daring",
+            "playful",
+            "righteous"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c got injured as an apprentice, exploring alone."
+        ]
+    },
+    {
+        "patrol_id": "pln_hunt_solo2",
+        "biome": "plains",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "warrior",
+            "medium_prey0",
+            "medium_prey1",
+            "large_prey2",
+            "large_prey3",
+            "no_fail_prey"
+        ],
+        "intro_text": "r_c heads out onto the plains alone, wanting to sink their teeth into some prey and have some time to themselves.",
+        "decline_text": "r_c turns back to camp, deciding that a group hunt would be more effective.",
+        "chance_of_success": 40,
+        "exp": 20,
+        "success_text": [
+            "r_c heads off to one of their favorite spots in the grasslands, a trench running along in a winding line across a productive and lush field providing excellent ambush chances. And what do you know - they are bush! Or they were as far as that prairie dog thought.",
+            "r_c finds a fat, dumb, slow rabbit, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their Clanmates.",
+            "s_c gets the chance to try out an idea they've been sitting on for a while. There's a rabbit warren that they've spotted that's particularly badly built, and they manage to dig down into one of the dens, fishing baby rabbits out by the pawful.",
+            "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
+        ],
+        "fail_text": [
+            "You can't catch what isn't there, and the prey today is certainly not there.",
+            "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. The come back to camp, empty pawed and prickling with frustration."
+        ],
+        "win_skills": [
+            "smart",
+            "very smart",
+            "extremely smart"
+        ],
+        "win_trait": [
+            "calm",
+            "careful",
+            "insecure",
+            "lonesome",
+            "loyal",
+            "nervous",
+            "sneaky",
+            "strange",
+            "patient",
+            "thoughtful",
+            "wise"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "bold",
+            "childish",
+            "confident",
+            "daring",
+            "playful"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "pln_hunt_solo3",
+        "biome": "plains",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "deputy",
+            "medium_prey0",
+            "medium_prey1",
+            "large_prey2",
+            "large_prey3",
+            "no_fail_prey"
+        ],
+        "intro_text": "r_c heads out onto the plains alone, wanting to sink their teeth into some prey and have some time to themselves.",
+        "decline_text": "r_c turns back to camp, deciding that a group hunt would be more effective.",
+        "chance_of_success": 40,
+        "exp": 20,
+        "success_text": [
+            "r_c heads off to one of their favorite spots in the grasslands, a trench running along in a winding line across a productive and lush field providing excellent ambush chances. And what do you know - they are bush! Or they were as far as that prairie dog thought. They snicker to themselves as they pad back to camp.",
+            "r_c finds a fat, dumb, slow rabbit, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their Clanmates. Purring, they take the opportunity for a small moment of peace, relaxing with their friends.",
+            "s_c gets the chance to try out an idea they've been sitting on for a while. There's a rabbit warren that they've spotted that's particularly badly built, and they manage to dig down into one of the dens, fishing a couple baby rabbits out. This is a good spot to remember if c_n hits hard times.",
+            "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
+        ],
+        "fail_text": [
+            "You can't catch what isn't there, and the prey today is certainly not there.",
+            "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. They give up and return to camp, to try and at least make progress on all the work piling up there."
+        ],
+        "win_skills": [
+            "smart",
+            "very smart",
+            "extremely smart"
+        ],
+        "win_trait": [
+            "calm",
+            "careful",
+            "insecure",
+            "lonesome",
+            "loyal",
+            "nervous",
+            "sneaky",
+            "strange",
+            "patient",
+            "thoughtful",
+            "wise"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "bold",
+            "childish",
+            "confident",
+            "daring",
+            "playful"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "pln_hunt_solo4",
+        "biome": "plains",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "leader",
+            "medium_prey0",
+            "medium_prey1",
+            "large_prey2",
+            "large_prey3",
+            "no_fail_prey"
+        ],
+        "intro_text": "r_c heads out onto the plains alone, wanting to sink their teeth into some prey and have some time to themselves.",
+        "decline_text": "r_c turns back to camp, deciding that a group hunt would be more effective.",
+        "chance_of_success": 40,
+        "exp": 20,
+        "success_text": [
+            "r_c heads off to one of their favorite spots in the grasslands, a trench running along in a winding line across a productive and lush field providing excellent ambush chances. And what do you know - they are bush! Or they were as far as that prairie dog thought. They snicker to themselves as they pad back to camp.",
+            "r_c finds a fat, dumb, slow rabbit, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their Clanmates. Purring, they take the opportunity for a small moment of peace, relaxing with their friends.",
+            "s_c gets the chance to try out an idea they've been sitting on for a while. There's a rabbit warren that they've spotted that's particularly badly built, and they manage to dig down into one of the dens, fishing a couple baby rabbits out. This is a good spot to remember if c_n hits hard times.",
+            "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
+        ],
+        "fail_text": [
+            "You can't catch what isn't there, and the prey today is certainly not there.",
+            "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. They give up and return to camp, to try and at least make progress on all the work piling up there."
+        ],
+        "win_skills": [
+            "smart",
+            "very smart",
+            "extremely smart"
+        ],
+        "win_trait": [
+            "calm",
+            "careful",
+            "insecure",
+            "lonesome",
+            "loyal",
+            "nervous",
+            "sneaky",
+            "strange",
+            "patient",
+            "thoughtful",
+            "wise"
+        ],
+        "fail_trait": [
+            "bold",
+            "childish",
+            "confident",
+            "daring",
+            "playful"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "pln_hunt_noise1",
+        "biome": "plains",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "big_bite_injury",
+            "scar",
+            "medium_prey0",
+            "medium_prey1",
+            "large_prey2"
+        ],
+        "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from the long grass nearby.",
+        "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
+        "chance_of_success": 80,
+        "exp": 10,
+        "success_text": [
+            "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise. They find themselves to be correct when they pounce into the grass and return to the patrol with the tasty morsel dangling from their mouth.",
+            null,
+            "p_l pads towards the grass to check on the noise when a rabbit suddenly bursts out! s_c is quick to react and manages to snag the rabbit before it can disappear."
+        ],
+        "fail_text": [
+            "p_l pads closer to the grass, intent on finding the source of the noise, only to come face to face with a skunk!  The poor cat ends up stinking for days after the unfortunate incident.",
+            "s_c doesn't even hesitate before splitting from the patrol to check on the source of the noise. They quickly regret their impulsivity, however, when an angry weasel bursts from the grass, chattering loudly! s_c gets quite the scare, but thankfully the weasel only wanted to get away from them and quickly runs off back into the grass.",
+            null,
+            "r_c takes the lead in checking the source of the noise and comes face to face with an angry fox! Though they backpedal rapidly, the fox still manages to take a bite out of them before the rest of the patrol can back them up."
+        ],
+        "win_skills": [
+            "good hunter",
+            "great hunter",
+            "excellent hunter"
+        ],
+        "fail_trait": [
+            "daring",
+            "bold",
+            "ambitious"
+        ],
+        "min_cats": 5,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "p_l gained a scar from a fox."
+        ]
+    },
+    {
+        "patrol_id": "pln_hunt_noise2",
+        "biome": "plains",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "big_bite_injury",
+            "scar",
+            "death",
+            "medium_prey0",
+            "medium_prey1",
+            "large_prey2"
+        ],
+        "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from the long grass nearby.",
+        "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
+        "chance_of_success": 60,
+        "exp": 10,
+        "success_text": [
+            "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise. They find themselves to be correct when they pounce into the grass and return to the patrol with the tasty morsel dangling from their mouth.",
+            null,
+            "p_l pads towards the grass to check on the noise when a rabbit suddenly bursts out! s_c is quick to react and manages to snag the rabbit before it can disappear."
+        ],
+        "fail_text": [
+            "p_l pads closer to the grass, intent on finding the source of the noise, only to come face to face with a skunk! The poor cat ends up stinking for days after the unfortunate incident.",
+            "s_c doesn't even hesitate before splitting from the patrol to check on the source of the noise. They quickly regret their impulsivity, however, when an angry weasel bursts out of the grass, chattering loudly! s_c gets quite the scare, but thankfully the weasel only wanted to get away from them and quickly runs off back into the grass.",
+            "r_c takes the lead in checking the source of the noise and comes face to face with a snarling wolverine! r_c yowls for their patrol but the other cats aren't quick enough to stop the wolverine from killing r_c in one quick and deadly swipe.",
+            "r_c takes the lead in checking the source of the noise and comes face to face with an angry fox! Though they backpedal rapidly, the fox still manages to take a bite out of them before the rest of the patrol can back them up."
+        ],
+        "win_skills": [
+            "good hunter",
+            "great hunter",
+            "excellent hunter"
+        ],
+        "fail_trait": [
+            "daring",
+            "bold",
+            "ambitious"
+        ],
+        "min_cats": 2,
+        "max_cats": 4,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "p_l gained a scar from a fox.",
+            "p_l was killed by a wolverine.",
+            "were killed by a predator"
+        ]
+    },
+    {
+        "patrol_id": "pln_hunt_noise3",
+        "biome": "plains",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "big_bite_injury",
+            "scar",
+            "death",
+            "medium_prey0",
+            "medium_prey1",
+            "large_prey2"
+        ],
+        "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from the long grass nearby.",
+        "decline_text": "It's probably nothing. They leave the noise alone and continue searching for prey.",
+        "chance_of_success": 40,
+        "exp": 10,
+        "success_text": [
+            "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise. They find themselves to be correct when they pounce into the grass and continue on their patrol with the tasty morsel dangling from their mouth.",
+            null,
+            "s_c pads towards the grass to check on the noise when a rabbit suddenly bursts out! s_c is quick to react and manages to snag the rabbit before it can disappear."
+        ],
+        "fail_text": [
+            "p_l pads closer to the grass, intent on finding the source of the noise, only to come face to face with a skunk!  The poor cat ends up stinking for days after the unfortunate incident.",
+            "s_c doesn't even hesitate before going to check on the source of the noise. They quickly regret their impulsivity, however, when an angry weasel bursts out of the grass, chattering loudly! s_c gets quite the scare, but thankfully the weasel only wanted to get away from them and quickly runs off back into the grass.",
+            "r_c takes the lead in checking the source of the noise and comes face to face with a snarling wolverine! r_c yowls for help, but they're alone on this patrol and they have the sudden realization that no one can help them now. The wolverine kills the lone cat with little trouble.",
+            "r_c heads toward the source of the noise and comes face to face with an angry fox! Though they backpedal rapidly, the fox still manages to take a bite out of them before they can sprint away."
+        ],
+        "win_skills": [
+            "good hunter",
+            "great hunter",
+            "excellent hunter"
+        ],
+        "fail_trait": [
+            "daring",
+            "bold",
+            "ambitious"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "p_l gained a scar from a fox.",
+            "p_l was killed by a wolverine while patrolling alone.",
+            "were killed by a predator"
+        ]
+    },
+    {
+        "patrol_id": "pln_hunt_gonetnr1",
+        "biome": "plains",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "gone",
+            "medium_prey0",
+            "medium_prey1"
+        ],
+        "intro_text": "Your patrol encounters a patch of bare ground where a lot of Twolegs linger.",
+        "decline_text": "Your patrol decides to hunt elsewhere.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "They continue hunting undetected.",
+            "Slyly, r_c uses the chance to get food, practicing their best kittypet impression until just the right moment, before darting forward and making off with a sandwich in their mouth.",
+            "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol to leave. Now.",
+            "A Twoleg spots s_c and crouches down, clicking softly. s_c hisses and flees."
+        ],
+        "fail_text": [
+            null,
+            null,
+            "The patrol mostly ignores the Twolegs. As they hunt they hear a yelp from r_c. They've crawled into a metal Twolegs box, and there's nothing they or the rest of the patrol can do to get them out - eventually the Twolegs notice, and r_c is taken by them.",
+            null,
+            "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? Before they can decide whether to step closer, there's a swoosh, and a net falls around them. s_c fights desperately, but the Twolegs take them away in the monster."
+        ],
+        "win_skills": [
+            "extremely smart"
+        ],
+        "win_trait": [
+            "ambitious",
+            "bloodthirsty",
+            "cold",
+            "fierce",
+            "shameless",
+            "strict",
+            "troublesome",
+            "vengeful"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "altruistic",
+            "compassionate",
+            "empathetic",
+            "faithful",
+            "loving",
+            "patient",
+            "responsible",
+            "thoughtful",
+            "wise"
+        ],
+        "min_cats": 2,
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            null,
+            null
+        ]
+    },
+    {
+        "patrol_id": "pln_hunt_gonetnr2",
+        "biome": "plains",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "gone",
+            "large_prey0",
+            "large_prey1"
+        ],
+        "intro_text": "Your patrol encounters a patch of bare ground where a lot of Twolegs linger.",
+        "decline_text": "Your patrol decides to hunt elsewhere.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "They continue hunting undetected, using the presence of the Twolegs startling the local wildlife to bring back a good haul.",
+            "Slyly, r_c uses the chance to get food, practicing their best kittypet impression until just the right moment, before darting forward and making off with a large lump of meat in their mouth.",
+            "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol to leave. Now.",
+            "A Twoleg spots s_c and crouches down, clicking softly. s_c hisses and flees."
+        ],
+        "fail_text": [
+            null,
+            null,
+            "The patrol mostly ignores the Twolegs. As they hunt they hear a yelp from r_c. They've crawled into a metal Twolegs box, and there's nothing they or the rest of the patrol can do to get them out - eventually the Twolegs notice, and r_c is taken by them.",
+            null,
+            "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? Before they can decide whether to step closer, there's a swoosh, and a net falls around them. s_c fights desperately, but the Twolegs take them away in the monster."
+        ],
+        "win_skills": [
+            "extremely smart"
+        ],
+        "win_trait": [
+            "ambitious",
+            "bloodthirsty",
+            "cold",
+            "fierce",
+            "shameless",
+            "strict",
+            "troublesome",
+            "vengeful"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "altruistic",
+            "compassionate",
+            "empathetic",
+            "faithful",
+            "loving",
+            "patient",
+            "responsible",
+            "thoughtful",
+            "wise"
+        ],
+        "min_cats": 4,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            null,
+            null
+        ]
+    },
+    {
+        "patrol_id": "pln_hunt_gonetnr3",
+        "biome": "plains",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "multi_gone",
+            "medium_prey0",
+            "medium_prey1"
+        ],
+        "intro_text": "Your patrol encounters a patch of bare ground where a lot of Twolegs linger.",
+        "decline_text": "Your patrol decides to hunt elsewhere.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "They continue hunting undetected.",
+            "Slyly, r_c uses the chance to get food, practicing their best kittypet impression until just the right moment, before darting forward and making off with a sandwich in their mouth.",
+            "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol to leave. Now.",
+            "A Twoleg spots s_c and crouches down, clicking softly. s_c hisses and flees."
+        ],
+        "fail_text": [
+            null,
+            null,
+            "The patrol mostly ignores the Twolegs. But as they hunt, the cats encounter appealing, delicious smelling mush in little burrows. Some of the patrol investigates, and doors slam down behind them. There's nothing they or the rest of the patrol can do to get them out - eventually the Twolegs notice, and the trapped cats are taken.",
+            null,
+            "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? They wander closer, drawing more of the patrol in with them. Before they can decide whether to step away, there's a swoosh, and a net falls around the cats. They fight desperately, but the Twolegs take them away in the monster."
+        ],
+        "win_skills": [
+            "extremely smart"
+        ],
+        "win_trait": [
+            "ambitious",
+            "bloodthirsty",
+            "cold",
+            "fierce",
+            "shameless",
+            "strict",
+            "troublesome",
+            "vengeful"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "altruistic",
+            "compassionate",
+            "empathetic",
+            "faithful",
+            "loving",
+            "patient",
+            "responsible",
+            "thoughtful",
+            "wise"
+        ],
+        "min_cats": 4,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            null,
+            null
+        ]
+    },
+    {
+        "patrol_id": "pln_hunt_gonetwolegden1",
+        "biome": "plains",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "gone",
+            "small_prey"
+        ],
+        "intro_text": "r_c decides to hunt out near the Twoleg dens.",
+        "decline_text": "On second thought, they decide to re-line their nest today instead.",
+        "chance_of_success": 50,
+        "exp": 20,
+        "success_text": [
+            "They're interrupted by Twolegs wandering through the woods a couple times, but it's a successful hunt.",
+            "A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for r_c. They've always wondered what it might taste like... dry is the answer. Very odd.",
+            "s_c gets distracted from hunting by strange Twoleg activity around one of their dens. They appear to be hauling all their many, many varieties of nest lining out and into a big monster. s_c take the opportunity to grab a little soft thing, something that's almost shaped like prey. It'll be good for the nursery.",
+            "Calmly, s_c weaves around the Twoleg dens, picking out the mice from the tunnels and the birds off the strange metal hanging fruit. A successful, sneaky hunt."
+        ],
+        "fail_text": [
+            null,
+            "The Twolegs here are friendly, and a little carelessly, s_c goes to hunt in their garden. But there's a new thing there, a box, suspicious and strange. Wisely, s_c avoids it, and returns to c_n territory.",
+            "Carelessly, r_c is seen by Twolegs, and taken from c_n.",
+            "Carelessly, r_c is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, they discover that a broken window is just wide enough to push themselves out to safety through, but the glass leaves them bleeding as they run back to c_n."
+        ],
+        "win_skills": [
+            "smart",
+            "very smart",
+            "extremely smart"
+        ],
+        "win_trait": [
+            "calm",
+            "careful",
+            "insecure",
+            "lonesome",
+            "loyal",
+            "nervous",
+            "sneaky",
+            "strange"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "altruistic",
+            "compassionate",
+            "empathetic",
+            "faithful",
+            "loving",
+            "patient",
+            "responsible",
+            "thoughtful",
+            "wise"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            null,
+            null
+        ]
+    },
+    {
+        "patrol_id": "pln_hunt_gonetwolegden2",
+        "biome": "plains",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "gone",
+            "apprentice",
+            "medium_prey0",
+            "large_prey3"
+        ],
+        "intro_text": "app1 decides to hunt out near the Twoleg dens.",
+        "decline_text": "On second thought, they decide to re-line their nest today instead.",
+        "chance_of_success": 50,
+        "exp": 20,
+        "success_text": [
+            "They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall it works out.",
+            "A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for app1. They've always wondered what it might taste like... dry is the answer. It's strangely appealing.",
+            null,
+            "Tail lashing excitedly, app1 hunts in the strange, forbidden land, ducking around corners and crawling over gardens with their belly low to the ground. A successful, sneaky hunt."
+        ],
+        "fail_text": [
+            null,
+            "A little carelessly, s_c jumps a fence to hunt in a den's garden. But there's a new thing there, a box, suspicious and strange. Wisely, s_c avoids it, and returns to c_n territory.",
+            "Carelessly, app1 is seen by Twolegs, and taken from c_n.",
+            "Carelessly, app1 is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, they discover that a broken window is just wide enough to push themselves out to safety through, but the glass leaves them bleeding as they run back to c_n."
+        ],
+        "win_skills": [
+            "None"
+        ],
+        "win_trait": [
+            "calm",
+            "careful",
+            "insecure",
+            "lonesome",
+            "loyal",
+            "nervous",
+            "sneaky",
+            "strange"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "altruistic",
+            "compassionate",
+            "empathetic",
+            "faithful",
+            "loving",
+            "patient",
+            "responsible",
+            "thoughtful",
+            "wise"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            null,
+            null
+        ]
+    },
+    {
+        "patrol_id": "pln_hunt_gonetwolegden3",
+        "biome": "plains",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "gone",
+            "romantic",
+            "platonic",
+            "no_app",
+            "medium_prey0"
+        ],
+        "intro_text": "Boldly, eyes daring p_l to say no, r_c suggests hunting by the Twoleg dens.",
+        "decline_text": "On second thought, they decide to reline their nests today instead.",
+        "chance_of_success": 50,
+        "exp": 20,
+        "success_text": [
+            "They're interrupted by Twolegs wandering through the woods a couple times, but it's a successful hunt.",
+            "A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for r_c. They fetch p_l, and both cats investigate the food, loudly proclaiming how much better fresh-kill is, but both a little thrilled by the experience.",
+            "s_c shows the other cat all around the outskirts of the Twoleg dens, showing off how much they know about the strange animals and their weird behavior, and enjoying getting to feel clever.",
+            "It's a strange adventure, odd and weird and a little thrilling. s_c takes the lead, but both s_c and r_c are wide eyed and a little scared, in a fun way."
+        ],
+        "fail_text": [
+            "Carelessly, r_c is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, they hear p_l yowling from outside, and the two cats manage to craft an escape plan through a broken window. Shivering, r_c presses their pelt against p_l on the way back to c_n.",
+            "The Twolegs here are friendly, and a little carelessly, s_c goes to hunt in their garden. But there's a new thing there, a box, suspicious and strange. Wisely, s_c avoids it, and returns to c_n territory.",
+            "Carelessly, r_c is seen by Twolegs, and taken from c_n.",
+            null
+        ],
+        "win_skills": [
+            "smart",
+            "very smart",
+            "extremely smart"
+        ],
+        "win_trait": [
+            "calm",
+            "careful",
+            "insecure",
+            "lonesome",
+            "loyal",
+            "nervous",
+            "sneaky",
+            "strange"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "altruistic",
+            "compassionate",
+            "empathetic",
+            "faithful",
+            "loving",
+            "patient",
+            "responsible",
+            "thoughtful",
+            "wise"
+        ],
+        "min_cats": 2,
+        "max_cats": 2,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            null,
+            null
+        ]
+    },
+    {
+        "patrol_id": "pln_hunt_gonetwolegden4",
+        "biome": "plains",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "gone",
+            "apprentice",
+            "romantic",
+            "platonic",
+            "two_apprentices",
+            "medium_prey0"
+        ],
+        "intro_text": "Boldly, eyes daring app1 to say no, app2 suggests hunting by the Twoleg dens. Where apprentices are definitely not allowed.",
+        "decline_text": "On second thought, they decide to reline their nests today instead.",
+        "chance_of_success": 50,
+        "exp": 20,
+        "success_text": [
+            "They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall it works out.",
+            "A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for app2. They fetch app1, and both apprentices loudly proclaim how much better fresh-kill is, but both are also wide eyed and thrilled by the experience.",
+            null,
+            "Tail lashing excitedly, app1 hunts in the strange, forbidden land, ducking around corners and crawling over gardens with their belly low to the ground. app2 tries to be even sneakier, and so app1 ups their game, until they're both probably the most obvious pair of cats in the neighborhood."
+        ],
+        "fail_text": [
+            "Carelessly, app2 is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, they hear app1 yowling from outside, and the two cats manage to craft an escape plan through a broken window. Shivering, app2 presses their pelt against app1 as they pad home.",
+            "A little carelessly, s_c jumps a fence to hunt in a den's garden. But there's a new thing there, a box, suspicious and strange. Wisely, s_c avoids it, and returns to c_n territory.",
+            "Carelessly, app1 is seen by Twolegs, and taken from c_n.",
+            null
+        ],
+        "win_skills": [
+            "None"
+        ],
+        "win_trait": [
+            "calm",
+            "careful",
+            "insecure",
+            "lonesome",
+            "loyal",
+            "nervous",
+            "sneaky",
+            "strange"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "altruistic",
+            "compassionate",
+            "empathetic",
+            "faithful",
+            "loving",
+            "patient",
+            "responsible",
+            "thoughtful",
+            "wise"
+        ],
+        "min_cats": 2,
+        "max_cats": 2,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            null,
+            null
+        ]
+    },
+    {
+        "patrol_id": "pln_hunt_gonetwolegtrap1",
+        "biome": "plains",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "gone"
+        ],
+        "intro_text": "The smell of food lures r_c into what looks like a tunnel under some recently disturbed earth.",
+        "decline_text": "Turning their nose up at the temptation, they continue on their way.",
+        "chance_of_success": 50,
+        "exp": 20,
+        "success_text": [
+            "Darting through quickly, they see that the lovely smell is Twoleg mush, and keep running.",
+            "The lovely smell leads to Twoleg mush. Puzzled, r_c checks around them, only for their fur to stand on end as they realize they're standing in a metal tunnel, cloaked in rust and camouflage. It's to their great fortune that this trap seems to be broken, but whatever Twoleg restocked the bait might still be around. They leave quickly.",
+            "Something about this situation sets all of s_c's instincts off. They investigate, carefully, and strip the cover of the earth away from a Twoleg trap underneath.",
+            "Something isn't right. Nervously pawing at the earth, s_c thinks that the smell is too good to be true. They leave it, deciding to return to camp and report it to the deputy instead."
+        ],
+        "fail_text": [
+            null,
+            "Easily swayed by the delicious smell, s_c wanders recklessly into the sheltered space, only to smack into a metal wall. Inside the trap, a young fox starts up a distressed wail, and s_c feels sympathy for it they never expected to feel for a fox, as well as the heart stopping realization that it could easily have been them.",
+            "r_c is caught in a trap hidden in the earth and is taken by Twolegs shortly after.",
+            null
+        ],
+        "win_skills": [
+            "smart",
+            "very smart",
+            "extremely smart"
+        ],
+        "win_trait": [
+            "calm",
+            "careful",
+            "insecure",
+            "lonesome",
+            "loyal",
+            "nervous",
+            "sneaky",
+            "strange"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "adventurous",
+            "bold",
+            "confident",
+            "daring",
+            "playful"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            null,
+            null
+        ]
+    },
+    {
+        "patrol_id": "pln_hunt_gonetwolegtrap2",
+        "biome": "plains",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "gone"
+        ],
+        "intro_text": "The smell of food lures r_c into what looks like a tunnel under some recently disturbed earth.",
+        "decline_text": "Turning their nose up at the temptation, the patrol continues on their way.",
+        "chance_of_success": 50,
+        "exp": 20,
+        "success_text": [
+            "Darting through quickly, r_c sees that the lovely smell is Twoleg mush, and keeps running.",
+            "The lovely smell leads to Twoleg mush. Puzzled, r_c checks around them, only for their fur to stand on end as they realize they're standing in a metal tunnel, cloaked in rust and camouflage. It's to their great fortune that this trap seems to be broken, but whatever Twoleg restocked the bait might still be around. They leave quickly.",
+            "Something about this situation sets all of s_c's instincts off. They investigate, carefully, and the patrol helps them strip the cover of the earth away from a Twoleg trap underneath.",
+            "Something isn't right. Nervously pawing at the earth, s_c thinks that the smell is too good to be true. They leave it, convincing the patrol to return to camp and report it to the deputy instead."
+        ],
+        "fail_text": [
+            null,
+            "Easily swayed by the delicious smell, s_c wanders recklessly into the sheltered space, only to smack into a metal wall. Inside the trap, a young fox starts up a distressed wail, and s_c feels sympathy for it they never expected to feel for a fox, as well as the heart stopping realization that it could easily have been them.",
+            "r_c is caught in a trap hidden in the earth! There's nothing the patrol is able to do to help them, and r_c is taken by Twolegs shortly after.",
+            null
+        ],
+        "win_skills": [
+            "smart",
+            "very smart",
+            "extremely smart"
+        ],
+        "win_trait": [
+            "calm",
+            "careful",
+            "insecure",
+            "lonesome",
+            "loyal",
+            "nervous",
+            "sneaky",
+            "strange"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "adventurous",
+            "bold",
+            "confident",
+            "daring",
+            "playful"
+        ],
+        "min_cats": 2,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            null,
+            null
+        ]
+    },
+    {
+        "patrol_id": "pln_hunt_thunderpath1",
+        "biome": "plains",
+        "season": "Any",
+        "tags": [
+            "death",
+            "scar",
+            "retirement",
+            "blunt_force_injury",
+            "hunting",
+            "medium_prey"
+        ],
+        "intro_text": "The patrol comes across a thunderpath running through the grasslands.",
+        "decline_text": "They decide it is better not to cross.",
+        "chance_of_success": 50,
+        "exp": 10,
+        "success_text": [
+            "Your patrol crosses the thunderpath and can hunt on the other side.",
+            "Your patrol finds a pipe running under the thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of prey.",
+            "Your patrol stops on the edge of the thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the thunderpath, and a good source of scavenged meat.",
+            "s_c is patient enough to wait until the thunderpath is completely clear, then trots across calmly to hunt on the other side."
+        ],
+        "fail_text": [
+            "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
+            null,
+            "r_c is hit by a monster while crossing and dies instantly.",
+            "r_c is hit by a monster and seems quite injured, but miraculously still alive."
+        ],
+        "win_skills": [
+            "smart",
+            "very smart",
+            "extremely smart"
+        ],
+        "win_trait": [
+            "calm",
+            "careful",
+            "insecure",
+            "nervous",
+            "sneaky",
+            "strange",
+            "patient",
+            "responsible",
+            "thoughtful",
+            "wise"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 1,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c was heavily injured by a monster, and carries the scars from it.",
+            "r_c was hit by a monster and killed.",
+            "were hit by a monster"
+        ]
+    },
+    {
+        "patrol_id": "pln_hunt_thunderpath2",
+        "biome": "plains",
+        "season": "Any",
+        "tags": [
+            "death",
+            "scar",
+            "retirement",
+            "blunt_force_injury",
+            "hunting",
+            "cruel_season",
+            "medium_prey"
+        ],
+        "intro_text": "The patrol comes across a thunderpath running through the grasslands.",
+        "decline_text": "They decide it is better not to cross.",
+        "chance_of_success": 30,
+        "exp": 10,
+        "success_text": [
+            "Your patrol crosses the thunderpath and can hunt on the other side.",
+            "Your patrol finds a pipe running under the thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of prey.",
+            "Your patrol stops on the edge of the thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the thunderpath, and a good source of scavenged meat.",
+            "s_c is patient enough to wait until the thunderpath is completely clear, then trots across calmly to hunt on the other side."
+        ],
+        "fail_text": [
+            "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
+            null,
+            "r_c is crossing the thunderpath and hears a monster thundering towards them. They freeze, and the monster swerves to hit them deliberately, killing them instantly.",
+            "r_c is hit by a monster and seems quite injured, but miraculously still alive."
+        ],
+        "win_skills": [
+            "smart",
+            "very smart",
+            "extremely smart"
+        ],
+        "win_trait": [
+            "calm",
+            "careful",
+            "insecure",
+            "nervous",
+            "sneaky",
+            "strange",
+            "patient",
+            "responsible",
+            "thoughtful",
+            "wise"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 1,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c was heavily injured by a monster, and carries the scars from it.",
+            "r_c was hit by a monster and killed.",
+            "were hit by a monster"
+        ]
+    },
+    {
+        "patrol_id": "pln_hunt_thunderpath3",
+        "biome": "plains",
+        "season": "Any",
+        "tags": [
+            "multi_deaths",
+            "scar",
+            "retirement",
+            "blunt_force_injury",
+            "hunting",
+            "large_prey"
+        ],
+        "intro_text": "The patrol comes across a thunderpath running through the grasslands.",
+        "decline_text": "They decide it is better not to cross.",
+        "chance_of_success": 50,
+        "exp": 10,
+        "success_text": [
+            "Your patrol crosses the thunderpath and can hunt on the other side.",
+            "Your patrol finds a pipe running under the thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of lots of prey.",
+            "Your patrol stops on the edge of the thunderpath, and s_c organizes a thorough search that finds several flattened pieces of roadkill. It's a reminder of the danger of the thunderpath, and a good source of scavenged meat.",
+            "s_c is patient enough to wait until the thunderpath is completely clear, then trots across calmly with the patrol to hunt on the other side."
+        ],
+        "fail_text": [
+            null,
+            null,
+            "As the group crosses the thunderpath, a speeding monster appears out of nowhere. The cats run panicked in all directions, and several of them get hit and die.",
+            "r_c is hit by a monster and seems quite injured, but miraculously still alive."
+        ],
+        "win_skills": [
+            "smart",
+            "very smart",
+            "extremely smart"
+        ],
+        "win_trait": [
+            "calm",
+            "careful",
+            "insecure",
+            "nervous",
+            "sneaky",
+            "strange",
+            "patient",
+            "responsible",
+            "thoughtful",
+            "wise"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 5,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c was heavily injured by a monster, and carries the scars from it.",
+            "This cat was hit by a monster and killed.",
+            "were hit by a monster"
+        ]
+    },
+    {
+        "patrol_id": "pln_hunt_thunderpath4",
+        "biome": "plains",
+        "season": "Any",
+        "tags": [
+            "multi_deaths",
+            "scar",
+            "retirement",
+            "blunt_force_injury",
+            "hunting",
+            "cruel_season",
+            "large_prey"
+        ],
+        "intro_text": "The patrol comes across a thunderpath running through the grasslands.",
+        "decline_text": "They decide it is better not to cross.",
+        "chance_of_success": 30,
+        "exp": 10,
+        "success_text": [
+            "Your patrol crosses the thunderpath and can hunt on the other side.",
+            "Your patrol finds a pipe running under the thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of lots of prey.",
+            "Your patrol stops on the edge of the thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the thunderpath, and a good source of scavenged meat.",
+            "s_c is patient enough to wait until the thunderpath is completely clear, then trots across calmly with the patrol to hunt on the other side."
+        ],
+        "fail_text": [
+            "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
+            null,
+            "As the group crosses the thunderpath, a speeding monster appears out of nowhere. The cats run panicked in all directions, and several of them get hit as the monster swerves to hit them deliberately, killing them instantly.",
+            "r_c is hit by a monster and seems quite injured, but miraculously still alive."
+        ],
+        "win_skills": [
+            "smart",
+            "very smart",
+            "extremely smart"
+        ],
+        "win_trait": [
+            "calm",
+            "careful",
+            "insecure",
+            "nervous",
+            "sneaky",
+            "strange",
+            "patient",
+            "responsible",
+            "thoughtful",
+            "wise"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 5,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c was heavily injured by a monster, and carries the scars from it.",
+            "r_c was hit by a monster and killed.",
+            "were hit by a monster"
+        ]
+    },
+
+
+    {
+        "patrol_id": "pln_hunt_kitfox_steal1",
+        "biome": "plains",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "small_prey"
+        ],
+        "intro_text": "r_c catches the scent of a fox. Tracking it down, the cats spot a kit fox wandering through the grass, carrying a mouse in its jaws.",
+        "decline_text": "That's an insignificant amount of fresh-kill to start a fight over.",
+        "chance_of_success": 70,
+        "exp": 10,
+        "success_text": [
+            "Your hunters chase after it, spitting and hissing as the smaller predator tries to run. But a patrol full of cats is faster, and the fox soon decides that it'd prefer to give up the mouse rather than fight. It's an insignificant amount of fresh-kill, but hopefully a permanent lesson for a fox on stealing from c_n.",
+            "The kit fox isn't crazy, and immediately drops the mouse, running for its life from the patrol.",
+            "s_c pounces, snarling, and the fox turns tail with a yelp. Only s_c isn't alone, and cats circle the fox as it turns and snarls and yelps for mercy, holding it their until they're very sure it will never dare sneak across c_n's borders again.",
+            "s_c wanders up to the kit fox, swagger in their step as they take the opportunity to be the bigger predator for once in their life. The kit fox takes one look at the patrol backing s_c up and decides it's time to be elsewhere as fast as its legs can take it, leaving the single skinny mouse it stole behind."
+        ],
+        "fail_text": [
+            "The patrol approaches the kit fox, who spots them and sets off at full speed. It's not worth following them, not over a single mouse."
+        ],
+        "win_skills": [
+            "good fighter",
+            "great fighter",
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "adventurous",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "confident",
+            "daring",
+            "fierce",
+            "loyal",
+            "playful",
+            "righteous",
+            "shameless",
+            "strict",
+            "troublesome",
+            "vengeful"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 2,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "pln_hunt_kitfox_steal2",
+        "biome": "plains",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "small_prey",
+            "fighting",
+            "scar",
+            "small_bite_injury"
+        ],
+        "intro_text": "r_c catches the scent of a fox. Tracking it down, they spot a kit fox wandering through the grass, carrying a mouse in its jaws.",
+        "decline_text": "That's an insignificant amount of fresh-kill to start a fight over.",
+        "chance_of_success": 70,
+        "exp": 10,
+        "success_text": [
+            "r_c chases after it, spitting and hissing as the smaller predator tries to run. But r_c is faster, and the fox soon decides that it'd prefer to give up the mouse rather than fight. Puffed up and proud, r_c trots back to camp with the addition for the fresh-kill pile.",
+            "The kit fox locks eyes with r_c as they emerge from the grass, weighing up its options against the bigger cat. There's a long, tense moment as both puff up, ready for a fight, but the fox's nerve breaks first and it runs, leaving r_c with the mouse.",
+            "s_c pounces, snarling, and the fox turns tail with a yelp. Only s_c uses that moment to grab that fluffy tail and shake, until the fox gives up its prey and turns to bite. They dart backwards, and that's as much fight as the fox had in them - the fox runs, and s_c has won the mouse.",
+            "s_c wanders up to the kit fox, swagger in their step as they take the opportunity to be the bigger predator for once in their life. It looks like it's going to fight for a second, but s_c's confidence intimidates it into dropping the mouse and fleeing back into the long grass."
+        ],
+        "fail_text": [
+            "r_c approaches the kit fox, who spots them and sets off at full speed. It's not worth following them, not over a single mouse.",
+            null,
+            null,
+            "With a massive yowl, r_c charges the fox. It bares its teeth, unwilling to give up its hard won prey without a fight, and one wrong step puts r_c's pelt in range of those little jaws, as the small kit fox tries to live up to the reputation of its bigger and stronger relatives."
+        ],
+        "win_skills": [
+            "good fighter",
+            "great fighter",
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "adventurous",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "confident",
+            "daring",
+            "fierce",
+            "loyal",
+            "playful",
+            "righteous",
+            "shameless",
+            "strict",
+            "troublesome",
+            "vengeful"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from a fight with a kit fox.",
+            null
+        ]
+    },
+    {
+        "patrol_id": "pln_hunt_BIGFOX1",
+        "biome": "plains",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "warrior",
+            "no_app"
+        ],
+        "intro_text": "As r_c jumps up onto a rock to survey the plains, they spot the blood red pelt of a truly massive red fox.",
+        "decline_text": "Not today, thank you - they'll go back to camp.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "Swallowing their instinctive terror, r_c instead crouches to the rock and takes the time to assess the situation. Massive body, huge ruff of fur, legs towering daintily above the grass - this is too big to be a red fox, but ironically is less dangerous then it's smaller fox counterpart.",
+            "No way, these things are barely ever seen! The hunting around here will already be ruined by the other predator, so r_c feels no guilt in hanging around to watch the maned wolf, thinking of the stories they'll tell back at camp.",
+            "With a huff, r_c accepts that this hunt has failed - the massive maned wolf, despite every appearance, hunts nearly identical prey to c_n. Still, they're not one to give up on an opportunity to learn, and sit and watch the wolf pounce for mice in case there might be tips to pick up."
+        ],
+        "fail_text": [
+            "Their jolt of fear gives them strength, and r_c is most of the way home before it occurs to them that the huge maned creature might have been too big to be a red fox.",
+            "r_c doesn't know what that monster is, and isn't sticking around to find out! They run home, tail between their legs."
+        ],
+        "win_skills": [
+            "smart",
+            "very smart",
+            "extremely smart",
+            "good teacher",
+            "great teacher",
+            "fantastic teacher"
+        ],
+        "win_trait": [
+            "None"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "childish",
+            "nervous"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "pln_hunt_BIGFOX2",
+        "biome": "plains",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "apprentice",
+            "small_bite_injury",
+            "scar",
+            "injury",
+            "shock"
+        ],
+        "intro_text": "As app1 jumps up onto a rock to survey the plains, they spot the blood red pelt of a truly massive red fox.",
+        "decline_text": "Not today, thank you - they'll go back to camp.",
+        "chance_of_success": 40,
+        "exp": 25,
+        "success_text": [
+            "Terrified beyond sense, they freeze - and the massive fox sees them. It paces closer, giving app1 a heartstopping view of its distorted stretched legs and giant gaping mouth, gathering itself, before in one might spring, it - crashes past app1 and into the grass. Bobbing back up with a mouse, it makes eye contact with the shivering apprentice, before loping off.",
+            "app1 crouches to the rock, but it's too late - the fox has seen them. They freeze in terror, already sure they can't out run the horrifically lengthened legs, sure that at any moment they'll be ripped apart and silently begging StarClan to save them. The closer the fox gets, the more gigantic it's revealed to be, and it stares down at app1 on the rock, it's head bigger than their entire body. Only to move on, without a sound.",
+            null,
+            "Slowly, so that the sudden movement doesn't attract attention, app1 lowers themself to the rock. There's something off about the situation here. It's not just a big red fox, it's impossibly big, with legs stretched and distorted until they look more like a deer's than a fox's. Could this be the rare, massive, but mostly harmless maned wolf that the elders told app1 stories of in the nursery?"
+        ],
+        "fail_text": [
+            "Tarror gives app1 strength, and the don't stop running until their back in camp, gasping about the grassland monster they saw.",
+            "Heart filled with daring, app1 slips off the rock and pads towards the monster in the grass, sure that StarClan will reward their bravery. They sneak closer and closer, until a puzzle wuff of air makes them look up. And up. And up. That is no fox. They pelt for home, as behind them, a confused maned wolf watches them go.",
+            null,
+            "Terror freezes app1 as the massive fox sees them, and comes to investigate, its distorted stretched legs carrying it smoothly through the grass. As the massive nose, as big as app1's entire head, wuffles closer, app1 desperately swipes their claws. Their screw their eyes shut at the outraged yelp, and feel themselves being taken up and tossed by those gaping jaws. They tense, waiting for death to descend, and wait, and... waiting?",
+            null,
+            "Heart filled with daring, app1 slips off the rock and pads towards the monster in the grass, sure that StarClan will reward their bravery. A surprised wuff of air seems to come from everywhere and nowhere, as the puzzled maned wolf picks up the apprentice at their feet and tosses them aside so they can get back to hunting."
+        ],
+        "win_skills": [
+            "None"
+        ],
+        "win_trait": [
+            "patient",
+            "responsible",
+            "thoughtful",
+            "wise",
+            "calm",
+            "careful",
+            "strange"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "adventurous",
+            "bold",
+            "confident",
+            "daring",
+            "playful",
+            "ambitious",
+            "fierce",
+            "shameless"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from irritating a maned wolf as an apprentice."
+        ]
+    },
+    {
+        "patrol_id": "pln_hunt_BIGFOX3",
+        "biome": "plains",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "warrior",
+            "p_l_to_r_c",
+            "rel_patrol",
+            "platonic",
+            "dislike"
+        ],
+        "intro_text": "This is just one of the weirdest things they've ever seen, r_c comments to p_l, as the patrol stares at c_n's uninvited guest to their hunting grounds. Are they going to do anything about that... thing?",
+        "decline_text": "Well, they don't really have time to linger - they'll try another hunting place.",
+        "chance_of_success": 50,
+        "exp": 25,
+        "success_text": [
+            "After a good long session of confusion, the patrol manages to work out that the towering creature they're tracking is almost certainly a maned wolf, a nearly mythical creature. They're all a little uncomfortable, watching an upsized red fox with the legs of a deer amble around their territory, but it's also a little thrilling to follow such an unusual and rarely seen creature.",
+            "The rumours are true - it seems to mostly be hunting for tiny mouse prey, not large things, despite it's massive size. This must be a maned wolf, and just being able to name the odd thing makes it feel so much less threatening. The cats remind each other of the tales sometimes shared in the nursery, of the tallest predator on the plains being one of the shyest.",
+            "s_c is able to recalled some of the stories that get told about the maned wolf, of how it stole its legs from a deer for speed and power, but in doing so also accidentally took the deer's flightiness. Ever since then it has been the tallest and shyest creature on the grasslands.",
+            "Boldly, s_c jumps down to go check the potential threat out, and unwilling to leave their Clanmate in danger, the rest of the patrol follows. s_c refuses to let themselves be intimidated by the huge foxish thing, and bounds up to it, knowing courage can overcome things raw strength cannot. The weird creature skitters away from the incoming patrol, trotting off in a tangle of too long legs."
+        ],
+        "fail_text": [
+            "The patrol tries, they do, but they can't get a good look as the distorted red foxish creature, and eventually have to return to camp to give a rather unsatisfatory report about it. The cats stalk off to do their own things, feeling like they should've been able to do better.",
+            "s_c's stressed nerves can't handle this weird monster, and they beg to go back homeinstead of confronting it."
+        ],
+        "win_skills": [
+            "smart",
+            "very smart",
+            "extremely smart",
+            "good teacher",
+            "great teacher",
+            "fantastic teacher"
+        ],
+        "win_trait": [
+            "adventurous",
+            "bold",
+            "confident",
+            "daring",
+            "playful",
+            "ambitious",
+            "fierce",
+            "shameless"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "childish",
+            "nervous"
+        ],
+        "min_cats": 2,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "pln_hunt_BIGFOX4",
+        "biome": "plains",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "small_prey",
+            "warrior",
+            "p_l_to_r_c",
+            "rel_patrol",
+            "dislike",
+            "big_bite_injury",
+            "scar",
+            "injury",
+            "shock"
+        ],
+        "intro_text": "This is just one of the weirdest things they've ever seen, r_c comments to p_l, as the patrol stares at c_n's uninvited guest to their hunting grounds. Are they going to do anything about that... thing?",
+        "decline_text": "Well, they don't really have time to linger - they'll try another hunting place.",
+        "chance_of_success": 30,
+        "exp": 30,
+        "success_text": [
+            "Looking out over their full six cat patrol, p_l decides it's worth it. The cats fall into battle, decending onto the maned wolf and battering it, using teamwork to pull at its long legs and fox tail, as the wolf turns in skipping circles, yelping. It flees before them, leaving the triumphant cats with a single mouse for all that effort. Great.",
+            "With a sigh, p_l recognises that having a maned wolf poaching from c_n's hunting grounds will become a problem pretty quickly. Their six cat patrol might be the best way to solve the problem before it begins. All the cats, tense and ready, wait to ambush the wolf as it hunts, and manage to drive it out of the territory before it manages to catch more than a mouse. The stolen mouse is returned to c_n's fresh-kill pile, where it belongs.",
+            "While they'd hardly expected to need their skills on a hunting patrol, s_c is able to set up an excellent battle plan. It's only halfway through ambushing the beast that the patrol realises its a maned wolf, which makes their job inifinitely easier, as they drive away the timid predator from c_n territory with enough time left over to bring a mouse or two back for the fresh-kill pile before sundown."
+        ],
+        "fail_text": [
+            "Looking out over their full six cat patrol, p_l decides it's worth it. The cats fall into battle, decending onto the maned wolf and battering it, using teamwork to pull at its long legs and fox tail, as the wolf turns in skipping circles, yelping. It flees before them, leaving the triumphant cats with... a fruit? All that effort for a sodding useless fruit?!",
+            "With a full patrol, it's possible to take on something the size of a maned wolf, especially when it has the bravery of a deer fawn - but not when s_c attacks with so little forethought, not when the rest of the patrol has to come save their tail. They retreat, as the inceased maned wolf snarls and the rest of the patrol tries not to do the same at s_c.",
+            null,
+            "Looking out over their full six cat patrol, p_l decides it's worth it. The cats fall into battle, decending onto the maned wolf and battering it, but a kick from a flailing long leg sends cats flying, and the wolf manages to whirl to sink its teeth into r_c.",
+            null,
+            "With a full patrol, it's possible to take on something the size of a maned wolf, especially when it has the bravery of a deer fawn - but not when s_c attacks with so little forethought, not when the rest of the patrol has to come save their tail. s_c gets grabbed by those dangerous jaws, and while the patrol is able to mob the wolf until it lets them go, its a serious wound."
+        ],
+        "win_skills": [
+            "smart",
+            "very smart",
+            "extremely smart",
+            "good fighter",
+            "great fighter",
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "None"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "adventurous",
+            "bold",
+            "confident",
+            "daring",
+            "playful",
+            "ambitious",
+            "fierce",
+            "shameless"
+        ],
+        "min_cats": 6,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c was scarred by a maned wolf, fighting over food."
+        ]
+    }
+]
