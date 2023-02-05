@@ -191,7 +191,7 @@ class SettingsScreen(Screens):
     checkboxes_text = {}
 
     info_text = "<b>Welcome to Warrior Cats clan generator!</b><br><br>" \
-                "This is fanmade generator for the Warrior Cats -book series by Erin Hunter.<br><br>" \
+                "This is a fan-made generator for the Warrior Cats -book series by Erin Hunter.<br><br>" \
                 "You're welcome to use the characters and sprites generated in this program, " \
                 "as long as you don't claim the sprites as your own creations or sell them for any reason.<br><br>" \
                 "<b>Original creator:</b> <i>just-some-cat.tumblr.com (anju)</i><br><br>" \
@@ -214,6 +214,7 @@ class SettingsScreen(Screens):
                 "Shou<br>" \
                 "Tanukigami<br>" \
                 "Tiri<br>" \
+                "Tybaxel<br>" \
                 "MathKangaroo (Victor)<br>" \
                 "ZtheCorgi<br>" \
                 "Charlie<br>" \
