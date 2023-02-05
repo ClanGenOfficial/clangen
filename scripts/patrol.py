@@ -137,6 +137,71 @@ class Patrol():
 
     def get_possible_patrols(self, current_season, biome, all_clans, patrol_type,
                              game_setting_disaster=game.settings['disasters']):
+        # ---------------------------------------------------------------------------- #
+        #                                LOAD RESOURCES                                #
+        # ---------------------------------------------------------------------------- #
+        biome = biome
+        season = current_season
+        resource_dir = "resources/dicts/patrols/"
+        biome_dir = f"{biome}/"
+        h = "hunting/"
+        t = "training/"
+        b = "border/"
+        m = "med/"
+        leaf = f"{season}"
+
+        # HUNTING #
+        HUNTING_SZN = None
+        with open(f"{resource_dir}{biome_dir}{h}{leaf}.json", 'r', encoding='ascii') as read_file:
+            HUNTING_SZN = ujson.loads(read_file.read())
+        HUNTING = None
+        with open(f"{resource_dir}{biome_dir}{h}any.json", 'r', encoding='ascii') as read_file:
+            HUNTING = ujson.loads(read_file.read())
+        # BORDER #
+        BORDER_SZN = None
+        with open(f"{resource_dir}{biome_dir}{b}{leaf}.json", 'r', encoding='ascii') as read_file:
+            BORDER_SZN = ujson.loads(read_file.read())
+        BORDER = None
+        with open(f"{resource_dir}{biome_dir}{b}any.json", 'r', encoding='ascii') as read_file:
+            BORDER = ujson.loads(read_file.read())
+        # TRAINING #
+        TRAINING_SZN = None
+        with open(f"{resource_dir}{biome_dir}{t}{leaf}.json", 'r', encoding='ascii') as read_file:
+            TRAINING_SZN = ujson.loads(read_file.read())
+        TRAINING = None
+        with open(f"{resource_dir}{biome_dir}{t}any.json", 'r', encoding='ascii') as read_file:
+            TRAINING = ujson.loads(read_file.read())
+        # MED #
+        MEDCAT_SZN = None
+        with open(f"{resource_dir}{biome_dir}{m}{leaf}.json", 'r', encoding='ascii') as read_file:
+            MEDCAT_SZN = ujson.loads(read_file.read())
+        MEDCAT = None
+        with open(f"{resource_dir}{biome_dir}{m}any.json", 'r', encoding='ascii') as read_file:
+            MEDCAT = ujson.loads(read_file.read())
+        # NEW CAT #
+        NEW_CAT = None
+        with open(f"{resource_dir}new_cat.json", 'r', encoding='ascii') as read_file:
+            NEW_CAT = ujson.loads(read_file.read())
+        NEW_CAT_HOSTILE = None
+        with open(f"{resource_dir}new_cat_hostile.json", 'r', encoding='ascii') as read_file:
+            NEW_CAT_HOSTILE = ujson.loads(read_file.read())
+        NEW_CAT_WELCOMING = None
+        with open(f"{resource_dir}new_cat_welcoming.json", 'r', encoding='ascii') as read_file:
+            NEW_CAT_WELCOMING = ujson.loads(read_file.read())
+        # OTHER CLAN #
+        OTHER_CLAN = None
+        with open(f"{resource_dir}other_clan.json", 'r', encoding='ascii') as read_file:
+            OTHER_CLAN = ujson.loads(read_file.read())
+        OTHER_CLAN_ALLIES = None
+        with open(f"{resource_dir}other_clan_allies.json", 'r', encoding='ascii') as read_file:
+            OTHER_CLAN_ALLIES = ujson.loads(read_file.read())
+        OTHER_CLAN_HOSTILE = None
+        with open(f"{resource_dir}other_clan_hostile.json", 'r', encoding='ascii') as read_file:
+            OTHER_CLAN_HOSTILE = ujson.loads(read_file.read())
+
+        DISASTER = None
+        with open(f"{resource_dir}disaster.json", 'r', encoding='ascii') as read_file:
+            DISASTER = ujson.loads(read_file.read())
 
         possible_patrols = []
         final_patrols = []
@@ -1650,88 +1715,3 @@ class PatrolEvent():
 
 
 patrol = Patrol()
-
-# ---------------------------------------------------------------------------- #
-#                                LOAD RESOURCES                                #
-# ---------------------------------------------------------------------------- #
-
-biome = str(game.clan.biome.lower())
-season = str(game.clan.season.lower())
-
-resource_dir = "resources/dicts/patrols/"
-biome_dir = "{biome}/"
-h = "hunting/"
-t = "training/"
-b = "border/"
-m = "med/"
-leaf = "{season}"
-
-# HUNTING #
-HUNTING_SZN = None
-with open(f"{resource_dir}{biome_dir}{h}{leaf}.json", 'r', encoding='ascii') as read_file:
-    HUNTING_SZN = ujson.loads(read_file.read())
-
-HUNTING = None
-with open(f"{resource_dir}{biome_dir}{h}any.json", 'r', encoding='ascii') as read_file:
-    HUNTING = ujson.loads(read_file.read())
-
-# BORDER #
-BORDER_SZN = None
-with open(f"{resource_dir}{biome_dir}{b}{leaf}.json", 'r', encoding='ascii') as read_file:
-    BORDER_SZN = ujson.loads(read_file.read())
-
-BORDER = None
-with open(f"{resource_dir}{biome_dir}{b}any.json", 'r', encoding='ascii') as read_file:
-    BORDER = ujson.loads(read_file.read())
-
-# TRAINING #
-TRAINING_SZN = None
-with open(f"{resource_dir}{biome_dir}{b}{leaf}.json", 'r', encoding='ascii') as read_file:
-    TRAINING_SZN = ujson.loads(read_file.read())
-
-TRAINING = None
-with open(f"{resource_dir}{biome_dir}{b}any.json", 'r', encoding='ascii') as read_file:
-    TRAINING = ujson.loads(read_file.read())
-
-# MED #
-MEDCAT_SZN = None
-with open(f"{resource_dir}{biome_dir}{b}{leaf}.json", 'r', encoding='ascii') as read_file:
-    MED_SZN = ujson.loads(read_file.read())
-
-MEDCAT = None
-with open(f"{resource_dir}{biome_dir}{b}any.json", 'r', encoding='ascii') as read_file:
-    MEDCAT = ujson.loads(read_file.read())
-
-# NEW CAT #
-NEW_CAT = None
-with open(f"{resource_dir}new_cat.json", 'r', encoding='ascii') as read_file:
-    NEW_CAT = ujson.loads(read_file.read())
-
-NEW_CAT_HOSTILE = None
-with open(f"{resource_dir}new_cat_hostile.json", 'r', encoding='ascii') as read_file:
-    NEW_CAT_HOSTILE = ujson.loads(read_file.read())
-
-NEW_CAT_WELCOMING = None
-with open(f"{resource_dir}new_cat_welcoming.json", 'r', encoding='ascii') as read_file:
-    NEW_CAT_WELCOMING = ujson.loads(read_file.read())
-
-# OTHER CLAN #
-OTHER_CLAN = None
-with open(f"{resource_dir}other_clan.json", 'r', encoding='ascii') as read_file:
-    OTHER_CLAN = ujson.loads(read_file.read())
-
-OTHER_CLAN_ALLIES = None
-with open(f"{resource_dir}other_clan_allies.json", 'r', encoding='ascii') as read_file:
-    OTHER_CLAN_ALLIES = ujson.loads(read_file.read())
-
-OTHER_CLAN_HOSTILE = None
-with open(f"{resource_dir}other_clan_hostile.json", 'r', encoding='ascii') as read_file:
-    OTHER_CLAN_HOSTILE = ujson.loads(read_file.read())
-
-# ---------------------------------------------------------------------------- #
-#                            patrols with conditions                           #
-# ---------------------------------------------------------------------------- #
-
-DISASTER = None
-with open(f"{resource_dir}disaster.json", 'r', encoding='ascii') as read_file:
-    DISASTER = ujson.loads(read_file.read())
