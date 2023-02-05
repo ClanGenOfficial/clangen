@@ -1563,6 +1563,7 @@ class Cat():
         return new_condition
 
     def not_working(self):
+        """returns True if the cat cannot work, False if the cat can work"""
         not_working = False
         for illness in self.illnesses:
             if self.illnesses[illness]['severity'] != 'minor':
@@ -1847,7 +1848,7 @@ class Cat():
             potential_mentors = []
             priority_mentors = []
             for cat in self.all_cats.values():
-                if self.is_valid_mentor(cat):
+                if self.is_valid_mentor(cat) and not cat.not_working():
                     potential_mentors.append(cat)
                     if not cat.apprentice:  # length of list is 0
                         priority_mentors.append(cat)
