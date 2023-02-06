@@ -488,26 +488,26 @@ class Patrol():
             # this adds the stat cat (if there is one)
             if self.patrol_stat_cat is not None:
                 if self.patrol_stat_cat.trait in self.patrol_event.win_trait:
-                    n = 3
+                    outcome = 3
                 elif self.patrol_stat_cat.skill in self.patrol_event.win_skills:
-                    n = 2
+                    outcome = 2
             else:
                 if rare and len(success_text) >= 2 and success_text[1] is not None:
-                    n = 1
+                    outcome = 1
                 else:
                     if success_text[0] is not None:
-                        n = 0
+                        outcome = 0
                     else:
-                        n = 1
+                        outcome = 1
             # this is specifically for new cat events that can come with kits
             litter_choice = False
             if self.patrol_event.tags is not None:
                 if "kits" in self.patrol_event.tags:
                     litter_choice = choice([True, False])
                     if litter_choice:
-                        n = 1
+                        outcome = 1
                     else:
-                        n = 0
+                        outcome = 0
             self.handle_exp_gain()
             if not antagonize:
                 self.add_new_cats(litter_choice=litter_choice)
@@ -525,8 +525,8 @@ class Patrol():
             self.handle_mentor_app_pairing()
             self.handle_relationships()
             if game.clan.game_mode != 'classic' and not antagonize:
-                self.handle_herbs(n)
-            self.final_success = self.patrol_event.success_text[n]
+                self.handle_herbs(outcome)
+            self.final_success = self.patrol_event.success_text[outcome]
             if antagonize:
                 self.antagonize = self.patrol_event.antagonize_text
 
@@ -550,46 +550,46 @@ class Patrol():
                     if cat.skill in self.patrol_event.fail_skills or cat.trait in self.patrol_event.fail_trait:
                         self.patrol_stat_cat = cat
 
-            n = 0
+            outcome = 0
             if self.patrol_stat_cat is not None and len(fail_text) > 1:
                 if rare and unscathed and fail_text[1] is not None:
-                    n = 1
+                    outcome = 1
                 elif common and not unscathed and len(fail_text) > 5 and fail_text[5] is not None:
-                    n = 5
+                    outcome = 5
                 elif rare and not unscathed and len(fail_text) > 4 and fail_text[4] is not None:
-                    n = 4
+                    outcome = 4
                 elif fail_text[1] is None:
-                    n = 5
+                    outcome = 5
                 elif fail_text[5] is None:
-                    n = 1
+                    outcome = 1
                 else:
-                    n = 4
+                    outcome = 4
             elif len(fail_text) >= 7 and fail_text[6] is not None and self.patrol_leader == game.clan.leader:
                 if not unscathed:
-                    n = 6
+                    outcome = 6
             elif common and len(fail_text) >= 4 and fail_text[3] is not None:
-                n = 3
+                outcome = 3
             elif rare and len(fail_text) >= 3 and fail_text[2] is not None:
-                n = 2
+                outcome = 2
             elif fail_text[0] is None:
                 if len(fail_text) >= 4 and fail_text[3] is not None:
-                    n = 3
+                    outcome = 3
                 elif len(fail_text) >= 3 and fail_text[2] is not None:
-                    n = 2
+                    outcome = 2
             elif rare and len(fail_text) >= 7 and fail_text[6] is not None and self.patrol_leader == game.clan.leader:
-                n = 6
+                outcome = 6
 
-            if n == 2:
+            if outcome == 2:
                 self.handle_deaths(self.patrol_random_cat)
-            elif n == 4:
+            elif outcome == 4:
                 self.handle_deaths(self.patrol_stat_cat)
-            elif n == 6:
+            elif outcome == 6:
                 self.handle_deaths(self.patrol_leader)
-            elif n == 3 or n == 5:
+            elif outcome == 3 or outcome == 5:
                 if game.clan.game_mode == 'classic':
-                    self.handle_scars(n)
+                    self.handle_scars(outcome)
                 else:
-                    self.handle_conditions(n)
+                    self.handle_conditions(outcome)
             if self.patrol_event.tags is not None:
                 if "other_clan" in self.patrol_event.tags:
                     if antagonize:
@@ -603,12 +603,12 @@ class Patrol():
                         self.handle_reputation(0)
             self.handle_mentor_app_pairing()
             self.handle_relationships()
-            self.final_fail = self.patrol_event.fail_text[n]
+            self.final_fail = self.patrol_event.fail_text[outcome]
             if antagonize:
                 self.antagonize_fail = self.patrol_event.antagonize_fail_text
 
         if not antagonize:
-            self.handle_prey(n) 
+            self.handle_prey(outcome)
 
 
     def results(self):
