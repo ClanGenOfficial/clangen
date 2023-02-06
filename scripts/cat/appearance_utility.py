@@ -253,14 +253,14 @@ def pelt_inheritance(cat, parents: tuple):
 
     # Now, choose the pelt category and pelt. The extra 0 is for the tortie pelts,
     chosen_pelt = choice(
-        random.choices(pelt_categories, weights = weights + [0], k = 1)[0]
+        random.choices(pelt_categories, weights=weights + [0], k = 1)[0]
     )
 
     # Tortie chance
     tortie_chance_f = 4  # There is a default chance for female tortie
     tortie_chance_m = 13
     for p_ in par_pelts:
-        if p_.colour in ginger_colours + black_colours:
+        if p_.name in torties:
             tortie_chance_f = 2
             tortie_chance_m = 12
             break
@@ -356,7 +356,7 @@ def pelt_inheritance(cat, parents: tuple):
         if chosen_white:
             chosen_pelt = "TwoColour"
         else:
-            chosen_white = "SingleColour"
+            chosen_pelt = "SingleColour"
     elif chosen_pelt == "Calico":
         if not chosen_white:
             chosen_pelt = "Tortie"

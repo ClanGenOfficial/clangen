@@ -559,7 +559,14 @@ class PatrolScreen(Screens):
             self.patrol_type,
             game.settings.get('disasters')
         )
-        patrol.patrol_event = choice(possible_events)  # Set patrol event.
+
+        if possible_events:
+            patrol.patrol_event = choice(possible_events)  # Set patrol event.
+        else:
+            print("ERROR: NO POSSIBLE PATROLS FOUND")
+            self.change_screen("clan screen")
+            return
+
         print(str(patrol.patrol_event.patrol_id))
         intro_text = patrol.patrol_event.intro_text
         patrol_size = len(patrol.patrol_cats)

@@ -1130,12 +1130,37 @@ class Cat():
                 self.skill = choice(self.skills)
                 self.mentor_influence.append('None')
 
+            elif self.status == 'mediator':
+                possible_groups = ['star', 'smart', 'teach', 'speak', 'mediate']
+                if self.former_mentor:
+                    chance = randint(0, 12)
+                    mentor = Cat.fetch_cat(self.former_mentor[-1])
+                    if not mentor:
+                        print("WARNING: mentor not found")
+                        return
+                # give skill from mentor
+                    if chance >= 9:
+                        for x in possible_groups:
+                            if mentor.skill in self.skill_groups[x]:
+                                possible_skill = self.skill_groups.get(x)
+                                self.skill = choice(possible_skill)
+                                self.mentor_influence.append(self.skill)
+                                return
+
+                    all_skills = []
+                    for x in possible_groups:
+                        all_skills = all_skills + self.skill_groups[x]
+                    self.skill = choice(all_skills)
+                    self.mentor_influence.append('None')
+
+
             # assign new skill to elder
             elif self.status == 'elder':
                 self.skill = choice(self.elder_skills)
 
             # if a cat somehow has no skill, assign one after checking that they aren't a kit or adolescent
-            elif self.skill == '???' and self.status not in ['apprentice', 'medicine cat apprentice', 'kitten']:
+            elif self.skill == '???' and self.status not in ['apprentice', 'medicine cat apprentice',
+                                                             'mediator apprentice', 'kitten']:
                 self.skill = choice(self.skills)
 
     def moon_skip_illness(self, illness):
@@ -1884,9 +1909,11 @@ class Cat():
                                for_patrol: bool = False):
         """Checks if this cat is a free and potential mate for the other cat."""
         # checks if affairs are turned on
+
         affair = False
         if game.settings['affair']:
             affair = True
+
         # just to be sure, check if it is not the same cat
         if self.ID == other_cat.ID:
             return False
@@ -1894,6 +1921,8 @@ class Cat():
         # check exiled, outside, and dead cats
         if self.dead or self.outside or other_cat.dead or other_cat.outside:
             return False
+
+
 
         # check for age
         if (self.moons < 14 or other_cat.moons < 14) and not for_love_interest:
@@ -2363,7 +2392,7 @@ class Cat():
                                                            personality_bonus)
                     output += f"Comfort increased. "
 
-            elif trait == "admiration":
+            elif trait == "trust":
                 ran = (4, 6)
 
                 if sabotage:
@@ -2373,10 +2402,10 @@ class Cat():
                                                      personality_bonus)
                     output += f"Trust decreased. "
                 else:
-                    rel1.admiration = Cat.effect_relation(rel1.trust, (randint(ran[0], ran[1]) + bonus) +
-                                                          personality_bonus)
-                    rel2.admiration = Cat.effect_relation(rel2.trust, (randint(ran[0], ran[1]) + bonus) +
-                                                          personality_bonus)
+                    rel1.trust = Cat.effect_relation(rel1.trust, (randint(ran[0], ran[1]) + bonus) +
+                                                     personality_bonus)
+                    rel2.trust = Cat.effect_relation(rel2.trust, (randint(ran[0], ran[1]) + bonus) +
+                                                     personality_bonus)
                     output += f"Trust increased. "
 
             elif trait == "dislike":
