@@ -233,19 +233,19 @@ class Patrol():
         regular_chance = int(random.getrandbits(2))
         hostile_chance = int(random.getrandbits(5))
         welcoming_chance = int(random.getrandbits(1))
-        if 1 <= reputation <= 30:
+        if 1 <= int(reputation) <= 30:
             hostile_rep = True
             if small_clan:
                 chance = welcoming_chance
             else:
                 chance = hostile_chance
-        elif 31 <= reputation <= 70:
+        elif 31 <= int(reputation) <= 70:
             neutral_rep = True
             if small_clan:
                 chance = welcoming_chance
             else:
                 chance = regular_chance
-        elif reputation >= 71:
+        elif int(reputation) >= 71:
             welcoming_rep = True
             chance = welcoming_chance
 
@@ -283,10 +283,23 @@ class Patrol():
 
         # makes sure that it grabs patrols in the correct biomes, season, with the correct number of cats
         for patrol in possible_patrols:
+
+            # correct button check
+            if 'general' not in patrol.tags and patrol_type != 'general':
+                if 'hunting' not in patrol.tags and patrol_type == 'hunting':
+                    continue
+                elif 'border' not in patrol.tags and patrol_type == 'border':
+                    continue
+                elif 'training' not in patrol.tags and patrol_type == 'training':
+                    continue
+                elif 'med_cat' not in patrol.tags and patrol_type == 'med':
+                    continue
+
             if patrol_size < patrol.min_cats:
                 continue
             if patrol_size > patrol.max_cats:
                 continue
+
             # makes sure that an apprentice is present if the apprentice tag is
             if "apprentice" in patrol.tags:
                 if "apprentice" not in self.patrol_statuses and "medicine cat apprentice" not in self.patrol_statuses:
@@ -369,16 +382,6 @@ class Patrol():
                 if len(self.patrol_apprentices) < 6 or len(self.patrol_apprentices) > 6:
                     continue
 
-            # correct button check
-            if 'hunting' not in patrol.tags and patrol_type == 'hunting':
-                continue
-            elif 'border' not in patrol.tags and patrol_type == 'border':
-                continue
-            elif 'training' not in patrol.tags and patrol_type == 'training':
-                continue
-            elif 'med_cat' not in patrol.tags and patrol_type == 'med':
-                continue
-
             # making sure related cats don't accidentally go on romantic patrols together
             if "romantic" in patrol.tags:
                 if ("rel_two_apps" and "two_apprentices") in patrol.tags and len(self.patrol_apprentices) >= 2:
@@ -388,9 +391,8 @@ class Patrol():
                 else:
                     if not self.patrol_random_cat.is_potential_mate(self.patrol_leader, for_patrol=True):
                         continue
-            print("Possible: " + str(patrol.patrol_id))
             final_patrols.append(patrol)
-
+        for event in final_patrols:
         return final_patrols
 
     def generate_patrol_events(self, patrol_dict):
