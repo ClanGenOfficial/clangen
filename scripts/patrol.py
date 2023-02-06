@@ -289,10 +289,6 @@ class Patrol():
                 continue
             if patrol_size > patrol.max_cats:
                 continue
-            if patrol.biome not in [biome, "Any"]:
-                continue
-            if patrol.season not in [current_season, "Any"]:
-                continue
             # makes sure that an apprentice is present if the apprentice tag is
             if "apprentice" in patrol.tags:
                 if "apprentice" not in self.patrol_statuses and "medicine cat apprentice" not in self.patrol_statuses:
@@ -395,7 +391,7 @@ class Patrol():
                 else:
                     if not self.patrol_random_cat.is_potential_mate(self.patrol_leader, for_patrol=True):
                         continue
-            #print("Possible: " + str(patrol.patrol_id))
+            print("Possible: " + str(patrol.patrol_id))
             final_patrols.append(patrol)
 
         return final_patrols
@@ -467,7 +463,7 @@ class Patrol():
 
         c = randint(0, 100)
         outcome = int(random.getrandbits(4))
-        print(str(self.patrol_event.patrol_id))
+        print("Chosen Patrol ID:" + str(self.patrol_event.patrol_id))
         
         # ---------------------------------------------------------------------------- #
         #                                   SUCCESS                                    #
