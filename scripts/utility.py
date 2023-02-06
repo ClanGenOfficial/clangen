@@ -1,4 +1,5 @@
 import pygame
+
 try:
     import ujson
 except ImportError:
@@ -10,9 +11,10 @@ from scripts.cat.sprites import *
 from scripts.cat.pelts import *
 from scripts.game_structure.game_essentials import *
 
+
 def scale(rect):
-    rect[0] = round(rect[0]/1600 * screen_x) if rect[0] > 0 else rect[0]
-    rect[1] = round(rect[1]/1400 * screen_y) if rect[1] > 0 else rect[1]
+    rect[0] = round(rect[0] / 1600 * screen_x) if rect[0] > 0 else rect[0]
+    rect[1] = round(rect[1] / 1400 * screen_y) if rect[1] > 0 else rect[1]
     rect[2] = round(rect[2] / 1600 * screen_x) if rect[2] > 0 else rect[2]
     rect[3] = round(rect[3] / 1400 * screen_y) if rect[3] > 0 else rect[3]
 
@@ -20,28 +22,29 @@ def scale(rect):
 
 
 def get_alive_clan_queens(all_cats):
-	"""Returns a list with all cats with the 'status' queen."""
-	queens = []
-	for inter_cat in all_cats.values():
-		if inter_cat.dead:
-			continue
-		if str(inter_cat.status) != 'kitten' or inter_cat.parent1 is None:
-			continue
+    """Returns a list with all cats with the 'status' queen."""
+    queens = []
+    for inter_cat in all_cats.values():
+        if inter_cat.dead:
+            continue
+        if str(inter_cat.status) != 'kitten' or inter_cat.parent1 is None:
+            continue
 
-		parent_1 = all_cats[inter_cat.parent1]
-		parent_2 = None
-		if inter_cat.parent2:
-			parent_2 = all_cats[inter_cat.parent2]
+        parent_1 = all_cats[inter_cat.parent1]
+        parent_2 = None
+        if inter_cat.parent2:
+            parent_2 = all_cats[inter_cat.parent2]
 
-		if parent_1.gender == 'male':
-			if (parent_2 is None or parent_2.gender == 'male') and\
-				not parent_1.dead and not parent_1.exiled and not parent_1.outside:
-				queens.append(parent_1)
-			elif parent_2 and not parent_2.dead and not parent_2.exiled and not parent_2.outside:
-				queens.append(parent_2)
-		elif not parent_1.dead and not parent_1.dead and not parent_1.exiled and not parent_1.outside:
-			queens.append(parent_1)
-	return queens
+        if parent_1.gender == 'male':
+            if (parent_2 is None or parent_2.gender == 'male') and \
+                    not parent_1.dead and not parent_1.exiled and not parent_1.outside:
+                queens.append(parent_1)
+            elif parent_2 and not parent_2.dead and not parent_2.exiled and not parent_2.outside:
+                queens.append(parent_2)
+        elif not parent_1.dead and not parent_1.dead and not parent_1.exiled and not parent_1.outside:
+            queens.append(parent_1)
+    return queens
+
 
 def get_med_cats(Cat, working=True):
     """
@@ -111,6 +114,7 @@ def change_clan_relations(other_clan, difference=0):
     # change the value
     clan_relations += difference
     game.clan.all_clans[y].relations = clan_relations
+
 
 # ---------------------------------------------------------------------------- #
 #                       Relationship / Traits / Relative                       #
@@ -417,12 +421,16 @@ def update_sprite(cat):
                                                                 'medicine cat apprentice', "mediator apprentice"] \
                     or cat.age == 'elder':
                 new_sprite.blit(
-                    sprites.sprites[cat.tortiebase + 'extra' + cat.tortiecolour + str(cat.age_sprites[cat.age])], (0, 0))
-                new_sprite.blit(sprites.sprites[cat.tortiepattern + 'extra' + cat.pattern + str(cat.age_sprites[cat.age])],
-                                (0, 0))
+                    sprites.sprites[cat.tortiebase + 'extra' + cat.tortiecolour + str(cat.age_sprites[cat.age])],
+                    (0, 0))
+                new_sprite.blit(
+                    sprites.sprites[cat.tortiepattern + 'extra' + cat.pattern + str(cat.age_sprites[cat.age])],
+                    (0, 0))
             else:
-                new_sprite.blit(sprites.sprites[cat.tortiebase + cat.tortiecolour + str(cat.age_sprites[cat.age])], (0, 0))
-                new_sprite.blit(sprites.sprites[cat.tortiepattern + cat.pattern + str(cat.age_sprites[cat.age])], (0, 0))
+                new_sprite.blit(sprites.sprites[cat.tortiebase + cat.tortiecolour + str(cat.age_sprites[cat.age])],
+                                (0, 0))
+                new_sprite.blit(sprites.sprites[cat.tortiepattern + cat.pattern + str(cat.age_sprites[cat.age])],
+                                (0, 0))
 
         # TINTS
         if cat.tint != "none" and cat.tint in Sprites.cat_tints["tint_colours"]:
@@ -435,8 +443,6 @@ def update_sprite(cat):
             tint.fill(tuple(Sprites.cat_tints["tint_colours"][cat.tint]))
             base.blit(tint, (0, 0))
             new_sprite.blit(base, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
-
-
 
         # draw white patches
         if cat.white_patches is not None:
@@ -459,8 +465,8 @@ def update_sprite(cat):
                                 str(cat.age_sprites[cat.age])], (0, 0))
             if cat.eye_colour2 != None:
                 new_sprite.blit(
-                sprites.sprites['eyes2extra' + cat.eye_colour2 +
-                                str(cat.age_sprites[cat.age])], (0, 0))
+                    sprites.sprites['eyes2extra' + cat.eye_colour2 +
+                                    str(cat.age_sprites[cat.age])], (0, 0))
             for scar in cat.scars:
                 if scar in scars1:
                     new_sprite.blit(
@@ -472,15 +478,15 @@ def update_sprite(cat):
                         sprites.sprites['scarsextra' + scar + str(cat.age_sprites[cat.age])],
                         (0, 0)
                     )
-            
+
         else:
             new_sprite.blit(
                 sprites.sprites['eyes' + cat.eye_colour +
                                 str(cat.age_sprites[cat.age])], (0, 0))
             if cat.eye_colour2 != None:
                 new_sprite.blit(
-                sprites.sprites['eyes2' + cat.eye_colour2 +
-                                str(cat.age_sprites[cat.age])], (0, 0))
+                    sprites.sprites['eyes2' + cat.eye_colour2 +
+                                    str(cat.age_sprites[cat.age])], (0, 0))
             for scar in cat.scars:
                 if scar in scars1:
                     new_sprite.blit(
@@ -492,7 +498,6 @@ def update_sprite(cat):
                         sprites.sprites['scars' + scar + str(cat.age_sprites[cat.age])],
                         (0, 0)
                     )
-            
 
         # draw line art
         if game.settings['shaders'] and not cat.dead:
@@ -517,7 +522,6 @@ def update_sprite(cat):
                     sprites.sprites['lighting' +
                                     str(cat.age_sprites[cat.age])],
                     (0, 0))
-
 
         if not cat.dead:
             if cat.pelt.length == 'long' and cat.status not in [
@@ -645,9 +649,11 @@ def apply_opacity(surface, opacity):
     for x in range(surface.get_width()):
         for y in range(surface.get_height()):
             pixel = list(surface.get_at((x, y)))
-            pixel[3] = int(pixel[3] * opacity/100)
-            surface.set_at((x,y), tuple(pixel))
+            pixel[3] = int(pixel[3] * opacity / 100)
+            surface.set_at((x, y), tuple(pixel))
     return surface
+
+
 # ---------------------------------------------------------------------------- #
 #                                     OTHER                                    #
 # ---------------------------------------------------------------------------- #
@@ -671,8 +677,3 @@ def get_text_box_theme(themename=""):
             return "text_box"
         else:
             return themename
-
-
-
-
-

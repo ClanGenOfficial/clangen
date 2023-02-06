@@ -52,6 +52,20 @@ class Death_Events():
             if game.clan.current_season not in event.tags:
                 continue
 
+            if "murder" in event.tags:
+                hate = False
+                relationships = other_cat.relationships.values()
+                dislike_relation = list(filter(lambda rel: rel.dislike > 50, relationships))
+                for y in range(len(dislike_relation)):
+                    cat_to = dislike_relation[y].cat_to
+                    if cat_to == cat:
+                        hate = True
+                        break
+                    print(hate)
+                if not hate:
+                    continue
+
+
             # check meddie tags
             if "medicine_cat" in event.tags and cat.status != "medicine cat":
                 continue
