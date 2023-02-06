@@ -16,7 +16,9 @@
             "thinks that (cat) has been behaving stuck up and rude.",
             "is dissatisfied that (cat) can't seem to get rid of their chronic pain."
         ],
-        "comfortable": [],
+        "comfortable": [
+            "is asking (cat) where kits come from."
+        ],
         "jealousy": [],
         "trust": [
             "chiding (cat) for being so reckless.",
@@ -26,8 +28,6 @@
     "to": {
         "romantic_love": [
             "feels like (cat) hasn't been paying much attention to them lately.",
-            "starting to have doubts about their feelings for (cat).",
-            "feels ignored by (cat).",
             "didn't get the joke (cat) was telling."
         ],
         "like": [
@@ -35,7 +35,6 @@
             "divides (cat) into extra patrols.",
             "is watching (cat) scornfully.",
             "called (cat) the wrong name.",
-            "is hiding from (cat)",
             "complains about something (cat) did."
         ],
         "dislike": [

@@ -18,17 +18,28 @@
             "hates the gift (cat) gave them.",
             "catches (cat) staring at another cat."
         ],
-        "like": [],
+        "like": [
+            "is telling jokes about (cat).",
+            "started a fight with (cat).",
+            "has a fight with (cat) about what's right.",
+            "is not backing down in an argument with (cat).",
+            "scorns (apprentice) for not catching enough prey.",
+            "hissed at (cat).",
+            "blamed (cat) for their own mistake.",
+            "tried to have a discussion with (cat) about what prey tastes best, but it turned into an argument.",
+            "whines about (cat).",
+            "is tired from (cat) putting them on so many patrols."
+        ],
         "dislike": [
             "realized that they were too harsh in their judgment of (cat)."
         ],
         "admiration": [
             "is frustrated that (cat) won't take their duties more seriously.",
-            "is annoyed by the mess (cat) made.",
             "wishes (cat) would take things more seriously.",
             "thinks they should be deputy instead of (cat).",
             "was distracted while (cat) was telling a story.",
-            "heard (cat) express an ideal they cannot agree with."
+            "heard (cat) express an ideal they cannot agree with.",
+            "scorns (apprentice) for not catching enough prey."
         ],
         "comfortable": [],
         "jealousy": [
@@ -71,12 +82,10 @@
             "tells (cat) to leave them alone.",
             "blamed (cat) for their own mistake.",
             "rejects (cat)'s advice without letting them finish.",
-            "is cross with (cat) for getting dirt all over the fresh-kill pile.",
             "punishes (cat) with extra work.",
             "tried to have a discussion with (cat) about what prey tastes best, but it turned into an argument.",
             "offends (cat) with their brutal honesty.",
             "whines about (cat).",
-            "is tired from (cat) putting them on so many patrols.",
             "is bossing (cat) around."
         ],
         "dislike": [],

@@ -118,21 +118,9 @@
     "wise": [
       "is giving (cat) advice."
     ],
-    "cowardly": [
-      "is hiding from (cat)"
-    ],
     "impulsive": [
       "crashes into (cat) while eager for the new day.",
       "rejects (cat)'s advice without letting them finish.",
       "interrupts (cat) during a conversation."
-    ],
-    "tidy": [   
-      "is annoyed by the mess (cat) made", 
-      "grooms the grime off (cat)'s pelt",
-      "is cross with (cat) for getting dirt all over the fresh-kill pile"
-    ],
-    "dreamy": [
-      "talks about dreams with (cat)", 
-      "gets distracted from conversation with (cat)"
     ]
 }
