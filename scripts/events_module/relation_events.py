@@ -610,11 +610,9 @@ class Relation_Events():
         can_have_kits = False
         if cat.birth_cooldown > 0:
             cat.birth_cooldown -= 1
-            print("j", str(cat.name))
             return can_have_kits
 
         if 'recovering from birth' in cat.injuries:
-            print("c", str(cat.name))
             return can_have_kits
 
         # decide chances of having kits, and if it's possible at all
@@ -847,7 +845,7 @@ class Relation_Events():
 
         # Handle love affair chance.
         highest_romantic_relation = get_highest_romantic_relation(cat.relationships.values())
-        if mate:
+        if mate and highest_romantic_relation:
             if highest_romantic_relation.cat_to.ID != mate.ID:
                 chance_love_affair = self.get_affair_chance(mate_relation, highest_romantic_relation)
                 if not chance_love_affair or not int(random.random() * chance_love_affair):
