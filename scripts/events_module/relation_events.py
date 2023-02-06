@@ -794,7 +794,7 @@ class Relation_Events():
             Returns:
                 integer (number)
         """
-        affair_chance = 10
+        affair_chance = 5
 
         print(mate_relation)
         if mate_relation is None:
@@ -812,13 +812,16 @@ class Relation_Events():
             if love_diff_mate_other < 0:
                 affair_chance = 5
                 if abs(love_diff_mate_other) > 10:
-                    affair_chance -= 1
+                    affair_chance -= 4
                 elif abs(love_diff_mate_other) > 15:
-                    affair_chance -= 3
+                    affair_chance -= 4
                 elif abs(love_diff_mate_other) > 25:
                     affair_chance -= 4
             else:
-                affair_chance = 20
+                affair_chance = 10
+
+        if affair_chance < 0:
+            affair_chance = 0
 
         return affair_chance
 
@@ -842,7 +845,7 @@ class Relation_Events():
             cat.relationships[mate.ID] = mate_relation
 
 
-        """# Handle love affair chance.
+        # Handle love affair chance.
         highest_romantic_relation = get_highest_romantic_relation(cat.relationships.values())
         if mate:
             if highest_romantic_relation.cat_to.ID != mate.ID:
@@ -850,10 +853,10 @@ class Relation_Events():
                 if not chance_love_affair or not int(random.random() * chance_love_affair):
                     if highest_romantic_relation.cat_to.is_potential_mate(cat, for_love_interest=True):
                         if samesex or highest_romantic_relation.cat_to == "male":
-                            return highest_romantic_relation.cat_to"""
+                            return highest_romantic_relation.cat_to
 
         # If the love affair chance did not trigger, this code will be reached.
-        chance_random_affair = 200
+        chance_random_affair = 20
         if not int(random.random() * chance_random_affair):
             possible_affair_partners = list(filter(lambda x: x.is_potential_mate(cat, for_love_interest=True) and
                                                              (samesex or cat.gender != x.gender) and
