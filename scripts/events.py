@@ -2092,7 +2092,7 @@ class Events():
                             text = f"{Cat.all_cats[random_cat].name} has been chosen as the new deputy. " \
                                    f"The Clan hopes that {game.clan.deputy.name} would approve."
                             involved_cats.append(game.clan.deputy.ID)
-                    elif game.clan.leader.dead or game.clan.leader.exiled:
+                    elif not game.clan.leader or game.clan.leader.dead or game.clan.leader.exiled:
                         if game.clan.leader:
                             text = f"Since losing {game.clan.leader.name} the Clan has been directionless. " \
                                    f"They all turn to {Cat.all_cats[random_cat].name} with hope for the future."
