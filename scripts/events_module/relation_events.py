@@ -853,7 +853,7 @@ class Relation_Events():
                             return highest_romantic_relation.cat_to"""
 
         # If the love affair chance did not trigger, this code will be reached.
-        chance_random_affair = 1
+        chance_random_affair = 200
         if not int(random.random() * chance_random_affair):
             possible_affair_partners = list(filter(lambda x: x.is_potential_mate(cat, for_love_interest=True) and
                                                              (samesex or cat.gender != x.gender) and
