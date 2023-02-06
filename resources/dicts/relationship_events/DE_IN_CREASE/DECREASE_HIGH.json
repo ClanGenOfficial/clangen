@@ -18,21 +18,7 @@
             "hates the gift (cat) gave them.",
             "catches (cat) staring at another cat."
         ],
-        "like": [
-            "is telling jokes about (cat).",
-            "whines about (cat).",
-            "is tired from (cat) putting them on so many patrols.",
-            "is bossing (cat) around.",
-            "started a fight with (cat).",
-            "has a fight with (cat) about what's right.",
-            "hissed at (cat).",
-            "tells (cat) to leave them alone.",
-            "blamed (cat) for their own mistake.",
-            "is cross with (cat) for getting dirt all over the fresh-kill pile.",
-            "tried to have a discussion with (cat) about what prey tastes best, but it turned into an argument.",
-            "caught (cat) in a lie.",
-            "finds the way (cat) acts increasingly uncomfortable."
-        ],
+        "like": [],
         "dislike": [
             "realized that they were too harsh in their judgment of (cat)."
         ],
@@ -44,15 +30,7 @@
             "was distracted while (cat) was telling a story.",
             "heard (cat) express an ideal they cannot agree with."
         ],
-        "comfortable": [
-            "is stuttering while speaking to (cat).",
-            "is glaring at (cat) from across the camp.",
-            "heard an ugly rumor about (cat).",
-            "feels like (cat) isn't taking their health seriously.",
-            "had a disagreement with (cat) while on patrol earlier.",
-            "finds the way (cat) acts increasingly uncomfortable.",
-            "caught (cat) complaining about them behind their back."
-        ],
+        "comfortable": [],
         "jealousy": [
             "has been listening to (cat) talk about how difficult herb memorization is.",
             "has been listening to (cat) talk about how hard training has been."
@@ -61,7 +39,6 @@
             "doesn't think that (cat) has been completely honest lately.",
             "accuses (cat) of being a bad leader.",
             "accuses (cat) of being a bad deputy.",
-            "noticed (cat) flirting with someone else.",
             "caught (cat) in a lie.",
             "caught (cat) complaining about them behind their back.",
             "worries that (cat) isn't being honest with their relationship."
@@ -71,7 +48,18 @@
         "romantic_love": [
             "started a fight with (cat).",
             "gave a gift to (cat), but they turned up their nose at the offering.",
-            "told (cat) to stop padding after them like a lost kit."
+            "told (cat) to stop padding after them like a lost kit.",
+            "noticed (cat) flirting with someone else.",
+            "heard (cat) discussing potential mates but their name never came up.",
+            "thinks their dreams might not come true with (cat).",
+            "heard (cat) express an ideal they cannot agree with.",    
+            "worries that (cat) isn't being honest with their relationship.",
+            "can't stand (cat)'s snoring in their nest.",
+            "is upset that (cat) tried to give them their least favorite prey - surely they know what they like!",
+            "wishes (cat) would stop giving them gifts, as their nest is getting too full.",
+            "hates the gift (cat) gave them.",
+            "catches (cat) staring at another cat.",
+            "heard (cat) talking badly about them."
         ],
         "like": [
             "is telling jokes about (cat).",
@@ -86,7 +74,10 @@
             "is cross with (cat) for getting dirt all over the fresh-kill pile.",
             "punishes (cat) with extra work.",
             "tried to have a discussion with (cat) about what prey tastes best, but it turned into an argument.",
-            "offends (cat) with their brutal honesty."
+            "offends (cat) with their brutal honesty.",
+            "whines about (cat).",
+            "is tired from (cat) putting them on so many patrols.",
+            "is bossing (cat) around."
         ],
         "dislike": [],
         "admiration": [
@@ -106,7 +97,12 @@
             "gives (cat) bitter herbs on purpose.",
             "offends (cat) with their brutal honesty.",
             "had a disagreement with (cat) while on patrol earlier.",
-            "caught (cat) complaining about them behind their back."
+            "caught (cat) complaining about them behind their back.",
+            "noticed (cat) flirting with someone else.",
+            "heard an ugly rumor about (cat).",
+            "feels like (cat) isn't taking their health seriously.",
+            "finds the way (cat) acts increasingly uncomfortable."
+            
         ],
         "jealousy": [
             "has been listening to (cat) talk about how hard training has been."
