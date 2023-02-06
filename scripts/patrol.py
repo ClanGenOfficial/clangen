@@ -140,8 +140,8 @@ class Patrol():
         # ---------------------------------------------------------------------------- #
         #                                LOAD RESOURCES                                #
         # ---------------------------------------------------------------------------- #
-        biome = biome
-        season = current_season
+        biome = biome.lower()
+        season = current_season.lower()
         resource_dir = "resources/dicts/patrols/"
         biome_dir = f"{biome}/"
         h = "hunting/"
@@ -205,8 +205,6 @@ class Patrol():
 
         possible_patrols = []
         final_patrols = []
-        patrol_type = "med" if 'medicine cat' in self.patrol_statuses else patrol_type
-        patrol_type = "med" if 'medicine cat apprentice' in self.patrol_statuses else patrol_type
         patrol_size = len(self.patrol_cats)
         reputation = game.clan.reputation
         other_clan = self.other_clan
@@ -372,15 +370,14 @@ class Patrol():
                     continue
 
             # correct button check
-            if 'general' not in patrol.tags and patrol_type != 'general':
-                if 'hunting' not in patrol.tags and patrol_type == 'hunting':
-                    continue
-                elif 'border' not in patrol.tags and patrol_type == 'border':
-                    continue
-                elif 'training' not in patrol.tags and patrol_type == 'training':
-                    continue
-                elif 'med_cat' not in patrol.tags and patrol_type == 'med':
-                    continue
+            if 'hunting' not in patrol.tags and patrol_type == 'hunting':
+                continue
+            elif 'border' not in patrol.tags and patrol_type == 'border':
+                continue
+            elif 'training' not in patrol.tags and patrol_type == 'training':
+                continue
+            elif 'med_cat' not in patrol.tags and patrol_type == 'med':
+                continue
 
             # making sure related cats don't accidentally go on romantic patrols together
             if "romantic" in patrol.tags:
@@ -401,7 +398,6 @@ class Patrol():
         for patrol in patrol_dict:
             patrol_event = PatrolEvent(
                 patrol_id=patrol["patrol_id"],
-                biome=patrol["biome"],
                 season=patrol["season"],
                 tags=patrol["tags"],
                 intro_text=patrol["intro_text"],
