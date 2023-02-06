@@ -537,6 +537,7 @@ class PatrolScreen(Screens):
                                                                     "resources/images/patrol_event_frame.png").convert_alpha(),
                                                                     (708, 540)
                                                                 ), manager=MANAGER)
+        self.elements['event_bg'].disable()
         self.elements['info_bg'] = pygame_gui.elements.UIImage(scale(pygame.Rect((180, 912), (840, 408))),
                                                                pygame.transform.scale(
                                                                pygame.image.load(
@@ -567,7 +568,7 @@ class PatrolScreen(Screens):
             self.change_screen("clan screen")
             return
 
-        print(str(patrol.patrol_event.patrol_id))
+        print("Chosen Patrol ID: " + str(patrol.patrol_event.patrol_id))
         intro_text = patrol.patrol_event.intro_text
         patrol_size = len(patrol.patrol_cats)
 
@@ -601,7 +602,7 @@ class PatrolScreen(Screens):
         # Prepare Intro Text
         # adjusting text for solo patrols
         intro_text = self.adjust_patrol_text(patrol.patrol_event.intro_text, patrol_size)
-        self.elements["patrol_text"] = UITextBoxTweaked(intro_text, scale(pygame.Rect((770, 350), (660, 500))),
+        self.elements["patrol_text"] = UITextBoxTweaked(intro_text, scale(pygame.Rect((770, 345), (670, 500))),
                                                         object_id="#patrol_text_box", manager=MANAGER)
         # Patrol Info
         # TEXT CATEGORIES AND CHECKING FOR REPEATS

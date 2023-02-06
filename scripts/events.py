@@ -1544,6 +1544,15 @@ class Events():
         for number in range(amount):
             new_cat = None
             if loner_name and a == 1:
+                spaces = name.count(" ")
+                print(name)
+                if spaces > 0:
+                    # make a list of the words within the name, then add the OG name back in the list
+                    words = name.split(" ")
+                    words.append(name)
+                    new_prefix = choice(words)  # pick new prefix from that list
+                    name = new_prefix
+                print(name)
                 new_cat = Cat(moons=age, prefix=name, status=status, gender=choice(['female', 'male']),
                               backstory=backstory)
             elif loner_name:
