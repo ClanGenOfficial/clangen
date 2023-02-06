@@ -857,7 +857,7 @@
 		"medium_prey0",
 		"large_prey1",
 		"large_prey2",
-		"injury",
+		"injure_all",
 		"shivering"
 	],
 	"intro_text": "As the patrol walks through the woods, r_c explains an idea they had for squirrel hunting. It sounds a little strange, but perhaps it could work?",
@@ -873,7 +873,7 @@
 		null,
 		null,
 		null,
-		"r_c suggests finding squirrels sheltered in trees, climbing above them, and shaking the branches to scare them down. Unfortunately for them, the idea is a little too far out there, and while the others move on to easier hunts r_c returns home freezing cold with nothing to show for it."
+		"r_c suggests finding squirrels sheltered in trees, climbing above them, and shaking the branches to scare them down. Unfortunately for them, the idea is a little too far out there, and while they do manage a few small catches, the patrol comes home freezing cold with little to show for it."
 	],
 	"win_skills": [
 		"good hunter",
