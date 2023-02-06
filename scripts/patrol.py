@@ -137,11 +137,74 @@ class Patrol():
 
     def get_possible_patrols(self, current_season, biome, all_clans, patrol_type,
                              game_setting_disaster=game.settings['disasters']):
+        # ---------------------------------------------------------------------------- #
+        #                                LOAD RESOURCES                                #
+        # ---------------------------------------------------------------------------- #
+        biome = biome.lower()
+        season = current_season.lower()
+        resource_dir = "resources/dicts/patrols/"
+        biome_dir = f"{biome}/"
+        h = "hunting/"
+        t = "training/"
+        b = "border/"
+        m = "med/"
+        leaf = f"{season}"
+
+        # HUNTING #
+        HUNTING_SZN = None
+        with open(f"{resource_dir}{biome_dir}{h}{leaf}.json", 'r', encoding='ascii') as read_file:
+            HUNTING_SZN = ujson.loads(read_file.read())
+        HUNTING = None
+        with open(f"{resource_dir}{biome_dir}{h}any.json", 'r', encoding='ascii') as read_file:
+            HUNTING = ujson.loads(read_file.read())
+        # BORDER #
+        BORDER_SZN = None
+        with open(f"{resource_dir}{biome_dir}{b}{leaf}.json", 'r', encoding='ascii') as read_file:
+            BORDER_SZN = ujson.loads(read_file.read())
+        BORDER = None
+        with open(f"{resource_dir}{biome_dir}{b}any.json", 'r', encoding='ascii') as read_file:
+            BORDER = ujson.loads(read_file.read())
+        # TRAINING #
+        TRAINING_SZN = None
+        with open(f"{resource_dir}{biome_dir}{t}{leaf}.json", 'r', encoding='ascii') as read_file:
+            TRAINING_SZN = ujson.loads(read_file.read())
+        TRAINING = None
+        with open(f"{resource_dir}{biome_dir}{t}any.json", 'r', encoding='ascii') as read_file:
+            TRAINING = ujson.loads(read_file.read())
+        # MED #
+        MEDCAT_SZN = None
+        with open(f"{resource_dir}{biome_dir}{m}{leaf}.json", 'r', encoding='ascii') as read_file:
+            MEDCAT_SZN = ujson.loads(read_file.read())
+        MEDCAT = None
+        with open(f"{resource_dir}{biome_dir}{m}any.json", 'r', encoding='ascii') as read_file:
+            MEDCAT = ujson.loads(read_file.read())
+        # NEW CAT #
+        NEW_CAT = None
+        with open(f"{resource_dir}new_cat.json", 'r', encoding='ascii') as read_file:
+            NEW_CAT = ujson.loads(read_file.read())
+        NEW_CAT_HOSTILE = None
+        with open(f"{resource_dir}new_cat_hostile.json", 'r', encoding='ascii') as read_file:
+            NEW_CAT_HOSTILE = ujson.loads(read_file.read())
+        NEW_CAT_WELCOMING = None
+        with open(f"{resource_dir}new_cat_welcoming.json", 'r', encoding='ascii') as read_file:
+            NEW_CAT_WELCOMING = ujson.loads(read_file.read())
+        # OTHER CLAN #
+        OTHER_CLAN = None
+        with open(f"{resource_dir}other_clan.json", 'r', encoding='ascii') as read_file:
+            OTHER_CLAN = ujson.loads(read_file.read())
+        OTHER_CLAN_ALLIES = None
+        with open(f"{resource_dir}other_clan_allies.json", 'r', encoding='ascii') as read_file:
+            OTHER_CLAN_ALLIES = ujson.loads(read_file.read())
+        OTHER_CLAN_HOSTILE = None
+        with open(f"{resource_dir}other_clan_hostile.json", 'r', encoding='ascii') as read_file:
+            OTHER_CLAN_HOSTILE = ujson.loads(read_file.read())
+
+        DISASTER = None
+        with open(f"{resource_dir}disaster.json", 'r', encoding='ascii') as read_file:
+            DISASTER = ujson.loads(read_file.read())
 
         possible_patrols = []
         final_patrols = []
-        patrol_type = "med" if 'medicine cat' in self.patrol_statuses else patrol_type
-        patrol_type = "med" if 'medicine cat apprentice' in self.patrol_statuses else patrol_type
         patrol_size = len(self.patrol_cats)
         reputation = game.clan.reputation
         other_clan = self.other_clan
@@ -170,53 +233,30 @@ class Patrol():
         regular_chance = int(random.getrandbits(2))
         hostile_chance = int(random.getrandbits(5))
         welcoming_chance = int(random.getrandbits(1))
-        if 1 <= reputation <= 30:
+        if 1 <= int(reputation) <= 30:
             hostile_rep = True
             if small_clan:
                 chance = welcoming_chance
             else:
                 chance = hostile_chance
-        elif 31 <= reputation <= 70:
+        elif 31 <= int(reputation) <= 70:
             neutral_rep = True
             if small_clan:
                 chance = welcoming_chance
             else:
                 chance = regular_chance
-        elif reputation >= 71:
+        elif int(reputation) >= 71:
             welcoming_rep = True
             chance = welcoming_chance
 
-        if biome == 'forest':
-            possible_patrols.extend(self.generate_patrol_events(HUNTING_FST))
-            possible_patrols.extend(self.generate_patrol_events(BORDER_FST))
-            possible_patrols.extend(self.generate_patrol_events(TRAINING_FST))
-            possible_patrols.extend(self.generate_patrol_events(MEDCAT_FST))
-
-        elif biome == 'plains':
-            possible_patrols.extend(self.generate_patrol_events(HUNTING_PLN))
-            possible_patrols.extend(self.generate_patrol_events(BORDER_PLN))
-            possible_patrols.extend(self.generate_patrol_events(TRAINING_PLN))
-            possible_patrols.extend(self.generate_patrol_events(MEDCAT_PLN))
-
-        elif biome == 'mountainous':
-            possible_patrols.extend(self.generate_patrol_events(HUNTING_MTN))
-            possible_patrols.extend(self.generate_patrol_events(BORDER_MTN))
-            possible_patrols.extend(self.generate_patrol_events(TRAINING_MTN))
-            possible_patrols.extend(self.generate_patrol_events(MEDCAT_MTN))
-
-        elif biome == 'beach':
-            possible_patrols.extend(self.generate_patrol_events(HUNTING_BCH))
-            possible_patrols.extend(self.generate_patrol_events(BORDER_BCH))
-            possible_patrols.extend(self.generate_patrol_events(TRAINING_BCH))
-            possible_patrols.extend(self.generate_patrol_events(MEDCAT_BCH))
-
-        elif biome == 'wetlands':
-            possible_patrols.extend(self.generate_patrol_events(HUNTING_WTLND))
-
         possible_patrols.extend(self.generate_patrol_events(HUNTING))
+        possible_patrols.extend(self.generate_patrol_events(HUNTING_SZN))
         possible_patrols.extend(self.generate_patrol_events(BORDER))
+        possible_patrols.extend(self.generate_patrol_events(BORDER_SZN))
         possible_patrols.extend(self.generate_patrol_events(TRAINING))
+        possible_patrols.extend(self.generate_patrol_events(TRAINING_SZN))
         possible_patrols.extend(self.generate_patrol_events(MEDCAT))
+        possible_patrols.extend(self.generate_patrol_events(MEDCAT_SZN))
 
         if game_setting_disaster:
             dis_chance = int(random.getrandbits(3)) # disaster patrol chance
@@ -243,14 +283,23 @@ class Patrol():
 
         # makes sure that it grabs patrols in the correct biomes, season, with the correct number of cats
         for patrol in possible_patrols:
+
+            # correct button check
+            if 'general' not in patrol.tags and patrol_type != 'general':
+                if 'hunting' not in patrol.tags and patrol_type == 'hunting':
+                    continue
+                elif 'border' not in patrol.tags and patrol_type == 'border':
+                    continue
+                elif 'training' not in patrol.tags and patrol_type == 'training':
+                    continue
+                elif 'med_cat' not in patrol.tags and patrol_type == 'med':
+                    continue
+
             if patrol_size < patrol.min_cats:
                 continue
             if patrol_size > patrol.max_cats:
                 continue
-            if patrol.biome not in [biome, "Any"]:
-                continue
-            if patrol.season not in [current_season, "Any"]:
-                continue
+
             # makes sure that an apprentice is present if the apprentice tag is
             if "apprentice" in patrol.tags:
                 if "apprentice" not in self.patrol_statuses and "medicine cat apprentice" not in self.patrol_statuses:
@@ -333,17 +382,6 @@ class Patrol():
                 if len(self.patrol_apprentices) < 6 or len(self.patrol_apprentices) > 6:
                     continue
 
-            # correct button check
-            if 'general' not in patrol.tags and patrol_type != 'general':
-                if 'hunting' not in patrol.tags and patrol_type == 'hunting':
-                    continue
-                elif 'border' not in patrol.tags and patrol_type == 'border':
-                    continue
-                elif 'training' not in patrol.tags and patrol_type == 'training':
-                    continue
-                elif 'med_cat' not in patrol.tags and patrol_type == 'med':
-                    continue
-
             # making sure related cats don't accidentally go on romantic patrols together
             if "romantic" in patrol.tags:
                 if ("rel_two_apps" and "two_apprentices") in patrol.tags and len(self.patrol_apprentices) >= 2:
@@ -353,9 +391,8 @@ class Patrol():
                 else:
                     if not self.patrol_random_cat.is_potential_mate(self.patrol_leader, for_patrol=True):
                         continue
-            #print("Possible: " + str(patrol.patrol_id))
             final_patrols.append(patrol)
-
+        for event in final_patrols:
         return final_patrols
 
     def generate_patrol_events(self, patrol_dict):
@@ -363,7 +400,6 @@ class Patrol():
         for patrol in patrol_dict:
             patrol_event = PatrolEvent(
                 patrol_id=patrol["patrol_id"],
-                biome=patrol["biome"],
                 season=patrol["season"],
                 tags=patrol["tags"],
                 intro_text=patrol["intro_text"],
@@ -425,7 +461,6 @@ class Patrol():
 
         c = randint(0, 100)
         outcome = int(random.getrandbits(4))
-        print(str(self.patrol_event.patrol_id))
         
         # ---------------------------------------------------------------------------- #
         #                                   SUCCESS                                    #
@@ -446,26 +481,26 @@ class Patrol():
             # this adds the stat cat (if there is one)
             if self.patrol_stat_cat is not None:
                 if self.patrol_stat_cat.trait in self.patrol_event.win_trait:
-                    n = 3
+                    outcome = 3
                 elif self.patrol_stat_cat.skill in self.patrol_event.win_skills:
-                    n = 2
+                    outcome = 2
             else:
                 if rare and len(success_text) >= 2 and success_text[1] is not None:
-                    n = 1
+                    outcome = 1
                 else:
                     if success_text[0] is not None:
-                        n = 0
+                        outcome = 0
                     else:
-                        n = 1
+                        outcome = 1
             # this is specifically for new cat events that can come with kits
             litter_choice = False
             if self.patrol_event.tags is not None:
                 if "kits" in self.patrol_event.tags:
                     litter_choice = choice([True, False])
                     if litter_choice:
-                        n = 1
+                        outcome = 1
                     else:
-                        n = 0
+                        outcome = 0
             self.handle_exp_gain()
             if not antagonize:
                 self.add_new_cats(litter_choice=litter_choice)
@@ -483,8 +518,8 @@ class Patrol():
             self.handle_mentor_app_pairing()
             self.handle_relationships()
             if game.clan.game_mode != 'classic' and not antagonize:
-                self.handle_herbs(n)
-            self.final_success = self.patrol_event.success_text[n]
+                self.handle_herbs(outcome)
+            self.final_success = self.patrol_event.success_text[outcome]
             if antagonize:
                 self.antagonize = self.patrol_event.antagonize_text
 
@@ -508,46 +543,46 @@ class Patrol():
                     if cat.skill in self.patrol_event.fail_skills or cat.trait in self.patrol_event.fail_trait:
                         self.patrol_stat_cat = cat
 
-            n = 0
+            outcome = 0
             if self.patrol_stat_cat is not None and len(fail_text) > 1:
                 if rare and unscathed and fail_text[1] is not None:
-                    n = 1
+                    outcome = 1
                 elif common and not unscathed and len(fail_text) > 5 and fail_text[5] is not None:
-                    n = 5
+                    outcome = 5
                 elif rare and not unscathed and len(fail_text) > 4 and fail_text[4] is not None:
-                    n = 4
+                    outcome = 4
                 elif fail_text[1] is None:
-                    n = 5
+                    outcome = 5
                 elif fail_text[5] is None:
-                    n = 1
+                    outcome = 1
                 else:
-                    n = 4
+                    outcome = 4
             elif len(fail_text) >= 7 and fail_text[6] is not None and self.patrol_leader == game.clan.leader:
                 if not unscathed:
-                    n = 6
+                    outcome = 6
             elif common and len(fail_text) >= 4 and fail_text[3] is not None:
-                n = 3
+                outcome = 3
             elif rare and len(fail_text) >= 3 and fail_text[2] is not None:
-                n = 2
+                outcome = 2
             elif fail_text[0] is None:
                 if len(fail_text) >= 4 and fail_text[3] is not None:
-                    n = 3
+                    outcome = 3
                 elif len(fail_text) >= 3 and fail_text[2] is not None:
-                    n = 2
+                    outcome = 2
             elif rare and len(fail_text) >= 7 and fail_text[6] is not None and self.patrol_leader == game.clan.leader:
-                n = 6
+                outcome = 6
 
-            if n == 2:
+            if outcome == 2:
                 self.handle_deaths(self.patrol_random_cat)
-            elif n == 4:
+            elif outcome == 4:
                 self.handle_deaths(self.patrol_stat_cat)
-            elif n == 6:
+            elif outcome == 6:
                 self.handle_deaths(self.patrol_leader)
-            elif n == 3 or n == 5:
+            elif outcome == 3 or outcome == 5:
                 if game.clan.game_mode == 'classic':
-                    self.handle_scars(n)
+                    self.handle_scars(outcome)
                 else:
-                    self.handle_conditions(n)
+                    self.handle_conditions(outcome)
             if self.patrol_event.tags is not None:
                 if "other_clan" in self.patrol_event.tags:
                     if antagonize:
@@ -561,12 +596,12 @@ class Patrol():
                         self.handle_reputation(0)
             self.handle_mentor_app_pairing()
             self.handle_relationships()
-            self.final_fail = self.patrol_event.fail_text[n]
+            self.final_fail = self.patrol_event.fail_text[outcome]
             if antagonize:
                 self.antagonize_fail = self.patrol_event.antagonize_fail_text
 
         if not antagonize:
-            self.handle_prey(n) 
+            self.handle_prey(outcome)
 
 
     def results(self):
@@ -737,7 +772,7 @@ class Patrol():
     def handle_conditions(self, outcome):
 
         condition_lists = {
-            "battle_injury": ["claw-wound", "bite-wound", "mangled leg", "mangled tail", "torn pelt", "cat bite"],
+            "battle_injury": ["claw-wound", "mangled leg", "mangled tail", "torn pelt", "cat bite"],
             "minor_injury": ["sprain", "sore", "bruises", "scrapes"],
             "blunt_force_injury": ["broken bone", "broken back", "head damage", "broken jaw"],
             "hot_injury": ["heat exhaustion", "heat stroke", "dehydrated"],
@@ -794,15 +829,27 @@ class Patrol():
                     cat.get_injured('poisoned')
 
             # now we hurt the kitty
-            if len(possible_conditions) > 0:
-                new_condition = choice(possible_conditions)
-                self.results_text.append(f"{cat.name} got: {new_condition}")
-                if new_condition in INJURIES:
-                    cat.get_injured(new_condition, lethal=lethal)
-                elif new_condition in ILLNESSES:
-                    cat.get_ill(new_condition, lethal=lethal)
-                elif new_condition in PERMANENT:
-                    cat.get_permanent_condition(new_condition)
+            if "injure_all" in self.patrol_event.tags:
+                for cat in self.patrol_cats:
+                    if len(possible_conditions) > 0:
+                        new_condition = choice(possible_conditions)
+                        self.results_text.append(f"{cat.name} got: {new_condition}")
+                        if new_condition in INJURIES:
+                            cat.get_injured(new_condition, lethal=lethal)
+                        elif new_condition in ILLNESSES:
+                            cat.get_ill(new_condition, lethal=lethal)
+                        elif new_condition in PERMANENT:
+                            cat.get_permanent_condition(new_condition)
+            else:
+                if len(possible_conditions) > 0:
+                    new_condition = choice(possible_conditions)
+                    self.results_text.append(f"{cat.name} got: {new_condition}")
+                    if new_condition in INJURIES:
+                        cat.get_injured(new_condition, lethal=lethal)
+                    elif new_condition in ILLNESSES:
+                        cat.get_ill(new_condition, lethal=lethal)
+                    elif new_condition in PERMANENT:
+                        cat.get_permanent_condition(new_condition)
 
     def handle_scars(self, outcome):
         if self.patrol_event.tags is not None:
@@ -927,9 +974,10 @@ class Patrol():
         elif "good_hunter" in self.patrol_skills:
             total_amount = total_amount * (HUNTER_BONUS["good_hunter"] / 10)
 
-        game.clan.freshkill_pile.add_freshkill(total_amount)
-        if total_amount > 0:
-            self.results_text.append(f"Each cat catches a {prey_size} amount of prey.")
+        if game.clan.game_mode != "classic":
+            game.clan.freshkill_pile.add_freshkill(total_amount)
+            if total_amount > 0:
+                self.results_text.append(f"Each cat catches a {prey_size} amount of prey.")
 
     def handle_clan_relations(self, difference):
         """
@@ -1226,6 +1274,7 @@ class Patrol():
                     new_cat = created_cats[0]
                     new_cat.outside = True
                     new_cat.dead = True
+                    new_cat.thought = "Is so very grateful that their kits survived"
                 if "new_cat_newborn" in tags:
                     created_cats.extend(self.create_new_cat(loner=False, loner_name=True, backstory='orphaned',
                                                        litter=True, age='newborn', relevant_cat=new_cat))
@@ -1567,6 +1616,7 @@ class PatrolEvent():
             "small_bite_injury": ["bite-wound", "torn ear", "torn pelt", "scrapes"]
             "beak_bite": ["beak bite", "torn ear", "scrapes"]
         If you want to specify a certain condition, tag both with "injury" and the condition
+        If you want to injure all the cats in the patrol, tag with "injure_all"
         This will work with any condition whether they are an illness, injury, or perm condition
         If you want to ensure that a cat cannot die from the condition, tag with "non_lethal"
         Keep in mind that minor injuries are already non lethal by default and permanent conditions will not be affected by this tag.
@@ -1574,6 +1624,7 @@ class PatrolEvent():
         conditions from blunt_force_injury AND water in their lungs as possible conditions for that patrol. 
         Keep in mind that the "non_lethal" tag will apply to ALL the conditions for that patrol.
         Right now, nonlethal shock is auto applied to all cats present when another cat dies. This may change in the future.
+        
 
         HERB TAGGING:
         herbs are given on successes only
@@ -1672,136 +1723,3 @@ class PatrolEvent():
 
 
 patrol = Patrol()
-
-# ---------------------------------------------------------------------------- #
-#                                LOAD RESOURCES                                #
-# ---------------------------------------------------------------------------- #
-
-resource_directory = "resources/dicts/patrols/"
-hunting_directory = "hunting/"
-training_directory = "training/"
-border_directory = "border/"
-med_directory = "med/"
-
-# HUNTING #
-HUNTING = None
-with open(f"{resource_directory}{hunting_directory}hunting.json", 'r', encoding='ascii') as read_file:
-    HUNTING = ujson.loads(read_file.read())
-
-HUNTING_FST = None
-with open(f"{resource_directory}{hunting_directory}hunting_forest.json", 'r', encoding='ascii') as read_file:
-    HUNTING_FST = ujson.loads(read_file.read())
-
-HUNTING_PLN = None
-with open(f"{resource_directory}{hunting_directory}hunting_plains.json", 'r', encoding='ascii') as read_file:
-    HUNTING_PLN = ujson.loads(read_file.read())
-
-HUNTING_MTN = None
-with open(f"{resource_directory}{hunting_directory}hunting_mountains.json", 'r', encoding='ascii') as read_file:
-    HUNTING_MTN = ujson.loads(read_file.read())
-
-HUNTING_BCH = None
-with open(f"{resource_directory}{hunting_directory}hunting_beach.json", 'r', encoding='ascii') as read_file:
-    HUNTING_BCH = ujson.loads(read_file.read())
-
-HUNTING_WTLND = None
-with open(f"{resource_directory}{hunting_directory}hunting_wetlands.json", 'r', encoding='ascii') as read_file:
-    HUNTING_WTLND = ujson.loads(read_file.read())
-
-# BORDER #
-BORDER = None
-with open(f"{resource_directory}{border_directory}border.json", 'r', encoding='ascii') as read_file:
-    BORDER = ujson.loads(read_file.read())
-
-BORDER_FST = None
-with open(f"{resource_directory}{border_directory}border_forest.json", 'r', encoding='ascii') as read_file:
-    BORDER_FST = ujson.loads(read_file.read())
-
-BORDER_PLN = None
-with open(f"{resource_directory}{border_directory}border_plains.json", 'r', encoding='ascii') as read_file:
-    BORDER_PLN = ujson.loads(read_file.read())
-
-BORDER_MTN = None
-with open(f"{resource_directory}{border_directory}border_mountains.json", 'r', encoding='ascii') as read_file:
-    BORDER_MTN = ujson.loads(read_file.read())
-
-BORDER_BCH = None
-with open(f"{resource_directory}{border_directory}border_beach.json", 'r', encoding='ascii') as read_file:
-    BORDER_BCH = ujson.loads(read_file.read())
-
-# TRAINING #
-TRAINING = None
-with open(f"{resource_directory}{training_directory}training.json", 'r', encoding='ascii') as read_file:
-    TRAINING = ujson.loads(read_file.read())
-
-TRAINING_FST = None
-with open(f"{resource_directory}{training_directory}training_forest.json", 'r', encoding='ascii') as read_file:
-    TRAINING_FST = ujson.loads(read_file.read())
-
-TRAINING_PLN = None
-with open(f"{resource_directory}{training_directory}training_plains.json", 'r', encoding='ascii') as read_file:
-    TRAINING_PLN = ujson.loads(read_file.read())
-
-TRAINING_MTN = None
-with open(f"{resource_directory}{training_directory}training_mountains.json", 'r', encoding='ascii') as read_file:
-    TRAINING_MTN = ujson.loads(read_file.read())
-
-TRAINING_BCH = None
-with open(f"{resource_directory}{training_directory}training_beach.json", 'r', encoding='ascii') as read_file:
-    TRAINING_BCH = ujson.loads(read_file.read())
-
-# MED CAT #
-
-MEDCAT = None
-with open(f"{resource_directory}{med_directory}medcat.json", 'r', encoding='ascii') as read_file:
-    MEDCAT = ujson.loads(read_file.read())
-
-MEDCAT_FST = None
-with open(f"{resource_directory}{med_directory}medcat_forest.json", 'r', encoding='ascii') as read_file:
-    MEDCAT_FST = ujson.loads(read_file.read())
-
-MEDCAT_PLN = None
-with open(f"{resource_directory}{med_directory}medcat_plains.json", 'r', encoding='ascii') as read_file:
-    MEDCAT_PLN = ujson.loads(read_file.read())
-
-MEDCAT_MTN = None
-with open(f"{resource_directory}{med_directory}medcat_mountains.json", 'r', encoding='ascii') as read_file:
-    MEDCAT_MTN = ujson.loads(read_file.read())
-
-MEDCAT_BCH = None
-with open(f"{resource_directory}{med_directory}medcat_beach.json", 'r', encoding='ascii') as read_file:
-    MEDCAT_BCH = ujson.loads(read_file.read())
-
-# NEW CAT #
-NEW_CAT = None
-with open(f"{resource_directory}new_cat.json", 'r', encoding='ascii') as read_file:
-    NEW_CAT = ujson.loads(read_file.read())
-
-NEW_CAT_HOSTILE = None
-with open(f"{resource_directory}new_cat_hostile.json", 'r', encoding='ascii') as read_file:
-    NEW_CAT_HOSTILE = ujson.loads(read_file.read())
-
-NEW_CAT_WELCOMING = None
-with open(f"{resource_directory}new_cat_welcoming.json", 'r', encoding='ascii') as read_file:
-    NEW_CAT_WELCOMING = ujson.loads(read_file.read())
-
-# OTHER CLAN #
-OTHER_CLAN = None
-with open(f"{resource_directory}other_clan.json", 'r', encoding='ascii') as read_file:
-    OTHER_CLAN = ujson.loads(read_file.read())
-
-OTHER_CLAN_ALLIES = None
-with open(f"{resource_directory}other_clan_allies.json", 'r', encoding='ascii') as read_file:
-    OTHER_CLAN_ALLIES = ujson.loads(read_file.read())
-
-OTHER_CLAN_HOSTILE = None
-with open(f"{resource_directory}other_clan_hostile.json", 'r', encoding='ascii') as read_file:
-    OTHER_CLAN_HOSTILE = ujson.loads(read_file.read())
-
-# ---------------------------------------------------------------------------- #
-#                            patrols with conditions                           #
-# ---------------------------------------------------------------------------- #
-
-DISASTER = None
-with open(f"{resource_directory}disaster.json", 'r', encoding='ascii') as read_file:
-    DISASTER = ujson.loads(read_file.read())
