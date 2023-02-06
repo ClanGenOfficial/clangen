@@ -392,7 +392,7 @@ class Patrol():
                     if not self.patrol_random_cat.is_potential_mate(self.patrol_leader, for_patrol=True):
                         continue
             final_patrols.append(patrol)
-        for event in final_patrols:
+
         return final_patrols
 
     def generate_patrol_events(self, patrol_dict):
