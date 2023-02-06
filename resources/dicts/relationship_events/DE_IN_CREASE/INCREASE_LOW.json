@@ -1,6 +1,9 @@
 {
     "from": {
         "romantic_love": [
+            "is the first cat that (cat) thinks of when they get good news.",
+            "just noticed how beautiful (cat)'s eyes are.",
+            "is hoping that (cat) notices them.",
             "keeps shyly glancing over at (cat) as the Clan talks about mates",
             "is prancing around in front of (cat).",
             "stayed up all night thinking of ways to impress (cat).",
@@ -8,7 +11,9 @@
             "thinks (cat) is the most beautiful cat in the Clan.",
             "could spend hours listening to (cat)'s voice.",
 			"made (cat) laugh again and again.",
-            "wonders what (cat) thinks about mates."
+            "wonders what (cat) thinks about mates.",
+            "thinks that (cat) is really charming.",
+            "is nervous sitting next to (cat) at the Clan meeting."
         ],
         "like": [
             "is pretending to ward off foxes with (cat).",
@@ -79,7 +84,8 @@
             "is pestering (cat) for a story.",
             "settles down next to (cat) to listen to their stories.",
             "asks (cat) if they're really going to be the leader someday.",
-            "always wants to play as (cat) in their games of pretend."
+            "always wants to play as (cat) in their games of pretend.",
+            "might be reading a little too far into (cat)'s kindness."
         ],
         "comfortable": [
             "is hiding under a bush from (cat), but they can't stop giggling.",
@@ -109,11 +115,9 @@
         "romantic_love": [
             "doesn't want (cat) to overwork themselves.",
             "is prancing around in front of (cat).",
-            "is the first cat that (cat) thinks of when they get good news.",
 			"made (cat) laugh again and again.",
             "keeps shyly glancing over at (cat) as the Clan talks about mates",
-            "could spend hours listening to (cat)'s voice.",
-            "thinks that (cat) is really charming."
+            "could spend hours listening to (cat)'s voice."
         ],
         "like": [
             "is pretending to ward off foxes with (cat).",
@@ -185,7 +189,6 @@
             "is thinking about how much (cat) reminds them of their own apprentice days.",
             "ask (cat) what it's like to be a apprentice.",
             "won't stop copying everything (cat) does.",
-            "is admiring (cat) from afar...",
             "went to (cat) for advice about a dream they had.",
             "has been listening to (cat) talk about how difficult herb memorization is."
         ],

@@ -1,6 +1,7 @@
 {
     "from": {
         "romantic_love": [
+            "had a disagreement with (cat) over kits.",
             "gave a gift to (cat), but they turned up their nose at the offering.",
             "told (cat) to stop padding after them like a lost kit.",
             "heard a rumor that (cat) likes someone else.",
@@ -57,18 +58,16 @@
     },
     "to": {
         "romantic_love": [
+            "heard (cat) talking badly about them.",
+            "had a disagreement with (cat) over kits.",
             "started a fight with (cat).",
             "gave a gift to (cat), but they turned up their nose at the offering.",
             "told (cat) to stop padding after them like a lost kit.",
             "noticed (cat) flirting with someone else.",
-            "heard (cat) discussing potential mates but their name never came up.",
             "thinks their dreams might not come true with (cat).",
             "heard (cat) express an ideal they cannot agree with.",    
             "worries that (cat) isn't being honest with their relationship.",
-            "can't stand (cat)'s snoring in their nest.",
             "is upset that (cat) tried to give them their least favorite prey - surely they know what they like!",
-            "wishes (cat) would stop giving them gifts, as their nest is getting too full.",
-            "hates the gift (cat) gave them.",
             "catches (cat) staring at another cat.",
             "heard (cat) talking badly about them."
         ],
