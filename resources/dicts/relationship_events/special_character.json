@@ -19,7 +19,7 @@
       "is stuttering while speaking to (cat)."
     ],
     "strict":[
-      "scorns (apprentice) for not catching enough prey."
+      "scorns (cat) for not catching enough prey."
     ],
     "charismatic": [
       "charms (cat).",
@@ -66,9 +66,9 @@
       "convinces (cat) to help them pull a prank on a Clanmate."
     ],
     "empathetic": [
-      "is listening to (elder)'s woes.",
+      "is listening to (cat)'s woes.",
       "is listening to (cat)'s troubles.",
-      "noticed (apprentice) was struggling, and offered to help them."
+      "noticed (cat) was struggling, and offered to help them."
     ],
     "adventurous": [
       "wants to explore Twolegplace with (cat).",
@@ -78,14 +78,14 @@
     "thoughful": [
       "gave (cat) their favorite piece of prey.",
       "is being quite considerate with (cat).",
-      "took the time to help (apprentice) work through a technique they are struggling with."
+      "took the time to help (cat) work through a technique they are struggling with."
     ],
     "compassionate": [
       "curled around (cat) to share warmth.",
       "lets (cat) have the last piece of fresh-kill.",
       "is listening to (cat)'s problems.",
       "gives (cat) an item they may like.",
-      "helps (elder) get around camp."
+      "helps (cat) get around camp."
     ],
     "childish": [
       "is hiding behind a bush ready to pounce on (cat)."
@@ -101,7 +101,7 @@
     ],
     "altruistic": [
       "let (cat) lean on their shoulder after a recent injury.",
-      "is poised to help train (apprentice)."
+      "is poised to help train (cat)."
     ],
     "bold": [
       "challenged (cat) to spar with them."

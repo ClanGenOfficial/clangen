@@ -24,7 +24,7 @@
             "started a fight with (cat).",
             "has a fight with (cat) about what's right.",
             "is not backing down in an argument with (cat).",
-            "scorns (apprentice) for not catching enough prey.",
+            "scorns (cat) for not catching enough prey.",
             "hissed at (cat).",
             "blamed (cat) for their own mistake.",
             "tried to have a discussion with (cat) about what prey tastes best, but it turned into an argument.",
@@ -40,7 +40,7 @@
             "thinks they should be deputy instead of (cat).",
             "was distracted while (cat) was telling a story.",
             "heard (cat) express an ideal they cannot agree with.",
-            "scorns (apprentice) for not catching enough prey."
+            "scorns (cat) for not catching enough prey."
         ],
         "comfortable": [],
         "jealousy": [
@@ -76,7 +76,7 @@
             "started a fight with (cat).",
             "has a fight with (cat) about what's right.",
             "is not backing down in an argument with (cat).",
-            "scorns (apprentice) for not catching enough prey.",
+            "scorns (cat) for not catching enough prey.",
             "hissed at (cat).",
             "tells (cat) to leave them alone.",
             "blamed (cat) for their own mistake.",
