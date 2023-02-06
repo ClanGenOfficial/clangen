@@ -1285,6 +1285,35 @@
             "ragwort",
             "poppy"
         ]
+    },
+
+    "bee sting": {
+        "duration": 2,
+        "severity": "minor",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 20,
+            "adolescent": 30,
+            "young adult": 50,
+            "adult": 50,
+            "senior adult": 50,
+            "elder": 30
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+        ],
+        "also_got": [
+        ],
+        "cause_permanent": [
+        ],
+        "herbs": [
+            "dandelion",
+            "tansy",
+            "juniper",
+            "ragwort",
+            "poppy"
+        ]
     }
 }
 

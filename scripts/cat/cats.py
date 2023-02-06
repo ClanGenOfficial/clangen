@@ -1088,14 +1088,14 @@ class Cat():
                 possible_groups = ['special', 'heal', 'star', 'mediate', 'smart', 'teach']
                 # check if they had a mentor
                 if self.former_mentor:
-                    chance = randint(0, 5)
+                    chance = randint(0, 9) + int(self.patrol_with_mentor)
                     mentor = Cat.fetch_cat(self.former_mentor[-1])
                     if not mentor:
                         print("WARNING: mentor not found")
                         return
                     # give skill from mentor, this is a higher chance of happening than the warrior has
                     # bc med cats have no patrol_with_mentor modifier
-                    if chance >= 2:
+                    if chance >= 9:
                         for x in possible_groups:
                             if mentor.skill in self.skill_groups[x]:
                                 possible_skill = self.skill_groups.get(x)
