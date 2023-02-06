@@ -140,8 +140,8 @@ class Patrol():
         # ---------------------------------------------------------------------------- #
         #                                LOAD RESOURCES                                #
         # ---------------------------------------------------------------------------- #
-        biome = biome
-        season = current_season
+        biome = biome.lower()
+        season = current_season.lower()
         resource_dir = "resources/dicts/patrols/"
         biome_dir = f"{biome}/"
         h = "hunting/"
@@ -205,8 +205,6 @@ class Patrol():
 
         possible_patrols = []
         final_patrols = []
-        patrol_type = "med" if 'medicine cat' in self.patrol_statuses else patrol_type
-        patrol_type = "med" if 'medicine cat apprentice' in self.patrol_statuses else patrol_type
         patrol_size = len(self.patrol_cats)
         reputation = game.clan.reputation
         other_clan = self.other_clan
@@ -288,10 +286,6 @@ class Patrol():
             if patrol_size < patrol.min_cats:
                 continue
             if patrol_size > patrol.max_cats:
-                continue
-            if patrol.biome not in [biome, "Any"]:
-                continue
-            if patrol.season not in [current_season, "Any"]:
                 continue
             # makes sure that an apprentice is present if the apprentice tag is
             if "apprentice" in patrol.tags:
@@ -376,15 +370,14 @@ class Patrol():
                     continue
 
             # correct button check
-            if 'general' not in patrol.tags and patrol_type != 'general':
-                if 'hunting' not in patrol.tags and patrol_type == 'hunting':
-                    continue
-                elif 'border' not in patrol.tags and patrol_type == 'border':
-                    continue
-                elif 'training' not in patrol.tags and patrol_type == 'training':
-                    continue
-                elif 'med_cat' not in patrol.tags and patrol_type == 'med':
-                    continue
+            if 'hunting' not in patrol.tags and patrol_type == 'hunting':
+                continue
+            elif 'border' not in patrol.tags and patrol_type == 'border':
+                continue
+            elif 'training' not in patrol.tags and patrol_type == 'training':
+                continue
+            elif 'med_cat' not in patrol.tags and patrol_type == 'med':
+                continue
 
             # making sure related cats don't accidentally go on romantic patrols together
             if "romantic" in patrol.tags:
@@ -395,7 +388,7 @@ class Patrol():
                 else:
                     if not self.patrol_random_cat.is_potential_mate(self.patrol_leader, for_patrol=True):
                         continue
-            #print("Possible: " + str(patrol.patrol_id))
+            print("Possible: " + str(patrol.patrol_id))
             final_patrols.append(patrol)
 
         return final_patrols
@@ -405,7 +398,6 @@ class Patrol():
         for patrol in patrol_dict:
             patrol_event = PatrolEvent(
                 patrol_id=patrol["patrol_id"],
-                biome=patrol["biome"],
                 season=patrol["season"],
                 tags=patrol["tags"],
                 intro_text=patrol["intro_text"],
@@ -467,7 +459,6 @@ class Patrol():
 
         c = randint(0, 100)
         outcome = int(random.getrandbits(4))
-        print(str(self.patrol_event.patrol_id))
         
         # ---------------------------------------------------------------------------- #
         #                                   SUCCESS                                    #
