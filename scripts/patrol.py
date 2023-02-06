@@ -463,7 +463,6 @@ class Patrol():
 
         c = randint(0, 100)
         outcome = int(random.getrandbits(4))
-        print("Chosen Patrol ID:" + str(self.patrol_event.patrol_id))
         
         # ---------------------------------------------------------------------------- #
         #                                   SUCCESS                                    #
