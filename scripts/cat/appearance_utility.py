@@ -258,11 +258,12 @@ def pelt_inheritance(cat, parents: tuple):
 
     # Tortie chance
     tortie_chance_f = 4  # There is a default chance for female tortie
-    tortie_chance_m = 9
+    tortie_chance_m = 13
     for p_ in par_pelts:
         if p_.colour in ginger_colours + black_colours:
             tortie_chance_f = 2
-            tortie_chance_m -= 1
+            tortie_chance_m = 12
+            break
 
     # Determine tortie:
     if cat.gender == "female":
@@ -375,8 +376,8 @@ def randomize_pelt(cat):
     )
 
     # Tortie chance
-    tortie_chance_f = 2  # There is a default chance for female tortie
-    tortie_chance_m = 9
+    tortie_chance_f = 3  # There is a default chance for female tortie
+    tortie_chance_m = 13
     if cat.gender == "female":
         torbie = random.getrandbits(tortie_chance_f) == 1
     else:
