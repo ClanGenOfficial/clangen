@@ -16,9 +16,7 @@
             "thinks that (cat) has been behaving stuck up and rude.",
             "is dissatisfied that (cat) can't seem to get rid of their chronic pain."
         ],
-        "comfortable": [
-            "is asking (cat) where kits come from."
-        ],
+        "comfortable": [],
         "jealousy": [],
         "trust": [
             "chiding (cat) for being so reckless.",
@@ -56,7 +54,8 @@
             "bickered about something trivial with (cat).",
             "said something that rubbed (cat) the wrong way.",
             "chomps on (cat)'s ear.",
-            "bickered about something trivial with (cat)."
+            "bickered about something trivial with (cat).",
+            "is asking (cat) where kits come from."
         ],
         "jealousy": [
             "was playing with (cat) and learned a fun new battle move from them!"
