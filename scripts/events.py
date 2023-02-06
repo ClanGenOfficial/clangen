@@ -1277,7 +1277,7 @@ class Events():
 
         base_chance = 200
         if clan_size < 10:
-            base_chance = 100
+            base_chance = 200
         elif clan_size > 50:
             base_chance = 700
         elif clan_size > 30:
