@@ -159,9 +159,8 @@ class Relation_Events():
                 self.handle_two_moon_pregnant(cat, clan)
                 return
 
-        # Check if they have have kits.
-        can_have_kits = self.check_if_can_have_kits(cat, game.settings['no unknown fathers'],
-                                                    game.settings['no gendered breeding'])
+        # Check if they can have kits.
+        can_have_kits = self.check_if_can_have_kits(cat, game.settings['no unknown fathers'])
         if not can_have_kits:
             return
 
@@ -196,10 +195,9 @@ class Relation_Events():
             # check if the second_parent is not none, if they also can have kits
             if second_parent:
                 # This is a special check that could be an affair partner.
-                parent2_can_have_kits = self.check_if_can_have_kits(second_parent, game.settings['no unknown fathers'],
-                                                                    game.settings['no gendered breeding'],
-                                                                    is_second_parent=True)
+                parent2_can_have_kits = self.check_second_parent(cat, second_parent)
                 if not parent2_can_have_kits:
+                    print("chosen second parent can't have kits")
                     return
             else:
                 if not game.settings['no unknown fathers']:
@@ -240,8 +238,8 @@ class Relation_Events():
                 if old_male:
                     chance = int(chance / 2)
             else:
-                # Affairs never cancel - it makes setting affairs number easier.
-                chance = 1
+                # Affairs almost never cancel - it makes setting affairs number easier.
+                chance = 1000
 
             print("Kit cancel chance", chance)
             if not int(random.random() * chance):
@@ -653,9 +651,7 @@ class Relation_Events():
     def check_if_can_have_kits(
             self,
             cat,
-            unknown_parent_setting,
-            no_gendered_breeding,
-            is_second_parent=False  # Set to true if this is the second parent, not the first.
+            unknown_parent_setting
     ):
 
         if cat.birth_cooldown > 0:
@@ -674,29 +670,40 @@ class Relation_Events():
         # check for mate
         mate = None
         if cat.mate:
-            if cat.mate in cat.all_cats:
-                mate = cat.all_cats[cat.mate]
-            else:
+            if cat.mate not in cat.all_cats:
                 print(f"WARNING: {str(cat.name)}  has an invalid mate # {str(cat.mate)}. This has been unset.")
                 cat.mate = None
 
-        # If this is a second parent, we don't want to check for them having a mate.
-        # This is mostly already checked with the first parent, and we want to allow second parents
-        # to have no mates (if the "no unknown fathers" setting is True) during affairs.
-        if not is_second_parent:
-            if mate and mate.dead:
-                return False
-
-            if mate:
-                if mate.gender == cat.gender and not no_gendered_breeding:
-                    return False
-            else:
-                if not unknown_parent_setting:
-                    return False
+        # If the "no unknown fathers setting in on, we should only allow cats that have mates to have kits.
+        if unknown_parent_setting and not cat.mate:
+            return False
 
         # if function reaches this point, having kits is possible
         can_have_kits = True
         return can_have_kits
+
+    def check_second_parent(self, cat: Cat, second_parent: Cat):
+        """ This checks to see if the chosen second parent and CAT can have kits. It assumes CAT can have kits. """
+
+        # Checks for second parent alone:
+        if second_parent.birth_cooldown > 0:
+            return False
+
+        if 'recovering from birth' in second_parent.injuries:
+            return False
+
+        # decide chances of having kits, and if it's possible at all.
+        # Including - age, dead statis, having kits turned off.
+        not_correct_age = second_parent.age in ['kitten', 'adolescent'] or second_parent.moons < 15
+        if not_correct_age or second_parent.no_kits or second_parent.dead or second_parent.outside:
+            return False
+
+        # Check to see if the pair can have kits.
+        if not game.settings["no gendered breeding"]:
+            if cat.gender == second_parent.gender:
+                return False
+
+        return True
 
     def check_if_new_mate(self, relationship_from, relationship_to, cat_from, cat_to):
         """Checks if the two cats can become mates, or not. Returns: boolean and event_string"""
@@ -872,7 +879,7 @@ class Relation_Events():
                             return highest_romantic_relation.cat_to, is_affair
 
         # If the love affair chance did not trigger, this code will be reached.
-        chance_random_affair = 100
+        chance_random_affair = 120
         if not int(random.random() * chance_random_affair):
             possible_affair_partners = list(filter(lambda x: x.is_potential_mate(cat, for_love_interest=True) and
                                                              (samesex or cat.gender != x.gender) and
