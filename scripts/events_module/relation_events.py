@@ -167,8 +167,7 @@ class Relation_Events():
 
         # Roll to see if the cat will have kits.
         living_cats = len(list(filter(lambda r: not r.dead, Cat.all_cats.values())))
-        chance = 120
-
+        chance = 60
         # This is the first chance. Other checks will then be made that can "cancel" this roll.
         if not int(random.random() * chance):
             print(f"primary kit roll triggered for {cat.name}")
