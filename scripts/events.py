@@ -771,94 +771,82 @@ class Events():
         if game.clan.leader:
             leader_dead = game.clan.leader.dead
             leader_exiled = game.clan.leader.exiled
+            leader_outside = game.clan.leader.outside
         else:
             leader_dead = True
             leader_exiled = False
-
-        if promoted_to == 'warrior':
-            resource_directory = "resources/dicts/events/ceremonies/"
-            TRAITS = None
-            with open(f"{resource_directory}ceremony_traits.json", 'r') as read_file:
-                TRAITS = ujson.loads(read_file.read())
-            try:
-                random_honor = choice(TRAITS[cat.trait])
-            except KeyError:
-                random_honor = "hard work"
-            if not leader_dead and not leader_exiled:
-                involved_cats.append(game.clan.leader.ID)
-                ceremony.extend([
-                    str(game.clan.leader.name) +
-                    " calls the Clan to a meeting, and declares " + str(cat.name.prefix) +
-                    "paw to be a warrior. They are now called " +
-                    str(cat.name.prefix) + str(cat.name.suffix) +
-                    " and are celebrated for their " + str(random_honor) + ".",
-                    str(game.clan.leader.name) +
-                    " stands above the Clan and proclaims that " + str(cat.name.prefix) +
-                    "paw shall now be known as " + str(cat.name.prefix) +
-                    str(cat.name.suffix) + ", honoring their " +
-                    str(random_honor) + ".",
-                    str(game.clan.name) + "Clan welcomes " + str(cat.name.prefix) +
-                    str(cat.name.suffix) + " as a new warrior, honoring their " +
-                    str(random_honor) + ".",
-                    str(game.clan.leader.name) + " rests their muzzle on " +
-                    str(cat.name.prefix) + str(cat.name.suffix) +
-                    "'s head and declares them to be a full warrior of " +
-                    str(game.clan.name) + "Clan, honoring their " +
-                    str(random_honor) + "."
-                ])
-                if cat.trait == 'bloodthirsty':
-                    ceremony.extend([str(cat.name.prefix) + "paw has worked long and hard to earn their warrior name but " + str(
-                                            game.clan.leader.name) + " can't help but to shiver in unease as they name them " + str(
-                                            cat.name) + " after their " + str(random_honor) + "."])
-            else:
-                ceremony.extend([str(game.clan.name) + "Clan welcomes " + str(cat.name.prefix) +
-                                 str(cat.name.suffix) + " as a new warrior, honoring their " +
-                                 str(random_honor) + "."])
-
-        elif (promoted_to == 'apprentice') and cat.mentor is not None:
-            mentor_name = str(Cat.fetch_cat(cat.mentor).name)
+            leader_outside = False
+        resource_dir = "resources/dicts/events/ceremonies/"
+        CEREMONY_TXT = None
+        with open(f"{resource_dir}ceremony_text.json", 'r') as read_file:
+            CEREMONY_TXT = ujson.loads(read_file.read())
+        dead_mentor = None
+        mentor_txt = None
+        leader_txt = None
+        parent_txt = None
+        trait = cat.trait
+        if cat.parent1:
+            parent1 = Cat.fetch_cat(cat.parent1)
+            if cat.parent2:
+                parent2 = Cat.fetch_cat(cat.parent2)
+        general_txt = "general"
+        parent_status = None
+        parent_txt = None
+        backstory_txt = None
+        for x in range(len(cat.former_mentor)):
+            if Cat.fetch_cat(cat.former_mentor[x]).dead:
+                dead_mentor = Cat.fetch_cat(cat.former_mentor[x])
+                break
+        if dead_mentor:
+            mentor_txt = "dead_mentor"
+        elif not dead_mentor and cat.mentor == None and not promoted_to == 'warrior':
+            mentor_txt = "no_mentor"
+        elif not dead_mentor and cat.mentor and promoted_to == 'warrior':
+            mentor_txt = "living_mentor"
             involved_cats.append(cat.mentor)
-            ceremony.extend([
-                str(cat.name) +
-                " has reached the age of six moons and has been made an apprentice, with "
-                + mentor_name + " as their mentor.",
-                "Newly-made apprentice " + str(cat.name) +
-                " touched noses with their new mentor, " +
-                mentor_name + ".",
-                str(cat.name) + " carefully touches noses with their new mentor, " + mentor_name + ", looking quite intimidated and nervous.",
-                str(cat.name) + " excitedly touches noses with their new mentor, " + mentor_name + ", looking quite eager to start training."
-            ])
-            if cat.parent1 is not None and str(
-                    cat_class.all_cats[cat.parent1].name) != str(
-                Cat.fetch_cat(cat.mentor).name) and str(cat_class.all_cats[cat.parent1].name) != "unnamed queen":
-                if not cat_class.all_cats[cat.parent1].dead:
-                    involved_cats.append(cat.parent1)
-                    ceremony.extend([
-                        str(cat_class.all_cats[cat.parent1].name) +
-                        " is watching in pride as " + str(cat.name) +
-                        " is named and given to " + mentor_name +
-                        " to apprentice under. They know that " +
-                        mentor_name + " was a good choice."
-                    ])
-
-            if cat.is_disabled() and not leader_dead:
-                if str(game.clan.leader.name) != mentor_name:
-                    involved_cats.append(game.clan.leader.ID)
-                    ceremony.extend([
-                        str(cat.name) + " is confidently telling " +
-                        str(game.clan.leader.name) +
-                        " that they can do anything any cat can. " +
-                        str(game.clan.leader.name) + " assigns " +
-                        mentor_name +
-                        " as their mentor to make sure that happens.",
-                        "Standing proud and tall before their new mentor " + str(
-                            cat.name) + " promises " + mentor_name + " that together they will prove "
-                                                                     "to everyone that they will be the best warrior."
-                    ])
-
-        elif (promoted_to == 'apprentice') and cat.mentor is None:
-            ceremony.extend(["Newly-made apprentice " + str(cat.name) +
-                             " wished they had someone to mentor them."])
+        if leader_outside or leader_exiled or leader_dead:
+            leader_txt = "no_leader"
+        else:
+            leader_txt = "leader"
+            involved_cats.append(game.clan.leader)
+        if cat.backstory == ['abandoned1', 'abandoned2', 'abandoned3']:
+            backstory_txt = "abandoned"
+        if cat.parent1 and not cat.parent2:
+            parent_txt = "parent1"
+            if parent1.dead:
+                parent_status = "dead"
+            else:
+                parent_status = "alive"
+        if cat.parent2:
+            parent_txt = choice(["parent1", "parent2"])
+            if parent2.dead:
+                parent_status = "dead"
+            else:
+                parent_status = "alive"
+        if cat.parent1 and cat.parent2:
+            parent_txt = choice(["both_parents", "parent1", "parent2"])
+            if parent1.dead and parent2.dead:
+                parent_status = "dead"
+            elif not parent1.dead and not parent2.dead:
+                parent_status = "alive"
+            
+        ceremony += CEREMONY_TXT[promoted_to][leader_txt][trait]
+        ceremony += CEREMONY_TXT[promoted_to][leader_txt][general_txt]
+        if mentor_txt != None:
+            ceremony += CEREMONY_TXT[promoted_to][leader_txt][mentor_txt]
+        if backstory_txt:
+            ceremony += CEREMONY_TXT[promoted_to][leader_txt][backstory_txt]
+        if cat.parent1:
+            ceremony += CEREMONY_TXT[promoted_to][parent_txt][parent_status]
+                
+            '''#DEAD MENTOR CEREMONY
+                if len(cat.former_mentor) > 0:
+                    dead_mentor = None
+                    for x in range(len(cat.former_mentor)):
+                        if Cat.fetch_cat(cat.former_mentor[x]).dead:
+                            dead_mentor = Cat.fetch_cat(cat.former_mentor[x])
+                            break'''
+                     
 
         elif (promoted_to == 'medicine cat apprentice') and cat.mentor is not None:
             mentor_name = str(Cat.fetch_cat(cat.mentor).name)
@@ -919,12 +907,35 @@ class Events():
                 str(cat.name) + " wished to join the elders. "
                 "The Clan honors them and all the service they have given to them."
             ])
+        # getting the mentor's name
+        if dead_mentor:
+            mentor_name = str(dead_mentor.name)
+        else:
+            try:
+                mentor_name = str(Cat.fetch_cat(cat.mentor).name)
+            except:
+                mentor_name = str(Cat.fetch_cat(cat.former_mentor[-1]).name)
+        # getting the random honor if it's needed
+        random_honor = None
+        if promoted_to == 'warrior':
+            TRAITS = None
+            with open(f"{resource_dir}ceremony_traits.json", 'r') as read_file:
+                TRAITS = ujson.loads(read_file.read())
+            if not leader_dead and not leader_exiled and not leader_outside:
+                try:
+                    random_honor = choice(TRAITS[cat.trait])
+                except KeyError:
+                    random_honor = "hard work"
+
         if promoted_to in ['warrior', 'apprentice', 'medicine cat apprentice', 'medicine cat', 'elder', 'mediator',
                            "mediator apprentice"]:
             ceremony_text = choice(ceremony)
+            ceremony_text = ceremony_text_adjust(Cat, ceremony_text, cat, mentor_name=mentor_name, random_honor=random_honor)
             game.cur_events_list.append(Single_Event(ceremony_text, "ceremony", involved_cats))
             # game.ceremony_events_list.append(ceremony_text)
         else:
+            ceremony_text = choice(ceremony)
+            ceremony_text = ceremony_text_adjust(Cat, ceremony_text, cat, mentor_name=mentor_name, random_honor=random_honor)
             game.cur_events_list.append(Single_Event(f'{str(cat.name)}{ceremony_text}', "ceremony", involved_cats))
             # game.ceremony_events_list.append(f'{str(cat.name)}{ceremony_text}')
 
