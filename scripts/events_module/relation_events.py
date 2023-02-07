@@ -159,15 +159,18 @@ class Relation_Events():
                 self.handle_two_moon_pregnant(cat, clan)
                 return
 
-        #Check if they hav have kits.
+        # Check if they have have kits.
         can_have_kits = self.check_if_can_have_kits(cat, game.settings['no unknown fathers'],
                                                     game.settings['no gendered breeding'])
         if not can_have_kits:
             return
 
         # Roll to see if the cat will have kits.
-        living_cats = len(list(filter(lambda r: not r.dead, Cat.all_cats.values())))
-        chance = 60
+        if cat.mate:
+            chance = 60
+        else:
+            chance = 100
+
         # This is the first chance. Other checks will then be made that can "cancel" this roll.
         if not int(random.random() * chance):
             print(f"primary kit roll triggered for {cat.name}")
@@ -207,24 +210,26 @@ class Relation_Events():
 
             # If an affair was triggered, bypass the love check. They already had an affair - sometimes, there
             # is no love in an affair.
+            living_cats = len(list(filter(lambda r: not r.dead, Cat.all_cats.values())))
+
             if not affair:
                 if second_parent is not None:
-                    chance = 5
+                    chance = 10
                     if second_parent_relation.romantic_love >= 35:
-                        chance += 5
+                        chance += 20
                     elif second_parent_relation.romantic_love >= 55:
-                        chance += 10
+                        chance += 30
                     elif second_parent_relation.romantic_love >= 85:
-                        chance += 15
+                        chance += 40
 
                     if second_parent_relation.comfortable >= 35:
-                        chance += 5
+                        chance += 20
                     elif second_parent_relation.comfortable >= 55:
-                        chance += 10
+                        chance += 30
                     elif second_parent_relation.comfortable >= 85:
-                        chance += 15
+                        chance += 40
                 else:
-                    chance = int(int(living_cats) / 45)
+                    chance = int(int(living_cats) / 20 + 5)
 
                 old_male = False
                 if cat.gender == 'male' and cat.age == 'elder':
@@ -234,15 +239,19 @@ class Relation_Events():
 
                 if old_male:
                     chance = int(chance / 2)
+            else:
+                # Affairs never cancel - it makes setting affairs number easier.
+                chance = 1
 
-                print("Kit cancel chance", chance)
-                if not int(random.random() * chance):
-                    # Cancel having kits.
-                    if second_parent:
-                        print(f"Having kits canceled for {cat.name} and {second_parent.name}")
-                    else:
-                        print(f"Having kits canceled for {cat.name} and unknown parent")
-                    return
+            print("Kit cancel chance", chance)
+            if not int(random.random() * chance):
+                # Cancel having kits.
+                if second_parent:
+                    print(f"Having kits canceled for {cat.name} and {second_parent.name}")
+                else:
+                    print(f"Having kits canceled for {cat.name} and unknown parent")
+                return
+
 
             # If you've reached here - congrats, kits!
             self.handle_zero_moon_pregnant(cat, second_parent, second_parent_relation, clan)
@@ -383,15 +392,6 @@ class Relation_Events():
             print_event = f"{str(cat.name)} brought {insert} back to camp, but refused to talk about their origin."
             # game.birth_death_events_list.append(print_event)
             game.cur_events_list.append(Single_Event(print_event, "birth_death", cat.ID))
-            # display event
-            # if len(print_event) < 100:
-            #    game.cur_events_list.append(print_event)
-            # else:
-            #    cut = print_event.find(' ', int(len(print_event)/2))
-            #    first_part = print_event[:cut]
-            #    second_part = print_event[cut:]
-            #    game.cur_events_list.append(first_part)
-            #    game.cur_events_list.append(second_part)
             return
 
         # if the other cat is a female and the current cat is a male, make the female cat pregnant
@@ -665,7 +665,8 @@ class Relation_Events():
         if 'recovering from birth' in cat.injuries:
             return False
 
-        # decide chances of having kits, and if it's possible at all
+        # decide chances of having kits, and if it's possible at all.
+        # Including - age, dead statis, having kits turned off.
         not_correct_age = cat.age in ['kitten', 'adolescent'] or cat.moons < 15
         if not_correct_age or cat.no_kits or cat.dead:
             return False
@@ -793,51 +794,7 @@ class Relation_Events():
 
         return chance_number
 
-    def get_kits_chance(self, cat, other_cat=None, relation=None):
-        """ Looks into the current values and calculate the chance of having kittens. The lower, the more likely they will have kittens.
-            Returns:
-                integer (number)
-        """
-        living_cats = len(list(filter(lambda r: not r.dead, Cat.all_cats.values())))
-
-        old_male = False
-        if cat.gender == 'male' and cat.age == 'elder':
-            old_male = True
-        if other_cat is not None and other_cat.gender == 'male' and other_cat.age == 'elder':
-            old_male = True
-
-        # calculate the chance of having kits
-        chance = 100
-        if other_cat is not None:
-            if other_cat.ID == cat.mate:
-                chance = 41
-                if relation.romantic_love >= 35:
-                    chance -= 5
-                if relation.romantic_love >= 55:
-                    chance -= 5
-                if relation.romantic_love >= 85:
-                    chance -= 10
-                if relation.comfortable >= 35:
-                    chance -= 5
-                if relation.comfortable >= 55:
-                    chance -= 5
-                if relation.comfortable >= 85:
-                    chance -= 10
-            else:
-                # This should only happen in an affair.
-                chance = int(int(living_cats) * 45)
-        else:
-            chance = int(int(living_cats) * 45)
-
-        if old_male:
-            chance = int(chance * 2)
-
-        if chance > 20 > living_cats:
-            chance -= 10
-
-        return chance
-
-    def get_affair_chance(self, mate_relation, affair_relation):
+    def get_love_affair_chance(self, mate_relation, affair_relation):
         """ Looks into the current values and calculate the chance of having kits with the affair cat.
             The lower, the more likely they will have affairs. This function should only be called when mate 
             and affair_cat are not the same.
@@ -845,30 +802,31 @@ class Relation_Events():
             Returns:
                 integer (number)
         """
-        affair_chance = 5
+        affair_chance = 10
 
         if mate_relation is None:
             if affair_relation.romantic_love > 10:
-                affair_chance -= 2
+                affair_chance -= 1
             elif affair_relation.platonic_like > 20:
                 affair_chance -= 2
             elif affair_relation.comfortable > 20:
                 affair_chance -= 3
             elif affair_relation.trust > 20:
-                affair_chance -= 3
+                affair_chance -= 4
 
         else:
             love_diff_mate_other = mate_relation.romantic_love - affair_relation.romantic_love
             if love_diff_mate_other < 0:
-                affair_chance = 5
+                affair_chance = 8
                 if abs(love_diff_mate_other) > 10:
-                    affair_chance -= 4
+                    affair_chance -= 2
                 elif abs(love_diff_mate_other) > 15:
                     affair_chance -= 4
                 elif abs(love_diff_mate_other) > 25:
-                    affair_chance -= 4
+                    affair_chance -= 6
             else:
-                affair_chance = 10
+                # This chance should never be used.
+                affair_chance = 100
 
         if affair_chance < 0:
             affair_chance = 0
@@ -904,7 +862,7 @@ class Relation_Events():
         highest_romantic_relation = get_highest_romantic_relation(cat.relationships.values())
         if mate and highest_romantic_relation:
             if highest_romantic_relation.cat_to.ID != mate.ID:
-                chance_love_affair = self.get_affair_chance(mate_relation, highest_romantic_relation)
+                chance_love_affair = self.get_love_affair_chance(mate_relation, highest_romantic_relation)
                 if not chance_love_affair or not int(random.random() * chance_love_affair):
                     print("love affair?")
                     if highest_romantic_relation.cat_to.is_potential_mate(cat, for_love_interest=True):
@@ -914,7 +872,7 @@ class Relation_Events():
                             return highest_romantic_relation.cat_to, is_affair
 
         # If the love affair chance did not trigger, this code will be reached.
-        chance_random_affair = 5
+        chance_random_affair = 100
         if not int(random.random() * chance_random_affair):
             possible_affair_partners = list(filter(lambda x: x.is_potential_mate(cat, for_love_interest=True) and
                                                              (samesex or cat.gender != x.gender) and
