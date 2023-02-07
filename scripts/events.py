@@ -226,8 +226,8 @@ class Events():
             }
             if cat.status in mediator_chance and not int(random.random() * mediator_chance[cat.status]):
                 game.cur_events_list.append(Single_Event(f"{cat.name} had chosen to use their skills and experience to help "
-                                                  f"solve the clan's disagreements. A meeting is called, and they "
-                                                  f"become the clan's newest mediator. ", "ceremony", cat.ID))
+                                                  f"solve the Clan's disagreements. A meeting is called, and they "
+                                                  f"become the Clan's newest mediator. ", "ceremony", cat.ID))
                 cat.status_change("mediator")
                 game.ranks_changed_timeskip = True
 
