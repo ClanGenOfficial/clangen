@@ -1589,7 +1589,6 @@ class Events():
                 if scar in not_allowed:
                     new_cat.scars.remove(scar)
 
-
             # chance to give the new cat a permanent condition, higher chance for found kits and litters
             if game.clan.game_mode != 'classic':
                 if kit or litter:

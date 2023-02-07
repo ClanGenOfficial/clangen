@@ -130,102 +130,7 @@ class Condition_Events():
 
             if triggered:
                 possible_events = self.generate_events.possible_events(cat.status, cat.age, "injury")
-                final_events = []
-
-                for event in possible_events:
-
-                    if event.injury in INJURIES:
-                        injury = INJURIES[event.injury]
-                        severity = injury['severity']
-                        if cat.status in INJURY_DISTRIBUTION:
-                            severity_chance = INJURY_DISTRIBUTION[cat.status][severity]
-                            if int(random.random() * severity_chance):
-                                continue
-
-                    if season not in event.tags:
-                        continue
-
-                    # check meddie tags
-                    if "medicine_cat" in event.tags and cat.status != "medicine cat":
-                        continue
-                    elif "medicine_cat_app" in event.tags and cat.status != "medicine cat apprentice":
-                        continue
-
-                    # other clan related checks
-                    if "other_clan" in event.tags:
-                        if "war" in event.tags and not war:
-                            continue
-                        if "ally" in event.tags and int(other_clan.relations) < 17:
-                            continue
-                        elif "neutral" in event.tags and (
-                                int(other_clan.relations) <= 7 or int(other_clan.relations) >= 17):
-                            continue
-                        elif "hostile" in event.tags and int(other_clan.relations) > 7:
-                            continue
-
-                    # check other_cat status and other identifiers
-                    if other_cat:
-                        if "other_cat_leader" in event.tags and other_cat.status != "leader":
-                            continue
-                        elif "other_cat_dep" in event.tags and other_cat.status != "deputy":
-                            continue
-                        elif "other_cat_med" in event.tags and other_cat.status != "medicine cat":
-                            continue
-                        elif "other_cat_med_app" in event.tags and other_cat.status != "medicine cat apprentice":
-                            continue
-                        elif "other_cat_warrior" in event.tags and other_cat.status != "warrior":
-                            continue
-                        elif "other_cat_app" in event.tags and other_cat.status != "apprentice":
-                            continue
-                        elif "other_cat_elder" in event.tags and other_cat.status != "elder":
-                            continue
-                        elif "other_cat_adult" in event.tags and other_cat.age in ["elder", "kitten"]:
-                            continue
-                        elif "other_cat_kit" in event.tags and other_cat.status != "kitten":
-                            continue
-
-                        if "other_cat_mate" in event.tags and other_cat.ID != cat.mate:
-                            continue
-                        elif "other_cat_child" in event.tags and other_cat.ID not in cat.get_children():
-                            continue
-                        elif "other_cat_parent" in event.tags and other_cat.ID not in cat.get_parents():
-                            continue
-
-                        if "other_cat_own_app" in event.tags and other_cat.ID not in cat.apprentice:
-                            continue
-                        elif "other_cat_mentor" in event.tags and other_cat.ID != cat.mentor:
-                            continue
-
-                        if event.other_cat_trait is not None:
-                            if other_cat.trait not in event.other_cat_trait and int(random.random() * 10):
-                                continue
-
-                        if event.other_cat_skill is not None:
-                            if other_cat.skill not in event.other_cat_skill and int(random.random() * 10):
-                                continue
-
-                    else:
-                        if "other_cat" in event.tags:
-                            continue
-
-                    if "clan_kits" in event.tags and not alive_kits:
-                        continue
-
-                    if event.cat_trait is not None:
-                        if cat.trait not in event.cat_trait and int(random.random() * 10):
-                            continue
-
-                    if event.cat_skill is not None:
-                        if cat.skill not in event.cat_skill and int(random.random() * 10):
-                            continue
-
-                    if event.injury == 'mangled tail' and ('NOTAIL' in cat.scars or 'HALFTAIL' in cat.scars):
-                        continue
-
-                    if event.injury == 'torn ear' and 'NOEAR' in cat.scars:
-                        continue
-
-                    final_events.append(event)
+                final_events = self.generate_events.filter_possible_events(possible_events, cat, other_cat, war, enemy_clan, other_clan, alive_kits)
 
                 other_clan_name = f'{str(other_clan.name)}Clan'
                 enemy_clan = f'{str(enemy_clan)}'
@@ -963,9 +868,6 @@ with open(f"resources/dicts/conditions/illnesses_seasons.json", 'r') as read_fil
 INJURY_DISTRIBUTION = None
 with open(f"resources/dicts/conditions/event_injuries_distribution.json", 'r') as read_file:
     INJURY_DISTRIBUTION = ujson.loads(read_file.read())
-
-not_integrated_illness = ["redcough"]
-not_integrated_injuries = ["carrionplace disease"]
 
 # ---------------------------------------------------------------------------- #
 #                                   STRINGS                                    #

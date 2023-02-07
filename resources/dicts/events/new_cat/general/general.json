@@ -1,0 +1,39 @@
+[
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "event_text": "m_c finds an abandoned kit and names them n_c.",
+        "loner": true,
+        "kit": true,
+        "backstory": ["abandoned2", "abandoned1"],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "event_text": "A loner brings their kit named n_c to the Clan, stating they no longer can care for them.",
+        "loner": true,
+        "kit": true,
+        "backstory": ["abandoned2"],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "event_text": "A loner brings their kit named n_c to the Clan, stating they no longer can care for them.",
+        "loner": true,
+        "kit": true,
+        "backstory": ["abandoned2"],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    }
+
+]

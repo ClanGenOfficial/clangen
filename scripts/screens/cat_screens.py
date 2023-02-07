@@ -117,7 +117,7 @@ def bs_blurb_text(cat):
     if backstory == 'abandoned1':
         bs_blurb = "This cat was found by the Clan as a kit and has been living with them ever since."
     if backstory == 'abandoned2':
-        bs_blurb = "This cat was born into a kittypet life, but was brought to the Clan as a kit and has lived " \
+        bs_blurb = "This cat was born outside of the Clan, but was brought to the Clan as a kit and has lived " \
                    "here ever since."
     if backstory == 'abandoned3':
         bs_blurb = "This cat was born into another Clan, but they were left here as a kit for the Clan to raise."

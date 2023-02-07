@@ -1,0 +1,133 @@
+[
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "no_body"],
+        "death_text": "m_c was taken by a hawk.",
+        "history_text": ["m_c was taken by a hawk.", null],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "death_text": "m_c grew weak as the days passed and now walks the stars of Silverpelt.",
+        "history_text": ["m_c failed to thrive.", null],
+        "cat_trait": ["quiet"],
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "death_text": "m_c fell into a river and drowned.",
+        "history_text": ["m_c fell into a river and drowned.", null],
+        "cat_trait": ["daring", "impulsive"],
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "death_text": "m_c was killed when they snuck out of camp.",
+        "history_text": ["m_c was killed when they snuck out of camp.", null],
+        "cat_trait": ["troublesome", "daring", "impulsive", "attention-seeker"],
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "death_text": "m_c died after getting into the herb stores and accidentally eating deathberries.",
+        "history_text": ["m_c died after accidentally eating deathberries.", null],
+        "cat_trait": ["troublesome", "impulsive", "attention-seeker", "inquisitive"],
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "death_text": "m_c was killed in their sleep by a snake that had snuck into camp.",
+        "history_text": ["m_c was killed by a snake.", null],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+
+    {
+        "camp": "any",
+        "tags": ["classic", "Leaf-fall", "Leaf-bare"],
+        "death_text": "m_c died of greencough.",
+        "history_text": ["m_c died of greencough.", null],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["classic", "Leaf-fall", "Leaf-bare"],
+        "death_text": "m_c died of kittencough.",
+        "history_text": ["m_c died of kittencough.", null],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["classic", "Leaf-fall", "Leaf-bare"],
+        "death_text": "m_c was too weak to fight off whitecough and died.",
+        "history_text": ["m_c died of whitecough.", null],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["classic", "Leaf-fall", "Leaf-bare"],
+        "death_text": "m_c caught a cold and slowly faded.",
+        "history_text": ["m_c was killed by sickness.", null],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["multi_death", "classic", "other_cat_kit", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "death_text": "Greencough reaches the nursery. r_c and m_c die.",
+        "history_text": ["m_c died from greencough.", null],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["multi_death", "classic", "other_cat_kit", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "death_text": "r_c and m_c die from a bout of kittencough.",
+        "history_text": ["m_c died from greencough.", null],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["multi_death", "classic", "other_cat_kit", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "death_text": "r_c and m_c catch whitecough and fade away quickly.",
+        "history_text": ["m_c died from whitecough.", null],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    }
+]
