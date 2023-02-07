@@ -34,13 +34,13 @@
     },
     "rat bite": {
         "an infected wound": [
-            "m_c watches r_c apply their strange paste. r_c tells them that, as the wound is becoming infected, this is going to be a daily routine until their rat bite heals.",
+            "r_c talks as they apply a strange paste to m_c's rat bite, and tells them that, because it's becoming infected, this will be a daily routine.",
             "It seems inevitable that all rat bites are nasty, so m_c isn't really surprised when their rat bite starts to show signs of infection."
 
         ],
         "a festering wound": [
-            "m_c sees the worry in r_c's face while they examine their sour smelling rat bite, and it makes their heart sink.",
-            "m_c tries to stay strong despite the odor beginning to emanate from the area of their rat bite. Hopefully it can still heal despite the festering state of it."
+            "The worried look in r_c's eyes as they examine m_c's acrid rat bite makes m_c's heart sink.",
+            "m_c tries to ignore the smell coming from the site of their festering rat bite."
 
         ]
     },
