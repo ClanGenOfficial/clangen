@@ -1027,7 +1027,7 @@
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
-{
+    {
 	"patrol_id": "fst_hunt_gensquirrel2",
 	"biome": "forest",
 	"season": "greenleaf",
@@ -1187,3 +1187,49 @@
 	"antagonize_fail_text": null
 }
 ]
+    {
+        "patrol_id": "fst_hunt_bird1",
+        "biome": "forest",
+        "season": "greenleaf",
+        "tags": [
+            "hunting",
+            "minor_injury",
+            "injury",
+            "sprain",
+            "small_prey",
+            "no_fail_prey"
+        ],
+        "intro_text": "As p_l walks through the bright foliage of greenleaf, some loud twittering from above catches their ear. A bird! Maybe if they're careful, they can catch it by surprise...",
+        "decline_text": "p_l shakes their head and decides to leave the bird alone. It would be too much work to try and catch it from that high up, anyway.",
+        "chance_of_success": 45,
+        "exp": 25,
+        "success_text": ["p_l manages to climb up the tree without the bird noticing, and within seconds, has a juicy meal dangling from their jaws.",
+        "p_l climbs the tree and manages to catch the bird just before it flies away. They drop down to the ground with pride warming their heart."],
+        "fail_text": [null,
+        null,
+        null,
+        "p_l has wildly overestimated their climbing ability. The bird flies away before they can make a move, and, trying not to think of how far down the ground is, p_l jumps down...but doesn't quite land on their feet."],
+        "win_skills": [
+            "great hunter",
+            "fantastic hunter",
+            "smart tactician",
+            "valuable tactician"
+            ],
+        "win_trait": [
+            "adventurous",
+            "careful",
+            "patient",
+            "sneaky",
+            "confident",
+            "daring",
+            "bold"
+            ],
+        "fail_skills": ["None"],
+        "fail_trait": [
+            "nervous"
+            ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    }
