@@ -797,11 +797,15 @@ class Events():
             if Cat.fetch_cat(cat.former_mentor[x]).dead:
                 dead_mentor = Cat.fetch_cat(cat.former_mentor[x])
                 break
+        if promoted_to in ["warrior", "medicine cat", "mediator", "elder"]:
+            grown = True
+        else:
+            grown = False
         if dead_mentor:
             mentor_txt = "dead_mentor"
-        elif not dead_mentor and cat.mentor == None and not promoted_to == 'warrior':
+        elif not dead_mentor and cat.mentor == None and not grown:
             mentor_txt = "no_mentor"
-        elif not dead_mentor and cat.mentor and promoted_to == 'warrior':
+        elif not dead_mentor and cat.mentor and grown:
             mentor_txt = "living_mentor"
             involved_cats.append(cat.mentor)
         if leader_outside or leader_exiled or leader_dead:
@@ -847,66 +851,6 @@ class Events():
                             dead_mentor = Cat.fetch_cat(cat.former_mentor[x])
                             break'''
                      
-
-        elif (promoted_to == 'medicine cat apprentice') and cat.mentor is not None:
-            mentor_name = str(Cat.fetch_cat(cat.mentor).name)
-            involved_cats.append(cat.mentor)
-            ceremony.extend([
-                str(cat.name) +
-                " has decided that hunting and fighting is not the way they can provide for their Clan. "
-                "Instead, they have decided to serve their Clan by healing and communing with StarClan. "
-                + mentor_name + " proudly becomes their mentor.",
-
-                "Interested in herbs even in their kithood, " + str(cat.name) + " is eager to be apprenticed to "
-                + mentor_name + ".",
-                "Interested in all the myths and stories told by the elders and queens, " +
-                str(cat.name) + " decides to become a medicine cat apprentice, hoping to someday speak to "
-                                "those gone before. " + mentor_name + " loves their determination and eagerness "
-                                "to learn and agrees to take them on as their apprentice.",
-                                "The thought alone of fighting and hurting another cat makes " + str(cat.name) +
-                                " shiver. They decide to heal instead of fight and " + mentor_name +
-                                " takes them under their wing."
-            ])
-        elif (promoted_to == 'medicine cat apprentice') and cat.mentor is None:
-            ceremony.extend(["Newly-made medicine cat apprentice " + str(cat.name) +
-                             " learns the way of healing through guidance from StarClan."])
-        elif promoted_to == 'mediator apprentice':
-            mentor_name = str(Cat.fetch_cat(cat.mentor).name)
-            involved_cats.append(cat.mentor)
-            ceremony.extend(
-                [f"{cat.name} feel sick at the mere thought of fighting. They decide to train as a mediator, and"
-                 f" {mentor_name} is named as their mentor. ",
-                 f"{cat.name} is fascinated by {mentor_name}'s ability to solve disputes without tooth or claw. They "
-                 f" are eager to learn, and {mentor_name} take them under their wing."])
-        elif promoted_to == 'medicine cat':
-            ceremony.extend(
-                [str(cat.name) + " is taken to speak with StarClan. They are now a full medicine cat of the Clan.",
-                 "The senior medicine cat has thought long and hard about this and gives " + str(cat.name.prefix) +
-                 "paw their full name of " + str(cat.name) + ". StarClan gives their blessing and the stars "
-                 "twinkle in celebration.",
-                 f"With the stars softly shining and lighting their pelts, the senior medicine cat gives "
-                 f"{cat.name.prefix}paw their full name of {cat.name}. They both share the rest of the night "
-                 "with StarClan, celebrating their good fortune in having another medicine cat."])
-        elif promoted_to == 'mediator':
-            ceremony.extend(
-                [f"{cat.name.prefix}paw have proven themselves skilled at handling the clan's disputes. "
-                 f"They are given the name {cat.name}, and the clan honors their new mediator.",
-                 f"{cat.name} is welcomed as fully trained mediator of the Clan"])
-
-        elif promoted_to == 'elder' and not leader_dead:
-            involved_cats.append(game.clan.leader.ID)
-            ceremony.extend([
-                str(game.clan.leader.name) +
-                " proudly calls a Clan meeting to honor " + str(cat.name) +
-                "'s service to the Clan. It is time they retire peacefully to the elder's den.",
-                str(cat.name) + " wished to join the elders. " + str(game.clan.leader.name) +
-                " calls a meeting, and the Clan honors and all the service " + str(cat.name) + " have given to them."
-            ])
-        elif promoted_to == 'elder' and leader_dead:
-            ceremony.extend([
-                str(cat.name) + " wished to join the elders. "
-                "The Clan honors them and all the service they have given to them."
-            ])
         # getting the mentor's name
         if dead_mentor:
             mentor_name = str(dead_mentor.name)
