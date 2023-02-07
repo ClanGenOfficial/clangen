@@ -583,7 +583,7 @@ class Cat():
 
             if text:
                 # adjust and append text to grief string list
-                print(text)
+                # print(text)
                 text = ' '.join(text)
                 text = event_text_adjust(Cat, text, self, cat)
                 Cat.grief_strings[cat.ID] = (text, (self.ID, cat.ID))
