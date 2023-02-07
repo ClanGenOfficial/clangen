@@ -13,7 +13,7 @@ from scripts.game_structure.game_essentials import game
 resource_directory = "resources/dicts/events/"
 
 # ---------------------------------------------------------------------------- #
-#                     Tagging Guidelines can be found below                    #
+#                Tagging Guidelines can be found at the bottom                 #
 # ---------------------------------------------------------------------------- #
 
 class GenerateEvents:
@@ -278,6 +278,37 @@ class GenerateEvents:
 
             final_events.append(event)
         return final_events
+    
+    @staticmethod
+    def get_death_reaction_dicts(family_relation, rel_value):
+        try:
+            file_path = f"{resource_directory}/death/death_reactions/{family_relation}/{family_relation}_{rel_value}.json"
+            with open(
+                file_path,
+                "r",
+            ) as read_file:
+                events = ujson.loads(read_file.read())
+        except:
+            print(f"ERROR: Unable to load death reaction events for {family_relation}_{rel_value}.")
+        return events
+
+    def get_possible_death_reactions(self, family_relation, rel_value, trait, body_status):
+        possible_events = []
+        # grab general events first, since they'll always exist
+        events = self.get_death_reaction_dicts("general", rel_value)
+        possible_events.extend(events["general"][body_status])
+        possible_events.extend(events[trait][body_status])
+
+        # grab family events if they're needed
+        if family_relation != 'general':
+            events = self.get_death_reaction_dicts(family_relation, rel_value)
+            possible_events.extend(events["general"][body_status])
+            possible_events.extend(events[trait][body_status])
+
+        # print(possible_events)
+
+        return possible_events
+
 
 class SingleEvent:
     def __init__(

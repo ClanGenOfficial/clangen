@@ -148,46 +148,46 @@
     "antagonize_fail_text": null
 },
 {
-"patrol_id": "fst_med_gatheringcobwebs1",
-"biome": "forest",
-"season": "Any",
-"tags": ["med_only", "med_cat", "herb", "cobwebs", "many_herbs1"],
-"intro_text": "p_l heads out into the territory to stock up on cobwebs, something the Clan never seems to have enough of.",
-"decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
-"chance_of_success": 80,
-"exp": 20,
-"success_text": [
-    "p_l finds lots of cobwebs and gathers them with sticks. No cat will have the chance to bleed out now!",
-    "p_l goes to their favorite cobweb gathering places. Several cats in the camp startle when they pass by them as they are unable to see p_l underneath the many cobwebs they have gathered."
-],
-"fail_text": [
-    "Tired from caring for their patients around the clock, the only cobwebs p_l manages to gather are from the cobweb they ran into by accident."
-],
-"min_cats": 1,
-"max_cats": 1,
-"antagonize_text": null,
-"antagonize_fail_text": null
+    "patrol_id": "fst_med_gatheringcobwebs1",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["med_only", "med_cat", "herb", "cobwebs", "many_herbs1"],
+    "intro_text": "p_l heads out into the territory to stock up on cobwebs, something the Clan never seems to have enough of.",
+    "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
+    "chance_of_success": 80,
+    "exp": 20,
+    "success_text": [
+        "p_l finds lots of cobwebs and gathers them with sticks. No cat will have the chance to bleed out now!",
+        "p_l goes to their favorite cobweb gathering places. Several cats in the camp startle when they pass by them as they are unable to see p_l underneath the many cobwebs they have gathered."
+    ],
+    "fail_text": [
+        "Tired from caring for their patients around the clock, the only cobwebs p_l manages to gather are from the cobweb they ran into by accident."
+    ],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 },
 {
-"patrol_id": "fst_med_gatheringcobwebs2",
-"biome": "forest",
-"season": "Any",
-"tags": ["med_only", "med_cat", "respect", "trust", "apprentice", "herb", "cobwebs", "many_herbs1"],
-"intro_text": "p_l heads out into the territory with app1 to stock up on cobwebs and teach the apprentice how to gather one of the Clan's most vital medical tools.",
-"decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
-"chance_of_success": 80,
-"exp": 20,
-"success_text": [
-    "p_l finds lots of cobwebs and gathers them with sticks. The apprentice works hard with their mentor to gather as many as possible, their eyes glittering with joy and pride.",
-    "p_l  goes to their favorite cobweb gathering places. Several cats in the camp startle when they pass by them as they are unable to see p_l and app1 underneath the many cobwebs they have gathered."
-],
-"fail_text": [
-    "app1 doesn't seem to be able to focus today, and p_l isn't much better off, tired from teaching their apprentice and caring for their patients. After app1 accidentally ruins a cobweb while playing with it, p_l decides to call the whole thing off and try again another day."
-],
-"min_cats": 2,
-"max_cats": 2,
-"antagonize_text": null,
-"antagonize_fail_text": null
+    "patrol_id": "fst_med_gatheringcobwebs2",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["med_only", "med_cat", "respect", "trust", "apprentice", "herb", "cobwebs", "many_herbs1"],
+    "intro_text": "p_l heads out into the territory with app1 to stock up on cobwebs and teach the apprentice how to gather one of the Clan's most vital medical tools.",
+    "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
+    "chance_of_success": 80,
+    "exp": 20,
+    "success_text": [
+        "p_l finds lots of cobwebs and gathers them with sticks. The apprentice works hard with their mentor to gather as many as possible, their eyes glittering with joy and pride.",
+        "p_l  goes to their favorite cobweb gathering places. Several cats in the camp startle when they pass by them as they are unable to see p_l and app1 underneath the many cobwebs they have gathered."
+    ],
+    "fail_text": [
+        "app1 doesn't seem to be able to focus today, and p_l isn't much better off, tired from teaching their apprentice and caring for their patients. After app1 accidentally ruins a cobweb while playing with it, p_l decides to call the whole thing off and try again another day."
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 },
 {
     "patrol_id": "fst_med_gatheringcobwebs3",
@@ -336,8 +336,8 @@
     "win_trait": ["None"],
     "antagonize_text": null,
     "antagonize_fail_text": null
-    },
-    {
+},
+{
     "patrol_id": "gen_med_gatheringmoss3",
     "biome": "forest",
     "season": "Any",
@@ -358,8 +358,8 @@
     "win_trait": ["None"],
     "antagonize_text": null,
     "antagonize_fail_text": null
-    },
-    {
+},
+{
     "patrol_id": "gen_med_gatheringmoss4",
     "biome": "forest",
     "season": "Any",

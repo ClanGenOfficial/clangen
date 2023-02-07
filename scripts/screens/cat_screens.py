@@ -30,35 +30,13 @@ def accessory_display_name(cat):
         return ''
     acc_display = accessory.lower()
 
-    if accessory is not None:
-        if accessory in collars:
-            collar_color = None
-            if acc_display.startswith('crimson'):
-                collar_color = 'red'
-            elif acc_display.startswith('blue'):
-                collar_color = 'blue'
-            elif acc_display.startswith('yellow'):
-                collar_color = 'yellow'
-            elif acc_display.startswith('cyan'):
-                collar_color = 'cyan'
-            elif acc_display.startswith('red'):
-                collar_color = 'orange'
-            elif acc_display.startswith('lime'):
-                collar_color = 'lime'
-            elif acc_display.startswith('green'):
-                collar_color = 'green'
-            elif acc_display.startswith('rainbow'):
-                collar_color = 'rainbow'
-            elif acc_display.startswith('black'):
-                collar_color = 'black'
-            elif acc_display.startswith('spikes'):
-                collar_color = 'spiky'
-            elif acc_display.startswith('pink'):
-                collar_color = 'pink'
-            elif acc_display.startswith('purple'):
-                collar_color = 'purple'
-            elif acc_display.startswith('multi'):
-                collar_color = 'multi'
+    if accessory in collars:
+        collar_colors = {'crimson': 'red', 'blue': 'blue', 'yellow': 'yellow', 'cyan': 'cyan', 
+                         'red': 'orange', 'lime': 'lime', 'green': 'green', 'rainbow': 'rainbow', 
+                         'black': 'black', 'spikes': 'spiky', 'pink': 'pink', 'purple': 'purple', 'multi': 'multi'}
+        collar_color = next((color for color in collar_colors if acc_display.startswith(color)), None)
+
+        if collar_color:
             if acc_display.endswith('bow') and not acc_display == 'rainbow':
                 acc_display = collar_color + ' bow'
             elif acc_display.endswith('bell'):
@@ -71,12 +49,7 @@ def accessory_display_name(cat):
             acc_display = 'crow feathers'
         elif acc_display == 'red feathers':
             acc_display = 'cardinal feathers'
-        else:
-            acc_display = acc_display
-    else:
-        acc_display = acc_display
-    if accessory is None:
-        acc_display = None
+
     return acc_display
 
 
@@ -109,11 +82,17 @@ def bs_blurb_text(cat):
         bs_blurb = "This cat joined the Clan by choice after living life with Twolegs as a kittypet."
     if backstory == 'kittypet2':
         bs_blurb = 'This cat used to live on something called a "boat" with Twolegs, but decided to join the Clan.'
+    if backstory == 'kittypet3':
+        bs_blurb = "This cat used be a kittypet. They got lost after wandering away, and when they returned home, " \
+                   "they found their Twolegs were gone. They eventually found their way to the Clan."
     if backstory == 'rogue1':
         bs_blurb = "This cat joined the Clan by choice after living life as a rogue."
     if backstory == 'rogue2':
         bs_blurb = "This cat used to live in a Twolegplace, scrounging for what they could find. They thought " \
                    "the Clan might offer them more security."
+    if backstory == 'rogue3':
+        bs_blurb = "This cat used to live alone in their own territory, but was chased out by something and " \
+                   "eventually found the Clan."
     if backstory == 'abandoned1':
         bs_blurb = "This cat was found by the Clan as a kit and has been living with them ever since."
     if backstory == 'abandoned2':
@@ -121,12 +100,17 @@ def bs_blurb_text(cat):
                    "here ever since."
     if backstory == 'abandoned3':
         bs_blurb = "This cat was born into another Clan, but they were left here as a kit for the Clan to raise."
+    if backstory == 'abandoned4':
+        bs_blurb = "This cat was found and taken in after being abandoned by their twolegs as a kit."
     if backstory == 'medicine_cat':
         bs_blurb = "This cat was once a medicine cat in another Clan."
     if backstory == 'otherclan':
         bs_blurb = "This cat was born into another Clan, but came to this Clan by choice."
     if backstory == 'otherclan2':
         bs_blurb = "This cat was unhappy in their old Clan and decided to come here instead."
+    if backstory == 'otherclan3':
+        bs_blurb = "This cat's Clan stayed with the Clan after a disaster struck their old one, and This cat decided to " \
+                   "stay after the rest of their Clan returned home."
     if backstory == 'ostracized_warrior':
         bs_blurb = "This cat was ostracized from their old Clan, but no one really knows why."
     if backstory == 'disgraced':
@@ -134,18 +118,48 @@ def bs_blurb_text(cat):
                    "talking about."
     if backstory == 'retired_leader':
         bs_blurb = "This cat used to be the leader of another Clan before deciding they needed a change of scenery " \
-                   "after leadership became too much.  They returned their nine lives and let their deputy " \
+                   "after leadership became too much. They returned their nine lives and let their deputy " \
                    "take over before coming here."
     if backstory == 'refugee':
         bs_blurb = "This cat came to this Clan after fleeing from their former Clan and the tyrannical " \
                    "leader that had taken over."
+    if backstory == 'refugee2':
+        bs_blurb = "This cat used to live as a loner, but after another cat chased them from their home, " \
+                   "they took refuge in the Clan."
+    if backstory == 'refugee3':
+        bs_blurb = "This cat used to be a kittypet, but joined the Clan after fleeing from their cruel twoleg."
+    if backstory == 'refugee4':
+        bs_blurb = "This cat used to be in a rogue group, but joined the Clan after fleeing from the group's " \
+                   "tyrannical leader."
     if backstory == 'tragedy_survivor':
         bs_blurb = "Something horrible happened to this cat's previous Clan. They refuse to speak about it."
+    if backstory == 'tragedy_survivor2':
+        bs_blurb = "This cat used to be part of a rogue group, but joined the Clan after something terrible" \
+                   "happened to it."
+    if backstory == 'tragedy_survivor3':
+        bs_blurb = "This cat used to be a kittypet, but joined the Clan after something terrible happened to" \
+                   "their twolegs."
+    if backstory == 'tragedy_survivor4':
+        bs_blurb = "This cat used to be a loner, but joined the Clan after something terrible made them leave." \
+                   "their old home behind."
     if backstory == 'orphaned':
         bs_blurb = "This cat was found with a deceased parent. The Clan took them in, but doesn't hide where " \
                    "they came from."
+    if backstory == 'wandering_healer1':
+        bs_blurb = "This cat used to wander, helping those where they could, and eventually found the Clan."
+    if backstory == 'wandering_healer2':
+        bs_blurb = "This cat used to live in a specific spot, offering help to all who wandered by, but " \
+                   "eventually found their way to the Clan."
+    if backstory == 'guided1':
+        bs_blurb = "This cat used to be a kittypet, but after dreaming of starry-furred cats, they followed their " \
+                   "whispers to the Clan."
+    if backstory == 'guided2':
+        bs_blurb = "This cat used to live a rough life as a rogue. While wandering, " \
+                   "they found a set of starry pawprints, and followed them to the Clan."
+    if backstory == 'guided3':
+        bs_blurb = "This cat used to live as a loner. A starry-furred cat appeared to them one day, " \
+                   "and then led them to the Clan."
     return bs_blurb
-
 
 # ---------------------------------------------------------------------------- #
 #             change how backstory info displays on cat profiles               #
@@ -163,17 +177,22 @@ def backstory_text(cat):
         bs_display = 'half-Clan'
     elif bs_display in ['outsider_roots1', 'outsider_roots2']:
         bs_display = 'outsider roots'
-    elif bs_display in ['loner1', 'loner2']:
+    elif bs_display in ['loner1', 'loner2', 'refugee2'
+                        'tragedy_survivor4', 'guided3',
+                        'wandering_healer2']:
         bs_display = 'formerly a loner'
-    elif bs_display in ['kittypet1', 'kittypet2']:
+    elif bs_display in ['kittypet1', 'kittypet2', 'kittypet3', 'refugee3',
+                        'tragedy_survivor3', 'guided1']:
         bs_display = 'formerly a kittypet'
-    elif bs_display in ['rogue1', 'rogue2']:
+    elif bs_display in ['rogue1', 'rogue2', 'refugee4',
+                        'tragedy_survivor2', 'guided2',
+                        'wandering_healer1']:
         bs_display = 'formerly a rogue'
-    elif bs_display in ['abandoned1', 'abandoned2', 'abandoned3']:
+    elif bs_display in ['abandoned1', 'abandoned2', 'abandoned3', 'abandoned4']:
         bs_display = 'formerly abandoned'
     elif bs_display == 'medicine_cat':
         bs_display = 'formerly a medicine cat'
-    elif bs_display in ['otherclan', 'otherclan2']:
+    elif bs_display in ['otherclan', 'otherclan2', 'otherclan3']:
         bs_display = 'formerly from another Clan'
     elif bs_display == 'ostracized_warrior':
         bs_display = 'ostracized warrior'
@@ -2863,4 +2882,3 @@ class RoleScreen(Screens):
         for ele in self.selected_cat_elements:
             self.selected_cat_elements[ele].kill()
         self.selected_cat_elements = {}
-

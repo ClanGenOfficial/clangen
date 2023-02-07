@@ -61,7 +61,7 @@ class Events():
             self.get_moon_freshkill()
             self.freshkill_events.handle_amount_freshkill_pile(game.clan.freshkill_pile, relevant_cats)
             if not game.clan.freshkill_pile.clan_has_enough_food():
-                game.cur_events_list.insert(0, Single_Event(f"{game.clan.name}Clan has not enough food for the next moon!"))    
+                game.cur_events_list.insert(0, Single_Event(f"{game.clan.name}Clan doesn't have enough prey for next moon!"))    
             needed_amount = game.clan.freshkill_pile.amount_food_needed()
             print(f"current freshkill amount: {game.clan.freshkill_pile.total_amount}, needed {needed_amount}")
 
@@ -1277,7 +1277,7 @@ class Events():
 
         base_chance = 200
         if clan_size < 10:
-            base_chance = 100
+            base_chance = 200
         elif clan_size > 50:
             base_chance = 700
         elif clan_size > 30:
@@ -2100,7 +2100,7 @@ class Events():
                             text = f"{Cat.all_cats[random_cat].name} has been chosen as the new deputy. " \
                                    f"The Clan hopes that {game.clan.deputy.name} would approve."
                             involved_cats.append(game.clan.deputy.ID)
-                    elif game.clan.leader.dead or game.clan.leader.exiled:
+                    elif not game.clan.leader or game.clan.leader.dead or game.clan.leader.exiled:
                         if game.clan.leader:
                             text = f"Since losing {game.clan.leader.name} the Clan has been directionless. " \
                                    f"They all turn to {Cat.all_cats[random_cat].name} with hope for the future."

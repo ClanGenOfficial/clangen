@@ -5,6 +5,7 @@ import math
 import os.path
 import itertools
 
+from ..events_module.generate_events import GenerateEvents
 try:
     import ujson
 except ImportError:
@@ -171,6 +172,8 @@ class Cat():
             self.set_faded()  # Sets the faded sprite and faded tag (self.faded = True)
 
             return
+
+        self.generate_events = GenerateEvents()
 
         # Private attributes
         self._mentor = None  # plz
@@ -488,15 +491,6 @@ class Cat():
         else:
             body_status = 'no_body'
 
-        romantic_strings = GRIEF_GENERAL_POSITIVE["romantic"][body_status]
-        platonic_strings = GRIEF_GENERAL_POSITIVE["platonic"][body_status]
-        admiration_strings = GRIEF_GENERAL_POSITIVE["admiration"][body_status]
-        comfort_strings = GRIEF_GENERAL_POSITIVE["comfort"][body_status]
-        trust_strings = GRIEF_GENERAL_POSITIVE["trust"][body_status]
-
-        dislike_strings = GRIEF_GENERAL_NEGATIVE["dislike"][body_status]
-        jealousy_strings = GRIEF_GENERAL_NEGATIVE["jealousy"][body_status]
-
         # major, cat won't patrol
         grief_major = [
             'loving', 'compassionate', 'empathetic', 'insecure', 'lonesome', 'nervous'
@@ -514,78 +508,41 @@ class Cat():
                 continue
             relationships = cat.relationships.values()
 
-            romantic_relation = list(filter(lambda rel: rel.romantic_love > 55, relationships))
-            platonic_relation = list(filter(lambda rel: rel.platonic_like > 50, relationships))
-            admiration_relation = list(filter(lambda rel: rel.admiration > 70, relationships))
-            comfort_relation = list(filter(lambda rel: rel.comfortable > 60, relationships))
-            trust_relation = list(filter(lambda rel: rel.trust > 70, relationships))
+            pos_rel_values = {
+                "romantic": list(filter(lambda rel: rel.romantic_love > 55, relationships)),
+                "platonic": list(filter(lambda rel: rel.platonic_like > 50, relationships)),
+                "admiration": list(filter(lambda rel: rel.admiration > 70, relationships)),
+                "comfort": list(filter(lambda rel: rel.comfortable > 60, relationships)),
+                "trust": list(filter(lambda rel: rel.trust > 70, relationships))
+            }
 
-            dislike_relation = list(filter(lambda rel: rel.dislike > 50, relationships))
-            jealousy_relation = list(filter(lambda rel: rel.jealousy > 50, relationships))
+            neg_rel_values = {
+                "dislike": list(filter(lambda rel: rel.dislike > 50, relationships)),
+                "jealousy": list(filter(lambda rel: rel.jealousy > 50, relationships))
+            }
 
             possible_strings = []
-
-            for y in range(len(romantic_relation)):
-                cat_to = romantic_relation[y].cat_to
-                if cat_to == self:
-                    possible_strings.extend(romantic_strings)
-                    family_strings = self.familial_grief(living_cat=cat, body=body_status)
-
-                    if family_strings is not None:
-                        possible_strings.extend(family_strings)
-
-            for y in range(len(platonic_relation)):
-                cat_to = platonic_relation[y].cat_to
-                if cat_to == self:
-                    possible_strings.extend(platonic_strings)
-
-                    family_strings = self.familial_grief(living_cat=cat, body=body_status)
-
-                    if family_strings is not None:
-                        possible_strings.extend(family_strings)
-
-            for y in range(len(admiration_relation)):
-                cat_to = admiration_relation[y].cat_to
-                if cat_to == self:
-                    possible_strings.extend(admiration_strings)
-
-                    family_strings = self.familial_grief(living_cat=cat, body=body_status)
-
-                    if family_strings is not None:
-                        possible_strings.extend(family_strings)
-
-            for y in range(len(comfort_relation)):
-                cat_to = comfort_relation[y].cat_to
-                if cat_to == self:
-                    possible_strings.extend(comfort_strings)
-
-                    family_strings = self.familial_grief(living_cat=cat, body=body_status)
-
-                    if family_strings is not None:
-                        possible_strings.extend(family_strings)
-
-            for y in range(len(trust_relation)):
-                cat_to = trust_relation[y].cat_to
-                if cat_to == self:
-                    possible_strings.extend(trust_strings)
-
-                    family_strings = self.familial_grief(living_cat=cat, body=body_status)
-
-                    if family_strings is not None:
-                        possible_strings.extend(family_strings)
+            for value in pos_rel_values:
+                value_list = pos_rel_values[value]
+                for y in range(len(value_list)):
+                    cat_to = value_list[y].cat_to
+                    if cat_to == self:
+                        family_relation = self.familial_grief(living_cat=cat)
+                        possible_strings.extend(
+                            self.generate_events.get_possible_death_reactions(family_relation, value, cat.trait, body_status))
 
             if possible_strings:
                 # choose string
                 text = [choice(possible_strings)]
 
                 # check if the cat will get Major or Minor severity for grief
-                chance = [1, 1]
+                weights = [1, 1]
                 if cat.trait in grief_major:
-                    chance = [3, 1]
+                    weights = [3, 1]
                 if cat.trait in grief_minor:
-                    chance = [1, 3]
+                    weights = [1, 3]
                 if "rosemary" in game.clan.herbs:  # decrease major grief chance if grave herbs are used
-                    chance = [1, 6]
+                    weights = [1, 6]
                     amount_used = random.choice([1, 2])
                     game.clan.herbs["rosemary"] -= amount_used
                     if game.clan.herbs["rosemary"] <= 0:
@@ -593,105 +550,59 @@ class Cat():
                     if f"Rosemary was used for {self.name}'s body." not in game.herb_events_list:
                         game.herb_events_list.append(f"Rosemary was used for {self.name}'s body.")
 
-                severity = random.choices(['major', 'minor'], weights=chance, k=1)
+                severity = random.choices(['major', 'minor'], weights=weights, k=1)
                 # give the cat the relevant severity text
                 severity = severity[0]
                 if severity == 'major':
-                    text.append(choice([
-                        "r_c can't be bothered to get up out of their nest the next day and refuses to speak a word "
-                        "to those around them. ",
-                        "As the vigil draws to a close, someone suggests that r_c should eat. They refuse, not moving "
-                        "their eyes from where they vacantly gaze.",
-                        "When no one needs anything from them r_c breaks down, wailing uncontrollably and cursing the "
-                        "world that took m_c and not them.",
-                        "In the days to come, r_c barely stirs from their nest.",
-                        "As the days pass from the vigil, r_c becomes angry and withdrawn. It feels like the entire "
-                        "Clan is just moving on from m_c's death, and they categorically refuse to do so.",
-                        "Cats come to r_c afterwards, offering them the choicest cuts of prey, the juiciest still "
-                        "beating heart of a mouse, but they're uninterested, staring at the wall of their nest and "
-                        "refusing to talk.",
-                        "Things are never going to be the same now. Could never be the same. r_c doesn't know how "
-                        "they're supposed to rise the next morning and go on with life. They refuse to.",
-                        "r_c spends time by themselves, letting themselves mourn m_c and the time they should have "
-                        "had together. No one can begrudge them the need to grieve.",
-                        "Cats offer r_c comfort and care. They refuse all of it."
-                    ]))
+                    text.append(choice(
+                        MINOR_MAJOR_REACTION["major"]
+                    ))
                 elif severity == 'minor':
-                    text.append(choice([
-                        "r_c is eager to get up and busy themselves the next day, refusing to sit still for even a "
-                        "moment lest their thoughts begin to linger on m_c's death. ",
-                        "As the vigil draws to a close, someone suggests that r_c should eat. It feels like dung in "
-                        "their mouth, but they know m_c would want them to take care of themselves. ",
-                        "r_c keeps searching for tasks to do, for cats to comfort, for distractions against the hole "
-                        "in their heart, as they fight to keep the grief from consuming them.",
-                        "The world seems dim and lifeless, and r_c keeps close to their Clan, seeking out their "
-                        "comfort and company.",
-                        "r_c goes over the best of the moments they shared with m_c in their mind, again and again, "
-                        "like wearing a rut into the ground, until they're sure that they will remember m_c forever.",
-                        "One day, the Clan will have kittens who never knew m_c in life, but r_c vows to ensure m_c's "
-                        "memory will live on through them.",
-                        "Some of the memories shared at m_c's vigil make r_c laugh. Some cry. Most of them do both, "
-                        "as r_c marvels at what a special cat m_c was.",
-                        "r_c wonders if, maybe, if they're lucky, m_c might visit them in a vision from StarClan."
-                    ]))
+                    text.append(choice(
+                        MINOR_MAJOR_REACTION["minor"]
+                    ))
 
                 # grief the cat
                 cat.get_ill("grief stricken", event_triggered=True, severity=severity)
 
             # negative reactions, no grief
             else:
-                for y in range(len(dislike_relation)):
-                    cat_to = dislike_relation[y].cat_to
-                    if cat_to == self:
-                        possible_strings.extend(dislike_strings)
-                        family_strings = self.familial_grief(living_cat=cat, body=body_status, neg=True)
+                for value in neg_rel_values:
+                    value_list = neg_rel_values[value]
+                    for y in range(len(value_list)):
+                        cat_to = value_list[y].cat_to
+                        if cat_to == self:
+                            family_relation = self.familial_grief(living_cat=cat)
+                            possible_strings.extend(
+                                self.generate_events.get_possible_death_reactions(family_relation, value, cat.trait, body_status))
 
-                        if family_strings is not None:
-                            possible_strings.extend(family_strings)
-                for y in range(len(jealousy_relation)):
-                    cat_to = jealousy_relation[y].cat_to
-                    if cat_to == self:
-                        possible_strings.extend(jealousy_strings)
-                        family_strings = self.familial_grief(living_cat=cat, body=body_status, neg=True)
-
-                        if family_strings is not None:
-                            possible_strings.extend(family_strings)
                 if possible_strings:
                     # choose string
                     text = [choice(possible_strings)]
 
             if text:
                 # adjust and append text to grief string list
+                # print(text)
                 text = ' '.join(text)
                 text = event_text_adjust(Cat, text, self, cat)
                 Cat.grief_strings[cat.ID] = (text, (self.ID, cat.ID))
                 possible_strings.clear()
                 text = None
 
-    def familial_grief(self, living_cat: Cat, body: str, neg: bool = False):
+    def familial_grief(self, living_cat: Cat):
         """
         returns relevant grief strings for family members, if no relevant strings then returns None
         """
         dead_cat = self
 
-        if neg is False:
-            if dead_cat.is_parent(living_cat):
-                return GRIEF_FAMILY_POSITIVE["child_reaction"][body]
-            elif living_cat.is_parent(dead_cat):
-                return GRIEF_FAMILY_POSITIVE["parent_reaction"][body]
-            elif dead_cat.is_sibling(living_cat):
-                return GRIEF_FAMILY_POSITIVE["sibling_reaction"][body]
-            else:
-                return None
+        if dead_cat.is_parent(living_cat):
+            return "child"
+        elif living_cat.is_parent(dead_cat):
+            return "parent"
+        elif dead_cat.is_sibling(living_cat):
+            return "sibling"
         else:
-            if dead_cat.is_parent(living_cat):
-                return GRIEF_FAMILY_NEGATIVE["child_reaction"][body]
-            elif living_cat.is_parent(dead_cat):
-                return GRIEF_FAMILY_NEGATIVE["parent_reaction"][body]
-            elif dead_cat.is_sibling(living_cat):
-                return GRIEF_FAMILY_NEGATIVE["sibling_reaction"][body]
-            else:
-                return None
+            return "general"
 
     def gone(self):
         """ Makes a clan cat an "outside" cat. Handles removing them from special positions, and removing
@@ -1133,12 +1044,37 @@ class Cat():
                 self.skill = choice(self.skills)
                 self.mentor_influence.append('None')
 
+            elif self.status == 'mediator':
+                possible_groups = ['star', 'smart', 'teach', 'speak', 'mediate']
+                if self.former_mentor:
+                    chance = randint(0, 12)
+                    mentor = Cat.fetch_cat(self.former_mentor[-1])
+                    if not mentor:
+                        print("WARNING: mentor not found")
+                        return
+                # give skill from mentor
+                    if chance >= 9:
+                        for x in possible_groups:
+                            if mentor.skill in self.skill_groups[x]:
+                                possible_skill = self.skill_groups.get(x)
+                                self.skill = choice(possible_skill)
+                                self.mentor_influence.append(self.skill)
+                                return
+
+                    all_skills = []
+                    for x in possible_groups:
+                        all_skills = all_skills + self.skill_groups[x]
+                    self.skill = choice(all_skills)
+                    self.mentor_influence.append('None')
+
+
             # assign new skill to elder
             elif self.status == 'elder':
                 self.skill = choice(self.elder_skills)
 
             # if a cat somehow has no skill, assign one after checking that they aren't a kit or adolescent
-            elif self.skill == '???' and self.status not in ['apprentice', 'medicine cat apprentice', 'kitten']:
+            elif self.skill == '???' and self.status not in ['apprentice', 'medicine cat apprentice',
+                                                             'mediator apprentice', 'kitten']:
                 self.skill = choice(self.skills)
 
     def moon_skip_illness(self, illness):
@@ -1886,9 +1822,11 @@ class Cat():
                                for_patrol: bool = False):
         """Checks if this cat is a free and potential mate for the other cat."""
         # checks if affairs are turned on
+
         affair = False
         if game.settings['affair']:
             affair = True
+
         # just to be sure, check if it is not the same cat
         if self.ID == other_cat.ID:
             return False
@@ -1896,6 +1834,8 @@ class Cat():
         # check exiled, outside, and dead cats
         if self.dead or self.outside or other_cat.dead or other_cat.outside:
             return False
+
+
 
         # check for age
         if (self.moons < 14 or other_cat.moons < 14) and not for_love_interest:
@@ -2365,7 +2305,7 @@ class Cat():
                                                            personality_bonus)
                     output += f"Comfort increased. "
 
-            elif trait == "admiration":
+            elif trait == "trust":
                 ran = (4, 6)
 
                 if sabotage:
@@ -2375,10 +2315,10 @@ class Cat():
                                                      personality_bonus)
                     output += f"Trust decreased. "
                 else:
-                    rel1.admiration = Cat.effect_relation(rel1.trust, (randint(ran[0], ran[1]) + bonus) +
-                                                          personality_bonus)
-                    rel2.admiration = Cat.effect_relation(rel2.trust, (randint(ran[0], ran[1]) + bonus) +
-                                                          personality_bonus)
+                    rel1.trust = Cat.effect_relation(rel1.trust, (randint(ran[0], ran[1]) + bonus) +
+                                                     personality_bonus)
+                    rel2.trust = Cat.effect_relation(rel2.trust, (randint(ran[0], ran[1]) + bonus) +
+                                                     personality_bonus)
                     output += f"Trust increased. "
 
             elif trait == "dislike":
@@ -2637,18 +2577,7 @@ with open(f"{resource_directory}event_injuries_distribution.json", 'r') as read_
 
 resource_directory = "resources/dicts/events/death/death_reactions/"
 
-GRIEF_GENERAL_POSITIVE = None
-with open(f"{resource_directory}general_positive.json", 'r') as read_file:
-    GRIEF_GENERAL_POSITIVE = ujson.loads(read_file.read())
+MINOR_MAJOR_REACTION = None
+with open(f"{resource_directory}minor_major.json", 'r') as read_file:
+    MINOR_MAJOR_REACTION = ujson.loads(read_file.read())
 
-GRIEF_GENERAL_NEGATIVE = None
-with open(f"{resource_directory}general_negative.json", 'r') as read_file:
-    GRIEF_GENERAL_NEGATIVE = ujson.loads(read_file.read())
-
-GRIEF_FAMILY_POSITIVE = None
-with open(f"{resource_directory}family_positive.json", 'r') as read_file:
-    GRIEF_FAMILY_POSITIVE = ujson.loads(read_file.read())
-
-GRIEF_FAMILY_NEGATIVE = None
-with open(f"{resource_directory}family_negative.json", 'r') as read_file:
-    GRIEF_FAMILY_NEGATIVE = ujson.loads(read_file.read())
