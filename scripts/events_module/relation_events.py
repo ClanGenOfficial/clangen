@@ -239,7 +239,10 @@ class Relation_Events():
                 print("Kit cancel chance", chance)
                 if not int(random.random() * chance):
                     # Cancel having kits.
-                    print(f"Having kits canceled for {cat.name} and {second_parent.name}")
+                    if second_parent:
+                        print(f"Having kits canceled for {cat.name} and {second_parent.name}")
+                    else:
+                        print(f"Having kits canceled for {cat.name} and unknown parent")
                     return
 
             # If you've reached here - congrats, kits!
