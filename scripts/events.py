@@ -61,7 +61,7 @@ class Events():
             self.get_moon_freshkill()
             self.freshkill_events.handle_amount_freshkill_pile(game.clan.freshkill_pile, relevant_cats)
             if not game.clan.freshkill_pile.clan_has_enough_food():
-                game.cur_events_list.insert(0, Single_Event(f"{game.clan.name}Clan has not enough food for the next moon!"))    
+                game.cur_events_list.insert(0, Single_Event(f"{game.clan.name}Clan doesn't have enough prey for next moon!"))    
             needed_amount = game.clan.freshkill_pile.amount_food_needed()
             print(f"current freshkill amount: {game.clan.freshkill_pile.total_amount}, needed {needed_amount}")
 
@@ -226,8 +226,8 @@ class Events():
             }
             if cat.status in mediator_chance and not int(random.random() * mediator_chance[cat.status]):
                 game.cur_events_list.append(Single_Event(f"{cat.name} had chosen to use their skills and experience to help "
-                                                  f"solve the clan's disagreements. A meeting is called, and they "
-                                                  f"become the clan's newest mediator. ", "ceremony", cat.ID))
+                                                  f"solve the Clan's disagreements. A meeting is called, and they "
+                                                  f"become the Clan's newest mediator. ", "ceremony", cat.ID))
                 cat.status_change("mediator")
                 game.ranks_changed_timeskip = True
 

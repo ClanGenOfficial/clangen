@@ -138,7 +138,7 @@ class GenerateEvents:
             possible_events.extend(events["general"][body_status])
             possible_events.extend(events[trait][body_status])
 
-        print(possible_events)
+        # print(possible_events)
 
         return possible_events
 
