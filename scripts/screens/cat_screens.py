@@ -197,7 +197,7 @@ def backstory_text(cat):
         bs_display = 'formerly abandoned'
     elif bs_display == 'medicine_cat':
         bs_display = 'formerly a medicine cat'
-    elif bs_display in ['otherclan', 'otherclan2', 'otherclan3']:
+    elif bs_display in ['otherclan', 'otherclan2', 'otherclan3', "guided4"]:
         bs_display = 'formerly from another Clan'
     elif bs_display == 'ostracized_warrior':
         bs_display = 'ostracized warrior'
@@ -212,7 +212,7 @@ def backstory_text(cat):
         bs_display = 'refugee'
     elif bs_display == 'tragedy_survivor':
         bs_display = 'survivor of a tragedy'
-    elif bs_display == 'orphaned':
+    elif bs_display in ['orphaned', "orphaned2"]:
         bs_display = 'orphaned'
     if bs_display is None:
         bs_display = None

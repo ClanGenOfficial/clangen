@@ -46,7 +46,7 @@ class NewCatEvents:
                                                                    other_clan, alive_kits)
 
         # ---------------------------------------------------------------------------- #
-        #                                  kill cats                                   #
+        #                                cat creation                                  #
         # ---------------------------------------------------------------------------- #
         new_cat_event = (random.choice(final_events))
 
@@ -112,11 +112,12 @@ class NewCatEvents:
 
         event_text = event_text_adjust(Cat, new_cat_event.event_text, cat, other_cat, other_clan_name, new_cat=created_cats[0])
 
-        types = ["birth_death"]
+        types = ["misc"]
         if "other_clan" in new_cat_event.tags:
             types.append("other_clans")
         game.cur_events_list.append(Single_Event(event_text, types, involved_cats))
         # game.birth_death_events_list.append(death_text)
+
 
     def create_new_cat(self,
                        loner=False,

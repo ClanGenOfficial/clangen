@@ -1320,7 +1320,7 @@ class Events():
             # Otherwise, other_cat is None
             other_cat = None
 
-        if not int(random.random() * 1) and cat.age != 'kitten' and cat.age != 'adolescent' and not self.new_cat_invited:
+        if not int(random.random() * chance) and cat.age != 'kitten' and cat.age != 'adolescent' and not self.new_cat_invited:
             self.new_cat_invited = True
 
             self.new_cat_events.handle_new_cats(cat=cat, other_cat=other_cat, war=self.at_war, enemy_clan=self.enemy_clan, alive_kits=alive_kits)
