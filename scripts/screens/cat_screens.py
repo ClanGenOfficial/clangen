@@ -2376,6 +2376,8 @@ class RoleScreen(Screens):
                 game.switches["cat"] = self.previous_cat
                 self.update_selected_cat()
             elif event.ui_element == self.promote_leader:
+                if self.the_cat == game.clan.deputy:
+                    game.clan.deputy = None
                 game.clan.new_leader(self.the_cat)
                 if game.sort_type == "rank":
                     Cat.sort_cats()
@@ -2647,7 +2649,7 @@ class RoleScreen(Screens):
             else:
                 self.promote_leader.disable()
 
-            if deputy_invalid:
+            if deputy_invalid and self.the_cat.age != "elder":
                 self.promote_deputy.enable()
             else:
                 self.promote_deputy.disable()
