@@ -67,6 +67,12 @@ class NewCatEvents:
         status = None
         if "warrior" in new_cat_event.tags:
             status = "warrior"
+        elif "apprentice" in new_cat_event.tags:
+            status = "apprentice"
+        elif "medicine cat apprentice" in new_cat_event.tags:
+            status = "medicine cat apprentice"
+        elif "medicine cat" in new_cat_event.tags:
+            status = "medicine cat"
 
         created_cats = self.create_new_cat(new_cat_event.loner,
                                            new_cat_event.new_name,

@@ -59,14 +59,14 @@ class GenerateEvents:
                 injury=event["injury"] if "injury" in event else None,
 
                 # new cat event only
-                loner=event["loner"] if "loner" in event else None,
-                kittypet=event["kittypet"] if "kittypet" in event else None,
-                other_clan=event["other_clan"] if "other_clan" in event else None,
-                kit=event["kit"] if "kit" in event else None,
-                new_name=event["new_name"] if "new_name" in event else None,
-                litter=event["litter"] if "litter" in event else None,
+                loner=event["loner"] if "loner" in event else False,
+                kittypet=event["kittypet"] if "kittypet" in event else False,
+                other_clan=event["other_clan"] if "other_clan" in event else False,
+                kit=event["kit"] if "kit" in event else False,
+                new_name=event["new_name"] if "new_name" in event else False,
+                litter=event["litter"] if "litter" in event else False,
                 backstory=event["backstory"] if "backstory" in event else None,
-                relevant_cat=event["relevant_cat"] if "relevant_cat" in event else None,
+                reputation=event["reputation"] if "reputation" in event else None
             )
             event_list.append(event)
         return event_list
@@ -139,12 +139,24 @@ class GenerateEvents:
             if game.clan.game_mode in ["expanded", "cruel season"] and "classic" in event.tags:
                 continue
 
-            # make complete leader death less likely
-            if "all_lives" in event.tags and int(random.random() * 8):
-                continue
+            # make complete leader death less likely until the leader is over 150 moons
+            if "all_lives" in event.tags:
+                if cat.age < 150 and int(random.random() * 5):
+                    continue
 
             # check season
             if game.clan.current_season not in event.tags:
+                continue
+
+            reputation = game.clan.reputation
+            # hostile
+            if 1 <= reputation <= 30 and "hostile" not in event.reputation:
+                continue
+            # neutral
+            elif 31 <= reputation <= 70 and "neutral" not in event.reputation:
+                continue
+            # welcoming
+            elif 71 <= reputation <= 100 and "welcoming" not in event.reputation:
                 continue
 
             # check hate and jealousy before allowing murder
@@ -158,7 +170,7 @@ class GenerateEvents:
                     if cat_to == cat:
                         hate = True
                         break
-                    cat_to = dislike_relation[y].cat_to
+                    cat_to = jealous_relation[y].cat_to
                     if cat_to == cat:
                         hate = True
                         break
@@ -329,9 +341,9 @@ class SingleEvent:
             kittypet=False,
             kit=False,
             litter=False,
-            relevant_cat=None,
             backstory=None,
-            other_clan=None
+            other_clan=None,
+            reputation=None
     ):
         self.camp = camp
         self.tags = tags
@@ -355,9 +367,9 @@ class SingleEvent:
         self.kittypet = kittypet
         self.kit = kit
         self.litter = litter
-        self.relevant_cat = relevant_cat  # the clan cat that is involved, i.e. the cat who is adopting abandoned kit
         self.backstory = backstory
         self.other_clan = other_clan
+        self.reputation = reputation
 
 
 """
@@ -398,6 +410,7 @@ Tagging Guidelines: (if you add more tags, please add guidelines for them here)
 
 "clan_kits" < clan must have kits for this event to appear
 
+**Relationship tags do not work for New Cat events**
 mc_to_rc < change mc's relationship values towards rc
 rc_to_mc < change rc's relationship values towards mc
 to_both < change both cat's relationship values
@@ -405,6 +418,14 @@ to_both < change both cat's relationship values
 Tagged relationship parameters are: "romantic", "platonic", "comfort", "respect", "trust", "dislike", "jealousy", 
 Add "neg_" in front of parameter to make it a negative value change (i.e. "neg_romantic", "neg_platonic", ect)
 
+
+Following tags are used for new cat events:
+"parent" < this litter or kit also comes with a parent (this does not include adoptive parents from within the clan)
+"m_c" < the event text includes the main cat, not just the new cat
+"other_cat" < the event text includes the other cat, not just the new cat and main cat
+"warrior", "apprentice", "medicine cat apprentice", "medicine cat" < make the new cat start with the tagged for status
+"injured" < tag along with a second tag that's the name of the injury you want the new_cat to have
+"major_injury" < tag to give the new cat a random major-severity injury
 
 Following tags are used for nutrition events:
 "death" < main cat will die
