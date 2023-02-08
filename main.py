@@ -7,8 +7,15 @@ if directory:
 
 # Setup logging
 import logging 
+formatter = logging.Formatter("%(name)s - %(levelname)s - %(message)s")
+# Logging for file
 file_handler = logging.FileHandler("clangen.log")
+file_handler.setFormatter(formatter)
+# Only log errors to file
+file_handler.setLevel(logging.ERROR)
+# Logging for console 
 stream_handler = logging.StreamHandler()
+stream_handler.setFormatter(formatter)
 logging.root.addHandler(file_handler)
 logging.root.addHandler(stream_handler)
 
