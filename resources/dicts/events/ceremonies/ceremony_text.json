@@ -199,7 +199,7 @@
             ],
             "dead_mentor":["This should never appear."],
             "no_mentor":[
-                "Newly-made apprentice, m_c wished they had someone to mentor them.",
+                "Newly-made apprentice, m_c wishes they had someone to mentor them.",
                 "m_c isn't confident in their ability to train themself, but will try anyway.",
                 "m_c is frustrated that they don't have a mentor.",
                 "m_c isn't sure what to do without the guidance of a mentor."
