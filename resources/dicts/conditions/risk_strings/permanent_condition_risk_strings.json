@@ -148,5 +148,13 @@
             "m_c breathes deeply, trying not to let this sudden wave of grief overtake them, but it's hard and it never really goes away.",
             "m_c wakes and nearly wails at the wave of grief that hits them. Today isn't starting well."
         ]
+    },
+    "persistent headaches": {
+        "headaches": [
+            "headache placeholder"
+        ],
+        "severe headaches": [
+            "headache placeholder"
+        ]
     }
 }
