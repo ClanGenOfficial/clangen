@@ -354,6 +354,33 @@ def event_text_adjust(Cat,
 
     return adjust_text
 
+def ceremony_text_adjust(Cat, text, cat, mentor_name=None, random_honor=None):
+    name = str(cat.name)
+    prefix = str(cat.name.prefix)
+    clanname = str(game.clan.name + "Clan")
+    mentor_name = mentor_name
+    leader_name = str(game.clan.leader.name)
+    random_honor = random_honor
+    if cat.parent1:
+        parent1 = str(Cat.fetch_cat(cat.parent1).name)
+        if cat.parent2:
+            parent2 = str(Cat.fetch_cat(cat.parent2).name)
+
+    adjust_text = text
+    adjust_text = adjust_text.replace("(prefix)", prefix)
+    adjust_text = adjust_text.replace("m_c", name)
+    adjust_text = adjust_text.replace("c_n", clanname)
+    adjust_text = adjust_text.replace("(mentor)", mentor_name)
+    adjust_text = adjust_text.replace("l_n", leader_name)
+    if random_honor:
+        adjust_text = adjust_text.replace("r_h", random_honor)
+    if cat.parent1:
+        adjust_text = adjust_text.replace("p1", parent1)
+        if cat.parent2:
+            adjust_text = adjust_text.replace("p2", parent2)
+
+    return adjust_text
+
 
 # ---------------------------------------------------------------------------- #
 #                                    Sprites                                   #
