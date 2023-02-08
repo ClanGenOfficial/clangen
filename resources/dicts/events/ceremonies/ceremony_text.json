@@ -595,39 +595,39 @@
         },
         "parent1":{
             "alive":[
-                "{parent1} is watching with pride as m_c is named and given to (mentor) to apprentice under. They know that (mentor) was a good choice.",
-                "(prefix)kit loudly complains as {parent1} pulls them over to quickly groom their pelt. They manage to wriggle away and scurry off to the front of the crowd for their ceremony, where they are renamed to m_c and apprenticed to (mentor). ",
-                "Even though they are excited to finally be made an apprentice, it takes a bit of coaxing for {parent1} for (prefix)kit to step forward for their ceremony. {parent1} watches in pride as they're named m_c, and touch noses with (mentor)."
+                "p1 is watching with pride as m_c is named and given to (mentor) to apprentice under. They know that (mentor) was a good choice.",
+                "(prefix)kit loudly complains as p1 pulls them over to quickly groom their pelt. They manage to wriggle away and scurry off to the front of the crowd for their ceremony, where they are renamed to m_c and apprenticed to (mentor). ",
+                "Even though they are excited to finally be made an apprentice, it takes a bit of coaxing for p1 for (prefix)kit to step forward for their ceremony. p1 watches in pride as they're named m_c, and touch noses with (mentor)."
             ],
             "dead":[
-                "m_c hopes that {parent1} is watching in pride from StarClan as they are apprenticed to (mentor).",
-                "m_c wishes that they could be happier about being made an apprentice as they touch noses with (mentor), but all they can think about is how much they wish that {parent1} was still there to chant their name with the rest of the Clan.",
-                "m_c tries to keep up a brave face as they're apprenticed to (mentor), but they keep stealing glances at the crowd, as if trying to find {parent1} despite knowing they're no longer with them.",
-                "m_c sits beside their new mentor, (mentor) as the meeting comes to a close. Their claws dig into the ground as they glare up at the sky, wondering why {parent1} couldn't be there with them at such an important moment.",
-                "m_c smiles up at the stars as they sit beside (mentor). The stars seem to shine brighter, and m_c knows it's a sign that {parent1} is still watching over them.",
-                "As m_c touches noses with their new mentor, (mentor), they make a silent promise to {parent1} to make them proud, and to take care of the Clan in their parent's absence."
+                "m_c hopes that p1 is watching in pride from StarClan as they are apprenticed to (mentor).",
+                "m_c wishes that they could be happier about being made an apprentice as they touch noses with (mentor), but all they can think about is how much they wish that p1 was still there to chant their name with the rest of the Clan.",
+                "m_c tries to keep up a brave face as they're apprenticed to (mentor), but they keep stealing glances at the crowd, as if trying to find p1 despite knowing they're no longer with them.",
+                "m_c sits beside their new mentor, (mentor) as the meeting comes to a close. Their claws dig into the ground as they glare up at the sky, wondering why p1 couldn't be there with them at such an important moment.",
+                "m_c smiles up at the stars as they sit beside (mentor). The stars seem to shine brighter, and m_c knows it's a sign that p1 is still watching over them.",
+                "As m_c touches noses with their new mentor, (mentor), they make a silent promise to p1 to make them proud, and to take care of the Clan in their parent's absence."
             ]
         },
         "parent2":{
             "alive":[],
             "dead":[
-                "m_c hopes that {parent2} is watching in pride from StarClan as they are apprenticed to (mentor).",
-                "m_c wishes that they could be happier about being made an apprentice as they touch noses with (mentor), but all they can think about is how much they wish that {parent2} was still there to chant their name with the rest of the Clan.",
-                "m_c tries to keep up a brave face as they're apprenticed to (mentor), but they keep stealing glances at the crowd, as if trying to find {parent2} despite knowing they're no longer with them.",
-                "m_c sits beside their new mentor, (mentor) as the meeting comes to a close. Their claws dig into the ground as they glare up at the sky, wondering why {parent2} couldn't be there with them at such an important moment.",
-                "m_c smiles up at the stars as they sit beside (mentor). The stars seem to shine brighter, and m_c knows it's a sign that {parent2} is still watching over them.",
-                "As m_c touches noses with their new mentor, (mentor), they make a silent promise to {parent2} to make them proud, and to take care of the Clan in their parent's absence."
+                "m_c hopes that p2 is watching in pride from StarClan as they are apprenticed to (mentor).",
+                "m_c wishes that they could be happier about being made an apprentice as they touch noses with (mentor), but all they can think about is how much they wish that p2 was still there to chant their name with the rest of the Clan.",
+                "m_c tries to keep up a brave face as they're apprenticed to (mentor), but they keep stealing glances at the crowd, as if trying to find p2 despite knowing they're no longer with them.",
+                "m_c sits beside their new mentor, (mentor) as the meeting comes to a close. Their claws dig into the ground as they glare up at the sky, wondering why p2 couldn't be there with them at such an important moment.",
+                "m_c smiles up at the stars as they sit beside (mentor). The stars seem to shine brighter, and m_c knows it's a sign that p2 is still watching over them.",
+                "As m_c touches noses with their new mentor, (mentor), they make a silent promise to p2 to make them proud, and to take care of the Clan in their parent's absence."
             ]
         },
         "both_parents":{
             "alive":[],
             "dead":[
-                "m_c hopes that {parent1} and {parent2} are watching in pride from StarClan as they are apprenticed to (mentor).",
-                "m_c wishes that they could be happier about being made an apprentice as they touch noses with (mentor), but all they can think about is how much they wish that {parent1} and {parent2} were still there to chant their name with the rest of the Clan.",
-                "m_c tries to keep up a brave face as they're apprenticed to (mentor), but they keep stealing glances at the crowd, as if trying to find {parent1} and {parent2} despite knowing they're no longer with them.",
-                "m_c sits beside their new mentor, (mentor) as the meeting comes to a close. Their claws dig into the ground as they glare up at the sky, wondering why {parent1} and {parent2} couldn't be there with them at such an important moment.",
-                "m_c smiles up at the stars as they sit beside (mentor). The stars seem to shine brighter, and m_c knows it's a sign that {parent1} and {parent2} are still watching over them.",
-                "As m_c touches noses with their new mentor, (mentor), they make a silent promise to {paren1} and {parent2} to make them proud, and to take care of the Clan in their parent's absence."
+                "m_c hopes that p1 and p2 are watching in pride from StarClan as they are apprenticed to (mentor).",
+                "m_c wishes that they could be happier about being made an apprentice as they touch noses with (mentor), but all they can think about is how much they wish that p1 and p2 were still there to chant their name with the rest of the Clan.",
+                "m_c tries to keep up a brave face as they're apprenticed to (mentor), but they keep stealing glances at the crowd, as if trying to find p1 and p2 despite knowing they're no longer with them.",
+                "m_c sits beside their new mentor, (mentor) as the meeting comes to a close. Their claws dig into the ground as they glare up at the sky, wondering why p1 and p2 couldn't be there with them at such an important moment.",
+                "m_c smiles up at the stars as they sit beside (mentor). The stars seem to shine brighter, and m_c knows it's a sign that p1 and p2 are still watching over them.",
+                "As m_c touches noses with their new mentor, (mentor), they make a silent promise to {paren1} and p2 to make them proud, and to take care of the Clan in their parent's absence."
             ]
         }
 
@@ -700,22 +700,22 @@
         "parent1":{
             "alive":[],
             "dead":[
-                "m_c decides to become a medicine cat apprentice under (mentor) in hopes that they will be able to see {parent1} in StarClan.",
-                "As the new medicine cat apprentice, m_c, dreams of StarClan with their mentor, (mentor), for the first time, they are greeted by many StarClan cats. One of which they recognize as {parent1}, who is watching in pride as the rest of StarClan's ranks accept the new medicine cat apprentice."
+                "m_c decides to become a medicine cat apprentice under (mentor) in hopes that they will be able to see p1 in StarClan.",
+                "As the new medicine cat apprentice, m_c, dreams of StarClan with their mentor, (mentor), for the first time, they are greeted by many StarClan cats. One of which they recognize as p1, who is watching in pride as the rest of StarClan's ranks accept the new medicine cat apprentice."
             ]
         },
         "parent2":{
             "alive":[],
             "dead":[
-                "m_c decides to become a medicine cat apprentice under (mentor) in hopes that they will be able to see {parent2} in StarClan.",
-                "As the new medicine cat apprentice, m_c, dreams of StarClan with their mentor, (mentor), for the first time, they are greeted by many StarClan cats. One of which they recognize as {parent2}, who is watching in pride as the rest of StarClan's ranks accept the new medicine cat apprentice."
+                "m_c decides to become a medicine cat apprentice under (mentor) in hopes that they will be able to see p2 in StarClan.",
+                "As the new medicine cat apprentice, m_c, dreams of StarClan with their mentor, (mentor), for the first time, they are greeted by many StarClan cats. One of which they recognize as p2, who is watching in pride as the rest of StarClan's ranks accept the new medicine cat apprentice."
             ]
         },
         "both_parents":{
             "alive":[],
             "dead":[
-                "m_c decides to become a medicine cat apprentice under (mentor) in hopes that they will be able to see {parent1} and {parent2} in StarClan",
-                "As the new medicine cat apprentice, m_c, dreams of StarClan with their mentor, (mentor), for the first time, they are greeted by many StarClan cats. Two of which they recognize as {parent1} and {parent2}, who are watching in pride as the rest of StarClan's ranks accept the new medicine cat apprentice."
+                "m_c decides to become a medicine cat apprentice under (mentor) in hopes that they will be able to see p1 and p2 in StarClan",
+                "As the new medicine cat apprentice, m_c, dreams of StarClan with their mentor, (mentor), for the first time, they are greeted by many StarClan cats. Two of which they recognize as p1 and p2, who are watching in pride as the rest of StarClan's ranks accept the new medicine cat apprentice."
             ]
         }
     },
@@ -840,23 +840,23 @@
         "parent1":{
             "alive":[],
             "dead":[
-                "(prefix)paw almost sobs as they spot {parent1} step out of the crowd towards them to congratulate them on completing their training. {parent1} rests their muzzle on (prefix)paw's head, naming them m_c, and welcoming them as a full medicine cat.",
-                "As a StarClan cat steps forward to give, (prefix)paw their new name of m_c, they spot {parent1} watching them proudly with the other StarClan cats."
+                "(prefix)paw almost sobs as they spot p1 step out of the crowd towards them to congratulate them on completing their training. p1 rests their muzzle on (prefix)paw's head, naming them m_c, and welcoming them as a full medicine cat.",
+                "As a StarClan cat steps forward to give, (prefix)paw their new name of m_c, they spot p1 watching them proudly with the other StarClan cats."
             ]
         },
         "parent2":{
             "alive":[],
             "dead":[
-                "(prefix)paw almost sobs as they spot {parent2} step out of the crowd towards them to congratulate them on completing their training. {parent2} rests their muzzle on (prefix)paw's head, naming them m_c, and welcoming them as a full medicine cat.",
-                "As a StarClan cat steps forward to give, (prefix)paw their new name of m_c, they spot {parent2} watching them proudly with the other StarClan cats."
+                "(prefix)paw almost sobs as they spot p2 step out of the crowd towards them to congratulate them on completing their training. p2 rests their muzzle on (prefix)paw's head, naming them m_c, and welcoming them as a full medicine cat.",
+                "As a StarClan cat steps forward to give, (prefix)paw their new name of m_c, they spot p2 watching them proudly with the other StarClan cats."
             ]
         },
         "both_parents":{
             "alive":[],
             "dead":[
-                "(prefix)paw almost sobs as they spot {parent1} and {parent2} step out of the crowd towards them to congratulate them on completing their training. {parent1} rests their muzzle on (prefix)paw's head, naming them m_c, and welcoming them as a full medicine cat.",
-                "(prefix)paw almost sobs as they spot {parent1} and {parent2} step out of the crowd towards them to congratulate them on completing their training. {parent2} rests their muzzle on (prefix)paw's head, naming them m_c, and welcoming them as a full medicine cat.",
-                "As a StarClan cat steps forward to give, (prefix)paw their new name of m_c, they spot {parent1} and {parent2} watching them proudly with the other StarClan cats."
+                "(prefix)paw almost sobs as they spot p1 and p2 step out of the crowd towards them to congratulate them on completing their training. p1 rests their muzzle on (prefix)paw's head, naming them m_c, and welcoming them as a full medicine cat.",
+                "(prefix)paw almost sobs as they spot p1 and p2 step out of the crowd towards them to congratulate them on completing their training. p2 rests their muzzle on (prefix)paw's head, naming them m_c, and welcoming them as a full medicine cat.",
+                "As a StarClan cat steps forward to give, (prefix)paw their new name of m_c, they spot p1 and p2 watching them proudly with the other StarClan cats."
             ]
         }
     },

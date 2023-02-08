@@ -803,6 +803,7 @@ class Events():
             grown = False
         if dead_mentor:
             mentor_txt = "dead_mentor"
+            involved_cats.append(dead_mentor)
         elif not dead_mentor and cat.mentor == None and not grown:
             mentor_txt = "no_mentor"
         elif not dead_mentor and cat.mentor and grown:
