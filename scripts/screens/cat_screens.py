@@ -177,7 +177,7 @@ def backstory_text(cat):
         bs_display = 'half-Clan'
     elif bs_display in ['outsider_roots1', 'outsider_roots2']:
         bs_display = 'outsider roots'
-    elif bs_display in ['loner1', 'loner2', 'refugee2'
+    elif bs_display in ['loner1', 'loner2', 'refugee2',
                         'tragedy_survivor4', 'guided3',
                         'wandering_healer2']:
         bs_display = 'formerly a loner'
