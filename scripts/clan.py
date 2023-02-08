@@ -738,16 +738,17 @@ class Clan():
 class OtherClan():
 
     def __init__(self, name='', relations=0, temperament=''):
+        temperament_list = [
+            'cunning', 'wary', 'logical', 'proud', 'stoic',
+            'mellow', 'bloodthirsty', 'amiable', 'gracious'
+        ]
         self.name = name or choice(names.normal_prefixes)
         self.relations = relations or randint(8, 12)
         self.temperament = temperament or choice(temperament_list)
         if self.temperament not in temperament_list:
             self.temperament = choice(temperament_list)
             
-        temperament_list = [
-            'cunning', 'wary', 'logical', 'proud', 'stoic',
-            'mellow', 'bloodthirsty', 'amiable', 'gracious'
-        ]
+        
 
     def __repr__(self):
         return f"{self.name}Clan"
