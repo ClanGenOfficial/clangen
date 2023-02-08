@@ -807,6 +807,7 @@ class Events():
             grown = True
         else:
             grown = False
+
         if dead_mentor:
             mentor_txt = "dead_mentor"
             involved_cats.append(dead_mentor)
@@ -815,25 +816,30 @@ class Events():
         elif not dead_mentor and cat.mentor and grown:
             mentor_txt = "living_mentor"
             involved_cats.append(cat.mentor)
+
         if leader_outside or leader_exiled or leader_dead:
             leader_txt = "no_leader"
         else:
             leader_txt = "leader"
             involved_cats.append(game.clan.leader)
+
         if cat.backstory == ['abandoned1', 'abandoned2', 'abandoned3']:
             backstory_txt = "abandoned"
+
         if cat.parent1 and not cat.parent2:
             parent_txt = "parent1"
             if parent1.dead:
                 parent_status = "dead"
             else:
                 parent_status = "alive"
+
         if cat.parent2:
             parent_txt = choice(["parent1", "parent2"])
             if parent2.dead:
                 parent_status = "dead"
             else:
                 parent_status = "alive"
+
         if cat.parent1 and cat.parent2:
             parent_txt = choice(["both_parents", "parent1", "parent2"])
             if parent1.dead and parent2.dead:
@@ -841,23 +847,26 @@ class Events():
             elif not parent1.dead and not parent2.dead:
                 parent_status = "alive"
 
-
-        ceremony += CEREMONY_TXT[promoted_to][leader_txt][trait]
-        ceremony += CEREMONY_TXT[promoted_to][leader_txt][general_txt]
-        if mentor_txt != None:
-            ceremony += CEREMONY_TXT[promoted_to][leader_txt][mentor_txt]
-        if backstory_txt:
-            ceremony += CEREMONY_TXT[promoted_to][leader_txt][backstory_txt]
-        if cat.parent1:
-            ceremony += CEREMONY_TXT[promoted_to][parent_txt][parent_status]
+        try:
+            ceremony += CEREMONY_TXT[promoted_to][leader_txt][trait]
+            ceremony += CEREMONY_TXT[promoted_to][leader_txt][general_txt]
+            if mentor_txt != None:
+                ceremony += CEREMONY_TXT[promoted_to][leader_txt][mentor_txt]
+            if backstory_txt:
+                ceremony += CEREMONY_TXT[promoted_to][leader_txt][backstory_txt]
+            if cat.parent1:
+                ceremony += CEREMONY_TXT[promoted_to][parent_txt][parent_status]
+        except KeyError:
+            print("Error loading ceremony text. ")
+            ceremony += [""]
                 
-            '''#DEAD MENTOR CEREMONY
-                if len(cat.former_mentor) > 0:
-                    dead_mentor = None
-                    for x in range(len(cat.former_mentor)):
-                        if Cat.fetch_cat(cat.former_mentor[x]).dead:
-                            dead_mentor = Cat.fetch_cat(cat.former_mentor[x])
-                            break'''
+        '''#DEAD MENTOR CEREMONY
+            if len(cat.former_mentor) > 0:
+                dead_mentor = None
+                for x in range(len(cat.former_mentor)):
+                    if Cat.fetch_cat(cat.former_mentor[x]).dead:
+                        dead_mentor = Cat.fetch_cat(cat.former_mentor[x])
+                        break'''
                      
         # getting the mentor's name
         if dead_mentor:
@@ -873,7 +882,6 @@ class Events():
         # getting the random honor if it's needed
         random_honor = None
         if promoted_to == 'warrior':
-            TRAITS = None
             with open(f"{resource_dir}ceremony_traits.json", 'r') as read_file:
                 TRAITS = ujson.loads(read_file.read())
             if not leader_dead and not leader_exiled and not leader_outside:
