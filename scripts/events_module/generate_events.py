@@ -2,8 +2,6 @@
 # -*- coding: ascii -*-
 import random
 
-from scripts.cat.cats import INJURIES, INJURY_DISTRIBUTION
-
 try:
     import ujson
 except ImportError:
@@ -278,7 +276,7 @@ class GenerateEvents:
 
             final_events.append(event)
         return final_events
-    
+
     @staticmethod
     def get_death_reaction_dicts(family_relation, rel_value):
         try:
@@ -427,3 +425,12 @@ Following tags are used for freshkill pile events:
 "other_cat" < there is a second cat in this event
 
 """
+
+
+INJURY_DISTRIBUTION = None
+with open(f"resources/dicts/conditions/event_injuries_distribution.json", 'r') as read_file:
+    INJURY_DISTRIBUTION = ujson.loads(read_file.read())
+
+INJURIES = None
+with open(f"resources/dicts/conditions/injuries.json", 'r') as read_file:
+    INJURIES = ujson.loads(read_file.read())

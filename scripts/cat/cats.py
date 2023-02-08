@@ -124,7 +124,8 @@ class Cat():
         'clanborn', 'halfclan1', 'halfclan2', 'outsider_roots1', 'outsider_roots2',
         'loner1', 'loner2', 'kittypet1', 'kittypet2', 'rogue1', 'rogue2', 'abandoned1',
         'abandoned2', 'abandoned3', 'medicine_cat', 'otherclan', 'otherclan2', 'ostracized_warrior', 'disgraced',
-        'retired_leader', 'refugee', 'tragedy_survivor', 'clan_founder', 'orphaned'
+        'retired_leader', 'refugee', 'tragedy_survivor', 'clan_founder', 'orphaned', "orphaned2", "guided1", "guided2",
+        "guided3", "guided4"
     ]
     all_cats: Dict[str, Cat] = {}  # ID: object
     outside_cats: Dict[str, Cat] = {}  # cats outside the clan
@@ -2571,9 +2572,6 @@ PERMANENT = None
 with open(f"{resource_directory}permanent_conditions.json", 'r') as read_file:
     PERMANENT = ujson.loads(read_file.read())
 
-INJURY_DISTRIBUTION = None
-with open(f"{resource_directory}event_injuries_distribution.json", 'r') as read_file:
-    INJURY_DISTRIBUTION = ujson.loads(read_file.read())
 
 resource_directory = "resources/dicts/events/death/death_reactions/"
 

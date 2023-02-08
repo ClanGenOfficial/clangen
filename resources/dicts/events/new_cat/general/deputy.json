@@ -1,25 +1,3 @@
 [
-        {
-            "camp": "any",
-            "tags": ["other_cat", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "dislike", "neg_platonic", "jealousy"],
-            "death_text": "m_c was murdered by r_c in cold blood with the hope of taking their place.",
-            "history_text": ["m_c was murdered by r_c.", null],
-            "cat_trait": null,
-            "cat_skill": null,
-            "other_cat_trait": ["ambitious", "cold", "righteous", "loyal", "vengeful", "sneaky", "bloodthirsty"],
-            "other_cat_skill": ["great fighter", "excellent fighter"],
-            "cat_negate_skill": ["excellent fighter", "great fighter"]
-        },
-        {
-            "camp": "any",
-            "tags": ["other_cat", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "dislike", "neg_platonic", "jealousy"],
-            "death_text": "m_c was murdered by r_c in cold blood. r_c staged the death as an accident and hopes to take their place.",
-            "history_text": ["m_c was murdered by r_c.", null],
-            "cat_trait": null,
-            "cat_skill": null,
-            "other_cat_trait": ["ambitious", "cold", "righteous", "loyal", "vengeful", "sneaky"],
-            "other_cat_skill": ["very smart", "extremely smart"],
-            "cat_negate_skill": ["excellent fighter", "great fighter"]
-        }
 
 ]

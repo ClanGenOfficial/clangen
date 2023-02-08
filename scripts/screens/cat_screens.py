@@ -61,104 +61,109 @@ def bs_blurb_text(cat):
     bs_blurb = None
     if backstory is None:
         bs_blurb = "This cat was born into the Clan where they currently reside."
-    if backstory == 'clan_founder':
+    elif backstory == 'clan_founder':
         bs_blurb = "This cat is one of the founding members of the Clan."
-    if backstory == 'clanborn':
+    elif backstory == 'clanborn':
         bs_blurb = "This cat was born into the Clan where they currently reside."
-    if backstory == 'halfclan1':
+    elif backstory == 'halfclan1':
         bs_blurb = "This cat was born into the Clan, but one of their parents resides in another Clan."
-    if backstory == 'halfclan2':
+    elif backstory == 'halfclan2':
         bs_blurb = "This cat was born in another Clan, but chose to come to this Clan to be with their other parent."
-    if backstory == 'outsider_roots1':
+    elif backstory == 'outsider_roots1':
         bs_blurb = "This cat was born into the Clan, but one of their parents is an outsider that belongs to no Clan."
-    if backstory == 'outsider_roots2':
+    elif backstory == 'outsider_roots2':
         bs_blurb = "This cat was born outside the Clan, but came to live in the Clan with their parent at a young age."
-    if backstory == 'loner1':
+    elif backstory == 'loner1':
         bs_blurb = "This cat joined the Clan by choice after living life as a loner."
-    if backstory == 'loner2':
+    elif backstory == 'loner2':
         bs_blurb = "This cat used to live in a barn, but mostly stayed away from Twolegs. They decided clanlife " \
                    "might be an interesting change of pace."
-    if backstory == 'kittypet1':
+    elif backstory == 'kittypet1':
         bs_blurb = "This cat joined the Clan by choice after living life with Twolegs as a kittypet."
-    if backstory == 'kittypet2':
+    elif backstory == 'kittypet2':
         bs_blurb = 'This cat used to live on something called a "boat" with Twolegs, but decided to join the Clan.'
-    if backstory == 'kittypet3':
+    elif backstory == 'kittypet3':
         bs_blurb = "This cat used be a kittypet. They got lost after wandering away, and when they returned home, " \
                    "they found their Twolegs were gone. They eventually found their way to the Clan."
-    if backstory == 'rogue1':
+    elif backstory == 'rogue1':
         bs_blurb = "This cat joined the Clan by choice after living life as a rogue."
-    if backstory == 'rogue2':
+    elif backstory == 'rogue2':
         bs_blurb = "This cat used to live in a Twolegplace, scrounging for what they could find. They thought " \
                    "the Clan might offer them more security."
-    if backstory == 'rogue3':
+    elif backstory == 'rogue3':
         bs_blurb = "This cat used to live alone in their own territory, but was chased out by something and " \
                    "eventually found the Clan."
-    if backstory == 'abandoned1':
+    elif backstory == 'abandoned1':
         bs_blurb = "This cat was found by the Clan as a kit and has been living with them ever since."
-    if backstory == 'abandoned2':
+    elif backstory == 'abandoned2':
         bs_blurb = "This cat was born outside of the Clan, but was brought to the Clan as a kit and has lived " \
                    "here ever since."
-    if backstory == 'abandoned3':
+    elif backstory == 'abandoned3':
         bs_blurb = "This cat was born into another Clan, but they were left here as a kit for the Clan to raise."
-    if backstory == 'abandoned4':
+    elif backstory == 'abandoned4':
         bs_blurb = "This cat was found and taken in after being abandoned by their twolegs as a kit."
-    if backstory == 'medicine_cat':
+    elif backstory == 'medicine_cat':
         bs_blurb = "This cat was once a medicine cat in another Clan."
-    if backstory == 'otherclan':
+    elif backstory == 'otherclan':
         bs_blurb = "This cat was born into another Clan, but came to this Clan by choice."
-    if backstory == 'otherclan2':
+    elif backstory == 'otherclan2':
         bs_blurb = "This cat was unhappy in their old Clan and decided to come here instead."
-    if backstory == 'otherclan3':
+    elif backstory == 'otherclan3':
         bs_blurb = "This cat's Clan stayed with the Clan after a disaster struck their old one, and This cat decided to " \
                    "stay after the rest of their Clan returned home."
-    if backstory == 'ostracized_warrior':
+    elif backstory == 'ostracized_warrior':
         bs_blurb = "This cat was ostracized from their old Clan, but no one really knows why."
-    if backstory == 'disgraced':
+    elif backstory == 'disgraced':
         bs_blurb = "This cat was cast out of their old Clan for some transgression that they're not keen on " \
                    "talking about."
-    if backstory == 'retired_leader':
+    elif backstory == 'retired_leader':
         bs_blurb = "This cat used to be the leader of another Clan before deciding they needed a change of scenery " \
                    "after leadership became too much. They returned their nine lives and let their deputy " \
                    "take over before coming here."
-    if backstory == 'refugee':
+    elif backstory == 'refugee':
         bs_blurb = "This cat came to this Clan after fleeing from their former Clan and the tyrannical " \
                    "leader that had taken over."
-    if backstory == 'refugee2':
+    elif backstory == 'refugee2':
         bs_blurb = "This cat used to live as a loner, but after another cat chased them from their home, " \
                    "they took refuge in the Clan."
-    if backstory == 'refugee3':
+    elif backstory == 'refugee3':
         bs_blurb = "This cat used to be a kittypet, but joined the Clan after fleeing from their cruel twoleg."
-    if backstory == 'refugee4':
+    elif backstory == 'refugee4':
         bs_blurb = "This cat used to be in a rogue group, but joined the Clan after fleeing from the group's " \
                    "tyrannical leader."
-    if backstory == 'tragedy_survivor':
+    elif backstory == 'tragedy_survivor':
         bs_blurb = "Something horrible happened to this cat's previous Clan. They refuse to speak about it."
-    if backstory == 'tragedy_survivor2':
+    elif backstory == 'tragedy_survivor2':
         bs_blurb = "This cat used to be part of a rogue group, but joined the Clan after something terrible" \
                    "happened to it."
-    if backstory == 'tragedy_survivor3':
-        bs_blurb = "This cat used to be a kittypet, but joined the Clan after something terrible happened to" \
+    elif backstory == 'tragedy_survivor3':
+        bs_blurb = "This cat used to be a kittypet, but joined the Clan after something terrible happened to " \
                    "their twolegs."
-    if backstory == 'tragedy_survivor4':
+    elif backstory == 'tragedy_survivor4':
         bs_blurb = "This cat used to be a loner, but joined the Clan after something terrible made them leave." \
                    "their old home behind."
-    if backstory == 'orphaned':
+    elif backstory == 'orphaned':
         bs_blurb = "This cat was found with a deceased parent. The Clan took them in, but doesn't hide where " \
                    "they came from."
-    if backstory == 'wandering_healer1':
+    elif backstory == 'orphaned2':
+        bs_blurb = "This cat was found with a deceased parent. The Clan took them in, but doesn't tell them where they" \
+                   " really came from."
+    elif backstory == 'wandering_healer1':
         bs_blurb = "This cat used to wander, helping those where they could, and eventually found the Clan."
-    if backstory == 'wandering_healer2':
+    elif backstory == 'wandering_healer2':
         bs_blurb = "This cat used to live in a specific spot, offering help to all who wandered by, but " \
                    "eventually found their way to the Clan."
-    if backstory == 'guided1':
+    elif backstory == 'guided1':
         bs_blurb = "This cat used to be a kittypet, but after dreaming of starry-furred cats, they followed their " \
                    "whispers to the Clan."
-    if backstory == 'guided2':
+    elif backstory == 'guided2':
         bs_blurb = "This cat used to live a rough life as a rogue. While wandering, " \
                    "they found a set of starry pawprints, and followed them to the Clan."
-    if backstory == 'guided3':
+    elif backstory == 'guided3':
         bs_blurb = "This cat used to live as a loner. A starry-furred cat appeared to them one day, " \
                    "and then led them to the Clan."
+    elif backstory == 'guided4':
+        bs_blurb = "This cat used to live in a different Clan, until a sign from StarClan told them to leave."
     return bs_blurb
 
 # ---------------------------------------------------------------------------- #
