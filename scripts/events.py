@@ -890,14 +890,16 @@ class Events():
                 except KeyError:
                     random_honor = "hard work"
 
+        ceremony_text = choice(ceremony)
+        while ceremony == "":
+            ceremony_text = choice(ceremony)
+
         if promoted_to in ['warrior', 'apprentice', 'medicine cat apprentice', 'medicine cat', 'elder', 'mediator',
                            "mediator apprentice"]:
-            ceremony_text = choice(ceremony)
             ceremony_text = ceremony_text_adjust(Cat, ceremony_text, cat, mentor_name=mentor_name, random_honor=random_honor)
             game.cur_events_list.append(Single_Event(ceremony_text, "ceremony", involved_cats))
             # game.ceremony_events_list.append(ceremony_text)
         else:
-            ceremony_text = choice(ceremony)
             ceremony_text = ceremony_text_adjust(Cat, ceremony_text, cat, mentor_name=mentor_name, random_honor=random_honor)
             game.cur_events_list.append(Single_Event(f'{str(cat.name)}{ceremony_text}', "ceremony", involved_cats))
             # game.ceremony_events_list.append(f'{str(cat.name)}{ceremony_text}')
