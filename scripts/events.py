@@ -851,13 +851,15 @@ class Events():
                             break'''
                      
         # getting the mentor's name
-        if dead_mentor:
-            mentor_name = str(dead_mentor.name)
-        else:
-            try:
-                mentor_name = str(Cat.fetch_cat(cat.mentor).name)
-            except:
-                mentor_name = str(Cat.fetch_cat(cat.former_mentor[-1]).name)
+        mentor_name = None
+        if promoted_to not in ['elder', 'deputy', 'leader']:
+            if dead_mentor:
+                mentor_name = str(dead_mentor.name)
+            else:
+                try:
+                    mentor_name = str(Cat.fetch_cat(cat.mentor).name)
+                except:
+                    mentor_name = str(Cat.fetch_cat(cat.former_mentor[-1]).name)
         # getting the random honor if it's needed
         random_honor = None
         if promoted_to == 'warrior':

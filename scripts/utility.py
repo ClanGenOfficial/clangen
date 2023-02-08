@@ -370,7 +370,8 @@ def ceremony_text_adjust(Cat, text, cat, mentor_name=None, random_honor=None):
     adjust_text = adjust_text.replace("(prefix)", prefix)
     adjust_text = adjust_text.replace("m_c", name)
     adjust_text = adjust_text.replace("c_n", clanname)
-    adjust_text = adjust_text.replace("(mentor)", mentor_name)
+    if mentor_name:
+        adjust_text = adjust_text.replace("(mentor)", mentor_name)
     adjust_text = adjust_text.replace("l_n", leader_name)
     if random_honor:
         adjust_text = adjust_text.replace("r_h", random_honor)
