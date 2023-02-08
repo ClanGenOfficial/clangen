@@ -1505,7 +1505,7 @@ class ProfileScreen(Screens):
                     text_list.append(f'is {complication}!')
             # can or can't patrol
             if self.the_cat.injuries[name]["severity"] != 'minor':
-                text_list.append("they cannot work with this condition")
+                text_list.append("They can't work with this condition")
 
         # collect details for illnesses
         if name in self.the_cat.illnesses:
@@ -1524,7 +1524,7 @@ class ProfileScreen(Screens):
                 text_list.append("infectious!")
             # can or can't patrol
             if self.the_cat.illnesses[name]["severity"] != 'minor':
-                text_list.append("They cannot work with this condition")
+                text_list.append("They can't work with this condition")
 
         text = "<br><br>".join(text_list)
         return text
