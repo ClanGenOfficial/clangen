@@ -858,7 +858,7 @@ class Events():
                 ceremony += CEREMONY_TXT[promoted_to][parent_txt][parent_status]
         except KeyError:
             print("Error loading ceremony text. ")
-            ceremony += [""]
+            ceremony += [f"The correct ceremony for {cat.name} could not be loaded."]
                 
         '''#DEAD MENTOR CEREMONY
             if len(cat.former_mentor) > 0:
