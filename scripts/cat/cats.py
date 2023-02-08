@@ -876,9 +876,6 @@ class Cat():
         else:
             self.update_skill()
 
-        self.create_interaction()
-        self.thoughts()
-
     def thoughts(self):
         """ Generates a thought for the cat, which displays on their profile. """
         all_cats = self.all_cats

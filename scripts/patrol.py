@@ -609,7 +609,7 @@ class Patrol():
             if antagonize:
                 self.antagonize_fail = self.patrol_event.antagonize_fail_text
 
-        if not antagonize:
+        if not antagonize and game.clan.game_mode != "classic":
             self.handle_prey(outcome)
 
 

@@ -207,7 +207,7 @@
             "abandoned": [
                 "m_c is so, so very excited to finally have a mentor, solidifying them as part of the Clan. They're grateful to be here, really... but (mentor) can't replace the parent who gave them to this Clan, the parent who should've been here chanting their name."
             ],
-            "inquisitive": [
+            "adventurous": [
                 "m_c excitedly touches noses with their new mentor, (mentor), looking quite eager to start training.",
                 "m_c can't seem to sit still as they bounce up to touch noses with (mentor), swearing they'll be the best warrior the Clan has ever seen.",
                 "Almost immediately after m_c touches noses with (mentor), they start asking about when they're going to go out and explore the territory.",
@@ -215,14 +215,42 @@
                 "As m_c touches noses with (mentor), they hope that they won't be boring and let them do something cool. Anything but gathering moss or tick duty!",
                 "(prefix)kit sits in front of the Clan with pride, their tiny heart beating so fast they think it might explode! They very excitedly touch noses with (mentor), happy to start their apprenticeship!"
             ],
-            "sweet": [
+            "altruistic": [
                 "Surprising (mentor), the first thing that m_c asks to do once the meeting ends is gather moss so everyone has fresh bedding.",
                 "m_c touches noses with (mentor) and hopes that they'll get to hunt first, so they can make sure the Clan is fed.",
                 "Eager to learn the best ways to help their Clan thrive, m_c excitedly touches noses with (mentor).",
                 "m_c purrs so hard that they're shaking as they touch noses with (mentor).",
                 "m_c silently swears to StarClan to do their best for the Clan as they touch noses with (mentor)."
             ],
-            "attention-seeker":[
+            "compassionate": [
+                "Surprising (mentor), the first thing that m_c asks to do once the meeting ends is gather moss so everyone has fresh bedding.",
+                "m_c touches noses with (mentor) and hopes that they'll get to hunt first, so they can make sure the Clan is fed.",
+                "Eager to learn the best ways to help their Clan thrive, m_c excitedly touches noses with (mentor).",
+                "m_c purrs so hard that they're shaking as they touch noses with (mentor).",
+                "m_c silently swears to StarClan to do their best for the Clan as they touch noses with (mentor)."
+            ],
+            "empathetic":[
+                "Surprising (mentor), the first thing that m_c asks to do once the meeting ends is gather moss so everyone has fresh bedding.",
+                "m_c touches noses with (mentor) and hopes that they'll get to hunt first, so they can make sure the Clan is fed.",
+                "Eager to learn the best ways to help their Clan thrive, m_c excitedly touches noses with (mentor).",
+                "m_c purrs so hard that they're shaking as they touch noses with (mentor).",
+                "m_c silently swears to StarClan to do their best for the Clan as they touch noses with (mentor)."
+            ],
+            "loving":[
+                "Surprising (mentor), the first thing that m_c asks to do once the meeting ends is gather moss so everyone has fresh bedding.",
+                "m_c touches noses with (mentor) and hopes that they'll get to hunt first, so they can make sure the Clan is fed.",
+                "Eager to learn the best ways to help their Clan thrive, m_c excitedly touches noses with (mentor).",
+                "m_c purrs so hard that they're shaking as they touch noses with (mentor).",
+                "m_c silently swears to StarClan to do their best for the Clan as they touch noses with (mentor)."
+            ],
+            "faithful":[
+                "Surprising (mentor), the first thing that m_c asks to do once the meeting ends is gather moss so everyone has fresh bedding.",
+                "m_c touches noses with (mentor) and hopes that they'll get to hunt first, so they can make sure the Clan is fed.",
+                "Eager to learn the best ways to help their Clan thrive, m_c excitedly touches noses with (mentor).",
+                "m_c purrs so hard that they're shaking as they touch noses with (mentor).",
+                "m_c silently swears to StarClan to do their best for the Clan as they touch noses with (mentor)."
+            ],
+            "ambitious":[
                 "m_c excitedly touches noses with their new mentor, (mentor), looking quite eager to start training.",
                 "m_c strides up to their new mentor, looking very proud and excited that they were apprenticed to (mentor).",
                 "Almost immediately after m_c touches noses with (mentor), they start asking about when they're going to go out and explore the territory.",
@@ -233,13 +261,13 @@
                 "m_c touches noses with their mentor, (mentor), looking bored and unimpressed. But on the inside, they're bouncing with euphoria around as if they were still a kit!",
                 "m_c has been pestering everyone for moons on when they finally get to be an apprentice, and everyone is relieved that they're finally free of the young cat's nagging... Until they start asking about when they're going to be a warrior as soon as the meeting ends."
             ],
-            "bossy":[
+            "bloodthirsty":[
                 "m_c excitedly touches noses with their new mentor, (mentor), looking quite eager to start training.",
                 "As m_c touches noses with (mentor), they hope they'll get to do something that will really impress the Clan on their first day. Maybe they could catch a big, fat, rabbit? Or chase off a fox! That'll show the Clan they're the best apprentice anyone's ever seen!",
                 "m_c sits excitedly beside (mentor) as the meeting ends, and hopes they'll be do something exciting, like battle training, first. Their claws are itching to tear at something.",
                 "As m_c touches noses with (mentor), they hope that they won't be boring and let them do something cool. Anything but gathering moss or tick duty!"
             ],
-            "bouncy":[
+            "bold":[
                 "m_c excitedly touches noses with their new mentor, (mentor), looking quite eager to start training.",
                 "In their eagerness, m_c accidentally shoves their nose into (mentor)'s so hard that (mentor) flinches back in surprise. m_c sheepishly apologizes, and the two have a good laugh about it.",
                 "m_c can't seem to sit still as they bounce up to touch noses with (mentor), swearing they'll be the best warrior the Clan has ever seen.",
@@ -265,14 +293,26 @@
                 "(prefix)kit sits in front of the Clan with pride, their tiny heart beating so fast they think it might explode! They very excitedly touch noses with (mentor), happy to start their apprenticeship!",
                 "m_c can't believe their apprenticeship is finally here! Nearly tripping over their own paws, they scurry up to (mentor), excitedly touching noses with them."
             ],
-            "charming":[
+            "calm":[
+                "m_c remains calm as they touch noses with (mentor), but their twitching tail gives away how excited they truly are.",
+                "m_c sits up straighter as they're called forward to be made an apprentice. While they try to look calm and collected, they still tremble a bit as they touch noses with (mentor).",
+                "Eager to learn the best ways to help their Clan thrive, m_c excitedly touches noses with (mentor).",
+                "m_c touches noses with their mentor, (mentor), looking bored and unimpressed. But on the inside, they're bouncing with euphoria around as if they were still a kit!"
+            ],
+            "careful":[
+                "m_c carefully touches noses with their new mentor, (mentor), looking quite intimidated and nervous.",
+                "m_c sits up straighter as they're called forward to be made an apprentice. While they try to look calm and collected, they still tremble a bit as they touch noses with (mentor).",
+                "Surprising (mentor), the first thing that m_c asks to do once the meeting ends is gather moss so everyone has fresh bedding.",
+                "m_c touches noses with their mentor, (mentor), looking bored and unimpressed. But on the inside, they're bouncing with euphoria around as if they were still a kit!"
+            ],
+            "charismatic":[
                 "In their eagerness, m_c accidentally shoves their nose into (mentor)'s so hard that (mentor) flinches back in surprise. m_c sheepishly apologizes, and the two have a good laugh about it.",
                 "Surprising (mentor), the first thing that m_c asks to do once the meeting ends is gather moss so everyone has fresh bedding.",
                 "m_c touches noses with (mentor) and hopes that they'll get to hunt first, so they can make sure the Clan is fed.",
                 "Eager to learn the best ways to help their Clan thrive, m_c excitedly touches noses with (mentor).",
                 "m_c purrs so hard that they're shaking as they touch noses with (mentor)."
             ],
-            "impulsive":[
+            "childish":[
                 "In their eagerness, m_c accidentally shoves their nose into (mentor)'s so hard that (mentor) flinches back in surprise. m_c sheepishly apologizes, and the two have a good laugh about it.",
                 "m_c can't seem to sit still as they bounce up to touch noses with (mentor), swearing they'll be the best warrior the Clan has ever seen.",
                 "m_c fidgets impatiently beside (mentor) as they wait for the meeting to end. They're finally an apprentice! They want to hurry up, get out there, and go, go, go!",
@@ -280,14 +320,14 @@
                 "m_c purrs so hard that they're shaking as they touch noses with (mentor).",
                 "m_c can't believe their apprenticeship is finally here! Nearly tripping over their own paws, they scurry up to (mentor), excitedly touching noses with them."
             ],
-            "quiet":[
+            "cold":[
                 "m_c touches noses with (mentor), wondering if this is truly the right path for them or not.",
                 "m_c remains calm as they touch noses with (mentor), but their twitching tail gives away how excited they truly are.",
                 "m_c sits up straighter as they're called forward to be made an apprentice. While they try to look calm and collected, they still tremble a bit as they touch noses with (mentor).",
                 "As m_c touches noses with (mentor), they hope that they won't be boring and let them do something cool. Anything but gathering moss or tick duty!",
                 "m_c touches noses with their mentor, (mentor), looking bored and unimpressed. But on the inside, they're bouncing with euphoria around as if they were still a kit!"
             ],
-            "noisy":[
+            "confident":[
                 "m_c excitedly touches noses with their new mentor, (mentor), looking quite eager to start training.",
                 "m_c strides up to their new mentor, looking very proud and excited that they were apprenticed to (mentor).",
                 "m_c can't seem to sit still as they bounce up to touch noses with (mentor), swearing they'll be the best warrior the Clan has ever seen.",
@@ -296,11 +336,33 @@
                 "m_c silently swears to StarClan to do their best for the Clan as they touch noses with (mentor).",
                 "As their mentor is about to be chosen, m_c interrupts and announces they want their mentor to be (mentor). They stride forward with confidence to touch noses with (mentor) when it's allowed."
             ],
+            "fierce":[
+                "m_c excitedly touches noses with their new mentor, (mentor), looking quite eager to start training.",
+                "In their eagerness, m_c accidentally shoves their nose into (mentor)'s so hard that (mentor) flinches back in surprise. m_c sheepishly apologizes, and the two have a good laugh about it.",
+                "As m_c touches noses with (mentor), they hope they'll get to do something that will really impress the Clan on their first day. Maybe they could catch a big, fat, rabbit? Or chase off a fox! That'll show the Clan they're the best apprentice anyone's ever seen!",
+                "m_c sits excitedly beside (mentor) as the meeting ends, and hopes they'll be do something exciting, like battle training, first. Their claws are itching to tear at something.",
+                "As m_c touches noses with (mentor), they hope that they won't be boring and let them do something cool. Anything but gathering moss or tick duty!",
+                "m_c silently swears to StarClan to do their best for the Clan as they touch noses with (mentor).",
+                "(prefix)kit sits in front of the Clan with pride, their tiny heart beating so fast they think it might explode! They very excitedly touch noses with (mentor), happy to start their apprenticeship!"
+            ],
             "insecure":[
                 "m_c carefully touches noses with their new mentor, (mentor), looking quite intimidated and nervous.",
                 "(mentor) sees how nervous m_c is and whispers a quiet encouragement to them as they touch noses, promising to be a good mentor to them.",
                 "m_c touches noses with (mentor), wondering if this is truly the right path for them or not.",
                 "Newly apprenticed m_c can't help but squeak when their mentor's name is announced, and they run with their tail tucked between their legs in embarrassment to touch noses with (mentor)."
+            ],
+            "lonesome":[
+                "m_c touches noses with (mentor), wondering if this is truly the right path for them or not.",
+                "As m_c touches noses with (mentor), they hope that they won't be boring and let them do something cool. Anything but gathering moss or tick duty!",
+                "m_c touches noses with their mentor, (mentor), looking bored and unimpressed. But on the inside, they're bouncing with euphoria around as if they were still a kit!"
+            ],
+            "loyal":[
+                "m_c can't seem to sit still as they bounce up to touch noses with (mentor), swearing they'll be the best warrior the Clan has ever seen.",
+                "Surprising (mentor), the first thing that m_c asks to do once the meeting ends is gather moss so everyone has fresh bedding.",
+                "m_c touches noses with (mentor) and hopes that they'll get to hunt first, so they can make sure the Clan is fed.",
+                "Eager to learn the best ways to help their Clan thrive, m_c excitedly touches noses with (mentor).",
+                "As m_c touches noses with (mentor), they hope they'll get to do something that will really impress the Clan on their first day. Maybe they could catch a big, fat, rabbit? Or chase off a fox! That'll show the Clan they're the best apprentice anyone's ever seen!",
+                "m_c silently swears to StarClan to do their best for the Clan as they touch noses with (mentor)."
             ],
             "nervous":[
                 "m_c carefully touches noses with their new mentor, (mentor), looking quite intimidated and nervous.",
@@ -308,17 +370,58 @@
                 "Surprising (mentor), the first thing that m_c asks to do once the meeting ends is gather moss so everyone has fresh bedding.",
                 "Newly apprenticed m_c can't help but squeak when their mentor's name is announced, and they run with their tail tucked between their legs in embarrassment to touch noses with (mentor)."
             ],
-            "polite":[
+            "patient":[
                 "m_c sits up straighter as they're called forward to be made an apprentice. While they try to look calm and collected, they still tremble a bit as they touch noses with (mentor).",
                 "Surprising (mentor), the first thing that m_c asks to do once the meeting ends is gather moss so everyone has fresh bedding.",
                 "m_c touches noses with (mentor) and hopes that they'll get to hunt first, so they can make sure the Clan is fed.",
                 "m_c touches noses with their mentor, (mentor), looking bored and unimpressed. But on the inside, they're bouncing with euphoria around as if they were still a kit!"
             ],
-            "bullying":[
+            "playful":[
+                "In their eagerness, m_c accidentally shoves their nose into (mentor)'s so hard that (mentor) flinches back in surprise. m_c sheepishly apologizes, and the two have a good laugh about it.",
+                "m_c fidgets impatiently beside (mentor) as they wait for the meeting to end. They're finally an apprentice! They want to hurry up, get out there, and go, go, go!",
+                "m_c purrs so hard that they're shaking as they touch noses with (mentor).",
+                "(prefix)kit sits in front of the Clan with pride, their tiny heart beating so fast they think it might explode! They very excitedly touch noses with (mentor), happy to start their apprenticeship!",
+                "m_c can't believe their apprenticeship is finally here! Nearly tripping over their own paws, they scurry up to (mentor), excitedly touching noses with them."
+            ],
+            "responsible":[
+                "Surprising (mentor), the first thing that m_c asks to do once the meeting ends is gather moss so everyone has fresh bedding.",
+                "m_c touches noses with (mentor) and hopes that they'll get to hunt first, so they can make sure the Clan is fed.",
+                "Eager to learn the best ways to help their Clan thrive, m_c excitedly touches noses with (mentor).",
+                "m_c touches noses with their mentor, (mentor), looking bored and unimpressed. But on the inside, they're bouncing with euphoria around as if they were still a kit!"
+            ],
+            "righteous":[
+                "m_c can't seem to sit still as they bounce up to touch noses with (mentor), swearing they'll be the best warrior the Clan has ever seen.",
+                "Surprising (mentor), the first thing that m_c asks to do once the meeting ends is gather moss so everyone has fresh bedding.",
+                "m_c touches noses with (mentor) and hopes that they'll get to hunt first, so they can make sure the Clan is fed.",
+                "Eager to learn the best ways to help their Clan thrive, m_c excitedly touches noses with (mentor).",
+                "As m_c touches noses with (mentor), they hope they'll get to do something that will really impress the Clan on their first day. Maybe they could catch a big, fat, rabbit? Or chase off a fox! That'll show the Clan they're the best apprentice anyone's ever seen!",
+                "m_c silently swears to StarClan to do their best for the Clan as they touch noses with (mentor)."
+            ],
+            "shameless":[
                 "Almost immediately after m_c touches noses with (mentor), they start asking about when they're going to go out and explore the territory.",
                 "m_c fidgets impatiently beside (mentor) as they wait for the meeting to end. They're finally an apprentice! They want to hurry up, get out there, and go, go, go!",
                 "As m_c touches noses with (mentor), they hope that they won't be boring and let them do something cool. Anything but gathering moss or tick duty!",
                 "m_c has been pestering everyone for moons on when they finally get to be an apprentice, and everyone is relieved that they're finally free of the young cat's nagging... Until they start asking about when they're going to be a warrior as soon as the meeting ends."
+            ],
+            "sneaky":[
+                "m_c remains calm as they touch noses with (mentor), but their twitching tail gives away how excited they truly are.",
+                "m_c sits up straighter as they're called forward to be made an apprentice. While they try to look calm and collected, they still tremble a bit as they touch noses with (mentor).",
+                "m_c touches noses with (mentor) and hopes that they'll get to hunt first, so they can make sure the Clan is fed.",
+                "As m_c touches noses with (mentor), they hope that they won't be boring and let them do something cool. Anything but gathering moss or tick duty!",
+                "m_c touches noses with their mentor, (mentor), looking bored and unimpressed. But on the inside, they're bouncing with euphoria around as if they were still a kit!"
+            ],
+            "strange":[
+                "In their eagerness, m_c accidentally shoves their nose into (mentor)'s so hard that (mentor) flinches back in surprise. m_c sheepishly apologizes, and the two have a good laugh about it.",
+                "m_c touches noses with (mentor), wondering if this is truly the right path for them or not.",
+                "m_c fidgets impatiently beside (mentor) as they wait for the meeting to end. They're finally an apprentice! They want to hurry up, get out there, and go, go, go!",
+                "Surprising (mentor), the first thing that m_c asks to do once the meeting ends is gather moss so everyone has fresh bedding."
+            ],
+            "strict":[
+                "m_c remains calm as they touch noses with (mentor), but their twitching tail gives away how excited they truly are.",
+                "m_c sits up straighter as they're called forward to be made an apprentice. While they try to look calm and collected, they still tremble a bit as they touch noses with (mentor).",
+                "Surprising (mentor), the first thing that m_c asks to do once the meeting ends is gather moss so everyone has fresh bedding.",
+                "m_c touches noses with (mentor) and hopes that they'll get to hunt first, so they can make sure the Clan is fed.",
+                "m_c touches noses with their mentor, (mentor), looking bored and unimpressed. But on the inside, they're bouncing with euphoria around as if they were still a kit!"
             ],
             "troublesome":[
                 "In their eagerness, m_c accidentally shoves their nose into (mentor)'s so hard that (mentor) flinches back in surprise. m_c sheepishly apologizes, and the two have a good laugh about it.",
@@ -329,7 +432,13 @@
                 "As m_c touches noses with (mentor), they hope that they won't be boring and let them do something cool. Anything but gathering moss or tick duty!",
                 "m_c has been pestering everyone for moons on when they finally get to be an apprentice, and everyone is relieved that they're finally free of the young cat's nagging... Until they start asking about when they're going to be a warrior as soon as the meeting ends."
             ],
-            "daydreamer":[
+            "vengeful":[
+                "m_c sits up straighter as they're called forward to be made an apprentice. While they try to look calm and collected, they still tremble a bit as they touch noses with (mentor).",
+                "As m_c touches noses with (mentor), they hope they'll get to do something that will really impress the Clan on their first day. Maybe they could catch a big, fat, rabbit? Or chase off a fox! That'll show the Clan they're the best apprentice anyone's ever seen!",
+                "m_c sits excitedly beside (mentor) as the meeting ends, and hopes they'll be do something exciting, like battle training, first. Their claws are itching to tear at something.",
+                "As m_c touches noses with (mentor), they hope that they won't be boring and let them do something cool. Anything but gathering moss or tick duty!"
+            ],
+            "wise":[
                 "m_c remains calm as they touch noses with (mentor), but their twitching tail gives away how excited they truly are.",
                 "m_c sits up straighter as they're called forward to be made an apprentice. While they try to look calm and collected, they still tremble a bit as they touch noses with (mentor).",
                 "Surprising (mentor), the first thing that m_c asks to do once the meeting ends is gather moss so everyone has fresh bedding.",
@@ -337,7 +446,8 @@
                 "Eager to learn the best ways to help their Clan thrive, m_c excitedly touches noses with (mentor).",
                 "m_c silently swears to StarClan to do their best for the Clan as they touch noses with (mentor).",
                 "m_c touches noses with their mentor, (mentor), looking bored and unimpressed. But on the inside, they're bouncing with euphoria around as if they were still a kit!"
-            ]
+            ],
+            "thoughtful" : []
         },
         "no_leader":{
             "general": [
@@ -591,43 +701,44 @@
                 "Eager to learn the best ways to help their Clan thrive, m_c excitedly touches noses with (mentor).",
                 "m_c silently swears to StarClan to do their best for the Clan as they touch noses with (mentor).",
                 "m_c touches noses with their mentor, (mentor), looking bored and unimpressed. But on the inside, they're bouncing with euphoria around as if they were still a kit!"
-            ]
+            ],
+            "thoughtful" : []
         },
         "parent1":{
             "alive":[
-                "{parent1} is watching with pride as m_c is named and given to (mentor) to apprentice under. They know that (mentor) was a good choice.",
-                "(prefix)kit loudly complains as {parent1} pulls them over to quickly groom their pelt. They manage to wriggle away and scurry off to the front of the crowd for their ceremony, where they are renamed to m_c and apprenticed to (mentor). ",
-                "Even though they are excited to finally be made an apprentice, it takes a bit of coaxing for {parent1} for (prefix)kit to step forward for their ceremony. {parent1} watches in pride as they're named m_c, and touch noses with (mentor)."
+                "p1 is watching with pride as m_c is named and given to (mentor) to apprentice under. They know that (mentor) was a good choice.",
+                "(prefix)kit loudly complains as p1 pulls them over to quickly groom their pelt. They manage to wriggle away and scurry off to the front of the crowd for their ceremony, where they are renamed to m_c and apprenticed to (mentor). ",
+                "Even though they are excited to finally be made an apprentice, it takes a bit of coaxing for p1 for (prefix)kit to step forward for their ceremony. p1 watches in pride as they're named m_c, and touch noses with (mentor)."
             ],
             "dead":[
-                "m_c hopes that {parent1} is watching in pride from StarClan as they are apprenticed to (mentor).",
-                "m_c wishes that they could be happier about being made an apprentice as they touch noses with (mentor), but all they can think about is how much they wish that {parent1} was still there to chant their name with the rest of the Clan.",
-                "m_c tries to keep up a brave face as they're apprenticed to (mentor), but they keep stealing glances at the crowd, as if trying to find {parent1} despite knowing they're no longer with them.",
-                "m_c sits beside their new mentor, (mentor) as the meeting comes to a close. Their claws dig into the ground as they glare up at the sky, wondering why {parent1} couldn't be there with them at such an important moment.",
-                "m_c smiles up at the stars as they sit beside (mentor). The stars seem to shine brighter, and m_c knows it's a sign that {parent1} is still watching over them.",
-                "As m_c touches noses with their new mentor, (mentor), they make a silent promise to {parent1} to make them proud, and to take care of the Clan in their parent's absence."
+                "m_c hopes that p1 is watching in pride from StarClan as they are apprenticed to (mentor).",
+                "m_c wishes that they could be happier about being made an apprentice as they touch noses with (mentor), but all they can think about is how much they wish that p1 was still there to chant their name with the rest of the Clan.",
+                "m_c tries to keep up a brave face as they're apprenticed to (mentor), but they keep stealing glances at the crowd, as if trying to find p1 despite knowing they're no longer with them.",
+                "m_c sits beside their new mentor, (mentor) as the meeting comes to a close. Their claws dig into the ground as they glare up at the sky, wondering why p1 couldn't be there with them at such an important moment.",
+                "m_c smiles up at the stars as they sit beside (mentor). The stars seem to shine brighter, and m_c knows it's a sign that p1 is still watching over them.",
+                "As m_c touches noses with their new mentor, (mentor), they make a silent promise to p1 to make them proud, and to take care of the Clan in their parent's absence."
             ]
         },
         "parent2":{
             "alive":[],
             "dead":[
-                "m_c hopes that {parent2} is watching in pride from StarClan as they are apprenticed to (mentor).",
-                "m_c wishes that they could be happier about being made an apprentice as they touch noses with (mentor), but all they can think about is how much they wish that {parent2} was still there to chant their name with the rest of the Clan.",
-                "m_c tries to keep up a brave face as they're apprenticed to (mentor), but they keep stealing glances at the crowd, as if trying to find {parent2} despite knowing they're no longer with them.",
-                "m_c sits beside their new mentor, (mentor) as the meeting comes to a close. Their claws dig into the ground as they glare up at the sky, wondering why {parent2} couldn't be there with them at such an important moment.",
-                "m_c smiles up at the stars as they sit beside (mentor). The stars seem to shine brighter, and m_c knows it's a sign that {parent2} is still watching over them.",
-                "As m_c touches noses with their new mentor, (mentor), they make a silent promise to {parent2} to make them proud, and to take care of the Clan in their parent's absence."
+                "m_c hopes that p2 is watching in pride from StarClan as they are apprenticed to (mentor).",
+                "m_c wishes that they could be happier about being made an apprentice as they touch noses with (mentor), but all they can think about is how much they wish that p2 was still there to chant their name with the rest of the Clan.",
+                "m_c tries to keep up a brave face as they're apprenticed to (mentor), but they keep stealing glances at the crowd, as if trying to find p2 despite knowing they're no longer with them.",
+                "m_c sits beside their new mentor, (mentor) as the meeting comes to a close. Their claws dig into the ground as they glare up at the sky, wondering why p2 couldn't be there with them at such an important moment.",
+                "m_c smiles up at the stars as they sit beside (mentor). The stars seem to shine brighter, and m_c knows it's a sign that p2 is still watching over them.",
+                "As m_c touches noses with their new mentor, (mentor), they make a silent promise to p2 to make them proud, and to take care of the Clan in their parent's absence."
             ]
         },
         "both_parents":{
             "alive":[],
             "dead":[
-                "m_c hopes that {parent1} and {parent2} are watching in pride from StarClan as they are apprenticed to (mentor).",
-                "m_c wishes that they could be happier about being made an apprentice as they touch noses with (mentor), but all they can think about is how much they wish that {parent1} and {parent2} were still there to chant their name with the rest of the Clan.",
-                "m_c tries to keep up a brave face as they're apprenticed to (mentor), but they keep stealing glances at the crowd, as if trying to find {parent1} and {parent2} despite knowing they're no longer with them.",
-                "m_c sits beside their new mentor, (mentor) as the meeting comes to a close. Their claws dig into the ground as they glare up at the sky, wondering why {parent1} and {parent2} couldn't be there with them at such an important moment.",
-                "m_c smiles up at the stars as they sit beside (mentor). The stars seem to shine brighter, and m_c knows it's a sign that {parent1} and {parent2} are still watching over them.",
-                "As m_c touches noses with their new mentor, (mentor), they make a silent promise to {paren1} and {parent2} to make them proud, and to take care of the Clan in their parent's absence."
+                "m_c hopes that p1 and p2 are watching in pride from StarClan as they are apprenticed to (mentor).",
+                "m_c wishes that they could be happier about being made an apprentice as they touch noses with (mentor), but all they can think about is how much they wish that p1 and p2 were still there to chant their name with the rest of the Clan.",
+                "m_c tries to keep up a brave face as they're apprenticed to (mentor), but they keep stealing glances at the crowd, as if trying to find p1 and p2 despite knowing they're no longer with them.",
+                "m_c sits beside their new mentor, (mentor) as the meeting comes to a close. Their claws dig into the ground as they glare up at the sky, wondering why p1 and p2 couldn't be there with them at such an important moment.",
+                "m_c smiles up at the stars as they sit beside (mentor). The stars seem to shine brighter, and m_c knows it's a sign that p1 and p2 are still watching over them.",
+                "As m_c touches noses with their new mentor, (mentor), they make a silent promise to {paren1} and p2 to make them proud, and to take care of the Clan in their parent's absence."
             ]
         }
 
@@ -656,22 +767,40 @@
                 "Knowing the Clan is in desperate need of a medicine cat, and wanting to do something to stand out and do something more important, m_c announces mid-meeting that they want to be the new medicine cat apprentice.",
                 "Worried they may not be good as a hunter or fighter, but still wanting to make their Clan proud somehow, m_c decides to become a medicine cat, and is trained by StarClan."
             ],
-            "inquisitive": [],
-            "sweet": [],
-            "attention-seeker":[],
-            "bossy":[],
-            "bouncy":[],
+            "abandoned": [],
+            "adventurous": [],
+            "altruistic": [],
+            "compassionate": [],
+            "empathetic":[],
+            "loving":[],
+            "faithful":[],
+            "ambitious":[],
+            "bloodthirsty":[],
+            "bold":[],
             "daring":[],
-            "charming":[],
-            "impulsive":[],
-            "quiet":[],
-            "noisy":[],
+            "calm":[],
+            "careful":[],
+            "charismatic":[],
+            "childish":[],
+            "cold":[],
+            "confident":[],
+            "fierce":[],
             "insecure":[],
+            "lonesome":[],
+            "loyal":[],
             "nervous":[],
-            "polite":[],
-            "bullying":[],
+            "patient":[],
+            "playful":[],
+            "responsible":[],
+            "righteous":[],
+            "shameless":[],
+            "sneaky":[],
+            "strange":[],
+            "strict":[],
             "troublesome":[],
-            "daydreamer":[]
+            "vengeful":[],
+            "wise":[],
+            "thoughtful" : []
         },
         "no_leader":{
             "general":[
@@ -695,27 +824,61 @@
                 "The thought alone of fighting and hurting another cat makes m_c shiver. Knowing the Clan needs a medicine cat, they seize the chance to do good for the Clan without harming others, they take on the role of medicine cat apprentice.",
                 "Knowing the Clan is in desperate need of a medicine cat, and wanting to do something to stand out and do something more important, m_c announces mid-meeting that they want to be the new medicine cat apprentice.",
                 "Worried they may not be good as a hunter or fighter, but still wanting to make their Clan proud somehow, m_c decides to become a medicine cat, and is trained by StarClan."
-            ]
+            ],
+            "abandoned": [],
+            "adventurous": [],
+            "altruistic": [],
+            "compassionate": [],
+            "empathetic":[],
+            "loving":[],
+            "faithful":[],
+            "ambitious":[],
+            "bloodthirsty":[],
+            "bold":[],
+            "daring":[],
+            "calm":[],
+            "careful":[],
+            "charismatic":[],
+            "childish":[],
+            "cold":[],
+            "confident":[],
+            "fierce":[],
+            "insecure":[],
+            "lonesome":[],
+            "loyal":[],
+            "nervous":[],
+            "patient":[],
+            "playful":[],
+            "responsible":[],
+            "righteous":[],
+            "shameless":[],
+            "sneaky":[],
+            "strange":[],
+            "strict":[],
+            "troublesome":[],
+            "vengeful":[],
+            "wise":[],
+            "thoughtful" : []
         },
         "parent1":{
             "alive":[],
             "dead":[
-                "m_c decides to become a medicine cat apprentice under (mentor) in hopes that they will be able to see {parent1} in StarClan.",
-                "As the new medicine cat apprentice, m_c, dreams of StarClan with their mentor, (mentor), for the first time, they are greeted by many StarClan cats. One of which they recognize as {parent1}, who is watching in pride as the rest of StarClan's ranks accept the new medicine cat apprentice."
+                "m_c decides to become a medicine cat apprentice under (mentor) in hopes that they will be able to see p1 in StarClan.",
+                "As the new medicine cat apprentice, m_c, dreams of StarClan with their mentor, (mentor), for the first time, they are greeted by many StarClan cats. One of which they recognize as p1, who is watching in pride as the rest of StarClan's ranks accept the new medicine cat apprentice."
             ]
         },
         "parent2":{
             "alive":[],
             "dead":[
-                "m_c decides to become a medicine cat apprentice under (mentor) in hopes that they will be able to see {parent2} in StarClan.",
-                "As the new medicine cat apprentice, m_c, dreams of StarClan with their mentor, (mentor), for the first time, they are greeted by many StarClan cats. One of which they recognize as {parent2}, who is watching in pride as the rest of StarClan's ranks accept the new medicine cat apprentice."
+                "m_c decides to become a medicine cat apprentice under (mentor) in hopes that they will be able to see p2 in StarClan.",
+                "As the new medicine cat apprentice, m_c, dreams of StarClan with their mentor, (mentor), for the first time, they are greeted by many StarClan cats. One of which they recognize as p2, who is watching in pride as the rest of StarClan's ranks accept the new medicine cat apprentice."
             ]
         },
         "both_parents":{
             "alive":[],
             "dead":[
-                "m_c decides to become a medicine cat apprentice under (mentor) in hopes that they will be able to see {parent1} and {parent2} in StarClan",
-                "As the new medicine cat apprentice, m_c, dreams of StarClan with their mentor, (mentor), for the first time, they are greeted by many StarClan cats. Two of which they recognize as {parent1} and {parent2}, who are watching in pride as the rest of StarClan's ranks accept the new medicine cat apprentice."
+                "m_c decides to become a medicine cat apprentice under (mentor) in hopes that they will be able to see p1 and p2 in StarClan",
+                "As the new medicine cat apprentice, m_c, dreams of StarClan with their mentor, (mentor), for the first time, they are greeted by many StarClan cats. Two of which they recognize as p1 and p2, who are watching in pride as the rest of StarClan's ranks accept the new medicine cat apprentice."
             ]
         }
     },
@@ -840,23 +1003,23 @@
         "parent1":{
             "alive":[],
             "dead":[
-                "(prefix)paw almost sobs as they spot {parent1} step out of the crowd towards them to congratulate them on completing their training. {parent1} rests their muzzle on (prefix)paw's head, naming them m_c, and welcoming them as a full medicine cat.",
-                "As a StarClan cat steps forward to give, (prefix)paw their new name of m_c, they spot {parent1} watching them proudly with the other StarClan cats."
+                "(prefix)paw almost sobs as they spot p1 step out of the crowd towards them to congratulate them on completing their training. p1 rests their muzzle on (prefix)paw's head, naming them m_c, and welcoming them as a full medicine cat.",
+                "As a StarClan cat steps forward to give, (prefix)paw their new name of m_c, they spot p1 watching them proudly with the other StarClan cats."
             ]
         },
         "parent2":{
             "alive":[],
             "dead":[
-                "(prefix)paw almost sobs as they spot {parent2} step out of the crowd towards them to congratulate them on completing their training. {parent2} rests their muzzle on (prefix)paw's head, naming them m_c, and welcoming them as a full medicine cat.",
-                "As a StarClan cat steps forward to give, (prefix)paw their new name of m_c, they spot {parent2} watching them proudly with the other StarClan cats."
+                "(prefix)paw almost sobs as they spot p2 step out of the crowd towards them to congratulate them on completing their training. p2 rests their muzzle on (prefix)paw's head, naming them m_c, and welcoming them as a full medicine cat.",
+                "As a StarClan cat steps forward to give, (prefix)paw their new name of m_c, they spot p2 watching them proudly with the other StarClan cats."
             ]
         },
         "both_parents":{
             "alive":[],
             "dead":[
-                "(prefix)paw almost sobs as they spot {parent1} and {parent2} step out of the crowd towards them to congratulate them on completing their training. {parent1} rests their muzzle on (prefix)paw's head, naming them m_c, and welcoming them as a full medicine cat.",
-                "(prefix)paw almost sobs as they spot {parent1} and {parent2} step out of the crowd towards them to congratulate them on completing their training. {parent2} rests their muzzle on (prefix)paw's head, naming them m_c, and welcoming them as a full medicine cat.",
-                "As a StarClan cat steps forward to give, (prefix)paw their new name of m_c, they spot {parent1} and {parent2} watching them proudly with the other StarClan cats."
+                "(prefix)paw almost sobs as they spot p1 and p2 step out of the crowd towards them to congratulate them on completing their training. p1 rests their muzzle on (prefix)paw's head, naming them m_c, and welcoming them as a full medicine cat.",
+                "(prefix)paw almost sobs as they spot p1 and p2 step out of the crowd towards them to congratulate them on completing their training. p2 rests their muzzle on (prefix)paw's head, naming them m_c, and welcoming them as a full medicine cat.",
+                "As a StarClan cat steps forward to give, (prefix)paw their new name of m_c, they spot p1 and p2 watching them proudly with the other StarClan cats."
             ]
         }
     },
