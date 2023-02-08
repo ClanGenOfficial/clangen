@@ -70,47 +70,47 @@ class Events():
                 self.one_moon_cat(cat)
 
             else:
-                    # ---------------------------------------------------------------------------- #
-                    #                              exiled cat events                               #
-                    # ---------------------------------------------------------------------------- #
-                    # aging the cat
-                    cat.one_moon()
-                    cat.moons += 1
-                    if cat.moons == 6:
-                        cat.age = 'adolescent'
-                    elif cat.moons == 12:
-                        cat.age = 'adult'
-                    elif cat.moons == 120:
-                        cat.age = 'elder'
+                # ---------------------------------------------------------------------------- #
+                #                              exiled cat events                               #
+                # ---------------------------------------------------------------------------- #
+                # aging the cat
+                cat.one_moon()
+                cat.moons += 1
+                if cat.moons == 6:
+                    cat.age = 'adolescent'
+                elif cat.moons == 12:
+                    cat.age = 'adult'
+                elif cat.moons == 120:
+                    cat.age = 'elder'
 
-                    # killing exiled cats
-                    if cat.moons > randint(100, 200) and (cat.exiled or cat.outside):
-                        if choice([1, 2, 3, 4, 5]) == 1 and not cat.dead:
-                            cat.dead = True
-                            if cat.exiled:
-                                text = f'Rumors reach your Clan that the exiled {str(cat.name)} has died recently.'
-                            else:
-                                text = f'Rumors reach your Clan that {str(cat.name)} has died recently.'
-                            game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
-
-                    if cat.exiled and cat.status == 'leader' and not cat.dead and randint(
-                            1, 10) == 1:
-                        game.clan.leader_lives -= 1
-                        if game.clan.leader_lives > 0:
-                            text = f'Rumors reach your Clan that the exiled {str(cat.name)} lost a life recently.'
-                            game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
-                        else:
-                            text = f'Rumors reach your Clan that the exiled {str(cat.name)} has died recently.'
-                            game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
-                            cat.dead = True
-
-                    elif cat.exiled and cat.status == 'leader' and not cat.dead and randint(
-                            1, 45) == 1:
-                        game.clan.leader_lives -= 10
+                # killing exiled cats
+                if cat.moons > randint(100, 200) and (cat.exiled or cat.outside):
+                    if choice([1, 2, 3, 4, 5]) == 1 and not cat.dead:
                         cat.dead = True
+                        if cat.exiled:
+                            text = f'Rumors reach your Clan that the exiled {str(cat.name)} has died recently.'
+                        else:
+                            text = f'Rumors reach your Clan that {str(cat.name)} has died recently.'
+                        game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
+
+                if cat.exiled and cat.status == 'leader' and not cat.dead and randint(
+                        1, 10) == 1:
+                    game.clan.leader_lives -= 1
+                    if game.clan.leader_lives > 0:
+                        text = f'Rumors reach your Clan that the exiled {str(cat.name)} lost a life recently.'
+                        game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
+                    else:
                         text = f'Rumors reach your Clan that the exiled {str(cat.name)} has died recently.'
                         game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
-                        game.clan.leader_lives = 0
+                        cat.dead = True
+
+                elif cat.exiled and cat.status == 'leader' and not cat.dead and randint(
+                        1, 45) == 1:
+                    game.clan.leader_lives -= 10
+                    cat.dead = True
+                    text = f'Rumors reach your Clan that the exiled {str(cat.name)} has died recently.'
+                    game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
+                    game.clan.leader_lives = 0
 
         # Handle injuries and relationships.
         for cat in Cat.all_cats.values():
@@ -541,7 +541,6 @@ class Events():
             self.perform_ceremonies(cat)
             self.coming_out(cat)
             self.relation_events.handle_having_kits(cat, clan=game.clan)
-            cat.one_moon()
             return
 
         # check for death/reveal/risks/retire caused by permanent conditions
@@ -769,7 +768,6 @@ class Events():
         #                      promote cats and add to event list                      #
         # ---------------------------------------------------------------------------- #
         ceremony = []
-        print(f"Promoting {cat.name} to {promoted_to}")
         cat.status_change(promoted_to)
         involved_cats = [cat.ID]  # Clearly, the cat the ceremony is about is involved.
         game.ranks_changed_timeskip = True
@@ -809,6 +807,7 @@ class Events():
             grown = True
         else:
             grown = False
+
         if dead_mentor:
             mentor_txt = "dead_mentor"
             involved_cats.append(dead_mentor)
@@ -817,25 +816,30 @@ class Events():
         elif not dead_mentor and cat.mentor and grown:
             mentor_txt = "living_mentor"
             involved_cats.append(cat.mentor)
+
         if leader_outside or leader_exiled or leader_dead:
             leader_txt = "no_leader"
         else:
             leader_txt = "leader"
             involved_cats.append(game.clan.leader)
+
         if cat.backstory == ['abandoned1', 'abandoned2', 'abandoned3']:
             backstory_txt = "abandoned"
+
         if cat.parent1 and not cat.parent2:
             parent_txt = "parent1"
             if parent1.dead:
                 parent_status = "dead"
             else:
                 parent_status = "alive"
+
         if cat.parent2:
             parent_txt = choice(["parent1", "parent2"])
             if parent2.dead:
                 parent_status = "dead"
             else:
                 parent_status = "alive"
+
         if cat.parent1 and cat.parent2:
             parent_txt = choice(["both_parents", "parent1", "parent2"])
             if parent1.dead and parent2.dead:
@@ -843,24 +847,26 @@ class Events():
             elif not parent1.dead and not parent2.dead:
                 parent_status = "alive"
 
-
-        ceremony += CEREMONY_TXT[promoted_to][leader_txt][trait]
-        print(CEREMONY_TXT[promoted_to][leader_txt][trait])
-        ceremony += CEREMONY_TXT[promoted_to][leader_txt][general_txt]
-        if mentor_txt != None:
-            ceremony += CEREMONY_TXT[promoted_to][leader_txt][mentor_txt]
-        if backstory_txt:
-            ceremony += CEREMONY_TXT[promoted_to][leader_txt][backstory_txt]
-        if cat.parent1:
-            ceremony += CEREMONY_TXT[promoted_to][parent_txt][parent_status]
+        try:
+            ceremony += CEREMONY_TXT[promoted_to][leader_txt][trait]
+            ceremony += CEREMONY_TXT[promoted_to][leader_txt][general_txt]
+            if mentor_txt != None:
+                ceremony += CEREMONY_TXT[promoted_to][leader_txt][mentor_txt]
+            if backstory_txt:
+                ceremony += CEREMONY_TXT[promoted_to][leader_txt][backstory_txt]
+            if cat.parent1:
+                ceremony += CEREMONY_TXT[promoted_to][parent_txt][parent_status]
+        except KeyError:
+            print("Error loading ceremony text. ")
+            ceremony += [""]
                 
-            '''#DEAD MENTOR CEREMONY
-                if len(cat.former_mentor) > 0:
-                    dead_mentor = None
-                    for x in range(len(cat.former_mentor)):
-                        if Cat.fetch_cat(cat.former_mentor[x]).dead:
-                            dead_mentor = Cat.fetch_cat(cat.former_mentor[x])
-                            break'''
+        '''#DEAD MENTOR CEREMONY
+            if len(cat.former_mentor) > 0:
+                dead_mentor = None
+                for x in range(len(cat.former_mentor)):
+                    if Cat.fetch_cat(cat.former_mentor[x]).dead:
+                        dead_mentor = Cat.fetch_cat(cat.former_mentor[x])
+                        break'''
                      
         # getting the mentor's name
         if dead_mentor:
@@ -876,7 +882,6 @@ class Events():
         # getting the random honor if it's needed
         random_honor = None
         if promoted_to == 'warrior':
-            TRAITS = None
             with open(f"{resource_dir}ceremony_traits.json", 'r') as read_file:
                 TRAITS = ujson.loads(read_file.read())
             if not leader_dead and not leader_exiled and not leader_outside:
