@@ -6,6 +6,20 @@ directory = os.path.dirname(__file__)
 if directory:
     os.chdir(directory)
 
+# Setup logging
+import logging 
+file_handler = logging.FileHandler("clangen.log")
+stream_handler = logging.StreamHandler()
+logging.root.addHandler(file_handler)
+logging.root.addHandler(stream_handler)
+
+def log_crash(type, value, tb):
+    # Log exception on crash
+    logging.critical("Uncaught exception", exc_info=(type, value, tb))
+
+sys.excepthook = log_crash
+
+# Load game
 from scripts.game_structure.load_cat import *
 from scripts.cat.sprites import sprites
 from scripts.clan import clan_class
