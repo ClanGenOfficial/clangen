@@ -1113,7 +1113,7 @@ class Events():
             other_cat = None
 
         if not int(
-                random.random() * 1) and cat.age != 'kitten' and cat.age != 'adolescent' and not self.new_cat_invited:
+                random.random() * chance) and cat.age != 'kitten' and cat.age != 'adolescent' and not self.new_cat_invited:
             self.new_cat_invited = True
 
             self.new_cat_events.handle_new_cats(cat=cat, other_cat=other_cat, war=self.at_war,
@@ -1133,6 +1133,8 @@ class Events():
                 return
         name = str(cat.name)
         other_name = str(other_cat.name)
+
+        
 
         if cat.status == 'kitten' and other_cat.status != 'kitten':
             interactions.extend([

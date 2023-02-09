@@ -1172,31 +1172,6 @@ class ProfileScreen(Screens):
                             break
                     influenced_skill = adjust_skill
                     break
-        if influenced_trait in Cat.skill_groups.get('special'):
-            adjust_skill = f'unlock their abilities as a {influenced_trait}'
-            for y in vowels:
-                if influenced_trait.startswith(y):
-                    adjust_skill = adjust_skill.replace(' a ', ' an ')
-                    break
-            influenced_trait = adjust_skill
-        elif influenced_trait in Cat.skill_groups.get('star'):
-            adjust_skill = f'grow a {influenced_trait}'
-            influenced_trait = adjust_skill
-        elif influenced_trait in Cat.skill_groups.get('smart'):
-            adjust_skill = f'become {influenced_trait}'
-            influenced_trait = adjust_skill
-        else:
-            # for loop to assign proper grammar to all these groups
-            become_group = ['heal', 'teach', 'mediate', 'hunt', 'fight', 'speak']
-            for x in become_group:
-                if influenced_trait in Cat.skill_groups.get(x):
-                    adjust_skill = f'become a {influenced_trait}'
-                    for y in vowels:
-                        if influenced_trait.startswith(y):
-                            adjust_skill = adjust_skill.replace(' a ', ' an ')
-                            break
-                    influenced_trait = adjust_skill
-                    break
         if self.the_cat.former_mentor:
             former_mentor_ob = Cat.fetch_cat(self.the_cat.former_mentor[-1])
             mentor = former_mentor_ob.name
@@ -1210,13 +1185,13 @@ class ProfileScreen(Screens):
                 influence_history = 'This cat has not begun training.'
             if self.the_cat.status in ['apprentice', 'medicine cat apprentice']:
                 influence_history = 'This cat has not finished training.'
-        elif influenced_trait is not None and influenced_skill is None:
-            influence_history = f"The influence of their mentor, {mentor}, caused this cat to {influenced_trait}."
-        elif influenced_trait is None and influenced_skill is not None:
-            if influenced_skill in ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']:
-                influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_skill.lower()}."
+        elif influenced_skill is not None and influenced_trait is None:
+            influence_history = f"The influence of their mentor, {mentor}, caused this cat to {influenced_skill.lower()}."
+        elif influenced_skill is None and influenced_trait is not None:
+            if influenced_trait in ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']:
+                influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait.lower()}."
             else:
-                influence_history = f"The influence of their mentor, {mentor}, caused this cat to {influenced_skill}."
+                influence_history = f"This cat's mentor was {mentor}."
         elif influenced_trait is not None and influenced_skill is not None:
             influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait} as well as {influenced_skill.lower()}."
         else:

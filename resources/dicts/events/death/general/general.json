@@ -183,7 +183,7 @@
     {
         "camp": "any",
         "tags": ["classic", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c died from infected wounds",
+        "death_text": "m_c died from infected wounds.",
         "history_text": ["m_c died from infected wounds.", null],
         "cat_trait": null,
         "cat_skill": null,
@@ -193,7 +193,7 @@
     {
         "camp": "any",
         "tags": ["multi_death", "classic", "other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c and r_c die from eating tainted prey",
+        "death_text": "m_c and r_c die from eating tainted prey.",
         "history_text": ["m_c died from eating tainted prey.", "died from eating tainted prey"],
         "cat_trait": null,
         "cat_skill": null,

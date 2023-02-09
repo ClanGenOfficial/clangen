@@ -106,7 +106,7 @@ class Condition_Events():
         involved_cats = [cat.ID]
 
         # handle if the current cat is already injured
-        if cat.is_injured():
+        if cat.is_injured() and game.clan.game_mode != 'classic':
             triggered, event_string = self.handle_already_injured(cat)
             text = event_string
         else:
@@ -167,7 +167,7 @@ class Condition_Events():
                                 if injury_event.history_text[0] is not None:
                                     history_text = event_text_adjust(Cat, injury_event.history_text[0], cat, other_cat,
                                                                      other_clan_name, keep_m_c=True)
-                                    cat.scar_event = str(history_text)
+                                    cat.scar_event.append(str(history_text))
                     else:
                         # record proper history text possibilities
                         if injury_event.history_text is not None:
