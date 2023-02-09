@@ -342,13 +342,14 @@ def event_text_adjust(Cat, text, cat, other_cat=None, other_clan_name=None, keep
 
     return adjust_text
 
-def ceremony_text_adjust(Cat, text, cat, dead_mentor=None, random_honor=None):
+
+def ceremony_text_adjust(Cat, text, cat, dead_mentor=None, mentor=None, previous_alive_mentor=None, random_honor=None):
     name = str(cat.name)
     prefix = str(cat.name.prefix)
     clanname = str(game.clan.name + "Clan")
 
-    if cat.mentor:
-        mentor_name = str(Cat.fetch_cat(cat.mentor).name)
+    if mentor:
+        mentor_name = str(mentor.name)
     else:
         mentor_name = "mentor_placeholder"
 
@@ -356,6 +357,11 @@ def ceremony_text_adjust(Cat, text, cat, dead_mentor=None, random_honor=None):
         dead_mentor_name = str(dead_mentor.name)
     else:
         dead_mentor_name = "dead_mentor_placeholder"
+
+    if previous_alive_mentor:
+        previous_alive_mentor_name = str(previous_alive_mentor.name)
+    else:
+        previous_alive_mentor_name = "previous_mentor_name"
 
     if game.clan.leader:
         leader_name = str(game.clan.leader.name)
@@ -374,7 +380,9 @@ def ceremony_text_adjust(Cat, text, cat, dead_mentor=None, random_honor=None):
     adjust_text = adjust_text.replace("m_c", name)
     adjust_text = adjust_text.replace("c_n", clanname)
     adjust_text = adjust_text.replace("(mentor)", mentor_name)
-    adjust_text = adjust_text.replace("(deadmentor)", mentor_name)
+    adjust_text = adjust_text.replace("l_n", leader_name)
+    adjust_text = adjust_text.replace("(deadmentor)", dead_mentor_name)
+    adjust_text = adjust_text.replace("(previous_mentor)", previous_alive_mentor_name)
 
     if "p1" in adjust_text and "p2" in adjust_text and len(parent_names) >= 2:
         adjust_text = adjust_text.replace("p1", parent_names[0])
