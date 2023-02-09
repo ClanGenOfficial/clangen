@@ -1105,5 +1105,39 @@
 	"max_cats": 6,
 	"antagonize_text": null,
 	"antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_hunt_leaffallvanish1",
+    "biome": "Any",
+    "season": "leaf-fall",
+    "tags": ["hunting", "no_app", "small_prey0", "medium_prey1", "dislike", "distrust", "disrespect", "patrol_to_r_c", "large_prey3", "injury", "sprain", "sore", "shivering"],
+    "intro_text": "The rain seems a constant, unceasing beat, punctuating the steps of the hunting patrol as they march towards their hunting ground. But there's one less set of footsteps than there should be. p_l can't see r_c in the watery haze.",
+    "decline_text": "r_c eventually catches up.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+            "The patrol backtracks. r_c is found, huddled under a bush - they lost the path, and sight of their clanmates, but sensibly remained put. It's one more obstacle in a miserable day of hunting. They return with prey, but it's exhausting and barely worth the effort.",
+            "p_l nearly jumps out of their pelt when r_c materialises next to them. Where in StarClan have they been?! But no, r_c has found a corpse of trees so thick and overgrowth that they're merely damp, not soaked. It's better than p_l could have hoped for, and the hunting patrol can return to camp with a decent haul.",
+            null,
+            "p_l, leading the search for s_c, hears a yowl in the distance. They charge towards the sound, swerving around trees, spotting s_c at the base of a hazel. They're staring up, tail lashing intently. On a branch above the cats, an owl sits with drooping, waterlogged wings. <i>Oh.</i> Yes, that'll do nicely."
+    ],
+    "fail_text": [
+            "p_l is silently furious at r_c when they find them. Leaf-fall is no time to waste what could have been a productive hunting patrol with whatever nonsence r_c was up to.",
+            null,
+            null,
+            "r_c is discovered huddled under a bush, soaked to the skin and dangerously cold."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            "r_c was scarred after disappearing on patrol and being discovered injured.",
+            null
+    ]
 }
 ]

@@ -1185,9 +1185,8 @@
 	"max_cats": 6,
 	"antagonize_text": null,
 	"antagonize_fail_text": null
-}
-]
-    {
+},
+{
         "patrol_id": "fst_hunt_bird1",
         "biome": "forest",
         "season": "greenleaf",
@@ -1232,4 +1231,68 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null
-    }
+},
+{
+	"patrol_id": "fst_hunt_formergensquirrel_greenleaf1",
+	"biome": "forest",
+	"season": "greenleaf",
+    "tags": [
+        "hunting",
+        "medium_prey"
+    ],
+    "intro_text": "Your patrol comes across a squirrel. It's engrossed in nibbling at a morsel beneath a tree.",
+    "success_text": [
+        "Stealthily, r_c stalks forward. The squirrel has no idea what's coming as the cat pounces on it and breaks its neck. r_c sends a silent thanks to StarClan for this prey.",
+        "r_c rapidly pads towards the squirrel, their tailtip twitching in excitement. The squirrel is alerted to their presence with a bird's alarm call, but r_c launches themself forward and cuts off its escape with a bite to the back of the head."
+    ],
+    "fail_text": [
+        "Your patrol narrowly misses the squirrel as it's alerted by a bird's alarm call."
+    ],
+    "decline_text": "Your patrol ignores the squirrel.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "win_skills": [
+        "good hunter",
+        "great hunter",
+        "fantastic hunter"
+    ],
+    "min_cats": 1,
+    "max_cats": 3,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_hunt_greenleafvanish1",
+    "biome": "Any",
+    "season": "greenleaf",
+    "tags": ["hunting", "no_app", "medium_prey0", "medium_prey1", "dislike", "distrust", "disrespect", "patrol_to_r_c", "large_prey3", "injury", "sprain", "sore", "shivering"],
+    "intro_text": "The patrol heads out, determined to visit a distant but well-known clearing, where hopefully the grass has set to seed and attracted birds. However, as they get nearer, p_l looks around and realises r_c isn't with them.",
+    "decline_text": "r_c eventually catches up.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+            "r_c seems confused when they come trotting up, responding to p_l's yowls. They thought this was the hunting spot? Situation solved, p_l decides it may as well be, and the patrol disperses to do their actual job. It doesn't turn out to be a particularly bountiful corner of the woods though.",
+            "The patrol backtracks and finds r_c at the bottom of a precarious looking embankment, but are encouraged to join them - r_c has found a fallen bird's nest, and needs help carting the delicous nestlings back to camp.",
+            null,
+            "It's not ideal. s_c apologises - they were too caught up in assessing the prey levels in the clearing, and hadn't realised the patrol couldn't see them. Still, everything is smoothed over nicely and the cats bring home a successful prize of seed-fattened birds."
+    ],
+    "fail_text": [
+            "The patrol finds where r_c has wandered off to, but it takes too much time, and no one accomplishes much of anything. There's a lot of grumbling as the cats return home.",
+            null,
+            null,
+            "p_l, leading the search for r_c, hears a yowl in distance. It's r_c, drenched and mud soaked at the bottom of a steep embankment. The patrol works to rescue them, calling off their hunt."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            "r_c was scarred after disappearing on patrol and being discovered injured.",
+            null
+    ]
+}
+]
