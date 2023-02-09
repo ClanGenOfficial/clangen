@@ -52,7 +52,7 @@ class Death_Events():
             if game.clan.current_season not in event.tags:
                 continue
 
-            if "murder" in event.tags:
+            if "murder" in event.tags and other_cat:
                 hate = False
                 relationships = other_cat.relationships.values()
                 dislike_relation = list(filter(lambda rel: rel.dislike > 50, relationships))
