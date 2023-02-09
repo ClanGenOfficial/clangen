@@ -139,8 +139,9 @@ class Events():
             # Grab all the dead or outside cats, who should not have grief text
             for ID in Cat.grief_strings:
                 check_cat = Cat.all_cats.get(ID)
-                if check_cat.dead or check_cat.outside:
-                    remove_cats.append(check_cat.ID)
+                if check_cat:
+                    if check_cat.dead or check_cat.outside:
+                        remove_cats.append(check_cat.ID)
 
             # Remove the dead or outside cats
             for ID in remove_cats:
@@ -821,7 +822,7 @@ class Events():
             leader_txt = "no_leader"
         else:
             leader_txt = "leader"
-            involved_cats.append(game.clan.leader)
+            involved_cats.append(game.clan.leader.ID)
 
         if cat.backstory == ['abandoned1', 'abandoned2', 'abandoned3']:
             backstory_txt = "abandoned"
@@ -874,6 +875,7 @@ class Events():
         else:
             if cat.mentor:
                 mentor_name = str(Cat.fetch_cat(cat.mentor).name)
+                involved_cats.append(cat.mentor)
             elif cat.former_mentor:
                 mentor_name = str(Cat.fetch_cat(cat.former_mentor[-1]).name)
             else:
@@ -1877,7 +1879,7 @@ class Events():
                 triggered_death = True
 
             # classic death chance
-            if not int(random.random() * 500):  # 1/500
+            if not int(random.random() * 500) and not triggered_death:  # 1/500
                 self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
                 triggered_death = True
 

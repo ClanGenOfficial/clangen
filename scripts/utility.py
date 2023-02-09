@@ -4,7 +4,8 @@ try:
     import ujson
 except ImportError:
     import json as ujson
-import traceback
+import logging
+logger = logging.getLogger(__name__)
 from scripts.game_structure import image_cache
 
 from scripts.cat.sprites import *
@@ -646,7 +647,7 @@ def update_sprite(cat):
                     sprites.sprites['collars' + cat.accessory +
                                     str(cat.age_sprites[cat.age])], (0, 0))
     except (TypeError, KeyError):
-        print(f"ERROR: Failed to load cat ID #{cat}'s sprite:\n", traceback.format_exc())
+        logger.exception("Failed to load sprite")
 
         # Placeholder image
         new_sprite.blit(
