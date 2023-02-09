@@ -798,6 +798,7 @@ class Events():
         # Time to gather ceremonies. First, lets gather all the ceremony ID's.
         possible_ceremonies = set()
         dead_mentor = None
+        mentor = None
         try:
             # Get all the ceremonies for the role ----------------------------------------
             possible_ceremonies.update(self.ceremony_id_by_tag[promoted_to])
@@ -808,6 +809,7 @@ class Events():
             dead_mentor = None
             if cat.mentor:
                 tags.append("yes_mentor")
+                mentor = Cat.fetch_cat(cat.mentor)
             else:
                 tags.append("no_mentor")
 
@@ -908,7 +910,8 @@ class Events():
         ceremony_text = self.CEREMONY_TXT[choice(list(possible_ceremonies))][1]
         print(ceremony_text)
 
-        ceremony_text = ceremony_text_adjust(Cat, ceremony_text, cat, dead_mentor=dead_mentor, random_honor=random_honor)
+        ceremony_text = ceremony_text_adjust(Cat, ceremony_text, cat, dead_mentor=dead_mentor, random_honor=random_honor,
+                                             mentor=mentor)
         game.cur_events_list.append(Single_Event(f'{ceremony_text}', "ceremony", involved_cats))
             # game.ceremony_events_list.append(f'{str(cat.name)}{ceremony_text}')
 
