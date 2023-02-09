@@ -95,9 +95,14 @@ class Condition_Events():
         """
         has_other_clan = False
         other_clan = random.choice(game.clan.all_clans)
-        random_number = int(random.random() * 150)
         triggered = False
         text = None
+
+        if game.clan.game_mode != 'classic':
+            random_number = int(random.random() * 150)
+        else:
+            random_number = int(random.random() * 200)
+
 
         if cat.dead:
             triggered = True

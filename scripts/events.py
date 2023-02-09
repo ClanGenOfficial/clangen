@@ -4,6 +4,7 @@ from random import randrange
 from scripts.cat.cats import *
 from scripts.clan import HERBS
 from scripts.conditions import medical_cats_condition_fulfilled, get_amount_cat_for_one_medic
+from scripts.events_module.misc_events import MiscEvents
 from scripts.events_module.new_cat_events import NewCatEvents
 from scripts.events_module.relation_events import *
 from scripts.game_structure.load_cat import *
@@ -34,6 +35,8 @@ class Events():
         self.death_events = Death_Events()
         self.freshkill_events = Freshkill_Events()
         self.new_cat_events = NewCatEvents()
+        self.misc_events = MiscEvents()
+
 
     def one_moon(self):
         game.cur_events_list = []
@@ -1094,8 +1097,6 @@ class Events():
         if chance < 1:
             chance = 1
 
-        alive_kits = get_alive_kits(Cat)
-
         # choose other cat
         possible_other_cats = list(filter(
             lambda c: not c.dead and not c.exiled and not c.outside and (c.ID != cat.ID), Cat.all_cats.values()
@@ -1117,13 +1118,13 @@ class Events():
             self.new_cat_invited = True
 
             self.new_cat_events.handle_new_cats(cat=cat, other_cat=other_cat, war=self.at_war,
-                                                enemy_clan=self.enemy_clan, alive_kits=alive_kits)
+                                                enemy_clan=self.enemy_clan, alive_kits=get_alive_kits(Cat))
 
     def other_interactions(self, cat):
-        if randint(1, 100) != 1:
+
+        if randint(1, 90) != 1:
             return
-        interactions = []
-        involved_cats = [cat.ID]
+
         other_cat = choice(list(Cat.all_cats.values()))
         countdown = int(len(Cat.all_cats) / 3)
         while cat == other_cat or other_cat.dead or other_cat.outside:
@@ -1131,75 +1132,10 @@ class Events():
             countdown -= 1
             if countdown <= 0:
                 return
-        name = str(cat.name)
-        other_name = str(other_cat.name)
 
-        
+        self.misc_events.handle_misc_events(cat, other_cat, self.at_war, self.enemy_clan, alive_kits=get_alive_kits(Cat))
 
-        if cat.status == 'kitten' and other_cat.status != 'kitten':
-            interactions.extend([
-                f'{name} is scolded after sneaking out of camp.',
-                f'{name} falls into a river but is saved by {other_name}.'
-            ])
-        elif cat.status in ['apprentice', 'medicine cat apprentice'] and other_cat.status != 'kitten':
-            interactions.extend([
-                f'{name} is scolded after sneaking out of camp.',
-                f'{name} falls into a river but is saved by {other_name}.',
-                name +
-                " accidentally trespasses onto another Clan\'s territory."
-            ])
-            if other_cat.status == 'apprentice':
-                interactions.append(
-                    f'{name} sneaks out of camp with {other_name}.')
-        elif cat.status == 'warrior':
-            interactions.extend([
-                name + " is caught outside of the Clan\'s territory.",
-                f'{name} is caught breaking the Warrior Code.',
-                f'{name} went missing for a few days.',
-                f'{name} believes they are a part of the new prophecy.'
-            ])
-        elif cat.status == 'medicine cat':
-            interactions.extend([
-                f'{name} learns of a new prophecy.',
-                f'{name} is worried about an outbreak of greencough.',
-                f'{name} is worried about how low their herb stores has gotten.',
-                f'{name} visits the other medicine cats.'
-            ])
-        elif cat.status == 'deputy':
-            interactions.extend([
-                f'{name} thinks about retiring.',
-                f'{name} travels to the other Clans to bring them an important message.'
-            ])
-        elif cat.status == 'leader':
-            if game.clan.leader_lives <= 5:
-                interactions.extend([
-                    f'{name} thinks about retiring.',
-                    name + " confesses they don\'t have many lives left."
-                ])
-            if other_cat.status not in [
-                'kitten', 'apprentice', 'medicine cat apprentice'
-            ]:
-                interactions.append(
-                    f'{name} confesses to {other_name} that the responsibility of leadership is crushing them.'
-                )
-            elif other_cat.status == 'apprentice':
-                interactions.append(f'{name} assesses {other_name}' +
-                                    "\'s progress.")
-            interactions.extend([
-                f'{name} calls a Clan meeting to give an important announcement.'
-            ])
-        elif cat.status == 'elder':
-            interactions.extend(
-                [f'{name} is brought back to camp after wandering off.'])
-        if cat.age == other_cat.age:
-            interactions.extend([
-                f'{name} tries to convince {other_name} to run away together.'
-            ])
 
-        if interactions:
-            text = choice(interactions)
-            game.cur_events_list.append(Single_Event(text, "misc", involved_cats))
-            # game.misc_events_list.append(text)
 
     def handle_injuries_or_general_death(self, cat):
         # ---------------------------------------------------------------------------- #

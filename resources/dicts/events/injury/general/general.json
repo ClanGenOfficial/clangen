@@ -389,7 +389,9 @@
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "scar",
+            "MANLEG"
         ],
         "event_text": "m_c got their paw stuck in a Twoleg trap and while they eventually escaped, their leg is heavily injured.",
         "history_text": [
@@ -416,7 +418,9 @@
             "neg_trust",
             "neg_comfort",
             "dislike",
-            "neg_platonic"
+            "neg_platonic",
+            "scar",
+            "MANLEG"
         ],
         "event_text": "m_c's was maimed by r_c for questioning their leadership.",
         "history_text": [
@@ -436,7 +440,9 @@
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "scar",
+            "MANTAIL"
         ],
         "event_text": "m_c's tail was badly injured by a dog.",
         "history_text": [
@@ -456,7 +462,9 @@
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "scar",
+            "MANTAIL"
         ],
         "event_text": "m_c's tail was badly injured by a fox.",
         "history_text": [

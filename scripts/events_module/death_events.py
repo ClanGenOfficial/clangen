@@ -55,7 +55,7 @@ class Death_Events():
 
         if "war" in death_cause.tags and other_clan is not None and enemy_clan is not None:
             other_clan = enemy_clan
-            other_clan_name = other_clan.name + "clan"
+            other_clan_name = other_clan.name + "Clan"
 
         # let's change some relationship values \o/ check if another cat is mentioned and if they live
         if "other_cat" in death_cause.tags and "multi_death" not in death_cause.tags:
