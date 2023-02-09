@@ -547,7 +547,6 @@ class Events():
             self.perform_ceremonies(cat)
             self.coming_out(cat)
             self.relation_events.handle_having_kits(cat, clan=game.clan)
-            cat.one_moon()
             return
 
         # check for death/reveal/risks/retire caused by permanent conditions
@@ -773,7 +772,6 @@ class Events():
             CEREMONY_TXT = ujson.loads(read_file.read())
 
         ceremony = []
-        print(f"Promoting {cat.name} to {promoted_to}")
 
         cat.status_change(promoted_to)
         involved_cats = [cat.ID]  # Clearly, the cat the ceremony is about is involved.
@@ -804,12 +802,6 @@ class Events():
         else:
             grown = False
 
-        # checkin if mentor is dead
-        for x in range(len(cat.former_mentor)):
-            if Cat.fetch_cat(cat.former_mentor[x]).dead:
-                dead_mentor = Cat.fetch_cat(cat.former_mentor[x])
-                break
-
         if dead_mentor:
             mentor_txt = "dead_mentor"
             involved_cats.append(dead_mentor)
@@ -818,6 +810,7 @@ class Events():
         elif not dead_mentor and cat.mentor and grown:
             mentor_txt = "living_mentor"
             involved_cats.append(cat.mentor)
+
         if leader_outside or leader_exiled or leader_dead:
             leader_txt = "no_leader"
         else:
@@ -827,20 +820,16 @@ class Events():
         if cat.backstory == ['abandoned1', 'abandoned2', 'abandoned3']:
             backstory_txt = "abandoned"
 
-        # parent stuff
-        if cat.parent1:
-            parent1 = Cat.fetch_cat(cat.parent1)
-            if cat.parent2:
-                parent2 = Cat.fetch_cat(cat.parent2)
-
         if cat.parent1 and not cat.parent2:
             parent_txt = "parent1"
+            parent1 = Cat.fetch_cat(cat.parent1)
             if parent1.dead:
                 parent_status = "dead"
             else:
                 parent_status = "alive"
 
         if cat.parent2:
+            parent2 = Cat.fetch_cat(cat.parent2)
             parent_txt = choice(["parent1", "parent2"])
             if parent2.dead:
                 parent_status = "dead"
@@ -848,31 +837,35 @@ class Events():
                 parent_status = "alive"
 
         if cat.parent1 and cat.parent2:
+            parent1 = Cat.fetch_cat(cat.parent1)
+            parent2 = Cat.fetch_cat(cat.parent2)
             parent_txt = choice(["both_parents", "parent1", "parent2"])
             if parent1.dead and parent2.dead:
                 parent_status = "dead"
             elif not parent1.dead and not parent2.dead:
                 parent_status = "alive"
 
-        ceremony += CEREMONY_TXT[promoted_to][leader_txt][trait]
-        print(CEREMONY_TXT[promoted_to][leader_txt][trait])
-        ceremony += CEREMONY_TXT[promoted_to][leader_txt][general_txt]
-
-        if mentor_txt:
-            ceremony += CEREMONY_TXT[promoted_to][leader_txt][mentor_txt]
-        if backstory_txt:
-            ceremony += CEREMONY_TXT[promoted_to][leader_txt][backstory_txt]
-        if cat.parent1:
-            ceremony += CEREMONY_TXT[promoted_to][parent_txt][parent_status]
-
-            '''#DEAD MENTOR CEREMONY
-                if len(cat.former_mentor) > 0:
-                    dead_mentor = None
-                    for x in range(len(cat.former_mentor)):
-                        if Cat.fetch_cat(cat.former_mentor[x]).dead:
-                            dead_mentor = Cat.fetch_cat(cat.former_mentor[x])
-                            break'''
-
+        try:
+            ceremony += CEREMONY_TXT[promoted_to][leader_txt][trait]
+            ceremony += CEREMONY_TXT[promoted_to][leader_txt][general_txt]
+            if mentor_txt:
+                ceremony += CEREMONY_TXT[promoted_to][leader_txt][mentor_txt]
+            if backstory_txt:
+                ceremony += CEREMONY_TXT[promoted_to][leader_txt][backstory_txt]
+            if cat.parent1:
+                ceremony += CEREMONY_TXT[promoted_to][parent_txt][parent_status]
+        except KeyError:
+            print("Error loading ceremony text. ")
+            ceremony += [""]
+                
+        '''#DEAD MENTOR CEREMONY
+            if len(cat.former_mentor) > 0:
+                dead_mentor = None
+                for x in range(len(cat.former_mentor)):
+                    if Cat.fetch_cat(cat.former_mentor[x]).dead:
+                        dead_mentor = Cat.fetch_cat(cat.former_mentor[x])
+                        break'''
+                     
         # getting the mentor's name
         if dead_mentor:
             mentor_name = str(dead_mentor.name)
@@ -895,17 +888,18 @@ class Events():
                 except KeyError:
                     random_honor = "hard work"
 
+        ceremony_text = choice(ceremony)
+        while ceremony == "":
+            ceremony_text = choice(ceremony)
+
         if promoted_to in ['warrior', 'apprentice', 'medicine cat apprentice', 'medicine cat', 'elder', 'mediator',
                            "mediator apprentice"]:
-            ceremony_text = choice(ceremony)
-            ceremony_text = ceremony_text_adjust(Cat, ceremony_text, cat, mentor_name=mentor_name,
-                                                 random_honor=random_honor)
+
+            ceremony_text = ceremony_text_adjust(Cat, ceremony_text, cat, mentor_name=mentor_name, random_honor=random_honor)
             game.cur_events_list.append(Single_Event(ceremony_text, "ceremony", involved_cats))
             # game.ceremony_events_list.append(ceremony_text)
         else:
-            ceremony_text = choice(ceremony)
-            ceremony_text = ceremony_text_adjust(Cat, ceremony_text, cat, mentor_name=mentor_name,
-                                                 random_honor=random_honor)
+            ceremony_text = ceremony_text_adjust(Cat, ceremony_text, cat, mentor_name=mentor_name, random_honor=random_honor)
             game.cur_events_list.append(Single_Event(f'{str(cat.name)}{ceremony_text}', "ceremony", involved_cats))
             # game.ceremony_events_list.append(f'{str(cat.name)}{ceremony_text}')
 
@@ -1304,7 +1298,7 @@ class Events():
             other_cat = None
 
         if not int(
-                random.random() * chance) and cat.age != 'kitten' and cat.age != 'adolescent' and not self.new_cat_invited:
+                random.random() * 1) and cat.age != 'kitten' and cat.age != 'adolescent' and not self.new_cat_invited:
             self.new_cat_invited = True
 
             self.new_cat_events.handle_new_cats(cat=cat, other_cat=other_cat, war=self.at_war,
