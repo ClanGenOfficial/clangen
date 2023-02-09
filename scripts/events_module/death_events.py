@@ -41,6 +41,7 @@ class Death_Events():
         final_events = self.generate_events.filter_possible_events(possible_events, cat, other_cat, war, enemy_clan,
                                                                    other_clan, alive_kits)
 
+
         # ---------------------------------------------------------------------------- #
         #                                  kill cats                                   #
         # ---------------------------------------------------------------------------- #
