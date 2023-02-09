@@ -977,4 +977,4 @@ class Relation_Events():
         six_kits = [6] * six_kit_possibility[cat.age]
         amount = choice(one_kit + two_kits + three_kits + four_kits + five_kits + six_kits)
 
-        return amount
+        return 100
