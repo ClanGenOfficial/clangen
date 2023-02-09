@@ -141,23 +141,24 @@ class GenerateEvents:
 
             # make complete leader death less likely until the leader is over 150 moons
             if "all_lives" in event.tags:
-                if cat.age < 150 and int(random.random() * 5):
+                if int(cat.moons) < 150 and int(random.random() * 5):
                     continue
 
             # check season
             if game.clan.current_season not in event.tags:
                 continue
 
-            reputation = game.clan.reputation
-            # hostile
-            if 1 <= reputation <= 30 and "hostile" not in event.reputation:
-                continue
-            # neutral
-            elif 31 <= reputation <= 70 and "neutral" not in event.reputation:
-                continue
-            # welcoming
-            elif 71 <= reputation <= 100 and "welcoming" not in event.reputation:
-                continue
+            if event.reputation:
+                reputation = game.clan.reputation
+                # hostile
+                if 1 <= reputation <= 30 and "hostile" not in event.reputation:
+                    continue
+                # neutral
+                elif 31 <= reputation <= 70 and "neutral" not in event.reputation:
+                    continue
+                # welcoming
+                elif 71 <= reputation <= 100 and "welcoming" not in event.reputation:
+                    continue
 
             # check hate and jealousy before allowing murder
             if "murder" in event.tags:
@@ -170,6 +171,7 @@ class GenerateEvents:
                     if cat_to == cat:
                         hate = True
                         break
+                for y in range(len(jealous_relation)):
                     cat_to = jealous_relation[y].cat_to
                     if cat_to == cat:
                         hate = True

@@ -1295,7 +1295,7 @@
 
     "bee sting": {
         "duration": 2,
-        "severity": "major",
+        "severity": "minor",
         "medicine_duration": 1,
         "mortality": {
             "kitten": 20,

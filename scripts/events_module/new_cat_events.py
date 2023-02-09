@@ -48,7 +48,11 @@ class NewCatEvents:
         # ---------------------------------------------------------------------------- #
         #                                cat creation                                  #
         # ---------------------------------------------------------------------------- #
-        new_cat_event = (random.choice(final_events))
+        try:
+            new_cat_event = (random.choice(final_events))
+        except:
+            print('ERROR: no new cat moon events available')
+            return
 
         involved_cats = []
         if "m_c" in new_cat_event.tags:
@@ -101,7 +105,8 @@ class NewCatEvents:
                     if tag in INJURIES:
                         new_cat.get_injured(tag)
                     elif tag == "major_injury":
-                        major_injuries = random.choice(major_injuries)
+                        injury = random.choice(major_injuries)
+                        new_cat.get_injured(injury)
 
         # handle other clan shenanigans
         if "war" in new_cat_event.tags and other_clan is not None and enemy_clan is not None:
