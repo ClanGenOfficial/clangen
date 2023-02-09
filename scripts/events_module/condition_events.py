@@ -5,6 +5,7 @@ except ImportError:
 import random
 
 from scripts.cat.cats import Cat
+from scripts.cat.pelts import *
 from scripts.conditions import medical_cats_condition_fulfilled, get_amount_cat_for_one_medic
 from scripts.utility import event_text_adjust, get_med_cats, change_relationship_values
 from scripts.game_structure.game_essentials import game
@@ -154,22 +155,36 @@ class Condition_Events():
 
                     text = event_text_adjust(Cat, injury_event.event_text, cat, other_cat, other_clan_name)
 
-                    # record proper history text possibilities
-                    if injury_event.history_text is not None:
-                        if injury_event.history_text[0] is not None:
-                            history_text = event_text_adjust(Cat, injury_event.history_text[0], cat, other_cat,
-                                                             other_clan_name, keep_m_c=True)
-                            cat.possible_scar = str(history_text)
-                        if injury_event.history_text[1] is not None and cat.status != "leader":
-                            history_text = event_text_adjust(Cat, injury_event.history_text[1], cat, other_cat,
-                                                             other_clan_name)
-                            cat.possible_death = str(history_text)
-                        elif injury_event.history_text[2] is not None and cat.status == "leader":
-                            history_text = event_text_adjust(Cat, injury_event.history_text[2], cat, other_cat,
-                                                             other_clan_name)
-                            cat.possible_death = str(history_text)
+                    if game.clan.game_mode == "classic":
+                        if "scar" in injury_event.tags and len(cat.scars) < 4:
+                            # add tagged scar
+                            for scar in scars1 + scars2 + scars3:
+                                if scar in injury_event.tags:
+                                    cat.scars.append(scar)
 
-                    cat.get_injured(injury_event.injury)
+                            # add scar history
+                            if injury_event.history_text is not None:
+                                if injury_event.history_text[0] is not None:
+                                    history_text = event_text_adjust(Cat, injury_event.history_text[0], cat, other_cat,
+                                                                     other_clan_name, keep_m_c=True)
+                                    cat.scar_event = str(history_text)
+                    else:
+                        # record proper history text possibilities
+                        if injury_event.history_text is not None:
+                            if injury_event.history_text[0] is not None:
+                                history_text = event_text_adjust(Cat, injury_event.history_text[0], cat, other_cat,
+                                                                 other_clan_name, keep_m_c=True)
+                                cat.possible_scar = str(history_text)
+                            if injury_event.history_text[1] is not None and cat.status != "leader":
+                                history_text = event_text_adjust(Cat, injury_event.history_text[1], cat, other_cat,
+                                                                 other_clan_name)
+                                cat.possible_death = str(history_text)
+                            elif injury_event.history_text[2] is not None and cat.status == "leader":
+                                history_text = event_text_adjust(Cat, injury_event.history_text[2], cat, other_cat,
+                                                                 other_clan_name)
+                                cat.possible_death = str(history_text)
+
+                        cat.get_injured(injury_event.injury)
 
         # just double-checking that trigger is only returned True if the cat is dead
         if cat.dead:

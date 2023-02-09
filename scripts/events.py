@@ -559,8 +559,6 @@ class Events():
         self.other_interactions(cat)
         self.coming_out(cat)
         self.gain_accessories(cat)
-        if game.clan.game_mode == "classic" and not int(random.random() * 3):
-            self.gain_scars(cat)
         self.relation_events.handle_having_kits(cat, clan=game.clan)
 
         cat.create_interaction()
@@ -1050,191 +1048,6 @@ class Events():
             if self.ceremony_accessory:
                 self.ceremony_accessory = False
 
-    def gain_scars(self, cat):
-        # ---------------------------------------------------------------------------- #
-        #                                    scars                                     #
-        # ---------------------------------------------------------------------------- #
-        if len(cat.scars) == 4 or cat.age == 'kitten':
-            return
-
-        risky_traits = ["bloodthirsty", "ambitious", "vengeful", "strict", "cold", "fierce"]
-        danger = ["a rogue", "a dog", "a fox", "an otter", "a rat", "a hawk", "an enemy warrior", "a badger"]
-        tail_danger = ["a rogue", "a dog", "a fox", "an otter", "a rat", "a hawk",
-                       "an enemy warrior", "a badger", "a Twoleg trap"]
-
-        name = str(cat.name)
-        involved_cats = [cat.ID]
-        scar_chance = 0.015  # 1.5%
-        scar_text = []
-        specialty = None  # Scar to be set
-        alive_kits = list(filter(lambda kitty: (kitty.age == "kitten"
-                                                and not kitty.dead
-                                                and not kitty.outside),
-                                 Cat.all_cats.values()))
-        leader = game.clan.leader
-
-        # Older cats are scarred more often
-        if cat.age in ["adult", "senior adult"]:
-            scar_chance += 0.01  # + 1%
-
-        # Check cat mentor/leader status and traits
-        risky_mentor = False
-        risky_leader = False
-        if cat.mentor:
-            mentor_ob = Cat.fetch_cat(cat.mentor)
-            mentor_name = str(mentor_ob.name)
-            if mentor_ob.trait in risky_traits:
-                risky_mentor = True
-                scar_chance += 0.0125  # + 1.25%
-        else:
-            mentor_name = "None"
-
-        if leader:
-            leader_name = str(leader.name)
-            if leader.trait in risky_traits:
-                risky_leader = True
-                scar_chance += 0.005  # + 0.5%
-                if leader.trait in ["bloodthirsty", "vengeful"]:
-                    scar_chance += 0.005
-        else:
-            leader_name = "None"
-
-        # Modify scar chance by trait
-        # Increased chance
-        if cat.trait in ['bloodthirsty', 'vengeful']:
-            scar_chance = scar_chance * 1.75
-        elif cat.trait in cat.personality_groups["Abrasive"]:
-            scar_chance = scar_chance * 1.5
-        elif cat.trait in cat.personality_groups["Outgoing"]:
-            scar_chance = scar_chance * 1.25
-        # Reduced chance
-        elif cat.trait in ['calm', 'careful']:
-            scar_chance = scar_chance / 1.75
-        elif cat.trait in cat.personality_groups["Reserved"]:
-            scar_chance = scar_chance / 1.5
-        elif cat.trait in cat.personality_groups["Benevolent"]:
-            scar_chance = scar_chance / 1.25
-
-        # Bloodthirsty leader mod
-        leader_scar_chance = scar_chance
-        if leader.trait in ["bloodthirsty", "vengeful"]:
-            leader_scar_chance = leader_scar_chance * 1.5
-
-        # Set pools and check which scars we can still get
-        all_scars = scars1 + scars2 + scars3
-        base_scars = scars1 + scars2  # Can be caused by other cats
-        for scar_pool in [all_scars, base_scars]:
-            for scar in cat.scars:
-                if scar:
-                    try:
-                        if "NOPAW" == scar and 'TOETRAP' in scar_pool:
-                            scar_pool.remove('TOETRAP')
-                        if "NOTAIL" == scar:
-                            for option in ["HALFTAIL", "TAILBASE", "TAILSCAR"]:
-                                if option in scar_pool:
-                                    scar_pool.remove(option)
-                        if scar in scar_pool:
-                            scar_pool.remove(scar)  # No doubles
-                    except ValueError as e:
-                        print(f"ERROR: Failed to exclude scar from pool: {e}")
-
-        # Always possible scar events
-        if scar_chance > random.random():
-            specialty = choice(all_scars)
-            if specialty in ["NOTAIL", "HALFTAIL"]:
-                if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
-                    cat.accessory = None
-                scar_text.append(f"{name} lost their tail to {choice(tail_danger)}.")
-                if not random.getrandbits(2):
-                    scar_text.append(f"{name} lost their tail to a falling tree.")
-            elif specialty == "SNAKE":
-                scar_text.append(f"{name} was bit by a snake but miraculously survived.")
-            elif specialty == "TOETRAP":
-                scar_text.append(
-                    f"{name} got their paw stuck in a Twoleg trap and earned a scar."
-                )
-            elif specialty == "NOPAW":
-                scar_text.append(f"{name} lost their paw to a Twoleg trap.")
-            else:
-                scar_text.extend(
-                    [
-                        f"{name} earned a scar fighting {choice(danger)}.",
-                        f"{name} earned a scar defending the territory.",
-                        f"{name} is injured after falling into a river.",
-                        f"{name} is injured by enemy warriors after accidentally wandering over the border.",
-                        f"{name} is injured after messing with a Twoleg object.",
-                    ]
-                )
-                if alive_kits:
-                    scar_text.extend([f"{name} earned a scar protecting the kits."])
-
-        # MENTOR CAUSES INJURY >:O
-        elif (scar_chance * 1.5 > random.random()
-              and cat.status in ['apprentice', 'medicine cat apprentice']
-              and risky_mentor):
-            specialty = choice(base_scars)
-            scar_text.extend(
-                [
-                    f"{name} earned a scar recklessly fighting {choice(danger)}, encouraged by their mentor.",
-                    f"{name} earned a scar for not defending the territory well enough.",
-                    f"{name} is injured after being pushed into a river.",
-                    f"{name} is punished by their mentor after accidentally wandering over the border.",
-                    f"{name} is injured by their mentor after being caught messing with a Twoleg object.",
-                    f"{name} is injured by their mentor while practicing with their claws out.",
-                    f"{name}'s mentor punished them for disobeying.",
-                    f"{name} gained a scar while fighting their mentor.",
-                    f"{name} is injured while practicing their battle moves with {mentor_name}.",
-                    f"{name} is injured after a fight broke out with {mentor_name}.",
-                    f"{name} could not handle their mentor's harsh training and got injured as a result.",
-                    f"{name} could not handle their mentor's harsh training and got injured as a result.",
-                ]
-            )
-            if specialty == "NOPAW":
-                scar_text.append(
-                    f"{name} lost their paw after {mentor_name} decided to use Twoleg traps for a training exercice.")
-        # leader is sus guys
-        elif leader_scar_chance > random.random() and risky_leader and cat.ID != leader.ID:
-            specialty = choice(base_scars)
-            if specialty in ["NOTAIL", "HALFTAIL"]:
-                if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
-                    cat.accessory = None
-
-                scar_text.extend([
-                    f"{name} lost their tail to {choice(tail_danger)} while following {leader_name}'s orders.",
-                    f"{name} is ordered to fend off {choice(danger)} by {leader_name}, and loses their tail in the ensuing battle.",
-                ]
-                )
-            else:
-                if specialty in ["NOPAW"]:
-                    scar_text.extend([f"{name} is maimed by {leader_name} for questioning their leadership.",
-                                      f"{name} loses a paw after {leader_name} forces them to fight {choice(danger)} by themselves."])
-                else:
-                    scar_text.extend(
-                        [
-                            f"{name} earned a scar fighting {choice(danger)} on {leader_name}'s orders.",
-                            f"{name} earned a scar defending the territory from outsiders.",
-                            f"{name} earned a scar protecting the leader.",
-                            f"{name} was wounded during a harsh training exercise led by {leader_name}.",
-                            f"{name} was injured during an unsupervised training exercise.",
-                            f"{name} was hurt by enemy warriors after being ordered by {leader_name} to go over the border.",
-                            f"{name} was injured after being ordered by {leader_name} to check out a Twoleg object.",
-                            f"{name} was battered while fighting a Clanmate after {leader_name} encouraged a fight.",
-                            f"{name} was injured by {leader_name} for disobeying orders.",
-                            f"{name} was injured by {leader_name} for speaking out against them.",
-                            f"{name} was cruelly injured by {leader_name} to make an example out of them.",
-                        ]
-                    )
-        if scar_text:
-            chosen_scar = choice(scar_text)
-
-            # game.health_events_list.append(chosen_scar)
-            game.cur_events_list.append(Single_Event(chosen_scar, "health", involved_cats))
-            cat.scar_event.append(chosen_scar)
-
-        # Apply scar
-        if specialty:
-            cat.scars.append(specialty)
-
     def invite_new_cats(self, cat):
         # ---------------------------------------------------------------------------- #
         #                                   new cats                                   #
@@ -1420,18 +1233,8 @@ class Events():
             self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
             triggered_death = True
 
-        # extra death chance and injuries in expanded & cruel season
-        if game.clan.game_mode in ["expanded", "cruel season"]:
-            if not int(random.random() * 500) and not cat.not_working():  # 1/400
-                self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
-                triggered_death = True
-            else:
-                triggered_death = self.condition_events.handle_injuries(cat, other_cat, alive_kits, self.at_war,
-                                                                        self.enemy_clan, game.clan.current_season)
-                return triggered_death
-
         # classic death chance
-        elif game.clan.game_mode == "classic" and not int(random.random() * 500):  # 1/500
+        if game.clan.game_mode == "classic" and not int(random.random() * 500):  # 1/500
             self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
             triggered_death = True
 
@@ -1440,6 +1243,15 @@ class Events():
             if not random.getrandbits(9):  # 1/512
                 triggered_death = True
                 self.handle_disasters(cat)
+
+        # extra death chance and injuries in expanded & cruel season
+        if game.clan.game_mode != 'classic' and not int(random.random() * 500) and not cat.not_working():  # 1/400
+            self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
+            triggered_death = True
+        else:
+            triggered_death = self.condition_events.handle_injuries(cat, other_cat, alive_kits, self.at_war,
+                                                                    self.enemy_clan, game.clan.current_season)
+            return triggered_death
 
         return triggered_death
 
