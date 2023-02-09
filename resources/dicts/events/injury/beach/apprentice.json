@@ -6,7 +6,9 @@
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "scar",
+            "SIDE"
         ],
         "event_text": "m_c couldn't help but try to show off by climbing the tallest tree they could find. Their plan backfired when they fell out of the tree.",
         "history_text": [

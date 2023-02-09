@@ -5,7 +5,9 @@
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "scar",
+            "FACE"
         ],
         "event_text": "m_c mistook a hare for a rabbit while hunting and their eyes were scratched, a valuable lesson learnt.",
         "history_text": [
@@ -32,7 +34,9 @@
             "neg_trust",
             "neg_comfort",
             "dislike",
-            "neg_platonic"
+            "neg_platonic",
+            "scar",
+            "CATBITE"
         ],
         "event_text": "m_c was injured recklessly fighting a rogue after their mentor, r_c, encouraged them to attack.",
         "history_text": [
@@ -59,7 +63,9 @@
             "neg_trust",
             "neg_comfort",
             "dislike",
-            "neg_platonic"
+            "neg_platonic",
+            "scar",
+            "CATBITE"
         ],
         "event_text": "m_c was injured recklessly fighting an enemy warrior after their mentor, r_c, encouraged them to attack.",
         "history_text": [
@@ -86,7 +92,9 @@
             "neg_trust",
             "neg_comfort",
             "dislike",
-            "neg_platonic"
+            "neg_platonic",
+            "scar",
+            "LEGBITE"
         ],
         "event_text": "m_c was injured recklessly fighting a dog after their mentor, r_c, encouraged them to attack.",
         "history_text": [
@@ -113,7 +121,9 @@
             "neg_trust",
             "neg_comfort",
             "dislike",
-            "neg_platonic"
+            "neg_platonic",
+            "scar",
+            "LEGBITE"
         ],
         "event_text": "m_c was injured recklessly fighting a fox after their mentor, r_c, encouraged them to attack.",
         "history_text": [
@@ -139,7 +149,9 @@
             "neg_trust",
             "neg_comfort",
             "dislike",
-            "neg_platonic"
+            "neg_platonic",
+            "scar",
+            "CATBITE"
         ],
         "event_text": "m_c was hurt by r_c for not defending the territory well enough.",
         "history_text": [
@@ -166,7 +178,9 @@
             "neg_trust",
             "neg_comfort",
             "dislike",
-            "neg_platonic"
+            "neg_platonic",
+            "scar",
+            "CATBITE"
         ],
         "event_text": "m_c was hurt by their mentor, r_c, as a punishment for accidentally wandering over the border.",
         "history_text": [
@@ -193,7 +207,9 @@
             "neg_trust",
             "neg_comfort",
             "dislike",
-            "neg_platonic"
+            "neg_platonic",
+            "scar",
+            "CATBITE"
         ],
         "event_text": "m_c was hurt by their mentor, r_c, as a punishment for messing with a Twoleg object.",
         "history_text": [
@@ -220,7 +236,9 @@
             "neg_trust",
             "neg_comfort",
             "dislike",
-            "neg_platonic"
+            "neg_platonic",
+            "scar",
+            "CATBITE"
         ],
         "event_text": "m_c was hurt by their mentor, r_c, as a punishment for disobeying them.",
         "history_text": [
@@ -247,7 +265,9 @@
             "neg_trust",
             "neg_comfort",
             "dislike",
-            "neg_platonic"
+            "neg_platonic",
+            "scar",
+            "CATBITE"
         ],
         "event_text": "m_c fought with their mentor, r_c, and was injured.",
         "history_text": [
@@ -274,7 +294,9 @@
             "neg_trust",
             "neg_comfort",
             "dislike",
-            "neg_platonic"
+            "neg_platonic",
+            "scar",
+            "CATBITE"
         ],
         "event_text": "m_c could not handle their mentor's harsh training and was injured.",
         "history_text": [
@@ -433,7 +455,9 @@
             "neg_trust",
             "neg_comfort",
             "dislike",
-            "neg_platonic"
+            "neg_platonic",
+            "scar",
+            "BRIDGE"
         ],
         "event_text": "m_c was hurt by r_c for not defending the territory well enough.",
         "history_text": [
@@ -460,7 +484,9 @@
             "neg_trust",
             "neg_comfort",
             "dislike",
-            "neg_platonic"
+            "neg_platonic",
+            "scar",
+            "TOETRAP"
         ],
         "event_text": "m_c was hurt by their mentor, r_c, as a punishment for accidentally wandering over the border.",
         "history_text": [
@@ -487,7 +513,9 @@
             "neg_trust",
             "neg_comfort",
             "dislike",
-            "neg_platonic"
+            "neg_platonic",
+            "scar",
+            "TAILSCAR"
         ],
         "event_text": "m_c was hurt by their mentor, r_c, as a punishment for messing with a Twoleg object.",
         "history_text": [
@@ -514,7 +542,9 @@
             "neg_trust",
             "neg_comfort",
             "dislike",
-            "neg_platonic"
+            "neg_platonic",
+            "scar",
+            "RIGHTEAR"
         ],
         "event_text": "m_c and r_c were practicing battle moves. r_c insisted they keep their claws out and m_c was hurt.",
         "history_text": [
@@ -541,7 +571,9 @@
             "neg_trust",
             "neg_comfort",
             "dislike",
-            "neg_platonic"
+            "neg_platonic",
+            "scar",
+            "LEFTEAR"
         ],
         "event_text": "m_c was hurt by their mentor, r_c, as a punishment for disobeying them.",
         "history_text": [
@@ -568,7 +600,9 @@
             "neg_trust",
             "neg_comfort",
             "dislike",
-            "neg_platonic"
+            "neg_platonic",
+            "scar",
+            "CHEEK"
         ],
         "event_text": "m_c fought with their mentor, r_c, and was injured.",
         "history_text": [
@@ -595,7 +629,9 @@
             "neg_trust",
             "neg_comfort",
             "dislike",
-            "neg_platonic"
+            "neg_platonic",
+            "scar",
+            "BELLY"
         ],
         "event_text": "m_c could not handle their mentor's harsh training and was injured.",
         "history_text": [
@@ -622,7 +658,9 @@
             "neg_trust",
             "neg_comfort",
             "dislike",
-            "neg_platonic"
+            "neg_platonic",
+            "scar",
+            "MANLEG"
         ],
         "event_text": "m_c's leg was badly hurt after their mentor used a Twoleg trap during a training exercise'.",
         "history_text": [

@@ -159,7 +159,9 @@
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "scar",
+            "TOETRAP"
         ],
         "event_text": "m_c had a bad fall while taking a walk through the territory and, once found, has to be carried back home.",
         "history_text": [
@@ -280,7 +282,9 @@
             "neg_trust",
             "neg_comfort",
             "dislike",
-            "neg_platonic"
+            "neg_platonic",
+            "scar",
+            "CHEEK"
         ],
         "event_text": "m_c tried to interject and de-escalate an argument between two Clanmates but r_c retaliated at the interruption.  m_c limps away, new clawmarks on their pelt.",
         "history_text": [
@@ -306,7 +310,9 @@
             "neg_dislike",
             "trust",
             "comfort",
-            "respect"
+            "respect",
+            "scar",
+            "ONE"
         ],
         "event_text": "m_c was on a walk when they saw r_c being attacked by an enemy warrior! They helped r_c escape, but not before gaining a few wounds.",
         "history_text": [
@@ -332,7 +338,9 @@
             "neg_dislike",
             "trust",
             "comfort",
-            "respect"
+            "respect",
+            "scar",
+            "TWO"
         ],
         "event_text": "m_c was on a walk when they saw r_c being attacked by a rogue! They helped r_c escape, but not before gaining a few wounds.",
         "history_text": [
@@ -358,7 +366,9 @@
             "neg_dislike",
             "trust",
             "comfort",
-            "respect"
+            "respect",
+            "scar",
+            "LEGBITE"
         ],
         "event_text": "m_c was on a walk when they saw r_c being attacked by a dog! They helped r_c escape, but not before gaining a few wounds.",
         "history_text": [

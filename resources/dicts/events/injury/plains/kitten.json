@@ -12,7 +12,9 @@
             "comfort",
             "trust",
             "respect",
-            "platonic"
+            "platonic",
+            "scar",
+            "TWO"
         ],
         "event_text": "m_c was grabbed by an eagle, but luckily r_c saves them! The kit is still left injured from the ordeal.",
         "history_text": [
@@ -38,7 +40,9 @@
             "comfort",
             "trust",
             "respect",
-            "platonic"
+            "platonic",
+            "scar",
+            "TWO"
         ],
         "event_text": "m_c was grabbed by a hawk, but luckily r_c saves them! The kit is still left injured from the ordeal.",
         "history_text": [
@@ -54,7 +58,9 @@
     {
         "injury": "frostbite",
         "tags": [
-            "Leaf-bare"
+            "Leaf-bare",
+            "scar",
+            "FROSTMITT"
         ],
         "event_text": "m_c snuck out of camp and returned cold and shivering, frostbite nipping at their paws.",
         "history_text": [
