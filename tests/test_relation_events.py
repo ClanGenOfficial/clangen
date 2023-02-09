@@ -14,30 +14,13 @@ class CanHaveKits(unittest.TestCase):
         cat.no_kits = True
 
         # then
-        self.assertFalse(relation_events.check_if_can_have_kits(cat,unknown_parent_setting=True,no_gendered_breeding=False))
-
-    def test_same_sex(self):
-        # given
-        relation_events = Relation_Events()
-        cat1 = Cat(moons=20)
-        cat1.gender = 'male'
-        cat2 = Cat(moons=20)
-        cat2.gender = 'male'
-        
-        cat1.mate = cat2.ID
-        cat2.mate = cat1.ID
-
-        # then
-        self.assertFalse(relation_events.check_if_can_have_kits(cat1,unknown_parent_setting=False,no_gendered_breeding=False))
-        self.assertFalse(relation_events.check_if_can_have_kits(cat2,unknown_parent_setting=False,no_gendered_breeding=False))
-        self.assertTrue(relation_events.check_if_can_have_kits(cat1,unknown_parent_setting=False,no_gendered_breeding=True))
-        self.assertTrue(relation_events.check_if_can_have_kits(cat2,unknown_parent_setting=False,no_gendered_breeding=True))
+        self.assertFalse(relation_events.check_if_can_have_kits(cat,unknown_parent_setting=True))
 
 
 
 class Pregnancy(unittest.TestCase):
-    @patch('scripts.events_module.relation_events.Relation_Events.get_kits_chance')
-    def test_single_cat_female(self, get_kits_chance):
+    @patch('scripts.events_module.relation_events.Relation_Events.check_if_can_have_kits')
+    def test_single_cat_female(self, check_if_can_have_kits):
         # given
         relation_events = Relation_Events()
         clan = Clan()
@@ -45,14 +28,14 @@ class Pregnancy(unittest.TestCase):
         clan.pregnancy_data = {}
 
         # when
-        get_kits_chance.return_value = 1
+        check_if_can_have_kits.return_value = True
         relation_events.handle_zero_moon_pregnant(cat,None,None,clan)
 
         # then
         self.assertIn(cat.ID, clan.pregnancy_data.keys())
 
-    @patch('scripts.events_module.relation_events.Relation_Events.get_kits_chance')
-    def test_pair(self, get_kits_chance):
+    @patch('scripts.events_module.relation_events.Relation_Events.check_if_can_have_kits')
+    def test_pair(self, check_if_can_have_kits):
         # given
         relation_events = Relation_Events()
         clan = Clan()
@@ -63,15 +46,15 @@ class Pregnancy(unittest.TestCase):
         clan.pregnancy_data = {}
 
         # when
-        get_kits_chance.return_value = 1
+        check_if_can_have_kits.return_value = True
         relation_events.handle_zero_moon_pregnant(cat1,cat2,relation,clan)
 
         # then
         self.assertIn(cat1.ID, clan.pregnancy_data.keys())
         self.assertEqual(clan.pregnancy_data[cat1.ID]["second_parent"], cat2.ID)
 
-    @patch('scripts.events_module.relation_events.Relation_Events.get_kits_chance')
-    def test_single_cat_male(self, get_kits_chance):
+    @patch('scripts.events_module.relation_events.Relation_Events.check_if_can_have_kits')
+    def test_single_cat_male(self, check_if_can_have_kits):
         # given
         relation_events = Relation_Events()
         clan = Clan()
@@ -80,7 +63,7 @@ class Pregnancy(unittest.TestCase):
         number_before = len(cat.all_cats)
 
         # when
-        get_kits_chance.return_value = 1
+        check_if_can_have_kits.return_value = True
         relation_events.handle_zero_moon_pregnant(cat,None,None,clan)
 
         # then
@@ -104,7 +87,7 @@ class Pregnancy(unittest.TestCase):
         cat2.relationships[cat1.ID] = relation2
 
         # when
-        get_kits_chance.return_value = 1
+        check_if_can_have_kits.return_value = True
         relation_events.handle_having_kits(cat=cat1,clan=test_clan)
 
         # then
