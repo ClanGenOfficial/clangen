@@ -5,7 +5,9 @@
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "scar",
+            "TWO"
         ],
         "event_text": "m_c was grabbed and dropped by an eagle, but they somehow survived.",
         "history_text": [
@@ -117,7 +119,9 @@
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "scar",
+            "ONE"
         ],
         "event_text": "m_c survived a vicious eagle attack - with the claw marks to prove it!",
         "history_text": [
@@ -134,7 +138,9 @@
         "injury": "frostbite",
         "tags": [
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "scar",
+            "FROSTTAIL"
         ],
         "event_text": "m_c was out wandering the territory for a bit too long and came back with frostbite.",
         "history_text": [

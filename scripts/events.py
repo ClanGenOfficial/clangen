@@ -10,6 +10,7 @@ from scripts.events_module.condition_events import Condition_Events
 from scripts.events_module.death_events import Death_Events
 from scripts.events_module.freshkill_pile_events import Freshkill_Events
 from scripts.event_class import Single_Event
+import traceback
 
 
 class Events():
@@ -32,6 +33,8 @@ class Events():
         self.condition_events = Condition_Events()
         self.death_events = Death_Events()
         self.freshkill_events = Freshkill_Events()
+        self.CEREMONY_TXT = None
+        self.load_ceremonies()
 
     def one_moon(self):
         game.cur_events_list = []
@@ -764,6 +767,26 @@ class Events():
                     self.ceremony_accessory = True
                     self.gain_accessories(cat)
 
+    def load_ceremonies(self):
+        if self.CEREMONY_TXT:
+            return
+
+        resource_dir = "resources/dicts/events/ceremonies/"
+        with open(f"{resource_dir}ceremony-master.json", 'r') as read_file:
+            self.CEREMONY_TXT = ujson.loads(read_file.read())
+
+        self.ceremony_id_by_tag = {}
+        # Sorting.
+        for ID in self.CEREMONY_TXT:
+            for tag in self.CEREMONY_TXT[ID][0]:
+                if tag in self.ceremony_id_by_tag:
+                    self.ceremony_id_by_tag[tag].add(ID)
+                else:
+                    self.ceremony_id_by_tag[tag] = {ID}
+
+
+
+
     def ceremony(self, cat, promoted_to, ceremony_text):
         # ---------------------------------------------------------------------------- #
         #                      promote cats and add to event list                      #
@@ -773,137 +796,131 @@ class Events():
         involved_cats = [cat.ID]  # Clearly, the cat the ceremony is about is involved.
         game.ranks_changed_timeskip = True
 
-
-
-        if game.clan.leader:
-            leader_dead = game.clan.leader.dead
-            leader_exiled = game.clan.leader.exiled
-            leader_outside = game.clan.leader.outside
-        else:
-            leader_dead = True
-            leader_exiled = False
-            leader_outside = False
-        resource_dir = "resources/dicts/events/ceremonies/"
-        CEREMONY_TXT = None
-        with open(f"{resource_dir}ceremony_text.json", 'r') as read_file:
-            CEREMONY_TXT = ujson.loads(read_file.read())
+        # Time to gather ceremonies. First, lets gather all the ceremony ID's.
+        possible_ceremonies = set()
         dead_mentor = None
-        mentor_txt = None
-        leader_txt = None
-        parent_txt = None
-        trait = cat.trait
-        if cat.parent1:
-            parent1 = Cat.fetch_cat(cat.parent1)
-            if cat.parent2:
-                parent2 = Cat.fetch_cat(cat.parent2)
-        general_txt = "general"
-        parent_status = None
-        parent_txt = None
-        backstory_txt = None
-        for x in range(len(cat.former_mentor)):
-            if Cat.fetch_cat(cat.former_mentor[x]).dead:
-                dead_mentor = Cat.fetch_cat(cat.former_mentor[x])
-                break
-        if promoted_to in ["warrior", "medicine cat", "mediator", "elder"]:
-            grown = True
-        else:
-            grown = False
-
-        if dead_mentor:
-            mentor_txt = "dead_mentor"
-            involved_cats.append(dead_mentor)
-        elif not dead_mentor and cat.mentor == None and not grown:
-            mentor_txt = "no_mentor"
-        elif not dead_mentor and cat.mentor and grown:
-            mentor_txt = "living_mentor"
-            involved_cats.append(cat.mentor)
-
-        if leader_outside or leader_exiled or leader_dead:
-            leader_txt = "no_leader"
-        else:
-            leader_txt = "leader"
-            involved_cats.append(game.clan.leader.ID)
-
-        if cat.backstory == ['abandoned1', 'abandoned2', 'abandoned3']:
-            backstory_txt = "abandoned"
-
-        if cat.parent1 and not cat.parent2:
-            parent_txt = "parent1"
-            if parent1.dead:
-                parent_status = "dead"
-            else:
-                parent_status = "alive"
-
-        if cat.parent2:
-            parent_txt = choice(["parent1", "parent2"])
-            if parent2.dead:
-                parent_status = "dead"
-            else:
-                parent_status = "alive"
-
-        if cat.parent1 and cat.parent2:
-            parent_txt = choice(["both_parents", "parent1", "parent2"])
-            if parent1.dead and parent2.dead:
-                parent_status = "dead"
-            elif not parent1.dead and not parent2.dead:
-                parent_status = "alive"
-
+        mentor = None
+        previous_alive_mentor = None
         try:
-            ceremony += CEREMONY_TXT[promoted_to][leader_txt][trait]
-            ceremony += CEREMONY_TXT[promoted_to][leader_txt][general_txt]
-            if mentor_txt != None:
-                ceremony += CEREMONY_TXT[promoted_to][leader_txt][mentor_txt]
-            if backstory_txt:
-                ceremony += CEREMONY_TXT[promoted_to][leader_txt][backstory_txt]
-            if cat.parent1:
-                ceremony += CEREMONY_TXT[promoted_to][parent_txt][parent_status]
-        except KeyError:
-            print("Error loading ceremony text. ")
-            ceremony += [""]
-                
-        '''#DEAD MENTOR CEREMONY
-            if len(cat.former_mentor) > 0:
-                dead_mentor = None
-                for x in range(len(cat.former_mentor)):
-                    if Cat.fetch_cat(cat.former_mentor[x]).dead:
-                        dead_mentor = Cat.fetch_cat(cat.former_mentor[x])
-                        break'''
-                     
-        # getting the mentor's name
-        if dead_mentor:
-            mentor_name = str(dead_mentor.name)
-        else:
+            # Get all the ceremonies for the role ----------------------------------------
+            possible_ceremonies.update(self.ceremony_id_by_tag[promoted_to])
+
+            # Gather ones for mentor. -----------------------------------------------------
+            tags = []
+
+            dead_mentor = None
             if cat.mentor:
-                mentor_name = str(Cat.fetch_cat(cat.mentor).name)
-                involved_cats.append(cat.mentor)
-            elif cat.former_mentor:
-                mentor_name = str(Cat.fetch_cat(cat.former_mentor[-1]).name)
+                tags.append("yes_mentor")
+                mentor = Cat.fetch_cat(cat.mentor)
             else:
-                mentor_name = "mentor_placeholder"
+                tags.append("no_mentor")
+
+            # Dead mentor
+            for c in reversed(cat.former_mentor):
+                if Cat.fetch_cat(c) and Cat.fetch_cat(c).dead:
+                    tags.append("dead_mentor")
+                    dead_mentor = Cat.fetch_cat(c)
+                    break
+
+            for c in reversed(cat.former_mentor):
+                if Cat.fetch_cat(c) and not Cat.fetch_cat(c).dead and not Cat.fetch_cat(c).outside:
+                    tags.append("alive_mentor")
+                    previous_alive_mentor = Cat.fetch_cat(c)
+                    break
+
+
+            #Now we add the mentor stuff:
+            temp = possible_ceremonies.intersection(self.ceremony_id_by_tag["general_mentor"])
+
+            for t in tags:
+                temp.update(possible_ceremonies.intersection(self.ceremony_id_by_tag[t]))
+
+            possible_ceremonies = temp
+
+            # Gather for parents ---------------------------------------------------------
+            dead_parents = []
+            living_parents = []
+            for p in [cat.parent1, cat.parent2]:
+                if Cat.fetch_cat(p):
+                    if Cat.fetch_cat(p).dead:
+                        dead_parents.append(Cat.fetch_cat(p))
+                    elif not Cat.fetch_cat(p).dead and not Cat.fetch_cat(p).outside:
+                        living_parents.append(Cat.fetch_cat(p))
+
+            tags = []
+            if len(dead_parents) == 1:
+                tags.append("dead1_parents")
+            elif len(dead_parents) == 2:
+                tags.append("dead1_parents")
+
+            if len(living_parents) == 1:
+                tags.append("alive1_parents")
+            elif len(dead_parents) == 2:
+                tags.append("alive2_parents")
+
+            temp = possible_ceremonies.intersection(self.ceremony_id_by_tag["general_parents"])
+
+            for t in tags:
+                temp.update(possible_ceremonies.intersection(self.ceremony_id_by_tag[t]))
+
+            possible_ceremonies = temp
+
+            # Gather for leader ---------------------------------------------------------
+
+            tags = []
+            if game.clan.leader and not game.clan.leader.dead and not game.clan.leader.outside:
+                tags.append("yes_leader")
+            else:
+                tags.append("no_leader")
+
+            temp = possible_ceremonies.intersection(self.ceremony_id_by_tag["general_leader"])
+
+            for t in tags:
+                temp.update(possible_ceremonies.intersection(self.ceremony_id_by_tag[t]))
+
+            possible_ceremonies = temp
+
+            # Gather for backstories ----------------------------------------------------
+            tags = []
+            if cat.backstory == ['abandoned1', 'abandoned2', 'abandoned3']:
+                tags.append("abandoned")
+            elif cat.backstory == "clanborn":
+                tags.append("clanborn")
+
+            temp = possible_ceremonies.intersection(self.ceremony_id_by_tag["general_backstory"])
+
+            for t in tags:
+                temp.update(possible_ceremonies.intersection(self.ceremony_id_by_tag[t]))
+
+            possible_ceremonies = temp
+            # Gather for traits --------------------------------------------------------------
+
+            temp = possible_ceremonies.intersection(self.ceremony_id_by_tag["all_traits"])
+
+            temp.update(possible_ceremonies.intersection(self.ceremony_id_by_tag[cat.trait]))
+
+            possible_ceremonies = temp
+        except Exception as ex:
+            traceback.print_exception(type(ex), ex, ex.__traceback__)
+            print("Issue gathering ceremony text.", str(cat.name), promoted_to)
 
         # getting the random honor if it's needed
         random_honor = None
         if promoted_to == 'warrior':
+            resource_dir = "resources/dicts/events/ceremonies/"
             with open(f"{resource_dir}ceremony_traits.json", 'r') as read_file:
                 TRAITS = ujson.loads(read_file.read())
-            if not leader_dead and not leader_exiled and not leader_outside:
-                try:
-                    random_honor = choice(TRAITS[cat.trait])
-                except KeyError:
-                    random_honor = "hard work"
+            try:
+                random_honor = choice(TRAITS[cat.trait])
+            except KeyError:
+                random_honor = "hard work"
 
-        ceremony_text = choice(ceremony)
-        while ceremony == "":
-            ceremony_text = choice(ceremony)
+        print(possible_ceremonies)
+        ceremony_text = self.CEREMONY_TXT[choice(list(possible_ceremonies))][1]
 
-        if promoted_to in ['warrior', 'apprentice', 'medicine cat apprentice', 'medicine cat', 'elder', 'mediator',
-                           "mediator apprentice"]:
-            ceremony_text = ceremony_text_adjust(Cat, ceremony_text, cat, mentor_name=mentor_name, random_honor=random_honor)
-            game.cur_events_list.append(Single_Event(ceremony_text, "ceremony", involved_cats))
-            # game.ceremony_events_list.append(ceremony_text)
-        else:
-            ceremony_text = ceremony_text_adjust(Cat, ceremony_text, cat, mentor_name=mentor_name, random_honor=random_honor)
-            game.cur_events_list.append(Single_Event(f'{str(cat.name)}{ceremony_text}', "ceremony", involved_cats))
+        ceremony_text = ceremony_text_adjust(Cat, ceremony_text, cat, dead_mentor=dead_mentor, random_honor=random_honor,
+                                             mentor=mentor, previous_alive_mentor=previous_alive_mentor)
+        game.cur_events_list.append(Single_Event(f'{ceremony_text}', "ceremony", involved_cats))
             # game.ceremony_events_list.append(f'{str(cat.name)}{ceremony_text}')
 
     def gain_accessories(self, cat):

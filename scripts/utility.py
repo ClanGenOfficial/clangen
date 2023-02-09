@@ -342,17 +342,38 @@ def event_text_adjust(Cat, text, cat, other_cat=None, other_clan_name=None, keep
 
     return adjust_text
 
-def ceremony_text_adjust(Cat, text, cat, mentor_name=None, random_honor=None):
+
+def ceremony_text_adjust(Cat, text, cat, dead_mentor=None, mentor=None, previous_alive_mentor=None, random_honor=None):
     name = str(cat.name)
     prefix = str(cat.name.prefix)
     clanname = str(game.clan.name + "Clan")
-    mentor_name = mentor_name
-    leader_name = str(game.clan.leader.name)
+
+    if mentor:
+        mentor_name = str(mentor.name)
+    else:
+        mentor_name = "mentor_placeholder"
+
+    if dead_mentor:
+        dead_mentor_name = str(dead_mentor.name)
+    else:
+        dead_mentor_name = "dead_mentor_placeholder"
+
+    if previous_alive_mentor:
+        previous_alive_mentor_name = str(previous_alive_mentor.name)
+    else:
+        previous_alive_mentor_name = "previous_mentor_name"
+
+    if game.clan.leader:
+        leader_name = str(game.clan.leader.name)
+    else:
+        leader_name = "leader_placeholder"
+
+    parent_names = []
+    for c in [cat.parent1, cat.parent2]:
+        if c:
+            parent_names.append(str(Cat.fetch_cat(c).name))
+
     random_honor = random_honor
-    if cat.parent1:
-        parent1 = str(Cat.fetch_cat(cat.parent1).name)
-        if cat.parent2:
-            parent2 = str(Cat.fetch_cat(cat.parent2).name)
 
     adjust_text = text
     adjust_text = adjust_text.replace("(prefix)", prefix)
@@ -360,12 +381,19 @@ def ceremony_text_adjust(Cat, text, cat, mentor_name=None, random_honor=None):
     adjust_text = adjust_text.replace("c_n", clanname)
     adjust_text = adjust_text.replace("(mentor)", mentor_name)
     adjust_text = adjust_text.replace("l_n", leader_name)
+    adjust_text = adjust_text.replace("(deadmentor)", dead_mentor_name)
+    adjust_text = adjust_text.replace("(previous_mentor)", previous_alive_mentor_name)
+
+    if "p1" in adjust_text and "p2" in adjust_text and len(parent_names) >= 2:
+        adjust_text = adjust_text.replace("p1", parent_names[0])
+        adjust_text = adjust_text.replace("p2", parent_names[1])
+    elif "p1" in adjust_text and len(parent_names) >= 1:
+        adjust_text = adjust_text.replace("p1", choice(parent_names))
+    elif "p2" in adjust_text and len(parent_names) >= 1:
+        adjust_text = adjust_text.replace("p2", choice(parent_names))
+
     if random_honor:
         adjust_text = adjust_text.replace("r_h", random_honor)
-    if cat.parent1:
-        adjust_text = adjust_text.replace("p1", parent1)
-        if cat.parent2:
-            adjust_text = adjust_text.replace("p2", parent2)
 
     return adjust_text
 
