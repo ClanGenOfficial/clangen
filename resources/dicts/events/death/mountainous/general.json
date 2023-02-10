@@ -37,7 +37,8 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "vengeful", "ambitious", "sneaky", "patient", "wise", "righteous", "cold", "patient"],
-        "other_cat_skill": ["very smart", "extremely smart", "fantastic hunter"]
+        "other_cat_skill": ["very smart", "extremely smart", "fantastic hunter"],
+        "cat_negate_skill": ["prophet", "omen sight", "excellent fighter"]
     },
     {
         "camp": "any",
@@ -47,7 +48,8 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "vengeful", "ambitious", "righteous", "cold", "patient"],
-        "other_cat_skill": ["fantastic hunter", "great fighter", "excellent fighter"]
+        "other_cat_skill": ["fantastic hunter", "great fighter", "excellent fighter"],
+        "cat_negate_skill": ["prophet", "omen sight", "excellent fighter"]
     },
     {
         "camp": "any",

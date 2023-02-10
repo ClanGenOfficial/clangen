@@ -1123,6 +1123,14 @@
         "illness_infectiousness": [
         ],
         "risks": [
+            {
+                "name": "headache",
+                "chance": 20
+            },
+            {
+                "name": "severe headache",
+                "chance": 20
+            }
         ],
         "also_got": [
         ],
@@ -1132,8 +1140,7 @@
             "blind",
             "loss of balance",
             "partial hearing loss",
-            "dandelion",
-            "poppy"
+            "persistent headaches"
         ],
         "herbs": [
             "juniper",
@@ -1167,8 +1174,7 @@
         "cause_permanent": [
             "blind",
             "one bad eye",
-            "failing eyesight",
-            "goldenrod"
+            "failing eyesight"
         ],
         "herbs": [
             "cobwebs",
@@ -1284,6 +1290,84 @@
             "juniper",
             "ragwort",
             "poppy"
+        ]
+    },
+
+    "bee sting": {
+        "duration": 2,
+        "severity": "minor",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 20,
+            "adolescent": 30,
+            "young adult": 50,
+            "adult": 50,
+            "senior adult": 50,
+            "elder": 30
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+        ],
+        "also_got": [
+        ],
+        "cause_permanent": [
+        ],
+        "herbs": [
+            "blackberry",
+            "dandelion",
+            "poppy"
+        ]
+    },
+
+    "headache": {
+        "duration": 1,
+        "severity": "minor",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+        ],
+        "also_got": [
+        ],
+        "cause_permanent": [
+        ],
+        "herbs": [
+            "poppy",
+            "juniper"
+        ]
+    },
+    "severe headache": {
+        "duration": 0,
+        "severity": "major",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+        ],
+        "also_got": [
+        ],
+        "cause_permanent": [
+        ],
+        "herbs": [
+            "poppy",
+            "juniper"
         ]
     }
 }
