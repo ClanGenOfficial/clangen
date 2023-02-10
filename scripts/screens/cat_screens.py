@@ -1193,7 +1193,7 @@ class ProfileScreen(Screens):
             else:
                 influence_history = f"This cat's mentor was {mentor}."
         elif influenced_trait is not None and influenced_skill is not None:
-            influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait} as well as {influenced_skill.lower()}."
+            influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait.lower()} as well as {influenced_skill.lower()}."
         else:
             influence_history = f"This cat's mentor was {mentor}."
 

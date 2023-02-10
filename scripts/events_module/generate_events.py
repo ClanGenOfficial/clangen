@@ -425,7 +425,7 @@ Following tags are used for new cat events:
 "parent" < this litter or kit also comes with a parent (this does not include adoptive parents from within the clan)
 "m_c" < the event text includes the main cat, not just the new cat
 "other_cat" < the event text includes the other cat, not just the new cat and main cat
-"warrior", "apprentice", "medicine cat apprentice", "medicine cat" < make the new cat start with the tagged for status
+"new_warrior", "new_apprentice", "new_medicine cat apprentice", "new_medicine cat" < make the new cat start with the tagged for status
 "injured" < tag along with a second tag that's the name of the injury you want the new_cat to have
 "major_injury" < tag to give the new cat a random major-severity injury
 
