@@ -90,10 +90,7 @@
         "clan_to_patrol",
         "respect",
         "rel_patrol",
-        "medium_prey0",
-        "medium_prey1",
-        "large_prey2",
-        "large_prey3"
+        "large_prey"
     ],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find their red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it.",
     "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
@@ -159,10 +156,7 @@
         "clan_to_patrol",
         "respect",
         "rel_patrol",
-        "medium_prey0",
-        "medium_prey1",
-        "large_prey2",
-        "large_prey3"
+        "large_prey"
     ],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find their red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it.",
     "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
@@ -227,10 +221,7 @@
         "bite-wound",
         "clan_to_patrol",
         "respect",
-        "medium_prey0",
-        "medium_prey1",
-        "large_prey2",
-        "large_prey3"
+        "large_prey"
     ],
     "intro_text": "r_c catches the scent of a fox - but is it red, or gray? Tracking it, they find their red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it.",
     "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
@@ -296,10 +287,7 @@
         "clan_to_patrol",
         "respect",
         "rel_patrol",
-        "medium_prey0",
-        "medium_prey1",
-        "large_prey2",
-        "large_prey3"
+        "large_prey"
     ],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find a stocky gray fox feeding on a deer fawn carcass. A gray fox is unlikely to have killed a fawn this size.",
     "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
@@ -364,10 +352,7 @@
         "clan_to_patrol",
         "respect",
         "rel_patrol",
-        "medium_prey0",
-        "medium_prey1",
-        "large_prey2",
-        "large_prey3"
+        "large_prey"
     ],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find a stocky gray fox feeding on a deer fawn carcass. A gray fox is unlikely to have killed a fawn this size.",
     "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
@@ -427,10 +412,7 @@
         "bite-wound",
         "clan_to_patrol",
         "respect",
-        "medium_prey0",
-        "medium_prey1",
-        "large_prey2",
-        "large_prey3"
+        "large_prey"
     ],
     "intro_text": "r_c catches the scent of a fox - but is it red, or gray? Tracking it, they find a stocky gray fox feeding on a deer fawn carcass. A gray fox is unlikely to have killed a fawn this size.",
     "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
@@ -1249,14 +1231,16 @@
 	"chance_of_success": 65,
 	"exp": 15,
 	"success_text": ["app1 bunches up their hind legs and pounces when the bird has its head down to peck for food. It doesn't stand a chance; app1 dispatches it with a bite to the neck, and walks back to camp with their tail held high and their mouth full of feathers.",
-			 "app1 won't be telling the other apprentices what a struggle wrestling with the bird was. They got wing-slapped quite a few times, but in the end, managed to finish off their prey and take it back to camp with only a few feathers stuck in their pelt."],
+			 "app1 won't be telling the other apprentices what a struggle wrestling with the bird was. They got wing-slapped quite a few times, but in the end, managed to finish off their prey and take it back to camp with only a few feathers stuck in their pelt."
+            ],
 	"fail_text": ["app1 pounces on the bird, but lands on empty paws as it flies away before they even hit the ground. Sneezing dust, app1 looks up to find the bird sitting in a tree branch, mocking them. Oh well.",
 		      null,
 		      null,
 		      null,
 		      null,
 		      null,
-		      null],
+		      null
+            ],
 	"win_skills": [
 		"good hunter",
 		"great hunter",

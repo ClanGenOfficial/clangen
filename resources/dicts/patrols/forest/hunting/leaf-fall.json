@@ -12,10 +12,7 @@
         "clan_to_patrol",
         "respect",
         "rel_patrol",
-        "medium_prey0",
-        "medium_prey1",
-        "large_prey2",
-        "large_prey3"
+        "large_prey"
     ],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find their red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it.",
     "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
@@ -81,10 +78,7 @@
         "clan_to_patrol",
         "respect",
         "rel_patrol",
-        "medium_prey0",
-        "medium_prey1",
-        "large_prey2",
-        "large_prey3"
+        "large_prey"
     ],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find their red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it.",
     "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
@@ -149,10 +143,7 @@
         "bite-wound",
         "clan_to_patrol",
         "respect",
-        "medium_prey0",
-        "medium_prey1",
-        "large_prey2",
-        "large_prey3"
+        "large_prey"
     ],
     "intro_text": "r_c catches the scent of a fox - but is it red, or gray? Tracking it, they find their red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it.",
     "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
@@ -218,10 +209,7 @@
         "clan_to_patrol",
         "respect",
         "rel_patrol",
-        "medium_prey0",
-        "medium_prey1",
-        "large_prey2",
-        "large_prey3"
+        "large_prey"
     ],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find a stocky gray fox feeding on a deer fawn carcass. A gray fox is unlikely to have killed a fawn this size.",
     "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
@@ -286,10 +274,7 @@
         "clan_to_patrol",
         "respect",
         "rel_patrol",
-        "medium_prey0",
-        "medium_prey1",
-        "large_prey2",
-        "large_prey3"
+        "large_prey"
     ],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find a stocky gray fox feeding on a deer fawn carcass. A gray fox is unlikely to have killed a fawn this size.",
     "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
@@ -349,10 +334,7 @@
         "bite-wound",
         "clan_to_patrol",
         "respect",
-        "medium_prey0",
-        "medium_prey1",
-        "large_prey2",
-        "large_prey3"
+        "large_prey"
     ],
     "intro_text": "r_c catches the scent of a fox - but is it red, or gray? Tracking it, they find a stocky gray fox feeding on a deer fawn carcass. A gray fox is unlikely to have killed a fawn this size.",
     "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
