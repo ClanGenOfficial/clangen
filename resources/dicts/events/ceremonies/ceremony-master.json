@@ -1038,7 +1038,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "Whisperings on the wind tickle at (mentor)'s ears as they gaze up to the stars, an echo rolling smoothly off their tongue. StarClan blesses m_c and welcomes them!"
+    "Whisperings on the wind tickle at (previous_mentor)'s ears as they gaze up to the stars, an echo rolling smoothly off their tongue. StarClan blesses m_c and welcomes them!"
   ],
   "med_4": [
     [
@@ -1049,7 +1049,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "With the stars softly shining and lighting their pelts, the (mentor) gives (prefix)paw their full name of m_c. They both share the rest of the night with StarClan, celebrating their good fortune in having another medicine cat."
+    "With the stars softly shining and lighting their pelts, the (previous_mentor) gives (prefix)paw their full name of m_c. They both share the rest of the night with StarClan, celebrating their good fortune in having another medicine cat."
   ],
   "med_5": [
     [
@@ -1060,7 +1060,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "Inspired by (prefix)paw's boundless energy and courage, (mentor) names them m_c, and welcomes them as a full medicine cat."
+    "Inspired by (prefix)paw's boundless energy and courage, (previous_mentor) names them m_c, and welcomes them as a full medicine cat."
   ],
   "med_6": [
     [
@@ -1071,7 +1071,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "Having finally reached the end of their apprenticeship, newly named medicine cat, m_c, feels there's still so much to learn, and frets about whether or not they are ready. With twitching whiskers, (mentor) assures them that StarClan will always be there to guide them."
+    "Having finally reached the end of their apprenticeship, newly named medicine cat, m_c, feels there's still so much to learn, and frets about whether or not they are ready. With twitching whiskers, (previous_mentor) assures them that StarClan will always be there to guide them."
   ],
   "med_7": [
     [
@@ -1082,12 +1082,12 @@
       "general_backstory",
       "all_traits"
     ],
-    "(mentor) still remembers when (prefix)paw was just a kit, batting around in the medicine den, and asking endless questions about everything under the sun. Even now, they ask why their new name, m_c, was chosen with shining eyes and twitching whiskers."
+    "(previous_mentor) still remembers when (prefix)paw was just a kit, batting around in the medicine den, and asking endless questions about everything under the sun. Even now, they ask why their new name, m_c, was chosen with shining eyes and twitching whiskers."
   ],
   "med_8": [
     [
       "medicine cat",
-      "no_mentor",
+      "general_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -1615,24 +1615,24 @@
   "warrior_6": [
     [
       "warrior",
-      "yes_mentor",
+      "alive_mentor",
       "general_parents",
       "yes_leader",
       "general_backstory",
       "all_traits"
     ],
-    "(mentor) sits in the crowd, chest puffed out in pride as they watch (prefix)paw be named m_c, and honored for their r_h. They consider themself lucky to have been able to train such an amazing young cat, and look forward to seeing the warrior they become."
+    "(previous_mentor) sits in the crowd, chest puffed out in pride as they watch (prefix)paw be named m_c, and honored for their r_h. They consider themself lucky to have been able to train such an amazing young cat, and look forward to seeing the warrior they become."
   ],
   "warrior_7": [
     [
       "warrior",
-      "yes_mentor",
+      "alive_mentor",
       "general_parents",
       "yes_leader",
       "general_backstory",
       "all_traits"
     ],
-    "(mentor) gives (prefix)paw a friendly nudge when the leader calls the young cat's name. They watch with pride as (prefix)paw steps forward to receive their new name, m_c, and are honored for their r_h."
+    "(previous_mentor) gives (prefix)paw a friendly nudge when the leader calls the young cat's name. They watch with pride as (prefix)paw steps forward to receive their new name, m_c, and are honored for their r_h."
   ],
   "warrior_8": [
     [

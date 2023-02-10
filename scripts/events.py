@@ -10,6 +10,7 @@ from scripts.events_module.condition_events import Condition_Events
 from scripts.events_module.death_events import Death_Events
 from scripts.events_module.freshkill_pile_events import Freshkill_Events
 from scripts.event_class import Single_Event
+import traceback
 
 
 class Events():
@@ -38,7 +39,7 @@ class Events():
     def one_moon(self):
         game.cur_events_list = []
         game.herb_events_list = []
-        game.mediated = False
+        game.mediated = []
         game.switches['saved_clan'] = False
         self.new_cat_invited = False
 
@@ -798,6 +799,8 @@ class Events():
         # Time to gather ceremonies. First, lets gather all the ceremony ID's.
         possible_ceremonies = set()
         dead_mentor = None
+        mentor = None
+        previous_alive_mentor = None
         try:
             # Get all the ceremonies for the role ----------------------------------------
             possible_ceremonies.update(self.ceremony_id_by_tag[promoted_to])
@@ -808,6 +811,7 @@ class Events():
             dead_mentor = None
             if cat.mentor:
                 tags.append("yes_mentor")
+                mentor = Cat.fetch_cat(cat.mentor)
             else:
                 tags.append("no_mentor")
 
@@ -817,6 +821,13 @@ class Events():
                     tags.append("dead_mentor")
                     dead_mentor = Cat.fetch_cat(c)
                     break
+
+            for c in reversed(cat.former_mentor):
+                if Cat.fetch_cat(c) and not Cat.fetch_cat(c).dead and not Cat.fetch_cat(c).outside:
+                    tags.append("alive_mentor")
+                    previous_alive_mentor = Cat.fetch_cat(c)
+                    break
+
 
             #Now we add the mentor stuff:
             temp = possible_ceremonies.intersection(self.ceremony_id_by_tag["general_mentor"])
@@ -885,12 +896,12 @@ class Events():
             # Gather for traits --------------------------------------------------------------
 
             temp = possible_ceremonies.intersection(self.ceremony_id_by_tag["all_traits"])
-            print("all_traits", temp)
 
             temp.update(possible_ceremonies.intersection(self.ceremony_id_by_tag[cat.trait]))
 
             possible_ceremonies = temp
-        except:
+        except Exception as ex:
+            traceback.print_exception(type(ex), ex, ex.__traceback__)
             print("Issue gathering ceremony text.", str(cat.name), promoted_to)
 
         # getting the random honor if it's needed
@@ -906,9 +917,9 @@ class Events():
 
         print(possible_ceremonies)
         ceremony_text = self.CEREMONY_TXT[choice(list(possible_ceremonies))][1]
-        print(ceremony_text)
 
-        ceremony_text = ceremony_text_adjust(Cat, ceremony_text, cat, dead_mentor=dead_mentor, random_honor=random_honor)
+        ceremony_text = ceremony_text_adjust(Cat, ceremony_text, cat, dead_mentor=dead_mentor, random_honor=random_honor,
+                                             mentor=mentor, previous_alive_mentor=previous_alive_mentor)
         game.cur_events_list.append(Single_Event(f'{ceremony_text}', "ceremony", involved_cats))
             # game.ceremony_events_list.append(f'{str(cat.name)}{ceremony_text}')
 

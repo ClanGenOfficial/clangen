@@ -648,11 +648,7 @@ class Relation_Events():
 
         return will_break_up
 
-    def check_if_can_have_kits(
-            self,
-            cat,
-            unknown_parent_setting
-    ):
+    def check_if_can_have_kits(self, cat, unknown_parent_setting):
 
         if cat.birth_cooldown > 0:
             cat.birth_cooldown -= 1
