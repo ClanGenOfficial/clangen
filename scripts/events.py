@@ -553,6 +553,8 @@ class Events():
             self.perform_ceremonies(cat)
             self.coming_out(cat)
             self.relation_events.handle_having_kits(cat, clan=game.clan)
+            cat.create_interaction()
+            cat.thoughts()
             return
 
         # check for death/reveal/risks/retire caused by permanent conditions
@@ -798,6 +800,8 @@ class Events():
         dead_mentor = None
         mentor = None
         previous_alive_mentor = None
+        dead_parents = []
+        living_parents = []
         try:
             # Get all the ceremonies for the role ----------------------------------------
             possible_ceremonies.update(self.ceremony_id_by_tag[promoted_to])
@@ -834,8 +838,6 @@ class Events():
             possible_ceremonies = temp
 
             # Gather for parents ---------------------------------------------------------
-            dead_parents = []
-            living_parents = []
             for p in [cat.parent1, cat.parent2]:
                 if Cat.fetch_cat(p):
                     if Cat.fetch_cat(p).dead:
@@ -844,14 +846,15 @@ class Events():
                         living_parents.append(Cat.fetch_cat(p))
 
             tags = []
-            if len(dead_parents) == 1:
+            if len(dead_parents) >= 1:
                 tags.append("dead1_parents")
-            elif len(dead_parents) == 2:
+            if len(dead_parents) >= 2:
                 tags.append("dead1_parents")
+                tags.append("dead2_parents")
 
-            if len(living_parents) == 1:
+            if len(living_parents) >= 1:
                 tags.append("alive1_parents")
-            elif len(dead_parents) == 2:
+            if len(living_parents) >= 2:
                 tags.append("alive2_parents")
 
             temp = possible_ceremonies.intersection(self.ceremony_id_by_tag["general_parents"])
@@ -916,7 +919,8 @@ class Events():
 
         ceremony_text = ceremony_text_adjust(Cat, ceremony_text, cat, dead_mentor=dead_mentor,
                                              random_honor=random_honor,
-                                             mentor=mentor, previous_alive_mentor=previous_alive_mentor)
+                                             mentor=mentor, previous_alive_mentor=previous_alive_mentor,
+                                             living_parents=living_parents, dead_parents=dead_parents)
         game.cur_events_list.append(Single_Event(f'{ceremony_text}', "ceremony", involved_cats))
         # game.ceremony_events_list.append(f'{str(cat.name)}{ceremony_text}')
     def gain_accessories(self, cat):

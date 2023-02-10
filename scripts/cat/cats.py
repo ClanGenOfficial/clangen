@@ -882,8 +882,13 @@ class Cat():
         other_cat = random.choice(list(all_cats.keys()))
 
         # get other cat
+        i = 0
         while other_cat == self.ID and len(all_cats) > 1:
             other_cat = random.choice(list(all_cats.keys()))
+            i += 1
+            if i > 100:
+                other_cat = None
+                break
         other_cat = all_cats.get(other_cat)
 
         # get possible thoughts
