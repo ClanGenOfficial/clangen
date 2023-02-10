@@ -1108,7 +1108,7 @@
 },
 {
     "patrol_id": "fst_hunt_leaffallvanish1",
-    "biome": "Any",
+    "biome": "forest",
     "season": "leaf-fall",
     "tags": ["hunting", "no_app", "small_prey0", "medium_prey1", "dislike", "distrust", "disrespect", "patrol_to_r_c", "large_prey3", "injury", "sprain", "sore", "shivering"],
     "intro_text": "The rain seems a constant, unceasing beat, punctuating the steps of the hunting patrol as they march towards their hunting ground. But there's one less set of footsteps than there should be. p_l can't see r_c in the watery haze.",

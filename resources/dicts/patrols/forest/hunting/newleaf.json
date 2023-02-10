@@ -1140,7 +1140,7 @@
 },
 {
     "patrol_id": "fst_hunt_newleafvanish1",
-    "biome": "Any",
+    "biome": "forest",
     "season": "newleaf",
     "tags": ["hunting", "no_app", "medium_prey0", "medium_prey1", "dislike", "distrust", "disrespect", "patrol_to_r_c", "large_prey3", "injury", "sprain", "sore", "shivering"],
     "intro_text": "As the patrol wanders through a damp, dripping world, their claws clogged with mud, p_l turns around to find r_c is missing.",

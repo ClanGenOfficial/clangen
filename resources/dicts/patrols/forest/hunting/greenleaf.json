@@ -1263,7 +1263,7 @@
 },
 {
     "patrol_id": "fst_hunt_greenleafvanish1",
-    "biome": "Any",
+    "biome": "forest",
     "season": "greenleaf",
     "tags": ["hunting", "no_app", "medium_prey0", "medium_prey1", "dislike", "distrust", "disrespect", "patrol_to_r_c", "large_prey3", "injury", "sprain", "sore", "shivering"],
     "intro_text": "The patrol heads out, determined to visit a distant but well-known clearing, where hopefully the grass has set to seed and attracted birds. However, as they get nearer, p_l looks around and realises r_c isn't with them.",
