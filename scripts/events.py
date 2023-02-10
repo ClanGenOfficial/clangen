@@ -37,7 +37,6 @@ class Events():
         self.new_cat_events = NewCatEvents()
         self.misc_events = MiscEvents()
 
-
     def one_moon(self):
         game.cur_events_list = []
         game.herb_events_list = []
@@ -1134,8 +1133,6 @@ class Events():
                 return
 
         self.misc_events.handle_misc_events(cat, other_cat, self.at_war, self.enemy_clan, alive_kits=get_alive_kits(Cat))
-
-
 
     def handle_injuries_or_general_death(self, cat):
         # ---------------------------------------------------------------------------- #

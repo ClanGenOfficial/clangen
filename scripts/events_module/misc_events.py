@@ -70,11 +70,9 @@ class MiscEvents():
         if "other_clan" in misc_event.tags:
             types.append("other_clans")
         game.cur_events_list.append(Single_Event(event_text, types, involved_cats))
-        # game.birth_death_events_list.append(death_text)
 
     def handle_relationship_changes(self, cat, death_cause, other_cat):
-        cat_to = None
-        cat_from = None
+
         n = 5
         romantic = 0
         platonic = 0
