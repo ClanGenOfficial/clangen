@@ -553,6 +553,8 @@ class Events():
             self.perform_ceremonies(cat)
             self.coming_out(cat)
             self.relation_events.handle_having_kits(cat, clan=game.clan)
+            cat.create_interaction()
+            cat.thoughts()
             return
 
         # check for death/reveal/risks/retire caused by permanent conditions
