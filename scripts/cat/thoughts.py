@@ -80,6 +80,7 @@ def get_alive_thoughts(cat, other_cat):
         first_key = "dead"
     else:
         first_key = "alive"
+
     thoughts += get_family_thoughts(cat, other_cat)
     thoughts += GENERAL_TO_OTHER[first_key]["all"]
 
