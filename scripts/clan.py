@@ -624,7 +624,12 @@ class Clan():
 
         #Mediated flag
         if "mediated" in clan_data:
-            game.mediated = clan_data["mediated"]
+            if type(clan_data["mediated"]) != list:
+                game.mediated = []
+            else:
+                game.mediated = clan_data["mediated"]
+
+            print(game.mediated)
 
 
         self.load_pregnancy(game.clan)
