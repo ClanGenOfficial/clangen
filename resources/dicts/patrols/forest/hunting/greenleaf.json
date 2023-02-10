@@ -1186,8 +1186,9 @@
 	"antagonize_text": null,
 	"antagonize_fail_text": null
 },
+	
 {
-        "patrol_id": "fst_hunt_bird1",
+        "patrol_id": "fst_hunt_bird_swgl",
         "biome": "forest",
         "season": "greenleaf",
         "tags": [
@@ -1231,6 +1232,39 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null
+},	
+{
+	"patrol_id": "fst_hunt_bird_sagl",
+	"biome": "forest",
+	"season": "greenleaf",
+        "tags": [
+		"hunting",
+		"small_prey",
+		"apprentice",
+		"one_apprentice",
+		"no_fail_prey"
+		],
+	"intro_text": "app1 nearly thinks they'll have to come home empty-pawed when a rustling in the grass alerts them to prey. They drop down into a crouch, scenting bird on the air...",
+	"decline_text": "...but app1 stands up again just as quickly. They've never hunted bird before, and don't feel like walking back to camp with a mouthful of feathers. They'll find easier prey if they just keep walking, they're sure of it.",
+	"chance_of_success": 65,
+	"exp": 15,
+	"success_text": ["app1 bunches up their hind legs and pounces when the bird has its head down to peck for food. It doesn't stand a chance; app1 dispatches it with a bite to the neck, and walks back to camp with their tail held high and their mouth full of feathers.",
+			 "app1 won't be telling the other apprentices what a struggle wrestling with the bird was. They got wing-slapped quite a few times, but in the end, managed to finish off their prey and take it back to camp with only a few feathers stuck in their pelt."],
+	"fail_text": ["app1 pounces on the bird, but lands on empty paws as it flies away before they even hit the ground. Sneezing dust, app1 looks up to find the bird sitting in a tree branch, mocking them. Oh well.",
+		      null,
+		      null,
+		      null,
+		      null,
+		      null,
+		      null],
+	"win_skills": [
+		"good hunter",
+		"great hunter",
+		"fantastic hunter"],
+	"min_cats": 1,
+	"max_cats": 1,
+	"antagonize_text": null,
+	"antagonize_fail_text": null
 },
 {
 	"patrol_id": "fst_hunt_formergensquirrel_greenleaf1",
