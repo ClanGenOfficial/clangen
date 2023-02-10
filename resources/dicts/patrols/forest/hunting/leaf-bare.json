@@ -903,7 +903,7 @@
         "p_l attempted to hunt the rat down, but a falling icicle from the branches forces the rat to flee. They carefully head away from the scene lest they be impaled."
     ],
     "decline_text": "p_l was determined not to become an icicle's next victim, and decides to hunt elsewhere.",
-    "chance_of_success": 60,
+    "chance_of_success": 40,
     "exp": 20,
     "win_skills": [
         null
@@ -930,7 +930,7 @@
         "p_l attempted to dive into a hole in the log, but became stuck! The rat escaped the log with it's life, and p_l had to wait with wounded pride until a patrol could get them unstuck."
     ],
     "decline_text": "p_l knew that rats were dangerous on their own. They decided to hunt for safer prey elsewhere.",
-    "chance_of_success": 60,
+    "chance_of_success": 40,
     "exp": 20,
     "win_skills": [
         null
@@ -958,7 +958,7 @@
         "app1 and p_l attempt to chase the rats, but the snow banks were much deeper than they appeared! The rats ran away as the two dug themselves out of the snow, shivering and hungry."
     ],
     "decline_text": "Rats fighting over food could turn into rats fighting the patrol for it's meal. They wisely decide to hunt something else.",
-    "chance_of_success": 60,
+    "chance_of_success": 40,
     "exp": 20,
     "win_skills": [
         null
@@ -993,7 +993,7 @@
         "r_c leads the cats to the abandoned twoleg nest, but the rats seemed to be more lively than they thought. A harsh battle forced the patrol to retreat, r_c being the most harshly wounded."
     ],
     "decline_text": "The other cats disagree with such a risk, and resume their normal hunting patrol.",
-    "chance_of_success": 50,
+    "chance_of_success": 40,
     "exp": 30,
     "win_skills": [
         "great hunter",
@@ -1014,7 +1014,7 @@
     "tags": ["hunting", "medium_prey0", "large_prey1", "large_prey2", "battle_injury", "injure_all"],
     "intro_text": "There has been a legend floating around the Clan. Sightings of a strange mass of rats stuck together by their tails, larger and more dangerous than anything the Clan has seenn. Will p_l's partrol look for this legendary monster?",
     "decline_text": "No. Such a thing cant exist, right? I has to be an elder's imagination. p_l decides to take their patrol elsewhere to hunt.",
-    "chance_of_success": 40,
+    "chance_of_success": 30,
     "exp": 30,
     "success_text": [
         "The rat king's lair is defended heavily by smaller rats. While the patrol doesn't find any sign of the rat king, they manage to defeat and being back a feast of small rats.",
@@ -1047,7 +1047,7 @@
     "tags": ["hunting", "medium_prey0", "large_prey1", "large_prey2", "multi_death"],
     "intro_text": "There has been a legend floating around the Clan. Sightings of a strange mass of rats stuck together by their tails, larger and more dangerous than anything the Clan has seenn. Will p_l's partrol look for this legendary monster?",
     "decline_text": "No. Such a thing cant exist, right? I has to be an elder's imagination. p_l decides to take their patrol elsewhere to hunt.",
-    "chance_of_success": 40,
+    "chance_of_success": 30,
     "exp": 30,
     "success_text": [
         "The rat king's lair is defended heavily by smaller rats. While the patrol doesn't find any sign of the rat king, they manage to defeat and being back a feast of small rats.",
