@@ -2171,7 +2171,8 @@ class MediationScreen(Screens):
                 self.selected_cat_2 = None
                 self.update_selected_cats()
             elif event.ui_element == self.mediate_button:
-                game.mediated = True
+                game.mediated.append([self.selected_cat_1.ID, self.selected_cat_2.ID])
+                game.patrolled.append(self.mediators[self.selected_mediator].ID)
                 output = Cat.mediate_relationship(
                     self.mediators[self.selected_mediator], self.selected_cat_1, self.selected_cat_2,
                     self.allow_romantic)
@@ -2179,7 +2180,8 @@ class MediationScreen(Screens):
                 self.update_selected_cats()
                 self.update_mediator_info()
             elif event.ui_element == self.sabotoge_button:
-                game.mediated = True
+                game.mediated.append(f"{self.selected_cat_1.ID}, {self.selected_cat_2.ID}")
+                game.patrolled.append(self.mediators[self.selected_mediator].ID)
                 output = Cat.mediate_relationship(
                     self.mediators[self.selected_mediator], self.selected_cat_1, self.selected_cat_2,
                     self.allow_romantic,
@@ -2278,11 +2280,12 @@ class MediationScreen(Screens):
                                         object_id=get_text_box_theme("#cat_patrol_info_box"),
                                         line_spacing=0.75)
 
+        self.error = UITextBoxTweaked("", scale(pygame.Rect((560, 100), (458, 100))),
+                                        object_id=get_text_box_theme("#cat_patrol_info_box"),
+                                        line_spacing=0.75)
+
         self.random1 = UIImageButton(scale(pygame.Rect((396, 864), (68, 68))), "", object_id="#random_dice_button")
         self.random2 = UIImageButton(scale(pygame.Rect((1136, 864), (68, 68))), "", object_id="#random_dice_button")
-
-        if game.mediated:
-            self.results.set_text("You've already mediated/sabotaged this moon!")
 
         self.update_buttons()
         self.update_mediator_info()
@@ -2348,6 +2351,7 @@ class MediationScreen(Screens):
                 self.last_med.enable()
             else:
                 self.last_med.disable()
+
         else:
             self.last_med.disable()
             self.next_med.disable()
@@ -2718,14 +2722,33 @@ class MediationScreen(Screens):
 
         return output
 
-
     def update_buttons(self):
+        error_message = ""
+
+        invalid_mediator = False
         if self.selected_mediator is not None:
-            invalid_mediator = self.mediators[self.selected_mediator].not_working()
+            if self.mediators[self.selected_mediator].not_working():
+                invalid_mediator = True
+                error_message += "This mediator can't work this moon. "
+            elif self.mediators[self.selected_mediator].ID in game.patrolled:
+                invalid_mediator = True
+                error_message += "This mediator has already worked this moon. "
         else:
             invalid_mediator = True
 
-        if game.mediated or invalid_mediator or not self.selected_cat_1 or not self.selected_cat_2:
+        invalid_pair = False
+        if self.selected_cat_1 and self.selected_cat_2:
+            for x in game.mediated:
+                if self.selected_cat_1.ID in x and self.selected_cat_2.ID in x:
+                    invalid_pair = True
+                    error_message += "This pair has already been mediated this moon. "
+                    break
+        else:
+            invalid_pair = True
+
+        self.error.set_text(error_message)
+
+        if invalid_mediator or invalid_pair:
             self.mediate_button.disable()
             self.sabotoge_button.disable()
         else:
@@ -2797,6 +2820,8 @@ class MediationScreen(Screens):
             del self.romantic_checkbox
         self.romantic_checkbox_text.kill()
         del self.romantic_checkbox_text
+        self.error.kill()
+        del self.error
 
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]

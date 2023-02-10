@@ -39,7 +39,7 @@ class Events():
     def one_moon(self):
         game.cur_events_list = []
         game.herb_events_list = []
-        game.mediated = False
+        game.mediated = []
         game.switches['saved_clan'] = False
         self.new_cat_invited = False
 
