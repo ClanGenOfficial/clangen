@@ -6,7 +6,6 @@ import os.path
 import itertools
 
 from ..events_module.generate_events import GenerateEvents
-
 try:
     import ujson
 except ImportError:
@@ -125,7 +124,8 @@ class Cat():
         'clanborn', 'halfclan1', 'halfclan2', 'outsider_roots1', 'outsider_roots2',
         'loner1', 'loner2', 'kittypet1', 'kittypet2', 'rogue1', 'rogue2', 'abandoned1',
         'abandoned2', 'abandoned3', 'medicine_cat', 'otherclan', 'otherclan2', 'ostracized_warrior', 'disgraced',
-        'retired_leader', 'refugee', 'tragedy_survivor', 'clan_founder', 'orphaned'
+        'retired_leader', 'refugee', 'tragedy_survivor', 'clan_founder', 'orphaned', "orphaned2", "guided1", "guided2",
+        "guided3", "guided4"
     ]
     all_cats: Dict[str, Cat] = {}  # ID: object
     outside_cats: Dict[str, Cat] = {}  # cats outside the clan
@@ -1000,14 +1000,14 @@ class Cat():
                 possible_groups = ['special', 'heal', 'star', 'mediate', 'smart', 'teach']
                 # check if they had a mentor
                 if self.former_mentor:
-                    chance = randint(0, 5)
+                    chance = randint(0, 9) + int(self.patrol_with_mentor)
                     mentor = Cat.fetch_cat(self.former_mentor[-1])
                     if not mentor:
                         print("WARNING: mentor not found")
                         return
                     # give skill from mentor, this is a higher chance of happening than the warrior has
                     # bc med cats have no patrol_with_mentor modifier
-                    if chance >= 2:
+                    if chance >= 9:
                         for x in possible_groups:
                             if mentor.skill in self.skill_groups[x]:
                                 possible_skill = self.skill_groups.get(x)
@@ -1301,7 +1301,8 @@ class Cat():
 
         if medical_cats_condition_fulfilled(Cat.all_cats.values(), amount_per_med):
             duration = med_duration
-        duration += random.randrange(-1, 1)
+        if severity != 'minor':
+            duration += random.randrange(-1, 1)
         if duration == 0:
             duration = 1
 
@@ -2567,6 +2568,7 @@ with open(f"{resource_directory}injuries.json", 'r') as read_file:
 PERMANENT = None
 with open(f"{resource_directory}permanent_conditions.json", 'r') as read_file:
     PERMANENT = ujson.loads(read_file.read())
+
 
 resource_directory = "resources/dicts/events/death/death_reactions/"
 

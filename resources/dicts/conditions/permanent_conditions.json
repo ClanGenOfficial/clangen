@@ -496,6 +496,10 @@
         "illness_infectiousness": [
         ],
         "risks": [
+            {
+                "name": "headache",
+                "chance": 20
+            }
         ],
         "herbs": []
     },
@@ -549,6 +553,35 @@
             "thyme",
             "juniper",
             "poppy"
+        ]
+    },
+    "persistent headaches": {
+        "severity": "major",
+        "congenital": "sometimes",
+        "moons_until": 2,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "severe headache",
+                "chance": 20
+            },
+            {
+                "name": "headache",
+                "chance": 20
+            }
+        ],
+        "herbs": [
+            "poppy",
+            "juniper"
         ]
     }
 }
