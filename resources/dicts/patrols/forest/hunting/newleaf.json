@@ -1171,5 +1171,198 @@
             "r_c was scarred after disappearing on patrol and being discovered injured.",
             null
     ]
+},
+{
+    "patrol_id": "fst_hunt_ratsolonewleaf",
+    "biome": "forest",
+    "season": "newleaf",
+    "tags": [
+        "hunting",
+        "medium_prey",
+        "no_app"
+    ],
+    "intro_text": "p_l makes their way towards a blooming grove of trees. Their ears perk at the sound of a soft hiss on the wind.",
+    "success_text": [
+        "p_l turns around in time to see a rat chasing after their tail. A quick slash of their claws, and the rat is now just another meal for the Clan.",
+        "p_l crouches low to the ground and stalks close to the bushes, seeing a rat nibbling on a small seed. They lunge forward and bite down into the rat's neck.",
+        "Needs skill success text"
+    ],
+    "fail_text": [
+        "p_l turned around in time to see a rat chasing after their tail! They attempt to slash into it's fur, but the rat quickly avoids the claws and darts away. Mousedung!"
+    ],
+    "decline_text": "Whatever it was, it was too small to feed the Clan.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "win_skills": [
+        "great hunter",
+        "fantastic hunter"
+    ],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_hunt_appratsolonewleaf",
+    "biome": "forest",
+    "season": "newleaf",
+    "tags": [
+        "hunting",
+        "medium_prey",
+        "apprentice"
+    ],
+    "intro_text": "p_l makes their way towards a large mossy log, eager to make the Clan proud with this hunting assessment! A soft scratching could be heard inside.",
+    "success_text": [
+        "p_l charges into the log and surprises the rat inside! The two have a harsh battle but the rat was no match for an apprentice of c_n!",
+        "p_l waited carefully until they could see the rat leave the log. A perfect landing on the rat made it seem like kit's play. They return to c_n's camp with their head held high."
+    ],
+    "fail_text": [
+        "p_l waits patiently for the prey to come out of the log. Long enough that their eyes flutter and they fall asleep! They wake up later to see their mentor standing over them with a disappointed look."
+    ],
+    "decline_text": "p_l decides against hunting in the log, and travels further into the grove to find suitable prey.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_hunt_warrappratnewleaf",
+    "biome": "forest",
+    "season": "newleaf",
+    "tags": [
+        "hunting",
+        "medium_prey",
+        "apprentice",
+        "warrior"
+    ],
+    "intro_text": "p_l and app1 make their way towards a blooming grove of trees, listening to the chittering prey in the branches. p_l spots a rat near a mossy stump, and challenges app1 to catch it.",
+    "success_text": [
+        "app1 lowered themselves into a hunting crouch and slowly stalks towards the rat. Leaping upwards onto the mossy stump, they crashed into the rat and knocked them onto the ground. A quick bite, and a nod of approval from p_l, made them purr in triumph.",
+        "app1 nods and strays behind the mossy stump, watching the rat nibbling on a small seed. They raced forward and bit down on the rat's neck. p_l nodded and herded the patrol forward. One rat wouldn't be enough to feed the whole Clan after all."
+    ],
+    "fail_text": [
+        "app1 nods and crouches to get closer to the rat. But a twig snapping underneath their paw caused the rat to flee. p_l shook their head."
+    ],
+    "decline_text": "app1 shook their head, noting that the prey in the trees would be a much easier target. The two leave the rat behind.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "win_skills": [
+        "great hunter",
+        "fantastic hunter"
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_hunt_ratswarmnewleaf",
+    "biome": "forest",
+    "season": "newleaf",
+    "tags": [
+		"hunting",
+		"respect",
+		"patrol_to_r_c",
+		"medium_prey0",
+		"large_prey1",
+		"large_prey2",
+        "battle_injury"
+    ],
+    "intro_text": "r_c calls the patrol to them, explaining their plan. An abandoned twoleg nest has been spotted on the territory by the border patrols, brimming with rats! It would be the perfect place for some newleaf hunting!",
+    "success_text": [
+        "r_c leads the patrol towards the nest, pushing past the rotting wood blocking the entrance. The patrol got to work rounding up and piling up the rats, and by nightfall they have so much it takes two trips to bring them back! r_c is congratulated for their ingenious plan.",
+        "r_c leads the patrol towards the nest. and quickly got to work hunting down the rats cornered near the smooth stones. It's a tough fight, with rats attempting to flee or attack the patrol. But in the end the patrol managed to get a hefty pile of prey for c_n.",
+        "Need skill success text here"
+    ],
+    "fail_text": [
+        "r_c leads the cats to the abandoned twoleg nest, but as the patrol search and search, all they can find is abandoned rats nests. r_c is scolded for wasting the patrols valuable time.",
+        null,
+        null,
+        "r_c leads the cats to the abandoned twoleg nest, but the rats seemed to be more lively than they thought. A harsh battle forced the patrol to retreat, r_c being the most harshly wounded."
+    ],
+    "decline_text": "The other cats disagree with such a risk, and resume their normal hunting patrol.",
+    "chance_of_success": 50,
+    "exp": 30,
+    "win_skills": [
+        "great hunter",
+        "fantastic hunter"
+    ],
+    "min_cats": 3,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        "r_c carries a scar from fighting a swarm of rats."
+    ]
+},
+{    
+    "patrol_id": "fst_hunt_ratkingnewleaf1",
+    "biome": "forest",
+    "season": "newleaf",
+    "tags": ["hunting", "clan_to_r_c", "patrol_to_r_c", "respect", "medium_prey0", "large_prey1", "large_prey2", "battle_injury", "injure_all"],
+    "intro_text": "A legend has been sighted. Recently, warriors report a strange mass of rats stuck together by their tails, larger and more dangerous than anything the Clan has seen. Will p_l's partrol look for this legendary monster?",
+    "decline_text": "No. Such a thing can't exist, right? It has to be an elder's imagination. p_l decides to take their patrol elsewhere to hunt.",
+    "chance_of_success": 40,
+    "exp": 30,
+    "success_text": [
+        "The rat king's lair is defended heavily by smaller rats. While the patrol doesn't find any sign of the rat king, they manage to defeat and being back a feast of small rats.",
+        "The rats defending the rat king's lair are more numerous than they thought. The patrol catches whatever rats they can, but p_l swears that they saw it. Multiple eyes glowing in the dark, watching them.",
+        "The waves of rats overwhelm the rest of the patrol, but s_c can see the rat king writhing within its nest. They bolt away from the others, trusting their claws to take on the legend. It dies with a horrible shriek, as the rest of the patrol watch in awe."
+    ],
+    "fail_text": [
+        "There were more rats defending the rat king's lair than they thought. Fighting off waves of them, the patrol retreats back to the Clan with empty paws.",
+        null,
+        null,
+        "The rat king and their minions overwhelm the patrol, biting into the cats fur and limbs. p_l orders a retreat, and they hope the Clan can heal so many wounded.",
+        null,
+        "s_c knows they are one of the Clan's greatest hunters. They spot the rat king and charge into its lair. But the King proves too great a foe for a single cat and sends s_c back with wounds to tell their tale.",
+        null
+    ],
+    "win_skills": ["fantastic hunter"],
+    "fail_skills": ["good hunter", "great hunter"],
+    "min_cats": 4,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            "r_c carries a scar from fighting a rat king."
+]
+},
+{    
+    "patrol_id": "fst_hunt_ratkingnewleaf2",
+    "biome": "forest",
+    "season": "newleaf",
+    "tags": ["hunting", "clan_to_r_c", "patrol_to_r_c", "respect", "medium_prey0", "large_prey1", "large_prey2", "multi_death"],
+    "intro_text": "A legend has been sighted. Recently, warriors report a strange mass of rats stuck together by their tails, larger and more dangerous than anything the Clan has seen. Will p_l's partrol look for this legendary monster?",
+    "decline_text": "No. Such a thing cant exist, right? It has to be an elder's imagination. p_l decides to take their patrol elsewhere to hunt.",
+    "chance_of_success": 40,
+    "exp": 30,
+    "success_text": [
+        "The rat king's lair is defended heavily by smaller rats. While the patrol doesn't find any sign of the rat king, they manage to defeat and being back a feast of small rats.",
+        "The rats defending the rat king's lair are more numerous than they thought. The patrol catches whatever rats they can, but p_l swears that they saw it. Multiple eyes glowing in the dark, watching them.",
+        "The waves of rats overwhelm the rest of the patrol, but s_c can see the rat king writhing within its nest. They bolt away from the others, trusting their claws to take on the legend. It dies with a horrible shriek, as the rest of the patrol watch in awe."
+    ],
+    "fail_text": [
+        "There were more rats defending the rat king's lair than they thought. Fighting off waves of them, the patrol retreats back to the Clan with empty paws.",
+        null,
+        "The rat king's defenses are too powerful, and as wave upon wave of rats poured down onto the patrol, they manage to escape. But not all of them.",
+        null,
+        "s_c knows they are one of the Clan's greatest hunters. They spot the rat king and charge into its lair. But the King proves too great a foe for a single cat and sends kills the would-be kingslayer.",
+        null,
+        null
+    ],
+    "win_skills": ["fantastic hunter"],
+    "fail_skills": ["good hunter", "great hunter"],
+    "min_cats": 4,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        null,
+        "r_c died from wounds battling the rat king.",
+        null
+]
 }
 ]

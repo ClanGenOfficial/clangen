@@ -1139,5 +1139,195 @@
             "r_c was scarred after disappearing on patrol and being discovered injured.",
             null
     ]
+},
+{
+    "patrol_id": "fst_hunt_ratsololeaffall",
+    "biome": "forest",
+    "season": "leaf-fall",
+    "tags": [
+        "hunting",
+        "medium_prey",
+        "no_app"
+    ],
+    "intro_text": "p_l travels through the blustery wind to hunt. In a pile of leaves, they swore they could see a rat's tail.",
+    "success_text": [
+        "p_l lunges for the rat's tail with their claws and catches the rat! They drag it back to camp with their head held high."
+    ],
+    "fail_text": [
+        "p_l lunged for the rat's tail, but it turned out to be a wriggling worm! Gross!"
+    ],
+    "decline_text": "It could be a single rat, or it could be a swarm laying in wait. Either way, it was too risky for p_l to continue.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "win_skills": [
+        null
+    ],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_hunt_appratsololeaffall",
+    "biome": "forest",
+    "season": "leaf-fall",
+    "tags": [
+        "hunting",
+        "medium_prey",
+        "apprentice"
+    ],
+    "intro_text": "p_l traversed the windy forest, attempting their best to focus and not get distracted by the dancing leaves. They caught the scent of a rat nearby.",
+    "success_text": [
+        "p_l saw the rat's tail in a clump of leaves and pounced after it. Their head was held high as they traveled back to camp with the large prey!"
+    ],
+    "fail_text": [
+        "p_l's eyes flicker back towards the leaves, and could not help but swipe at them as they flutter by. When their attention returned to the rat, it was long gone."
+    ],
+    "decline_text": "p_l decides that one rat wasn't worth missing out on some fun! They instead chase after leaves for the rest of the hunting patrol.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "win_skills": [
+        null
+    ],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_hunt_warrapppratleaffall",
+    "biome": "forest",
+    "season": "leaf-fall",
+    "tags": [
+        "hunting",
+        "medium_prey",
+        "apprentice",
+        "warrior"
+    ],
+    "intro_text": "p_l and app1 make their way towards a troop of mushrooms, eager to get more prey for the Clan. They could hear the rats squeaking amongst the fungus, and begin to plot their plan of attack.",
+    "success_text": [
+        "p_l and app1 crouch and stalk slowly towards the mushrooms, pouncing carefully in between the fungi and onto the rats! Spores coating their fur the two make their way back to camp."
+    ],
+    "fail_text": [
+        "app1 attempts to pounce onto the rats, but crashed headfirst into a mushroom! The rats scatter, and p_l leads a sneezing app1 back to camp."
+    ],
+    "decline_text": "p_l eventually decides to lead their patrol elsewhere. Who knows what dangerous effect those mushrooms could have on them.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "win_skills": [
+        null
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_hunt_ratswarmleaffall",
+    "biome": "forest",
+    "season": "leaf-fall",
+    "tags": [
+		"hunting",
+		"respect",
+		"patrol_to_r_c",
+		"medium_prey0",
+		"large_prey1",
+		"large_prey2",
+        "battle_injury"
+    ],
+    "intro_text": "p_l lead the patrol towards the abandoned twoleg nest, listening to r_c's plan. Rats were seen hiding inside to protect themselves from the windy chills. Perhaps it could be a perfect hunting spot?",
+    "success_text": [
+        "r_c leads the patrol towards the nest, pushing past the rotting wood that blocked the entrance. The patrol got to work rounding up and piling up the rats, and by nightfall it took two trips to bring them back! r_c is congratulated for their ingenious plan.",
+        "r_c leads the patrol towards the nest. and quickly got to work hunting down the rats cornered near the smooth stones. It was a tough fight, with rats attempting to flee or attack the patrol. But in the end the patrol managed to get a hefty pile of prey for c_n."
+    ],
+    "fail_text": [
+        "r_c leads the cats to the abandoned twoleg nest, but as the patrol searched and searched, all they could find were abandoned rats nests. r_c is scolded for wasting the patrol's valueable time.",
+        null,
+        null,
+        "r_c leads the cats to the abandoned twoleg nest, but the rats seemed to be more lively than they thought. A harsh battle forced the patrol to retreat, r_c being the most harshly wounded."
+    ],
+    "decline_text": "The other cats disagree with such a risk, and resume their normal hunting patrol.",
+    "chance_of_success": 50,
+    "exp": 30,
+    "win_skills": [
+        "great hunter",
+        "fantastic hunter"
+    ],
+    "min_cats": 3,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        "r_c carries a scar from fighting a swarm of rats."
+    ]
+},
+{    
+    "patrol_id": "fst_hunt_ratkingleaffall",
+    "biome": "forest",
+    "season": "leaf-fall",
+    "tags": ["hunting", "medium_prey0", "large_prey1", "large_prey2", "battle_injury", "injure_all"],
+    "intro_text": "There has been a legend floating around the Clan. Sightings of a strange mass of rats stuck together by their tails, larger and more dangerous than anything the Clan has seenn. Will p_l's partrol look for this legendary monster?",
+    "decline_text": "No. Such a thing cant exist, right? I has to be an elder's imagination. p_l decides to take their patrol elsewhere to hunt.",
+    "chance_of_success": 40,
+    "exp": 30,
+    "success_text": [
+        "The rat king's lair is defended heavily by smaller rats. While the patrol doesn't find any sign of the rat king, they manage to defeat and being back a feast of small rats.",
+        "The rats defending the rat king's lair were more numerous than they thought. The patrol catches whatever rats they can, but p_l swears that they see it. Multiple eyes glowing in the dark that were watching them.",
+        "The waves of rats overwhelm the rest of the patrol, but s_c can see the rat king writhing within it's nest. They bolt away from the others to take on the rat head on. When they next return to the patrol, they drag the monsterous creature by it's multiple tails.",
+        null
+    ],
+    "fail_text": [
+        "There were more rats defending the rat king's lair than they thought. Fighting off against a few waves, the patrol retreats back to the Clan with empty paws.",
+        null,
+        null,
+        "The rat king and their minions overwhelm the patrol, biting into the cats fir and limbs. p_l orders a retreat, and they hope the Clan can heal so many wounded.",
+        null,
+        "s_c knows they are one of the Clan's greatest hunters. They spot the rat king and charge into its lair. But the King proves too great a foe for a single cat and sends s_c back with wounds to tell their tale.",
+        null
+    ],
+    "win_skills": ["fantastic hunter"],
+    "min_cats": 4,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            "r_c carries a scar from fighting a rat king."
+]
+},
+{    
+    "patrol_id": "fst_hunt_ratkingleaffall2",
+    "biome": "forest",
+    "season": "leaf-fall",
+    "tags": ["hunting", "medium_prey0", "large_prey1", "large_prey2", "multi_death"],
+    "intro_text": "There has been a legend floating around the Clan. Sightings of a strange mass of rats stuck together by their tails, larger and more dangerous than anything the Clan has seenn. Will p_l's partrol look for this legendary monster?",
+    "decline_text": "No. Such a thing cant exist, right? I has to be an elder's imagination. p_l decides to take their patrol elsewhere to hunt.",
+    "chance_of_success": 40,
+    "exp": 30,
+    "success_text": [
+        "The rat king's lair is defended heavily by smaller rats. While the patrol doesn't find any sign of the rat king, they manage to defeat and being back a feast of small rats.",
+        "The rats defending the rat king's lair were more numerous than they thought. The patrol catches whatever rats they can, but p_l swears that they see it. Multiple eyes glowing in the dark that were watching them.",
+        "The waves of rats overwhelm the rest of the patrol, but s_c can see the rat king writhing within it's nest. They bolt away from the others to take on the rat head on. When they next return to the patrol, they drag the monsterous creature by it's multiple tails.",
+        null
+    ],
+    "fail_text": [
+        "There were more rats defending the rat king's lair than they thought. Fighting off against a few waves, the patrol retreats back to the Clan with empty paws.",
+        null,
+        "The rat king's defenses were too powerful as wave upon wave of rats poured down onto the patrol. The patrol managed to escape. r_c succumbed to their injuries along with others.",
+        null,
+        "s_c knows they are one of the Clan's greatest hunters. They spot the rat king and charge into its lair. But the King proves too great a foe for a single cat and sends kills the would-be kingslayer.",
+        null,
+        null
+    ],
+    "win_skills": ["fantastic hunter"],
+    "min_cats": 4,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        null,
+        "r_c died from wounds battling the rat king.",
+        null
+
+]
 }
 ]
