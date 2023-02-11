@@ -6,7 +6,7 @@
         "bravery",
         "adaptability",
         "courage",
-        "valorousness",
+        "valour",
         "spirit",
         "intrigue",
         "observance"
@@ -19,7 +19,7 @@
         "passion",
         "determination",
         "commitment",
-        "desire"
+        "drive"
     ],
     "altruistic": [
         "selflessness",
@@ -40,7 +40,7 @@
         "courage",
         "vigor",
         "boldness",
-        "desire",
+        "drive",
         "determination",
         "dignity",
         "cunning",
@@ -95,7 +95,6 @@
         "compassion",
         "kindness",
         "energy",
-        "charism",
         "gregariousness",
         "sociability",
         "affection",
@@ -161,7 +160,6 @@
         "vigor",
         "selflessness",
         "intrigue",
-        "remedial actions",
         "wit"
     ],
     "empathetic": [
@@ -269,8 +267,6 @@
         "pragmatism",
         "realism",
         "observance",
-        "kindness",
-        "generosity"
     ],
     "patient": [
         "patience",
@@ -294,7 +290,6 @@
         "determination",
         "humor",
         "heart of gold",
-        "charism",
         "kindness",
         "friendliness"
     ],
