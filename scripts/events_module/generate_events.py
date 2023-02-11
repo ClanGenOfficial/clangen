@@ -34,6 +34,9 @@ class GenerateEvents:
 
     def generate_events(self, events_dict):
         event_list = []
+        if not events_dict:
+            print("no possible events")
+            return
         for event in events_dict:
             event_text = event["event_text"] if "event_text" in event else None
             if not event_text:
@@ -137,6 +140,9 @@ class GenerateEvents:
 
             # some events are classic only
             if game.clan.game_mode in ["expanded", "cruel season"] and "classic" in event.tags:
+                continue
+
+            if "other_cat" in event.tags and not other_cat:
                 continue
 
             # make complete leader death less likely until the leader is over 150 moons
