@@ -1558,135 +1558,161 @@ class PatrolEvent():
 
     training patrols - "training",
 
-        border patrols - "border", "other_clan", "reputation",
+    border patrols - "border", "other_clan", "reputation",
 
-            med patrols - "med_cat", "herb", "random_herbs", "many_herbs#"
+    med patrols - "med_cat", "herb", "random_herbs", "many_herbs#"
             
-            new cat tags - ("kittypet" in the patrol ID will make the cat a kittypet no matter what)                                                              
-            "new_cat", "new_cat_med", "new_cat_queen", "new_cat_female", "new_cat_tom", "new_cat_neutered",
-            "new_cat_elder", "new_cat_majorinjury", "new_cat_kit", "new_cat_kits", "new_cat_newborn",
-            "new_cat_apprentice", "new_cat_adult",
+    new cat tags - ("kittypet" in the patrol ID will make the cat a kittypet no matter what)                                                              
+    "new_cat", "new_cat_med", "new_cat_queen", "new_cat_female", "new_cat_tom", "new_cat_neutered",
+    "new_cat_elder", "new_cat_majorinjury", "new_cat_kit", "new_cat_kits", "new_cat_newborn",
+    "new_cat_apprentice", "new_cat_adult",
 
-            un-used for now - "npc", "gone_cat"
+    un-used for now - "npc", "gone_cat"
             
-            death and gone tags -
-            "death", "disaster", "multi_deaths", "no_body", "cruel_season", "gone", "multi_gone", "disaster_gone",
+    death and gone tags -
+    "death", "disaster", "multi_deaths", "no_body", "cruel_season", "gone", "multi_gone", "disaster_gone",
 
-            relationship tags - 
-            "romantic", "platonic", "comfort", "respect", "trust", "dislike", "pos_dislike", "jealous", "pos_jealous", "distrust", "disrespect",
-            "apprentice", "two_apprentices", "three_apprentices", "warrior", "no_app", "med_only", "no_leader",
-            "no_deputy", "leader", "deputy",
+    relationship tags - 
+    "romantic", "platonic", "comfort", "respect", "trust", "dislike", "pos_dislike", "jealous", "pos_jealous", "distrust", "disrespect",
+    "apprentice", "two_apprentices", "three_apprentices", "warrior", "no_app", "med_only", "no_leader",
+    "no_deputy", "leader", "deputy",
 
-            "clan_to_p_l", "clan_to_r_c", "patrol_to_p_l", "patrol_to_r_c",
-            "rel_two_apps", "p_l_to_r_c", "s_c_to_r_c", "clan_to_patrol", "rel_patrol",
-            "sacrificial", "pos_fail", "no_change_fail", "no_change_success", "big_change",
-            "all_lives", "some_lives"
+    "clan_to_p_l", "clan_to_r_c", "patrol_to_p_l", "patrol_to_r_c",
+    "rel_two_apps", "p_l_to_r_c", "s_c_to_r_c", "clan_to_patrol", "rel_patrol",
+    "sacrificial", "pos_fail", "no_change_fail", "no_change_success", "big_change",
+    "all_lives", "some_lives"
+
+    relationship constraint - 
+    "siblings", "mates", "parent_child", "parent_children", "parents_children"
+    "romantic_NUMBER", "platonic_NUMBER", "dislike_NUMBER", "comfortable_NUMBER", "jealousy_NUMBER", "trust_NUMBER"
 
 """
 
-        # ! Patrol Notes
+# ! Patrol Notes
 """
-        -- success/fail outcomes -- 
-        Success[0] is the most common
-        Success[1] is slightly rarer
-        Success[2] is if win skill is applicable
-        Success[3] is if win trait is applicable
+-- success/fail outcomes -- 
+    Success[0] is the most common
+    Success[1] is slightly rarer
+    Success[2] is if win skill is applicable
+    Success[3] is if win trait is applicable
 
-        Fail text[0] is unscathed fail 1
-        Fail text[1] is unscathed 2, fail skill or fail traits
-        Fail text[2] is death
-        Fail text[3] is scar/injury
-        Fail text[4] is death for s_c
-        fail text[5] is scar/injury for s_c
-        fail text[6] is alt leader death
+    Fail text[0] is unscathed fail 1
+    Fail text[1] is unscathed 2, fail skill or fail traits
+    Fail text[2] is death
+    Fail text[3] is scar/injury
+    Fail text[4] is death for s_c
+    fail text[5] is scar/injury for s_c
+    fail text[6] is alt leader death
 
-        History text[0] is scar text
-        History text[1] is death text for normal cats
-        History text[2] is death text for leaders
+    History text[0] is scar text
+    History text[1] is death text for normal cats
+    History text[2] is death text for leaders
         
-        -- PATROL ABBREVIATIONS --
-        Clan name - c_n
-        Other clan name - o_c_n
-        Random cat - r_c
-        Patrol leader - p_l
-        Stat Cat - s_c (this is the cat with relevant skills/traits for the situation)
-        Apprentice 1 - app1
-        Apprentice 2 - app2
-        Apprentice 3 - app3 
-        Apprentice 4 - app4 
-        Apprentice 5 - app5 
-        Apprentice 6 - app6 
-        Random cat 2 - r_c2
-        Random cat 3 - r_c3
-        Random cat 4 - r_c4
-        Random cat 5 - r_c5
+-- PATROL ABBREVIATIONS --
+    Clan name - c_n
+    Other clan name - o_c_n
+    Random cat - r_c
+    Patrol leader - p_l
+    Stat Cat - s_c (this is the cat with relevant skills/traits for the situation)
+    Apprentice 1 - app1
+    Apprentice 2 - app2
+    Apprentice 3 - app3 
+    Apprentice 4 - app4 
+    Apprentice 5 - app5 
+    Apprentice 6 - app6 
+    Random cat 2 - r_c2
+    Random cat 3 - r_c3
+    Random cat 4 - r_c4
+    Random cat 5 - r_c5
 
-        -- PATROL ID GUIDELINES --
+-- PATROL ID GUIDELINES --
+    ID format: biome_type_descriptor 
         
-        ID format: biome_type_descriptor 
+    biomes:
+    Forest - fst
+    Plains - pln
+    Mountainous - mtn
+    Beach - bch
+    Wetlands - wtlnd
+    Desert - dst
+    If no specific biome - gen
+    If it needs multiple biomes, but not all biomes, then create dupe patrols in relevant biomes with appropriate 
+    patrol IDs
         
-        biomes:
-        Forest - fst
-        Plains - pln
-        Mountainous - mtn
-        Beach - bch
-        Wetlands - wtlnd
-        Desert - dst
-        If no specific biome - gen
-        If it needs multiple biomes, but not all biomes, then create dupe patrols in relevant biomes with appropriate 
-        patrol IDs
+    types:
+    Hunting - hunt
+    Border - bord
+    Training - train
+    Med Cat - med
+    If no specific type, pick one bc they gotta be categorized somewhere.  Make dupes in each type if you feel like 
+    they all apply or some apply.
+
+    descriptors:
+    Descriptors should be one word and a number, starting at 1 and incrementing up (i.e. mtn_hunt_mouse1 then 
+    mtn_hunt_mouse2 for another patrol involving a mouse. If you then make a new patrol that is not mouse 
+    related, choose a different descriptor word and start over again at 1) try to keep descriptor words unique from 
+    other descriptors being used to make identification and sorting easier. 
+
+-- RELATIONSHIP CONSTRAINT:
+    This is an optional constraint, if you use this, all cats in the patrol has to have these relation.
+    If there are multiple 'tags', all 'tags' will be be used for the filtering.
+
+    general:
+    "sibling", "mates"
+    "parent_child" -> one parent and one child
+    "parent_children" -> one parent and one/more children
+    "parents_children" -> one/two parent and one/more children
+
+    'thresholds':
+    for a 'threshold' tag, you only have to add the value type and then a number.
+    !ALL! relationship values of each cat to each other has to have these values or higher
+    "romantic_NUMBER",
+    "platonic_NUMBER",
+    "dislike_NUMBER",
+    "comfortable_NUMBER",
+    "jealousy_NUMBER",
+    "trust_NUMBER"
+
+    NUMBER has to be replaced with a number -> e.g. "romantic_10"
+
+
+-- TAG INFO: --
+    You can ONLY have one of these:
+    "death" (r_c dies), "disaster" (all die), "multi_deaths" (2-4 cats die)
+    If you have more than one, it takes the first one in this order.
+    same for: "gone" (r_c leaves the clan), "disaster_gone" (all leave the clan), "multi_gone" (2-4 cats leave the clan)
+
+    #!FOR INJURIES, SEE CONDITIONS LIST FOR TAGGING
+    Tag all injury patrols that should give a scar with "scar" to ensure that classic mode will still scar the cat.
+    If you'd like a patrol to have an injury from one of the injury pools, tag with the pool name
+    -- Possible Pools --
+        "battle_injury": ["claw-wound", "bite-wound", "mangled leg", "mangled tail", "torn pelt"],
+        "minor_injury": ["sprain", "sore", "bruises", "scrapes"],
+        "blunt_force_injury": ["broken bone", "paralyzed", "head damage", "broken jaw"],
+        "hot_injury": ["heat exhaustion", "heat stroke", "dehydrated"],
+        "cold_injury": ["shivering", "frostbite"],
+        "big_bite_injury": ["bite-wound", "broken bone", "torn pelt", "mangled leg", "mangled tail"],
+        "small_bite_injury": ["bite-wound", "torn ear", "torn pelt", "scrapes"]
+        "beak_bite": ["beak bite", "torn ear", "scrapes"]
+    If you want to specify a certain condition, tag both with "injury" and the condition
+    If you want to injure all the cats in the patrol, tag with "injure_all"
+    This will work with any condition whether they are an illness, injury, or perm condition
+    If you want to ensure that a cat cannot die from the condition, tag with "non_lethal"
+    Keep in mind that minor injuries are already non lethal by default and permanent conditions will not be affected by this tag.
+    These tags will stack! So you could tag a patrol as "blunt_force_injury", "injury", "water in their lungs" to give all the 
+    conditions from blunt_force_injury AND water in their lungs as possible conditions for that patrol. 
+    Keep in mind that the "non_lethal" tag will apply to ALL the conditions for that patrol.
+    Right now, nonlethal shock is auto applied to all cats present when another cat dies. This may change in the future.
         
-        types:
-        Hunting - hunt
-        Border - bord
-        Training - train
-        Med Cat - med
-        If no specific type, pick one bc they gotta be categorized somewhere.  Make dupes in each type if you feel like 
-        they all apply or some apply.
 
-        descriptors:
-        Descriptors should be one word and a number, starting at 1 and incrementing up (i.e. mtn_hunt_mouse1 then 
-        mtn_hunt_mouse2 for another patrol involving a mouse. If you then make a new patrol that is not mouse 
-        related, choose a different descriptor word and start over again at 1) try to keep descriptor words unique from 
-        other descriptors being used to make identification and sorting easier. 
-
-        TAG INFO:
-        You can ONLY have one of these:
-        "death" (r_c dies), "disaster" (all die), "multi_deaths" (2-4 cats die)
-        If you have more than one, it takes the first one in this order.
-        same for: "gone" (r_c leaves the clan), "disaster_gone" (all leave the clan), "multi_gone" (2-4 cats leave the clan)
-
-        #!FOR INJURIES, SEE CONDITIONS LIST FOR TAGGING
-        Tag all injury patrols that should give a scar with "scar" to ensure that classic mode will still scar the cat.
-        If you'd like a patrol to have an injury from one of the injury pools, tag with the pool name
-        -- Possible Pools --
-            "battle_injury": ["claw-wound", "bite-wound", "mangled leg", "mangled tail", "torn pelt"],
-            "minor_injury": ["sprain", "sore", "bruises", "scrapes"],
-            "blunt_force_injury": ["broken bone", "paralyzed", "head damage", "broken jaw"],
-            "hot_injury": ["heat exhaustion", "heat stroke", "dehydrated"],
-            "cold_injury": ["shivering", "frostbite"],
-            "big_bite_injury": ["bite-wound", "broken bone", "torn pelt", "mangled leg", "mangled tail"],
-            "small_bite_injury": ["bite-wound", "torn ear", "torn pelt", "scrapes"]
-            "beak_bite": ["beak bite", "torn ear", "scrapes"]
-        If you want to specify a certain condition, tag both with "injury" and the condition
-        If you want to injure all the cats in the patrol, tag with "injure_all"
-        This will work with any condition whether they are an illness, injury, or perm condition
-        If you want to ensure that a cat cannot die from the condition, tag with "non_lethal"
-        Keep in mind that minor injuries are already non lethal by default and permanent conditions will not be affected by this tag.
-        These tags will stack! So you could tag a patrol as "blunt_force_injury", "injury", "water in their lungs" to give all the 
-        conditions from blunt_force_injury AND water in their lungs as possible conditions for that patrol. 
-        Keep in mind that the "non_lethal" tag will apply to ALL the conditions for that patrol.
-        Right now, nonlethal shock is auto applied to all cats present when another cat dies. This may change in the future.
-        
-
-        HERB TAGGING:
+    - HERB TAGGING: -
         herbs are given on successes only
         "random_herbs" <give a random assortment of herbs
         
         "herbs" < use to mark that this patrol gives a specific herb, use in conjunction with a herb tag. 
         
         Herb tags:
-         reference herbs.json, you can use any herb name listed there
+        reference herbs.json, you can use any herb name listed there
         
         "many_herbs#" < to cause the patrol to give a large number of herbs automatically. Numbering starts at 0. 
         Replace the # with the outcome number (i.e. if you want success[2] - which is the skill success - to give lots of herbs, then 
@@ -1696,7 +1722,7 @@ class PatrolEvent():
         outcomes. Numbering starts at 0. Replace the # with the outcome number (i.e. if you want success[2] - which is the skill 
         success - to give no herbs, then use "no_herbs2")
 
-        - TO SPECIFY -
+    - TO SPECIFY -
         "one_apprentice" is for patrols with one apprentice in them. It works with the "apprentice" tag. 
         "two_apprentices" is for patrols with two apprentices in them. It works with the "apprentice" tag. 
         "three_apprentices" is for patrols with two apprentices in them. It works with the "apprentice" tag. 
@@ -1710,7 +1736,7 @@ class PatrolEvent():
         "warrior" is used to specify that the patrol should only trigger with at least 1 warrior in it. 
         "no_app" is for when no apps should be on the patrol
 
-        - RELATIONSHIP TAGS -
+    - RELATIONSHIP TAGS -
         I think all of these can be used together. the tag for which relationships are increased should ALSO be used
         # whole clan gains relationship towards p_l - "clan_to_p_l"
         # whole clan gains relationship towards s_c - "clan_to_r_c" (triggers to be s_c if s_c is present)
@@ -1753,7 +1779,7 @@ class PatrolEvent():
 
         "no_change_fail_rep" is for when rep should not change when a new_cat patrol fails
 
-        - PREY TAGS -
+    - PREY TAGS -
         If there is no tag, there will be no prey if the hunt is successful
         There are 4 tag types "small_prey", "medium_prey", "large_prey" and "huge_prey". 
         If you want to differentiate between the success texts how much prey each success will get, you have to use the tag and then add the index of the sentence you want the prey to
@@ -1767,7 +1793,7 @@ class PatrolEvent():
         We want a mix of medium_prey and large_prey under normal conditions.
 
 
-        -- WHEN WRIING --   
+-- WHEN WRIING --   
         Event text should be kept to 350 characters at the maximum to keep it easily readable and concise.
         History text needs to be written in past tense.
         o_c_n and c_n should use "a" not "an" in front of them
