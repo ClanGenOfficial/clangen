@@ -16,14 +16,14 @@ resource_directory = "resources/dicts/events/"
 
 class GenerateEvents:
     @staticmethod
-    def get_single_event_dicts(event_triggered, cat_type, biome):
+    def get_short_event_dicts(event_triggered, cat_type, biome):
         events = None
         try:
             if cat_type and not biome:
                 file_path = f"{resource_directory}{event_triggered}/{cat_type}.json"
             elif not cat_type and biome:
                 file_path = f"{resource_directory}{event_triggered}/{biome}.json"
-            elif cat_type and biome:
+            else:
                 file_path = f"{resource_directory}{event_triggered}/{biome}/{cat_type}.json"
             with open(
                 file_path,
@@ -35,7 +35,7 @@ class GenerateEvents:
 
         return events
 
-    def generate_single_events(self, events_dict):
+    def generate_short_events(self, events_dict):
         event_list = []
         for event in events_dict:
             event_text = event["event_text"] if "event_text" in event else None
@@ -45,7 +45,7 @@ class GenerateEvents:
             if not event_text:
                 print(f"WARNING: some events resources which are used in generate_events. Have no 'event_text'.")
 
-            event = SingleEvent(
+            event = ShortEvent(
                 camp="any",
                 tags=event["tags"],
                 event_text=event_text,
@@ -77,7 +77,7 @@ class GenerateEvents:
 
         return event_list
 
-    def possible_single_events(self, cat_type=None, age=None, event_type=None):
+    def possible_short_events(self, cat_type=None, age=None, event_type=None):
         event_list = []
         if cat_type in ["medicine cat", "medicine cat apprentice"]:
             cat_type = "medicine"
@@ -89,8 +89,8 @@ class GenerateEvents:
             biome = game.clan.biome.lower()
 
             event_list.extend(
-                self.generate_single_events(
-                    self.get_single_event_dicts(event_type, cat_type, "general")
+                self.generate_short_events(
+                    self.get_short_event_dicts(event_type, cat_type, "general")
                 )
             )
 
@@ -103,8 +103,8 @@ class GenerateEvents:
 
         else:
             event_list.extend(
-                self.generate_single_events(
-                    self.get_single_event_dicts(
+                self.generate_short_events(
+                    self.get_short_event_dicts(
                         event_type, cat_type, biome
                     )
                 )
@@ -112,8 +112,8 @@ class GenerateEvents:
 
             if cat_type in ["apprentice", "deputy", "leader"]:
                 event_list.extend(
-                    self.generate_single_events(
-                        self.get_single_event_dicts(
+                    self.generate_short_events(
+                        self.get_short_event_dicts(
                             event_type, "warrior", biome
                         )
                     )
@@ -122,13 +122,13 @@ class GenerateEvents:
             if cat_type not in ["kitten", "leader"]:
                 if event_type != "nutrition":
                     event_list.extend(
-                        self.generate_single_events(
-                            self.get_single_event_dicts(event_type, "general", "general")
+                        self.generate_short_events(
+                            self.get_short_event_dicts(event_type, "general", "general")
                         )
                     )
                 event_list.extend(
-                    self.generate_single_events(
-                        self.get_single_event_dicts(
+                    self.generate_short_events(
+                        self.get_short_event_dicts(
                             event_type, "general", biome
                         )
                     )
@@ -151,28 +151,46 @@ class GenerateEvents:
 
         return events
 
-    def generate_ongoing_events(self, events_dict):
-        event_list = []
-        for event in events_dict:
-            event = OngoingEvent(
-                disaster=event["disaster"],
-                camp=event["camp"],
-                season=event["season"],
-                tags=event["tags"],
-                priority=event["priority"],
-                duration=event["duration"],
-                rarity=event["rarity"],
-                trigger_events=event["trigger_events"],
-                progress_events=event["progress_events"],
-                conclusion_events=event["conclusion_events"],
-                secondary_disasters=event["secondary_disasters"],
-                collateral_damage=event["collateral_damage"]
-            )
-            event_list.append(event)
+    def generate_ongoing_events(self, events_dict, specific_event=None):
+        if not specific_event:
+            event_list = []
+            for event in events_dict:
+                event = OngoingEvent(
+                    event=event["event"],
+                    camp=event["camp"],
+                    season=event["season"],
+                    tags=event["tags"],
+                    priority=event["priority"],
+                    duration=event["duration"],
+                    rarity=event["rarity"],
+                    trigger_events=event["trigger_events"],
+                    progress_events=event["progress_events"],
+                    conclusion_events=event["conclusion_events"],
+                    secondary_disasters=event["secondary_disasters"],
+                    collateral_damage=event["collateral_damage"]
+                )
+                event_list.append(event)
 
-        return event_list
+            return event_list
+        else:
+            event = None
+            for event in events_dict:
+                if event["event"] != specific_event:
+                    break
+                event = OngoingEvent(
+                    event=event["event"],
+                    camp=event["camp"],
+                    season=event["season"],
+                    tags=event["tags"],
+                    priority=event["priority"],
+                    duration=event["duration"],
+                    progress_events=event["progress_events"],
+                    conclusion_events=event["conclusion_events"],
+                    collateral_damage=event["collateral_damage"]
+                )
+            return event
 
-    def possible_ongoing_events(self, event_type=None):
+    def possible_ongoing_events(self, event_type=None, specific_event=None):
         event_list = []
 
         biome = game.clan.biome.lower()
@@ -181,13 +199,22 @@ class GenerateEvents:
             print(f"WARNING: unrecognised biome {game.clan.biome} in generate_events. Have you added it to BIOME_TYPES in clan.py?")
 
         else:
-            event_list.extend(
-                self.generate_ongoing_events(
-                    self.get_ongoing_event_dicts(
-                        event_type, biome
+            if not specific_event:
+                event_list.extend(
+                    self.generate_ongoing_events(
+                        self.get_ongoing_event_dicts(
+                            event_type, biome
+                        )
                     )
                 )
-            )
+            else:
+                event_list.extend(
+                    self.generate_ongoing_events(
+                        self.get_ongoing_event_dicts(
+                            event_type, biome
+                        ), specific_event
+                    )
+                )
         return event_list
 
 
@@ -383,7 +410,7 @@ class GenerateEvents:
         return possible_events
 
 
-class SingleEvent:
+class ShortEvent:
     def __init__(
             self,
             camp="any",
@@ -513,12 +540,13 @@ Following tags are used for freshkill pile events:
 
 class OngoingEvent:
     def __init__(self,
-                 disaster=None,
+                 event=None,
                  camp=None,
                  season=None,
                  tags=None,
                  priority='secondary',
                  duration=None,
+                 current_duration=None,
                  rarity=0,
                  trigger_events=None,
                  progress_events=None,
@@ -526,12 +554,13 @@ class OngoingEvent:
                  secondary_disasters=None,
                  collateral_damage=None
                  ):
-        self.disaster = disaster
+        self.event = event
         self.camp = camp
         self.season = season
         self.tags = tags
         self.priority = priority
         self.duration = duration
+        self.current_duration = duration
         self.rarity = rarity
         self.trigger_events = trigger_events
         self.progress_events = progress_events

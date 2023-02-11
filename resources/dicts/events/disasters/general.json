@@ -1,6 +1,6 @@
 [
   {
-    "disaster": "Wildfire",
+    "event": "Wildfire",
     "camp": ["any"],
     "season": ["Greenleaf", "Leaf-fall"],
     "tags": [],
@@ -11,7 +11,7 @@
       "Smoke billows into the sky as the distant crackling of fire foreshadows a grim fate. A wildfire is blazing through the forest."
     ],
     "progress_events": [
-      "In the aftermath of the fire the forest lays still and quiet, but life will find its way back."
+      "In the aftermath of the fire the forest lays still and quiet, but the Clan knows life will find its way back."
     ],
     "conclusion_events": [
       "Finally, the forest feels almost normal. The fire now nothing but a scar and a memory."
@@ -21,21 +21,47 @@
         "disaster": "Famine",
         "triggers_during": "start",
         "chance": 10,
-        "event": "The prey that once filled the forest has disappeared, scared away or killed by the wildfire. A famine forebodes the future."
+        "trigger_events": [
+          "The prey that once filled the forest has disappeared, scared away or killed by the wildfire. A famine forebodes the future."
+        ]
       },
       {
         "disaster": "Camp Destruction",
         "triggers_during": "start",
         "chance": 5,
-        "event": "The fire tore through the camp, destroying the carefully built dens and burning up the fresh-kill and herbs. The Clan must rebuild or move on."
+        "trigger_events": [
+          "The fire tore through the camp, destroying the carefully built dens and burning up the fresh-kill and herbs. The Clan must rebuild or move on."
+        ]
       },
       {
         "disaster": "Barren Land",
         "triggers_during": "start",
         "chance": 5,
-        "event": "The land is left barren once the wildfire has swept through, not a green plant left to be seen. Herbs will surely be hard to find."
+        "trigger_events": [
+          "The land is left barren once the wildfire has swept through, not a green plant left to be seen. Herbs will surely be hard to find."
+        ]
       }
     ],
+    "collateral_damage": {
+
+    }
+  },
+  {
+    "event": "Famine",
+    "camp": ["any"],
+    "season": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+    "tags": [],
+    "priority": "secondary",
+    "duration": 3,
+    "rarity": null,
+    "trigger_events": [],
+    "progress_events": [
+      "The Clan hunts and scrounges for any hint of possible food, but they never seem to find enough."
+    ],
+    "conclusion_events": [
+      "Prey has returned to the forest, the famine finally over."
+    ],
+    "secondary_disasters": [],
     "collateral_damage": {
 
     }
