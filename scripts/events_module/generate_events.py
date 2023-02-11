@@ -35,8 +35,7 @@ class GenerateEvents:
     def generate_events(self, events_dict):
         event_list = []
         if not events_dict:
-            print("no possible events")
-            return
+            return event_list
         for event in events_dict:
             event_text = event["event_text"] if "event_text" in event else None
             if not event_text:
