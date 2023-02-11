@@ -147,7 +147,6 @@ class Patrol():
         self.update_resources(biome_dir, leaf)
 
         possible_patrols = []
-        final_patrols = []
         # this next one is needed for Classic specifically
         patrol_type = "med" if ['medicine cat', 'medicine cat apprentice'] in self.patrol_statuses else patrol_type
         patrol_size = len(self.patrol_cats)
@@ -227,11 +226,12 @@ class Patrol():
                 possible_patrols.extend(self.generate_patrol_events(self.OTHER_CLAN_HOSTILE))
 
         final_patrols = self.filter_patrols(possible_patrols, biome, patrol_size, current_season, patrol_type)
+        final_patrols = self.filter_relationship(final_patrols)
 
         return final_patrols
 
     def filter_patrols(self, possible_patrols, biome, patrol_size, current_season, patrol_type):
-        final_patrols = []
+        filtered_patrols = []
         # makes sure that it grabs patrols in the correct biomes, season, with the correct number of cats
         for patrol in possible_patrols:
             if patrol_size < patrol.min_cats:
@@ -350,8 +350,33 @@ class Patrol():
                 else:
                     if not self.patrol_random_cat.is_potential_mate(self.patrol_leader, for_patrol=True):
                         continue
-            final_patrols.append(patrol)
-        return final_patrols
+            filtered_patrols.append(patrol)
+        return filtered_patrols
+
+    def filter_relationship(self, possible_patrols: list):
+        """Filter the incoming patrol list according to the relationship constraints, if there are constraints.
+
+            Parameters
+            ----------
+            possible_patrols : list
+                list of patrols which should be filtered
+
+            Returns
+            ----------
+            filtered_patrols : list
+                list of patrols which is filtered
+        """
+        filtered_patrols = []
+
+        for patrol in possible_patrols:
+            # if there are no constraints, add the patrol to the filtered list
+            if len(patrol.relationship_constraint) == 0:
+                filtered_patrols.append(patrol)
+                continue
+            
+            # filtering
+
+        return filtered_patrols
 
     def generate_patrol_events(self, patrol_dict):
         all_patrol_events = []
@@ -371,7 +396,9 @@ class Patrol():
                 max_cats=patrol["max_cats"],
                 antagonize_text=patrol["antagonize_text"],
                 antagonize_fail_text=patrol["antagonize_fail_text"],
-                history_text=patrol["history_text"] if "history_text" in patrol else [])
+                history_text=patrol["history_text"] if "history_text" in patrol else [],
+                relationship_constraint = patrol["relationship_constraint"] if "relationship_constraint" in patrol else []
+                )
 
             all_patrol_events.append(patrol_event)
 
@@ -1498,7 +1525,8 @@ class PatrolEvent():
                  max_cats=6,
                  antagonize_text="",
                  antagonize_fail_text="",
-                 history_text=[]):
+                 history_text=[],
+                 relationship_constraint=[]):
         self.patrol_id = patrol_id
         self.biome = biome or "Any"
         self.season = season or "Any"
@@ -1518,13 +1546,19 @@ class PatrolEvent():
         self.antagonize_text = antagonize_text
         self.antagonize_fail_text = antagonize_fail_text
         self.history_text = history_text
+        self.relationship_constraint = relationship_constraint
 
-        """
-            hunting patrols - "hunting", "small_prey", "medium_prey", "large_prey", "huge_prey"
 
-            training patrols - "training",
+# ---------------------------------------------------------------------------- #
+#                              GENERAL INFORMATION                             #
+# ---------------------------------------------------------------------------- #
 
-            border patrols - "border", "other_clan", "reputation",
+"""
+    hunting patrols - "hunting", "small_prey", "medium_prey", "large_prey", "huge_prey"
+
+    training patrols - "training",
+
+        border patrols - "border", "other_clan", "reputation",
 
             med patrols - "med_cat", "herb", "random_herbs", "many_herbs#"
             
@@ -1548,10 +1582,10 @@ class PatrolEvent():
             "sacrificial", "pos_fail", "no_change_fail", "no_change_success", "big_change",
             "all_lives", "some_lives"
 
-        """
+"""
 
         # ! Patrol Notes
-        """
+"""
         -- success/fail outcomes -- 
         Success[0] is the most common
         Success[1] is slightly rarer
@@ -1738,7 +1772,7 @@ class PatrolEvent():
         History text needs to be written in past tense.
         o_c_n and c_n should use "a" not "an" in front of them
 
-        """
+"""
 
 
 patrol = Patrol()
