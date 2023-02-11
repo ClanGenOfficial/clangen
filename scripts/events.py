@@ -11,6 +11,7 @@ from scripts.game_structure.load_cat import *
 from scripts.events_module.condition_events import Condition_Events
 from scripts.events_module.death_events import Death_Events
 from scripts.events_module.freshkill_pile_events import Freshkill_Events
+from scripts.events_module.disaster_events import DisasterEvents
 from scripts.event_class import Single_Event
 import traceback
 
@@ -39,6 +40,7 @@ class Events():
         self.misc_events = MiscEvents()
         self.CEREMONY_TXT = None
         self.load_ceremonies()
+        self.disaster_events = DisasterEvents()
 
     def one_moon(self):
         game.cur_events_list = []
@@ -120,6 +122,8 @@ class Events():
                     text = f'Rumors reach your Clan that the exiled {str(cat.name)} has died recently.'
                     game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
                     game.clan.leader_lives = 0
+
+        self.disaster_events.handle_disasters()
 
         # Handle injuries and relationships.
         for cat in Cat.all_cats.values():
@@ -1197,7 +1201,7 @@ class Events():
         if game.settings.get('disasters') and not triggered_death:
             if not random.getrandbits(9):  # 1/512
                 triggered_death = True
-                self.handle_disasters(cat)
+                self.handle_mass_extinctions(cat)
 
         # extra death chance and injuries in expanded & cruel season
         if game.clan.game_mode != 'classic' and not int(random.random() * 500) and not cat.not_working():  # 1/400
@@ -1210,7 +1214,7 @@ class Events():
 
         return triggered_death
 
-    def handle_disasters(self, cat):
+    def handle_mass_extinctions(self, cat):
         """Handles events when the setting of disasters is turned on"""
         alive_cats = list(filter(
             lambda kitty: (kitty.status != "leader"

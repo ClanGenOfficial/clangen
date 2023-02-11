@@ -16,11 +16,14 @@ resource_directory = "resources/dicts/events/"
 
 class GenerateEvents:
     @staticmethod
-    def get_event_dicts(event_triggered, cat_type, biome):
+    def get_single_event_dicts(event_triggered, cat_type, biome):
         events = None
         try:
-            file_path = f"{resource_directory}{event_triggered}/{cat_type}.json"
-            if biome:
+            if cat_type and not biome:
+                file_path = f"{resource_directory}{event_triggered}/{cat_type}.json"
+            elif not cat_type and biome:
+                file_path = f"{resource_directory}{event_triggered}/{biome}.json"
+            elif cat_type and biome:
                 file_path = f"{resource_directory}{event_triggered}/{biome}/{cat_type}.json"
             with open(
                 file_path,
@@ -32,7 +35,7 @@ class GenerateEvents:
 
         return events
 
-    def generate_events(self, events_dict):
+    def generate_single_events(self, events_dict):
         event_list = []
         for event in events_dict:
             event_text = event["event_text"] if "event_text" in event else None
@@ -41,6 +44,7 @@ class GenerateEvents:
 
             if not event_text:
                 print(f"WARNING: some events resources which are used in generate_events. Have no 'event_text'.")
+
             event = SingleEvent(
                 camp="any",
                 tags=event["tags"],
@@ -69,9 +73,11 @@ class GenerateEvents:
                 reputation=event["reputation"] if "reputation" in event else None
             )
             event_list.append(event)
+
+
         return event_list
 
-    def possible_events(self, cat_type, age, event_type):
+    def possible_single_events(self, cat_type=None, age=None, event_type=None):
         event_list = []
         if cat_type in ["medicine cat", "medicine cat apprentice"]:
             cat_type = "medicine"
@@ -83,8 +89,8 @@ class GenerateEvents:
             biome = game.clan.biome.lower()
 
             event_list.extend(
-                self.generate_events(
-                    self.get_event_dicts(event_type, cat_type, "general")
+                self.generate_single_events(
+                    self.get_single_event_dicts(event_type, cat_type, "general")
                 )
             )
 
@@ -97,8 +103,8 @@ class GenerateEvents:
 
         else:
             event_list.extend(
-                self.generate_events(
-                    self.get_event_dicts(
+                self.generate_single_events(
+                    self.get_single_event_dicts(
                         event_type, cat_type, biome
                     )
                 )
@@ -106,8 +112,8 @@ class GenerateEvents:
 
             if cat_type in ["apprentice", "deputy", "leader"]:
                 event_list.extend(
-                    self.generate_events(
-                        self.get_event_dicts(
+                    self.generate_single_events(
+                        self.get_single_event_dicts(
                             event_type, "warrior", biome
                         )
                     )
@@ -116,19 +122,74 @@ class GenerateEvents:
             if cat_type not in ["kitten", "leader"]:
                 if event_type != "nutrition":
                     event_list.extend(
-                        self.generate_events(
-                            self.get_event_dicts(event_type, "general", "general")
+                        self.generate_single_events(
+                            self.get_single_event_dicts(event_type, "general", "general")
                         )
                     )
                 event_list.extend(
-                    self.generate_events(
-                        self.get_event_dicts(
+                    self.generate_single_events(
+                        self.get_single_event_dicts(
                             event_type, "general", biome
                         )
                     )
                 )
 
         return event_list
+
+    def get_ongoing_event_dicts(self, event_triggered, biome):
+        events = None
+        resource_directory = "resources/dicts/events/"
+        try:
+            file_path = f"{resource_directory}{event_triggered}/general.json"
+            with open(
+                file_path,
+                "r",
+            ) as read_file:
+                events = ujson.loads(read_file.read())
+        except:
+            print(f"ERROR: Unable to load {event_triggered} events from biome {biome}.")
+
+        return events
+
+    def generate_ongoing_events(self, events_dict):
+        event_list = []
+        for event in events_dict:
+            event = OngoingEvent(
+                disaster=event["disaster"],
+                camp=event["camp"],
+                season=event["season"],
+                tags=event["tags"],
+                priority=event["priority"],
+                duration=event["duration"],
+                rarity=event["rarity"],
+                trigger_events=event["trigger_events"],
+                progress_events=event["progress_events"],
+                conclusion_events=event["conclusion_events"],
+                secondary_disasters=event["secondary_disasters"],
+                collateral_damage=event["collateral_damage"]
+            )
+            event_list.append(event)
+
+        return event_list
+
+    def possible_ongoing_events(self, event_type=None):
+        event_list = []
+
+        biome = game.clan.biome.lower()
+
+        if game.clan.biome not in game.clan.BIOME_TYPES:
+            print(f"WARNING: unrecognised biome {game.clan.biome} in generate_events. Have you added it to BIOME_TYPES in clan.py?")
+
+        else:
+            event_list.extend(
+                self.generate_ongoing_events(
+                    self.get_ongoing_event_dicts(
+                        event_type, biome
+                    )
+                )
+            )
+        return event_list
+
 
     def filter_possible_events(self, possible_events, cat, other_cat, war, enemy_clan, other_clan, alive_kits):
         final_events = []
@@ -448,6 +509,35 @@ Following tags are used for freshkill pile events:
 "other_cat" < there is a second cat in this event
 
 """
+
+
+class OngoingEvent:
+    def __init__(self,
+                 disaster=None,
+                 camp=None,
+                 season=None,
+                 tags=None,
+                 priority='secondary',
+                 duration=None,
+                 rarity=0,
+                 trigger_events=None,
+                 progress_events=None,
+                 conclusion_events=None,
+                 secondary_disasters=None,
+                 collateral_damage=None
+                 ):
+        self.disaster = disaster
+        self.camp = camp
+        self.season = season
+        self.tags = tags
+        self.priority = priority
+        self.duration = duration
+        self.rarity = rarity
+        self.trigger_events = trigger_events
+        self.progress_events = progress_events
+        self.conclusion_events = conclusion_events
+        self.secondary_disasters = secondary_disasters
+        self.collateral_damage = collateral_damage
 
 
 INJURY_DISTRIBUTION = None

@@ -1,4 +1,5 @@
 from scripts.cat.cats import *
+from scripts.events_module.generate_events import OngoingEvent
 from scripts.game_structure.load_cat import *
 from scripts.clan_resources.freshkill import Freshkill_Pile, Nutrition
 from os import path
@@ -14,7 +15,7 @@ from sys import exit
 
 class Clan():
     BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach"]
-    
+
     CAT_TYPES = [
         "kitten",
         "apprentice",
@@ -135,6 +136,7 @@ class Clan():
                 self.freshkill_pile = Freshkill_Pile()
             else:
                 self.freshkill_pile = None
+            self.primary_disaster = None
 
             self.faded_ids = []  # Stores ID's of faded cats, to ensure these IDs aren't reused.
 
@@ -199,7 +201,6 @@ class Clan():
             game.switches['game_mode'] = 'classic'
         if game.switches['game_mode'] == 'cruel_season':
             game.settings['disasters'] = True
-
 
     def add_cat(self, cat):  # cat is a 'Cat' object
         """ Adds cat into the list of clan cats"""
@@ -353,7 +354,7 @@ class Clan():
 
         clan_data["faded_cats"] = ",".join([str(i) for i in self.faded_ids])
 
-        #Patrolled cats
+        # Patrolled cats
         clan_data["patrolled_cats"] = [str(i) for i in game.patrolled]
 
         # OTHER CLANS
@@ -363,6 +364,7 @@ class Clan():
         clan_data["other_clan_temperament"] = ",".join([str(i.temperament) for i in self.all_clans])
 
         self.save_herbs(game.clan)
+        self.save_disaster(game.clan)
         if game.clan.game_mode in ['expanded', 'cruel season']:
             self.save_freshkill_pile(game.clan)
 
@@ -562,7 +564,6 @@ class Clan():
         else:
             deputy = None
 
-
         if clan_data["med_cat"]:
             med_cat = Cat.all_cats[clan_data["med_cat"]]
         else:
@@ -616,22 +617,22 @@ class Clan():
                 for cat in clan_data["faded_cats"].split(","):
                     game.clan.faded_ids.append(cat)
 
-        #Patrolled cats
+        # Patrolled cats
         if "patrolled_cats" in clan_data:
             for cat in clan_data["patrolled_cats"]:
                 if cat in Cat.all_cats:
                     game.patrolled.append(Cat.all_cats[cat])
 
-        #Mediated flag
+        # Mediated flag
         if "mediated" in clan_data:
             if type(clan_data["mediated"]) != list:
                 game.mediated = []
             else:
                 game.mediated = clan_data["mediated"]
 
-
         self.load_pregnancy(game.clan)
         self.load_herbs(game.clan)
+        self.load_disaster(game.clan)
         if game.clan.game_mode in ['expanded', 'cruel season']:
             self.load_freshkill_pile(game.clan)
         game.switches['error_message'] = ''
@@ -688,6 +689,65 @@ class Clan():
         except:
             print(f"ERROR: Saving the pregnancy data didn't work.")
 
+    def load_disaster(self, clan):
+        if not game.clan.name:
+            return
+
+        file_path = f"saves/{game.clan.name}/disasters/primary.json"
+        try:
+            if os.path.exists(file_path):
+                with open(file_path, 'r') as read_file:
+                    disaster = ujson.load(read_file)
+                    if disaster:
+                        clan.primary_disaster = OngoingEvent(
+                            disaster=disaster["disaster"],
+                            tags=disaster["tags"],
+                            duration=disaster["duration"],
+                            trigger_events=disaster["trigger_events"],
+                            progress_events=disaster["progress_events"],
+                            conclusion_events=disaster["conclusion_events"],
+                            secondary_disasters=disaster["secondary_disasters"],
+                            collateral_damage=disaster["collateral_damage"]
+                        )
+                    else:
+                        clan.primary_disaster = {}
+            else:
+                os.makedirs(f"saves/{game.clan.name}/disasters")
+                clan.primary_disaster = None
+                with open(file_path, 'w') as rel_file:
+                    json_string = ujson.dumps(clan.primary_disaster, indent=4)
+                    rel_file.write(json_string)
+
+        except:
+            clan.primary_disaster = None
+
+    def save_disaster(self, clan):
+        if not game.clan.name:
+            return
+        file_path = f"saves/{game.clan.name}/disasters/primary.json"
+
+        if game.clan.primary_disaster:
+            disaster = {
+                "disaster": game.clan.primary_disaster.disaster,
+                "tags": game.clan.primary_disaster.tags,
+                "duration": game.clan.primary_disaster.duration,
+                "trigger_events": game.clan.primary_disaster.trigger_events,
+                "progress_events": game.clan.primary_disaster.progress_events,
+                "conclusion_events": game.clan.primary_disaster.conclusion_events,
+                "secondary_disasters": game.clan.primary_disaster.secondary_disasters,
+                "collateral_damage": game.clan.primary_disaster.collateral_damage
+            }
+        else:
+            disaster = {}
+
+        try:
+            with open(file_path, 'w') as rel_file:
+                json_string = ujson.dumps(disaster, indent=4)
+                rel_file.write(json_string)
+        except:
+            print("ERROR: Disaster file failed to save")
+
+
     def load_freshkill_pile(self, clan):
         if not game.clan.name or clan.game_mode == 'classic':
             return
@@ -719,7 +779,7 @@ class Clan():
 
         try:
             with open(f"saves/{game.clan.name}/freshkill_pile.json", 'w') as rel_file:
-                json_string = ujson.dumps(clan.freshkill_pile.pile, indent = 4)
+                json_string = ujson.dumps(clan.freshkill_pile.pile, indent=4)
                 rel_file.write(json_string)
         except:
             print(f"ERROR: Saving the freshkill pile didn't work.")
@@ -733,10 +793,11 @@ class Clan():
                         "current_score": nutr.current_score,
                         "percentage": nutr.percentage,
                     }
-                json_string = ujson.dumps(data, indent = 4)
+                json_string = ujson.dumps(data, indent=4)
                 rel_file.write(json_string)
         except:
             print(f"ERROR: Saving nutrition information of the freshkill pile didn't work.")
+
 
 class OtherClan():
 
@@ -750,8 +811,6 @@ class OtherClan():
         self.temperament = temperament or choice(temperament_list)
         if self.temperament not in temperament_list:
             self.temperament = choice(temperament_list)
-            
-        
 
     def __repr__(self):
         return f"{self.name}Clan"

@@ -32,7 +32,7 @@ class MiscEvents():
         other_clan = random.choice(game.clan.all_clans)
         other_clan_name = f'{str(other_clan.name)}Clan'
 
-        possible_events = self.generate_events.possible_events(cat.status, cat.age, "misc_events")
+        possible_events = self.generate_events.possible_single_events(cat.status, cat.age, "misc_events")
         final_events = self.generate_events.filter_possible_events(possible_events, cat, other_cat, war,
                                                                    enemy_clan, other_clan,
                                                                    alive_kits)
