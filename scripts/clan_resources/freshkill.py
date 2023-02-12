@@ -21,11 +21,11 @@ class Nutrition():
         }
 
     @property
-    def current_score(self) -> int|float:
+    def current_score(self):
         return self._current_score
 
     @current_score.setter
-    def current_score(self, value: int|float) -> None:
+    def current_score(self, value) -> None:
         """
         When the current_score is changed, this will be handled here. It also automatically calculates the percentage of the nutrient.
 
@@ -71,7 +71,7 @@ class Freshkill_Pile():
             self.total_amount = GAME_CONFIG["freshkill"]["start_amount"]
         self.nutrition_info = {}
 
-    def add_freshkill(self, amount: int|float) -> None:
+    def add_freshkill(self, amount) -> None:
         """
         Add new fresh kill to the pile.
 
@@ -83,7 +83,7 @@ class Freshkill_Pile():
         self.pile["expires_in_4"] += amount
         self.total_amount += amount
 
-    def remove_freshkill(self, amount: int|float, take_random: bool = False) -> None:
+    def remove_freshkill(self, amount, take_random: bool = False) -> None:
         """
         Remove a certain amount of fresh kill from the pile.
 
@@ -160,7 +160,7 @@ class Freshkill_Pile():
             else:
                 self.feed_group(relevant_group, status_)
 
-    def amount_food_needed(self) -> int|float:
+    def amount_food_needed(self):
         """
             Returns
             -------
@@ -280,7 +280,7 @@ class Freshkill_Pile():
                     feeding_amount = feeding_amount/2
             self.feed_cat(cat, feeding_amount, needed_amount)
 
-    def feed_cat(self, cat: Cat, amount: int|float, actual_needed: int|float) -> None:
+    def feed_cat(self, cat: Cat, amount, actual_needed) -> None:
         """
         Handle the feeding process.
 
@@ -305,7 +305,7 @@ class Freshkill_Pile():
         if remaining_amount > 0:
             self.nutrition_info[cat.ID].current_score -= (remaining_amount + amount_difference)
 
-    def take_from_pile(self, pile_group: str, given_amount: int|float) -> int|float:
+    def take_from_pile(self, pile_group: str, given_amount):
         """
         Take the amount from a specific pile group and returns the rest of the original needed amount.
 
