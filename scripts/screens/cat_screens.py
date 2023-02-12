@@ -58,7 +58,6 @@ def accessory_display_name(cat):
 # ---------------------------------------------------------------------------- #
 def bs_blurb_text(cat):
     backstory = cat.backstory
-    bs_blurb = None
     backstory_text = {
         None: "This cat was born into the Clan where they currently reside.",
         'clan_founder': "This cat is one of the founding members of the Clan.",
@@ -77,7 +76,7 @@ def bs_blurb_text(cat):
         'rogue2': "This cat used to live in a Twolegplace, scrounging for what they could find. They thought the Clan might offer them more security.",
         'rogue3': "This cat used to live alone in their own territory, but was chased out by something and eventually found the Clan.",
         'abandoned1': "This cat was found by the Clan as a kit and has been living with them ever since.",
-        'abandoned2': "This cat was born into a kittypet life, but was brought to the Clan as a kit and has lived here ever since.",
+        'abandoned2': "This cat was born into outside of the Clan, but was brought to the Clan as a kit and has lived here ever since.",
         'abandoned3': "This cat was born into another Clan, but they were left here as a kit for the Clan to raise.",
         'abandoned4': "This cat was found and taken in after being abandoned by their twolegs as a kit.",
         'medicine_cat': "This cat was once a medicine cat in another Clan.",
@@ -96,11 +95,13 @@ def bs_blurb_text(cat):
         'tragedy_survivor3': "This cat used to be a kittypet, but joined the Clan after something terrible happened to their twolegs.",
         'tragedy_survivor4': "This cat used to be a loner, but joined the Clan after something terrible made them leave their old home behind.",
         'orphaned': "This cat was found with a deceased parent. The Clan took them in, but doesn't hide where they came from.",
+        'orphaned2': "This cat was found with a deceased parent. The Clan took them in, but doesn't tell them where they really came from.",
         'wandering_healer1': "This cat used to wander, helping those where they could, and eventually found the Clan.",
         'wandering_healer2': "This cat used to live in a specific spot, offering help to all who wandered by, but eventually found their way to the Clan.",
         'guided1': "This cat used to be a kittypet, but after dreaming of starry-furred cats, they followed their whispers to the Clan.",
         'guided2': "This cat used to live a rough life as a rogue. While wandering, they found a set of starry pawprints, and followed them to the Clan.",
-        'guided3': "This cat used to live as a loner. A starry-furred cat appeared to them one day, and then led them to the Clan."
+        'guided3': "This cat used to live as a loner. A starry-furred cat appeared to them one day, and then led them to the Clan.",
+        'guided4': "This cat used to live in a different Clan, until a sign from StarClan told them to leave."
 
     }
     return backstory_text.get(backstory, "")
@@ -113,6 +114,7 @@ def backstory_text(cat):
     if backstory is None:
         return ''
     bs_display = backstory
+
     backstory_map = {
         'clanborn': 'clanborn',
         'clan_founder': 'Clan founder',
@@ -131,7 +133,7 @@ def backstory_text(cat):
         'kittypet3': 'formerly a kittypet',
         'refugee3': 'formerly a kittypet',
         'tragedy_survivor3': 'formerly a kittypet',
-        'guided3': 'formerly a kittypet',
+        'guided1': 'formerly a kittypet',
         'rogue1': 'formerly a rogue',
         'rogue2': 'formerly a rogue',
         'refugee4': 'formerly a rogue',
@@ -146,21 +148,28 @@ def backstory_text(cat):
         'otherclan': 'formerly from another Clan',
         'otherclan2': 'formerly from another Clan',
         'otherclan3': 'formerly from another Clan',
+        'guided4': 'formerly from another Clan',
         'ostracized_warrior': 'ostracized warrior',
         'disgraced': 'disgraced',
         'retired_leader': 'retired leader',
         'refugee': 'refugee',
         'tragedy_survivor': 'survivor of a tragedy',
-        'orphaned': 'orphaned'
+        'orphaned': 'orphaned',
+        'orphaned2': 'orphaned'
     }
 
-    bs_display = backstory_map.get(bs_display)
+    if bs_display in backstory_map:
+        bs_display = backstory_map[bs_display]
 
     if bs_display == "disgraced":
         if cat.status == 'medicine cat':
             bs_display = 'disgraced medicine cat'
         elif cat.status in ['warrior', 'elder']:
             bs_display = 'disgraced deputy'
+    if bs_display is None:
+        bs_display = None
+    else:
+        return bs_display
 
     return bs_display
 
@@ -1120,9 +1129,9 @@ class ProfileScreen(Screens):
 
         # check if cat has any mentor influence, else assign None
         if len(self.the_cat.mentor_influence) >= 1:
-            influenced_skill = str(self.the_cat.mentor_influence[0])
+            influenced_skill = str(self.the_cat.mentor_influence[1])
             if len(self.the_cat.mentor_influence) >= 2:
-                influenced_trait = str(self.the_cat.mentor_influence[1])
+                influenced_trait = str(self.the_cat.mentor_influence[0])
             else:
                 influenced_trait = None
         else:
@@ -1164,31 +1173,6 @@ class ProfileScreen(Screens):
                             break
                     influenced_skill = adjust_skill
                     break
-        if influenced_trait in Cat.skill_groups.get('special'):
-            adjust_skill = f'unlock their abilities as a {influenced_trait}'
-            for y in vowels:
-                if influenced_trait.startswith(y):
-                    adjust_skill = adjust_skill.replace(' a ', ' an ')
-                    break
-            influenced_trait = adjust_skill
-        elif influenced_trait in Cat.skill_groups.get('star'):
-            adjust_skill = f'grow a {influenced_trait}'
-            influenced_trait = adjust_skill
-        elif influenced_trait in Cat.skill_groups.get('smart'):
-            adjust_skill = f'become {influenced_trait}'
-            influenced_trait = adjust_skill
-        else:
-            # for loop to assign proper grammar to all these groups
-            become_group = ['heal', 'teach', 'mediate', 'hunt', 'fight', 'speak']
-            for x in become_group:
-                if influenced_trait in Cat.skill_groups.get(x):
-                    adjust_skill = f'become a {influenced_trait}'
-                    for y in vowels:
-                        if influenced_trait.startswith(y):
-                            adjust_skill = adjust_skill.replace(' a ', ' an ')
-                            break
-                    influenced_trait = adjust_skill
-                    break
         if self.the_cat.former_mentor:
             former_mentor_ob = Cat.fetch_cat(self.the_cat.former_mentor[-1])
             mentor = former_mentor_ob.name
@@ -1202,13 +1186,13 @@ class ProfileScreen(Screens):
                 influence_history = 'This cat has not begun training.'
             if self.the_cat.status in ['apprentice', 'medicine cat apprentice']:
                 influence_history = 'This cat has not finished training.'
-        elif influenced_trait is not None and influenced_skill is None:
-            influence_history = f"The influence of their mentor, {mentor}, caused this cat to {influenced_trait}."
-        elif influenced_trait is None and influenced_skill is not None:
-            if influenced_skill in ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']:
-                influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_skill.lower()}."
+        elif influenced_skill is not None and influenced_trait is None:
+            influence_history = f"The influence of their mentor, {mentor}, caused this cat to {influenced_skill.lower()}."
+        elif influenced_skill is None and influenced_trait is not None:
+            if influenced_trait in ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']:
+                influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait.lower()}."
             else:
-                influence_history = f"The influence of their mentor, {mentor}, caused this cat to {influenced_skill}."
+                influence_history = f"This cat's mentor was {mentor}."
         elif influenced_trait is not None and influenced_skill is not None:
             influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait} as well as {influenced_skill.lower()}."
         else:

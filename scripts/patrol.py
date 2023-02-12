@@ -1288,10 +1288,10 @@ class Patrol():
                     new_cat.outside = True
                     new_cat.dead = True
                 if "new_cat_newborn" in tags:
-                    created_cats.extend(self.create_new_cat(loner=False, loner_name=True, backstory='orphaned',
+                    created_cats.extend(self.create_new_cat(loner=False, loner_name=True, backstory=choice(['orphaned', 'orphaned2']),
                                                        litter=True, age='newborn', relevant_cat=new_cat))
                 else:
-                    created_cats.extend(self.create_new_cat(loner=False, loner_name=True, backstory='orphaned',
+                    created_cats.extend(self.create_new_cat(loner=False, loner_name=True, backstory=choice(['orphaned', 'orphaned2']),
                                                        litter=True, relevant_cat=new_cat))
 
             elif "new_cat_apprentice" in tags:

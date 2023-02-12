@@ -46,6 +46,17 @@ def get_alive_clan_queens(all_cats):
             queens.append(parent_1)
     return queens
 
+def get_alive_kits(Cat):
+    """
+    returns a list of all living kittens in the clan
+    """
+    alive_kits = list(filter(
+        lambda kitty: (kitty.age == "kitten"
+                       and not kitty.dead
+                       and not kitty.outside),
+        Cat.all_cats.values()
+    ))
+    return alive_kits
 
 def get_med_cats(Cat, working=True):
     """
@@ -310,13 +321,13 @@ def change_relationship_values(cats_to,
 #                               Text Adjust                                    #
 # ---------------------------------------------------------------------------- #
 
-def event_text_adjust(Cat, text, cat, other_cat=None, other_clan_name=None, keep_m_c=False):
-    danger = ["a rogue", "a dog", "a fox", "an otter", "a rat", "a hawk", "an enemy warrior", "a badger"]
-    tail_danger = ["a rogue", "a dog", "a fox", "an otter", "a rat", "a hawk",
-                   "an enemy warrior", "a badger", "a Twoleg trap"]
-
-    danger_choice = choice(danger)
-    tail_choice = choice(tail_danger)
+def event_text_adjust(Cat,
+                      text,
+                      cat,
+                      other_cat=None,
+                      other_clan_name=None,
+                      keep_m_c=False,
+                      new_cat=None):
 
     name = str(cat.name)
     other_name = None
@@ -329,21 +340,24 @@ def event_text_adjust(Cat, text, cat, other_cat=None, other_clan_name=None, keep
     adjust_text = text
     if keep_m_c is False:
         adjust_text = adjust_text.replace("m_c", str(name).strip())
-    if other_name is not None:
+    if other_name:
         adjust_text = adjust_text.replace("r_c", str(other_name))
-    if other_clan_name is not None:
+    if other_clan_name:
         adjust_text = adjust_text.replace("o_c", str(other_clan_name))
-    if mate is not None:
+    if mate:
         adjust_text = adjust_text.replace("c_m", str(mate))
-    adjust_text = adjust_text.replace("d_l", danger_choice)
-    adjust_text = adjust_text.replace("t_l", tail_choice)
+    if new_cat:
+        adjust_text = adjust_text.replace("n_c_pre", str(new_cat.name.prefix))
+        adjust_text = adjust_text.replace("n_c", str(new_cat.name))
+
     adjust_text = adjust_text.replace("c_n", str(game.clan.name) + "Clan")
     adjust_text = adjust_text.replace("p_l", name)
 
     return adjust_text
 
 
-def ceremony_text_adjust(Cat, text, cat, dead_mentor=None, mentor=None, previous_alive_mentor=None, random_honor=None):
+def ceremony_text_adjust(Cat, text, cat, dead_mentor=None, mentor=None, previous_alive_mentor=None, random_honor=None,
+                         living_parents=(), dead_parents=()):
     name = str(cat.name)
     prefix = str(cat.name.prefix)
     clanname = str(game.clan.name + "Clan")
@@ -368,10 +382,15 @@ def ceremony_text_adjust(Cat, text, cat, dead_mentor=None, mentor=None, previous
     else:
         leader_name = "leader_placeholder"
 
-    parent_names = []
-    for c in [cat.parent1, cat.parent2]:
+    living_parent_names = []
+    for c in living_parents:
         if c:
-            parent_names.append(str(Cat.fetch_cat(c).name))
+            living_parent_names.append(str(c.name))
+
+    dead_parent_names = []
+    for c in dead_parents:
+        if c:
+            dead_parent_names.append(str(c.name))
 
     random_honor = random_honor
 
@@ -379,18 +398,29 @@ def ceremony_text_adjust(Cat, text, cat, dead_mentor=None, mentor=None, previous
     adjust_text = adjust_text.replace("(prefix)", prefix)
     adjust_text = adjust_text.replace("m_c", name)
     adjust_text = adjust_text.replace("c_n", clanname)
-    adjust_text = adjust_text.replace("(mentor)", mentor_name)
+    if mentor_name:
+        adjust_text = adjust_text.replace("(mentor)", mentor_name)
     adjust_text = adjust_text.replace("l_n", leader_name)
     adjust_text = adjust_text.replace("(deadmentor)", dead_mentor_name)
     adjust_text = adjust_text.replace("(previous_mentor)", previous_alive_mentor_name)
 
-    if "p1" in adjust_text and "p2" in adjust_text and len(parent_names) >= 2:
-        adjust_text = adjust_text.replace("p1", parent_names[0])
-        adjust_text = adjust_text.replace("p2", parent_names[1])
-    elif "p1" in adjust_text and len(parent_names) >= 1:
-        adjust_text = adjust_text.replace("p1", choice(parent_names))
-    elif "p2" in adjust_text and len(parent_names) >= 1:
-        adjust_text = adjust_text.replace("p2", choice(parent_names))
+    # Living Parents
+    if len(living_parent_names) >= 2:
+        adjust_text = adjust_text.replace("p1", living_parent_names[0])
+        adjust_text = adjust_text.replace("p2", living_parent_names[1])
+    elif "p1" in adjust_text and len(living_parent_names) >= 1:
+        adjust_text = adjust_text.replace("p1", choice(living_parent_names))
+    elif "p2" in adjust_text and len(living_parent_names) >= 1:
+        adjust_text = adjust_text.replace("p2", choice(living_parent_names))
+
+    # Dead Parents
+    if len(dead_parent_names) >= 2:
+        adjust_text = adjust_text.replace("dead_par1", dead_parent_names[0])
+        adjust_text = adjust_text.replace("dead_par2", dead_parent_names[1])
+    elif "dead_par1" in adjust_text and len(dead_parent_names) >= 1:
+        adjust_text = adjust_text.replace("dead_par1", choice(dead_parent_names))
+    elif "dead_par2" in adjust_text and len(dead_parent_names) >= 1:
+        adjust_text = adjust_text.replace("dead_par2", choice(dead_parent_names))
 
     if random_honor:
         adjust_text = adjust_text.replace("r_h", random_honor)

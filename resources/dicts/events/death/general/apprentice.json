@@ -11,7 +11,7 @@
     },
     {
         "camp": "any",
-        "tags": ["other_clan", "rel_down", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": ["other_clan", "hostile", "neutral", "rel_down", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "death_text": "m_c was killed by o_c warriors after accidentally wandering over the border.",
         "history_text": ["m_c was killed by o_c warriors after accidentally trespassing.", null],
         "cat_trait": ["nervous", "strange", "childish", "troublesome", "lonesome"],
@@ -21,7 +21,7 @@
     },
     {
         "camp": "any",
-        "tags": ["other_clan", "rel_down", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": ["other_clan", "hostile", "neutral", "rel_down", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "death_text": "m_c was killed by o_c warriors after deliberately going over the border.",
         "history_text": ["m_c was killed by o_c warriors after deliberately trespassing.", null],
         "cat_trait": ["daring", "bold", "confident", "playful", "fierce", "ambitious", "bloodthirsty", "fierce", "shameless", "troublesome", "vengeful", "strange", "sneaky"],
