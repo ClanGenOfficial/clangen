@@ -1,11 +1,12 @@
 {
 	"freshkill":{
 		"activate_death": false,
+		"activate_events": true,
 		"start_amount": 60,
 		"auto_warrior_prey": [1,2],
 		"auto_apprentice_prey": [0,2],
 		"condition_increase": 0.5,
-		"event_trigger_factor": 3.5,
+		"event_trigger_factor": 3,
 		"prey_requirement":{
 			"leader": 3,
 			"deputy": 3,
@@ -42,8 +43,11 @@
 			"max": 7
 		},
 		"comment": [
+			"activate_deaths - activates the whole system, otherwise nutrition status of the cats doesn't have an effect",
+			"activate_events - activates if events for freshkill pile are triggered or not",
 			"start_amount defines the amount of prey when a new freshkill-pile is made",
 			"The auto parameters are for the prey each moon, each healthy warrior/apprentice will catch an amount of between these two values of prey.",
+			"event_trigger_factor - this number will be used to multiply with the amount of prey the clan needs, if the pile is bigger than this number, prey events will be triggered",
 			"hunter_bonus is the factor which is be used to multiply on a hunting patrol.",
 			"hunter_exp_bonus is the additional prey which will be added on a hunting patrol."
 		]

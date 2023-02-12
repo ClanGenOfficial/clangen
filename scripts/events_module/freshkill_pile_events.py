@@ -5,7 +5,7 @@ from scripts.game_structure.game_essentials import game
 from scripts.utility import event_text_adjust
 from scripts.cat.cats import Cat
 from scripts.event_class import Single_Event
-from scripts.clan_resources.freshkill import FRESHKILL_EVENT_TRIGGER_FACTOR
+from scripts.clan_resources.freshkill import FRESHKILL_EVENT_TRIGGER_FACTOR, FRESHKILL_EVENT_ACTIVE
 
 class Freshkill_Events():
     """All events with a connection to freshkill pile or the nutrition of cats."""
@@ -122,6 +122,8 @@ class Freshkill_Events():
         Handles events (eg. a fox is attacking the camp), which are related to the freshkill pile.
         Game-mode: 'expanded' & 'cruel season'
         """
+        if not FRESHKILL_EVENT_ACTIVE:
+            return
         # check if amount of the freshkill pile is too big and a event will be triggered
         much_prey = False
         needed_amount = freshkill_pile.amount_food_needed()
