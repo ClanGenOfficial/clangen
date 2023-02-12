@@ -158,7 +158,8 @@ def backstory_text(cat):
         'orphaned2': 'orphaned'
     }
 
-    bs_display = backstory_map.get(bs_display)
+    if bs_display in backstory_map:
+        bs_display = backstory_map[bs_display]
 
     if bs_display == "disgraced":
         if cat.status == 'medicine cat':
