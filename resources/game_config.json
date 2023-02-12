@@ -1,9 +1,11 @@
 {
 	"freshkill":{
+		"activate_death": false,
 		"start_amount": 60,
 		"auto_warrior_prey": [1,2],
 		"auto_apprentice_prey": [0,2],
 		"condition_increase": 0.5,
+		"event_trigger_factor": 3.5,
 		"prey_requirement":{
 			"leader": 3,
 			"deputy": 3,

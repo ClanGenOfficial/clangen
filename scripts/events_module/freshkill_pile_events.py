@@ -5,8 +5,7 @@ from scripts.game_structure.game_essentials import game
 from scripts.utility import event_text_adjust
 from scripts.cat.cats import Cat
 from scripts.event_class import Single_Event
-
-EVENT_TRIGGER_FACTOR = 2.5
+from scripts.clan_resources.freshkill import FRESHKILL_EVENT_TRIGGER_FACTOR
 
 class Freshkill_Events():
     """All events with a connection to freshkill pile or the nutrition of cats."""
@@ -126,7 +125,7 @@ class Freshkill_Events():
         # check if amount of the freshkill pile is too big and a event will be triggered
         much_prey = False
         needed_amount = freshkill_pile.amount_food_needed()
-        trigger_value = EVENT_TRIGGER_FACTOR * needed_amount
+        trigger_value = FRESHKILL_EVENT_TRIGGER_FACTOR * needed_amount
         if freshkill_pile.total_amount < trigger_value:
             return
 
