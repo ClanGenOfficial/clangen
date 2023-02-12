@@ -33,7 +33,7 @@ class Name():
         "stream", "strike", "stripe", "sun", "swipe", "swoop", "talon", "tooth", "thistle", "thorn", "throat", "toe", "tree", 
         "throat", "watcher", "water", "wave", "whisper", "whistle", "willow", "wind", "wing", "wish"
         "dragon", "earth", "ghost", "magic", "ground", "king", "guardian", "queen", "knight", "mind", "seeker", "soul", "god", "emperor",
-        "hyena", "lurker", "hunter", "vessel", "forest"
+        "hyena", "lurker", "hunter", "vessel", "forest", "wolf"
     ]
 
     pelt_suffixes = {
@@ -108,7 +108,7 @@ class Name():
         'Tumble', 'Turtle', 'Twisted', 'Vine', 'Vixen', 'Wasp', 'Weasel', 'Web', 'Weed', 'Wet', 'Wheat', 'Whirl', 'Whisker',
         'Whisper', 'Whispering', 'Whistle', 'Whorl', 'Wild', 'Willow', 'Wind', 'Wish', 'Wing', 'Wisteria', 'Wolf', 'Wood', 'Wren', 'Yarrow', 'Yew',
         'Dragon', 'Wyvern', 'Earth', 'Eternal', 'Time', 'Ghost', 'God', 'Magic', 'Mind', 'Mountain', 'Royal', 'Shade', 'Spirit', 'Soul', 'Energy', 'Fae', 'Wyrm',
-        'Kirin', 'Bull', 'Hyena', 'Vulture', 'Orchid', 'Drake', 'Hydra', 'Sealed', 'Pure', 'Radiant'
+        'Kirin', 'Bull', 'Hyena', 'Vulture', 'Orchid', 'Drake', 'Hydra', 'Sealed', 'Pure', 'Radiant', 'Shark', 'Jaguar', 'Moose', 'Seal', 
     ]
 
     colour_prefixes = {
