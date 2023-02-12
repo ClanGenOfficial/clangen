@@ -605,11 +605,13 @@ class Events():
                             f'The war against {other_clan.name}Clan continues.',
                             f'{game.clan.name}Clan is starting to get tired of the war against {other_clan.name}Clan.',
                             f'{game.clan.name}Clan warriors plan new battle strategies for the war.',
-                            f'{game.clan.name}Clan warriors reinforce the camp walls.'
+                            f'{game.clan.name}Clan warriors reinforce the camp walls.',
+                            f'{game.clan.name}Clan warriors evaluate their battle strategies against {other_clan.name}Clan.'
                         ]
                         if game.clan.medicine_cat is not None:
                             possible_text.extend([
-                                'The medicine cats worry about having enough herbs to treat their Clan\'s wounds.'
+                                f'The medicine cats worry about having enough herbs to treat their Clan\'s wounds.',
+                                f'The medicine cats wonder what StarClan thinks of the war.'
                             ])
                         war_notice = choice(possible_text)
                         self.time_at_war += 1
@@ -1561,7 +1563,7 @@ class Events():
                                 previous_deputy_mention = choice(
                                     [f"They know that {game.clan.deputy.name} would approve.",
                                      f"They hope that {game.clan.deputy.name} would approve.",
-                                     f"They don't know if {game.clan.deputy.name} would approve, "
+                                     f"They don't know if {game.clan.deputy.name} would approve, " \
                                      f"but life must go on. "])
                                 involved_cats.append(game.clan.deputy.ID)
 
@@ -1588,10 +1590,13 @@ class Events():
                             f"{Cat.all_cats[random_cat].name} has been chosen as the new deputy. "
                             f"They hold their head up high and promise to do their best for the Clan.",
                             f"{game.clan.leader.name} has been thinking deeply all day who they would "
-                            f"respect and trust enough to stand at their side and at sunhigh makes the "
+                            f"respect and trust enough to stand at their side, and at sunhigh makes the "
                             f"announcement that {Cat.all_cats[random_cat].name} will be the Clan's new deputy.",
                             f"{Cat.all_cats[random_cat].name} has been chosen as the new deputy. They pray to "
                             f"StarClan that they are the right choice for the Clan.",
+                            f"{Cat.all_cats[random_cat].name} has been chosen as the new deputy. Although"
+                            f"they are nervous, they put on a brave front and look forward to serving"
+                            f"the clan.",
                         ]
                         # No additional involved cats
                         text = choice(possible_events)
