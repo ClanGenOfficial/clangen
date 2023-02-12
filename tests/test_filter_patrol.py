@@ -468,3 +468,49 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         patrol.add_patrol_cats([cat1, cat2, cat3], test_clan)
         filtered = patrol.filter_relationship(possible_patrols)
         self.assertNotEqual(len(filtered), len(possible_patrols))
+
+    def test_multiple_constraint_patrol(self):
+        # given
+        cat1 = Cat()
+        cat2 = Cat()
+
+        relationship1 = Relationship(cat1,cat2)
+        relationship2 = Relationship(cat2,cat1)
+
+        relationship1.romantic_love = 20
+        relationship2.romantic_love = 20
+        relationship1.platonic_like = 20
+        relationship2.platonic_like = 20
+
+        relationship1.opposite_relationship = relationship2
+        relationship2.opposite_relationship = relationship1
+        cat1.relationships[cat2.ID] = relationship1
+        cat2.relationships[cat1.ID] = relationship2
+
+        test_clan = Clan(name="test")
+
+        # when - correct
+        con_patrol_event = PatrolEvent(patrol_id="test1")
+        con_patrol_event.relationship_constraint.append("romantic_10")
+        con_patrol_event2 = PatrolEvent(patrol_id="test2")
+        con_patrol_event2.relationship_constraint.append("platonic_10")
+        possible_patrols = [con_patrol_event, con_patrol_event2]
+
+        # then
+        patrol = Patrol()
+        patrol.add_patrol_cats([cat1, cat2], test_clan)
+        filtered = patrol.filter_relationship(possible_patrols)
+        self.assertEqual(len(filtered), len(possible_patrols))
+
+        # when - to high
+        con_patrol_event = PatrolEvent(patrol_id="test1")
+        con_patrol_event.relationship_constraint.append("romantic_10")
+        con_patrol_event2 = PatrolEvent(patrol_id="test2")
+        con_patrol_event2.relationship_constraint.append("platonic_30")
+        possible_patrols = [con_patrol_event, con_patrol_event2]
+
+        # then
+        patrol = Patrol()
+        patrol.add_patrol_cats([cat1, cat2], test_clan)
+        filtered = patrol.filter_relationship(possible_patrols)
+        self.assertNotEqual(len(filtered), len(possible_patrols))
