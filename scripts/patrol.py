@@ -374,7 +374,54 @@ class Patrol():
                 filtered_patrols.append(patrol)
                 continue
             
-            # filtering
+            # filtering - relationship status
+            # check if all are siblings
+            if "siblings" in patrol.relationship_constraint:
+                test_cat = self.patrol_cats[0]
+                testing_cats = copy(self.patrol_cats)
+                testing_cats.remove(test_cat)
+                
+                siblings_amount = [test_cat.is_silbing(inter_cat) for inter_cat in testing_cats]
+                if len(siblings_amount)+1 != len(self.patrol_cats):
+                    continue
+
+            # check if the cats are mates
+            if "mate" in patrol.relationship_constraint:
+                # it should be exactly two cats for a "mate" patrol
+                if len(self.patrol_cats) != 2:
+                    continue
+                else:
+                    cat1 = self.patrol_cats[0]
+                    cat2 = self.patrol_cats[1]
+                    # if one of the cat has no mate, not add this patrol
+                    if not cat1.mate or not cat2.mate:
+                        continue
+                    elif cat1.mate != cat2.ID or cat2.mate != cat1.ID:
+                        continue
+            
+            # check if the cats are in a parent/child relationship
+            if "parent/child" in patrol.relationship_constraint:
+                # it should be exactly two cats for a "parent/child" patrol
+                if len(self.patrol_cats) != 2:
+                    continue
+                # when there are two cats in the patrol, p_l and r_c are different cats per default
+                if not self.patrol_leader.is_parent(self.patrol_random_cat):
+                    continue
+
+            # check if the cats are in a child/parent relationship
+            if "child/parent" in patrol.relationship_constraint:
+                # it should be exactly two cats for a "child/parent" patrol
+                if len(self.patrol_cats) != 2:
+                    continue
+                # when there are two cats in the patrol, p_l and r_c are different cats per default
+                if not self.patrol_random_cat.is_parent(self.patrol_leader):
+                    continue
+
+
+            # filtering - relationship values
+            value_types = [""]
+
+            filtered_patrols.append(patrol)
 
         return filtered_patrols
 
@@ -1583,7 +1630,7 @@ class PatrolEvent():
     "all_lives", "some_lives"
 
     relationship constraint - 
-    "siblings", "mates", "parent_child", "parent_children", "parents_children"
+    "siblings", "mates", "parent/child", "child/parent",
     "romantic_NUMBER", "platonic_NUMBER", "dislike_NUMBER", "comfortable_NUMBER", "jealousy_NUMBER", "trust_NUMBER"
 
 """
@@ -1659,9 +1706,8 @@ class PatrolEvent():
 
     general:
     "sibling", "mates"
-    "parent_child" -> one parent and one child
-    "parent_children" -> one parent and one/more children
-    "parents_children" -> one/two parent and one/more children
+    "parent/child" -> patrol leader is parent, random cat is child
+    "child/parent" -> patrol leader is child, random cat is parent
 
     'thresholds':
     for a 'threshold' tag, you only have to add the value type and then a number.
