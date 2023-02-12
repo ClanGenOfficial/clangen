@@ -395,11 +395,9 @@ class Patrol():
             # check if all are siblings
             if "siblings" in patrol.relationship_constraint:
                 test_cat = self.patrol_cats[0]
-                testing_cats = copy.deepcopy(self.patrol_cats)
-                if test_cat in testing_cats:
-                    testing_cats.remove(test_cat)
+                testing_cats = [cat for cat in self.patrol_cats if cat.ID != test_cat.ID]
                 
-                siblings = [test_cat.is_sibling(inter_cat) for inter_cat in testing_cats]
+                siblings = [inter_cat for inter_cat in testing_cats if test_cat.is_sibling(inter_cat)]
                 if len(siblings)+1 != len(self.patrol_cats):
                     continue
 
