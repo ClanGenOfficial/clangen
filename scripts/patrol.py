@@ -50,7 +50,17 @@ class Patrol():
         self.other_clan = None
         self.experience_levels = []
 
-    def add_patrol_cats(self, patrol_cats):
+    def add_patrol_cats(self, patrol_cats: list) -> None:
+        """Add the list of cats to the patrol class and handles to set all needed values.
+
+            Parameters
+            ----------
+            patrol_cats : list
+                list of cats which are on the patrol
+
+            Returns
+            ----------
+        """
         self.patrol_cats.clear()
         self.patrol_names.clear()
         self.possible_patrol_leaders.clear()
