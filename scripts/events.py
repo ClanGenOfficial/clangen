@@ -1561,7 +1561,7 @@ class Events():
                                 previous_deputy_mention = choice(
                                     [f"They know that {game.clan.deputy.name} would approve.",
                                      f"They hope that {game.clan.deputy.name} would approve.",
-                                     f"They don't know that {game.clan.deputy.name} would approve,"
+                                     f"They don't know if {game.clan.deputy.name} would approve, "
                                      f"but life must go on. "])
                                 involved_cats.append(game.clan.deputy.ID)
 
