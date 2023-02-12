@@ -402,7 +402,7 @@ class Patrol():
                     continue
 
             # check if the cats are mates
-            if "mate" in patrol.relationship_constraint:
+            if "mates" in patrol.relationship_constraint:
                 # it should be exactly two cats for a "mate" patrol
                 if len(self.patrol_cats) != 2:
                     continue
@@ -1652,8 +1652,8 @@ class PatrolEvent():
                  decline_text="",
                  chance_of_success=0,
                  exp=0,
-                 success_text=[],
-                 fail_text=[],
+                 success_text=None,
+                 fail_text=None,
                  win_skills=None,
                  win_trait=None,
                  fail_skills=None,
@@ -1662,15 +1662,13 @@ class PatrolEvent():
                  max_cats=6,
                  antagonize_text="",
                  antagonize_fail_text="",
-                 history_text=[],
-                 relationship_constraint=[]):
+                 history_text=None,
+                 relationship_constraint=None):
         self.patrol_id = patrol_id
         self.biome = biome or "Any"
         self.season = season or "Any"
         self.tags = tags
         self.intro_text = intro_text
-        self.success_text = success_text
-        self.fail_text = fail_text
         self.decline_text = decline_text
         self.chance_of_success = chance_of_success  # out of 100
         self.exp = exp
@@ -1682,9 +1680,29 @@ class PatrolEvent():
         self.max_cats = max_cats
         self.antagonize_text = antagonize_text
         self.antagonize_fail_text = antagonize_fail_text
-        self.history_text = history_text
-        self.relationship_constraint = relationship_constraint
 
+        # if someone needs a empty list, don't make it as a default parameter
+        # otherwise all instances of this class will use the same list
+
+        if success_text:
+            self.success_text = success_text
+        else:
+            self.success_text = []
+
+        if fail_text:
+            self.fail_text = fail_text
+        else: 
+            self.fail_text = []
+
+        if history_text:
+            self.history_text = history_text
+        else:
+            history_text = []
+
+        if relationship_constraint:
+            self.relationship_constraint = relationship_constraint
+        else:
+            self.relationship_constraint = []
 
 # ---------------------------------------------------------------------------- #
 #                              GENERAL INFORMATION                             #
