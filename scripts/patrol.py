@@ -381,8 +381,8 @@ class Patrol():
                 testing_cats = copy(self.patrol_cats)
                 testing_cats.remove(test_cat)
                 
-                siblings_amount = [test_cat.is_silbing(inter_cat) for inter_cat in testing_cats]
-                if len(siblings_amount)+1 != len(self.patrol_cats):
+                siblings = [test_cat.is_silbing(inter_cat) for inter_cat in testing_cats]
+                if len(siblings)+1 != len(self.patrol_cats):
                     continue
 
             # check if the cats are mates
@@ -419,7 +419,81 @@ class Patrol():
 
 
             # filtering - relationship values
-            value_types = [""]
+            # when there will be more relationship values or other tags, this should be updated
+            value_types = ["romantic", "platonic", "dislike", "comfortable", "jealousy", "trust"]
+            break_loop = False
+            for v_type in value_types:
+                # first get all tags for the current value type
+                tags = [constraint for constraint in patrol.relationship_constraint if v_type in constraint]
+
+                # there is not such a tag for the current value type, check the next one
+                if len(tags) == 0:
+                    continue
+
+                # there should be only one value constraint for each value type
+                elif len(tags) > 1:
+                    patrol_id = patrol.patrol_id
+                    print(f"ERROR: patrol {patrol_id} has multiple relationship constraints for the value {v_type}.")
+                    break_loop = True
+                    break
+                
+                threshold = 0
+                # try to extract the value/threshold from the text
+                try:
+                    threshold = int(tags[0].split('_')[1])
+                except e:
+                    print(f"ERROR: patrol {patrol_id} with the relationship constraint for the value {v_type} follows not the formatting guidelines.")
+                    break_loop = True
+                    break
+
+                if threshold > 100:
+                    print(f"ERROR: patrol {patrol_id} has a relationship constraints for the value {v_type}, which is higher than the max value of a relationship.")
+                    break_loop = True
+                    break
+
+                if threshold <= 0:
+                    print(f"ERROR: patrol {patrol_id} has a relationship constraints for the value {v_type}, which is lower than the min value of a relationship or 0.")
+                    break_loop = True
+                    break
+
+                # each cat has to have relationships with this relationship value above the threshold
+                fulfilled = True
+                for inter_cat in self.patrol_cats:
+                    rel_above_threshold = []
+                    patrol_cats_ids = [cat.id for cat in self.patrol_cats]
+                    relevant_relationships = list(
+                        filter(lambda rel: rel.cat_to.ID in patrol_cats_ids and rel.cat_to.ID != inter_cat.ID,
+                            list(inter_cat.relationships.values())
+                        )
+                    )
+
+                    # get the relationships depending on the current value type + threshold
+                    if v_type == "romantic":
+                        rel_above_threshold = list(filter(lambda rel: rel.romantic_love >= threshold, relevant_relationships))
+                    elif v_type == "platonic":
+                        rel_above_threshold = list(filter(lambda rel: rel.platonic_like >= threshold, relevant_relationships))
+                    elif v_type == "dislike":
+                        rel_above_threshold = list(filter(lambda rel: rel.dislike >= threshold, relevant_relationships))
+                    elif v_type == "comfortable":
+                        rel_above_threshold = list(filter(lambda rel: rel.comfortable >= threshold, relevant_relationships))
+                    elif v_type == "jealousy":
+                        rel_above_threshold = list(filter(lambda rel: rel.jealousy >= threshold, relevant_relationships))
+                    elif v_type == "trust":
+                        rel_above_threshold = list(filter(lambda rel: rel.trust >= threshold, relevant_relationships))
+
+                    # if the lengths are not equal, one cat has not the relationship value which is needed to another cat of the patrol
+                    if len(rel_above_threshold)+1 != len(self.patrol_cats):
+                        fulfilled = False
+                        break
+
+                if not fulfilled:
+                    break_loop = True
+                    break
+
+            # if break is used in the loop, the condition are not fulfilled 
+            # and this patrol should not be added to the filtered list
+            if break_loop:
+                continue
 
             filtered_patrols.append(patrol)
 
