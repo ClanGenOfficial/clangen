@@ -7,6 +7,8 @@
 		"auto_apprentice_prey": [0,2],
 		"condition_increase": 0.5,
 		"event_trigger_factor": 3,
+		"nutrition_malnourished_percentage" : 70,
+		"nutrition_starving_percentage" : 25,
 		"prey_requirement":{
 			"leader": 3,
 			"deputy": 3,

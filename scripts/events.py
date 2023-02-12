@@ -12,7 +12,6 @@ from scripts.events_module.condition_events import Condition_Events
 from scripts.events_module.death_events import Death_Events
 from scripts.events_module.freshkill_pile_events import Freshkill_Events
 from scripts.event_class import Single_Event
-from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE
 import traceback
 
 
@@ -542,7 +541,7 @@ class Events():
         self.mediator_events(cat)
 
         # handle nutrition amount (CARE: the cats has to be fed before - should be handled in "one_moon" function)
-        if FRESHKILL_ACTIVE and game.clan.game_mode in ['expanded', 'cruel season'] and game.clan.freshkill_pile:
+        if game.clan.game_mode in ['expanded', 'cruel season'] and game.clan.freshkill_pile:
            self.freshkill_events.handle_nutrient(cat, game.clan.freshkill_pile.nutrition_info)
            if cat.dead:
                return

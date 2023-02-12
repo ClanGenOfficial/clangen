@@ -5,7 +5,7 @@ from scripts.game_structure.game_essentials import game
 from scripts.utility import event_text_adjust
 from scripts.cat.cats import Cat
 from scripts.event_class import Single_Event
-from scripts.clan_resources.freshkill import Freshkill_Pile, FRESHKILL_EVENT_TRIGGER_FACTOR, FRESHKILL_EVENT_ACTIVE
+from scripts.clan_resources.freshkill import Freshkill_Pile, MAL_PERCENTAGE , STARV_PERCENTAGE, FRESHKILL_ACTIVE, FRESHKILL_EVENT_TRIGGER_FACTOR, FRESHKILL_EVENT_ACTIVE
 
 class Freshkill_Events():
     """All events with a connection to freshkill pile or the nutrition of cats."""
@@ -25,6 +25,9 @@ class Freshkill_Events():
             nutrition_info : dict
                 dictionary of all nutrition information (can be found in the freshkill pile)
         """
+        if not FRESHKILL_ACTIVE:
+            return
+
         if cat.ID not in nutrition_info.keys():
             print(f"WARNING: Could not find cat with ID {cat.ID}({cat.name}) in the nutrition information.")
             return
@@ -80,14 +83,15 @@ class Freshkill_Events():
             game.cur_events_list.append(Single_Event(death_text, types, [cat.ID]))
             return
 
-        # change health status according to nutrient status
-        elif cat_nutrition.percentage > 70 and cat.is_ill() and "malnourished" in cat.illnesses:
+        # heal cat if percentage is high enough and cat is ill
+        elif cat_nutrition.percentage > MAL_PERCENTAGE and cat.is_ill() and "malnourished" in cat.illnesses:
             needed_tags = ["malnourished_healed"]
             illness = "malnourished"
             heal = True
 
-        elif cat_nutrition.percentage > 30 and cat.is_ill() and "starving" in cat.illnesses:
-            if cat_nutrition.percentage < 70:
+        # heal cat if percentage is high enough and cat is ill
+        elif cat_nutrition.percentage > STARV_PERCENTAGE and cat.is_ill() and "starving" in cat.illnesses:
+            if cat_nutrition.percentage < MAL_PERCENTAGE:
                 if "malnourished" not in cat.illnesses:
                     cat.get_ill("malnourished")
                 needed_tags = ["starving_healed"]
@@ -98,8 +102,8 @@ class Freshkill_Events():
                 illness = "starving"
                 heal = True
 
-        elif cat_nutrition.percentage <= 70 and cat_nutrition.percentage > 40:
-            # if percentage is 70 or lower, the cat will gain "malnourished" illness
+        elif cat_nutrition.percentage <= MAL_PERCENTAGE and cat_nutrition.percentage > STARV_PERCENTAGE:
+            # because of the smaller 'nutrition buffer', kitten and elder should get the starving condition.
             if cat.status in ["kitten", "elder"]:
                 needed_tags = ["starving"]
                 illness = "starving"
@@ -107,11 +111,11 @@ class Freshkill_Events():
                 needed_tags = ["malnourished"]
                 illness = "malnourished"
 
-        elif cat_nutrition.percentage <= 40:
-            # if percentage is 40 or lower, the cat will gain "starving" status
+        elif cat_nutrition.percentage <= STARV_PERCENTAGE:
             needed_tags = ["starving"]
             illness = "starving"
 
+        # handle the gaining/healing illness
         if heal:
             cat.illnesses.pop(illness)
         elif not heal and illness:
