@@ -8,6 +8,7 @@ except ImportError:
 from scripts.cat.cats import Cat
 from scripts.cat_relations.relationship import Relationship
 from scripts.patrol import PatrolEvent, Patrol
+from scripts.clan import Clan
 
 class TestRelationshipConstraintPatrols(unittest.TestCase):
 
@@ -25,11 +26,13 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         no_con_patrol_event = PatrolEvent(patrol_id="test2")
         possible_patrols = [con_patrol_event, no_con_patrol_event]
 
+        test_clan = Clan(name="test")
+
         patrol_all_events = Patrol()
-        patrol_all_events.add_patrol_cats([cat1, cat2])
+        patrol_all_events.add_patrol_cats([cat1, cat2], test_clan)
 
         patrol_not_all_events = Patrol()
-        patrol_not_all_events.add_patrol_cats([cat1,cat2,parent])
+        patrol_not_all_events.add_patrol_cats([cat1, cat2, parent], test_clan)
 
         all_filtered = patrol_all_events.filter_relationship(possible_patrols)
         not_all_filtered = patrol_not_all_events.filter_relationship(possible_patrols)

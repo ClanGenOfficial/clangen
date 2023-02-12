@@ -9,6 +9,7 @@ from scripts.cat.names import *
 from scripts.cat.cats import *
 from scripts.cat.pelts import *
 from scripts.clan_resources.freshkill import PREY_REQUIREMENT, HUNTER_EXP_BONUS, HUNTER_BONUS
+from scripts.clan import Clan
 
 # ---------------------------------------------------------------------------- #
 #                              PATROL CLASS START                              #
@@ -50,13 +51,16 @@ class Patrol():
         self.other_clan = None
         self.experience_levels = []
 
-    def add_patrol_cats(self, patrol_cats: list) -> None:
+    def add_patrol_cats(self, patrol_cats: list, clan: Clan) -> None:
         """Add the list of cats to the patrol class and handles to set all needed values.
 
             Parameters
             ----------
             patrol_cats : list
                 list of cats which are on the patrol
+            
+            clan: Clan
+                the clan class of the game, this parameter is needed to make tests possible
 
             Returns
             ----------
@@ -89,8 +93,8 @@ class Patrol():
             med_index = self.patrol_statuses.index("medicine cat")
             self.patrol_leader = self.patrol_cats[med_index]
         # sets leader as patrol leader
-        elif game.clan.leader in self.patrol_cats:
-            self.patrol_leader = game.clan.leader
+        elif clan.leader and clan.leader in self.patrol_cats:
+            self.patrol_leader = clan.leader
         else:
             if self.possible_patrol_leaders:
                 self.patrol_leader = choice(self.possible_patrol_leaders)
@@ -143,7 +147,10 @@ class Patrol():
                 self.app5_name = str(self.patrol_apprentices[4].name)
                 self.app6_name = str(self.patrol_apprentices[5].name)
 
-        self.other_clan = choice(game.clan.all_clans)
+        if clan.all_clans and len(clan.all_clans) > 0:
+            self.other_clan = choice(clan.all_clans)
+        else: 
+            self.other_clan = None
 
     def get_possible_patrols(self, current_season, biome, all_clans, patrol_type,
                              game_setting_disaster=game.settings['disasters']):
@@ -388,10 +395,11 @@ class Patrol():
             # check if all are siblings
             if "siblings" in patrol.relationship_constraint:
                 test_cat = self.patrol_cats[0]
-                testing_cats = copy(self.patrol_cats)
-                testing_cats.remove(test_cat)
+                testing_cats = copy.deepcopy(self.patrol_cats)
+                if test_cat in testing_cats:
+                    testing_cats.remove(test_cat)
                 
-                siblings = [test_cat.is_silbing(inter_cat) for inter_cat in testing_cats]
+                siblings = [test_cat.is_sibling(inter_cat) for inter_cat in testing_cats]
                 if len(siblings)+1 != len(self.patrol_cats):
                     continue
 
