@@ -104,7 +104,9 @@
         "camp": "any",
         "tags": [
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "scar",
+            "FROSTTAIL"
         ],
         "event_text": "m_c was out wandering the territory for a bit too long and came back with frostbite.",
         "history_text": [
@@ -143,7 +145,9 @@
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "scar",
+            "MANTAIL"
         ],
         "event_text": "m_c's tail was badly injured by a falling tree.",
         "history_text": [
@@ -160,7 +164,9 @@
         "injury": "burn",
         "camp": "any",
         "tags": [
-            "Greenleaf"
+            "Greenleaf",
+            "scar",
+            "BURNRUMP"
         ],
         "event_text": "A fire rages through the forest and m_c manages to escape, though not unscathed by the experience.",
         "history_text": [
@@ -177,7 +183,9 @@
         "injury": "severe burn",
         "camp": "any",
         "tags": [
-            "Greenleaf"
+            "Greenleaf",
+            "scar",
+            "BURNTAIL"
         ],
         "event_text": "A fire rages through the forest and m_c manages to escape, though not unscathed by the experience.",
         "history_text": [
@@ -202,7 +210,9 @@
             "comfort",
             "trust",
             "platonic",
-            "neg_dislike"
+            "neg_dislike",
+            "scar",
+            "BURNPAWS"
         ],
         "event_text": "The dry greenleaf weather leads to a fire bursting to life in camp, dangerously close to the nursery. There's still one kit inside, m_c dives into the den and makes it out, burnt, but with r_c safely swinging in their grasp.",
         "history_text": [
@@ -227,7 +237,9 @@
             "comfort",
             "trust",
             "platonic",
-            "neg_dislike"
+            "neg_dislike",
+            "scar",
+            "BURNBELLY"
         ],
         "event_text": "The dry greenleaf weather leads to a fire bursting to life in camp, dangerously close to the nursery. There's still one kit inside, m_c dives into the den and makes it out, burnt, but with r_c safely swinging in their grasp.",
         "history_text": [

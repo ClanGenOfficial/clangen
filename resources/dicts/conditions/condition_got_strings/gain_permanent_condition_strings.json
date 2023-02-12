@@ -157,6 +157,11 @@
             "m_c tells r_c that they think their hearing has gotten worse. r_c assesses their hearing and confirms it, their hearing is failing and it can only be due to the head injury they suffered.",
             "m_c tells r_c that they think their hearing has gotten worse. r_c assesses their hearing and confirms it, their hearing is failing and it can only be due to the head injury they suffered.",
             "m_c strains to hear their Clanmate talking to them. Ever since their head injury they've found it harder to hear the world around them."
+        ],
+        "persistent headaches": [
+            "m_c complains to r_c that they've been plagued with horrible headaches since they hurt their head. r_c sadly admits that the headaches may always be a problem.",
+            "m_c complains to r_c that they've been plagued with horrible headaches since they hurt their head. r_c sadly admits that the headaches may always be a problem.",
+            "m_c begrudgingly accepts that the horrible headaches they've been having might be a permanent side effect of their head damage."
         ]
     },
     "damaged eyes": {

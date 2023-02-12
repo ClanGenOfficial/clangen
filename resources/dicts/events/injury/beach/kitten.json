@@ -14,7 +14,9 @@
             "respect",
             "comfort",
             "platonic",
-            "neg_dislike"
+            "neg_dislike",
+            "scar",
+            "TWO"
         ],
         "event_text": "m_c was grabbed by a seagull, but luckily r_c saves them! The kit is still left injured from the ordeal.",
         "history_text": [
@@ -42,7 +44,9 @@
             "trust",
             "respect",
             "platonic",
-            "neg_dislike"
+            "neg_dislike",
+            "scar",
+            "TWO"
         ],
         "event_text": "m_c was grabbed by an osprey, but luckily r_c saves them! The kit is still left injured from the ordeal.",
         "history_text": [
@@ -198,7 +202,9 @@
         "tags": [
             "Greenleaf",
             "Newleaf",
-            "Leaf-fall"
+            "Leaf-fall",
+            "scar",
+            "SNAKE"
         ],
         "event_text": "m_c found a hole in the rocks and, curious as all kits are, stuck their paw inside. The whole camp comes running when they screech in pain. It seems a snake was living in that hole.",
         "history_text": [

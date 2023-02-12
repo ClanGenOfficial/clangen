@@ -366,7 +366,7 @@
     "exp": 10,
     "success_text": [
         "p_l goes to check the bush and finds a loner sheepishly hiding inside. It seems the stranger was thinking of asking to join the Clan. They're a bit intimidated though and, after speaking to p_l for a little while, they decide to join the Clan.",
-        "p_l pads towards the bush to check on the noise when a rabbit suddenly bursts out!  None of the cats are quick enough to catch it, but at least the noise was nothing dangerous.",
+        "p_l pads towards the bush to check on the noise when a rabbit suddenly bursts out with a young cat chasing it! p_l stops the cat, impressed with their hunting skills, and invites them to join the clan, to which the young cat agrees.",
         "s_c takes the lead in checking the noise, and it's a good thing they did, because the moment they step closer to the bush a rogue comes springing out! s_c is quick to bat them away, hissing and spitting, before promptly chasing the rogue out of the territory.  It was hardly a fight, really. "
     ],
     "fail_text": [

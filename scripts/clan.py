@@ -624,7 +624,10 @@ class Clan():
 
         #Mediated flag
         if "mediated" in clan_data:
-            game.mediated = clan_data["mediated"]
+            if type(clan_data["mediated"]) != list:
+                game.mediated = []
+            else:
+                game.mediated = clan_data["mediated"]
 
 
         self.load_pregnancy(game.clan)
@@ -738,13 +741,17 @@ class Clan():
 class OtherClan():
 
     def __init__(self, name='', relations=0, temperament=''):
+        temperament_list = [
+            'cunning', 'wary', 'logical', 'proud', 'stoic',
+            'mellow', 'bloodthirsty', 'amiable', 'gracious'
+        ]
         self.name = name or choice(names.normal_prefixes)
         self.relations = relations or randint(8, 12)
-        self.temperament = temperament or choice([
-            'bloodthirsty', 'righteous', 'strict', 'kind', 'calm',
-            'progressive', 'faithful', 'thoughtful', 'compassionate',
-            'logical', 'brave', 'altruistic', 'distant', 'competitive'
-        ])
+        self.temperament = temperament or choice(temperament_list)
+        if self.temperament not in temperament_list:
+            self.temperament = choice(temperament_list)
+            
+        
 
     def __repr__(self):
         return f"{self.name}Clan"

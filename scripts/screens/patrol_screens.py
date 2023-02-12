@@ -537,6 +537,7 @@ class PatrolScreen(Screens):
                                                                     "resources/images/patrol_event_frame.png").convert_alpha(),
                                                                     (708, 540)
                                                                 ), manager=MANAGER)
+        self.elements['event_bg'].disable()
         self.elements['info_bg'] = pygame_gui.elements.UIImage(scale(pygame.Rect((180, 912), (840, 408))),
                                                                pygame.transform.scale(
                                                                pygame.image.load(
@@ -551,7 +552,7 @@ class PatrolScreen(Screens):
                                                                    ), manager=MANAGER)
 
         # Add selected cats to the patrol.
-        patrol.add_patrol_cats(self.current_patrol)
+        patrol.add_patrol_cats(self.current_patrol, game.clan)
         possible_events = patrol.get_possible_patrols(
             str(game.clan.current_season).casefold(),
             str(game.clan.biome).casefold(),
@@ -559,8 +560,15 @@ class PatrolScreen(Screens):
             self.patrol_type,
             game.settings.get('disasters')
         )
-        patrol.patrol_event = choice(possible_events)  # Set patrol event.
-        print(str(patrol.patrol_event.patrol_id))
+
+        if possible_events:
+            patrol.patrol_event = choice(possible_events)  # Set patrol event.
+        else:
+            print("ERROR: NO POSSIBLE PATROLS FOUND")
+            self.change_screen("clan screen")
+            return
+
+        print("Chosen Patrol ID: " + str(patrol.patrol_event.patrol_id))
         intro_text = patrol.patrol_event.intro_text
         patrol_size = len(patrol.patrol_cats)
 
@@ -594,7 +602,7 @@ class PatrolScreen(Screens):
         # Prepare Intro Text
         # adjusting text for solo patrols
         intro_text = self.adjust_patrol_text(patrol.patrol_event.intro_text, patrol_size)
-        self.elements["patrol_text"] = UITextBoxTweaked(intro_text, scale(pygame.Rect((770, 350), (660, 500))),
+        self.elements["patrol_text"] = UITextBoxTweaked(intro_text, scale(pygame.Rect((770, 345), (670, 500))),
                                                         object_id="#patrol_text_box", manager=MANAGER)
         # Patrol Info
         # TEXT CATEGORIES AND CHECKING FOR REPEATS

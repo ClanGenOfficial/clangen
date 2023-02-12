@@ -44,7 +44,7 @@
             "sticks their tongue out at (cat).",
             "is hiding under a bush from (cat), but they can't stop giggling.",
             "is pretending to be (cat).",
-            "is asking (cat) how babies are made.",
+            "is asking (cat) where kits come from.",
             "whines that (cat) won't play with them, even though they're always around camp.",
             "won't stop copying everything (cat) does."
         ],
@@ -67,7 +67,7 @@
             "sticks their tongue out at (cat).",
             "is hiding under a bush from (cat), but they can't stop giggling.",
             "is pretending to be (cat).",
-            "is asking (cat) how babies are made.",
+            "is asking (cat) where kits come from.",
             "doesn't understand why (cat) won't let them play in the medicine cat den.",
             "won't stop copying everything (cat) does.",
             "looks at (cat) napping in the apprentice's den and can't wait to leave the nursery."
@@ -89,7 +89,7 @@
         "neutral": [
             "is biting (cat)'s tail.",
             "sticks their tongue out at (cat).",
-            "is asking (cat) how babies are made.",
+            "is asking (cat) where kits come from.",
             "is demanding (cat)'s attention.",
             "is pretending to be (cat).",
             "is hiding under a bush from (cat), but they can't stop giggling.",
@@ -162,7 +162,7 @@
         "neutral": [
             "sticks their tongue out at (cat).",
             "is hiding under a bush from (cat), but they can't stop giggling.",
-            "is asking (cat) how babies are made.",
+            "is asking (cat) where kits come from.",
             "was distracted while (cat) was telling a story.",
             "won't stop copying everything (cat) does."
         ],

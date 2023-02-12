@@ -38,75 +38,9 @@ class Death_Events():
             other_clan_name = f'{str(other_clan.name)}Clan'
 
         possible_events = self.generate_events.possible_events(cat.status, cat.age, "death")
-        final_events = []
+        final_events = self.generate_events.filter_possible_events(possible_events, cat, other_cat, war, enemy_clan,
+                                                                   other_clan, alive_kits)
 
-        for event in possible_events:
-
-            if game.clan.game_mode in ["expanded", "cruel season"] and "classic" in event.tags:
-                continue
-
-            if "all_lives" in event.tags and int(random.random() * 10):
-                continue
-
-            # check season
-            if game.clan.current_season not in event.tags:
-                continue
-
-            # check that war events only happen when at war
-            if "war" in event.tags and not war:
-                continue
-
-            # check if clan has kits
-            if "clan_kits" in event.tags and not alive_kits:
-                continue
-
-            # check for old age
-            if "old_age" in event.tags and cat.moons < 150:
-                continue
-
-            # check other_cat rank
-            if other_cat:
-                if "other_cat_leader" in event.tags and other_cat.status != "leader":
-                    continue
-                elif "other_cat_dep" in event.tags and other_cat.status != "deputy":
-                    continue
-                elif "other_cat_med" in event.tags and \
-                        other_cat.status not in ["medicine cat", "medicine cat apprentice"]:
-                    continue
-                elif "other_cat_adult" in event.tags and other_cat.age in ["elder", "kitten"]:
-                    continue
-                elif "other_cat_kit" in event.tags and other_cat.status != "kitten":
-                    continue
-
-                # check other_cat trait
-                if event.other_cat_trait is not None:
-                    if other_cat.trait not in event.other_cat_trait and int(random.random() * 10):
-                        continue
-
-                # check other_cat skill
-                if event.other_cat_skill is not None:
-                    if other_cat.skill not in event.other_cat_skill and int(random.random() * 10):
-                        continue
-
-            else:
-                if "other_cat" in event.tags or "multi_death" in event.tags:
-                    continue
-
-            # check for mate if the event requires one
-            if "mate" in event.tags and cat.mate is None:
-                continue
-
-            # check cat trait
-            if event.cat_trait is not None:
-                if cat.trait not in event.cat_trait and int(random.random() * 10):
-                    continue
-
-            # check cat skill
-            if event.cat_skill is not None:
-                if cat.skill not in event.cat_skill and int(random.random() * 10):
-                    continue
-
-            final_events.append(event)
 
         # ---------------------------------------------------------------------------- #
         #                                  kill cats                                   #
@@ -121,7 +55,7 @@ class Death_Events():
 
         if "war" in death_cause.tags and other_clan is not None and enemy_clan is not None:
             other_clan = enemy_clan
-            other_clan_name = other_clan.name + "clan"
+            other_clan_name = other_clan.name + "Clan"
 
         # let's change some relationship values \o/ check if another cat is mentioned and if they live
         if "other_cat" in death_cause.tags and "multi_death" not in death_cause.tags:

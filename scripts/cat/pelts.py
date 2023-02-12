@@ -203,9 +203,9 @@ class Tortie():
     name = "Tortie"
     sprites = {1: 'tortie', 2: 'white'}
 
-    def __init__(self, white, length):
+    def __init__(self, colour, white, length):
         self.white = white  # boolean; does cat have white on it or no
-        self.colour = tortiecolours[1]  #Is always overwritten
+        self.colour = colour
         self.length = length
 
     def __repr__(self):
@@ -218,8 +218,8 @@ class Calico():
     name = "Calico"
     sprites = {1: 'calico', 2: 'white'}
 
-    def __init__(self, length):
-        self.colour = choice(tortiecolours)
+    def __init__(self, colour, length):
+        self.colour = colour
         self.length = length
         self.white = True
 
@@ -304,12 +304,14 @@ eye_sprites = [
     'SUNLITICE', 'GREENYELLOW'
 ]
 little_white = ['LITTLE', 'LITTLECREAMY', 'LIGHTTUXEDO', 'BUZZARDFANG', 'TIP', 'BLAZE', 'BIB', 'VEE', 'PAWS', 
-    'BELLY', 'TAILTIP', 'TOES', 'BROKENBLAZE', 'LILTWO', 'SCOURGE', 'TOESTAIL', 'RAVENPAW', 'HONEY']
-mid_white = ['TUXEDO', 'TUXEDOCREAMY', 'FANCY', 'UNDERS', 'DAMIEN', 'SKUNK', 'MITAINE', 'SQUEAKS', 'STAR']
+    'BELLY', 'TAILTIP', 'TOES', 'BROKENBLAZE', 'LILTWO', 'SCOURGE', 'TOESTAIL', 'RAVENPAW', 'HONEY', 'LUNA']
+mid_white = ['TUXEDO', 'TUXEDOCREAMY', 'FANCY', 'UNDERS', 'DAMIEN', 'SKUNK', 'MITAINE', 'SQUEAKS', 'STAR',
+    'WINGS']
 high_white = ['ANY', 'ANYCREAMY', 'ANY2', 'ANY2CREAMY', 'BROKEN', 'FRECKLES', 'RINGTAIL', 'HALFFACE', 'PANTS2', 
     'GOATEE', 'PRINCE', 'FAROFA', 'MISTER', 'PANTS', 'REVERSEPANTS', 'HALFWHITE', 'APPALOOSA', 'PIEBALD',
-    'CURVED', 'GLASS', 'MASKMANTLE']
-mostly_white = ['VAN', 'VANCREAMY', 'ONEEAR', 'LIGHTSONG', 'TAIL', 'HEART', 'MOORISH', 'APRON', 'CAPSADDLE']
+    'CURVED', 'GLASS', 'MASKMANTLE', 'MAO', 'PAINTED']
+mostly_white = ['VAN', 'VANCREAMY', 'ONEEAR', 'LIGHTSONG', 'TAIL', 'HEART', 'MOORISH', 'APRON', 'CAPSADDLE',
+    'CHESTSPECK', 'BLACKSTAR']
 point_markings = ['COLOURPOINT', 'COLOURPOINTCREAMY', 'RAGDOLL', 'KARPATI', 'SEPIAPOINT', 'MINKPOINT', 
     'SEALPOINT']
 vit = ['VITILIGO', 'VITILIGO2']
@@ -440,11 +442,11 @@ def choose_pelt(colour=None, white=None, pelt=None, length=None, category=None, 
             return Singlestripe(colour, white, length)
     elif pelt == 'Tortie':
         if white is None:
-            return Tortie(choice([False, True]), length)
+            return Tortie(colour, choice([False, True]), length)
         else:
-            return Tortie(white, length)
+            return Tortie(colour, white, length)
     else:
-        return Calico(length)
+        return Calico(colour, length)
 
 def describe_color(pelt, tortiecolour, tortiepattern, white_patches):
         color_name = ''

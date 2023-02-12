@@ -2,7 +2,9 @@
     {
         "injury": "broken bone",
         "tags": [
-            "Leaf-bare"
+            "Leaf-bare",
+            "scar",
+            "TOETRAP"
         ],
         "event_text": "m_c went out for a walk but slipped on the ice and broke a bone.",
         "history_text": [

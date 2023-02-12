@@ -5,7 +5,9 @@
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "scar",
+            "TWO"
         ],
         "event_text": "m_c was grabbed and dropped by an eagle, but they somehow survived.",
         "history_text": [
@@ -22,7 +24,9 @@
         "injury": "broken bone",
         "tags": [
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "scar",
+            "SIDE"
         ],
         "event_text": "m_c thought they were walking on a snowdrift till it gave way and they fell down the mountain, breaking their leg.",
         "history_text": [
@@ -39,7 +43,9 @@
         "injury": "broken bone",
         "tags": [
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "scar",
+            "MANLEG"
         ],
         "event_text": "m_c fell from a cliff and somehow survived, though not without breaking their leg.",
         "history_text": [
@@ -96,7 +102,9 @@
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "scar",
+            "ONE"
         ],
         "event_text": "m_c survived a vicious eagle attack - with the claw marks to prove it!",
         "history_text": [
@@ -151,7 +159,9 @@
         "injury": "frostbite",
         "tags": [
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "scar",
+            "FROSTMITT"
         ],
         "event_text": "m_c was out wandering the territory for a bit too long and came back with frostbite.",
         "history_text": [
@@ -188,7 +198,9 @@
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "scar",
+            "MANTAIL"
         ],
         "event_text": "m_c's tail was badly injured by falling rocks.",
         "history_text": [

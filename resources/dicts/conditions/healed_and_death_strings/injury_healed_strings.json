@@ -216,5 +216,14 @@
     "broken back": [
         "m_c's broken back has healed and they've made a full recovery against all odds.",
         "m_c is ecstatic to be walking around freely again, their broken back finally healed."
+    ],
+    "bee sting": [
+        "m_c's bee sting is feeling all better."
+    ],
+    "headache": [
+        "m_c's headache is gone."
+    ],
+    "sever headache": [
+        "m_c's headache is gone."
     ]
 }

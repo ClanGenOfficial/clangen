@@ -5,6 +5,7 @@ except ImportError:
 import random
 
 from scripts.cat.cats import Cat
+from scripts.cat.pelts import *
 from scripts.conditions import medical_cats_condition_fulfilled, get_amount_cat_for_one_medic
 from scripts.utility import event_text_adjust, get_med_cats, change_relationship_values
 from scripts.game_structure.game_essentials import game
@@ -93,10 +94,15 @@ class Condition_Events():
         Returns: boolean - if an event was triggered
         """
         has_other_clan = False
-
-        random_number = int(random.random() * 150)
+        other_clan = random.choice(game.clan.all_clans)
         triggered = False
         text = None
+
+        if game.clan.game_mode != 'classic':
+            random_number = int(random.random() * 150)
+        else:
+            random_number = int(random.random() * 200)
+
 
         if cat.dead:
             triggered = True
@@ -105,7 +111,7 @@ class Condition_Events():
         involved_cats = [cat.ID]
 
         # handle if the current cat is already injured
-        if cat.is_injured():
+        if cat.is_injured() and game.clan.game_mode != 'classic':
             triggered, event_string = self.handle_already_injured(cat)
             text = event_string
         else:
@@ -130,66 +136,10 @@ class Condition_Events():
 
             if triggered:
                 possible_events = self.generate_events.possible_events(cat.status, cat.age, "injury")
-                final_events = []
+                final_events = self.generate_events.filter_possible_events(possible_events, cat, other_cat, war, enemy_clan, other_clan, alive_kits)
 
-                for event in possible_events:
-
-                    if event.injury in INJURIES:
-                        injury = INJURIES[event.injury]
-                        severity = injury['severity']
-                        if cat.status in INJURY_DISTRIBUTION:
-                            severity_chance = INJURY_DISTRIBUTION[cat.status][severity]
-                            if int(random.random() * severity_chance):
-                                continue
-
-                    if season not in event.tags:
-                        continue
-
-                    if other_cat:
-                        if "other_cat_leader" in event.tags and other_cat.status != "leader":
-                            continue
-                        if "other_cat_mentor" in event.tags and cat.mentor != other_cat.ID:
-                            continue
-                        if "other_cat_adult" in event.tags and other_cat.age in ["elder", "kitten"]:
-                            continue
-                        if "other_cat_kit" in event.tags and other_cat.age != 'kitten':
-                            continue
-
-                        if event.other_cat_trait is not None:
-                            if other_cat.trait not in event.other_cat_trait and int(random.random() * 10):
-                                continue
-
-                        if event.other_cat_skill is not None:
-                            if other_cat.skill not in event.other_cat_skill and int(random.random() * 10):
-                                continue
-
-                    else:
-                        if "other_cat" in event.tags:
-                            continue
-
-                    if "clan_kits" in event.tags and not alive_kits:
-                        continue
-
-                    if event.cat_trait is not None:
-                        if cat.trait not in event.cat_trait and int(random.random() * 10):
-                            continue
-
-                    if event.cat_skill is not None:
-                        if cat.skill not in event.cat_skill and int(random.random() * 10):
-                            continue
-
-                    if event.injury == 'mangled tail' and ('NOTAIL' in cat.scars or 'HALFTAIL' in cat.scars):
-                        continue
-
-                    if event.injury == 'torn ear' and 'NOEAR' in cat.scars:
-                        continue
-
-                    final_events.append(event)
-
-                other_clan = random.choice(game.clan.all_clans)
                 other_clan_name = f'{str(other_clan.name)}Clan'
                 enemy_clan = f'{str(enemy_clan)}'
-                current_lives = int(game.clan.leader_lives)
 
                 if other_clan_name == 'None':
                     other_clan = game.clan.all_clans[0]
@@ -210,22 +160,36 @@ class Condition_Events():
 
                     text = event_text_adjust(Cat, injury_event.event_text, cat, other_cat, other_clan_name)
 
-                    # record proper history text possibilities
-                    if injury_event.history_text is not None:
-                        if injury_event.history_text[0] is not None:
-                            history_text = event_text_adjust(Cat, injury_event.history_text[0], cat, other_cat,
-                                                             other_clan_name, keep_m_c=True)
-                            cat.possible_scar = str(history_text)
-                        if injury_event.history_text[1] is not None and cat.status != "leader":
-                            history_text = event_text_adjust(Cat, injury_event.history_text[1], cat, other_cat,
-                                                             other_clan_name)
-                            cat.possible_death = str(history_text)
-                        elif injury_event.history_text[2] is not None and cat.status == "leader":
-                            history_text = event_text_adjust(Cat, injury_event.history_text[2], cat, other_cat,
-                                                             other_clan_name)
-                            cat.possible_death = str(history_text)
+                    if game.clan.game_mode == "classic":
+                        if "scar" in injury_event.tags and len(cat.scars) < 4:
+                            # add tagged scar
+                            for scar in scars1 + scars2 + scars3:
+                                if scar in injury_event.tags:
+                                    cat.scars.append(scar)
 
-                    cat.get_injured(injury_event.injury)
+                            # add scar history
+                            if injury_event.history_text is not None:
+                                if injury_event.history_text[0] is not None:
+                                    history_text = event_text_adjust(Cat, injury_event.history_text[0], cat, other_cat,
+                                                                     other_clan_name, keep_m_c=True)
+                                    cat.scar_event.append(str(history_text))
+                    else:
+                        # record proper history text possibilities
+                        if injury_event.history_text is not None:
+                            if injury_event.history_text[0] is not None:
+                                history_text = event_text_adjust(Cat, injury_event.history_text[0], cat, other_cat,
+                                                                 other_clan_name, keep_m_c=True)
+                                cat.possible_scar = str(history_text)
+                            if injury_event.history_text[1] is not None and cat.status != "leader":
+                                history_text = event_text_adjust(Cat, injury_event.history_text[1], cat, other_cat,
+                                                                 other_clan_name)
+                                cat.possible_death = str(history_text)
+                            elif injury_event.history_text[2] is not None and cat.status == "leader":
+                                history_text = event_text_adjust(Cat, injury_event.history_text[2], cat, other_cat,
+                                                                 other_clan_name)
+                                cat.possible_death = str(history_text)
+
+                        cat.get_injured(injury_event.injury)
 
         # just double-checking that trigger is only returned True if the cat is dead
         if cat.dead:
@@ -241,7 +205,6 @@ class Condition_Events():
             if has_other_clan:
                 types.append("other_clans")
             game.cur_events_list.append(Single_Event(text, types, involved_cats))
-
 
         return triggered
 
@@ -925,9 +888,6 @@ with open(f"resources/dicts/conditions/illnesses_seasons.json", 'r') as read_fil
 INJURY_DISTRIBUTION = None
 with open(f"resources/dicts/conditions/event_injuries_distribution.json", 'r') as read_file:
     INJURY_DISTRIBUTION = ujson.loads(read_file.read())
-
-not_integrated_illness = ["redcough"]
-not_integrated_injuries = ["carrionplace disease"]
 
 # ---------------------------------------------------------------------------- #
 #                                   STRINGS                                    #

@@ -47,7 +47,8 @@
         "cat_trait": ["altruistic", "bold", "bloodthirsty", "ambitious", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["great fighter","excellent fighter"]
     },
     {
         "camp": "any",
@@ -57,7 +58,8 @@
         "cat_trait": ["altruistic", "bold", "bloodthirsty", "ambitious", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["great fighter","excellent fighter"]
     },
     {
         "camp": "any",
@@ -67,7 +69,8 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["excellent fighter"]
     },
     {
         "camp": "any",

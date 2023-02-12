@@ -7,12 +7,7 @@
             "didn't get the joke (cat) was telling."
 
         ],
-        "like": [
-            "is hiding from (cat)",
-            "complains about something (cat) did.",
-            "has been listening to (cat) talk about how hard training has been.",
-            "called (cat) the wrong name."
-        ],
+        "like": [],
         "dislike": [
             "chats with (cat) while grabbing something to eat."
         ],
@@ -21,26 +16,24 @@
             "thinks that (cat) has been behaving stuck up and rude.",
             "is dissatisfied that (cat) can't seem to get rid of their chronic pain."
         ],
-        "comfortable": [
-            "chomps on (cat)'s ear.",
-            "noticed (cat) flirting with someone else.",
-            "bickered about something trivial with (cat)."
-        ],
-        "jealousy": [
-            "was playing with (cat) and learned a fun new battle move from them!"
-        ],
+        "comfortable": [],
+        "jealousy": [],
         "trust": [
-            "chiding (cat) for being so reckless.",
+            "is chiding (cat) for being so reckless.",
             "has noticed (cat) isn't doing a lot of work lately."
         ]
     },
     "to": {
-        "romantic_love": [],
+        "romantic_love": [
+            "feels like (cat) hasn't been paying much attention to them lately.",
+            "didn't get the joke (cat) was telling."
+        ],
         "like": [
             "trips over (cat).",
             "divides (cat) into extra patrols.",
             "is watching (cat) scornfully.",
-            "called (cat) the wrong name."
+            "called (cat) the wrong name.",
+            "complains about something (cat) did."
         ],
         "dislike": [
             "feels bad that they caused a problem for (cat).",
@@ -59,9 +52,14 @@
             "makes sure (cat) is following the warrior code.",
             "crashes into (cat) while eager for patrol.",
             "bickered about something trivial with (cat).",
-            "said something that rubbed (cat) the wrong way."
+            "said something that rubbed (cat) the wrong way.",
+            "chomps on (cat)'s ear.",
+            "bickered about something trivial with (cat).",
+            "is asking (cat) where kits come from."
         ],
-        "jealousy": [],
+        "jealousy": [
+            "was playing with (cat) and learned a fun new battle move from them!"
+        ],
         "trust": [
             "trips over (cat).",
             "convinces (cat) to help them pull a prank on a Clanmate.",

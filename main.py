@@ -1,11 +1,31 @@
 #!/usr/bin/env python3
 import sys
 import os
-import traceback
 directory = os.path.dirname(__file__)
 if directory:
     os.chdir(directory)
 
+# Setup logging
+import logging 
+formatter = logging.Formatter("%(name)s - %(levelname)s - %(message)s")
+# Logging for file
+file_handler = logging.FileHandler("clangen.log")
+file_handler.setFormatter(formatter)
+# Only log errors to file
+file_handler.setLevel(logging.ERROR)
+# Logging for console 
+stream_handler = logging.StreamHandler()
+stream_handler.setFormatter(formatter)
+logging.root.addHandler(file_handler)
+logging.root.addHandler(stream_handler)
+
+def log_crash(type, value, tb):
+    # Log exception on crash
+    logging.critical("Uncaught exception", exc_info=(type, value, tb))
+
+sys.excepthook = log_crash
+
+# Load game
 from scripts.game_structure.load_cat import *
 from scripts.cat.sprites import sprites
 from scripts.clan import clan_class
@@ -31,7 +51,7 @@ if clan_list:
         load_cats()
         clan_class.load_clan()
     except Exception as e:
-        print("ERROR: \n",traceback.format_exc())
+        logging.exception("File failed to load")
         if not game.switches['error_message']:
             game.switches[
                 'error_message'] = 'There was an error loading the cats file!'
