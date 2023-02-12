@@ -476,7 +476,7 @@ class Patrol():
                 fulfilled = True
                 for inter_cat in self.patrol_cats:
                     rel_above_threshold = []
-                    patrol_cats_ids = [cat.id for cat in self.patrol_cats]
+                    patrol_cats_ids = [cat.ID for cat in self.patrol_cats]
                     relevant_relationships = list(
                         filter(lambda rel: rel.cat_to.ID in patrol_cats_ids and rel.cat_to.ID != inter_cat.ID,
                             list(inter_cat.relationships.values())
