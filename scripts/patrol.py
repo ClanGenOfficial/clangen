@@ -8,7 +8,7 @@ from scripts.game_structure.game_essentials import *
 from scripts.cat.names import *
 from scripts.cat.cats import *
 from scripts.cat.pelts import *
-from scripts.clan_resources.freshkill import PREY_REQUIREMENT, HUNTER_EXP_BONUS, HUNTER_BONUS
+from scripts.clan_resources.freshkill import ADDITIONAL_PREY, PREY_REQUIREMENT, HUNTER_EXP_BONUS, HUNTER_BONUS
 from scripts.clan import Clan
 
 # ---------------------------------------------------------------------------- #
@@ -1404,18 +1404,21 @@ class Patrol():
 
     def handle_prey(self, outcome_nr):
         """Handle the amount of prey which was caught and add it to the freshkill pile of the clan."""
+        basic_amount = PREY_REQUIREMENT["warrior"]
+        if game.clan.game_mode == 'expanded':
+            basic_amount += ADDITIONAL_PREY
         prey_types = {
-            "small_prey" : PREY_REQUIREMENT["warrior"], 
-            "medium_prey" : PREY_REQUIREMENT["warrior"]*2 , 
-            "large_prey" : PREY_REQUIREMENT["warrior"]*3, 
-            "huge_prey" : PREY_REQUIREMENT["warrior"]*4
+            "small_prey" : basic_amount , 
+            "medium_prey" : basic_amount*2, 
+            "large_prey" : basic_amount*3, 
+            "huge_prey" : basic_amount*4
         }
 
         if not self.success and "hunting" in patrol.patrol_event.tags:
             cancel_tags = ["no_fail_prey", "poison_clan", "death", "disaster", "multi_deaths", "no_body", "cruel_season", "gone", "multi_gone", "disaster_gone"]
             relevant_patrol_tags = [tag for tag in patrol.patrol_event.tags if tag in cancel_tags]
             if len(relevant_patrol_tags) == 0:
-                amount = int(PREY_REQUIREMENT["warrior"] * len(self.patrol_cats) / 2)
+                amount = int(PREY_REQUIREMENT["warrior"] * len(self.patrol_cats) / 1.5)
                 game.clan.freshkill_pile.add_freshkill(amount)
                 self.results_text.append(f"The patrol still manages to catch some amount of prey.")
             return
@@ -1446,10 +1449,9 @@ class Patrol():
         elif "good_hunter" in self.patrol_skills:
             total_amount = total_amount * (HUNTER_BONUS["good_hunter"] / 10)
 
-        if game.clan.game_mode != "classic":
-            game.clan.freshkill_pile.add_freshkill(total_amount)
-            if total_amount > 0:
-                self.results_text.append(f"Each cat catches a {prey_size} amount of prey.")
+        game.clan.freshkill_pile.add_freshkill(total_amount)
+        if total_amount > 0:
+            self.results_text.append(f"Each cat catches a {prey_size} amount of prey.")
 
     def handle_clan_relations(self, difference):
         """

@@ -397,6 +397,7 @@ GAME_CONFIG = None
 with open(f"resources/game_config.json", 'r') as read_file:
     GAME_CONFIG = ujson.loads(read_file.read())
 
+ADDITIONAL_PREY = GAME_CONFIG["freshkill"]["additional_prey"]
 PREY_REQUIREMENT = GAME_CONFIG["freshkill"]["prey_requirement"]
 CONDITION_INCREASE = GAME_CONFIG["freshkill"]["condition_increase"]
 FEEDING_ORDER = GAME_CONFIG["freshkill"]["feeding_order"]

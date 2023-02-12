@@ -153,6 +153,10 @@ class Freshkill_Events():
         if freshkill_pile.total_amount < trigger_value:
             return
 
+        choice = random.randint(0,int(FRESHKILL_EVENT_TRIGGER_FACTOR))
+        if choice != 0:
+            return
+
         # check if there is much more prey than needed, to filter the events
         much_prey = False
         if freshkill_pile.total_amount >= (trigger_value + needed_amount):
@@ -167,7 +171,7 @@ class Freshkill_Events():
                 other_cat = random.choice(living_cats)
 
         possible_events = self.generate_events.possible_events(cat.status, cat.age, "freshkill_pile")
-        possible_tasks = ["death", "reduce", "injury"]
+        possible_tasks = ["death", "reduce", "reduce", "reduce", "reduce", "injury", "injury", "injury"]
         needed_tags = []
 
         # randomly choose which tags are used for the event
