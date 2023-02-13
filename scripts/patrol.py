@@ -1871,7 +1871,16 @@ class PatrolEvent():
     conditions from blunt_force_injury AND water in their lungs as possible conditions for that patrol. 
     Keep in mind that the "non_lethal" tag will apply to ALL the conditions for that patrol.
     Right now, nonlethal shock is auto applied to all cats present when another cat dies. This may change in the future.
-        
+
+    ! To tag injuries/illnesses on cats joining, you MUST use "new_cat_injury"
+    You can choose from these:
+        "nc_blunt_force_injury": ["broken bone", "broken back", "head damage", "broken jaw"],
+        "nc_sickness": ["greencough", "redcough", "whitecough", "yellowcough"],
+        "nc_battle_injury": ["claw-wound", "mangled leg", "mangled tail", "torn pelt", "bite-wound"],
+        "nc_hot_injury": ["heat exhaustion", "heat stroke", "dehydrated"],
+        "nc_cold_injury": ["shivering", "frostbite"]
+
+    or you can tag a specific injury like this: "nc_broken back"
 
     - HERB TAGGING: -
         herbs are given on successes only
