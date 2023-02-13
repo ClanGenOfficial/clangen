@@ -807,7 +807,18 @@
     ],
     "Wanting to stand out among their Clanmates more, m_c decides to become a medicine cat, and is apprenticed to (mentor)."
   ],
-  "med_app_6": [
+   "med_app_6": [
+    [
+      "medicine cat apprentice",
+      "yes_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "bloodthirsty"
+    ],
+    "To gain access to both life-saving herbs and life-threatening poisons, m_c decides to become a medicine cat, and is apprenticed to (mentor)."
+  ],
+  "med_app_7": [
     [
       "medicine cat apprentice",
       "yes_mentor",
@@ -819,7 +830,7 @@
     ],
     "Worried they may not be good as a hunter or fighter, but still wanting to make their Clan proud somehow, m_c decides to become a medicine cat apprentice under (mentor)."
   ],
-  "med_app_7": [
+  "med_app_8": [
     [
       "medicine cat apprentice",
       "yes_mentor",
@@ -828,9 +839,9 @@
       "general_backstory",
       "all_traits"
     ],
-    "(mentor) stands before the Clan and announces that they will not be there forever, and it time they took on an apprentice. They tell the Clan that they have chosen (prefix)kit, now m_c, to be their new apprentice."
+    "(mentor) stands before the Clan and announces that they will not be there forever, and it is time they took on an apprentice. They tell the Clan that they have chosen (prefix)kit, now m_c, to be their new apprentice."
   ],
-  "med_app_8": [
+  "med_app_9": [
     [
       "medicine cat apprentice",
       "yes_mentor",
@@ -841,7 +852,7 @@
     ],
     "(mentor) has no doubts in their mind of who their new apprentice will be. (prefix)kit has always been looking for an excuse to be in their den, asking endless questions about what each herb is and what it's used for. And as (mentor) announces that the newly named m_c, will be their apprentice, they see m_c's eyes shining in delight and excitement, and know they were right in choosing them."
   ],
-  "med_app_9": [
+  "med_app_10": [
     [
       "medicine cat apprentice",
       "no_mentor",
@@ -852,7 +863,7 @@
     ],
     "Newly-made medicine cat apprentice m_c learns the way of healing through guidance from StarClan."
   ],
-  "med_app_10": [
+  "med_app_11": [
     [
       "medicine cat apprentice",
       "no_mentor",
@@ -863,7 +874,7 @@
     ],
     "StarClan speaks, and has decided that the new medicine cat apprentice shall be m_c. m_c is unsure if they are ready for this role without a mentor, but the stars promise to guide them."
   ],
-  "med_app_11": [
+  "med_app_12": [
     [
       "medicine cat apprentice",
       "no_mentor",
@@ -874,7 +885,7 @@
     ],
     "The Clan needs a new medicine cat, and m_c is chosen for the role. m_c is stunned that they were chosen, but agrees anyway, knowing how badly the Clan needs a medicine cat."
   ],
-  "med_app_12": [
+  "med_app_13": [
     [
       "medicine cat apprentice",
       "no_mentor",
@@ -885,7 +896,7 @@
     ],
     "m_c has decided that hunting and fighting is not the way they can provide for their Clan. Instead, they have decided to serve their Clan by healing and communing with StarClan - who will be the ones to train them with the absence of a proper mentor."
   ],
-  "med_app_13": [
+  "med_app_14": [
     [
       "medicine cat apprentice",
       "no_mentor",
@@ -896,7 +907,7 @@
     ],
     "Interested in herbs even in their kithood, m_c is eager to be made the new medicine cat apprentice, and learn how to heal from those who came before them."
   ],
-  "med_app_14": [
+  "med_app_15": [
     [
       "medicine cat apprentice",
       "no_mentor",
@@ -907,7 +918,7 @@
     ],
     "The thought alone of fighting and hurting another cat makes m_c shiver. Knowing the Clan needs a medicine cat, they seize the chance to do good for the Clan without harming others, they take on the role of medicine cat apprentice."
   ],
-  "med_app_15": [
+  "med_app_16": [
     [
       "medicine cat apprentice",
       "no_mentor",
@@ -919,7 +930,7 @@
     "Knowing the Clan is in desperate need of a medicine cat, and wanting to do something to stand out and do something more important, m_c announces mid-meeting that they want to be the new medicine cat apprentice.",
     "Worried they may not be good as a hunter or fighter, but still wanting to make their Clan proud somehow, m_c decides to become a medicine cat, and is trained by StarClan."
   ],
-  "med_app_16": [
+  "med_app_17": [
     [
       "medicine cat apprentice",
       "general_mentor",
@@ -930,7 +941,7 @@
     ],
     "m_c decides to become a medicine cat apprentice in hopes that they will be able to see dead_par1 in StarClan."
   ],
-  "med_app_17": [
+  "med_app_18": [
     [
       "medicine cat apprentice",
       "general_mentor",
@@ -941,7 +952,7 @@
     ],
     "As the new medicine cat apprentice, m_c dreams of StarClan for the first time. They are greeted by many StarClan cats, one of which they recognize as dead_par1, who is watching in pride as the rest of StarClan's ranks accept the new medicine cat apprentice."
   ],
-  "med_app_18": [
+  "med_app_19": [
     [
       "medicine cat apprentice",
       "general_mentor",
@@ -952,7 +963,7 @@
     ],
     "m_c decides to become a medicine cat apprentice in hopes that they will be able to see dead_par1 and dead_par2 in StarClan"
   ],
-  "med_app_19": [
+  "med_app_20": [
     [
       "medicine cat apprentice",
       "general_mentor",
@@ -995,6 +1006,30 @@
       "all_traits"
     ],
     "m_c is fascinated by (mentor)'s ability to solve disputes without tooth or claw. They are eager to learn, and (mentor) take them under their wing."
+  ],
+  "mediator_app_3": [
+    [
+      "mediator apprentice",
+      "no_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "Now more than ever, m_c realizes the clan is in need for a mediator, and decides to step up under StarClan's guidance."
+  ],
+  "mediator_app_4": [
+    [
+      "mediator apprentice",
+      "no_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "thoughtful",
+      "compassionate",
+      "empathetic"
+    ],
+    "Impressed by their r_h, (mentor) chooses m_c as the clan's new mediator apprentice."
   ],
   "med_0": [
     [
@@ -2219,6 +2254,17 @@
       "all_traits"
     ],
     "m_c is welcomed as fully trained mediator of the Clan."
+  ],
+  "mediator_2": [
+    [
+      "mediator",
+      "general_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "Although some Clan members have doubts of (prefix)paw's abilities, l_n gives them the name m_c and welcomes them as the Clan's new mediator."
   ],
   "elder_0": [
     [
