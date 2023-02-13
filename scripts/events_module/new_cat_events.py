@@ -154,9 +154,7 @@ class NewCatEvents:
             number_of_cats = number_of_cats[0]
             if parent:
                 number_of_cats += 1
-
-        for index in range(number_of_cats):
-            # setting age
+        # setting age
             if (litter or kit) and not parent:
                 age = random.randint(0, 5)
             elif status == 'apprentice':
@@ -165,8 +163,7 @@ class NewCatEvents:
                 age = random.randint(16, 120)
             else:
                 age = random.randint(6, 120)
-
-            # setting status
+        # setting status
             if not status:
                 if age < 6:
                     status = "kitten"
@@ -175,6 +172,7 @@ class NewCatEvents:
                 elif age >= 12:
                     status = "warrior"
 
+        for index in range(number_of_cats):
             # cat creation and naming time
             if other_clan or ((kit or litter) and not parent):
                 new_cat = Cat(moons=age, status=status, gender=random.choice(['female', 'male']),
