@@ -1,5 +1,4 @@
 [
-
     {
         "patrol_id": "mtn_hunt_eagleswim9",
         "biome": "mountainous",
@@ -24,8 +23,7 @@
             "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards shore, and just as it's going to climb out s_c pounces, fighting in the shallows where s_c has the edge over the bird in swimming. They win both the fish and the predator as prey for c_n."
         ],
         "fail_text": [
-            "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch and they're driven back, giving up on the idea of scavenging.",
-            null
+            "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch and they're driven back, giving up on the idea of scavenging."
         ],
         "win_skills": [
             "excellent fighter"
@@ -33,19 +31,10 @@
         "win_trait": [
             "ambitious"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 3,
         "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
+        "antagonize_fail_text": null
         ]
     },
     {
@@ -72,8 +61,7 @@
             "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. They win both the fish and the predator as prey for c_n."
         ],
         "fail_text": [
-            "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch and they are driven back, giving up on the idea of scavenging.",
-            null
+            "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch and they are driven back, giving up on the idea of scavenging."
         ],
         "win_skills": [
             "excellent fighter"
@@ -81,20 +69,10 @@
         "win_trait": [
             "ambitious"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 4,
         "max_cats": 6,
         "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            null,
-            null
-        ]
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "mtn_hunt_eagleswim11",
@@ -397,7 +375,7 @@
             "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
         ],
         "fail_text": [
-            "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
+            "Your patrol fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
             null,
             null,
             "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
@@ -459,11 +437,11 @@
         "success_text": [
             "Your cats are smaller but heavily outnumber the fox, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full and unwilling to lose blood over it, is driven off from the kill.",
             null,
-            "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until s_c lands a crucial blow, snapping a tendon in one of the fox's hindlegs. The fox runs, but there's no way it'll live long with such a crippling injury.",
+            "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until s_c lands a crucial blow, snapping a tendon in one of the fox's hind legs. The fox runs, but there's no way it'll live long with such a crippling injury.",
             "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. Holding on grimly, s_c's daring move gives the rest of the patrol the opportunity needed to bring the fox down for good."
         ],
         "fail_text": [
-            "Your patrol fails to drive away the fox, which keeps possession of the food. However with so many cats to protect each other, there were no injuries.",
+            "Your patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there were no injuries.",
             null,
             null,
             "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
@@ -528,7 +506,7 @@
             "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. But then they're stuck, unwilling to let go and risk being bitten. They're dragged through the forest, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the kid."
         ],
         "fail_text": [
-            "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
+            "Your patrol fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
             null,
             "Fiercely, r_c throws themselves at the fox, determined to win the kid prize. But the fox values it just as dearly, and manages to get a good grip on r_c, shaking them to pieces and killing them.",
             "r_c launches into battle, but is caught with a nasty bite, and retreats to limp back home. The fox doesn't follow, happy enough to eat the kid instead of the foolish cat.",

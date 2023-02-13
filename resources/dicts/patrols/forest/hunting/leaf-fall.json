@@ -1,1315 +1,1353 @@
 [
-{
-    "patrol_id": "fst_hunt_fox_leaf-fallscavenge1",
-    "biome": "forest",
-    "season": "leaf-fall",
-    "tags": [
-        "hunting",
-        "fighting",
-        "scar",
-        "injury",
-        "bite-wound",
-        "clan_to_patrol",
-        "respect",
-        "rel_patrol",
-        "large_prey"
-    ],
-    "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find their red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it.",
-    "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
-    "chance_of_success": 50,
-    "exp": 20,
-    "success_text": [
-        "Your cats are smaller but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
-        null,
-        "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until it gives up and runs.",
-        "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
-    ],
-    "fail_text": [
-        "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
-        null,
-        null,
-        "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
-        null,
-        "s_c means well, but they're overconfident in their attack and the fox manages to sink their teeth into them. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
-    ],
-    "win_skills": [
-        "good fighter",
-        "great fighter",
-        "excellent fighter"
-    ],
-    "win_trait": [
-        "adventurous",
-        "altruistic",
-        "ambitious",
-        "confident",
-        "daring",
-        "fierce",
-        "responsible",
-        "righteous"
-    ],
-    "fail_skills": [
-        "None"
-    ],
-    "fail_trait": [
-        "troublesome",
-        "vengeful",
-        "bloodthirsty",
-        "bold"
-    ],
-    "min_cats": 2,
-    "max_cats": 3,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a fox fight.",
-        null
-    ]
-},
-{
-    "patrol_id": "fst_hunt_fox_leaf-fallscavenge2",
-    "biome": "forest",
-    "season": "leaf-fall",
-    "tags": [
-        "hunting",
-        "fighting",
-        "scar",
-        "injury",
-        "bite-wound",
-        "clan_to_patrol",
-        "respect",
-        "rel_patrol",
-        "large_prey"
-    ],
-    "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find their red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it.",
-    "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
-    "chance_of_success": 80,
-    "exp": 20,
-    "success_text": [
-        "Your cats are smaller but heavily outnumber the fox, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
-        null,
-        "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until s_c lands a crucial blow, snapping a tendon in one of the fox's hindlegs. The fox runs, but there's no way it'll live long with such a crippling injury.",
-        "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. Holding on grimly, s_c's daring move gives the rest of the patrol the opportunity needed to bring the fox down for good."
-    ],
-    "fail_text": [
-        "Your patrol fails to drive away the fox, which keeps possession of the food. However with so many cats to protect each other, there were no injuries.",
-        null,
-        null,
-        "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
-        null,
-        "s_c means well, but they're overconfident in their attack and the fox manages to sink their teeth into them. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
-    ],
-    "win_skills": [
-        "good fighter",
-        "great fighter",
-        "excellent fighter"
-    ],
-    "win_trait": [
-        "adventurous",
-        "altruistic",
-        "ambitious",
-        "confident",
-        "daring",
-        "fierce",
-        "responsible",
-        "righteous"
-    ],
-    "fail_skills": [
-        "None"
-    ],
-    "fail_trait": [
-        "troublesome",
-        "vengeful",
-        "bloodthirsty",
-        "bold"
-    ],
-    "min_cats": 4,
-    "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a fox fight."
-    ]
-},
-{
-    "patrol_id": "fst_hunt_fox_leaf-fallscavenge3",
-    "biome": "forest",
-    "season": "leaf-fall",
-    "tags": [
-        "hunting",
-        "fighting",
-        "death",
-        "scar",
-        "injury",
-        "bite-wound",
-        "clan_to_patrol",
-        "respect",
-        "large_prey"
-    ],
-    "intro_text": "r_c catches the scent of a fox - but is it red, or gray? Tracking it, they find their red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it.",
-    "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
-    "chance_of_success": 30,
-    "exp": 30,
-    "success_text": [
-        "r_c may be smaller, alone, and half its weight, but the fox has a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle. The fox, already stuffed full of venison and unwilling to lose blood over it, leaves the kill with a grumble.",
-        null,
-        "s_c uses every trick in their talented fighting skillset to attack the fox with no one to watch their flank, until the perfect opportunity opens up and they pounce onto the fox's back, digging in their claws. It's a wild ride through the forest until the fox bucks them off, but it wins them the fawn carcass.",
-        "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. But then they're stuck, unwilling to let go and risk being bitten. They're dragged through the forest, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the fawn."
-    ],
-    "fail_text": [
-        "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
-        null,
-        "Fiercely, r_c throws themselves at the fox, determined to win the fawn prize. But the fox values it just as dearly, and manages to get a good grip on r_c, shaking them to pieces and killing them.",
-        "r_c launches into battle, but is caught with a nasty bite, and retreats to limp back home. The fox doesn't follow, happy enough to eat the fawn instead of the foolish cat.",
-        null,
-        "s_c is overconfident in their attack and the fox manages to sink their teeth into them. They retreat, bleeding and in pain, and the fox settles back down to its meal."
-    ],
-    "win_skills": [
-        "great fighter",
-        "excellent fighter"
-    ],
-    "win_trait": [
-        "adventurous",
-        "altruistic",
-        "ambitious",
-        "confident",
-        "daring",
-        "fierce",
-        "responsible",
-        "righteous"
-    ],
-    "fail_skills": [
-        "None"
-    ],
-    "fail_trait": [
-        "troublesome",
-        "vengeful",
-        "bloodthirsty",
-        "bold"
-    ],
-    "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a solo fox fight.",
-        "r_c fell in a solo battle with a fox.",
-        "died while fighting a fox"
-    ]
-},
-{
-    "patrol_id": "fst_hunt_foxgray_leaf-fallscavenge1",
-    "biome": "forest",
-    "season": "leaf-fall",
-    "tags": [
-        "hunting",
-        "fighting",
-        "scar",
-        "injury",
-        "bite-wound",
-        "clan_to_patrol",
-        "respect",
-        "rel_patrol",
-        "large_prey"
-    ],
-    "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find a stocky gray fox feeding on a deer fawn carcass. A gray fox is unlikely to have killed a fawn this size.",
-    "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
-    "chance_of_success": 70,
-    "exp": 20,
-    "success_text": [
-        "The cats are only just smaller and outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
-        null,
-        "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until it gives up and runs.",
-        "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
-    ],
-    "fail_text": [
-        "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
-        "s_c makes a stupid mistake, too intent on winning the fight to respect their enemy's teeth, and it's only being janked back by the tail that saves them from injury. The patrol gives up, and settles down to wait a safe distance away until the fox leaves of its own accord.",
-        null,
-        null,
-        null,
-        "s_c means well, but they're overconfident in their attack and the fox manages to sink their teeth into them. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
-    ],
-    "win_skills": [
-        "good fighter",
-        "great fighter",
-        "excellent fighter"
-    ],
-    "win_trait": [
-        "adventurous",
-        "altruistic",
-        "ambitious",
-        "confident",
-        "daring",
-        "fierce",
-        "responsible",
-        "righteous"
-    ],
-    "fail_skills": [
-        "None"
-    ],
-    "fail_trait": [
-        "troublesome",
-        "vengeful",
-        "bloodthirsty",
-        "bold"
-    ],
-    "min_cats": 2,
-    "max_cats": 3,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a fox fight.",
-        null
-    ]
-},
-{
-    "patrol_id": "fst_hunt_foxgray_leaf-fallscavenge2",
-    "biome": "forest",
-    "season": "leaf-fall",
-    "tags": [
-        "hunting",
-        "fighting",
-        "scar",
-        "injury",
-        "clan_to_patrol",
-        "respect",
-        "rel_patrol",
-        "large_prey"
-    ],
-    "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find a stocky gray fox feeding on a deer fawn carcass. A gray fox is unlikely to have killed a fawn this size.",
-    "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
-    "chance_of_success": 90,
-    "exp": 20,
-    "success_text": [
-        "Your cats are only just smaller and heavily outnumber the fox, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
-        null,
-        "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until s_c lands a crucial blow, snapping a tendon in one of the fox's hindlegs. The fox runs, but there's no way it'll live long with such a crippling injury.",
-        "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. Holding on grimly, s_c's daring move gives the rest of the patrol the opportunity needed to bring the fox down for good."
-    ],
-    "fail_text": [
-        "Your patrol fails to drive away the fox, which keeps possession of the food. However with so many cats to protect each other, there were no injuries.",
-        "s_c makes a stupid mistake, too intent on winning the fight to respect their enemy's teeth, and it's only being yanked back by the tail that saves them from injury. The patrol gives up, and settles down to wait a safe distance away until the fox leaves of its own accord."
-    ],
-    "win_skills": [
-        "good fighter",
-        "great fighter",
-        "excellent fighter"
-    ],
-    "win_trait": [
-        "adventurous",
-        "altruistic",
-        "ambitious",
-        "confident",
-        "daring",
-        "fierce",
-        "responsible",
-        "righteous"
-    ],
-    "fail_skills": [
-        "None"
-    ],
-    "fail_trait": [
-        "troublesome",
-        "vengeful",
-        "bloodthirsty",
-        "bold"
-    ],
-    "min_cats": 4,
-    "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a fox fight."
-    ]
-},
-{
-    "patrol_id": "fst_hunt_foxgray_leaf-fallscavenge3",
-    "biome": "forest",
-    "season": "leaf-fall",
-    "tags": [
-        "hunting",
-        "fighting",
-        "scar",
-        "injury",
-        "bite-wound",
-        "clan_to_patrol",
-        "respect",
-        "large_prey"
-    ],
-    "intro_text": "r_c catches the scent of a fox - but is it red, or gray? Tracking it, they find a stocky gray fox feeding on a deer fawn carcass. A gray fox is unlikely to have killed a fawn this size.",
-    "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
-    "chance_of_success": 50,
-    "exp": 30,
-    "success_text": [
-        "r_c may be smaller, alone, and half its weight, but the fox has a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle. The fox, already stuffed full of venison and unwilling to lose blood over it, leaves the kill with a grumble.",
-        null,
-        "s_c uses every trick in their talented fighting skillset to attack the fox with no one to watch their flank, until the perfect opportunity opens up and they pounce onto the fox's back, digging in their claws. It's a wild ride through the forest until the fox bucks them off, but it wins them the fawn carcass.",
-        "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. But then they're stuck, unwilling to let go and risk being bitten. They're dragged through the forest, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the fawn."
-    ],
-    "fail_text": [
-        "Your patrol fails to drive away the gray fox, which keeps possession of the food. However there were no injuries.",
-        "s_c makes a stupid mistake, too intent on winning the fight to respect their enemy's teeth, and it's tripping over their own feet that saves them. They give up, and settle down to wait a safe distance away until the fox leaves of its own accord.",
-        null,
-        "r_c launches into battle, but is caught with a nasty bite, and retreats to limp back home. The gray fox doesn't follow, happy enough to eat the fawn instead of the foolish cat.",
-        null,
-        "s_c is overconfident in their attack and the fox manages to sink their teeth into them. They retreat, bleeding and in pain, and the gray fox settles back down to its meal."
-    ],
-    "win_skills": [
-        "great fighter",
-        "excellent fighter"
-    ],
-    "win_trait": [
-        "adventurous",
-        "altruistic",
-        "ambitious",
-        "confident",
-        "daring",
-        "fierce",
-        "responsible",
-        "righteous"
-    ],
-    "fail_skills": [
-        "None"
-    ],
-    "fail_trait": [
-        "troublesome",
-        "vengeful",
-        "bloodthirsty",
-        "bold"
-    ],
-    "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a solo fox fight.",
-        null
-    ]
-},
-{
-    "patrol_id": "fst_hunt_redvixen7",
-    "biome": "forest",
-    "season": "leaf-fall",
-    "tags": [
-        "fighting",
-        "death",
-        "scar",
-        "big_bite_injury",
-        "respect",
-        "trust",
-        "clan_to_r_c",
-        "patrol_to_r_c",
-        "clan_to_patrol"
-    ],
-    "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
-    "decline_text": "Your patrol decides not to pursue the fox.",
-    "chance_of_success": 30,
-    "exp": 30,
-    "success_text": [
-        "The red vixen smells like the prey she's been poaching to feed her litter. She's stolen from c_n for the last time, and the patrol drives her from their territory, yowling their anger and fury.",
-        "Your patrol drives away the red fox, and seeks out her den, but her leaf-fall cubs are near full-grown and scatter into the wilderness. Hopefully leaf-bare takes care of them.",
-        "s_c displays incredible skill, driving the red mother vixen out of the territory almost by themselves. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
-        "The patrol overcomes the red vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
-    ],
-    "fail_text": [
-        "The mother red fox is vicious and determined, and the small patrol is beaten back. But this forest is c_n's and they haven't given up. They may have lost this battle, but c_n will win this war.",
-        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarasses them deeply the rest of the patrol have to rescue them from the red vixen.",
-        "Never threaten a mother's young - the red vixen kills r_c in the skirmish.",
-        "The mother red fox's snapping jaws leave r_c dripping blood onto the leaf litter, forcing the patrol to back off.",
-        null,
-        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the red vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up on the fight.",
-        "As their hunt descends into a full on battle with the red vixen, p_l takes a blow meant for one of their Clanmates, losing a life."
-    ],
-    "win_skills": [
-        "excellent fighter"
-    ],
-    "win_trait": [
-        "adventurous",
-        "altruistic",
-        "ambitious",
-        "bloodthirsty",
-        "bold",
-        "confident",
-        "daring",
-        "fierce",
-        "responsible",
-        "righteous",
-        "troublesome",
-        "vengeful"
-    ],
-    "fail_skills": [
-        "good fighter"
-    ],
-    "fail_trait": [
-        "None"
-    ],
-    "min_cats": 2,
-    "max_cats": 3,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a fox fight.",
-        "r_c fell in battle with a fox.",
-        "died while fighting a vixen"
-    ]
-},
-{
-    "patrol_id": "fst_hunt_redvixen8",
-    "biome": "forest",
-    "season": "leaf-fall",
-    "tags": [
-        "fighting",
-        "scar",
-        "big_bite_injury",
-        "respect",
-        "trust",
-        "clan_to_r_c",
-        "patrol_to_r_c",
-        "clan_to_patrol"
-    ],
-    "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
-    "decline_text": "Your patrol decides not to pursue the fox.",
-    "chance_of_success": 60,
-    "exp": 30,
-    "success_text": [
-        "Led by p_l and with a heap of cooperation and teamwork, the patrol drives away the red fox, and seeks out her den. But her cubs are near full-grown with the bounty of leaf-fall, and scatter from the patrol into the wilderness. Hopefully leaf-bare takes care of them.",
-        "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the red mother vixen and ending the threat to the Clan that she poses. The patrol drives her near-full grown litter of fox cubs out from the territory. Hopefully the coming leaf-bare will take care of them.",
-        "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the red fox nor her cubs pose a threat to c_n.",
-        "The patrol overcomes the red vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
-    ],
-    "fail_text": [
-        "The mother red fox is vicious and determined. Although they lose this battle, through teamwork the cats manage to retreat without injury.",
-        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the red vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up the fight.",
-        null,
-        "r_c is left wounded as the patrol and the red mother vixen fight to a stalemate. Hopefully they've given the fox mother a reason not to return to this part of the forest."
-    ],
-    "win_skills": [
-        "excellent fighter"
-    ],
-    "win_trait": [
-        "adventurous",
-        "altruistic",
-        "ambitious",
-        "bloodthirsty",
-        "bold",
-        "confident",
-        "daring",
-        "fierce",
-        "responsible",
-        "righteous",
-        "troublesome",
-        "vengeful"
-    ],
-    "fail_skills": [
-        "good fighter"
-    ],
-    "fail_trait": [
-        "None"
-    ],
-    "min_cats": 4,
-    "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a red fox fight."
-    ]
-},
-{
-    "patrol_id": "fst_hunt_redvixen9",
-    "biome": "forest",
-    "season": "leaf-fall",
-    "tags": [
-        "fighting",
-        "death",
-        "scar",
-        "big_bite_injury",
-        "shock",
-        "injury",
-        "respect",
-        "trust",
-        "clan_to_patrol",
-        "no_body"
-    ],
-    "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
-    "decline_text": "Your patrol decides not to pursue the fox.",
-    "chance_of_success": 20,
-    "exp": 50,
-    "success_text": [
-        "It takes r_c's every scrap of bravery and strength to drive away the red vixen - her near grown litter, fat on the bounty of leaf-fall, is a challenge for another day. c_n will have to deal with the young foxes now roaming motherless in their woods, before they start to compete for prey in leaf-bare.",
-        null,
-        "s_c displays incredible skill, driving the mother vixen and her brood out of the forest all by themselves. Now neither the red fox nor her cubs pose a threat to the Clan. They swell with pride, feeling the confidence of knowing that they're truly one of the best fighters c_n has ever produced.",
-        "A brilliant battle move by s_c at a critical moment knocks the red vixen off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in their pelt to do it alone."
-    ],
-    "fail_text": [
-        null,
-        null,
-        "Never threaten a mother's young - the red vixen kills r_c in the skirmish, and carries off the body to feed her litter.",
-        "The mother red fox's snapping jaws leave r_c dripping blood onto the leaf litter, and barely able to escape further injury.",
-        null,
-        "s_c is determined to win, but the red vixen is determined to live, and that makes all the difference. s_c ends up pinned in a defensible hiding spot, bleeding and terrified, until the vixen judges them no longer a threat and continues on her way."
-    ],
-    "win_skills": [
-        "excellent fighter"
-    ],
-    "win_trait": [
-        "adventurous",
-        "altruistic",
-        "ambitious",
-        "bloodthirsty",
-        "bold",
-        "confident",
-        "daring",
-        "fierce",
-        "responsible",
-        "righteous",
-        "troublesome",
-        "vengeful"
-    ],
-    "fail_skills": [
-        "good fighter"
-    ],
-    "fail_trait": [
-        "None"
-    ],
-    "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a solo fight with a red vixen.",
-        "r_c fell in a solo battle with a red vixen.",
-        "died while fighting a vixen"
-    ]
-},
-{
-    "patrol_id": "fst_hunt_grayvixen7",
-    "biome": "forest",
-    "season": "leaf-fall",
-    "tags": [
-        "fighting",
-        "minor_injury",
-        "respect",
-        "trust",
-        "rel_patrol",
-        "patrol_to_r_c"
-    ],
-    "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
-    "decline_text": "Your patrol decides not to pursue the fox.",
-    "chance_of_success": 60,
-    "exp": 30,
-    "success_text": [
-        "The gray vixen smells like the prey she's been poaching to feed her litter. She's stolen from c_n for the last time, and the patrol drives her from their territory, yowling their anger and fury.",
-        "Your patrol drives away the gray fox, and seeks out her den, but her leaf-fall cubs are near full-grown and scatter into the wilderness. Hopefully leaf-bare takes care of them, but if c_n spots them, they won't hesitate.",
-        "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the gray fox nor her scattered cubs pose a threat to the Clan. It places s_c as one of c_n's most talented and skillful fighters, a gray fox is a dangerous competitor.",
-        "The patrol overcomes the gray vixen they find and drives her off thanks to a brilliant battle move by s_c. The cats swirl around s_c afterwards, congratulating them on their bravery and skill."
-    ],
-    "fail_text": [
-        "The patrol comes across a gray vixen at the end of the scent trail. She spots them too, measures herself up against them, then flees, scrambling into the trees in a move that completely surprises the cats. This round goes to the gray fox.",
-        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarasses them deeply the gray vixen slips past them and flees further into the forest.",
-        null,
-        "The patrol finds a stocky gray vixen wandering their forest, and drives her out in a scene that mostly involves yowling and screaming and yapping at each other until she gives in. r_c gets a little battered, but everyone is mostly fine.",
-        null,
-        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking them ass over paws as she flees from the patrol."
-    ],
-    "win_skills": [
-        "excellent fighter"
-    ],
-    "win_trait": [
-        "adventurous",
-        "altruistic",
-        "ambitious",
-        "bloodthirsty",
-        "bold",
-        "confident",
-        "daring",
-        "fierce",
-        "responsible",
-        "righteous",
-        "troublesome",
-        "vengeful"
-    ],
-    "fail_skills": [
-        "good fighter"
-    ],
-    "fail_trait": [
-        "None"
-    ],
-    "min_cats": 2,
-    "max_cats": 3,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a fox fight.",
-        null
-    ]
-},
-{
-    "patrol_id": "fst_hunt_grayvixen8",
-    "biome": "forest",
-    "season": "leaf-fall",
-    "tags": [
-        "fighting",
-        "minor_injury",
-        "respect",
-        "trust",
-        "rel_patrol",
-        "patrol_to_r_c"
-    ],
-    "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
-    "decline_text": "Your patrol decides not to pursue the fox.",
-    "chance_of_success": 90,
-    "exp": 30,
-    "success_text": [
-        "Led by p_l and with a heap of cooperation and teamwork, the patrol drives away the gray fox, and seeks out her den. But her cubs are near full-grown with the bounty of leaf-fall, and scatter from the patrol into the wilderness. Hopefully leaf-bare takes care of them.",
-        "With so many cats working together in tight coordination, they're able to keep the gray vixen they find pinned and distracted as they wear her down. The fox eventually flees for her den, and the patrol follows to drive her near-full grown litter of fox cubs out from the territory. Hopefully the coming leaf-bare will take care of them.",
-        "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the gray fox nor her scattered cubs pose a threat to the Clan. It places s_c as one of c_n's most talented and skillful fighters, a gray fox is a dangerous competitor.",
-        "Bravely, s_c charges the gray fox, yowling threats. The vixen spooks and skitters up a tree, growling and barking in a squeaky tone, and s_c follows her up into the branches. As the rest of the patrol backs them up from the ground, s_c screams until the fox is cowering and afraid, then lets her flee."
-    ],
-    "fail_text": [
-        "The patrol comes across a gray vixen at the end of the scent trail. She spots them too, measures herself up against them, then flees, scrambling into the trees in a move that completely surprises the cats. This round goes to the gray fox.",
-        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarasses them deeply the gray vixen slips past them and flees further into the forest.",
-        null,
-        "The patrol finds a stocky gray vixen wandering their forest, and drives her out in a scene that mostly involves yowling and screaming and yapping at each other until she gives in. r_c gets a little battered, but everyone is mostly fine.",
-        null,
-        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking them ass over paws as she flees from the patrol."
-    ],
-    "win_skills": [
-        "excellent fighter"
-    ],
-    "win_trait": [
-        "adventurous",
-        "altruistic",
-        "ambitious",
-        "bloodthirsty",
-        "bold",
-        "confident",
-        "daring",
-        "fierce",
-        "responsible",
-        "righteous",
-        "troublesome",
-        "vengeful"
-    ],
-    "fail_skills": [
-        "good fighter"
-    ],
-    "fail_trait": [
-        "None"
-    ],
-    "min_cats": 4,
-    "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a red fox fight."
-    ]
-},
-{
-    "patrol_id": "fst_hunt_grayvixen9",
-    "biome": "forest",
-    "season": "leaf-fall",
-    "tags": [
-        "fighting",
-        "scar",
-        "big_bite_injury",
-        "respect",
-        "trust",
-        "clan_to_patrol"
-    ],
-    "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
-    "decline_text": "Your patrol decides not to pursue the fox.",
-    "chance_of_success": 50,
-    "exp": 50,
-    "success_text": [
-        "In an exhausting fight, r_c manages to bring down and kill the gray vixen they've tracked. Her near grown litter, fat on the bounty of leaf-fall, is a challenge for another day. c_n will have to deal with the young foxes now roaming motherless in their woods, before they start to compete for prey in leaf-bare.",
-        null,
-        "s_c displays incredible skill, driving the mother vixen and her brood out of the forest all by themselves. Now neither the gray fox nor her cubs pose a threat to the Clan. They swell with pride, returning to camp knowing there's one less competitor poaching c_n's prey.",
-        "They're nearly of equal height, with s_c's bold aggression making up for the weight that the gray vixen has on them, and the stand off is resolved when s_c charges the gray fox and she chooses flight over fight."
-    ],
-    "fail_text": [
-        "r_c comes across a gray vixen at the end of the scent trail. She spots them too, measures herself up against them, then flees, scrambling into the trees in a move that completely surprises r_c. This round goes to the gray fox.",
-        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarasses them deeply the gray vixen slips past them and flees further into the forest.",
-        null,
-        "r_c nearly managed to pin the gray vixen they found into a thorn ticket, but snapping jaws leave r_c dripping blood onto the leaf litter. Today this round goes to the gray fox.",
-        null,
-        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the stocky gray vixen is cunning, sinking her teeth into s_c to distract them as she flees."
-    ],
-    "win_skills": [
-        "excellent fighter"
-    ],
-    "win_trait": [
-        "adventurous",
-        "altruistic",
-        "ambitious",
-        "bloodthirsty",
-        "bold",
-        "confident",
-        "daring",
-        "fierce",
-        "responsible",
-        "righteous",
-        "troublesome",
-        "vengeful"
-    ],
-    "fail_skills": [
-        "good fighter"
-    ],
-    "fail_trait": [
-        "None"
-    ],
-    "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from a solo fight with a gray vixen."
-    ]
-},
-{
-    "patrol_id": "fst_hunt_genmouse3",
-    "biome": "forest",
-    "season": "leaf-fall",
-    "tags": [
-        "hunting",
-        "no_app",
-        "medium_prey"
-    ],
-    "intro_text": "r_c catches scent of a mouse nearby. It'll be fat on the nuts and acorns leaf-fall scatters through the forest, and if r_c can only avoid the leaves crunching under their paws it's as good as caught.",
-    "decline_text": "Your patrol ignores the mouse.",
-    "success_text": [
-        "r_c locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. r_c waggles their haunches and leaps, pinning the mouse beneath a paw as they make the killing bite.",
-        "r_c pinpoints the location of the prey and begins creeping forward. They're almost within pouncing distance when the mouse suddenly bolts. With a lash of their tail, r_c leaps after the mouse, barely snagging it before it reaches a burrow. They purr in satisfaction as prey-blood hits their tongue.",
-        "s_c immediately drops into a practiced crouch, shimmying flawlessly along the ground and taking the perfectly plump mouse completely by surprise."
-    ],
-    "fail_text": [
-        "r_c narrowly misses the mouse."
-    ],
-    "chance_of_success": 50,
-    "exp": 10,
-    "win_skills": [
-        "good hunter",
-        "great hunter",
-        "fantastic hunter"
-    ],
-    "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
-},
-{
-    "patrol_id": "fst_hunt_genappmouse3",
-    "biome": "forest",
-    "season": "leaf-fall",
-    "tags": [
-        "hunting",
-        "apprentice",
-        "medium_prey"
-    ],
-    "intro_text": "app1 catches scent of a mouse nearby. They look at the leaf litter on the ground - are they good enough to stalk without being heard?",
-    "decline_text": "Your patrol ignores the mouse.",
-    "chance_of_success": 30,
-    "exp": 30,
-    "success_text": [
-        "r_c pounces on the mouse, with a squeak of surprise from both prey and apprentice.",
-        "app1 leaps onto the mouse, an easy kill! They're really getting the hang of hunting!"
-    ],
-    "fail_text": [
-        "Your patrol narrowly misses the mouse."
-    ],
-    "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
-},
-{
-    "patrol_id": "gen_hunt_genmentormouse3",
-    "biome": "forest",
-    "season": "leaf-fall",
-    "tags": [
-        "hunting",
-        "apprentice",
-        "small_prey",
-        "comfort",
-        "trust",
-        "warrior"
-    ],
-    "intro_text": "app1 catches scent of a mouse nearby. p_l nods, and asks them if app1 remembers their tips on stalking on leaf-fall's, well, fallen leaves.",
-    "decline_text": "Your patrol ignores the mouse.",
-    "chance_of_success": 50,
-    "exp": 20,
-    "success_text": [
-        "app1 pounces on the mouse, with a squeak of surprise from both prey and apprentice. They look up, holding their fresh-kill, meeting p_l's eyes with a purr.",
-        "app1 leaps onto the mouse, an easy kill! They're really getting the hang of hunting, p_l tells them, and as the pair head back home there's a happy bounce in app1's steps."
-    ],
-    "fail_text": [
-        "app1 narrowly misses the mouse, their tail drooping sadly as it scurries off into the distance."
-    ],
-    "min_cats": 2,
-    "max_cats": 2,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
-},
-{
-    "patrol_id": "fst_hunt_mice_ohnotheyrehot3",
-    "biome": "forest",
-    "season": "leaf-fall",
-    "tags": [
-        "hunting",
-        "romantic",
-        "respect",
-        "pos_jealous",
-        "pos_dislike",
-        "p_l_to_r_c",
-        "medium_prey"
-    ],
-    "intro_text": "As the patrol heads out into the forest to hunt, r_c seems to be absolutely unconcerned with their duties, instead ambling along as through the prey is going to waltz into their paws.",
-    "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
-    "chance_of_success": 50,
-    "exp": 20,
-    "success_text": [
-        "r_c makes it look easy, and when the patrol is done mousing everyone else ends up carrying catches mostly brought down by them. They lead the way back to camp, sauntering with a distinctly smug sway of their hips.",
-        null,
-        "Of course s_c is unconcerned, s_c knows their own skills well, and mice? not a challenge. After their fifth catch the rest of the patrol is forced to admit they might have a point about not needing to worry.",
-        "As the patrol settles in, tracking mouse scent mostly, s_c wanders back, and as they put a paw down the ground squeaks. They lean down, jaws snapping, and meet the eyes of the rest of the patrol with an insolent smirk."
-    ],
-    "fail_text": [
-        "r_c doesn't bring much home, impressing nobody."
-    ],
-    "win_skills": [
-        "good hunter",
-        "great hunter",
-        "fantastic hunter"
-    ],
-    "win_trait": [
-        "bold",
-        "charismatic",
-        "childish",
-        "confident",
-        "daring",
-        "fierce",
-        "shameless",
-        "troublesome"
-    ],
-    "min_cats": 3,
-    "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
-},
-{
-    "patrol_id": "fst_hunt_mice3",
-    "biome": "forest",
-    "season": "leaf-fall",
-    "tags": [
-        "hunting",
-        "respect",
-        "patrol_to_r_c",
-        "medium_prey0",
-        "large_prey1",
-        "large_prey2"
-    ],
-    "intro_text": "As the patrol heads out into the forest to hunt, r_c suggests a good sheltered gully. It's a little far from camp, but the hunting around there is good, particularly for mice.",
-    "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
-    "chance_of_success": 60,
-    "exp": 20,
-    "success_text": [
-        "As they arrive, the patrol startles two mice, and r_c manages to react quick enough with an inelegant pounce to kill one. It's a good omen for the rest of the morning's work, which proves to be a productive and satisfying hunt.",
-        "Your cats sneak into the hunting grounds, ears rotating as different spots catch their interest. r_c's suggestion proves to be a fruitful hunting ground, one that c_n hasn't used for a while and whose creatures (as predicted, nearly all mice) have lost their edge of wariness. It's a good hunt.",
-        "These are the times that it really pays to have a hunter of s_c's caliber on the patrol - they really go above and beyond, impressing everyone and leaving a trail of terror among the local mice."
-    ],
-    "fail_text": [
-        "Ah. r_c's suggested hunting grounds don't work out, not that anyone blames them for it."
-    ],
-    "win_skills": [
-        "good hunter",
-        "great hunter",
-        "fantastic hunter"
-    ],
-    "min_cats": 3,
-    "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
-},
-{
-	"patrol_id": "fst_hunt_gensquirrel3",
-	"biome": "forest",
-	"season": "leaf-fall",
-	"tags": [
-		"hunting",
-		"no_app",
-		"medium_prey"
-	],
-	"intro_text": "r_c tastes the air and perks up - there's a squirrel nearby, nibbling on some nuts near the base of a tree!",
-	"decline_text": "After a moment's deliberation, r_c decides to move on.",
-	"chance_of_success": 50,
-	"exp": 10,
-	"success_text": [
-		"The wind suddenly shifts, and the squirrel jerks its head up in alarm. r_c thinks fast, bolting to cut off its escape before delivering the killing blow.",
-		"Though it tries to escape, r_c is faster and smarter - they slam a paw down on the squirrel's tail before it can go very far, and kill it with ease.",
-		"r_c silently slinks through the underbrush, going undetected until they've pounced - and by then it's far too late for the squirrel to do anything about it."
-	],
-	"fail_text": [
-		"r_c breaks a twig as they ready themself to pounce, and the resulting crack alerts the squirrel. It doesn't even spare them a glance as it scurries up the tree and out of sight."
-	],
-	"win_skills": [
-		"good hunter",
-		"great hunter",
-		"fantastic hunter"
-	],   
-	"min_cats": 1,
-	"max_cats": 1,
-	"antagonize_text": null,
-	"antagonize_fail_text": null
-},
-{
-	"patrol_id": "fst_hunt_genappsquirrel3",
-	"biome": "forest",
-	"season": "leaf-fall",
-	"tags": [
-		"hunting",
-		"apprentice",
-		"medium_prey"
-	],
-	"intro_text": "app1 scents a squirrel on the air! The dried leaves on the ground make them a little nervous, and they wonder if they can navigate quietly enough to catch it...",
-	"decline_text": "They decide to move on and ignore the squirrel for now.",
-	"chance_of_success": 30,
-	"exp": 30,
-	"success_text": [
-		"app1 slides into a hunting pose, trying not to focus too hard on making it perfect. They're right not to - their catch is flawless, and they return home with their chest puffed out in pride.",
-		"Though they're a little sloppy, and the squirrel quickly spots them, app1 manages to secure the catch in the end!"
-	],
-	"fail_text": [
-		"Poor app1 focuses too hard on making sure their hunting crouch is correct - by the time they feel ready, the squirrel is long gone."
-	],
-	"min_cats": 1,
-	"max_cats": 1,
-	"antagonize_text": null,
-	"antagonize_fail_text": null
-},
-{
-	"patrol_id": "gen_hunt_genmentorsquirrel3",
-	"biome": "forest",
-	"season": "leaf-fall",
-	"tags": [
-		"hunting",
-		"apprentice",
-		"medium_prey",
-		"comfort",
-		"trust",
-		"warrior"
-	],
-	"intro_text": "p_l instructs app1 to scent the air, and nods in approval when app1 says they smell squirrel. Leaf-fall makes hunting a little trickier, and p_l gently prompts app1 to see if they remember how to navigate the leaf-litter.",
-	"decline_text": "app1 looks apprehensive, and quietly says they want to look for something easier.",
-	"chance_of_success": 50,
-	"exp": 20,
-	"success_text": [
-		"app1 slides into a hunting pose, trying not to focus too hard on making it perfect. They're right not to - their catch is flawless, and they puff their chest out in pride as p_l praises them.",
-		"Though they're a little sloppy, and the squirrel quickly spots them, app1 manages to secure the catch in the end! p_l looks pleased, and gives them tips to improve their technique next time."
-	],
-	"fail_text": [
-		"A too-high tail brushing against the bushes is all that's needed to scare the squirrel away, and app1 watches in disappointment as it scampers away."
-	],
-	"min_cats": 2,
-	"max_cats": 2,
-	"antagonize_text": null,
-	"antagonize_fail_text": null
-},
-{
-	"patrol_id": "fst_hunt_squirrel_treetoptumble3",
-	"biome": "forest",
-	"season": "leaf-fall",
-	"tags": [
-		"hunting",
-		"deputy",
-		"platonic",
-		"respect",
-		"trust",
-		"medium_prey",
-		"herb",
-		"oak_leaves",
-		"injury",
-		"broken bone"
-	],
-	"intro_text": "As the patrol walks through the forest, a loud chittering from above interrupts them. One cat looks up just in time to get a shower of twigs and dead leaves to the face, while another exclaims aloud as they spot squirrels darting through the branches above.",
-	"decline_text": "Though they snort in amusement, the patrol decides to move on to easier prey, rather than waste their energy amongst the trees.",
-	"chance_of_success": 50,
-	"exp": 40,
-	"success_text": [
-		"Before anyone can even speak, there's a loud crack from above. The cats scatter as a branch crashes down, bringing both squirrels and a shower of oak leaves with it! The patrol thinks fast, and pounce on the squirrels before they can escape. They head home with their bounty, each cat feeling quite pleased with themself.",
-		"A mischievous look in their eye, the deputy challenges their Clanmates - whoever catches one of the squirrels gets to skip dawn patrol for a whole moon. They're all eager to shimmy up the trees at that, and before long someone calls out in triumph. Not only do they have the squirrel, they have a pawful of oak leaves for the medicine cat!",
-		"With a glint in their eye, s_c is up in the trees before anyone can say anything. There's rustling, a short pause, then squirrel carcasses begin falling to the ground, one by one. s_c descends when they've finished with a mouthful of oak leaves, curling their tail in pride at the looks on their Clanmates faces."
-	],
-	"fail_text": [
-		"Though they try to climb the trees in pursuit, the squirrels are much more suited to running along the branches, and they easily leave the patrol floundering as they disappear into the distance.",
-		null,
-		null,
-		"The patrol fans out, some cats climbing, some staying on the ground. The hunt comes to an abrupt end, however, when r_c yowls in fear as they plummet from the branches and land heavily on the ground. Their Clanmates help them home and settle them into the medicine cat's den, guilt and regret prickling at them for pursuing such a foolhardy hunt."
-	],
-	"win_skills": [
-		"good hunter",
-		"great hunter",
-		"fantastic hunter"
-	],
-	"min_cats": 3,
-	"max_cats": 6,
-	"antagonize_text": null,
-	"antagonize_fail_text": null
-},
-{
-	"patrol_id": "fst_hunt_squirrel3",
-	"biome": "forest",
-	"season": "leaf-fall",
-	"tags": [
-		"hunting",
-		"respect",
-		"patrol_to_r_c",
-		"medium_prey0",
-		"large_prey1",
-		"large_prey2"
-	],
-	"intro_text": "As the patrol crunches through the dead leaves littering the woods, r_c explains an idea they had for squirrel hunting. It sounds a little strange, but perhaps it could work?",
-	"decline_text": "The patrol decides they'd rather not spend time on something that might not work when they could be doing something they know <i>does</i>.",
-	"chance_of_success": 60,
-	"exp": 20,
-	"success_text": [
-		"r_c suggests baiting the squirrels with food and picking them off when they come out to eat. It's pretty tedious, and they end up having to move a few times, but it does work, and the patrol heads home with a decent amount of prey.",
-		"r_c suggests baiting the squirrels with food and picking them off when they come out to eat. Waiting is the most difficult part; the squirrels don't seem to expect the trap, and they come home laden with prey.",
-		"r_c suggests baiting the squirrels with food and picking them off when they come out to eat. All the patrol has to do is set the trap - with s_c on the patrol, they rarely have to lift a paw, and each cat carries multiple squirrels home."
-	],
-	"fail_text": [
-		"r_c suggests finding squirrels sheltered in trees, climbing above them, and shaking the branches to scare them down. Unfortunately for them, the idea is a little too far out there, and while they do manage a few small catches, the day is mostly wasted with little to show for it."
-	],
-	"win_skills": [
-		"good hunter",
-		"great hunter",
-		"fantastic hunter"
-	],
-	"min_cats": 3,
-	"max_cats": 6,
-	"antagonize_text": null,
-	"antagonize_fail_text": null
-},
-{
-    "patrol_id": "fst_hunt_leaffallvanish1",
-    "biome": "forest",
-    "season": "leaf-fall",
-    "tags": ["hunting", "no_app", "small_prey0", "medium_prey1", "dislike", "distrust", "disrespect", "patrol_to_r_c", "large_prey3", "injury", "sprain", "sore", "shivering"],
-    "intro_text": "The rain seems a constant, unceasing beat, punctuating the steps of the hunting patrol as they march towards their hunting ground. But there's one less set of footsteps than there should be. p_l can't see r_c in the watery haze.",
-    "decline_text": "r_c eventually catches up.",
-    "chance_of_success": 40,
-    "exp": 20,
-    "success_text": [
-            "The patrol backtracks. r_c is found, huddled under a bush - they lost the path, and sight of their clanmates, but sensibly remained put. It's one more obstacle in a miserable day of hunting. They return with prey, but it's exhausting and barely worth the effort.",
-            "p_l nearly jumps out of their pelt when r_c materialises next to them. Where in StarClan have they been?! But no, r_c has found a corpse of trees so thick and overgrowth that they're merely damp, not soaked. It's better than p_l could have hoped for, and the hunting patrol can return to camp with a decent haul.",
+    {
+        "patrol_id": "fst_hunt_fox_leaf-fallscavenge1",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting",
+            "fighting",
+            "scar",
+            "injury",
+            "bite-wound",
+            "clan_to_patrol",
+            "respect",
+            "rel_patrol",
+            "medium_prey0",
+            "medium_prey1",
+            "large_prey2",
+            "large_prey3"
+        ],
+        "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find their red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it.",
+        "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
+        "chance_of_success": 50,
+        "exp": 20,
+        "success_text": [
+            "Your cats are smaller but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
             null,
-            "p_l, leading the search for s_c, hears a yowl in the distance. They charge towards the sound, swerving around trees, spotting s_c at the base of a hazel. They're staring up, tail lashing intently. On a branch above the cats, an owl sits with drooping, waterlogged wings. <i>Oh.</i> Yes, that'll do nicely."
-    ],
-    "fail_text": [
-            "p_l is silently furious at r_c when they find them. Leaf-fall is no time to waste what could have been a productive hunting patrol with whatever nonsence r_c was up to.",
+            "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until it gives up and runs.",
+            "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
+        ],
+        "fail_text": [
+            "Your patrol fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
+            null,
+            null,
+            "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
+            null,
+            "s_c means well, but they're overconfident in their attack and the fox manages to sink their teeth into them. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
+        ],
+        "win_skills": [
+            "good fighter",
+            "great fighter",
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "adventurous",
+            "altruistic",
+            "ambitious",
+            "confident",
+            "daring",
+            "fierce",
+            "responsible",
+            "righteous"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "troublesome",
+            "vengeful",
+            "bloodthirsty",
+            "bold"
+        ],
+        "min_cats": 2,
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from a fox fight.",
+            null
+        ]
+    },
+    {
+        "patrol_id": "fst_hunt_fox_leaf-fallscavenge2",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting",
+            "fighting",
+            "scar",
+            "injury",
+            "bite-wound",
+            "clan_to_patrol",
+            "respect",
+            "rel_patrol",
+            "medium_prey0",
+            "medium_prey1",
+            "large_prey2",
+            "large_prey3"
+        ],
+        "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find their red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it.",
+        "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
+        "chance_of_success": 80,
+        "exp": 20,
+        "success_text": [
+            "Your cats are smaller but heavily outnumber the fox, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
+            null,
+            "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until s_c lands a crucial blow, snapping a tendon in one of the fox's hindlegs. The fox runs, but there's no way it'll live long with such a crippling injury.",
+            "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. Holding on grimly, s_c's daring move gives the rest of the patrol the opportunity needed to bring the fox down for good."
+        ],
+        "fail_text": [
+            "Your patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there were no injuries.",
+            null,
+            null,
+            "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
+            null,
+            "s_c means well, but they're overconfident in their attack and the fox manages to sink their teeth into them. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
+        ],
+        "win_skills": [
+            "good fighter",
+            "great fighter",
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "adventurous",
+            "altruistic",
+            "ambitious",
+            "confident",
+            "daring",
+            "fierce",
+            "responsible",
+            "righteous"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "troublesome",
+            "vengeful",
+            "bloodthirsty",
+            "bold"
+        ],
+        "min_cats": 4,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from a fox fight."
+        ]
+    },
+    {
+        "patrol_id": "fst_hunt_fox_leaf-fallscavenge3",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting",
+            "fighting",
+            "death",
+            "scar",
+            "injury",
+            "bite-wound",
+            "clan_to_patrol",
+            "respect",
+            "medium_prey0",
+            "medium_prey1",
+            "large_prey2",
+            "large_prey3"
+        ],
+        "intro_text": "r_c catches the scent of a fox - but is it red, or gray? Tracking it, they find their red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it.",
+        "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
+        "chance_of_success": 30,
+        "exp": 30,
+        "success_text": [
+            "r_c may be smaller, alone, and half its weight, but the fox has a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle. The fox, already stuffed full of venison and unwilling to lose blood over it, leaves the kill with a grumble.",
+            null,
+            "s_c uses every trick in their talented fighting skillset to attack the fox with no one to watch their flank, until the perfect opportunity opens up and they pounce onto the fox's back, digging in their claws. It's a wild ride through the forest until the fox bucks them off, but it wins them the fawn carcass.",
+            "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. But then they're stuck, unwilling to let go and risk being bitten. They're dragged through the forest, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the fawn."
+        ],
+        "fail_text": [
+            "r_c fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
+            null,
+            "Fiercely, r_c throws themselves at the fox, determined to win the fawn prize. But the fox values it just as dearly, and manages to get a good grip on r_c, shaking them to pieces and killing them.",
+            "r_c launches into battle, but is caught with a nasty bite, and retreats to limp back home. The fox doesn't follow, happy enough to eat the fawn instead of the foolish cat.",
+            null,
+            "s_c is overconfident in their attack and the fox manages to sink their teeth into them. They retreat, bleeding and in pain, and the fox settles back down to its meal."
+        ],
+        "win_skills": [
+            "great fighter",
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "adventurous",
+            "altruistic",
+            "ambitious",
+            "confident",
+            "daring",
+            "fierce",
+            "responsible",
+            "righteous"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "troublesome",
+            "vengeful",
+            "bloodthirsty",
+            "bold"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from a solo fox fight.",
+            "r_c fell in a solo battle with a fox.",
+            "died while fighting a fox"
+        ]
+    },
+    {
+        "patrol_id": "fst_hunt_foxgray_leaf-fallscavenge1",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting",
+            "fighting",
+            "scar",
+            "injury",
+            "bite-wound",
+            "clan_to_patrol",
+            "respect",
+            "rel_patrol",
+            "medium_prey0",
+            "medium_prey1",
+            "large_prey2",
+            "large_prey3"
+        ],
+        "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find a stocky gray fox feeding on a deer fawn carcass. A gray fox is unlikely to have killed a fawn this size.",
+        "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
+        "chance_of_success": 70,
+        "exp": 20,
+        "success_text": [
+            "The cats are only just smaller and outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
+            null,
+            "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until it gives up and runs.",
+            "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
+        ],
+        "fail_text": [
+            "Your patrol fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
+            "s_c makes a stupid mistake, too intent on winning the fight to respect their enemy's teeth, and it's only being yanked back by the tail that saves them from injury. The patrol gives up, and settles down to wait a safe distance away until the fox leaves of its own accord.",
+            null,
+            null,
+            null,
+            "s_c means well, but they're overconfident in their attack and the fox manages to sink their teeth into them. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
+        ],
+        "win_skills": [
+            "good fighter",
+            "great fighter",
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "adventurous",
+            "altruistic",
+            "ambitious",
+            "confident",
+            "daring",
+            "fierce",
+            "responsible",
+            "righteous"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "troublesome",
+            "vengeful",
+            "bloodthirsty",
+            "bold"
+        ],
+        "min_cats": 2,
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from a fox fight.",
+            null
+        ]
+    },
+    {
+        "patrol_id": "fst_hunt_foxgray_leaf-fallscavenge2",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting",
+            "fighting",
+            "scar",
+            "injury",
+            "clan_to_patrol",
+            "respect",
+            "rel_patrol",
+            "medium_prey0",
+            "medium_prey1",
+            "large_prey2",
+            "large_prey3"
+        ],
+        "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find a stocky gray fox feeding on a deer fawn carcass. A gray fox is unlikely to have killed a fawn this size.",
+        "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
+        "chance_of_success": 90,
+        "exp": 20,
+        "success_text": [
+            "Your cats are only just smaller and heavily outnumber the fox, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of venison and unwilling to lose blood over it, is driven off from the kill.",
+            null,
+            "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until s_c lands a crucial blow, snapping a tendon in one of the fox's hind legs. The fox runs, but there's no way it'll live long with such a crippling injury.",
+            "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. Holding on grimly, s_c's daring move gives the rest of the patrol the opportunity needed to bring the fox down for good."
+        ],
+        "fail_text": [
+            "Your patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there were no injuries.",
+            "s_c makes a stupid mistake, too intent on winning the fight to respect their enemy's teeth, and it's only being yanked back by the tail that saves them from injury. The patrol gives up, and settles down to wait a safe distance away until the fox leaves of its own accord."
+        ],
+        "win_skills": [
+            "good fighter",
+            "great fighter",
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "adventurous",
+            "altruistic",
+            "ambitious",
+            "confident",
+            "daring",
+            "fierce",
+            "responsible",
+            "righteous"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "troublesome",
+            "vengeful",
+            "bloodthirsty",
+            "bold"
+        ],
+        "min_cats": 4,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from a fox fight."
+        ]
+    },
+    {
+        "patrol_id": "fst_hunt_foxgray_leaf-fallscavenge3",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting",
+            "fighting",
+            "scar",
+            "injury",
+            "bite-wound",
+            "clan_to_patrol",
+            "respect",
+            "medium_prey0",
+            "medium_prey1",
+            "large_prey2",
+            "large_prey3"
+        ],
+        "intro_text": "r_c catches the scent of a fox - but is it red, or gray? Tracking it, they find a stocky gray fox feeding on a deer fawn carcass. A gray fox is unlikely to have killed a fawn this size.",
+        "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
+        "chance_of_success": 50,
+        "exp": 30,
+        "success_text": [
+            "r_c may be smaller, alone, and half its weight, but the fox has a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle. The fox, already stuffed full of venison and unwilling to lose blood over it, leaves the kill with a grumble.",
+            null,
+            "s_c uses every trick in their talented fighting skillset to attack the fox with no one to watch their flank, until the perfect opportunity opens up and they pounce onto the fox's back, digging in their claws. It's a wild ride through the forest until the fox bucks them off, but it wins them the fawn carcass.",
+            "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. But then they're stuck, unwilling to let go and risk being bitten. They're dragged through the forest, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the fawn."
+        ],
+        "fail_text": [
+            "r_c fails to drive away the gray fox, which keeps possession of the food. However, there were no injuries.",
+            "s_c makes a stupid mistake, too intent on winning the fight to respect their enemy's teeth, and it's tripping over their own feet that saves them. They give up, and settle down to wait a safe distance away until the fox leaves of its own accord.",
+            null,
+            "r_c launches into battle, but is caught with a nasty bite, and retreats to limp back home. The gray fox doesn't follow, happy enough to eat the fawn instead of the foolish cat.",
+            null,
+            "s_c is overconfident in their attack and the fox manages to sink their teeth into them. They retreat, bleeding and in pain, and the gray fox settles back down to its meal."
+        ],
+        "win_skills": [
+            "great fighter",
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "adventurous",
+            "altruistic",
+            "ambitious",
+            "confident",
+            "daring",
+            "fierce",
+            "responsible",
+            "righteous"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "troublesome",
+            "vengeful",
+            "bloodthirsty",
+            "bold"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from a solo fox fight.",
+            null
+        ]
+    },
+    {
+        "patrol_id": "fst_hunt_redvixen7",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "fighting",
+            "death",
+            "scar",
+            "big_bite_injury",
+            "respect",
+            "trust",
+            "clan_to_r_c",
+            "patrol_to_r_c",
+            "clan_to_patrol"
+        ],
+        "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
+        "decline_text": "Your patrol decides not to pursue the fox.",
+        "chance_of_success": 30,
+        "exp": 30,
+        "success_text": [
+            "The red vixen smells like the prey she's been poaching to feed her litter. She's stolen from c_n for the last time, and the patrol drives her from their territory, yowling their anger and fury.",
+            "Your patrol drives away the red fox, and seeks out her den, but her leaf-fall cubs are near full-grown and scatter into the wilderness. Hopefully leaf-bare takes care of them.",
+            "s_c displays incredible skill, driving the red mother vixen out of the territory almost by themselves. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
+            "The patrol overcomes the red vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
+        ],
+        "fail_text": [
+            "The mother red fox is vicious and determined, and the small patrol is beaten back. But this forest belongs to c_n, and they haven't given up. They may have lost this battle, but c_n will win this war.",
+            "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the rest of the patrol have to rescue them from the red vixen.",
+            "Never threaten a mother's young - the red vixen kills r_c in the skirmish.",
+            "The mother red fox's snapping jaws leave r_c dripping blood onto the leaf litter, forcing the patrol to back off.",
+            null,
+            "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the red vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up on the fight.",
+            "As their hunt descends into a full on battle with the red vixen, p_l takes a blow meant for one of their Clanmates, losing a life."
+        ],
+        "win_skills": [
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "adventurous",
+            "altruistic",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "confident",
+            "daring",
+            "fierce",
+            "responsible",
+            "righteous",
+            "troublesome",
+            "vengeful"
+        ],
+        "fail_skills": [
+            "good fighter"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 2,
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from a fox fight.",
+            "r_c fell in battle with a fox.",
+            "died while fighting a vixen"
+        ]
+    },
+    {
+        "patrol_id": "fst_hunt_redvixen8",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "fighting",
+            "scar",
+            "big_bite_injury",
+            "respect",
+            "trust",
+            "clan_to_r_c",
+            "patrol_to_r_c",
+            "clan_to_patrol"
+        ],
+        "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
+        "decline_text": "Your patrol decides not to pursue the fox.",
+        "chance_of_success": 60,
+        "exp": 30,
+        "success_text": [
+            "Led by p_l and with a heap of cooperation and teamwork, the patrol drives away the red fox, and seeks out her den. But her cubs are near full-grown with the bounty of leaf-fall, and scatter from the patrol into the wilderness. Hopefully leaf-bare takes care of them.",
+            "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the red mother vixen and ending the threat to the Clan that she poses. The patrol drives her near-full grown litter of fox cubs out from the territory. Hopefully the coming leaf-bare will take care of them.",
+            "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the red fox nor her cubs pose a threat to c_n.",
+            "The patrol overcomes the red vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
+        ],
+        "fail_text": [
+            "The mother red fox is vicious and determined. Although they lose this battle, through teamwork the cats manage to retreat without injury.",
+            "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the red vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up the fight.",
+            null,
+            "r_c is left wounded as the patrol and the red mother vixen fight to a stalemate. Hopefully they've given the fox mother a reason not to return to this part of the forest."
+        ],
+        "win_skills": [
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "adventurous",
+            "altruistic",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "confident",
+            "daring",
+            "fierce",
+            "responsible",
+            "righteous",
+            "troublesome",
+            "vengeful"
+        ],
+        "fail_skills": [
+            "good fighter"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 4,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from a red fox fight."
+        ]
+    },
+    {
+        "patrol_id": "fst_hunt_redvixen9",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "fighting",
+            "death",
+            "scar",
+            "big_bite_injury",
+            "shock",
+            "injury",
+            "respect",
+            "trust",
+            "clan_to_patrol",
+            "no_body"
+        ],
+        "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
+        "decline_text": "Your patrol decides not to pursue the fox.",
+        "chance_of_success": 20,
+        "exp": 50,
+        "success_text": [
+            "It takes r_c's every scrap of bravery and strength to drive away the red vixen - her near grown litter, fat on the bounty of leaf-fall, is a challenge for another day. c_n will have to deal with the young foxes now roaming motherless in their woods, before they start to compete for prey in leaf-bare.",
+            null,
+            "s_c displays incredible skill, driving the mother vixen and her brood out of the forest all by themselves. Now neither the red fox nor her cubs pose a threat to the Clan. They swell with pride, feeling the confidence of knowing that they're truly one of the best fighters c_n has ever produced.",
+            "A brilliant battle move by s_c at a critical moment knocks the red vixen off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in their pelt to do it alone."
+        ],
+        "fail_text": [
+            null,
+            null,
+            "Never threaten a mother's young - the red vixen kills r_c in the skirmish, and carries off the body to feed her litter.",
+            "The mother red fox's snapping jaws leave r_c dripping blood onto the leaf litter, and barely able to escape further injury.",
+            null,
+            "s_c is determined to win, but the red vixen is determined to live, and that makes all the difference. s_c ends up pinned in a defensible hiding spot, bleeding and terrified, until the vixen judges them no longer a threat and continues on her way."
+        ],
+        "win_skills": [
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "adventurous",
+            "altruistic",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "confident",
+            "daring",
+            "fierce",
+            "responsible",
+            "righteous",
+            "troublesome",
+            "vengeful"
+        ],
+        "fail_skills": [
+            "good fighter"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from a solo fight with a red vixen.",
+            "r_c fell in a solo battle with a red vixen.",
+            "died while fighting a vixen"
+        ]
+    },
+    {
+        "patrol_id": "fst_hunt_grayvixen7",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "fighting",
+            "minor_injury",
+            "respect",
+            "trust",
+            "rel_patrol",
+            "patrol_to_r_c"
+        ],
+        "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
+        "decline_text": "Your patrol decides not to pursue the fox.",
+        "chance_of_success": 60,
+        "exp": 30,
+        "success_text": [
+            "The gray vixen smells like the prey she's been poaching to feed her litter. She's stolen from c_n for the last time, and the patrol drives her from their territory, yowling their anger and fury.",
+            "Your patrol drives away the gray fox, and seeks out her den, but her leaf-fall cubs are near full-grown and scatter into the wilderness. Hopefully leaf-bare takes care of them, but if c_n spots them, they won't hesitate.",
+            "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the gray fox nor her scattered cubs pose a threat to the Clan. It places s_c as one of c_n's most talented and skillful fighters, a gray fox is a dangerous competitor.",
+            "The patrol overcomes the gray vixen they find and drives her off thanks to a brilliant battle move by s_c. The cats swirl around s_c afterwards, congratulating them on their bravery and skill."
+        ],
+        "fail_text": [
+            "The patrol comes across a gray vixen at the end of the scent trail. She spots them too, measures herself up against them, then flees, scrambling into the trees in a move that completely surprises the cats. This round goes to the gray fox.",
+            "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the gray vixen slips past them and flees further into the forest.",
+            null,
+            "The patrol finds a stocky gray vixen wandering their forest, and drives her out in a scene that mostly involves yowling and screaming and yapping at each other until she gives in. r_c gets a little battered, but everyone is mostly fine.",
+            null,
+            "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking them tail over paws as she flees from the patrol."
+        ],
+        "win_skills": [
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "adventurous",
+            "altruistic",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "confident",
+            "daring",
+            "fierce",
+            "responsible",
+            "righteous",
+            "troublesome",
+            "vengeful"
+        ],
+        "fail_skills": [
+            "good fighter"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 2,
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from a fox fight.",
+            null
+        ]
+    },
+    {
+        "patrol_id": "fst_hunt_grayvixen8",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "fighting",
+            "minor_injury",
+            "respect",
+            "trust",
+            "rel_patrol",
+            "patrol_to_r_c"
+        ],
+        "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
+        "decline_text": "Your patrol decides not to pursue the fox.",
+        "chance_of_success": 90,
+        "exp": 30,
+        "success_text": [
+            "Led by p_l and with a heap of cooperation and teamwork, the patrol drives away the gray fox, and seeks out her den. But her cubs are near full-grown with the bounty of leaf-fall, and scatter from the patrol into the wilderness. Hopefully leaf-bare takes care of them.",
+            "With so many cats working together in tight coordination, they're able to keep the gray vixen they find pinned and distracted as they wear her down. The fox eventually flees for her den, and the patrol follows to drive her near-full grown litter of fox cubs out from the territory. Hopefully the coming leaf-bare will take care of them.",
+            "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the gray fox nor her scattered cubs pose a threat to the Clan. It places s_c as one of c_n's most talented and skillful fighters, a gray fox is a dangerous competitor.",
+            "Bravely, s_c charges the gray fox, yowling threats. The vixen spooks and skitters up a tree, growling and barking in a squeaky tone, and s_c follows her up into the branches. As the rest of the patrol backs them up from the ground, s_c screams until the fox is cowering and afraid, then lets her flee."
+        ],
+        "fail_text": [
+            "The patrol comes across a gray vixen at the end of the scent trail. She spots them too, measures herself up against them, then flees, scrambling into the trees in a move that completely surprises the cats. This round goes to the gray fox.",
+            "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the gray vixen slips past them and flees further into the forest.",
+            null,
+            "The patrol finds a stocky gray vixen wandering their forest, and drives her out in a scene that mostly involves yowling and screaming and yapping at each other until she gives in. r_c gets a little battered, but everyone is mostly fine.",
+            null,
+            "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the stocky gray vixen is all muscle, barging past s_c and knocking them tail over paws as she flees from the patrol."
+        ],
+        "win_skills": [
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "adventurous",
+            "altruistic",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "confident",
+            "daring",
+            "fierce",
+            "responsible",
+            "righteous",
+            "troublesome",
+            "vengeful"
+        ],
+        "fail_skills": [
+            "good fighter"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 4,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from a red fox fight."
+        ]
+    },
+    {
+        "patrol_id": "fst_hunt_grayvixen9",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "fighting",
+            "scar",
+            "big_bite_injury",
+            "respect",
+            "trust",
+            "clan_to_patrol"
+        ],
+        "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
+        "decline_text": "Your patrol decides not to pursue the fox.",
+        "chance_of_success": 50,
+        "exp": 50,
+        "success_text": [
+            "In an exhausting fight, r_c manages to bring down and kill the gray vixen they've tracked. Her near grown litter, fat on the bounty of leaf-fall, is a challenge for another day. c_n will have to deal with the young foxes now roaming motherless in their woods, before they start to compete for prey in leaf-bare.",
+            null,
+            "s_c displays incredible skill, driving the mother vixen and her brood out of the forest all by themselves. Now neither the gray fox nor her cubs pose a threat to the Clan. They swell with pride, returning to camp knowing there's one less competitor poaching c_n's prey.",
+            "They're nearly of equal height, with s_c's bold aggression making up for the weight that the gray vixen has on them, and the stand off is resolved when s_c charges the gray fox and she chooses flight over fight."
+        ],
+        "fail_text": [
+            "r_c comes across a gray vixen at the end of the scent trail. She spots them too, measures herself up against them, then flees, scrambling into the trees in a move that completely surprises r_c. This round goes to the gray fox.",
+            "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the gray vixen slips past them and flees further into the forest.",
+            null,
+            "r_c nearly managed to pin the gray vixen they found into a thorn ticket, but snapping jaws leave r_c dripping blood onto the leaf litter. Today this round goes to the gray fox.",
+            null,
+            "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the stocky gray vixen is cunning, sinking her teeth into s_c to distract them as she flees."
+        ],
+        "win_skills": [
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "adventurous",
+            "altruistic",
+            "ambitious",
+            "bloodthirsty",
+            "bold",
+            "confident",
+            "daring",
+            "fierce",
+            "responsible",
+            "righteous",
+            "troublesome",
+            "vengeful"
+        ],
+        "fail_skills": [
+            "good fighter"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from a solo fight with a gray vixen."
+        ]
+    },
+    {
+        "patrol_id": "fst_hunt_genmouse3",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting",
+            "no_app",
+            "medium_prey"
+        ],
+        "intro_text": "r_c catches scent of a mouse nearby. It'll be fat on the nuts and acorns leaf-fall scatters through the forest, and if r_c can only avoid the leaves crunching under their paws it's as good as caught.",
+        "decline_text": "Your patrol ignores the mouse.",
+        "success_text": [
+            "r_c locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. r_c waggles their haunches and leaps, pinning the mouse beneath a paw as they make the killing bite.",
+            "r_c pinpoints the location of the prey and begins creeping forward. They're almost within pouncing distance when the mouse suddenly bolts. With a lash of their tail, r_c leaps after the mouse, barely snagging it before it reaches a burrow. They purr in satisfaction as prey-blood hits their tongue.",
+            "s_c immediately drops into a practiced crouch, shimmying flawlessly along the ground and taking the perfectly plump mouse completely by surprise."
+        ],
+        "fail_text": [
+            "r_c narrowly misses the mouse."
+        ],
+        "chance_of_success": 50,
+        "exp": 10,
+        "win_skills": [
+            "good hunter",
+            "great hunter",
+            "fantastic hunter"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "fst_hunt_genappmouse3",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting",
+            "apprentice",
+            "medium_prey"
+        ],
+        "intro_text": "app1 catches scent of a mouse nearby. They look at the leaf litter on the ground - are they good enough to stalk without being heard?",
+        "decline_text": "Your patrol ignores the mouse.",
+        "chance_of_success": 30,
+        "exp": 30,
+        "success_text": [
+            "r_c pounces on the mouse, with a squeak of surprise from both prey and apprentice.",
+            "app1 leaps onto the mouse, an easy kill! They're really getting the hang of hunting!"
+        ],
+        "fail_text": [
+            "Your patrol narrowly misses the mouse."
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "gen_hunt_genmentormouse3",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting",
+            "apprentice",
+            "small_prey",
+            "comfort",
+            "trust",
+            "warrior"
+        ],
+        "intro_text": "app1 catches scent of a mouse nearby. p_l nods, and asks them if app1 remembers their tips on stalking on leaf-fall's, well, fallen leaves.",
+        "decline_text": "Your patrol ignores the mouse.",
+        "chance_of_success": 50,
+        "exp": 20,
+        "success_text": [
+            "app1 pounces on the mouse, with a squeak of surprise from both prey and apprentice. They look up, holding their fresh-kill, meeting p_l's eyes with a purr.",
+            "app1 leaps onto the mouse, an easy kill! They're really getting the hang of hunting, p_l tells them, and as the pair head back home there's a happy bounce in app1's steps."
+        ],
+        "fail_text": [
+            "app1 narrowly misses the mouse, their tail drooping sadly as it scurries off into the distance."
+        ],
+        "min_cats": 2,
+        "max_cats": 2,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "fst_hunt_mice_ohnotheyrehot3",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting",
+            "romantic",
+            "respect",
+            "pos_jealous",
+            "pos_dislike",
+            "p_l_to_r_c",
+            "medium_prey"
+        ],
+        "intro_text": "As the patrol heads out into the forest to hunt, r_c seems to be absolutely unconcerned with their duties, instead ambling along as through the prey is going to waltz into their paws.",
+        "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
+        "chance_of_success": 50,
+        "exp": 20,
+        "success_text": [
+            "r_c makes it look easy, and when the patrol is done mousing everyone else ends up carrying catches mostly brought down by them. They lead the way back to camp, sauntering with a distinctly smug sway of their hips.",
+            null,
+            "Of course s_c is unconcerned, s_c knows their own skills well, and mice? not a challenge. After their fifth catch the rest of the patrol is forced to admit they might have a point about not needing to worry.",
+            "As the patrol settles in, tracking mouse scent mostly, s_c wanders back, and as they put a paw down the ground squeaks. They lean down, jaws snapping, and meet the eyes of the rest of the patrol with an insolent smirk."
+        ],
+        "fail_text": [
+            "r_c doesn't bring much home, impressing nobody."
+        ],
+        "win_skills": [
+            "good hunter",
+            "great hunter",
+            "fantastic hunter"
+        ],
+        "win_trait": [
+            "bold",
+            "charismatic",
+            "childish",
+            "confident",
+            "daring",
+            "fierce",
+            "shameless",
+            "troublesome"
+        ],
+        "min_cats": 3,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "fst_hunt_mice3",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting",
+            "respect",
+            "patrol_to_r_c",
+            "medium_prey0",
+            "large_prey1",
+            "large_prey2"
+        ],
+        "intro_text": "As the patrol heads out into the forest to hunt, r_c suggests a good sheltered gully. It's a little far from camp, but the hunting around there is good, particularly for mice.",
+        "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "As they arrive, the patrol startles two mice, and r_c manages to react quick enough with an inelegant pounce to kill one. It's a good omen for the rest of the morning's work, which proves to be a productive and satisfying hunt.",
+            "Your cats sneak into the hunting grounds, ears rotating as different spots catch their interest. r_c's suggestion proves to be a fruitful hunting ground, one that c_n hasn't used for a while and whose creatures (as predicted, nearly all mice) have lost their edge of wariness. It's a good hunt.",
+            "These are the times that it really pays to have a hunter of s_c's caliber on the patrol - they really go above and beyond, impressing everyone and leaving a trail of terror among the local mice."
+        ],
+        "fail_text": [
+            "Ah. r_c's suggested hunting grounds don't work out, not that anyone blames them for it."
+        ],
+        "win_skills": [
+            "good hunter",
+            "great hunter",
+            "fantastic hunter"
+        ],
+        "min_cats": 3,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "fst_hunt_gensquirrel3",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting",
+            "no_app",
+            "medium_prey"
+        ],
+        "intro_text": "r_c tastes the air and perks up - there's a squirrel nearby, nibbling on some nuts near the base of a tree!",
+        "decline_text": "After a moment's deliberation, r_c decides to move on.",
+        "chance_of_success": 50,
+        "exp": 10,
+        "success_text": [
+            "The wind suddenly shifts, and the squirrel jerks its head up in alarm. r_c thinks fast, bolting to cut off its escape before delivering the killing blow.",
+            "Though it tries to escape, r_c is faster and smarter - they slam a paw down on the squirrel's tail before it can go very far, and kill it with ease.",
+            "r_c silently slinks through the underbrush, going undetected until they've pounced - and by then it's far too late for the squirrel to do anything about it."
+        ],
+        "fail_text": [
+            "r_c breaks a twig as they ready themself to pounce, and the resulting crack alerts the squirrel. It doesn't even spare them a glance as it scurries up the tree and out of sight."
+        ],
+        "win_skills": [
+            "good hunter",
+            "great hunter",
+            "fantastic hunter"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "fst_hunt_genappsquirrel3",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting",
+            "apprentice",
+            "medium_prey"
+        ],
+        "intro_text": "app1 scents a squirrel on the air! The dried leaves on the ground make them a little nervous, and they wonder if they can navigate quietly enough to catch it...",
+        "decline_text": "They decide to move on and ignore the squirrel for now.",
+        "chance_of_success": 30,
+        "exp": 30,
+        "success_text": [
+            "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. They're right not to - their catch is flawless, and they return home with their chest puffed out in pride.",
+            "Though they're a little sloppy, and the squirrel quickly spots them, app1 manages to secure the catch in the end!"
+        ],
+        "fail_text": [
+            "Poor app1 focuses too hard on making sure their hunting crouch is correct - by the time they feel ready, the squirrel is long gone."
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "fst_hunt_genmentorsquirrel3",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting",
+            "apprentice",
+            "medium_prey",
+            "comfort",
+            "trust",
+            "warrior"
+        ],
+        "intro_text": "p_l instructs app1 to scent the air, and nods in approval when app1 says they smell squirrel. Leaf-fall makes hunting a little trickier, and p_l gently prompts app1 to see if they remember how to navigate the leaf-litter.",
+        "decline_text": "app1 looks apprehensive, and quietly says they want to look for something easier.",
+        "chance_of_success": 50,
+        "exp": 20,
+        "success_text": [
+            "app1 slides into a hunting pose, trying not to focus too hard on making it perfect. They're right not to - their catch is flawless, and they puff their chest out in pride as p_l praises them.",
+            "Though they're a little sloppy, and the squirrel quickly spots them, app1 manages to secure the catch in the end! p_l looks pleased, and gives them tips to improve their technique next time."
+        ],
+        "fail_text": [
+            "A too-high tail brushing against the bushes is all that's needed to scare the squirrel away, and app1 watches in disappointment as it scampers away."
+        ],
+        "min_cats": 2,
+        "max_cats": 2,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "fst_hunt_squirrel_treetoptumble3",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting",
+            "deputy",
+            "platonic",
+            "respect",
+            "trust",
+            "medium_prey",
+            "herb",
+            "oak_leaves",
+            "injury",
+            "broken bone"
+        ],
+        "intro_text": "As the patrol walks through the forest, a loud chittering from above interrupts them. One cat looks up just in time to get a shower of twigs and dead leaves to the face, while another exclaims aloud as they spot squirrels darting through the branches above.",
+        "decline_text": "Though they snort in amusement, the patrol decides to move on to easier prey, rather than waste their energy amongst the trees.",
+        "chance_of_success": 50,
+        "exp": 40,
+        "success_text": [
+            "Before anyone can even speak, there's a loud crack from above. The cats scatter as a branch crashes down, bringing both squirrels and a shower of oak leaves with it! The patrol thinks fast, and pounce on the squirrels before they can escape. They head home with their bounty, each cat feeling quite pleased with themself.",
+            "A mischievous look in their eye, the deputy challenges their Clanmates - whoever catches one of the squirrels gets to skip dawn patrol for a whole moon. They're all eager to shimmy up the trees at that, and before long someone calls out in triumph. Not only do they have the squirrel, they have a pawful of oak leaves for the medicine cat!",
+            "With a glint in their eye, s_c is up in the trees before anyone can say anything. There's rustling, a short pause, then squirrel carcasses begin falling to the ground, one by one. s_c descends when they've finished with a mouthful of oak leaves, curling their tail in pride at the looks on their Clanmates faces."
+        ],
+        "fail_text": [
+            "Though they try to climb the trees in pursuit, the squirrels are much more suited to running along the branches, and they easily leave the patrol floundering as they disappear into the distance.",
+            null,
+            null,
+            "The patrol fans out, some cats climbing, some staying on the ground. The hunt comes to an abrupt end, however, when r_c yowls in fear as they plummet from the branches and land heavily on the ground. Their Clanmates help them home and settle them into the medicine cat's den, guilt and regret prickling at them for pursuing such a foolhardy hunt."
+        ],
+        "win_skills": [
+            "good hunter",
+            "great hunter",
+            "fantastic hunter"
+        ],
+        "min_cats": 3,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "fst_hunt_squirrel3",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting",
+            "respect",
+            "patrol_to_r_c",
+            "medium_prey0",
+            "large_prey1",
+            "large_prey2"
+        ],
+        "intro_text": "As the patrol crunches through the dead leaves littering the woods, r_c explains an idea they had for squirrel hunting. It sounds a little strange, but perhaps it could work?",
+        "decline_text": "The patrol decides they'd rather not spend time on something that might not work when they could be doing something they know <i>does</i>.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "r_c suggests baiting the squirrels with food and picking them off when they come out to eat. It's pretty tedious, and they end up having to move a few times, but it does work, and the patrol heads home with a decent amount of prey.",
+            "r_c suggests baiting the squirrels with food and picking them off when they come out to eat. Waiting is the most difficult part; the squirrels don't seem to expect the trap, and they come home laden with prey.",
+            "r_c suggests baiting the squirrels with food and picking them off when they come out to eat. All the patrol has to do is set the trap - with s_c on the patrol, they rarely have to lift a paw, and each cat carries multiple squirrels home."
+        ],
+        "fail_text": [
+            "r_c suggests finding squirrels sheltered in trees, climbing above them, and shaking the branches to scare them down. Unfortunately for them, the idea is a little too far out there, and while they do manage a few small catches, the day is mostly wasted with little to show for it."
+        ],
+        "win_skills": [
+            "good hunter",
+            "great hunter",
+            "fantastic hunter"
+        ],
+        "min_cats": 3,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "fst_hunt_leaffallvanish1",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting",
+            "no_app",
+            "small_prey0",
+            "medium_prey1",
+            "dislike",
+            "distrust",
+            "disrespect",
+            "patrol_to_r_c",
+            "large_prey3",
+            "injury",
+            "sprain",
+            "sore",
+            "shivering"
+        ],
+        "intro_text": "The rain seems a constant, unceasing beat, punctuating the steps of the hunting patrol as they march towards their hunting ground. But there's one less set of footsteps than there should be. p_l can't see r_c in the watery haze.",
+        "decline_text": "r_c eventually catches up.",
+        "chance_of_success": 40,
+        "exp": 20,
+        "success_text": [
+            "The patrol backtracks. r_c is found, huddled under a bush - they lost the path, and sight of their clanmates, but sensibly remained put. It's one more obstacle in a miserable day of hunting. They return with prey, but it's exhausting and barely worth the effort.",
+            "p_l nearly jumps out of their pelt when r_c materialises next to them. Where in StarClan have they been?! But no, r_c has found a copse of trees so thick and overgrowth that they're merely damp, not soaked. It's better than p_l could have hoped for, and the hunting patrol can return to camp with a decent haul.",
+            null,
+            "p_l, leading the search for s_c, hears a yowl in the distance. They charge towards the sound, swerving around trees, spotting s_c at the base of a hazel tree. They're staring up, tail lashing intently. On a branch above the cats, an owl sits with drooping, waterlogged wings. <i>Oh.</i> Yes, that'll do nicely."
+        ],
+        "fail_text": [
+            "p_l is silently furious at r_c when they find them. Leaf-fall is not the time to waste what could have been a productive hunting patrol with whatever nonsense r_c was up to.",
             null,
             null,
             "r_c is discovered huddled under a bush, soaked to the skin and dangerously cold."
-    ],
-    "win_skills": ["None"],
-    "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
-    "min_cats": 2,
-    "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-            "r_c was scarred after disappearing on patrol and being discovered injured.",
-            null
-    ]
-},
-{
-    "patrol_id": "fst_hunt_ratsololeaffall",
-    "biome": "forest",
-    "season": "leaf-fall",
-    "tags": [
-        "hunting",
-        "medium_prey",
-        "no_app"
-    ],
-    "intro_text": "p_l travels through the blustery wind to hunt. In a pile of leaves, they swore they could see a rat's tail.",
-    "success_text": [
-        "p_l lunges for the rat's tail with their claws and catches the rat! They drag it back to camp with their head held high."
-    ],
-    "fail_text": [
-        "p_l lunged for the rat's tail, but it turned out to be a wriggling worm! Gross!"
-    ],
-    "decline_text": "It could be a single rat, or it could be a swarm laying in wait. Either way, it was too risky for p_l to continue.",
-    "chance_of_success": 60,
-    "exp": 20,
-    "win_skills": [
-        null
-    ],
-    "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
-},
-{
-    "patrol_id": "fst_hunt_appratsololeaffall",
-    "biome": "forest",
-    "season": "leaf-fall",
-    "tags": [
-        "hunting",
-        "medium_prey",
-        "apprentice"
-    ],
-    "intro_text": "p_l traversed the windy forest, attempting their best to focus and not get distracted by the dancing leaves. They caught the scent of a rat nearby.",
-    "success_text": [
-        "p_l saw the rat's tail in a clump of leaves and pounced after it. Their head was held high as they traveled back to camp with the large prey!"
-    ],
-    "fail_text": [
-        "p_l's eyes flicker back towards the leaves, and could not help but swipe at them as they flutter by. When their attention returned to the rat, it was long gone."
-    ],
-    "decline_text": "p_l decides that one rat wasn't worth missing out on some fun! They instead chase after leaves for the rest of the hunting patrol.",
-    "chance_of_success": 60,
-    "exp": 20,
-    "win_skills": [
-        null
-    ],
-    "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
-},
-{
-    "patrol_id": "fst_hunt_warrapppratleaffall",
-    "biome": "forest",
-    "season": "leaf-fall",
-    "tags": [
-        "hunting",
-        "medium_prey",
-        "apprentice",
-        "warrior"
-    ],
-    "intro_text": "p_l and app1 make their way towards a troop of mushrooms, eager to get more prey for the Clan. They could hear the rats squeaking amongst the fungus, and begin to plot their plan of attack.",
-    "success_text": [
-        "p_l and app1 crouch and stalk slowly towards the mushrooms, pouncing carefully in between the fungi and onto the rats! Spores coating their fur the two make their way back to camp."
-    ],
-    "fail_text": [
-        "app1 attempts to pounce onto the rats, but crashed headfirst into a mushroom! The rats scatter, and p_l leads a sneezing app1 back to camp."
-    ],
-    "decline_text": "p_l eventually decides to lead their patrol elsewhere. Who knows what dangerous effect those mushrooms could have on them.",
-    "chance_of_success": 60,
-    "exp": 20,
-    "win_skills": [
-        null
-    ],
-    "min_cats": 2,
-    "max_cats": 2,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
-},
-{
-    "patrol_id": "fst_hunt_ratswarmleaffall",
-    "biome": "forest",
-    "season": "leaf-fall",
-    "tags": [
-		"hunting",
-		"respect",
-		"patrol_to_r_c",
-		"medium_prey0",
-		"large_prey1",
-		"large_prey2",
-        "battle_injury"
-    ],
-    "intro_text": "p_l lead the patrol towards the abandoned twoleg nest, listening to r_c's plan. Rats were seen hiding inside to protect themselves from the windy chills. Perhaps it could be a perfect hunting spot?",
-    "success_text": [
-        "r_c leads the patrol towards the nest, pushing past the rotting wood that blocked the entrance. The patrol got to work rounding up and piling up the rats, and by nightfall it took two trips to bring them back! r_c is congratulated for their ingenious plan.",
-        "r_c leads the patrol towards the nest. and quickly got to work hunting down the rats cornered near the smooth stones. It was a tough fight, with rats attempting to flee or attack the patrol. But in the end the patrol managed to get a hefty pile of prey for c_n."
-    ],
-    "fail_text": [
-        "r_c leads the cats to the abandoned twoleg nest, but as the patrol searched and searched, all they could find were abandoned rats nests. r_c is scolded for wasting the patrol's valueable time.",
-        null,
-        null,
-        "r_c leads the cats to the abandoned twoleg nest, but the rats seemed to be more lively than they thought. A harsh battle forced the patrol to retreat, r_c being the most harshly wounded."
-    ],
-    "decline_text": "The other cats disagree with such a risk, and resume their normal hunting patrol.",
-    "chance_of_success": 50,
-    "exp": 30,
-    "win_skills": [
-        "great hunter",
-        "fantastic hunter"
-    ],
-    "min_cats": 3,
-    "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from fighting a swarm of rats."
-    ]
-},
-{    
-    "patrol_id": "fst_hunt_ratkingleaffall",
-    "biome": "forest",
-    "season": "leaf-fall",
-    "tags": ["hunting", "medium_prey0", "large_prey1", "large_prey2", "battle_injury", "injure_all"],
-    "intro_text": "There has been a legend floating around the Clan. Sightings of a strange mass of rats stuck together by their tails, larger and more dangerous than anything the Clan has seenn. Will p_l's partrol look for this legendary monster?",
-    "decline_text": "No. Such a thing cant exist, right? I has to be an elder's imagination. p_l decides to take their patrol elsewhere to hunt.",
-    "chance_of_success": 40,
-    "exp": 30,
-    "success_text": [
-        "The rat king's lair is defended heavily by smaller rats. While the patrol doesn't find any sign of the rat king, they manage to defeat and being back a feast of small rats.",
-        "The rats defending the rat king's lair were more numerous than they thought. The patrol catches whatever rats they can, but p_l swears that they see it. Multiple eyes glowing in the dark that were watching them.",
-        "The waves of rats overwhelm the rest of the patrol, but s_c can see the rat king writhing within it's nest. They bolt away from the others to take on the rat head on. When they next return to the patrol, they drag the monsterous creature by it's multiple tails.",
-        null
-    ],
-    "fail_text": [
-        "There were more rats defending the rat king's lair than they thought. Fighting off against a few waves, the patrol retreats back to the Clan with empty paws.",
-        null,
-        null,
-        "The rat king and their minions overwhelm the patrol, biting into the cats fir and limbs. p_l orders a retreat, and they hope the Clan can heal so many wounded.",
-        null,
-        "s_c knows they are one of the Clan's greatest hunters. They spot the rat king and charge into its lair. But the King proves too great a foe for a single cat and sends s_c back with wounds to tell their tale.",
-        null
-    ],
-    "win_skills": ["fantastic hunter"],
-    "min_cats": 4,
-    "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-            "r_c carries a scar from fighting a rat king."
-]
-},
-{    
-    "patrol_id": "fst_hunt_ratkingleaffall2",
-    "biome": "forest",
-    "season": "leaf-fall",
-    "tags": ["hunting", "medium_prey0", "large_prey1", "large_prey2", "multi_death"],
-    "intro_text": "There has been a legend floating around the Clan. Sightings of a strange mass of rats stuck together by their tails, larger and more dangerous than anything the Clan has seenn. Will p_l's partrol look for this legendary monster?",
-    "decline_text": "No. Such a thing cant exist, right? I has to be an elder's imagination. p_l decides to take their patrol elsewhere to hunt.",
-    "chance_of_success": 40,
-    "exp": 30,
-    "success_text": [
-        "The rat king's lair is defended heavily by smaller rats. While the patrol doesn't find any sign of the rat king, they manage to defeat and being back a feast of small rats.",
-        "The rats defending the rat king's lair were more numerous than they thought. The patrol catches whatever rats they can, but p_l swears that they see it. Multiple eyes glowing in the dark that were watching them.",
-        "The waves of rats overwhelm the rest of the patrol, but s_c can see the rat king writhing within it's nest. They bolt away from the others to take on the rat head on. When they next return to the patrol, they drag the monsterous creature by it's multiple tails.",
-        null
-    ],
-    "fail_text": [
-        "There were more rats defending the rat king's lair than they thought. Fighting off against a few waves, the patrol retreats back to the Clan with empty paws.",
-        null,
-        "The rat king's defenses were too powerful as wave upon wave of rats poured down onto the patrol. The patrol managed to escape. r_c succumbed to their injuries along with others.",
-        null,
-        "s_c knows they are one of the Clan's greatest hunters. They spot the rat king and charge into its lair. But the King proves too great a foe for a single cat and sends kills the would-be kingslayer.",
-        null,
-        null
-    ],
-    "win_skills": ["fantastic hunter"],
-    "min_cats": 4,
-    "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        null,
-        "r_c died from wounds battling the rat king.",
-        null
-
-]
-}
+        ],
+        "win_trait": [
+            "adventurous",
+            "bold",
+            "charismatic",
+            "childish",
+            "confident",
+            "daring",
+            "playful",
+            "righteous"
+        ],
+        "min_cats": 2,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+                "r_c was scarred after disappearing on patrol and being discovered injured."
+        ]
+    },
+    {
+        "patrol_id": "fst_hunt_ratsololeaffall",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting",
+            "medium_prey",
+            "no_app"
+        ],
+        "intro_text": "p_l travels through the blustery wind to hunt. In a pile of leaves, they swear they could see a rat's tail.",
+        "success_text": [
+            "p_l lunges for the rat's tail with their claws and catches the rat! They drag it back to camp with their head held high."
+        ],
+        "fail_text": [
+            "p_l lunges for the rat's tail, but it turns out to be a wriggling worm! Gross!"
+        ],
+        "decline_text": "It <i>could</i> be a single rat.. or it could be a swarm laying in wait. Either way, it's too risky for p_l to pursue.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "fst_hunt_appratsololeaffall",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting",
+            "medium_prey",
+            "apprentice"
+        ],
+        "intro_text": "p_l traverses the windy forest, trying their best to focus and not get distracted by the dancing leaves when they catch the scent of a rat nearby.",
+        "success_text": [
+            "p_l sees the rat's tail in a clump of leaves and pounced after it. Their head is held high as they travel back to camp with the large piece of fresh-kill!"
+        ],
+        "fail_text": [
+            "p_l's eyes flicker back towards the leaves, and can't help but swipe at them as they flutter by. When their attention returns to the rat, it's long gone."
+        ],
+        "decline_text": "p_l decides that one rat isn't worth missing out on some fun! They instead chase after leaves for the rest of the hunting patrol.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "fst_hunt_warrapppratleaffall",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting",
+            "medium_prey",
+            "apprentice",
+            "warrior"
+        ],
+        "intro_text": "p_l and app1 make their way towards a troop of mushrooms, eager to get more prey for the Clan. They hear rats squeaking amongst the fungi, and begin to plot their plan of attack.",
+        "success_text": [
+            "p_l and app1 crouch and stalk slowly towards the mushrooms, pouncing carefully in between the fungi and onto the rats! Spores coating their fur the two make their way back to camp."
+        ],
+        "fail_text": [
+            "app1 attempts to pounce onto the rats, but crashes headfirst into a mushroom! The rats scatter, and p_l leads a sneezing app1 back to camp."
+        ],
+        "decline_text": "p_l eventually decides to lead their patrol elsewhere. Who knows what dangerous effect those mushrooms could have on them.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "min_cats": 2,
+        "max_cats": 2,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "fst_hunt_ratswarmleaffall",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting",
+            "respect",
+            "patrol_to_r_c",
+            "medium_prey0",
+            "large_prey1",
+            "large_prey2",
+            "battle_injury"
+        ],
+        "intro_text": "p_l leads the patrol towards the abandoned twoleg nest, listening to r_c's plan. Rats were seen hiding inside to protect themselves from the chill of leaf-fall's winds. Perhaps it would be a perfect hunting spot?",
+        "success_text": [
+            "r_c leads the patrol towards the nest, pushing past the rotting wood blocking the entrance. The patrol gets to work rounding up and piling up the rats, and by nightfall they have so much it takes two trips to bring them back! r_c is congratulated for their ingenious plan.",
+            "r_c leads the patrol towards the nest, and they quickly get to work hunting down the rats cornered near the smooth stones. It's a tough fight, with rats attempting to flee or attack the patrol, but in the end the patrol manages to get a hefty pile of prey for c_n."
+        ],
+        "fail_text": [
+            "r_c leads the cats to the abandoned twoleg nest, but as the cats search and search, all they can find are abandoned rats nests. r_c is scolded for wasting the patrol's valuable time.",
+            null,
+            null,
+            "r_c leads the cats to the abandoned twoleg nest, but the rats seemed to be more lively than they thought. A harsh battle forces the patrol to retreat, r_c being the most harshly wounded."
+        ],
+        "decline_text": "The other cats disagree with such a risk, and resume their normal hunting patrol.",
+        "chance_of_success": 50,
+        "exp": 30,
+        "win_skills": [
+            "great hunter",
+            "fantastic hunter"
+        ],
+        "min_cats": 3,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from fighting a swarm of rats."
+        ]
+    },
+    {    
+        "patrol_id": "fst_hunt_ratkingleaffall",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting",
+            "medium_prey0",
+            "large_prey1",
+            "large_prey2",
+            "battle_injury",
+            "injure_all"
+        ],
+        "intro_text": "A legend has been sighted. Recently, warriors report a strange mass of rats stuck together by their tails, larger and more dangerous than anything the Clan has seen. Will p_l's patrol look for this legendary monster?",
+        "decline_text": "No. Such a thing can't exist, right? It has to be an elder's imagination. p_l decides to take their patrol elsewhere to hunt.",
+        "chance_of_success": 40,
+        "exp": 30,
+        "success_text": [
+            "The rat king's lair is defended heavily by smaller rats. While the patrol doesn't find any sign of the rat king, they manage to defeat and being back a feast of small rats.",
+            "The rats defending the rat king's lair are more numerous than they thought. The patrol catches whatever rats they can, but p_l swears that they saw it - multiple eyes glowing in the dark, watching them.",
+            "The waves of rats overwhelm the rest of the patrol, but s_c can see the rat king writhing within its nest. They bolt away from the others, trusting their claws to take on the legend. It dies with a horrible shriek, as the rest of the patrol watch in awe."
+        ],
+        "fail_text": [
+            "There are more rats defending the rat king's lair than they thought. Fighting off waves of them, the patrol retreats back to the Clan with empty paws.",
+            null,
+            null,
+            "The rat king and their minions overwhelm the patrol, biting into fur and limbs. p_l orders a retreat, and they hope the Clan can heal so many wounded.",
+            null,
+            "s_c knows they are one of the Clan's greatest hunters. They spot the rat king and charge into its lair. But the King proves too great a foe for a single cat, and it sends s_c back with wounds to tell their tale."
+        ],
+        "win_skills": [
+            "fantastic hunter"
+        ],
+        "min_cats": 4,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+                "r_c was scarred fighting a rat king."
+        ]
+    },
+    {    
+        "patrol_id": "fst_hunt_ratkingleaffall2",
+        "biome": "forest",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting",
+            "medium_prey0",
+            "large_prey1",
+            "large_prey2",
+            "multi_death"
+        ],
+        "intro_text": "A legend has been sighted. Recently, warriors report a strange mass of rats stuck together by their tails, larger and more dangerous than anything the Clan has seen. Will p_l's patrol look for this legendary monster?",
+        "decline_text": "No. Such a thing cant exist, right? It has to be an elder's imagination. p_l decides to take their patrol elsewhere to hunt.",
+        "chance_of_success": 40,
+        "exp": 30,
+        "success_text": [
+            "The rat king's lair is defended heavily by smaller rats. While the patrol doesn't find any sign of the rat king, they manage to defeat and bring back a feast of small rats.",
+            "The rats defending the rat king's lair are more numerous than they thought. The patrol catches whatever rats they can, but p_l swears that they saw it - multiple eyes glowing in the dark, watching them.",
+            "The waves of rats overwhelm the rest of the patrol, but s_c can see the rat king writhing within its nest. They bolt away from the others, trusting their claws to take on the legend. It dies with a horrible shriek, as the rest of the patrol watch in awe."
+        ],
+        "fail_text": [
+            "There are more rats defending the rat king's lair than they thought. Fighting off waves of them, the patrol retreats back to the Clan with empty paws.",
+            null,
+            "The rat king's defenses are too powerful, and as wave upon wave of rats poured down onto the patrol, most of them manage to escape.. but not everyone makes it out.",
+            null,
+            "s_c knows they are one of the Clan's greatest hunters. They spot the rat king and charge into its lair. But the King proves too great a foe for a single cat, and it kills the would-be kingslayer."
+        ],
+        "win_skills": [
+            "fantastic hunter"
+        ],
+        "min_cats": 4,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            null,
+            "r_c died from their wounds after battling the rat king."
+        ]
+    }
 ]
