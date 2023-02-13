@@ -208,7 +208,7 @@ class Patrol():
         # this next one is needed for Classic specifically
         patrol_type = "med" if ['medicine cat', 'medicine cat apprentice'] in self.patrol_statuses else patrol_type
         patrol_size = len(self.patrol_cats)
-        reputation = game.clan.reputation
+        reputation = game.clan.reputation # reputation with outsiders
         other_clan = self.other_clan
         clan_relations = int(other_clan.relations)
         hostile_rep = False
