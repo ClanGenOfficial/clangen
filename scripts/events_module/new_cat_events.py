@@ -144,6 +144,7 @@ class NewCatEvents:
         accessory = None
         backstory = random.choice(backstory)
         relevant_cat = Cat.fetch_cat(relevant_cat)
+        age = None
 
         created_cats = []
 
