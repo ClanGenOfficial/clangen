@@ -243,6 +243,8 @@ class Patrol():
                 possible_patrols.extend(self.generate_patrol_events(self.OTHER_CLAN_HOSTILE))
 
         final_patrols = self.filter_patrols(possible_patrols, biome, patrol_size, current_season, patrol_type)
+        if patrol_type == 'hunting':
+            final_patrols = self.balance_hunting(final_patrols)
         final_patrols = self.filter_relationship(final_patrols)
 
         return final_patrols
@@ -368,6 +370,73 @@ class Patrol():
                     if not self.patrol_random_cat.is_potential_mate(self.patrol_leader, for_patrol=True):
                         continue
             filtered_patrols.append(patrol)
+        return filtered_patrols
+
+    def balance_hunting(self, possible_patrols: list):
+        """Filter the incoming hunting patrol list to balance the different kinds of hunting patrols.
+        With this filtering, there should be more prey possible patrols
+
+            Parameters
+            ----------
+            possible_patrols : list
+                list of patrols which should be filtered
+
+            Returns
+            ----------
+            filtered_patrols : list
+                list of patrols which is filtered
+        """
+        filtered_patrols = []
+        print(len(possible_patrols))
+
+        # get first what kind of hunting type which will be chosen
+        patrol_type = ["fighting", "injury", "prey", "prey", "more_prey"]
+        needed_tags = []
+        not_allowed_tag = []
+        chosen_tag = choice(patrol_type)
+        # add different tags which should be in the patrol
+        if chosen_tag == "fighting":
+            needed_tags.append("fighting")
+            needed_tags.append("death")
+        elif chosen_tag == "injury":
+            needed_tags.append("injury")
+            needed_tags.append("blunt_force_injury")
+            needed_tags.append("big_bite_injury")
+            needed_tags.append("small_bite_injury")
+            needed_tags.append("minor_injury")
+            needed_tags.append("cold_injury")
+            needed_tags.append("hot_injury")
+        elif chosen_tag == "prey":
+            not_allowed_tag = "death"
+            prey_types = ["small_prey", "medium_prey", "large_prey", "huge_prey"]
+            for prey_type in prey_types:
+                needed_tags.append(f"{prey_type}")
+                if prey_type != "small_prey":
+                    needed_tags.append(f"{prey_type}0")
+                    needed_tags.append(f"{prey_type}1")
+                    needed_tags.append(f"{prey_type}2")
+                    needed_tags.append(f"{prey_type}3")
+        elif chosen_tag == "more_prey":
+            not_allowed_tag = "death"
+            needed_tags.append("large_prey")
+            needed_tags.append("huge_prey")
+            needed_tags.append("huge_prey0")
+            needed_tags.append("huge_prey1")
+            needed_tags.append("huge_prey2")
+            needed_tags.append("huge_prey3")
+
+        # filter all possible patrol depending on the needed tags
+        # one of the mentioned tags should be in the patrol tag
+        for patrol in possible_patrols:
+            for tag in needed_tags:
+                if tag in patrol.tags and not_allowed_tag not in patrol.tags:
+                    filtered_patrols.append(patrol)
+                    break
+        
+        # if the filtering results in an empty list, don't filter and return whole possible patrols
+        if len(filtered_patrols) <= 0:
+            print("WARNING: filtering to balance out the hunting, didn't work.")
+            filtered_patrols = possible_patrols
         return filtered_patrols
 
     def filter_relationship(self, possible_patrols: list):
