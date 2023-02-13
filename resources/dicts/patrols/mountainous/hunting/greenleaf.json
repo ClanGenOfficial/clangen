@@ -1,5 +1,4 @@
 [
-
     {
         "patrol_id": "mtn_hunt_heat1",
         "biome": "mountainous",
@@ -66,19 +65,12 @@
         "win_trait": [
             "ambitious"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": [
-            "r_c carries a scar from an eagle's beak.",
-            null
+            "r_c carries a scar from an eagle's beak."
         ]
     },
     {
@@ -118,19 +110,12 @@
         "win_trait": [
             "ambitious"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 4,
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": [
-            "r_c carries a scar from an eagle's beak.",
-            null
+            "r_c carries a scar from an eagle's beak."
         ]
     },
     {
@@ -173,9 +158,6 @@
         ],
         "win_trait": [
             "ambitious"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "bloodthirsty"
@@ -228,12 +210,6 @@
         "win_trait": [
             "ambitious"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 4,
         "max_cats": 6,
         "antagonize_text": null,
@@ -269,7 +245,7 @@
             "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
         ],
         "fail_text": [
-            "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
+            "Your patrol fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
             null,
             null,
             "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
@@ -291,9 +267,6 @@
             "responsible",
             "righteous"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "troublesome",
             "vengeful",
@@ -305,8 +278,7 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": [
-            "r_c carries a scar from a fox fight.",
-            null
+            "r_c carries a scar from a fox fight."
         ]
     },
     {
@@ -330,11 +302,11 @@
         "success_text": [
             "Your cats are smaller but heavily outnumber the fox, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full and unwilling to lose blood over it, is driven off from the kill.",
             null,
-            "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until s_c lands a crucial blow, snapping a tendon in one of the fox's hindlegs. The fox runs, but there's no way it'll live long with such a crippling injury.",
+            "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until s_c lands a crucial blow, snapping a tendon in one of the fox's hind legs. The fox runs, but there's no way it'll live long with such a crippling injury.",
             "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. Holding on grimly, s_c's daring move gives the rest of the patrol the opportunity needed to bring the fox down for good."
         ],
         "fail_text": [
-            "Your patrol fails to drive away the fox, which keeps possession of the food. However with so many cats to protect each other, there were no injuries.",
+            "Your patrol fails to drive away the fox, which keeps possession of the food. However, with so many cats to protect each other, there were no injuries.",
             null,
             null,
             "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
@@ -355,9 +327,6 @@
             "fierce",
             "responsible",
             "righteous"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "troublesome",
@@ -398,7 +367,7 @@
             "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. But then they're stuck, unwilling to let go and risk being bitten. They're dragged through the forest, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the kid."
         ],
         "fail_text": [
-            "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
+            "r_c fails to drive away the fox, which keeps possession of the food. However, there were no injuries.",
             null,
             "Fiercely, r_c throws themselves at the fox, determined to win the kid prize. But the fox values it just as dearly, and manages to get a good grip on r_c, shaking them to pieces and killing them.",
             "r_c launches into battle, but is caught with a nasty bite, and retreats to limp back home. The fox doesn't follow, happy enough to eat the kid instead of the foolish cat.",
@@ -418,9 +387,6 @@
             "fierce",
             "responsible",
             "righteous"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "troublesome",
