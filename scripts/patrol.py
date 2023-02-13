@@ -387,12 +387,11 @@ class Patrol():
                 list of patrols which is filtered
         """
         filtered_patrols = []
-        print(len(possible_patrols))
 
         # get first what kind of hunting type which will be chosen
         patrol_type = ["fighting", "injury", "prey", "prey", "more_prey"]
         needed_tags = []
-        not_allowed_tag = []
+        not_allowed_tag = None
         chosen_tag = choice(patrol_type)
         # add different tags which should be in the patrol
         if chosen_tag == "fighting":
@@ -429,9 +428,15 @@ class Patrol():
         # one of the mentioned tags should be in the patrol tag
         for patrol in possible_patrols:
             for tag in needed_tags:
-                if tag in patrol.tags and not_allowed_tag not in patrol.tags:
-                    filtered_patrols.append(patrol)
-                    break
+                if tag in patrol.tags:
+                    # if there is a tag set, check if this tag is not in the current patrol
+                    if not_allowed_tag and not_allowed_tag not in patrol.tags:
+                        filtered_patrols.append(patrol)
+                        break
+                    # when there is no tag set, add the patrol
+                    elif not not_allowed_tag:
+                        filtered_patrols.append(patrol)
+                        break
         
         # if the filtering results in an empty list, don't filter and return whole possible patrols
         if len(filtered_patrols) <= 0:
@@ -1488,6 +1493,12 @@ class Patrol():
             relevant_patrol_tags = [tag for tag in patrol.patrol_event.tags if tag in cancel_tags]
             if len(relevant_patrol_tags) == 0:
                 amount = int(PREY_REQUIREMENT["warrior"] * len(self.patrol_cats) / 1.5)
+                if "fantastic_hunter" in self.patrol_skills:
+                    amount = amount * (HUNTER_BONUS["fantastic_hunter"] / 10)
+                elif "great_hunter" in self.patrol_skills:
+                    amount = amount * (HUNTER_BONUS["great_hunter"] / 10)
+                elif "good_hunter" in self.patrol_skills:
+                    amount = amount * (HUNTER_BONUS["good_hunter"] / 10)
                 game.clan.freshkill_pile.add_freshkill(amount)
                 self.results_text.append(f"The patrol still manages to catch some amount of prey.")
             return
