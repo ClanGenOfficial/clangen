@@ -552,7 +552,7 @@ class PatrolScreen(Screens):
                                                                    ), manager=MANAGER)
 
         # Add selected cats to the patrol.
-        patrol.add_patrol_cats(self.current_patrol)
+        patrol.add_patrol_cats(self.current_patrol, game.clan)
         possible_events = patrol.get_possible_patrols(
             str(game.clan.current_season).casefold(),
             str(game.clan.biome).casefold(),
