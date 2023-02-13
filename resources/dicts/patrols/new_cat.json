@@ -117,7 +117,7 @@
     "patrol_id": "gen_bord_lonerchase1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["border", "new_cat", "reputation", "battle_injury", "scar"],
+    "tags": ["border", "new_cat", "reputation", "injury", "claw-wound", "scar"],
     "intro_text": "Your patrol cautiously moves towards the sound of barking. Near the border, they spot a dog chasing something. Oh no, it's a cat!",
     "decline_text": "The patrol decides not to interfere. Surely the cat can handle itself, the dog isn't even that big.",
     "chance_of_success": 40,
