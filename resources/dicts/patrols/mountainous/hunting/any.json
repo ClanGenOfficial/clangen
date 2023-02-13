@@ -558,7 +558,7 @@
             "hunting",
             "gone",
             "no_leader",
-            "small_prey"
+            "medium_prey"
         ],
         "intro_text": "Your patrol encounters a swarm of Twolegs, gathered at the foot of the mountain.",
         "decline_text": "Your patrol decides to hunt elsewhere.",
@@ -621,7 +621,7 @@
             "hunting",
             "gone",
             "no_leader",
-            "big_prey"
+            "large_prey"
         ],
         "intro_text": "Your patrol encounters a swarm of Twolegs, gathered at the foot of the mountain.",
         "decline_text": "Your patrol decides to hunt elsewhere.",
@@ -629,7 +629,7 @@
         "exp": 20,
         "success_text": [
             "Your patrol immediately turns and heads for home to report this to their leader, alarmed by the sudden presence of Twolegs in their territory.",
-            "Slyly, the cats use the unusual presence of the weird Twolegs to help their hunt, hiding on the outskirts of the area and waiting for the Twolegs to flush prey towards them. It works, and they leave the Twolegs to their business.",
+            "Slyly, the cats use the unusual presence of the weird Twolegs to help their hunt, hiding on the outskirts of the area and waiting for the Twolegs to flush prey towards them. It is a huge success! They leave the Twolegs about their business, more focused on the food.",
             "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol to leave. Now.",
             "s_c stops anyone from going near the Twolegs, repeating that true warriors have nothing to do with Twolegs and their monsters, and the patrol leaves back up the mountain."
         ],
