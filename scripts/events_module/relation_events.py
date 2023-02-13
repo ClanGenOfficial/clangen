@@ -166,10 +166,11 @@ class Relation_Events():
 
         # Roll to see if the cat will have kits.
         if cat.mate:
-            chance = 60
+            chance = 50
         else:
             chance = 100
 
+        print(str(cat.name), chance)
         # This is the first chance. Other checks will then be made that can "cancel" this roll.
         if not int(random.random() * chance):
             print(f"primary kit roll triggered for {cat.name}")
