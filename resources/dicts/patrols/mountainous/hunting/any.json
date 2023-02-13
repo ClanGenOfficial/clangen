@@ -558,7 +558,7 @@
             "hunting",
             "gone",
             "no_leader",
-            "small_prey"
+            "medium_prey"
         ],
         "intro_text": "Your patrol encounters a swarm of Twolegs, gathered at the foot of the mountain.",
         "decline_text": "Your patrol decides to hunt elsewhere.",
@@ -621,7 +621,7 @@
             "hunting",
             "gone",
             "no_leader",
-            "big_prey"
+            "large_prey"
         ],
         "intro_text": "Your patrol encounters a swarm of Twolegs, gathered at the foot of the mountain.",
         "decline_text": "Your patrol decides to hunt elsewhere.",
