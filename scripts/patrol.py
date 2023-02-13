@@ -734,10 +734,6 @@ class Patrol():
     def add_new_cats(self, litter_choice):
         tags = self.patrol_event.tags
         if "new_cat" in tags:
-            if "new_cat_majorinjury" in tags and game.clan.game_mode != 'classic':
-                major_injury = True
-            else:
-                major_injury = False
             if "new_cat_kit" in tags:  # new kit
                 backstory_choice = choice(['abandoned2', 'abandoned1', 'abandoned3'])
                 created_cats = self.create_new_cat(loner=False, loner_name=False, kittypet=choice([True, False]),
@@ -757,8 +753,6 @@ class Patrol():
                         new_backstory = 'outsider_roots2'
                         created_cats.extend(self.create_new_cat(loner=True, loner_name=True, backstory=new_backstory,
                                                            litter=True, relevant_cat=new_cat))
-                    if major_injury:
-                        new_cat.get_injured("broken bone")
                 else:  # new loner
                     new_backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2',
                                             'ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
@@ -771,8 +765,6 @@ class Patrol():
                         new_backstory = 'outsider_roots2'
                         created_cats.extend(self.create_new_cat(loner=True, loner_name=True, backstory=new_backstory,
                                                            litter=True, relevant_cat=new_cat))
-                    if major_injury:
-                        new_cat.get_injured("broken bone")
 
             elif "new_cat_med" in tags:  # new med cat
                 new_backstory = choice(['medicine_cat', 'disgraced', 'loner1', 'loner2',
@@ -859,8 +851,6 @@ class Patrol():
                                                        age='young', backstory=choice(['kittypet1', 'kittypet2', 'kittypet3',
                                                                                       'refugee3', 'tragedy_survivor3']))
                     new_cat = created_cats[0]
-                    if major_injury:
-                        new_cat.get_injured("broken bone")
                 else:
                     new_backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2', 'refugee',
                                             'tragedy_survivor', 'refugee2', 'tragedy_survivor4',
@@ -869,8 +859,6 @@ class Patrol():
                                                        backstory=new_backstory,
                                                        age='young')
                     new_cat = created_cats[0]
-                    if major_injury:
-                        new_cat.get_injured("broken bone")
                     new_cat.update_mentor()
 
             elif "new_cat_elder" in tags:
@@ -881,16 +869,12 @@ class Patrol():
                     created_cats = self.create_new_cat(loner=False, loner_name=True, kittypet=True, age='old',
                                                        backstory=choice(['kittypet1', 'kittypet2']))
                     new_cat = created_cats[0]
-                    if major_injury:
-                        new_cat.get_injured("broken bone")
                 else:  # new loner
                     new_backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2',
                                             'ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
                                             'tragedy_survivor'])
                     created_cats = self.create_new_cat(loner=True, kittypet=False, backstory=new_backstory, age='old')
                     new_cat = created_cats[0]
-                    if major_injury:
-                        new_cat.get_injured("broken bone")
 
             else:
                 kittypet = choice([True, False])
@@ -901,8 +885,6 @@ class Patrol():
                                                        backstory=choice(['kittypet1', 'kittypet2', 'kittypet3',
                                                                          'refugee3', 'tragedy_survivor3']))
                     new_cat = created_cats[0]
-                    if major_injury:
-                        new_cat.get_injured("broken bone")
                 else:  # new loner
                     new_backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2',
                                             'ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
@@ -910,8 +892,41 @@ class Patrol():
                                             'refugee4', 'tragedy_survivor2'])
                     created_cats = self.create_new_cat(loner=True, kittypet=False, backstory=new_backstory)
                     new_cat = created_cats[0]
-                    if major_injury:
-                        new_cat.get_injured("broken bone")
+            # now we hurt the kitty
+            if "new_cat_injury" in tags and game.clan.game_mode != 'classic':
+                possible_conditions = []
+                condition_lists = {
+                    "blunt_force_injury": ["broken bone", "broken back", "head damage", "broken jaw"],
+                    "sickness": ["greencough", "redcough", "whitecough", "yellowcough"],
+                    "battle_injury": ["claw-wound", "mangled leg", "mangled tail", "torn pelt", "bite-wound"],
+                    "hot_injury": ["heat exhaustion", "heat stroke", "dehydrated"],
+                    "cold_injury": ["shivering", "frostbite"]
+                }
+                for tag in self.patrol_event.tags:
+                    tag = tag.replace("nc_", "")
+                    if tag in INJURIES:
+                        possible_conditions.append(tag)
+                        continue
+                    elif tag in ILLNESSES:
+                        possible_conditions.append(tag)
+                        continue
+                    elif tag in PERMANENT:
+                        possible_conditions.append(tag)
+                        continue
+
+                for y in condition_lists:
+                    if y in self.patrol_event.tags:
+                        possible_conditions.extend(condition_lists[y])
+                        continue
+                if len(possible_conditions) > 0:
+                    new_condition = choice(possible_conditions)
+                    self.results_text.append(f"{cat.name} got: {new_condition}")
+                    if new_condition in INJURIES:
+                        new_cat.get_injured(new_condition)
+                    elif new_condition in ILLNESSES:
+                        new_cat.get_ill(new_condition)
+                    elif new_condition in PERMANENT:
+                        new_cat.get_permanent_condition(new_condition)
             for cat in created_cats:
                 if not cat.outside:
                     self.results_text.append(f"{cat.name} has joined the Clan.")
