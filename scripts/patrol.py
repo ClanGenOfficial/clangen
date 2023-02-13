@@ -896,11 +896,11 @@ class Patrol():
             if "new_cat_injury" in tags and game.clan.game_mode != 'classic':
                 possible_conditions = []
                 condition_lists = {
-                    "blunt_force_injury": ["broken bone", "broken back", "head damage", "broken jaw"],
-                    "sickness": ["greencough", "redcough", "whitecough", "yellowcough"],
-                    "battle_injury": ["claw-wound", "mangled leg", "mangled tail", "torn pelt", "bite-wound"],
-                    "hot_injury": ["heat exhaustion", "heat stroke", "dehydrated"],
-                    "cold_injury": ["shivering", "frostbite"]
+                    "nc_blunt_force_injury": ["broken bone", "broken back", "head damage", "broken jaw"],
+                    "nc_sickness": ["greencough", "redcough", "whitecough", "yellowcough"],
+                    "nc_battle_injury": ["claw-wound", "mangled leg", "mangled tail", "torn pelt", "bite-wound"],
+                    "nc_hot_injury": ["heat exhaustion", "heat stroke", "dehydrated"],
+                    "nc_cold_injury": ["shivering", "frostbite"]
                 }
                 for tag in self.patrol_event.tags:
                     tag = tag.replace("nc_", "")
@@ -920,7 +920,6 @@ class Patrol():
                         continue
                 if len(possible_conditions) > 0:
                     new_condition = choice(possible_conditions)
-                    self.results_text.append(f"{cat.name} got: {new_condition}")
                     if new_condition in INJURIES:
                         new_cat.get_injured(new_condition)
                     elif new_condition in ILLNESSES:
