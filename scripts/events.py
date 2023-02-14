@@ -252,11 +252,11 @@ class Events():
 
         prey_amount = 0
         for cat in healthy_hunter:
-            lower_value = GAME_CONFIG["freshkill"]["auto_warrior_prey"][0]
-            upper_value = GAME_CONFIG["freshkill"]["auto_warrior_prey"][1]
+            lower_value = game.config["freshkill"]["auto_warrior_prey"][0]
+            upper_value = game.config["freshkill"]["auto_warrior_prey"][1]
             if cat.status == "apprentice":
-                lower_value = GAME_CONFIG["freshkill"]["auto_apprentice_prey"][0]
-                upper_value = GAME_CONFIG["freshkill"]["auto_apprentice_prey"][1]
+                lower_value = game.config["freshkill"]["auto_apprentice_prey"][0]
+                upper_value = game.config["freshkill"]["auto_apprentice_prey"][1]
 
             prey_amount += randint(lower_value, upper_value)
         game.clan.freshkill_pile.add_freshkill(prey_amount)
@@ -491,9 +491,12 @@ class Events():
         if game.settings["fading"] and not cat.prevent_fading and cat.ID != game.clan.instructor.ID and \
                 not cat.faded:
 
-            age_to_fade = 302
+            age_to_fade = game.config["fading"]["age_to_fade"]
+            opacity_at_fade = game.config["fading"]["opacity_at_fade"]
+            fading_speed = game.config["fading"]["visual_fading_speed"]
             # Handle opacity
-            cat.opacity = int(80 * (1 - (cat.dead_for / age_to_fade) ** 5) + 20)
+            cat.opacity = int((100 - opacity_at_fade) * (1 - (cat.dead_for / age_to_fade) ** fading_speed)
+                              + opacity_at_fade)
 
             # Deal with fading the cat if they are old enough.
             if cat.dead_for > age_to_fade:
@@ -1619,11 +1622,3 @@ class Events():
 
 
 events_class = Events()
-
-# ---------------------------------------------------------------------------- #
-#                                LOAD RESOURCES                                #
-# ---------------------------------------------------------------------------- #
-
-GAME_CONFIG = None
-with open(f"resources/game_config.json", 'r') as read_file:
-    GAME_CONFIG = ujson.loads(read_file.read())

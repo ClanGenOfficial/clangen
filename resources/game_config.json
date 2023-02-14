@@ -45,5 +45,21 @@
 			"hunter_bonus is the factor which is be used to multiply on a hunting patrol.",
 			"hunter_exp_bonus is the additional prey which will be added on a hunting patrol."
 		]
+	},
+	"pregnancy": {
+		"primary_chance_mated": 50,
+		"primary_chance_unmated": 100,
+		"random_affair_chance": 70
+	},
+	"cat_generation": {
+		"base_permanent_condition": 90,
+		"base_male_tortie": 13,
+		"base_female_tortie": 4,
+		"base_heterochromia": 120
+	},
+	"fading": {
+		"age_to_fade": 302,
+		"opacity_at_fade": 20,
+		"visual_fading_speed": 5
 	}
 }

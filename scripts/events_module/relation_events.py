@@ -166,9 +166,9 @@ class Relation_Events():
 
         # Roll to see if the cat will have kits.
         if cat.mate:
-            chance = 60
+            chance = game.config["pregnancy"]["primary_chance_mated"]
         else:
-            chance = 100
+            chance = game.config["pregnancy"]["primary_chance_unmated"]
 
         # This is the first chance. Other checks will then be made that can "cancel" this roll.
         if not int(random.random() * chance):
@@ -875,7 +875,7 @@ class Relation_Events():
                             return highest_romantic_relation.cat_to, is_affair
 
         # If the love affair chance did not trigger, this code will be reached.
-        chance_random_affair = 75
+        chance_random_affair = game.config["pregnancy"]["random_affair_chance"]
         if not int(random.random() * chance_random_affair):
             possible_affair_partners = list(filter(lambda x: x.is_potential_mate(cat, for_love_interest=True) and
                                                              (samesex or cat.gender != x.gender) and
@@ -925,8 +925,9 @@ class Relation_Events():
             kit.scars.clear()
 
             # try to give them a permanent condition. 1/90 chance
-			# don't delete the game.clan condition, this is needed for a test
-            if game.clan and not int(random.random() * 90) and game.clan.game_mode != 'classic':
+            # don't delete the game.clan condition, this is needed for a test
+            if game.clan and not int(random.random() * game.config["cat_generation"]["base_permanent_condition"]) \
+                    and game.clan.game_mode != 'classic':
                 kit.congenital_condition(kit)
                 for condition in kit.permanent_condition:
                     if kit.permanent_condition[condition] == 'born without a leg':

@@ -256,9 +256,9 @@ class NewCatEvents:
             # chance to give the new cat a permanent condition, higher chance for found kits and litters
             if game.clan.game_mode != 'classic':
                 if kit or litter:
-                    chance = 8
+                    chance = int(game.config["cat_generation"]["base_permanent_condition"] / 11.25)
                 else:
-                    chance = 100
+                    chance = game.config["cat_generation"]["base_permanent_condition"] + 10
                 if not int(random.random() * chance):
                     possible_conditions = []
                     for condition in PERMANENT:
