@@ -158,7 +158,8 @@ def backstory_text(cat):
         'orphaned2': 'orphaned'
     }
 
-    bs_display = backstory_map.get(bs_display)
+    if bs_display in backstory_map:
+        bs_display = backstory_map[bs_display]
 
     if bs_display == "disgraced":
         if cat.status == 'medicine cat':
@@ -891,10 +892,8 @@ class ProfileScreen(Screens):
             if the_cat.ID in game.clan.freshkill_pile.nutrition_info:
                 nutr = game.clan.freshkill_pile.nutrition_info[the_cat.ID]
             if nutr:
-                output += "\n"
                 output += f"nutrition status: {round(nutr.percentage, 1)}%\n"
             else:
-                output += "\n"
                 output += f"nutrition status: 100%\n"
 
         if the_cat.is_disabled():

@@ -1,6 +1,7 @@
 import random
 from .pelts import *
 from scripts.cat.sprites import Sprites
+from scripts.game_structure.game_essentials import game
 
 # ---------------------------------------------------------------------------- #
 #                               utility functions                              #
@@ -148,7 +149,7 @@ def init_eyes(cat):
                 par1.eye_colour, par2.eye_colour,
                 choice(eye_colours)
             ])
-        num = 120
+        num = game.config["cat_generation"]["base_heterochromia"]
         if cat.white_patches in [high_white, mostly_white, 'FULLWHITE'] or cat.pelt.colour == 'WHITE':
             num = num - 90
         if cat.white_patches == 'FULLWHITE' or cat.pelt.colour == 'WHITE':
@@ -257,12 +258,12 @@ def pelt_inheritance(cat, parents: tuple):
     )
 
     # Tortie chance
-    tortie_chance_f = 4  # There is a default chance for female tortie
-    tortie_chance_m = 13
+    tortie_chance_f = game.config["cat_generation"]["base_female_tortie"]  # There is a default chance for female tortie
+    tortie_chance_m = game.config["cat_generation"]["base_male_tortie"]
     for p_ in par_pelts:
         if p_.name in torties:
-            tortie_chance_f = 2
-            tortie_chance_m = 12
+            tortie_chance_f = int(tortie_chance_f / 2)
+            tortie_chance_m = tortie_chance_m - 1
             break
 
     # Determine tortie:
@@ -376,8 +377,9 @@ def randomize_pelt(cat):
     )
 
     # Tortie chance
-    tortie_chance_f = 3  # There is a default chance for female tortie
-    tortie_chance_m = 13
+    # There is a default chance for female tortie, slightly increased for completely random generation.
+    tortie_chance_f = game.config["cat_generation"]["base_female_tortie"] - 1
+    tortie_chance_m = game.config["cat_generation"]["base_male_tortie"]
     if cat.gender == "female":
         torbie = random.getrandbits(tortie_chance_f) == 1
     else:

@@ -144,6 +144,7 @@ class NewCatEvents:
         accessory = None
         backstory = random.choice(backstory)
         relevant_cat = Cat.fetch_cat(relevant_cat)
+        age = None
 
         created_cats = []
 
@@ -154,27 +155,25 @@ class NewCatEvents:
             number_of_cats = number_of_cats[0]
             if parent:
                 number_of_cats += 1
+        # setting age
+        if (litter or kit) and not parent:
+            age = random.randint(0, 5)
+        elif status == 'apprentice':
+            age = random.randint(6, 11)
+        elif status == 'warrior' or ((litter or kit) and parent):
+            age = random.randint(16, 120)
+        else:
+            age = random.randint(6, 120)
+        # setting status
+        if not status:
+            if age < 6:
+                status = "kitten"
+            elif 6 <= age <= 11:
+                status = "apprentice"
+            elif age >= 12:
+                status = "warrior"
 
         for index in range(number_of_cats):
-            # setting age
-            if (litter or kit) and not parent:
-                age = random.randint(0, 5)
-            elif status == 'apprentice':
-                age = random.randint(6, 11)
-            elif status == 'warrior' or ((litter or kit) and parent):
-                age = random.randint(16, 120)
-            else:
-                age = random.randint(6, 120)
-
-            # setting status
-            if not status:
-                if age < 6:
-                    status = "kitten"
-                elif 6 <= age <= 11:
-                    status = "apprentice"
-                elif age >= 12:
-                    status = "warrior"
-
             # cat creation and naming time
             if other_clan or ((kit or litter) and not parent):
                 new_cat = Cat(moons=age, status=status, gender=random.choice(['female', 'male']),
@@ -256,9 +255,9 @@ class NewCatEvents:
             # chance to give the new cat a permanent condition, higher chance for found kits and litters
             if game.clan.game_mode != 'classic':
                 if kit or litter:
-                    chance = 8
+                    chance = int(game.config["cat_generation"]["base_permanent_condition"] / 11.25)
                 else:
-                    chance = 100
+                    chance = game.config["cat_generation"]["base_permanent_condition"] + 10
                 if not int(random.random() * chance):
                     possible_conditions = []
                     for condition in PERMANENT:
