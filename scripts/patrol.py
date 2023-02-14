@@ -961,7 +961,7 @@ class Patrol():
             elif age == 'old':
                 age = randint(100, 150)
             else:
-                age = randint(12, 99)
+                age = randint(22, 99)
 
         if queen:
             if game.settings['no gendered breeding']:
