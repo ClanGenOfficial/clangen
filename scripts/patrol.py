@@ -374,7 +374,7 @@ class Patrol():
 
     def balance_hunting(self, possible_patrols: list):
         """Filter the incoming hunting patrol list to balance the different kinds of hunting patrols.
-        With this filtering, there should be more prey possible patrols
+        With this filtering, there should be more prey possible patrols.
 
             Parameters
             ----------
@@ -389,11 +389,13 @@ class Patrol():
         filtered_patrols = []
 
         # get first what kind of hunting type which will be chosen
-        patrol_type = ["fighting", "injury", "prey", "prey", "more_prey"]
+        patrol_type = ["fighting", "injury", "prey", "prey", "more_prey", "less_prey", "all"]
         needed_tags = []
         not_allowed_tag = None
         chosen_tag = choice(patrol_type)
         # add different tags which should be in the patrol
+        if chosen_tag == "all":
+            return possible_patrols
         if chosen_tag == "fighting":
             needed_tags.append("fighting")
             needed_tags.append("death")
@@ -405,10 +407,13 @@ class Patrol():
             needed_tags.append("minor_injury")
             needed_tags.append("cold_injury")
             needed_tags.append("hot_injury")
-        elif chosen_tag == "prey":
-            not_allowed_tag = "death"
+        elif chosen_tag in ["less_prey", "prey"]:
+            if chosen_tag == "prey": 
+                not_allowed_tag = "death"
             prey_types = ["small_prey", "medium_prey", "large_prey", "huge_prey"]
             for prey_type in prey_types:
+                if chosen_tag == "less_prey" and prey_type in ["large_prey", "huge_prey"]:
+                    continue
                 needed_tags.append(f"{prey_type}")
                 if prey_type != "small_prey":
                     needed_tags.append(f"{prey_type}0")
@@ -1478,6 +1483,9 @@ class Patrol():
 
     def handle_prey(self, outcome_nr):
         """Handle the amount of prey which was caught and add it to the freshkill pile of the clan."""
+        if not "hunting" in patrol.patrol_event.tags:
+            return
+        
         basic_amount = PREY_REQUIREMENT["warrior"]
         if game.clan.game_mode == 'expanded':
             basic_amount += ADDITIONAL_PREY
@@ -1488,17 +1496,18 @@ class Patrol():
             "huge_prey" : basic_amount*4
         }
 
-        if not self.success and "hunting" in patrol.patrol_event.tags:
+        if not self.success:
             cancel_tags = ["no_fail_prey", "poison_clan", "death", "disaster", "multi_deaths", "no_body", "cruel_season", "gone", "multi_gone", "disaster_gone"]
             relevant_patrol_tags = [tag for tag in patrol.patrol_event.tags if tag in cancel_tags]
             if len(relevant_patrol_tags) == 0:
                 amount = int(PREY_REQUIREMENT["warrior"] * len(self.patrol_cats) / 1.5)
-                if "fantastic_hunter" in self.patrol_skills:
-                    amount = amount * (HUNTER_BONUS["fantastic_hunter"] / 10)
-                elif "great_hunter" in self.patrol_skills:
-                    amount = amount * (HUNTER_BONUS["great_hunter"] / 10)
-                elif "good_hunter" in self.patrol_skills:
-                    amount = amount * (HUNTER_BONUS["good_hunter"] / 10)
+                if "fantastic hunter" in self.patrol_skills:
+                    amount = int(amount * (HUNTER_BONUS["fantastic hunter"] / 10 + 1))
+                elif "great hunter" in self.patrol_skills:
+                    amount = int(amount * (HUNTER_BONUS["great hunter"] / 10 + 1))
+                elif "good hunter" in self.patrol_skills:
+                    amount = int(amount * (HUNTER_BONUS["good hunter"] / 10 + 1))
+                print(f" -- FRESHKILL: added {amount} fail-prey")
                 game.clan.freshkill_pile.add_freshkill(amount)
                 self.results_text.append(f"The patrol still manages to catch some amount of prey.")
             return
@@ -1517,20 +1526,22 @@ class Patrol():
 
         for cat in self.patrol_cats:
             total_amount += prey_amount_per_cat
-            # add bonus of certain traits
-            if cat.trait in Cat.skill_groups["hunt"]:
-                total_amount += HUNTER_EXP_BONUS[cat.experience_level] * HUNTER_BONUS[cat.trait]
+            # add bonus of certain skills
+            if cat.skill in Cat.skill_groups["hunt"]:
+                total_amount += HUNTER_EXP_BONUS[cat.experience_level] * HUNTER_BONUS[cat.skill]
 
-        # add additional bonus of certain traits
-        if "fantastic_hunter" in self.patrol_skills:
-            total_amount = total_amount * (HUNTER_BONUS["fantastic_hunter"] / 10)
-        elif "great_hunter" in self.patrol_skills:
-            total_amount = total_amount * (HUNTER_BONUS["great_hunter"] / 10)
-        elif "good_hunter" in self.patrol_skills:
-            total_amount = total_amount * (HUNTER_BONUS["good_hunter"] / 10)
+        # add additional bonus of certain skills
+        if "fantastic hunter" in self.patrol_skills:
+            total_amount = int(total_amount * (HUNTER_BONUS["fantastic hunter"] / 10 + 1))
+        elif "great hunter" in self.patrol_skills:
+            total_amount = int(total_amount * (HUNTER_BONUS["great hunter"] / 10 + 1))
+        elif "good hunter" in self.patrol_skills:
+            total_amount = int(total_amount * (HUNTER_BONUS["good hunter"] / 10 + 1))
+
 
         game.clan.freshkill_pile.add_freshkill(total_amount)
         if total_amount > 0:
+            print(f" -- FRESHKILL: added {total_amount} prey")
             self.results_text.append(f"Each cat catches a {prey_size} amount of prey.")
 
     def handle_clan_relations(self, difference):

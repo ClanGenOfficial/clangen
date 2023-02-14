@@ -150,11 +150,17 @@ class Freshkill_Events():
         # check if amount of the freshkill pile is too big and a event will be triggered
         needed_amount = freshkill_pile.amount_food_needed()
         trigger_value = FRESHKILL_EVENT_TRIGGER_FACTOR * needed_amount
+        print(f" -- FRESHKILL: amount {trigger_value} to trigger freshkill event. current amount {freshkill_pile.total_amount}")
         if freshkill_pile.total_amount < trigger_value:
             return
 
-        choice = random.randint(0,int(FRESHKILL_EVENT_TRIGGER_FACTOR))
-        if choice != 0:
+        factor = int(freshkill_pile.total_amount / needed_amount)
+        chance = 10 - factor
+        if chance <= 0:
+            chance = 1
+        print(f" -- FRESHKILL: trigger chance of 1/{chance}")
+        choice = random.randint(1,chance)
+        if choice != 1:
             return
 
         # check if there is much more prey than needed, to filter the events
@@ -350,6 +356,6 @@ class Freshkill_Events():
                 else:
                     other_cat.died_by.append(history_normal)
                 other_cat.die()
-            else:
+            if "multi_death" in event.tags and not other_cat:
                 print("WARNING: multi_death event in freshkill pile was triggered, but no other cat was given.")
 

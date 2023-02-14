@@ -36,7 +36,7 @@
 			"deputy",
 			"leader"
 		],
-		"hunter_bonus": {"fantastic_hunter": 3, "great_hunter": 2, "good_hunter": 1},
+		"hunter_bonus": {"fantastic hunter": 3, "great hunter": 2, "good hunter": 1},
 		"hunter_exp_bonus": {
 			"very_low": 1,
 			"low": 2,

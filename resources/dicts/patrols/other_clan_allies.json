@@ -65,7 +65,7 @@
     "patrol_id": "gen_bord_otherclan3",
     "biome": "Any",
     "season": "Any",
-    "tags": ["border", "other_clan", "hunting", "small_prey"],
+    "tags": ["border", "other_clan", "hunting", "small_prey", "no_fail_prey"],
     "intro_text": "r_c spies a fat rabbit on the other side of the o_c_n border. A tempting opportunity to be sure, but it may not be wise to hunt on their ally's territory.",
     "decline_text": "It's not worth ruining c_n's relationship with their ally.",
     "chance_of_success": 60,
