@@ -63,12 +63,12 @@ class Freshkill_Pile():
             self.total_amount = total
         else:
             self.pile = {
-                "expires_in_4": GAME_CONFIG["freshkill"]["start_amount"],
+                "expires_in_4": game.config["freshkill"]["start_amount"],
                 "expires_in_3": 0,
                 "expires_in_2": 0,
                 "expires_in_1": 0,
             }
-            self.total_amount = GAME_CONFIG["freshkill"]["start_amount"]
+            self.total_amount = game.config["freshkill"]["start_amount"]
         self.nutrition_info = {}
 
     def add_freshkill(self, amount) -> None:
@@ -395,18 +395,15 @@ class Freshkill_Pile():
 #                                LOAD RESOURCES                                #
 # ---------------------------------------------------------------------------- #
 
-GAME_CONFIG = None
-with open(f"resources/game_config.json", 'r') as read_file:
-    GAME_CONFIG = ujson.loads(read_file.read())
 
-ADDITIONAL_PREY = GAME_CONFIG["freshkill"]["additional_prey"]
-PREY_REQUIREMENT = GAME_CONFIG["freshkill"]["prey_requirement"]
-CONDITION_INCREASE = GAME_CONFIG["freshkill"]["condition_increase"]
-FEEDING_ORDER = GAME_CONFIG["freshkill"]["feeding_order"]
-HUNTER_BONUS = GAME_CONFIG["freshkill"]["hunter_bonus"]
-HUNTER_EXP_BONUS = GAME_CONFIG["freshkill"]["hunter_exp_bonus"]
-FRESHKILL_EVENT_TRIGGER_FACTOR = GAME_CONFIG["freshkill"]["event_trigger_factor"]
-FRESHKILL_ACTIVE = GAME_CONFIG["freshkill"]["activate_death"]
-FRESHKILL_EVENT_ACTIVE = GAME_CONFIG["freshkill"]["activate_events"]
-MAL_PERCENTAGE = GAME_CONFIG["freshkill"]["nutrition_malnourished_percentage"]
-STARV_PERCENTAGE = GAME_CONFIG["freshkill"]["nutrition_starving_percentage"]
+ADDITIONAL_PREY = game.config["freshkill"]["additional_prey"]
+PREY_REQUIREMENT = game.config["freshkill"]["prey_requirement"]
+CONDITION_INCREASE = game.config["freshkill"]["condition_increase"]
+FEEDING_ORDER = game.config["freshkill"]["feeding_order"]
+HUNTER_BONUS = game.config["freshkill"]["hunter_bonus"]
+HUNTER_EXP_BONUS = game.config["freshkill"]["hunter_exp_bonus"]
+FRESHKILL_EVENT_TRIGGER_FACTOR = game.config["freshkill"]["event_trigger_factor"]
+FRESHKILL_ACTIVE = game.config["freshkill"]["activate_death"]
+FRESHKILL_EVENT_ACTIVE = game.config["freshkill"]["activate_events"]
+MAL_PERCENTAGE = game.config["freshkill"]["nutrition_malnourished_percentage"]
+STARV_PERCENTAGE = game.config["freshkill"]["nutrition_starving_percentage"]

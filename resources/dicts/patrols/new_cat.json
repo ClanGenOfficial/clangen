@@ -49,7 +49,7 @@
     "patrol_id": "gen_bord_newcat3",
     "biome": "Any",
     "season": "Any",
-    "tags": ["border", "new_cat", "new_cat_adult", "new_cat_majorinjury", "reputation", "no_change_fail_rep"],
+    "tags": ["border", "new_cat", "new_cat_adult", "new_cat_injury", "nc_blunt_force_injury", "reputation", "no_change_fail_rep"],
     "intro_text": "r_c finds a wounded cat near the thunderpath.",
     "success_text": [
         "The patrol approaches the injured cat and sees signs of life. They gingerly pick up the cat and take them back to camp to be treated by the medicine cat. The cat is grateful for their help and decides to join the Clan."
@@ -117,7 +117,7 @@
     "patrol_id": "gen_bord_lonerchase1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["border", "new_cat", "reputation", "battle_injury", "scar"],
+    "tags": ["border", "new_cat", "reputation", "injury", "claw-wound", "scar"],
     "intro_text": "Your patrol cautiously moves towards the sound of barking. Near the border, they spot a dog chasing something. Oh no, it's a cat!",
     "decline_text": "The patrol decides not to interfere. Surely the cat can handle itself, the dog isn't even that big.",
     "chance_of_success": 40,
