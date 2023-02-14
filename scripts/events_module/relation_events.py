@@ -166,7 +166,7 @@ class Relation_Events():
 
         # Roll to see if the cat will have kits.
         if cat.mate:
-            chance = 60
+            chance = 50
         else:
             chance = 100
 
@@ -671,7 +671,7 @@ class Relation_Events():
                 cat.mate = None
 
         # If the "no unknown fathers setting in on, we should only allow cats that have mates to have kits.
-        if unknown_parent_setting and not cat.mate:
+        if not unknown_parent_setting and not cat.mate:
             return False
 
         # if function reaches this point, having kits is possible
