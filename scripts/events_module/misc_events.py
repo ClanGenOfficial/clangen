@@ -33,9 +33,9 @@ class MiscEvents():
         other_clan_name = f'{str(other_clan.name)}Clan'
 
         possible_events = self.generate_events.possible_short_events(cat.status, cat.age, "misc_events")
-        final_events = self.generate_events.filter_possible_events(possible_events, cat, other_cat, war,
-                                                                   enemy_clan, other_clan,
-                                                                   alive_kits)
+        final_events = self.generate_events.filter_possible_short_events(possible_events, cat, other_cat, war,
+                                                                         enemy_clan, other_clan,
+                                                                         alive_kits)
 
         # ---------------------------------------------------------------------------- #
         #                                    event                                     #

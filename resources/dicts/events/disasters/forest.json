@@ -1,0 +1,468 @@
+[
+  {
+    "event": "Great Blizzard",
+    "camp": ["any"],
+    "season": ["Leaf-bare"],
+    "tags": [],
+    "priority": "primary",
+    "duration": 2,
+    "rarity": "uncommon",
+    "trigger_events": [
+      "The first few flakes of snow drift down delicately in the yellowish light, some of the younger cats of c_n chasing them down playfully. Within a day, no cat can see past their whiskers, the forest blanketed in a blizzard."
+    ],
+    "progress_events": {
+      "moon1" : [
+        "The snow doesn't seem to have an end to it, the nights and days the same dreary shade of white. It is all c_n can do to dig themselves out of their nests each morning."
+      ]
+    },
+    "conclusion_events": [
+      "The dazzling light of the sun shines brightly on white, still snow. The blizzard has ended, though bare-leaf still continues."
+    ],
+    "secondary_disasters": [
+      {
+        "disaster": "Barren Land",
+        "triggers_during": "during",
+        "chance": 5,
+        "trigger_events": [
+          "The snow has hidden all plants and trails, everything that c_n has relied on. Herbs, favorite moss gathering spots, best cobweb collections, all of it has been obliterated by white, icy flakes."
+        ]
+      },
+      {
+        "disaster": "Famine",
+        "triggers_during": "during",
+        "chance": 5,
+        "trigger_events": [
+          "No cat can smell any prey scent past the snow. There could be mice right under their paws, but no warrior of c_n can track them, and those lucky enough to see one, slip more often than not."
+        ]
+      },
+      {
+        "disaster": "Terrible Cold",
+        "triggers_during": "during",
+        "chance": 5,
+        "trigger_events": [
+          "Any cat with a thin pelt can't seem to get warm with all the snow falling in the forest. Sneezing and coughing wake up many a cat in the muffled silence of the blizzard."
+        ]
+      }
+    ],
+    "collateral_damage": {
+
+    }
+  },
+  {
+    "event": "Drought",
+    "camp": ["any"],
+    "season": ["Greenleaf"],
+    "tags": [],
+    "priority": "primary",
+    "duration": 3,
+    "rarity": "uncommon",
+    "trigger_events": [
+    ],
+    "progress_events": [
+    ],
+    "conclusion_events": [
+    ],
+    "secondary_disasters": [
+      {
+        "disaster": "Barren Land",
+        "triggers_during": "during",
+        "chance": 1,
+        "trigger_events": [
+        ]
+      },
+      {
+        "disaster": "Famine",
+        "triggers_during": "during",
+        "chance": 0,
+        "trigger_events": [
+        ]
+      },
+      {
+        "disaster": "Wildfire",
+        "triggers_during": "during",
+        "chance": 0,
+        "trigger_events": [
+        ]
+      }
+    ],
+    "collateral_damage": {
+
+    }
+  },
+  {
+    "event": "Wildfire",
+    "camp": ["any"],
+    "season": ["Greenleaf", "Leaf-fall"],
+    "tags": [],
+    "priority": "both",
+    "duration": 5,
+    "rarity": "uncommon",
+    "trigger_events": [
+      "Smoke billows into the sky as the distant crackling of fire foreshadows a grim fate. A wildfire is blazing through the forest.",
+      "c_n shivers as the forest roars, the hot teeth of fire ripping through their beloved woods.",
+      "Nothing could compare to this, not the roar of Monster or Tiger or Lion. The creaking howl of fire rips through the forest, scattering all in front of its glowing destruction."
+    ],
+    "progress_events": {
+      "moon1": [
+        "In the aftermath of the fire the forest lays still and quiet, but the Clan knows life will find its way back.",
+        "The haze of smoke covers every sight, every smell, every sound. Until it lifts, there'll be no telling what c_n has lost - or what they've saved.",
+        "The ground feels hot under pawpad, unnatural and wrong. Streaked with soot, the cats of c_n stare at each other with wide eyes, shocked into silence."
+      ],
+      "moon2": [
+        "The terror of fire lingers in the hearts and minds of c_n. While some wake during the night, reliving their escape in their dreams, others cannot sleep at all.",
+        "Though the world seems permanently blackened, on the charred branches of a pine, new needles are unfurling.",
+        "Everything is soot. It seeps into every lap of blessed water, every mouthful of fresh-kill, every breath of air as the warriors try to hunt in this new exposed, raw world."
+      ],
+      "moon3": [
+        "No cat ever thought they'd be so grateful for weeds, but seeing life springing back to c_n's territory is a special kind of joy.",
+        "As the forest sends out new buds, it's hard on those cats who lost something. Their territory might be moving on from the wildfire, but they can't.",
+        "Trees send out new branches to mingle with their soot-stained and charred trunks."
+      ],
+      "moon4": [
+        "Birdsong - c_n has been without it for so long. With the forest growing back to life, their longed for dawn chorus has returned.",
+        "It sounds so strange, but their mud has changed color, back to being made of soil instead of soot! Still a pain to groom out of pelts though.",
+        "The growth of the forest has never been so well celebrated by c_n, but after the devastation of the wildfire, the flush of green returning feels like victory."
+      ]
+  },
+    "conclusion_events": [
+      "Finally, the forest feels almost normal. The fire now nothing but a scar and a memory.",
+      "There's no one moment. But somehow, clawing their way step by step, c_n and their territory have recovered from the fire that raged through their forests.",
+      "It's so strange, to think of the wildfire as something now distant from them, to think of kits hearing about it in the nursery or elders discussing it as a tale from their youth. But that's what happens, isn't it? Life moves on."
+    ],
+    "secondary_disasters": [
+      {
+        "disaster": "Famine",
+        "triggers_during": "start",
+        "chance": 5,
+        "trigger_events": [
+          "The prey that once filled the forest has disappeared, scared away or killed by the wildfire. A famine forebodes the future.",
+          "Once again, the hunting patrols return empty pawed. With the undergrowth gone and the trees scorched and burnt, how can the cats of c_n find enough fresh-kill to survive?",
+          "Cat's ribs are starting to show beneath their pelts. The forest, normally c_n's great protector, has little prey or life here after the wildfire."
+        ]
+      },
+      {
+        "disaster": "Camp Destruction",
+        "triggers_during": "start",
+        "chance": 10,
+        "trigger_events": [
+          "The fire tore through the camp, destroying the carefully built dens and burning up the fresh-kill and herbs. The Clan must rebuild or move on.",
+          "Standing in camp after the fire burns itself out is devastating. The landscape is unrecognizable, like a skeleton of a familiar friend. Can c_n repair it? Should they even try?",
+          "What can c_n do, with nothing left? Their home is gone, eaten by the flames, and the Clan wavers with uncertainty. Do they rebuild, or move on?"
+        ]
+      },
+      {
+        "disaster": "Barren Land",
+        "triggers_during": "start",
+        "chance": 5,
+        "trigger_events": [
+          "The land is left barren once the wildfire has swept through, not a green plant left to be seen. Herbs will surely be hard to find.",
+          "Nothing escaped the jaws of the flames, and the forest has been stripped naked of its green pelt.",
+          "Not even the leaf litter survived the fire. Instead of plants and herbs and undergrowth, the forest offers only soot."
+        ]
+      }
+    ],
+    "collateral_damage": {
+
+    }
+  },
+  {
+    "event": "Terrible Cold",
+    "camp": [
+      "any"
+    ],
+    "season": [
+      "Newleaf",
+      "Greenleaf",
+      "Leaf-fall",
+      "Leaf-bare"
+    ],
+    "tags": [],
+    "priority": "both",
+    "duration": 2,
+    "rarity": "uncommon",
+    "trigger_events": [
+      "The air has sharper claws than any enemy warrior. Even the rising sun cannot make it gentler, only causing the new frozen land to glitter in grim beauty. A terrible cold has come, and sickness will soon follow.",
+      "It hurts to breathe, the cold air like daggers in their lungs. The Clan hunkers down in their dens, curling tightly around each other in shivering piles. This terrible cold will pass, they tell each other, it won't be for forever."
+    ],
+    "progress_events": {
+      "moon1": [
+        "The younger cats have forgotten the warmth of greenleaf, some believe that they may never get warm again, and the older cats suffer the cold even more because of their memory of hot days. Both young and old curl around each other for warmth, and hope, despite the chill of these long nights.",
+        "It feels neverending, the cold. The wind doesn't even dare disturb it, the air so still it feels as though it could cut. Noses are covered by tails and paws are tucked tightly away as the Clan does all they can to avoid freezing."
+
+      ]
+    },
+    "conclusion_events": [
+      "The sun rises one day, rainbow shards of ice glinting on the ground like so many days before, but as the day goes on… They melt and turn to mud. While everyone soon gets dirty, the sunlight feels so good on every cat's fur, no one can complain too much through purrs.",
+      "When the Clan steps from their dens and finds the world no longer freezing, they're almost shocked by the change. It had been so cold for so long, they'd forgotten warmth's embrace."
+    ],
+    "secondary_disasters": [],
+    "collateral_damage": {
+    }
+  },
+  {
+    "event": "Floods",
+    "camp": [
+      "any"
+    ],
+    "season": [
+      "Newleaf"
+    ],
+    "tags": [],
+    "priority": "both",
+    "duration": 3,
+    "rarity": "uncommon",
+    "trigger_events": [
+
+    ],
+    "progress_events": [
+    ],
+    "conclusion_events": [
+    ],
+    "secondary_disasters": [
+      {
+        "disaster": "Barren Land",
+        "triggers_during": "during",
+        "chance": 1,
+        "trigger_events": [
+        ]
+      },
+      {
+        "disaster": "Famine",
+        "triggers_during": "during",
+        "chance": 0,
+        "trigger_events": [
+        ]
+      }
+    ],
+    "collateral_damage": {
+    }
+  },
+  {
+    "event": "Twoleg Invasion",
+    "camp": [
+      "any"
+    ],
+    "season": [
+      "Greenleaf"
+    ],
+    "tags": [],
+    "priority": "both",
+    "duration": 2,
+    "rarity": "common",
+    "trigger_events": [
+      "Twolegs have been spotted everywhere around c_n's territory, crawling in and out of brightly colored nests that have appeared out of nowhere, scaring off all the prey and trampling all the plants in the area. Some of the Twolegs even have fire! Patrols will have to be organized to keep an eye on them."
+    ],
+    "progress_events": {
+      "moon1": [
+        "The abundance of Twolegs in the area doesn't seem to be lessening no matter how many days have passed. Odd colored objects have been found where Twolegs have been, and some have been leaking odd liquids into the ground, spreading strange smells that linger."
+      ]
+    },
+    "conclusion_events": [
+      "The last Twoleg left yesterday, leaving behind strange objects, but thankfully taking the large, scary things with them. It seems for the time being, life can go back to normal."
+    ],
+    "secondary_disasters": [
+      {
+        "disaster": "Wildfire",
+        "triggers_during": "end",
+        "chance": 0,
+        "trigger_events": [
+          "A Twoleg was seen playing with fire, seemingly enjoying the dangerous plaything like a kit does a mossball and, just like a kit, they lost control of it. The forest is too dry in greenleaf to stop the fire, and it quickly spreads, the cats of c_n only able to run with the rest of the animals in the forest.",
+          "The Twolegs seem to enjoy gathering around large fires, much to the terror of the Clan.  Though the fires seem to be put out before the Twolegs leave, it's no surprise when some embers persist and the forest begins to go up in flames."
+        ]
+      },
+      {
+        "disaster": "Prey Sickness",
+        "triggers_during": "during",
+        "chance": 0,
+        "trigger_events": [
+          "The objects the Twolegs bring smell so enticing, but the cats of c_n avoid them as much as possible. It only occurs to them that the prey they so rely on for food might not do the same when the first cats start getting sick."
+        ]
+      }
+    ],
+    "collateral_damage": {
+    }
+  },
+  {
+    "event": "Prey Sickness",
+    "camp": [
+      "any"
+    ],
+    "season": [
+      "Newleaf",
+      "Greenleaf",
+      "Leaf-fall",
+      "Leaf-bare"
+      ],
+    "tags": [],
+    "priority": "both",
+    "duration": 2,
+    "rarity": "uncommon",
+    "trigger_events": [
+      "The objects the Twolegs bring smell so enticing, but the cats of c_n avoid them as much as possible. It only occurs to them that the prey they so rely on for food might not do the same when the first cats start getting sick.",
+      "The prey has been easy to catch lately, though even the freshest of fresh-kill has seemed a little… off. The medicine cat den has more work than usual, and bellyaches are now very common."
+    ],
+    "progress_events": {
+      "moon1": [
+         "There's something wrong with the prey in the forest. No matter how hard the warriors try to catch healthy prey, the fresh-kill still causes bellyaches or worse, and anything that smells even a little wrong is taken away and buried, far, far away from hungry mouths."
+      ]
+
+    },
+    "conclusion_events": [
+      "Fresh-kill tastes a little better, a little brighter, like it's cleaner. While the Clan might be a little thinner than they used to be, it seems as if they can now eat anything they catch again - if they can catch it!"
+    ],
+    "secondary_disasters": [],
+    "collateral_damage": {
+    }
+  },
+  {
+    "event": "Horrible Storms",
+    "camp": [
+      "any"
+    ],
+    "season": [
+      "Newleaf",
+      "Greenleaf",
+      "Leaf-fall"
+      ],
+    "tags": [],
+    "priority": "both",
+    "duration": 2,
+    "rarity": "common",
+    "trigger_events": [],
+    "progress_events": [
+    ],
+    "conclusion_events": [
+    ],
+    "secondary_disasters": [
+      {
+        "disaster": "Floods",
+        "triggers_during": "during",
+        "chance": 0,
+        "trigger_events": [
+        ]
+      },
+      {
+        "disaster": "Wildfire",
+        "triggers_during": "during",
+        "chance": 0,
+        "trigger_events": [
+        ]
+      },
+      {
+        "disaster": "Famine",
+        "triggers_during": "during",
+        "chance": 0,
+        "trigger_events": [
+        ]
+      }
+    ],
+    "collateral_damage": {
+    }
+  },
+  {
+    "event": "Famine",
+    "camp": [
+      "any"
+    ],
+    "season": [
+      "Newleaf",
+      "Greenleaf",
+      "Leaf-fall",
+      "Leaf-bare"
+    ],
+    "tags": [],
+    "priority": "secondary",
+    "duration": 3,
+    "rarity": null,
+    "trigger_events": [],
+    "progress_events": {
+      "moon1": [
+        "The Clan hunts and scrounges for any hint of possible food, but they never seem to find enough.",
+        "As famine hunts the Clan, none of their own hunts seem enough to drive it from haunting their paws.",
+        "Every cat in the clan seems a little sadder, a little more serious as the situation dawns on them all. They have to try find more prey, before it becomes too late."
+      ],
+      "moon2": [
+        "c_n has started wandering past their borders to find prey. While it might not be as much as they hoped for, any catch is considered a blessing from StarClan, even if some prey might smell like a rival clan. No questions are asked if it means not going hungry.",
+        "Every scrap, every catch, every piece brought back to the Clan, it all carries such weight. With prey so scarce, every mouthful is critical.",
+        "Never before has the whispered prayers to StarClan over every catch seemed so heartful. All the cats of Clan can do with hunger dogging their pawsteps is their best. The rest is in the paws of the stars."
+      ]
+    },
+    "conclusion_events": [
+      "Prey has returned to the forest, the famine finally over.",
+      "Though the prey has started to run well again, some of the warriors still seem to be taking every missed pounce as a claw-wound. It's a hard mindset to recover from.",
+      "The forest is once again humming with life, and slowly the Clan starts too as well, making up for the hard times with jokes and sharing tongues and basking together in the bright sun."
+    ],
+    "secondary_disasters": [],
+    "collateral_damage": {
+    }
+  },
+  {
+    "event": "Barren Land",
+    "camp": ["any"],
+    "season": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+    "tags": [],
+    "priority": "secondary",
+    "duration": 3,
+    "rarity": null,
+    "trigger_events": [],
+    "progress_events": {
+      "moon1": [
+        "As the herb stores dwindle, reactions are divided. Those who dismiss the healing help of herbs strut, unconcerned, but wiser minds have already begun to worry.",
+        "As herb gathering patrols return, fruitless and exhausted, the Clan starts to track the growth of the forest plants with concern.",
+        "Surely the herbs will resprout soon. Or the Clan will be able to find potency in their roots. Or another Clan will send help. Surely."
+      ],
+      "moon2": [
+        "Hunting herbs is normally easier than hunting living breathing prey, but with the plants withering and dying, there's nothing c_n can do.",
+        "They're going to start losing cats soon, if the forest doesn't regain its green pelt. Losing them to injuries they'd otherwise have survived, to diseases they should have been strong enough to fight off, unfair, unnecessary, uncalled for deaths.",
+        "Never did c_n think they'd envy the Twolegs and their ability to call plants from the ground. There are those who'd give their pelt to be capable of that right now, as the forest continues to fail them."
+      ]
+    },
+    "conclusion_events": [
+      "There is such peace, such profound relief, in sprouting leaves. c_n has gone so long with the woods around them dying that the new growth draws a crowd to appreciate it.",
+      "Green creeps back to c_n's forest, in tangled growth swirling up trunks, in deep full green calling the wilted back to life, in new buds and tiny sprouts. The land is barren no more.",
+      "Finally, the herb stores have drifted out of the focus of c_n's gossip, and back into only being the concern of the experts who use them. The forest, for so long withered, is returning to its former bounty."
+    ],
+    "secondary_disasters": [],
+    "collateral_damage": {
+
+    }
+  },
+  {
+    "event": "Camp Destruction",
+    "camp": [
+      "any"
+    ],
+    "season": [
+      "Newleaf",
+      "Greenleaf",
+      "Leaf-fall",
+      "Leaf-bare"
+    ],
+    "tags": [],
+    "priority": "secondary",
+    "duration": 3,
+    "rarity": null,
+    "trigger_events": [],
+    "progress_events": {
+      "moon1": [
+        "It's both exhausting and heartbreaking, tearing down the battered remnants of what used to be a safe and whole home. But c_n grits their teeth and yowl encouragement to each other. Nothing will drive them from the forest, and they're determined to make this their home again.",
+        "As dep_name roughly rips down the broken back of the nursery, pulling down the brambles that failed to protect it, something flutters down along with them. Feathers from the artfully made, carefully chosen kitten-nests inside, heartbreaking survivors of the devastation of c_n.",
+        "As lead_name surveys the camp, full of their cats hauling the tattered wreckage of their lives out to the dirt-place, they wonder if staying here was the right decision. How can anything be the same after this? How can any cat ever feel safe here again, on the ground that was supposed to be their greatest and safest shelter?",
+        "lead_name announced their plans confidently, what needed to happen to repair the camp. But they can't watch as the  shattered wreckage of the apprentice's den is torn down and carted away. Maybe it's a weakness. But they can't watch.",
+        "As c_n works in frenzied activity, dep_name is called over. One of the oldest of c_n's cats won't give up their nest, not even as broken and shattered as it is. They can't be convinced, and eventually dep_name has to take it from them, over their protests. They'll get a new one, a better one, a perfect one in their rebuilt home, dep_name vows. But it's still not enough. dep_name can't fix this.",
+        "To rebuild their shattered camp and their shattered lives, the Clan must clear out the wreckage of their old home. But it is its own sort of death to process, the loss of their home, their safety, their innocence."
+      ],
+      "moon2": [
+        "Stiff from sleeping in a messy pile of disorganized Clanmates, c_n nevertheless attacks the task ahead with purpose, as one bringing in new brambles, weaving new walls, and plucking fur from fresh-kill to line their new nests.",
+        "The camp is beginning to take shape again, and dep_name is reassured by the spirited discussions that they're having to mediate between the warriors claiming nest spots.",
+        "They can do this. c_n will rise from this stronger, better prepared, they will take what happened and ensure it can never take their home from them again. As the brambles are brought in for the rising camp walls, there's hope on the horizon."
+      ]
+    },
+    "conclusion_events": [
+      "The walls and dens of the camp look so different now, the kittenhood paths that had been so comforting have all changed, but even with the slight sting of lost nostalgia, their home is, for now, once again safe and whole. The way it was will give way to how it is now, and while things have changed, the purrs and meows of c_n will make it sound like home just like they always have."
+    ],
+    "secondary_disasters": [],
+    "collateral_damage": {
+    }
+  }
+]

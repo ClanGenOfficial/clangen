@@ -162,6 +162,7 @@ class GenerateEvents:
                     tags=event["tags"],
                     priority=event["priority"],
                     duration=event["duration"],
+                    current_duration=0,
                     rarity=event["rarity"],
                     trigger_events=event["trigger_events"],
                     progress_events=event["progress_events"],
@@ -176,7 +177,9 @@ class GenerateEvents:
             event = None
             for event in events_dict:
                 if event["event"] != specific_event:
-                    break
+                    print(event["event"], 'is not', specific_event)
+                    continue
+                print(event["event"], "is", specific_event)
                 event = OngoingEvent(
                     event=event["event"],
                     camp=event["camp"],
@@ -184,10 +187,13 @@ class GenerateEvents:
                     tags=event["tags"],
                     priority=event["priority"],
                     duration=event["duration"],
+                    current_duration=0,
                     progress_events=event["progress_events"],
                     conclusion_events=event["conclusion_events"],
                     collateral_damage=event["collateral_damage"]
                 )
+                break
+            print(event)
             return event
 
     def possible_ongoing_events(self, event_type=None, specific_event=None):
@@ -207,18 +213,20 @@ class GenerateEvents:
                         )
                     )
                 )
+                return event_list
             else:
-                event_list.extend(
+                print(specific_event)
+                event = (
                     self.generate_ongoing_events(
                         self.get_ongoing_event_dicts(
                             event_type, biome
                         ), specific_event
                     )
                 )
-        return event_list
+                return event
 
 
-    def filter_possible_events(self, possible_events, cat, other_cat, war, enemy_clan, other_clan, alive_kits):
+    def filter_possible_short_events(self, possible_events, cat, other_cat, war, enemy_clan, other_clan, alive_kits):
         final_events = []
 
         for event in possible_events:
@@ -546,7 +554,7 @@ class OngoingEvent:
                  tags=None,
                  priority='secondary',
                  duration=None,
-                 current_duration=None,
+                 current_duration=0,
                  rarity=0,
                  trigger_events=None,
                  progress_events=None,
@@ -560,7 +568,7 @@ class OngoingEvent:
         self.tags = tags
         self.priority = priority
         self.duration = duration
-        self.current_duration = duration
+        self.current_duration = current_duration
         self.rarity = rarity
         self.trigger_events = trigger_events
         self.progress_events = progress_events
