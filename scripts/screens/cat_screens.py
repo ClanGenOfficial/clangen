@@ -892,10 +892,8 @@ class ProfileScreen(Screens):
             if the_cat.ID in game.clan.freshkill_pile.nutrition_info:
                 nutr = game.clan.freshkill_pile.nutrition_info[the_cat.ID]
             if nutr:
-                output += "\n"
                 output += f"nutrition status: {round(nutr.percentage, 1)}%\n"
             else:
-                output += "\n"
                 output += f"nutrition status: 100%\n"
 
         if the_cat.is_disabled():

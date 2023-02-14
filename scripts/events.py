@@ -252,11 +252,11 @@ class Events():
 
         prey_amount = 0
         for cat in healthy_hunter:
-            lower_value = GAME_CONFIG["freshkill"]["auto_warrior_prey"][0]
-            upper_value = GAME_CONFIG["freshkill"]["auto_warrior_prey"][1]
+            lower_value = game.config["freshkill"]["auto_warrior_prey"][0]
+            upper_value = game.config["freshkill"]["auto_warrior_prey"][1]
             if cat.status == "apprentice":
-                lower_value = GAME_CONFIG["freshkill"]["auto_apprentice_prey"][0]
-                upper_value = GAME_CONFIG["freshkill"]["auto_apprentice_prey"][1]
+                lower_value = game.config["freshkill"]["auto_apprentice_prey"][0]
+                upper_value = game.config["freshkill"]["auto_apprentice_prey"][1]
 
             prey_amount += randint(lower_value, upper_value)
         game.clan.freshkill_pile.add_freshkill(prey_amount)
@@ -491,9 +491,12 @@ class Events():
         if game.settings["fading"] and not cat.prevent_fading and cat.ID != game.clan.instructor.ID and \
                 not cat.faded:
 
-            age_to_fade = 302
+            age_to_fade = game.config["fading"]["age_to_fade"]
+            opacity_at_fade = game.config["fading"]["opacity_at_fade"]
+            fading_speed = game.config["fading"]["visual_fading_speed"]
             # Handle opacity
-            cat.opacity = int(80 * (1 - (cat.dead_for / age_to_fade) ** 5) + 20)
+            cat.opacity = int((100 - opacity_at_fade) * (1 - (cat.dead_for / age_to_fade) ** fading_speed)
+                              + opacity_at_fade)
 
             # Deal with fading the cat if they are old enough.
             if cat.dead_for > age_to_fade:
@@ -844,7 +847,9 @@ class Events():
                 if Cat.fetch_cat(p):
                     if Cat.fetch_cat(p).dead:
                         dead_parents.append(Cat.fetch_cat(p))
-                    elif not Cat.fetch_cat(p).dead and not Cat.fetch_cat(p).outside:
+                    # For the purposes of ceremonies, living parents who are also the leader are not counted.
+                    elif not Cat.fetch_cat(p).dead and not Cat.fetch_cat(p).outside and \
+                            Cat.fetch_cat(p).status != "leader":
                         living_parents.append(Cat.fetch_cat(p))
 
             tags = []
@@ -916,13 +921,44 @@ class Events():
             except KeyError:
                 random_honor = "hard work"
 
-        print(possible_ceremonies)
-        ceremony_text = self.CEREMONY_TXT[choice(list(possible_ceremonies))][1]
+        # print(possible_ceremonies)
+        ceremony_tags, ceremony_text = self.CEREMONY_TXT[choice(list(possible_ceremonies))]
 
-        ceremony_text = ceremony_text_adjust(Cat, ceremony_text, cat, dead_mentor=dead_mentor,
-                                             random_honor=random_honor,
-                                             mentor=mentor, previous_alive_mentor=previous_alive_mentor,
-                                             living_parents=living_parents, dead_parents=dead_parents)
+        # This is a bit strange, but it works. If there is only one parent involved, but more than one living
+        # or dead parent, the adjust text function will pick a random parent. However, we need to know the
+        # parent to include in the involved cats. Therefore, text adjust also returns the random parents it picked,
+        # which will be added to the involved cats if needed.
+        ceremony_text, involved_living_parent, involved_dead_parent = \
+            ceremony_text_adjust(Cat, ceremony_text, cat, dead_mentor=dead_mentor,
+                                 random_honor=random_honor,
+                                 mentor=mentor, previous_alive_mentor=previous_alive_mentor,
+                                 living_parents=living_parents, dead_parents=dead_parents)
+
+        # Gather additional involved cats
+        for tag in ceremony_tags:
+            if tag == "yes_leader":
+                involved_cats.append(game.clan.leader.ID)
+            elif tag == "yes_mentor":
+                involved_cats.append(cat.mentor)
+            elif tag == "dead_mentor":
+                involved_cats.append(dead_mentor.ID)
+            elif tag == "alive_mentor":
+                involved_cats.append(previous_alive_mentor.ID)
+            elif tag == "alive2_parents" and len(living_parents) >= 2:
+                for c in living_parents[:2]:
+                    if c.ID not in involved_cats:
+                        involved_cats.append(c.ID)
+            elif tag == "alive1_parents" and involved_living_parent:
+                if involved_living_parent.ID not in involved_cats:
+                    involved_cats.append(involved_living_parent.ID)
+            elif tag == "dead2_parents" and len(dead_parents) >= 2:
+                for c in dead_parents[:2]:
+                    if c.ID not in involved_cats:
+                        involved_cats.append(c.ID)
+            elif tag == "dead1_parent" and involved_dead_parent:
+                if involved_dead_parent.ID not in involved_cats:
+                    involved_cats.append(involved_dead_parent.ID)
+
         game.cur_events_list.append(Single_Event(f'{ceremony_text}', "ceremony", involved_cats))
         # game.ceremony_events_list.append(f'{str(cat.name)}{ceremony_text}')
     def gain_accessories(self, cat):
@@ -1619,11 +1655,3 @@ class Events():
 
 
 events_class = Events()
-
-# ---------------------------------------------------------------------------- #
-#                                LOAD RESOURCES                                #
-# ---------------------------------------------------------------------------- #
-
-GAME_CONFIG = None
-with open(f"resources/game_config.json", 'r') as read_file:
-    GAME_CONFIG = ujson.loads(read_file.read())

@@ -637,6 +637,7 @@ class Cat():
 
         # If they have any apprentices, make sure they are still valid:
         if old_status == "medicine cat":
+            game.clan.remove_med_cat(self)
             for app in self.apprentice.copy():
                 Cat.fetch_cat(app).update_med_mentor()
         else:
@@ -646,15 +647,13 @@ class Cat():
         # updates mentors
         if self.status == 'apprentice':
             self.update_mentor()
+
         elif self.status == 'medicine cat apprentice':
             self.update_med_mentor()
 
-        # updates skill
-        if self.status == 'warrior':
+        elif self.status == 'warrior':
             self.update_mentor()
             self.update_skill()
-            if old_status == "medicine cat":
-                game.clan.remove_med_cat(self)
 
             if old_status == 'leader':
                 game.clan.leader_lives = 0
@@ -684,10 +683,6 @@ class Cat():
             # health conditions. However, it is currently being triggered for all elders to
             # prevent "unretiring" by switching to med or mediator, then warrior.
             self.retired = True
-
-            # Will remove them from the clan med cat variables, if they are a med cat
-            if old_status == "medicine cat":
-                game.clan.remove_med_cat(self)
 
             if old_status == 'leader':
                 game.clan.leader_lives = 0

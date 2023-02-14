@@ -202,12 +202,16 @@ class Game():
     # CLAN
     clan = None
     cat_class = None
+    config = {}
 
     def __init__(self, current_screen='start screen'):
         self.current_screen = current_screen
         self.clicked = False
         self.keyspressed = []
         self.switch_screens = False
+
+        with open(f"resources/game_config.json", 'r') as read_file:
+            self.config = ujson.loads(read_file.read())
 
     def update_game(self):
         if self.current_screen != self.switches['cur_screen']:
