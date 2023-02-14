@@ -1029,7 +1029,20 @@
       "compassionate",
       "empathetic"
     ],
-    "Impressed by their r_h, (mentor) chooses m_c as the clan's new mediator apprentice."
+    "Impressed by their eagerness, (mentor) chooses m_c as the clan's new mediator apprentice."
+  ],
+  "mediator_app_5": [
+    [
+      "mediator apprentice",
+      "no_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "thoughtful",
+      "compassionate",
+      "empathetic"
+    ],
+    "(prefix)kit has taken to following (mentor) around during their daily duties, fascinated by the life of a mediator. m_c is more than happy to train as a mediator. "
   ],
   "med_0": [
     [
@@ -1502,7 +1515,7 @@
       "general_backstory",
       "troublesome"
     ],
-    "This is a serious time for (prefex)paw, their medicine cat naming ceremony! Naturally, they're cracking jokes and being irreverent right up until the moment they get their name of m_c, and quiet down long enough to think of something funny to add."
+    "This is a serious time for (prefix)paw, their medicine cat naming ceremony! Naturally, they're cracking jokes and being irreverent right up until the moment they get their name of m_c, and quiet down long enough to think of something funny to add."
   ],
   "med_43": [
     [
