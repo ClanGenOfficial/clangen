@@ -382,15 +382,15 @@ def ceremony_text_adjust(Cat, text, cat, dead_mentor=None, mentor=None, previous
     else:
         leader_name = "leader_placeholder"
 
-    living_parent_names = []
-    for c in living_parents:
-        if c:
-            living_parent_names.append(str(c.name))
+    if living_parents:
+        random_living_parent = choice(living_parents)
+    else:
+        random_living_parent = None
 
-    dead_parent_names = []
-    for c in dead_parents:
-        if c:
-            dead_parent_names.append(str(c.name))
+    if dead_parents:
+        random_dead_parent = choice(dead_parents)
+    else:
+        random_dead_parent = None
 
     random_honor = random_honor
 
@@ -405,27 +405,27 @@ def ceremony_text_adjust(Cat, text, cat, dead_mentor=None, mentor=None, previous
     adjust_text = adjust_text.replace("(previous_mentor)", previous_alive_mentor_name)
 
     # Living Parents
-    if len(living_parent_names) >= 2:
-        adjust_text = adjust_text.replace("p1", living_parent_names[0])
-        adjust_text = adjust_text.replace("p2", living_parent_names[1])
-    elif "p1" in adjust_text and len(living_parent_names) >= 1:
-        adjust_text = adjust_text.replace("p1", choice(living_parent_names))
-    elif "p2" in adjust_text and len(living_parent_names) >= 1:
-        adjust_text = adjust_text.replace("p2", choice(living_parent_names))
+    if "p1" in adjust_text and "p2" in adjust_text and len(living_parents) >= 2:
+        adjust_text = adjust_text.replace("p1", str(living_parents[0].name))
+        adjust_text = adjust_text.replace("p2", str(living_parents[1].name))
+    elif "p1" in adjust_text and random_living_parent:
+        adjust_text = adjust_text.replace("p1", str(random_living_parent.name))
+    elif "p2" in adjust_text and random_living_parent:
+        adjust_text = adjust_text.replace("p2", str(random_living_parent.name))
 
     # Dead Parents
-    if len(dead_parent_names) >= 2:
-        adjust_text = adjust_text.replace("dead_par1", dead_parent_names[0])
-        adjust_text = adjust_text.replace("dead_par2", dead_parent_names[1])
-    elif "dead_par1" in adjust_text and len(dead_parent_names) >= 1:
-        adjust_text = adjust_text.replace("dead_par1", choice(dead_parent_names))
-    elif "dead_par2" in adjust_text and len(dead_parent_names) >= 1:
-        adjust_text = adjust_text.replace("dead_par2", choice(dead_parent_names))
+    if "p1" in adjust_text and "p2" in adjust_text and len(dead_parents) >= 2:
+        adjust_text = adjust_text.replace("p1", str(dead_parents[0].name))
+        adjust_text = adjust_text.replace("p2", str(dead_parents[1].name))
+    elif "p1" in adjust_text and random_dead_parent:
+        adjust_text = adjust_text.replace("p1", str(random_dead_parent.name))
+    elif "p2" in adjust_text and random_living_parent:
+        adjust_text = adjust_text.replace("p2", str(random_dead_parent.name))
 
     if random_honor:
         adjust_text = adjust_text.replace("r_h", random_honor)
 
-    return adjust_text
+    return adjust_text, random_living_parent, random_dead_parent
 
 
 # ---------------------------------------------------------------------------- #
