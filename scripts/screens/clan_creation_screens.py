@@ -834,7 +834,7 @@ class MakeClanScreen(Screens):
                          game.switches['camp_site'], convert_camp[self.selected_camp_tab],
                          self.game_mode, self.members)
         game.clan.create_clan()
-        game.mediated = False
+        game.mediated.clear()
         game.cur_events_list.clear()
         game.herb_events_list.clear()
         Cat.sort_cats()

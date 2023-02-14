@@ -629,8 +629,6 @@ class Clan():
             else:
                 game.mediated = clan_data["mediated"]
 
-            print(game.mediated)
-
 
         self.load_pregnancy(game.clan)
         self.load_herbs(game.clan)

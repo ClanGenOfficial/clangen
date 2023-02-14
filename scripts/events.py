@@ -252,11 +252,11 @@ class Events():
 
         prey_amount = 0
         for cat in healthy_hunter:
-            lower_value = GAME_CONFIG["freshkill"]["auto_warrior_prey"][0]
-            upper_value = GAME_CONFIG["freshkill"]["auto_warrior_prey"][1]
+            lower_value = game.config["freshkill"]["auto_warrior_prey"][0]
+            upper_value = game.config["freshkill"]["auto_warrior_prey"][1]
             if cat.status == "apprentice":
-                lower_value = GAME_CONFIG["freshkill"]["auto_apprentice_prey"][0]
-                upper_value = GAME_CONFIG["freshkill"]["auto_apprentice_prey"][1]
+                lower_value = game.config["freshkill"]["auto_apprentice_prey"][0]
+                upper_value = game.config["freshkill"]["auto_apprentice_prey"][1]
 
             prey_amount += randint(lower_value, upper_value)
         game.clan.freshkill_pile.add_freshkill(prey_amount)
@@ -491,9 +491,12 @@ class Events():
         if game.settings["fading"] and not cat.prevent_fading and cat.ID != game.clan.instructor.ID and \
                 not cat.faded:
 
-            age_to_fade = 302
+            age_to_fade = game.config["fading"]["age_to_fade"]
+            opacity_at_fade = game.config["fading"]["opacity_at_fade"]
+            fading_speed = game.config["fading"]["visual_fading_speed"]
             # Handle opacity
-            cat.opacity = int(80 * (1 - (cat.dead_for / age_to_fade) ** 5) + 20)
+            cat.opacity = int((100 - opacity_at_fade) * (1 - (cat.dead_for / age_to_fade) ** fading_speed)
+                              + opacity_at_fade)
 
             # Deal with fading the cat if they are old enough.
             if cat.dead_for > age_to_fade:
@@ -553,6 +556,8 @@ class Events():
             self.perform_ceremonies(cat)
             self.coming_out(cat)
             self.relation_events.handle_having_kits(cat, clan=game.clan)
+            cat.create_interaction()
+            cat.thoughts()
             return
 
         # check for death/reveal/risks/retire caused by permanent conditions
@@ -603,11 +608,13 @@ class Events():
                             f'The war against {other_clan.name}Clan continues.',
                             f'{game.clan.name}Clan is starting to get tired of the war against {other_clan.name}Clan.',
                             f'{game.clan.name}Clan warriors plan new battle strategies for the war.',
-                            f'{game.clan.name}Clan warriors reinforce the camp walls.'
+                            f'{game.clan.name}Clan warriors reinforce the camp walls.',
+                            f'{game.clan.name}Clan warriors evaluate their battle strategies against {other_clan.name}Clan.'
                         ]
                         if game.clan.medicine_cat is not None:
                             possible_text.extend([
-                                'The medicine cats worry about having enough herbs to treat their Clan\'s wounds.'
+                                f'The medicine cats worry about having enough herbs to treat their Clan\'s wounds.',
+                                f'The medicine cats wonder what StarClan thinks of the war.'
                             ])
                         war_notice = choice(possible_text)
                         self.time_at_war += 1
@@ -741,7 +748,7 @@ class Events():
                                                               and not x.outside, Cat.all_cats_list))
 
                         # Only become a mediator if there is already one in the clan.
-                        if mediator_list and not int(random.random() * 80):
+                        if mediator_list and not int(random.random() * 50):
                             self.ceremony(cat, 'mediator apprentice')
                             self.ceremony_accessory = True
                             self.gain_accessories(cat)
@@ -798,6 +805,8 @@ class Events():
         dead_mentor = None
         mentor = None
         previous_alive_mentor = None
+        dead_parents = []
+        living_parents = []
         try:
             # Get all the ceremonies for the role ----------------------------------------
             possible_ceremonies.update(self.ceremony_id_by_tag[promoted_to])
@@ -834,24 +843,25 @@ class Events():
             possible_ceremonies = temp
 
             # Gather for parents ---------------------------------------------------------
-            dead_parents = []
-            living_parents = []
             for p in [cat.parent1, cat.parent2]:
                 if Cat.fetch_cat(p):
                     if Cat.fetch_cat(p).dead:
                         dead_parents.append(Cat.fetch_cat(p))
-                    elif not Cat.fetch_cat(p).dead and not Cat.fetch_cat(p).outside:
+                    # For the purposes of ceremonies, living parents who are also the leader are not counted.
+                    elif not Cat.fetch_cat(p).dead and not Cat.fetch_cat(p).outside and \
+                            Cat.fetch_cat(p).status != "leader":
                         living_parents.append(Cat.fetch_cat(p))
 
             tags = []
-            if len(dead_parents) == 1:
+            if len(dead_parents) >= 1:
                 tags.append("dead1_parents")
-            elif len(dead_parents) == 2:
+            if len(dead_parents) >= 2:
                 tags.append("dead1_parents")
+                tags.append("dead2_parents")
 
-            if len(living_parents) == 1:
+            if len(living_parents) >= 1:
                 tags.append("alive1_parents")
-            elif len(dead_parents) == 2:
+            if len(living_parents) >= 2:
                 tags.append("alive2_parents")
 
             temp = possible_ceremonies.intersection(self.ceremony_id_by_tag["general_parents"])
@@ -911,12 +921,44 @@ class Events():
             except KeyError:
                 random_honor = "hard work"
 
-        print(possible_ceremonies)
-        ceremony_text = self.CEREMONY_TXT[choice(list(possible_ceremonies))][1]
+        # print(possible_ceremonies)
+        ceremony_tags, ceremony_text = self.CEREMONY_TXT[choice(list(possible_ceremonies))]
 
-        ceremony_text = ceremony_text_adjust(Cat, ceremony_text, cat, dead_mentor=dead_mentor,
-                                             random_honor=random_honor,
-                                             mentor=mentor, previous_alive_mentor=previous_alive_mentor)
+        # This is a bit strange, but it works. If there is only one parent involved, but more than one living
+        # or dead parent, the adjust text function will pick a random parent. However, we need to know the
+        # parent to include in the involved cats. Therefore, text adjust also returns the random parents it picked,
+        # which will be added to the involved cats if needed.
+        ceremony_text, involved_living_parent, involved_dead_parent = \
+            ceremony_text_adjust(Cat, ceremony_text, cat, dead_mentor=dead_mentor,
+                                 random_honor=random_honor,
+                                 mentor=mentor, previous_alive_mentor=previous_alive_mentor,
+                                 living_parents=living_parents, dead_parents=dead_parents)
+
+        # Gather additional involved cats
+        for tag in ceremony_tags:
+            if tag == "yes_leader":
+                involved_cats.append(game.clan.leader.ID)
+            elif tag == "yes_mentor":
+                involved_cats.append(cat.mentor)
+            elif tag == "dead_mentor":
+                involved_cats.append(dead_mentor.ID)
+            elif tag == "alive_mentor":
+                involved_cats.append(previous_alive_mentor.ID)
+            elif tag == "alive2_parents" and len(living_parents) >= 2:
+                for c in living_parents[:2]:
+                    if c.ID not in involved_cats:
+                        involved_cats.append(c.ID)
+            elif tag == "alive1_parents" and involved_living_parent:
+                if involved_living_parent.ID not in involved_cats:
+                    involved_cats.append(involved_living_parent.ID)
+            elif tag == "dead2_parents" and len(dead_parents) >= 2:
+                for c in dead_parents[:2]:
+                    if c.ID not in involved_cats:
+                        involved_cats.append(c.ID)
+            elif tag == "dead1_parent" and involved_dead_parent:
+                if involved_dead_parent.ID not in involved_cats:
+                    involved_cats.append(involved_dead_parent.ID)
+
         game.cur_events_list.append(Single_Event(f'{ceremony_text}', "ceremony", involved_cats))
         # game.ceremony_events_list.append(f'{str(cat.name)}{ceremony_text}')
     def gain_accessories(self, cat):
@@ -1557,7 +1599,7 @@ class Events():
                                 previous_deputy_mention = choice(
                                     [f"They know that {game.clan.deputy.name} would approve.",
                                      f"They hope that {game.clan.deputy.name} would approve.",
-                                     f"They don't know that {game.clan.deputy.name} would approve,"
+                                     f"They don't know if {game.clan.deputy.name} would approve, " \
                                      f"but life must go on. "])
                                 involved_cats.append(game.clan.deputy.ID)
 
@@ -1584,10 +1626,13 @@ class Events():
                             f"{Cat.all_cats[random_cat].name} has been chosen as the new deputy. "
                             f"They hold their head up high and promise to do their best for the Clan.",
                             f"{game.clan.leader.name} has been thinking deeply all day who they would "
-                            f"respect and trust enough to stand at their side and at sunhigh makes the "
+                            f"respect and trust enough to stand at their side, and at sunhigh makes the "
                             f"announcement that {Cat.all_cats[random_cat].name} will be the Clan's new deputy.",
                             f"{Cat.all_cats[random_cat].name} has been chosen as the new deputy. They pray to "
                             f"StarClan that they are the right choice for the Clan.",
+                            f"{Cat.all_cats[random_cat].name} has been chosen as the new deputy. Although"
+                            f"they are nervous, they put on a brave front and look forward to serving"
+                            f"the clan.",
                         ]
                         # No additional involved cats
                         text = choice(possible_events)
@@ -1610,11 +1655,3 @@ class Events():
 
 
 events_class = Events()
-
-# ---------------------------------------------------------------------------- #
-#                                LOAD RESOURCES                                #
-# ---------------------------------------------------------------------------- #
-
-GAME_CONFIG = None
-with open(f"resources/game_config.json", 'r') as read_file:
-    GAME_CONFIG = ujson.loads(read_file.read())
