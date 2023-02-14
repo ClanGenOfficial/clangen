@@ -929,7 +929,7 @@ class Events():
             except KeyError:
                 random_honor = "hard work"
 
-        print(possible_ceremonies)
+        # print(possible_ceremonies)
         ceremony_tags, ceremony_text = self.CEREMONY_TXT[choice(list(possible_ceremonies))]
 
         # This is a bit strange, but it works. If there is only one parent involved, but more than one living
