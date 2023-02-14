@@ -748,7 +748,7 @@ class Events():
                                                               and not x.outside, Cat.all_cats_list))
 
                         # Only become a mediator if there is already one in the clan.
-                        if mediator_list and not int(random.random() * 80):
+                        if mediator_list and not int(random.random() * 50):
                             self.ceremony(cat, 'mediator apprentice')
                             self.ceremony_accessory = True
                             self.gain_accessories(cat)

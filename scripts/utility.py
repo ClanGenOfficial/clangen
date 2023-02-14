@@ -414,13 +414,13 @@ def ceremony_text_adjust(Cat, text, cat, dead_mentor=None, mentor=None, previous
         adjust_text = adjust_text.replace("p2", str(random_living_parent.name))
 
     # Dead Parents
-    if "p1" in adjust_text and "p2" in adjust_text and len(dead_parents) >= 2:
-        adjust_text = adjust_text.replace("p1", str(dead_parents[0].name))
-        adjust_text = adjust_text.replace("p2", str(dead_parents[1].name))
-    elif "p1" in adjust_text and random_dead_parent:
-        adjust_text = adjust_text.replace("p1", str(random_dead_parent.name))
-    elif "p2" in adjust_text and random_living_parent:
-        adjust_text = adjust_text.replace("p2", str(random_dead_parent.name))
+    if "dead_par1" in adjust_text and "dead_par2" in adjust_text and len(dead_parents) >= 2:
+        adjust_text = adjust_text.replace("dead_par1", str(dead_parents[0].name))
+        adjust_text = adjust_text.replace("dead_par2", str(dead_parents[1].name))
+    elif "dead_par1" in adjust_text and random_dead_parent:
+        adjust_text = adjust_text.replace("dead_par1", str(random_dead_parent.name))
+    elif "dead_par2" in adjust_text and random_living_parent:
+        adjust_text = adjust_text.replace("dead_par2", str(random_dead_parent.name))
 
     if random_honor:
         adjust_text = adjust_text.replace("r_h", random_honor)
