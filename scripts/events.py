@@ -93,13 +93,15 @@ class Events():
                     cat.age = 'elder'
 
                 # killing exiled cats
-                if cat.moons > randint(100, 200) and (cat.exiled or cat.outside):
-                    if choice([1, 2, 3, 4, 5]) == 1 and not cat.dead:
+                if cat.exiled or cat.outside:
+                    if random.getrandbits(6) == 1 and not cat.dead:
+                        print("Cat Died: " + str(cat.name))
                         cat.dead = True
                         if cat.exiled:
                             text = f'Rumors reach your Clan that the exiled {str(cat.name)} has died recently.'
                         else:
-                            text = f'Rumors reach your Clan that {str(cat.name)} has died recently.'
+                            cat.outside = False
+                            text = f"Will they reach StarClan, even so far away? {str(cat.name)} isn't sure, but as they drift away, they hope to see familiar starry fur on the other side."
                         game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
 
                 if cat.exiled and cat.status == 'leader' and not cat.dead and randint(
