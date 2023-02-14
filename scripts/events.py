@@ -146,6 +146,7 @@ class Events():
         # Handle grief events.
         if Cat.grief_strings:
             remove_cats = []
+            death_report_cats = []
 
             # Grab all the dead or outside cats, who should not have grief text
             for ID in Cat.grief_strings:
@@ -153,6 +154,8 @@ class Events():
                 if check_cat:
                     if check_cat.dead or check_cat.outside:
                         remove_cats.append(check_cat.ID)
+                    else:
+                        death_report_cats.append(check_cat.ID)
 
             # Remove the dead or outside cats
             for ID in remove_cats:
