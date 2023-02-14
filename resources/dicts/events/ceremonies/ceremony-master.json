@@ -2308,6 +2308,17 @@
       "general_backstory",
       "all_trait"
     ],
-    "Despite m_c's has been resist to retiring, but the aches and pains of old age have worn them down. They approach l_n, and honored for their tireless service. "
+    "m_c's has been resist to retiring, but the aches and pains of old age have worn them down. They approach l_n, and honored for their tireless service. "
+  ],
+  "elder_4": [
+    [
+      "elder",
+      "general_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "all_trait"
+    ],
+    "m_c has been looking forward to their moons of rest as an elder. They happily retire, quickly settling into the elder's den. "
   ]
 }
