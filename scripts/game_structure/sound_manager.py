@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 
 class _SoundManager():
 
-    def __init__(self):
+    def __init__(self, volume: int = 50):
         self.sounds = {}
 
         try:
@@ -36,11 +36,28 @@ class _SoundManager():
             except:
                 logger.exception("Failed to load sound")
 
+        self.volume = volume
+
     def play(self, sound):
         try:
             pygame.mixer.Sound.play(self.sounds[sound])
         except KeyError:
             logger.exception(f"Could not find sound {sound}")
+
+    @property
+    def volume(self):
+        return self._volume
+
+    @volume.setter
+    def volume(self, a):
+        if (a > 100):
+            new_volume = 100
+        elif (a < 0):
+            new_volume = 0
+        new_volume = a / 100
+
+        for _, sound in self.sounds.items():
+            sound.set_volume(new_volume)
 
 
 sound_manager = _SoundManager()
