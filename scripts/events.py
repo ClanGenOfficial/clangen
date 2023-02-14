@@ -235,11 +235,9 @@ class Events():
         if game.settings['become_mediator']:
             # Note: These chances are large since it triggers every moon.
             # Checking every moon has the effect giving older cats more chances to become a mediator
-            mediator_chance = {
-                "warrior": 5000,
-                "elder": 400
-            }
-            if cat.status in mediator_chance and not int(random.random() * mediator_chance[cat.status]):
+
+            if cat.status in game.config["roles"]["become_mediator_chances"] and \
+                    not int(random.random() * game.config["roles"]["become_mediator_chances"][cat.status]):
                 game.cur_events_list.append(
                     Single_Event(f"{cat.name} had chosen to use their skills and experience to help "
                                  f"solve the Clan's disagreements. A meeting is called, and they "
@@ -726,24 +724,23 @@ class Events():
                     has_med_app = any(cat.status == "medicine cat apprentice" for cat in med_cat_list)
 
                     # assign chance to become med app depending on current med cat and traits
+                    chance = game.config["roles"]["base_medicine_app_chance"]
                     if has_elder_med is True and has_med is False:
-                        chance = int(random.random() * 3)  # 3 is not part of the range
+                        chance = int(chance/13.67)
                     elif has_med is False:
-                        chance = int(random.random() * 8)
-                    elif has_elder_med is False and has_med is True:
-                        chance = int(random.random() * 91)
+                        chance = int(chance/5.125)
+                    elif not has_elder_med and has_med:
+                        chance = int(chance * 2.22)
                     elif has_elder_med and has_med:
                         if very_old_med:
-                            chance = int(random.random() * 20)
+                            chance = int(chance/2.05)
                         else:
-                            chance = 0
-                    else:
-                        chance = int(random.random() * 41)
+                            chance = int(chance/1.7)
 
-                    if chance in range(1, 10):
-                        if cat.trait in ['polite', 'quiet', 'sweet', 'daydreamer']:
-                            chance = 1
-                    if has_med_app is False and chance == 1:
+                    if cat.trait in ['altruistic', 'compassionate', 'empathetic', 'wise', 'faithful']:
+                        chance = int(chance/1.3)
+
+                    if has_med_app is False and not int(random.random() * chance):
                         self.ceremony(cat, 'medicine cat apprentice')
                         self.ceremony_accessory = True
                         self.gain_accessories(cat)
@@ -753,7 +750,7 @@ class Events():
                                                               and not x.outside, Cat.all_cats_list))
 
                         # Only become a mediator if there is already one in the clan.
-                        if mediator_list and not int(random.random() * 50):
+                        if mediator_list and not int(random.random() * game.config["roles"]["mediator_app_chance"]):
                             self.ceremony(cat, 'mediator apprentice')
                             self.ceremony_accessory = True
                             self.gain_accessories(cat)
@@ -819,9 +816,11 @@ class Events():
             # Gather ones for mentor. -----------------------------------------------------
             tags = []
 
-            dead_mentor = None
             if cat.mentor:
-                tags.append("yes_mentor")
+                if Cat.fetch_cat(cat.mentor).status == "leader":
+                    tags.append("yes_leader_mentor")
+                else:
+                    tags.append("yes_mentor")
                 mentor = Cat.fetch_cat(cat.mentor)
             else:
                 tags.append("no_mentor")
@@ -833,9 +832,13 @@ class Events():
                     dead_mentor = Cat.fetch_cat(c)
                     break
 
+            # Living Former mentors who are also the leader do not count.
             for c in reversed(cat.former_mentor):
                 if Cat.fetch_cat(c) and not Cat.fetch_cat(c).dead and not Cat.fetch_cat(c).outside:
-                    tags.append("alive_mentor")
+                    if Cat.fetch_cat(c).status == "leader":
+                        tags.append("alive_leader_mentor")
+                    else:
+                        tags.append("alive_mentor")
                     previous_alive_mentor = Cat.fetch_cat(c)
                     break
 
@@ -926,7 +929,7 @@ class Events():
             except KeyError:
                 random_honor = "hard work"
 
-        # print(possible_ceremonies)
+        print(possible_ceremonies)
         ceremony_tags, ceremony_text = self.CEREMONY_TXT[choice(list(possible_ceremonies))]
 
         # This is a bit strange, but it works. If there is only one parent involved, but more than one living
@@ -943,26 +946,25 @@ class Events():
         for tag in ceremony_tags:
             if tag == "yes_leader":
                 involved_cats.append(game.clan.leader.ID)
-            elif tag == "yes_mentor":
+            elif tag in ["yes_mentor", "yes_leader_mentor"]:
                 involved_cats.append(cat.mentor)
             elif tag == "dead_mentor":
                 involved_cats.append(dead_mentor.ID)
-            elif tag == "alive_mentor":
+            elif tag in ["alive_mentor", "alive_leader_mentor"]:
                 involved_cats.append(previous_alive_mentor.ID)
             elif tag == "alive2_parents" and len(living_parents) >= 2:
                 for c in living_parents[:2]:
-                    if c.ID not in involved_cats:
-                        involved_cats.append(c.ID)
+                    involved_cats.append(c.ID)
             elif tag == "alive1_parents" and involved_living_parent:
-                if involved_living_parent.ID not in involved_cats:
-                    involved_cats.append(involved_living_parent.ID)
+                involved_cats.append(involved_living_parent.ID)
             elif tag == "dead2_parents" and len(dead_parents) >= 2:
                 for c in dead_parents[:2]:
-                    if c.ID not in involved_cats:
-                        involved_cats.append(c.ID)
+                    involved_cats.append(c.ID)
             elif tag == "dead1_parent" and involved_dead_parent:
-                if involved_dead_parent.ID not in involved_cats:
-                    involved_cats.append(involved_dead_parent.ID)
+                involved_cats.append(involved_dead_parent.ID)
+
+        # remove duplicates
+        involved_cats = list(set(involved_cats))
 
         game.cur_events_list.append(Single_Event(f'{ceremony_text}', "ceremony", involved_cats))
         # game.ceremony_events_list.append(f'{str(cat.name)}{ceremony_text}')

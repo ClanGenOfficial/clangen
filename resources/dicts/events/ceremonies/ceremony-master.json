@@ -14,6 +14,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -25,6 +26,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -36,6 +38,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -49,6 +52,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -66,6 +70,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -78,6 +83,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -96,6 +102,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -109,6 +116,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -127,6 +135,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -142,6 +151,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -159,6 +169,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -177,6 +188,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -191,6 +203,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -264,6 +277,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "abandoned",
@@ -275,6 +289,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -297,6 +312,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -312,6 +328,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -338,6 +355,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -362,6 +380,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -384,6 +403,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -403,6 +423,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -425,6 +446,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -446,6 +468,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -463,6 +486,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -477,12 +501,13 @@
       "strict",
       "wise"
     ],
-    "m_c touches noses with their mentor, (mentor), looking bored and unimpressed. But on the inside, they're bouncing with euphoria around as if they were still a kit!"
+    "m_c touches noses with their mentor, (mentor), looking bored and unimpressed. But on the inside, they're bouncing around with euphoria as if they were still a kit!"
   ],
   "app_39": [
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -496,6 +521,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -510,6 +536,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -524,6 +551,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -580,6 +608,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "alive1_parents",
       "general_leader",
       "general_backstory",
@@ -591,6 +620,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "alive1_parents",
       "general_leader",
       "general_backstory",
@@ -602,6 +632,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "dead1_parents",
       "general_leader",
       "general_backstory",
@@ -613,6 +644,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "dead1_parents",
       "general_leader",
       "clanborn",
@@ -624,6 +656,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "dead1_parents",
       "general_leader",
       "clanborn",
@@ -635,6 +668,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "dead1_parents",
       "general_leader",
       "general_backstory",
@@ -646,6 +680,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "dead1_parents",
       "general_leader",
       "general_backstory",
@@ -657,6 +692,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "dead1_parents",
       "general_leader",
       "general_backstory",
@@ -667,7 +703,7 @@
   "app_55": [
     [
       "apprentice",
-      "yes_mentor",
+      "general_mentor",
       "alive2_parents",
       "general_leader",
       "general_backstory",
@@ -679,6 +715,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "dead2_parents",
       "general_leader",
       "general_backstory",
@@ -690,6 +727,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "dead2_parents",
       "general_leader",
       "clanborn",
@@ -701,6 +739,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "dead2_parents",
       "general_leader",
       "clanborn",
@@ -712,6 +751,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "dead2_parents",
       "general_leader",
       "general_backstory",
@@ -723,6 +763,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "dead2_parents",
       "general_leader",
       "general_backstory",
@@ -734,12 +775,24 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "dead2_parents",
       "general_leader",
       "general_backstory",
       "all_traits"
     ],
     "As m_c touches noses with their new mentor, (mentor), they make a silent promise to dead_par1 and dead_par2 to make them proud, and to take care of the Clan in their parent's absence."
+  ],
+  "app_62": [
+    [
+      "apprentice",
+      "yes_leader_mentor",
+      "general_parents",
+      "yes_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "(mentor) calls a meeting. They have been watching (prefix)kit for a while now, and have decided to mentor them personally. m_c's eyes shine with pride. "
   ],
   "med_app_0": [
     [
@@ -1130,7 +1183,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "(previous_mentor) still remembers when (prefix)paw was just a kit, batting around in the medicine den, and asking endless questions about everything under the sun. Even now, they ask why their new name, m_c, was chosen with shining eyes and twitching whiskers."
+    "(previous_mentor) still remembers when (prefix)paw was just a kit, batting around in the medicine den, and asking endless questions about everything under the sun. (previous_mentor) chuckles with fondness as m_c asks why their new name was chosen with shining eyes and twitching whiskers."
   ],
   "med_8": [
     [
@@ -1724,7 +1777,7 @@
       "general_backstory",
       "bloodthirsty"
     ],
-    "Although (prefix)paw's paw's eagerness to fight has left l_n a little worried before, they know that the Clan can count on (prefix)paw's bravery and sharp claws when they need them the most. In honor of their r_h, (prefix)paw is given the name m_c."
+    "Although (prefix)paw's eagerness to fight has left l_n a little worried before, they know that the Clan can count on (prefix)paw's bravery and sharp claws when they need them the most. In honor of their r_h, (prefix)paw is given the name m_c."
   ],
   "warrior_12": [
     [
@@ -2246,6 +2299,17 @@
     ],
     "(prefix)paw tries to keep their head high as they step forward, and are given the name m_c in honor of their r_h. It doesn't seem fair. dead_par1 and dead_par2 should be here with them! They promised they would! m_c looks to the stars, and their anger and frustration vanishes. It feels as though the stars are brighter, and they know that, even if they cannot be there in body, their parents are there in spirit."
   ],
+  "warrior_59": [
+    [
+      "warrior",
+      "alive_leader_mentor",
+      "general_parents",
+      "yes_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "(previous_mentor) gathers the clan for a meeting. They have spent many moons training (prefix)paw, and it's time for them to be granted their warrior name. (previous_mentor) gives them the name m_c and honors their r_h."
+  ],
   "mediator_0": [
     [
       "mediator",
@@ -2321,7 +2385,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "m_c's has been resist to retiring, but the aches and pains of old age have worn them down. They approach l_n, and are honored for their tireless service. "
+    "m_c's been resist to retiring, but the aches and pains of old age have worn them down. They approach l_n, and are honored for their tireless service. "
   ],
   "elder_4": [
     [
