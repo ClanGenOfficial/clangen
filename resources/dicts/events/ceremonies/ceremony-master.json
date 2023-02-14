@@ -1042,7 +1042,7 @@
       "compassionate",
       "empathetic"
     ],
-    "(prefix)kit has taken to following (mentor) around during their daily duties, fascinated by the life of a mediator. m_c is more than happy to train as a mediator. "
+    "m_c has taken to following (mentor) around during their daily duties, fascinated by the life of a mediator. (mentor) is happy to train them. "
   ],
   "med_0": [
     [
@@ -2319,7 +2319,7 @@
       "general_parents",
       "yes_leader",
       "general_backstory",
-      "all_trait"
+      "all_traits"
     ],
     "m_c's has been resist to retiring, but the aches and pains of old age have worn them down. They approach l_n, and are honored for their tireless service. "
   ],
@@ -2330,8 +2330,19 @@
       "general_parents",
       "general_leader",
       "general_backstory",
-      "all_trait"
+      "all_traits"
     ],
     "m_c has been looking forward to their moons of rest as an elder. They happily retire, quickly settling into the elder's den. "
+  ],
+  "elder_5": [
+    [
+      "elder",
+      "general_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "Time as taken it's toll, and m_c noticed themselves slowing down. They have worked timelessly for many moons, but is it time for them to retire. "
   ]
 }
