@@ -1132,5 +1132,30 @@
             null,
             "r_c died from their wounds after battling the rat king."
         ]
+    },
+    {
+        "patrol_id": "fst_hunt_bird_swlb",
+        "biome": "forest",
+        "season": "leafbare",
+        "tags": [
+            "hunting",
+            "no_fail_prey",
+            "small_prey"],
+        "intro_text": "While hunting through the snow-covered forest, a flash of scarlet catches p_l's eye. They freeze, tail-tip twitching, and scent the air for prey.",
+        "decline_text": "A cardinal would be paltry prey; the Clan needs more filling meals. p_l leaves it be, knowing they would expend too much precious energy trying to hunt the bird anyway.",
+        "chance_of_success": 65,
+        "exp": 15,
+        "success_text": [
+            "p_l drops into a hunting crouch, watching the oblivious cardinal as it perches on a low and barren shrub branch. With a wriggle of their hind legs, p_l leaps, snagging the cardinal in their front paws and killing it with a quick bite to the neck.",
+            "p_l watches the cardinal, waiting for the right moment to strike, when it suddenly flits off of the low-hanging branch it was perched on. Without thinking, p_l leaps into the air and grabs the cardinal mid-flight with their front paws. They pin it down and kill it with a quick bite to the neck."],
+        "fail_text": [
+            "p_l drops into a hunting crouch, watching the cardinal peck at some invisible bit of food. Suddenly, it flies off, and despite p_l's superb reflexes, they miss the cardinal and fall muzzle-first into the snow. Mouse-dung!"],
+        "win_skills": [
+            "good hunter",
+            "great hunter",
+            "fantastic hunter"],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_text_fail": null
     }
-]
