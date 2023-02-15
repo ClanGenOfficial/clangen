@@ -14,5 +14,8 @@
     },
     "#game_over_window": {
         "prototype": "#window_base_theme"
+    },
+    "#save_check_window": {
+    "prototype": "#window_base_theme"
     }
 }

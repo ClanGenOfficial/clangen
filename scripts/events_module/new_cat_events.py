@@ -69,13 +69,13 @@ class NewCatEvents:
             parent = False
 
         status = None
-        if "warrior" in new_cat_event.tags:
+        if "new_warrior" in new_cat_event.tags:
             status = "warrior"
-        elif "apprentice" in new_cat_event.tags:
+        elif "new_app" in new_cat_event.tags:
             status = "apprentice"
-        elif "medicine cat apprentice" in new_cat_event.tags:
+        elif "new_med_app" in new_cat_event.tags:
             status = "medicine cat apprentice"
-        elif "medicine cat" in new_cat_event.tags:
+        elif "new_med" in new_cat_event.tags:
             status = "medicine cat"
 
         created_cats = self.create_new_cat(new_cat_event.loner,
@@ -94,7 +94,7 @@ class NewCatEvents:
             involved_cats.append(new_cat.ID)
 
         # give injuries to other cat if tagged as such
-        if "injured" in new_cat_event.tags:
+        if "injured" in new_cat_event.tags and game.clan.game_mode != "classic":
             major_injuries = []
             if "major_injury" in new_cat_event.tags:
                 for injury in INJURIES:

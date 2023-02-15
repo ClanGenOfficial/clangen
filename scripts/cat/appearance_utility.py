@@ -184,10 +184,10 @@ def pelt_inheritance(cat, parents: tuple):
     par_white = []
     for p in parents:
         if p:
-            #Gather pelt color.
+            # Gather pelt color.
             par_peltcolours.add(p.pelt.colour)
 
-            #Gather pelt length
+             # Gather pelt length
             par_peltlength.add(p.pelt.length)
 
             # Gather pelt name
@@ -196,10 +196,10 @@ def pelt_inheritance(cat, parents: tuple):
             else:
                 par_peltnames.add(p.pelt.name)
 
-            #Gather exact pelts, for direct inheritance.
+            # Gather exact pelts, for direct inheritance.
             par_pelts.append(p.pelt)
 
-            #Gather if they have white in their pelt.
+            # Gather if they have white in their pelt.
             par_white.append(p.pelt.white)
         else:
             # If order for white patches to work correctly, we also want to randomly generate a "pelt_white"
@@ -212,14 +212,14 @@ def pelt_inheritance(cat, parents: tuple):
             par_peltlength.add(None)
             par_peltnames.add(None)
 
-    #If this list is empty, something went wrong.
+    # If this list is empty, something went wrong.
     if not par_peltcolours:
         print("Error - no parents: pelt randomized")
         randomize_pelt(cat)
         return
 
     # There is a 1/10 chance for kits to have the exact same pelt as one of their parents
-    if not randint(0, 10):  # 1/15 chance
+    if not randint(0, game.config["cat_generation"]["direct_inheritance"]):  # 1/10 chance
         selected = choice(par_pelts)
         cat.pelt = choose_pelt(selected.colour, selected.white, selected.name,
                                selected.length)
@@ -571,7 +571,7 @@ def white_patches_inheritance(cat, parents: tuple):
         return
 
     # Direct inheritance. Will only work if at least one parent has white patches, otherwise continue on.
-    if par_whitepatches and not randint(0, 10):
+    if par_whitepatches and not randint(0, game.config["cat_generation"]["direct_inheritance"]):
         cat.white_patches = choice(list(par_whitepatches))
         return
 
