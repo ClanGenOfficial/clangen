@@ -218,6 +218,10 @@ class Patrol():
         possible_patrols.extend(self.generate_patrol_events(self.TRAINING_SZN))
         possible_patrols.extend(self.generate_patrol_events(self.MEDCAT))
         possible_patrols.extend(self.generate_patrol_events(self.MEDCAT_SZN))
+        possible_patrols.extend(self.generate_patrol_events(self.HUNTING_GEN))
+        possible_patrols.extend(self.generate_patrol_events(self.BORDER_GEN))
+        possible_patrols.extend(self.generate_patrol_events(self.TRAINING_GEN))
+        possible_patrols.extend(self.generate_patrol_events(self.MEDCAT_GEN))
 
         if game_setting_disaster:
             dis_chance = int(random.getrandbits(3)) # disaster patrol chance
@@ -1169,6 +1173,19 @@ class Patrol():
         self.DISASTER = None
         with open(f"{resource_dir}disaster.json", 'r', encoding='ascii') as read_file:
             self.DISASTER = ujson.loads(read_file.read())
+        # sighing heavily as I add general patrols back in
+        self.HUNTING_GEN = None
+        with open(f"{resource_dir}general/hunting.json", 'r', encoding='ascii') as read_file:
+            self.HUNTING_GEN = ujson.loads(read_file.read())
+        self.BORDER_GEN = None
+        with open(f"{resource_dir}general/border.json", 'r', encoding='ascii') as read_file:
+            self.BORDER_GEN = ujson.loads(read_file.read())
+        self.TRAINING_GEN = None
+        with open(f"{resource_dir}general/training.json", 'r', encoding='ascii') as read_file:
+            self.TRAINING_GEN = ujson.loads(read_file.read())
+        self.MEDCAT_GEN = None
+        with open(f"{resource_dir}general/medcat.json", 'r', encoding='ascii') as read_file:
+            self.MEDCAT_GEN = ujson.loads(read_file.read())
 
     # ---------------------------------------------------------------------------- #
     #                                   Handlers                                   #
