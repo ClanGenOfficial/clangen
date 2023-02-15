@@ -1,3 +1,4 @@
+from scripts.game_structure import game_essentials
 from scripts.utility import update_sprite, scale
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import *
@@ -159,14 +160,8 @@ class Screens():
         elif event.ui_element == self.menu_buttons["patrol_screen"]:
             self.change_screen('patrol screen')
         elif event.ui_element == self.menu_buttons["main_menu"]:
-            # save on return to menu
-            if game.clan is not None:
-                game.save_cats()
-                game.clan.save_clan()
-                game.clan.save_pregnancy(game.clan)
-                # if map_available:
-                #    save_map(game.map_info, game.clan.name)
-            self.change_screen('start screen')
+            SaveCheck(game.switches['cur_screen'])
+            self.menu_buttons["main_menu"].disable()
         elif event.ui_element == self.menu_buttons["list_screen"]:
             self.change_screen('list screen')
         elif event.ui_element == self.menu_buttons["allegiances"]:

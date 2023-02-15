@@ -491,7 +491,7 @@
     "patrol_id": "gen_bord_injuredcat1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["border", "new_cat", "reputation", "new_cat_adult", "new_cat_majorinjury"],
+    "tags": ["border", "new_cat", "reputation", "new_cat_adult", "new_cat_injury", "nc_battle_injury"],
     "intro_text": "The patrol is checking along the border lines when they hear a startling sound - a hiss of pain? They quickly follow the sound to the source. It's a loner, and they appear to be injured.",
     "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
     "chance_of_success": 50,
