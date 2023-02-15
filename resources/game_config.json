@@ -55,11 +55,20 @@
 		"base_permanent_condition": 90,
 		"base_male_tortie": 13,
 		"base_female_tortie": 4,
-		"base_heterochromia": 120
+		"base_heterochromia": 120,
+		"direct_inheritance": 15
 	},
 	"fading": {
 		"age_to_fade": 302,
 		"opacity_at_fade": 20,
 		"visual_fading_speed": 5
+	},
+	"roles": {
+		"mediator_app_chance": 50,
+		"base_medicine_app_chance": 41,
+		"become_mediator_chances": {
+			"warrior": 5000,
+			"elder": 400
+		}
 	}
 }
