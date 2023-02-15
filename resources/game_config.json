@@ -70,5 +70,18 @@
 			"warrior": 5000,
 			"elder": 400
 		}
+	},
+	"exile_death_chance": {
+		"leader_lose_one_life": 10,
+		"leader_lose_all_lives": 45,
+		"comment": "Chance interpreted as 1/x, with x being the value"
+	},
+	"patrol": {
+		"disaster_chance": 3,
+		"comment": [
+			"Lower value = higher chance",
+			"this increases exponentially",
+			"if you see this remind luna to work out the math for this"
+		]
 	}
 }

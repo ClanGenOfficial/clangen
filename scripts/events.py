@@ -105,7 +105,7 @@ class Events():
                         game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
 
                 if cat.exiled and cat.status == 'leader' and not cat.dead and randint(
-                        1, 10) == 1:
+                        1, game.config["exile_death_chance"]["leader_lose_one_life"]) == 1:
                     game.clan.leader_lives -= 1
                     if game.clan.leader_lives > 0:
                         text = f'Rumors reach your Clan that the exiled {str(cat.name)} lost a life recently.'
@@ -116,7 +116,7 @@ class Events():
                         cat.dead = True
 
                 elif cat.exiled and cat.status == 'leader' and not cat.dead and randint(
-                        1, 45) == 1:
+                        1, game.config["exile_death_chance"]["leader_lose_all_lives"]) == 1:
                     game.clan.leader_lives -= 10
                     cat.dead = True
                     text = f'Rumors reach your Clan that the exiled {str(cat.name)} has died recently.'
