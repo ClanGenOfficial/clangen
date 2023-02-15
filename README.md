@@ -8,6 +8,14 @@ Original creator: just-some-cat.tumblr.com
 
 Fan edit creator: SableSteel, and many others
 
+## Downloads
+Note: These are developer builds and are not garunteed to work!
+- [Windows 10+](https://nightly.link/Thlumyn/clangen/workflows/build/development/Clangen_Win64_Windows10%2B.zip)
+- [macOS](https://nightly.link/Thlumyn/clangen/workflows/build/development/Clangen_macOS64.dmg.zip)
+- [Linux](https://nightly.link/Thlumyn/clangen/workflows/build/development/Clangen_Linux64_glibc2.35%2B.tar.xz.zip)
+
+Alternatively, you can see [All Supported Systems](https://nightly.link/Thlumyn/clangen/workflows/build/development)
+
 ## Running from source
 ### Requirements
 - python >= 3.8
