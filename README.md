@@ -20,7 +20,7 @@ Alternatively, you can see [All Supported Systems](https://nightly.link/Thlumyn/
 ### Requirements
 - python >= 3.8
 - pygame >= 2.1.3.dev8
-- pygame_gui >= 0.6.5
+- pygame_gui >= 0.6.8
 
 ### Setting up
 Run `pip install -r requirements.txt` to install dependencies. 
