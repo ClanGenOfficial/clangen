@@ -28,7 +28,7 @@
     },
   {
         "camp": "any",
-        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": ["low_lives", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "event_text": "m_c confesses they don't have many lives yet",
         "cat_trait": null,
         "cat_skill": null,

@@ -38,25 +38,6 @@
         "other_cat_skill": null
     },
     {
-        "injury": "rat bite",
-        "tags": [
-            "Newleaf",
-            "Greenleaf",
-            "Leaf-fall",
-            "Leaf-bare"
-        ],
-        "event_text": "A rat got through the camp walls and bit m_c.",
-        "history_text": [
-            "m_c was scarred when a rat bit them.",
-            "m_c died from a rat bite.",
-            "bit by a rat"
-        ],
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
-    },
-    {
         "injury": "dislocated joint",
         "tags": [
             "Newleaf",

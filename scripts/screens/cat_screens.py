@@ -164,7 +164,7 @@ def backstory_text(cat):
     if bs_display == "disgraced":
         if cat.status == 'medicine cat':
             bs_display = 'disgraced medicine cat'
-        elif cat.status in ['warrior', 'elder']:
+        elif cat.status in ['warrior', 'elder', "deputy", "leader", "mediator"]:
             bs_display = 'disgraced deputy'
     if bs_display is None:
         bs_display = None
@@ -1185,14 +1185,14 @@ class ProfileScreen(Screens):
             if self.the_cat.status in ['apprentice', 'medicine cat apprentice']:
                 influence_history = 'This cat has not finished training.'
         elif influenced_skill is not None and influenced_trait is None:
-            influence_history = f"The influence of their mentor, {mentor}, caused this cat to {influenced_skill.lower()}."
+            influence_history = f"The influence of their mentor, {mentor}, caused this cat to {influenced_skill}."
         elif influenced_skill is None and influenced_trait is not None:
             if influenced_trait in ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']:
                 influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait.lower()}."
             else:
                 influence_history = f"This cat's mentor was {mentor}."
         elif influenced_trait is not None and influenced_skill is not None:
-            influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait.lower()} as well as {influenced_skill.lower()}."
+            influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait.lower()} as well as {influenced_skill}."
         else:
             influence_history = f"This cat's mentor was {mentor}."
 
