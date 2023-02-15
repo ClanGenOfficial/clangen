@@ -1318,9 +1318,12 @@ class Events():
             ])
             if game.clan.current_season == 'Leaf-bare':
                 disaster.extend([
-                    ' die after freezing from a snowstorm.',
-                    ' starve to death when no prey is found.'
+                    ' die after freezing from a snowstorm.'
                 ])
+                if game.clan.game_mode == "classic":
+                    disaster.extend([
+                    	' starve to death when no prey is found.'
+                	])
             elif game.clan.current_season == 'Greenleaf':
                 disaster.extend([
                     ' die after overheating.',
