@@ -76,7 +76,7 @@ def bs_blurb_text(cat):
         'rogue2': "This cat used to live in a Twolegplace, scrounging for what they could find. They thought the Clan might offer them more security.",
         'rogue3': "This cat used to live alone in their own territory, but was chased out by something and eventually found the Clan.",
         'abandoned1': "This cat was found by the Clan as a kit and has been living with them ever since.",
-        'abandoned2': "This cat was born into outside of the Clan, but was brought to the Clan as a kit and has lived here ever since.",
+        'abandoned2': "This cat was born outside of the Clan, but was brought to the Clan as a kit and has lived here ever since.",
         'abandoned3': "This cat was born into another Clan, but they were left here as a kit for the Clan to raise.",
         'abandoned4': "This cat was found and taken in after being abandoned by their twolegs as a kit.",
         'medicine_cat': "This cat was once a medicine cat in another Clan.",
