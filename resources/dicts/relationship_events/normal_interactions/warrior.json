@@ -1,0 +1,30 @@
+{
+    "romantic": {
+        "increase": [],
+        "decrease": []
+    },
+    "platonic": {
+        "increase": [],
+        "decrease": []
+    },
+    "dislike": {
+        "increase": [],
+        "decrease": []
+    },
+    "admiration": {
+        "increase": [],
+        "decrease": []
+    },
+    "comfortable": {
+        "increase": [],
+        "decrease": []
+    },
+    "jealousy": {
+        "increase": [],
+        "decrease": []
+    },
+    "trust": {
+        "increase": [],
+        "decrease": []
+    }
+}

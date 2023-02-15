@@ -227,7 +227,7 @@ class Relationship():
             love_chance -= 5
         elif self.platonic_like > 30 or self.romantic_love > 5:
             love_chance -= 3
-        
+
         if self.cat_from.mate is None and self.cat_to.mate is None:
             love_chance -= 10
 
@@ -292,7 +292,7 @@ class Relationship():
         character_keys = SPECIAL_CHARACTER.keys()
         if self.cat_from.trait in character_keys:
             action_possibilities += SPECIAL_CHARACTER[self.cat_from.trait]
-        
+
         return action_possibilities
 
     def get_romantic_action_possibilities(self):
@@ -510,6 +510,88 @@ class Relationship():
             return DIRECT_DECREASE_LOW - COMPATIBILITY_WEIGHT
 
     # ---------------------------------------------------------------------------- #
+    #                                new interaction                               #
+    # ---------------------------------------------------------------------------- #
+
+    def start_interaction(self):
+        print("Starting interaction")
+
+        # get if the interaction is positive or negative for the relationship
+        positive = self.positive_impact()
+
+        # first define what kind of relationship interaction it should happen
+        rel_type = self.get_rel_type(positive)
+
+        # look if an increase interaction or an decrease interaction
+        in_de_crease = "increase" if positive else "decrease"
+        # if the type is jealousy or dislike, then increase and decrease has to be turned around
+        if rel_type in ["jealousy", "dislike"]:
+            in_de_crease = "decrease" if positive else "increase"
+
+        all_interactions = NEW_GENERAL[rel_type][in_de_crease]
+
+    def positive_impact(self) -> bool:
+        """Returns if the interaction should be a positive interaction or not.
+
+            Parameters
+            ----------
+
+            Returns
+            -------
+            positive : bool
+                if the event has a positive or negative impact of the relationship
+
+        """
+        # how likely it is to have a positive or negative impact depends on the current values
+        list_to_choice = [True, False]
+        list_to_choice += [True] * int(self.platonic_like/10)
+        list_to_choice += [False] * int(self.dislike/10)
+
+        return choice(list_to_choice)
+
+
+    def get_interaction_type(self, positive: bool) ->  str:
+        """Returns the type of the interaction which should be made.
+        
+            Parameters
+            ----------
+            positive : bool
+                if the event has a positive or negative impact of the relationship, 
+                this define which weight will be used to get the type of the interaction
+
+            Returns
+            -------
+        """
+        value_weights = {
+            "trust": 1,
+            "jealousy": 1,
+            "comfortable": 1,
+            "admiration": 1,
+            "dislike": 1,
+            "platonic": 1,
+            "romantic": 1
+        }
+        if positive:
+            value_weights["platonic"] += 1
+        else:
+            value_weights["dislike"] += 1
+            value_weights["jealousy"] += 1
+
+        types = []
+        for rel_type, weight in value_weights.items():
+            types += [rel_type] * weight
+
+        # if a romantic relationship is not possible, remove this type
+        mate_from_to = self.cat_from.is_potential_mate(self.cat_to, True)
+        mate_to_from = self.cat_to.is_potential_mate(self.cat_from, True)
+        if not mate_from_to or not mate_to_from:
+            while "romantic" in types:
+                types.remove("romantic")
+        
+        rel_type = choice(types)
+        return rel_type
+
+    # ---------------------------------------------------------------------------- #
     #                                   property                                   #
     # ---------------------------------------------------------------------------- #
 
@@ -607,6 +689,9 @@ cat_to_other_path = "cat_to_other/"
 #                           load event possibilities                           #
 # ---------------------------------------------------------------------------- #
 
+NEW_GENERAL = None
+with open(f"resources\\dicts\\relationship_events\\normal_interactions\\general.json", 'r') as read_file:
+    NEW_GENERAL = ujson.loads(read_file.read())
 
 GENERAL = None
 with open(f"{resource_directory}{cat_to_other_path}not_age_specific.json", 'r') as read_file:
