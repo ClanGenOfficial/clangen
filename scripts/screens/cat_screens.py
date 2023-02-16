@@ -76,7 +76,7 @@ def bs_blurb_text(cat):
         'rogue2': "This cat used to live in a Twolegplace, scrounging for what they could find. They thought the Clan might offer them more security.",
         'rogue3': "This cat used to live alone in their own territory, but was chased out by something and eventually found the Clan.",
         'abandoned1': "This cat was found by the Clan as a kit and has been living with them ever since.",
-        'abandoned2': "This cat was born into outside of the Clan, but was brought to the Clan as a kit and has lived here ever since.",
+        'abandoned2': "This cat was born outside of the Clan, but was brought to the Clan as a kit and has lived here ever since.",
         'abandoned3': "This cat was born into another Clan, but they were left here as a kit for the Clan to raise.",
         'abandoned4': "This cat was found and taken in after being abandoned by their twolegs as a kit.",
         'medicine_cat': "This cat was once a medicine cat in another Clan.",
@@ -164,7 +164,7 @@ def backstory_text(cat):
     if bs_display == "disgraced":
         if cat.status == 'medicine cat':
             bs_display = 'disgraced medicine cat'
-        elif cat.status in ['warrior', 'elder']:
+        elif cat.status in ['warrior', 'elder', "deputy", "leader", "mediator"]:
             bs_display = 'disgraced deputy'
     if bs_display is None:
         bs_display = None
@@ -1185,14 +1185,14 @@ class ProfileScreen(Screens):
             if self.the_cat.status in ['apprentice', 'medicine cat apprentice']:
                 influence_history = 'This cat has not finished training.'
         elif influenced_skill is not None and influenced_trait is None:
-            influence_history = f"The influence of their mentor, {mentor}, caused this cat to {influenced_skill.lower()}."
+            influence_history = f"The influence of their mentor, {mentor}, caused this cat to {influenced_skill}."
         elif influenced_skill is None and influenced_trait is not None:
             if influenced_trait in ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']:
                 influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait.lower()}."
             else:
                 influence_history = f"This cat's mentor was {mentor}."
         elif influenced_trait is not None and influenced_skill is not None:
-            influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait.lower()} as well as {influenced_skill.lower()}."
+            influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait.lower()} as well as {influenced_skill}."
         else:
             influence_history = f"This cat's mentor was {mentor}."
 
