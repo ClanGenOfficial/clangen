@@ -94,9 +94,10 @@ while True:
 
         if event.type == pygame.QUIT:
             # close pygame
-            pygame.display.quit()
-            pygame.quit()
-            sys.exit()
+            if not game.is_closing:
+                game.is_closing = True
+                SaveCheck(game.switches['cur_screen'], False)
+
 
         # MOUSE CLICK
         if event.type == pygame.MOUSEBUTTONDOWN:
