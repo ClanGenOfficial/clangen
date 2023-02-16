@@ -1245,16 +1245,16 @@
             "large_prey2",
             "battle_injury"
         ],
-        "intro_text": "p_l leads the patrol towards the abandoned twoleg nest, listening to r_c's plan. Rats were seen hiding inside to protect themselves from the chill of leaf-fall's winds. Perhaps it would be a perfect hunting spot?",
+        "intro_text": "p_l leads the patrol towards the abandoned Twoleg nest, listening to r_c's plan. Rats were seen hiding inside to protect themselves from the chill of leaf-fall's winds. Perhaps it would be a perfect hunting spot?",
         "success_text": [
             "r_c leads the patrol towards the nest, pushing past the rotting wood blocking the entrance. The patrol gets to work rounding up and piling up the rats, and by nightfall they have so much it takes two trips to bring them back! r_c is congratulated for their ingenious plan.",
             "r_c leads the patrol towards the nest, and they quickly get to work hunting down the rats cornered near the smooth stones. It's a tough fight, with rats attempting to flee or attack the patrol, but in the end the patrol manages to get a hefty pile of prey for c_n."
         ],
         "fail_text": [
-            "r_c leads the cats to the abandoned twoleg nest, but as the cats search and search, all they can find are abandoned rats nests. r_c is scolded for wasting the patrol's valuable time.",
+            "r_c leads the cats to the abandoned Twoleg nest, but as the cats search and search, all they can find are abandoned rats nests. r_c is scolded for wasting the patrol's valuable time.",
             null,
             null,
-            "r_c leads the cats to the abandoned twoleg nest, but the rats seemed to be more lively than they thought. A harsh battle forces the patrol to retreat, r_c being the most harshly wounded."
+            "r_c leads the cats to the abandoned Twoleg nest, but the rats seemed to be more lively than they thought. A harsh battle forces the patrol to retreat, r_c being the most harshly wounded."
         ],
         "decline_text": "The other cats disagree with such a risk, and resume their normal hunting patrol.",
         "chance_of_success": 50,
