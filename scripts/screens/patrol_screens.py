@@ -585,17 +585,6 @@ class PatrolScreen(Screens):
         elif patrol.patrol_event.patrol_id.find('bord') != -1:
             file = 'bord'
 
-        try:
-            self.elements['intro_image'] = pygame_gui.elements.UIImage(
-                scale(pygame.Rect((150, 300), (600, 600))),
-                pygame.transform.scale(
-                pygame.image.load(
-                    f"resources/images/patrol_art/{file}_general_intro.png").convert_alpha(),
-                    (600, 600))
-            )
-        except:
-            print('ERROR: could not display patrol image')
-
         # Grab win trait.
         if patrol.patrol_event.win_trait is not None:
             win_trait = patrol.patrol_event.win_trait
@@ -678,15 +667,12 @@ class PatrolScreen(Screens):
             intro_patrol_id = ''.join([i for i in intro_patrol_id if not i.isdigit()])
 
             file = intro_patrol_id
-            # file_clean is the patrol ID without any numbers
-            nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
-            file_clean = ''.join(i for i in file if i not in nums)
-            exists = file_exists(f"{path}{file_clean}.png")
+            exists = file_exists(f"{path}{file}.png")
             if exists and not placeholder_needed:
                 self.elements['intro_image'] = pygame_gui.elements.UIImage(
                     pygame.Rect((75, 150), (300, 300)),
                     pygame.image.load(
-                        f"{path}{file_clean}.png").convert_alpha()
+                        f"{path}{file}.png").convert_alpha()
                 )
             else:
                 file = 'train'
@@ -1015,8 +1001,10 @@ class PatrolScreen(Screens):
     def clear_page(self):
         """Clears all the elements"""
         for ele in self.elements:
+            print(ele)
             self.elements[ele].kill()
         self.elements = {}
+        print(self.elements)
 
     def clear_cat_buttons(self):
         for cat in self.cat_buttons:
