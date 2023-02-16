@@ -3,10 +3,10 @@
         "Cuddles with their Twoleg",
         "Begs for food from their Twoleg",
         "Is sunning in their yard",
-        "Doesn't want to go to the Cutter",
+        "Doesn't want to go to the vet",
         "Is resting on a fence",
         "Almost forgot the way home",
-        "Was taken to the Cutter recently",
+        "Was taken to the vet recently",
         "Is looking at the forest, daydreaming about hunting a mouse",
         "Is hunting for a gift for their Twoleg",
         "Failed to catch prey with their poor crouch",
@@ -44,10 +44,12 @@
             "Feels alone",
             "Is recovering from an illness",
             "Is exploring ",
-            "Caught a particularly large bird/squirrel/hare",
+            "Caught a particularly large bird",
+            "Caught a particularly large squirrel",
+            "Caught a particularly large rabbit",
             "Is humming a tune",
-            "Got chased off by a border patrol recently.",
-            "Heard some strange stories about starry ancestors living in the sky.",
+            "Got chased off by a border patrol recently",
+            "Heard some strange stories about starry ancestors living in the sky",
             "Shivers in the cold",
             "Wonders if Clan life is the only way to live with others",
             "Was chased away from the shelter they had been staying in",
@@ -57,7 +59,9 @@
             "Got invited to spend the night with a group of friendly loners"
         ],
         "adolescent": [
-            "Is currently trying to figure out how to catch a bird/squirrel/hare",
+            "Is currently trying to figure out how to catch a bird",
+            "Is currently trying to figure out how to catch a squirrel",
+            "Is currently trying to figure out how to catch a rabbit",
             "Is missing their parents",
             "Regrets missing an easy catch",
             "Learned how slippery the edge of a river can be the hard way",
@@ -65,24 +69,24 @@
             "Has been desperately trying to ignore their possibly bleak future",
             "Licking their bruises after a failed attempt at catching a mouse",
             "Is asking themself if becoming a kittypet would be an easier life",
-            "Is trying not to feel overwhelmingly lonely.",
+            "Is trying not to feel overwhelmingly lonely",
             "Learning about the clans",
             "Thinks Clan cats are strange"
         ],
         "adult": [
             "Is scouting out locations for a new den",
-            "Nearly got caught in a twoleg trap!",
-            "Got pet by a twoleg ",
-            "Stayed in a twoleg den for a couple of days for food",
+            "Nearly got caught in a Twoleg trap!",
+            "Got pet by a Twoleg ",
+            "Stayed in a Twoleg den for a couple of days for food",
             "Was almost eaten by a monster",
             "Is playing with kits"
         ],
         "elder": [
             "Wonders if they should have joined a Clan when they were younger",
-            "Debates finding housefolk to care for them in their old age. ",
-            "Is enjoying the sun on their back.",
+            "Debates finding housefolk to care for them in their old age",
+            "Is enjoying the sun on their back",
             "Purring as the sun's warmth eases their old joints",
-            "Is glad they chose this life of freedom.",
+            "Is glad they chose this life of freedom",
             "Thinks about old friends",
             "Hopes it isn't too late to join a Clan",
             "Wonders where they'll go when they die",
@@ -116,7 +120,7 @@
             "Is lurking in c_n territory"
         ],
         "elder": [
-            "Thinks about finding some twolegs to help them in their old age",
+            "Thinks about finding some Twolegs to help them in their old age",
             "Thinks their joints are aching too much to hunt today",
             "Wonders if they can carry on"
         ]
@@ -140,7 +144,7 @@
             "Thought they spotted r_c while wandering around earlier",
             "Thinks they might've been visited by a StarClan cat",
             "Misses their family",
-            "Prays to StarClan that their loved ones are safe.",
+            "Prays to StarClan that their loved ones are safe",
             "Thinks they caught scent of a c_n patrol",
             "Sends a prayer to the stars for the safety of their kits",
             "Replays events in their mind, wondering what they could have done differently",
@@ -157,17 +161,23 @@
             "Regrets everything",
             "Wonders who is mentoring the c_n kits that must be apprentices by now",
             "Is calling the names of their Clanmates, hoping someone hears them",
-            "Is about to give up. . .",
+            "Is about to give up...",
             "Refuses to give up!",
             "Thanks a loner who gave them shelter",
             "Hesitantly made a deal with a rogue",
             "Wishes they weren't as used to this as they are",
             "Got even more lost than they were before",
             "Worries their Clan thinks they're a runaway traitor",
-            "Finds comfort in their solitude"
+            "Finds comfort in their solitude",
+            "Is wandering through the forest",
+            "Is trying to get back to c_n as soon as possible",
+            "Wonders how they will survive without their clanmates",
+            "Is missing r_c",
+            "Is scared that they will never be found"
         ],
         "kitten": [
-            "Misses playing moss ball"
+            "Misses playing moss ball",
+            "Is looking desperately for their mother"
         ],
         "apprentice": [
             "Is missing their mentor's guidance",
@@ -193,7 +203,7 @@
             "Is wondering if they'll still remain deputy after returning"
         ],
         "leader": [
-            "Feels lost without the support of their Clan behind them. ",
+            "Feels lost without the support of their Clan behind them",
             "Wonders if their deputy has already become leader",
             "Hopes that the Clan is doing okay without them",
             "Feels like they have failed their Clan",
@@ -201,11 +211,11 @@
         ],
         "elder": [
             "Wishes they had some help getting around",
-            "Wants an apprentice nearby to help with ticks.",
-            "Is saddened by the fact that they can't tell stories to anyone.",
-            "Misses the kits stumbling around and bothering them.",
+            "Wants an apprentice nearby to help with ticks",
+            "Is saddened by the fact that they can't tell stories to anyone",
+            "Misses the kits stumbling around and bothering them",
             "Is feeling weary and tired, wondering if there even is a point to carry on.",
-            "Prays that they will see their friends again, in this world or StarClan…",
+            "Prays that they will see their friends again, in this world or StarClan...",
             "Their aches and pain make them unable to hunt",
             "Feels the cold seep and settle into their old bones",
             "Is unable to remember what herbs to look out for to ease their pain",

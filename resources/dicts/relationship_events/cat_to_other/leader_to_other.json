@@ -87,7 +87,7 @@
         "unfriendly": [],
         "neutral": [
             "escorted (cat) so they could gather herbs.",
-            "thought of (cat) on the last patrol and took a rare herb with them.",
+            "thought of (cat) on the last patrol and brought an herb back with them.",
             "tells (cat) about their last encounter with StarClan.",
             "feels like (cat) isn't taking their health seriously.",
             "went to (cat) for advice about a dream they had."
@@ -131,5 +131,17 @@
             "talks with (cat) about difficult decisions.",
             "tells (cat) about their last encounter with StarClan."
         ]
+    },
+    "mediator": {
+        "unfriendly": [],
+        "neutral": [],
+        "friendly": [],
+        "close": []
+    },
+    "mediator apprentice": {
+        "unfriendly": [],
+        "neutral": [],
+        "friendly": [],
+        "close": []
     }
 }

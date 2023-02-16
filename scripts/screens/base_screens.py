@@ -1,4 +1,5 @@
-from scripts.utility import update_sprite
+from scripts.game_structure import game_essentials
+from scripts.utility import update_sprite, scale
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import *
 from scripts.clan import map_available
@@ -17,55 +18,66 @@ class Screens():
     # menu buttons are used very often, so they are generated here.
     menu_buttons = {
         "events_screen": UIImageButton(
-            pygame.Rect((246, 60), (82, 30)),
+            scale(pygame.Rect((492, 120), (164, 60))),
             "",
             visible=False,
+            manager=MANAGER,
             object_id="#events_menu_button"
         ),
         "clan_screen": UIImageButton(
-            pygame.Rect((328, 60), (58, 30)),
+            scale(pygame.Rect((656, 120), (116, 60))),
             "",
             visible=False,
+            manager=MANAGER,
             object_id="#clan_menu_button"),
         "starclan_screen": UIImageButton(
-            pygame.Rect((386, 60), (88, 30)),
+            scale(pygame.Rect((772, 120), (176, 60))),
             "",
             visible=False,
             object_id="#starclan_menu_button"),
         "patrol_screen": UIImageButton(
-            pygame.Rect((474, 60), (80, 30)),
+            scale(pygame.Rect((948, 120), (160, 60))),
             "",
             visible=False,
+            manager=MANAGER,
             object_id="#patrol_menu_button"),
         "main_menu": UIImageButton(
-            pygame.Rect((25, 25), (153, 30)),
+            scale(pygame.Rect((50, 50), (306, 60))),
             "",
             visible=False,
+            manager=MANAGER,
             object_id="#main_menu_button"),
         "list_screen": UIImageButton(
-            pygame.Rect((676, 60), (99, 30)),
+            scale(pygame.Rect((1352, 120), (198, 60))),
             "",
             visible=False,
+            manager=MANAGER,
             object_id="#list_button"),
         "allegiances": UIImageButton(
-            pygame.Rect((657, 25), (118, 30)),
+            scale(pygame.Rect((1314, 50), (236, 60))),
             "",
             visible=False,
+            manager=MANAGER,
             object_id="#allegiances_button"),
         "stats": UIImageButton(
-            pygame.Rect((25, 60), (81, 30)),
+            scale(pygame.Rect((50, 120), (162, 60))),
             "",
             visible=False,
+            manager=MANAGER,
             object_id="#stats_button"),
         "name_background": pygame_gui.elements.UIImage(
-            pygame.Rect((310, 25), (180, 35)),
-            image_cache.load_image(
-                "resources/images/clan_name_bg.png").convert_alpha(),
-            visible=False),
+            scale(pygame.Rect((620, 50), (360, 70))),
+            pygame.transform.scale(
+                image_cache.load_image(
+                    "resources/images/clan_name_bg.png").convert_alpha(),
+                (360, 70)),
+            visible=False,
+            manager=MANAGER),
         "heading": pygame_gui.elements.UITextBox(
             "",
-            pygame.Rect((310, 27), (180, 35)),
+            scale(pygame.Rect((620, 54), (360, 70))),
             visible=False,
+            manager=MANAGER,
             object_id="#menu_header_text_box")
     }
 
@@ -77,7 +89,8 @@ class Screens():
         game.last_screen_forupdate = self.name
 
         # This keeps track of the last list-like screen for the back button on cat profiles
-        if self.name in ['clan screen', 'list screen', 'starclan screen', 'dark forest screen']:
+        if self.name in ['clan screen', 'list screen', 'starclan screen', 'dark forest screen', 'events screen',
+                         'med den screen']:
             game.last_screen_forProfile = self.name
 
         game.switches['cur_screen'] = new_screen
@@ -126,7 +139,7 @@ class Screens():
 
     # Enables all menu buttons but the ones passed in.
     # Sloppy, but works. Consider making it nicer.
-    def set_disabled_menu_buttons(self, disabled_buttons=[]):
+    def set_disabled_menu_buttons(self, disabled_buttons=()):
         """This sets all menu buttons as interact-able, except buttons listed in disabled_buttons.  """
         for button in self.menu_buttons:
             self.menu_buttons[button].enable()
@@ -147,14 +160,8 @@ class Screens():
         elif event.ui_element == self.menu_buttons["patrol_screen"]:
             self.change_screen('patrol screen')
         elif event.ui_element == self.menu_buttons["main_menu"]:
-            # save on return to menu
-            if game.clan is not None:
-                game.save_cats()
-                game.clan.save_clan()
-                game.clan.save_pregnancy(game.clan)
-                # if map_available:
-                #    save_map(game.map_info, game.clan.name)
-            self.change_screen('start screen')
+            SaveCheck(game.switches['cur_screen'], True)
+            self.menu_buttons["main_menu"].disable()
         elif event.ui_element == self.menu_buttons["list_screen"]:
             self.change_screen('list screen')
         elif event.ui_element == self.menu_buttons["allegiances"]:

@@ -34,13 +34,13 @@
     },
     "rat bite": {
         "an infected wound": [
-            "m_c watches r_c apply their strange paste. r_c tells them that, as the wound is becoming infected, this is going to be a daily routine until their rat bite heals.",
+            "r_c talks as they apply a strange paste to m_c's rat bite, and tells them that, because it's becoming infected, this will be a daily routine.",
             "It seems inevitable that all rat bites are nasty, so m_c isn't really surprised when their rat bite starts to show signs of infection."
 
         ],
         "a festering wound": [
-            "m_c sees the worry in r_c's face while they examine their sour smelling rat bite, and it makes their heart sink.",
-            "m_c tries to stay strong despite the odor beginning to emanate from the area of their rat bite. Hopefully it can still heal despite the festering state of it."
+            "The worried look in r_c's eyes as they examine m_c's acrid rat bite makes m_c's heart sink.",
+            "m_c tries to ignore the smell coming from the site of their festering rat bite."
 
         ]
     },
@@ -209,6 +209,16 @@
         "an infected wound": [
             "r_c does their best to further prop up m_c's body and feels growing concern at the rancid smell coming from the broken and twisted part of m_c's back.",
             "m_c can smell the infection from their back and feels the fever coming over them, this injury feels less and less survivable with the day."
+        ]
+    },
+    "head damage": {
+        "headache": [
+            "r_c prepares a soothing mix of herbs for m_c, who has been complaining of head pain after their injury. ",
+            "m_c awakes with a dull, throbbing pain in their head. Their head injury doesn't appear to be healing as they hoped. "
+        ],
+        "severe headache": [
+            "m_c yowls with pain, begging r_c for any relief. The damage to their head must have been severe to cause such painful headaches. ",
+            "m_c can't focus on anything but the searing pain in their head. Their head injury must have rattled something deep in their skull."
         ]
     }
 }

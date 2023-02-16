@@ -27,7 +27,8 @@
         "cat_trait": ["daring", "adventurous", "bold", "fierce", "loyal", "lonesome", "troublesome"],
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "camp": "any",
@@ -68,7 +69,8 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "camp": "any",
@@ -88,7 +90,8 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["vengeful", "ambitious", "bloodthirsty", "loving", "fierce"],
-        "other_cat_skill": ["great fighter", "excellent fighter"]
+        "other_cat_skill": ["great fighter", "excellent fighter"],
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "camp": "any",
@@ -98,7 +101,8 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["vengeful", "ambitious", "bloodthirsty", "fierce"],
-        "other_cat_skill": ["great fighter", "excellent fighter"]
+        "other_cat_skill": ["great fighter", "excellent fighter"],
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "camp": "any",
@@ -108,7 +112,8 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["vengeful", "ambitious", "bloodthirsty", "fierce", "sneaky"],
-        "other_cat_skill": ["great fighter", "excellent fighter"]
+        "other_cat_skill": ["great fighter", "excellent fighter", "extremely smart"],
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "camp": "any",
@@ -118,7 +123,8 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "vengeful", "sneaky", "righteous"],
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["very smart", "extremely smart"]
     },
     {
         "camp": "any",
@@ -128,7 +134,8 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "vengeful", "sneaky", "righteous"],
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["very smart", "extremely smart"]
     },
     {
         "camp": "any",
@@ -138,7 +145,8 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "vengeful", "sneaky", "righteous"],
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["very smart", "extremely smart"]
     },
     {
         "camp": "any",
@@ -148,7 +156,8 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "vengeful", "sneaky", "righteous"],
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["very smart", "extremely smart"]
     },
     {
         "camp": "any",
@@ -158,7 +167,8 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "vengeful", "sneaky", "righteous"],
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["very smart", "extremely smart"]
     },
     {
         "camp": "any",
@@ -173,7 +183,7 @@
     {
         "camp": "any",
         "tags": ["classic", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c died from infected wounds",
+        "death_text": "m_c died from infected wounds.",
         "history_text": ["m_c died from infected wounds.", null],
         "cat_trait": null,
         "cat_skill": null,
@@ -183,8 +193,8 @@
     {
         "camp": "any",
         "tags": ["multi_death", "classic", "other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c and r_c die from eating tainted prey",
-        "history_text": ["m_c died from eating tainted prey.", "died from eating tainted prey."],
+        "death_text": "m_c and r_c die from eating tainted prey.",
+        "history_text": ["m_c died from eating tainted prey.", "died from eating tainted prey"],
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,

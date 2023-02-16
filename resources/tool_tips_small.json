@@ -1,0 +1,94 @@
+{
+    "tool_tip": {
+        "misc": {
+            "rect_width": "200"
+        }
+    },
+    "tool_tip.text_box": {
+        "colours": {
+            "normal_border": "#2F2918",
+            "dark_bg": "#AC9D72"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "13"
+        },
+        "misc": {
+            "shape": "rounded_rectangle",
+            "shape_corner_radius": "8",
+            "border_width": "2",
+            "shadow_width": "0",
+            "enable_title_bar": "0"
+        }
+    },
+    "#checked_checkbox_smalltooltip.tool_tip":
+    {
+        "misc":
+        {
+            "rect_width": "100"
+        }
+    },
+    "#unchecked_checkbox_smalltooltip.tool_tip":
+    {
+        "misc":
+        {
+            "rect_width": "100"
+        }
+    },
+    "#checked_checkbox.tool_tip":
+    {
+        "misc":
+        {
+            "rect_width": "200"
+        }
+    },
+    "#unchecked_checkbox.tool_tip":
+    {
+        "misc":
+        {
+            "rect_width": "200"
+        }
+    },
+    "#fav_star.tool_tip":
+    {
+        "misc":
+        {
+            "rect_width": "150"
+        }
+    },
+    "#not_fav_star.tool_tip":
+    {
+        "misc":
+        {
+            "rect_width": "150"
+        }
+    },
+    "#help_button.tool_tip":
+    {
+        "misc":
+        {
+            "rect_width": "400"
+        }
+    },
+    "#leader_ceremony_button.tool_tip":
+    {
+        "misc":
+        {
+            "rect_width": "150"
+        }
+    },
+    "#med_cat_den_hover.tool_tip":
+    {
+        "misc":
+        {
+            "rect_width": "140"
+        }
+    },
+    "#med_cat_den_hover_big.tool_tip":
+    {
+        "misc":
+        {
+            "rect_width": "230"
+        }
+    }
+}

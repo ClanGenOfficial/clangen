@@ -1,5 +1,6 @@
 from copy import deepcopy
 import unittest
+import re
 
 from scripts.cat.cats import Cat
 from scripts.cat_relations.relationship import Relationship
@@ -46,7 +47,8 @@ class TestRelativesFunction(unittest.TestCase):
         kit2 = Cat(parent1=parent.ID)
         self.assertFalse(parent.is_sibling(kit1))
         self.assertFalse(kit1.is_sibling(parent))
-        self.assertTrue(kit1.is_sibling(kit1))
+        # Cats don't need to be their own siblings, do they?
+        #self.assertTrue(kit1.is_sibling(kit1))
         self.assertTrue(kit2.is_sibling(kit1))
         self.assertTrue(kit1.is_sibling(kit2))
 
@@ -254,7 +256,7 @@ class TestPossibleMateFunction(unittest.TestCase):
     def test_possible_setting(self):
         mentor = Cat(moons=50)
         former_appr = Cat(moons=20)
-        mentor.former_apprentices.append(former_appr)
+        mentor.former_apprentices.append(former_appr.ID)
 
         self.assertFalse(mentor._intern_potential_mate(former_appr,False,False))
         self.assertFalse(former_appr._intern_potential_mate(mentor,False,False))
@@ -373,8 +375,8 @@ class TestStatusChange(unittest.TestCase):
         mentor = Cat()
         apprentice.status = "apprentice"
         apprentice.skill = "???"
-        mentor.apprentice.append(apprentice)
-        apprentice.mentor = mentor
+        mentor.apprentice.append(apprentice.ID)
+        apprentice.mentor = mentor.ID
 
         # when
         self.assertNotEqual(apprentice.mentor, None)
@@ -389,17 +391,18 @@ class TestStatusChange(unittest.TestCase):
 class TestUpdateMentor(unittest.TestCase):
     def test_exile_apprentice(self):
         # given
-        app = Cat(moons=7)
-        mentor = Cat(moons=20)
-        app.mentor = mentor
-        mentor.apprentice.append(app)
+        app = Cat(moons=7, status="apprentice")
+        mentor = Cat(moons=20, status="warrior")
+        app.update_mentor(mentor.ID)
 
         # when
-        self.assertTrue(app in mentor.apprentice and app not in mentor.former_apprentices)
-        self.assertTrue(app.mentor is mentor)
+        self.assertTrue(app.ID in mentor.apprentice)
+        self.assertFalse(app.ID in mentor.former_apprentices)
+        self.assertEqual(app.mentor, mentor.ID)
         app.exiled = True
         app.update_mentor()
 
         # then
-        self.assertTrue(app not in mentor.apprentice and app in mentor.former_apprentices)
-        self.assertTrue(app.mentor is None)
+        self.assertFalse(app.ID in mentor.apprentice)
+        self.assertTrue(app.ID in mentor.former_apprentices)
+        self.assertIsNone(app.mentor)

@@ -1,0 +1,74 @@
+{
+	"freshkill":{
+		"start_amount": 60,
+		"auto_warrior_prey": [1,2],
+		"auto_apprentice_prey": [0,2],
+		"condition_increase": 0.5,
+		"prey_requirement":{
+			"leader": 3,
+			"deputy": 3,
+			"medicine cat": 2,
+			"medicine cat apprentice": 1.5,
+			"mediator apprentice": 1.5,
+			"mediator": 2,
+			"warrior": 3,
+			"apprentice": 1.5,
+			"elder": 1.5,
+			"queen": 4,
+			"kitten": 0.5
+		},
+		"feeding_order":[
+			"kitten",
+			"queen",
+			"elder",
+			"medicine cat",
+			"medicine cat apprentice",
+			"apprentice",
+			"mediator apprentice",
+			"warrior",
+			"mediator",
+			"deputy",
+			"leader"
+		],
+		"hunter_bonus": {"fantastic_hunter": 3, "great_hunter": 2, "good_hunter": 1},
+		"hunter_exp_bonus": {
+			"very_low": 1,
+			"low": 2,
+			"average": 3,
+			"high": 4,
+			"master": 5,
+			"max": 7
+		},
+		"comment": [
+			"start_amount defines the amount of prey when a new freshkill-pile is made",
+			"The auto parameters are for the prey each moon, each healthy warrior/apprentice will catch an amount of between these two values of prey.",
+			"hunter_bonus is the factor which is be used to multiply on a hunting patrol.",
+			"hunter_exp_bonus is the additional prey which will be added on a hunting patrol."
+		]
+	},
+	"pregnancy": {
+		"primary_chance_mated": 50,
+		"primary_chance_unmated": 100,
+		"random_affair_chance": 70
+	},
+	"cat_generation": {
+		"base_permanent_condition": 90,
+		"base_male_tortie": 13,
+		"base_female_tortie": 4,
+		"base_heterochromia": 120,
+		"direct_inheritance": 15
+	},
+	"fading": {
+		"age_to_fade": 302,
+		"opacity_at_fade": 20,
+		"visual_fading_speed": 5
+	},
+	"roles": {
+		"mediator_app_chance": 50,
+		"base_medicine_app_chance": 41,
+		"become_mediator_chances": {
+			"warrior": 5000,
+			"elder": 400
+		}
+	}
+}

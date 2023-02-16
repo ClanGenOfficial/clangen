@@ -1,7 +1,11 @@
 import random
 from random import choice, randint
 import copy
-import ujson
+try:
+    import ujson
+except ImportError:
+    import json as ujson
+from scripts.event_class import Single_Event
 
 from scripts.utility import get_personality_compatibility
 from scripts.game_structure.game_essentials import *
@@ -28,9 +32,9 @@ OUTSIDE_CATS = {
 }
 
 # weights of the stat change
-DIRECT_INCREASE_HIGH = 12
-DIRECT_DECREASE_HIGH = 9
-DIRECT_INCREASE_LOW = 7
+DIRECT_INCREASE_HIGH = 13
+DIRECT_DECREASE_HIGH = 10
+DIRECT_INCREASE_LOW = 8
 DIRECT_DECREASE_LOW = 4
 INDIRECT_INCREASE = 6
 INDIRECT_DECREASE = 3
@@ -107,6 +111,7 @@ class Relationship():
         if self.cat_from.mate == self.cat_to.ID:
             self.mates = True
 
+        # check if opposite_relationship is here, otherwise creates it
         if self.opposite_relationship is None:
             self.link_relationship()
 
@@ -115,19 +120,25 @@ class Relationship():
             action = choice(EXILED_CATS['cat_to'])
             string_to_replace = '(' + action[action.find("(") + 1:action.find(")")] + ')'
             self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name))
-            game.relation_events_list.append(f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)")
+            game.cur_events_list.append(Single_Event(
+                f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)", ["relation", "interaction"],
+                [self.cat_to.ID, self.cat_from.ID]))
             return
         elif self.cat_from.exiled and not self.cat_to.exiled:
             action = choice(EXILED_CATS['cat_from'])
             string_to_replace = '(' + action[action.find("(") + 1:action.find(")")] + ')'
             self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name))
-            game.relation_events_list.append(f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)")
+            game.cur_events_list.append(Single_Event(
+                f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)", ["relation", "interaction"],
+                [self.cat_to.ID, self.cat_from.ID]))
             return
         elif self.cat_from.exiled and self.cat_to.exiled:
             action = choice(EXILED_CATS['both'])
             string_to_replace = '(' + action[action.find("(") + 1:action.find(")")] + ')'
             self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name))
-            game.relation_events_list.append(f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)")
+            game.cur_events_list.append(Single_Event(
+                f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)", ["relation", "interaction"],
+                [self.cat_to.ID, self.cat_from.ID]))
             return
 
         # quick fix for outside cat relationships
@@ -135,22 +146,25 @@ class Relationship():
             action = choice(OUTSIDE_CATS['cat_to'])
             string_to_replace = '(' + action[action.find("(") + 1:action.find(")")] + ')'
             self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name))
-            game.relation_events_list.append(
-                f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)")
+            game.cur_events_list.append(Single_Event(
+                f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)", ["relation", "interaction"],
+                [self.cat_to.ID, self.cat_from.ID]))
             return
         elif self.cat_from.outside and not self.cat_to.outside:
             action = choice(OUTSIDE_CATS['cat_from'])
             string_to_replace = '(' + action[action.find("(") + 1:action.find(")")] + ')'
             self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name))
-            game.relation_events_list.append(
-                f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)")
+            game.cur_events_list.append(Single_Event(
+                f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)", ["relation", "interaction"],
+                [self.cat_to.ID, self.cat_from.ID]))
             return
         elif self.cat_from.outside and self.cat_to.outside:
             action = choice(OUTSIDE_CATS['both'])
             string_to_replace = '(' + action[action.find("(") + 1:action.find(")")] + ')'
             self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name))
-            game.relation_events_list.append(
-                f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)")
+            game.cur_events_list.append(Single_Event(
+                f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)", ["relation", "interaction"],
+                [self.cat_to.ID, self.cat_from.ID]))
             return
 
         # get action possibilities
@@ -180,6 +194,9 @@ class Relationship():
         string_to_replace = f"({action[start_point:end_point]})"
         self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name))
 
+        # replace m_c with cat name
+        self.current_action_str = self.current_action_str.replace("m_c", str(self.cat_from.name))
+
         # add the effect of the current action
         action_string_all = f"{str(self.cat_from.name)} {self.current_action_str} "
         if self_relation_effect == 'neutral effect':
@@ -189,11 +206,40 @@ class Relationship():
         # connect all information and broadcast
         both = action_string_all + effect_string
         self.log.append(both)
-        game.relation_events_list.append(both)
+        game.cur_events_list.append(Single_Event(both, ["relation", "interaction"], [self.cat_to.ID, self.cat_from.ID]))
 
     def get_action_possibilities(self):
-        """Creates a list of possibles actions of this relationship"""
-        # check if opposite_relationship is here, otherwise creates it       
+        """Base on the current relationship, different actions are """
+
+        if not self.cat_from.is_potential_mate(self.cat_to, for_love_interest=True) or \
+                not self.cat_to.is_potential_mate(self.cat_from, for_love_interest=True):
+            return self.get_non_romantic_action_possibilities()
+
+        love_chance = 20
+
+        if self.mates and self.romantic_love > 30 and self.opposite_relationship.romantic_love > 25:
+            love_chance -= 18
+        elif self.romantic_love > 25:
+            love_chance -= 8
+        elif self.romantic_love > 15:
+            love_chance -= 6
+        elif self.romantic_love > 10:
+            love_chance -= 5
+        elif self.platonic_like > 30 or self.romantic_love > 5:
+            love_chance -= 3
+        
+        if self.cat_from.mate is None and self.cat_to.mate is None:
+            love_chance -= 10
+
+        # decide which action (romantic or not) are done
+        no_hit = randint(0, love_chance)
+        if no_hit or self.dislike > 15:
+            return self.get_non_romantic_action_possibilities()
+        else:
+            return self.get_romantic_action_possibilities()
+
+    def get_non_romantic_action_possibilities(self):
+        """Returns a list of action possibilities for increase other relation values, not romantic."""
         action_possibilities = copy.deepcopy(GENERAL['neutral'])
 
         key = self.cat_to.status
@@ -209,7 +255,7 @@ class Relationship():
             # increase the chance for unfriendly behavior
             if self.dislike > 30:
                 relation_keys.append('unfriendly')
-        if self.platonic_like > 40 or self.comfortable > 30:
+        if self.platonic_like > 40 or self.comfortable > 30 and self.dislike < 25:
             action_possibilities += GENERAL['friendly']
             relation_keys.append('friendly')
         if self.platonic_like > 50 and self.comfortable > 40 and self.trust > 30:
@@ -246,22 +292,12 @@ class Relationship():
         character_keys = SPECIAL_CHARACTER.keys()
         if self.cat_from.trait in character_keys:
             action_possibilities += SPECIAL_CHARACTER[self.cat_from.trait]
+        
+        return action_possibilities
 
-        # LOVE
-        if not self.cat_from.is_potential_mate(self.cat_to, for_love_interest=True) or \
-                not self.cat_to.is_potential_mate(self.cat_from, for_love_interest=True):
-            return action_possibilities
-
-        # chance to fall in love with some the character is not close to:
-        love_p = randint(0, 20)
-        if self.platonic_like > 30 or love_p == 1 or self.romantic_love > 5:
-            # increase the chance of an love event for two un-mated cats
-            action_possibilities = action_possibilities + LOVE['love_interest_only']
-            if self.cat_from.mate is None and self.cat_to.mate is None:
-                action_possibilities = action_possibilities + LOVE['love_interest_only']
-
-        if self.opposite_relationship.romantic_love > 20:
-            action_possibilities = action_possibilities + LOVE['love_interest_only']
+    def get_romantic_action_possibilities(self):
+        """Returns a list of action possibilities for romantic increase."""
+        action_possibilities = copy.deepcopy(LOVE['love_interest_only'])
 
         if self.romantic_love > 25 and self.opposite_relationship.romantic_love > 15:
             action_possibilities = action_possibilities + LOVE['love_interest']
@@ -296,6 +332,9 @@ class Relationship():
 
         # increases
         if action in INCREASE_HIGH[key]['romantic_love']:
+            # starter boost for romantic
+            if self.romantic_love <= 5:
+                number_increase += 8
             self.romantic_love += number_increase
             effect = 'positive effect'
             # indirect influences
@@ -342,6 +381,9 @@ class Relationship():
 
         number_increase = self.get_low_increase_value()
         if action in INCREASE_LOW[key]['romantic_love']:
+            # starter boost for romantic
+            if self.romantic_love <= 5:
+                number_increase += 8
             self.romantic_love += number_increase
             if effect == 'neutral effect':
                 effect = 'small positive effect'

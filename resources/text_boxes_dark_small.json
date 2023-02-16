@@ -1,0 +1,286 @@
+{
+    "#default_dark":
+    {
+        "colours":
+        {
+            "dark_bg": "#00000000",
+            "normal_text": "#EFE5CE"
+        },
+        "font":
+        {
+            "name": "notosans",
+            "size": "15"
+        },
+        "misc":
+        {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "center"
+        }
+    },
+    "#med_messages_box_dark":
+    {
+        "colours":
+        {
+            "dark_bg": "#00000000",
+            "normal_text": "#EFE5CE"
+        },
+        "font":
+        {
+            "name": "notosans",
+            "size": "15"
+        },
+        "misc":
+        {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "center",
+            "text_vert_alignment": "center"
+        }
+    },
+    "#events_box_dark":
+    {
+        "colours": 
+        {
+            "dark_bg": "#00000000",
+            "normal_text": "#EFE5CE"
+        },
+        "font":
+        {
+            "name": "notosans",
+            "size": "15"
+        },
+        "misc":
+        {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "left"
+        }
+    },
+    "#allegiances_box_dark":
+    {
+        "colours": 
+        {
+            "dark_bg": "#00000000",
+            "normal_text": "#EFE5CE"
+        },
+        "font":
+        {
+            "name": "notosans",
+            "size": "15"
+        },
+        "misc":
+        {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "left"
+        }
+    },
+    "#setting_text_box_dark":
+    {
+        "colours": 
+        {
+            "dark_bg": "#FFFF0000",
+            "normal_text": "#EFE5CE"
+        },
+        "font":
+        {
+            "name": "notosans",
+            "size": "15"
+        },
+        "misc":
+        {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "left",
+            "padding": "0,4"
+        }
+    },
+    "#cat_profile_info_box_dark":
+    {
+        "colours": 
+        {
+            "dark_bg": "#00000000",
+            "normal_text": "#EFE5CE"
+        },
+        "font":
+        {
+            "name": "notosans",
+            "size": "11"
+        },
+        "misc":
+        {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "left",
+            "padding": "0,0"
+        }
+    },
+    "#cat_patrol_info_box_dark":
+    {
+        "colours": 
+        {
+            "dark_bg": "#00000000",
+            "normal_text": "#EFE5CE"
+        },
+        "font":
+        {
+            "name": "notosans",
+            "size": "11"
+        },
+        "misc":
+        {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "center",
+            "padding": "0,0"
+        }
+    },
+
+    "#cat_profile_name_box_dark":
+    {
+        "colours": 
+        {
+            "dark_bg": "#00000000",
+            "normal_text": "#EFE5CE"
+        },
+        "font":
+        {
+            "name": "notosans",
+            "size": "20"
+        },
+        "misc":
+        {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "center",
+            "padding": "0,0"
+        }
+    },
+    "#cat_profile_thoughts_box_dark":
+    {
+        "colours": 
+        {
+            "dark_bg": "#00000000",
+            "normal_text": "#EFE5CE"
+        },
+        "font":
+        {
+            "name": "notosans",
+            "size": "15"
+        },
+        "misc":
+        {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "center",
+            "padding": "0,0"
+        }
+    },
+    "#history_tab_text_box_dark":
+    {
+        "colours": 
+        {
+            "dark_bg": "#00000000",
+            "normal_text": "#EFE5CE"
+        },
+        "font":
+        {
+            "name": "notosans",
+            "size": "13"
+        },
+        "misc":
+        {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "left",
+            "padding": "5,5"
+        }
+    },
+    "#header_text_box_dark":
+    {
+        "colours":
+        {
+            "dark_bg": "#00000000",
+            "normal_text": "#EFE5CE"
+        },
+        "font":
+        {
+            "name": "notosans",
+            "size": "17"
+        },
+        "misc":
+        {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "center"
+        }
+    },
+    "#allegiances_header_text_box_dark":
+    {
+        "colours":
+        {
+            "dark_bg": "#00000000",
+            "normal_text": "#EFE5CE"
+        },
+        "font":
+        {
+            "name": "notosans",
+            "size": "17"
+        },
+        "misc":
+        {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "left"
+        }
+    },
+    "#header_left_dark":
+    {
+        "prototype":  "#header_text_box_dark",
+    "misc":
+        {
+            "text_horiz_alignment": "left",
+            "padding": "(0,0)"
+        }
+    },
+        "#game_mode_details_dark":
+    {
+        "colours":
+            {
+                "dark_bg": "#00000000",
+                "normal_text": "#EFE5CE"
+            },
+        "font":
+            {
+                "name": "notosans",
+                "size": "13"
+            },
+        "misc":
+            {
+                "border_width": "0",
+                "shadow_width": "0",
+                "text_horiz_alignment": "left"
+            }
+    },
+    "#role_blurb_dark": {
+        "colours": {
+            "dark_bg": "#00000000",
+            "normal_text": "#EFE5CE"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "13"
+        },
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "center",
+            "text_vert_alignment": "center",
+            "line_spacing": "0.5"
+        }
+    }
+}
+
+
+

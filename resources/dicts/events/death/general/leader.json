@@ -17,7 +17,10 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": [
+            "great fighter", "excellent fighter"
+        ]
     },
     {
         "camp": "any",
@@ -27,7 +30,8 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "camp": "any",
@@ -37,7 +41,8 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "camp": "any",
@@ -47,7 +52,8 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "camp": "any",
@@ -87,7 +93,8 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["extremely smart", "very smart", "strong connection to StarClan"]
     },
     {
         "camp": "any",
@@ -97,7 +104,8 @@
         "cat_trait": ["altruistic", "bold", "bloodthirsty", "ambitious", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "camp": "any",
@@ -107,7 +115,8 @@
         "cat_trait": ["altruistic", "bold", "bloodthirsty", "ambitious", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["excellent fighter"]
     },
     {
         "camp": "any",
@@ -117,7 +126,8 @@
         "cat_trait": ["altruistic", "bold", "bloodthirsty", "ambitious", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "camp": "any",
@@ -161,99 +171,119 @@
     },
     {
         "camp": "any",
-        "tags": ["other_clan", "rel_down", "clan_kits", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": ["other_clan", "hostile", "war", "rel_down", "clan_kits", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "death_text": "m_c lost a life defending the kits from o_c warriors.",
         "history_text": [null, "defended the kits from o_c warriors"],
         "cat_trait": ["altruistic", "bold", "bloodthirsty", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["excellent fighter"]
     },
     {
         "camp": "any",
-        "tags": ["other_clan", "rel_down", "other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "platonic", "trust", "respect", "neg_dislike", "comfort"],
+        "tags": ["other_clan", "hostile", "neutral", "rel_down", "other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "platonic", "trust", "respect", "neg_dislike", "comfort"],
         "death_text": "m_c lost a life defending r_c from o_c warriors.",
         "history_text": [null, "defended r_c from o_c warriors"],
         "cat_trait": ["altruistic", "bold", "bloodthirsty", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["excellent fighter"]
     },
     {
         "camp": "any",
-        "tags": ["other_clan", "rel_down", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": ["other_clan", "hostile", "neutral", "rel_down", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "death_text": "m_c lost a life to a o_c apprentice.",
         "history_text": [null, "fought a o_c apprentice"],
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["good fighter", "great fighter", "excellent fighter"]
     },
     {
         "camp": "any",
-        "tags": ["other_clan", "rel_up", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": ["other_clan", "neutral", "ally", "rel_up", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "death_text": "m_c lost a life trying to save a o_c apprentice.",
         "history_text": [null, "saved a o_c apprentice"],
         "cat_trait": ["altruistic", "bold", "compassionate", "confident", "daring", "empathetic", "fierce", "loving", "responsible", "strange", "wise"],
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "camp": "any",
-        "tags": ["other_clan", "rel_down", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": ["other_clan", "hostile", "neutral", "rel_down", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "death_text": "m_c lost a life to a o_c warrior.",
         "history_text": [null, "fought a o_c warrior"],
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "camp": "any",
-        "tags": ["other_clan", "rel_up", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": ["other_clan", "ally", "neutral", "rel_up", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "death_text": "m_c lost a life trying to save a o_c warrior.",
         "history_text": [null, "saved a o_c warrior"],
         "cat_trait": ["altruistic", "bold", "compassionate", "confident", "daring", "empathetic", "fierce", "loving", "responsible", "strange", "wise"],
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "camp": "any",
-        "tags": ["other_clan", "rel_down", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": ["other_clan", "hostile", "neutral", "rel_down", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "death_text": "m_c lost a life to the o_c leader.",
         "history_text": [null, "fought the o_c leader"],
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["excellent fighter"]
     },
     {
         "camp": "any",
-        "tags": ["other_clan", "rel_up", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": ["other_clan", "ally", "neutral", "rel_up", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "death_text": "m_c lost a life trying to save the o_c leader.",
         "history_text": [null, "saved the o_c leader"],
         "cat_trait": ["altruistic", "bold", "compassionate", "confident", "daring", "empathetic", "fierce", "loving", "responsible", "strange", "wise"],
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "camp": "any",
-        "tags": ["other_clan", "rel_up", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": ["other_clan", "ally", "neutral", "rel_up", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "death_text": "m_c lost a life trying to save the o_c deputy.",
         "history_text": [null, "saved the o_c deputy"],
         "cat_trait": ["altruistic", "bold", "compassionate", "confident", "daring", "empathetic", "fierce", "loving", "responsible", "strange", "wise"],
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "camp": "any",
-        "tags": ["other_clan", "rel_down", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": ["other_clan", "hostile", "neutral", "rel_down", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "death_text": "m_c lost a life to the o_c deputy.",
         "history_text": [null, "fought the o_c deputy"],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null,
+        "cat_negate_skill": ["excellent fighter"]
+    },
+    {
+        "camp": "any",
+        "tags": ["old_age", "some_lives", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "death_text": "m_c lost some lives to their old age.",
+        "history_text": [null, "succumbed to old age"],
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -261,8 +291,8 @@
     },
     {
         "camp": "any",
-        "tags": ["old_age", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c lost a life to their old age.",
+        "tags": ["old_age", "all_lives", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "death_text": "m_c's body just couldn't continue forward, they've lost all their remaining lives to old age.",
         "history_text": [null, "succumbed to old age"],
         "cat_trait": null,
         "cat_skill": null,
@@ -277,7 +307,8 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "camp": "any",
@@ -287,13 +318,14 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "camp": "any",
         "tags": ["all_lives", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "no_body"],
-        "death_text": "m_c was burnt alive while trying to save their clanmates from a fire.",
-        "history_text": [null, "were killed in a fire trying to save their clanmates"],
+        "death_text": "m_c was burnt alive while trying to save their Clanmates from a fire.",
+        "history_text": [null, "were killed in a fire trying to save their Clanmates"],
         "cat_trait": ["altruistic", "bold", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible"],
         "cat_skill": null,
         "other_cat_trait": null,
@@ -301,44 +333,48 @@
     },
     {
         "camp": "any",
-        "tags": ["all_lives", "other_clan", "rel_down", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": ["all_lives", "hostile", "other_clan", "rel_down", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "death_text": "m_c was brutally murdered by a o_c warrior who cruelly took all their lives.",
         "history_text": [null, "were brutally murdered by a o_c warrior"],
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "camp": "any",
-        "tags": ["all_lives", "other_clan", "rel_down", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": ["all_lives", "hostile", "other_clan", "rel_down", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "death_text": "m_c was brutally murdered by the o_c leader who cruelly took all their lives.",
         "history_text": [null, "were brutally murdered by the o_c leader"],
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["excellent fighter"]
     },
     {
         "camp": "any",
-        "tags": ["all_lives", "other_clan", "rel_down", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": ["all_lives", "other_clan", "hostile", "rel_down", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "death_text": "m_c was brutally murdered by the o_c deputy who cruelly took all their lives.",
         "history_text": [null, "were brutally murdered by the o_c deputy"],
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
 
     {
         "camp": "any",
-        "tags": ["other_cat", "all_lives", "mate", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "to_both", "jealousy", "neg_platonic", "dislike", "neg_respect", "neg_comfort", "neg_trust"],
+        "tags": ["other_cat", "murder", "all_lives", "mate", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "to_both", "jealousy", "neg_platonic", "dislike", "neg_respect", "neg_comfort", "neg_trust"],
         "death_text": "m_c was killed by r_c in an argument over c_m.",
         "history_text": [null, "were killed by r_c in an argument over c_m"],
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["vengeful", "ambitious", "bloodthirsty", "loving", "fierce"],
-        "other_cat_skill": ["great fighter", "excellent fighter"]
+        "other_cat_skill": ["great fighter", "excellent fighter"],
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "camp": "any",
@@ -348,7 +384,8 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["vengeful", "ambitious", "bloodthirsty", "righteous", "fierce", "cold", "sneaky"],
-        "other_cat_skill": ["great fighter", "excellent fighter"]
+        "other_cat_skill": ["great fighter", "excellent fighter"],
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "camp": "any",
@@ -358,7 +395,8 @@
         "cat_trait": null,
         "cat_skill": ["great fighter", "excellent fighter"],
         "other_cat_trait": ["vengeful", "ambitious", "bloodthirsty", "righteous", "fierce", "cold", "sneaky"],
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "other_cat_negate_skill": ["extremely smart", "very smart"]
     },
     {
         "camp": "any",
@@ -432,8 +470,8 @@
     },
     {
         "camp": "any",
-        "tags": ["old_age", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c lost a life to old age, their body slowly becoming more and more frail.",
+        "tags": ["old_age", "some_lives", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "death_text": "m_c lost lives to old age, their body slowly becoming more and more frail.",
         "history_text": [null, "died of old age"],
         "cat_trait": null,
         "cat_skill": null,
@@ -442,8 +480,8 @@
     },
     {
         "camp": "any",
-        "tags": ["old_age", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c collapses in the midst of camp and loses a life to old age.",
+        "tags": ["old_age", "all_lives", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "death_text": "m_c collapses in the midst of camp and loses their remaining lives to old age.",
         "history_text": [null, "died of old age"],
         "cat_trait": null,
         "cat_skill": null,
@@ -462,8 +500,8 @@
     },
     {
         "camp": "any",
-        "tags": ["old_age", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "One day m_c is found dead in the leader's den, it seems they lost a life to old age.",
+        "tags": ["old_age", "all_lives", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "death_text": "One day m_c is found dead in the leader's den, it seems they lost the rest of their lives to old age.",
         "history_text": [null, "died of old age"],
         "cat_trait": null,
         "cat_skill": null,

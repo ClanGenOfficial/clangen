@@ -19,7 +19,7 @@
       "is stuttering while speaking to (cat)."
     ],
     "strict":[
-      "scorns (apprentice) for not catching enough prey."
+      "scorns (cat) for not catching enough prey."
     ],
     "charismatic": [
       "charms (cat).",
@@ -29,8 +29,8 @@
     ],
     "calm": [
       "relaxing with (cat).",
-      "is soothing (cat)'s irrational thoughts.",
-      "is helping (cat) calm down."
+      "is helping (cat) calm down.",
+      "is soothing (cat)'s irrational thoughts."
     ],
     "daring": [
       "challenges (cat) to a race."
@@ -46,7 +46,7 @@
     "cold": [
       "hissed at (cat).",
       "tells (cat) to leave them alone.",
-      "glaring at (cat) from across the camp."
+      "is glaring at (cat) from across the camp."
     ],
     "vengeful": [
       "is thinking about how (cat) wronged them.",
@@ -63,29 +63,29 @@
       "blamed (cat) for their own mistake.",
       "won't stop bothering (cat).",
       "feels bad that they caused a problem for (cat).",
-      "convinces (cat) to help them pull a prank on a clanmate."
+      "convinces (cat) to help them pull a prank on a Clanmate."
     ],
     "empathetic": [
-      "listening to (elder)'s woes.",
+      "is listening to (cat)'s woes.",
       "is listening to (cat)'s troubles.",
-      "noticed (apprentice) was struggling, and offered to help them."
+      "noticed (cat) was struggling, and offered to help them."
     ],
     "adventurous": [
-      "wants to explore twoleg place with (cat).",
+      "wants to explore Twolegplace with (cat).",
       "wants to sneak along the border with (cat).",
       "tells (cat) that there's so much to see in the world!"
     ],
     "thoughful": [
       "gave (cat) their favorite piece of prey.",
       "is being quite considerate with (cat).",
-      "took the time to help (apprentice) work through a technique they are struggling with."
+      "took the time to help (cat) work through a technique they are struggling with."
     ],
     "compassionate": [
       "curled around (cat) to share warmth.",
-      "lets (cat) have the last piece of fresh kill.",
-      "listening to (cat)'s problems.",
+      "lets (cat) have the last piece of fresh-kill.",
+      "is listening to (cat)'s problems.",
       "gives (cat) an item they may like.",
-      "helps (elder) get around camp."
+      "helps (cat) get around camp."
     ],
     "childish": [
       "is hiding behind a bush ready to pounce on (cat)."
@@ -96,12 +96,12 @@
     ],
     "careful": [
       "tells (cat) to get their ailment treated as soon as possible.",
-      "chiding (cat) for being so reckless.",
+      "is chiding (cat) for being so reckless.",
       "apologized to (cat) for possibly hurting their feelings."
     ],
     "altruistic": [
       "let (cat) lean on their shoulder after a recent injury.",
-      "is poised to help train (apprentice)."
+      "is poised to help train (cat)."
     ],
     "bold": [
       "challenged (cat) to spar with them."
@@ -114,18 +114,14 @@
       "is gossiping about (cat).",
       "is teaching (cat) how to walk without making a sound.",
       "is showing (cat) how to sneak up on their enemies.",
-      "convinces (cat) to help them pull a prank on a clanmate."
+      "convinces (cat) to help them pull a prank on a Clanmate."
     ],
     "wise": [
       "is giving (cat) advice."
     ],
-    "cowardly": ["is hiding from (cat)"],
     "impulsive": [
       "crashes into (cat) while eager for the new day.",
       "rejects (cat)'s advice without letting them finish.",
       "interrupts (cat) during a conversation."
-    ],
-    "tidy": [   "is annoyed by the mess (cat) made", "grooms the grime off (cat)'s pelt",
-                "is cross with (cat) for getting dirt all over the fresh-kill pile"],
-    "dreamy": ["talks about dreams with (cat)", "gets distracted from conversation with (cat)"]
+    ]
 }

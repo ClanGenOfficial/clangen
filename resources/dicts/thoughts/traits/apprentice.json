@@ -64,7 +64,7 @@
     "insecure": [
         "Doesn't think that they have performing up to their mentor's standards lately...",
         "Is wondering if they are good enough to be a warrior...",
-        "Wonders if the medicine cat life would have better suited them...",
+        "Wonders if the medicine cat life would have better suited them",
         "Is reluctant to spar with their mentor today",
         "Doesn't think their hauls on hunting patrols have been substantial enough as of late"
     ],
@@ -82,8 +82,8 @@
         "Is hoping to not train with their mentor today...",
         "Wishes they were back in the nursery",
         "Has agreed to their mentor's orders recently, despite their own doubts",
-        "Hopes that they will be a strong enough warrior...",
-        "Is wondering if they are more suited for life as a medicine cat...",
+        "Hopes that they will be a strong enough warrior",
+        "Is wondering if they are more suited for life as a medicine cat",
         "Was startled by a squirrel while out training!"
     ],
     "patient": [],
@@ -114,7 +114,7 @@
     "troublesome": [
         "Is ignoring their mentor's orders",
         "Is making other apprentices laugh",
-        "Got in trouble for shirking their training the other day..."
+        "Got in trouble for shirking their training the other day"
     ],
     "vengeful": [
         "Snaps at another apprentice"

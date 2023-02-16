@@ -44,7 +44,7 @@
             "sticks their tongue out at (cat).",
             "is hiding under a bush from (cat), but they can't stop giggling.",
             "is pretending to be (cat).",
-            "is asking (cat) how babies are made.",
+            "is asking (cat) where kits come from.",
             "whines that (cat) won't play with them, even though they're always around camp.",
             "won't stop copying everything (cat) does."
         ],
@@ -67,9 +67,10 @@
             "sticks their tongue out at (cat).",
             "is hiding under a bush from (cat), but they can't stop giggling.",
             "is pretending to be (cat).",
-            "is asking (cat) how babies are made.",
+            "is asking (cat) where kits come from.",
             "doesn't understand why (cat) won't let them play in the medicine cat den.",
-            "won't stop copying everything (cat) does."
+            "won't stop copying everything (cat) does.",
+            "looks at (cat) napping in the apprentice's den and can't wait to leave the nursery."
         ],
         "friendly": [
             "ask (cat) what it's like to be a apprentice.",
@@ -88,7 +89,7 @@
         "neutral": [
             "is biting (cat)'s tail.",
             "sticks their tongue out at (cat).",
-            "is asking (cat) how babies are made.",
+            "is asking (cat) where kits come from.",
             "is demanding (cat)'s attention.",
             "is pretending to be (cat).",
             "is hiding under a bush from (cat), but they can't stop giggling.",
@@ -97,7 +98,8 @@
         "friendly": [
             "tells (cat) that they would like to be like them when they grows up.",
             "wants to become just like (cat) someday!",
-            "won't stop copying everything (cat) does."
+            "won't stop copying everything (cat) does.",
+            "decorates their nest with gifts that (cat) brought them from patrol"
         ],
         "close": [
             "wants to snuggle with (cat).",
@@ -127,7 +129,8 @@
         ],
         "neutral": [
             "wants to become just like (cat) someday!",
-            "won't stop copying everything (cat) does."
+            "won't stop copying everything (cat) does.",
+            "always wants to play as (cat) in their games of pretend."
         ],
         "friendly": [
             "won't stop copying everything (cat) does."
@@ -142,7 +145,8 @@
         ],
         "neutral": [
             "wants to become just like (cat) someday!",
-            "won't stop copying everything (cat) does."
+            "won't stop copying everything (cat) does.",
+            "asks (cat) if they're really going to be the leader someday."
         ],
         "friendly": [
             "won't stop copying everything (cat) does."
@@ -158,17 +162,30 @@
         "neutral": [
             "sticks their tongue out at (cat).",
             "is hiding under a bush from (cat), but they can't stop giggling.",
-            "is asking (cat) how babies are made.",
+            "is asking (cat) where kits come from.",
             "was distracted while (cat) was telling a story.",
             "won't stop copying everything (cat) does."
         ],
         "friendly": [
             "thinks that (cat) tells the best stories.",
             "wants to become just like (cat) someday!",
-            "won't stop copying everything (cat) does."
+            "won't stop copying everything (cat) does.",
+            "listens to (cat) talk about what life was like when they were young."
         ],
         "close": [
             "won't stop copying everything (cat) does."
         ]
+    },
+    "mediator": {
+        "unfriendly": [],
+        "neutral": [],
+        "friendly": [],
+        "close": []
+    },
+    "mediator apprentice": {
+        "unfriendly": [],
+        "neutral": [],
+        "friendly": [],
+        "close": []
     }
 }

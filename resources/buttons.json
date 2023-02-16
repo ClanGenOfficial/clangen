@@ -963,29 +963,6 @@
             }
         }
     },
-    "#demote_deputy_button": 
-    {
-        "prototype": "#image_button",
-		"images":
-        {
-            "normal_image":
-            {
-                "path": "resources/images/buttons/demote_deputy.png"
-            },
-            "hovered_image":
-            {
-                "path": "resources/images/buttons/demote_deputy_hover.png"
-            },
-			"selected_image":
-            {
-                "path": "resources/images/buttons/demote_deputy_hover.png"
-            },
-            "disabled_image":
-            {
-                "path":"resources/images/buttons/demote_deputy_unavailable.png"
-            }
-        }
-    },
     "#switch_med_app_button": 
     {
         "prototype": "#image_button",
@@ -2405,7 +2382,7 @@
         "font":
         {
         "name": "notosans",
-        "size": "15"
+        "size": "30"
         },
         "misc":
         {
@@ -3022,8 +2999,8 @@
     "misc":
     {
       "shape": "rounded_rectangle",
-      "shape_corner_radius": "3",
-      "border_width": "2",
+      "shape_corner_radius": "6",
+      "border_width": "4",
       "shadow_width": "0"
     }
   },
@@ -3274,7 +3251,619 @@
                 "path":"resources/images/buttons/guide_sc_unavailable.png"
             }
         }
-    }
+    },
+    "#filter_by_closed_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/filter_by_closed.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/filter_by_closed_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/filter_by_closed_unavailable.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/filter_by_closed_unavailable.png"
+            }
+        }
+    },
+    "#filter_by_open_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/filter_by_open.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/filter_by_open_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/filter_by_open_unavailable.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/filter_by_open_unavailable.png"
+            }
+        }
+    },
+    "#filter_rank_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/filter_rank.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/filter_rank_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/filter_rank.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/filter_rank_unavailable.png"
+            }
+        }
+    },
+    "#filter_age_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/filter_age.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/filter_age_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/filter_age.png"
+            },
+            "disabled_image":
+            {
+            "path": "resources/images/buttons/filter_age_unavailable.png"
+            }
+        }
+    },
+    "#filter_ID_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/filter_ID.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/filter_ID_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/filter_ID.png"
+            },
+            "disabled_image":
+            {
+            "path": "resources/images/buttons/filter_ID_unavailable.png"
+            }
+        }
+    },
+    "#med_den_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/med_den.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/med_den_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/med_den_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/med_den.png"
+            }
+        }
+    },
+    "#in_den_tab":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/med_den_in_den.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/med_den_in_den_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/med_den_in_den_select.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/med_den_in_den_select.png"
+            }
+        }
+    },
+    "#out_den_tab":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/med_den_out_den.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/med_den_out_den_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/med_den_out_den_select.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/med_den_out_den_select.png"
+            }
+        }
+    },
+    "#minor_tab":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/med_den_minor.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/med_den_minor_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/med_den_minor_select.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/med_den_minor_select.png"
+            }
+        }
+    },
+    "#med_cat_den_hover":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/med_cat_den/base.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/med_cat_den/base.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/med_cat_den/base.png"
+            },
+            "disabled_image":
+            {
+                "path": "resources/images/med_cat_den/base.png"
+            }
+        }
+    },
+    "#med_cat_den_hover_big":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/med_cat_den/base.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/med_cat_den/base.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/med_cat_den/base.png"
+            },
+            "disabled_image":
+            {
+                "path": "resources/images/med_cat_den/base.png"
+            }
+        }
+    },
+    "#med_den_log_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/med_den_log.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/med_den_log_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/med_den_log.png"
+            },
+            "disabled_image":
+            {
+                "path": "resources/images/buttons/med_den_log_select.png"
+            }
+        }
+    },
+    "#hurt_sick_cats_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/hurt_sick_cats.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/hurt_sick_cats_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/hurt_sick_cats.png"
+            },
+            "disabled_image":
+            {
+                "path": "resources/images/buttons/hurt_sick_cats_select.png"
+            }
+        }
+    },
+  "#events_cat_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/cat_icon.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/cat_icon_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/cat_icon.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/cat_icon_unavailable.png"
+            }
+        }
+    },
+  "#events_cat_profile_button":
+    {
+        "colours":
+        {
+            "normal_bg":"#655934",
+            "hovered_bg":"#1E1809",
+            "selected_bg":"#1E1809",
+            "normal_text":"#EEE4CD",
+            "hovered_text":"#EFE5CE",
+            "text_shadow": "#00000000"
+        },
+        "font":
+        {
+        "name": "notosans",
+        "size": "26"
+        },
+        "misc":
+        {
+            "border_width": "0",
+            "shadow_width": "0"
+        },
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/cat_event_profile.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/cat_event_profile_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/cat_event_profile.png"
+            }
+        }
+    },
+    "#blank_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/blank.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/blank.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/blank.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/blank.png"
+            }
+        }
+    },
+  "#retire_button":
+  {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/retire.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/retire_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/retire_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/retire_unavailable.png"
+            }
+        }
+  },
+  "#unknown_residence_button":
+  {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/unknown.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/unknown_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/unknown_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/unknown_unavailable.png"
+            }
+        }
+  },
+  "#mediate_button":
+  {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/mediate.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/mediate_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/mediate_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/mediate_unavailable.png"
+            }
+        }
+  },
+  "#sabotage_button":
+  {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/sabotage.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/sabotage_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/sabotage_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/sabotage_unavailable.png"
+            }
+        }
+  },
+  "#mediation_button":
+  {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/mediation.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/mediation_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/mediation_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/mediation_unavailable.png"
+            }
+        }
+  },
+  "#quit_button":
+  {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/quit.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/quit_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/quit_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/quit.png"
+            }
+        }
+  },
+  "#switch_mediator_app_button":
+  {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/switch_mediator_app.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/switch_mediator_app_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/switch_mediator_app_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/switch_mediator_app_unavailable.png"
+            }
+        }
+  },
+  "#switch_mediator_button":
+  {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/switch_mediator.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/switch_mediator_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/switch_mediator_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/switch_mediator_unavailable.png"
+            }
+        }
+  },
+  "#manage_roles_button":
+  {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/manage_roles.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/manage_roles_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/manage_roles_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/manage_roles_unavailable.png"
+            }
+        }
+  },
+  "#toggle_fullscreen_button":
+  {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/toggle_fullscreen.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/toggle_fullscreen_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/toggle_fullscreen_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/toggle_fullscreen_unavailable.png"
+            }
+        }
+  }
 }
 
 

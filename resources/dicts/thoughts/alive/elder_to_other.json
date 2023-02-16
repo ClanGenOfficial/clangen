@@ -8,6 +8,8 @@
         "leader": [],
         "deputy": [],
         "elder": [],
+        "mediator": [],
+        "mediator apprentice": [],
         "all": [
             "Is telling stories about r_c",
             "Wishes that r_c were still alive",
@@ -26,6 +28,8 @@
         "leader": [],
         "deputy": [],
         "elder": [],
+        "mediator": [],
+        "mediator apprentice": [],
         "all": []
     },
     "all":[

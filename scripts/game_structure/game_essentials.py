@@ -1,6 +1,12 @@
 import pygame
 import pygame_gui
-import ujson
+import sys
+
+try:
+    import ujson
+except ImportError as e:
+    print(f"ERROR: {e}\nFailed to import ujson, saving may be slower.")
+    import json as ujson
 import os
 from ast import literal_eval
 
@@ -8,21 +14,21 @@ from pygame_gui.elements import UIWindow
 
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
 
+pygame.init()
 
-screen_x = 800
-screen_y = 700
-screen = pygame.display.set_mode((screen_x, screen_y), pygame.HWSURFACE)
-pygame.display.set_caption('Clan Generator')
 
 # G A M E
 class Game():
     max_name_length = 10
-    #max_events_displayed = 10
-    #event_scroll_ct = 0
-    #max_allegiance_displayed = 17
-    #allegiance_scroll_ct = 0
-    #max_relation_events_displayed = 10
-    #relation_scroll_ct = 0
+    # max_events_displayed = 10
+    # event_scroll_ct = 0
+    # max_allegiance_displayed = 17
+    # allegiance_scroll_ct = 0
+    # max_relation_events_displayed = 10
+    # relation_scroll_ct = 0
+
+    ranks_changed_timeskip = False  # Flag for when a cat's status changes occurs during a timeskip.
+    mediated = []  # Keep track of which couples have been mediated this moon.
 
     cur_events_list = []
     ceremony_events_list = []
@@ -31,6 +37,8 @@ class Game():
     health_events_list = []
     other_clans_events_list = []
     misc_events_list = []
+    herb_events_list = []
+
     allegiance_list = []
     language = {}
     game_mode = ''
@@ -44,8 +52,11 @@ class Game():
     last_screen_forupdate = 'start screen'
     last_screen_forProfile = 'list screen'
 
-    #down = pygame.image.load("resources/images/buttons/arrow_down.png").convert_alpha()
-    #up = pygame.image.load("resources/images/buttons/arrow_up.png").convert_alpha()
+    # down = pygame.image.load("resources/images/buttons/arrow_down.png").convert_alpha()
+    # up = pygame.image.load("resources/images/buttons/arrow_up.png").convert_alpha()
+
+    # Sort-type
+    sort_type = "rank"
 
     choose_cats = {}
     '''cat_buttons = {
@@ -158,7 +169,10 @@ class Game():
         'fading': True,
         "save_faded_copy": False,
         'favorite sub tab': None,
-        'gore': False
+        'gore': False,
+        'first_cousin_mates': True,
+        'become_mediator': False,
+        'fullscreen': False,
     }  # The current settings
     setting_lists = {
         'no gendered breeding': [False, True],
@@ -183,19 +197,28 @@ class Game():
         'favorite sub tab': sub_tab_list,
         'fading': [True, False],
         'save_faded_copy': [False, True],
-        "gore": [False, True]
+        "gore": [False, True],
+        'first_cousin_mates': [True, False],
+        'become_mediator': [False, True],
+        'fullscreen': [False, True]
     }  # Lists of possible options for each setting
     settings_changed = False
 
     # CLAN
     clan = None
     cat_class = None
+    config = {}
+
+    is_closing = False
 
     def __init__(self, current_screen='start screen'):
         self.current_screen = current_screen
         self.clicked = False
         self.keyspressed = []
         self.switch_screens = False
+
+        with open(f"resources/game_config.json", 'r') as read_file:
+            self.config = ujson.loads(read_file.read())
 
     def update_game(self):
         if self.current_screen != self.switches['cur_screen']:
@@ -214,8 +237,8 @@ class Game():
             return clan_list
         else:
             return None
-    
-    def save_clanlist(self, loaded_clan = None):
+
+    def save_clanlist(self, loaded_clan=None):
         """
         Save list of clans to saves/clanlist.txt with the loaded_clan first in the list.
         """
@@ -349,6 +372,7 @@ class Game():
                 "spirit_elder": inter_cat.age_sprites['elder'],
                 "spirit_dead": inter_cat.age_sprites['dead'],
                 "eye_colour": inter_cat.eye_colour,
+                "eye_colour2": inter_cat.eye_colour2 if inter_cat.eye_colour2 else None,
                 "reverse": inter_cat.reverse,
                 "white_patches": inter_cat.white_patches,
                 "pattern": inter_cat.pattern,
@@ -356,6 +380,7 @@ class Game():
                 "tortie_color": inter_cat.tortiecolour,
                 "tortie_pattern": inter_cat.tortiepattern,
                 "skin": inter_cat.skin,
+                "tint": inter_cat.tint,
                 "skill": inter_cat.skill,
                 "scars": inter_cat.scars if inter_cat.scars else [],
                 "accessory": inter_cat.accessory,
@@ -366,13 +391,11 @@ class Game():
                 "possible_scar": inter_cat.possible_scar if inter_cat.possible_scar else None,
                 "scar_event": inter_cat.scar_event if inter_cat.scar_event else [],
                 "df": inter_cat.df,
-                "outside": inter_cat.outside,                
+                "outside": inter_cat.outside,
                 "corruption": inter_cat.corruption if inter_cat.corruption else 0,
                 "life_givers": inter_cat.life_givers if inter_cat.life_givers else [],
                 "known_life_givers": inter_cat.known_life_givers if inter_cat.known_life_givers else [],
                 "virtues": inter_cat.virtues if inter_cat.virtues else [],
-                "retired": inter_cat.retired if inter_cat.retired else False,
-                "outside": inter_cat.outside,
                 "retired": inter_cat.retired if inter_cat.retired else False,
                 "faded_offspring": inter_cat.faded_offspring,
                 "opacity": inter_cat.opacity,
@@ -387,7 +410,7 @@ class Game():
                 json_string = ujson.dumps(clan_cats, indent=4)
                 write_file.write(json_string)
         except:
-            print("Saving cats didn't work.")
+            print("ERROR: Saving cats didn't work.")
 
     def save_faded_cats(self, clanname):
         """Deals with fades cats, if needed, adding them as faded """
@@ -396,7 +419,6 @@ class Game():
             if not os.path.exists(directory):
                 os.makedirs(directory)
 
-        #print(game.cat_to_fade)
         copy_of_info = ""
         for cat in game.cat_to_fade:
 
@@ -417,7 +439,7 @@ class Game():
                 else:
                     parent_faded = self.add_faded_offspring_to_faded_cat(inter_cat.parent1, cat)
                     if not parent_faded:
-                        print("Can't find faded parent1")
+                        print("WARNING: Can't find faded parent1")
 
             if inter_cat.parent2:
                 if inter_cat.parent2 in self.cat_class.all_cats:
@@ -425,9 +447,9 @@ class Game():
                 else:
                     parent_faded = self.add_faded_offspring_to_faded_cat(inter_cat.parent2, cat)
                     if not parent_faded:
-                        print("Can't find faded parent2")
+                        print("WARNING: Can't find faded parent2")
 
-            #Get a copy of info
+            # Get a copy of info
             if game.settings["save_faded_copy"]:
                 copy_of_info += f''' ---------------
                 "ID": {inter_cat.ID},
@@ -444,7 +466,7 @@ class Game():
                 "parent1": {inter_cat.parent1},
                 "parent2": {inter_cat.parent2},
                 "mentor": {inter_cat.mentor.ID if inter_cat.mentor else None},
-                "former_mentor": {[cat.ID for cat in inter_cat.former_mentor] if inter_cat.former_mentor else []},
+                "former_mentor": {inter_cat.former_mentor if inter_cat.former_mentor else []},
                 "patrol_with_mentor": {inter_cat.patrol_with_mentor if inter_cat.patrol_with_mentor else 0},
                 "mentor_influence": {inter_cat.mentor_influence if inter_cat.mentor_influence else []},
                 "mate": {inter_cat.mate},
@@ -476,8 +498,8 @@ class Game():
                 "accessory": {inter_cat.accessory},
                 "experience": {inter_cat.experience},
                 "dead_moons": {inter_cat.dead_for},
-                "current_apprentice":{[appr for appr in inter_cat.apprentice]},
-                "former_apprentices": {[appr for appr in inter_cat.former_apprentices]},
+                "current_apprentice":{inter_cat.apprentice},
+                "former_apprentices": {inter_cat.former_apprentices},
                 "possible_scar": {inter_cat.possible_scar if inter_cat.possible_scar else None},
                 "scar_event": {inter_cat.scar_event if inter_cat.scar_event else []},
                 "df": {inter_cat.df},
@@ -485,7 +507,6 @@ class Game():
                 "outside": {inter_cat.outside},
                 "retired": {inter_cat.retired if inter_cat.retired else False}
                 "faded_offspring: {inter_cat.faded_offspring}\n'''
-
 
             # SAVE TO IT'S OWN LITTLE FILE. This is a trimmed-down version for relation keeping only.
             cat_data = {
@@ -505,14 +526,14 @@ class Game():
                     json_string = ujson.dumps(cat_data, indent=4)
                     write_file.write(json_string)
             except:
-                print("Something went wrong while saving a faded cat")
+                print("ERROR: Something went wrong while saving a faded cat")
 
-            self.clan.remove_cat(cat) # Remove the cat from the active cats lists
+            self.clan.remove_cat(cat)  # Remove the cat from the active cats lists
 
-        #Save the copy data is needed
+        # Save the copy data is needed
         if game.settings["save_faded_copy"]:
             if not os.path.exists('saves/' + clanname + '/faded_cats_info_copy.txt'):
-                #Create the file if it doesn't exist
+                # Create the file if it doesn't exist
                 with open('saves/' + clanname + '/faded_cats_info_copy.txt', 'w') as create_file:
                     pass
 
@@ -521,7 +542,6 @@ class Game():
 
         game.cat_to_fade = []
 
-
     def add_faded_offspring_to_faded_cat(self, parent, offspring):
         """In order to siblings to work correctly, and not to lose relation info on fading, we have to keep track of
         both active and faded cat's faded offpsring. This will add a faded offspring to a faded parents file. """
@@ -529,7 +549,7 @@ class Game():
             with open('saves/' + self.clan.name + '/faded_cats/' + parent + ".json", 'r') as read_file:
                 cat_info = ujson.loads(read_file.read())
         except:
-            print("Error in loading faded cat")
+            print("ERROR: loading faded cat")
             return False
 
         cat_info["faded_offspring"].append(offspring)
@@ -541,26 +561,12 @@ class Game():
         return True
 
 
-
-
-# M O U S E
-class Mouse():
-    used_screen = screen
-
-    def __init__(self):
-        self.pos = (0, 0)
-
-    def check_pos(self):
-        self.pos = pygame.mouse.get_pos()
-
-
 class GameOver(UIWindow):
     def __init__(self, last_screen):
         super().__init__(pygame.Rect((250, 200), (300, 180)),
                          window_display_title='Game Over',
                          object_id='#game_over_window',
                          resizable=False)
-
         self.clan_name = str(game.clan.name + 'Clan')
         self.last_screen = last_screen
         self.game_over_message = UITextBoxTweaked(
@@ -601,17 +607,151 @@ class GameOver(UIWindow):
 
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.begin_anew_button:
-                game.last_screen_forupdate = self.last_screen
+                game.last_screen_forupdate = game.switches['cur_screen']
                 game.switches['cur_screen'] = 'start screen'
                 game.switch_screens = True
                 self.kill()
-                print('begin anew')
             elif event.ui_element == self.not_yet_button:
+
                 self.kill()
-                print('not yet')
 
 
+class SaveCheck(UIWindow):
+    def __init__(self, last_screen, isMainMenu):
+        super().__init__(pygame.Rect((250, 200), (300, 200)),
+                         window_display_title='Save Check',
+                         object_id='#save_check_window',
+                         resizable=False)
+        self.clan_name = str(game.clan.name + 'Clan')
+        self.last_screen = last_screen
+        self.isMainMenu = isMainMenu
+        if(self.isMainMenu):
+            self.message = f"Would you like to save your game before exiting to the Main Menu? If you don't, progress may be lost!"
+        else:
+            self.message = f"Would you like to save your game before exiting? If you don't, progress may be lost!"
+        #TODO: Make a quit button for when directly quitting
+        self.game_over_message = UITextBoxTweaked(
+            self.message,
+            pygame.Rect((20, 20), (260, -1)),
+            line_spacing=1,
+            object_id="",
+            container=self
+        )
+
+        self.main_menu_button = UIImageButton(
+            pygame.Rect((73, 155), (153, 30)),
+            "",
+            object_id="#main_menu_button",
+            container=self
+        )
+        self.save_button = UIImageButton(
+            pygame.Rect((93, 115), (114, 30)),
+            "",
+            object_id="#save_button",
+            container=self
+        )
+
+        self.save_text = pygame_gui.elements.UITextBox("<font color=#006600>Saved!</font>",
+                                                       pygame.Rect((0, 85), (300, 40)),
+                                                       object_id="#save_no_bg_text_box",
+                                                       container=self)
+        self.save_text.hide()
+
+        self.main_menu_button.enable()
+        self.save_button.enable()
 
 
-mouse = Mouse()
+    def process_event(self, event):
+        super().process_event(event)
+
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            if event.ui_element == self.main_menu_button:
+                if self.isMainMenu:
+                    game.last_screen_forupdate = game.switches['cur_screen']
+                    game.switches['cur_screen'] = 'start screen'
+                    game.switch_screens = True
+                    self.kill()
+                else:
+                    pygame.display.quit()
+                    pygame.quit()
+                    sys.exit()
+            elif event.ui_element == self.save_button:
+                if game.clan is not None:
+                    game.save_cats()
+                    game.clan.save_clan()
+                    game.clan.save_pregnancy(game.clan)
+                    self.save_text.show()
+
+
 game = Game()
+
+if not os.path.exists('saves/clanlist.txt'):
+    os.makedirs('saves', exist_ok=True)
+    with open('saves/clanlist.txt', 'w') as write_file:
+        write_file.write('')
+
+if not os.path.exists('saves/settings.txt'):
+    with open('saves/settings.txt', 'w') as write_file:
+        write_file.write('')
+game.load_settings()
+
+pygame.display.set_caption('Clan Generator')
+
+if game.settings['fullscreen']:
+    screen_x, screen_y = 1600, 1400
+    screen = pygame.display.set_mode((screen_x, screen_y), pygame.FULLSCREEN | pygame.SCALED)
+else:
+    screen_x, screen_y = 800, 700
+    screen = pygame.display.set_mode((screen_x, screen_y))
+
+
+def load_manager(res: tuple):
+    # initialize pygame_gui manager, and load themes
+    manager = pygame_gui.ui_manager.UIManager(res, 'resources/defaults.json')
+    manager.add_font_paths(
+        font_name='notosans',
+        regular_path='resources/fonts/NotoSans-Medium.ttf',
+        bold_path='resources/fonts/NotoSans-ExtraBold.ttf',
+        italic_path='resources/fonts/NotoSans-MediumItalic.ttf',
+        bold_italic_path='resources/fonts/NotoSans-ExtraBoldItalic.ttf'
+    )
+
+    if res[0] > 800:
+        manager.get_theme().load_theme('resources/defaults.json')
+        manager.get_theme().load_theme('resources/buttons.json')
+        manager.get_theme().load_theme('resources/text_boxes.json')
+        manager.get_theme().load_theme('resources/text_boxes_dark.json')
+        manager.get_theme().load_theme('resources/vertical_scroll_bar.json')
+        manager.get_theme().load_theme('resources/windows.json')
+        manager.get_theme().load_theme('resources/tool_tips.json')
+
+        manager.preload_fonts([
+            {'name': 'notosans', 'point_size': 30, 'style': 'italic'},
+            {'name': 'notosans', 'point_size': 26, 'style': 'italic'},
+            {'name': 'notosans', 'point_size': 30, 'style': 'bold'},
+            {'name': 'notosans', 'point_size': 26, 'style': 'bold'},
+            {'name': 'notosans', 'point_size': 22, 'style': 'bold'},
+        ])
+
+
+    else:
+        manager.get_theme().load_theme('resources/defaults_small.json')
+        manager.get_theme().load_theme('resources/buttons_small.json')
+        manager.get_theme().load_theme('resources/text_boxes_small.json')
+        manager.get_theme().load_theme('resources/text_boxes_dark_small.json')
+        manager.get_theme().load_theme('resources/vertical_scroll_bar.json')
+        manager.get_theme().load_theme('resources/windows.json')
+        manager.get_theme().load_theme('resources/tool_tips_small.json')
+
+        manager.preload_fonts([
+            {'name': 'notosans', 'point_size': 11, 'style': 'bold'},
+            {'name': 'notosans', 'point_size': 13, 'style': 'bold'},
+            {'name': 'notosans', 'point_size': 15, 'style': 'bold'},
+            {'name': 'notosans', 'point_size': 13, 'style': 'italic'},
+            {'name': 'notosans', 'point_size': 15, 'style': 'italic'}
+        ])
+
+    return manager
+
+
+MANAGER = load_manager((screen_x, screen_y))

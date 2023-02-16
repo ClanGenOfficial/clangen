@@ -38,25 +38,6 @@
         "other_cat_skill": null
     },
     {
-        "injury": "rat bite",
-        "tags": [
-            "Newleaf",
-            "Greenleaf",
-            "Leaf-fall",
-            "Leaf-bare"
-        ],
-        "event_text": "A rat got through the camp walls and bit m_c.",
-        "history_text": [
-            "m_c was scarred when a rat bit them.",
-            "m_c died from a rat bite.",
-            "bit by a rat"
-        ],
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
-    },
-    {
         "injury": "dislocated joint",
         "tags": [
             "Newleaf",
@@ -325,7 +306,8 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "bold", "cold", "fierce", "righteous", "strict", "vengeful"],
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_trait": ["loyal", "ambitious"]
     },
     {
         "injury": "claw-wound",
@@ -351,8 +333,9 @@
         ],
         "cat_trait": null,
         "cat_skill": null,
-        "other_cat_trait": ["bloodthirsty", "bold", "cold", "fierce", "righteous", "strict", "vengeful"],
-        "other_cat_skill": null
+        "other_cat_trait": ["bloodthirsty", "bold", "cold", "fierce", "righteous", "strict", "vengeful", "ambitious"],
+        "other_cat_skill": null,
+        "cat_negate_trait": ["loyal"]
     },
     {
         "injury": "claw-wound",
@@ -387,7 +370,9 @@
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "scar",
+            "MANLEG"
         ],
         "event_text": "m_c got their paw stuck in a Twoleg trap and while they eventually escaped, their leg is heavily injured.",
         "history_text": [
@@ -414,7 +399,9 @@
             "neg_trust",
             "neg_comfort",
             "dislike",
-            "neg_platonic"
+            "neg_platonic",
+            "scar",
+            "MANLEG"
         ],
         "event_text": "m_c's was maimed by r_c for questioning their leadership.",
         "history_text": [
@@ -425,7 +412,8 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["ambitious", "bloodthirsty", "bold", "cold", "daring", "fierce", "righteous", "strict", "vengeful"],
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_trait": ["loyal", "ambitious"]
     },
     {
         "injury": "mangled tail",
@@ -433,18 +421,21 @@
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "scar",
+            "MANTAIL"
         ],
         "event_text": "m_c's tail was badly injured by a dog.",
         "history_text": [
-            "m_c was scarred by a dog",
+            "m_c was scarred by a dog.",
             "m_c died from their wounds after they were hurt by a dog.",
-            "were hurt by a dog"
+            "were hurt by a dog."
         ],
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "injury": "mangled tail",
@@ -452,7 +443,9 @@
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "scar",
+            "MANTAIL"
         ],
         "event_text": "m_c's tail was badly injured by a fox.",
         "history_text": [
@@ -463,7 +456,8 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "injury": "cat bite",
@@ -490,7 +484,8 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "bold", "cold", "fierce", "righteous", "strict", "vengeful"],
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_trait": ["loyal", "ambitious"]
     },
     {
         "injury": "cat bite",
@@ -517,7 +512,8 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "bold", "cold", "fierce", "righteous", "strict", "vengeful"],
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_trait": ["loyal"]
     },
     {
         "injury": "cat bite",

@@ -1,0 +1,387 @@
+{
+    "text_entry_line": {
+        "colours": {
+            "dark_bg": "#FFFFFF",
+            "selected_bg": "#6E6759",
+            "normal_text": "#000000",
+            "selected_text": "#DCDCDC",
+            "text_cursor": "#000000"
+        },
+        "misc": {
+            "shape": "rounded_rectangle",
+            "shape_corner_radius": "6",
+            "shadow_width": "0",
+            "padding": "(0,0)"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "15"
+        }
+    },
+    "text_box": {
+        "colours": {
+            "dark_bg": "#00000000",
+            "normal_text": "#000000"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "15"
+        },
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "center"
+        }
+    },
+    "#med_messages_box": {
+        "colours": {
+            "dark_bg": "#00000000",
+            "normal_text": "#000000"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "15"
+        },
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "center",
+            "text_vert_alignment": "center"
+        }
+    },
+    "#events_box": {
+        "colours": {
+            "dark_bg": "#00000000",
+            "normal_text": "#000000"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "15"
+        },
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "left"
+        }
+    },
+    "#allegiances_box": {
+        "colours": {
+            "dark_bg": "#00000000",
+            "normal_text": "#000000"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "15"
+        },
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "left"
+        }
+    },
+    "#setting_text_box": {
+        "colours": {
+            "dark_bg": "#FFFF0000",
+            "normal_text": "#000000"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "15"
+        },
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "left",
+            "padding": "0,8"
+        }
+    },
+    "#cat_profile_info_box": {
+        "colours": {
+            "dark_bg": "#00000000",
+            "normal_text": "#000000"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "11"
+        },
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "left",
+            "padding": "0,0"
+        }
+    },
+    "#cat_patrol_info_box": {
+        "colours": {
+            "dark_bg": "#00000000",
+            "normal_text": "#000000"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "11"
+        },
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "center",
+            "padding": "0,0"
+        }
+    },
+    "#cat_profile_name_box": {
+        "colours": {
+            "dark_bg": "#00000000"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "20"
+        },
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "center",
+            "padding": "0,0"
+        }
+    },
+    "#cat_profile_thoughts_box": {
+        "colours": {
+            "dark_bg": "#00000000"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "15"
+        },
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "center",
+            "padding": "0,0"
+        }
+    },
+    "#history_tab_text_box": {
+        "colours": {
+            "dark_bg": "#00000000",
+            "selected_bg": "#776045",
+            "selected_text": "#AC9D72"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "13"
+
+        },
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "left",
+            "padding": "5,7"
+        }
+    },
+    "#history_tab_entry_box": {
+        "colours": {
+            "dark_bg": "#00000000",
+            "selected_bg": "#826657",
+            "selected_text": "#AC9D72"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "13"
+        },
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "left",
+            "padding": "5,7"
+        }
+    },
+    "#clan_header_text_box": {
+        "colours": {
+            "dark_bg": "#00000000",
+            "normal_text": "#FFFFFF"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "15"
+        },
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "center",
+            "padding": "0,0"
+        }
+    },
+    "#menu_header_text_box": {
+        "colours": {
+            "dark_bg": "#00000000",
+            "normal_text": "#FFFFFF"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "17"
+        },
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "center"
+        }
+    },
+    "#patrol_text_box": {
+        "misc": {
+            "text_horiz_alignment": "left",
+            "padding": "5,5"
+        }
+    },
+    "#header_text_box": {
+        "colours": {
+            "dark_bg": "#00000000",
+            "normal_text": "#000000"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "17"
+        },
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "center"
+        }
+    },
+    "#allegiances_header_text_box": {
+        "colours": {
+            "dark_bg": "#00000000",
+            "normal_text": "#000000"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "17"
+        },
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "left"
+        }
+    },
+    "#relation_list_name": {
+        "colours": {
+            "dark_bg": "#00000000",
+            "normal_text": "#000000"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "13"
+        },
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "center"
+        }
+    },
+    "#header_left": {
+        "prototype": "#header_text_box",
+        "misc": {
+            "text_horiz_alignment": "left",
+            "padding": "0,0"
+        }
+    },
+    "#save_text_box": {
+        "colours": {
+            "dark_bg": "#C5C5C5",
+            "normal_text": "#b30000"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "14"
+        },
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "center",
+            "text_vert_alignment": "center"
+        }
+    },
+    "#game_mode_details": {
+        "colours": {
+            "dark_bg": "#00000000",
+            "normal_text": "#000000"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "15"
+        },
+        "misc": {
+            "text_horiz_alignment": "left",
+            "padding": "20,20"
+        }
+    },
+    "#search_entry_box": {
+        "colours": {
+            "dark_bg": "#00000000",
+            "selected_bg": "#00000000",
+            "normal_text": "#000000",
+            "selected_text": "#DCDCDC"
+        },
+        "misc": {
+            "shape": "rectangle",
+            "shadow_width": "0",
+            "padding": "(0,0)",
+            "border_width": "0"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "13"
+        }
+    },
+    "#condition_details_text_box": {
+        "colours": {
+            "dark_bg": "#00000000",
+            "normal_text": "#000000"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "11"
+        },
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "center",
+            "padding": "10,10"
+        }
+    },
+    "#med_den_log_box": {
+        "colours": {
+            "dark_bg": "#00000000",
+            "selected_bg": "#776045",
+            "selected_text": "#AC9D72"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "13"
+
+        },
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "left",
+            "text_vert_alignment": "top",
+            "padding": "7, 0",
+            "text_vert_alignment_padding": "10"
+        }
+    },
+    "#role_blurb": {
+        "colours": {
+            "dark_bg": "#00000000",
+            "normal_text": "#000000"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "13"
+        },
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "center",
+            "text_vert_alignment": "center",
+            "line_spacing": "0.95"
+        }
+    }
+}
+
+

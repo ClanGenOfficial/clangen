@@ -232,7 +232,9 @@
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "scar",
+            "NECKBITE"
         ],
         "event_text": "m_c fought a dog and got hurt.",
         "history_text": [
@@ -243,7 +245,8 @@
         "cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "injury": "cat bite",
@@ -251,7 +254,9 @@
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "scar",
+            "CATBITE"
         ],
         "event_text": "m_c fought a rogue and got hurt.",
         "history_text": [
@@ -262,7 +267,8 @@
         "cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "injury": "bite-wound",
@@ -276,7 +282,9 @@
             "platonic",
             "respect",
             "comfort",
-            "trust"
+            "trust",
+            "scar",
+            "LEGBITE"
         ],
         "event_text": "m_c saved r_c from a fox, but was hurt.",
         "history_text": [
@@ -287,7 +295,8 @@
         "cat_trait": ["altruistic", "compassionate", "loving", "empathetic", "responsible", "loyal", "adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "injury": "bite-wound",
@@ -302,7 +311,9 @@
             "respect",
             "comfort",
             "trust",
-            "platonic"
+            "platonic",
+            "scar",
+            "NECKBITE"
         ],
         "event_text": "m_c was hurt while protecting the leader from a fox.",
         "history_text": [
@@ -313,7 +324,8 @@
         "cat_trait": ["altruistic", "compassionate", "loving", "empathetic", "responsible", "loyal", "adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "injury": "cat bite",
@@ -329,7 +341,9 @@
             "neg_trust",
             "neg_comfort",
             "dislike",
-            "neg_platonic"
+            "neg_platonic",
+            "scar",
+            "CATBITE"
         ],
         "event_text": "m_c was wounded during a harsh training exercise lead by r_c.",
         "history_text": [
@@ -340,7 +354,8 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "daring", "strict", "vengeful"],
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "injury": "cat bite",
@@ -348,6 +363,8 @@
             "other_cat",
             "other_cat_leader",
             "other_clan",
+            "hostile",
+            "neutral",
             "rel_down",
             "Newleaf",
             "Greenleaf",
@@ -358,7 +375,9 @@
             "neg_trust",
             "neg_comfort",
             "dislike",
-            "neg_platonic"
+            "neg_platonic",
+            "scar",
+            "CATBITE"
         ],
         "event_text": "m_c was hurt by o_c warriors after being ordered by r_c to go over the border.",
         "history_text": [
@@ -369,7 +388,8 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "daring", "bold", "righteous", "strict", "vengeful"],
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "injury": "cat bite",
@@ -385,18 +405,21 @@
             "neg_trust",
             "neg_comfort",
             "dislike",
-            "neg_platonic"
+            "neg_platonic",
+            "scar",
+            "CATBITE"
         ],
-        "event_text": "m_c was injured after a fight with a clanmate that r_c encouraged.",
+        "event_text": "m_c was injured after a fight with a Clanmate that r_c encouraged.",
         "history_text": [
-            "m_c was scarred by a fellow clanmate on r_c's encouragement.",
-            "m_c died after fighting a fellow clanmate on r_c's encouragement.",
+            "m_c was scarred by a fellow Clanmate on r_c's encouragement.",
+            "m_c died after fighting a fellow Clanmate on r_c's encouragement.",
             null
         ],
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "vengeful", "ambitiuos", "bold", "fierce", "insecure"],
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "injury": "broken bone",
@@ -404,7 +427,9 @@
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "scar",
+            "MANLEG"
         ],
         "event_text": "m_c fought a big dog and was badly injured.",
         "history_text": [
@@ -415,7 +440,8 @@
         "cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["excellent fighter"]
     },
     {
         "injury": "broken bone",
@@ -430,7 +456,9 @@
             "respect",
             "comfort",
             "trust",
-            "neg_dislike"
+            "neg_dislike",
+            "scar",
+            "MANTAIL"
         ],
         "event_text": "m_c saved r_c from a big dog, but was badly injured.",
         "history_text": [
@@ -441,7 +469,8 @@
         "cat_trait": ["altruistic", "compassionate", "loving", "empathetic", "responsible", "loyal", "adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["excellent fighter"]
     },
     {
         "injury": "claw-wound",
@@ -449,7 +478,9 @@
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "scar",
+            "ONE"
         ],
         "event_text": "m_c fought a hawk and got hurt.",
         "history_text": [
@@ -460,7 +491,8 @@
         "cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "injury": "claw-wound",
@@ -474,7 +506,9 @@
             "platonic",
             "respect",
             "comfort",
-            "trust"
+            "trust",
+            "scar",
+            "TWO"
         ],
         "event_text": "m_c saved r_c from a hawk, but was hurt.",
         "history_text": [
@@ -485,7 +519,8 @@
         "cat_trait": ["altruistic", "compassionate", "loving", "empathetic", "responsible", "loyal", "adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "injury": "claw-wound",
@@ -501,7 +536,9 @@
             "comfort",
             "trust",
             "neg_dislike",
-            "platonic"
+            "platonic",
+            "scar",
+            "SNOUT"
         ],
         "event_text": "m_c was hurt while protecting the leader from a rogue.",
         "history_text": [
@@ -512,7 +549,8 @@
         "cat_trait": ["altruistic", "compassionate", "loving", "empathetic", "responsible", "loyal", "adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "injury": "claw-wound",
@@ -528,7 +566,9 @@
             "neg_trust",
             "neg_comfort",
             "dislike",
-            "neg_platonic"
+            "neg_platonic",
+            "scar",
+            "BELLY"
         ],
         "event_text": "m_c was wounded during a harsh training exercise lead by r_c.",
         "history_text": [
@@ -539,7 +579,8 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "daring", "strict", "vengeful"],
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "injury": "claw-wound",
@@ -547,6 +588,8 @@
             "other_cat",
             "other_cat_leader",
             "other_clan",
+            "hostile",
+            "neutral",
             "rel_down",
             "Newleaf",
             "Greenleaf",
@@ -557,7 +600,9 @@
             "neg_trust",
             "neg_comfort",
             "dislike",
-            "neg_platonic"
+            "neg_platonic",
+            "scar",
+            "CHEEK"
         ],
         "event_text": "m_c was hurt by o_c warriors after being ordered by r_c to go over the border.",
         "history_text": [
@@ -568,7 +613,8 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "daring", "bold", "righteous", "strict", "vengeful"],
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "injury": "claw-wound",
@@ -586,18 +632,21 @@
             "neg_trust",
             "neg_comfort",
             "dislike",
-            "neg_platonic"
+            "neg_platonic",
+            "scar",
+            "ONE"
         ],
-        "event_text": "m_c was injured after a fight with a clanmate that r_c encouraged.",
+        "event_text": "m_c was injured after a fight with a Clanmate that r_c encouraged.",
         "history_text": [
-            "m_c was scarred by a fellow clanmate on r_c's encouragement.",
-            "m_c died after fighting a clanmate on r_c's encouragement.",
+            "m_c was scarred by a fellow Clanmate on r_c's encouragement.",
+            "m_c died after fighting a Clanmate on r_c's encouragement.",
             null
         ],
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "vengeful", "ambitiuos", "bold", "fierce", "insecure"],
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "injury": "mangled tail",
@@ -613,7 +662,9 @@
             "neg_trust",
             "neg_comfort",
             "dislike",
-            "neg_platonic"
+            "neg_platonic",
+            "scar",
+            "MANTAIL"
         ],
         "event_text": "m_c's tail was badly hurt by a fox while they were trying to follow r_c's orders.",
         "history_text": [
@@ -624,7 +675,8 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["ambitious", "bloodthirsty", "bold", "cold", "daring", "fierce", "righteous", "strict", "vengeful"],
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
     {
         "injury": "mangled leg",
@@ -640,7 +692,9 @@
             "neg_trust",
             "neg_comfort",
             "dislike",
-            "neg_platonic"
+            "neg_platonic",
+            "scar",
+            "MANLEG"
         ],
         "event_text": "m_c's leg was badly injured after r_c forces them to fight a big dog.",
         "history_text": [
@@ -651,6 +705,7 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["ambitious", "bloodthirsty", "bold", "cold", "daring", "fierce", "strict", "vengeful"],
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "cat_negate_skill": ["excellent fighter"]
     }
 ]

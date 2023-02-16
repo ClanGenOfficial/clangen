@@ -61,7 +61,7 @@
         "lost their tail": [
             "r_c helps m_c bury their tail wordlessly, hoping the ritual brings them closure to the trauma of losing it.",
             "When m_c wakes up, r_c has to explain to them that they removed m_c's tail as a last resort. The damage was too great.",
-            "It's okay, m_c tells themselves. A tail isn't the worst thing to lose, they're going to be fine! But they still feel it's absence no matter how hard they try to force it from their mind.",
+            "It's okay, m_c tells themselves. A tail isn't the worst thing to lose, they're going to be fine! But they still feel its absence no matter how hard they try to force it from their mind.",
             "m_c has healed from their mangled tail, but unfortunately the tail itself is gone."
 
         ]
@@ -126,7 +126,7 @@
     },
     "lingering shock": {
         "recurring shock": [
-            "m_c demands to know when they'll stop freezing in fear at what they know are just memories. r_c doesn't have answers, but they comfort their clanmate, saying that forcing themselves to be okay is just hurting m_c.",
+            "m_c demands to know when they'll stop freezing in fear at what they know are just memories. r_c doesn't have answers, but they comfort their Clanmate, saying that forcing themselves to be okay is just hurting m_c.",
             "r_c tells m_c that they have no way to stop dreams or memories, only poppy seeds to help r_c sleep. Perhaps the memories will fade with time.",
             "m_c jumps, then realizes that it was just a leaf blowing in the wind. They feel exhausted, and their memories feel like a trap that rears up to bite them whenever they relax."
 
@@ -156,12 +156,17 @@
         "partial hearing loss": [
             "m_c tells r_c that they think their hearing has gotten worse. r_c assesses their hearing and confirms it, their hearing is failing and it can only be due to the head injury they suffered.",
             "m_c tells r_c that they think their hearing has gotten worse. r_c assesses their hearing and confirms it, their hearing is failing and it can only be due to the head injury they suffered.",
-            "m_c strains to hear their clanmate talking to them. Ever since their head injury they've found it harder to hear the world around them."
+            "m_c strains to hear their Clanmate talking to them. Ever since their head injury they've found it harder to hear the world around them."
+        ],
+        "persistent headaches": [
+            "m_c complains to r_c that they've been plagued with horrible headaches since they hurt their head. r_c sadly admits that the headaches may always be a problem.",
+            "m_c complains to r_c that they've been plagued with horrible headaches since they hurt their head. r_c sadly admits that the headaches may always be a problem.",
+            "m_c begrudgingly accepts that the horrible headaches they've been having might be a permanent side effect of their head damage."
         ]
     },
     "damaged eyes": {
         "blind": [
-            "When r_c tells them that their vision will never return, m_c wants to wail. They hold it in, however, till they have a moment alone and away from their clanmates.",
+            "When r_c tells them that their vision will never return, m_c wants to wail. They hold it in, however, till they have a moment alone and away from their Clanmates.",
             "m_c had been expecting it, but they still feel disappointed when r_c tells them that their vision is permanently gone. They don't want to let this hold them back, though, they have plans and they will see those plans through.",
             "Eventually m_c just accepts the truth that has made itself apparent, their vision will never come back. This is life now, this fog of shadows and shapes."
         ],

@@ -1,0 +1,39 @@
+{
+  "colour_groups":
+  {
+    "DARKGINGER": "warm",
+    "WHITE": "white",
+    "PALEGREY": "cool",
+    "SILVER": "cool",
+    "GREY": "monochrome",
+    "DARKGREY": "monochrome",
+    "GHOST": "monochrome",
+    "PALEGINGER": "warm",
+    "GOLDEN": "warm",
+    "GINGER": "warm",
+    "CREAM": "warm",
+    "LIGHTBROWN": "warm",
+    "DARKBROWN": "warm",
+    "BROWN": "warm",
+    "BLACK": "monochrome"
+  },
+  "possible_tints": {
+    "basic": ["pink", "gray", "red", "black", "orange", "none"],
+    "warm": ["yellow", "purple"],
+    "cool": ["blue", "purple"],
+    "white": ["yellow"],
+    "monochrome": ["blue"]
+  },
+  "tint_colours":
+  {
+    "pink": [246, 177, 177, 60],
+    "gray": [129, 129, 129, 60],
+    "red": [201, 45, 60, 35],
+    "black": [0, 0, 0, 60],
+    "orange": [255, 221, 171, 60],
+    "yellow": [234, 225, 129, 60],
+    "purple": [143, 87, 192, 45],
+    "blue": [47, 151, 201, 45],
+    "none": null
+  }
+}

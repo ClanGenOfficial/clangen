@@ -11,7 +11,10 @@
         "Is daydreaming about how much there must be to see out in the world!",
         "Is itching to explore the land beyond their Clan's territory",
         "Wants to go on a journey",
-        "Wishes their leader would choose them to go on a quest"
+        "Wishes their leader would choose them to go on a quest",
+        "Disappeared the whole day to explore the territory",
+        "Promises their Clanmates they won't do anything dangerous while out",
+        "Involves the kits in a game of make believe about traveling through a strange land"
     ],
     "altruistic": [
         "Is laughing at a Clanmates joke, even though they didn't find it too terribly funny",
@@ -21,7 +24,12 @@
         "Offered to stick their nose inside a fox den to see if the fox was still there",
         "Volunteered for extra patrols",
         "Volunteered for extra duties",
-        "Volunteered to stand guard of the camp"
+        "Volunteered to stand guard of the camp",
+        "Gives some plump fresh-kill to a Clanmate instead",
+        "Shares the best hunting spots with the other warriors",
+        "Does their Clanmates' chores with a smile on their face",
+        "Offers a helping paw, even after a night of bad sleep",
+        "Feels their kindness might be taken advantage of every now and then"
     ],
     "ambitious": [
         "Is being admired by many Clanmates for their recent feats",
@@ -35,7 +43,13 @@
         "Is asking the Clan leader what they can do to help out around camp",
         "Has been imitating the Clan leader's behaviour recently",
         "Envies the deputy's position",
-        "Has been taking on extra patrols lately"
+        "Has been taking on extra patrols lately",
+        "Wonders how they would run the Clan better",
+        "Sucks up to the leader and deputy by offering to lead every patrol",
+        "Sets out to catch five pieces of fresh-kill today",
+        "Evaluates how they're going to sharpen up their battle skills",
+        "Tries to emulate the leader's body language when talking to younger cats",
+        "Feels inadequate about being nothing more than an ordinary warrior"
     ],
     "bloodthirsty": [
         "Is acting suspicious",
@@ -47,11 +61,22 @@
         "Yearns to fight",
         "Daydreams about killing a certain cat",
         "Wonders if they could kill a fox all by themselves",
-        "Started a fight with a fellow Clanmate"
+        "Started a fight with a fellow Clanmate",
+        "Wonders how they would run the Clan better",
+        "Licks fresh-kill blood off their lips a little too intently",
+        "Has been glaring at a certain cat in camp with an odd look in their eye",
+        "Draws blood when training with another warrior and coldly says it was an accident",
+        "Wonders how easy it'd be to attack the leader from where they lay",
+        "Daydreams about slaughtering every cat they despise"
     ],
     "bold": [
         "Is getting some looks after speaking up at the last Clan meeting",
-        "Spoke up recently at a Clan meeting"
+        "Spoke up recently at a Clan meeting",
+        "Bravely offers to help the medicine cat pick herbs from a dangerous spot",
+        "Runs out of the den and headfirst into 'battle', only to find that it was just storming outside",
+        "Prances around with their tail up high, ready for anything",
+        "Promises the kits they'll protect them when the time comes",
+        "Concludes that they're not afraid of anything while some warriors are sharing their fears"
     ],
     "calm": [
         "Is taking a moment to appreciate some peace and quiet",
@@ -66,7 +91,12 @@
         "Smells sweet, like lavender",
         "Never fails to offer comfort to their Clanmates",
         "Is taking their sweet time eating their meal",
-        "Is purring quietly"
+        "Is purring quietly",
+        "Has been reaching meditative states just by sunbathing",
+        "Calmly takes the lead while some Clanmates argue over this and that",
+        "Is unable to be scared, no matter how much the kits try",
+        "Knows everything will be okay in the end",
+        "Takes a deep breath and doesn't let a mean comment get to them"
     ],
     "careful": [
         "Is double-checking their nest for burrs",
@@ -79,7 +109,12 @@
         "Is helping to reinforce the camp walls.",
         "Is patching up a hole in the camp wall",
         "Is helping to reinforce the walls of the elders' den",
-        "Is going back to check out an old fox burrow they discovered yesterday, just to be safe"
+        "Is going back to check out an old fox burrow they discovered yesterday, just to be safe",
+        "Fortifies the camp walls for the fourth time this week",
+        "Asks the deputy about sending out some more hunting patrols- just to be sure",
+        "Feels at peace, laying somewhere they can see anything that could be going wrong",
+        "Coaches other warriors on their technique and encourages them to take a more guarded stance",
+        "Keeps an eye on some rowdy kits"
     
     ],
     "charismatic": [
@@ -98,7 +133,12 @@
         "Is purring loudly",
         "Is purring sweetly",
         "Is this moon's heartthrob",
-        "Has recently given a wonderful speech to fellow Clanmates, boosting morale"
+        "Has recently given a wonderful speech to fellow Clanmates, boosting morale",
+        "Spends all day chatting and laughing with some other warriors",
+        "Forgot where they put something, and every other warrior offers to help them find it",
+        "Is a little exhausted from how many cats come to them for things",
+        "Feels happy knowing they're someone other's can talk to",
+        "Carefully curates their appearance to be dazzling, but not too dazzling"
     ],
     "childish": [
         "Is chasing a butterfly around the camp",
@@ -112,21 +152,37 @@
         "Is preoccupied playing an important game of hide and seek",
         "Is laughing gleefully!",
         "Splashes in a puddle of water during a patrol",
-        "Jumps around while on patrol"
+        "Jumps around while on patrol",
+        "Gets in an argument over something utterly trivial",
+        "Stuck their tongue out at a mouse that escaped their pounce while hunting",
+        "Makes immature jokes all day, leaving everyone else rolling their eyes",
+        "Doesn't want to share a piece of fresh-kill",
+        "Has felt bad all day about stepping on a bug"
     ],
     "cold": [
         "Is hissing in frustration",
         "Is grunting rudely at passersby",
         "Wonders why others snap back at them",
         "Notices that their Clanmates have been nervous around them lately",
-        "Is scolding the apprentices over something slight"
+        "Is scolding the apprentices over something slight",
+        "Is pushing around the apprentices",
+        "Berates an apprentice for not doing their chores because they overslept",
+        "Doesn't say thank you when offered a piece of fresh-kill",
+        "Turns away without saying a word when a Clanmate vents to them",
+        "Thinks the leader should be harsher on codebreakers",
+        "Flatly insults a Clanmates appearance"
     ],
     "compassionate": [
         "Spent time today with a grieving Clanmate",
         "Is helping the medicine cat organize herb stores",
-        "Let their Clanmate have the last piece of fresh kill on the pile this morning",
+        "Let their Clanmate have the last piece of fresh-kill on the pile this morning",
         "Is noticing with joy how well the Clan is looking after one another as of late",
-        "Is listening to a Clanmate's struggles with love"
+        "Is listening to a Clanmate's struggles with love",
+        "Lets a Clanmate cry on their shoulder",
+        "Feels bad seeing the apprentices worked to the bone",
+        "Makes sure to check on a Clanmate who's been having a rough time",
+        "Quickly forgives somebody after they snapped at them, if only to make the other cat feel better",
+        "Spends some extra time thanking StarClan for the prey today"
     ],
     "confident": [
         "Is building up a fellow Clanmate's confidence in battle!",
@@ -134,11 +190,16 @@
         "Thinks that they are the smartest cat in the Clan",
         "Thinks that they are the funniest cat around",
         "Is strutting around confidently",
-        "Boasts about how much fresh kill they intend to bring back to camp today",
+        "Boasts about how much fresh-kill they intend to bring back to camp today",
         "Thinks that they are the best hunter in the Clan",
         "Thinks that they are the fastest runner in the Clan",
         "Is showing off their battle moves",
-        "Thinks that they are the fiercest fighter in the Clan"
+        "Thinks that they are the fiercest fighter in the Clan",
+        "Puffs out their chest, feeling secure with the space they take up",
+        "Doesn't falter when challenged on their abilities",
+        "Lets it be known that others can always come to them for tips with their technique",
+        "Brags about how much prey they caught this week",
+        "Knows they'll be picked to go to the full moon Gathering"
     ],
     "daring": [
         "Is racing through camp, accidentally knocking into Clanmates",
@@ -149,7 +210,10 @@
         "Batted at a snake on a patrol recently and fled",
         "Is leaping from boulder to boulder out in the forest",
         "Is climbing to the top of a very tall tree!",
-        "Recently avoided a monster on the Thunderpath by the skin of their teeth!"
+        "Recently avoided a monster on the Thunderpath by the skin of their teeth!",
+        "Challenges a Clanmate to a friendly spar",
+        "Wishes there were more opportunities to show their skills",
+        "Defended a Clanmate in an argument"
 
     ],
     "empathetic": [
@@ -158,7 +222,12 @@
         "Is doing some apprentice tasks around camp, to help lighten the load",
         "Is sharing tongues with friends",
         "Is going to keep cats in the medicine den company",
-        "Is taking a breath, and ponders the burdens of others they have listened to"
+        "Is taking a breath, and ponders the burdens of others they have listened to",
+        "Can't stop smiling because of another Clanmates good mood",
+        "Is feeling really sad, but tries not to bring the mood down",
+        "Says sorry before they bite into their fresh-kill",
+        "Helps solve a conflict by mediating both sides",
+        "Purrs contently at the thought of their Clanmates being happy"
     ],
     "faithful": [
         "Is giving thanks to StarClan",
@@ -168,7 +237,12 @@
         "Feels safe within the walls of the camp",
         "Is promising to always serve StarClan",
         "Is hoping that StarClan protects their loved ones...",
-        "Is thanking StarClan for their catch out on a hunting patrol today"
+        "Is thanking StarClan for their catch out on a hunting patrol today",
+        "Prays to StarClan that next season will be a good one",
+        "Rolls their eyes at the kits laughing about spirits not being real",
+        "Goes to the medicine cat to ask for spiritual advice",
+        "Wonders if StarClan can even hear them",
+        "Leaves a piece of fresh-kill at the grave of a dead loved one"
     ],
     "fierce": [
         "Isn't scared of anything today!",
@@ -184,7 +258,12 @@
         "Was recently chastised by the deputy for reckless behavior out on patrol",
         "Is asking with the medicine cat what herbs may help them to be stronger in battle",
         "Is showing off their battle moves",
-        "Is offering to lead the patrol today"
+        "Is offering to lead the patrol today",
+        "Wishes they had more scars",
+        "Pounced on a Clanmate unexpectedly, meowing about how they should be ready at any moment",
+        "Has been waiting for a war to finally happen",
+        "Tears up their fresh-kill far too violently for others' liking",
+        "Doesn't understand why the other warriors don't want to train with them"
     ],
     "insecure": [
         "Almost died of embarrassment after a recent fumble on a patrol",
@@ -192,12 +271,17 @@
         "Is thinking about where they belong",
         "Is hoping no cat saw them trip just now",
         "Hopes that they will make it through leaf-bare",
-        "Took their own insecurities out on a friend the other day and feels awfully guilty..."
+        "Took their own insecurities out on a friend the other day and feels awfully guilty...",
+        "Was scared by an owl last night and is too embarrassed to tell anyone",
+        "Wonders if their fur is unkempt and whether or not others can notice",
+        "Is busy sharpening their claws, thinking others might like them more if they look stronger",
+        "Worries that they aren't contributing enough",
+        "Thinks about all the mistakes they've made"
     ],
     "lonesome": [
         "Is sitting alone",
         "Looks on as others share tongues around the camp clearing",
-        "Is eating a piece of fresh kill in a corner of camp",
+        "Is eating a piece of fresh-kill in a corner of camp",
         "Went out to hunt by themselves",
         "Thinks that they are alone in their thoughts and beliefs...",
         "Is looking longingly at other cats as they talk amongst themselves",
@@ -209,7 +293,12 @@
         "Is fumbling with their words",
         "Is enjoying some peace and quiet away from others",
         "Is seeking out a place where they can be by themselves for a bit",
-        "Is feeling a bit anxious after having been around so many cats at the last Gathering"
+        "Is feeling a bit anxious after having been around so many cats at the last Gathering",
+        "Feels bad about never being invited to share tongues",
+        "Spitefully swears that they don't need others, they're just fine",
+        "Feels the need to escape camp, the presence of everyone else just unbearable today",
+        "Takes a long walk all on their own",
+        "Doesn't know if its their fault or everyone else's that they're always alone"
     ],
     "loving": [
         "Is feeling content with the little things in life",
@@ -218,7 +307,12 @@
         "Is purring loudly",
         "Is purring gently",
         "Needs a bit of time alone today",
-        "Is talking with friends about recent celebrations"
+        "Is talking with friends about recent celebrations",
+        "Purrs all night, so full of love for their fellow warriors",
+        "Takes a Clanmate out to a beautiful spot in the territory, just for fun",
+        "Wants to surprise a Clanmate with a gift",
+        "Spends some time with the apprentices to let them know they're appreciated",
+        "Wishes others reciprocated their kindness more often"
     ],
     "loyal": [
         "Is determined to protect their loved ones",
@@ -235,7 +329,12 @@
         "Is telling the deputy details about the recent patrol",
         "Is offering constructive criticism to the deputy",
         "Has agreed to their Clan leader's orders recently, despite their own doubts",
-        "Proclaimed to the Clan leader their unwavering loyalty"
+        "Proclaimed to the Clan leader their unwavering loyalty",
+        "Is suspicious of a Clanmate who questions the leader",
+        "Agrees with a Clanmate, if only because they're friends",
+        "Keeps watch over the other warriors at night",
+        "Is trying to understand why anyone would break the code",
+        "Feels a deep respect for the Clan's elders"
     ],
     "nervous": [
         "Feels like there are ants pricking their pelt...",
@@ -249,10 +348,15 @@
         "Is visibly stressed about something",
         "Was startled by a shrew while out on patrol!",
         "Was startled by a fluttering bird while out on patrol!",
-        "Acted bravely on a recent patrol, despite their anxieties"
+        "Acted bravely on a recent patrol, despite their anxieties",
+        "Comes across slightly panicky, counting every cat in the Clan to make sure nobody's missing",
+        "Stumbles over their words, never quite able to get it right",
+        "Got scared by a mouse while hunting",
+        "Keeps their eyes on the skies, afraid an eagle could come get them",
+        "Tries to breathe deeply to no avail"
     ],
     "patient": [
-        "Is waiting until everyone else has taken from the fresh kill pile to eat",
+        "Is waiting until everyone else has taken from the fresh-kill pile to eat",
         "Is patiently standing guard outside of camp",
         "Is winning a staring contest against a Clanmate",
         "Is listening to a story they've heard many, many times",
@@ -263,7 +367,12 @@
         "Is listening closely to the sounds of the forest",
         "Is waiting to watch the sun rise",
         "Is waiting to watch the sun set",
-        "Is grooming, grooming, grooming away..."
+        "Is grooming, grooming, grooming away...",
+        "Patiently waits for a rabbit to come out of their burrow, eventually catching it",
+        "Smiles at some kit's cheap prank, knowing they'll grow out of it soon",
+        "Is the only warrior not bothered by a snoring Clanmate",
+        "Is delighted by the slow passage of time",
+        "Feels entirely unlike themselves when they're bothered by something small"  
     ],
     "playful": [
         "Is playing tag with cats around camp",
@@ -271,7 +380,7 @@
         "Pounced on a stray leaf with satisfaction",
         "Seems to be playing with their food",
         "Is play-fighting with friends",
-        "Is playing a games of counting stones",
+        "Is playing a game of counting stones",
         "Is hoping to be on friendly terms with neighboring Clans someday",
         "Has been joking around a bit too much recently",
         "Is chasing a bug around the camp clearing",
@@ -280,7 +389,12 @@
         "Is chasing their own tail, making others laugh",
         "Is happily chasing a butterfly",
         "Is running after a colorful beetle",
-        "Is letting out mrrows of laughter"
+        "Is letting out mrrows of laughter",
+        "Has been playing tricks on their fellow warriors",
+        "Pretend the mouse they're chasing is a bird, and they're a hawk",
+        "Plays mossball with some kits",
+        "Doesn't get their chores done all morning, too busy climbing trees for sheer fun",
+        "Is making up songs and encouraging others to join in"
     ],
     "responsible": [
         "Is making sure they've done all of their daily duties",
@@ -291,7 +405,12 @@
         "Is planning on going to sleep early tonight",
         "Is making sure no work is being shirked!",
         "Is repairing one of the camp walls.",
-        "Is offering to lead the next patrol out"
+        "Is offering to lead the next patrol out",
+        "Is watching the kits to make sure none of them accidentally hurt each other",
+        "Deeply apologizes for a mistake they've made and tries to fix it",
+        "Doesn't approve of the trouble the apprentices have been making",
+        "Volunteers to lead a patrol",
+        "Goes to bed early so they can work more tomorrow"        
     ],
     "righteous": [
         "Wants nothing more than to live by the Warrior Code",
@@ -299,7 +418,12 @@
         "Is reevaluating their morals",
         "Hopes to help guide their Clanmates down the right path...",
         "Always cheers the loudest of any cat at naming ceremonies",
-        "Is refusing to follow the deputy's recent orders due to their own morals"
+        "Is refusing to follow the deputy's recent orders due to their own morals",
+        "Silently judges another warrior from afar",
+        "Calms themselves down by thinking how StarClan will see to things",
+        "Teaches the kits about morals until they all fall asleep",
+        "Reported a Clanmate for breaking the code",
+        "Is appalled at a Clanmate blatantly lying"       
     ],
     "shameless": [
         "Is grooming intensely in clear view of everyone else in camp",
@@ -309,7 +433,12 @@
         "Was found to be faking a bellyache, earning a stern lecture",
         "Stumbled into mud earlier and has yet to wash",
         "Was found napping in another cat's nest!",
-        "Is fishing for compliments on their recently groomed fur"
+        "Is fishing for compliments on their recently groomed fur",
+        "Lies through their teeth",
+        "Keeps up a smirk while they insult a Clanmate",
+        "Has been lazing in their nest all day and doesn't seem to want to change that",
+        "Is making their Clanmates roll their eyes yet again",
+        "Doesn't apologize, even though everyone knows they're in the wrong"
     ],
     "sneaky": [
         "Is sniffing the edges of the camp wall suspiciously...",
@@ -319,7 +448,12 @@
         "Is spreading rumors about Clanmates",
         "Is whispering with a fellow Clanmate at the edges of camp",
         "Recently spent the night outside of camp",
-        "Is licking their chops after an unknown tasty treat"
+        "Is licking their chops after an unknown tasty treat",
+        "Leaves camp, not telling anyone what they're about to do",
+        "Is snooping around once again",
+        "Is creeping cats out by appearing from nowhere",
+        "Knows that even the most paranoid rabbit would be no match for them",
+        "Hasn't been seen in a while"
     ],
     "strange": [
         "Is telling every cat about their weird dreams",
@@ -341,7 +475,14 @@
         "Drawing symbols in the dirt with their claws",
         "Paces back and forth",
         "Is zoned out",
-        "Is telling every cat about their weird dreams"
+        "Is barking like a dog - somehow",
+        "Was found talking to a tree the other day",
+        "Was walking on their forelimbs for a bit",
+        "Seems to have come up with their own secret language",
+        "Chases their own tail around camp",
+        "Wishes others didn't think they're so weird",
+        "Wants to change their name to one more befitting of a kittypet",
+        "Talks to the bugs that crawl around camp"
     ],
     "strict": [
         "Is lecturing any cat who will listen about the Warrior Code",
@@ -354,12 +495,22 @@
         "Can't stand to watch the younger cats make fools of themselves",
         "Is conducting a rather rigorous training session for the younger warriors",
         "Takes pride in how well-run their patrols always are",
-        "Is telling off younger cats for petty dishonesty out on patrol"
+        "Is telling off younger cats for petty dishonesty out on patrol",
+        "Snaps at some apprentices after they pull a harmless prank",
+        "Feels that a new rule should be added to the warrior code",
+        "Goes around camp policing everyone's posture",
+        "Makes sure everyone only takes one piece of fresh-kill and no more",
+        "Is encouraging the deputy to be more harsh"       
     ],
     "thoughtful": [
         "Offered to fetch more herbs for the medicine cat",
         "Is offering helpful advice to a gloomy Clanmate",
-        "Brought back a much-needed herb to a grateful medicine cat after a hunting patrol"
+        "Brought back a much-needed herb to a grateful medicine cat after a hunting patrol",
+        "Prepares the perfect gift for a friend",
+        "Notices a Clanmate is tired and does their chores for them",
+        "Gets an injured Clanmate a piece of fresh-kill, so they don't have to walk",
+        "Spends some time helping out the medicine cat today",
+        "Reassures an apprentice who's nervous to go on patrol"
     ],
     "troublesome": [
         "Won't stop pulling pranks",
@@ -371,10 +522,15 @@
         "Is lightening the mood around camp with their shenanigans",
         "Got distracted quite a bit today",
         "Is bored, and looking for something to get into",
-        "Ate their fill and then some from the fresh kill pile",
+        "Ate their fill and then some from the fresh-kill pile",
         "Is considering bending the rules just this once... again",
         "Is grumbling as they carry out a task for the medicine cat",
-        "Climbed up a tree and nearly fell out!"
+        "Climbed up a tree and nearly fell out!",
+        "Pulls pranks on the other warriors and blames it on an apprentice",
+        "Ate a mouse while out on patrol",
+        "Is talking far too loud, to the annoyance of every cat in camp",
+        "Thinks about the various ways they could bend the rules",
+        "Is being lectured yet again by the deputy"   
     ],
     "vengeful": [
         "Seems to be plotting something",
@@ -382,11 +538,21 @@
         "Is glaring daggers across the camp clearing",
         "Swears that they will get their revenge... but for what?",
         "Is angrily clawing up the ground, lost in deep thought",
-        "Is shredding the grass underpaw"
+        "Is shredding the grass underpaw",
+        "Hisses at a certain cat when they walk by",
+        "Is laughing because a cat they don't like got hurt",
+        "Daydreams all day about an elaborate plot to make a Clanmate disappear",
+        "Has to bite their tongue, even though they really want the last word",
+        "Thinks about everyone who hurt them surely suffering in the Place of No Stars"       
     ],
     "wise": [
         "Has a suggestion for the Clan leader that they wish to present",
         "Is grooming themselves thoughtfully",
-        "Is telling stories to a very interested bunch of apprentices"
+        "Is telling stories to a very interested bunch of apprentices",
+        "Tells some kits a thing or two about growing older",
+        "Solves a problem by thinking back to another time the exact same thing happened",
+        "Feels completely at peace with the way things are",
+        "Has been coming up with complicated riddles for fun",
+        "Instills their wisdom to some rowdy apprentices"        
     ]
 }
