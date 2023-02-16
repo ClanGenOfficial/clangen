@@ -49,7 +49,7 @@
     "patrol_id": "gen_gen_newcat3",
     "biome": "Any",
     "season": "Any",
-    "tags": ["border", "new_cat", "new_cat_adult", "new_cat_majorinjury", "reputation", "no_change_fail_rep"],
+    "tags": ["border", "new_cat", "new_cat_adult", "new_cat_injury", "nc_blunt_force_injury", "reputation", "no_change_fail_rep"],
     "intro_text": "r_c finds a wounded cat near the thunderpath.",
     "success_text": [
         "The patrol approaches the injured cat and sees signs of life. Alarmed, they gently pick up the cat and take them back to camp to be treated by the medicine cat. The grateful cat decides to join the Clan."
@@ -117,7 +117,7 @@
     "patrol_id": "gen_gen_lonerchase1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["border", "new_cat", "reputation", "battle_injury", "scar", "no_change_fail_rep"],
+    "tags": ["border", "new_cat", "reputation", "injury", "claw-wound", "scar", "no_change_fail_rep"],
     "intro_text": "Your patrol cautiously moves towards the sound of barking. Near the border, they spot a dog chasing something. Oh no, it's a cat!",
     "success_text": [
             "The patrol swiftly jumps into action. They capture the dog's attention and draw it away from the cat. r_c stays hidden and goes to the cat while the rest of the patrol lures the dog away. They're unharmed, and this display of bravery makes them want to join the Clan!",
@@ -357,7 +357,7 @@
     "patrol_id": "gen_bord_injuredcat1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["border", "new_cat", "reputation", "new_cat_adult", "new_cat_majorinjury"],
+    "tags": ["border", "new_cat", "reputation", "new_cat_adult", "new_cat_injury", "nc_battle_injury"],
     "intro_text": "The patrol is checking along the border lines when they hear a startling sound - a hiss of pain? They quickly follow the sound to the source. It's a loner, and they appear to be injured.",
     "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
     "chance_of_success": 50,

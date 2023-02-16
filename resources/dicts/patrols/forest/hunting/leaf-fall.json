@@ -956,17 +956,17 @@
             "no_app",
             "medium_prey"
         ],
-        "intro_text": "r_c tastes the air and perks up - there's a squirrel nearby, nibbling on some nuts near the base of a tree!",
+        "intro_text": "p_l tastes the air and perks up - there's a squirrel nearby, nibbling on some nuts near the base of a tree!",
         "decline_text": "After a moment's deliberation, r_c decides to move on.",
         "chance_of_success": 50,
         "exp": 10,
         "success_text": [
-            "The wind suddenly shifts, and the squirrel jerks its head up in alarm. r_c thinks fast, bolting to cut off its escape before delivering the killing blow.",
-            "Though it tries to escape, r_c is faster and smarter - they slam a paw down on the squirrel's tail before it can go very far, and kill it with ease.",
-            "r_c silently slinks through the underbrush, going undetected until they've pounced - and by then it's far too late for the squirrel to do anything about it."
+            "The wind suddenly shifts, and the squirrel jerks its head up in alarm. p_l thinks fast, bolting to cut off its escape before delivering the killing blow.",
+            "Though it tries to escape, p_l is faster and smarter - they slam a paw down on the squirrel's tail before it can go very far, and kill it with ease.",
+            "s_c silently slinks through the underbrush, going undetected until they've pounced - and by then it's far too late for the squirrel to do anything about it."
         ],
         "fail_text": [
-            "r_c breaks a twig as they ready themself to pounce, and the resulting crack alerts the squirrel. It doesn't even spare them a glance as it scurries up the tree and out of sight."
+            "p_l breaks a twig as they ready themself to pounce, and the resulting crack alerts the squirrel. It doesn't even spare them a glance as it scurries up the tree and out of sight."
         ],
         "win_skills": [
             "good hunter",
@@ -1245,16 +1245,16 @@
             "large_prey2",
             "battle_injury"
         ],
-        "intro_text": "p_l leads the patrol towards the abandoned twoleg nest, listening to r_c's plan. Rats were seen hiding inside to protect themselves from the chill of leaf-fall's winds. Perhaps it would be a perfect hunting spot?",
+        "intro_text": "p_l leads the patrol towards the abandoned Twoleg nest, listening to r_c's plan. Rats were seen hiding inside to protect themselves from the chill of leaf-fall's winds. Perhaps it would be a perfect hunting spot?",
         "success_text": [
             "r_c leads the patrol towards the nest, pushing past the rotting wood blocking the entrance. The patrol gets to work rounding up and piling up the rats, and by nightfall they have so much it takes two trips to bring them back! r_c is congratulated for their ingenious plan.",
             "r_c leads the patrol towards the nest, and they quickly get to work hunting down the rats cornered near the smooth stones. It's a tough fight, with rats attempting to flee or attack the patrol, but in the end the patrol manages to get a hefty pile of prey for c_n."
         ],
         "fail_text": [
-            "r_c leads the cats to the abandoned twoleg nest, but as the cats search and search, all they can find are abandoned rats nests. r_c is scolded for wasting the patrol's valuable time.",
+            "r_c leads the cats to the abandoned Twoleg nest, but as the cats search and search, all they can find are abandoned rats nests. r_c is scolded for wasting the patrol's valuable time.",
             null,
             null,
-            "r_c leads the cats to the abandoned twoleg nest, but the rats seemed to be more lively than they thought. A harsh battle forces the patrol to retreat, r_c being the most harshly wounded."
+            "r_c leads the cats to the abandoned Twoleg nest, but the rats seemed to be more lively than they thought. A harsh battle forces the patrol to retreat, r_c being the most harshly wounded."
         ],
         "decline_text": "The other cats disagree with such a risk, and resume their normal hunting patrol.",
         "chance_of_success": 50,

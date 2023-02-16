@@ -292,7 +292,7 @@ class Condition_Events():
             "BRIGHTHEART": ["one bad eye"],
             "NOLEFTEAR": ["partial hearing loss"],
             "NORIGHTEAR": ["partial hearing loss"],
-            "NOEAR": ["partial hearing loss, deaf"],
+            "NOEAR": ["partial hearing loss", "deaf"],
             "LEFTBLIND": ["one bad eye", "failing eyesight"],
             "RIGHTBLIND": ["one bad eye", "failing eyesight"],
             "BOTHBLIND": ["blind"],
@@ -640,7 +640,8 @@ class Condition_Events():
         }
 
         if not triggered and not cat.dead and not cat.retired and cat.status not in \
-                ['leader', 'medicine cat', 'kitten', 'medicine cat apprentice'] and game.settings['retirement'] is False:
+                ['leader', 'medicine cat', 'kitten', 'medicine cat apprentice', 'mediator', 'mediator apprentice'] \
+                and game.settings['retirement'] is False:
             for condition in cat.permanent_condition:
                 if cat.permanent_condition[condition]['severity'] == 'major':
                     chance = int(retire_chances.get(cat.age))

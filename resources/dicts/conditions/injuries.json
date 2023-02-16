@@ -1346,7 +1346,7 @@
         ]
     },
     "severe headache": {
-        "duration": 0,
+        "duration": 1,
         "severity": "major",
         "medicine_duration": 1,
         "mortality": {

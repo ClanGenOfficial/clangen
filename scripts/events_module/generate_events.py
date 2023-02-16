@@ -134,6 +134,7 @@ class GenerateEvents:
 
     def filter_possible_events(self, possible_events, cat, other_cat, war, enemy_clan, other_clan, alive_kits):
         final_events = []
+        murder_events = []
 
         for event in possible_events:
 
@@ -147,6 +148,10 @@ class GenerateEvents:
             # make complete leader death less likely until the leader is over 150 moons
             if "all_lives" in event.tags:
                 if int(cat.moons) < 150 and int(random.random() * 5):
+                    continue
+
+            if "low_lives" in event.tags:
+                if game.clan.leader_lives > 3:
                     continue
 
             # check season
@@ -175,14 +180,18 @@ class GenerateEvents:
                     cat_to = dislike_relation[y].cat_to
                     if cat_to == cat:
                         hate = True
+                        print('MURDER ATTEMPT', other_cat.name, 'to', cat.name)
                         break
                 for y in range(len(jealous_relation)):
                     cat_to = jealous_relation[y].cat_to
                     if cat_to == cat:
                         hate = True
+                        print('MURDER ATTEMPT', other_cat.name, 'to', cat.name)
                         break
                 if not hate:
                     continue
+                else:
+                    murder_events.append(event)
 
             # roll chance to get an injury of certain severity and check that injury is possible
             if event.injury in INJURIES:
@@ -294,6 +303,10 @@ class GenerateEvents:
                     continue
 
             final_events.append(event)
+
+        if murder_events and (other_cat.trait in ["vengeful", "bloodthirsty", "cold"] or not int(random.random() * 3)):
+            print('WE KILL TONIGHT')
+            return murder_events
         return final_events
 
     @staticmethod
@@ -391,6 +404,7 @@ Tagging Guidelines: (if you add more tags, please add guidelines for them here)
 
 "all_lives" < take all the lives from a leader
 "some_lives" < take a random number, but not all, lives from a leader
+"low_lives" < only allow event if the leader is low on lives
 
 "murder" < m_c was murdered by the other cat
 
@@ -430,7 +444,7 @@ Following tags are used for new cat events:
 "parent" < this litter or kit also comes with a parent (this does not include adoptive parents from within the clan)
 "m_c" < the event text includes the main cat, not just the new cat
 "other_cat" < the event text includes the other cat, not just the new cat and main cat
-"warrior", "apprentice", "medicine cat apprentice", "medicine cat" < make the new cat start with the tagged for status
+"new_warrior", "new_apprentice", "new_medicine cat apprentice", "new_medicine cat" < make the new cat start with the tagged for status
 "injured" < tag along with a second tag that's the name of the injury you want the new_cat to have
 "major_injury" < tag to give the new cat a random major-severity injury
 
