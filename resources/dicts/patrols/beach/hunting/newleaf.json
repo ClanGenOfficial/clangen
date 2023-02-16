@@ -485,7 +485,10 @@
         "min_cats": 3,
         "max_cats": 6,
         "antagonize_text": null,
-        "antagonize_fail_text": null
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c was scarred by a rattlesnake."
+            ]
     },
     {
         "patrol_id": "bch_hunt_squirrel1",
