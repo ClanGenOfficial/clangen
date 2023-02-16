@@ -1,5 +1,6 @@
 import pygame
 import pygame_gui
+import sys
 
 try:
     import ujson
@@ -205,6 +206,8 @@ class Game():
     clan = None
     cat_class = None
     config = {}
+
+    is_closing = False
 
     def __init__(self, current_screen='start screen'):
         self.current_screen = current_screen
@@ -612,15 +615,21 @@ class GameOver(UIWindow):
 
 
 class SaveCheck(UIWindow):
-    def __init__(self, last_screen):
+    def __init__(self, last_screen, isMainMenu):
         super().__init__(pygame.Rect((250, 200), (300, 200)),
                          window_display_title='Save Check',
                          object_id='#save_check_window',
                          resizable=False)
         self.clan_name = str(game.clan.name + 'Clan')
         self.last_screen = last_screen
+        self.isMainMenu = isMainMenu
+        if(self.isMainMenu):
+            self.message = f"Would you like to save your game before exiting to the Main Menu? If you don't, progress may be lost!"
+        else:
+            self.message = f"Would you like to save your game before exiting? If you don't, progress may be lost!"
+        #TODO: Make a quit button for when directly quitting
         self.game_over_message = UITextBoxTweaked(
-            f"Would you like to save your game before exiting to the Main Menu? If you don't, progress may be lost!",
+            self.message,
             pygame.Rect((20, 20), (260, -1)),
             line_spacing=1,
             object_id="",
@@ -655,10 +664,15 @@ class SaveCheck(UIWindow):
 
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.main_menu_button:
-                game.last_screen_forupdate = game.switches['cur_screen']
-                game.switches['cur_screen'] = 'start screen'
-                game.switch_screens = True
-                self.kill()
+                if self.isMainMenu:
+                    game.last_screen_forupdate = game.switches['cur_screen']
+                    game.switches['cur_screen'] = 'start screen'
+                    game.switch_screens = True
+                    self.kill()
+                else:
+                    pygame.display.quit()
+                    pygame.quit()
+                    sys.exit()
             elif event.ui_element == self.save_button:
                 if game.clan is not None:
                     game.save_cats()
