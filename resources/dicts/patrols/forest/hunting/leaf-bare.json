@@ -1020,7 +1020,7 @@
     {
         "patrol_id": "fst_hunt_ratswarmleafbare",
         "biome": "forest",
-        "season": "leafbare",
+        "season": "leaf-bare",
         "tags": [
             "hunting",
             "respect",
@@ -1059,7 +1059,7 @@
     {    
         "patrol_id": "fst_hunt_ratkingleafbare",
         "biome": "forest",
-        "season": "leafbare",
+        "season": "leaf-bare",
         "tags": [
             "hunting",
             "medium_prey0",
@@ -1097,7 +1097,7 @@
     {    
         "patrol_id": "fst_hunt_ratkingleafbare2",
         "biome": "forest",
-        "season": "leafbare",
+        "season": "leaf-bare",
         "tags": [
             "hunting",
             "medium_prey0",
@@ -1136,7 +1136,7 @@
     {
         "patrol_id": "fst_hunt_bird_swlb",
         "biome": "forest",
-        "season": "leafbare",
+        "season": "leaf-bare",
         "tags": [
             "hunting",
             "no_fail_prey",
@@ -1158,4 +1158,46 @@
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_text_fail": null
+    },
+    {
+        "patrol_id": "fst_hunt_lillizard_leafbare1",
+        "biome": "forest",
+        "season": "leaf-bare",
+        "tags": [
+            "hunting",
+            "platonic",
+            "comfort",
+            "medium_prey"
+        ],
+        "intro_text": "As they give up on digging out an escaped mouse from its snowy tunnels, r_c swears they can smell something.",
+        "decline_text": "Nevermind?",
+        "chance_of_success": 60,
+        "exp": 15,
+        "success_text": [
+            "Any prey is worth pursuing in leaf-bare, and with the lost mouse, the patrol really doesn't want to go home empty-pawed. They follow r_c's mystery scent, ripping open a half-rotten log. Inside, the hibernating lizard won't wake for anything, not even a predator, and they're able to bring their slighlty odd prize home without trouble.",
+            "It very weird how the lizards won't wake, not even with cats ripping apart their burrow, but no one is going to argue with more prey for the fresh-kill pile.",
+            "s_c manages to figure it out - a hibernating lizard! If they hadn't all already had their faces in the snow, they'd never have found it, it gives off such little scent."
+        ],
+        "fail_text": [
+            "The patrol is unable to fish out whatever is giving off that prey-scent - maybe it's just the scent left by the mouse?"
+        ],
+        "win_skills": [
+            "good hunter",
+            "great hunter",
+            "fantastic hunter"
+        ],
+        "win_trait": [
+            "None"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 2,
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     }
+]
