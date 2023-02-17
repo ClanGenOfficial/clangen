@@ -566,6 +566,8 @@ class Relationship():
             self.platonic_like += amount
         elif rel_type == "dislike":
             self.dislike += amount
+        elif rel_type == "admiration":
+            self.admiration += amount
         elif rel_type == "comfortable":
             self.comfortable += amount
         elif rel_type == "jealousy":
@@ -663,7 +665,7 @@ class Relationship():
         for inter in interactions:
             if inter.biome not in _biome:
                 continue
-            
+
             if inter.season not in _season:
                 continue
 
@@ -711,7 +713,7 @@ class Relationship():
             if "child/parent" in inter.relationship_constraint and not self.cat_to.is_parent(self.cat_from):
                 continue
             
-            value_types = ["romantic", "platonic", "dislike", "comfortable", "jealousy", "trust"]
+            value_types = ["romantic", "platonic", "dislike", "admiration", "comfortable", "jealousy", "trust"]
             fulfilled = True
             for v_type in value_types:
                 tags = [constraint for constraint in inter.relationship_constraint if v_type in constraint]
@@ -753,6 +755,75 @@ class Relationship():
                 filtered.append(inter.interactions)
 
         return filtered
+
+
+    # ---------------------------------------------------------------------------- #
+    #                            complex value addition                            #
+    # ---------------------------------------------------------------------------- #
+
+    # How increasing one state influences another directly: (an increase of one state doesn't trigger a chain reaction)
+    # increase romantic_love -> decreases: dislike | increases: like, comfortable
+    # increase like -> decreases: dislike | increases: comfortable
+    # increase dislike -> decreases: romantic_love, like | increases: -
+    # increase admiration -> decreases: - | increases: -
+    # increase comfortable -> decreases: jealousy, dislike | increases: trust, like
+    # increase jealousy -> decreases: - | increases: dislike
+    # increase trust -> decreases: dislike | increases: -
+
+    # !! DECREASING ONE STATE DOES'T INFLUENCE OTHERS !!
+
+    def complex_romantic(self, value):
+        """Add the value to the romantic type and influence other value types as well."""
+        self.romantic_love += value
+        if value > 0:
+            buff = game.config["relationship"]["passive_influence"]
+            self.platonic_like += buff
+            self.comfortable += buff
+            self.dislike -= buff
+
+    def complex_platonic(self, value):
+        """Add the value to the platonic type and influence other value types as well."""
+        self.platonic_like += value
+        if value > 0:
+            buff = game.config["relationship"]["passive_influence"]
+            self.comfortable += buff
+            self.dislike -= buff
+
+    def complex_dislike(self, value):
+        """Add the value to the dislike type and influence other value types as well."""
+        self.dislike += value
+        if value > 0:
+            buff = game.config["relationship"]["passive_influence"]
+            self.romantic_love -= buff
+            self.platonic_like -= buff
+
+    def complex_admiration(self, value):
+        """Add the value to the admiration type and influence other value types as well."""
+        self.admiration += value
+
+    def complex_comfortable(self, value):
+        """Add the value to the comfortable type and influence other value types as well."""
+        self.comfortable += value
+        if value > 0:
+            buff = game.config["relationship"]["passive_influence"]
+            self.trust += buff
+            self.platonic_like += buff
+            self.dislike -= buff
+            self.jealousy -= buff
+
+    def complex_jealousy(self, value):
+        """Add the value to the jealousy type and influence other value types as well."""
+        self.jealousy += value
+        if value > 0:
+            buff = game.config["relationship"]["passive_influence"]
+            self.dislike += buff
+
+    def complex_trust(self, value):
+        """Add the value to the trust type and influence other value types as well."""
+        self.trust += value
+        if value > 0:
+            buff = game.config["relationship"]["passive_influence"]
+            self.dislike -= buff
 
 
     # ---------------------------------------------------------------------------- #
@@ -931,8 +1002,8 @@ def create_interaction(inter_list) -> list:
             random_skill_constraint = inter["random_skill_constraint"] if "random_skill_constraint" in inter else []
         ))
 
-MASTER_DICT = {"romantic": {}, "platonic": {}, "dislike": {}, "comfortable": {}, "jealousy": {}, "trust": {}}
-rel_types = ["romantic", "platonic", "dislike", "comfortable", "jealousy", "trust"]
+MASTER_DICT = {"romantic": {}, "platonic": {}, "dislike": {}, "admiration": {}, "comfortable": {}, "jealousy": {}, "trust": {}}
+rel_types = ["romantic", "platonic", "dislike", "admiration", "comfortable", "jealousy", "trust"]
 base_path = os.path.join("resources","dicts", "relationship_events", "normal_interactions")
 for rel in rel_types:
     file_name = rel + ".json"

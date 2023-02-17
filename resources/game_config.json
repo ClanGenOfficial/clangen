@@ -52,7 +52,8 @@
 			"medium": 5,
 			"high": 8
 		},
-		"compatibility_bonus": 3
+		"compatibility_bonus": 3,
+		"passive_influence": 3
 	},
 	"pregnancy": {
 		"primary_chance_mated": 50,
