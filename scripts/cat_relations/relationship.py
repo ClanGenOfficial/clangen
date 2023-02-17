@@ -513,18 +513,37 @@ class Relationship():
     #                                new interaction                               #
     # ---------------------------------------------------------------------------- #
 
-    def start_interaction(self):
-        # get if the interaction is positive or negative for the relationship
-        positive = self.positive_impact()
+    def start_interaction(self) -> None:
+        """This function handles the simple interaction of this relationship."""
+        # such interactions are only allowed for living clan members
+        if self.cat_from.dead or self.cat_from.outside or self.cat_from.exiled:
+            return
+        if self.cat_to.dead or self.cat_to.outside or self.cat_to.exiled:
+            return
 
-        # first define what kind of relationship interaction it should happen
-        rel_type = self.get_rel_type(positive)
+        # update relationship
+        if self.cat_from.mate == self.cat_to.ID:
+            self.mates = True
+
+        # check if opposite_relationship is here, otherwise creates it
+        if self.opposite_relationship is None:
+            self.link_relationship()
+
+        # get if the interaction is positive or negative for the relationship
+        positive = self.positive_interaction()
+        rel_type = self.get_interaction_type(positive)
 
         # look if an increase interaction or an decrease interaction
         in_de_crease = "increase" if positive else "decrease"
         # if the type is jealousy or dislike, then increase and decrease has to be turned around
         if rel_type in ["jealousy", "dislike"]:
             in_de_crease = "decrease" if positive else "increase"
+        
+        chance = game.config["relationship"]["chance_for_neutral"]
+        if chance == 1:
+            in_de_crease = "neutral"
+        elif chance > 1 and random.randint(1, chance):
+            in_de_crease = "neutral"
 
         # choice any type of intensity
         intensity = choice(["low", "medium", "high"])
@@ -533,13 +552,19 @@ class Relationship():
         season = str(game.clan.current_season).casefold()
         biome = str(game.clan.biome).casefold()
 
-        all_interactions = MASTER_DICT[rel_type][in_de_crease]
+        all_interactions = NEUTRAL_INTERACTIONS
+        if in_de_crease != "neutral":
+            all_interactions = MASTER_DICT[rel_type][in_de_crease]
         possible_interactions = self.get_interaction_strings(all_interactions, intensity, biome, season)
 
-        self.interaction_affect_relationship(in_de_crease, intensity, rel_type)
+        if in_de_crease != "neutral":
+            self.interaction_affect_relationship(in_de_crease, intensity, rel_type)
         if len(possible_interactions) <= 0:
             print("ERROR: No interaction with this conditions")
-            possible_interactions["Default string, this should never appear."]
+            possible_interactions = ["Default string, this should never appear. Involved cats: m_c, r_c"]
+        chosen_interaction = choice(possible_interactions)
+
+
 
     def interaction_affect_relationship(self, in_de_crease: str, intensity: str, rel_type: str):
         """Affects the relationship according to the chosen types.
@@ -556,10 +581,24 @@ class Relationship():
             Returns
             -------
         """
+        # get the normal amount
         amount = game.config["relationship"]["in_decrease_value"][intensity]
         if in_de_crease == "decrease":
             amount = amount * -1
-        
+
+        # take compatibility into account
+        compatibility = get_personality_compatibility(self.cat_from, self.cat_to)
+        if compatibility is None:
+            # neutral compatibility
+            amount = amount
+        elif compatibility:
+            # positive compatibility
+            amount += game.config["relationship"]["compatibility_bonus"]
+        else:
+            # negative compatibility
+            amount -= game.config["relationship"]["compatibility_bonus"]
+
+        # influence the relationship
         if rel_type == "romantic":
             self.complex_romantic(amount)
         elif rel_type == "platonic":
@@ -575,7 +614,7 @@ class Relationship():
         elif rel_type == "trust":
             self.complex_trust(amount)
 
-    def positive_impact(self) -> bool:
+    def positive_interaction(self) -> bool:
         """Returns if the interaction should be a positive interaction or not.
 
             Parameters
@@ -625,14 +664,20 @@ class Relationship():
             value_weights["dislike"] += 1
             value_weights["jealousy"] += 1
 
+        # increase the chance of a romantic interaction if there already mates
+        if self.mates:
+            value_weights["romantic"] += 1
+
+        # create the list of choices
         types = []
         for rel_type, weight in value_weights.items():
             types += [rel_type] * weight
 
-        # if a romantic relationship is not possible, remove this type
+        # if a romantic relationship is not possible, remove this type, mut only if there are no mates
+        # if there already mates (set up by the user for example), don't remove this type
         mate_from_to = self.cat_from.is_potential_mate(self.cat_to, True)
         mate_to_from = self.cat_to.is_potential_mate(self.cat_from, True)
-        if not mate_from_to or not mate_to_from:
+        if (not mate_from_to or not mate_to_from) and not self.mates:
             while "romantic" in types:
                 types.remove("romantic")
         
@@ -1011,6 +1056,11 @@ for rel in rel_types:
         loaded_dict = ujson.loads(read_file.read())
         MASTER_DICT[rel]["increase"] = create_interaction(loaded_dict["increase"])
         MASTER_DICT[rel]["decrease"] = create_interaction(loaded_dict["decrease"])
+
+NEUTRAL_INTERACTIONS = []
+with open(os.path.join(base_path, "neutral.json"), 'r') as read_file:
+    loaded_list = ujson.loads(read_file.read())
+    NEUTRAL_INTERACTIONS = create_interaction(loaded_list)
 
 # ---------------------------------------------------------------------------- #
 #                           load event possibilities                           #
