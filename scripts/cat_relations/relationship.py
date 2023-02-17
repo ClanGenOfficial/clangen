@@ -185,8 +185,8 @@ class Relationship():
                 action_relevant = True
 
         # change the stats of the relationships
-        self_relation_effect = self.affect_relationship(action)
-        other_relation_effect = self.opposite_relationship.affect_relationship(action, other=True)
+        self_relation_effect = self.interaction_affect_relationship(action)
+        other_relation_effect = self.opposite_relationship.interaction_affect_relationship(action, other=True)
 
         # replace (cat) with actual name
         start_point = action.find("(") + 1
@@ -307,7 +307,7 @@ class Relationship():
 
         return action_possibilities
 
-    def affect_relationship(self, action, other=False):
+    def interaction_affect_relationship(self, action, other=False):
         """Affect the relationship according to the action."""
         # How increasing one state influences another directly: (an increase of one state doesn't trigger a chain reaction)
         # increase romantic_love -> decreases: dislike | increases: like, comfortable
@@ -513,9 +513,7 @@ class Relationship():
     #                                new interaction                               #
     # ---------------------------------------------------------------------------- #
 
-    def start_interaction(self):
-        print("Starting interaction")
-
+    def start_interaction(self) -> None:
         # get if the interaction is positive or negative for the relationship
         positive = self.positive_impact()
 
@@ -537,6 +535,64 @@ class Relationship():
 
         all_interactions = NEW_GENERAL[rel_type][in_de_crease]
         possible_interactions = self.get_interaction_strings(all_interactions, intensity, biome, season)
+
+        amount = self.get_interaction_amount(intensity, positive)
+        self.interaction_affect_relationship(rel_type, amount)
+        if len(possible_interactions) <= 0:
+            print("ERROR: No interaction with this conditions")
+            possible_interactions["Default string, this should never appear."]
+
+    def interaction_affect_relationship(self, rel_type: str, amount: int) -> None:
+        """Affects the relationship according to the chosen types.
+
+            Parameters
+            ----------
+            rel_type : str
+                relationship value type which needs to be affected
+            amount : int
+                the amount which should be added to the certain relationship value type
+                (if this is a negative or positive number is not handled here)
+
+            Returns
+            -------
+        """
+        if rel_type == "romantic":
+            self.romantic_love += amount
+        elif rel_type == "platonic":
+            self.platonic_like += amount
+        elif rel_type == "dislike":
+            self.dislike += amount
+        elif rel_type == "comfortable":
+            self.comfortable += amount
+        elif rel_type == "jealousy":
+            self.jealousy += amount
+        elif rel_type == "trust":
+            self.trust += amount
+
+    def get_interaction_amount(self, intensity: str, in_de_crease: str) -> int:
+        """Returns the amount which will be added to the relationship value type.
+        
+            Parameters
+            ----------
+            intensity : str
+                defines how high the amount will be
+            in_de_crease : int
+                defines if it will be a negative or a positive number
+
+            Returns
+            -------
+            amount : int
+                the resulting amount, which will be used
+        """
+        intensity_dict = {
+            "low": 3,
+            "medium": 5, 
+            "high": 8
+        }
+        amount = intensity_dict[intensity]
+        if in_de_crease == "decrease":
+            amount = amount * -1
+        return amount
 
     def positive_impact(self) -> bool:
         """Returns if the interaction should be a positive interaction or not.
