@@ -748,7 +748,7 @@
             "injure_all",
             "shivering"
         ],
-        "intro_text": "As the patrol walks through the woods, r_c explains an idea they had for squirrel hunting. It sounds a little strange, but perhaps it could work?",
+        "intro_text": "As the patrol walks through the snowy wooded slopes, r_c explains an idea they had for squirrel hunting. It sounds a little strange, but perhaps it could work?",
         "decline_text": "The patrol decides they'd rather not spend time on something that might not work when they could be doing something they know <i>does</i>, especially in leaf-bare where every hunt counts.",
         "chance_of_success": 40,
         "exp": 20,
@@ -772,5 +772,74 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "mtn_hunt_bluejay_leafbare1",
+        "biome": "mountainous",
+        "season": "leaf-bare",
+        "tags": [
+            "hunting",
+            "beak_bite",
+            "injure_all",
+            "clan_to_patrol",
+            "respect",
+            "medium_prey0",
+            "large_prey1",
+            "large_prey2",
+            "huge_prey3"
+        ],
+        "intro_text": "What a rare sight! Bluejay feathers are often found around here, though never the bird itself, especially in leaf-bare! Its plumage stands out fetchingly against the snow.",
+        "decline_text": "p_l admires the bird from afar, deciding against coloring the fresh-kill pile with that particular shade of blue.",
+        "chance_of_success": 30,
+        "exp": 20,
+        "success_text": [
+            "The bluejay seems more focused on what it's eating then the patrol, and r_c walks home with the brightly colored bird proudly in their mouth, wondering what to do with the brilliant blue feathers.",
+            "To the patrol's surprise, a second bluejay joins the first! They carefully position themselves, and soon find that while one peice of freshkill is worth two in the tree, two peices of freshkill are more than enough in the mountains!",
+            "s_c holds the patrol off from pouncing right away, and they're rewarded by a second bluejay joining the first! They catch both and s_c explains that bluejays travel in groups of five or more.",
+            "They catch the bluejay, and s_c quickly bites up the bloodriddeled snow, and lingers behind to wait. They come back with two more mice! They explain the bluejay was eating something mice also liked, and was hoping they might catch some with the same bait."
+        ],
+        "fail_text":[
+            "The bluejay spots them coming from several fox-lengths away, and follows them back to camp, laughing in only the way bluejays can laugh.",
+            "To the patrol's suprise, a second bluejay joins the first! s_c gets ahead of themselves, rushing out to catch them, only for both of them fly off, and- Are they mocking s_c before they can even pounce?",
+            null,
+            "As r_c gets into the hunting crouch, there's an odd sound from above, and soon the whole patrol is yowling in terror as they get mobbed by bluejays. A piece of fresh-kill in paws doesn't mean not to look out for danger!",
+            null,
+            "s_c is facinated by the pretty feathers and can't wait to get their claws on them! They rush out to catch the bluejay, only for a mob of bluejays to decend on the patrol, every cat suffering for s_c's impulsive behaviour.",
+            null
+        ],
+        "win_skills":[
+            "good hunter",
+            "great hunter",
+            "fantastic hunter",
+            "very smart",
+            "extremely smart" 
+        ],
+        "win_trait":[
+            "responsible",
+            "confident",
+            "wise",
+            "patient",
+            "sneaky",
+            "careful"
+        ],
+        "fail_skills":[
+            "None"
+        ],
+        "fail_trait":[
+            "troublesome",
+            "childish",
+            "bold",
+            "playful",
+            "daring",
+            "shameless"
+
+        ],
+        "min_cats":3,
+        "max_cats":6,
+        "antagonize_text":null,
+        "antagonize_fail_text":null,
+        "history_text":[
+            "r_c got a scar underestimating a bluejay."
+        ]
     }
 ]
