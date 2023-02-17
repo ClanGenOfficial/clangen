@@ -561,7 +561,7 @@ class Relationship():
             print("ERROR: No interaction with this conditions.")
             possible_interactions = [
                 Interaction("fall_back", "Any", "Any", "medium", [
-                    "Default string, this should never appear. Involved cats: m_c, r_c"
+                    "Default string, this should never appear."
                 ])
             ]
         self.chosen_interaction = choice(possible_interactions)
