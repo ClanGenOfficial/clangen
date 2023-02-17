@@ -533,7 +533,7 @@ class Relationship():
         season = str(game.clan.current_season).casefold()
         biome = str(game.clan.biome).casefold()
 
-        all_interactions = NEW_GENERAL[rel_type][in_de_crease]
+        all_interactions = MASTER_DICT[rel_type][in_de_crease]
         possible_interactions = self.get_interaction_strings(all_interactions, intensity, biome, season)
 
         self.interaction_affect_relationship(in_de_crease, intensity, rel_type)
@@ -658,8 +658,8 @@ class Relationship():
                 a list of interaction strings, which fulfill the criteria
         """
         filtered = []
-        _season = [season, "Any"]
-        _biome = [biome, "Any"]
+        _season = [season, "Any", "any"]
+        _biome = [biome, "Any", "any"]
         for inter in interactions:
             if inter.biome not in _biome:
                 continue
@@ -910,13 +910,13 @@ de_in_crease_path = "DE_IN_CREASE/"
 cat_to_other_path = "cat_to_other/"
 
 # ---------------------------------------------------------------------------- #
-#                           load event possibilities                           #
+#                   build master dictionary for interactions                   #
 # ---------------------------------------------------------------------------- #
 
 def create_interaction(inter_list) -> list:
     created_list = []
     for inter in inter_list:
-        created_list.append(
+        created_list.append(Interaction(
             id=inter["id"],
             biome=inter["biome"] if "biome" in inter else "Any",
             season=inter["season"] if "season" in inter else "Any",
@@ -929,12 +929,22 @@ def create_interaction(inter_list) -> list:
             random_trait_constraint = inter["random_trait_constraint"] if "random_trait_constraint" in inter else [],
             main_skill_constraint = inter["main_skill_constraint"] if "main_skill_constraint" in inter else [],
             random_skill_constraint = inter["random_skill_constraint"] if "random_skill_constraint" in inter else []
-        )
+        ))
 
-NEW_GENERAL = None
-with open(f"resources\\dicts\\relationship_events\\normal_interactions\\general.json", 'r') as read_file:
-    loaded_dict = ujson.loads(read_file.read())
-    NEW_GENERAL = create_interaction(loaded_dict)
+MASTER_DICT = {"romantic": {}, "platonic": {}, "dislike": {}, "comfortable": {}, "jealousy": {}, "trust": {}}
+rel_types = ["romantic", "platonic", "dislike", "comfortable", "jealousy", "trust"]
+base_path = os.path.join("resources","dicts", "relationship_events", "normal_interactions")
+for rel in rel_types:
+    file_name = rel + ".json"
+    with open(os.path.join(base_path, file_name), 'r') as read_file:
+        loaded_dict = ujson.loads(read_file.read())
+        MASTER_DICT[rel]["increase"] = create_interaction(loaded_dict["increase"])
+        MASTER_DICT[rel]["decrease"] = create_interaction(loaded_dict["decrease"])
+
+# ---------------------------------------------------------------------------- #
+#                           load event possibilities                           #
+# ---------------------------------------------------------------------------- #
+
 
 GENERAL = None
 with open(f"{resource_directory}{cat_to_other_path}not_age_specific.json", 'r') as read_file:

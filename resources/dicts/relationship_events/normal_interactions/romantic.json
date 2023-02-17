@@ -1,0 +1,21 @@
+{
+	"increase": [
+		{
+			"id": "sample_id",
+			"biome": "Any",
+			"season": "Any",
+			"intensity": "medium",
+			"interactions": [
+				"m_c does some interactions with r_c"
+			],
+			"relationship_constraint": [],
+			"main_status_constraint":[],
+			"main_trait_constraint":[],
+			"main_skill_constraint":[],
+			"random_status_constraint":[],
+			"random_trait_constraint":[],
+			"random_skill_constraint":[]
+		}
+	],
+	"decrease": []
+}
