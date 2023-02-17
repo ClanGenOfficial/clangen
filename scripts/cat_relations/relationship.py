@@ -528,7 +528,15 @@ class Relationship():
         if rel_type in ["jealousy", "dislike"]:
             in_de_crease = "decrease" if positive else "increase"
 
+        # choice any type of intensity
+        intensity = choice(["low", "medium", "high"])
+
+        # get other possible filters
+        season = str(game.clan.current_season).casefold()
+        biome = str(game.clan.biome).casefold()
+
         all_interactions = NEW_GENERAL[rel_type][in_de_crease]
+        possible_interactions = self.get_interaction_strings(all_interactions, intensity, biome, season)
 
     def positive_impact(self) -> bool:
         """Returns if the interaction should be a positive interaction or not.
@@ -549,7 +557,6 @@ class Relationship():
 
         return choice(list_to_choice)
 
-
     def get_interaction_type(self, positive: bool) ->  str:
         """Returns the type of the interaction which should be made.
         
@@ -561,6 +568,8 @@ class Relationship():
 
             Returns
             -------
+            rel_type : string
+                the relationship type which will happen
         """
         value_weights = {
             "trust": 1,
@@ -571,6 +580,8 @@ class Relationship():
             "platonic": 1,
             "romantic": 1
         }
+
+        # change the weights according if the interaction should be positive or negative
         if positive:
             value_weights["platonic"] += 1
         else:
@@ -590,6 +601,124 @@ class Relationship():
         
         rel_type = choice(types)
         return rel_type
+
+    def get_interaction_strings(self, interactions : list, intensity : str, biome : str, season : str) -> list:
+        """
+        Filter interactions based on the status and other constraints.
+            
+            Parameters
+            ----------
+            interactions : list
+                the interactions which need to be filtered
+            intensity : str
+                the intensity of the interactions
+            biome : str
+                biome of the clan
+            season : str
+                current season of the clan
+
+            Returns
+            -------
+            filtered : list
+                a list of interaction strings, which fulfill the criteria
+        """
+        filtered = []
+        _season = [season, "Any"]
+        _biome = [biome, "Any"]
+        for inter in interactions:
+            if inter.biome not in _biome:
+                continue
+            
+            if inter.season not in _season:
+                continue
+
+            if inter.intensity != intensity:
+                continue
+
+            if len(inter.main_status_constraint) >= 1:
+                if self.cat_from.status not in inter.main_status_constraint:
+                    continue
+
+            if len(inter.random_status_constraint) >= 1:
+                if self.cat_to.status not in inter.random_status_constraint:
+                    continue
+
+            if len(inter.main_trait_constraint) >= 1:
+                if self.cat_from.trait not in inter.main_trait_constraint:
+                    continue
+
+            if len(inter.random_trait_constraint) >= 1:
+                if self.cat_to.trait not in inter.random_trait_constraint:
+                    continue
+
+            if len(inter.main_skill_constraint) >= 1:
+                if self.cat_from.skill not in inter.main_skill_constraint:
+                    continue
+
+            if len(inter.random_skill_constraint) >= 1:
+                if self.cat_to.skill not in inter.random_skill_constraint:
+                    continue
+
+            # if there is no constraint, skip other checks
+            if len(inter.relationship_constraint) == 0:
+                filtered.append(inter.interactions)
+                continue
+
+            if "siblings" in inter.relationship_constraint and not self.cat_from.is_sibling(self.cat_to):
+                continue
+            
+            if "mates" in inter.relationship_constraint and not self.mates:
+                continue
+        
+            if "parent/child" in inter.relationship_constraint and not self.cat_from.is_parent(self.cat_to):
+                continue
+            
+            if "child/parent" in inter.relationship_constraint and not self.cat_to.is_parent(self.cat_from):
+                continue
+            
+            value_types = ["romantic", "platonic", "dislike", "comfortable", "jealousy", "trust"]
+            fulfilled = True
+            for v_type in value_types:
+                tags = [constraint for constraint in inter.relationship_constraint if v_type in constraint]
+                threshold = 0
+                # try to extract the value/threshold from the text
+                try:
+                    threshold = int(tags[0].split('_')[1])
+                except e:
+                    print(f"ERROR: interaction {inter.id} with the relationship constraint for the value {v_type} follows not the formatting guidelines.")
+                    break
+
+                if threshold > 100:
+                    print(f"ERROR: interaction {inter.id} has a relationship constraints for the value {v_type}, which is higher than the max value of a relationship.")
+                    break
+
+                if threshold <= 0:
+                    print(f"ERROR: patrol {inter.id} has a relationship constraints for the value {v_type}, which is lower than the min value of a relationship or 0.")
+                    break
+
+                over_threshold = False
+                if v_type == "romantic" and self.romantic_love >= threshold:
+                    over_threshold = True
+                if v_type == "platonic" and self.platonic_like >= threshold:
+                    over_threshold = True
+                if v_type == "dislike" and self.dislike >= threshold:
+                    over_threshold = True
+                if v_type == "comfortable" and self.comfortable >= threshold:
+                    over_threshold = True
+                if v_type == "jealousy" and self.jealousy >= threshold:
+                    over_threshold = True
+                if v_type == "trust" and self.trust >= threshold:
+                    over_threshold = True
+
+                if not over_threshold:
+                    fulfilled = False
+                    continue
+            
+            if fulfilled:
+                filtered.append(inter.interactions)
+
+        return filtered
+
 
     # ---------------------------------------------------------------------------- #
     #                                   property                                   #
@@ -680,6 +809,66 @@ class Relationship():
         self._trust = value
 
 
+class Interaction():
+
+    def __init__(self,
+                 id,
+                 biome="Any",
+                 season="Any",
+                 intensity="medium",
+                 interactions=None,
+                 relationship_constraint=None,
+                 main_status_constraint=None,
+                 random_status_constraint=None,
+                 main_trait_constraint=None,
+                 random_trait_constraint=None,
+                 main_skill_constraint=None,
+                 random_skill_constraint=None):
+        self.id = id
+        self.biome = biome
+        self.season = season
+        self.intensity = intensity
+        
+        if interactions:
+            self.interactions = interactions
+        else:
+            self.interactions = [f"This is a default interaction! ID: {id} with cats (m_c), (r_c)"]
+
+        if relationship_constraint:
+            self.relationship_constraint = relationship_constraint
+        else:
+            self.relationship_constraint = []   
+
+        if main_status_constraint:
+            self.main_status_constraint = main_status_constraint
+        else: 
+            self.main_status_constraint = []
+
+        if random_status_constraint:
+            self.random_status_constraint = random_status_constraint
+        else:
+            random_status_constraint = []
+
+        if main_trait_constraint:
+            self.main_trait_constraint = main_trait_constraint
+        else: 
+            self.main_trait_constraint = []
+
+        if random_trait_constraint:
+            self.random_trait_constraint = random_trait_constraint
+        else:
+            random_trait_constraint = []
+
+        if main_skill_constraint:
+            self.main_skill_constraint = main_skill_constraint
+        else: 
+            self.main_skill_constraint = []
+
+        if random_skill_constraint:
+            self.random_skill_constraint = random_skill_constraint
+        else:
+            random_skill_constraint = []
+      
 # IN increase or decrease
 resource_directory = "resources/dicts/relationship_events/"
 de_in_crease_path = "DE_IN_CREASE/"
@@ -689,9 +878,28 @@ cat_to_other_path = "cat_to_other/"
 #                           load event possibilities                           #
 # ---------------------------------------------------------------------------- #
 
+def create_interaction(inter_list) -> list:
+    created_list = []
+    for inter in inter_list:
+        created_list.append(
+            id=inter["id"],
+            biome=inter["biome"] if "biome" in inter else "Any",
+            season=inter["season"] if "season" in inter else "Any",
+            intensity=inter["intensity"],
+            interactions=inter["interactions"] if "interactions" in inter else None,
+            relationship_constraint = inter["relationship_constraint"] if "relationship_constraint" in inter else [],
+            main_status_constraint = inter["main_status_constraint"] if "main_status_constraint" in inter else [],
+            random_status_constraint = inter["random_status_constraint"] if "random_status_constraint" in inter else [],
+            main_trait_constraint = inter["main_trait_constraint"] if "main_trait_constraint" in inter else [],
+            random_trait_constraint = inter["random_trait_constraint"] if "random_trait_constraint" in inter else [],
+            main_skill_constraint = inter["main_skill_constraint"] if "main_skill_constraint" in inter else [],
+            random_skill_constraint = inter["random_skill_constraint"] if "random_skill_constraint" in inter else []
+        )
+
 NEW_GENERAL = None
 with open(f"resources\\dicts\\relationship_events\\normal_interactions\\general.json", 'r') as read_file:
-    NEW_GENERAL = ujson.loads(read_file.read())
+    loaded_dict = ujson.loads(read_file.read())
+    NEW_GENERAL = create_interaction(loaded_dict)
 
 GENERAL = None
 with open(f"{resource_directory}{cat_to_other_path}not_age_specific.json", 'r') as read_file:

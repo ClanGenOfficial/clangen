@@ -13,9 +13,13 @@
                 "interactions": [
                     "m_c found a pretty shell on the beach and gave it r_c as a present."
                 ],
-                "status_constraint": [],
                 "relationship_constraint": [],
-                "character_from_constraint": []
+                "main_status_constraint": [],
+                "random_status_constraint": [],
+                "main_trait_constraint": [],
+                "random_trait_constraint": [],
+                "main_skill_constraint": [],
+                "random_skill_constraint": []
             }
         ],
         "decrease": []
