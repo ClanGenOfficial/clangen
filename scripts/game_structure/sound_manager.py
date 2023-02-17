@@ -43,6 +43,8 @@ class _SoundManager():
             pygame.mixer.Sound.play(self.sounds[sound])
         except KeyError:
             logger.exception(f"Could not find sound {sound}")
+        except:
+            logger.exception(f"Could not play sound {sound}")
 
     @property
     def volume(self):
