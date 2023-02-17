@@ -634,9 +634,9 @@ class Patrol():
             if self.patrol_event.tags is not None:
                 if "other_clan" in self.patrol_event.tags:
                     if antagonize:
-                        self.handle_clan_relations(difference=int(-2))
+                        self.handle_clan_relations(difference=int(-2), antagonize=True)
                     else:
-                        self.handle_clan_relations(difference=int(1))
+                        self.handle_clan_relations(difference=int(1), antagonize=False)
                 elif "new_cat" in self.patrol_event.tags:
                     if antagonize:
                         self.handle_reputation(-10)
@@ -713,9 +713,9 @@ class Patrol():
             if self.patrol_event.tags is not None:
                 if "other_clan" in self.patrol_event.tags:
                     if antagonize:
-                        self.handle_clan_relations(difference=int(-1))
+                        self.handle_clan_relations(difference=int(-1), antagonize=True)
                     else:
-                        self.handle_clan_relations(difference=int(-1))
+                        self.handle_clan_relations(difference=int(-1), antagonize=False)
                 elif "new_cat" in self.patrol_event.tags:
                     if antagonize:
                         self.handle_reputation(-5)
@@ -1483,18 +1483,27 @@ class Patrol():
             if total_amount > 0:
                 self.results_text.append(f"Each cat catches a {prey_size} amount of prey.")
 
-    def handle_clan_relations(self, difference):
+    def handle_clan_relations(self, difference, antagonize):
         """
         relations with other clans
         """
         if "other_clan" in self.patrol_event.tags:
             other_clan = patrol.other_clan
+            if "otherclan_nochangefail" in self.patrol_event.tags and not self.success:
+                difference = 0
+            elif "otherclan_nochangesuccess" in self.patrol_event.tags and self.success:
+                  difference = 0
+            elif "otherclan_antag_nochangefail" in self.patrol_event.tags and antagonize and not self.success:
+                  difference = 0
             change_clan_relations(other_clan, difference)
             if difference > 0 and self.patrol_event.patrol_id != "gen_bord_otherclan3":
                 insert = "improved"
+            elif difference == 0:
+                insert = "remained neutral"
             else:
-                insert = "worsened"
+                insert = "worsened"    
             self.results_text.append(f"Relations with {other_clan} have {insert}.")
+              
 
     def handle_mentor_app_pairing(self):
         for cat in self.patrol_cats:
