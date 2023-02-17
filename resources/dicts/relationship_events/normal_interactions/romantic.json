@@ -14,7 +14,16 @@
 			"main_skill_constraint":[],
 			"random_status_constraint":[],
 			"random_trait_constraint":[],
-			"random_skill_constraint":[]
+			"random_skill_constraint":[],
+			"reaction_random": {
+				"romantic": "increase",
+				"platonic": "neutral",
+				"dislike": "decrease",
+				"admiration": "neutral",
+				"comfortable": "increase",
+				"jealousy": "neutral",
+				"trust": "increase"
+			}
 		}
 	],
 	"decrease": []

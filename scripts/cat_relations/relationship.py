@@ -185,8 +185,8 @@ class Relationship():
                 action_relevant = True
 
         # change the stats of the relationships
-        self_relation_effect = self.interaction_affect_relationship(action)
-        other_relation_effect = self.opposite_relationship.interaction_affect_relationship(action, other=True)
+        self_relation_effect = self.interaction_affect_relationships(action)
+        other_relation_effect = self.opposite_relationship.interaction_affect_relationships(action, other=True)
 
         # replace (cat) with actual name
         start_point = action.find("(") + 1
@@ -307,7 +307,7 @@ class Relationship():
 
         return action_possibilities
 
-    def interaction_affect_relationship(self, action, other=False):
+    def interaction_affect_relationships(self, action, other=False):
         """Affect the relationship according to the action."""
         # How increasing one state influences another directly: (an increase of one state doesn't trigger a chain reaction)
         # increase romantic_love -> decreases: dislike | increases: like, comfortable
@@ -538,7 +538,7 @@ class Relationship():
         # if the type is jealousy or dislike, then increase and decrease has to be turned around
         if rel_type in ["jealousy", "dislike"]:
             in_de_crease = "decrease" if positive else "increase"
-        
+
         chance = game.config["relationship"]["chance_for_neutral"]
         if chance == 1:
             in_de_crease = "neutral"
@@ -557,17 +557,20 @@ class Relationship():
             all_interactions = MASTER_DICT[rel_type][in_de_crease]
         possible_interactions = self.get_interaction_strings(all_interactions, intensity, biome, season)
 
-        if in_de_crease != "neutral":
-            self.interaction_affect_relationship(in_de_crease, intensity, rel_type)
         if len(possible_interactions) <= 0:
             print("ERROR: No interaction with this conditions")
-            possible_interactions = ["Default string, this should never appear. Involved cats: m_c, r_c"]
-        chosen_interaction = choice(possible_interactions)
+            possible_interactions = [
+                Interaction("fall_back", "Any", "Any", "medium", [
+                    "Default string, this should never appear. Involved cats: m_c, r_c"
+                ])
+            ]
+        self.chosen_interaction = choice(possible_interactions)
 
+        if in_de_crease != "neutral":
+            self.interaction_affect_relationships(in_de_crease, intensity, rel_type)
 
-
-    def interaction_affect_relationship(self, in_de_crease: str, intensity: str, rel_type: str):
-        """Affects the relationship according to the chosen types.
+    def get_amount(self, in_de_crease: str, intensity: str) -> int:
+        """Calculates the amount of such an interaction.
 
             Parameters
             ----------
@@ -575,12 +578,14 @@ class Relationship():
                 if the relationship value is increasing or decreasing the value
             intensity : str
                 the intensity of the affect
-            rel_type : str
-                relationship value type which needs to be affected
 
             Returns
             -------
+            amount : int
+                the amount (negative or positive) for the given parameter
         """
+        if in_de_crease == "neutral":
+            return 0
         # get the normal amount
         amount = game.config["relationship"]["in_decrease_value"][intensity]
         if in_de_crease == "decrease":
@@ -597,8 +602,26 @@ class Relationship():
         else:
             # negative compatibility
             amount -= game.config["relationship"]["compatibility_bonus"]
+        return amount
 
-        # influence the relationship
+    def interaction_affect_relationships(self, in_de_crease: str, intensity: str, rel_type: str):
+        """Affects the relationship according to the chosen types.
+
+            Parameters
+            ----------
+            in_de_crease : list
+                if the relationship value is increasing or decreasing the value
+            intensity : str
+                the intensity of the affect
+            rel_type : str
+                relationship value type which needs to be affected
+
+            Returns
+            -------
+        """
+        amount = self.get_amount(intensity, in_de_crease)
+
+        # influence the own relationship
         if rel_type == "romantic":
             self.complex_romantic(amount)
         elif rel_type == "platonic":
@@ -613,6 +636,32 @@ class Relationship():
             self.complex_jealousy(amount)
         elif rel_type == "trust":
             self.complex_trust(amount)
+
+        # influence the opposite relationship
+        if self.opposite_relationship is None:
+            return
+        
+        op_dict = self.chosen_interaction.reaction_random
+        for key, value in op_dict.items():
+            if value == "neutral":
+                continue
+            amount = self.get_amount(value,"medium")
+
+            if key == "romantic":
+                self.opposite_relationship.romantic_love += amount
+            elif key == "platonic":
+                self.opposite_relationship.platonic_like += amount
+            elif key == "dislike":
+                self.opposite_relationship.dislike += amount
+            elif key == "admiration":
+                self.opposite_relationship.admiration += amount
+            elif key == "comfortable":
+                self.opposite_relationship.comfortable += amount
+            elif key == "jealousy":
+                self.opposite_relationship.jealousy += amount
+            elif key == "trust":
+                self.opposite_relationship.trust += amount
+
 
     def positive_interaction(self) -> bool:
         """Returns if the interaction should be a positive interaction or not.
@@ -680,7 +729,7 @@ class Relationship():
         if (not mate_from_to or not mate_to_from) and not self.mates:
             while "romantic" in types:
                 types.remove("romantic")
-        
+
         rel_type = choice(types)
         return rel_type
 
@@ -702,7 +751,7 @@ class Relationship():
             Returns
             -------
             filtered : list
-                a list of interaction strings, which fulfill the criteria
+                a list of interactions, which fulfill the criteria
         """
         filtered = []
         _season = [season, "Any", "any"]
@@ -743,21 +792,21 @@ class Relationship():
 
             # if there is no constraint, skip other checks
             if len(inter.relationship_constraint) == 0:
-                filtered.append(inter.interactions)
+                filtered.append(inter)
                 continue
 
             if "siblings" in inter.relationship_constraint and not self.cat_from.is_sibling(self.cat_to):
                 continue
-            
+
             if "mates" in inter.relationship_constraint and not self.mates:
                 continue
-        
+
             if "parent/child" in inter.relationship_constraint and not self.cat_from.is_parent(self.cat_to):
                 continue
-            
+
             if "child/parent" in inter.relationship_constraint and not self.cat_to.is_parent(self.cat_from):
                 continue
-            
+
             value_types = ["romantic", "platonic", "dislike", "admiration", "comfortable", "jealousy", "trust"]
             fulfilled = True
             for v_type in value_types:
@@ -795,9 +844,9 @@ class Relationship():
                 if not over_threshold:
                     fulfilled = False
                     continue
-            
+
             if fulfilled:
-                filtered.append(inter.interactions)
+                filtered.append(inter)
 
         return filtered
 
@@ -974,12 +1023,13 @@ class Interaction():
                  main_trait_constraint=None,
                  random_trait_constraint=None,
                  main_skill_constraint=None,
-                 random_skill_constraint=None):
+                 random_skill_constraint=None,
+                 reaction_random=None):
         self.id = id
         self.biome = biome
         self.season = season
         self.intensity = intensity
-        
+
         if interactions:
             self.interactions = interactions
         else:
@@ -988,11 +1038,11 @@ class Interaction():
         if relationship_constraint:
             self.relationship_constraint = relationship_constraint
         else:
-            self.relationship_constraint = []   
+            self.relationship_constraint = []
 
         if main_status_constraint:
             self.main_status_constraint = main_status_constraint
-        else: 
+        else:
             self.main_status_constraint = []
 
         if random_status_constraint:
@@ -1002,7 +1052,7 @@ class Interaction():
 
         if main_trait_constraint:
             self.main_trait_constraint = main_trait_constraint
-        else: 
+        else:
             self.main_trait_constraint = []
 
         if random_trait_constraint:
@@ -1012,14 +1062,27 @@ class Interaction():
 
         if main_skill_constraint:
             self.main_skill_constraint = main_skill_constraint
-        else: 
+        else:
             self.main_skill_constraint = []
 
         if random_skill_constraint:
             self.random_skill_constraint = random_skill_constraint
         else:
             random_skill_constraint = []
-      
+
+        if reaction_random:
+            self.reaction_random = reaction_random
+        else:
+            reaction_random = {
+				"romantic": "neutral",
+				"platonic": "neutral",
+				"dislike": "neutral",
+				"admiration": "neutral",
+				"comfortable": "neutral",
+				"jealousy": "neutral",
+				"trust": "neutral"
+            }
+
 # IN increase or decrease
 resource_directory = "resources/dicts/relationship_events/"
 de_in_crease_path = "DE_IN_CREASE/"
@@ -1036,7 +1099,7 @@ def create_interaction(inter_list) -> list:
             id=inter["id"],
             biome=inter["biome"] if "biome" in inter else "Any",
             season=inter["season"] if "season" in inter else "Any",
-            intensity=inter["intensity"],
+            intensity=inter["intensity"] if "intensity" in inter else "medium",
             interactions=inter["interactions"] if "interactions" in inter else None,
             relationship_constraint = inter["relationship_constraint"] if "relationship_constraint" in inter else [],
             main_status_constraint = inter["main_status_constraint"] if "main_status_constraint" in inter else [],
@@ -1044,7 +1107,8 @@ def create_interaction(inter_list) -> list:
             main_trait_constraint = inter["main_trait_constraint"] if "main_trait_constraint" in inter else [],
             random_trait_constraint = inter["random_trait_constraint"] if "random_trait_constraint" in inter else [],
             main_skill_constraint = inter["main_skill_constraint"] if "main_skill_constraint" in inter else [],
-            random_skill_constraint = inter["random_skill_constraint"] if "random_skill_constraint" in inter else []
+            random_skill_constraint = inter["random_skill_constraint"] if "random_skill_constraint" in inter else [],
+            random_reaction = inter["random_reaction"] if "random_reaction" in inter else None
         ))
 
 MASTER_DICT = {"romantic": {}, "platonic": {}, "dislike": {}, "admiration": {}, "comfortable": {}, "jealousy": {}, "trust": {}}
