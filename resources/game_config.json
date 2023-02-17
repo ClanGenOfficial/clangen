@@ -46,6 +46,14 @@
 			"hunter_exp_bonus is the additional prey which will be added on a hunting patrol."
 		]
 	},
+	"relationship":{
+		"in_decrease_value":{
+			"low": 3,
+			"medium": 5,
+			"high": 8
+		},
+		"compatibility_bonus": 3
+	},
 	"pregnancy": {
 		"primary_chance_mated": 50,
 		"primary_chance_unmated": 100,

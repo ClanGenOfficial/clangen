@@ -513,7 +513,7 @@ class Relationship():
     #                                new interaction                               #
     # ---------------------------------------------------------------------------- #
 
-    def start_interaction(self) -> None:
+    def start_interaction(self):
         # get if the interaction is positive or negative for the relationship
         positive = self.positive_impact()
 
@@ -536,26 +536,30 @@ class Relationship():
         all_interactions = NEW_GENERAL[rel_type][in_de_crease]
         possible_interactions = self.get_interaction_strings(all_interactions, intensity, biome, season)
 
-        amount = self.get_interaction_amount(intensity, positive)
-        self.interaction_affect_relationship(rel_type, amount)
+        self.interaction_affect_relationship(in_de_crease, intensity, rel_type)
         if len(possible_interactions) <= 0:
             print("ERROR: No interaction with this conditions")
             possible_interactions["Default string, this should never appear."]
 
-    def interaction_affect_relationship(self, rel_type: str, amount: int) -> None:
+    def interaction_affect_relationship(self, in_de_crease: str, intensity: str, rel_type: str):
         """Affects the relationship according to the chosen types.
 
             Parameters
             ----------
+            in_de_crease : list
+                if the relationship value is increasing or decreasing the value
+            intensity : str
+                the intensity of the affect
             rel_type : str
                 relationship value type which needs to be affected
-            amount : int
-                the amount which should be added to the certain relationship value type
-                (if this is a negative or positive number is not handled here)
 
             Returns
             -------
         """
+        amount = game.config["relationship"]["in_decrease_value"][intensity]
+        if in_de_crease == "decrease":
+            amount = amount * -1
+        
         if rel_type == "romantic":
             self.romantic_love += amount
         elif rel_type == "platonic":
@@ -568,31 +572,6 @@ class Relationship():
             self.jealousy += amount
         elif rel_type == "trust":
             self.trust += amount
-
-    def get_interaction_amount(self, intensity: str, in_de_crease: str) -> int:
-        """Returns the amount which will be added to the relationship value type.
-        
-            Parameters
-            ----------
-            intensity : str
-                defines how high the amount will be
-            in_de_crease : int
-                defines if it will be a negative or a positive number
-
-            Returns
-            -------
-            amount : int
-                the resulting amount, which will be used
-        """
-        intensity_dict = {
-            "low": 3,
-            "medium": 5, 
-            "high": 8
-        }
-        amount = intensity_dict[intensity]
-        if in_de_crease == "decrease":
-            amount = amount * -1
-        return amount
 
     def positive_impact(self) -> bool:
         """Returns if the interaction should be a positive interaction or not.
