@@ -637,7 +637,7 @@
         "exp": 10,
         "success_text": [
             "The wind shifts, but before the squirrel can react p_l acts fast and leaps, stopping it from shrieking an alarm call with a quick nip to the back of the neck.",
-            "The squirrel, thankfully still dozey from the sun, doesn't notice p_l stalking up to them.. that is, until they've already pounced and have it between their jaws. It's a little late to do anything about it at that point, though.",
+            "The squirrel doesn't notice p_l stalking up to them.. that is, until they've already pounced and have it between their jaws. It's a little late to do anything about it at that point, though.",
             "The squirrel blissfully snuffles around in the grass, completely unaware of the looming danger it's in. s_c stalks, as quiet as the wind, and doesn't even need to pounce; they just walk right up behind it and take the kill."
         ],
         "fail_text": [
@@ -762,7 +762,7 @@
             "platonic",
             "respect"
         ],
-        "intro_text": "p_l's patrol strolls leisurely through the plains, enjoying the cool air. One cat raises their tail, signalling the others to be still; they've scented ground squirrels nearby.",
+        "intro_text": "p_l's patrol strolls leisurely through the plains, enjoying the cool air. One cat raises their tail, signaling the others to be still; they've scented ground squirrels nearby.",
         "decline_text": "p_l quietly shakes their head and leads the patrol elsewhere. Better not to disturb the squirrels, who are loud and territorial.",
         "chance_of_success": 40,
         "exp": 20,
