@@ -645,7 +645,7 @@ class Relationship():
         for key, value in op_dict.items():
             if value == "neutral":
                 continue
-            amount = self.get_amount(value,"medium")
+            amount = self.get_amount(value,"low")
 
             if key == "romantic":
                 self.opposite_relationship.romantic_love += amount
@@ -661,7 +661,6 @@ class Relationship():
                 self.opposite_relationship.jealousy += amount
             elif key == "trust":
                 self.opposite_relationship.trust += amount
-
 
     def positive_interaction(self) -> bool:
         """Returns if the interaction should be a positive interaction or not.
@@ -1108,7 +1107,7 @@ def create_interaction(inter_list) -> list:
             random_trait_constraint = inter["random_trait_constraint"] if "random_trait_constraint" in inter else [],
             main_skill_constraint = inter["main_skill_constraint"] if "main_skill_constraint" in inter else [],
             random_skill_constraint = inter["random_skill_constraint"] if "random_skill_constraint" in inter else [],
-            random_reaction = inter["random_reaction"] if "random_reaction" in inter else None
+            reaction_random = inter["random_reaction"] if "random_reaction" in inter else None
         ))
 
 MASTER_DICT = {"romantic": {}, "platonic": {}, "dislike": {}, "admiration": {}, "comfortable": {}, "jealousy": {}, "trust": {}}
