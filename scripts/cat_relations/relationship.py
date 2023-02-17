@@ -561,19 +561,19 @@ class Relationship():
             amount = amount * -1
         
         if rel_type == "romantic":
-            self.romantic_love += amount
+            self.complex_romantic(amount)
         elif rel_type == "platonic":
-            self.platonic_like += amount
+            self.complex_platonic(amount)
         elif rel_type == "dislike":
-            self.dislike += amount
+            self.complex_dislike(amount)
         elif rel_type == "admiration":
-            self.admiration += amount
+            self.complex_admiration(amount)
         elif rel_type == "comfortable":
-            self.comfortable += amount
+            self.complex_comfortable(amount)
         elif rel_type == "jealousy":
-            self.jealousy += amount
+            self.complex_jealousy(amount)
         elif rel_type == "trust":
-            self.trust += amount
+            self.complex_trust(amount)
 
     def positive_impact(self) -> bool:
         """Returns if the interaction should be a positive interaction or not.
