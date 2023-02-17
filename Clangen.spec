@@ -7,7 +7,7 @@ a = Analysis(
     ['main.py'],
     pathex=[],
     binaries=[],
-    datas=[],
+    datas=[('commit.txt', '.')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
@@ -23,7 +23,6 @@ pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
 a.datas += Tree('./resources', prefix='resources')
 a.datas += Tree('./sprites', prefix='sprites')
 
-a.datas += [('commit.txt', '.')]
 
 exe = EXE(
     pyz,
