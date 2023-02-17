@@ -1330,6 +1330,7 @@ class Patrol():
                 cats_to_poison = random.choices(self.living_cats, k=choice([2, 3, 4]))
                 for cat in cats_to_poison:
                     cat.get_injured('poisoned')
+                    self.results_text.append(f"{cat.name} got: poisoned")
 
             # now we hurt the kitty
             if "injure_all" in self.patrol_event.tags:
