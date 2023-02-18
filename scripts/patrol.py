@@ -571,7 +571,9 @@ class Patrol():
         elif game.clan.game_mode == "cruel season":
             gm_modifier = 3
 
-        # initially setting stat_cats
+        # resetting stat cats and then finding new stat cats
+        self.patrol_fail_stat_cat = None
+        self.patrol_win_stat_cat = None
         if self.patrol_event.win_skills:
             for cat in self.patrol_cats:
                 if "app_stat" in self.patrol_event.tags and cat.status not in ['apprentice', "medicine cat apprentice"]:
