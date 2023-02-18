@@ -542,7 +542,7 @@ class Relationship():
         chance = game.config["relationship"]["chance_for_neutral"]
         if chance == 1:
             in_de_crease = "neutral"
-        elif chance > 1 and random.randint(1, chance):
+        elif chance > 1 and random.randint(1, chance) == 1:
             in_de_crease = "neutral"
 
         # choice any type of intensity
@@ -552,13 +552,12 @@ class Relationship():
         season = str(game.clan.current_season).casefold()
         biome = str(game.clan.biome).casefold()
 
-        all_interactions = NEUTRAL_INTERACTIONS
+        all_interactions = NEUTRAL_INTERACTIONS.copy()
         if in_de_crease != "neutral":
-            all_interactions = MASTER_DICT[rel_type][in_de_crease]
-        possible_interactions = self.get_interaction_strings(all_interactions, intensity, biome, season)
-
+            all_interactions = MASTER_DICT[rel_type][in_de_crease].copy()
+        possible_interactions = self.get_relevant_interactions(all_interactions, intensity, biome, season)
         if len(possible_interactions) <= 0:
-            print("ERROR: No interaction with this conditions.")
+            print("ERROR: No interaction with this conditions. ", rel_type, in_de_crease, intensity)
             possible_interactions = [
                 Interaction("fall_back", "Any", "Any", "medium", [
                     "Default string, this should never appear."
@@ -576,11 +575,11 @@ class Relationship():
         interaction_str = interaction_str.replace("m_c", str(self.cat_from.name))
         interaction_str = interaction_str.replace("r_c", str(self.cat_to.name))
 
-        effect = " (neutral)"
+        effect = " (neutral effect)"
         if in_de_crease != "neutral" and positive:
-            effect = " (positive)"
+            effect = f" ({intensity} positive effect)"
         if in_de_crease != "neutral" and not positive:
-            effect = " (negative)"
+            effect = f" ({intensity} negative effect)"
 
         interaction_str = interaction_str + effect
         self.log.append(interaction_str)
@@ -638,7 +637,7 @@ class Relationship():
             Returns
             -------
         """
-        amount = self.get_amount(intensity, in_de_crease)
+        amount = self.get_amount(in_de_crease, intensity)
 
         # influence the own relationship
         if rel_type == "romantic":
@@ -659,7 +658,8 @@ class Relationship():
         # influence the opposite relationship
         if self.opposite_relationship is None:
             return
-        
+
+        # if there is no opposite reaction defined, return
         op_dict = self.chosen_interaction.reaction_random
         for key, value in op_dict.items():
             if value == "neutral":
@@ -751,7 +751,7 @@ class Relationship():
         rel_type = choice(types)
         return rel_type
 
-    def get_interaction_strings(self, interactions : list, intensity : str, biome : str, season : str) -> list:
+    def get_relevant_interactions(self, interactions : list, intensity : str, biome : str, season : str) -> list:
         """
         Filter interactions based on the status and other constraints.
             
@@ -1069,7 +1069,7 @@ class Interaction():
         if random_status_constraint:
             self.random_status_constraint = random_status_constraint
         else:
-            random_status_constraint = []
+            self.random_status_constraint = []
 
         if main_trait_constraint:
             self.main_trait_constraint = main_trait_constraint
@@ -1079,7 +1079,7 @@ class Interaction():
         if random_trait_constraint:
             self.random_trait_constraint = random_trait_constraint
         else:
-            random_trait_constraint = []
+            self.random_trait_constraint = []
 
         if main_skill_constraint:
             self.main_skill_constraint = main_skill_constraint
@@ -1089,12 +1089,12 @@ class Interaction():
         if random_skill_constraint:
             self.random_skill_constraint = random_skill_constraint
         else:
-            random_skill_constraint = []
+            self.random_skill_constraint = []
 
         if reaction_random:
             self.reaction_random = reaction_random
         else:
-            reaction_random = {
+            self.reaction_random = {
 				"romantic": "neutral",
 				"platonic": "neutral",
 				"dislike": "neutral",
@@ -1131,6 +1131,7 @@ def create_interaction(inter_list) -> list:
             random_skill_constraint = inter["random_skill_constraint"] if "random_skill_constraint" in inter else [],
             reaction_random = inter["random_reaction"] if "random_reaction" in inter else None
         ))
+    return created_list
 
 MASTER_DICT = {"romantic": {}, "platonic": {}, "dislike": {}, "admiration": {}, "comfortable": {}, "jealousy": {}, "trust": {}}
 rel_types = ["romantic", "platonic", "dislike", "admiration", "comfortable", "jealousy", "trust"]
