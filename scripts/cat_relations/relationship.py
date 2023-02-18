@@ -185,8 +185,8 @@ class Relationship():
                 action_relevant = True
 
         # change the stats of the relationships
-        self_relation_effect = self.interaction_affect_relationships(action)
-        other_relation_effect = self.opposite_relationship.interaction_affect_relationships(action, other=True)
+        self_relation_effect = self.affect_relationships(action)
+        other_relation_effect = self.opposite_relationship.affect_relationships(action, other=True)
 
         # replace (cat) with actual name
         start_point = action.find("(") + 1
@@ -307,7 +307,7 @@ class Relationship():
 
         return action_possibilities
 
-    def interaction_affect_relationships(self, action, other=False):
+    def affect_relationships(self, action, other=False):
         """Affect the relationship according to the action."""
         # How increasing one state influences another directly: (an increase of one state doesn't trigger a chain reaction)
         # increase romantic_love -> decreases: dislike | increases: like, comfortable
