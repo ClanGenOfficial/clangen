@@ -48,13 +48,13 @@
 	},
 	"relationship":{
 		"in_decrease_value":{
-			"low": 4,
-			"medium": 6,
-			"high": 8
+			"low": 5,
+			"medium": 8,
+			"high": 10
 		},
 		"compatibility_bonus": 3,
-		"passive_influence": 3,
-		"chance_for_neutral": 5
+		"passive_influence": 4,
+		"chance_for_neutral": 6
 	},
 	"pregnancy": {
 		"primary_chance_mated": 50,

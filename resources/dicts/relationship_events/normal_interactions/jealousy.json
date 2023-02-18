@@ -2,8 +2,8 @@
 	"increase": [
 		{
 			"id": "sample_id",
-			"biome": "Any",
-			"season": "Any",
+			"biome": ["Any"],
+			"season": ["Any"],
 			"intensity": "medium",
 			"interactions": [
 				"m_c does some interactions with r_c"

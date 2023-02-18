@@ -552,6 +552,10 @@ class Relationship():
         season = str(game.clan.current_season).casefold()
         biome = str(game.clan.biome).casefold()
 
+        #in_de_crease = "increase"
+        #intensity = "high"
+        #rel_type = "romantic"
+
         all_interactions = NEUTRAL_INTERACTIONS.copy()
         if in_de_crease != "neutral":
             all_interactions = MASTER_DICT[rel_type][in_de_crease].copy()
@@ -661,13 +665,19 @@ class Relationship():
 
         # if there is no opposite reaction defined, return
         op_dict = self.chosen_interaction.reaction_random
+        if not op_dict:
+            return
         for key, value in op_dict.items():
+            print(key, value)
             if value == "neutral":
                 continue
-            amount = self.get_amount(value,"low")
+            amount = self.get_amount(value, "low")
+            print(amount)
 
             if key == "romantic":
+                print(self.opposite_relationship.romantic_love)
                 self.opposite_relationship.romantic_love += amount
+                print(self.opposite_relationship.romantic_love)
             elif key == "platonic":
                 self.opposite_relationship.platonic_like += amount
             elif key == "dislike":
@@ -778,10 +788,12 @@ class Relationship():
         if not interactions:
             return filtered
         for inter in interactions:
-            if inter.biome not in _biome:
+            in_tags = list(filter(lambda biome: biome in _biome, inter.biome))
+            if len(in_tags) > 0:
                 continue
 
-            if inter.season not in _season:
+            in_tags = list(filter(lambda season: season in _season, inter.season))
+            if len(in_tags) > 0:
                 continue
 
             if inter.intensity != intensity:
@@ -822,6 +834,9 @@ class Relationship():
             if "mates" in inter.relationship_constraint and not self.mates:
                 continue
 
+            if "not_mates" in inter.relationship_constraint and self.mates:
+                continue
+
             if "parent/child" in inter.relationship_constraint and not self.cat_from.is_parent(self.cat_to):
                 continue
 
@@ -831,12 +846,18 @@ class Relationship():
             value_types = ["romantic", "platonic", "dislike", "admiration", "comfortable", "jealousy", "trust"]
             fulfilled = True
             for v_type in value_types:
-                tags = [constraint for constraint in inter.relationship_constraint if v_type in constraint]
+                tags = list(filter(lambda constr: v_type in constr, inter.relationship_constraint))
+                if len(tags) < 1:
+                    continue
                 threshold = 0
+                lower_than = False
                 # try to extract the value/threshold from the text
                 try:
-                    threshold = int(tags[0].split('_')[1])
-                except e:
+                    splitted = tags[0].split('_')
+                    threshold = int(splitted[1])
+                    if len(splitted) > 3:
+                        lower_than = True
+                except:
                     print(f"ERROR: interaction {inter.id} with the relationship constraint for the value {v_type} follows not the formatting guidelines.")
                     break
 
@@ -848,21 +869,39 @@ class Relationship():
                     print(f"ERROR: patrol {inter.id} has a relationship constraints for the value {v_type}, which is lower than the min value of a relationship or 0.")
                     break
 
-                over_threshold = False
-                if v_type == "romantic" and self.romantic_love >= threshold:
-                    over_threshold = True
-                if v_type == "platonic" and self.platonic_like >= threshold:
-                    over_threshold = True
-                if v_type == "dislike" and self.dislike >= threshold:
-                    over_threshold = True
-                if v_type == "comfortable" and self.comfortable >= threshold:
-                    over_threshold = True
-                if v_type == "jealousy" and self.jealousy >= threshold:
-                    over_threshold = True
-                if v_type == "trust" and self.trust >= threshold:
-                    over_threshold = True
+                threshold_fulfilled = False
+                if v_type == "romantic":
+                    if not lower_than and self.romantic_love >= threshold:
+                        threshold_fulfilled = True
+                    elif lower_than and self.romantic_love <= threshold:
+                        threshold_fulfilled = True
+                if v_type == "platonic":
+                    if not lower_than and self.platonic_like >= threshold:
+                        threshold_fulfilled = True
+                    elif lower_than and self.platonic_like <= threshold:
+                        threshold_fulfilled = True
+                if v_type == "dislike":
+                    if not lower_than and self.dislike >= threshold:
+                        threshold_fulfilled = True
+                    elif lower_than and self.dislike <= threshold:
+                        threshold_fulfilled = True
+                if v_type == "comfortable":
+                    if not lower_than and self.comfortable >= threshold:
+                        threshold_fulfilled = True
+                    elif lower_than and self.comfortable <= threshold:
+                        threshold_fulfilled = True
+                if v_type == "jealousy":
+                    if not lower_than and self.jealousy >= threshold:
+                        threshold_fulfilled = True
+                    elif lower_than and self.jealousy <= threshold:
+                        threshold_fulfilled = True
+                if v_type == "trust":
+                    if not lower_than and self.trust >= threshold:
+                        threshold_fulfilled = True
+                    elif lower_than and self.trust <= threshold:
+                        threshold_fulfilled = True
 
-                if not over_threshold:
+                if not threshold_fulfilled:
                     fulfilled = False
                     continue
 
@@ -1034,8 +1073,8 @@ class Interaction():
 
     def __init__(self,
                  id,
-                 biome="Any",
-                 season="Any",
+                 biome=None,
+                 season=None,
                  intensity="medium",
                  interactions=None,
                  relationship_constraint=None,
@@ -1047,9 +1086,9 @@ class Interaction():
                  random_skill_constraint=None,
                  reaction_random=None):
         self.id = id
-        self.biome = biome
-        self.season = season
         self.intensity = intensity
+        self.biome = biome if biome else ["Any"]
+        self.season = season if season else ["Any"]
 
         if interactions:
             self.interactions = interactions
@@ -1094,15 +1133,7 @@ class Interaction():
         if reaction_random:
             self.reaction_random = reaction_random
         else:
-            self.reaction_random = {
-				"romantic": "neutral",
-				"platonic": "neutral",
-				"dislike": "neutral",
-				"admiration": "neutral",
-				"comfortable": "neutral",
-				"jealousy": "neutral",
-				"trust": "neutral"
-            }
+            self.reaction_random = {}
 
 # IN increase or decrease
 resource_directory = "resources/dicts/relationship_events/"
@@ -1129,7 +1160,7 @@ def create_interaction(inter_list) -> list:
             random_trait_constraint = inter["random_trait_constraint"] if "random_trait_constraint" in inter else [],
             main_skill_constraint = inter["main_skill_constraint"] if "main_skill_constraint" in inter else [],
             random_skill_constraint = inter["random_skill_constraint"] if "random_skill_constraint" in inter else [],
-            reaction_random = inter["random_reaction"] if "random_reaction" in inter else None
+            reaction_random = inter["reaction_random"] if "reaction_random" in inter else None
         ))
     return created_list
 
