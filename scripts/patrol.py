@@ -573,37 +573,25 @@ class Patrol():
 
         # initially setting stat_cats
         if self.patrol_event.win_skills:
-            print('has win skills')
             for cat in self.patrol_cats:
-                print('checking cat', cat.name)
                 if "app_stat" in self.patrol_event.tags and cat.status not in ['apprentice', "medicine cat apprentice"]:
                     continue
                 if "adult_stat" in self.patrol_event.tags and cat.status in ['apprentice', "medicine cat apprentice"]:
                     continue
                 if cat.skill in self.patrol_event.win_skills:
                     self.patrol_win_stat_cat = cat
-                    print("SKILLED Stat Cat On Patrol")
         if self.patrol_event.win_trait and not self.patrol_win_stat_cat:
-            print('has win traits')
             for cat in self.patrol_cats:
-                print('checking cat', cat.name)
                 if cat.trait in self.patrol_event.win_trait:
                     self.patrol_win_stat_cat = cat
-                    print("TRAIT Stat Cat On Patrol")
         if self.patrol_event.fail_skills:
-            print('has fail skills')
             for cat in self.patrol_cats:
-                print('checking cat', cat.name)
                 if cat.skill in self.patrol_event.fail_skills:
                     self.patrol_fail_stat_cat = cat
-                    print("FAIL Stat Cat On Patrol")
         if self.patrol_event.fail_trait and not self.patrol_fail_stat_cat:
-            print('has fail traits')
             for cat in self.patrol_cats:
-                print('checking cat', cat.name)
                 if cat.trait in self.patrol_event.fail_trait:
                     self.patrol_fail_stat_cat = cat
-                    print("FAIL Stat Cat On Patrol")
 
         # if patrol contains cats with autowin skill, chance of success is high. otherwise it will calculate the
         # chance by adding the patrolevent's chance of success plus the patrol's total exp
@@ -642,10 +630,8 @@ class Patrol():
             if self.patrol_win_stat_cat:
                 if self.patrol_win_stat_cat.trait in self.patrol_event.win_trait:
                     outcome = 3
-                    print("S_C TEXT WIN TRAIT")
                 elif self.patrol_win_stat_cat.skill in self.patrol_event.win_skills:
                     outcome = 2
-                    print("S_C TEXT WIN SKILL")
             else:
                 if rare and len(success_text) >= 2 and success_text[1] is not None:
                     outcome = 1
