@@ -645,5 +645,171 @@
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "pln_hunt_leafbare_genmouse1",
+        "biome": "plains",
+        "season": "leaf-bare",
+        "tags": [
+            "hunting",
+            "no_app",
+            "medium_prey"
+        ],
+        "intro_text": "r_c catches scent of a mouse nearby. But there aren't any footprints imprinted on top of the snow to follow.",
+        "decline_text": "Your patrol ignores the mouse.",
+        "success_text": [
+            "r_c sniffs carefully - no, the scent is definitely here. They creep round the edge of the snowdrift, spot a little burow entrance, and settle down to wait. When they come wandering back into camp, they're cold and stiff - but there's mice to be added to the fresh-kill pile.",
+            "Carefully, r_c waits. Something skitters under the snow. Pinpointing the location of their prey, r_c leap high and dives, aws first, into the snowdrift. They purr in satisfaction as prey-blood hits their tongue.",
+            "s_c immediately drops into a practised crouch, shimmying flawlessly along the ground and taking the perfectly plump mouse completely by surprise before it can retreat into its under-snow burrow."
+        ],
+        "fail_text": [
+            "r_c narrowly misses the mouse."
+        ],
+        "chance_of_success": 40,
+        "exp": 10,
+        "win_skills": [
+            "good hunter",
+            "great hunter",
+            "fantastic hunter"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "pln_hunt_leafbare_genappmouse1",
+        "biome": "plains",
+        "season": "leaf-bare",
+        "tags": [
+            "hunting",
+            "apprentice",
+            "no_fail_prey",
+            "medium_prey1",
+            "scar",
+            "cold_injury"
+        ],
+        "intro_text": "app1 catches scent of a mouse nearby. But they lash they tail, confused - everything is covered in snow, where could the prey be?",
+        "decline_text": "Your patrol ignores the mouse.",
+        "chance_of_success": 20,
+        "exp": 20,
+        "success_text": [
+            "It's under the snow! Flush with enthusiasm, app1 digs at the snow bank, spraying white powder everywhere. But the mouse is long gone before they can dig down to them, escaped off into another series of tunnels.",
+            "Hold on - the mouse must be under the snow, not on top of it. app1 patiently waits for a sound, listening to the near silence of a snow-covered world under something starts to skitter close by. Pouncing blindly forward, they sink into the snow well over their head - but they can feel prey in their paws!"
+        ],
+        "fail_text": [
+            "Confused and crestfallen, app1 wanders back to camp.",
+            null,
+            null,
+            "It's under the snow! Flush with enthusiasm, app1 digs at the snow bank, spraying white powder everywhere. But the mouse is long gone before they can dig down to them, escaped off into another series of tunnels, and app1 shivers as they pad back to camp."
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "pln_hunt_leafbare_genmentormouse1",
+        "biome": "plains",
+        "season": "leaf-bare",
+        "tags": [
+            "hunting",
+            "apprentice",
+            "small_prey0",
+            "medium_prey1",
+            "comfort",
+            "trust",
+            "warrior"
+        ],
+        "intro_text": "app1 catches scent of a mouse nearby. They're confused, asking where it could be, given there's not footprints in teh snow, until p_l indicates the snowdrift itself with a wave of their tail.",
+        "decline_text": "Your patrol ignores the mouse.",
+        "chance_of_success": 40,
+        "exp": 20,
+        "success_text": [
+            "Oh. This is what those lessons with the high hunting pounce were for. app1 positions themselves and launches up, falling ungainly on top of the snowdrift and burying themselves in cold white fluff. Fox-dung! But p_l approaches them afterwards with a commiserating purr. Even though app1 missed their mouse, the commotion was enough to startle another into p_l's paws, so they don't return home without any prey.",
+            "Oh. This is what those lessons with the high hunting pounce were for. app1 positions themselves and launches up, falling form on high in a graceful dive into teh snow. They split out frozen white fluff, laughing excitedly - they can feel a mouse pinned under their paws!"
+        ],
+        "fail_text": [
+            "app1 tries to dive for the mouse in the snow, but the only thing they catch under their claws is a pebble. p_l curls around them to warm them up afterwards, instructing them on the delicate art of pouncing for prey you can't see."
+        ],
+        "min_cats": 2,
+        "max_cats": 2,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "pln_hunt_mice_leafbare_appshowoff1",
+        "biome": "plains",
+        "season": "leaf-bare",
+        "tags": [
+            "hunting",
+            "romantic",
+            "respect",
+            "rel_two_apps",
+            "apprentice",
+            "two_apprentices",
+            "medium_prey"
+        ],
+        "intro_text": "The patrol heads out at sunhigh, trying to press the weak warmth of the sun into their pelts. p_l is a little irritated to see that app1 is more focused on app2 than the challenge of hunting during leaf-bare.",
+        "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
+        "chance_of_success": 30,
+        "exp": 20,
+        "success_text": [
+            "While p_l was right - app1 definitely cares more about how they look to app2 than hunting - it turns out fine. The patrol picks up a good haul of mice that were out trying to navigate the recent snowfalls, and p_l indulgently makes sure to tell app1 their reaction speed was very good in front of app2.",
+            "While the way app1 tries to burst out of a bush on a rabbit was categorically silly, the mice that were startled into the claws of the rest of the hunting patrol make up for it, and all the adults remember being young, dumb, and stupid with the desire to impress a pretty pelt. p_l takes app1 aside for a quiet word about toning it down a little, but the hunting trip goes well.",
+            null,
+            "There is a time and a place for app1 to try their luck looking good in front of app2 - and that time is now! They trot back to camp at the front of the hunting patrol, carrying the mice they caught with slightly more than the right amount of pride."
+        ],
+        "fail_text": [
+            null,
+            null,
+            null,
+            "app1 is so busy watching if app2 is watching <i>them</i> that they forget to watch their own paws - and falling into a truly shockingly large snowdrift impressed nobody."
+        ],
+        "win_trait": [
+            "bold",
+            "charismatic",
+            "confident",
+            "daring",
+            "fierce",
+            "shameless",
+            "troublesome"
+        ],
+        "min_cats": 3,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "pln_hunt_mice_leafbare1",
+        "biome": "plains",
+        "season": "leaf-bare",
+        "tags": [
+            "hunting",
+            "respect",
+            "patrol_to_r_c",
+            "medium_prey"
+        ],
+        "intro_text": "r_c suggests the patrol hunts close to home - there's no use exhausting themselves pushing through the high snowdrifts.",
+        "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
+        "chance_of_success": 40,
+        "exp": 20,
+        "success_text": [
+            "As they arrive, the patrol startles two mice, and r_c manages to react quick enough to kill one with an inelegant pounce. It's a good omen for the rest of the morning's work, which proves to be a productive and satisfying hunt.",
+            "It's worth it to reserve their strength during leaf-bare, and the hunting grounds near camp are still good enough. They bring the mice they find back to the fresh-kill pile, all pleased with their contributions.",
+            "These are the times that it really pays to have a hunter of s_c's caliber on the patrol - they really go above and beyond, impressing everyone and leaving a trail of terror among the local mice."
+        ],
+        "fail_text": [
+            "Ah. r_c's suggested hunting grounds don't work out, not that anyone blames them for it."
+        ],
+        "win_skills": [
+            "good hunter",
+            "great hunter",
+            "fantastic hunter"
+        ],
+        "min_cats": 3,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     }
 ]
