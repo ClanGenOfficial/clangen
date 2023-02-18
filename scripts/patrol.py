@@ -571,7 +571,9 @@ class Patrol():
         elif game.clan.game_mode == "cruel season":
             gm_modifier = 3
 
-        # initially setting stat_cats
+        # resetting stat cats and then finding new stat cats
+        self.patrol_fail_stat_cat = None
+        self.patrol_win_stat_cat = None
         if self.patrol_event.win_skills:
             for cat in self.patrol_cats:
                 if "app_stat" in self.patrol_event.tags and cat.status not in ['apprentice', "medicine cat apprentice"]:
@@ -626,20 +628,19 @@ class Patrol():
         if c < success_chance:
             self.success = True
             self.patrol_fail_stat_cat = None
-            # this adds the stat cat (if there is one)
+
+            # default is outcome 0
+            outcome = 0
             if self.patrol_win_stat_cat:
                 if self.patrol_win_stat_cat.trait in self.patrol_event.win_trait:
                     outcome = 3
                 elif self.patrol_win_stat_cat.skill in self.patrol_event.win_skills:
                     outcome = 2
             else:
-                if rare and len(success_text) >= 2 and success_text[1] is not None:
-                    outcome = 1
-                else:
-                    if success_text[0] is not None:
-                        outcome = 0
-                    else:
+                if rare and len(success_text) >= 2:
+                    if success_text[1]:
                         outcome = 1
+
             # this is specifically for new cat events that can come with kits
             litter_choice = False
             if self.patrol_event.tags is not None:
@@ -699,7 +700,7 @@ class Patrol():
             # first we check for a fail stat outcome
             if self.patrol_fail_stat_cat:
                 # safe, just failed
-                if unscathed:
+                if unscathed and len(fail_text) >= 2:
                     if fail_text[1]:
                         outcome = 1
                 # injured
@@ -756,6 +757,8 @@ class Patrol():
 
         if not antagonize and game.clan.game_mode != "classic":
             self.handle_prey(outcome)
+
+        print('Patrol Succeeded?', self.success, ', Outcome Index:', outcome)
 
     def results(self):
         text = "<br>".join(self.results_text)
@@ -1465,7 +1468,7 @@ class Patrol():
             self.results_text.append(f"{insert.capitalize()} gathered during this patrol.")
 
     def handle_prey(self, outcome_nr):
-        """Handle the amount of prey which was caught and add it to the freshkill pile of the clan."""
+        """Handle the amount of prey which was caught and add it to the fresh-kill pile of the clan."""
         prey_types = {
             "small_prey": PREY_REQUIREMENT["warrior"],
             "medium_prey": PREY_REQUIREMENT["warrior"] * 2,
@@ -1490,6 +1493,8 @@ class Patrol():
         prey_size = None
         for prey_type, amount in prey_types.items():
             current_tag = prey_type + str(outcome_nr)
+            if not outcome_nr:
+                current_tag = prey_type + '0'
             prey_size = prey_type.split('_')[0]
             if current_tag in patrol.patrol_event.tags or prey_type in patrol.patrol_event.tags:
                 prey_amount_per_cat = amount
