@@ -560,6 +560,8 @@ class Events():
             self.coming_out(cat)
             self.relation_events.handle_having_kits(cat, clan=game.clan)
             cat.create_interaction()
+            # this is the new interaction function, currently not active
+            #cat.relationship_interaction()
             cat.thoughts()
             return
 
@@ -576,6 +578,8 @@ class Events():
         self.relation_events.handle_having_kits(cat, clan=game.clan)
 
         cat.create_interaction()
+        # this is the new interaction function, currently not active
+        #cat.relationship_interaction()
         cat.thoughts()
 
     def check_clan_relations(self):

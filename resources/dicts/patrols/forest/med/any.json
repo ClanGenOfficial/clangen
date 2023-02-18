@@ -294,7 +294,7 @@
     "antagonize_fail_text": null
 },
     {
-    "patrol_id": "gen_med_gatheringmoss1",
+    "patrol_id": "fst_med_gatheringmoss1",
     "biome": "forest",
     "season": "Any",
     "tags": ["med_cat", "moss", "herb"],
@@ -311,7 +311,7 @@
     "min_cats": 1,
     "max_cats": 1,
     "win_skills": null,
-    "win_trait": ["None"],
+    "win_trait": null,
     "antagonize_text": null,
     "antagonize_fail_text": null
     },
