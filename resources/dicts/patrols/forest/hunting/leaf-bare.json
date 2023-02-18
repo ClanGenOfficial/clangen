@@ -1157,7 +1157,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
-        "antagonize_text_fail": null
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "fst_hunt_lillizard_leafbare1",
