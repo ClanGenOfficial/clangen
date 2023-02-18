@@ -15,7 +15,16 @@
 			"random_status_constraint": [],
 			"random_trait_constraint": [],
 			"random_skill_constraint": [],
-			"reaction_random": {
+			"reaction_random_cat": {
+				"romantic": "increase",
+				"platonic": "neutral",
+				"dislike": "decrease",
+				"admiration": "neutral",
+				"comfortable": "increase",
+				"jealousy": "neutral",
+				"trust": "increase"
+			},
+			"also_influences": {
 				"romantic": "increase",
 				"platonic": "neutral",
 				"dislike": "decrease",
