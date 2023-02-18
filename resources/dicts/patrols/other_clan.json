@@ -818,7 +818,7 @@
     "exp": 20,
     "success_text": [
     "There's a particular spot where the ground is prone to slipping along the border with o_c_n, dirt falling away from under the trails - not dangerous, but wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
-    "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. Furious, they snarl their anger. The apprentice turns tail and flees, with r_c hot on their trail, and when the apprentice crosses the border to hide behind their mentor the o_c_n warrior's tail tucks at the sight of c_n's outraged leader.",
+    "r_c comes across an o_c_n apprentice on the wrong side of the border, holding prey. Calmly, they tell the apprentice they're on the wrong side of the territory and lead them back to their mentor and rightful side, where the apprentice scampers and is scolded by the o_c_n warrior.",
     "s_c comes across a patrol from o_c_n, out on a similar mission to them. They strike up a friendly conversation, and while s_c doesn't give anything away about c_n, they're able to pick up on a lot of gossip about o_c_n through careful conversation. It's always worth keeping an eye on their neighbors. Trust, but verify.",
     "As s_c marks the border, they encounter a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they hide behind their mentor, but s_c manages to coax them out, praising the little apprentice to their mentor, who purrs gratefully at the c_n leader's kindness."
     ],
@@ -871,7 +871,7 @@
     "patrol_id": "mtn_bord_soloneutral5",
     "biome": "mountainous",
     "season": "Any",
-    "tags": ["border", "other_clan", "leader"],
+    "tags": ["border", "other_clan", "leader", "otherclan_nochangefail"],
     "intro_text": "r_c heads out into the mountains alone, wanting to make a quick check on the border.",
     "decline_text": "r_c turns back to camp, deciding that their other duties have to come first.",
     "chance_of_success": 30,
