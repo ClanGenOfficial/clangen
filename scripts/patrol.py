@@ -700,7 +700,7 @@ class Patrol():
             # first we check for a fail stat outcome
             if self.patrol_fail_stat_cat:
                 # safe, just failed
-                if unscathed:
+                if unscathed and len(fail_text) >= 2:
                     if fail_text[1]:
                         outcome = 1
                 # injured
@@ -757,6 +757,8 @@ class Patrol():
 
         if not antagonize and game.clan.game_mode != "classic":
             self.handle_prey(outcome)
+
+        print('Patrol Succeeded?', self.success, ', Outcome Index:', outcome)
 
     def results(self):
         text = "<br>".join(self.results_text)

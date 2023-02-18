@@ -505,7 +505,7 @@
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "win_trait": null,
-    "fail_skills": ["None"],
+    "fail_skills": null,
     "fail_trait": null,
     "min_cats": 1,
     "max_cats": 6,

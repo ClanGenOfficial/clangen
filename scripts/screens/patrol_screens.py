@@ -392,6 +392,8 @@ class PatrolScreen(Screens):
         always set size to patrol_size
         """
         vowels = ['A', 'E', 'I', 'O', 'U']
+        if not text:
+            text = 'This should not appear, report as a bug please!'
         if size == 1:
             text = text.replace('Your patrol',
                                 str(patrol.patrol_leader_name))
