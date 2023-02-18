@@ -989,6 +989,33 @@ class Cat():
         if relevant_relationship.cat_to.is_ill():
             self.contact_with_ill_cat(relevant_relationship.cat_to)
 
+    def relationship_interaction(self):
+        """Randomly choose a cat of the clan and have a interaction with them."""
+        # if the cat has no relationships, skip
+        if len(self.relationships) < 1 or not self.relationships:
+            return
+
+        cats_to_choose = list(
+            filter(lambda iter_cat: iter_cat.ID != self.ID and not iter_cat.outside and not iter_cat.exiled and not iter_cat.dead,
+                   Cat.all_cats.values())
+        )
+        # if there are not cats to interact, stop
+        if len(cats_to_choose) < 1:
+            return
+
+        chosen_cat = choice(cats_to_choose)
+        relevant_relationship = self.relationships[chosen_cat.ID]
+        relevant_relationship.start_interaction()
+
+        if game.game_mode == "classic":
+            return
+        # handle contact with ill cat if
+        if self.is_ill():
+            relevant_relationship.cat_to.contact_with_ill_cat(self)
+        if relevant_relationship.cat_to.is_ill():
+            self.contact_with_ill_cat(relevant_relationship.cat_to)
+        
+
     def update_skill(self):
         """Checks for skill and replaces empty skill if cat is old enough
         # also adds a chance for cat to take a skill similar to their mentor"""
@@ -1832,8 +1859,6 @@ class Cat():
         # check exiled, outside, and dead cats
         if self.dead or self.outside or other_cat.dead or other_cat.outside:
             return False
-
-
 
         # check for age
         if (self.moons < 14 or other_cat.moons < 14) and not for_love_interest:
