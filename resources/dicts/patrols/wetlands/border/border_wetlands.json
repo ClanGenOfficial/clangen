@@ -1400,6 +1400,7 @@
         "biome": "wetlands",
         "season": "Any",
         "tags": [
+            "app_stat",
             "fighting",
             "injury",
             "scar",
@@ -1592,6 +1593,7 @@
         "biome": "wetlands",
         "season": "Any",
         "tags": [
+            "app_stat",
             "fighting",
             "injury",
             "scar",
@@ -1779,6 +1781,7 @@
         "biome": "wetlands",
         "season": "Any",
         "tags": [
+            "app_stat",
             "fighting",
             "border",
             "apprentice"
