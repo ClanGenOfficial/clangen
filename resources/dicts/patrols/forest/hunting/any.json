@@ -693,7 +693,7 @@
     "biome": "forest",
     "season": "Any",
     "tags": [
-        "hunting",
+        "app_stat", "hunting",
         "apprentice",
         "minor_injury",
         "scar",
@@ -1307,7 +1307,7 @@
     "biome": "forest",
     "season": "Any",
     "tags": [
-        "hunting",
+        "app_stat", "hunting",
         "gone",
         "small_prey",
         "apprentice",
@@ -1440,7 +1440,7 @@
     "biome": "forest",
     "season": "Any",
     "tags": [
-        "hunting",
+        "app_stat", "hunting",
         "gone",
         "small_prey",
         "apprentice",
@@ -1905,8 +1905,7 @@
         "Laughing, they bounce gleefully off a tree trunk. It redirects their momentum far better than they were expecting, and it's difficult to say who's more surprised - the mouse, or the apprentice slamming into it! Not a very clean catch, but one they're proud of anyway."
     ],
     "fail_text": [
-        "app1 darts to the side, but wherever made the flash of movement is long gone. How frustrating!",
-        "app1 skids to a halt and tries to sprint after it, but the bird they saw escapes their paws. They chatter angrily at it, and it tries to poop on them. Such is life."
+        "app1 darts to the side, but wherever made the flash of movement is long gone. How frustrating!"
     ],
     "win_skills": [
         "None"
@@ -1951,7 +1950,6 @@
         "Nothing's going to escape their claws! s_c skids to a halt and then leaps into action, claw just barely catching in the tail of the squirrel they saw and bringing it down. They purr with satisfaction and pad back to r_c, sharing in the excitement of the hunt with them."
     ],
     "fail_text": [
-        "r_c darts to the side, but wherever made the flash of movement is long gone. How frustrating!",
         "r_c skids to a halt and tries to sprint after it, but the bird they saw escapes their paws. They chatter angrily at it, and it tries to poop on them. Such is life. p_l snickers at them a bit too, but it's all in good fun."
     ],
     "win_skills": [
@@ -1995,7 +1993,6 @@
         "Laughing, app1 bounces gleefully off a tree trunk. It redirects their momentum far better than they were expecting, and it's difficult to say who's more surprised - the mouse, or the apprentice slamming into it! Not a very clean catch, but the look on app2's face, so shocked and impressed, makes them blush."
     ],
     "fail_text": [
-        "app1 darts to the side, but wherever made the flash of movement is long gone. How frustrating!",
         "app1 skids to a halt and tries to sprint after it, but the bird they saw escapes their paws. They chatter angrily at it, and it tries to poop on them. Such is life. app2 snickers at them too, but in a lighthearted way, and soon both apprentices are giggling about it as they continue their run."
     ],
     "win_skills": [

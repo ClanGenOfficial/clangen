@@ -277,7 +277,7 @@
         "biome": "plains",
         "season": "Any",
         "tags": [
-            "hunting",
+            "app_stat", "hunting",
             "apprentice",
             "minor_injury",
             "scar",
@@ -912,7 +912,7 @@
         "biome": "plains",
         "season": "Any",
         "tags": [
-            "hunting",
+            "app_stat", "hunting",
             "gone",
             "apprentice",
             "medium_prey0",
@@ -931,7 +931,7 @@
         "fail_text": [
             null,
             "A little carelessly, s_c jumps a fence to hunt in a den's garden. But there's a new thing there, a box, suspicious and strange. Wisely, s_c avoids it, and returns to c_n territory.",
-            "Carelessly, app1 is seen by Twolegs, and taken from c_n.",
+            "Carelessly, s_c is seen by Twolegs, and taken from c_n.",
             "Carelessly, app1 is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, they discover that a broken window is just wide enough to push themselves out to safety through, but the glass leaves them bleeding as they run back to c_n."
         ],
         "win_skills": [
@@ -1041,7 +1041,7 @@
         "biome": "plains",
         "season": "Any",
         "tags": [
-            "hunting",
+            "app_stat", "hunting",
             "gone",
             "apprentice",
             "romantic",
@@ -1631,7 +1631,7 @@
         "biome": "plains",
         "season": "Any",
         "tags": [
-            "hunting",
+            "app_stat", "hunting",
             "apprentice",
             "small_bite_injury",
             "scar",
@@ -1650,9 +1650,9 @@
         ],
         "fail_text": [
             "Tarror gives app1 strength, and the don't stop running until their back in camp, gasping about the grassland monster they saw.",
-            "Heart filled with daring, app1 slips off the rock and pads towards the monster in the grass, sure that StarClan will reward their bravery. They sneak closer and closer, until a puzzle wuff of air makes them look up. And up. And up. That is no fox. They pelt for home, as behind them, a confused maned wolf watches them go.",
+            "Heart filled with daring, s_c slips off the rock and pads towards the monster in the grass, sure that StarClan will reward their bravery. They sneak closer and closer, until a puzzle wuff of air makes them look up. And up. And up. That is no fox. They pelt for home, as behind them, a confused maned wolf watches them go.",
             null,
-            "Terror freezes app1 as the massive fox sees them, and comes to investigate, its distorted stretched legs carrying it smoothly through the grass. As the massive nose, as big as app1's entire head, wuffles closer, app1 desperately swipes their claws. Their screw their eyes shut at the outraged yelp, and feel themselves being taken up and tossed by those gaping jaws. They tense, waiting for death to descend, and wait, and... waiting?",
+            "Terror freezes s_c as the massive fox sees them, and comes to investigate, its distorted stretched legs carrying it smoothly through the grass. As the massive nose, as big as app1's entire head, wuffles closer, app1 desperately swipes their claws. Their screw their eyes shut at the outraged yelp, and feel themselves being taken up and tossed by those gaping jaws. They tense, waiting for death to descend, and wait, and... waiting?",
             null,
             "Heart filled with daring, app1 slips off the rock and pads towards the monster in the grass, sure that StarClan will reward their bravery. A surprised wuff of air seems to come from everywhere and nowhere, as the puzzled maned wolf picks up the apprentice at their feet and tosses them aside so they can get back to hunting."
         ],

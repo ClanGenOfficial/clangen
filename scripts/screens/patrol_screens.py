@@ -424,8 +424,13 @@ class PatrolScreen(Screens):
             text = text.replace('o_c4', str(patrol.patrol_other_cats[3].name))
 
         if 's_c' in text:
-            if patrol.patrol_stat_cat is not None:
-                text = text.replace('s_c', str(patrol.patrol_stat_cat.name))
+            stat_cat = None
+            if patrol.patrol_win_stat_cat:
+                stat_cat = patrol.patrol_win_stat_cat
+            elif patrol.patrol_fail_stat_cat:
+                stat_cat = patrol.patrol_fail_stat_cat
+            if stat_cat:
+                text = text.replace('s_c', str(stat_cat.name))
             else:
                 text = text.replace('s_c', str(patrol.patrol_leader_name))
 
@@ -592,12 +597,6 @@ class PatrolScreen(Screens):
             )
         except:
             print('ERROR: could not display patrol image')
-
-        # Grab win trait.
-        if patrol.patrol_event.win_trait is not None:
-            win_trait = patrol.patrol_event.win_trait
-            patrol_trait = patrol.patrol_traits.index(win_trait)
-            patrol.patrol_stat_cat = patrol.patrol_cats[patrol_trait]
 
         # Prepare Intro Text
         # adjusting text for solo patrols

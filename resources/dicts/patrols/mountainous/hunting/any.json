@@ -115,7 +115,7 @@
         "biome": "mountainous",
         "season": "Any",
         "tags": [
-            "hunting",
+            "app_stat", "hunting",
             "apprentice",
             "minor_injury",
             "scar",
