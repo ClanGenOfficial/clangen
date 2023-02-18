@@ -626,7 +626,7 @@ class Relationship():
             amount -= game.config["relationship"]["compatibility_bonus"]
         return amount
 
-    def interaction_affect_relationships(self, in_de_crease: str, intensity: str, rel_type: str):
+    def interaction_affect_relationships(self, in_de_crease: str, intensity: str, rel_type: str) -> None:
         """Affects the relationship according to the chosen types.
 
             Parameters
@@ -663,33 +663,44 @@ class Relationship():
         if self.opposite_relationship is None:
             return
 
-        # if there is no opposite reaction defined, return
-        op_dict = self.chosen_interaction.reaction_random
-        if not op_dict:
-            return
-        for key, value in op_dict.items():
-            print(key, value)
+        rel_dict = self.chosen_interaction.reaction_random_cat
+        if rel_dict:
+            self.opposite_relationship.change_according_dictionary(rel_dict)
+
+        rel_dict = self.chosen_interaction.also_influences
+        if rel_dict:
+            self.change_according_dictionary(rel_dict)
+
+    def change_according_dictionary(self, dictionary : dict) -> None:
+        """Change the relationship value types according to the in- or decrease of the given dictionary.
+
+            Parameters
+            ----------
+            dictionary : dict
+                dictionary which defines the changes to the relationship
+
+            Returns
+            -------
+        """
+        for key, value in dictionary.items():
             if value == "neutral":
                 continue
             amount = self.get_amount(value, "low")
-            print(amount)
 
             if key == "romantic":
-                print(self.opposite_relationship.romantic_love)
-                self.opposite_relationship.romantic_love += amount
-                print(self.opposite_relationship.romantic_love)
+                self.romantic_love += amount
             elif key == "platonic":
-                self.opposite_relationship.platonic_like += amount
+                self.platonic_like += amount
             elif key == "dislike":
-                self.opposite_relationship.dislike += amount
+                self.dislike += amount
             elif key == "admiration":
-                self.opposite_relationship.admiration += amount
+                self.admiration += amount
             elif key == "comfortable":
-                self.opposite_relationship.comfortable += amount
+                self.comfortable += amount
             elif key == "jealousy":
-                self.opposite_relationship.jealousy += amount
+                self.jealousy += amount
             elif key == "trust":
-                self.opposite_relationship.trust += amount
+                self.trust += amount
 
     def positive_interaction(self) -> bool:
         """Returns if the interaction should be a positive interaction or not.
@@ -1084,7 +1095,8 @@ class Interaction():
                  random_trait_constraint=None,
                  main_skill_constraint=None,
                  random_skill_constraint=None,
-                 reaction_random=None):
+                 reaction_random_cat=None,
+                 also_influences=None):
         self.id = id
         self.intensity = intensity
         self.biome = biome if biome else ["Any"]
@@ -1130,10 +1142,15 @@ class Interaction():
         else:
             self.random_skill_constraint = []
 
-        if reaction_random:
-            self.reaction_random = reaction_random
+        if reaction_random_cat:
+            self.reaction_random_cat = reaction_random_cat
         else:
-            self.reaction_random = {}
+            self.reaction_random_cat = {}
+        
+        if also_influences:
+            self.also_influences = also_influences
+        else:
+            self.also_influences = {}
 
 # IN increase or decrease
 resource_directory = "resources/dicts/relationship_events/"
@@ -1160,7 +1177,8 @@ def create_interaction(inter_list) -> list:
             random_trait_constraint = inter["random_trait_constraint"] if "random_trait_constraint" in inter else [],
             main_skill_constraint = inter["main_skill_constraint"] if "main_skill_constraint" in inter else [],
             random_skill_constraint = inter["random_skill_constraint"] if "random_skill_constraint" in inter else [],
-            reaction_random = inter["reaction_random"] if "reaction_random" in inter else None
+            reaction_random_cat= inter["reaction_random_cat"] if "reaction_random_cat" in inter else None,
+            also_influences = inter["also_influences"] if "also_influences" in inter else None
         ))
     return created_list
 

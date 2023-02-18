@@ -28,7 +28,7 @@
 			"interactions": [
 				"m_c is prancing around in front of r_c."
 			],
-			"reaction_random": {
+			"reaction_random_cat": {
 				"romantic": "increase"
 			}
 		},
@@ -58,7 +58,7 @@
 				"m_c made r_c laugh again and again.",
 				"m_c goes for a nice long walk with r_c."
 			],
-			"reaction_random": {
+			"reaction_random_cat": {
 				"dislike": "decrease",
 				"platonic": "increase",
 				"comfortable": "increase"
@@ -73,7 +73,7 @@
 			"main_trait_constraint": [
 				"charming"
 			],
-			"reaction_random": {
+			"reaction_random_cat": {
 				"romantic": "increase",
 				"dislike": "decrease",
 				"comfortable": "increase"
@@ -90,7 +90,7 @@
 				"not_mates",
 				"romantic_20_lower"
 			],
-			"reaction_random": {
+			"reaction_random_cat": {
 				"romantic": "increase",
 				"dislike": "decrease",
 				"admirable": "increase"
@@ -113,7 +113,7 @@
 				"m_c brushes against r_c while correcting their stance and looks away with a purr.",
 				"m_c left a gift in r_c's nest for them to find."
 			],
-			"reaction_random": {
+			"reaction_random_cat": {
 				"romantic": "increase",
 				"dislike": "decrease",
 				"comfortable": "increase"
@@ -128,7 +128,7 @@
 				"m_c wants to spend the entire day with r_c.",
 				"m_c saves a piece of prey for r_c because they know it's their favorite."
 			],
-			"reaction_random": {
+			"reaction_random_cat": {
 				"romantic": "increase",
 				"dislike": "decrease",
 				"platonic": "increase",
@@ -145,7 +145,7 @@
 			"interactions": [
 				"m_c gave a pretty flower they found to r_c."
 			],
-			"reaction_random": {
+			"reaction_random_cat": {
 				"romantic": "increase",
 				"dislike": "decrease",
 				"platonic": "increase",
