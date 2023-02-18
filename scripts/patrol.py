@@ -1496,7 +1496,6 @@ class Patrol():
             if not outcome_nr:
                 current_tag = prey_type + '0'
             prey_size = prey_type.split('_')[0]
-            print(current_tag)
             if current_tag in patrol.patrol_event.tags or prey_type in patrol.patrol_event.tags:
                 prey_amount_per_cat = amount
                 break
@@ -1517,9 +1516,7 @@ class Patrol():
 
         if game.clan.game_mode != "classic":
             game.clan.freshkill_pile.add_freshkill(total_amount)
-            print('added freshkill')
             if total_amount > 0:
-                print('test results')
                 self.results_text.append(f"Each cat catches a {prey_size} amount of prey.")
 
     def handle_clan_relations(self, difference, antagonize):
