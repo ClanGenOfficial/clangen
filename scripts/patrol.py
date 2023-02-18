@@ -559,9 +559,16 @@ class Patrol():
         elif game.clan.game_mode == "cruel season":
             gm_modifier = 3
         # initially setting stat_cat
-        if self.patrol_event.win_skills is not None and self.patrol_event.win_trait is not None:
-            if cat_class.skill in self.patrol_event.win_skills or cat_class.trait in self.patrol_event.win_trait:
-                self.patrol_stat_cat = cat_class
+        if self.patrol_event.win_skills is not None:
+            for cat in self.patrol_cats:
+                    if cat.skill in self.patrol_event.win_skills:
+                        self.patrol_stat_cat = cat
+                        print("SKILLED Stat Cat On Patrol")
+        elif self.patrol_event.win_trait is not None:
+            for cat in self.patrol_cats:
+                    if cat.trait in self.patrol_event.win_trait:
+                        self.patrol_stat_cat = cat
+                        print("TRAIT Stat Cat On Patrol")
         # if patrol contains cats with autowin skill, chance of success is high
         # otherwise it will calculate the chance by adding the patrolevent's chance of success plus the patrol's total exp
         chance = self.patrol_event.chance_of_success + int(
@@ -609,8 +616,10 @@ class Patrol():
             if self.patrol_stat_cat is not None:
                 if self.patrol_stat_cat.trait in self.patrol_event.win_trait:
                     outcome = 3
+                    print("S_C TEXT WIN TRAIT")
                 elif self.patrol_stat_cat.skill in self.patrol_event.win_skills:
                     outcome = 2
+                    print("S_C TEXT WIN SKILL")
             else:
                 if rare and len(success_text) >= 2 and success_text[1] is not None:
                     outcome = 1
@@ -669,11 +678,13 @@ class Patrol():
                 for cat in self.patrol_cats:
                     if cat.skill in self.patrol_event.fail_skills or cat.trait in self.patrol_event.fail_trait:
                         self.patrol_stat_cat = cat
+                        print("BAD Stat Cat On Patrol")
 
             outcome = 0
             if self.patrol_stat_cat is not None and len(fail_text) > 1:
                 if rare and unscathed and fail_text[1] is not None:
                     outcome = 1
+                    print("S_C TEXT FAIL TRAIT")
                 elif common and not unscathed and len(fail_text) > 5 and fail_text[5] is not None:
                     outcome = 5
                 elif rare and not unscathed and len(fail_text) > 4 and fail_text[4] is not None:
