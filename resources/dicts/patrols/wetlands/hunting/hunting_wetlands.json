@@ -162,6 +162,7 @@
         "biome": "wetlands",
         "season": "Any",
         "tags": [
+            "app_stat",
             "hunting",
             "apprentice",
             "injury",
