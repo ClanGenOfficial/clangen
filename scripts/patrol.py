@@ -727,6 +727,11 @@ class Patrol():
                     if fail_text[2]:
                         outcome = 2
 
+            # if /still/ no outcome is picked then double check that an outcome 0 is available,
+            # if it isn't, then injure the cat instead
+            if not outcome and not fail_text[0]:
+                outcome = 3
+
             if outcome == 2:
                 self.handle_deaths(self.patrol_random_cat)
             elif outcome == 4:
