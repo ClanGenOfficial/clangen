@@ -1382,6 +1382,7 @@ class MedDenScreen(Screens):
 
     def __init__(self, name=None):
         super().__init__(name)
+        self.help_button = None
         self.log_box = None
         self.log_title = None
         self.log_tab = None
@@ -1481,6 +1482,17 @@ class MedDenScreen(Screens):
                                       , manager=MANAGER)
 
         if game.clan.game_mode != 'classic':
+            self.help_button = UIImageButton(scale(pygame.Rect(
+                (1450, 50), (68, 68))),
+                "",
+                object_id="#help_button", manager=MANAGER,
+                tool_tip_text="Your medicine cats will gather herbs over each timeskip as well during any patrols you "
+                              "send them on. You can see what was gathered in the Log below! Your medicine cats will"
+                              " give these to any hurt or sick cats that need them, helping those cats to heal quicker."
+                              "<br><br>"
+                              "Hover your mouse over the medicine den image to see what herbs your Clan has!",
+
+            )
             self.last_page = UIImageButton(scale(pygame.Rect((660, 1272), (68, 68))), "", object_id="#arrow_left_button"
                                            , manager=MANAGER)
             self.next_page = UIImageButton(scale(pygame.Rect((952, 1272), (68, 68))), "", object_id="#arrow_right_button"
@@ -1916,6 +1928,7 @@ class MedDenScreen(Screens):
         self.last_med.kill()
         self.next_med.kill()
         self.den_base.kill()
+        self.help_button.kill()
         for herb in self.herbs:
             self.herbs[herb].kill()
         self.herbs = {}
