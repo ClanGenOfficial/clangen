@@ -730,9 +730,14 @@ class Patrol():
                         outcome = 2
 
             # if /still/ no outcome is picked then double check that an outcome 0 is available,
-            # if it isn't, then injure the cat instead
+            # if it isn't, then try to injure and then kill the cat
             if not outcome and not fail_text[0]:
-                outcome = 3
+                # attempt injure outcome
+                if fail_text[3]:
+                    outcome = 3
+                # attempt death outcome
+                elif fail_text[2]:
+                    outcome = 2
 
             if outcome == 2:
                 self.handle_deaths(self.patrol_random_cat)
