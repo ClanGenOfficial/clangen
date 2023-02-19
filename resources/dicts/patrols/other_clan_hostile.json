@@ -75,7 +75,7 @@
     "patrol_id": "gen_bord_otherclan3",
     "biome": "Any",
     "season": "Any",
-    "tags": ["border", "other_clan", "hunting", "scar", "battle_injury", "death", "small_prey"],
+    "tags": ["border", "other_clan", "hunting", "scar", "battle_injury", "death", "small_prey", "otherclan_nochangesuccess"],
     "intro_text": "r_c spies a fat rabbit on the other side of the o_c_n border. A tempting opportunity to be sure, but it may not be wise to hunt on an enemy's territory.",
     "decline_text": "Your patrol decides that one rabbit isn't worth the potential fight.",
     "chance_of_success": 60,
