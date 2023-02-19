@@ -632,10 +632,12 @@ class Patrol():
             # default is outcome 0
             outcome = 0
             if self.patrol_win_stat_cat:
-                if self.patrol_win_stat_cat.trait in self.patrol_event.win_trait:
-                    outcome = 3
-                elif self.patrol_win_stat_cat.skill in self.patrol_event.win_skills:
-                    outcome = 2
+                if self.patrol_event.win_trait:
+                    if self.patrol_win_stat_cat.trait in self.patrol_event.win_trait:
+                        outcome = 3
+                if self.patrol_event.win_skills:
+                    if self.patrol_win_stat_cat.skill in self.patrol_event.win_skills:
+                        outcome = 2
             else:
                 if rare and len(success_text) >= 2:
                     if success_text[1]:

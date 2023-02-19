@@ -1625,7 +1625,7 @@
     "exp": 20,
     "success_text": [
             "The garlic won't notice leaf-bare until it actually hits - one of its good traits that make up for its stinkiness. p_l and app1 are able to bring a good harvest home.",
-            "The leaves and especially the bulbs of wild garlic are the preeminent herb to treat infection, even if using them literally always resulting in either their patient or their loved ones complaining about the smell. p_l teaches app1 that sometimes they need to prioritise treating their patients above listening to them.",
+            "The leaves and especially the bulbs of wild garlic are the preeminent herb to treat infection, even if using them always resulted in either their patient or their loved ones complaining about the smell. p_l teaches app1 that sometimes they need to prioritise treating their patients above listening to them.",
             "s_c, ever eagle-eyed, spots grass that looks suspiciously tall with oddly thick blades. One sniff confirms it as wild garlic, and the patch has heaps to harvest with app1."
 ],
     "fail_text": [
