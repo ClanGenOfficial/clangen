@@ -277,7 +277,7 @@ class Events():
             if not int(random.random() * 5):
                 new_herb = random.choice(HERBS)
                 game.clan.herbs.update({new_herb: 1})
-            print(game.clan.herbs)
+            # print(game.clan.herbs)
         else:
             event_list = []
             meds_available = get_med_cats(Cat)
