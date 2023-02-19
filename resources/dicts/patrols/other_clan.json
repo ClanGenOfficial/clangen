@@ -65,7 +65,7 @@
     "patrol_id": "gen_bord_otherclan3",
     "biome": "Any",
     "season": "Any",
-    "tags": ["border", "other_clan", "hunting", "scar", "battle_injury", "small_prey"],
+    "tags": ["otherclan_nochangesuccess","border", "other_clan", "hunting", "scar", "battle_injury", "small_prey"],
     "intro_text": "r_c spies a fat rabbit on the other side of the o_c_n border. A tempting opportunity to be sure, but it may not be wise to hunt on a different Clan's territory.",
     "decline_text": "Your patrol decides that one rabbit isn't worth making an enemy.",
     "chance_of_success": 60,
@@ -73,7 +73,7 @@
     "success_text": [
     "r_c pounces without hesitation! They glance around, rabbit hanging from their muzzle, but it seems there aren't any o_c_n cats nearby. r_c trots back over the border, their prize in tow and transgression unnoticed.",
     "r_c leaps for the rabbit! And promptly trips over a rock. The rabbit hops away and r_c sheepishly picks themselves up. It's probably for the better that they weren't able to catch the rabbit. Trespassing could easily have damaged relations with o_c_n.",
-    "s_c leaps for the rabbit, making a swift kill just before a o_c_n patrol comes into view. The o_c_n cats bristle at the trespass and a fight seems to be brewing. Thankfully, s_c smooths things over with the other patrol, graciously gifting them the rabbit, and they part ways without damaging the relationship between Clans.",
+    "r_c leaps for the rabbit, making a swift kill just before a o_c_n patrol comes into view. The o_c_n cats bristle at the trespass and a fight seems to be brewing. Thankfully, s_c smooths things over with the other patrol, graciously gifting them the rabbit, and they part ways without damaging the relationship between Clans.",
     "r_c is about to leap for the rabbit before s_c grabs them by the scruff and pulls them back! A moment later, r_c sees the group of o_c_n cats that had just come into view. Good thing s_c stopped them before they could blatantly trespass in full view of the other Clan."
     ],
     "fail_text": [
@@ -166,7 +166,7 @@
     "exp": 20,
     "success_text": [
     "They pad over to the border and hesitate only momentarily before crossing. They quickly gather some of the berries, making sure to leave plenty for o_c_n's medicine cat if they need some, too.",
-    "They pad to the border and pause for a heartbeat to scent the air. o_c_n's scent is very strong, but there's something else... o_c_n's medicine cat appears at that moment. They're walking towards the raspberriesies when they spot p_l and wave their tail in greeting. They invite p_l to gather some, as there's plenty. p_l gratefully accepts.",
+    "They pad to the border and pause for a heartbeat to scent the air. o_c_n's scent is very strong, but there's something else... o_c_n's medicine cat appears at that moment. They're walking towards the raspberries when they spot p_l and wave their tail in greeting. They invite p_l to gather some, as there's plenty. p_l gratefully accepts.",
     "p_l is about to step over the border when a hiss stops them in their tracks. A o_c_n warrior bounds into view, bristling. They quickly explain that they're the medicine cat and the warrior code allows them to cross the border and assure that they won't take many of the berries. The warrior looks torn, but agrees to this."
     ],
     "fail_text": [
@@ -818,7 +818,7 @@
     "exp": 20,
     "success_text": [
     "There's a particular spot where the ground is prone to slipping along the border with o_c_n, dirt falling away from under the trails - not dangerous, but wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
-    "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. Furious, they snarl their anger. The apprentice turns tail and flees, with r_c hot on their trail, and when the apprentice crosses the border to hide behind their mentor the o_c_n warrior's tail tucks at the sight of c_n's outraged leader.",
+    "r_c comes across an o_c_n apprentice on the wrong side of the border, holding prey. Calmly, they tell the apprentice they're on the wrong side of the territory and lead them back to their mentor and rightful side, where the apprentice scampers and is scolded by the o_c_n warrior.",
     "s_c comes across a patrol from o_c_n, out on a similar mission to them. They strike up a friendly conversation, and while s_c doesn't give anything away about c_n, they're able to pick up on a lot of gossip about o_c_n through careful conversation. It's always worth keeping an eye on their neighbors. Trust, but verify.",
     "As s_c marks the border, they encounter a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they hide behind their mentor, but s_c manages to coax them out, praising the little apprentice to their mentor, who purrs gratefully at the c_n leader's kindness."
     ],
@@ -871,7 +871,7 @@
     "patrol_id": "mtn_bord_soloneutral5",
     "biome": "mountainous",
     "season": "Any",
-    "tags": ["border", "other_clan", "leader"],
+    "tags": ["border", "other_clan", "leader", "otherclan_nochangefail"],
     "intro_text": "r_c heads out into the mountains alone, wanting to make a quick check on the border.",
     "decline_text": "r_c turns back to camp, deciding that their other duties have to come first.",
     "chance_of_success": 30,

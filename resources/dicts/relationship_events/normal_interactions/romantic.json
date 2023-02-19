@@ -1,0 +1,180 @@
+{
+	"increase": [
+		{
+			"id": "rom_inc_low1",
+			"intensity": "low",
+			"interactions": [
+				"m_c is developing a crush on r_c.",
+				"m_c might be reading a little too far into r_c's kindness.",
+				"m_c never realized how much they love spending time with r_c."
+			],
+			"relationship_constraint": [
+				"not_mates",
+				"romantic_10_lower"
+			]
+		},
+		{
+			"id": "rom_inc_low2",
+			"intensity": "low",
+			"interactions": [
+				"m_c is admiring r_c from afar...",
+				"m_c stayed up all night thinking of ways to impress r_c.",
+				"m_c thinks that r_c is really funny."
+			]
+		},
+		{
+			"id": "rom_inc_low3",
+			"intensity": "low",
+			"interactions": [
+				"m_c is prancing around in front of r_c."
+			],
+			"reaction_random_cat": {
+				"romantic": "increase"
+			}
+		},
+		{
+			"id": "rom_inc_low4",
+			"intensity": "low",
+			"interactions": [
+				"m_c just noticed how beautiful r_c's eyes are."
+			],
+			"relationship_constraint": [
+				"not_mates"
+			]
+		},
+		{
+			"id": "rom_inc_low5",
+			"intensity": "low",
+			"interactions": [
+				"m_c thinks that r_c is really charming."
+			],
+			"random_trait_constraint": ["charming"]
+		},
+		{
+			"id": "rom_inc_medium1",
+			"intensity": "medium",
+			"interactions": [
+				"m_c laughs at bad jokes from r_c.",
+				"m_c made r_c laugh again and again.",
+				"m_c goes for a nice long walk with r_c."
+			],
+			"reaction_random_cat": {
+				"dislike": "decrease",
+				"platonic": "increase",
+				"comfortable": "increase"
+			}
+		},
+		{
+			"id": "rom_inc_medium2",
+			"intensity": "medium",
+			"interactions": [
+				"m_c ensnares r_c with a charming smile."
+			],
+			"main_trait_constraint": [
+				"charming"
+			],
+			"reaction_random_cat": {
+				"romantic": "increase",
+				"dislike": "decrease",
+				"comfortable": "increase"
+			}
+		},
+		{
+			"id": "rom_inc_medium3",
+			"intensity": "medium",
+			"interactions": [
+				"m_c is hoping that r_c notices them.",
+				"m_c wonders what r_c thinks about mates."
+			],
+			"relationship_constraint": [
+				"not_mates",
+				"romantic_20_lower"
+			],
+			"reaction_random_cat": {
+				"romantic": "increase",
+				"dislike": "decrease",
+				"admirable": "increase"
+			}
+		},
+		{
+			"id": "rom_inc_medium4",
+			"intensity": "medium",
+			"interactions": [
+				"m_c imagines what their family with r_c would look like."
+			],
+			"relationship_constraint": [
+				"romantic_20"
+			]
+		},
+		{
+			"id": "rom_inc_medium5",
+			"intensity": "medium",
+			"interactions": [
+				"m_c brushes against r_c while correcting their stance and looks away with a purr.",
+				"m_c left a gift in r_c's nest for them to find."
+			],
+			"reaction_random_cat": {
+				"romantic": "increase",
+				"dislike": "decrease",
+				"comfortable": "increase"
+			}
+		},
+		{
+			"id": "rom_inc_high1",
+			"intensity": "high",
+			"interactions": [
+				"m_c is spending a lot of time with r_c.",
+				"m_c enjoys the time with r_c and feels secure.",
+				"m_c wants to spend the entire day with r_c.",
+				"m_c saves a piece of prey for r_c because they know it's their favorite."
+			],
+			"reaction_random_cat": {
+				"romantic": "increase",
+				"dislike": "decrease",
+				"platonic": "increase",
+				"comfortable": "increase"
+			}
+		},
+		{
+			"id": "rom_inc_high2",
+			"intensity": "high",
+			"season": [
+				"newleaf",
+				"greenleaf"
+			],
+			"interactions": [
+				"m_c gave a pretty flower they found to r_c."
+			],
+			"reaction_random_cat": {
+				"romantic": "increase",
+				"dislike": "decrease",
+				"platonic": "increase",
+				"comfortable": "increase"
+			}
+		}
+	],
+	"decrease": [
+		{
+			"id": "rom_dec_high1",
+			"intensity": "high",
+			"interactions": [
+				"m_c gave a gift to r_c, but they turned up their nose at the offering."
+			]
+		},
+		{
+			"id": "rom_dec_medium1",
+			"intensity": "medium",
+			"interactions": [
+				"m_c feels like r_c hasn't been paying much attention to them lately."
+			],
+			"relationship_constraint": ["romantic_40"]
+		},
+		{
+			"id": "rom_dec_medium2",
+			"intensity": "medium",
+			"interactions": [
+				"m_c tarting to have doubts about their feelings for r_c."
+			]
+		}
+	]
+}

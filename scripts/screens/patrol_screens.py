@@ -393,6 +393,8 @@ class PatrolScreen(Screens):
         always set size to patrol_size
         """
         vowels = ['A', 'E', 'I', 'O', 'U']
+        if not text:
+            text = 'This should not appear, report as a bug please!'
         if size == 1:
             text = text.replace('Your patrol',
                                 str(patrol.patrol_leader_name))
@@ -425,8 +427,13 @@ class PatrolScreen(Screens):
             text = text.replace('o_c4', str(patrol.patrol_other_cats[3].name))
 
         if 's_c' in text:
-            if patrol.patrol_stat_cat is not None:
-                text = text.replace('s_c', str(patrol.patrol_stat_cat.name))
+            stat_cat = None
+            if patrol.patrol_win_stat_cat:
+                stat_cat = patrol.patrol_win_stat_cat
+            elif patrol.patrol_fail_stat_cat:
+                stat_cat = patrol.patrol_fail_stat_cat
+            if stat_cat:
+                text = text.replace('s_c', str(stat_cat.name))
             else:
                 text = text.replace('s_c', str(patrol.patrol_leader_name))
 
@@ -590,6 +597,7 @@ class PatrolScreen(Screens):
             win_trait = patrol.patrol_event.win_trait
             patrol_trait = patrol.patrol_traits.index(win_trait)
             patrol.patrol_stat_cat = patrol.patrol_cats[patrol_trait]
+
 
         # Prepare Intro Text
         # adjusting text for solo patrols
