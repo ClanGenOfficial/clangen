@@ -538,9 +538,9 @@ class SettingsScreen(Screens):
         n += 1
         self.checkboxes_text['gore'] = pygame_gui.elements.UITextBox(
             "Allow mild gore and blood in patrol artwork.",
-            pygame.Rect((x_value, n * y_spacing), (500, 50)),
+            scale(pygame.Rect((x_value, n * y_spacing), (1000, 78))),
             container=self.checkboxes_text["container"],
-            object_id=get_text_box_theme("#setting_text_box")
+            object_id=get_text_box_theme("#setting_text_box"), manager=MANAGER
         )
 
         # This makes sure scrolling works properly.
@@ -788,20 +788,7 @@ class SettingsScreen(Screens):
             )
 
             n += 1
-            # Allow gorey patrol images
-            if game.settings['gore']:
-                box_type = "#checked_checkbox"
-            else:
-                box_type = "#unchecked_checkbox"
-            self.checkboxes['gore'] = UIImageButton(
-                pygame.Rect((x_value, n * y_spacing), (34, 34)),
-                "",
-                object_id=box_type,
-                container=self.checkboxes_text["container"],
-                tool_tip_text="Mild gore and blood will be allowed in the artwork displayed alongside patrols."
-            )
-            n += 1
-            # Allow cats to fade
+            # Allow cats to become mediators
             if game.settings['become_mediator']:
                 box_type = "#checked_checkbox"
             else:
@@ -813,6 +800,21 @@ class SettingsScreen(Screens):
                 container=self.checkboxes_text["container"], manager=MANAGER,
                 tool_tip_text="Warriors and elders will have a chance to become mediators upon timeskip."
             )
+
+            n += 1
+            # Allow gorey patrol images
+            if game.settings['gore']:
+                box_type = "#checked_checkbox"
+            else:
+                box_type = "#unchecked_checkbox"
+            self.checkboxes['gore'] = UIImageButton(
+                scale(pygame.Rect((x_value, n * y_spacing), (68, 68))),
+                "",
+                object_id=box_type,
+                container=self.checkboxes_text["container"],
+                tool_tip_text="Mild gore and blood will be allowed in the artwork displayed alongside patrols."
+            )
+
 
         # CHECKBOXES FOR RELATION SETTINGS #################################################################
         elif self.sub_menu == 'relation':
