@@ -602,9 +602,9 @@ class Patrol():
 
         if self.patrol_win_stat_cat:
             success_chance = success_chance + 50
-            if "excellent" in self.patrol_win_stat_cat.skill:
+            if ("great" or "very") in self.patrol_win_stat_cat.skill:
                 success_chance = success_chance + 10
-            elif "fantastic" in self.patrol_win_stat_cat.skill:
+            elif ("fantastic" or "excellent" or "extremely") in self.patrol_win_stat_cat.skill:
                 success_chance = success_chance + 20
 
         if self.patrol_fail_stat_cat:
