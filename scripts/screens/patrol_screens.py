@@ -319,12 +319,14 @@ class PatrolScreen(Screens):
                                                                  , manager=MANAGER)
 
         # Frames
-        self.elements["able_frame"] = pygame_gui.elements.UIImage(scale(pygame.Rect((80, 920), self.able_box.get_size())),
-                                                                  self.able_box, manager=MANAGER)
+        self.elements["able_frame"] = pygame_gui.elements.UIImage(
+            scale(pygame.Rect((80, 920), self.able_box.get_size())),
+            self.able_box, manager=MANAGER)
         self.elements["able_frame"].disable()
 
-        self.elements["patrol_frame"] = pygame_gui.elements.UIImage(scale(pygame.Rect((980, 920), self.patrol_box.get_size())),
-                                                                    self.patrol_box, manager=MANAGER)
+        self.elements["patrol_frame"] = pygame_gui.elements.UIImage(
+            scale(pygame.Rect((980, 920), self.patrol_box.get_size())),
+            self.patrol_box, manager=MANAGER)
         self.elements["patrol_frame"].disable()
 
         # Buttons
@@ -334,33 +336,43 @@ class PatrolScreen(Screens):
         self.elements["add_remove_cat"].disable()
 
         # Randomizing buttons
-        self.elements["random"] = UIImageButton(scale(pygame.Rect((646, 990), (68, 68))), "", object_id="#random_dice_button"
+        self.elements["random"] = UIImageButton(scale(pygame.Rect((646, 990), (68, 68))), "",
+                                                object_id="#random_dice_button"
                                                 , manager=MANAGER)
-        self.elements["add_one"] = UIImageButton(scale(pygame.Rect((726, 990), (68, 68))), "", object_id="#add_one_button"
+        self.elements["add_one"] = UIImageButton(scale(pygame.Rect((726, 990), (68, 68))), "",
+                                                 object_id="#add_one_button"
                                                  , manager=MANAGER)
-        self.elements["add_three"] = UIImageButton(scale(pygame.Rect((806, 990), (68, 68))), "", object_id="#add_three_button"
+        self.elements["add_three"] = UIImageButton(scale(pygame.Rect((806, 990), (68, 68))), "",
+                                                   object_id="#add_three_button"
                                                    , manager=MANAGER)
-        self.elements["add_six"] = UIImageButton(scale(pygame.Rect((886, 990), (68, 68))), "", object_id="#add_six_button"
+        self.elements["add_six"] = UIImageButton(scale(pygame.Rect((886, 990), (68, 68))), "",
+                                                 object_id="#add_six_button"
                                                  , manager=MANAGER)
 
         # patrol type buttons - disabled for now
-        self.elements['paw'] = UIImageButton(scale(pygame.Rect((646, 1120), (68, 68))), "", object_id="#paw_patrol_button"
+        self.elements['paw'] = UIImageButton(scale(pygame.Rect((646, 1120), (68, 68))), "",
+                                             object_id="#paw_patrol_button"
                                              , manager=MANAGER)
         self.elements['paw'].disable()
-        self.elements['mouse'] = UIImageButton(scale(pygame.Rect((726, 1120), (68, 68))), "", object_id="#mouse_patrol_button"
+        self.elements['mouse'] = UIImageButton(scale(pygame.Rect((726, 1120), (68, 68))), "",
+                                               object_id="#mouse_patrol_button"
                                                , manager=MANAGER)
         self.elements['mouse'].disable()
-        self.elements['claws'] = UIImageButton(scale(pygame.Rect((806, 1120), (68, 68))), "", object_id="#claws_patrol_button"
+        self.elements['claws'] = UIImageButton(scale(pygame.Rect((806, 1120), (68, 68))), "",
+                                               object_id="#claws_patrol_button"
                                                , manager=MANAGER)
         self.elements['claws'].disable()
-        self.elements['herb'] = UIImageButton(scale(pygame.Rect((886, 1120), (68, 68))), "", object_id="#herb_patrol_button"
+        self.elements['herb'] = UIImageButton(scale(pygame.Rect((886, 1120), (68, 68))), "",
+                                              object_id="#herb_patrol_button"
                                               , manager=MANAGER)
         self.elements['herb'].disable()
 
         # Able cat page buttons
-        self.elements['last_page'] = UIImageButton(scale(pygame.Rect((150, 924), (68, 68))), "", object_id="#patrol_last_page"
+        self.elements['last_page'] = UIImageButton(scale(pygame.Rect((150, 924), (68, 68))), "",
+                                                   object_id="#patrol_last_page"
                                                    , manager=MANAGER)
-        self.elements['next_page'] = UIImageButton(scale(pygame.Rect((482, 924), (68, 68))), "", object_id="#patrol_next_page"
+        self.elements['next_page'] = UIImageButton(scale(pygame.Rect((482, 924), (68, 68))), "",
+                                                   object_id="#patrol_next_page"
                                                    , manager=MANAGER)
 
         # Tabs for the current patrol
@@ -482,26 +494,26 @@ class PatrolScreen(Screens):
             s += index + 3
         text = text.replace('c_n', str(game.clan.name) + 'Clan')
 
-        #Prey lists for forest random prey patrols
+        # Prey lists for forest random prey patrols
         fst_tinyprey_singlular = ['shrew', 'robin', 'vole', 'dormouse', 'blackbird',
-                     'wood mouse', 'lizard', 'tiny grass snake', 'finch', 'sparrow', 
-                     'small bird', 'young rat', 'young hedgehog', 'big beetle', 'woodrat',
-                     'white-footed mouse', 'golden mouse', 'young squirrel', 'chipmunk', ]
+                                  'wood mouse', 'lizard', 'tiny grass snake', 'finch', 'sparrow',
+                                  'small bird', 'young rat', 'young hedgehog', 'big beetle', 'woodrat',
+                                  'white-footed mouse', 'golden mouse', 'young squirrel', 'chipmunk', ]
         text = text.replace('f_tp_s', str(fst_tinyprey_singlular))
 
         fst_tinyprey_plural = ['mice', 'mice', 'mice', 'shrews', 'robins', 'voles', 'mice', 'blackbirds',
-                     'mice', 'mice', 'lizards', 'small birds', 'small birds', 'sparrows', 
-                     'sleepy dormice', 'chipmunks', 'woodrats', ]
+                               'mice', 'mice', 'lizards', 'small birds', 'small birds', 'sparrows',
+                               'sleepy dormice', 'chipmunks', 'woodrats', ]
         text = text.replace('f_tp_p', str(fst_tinyprey_plural))
 
         fst_midprey_singlular = ['plump shrew', 'woodpecker', 'mole', 'fat dormouse', 'blackbird',
-                     'field vole', 'big lizard', 'grass snake', 'half-grown rabbit', 'hedgehog', 
-                     'red squirrel', 'grey squirrel', 'rat', 'flying squirrel', 'kingfisher', ]
+                                 'field vole', 'big lizard', 'grass snake', 'half-grown rabbit', 'hedgehog',
+                                 'red squirrel', 'grey squirrel', 'rat', 'flying squirrel', 'kingfisher', ]
         text = text.replace('f_mp_s', str(fst_midprey_singlular))
 
         fst_midprey_plural = ['plump shrews', 'woodpeckers', 'moles', 'blackbirds',
-                     'field voles', 'big lizards', 'grass snakes', 'half-grown rabbits', 'hedgehogs', 
-                     'red squirrels', 'grey squirrels', 'rats', ]
+                              'field voles', 'big lizards', 'grass snakes', 'half-grown rabbits', 'hedgehogs',
+                              'red squirrels', 'grey squirrels', 'rats', ]
         text = text.replace('f_mp_p', str(fst_midprey_plural))
 
         sign_list = ['strangely-patterned stone', 'sharp stick', 'prey bone', 'cloud shaped like a cat',
@@ -541,22 +553,22 @@ class PatrolScreen(Screens):
         # Layout images
         self.elements['event_bg'] = pygame_gui.elements.UIImage(scale(pygame.Rect((762, 330), (708, 540))),
                                                                 pygame.transform.scale(
-                                                                pygame.image.load(
-                                                                    "resources/images/patrol_event_frame.png").convert_alpha(),
+                                                                    pygame.image.load(
+                                                                        "resources/images/patrol_event_frame.png").convert_alpha(),
                                                                     (708, 540)
                                                                 ), manager=MANAGER)
         self.elements['event_bg'].disable()
         self.elements['info_bg'] = pygame_gui.elements.UIImage(scale(pygame.Rect((180, 912), (840, 408))),
                                                                pygame.transform.scale(
-                                                               pygame.image.load(
-                                                                   "resources/images/patrol_info.png").convert_alpha(),
+                                                                   pygame.image.load(
+                                                                       "resources/images/patrol_info.png").convert_alpha(),
                                                                    (840, 408)
                                                                ), manager=MANAGER)
-        self.elements['image_frame'] = pygame_gui.elements.UIImage(scale(pygame.Rect((130, 280), (650, 640))),
+        self.elements['image_frame'] = pygame_gui.elements.UIImage(scale(pygame.Rect((130, 280), (640, 640))),
                                                                    pygame.transform.scale(
-                                                                   pygame.image.load(
-                                                                       "resources/images/patrol_sprite_frame.png").convert_alpha(),
-                                                                       (650, 640)
+                                                                       pygame.image.load(
+                                                                           "resources/images/patrol_sprite_frame.png").convert_alpha(),
+                                                                       (640, 640)
                                                                    ), manager=MANAGER)
 
         # Add selected cats to the patrol.
@@ -577,27 +589,9 @@ class PatrolScreen(Screens):
             return
 
         print("Chosen Patrol ID: " + str(patrol.patrol_event.patrol_id))
-        intro_text = patrol.patrol_event.intro_text
         patrol_size = len(patrol.patrol_cats)
 
         self.get_patrol_art()
-
-        file = 'train'
-        if patrol.patrol_event.patrol_id.find('med') != -1:
-            file = 'med'
-        elif patrol.patrol_event.patrol_id.find('hunt') != -1:
-            file = 'hunt'
-        elif patrol.patrol_event.patrol_id.find('train') != -1:
-            file = 'train'
-        elif patrol.patrol_event.patrol_id.find('bord') != -1:
-            file = 'bord'
-
-        # Grab win trait.
-        if patrol.patrol_event.win_trait is not None:
-            win_trait = patrol.patrol_event.win_trait
-            patrol_trait = patrol.patrol_traits.index(win_trait)
-            patrol.patrol_stat_cat = patrol.patrol_cats[patrol_trait]
-
 
         # Prepare Intro Text
         # adjusting text for solo patrols
@@ -631,16 +625,16 @@ class PatrolScreen(Screens):
         pos_y = 950
         for u in range(6):
             if u < len(patrol.patrol_cats):
-                self.elements["cat" + str(u)] = pygame_gui.elements.UIImage(scale(pygame.Rect((pos_x, pos_y), (100, 100))),
-                                                                            patrol.patrol_cats[u].big_sprite,
-                                                                            manager=MANAGER)
+                self.elements["cat" + str(u)] = pygame_gui.elements.UIImage(
+                    scale(pygame.Rect((pos_x, pos_y), (100, 100))),
+                    patrol.patrol_cats[u].big_sprite,
+                    manager=MANAGER)
                 pos_x += 100
                 if pos_x > 900:
                     pos_y += 100
                     pos_x = 800
             else:
                 break
-
 
         ##################### Buttons:
         self.elements["proceed"] = UIImageButton(scale(pygame.Rect((1100, 866), (344, 60))), "",
@@ -659,47 +653,90 @@ class PatrolScreen(Screens):
         """
         grabs art for the patrol based on the patrol_id
 
-        if you are adding art and the art has gore or blood, add it to the explicit_patrol_art.json
+        -first checks for image file with exact patrol_id
+        -then checks for image file with the patrol_id minus any numbers
+        -then checks for image file with the patrol_id minus any numbers and with 'gen' replacing biome indicator
+        -if none of those are available, then uses placeholder patrol type image
+
+        if you are adding art and the art has gore or blood, add it's exact patrol id to the explicit_patrol_art.json
         """
         path = "resources/images/patrol_art/"
 
+        # if gore isn't allowed then placeholder is shown instead
         gore_allowed = game.settings["gore"]
         placeholder_needed = False
         if not gore_allowed and patrol.patrol_event.patrol_id in EXPLICIT_PATROL_ART:
             placeholder_needed = True
 
-        patrol_id = patrol.patrol_event.patrol_id
-
         if self.patrol_stage == 'patrol_events':
-            intro_patrol_id = patrol_id
-            intro_patrol_id = ''.join([i for i in intro_patrol_id if not i.isdigit()])
+            image_name = patrol.patrol_event.patrol_id
 
-            file = intro_patrol_id
-            exists = file_exists(f"{path}{file}.png")
+            # this stays false until an acceptable image is found
+            image_found = False
+
+            # looking for exact patrol ID
+            exists = file_exists(f"{path}{image_name}.png")
             if exists and not placeholder_needed:
                 self.elements['intro_image'] = pygame_gui.elements.UIImage(
-                    pygame.Rect((75, 150), (300, 300)),
-                    pygame.image.load(
-                        f"{path}{file}.png").convert_alpha()
-                )
-            else:
-                file = 'train'
-                if patrol.patrol_event.patrol_id.find('med') != -1:
-                    file = 'med'
-                elif patrol.patrol_event.patrol_id.find('hunt') != -1:
-                    file = 'hunt'
-                elif patrol.patrol_event.patrol_id.find('train') != -1:
-                    file = 'train'
-                elif patrol.patrol_event.patrol_id.find('bord') != -1:
-                    file = 'bord'
-                try:
-                    self.elements['intro_image'] = pygame_gui.elements.UIImage(
-                        pygame.Rect((75, 150), (300, 300)),
+                    scale(pygame.Rect((150, 300), (600, 600))),
+                    pygame.transform.scale(
                         pygame.image.load(
-                            f"{path}{file}_general_intro.png").convert_alpha()
+                            f"{path}{image_name}.png").convert_alpha(), (600, 600))
+                )
+                image_found = True
+
+            # looking for patrol ID without numbers
+            if not image_found and not placeholder_needed:
+                image_name = ''.join([i for i in image_name if not i.isdigit()])
+
+                exists = file_exists(f"{path}{image_name}.png")
+                if exists and not placeholder_needed:
+                    self.elements['intro_image'] = pygame_gui.elements.UIImage(
+                        scale(pygame.Rect((150, 300), (600, 600))),
+                        pygame.transform.scale(
+                            pygame.image.load(
+                                f"{path}{image_name}.png").convert_alpha(), (600, 600))
                     )
-                except Exception:
-                    print('ERROR: could not display patrol image')
+                    image_found = True
+
+            # looking for patrol ID with biome indicator replaced with 'gen'
+            # if that isn't found then patrol type placeholder will be used
+            if not image_found:
+                print(image_name)
+                image_name = ''.join([i for i in image_name if not i.isdigit()])
+                image_name.replace("fst_", "gen_")
+                image_name.replace("mtn_", "gen_")
+                image_name.replace("pln_", "gen_")
+                image_name.replace("bch_", "gen_")
+                print(image_name)
+                exists = file_exists(f"{path}{image_name}.png")
+                if exists and not placeholder_needed:
+                    self.elements['intro_image'] = pygame_gui.elements.UIImage(
+                        scale(pygame.Rect((150, 300), (600, 600))),
+                        pygame.transform.scale(
+                            pygame.image.load(
+                                f"{path}{image_name}.png").convert_alpha(), (600, 600))
+                    )
+                else:
+                    image_name = 'train'
+                    if patrol.patrol_event.patrol_id.find('med') != -1:
+                        image_name = 'med'
+                    elif patrol.patrol_event.patrol_id.find('hunt') != -1:
+                        image_name = 'hunt'
+                    elif patrol.patrol_event.patrol_id.find('train') != -1:
+                        image_name = 'train'
+                    elif patrol.patrol_event.patrol_id.find('bord') != -1:
+                        image_name = 'bord'
+                    try:
+                        self.elements['intro_image'] = pygame_gui.elements.UIImage(
+                            scale(pygame.Rect((150, 300), (600, 600))),
+                            pygame.transform.scale(
+                                pygame.image.load(
+                                    f"resources/images/patrol_art/{image_name}_general_intro.png").convert_alpha(),
+                                (600, 600))
+                        )
+                    except Exception:
+                        print('ERROR: could not display patrol image')
 
     def open_patrol_complete_screen(self, user_input):
         """Deals with the next stage of the patrol, including antagonize, proceed, and do not proceed.
@@ -738,7 +775,8 @@ class PatrolScreen(Screens):
 
         self.elements["patrol_results"] = pygame_gui.elements.UITextBox("",
                                                                         scale(pygame.Rect((1100, 1000), (344, 300))),
-                                                                        object_id=get_text_box_theme("#cat_patrol_info_box")
+                                                                        object_id=get_text_box_theme(
+                                                                            "#cat_patrol_info_box")
                                                                         , manager=MANAGER)
         self.elements["patrol_results"].set_text(patrol.results())
 
@@ -817,7 +855,8 @@ class PatrolScreen(Screens):
             for cat in self.current_patrol:
                 self.cat_buttons["patrol_cat" + str(i)] = UISpriteButton(scale(pygame.Rect((pos_x, pos_y), (100, 100))),
                                                                          pygame.transform.scale(cat.large_sprite,
-                                                                         (100, 100)), cat_object=cat, manager=MANAGER)
+                                                                                                (100, 100)),
+                                                                         cat_object=cat, manager=MANAGER)
                 pos_x += 150
                 if pos_x >= 1450:
                     pos_x = 1050
@@ -906,7 +945,8 @@ class PatrolScreen(Screens):
                 short_name = str(self.selected_cat.name)[0:15]
                 name = short_name + '...'
 
-            self.elements['selected_name'] = pygame_gui.elements.UITextBox(name, scale(pygame.Rect((600, 650), (400, 60))),
+            self.elements['selected_name'] = pygame_gui.elements.UITextBox(name,
+                                                                           scale(pygame.Rect((600, 650), (400, 60))),
                                                                            object_id=get_text_box_theme())
 
             self.elements['selected_bio'] = UITextBoxTweaked(str(self.selected_cat.status) +
@@ -921,13 +961,15 @@ class PatrolScreen(Screens):
             # Show Cat's Mate, if they have one
             if self.selected_cat.status not in ['medicine cat apprentice', 'apprentice']:
                 if self.selected_cat.mate is not None:
-                    self.elements['mate_frame'] = pygame_gui.elements.UIImage(scale(pygame.Rect((280, 380), (332, 340))),
-                                                                              self.mate_frame)
+                    self.elements['mate_frame'] = pygame_gui.elements.UIImage(
+                        scale(pygame.Rect((280, 380), (332, 340))),
+                        self.mate_frame)
                     mate = Cat.fetch_cat(self.selected_cat.mate)
-                    self.elements['mate_image'] = pygame_gui.elements.UIImage(scale(pygame.Rect((300, 400), (200, 200))),
-                                                                              pygame.transform.scale(
-                                                                                  mate.large_sprite, (200, 200))
-                                                                              , manager=MANAGER)
+                    self.elements['mate_image'] = pygame_gui.elements.UIImage(
+                        scale(pygame.Rect((300, 400), (200, 200))),
+                        pygame.transform.scale(
+                            mate.large_sprite, (200, 200))
+                        , manager=MANAGER)
                     # Check for name length
                     name = str(mate.name)  # get name
                     if 11 <= len(name):  # check name length
@@ -951,8 +993,9 @@ class PatrolScreen(Screens):
             relation = "should not display"
             if self.selected_cat.status in ['medicine cat apprentice',
                                             'apprentice'] or self.selected_cat.apprentice != []:
-                self.elements['app_mentor_frame'] = pygame_gui.elements.UIImage(scale(pygame.Rect((990, 380), (332, 340))),
-                                                                                self.app_frame, manager=MANAGER)
+                self.elements['app_mentor_frame'] = pygame_gui.elements.UIImage(
+                    scale(pygame.Rect((990, 380), (332, 340))),
+                    self.app_frame, manager=MANAGER)
 
                 if self.selected_cat.status in ['medicine cat apprentice',
                                                 'apprentice'] and self.selected_cat.mentor is not None:
@@ -983,10 +1026,11 @@ class PatrolScreen(Screens):
                         scale(pygame.Rect((1100, 650), (200, 60))),
                         object_id=get_text_box_theme(
                             "#cat_patrol_info_box"))
-                    self.elements['app_mentor_image'] = pygame_gui.elements.UIImage(scale(pygame.Rect((1100, 400), (200, 200))),
-                                                                                    pygame.transform.scale(
-                                                                                        self.app_mentor.large_sprite,
-                                                                                        (200, 200)), manager=MANAGER)
+                    self.elements['app_mentor_image'] = pygame_gui.elements.UIImage(
+                        scale(pygame.Rect((1100, 400), (200, 200))),
+                        pygame.transform.scale(
+                            self.app_mentor.large_sprite,
+                            (200, 200)), manager=MANAGER)
 
                     # Button to switch to that cat
                     self.elements['app_mentor_button'] = UIImageButton(scale(pygame.Rect((1096, 712), (208, 52))), "",
@@ -998,21 +1042,21 @@ class PatrolScreen(Screens):
 
                     # Buttons to cycle between apprentices
                     if self.selected_cat.mentor == None:
-                        self.elements['cycle_app_mentor_left_button'] = UIImageButton(scale(pygame.Rect((1096, 780), (68, 68))),
-                                                                                      "",
-                                                                                      object_id="#arrow_left_button",
-                                                                                      manager=MANAGER)
+                        self.elements['cycle_app_mentor_left_button'] = UIImageButton(
+                            scale(pygame.Rect((1096, 780), (68, 68))),
+                            "",
+                            object_id="#arrow_left_button",
+                            manager=MANAGER)
                         self.elements['cycle_app_mentor_right_button'] = UIImageButton(
-                            scale(pygame.Rect((1236, 780), (68, 68))), "", object_id="#arrow_right_button", manager=MANAGER)
+                            scale(pygame.Rect((1236, 780), (68, 68))), "", object_id="#arrow_right_button",
+                            manager=MANAGER)
                         self.update_button()
 
     def clear_page(self):
         """Clears all the elements"""
         for ele in self.elements:
-            print(ele)
             self.elements[ele].kill()
         self.elements = {}
-        print(self.elements)
 
     def clear_cat_buttons(self):
         for cat in self.cat_buttons:
@@ -1036,6 +1080,7 @@ class PatrolScreen(Screens):
         patrol_set = list(patrol_list)
         return ", ".join(patrol_set)
 
+
 # ---------------------------------------------------------------------------- #
 #                                LOAD RESOURCES                                #
 # ---------------------------------------------------------------------------- #
@@ -1045,4 +1090,3 @@ resource_directory = "resources/dicts/patrols/"
 EXPLICIT_PATROL_ART = None
 with open(f"{resource_directory}explicit_patrol_art.json", 'r') as read_file:
     EXPLICIT_PATROL_ART = ujson.loads(read_file.read())
-

@@ -214,7 +214,7 @@
     "antagonize_fail_text": "The Twoleg kits wandering around are unimpressed by the patrol and chase the cats for fun."
 },
 {
-    "patrol_id": "fst_hunt_squirrel1",
+    "patrol_id": "fst_hunt_squirrelchase1",
     "biome": "forest",
     "season": "Any",
     "tags": [
