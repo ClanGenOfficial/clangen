@@ -54,7 +54,7 @@ class Cat():
                      'strange', 'daydreamer', 'quiet'],
     }
     ages = [
-        'kitten', 'adolescent', 'young adult', 'adult', 'senior adult',
+        'newborn', 'kitten', 'adolescent', 'young adult', 'adult', 'senior adult',
         'elder', 'dead'
     ]
     age_moons = {
@@ -240,6 +240,7 @@ class Cat():
         self.no_kits = False
         self.paralyzed = False
         self.age_sprites = {
+            "newborn": None,
             "kitten": None,
             "adolescent": None,
             "young adult": None,
@@ -278,6 +279,8 @@ class Cat():
             if moons > 300:
                 # Out of range, always elder
                 self.age = 'elder'
+            elif moons == 0:
+                self.age = 'newborn'
             else:
                 # In range
                 for key_age in self.age_moons.keys():
@@ -367,7 +370,7 @@ class Cat():
             init_pattern(self)
 
             # experience and current patrol status
-            if self.age in ['kitten']:
+            if self.age in ['kitten', 'newborn']:
                 self.experience = 0
             elif self.age in ['adolescent']:
                 self.experience = randint(0, 19)
