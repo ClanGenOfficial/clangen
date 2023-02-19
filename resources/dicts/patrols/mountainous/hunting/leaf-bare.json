@@ -781,12 +781,16 @@
             "hunting",
             "beak_bite",
             "injure_all",
+            "scar",
+            "BEAKCHEEK",
             "clan_to_patrol",
             "respect",
             "medium_prey0",
             "large_prey1",
             "large_prey2",
-            "huge_prey3"
+            "huge_prey3",
+            "adult_stat"
+
         ],
         "intro_text": "What a rare sight! Bluejay feathers are often found around here, though never the bird itself, especially in leaf-bare! Its plumage stands out fetchingly against the snow.",
         "decline_text": "p_l admires the bird from afar, deciding against coloring the fresh-kill pile with that particular shade of blue.",
@@ -840,6 +844,86 @@
         "antagonize_fail_text":null,
         "history_text":[
             "r_c got a scar underestimating a bluejay."
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_commonbuz_leafbare1",
+        "biome": "mountainous",
+        "season": "leaf-bare",
+        "tags": [
+            "hunting",
+            "respect",
+            "distrust",
+            "no_change_fail", 
+            "clan_to_p_l",
+            "warrior",
+            "death",
+            "no_body",
+            "all_lives",
+            "injury",
+            "beak_bite",
+            "scar",
+            "BEAKLOWER",
+            "medium_prey0",
+            "large_prey1",
+            "medium_prey2",
+            "large_prey3",
+            "adult_stat"
+
+    ],
+        "intro_text": "p_l finds a common buzzard eating crow-food on top of a high cliff. They crouch down to hunt but - Wait! Was it buzzards or vultures that the mountain clans respected?",
+        "decline_text": "Better not risk it... p_l turns tail and goes home, trying to think of a way to ask the difference between the two birds that doesn't end up confusing them even more.",
+        "chance_of_success": 10,
+        "exp": 40,
+        "success_text": [
+                "p_l decides to risk it, and leaps for the common buzzard, killing it before it has a chance to fly off. They try not to be seen bringing it back, just in case, and feel odd looks on their pelt for it.",
+                "It's definintely vultures. They catch the common buzzard and bring it back to camp proudly-- But some of the other cats have the same question. Oh well. Fresh-kill is fresh-kill, and it's <i>not</i> a vulture!",
+                "s_c laughs to themselves, of course it's vultures! They catch the common buzzard, which has a feathered head, with ease, bring it home, and are disappointed when they have to explain the difference between this bird and the vultures.",
+                "s_c knows the difference between a common buzzard and a vulture! Unfortunantly they end up having to explain the difference anyway. It seems some outcomes are unavoidable."
+        ],
+        "fail_text": [
+                "Drat! p_l hesitated too long and the bird flew off! They still don't know if they could have caught it!",
+                "p_l decides to risk it, and leaps for the common buzzard- But what if it was buzzards, and not vultures? Better let it go... They find out at camp it was vultures, and decide not to tell anyone why they asked, feeling embarrassed.",
+                "p_l lunges for the common buzzard, only for the buzzard to spread their wings to much, much larger then they look folded and startle the cat right off the cliff. They are never seen again.",
+                "p_l does a little butt wiggle and launches themselves at the common buzzard. They barely have time to get away as the buzzard spreads their wings and snaps at them, leaving them with a nasty peck! Ouch!",
+                "It doesn't matter if it's a buzzard or a vulture! It's about to be fresh-kill! s_c lunges for the bird - but the bird flies off, and the cat slips on the cold, icy cliff, and are never seen again.",
+                "Who cares about vultures or buzzards? The Clan needs fresh-kill! The buzzard does, and gives s_c a nasty bite to remember them by, and the medicince cat gets to tell them the difference between common buzzards and vultures.",
+                null
+
+        ],
+        "win_skills": [
+            "very smart",
+            "extremely smart",
+            "fantastic hunter",
+            "strong connection to StarClan",
+            "lore keeper",
+            "keen eye"
+        ],
+        "win_trait": [
+            "faithful",
+            "careful",
+            "righteous",
+            "responsible",
+            "patient",
+            "strange",
+            "shameless"
+        ],
+        "fail_skills": ["None"],
+        "fail_trait": [
+            "childish",
+            "playful",
+            "nervous",
+            "troublesome",
+            "insecure"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+          "mistook a buzzard for a vulture and got pecked",
+          "was scared off a cliff by a large bird.",
+	      "after a run in with a large bird of prey, fell to their final death off of a high cliff"
         ]
     }
 ]
