@@ -277,7 +277,7 @@ class Events():
             if not int(random.random() * 5):
                 new_herb = random.choice(HERBS)
                 game.clan.herbs.update({new_herb: 1})
-            print(game.clan.herbs)
+            # print(game.clan.herbs)
         else:
             event_list = []
             meds_available = get_med_cats(Cat)
@@ -560,6 +560,8 @@ class Events():
             self.coming_out(cat)
             self.relation_events.handle_having_kits(cat, clan=game.clan)
             cat.create_interaction()
+            # this is the new interaction function, currently not active
+            #cat.relationship_interaction()
             cat.thoughts()
             return
 
@@ -576,6 +578,8 @@ class Events():
         self.relation_events.handle_having_kits(cat, clan=game.clan)
 
         cat.create_interaction()
+        # this is the new interaction function, currently not active
+        #cat.relationship_interaction()
         cat.thoughts()
 
     def check_clan_relations(self):
@@ -929,7 +933,7 @@ class Events():
             except KeyError:
                 random_honor = "hard work"
 
-        print(possible_ceremonies)
+        # print(possible_ceremonies)
         ceremony_tags, ceremony_text = self.CEREMONY_TXT[choice(list(possible_ceremonies))]
 
         # This is a bit strange, but it works. If there is only one parent involved, but more than one living

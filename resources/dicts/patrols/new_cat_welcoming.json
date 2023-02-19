@@ -143,15 +143,15 @@
     "patrol_id": "fst_bord_noise1",
     "biome": "forest",
     "season": "Any",
-    "tags": ["border", "new_cat", "battle_injury", "scar", "reputation", "new_cat_apprentice"],
+    "tags": ["border", "new_cat", "battle_injury", "scar", "reputation", "new_cat_newborn", "new_cat_queen"],
     "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from a nearby bush.",
     "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
-            "Before p_l can move to check the bush, a loner emerges. The cat explains that they would like to join the Clan and after a short conversation with p_l, the loner joins the patrol on the journey back to camp.",
-            "p_l pads towards the bush to check on the noise when a rabbit suddenly bursts out! None of the cats are quick enough to catch it, but at least the noise was nothing dangerous.",
-            "s_c takes the lead in checking the noise, and it's a good thing they did, because the moment they step closer to the bush a rogue comes springing out! s_c is quick to bat them away, hissing and spitting, before promptly chasing the rogue out of the territory. It was hardly a fight, really. ",
+            "Before p_l can move to check the bush, a loner emerges with their newborn kits. The cat explains that they would like to join the Clan and after a short conversation with p_l, the loner and their family joins the patrol on the journey back to camp.",
+            "p_l pads towards the bush to check on the noise when a rabbit suddenly bursts out, a loner following it! The loner speaks to p_l about Clan life, and how safe it would be for their newborn kits. p_l convinces the family to join the Clan.",
+            null,
             "s_c takes the lead in checking the noise and finds that the bush is hiding a loner and their litter! The kits are freshly born, new to the world, and s_c is quick to sit and talk quietly with the new parent. After some coaxing, s_c convinces them to come stay with the Clan for a while, maybe even to join permanently."
     ],
     "fail_text": [
@@ -372,7 +372,7 @@
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "win_trait": null,
-    "fail_skills": ["None"],
+    "fail_skills": null,
     "fail_trait": null,
     "min_cats": 1,
     "max_cats": 6,

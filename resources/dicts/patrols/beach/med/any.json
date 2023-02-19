@@ -249,7 +249,7 @@
     "patrol_id": "bch_med_gatheringhorsetail2",
     "biome": "beach",
     "season": "Any",
-    "tags": ["med_only", "med_cat", "herb", "horsetail", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
+    "tags": ["adult_stat", "med_only", "med_cat", "herb", "horsetail", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "p_l heads out on a herb-gathering patrol, searching for the evergreen, ever-reliable horsetail to harvest for the herb stores. app1 trots after them, asking them why horsetail grows so weirdly without leaves.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 70,
@@ -298,7 +298,7 @@
     "antagonize_fail_text": null
 },
 {
-"patrol_id": "gen_med_gatheringmoss1",
+"patrol_id": "bch_med_gatheringmoss1",
 "biome": "beach",
 "season": "Any",
 "tags": ["med_cat", "moss", "herb"],
@@ -315,7 +315,7 @@
 "min_cats": 1,
 "max_cats": 1,
 "win_skills": null,
-"win_trait": ["None"],
+"win_trait": null,
 "antagonize_text": null,
 "antagonize_fail_text": null
 },

@@ -93,10 +93,16 @@ while True:
         game.all_screens[game.current_screen].handle_event(event)
 
         if event.type == pygame.QUIT:
-            # close pygame
-            pygame.display.quit()
-            pygame.quit()
-            sys.exit()
+            # Dont display if on the start screen
+            if game.switches['cur_screen'] not in ['start screen']:
+                pygame.display.quit()
+                pygame.quit()
+                sys.exit()
+            elif not game.is_closing:
+                game.is_closing = True
+                # Display "Would you like to save before......."
+                SaveCheck(game.switches['cur_screen'], False)
+
 
         # MOUSE CLICK
         if event.type == pygame.MOUSEBUTTONDOWN:

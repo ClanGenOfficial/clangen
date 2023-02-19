@@ -127,7 +127,7 @@
         "biome": "beach",
         "season": "Any",
         "tags": [
-            "hunting",
+            "app_stat", "hunting",
             "apprentice",
             "respect",
             "clan_to_r_c",
@@ -760,7 +760,7 @@
         "biome": "beach",
         "season": "Any",
         "tags": [
-            "hunting",
+            "app_stat", "hunting",
             "gone",
             "apprentice",
             "injury",
@@ -892,7 +892,7 @@
         "biome": "beach",
         "season": "Any",
         "tags": [
-            "hunting",
+            "app_stat", "hunting",
             "gone",
             "apprentice",
             "romantic",
