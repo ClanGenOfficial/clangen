@@ -54,12 +54,12 @@ class Cat():
                      'strange', 'daydreamer', 'quiet'],
     }
     ages = [
-        'newborn', 'young', 'adolescent', 'young adult', 'adult', 'senior adult',
-        'elder', 'dead'
+        'newborn', 'kitten', 'adolescent', 'young adult', 'adult', 'senior adult',
+        'senior'
     ]
     age_moons = {
         'newborn': [0, 0],
-        'young': [1, 5],
+        'kitten': [1, 5],
         'adolescent': [6, 11],
         'young adult': [12, 47],
         'adult': [48, 95],
@@ -242,7 +242,7 @@ class Cat():
         self.paralyzed = False
         self.cat_sprites = {
             "newborn": 20,
-            "young": None,
+            "kitten": None,
             "adolescent": None,
             "young adult": None,
             "adult": None,
@@ -283,7 +283,7 @@ class Cat():
             self.moons = moons
             if moons > 300:
                 # Out of range, always elder
-                self.age = 'elder'
+                self.age = 'senior'
             elif moons == 0:
                 self.age = 'newborn'
             else:
@@ -293,7 +293,7 @@ class Cat():
                         self.age = key_age
         else:
             if status == 'kitten':
-                self.age = 'young'
+                self.age = 'kitten'
             elif status == 'elder':
                 self.age = 'senior'
             elif status == 'apprentice':

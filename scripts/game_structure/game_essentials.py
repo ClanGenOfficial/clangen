@@ -367,7 +367,7 @@ class Game():
                 "sprite_young_adult": inter_cat.cat_sprites['young adult'],
                 "sprite_adult": inter_cat.cat_sprites['adult'],
                 "sprite_senior_adult": inter_cat.cat_sprites['senior adult'],
-                "sprite_elder": inter_cat.cat_sprites['elder'],
+                "sprite_senior": inter_cat.cat_sprites['senior'],
                 "sprite_para_adult": inter_cat.cat_sprites['para_adult'],
                 "eye_colour": inter_cat.eye_colour,
                 "eye_colour2": inter_cat.eye_colour2 if inter_cat.eye_colour2 else None,

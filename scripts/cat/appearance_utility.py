@@ -452,7 +452,7 @@ def init_sprite(cat):
         init_pelt(cat)
     cat.cat_sprites = {
         'newborn': 20,
-        'young': randint(0, 2),
+        'kitten': randint(0, 2),
         'adolescent': randint(3, 5),
         'senior': randint(12, 14),
         'sick_young': 19,
@@ -472,7 +472,6 @@ def init_sprite(cat):
             cat.cat_sprites['para_adult'] = 15
         cat.cat_sprites['young adult'] = cat.cat_sprites['adult']
         cat.cat_sprites['senior adult'] = cat.cat_sprites['adult']
-        cat.cat_sprites['dead'] = None
 
 
 def init_scars(cat):
