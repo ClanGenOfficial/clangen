@@ -247,7 +247,11 @@ class Cat():
             "young adult": None,
             "adult": None,
             "senior adult": None,
-            "senior": None
+            "senior": None,
+            "para_young": 17,
+            "para_adult": None,
+            "sick_adult": 18,
+            "sick_young": 19
         }
 
         self.opacity = 100
