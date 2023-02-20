@@ -366,7 +366,8 @@
     "exp": 10,
     "success_text": [
         "p_l goes to check the bush and finds a loner sheepishly hiding inside. It seems the stranger was thinking of asking to join the Clan. They're a bit intimidated though and, after speaking to p_l for a little while, they decide to join the Clan.",
-        "p_l pads towards the bush to check on the noise when a rabbit suddenly bursts out with a young cat chasing it! p_l stops the cat, impressed with their hunting skills, and invites them to join the clan, to which the young cat agrees."
+        "p_l pads towards the bush to check on the noise when a rabbit suddenly bursts out with a young cat chasing it! p_l stops the cat, impressed with their hunting skills, and invites them to join the clan, to which the young cat agrees.",
+        "s_c cautiously checks the bush, only to be surprised by a weight slamming into them! They recover, only to see a young loner snarling at the patrol and are impressed with the cat's bravery. s_c invites them to join the clan, to which the young cat agrees."
     ],
     "fail_text": [
         "p_l pads closer to the bush, intent on finding the source of the noise, only to come face to face with a skunk! The poor cat ends up stinking for days after the unfortunate incident.",
