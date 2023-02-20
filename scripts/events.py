@@ -4,7 +4,6 @@ try:
     import ujson as json
 except ImportError:
     import json
-from random import randrange, randint, getrandbits, choice
 
 from scripts.cat.appearance_utility import plural_acc_names
 from scripts.cat.cats import Cat, cat_class
@@ -27,8 +26,8 @@ class Events():
 
     def __init__(self, e_type=None, **cats):
         self.e_type = e_type
-        self.ID = str(randint(0, 9)) + str(randint(0, 9)) + str(randint(
-            0, 9)) + str(randint(0, 9))
+        self.ID = str(random.randint(0, 9)) + str(random.randint(0, 9)) + str(random.randint(
+            0, 9)) + str(random.randint(0, 9))
         if e_type is not None:
             self.all_events[self.ID] = self
         self.cats = cats
@@ -109,7 +108,7 @@ class Events():
                             text = f"Will they reach StarClan, even so far away? {str(cat.name)} isn't sure, but as they drift away, they hope to see familiar starry fur on the other side."
                         game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
 
-                if cat.exiled and cat.status == 'leader' and not cat.dead and randint(
+                if cat.exiled and cat.status == 'leader' and not cat.dead and random.randint(
                         1, 10) == 1:
                     game.clan.leader_lives -= 1
                     if game.clan.leader_lives > 0:
@@ -120,7 +119,7 @@ class Events():
                         game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
                         cat.dead = True
 
-                elif cat.exiled and cat.status == 'leader' and not cat.dead and randint(
+                elif cat.exiled and cat.status == 'leader' and not cat.dead and random.randint(
                         1, 45) == 1:
                     game.clan.leader_lives -= 10
                     cat.dead = True
@@ -222,10 +221,10 @@ class Events():
         if cat.status in ["mediator", "mediator apprentice"]:
             # 1 /10 chance
             if not int(random.random() * 10):
-                increase = randint(-2, 6)
-                clan = choice(game.clan.all_clans)
+                increase = random.randint(-2, 6)
+                clan = random.choice(game.clan.all_clans)
                 clan.relations += increase
-                dispute_type = choice(["hunting", "border", "personal", "herb-gathering"])
+                dispute_type = random.choice(["hunting", "border", "personal", "herb-gathering"])
                 text = f"{cat.name} travels to {clan} to resolve some recent {dispute_type} disputes. "
                 if increase > 4:
                     text += f"The meeting goes better than expected, and {cat.name} returns with a plan to solve the " \
@@ -266,7 +265,7 @@ class Events():
                 lower_value = game.config["freshkill"]["auto_apprentice_prey"][0]
                 upper_value = game.config["freshkill"]["auto_apprentice_prey"][1]
 
-            prey_amount += randint(lower_value, upper_value)
+            prey_amount += random.randint(lower_value, upper_value)
         game.clan.freshkill_pile.add_freshkill(prey_amount)
 
     def herb_gather(self):
@@ -368,7 +367,7 @@ class Events():
             chance = 5
 
         if len(herbs.keys()) >= 10 and not int(random.random() * chance):
-            index = randrange(1, int(len(herbs.keys()) / 2))
+            index = random.randrange(1, int(len(herbs.keys()) / 2))
             count = 0
             bad_herb = None
             for herb in herbs:
@@ -376,7 +375,7 @@ class Events():
                 if count == index:
                     bad_herb = herb
                     break
-            herb_amount = randrange(1, int(herbs[bad_herb] + 2))
+            herb_amount = random.randrange(1, int(herbs[bad_herb] + 2))
             # deplete the herb
             herbs[bad_herb] -= herb_amount
             insert2 = 'some of'
@@ -390,7 +389,7 @@ class Events():
             game.cur_events_list.append(Single_Event(event, "health"))
 
         elif allies and not int(random.random() * 5):
-            chosen_ally = choice(allies)
+            chosen_ally = random.choice(allies)
             if len(herbs.keys()) == 0:
                 # If you have no herbs, you can't give any to a clan. Special events for that.
                 possible_events = [
@@ -402,7 +401,7 @@ class Events():
                 ]
                 chosen_ally.relations -= 2
             else:
-                index = randrange(1, int(len(herbs.keys())) + 1)
+                index = random.randrange(1, int(len(herbs.keys())) + 1)
                 count = 0
                 herb_given = None
                 for herb in herbs:
@@ -411,7 +410,7 @@ class Events():
                         herb_given = herb
                         break
                 if herbs[herb_given] > 2:
-                    herb_amount = randrange(1, int(herbs[herb_given] - 1))
+                    herb_amount = random.randrange(1, int(herbs[herb_given] - 1))
                     # deplete the herb
                     herbs[herb_given] -= herb_amount
 
@@ -444,12 +443,12 @@ class Events():
                             f"a case of yellowcough. However, your Clan has no extra lungwort to give."
                         ])
                     chosen_ally.relations -= 5
-            event = choice(possible_events)
+            event = random.choice(possible_events)
             game.herb_events_list.append(event)
             game.cur_events_list.append(Single_Event(event, "health"))
 
         elif not int(random.random() * 10) and 'moss' in herbs:
-            herb_amount = randrange(1, herbs['moss'] + 1)
+            herb_amount = random.randrange(1, herbs['moss'] + 1)
             herbs['moss'] -= herb_amount
             if herbs['moss'] <= 0:
                 herbs.pop('moss')
@@ -491,7 +490,7 @@ class Events():
                     "A huge wave crashes into camp, leaving everyone soaked and the herb stores irreparably damaged."
                 ])
             game.clan.herbs.clear()
-            chosen_event = choice(possible_events)
+            chosen_event = random.choice(possible_events)
             game.cur_events_list.append(Single_Event(chosen_event, "health"))
             game.herb_events_list.append(chosen_event)
 
@@ -592,11 +591,11 @@ class Events():
         #                      interactions with other clans                           #
         # ---------------------------------------------------------------------------- #
 
-        if len(game.clan.all_clans) > 0 and randint(1, 5) == 1:
+        if len(game.clan.all_clans) > 0 and random.randint(1, 5) == 1:
             war_notice = ''
             for other_clan in game.clan.all_clans:
                 if int(other_clan.relations) <= 5:
-                    if randint(1, 5) == 1 and self.time_at_war > 2:
+                    if random.randint(1, 5) == 1 and self.time_at_war > 2:
                         self.at_war = False
                         self.time_at_war = 0
                         other_clan.relations = 10
@@ -628,7 +627,7 @@ class Events():
                                 'The medicine cats worry about having enough herbs to treat their Clan\'s wounds.',
                                 'The medicine cats wonder what StarClan thinks of the war.'
                             ])
-                        war_notice = choice(possible_text)
+                        war_notice = random.choice(possible_text)
                         self.time_at_war += 1
                         self.at_war = True
                     break
@@ -668,7 +667,7 @@ class Events():
                            f'They stare down at their Clanmates with unsheathed claws, ' \
                            f'promising a new era for the Clans.'
                 else:
-                    c = choice([1, 2, 3])
+                    c = random.choice([1, 2, 3])
                     if c == 1:
                         text = str(game.clan.deputy.name.prefix) + str(
                             game.clan.deputy.name.suffix) + ' has been promoted to the new leader of the Clan. ' \
@@ -934,12 +933,12 @@ class Events():
             with open(f"{resource_dir}ceremony_traits.json", encoding="ascii") as read_file:
                 TRAITS = json.loads(read_file.read())
             try:
-                random_honor = choice(TRAITS[cat.trait])
+                random_honor = random.choice(TRAITS[cat.trait])
             except KeyError:
                 random_honor = "hard work"
 
         # print(possible_ceremonies)
-        ceremony_tags, ceremony_text = self.CEREMONY_TXT[choice(list(possible_ceremonies))]
+        ceremony_tags, ceremony_text = self.CEREMONY_TXT[random.choice(list(possible_ceremonies))]
 
         # This is a bit strange, but it works. If there is only one parent involved, but more than one living
         # or dead parent, the adjust text function will pick a random parent. However, we need to know the
@@ -997,10 +996,10 @@ class Events():
         involved_cats = [cat.ID]
 
         # find other_cat
-        other_cat = choice(list(Cat.all_cats.values()))
+        other_cat = random.choice(list(Cat.all_cats.values()))
         countdown = int(len(Cat.all_cats) / 3)
         while cat == other_cat or other_cat.dead or other_cat.outside:
-            other_cat = choice(list(Cat.all_cats.values()))
+            other_cat = random.choice(list(Cat.all_cats.values()))
             countdown -= 1
             if countdown <= 0:
                 return
@@ -1009,15 +1008,15 @@ class Events():
         acc_text = []
 
         # chance to gain acc
-        chance = randint(0, 50)
+        chance = random.randint(0, 50)
         if cat.status in ['medicine cat', 'medicine cat apprentice']:
-            chance = randint(0, 30)
+            chance = random.randint(0, 30)
         elif cat.age in ['kitten', 'adolescent']:
-            chance = randint(0, 80)
+            chance = random.randint(0, 80)
         elif cat.age in ['young adult', 'adult', 'senior adult', 'elder']:
-            chance = randint(0, 150)
+            chance = random.randint(0, 150)
         elif cat.trait in ['childish', 'lonesome', 'loving', 'playful', 'shameless', 'strange', 'troublesome']:
-            chance = randint(0, 50)
+            chance = random.randint(0, 50)
 
         give = False
 
@@ -1032,16 +1031,16 @@ class Events():
         # give them an acc! \o/
         if give is True:
             if cat.accessory is None:
-                cat.accessory = choice([
-                    choice(plant_accessories),
-                    choice(wild_accessories)
+                cat.accessory = random.choice([
+                    random.choice(plant_accessories),
+                    random.choice(wild_accessories)
                 ])
                 # check if the cat is missing a tail before giving feather acc
                 if cat.accessory in ['RED FEATHERS', 'BLUE FEATHERS', 'JAY FEATHERS']:
                     if 'NOTAIL' in cat.scars:
-                        cat.accessory = choice(plant_accessories)
+                        cat.accessory = random.choice(plant_accessories)
                     if 'HALFTAIL' in cat.scars:
-                        cat.accessory = choice(plant_accessories)
+                        cat.accessory = random.choice(plant_accessories)
                 acc_singular = plural_acc_names(cat.accessory, False, True)
                 acc_plural = plural_acc_names(cat.accessory, True, False)
                 if self.ceremony_accessory is True:
@@ -1052,7 +1051,7 @@ class Events():
                         if game.clan.current_season == 'Leaf-bare':
                             acc_text.append(
                                 f'{name} found a mysterious {acc_singular} growing in the '
-                                f'{choice(["snow", "ice", "frost"])} and decided to wear it.')
+                                f'{random.choice(["snow", "ice", "frost"])} and decided to wear it.')
                         else:
                             acc_text.extend([
                                 f'{name} received a cool {acc_singular} from {other_name} '
@@ -1118,7 +1117,7 @@ class Events():
         else:
             self.ceremony_accessory = False
         if acc_text:
-            text = choice(acc_text)
+            text = random.choice(acc_text)
             # game.misc_events_list.append(text)
             game.cur_events_list.append(Single_Event(text, "misc", involved_cats))
             if self.ceremony_accessory:
@@ -1174,7 +1173,7 @@ class Events():
 
         # If there are possible other cats...
         if possible_other_cats:
-            other_cat = choice(possible_other_cats)
+            other_cat = random.choice(possible_other_cats)
 
             if cat.status in ["apprentice", "medicine cat apprentice"] and not int(random.random() * 3):
                 if cat.mentor is not None:
@@ -1192,13 +1191,13 @@ class Events():
 
     def other_interactions(self, cat):
 
-        if randint(1, 90) != 1:
+        if random.randint(1, 90) != 1:
             return
 
-        other_cat = choice(list(Cat.all_cats.values()))
+        other_cat = random.choice(list(Cat.all_cats.values()))
         countdown = int(len(Cat.all_cats) / 3)
         while cat == other_cat or other_cat.dead or other_cat.outside:
-            other_cat = choice(list(Cat.all_cats.values()))
+            other_cat = random.choice(list(Cat.all_cats.values()))
             countdown -= 1
             if countdown <= 0:
                 return
@@ -1218,7 +1217,7 @@ class Events():
 
         # If there are possible other cats...
         if possible_other_cats:
-            other_cat = choice(possible_other_cats)
+            other_cat = random.choice(possible_other_cats)
 
             if cat.status in ["apprentice", "medicine cat apprentice"] and not int(random.random() * 3):
                 if cat.mentor is not None:
@@ -1309,7 +1308,7 @@ class Events():
                     names += f" and {last_name}"
             disaster.extend([
                 ' drown after the camp becomes flooded.',
-                f' are killed in a battle against {choice(other_clan).name}Clan.',
+                f' are killed in a battle against {random.choice(other_clan).name}Clan.',
                 ' are killed after a fire rages through the camp.',
                 ' are killed in an ambush by a group of rogues.',
                 ' go missing in the night.',
@@ -1329,7 +1328,7 @@ class Events():
                     ' die after the water dries up from drought.'
                 ])
             if dead_count >= 2:
-                event_string = f'{names}{choice(disaster)}'
+                event_string = f'{names}{random.choice(disaster)}'
                 if event_string == f'{names} are taken away by Twolegs.':
                     for kitty in dead_cats:
                         self.handle_twoleg_capture(kitty)
@@ -1340,7 +1339,7 @@ class Events():
                 # game.birth_death_events_list.append(event_string)
 
             else:
-                disaster_str = choice(disaster)
+                disaster_str = random.choice(disaster)
                 disaster_str = disaster_str.replace('are', 'is')
                 disaster_str = disaster_str.replace('go', 'goes')
                 disaster_str = disaster_str.replace('die', 'dies')
@@ -1371,10 +1370,10 @@ class Events():
             triggered_death = self.condition_events.handle_illnesses(cat, game.clan.current_season)
         elif game.clan.game_mode == "classic":
             # choose other cat
-            other_cat = choice(list(Cat.all_cats.values()))
+            other_cat = random.choice(list(Cat.all_cats.values()))
             countdown = int(len(Cat.all_cats) / 2)
             while cat == other_cat or other_cat.dead:
-                other_cat = choice(list(Cat.all_cats.values()))
+                other_cat = random.choice(list(Cat.all_cats.values()))
                 countdown -= 1
                 if countdown <= 0:
                     return triggered_death
@@ -1603,7 +1602,7 @@ class Events():
                             # No additional involved cats
                         else:
                             if game.clan.deputy:
-                                previous_deputy_mention = choice(
+                                previous_deputy_mention = random.choice(
                                     [f"They know that {game.clan.deputy.name} would approve.",
                                      f"They hope that {game.clan.deputy.name} would approve.",
                                      f"They don't know if {game.clan.deputy.name} would approve, " \
@@ -1642,7 +1641,7 @@ class Events():
                             f"the clan.",
                         ]
                         # No additional involved cats
-                        text = choice(possible_events)
+                        text = random.choice(possible_events)
                     else:
                         # This should never happen. Failsave.
                         text = f"{Cat.all_cats[random_cat].name} becomes deputy. "
