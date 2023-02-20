@@ -240,7 +240,7 @@ class Cat():
         self.virtues = []
         self.no_kits = False
         self.paralyzed = False
-        self.age_sprites = {
+        self.cat_sprites = {
             "newborn": 20,
             "young": None,
             "adolescent": None,

@@ -450,7 +450,7 @@ def init_pelt(cat):
 def init_sprite(cat):
     if cat.pelt is None:
         init_pelt(cat)
-    cat.age_sprites = {
+    cat.cat_sprites = {
         'newborn': 20,
         'young': randint(0, 2),
         'adolescent': randint(3, 5),
@@ -462,12 +462,12 @@ def init_sprite(cat):
             
     if cat.pelt is not None:
         if cat.pelt.length != 'long':
-            cat.age_sprites['adult'] = randint(6, 8)
+            cat.cat_sprites['adult'] = randint(6, 8)
         else:
-            cat.age_sprites['adult'] = randint(9, 11)
-        cat.age_sprites['young adult'] = cat.age_sprites['adult']
-        cat.age_sprites['senior adult'] = cat.age_sprites['adult']
-        cat.age_sprites['dead'] = None
+            cat.cat_sprites['adult'] = randint(9, 11)
+        cat.cat_sprites['young adult'] = cat.cat_sprites['adult']
+        cat.cat_sprites['senior adult'] = cat.cat_sprites['adult']
+        cat.cat_sprites['dead'] = None
 
 
 def init_scars(cat):

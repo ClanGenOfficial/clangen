@@ -65,12 +65,12 @@ def json_load():
             new_cat.paralyzed = cat["paralyzed"]
             new_cat.no_kits = cat["no_kits"]
             new_cat.exiled = cat["exiled"]
-            new_cat.age_sprites['kitten'] = cat["spirit_kitten"]
-            new_cat.age_sprites['adolescent'] = cat["spirit_adolescent"]
-            new_cat.age_sprites['young adult'] = cat["spirit_young_adult"]
-            new_cat.age_sprites['adult'] = cat["spirit_adult"]
-            new_cat.age_sprites['senior adult'] = cat["spirit_senior_adult"]
-            new_cat.age_sprites['elder'] = cat["spirit_elder"]
+            new_cat.cat_sprites['kitten'] = cat["spirit_kitten"]
+            new_cat.cat_sprites['adolescent'] = cat["spirit_adolescent"]
+            new_cat.cat_sprites['young adult'] = cat["spirit_young_adult"]
+            new_cat.cat_sprites['adult'] = cat["spirit_adult"]
+            new_cat.cat_sprites['senior adult'] = cat["spirit_senior_adult"]
+            new_cat.cat_sprites['elder'] = cat["spirit_elder"]
             new_cat.eye_colour = cat["eye_colour"]
             new_cat.reverse = cat["reverse"]
             new_cat.white_patches = cat["white_patches"]
@@ -93,7 +93,7 @@ def json_load():
             new_cat.mate = cat["mate"]
             new_cat.dead = cat["dead"]
             new_cat.died_by = cat["died_by"] if "died_by" in cat else []
-            new_cat.age_sprites['dead'] = cat["spirit_dead"]
+            new_cat.cat_sprites['dead'] = cat["spirit_dead"]
             new_cat.experience = cat["experience"]
             new_cat.dead_for = cat["dead_moons"]
             new_cat.apprentice = cat["current_apprentice"]
@@ -257,17 +257,17 @@ def csv_load(all_cats):
                 game.switches[
                     'error_message'] = '4There was an error loading cat # ' + str(
                         attr[0])
-                the_cat.age_sprites['kitten'], the_cat.age_sprites[
+                the_cat.cat_sprites['kitten'], the_cat.cat_sprites[
                     'adolescent'] = int(attr[13]), int(attr[14])
                 game.switches[
                     'error_message'] = '5There was an error loading cat # ' + str(
                         attr[0])
-                the_cat.age_sprites['adult'], the_cat.age_sprites[
+                the_cat.cat_sprites['adult'], the_cat.cat_sprites[
                     'elder'] = int(attr[15]), int(attr[16])
                 game.switches[
                     'error_message'] = '6There was an error loading cat # ' + str(
                         attr[0])
-                the_cat.age_sprites['young adult'], the_cat.age_sprites[
+                the_cat.cat_sprites['young adult'], the_cat.cat_sprites[
                     'senior adult'] = int(attr[15]), int(attr[15])
                 game.switches[
                     'error_message'] = '7There was an error loading cat # ' + str(
@@ -319,7 +319,7 @@ def csv_load(all_cats):
                     if len(attr) >= 32:
                         # Is the cat dead
                         the_cat.dead = attr[32]
-                        the_cat.age_sprites['dead'] = attr[33]
+                        the_cat.cat_sprites['dead'] = attr[33]
                 game.switches[
                     'error_message'] = '13There was an error loading cat # ' + str(
                         attr[0])
