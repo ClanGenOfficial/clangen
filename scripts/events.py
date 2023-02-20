@@ -1,19 +1,25 @@
 import random
-from random import randrange
+import traceback
+try:
+    import ujson as json
+except ImportError:
+    import json
+from random import randrange, randint, getrandbits, choice
 
-from scripts.cat.cats import *
+from scripts.cat.appearance_utility import plural_acc_names
+from scripts.cat.cats import Cat, cat_class
+from scripts.cat.pelts import plant_accessories, wild_accessories
 from scripts.clan import HERBS
 from scripts.conditions import medical_cats_condition_fulfilled, get_amount_cat_for_one_medic
 from scripts.events_module.misc_events import MiscEvents
 from scripts.events_module.new_cat_events import NewCatEvents
-from scripts.events_module.relation_events import *
-from scripts.game_structure.load_cat import *
+from scripts.events_module.relation_events import Relation_Events
 from scripts.events_module.condition_events import Condition_Events
 from scripts.events_module.death_events import Death_Events
 from scripts.events_module.freshkill_pile_events import Freshkill_Events
 from scripts.event_class import Single_Event
-import traceback
-
+from scripts.game_structure.game_essentials import game
+from scripts.utility import get_alive_kits, get_med_cats, ceremony_text_adjust
 
 class Events():
     all_events = {}
@@ -48,8 +54,7 @@ class Events():
         self.new_cat_invited = False
 
         # This is a bandaid solution, and isn't perfect. But this will help reputation from growing without limit.
-        if game.clan.reputation > 100:
-            game.clan.reputation = 100
+        game.clan.reputation = min(game.clan.reputation, 100)  # <-- Returns the smallest, so caps at 100.
 
         game.patrolled.clear()
 
@@ -448,7 +453,7 @@ class Events():
             herbs['moss'] -= herb_amount
             if herbs['moss'] <= 0:
                 herbs.pop('moss')
-            event = f"The medicine den nests have been refreshed with new moss from the herb stores."
+            event = "The medicine den nests have been refreshed with new moss from the herb stores."
             game.herb_events_list.append(event)
             game.cur_events_list.append(Single_Event(event, "health"))
 
@@ -461,29 +466,29 @@ class Events():
             possible_events.extend([
                 f"Some sort of pest got into the herb stores and completely destroyed them. The {insert} will have to "
                 f"clean it out and start over anew.",
-                f"Abnormally strong winds blew through the camp last night and scattered the herb store into a "
-                f"useless state.",
+                "Abnormally strong winds blew through the camp last night and scattered the herb store into a "
+                "useless state.",
                 f"Some kind of blight has infected the herb stores. The {insert} have no choice but to clear out all "
                 f"the old herbs."
             ])
             if game.clan.current_season == 'Leaf-bare':
                 possible_events.extend([
-                    f"Freezing temperatures have not just affected the cats. It's also frostbitten the stored herbs. "
-                    f"They're useless now and will have to be replaced.",
+                    "Freezing temperatures have not just affected the cats. It's also frostbitten the stored herbs. "
+                    "They're useless now and will have to be replaced.",
                 ])
             elif game.clan.current_season == 'Newleaf':
                 possible_events.extend([
-                    f"The newleaf rain has left the air humid and the whole camp damp. The herb stores are found to "
-                    f"be growing mold and have to be thrown out. "
+                    "The newleaf rain has left the air humid and the whole camp damp. The herb stores are found to "
+                    "be growing mold and have to be thrown out. "
                 ])
             elif game.clan.current_season == 'Greenleaf' and game.clan.biome != 'Mountainous':
                 possible_events.extend([
-                    f"The persistent, dry heat managed to cause a small fire in the herb stores. While no one was "
-                    f"injured, the herbs are little more than ashes now."
+                    "The persistent, dry heat managed to cause a small fire in the herb stores. While no one was "
+                    "injured, the herbs are little more than ashes now."
                 ])
             elif game.clan.biome == 'Beach' and game.clan.current_season in ["Leaf-fall", "Leaf-bare"]:
                 possible_events.extend([
-                    f"A huge wave crashes into camp, leaving everyone soaked and the herb stores irreparably damaged."
+                    "A huge wave crashes into camp, leaving everyone soaked and the herb stores irreparably damaged."
                 ])
             game.clan.herbs.clear()
             chosen_event = choice(possible_events)
@@ -620,14 +625,14 @@ class Events():
                         ]
                         if game.clan.medicine_cat is not None:
                             possible_text.extend([
-                                f'The medicine cats worry about having enough herbs to treat their Clan\'s wounds.',
-                                f'The medicine cats wonder what StarClan thinks of the war.'
+                                'The medicine cats worry about having enough herbs to treat their Clan\'s wounds.',
+                                'The medicine cats wonder what StarClan thinks of the war.'
                             ])
                         war_notice = choice(possible_text)
                         self.time_at_war += 1
                         self.at_war = True
                     break
-                elif int(other_clan.relations) > 30:
+                if int(other_clan.relations) > 30:
                     other_clan.relations = 10
                 else:
                     self.at_war = False
@@ -785,8 +790,8 @@ class Events():
             return
 
         resource_dir = "resources/dicts/events/ceremonies/"
-        with open(f"{resource_dir}ceremony-master.json", 'r') as read_file:
-            self.CEREMONY_TXT = ujson.loads(read_file.read())
+        with open(f"{resource_dir}ceremony-master.json", encoding="ascii") as read_file:
+            self.CEREMONY_TXT = json.loads(read_file.read())
 
         self.ceremony_id_by_tag = {}
         # Sorting.
@@ -801,7 +806,7 @@ class Events():
         # ---------------------------------------------------------------------------- #
         #                      promote cats and add to event list                      #
         # ---------------------------------------------------------------------------- #
-        ceremony = []
+        #ceremony = []
         cat.status_change(promoted_to)
         involved_cats = [cat.ID]  # Clearly, the cat the ceremony is about is involved.
         game.ranks_changed_timeskip = True
@@ -926,8 +931,8 @@ class Events():
         random_honor = None
         if promoted_to == 'warrior':
             resource_dir = "resources/dicts/events/ceremonies/"
-            with open(f"{resource_dir}ceremony_traits.json", 'r') as read_file:
-                TRAITS = ujson.loads(read_file.read())
+            with open(f"{resource_dir}ceremony_traits.json", encoding="ascii") as read_file:
+                TRAITS = json.loads(read_file.read())
             try:
                 random_honor = choice(TRAITS[cat.trait])
             except KeyError:
@@ -1160,8 +1165,7 @@ class Events():
         elif 71 <= reputation <= 100:
             chance = base_chance - reputation
 
-        if chance < 1:
-            chance = 1
+        chance = max(chance, 1)
 
         # choose other cat
         possible_other_cats = list(filter(
@@ -1246,7 +1250,7 @@ class Events():
         if game.settings.get('disasters') and not triggered_death:
             if not random.getrandbits(9):  # 1/512
                 triggered_death = True
-                self.handle_disasters(cat)
+                self.handle_disasters()
 
         # extra death chance and injuries in expanded & cruel season
         if game.clan.game_mode != 'classic' and not int(random.random() * 500) and not cat.not_working():  # 1/400
@@ -1259,8 +1263,10 @@ class Events():
 
         return triggered_death
 
-    def handle_disasters(self, cat):
-        """Handles events when the setting of disasters is turned on"""
+    def handle_disasters(self):
+        """Handles events when the setting of disasters is turned on.
+
+        Affects random cats in the clan, no cat needs to be passed to this function."""
         alive_cats = list(filter(
             lambda kitty: (kitty.status != "leader"
                            and not kitty.dead
@@ -1289,9 +1295,9 @@ class Events():
             dead_names = []
             involved_cats = []
             dead_cats = random.sample(alive_cats, dead_count)
-            for cat in dead_cats:
-                dead_names.append(cat.name)
-                involved_cats.append(cat.ID)
+            for kitty in dead_cats:  # use "kitty" to not redefine "cat"
+                dead_names.append(kitty.name)
+                involved_cats.append(kitty.ID)
             names = f"{dead_names.pop(0)}"  # Get first
             if dead_names:
                 last_name = dead_names.pop()  # Get last
@@ -1325,8 +1331,8 @@ class Events():
             if dead_count >= 2:
                 event_string = f'{names}{choice(disaster)}'
                 if event_string == f'{names} are taken away by Twolegs.':
-                    for cat in dead_cats:
-                        self.handle_twoleg_capture(cat)
+                    for kitty in dead_cats:
+                        self.handle_twoleg_capture(kitty)
                     game.cur_events_list.append(Single_Event(event_string, "birth_death", involved_cats))
                     # game.birth_death_events_list.append(event_string)
                     return
@@ -1345,8 +1351,8 @@ class Events():
                 game.cur_events_list.append(Single_Event(event_string, "birth_death", involved_cats))
                 # game.birth_death_events_list.append(event_string)
 
-            for cat in dead_cats:
-                cat.die()
+            for poor_little_meowmeow in dead_cats:
+                poor_little_meowmeow.die()
 
     def handle_illnesses_or_illness_deaths(self, cat):
         """ 
@@ -1361,11 +1367,8 @@ class Events():
         # ---------------------------------------------------------------------------- #
         # if triggered_death is True then the cat will die
         triggered_death = False
-
         if game.clan.game_mode in ["expanded", "cruel season"]:
             triggered_death = self.condition_events.handle_illnesses(cat, game.clan.current_season)
-            return triggered_death
-
         elif game.clan.game_mode == "classic":
             # choose other cat
             other_cat = choice(list(Cat.all_cats.values()))
@@ -1374,8 +1377,7 @@ class Events():
                 other_cat = choice(list(Cat.all_cats.values()))
                 countdown -= 1
                 if countdown <= 0:
-                    return
-
+                    return triggered_death
             # check if clan has kits, if True then clan has kits
             alive_kits = list(filter(
                 lambda kitty: (kitty.age == "kitten"
@@ -1383,23 +1385,19 @@ class Events():
                                and not kitty.outside),
                 Cat.all_cats.values()
             ))
-
             # chance to kill leader
             if not int(random.random() * 100) and cat.status == 'leader' and not triggered_death:  # 1/100
                 self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
                 triggered_death = True
-
             # chance to die of old age
             if cat.moons > int(random.random() * 51) + 150 and not triggered_death:  # cat.moons > 150 <--> 200
                 self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
                 triggered_death = True
-
             # classic death chance
             if not int(random.random() * 500) and not triggered_death:  # 1/500
                 self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
                 triggered_death = True
-
-            return triggered_death
+        return triggered_death
 
     def handle_twoleg_capture(self, cat):
         cat.outside = True
@@ -1410,11 +1408,9 @@ class Events():
         # cat_class.other_cats[cat.ID] = cat
 
     def handle_outbreaks(self, cat):
-        """
-        try to infect some cats
-        """
+        """Try to infect some cats."""
         # check if the cat is ill, if game mode is classic, or if clan has sufficient med cats in expanded mode
-        amount_per_med = get_amount_cat_for_one_medic(game.clan)
+        #amount_per_med = get_amount_cat_for_one_medic(game.clan)
         if not cat.is_ill() or game.clan.game_mode == 'classic':
             return
 
@@ -1481,10 +1477,10 @@ class Events():
                 infected_names = []
                 involved_cats = []
                 infected_cats = random.sample(alive_cats, infected_count)
-                for cat in infected_cats:
-                    infected_names.append(str(cat.name))
-                    involved_cats.append(cat.ID)
-                    cat.get_ill(illness, event_triggered=True)  # SPREAD THE GERMS >:)
+                for sick_meowmeow in infected_cats:
+                    infected_names.append(str(sick_meowmeow.name))
+                    involved_cats.append(sick_meowmeow.ID)
+                    sick_meowmeow.get_ill(illness, event_triggered=True)  # SPREAD THE GERMS >:)
 
                 illness_name = str(illness).capitalize()
                 if illness == 'kittencough':
@@ -1558,10 +1554,10 @@ class Events():
 
     def check_and_promote_deputy(self):
         """Checks if a new deputy needs to be appointed, and appointed them if needed. """
-        if not game.clan.deputy or \
-                game.clan.deputy.dead or \
-                game.clan.deputy.outside or \
-                game.clan.deputy.retired:
+        if (not game.clan.deputy
+            or game.clan.deputy.dead
+            or game.clan.deputy.outside
+            or game.clan.deputy.retired):
             if game.settings.get('deputy') is True:
                 random_count = 0
                 while random_count < 30:
@@ -1570,11 +1566,11 @@ class Events():
                     if Cat.all_cats[random_cat].dead or Cat.all_cats[random_cat].outside:
                         random_count += 1
                         continue
-                    elif Cat.all_cats[random_cat].status != 'warrior':
+                    if Cat.all_cats[random_cat].status != 'warrior':
                         random_count += 1
                         continue
-                    elif len(Cat.all_cats[random_cat].former_apprentices) == 0 and \
-                            len(Cat.all_cats[random_cat].apprentice) == 0:
+                    if (len(Cat.all_cats[random_cat].former_apprentices) == 0
+                        and len(Cat.all_cats[random_cat].apprentice) == 0):
                         random_count += 1
                         continue
 
