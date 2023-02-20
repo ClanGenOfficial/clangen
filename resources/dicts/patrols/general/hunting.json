@@ -230,7 +230,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "gen_hunt_rabbit1",
+        "patrol_id": "gen_hunt_strangerabbit1",
         "biome": "Any",
         "season": "Any",
         "tags": [

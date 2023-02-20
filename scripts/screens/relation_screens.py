@@ -933,8 +933,8 @@ class ChooseMateScreen(Screens):
     def screen_switches(self):
         """Sets up the elements that are always on the page"""
         self.info = UITextBoxTweaked("If the cat has chosen a mate, they will stay loyal and not have kittens "
-                                     "with anyone else, when if having kittens in their relationship is "
-                                     "impossible. However, their change of having kittens if heightened, "
+                                     "with anyone else, even when having kittens in their relationship is "
+                                     "impossible. However, their chance of having kittens is heightened, "
                                      "when possible. If affairs are toggled on, the cats may not be loyal "
                                      "in their relationships. ", scale(pygame.Rect((360, 120), (880, 200))),
                                      object_id=get_text_box_theme("#cat_patrol_info_box"), line_spacing=0.95)
