@@ -491,36 +491,25 @@ def update_sprite(cat):
     # draw colour & style
     new_sprite = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
 
+    # setting the cat_sprite (bc this makes things much easier)
+    if cat.paralyzed:
+        if cat.age in ['kitten', 'adolescent']:
+            cat_sprite = str(17)
+        else:
+            if cat.pelt.length == 'long':
+                cat_sprite = str(16)
+            else:
+                cat_sprite = str(15)
+    else:
+        cat_sprite = str(cat.cat_sprites[cat.age])
+
+# generating the sprite
     try:
         if cat.pelt.name not in ['Tortie', 'Calico']:
-            if cat.paralyzed:
-                if cat.age in ['kitten', 'adolescent']:
-                    new_sprite.blit(sprites.sprites[cat.pelt.sprites[1] + cat.pelt.colour + 17], (0, 0))
-                else:
-                    if cat.pelt.length == 'long':
-                        new_sprite.blit(sprites.sprites[cat.pelt.sprites[1] + cat.pelt.colour + 16], (0, 0))
-                    else:
-                        new_sprite.blit(sprites.sprites[cat.pelt.sprites[1] + cat.pelt.colour + 15], (0, 0))
-            else:
-                new_sprite.blit(sprites.sprites[cat.pelt.sprites[1] + cat.pelt.colour + str(cat.cat_sprites[cat.age])],
-                                (0, 0))
+            new_sprite.blit(sprites.sprites[cat.pelt.sprites[1] + cat.pelt.colour + cat_sprite], (0, 0))
         else:
-            if cat.paralyzed:
-                if cat.age in ['kitten', 'adolescent']:
-                    new_sprite.blit(sprites.sprites[cat.tortiebase + cat.tortiecolour + 17], (0, 0))
-                    new_sprite.blit(sprites.sprites[cat.tortiepattern + cat.pattern + 17], (0, 0))
-                else:
-                    if cat.pelt.length == 'long':
-                        new_sprite.blit(sprites.sprites[cat.tortiebase + cat.tortiecolour + 16], (0, 0))
-                        new_sprite.blit(sprites.sprites[cat.tortiepattern + cat.pattern + 16], (0, 0))
-                    else:
-                        new_sprite.blit(sprites.sprites[cat.tortiebase + cat.tortiecolour + 15], (0, 0))
-                        new_sprite.blit(sprites.sprites[cat.tortiepattern + cat.pattern + 15], (0, 0))
-            else:
-                new_sprite.blit(sprites.sprites[cat.tortiebase + cat.tortiecolour + str(cat.cat_sprites[cat.age])],
-                                (0, 0))
-                new_sprite.blit(sprites.sprites[cat.tortiepattern + cat.pattern + str(cat.cat_sprites[cat.age])],
-                                (0, 0))
+            new_sprite.blit(sprites.sprites[cat.tortiebase + cat.tortiecolour + cat_sprite], (0, 0))
+            new_sprite.blit(sprites.sprites[cat.tortiepattern + cat.pattern + cat_sprite], (0, 0))
 
         # TINTS
         if cat.tint != "none" and cat.tint in Sprites.cat_tints["tint_colours"]:
@@ -536,164 +525,42 @@ def update_sprite(cat):
 
         # draw white patches
         if cat.white_patches is not None:
-            if cat.paralyzed:
-                if cat.age in ['kitten', 'adolescent']:
-                    new_sprite.blit(sprites.sprites['white' + cat.white_patches + 17], (0, 0))
-                else:
-                    if cat.pelt.length == 'long':
-                        new_sprite.blit(sprites.sprites['white' + cat.white_patches + 16], (0, 0))
-                    else:
-                        new_sprite.blit(sprites.sprites['white' + cat.white_patches + 15], (0, 0))
-            else:
-                new_sprite.blit(
-                    sprites.sprites['white' + cat.white_patches + str(cat.cat_sprites[cat.age])], (0, 0))
+            new_sprite.blit(sprites.sprites['white' + cat.white_patches + cat_sprite], (0, 0))
         # draw eyes & scars1
-        if cat.paralyzed:
-                if cat.age in ['kitten', 'adolescent']:
-                    new_sprite.blit(sprites.sprites['eyes' + cat.eye_colour + 17], (0, 0))
-                    if cat.eye_colour2 != None:
-                        new_sprite.blit(sprites.sprites['eyes2' + cat.eye_colour2 + 17], (0, 0))
-                    for scar in cat.scars:
-                        if scar in scars1:
-                            new_sprite.blit(sprites.sprites['scars' + scar + 17], (0, 0))
-                        if scar in scars3:
-                            new_sprite.blit(sprites.sprites['scars' + scar + 17], (0, 0))
-                else:
-                    if cat.pelt.length == 'long':
-                        new_sprite.blit(sprites.sprites['eyes' + cat.eye_colour + 16], (0, 0))
-                        if cat.eye_colour2 != None:
-                            new_sprite.blit(sprites.sprites['eyes2' + cat.eye_colour2 + 16], (0, 0))
-                        for scar in cat.scars:
-                            if scar in scars1:
-                                new_sprite.blit(sprites.sprites['scars' + scar + 16], (0, 0))
-                            if scar in scars3:
-                                new_sprite.blit(sprites.sprites['scars' + scar + 16], (0, 0))
-                    else:
-                        new_sprite.blit(sprites.sprites['eyes' + cat.eye_colour + 15], (0, 0))
-                        if cat.eye_colour2 != None:
-                            new_sprite.blit(sprites.sprites['eyes2' + cat.eye_colour2 + 15], (0, 0))
-                        for scar in cat.scars:
-                            if scar in scars1:
-                                new_sprite.blit(sprites.sprites['scars' + scar + 15], (0, 0))
-                            if scar in scars3:
-                                new_sprite.blit(sprites.sprites['scars' + scar + 15], (0, 0))
-        else:
-            new_sprite.blit(sprites.sprites['eyes' + cat.eye_colour + str(cat.cat_sprites[cat.age])], (0, 0))
-            if cat.eye_colour2 != None:
-                new_sprite.blit(
-                    sprites.sprites['eyes2' + cat.eye_colour2 + str(cat.cat_sprites[cat.age])], (0, 0))
-            for scar in cat.scars:
-                if scar in scars1:
-                    new_sprite.blit(sprites.sprites['scars' + scar + str(cat.cat_sprites[cat.age])], (0, 0))
-                if scar in scars3:
-                    new_sprite.blit(sprites.sprites['scars' + scar + str(cat.cat_sprites[cat.age])], (0, 0))
+        new_sprite.blit(sprites.sprites['eyes' + cat.eye_colour + cat_sprite], (0, 0))
+        if cat.eye_colour2 != None:
+            new_sprite.blit(sprites.sprites['eyes2' + cat.eye_colour2 + cat_sprite], (0, 0))
+        for scar in cat.scars:
+            if scar in scars1:
+                new_sprite.blit(sprites.sprites['scars' + scar + cat_sprite], (0, 0))
+            if scar in scars3:
+                new_sprite.blit(sprites.sprites['scars' + scar + cat_sprite], (0, 0))
 
         # draw line art
         if game.settings['shaders'] and not cat.dead:
-            if cat.paralyzed:
-                if cat.age in ['kitten', 'adolescent']:
-                    new_sprite.blit(sprites.sprites['shaders' + 17], (0, 0), special_flags=pygame.BLEND_RGB_MULT)
-                    new_sprite.blit(sprites.sprites['lighting' + 17], (0, 0))
-                else:
-                    if cat.pelt.length == 'long':
-                        new_sprite.blit(sprites.sprites['shaders' + 16], (0, 0), special_flags=pygame.BLEND_RGB_MULT)
-                        new_sprite.blit(sprites.sprites['lighting' + 16], (0, 0))
-                    else:
-                        new_sprite.blit(sprites.sprites['shaders' + 15], (0, 0), special_flags=pygame.BLEND_RGB_MULT)
-                        new_sprite.blit(sprites.sprites['lighting' + 15], (0, 0))
-            else:
-                new_sprite.blit(sprites.sprites['shaders' + str(cat.cat_sprites[cat.age])], (0, 0), special_flags=pygame.BLEND_RGB_MULT)
-                new_sprite.blit(sprites.sprites['lighting' + str(cat.cat_sprites[cat.age])], (0, 0))
+            new_sprite.blit(sprites.sprites['shaders' + cat_sprite], (0, 0), special_flags=pygame.BLEND_RGB_MULT)
+            new_sprite.blit(sprites.sprites['lighting' + cat_sprite], (0, 0))
 
         if not cat.dead:
-            if cat.paralyzed:
-                if cat.age in ['kitten', 'adolescent']:
-                    new_sprite.blit(sprites.sprites['lines' + 17], (0, 0))
-                else:
-                    if cat.pelt.length == 'long':
-                        new_sprite.blit(sprites.sprites['lines' + 16], (0, 0))
-                    else:
-                        new_sprite.blit(sprites.sprites['lines' + 15], (0, 0))
-            else:
-                new_sprite.blit(sprites.sprites['lines' + str(cat.cat_sprites[cat.age])], (0, 0))
+            new_sprite.blit(sprites.sprites['lines' + cat_sprite], (0, 0))
         elif cat.df:
-            if cat.paralyzed:
-                if cat.age in ['kitten', 'adolescent']:
-                    new_sprite.blit(sprites.sprites['lineartdf' + 17], (0, 0))
-                else:
-                    if cat.pelt.length == 'long':
-                        new_sprite.blit(sprites.sprites['lineartdf' + 16], (0, 0))
-                    else:
-                        new_sprite.blit(sprites.sprites['lineartdf' + 15], (0, 0))
-            else:
-                new_sprite.blit(sprites.sprites['lineartdf' + str(cat.cat_sprites[cat.age])], (0, 0))
+            new_sprite.blit(sprites.sprites['lineartdf' + cat_sprite], (0, 0))
         elif cat.dead:
-            if cat.paralyzed:
-                if cat.age in ['kitten', 'adolescent']:
-                    new_sprite.blit(sprites.sprites['lineartdead' + 17], (0, 0))
-                else:
-                    if cat.pelt.length == 'long':
-                        new_sprite.blit(sprites.sprites['lineartdead' + 16], (0, 0))
-                    else:
-                        new_sprite.blit(sprites.sprites['lineartdead' + 15], (0, 0))
-            else:
-                new_sprite.blit(sprites.sprites['lineartdead' + str(cat.cat_sprites[cat.age])], (0, 0))
+            new_sprite.blit(sprites.sprites['lineartdead' + cat_sprite], (0, 0))
         # draw skin and scars2
         blendmode = pygame.BLEND_RGBA_MIN
-        if cat.paralyzed:
-            if cat.age in ['kitten', 'adolescent']:
-                new_sprite.blit(sprites.sprites['skin' + cat.skin + 17], (0, 0))
-                for scar in cat.scars:
-                    if scar in scars2:
-                        new_sprite.blit(sprites.sprites['scars' + scar + 17], (0, 0), special_flags=blendmode)
-            else:
-                if cat.pelt.length == 'long':
-                    new_sprite.blit(sprites.sprites['skin' + cat.skin + 16], (0, 0))
-                    for scar in cat.scars:
-                        if scar in scars2:
-                            new_sprite.blit(sprites.sprites['scars' + scar + 16], (0, 0), special_flags=blendmode)
-                else:
-                    new_sprite.blit(sprites.sprites['skin' + cat.skin + 15], (0, 0))
-                    for scar in cat.scars:
-                        if scar in scars2:
-                            new_sprite.blit(sprites.sprites['scars' + scar + 15], (0, 0), special_flags=blendmode)
-        else:
-            new_sprite.blit(sprites.sprites['skin' + cat.skin + str(cat.cat_sprites[cat.age])], (0, 0))
-            for scar in cat.scars:
-                if scar in scars2:
-                    new_sprite.blit(sprites.sprites['scars' + scar + str(cat.cat_sprites[cat.age])], (0, 0), special_flags=blendmode)
+        new_sprite.blit(sprites.sprites['skin' + cat.skin + cat_sprite], (0, 0))
+        for scar in cat.scars:
+            if scar in scars2:
+                new_sprite.blit(sprites.sprites['scars' + scar + cat_sprite], (0, 0), special_flags=blendmode)
 
         # draw accessories        
-        if cat.paralyzed:
-            if cat.age in ['kitten', 'adolescent']:
-                if cat.accessory in plant_accessories:
-                    new_sprite.blit(sprites.sprites['acc_herbs' + cat.accessory + 17], (0, 0))
-                elif cat.accessory in wild_accessories:
-                    new_sprite.blit(sprites.sprites['acc_wild' + cat.accessory + 17], (0, 0))
-                elif cat.accessory in collars:
-                    new_sprite.blit(sprites.sprites['collars' + cat.accessory + 17], (0, 0))
-            else:
-                if cat.pelt.length == 'long':
-                    if cat.accessory in plant_accessories:
-                        new_sprite.blit(sprites.sprites['acc_herbs' + cat.accessory + 16], (0, 0))
-                    elif cat.accessory in wild_accessories:
-                        new_sprite.blit(sprites.sprites['acc_wild' + cat.accessory + 16], (0, 0))
-                    elif cat.accessory in collars:
-                        new_sprite.blit(sprites.sprites['collars' + cat.accessory + 16], (0, 0))
-                else:
-                    if cat.accessory in plant_accessories:
-                        new_sprite.blit(sprites.sprites['acc_herbs' + cat.accessory + 15], (0, 0))
-                    elif cat.accessory in wild_accessories:
-                        new_sprite.blit(sprites.sprites['acc_wild' + cat.accessory + 15], (0, 0))
-                    elif cat.accessory in collars:
-                        new_sprite.blit(sprites.sprites['collars' + cat.accessory + 15], (0, 0))
-        else:
-            if cat.accessory in plant_accessories:
-                new_sprite.blit(sprites.sprites['acc_herbs' + cat.accessory + str(cat.cat_sprites[cat.age])], (0, 0))
-            elif cat.accessory in wild_accessories:
-                new_sprite.blit(sprites.sprites['acc_wild' + cat.accessory + str(cat.cat_sprites[cat.age])], (0, 0))
-            elif cat.accessory in collars:
-                new_sprite.blit(sprites.sprites['collars' + cat.accessory + str(cat.cat_sprites[cat.age])], (0, 0))
+        if cat.accessory in plant_accessories:
+            new_sprite.blit(sprites.sprites['acc_herbs' + cat.accessory + cat_sprite], (0, 0))
+        elif cat.accessory in wild_accessories:
+            new_sprite.blit(sprites.sprites['acc_wild' + cat.accessory + cat_sprite], (0, 0))
+        elif cat.accessory in collars:
+            new_sprite.blit(sprites.sprites['collars' + cat.accessory + cat_sprite], (0, 0))
     except (TypeError, KeyError):
         logger.exception("Failed to load sprite")
 
