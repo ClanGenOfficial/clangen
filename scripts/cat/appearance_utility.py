@@ -452,9 +452,9 @@ def init_sprite(cat):
         init_pelt(cat)
     cat.age_sprites = {
         'newborn': 20,
-        'kitten': randint(0, 2),
+        'young': randint(0, 2),
         'adolescent': randint(3, 5),
-        'elder': randint(12, 14)
+        'senior': randint(12, 14)
     }
     cat.reverse = choice([True, False])
     # skin chances

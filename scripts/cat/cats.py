@@ -54,16 +54,17 @@ class Cat():
                      'strange', 'daydreamer', 'quiet'],
     }
     ages = [
-        'newborn', 'kitten', 'adolescent', 'young adult', 'adult', 'senior adult',
+        'newborn', 'young', 'adolescent', 'young adult', 'adult', 'senior adult',
         'elder', 'dead'
     ]
     age_moons = {
-        'kitten': [0, 5],
+        'newborn': [0, 0],
+        'young': [1, 5],
         'adolescent': [6, 11],
         'young adult': [12, 47],
         'adult': [48, 95],
         'senior adult': [96, 119],
-        'elder': [120, 300]
+        'senior': [120, 300]
     }
 
     # This in is in reverse order: top of the list at the bottom
@@ -240,13 +241,13 @@ class Cat():
         self.no_kits = False
         self.paralyzed = False
         self.age_sprites = {
-            "newborn": None,
-            "kitten": None,
+            "newborn": 20,
+            "young": None,
             "adolescent": None,
             "young adult": None,
             "adult": None,
             "senior adult": None,
-            "elder": None
+            "senior": None
         }
 
         self.opacity = 100
@@ -287,8 +288,10 @@ class Cat():
                     if moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1] + 1):
                         self.age = key_age
         else:
-            if status in ['kitten', 'elder']:
-                self.age = status
+            if status == 'kitten':
+                self.age = 'young'
+            elif status == 'elder':
+                self.age = 'senior'
             elif status == 'apprentice':
                 self.age = 'adolescent'
             elif status == 'medicine cat apprentice':
@@ -342,14 +345,14 @@ class Cat():
             # trans cat chances
             trans_chance = randint(0, 50)
             nb_chance = randint(0, 75)
-            if self.gender == "female" and not self.age == 'kitten':
+            if self.gender == "female" and not self.status == 'kitten':
                 if trans_chance == 1:
                     self.genderalign = "trans male"
                 elif nb_chance == 1:
                     self.genderalign = "nonbinary"
                 else:
                     self.genderalign = self.gender
-            elif self.gender == "male" and not self.age == 'kitten':
+            elif self.gender == "male" and not self.status == 'kitten':
                 if trans_chance == 1:
                     self.genderalign = "trans female"
                 elif nb_chance == 1:
@@ -370,7 +373,7 @@ class Cat():
             init_pattern(self)
 
             # experience and current patrol status
-            if self.age in ['kitten', 'newborn']:
+            if self.age in ['young', 'newborn']:
                 self.experience = 0
             elif self.age in ['adolescent']:
                 self.experience = randint(0, 19)
@@ -380,7 +383,7 @@ class Cat():
                 self.experience = randint(20, 50)
             elif self.age in ['senior adult']:
                 self.experience = randint(30, 60)
-            elif self.age in ['elder']:
+            elif self.age in ['senior']:
                 self.experience = randint(40, 70)
             else:
                 self.experience = 0
