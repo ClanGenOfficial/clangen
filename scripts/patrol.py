@@ -738,7 +738,7 @@ class Patrol():
                 # attempt injure outcome
                 elif fail_text[3]:
                     outcome = 3
-                
+
             if outcome == 2:
                 self.handle_deaths(self.patrol_random_cat)
             elif outcome == 4:
