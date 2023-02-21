@@ -601,14 +601,14 @@ class Patrol():
             self.patrol_total_experience / (2 * gm_modifier))
 
         if self.patrol_win_stat_cat:
-            success_chance = success_chance + 50
-            if "excellent" in self.patrol_win_stat_cat.skill:
+            success_chance = success_chance + 30
+            if ("great" or "very") in self.patrol_win_stat_cat.skill:
+                success_chance = success_chance + 5
+            elif ("fantastic" or "excellent" or "extremely") in self.patrol_win_stat_cat.skill:
                 success_chance = success_chance + 10
-            elif "fantastic" in self.patrol_win_stat_cat.skill:
-                success_chance = success_chance + 20
 
         if self.patrol_fail_stat_cat:
-            success_chance = success_chance - 50
+            success_chance = success_chance - 30
 
         c = randint(0, 100)
         outcome = int(random.getrandbits(4))
@@ -730,9 +730,14 @@ class Patrol():
                         outcome = 2
 
             # if /still/ no outcome is picked then double check that an outcome 0 is available,
-            # if it isn't, then injure the cat instead
+            # if it isn't, then try to injure and then kill the cat
             if not outcome and not fail_text[0]:
-                outcome = 3
+                # attempt death outcome
+                if fail_text[2]:
+                    outcome = 2
+                # attempt injure outcome
+                elif fail_text[3]:
+                    outcome = 3
 
             if outcome == 2:
                 self.handle_deaths(self.patrol_random_cat)

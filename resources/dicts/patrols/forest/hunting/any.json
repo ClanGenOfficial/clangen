@@ -1,5 +1,33 @@
 [
-
+{
+    "patrol_id": "fst_hunt_vole1",
+    "biome": "forest",
+    "season": "Any",
+    "tags": [
+        "hunting",
+        "medium_prey"
+    ],
+    "intro_text": "Your patrol comes across a vole nibbling at a seed.",
+    "success_text": [
+        "r_c drops into a crouch and lightly stalks towards the vole. They pause, waggling their haunches before pouncing. They catch the vole easily and deliver a killing bite to the back of its head.",
+        "r_c drops into a crouch and begins stalking forward. When they get close, the vole suddenly stops chewing and r_c takes the opportunity to pounce. They kill the prey quickly and lick the blood from their lips with satisfaction.",
+        "s_c drops into a crouch and has to consciously stop their tail from swaying in excitement as they stalk the prey. Once they think they're close enough, they give their haunches a little wiggle and leap. They catch the vole squarely between their paws and kill it quickly."
+    ],
+    "fail_text": [
+        "r_c drops into a crouch and begins to stalk forward. They're preparing to pounce when their paw lightly brushes a twig and the vole immediately takes off. They give chase, but the critter disappears into a burrow. Mousedung!"
+    ],
+    "decline_text": "Your patrol decides to look for other prey.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "win_skills": [
+        "great hunter",
+        "fantastic hunter"
+    ],
+    "min_cats": 1,
+    "max_cats": 3,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
 {
     "patrol_id": "fst_hunt_porcupine1",
     "biome": "forest",
@@ -67,7 +95,8 @@
         "quilled by a porcupine",
         "scar",
         "death",
-        "huge_prey2"
+        "huge_prey2",
+        "huge_prey3"
     ],
     "intro_text": "r_c encounters a porcupine, bristling with quills.",
     "decline_text": "The patrol steers clear of the porcupine, they don't have enough cats to confront this creature safely.",
@@ -183,6 +212,52 @@
     "max_cats": 6,
     "antagonize_text": "Finding a Twoleg kit wandering alone, the cats harass it until it flees squawking, it's blood on their claws.",
     "antagonize_fail_text": "The Twoleg kits wandering around are unimpressed by the patrol and chase the cats for fun."
+},
+{
+    "patrol_id": "fst_hunt_squirrelchase1",
+    "biome": "forest",
+    "season": "Any",
+    "tags": [
+        "hunting",
+        "injury",
+        "sprain",
+        "scar",
+        "medium_prey0",
+        "medium_prey1",
+        "large_prey2"
+    ],
+    "intro_text": "The patrol notices a commotion and finds two squirrels chasing each other across the forest floor.",
+    "decline_text": "The patrol decides there's probably easier prey to find elsewhere.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "success_text": [
+        "The squirrels are so distracted that the patrol is able to quickly catch them both.",
+        "The patrol springs onto the squirrels without a second thought, easily dispatching them.",
+        "s_c is quick on the jump! Though the squirrels notice the cats and begin scampering away, s_c easily cuts them off and kills both squirrels."
+    ],
+    "fail_text": [
+        "The squirrels are far too excited and quick - they slip right out from between the patrol's claws.",
+        "s_c runs at the squirrels before anyone else can pounce, laughing at the prey's antics and playfully jumping into the middle of their game.  The squirrels scatter away at the disturbance and disappear into the canopy.",
+        null,
+        "r_c tries to climb up after them but slips and falls, twisting their paw."
+    ],
+    "win_skills": [
+        "good hunter",
+        "great hunter",
+        "fantastic hunter"
+    ],
+    "fail_trait": [
+        "troublesome",
+        "childish",
+        "playful"
+    ],
+    "min_cats": 1,
+    "max_cats": 6,
+    "history_text": [
+        "r_c gained a scar after trying to chase some squirrels up a tree."
+    ],
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 },
 {
     "patrol_id": "fst_hunt_burrow1",
@@ -689,7 +764,7 @@
     "max_cats": 1
 },
 {
-    "patrol_id": "fst_hunt_solo1",
+    "patrol_id": "fst_hunt_huntassessment1",
     "biome": "forest",
     "season": "Any",
     "tags": [
@@ -699,6 +774,7 @@
         "scar",
         "medium_prey0",
         "large_prey1",
+        "large_prey2",
         "large_prey3",
         "no_fail_prey"
     ],
@@ -762,7 +838,7 @@
     "tags": [
         "hunting",
         "medium_prey0",
-        "large_prey1",
+        "medium_prey1",
         "large_prey2",
         "large_prey3",
         "no_fail_prey"
@@ -824,7 +900,7 @@
         "hunting",
         "deputy",
         "medium_prey0",
-        "large_prey1",
+        "medium_prey1",
         "large_prey2",
         "large_prey3",
         "no_fail_prey"
@@ -886,7 +962,7 @@
         "hunting",
         "leader",
         "medium_prey0",
-        "large_prey1",
+        "medium_prey1",
         "large_prey2",
         "large_prey3",
         "no_fail_prey"
@@ -949,6 +1025,7 @@
         "big_bite_injury",
         "scar",
         "small_prey0",
+        "small_prey1",
         "medium_prey2"
     ],
     "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from a nearby bush.",
@@ -956,7 +1033,7 @@
     "chance_of_success": 80,
     "exp": 10,
     "success_text": [
-        "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise.  They find themselves to be correct when they pounce into the bush and return to the patrol with the tasty morsel dangling from their mouth. One more for the fresh-kill pile!",
+        "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise.  They find themselves to be correct when they pounce into the bush and return to the patrol with the tasty morsel dangling from their mouth.",
         null,
         "p_l pads towards the bush to check on the noise when a rabbit suddenly bursts out!  s_c is quick to react and manages to snag the rabbit before it can disappear."
     ],
@@ -1003,6 +1080,7 @@
         "scar",
         "death",
         "small_prey0",
+        "small_prey1",
         "medium_prey2"
     ],
     "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from a nearby bush.",
@@ -1056,8 +1134,8 @@
     "tags": [
         "hunting",
         "gone",
-        "medium_prey0",
-        "medium_prey1"
+        "small_prey0",
+        "small_prey1"
     ],
     "intro_text": "Your patrol encounters a clearing where a lot of Twolegs linger.",
     "decline_text": "Your patrol decides to hunt elsewhere.",
@@ -1377,7 +1455,6 @@
         "small_prey",
         "romantic",
         "platonic",
-        "p_l_to_r_c",
         "no_app",
         "medium_prey0"
     ],
@@ -1436,7 +1513,7 @@
     ]
 },
 {
-    "patrol_id": "fst_hunt_gonetwolegden4",
+    "patrol_id": "fst_hunt_twolegdenappdare1",
     "biome": "forest",
     "season": "Any",
     "tags": [
@@ -1447,7 +1524,6 @@
         "romantic",
         "platonic",
         "two_apprentices",
-        "rel_two_apps",
         "medium_prey0"
     ],
     "intro_text": "Boldly, eyes daring app1 to say no, app2 suggests hunting by the Twoleg dens. Where apprentices are definitely not allowed.",
@@ -1525,7 +1601,7 @@
     ],
     "win_skills": ["smart", "very smart", "extremely smart"],
     "win_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "sneaky", "strange"],
-    "fail_skills": ["None"],
+    "fail_skills": null,
     "fail_trait": ["adventurous", "bold", "confident", "daring", "playful"],
     "min_cats": 1,
     "max_cats": 1,
@@ -1604,7 +1680,7 @@
         "retirement",
         "blunt_force_injury",
         "hunting",
-        "large_prey"
+        "medium_prey"
     ],
     "intro_text": "The patrol comes across a thunderpath running through the forest.",
     "decline_text": "They decide it is better not to cross.",
@@ -1666,7 +1742,7 @@
         "blunt_force_injury",
         "hunting",
         "cruel_season",
-        "large_prey"
+        "medium_prey"
     ],
     "intro_text": "The patrol comes across a thunderpath running through the forest.",
     "decline_text": "They decide it is better not to cross.",
@@ -1792,7 +1868,7 @@
         "blunt_force_injury",
         "hunting",
         "cruel_season",
-        "large_prey"
+        "medium_prey"
     ],
     "intro_text": "The patrol comes across a thunderpath running through the forest.",
     "decline_text": "They decide it is better not to cross.",
@@ -1849,7 +1925,9 @@
     "season": "Any",
     "tags": [
         "hunting",
-        "medium_prey"
+        "small_prey0",
+        "small_prey1",
+        "medium_prey2"
     ],
     "intro_text": "As r_c tears through the forest, stretching their legs on a run, they spot movement out of the corner of their eye.",
     "decline_text": "They keep going, not wanting to slow down.",
@@ -1894,7 +1972,7 @@
     "tags": [
         "hunting",
         "apprentice",
-        "medium_prey"
+        "small_prey"
     ],
     "intro_text": "As app1 tears through the forest, stretching their legs on a run, they spot movement out of the corner of their eye.",
     "decline_text": "They keep going, not wanting to slow down.",
@@ -1938,7 +2016,9 @@
         "romantic",
         "platonic",
         "respect",
-        "medium_prey"
+        "small_prey0",
+        "small_prey1",
+        "medium_prey2"
     ],
     "intro_text": "As r_c tears through the forest with p_l, stretching their legs on a run, they spot movement out of the corner of their eye.",
     "decline_text": "They keep going, not wanting to slow down.",
@@ -1982,7 +2062,7 @@
         "platonic",
         "respect",
         "two_apprentices",
-        "medium_prey"
+        "small_prey"
     ],
     "intro_text": "As app1 tears through the forest with app2, stretching their legs on a run, they spot movement out of the corner of their eye.",
     "decline_text": "They keep going, not wanting to slow down.",
@@ -2009,6 +2089,90 @@
     ],
     "min_cats": 2,
     "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_hunt_lillizard1",
+    "biome": "forest",
+    "season": "Any",
+    "tags": [
+        "hunting",
+        "platonic",
+        "comfort",
+        "small_prey"
+    ],
+    "intro_text": "Something skitters across the leaf litter, catching the patrols eyes. A little lizard!",
+    "decline_text": "Startled by the lizard, the patrol watches it scurry away.",
+    "chance_of_success": 60,
+    "exp": 15,
+    "success_text": [
+        "r_c pounces on the little creature and carries the nice mouthful home.",
+        "The lizard drops its tail, and r_c dives for it, while p_l pounces for the lizard. Surely this counts for two catches? Neither of them cares much, and it's a happy afternoon hunting together.",
+        "s_c is basically on top of the skittering lizard, and ends up doing a ridiculous hop to come down on it with claws extended. r_c compliments them on the catch with a laugh in their meow, and s_c has to agree with them, purring with laughter."
+    ],
+    "fail_text": [
+        "The patrol is unable to catch the small reptile quick enough and the little lizard lives another day.",
+        "r_c and p_l go for the prey at the same time, bonking their heads together. Not a bad collision, and both of them are mature enough to let it go, but neither is pleased to have missed an easy catch."
+    ],
+    "win_skills": [
+        "good hunter",
+        "great hunter",
+        "fantastic hunter"
+    ],
+    "win_trait": [
+        "None"
+    ],
+    "fail_skills": [
+        "None"
+    ],
+    "fail_trait": [
+        "None"
+    ],
+    "min_cats": 2,
+    "max_cats": 3,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_hunt_lillizard2",
+    "biome": "forest",
+    "season": "Any",
+    "tags": [
+        "hunting",
+        "rel_two_apps",
+        "platonic",
+        "comfort",
+        "romantic",
+        "two_apprentices",
+        "apprentice",
+        "small_prey"
+    ],
+    "intro_text": "Something skitters across the leaf litter, catching the patrol's eyes. A little lizard!",
+    "decline_text": "Startled by the lizard, the patrol watches it scurry away.",
+    "chance_of_success": 60,
+    "exp": 15,
+    "success_text": [
+        "app1 pounces on the little creature and misses, but they don't seem overly concerned, stopping nearly every step to chat to app2, who's just as keen to talk.",
+        "app1 and app2 go for the prey at the same time, bonking their heads together. It makes both of them laugh while apologizing, and they don't leave each other's side for the rest of the patrol, apologies turning to chatting turning to whispered conversations."
+    ],
+    "fail_text": [
+        "The patrol is unable to catch the small reptile quick enough and the little lizard lives another day."
+    ],
+    "win_skills": [
+        "None"
+    ],
+    "win_trait": [
+        "None"
+    ],
+    "fail_skills": [
+        "None"
+    ],
+    "fail_trait": [
+        "None"
+    ],
+    "min_cats": 2,
+    "max_cats": 3,
     "antagonize_text": null,
     "antagonize_fail_text": null
 }

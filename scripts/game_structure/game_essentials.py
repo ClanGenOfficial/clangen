@@ -169,6 +169,7 @@ class Game():
         'fading': True,
         "save_faded_copy": False,
         'favorite sub tab': None,
+        'gore': False,
         'first_cousin_mates': True,
         'become_mediator': False,
         'fullscreen': False,
@@ -196,6 +197,7 @@ class Game():
         'favorite sub tab': sub_tab_list,
         'fading': [True, False],
         'save_faded_copy': [False, True],
+        "gore": [False, True],
         'first_cousin_mates': [True, False],
         'become_mediator': [False, True],
         'fullscreen': [False, True]

@@ -111,7 +111,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "mtn_hunt_solo1",
+        "patrol_id": "mtn_hunt_huntassessment1",
         "biome": "mountainous",
         "season": "Any",
         "tags": [
@@ -399,8 +399,7 @@
             "scar",
             "death",
             "medium_prey0",
-            "medium_prey1",
-            "large_prey3"
+            "medium_prey2"
         ],
         "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from just beyond a rock fall.",
         "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",

@@ -1127,11 +1127,11 @@ class ProfileScreen(Screens):
 
         # check if cat has any mentor influence, else assign None
         if len(self.the_cat.mentor_influence) >= 1:
-            influenced_skill = str(self.the_cat.mentor_influence[0])
+            influenced_trait = str(self.the_cat.mentor_influence[0])
             if len(self.the_cat.mentor_influence) >= 2:
-                influenced_trait = str(self.the_cat.mentor_influence[1])
+                influenced_skill = str(self.the_cat.mentor_influence[1])
             else:
-                influenced_trait = None
+                influenced_skill = None
         else:
             game.switches['sub_tab_group'] = 'life sub tab'
             influenced_trait = None
