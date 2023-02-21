@@ -95,7 +95,7 @@ while True:
 
         if event.type == pygame.QUIT:
             # Dont display if on the start screen
-            if game.switches['cur_screen'] not in ['start screen']:
+            if game.switches['cur_screen'] in ['start screen']:
                 pygame.display.quit()
                 pygame.quit()
                 sys.exit()
