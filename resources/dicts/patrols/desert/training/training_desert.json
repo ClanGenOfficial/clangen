@@ -339,7 +339,7 @@
 		]
 	},
 	{
-		"patrol_id":"dst_train_solo1",
+		"patrol_id":"dst_train_soloapp1",
 		"biome":"desert",
 		"season":"Any",
 		"tags":[

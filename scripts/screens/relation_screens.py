@@ -451,7 +451,10 @@ class ViewChildrenScreen(Screens):
             elif event.ui_element in self.offspring_elements.values() or event.ui_element in self.sibling_elements.values() \
                     or event.ui_element in self.family_elements.values():
                 game.switches['cat'] = event.ui_element.return_cat_id()
-                self.change_screen("profile screen")
+                if pygame.key.get_mods() & pygame.KMOD_SHIFT:
+                    self.change_screen('profile screen')
+                else:
+                    self.family_setup()
             elif event.ui_element == self.previous_cat_button:
                 game.switches['cat'] = self.previous_cat
                 self.family_setup()

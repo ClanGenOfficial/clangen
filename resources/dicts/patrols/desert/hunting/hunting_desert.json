@@ -134,7 +134,7 @@
         "max_cats": 1
     },
     {
-        "patrol_id": "dst_hunt_solo1",
+        "patrol_id": "dst_hunt_huntassessment1",
         "biome": "desert",
         "season": "Any",
         "tags": [
