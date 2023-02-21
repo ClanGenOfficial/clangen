@@ -215,7 +215,7 @@ class SettingsScreen(Screens):
                 "Tiri<br>" \
                 "Tybaxel<br>" \
                 "MathKangaroo (Victor)<br>" \
-                "ZtheCorgi<br>" \
+                "ZtheCorgi (Zabe)<br>" \
                 "Charlie<br>" \
                 "green?<br>" \
                 "Owanora<br>" \
@@ -225,7 +225,17 @@ class SettingsScreen(Screens):
                 "Chase<br>" \
                 "wood pank<br>" \
                 "grif<br>" \
-                "beejeans<br></i>" \
+                "beejeans<br>" \
+                "Irony-Dragon<br>" \
+                "Kassi<br>" \
+                "milly!<br>" \
+                "coyotedawn<br>" \
+                "paradigox<br>" \
+                "Fruit Punk<br>" \
+                "luna<br>" \
+                "clownthoughts<br>" \
+                "thyfrankie<br>" \
+                "Perrio<br></i>" \
                 "Thank you to the beta testers and all those who have helped with development.<br><br>" \
                 "<b>Thank you for playing!!</b><br><br>" \
                 "Code is licensed under <a href=https://www.mozilla.org/en-US/MPL/2.0/>Mozilla Public License Version 2.0</a><br>" \
