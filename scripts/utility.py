@@ -649,7 +649,39 @@ def update_sprite(cat):
                     new_sprite.blit(sprites.sprites['scars' + scar +
                                                     str(cat.age_sprites[cat.age])], (0, 0), special_flags=blendmode)
 
-        # draw accessories        
+        # Apply fading fog
+        #if cat.opacity < 100 and not cat.prevent_fading and game.settings["fading"]:
+        if 1:
+            if cat.age == 'elder' or (cat.pelt.length == 'long' and cat.age not in ['kitten', 'adolescent']):
+                offset = 9
+            else:
+                offset = 0
+
+            if 100 > cat.opacity > 80:
+                # Stage 1
+                pass
+            elif 79 > cat.opacity > 50:
+                # Stage 2
+                offset += 15
+            elif cat.opacity < 50:
+                # Stage 3
+                offset += 30
+
+            new_sprite.blit(sprites.sprites['fademask' + str(cat.age_sprites[cat.age] + offset)], (0, 0),
+                            special_flags=pygame.BLEND_RGBA_MULT)
+
+            if cat.df:
+                temp = sprites.sprites['fadedf' + str(cat.age_sprites[cat.age] + offset)].copy()
+                temp.blit(new_sprite, (0, 0))
+                new_sprite = temp
+            else:
+                temp = sprites.sprites['fadestarclan' + str(cat.age_sprites[cat.age] + offset)].copy()
+                temp.blit(new_sprite, (0, 0))
+                new_sprite = temp
+
+
+
+        # draw accessories
         if cat.age == 'elder' or (cat.pelt.length == 'long' and cat.age not in ['kitten', 'adolescent']):
             if cat.accessory in plant_accessories:
                 new_sprite.blit(
@@ -698,25 +730,6 @@ def update_sprite(cat):
     """# Apply opacity
     if cat.opacity < 100 and not cat.prevent_fading and game.settings["fading"]:
         new_sprite = apply_opacity(new_sprite, cat.opacity)"""
-
-    # Apply fading fog
-    if cat.opacity < 100 and not cat.prevent_fading and game.settings["fading"]:
-        if cat.age == 'elder' or (cat.pelt.length == 'long' and cat.age not in ['kitten', 'adolescent']):
-            offset = 9
-        else:
-            offset = 0
-
-        if 100 > cat.opacity > 80:
-            # Stage 1
-            pass
-        elif 79 > cat.opacity > 50:
-            # Stage 2
-            offset += 15
-        elif cat.opacity < 50:
-            # Stage 3
-            offset += 30
-
-        new_sprite.blit(sprites.sprites['fadefog' + str(cat.age_sprites[cat.age] + offset)], (0, 0))
 
     # reverse, if assigned so
     if cat.reverse:
