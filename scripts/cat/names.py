@@ -33,7 +33,7 @@ class Name():
         "stream", "strike", "stripe", "sun", "swipe", "swoop", "talon", "tooth", "thistle", "thorn", "throat", "toe", "tree", 
         "throat", "watcher", "water", "wave", "whisper", "whistle", "willow", "wind", "wing", "wish"
         "dragon", "earth", "ghost", "magic", "ground", "king", "guardian", "queen", "knight", "mind", "seeker", "soul", "god", "emperor",
-        "hyena", "lurker", "hunter", "vessel", "forest", "wolf"
+        "hyena", "lurker", "hunter", "vessel", "forest", "wolf", "air", "energy", "time", "eternity", "instinct"
     ]
 
     pelt_suffixes = {
