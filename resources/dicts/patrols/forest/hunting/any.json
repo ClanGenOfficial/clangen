@@ -14,7 +14,12 @@
         "s_c drops into a crouch and has to consciously stop their tail from swaying in excitement as they stalk the prey. Once they think they're close enough, they give their haunches a little wiggle and leap. They catch the vole squarely between their paws and kill it quickly."
     ],
     "fail_text": [
-        "r_c drops into a crouch and begins to stalk forward. They're preparing to pounce when their paw lightly brushes a twig and the vole immediately takes off. They give chase, but the critter disappears into a burrow. Mousedung!"
+        "r_c drops into a crouch and begins to stalk forward. They're preparing to pounce when their paw lightly brushes a twig and the vole immediately takes off. They give chase, but the critter disappears into a burrow. Mousedung!",
+        null,
+        null,
+        null,
+        null,
+        null
     ],
     "decline_text": "Your patrol decides to look for other prey.",
     "chance_of_success": 50,
@@ -54,7 +59,9 @@
         "r_c leaps back just as the porcupine whips its tail towards them! That was close! The patrol gives the porcupine a wide berth.",
         "s_c gets closer to the porcupine, intending to impress the rest of the patrol with their bravery. All the cats recoil as a horrible smell comes from the porcupine and they back off before it can charge at them.  The patrol returns to camp, the smelly evidence of their encounter still clinging to s_c's pelt.",
         "r_c doesn't react quickly enough to the porcupine's warning. It charges sideways at them, its quills ready to impale! r_c is badly injured and dies a few days later from the wounds.",
-        "The porcupine whips around, digging the quills of its tail into r_c! The patrol bolts away and returns to camp, r_c with a nose full of quills."
+        "The porcupine whips around, digging the quills of its tail into r_c! The patrol bolts away and returns to camp, r_c with a nose full of quills.",
+        null,
+        null
     ],
     "win_skills": [
         "great hunter",
@@ -112,7 +119,9 @@
         "r_c leaps back just as the porcupine whips its tail towards them! That was close! They decide to give the porcupine a wide berth.",
         null,
         "r_c doesn't react quickly enough to the porcupine's warning. It charges sideways at them, its quills ready to impale! r_c is badly injured and dies a few days later from the wounds.",
-        "The porcupine whips around, digging the quills of its tail into r_c! r_c returns to camp with a nose full of quills and a wounded pride."
+        "The porcupine whips around, digging the quills of its tail into r_c! r_c returns to camp with a nose full of quills and a wounded pride.",
+        null,
+        null
     ],
     "win_skills": [
         "fantastic hunter",
@@ -146,10 +155,18 @@
     ],
     "intro_text": "While hunting, r_c comes across a rabbit burrow.",
     "success_text": [
-        "r_c catches the rabbit hiding in its burrow."
+        "r_c catches the rabbit hiding in its burrow.",
+        null,
+        null,
+        null
     ],
     "fail_text": [
-        "The burrow is abandoned, with no prey to be found in there."
+        "The burrow is abandoned, with no prey to be found in there.",
+        null,
+        null,
+        null,
+        null,
+        null
     ],
     "decline_text": "r_c decides to ignore the burrow.",
     "chance_of_success": 50,
@@ -178,10 +195,17 @@
     "exp": 10,
     "success_text": [
         "The patrol has a successful hunt, avoiding any Twolegs.",
-        "The patrol finds some astonishingly fat chickens running around the Twoleg nest, and helps themselves to one."
+        "The patrol finds some astonishingly fat chickens running around the Twoleg nest, and helps themselves to one.",
+        null,
+        null
     ],
     "fail_text": [
-        "Twoleg kits scare the patrol away."
+        "Twoleg kits scare the patrol away.",
+        null,
+        null,
+        null,
+        null,
+        null
     ],
     "min_cats": 1,
     "max_cats": 3,
@@ -203,10 +227,17 @@
     "exp": 10,
     "success_text": [
         "The patrol cats split up, using sentries to ensure that the Twolegs don't disturb their hunts.",
-        "The patrol finds some astonishingly fat chickens running around the Twoleg nest, and helps themselves to as many as they can carry."
+        "The patrol finds some astonishingly fat chickens running around the Twoleg nest, and helps themselves to as many as they can carry.",
+        null,
+        null
     ],
     "fail_text": [
-        "Twoleg kits stomp through the woods, scaring away prey and ruining the hunt."
+        "Twoleg kits stomp through the woods, scaring away prey and ruining the hunt.",
+        null,
+        null,
+        null,
+        null,
+        null
     ],
     "min_cats": 4,
     "max_cats": 6,
@@ -233,13 +264,16 @@
     "success_text": [
         "The squirrels are so distracted that the patrol is able to quickly catch them both.",
         "The patrol springs onto the squirrels without a second thought, easily dispatching them.",
-        "s_c is quick on the jump! Though the squirrels notice the cats and begin scampering away, s_c easily cuts them off and kills both squirrels."
+        "s_c is quick on the jump! Though the squirrels notice the cats and begin scampering away, s_c easily cuts them off and kills both squirrels.",
+        null
     ],
     "fail_text": [
         "The squirrels are far too excited and quick - they slip right out from between the patrol's claws.",
         "s_c runs at the squirrels before anyone else can pounce, laughing at the prey's antics and playfully jumping into the middle of their game.  The squirrels scatter away at the disturbance and disappear into the canopy.",
         null,
-        "r_c tries to climb up after them but slips and falls, twisting their paw."
+        "r_c tries to climb up after them but slips and falls, twisting their paw.",
+        null,
+        null
     ],
     "win_skills": [
         "good hunter",
@@ -276,13 +310,17 @@
     "exp": 10,
     "success_text": [
         "The patrol flushes a gopher out of the burrow! More fresh-kill!",
-        "Inside the burrow is a rabbit, curled up and alone. Perhaps a buck recently kicked from his birth warren? Whatever the case, this rabbit will feed the Clan now."
+        "Inside the burrow is a rabbit, curled up and alone. Perhaps a buck recently kicked from his birth warren? Whatever the case, this rabbit will feed the Clan now.",
+        null,
+        null
     ],
     "fail_text": [
         "The burrow turns out to be empty, the smell nothing but stale air and a slight tang of sickness. Whatever used to live here is gone now.  Checking the burrow was a waste of time.",
         "s_c sticks their nose into the hole only to come face to face with a skunk! The whole patrol is sprayed!",
         null,
-        "Oh no! The burrow was home to a wolverine, now angry at the disturbance. The patrol bolts away to escape its wrath, but r_c doesn't quite move fast enough and is caught in its claws until another cat turns back to help."
+        "Oh no! The burrow was home to a wolverine, now angry at the disturbance. The patrol bolts away to escape its wrath, but r_c doesn't quite move fast enough and is caught in its claws until another cat turns back to help.",
+        null,
+        null
     ],
     "fail_trait": [
         "bold",
@@ -314,12 +352,17 @@
     "exp": 10,
     "success_text": [
         "r_c flushes a gopher out of the burrow! More fresh-kill!",
-        "Inside the burrow is a rabbit, curled up and alone. Perhaps a buck recently kicked from his birth warren? Whatever the case, this rabbit will feed the Clan now."
+        "Inside the burrow is a rabbit, curled up and alone. Perhaps a buck recently kicked from his birth warren? Whatever the case, this rabbit will feed the Clan now.",
+        null,
+        null
     ],
     "fail_text": [
         "The burrow turns out to be empty, the smell nothing but stale air and a slight tang of sickness. Whatever used to live here is gone now.  Checking the burrow was a waste of time.",
         "s_c sticks their nose into the hole only to come face to face with a skunk! The whole patrol is sprayed!",
-        "Oh no! The burrow was home to a wolverine, now angry at the disturbance. r_c bolts away to escape its wrath, but doesn't quite move fast enough and is caught in its claws.  With no other cats around to help, r_c is quickly killed by the predator."
+        "Oh no! The burrow was home to a wolverine, now angry at the disturbance. r_c bolts away to escape its wrath, but doesn't quite move fast enough and is caught in its claws.  With no other cats around to help, r_c is quickly killed by the predator.",
+        null,
+        null,
+        null
     ],
     "fail_trait": [
         "bold",
@@ -366,7 +409,9 @@
         "The noise leads them to a coyote that's busy stripping the last of the meat from a carcass. The patrol waits till the coyote leaves, hoping to pick up any leftovers, but unfortunately the bones have been thoroughly cleaned.",
         "They track the noise to a coyote. Before the patrol can investigate further, s_c whimpers in terror at the sight of the beast and dashes away.  The patrol follows anxiously, not wanting to lose sight of their Clanmate while a coyote is about.",
         "The patrol finds a coyote at the source of the noise. It seems to be scavenging from an old carcass and upon seeing the cats, proves to be fiercely protective of its meal.  The patrol doesn't move fast enough and r_c is killed before they can run.",
-        "The sound leads them to a coyote, scavenging from a carcass. The coyote notices them before they can hide and lunges, making it clear that this food has been claimed.  r_c is momentarily caught in its jaws before the patrol retaliates and drives it off their Clanmate."
+        "The sound leads them to a coyote, scavenging from a carcass. The coyote notices them before they can hide and lunges, making it clear that this food has been claimed.  r_c is momentarily caught in its jaws before the patrol retaliates and drives it off their Clanmate.",
+        null,
+        null
     ],
     "win_skills": [
         "excellent fighter"
@@ -423,7 +468,9 @@
         "The noise leads them to a coyote that's busy stripping the last of the meat from a carcass. The patrol waits till the coyote leaves, hoping to pick up any leftovers, but unfortunately the bones have been thoroughly cleaned.",
         "They track the noise to a coyote. Before the patrol can investigate further, s_c whimpers in terror at the sight of the beast and dashes away.  The patrol follows anxiously, not wanting to lose sight of their Clanmate while a coyote is about.",
         "The patrol finds a coyote at the source of the noise. It seems to be scavenging from an old carcass and upon seeing the cats, proves to be fiercely protective of its meal.  The patrol doesn't move fast enough and r_c is killed before they can run.",
-        "The sound leads them to a coyote, scavenging from a carcass. The coyote notices them before they can hide and lunges, making it clear that this food has been claimed.  r_c is momentarily caught in its jaws before the patrol retaliates and drives it off their Clanmate."
+        "The sound leads them to a coyote, scavenging from a carcass. The coyote notices them before they can hide and lunges, making it clear that this food has been claimed.  r_c is momentarily caught in its jaws before the patrol retaliates and drives it off their Clanmate.",
+        null,
+        null
     ],
     "win_skills": [
         "very smart",
@@ -478,7 +525,10 @@
     "fail_text": [
         "The noise leads them to a coyote that's busy stripping the last of the meat from a carcass. They wait till the coyote leaves, hoping to pick up any leftovers, but unfortunately the bones have been thoroughly cleaned.",
         "They track the noise to a coyote. s_c whimpers in terror at the sight of the beast and dashes away, running straight back to camp...",
-        "r_c finds a coyote at the source of the noise. It seems to be scavenging from an old carcass and upon seeing the cat, proves to be fiercely protective of its meal.  They doesn't move fast enough and with no Clanmates to save them, r_c is quickly killed."
+        "r_c finds a coyote at the source of the noise. It seems to be scavenging from an old carcass and upon seeing the cat, proves to be fiercely protective of its meal.  They doesn't move fast enough and with no Clanmates to save them, r_c is quickly killed.",
+        null,
+        null,
+        null
     ],
     "win_skills": [
         "very smart",
@@ -536,7 +586,9 @@
         "The noise leads them to a wolf that's busy stripping the last of the meat from a carcass. The patrol waits till the wolf leaves, hoping to pick up any leftovers, but unfortunately the bones have been thoroughly cleaned.",
         "They track the noise to a wolf. Before the patrol can investigate further, s_c whimpers in terror at the sight of the beast and dashes away. The patrol follows anxiously, not wanting to lose sight of their Clanmate while a wolf is about.",
         "The patrol finds a wolf pack at the source of the noise. The wolves are tearing into a dead deer and upon seeing the cats, proves to be fiercely protective of their meal. The patrol doesn't move fast enough and r_c is killed before they can run.",
-        "The sound leads them to a wolf, scavenging from a carcass. The wolf notices them before they can hide and lunges, making it clear that this food has been claimed. r_c is momentarily caught in its jaws before the patrol retaliates and drives it off their Clanmate."
+        "The sound leads them to a wolf, scavenging from a carcass. The wolf notices them before they can hide and lunges, making it clear that this food has been claimed. r_c is momentarily caught in its jaws before the patrol retaliates and drives it off their Clanmate.",
+        null,
+        null
     ],
     "win_skills": [
         "very smart",
@@ -591,7 +643,9 @@
     "fail_text": [
         "The noise leads them to a wolf that's busy stripping the last of the meat from a carcass. The patrol waits till the wolf leaves, hoping to pick up any leftovers, but unfortunately the bones have been thoroughly cleaned.",
         "They track the noise to a wolf. Before the patrol can investigate further, s_c whimpers in terror at the sight of the beast and dashes away.  The patrol follows anxiously, not wanting to lose sight of their Clanmate while a wolf is about.",
-        "The patrol finds a wolf pack at the source of the noise. The wolves are busy eating from the carcass of a deer, and upon seeing the cats, prove to be fiercely protective of their meal.  The patrol doesn't move fast enough and r_c is killed before they can run."
+        "The patrol finds a wolf pack at the source of the noise. The wolves are busy eating from the carcass of a deer, and upon seeing the cats, prove to be fiercely protective of their meal.  The patrol doesn't move fast enough and r_c is killed before they can run.",
+        null,
+        null
     ],
     "win_skills": [
         "very smart",
@@ -646,7 +700,10 @@
     "fail_text": [
         "The noise leads them to a wolf that's busy stripping the last of the meat from a carcass. They wait till the wolf leaves, hoping to pick up any leftovers, but unfortunately the bones have been thoroughly cleaned.",
         "They track the noise to a wolf. s_c whimpers in terror at the sight of the beast and dashes away, running straight back to camp.",
-        "r_c finds a wolf pack at the source of the noise. The pack is tearing into a deer carcass and upon seeing the cat, prove to be fiercely protective of their meal. r_c doesn't move fast enough and with no Clanmates to save them, is quickly killed."
+        "r_c finds a wolf pack at the source of the noise. The pack is tearing into a deer carcass and upon seeing the cat, prove to be fiercely protective of their meal. r_c doesn't move fast enough and with no Clanmates to save them, is quickly killed.",
+        null,
+        null,
+        null
     ],
     "win_skills": [
         "very smart",
@@ -699,7 +756,11 @@
     ],
     "fail_text": [
         "The patrol finds nothing to disguise their scent, and no prey either.",
-        "The patrol finds no prey; it seems like all the prey was scared off because of their stench!"
+        "The patrol finds no prey; it seems like all the prey was scared off because of their stench!",
+        null,
+        null,
+        null,
+        null
     ],
     "win_skills": [
         "very smart",
@@ -743,7 +804,11 @@
     ],
     "fail_text": [
         "The patrol finds nothing to disguise their scent, and no prey either.",
-        "r_c finds no prey; it seems like all the prey was scared off because of their stench!"
+        "r_c finds no prey; it seems like all the prey was scared off because of their stench!",
+        null,
+        null,
+        null,
+        null
     ],
     "win_skills": [
         "very smart",
@@ -792,7 +857,9 @@
         "Hunting is poor, and while r_c's mentor is disappointed, they don't expect r_c to be able to catch what isn't there.",
         "s_c is too hasty, bouncing after first one prey, then another, and it ends with them empty pawed and exhausted. Their mentor is disappointed - they clearly need more training.",
         null,
-        "While on the hunt, r_c tumbles right down a steep slope while their attention is elsewhere. Bruised and sore, r_c has to report to the medicine cat den when they return to camp."
+        "While on the hunt, r_c tumbles right down a steep slope while their attention is elsewhere. Bruised and sore, r_c has to report to the medicine cat den when they return to camp.",
+        null,
+        null
     ],
     "win_skills": [
         "None"
@@ -857,6 +924,8 @@
         "You can't catch what isn't there, and the prey today is very not there.",
         "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. The come back to camp, empty pawed and prickling with frustration.",
         null,
+        null,
+        null,
         null
     ],
     "win_skills": [
@@ -918,6 +987,8 @@
     "fail_text": [
         "You can't catch what isn't there, and the prey today is very not there.",
         "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. They give up and return to camp, to try and at least make progress on all the work piling up there.",
+        null,
+        null,
         null,
         null
     ],
@@ -981,6 +1052,8 @@
         "You can't catch what isn't there, and the prey today is very not there.",
         "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. They give up and return to camp, to try and at least make progress on all the work piling up there.",
         null,
+        null,
+        null,
         null
     ],
     "win_skills": [
@@ -1035,13 +1108,16 @@
     "success_text": [
         "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise.  They find themselves to be correct when they pounce into the bush and return to the patrol with the tasty morsel dangling from their mouth.",
         null,
-        "p_l pads towards the bush to check on the noise when a rabbit suddenly bursts out!  s_c is quick to react and manages to snag the rabbit before it can disappear."
+        "p_l pads towards the bush to check on the noise when a rabbit suddenly bursts out!  s_c is quick to react and manages to snag the rabbit before it can disappear.",
+        null
     ],
     "fail_text": [
         "p_l pads closer to the bush, intent on finding the source of the noise, only to come face to face with a skunk!  The poor cat ends up stinking for days after the unfortunate incident.",
         "s_c doesn't even hesitate before splitting from the patrol to check on the source of the noise. They quickly regret their impulsivity, however, when an angry raccoon bursts from the bush!  s_c gets quite the scare, but thankfully the raccoon only wanted to get away from them and quickly runs off back into the undergrowth.",
         null,
-        "r_c takes the lead in checking the source of the noise and comes face to face with an angry fox! Though they backpedal rapidly, the fox still manages to take a bite out of them before the rest of the patrol can back them up."
+        "r_c takes the lead in checking the source of the noise and comes face to face with an angry fox! Though they backpedal rapidly, the fox still manages to take a bite out of them before the rest of the patrol can back them up.",
+        null,
+        null
     ],
     "other_clan": [
         "None"
@@ -1090,13 +1166,16 @@
     "success_text": [
         "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise. They find themselves to be correct when they pounce into the bush and return to the patrol with the tasty morsel dangling from their mouth.",
         null,
-        "p_l pads towards the bush to check on the noise when a rabbit suddenly bursts out! s_c is quick to react and manages to snag the rabbit before it can disappear."
+        "p_l pads towards the bush to check on the noise when a rabbit suddenly bursts out! s_c is quick to react and manages to snag the rabbit before it can disappear.",
+        null
     ],
     "fail_text": [
         "p_l pads closer to the bush, intent on finding the source of the noise, only to come face to face with a skunk! The poor cat ends up stinking for days after the unfortunate incident.",
         "s_c doesn't even hesitate before splitting from the patrol to check on the source of the noise. They quickly regret their impulsivity, however, when an angry raccoon bursts from the bush! s_c gets quite the scare, but thankfully the raccoon only wanted to get away from them and quickly runs off back into the undergrowth.",
         "r_c takes the lead in checking the source of the noise and comes face to face with a snarling wolverine! r_c yowls for their patrol but the other cats aren't quick enough to stop the wolverine from killing r_c in one quick and deadly swipe.",
-        "r_c takes the lead in checking the source of the noise and comes face to face with an angry fox! Though they backpedal rapidly, the fox still manages to take a bite out of them before the rest of the patrol can back them up."
+        "r_c takes the lead in checking the source of the noise and comes face to face with an angry fox! Though they backpedal rapidly, the fox still manages to take a bite out of them before the rest of the patrol can back them up.",
+        null,
+        null
     ],
     "other_clan": [
         "None"
@@ -1152,7 +1231,8 @@
         null,
         "The patrol mostly ignores the Twolegs. As they hunt they hear a yelp from r_c. They've crawled into a metal Twolegs box, and there's nothing they or the rest of the patrol can do to get them out - eventually the Twolegs notice, and r_c is taken by them.",
         null,
-        "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? Before they can decide whether to step closer, there's a swoosh, and a net falls around them. s_c fights desperately, but the Twolegs take them away in the monster."
+        "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? Before they can decide whether to step closer, there's a swoosh, and a net falls around them. s_c fights desperately, but the Twolegs take them away in the monster.",
+        null
     ],
     "win_skills": [
         "extremely smart"
@@ -1211,7 +1291,8 @@
         null,
         "The patrol mostly ignores the Twolegs. As they hunt they hear a yelp from r_c. They've crawled into a metal Twolegs box, and there's nothing they or the rest of the patrol can do to get them out - eventually the Twolegs notice, and r_c is taken by them.",
         null,
-        "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? Before they can decide whether to step closer, there's a swoosh, and a net falls around them. s_c fights desperately, but the Twolegs take them away in the monster."
+        "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? Before they can decide whether to step closer, there's a swoosh, and a net falls around them. s_c fights desperately, but the Twolegs take them away in the monster.",
+        null
     ],
     "win_skills": [
         "extremely smart"
@@ -1274,7 +1355,8 @@
         null,
         "The patrol mostly ignores the Twolegs. But as they hunt, the cats encounter appealing, delicious smelling mush in little burrows. Some of the patrol investigates, and doors slam down behind them. There's nothing they or the rest of the patrol can do to get them out - eventually the Twolegs notice, and the trapped cats are taken.",
         null,
-        "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? They wander closer, drawing more of the patrol in with them. Before they can decide whether to step away, there's a swoosh, and a net falls around the cats. They fight desperately, but the Twolegs take them away in the monster."
+        "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? They wander closer, drawing more of the patrol in with them. Before they can decide whether to step away, there's a swoosh, and a net falls around the cats. They fight desperately, but the Twolegs take them away in the monster.",
+        null
     ],
     "win_skills": [
         "extremely smart"
@@ -1340,7 +1422,9 @@
         null,
         "The Twolegs here are friendly, and a little carelessly, s_c goes to hunt in their garden. But there's a new thing there, a box, suspicious and strange. Wisely, s_c avoids it, and returns to c_n territory.",
         "Carelessly, r_c is seen by Twolegs, and taken from c_n.",
-        "Carelessly, r_c is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, they discover that a broken window is just wide enough to push themselves out to safety through, but the glass leaves them bleeding as they run back to c_n."
+        "Carelessly, r_c is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, they discover that a broken window is just wide enough to push themselves out to safety through, but the glass leaves them bleeding as they run back to c_n.",
+        null,
+        null
     ],
     "win_skills": [
         "smart",
@@ -1407,7 +1491,9 @@
         null,
         "A little carelessly, s_c jumps a fence to hunt in a den's garden. But there's a new thing there, a box, suspicious and strange. Wisely, s_c avoids it, and returns to c_n territory.",
         "Carelessly, app1 is seen by Twolegs, and taken from c_n.",
-        "Carelessly, app1 is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, they discover that a broken window is just wide enough to push themselves out to safety through, but the glass leaves them bleeding as they run back to c_n."
+        "Carelessly, app1 is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, they discover that a broken window is just wide enough to push themselves out to safety through, but the glass leaves them bleeding as they run back to c_n.",
+        null,
+        null
     ],
     "win_skills": [
         "None"
@@ -1472,6 +1558,8 @@
         "Carelessly, r_c is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, they hear p_l yowling from outside, and the two cats manage to craft an escape plan through a broken window. Shivering, r_c presses their pelt against p_l on the way back to c_n.",
         "The Twolegs here are friendly, and a little carelessly, s_c goes to hunt in their garden. But there's a new thing there, a box, suspicious and strange. Wisely, s_c avoids it, and returns to c_n territory.",
         "Carelessly, r_c is seen by Twolegs, and taken from c_n.",
+        null,
+        null,
         null
     ],
     "win_skills": [
@@ -1540,6 +1628,8 @@
         "Carelessly, app2 is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, they hear app1 yowling from outside, and the two cats manage to craft an escape plan through a broken window. Shivering, app2 presses their pelt against app1 as they pad home.",
         "A little carelessly, s_c jumps a fence to hunt in a den's garden. But there's a new thing there, a box, suspicious and strange. Wisely, s_c avoids it, and returns to c_n territory.",
         "Carelessly, app1 is seen by Twolegs, and taken from c_n.",
+        null,
+        null,
         null
     ],
     "win_skills": [
@@ -1597,6 +1687,8 @@
         null,
         "Easily swayed by the delicious smell, s_c wanders recklessly into the sheltered space, only to smack into a metal wall. Inside the trap, a young fox starts up a distressed wail, and s_c feels sympathy for it they never expected to feel for a fox, as well as the heart stopping realization that it could easily have been them.",
         "r_c is caught in a trap hidden in the bushes and is taken by Twolegs shortly after.",
+        null,
+        null,
         null
     ],
     "win_skills": ["smart", "very smart", "extremely smart"],
@@ -1634,6 +1726,8 @@
         null,
         "Easily swayed by the delicious smell, s_c wanders recklessly into the sheltered space, only to smack into a metal wall. Inside the trap, a young fox starts up a distressed wail, and s_c feels sympathy for it they never expected to feel for a fox, as well as the heart stopping realization that it could easily have been them.",
         "r_c is caught in a trap hidden in the bushes! There's nothing the patrol is able to do to help them, and r_c is taken by Twolegs shortly after.",
+        null,
+        null,
         null
     ],
     "win_skills": [
@@ -1696,7 +1790,9 @@
         "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
         null,
         "r_c is hit by a monster while crossing and dies instantly.",
-        "r_c is hit by a monster and seems quite injured, but miraculously still alive."
+        "r_c is hit by a monster and seems quite injured, but miraculously still alive.",
+        null,
+        null
     ],
     "win_skills": [
         "smart",
@@ -1758,7 +1854,9 @@
         "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
         null,
         "r_c is crossing the thunderpath and hears a monster thundering towards them. They freeze, and the monster swerves to hit them deliberately, killing them instantly.",
-        "r_c is hit by a monster and seems quite injured, but miraculously still alive."
+        "r_c is hit by a monster and seems quite injured, but miraculously still alive.",
+        null,
+        null
     ],
     "win_skills": [
         "smart",
@@ -1822,7 +1920,9 @@
         null,
         null,
         "As the group crosses the thunderpath, a speeding monster appears out of nowhere. The cats run panicked in all directions, and several of them get hit and die.",
-        "r_c is hit by a monster and seems quite injured, but miraculously still alive."
+        "r_c is hit by a monster and seems quite injured, but miraculously still alive.",
+        null,
+        null
     ],
     "win_skills": [
         "smart",
@@ -1884,7 +1984,9 @@
         "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
         null,
         "As the group crosses the thunderpath, a speeding monster appears out of nowhere. The cats run panicked in all directions, and several of them get hit as the monster swerves to hit them deliberately, killing them instantly.",
-        "r_c is hit by a monster and seems quite injured, but miraculously still alive."
+        "r_c is hit by a monster and seems quite injured, but miraculously still alive.",
+        null,
+        null
     ],
     "win_skills": [
         "smart",
@@ -1936,11 +2038,16 @@
     "success_text": [
         "With a huge leap, they dart sideways and pull a blackbird out of the air. What a great catch!",
         "Laughing, they bounce gleefully off a tree trunk, redirecting their momentum to slam into a very surprised mouse.",
-        "Nothing's going to escape their claws! r_c skids to a halt and then leaps into action, claw just barely catching in the tail of the squirrel they saw and bringing it down. They purr with satisfaction and trot back to camp with their prize."
+        "Nothing's going to escape their claws! r_c skids to a halt and then leaps into action, claw just barely catching in the tail of the squirrel they saw and bringing it down. They purr with satisfaction and trot back to camp with their prize.",
+        null
     ],
     "fail_text": [
         "r_c darts to the side, but wherever made the flash of movement is long gone. How frustrating!",
-        "r_c skids to a halt and tries to sprint after it, but the bird they saw escapes their paws. They chatter angrily at it, and it tries to poop on them. Such is life."
+        "r_c skids to a halt and tries to sprint after it, but the bird they saw escapes their paws. They chatter angrily at it, and it tries to poop on them. Such is life.",
+        null,
+        null,
+        null,
+        null
     ],
     "win_skills": [
         "good hunter",
@@ -2027,10 +2134,16 @@
     "success_text": [
         "With a huge leap, r_c darts sideways and pulls a blackbird out of the air. p_l trots over to congratulate them on the fantastic catch, purring.",
         "Laughing, they bounce gleefully off a tree trunk, redirecting their momentum to slam into a very surprised mouse. p_l skids to a halt, gasping over their beautiful catch with their eyes shining.",
-        "Nothing's going to escape their claws! s_c skids to a halt and then leaps into action, claw just barely catching in the tail of the squirrel they saw and bringing it down. They purr with satisfaction and pad back to r_c, sharing in the excitement of the hunt with them."
+        "Nothing's going to escape their claws! s_c skids to a halt and then leaps into action, claw just barely catching in the tail of the squirrel they saw and bringing it down. They purr with satisfaction and pad back to r_c, sharing in the excitement of the hunt with them.",
+        null
     ],
     "fail_text": [
-        "r_c skids to a halt and tries to sprint after it, but the bird they saw escapes their paws. They chatter angrily at it, and it tries to poop on them. Such is life. p_l snickers at them a bit too, but it's all in good fun."
+        "r_c skids to a halt and tries to sprint after it, but the bird they saw escapes their paws. They chatter angrily at it, and it tries to poop on them. Such is life. p_l snickers at them a bit too, but it's all in good fun.",
+        null,
+        null,
+        null,
+        null,
+        null
     ],
     "win_skills": [
         "good hunter",
@@ -2062,7 +2175,7 @@
         "platonic",
         "respect",
         "two_apprentices",
-        "small_prey"
+        "medium_prey"
     ],
     "intro_text": "As app1 tears through the forest with app2, stretching their legs on a run, they spot movement out of the corner of their eye.",
     "decline_text": "They keep going, not wanting to slow down.",
@@ -2070,10 +2183,18 @@
     "exp": 10,
     "success_text": [
         "With a huge leap, app1 darts sideways and pulls the tail off a blackbird taking flight into the air. A missed catch, but new nest lining? They toss some of the feathers at app2, and the two apprentices end up scuffling like kits.",
-        "Laughing, app1 bounces gleefully off a tree trunk. It redirects their momentum far better than they were expecting, and it's difficult to say who's more surprised - the mouse, or the apprentice slamming into it! Not a very clean catch, but the look on app2's face, so shocked and impressed, makes them blush."
+        "Laughing, app1 bounces gleefully off a tree trunk. It redirects their momentum far better than they were expecting, and it's difficult to say who's more surprised - the mouse, or the apprentice slamming into it! Not a very clean catch, but the look on app2's face, so shocked and impressed, makes them blush.",
+        null,
+        null
+
     ],
     "fail_text": [
-        "app1 skids to a halt and tries to sprint after it, but the bird they saw escapes their paws. They chatter angrily at it, and it tries to poop on them. Such is life. app2 snickers at them too, but in a lighthearted way, and soon both apprentices are giggling about it as they continue their run."
+        "app1 skids to a halt and tries to sprint after it, but the bird they saw escapes their paws. They chatter angrily at it, and it tries to poop on them. Such is life. app2 snickers at them too, but in a lighthearted way, and soon both apprentices are giggling about it as they continue their run.",
+        null,
+        null,
+        null,
+        null,
+        null
     ],
     "win_skills": [
         "None"
@@ -2100,7 +2221,7 @@
         "hunting",
         "platonic",
         "comfort",
-        "small_prey"
+        "medium_prey"
     ],
     "intro_text": "Something skitters across the leaf litter, catching the patrols eyes. A little lizard!",
     "decline_text": "Startled by the lizard, the patrol watches it scurry away.",
@@ -2109,11 +2230,16 @@
     "success_text": [
         "r_c pounces on the little creature and carries the nice mouthful home.",
         "The lizard drops its tail, and r_c dives for it, while p_l pounces for the lizard. Surely this counts for two catches? Neither of them cares much, and it's a happy afternoon hunting together.",
-        "s_c is basically on top of the skittering lizard, and ends up doing a ridiculous hop to come down on it with claws extended. r_c compliments them on the catch with a laugh in their meow, and s_c has to agree with them, purring with laughter."
+        "s_c is basically on top of the skittering lizard, and ends up doing a ridiculous hop to come down on it with claws extended. r_c compliments them on the catch with a laugh in their meow, and s_c has to agree with them, purring with laughter.",
+        null
     ],
     "fail_text": [
         "The patrol is unable to catch the small reptile quick enough and the little lizard lives another day.",
-        "r_c and p_l go for the prey at the same time, bonking their heads together. Not a bad collision, and both of them are mature enough to let it go, but neither is pleased to have missed an easy catch."
+        "r_c and p_l go for the prey at the same time, bonking their heads together. Not a bad collision, and both of them are mature enough to let it go, but neither is pleased to have missed an easy catch.",
+        null,
+        null,
+        null,
+        null
     ],
     "win_skills": [
         "good hunter",
@@ -2146,7 +2272,7 @@
         "romantic",
         "two_apprentices",
         "apprentice",
-        "small_prey"
+        "medium_prey"
     ],
     "intro_text": "Something skitters across the leaf litter, catching the patrol's eyes. A little lizard!",
     "decline_text": "Startled by the lizard, the patrol watches it scurry away.",
@@ -2154,10 +2280,17 @@
     "exp": 15,
     "success_text": [
         "app1 pounces on the little creature and misses, but they don't seem overly concerned, stopping nearly every step to chat to app2, who's just as keen to talk.",
-        "app1 and app2 go for the prey at the same time, bonking their heads together. It makes both of them laugh while apologizing, and they don't leave each other's side for the rest of the patrol, apologies turning to chatting turning to whispered conversations."
+        "app1 and app2 go for the prey at the same time, bonking their heads together. It makes both of them laugh while apologizing, and they don't leave each other's side for the rest of the patrol, apologies turning to chatting turning to whispered conversations.",
+        null,
+        null
     ],
     "fail_text": [
-        "The patrol is unable to catch the small reptile quick enough and the little lizard lives another day."
+        "The patrol is unable to catch the small reptile quick enough and the little lizard lives another day.",
+        null,
+        null,
+        null,
+        null,
+        null
     ],
     "win_skills": [
         "None"
