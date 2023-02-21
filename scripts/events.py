@@ -1203,7 +1203,7 @@ class Events():
             if not warrior2:
                 warrior2 = str(random.choice(names.normal_prefixes)) + str(random.choice(names.normal_suffixes))
             if not app:
-                app = str(choice(names.normal_prefixes)) + "paw"
+                app = str(random.choice(names.normal_prefixes)) + "paw"
             if not elder:
                 elder = str(random.choice(names.normal_prefixes)) + str(random.choice(names.normal_suffixes))
             if not warrior3:
