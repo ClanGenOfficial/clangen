@@ -1229,7 +1229,7 @@ class AllegiancesScreen(Screens):
 
         if living_mediators:
             self._extracted_from_screen_switches_24(
-                living_cats, 'mediator', '<b><u>MEDIATORS:</u></b>')
+                living_cats, 'mediator', '<b><u>MEDIATORS</u></b>')
 
         queens = get_alive_clan_queens(Cat.all_cats)
         queens = [cat.ID for cat in queens]
