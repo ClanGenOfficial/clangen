@@ -37,6 +37,7 @@ import pygame_gui
 import pygame
 
 # Version Number to be displayed.
+# This will only be shown as a fallback, when the git commit hash can't be found.
 VERSION_NUMBER = "Ver. 0.6.0dev"
 
 # import all screens for initialization (Note - must be done after pygame_gui manager is created)
