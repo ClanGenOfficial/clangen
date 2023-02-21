@@ -82,7 +82,7 @@ if os.path.exists("commit.txt"):
 else:
     print("Running on source code")
     try:
-        VERSION_NUMBER = subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD']).decode('ascii').strip()
+        VERSION_NUMBER = subprocess.check_output(['git', 'rev-parse', 'HEAD']).decode('ascii').strip()
     except:
         print("Failed to get git commit hash, using hardcoded version number instead.")
 print("Running on commit " + VERSION_NUMBER)
