@@ -6,6 +6,7 @@ except ImportError:
     import json
 
 from scripts.cat.appearance_utility import plural_acc_names
+from scripts.cat.names import names
 from scripts.cat.cats import Cat, cat_class
 from scripts.cat.pelts import plant_accessories, wild_accessories
 from scripts.clan import HERBS
