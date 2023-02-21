@@ -769,7 +769,7 @@ class SettingsScreen(Screens):
                 "",
                 object_id=box_type,
                 container=self.checkboxes_text["container"], manager=MANAGER,
-                tool_tip_text="After 302 moons, dead cats will be unloaded, and saved separately. "
+                tool_tip_text="After 202 moons, dead cats will be unloaded, and saved separately. "
                               "No family relations will be lost."
             )
 
