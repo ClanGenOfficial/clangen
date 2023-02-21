@@ -27,6 +27,7 @@ sys.excepthook = log_crash
 
 # Load game
 from scripts.game_structure.load_cat import *
+from scripts.game_structure.windows import SaveCheck
 from scripts.cat.sprites import sprites
 from scripts.clan import clan_class
 from scripts.utility import get_text_box_theme
@@ -94,7 +95,7 @@ while True:
 
         if event.type == pygame.QUIT:
             # Dont display if on the start screen
-            if game.switches['cur_screen'] not in ['start screen']:
+            if game.switches['cur_screen'] in ['start screen']:
                 pygame.display.quit()
                 pygame.quit()
                 sys.exit()
