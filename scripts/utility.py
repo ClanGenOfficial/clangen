@@ -693,13 +693,34 @@ def update_sprite(cat):
             (0, 0)
         )
 
+
+    # Opacity currently disabled for performance reasons. Fading Fog is used as placeholder.
+    """# Apply opacity
+    if cat.opacity < 100 and not cat.prevent_fading and game.settings["fading"]:
+        new_sprite = apply_opacity(new_sprite, cat.opacity)"""
+
+    # Apply fading fog
+    if cat.opacity < 100 and not cat.prevent_fading and game.settings["fading"]:
+        if cat.age == 'elder' or (cat.pelt.length == 'long' and cat.age not in ['kitten', 'adolescent']):
+            offset = 9
+        else:
+            offset = 0
+
+        if 100 > cat.opacity > 80:
+            # Stage 1
+            pass
+        elif 79 > cat.opacity > 50:
+            # Stage 2
+            offset += 15
+        elif cat.opacity < 50:
+            # Stage 3
+            offset += 30
+
+        new_sprite.blit(sprites.sprites['fadefog' + str(cat.age_sprites[cat.age] + offset)], (0, 0))
+
     # reverse, if assigned so
     if cat.reverse:
         new_sprite = pygame.transform.flip(new_sprite, True, False)
-
-    # Apply opacity
-    if cat.opacity < 100 and not cat.prevent_fading and game.settings["fading"]:
-        new_sprite = apply_opacity(new_sprite, cat.opacity)
 
     # apply
     cat.sprite = new_sprite

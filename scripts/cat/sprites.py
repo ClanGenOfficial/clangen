@@ -256,7 +256,7 @@ for x in [
     'tortiesextrasolid', 'tortiesextratabby', 'tortiesextrabengal', 'tortiesextramarbled', 'tortiesextraticked',
     'tortiesextrasmoke', 'tortiesextrarosette', 'tortiesextraspeckled',
     'tortiesextramackerel', 'tortiesextraclassic', 'tortiesextrasokoke', 'tortiesextraagouti',
-    'medcatherbs', 'medcatherbsextra', 'lineartdf', 'eyes_df', 'eyesextra_df', 'lightingnew'
+    'medcatherbs', 'medcatherbsextra', 'lineartdf', 'eyes_df', 'eyesextra_df', 'lightingnew', 'fadefog'
 
 ]:
     sprites.spritesheet(f"sprites/{x}.png", x)
@@ -284,6 +284,9 @@ sprites.make_group('lightingnew', (0, 0), 'lighting', sprites_y=5)
 
 sprites.make_group('lineartdead', (0, 0), 'lineartdead', sprites_y=5)
 sprites.make_group('lineartdf', (0, 0), 'lineartdf', sprites_y=5)
+
+# Fading Fog
+sprites.make_group('fadefog', (0, 0), 'fadefog', sprites_y=15)
 
 for a, i in enumerate(
         ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE']):

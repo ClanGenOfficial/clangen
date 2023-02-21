@@ -10,10 +10,6 @@ except ImportError as e:
 import os
 from ast import literal_eval
 
-from pygame_gui.elements import UIWindow
-
-from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
-
 pygame.init()
 
 
@@ -559,128 +555,6 @@ class Game():
             write_file.write(json_string)
 
         return True
-
-
-class GameOver(UIWindow):
-    def __init__(self, last_screen):
-        super().__init__(pygame.Rect((250, 200), (300, 180)),
-                         window_display_title='Game Over',
-                         object_id='#game_over_window',
-                         resizable=False)
-        self.clan_name = str(game.clan.name + 'Clan')
-        self.last_screen = last_screen
-        self.game_over_message = UITextBoxTweaked(
-            f"{self.clan_name} has died out. For now, this is where their story ends. Perhaps it's time to tell a new "
-            f"tale?",
-            pygame.Rect((20, 20), (260, -1)),
-            line_spacing=1,
-            object_id="",
-            container=self
-        )
-
-        self.game_over_message = UITextBoxTweaked(
-            f"(leaving will not erase the save file)",
-            pygame.Rect((20, 155), (260, -1)),
-            line_spacing=.8,
-            object_id="#cat_patrol_info_box",
-            container=self
-        )
-
-        self.begin_anew_button = UIImageButton(
-            pygame.Rect((25, 115), (111, 30)),
-            "",
-            object_id="#begin_anew_button",
-            container=self
-        )
-        self.not_yet_button = UIImageButton(
-            pygame.Rect((159, 115), (111, 30)),
-            "",
-            object_id="#not_yet_button",
-            container=self
-        )
-
-        self.not_yet_button.enable()
-        self.begin_anew_button.enable()
-
-    def process_event(self, event):
-        super().process_event(event)
-
-        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.begin_anew_button:
-                game.last_screen_forupdate = game.switches['cur_screen']
-                game.switches['cur_screen'] = 'start screen'
-                game.switch_screens = True
-                self.kill()
-            elif event.ui_element == self.not_yet_button:
-
-                self.kill()
-
-
-class SaveCheck(UIWindow):
-    def __init__(self, last_screen, isMainMenu):
-        super().__init__(pygame.Rect((250, 200), (300, 200)),
-                         window_display_title='Save Check',
-                         object_id='#save_check_window',
-                         resizable=False)
-        self.clan_name = str(game.clan.name + 'Clan')
-        self.last_screen = last_screen
-        self.isMainMenu = isMainMenu
-        if(self.isMainMenu):
-            self.message = f"Would you like to save your game before exiting to the Main Menu? If you don't, progress may be lost!"
-        else:
-            self.message = f"Would you like to save your game before exiting? If you don't, progress may be lost!"
-        #TODO: Make a quit button for when directly quitting
-        self.game_over_message = UITextBoxTweaked(
-            self.message,
-            pygame.Rect((20, 20), (260, -1)),
-            line_spacing=1,
-            object_id="",
-            container=self
-        )
-
-        self.main_menu_button = UIImageButton(
-            pygame.Rect((73, 155), (153, 30)),
-            "",
-            object_id="#main_menu_button",
-            container=self
-        )
-        self.save_button = UIImageButton(
-            pygame.Rect((93, 115), (114, 30)),
-            "",
-            object_id="#save_button",
-            container=self
-        )
-
-        self.save_text = pygame_gui.elements.UITextBox("<font color=#006600>Saved!</font>",
-                                                       pygame.Rect((0, 85), (300, 40)),
-                                                       object_id="#save_no_bg_text_box",
-                                                       container=self)
-        self.save_text.hide()
-
-        self.main_menu_button.enable()
-        self.save_button.enable()
-
-
-    def process_event(self, event):
-        super().process_event(event)
-
-        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.main_menu_button:
-                if self.isMainMenu:
-                    game.last_screen_forupdate = game.switches['cur_screen']
-                    game.switches['cur_screen'] = 'start screen'
-                    game.switch_screens = True
-                    self.kill()
-                else:
-                    pygame.display.quit()
-                    pygame.quit()
-                    sys.exit()
-            elif event.ui_element == self.save_button:
-                if game.clan is not None:
-                    game.save_cats()
-                    game.clan.save_clan()
-                    game.clan.save_pregnancy(game.clan)
-                    self.save_text.show()
 
 
 game = Game()
