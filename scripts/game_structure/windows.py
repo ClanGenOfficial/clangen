@@ -16,11 +16,24 @@ class SaveCheck(UIWindow):
         self.clan_name = str(game.clan.name + 'Clan')
         self.last_screen = last_screen
         self.isMainMenu = isMainMenu
+        
         if(self.isMainMenu):
+            self.main_menu_button = UIImageButton(
+                scale(pygame.Rect((146, 310), (305, 60))),
+                "",
+                object_id="#main_menu_button",
+                container=self
+        )
             self.message = f"Would you like to save your game before exiting to the Main Menu? If you don't, progress may be lost!"
         else:
+            self.main_menu_button = UIImageButton(
+                scale(pygame.Rect((146, 310), (305, 60))),
+                "",
+                object_id="#quit_game_button",
+                container=self
+        )
             self.message = f"Would you like to save your game before exiting? If you don't, progress may be lost!"
-        #TODO: Make a quit button for when directly quitting
+
         self.game_over_message = UITextBoxTweaked(
             self.message,
             scale(pygame.Rect((40, 40), (520, -1))),
@@ -29,12 +42,6 @@ class SaveCheck(UIWindow):
             container=self
         )
 
-        self.main_menu_button = UIImageButton(
-            scale(pygame.Rect((146, 310), (305, 60))),
-            "",
-            object_id="#main_menu_button",
-            container=self
-        )
         self.save_button = UIImageButton(
             scale(pygame.Rect((186, 230), (228, 60))),
             "",
