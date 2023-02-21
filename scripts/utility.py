@@ -650,19 +650,19 @@ def update_sprite(cat):
                                                     str(cat.age_sprites[cat.age])], (0, 0), special_flags=blendmode)
 
         # Apply fading fog
-        if cat.opacity < 100 and not cat.prevent_fading and game.settings["fading"]:
+        if cat.opacity <= 97 and not cat.prevent_fading and game.settings["fading"]:
             if cat.age == 'elder' or (cat.pelt.length == 'long' and cat.age not in ['kitten', 'adolescent']):
                 offset = 9
             else:
                 offset = 0
 
-            if 100 > cat.opacity > 80:
+            if 97 >= cat.opacity > 80:
                 # Stage 1
                 pass
-            elif 79 > cat.opacity > 50:
+            elif 80 >= cat.opacity > 45:
                 # Stage 2
                 offset += 15
-            elif cat.opacity < 50:
+            elif cat.opacity <= 45:
                 # Stage 3
                 offset += 30
 
