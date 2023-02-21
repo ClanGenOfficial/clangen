@@ -764,7 +764,7 @@
     "max_cats": 1
 },
 {
-    "patrol_id": "fst_hunt_solo1",
+    "patrol_id": "fst_hunt_huntassessment1",
     "biome": "forest",
     "season": "Any",
     "tags": [
@@ -1513,7 +1513,7 @@
     ]
 },
 {
-    "patrol_id": "fst_hunt_gonetwolegden4",
+    "patrol_id": "fst_hunt_twolegdenappdare1",
     "biome": "forest",
     "season": "Any",
     "tags": [
@@ -1601,7 +1601,7 @@
     ],
     "win_skills": ["smart", "very smart", "extremely smart"],
     "win_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "sneaky", "strange"],
-    "fail_skills": ["None"],
+    "fail_skills": null,
     "fail_trait": ["adventurous", "bold", "confident", "daring", "playful"],
     "min_cats": 1,
     "max_cats": 1,

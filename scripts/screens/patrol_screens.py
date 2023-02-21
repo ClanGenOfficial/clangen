@@ -702,13 +702,11 @@ class PatrolScreen(Screens):
             # looking for patrol ID with biome indicator replaced with 'gen'
             # if that isn't found then patrol type placeholder will be used
             if not image_found:
-                print(image_name)
                 image_name = ''.join([i for i in image_name if not i.isdigit()])
-                image_name.replace("fst_", "gen_")
-                image_name.replace("mtn_", "gen_")
-                image_name.replace("pln_", "gen_")
-                image_name.replace("bch_", "gen_")
-                print(image_name)
+                image_name = image_name.replace("fst_", "gen_")
+                image_name = image_name.replace("mtn_", "gen_")
+                image_name = image_name.replace("pln_", "gen_")
+                image_name = image_name.replace("bch_", "gen_")
                 exists = file_exists(f"{path}{image_name}.png")
                 if exists and not placeholder_needed:
                     self.elements['intro_image'] = pygame_gui.elements.UIImage(

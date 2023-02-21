@@ -158,7 +158,7 @@
         "max_cats": 1
     },
     {
-        "patrol_id": "wtlnd_hunt_solo1",
+        "patrol_id": "wtlnd_hunt_huntassessment1",
         "biome": "wetlands",
         "season": "Any",
         "tags": [
@@ -846,7 +846,7 @@
         ]
     },
     {
-        "patrol_id": "wtlnd_hunt_gonetwolegden4",
+        "patrol_id": "wtlnd_hunt_twolegdenappdare1",
         "biome": "wetlands",
         "season": "Any",
         "tags": [
