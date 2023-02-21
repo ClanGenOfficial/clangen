@@ -5,6 +5,8 @@ directory = os.path.dirname(__file__)
 if directory:
     os.chdir(directory)
 
+import subprocess
+
 # Setup logging
 import logging 
 formatter = logging.Formatter("%(name)s - %(levelname)s - %(message)s")
@@ -70,6 +72,21 @@ if clan_list:
 sprites.load_scars()
 
 start_screen.screen_switches()
+
+
+if os.path.exists("commit.txt"):
+    with open(f"commit.txt", 'r') as read_file:
+        print("Running on pyinstaller build")
+        VERSION_NUMBER = read_file.read()
+else:
+    print("Running on source code")
+    try:
+        VERSION_NUMBER = subprocess.check_output(['git', 'rev-parse', 'HEAD']).decode('ascii').strip()
+    except:
+        print("Failed to get git commit hash, using hardcoded version number instead.")
+print("Running on commit " + VERSION_NUMBER)
+
+
 
 #Version Number
 version_number = pygame_gui.elements.UILabel(pygame.Rect((1500, 1350), (-1, -1)), VERSION_NUMBER,
