@@ -1775,6 +1775,7 @@ class Events():
                                                                  "ceremony"))
                         return
 
+                random_cat.status_change("deputy")
                 game.clan.deputy = random_cat
                 game.ranks_changed_timeskip = True
 
