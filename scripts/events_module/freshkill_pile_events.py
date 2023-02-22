@@ -123,6 +123,11 @@ class Freshkill_Events():
         Handles events (eg. a fox is attacking the camp), which are related to the freshkill pile.
         Game-mode: 'expanded' & 'cruel season'
         """
+
+        if not living_cats:
+            # End if there are no living cats left.
+            return
+
         # check if amount of the freshkill pile is too big and a event will be triggered
         much_prey = False
         needed_amount = freshkill_pile.amount_food_needed()

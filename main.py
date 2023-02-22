@@ -5,6 +5,8 @@ directory = os.path.dirname(__file__)
 if directory:
     os.chdir(directory)
 
+import subprocess
+
 # Setup logging
 import logging 
 formatter = logging.Formatter("%(name)s - %(levelname)s - %(message)s")
@@ -27,6 +29,7 @@ sys.excepthook = log_crash
 
 # Load game
 from scripts.game_structure.load_cat import *
+from scripts.game_structure.windows import SaveCheck
 from scripts.cat.sprites import sprites
 from scripts.clan import clan_class
 from scripts.utility import get_text_box_theme
@@ -34,6 +37,7 @@ import pygame_gui
 import pygame
 
 # Version Number to be displayed.
+# This will only be shown as a fallback, when the git commit hash can't be found.
 VERSION_NUMBER = "Ver. 0.6.0dev"
 
 # import all screens for initialization (Note - must be done after pygame_gui manager is created)
@@ -70,11 +74,32 @@ sprites.load_scars()
 
 start_screen.screen_switches()
 
+
+if os.path.exists("commit.txt"):
+    with open(f"commit.txt", 'r') as read_file:
+        print("Running on pyinstaller build")
+        VERSION_NUMBER = read_file.read()
+else:
+    print("Running on source code")
+    try:
+        VERSION_NUMBER = subprocess.check_output(['git', 'rev-parse', 'HEAD']).decode('ascii').strip()
+    except:
+        print("Failed to get git commit hash, using hardcoded version number instead.")
+print("Running on commit " + VERSION_NUMBER)
+
+
+
 #Version Number
-version_number = pygame_gui.elements.UILabel(pygame.Rect((1500, 1350), (-1, -1)), VERSION_NUMBER,
+if game.settings['fullscreen']:
+    version_number = pygame_gui.elements.UILabel(pygame.Rect((1500, 1350), (-1, -1)), VERSION_NUMBER[0:8],
                                              object_id=get_text_box_theme())
-# Adjust position
-version_number.set_position((1600 - version_number.get_relative_rect()[2] - 8, 1400 - version_number.get_relative_rect()[3]))
+    # Adjust position
+    version_number.set_position((1600 - version_number.get_relative_rect()[2] - 8, 1400 - version_number.get_relative_rect()[3]))
+else:
+    version_number = pygame_gui.elements.UILabel(pygame.Rect((700, 650), (-1, -1)), VERSION_NUMBER[0:8],
+                                             object_id=get_text_box_theme())
+    # Adjust position
+    version_number.set_position((800 - version_number.get_relative_rect()[2] - 8, 700 - version_number.get_relative_rect()[3]))
 
 while True:
     time_delta = clock.tick(30) / 1000.0
@@ -94,7 +119,7 @@ while True:
 
         if event.type == pygame.QUIT:
             # Dont display if on the start screen
-            if game.switches['cur_screen'] not in ['start screen']:
+            if game.switches['cur_screen'] in ['start screen']:
                 pygame.display.quit()
                 pygame.quit()
                 sys.exit()

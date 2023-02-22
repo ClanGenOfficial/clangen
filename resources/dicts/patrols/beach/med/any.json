@@ -15,10 +15,10 @@
     "fail_text": [
         "They gaze into the puddle only to see the weird ripples were caused by a small frog. p_l feels disappointed because they really could have used some guidance from StarClan." 
     ],
-    "win_skills":["None"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_skills":null,
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -42,10 +42,10 @@
     "fail_text": [ 
         "app1 is constantly distracted and running ahead much to the frustration of p_l. Evidently no new knowledge will be learned that day." 
     ],
-    "win_skills": ["None"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_skills": null,
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -69,17 +69,17 @@
     "fail_text": [ 
         "app1 goes to a known herb patch - but the plant has died! They give up and return to camp, feeling terrible and with their tail dragging behind them."
     ],
-    "win_skills": ["None"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_skills": null,
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "bch_med_herbs1",
+    "patrol_id": "bch_med_herbsdandy1",
     "biome": "beach",
     "season": "Any",
     "tags": ["med_cat", "apprentice", "med_only", "herb", "dandelion", "many_herbs1"],
@@ -94,10 +94,10 @@
     "fail_text": [
         "app1 reaches the patch first and p_l can tell by their drooping ears that there must not be enough left to collect."
     ],
-    "win_skills": ["None"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_skills": null,
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -121,7 +121,7 @@
     "min_cats": 1,
     "max_cats": 1,
     "win_skills": null,
-    "win_trait": ["None"],
+    "win_trait": null,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
@@ -143,9 +143,9 @@
             "p_l knows the conditions are miserable, but their group is even more insufferable, and not only do they have to put up with these cats for an entire afternoon, there's also nothing to show for it."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -173,7 +173,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "bch_med_gatheringcobwebs2",
+    "patrol_id": "bch_med_cobweblesson1",
     "biome": "beach",
     "season": "Any",
     "tags": ["med_only", "med_cat", "respect", "trust", "apprentice", "herb", "cobwebs", "many_herbs1"],
@@ -194,7 +194,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "bch_med_gatheringcobwebs3",
+    "patrol_id": "bch_med_cobwebhelp1",
     "biome": "beach",
     "season": "Any",
     "tags": ["med_cat", "warrior", "herb", "cobwebs", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
@@ -211,9 +211,9 @@
         "Can warriors not pay attention, even to something as simple as cobwebs?! p_l holds their breath and counts to ten before they dismiss the patrol, every found cobweb ruined, what little they did manage to find."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -237,16 +237,16 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "bch_med_gatheringhorsetail2",
+    "patrol_id": "bch_med_horsetaillesson1",
     "biome": "beach",
     "season": "Any",
     "tags": ["adult_stat", "med_only", "med_cat", "herb", "horsetail", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
@@ -263,16 +263,16 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and app1 looks up at them with disappointment."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "bch_med_gatheringhorsetail3",
+    "patrol_id": "bch_med_horsetailhelp1",
     "biome": "beach",
     "season": "Any",
     "tags": ["med_cat", "warrior", "herb", "horsetail", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
@@ -289,9 +289,9 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful and snappish with each other."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -337,7 +337,7 @@
 "min_cats": 2,
 "max_cats": 2,
 "win_skills": null,
-"win_trait": ["None"],
+"win_trait": null,
 "antagonize_text": null,
 "antagonize_fail_text": null
 },
@@ -359,7 +359,7 @@
 "min_cats": 2,
 "max_cats": 2,
 "win_skills": null,
-"win_trait": ["None"],
+"win_trait": null,
 "antagonize_text": null,
 "antagonize_fail_text": null
 },
@@ -381,7 +381,7 @@
 "min_cats": 3,
 "max_cats": 6,
 "win_skills": null,
-"win_trait": ["None"],
+"win_trait": null,
 "antagonize_text": null,
 "antagonize_fail_text": null
 },
@@ -406,7 +406,7 @@
     "min_cats": 2,
     "max_cats": 2,
     "win_skills": null,
-    "win_trait": ["None"],
+    "win_trait": null,
     "antagonize_text": null,
     "antagonize_fail_text": null
     },
@@ -431,7 +431,7 @@
     "min_cats": 2,
     "max_cats": 2,
     "win_skills": null,
-    "win_trait": ["None"],
+    "win_trait": null,
     "antagonize_text": null,
     "antagonize_fail_text": null
 }

@@ -76,6 +76,7 @@ class Patrol():
         self.patrol_total_experience = 0
         self.experience_levels.clear()
         self.patrol_other_cats.clear()
+
         for cat in patrol_cats:
             self.patrol_cats.append(cat)
             self.patrol_names.append(str(cat.name))
@@ -89,6 +90,7 @@ class Patrol():
             if cat.status == 'apprentice' or cat.status == 'medicine cat apprentice':
                 self.patrol_apprentices.append(cat)
             game.patrolled.append(cat)
+
         # sets medcat as leader if they're in the patrol
         if "medicine cat" in self.patrol_statuses:
             med_index = self.patrol_statuses.index("medicine cat")
@@ -102,6 +104,7 @@ class Patrol():
             elif not self.possible_patrol_leaders:
                 self.patrol_leader = choice(self.patrol_cats)
         self.patrol_leader_name = str(self.patrol_leader.name)
+
         self.patrol_random_cat = choice(self.patrol_cats)
 
         # big check for p_l and r_c not being the same cat if we can help it
@@ -247,13 +250,15 @@ class Patrol():
             elif clan_hostile:
                 possible_patrols.extend(self.generate_patrol_events(self.OTHER_CLAN_HOSTILE))
 
-        final_patrols = self.filter_patrols(possible_patrols, biome, patrol_size, current_season, patrol_type)
+        final_patrols, final_romance_patrols = self.filter_patrols(possible_patrols, biome, patrol_size, current_season, patrol_type)
         final_patrols = self.filter_relationship(final_patrols)
+        final_romance_patrols = self.filter_relationship(final_romance_patrols)
 
-        return final_patrols
+        return final_patrols, final_romance_patrols
 
     def filter_patrols(self, possible_patrols, biome, patrol_size, current_season, patrol_type):
         filtered_patrols = []
+        romantic_patrols = []
         # makes sure that it grabs patrols in the correct biomes, season, with the correct number of cats
         for patrol in possible_patrols:
             if patrol_size < patrol.min_cats:
@@ -363,17 +368,21 @@ class Patrol():
                 if len(self.patrol_apprentices) < 6 or len(self.patrol_apprentices) > 6:
                     continue
 
-            # making sure related cats don't accidentally go on romantic patrols together
             if "romantic" in patrol.tags:
+                romantic_patrols.append(patrol)
+            else:
+                filtered_patrols.append(patrol)
+
+            # making sure related cats don't accidentally go on romantic patrols together
+            '''if "romantic" in patrol.tags:
                 if ("rel_two_apps" and "two_apprentices") in patrol.tags and len(self.patrol_apprentices) >= 2:
                     if not self.patrol_apprentices[0].is_potential_mate(self.patrol_apprentices[1],
                                                                         for_love_interest=True):
                         continue
                 else:
                     if not self.patrol_random_cat.is_potential_mate(self.patrol_leader, for_patrol=True):
-                        continue
-            filtered_patrols.append(patrol)
-        return filtered_patrols
+                        continue'''
+        return filtered_patrols, romantic_patrols
 
     def filter_relationship(self, possible_patrols: list):
         """Filter the incoming patrol list according to the relationship constraints, if there are constraints.
@@ -601,14 +610,14 @@ class Patrol():
             self.patrol_total_experience / (2 * gm_modifier))
 
         if self.patrol_win_stat_cat:
-            success_chance = success_chance + 50
+            success_chance = success_chance + 30
             if ("great" or "very") in self.patrol_win_stat_cat.skill:
-                success_chance = success_chance + 10
+                success_chance = success_chance + 5
             elif ("fantastic" or "excellent" or "extremely") in self.patrol_win_stat_cat.skill:
-                success_chance = success_chance + 20
+                success_chance = success_chance + 10
 
         if self.patrol_fail_stat_cat:
-            success_chance = success_chance - 50
+            success_chance = success_chance - 30
 
         c = randint(0, 100)
         outcome = int(random.getrandbits(4))
@@ -732,12 +741,12 @@ class Patrol():
             # if /still/ no outcome is picked then double check that an outcome 0 is available,
             # if it isn't, then try to injure and then kill the cat
             if not outcome and not fail_text[0]:
-                # attempt injure outcome
-                if fail_text[3]:
-                    outcome = 3
                 # attempt death outcome
-                elif fail_text[2]:
+                if fail_text[2]:
                     outcome = 2
+                # attempt injure outcome
+                elif fail_text[3]:
+                    outcome = 3
 
             if outcome == 2:
                 self.handle_deaths(self.patrol_random_cat)

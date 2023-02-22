@@ -273,7 +273,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "pln_hunt_solo1",
+        "patrol_id": "pln_hunt_huntassessment1",
         "biome": "plains",
         "season": "Any",
         "tags": [
@@ -1039,7 +1039,7 @@
         ]
     },
     {
-        "patrol_id": "pln_hunt_gonetwolegden4",
+        "patrol_id": "pln_hunt_twolegdenappdare1",
         "biome": "plains",
         "season": "Any",
         "tags": [
@@ -1711,7 +1711,7 @@
         "success_text": [
             "After a good long session of confusion, the patrol manages to work out that the towering creature they're tracking is almost certainly a maned wolf, a nearly mythical creature. They're all a little uncomfortable, watching an upsized red fox with the legs of a deer amble around their territory, but it's also a little thrilling to follow such an unusual and rarely seen creature.",
             "The rumours are true - it seems to mostly be hunting for tiny mouse prey, not large things, despite it's massive size. This must be a maned wolf, and just being able to name the odd thing makes it feel so much less threatening. The cats remind each other of the tales sometimes shared in the nursery, of the tallest predator on the plains being one of the shyest.",
-            "s_c is able to recalled some of the stories that get told about the maned wolf, of how it stole its legs from a deer for speed and power, but in doing so also accidentally took the deer's flightiness. Ever since then it has been the tallest and shyest creature on the grasslands.",
+            "s_c is able to recall some of the stories that get told about the maned wolf, of how it stole its legs from a deer for speed and power, but in doing so also accidentally took the deer's flightiness. Ever since then it has been the tallest and shyest creature on the grasslands.",
             "Boldly, s_c jumps down to go check the potential threat out, and unwilling to leave their Clanmate in danger, the rest of the patrol follows. s_c refuses to let themselves be intimidated by the huge foxish thing, and bounds up to it, knowing courage can overcome things raw strength cannot. The weird creature skitters away from the incoming patrol, trotting off in a tangle of too long legs."
         ],
         "fail_text": [
