@@ -333,10 +333,13 @@ class Name():
                     self.suffix = random.choice(self.normal_suffixes)
 
     def __repr__(self):
-        if self.status in self.special_suffixes:
-            return self.prefix + self.special_suffixes[self.status]
-        else:
+        if self.status in ["deputy", "warrior", "medicine cat", "elder", "mediator"]:
             return self.prefix + self.suffix
+        elif self.status in ["kittypet", "loner", "rogue"]:
+            self.suffix = ""
+            return self.prefix
+        else:
+            return self.prefix + self.special_suffixes[self.status]
 
 
 
