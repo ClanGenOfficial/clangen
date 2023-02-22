@@ -700,28 +700,38 @@ class PatrolScreen(Screens):
         """sets patrol.patrol_fail_stat_cat and patrol.patrol_win_stat_cat"""
         patrol.patrol_fail_stat_cat = None
         patrol.patrol_win_stat_cat = None
+
+        possible_stat_cats = []
+
+        for kitty in patrol.patrol_cats:
+            if "app_stat" in event.tags \
+                    and kitty.status not in ['apprentice', "medicine cat apprentice"] \
+                    and kitty != patrol.patrol_apprentices[0]:
+                continue
+            if "adult_stat" in event.tags and kitty.status in ['apprentice', "medicine cat apprentice"]:
+                continue
+            possible_stat_cats.append(kitty)
+
         if event.win_skills:
-            for cat in patrol.patrol_cats:
-                if "app_stat" in event.tags and cat.status not in ['apprentice',
-                                                                          "medicine cat apprentice"]:
-                    continue
-                if "adult_stat" in event.tags and cat.status in ['apprentice',
-                                                                        "medicine cat apprentice"]:
-                    continue
-                if cat.skill in event.win_skills:
-                    patrol.patrol_win_stat_cat = cat
+            for kitty in possible_stat_cats:
+                if kitty.skill in event.win_skills:
+                    patrol.patrol_win_stat_cat = kitty
+                    break
         if event.win_trait and not patrol.patrol_win_stat_cat:
-            for cat in patrol.patrol_cats:
-                if cat.trait in event.win_trait:
-                    patrol.patrol_win_stat_cat = cat
+            for kitty in possible_stat_cats:
+                if kitty.trait in event.win_trait:
+                    patrol.patrol_win_stat_cat = kitty
+                    break
         if event.fail_skills:
-            for cat in patrol.patrol_cats:
-                if cat.skill in event.fail_skills:
-                    patrol.patrol_fail_stat_cat = cat
+            for kitty in possible_stat_cats:
+                if kitty.skill in event.fail_skills:
+                    patrol.patrol_fail_stat_cat = kitty
+                    break
         if event.fail_trait and not patrol.patrol_fail_stat_cat:
-            for cat in patrol.patrol_cats:
-                if cat.trait in event.fail_trait:
-                    patrol.patrol_fail_stat_cat = cat
+            for kitty in possible_stat_cats:
+                if kitty.trait in event.fail_trait:
+                    patrol.patrol_fail_stat_cat = kitty
+                    break
 
         # if we have both types of stat cats and the patrol is too small then we drop the win stat cat
         # this is to prevent cases where a stat cat and the random cat are the same cat
