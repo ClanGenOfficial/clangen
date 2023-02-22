@@ -172,7 +172,7 @@ class Relation_Events():
 
         # This is the first chance. Other checks will then be made that can "cancel" this roll.
         if not int(random.random() * chance):
-            print(f"primary kit roll triggered for {cat.name}")
+            # print(f"primary kit roll triggered for {cat.name}")
 
             # DETERMINE THE SECOND PARENT
             mate = None
@@ -197,7 +197,7 @@ class Relation_Events():
                 # This is a special check that could be an affair partner.
                 parent2_can_have_kits = self.check_second_parent(cat, second_parent)
                 if not parent2_can_have_kits:
-                    print("chosen second parent can't have kits")
+                    # print("chosen second parent can't have kits")
                     return
             else:
                 if not game.settings['no unknown fathers']:
@@ -241,15 +241,10 @@ class Relation_Events():
                 # Affairs almost never cancel - it makes setting affairs number easier.
                 chance = 1000
 
-            print("Kit cancel chance", chance)
+            # print("Kit cancel chance", chance)
             if not int(random.random() * chance):
                 # Cancel having kits.
-                if second_parent:
-                    print(f"Having kits canceled for {cat.name} and {second_parent.name}")
-                else:
-                    print(f"Having kits canceled for {cat.name} and unknown parent")
                 return
-
 
             # If you've reached here - congrats, kits!
             self.handle_zero_moon_pregnant(cat, second_parent, second_parent_relation, clan)

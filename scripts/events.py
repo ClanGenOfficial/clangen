@@ -721,9 +721,9 @@ class Events():
                                                          and not x.dead and not x.outside, Cat.all_cats_list))
 
                     # check if the medicine cat is an elder
-                    has_elder_med = any(cat.age == 'elder' and cat.status == "medicine cat" for cat in med_cat_list)
+                    has_elder_med = [c for c in med_cat_list if c.age == 'elder' and c.status == "medicine cat"]
 
-                    very_old_med = any(cat.moons >= 150 and cat.status == "medicine cat" for cat in med_cat_list)
+                    very_old_med = [c for c in med_cat_list if c.moons >= 150 and c.status == "medicine cat"]
 
                     # check if the clan has sufficient med cats
                     has_med = medical_cats_condition_fulfilled(Cat.all_cats.values(),
@@ -735,22 +735,28 @@ class Events():
 
                     # assign chance to become med app depending on current med cat and traits
                     chance = game.config["roles"]["base_medicine_app_chance"]
-                    if has_elder_med is True and has_med is False:
-                        chance = int(chance/13.67)
-                    elif has_med is False:
-                        chance = int(chance/5.125)
-                    elif not has_elder_med and has_med:
-                        chance = int(chance * 2.22)
-                    elif has_elder_med and has_med:
-                        if very_old_med:
-                            chance = int(chance/2.05)
+                    if has_elder_med == med_cat_list:
+                        # These chances apply if all the current medicine cats are elders.
+                        if has_med:
+                            chance = int(chance / 2.22)
                         else:
-                            chance = int(chance/1.7)
+                            chance = int(chance / 13.67)
+                    elif very_old_med == med_cat_list:
+                        # These chances apply is all the current medicine cats are very old.
+                        if has_med:
+                            chance = int(chance / 3)
+                        else:
+                            chance = int(chance / 14)
+                    # These chances will only be reached if the clan has at least one non-elder medicine cat.
+                    elif not has_med:
+                        chance = int(chance / 7.125)
+                    elif has_med:
+                        chance = int(chance * 2.22)
 
                     if cat.trait in ['altruistic', 'compassionate', 'empathetic', 'wise', 'faithful']:
                         chance = int(chance/1.3)
 
-                    if has_med_app is False and not int(random.random() * chance):
+                    if not has_med_app and not int(random.random() * chance):
                         self.ceremony(cat, 'medicine cat apprentice')
                         self.ceremony_accessory = True
                         self.gain_accessories(cat)
@@ -759,8 +765,20 @@ class Events():
                         mediator_list = list(filter(lambda x: x.status == "mediator" and not x.dead
                                                               and not x.outside, Cat.all_cats_list))
 
+                        # This checks if at least one mediator already has an apprentice.
+                        has_mediator_apprentice = False
+                        for c in mediator_list:
+                            if c.apprentice:
+                                has_mediator_apprentice = True
+                                break
+
+                        chance = game.config["roles"]["mediator_app_chance"]
+                        if cat.trait in ['charismatic', 'empathetic', 'responsible', 'wise', 'thoughtful']:
+                            chance = int(chance / 1.5)
+
                         # Only become a mediator if there is already one in the clan.
-                        if mediator_list and not int(random.random() * game.config["roles"]["mediator_app_chance"]):
+                        if mediator_list and not has_mediator_apprentice and \
+                                not int(random.random() * chance):
                             self.ceremony(cat, 'mediator apprentice')
                             self.ceremony_accessory = True
                             self.gain_accessories(cat)
