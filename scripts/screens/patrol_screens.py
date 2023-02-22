@@ -705,8 +705,7 @@ class PatrolScreen(Screens):
 
         for kitty in patrol.patrol_cats:
             if "app_stat" in event.tags \
-                    and kitty.status not in ['apprentice', "medicine cat apprentice"] \
-                    and kitty != patrol.patrol_apprentices[0]:
+                    and kitty.status not in ['apprentice', "medicine cat apprentice"]:
                 continue
             if "adult_stat" in event.tags and kitty.status in ['apprentice', "medicine cat apprentice"]:
                 continue
