@@ -70,6 +70,7 @@ class SaveCheck(UIWindow):
                     game.switch_screens = True
                     self.kill()
                 else:
+                    game.rpc.close()
                     pygame.display.quit()
                     pygame.quit()
                     exit()

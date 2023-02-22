@@ -303,6 +303,7 @@ class Clan():
         game.save_clanlist(clan)
         game.cur_events_list.clear()
 
+        game.rpc.close()
         pygame.display.quit()
         pygame.quit()
         exit()

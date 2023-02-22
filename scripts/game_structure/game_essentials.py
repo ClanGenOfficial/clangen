@@ -2,6 +2,7 @@ import pygame
 import pygame_gui
 import sys
 
+
 try:
     import ujson
 except ImportError as e:
@@ -205,6 +206,8 @@ class Game():
     cat_class = None
     config = {}
 
+    rpc = None
+
     is_closing = False
 
     def __init__(self, current_screen='start screen'):
@@ -215,6 +218,7 @@ class Game():
 
         with open(f"resources/game_config.json", 'r') as read_file:
             self.config = ujson.loads(read_file.read())
+
 
     def update_game(self):
         if self.current_screen != self.switches['cur_screen']:
