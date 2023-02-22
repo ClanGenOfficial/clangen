@@ -227,41 +227,27 @@ for a, i in enumerate(
     sprites.make_group('eyes2', (a, 3), f'eyes2{i}')
 
 # white patches
-for a, i in enumerate(['FULLWHITE', 'ANY', 'TUXEDO', 'LITTLE', 'COLOURPOINT', 'VAN', 'ANY2']):
+for a, i in enumerate(['FULLWHITE', 'ANY', 'TUXEDO', 'LITTLE', 'COLOURPOINT', 'VAN', 'ANY2', 
+    'ANYCREAMY', 'TUXEDOCREAMY', 'LITTLECREAMY', 'COLOURPOINTCREAMY', 'VANCREAMY', 'ANY2CREAMY']):
     sprites.make_group('whitepatches', (a, 0), f'white{i}')
-for a, i in enumerate([
-    'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL',
-    'LIGHTSONG', 'VITILIGO'
-]):
-    sprites.make_group('whitepatchesnew', (a, 0), f'white{i}')
-for a, i in enumerate([
-    'ANYCREAMY', 'TUXEDOCREAMY', 'LITTLECREAMY', 'COLOURPOINTCREAMY',
-    'VANCREAMY', 'ANY2CREAMY'
-]):
-    sprites.make_group('whitepatches', (a, 1), f'white{i}')
-# extra
-sprites.make_group('whitepatches', (0, 2), 'whiteEXTRA')
-
+for a, i in enumerate(['EXTRA', 'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL', 
+    'LIGHTSONG', 'VITILIGO', 'BLACKSTAR', 'PIEBALD', 'CURVED']):
+    sprites.make_group('whitepatchesnew', (a, 1), f'white{i}')
 # ryos white patches
+for a, i in enumerate(['TIP', 'FANCY', 'FRECKLES', 'RINGTAIL', 'HALFFACE', 'PANTS2', 'GOATEE', 'VITILIGO2',
+    'PAWS', 'MITAINE', 'BROKENBLAZE', 'SCOURGE']):
+    sprites.make_group('whitepatches', (a, 2), f'white{i}')
+for a, i in enumerate(['TAIL', 'BLAZE', 'PRINCE', 'BIB', 'VEE', 'UNDERS', 'HONEY',
+    'FAROFA', 'DAMIEN', 'MISTER', 'BELLY', 'TAILTIP', 'TOES']):
+    sprites.make_group('whitepatches', (a, 3), f'white{i}')
 for a, i in enumerate(
-        ['TIP', 'FANCY', 'FRECKLES', 'RINGTAIL', 'HALFFACE', 'PANTS2', 'GOATEE', 'VITILIGO2']):
-    sprites.make_group('whitepatches3', (a, 0), f'white{i}')
-for a, i in enumerate(['TAIL', 'BLAZE', 'PRINCE', 'BIB', 'VEE', 'UNDERS', 'PAWS', 'MITAINE']):
-    sprites.make_group('whitepatches3', (a, 1), f'white{i}')
-for a, i in enumerate(
-        ['FAROFA', 'DAMIEN', 'MISTER', 'BELLY', 'TAILTIP', 'TOES', 'BROKENBLAZE', 'SCOURGE']):
-    sprites.make_group('whitepatches3', (a, 2), f'white{i}')
-for a, i in enumerate(
-        ['APRON', 'CAPSADDLE', 'MASKMANTLE', 'SQUEAKS', 'STAR', 'TOESTAIL', 'RAVENPAW', 'HONEY']):
-    sprites.make_group('whitepatches3', (a, 3), f'white{i}')
-
+        ['APRON', 'CAPSADDLE', 'MASKMANTLE', 'SQUEAKS', 'STAR', 'TOESTAIL', 'RAVENPAW',
+        'PANTS', 'REVERSEPANTS', 'SKUNK', 'KARPATI', 'HALFWHITE', 'APPALOOSA']):
+    sprites.make_group('whitepatches', (a, 4), f'white{i}')
 # beejeans white patches + perrio's point marks, painted, and heart2 + anju's new marks + key's blackstar
-for a, i in enumerate(['PANTS', 'REVERSEPANTS', 'SKUNK', 'KARPATI', 'HALFWHITE', 'APPALOOSA', 'PIEBALD', 'CURVED']):
-    sprites.make_group('whitepatches4', (a, 0), 'white' + i)
-for a, i in enumerate(['HEART', 'LILTWO', 'GLASS', 'MOORISH', 'SEPIAPOINT', 'MINKPOINT', 'SEALPOINT']):
-    sprites.make_group('whitepatches4', (a, 1), 'white' + i)
-for a, i in enumerate(['MAO', 'LUNA', 'CHESTSPECK', 'WINGS', 'PAINTED', 'HEART2', 'BLACKSTAR']):
-    sprites.make_group('whitepatches4', (a, 2), 'white' + i)
+for a, i in enumerate(['HEART', 'LILTWO', 'GLASS', 'MOORISH', 'SEPIAPOINT', 'MINKPOINT', 'SEALPOINT',
+    'MAO', 'LUNA', 'CHESTSPECK', 'WINGS', 'PAINTED', 'HEART2']):
+    sprites.make_group('whitepatches', (a, 5), 'white' + i)
 
 # single (solid)
 for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST']):
