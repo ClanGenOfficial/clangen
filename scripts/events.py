@@ -79,6 +79,9 @@ class Events():
             needed_amount = game.clan.freshkill_pile.amount_food_needed()
             print(f"current freshkill amount: {game.clan.freshkill_pile.total_amount}, needed {needed_amount}")
 
+        if random.randint(1,20) == 1:  
+            self.handle_lost_cats_return()   
+
         for cat in Cat.all_cats.copy().values():
             if not cat.outside or cat.dead:
                 self.one_moon_cat(cat)
@@ -494,6 +497,19 @@ class Events():
             chosen_event = random.choice(possible_events)
             game.cur_events_list.append(Single_Event(chosen_event, "health"))
             game.herb_events_list.append(chosen_event)
+
+    def handle_lost_cats_return(self):
+        lost_cat = None
+        for id, cat in Cat.outside_cats.items():
+            if cat.outside and cat.status not in ['kittypet', 'loner', 'rogue']:
+                lost_cat = cat
+                break
+        if lost_cat:
+            lost_cat_name = lost_cat.name
+            text = [f'After a long journey, {lost_cat_name} has finally returned home to the Clan.']
+            lost_cat.outside = False
+            game.cur_events_list.append(Single_Event(random.choice(text), "misc", [lost_cat.ID]))
+            lost_cat.add_to_clan()
 
     def handle_fading(self, cat):
         if game.settings["fading"] and not cat.prevent_fading and cat.ID != game.clan.instructor.ID and \

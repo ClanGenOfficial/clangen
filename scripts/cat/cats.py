@@ -634,6 +634,23 @@ class Cat():
             app_ob.update_mentor()
         self.update_mentor()
         game.clan.add_to_outside(self)
+    
+    def add_to_clan(self):
+        """ Makes a "outside cat" a clan cat. Former leaders, deputies will become warriors. Apprentices will be assigned a mentor."""
+        self.outside = False
+        if self.status in ['leader', 'deputy']:
+            self.status_change('warrior')
+            self.status = 'warrior'
+        elif (self.status == 'apprentice' or self.status == 'kitten') and self.moons >= 12:
+            self.status_change('warrior')
+            involved_cats = [self]
+            game.cur_events_list.append(Single_Event('A long overdue warrior ceremony is held for ' + str(self.name.prefix) + 'paw. They smile as they finally become a warrior of the Clan and are now named ' + str(self.name) + '.', "ceremony", involved_cats))
+        elif self.status == 'kitten' and self.moons >= 6:
+            self.status_change('apprentice')
+            involved_cats = [self]
+            game.cur_events_list.append(Single_Event('A long overdue apprentice ceremony is held for ' + str(self.name.prefix) + 'kit. They smile as they finally become a warrior of the Clan and are now named ' + str(self.name) + '.', "ceremony", involved_cats))
+        self.update_mentor()
+        game.clan.add_to_clan(self)
 
     def status_change(self, new_status, resort=False):
         """ Changes the status of a cat. Additional functions are needed if you want to make a cat a leader or deputy.
