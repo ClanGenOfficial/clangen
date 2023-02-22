@@ -309,11 +309,11 @@ for a, i in enumerate(['LIGHTBROWN', 'BROWN', 'DARKBROWN', 'BLACK']):
     sprites.make_group('speckledcolours', (a, 2), f'speckled{i}')
 # bengal
 for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST']):
-    sprites.make_group('speckledcolours2', (a, 0), f'bengal{i}')
+    sprites.make_group('bengalcolours', (a, 0), f'bengal{i}')
 for a, i in enumerate(['PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'CREAM']):
-    sprites.make_group('speckledcolours2', (a, 1), f'bengal{i}')
+    sprites.make_group('bengalcolours', (a, 1), f'bengal{i}')
 for a, i in enumerate(['LIGHTBROWN', 'BROWN', 'DARKBROWN', 'BLACK']):
-    sprites.make_group('speckledcolours2', (a, 2), f'bengal{i}')
+    sprites.make_group('bengalcolours', (a, 2), f'bengal{i}')
 # mackerel
 for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST']):
     sprites.make_group('mackerelcolours', (a, 0), f'mackerel{i}')
