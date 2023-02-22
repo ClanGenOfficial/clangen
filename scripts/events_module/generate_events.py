@@ -146,7 +146,7 @@ class GenerateEvents:
             if "other_cat" in event.tags and not other_cat:
                 continue
 
-            if "backstory_constraint" and cat.backstory not in backstory_constraint:
+            if "backstory_constraint" and cat.backstory not in event.backstory_constraint:
                 continue
 
             # make complete leader death less likely until the leader is over 150 moons
