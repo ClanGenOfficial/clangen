@@ -32,7 +32,7 @@ from scripts.utility import get_med_cats, get_personality_compatibility, event_t
 from scripts.game_structure.game_essentials import game, screen
 from scripts.cat.thoughts import get_thoughts
 from scripts.cat_relations.relationship import Relationship
-import scripts.game_structure.image_cache as image_cache
+from scripts.game_structure import image_cache
 from scripts.event_class import Single_Event
 
 
