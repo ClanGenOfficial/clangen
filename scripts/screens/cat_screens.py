@@ -76,7 +76,7 @@ def bs_blurb_text(cat):
         'rogue2': "This cat used to live in a Twolegplace, scrounging for what they could find. They thought the Clan might offer them more security.",
         'rogue3': "This cat used to live alone in their own territory, but was chased out by something and eventually found the Clan.",
         'abandoned1': "This cat was found by the Clan as a kit and has been living with them ever since.",
-        'abandoned2': "This cat was born into outside of the Clan, but was brought to the Clan as a kit and has lived here ever since.",
+        'abandoned2': "This cat was born outside of the Clan, but was brought to the Clan as a kit and has lived here ever since.",
         'abandoned3': "This cat was born into another Clan, but they were left here as a kit for the Clan to raise.",
         'abandoned4': "This cat was found and taken in after being abandoned by their twolegs as a kit.",
         'medicine_cat': "This cat was once a medicine cat in another Clan.",
@@ -164,7 +164,7 @@ def backstory_text(cat):
     if bs_display == "disgraced":
         if cat.status == 'medicine cat':
             bs_display = 'disgraced medicine cat'
-        elif cat.status in ['warrior', 'elder']:
+        elif cat.status in ['warrior', 'elder', "deputy", "leader", "mediator"]:
             bs_display = 'disgraced deputy'
     if bs_display is None:
         bs_display = None
@@ -642,7 +642,7 @@ class ProfileScreen(Screens):
                                                               starting_height=2,
                                                               tool_tip_text="Prevents a cat from fading away."
                                                                             " If unchecked, and the cat has been dead "
-                                                                            "for longer than 302 moons, they will fade "
+                                                                            "for longer than 202 moons, they will fade "
                                                                             "on the next timeskip.",
                                                               object_id=box_type, manager=MANAGER)
             if game.clan.instructor.ID == self.the_cat.ID:
@@ -1127,11 +1127,11 @@ class ProfileScreen(Screens):
 
         # check if cat has any mentor influence, else assign None
         if len(self.the_cat.mentor_influence) >= 1:
-            influenced_skill = str(self.the_cat.mentor_influence[1])
+            influenced_trait = str(self.the_cat.mentor_influence[0])
             if len(self.the_cat.mentor_influence) >= 2:
-                influenced_trait = str(self.the_cat.mentor_influence[0])
+                influenced_skill = str(self.the_cat.mentor_influence[1])
             else:
-                influenced_trait = None
+                influenced_skill = None
         else:
             game.switches['sub_tab_group'] = 'life sub tab'
             influenced_trait = None
@@ -1185,14 +1185,14 @@ class ProfileScreen(Screens):
             if self.the_cat.status in ['apprentice', 'medicine cat apprentice']:
                 influence_history = 'This cat has not finished training.'
         elif influenced_skill is not None and influenced_trait is None:
-            influence_history = f"The influence of their mentor, {mentor}, caused this cat to {influenced_skill.lower()}."
+            influence_history = f"The influence of their mentor, {mentor}, caused this cat to {influenced_skill}."
         elif influenced_skill is None and influenced_trait is not None:
             if influenced_trait in ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']:
                 influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait.lower()}."
             else:
                 influence_history = f"This cat's mentor was {mentor}."
         elif influenced_trait is not None and influenced_skill is not None:
-            influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait.lower()} as well as {influenced_skill.lower()}."
+            influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait.lower()} as well as {influenced_skill}."
         else:
             influence_history = f"This cat's mentor was {mentor}."
 
@@ -2047,17 +2047,8 @@ class CeremonyScreen(Screens):
 
     def on_use(self):
         pass
-
-    def handle_leadership_ceremony(self, cat):
-        dep_name = str(cat.name.prefix) + str(cat.name.suffix)
-        if cat.trait == "bloodthirsty":
-            intro_text = dep_name + " leaves to speak with StarClan. They close their eyes and awaken under a vast, inky black sky. They turn around to see a wary group of cats approaching, stars dotting their fur." + "\n"
-        else:
-            intro_text = dep_name + " leaves to speak with StarClan. They close their eyes and are immediately surrounded by their loved ones, friends, and Clanmates who have passed on. Stars shine throughout their pelts, and their eyes are warm as they greet the new leader." + "\n"
-
-        # as of right now, chooses random starclan cats to give lives
-        # in the future, plan to have starclan cats with high relationships to give lives
-        # if not enough cats to give lives, generate a new random cat name to give a life
+            
+    def create_leadership_ceremony(self, cat):
         queen = ""
         warrior = ""
         kit = ""
@@ -2158,9 +2149,31 @@ class CeremonyScreen(Screens):
                                                                                       cat.life_givers[6], \
                                                                                       cat.life_givers[7], \
                                                                                       cat.life_givers[8]
-            known = cat.known_life_givers
-            virtues = cat.virtues
 
+    def handle_leadership_ceremony(self, cat):
+        
+        dep_name = str(cat.name.prefix) + str(cat.name.suffix)
+        if cat.trait == "bloodthirsty":
+            intro_text = dep_name + " leaves to speak with StarClan. They close their eyes and awaken under a vast, inky black sky. They turn around to see a wary group of cats approaching, stars dotting their fur." + "\n"
+        else:
+            intro_text = dep_name + " leaves to speak with StarClan. They close their eyes and are immediately surrounded by their loved ones, friends, and Clanmates who have passed on. Stars shine throughout their pelts, and their eyes are warm as they greet the new leader." + "\n"
+
+        # as of right now, chooses random starclan cats to give lives
+        # in the future, plan to have starclan cats with high relationships to give lives
+        # if not enough cats to give lives, generate a new random cat name to give a life
+        known = cat.known_life_givers
+        virtues = cat.virtues
+        if not known or not virtues:
+            self.create_leadership_ceremony(cat)
+        queen, warrior, kit, warrior2, app, elder, warrior3, med_cat, prev_lead = cat.life_givers[0], \
+                                                                                      cat.life_givers[1], \
+                                                                                      cat.life_givers[2], \
+                                                                                      cat.life_givers[3], \
+                                                                                      cat.life_givers[4], \
+                                                                                      cat.life_givers[5], \
+                                                                                      cat.life_givers[6], \
+                                                                                      cat.life_givers[7], \
+                                                                                      cat.life_givers[8]
         if known[0]:
             if cat.trait == "bloodthirsty":
                 queen_text = queen + ' stalks up to the new leader first, eyes burning with unexpected ferocity. They touch their nose to ' + dep_name + '\'s head, giving them a life for ' + cat.virtues[0] + '. ' + dep_name + ' reels back with the emotion of the life that courses through them.'

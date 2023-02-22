@@ -56,6 +56,7 @@ class GenerateEvents:
                 cat_negate_skill=event["cat_negate_skill"] if "cat_negate_skill" in event else None,
                 other_cat_negate_trait=event["other_cat_negate_trait"] if "other_cat_negate_trait" in event else None,
                 other_cat_negate_skill=event["other_cat_negate_trait"] if "other_cat_negate_trait" in event else None,
+                backstory_constraint=event["backstory_constraint"] if "backstory_constraint" in event else None,
 
                 # injury event only
                 injury=event["injury"] if "injury" in event else None,
@@ -134,6 +135,7 @@ class GenerateEvents:
 
     def filter_possible_events(self, possible_events, cat, other_cat, war, enemy_clan, other_clan, alive_kits):
         final_events = []
+        murder_events = []
 
         for event in possible_events:
 
@@ -144,9 +146,16 @@ class GenerateEvents:
             if "other_cat" in event.tags and not other_cat:
                 continue
 
+            if "backstory_constraint" and cat.backstory not in backstory_constraint:
+                continue
+
             # make complete leader death less likely until the leader is over 150 moons
             if "all_lives" in event.tags:
                 if int(cat.moons) < 150 and int(random.random() * 5):
+                    continue
+
+            if "low_lives" in event.tags:
+                if game.clan.leader_lives > 3:
                     continue
 
             # check season
@@ -175,14 +184,18 @@ class GenerateEvents:
                     cat_to = dislike_relation[y].cat_to
                     if cat_to == cat:
                         hate = True
+                        print('MURDER ATTEMPT', other_cat.name, 'to', cat.name)
                         break
                 for y in range(len(jealous_relation)):
                     cat_to = jealous_relation[y].cat_to
                     if cat_to == cat:
                         hate = True
+                        print('MURDER ATTEMPT', other_cat.name, 'to', cat.name)
                         break
                 if not hate:
                     continue
+                else:
+                    murder_events.append(event)
 
             # roll chance to get an injury of certain severity and check that injury is possible
             if event.injury in INJURIES:
@@ -294,6 +307,10 @@ class GenerateEvents:
                     continue
 
             final_events.append(event)
+
+        if murder_events and (other_cat.trait in ["vengeful", "bloodthirsty", "cold"] or not int(random.random() * 3)):
+            print('WE KILL TONIGHT')
+            return murder_events
         return final_events
 
     @staticmethod
@@ -342,6 +359,7 @@ class SingleEvent:
             cat_negate_skill=None,
             other_cat_negate_trait=None,
             other_cat_negate_skill=None,
+            backstory_constraint=None,
             injury=None,
             loner=False,
             new_name=False,
@@ -364,6 +382,7 @@ class SingleEvent:
         self.cat_negate_skill = cat_negate_skill
         self.other_cat_negate_trait = other_cat_negate_trait
         self.other_cat_negate_skill = other_cat_negate_skill
+        self.backstory_constraint = backstory_constraint
 
         # for injury event
         self.injury = injury
@@ -391,6 +410,7 @@ Tagging Guidelines: (if you add more tags, please add guidelines for them here)
 
 "all_lives" < take all the lives from a leader
 "some_lives" < take a random number, but not all, lives from a leader
+"low_lives" < only allow event if the leader is low on lives
 
 "murder" < m_c was murdered by the other cat
 

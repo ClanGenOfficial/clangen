@@ -160,7 +160,7 @@
         "responsible", "righteous", "troublesome", "vengeful"
     ],
     "fail_skills": ["good fighter"],
-    "fail_trait": ["None"],
+    "fail_trait": null,
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,

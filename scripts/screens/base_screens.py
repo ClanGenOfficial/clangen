@@ -7,7 +7,7 @@ from scripts.clan import map_available
 import scripts.game_structure.image_cache as image_cache
 from scripts.game_structure.image_button import UIImageButton
 import pygame_gui
-
+from scripts.game_structure.windows import SaveCheck
 
 class Screens():
     game_screen = screen
@@ -160,7 +160,7 @@ class Screens():
         elif event.ui_element == self.menu_buttons["patrol_screen"]:
             self.change_screen('patrol screen')
         elif event.ui_element == self.menu_buttons["main_menu"]:
-            SaveCheck(game.switches['cur_screen'])
+            SaveCheck(game.switches['cur_screen'], True)
             self.menu_buttons["main_menu"].disable()
         elif event.ui_element == self.menu_buttons["list_screen"]:
             self.change_screen('list screen')
@@ -174,6 +174,7 @@ class Screens():
         self.menu_buttons['heading'].set_text(text)
 
 
+
 # CAT PROFILES
 def cat_profiles():
     """Updates every cat's sprites"""
@@ -181,5 +182,6 @@ def cat_profiles():
 
     for x in Cat.all_cats:
         update_sprite(Cat.all_cats[x])
+
 
 

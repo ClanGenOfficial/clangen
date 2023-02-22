@@ -143,6 +143,11 @@ class Freshkill_Events():
             living_cats : list
                 a list of cats which have to be feed
         """
+
+        if not living_cats:
+            # End if there are no living cats left.
+            return
+
         # return if settings turned freshkill events off
         if not FRESHKILL_EVENT_ACTIVE:
             return

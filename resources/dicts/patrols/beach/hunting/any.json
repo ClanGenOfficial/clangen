@@ -123,11 +123,11 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "bch_hunt_solo1",
+        "patrol_id": "bch_hunt_huntassessment1",
         "biome": "beach",
         "season": "Any",
         "tags": [
-            "hunting",
+            "app_stat", "hunting",
             "apprentice",
             "respect",
             "clan_to_r_c",
@@ -760,7 +760,7 @@
         "biome": "beach",
         "season": "Any",
         "tags": [
-            "hunting",
+            "app_stat", "hunting",
             "gone",
             "apprentice",
             "injury",
@@ -888,11 +888,11 @@
         ]
     },
     {
-        "patrol_id": "bch_hunt_gonetwolegden4",
+        "patrol_id": "bch_hunt_twolegdenappdare1",
         "biome": "beach",
         "season": "Any",
         "tags": [
-            "hunting",
+            "app_stat", "hunting",
             "gone",
             "apprentice",
             "romantic",
