@@ -2,10 +2,6 @@ from scripts.cat.names import names
 from scripts.cat.pelts import collars
 from scripts.cat_relations.relationship import Relationship
 
-try:
-    import ujson
-except ImportError:
-    import json as ujson
 import random
 
 from scripts.cat.cats import Cat, INJURIES, PERMANENT, cat_class
