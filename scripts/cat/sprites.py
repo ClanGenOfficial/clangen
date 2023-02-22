@@ -183,11 +183,10 @@ sprites = Sprites(50)
 
 for x in [
     'lineart', 'singlecolours', 'speckledcolours', 'tabbycolours',
-    'whitepatches', 'eyes', 'eyes2', 'skin',
-    'scars', 'whitepatchesnew', 'collars', 'bellcollars', 'bowcollars',
+    'whitepatches', 'eyes', 'eyes2', 'skin', 'scars', 'collars', 'bellcollars', 'bowcollars',
     'bengalcolours', 'tabbycolours2', 'rosettecolours', 'smokecolours', 'tickedcolours', 
     'mackerelcolours', 'classiccolours', 'sokokecolours', 'agouticolours', 'singlestripecolours',
-    'whitepatches3', 'whitepatches4', 'Newscars', 'shadersnewwhite', 'lineartdead',
+    'Newscars', 'shadersnewwhite', 'lineartdead',
     'tortiecolourssolid', 'tortiecolourstabby', 'tortiecoloursbengal', 'tortiecoloursmarbled',
     'tortiecoloursticked', 'tortiecolourssmoke', 'tortiecoloursrosette', 'tortiecoloursspeckled',
     'tortiecoloursmackerel', 'tortiecoloursclassic', 'tortiecolourssokoke', 'tortiecoloursagouti',
