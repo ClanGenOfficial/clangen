@@ -1,17 +1,21 @@
 import re
+import random
 from math import ceil
 from os.path import exists as file_exists
 from random import choice, sample
 import pygame
 import pygame_gui
-import random
+try:
+    import ujson
+except ImportError:
+    import json as ujson
 from .base_screens import Screens, cat_profiles
 from scripts.utility import get_text_box_theme, scale, get_personality_compatibility, check_relationship_value
 # from scripts.game_structure.text import *
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked, UISpriteButton
 from scripts.patrol import patrol
 from scripts.cat.cats import Cat, INJURIES, ILLNESSES
-from scripts.game_structure.game_essentials import *
+from scripts.game_structure.game_essentials import game, MANAGER
 
 
 class PatrolScreen(Screens):

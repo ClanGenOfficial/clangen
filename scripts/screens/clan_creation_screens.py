@@ -12,7 +12,7 @@ from re import sub
 import scripts.game_structure.image_cache as image_cache
 # from scripts.world import World, save_map
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked, UISpriteButton
-from scripts.game_structure.game_essentials import *
+from scripts.game_structure.game_essentials import game, MANAGER
 
 
 class MakeClanScreen(Screens):

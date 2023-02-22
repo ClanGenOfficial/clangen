@@ -21,7 +21,7 @@ from scripts.conditions import Illness, Injury, PermanentCondition, get_amount_c
 import bisect
 
 from scripts.utility import *
-from scripts.game_structure.game_essentials import *
+from scripts.game_structure.game_essentials import game, screen
 from scripts.cat_relations.relationship import *
 import scripts.game_structure.image_cache as image_cache
 from scripts.event_class import Single_Event

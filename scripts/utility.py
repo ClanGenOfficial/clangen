@@ -10,7 +10,7 @@ from scripts.game_structure import image_cache
 
 from scripts.cat.sprites import *
 from scripts.cat.pelts import *
-from scripts.game_structure.game_essentials import *
+from scripts.game_structure.game_essentials import game, screen_x, screen_y
 
 
 def scale(rect):

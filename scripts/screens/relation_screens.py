@@ -11,7 +11,7 @@ from scripts.utility import draw_large, draw, update_sprite, get_personality_com
 from scripts.cat.cats import Cat
 import scripts.game_structure.image_cache as image_cache
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked, UISpriteButton, UIRelationStatusBar
-from scripts.game_structure.game_essentials import *
+from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 
 
 class ChooseMentorScreen(Screens):

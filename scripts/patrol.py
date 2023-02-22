@@ -4,7 +4,7 @@ from random import choice, randint, choices
 from math import floor
 
 from scripts.clan import HERBS
-from scripts.game_structure.game_essentials import *
+from scripts.game_structure.game_essentials import game
 from scripts.cat.names import *
 from scripts.cat.cats import *
 from scripts.cat.pelts import *
