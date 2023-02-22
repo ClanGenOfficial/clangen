@@ -500,7 +500,6 @@ def init_sprite(cat):
         if cat.pelt.length != 'long':
             cat.cat_sprites['adult'] = randint(6, 8)
             cat.cat_sprites['para_adult'] = 16
-
         else:
             cat.cat_sprites['adult'] = randint(9, 11)
             cat.cat_sprites['para_adult'] = 15
