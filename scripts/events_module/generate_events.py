@@ -56,6 +56,7 @@ class GenerateEvents:
                 cat_negate_skill=event["cat_negate_skill"] if "cat_negate_skill" in event else None,
                 other_cat_negate_trait=event["other_cat_negate_trait"] if "other_cat_negate_trait" in event else None,
                 other_cat_negate_skill=event["other_cat_negate_trait"] if "other_cat_negate_trait" in event else None,
+                backstory_constraint=event["backstory_constraint"] if "backstory_constraint" in event else None,
 
                 # injury event only
                 injury=event["injury"] if "injury" in event else None,
@@ -143,6 +144,9 @@ class GenerateEvents:
                 continue
 
             if "other_cat" in event.tags and not other_cat:
+                continue
+
+            if "backstory_constraint" and cat.backstory not in backstory_constraint:
                 continue
 
             # make complete leader death less likely until the leader is over 150 moons
@@ -355,6 +359,7 @@ class SingleEvent:
             cat_negate_skill=None,
             other_cat_negate_trait=None,
             other_cat_negate_skill=None,
+            backstory_constraint=None,
             injury=None,
             loner=False,
             new_name=False,
@@ -377,6 +382,7 @@ class SingleEvent:
         self.cat_negate_skill = cat_negate_skill
         self.other_cat_negate_trait = other_cat_negate_trait
         self.other_cat_negate_skill = other_cat_negate_skill
+        self.backstory_constraint = backstory_constraint
 
         # for injury event
         self.injury = injury
