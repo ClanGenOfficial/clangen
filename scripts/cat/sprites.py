@@ -185,7 +185,7 @@ for x in [
     'lineart', 'singlecolours', 'speckledcolours', 'tabbycolours',
     'whitepatches', 'eyes', 'eyes2', 'skin',
     'scars', 'whitepatchesnew', 'collars', 'bellcollars', 'bowcollars',
-    'speckledcolours2', 'tabbycolours2', 'rosettecolours', 'smokecolours', 'tickedcolours', 
+    'bengalcolours', 'tabbycolours2', 'rosettecolours', 'smokecolours', 'tickedcolours', 
     'mackerelcolours', 'classiccolours', 'sokokecolours', 'agouticolours', 'singlestripecolours',
     'whitepatches3', 'whitepatches4', 'Newscars', 'shadersnewwhite', 'lineartdead',
     'tortiecolourssolid', 'tortiecolourstabby', 'tortiecoloursbengal', 'tortiecoloursmarbled',
