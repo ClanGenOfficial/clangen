@@ -606,7 +606,8 @@ class PatrolScreen(Screens):
             patrol.patrol_event = self.normal_event_choice
         else:
             print("attempted romance between:", patrol.patrol_leader.name, patrol.patrol_random_cat.name)
-            chance_of_romance_patrol = 20
+            chance_of_romance_patrol = 16
+            
             if get_personality_compatibility(patrol.patrol_leader, patrol.patrol_random_cat) is True:
                 chance_of_romance_patrol -= 10
             else:
