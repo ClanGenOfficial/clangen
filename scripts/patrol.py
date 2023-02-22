@@ -8,7 +8,7 @@ from scripts.game_structure.game_essentials import *
 from scripts.cat.names import *
 from scripts.cat.cats import *
 from scripts.cat.pelts import *
-from scripts.clan_resources.freshkill import ADDITIONAL_PREY, PREY_REQUIREMENT, HUNTER_EXP_BONUS, HUNTER_BONUS
+from scripts.clan_resources.freshkill import ADDITIONAL_PREY, PREY_REQUIREMENT, HUNTER_EXP_BONUS, HUNTER_BONUS, FRESHKILL_ACTIVE
 from scripts.clan import Clan
 
 # ---------------------------------------------------------------------------- #
@@ -1648,7 +1648,10 @@ class Patrol():
         """Handle the amount of prey which was caught and add it to the fresh-kill pile of the clan."""
         if not "hunting" in patrol.patrol_event.tags:
             return
-        
+
+        if not FRESHKILL_ACTIVE:
+            return
+
         basic_amount = PREY_REQUIREMENT["warrior"]
         if game.clan.game_mode == 'expanded':
             basic_amount += ADDITIONAL_PREY
@@ -1707,7 +1710,6 @@ class Patrol():
 
         game.clan.freshkill_pile.add_freshkill(total_amount)
         if total_amount > 0:
-            print(f" -- FRESHKILL: added {total_amount} prey")
             self.results_text.append(f"Each cat catches a {prey_size} amount of prey.")
 
     def handle_clan_relations(self, difference, antagonize):

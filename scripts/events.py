@@ -10,6 +10,7 @@ from scripts.cat.names import names
 from scripts.cat.cats import Cat, cat_class
 from scripts.cat.pelts import plant_accessories, wild_accessories
 from scripts.clan import HERBS
+from scripts.clan_resources.freshkill import FRESHKILL_EVENT_ACTIVE
 from scripts.conditions import medical_cats_condition_fulfilled, get_amount_cat_for_one_medic
 from scripts.events_module.misc_events import MiscEvents
 from scripts.events_module.new_cat_events import NewCatEvents
@@ -80,7 +81,7 @@ class Events():
             if game.clan.age >= 5:
                 self.freshkill_events.handle_amount_freshkill_pile(game.clan.freshkill_pile, relevant_cats)
             # make a notification if the clan has not enough prey
-            if not game.clan.freshkill_pile.clan_has_enough_food():
+            if not game.clan.freshkill_pile.clan_has_enough_food() and FRESHKILL_EVENT_ACTIVE:
                 game.cur_events_list.insert(0, Single_Event(
                     f"{game.clan.name}Clan doesn't have enough prey for next moon!"))
             print(f" -- FRESHKILL: prey amount after feeding {game.clan.freshkill_pile.total_amount}")
