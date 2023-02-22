@@ -80,5 +80,8 @@
 			"warrior": 5000,
 			"elder": 400
 		}
+	},
+	"lost_cat": {
+		"rejoin_chance": 20
 	}
 }

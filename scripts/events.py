@@ -78,8 +78,9 @@ class Events():
                     f"{game.clan.name}Clan doesn't have enough prey for next moon!"))
             needed_amount = game.clan.freshkill_pile.amount_food_needed()
             print(f"current freshkill amount: {game.clan.freshkill_pile.total_amount}, needed {needed_amount}")
-
-        if random.randint(1,20) == 1:  
+        
+        rejoin_upperbound = game.config["lost_cat"]["rejoin_chance"]
+        if random.randint(1,rejoin_upperbound) == 1:  
             self.handle_lost_cats_return()   
 
         for cat in Cat.all_cats.copy().values():
@@ -500,6 +501,11 @@ class Events():
             game.herb_events_list.append(chosen_event)
 
     def handle_lost_cats_return(self):
+        for id, cat in Cat.all_cats.items():
+            if cat.outside and cat.ID not in Cat.outside_cats.keys():
+                # The outside-value must be set to True before the cat can go to cotc
+                Cat.outside_cats.update({cat.ID: cat})
+                
         lost_cat = None
         for id, cat in Cat.outside_cats.items():
             if cat.outside and cat.status not in ['kittypet', 'loner', 'rogue']:
