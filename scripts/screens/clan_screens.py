@@ -9,7 +9,7 @@ from scripts.cat.cats import Cat
 from scripts.game_structure.image_button import UISpriteButton, UIImageButton, UITextBoxTweaked
 from scripts.utility import get_text_box_theme, update_sprite, scale, get_alive_clan_queens, get_med_cats
 from scripts.game_structure import image_cache
-from scripts.game_structure.game_essentials import *
+from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 from .cat_screens import ProfileScreen
 from ..conditions import get_amount_cat_for_one_medic, medical_cats_condition_fulfilled
 

@@ -1,14 +1,26 @@
-from scripts.cat.cats import *
-from scripts.game_structure.load_cat import *
-from scripts.clan_resources.freshkill import Freshkill_Pile, Nutrition
+import random
+from random import choice, randint
+import os
 from os import path
 
+import pygame
 try:
-    from scripts.world import *
+    import ujson
+except ImportError:
+    import json as ujson
 
-    map_available = True
-except:
-    map_available = False
+from scripts.game_structure.game_essentials import game
+from scripts.utility import update_sprite
+from scripts.cat.cats import Cat, cat_class, ILLNESSES, INJURIES, PERMANENT
+from scripts.cat.names import names
+from scripts.clan_resources.freshkill import Freshkill_Pile, Nutrition
+
+#try:
+#    from scripts.world import World, save_map, load_map
+#    map_available = True
+#except:
+#    map_available = False
+map_available = False
 from sys import exit
 
 
