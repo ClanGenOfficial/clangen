@@ -1237,7 +1237,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "(prefix)paw still can't believe that their mentor is gone. They don't feel ready to heal the Clan, and so politely decline being given a name yet. However, as they visit StarClan that half moon, (deadmentor) appears to them in a dream. They assure (prefix)paw that they'll be alright without them, and that they are ready for their full name. Resting their muzzle on (prefix)paw's head, (mentor) names them m_c."
+    "(prefix)paw still can't believe that their mentor is gone. They don't feel ready to heal the Clan, and so politely decline being given a name yet. However, as they visit StarClan that half moon, (deadmentor) appears to them in a dream. They assure (prefix)paw that they'll be alright without them, and that they are ready for their full name. Resting their muzzle on (prefix)paw's head, (deadmentor) names them m_c."
   ],
   "med_3": [
     [
@@ -1308,7 +1308,7 @@
   "med_9": [
     [
       "medicine cat",
-      "no_previous_mentor",
+      "no_valid_previous_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -1319,7 +1319,7 @@
   "med_10": [
     [
       "medicine cat",
-      "no_previous_mentor",
+      "no_valid_previous_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -1743,7 +1743,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "(prefix)paw almost sobs as they spot dead_par1 and dead_par2 step out of the crowd towards them to congratulate them on completing their training. dead_par2 rests their muzzle on (prefix)paw's head, naming them m_c, and welcoming them as a full medicine cat."
+    "(prefix)paw almost sobs as they spot dead_par1 and dead_par2 step out of the starry crowd to congratulate them on completing their training. dead_par2 rests their muzzle on (prefix)paw's head, naming them m_c, and welcoming them as a full medicine cat."
   ],
   "med_50": [
     [
