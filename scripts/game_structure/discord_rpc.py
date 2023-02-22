@@ -1,3 +1,13 @@
+## INFO:
+# This file is used to connect to Discord's Rich Presence API.
+# This allows the game to show up on your Discord profile.
+#
+# Discord RPC is not required for the game to run.
+# If you do not have the pypresence module installed, this file will not be used, and the game will run as normal.
+
+
+
+
 from scripts.game_structure.game_essentials import game
 from time import time
 
