@@ -5,6 +5,7 @@ from os.path import exists as file_exists
 from random import choice, sample
 import pygame
 import pygame_gui
+
 try:
     import ujson
 except ImportError:
@@ -602,38 +603,7 @@ class PatrolScreen(Screens):
         # resetting stat cats and then finding new stat cats
         self.find_stat_cats(self.normal_event_choice)
 
-        # if no romance was available or the patrol lead and random cat aren't potential mates then use the normal event
-        if not self.romantic_event_choice \
-                or not patrol.patrol_random_cat.is_potential_mate(patrol.patrol_leader, for_love_interest=True) \
-                or ("rel_two_apps" in self.romantic_event_choice.tags and not patrol.patrol_apprentices[0].is_potential_mate(patrol.patrol_apprentices[1], for_love_interest=True)):
-            patrol.patrol_event = self.normal_event_choice
-        else:
-            print("attempted romance between:", patrol.patrol_leader.name, patrol.patrol_random_cat.name)
-            chance_of_romance_patrol = 16
-            
-            if get_personality_compatibility(patrol.patrol_leader, patrol.patrol_random_cat) is True:
-                chance_of_romance_patrol -= 10
-            else:
-                chance_of_romance_patrol += 10
-            values = ["romantic", "platonic", "dislike", "admiration", "comfortable", "jealousy", "trust"]
-            for val in values:
-                value_check = check_relationship_value(patrol.patrol_leader, patrol.patrol_random_cat, val)
-                if val in ["romantic", "platonic", "admiration", "comfortable", "trust"] and value_check >= 20:
-                    chance_of_romance_patrol -= 1
-                elif val in ["dislike", "jealousy"] and value_check >= 20:
-                    chance_of_romance_patrol += 2
-            print("final romance chance:", chance_of_romance_patrol)
-            if not int(random.random() * chance_of_romance_patrol):
-                patrol.patrol_event = self.romantic_event_choice
-                # need to make sure the patrol leader is the same as the stat cat
-                self.find_stat_cats(self.romantic_event_choice)
-                if patrol.patrol_win_stat_cat != patrol.patrol_leader:
-                    patrol.patrol_win_stat_cat = None
-                if patrol.patrol_fail_stat_cat != patrol.patrol_leader:
-                    patrol.patrol_fail_stat_cat = None
-                print("did the romance")
-            else:
-                patrol.patrol_event = self.normal_event_choice
+        self.choose_normal_or_romance()
 
         print("Chosen Patrol ID: " + str(patrol.patrol_event.patrol_id))
         patrol_size = len(patrol.patrol_cats)
@@ -696,6 +666,50 @@ class PatrolScreen(Screens):
         if patrol.patrol_event.antagonize_text is None:
             self.elements["antagonize"].hide()
 
+    def choose_normal_or_romance(self):
+        # if no romance was available or the patrol lead and random cat aren't potential mates then use the normal event
+        if not self.romantic_event_choice:
+            patrol.patrol_event = self.normal_event_choice
+            print('no romance choices')
+            return
+        if not patrol.patrol_random_cat.is_potential_mate(patrol.patrol_leader, for_love_interest=True) \
+                and patrol.patrol_random_cat.mate != patrol.patrol_leader:
+            patrol.patrol_event = self.normal_event_choice
+            print('not a potential mate or current mate')
+            return
+        if "rel_two_apps" in self.romantic_event_choice.tags and not patrol.patrol_apprentices[0].is_potential_mate(
+                patrol.patrol_apprentices[1], for_love_interest=True):
+            patrol.patrol_event = self.normal_event_choice
+            print('two apps were not potential mates')
+            return
+
+        print("attempted romance between:", patrol.patrol_leader.name, patrol.patrol_random_cat.name)
+        chance_of_romance_patrol = 16
+
+        if get_personality_compatibility(patrol.patrol_leader, patrol.patrol_random_cat) is True:
+            chance_of_romance_patrol -= 10
+        else:
+            chance_of_romance_patrol += 10
+        values = ["romantic", "platonic", "dislike", "admiration", "comfortable", "jealousy", "trust"]
+        for val in values:
+            value_check = check_relationship_value(patrol.patrol_leader, patrol.patrol_random_cat, val)
+            if val in ["romantic", "platonic", "admiration", "comfortable", "trust"] and value_check >= 20:
+                chance_of_romance_patrol -= 1
+            elif val in ["dislike", "jealousy"] and value_check >= 20:
+                chance_of_romance_patrol += 2
+        print("final romance chance:", chance_of_romance_patrol)
+        if not int(random.random() * chance_of_romance_patrol):
+            patrol.patrol_event = self.romantic_event_choice
+            # need to make sure the patrol leader is the same as the stat cat
+            self.find_stat_cats(self.romantic_event_choice)
+            if patrol.patrol_win_stat_cat != patrol.patrol_leader:
+                patrol.patrol_win_stat_cat = None
+            if patrol.patrol_fail_stat_cat != patrol.patrol_leader:
+                patrol.patrol_fail_stat_cat = None
+            print("did the romance")
+        else:
+            patrol.patrol_event = self.normal_event_choice
+
     def find_stat_cats(self, event):
         """sets patrol.patrol_fail_stat_cat and patrol.patrol_win_stat_cat"""
         patrol.patrol_fail_stat_cat = None
@@ -739,12 +753,20 @@ class PatrolScreen(Screens):
 
         # here we try to ensure that the random cat is not the same as either stat cat type or the patrol leader
         if patrol.patrol_win_stat_cat or patrol.patrol_fail_stat_cat:
+            print('has stat cat')
+            if patrol.patrol_win_stat_cat:
+                print(patrol.patrol_win_stat_cat.name, patrol.patrol_random_cat.name)
+            if patrol.patrol_fail_stat_cat:
+                print(patrol.patrol_fail_stat_cat.name, patrol.patrol_random_cat.name)
             count = 0
             while count <= 20:  # conceivably with a 6 cat patrol, 20 is the number of possible 3 cat combinations
+                print('counting')
                 if (patrol.patrol_win_stat_cat or patrol.patrol_fail_stat_cat) == patrol.patrol_random_cat \
                         or patrol.patrol_random_cat == patrol.patrol_leader:
                     if len(patrol.patrol_cats) <= 2:
+                        print('remove all stat cats')
                         patrol.patrol_fail_stat_cat = None
+                        patrol.patrol_win_stat_cat = None
                         break
                     print("finding new random cat, old random cat:", patrol.patrol_random_cat.name)
                     patrol.patrol_other_cats.append(patrol.patrol_random_cat)
@@ -755,7 +777,12 @@ class PatrolScreen(Screens):
                     self.romantic_event_choice = None
                     count += 1
                 else:
+                    if patrol.patrol_win_stat_cat:
+                        print(patrol.patrol_win_stat_cat.name, patrol.patrol_random_cat.name)
+                    if patrol.patrol_fail_stat_cat:
+                        print(patrol.patrol_fail_stat_cat.name, patrol.patrol_random_cat.name)
                     break
+
     def get_patrol_art(self):
         """
         grabs art for the patrol based on the patrol_id
