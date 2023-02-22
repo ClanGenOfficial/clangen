@@ -9,7 +9,7 @@ from scripts.game_structure.image_button import UIImageButton
 # from scripts.world import save_map
 from scripts.utility import get_text_box_theme, scale
 import pygame_gui
-from scripts.game_structure.game_essentials import *
+from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 
 
 class StartScreen(Screens):
@@ -205,7 +205,7 @@ class SettingsScreen(Screens):
                 "clayteeth<br>" \
                 "CrumbsDeluxe<br>" \
                 "Hatsune Miku<br>" \
-                "Key<br>" \
+                "keyraven (key)<br>" \
                 "larkgz<br>" \
                 "ozzie<br>" \
                 "sami(RAYTRAC3R)<br>" \
@@ -215,7 +215,7 @@ class SettingsScreen(Screens):
                 "Tiri<br>" \
                 "Tybaxel<br>" \
                 "MathKangaroo (Victor)<br>" \
-                "ZtheCorgi<br>" \
+                "ZtheCorgi (Zabe)<br>" \
                 "Charlie<br>" \
                 "green?<br>" \
                 "Owanora<br>" \
@@ -225,7 +225,22 @@ class SettingsScreen(Screens):
                 "Chase<br>" \
                 "wood pank<br>" \
                 "grif<br>" \
-                "beejeans<br></i>" \
+                "beejeans<br>" \
+                "Irony-Dragon<br>" \
+                "Kassi (Sophia)<br>" \
+                "milly!<br>" \
+                "coyotedawn<br>" \
+                "paradigox<br>" \
+                "Fruit Punk<br>" \
+                "ImLvna (Luna)<br>" \
+                "clownthoughts<br>" \
+                "thyfrankie<br>" \
+                "Perrio<br>" \
+                "anonn (Nicole)<br>" \
+                "catastrophe<br>" \
+                "Kittenvy<br>" \
+                "SunlitFable<br>" \
+                "Hobohime<br></i>" \
                 "Thank you to the beta testers and all those who have helped with development.<br><br>" \
                 "<b>Thank you for playing!!</b><br><br>" \
                 "Code is licensed under <a href=https://www.mozilla.org/en-US/MPL/2.0/>Mozilla Public License Version 2.0</a><br>" \
@@ -769,7 +784,7 @@ class SettingsScreen(Screens):
                 "",
                 object_id=box_type,
                 container=self.checkboxes_text["container"], manager=MANAGER,
-                tool_tip_text="After 302 moons, dead cats will be unloaded, and saved separately. "
+                tool_tip_text="After 202 moons, dead cats will be unloaded, and saved separately. "
                               "No family relations will be lost."
             )
 

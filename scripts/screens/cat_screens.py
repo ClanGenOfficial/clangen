@@ -1,8 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: ascii -*-
+import os
 from random import choice
 
 import pygame
+try:
+    import ujson
+except ImportError:
+    import json as ujson
 
 from scripts.utility import update_sprite, event_text_adjust, scale
 
@@ -11,13 +16,12 @@ from .base_screens import Screens, cat_profiles
 from scripts.utility import get_text_box_theme
 from scripts.cat.cats import Cat
 from scripts.cat.pelts import collars, wild_accessories
-import scripts.game_structure.image_cache as image_cache
+from scripts.game_structure import image_cache
 import pygame_gui
 from re import sub
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked  # , UIImageTextBox, UISpriteButton
-from scripts.game_structure import image_cache
-from scripts.game_structure.game_essentials import *
-from scripts.cat.names import *
+from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
+from scripts.cat.names import names
 
 
 # ---------------------------------------------------------------------------- #
@@ -642,7 +646,7 @@ class ProfileScreen(Screens):
                                                               starting_height=2,
                                                               tool_tip_text="Prevents a cat from fading away."
                                                                             " If unchecked, and the cat has been dead "
-                                                                            "for longer than 302 moons, they will fade "
+                                                                            "for longer than 202 moons, they will fade "
                                                                             "on the next timeskip.",
                                                               object_id=box_type, manager=MANAGER)
             if game.clan.instructor.ID == self.the_cat.ID:
@@ -2047,17 +2051,8 @@ class CeremonyScreen(Screens):
 
     def on_use(self):
         pass
-
-    def handle_leadership_ceremony(self, cat):
-        dep_name = str(cat.name.prefix) + str(cat.name.suffix)
-        if cat.trait == "bloodthirsty":
-            intro_text = dep_name + " leaves to speak with StarClan. They close their eyes and awaken under a vast, inky black sky. They turn around to see a wary group of cats approaching, stars dotting their fur." + "\n"
-        else:
-            intro_text = dep_name + " leaves to speak with StarClan. They close their eyes and are immediately surrounded by their loved ones, friends, and Clanmates who have passed on. Stars shine throughout their pelts, and their eyes are warm as they greet the new leader." + "\n"
-
-        # as of right now, chooses random starclan cats to give lives
-        # in the future, plan to have starclan cats with high relationships to give lives
-        # if not enough cats to give lives, generate a new random cat name to give a life
+            
+    def create_leadership_ceremony(self, cat):
         queen = ""
         warrior = ""
         kit = ""
@@ -2158,9 +2153,31 @@ class CeremonyScreen(Screens):
                                                                                       cat.life_givers[6], \
                                                                                       cat.life_givers[7], \
                                                                                       cat.life_givers[8]
-            known = cat.known_life_givers
-            virtues = cat.virtues
 
+    def handle_leadership_ceremony(self, cat):
+        
+        dep_name = str(cat.name.prefix) + str(cat.name.suffix)
+        if cat.trait == "bloodthirsty":
+            intro_text = dep_name + " leaves to speak with StarClan. They close their eyes and awaken under a vast, inky black sky. They turn around to see a wary group of cats approaching, stars dotting their fur." + "\n"
+        else:
+            intro_text = dep_name + " leaves to speak with StarClan. They close their eyes and are immediately surrounded by their loved ones, friends, and Clanmates who have passed on. Stars shine throughout their pelts, and their eyes are warm as they greet the new leader." + "\n"
+
+        # as of right now, chooses random starclan cats to give lives
+        # in the future, plan to have starclan cats with high relationships to give lives
+        # if not enough cats to give lives, generate a new random cat name to give a life
+        known = cat.known_life_givers
+        virtues = cat.virtues
+        if not known or not virtues:
+            self.create_leadership_ceremony(cat)
+        queen, warrior, kit, warrior2, app, elder, warrior3, med_cat, prev_lead = cat.life_givers[0], \
+                                                                                      cat.life_givers[1], \
+                                                                                      cat.life_givers[2], \
+                                                                                      cat.life_givers[3], \
+                                                                                      cat.life_givers[4], \
+                                                                                      cat.life_givers[5], \
+                                                                                      cat.life_givers[6], \
+                                                                                      cat.life_givers[7], \
+                                                                                      cat.life_givers[8]
         if known[0]:
             if cat.trait == "bloodthirsty":
                 queen_text = queen + ' stalks up to the new leader first, eyes burning with unexpected ferocity. They touch their nose to ' + dep_name + '\'s head, giving them a life for ' + cat.virtues[0] + '. ' + dep_name + ' reels back with the emotion of the life that courses through them.'

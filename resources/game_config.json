@@ -69,7 +69,7 @@
 		"direct_inheritance": 15
 	},
 	"fading": {
-		"age_to_fade": 302,
+		"age_to_fade": 202,
 		"opacity_at_fade": 20,
 		"visual_fading_speed": 5
 	},

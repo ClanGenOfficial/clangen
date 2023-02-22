@@ -296,6 +296,29 @@
 			}
         }
     },
+    "#quit_game_button":
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/quit_button.png"
+            },
+			"hovered_image":
+            {
+                "path": "resources/images/buttons/quit_button_hover.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/quit_button_hover.png"
+            },
+            "disabled_image":
+            {
+				"path": "resources/images/buttons/quit_button_unavailable.png"
+			}
+        }
+    },
     "#allegiances_button":
     {
         "prototype": "#image_button",

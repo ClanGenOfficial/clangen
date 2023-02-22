@@ -1,17 +1,14 @@
-from math import ceil
-
 import pygame.transform
 import pygame_gui.elements
 from random import choice
 
 from .base_screens import Screens, cat_profiles
 
-from scripts.utility import draw_large, draw, update_sprite, get_personality_compatibility, get_text_box_theme, scale
-# from scripts.game_structure.text import *
+from scripts.utility import get_personality_compatibility, get_text_box_theme, scale
 from scripts.cat.cats import Cat
-import scripts.game_structure.image_cache as image_cache
+from scripts.game_structure import image_cache
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked, UISpriteButton, UIRelationStatusBar
-from scripts.game_structure.game_essentials import *
+from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 
 
 class ChooseMentorScreen(Screens):
@@ -451,7 +448,10 @@ class ViewChildrenScreen(Screens):
             elif event.ui_element in self.offspring_elements.values() or event.ui_element in self.sibling_elements.values() \
                     or event.ui_element in self.family_elements.values():
                 game.switches['cat'] = event.ui_element.return_cat_id()
-                self.change_screen("profile screen")
+                if pygame.key.get_mods() & pygame.KMOD_SHIFT:
+                    self.change_screen('profile screen')
+                else:
+                    self.family_setup()
             elif event.ui_element == self.previous_cat_button:
                 game.switches['cat'] = self.previous_cat
                 self.family_setup()
@@ -1880,7 +1880,7 @@ class RelationshipScreen(Screens):
 
     def generate_relation_block(self, pos, the_relationship, i):
         # Generates a relation_block starting at postion, from the relationship object "the_relation"
-        # "postion" should refer to the top left corner of the *main* relation box, not including the name.
+        # "position" should refer to the top left corner of the *main* relation box, not including the name.
         pos_x = pos[0]
         pos_y = pos[1]
 
@@ -2050,9 +2050,9 @@ class RelationshipScreen(Screens):
 
         # COMFORTABLE
         if the_relationship.comfortable > 49:
-            text = "secure:"
+            text = "security:"
         else:
-            text = "comfortable:"
+            text = "comfort:"
         self.relation_list_elements[f'comfortable_text{i}'] = pygame_gui.elements.UITextBox(text,
                                                                                             scale(pygame.Rect((pos_x + 6,
                                                                                                              pos_y + 100 + (
