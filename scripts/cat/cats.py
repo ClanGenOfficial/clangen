@@ -751,7 +751,7 @@ class Cat():
             chance = randint(0, 9) + int(self.patrol_with_mentor)  # chance for cat to gain new trait or keep old
             if chance == 0:
                 self.trait = choice(self.traits)
-                self.mentor_influence.append('None')
+                self.mentor_influence.insert(0, 'None')
             elif 1 <= chance <= 6:
                 possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
                 for x in possible_groups:
@@ -760,10 +760,10 @@ class Cat():
                         chosen_trait = choice(possible_trait)
                         if chosen_trait in self.kit_traits:
                             self.trait = self.trait
-                            self.mentor_influence.append('None')
+                            self.mentor_influence.insert(0, 'None')
                         else:
                             self.trait = chosen_trait
-                            self.mentor_influence.append('None')
+                            self.mentor_influence.insert(0, 'None')
             elif chance >= 7:
                 possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
                 for x in possible_groups:
@@ -776,26 +776,26 @@ class Cat():
                         else:
                             mentor = Cat.fetch_cat(self.former_mentor[0])
                     else:
-                        self.mentor_influence.append('None')
+                        self.mentor_influence.insert(0, 'None')
                     if mentor and mentor.trait in self.personality_groups[x]:
                         possible_trait = self.personality_groups.get(x)
 
                         if x == 'Abrasive' and chance >= 12:
                             possible_trait = self.personality_groups.get('Reserved')
-                            self.mentor_influence.append('Reserved')
+                            self.mentor_influence.insert(0, 'Reserved')
                         chosen_trait = choice(possible_trait)
 
                         if chosen_trait in self.kit_traits:
                             self.trait = choice(self.traits)
                             if 'Reserved' in self.mentor_influence:
                                 self.mentor_influence.pop(0)
-                            self.mentor_influence.append('None')
+                            self.mentor_influence.insert(0, 'None')
                         else:
                             self.trait = chosen_trait
                             if 'Reserved' not in self.mentor_influence:
-                                self.mentor_influence.append(x)
+                                self.mentor_influence.insert(0, x)
             else:
-                self.mentor_influence.append('None')
+                self.mentor_influence.insert(0, 'None')
 
         elif self.moons == 120:
             chance = randint(0, 7)  # chance for cat to gain new trait or keep old
@@ -1042,6 +1042,8 @@ class Cat():
         # also adds a chance for cat to take a skill similar to their mentor"""
 
         if self.skill == '???':
+            if len(self.mentor_influence) < 1:
+                self.mentor_influence = ['None']
             # assign skill to new medicine cat
             if self.status == 'medicine cat' and self.skill not in self.med_skills:
                 # skill groups they can take from
@@ -1060,12 +1062,12 @@ class Cat():
                             if mentor.skill in self.skill_groups[x]:
                                 possible_skill = self.skill_groups.get(x)
                                 self.skill = choice(possible_skill)
-                                self.mentor_influence.append(self.skill)
+                                self.mentor_influence.insert(1, self.skill)
                                 return
 
                 # Will only be reached if a mentor skill was not applied.
                 self.skill = choice(self.med_skills)
-                self.mentor_influence.append('None')
+                self.mentor_influence.insert(1, 'None')
 
             # assign skill to new warrior
             elif self.status == 'warrior':
@@ -1084,11 +1086,11 @@ class Cat():
                             if mentor.skill in self.skill_groups[x]:
                                 possible_skill = self.skill_groups.get(x)
                                 self.skill = choice(possible_skill)
-                                self.mentor_influence.append(self.skill)
+                                self.mentor_influence.insert(1, self.skill)
                                 return
 
                 self.skill = choice(self.skills)
-                self.mentor_influence.append('None')
+                self.mentor_influence.insert(1, 'None')
 
             elif self.status == 'mediator':
                 possible_groups = ['star', 'smart', 'teach', 'speak', 'mediate']
@@ -1104,14 +1106,14 @@ class Cat():
                             if mentor.skill in self.skill_groups[x]:
                                 possible_skill = self.skill_groups.get(x)
                                 self.skill = choice(possible_skill)
-                                self.mentor_influence.append(self.skill)
+                                self.mentor_influence.insert(1, self.skill)
                                 return
 
                     all_skills = []
                     for x in possible_groups:
                         all_skills = all_skills + self.skill_groups[x]
                     self.skill = choice(all_skills)
-                    self.mentor_influence.append('None')
+                    self.mentor_influence.insert(1, 'None')
 
 
             # assign new skill to elder
@@ -2297,7 +2299,7 @@ class Cat():
                 else:
                     rel1.romantic_love = Cat.effect_relation(rel1.romantic_love, (randint(ran[0], ran[1]) + bonus) +
                                                              personality_bonus)
-                    rel2.romantic_love = Cat.effect_relation(rel1.romantic_love, (randint(ran[0], ran[1]) + bonus) +
+                    rel2.romantic_love = Cat.effect_relation(rel2.romantic_love, (randint(ran[0], ran[1]) + bonus) +
                                                              personality_bonus)
                     output += f"Romantic interest increased. "
 
@@ -2307,13 +2309,13 @@ class Cat():
                 if sabotage:
                     rel1.platonic_like = Cat.effect_relation(rel1.platonic_like, -(randint(ran[0], ran[1]) + bonus) +
                                                              personality_bonus)
-                    rel2.platonic_like = Cat.effect_relation(rel1.platonic_like, -(randint(ran[0], ran[1]) + bonus) +
+                    rel2.platonic_like = Cat.effect_relation(rel2.platonic_like, -(randint(ran[0], ran[1]) + bonus) +
                                                              personality_bonus)
                     output += f"Platonic like decreased. "
                 else:
                     rel1.platonic_like = Cat.effect_relation(rel1.platonic_like, (randint(ran[0], ran[1]) + bonus) +
                                                              personality_bonus)
-                    rel2.platonic_like = Cat.effect_relation(rel1.platonic_like, (randint(ran[0], ran[1]) + bonus) +
+                    rel2.platonic_like = Cat.effect_relation(rel2.platonic_like, (randint(ran[0], ran[1]) + bonus) +
                                                              personality_bonus)
                     output += f"Platonic like increased. "
 

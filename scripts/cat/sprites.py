@@ -191,7 +191,8 @@ for x in [
     'tortiecolourssolid', 'tortiecolourstabby', 'tortiecoloursbengal', 'tortiecoloursmarbled',
     'tortiecoloursticked', 'tortiecolourssmoke', 'tortiecoloursrosette', 'tortiecoloursspeckled',
     'tortiecoloursmackerel', 'tortiecoloursclassic', 'tortiecolourssokoke', 'tortiecoloursagouti',
-    'medcatherbs', 'lineartdf', 'eyes_df', 'lightingnew'
+    'medcatherbs', 'lineartdf', 'eyes_df', 'lightingnew', 'fademask',
+    'fadestarclan', 'fadedarkforest'
 
 ]:
     sprites.spritesheet(f"sprites/{x}.png", x)
@@ -203,6 +204,11 @@ sprites.make_group('lightingnew', (0, 0), 'lighting')
 
 sprites.make_group('lineartdead', (0, 0), 'lineartdead')
 sprites.make_group('lineartdf', (0, 0), 'lineartdf')
+
+# Fading Fog
+sprites.make_group('fademask', (0, 0), 'fademask', sprites_y=15)
+sprites.make_group('fadestarclan', (0, 0), 'fadestarclan', sprites_y=15)
+sprites.make_group('fadedarkforest', (0, 0), 'fadedf', sprites_y=15)
 
 for a, i in enumerate(
         ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE']):
