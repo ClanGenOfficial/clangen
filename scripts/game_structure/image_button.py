@@ -239,19 +239,18 @@ class UIImageTextBox():
                  text_kwargs=None,
                  allow_split_dashes: bool = True) -> None:
         # FIXME: layer_starting_height throws a TypeError, not sure if this is a valid argument.
-        try:
-            self.image = pygame_gui.elements.UIImage(relative_rect,
-                                                     image,
-                                                     layer_starting_height=layer_starting_height,
-                                                     container=container,
-                                                     anchors=anchors,
-                                                     visible=visible)
-        except TypeError:
-            self.image = pygame_gui.elements.UIImage(relative_rect,
-                                                     image,
-                                                     container=container,
-                                                     anchors=anchors,
-                                                     visible=visible)
+        #self.image = pygame_gui.elements.UIImage(relative_rect,
+        #                                         image,
+        #                                         layer_starting_height=layer_starting_height,
+        #                                         container=container,
+        #                                         anchors=anchors,
+        #                                         visible=visible)
+        # FIXME: This doesn't work as intended.
+        self.image = pygame_gui.elements.UIImage(relative_rect,
+                                                 image,
+                                                 container=container,
+                                                 anchors=anchors,
+                                                 visible=visible)
             
         self.text_box = UITextBoxTweaked(html_text, relative_rect, object_id=object_id,
                                          layer_starting_height=layer_starting_height,
@@ -275,7 +274,6 @@ class UIImageTextBox():
 
     def set_image(self, new_image):
         self.image.set_image(new_image)
-
 
 class UIRelationStatusBar():
     """ Wraps together a status bar """
