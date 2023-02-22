@@ -870,22 +870,25 @@ class Events():
             else:
                 tags.append("no_mentor")
 
-            # Dead mentor
-            for c in reversed(cat.former_mentor):
-                if Cat.fetch_cat(c) and Cat.fetch_cat(c).dead:
-                    tags.append("dead_mentor")
-                    dead_mentor = Cat.fetch_cat(c)
-                    break
+            if cat.former_mentor:
+                # Dead mentor
+                for c in reversed(cat.former_mentor):
+                    if Cat.fetch_cat(c) and Cat.fetch_cat(c).dead:
+                        tags.append("dead_mentor")
+                        dead_mentor = Cat.fetch_cat(c)
+                        break
 
-            # Living Former mentors who are also the leader do not count.
-            for c in reversed(cat.former_mentor):
-                if Cat.fetch_cat(c) and not Cat.fetch_cat(c).dead and not Cat.fetch_cat(c).outside:
-                    if Cat.fetch_cat(c).status == "leader":
-                        tags.append("alive_leader_mentor")
-                    else:
-                        tags.append("alive_mentor")
-                    previous_alive_mentor = Cat.fetch_cat(c)
-                    break
+                # Living Former mentors.
+                for c in reversed(cat.former_mentor):
+                    if Cat.fetch_cat(c) and not Cat.fetch_cat(c).dead and not Cat.fetch_cat(c).outside:
+                        if Cat.fetch_cat(c).status == "leader":
+                            tags.append("alive_leader_mentor")
+                        else:
+                            tags.append("alive_mentor")
+                        previous_alive_mentor = Cat.fetch_cat(c)
+                        break
+            else:
+                tags.append("no_previous_mentor")
 
             # Now we add the mentor stuff:
             temp = possible_ceremonies.intersection(self.ceremony_id_by_tag["general_mentor"])

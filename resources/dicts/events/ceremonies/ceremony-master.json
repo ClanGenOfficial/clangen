@@ -1308,7 +1308,7 @@
   "med_9": [
     [
       "medicine cat",
-      "no_mentor",
+      "no_previous_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -1319,7 +1319,7 @@
   "med_10": [
     [
       "medicine cat",
-      "no_mentor",
+      "no_previous_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
