@@ -3,7 +3,7 @@ import pygame_gui
 from pygame_gui.core.text.html_parser import HTMLParser
 from pygame_gui.core.text.text_box_layout import TextBoxLayout
 from pygame_gui.core.utility import translate
-import scripts.game_structure.image_cache as image_cache
+from scripts.game_structure import image_cache
 import html
 
 

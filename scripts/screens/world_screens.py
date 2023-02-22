@@ -4,11 +4,9 @@ from math import ceil
 from scripts.game_structure.image_button import UISpriteButton, UIImageButton
 from .base_screens import Screens, cat_profiles
 
-from .base_screens import Screens
-
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 from scripts.cat.cats import Cat
-import scripts.game_structure.image_cache as image_cache
+from scripts.game_structure import image_cache
 from ..utility import get_text_box_theme, update_sprite, scale
 
 

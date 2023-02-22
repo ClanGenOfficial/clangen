@@ -1,7 +1,6 @@
 import random
 from random import choice, randint
 import os
-from os import path
 
 import pygame
 try:
@@ -11,7 +10,7 @@ except ImportError:
 
 from scripts.game_structure.game_essentials import game
 from scripts.utility import update_sprite
-from scripts.cat.cats import Cat, cat_class, ILLNESSES, INJURIES, PERMANENT
+from scripts.cat.cats import Cat, cat_class
 from scripts.cat.names import names
 from scripts.clan_resources.freshkill import Freshkill_Pile, Nutrition
 

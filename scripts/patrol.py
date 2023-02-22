@@ -2,7 +2,6 @@
 # -*- coding: ascii -*-
 import random
 from random import choice, randint, choices
-from math import floor
 
 try:
     import ujson

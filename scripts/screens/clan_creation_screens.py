@@ -5,11 +5,11 @@ import pygame_gui
 from .base_screens import Screens
 
 from scripts.utility import get_text_box_theme, scale
-from scripts.clan import Clan, map_available
+from scripts.clan import Clan
 from scripts.cat.cats import create_example_cats, Cat
 from scripts.cat.names import names
 from re import sub
-import scripts.game_structure.image_cache as image_cache
+from scripts.game_structure import image_cache
 # from scripts.world import World, save_map
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked, UISpriteButton
 from scripts.game_structure.game_essentials import game, MANAGER

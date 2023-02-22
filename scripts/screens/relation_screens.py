@@ -1,14 +1,12 @@
-from math import ceil
-
 import pygame.transform
 import pygame_gui.elements
 from random import choice
 
 from .base_screens import Screens, cat_profiles
 
-from scripts.utility import draw_large, draw, update_sprite, get_personality_compatibility, get_text_box_theme, scale
+from scripts.utility import get_personality_compatibility, get_text_box_theme, scale
 from scripts.cat.cats import Cat
-import scripts.game_structure.image_cache as image_cache
+from scripts.game_structure import image_cache
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked, UISpriteButton, UIRelationStatusBar
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 
