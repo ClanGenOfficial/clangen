@@ -1,7 +1,6 @@
 from __future__ import annotations
 from random import choice, randint, sample
 from typing import Dict, List, Any
-import math
 import random
 import os.path
 import itertools
