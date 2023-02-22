@@ -1,13 +1,28 @@
 #!/usr/bin/env python3
 # -*- coding: ascii -*-
+import random
 from random import choice, randint, choices
 from math import floor
 
+try:
+    import ujson
+except ImportError:
+    import json as ujson
+
 from scripts.clan import HERBS
+from scripts.utility import (
+    add_siblings_to_cat,
+    add_children_to_cat,
+    event_text_adjust,
+    change_clan_relations,
+    change_clan_reputation,
+    change_relationship_values,
+    )
 from scripts.game_structure.game_essentials import game
-from scripts.cat.names import *
-from scripts.cat.cats import *
-from scripts.cat.pelts import *
+from scripts.cat.names import names
+from scripts.cat.cats import Cat, cat_class, ILLNESSES, INJURIES, PERMANENT
+from scripts.cat.pelts import collars, scars1
+from scripts.cat_relations.relationship import Relationship
 from scripts.clan_resources.freshkill import PREY_REQUIREMENT, HUNTER_EXP_BONUS, HUNTER_BONUS
 from scripts.clan import Clan
 
@@ -470,7 +485,7 @@ class Patrol():
                 # try to extract the value/threshold from the text
                 try:
                     threshold = int(tags[0].split('_')[1])
-                except e:
+                except Exception as e:
                     print(
                         f"ERROR: patrol {patrol_id} with the relationship constraint for the value {v_type} follows not the formatting guidelines.")
                     break_loop = True

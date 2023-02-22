@@ -1,8 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: ascii -*-
+import os
 from random import choice
 
 import pygame
+try:
+    import ujson
+except ImportError:
+    import json as ujson
 
 from scripts.utility import update_sprite, event_text_adjust, scale
 
@@ -17,7 +22,7 @@ from re import sub
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked  # , UIImageTextBox, UISpriteButton
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
-from scripts.cat.names import *
+from scripts.cat.names import names
 
 
 # ---------------------------------------------------------------------------- #

@@ -1,10 +1,20 @@
 import itertools
 import random
+from random import choice
 
+from scripts.game_structure.game_essentials import game
 from scripts.events_module.condition_events import Condition_Events
-from scripts.utility import *
-from scripts.cat.cats import *
-
+from scripts.utility import (
+    add_children_to_cat,
+    add_siblings_to_cat,
+    get_personality_compatibility,
+    get_highest_romantic_relation,
+    get_med_cats,
+    )
+from scripts.cat.cats import Cat, cat_class
+from scripts.cat.names import names, Name
+from scripts.event_class import Single_Event
+from scripts.cat_relations.relationship import Relationship
 
 class Relation_Events():
     """All relationship events."""

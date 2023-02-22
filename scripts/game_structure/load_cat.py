@@ -1,5 +1,11 @@
+import os
 from math import floor
-from .game_essentials import *
+from .game_essentials import game
+
+try:
+    import ujson
+except ImportError:
+    import json as ujson
 
 from scripts.cat.cats import Cat
 from scripts.cat.pelts import choose_pelt

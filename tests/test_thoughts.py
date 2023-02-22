@@ -1,12 +1,13 @@
 import unittest
 
+from scripts.cat.thoughts import resource_directory, get_med_thoughts, get_family_thoughts
+
 try:
     import ujson
 except ImportError:
     import json as ujson
 
 from scripts.cat.cats import Cat
-from scripts.cat.thoughts import *
 
 class TestsGetStatusThought(unittest.TestCase):
 

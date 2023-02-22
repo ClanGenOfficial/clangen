@@ -1,5 +1,39 @@
 import random
-from .pelts import *
+from random import choice, randint
+
+# Alphabetical !! yea !!
+from .pelts import (
+    black_colours,
+    blue_eyes,
+    brown_colours,
+    choose_pelt,
+    colour_categories,
+    exotic,
+    eye_colours,
+    ginger_colours,
+    green_eyes,
+    high_white,
+    little_white,
+    mid_white,
+    mostly_white,
+    pelt_categories,
+    pelt_length,
+    plain,
+    plant_accessories,
+    point_markings,
+    scars1,
+    scars3,
+    skin_sprites,
+    spotted,
+    tabbies,
+    tortiebases,
+    torties,
+    vit,
+    white_colours,
+    wild_accessories,
+    yellow_eyes,
+    )
+
 from scripts.cat.sprites import Sprites
 from scripts.game_structure.game_essentials import game
 
