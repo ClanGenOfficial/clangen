@@ -5,7 +5,7 @@ except ImportError:
 import random
 
 from scripts.cat.cats import Cat
-from scripts.cat.pelts import *
+from scripts.cat.pelts import scars1, scars2, scars3
 from scripts.conditions import medical_cats_condition_fulfilled, get_amount_cat_for_one_medic
 from scripts.utility import event_text_adjust, get_med_cats, change_relationship_values
 from scripts.game_structure.game_essentials import game

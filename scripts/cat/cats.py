@@ -2,6 +2,7 @@ from __future__ import annotations
 from random import choice, randint, sample
 from typing import Dict, List, Any
 import math
+import random
 import os.path
 import itertools
 
@@ -11,18 +12,27 @@ try:
 except ImportError:
     import json as ujson
 
-from .pelts import *
-from .names import *
-from .sprites import *
-from .thoughts import *
-from .appearance_utility import *
+from .pelts import describe_color
+from .names import Name
+from .thoughts import get_thoughts
+from .appearance_utility import (
+    init_pelt,
+    init_tint,
+    init_sprite,
+    init_scars,
+    init_accessories,
+    init_white_patches,
+    init_eyes,
+    init_pattern,
+    )
 from scripts.conditions import Illness, Injury, PermanentCondition, get_amount_cat_for_one_medic, \
     medical_cats_condition_fulfilled
 import bisect
 
-from scripts.utility import *
-from scripts.game_structure.game_essentials import *
-from scripts.cat_relations.relationship import *
+from scripts.utility import get_med_cats, get_personality_compatibility, event_text_adjust, update_sprite
+from scripts.game_structure.game_essentials import game, screen
+from scripts.cat.thoughts import get_thoughts
+from scripts.cat_relations.relationship import Relationship
 import scripts.game_structure.image_cache as image_cache
 from scripts.event_class import Single_Event
 
