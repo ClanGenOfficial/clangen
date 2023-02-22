@@ -83,5 +83,10 @@
 	},
 	"lost_cat": {
 		"rejoin_chance": 20
+	},
+	"cotc_generation": {
+		"kittypet_chance": 30,
+		"rogue_chance": 30,
+		"loner_chance": 30
 	}
 }

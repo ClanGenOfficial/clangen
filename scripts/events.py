@@ -8,7 +8,7 @@ except ImportError:
 from scripts.cat.appearance_utility import plural_acc_names
 from scripts.cat.names import names
 from scripts.cat.cats import Cat, cat_class
-from scripts.cat.pelts import plant_accessories, wild_accessories
+from scripts.cat.pelts import plant_accessories, wild_accessories, collars
 from scripts.clan import HERBS
 from scripts.conditions import medical_cats_condition_fulfilled, get_amount_cat_for_one_medic
 from scripts.events_module.misc_events import MiscEvents
@@ -79,6 +79,15 @@ class Events():
             needed_amount = game.clan.freshkill_pile.amount_food_needed()
             print(f"current freshkill amount: {game.clan.freshkill_pile.total_amount}, needed {needed_amount}")
         
+        kittypet_ub = game.config["cotc_generation"]["kittypet_chance"]
+        rogue_ub = game.config["cotc_generation"]["rogue_chance"]
+        loner_ub = game.config["cotc_generation"]["loner_chance"]
+        if random.randint(1,kittypet_ub) == 1:  
+            self.create_outside_cat("kittypet")   
+        if random.randint(1,rogue_ub) == 1:  
+            self.create_outside_cat("rogue")  
+        if random.randint(1,loner_ub) == 1:  
+            self.create_outside_cat("loner")   
         rejoin_upperbound = game.config["lost_cat"]["rejoin_chance"]
         if random.randint(1,rejoin_upperbound) == 1:  
             self.handle_lost_cats_return()   
@@ -108,6 +117,8 @@ class Events():
                         cat.dead = True
                         if cat.exiled:
                             text = f'Rumors reach your Clan that the exiled {str(cat.name)} has died recently.'
+                        elif cat.status in ['kittypet', 'loner', 'rogue']:
+                            text = f'Rumors reach your Clan that the {cat.status} {str(cat.name)} has died recently.'
                         else:
                             cat.outside = False
                             text = f"Will they reach StarClan, even so far away? {str(cat.name)} isn't sure, " \
@@ -499,7 +510,7 @@ class Events():
             chosen_event = random.choice(possible_events)
             game.cur_events_list.append(Single_Event(chosen_event, "health"))
             game.herb_events_list.append(chosen_event)
-
+            
     def handle_lost_cats_return(self):
         for id, cat in Cat.all_cats.items():
             if cat.outside and cat.ID not in Cat.outside_cats.keys():
@@ -517,6 +528,18 @@ class Events():
             lost_cat.outside = False
             game.cur_events_list.append(Single_Event(random.choice(text), "misc", [lost_cat.ID]))
             lost_cat.add_to_clan()
+            
+    def create_outside_cat(self, status):
+        if status == 'kittypet':
+            name = random.choice(names.loner_names)
+        elif status in ['loner', 'rogue']:
+            name = random.choice(names.loner_names + names.normal_prefixes)
+        new_cat = Cat(prefix=name, suffix = None, status=status, gender=random.choice(['female', 'male']))
+        if status == 'kittypet':
+            new_cat.accessory = random.choice(collars)
+        new_cat.outside = True
+        game.clan.add_cat(new_cat)
+        game.clan.add_to_outside(new_cat)
 
     def handle_fading(self, cat):
         if game.settings["fading"] and not cat.prevent_fading and cat.ID != game.clan.instructor.ID and \
