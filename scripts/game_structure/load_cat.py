@@ -10,6 +10,7 @@ except ImportError:
 from scripts.cat.cats import Cat
 from scripts.cat.pelts import choose_pelt
 from scripts.utility import update_sprite, is_iterable
+from random import choice
 try:
     from ujson import JSONDecodeError
 except ImportError:
@@ -78,6 +79,16 @@ def json_load():
             new_cat.cat_sprites['senior adult'] = cat["sprite_senior_adult"] if "sprite_senior_adult" in cat else cat["spirit_senior_adult"]
             new_cat.cat_sprites['senior'] = cat["sprite_senior"] if "sprite_senior" in cat else cat["spirit_elder"]
             new_cat.cat_sprites['para_adult'] = cat["sprite_para_adult"] if "sprite_para_adult" in cat else None
+            # setting up sprites that might not be correct
+            if new_cat.pelt is not None:
+                if new_cat.pelt.length == 'long':
+                    if new_cat.cat_sprites['adult'] not in [9, 10, 11]:
+                        new_cat.cat_sprites['adult'] = choice([9, 10, 11])
+                        new_cat.cat_sprites['young adult'] = new_cat.cat_sprites['adult']
+                        new_cat.cat_sprites['senior adult'] = new_cat.cat_sprites['adult']
+                        new_cat.cat_sprites['para_adult'] = 16
+                else:
+                    new_cat.cat_sprites['para_adult'] = 15
             new_cat.eye_colour = cat["eye_colour"]
             new_cat.reverse = cat["reverse"]
             new_cat.white_patches = cat["white_patches"]
