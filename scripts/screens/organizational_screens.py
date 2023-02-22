@@ -205,7 +205,7 @@ class SettingsScreen(Screens):
                 "clayteeth<br>" \
                 "CrumbsDeluxe<br>" \
                 "Hatsune Miku<br>" \
-                "Key<br>" \
+                "keyraven (key)<br>" \
                 "larkgz<br>" \
                 "ozzie<br>" \
                 "sami(RAYTRAC3R)<br>" \
@@ -227,15 +227,20 @@ class SettingsScreen(Screens):
                 "grif<br>" \
                 "beejeans<br>" \
                 "Irony-Dragon<br>" \
-                "Kassi<br>" \
+                "Kassi (Sophia)<br>" \
                 "milly!<br>" \
                 "coyotedawn<br>" \
                 "paradigox<br>" \
                 "Fruit Punk<br>" \
-                "luna<br>" \
+                "ImLvna (Luna)<br>" \
                 "clownthoughts<br>" \
                 "thyfrankie<br>" \
-                "Perrio<br></i>" \
+                "Perrio<br>" \
+                "anonn (Nicole)<br>" \
+                "catastrophe<br>" \
+                "Kittenvy<br>" \
+                "SunlitFable<br>" \
+                "Hobohime<br></i>" \
                 "Thank you to the beta testers and all those who have helped with development.<br><br>" \
                 "<b>Thank you for playing!!</b><br><br>" \
                 "Code is licensed under <a href=https://www.mozilla.org/en-US/MPL/2.0/>Mozilla Public License Version 2.0</a><br>" \

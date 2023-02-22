@@ -1883,7 +1883,7 @@ class RelationshipScreen(Screens):
 
     def generate_relation_block(self, pos, the_relationship, i):
         # Generates a relation_block starting at postion, from the relationship object "the_relation"
-        # "postion" should refer to the top left corner of the *main* relation box, not including the name.
+        # "position" should refer to the top left corner of the *main* relation box, not including the name.
         pos_x = pos[0]
         pos_y = pos[1]
 
@@ -2053,9 +2053,9 @@ class RelationshipScreen(Screens):
 
         # COMFORTABLE
         if the_relationship.comfortable > 49:
-            text = "secure:"
+            text = "security:"
         else:
-            text = "comfortable:"
+            text = "comfort:"
         self.relation_list_elements[f'comfortable_text{i}'] = pygame_gui.elements.UITextBox(text,
                                                                                             scale(pygame.Rect((pos_x + 6,
                                                                                                              pos_y + 100 + (
