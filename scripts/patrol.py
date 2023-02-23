@@ -20,7 +20,7 @@ from scripts.utility import (
 from scripts.game_structure.game_essentials import game
 from scripts.cat.names import names
 from scripts.cat.cats import Cat, cat_class, ILLNESSES, INJURIES, PERMANENT
-from scripts.cat.pelts import collars, scars1
+from scripts.cat.pelts import collars, scars1, scars2, scars3
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_resources.freshkill import PREY_REQUIREMENT, HUNTER_EXP_BONUS, HUNTER_BONUS
 from scripts.clan import Clan
@@ -1425,15 +1425,21 @@ class Patrol():
 
     def handle_scars(self, outcome):
         if self.patrol_event.tags is not None:
+            print('getting scar')
             if "scar" in self.patrol_event.tags:
-                cat = None
                 if outcome == 3:
                     cat = self.patrol_random_cat
                 elif outcome == 5:
                     cat = self.patrol_fail_stat_cat
+                else:
+                    return
                 if len(self.patrol_random_cat.scars) < 4:
-                    self.patrol_random_cat.scars.append(choice(
-                        [choice(scars1)]))
+                    for tag in self.patrol_event.tags:
+                        print(tag)
+                        if tag in scars1 + scars2 + scars3:
+                            print('gave scar')
+                            cat.scars.append(tag)
+                            self.results_text.append(f"{cat.name} got a scar.")
                     if len(self.patrol_event.history_text) >= 1:
                         adjust_text = self.patrol_event.history_text[0]
                         adjust_text = adjust_text.replace("r_c", str(cat.name))

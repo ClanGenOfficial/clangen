@@ -1,6 +1,6 @@
 [
 {
-    "patrol_id": "gen_gen_newcat1",
+    "patrol_id": "gen_gen_newcat_hostile1",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat", "new_cat_adult", "reputation", "kits"],
@@ -23,7 +23,7 @@
 
 },
 {
-    "patrol_id": "gen_gen_newcatkittypet1",
+    "patrol_id": "gen_gen_newcatkittypet_hostile1",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat", "new_cat_adult", "reputation", "kits"],
@@ -69,7 +69,7 @@
 
 },
 {
-    "patrol_id": "gen_gen_newkit1",
+    "patrol_id": "gen_gen_newkit3",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat", "new_cat_kit", "reputation", "no_change_fail_rep"],
@@ -92,7 +92,7 @@
 
 },
 {
-    "patrol_id": "gen_gen_newmed1",
+    "patrol_id": "gen_gen_newmed_hostile1",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat", "reputation", "new_cat_med", "no_change_fail_rep", "kits"],
@@ -114,7 +114,7 @@
     "max_cats": 6
 },
 {
-    "patrol_id": "gen_gen_lonerchase1",
+    "patrol_id": "gen_gen_lonerchase2",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat", "reputation", "scar", "LEFTEAR", "new_cat_injury", "nc_blunt_force_injury", "no_change_fail_rep"],
@@ -140,7 +140,7 @@
     "max_cats": 5
 },
 {
-    "patrol_id": "fst_bord_noise1",
+    "patrol_id": "fst_bord_noise3",
     "biome": "forest",
     "season": "Any",
     "tags": ["border", "battle_injury", "scar", "BRIDGE", "death", "reputation"],

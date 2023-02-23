@@ -1,6 +1,6 @@
 [
 {
-    "patrol_id": "gen_gen_newcat1",
+    "patrol_id": "gen_gen_newcat_welcome1",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat", "new_cat_adult", "reputation", "kits", "no_change_fail_rep"],
@@ -23,7 +23,7 @@
 
 },
 {
-    "patrol_id": "gen_gen_newcatkittypet1",
+    "patrol_id": "gen_gen_newcatkittypet_welcome1",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat", "new_cat_adult", "reputation", "kits", "no_change_fail_rep"],
@@ -92,7 +92,7 @@
 
 },
 {
-    "patrol_id": "gen_gen_newmed1",
+    "patrol_id": "gen_gen_newmed_welcome1",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat", "reputation", "new_cat_med", "no_change_fail_rep", "kits"],
@@ -272,7 +272,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "gen_med_rescuesoloapp1",
+    "patrol_id": "gen_med_rescuesoloapp3",
     "biome": "Any",
     "season": "Any",
     "tags": ["med_cat", "med_only", "apprentice", "new_cat", "new_cat_queen", "new_cat_kits", "new_cat_newborn", "no_change_fail_rep"],
@@ -297,7 +297,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "gen_med_rescuesoloapp2",
+    "patrol_id": "gen_med_rescuesoloapp4",
     "biome": "Any",
     "season": "Any",
     "tags": ["med_cat", "med_only", "apprentice", "new_cat", "new_cat_kits", "new_cat_newborn", "no_change_fail_rep"],

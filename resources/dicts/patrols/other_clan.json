@@ -156,7 +156,7 @@
     ]
 },    
 {
-    "patrol_id": "gen_med_borderherb1",
+    "patrol_id": "gen_med_borderherb2",
     "biome": "Any",
     "season": "leaf-bare",
     "tags": ["med_cat", "herb", "raspberry", "other_clan", "med_only", "battle_injury"],

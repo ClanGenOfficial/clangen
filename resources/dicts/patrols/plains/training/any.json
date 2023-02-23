@@ -526,7 +526,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "fst_train_sunset1",
+    "patrol_id": "pln_train_sunset1",
     "biome": "forest",
     "season": "Any",
     "tags": ["training", "warrior", "romantic", "platonic", "comfort", "no_app"],
