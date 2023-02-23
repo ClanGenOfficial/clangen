@@ -1,6 +1,6 @@
 [
     {
-        "patrol_id": "mtn_hunt_eagleswim1",
+        "patrol_id": "mtn_hunt_newleafeagleswim1",
         "biome": "mountainous",
         "season": "newleaf",
         "tags": [
@@ -45,7 +45,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_eagleswim2",
+        "patrol_id": "mtn_hunt_newleafeagleswim2",
         "biome": "mountainous",
         "season": "newleaf",
         "tags": [
@@ -90,7 +90,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_eagleswim3",
+        "patrol_id": "mtn_hunt_newleafeagleswim3",
         "biome": "mountainous",
         "season": "newleaf",
         "tags": [
@@ -145,7 +145,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_eagleswim4",
+        "patrol_id": "mtn_hunt_newleafeagleswim4",
         "biome": "mountainous",
         "season": "newleaf",
         "tags": [
@@ -194,7 +194,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_newleafsnowstorm1",
+        "patrol_id": "mtn_hunt_newleaf_snowstorm1",
         "biome": "mountainous",
         "season": "newleaf",
         "tags": [
@@ -248,7 +248,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_newleafsnowstorm2",
+        "patrol_id": "mtn_hunt_newleaf_snowstorm2",
         "biome": "mountainous",
         "season": "newleaf",
         "tags": [
@@ -289,7 +289,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_newleafsnowstorm3",
+        "patrol_id": "mtn_hunt_newleaf_snowstorm3",
         "biome": "mountainous",
         "season": "newleaf",
         "tags": [
@@ -528,7 +528,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_gensquirrel1",
+        "patrol_id": "mtn_hunt_newleaf_solosquirrel1",
         "biome": "mountainous",
         "season": "newleaf",
         "tags": [
@@ -546,7 +546,7 @@
             "s_c silently slinks through the underbrush, going undetected until they've pounced - and by then it's far too late for the squirrel to do anything about it."
         ],
         "fail_text": [
-            "p_l breaks a twig as they ready themself to pounce, and the resulting crack alerts the squirrel. It doesn't even spare them a glance as it scurries up the tree and out of sight."
+            "p_l shifts on some pebbles as they ready themself to pounce, and the resulting clatter alerts the squirrel. It doesn't even spare them a glance as it scurries up the tree and out of sight."
         ],
         "win_skills": [
             "good hunter",
@@ -559,7 +559,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "mtn_hunt_genappsquirrel1",
+        "patrol_id": "mtn_hunt_newleaf_soloappsquirrel1",
         "biome": "mountainous",
         "season": "newleaf",
         "tags": [
@@ -584,7 +584,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "mtn_hunt_genmentorsquirrel1",
+        "patrol_id": "mtn_hunt_newleaf_mentorsquirrel1",
         "biome": "mountainous",
         "season": "newleaf",
         "tags": [
@@ -604,7 +604,7 @@
             "Though they're a little sloppy, and the squirrel quickly spots them, app1 manages to secure the catch in the end! p_l looks pleased, and gives them tips to improve their technique next time."
         ],
         "fail_text": [
-            "A too-high tail brushing against the bushes is all that's needed to scare the squirrel away, and app1 watches in disappointment as it scampers away."
+            "A misplaced step onto loose gravel is all that's needed to scare the squirrel away, and app1 watches in disappointment as it scampers away."
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -612,7 +612,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "mtn_hunt_squirrel_treetoptumble1",
+        "patrol_id": "mtn_hunt_newleaf_squirrel_treetoptumble1",
         "biome": "mountainous",
         "season": "newleaf",
         "tags": [
@@ -627,7 +627,7 @@
             "injury",
             "broken bone"
         ],
-        "intro_text": "As the patrol walks through the forest, a loud chittering from above interrupts them. One cat looks up just in time to get a shower of twigs and leaves to the face, while another exclaims aloud as they spot squirrels darting through the branches above.",
+        "intro_text": "As the patrol walks through the wooded slopes, a loud chittering from above interrupts them. One cat looks up just in time to get a shower of twigs and leaves to the face, while another exclaims aloud as they spot squirrels darting through the branches above.",
         "decline_text": "Though they snort in amusement, the patrol decides to move on to easier prey, rather than waste their energy amongst the trees.",
         "chance_of_success": 50,
         "exp": 40,
@@ -653,7 +653,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "mtn_hunt_squirrel1",
+        "patrol_id": "mtn_hunt_newleaf_groupsquirrel1",
         "biome": "mountainous",
         "season": "newleaf",
         "tags": [
@@ -662,9 +662,12 @@
             "patrol_to_r_c",
             "medium_prey0",
             "large_prey1",
-            "large_prey2"
+            "large_prey2",
+            "injury",
+            "injure_all",
+            "shivering"
         ],
-        "intro_text": "As the patrol walks through the woods, r_c explains an idea they had for squirrel hunting. It sounds a little strange, but perhaps it could work?",
+        "intro_text": "As the patrol walks through the wooded slopes, r_c explains an idea they had for squirrel hunting. It sounds a little strange, but perhaps it could work?",
         "decline_text": "The patrol decides they'd rather not spend time on something that might not work when they could be doing something they know <i>does</i>.",
         "chance_of_success": 50,
         "exp": 20,
@@ -674,7 +677,10 @@
             "r_c suggests baiting the squirrels with food and picking them off when they come out to eat. All the patrol has to do is set the trap - with s_c on the patrol, they rarely have to lift a paw, and each cat carries multiple squirrels home."
         ],
         "fail_text": [
-            "r_c suggests finding squirrels sheltered in trees, climbing above them, and shaking the branches to scare them down. Unfortunately for them, the idea is a little too far out there, and while they do manage a few small catches, the day is mostly wasted with little to show for it."
+            "r_c suggests finding squirrels sheltered in trees, climbing above them, and shaking the branches to scare them down. Unfortunately for them, the idea is a little too far out there, and while they do manage a few small catches, the day is mostly wasted with little to show for it.",
+            null,
+            null,
+            "r_c suggests finding squirrels sheltered in trees, climbing above them, and shaking the branches to scare them down. Unfortunately for them, the idea is a little too far out there, and while they do manage a few small catches, the patrol comes home freezing cold with little to show for it."
         ],
         "win_skills": [
             "good hunter",

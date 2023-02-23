@@ -193,7 +193,7 @@
         ]
     },
     {
-        "patrol_id": "pln_hunt_redvixen7",
+        "patrol_id": "pln_hunt_leaf-fall_redvixen7",
         "biome": "plains",
         "season": "leaf-fall",
         "tags": [
@@ -260,7 +260,7 @@
         ]
     },
     {
-        "patrol_id": "pln_hunt_redvixen8",
+        "patrol_id": "pln_hunt_leaf-fall_redvixen8",
         "biome": "plains",
         "season": "leaf-fall",
         "tags": [
@@ -322,7 +322,7 @@
         ]
     },
     {
-        "patrol_id": "pln_hunt_redvixen9",
+        "patrol_id": "pln_hunt_leaf-fall_redvixen9",
         "biome": "plains",
         "season": "leaf-fall",
         "tags": [
@@ -623,7 +623,7 @@
         ]
     },
     {
-        "patrol_id": "pln_hunt_gensquirrel3",
+        "patrol_id": "pln_hunt_leaf-fall_solosquirrel1",
         "biome": "plains",
         "season": "leaf-fall",
         "tags": [
@@ -654,7 +654,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "pln_hunt_genappsquirrel3",
+        "patrol_id": "pln_hunt_leaf-fall_soloappsquirrel1",
         "biome": "plains",
         "season": "leaf-fall",
         "tags": [
@@ -680,7 +680,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "pln_hunt_genmentorsquirrel3",
+        "patrol_id": "pln_hunt_leaf-fall_mentorsquirrel1",
         "biome": "plains",
         "season": "leaf-fall",
         "tags": [
@@ -708,7 +708,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "pln_hunt_squirrel_burrowbusiness3",
+        "patrol_id": "pln_hunt_leaf-fall_squirrel_burrowbusiness1",
         "biome": "plains",
         "season": "leaf-fall",
         "tags": [
@@ -751,7 +751,7 @@
         ]
     },
     {
-        "patrol_id": "pln_hunt_squirrel3",
+        "patrol_id": "pln_hunt_leaf-fall_groupsquirrel1",
         "biome": "plains",
         "season": "leaf-fall",
         "tags": [
@@ -785,7 +785,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "pln_hunt_leaffall_genmouse1",
+        "patrol_id": "pln_hunt_leaffall_solomouse1",
         "biome": "plains",
         "season": "leaf-fall",
         "tags": [
@@ -816,7 +816,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "pln_hunt_leaffall_genappmouse1",
+        "patrol_id": "pln_hunt_leaffall_soloappmouse1",
         "biome": "plains",
         "season": "leaf-fall",
         "tags": [
@@ -841,7 +841,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "pln_hunt_leaffall_genmentormouse1",
+        "patrol_id": "pln_hunt_leaffall_mentormouse1",
         "biome": "plains",
         "season": "leaf-fall",
         "tags": [
@@ -869,7 +869,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "pln_hunt_mice_leaffall_appshowoff1",
+        "patrol_id": "pln_hunt_leaf-fall_mice_appshowoff1",
         "biome": "plains",
         "season": "leaf-fall",
         "tags": [
@@ -909,7 +909,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "pln_hunt_mice_leaffall1",
+        "patrol_id": "pln_hunt_leaf-fall_groupmice1",
         "biome": "plains",
         "season": "leaf-fall",
         "tags": [

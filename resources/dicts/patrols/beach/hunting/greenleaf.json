@@ -1,6 +1,6 @@
 [
     {
-        "patrol_id": "bch_hunt_redvixen4",
+        "patrol_id": "bch_hunt_greenleaf_redvixen4",
         "biome": "beach",
         "season": "greenleaf",
         "tags": [
@@ -64,7 +64,7 @@
         ]
     },
     {
-        "patrol_id": "bch_hunt_redvixen5",
+        "patrol_id": "bch_hunt_greenleaf_redvixen5",
         "biome": "beach",
         "season": "greenleaf",
         "tags": [
@@ -123,7 +123,7 @@
         ]
     },
     {
-        "patrol_id": "bch_hunt_redvixen6",
+        "patrol_id": "bch_hunt_greenleaf_redvixen6",
         "biome": "beach",
         "season": "greenleaf",
         "tags": [
@@ -187,7 +187,7 @@
         ]
     },
     {
-        "patrol_id": "bch_hunt_grayvixen4",
+        "patrol_id": "bch_hunt_greenleaf_grayvixen4",
         "biome": "beach",
         "season": "greenleaf",
         "tags": [
@@ -245,7 +245,7 @@
         ]
     },
     {
-        "patrol_id": "bch_hunt_grayvixen5",
+        "patrol_id": "bch_hunt_greenleaf_grayvixen5",
         "biome": "beach",
         "season": "greenleaf",
         "tags": [
@@ -303,7 +303,7 @@
         ]
     },
     {
-        "patrol_id": "bch_hunt_grayvixen6",
+        "patrol_id": "bch_hunt_greenleaf_grayvixen6",
         "biome": "beach",
         "season": "greenleaf",
         "tags": [
@@ -361,7 +361,7 @@
         ]
     },
     {
-        "patrol_id": "bch_hunt_twolegsobject1",
+        "patrol_id": "bch_hunt_greenleaf_twolegsobject1",
         "biome": "beach",
         "season": "greenleaf",
         "tags": [
@@ -395,7 +395,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "bch_hunt_gensquirrel2",
+        "patrol_id": "bch_hunt_greenleaf_solosquirrel1",
         "biome": "beach",
         "season": "greenleaf",
         "tags": [
@@ -426,7 +426,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "bch_hunt_genappsquirrel2",
+        "patrol_id": "bch_hunt_greenleaf_soloappsquirrel1",
         "biome": "beach",
         "season": "greenleaf",
         "tags": [
@@ -451,7 +451,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "bch_hunt_genmentorsquirrel2",
+        "patrol_id": "bch_hunt_greenleaf_mentorsquirrel1",
         "biome": "beach",
         "season": "greenleaf",
         "tags": [
@@ -479,7 +479,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "bch_hunt_squirrel_rattlesnakerumble2",
+        "patrol_id": "bch_hunt_greenleaf_squirrel_rattlesnakerumble1",
         "biome": "beach",
         "season": "greenleaf",
         "tags": [
@@ -524,7 +524,7 @@
             ]
     },
     {
-        "patrol_id": "bch_hunt_squirrel2",
+        "patrol_id": "bch_hunt_greenleaf_groupsquirrel1",
         "biome": "beach",
         "season": "greenleaf",
         "tags": [

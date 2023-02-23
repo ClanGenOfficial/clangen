@@ -1,6 +1,6 @@
 [
     {
-        "patrol_id": "pln_hunt_leafbaresnowstorm1",
+        "patrol_id": "pln_hunt_leaf-bare_snowstorm1",
         "biome": "plains",
         "season": "leaf-bare",
         "tags": [
@@ -59,7 +59,7 @@
         ]
     },
     {
-        "patrol_id": "pln_hunt_leafbaresnowstorm2",
+        "patrol_id": "pln_hunt_leaf-bare_snowstorm2",
         "biome": "plains",
         "season": "leaf-bare",
         "tags": [
@@ -108,7 +108,7 @@
         ]
     },
     {
-        "patrol_id": "pln_hunt_leafbaresnowstorm3",
+        "patrol_id": "pln_hunt_leaf-bare_snowstorm3",
         "biome": "plains",
         "season": "leaf-bare",
         "tags": [
@@ -485,7 +485,7 @@
         ]
     },
     {
-        "patrol_id": "pln_hunt_gensquirrel4",
+        "patrol_id": "pln_hunt_leaf-bare_solosquirrel1",
         "biome": "plains",
         "season": "leaf-bare",
         "tags": [
@@ -516,7 +516,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "pln_hunt_genappsquirrel4",
+        "patrol_id": "pln_hunt_leaf-bare_soloappsquirrel1",
         "biome": "plains",
         "season": "leaf-bare",
         "tags": [
@@ -542,7 +542,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "pln_hunt_genmentorsquirrel4",
+        "patrol_id": "pln_hunt_leaf-bare_mentorsquirrel1",
         "biome": "plains",
         "season": "leaf-bare",
         "tags": [
@@ -570,7 +570,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "pln_hunt_squirrel_burrowbusiness4",
+        "patrol_id": "pln_hunt_leaf-bare_squirrel_burrowbusiness1",
         "biome": "plains",
         "season": "leaf-bare",
         "tags": [
@@ -613,7 +613,7 @@
         ]
     },
     {
-        "patrol_id": "pln_hunt_squirrel4",
+        "patrol_id": "pln_hunt_leaf-bare_groupsquirrel1",
         "biome": "plains",
         "season": "leaf-bare",
         "tags": [
@@ -647,7 +647,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "pln_hunt_leafbare_genmouse1",
+        "patrol_id": "pln_hunt_leaf-bare_solomouse1",
         "biome": "plains",
         "season": "leaf-bare",
         "tags": [
@@ -678,7 +678,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "pln_hunt_leafbare_genappmouse1",
+        "patrol_id": "pln_hunt_leaf-bare_soloappmouse1",
         "biome": "plains",
         "season": "leaf-bare",
         "tags": [
@@ -709,7 +709,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "pln_hunt_leafbare_genmentormouse1",
+        "patrol_id": "pln_hunt_leaf-bare_mentormouse1",
         "biome": "plains",
         "season": "leaf-bare",
         "tags": [
@@ -738,7 +738,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "pln_hunt_mice_leafbare_appshowoff1",
+        "patrol_id": "pln_hunt_leaf-bare_mice_appshowoff1",
         "biome": "plains",
         "season": "leaf-bare",
         "tags": [
@@ -781,7 +781,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "pln_hunt_mice_leafbare1",
+        "patrol_id": "pln_hunt_leaf-bare_groupmice1",
         "biome": "plains",
         "season": "leaf-bare",
         "tags": [

@@ -193,7 +193,7 @@
         ]
     },
     {
-        "patrol_id": "pln_hunt_redvixen1",
+        "patrol_id": "pln_hunt_newleaf_redvixen1",
         "biome": "plains",
         "season": "newleaf",
         "tags": [
@@ -260,7 +260,7 @@
         ]
     },
     {
-        "patrol_id": "pln_hunt_redvixen2",
+        "patrol_id": "pln_hunt_newleaf_redvixen2",
         "biome": "plains",
         "season": "newleaf",
         "tags": [
@@ -323,7 +323,7 @@
         ]
     },
     {
-        "patrol_id": "pln_hunt_redvixen3",
+        "patrol_id": "pln_hunt_newleaf_redvixen3",
         "biome": "plains",
         "season": "newleaf",
         "tags": [
@@ -608,7 +608,7 @@
         ]
     },
     {
-        "patrol_id": "pln_hunt_gensquirrel1",
+        "patrol_id": "pln_hunt_newleaf_solosquirrel1",
         "biome": "plains",
         "season": "newleaf",
         "tags": [
@@ -639,7 +639,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "pln_hunt_genappsquirrel1",
+        "patrol_id": "pln_hunt_newleaf_soloappsquirrel1",
         "biome": "plains",
         "season": "newleaf",
         "tags": [
@@ -665,7 +665,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "pln_hunt_genmentorsquirrel1",
+        "patrol_id": "pln_hunt_newleaf_mentorsquirrel1",
         "biome": "plains",
         "season": "newleaf",
         "tags": [
@@ -693,7 +693,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "pln_hunt_squirrel_burrowbusiness1",
+        "patrol_id": "pln_hunt_newleaf_squirrel_burrowbusiness1",
         "biome": "plains",
         "season": "newleaf",
         "tags": [
@@ -736,7 +736,7 @@
         ]
     },
     {
-        "patrol_id": "pln_hunt_squirrel1",
+        "patrol_id": "pln_hunt_newleaf_groupsquirrel1",
         "biome": "plains",
         "season": "newleaf",
         "tags": [
@@ -770,7 +770,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "pln_hunt_newleaf_genmouse1",
+        "patrol_id": "pln_hunt_newleaf_solomouse1",
         "biome": "plains",
         "season": "newleaf",
         "tags": [
@@ -801,7 +801,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "pln_hunt_newleaf_genappmouse1",
+        "patrol_id": "pln_hunt_newleaf_soloappmouse1",
         "biome": "plains",
         "season": "newleaf",
         "tags": [
@@ -826,7 +826,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "pln_hunt_newleaf_genmentormouse1",
+        "patrol_id": "pln_hunt_newleaf_mentormouse1",
         "biome": "plains",
         "season": "newleaf",
         "tags": [
@@ -854,7 +854,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "pln_hunt_mice_newleaf_appshowoff1",
+        "patrol_id": "pln_hunt_newleaf_mice_appshowoff1",
         "biome": "plains",
         "season": "newleaf",
         "tags": [
@@ -894,7 +894,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "pln_hunt_mice_newleaf1",
+        "patrol_id": "pln_hunt_newleaf_groupmice1",
         "biome": "plains",
         "season": "newleaf",
         "tags": [

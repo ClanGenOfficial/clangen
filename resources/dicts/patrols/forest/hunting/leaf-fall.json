@@ -387,7 +387,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_redvixen7",
+        "patrol_id": "fst_hunt_leaf-fall_redvixen7",
         "biome": "forest",
         "season": "leaf-fall",
         "tags": [
@@ -454,7 +454,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_redvixen8",
+        "patrol_id": "fst_hunt_leaf-fall_redvixen8",
         "biome": "forest",
         "season": "leaf-fall",
         "tags": [
@@ -515,7 +515,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_redvixen9",
+        "patrol_id": "fst_hunt_leaf-fall_redvixen9",
         "biome": "forest",
         "season": "leaf-fall",
         "tags": [
@@ -582,7 +582,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_grayvixen7",
+        "patrol_id": "fst_hunt_leaf-fall_grayvixen7",
         "biome": "forest",
         "season": "leaf-fall",
         "tags": [
@@ -644,7 +644,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_grayvixen8",
+        "patrol_id": "fst_hunt_leaf-fall_grayvixen8",
         "biome": "forest",
         "season": "leaf-fall",
         "tags": [
@@ -705,7 +705,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_grayvixen9",
+        "patrol_id": "fst_hunt_leaf-fall_grayvixen9",
         "biome": "forest",
         "season": "leaf-fall",
         "tags": [
@@ -766,7 +766,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_genmouse3",
+        "patrol_id": "fst_hunt_leaf-fall_solomouse1",
         "biome": "forest",
         "season": "leaf-fall",
         "tags": [
@@ -797,7 +797,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_genappmouse3",
+        "patrol_id": "fst_hunt_leaf-fall_soloappmouse1",
         "biome": "forest",
         "season": "leaf-fall",
         "tags": [
@@ -822,7 +822,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "gen_hunt_genmentormouse3",
+        "patrol_id": "gen_hunt_leaf-fall_mentormouse1",
         "biome": "forest",
         "season": "leaf-fall",
         "tags": [
@@ -850,7 +850,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_mice_ohnotheyrehot3",
+        "patrol_id": "fst_hunt_leaf-fall_mice_ohnotheyrehot1",
         "biome": "forest",
         "season": "leaf-fall",
         "tags": [
@@ -896,7 +896,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_mice3",
+        "patrol_id": "fst_hunt_leaf-fall_groupmice1",
         "biome": "forest",
         "season": "leaf-fall",
         "tags": [
@@ -930,7 +930,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_gensquirrel3",
+        "patrol_id": "fst_hunt_leaf-fall_solosquirrel1",
         "biome": "forest",
         "season": "leaf-fall",
         "tags": [
@@ -961,7 +961,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_genappsquirrel3",
+        "patrol_id": "fst_hunt_leaf-fall_soloappsquirrel1",
         "biome": "forest",
         "season": "leaf-fall",
         "tags": [
@@ -986,7 +986,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_genmentorsquirrel3",
+        "patrol_id": "fst_hunt_leaf-fall_mentorsquirrel1",
         "biome": "forest",
         "season": "leaf-fall",
         "tags": [
@@ -1014,7 +1014,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_squirrel_treetoptumble3",
+        "patrol_id": "fst_hunt_leaf-fall_squirrel_treetoptumble1",
         "biome": "forest",
         "season": "leaf-fall",
         "tags": [
@@ -1055,7 +1055,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_squirrel3",
+        "patrol_id": "fst_hunt_leaf-fall_groupsquirrel1",
         "biome": "forest",
         "season": "leaf-fall",
         "tags": [
@@ -1089,7 +1089,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_leaffallvanish1",
+        "patrol_id": "fst_hunt_leaffall_vanish1",
         "biome": "forest",
         "season": "leaf-fall",
         "tags": [
@@ -1142,7 +1142,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_ratsololeaffall",
+        "patrol_id": "fst_hunt_leaf-fall_solorat1",
         "biome": "forest",
         "season": "leaf-fall",
         "tags": [
@@ -1166,7 +1166,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_appratsololeaffall",
+        "patrol_id": "fst_hunt_leaf-fall_soloapprat1",
         "biome": "forest",
         "season": "leaf-fall",
         "tags": [
@@ -1190,7 +1190,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_warrapppratleaffall",
+        "patrol_id": "fst_hunt_leaf-fall_mentorrat1",
         "biome": "forest",
         "season": "leaf-fall",
         "tags": [
@@ -1215,7 +1215,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_ratswarmleaffall",
+        "patrol_id": "fst_hunt_leaf-fall_ratswarm1",
         "biome": "forest",
         "season": "leaf-fall",
         "tags": [
@@ -1254,7 +1254,7 @@
         ]
     },
     {    
-        "patrol_id": "fst_hunt_ratkingleaffall",
+        "patrol_id": "fst_hunt_leaf-fall_ratking1",
         "biome": "forest",
         "season": "leaf-fall",
         "tags": [
@@ -1294,7 +1294,7 @@
         ]
     },
     {    
-        "patrol_id": "fst_hunt_ratkingleaffall2",
+        "patrol_id": "fst_hunt_leaf-fall_ratking2",
         "biome": "forest",
         "season": "leaf-fall",
         "tags": [
@@ -1333,7 +1333,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_lillizard_leaffall1",
+        "patrol_id": "fst_hunt_leaf-fall_lillizard1",
         "biome": "forest",
         "season": "leaf-fall",
         "tags": [
@@ -1375,7 +1375,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_lillizard_leaffall2",
+        "patrol_id": "fst_hunt_leaf-fall_lillizard2",
         "biome": "forest",
         "season": "leaf-fall",
         "tags": [

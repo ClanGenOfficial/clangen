@@ -1,6 +1,6 @@
 [
     {
-        "patrol_id": "fst_hunt_leafbaresnowstorm1",
+        "patrol_id": "fst_hunt_leaf-bare_snowstorm1",
         "biome": "forest",
         "season": "leaf-bare",
         "tags": [
@@ -59,7 +59,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_leafbaresnowstorm2",
+        "patrol_id": "fst_hunt_leaf-bare_snowstorm2",
         "biome": "forest",
         "season": "leaf-bare",
         "tags": [
@@ -108,7 +108,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_leafbaresnowstorm3",
+        "patrol_id": "fst_hunt_leaf-bare_snowstorm3",
         "biome": "forest",
         "season": "leaf-bare",
         "tags": [
@@ -553,7 +553,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_genmouse4",
+        "patrol_id": "fst_hunt_leaf-bare_solomouse1",
         "biome": "forest",
         "season": "leaf-bare",
         "tags": [
@@ -584,7 +584,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_genappmouse4",
+        "patrol_id": "fst_hunt_leaf-bare_soloappmouse1",
         "biome": "forest",
         "season": "leaf-bare",
         "tags": [
@@ -609,7 +609,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "gen_hunt_genmentormouse4",
+        "patrol_id": "gen_hunt_leaf-bare_mentormouse1",
         "biome": "forest",
         "season": "leaf-bare",
         "tags": [
@@ -637,7 +637,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_mice_ohnotheyrehot4",
+        "patrol_id": "fst_hunt_leaf-bare_mice_ohnotheyrehot1",
         "biome": "forest",
         "season": "leaf-bare",
         "tags": [
@@ -683,7 +683,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_mice4",
+        "patrol_id": "fst_hunt_leaf-bare_groupmice1",
         "biome": "forest",
         "season": "leaf-bare",
         "tags": ["hunting",
@@ -713,7 +713,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_gensquirrel4",
+        "patrol_id": "fst_hunt_leaf-bare_solosquirrel1",
         "biome": "forest",
         "season": "leaf-bare",
         "tags": [
@@ -744,7 +744,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_genappsquirrel4",
+        "patrol_id": "fst_hunt_leaf-bare_soloappsquirrel1",
         "biome": "forest",
         "season": "leaf-bare",
         "tags": [
@@ -769,7 +769,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_genmentorsquirrel4",
+        "patrol_id": "fst_hunt_leaf-bare_mentorsquirrel1",
         "biome": "forest",
         "season": "leaf-bare",
         "tags": [
@@ -797,7 +797,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_squirrel_treetoptumble4",
+        "patrol_id": "fst_hunt_leaf-bare_squirrel_treetoptumble1",
         "biome": "forest",
         "season": "leaf-bare",
         "tags": [
@@ -836,7 +836,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_squirrel4",
+        "patrol_id": "fst_hunt_leaf-bare_groupsquirrel1",
         "biome": "forest",
         "season": "leaf-bare",
         "tags": [
@@ -876,7 +876,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_leafbarevanish1",
+        "patrol_id": "fst_hunt_leaf-bare_vanish1",
         "biome": "forest",
         "season": "leaf-bare",
         "tags": [
@@ -927,7 +927,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_ratsololeafbare",
+        "patrol_id": "fst_hunt_leaf-bare_solorat1",
         "biome": "forest",
         "season": "leaf-bare",
         "tags": [
@@ -951,7 +951,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_appratsololeafbare",
+        "patrol_id": "fst_hunt_leaf-bare_soloapprat1",
         "biome": "forest",
         "season": "leaf-bare",
         "tags": [
@@ -975,7 +975,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_warrapppratleafbare",
+        "patrol_id": "fst_hunt_leaf-bare_mentorrat1",
         "biome": "forest",
         "season": "leaf-bare",
         "tags": [
@@ -1000,7 +1000,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_ratswarmleafbare",
+        "patrol_id": "fst_hunt_leaf-bare_ratswarm1",
         "biome": "forest",
         "season": "leaf-bare",
         "tags": [
@@ -1039,7 +1039,7 @@
         ]
     },
     {    
-        "patrol_id": "fst_hunt_ratkingleafbare",
+        "patrol_id": "fst_hunt_leaf-bare_ratking1",
         "biome": "forest",
         "season": "leaf-bare",
         "tags": [
@@ -1077,7 +1077,7 @@
         ]
     },
     {    
-        "patrol_id": "fst_hunt_ratkingleafbare2",
+        "patrol_id": "fst_hunt_leaf-bare_ratking2",
         "biome": "forest",
         "season": "leaf-bare",
         "tags": [
@@ -1116,7 +1116,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_bird_swlb",
+        "patrol_id": "fst_hunt_leaf-bare_solobird1",
         "biome": "forest",
         "season": "leaf-bare",
         "tags": [
@@ -1142,7 +1142,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_lillizard_leafbare1",
+        "patrol_id": "fst_hunt_leaf-bare_lillizard_leafbare1",
         "biome": "forest",
         "season": "leaf-bare",
         "tags": [
