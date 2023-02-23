@@ -62,6 +62,8 @@ def accessory_display_name(cat):
 # ---------------------------------------------------------------------------- #
 def bs_blurb_text(cat):
     backstory = cat.backstory
+    if cat.status in ['kittypet', 'loner', 'rogue']:
+        return f"This cat is a {cat.status} and currently resides outside of the Clans."
     backstory_text = {
         None: "This cat was born into the Clan where they currently reside.",
         'clan_founder': "This cat is one of the founding members of the Clan.",
@@ -72,7 +74,6 @@ def bs_blurb_text(cat):
         'outsider_roots2': "This cat was born outside the Clan, but came to live in the Clan with their parent at a young age.",
         'loner1': "This cat joined the Clan by choice after living life as a loner.",
         'loner2': "This cat used to live in a barn, but mostly stayed away from Twolegs. They decided clanlife might be an interesting change of pace.",
-        'loner3': "",
         'kittypet1': "This cat joined the Clan by choice after living life with Twolegs as a kittypet.",
         'kittypet2': 'This cat used to live on something called a "boat" with Twolegs, but decided to join the Clan.',
         'kittypet3': "This cat used be a kittypet. They got lost after wandering away, and when they returned home, they found their Twolegs were gone. They eventually found their way to the Clan.",
@@ -852,7 +853,7 @@ class ProfileScreen(Screens):
         output = ""
 
         # STATUS
-        if the_cat.outside and not the_cat.exiled:
+        if the_cat.outside and not the_cat.exiled and not the_cat.status in ['kittypet', 'loner', 'rogue']:
             output += "<font color='#FF0000'>lost</font>"
         elif the_cat.exiled:
             output += "<font color='#FF0000'>exiled</font>"
@@ -919,7 +920,9 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # BACKSTORY
-        if the_cat.backstory is not None:
+        if the_cat.status in ['kittypet', 'loner', 'rogue']:
+            output += 'backstory: ' + the_cat.status
+        elif the_cat.backstory is not None:
             bs_text = backstory_text(the_cat)
             output += 'backstory: ' + bs_text
         else:
@@ -1166,7 +1169,8 @@ class ProfileScreen(Screens):
 
     def get_influence_text(self):
         influence_history = None
-
+        if self.the_cat.status in ['kittypet', 'loner', 'rogue']:
+            return ""
         # check if cat has any mentor influence, else assign None
         if len(self.the_cat.mentor_influence) >= 1:
             influenced_trait = str(self.the_cat.mentor_influence[0])
