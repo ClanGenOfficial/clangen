@@ -128,7 +128,7 @@
 			"id": "jel_de_high2",
 			"intensity": "high",
 			"interactions":[
-
+				"m_c sees that r_c's piece of prey looks tastier and asks if they'd like to swap. They agree happily, saying they like that one better."
 			],
 			"reaction_random_cat":{
 				"jealousy": "decrease"

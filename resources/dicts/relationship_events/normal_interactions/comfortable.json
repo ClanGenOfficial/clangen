@@ -46,7 +46,8 @@
 			"intensity": "low",
 			"interactions":[
 				"m_c quickly apologizes after bumping into r_c. They have a small laugh about it.",
-				"m_c has been spending time with r_c lately."
+				"m_c has been spending time with r_c lately.",
+				"m_c shares a joke about a neighboring Clan with r_c."
 			],
 			"reaction_random_cat":{
 				"comfortable": "increase"
@@ -62,7 +63,9 @@
 			"id": "comfort_inc_med2",
 			"interactions":[
 				"m_c has snuggled up against r_c.",
-				"m_c offers to groom a hard-to-reach place for r_c, who thanks them earnestly."
+				"m_c chats with r_c about their day.",
+				"m_c basks in the sun with r_c."
+				
 			],
 			"reaction_random_cat":{
 				"comfortable":"increase"
@@ -79,10 +82,37 @@
 			"id": "comfort_inc_high2",
 			"intensity": "high",
 			"interactions":[
-				"m_c is sharing tongues with r_c."
+				"m_c is sharing tongues with r_c.",
+				"m_c offers to groom a hard-to-reach place for r_c, who thanks them earnestly."
 			],
 			"reaction_random_cat":{
 				"comfortable": "increase"
+			}
+		},
+		{
+			"id":"comfort_inc_high3",
+			"intensity":"high",
+			"interactions":[
+				"m_c feels most like themself when they're around r_c.",
+				"m_c could recognize r_c just by the sound of their paw steps."
+			],
+			"relationship_constraint":[
+				"comfortable_30"
+			]
+		},
+		{
+			"id":"comfort_inc_high4",
+			"intensity":"high",
+			"interactions":[
+				"m_c helps r_c work through something difficult that happened to them.",
+				"m_c comforts r_c after a nightmare."
+			],
+			"relationship_constraint":[
+				"comfortable_30"
+			],
+			"reaction_random_cat":{
+				"comfortable": "increase",
+				"trust": "increase"
 			}
 		}
 	],
@@ -109,6 +139,15 @@
 			"interactions":[
 				"m_c finds the way r_c acts increasingly uncomfortable."
 			]
+		},
+		{
+			"id":"comfort_de_med2",
+			"interactions":[
+				"m_c called r_c the wrong name."
+			],
+			"reaction_random_cat":{
+				"comfortable": "decrease"
+			}
 		},
 		{
 			"id": "comfort_de_high1",

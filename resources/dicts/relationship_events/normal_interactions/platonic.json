@@ -45,7 +45,7 @@
 			"id":"platonic_inc_low2",
 			"intensity":"low",
 			"interactions":[
-
+				"m_c is talking with r_c."
 			],
 			"reaction_random_cat":{
 				"platonic":"increase"
@@ -54,13 +54,15 @@
 		{
 			"id": "platonic_inc_med1",
 			"interactions":[
-				"m_c saw r_c the other day and did get a chance to meow hello!"
+				"m_c saw r_c the other day and did get a chance to meow hello!",
+				"m_c reminds r_c to grab something from the fresh-kill pile if they haven't already."
 			]
 		},
 		{
 			"id": "platonic_inc_med2",
 			"interactions":[
-				""
+				"m_c is telling a story to r_c.",
+				"m_c is sharing prey with r_c."
 			],
 			"reaction_random_cat":{
 				"platonic": "increase"
@@ -70,18 +72,56 @@
 			"id":"platonic_inc_high1",
 			"intensity":"high",
 			"interactions":[
-
+				"m_c wants to spend more time with r_c!"
+				
 			]
 		},
 		{
 			"id":"platonic_inc_high2",
 			"intensity":"high",
 			"interactions":[
+				"m_c is having a wonderful time discussing recent Clan news with r_c."
 
 			],
 			"reaction_random_cat":{
 				"platonic":"increase"
 			}
+		},
+		{
+			"id":"platonic_inc_high3",
+			"intensity":"high",
+			"interactions":[
+				"m_c thinks about how lucky they are to have someone like r_c as a friend."
+			],
+			"relationship_constraint":[
+				"platonic_40"
+			]
+		},
+		{
+			"id":"platonic_inc_high4",
+			"intensity":"high",
+			"interactions":[
+				"m_c tells a joke that only r_c can understand.",
+				"m_c is always happy to grab some fresh-kill for r_c to share.",
+				"m_c saved a piece of fresh-kill that they know is r_c's favorite."
+			],
+			"relationship_constraint":[
+				"platonic_40"
+			],
+			"reaction_random_cat":{
+				"platonic":"increase"
+			}
+		},
+		{
+			"id":"platonic_inc_high5",
+			"intensity":"high",
+			"interactions":[
+				"m_c can't imagine their life if they never met r_c.",
+				"m_c thinks of r_c as their best friend."
+			],
+			"relationship_constraint":[
+				"platonic_60"
+			]
 		}
 	],
 	"decrease": [

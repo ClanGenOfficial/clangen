@@ -84,6 +84,20 @@
 			"reaction_random_cat":{
 				"admiration": "increase"
 			}
+		},
+		{
+			"id":"admire_inc_high3",
+			"intensity":"high",
+			"interactions":[
+				"m_c defends r_c from a Clanmate's rude remarks."
+			],
+			"relationship_constraint":[
+				"admiration_30"
+			],
+			"reaction_random_cat":{
+				"admiration":"increase",
+				"trust":"increase"
+			}
 		}
 	],
 	"decrease": [

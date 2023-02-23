@@ -38,7 +38,8 @@
 			"id": "trust_inc_low1",
 			"intensity": "low",
 			"interactions":[
-				"m_c doesn't think that r_c has been completely honest lately."
+				"m_c appreciates r_c telling them that they had a feather stuck to their face."
+				
 			]
 		},
 		{
@@ -77,10 +78,24 @@
 			"id": "trust_inc_high2",
 			"intensity": "high",
 			"interactions":[
+				"m_c is letting r_c share their troubles with them, hoping they'll feel better afterwards."
 
 			],
 			"reaction_random_cat":{
 				"trust": "increase"
+			}
+		},
+		{
+			"id":"trust_inc_high3",
+			"intensity":"high",
+			"interactions":[
+				"m_c tells r_c a secret."
+			],
+			"relationship_constraint":[
+				"trust_30"
+			],
+			"reaction_random_cat":{
+				"trust":"increase"
 			}
 		}
 	],
@@ -89,6 +104,7 @@
 			"id": "trust_de_low1",
 			"intensity": "low",
 			"interactions":[
+				"m_c doesn't think that r_c has been completely honest lately."
 
 			]
 		},

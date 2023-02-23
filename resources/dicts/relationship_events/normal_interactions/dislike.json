@@ -80,11 +80,21 @@
 			"id":"dislike_inc_high2",
 			"intensity": "high",
 			"interactions":[
-				""
+				"m_c had a fight with r_c."
 			],
 			"reaction_random_cat":{
 				"dislike": "increase"
 			}
+		},
+		{
+			"id":"dislike_de_high3",
+			"intensity":"high",
+			"relationship_constraint":[
+				"dislike_50"
+			],
+			"interactions":[
+				"m_c shudders at the sound of r_c's voice."
+			]
 		},
 		{
 			"id":"dislike_effect_other1",
@@ -93,7 +103,8 @@
 				"dislike_40"
 			],
 			"interactions":[
-				"m_c is spreading a rumour about r_c."
+				"m_c is spreading a rumour about r_c.",
+				"m_c is mocking r_c."
 			],
 			"reaction_random_cat":{
 				"admiration": "decrease",
