@@ -84,12 +84,13 @@ class _DiscordRPC():
                 cats_amount = len(game.clan.clan_cats)
             self.rpc.update(
                 state=state_text,
-                details="Managing " + clan_name,
+                details=f"Managing {clan_name} for {game.clan.age} moons" ,
                 large_image=img_str.lower(),
                 large_text=img_text,
                 small_image="discord",
                 small_text=f"Managing {cats_amount} cats",
-                start=self.start_time
+                start=self.start_time,
+                buttons=[{"label": "Join The Server", "url": "https://google.com"}],
             )
 
     def close(self):
