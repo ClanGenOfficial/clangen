@@ -1534,7 +1534,7 @@ class Patrol():
             other_clan = patrol.other_clan
             if "otherclan_nochangefail" in self.patrol_event.tags and not self.success:
                 difference = 0
-            elif "otherclan_nochangesuccess" in self.patrol_event.tags and self.success:
+            elif "otherclan_nochangesuccess" in self.patrol_event.tags and self.success and not antagonize:
                 difference = 0
             elif "otherclan_antag_nochangefail" in self.patrol_event.tags and antagonize and not self.success:
                 difference = 0
