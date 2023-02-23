@@ -537,8 +537,7 @@ class UnknownResScreen(Screens):
                 if len(name) >= 13:
                     short_name = str(cat.name)[0:12]
                     name = short_name + '...'
-                self.cat_names.append(pygame_gui.elements.UITextBox("<font color='#FFFFFF'>" + name + "</font>"
-                                                                    ,
+                self.cat_names.append(pygame_gui.elements.UITextBox(name,
                                                                     scale(pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60)))
                                                                     , manager=MANAGER))
                 pos_x += 240
