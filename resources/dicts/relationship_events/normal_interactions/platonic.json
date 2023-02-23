@@ -33,7 +33,106 @@
 				"jealousy": "neutral",
 				"trust": "increase"
 			}
+		},
+		{
+			"id": "platonic_inc_low1",
+			"intensity": "low",
+			"interactions":[
+
+			]
+		},
+		{
+			"id":"platonic_inc_low2",
+			"intensity":"low",
+			"interactions":[
+
+			],
+			"reaction_random_cat":{
+				"platonic":"increase"
+			}
+		},
+		{
+			"id": "platonic_inc_med1",
+			"interactions":[
+				"m_c saw r_c the other day and did get a chance to meow hello!"
+			]
+		},
+		{
+			"id": "platonic_inc_med2",
+			"interactions":[
+				""
+			],
+			"reaction_random_cat":{
+				"platonic": "increase"
+			}
+		},
+		{
+			"id":"platonic_inc_high1",
+			"intensity":"high",
+			"interactions":[
+
+			]
+		},
+		{
+			"id":"platonic_inc_high2",
+			"intensity":"high",
+			"interactions":[
+
+			],
+			"reaction_random_cat":{
+				"platonic":"increase"
+			}
 		}
 	],
-	"decrease": []
+	"decrease": [
+		{
+			"id": "platonic_de_low1",
+			"intensity":"low",
+			"interactions":[
+
+			]
+		},
+		{
+			"id": "platonic_de_low2",
+			"intensity":"low",
+			"interactions":[
+
+			],
+			"reaction_random_cat":{
+				"platonic":"decrease"
+			}
+		},
+		{
+			"id": "platonic_de_med1",
+			"interactions":[
+				"m_c caught r_c complaining about them behind their back."
+			]
+		},
+		{
+			"id": "platonic_de_med2",
+			"interactions":[
+				""
+			],
+			"reaction_random_cat":{
+				"platonic": "decrease"
+			}
+		},
+		{
+			"id":"platonic_de_high1",
+			"intensity":"high",
+			"interactions":[
+
+			]
+		},
+		{
+			"id":"platonic_de_high2",
+			"intensity":"high",
+			"interactions":[
+
+			],
+			"reaction_random_cat":{
+				"platonic":"decrease"
+			}
+		}
+	]
 }

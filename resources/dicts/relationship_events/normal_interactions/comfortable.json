@@ -33,7 +33,99 @@
 				"jealousy": "neutral",
 				"trust": "increase"
 			}
+		},
+		{
+			"id": "comfort_inc_low1",
+			"intensity": "low",
+			"interactions":[
+				"m_c found a bit of fluff that smells like r_c and added it to their nest."
+			]
+		},
+		{
+			"id": "comfort_inc_low2",
+			"intensity": "low",
+			"interactions":[
+				"m_c quickly apologizes after bumping into r_c. They have a small laugh about it.",
+				"m_c has been spending time with r_c lately."
+			],
+			"reaction_random_cat":{
+				"comfortable": "increase"
+			}
+		},
+		{
+			"id": "comfort_inc_med1",
+			"interactions":[
+				"m_c helps r_c pick burrs out of their fur."
+			]
+		},
+		{
+			"id": "comfort_inc_med2",
+			"interactions":[
+				"m_c has snuggled up against r_c.",
+				"m_c offers to groom a hard-to-reach place for r_c, who thanks them earnestly."
+			],
+			"reaction_random_cat":{
+				"comfortable":"increase"
+			}
+		},
+		{
+			"id": "comfort_inc_high1",
+			"intensity": "high",
+			"interactions":[
+				"m_c appreciates how r_c always seems to ask how they're doing."
+			]
+		},
+		{
+			"id": "comfort_inc_high2",
+			"intensity": "high",
+			"interactions":[
+				"m_c is sharing tongues with r_c."
+			],
+			"reaction_random_cat":{
+				"comfortable": "increase"
+			}
 		}
 	],
-	"decrease": []
+	"decrease": [
+		{
+			"id": "comfort_de_low1",
+			"intensity":"low",
+			"interactions":[
+				"m_c overheard a joke from r_c they didn't get."
+			]
+		},
+		{
+			"id": "comfort_de_low2",
+			"intensity":"low",
+			"interactions":[
+				"m_c said something that rubbed r_c the wrong way."
+			],
+			"reaction_random_cat":{
+				"comfortable": "decrease"
+			}
+		},
+		{
+			"id": "comfort_de_med1",
+			"interactions":[
+				"m_c finds the way r_c acts increasingly uncomfortable."
+			]
+		},
+		{
+			"id": "comfort_de_high1",
+			"intensity": "high",
+			"interactions":[
+				"m_c bristles after being scolded by r_c."
+			]
+		},
+		{
+			"id": "comfort_de_high2",
+			"intensity": "high",
+			"interactions":[
+				"m_c is telling jokes about r_c."
+			],
+			"reaction_random_cat":{
+				"comfortable":"decrease"
+			}
+		}
+	]
 }

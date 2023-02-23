@@ -1,6 +1,7 @@
 {
 	"increase": [
 		{
+
 			"id": "sample_id",
 			"biome": ["Any"],
 			"season": ["Any"],
@@ -33,7 +34,107 @@
 				"jealousy": "neutral",
 				"trust": "increase"
 			}
+		},
+		{
+			"id": "dislike_inc_low1",
+			"intensity": "low",
+			"interactions":[
+				""
+			]
+		},
+		{
+			"id": "dislike_inc_low2",
+			"intensity": "low",
+			"interactions":[
+				""
+			],
+			"reaction_random_cat":{
+				"dislike": "increase"
+			}
+		},
+		{
+			"id":"dislike_inc_med1",
+			"intensity":[
+				""
+			]
+		},
+		{
+			"id": "dislike_inc_med2",
+			"interactions":[
+				"m_c ignores r_c."
+			],
+			"reaction_random_cat":{
+				"dislike": "increase"
+			}
+		},
+		{
+			"id": "dislike_inc_high1",
+			"intensity": "high",
+			"interactions":[
+				""
+			]
+		},
+		{
+			"id":"dislike_inc_high2",
+			"intensity": "high",
+			"interactions":[
+				""
+			],
+			"reaction_random_cat":{
+				"dislike": "increase"
+			}
 		}
 	],
-	"decrease": []
+	"decrease": [
+		{
+			"id":"dislike_de_low1",
+			"intensity": "low",
+			"interactions":[
+				""
+			]
+		},
+		{
+			"id":"dislike_de_low2",
+			"intensity": "low",
+			"interactions":[
+				""
+			],
+			"reaction_random_cat":{
+				"dislike": "decrease"
+			}
+		},
+		{
+			"id": "dislike_de_med",
+			"interactions": [
+				"m_c realized that they were too harsh in their judgment of r_c."
+			]
+		},
+		{
+			"id":"dislike_de_med2",
+			"interactions":[
+				""
+			],
+			"reaction_random_cat":{
+				"dislike":"decrease"
+			}
+		},
+		{
+			"id": "dislike_de_high1",
+			"intensity": "high",
+			"interactions":[
+				""
+			]
+		},
+		{
+			"id":"dislike_de_high2",
+			"intensity": "high",
+			"interactions":[
+				""
+			],
+			"reaction_random_cat":{
+				"dislike":"decrease"
+			}
+		}
+		
+	]
 }

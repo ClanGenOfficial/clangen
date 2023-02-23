@@ -33,7 +33,106 @@
 				"jealousy": "neutral",
 				"trust": "increase"
 			}
+		},
+		{
+			"id": "jel_inc_low1",
+			"intensity": "low",
+			"interactions":[
+
+			]
+		},
+		{
+			"id": "jel_inc_low2",
+			"intensity": "low",
+			"interactions":[
+
+			],
+			"reaction_random_cat":{
+				"jealousy": "increase"
+			}
+		},
+		{
+			"id": "jel_inc_med1",
+			"interactions": [
+				"m_c thinks that the prey r_c is biting into on the other side of camp looks delicious."
+			]
+		},
+		{
+			"id": "jel_inc_med2",
+			"interactions":[
+
+			],
+			"reaction_random_cat":{
+				"jealousy": "increase"
+			}
+		},
+		{
+			"id": "jel_inc_high1",
+			"intensity": "high",
+			"interactions":[
+
+			]
+		},
+		{
+			"id": "jel_inc_high2",
+			"intensity": "high",
+			"interactions":[
+
+			],
+			"reaction_random_cat":{
+				"jealousy": "increase"
+			}
 		}
 	],
-	"decrease": []
+	"decrease": [
+		{
+			"id": "jel_de_low1",
+			"intensity": "low",
+			"interactions":[
+
+			]
+		},
+		{
+			"id": "jel_de_low2",
+			"intensity": "low",
+			"interactions":[
+
+			],
+			"reaction_random_cat":{
+				"jealousy": "decrease"
+			}
+		},
+		{
+			"id": "jel_de_med1",
+			"interactions":[
+				"m_c saw r_c get assigned a task that m_c wouldn't ever want."
+			]
+		},
+		{
+			"id": "jel_de_med2",
+			"interactions":[
+				"m_c swaps favorite prey with r_c."
+			],
+			"reaction_random_cat":{
+				"jealousy": "decrease"
+			}
+		},
+		{
+			"id": "jel_de_high1",
+			"intensity": "high",
+			"interactions":[
+
+			]
+		},
+		{
+			"id": "jel_de_high2",
+			"intensity": "high",
+			"interactions":[
+
+			],
+			"reaction_random_cat":{
+				"jealousy": "decrease"
+			}
+		}
+	]
 }

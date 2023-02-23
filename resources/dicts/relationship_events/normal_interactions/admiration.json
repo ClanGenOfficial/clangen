@@ -33,7 +33,110 @@
 				"jealousy": "neutral",
 				"trust": "increase"
 			}
+		},
+		{
+			"id":"admire_inc_low1",
+			"intensity": "low",
+			"interactions":[
+				"m_c saw r_c being considerate."
+			]
+
+		},
+		{
+			"id": "admire_inc_low2",
+			"intensity": "low",
+			"interactions":[
+				"m_c mews congratulations to r_c for a job well done."
+			],
+			"reaction_random_cat":{
+				"admiration": "low"
+			}
+		},
+		{
+			"id": "admire_inc_medium1",
+			"interactions":[
+				"m_c admires how brave r_c is."
+			]
+		},
+		{
+			"id":"admire_inc_medium2",
+			"interactions":[
+				"m_c is sparring with r_c."
+			],
+			"reaction_random_cat":{
+				"admiration": "increase"
+			}
+		},
+		{
+			"id": "admire_inc_high1",
+			"intensity": "high",
+			"interactions":[
+				"m_c saw r_c show off a skill they never knew they had.",
+				"m_c is wowed by how bravely r_c fought the other day."
+			]
+		},
+		{
+			"id": "admire_inc_high2",
+			"intensity":"high",
+			"interactions":[
+				"m_c had a difficult coversation with r_c and they now have a deeper understanding of each other."
+			],
+			"reaction_random_cat":{
+				"admiration": "increase"
+			}
 		}
 	],
-	"decrease": []
+	"decrease": [
+		{
+			"id": "admire_de_low1",
+			"intensity":"low",
+			"interactions":[
+				"m_c saw r_c being rude."
+			]
+		},
+		{
+			"id": "admire_de_low2",
+			"intensity": "low",
+			"interactions":[
+				"m_c complains about something r_c did."
+			],
+			"reaction_random_cat":{
+				"admiration": "decrease"
+			}
+		},
+		{
+			"id": "admire_de_medium1",
+			"interactions":[
+				"m_c saw r_c take the last piece of prey from the fresh-kill pile.",
+				"m_C thinks r_c has a strange sense of humor.",
+				"m_c is frustrated that r_c won't take their actions more seriously."
+			]
+		},
+		{
+			"id": "admire_de_medium2",
+			"interactions":[
+				"m_c and r_c had to fix something around camp and argued how to fix it. It ended up being fixed by some other cat."
+			],
+			"reaction_random_cat":{
+				"admiration": "decrease"
+			}
+		},
+		{
+			"id": "admire_de_high1",
+			"intensity": "high",
+			"interactions":[
+				"m_c heard an ugly rumor about r_c."
+			]
+		},
+		{
+			"id": "admire_de_high2",
+			"intensity": "high",
+			"interactions":[
+				"m_c had a difficult coversation with r_c and they both ended up resentful of each other."
+			],
+			"reaction_random_cat":{
+				"admiration": "decrease"
+			}
+		}
+	]
 }

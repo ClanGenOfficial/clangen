@@ -33,7 +33,106 @@
 				"jealousy": "neutral",
 				"trust": "increase"
 			}
+		},
+		{
+			"id": "trust_inc_low1",
+			"intensity": "low",
+			"interactions":[
+
+			]
+		},
+		{
+			"id": "trust_inc_low2",
+			"intensity": "low",
+			"interactions":[
+
+			],
+			"reaction_random_cat":{
+				"trust": "increase"
+			}
+		},
+		{
+			"id": "trust_inc_med1",
+			"interactions":[
+				"m_c thinks about how r_c is always reliable."
+			]
+		},
+		{
+			"id": "trust_inc_med2",
+			"interactions":[
+				""
+			],
+			"reaction_random_cat":{
+				"trust": "increase"
+			}
+		},
+		{
+			"id": "trust_inc_high1",
+			"intensity": "high",
+			"interactions":[
+
+			]
+		},
+		{
+			"id": "trust_inc_high2",
+			"intensity": "high",
+			"interactions":[
+
+			],
+			"reaction_random_cat":{
+				"trust": "increase"
+			}
 		}
 	],
-	"decrease": []
+	"decrease": [
+		{
+			"id": "trust_de_low1",
+			"intensity": "low",
+			"interactions":[
+
+			]
+		},
+		{
+			"id": "trust_de_low2",
+			"intensity": "low",
+			"interactions":[
+
+			],
+			"reaction_random_cat":{
+				"trust": "decrease"
+			}
+		},
+		{
+			"id": "trust_de_med1",
+			"interactions":[
+				"m_c caught r_c in a lie."
+			]
+		},
+		{
+			"id": "trust_de_med2",
+			"interactions":[
+				""
+			],
+			"reaction_random_cat":{
+				"trust": "decrease"
+			}
+		},
+		{
+			"id": "trust_de_high1",
+			"intensity": "high",
+			"interactions":[
+
+			]
+		},
+		{
+			"id": "trust_de_high2",
+			"intensity": "high",
+			"interactions": [
+
+			],
+			"reaction_random_cat":{
+				"trust": "decrease"
+			}
+		}
+	]
 }
