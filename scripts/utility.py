@@ -501,9 +501,10 @@ def draw_large(cat, pos):
 def update_sprite(cat):
     # First, check if the cat is faded.
     if cat.faded:
-        # Don't update the sprite if the cat is faded.
+        print(str(cat.name) + " is forgotten by everyone they knew while alive and has faded away as a result.")
+    # Don't update the sprite if the cat is faded.
         return
-
+    
     # First make pelt, if it wasn't possible before
     if cat.pelt is None:
         if cat.parent1 is None:
@@ -658,6 +659,16 @@ def update_sprite(cat):
                 new_sprite.blit(
                     sprites.sprites['lineartdf' +
                                     str(cat.age_sprites[cat.age])], (0, 0))
+        elif cat.outside:
+            if cat.age == 'elder' or (cat.pelt.length == 'long' and cat.age not in ['kitten', 'adolescent']):
+                new_sprite.blit(
+                    sprites.sprites['lineartur' +
+                                    str(cat.age_sprites[cat.age] + 9)],
+                    (0, 0))
+            else:
+                new_sprite.blit(
+                    sprites.sprites['lineartur' +
+                                    str(cat.age_sprites[cat.age])], (0, 0))               
         elif cat.dead:
             if cat.age == 'elder' or (cat.pelt.length == 'long' and cat.age not in ['kitten', 'adolescent']):
                 new_sprite.blit(
