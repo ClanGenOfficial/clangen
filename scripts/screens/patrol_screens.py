@@ -1071,9 +1071,9 @@ class PatrolScreen(Screens):
                                                                               (300, 300)), manager=MANAGER)
 
             name = str(self.selected_cat.name)  # get name
-            if 14 <= len(name) >= 16:  # check name length
-                short_name = str(self.selected_cat.name)[0:15]
-                name = short_name + '...'
+            if len(name) >= 16:  # check name length
+                short_name = name[0:15]
+                name = short_name + '..'
 
             self.elements['selected_name'] = pygame_gui.elements.UITextBox(name,
                                                                            scale(pygame.Rect((600, 650), (400, 60))),
@@ -1102,9 +1102,9 @@ class PatrolScreen(Screens):
                         , manager=MANAGER)
                     # Check for name length
                     name = str(mate.name)  # get name
-                    if 11 <= len(name):  # check name length
-                        short_name = str(mate.name)[0:10]
-                        name = short_name + '...'
+                    if 10 <= len(name):  # check name length
+                        short_name = name[0:9]
+                        name = short_name + '..'
                     self.elements['mate_name'] = pygame_gui.elements.ui_label.UILabel(
                         scale(pygame.Rect((306, 600), (190, 60))),
                         name,
@@ -1144,9 +1144,9 @@ class PatrolScreen(Screens):
                 # Failsafe, if apprentice or mentor is set to none.
                 if self.app_mentor is not None:
                     name = str(self.app_mentor.name)  # get name
-                    if 11 <= len(name):  # check name length
-                        short_name = str(self.app_mentor.name)[0:10]
-                        name = short_name + '...'
+                    if 10 <= len(name):  # check name length
+                        short_name = name[0:9]
+                        name = short_name + '..'
                     self.elements['app_mentor_name'] = pygame_gui.elements.ui_label.UILabel(
                         scale(pygame.Rect((1106, 600), (190, 60))),
                         name,

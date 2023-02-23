@@ -554,7 +554,7 @@ class SettingsScreen(Screens):
 
         n += 1
         self.checkboxes_text['gore'] = pygame_gui.elements.UITextBox(
-            "Allow mild gore and blood in patrol artwork.",
+            "Allow mild gore and blood in patrol artwork",
             scale(pygame.Rect((x_value, n * y_spacing), (1000, 78))),
             container=self.checkboxes_text["container"],
             object_id=get_text_box_theme("#setting_text_box"), manager=MANAGER
@@ -603,7 +603,7 @@ class SettingsScreen(Screens):
             object_id=get_text_box_theme("#setting_text_box"), manager=MANAGER
         )
         self.checkboxes_text['no unknown fathers'] = pygame_gui.elements.UITextBox(
-            "Allow unmated cats to have offspring.",
+            "Allow unmated cats to have offspring",
             scale(pygame.Rect((x_value, 674), (1000, 100))),
             object_id=get_text_box_theme("#setting_text_box"), manager=MANAGER
         )
