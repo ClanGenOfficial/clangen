@@ -1148,7 +1148,7 @@
         "thoughtful",
         "wise"
     ],
-    "min_cats": 1,
+    "min_cats": 2,
     "max_cats": 3,
     "antagonize_text": null,
     "antagonize_fail_text": null
