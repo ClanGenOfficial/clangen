@@ -946,6 +946,7 @@ class StatsScreen(Screens):
         elder_num = 0
         starclan_num = 0
         medcat_num = 0
+        other_num = 0
         for cat in Cat.all_cats.values():
             if not cat.dead and not cat.outside:
                 living_num += 1
@@ -959,6 +960,8 @@ class StatsScreen(Screens):
                     elder_num += 1
                 elif cat.status == 'medicine cat':
                     medcat_num += 1
+            elif (cat.status in ['kittypet', 'loner', 'rogue'] or cat.outside) and not cat.dead:
+                other_num+=1
             else:
                 starclan_num += 1
 
@@ -968,6 +971,7 @@ class StatsScreen(Screens):
                      "Number of Apprentices: " + str(app_num) + "\n\n" + \
                      "Number of Kits: " + str(kit_num) + "\n\n" + \
                      "Number of Elders: " + str(elder_num) + "\n\n" + \
+                     "Number of Cats Outside the Clans: " + str(other_num) + "\n\n" + \
                      "Number of Dead Cats: " + str(starclan_num)
 
         self.stats_box = pygame_gui.elements.UITextBox(stats_text, scale(pygame.Rect((200, 300), (1200, 1000))),
