@@ -89,6 +89,8 @@ def json_load():
                         new_cat.cat_sprites['para_adult'] = 16
                 else:
                     new_cat.cat_sprites['para_adult'] = 15
+                if new_cat.cat_sprites['senior'] not in [12, 13, 14]:
+                    new_cat.cat_sprites['senior'] = choice([12, 13, 14])
             new_cat.eye_colour = cat["eye_colour"]
             new_cat.reverse = cat["reverse"]
             new_cat.white_patches = cat["white_patches"]
