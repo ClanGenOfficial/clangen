@@ -574,7 +574,8 @@ class Cat():
                     ))
 
                 # grief the cat
-                cat.get_ill("grief stricken", event_triggered=True, severity=severity)
+                if game.clan.game_mode != 'classic':
+                    cat.get_ill("grief stricken", event_triggered=True, severity=severity)
 
             # negative reactions, no grief
             else:
