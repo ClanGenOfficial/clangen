@@ -753,7 +753,7 @@ class Events():
                 game.clan.medicine_cat = cat
 
             # retiring to elder den
-            if cat.status in ['warrior', 'deputy'] and cat.age == 'elder' and len(cat.apprentice) < 1:
+            if cat.status in ['warrior', 'deputy'] and cat.age == 'senior' and len(cat.apprentice) < 1:
                 if cat.status == 'deputy':
                     game.clan.deputy = None
                 self.ceremony(cat, 'elder')
@@ -767,7 +767,7 @@ class Events():
                                                          and not x.dead and not x.outside, Cat.all_cats_list))
 
                     # check if the medicine cat is an elder
-                    has_elder_med = [c for c in med_cat_list if c.age == 'elder' and c.status == "medicine cat"]
+                    has_elder_med = [c for c in med_cat_list if c.age == 'senior' and c.status == "medicine cat"]
 
                     very_old_med = [c for c in med_cat_list if c.moons >= 150 and c.status == "medicine cat"]
 

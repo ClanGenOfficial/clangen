@@ -744,7 +744,7 @@ class ProfileScreen(Screens):
         # AGE
         if the_cat.age == 'kitten':
             output += 'young'
-        elif the_cat.age == 'elder':
+        elif the_cat.age == 'senior':
             output += 'senior'
         else:
             output += the_cat.age
