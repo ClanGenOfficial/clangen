@@ -82,9 +82,14 @@ class _DiscordRPC():
             if game.clan:
                 clan_name =  f"{game.clan.name}clan"
                 cats_amount = len(game.clan.clan_cats)
+                clan_age = game.clan.age
+            else:
+                clan_name = 'Loading...'
+                cats_amount = 0
+                clan_age = 0
             self.rpc.update(
                 state=state_text,
-                details=f"Managing {clan_name} for {game.clan.age} moons" ,
+                details=f"Managing {clan_name} for {clan_age} moons" ,
                 large_image=img_str.lower(),
                 large_text=img_text,
                 small_image="discord",
