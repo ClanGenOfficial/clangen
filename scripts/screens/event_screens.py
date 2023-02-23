@@ -1,17 +1,15 @@
-import re
-from random import choice
 import pygame_gui
 
 from .base_screens import Screens, cat_profiles
 import pygame
 from scripts.events import events_class
-from scripts.utility import draw, get_text_box_theme, get_living_cat_count, scale
-# from scripts.game_structure.text import *
-from scripts.game_structure.image_button import IDImageButton
-from scripts.game_structure.game_essentials import *
+from scripts.utility import get_living_cat_count, get_text_box_theme, scale
+from scripts.game_structure.image_button import IDImageButton, UIImageButton
+from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
 from ..cat.cats import Cat
 from ..game_structure import image_cache
 from scripts.event_class import Single_Event
+from scripts.game_structure.windows import GameOver
 
 
 class EventsScreen(Screens):

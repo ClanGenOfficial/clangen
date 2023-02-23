@@ -224,7 +224,7 @@
 		]
 	},
 	{
-		"patrol_id":"wtlnd_train_solo1",
+		"patrol_id":"wtlnd_train_soloapp1",
 		"biome":"wetlands",
 		"season":"Any",
 		"tags":[

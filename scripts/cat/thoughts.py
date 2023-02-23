@@ -21,6 +21,8 @@ def get_thoughts(cat, other_cat):
         thoughts = get_exile_thoughts(cat, other_cat)
     elif cat.df:
         thoughts = get_df_thoughts(cat, other_cat)
+    elif cat.outside:
+        thoughts = get_ur_thoughts(cat, other_cat)
     else:
         thoughts = get_dead_thoughts(cat, other_cat)
 
@@ -648,8 +650,25 @@ def get_exile_thoughts(cat, other_cat):
     
     return thoughts
 
+def get_ur_thoughts(cat, other_cat):
+    thoughts = []
+    thoughts+= GENERAL_DEAD["ur"]
+
+    return thoughts
+
 def get_outside_thoughts(cat, other_cat):
     thoughts = []
+    if cat.status in ["kittypet", "loner", "rogue"]:
+        thoughts += OUTSIDE[cat.status]['general']
+        if cat.age == 'kitten':
+            thoughts += OUTSIDE[cat.status]['kitten']
+        elif cat.age == 'adolescent':
+            thoughts += OUTSIDE[cat.status]['adolescent']
+        elif cat.age in ['young adult', 'adult', 'senior adult']:
+            thoughts += OUTSIDE[cat.status]['adult']
+        elif cat.age == 'elder':
+            thoughts += OUTSIDE[cat.status]['elder']
+        return thoughts
     thoughts += OUTSIDE['lost']['general']
     if cat.age == 'kitten':
         thoughts += OUTSIDE['lost']['kitten']

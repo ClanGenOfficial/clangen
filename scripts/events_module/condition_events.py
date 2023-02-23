@@ -5,7 +5,7 @@ except ImportError:
 import random
 
 from scripts.cat.cats import Cat
-from scripts.cat.pelts import *
+from scripts.cat.pelts import scars1, scars2, scars3
 from scripts.conditions import medical_cats_condition_fulfilled, get_amount_cat_for_one_medic
 from scripts.utility import event_text_adjust, get_med_cats, change_relationship_values
 from scripts.game_structure.game_essentials import game
@@ -292,7 +292,7 @@ class Condition_Events():
             "BRIGHTHEART": ["one bad eye"],
             "NOLEFTEAR": ["partial hearing loss"],
             "NORIGHTEAR": ["partial hearing loss"],
-            "NOEAR": ["partial hearing loss, deaf"],
+            "NOEAR": ["partial hearing loss", "deaf"],
             "LEFTBLIND": ["one bad eye", "failing eyesight"],
             "RIGHTBLIND": ["one bad eye", "failing eyesight"],
             "BOTHBLIND": ["blind"],
@@ -640,7 +640,8 @@ class Condition_Events():
         }
 
         if not triggered and not cat.dead and not cat.retired and cat.status not in \
-                ['leader', 'medicine cat', 'kitten', 'medicine cat apprentice'] and game.settings['retirement'] is False:
+                ['leader', 'medicine cat', 'kitten', 'medicine cat apprentice', 'mediator', 'mediator apprentice'] \
+                and game.settings['retirement'] is False:
             for condition in cat.permanent_condition:
                 if cat.permanent_condition[condition]['severity'] == 'major':
                     chance = int(retire_chances.get(cat.age))

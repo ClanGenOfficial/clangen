@@ -134,10 +134,11 @@
         "max_cats": 1
     },
     {
-        "patrol_id": "dst_hunt_solo1",
+        "patrol_id": "dst_hunt_huntassessment1",
         "biome": "desert",
         "season": "Any",
         "tags": [
+            "app_stat",
             "hunting",
             "apprentice",
             "injury",
@@ -260,7 +261,6 @@
         "tags": [
             "hunting",
             "deputy",
-            "apprentice",
             "medium_prey",
 			"no_fail_prey"
         ],
@@ -740,8 +740,10 @@
         "biome": "desert",
         "season": "greenleaf",
         "tags": [
+            "app_stat",
             "hunting",
-            "illness",
+            "injury",
+            "heat exhaustion",
             "death",
             "apprentice",
             "small_prey"
@@ -760,9 +762,8 @@
             "Making the smart choice, app1 doesn't move from the shade, taking a good long nap in the heat.",
             "Refusing to stop hunting, app1 bodly decides to go into a canyon where it'll be cooler. They don't find any prey, but don't overheat either.",
             "app1 doesn't make it back to camp. A patrol sent out for them find their body, collapsed in a shadeless part of the territory and already starting to dry out and mummify.",
-            "app1 collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a Clanmate finds them that they're able to totter home shakily.",
             "When s_c doesn't return to camp that evening, a search party goes out for them. They find app1 collapsed and badly affected by heat stroke, and carry them back to camp where their might be a way to help them. However, app1's breathing stops on the journey home, and they slip to StarClan.",
-            "When s_c doesn't return to camp that evening, a search party goes out for them. They find app1 collapsed and badly affected by heat stroke, and carry them back to camp where their might be a way to help them."
+            "s_c collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a Clanmate finds them that they're able to totter home shakily."
         ],
         "win_skills": [
             "None"
@@ -860,8 +861,10 @@
         "biome": "desert",
         "season": "newleaf",
         "tags": [
+            "app_stat",
             "hunting",
-            "illness",
+            "injury",
+            "heat exhaustion",
             "death",
             "apprentice",
             "small_prey"
@@ -975,8 +978,10 @@
         "biome": "desert",
         "season": "leaf-fall",
         "tags": [
+            "app_stat",
             "hunting",
-            "illness",
+            "injury",
+            "heat exhaustion",
             "death",
             "apprentice",
             "small_prey"

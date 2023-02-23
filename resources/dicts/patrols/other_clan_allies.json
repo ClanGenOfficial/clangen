@@ -1,6 +1,6 @@
 [
 {
-    "patrol_id": "gen_bord_otherclan1",
+    "patrol_id": "gen_bord_otherclan_allies1",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "other_clan"],
@@ -18,10 +18,10 @@
             "Though your patrol stops to chat, the other patrol seems standoffish and cold. After a stilted attempt at conversation, the two patrols part and go on their way. It seems as though your alliance with o_c_n is weakening.",
             "Your patrol stops to talk with the other cats but s_c is quick to begin taunting them, poking fun at the other Clan. When the two patrols part ways tails are whipping and voices border on a hiss."
     ],
-    "other_clan": ["None"],
+    "other_clan": null,
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "win_trait": ["charismatic", "altruistic", "thoughtful", "wise", "confident"],
-    "fail_skills": ["None"],
+    "fail_skills": null,
     "fail_trait": ["bloodthirsty", "vengeful", "troublesome", "childish"],
     "min_cats": 1,
     "max_cats": 6,
@@ -31,7 +31,7 @@
 },
 
 {
-    "patrol_id": "gen_bord_otherclan2",
+    "patrol_id": "gen_bord_otherclan_allies2",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "other_clan"],
@@ -49,10 +49,10 @@
             "Though your patrol stops to chat, the other patrol seems standoffish and cold. After a stilted attempt at conversation, the two patrols part and go on their way. It seems as though your alliance with o_c_n is weakening.",
             "Your patrol stops to talk with the other cats but s_c is nervous to talk with o_c_n cats. The other patrol notices and takes offense at the lack of friendly demeanor."
     ],
-    "other_clan": ["None"],
+    "other_clan": null,
     "win_skills": ["good fighter", "great fighter", "excellent fighter"],
     "win_trait": ["confident", "fierce", "bold", "righteous", "bloodthirsty", "compassionate", "empathetic"],
-    "fail_skills": ["None"],
+    "fail_skills": null,
     "fail_trait": ["nervous", "insecure"],
     "min_cats": 1,
     "max_cats": 6,
@@ -62,10 +62,10 @@
 },
 
 {
-    "patrol_id": "gen_bord_otherclan3",
+    "patrol_id": "gen_bord_otherclan_allies3",
     "biome": "Any",
     "season": "Any",
-    "tags": ["border", "other_clan", "hunting", "small_prey"],
+    "tags": ["otherclan_nochangesuccess","border", "other_clan", "hunting", "small_prey"],
     "intro_text": "r_c spies a fat rabbit on the other side of the o_c_n border. A tempting opportunity to be sure, but it may not be wise to hunt on their ally's territory.",
     "decline_text": "It's not worth ruining c_n's relationship with their ally.",
     "chance_of_success": 60,
@@ -80,10 +80,10 @@
             "r_c leaps for the rabbit! And promptly trips over a rock. The rabbit hops away and r_c sheepishly picks themselves up before noticing the o_c_n cat watching them from the other side of the border. The other cat knows exactly what r_c was intending to do and turns away, presumably to report the incident to their own leader.",
             "s_c pounces with no hesitation! They easily kill the rabbit before glancing up and coming face to face with a o_c_n cat. s_c is promptly chased back over the border and the other cat glares, hissing and spitting, until your patrol leaves the area."
     ],
-    "other_clan": ["None"],
+    "other_clan": null,
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "win_trait": ["careful", "calm", "patient", "wise", "sneaky", "responsible"],
-    "fail_skills": ["None"],
+    "fail_skills": null,
     "fail_trait": ["daring", "adventurous", "ambitious", "bold", "shameless", "troublesome"],
     "min_cats": 2,
     "max_cats": 6,
@@ -109,16 +109,16 @@
             "p_l starts to step over the border but a hiss stops them in their tracks. A o_c_n patrol is padding their way. Though the patrol seems to calm down as they recognize p_l, they look gravely at the medicine cat and explain that they can't spare any herbs - their medicine cat sent them to collect the last of the berries. p_l nods and thanks them anyway."
     ],
     "win_skills": ["good mediator", "great mediator", "excellent mediator"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "gen_bord_scent1",
+    "patrol_id": "gen_bord_scent_allies1",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "other_clan", "death", "bite-wound", "torn pelt", "injury", "scar", "TAILSCAR"],
@@ -140,7 +140,7 @@
     ],
     "win_skills": ["good fighter", "great fighter", "excellent fighter"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "calm"],
-    "fail_skills": ["None"],
+    "fail_skills": null,
     "fail_trait": ["bloodthirsty", "cold", "fierce", "strict", "vengeful"],
     "min_cats": 2,
     "max_cats": 6,
@@ -153,7 +153,7 @@
     ]
 },
 {
-    "patrol_id": "gen_bord_scent2",
+    "patrol_id": "gen_bord_scent_allies2",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "other_clan", "death", "bite-wound", "mangled tail", "injury", "scar", "TAILSCAR"],
@@ -173,9 +173,9 @@
         "r_c follows the scent to a o_c_n cat taking refuge up a tree. The cat yowls a warning, but they aren't quick enough and a large dog suddenly descends upon r_c. r_c is killed before they can run.",
         "r_c follows the scent to a o_c_n cat taking refuge up a tree. The cat yowls a warning and r_c sprints for the same tree when they hear the cry. Just in time, too, as a large dog jumps at them, catching r_c but thankfully only injuring them before r_c tears themself free and scales the tree."
     ],
-    "win_skills": ["None"],
+    "win_skills": null,
     "win_trait": ["altruistic", "compassionate", "empathetic", "calm"],
-    "fail_skills": ["None"],
+    "fail_skills": null,
     "fail_trait": ["bloodthirsty", "cold", "fierce", "strict", "vengeful"],
     "min_cats": 1,
     "max_cats": 1,
@@ -188,7 +188,7 @@
     ]
 },
 {
-    "patrol_id": "fst_bord_solo1",
+    "patrol_id": "fst_bord_solo_allies1",
     "biome": "forest",
     "season": "Any",
     "tags": ["border", "other_clan", "no_app"],
@@ -209,7 +209,7 @@
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "fail_skills": ["None"],
+    "fail_skills": null,
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
     "min_cats": 1,
     "max_cats": 1,
@@ -217,7 +217,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "fst_bord_solo2",
+    "patrol_id": "fst_bord_solo_allies2",
     "biome": "forest",
     "season": "Any",
     "tags": ["border", "other_clan", "battle_injury", "scar", "SIDE", "deputy"],
@@ -239,7 +239,7 @@
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "fail_skills": ["None"],
+    "fail_skills": null,
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
     "min_cats": 1,
     "max_cats": 1,
@@ -250,7 +250,7 @@
     ]
 },
 {
-    "patrol_id": "fst_bord_solo3",
+    "patrol_id": "fst_bord_solo_allies3",
     "biome": "forest",
     "season": "Any",
     "tags": ["border", "other_clan", "battle_injury", "scar", "SIDE", "leader"],
@@ -272,7 +272,7 @@
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "fail_skills": ["None"],
+    "fail_skills": null,
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
     "min_cats": 1,
     "max_cats": 1,
@@ -283,7 +283,7 @@
     ]
 },
 {
-    "patrol_id": "fst_bord_solo4",
+    "patrol_id": "fst_bord_solo_allies4",
     "biome": "forest",
     "season": "Any",
     "tags": ["border", "other_clan", "deputy"],
@@ -303,15 +303,15 @@
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "fst_bord_solo5",
+    "patrol_id": "fst_bord_solo_allies5",
     "biome": "forest",
     "season": "Any",
     "tags": ["border", "other_clan", "leader"],
@@ -331,15 +331,15 @@
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "pln_bord_solo1",
+    "patrol_id": "pln_bord_solo_allies1",
     "biome": "plains",
     "season": "Any",
     "tags": ["border", "other_clan", "no_app"],
@@ -359,7 +359,7 @@
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "fail_skills": ["None"],
+    "fail_skills": null,
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
     "min_cats": 1,
     "max_cats": 1,
@@ -367,7 +367,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "pln_bord_solo2",
+    "patrol_id": "pln_bord_solo_allies2",
     "biome": "plains",
     "season": "Any",
     "tags": ["border", "other_clan", "battle_injury", "scar", "CHEEK", "deputy"],
@@ -389,7 +389,7 @@
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "fail_skills": ["None"],
+    "fail_skills": null,
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
     "min_cats": 1,
     "max_cats": 1,
@@ -400,7 +400,7 @@
     ]
 },
 {
-    "patrol_id": "pln_bord_solo3",
+    "patrol_id": "pln_bord_solo_allies3",
     "biome": "plains",
     "season": "Any",
     "tags": ["border", "other_clan", "battle_injury", "scar", "CHEEK", "leader"],
@@ -422,7 +422,7 @@
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "fail_skills": ["None"],
+    "fail_skills": null,
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
     "min_cats": 1,
     "max_cats": 1,
@@ -433,7 +433,7 @@
     ]
 },
 {
-    "patrol_id": "pln_bord_solo4",
+    "patrol_id": "pln_bord_solo_allies4",
     "biome": "plains",
     "season": "Any",
     "tags": ["border", "other_clan", "deputy"],
@@ -453,15 +453,15 @@
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "pln_bord_solo5",
+    "patrol_id": "pln_bord_solo_allies5",
     "biome": "plains",
     "season": "Any",
     "tags": ["border", "other_clan", "leader"],
@@ -481,15 +481,15 @@
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_bord_solo1",
+    "patrol_id": "mtn_bord_solo_allies1",
     "biome": "mountainous",
     "season": "Any",
     "tags": ["border", "other_clan", "no_app"],
@@ -509,7 +509,7 @@
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "fail_skills": ["None"],
+    "fail_skills": null,
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
     "min_cats": 1,
     "max_cats": 1,
@@ -517,7 +517,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_bord_solo2",
+    "patrol_id": "mtn_bord_solo_allies2",
     "biome": "mountainous",
     "season": "Any",
     "tags": ["border", "other_clan", "battle_injury", "scar", "ONE", "deputy"],
@@ -539,7 +539,7 @@
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "fail_skills": ["None"],
+    "fail_skills": null,
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
     "min_cats": 1,
     "max_cats": 1,
@@ -550,7 +550,7 @@
     ]
 },
 {
-    "patrol_id": "mtn_bord_solo3",
+    "patrol_id": "mtn_bord_solo_allies3",
     "biome": "mountainous",
     "season": "Any",
     "tags": ["border", "other_clan", "battle_injury", "scar", "BRIDGE", "leader"],
@@ -572,7 +572,7 @@
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "fail_skills": ["None"],
+    "fail_skills": null,
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
     "min_cats": 1,
     "max_cats": 1,
@@ -583,7 +583,7 @@
     ]
 },
 {
-    "patrol_id": "mtn_bord_solo4",
+    "patrol_id": "mtn_bord_solo_allies4",
     "biome": "mountainous",
     "season": "Any",
     "tags": ["border", "other_clan", "deputy"],
@@ -603,15 +603,15 @@
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_bord_solo5",
+    "patrol_id": "mtn_bord_solo_allies5",
     "biome": "mountainous",
     "season": "Any",
     "tags": ["border", "other_clan", "leader"],
@@ -631,15 +631,15 @@
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "bch_bord_solo1",
+    "patrol_id": "bch_bord_solo_allies1",
     "biome": "beach",
     "season": "Any",
     "tags": ["border", "other_clan", "no_app"],
@@ -659,7 +659,7 @@
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "fail_skills": ["None"],
+    "fail_skills": null,
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
     "min_cats": 1,
     "max_cats": 1,
@@ -667,7 +667,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "bch_bord_soloally2",
+    "patrol_id": "bch_bord_solo_allies2",
     "biome": "beach",
     "season": "Any",
     "tags": ["border", "other_clan", "battle_injury", "scar", "LEFTEAR", "deputy"],
@@ -689,7 +689,7 @@
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "fail_skills": ["None"],
+    "fail_skills": null,
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
     "min_cats": 1,
     "max_cats": 1,
@@ -700,7 +700,7 @@
     ]
 },
 {
-    "patrol_id": "bch_bord_soloally3",
+    "patrol_id": "bch_bord_solo_allies3",
     "biome": "beach",
     "season": "Any",
     "tags": ["border", "other_clan", "battle_injury", "scar", "BRIDGE", "leader"],
@@ -722,7 +722,7 @@
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "fail_skills": ["None"],
+    "fail_skills": null,
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
     "min_cats": 1,
     "max_cats": 1,
@@ -733,7 +733,7 @@
     ]
 },
 {
-    "patrol_id": "bch_bord_solo4",
+    "patrol_id": "bch_bord_solo_allies4",
     "biome": "beach",
     "season": "Any",
     "tags": ["border", "other_clan", "deputy"],
@@ -753,15 +753,15 @@
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "bch_bord_soloally5",
+    "patrol_id": "bch_bord_solo_ally5",
     "biome": "beach",
     "season": "Any",
     "tags": ["border", "other_clan", "leader"],
@@ -781,8 +781,8 @@
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,

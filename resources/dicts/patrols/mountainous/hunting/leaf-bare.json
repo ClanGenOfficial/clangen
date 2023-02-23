@@ -1,7 +1,7 @@
 [
 
     {
-        "patrol_id": "mtn_hunt_eagleswim13",
+        "patrol_id": "mtn_hunt_eagleice13",
         "biome": "mountainous",
         "season": "leaf-bare",
         "tags": [
@@ -62,7 +62,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_eagleswim14",
+        "patrol_id": "mtn_hunt_eagleice14",
         "biome": "mountainous",
         "season": "leaf-bare",
         "tags": [
@@ -123,7 +123,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_eagleswim15",
+        "patrol_id": "mtn_hunt_eagleice15",
         "biome": "mountainous",
         "season": "leaf-bare",
         "tags": [
@@ -185,7 +185,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_eagleswim16",
+        "patrol_id": "mtn_hunt_eagleice16",
         "biome": "mountainous",
         "season": "leaf-bare",
         "tags": [

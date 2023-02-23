@@ -1,6 +1,41 @@
 import random
-from .pelts import *
+from random import choice, randint
+
+# Alphabetical !! yea !!
+from .pelts import (
+    black_colours,
+    blue_eyes,
+    brown_colours,
+    choose_pelt,
+    colour_categories,
+    exotic,
+    eye_colours,
+    ginger_colours,
+    green_eyes,
+    high_white,
+    little_white,
+    mid_white,
+    mostly_white,
+    pelt_categories,
+    pelt_length,
+    plain,
+    plant_accessories,
+    point_markings,
+    scars1,
+    scars3,
+    skin_sprites,
+    spotted,
+    tabbies,
+    tortiebases,
+    torties,
+    vit,
+    white_colours,
+    wild_accessories,
+    yellow_eyes,
+    )
+
 from scripts.cat.sprites import Sprites
+from scripts.game_structure.game_essentials import game
 
 # ---------------------------------------------------------------------------- #
 #                               utility functions                              #
@@ -148,7 +183,7 @@ def init_eyes(cat):
                 par1.eye_colour, par2.eye_colour,
                 choice(eye_colours)
             ])
-        num = 120
+        num = game.config["cat_generation"]["base_heterochromia"]
         if cat.white_patches in [high_white, mostly_white, 'FULLWHITE'] or cat.pelt.colour == 'WHITE':
             num = num - 90
         if cat.white_patches == 'FULLWHITE' or cat.pelt.colour == 'WHITE':
@@ -183,10 +218,10 @@ def pelt_inheritance(cat, parents: tuple):
     par_white = []
     for p in parents:
         if p:
-            #Gather pelt color.
+            # Gather pelt color.
             par_peltcolours.add(p.pelt.colour)
 
-            #Gather pelt length
+             # Gather pelt length
             par_peltlength.add(p.pelt.length)
 
             # Gather pelt name
@@ -195,10 +230,10 @@ def pelt_inheritance(cat, parents: tuple):
             else:
                 par_peltnames.add(p.pelt.name)
 
-            #Gather exact pelts, for direct inheritance.
+            # Gather exact pelts, for direct inheritance.
             par_pelts.append(p.pelt)
 
-            #Gather if they have white in their pelt.
+            # Gather if they have white in their pelt.
             par_white.append(p.pelt.white)
         else:
             # If order for white patches to work correctly, we also want to randomly generate a "pelt_white"
@@ -211,14 +246,14 @@ def pelt_inheritance(cat, parents: tuple):
             par_peltlength.add(None)
             par_peltnames.add(None)
 
-    #If this list is empty, something went wrong.
+    # If this list is empty, something went wrong.
     if not par_peltcolours:
         print("Error - no parents: pelt randomized")
         randomize_pelt(cat)
         return
 
     # There is a 1/10 chance for kits to have the exact same pelt as one of their parents
-    if not randint(0, 10):  # 1/15 chance
+    if not randint(0, game.config["cat_generation"]["direct_inheritance"]):  # 1/10 chance
         selected = choice(par_pelts)
         cat.pelt = choose_pelt(selected.colour, selected.white, selected.name,
                                selected.length)
@@ -257,12 +292,12 @@ def pelt_inheritance(cat, parents: tuple):
     )
 
     # Tortie chance
-    tortie_chance_f = 4  # There is a default chance for female tortie
-    tortie_chance_m = 13
+    tortie_chance_f = game.config["cat_generation"]["base_female_tortie"]  # There is a default chance for female tortie
+    tortie_chance_m = game.config["cat_generation"]["base_male_tortie"]
     for p_ in par_pelts:
         if p_.name in torties:
-            tortie_chance_f = 2
-            tortie_chance_m = 12
+            tortie_chance_f = int(tortie_chance_f / 2)
+            tortie_chance_m = tortie_chance_m - 1
             break
 
     # Determine tortie:
@@ -376,8 +411,9 @@ def randomize_pelt(cat):
     )
 
     # Tortie chance
-    tortie_chance_f = 3  # There is a default chance for female tortie
-    tortie_chance_m = 13
+    # There is a default chance for female tortie, slightly increased for completely random generation.
+    tortie_chance_f = game.config["cat_generation"]["base_female_tortie"] - 1
+    tortie_chance_m = game.config["cat_generation"]["base_male_tortie"]
     if cat.gender == "female":
         torbie = random.getrandbits(tortie_chance_f) == 1
     else:
@@ -569,7 +605,7 @@ def white_patches_inheritance(cat, parents: tuple):
         return
 
     # Direct inheritance. Will only work if at least one parent has white patches, otherwise continue on.
-    if par_whitepatches and not randint(0, 10):
+    if par_whitepatches and not randint(0, game.config["cat_generation"]["direct_inheritance"]):
         cat.white_patches = choice(list(par_whitepatches))
         return
 

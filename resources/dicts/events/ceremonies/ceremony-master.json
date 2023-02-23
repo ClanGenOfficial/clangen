@@ -14,6 +14,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -25,6 +26,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -36,6 +38,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -49,6 +52,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -66,6 +70,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -78,6 +83,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -96,6 +102,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -109,6 +116,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -127,6 +135,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -142,6 +151,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -159,6 +169,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -177,6 +188,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -191,6 +203,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -264,6 +277,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "abandoned",
@@ -275,6 +289,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -297,6 +312,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -312,6 +328,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -338,6 +355,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -362,6 +380,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -384,6 +403,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -403,6 +423,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -425,6 +446,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -446,6 +468,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -463,6 +486,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -477,12 +501,13 @@
       "strict",
       "wise"
     ],
-    "m_c touches noses with their mentor, (mentor), looking bored and unimpressed. But on the inside, they're bouncing with euphoria around as if they were still a kit!"
+    "m_c touches noses with their mentor, (mentor), looking bored and unimpressed. But on the inside, they're bouncing around with euphoria as if they were still a kit!"
   ],
   "app_39": [
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -496,6 +521,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -510,6 +536,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -524,6 +551,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -580,6 +608,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "alive1_parents",
       "general_leader",
       "general_backstory",
@@ -591,6 +620,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "alive1_parents",
       "general_leader",
       "general_backstory",
@@ -602,6 +632,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "dead1_parents",
       "general_leader",
       "general_backstory",
@@ -613,6 +644,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "dead1_parents",
       "general_leader",
       "clanborn",
@@ -624,6 +656,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "dead1_parents",
       "general_leader",
       "clanborn",
@@ -635,6 +668,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "dead1_parents",
       "general_leader",
       "general_backstory",
@@ -646,6 +680,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "dead1_parents",
       "general_leader",
       "general_backstory",
@@ -657,6 +692,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "dead1_parents",
       "general_leader",
       "general_backstory",
@@ -667,7 +703,7 @@
   "app_55": [
     [
       "apprentice",
-      "yes_mentor",
+      "general_mentor",
       "alive2_parents",
       "general_leader",
       "general_backstory",
@@ -679,6 +715,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "dead2_parents",
       "general_leader",
       "general_backstory",
@@ -690,6 +727,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "dead2_parents",
       "general_leader",
       "clanborn",
@@ -701,6 +739,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "dead2_parents",
       "general_leader",
       "clanborn",
@@ -712,6 +751,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "dead2_parents",
       "general_leader",
       "general_backstory",
@@ -723,6 +763,7 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "dead2_parents",
       "general_leader",
       "general_backstory",
@@ -734,12 +775,24 @@
     [
       "apprentice",
       "yes_mentor",
+      "yes_leader_mentor",
       "dead2_parents",
       "general_leader",
       "general_backstory",
       "all_traits"
     ],
     "As m_c touches noses with their new mentor, (mentor), they make a silent promise to dead_par1 and dead_par2 to make them proud, and to take care of the Clan in their parent's absence."
+  ],
+  "app_62": [
+    [
+      "apprentice",
+      "yes_leader_mentor",
+      "general_parents",
+      "yes_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "(mentor) calls a meeting. They have been watching (prefix)kit for a while now, and have decided to mentor them personally. m_c's eyes shine with pride. "
   ],
   "med_app_0": [
     [
@@ -807,7 +860,18 @@
     ],
     "Wanting to stand out among their Clanmates more, m_c decides to become a medicine cat, and is apprenticed to (mentor)."
   ],
-  "med_app_6": [
+   "med_app_6": [
+    [
+      "medicine cat apprentice",
+      "yes_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "bloodthirsty"
+    ],
+    "To gain access to both life-saving herbs and life-threatening poisons, m_c decides to become a medicine cat, and is apprenticed to (mentor)."
+  ],
+  "med_app_7": [
     [
       "medicine cat apprentice",
       "yes_mentor",
@@ -819,7 +883,7 @@
     ],
     "Worried they may not be good as a hunter or fighter, but still wanting to make their Clan proud somehow, m_c decides to become a medicine cat apprentice under (mentor)."
   ],
-  "med_app_7": [
+  "med_app_8": [
     [
       "medicine cat apprentice",
       "yes_mentor",
@@ -828,9 +892,9 @@
       "general_backstory",
       "all_traits"
     ],
-    "(mentor) stands before the Clan and announces that they will not be there forever, and it time they took on an apprentice. They tell the Clan that they have chosen (prefix)kit, now m_c, to be their new apprentice."
+    "(mentor) stands before the Clan and announces that they will not be there forever, and it is time they took on an apprentice. They tell the Clan that they have chosen (prefix)kit, now m_c, to be their new apprentice."
   ],
-  "med_app_8": [
+  "med_app_9": [
     [
       "medicine cat apprentice",
       "yes_mentor",
@@ -841,7 +905,7 @@
     ],
     "(mentor) has no doubts in their mind of who their new apprentice will be. (prefix)kit has always been looking for an excuse to be in their den, asking endless questions about what each herb is and what it's used for. And as (mentor) announces that the newly named m_c, will be their apprentice, they see m_c's eyes shining in delight and excitement, and know they were right in choosing them."
   ],
-  "med_app_9": [
+  "med_app_10": [
     [
       "medicine cat apprentice",
       "no_mentor",
@@ -852,7 +916,7 @@
     ],
     "Newly-made medicine cat apprentice m_c learns the way of healing through guidance from StarClan."
   ],
-  "med_app_10": [
+  "med_app_11": [
     [
       "medicine cat apprentice",
       "no_mentor",
@@ -863,7 +927,7 @@
     ],
     "StarClan speaks, and has decided that the new medicine cat apprentice shall be m_c. m_c is unsure if they are ready for this role without a mentor, but the stars promise to guide them."
   ],
-  "med_app_11": [
+  "med_app_12": [
     [
       "medicine cat apprentice",
       "no_mentor",
@@ -874,7 +938,7 @@
     ],
     "The Clan needs a new medicine cat, and m_c is chosen for the role. m_c is stunned that they were chosen, but agrees anyway, knowing how badly the Clan needs a medicine cat."
   ],
-  "med_app_12": [
+  "med_app_13": [
     [
       "medicine cat apprentice",
       "no_mentor",
@@ -885,7 +949,7 @@
     ],
     "m_c has decided that hunting and fighting is not the way they can provide for their Clan. Instead, they have decided to serve their Clan by healing and communing with StarClan - who will be the ones to train them with the absence of a proper mentor."
   ],
-  "med_app_13": [
+  "med_app_14": [
     [
       "medicine cat apprentice",
       "no_mentor",
@@ -896,7 +960,7 @@
     ],
     "Interested in herbs even in their kithood, m_c is eager to be made the new medicine cat apprentice, and learn how to heal from those who came before them."
   ],
-  "med_app_14": [
+  "med_app_15": [
     [
       "medicine cat apprentice",
       "no_mentor",
@@ -907,7 +971,7 @@
     ],
     "The thought alone of fighting and hurting another cat makes m_c shiver. Knowing the Clan needs a medicine cat, they seize the chance to do good for the Clan without harming others, they take on the role of medicine cat apprentice."
   ],
-  "med_app_15": [
+  "med_app_16": [
     [
       "medicine cat apprentice",
       "no_mentor",
@@ -916,19 +980,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "Knowing the Clan is in desperate need of a medicine cat, and wanting to do something to stand out and do something more important, m_c announces mid-meeting that they want to be the new medicine cat apprentice.",
-    "Worried they may not be good as a hunter or fighter, but still wanting to make their Clan proud somehow, m_c decides to become a medicine cat, and is trained by StarClan."
-  ],
-  "med_app_16": [
-    [
-      "medicine cat apprentice",
-      "general_mentor",
-      "dead1_parents",
-      "general_leader",
-      "general_backstory",
-      "all_traits"
-    ],
-    "m_c decides to become a medicine cat apprentice in hopes that they will be able to see dead_par1 in StarClan."
+    "Knowing the Clan is in desperate need of a medicine cat, and wanting to do something to stand out and do something more important, m_c announces mid-meeting that they want to be the new medicine cat apprentice."
   ],
   "med_app_17": [
     [
@@ -939,9 +991,20 @@
       "general_backstory",
       "all_traits"
     ],
-    "As the new medicine cat apprentice, m_c dreams of StarClan for the first time. They are greeted by many StarClan cats, one of which they recognize as dead_par1, who is watching in pride as the rest of StarClan's ranks accept the new medicine cat apprentice."
+    "m_c decides to become a medicine cat apprentice in hopes that they will be able to see dead_par1 in StarClan."
   ],
   "med_app_18": [
+    [
+      "medicine cat apprentice",
+      "general_mentor",
+      "dead1_parents",
+      "general_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "As the new medicine cat apprentice, m_c dreams of StarClan for the first time. They are greeted by many StarClan cats, one of which they recognize as dead_par1, who is watching in pride as the rest of StarClan's ranks accept the new medicine cat apprentice."
+  ],
+  "med_app_19": [
     [
       "medicine cat apprentice",
       "general_mentor",
@@ -952,7 +1015,7 @@
     ],
     "m_c decides to become a medicine cat apprentice in hopes that they will be able to see dead_par1 and dead_par2 in StarClan"
   ],
-  "med_app_19": [
+  "med_app_20": [
     [
       "medicine cat apprentice",
       "general_mentor",
@@ -996,6 +1059,153 @@
     ],
     "m_c is fascinated by (mentor)'s ability to solve disputes without tooth or claw. They are eager to learn, and (mentor) take them under their wing."
   ],
+  "mediator_app_3": [
+    [
+      "mediator apprentice",
+      "no_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "Now more than ever, m_c realizes the Clan is in need for a mediator, and decides to step up under StarClan's guidance."
+  ],
+  "mediator_app_4": [
+    [
+      "mediator apprentice",
+      "no_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "thoughtful",
+      "compassionate",
+      "empathetic"
+    ],
+    "Impressed by their eagerness, (mentor) chooses m_c as the Clan's new mediator apprentice."
+  ],
+  "mediator_app_5": [
+    [
+      "mediator apprentice",
+      "no_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "thoughtful",
+      "compassionate",
+      "empathetic"
+    ],
+    "m_c has taken to following (mentor) around during their daily duties, fascinated by the life of a mediator. (mentor) is happy to train them. "
+  ],
+  "mediator_app_6": [
+    [
+      "mediator apprentice",
+      "yes_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "m_c has always been interested in helping their Clan but was never good with herbs or fighting: They found their calling as a mediator apprentice under (mentor), where m_c can serve with their words."
+  ],
+  "mediator_app_7": [
+    [
+      "mediator apprentice",
+      "yes_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "Despite the odd choice, m_c is firm that they'll be (mentor)'s apprentice: they want to help the Clan through words and influence, not through claw or fang."
+  ],
+  "mediator_app_8": [
+    [
+      "mediator apprentice",
+      "yes_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "Being a mediator apprentice was all that m_c was good at; with (mentor)'s guidance, m_c hopes they can change the Clan."
+  ],
+  "mediator_app_9": [
+    [
+      "mediator apprentice",
+      "yes_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "m_c had been waiting for this moment: they'll finally be a mediator apprentice and be guided by (mentor) on how to solve the Clan's issues, their one goal in life."
+  ],
+  "mediator_app_10": [
+    [
+      "mediator apprentice",
+      "yes_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "m_c always wanted to help their Clanmates but couldn't heal or fight for the Clan: they chose to become a mediator apprentice, hoping that (mentor) could teach them how to resolve the Clan's issues."
+  ],
+  "mediator_app_11": [
+    [
+      "mediator apprentice",
+      "yes_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "(prefix)kit can't contain the energy flowing through them: they were officially going to begin training to be a Mediator! They earn their apprentices name, m_c, and are guided by (mentor) on their journey."
+  ],
+  "mediator_app_12": [
+    [
+      "mediator apprentice",
+      "yes_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "(prefix)kit stands alert when called: they know what they want in life, and that is to be a mediator apprentice. They are named m_c and given to (mentor) so that they may complete that goal."
+  ],
+  "mediator_app_13": [
+    [
+      "mediator apprentice",
+      "yes_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "Knowing that the Clan needed someone to mediate their problems, (prefix)kit decided to become a mediator apprentice. They earn their apprentice name, m_c, and is given (mentor) to mentor them."
+  ],
+  "mediator_app_14": [
+    [
+      "mediator apprentice",
+      "yes_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "(prefix)kit had taken to following (mentor) around while they did their tasks, asking questions and listening. It wasn't a surprise they chose to become a mediator apprentice under (mentor) after earning their apprentice name m_c."
+  ],
+  "mediator_app_15": [
+    [
+      "mediator apprentice",
+      "yes_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "(prefix)kit always dreamed of becoming a Mediator: Now that they're m_c, an apprentice being mentored by (mentor), it feels like a wish come true."
+  ],
   "med_0": [
     [
       "medicine cat",
@@ -1027,7 +1237,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "(prefix)paw still can't believe that their mentor is gone. They don't feel ready to heal the Clan, and so politely decline being given a name yet. However, as they visit StarClan that half moon, (deadmentor) appears to them in a dream. They assure (prefix)paw that they'll be alright without them, and that they are ready for their full name. Resting their muzzle on (prefix)paw's head, (mentor) names them m_c."
+    "(prefix)paw still can't believe that their mentor is gone. They don't feel ready to heal the Clan, and so politely decline being given a name yet. However, as they visit StarClan that half moon, (deadmentor) appears to them in a dream. They assure (prefix)paw that they'll be alright without them, and that they are ready for their full name. Resting their muzzle on (prefix)paw's head, (deadmentor) names them m_c."
   ],
   "med_3": [
     [
@@ -1049,7 +1259,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "With the stars softly shining and lighting their pelts, the (previous_mentor) gives (prefix)paw their full name of m_c. They both share the rest of the night with StarClan, celebrating their good fortune in having another medicine cat."
+    "With the stars softly shining and lighting their pelts, (previous_mentor) gives (prefix)paw their full name of m_c. They both share the rest of the night with StarClan, celebrating their good fortune in having another medicine cat."
   ],
   "med_5": [
     [
@@ -1082,7 +1292,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "(previous_mentor) still remembers when (prefix)paw was just a kit, batting around in the medicine den, and asking endless questions about everything under the sun. Even now, they ask why their new name, m_c, was chosen with shining eyes and twitching whiskers."
+    "(previous_mentor) still remembers when (prefix)paw was just a kit, batting around in the medicine den, and asking endless questions about everything under the sun. (previous_mentor) chuckles with fondness as m_c asks why their new name was chosen with shining eyes and twitching whiskers."
   ],
   "med_8": [
     [
@@ -1098,7 +1308,7 @@
   "med_9": [
     [
       "medicine cat",
-      "no_mentor",
+      "no_valid_previous_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -1109,7 +1319,7 @@
   "med_10": [
     [
       "medicine cat",
-      "no_mentor",
+      "no_valid_previous_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -1148,7 +1358,7 @@
       "general_backstory",
       "ambitious"
     ],
-    "As they take their first steps into being a full medicine cat, (prefix)paw quietly reflects that they might just have the most powerful position in the clan, now that they're m_c. StarClan itself has accepted them, speaks through them, and m_c will remember this."
+    "As they take their first steps into being a full medicine cat, (prefix)paw quietly reflects that they might just have the most powerful position in the Clan, now that they're m_c. StarClan itself has accepted them, speaks through them, and m_c will remember this."
   ],
   "med_14": [
     [
@@ -1258,7 +1468,7 @@
       "general_backstory",
       "daring"
     ],
-    "(prefix)paw's methods are a little unconventional, but it's hard to argue with results, and (prefix)paw gets results. They gain their medicine cat name of m_c, and the eldest medicine cat of the clans warns them not to do anything too risky."
+    "(prefix)paw's methods are a little unconventional, but it's hard to argue with results, and (prefix)paw gets results. They gain their medicine cat name of m_c, and the eldest medicine cat of the Clan warns them not to do anything too risky."
   ],
   "med_24": [
     [
@@ -1280,7 +1490,7 @@
       "general_backstory",
       "faithful"
     ],
-    "(prefix)paw has known that StarClan has been watching over them since they started their apprenticeship. They are given the name m_c in honor of their faith. Tonight of all nights, as they feel starspeckled pelts weaving around them and whispering their new name, they know that Starclan will guide their pawsteps as a full medicine cat."
+    "(prefix)paw has known that StarClan has been watching over them since they started their apprenticeship. They are given the name m_c in honor of their faith. Tonight of all nights, as they feel starspeckled pelts weaving around them and whispering their new name, they know that StarClan will guide their pawsteps as a full medicine cat."
   ],
   "med_26": [
     [
@@ -1302,7 +1512,7 @@
       "general_backstory",
       "insecure"
     ],
-    "As the end of their apprenticeship nears, (prefix)paw is worried Starclan won't accept them as a full medicine cat. However, the ceremony plays out without a hitch, and m_c is honored as a skilled medicine cat."
+    "As the end of their apprenticeship nears, (prefix)paw is worried StarClan won't accept them as a full medicine cat. However, the ceremony plays out without a hitch, and m_c is honored as a skilled medicine cat."
   ],
   "med_28": [
     [
@@ -1467,7 +1677,7 @@
       "general_backstory",
       "troublesome"
     ],
-    "This is a serious time for (prefex)paw, their medicine cat naming ceremony! Naturally, they're cracking jokes and being irreverent right up until the moment they get their name of m_c, and quiet down long enough to think of something funny to add."
+    "This is a serious time for (prefix)paw, their medicine cat naming ceremony! Naturally, they're cracking jokes and being irreverent right up until the moment they get their name of m_c, and quiet down long enough to think of something funny to add."
   ],
   "med_43": [
     [
@@ -1500,7 +1710,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "(prefix)paw almost sobs as they spot dead_par1 step out of the crowd towards them to congratulate them on completing their training. dead_par1 rests their muzzle on (prefix)paw's head, naming them m_c, and welcoming them as a full medicine cat."
+    "(prefix)paw almost sobs as they spot dead_par1 stepping out of the crowd of StarClan cats towards them to congratulate them on completing their training. dead_par1 rests their muzzle on (prefix)paw's head, naming them m_c, and welcoming them as a full medicine cat."
   ],
   "med_46": [
     [
@@ -1511,7 +1721,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "As a StarClan cat steps forward to give, (prefix)paw their new name of m_c, they spot dead_par1 watching them proudly from among the StarClan cats."
+    "As a StarClan cat steps forward to give (prefix)paw their new name of m_c, they spot dead_par1 watching them proudly from among the StarClan cats."
   ],
   "med_47": [
     [
@@ -1533,7 +1743,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "(prefix)paw almost sobs as they spot dead_par1 and dead_par2 step out of the crowd towards them to congratulate them on completing their training. dead_par2 rests their muzzle on (prefix)paw's head, naming them m_c, and welcoming them as a full medicine cat."
+    "(prefix)paw almost sobs as they spot dead_par1 and dead_par2 step out of the starry crowd to congratulate them on completing their training. dead_par2 rests their muzzle on (prefix)paw's head, naming them m_c, and welcoming them as a full medicine cat."
   ],
   "med_50": [
     [
@@ -1617,7 +1827,7 @@
       "warrior",
       "alive_mentor",
       "general_parents",
-      "yes_leader",
+      "general_leader",
       "general_backstory",
       "all_traits"
     ],
@@ -1676,7 +1886,7 @@
       "general_backstory",
       "bloodthirsty"
     ],
-    "Although (prefix)paw's paw's eagerness to fight has left l_n a little worried before, they know that the Clan can count on (prefix)paw's bravery and sharp claws when they need them the most. In honor of their r_h, (prefix)paw is given the name m_c."
+    "Although (prefix)paw's eagerness to fight has left l_n a little worried before, they know that the Clan can count on (prefix)paw's bravery and sharp claws when they need them the most. In honor of their r_h, (prefix)paw is given the name m_c."
   ],
   "warrior_12": [
     [
@@ -2198,6 +2408,17 @@
     ],
     "(prefix)paw tries to keep their head high as they step forward, and are given the name m_c in honor of their r_h. It doesn't seem fair. dead_par1 and dead_par2 should be here with them! They promised they would! m_c looks to the stars, and their anger and frustration vanishes. It feels as though the stars are brighter, and they know that, even if they cannot be there in body, their parents are there in spirit."
   ],
+  "warrior_59": [
+    [
+      "warrior",
+      "alive_leader_mentor",
+      "general_parents",
+      "yes_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "(previous_mentor) gathers the Clan for a meeting. They have spent many moons training (prefix)paw, and it's time for them to be granted their warrior name. (previous_mentor) gives them the name m_c and honors their r_h."
+  ],
   "mediator_0": [
     [
       "mediator",
@@ -2219,6 +2440,17 @@
       "all_traits"
     ],
     "m_c is welcomed as fully trained mediator of the Clan."
+  ],
+  "mediator_2": [
+    [
+      "mediator",
+      "general_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "Although some Clan members have doubts of (prefix)paw's abilities, l_n gives them the name m_c and welcomes them as the Clan's new mediator."
   ],
   "elder_0": [
     [
@@ -2251,6 +2483,39 @@
       "general_backstory",
       "all_traits"
     ],
-    "m_c wished to join the elders. l_n calls a meeting, and the Clan honors them and all the service m_c has given to them."
+    "m_c wishes to join the elders. l_n calls a meeting, and the Clan honors them and all the service m_c has given to them."
+  ],
+  "elder_3": [
+    [
+      "elder",
+      "general_mentor",
+      "general_parents",
+      "yes_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "m_c's been resist to retiring, but the aches and pains of old age have worn them down. They approach l_n, and are honored for their tireless service. "
+  ],
+  "elder_4": [
+    [
+      "elder",
+      "general_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "m_c has been looking forward to their moons of rest as an elder. They happily retire, quickly settling into the elder's den. "
+  ],
+  "elder_5": [
+    [
+      "elder",
+      "general_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "Time has taken it's toll, and m_c has noticed themselves slowing down. They have worked timelessly for many moons, but is it time for them to retire. "
   ]
 }

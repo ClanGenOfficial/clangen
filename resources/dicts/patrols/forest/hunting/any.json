@@ -216,7 +216,7 @@
     "antagonize_fail_text": "The Twoleg kits wandering around are unimpressed by the patrol and chase the cats for fun."
 },
 {
-    "patrol_id": "fst_hunt_squirrel1",
+    "patrol_id": "fst_hunt_squirrelchase1",
     "biome": "forest",
     "season": "Any",
     "tags": [
@@ -715,12 +715,6 @@
     "win_trait": [
         "strange"
     ],
-    "fail_skills": [
-        "None"
-    ],
-    "fail_trait": [
-        "None"
-    ],
     "antagonize_text": null,
     "antagonize_fail_text": null,
     "min_cats": 2,
@@ -733,7 +727,6 @@
     "tags": [
         "hunting",
         "medium_prey0",
-        "medium_prey1",
         "large_prey2",
         "large_prey3",
         "no_fail_prey"
@@ -759,23 +752,17 @@
     "win_trait": [
         "strange"
     ],
-    "fail_skills": [
-        "None"
-    ],
-    "fail_trait": [
-        "None"
-    ],
     "antagonize_text": null,
     "antagonize_fail_text": null,
     "min_cats": 1,
     "max_cats": 1
 },
 {
-    "patrol_id": "fst_hunt_solo1",
+    "patrol_id": "fst_hunt_huntassessment1",
     "biome": "forest",
     "season": "Any",
     "tags": [
-        "hunting",
+        "app_stat", "hunting",
         "apprentice",
         "minor_injury",
         "scar",
@@ -802,9 +789,6 @@
         null,
         "While on the hunt, r_c tumbles right down a steep slope while their attention is elsewhere. Bruised and sore, r_c has to report to the medicine cat den when they return to camp."
     ],
-    "win_skills": [
-        "None"
-    ],
     "win_trait": [
         "calm",
         "careful",
@@ -817,9 +801,6 @@
         "patient",
         "thoughtful",
         "wise"
-    ],
-    "fail_skills": [
-        "None"
     ],
     "fail_trait": [
         "adventurous",
@@ -885,9 +866,6 @@
         "thoughtful",
         "wise"
     ],
-    "fail_skills": [
-        "None"
-    ],
     "fail_trait": [
         "bold",
         "childish",
@@ -946,9 +924,6 @@
         "patient",
         "thoughtful",
         "wise"
-    ],
-    "fail_skills": [
-        "None"
     ],
     "fail_trait": [
         "bold",
@@ -1009,9 +984,6 @@
         "thoughtful",
         "wise"
     ],
-    "fail_skills": [
-        "None"
-    ],
     "fail_trait": [
         "bold",
         "childish",
@@ -1059,12 +1031,6 @@
         "good hunter",
         "great hunter",
         "excellent hunter"
-    ],
-    "win_trait": [
-        "None"
-    ],
-    "fail_skills": [
-        "None"
     ],
     "fail_trait": [
         "daring",
@@ -1115,12 +1081,6 @@
         "good hunter",
         "great hunter",
         "excellent hunter"
-    ],
-    "win_trait": [
-        "None"
-    ],
-    "fail_skills": [
-        "None"
     ],
     "fail_trait": [
         "daring",
@@ -1177,9 +1137,6 @@
         "troublesome",
         "vengeful"
     ],
-    "fail_skills": [
-        "None"
-    ],
     "fail_trait": [
         "altruistic",
         "compassionate",
@@ -1235,9 +1192,6 @@
         "strict",
         "troublesome",
         "vengeful"
-    ],
-    "fail_skills": [
-        "None"
     ],
     "fail_trait": [
         "altruistic",
@@ -1298,9 +1252,6 @@
         "strict",
         "troublesome",
         "vengeful"
-    ],
-    "fail_skills": [
-        "None"
     ],
     "fail_trait": [
         "altruistic",
@@ -1366,9 +1317,6 @@
         "sneaky",
         "strange"
     ],
-    "fail_skills": [
-        "None"
-    ],
     "fail_trait": [
         "altruistic",
         "compassionate",
@@ -1394,7 +1342,7 @@
     "biome": "forest",
     "season": "Any",
     "tags": [
-        "hunting",
+        "app_stat", "hunting",
         "gone",
         "small_prey",
         "apprentice",
@@ -1430,9 +1378,6 @@
         "nervous",
         "sneaky",
         "strange"
-    ],
-    "fail_skills": [
-        "None"
     ],
     "fail_trait": [
         "altruistic",
@@ -1498,9 +1443,6 @@
         "sneaky",
         "strange"
     ],
-    "fail_skills": [
-        "None"
-    ],
     "fail_trait": [
         "altruistic",
         "compassionate",
@@ -1522,11 +1464,11 @@
     ]
 },
 {
-    "patrol_id": "fst_hunt_gonetwolegden4",
+    "patrol_id": "fst_hunt_twolegdenappdare1",
     "biome": "forest",
     "season": "Any",
     "tags": [
-        "hunting",
+        "app_stat", "hunting",
         "gone",
         "small_prey",
         "apprentice",
@@ -1610,7 +1552,6 @@
     ],
     "win_skills": ["smart", "very smart", "extremely smart"],
     "win_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "sneaky", "strange"],
-    "fail_skills": ["None"],
     "fail_trait": ["adventurous", "bold", "confident", "daring", "playful"],
     "min_cats": 1,
     "max_cats": 1,
@@ -1659,9 +1600,6 @@
         "nervous",
         "sneaky",
         "strange"
-    ],
-    "fail_skills": [
-        "None"
     ],
     "fail_trait": [
         "adventurous",
@@ -1725,12 +1663,6 @@
         "thoughtful",
         "wise"
     ],
-    "fail_skills": [
-        "None"
-    ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 1,
     "max_cats": 6,
     "antagonize_text": null,
@@ -1787,12 +1719,6 @@
         "responsible",
         "thoughtful",
         "wise"
-    ],
-    "fail_skills": [
-        "None"
-    ],
-    "fail_trait": [
-        "None"
     ],
     "min_cats": 1,
     "max_cats": 6,
@@ -1853,12 +1779,6 @@
         "thoughtful",
         "wise"
     ],
-    "fail_skills": [
-        "None"
-    ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 5,
     "max_cats": 6,
     "antagonize_text": null,
@@ -1916,12 +1836,6 @@
         "thoughtful",
         "wise"
     ],
-    "fail_skills": [
-        "None"
-    ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 5,
     "max_cats": 6,
     "antagonize_text": null,
@@ -1952,22 +1866,12 @@
         "Nothing's going to escape their claws! r_c skids to a halt and then leaps into action, claw just barely catching in the tail of the squirrel they saw and bringing it down. They purr with satisfaction and trot back to camp with their prize."
     ],
     "fail_text": [
-        "r_c darts to the side, but wherever made the flash of movement is long gone. How frustrating!",
         "r_c skids to a halt and tries to sprint after it, but the bird they saw escapes their paws. They chatter angrily at it, and it tries to poop on them. Such is life."
     ],
     "win_skills": [
         "good hunter",
         "great hunter",
         "fantastic hunter"
-    ],
-    "win_trait": [
-        "None"
-    ],
-    "fail_skills": [
-        "None"
-    ],
-    "fail_trait": [
-        "None"
     ],
     "min_cats": 1,
     "max_cats": 1,
@@ -1996,20 +1900,7 @@
         "Laughing, they bounce gleefully off a tree trunk. It redirects their momentum far better than they were expecting, and it's difficult to say who's more surprised - the mouse, or the apprentice slamming into it! Not a very clean catch, but one they're proud of anyway."
     ],
     "fail_text": [
-        "app1 darts to the side, but wherever made the flash of movement is long gone. How frustrating!",
-        "app1 skids to a halt and tries to sprint after it, but the bird they saw escapes their paws. They chatter angrily at it, and it tries to poop on them. Such is life."
-    ],
-    "win_skills": [
-        "None"
-    ],
-    "win_trait": [
-        "None"
-    ],
-    "fail_skills": [
-        "None"
-    ],
-    "fail_trait": [
-        "None"
+        "app1 darts to the side, but wherever made the flash of movement is long gone. How frustrating!"
     ],
     "min_cats": 1,
     "max_cats": 1,
@@ -2044,22 +1935,12 @@
         "Nothing's going to escape their claws! s_c skids to a halt and then leaps into action, claw just barely catching in the tail of the squirrel they saw and bringing it down. They purr with satisfaction and pad back to r_c, sharing in the excitement of the hunt with them."
     ],
     "fail_text": [
-        "r_c darts to the side, but wherever made the flash of movement is long gone. How frustrating!",
         "r_c skids to a halt and tries to sprint after it, but the bird they saw escapes their paws. They chatter angrily at it, and it tries to poop on them. Such is life. p_l snickers at them a bit too, but it's all in good fun."
     ],
     "win_skills": [
         "good hunter",
         "great hunter",
         "fantastic hunter"
-    ],
-    "win_trait": [
-        "None"
-    ],
-    "fail_skills": [
-        "None"
-    ],
-    "fail_trait": [
-        "None"
     ],
     "min_cats": 2,
     "max_cats": 2,
@@ -2088,20 +1969,7 @@
         "Laughing, app1 bounces gleefully off a tree trunk. It redirects their momentum far better than they were expecting, and it's difficult to say who's more surprised - the mouse, or the apprentice slamming into it! Not a very clean catch, but the look on app2's face, so shocked and impressed, makes them blush."
     ],
     "fail_text": [
-        "app1 darts to the side, but wherever made the flash of movement is long gone. How frustrating!",
         "app1 skids to a halt and tries to sprint after it, but the bird they saw escapes their paws. They chatter angrily at it, and it tries to poop on them. Such is life. app2 snickers at them too, but in a lighthearted way, and soon both apprentices are giggling about it as they continue their run."
-    ],
-    "win_skills": [
-        "None"
-    ],
-    "win_trait": [
-        "None"
-    ],
-    "fail_skills": [
-        "None"
-    ],
-    "fail_trait": [
-        "None"
     ],
     "min_cats": 2,
     "max_cats": 2,
@@ -2136,15 +2004,6 @@
         "great hunter",
         "fantastic hunter"
     ],
-    "win_trait": [
-        "None"
-    ],
-    "fail_skills": [
-        "None"
-    ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 2,
     "max_cats": 3,
     "antagonize_text": null,
@@ -2174,18 +2033,6 @@
     ],
     "fail_text": [
         "The patrol is unable to catch the small reptile quick enough and the little lizard lives another day."
-    ],
-    "win_skills": [
-        "None"
-    ],
-    "win_trait": [
-        "None"
-    ],
-    "fail_skills": [
-        "None"
-    ],
-    "fail_trait": [
-        "None"
     ],
     "min_cats": 2,
     "max_cats": 3,

@@ -1,6 +1,6 @@
 from scripts.utility import get_alive_clan_queens
 from scripts.cat.cats import Cat
-from scripts.game_structure.game_essentials import *
+from scripts.game_structure.game_essentials import game
 from copy import deepcopy
 import random
 
@@ -14,11 +14,12 @@ class Nutrition():
         self.percentage = 0
 
     def __str__(self):
-        return {
+        this_is_a_dict_not_a_string = {
             "max_score": self.max_score,
             "current_score": self.current_score,
             "percentage": self.percentage,
         }
+        return str(this_is_a_dict_not_a_string)
 
     @property
     def current_score(self):
@@ -49,12 +50,12 @@ class Freshkill_Pile():
             self.total_amount = total
         else:
             self.pile = {
-                "expires_in_4": GAME_CONFIG["freshkill"]["start_amount"],
+                "expires_in_4": game.config["freshkill"]["start_amount"],
                 "expires_in_3": 0,
                 "expires_in_2": 0,
                 "expires_in_1": 0,
             }
-            self.total_amount = GAME_CONFIG["freshkill"]["start_amount"]
+            self.total_amount = game.config["freshkill"]["start_amount"]
         self.nutrition_info = {}
 
     def add_freshkill(self, amount):
@@ -297,12 +298,9 @@ class Freshkill_Pile():
 #                                LOAD RESOURCES                                #
 # ---------------------------------------------------------------------------- #
 
-GAME_CONFIG = None
-with open(f"resources/game_config.json", 'r') as read_file:
-    GAME_CONFIG = ujson.loads(read_file.read())
 
-PREY_REQUIREMENT = GAME_CONFIG["freshkill"]["prey_requirement"]
-CONDITION_INCREASE = GAME_CONFIG["freshkill"]["condition_increase"]
-FEEDING_ORDER = GAME_CONFIG["freshkill"]["feeding_order"]
-HUNTER_BONUS = GAME_CONFIG["freshkill"]["hunter_bonus"]
-HUNTER_EXP_BONUS = GAME_CONFIG["freshkill"]["hunter_exp_bonus"]
+PREY_REQUIREMENT = game.config["freshkill"]["prey_requirement"]
+CONDITION_INCREASE = game.config["freshkill"]["condition_increase"]
+FEEDING_ORDER = game.config["freshkill"]["feeding_order"]
+HUNTER_BONUS = game.config["freshkill"]["hunter_bonus"]
+HUNTER_EXP_BONUS = game.config["freshkill"]["hunter_exp_bonus"]

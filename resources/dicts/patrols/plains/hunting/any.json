@@ -274,11 +274,11 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "pln_hunt_solo1",
+        "patrol_id": "pln_hunt_huntassessment1",
         "biome": "plains",
         "season": "Any",
         "tags": [
-            "hunting",
+            "app_stat", "hunting",
             "apprentice",
             "minor_injury",
             "scar",
@@ -917,7 +917,7 @@
         "biome": "plains",
         "season": "Any",
         "tags": [
-            "hunting",
+            "app_stat", "hunting",
             "gone",
             "apprentice",
             "medium_prey0",
@@ -936,7 +936,7 @@
         "fail_text": [
             null,
             "A little carelessly, s_c jumps a fence to hunt in a den's garden. But there's a new thing there, a box, suspicious and strange. Wisely, s_c avoids it, and returns to c_n territory.",
-            "Carelessly, app1 is seen by Twolegs, and taken from c_n.",
+            "Carelessly, s_c is seen by Twolegs, and taken from c_n.",
             "Carelessly, app1 is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, they discover that a broken window is just wide enough to push themselves out to safety through, but the glass leaves them bleeding as they run back to c_n."
         ],
         "win_skills": [
@@ -1042,11 +1042,11 @@
         ]
     },
     {
-        "patrol_id": "pln_hunt_gonetwolegden4",
+        "patrol_id": "pln_hunt_twolegdenappdare1",
         "biome": "plains",
         "season": "Any",
         "tags": [
-            "hunting",
+            "app_stat", "hunting",
             "gone",
             "apprentice",
             "romantic",
@@ -1641,7 +1641,7 @@
         "biome": "plains",
         "season": "Any",
         "tags": [
-            "hunting",
+            "app_stat", "hunting",
             "apprentice",
             "small_bite_injury",
             "scar",
@@ -1661,9 +1661,9 @@
         ],
         "fail_text": [
             "Tarror gives app1 strength, and the don't stop running until their back in camp, gasping about the grassland monster they saw.",
-            "Heart filled with daring, app1 slips off the rock and pads towards the monster in the grass, sure that StarClan will reward their bravery. They sneak closer and closer, until a puzzle wuff of air makes them look up. And up. And up. That is no fox. They pelt for home, as behind them, a confused maned wolf watches them go.",
+            "Heart filled with daring, s_c slips off the rock and pads towards the monster in the grass, sure that StarClan will reward their bravery. They sneak closer and closer, until a puzzle wuff of air makes them look up. And up. And up. That is no fox. They pelt for home, as behind them, a confused maned wolf watches them go.",
             null,
-            "Terror freezes app1 as the massive fox sees them, and comes to investigate, its distorted stretched legs carrying it smoothly through the grass. As the massive nose, as big as app1's entire head, wuffles closer, app1 desperately swipes their claws. Their screw their eyes shut at the outraged yelp, and feel themselves being taken up and tossed by those gaping jaws. They tense, waiting for death to descend, and wait, and... waiting?",
+            "Terror freezes s_c as the massive fox sees them, and comes to investigate, its distorted stretched legs carrying it smoothly through the grass. As the massive nose, as big as app1's entire head, wuffles closer, app1 desperately swipes their claws. Their screw their eyes shut at the outraged yelp, and feel themselves being taken up and tossed by those gaping jaws. They tense, waiting for death to descend, and wait, and... waiting?",
             null,
             "Heart filled with daring, app1 slips off the rock and pads towards the monster in the grass, sure that StarClan will reward their bravery. A surprised wuff of air seems to come from everywhere and nowhere, as the puzzled maned wolf picks up the apprentice at their feet and tosses them aside so they can get back to hunting."
         ],
@@ -1719,7 +1719,7 @@
         "success_text": [
             "After a good long session of confusion, the patrol manages to work out that the towering creature they're tracking is almost certainly a maned wolf, a nearly mythical creature. They're all a little uncomfortable, watching an upsized red fox with the legs of a deer amble around their territory, but it's also a little thrilling to follow such an unusual and rarely seen creature.",
             "The rumours are true - it seems to mostly be hunting for tiny mouse prey, not large things, despite it's massive size. This must be a maned wolf, and just being able to name the odd thing makes it feel so much less threatening. The cats remind each other of the tales sometimes shared in the nursery, of the tallest predator on the plains being one of the shyest.",
-            "s_c is able to recalled some of the stories that get told about the maned wolf, of how it stole its legs from a deer for speed and power, but in doing so also accidentally took the deer's flightiness. Ever since then it has been the tallest and shyest creature on the grasslands.",
+            "s_c is able to recall some of the stories that get told about the maned wolf, of how it stole its legs from a deer for speed and power, but in doing so also accidentally took the deer's flightiness. Ever since then it has been the tallest and shyest creature on the grasslands.",
             "Boldly, s_c jumps down to go check the potential threat out, and unwilling to leave their Clanmate in danger, the rest of the patrol follows. s_c refuses to let themselves be intimidated by the huge foxish thing, and bounds up to it, knowing courage can overcome things raw strength cannot. The weird creature skitters away from the incoming patrol, trotting off in a tangle of too long legs."
         ],
         "fail_text": [

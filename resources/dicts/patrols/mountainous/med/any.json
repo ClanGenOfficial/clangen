@@ -15,10 +15,10 @@
     "fail_text": [
             "They gaze into the puddle only to see the weird ripples were caused by a feather falling on the puddle. p_l feels disappointed because they really could have used some guidance from StarClan."
     ],
-    "win_skills": ["None"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_skills": null,
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -42,10 +42,10 @@
     "fail_text": [ 
         "app1 is constantly distracted and running ahead much to the frustration of p_l. Evidently no new knowledge will be learned that day."
     ],
-    "win_skills": ["None"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_skills": null,
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -69,10 +69,10 @@
     "fail_text": [ 
         "app1 goes to a known herb patch - but the plant has died! They give up and return to camp, feeling terrible."
     ],
-    "win_skills": ["None"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_skills": null,
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -96,7 +96,7 @@
     "min_cats": 1,
     "max_cats": 1,
     "win_skills": null,
-    "win_trait": ["None"],
+    "win_trait": null,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
@@ -119,9 +119,9 @@
         "p_l knows the conditions are miserable, but their group is even more insufferable. Not only do they have to put up with these cats for an entire afternoon, there's also nothing to show for it."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -149,7 +149,7 @@
 "antagonize_fail_text": null
 },
 {
-"patrol_id": "mtn_med_gatheringcobwebs2",
+"patrol_id": "mtn_med_cobweblesson1",
 "biome": "mountainous",
 "season": "Any",
 "tags": ["med_only", "med_cat", "respect", "trust", "apprentice", "herb", "cobwebs", "many_herbs1"],
@@ -170,7 +170,7 @@
 "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_med_gatheringcobwebs3",
+    "patrol_id": "mtn_med_cobwebhelp1",
     "biome": "mountainous",
     "season": "Any",
     "tags": ["med_cat", "warrior", "herb", "cobwebs", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
@@ -187,16 +187,16 @@
             "Can warriors not pay attention, even to something as simple as cobwebs?! p_l holds their breath and counts to ten before they dismiss the patrol, every found cobweb ruined, what little they did manage to find."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_med_gatheringcobwebs4",
+    "patrol_id": "mtn_med_cobwebapps4",
     "biome": "mountainous",
     "season": "Any",
     "tags": ["med_cat", "herb", "cobwebs", "apprentice", "two_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
@@ -212,16 +212,16 @@
             "p_l decides they should be above such childish antics."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_med_gatheringcobwebs5",
+    "patrol_id": "mtn_med_cobwebapps5",
     "biome": "mountainous",
     "season": "Any",
     "tags": ["med_cat", "herb", "cobwebs", "apprentice", "three_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
@@ -237,16 +237,16 @@
             "p_l decides they should be above such childish antics."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 3,
     "max_cats": 3,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_med_gatheringcobwebs6",
+    "patrol_id": "mtn_med_cobwebapps6",
     "biome": "mountainous",
     "season": "Any",
     "tags": ["med_cat", "herb", "cobwebs", "apprentice", "three_apprentices", "many_herbs1", "big_change", "platonic", "dislike", "respect"],
@@ -262,16 +262,16 @@
             "p_l is disgusted with the general disdain they feel from the other apprentices, and how hypocrital it is to tell them herb gathering is easy when the patrol HASN'T FOUND ANY COBWEBS. They stalk back to the medicine cat den in a huff."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 3,
     "max_cats": 3,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_med_gatheringcobwebs7",
+    "patrol_id": "mtn_med_cobwebapps7",
     "biome": "mountainous",
     "season": "Any",
     "tags": ["med_cat", "herb", "cobwebs", "apprentice", "four_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
@@ -287,16 +287,16 @@
             "p_l decides they should be above such childish antics."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 4,
     "max_cats": 4,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_med_gatheringcobwebs8",
+    "patrol_id": "mtn_med_cobwebapps8",
     "biome": "mountainous",
     "season": "Any",
     "tags": ["med_cat", "herb", "cobwebs", "apprentice", "four_apprentices", "many_herbs1", "big_change", "platonic", "dislike", "respect"],
@@ -312,16 +312,16 @@
             "p_l is disgusted with the general disdain they feel from the other apprentices, and how hypocrital it is to tell them herb gathering is easy when the patrol HASN'T FOUND ANY COBWEBS. They stalk back to the medicine cat den in a huff."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 4,
     "max_cats": 4,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_med_gatheringcobwebs9",
+    "patrol_id": "mtn_med_cobwebapps9",
     "biome": "mountainous",
     "season": "Any",
     "tags": ["med_cat", "herb", "cobwebs", "apprentice", "five_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
@@ -337,16 +337,16 @@
             "p_l decides they should be above such childish antics."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 5,
     "max_cats": 5,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_med_gatheringcobwebs10",
+    "patrol_id": "mtn_med_cobwebapps10",
     "biome": "mountainous",
     "season": "Any",
     "tags": ["med_cat", "herb", "cobwebs", "apprentice", "five_apprentices", "many_herbs1", "big_change", "platonic", "dislike", "respect"],
@@ -362,16 +362,16 @@
             "p_l is disgusted with the general disdain they feel from the other apprentices, and how hypocrital it is to tell them herb gathering is easy when the patrol HASN'T FOUND ANY COBWEBS. They stalk back to the medicine cat den in a huff."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 5,
     "max_cats": 5,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_med_gatheringcobwebs11",
+    "patrol_id": "mtn_med_cobwebapps11",
     "biome": "mountainous",
     "season": "Any",
     "tags": ["med_cat", "herb", "cobwebs", "apprentice", "six_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
@@ -387,16 +387,16 @@
             "p_l decides they should be above such childish antics."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 6,
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_med_gatheringcobwebs12",
+    "patrol_id": "mtn_med_cobwebapps12",
     "biome": "mountainous",
     "season": "Any",
     "tags": ["med_cat", "herb", "cobwebs", "apprentice", "six_apprentices", "many_herbs1", "big_change", "platonic", "dislike", "respect"],
@@ -412,9 +412,9 @@
             "p_l is disgusted with the general disdain they feel from the other apprentices, and how hypocrital it is to tell them herb gathering is easy when the patrol HASN'T FOUND ANY COBWEBS. They stalk back to the medicine cat den in a huff."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 6,
     "max_cats": 6,
     "antagonize_text": null,
@@ -438,16 +438,16 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_med_gatheringhorsetail2",
+    "patrol_id": "mtn_med_horsetaillesson1",
     "biome": "mountainous",
     "season": "Any",
     "tags": ["med_only", "med_cat", "herb", "horsetail", "moss", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
@@ -464,16 +464,16 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and app1 looks up at them with disappointment."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_med_gatheringhorsetail3",
+    "patrol_id": "mtn_med_horsetailhelp1",
     "biome": "mountainous",
     "season": "Any",
     "tags": ["med_cat", "warrior", "herb", "horsetail", "moss", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
@@ -490,16 +490,16 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful and snappish with each other."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "gen_med_gatheringmoss1",
+    "patrol_id": "mtn_med_gatheringmoss1",
     "biome": "mountainous",
     "season": "Any",
     "tags": ["med_cat", "moss", "herb"],
@@ -519,7 +519,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "gen_med_gatheringmoss2",
+    "patrol_id": "mtn_med_gatheringmoss2",
     "biome": "mountainous",
     "season": "Any",
     "tags": ["med_cat", "apprentice", "herb", "moss", "big_change", "platonic", "dislike"],
@@ -539,7 +539,7 @@
     "antagonize_fail_text": null
     },
     {
-    "patrol_id": "gen_med_gatheringmoss3",
+    "patrol_id": "mtn_med_gatheringmoss3",
     "biome": "mountainous",
     "season": "Any",
     "tags": ["med_cat", "warrior", "herb", "moss", "big_change", "platonic", "dislike"],
@@ -559,7 +559,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "gen_med_gatheringmoss4",
+    "patrol_id": "mtn_med_gatheringmoss4",
     "biome": "mountainous",
     "season": "Any",
     "tags": ["med_cat", "warrior", "herb", "moss", "big_change", "platonic"],
@@ -579,7 +579,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_med_gatheringmoss5",
+    "patrol_id": "mtn_med_mossapps5",
     "biome": "mountainous",
     "season": "Any",
     "tags": ["med_cat", "herb", "moss", "apprentice", "two_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
@@ -594,16 +594,16 @@
     "fail_text": [
             "app2 shrugs. It's fine, it's totally not like they'd prefer to be hunting, doing something actually useful."
     ],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_med_gatheringmoss6",
+    "patrol_id": "mtn_med_mossapps6",
     "biome": "mountainous",
     "season": "Any",
     "tags": ["med_cat", "herb", "moss", "apprentice", "three_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
@@ -618,16 +618,16 @@
     "fail_text": [
         "The other apprentices shrug. It's fine, it's totally not like they'd prefer to be hunting, doing something actually useful."
     ],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 3,
     "max_cats": 3,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_med_gatheringmoss7",
+    "patrol_id": "mtn_med_mossapps7",
     "biome": "mountainous",
     "season": "Any",
     "tags": ["med_cat", "herb", "moss", "apprentice", "three_apprentices", "many_herbs1", "big_change", "platonic", "dislike", "respect"],
@@ -642,16 +642,16 @@
     "fail_text": [
             "app1 and app2 start to argue, ruining everyone's day."
     ],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 3,
     "max_cats": 3,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_med_gatheringmoss8",
+    "patrol_id": "mtn_med_mossapps8",
     "biome": "mountainous",
     "season": "Any",
     "tags": ["med_cat", "herb", "moss", "apprentice", "four_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
@@ -666,16 +666,16 @@
     "fail_text": [
         "The other apprentices shrug. It's fine, it's totally not like they'd prefer to be hunting, doing something actually useful."
     ],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 4,
     "max_cats": 4,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_med_gatheringmoss9",
+    "patrol_id": "mtn_med_mossapps9",
     "biome": "mountainous",
     "season": "Any",
     "tags": ["med_cat", "herb", "moss", "apprentice", "four_apprentices", "many_herbs1", "big_change", "platonic", "dislike", "respect"],
@@ -690,16 +690,16 @@
 "fail_text": [
         "app1 and app2 start to argue, ruining everyone's day."
 ],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 4,
     "max_cats": 4,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_med_gatheringmoss10",
+    "patrol_id": "mtn_med_mossapps10",
     "biome": "mountainous",
     "season": "Any",
     "tags": ["med_cat", "herb", "moss", "apprentice", "five_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
@@ -714,16 +714,16 @@
     "fail_text": [
         "The other apprentices shrug. It's fine, it's totally not like they'd prefer to be hunting, doing something actually useful."
     ],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 5,
     "max_cats": 5,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_med_gatheringmoss11",
+    "patrol_id": "mtn_med_mossapps11",
     "biome": "mountainous",
     "season": "Any",
     "tags": ["med_cat", "herb", "moss", "apprentice", "five_apprentices", "many_herbs1", "big_change", "platonic", "dislike", "respect"],
@@ -738,16 +738,16 @@
 "fail_text": [
         "app1 and app2 start to argue, ruining everyone's day."
 ],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 5,
     "max_cats": 5,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_med_gatheringmoss12",
+    "patrol_id": "mtn_med_mossapps12",
     "biome": "mountainous",
     "season": "Any",
     "tags": ["med_cat", "herb", "moss", "apprentice", "six_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
@@ -762,16 +762,16 @@
     "fail_text": [
         "The other apprentices shrug. It's fine, it's totally not like they'd prefer to be hunting, doing something actually useful."
     ],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 6,
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_med_gatheringmoss13",
+    "patrol_id": "mtn_med_mossapps13",
     "biome": "mountainous",
     "season": "Any",
     "tags": ["med_cat", "herb", "moss", "apprentice", "six_apprentices", "many_herbs1", "big_change", "platonic", "dislike", "respect"],
@@ -786,9 +786,9 @@
 "fail_text": [
         "app1 and app2 start to argue, ruining everyone's day."
 ],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 6,
     "max_cats": 6,
     "antagonize_text": null,
@@ -815,7 +815,7 @@
     "min_cats": 2,
     "max_cats": 2,
     "win_skills": null,
-    "win_trait": ["None"],
+    "win_trait": null,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
@@ -840,7 +840,7 @@
     "min_cats": 2,
     "max_cats": 2,
     "win_skills": null,
-    "win_trait": ["None"],
+    "win_trait": null,
     "antagonize_text": null,
     "antagonize_fail_text": null
 }

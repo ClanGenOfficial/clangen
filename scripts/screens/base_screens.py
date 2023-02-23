@@ -1,12 +1,12 @@
+import pygame
+
 from scripts.utility import update_sprite, scale
 from scripts.cat.cats import Cat
-from scripts.game_structure.game_essentials import *
-from scripts.clan import map_available
-# from scripts.game_structure.text import *
-import scripts.game_structure.image_cache as image_cache
+from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
+from scripts.game_structure import image_cache
 from scripts.game_structure.image_button import UIImageButton
 import pygame_gui
-
+from scripts.game_structure.windows import SaveCheck
 
 class Screens():
     game_screen = screen
@@ -159,14 +159,8 @@ class Screens():
         elif event.ui_element == self.menu_buttons["patrol_screen"]:
             self.change_screen('patrol screen')
         elif event.ui_element == self.menu_buttons["main_menu"]:
-            # save on return to menu
-            if game.clan is not None:
-                game.save_cats()
-                game.clan.save_clan()
-                game.clan.save_pregnancy(game.clan)
-                # if map_available:
-                #    save_map(game.map_info, game.clan.name)
-            self.change_screen('start screen')
+            SaveCheck(game.switches['cur_screen'], True)
+            self.menu_buttons["main_menu"].disable()
         elif event.ui_element == self.menu_buttons["list_screen"]:
             self.change_screen('list screen')
         elif event.ui_element == self.menu_buttons["allegiances"]:
@@ -179,6 +173,7 @@ class Screens():
         self.menu_buttons['heading'].set_text(text)
 
 
+
 # CAT PROFILES
 def cat_profiles():
     """Updates every cat's sprites"""
@@ -186,5 +181,6 @@ def cat_profiles():
 
     for x in Cat.all_cats:
         update_sprite(Cat.all_cats[x])
+
 
 

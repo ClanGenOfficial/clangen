@@ -1,10 +1,20 @@
 import itertools
 import random
+from random import choice
 
+from scripts.game_structure.game_essentials import game
 from scripts.events_module.condition_events import Condition_Events
-from scripts.utility import *
-from scripts.cat.cats import *
-
+from scripts.utility import (
+    add_children_to_cat,
+    add_siblings_to_cat,
+    get_personality_compatibility,
+    get_highest_romantic_relation,
+    get_med_cats,
+    )
+from scripts.cat.cats import Cat, cat_class
+from scripts.cat.names import names, Name
+from scripts.event_class import Single_Event
+from scripts.cat_relations.relationship import Relationship
 
 class Relation_Events():
     """All relationship events."""
@@ -166,13 +176,13 @@ class Relation_Events():
 
         # Roll to see if the cat will have kits.
         if cat.mate:
-            chance = 60
+            chance = game.config["pregnancy"]["primary_chance_mated"]
         else:
-            chance = 100
+            chance = game.config["pregnancy"]["primary_chance_unmated"]
 
         # This is the first chance. Other checks will then be made that can "cancel" this roll.
         if not int(random.random() * chance):
-            print(f"primary kit roll triggered for {cat.name}")
+            # print(f"primary kit roll triggered for {cat.name}")
 
             # DETERMINE THE SECOND PARENT
             mate = None
@@ -197,7 +207,7 @@ class Relation_Events():
                 # This is a special check that could be an affair partner.
                 parent2_can_have_kits = self.check_second_parent(cat, second_parent)
                 if not parent2_can_have_kits:
-                    print("chosen second parent can't have kits")
+                    # print("chosen second parent can't have kits")
                     return
             else:
                 if not game.settings['no unknown fathers']:
@@ -241,15 +251,10 @@ class Relation_Events():
                 # Affairs almost never cancel - it makes setting affairs number easier.
                 chance = 1000
 
-            print("Kit cancel chance", chance)
+            # print("Kit cancel chance", chance)
             if not int(random.random() * chance):
                 # Cancel having kits.
-                if second_parent:
-                    print(f"Having kits canceled for {cat.name} and {second_parent.name}")
-                else:
-                    print(f"Having kits canceled for {cat.name} and unknown parent")
                 return
-
 
             # If you've reached here - congrats, kits!
             self.handle_zero_moon_pregnant(cat, second_parent, second_parent_relation, clan)
@@ -671,7 +676,7 @@ class Relation_Events():
                 cat.mate = None
 
         # If the "no unknown fathers setting in on, we should only allow cats that have mates to have kits.
-        if unknown_parent_setting and not cat.mate:
+        if not unknown_parent_setting and not cat.mate:
             return False
 
         # if function reaches this point, having kits is possible
@@ -875,7 +880,7 @@ class Relation_Events():
                             return highest_romantic_relation.cat_to, is_affair
 
         # If the love affair chance did not trigger, this code will be reached.
-        chance_random_affair = 75
+        chance_random_affair = game.config["pregnancy"]["random_affair_chance"]
         if not int(random.random() * chance_random_affair):
             possible_affair_partners = list(filter(lambda x: x.is_potential_mate(cat, for_love_interest=True) and
                                                              (samesex or cat.gender != x.gender) and
@@ -925,8 +930,9 @@ class Relation_Events():
             kit.scars.clear()
 
             # try to give them a permanent condition. 1/90 chance
-			# don't delete the game.clan condition, this is needed for a test
-            if game.clan and not int(random.random() * 90) and game.clan.game_mode != 'classic':
+            # don't delete the game.clan condition, this is needed for a test
+            if game.clan and not int(random.random() * game.config["cat_generation"]["base_permanent_condition"]) \
+                    and game.clan.game_mode != 'classic':
                 kit.congenital_condition(kit)
                 for condition in kit.permanent_condition:
                     if kit.permanent_condition[condition] == 'born without a leg':

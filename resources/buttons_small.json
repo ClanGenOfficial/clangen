@@ -296,6 +296,29 @@
 			}
         }
     },
+    "#smallquit_button":
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/smallquit.png"
+            },
+			"hovered_image":
+            {
+                "path": "resources/images/buttons/smallquit_hover.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/smallquit_hover.png"
+            },
+            "disabled_image":
+            {
+				"path": "resources/images/buttons/smallquit_hover.png"
+			}
+        }
+    },
     "#allegiances_button":
     {
         "prototype": "#image_button",
