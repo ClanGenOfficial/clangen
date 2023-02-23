@@ -2283,10 +2283,10 @@ class CeremonyScreen(Screens):
                         cat.virtues[4] + '.'
         else:
             if cat.trait == "bloodthirsty":
-                app_text = app + ' an unfamiliar apprentice, stretches up to give a life for ' + cat.virtues[
+                app_text = app + ', an unfamiliar apprentice, stretches up to give a life for ' + cat.virtues[
                 4] + '. They start to growl something, but an older StarClan cat nudges them back into their ranks.'
             else:
-                app_text = app + ' an unfamiliar apprentice, stretches up to give a life for ' + cat.virtues[
+                app_text = app + ', an unfamiliar apprentice, stretches up to give a life for ' + cat.virtues[
                     4] + '. Their eyes glimmer as they wish ' + dep_name + " well, and step back for the next cat."
         if known[5]:
             if cat.trait == "bloodthirsty":

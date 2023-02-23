@@ -69,7 +69,7 @@
 
 },
 {
-    "patrol_id": "gen_gen_newkit1",
+    "patrol_id": "gen_gen_newkit2",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat", "new_cat_kit", "reputation", "no_change_fail_rep"],
@@ -117,7 +117,7 @@
     "patrol_id": "gen_bord_lonerchase1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["border", "new_cat", "reputation", "injury", "claw-wound", "scar"],
+    "tags": ["border", "new_cat", "reputation", "injury", "claw-wound", "scar", "RIGHTEAR"],
     "intro_text": "Your patrol cautiously moves towards the sound of barking. Near the border, they spot a dog chasing something. Oh no, it's a cat!",
     "decline_text": "The patrol decides not to interfere. Surely the cat can handle itself, the dog isn't even that big.",
     "chance_of_success": 40,
@@ -356,10 +356,10 @@
     ]
 },
 {
-    "patrol_id": "fst_bord_noise1",
+    "patrol_id": "fst_bord_noise2",
     "biome": "forest",
     "season": "Any",
-    "tags": ["border", "battle_injury", "scar", "reputation", "new_cat", "new_cat_apprentice"],
+    "tags": ["border", "battle_injury", "scar", "BRIDGE", "reputation", "new_cat", "new_cat_apprentice"],
     "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from a nearby bush.",
     "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
     "chance_of_success": 60,
@@ -456,10 +456,10 @@
     ]
 },
 {
-    "patrol_id": "gen_bord_curiouskittypet1",
+    "patrol_id": "gen_bord_curiouskittypet2",
     "biome": "Any",
     "season": "Any",
-    "tags": ["border", "new_cat", "reputation", "scar", "battle_injury", "new_cat_adult"],
+    "tags": ["border", "new_cat", "reputation", "scar", "CATBITE", "battle_injury", "new_cat_adult"],
     "intro_text": "As the patrol is checking the border lines, they hear the unmistakable sound of a cat traipsing through Clan territory.",
     "decline_text": "They decide to leave it alone. It's probably just another Clanmate out in the territory.",
     "chance_of_success": 50,
@@ -488,7 +488,7 @@
     ]
 },
 {
-    "patrol_id": "gen_bord_injuredcat1",
+    "patrol_id": "gen_bord_injuredcat2",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat", "reputation", "new_cat_adult", "new_cat_injury", "nc_battle_injury"],

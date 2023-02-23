@@ -1,6 +1,6 @@
 [
     {
-        "patrol_id": "gen_hunt_mouse1",
+        "patrol_id": "dst_hunt_mouse1",
         "biome": "Any",
         "season": "Any",
         "tags": [
@@ -29,7 +29,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "gen_hunt_mouse2",
+        "patrol_id": "dst_hunt_mouse2",
         "biome": "Any",
         "season": "Any",
         "tags": [
@@ -55,7 +55,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "gen_hunt_rat1",
+        "patrol_id": "dst_hunt_rat1",
         "biome": "Any",
         "season": "Any",
         "tags": [
@@ -87,7 +87,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "gen_hunt_hare1",
+        "patrol_id": "dst_hunt_hare1",
         "biome": "Any",
         "season": "Any",
         "tags": [
@@ -115,7 +115,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "gen_hunt_bird1",
+        "patrol_id": "dst_hunt_bird1",
         "biome": "Any",
         "season": "Any",
         "tags": [
@@ -143,7 +143,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "gen_hunt_squirrel1",
+        "patrol_id": "dst_hunt_squirrel1",
         "biome": "Any",
         "season": "Any",
         "tags": [
@@ -172,7 +172,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "gen_hunt_fish1",
+        "patrol_id": "dst_hunt_fish1",
         "biome": "Any",
         "season": "Any",
         "tags": [
@@ -200,7 +200,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "gen_hunt_fish2",
+        "patrol_id": "dst_hunt_fish2",
         "biome": "Any",
         "season": "Any",
         "tags": [
@@ -264,7 +264,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "gen_hunt_rabbit2",
+        "patrol_id": "dst_hunt_rabbit2",
         "biome": "Any",
         "season": "Any",
         "tags": [
@@ -296,7 +296,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "gen_hunt_vision1",
+        "patrol_id": "dst_hunt_vision1",
         "biome": "Any",
         "season": "Any",
         "tags": [
@@ -328,7 +328,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "gen_hunt_vision2",
+        "patrol_id": "dst_hunt_vision2",
         "biome": "Any",
         "season": "Any",
         "tags": [
@@ -357,7 +357,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "gen_hunt_sneakprey1",
+        "patrol_id": "dst_hunt_sneakprey1",
         "biome": "Any",
         "season": "Any",
         "tags": [
@@ -388,7 +388,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "gen_hunt_sneakprey2",
+        "patrol_id": "dst_hunt_sneakprey2",
         "biome": "Any",
         "season": "Any",
         "tags": [
@@ -419,7 +419,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "gen_hunt_sneakprey3",
+        "patrol_id": "dst_hunt_sneakprey3",
         "biome": "Any",
         "season": "Any",
         "tags": [
@@ -453,7 +453,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "gen_hunt_sneakprey4",
+        "patrol_id": "dst_hunt_sneakprey4",
         "biome": "Any",
         "season": "Any",
         "tags": [
