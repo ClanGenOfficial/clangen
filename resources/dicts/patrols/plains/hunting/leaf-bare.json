@@ -174,6 +174,7 @@
             "large_prey",
             "fighting",
             "scar",
+            "NECKBITE",
             "big_bite_injury",
             "clan_to_patrol",
             "respect",
@@ -239,6 +240,7 @@
             "large_prey",
             "fighting",
             "scar",
+            "NECKBITE",
             "big_bite_injury",
             "clan_to_patrol",
             "respect",
@@ -303,6 +305,7 @@
             "large_prey",
             "fighting",
             "scar",
+            "THREE",
             "big_bite_injury",
             "clan_to_patrol",
             "respect"
@@ -425,6 +428,7 @@
             "small_prey",
             "fighting",
             "scar",
+            "NECKBITE",
             "death",
             "no_body",
             "small_bite_injury"
