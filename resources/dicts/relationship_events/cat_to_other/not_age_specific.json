@@ -1,11 +1,8 @@
 {
     "unfriendly": [
-        "doesn't think that (cat) has been completely honest lately.",
         "is mocking (cat).",
         "is spreading a rumour about (cat).",
-        "had a spat with (cat) over a piece of prey on the fresh-kill pile.",
         "shudders at the sound of (cat)'s voice.",
-        "had a huge argument with (cat).",
         "had a fight with (cat)."
     ],
     "neutral": [
@@ -20,7 +17,6 @@
         "is letting (cat) share their troubles with them, hoping they'll feel better afterwards.",
         "reminds (cat) to grab something from the fresh-kill pile if they haven't already.",
         "shares a joke about a neighboring Clan with (cat).",
-        "had a disagreement with (cat) about something or other.",
         "quickly apologizes after bumping into (cat). They have a small laugh about it."
 
     ],

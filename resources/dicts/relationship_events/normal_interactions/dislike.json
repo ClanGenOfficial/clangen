@@ -39,14 +39,14 @@
 			"id": "dislike_inc_low1",
 			"intensity": "low",
 			"interactions":[
-				""
+				"m_c had r_c bump into them, and they didn't even apologize!"
 			]
 		},
 		{
 			"id": "dislike_inc_low2",
 			"intensity": "low",
 			"interactions":[
-				""
+				"m_c had a disagreement with r_c about something or other."
 			],
 			"reaction_random_cat":{
 				"dislike": "increase"
@@ -61,7 +61,9 @@
 		{
 			"id": "dislike_inc_med2",
 			"interactions":[
-				"m_c ignores r_c."
+				"m_c ignores r_c.",
+				"m_c had a huge argument with r_c.",
+				"m_c had a spat with r_c over a piece of prey on the fresh-kill pile."
 			],
 			"reaction_random_cat":{
 				"dislike": "increase"
