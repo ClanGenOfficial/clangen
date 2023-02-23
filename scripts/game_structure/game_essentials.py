@@ -250,27 +250,17 @@ class Game():
         # the clan specified in saves/clanlist.txt should be first in the list
         # so we can load it automatically
 
-        try:
-            if os.path.exists('saves/currentclan.txt'):
-                with open('saves/currentclan.txt', 'r') as f:
-                    loaded_clan = f.read()
-                    if not loaded_clan:
-                        loaded_clan = None
-                    else:
-                        loaded_clan = loaded_clan.strip()
-            else:
-                # were gonna remove clanlist.txt in the future, but for now we'll use it if currentclan.txt doesn't exist
-                # this is so that we don't break existing saves
-                with open('saves/clanlist.txt', 'r') as f:
-                    loaded_clan = f.read()
-                    if not loaded_clan:
-                        loaded_clan = None
-                    else:
-                        # there might be more than one line in the file, so we only want the first line
-                        loaded_clan = loaded_clan.strip().splitlines()[0]
-        except FileNotFoundError:
+        if os.path.exists('saves/clanlist.txt'):
+            with open('saves/clanlist.txt', 'r') as f:
+                loaded_clan = f.read().strip().splitlines()[0]
+            os.remove('saves/clanlist.txt')
+            with open('saves/currentclan.txt', 'w') as f:
+                f.write(loaded_clan)
+        elif os.path.exists('saves/currentclan.txt'):
+            with open('saves/currentclan.txt', 'r') as f:
+                loaded_clan = f.read().strip()
+        else:
             loaded_clan = None
-
 
         if loaded_clan and loaded_clan in clan_list:
             clan_list.remove(loaded_clan)
@@ -611,10 +601,6 @@ class Game():
 
 game = Game()
 
-if not os.path.exists('saves/currentclan.txt'):
-    os.makedirs('saves', exist_ok=True)
-    with open('saves/currentclan.txt', 'w') as write_file:
-        write_file.write('')
 
 if not os.path.exists('saves/settings.txt'):
     with open('saves/settings.txt', 'w') as write_file:
