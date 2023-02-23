@@ -519,7 +519,7 @@ class Events():
                 
         lost_cat = None
         for id, cat in Cat.outside_cats.items():
-            if cat.outside and cat.status not in ['kittypet', 'loner', 'rogue']:
+            if cat.outside and cat.status not in ['kittypet', 'loner', 'rogue'] and not cat.exiled and not cat.dead:
                 lost_cat = cat
                 break
         if lost_cat:
