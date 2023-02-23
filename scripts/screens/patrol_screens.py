@@ -673,7 +673,7 @@ class PatrolScreen(Screens):
             print('no romance choices')
             return
         if not patrol.patrol_random_cat.is_potential_mate(patrol.patrol_leader, for_love_interest=True) \
-                and patrol.patrol_random_cat.mate != patrol.patrol_leader:
+                and patrol.patrol_random_cat.mate != patrol.patrol_leader.ID:
             patrol.patrol_event = self.normal_event_choice
             print('not a potential mate or current mate')
             return
@@ -686,7 +686,7 @@ class PatrolScreen(Screens):
         print("attempted romance between:", patrol.patrol_leader.name, patrol.patrol_random_cat.name)
         chance_of_romance_patrol = 16
 
-        if get_personality_compatibility(patrol.patrol_leader, patrol.patrol_random_cat) is True:
+        if get_personality_compatibility(patrol.patrol_leader, patrol.patrol_random_cat) is True or patrol.patrol_random_cat.mate == patrol.patrol_leader.ID:
             chance_of_romance_patrol -= 10
         else:
             chance_of_romance_patrol += 10
