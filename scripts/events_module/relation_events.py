@@ -240,9 +240,9 @@ class Relation_Events():
                     chance = int(int(living_cats) / 20 + 5)
 
                 old_male = False
-                if cat.gender == 'male' and cat.age == 'elder':
+                if cat.gender == 'male' and cat.age == 'senior':
                     old_male = True
-                if second_parent is not None and second_parent.gender == 'male' and second_parent.age == 'elder':
+                if second_parent is not None and second_parent.gender == 'male' and second_parent.age == 'senior':
                     old_male = True
 
                 if old_male:
