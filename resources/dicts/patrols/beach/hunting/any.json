@@ -556,7 +556,7 @@
             "thoughtful",
             "wise"
         ],
-        "min_cats": 1,
+        "min_cats": 2,
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
@@ -1338,7 +1338,7 @@
             "r_c professionally flips the octopus out of its refuge and dispatches it with a quick bite. One for the fresh-kill pile!",
             "This rockpool proves to be a good fishing ground, and as well as the octopus, the patrol pulls crabs and limpets out from where the tides have left them.",
             "The octopus sees the cats and vanishes into a crevice, but s_c is able to lever it out with a thin strip of driftwood.",
-            "s_c pounces on the octopus enthusiastically. It thwacks it's tentacles around their head, trying to avoid their snapping muzzle, but s_c takes it in stride, prancing out of the rockpool to cheers and hilarity from the patrol, letting their friends guide them and their semi-captured prey blindly back to camp as everyone murrps with laughter."
+            "s_c pounces on the octopus enthusiastically. It thwacks its tentacles around their head, trying to avoid their snapping muzzle, but s_c takes it in stride, prancing out of the rockpool to cheers and hilarity from the patrol, letting their friends guide them and their semi-captured prey blindly back to camp as everyone murrps with laughter."
         ],
         "fail_text": [
             "The octopus spots the patrol and vanishes into an impossibly small crevice. The cats check it carefully, but there doesn't seem to be a way to get it out.",
