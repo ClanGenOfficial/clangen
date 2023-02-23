@@ -85,6 +85,23 @@
 			"reaction_random_cat":{
 				"dislike": "increase"
 			}
+		},
+		{
+			"id":"dislike_effect_other1",
+			"intensity": "neutral",
+			"relationship_constraint":[
+				"dislike_40"
+			],
+			"interactions":[
+				"m_c is spreading a rumour about r_c."
+			],
+			"reaction_random_cat":{
+				"admiration": "decrease",
+				"comfortable": "decrease",
+				"trust": "decrease",
+				"dislike": "increase",
+				"platonic": "decrease"
+			}
 		}
 	],
 	"decrease": [
