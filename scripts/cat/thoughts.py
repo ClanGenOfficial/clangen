@@ -123,9 +123,6 @@ def get_alive_thoughts(cat, other_cat):
         elif cat.status == 'warrior':
             thoughts += get_warrior_thoughts(cat, other_cat)
             thoughts += get_warrior_trait_role_thoughts(cat, other_cat)
-    
-        elif cat.status in ['kittypet', 'loner', 'rogue']:
-            thoughts += get_outside_thoughts(cat, other_cat)
                                              
     except Exception as e:
         print("Error loading rank thoughts. ")
