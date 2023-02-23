@@ -103,7 +103,6 @@ class Condition_Events():
         else:
             random_number = int(random.random() * 200)
 
-
         if cat.dead:
             triggered = True
             return triggered
