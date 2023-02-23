@@ -258,7 +258,7 @@ class Name():
         "Trinket", "Trip", "Triscuit", "Trixie", "Trouble", "Trouble Nuggets", "Troublemaker", "Tucker", "Tuffnut",
         "Tumble", "Tumblebrutus", "Turbo", "Twilight", "Twinkle Lights", "Twister", "Twix", "Toastee", "Taurus", "Ula", "Ulyssa", "Victoria",
         "Union", "Uriel", "Vanilla", "Van Pelt", "Vaxx", "Venture", "Via", "Victor", "Vida", "Viktor", "Vinnie", "Vinyl",
-        "Violet", "Vivienne", "Void", "Voltage", "Vox", "Virgo", "Wanda", "Warren Peace", "Webby", "Wendy", "Whiskers",
+        "Velociraptor", "Violet", "Vivienne", "Void", "Voltage", "Vox", "Virgo", "Wanda", "Warren Peace", "Webby", "Wendy", "Whiskers",
         "Whisper", "Wigglebutt", "Wiggity Wacks", "Windy", "Wishbone", "Wisp", "Wisteria", "Whiz Kid", "Worm", "X'ek",
         "Xelle", "Yaoyao", "Yen", "Yeza", "Yoshi", "Zelda", "Zim", "Zoe", "Zorro",
         ]
