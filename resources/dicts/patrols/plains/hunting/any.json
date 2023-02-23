@@ -114,6 +114,7 @@
             "hunting",
             "big_bite_injury",
             "scar",
+            "LEFTBLIND",
             "fighting",
             "large_prey"
         ],
@@ -281,6 +282,7 @@
             "apprentice",
             "minor_injury",
             "scar",
+            "LEFTEAR",
             "medium_prey",
             "no_fail_prey"
         ],
@@ -522,6 +524,7 @@
             "hunting",
             "big_bite_injury",
             "scar",
+            "NECKBITE",
             "medium_prey0",
             "medium_prey1",
             "large_prey2"
@@ -567,6 +570,7 @@
             "hunting",
             "big_bite_injury",
             "scar",
+            "NECKBITE",
             "death",
             "medium_prey0",
             "medium_prey1",
@@ -615,6 +619,7 @@
             "hunting",
             "big_bite_injury",
             "scar",
+            "NECKBITE",
             "death",
             "medium_prey0",
             "medium_prey1",
@@ -1224,6 +1229,7 @@
         "tags": [
             "death",
             "scar",
+            "MANLEG",
             "retirement",
             "blunt_force_injury",
             "hunting",
@@ -1285,6 +1291,7 @@
         "tags": [
             "death",
             "scar",
+            "MANTAIL",
             "retirement",
             "blunt_force_injury",
             "hunting",
@@ -1347,6 +1354,7 @@
         "tags": [
             "multi_deaths",
             "scar",
+            "MANLEG",
             "retirement",
             "blunt_force_injury",
             "hunting",
@@ -1408,6 +1416,7 @@
         "tags": [
             "multi_deaths",
             "scar",
+            "MANTAIL",
             "retirement",
             "blunt_force_injury",
             "hunting",
@@ -1527,6 +1536,7 @@
             "small_prey",
             "fighting",
             "scar",
+            "LEGBITE",
             "small_bite_injury"
         ],
         "intro_text": "r_c catches the scent of a fox. Tracking it down, they spot a kit fox wandering through the grass, carrying a mouse in its jaws.",
@@ -1635,6 +1645,7 @@
             "apprentice",
             "small_bite_injury",
             "scar",
+            "FACE",
             "injury",
             "shock"
         ],
@@ -1758,6 +1769,7 @@
             "dislike",
             "big_bite_injury",
             "scar",
+            "THREE",
             "injury",
             "shock"
         ],

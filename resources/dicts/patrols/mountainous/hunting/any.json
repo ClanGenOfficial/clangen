@@ -119,6 +119,7 @@
             "apprentice",
             "minor_injury",
             "scar",
+            "LEFTEAR",
             "medium_prey0",
             "medium_prey1",
             "large_prey2",
@@ -353,6 +354,7 @@
             "hunting",
             "big_bite_injury",
             "scar",
+            "NECKBITE",
             "medium_prey0",
             "medium_prey1",
             "large_prey3"
@@ -398,6 +400,7 @@
             "hunting",
             "big_bite_injury",
             "scar",
+            "NECKBITE",
             "death",
             "medium_prey0",
             "medium_prey1",
@@ -446,6 +449,7 @@
             "hunting",
             "big_bite_injury",
             "scar",
+            "NECKBITE",
             "death",
             "medium_prey0",
             "medium_prey1",
@@ -683,6 +687,7 @@
         "tags": [
             "death",
             "scar",
+            "MANLEG",
             "blunt_force_injury",
             "hunting",
             "medium_prey"
@@ -743,6 +748,7 @@
         "tags": [
             "death",
             "scar",
+            "MANTAIL",
             "blunt_force_injury",
             "hunting",
             "cruel_season",

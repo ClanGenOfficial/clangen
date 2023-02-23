@@ -7,6 +7,7 @@
         "fighting",
         "death",
         "scar",
+        "NECKBITE",
         "big_bite_injury",
         "respect",
         "trust",
@@ -59,7 +60,7 @@
     "patrol_id": "bch_hunt_redvixen5",
     "biome": "beach",
     "season": "greenleaf",
-    "tags": ["fighting", "scar", "big_bite_injury", "respect", "trust", "clan_to_r_c", "patrol_to_r_c", "clan_to_patrol"],
+    "tags": ["fighting", "scar", "NECKBITE", "big_bite_injury", "respect", "trust", "clan_to_r_c", "patrol_to_r_c", "clan_to_patrol"],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
     "decline_text": "Your patrol decides not to pursue the fox.",
     "chance_of_success": 60,
@@ -97,7 +98,7 @@
     "patrol_id": "bch_hunt_redvixen6",
     "biome": "beach",
     "season": "greenleaf",
-    "tags": ["fighting", "death", "scar", "big_bite_injury", "shock", "injury", "respect", "trust", "clan_to_patrol", "no_body"],
+    "tags": ["fighting", "death", "scar", "THREE", "big_bite_injury", "shock", "injury", "respect", "trust", "clan_to_patrol", "no_body"],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
     "decline_text": "Your patrol decides not to pursue the fox.",
     "chance_of_success": 10,
@@ -144,7 +145,9 @@
         "respect",
         "trust",
         "rel_patrol",
-        "patrol_to_r_c"
+        "patrol_to_r_c",
+        "scar",
+        "LEGBITE"
     ],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
     "decline_text": "Your patrol decides not to pursue the fox.",
@@ -206,7 +209,9 @@
         "respect",
         "trust",
         "rel_patrol",
-        "patrol_to_r_c"
+        "patrol_to_r_c",
+        "scar",
+        "LEGBITE"
     ],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
     "decline_text": "Your patrol decides not to pursue the fox.",
@@ -264,6 +269,7 @@
     "tags": [
         "fighting",
         "scar",
+        "THREE",
         "big_bite_injury",
         "respect",
         "trust",

@@ -141,7 +141,6 @@
             "hunting",
             "apprentice",
             "injury",
-            "scar",
             "medium_prey0",
             "large_prey1",
             "large_prey2",
@@ -559,6 +558,7 @@
         "tags": [
             "death",
             "scar",
+            "MANLEG",
             "retirement",
             "injury",
             "hunting",
@@ -620,6 +620,7 @@
         "tags": [
             "death",
             "scar",
+            "MANTAIL",
             "retirement",
             "injury",
             "hunting",
@@ -1229,6 +1230,7 @@
             "large_prey",
             "fighting",
             "scar",
+            "LEGBITE",
             "small_bite_injury"
         ],
         "intro_text": "r_c spots a swift fox in the distance, trotting through the scrubland with a desert hare in its jaws. It's the biggest of the foxes in c_n's territory, the size of a cat, and r_c is alone. Should they try and take it on?",
@@ -1329,6 +1331,7 @@
             "large_prey2",
             "fighting",
             "scar",
+            "LEGBITE",
             "respect",
             "clan_to_r_c",
             "small_bite_injury"
@@ -1386,6 +1389,7 @@
             "rel_patrol",
             "fighting",
             "scar",
+            "NECKBITE",
             "big_bite_injury"
         ],
         "intro_text": "Your patrol spots a swift fox in the distance, behaving weirdly.",
@@ -1438,6 +1442,7 @@
             "large_prey2",
             "fighting",
             "scar",
+            "NECKBITE",
             "respect",
             "clan_to_r_c",
             "small_bite_injury"
@@ -1495,6 +1500,7 @@
             "rel_patrol",
             "fighting",
             "scar",
+            "NECKBITE",
             "big_bite_injury"
         ],
         "intro_text": "Your patrol spots a swift fox in the distance, behaving weirdly.",
@@ -1547,6 +1553,7 @@
             "large_prey2",
             "fighting",
             "scar",
+            "NECKBITE",
             "respect",
             "clan_to_r_c",
             "small_bite_injury"
@@ -1783,6 +1790,7 @@
             "hunting",
             "fighting",
             "scar",
+            "LEGBITE",
             "small_bite_injury",
             "medium_prey",
             "trust"
@@ -1847,6 +1855,7 @@
             "large_prey",
             "fighting",
             "scar",
+            "LEGBITE",
             "small_bite_injury"
         ],
         "intro_text": "r_c catches the scent of a fox. Tracking it down, they spot a kit fox wandering through their territory, carrying a mouse in its jaws.",
