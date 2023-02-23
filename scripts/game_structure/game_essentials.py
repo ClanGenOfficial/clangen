@@ -258,8 +258,9 @@ class Game():
                 else:
                     loaded_clan = None
             os.remove('saves/clanlist.txt')
-            with open('saves/currentclan.txt', 'w') as f:
-                f.write(loaded_clan)
+            if loaded_clan:
+                with open('saves/currentclan.txt', 'w') as f:
+                    f.write(loaded_clan)
         elif os.path.exists('saves/currentclan.txt'):
             with open('saves/currentclan.txt', 'r') as f:
                 loaded_clan = f.read().strip()
