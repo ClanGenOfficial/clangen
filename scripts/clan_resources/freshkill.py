@@ -14,11 +14,12 @@ class Nutrition():
         self.percentage = 0
 
     def __str__(self):
-        return {
+        this_is_a_dict_not_a_string = {
             "max_score": self.max_score,
             "current_score": self.current_score,
             "percentage": self.percentage,
         }
+        return str(this_is_a_dict_not_a_string)
 
     @property
     def current_score(self):
