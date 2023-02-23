@@ -1,7 +1,6 @@
 import random
 from random import choice, randint
 import os
-from os import path
 
 import pygame
 try:
@@ -11,7 +10,7 @@ except ImportError:
 
 from scripts.game_structure.game_essentials import game
 from scripts.utility import update_sprite
-from scripts.cat.cats import Cat, cat_class, ILLNESSES, INJURIES, PERMANENT
+from scripts.cat.cats import Cat, cat_class
 from scripts.cat.names import names
 from scripts.clan_resources.freshkill import Freshkill_Pile, Nutrition
 
@@ -228,6 +227,14 @@ class Clan():
             if cat.ID in self.med_cat_list:
                 self.med_cat_list.remove(cat.ID)
                 self.med_cat_predecessors += 1
+                
+    def add_to_clan(self, cat):
+        if cat.ID in Cat.all_cats.keys(
+        ) and not cat.outside and cat.ID in Cat.outside_cats.keys():
+            # The outside-value must be set to True before the cat can go to cotc
+            Cat.outside_cats.pop(cat.ID)
+            self.clan_cats.append(cat.ID)
+            cat.clan = str(game.clan.name)
 
     def add_to_outside(self, cat):  # same as add_cat
         """ Places the gone cat into cotc. It should not be removed from the list of cats in the clan"""

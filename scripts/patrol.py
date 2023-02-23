@@ -2,7 +2,6 @@
 # -*- coding: ascii -*-
 import random
 from random import choice, randint, choices
-from math import floor
 
 try:
     import ujson
@@ -21,7 +20,7 @@ from scripts.utility import (
 from scripts.game_structure.game_essentials import game
 from scripts.cat.names import names
 from scripts.cat.cats import Cat, cat_class, ILLNESSES, INJURIES, PERMANENT
-from scripts.cat.pelts import collars, scars1
+from scripts.cat.pelts import collars, scars1, scars2, scars3
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_resources.freshkill import PREY_REQUIREMENT, HUNTER_EXP_BONUS, HUNTER_BONUS
 from scripts.clan import Clan
@@ -594,30 +593,6 @@ class Patrol():
             gm_modifier = 2
         elif game.clan.game_mode == "cruel season":
             gm_modifier = 3
-
-        # resetting stat cats and then finding new stat cats
-        self.patrol_fail_stat_cat = None
-        self.patrol_win_stat_cat = None
-        if self.patrol_event.win_skills:
-            for cat in self.patrol_cats:
-                if "app_stat" in self.patrol_event.tags and cat.status not in ['apprentice', "medicine cat apprentice"]:
-                    continue
-                if "adult_stat" in self.patrol_event.tags and cat.status in ['apprentice', "medicine cat apprentice"]:
-                    continue
-                if cat.skill in self.patrol_event.win_skills:
-                    self.patrol_win_stat_cat = cat
-        if self.patrol_event.win_trait and not self.patrol_win_stat_cat:
-            for cat in self.patrol_cats:
-                if cat.trait in self.patrol_event.win_trait:
-                    self.patrol_win_stat_cat = cat
-        if self.patrol_event.fail_skills:
-            for cat in self.patrol_cats:
-                if cat.skill in self.patrol_event.fail_skills:
-                    self.patrol_fail_stat_cat = cat
-        if self.patrol_event.fail_trait and not self.patrol_fail_stat_cat:
-            for cat in self.patrol_cats:
-                if cat.trait in self.patrol_event.fail_trait:
-                    self.patrol_fail_stat_cat = cat
 
         # if patrol contains cats with autowin skill, chance of success is high. otherwise it will calculate the
         # chance by adding the patrolevent's chance of success plus the patrol's total exp
@@ -1426,15 +1401,21 @@ class Patrol():
 
     def handle_scars(self, outcome):
         if self.patrol_event.tags is not None:
+            print('getting scar')
             if "scar" in self.patrol_event.tags:
-                cat = None
                 if outcome == 3:
                     cat = self.patrol_random_cat
                 elif outcome == 5:
                     cat = self.patrol_fail_stat_cat
+                else:
+                    return
                 if len(self.patrol_random_cat.scars) < 4:
-                    self.patrol_random_cat.scars.append(choice(
-                        [choice(scars1)]))
+                    for tag in self.patrol_event.tags:
+                        print(tag)
+                        if tag in scars1 + scars2 + scars3:
+                            print('gave scar')
+                            cat.scars.append(tag)
+                            self.results_text.append(f"{cat.name} got a scar.")
                     if len(self.patrol_event.history_text) >= 1:
                         adjust_text = self.patrol_event.history_text[0]
                         adjust_text = adjust_text.replace("r_c", str(cat.name))
