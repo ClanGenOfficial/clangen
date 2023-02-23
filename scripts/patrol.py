@@ -586,28 +586,22 @@ class Patrol():
         success_text = self.patrol_event.success_text
         fail_text = self.patrol_event.fail_text
 
-        gm_modifier = 1
-        if game.clan.game_mode == "classic":
-            gm_modifier = 1
-        elif game.clan.game_mode == "expanded":
-            gm_modifier = 2
-        elif game.clan.game_mode == "cruel season":
-            gm_modifier = 3
+        gm_modifier = game.config["patrol_generation"][f"{game.clan.game_mode}_difficulty_modifier"]
 
         # if patrol contains cats with autowin skill, chance of success is high. otherwise it will calculate the
-        # chance by adding the patrolevent's chance of success plus the patrol's total exp
+        # chance by adding the patrol event's chance of success plus the patrol's total exp
         success_chance = self.patrol_event.chance_of_success + int(
             self.patrol_total_experience / (2 * gm_modifier))
 
         if self.patrol_win_stat_cat:
-            success_chance = success_chance + 30
+            success_chance = success_chance + game.config["patrol_generation"]["win_stat_cat_modifier"]
             if ("great" or "very") in self.patrol_win_stat_cat.skill:
-                success_chance = success_chance + 5
+                success_chance = success_chance + game.config["patrol_generation"]["better_stat_modifier"]
             elif ("fantastic" or "excellent" or "extremely") in self.patrol_win_stat_cat.skill:
-                success_chance = success_chance + 10
+                success_chance = success_chance + game.config["patrol_generation"]["best_stat_modifier"]
 
         if self.patrol_fail_stat_cat:
-            success_chance = success_chance - 30
+            success_chance = success_chance + game.config["patrol_generation"]["fail_stat_cat_modifier"]
 
         c = randint(0, 100)
         outcome = int(random.getrandbits(4))

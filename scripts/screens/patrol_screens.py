@@ -682,7 +682,7 @@ class PatrolScreen(Screens):
             return
 
         print("attempted romance between:", patrol.patrol_leader.name, patrol.patrol_random_cat.name)
-        chance_of_romance_patrol = 16
+        chance_of_romance_patrol = game.config["patrol_generation"]["chance_of_romance_patrol"]
 
         if get_personality_compatibility(patrol.patrol_leader, patrol.patrol_random_cat) is True or patrol.patrol_random_cat.mate == patrol.patrol_leader.ID:
             chance_of_romance_patrol -= 10
@@ -695,6 +695,8 @@ class PatrolScreen(Screens):
                 chance_of_romance_patrol -= 1
             elif val in ["dislike", "jealousy"] and value_check >= 20:
                 chance_of_romance_patrol += 2
+        if chance_of_romance_patrol <= 0:
+            chance_of_romance_patrol = 1
         print("final romance chance:", chance_of_romance_patrol)
         if not int(random.random() * chance_of_romance_patrol):
             patrol.patrol_event = self.romantic_event_choice
