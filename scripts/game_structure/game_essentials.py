@@ -1,6 +1,5 @@
 import pygame
 import pygame_gui
-import sys
 
 
 try:

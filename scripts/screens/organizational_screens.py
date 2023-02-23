@@ -9,7 +9,7 @@ from scripts.game_structure.image_button import UIImageButton
 # from scripts.world import save_map
 from scripts.utility import get_text_box_theme, scale
 import pygame_gui
-from scripts.game_structure.game_essentials import *
+from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 
 
 class StartScreen(Screens):

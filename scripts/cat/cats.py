@@ -1,7 +1,7 @@
 from __future__ import annotations
 from random import choice, randint, sample
 from typing import Dict, List, Any
-import math
+import random
 import os.path
 import itertools
 
@@ -11,19 +11,29 @@ try:
 except ImportError:
     import json as ujson
 
-from .pelts import *
-from .names import *
-from .sprites import *
-from .thoughts import *
-from .appearance_utility import *
+from .pelts import describe_color
+from .names import Name
+from .thoughts import get_thoughts
+from .appearance_utility import (
+    init_pelt,
+    init_tint,
+    init_sprite,
+    init_scars,
+    init_accessories,
+    init_white_patches,
+    init_eyes,
+    init_pattern,
+    )
 from scripts.conditions import Illness, Injury, PermanentCondition, get_amount_cat_for_one_medic, \
     medical_cats_condition_fulfilled
 import bisect
+import pygame
 
-from scripts.utility import *
-from scripts.game_structure.game_essentials import *
-from scripts.cat_relations.relationship import *
-import scripts.game_structure.image_cache as image_cache
+from scripts.utility import get_med_cats, get_personality_compatibility, event_text_adjust, update_sprite
+from scripts.game_structure.game_essentials import game, screen
+from scripts.cat.thoughts import get_thoughts
+from scripts.cat_relations.relationship import Relationship
+from scripts.game_structure import image_cache
 from scripts.event_class import Single_Event
 
 
@@ -624,6 +634,23 @@ class Cat():
             app_ob.update_mentor()
         self.update_mentor()
         game.clan.add_to_outside(self)
+    
+    def add_to_clan(self):
+        """ Makes a "outside cat" a clan cat. Former leaders, deputies will become warriors. Apprentices will be assigned a mentor."""
+        self.outside = False
+        if self.status in ['leader', 'deputy']:
+            self.status_change('warrior')
+            self.status = 'warrior'
+        elif (self.status == 'apprentice' or self.status == 'kitten') and self.moons >= 12:
+            self.status_change('warrior')
+            involved_cats = [self]
+            game.cur_events_list.append(Single_Event('A long overdue warrior ceremony is held for ' + str(self.name.prefix) + 'paw. They smile as they finally become a warrior of the Clan and are now named ' + str(self.name) + '.', "ceremony", involved_cats))
+        elif self.status == 'kitten' and self.moons >= 6:
+            self.status_change('apprentice')
+            involved_cats = [self]
+            game.cur_events_list.append(Single_Event('A long overdue apprentice ceremony is held for ' + str(self.name.prefix) + 'kit. They smile as they finally become a warrior of the Clan and are now named ' + str(self.name) + '.', "ceremony", involved_cats))
+        self.update_mentor()
+        game.clan.add_to_clan(self)
 
     def status_change(self, new_status, resort=False):
         """ Changes the status of a cat. Additional functions are needed if you want to make a cat a leader or deputy.
@@ -2406,6 +2433,8 @@ class Cat():
             file_name = "faded_elder.png"
 
         self.sprite = image_cache.load_image(f"sprites/faded/{file_name}").convert_alpha()
+        self.big_sprite = pygame.transform.scale(self.sprite, (100, 100))
+        self.large_sprite = pygame.transform.scale(self.big_sprite, (150, 150))
 
     @staticmethod
     def fetch_cat(cat_id: str):
