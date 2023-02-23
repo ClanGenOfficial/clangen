@@ -1,3 +1,5 @@
+from random import choice
+
 import pygame
 
 try:
@@ -8,9 +10,17 @@ import logging
 logger = logging.getLogger(__name__)
 from scripts.game_structure import image_cache
 
-from scripts.cat.sprites import *
-from scripts.cat.pelts import *
-from scripts.game_structure.game_essentials import *
+from scripts.cat.sprites import sprites, Sprites
+from scripts.cat.pelts import (
+    choose_pelt,
+    scars1,
+    scars2,
+    scars3,
+    plant_accessories,
+    wild_accessories,
+    collars,
+    )
+from scripts.game_structure.game_essentials import game, screen_x, screen_y
 
 
 def scale(rect):

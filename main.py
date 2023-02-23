@@ -28,8 +28,9 @@ def log_crash(type, value, tb):
 sys.excepthook = log_crash
 
 # Load game
-from scripts.game_structure.load_cat import *
+from scripts.game_structure.load_cat import load_cats
 from scripts.game_structure.windows import SaveCheck
+from scripts.game_structure.game_essentials import game, MANAGER, screen
 from scripts.cat.sprites import sprites
 from scripts.clan import clan_class
 from scripts.utility import get_text_box_theme
@@ -41,7 +42,7 @@ import pygame
 VERSION_NUMBER = "Ver. 0.6.0dev"
 
 # import all screens for initialization (Note - must be done after pygame_gui manager is created)
-from scripts.screens.all_screens import *
+from scripts.screens.all_screens import start_screen
 
 # P Y G A M E
 clock = pygame.time.Clock()
