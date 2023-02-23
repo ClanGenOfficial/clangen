@@ -147,7 +147,16 @@ class MakeClanScreen(Screens):
         elif event.ui_element == self.elements["reset_name"]:
             self.elements["name_entry"].set_text("")
         elif event.ui_element == self.elements['next_step']:
-            self.clan_name = sub(r'[^A-Za-z0-9 ]+', "", self.elements["name_entry"].get_text()).strip()
+            new_name = sub(r'[^A-Za-z0-9 ]+', "", self.elements["name_entry"].get_text()).strip()
+            if not new_name:
+                self.elements["error"].set_text("Your Clan's name cannot be empty")
+                self.elements["error"].show()
+                return
+            if new_name in game.switches["clan_list"]:
+                self.elements["error"].set_text("A clan with that name already exists.")
+                self.elements["error"].show()
+                return
+            self.clan_name = new_name
             self.open_choose_leader()
         elif event.ui_element == self.elements['previous_step']:
             self.clan_name = ""
@@ -587,6 +596,10 @@ class MakeClanScreen(Screens):
                                                                   , manager=MANAGER)
         self.elements["random"] = UIImageButton(scale(pygame.Rect((448, 1190), (68, 68))), "", object_id="#random_dice_button"
                                                 , manager=MANAGER)
+
+        self.elements["error"] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((506, 1310), (596, -1))), manager=MANAGER,
+                                                               object_id="#default_dark", visible=False)
+
         self.elements['previous_step'] = UIImageButton(scale(pygame.Rect((506, 1270), (294, 60))), "",
                                                        object_id="#previous_step_button", manager=MANAGER)
         self.elements['next_step'] = UIImageButton(scale(pygame.Rect((800, 1270), (294, 60))), "",
