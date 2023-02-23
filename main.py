@@ -31,6 +31,7 @@ sys.excepthook = log_crash
 from scripts.game_structure.load_cat import load_cats
 from scripts.game_structure.windows import SaveCheck
 from scripts.game_structure.game_essentials import game, MANAGER, screen
+from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.cat.sprites import sprites
 from scripts.clan import clan_class
 from scripts.utility import get_text_box_theme
@@ -104,6 +105,8 @@ else:
     # Adjust position
     version_number.set_position((800 - version_number.get_relative_rect()[2] - 8, 700 - version_number.get_relative_rect()[3]))
 
+
+game.rpc = _DiscordRPC("1076277970060185701")
 while True:
     time_delta = clock.tick(30) / 1000.0
     if game.switches['cur_screen'] not in ['start screen']:
@@ -123,6 +126,7 @@ while True:
         if event.type == pygame.QUIT:
             # Dont display if on the start screen
             if game.switches['cur_screen'] in ['start screen']:
+                game.rpc.close()
                 pygame.display.quit()
                 pygame.quit()
                 sys.exit()
