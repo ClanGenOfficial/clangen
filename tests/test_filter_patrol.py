@@ -1,10 +1,5 @@
 import unittest
 
-try:
-    import ujson
-except ImportError:
-    import json as ujson
-
 from scripts.cat.cats import Cat
 from scripts.cat_relations.relationship import Relationship
 from scripts.patrol import PatrolEvent, Patrol

@@ -46,7 +46,7 @@
 
 },
 {
-    "patrol_id": "gen_gen_newcat2",
+    "patrol_id": "gen_gen_newcatthunderpath2",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat", "new_cat_adult", "new_cat_injury", "nc_blunt_force_injury", "reputation", "no_change_fail_rep"],
@@ -172,7 +172,7 @@
     ]
 },
 {
-    "patrol_id": "gen_med_rescue_hostile1",
+    "patrol_id": "gen_med_rescue5",
     "biome": "Any",
     "season": "Any",
     "tags": ["med_cat", "med_only", "new_cat", "new_cat_queen", "new_cat_kits", "new_cat_newborn", "no_change_fail_rep"],
@@ -187,17 +187,17 @@
     "fail_text": [
             "p_l sees the body of an unknown queen with their kits beside them, slowly cooling in the morning breeze. They are filled with an unexpected sense of grief and p_l and the rest of the patrol take the time to carry and bury them outside their borders."
     ],
-    "win_skills": ["None"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_skills": null,
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "gen_med_rescue_hostile2",
+    "patrol_id": "gen_med_rescue6",
     "biome": "Any",
     "season": "Any",
     "tags": ["med_cat", "med_only", "new_cat", "new_cat_kits", "new_cat_newborn", "no_change_fail_rep"],
@@ -212,17 +212,17 @@
     "fail_text": [
             "p_l sees the body of an unknown queen with their kits beside them, slowly cooling in the morning breeze. They are filled with an unexpected sense of grief and p_l and the rest of the patrol take the time to carry and bury them outside their borders."
     ],
-    "win_skills": ["None"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_skills": null,
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "gen_med_rescuesolo_hostile1",
+    "patrol_id": "gen_med_rescue7",
     "biome": "Any",
     "season": "Any",
     "tags": ["med_cat", "med_only", "no_app", "new_cat", "new_cat_queen", "new_cat_kits", "new_cat_newborn", "no_change_fail_rep"],
@@ -237,17 +237,17 @@
     "fail_text": [
             "p_l sees the body of an unknown queen with their kits beside them, slowly cooling in the morning breeze. They are filled with an unexpected sense of grief and take the time to carry and bury them outside their borders."
     ],
-    "win_skills": ["None"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_skills": null,
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "gen_med_rescuesolo_hostile2",
+    "patrol_id": "gen_med_rescue8",
     "biome": "Any",
     "season": "Any",
     "tags": ["med_cat", "med_only", "no_app", "new_cat", "new_cat_kits", "new_cat_newborn", "no_change_fail_rep"],
@@ -262,10 +262,10 @@
     "fail_text": [
             "p_l sees the body of an unknown queen with their kits beside them, slowly cooling in the morning breeze. They are filled with an unexpected sense of grief and take the time to carry and bury them outside their borders."
     ],
-    "win_skills": ["None"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_skills": null,
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -287,10 +287,10 @@
     "fail_text": [
             "p_l sees the body of an unknown queen with their kits beside them, slowly cooling in the morning breeze. They are filled with an unexpected sense of grief and take the time to carry and bury them outside their borders."
     ],
-    "win_skills": ["None"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_skills": null,
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -312,10 +312,10 @@
     "fail_text": [
             "p_l sees the body of an unknown queen with their kits beside them, slowly cooling in the morning breeze. They are filled with an unexpected sense of grief and take the time to carry and bury them outside their borders."
     ],
-    "win_skills": ["None"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_skills": null,
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
