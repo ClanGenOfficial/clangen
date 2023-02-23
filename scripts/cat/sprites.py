@@ -209,21 +209,15 @@ sprites.make_group('fadestarclan', (0, 0), 'fadestarclan', sprites_y=15)
 sprites.make_group('fadedarkforest', (0, 0), 'fadedf', sprites_y=15)
 
 for a, i in enumerate(
-        ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE']):
+        ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE', 
+        'DARKBLUE', 'GREY', 'CYAN', 'EMERALD', 'HEATHERBLUE', 'SUNLITICE']):
     sprites.make_group('eyes', (a, 0), f'eyes{i}')
     sprites.make_group('eyes2', (a, 0), f'eyes2{i}')
 for a, i in enumerate(
-        ['DARKBLUE', 'GREY', 'CYAN', 'EMERALD', 'HEATHERBLUE', 'SUNLITICE']):
+        ['COPPER', 'SAGE', 'BLUE2', 'PALEBLUE', 'BRONZE', 'SILVER',
+        'PALEYELLOW', 'GOLD', 'GREENYELLOW']):
     sprites.make_group('eyes', (a, 1), f'eyes{i}')
     sprites.make_group('eyes2', (a, 1), f'eyes2{i}')
-for a, i in enumerate(
-        ['COPPER', 'SAGE', 'BLUE2', 'PALEBLUE', 'BLUEYELLOW', 'BLUEGREEN']):
-    sprites.make_group('eyes', (a, 2), f'eyes{i}')
-    sprites.make_group('eyes2', (a, 2), f'eyes2{i}')
-for a, i in enumerate(
-        ['PALEYELLOW', 'GOLD', 'GREENYELLOW']):
-    sprites.make_group('eyes', (a, 3), f'eyes{i}')
-    sprites.make_group('eyes2', (a, 3), f'eyes2{i}')
 
 # white patches
 for a, i in enumerate(['FULLWHITE', 'ANY', 'TUXEDO', 'LITTLE', 'COLOURPOINT', 'VAN', 'ANY2', 
