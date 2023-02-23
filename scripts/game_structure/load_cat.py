@@ -9,7 +9,7 @@ except ImportError:
 
 from scripts.cat.cats import Cat
 from scripts.cat.pelts import choose_pelt
-from scripts.utility import update_sprite, is_iterable
+from scripts.utility import update_sprite
 try:
     from ujson import JSONDecodeError
 except ImportError:
