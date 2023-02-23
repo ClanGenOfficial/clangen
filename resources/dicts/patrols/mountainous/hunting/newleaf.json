@@ -1,6 +1,6 @@
 [
     {
-        "patrol_id": "mtn_hunt_newleafeagleswim1",
+        "patrol_id": "mtn_hunt_newleaf_eagleswim1",
         "biome": "mountainous",
         "season": "newleaf",
         "tags": [
@@ -45,7 +45,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_newleafeagleswim2",
+        "patrol_id": "mtn_hunt_newleaf_eagleswim2",
         "biome": "mountainous",
         "season": "newleaf",
         "tags": [
@@ -90,7 +90,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_newleafeagleswim3",
+        "patrol_id": "mtn_hunt_newleaf_eagleswim3",
         "biome": "mountainous",
         "season": "newleaf",
         "tags": [
@@ -145,7 +145,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_newleafeagleswim4",
+        "patrol_id": "mtn_hunt_newleaf_eagleswim4",
         "biome": "mountainous",
         "season": "newleaf",
         "tags": [

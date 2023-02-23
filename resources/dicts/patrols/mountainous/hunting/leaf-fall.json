@@ -1,6 +1,6 @@
 [
     {
-        "patrol_id": "mtn_hunt_leaf-fall_eagleswim9",
+        "patrol_id": "mtn_hunt_leaf-fall_eagleswim1",
         "biome": "mountainous",
         "season": "leaf-fall",
         "tags": [
@@ -37,7 +37,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "mtn_hunt_leaf-fall_eagleswim10",
+        "patrol_id": "mtn_hunt_leaf-fall_eagleswim2",
         "biome": "mountainous",
         "season": "leaf-fall",
         "tags": [
@@ -74,7 +74,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "mtn_hunt_leaf-fall_eagleswim11",
+        "patrol_id": "mtn_hunt_leaf-fall_eagleswim3",
         "biome": "mountainous",
         "season": "leaf-fall",
         "tags": [
@@ -130,7 +130,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_leaf-fall_eagleswim12",
+        "patrol_id": "mtn_hunt_leaf-fall_eagleswim4",
         "biome": "mountainous",
         "season": "leaf-fall",
         "tags": [

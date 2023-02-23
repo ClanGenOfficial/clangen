@@ -1,6 +1,6 @@
 [
     {
-        "patrol_id": "mtn_hunt_leaf-bare_eagleice13",
+        "patrol_id": "mtn_hunt_leaf-bare_eagleice1",
         "biome": "mountainous",
         "season": "leaf-bare",
         "tags": [
@@ -60,7 +60,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_leaf-bare_eagleice14",
+        "patrol_id": "mtn_hunt_leaf-bare_eagleice2",
         "biome": "mountainous",
         "season": "leaf-bare",
         "tags": [
@@ -120,7 +120,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_leaf-bare_eagleice15",
+        "patrol_id": "mtn_hunt_leaf-bare_eagleice3",
         "biome": "mountainous",
         "season": "leaf-bare",
         "tags": [
@@ -181,7 +181,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_leaf-bare_eagleice16",
+        "patrol_id": "mtn_hunt_leaf-bare_eagleice4",
         "biome": "mountainous",
         "season": "leaf-bare",
         "tags": [

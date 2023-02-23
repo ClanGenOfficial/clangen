@@ -29,7 +29,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_greenleaf_eagleswim5",
+        "patrol_id": "mtn_hunt_greenleaf_eagleswim1",
         "biome": "mountainous",
         "season": "greenleaf",
         "tags": [
@@ -74,7 +74,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_greenleaf_eagleswim6",
+        "patrol_id": "mtn_hunt_greenleaf_eagleswim2",
         "biome": "mountainous",
         "season": "greenleaf",
         "tags": [
@@ -119,7 +119,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_greenleaf_eagleswim7",
+        "patrol_id": "mtn_hunt_greenleaf_eagleswim3",
         "biome": "mountainous",
         "season": "greenleaf",
         "tags": [
@@ -173,7 +173,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_greenleaf_eagleswim8",
+        "patrol_id": "mtn_hunt_greenleaf_eagleswim4",
         "biome": "mountainous",
         "season": "greenleaf",
         "tags": [
