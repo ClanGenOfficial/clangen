@@ -316,7 +316,7 @@
     "antagonize_fail_text": null
     },
     {
-    "patrol_id": "gen_med_gatheringmoss2",
+    "patrol_id": "fst_med_gatheringmoss2",
     "biome": "forest",
     "season": "Any",
     "tags": ["med_cat", "apprentice", "med_only", "herb", "moss", "big_change", "platonic", "dislike"],
@@ -338,7 +338,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "gen_med_gatheringmoss3",
+    "patrol_id": "fst_med_gatheringmoss3",
     "biome": "forest",
     "season": "Any",
     "tags": ["med_cat", "warrior", "herb", "moss", "big_change", "platonic", "dislike"],
@@ -360,7 +360,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "gen_med_gatheringmoss4",
+    "patrol_id": "fst_med_gatheringmoss4",
     "biome": "forest",
     "season": "Any",
     "tags": ["med_cat", "warrior", "herb", "moss", "big_change", "platonic"],

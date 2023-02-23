@@ -1,6 +1,6 @@
 [
     {
-        "patrol_id": "gen_hunt_mouse1",
+        "patrol_id": "gen_hunt_mouse2",
         "biome": "Any",
         "season": "Any",
         "tags": [
@@ -29,7 +29,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "gen_hunt_mouse2",
+        "patrol_id": "gen_hunt_mouse3",
         "biome": "Any",
         "season": "Any",
         "tags": [

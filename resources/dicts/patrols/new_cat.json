@@ -69,7 +69,7 @@
 
 },
 {
-    "patrol_id": "gen_gen_newkit1",
+    "patrol_id": "gen_gen_newkit2",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat", "new_cat_kit", "reputation", "no_change_fail_rep"],
@@ -356,7 +356,7 @@
     ]
 },
 {
-    "patrol_id": "fst_bord_noise1",
+    "patrol_id": "fst_bord_noise2",
     "biome": "forest",
     "season": "Any",
     "tags": ["border", "battle_injury", "scar", "reputation", "new_cat", "new_cat_apprentice"],
@@ -455,7 +455,7 @@
     ]
 },
 {
-    "patrol_id": "gen_bord_curiouskittypet1",
+    "patrol_id": "gen_bord_curiouskittypet2",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat", "reputation", "scar", "battle_injury", "new_cat_adult"],
@@ -487,7 +487,7 @@
     ]
 },
 {
-    "patrol_id": "gen_bord_injuredcat1",
+    "patrol_id": "gen_bord_injuredcat2",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat", "reputation", "new_cat_adult", "new_cat_injury", "nc_battle_injury"],
