@@ -45,6 +45,7 @@
 		"tags":[
 			"death",
 			"scar",
+			"ONE",
 			"training"
 		],
 		"intro_text":"r_c wanders past an old badger sett overlooking a dried up riverbed, only to freeze. There's new scent here, acrid and sour.",
@@ -107,6 +108,7 @@
 		"tags":[
 			"death",
 			"scar",
+			"ONE",
 			"training"
 		],
 		"intro_text":"p_l wanders past an old badger sett overlooking a dried up riverbed, only to freeze. There's new scent here, acrid and sour.",
@@ -171,7 +173,8 @@
 			"comfort",
 			"injury",
 			"death",
-			"scar"
+			"scar",
+			"BRIDGE"
 		],
 		"intro_text":"Up at the front of the patrol, p_l hears a quiet swish and startled yowling. Turning back, they spot r_c being swallowed by a collapsing sand dune.",
 		"decline_text":"p_l runs back to camp to fetch help.",
@@ -236,7 +239,8 @@
 			"comfort",
 			"injury",
 			"death",
-			"scar"
+			"scar",
+			"TOETRAP"
 		],
 		"intro_text":"Trailing behind the patrol, there's a quiet swish below r_c. They look around wildly, just in time for the world to tip upside-down as the sand dune beneath them collapses.",
 		"decline_text":"Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
@@ -299,7 +303,8 @@
 			"training",
 			"injury",
 			"death",
-			"scar"
+			"scar",
+			"RIGHTEAR"
 		],
 		"intro_text":"Out in the desert training alone, r_c hears a quiet swoosh, and the world disappears as they fall into a collapsing sand dune.",
 		"decline_text":"Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
@@ -346,7 +351,8 @@
 			"training",
 			"apprentice",
 			"injury",
-			"scar"
+			"scar",
+			"SIDE"
 		],
 		"intro_text":"r_c heads out into the desert alone, but maybe an apprentice shouldn't try to do a solo patrol.",
 		"decline_text":"r_c turns back to camp, deciding that this is a bad idea.",
