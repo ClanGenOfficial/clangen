@@ -93,6 +93,8 @@ saves/settings.txt
 saves\
 saves\clanlist.txt
 saves\settings.txt
+saves/currentclan.txt
+saves\currentclan.txt
 
 # pyenv
 #   For a library or package, you might want to ignore these files since the code is
