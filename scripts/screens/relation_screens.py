@@ -542,9 +542,9 @@ class ViewChildrenScreen(Screens):
                 self.family_elements['parent1_image'].disable()
 
             name = str(Cat.all_cats[self.the_cat.parent1].name)
-            if len(name) >= 9:
-                short_name = str(Cat.all_cats[self.the_cat.parent1].name)[0:7]
-                name = short_name + '...'
+            if len(name) >= 8:
+                short_name = name[0:7]
+                name = short_name + '..'
             self.family_elements["parent1_name"] = pygame_gui.elements.UITextBox(name,
                                                                                  scale(pygame.Rect((180, 390), (120, 60))),
                                                                                  object_id="#cat_patrol_info_box"
@@ -557,9 +557,9 @@ class ViewChildrenScreen(Screens):
                 self.family_elements["parent1_image"].disable() #There is no profile for faded cats.
 
                 name = str(parent_ob.name)
-                if 8 <= len(name) >= 10:
-                    short_name = str(parent_ob.name)[0:7]
-                    name = short_name + '...'
+                if 8 <= len(name) >= 8:
+                    short_name = name[0:7]
+                    name = short_name + '..'
                 self.family_elements["parent1_name"] = pygame_gui.elements.UITextBox(name,
                                                                                      scale(pygame.Rect((180, 390), (120, 60))),
                                                                                      object_id="#cat_patrol_info_box"
@@ -584,9 +584,9 @@ class ViewChildrenScreen(Screens):
                 self.family_elements['parent2_image'].disable()
 
             name = str(Cat.all_cats[self.the_cat.parent2].name)
-            if len(name) >= 9:
-                short_name = str(Cat.all_cats[self.the_cat.parent2].name)[0:7]
-                name = short_name + '...'
+            if len(name) >= 8:
+                short_name = name[0:7]
+                name = short_name + '..'
             self.family_elements["parent2_name"] = pygame_gui.elements.UITextBox(name,
                                                                                  scale(pygame.Rect((180, 516), (120, 60))),
                                                                                  object_id="#cat_patrol_info_box"
@@ -600,9 +600,9 @@ class ViewChildrenScreen(Screens):
                 self.family_elements["parent2_image"].disable()  # There is no profile for faded cats.
 
                 name = str(parent_ob.name)
-                if len(name) >= 9:
-                    short_name = str(parent_ob.name)[0:7]
-                    name = short_name + '...'
+                if len(name) >= 8:
+                    short_name = name[0:7]
+                    name = short_name + '..'
                 self.family_elements["parent2_name"] = pygame_gui.elements.UITextBox(name,
                                                                                      scale(pygame.Rect((180, 516), (120, 60))),
                                                                                      object_id="#cat_patrol_info_box"
@@ -768,8 +768,8 @@ class ViewChildrenScreen(Screens):
 
             name = str(cat.name)
             if len(name) >= 7:
-                short_name = str(cat.name)[0:6]
-                name = short_name + '...'
+                short_name = name[0:6]
+                name = short_name + '..'
             self.sibling_elements["sibling_name" + str(i)] = pygame_gui.elements.UILabel(scale(pygame.Rect(
                                                                                                (pos_x - 5, pos_y + 100),
                                                                                                (110, 40))), name,
@@ -821,8 +821,8 @@ class ViewChildrenScreen(Screens):
                 self.offspring_elements["offspring" + str(i)].disable()
 
             name = str(cat.name)
-            if 6 <= len(name) >= 9:
-                short_name = str(cat.name)[0:5]
+            if len(name) >= 7:
+                short_name = name[0:6]
                 name = short_name + '...'
             self.offspring_elements["offspring_name" + str(i)] = pygame_gui.elements.UILabel(scale(pygame.Rect(
                                                                                                    (pos_x - 5, pos_y + 100),
