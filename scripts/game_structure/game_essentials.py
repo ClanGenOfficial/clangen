@@ -603,6 +603,8 @@ game = Game()
 
 
 if not os.path.exists('saves/settings.txt'):
+    if not os.path.exists('saves'):
+        os.mkdir('saves')
     with open('saves/settings.txt', 'w') as write_file:
         write_file.write('')
 game.load_settings()
