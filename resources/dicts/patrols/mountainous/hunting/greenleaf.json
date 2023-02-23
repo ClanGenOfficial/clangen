@@ -1,6 +1,6 @@
 [
     {
-        "patrol_id": "mtn_hunt_heat1",
+        "patrol_id": "mtn_hunt_greenleaf_heat1",
         "biome": "mountainous",
         "season": "greenleaf",
         "tags": [
@@ -29,7 +29,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_eagleswim5",
+        "patrol_id": "mtn_hunt_greenleaf_eagleswim1",
         "biome": "mountainous",
         "season": "greenleaf",
         "tags": [
@@ -74,7 +74,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_eagleswim6",
+        "patrol_id": "mtn_hunt_greenleaf_eagleswim2",
         "biome": "mountainous",
         "season": "greenleaf",
         "tags": [
@@ -119,7 +119,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_eagleswim7",
+        "patrol_id": "mtn_hunt_greenleaf_eagleswim3",
         "biome": "mountainous",
         "season": "greenleaf",
         "tags": [
@@ -173,7 +173,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_eagleswim8",
+        "patrol_id": "mtn_hunt_greenleaf_eagleswim4",
         "biome": "mountainous",
         "season": "greenleaf",
         "tags": [
@@ -405,7 +405,7 @@
         ]
     },
         {
-        "patrol_id": "mtn_hunt_gensquirrel2",
+        "patrol_id": "mtn_hunt_greenleaf_solosquirrel1",
         "biome": "mountainous",
         "season": "greenleaf",
         "tags": [
@@ -423,7 +423,7 @@
             "s_c silently slinks through the underbrush, going undetected until they've pounced - and by then it's far too late for the squirrel to do anything about it."
         ],
         "fail_text": [
-            "p_l breaks a twig as they ready themself to pounce, and the resulting crack alerts the squirrel. It doesn't even spare them a glance as it scurries up the tree and out of sight."
+            "p_l shifts on some pebbles as they ready themself to pounce, and the resulting clatter alerts the squirrel. It doesn't even spare them a glance as it scurries up the tree and out of sight."
         ],
         "win_skills": [
             "good hunter",
@@ -436,7 +436,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "mtn_hunt_genappsquirrel2",
+        "patrol_id": "mtn_hunt_greenleaf_soloappsquirrel1",
         "biome": "mountainous",
         "season": "greenleaf",
         "tags": [
@@ -461,7 +461,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "mtn_hunt_genmentorsquirrel2",
+        "patrol_id": "mtn_hunt_greenleaf_mentorsquirrel1",
         "biome": "mountainous",
         "season": "greenleaf",
         "tags": [
@@ -481,7 +481,7 @@
             "Though they're a little sloppy, and the squirrel quickly spots them, app1 manages to secure the catch in the end! p_l looks pleased, and gives them tips to improve their technique next time."
         ],
         "fail_text": [
-            "A too-high tail brushing against the bushes is all that's needed to scare the squirrel away, and app1 watches in disappointment as it scampers away."
+            "A misplaced step onto loose gravel is all that's needed to scare the squirrel away, and app1 watches in disappointment as it scampers away."
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -489,7 +489,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "mtn_hunt_squirrel_treetoptumble2",
+        "patrol_id": "mtn_hunt_greenleaf_squirrel_treetoptumble1",
         "biome": "mountainous",
         "season": "greenleaf",
        "tags": [
@@ -504,7 +504,7 @@
             "injury",
             "broken bone"
         ],
-        "intro_text": "As the patrol walks through the forest, a loud chittering from above interrupts them. One cat looks up just in time to get a shower of twigs and leaves to the face, while another exclaims aloud as they spot squirrels darting through the branches above.",
+        "intro_text": "As the patrol walks through the wooded slopes, a loud chittering from above interrupts them. One cat looks up just in time to get a shower of twigs and leaves to the face, while another exclaims aloud as they spot squirrels darting through the branches above.",
         "decline_text": "Though they snort in amusement, the patrol decides to move on to easier prey, rather than waste their energy amongst the trees.",
         "chance_of_success": 60,
         "exp": 40,
@@ -530,7 +530,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "mtn_hunt_squirrel2",
+        "patrol_id": "mtn_hunt_greenleaf_groupsquirrel1",
         "biome": "mountainous",
         "season": "greenleaf",
         "tags": [
@@ -541,7 +541,7 @@
             "large_prey1",
             "large_prey2"
         ],
-        "intro_text": "As the patrol walks through the woods, r_c explains an idea they had for squirrel hunting. It sounds a little strange, but perhaps it could work?",
+        "intro_text": "As the patrol walks through the wooded slopes, r_c explains an idea they had for squirrel hunting. It sounds a little strange, but perhaps it could work?",
         "decline_text": "The patrol decides they'd rather not spend time on something that might not work when they could be doing something they know <i>does</i>.",
         "chance_of_success": 60,
         "exp": 20,

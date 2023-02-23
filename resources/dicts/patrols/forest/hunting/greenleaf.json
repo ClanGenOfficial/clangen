@@ -1,6 +1,6 @@
 [
     {
-        "patrol_id": "fst_hunt_heat1",
+        "patrol_id": "fst_hunt_greenleaf_heat1",
         "biome": "forest",
         "season": "greenleaf",
         "tags": [
@@ -35,7 +35,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_twolegsobject1",
+        "patrol_id": "fst_hunt_greenleaf_twolegsobject1",
         "biome": "forest",
         "season": "greenleaf",
         "tags": [
@@ -465,7 +465,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_redvixen4",
+        "patrol_id": "fst_hunt_greenleaf_redvixen4",
         "biome": "forest",
         "season": "greenleaf",
         "tags": [
@@ -532,7 +532,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_redvixen5",
+        "patrol_id": "fst_hunt_greenleaf_redvixen5",
         "biome": "forest",
         "season": "greenleaf",
         "tags": [
@@ -595,7 +595,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_redvixen6",
+        "patrol_id": "fst_hunt_greenleaf_redvixen6",
         "biome": "forest",
         "season": "greenleaf",
         "tags": [
@@ -662,7 +662,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_grayvixen4",
+        "patrol_id": "fst_hunt_greenleaf_grayvixen4",
         "biome": "forest",
         "season": "greenleaf",
         "tags": [
@@ -724,7 +724,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_grayvixen5",
+        "patrol_id": "fst_hunt_greenleaf_grayvixen5",
         "biome": "forest",
         "season": "greenleaf",
         "tags": [
@@ -785,7 +785,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_grayvixen6",
+        "patrol_id": "fst_hunt_greenleaf_grayvixen6",
         "biome": "forest",
         "season": "greenleaf",
         "tags": [
@@ -846,7 +846,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_genmouse2",
+        "patrol_id": "fst_hunt_greenleaf_solomouse1",
         "biome": "forest",
         "season": "greenleaf",
         "tags": [
@@ -877,7 +877,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_genappmouse2",
+        "patrol_id": "fst_hunt_greenleaf_soloappmouse1",
         "biome": "forest",
         "season": "greenleaf",
         "tags": [
@@ -902,7 +902,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "gen_hunt_genmentormouse2",
+        "patrol_id": "gen_hunt_greenleaf_mentormouse1",
         "biome": "forest",
         "season": "greenleaf",
         "tags": [
@@ -930,7 +930,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_mice_ohnotheyrehot2",
+        "patrol_id": "fst_hunt_greenleaf_mice_ohnotheyrehot1",
         "biome": "forest",
         "season": "greenleaf",
         "tags": [
@@ -976,7 +976,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_mice2",
+        "patrol_id": "fst_hunt_greenleaf_groupmice1",
         "biome": "forest",
         "season": "greenleaf",
         "tags": [
@@ -1010,7 +1010,7 @@
         "antagonize_fail_text": null
     },
         {
-        "patrol_id": "fst_hunt_gensquirrel2",
+        "patrol_id": "fst_hunt_greenleaf_solosquirrel1",
         "biome": "forest",
         "season": "greenleaf",
         "tags": [
@@ -1041,7 +1041,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_genappsquirrel2",
+        "patrol_id": "fst_hunt_greenleaf_soloappsquirrel1",
         "biome": "forest",
         "season": "greenleaf",
         "tags": [
@@ -1066,7 +1066,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_genmentorsquirrel2",
+        "patrol_id": "fst_hunt_greenleaf_mentorsquirrel1",
         "biome": "forest",
         "season": "greenleaf",
         "tags": [
@@ -1094,7 +1094,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_squirrel_treetoptumble2",
+        "patrol_id": "fst_hunt_greenleaf_squirrel_treetoptumble1",
         "biome": "forest",
         "season": "greenleaf",
        "tags": [
@@ -1135,7 +1135,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_squirrel2",
+        "patrol_id": "fst_hunt_greenleaf_groupsquirrel1",
         "biome": "forest",
         "season": "greenleaf",
         "tags": [
@@ -1169,56 +1169,56 @@
         "antagonize_fail_text": null
     },
     {
-            "patrol_id": "fst_hunt_bird_swgl",
-            "biome": "forest",
-            "season": "greenleaf",
-            "tags": [
-                "hunting",
-                "minor_injury",
-                "injury",
-                "sprain",
-                "small_prey",
-                "no_fail_prey"
+        "patrol_id": "fst_hunt_greenleaf_solobirdl",
+        "biome": "forest",
+        "season": "greenleaf",
+        "tags": [
+            "hunting",
+            "minor_injury",
+            "injury",
+            "sprain",
+            "small_prey",
+            "no_fail_prey"
+        ],
+        "intro_text": "As p_l walks through the bright foliage of greenleaf, some loud twittering from above catches their ear. A bird! Maybe if they're careful, they can catch it by surprise...",
+        "decline_text": "p_l shakes their head and decides to leave the bird alone. It would be too much work to try and catch it from that high up, anyway.",
+        "chance_of_success": 45,
+        "exp": 25,
+        "success_text": [
+            "p_l manages to climb up the tree without the bird noticing, and within seconds, has a juicy meal dangling from their jaws.",
+            "p_l climbs the tree and manages to catch the bird just before it flies away. They drop down to the ground with pride warming their heart."
+        ],
+        "fail_text": [
+            null,
+            null,
+            null,
+            "p_l has wildly overestimated their climbing ability. The bird flies away before they can make a move, and, trying not to think of how far down the ground is, p_l jumps down...but doesn't quite land on their feet."
+        ],
+        "win_skills": [
+            "great hunter",
+            "fantastic hunter",
+            "smart tactician",
+            "valuable tactician"
             ],
-            "intro_text": "As p_l walks through the bright foliage of greenleaf, some loud twittering from above catches their ear. A bird! Maybe if they're careful, they can catch it by surprise...",
-            "decline_text": "p_l shakes their head and decides to leave the bird alone. It would be too much work to try and catch it from that high up, anyway.",
-            "chance_of_success": 45,
-            "exp": 25,
-            "success_text": [
-                "p_l manages to climb up the tree without the bird noticing, and within seconds, has a juicy meal dangling from their jaws.",
-                "p_l climbs the tree and manages to catch the bird just before it flies away. They drop down to the ground with pride warming their heart."
+        "win_trait": [
+            "adventurous",
+            "careful",
+            "patient",
+            "sneaky",
+            "confident",
+            "daring",
+            "bold"
             ],
-            "fail_text": [
-                null,
-                null,
-                null,
-                "p_l has wildly overestimated their climbing ability. The bird flies away before they can make a move, and, trying not to think of how far down the ground is, p_l jumps down...but doesn't quite land on their feet."
+        "fail_trait": [
+            "nervous"
             ],
-            "win_skills": [
-                "great hunter",
-                "fantastic hunter",
-                "smart tactician",
-                "valuable tactician"
-                ],
-            "win_trait": [
-                "adventurous",
-                "careful",
-                "patient",
-                "sneaky",
-                "confident",
-                "daring",
-                "bold"
-                ],
-            "fail_trait": [
-                "nervous"
-                ],
-            "min_cats": 1,
-            "max_cats": 1,
-            "antagonize_text": null,
-            "antagonize_fail_text": null
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_bird_sagl",
+        "patrol_id": "fst_hunt_greenleaf_soloappbirdl",
         "biome": "forest",
         "season": "greenleaf",
             "tags": [
@@ -1245,7 +1245,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_bird_wagl",
+        "patrol_id": "fst_hunt_greenleaf_mentorbirdl",
         "biome": "forest",
         "season": "greenleaf",
         "tags": [
@@ -1272,7 +1272,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_bird_lggl",
+        "patrol_id": "fst_hunt_greenleaf_groupbirdl",
         "biome": "forest",
         "season": "greenleaf",
         "tags": [
@@ -1332,7 +1332,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_bird_odd",
+        "patrol_id": "fst_hunt_greenleaf_bird_odd1",
         "biome": "forest",
         "season": "greenleaf",
         "tags": [
@@ -1357,7 +1357,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_formergensquirrel_greenleaf1",
+        "patrol_id": "fst_hunt_greenleaf_formergensquirrel1",
         "biome": "forest",
         "season": "greenleaf",
         "tags": [
@@ -1386,7 +1386,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_greenleafvanish1",
+        "patrol_id": "fst_hunt_greenleaf_vanish1",
         "biome": "forest",
         "season": "greenleaf",
         "tags": [
@@ -1439,7 +1439,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_ratsologreenleaf",
+        "patrol_id": "fst_hunt_greenleaf_solorat1",
         "biome": "forest",
         "season": "greenleaf",
         "tags": [
@@ -1463,7 +1463,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_appratsologreenleaf",
+        "patrol_id": "fst_hunt_greenleaf_soloapprat1",
         "biome": "forest",
         "season": "greenleaf",
         "tags": [
@@ -1487,7 +1487,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_warrapppratgreenleaf",
+        "patrol_id": "fst_hunt_greenleaf_mentorrat1",
         "biome": "forest",
         "season": "greenleaf",
         "tags": [
@@ -1515,7 +1515,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_ratswarmgreenleaf",
+        "patrol_id": "fst_hunt_greenleaf_ratswarm1",
         "biome": "forest",
         "season": "greenleaf",
         "tags": [
@@ -1554,7 +1554,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_ratkinggreenleaf1",
+        "patrol_id": "fst_hunt_greenleaf_ratking1",
         "biome": "forest",
         "season": "greenleaf",
         "tags": [
@@ -1594,7 +1594,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_ratkinggreenleaf2",
+        "patrol_id": "fst_hunt_greenleaf_ratking2",
         "biome": "forest",
         "season": "greenleaf",
         "tags": [
@@ -1633,7 +1633,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_lillizard_greenleaf1",
+        "patrol_id": "fst_hunt_greenleaf_lillizard1",
         "biome": "forest",
         "season": "greenleaf",
         "tags": [
@@ -1675,7 +1675,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_lillizard_greenleaf2",
+        "patrol_id": "fst_hunt_greenleaf_lillizard2",
         "biome": "forest",
         "season": "greenleaf",
         "tags": [
@@ -1717,7 +1717,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_vole_formerany1",
+        "patrol_id": "fst_hunt_greenleaf_vole_formerany1",
         "biome": "forest",
         "season": "greenleaf",
         "tags": [
@@ -1746,7 +1746,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_squirrel_formerany1",
+        "patrol_id": "fst_hunt_greenleaf_squirrel_formerany1",
         "biome": "forest",
         "season": "greenleaf",
         "tags": [

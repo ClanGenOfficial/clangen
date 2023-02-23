@@ -1,6 +1,6 @@
 [
     {
-        "patrol_id": "pln_hunt_heat1",
+        "patrol_id": "pln_hunt_greenleaf_heat1",
         "biome": "plains",
         "season": "greenleaf",
         "tags": [
@@ -32,7 +32,7 @@
         ]
     },
     {
-        "patrol_id": "pln_hunt_twolegsobject1",
+        "patrol_id": "pln_hunt_greenleaf_twolegsobject1",
         "biome": "plains",
         "season": "greenleaf",
         "tags": [
@@ -270,7 +270,7 @@
         ]
     },
     {
-        "patrol_id": "pln_hunt_redvixen5",
+        "patrol_id": "pln_hunt_greenleaf_redvixen5",
         "biome": "plains",
         "season": "greenleaf",
         "tags": [
@@ -333,7 +333,7 @@
         ]
     },
     {
-        "patrol_id": "pln_hunt_redvixen6",
+        "patrol_id": "pln_hunt_greenleaf_redvixen6",
         "biome": "plains",
         "season": "greenleaf",
         "tags": [
@@ -398,7 +398,7 @@
         ]
     },
     {
-        "patrol_id": "pln_hunt_redvixen4",
+        "patrol_id": "pln_hunt_greenleaf_redvixen4",
         "biome": "plains",
         "season": "greenleaf",
         "tags": [
@@ -697,7 +697,7 @@
         ]
     },
     {
-        "patrol_id": "pln_hunt_gensquirrel2",
+        "patrol_id": "pln_hunt_greenleaf_solosquirrel1",
         "biome": "plains",
         "season": "greenleaf",
         "tags": [
@@ -728,7 +728,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "pln_hunt_genappsquirrel2",
+        "patrol_id": "pln_hunt_greenleaf_soloappsquirrel1",
         "biome": "plains",
         "season": "greenleaf",
         "tags": [
@@ -754,7 +754,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "pln_hunt_genmentorsquirrel2",
+        "patrol_id": "pln_hunt_greenleaf_mentorsquirrel1",
         "biome": "plains",
         "season": "greenleaf",
         "tags": [
@@ -782,7 +782,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "pln_hunt_squirrel_burrowbusiness2",
+        "patrol_id": "pln_hunt_greenleaf_squirrel_burrowbusiness1",
         "biome": "plains",
         "season": "greenleaf",
         "tags": [
@@ -825,7 +825,7 @@
         ]
     },
     {
-        "patrol_id": "pln_hunt_squirrel2",
+        "patrol_id": "pln_hunt_greenleaf_groupsquirrel1",
         "biome": "plains",
         "season": "greenleaf",
         "tags": [
@@ -859,7 +859,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "pln_hunt_greenleaf_genmouse1",
+        "patrol_id": "pln_hunt_greenleaf_solomouse1",
         "biome": "plains",
         "season": "greenleaf",
         "tags": [
@@ -890,7 +890,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "pln_hunt_greenleaf_genappmouse1",
+        "patrol_id": "pln_hunt_greenleaf_soloappmouse1",
         "biome": "plains",
         "season": "greenleaf",
         "tags": [
@@ -915,7 +915,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "pln_hunt_greenleaf_genmentormouse1",
+        "patrol_id": "pln_hunt_greenleaf_mentormouse1",
         "biome": "plains",
         "season": "greenleaf",
         "tags": [
@@ -943,7 +943,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "pln_hunt_mice_greenleaf_appshowoff1",
+        "patrol_id": "pln_hunt_greenleaf_mice_appshowoff1",
         "biome": "plains",
         "season": "greenleaf",
         "tags": [
@@ -983,7 +983,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "pln_hunt_mice_greenleaf1",
+        "patrol_id": "pln_hunt_greenleaf_groupmice1",
         "biome": "plains",
         "season": "greenleaf",
         "tags": [

@@ -1,6 +1,6 @@
 [
     {
-        "patrol_id": "bch_hunt_redvixen7",
+        "patrol_id": "bch_hunt_leaf-fall_redvixen7",
         "biome": "beach",
         "season": "leaf-fall",
         "tags": [
@@ -64,7 +64,7 @@
         ]
     },
     {
-        "patrol_id": "bch_hunt_redvixen8",
+        "patrol_id": "bch_hunt_leaf-fall_redvixen8",
         "biome": "beach",
         "season": "leaf-fall",
         "tags": [
@@ -122,7 +122,7 @@
         ]
     },
     {
-        "patrol_id": "bch_hunt_redvixen9",
+        "patrol_id": "bch_hunt_leaf-fall_redvixen9",
         "biome": "beach",
         "season": "leaf-fall",
         "tags": [
@@ -186,7 +186,7 @@
         ]
     },
     {
-        "patrol_id": "bch_hunt_grayvixen7",
+        "patrol_id": "bch_hunt_leaf-fall_grayvixen7",
         "biome": "beach",
         "season": "leaf-fall",
         "tags": [
@@ -244,7 +244,7 @@
         ]
     },
     {
-        "patrol_id": "bch_hunt_grayvixen8",
+        "patrol_id": "bch_hunt_leaf-fall_grayvixen8",
         "biome": "beach",
         "season": "leaf-fall",
         "tags": [
@@ -302,7 +302,7 @@
         ]
     },
     {
-        "patrol_id": "bch_hunt_grayvixen9",
+        "patrol_id": "bch_hunt_leaf-fall_grayvixen9",
         "biome": "beach",
         "season": "leaf-fall",
         "tags": [
@@ -363,7 +363,7 @@
         ]
     },
     {
-        "patrol_id": "bch_hunt_gensquirrel3",
+        "patrol_id": "bch_hunt_leaf-fall_solosquirrel1",
         "biome": "beach",
         "season": "leaf-fall",
         "tags": [
@@ -394,7 +394,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "bch_hunt_genappsquirrel3",
+        "patrol_id": "bch_hunt_leaf-fall_soloappsquirrel1",
         "biome": "beach",
         "season": "leaf-fall",
         "tags": [
@@ -419,7 +419,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "bch_hunt_genmentorsquirrel3",
+        "patrol_id": "bch_hunt_leaf-fall_mentorsquirrel1",
         "biome": "beach",
         "season": "leaf-fall",
         "tags": [
@@ -447,7 +447,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "bch_hunt_squirrel_rattlesnakerumble3",
+        "patrol_id": "bch_hunt_leaf-fall_squirrel_rattlesnakerumble1",
         "biome": "beach",
         "season": "leaf-fall",
         "tags": [
@@ -492,7 +492,7 @@
             ]
     },
     {
-        "patrol_id": "bch_hunt_squirrel3",
+        "patrol_id": "bch_hunt_leaf-fall_groupsquirrel1",
         "biome": "beach",
         "season": "leaf-fall",
         "tags": [

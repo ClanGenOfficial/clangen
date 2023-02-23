@@ -377,7 +377,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_redvixen1",
+        "patrol_id": "fst_hunt_newleaf_redvixen1",
         "biome": "forest",
         "season": "newleaf",
         "tags": [
@@ -444,7 +444,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_redvixen2",
+        "patrol_id": "fst_hunt_newleaf_redvixen2",
         "biome": "forest",
         "season": "newleaf",
         "tags": [
@@ -507,7 +507,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_redvixen3",
+        "patrol_id": "fst_hunt_newleaf_redvixen3",
         "biome": "forest",
         "season": "newleaf",
         "tags": [
@@ -574,7 +574,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_grayvixen1",
+        "patrol_id": "fst_hunt_newleaf_grayvixen1",
         "biome": "forest",
         "season": "newleaf",
         "tags": [
@@ -636,7 +636,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_grayvixen2",
+        "patrol_id": "fst_hunt_newleaf_grayvixen2",
         "biome": "forest",
         "season": "newleaf",
         "tags": [
@@ -697,7 +697,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_grayvixen3",
+        "patrol_id": "fst_hunt_newleaf_grayvixen3",
         "biome": "forest",
         "season": "newleaf",
         "tags": [
@@ -759,7 +759,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_genmouse1",
+        "patrol_id": "fst_hunt_newleaf_solomouse1",
         "biome": "forest",
         "season": "newleaf",
         "tags": [
@@ -767,15 +767,15 @@
             "no_app",
             "medium_prey"
         ],
-        "intro_text": "r_c catches scent of a mouse nearby. A perfect opportunity to pick up one of the first bounties newleaf brings to the forest.",
-        "decline_text": "Your patrol ignores the mouse.",
+        "intro_text": "p_l catches scent of a mouse nearby. A perfect opportunity to pick up one of the first bounties newleaf brings to the forest.",
+        "decline_text": "p_l ignores the mouse.",
         "success_text": [
-            "r_c locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. r_c waggles their haunches and leaps, pinning the mouse beneath a paw as they make the killing bite.",
-            "r_c pinpoints the location of the prey and begins creeping forward. They're almost within pouncing distance when the mouse suddenly bolts. With a lash of their tail, r_c leaps after the mouse, barely snagging it before it reaches a burrow. They purr in satisfaction as prey-blood hits their tongue.",
+            "p_l locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. p_l waggles their haunches and leaps, pinning the mouse beneath a paw as they make the killing bite.",
+            "p_l pinpoints the location of the prey and begins creeping forward. They're almost within pouncing distance when the mouse suddenly bolts. With a lash of their tail, p_l leaps after the mouse, barely snagging it before it reaches a burrow. They purr in satisfaction as prey-blood hits their tongue.",
             "s_c immediately drops into a practised crouch, shimmying flawlessly along the ground and taking the perfectly plump mouse completely by surprise."
         ],
         "fail_text": [
-            "r_c narrowly misses the mouse."
+            "p_l narrowly misses the mouse."
         ],
         "chance_of_success": 60,
         "exp": 10,
@@ -790,7 +790,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_genappmouse1",
+        "patrol_id": "fst_hunt_newleaf_soloappmouse1",
         "biome": "forest",
         "season": "newleaf",
         "tags": [
@@ -799,15 +799,15 @@
             "medium_prey"
         ],
         "intro_text": "app1 catches scent of a mouse nearby. A perfect opportunity to pick up one of the first bounties newleaf brings to the forest.",
-        "decline_text": "Your patrol ignores the mouse.",
+        "decline_text": "app1 ignores the mouse.",
         "chance_of_success": 40,
         "exp": 20,
         "success_text": [
-            "r_c pounces on the mouse, with a squeak of surprise from both prey and apprentice.",
+            "app1 pounces on the mouse, with a squeak of surprise from both prey and apprentice.",
             "app1 leaps onto the mouse, an easy kill! They're really getting the hang of hunting!"
         ],
         "fail_text": [
-            "Your patrol narrowly misses the mouse."
+            "app1 narrowly misses the mouse."
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -815,7 +815,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "gen_hunt_genmentormouse1",
+        "patrol_id": "gen_hunt_newleaf_mentormouse1",
         "biome": "forest",
         "season": "newleaf",
         "tags": [
@@ -843,7 +843,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_mice_ohnotheyrehot1",
+        "patrol_id": "fst_hunt_newleaf_mice_ohnotheyrehot1",
         "biome": "forest",
         "season": "newleaf",
         "tags": [
@@ -889,7 +889,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_mice1",
+        "patrol_id": "fst_hunt_newleaf_groupmice1",
         "biome": "forest",
         "season": "newleaf",
         "tags": [
@@ -923,7 +923,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_gensquirrel1",
+        "patrol_id": "fst_hunt_newleaf_solosquirrel1",
         "biome": "forest",
         "season": "newleaf",
         "tags": [
@@ -954,7 +954,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_genappsquirrel1",
+        "patrol_id": "fst_hunt_newleaf_soloappsquirrel1",
         "biome": "forest",
         "season": "newleaf",
         "tags": [
@@ -979,7 +979,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_genmentorsquirrel1",
+        "patrol_id": "fst_hunt_newleaf_mentorsquirrel1",
         "biome": "forest",
         "season": "newleaf",
         "tags": [
@@ -1007,7 +1007,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_squirrel_treetoptumble1",
+        "patrol_id": "fst_hunt_newleaf_squirrel_treetoptumble1",
         "biome": "forest",
         "season": "newleaf",
         "tags": [
@@ -1048,7 +1048,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_squirrel1",
+        "patrol_id": "fst_hunt_newleaf_groupsquirrel1",
         "biome": "forest",
         "season": "newleaf",
         "tags": [
@@ -1082,7 +1082,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_formergensquirrel_newleaf1",
+        "patrol_id": "fst_hunt_newleaf_formergensquirrel1",
         "biome": "forest",
         "season": "newleaf",
         "tags": [
@@ -1111,7 +1111,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_newleafvanish1",
+        "patrol_id": "fst_hunt_newleaf_vanish1",
         "biome": "forest",
         "season": "newleaf",
         "tags": [
@@ -1164,7 +1164,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_ratsolonewleaf",
+        "patrol_id": "fst_hunt_newleaf_solorat1",
         "biome": "forest",
         "season": "newleaf",
         "tags": [
@@ -1194,7 +1194,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_appratsolonewleaf",
+        "patrol_id": "fst_hunt_newleaf_soloapprat1",
         "biome": "forest",
         "season": "newleaf",
         "tags": [
@@ -1219,7 +1219,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_warrappratnewleaf",
+        "patrol_id": "fst_hunt_newleaf_mentorrat1",
         "biome": "forest",
         "season": "newleaf",
         "tags": [
@@ -1249,7 +1249,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_ratswarmnewleaf",
+        "patrol_id": "fst_hunt_newleaf_ratswarm1",
         "biome": "forest",
         "season": "newleaf",
         "tags": [
@@ -1289,7 +1289,7 @@
         ]
     },
     {    
-        "patrol_id": "fst_hunt_ratkingnewleaf1",
+        "patrol_id": "fst_hunt_newleaf_ratking1",
         "biome": "forest",
         "season": "newleaf",
         "tags": [
@@ -1336,7 +1336,7 @@
         ]
     },
     {    
-        "patrol_id": "fst_hunt_ratkingnewleaf2",
+        "patrol_id": "fst_hunt_newleaf_ratking2",
         "biome": "forest",
         "season": "newleaf",
         "tags": ["hunting",
@@ -1377,7 +1377,7 @@
         ]
     },
     {
-        "patrol_id": "fst_hunt_lillizard_newleaf1",
+        "patrol_id": "fst_hunt_newleaf_lillizard1",
         "biome": "forest",
         "season": "newleaf",
         "tags": [
@@ -1419,7 +1419,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "fst_hunt_lillizard_newleaf2",
+        "patrol_id": "fst_hunt_newleaf_lillizard2",
         "biome": "forest",
         "season": "newleaf",
         "tags": [

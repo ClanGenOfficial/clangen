@@ -1,6 +1,6 @@
 [
     {
-        "patrol_id": "mtn_hunt_eagleice13",
+        "patrol_id": "mtn_hunt_leaf-bare_eagleice1",
         "biome": "mountainous",
         "season": "leaf-bare",
         "tags": [
@@ -60,7 +60,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_eagleice14",
+        "patrol_id": "mtn_hunt_leaf-bare_eagleice2",
         "biome": "mountainous",
         "season": "leaf-bare",
         "tags": [
@@ -120,7 +120,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_eagleice15",
+        "patrol_id": "mtn_hunt_leaf-bare_eagleice3",
         "biome": "mountainous",
         "season": "leaf-bare",
         "tags": [
@@ -181,7 +181,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_eagleice16",
+        "patrol_id": "mtn_hunt_leaf-bare_eagleice4",
         "biome": "mountainous",
         "season": "leaf-bare",
         "tags": [
@@ -242,7 +242,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_leafbaresnowstorm1",
+        "patrol_id": "mtn_hunt_leaf-bare_snowstorm1",
         "biome": "mountainous",
         "season": "leaf-bare",
         "tags": [
@@ -302,7 +302,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_leafbaresnowstorm2",
+        "patrol_id": "mtn_hunt_leaf-bare_snowstorm2",
         "biome": "mountainous",
         "season": "leaf-bare",
         "tags": [
@@ -355,7 +355,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_leafbaresnowstorm3",
+        "patrol_id": "mtn_hunt_leaf-bare_snowstorm3",
         "biome": "mountainous",
         "season": "leaf-bare",
         "tags": [
@@ -611,7 +611,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_gensquirrel4",
+        "patrol_id": "mtn_hunt_leaf-bare_solosquirrel1",
         "biome": "mountainous",
         "season": "leaf-bare",
         "tags": [
@@ -629,7 +629,7 @@
             "s_c silently slinks through the underbrush, going undetected until they've pounced - and by then it's far too late for the squirrel to do anything about it."
         ],
         "fail_text": [
-            "p_l breaks a twig as they ready themself to pounce, and the resulting crack alerts the squirrel. It doesn't even spare them a glance as it scurries up the tree and out of sight."
+            "p_l shifts on some pebbles as they ready themself to pounce, and the resulting clatter alerts the squirrel. It doesn't even spare them a glance as it scurries up the tree and out of sight."
         ],
         "win_skills": [
             "good hunter",
@@ -642,7 +642,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "mtn_hunt_genappsquirrel4",
+        "patrol_id": "mtn_hunt_leaf-bare_soloappsquirrel1",
         "biome": "mountainous",
         "season": "leaf-bare",
         "tags": [
@@ -667,7 +667,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "mtn_hunt_genmentorsquirrel4",
+        "patrol_id": "mtn_hunt_leaf-bare_mentorsquirrel1",
         "biome": "mountainous",
         "season": "leaf-bare",
         "tags": [
@@ -687,7 +687,7 @@
             "Though they're a little sloppy, and the squirrel quickly spots them, app1 manages to secure the catch in the end! p_l looks pleased, and gives them tips to improve their technique next time."
         ],
         "fail_text": [
-            "A too-high tail brushing against the bushes is all that's needed to scare the squirrel away, and app1 watches in disappointment as it scampers away."
+            "A misplaced step onto loose gravel is all that's needed to scare the squirrel away, and app1 watches in disappointment as it scampers away."
         ],
         "min_cats": 2,
         "max_cats": 2,
@@ -695,7 +695,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "mtn_hunt_squirrel_treetoptumble4",
+        "patrol_id": "mtn_hunt_leaf-bare_squirrel_treetoptumble1",
         "biome": "mountainous",
         "season": "leaf-bare",
         "tags": [
@@ -708,7 +708,7 @@
             "injury",
             "broken bone"
         ],
-        "intro_text": "As the patrol walks through the forest, a loud chittering from above interrupts them. One cat looks up just in time to get a shower of twigs and dead leaves to the face, while another exclaims aloud as they spot squirrels darting through the branches above.",
+        "intro_text": "As the patrol walks through the snowy wooded slopes, a loud chittering from above interrupts them. One cat looks up just in time to get a shower of twigs and dead leaves to the face, while another exclaims aloud as they spot squirrels darting through the branches above.",
         "decline_text": "Though they snort in amusement, the patrol decides to move on to easier prey, rather than waste their energy amongst the trees.",
         "chance_of_success": 40,
         "exp": 40,
@@ -734,7 +734,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "mtn_hunt_squirrel4",
+        "patrol_id": "mtn_hunt_leaf-bare_groupsquirrel1",
         "biome": "mountainous",
         "season": "leaf-bare",
         "tags": [
@@ -774,7 +774,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "mtn_hunt_bluejay_leafbare1",
+        "patrol_id": "mtn_hunt_leaf-bare_bluejay1",
         "biome": "mountainous",
         "season": "leaf-bare",
         "tags": [

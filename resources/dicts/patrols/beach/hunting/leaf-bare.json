@@ -1,6 +1,6 @@
 [
     {
-        "patrol_id": "bch_hunt_leafbaresnowstorm1",
+        "patrol_id": "bch_hunt_leaf-bare_snowstorm1",
         "biome": "beach",
         "season": "leaf-bare",
         "tags": [
@@ -49,7 +49,7 @@
         ]
     },
     {
-        "patrol_id": "bch_hunt_leafbaresnowstorm2",
+        "patrol_id": "bch_hunt_leaf-bare_snowstorm2",
         "biome": "beach",
         "season": "leaf-bare",
         "tags": [
@@ -86,7 +86,7 @@
         ]
     },
     {
-        "patrol_id": "bch_hunt_leafbaresnowstorm3",
+        "patrol_id": "bch_hunt_leaf-bare_snowstorm3",
         "biome": "beach",
         "season": "leaf-bare",
         "tags": [
@@ -131,12 +131,11 @@
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": [
-            "r_c caught a chill while hunting in leaf-bare.",
-            null
+            "r_c caught a chill while hunting in leaf-bare."
         ]
     },
     {
-        "patrol_id": "bch_hunt_gensquirrel4",
+        "patrol_id": "bch_hunt_leaf-bare_solosquirrel1",
         "biome": "beach",
         "season": "leaf-bare",
         "tags": [
@@ -167,7 +166,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "bch_hunt_genappsquirrel4",
+        "patrol_id": "bch_hunt_leaf-bare_soloappsquirrel1",
         "biome": "beach",
         "season": "leaf-bare",
         "tags": [
@@ -192,7 +191,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "bch_hunt_genmentorsquirrel4",
+        "patrol_id": "bch_hunt_leaf-bare_mentorsquirrel1",
         "biome": "beach",
         "season": "leaf-bare",
         "tags": [
@@ -220,7 +219,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "bch_hunt_squirrel_rattlesnakerumble4",
+        "patrol_id": "bch_hunt_leaf-bare_squirrel_rattlesnakerumble1",
         "biome": "beach",
         "season": "leaf-bare",
         "tags": [
@@ -265,7 +264,7 @@
             ]
     },
     {
-        "patrol_id": "bch_hunt_squirrel4",
+        "patrol_id": "bch_hunt_leaf-bare_groupsquirrel1",
         "biome": "beach",
         "season": "leaf-bare",
         "tags": [
