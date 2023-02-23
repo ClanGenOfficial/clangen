@@ -519,7 +519,7 @@ class Events():
                 
         lost_cat = None
         for id, cat in Cat.outside_cats.items():
-            if cat.outside and cat.status not in ['kittypet', 'loner', 'rogue']:
+            if cat.outside and cat.status not in ['kittypet', 'loner', 'rogue'] and not cat.exiled and not cat.dead:
                 lost_cat = cat
                 break
         if lost_cat:
@@ -883,6 +883,12 @@ class Events():
         previous_alive_mentor = None
         dead_parents = []
         living_parents = []
+        mentor_type = {
+            "medicine cat": ["medicine cat"],
+            "warrior": ["warrior", "deputy", "leader", "elder"],
+            "mediator": ["mediator"]
+        }
+
         try:
             # Get all the ceremonies for the role ----------------------------------------
             possible_ceremonies.update(self.ceremony_id_by_tag[promoted_to])
@@ -890,6 +896,7 @@ class Events():
             # Gather ones for mentor. -----------------------------------------------------
             tags = []
 
+            # CURRENT MENTOR TAG CHECK
             if cat.mentor:
                 if Cat.fetch_cat(cat.mentor).status == "leader":
                     tags.append("yes_leader_mentor")
@@ -899,22 +906,34 @@ class Events():
             else:
                 tags.append("no_mentor")
 
-            # Dead mentor
             for c in reversed(cat.former_mentor):
                 if Cat.fetch_cat(c) and Cat.fetch_cat(c).dead:
                     tags.append("dead_mentor")
                     dead_mentor = Cat.fetch_cat(c)
                     break
 
-            # Living Former mentors who are also the leader do not count.
-            for c in reversed(cat.former_mentor):
-                if Cat.fetch_cat(c) and not Cat.fetch_cat(c).dead and not Cat.fetch_cat(c).outside:
-                    if Cat.fetch_cat(c).status == "leader":
-                        tags.append("alive_leader_mentor")
+            # Unlike dead mentors, living mentors must be VALID - they must have the correct status for the role the cat
+            # is being promoted too.
+            valid_living_former_mentors = []
+            for c in cat.former_mentor:
+                if not(Cat.fetch_cat(c).dead or Cat.fetch_cat(c).outside):
+                    if promoted_to in mentor_type:
+                        if Cat.fetch_cat(c).status in mentor_type[promoted_to]:
+                            valid_living_former_mentors.append(c)
                     else:
-                        tags.append("alive_mentor")
-                    previous_alive_mentor = Cat.fetch_cat(c)
-                    break
+                        valid_living_former_mentors.append(c)
+
+            # ALL FORMER MENTOR TAG CHECKS
+            if valid_living_former_mentors:
+                #  Living Former mentors. Grab the latest living valid mentor.
+                previous_alive_mentor = Cat.fetch_cat(valid_living_former_mentors[-1])
+                if previous_alive_mentor.status == "leader":
+                    tags.append("alive_leader_mentor")
+                else:
+                    tags.append("alive_mentor")
+            else:
+                # This tag means the cat has no living, valid mentors.
+                tags.append("no_valid_previous_mentor")
 
             # Now we add the mentor stuff:
             temp = possible_ceremonies.intersection(self.ceremony_id_by_tag["general_mentor"])

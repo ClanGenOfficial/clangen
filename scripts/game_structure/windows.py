@@ -29,7 +29,7 @@ class SaveCheck(UIWindow):
             self.main_menu_button = UIImageButton(
                 scale(pygame.Rect((146, 310), (305, 60))),
                 "",
-                object_id="#quit_game_button",
+                object_id="#smallquit_button",
                 container=self
         )
             self.message = f"Would you like to save your game before exiting? If you don't, progress may be lost!"

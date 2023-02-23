@@ -1,6 +1,6 @@
 [
 {
-    "patrol_id": "gen_gen_newcat1",
+    "patrol_id": "gen_gen_newcat_hostile1",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat", "new_cat_adult", "reputation", "kits"],
@@ -23,7 +23,7 @@
 
 },
 {
-    "patrol_id": "gen_gen_newcatkittypet1",
+    "patrol_id": "gen_gen_newcatkittypet_hostile1",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat", "new_cat_adult", "reputation", "kits"],
@@ -46,7 +46,7 @@
 
 },
 {
-    "patrol_id": "gen_gen_newcat2",
+    "patrol_id": "gen_gen_newcatthunderpath2",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat", "new_cat_adult", "new_cat_injury", "nc_blunt_force_injury", "reputation", "no_change_fail_rep"],
@@ -69,7 +69,7 @@
 
 },
 {
-    "patrol_id": "gen_gen_newkit1",
+    "patrol_id": "gen_gen_newkit3",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat", "new_cat_kit", "reputation", "no_change_fail_rep"],
@@ -92,7 +92,7 @@
 
 },
 {
-    "patrol_id": "gen_gen_newmed1",
+    "patrol_id": "gen_gen_newmed_hostile1",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat", "reputation", "new_cat_med", "no_change_fail_rep", "kits"],
@@ -114,10 +114,10 @@
     "max_cats": 6
 },
 {
-    "patrol_id": "gen_gen_lonerchase1",
+    "patrol_id": "gen_gen_lonerchase2",
     "biome": "Any",
     "season": "Any",
-    "tags": ["border", "new_cat", "reputation", "scar", "new_cat_injury", "nc_blunt_force_injury", "no_change_fail_rep"],
+    "tags": ["border", "new_cat", "reputation", "scar", "LEFTEAR", "new_cat_injury", "nc_blunt_force_injury", "no_change_fail_rep"],
     "intro_text": "Your patrol cautiously moves towards the sound of barking. Near the border, they spot a dog chasing something. Oh no, it's a cat!",
     "success_text": [
             "The patrol swiftly jumps into action. They capture the dog's attention and draw it away from the cat. r_c stays hidden and goes to the cat while the rest of the patrol lures the dog away. They're unharmed, and this display of bravery makes them want to join the Clan!",
@@ -140,10 +140,10 @@
     "max_cats": 5
 },
 {
-    "patrol_id": "fst_bord_noise1",
+    "patrol_id": "fst_bord_noise3",
     "biome": "forest",
     "season": "Any",
-    "tags": ["border", "battle_injury", "scar", "death", "reputation"],
+    "tags": ["border", "battle_injury", "scar", "BRIDGE", "death", "reputation"],
     "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from a nearby bush.",
     "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
     "chance_of_success": 60,
