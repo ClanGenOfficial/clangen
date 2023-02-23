@@ -217,22 +217,22 @@ class PatrolScreen(Screens):
             self.elements['add_six'].enable()
             self.elements["random"].enable()
 
+            # making sure meds don't get the option for other patrols
+            med = False
+            for cat in self.current_patrol:
+                if cat.status in ['medicine cat', 'medicine cat apprentice']:
+                    med = True
+                    self.patrol_type = 'med'
+            if med is False and self.current_patrol:
+                self.elements['herb'].disable()
+                if self.patrol_type == 'med':
+                    self.patrol_type = 'general'
+
             if game.clan.game_mode != 'classic':
                 self.elements['paw'].enable()
                 self.elements['mouse'].enable()
                 self.elements['claws'].enable()
                 self.elements['herb'].enable()
-
-                # making sure meds don't get the option for other patrols
-                med = False
-                for cat in self.current_patrol:
-                    if cat.status in ['medicine cat', 'medicine cat apprentice']:
-                        med = True
-                        self.patrol_type = 'med'
-                if med is False and self.current_patrol:
-                    self.elements['herb'].disable()
-                    if self.patrol_type == 'med':
-                        self.patrol_type = 'general'
 
                 self.elements['info'].kill()  # clearing the text before displaying new text
 
