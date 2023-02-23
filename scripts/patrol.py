@@ -733,11 +733,11 @@ class Patrol():
                     outcome = 3
 
             if outcome == 2:
-                self.handle_deaths(self.patrol_random_cat)
+                self.handle_deaths_and_gone(self.patrol_random_cat)
             elif outcome == 4:
-                self.handle_deaths(self.patrol_fail_stat_cat)
+                self.handle_deaths_and_gone(self.patrol_fail_stat_cat)
             elif outcome == 6:
-                self.handle_deaths(self.patrol_leader)
+                self.handle_deaths_and_gone(self.patrol_leader)
             elif outcome == 3 or outcome == 5:
                 if game.clan.game_mode == 'classic':
                     self.handle_scars(outcome)
@@ -1176,7 +1176,7 @@ class Patrol():
             final_exp = gained_exp / lvl_modifier
             cat.experience = cat.experience + final_exp
 
-    def handle_deaths(self, cat):
+    def handle_deaths_and_gone(self, cat):
         if "no_body" in self.patrol_event.tags:
             body = False
         else:
@@ -1285,13 +1285,9 @@ class Patrol():
 
         # cats disappearing on patrol is also handled under this def for simplicity's sake
         elif "gone" in self.patrol_event.tags:
-            if len(self.patrol_event.fail_text) > 4 and self.final_fail == self.patrol_event.fail_text[4]:
-                self.results_text.append(f"{self.patrol_fail_stat_cat.name} died.")
-                self.patrol_fail_stat_cat.die(body)
-            else:
-                self.results_text.append(f"{self.patrol_random_cat.name} has been lost.")
-                self.patrol_random_cat.gone()
-                self.patrol_random_cat.grief(body=False)
+            self.results_text.append(f"{cat.name} has been lost.")
+            cat.gone()
+            cat.grief(body=False)
 
         elif "disaster_gone" in self.patrol_event.tags:
             for cat in self.patrol_cats:
