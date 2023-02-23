@@ -9,6 +9,7 @@
             "large_prey",
             "fighting",
             "scar",
+            "NECKBITE",
             "big_bite_injury",
             "clan_to_patrol",
             "respect",
@@ -74,6 +75,7 @@
             "large_prey",
             "fighting",
             "scar",
+            "NECKBITE",
             "big_bite_injury",
             "clan_to_patrol",
             "respect",
@@ -138,6 +140,7 @@
             "large_prey",
             "fighting",
             "scar",
+            "THROAT",
             "big_bite_injury",
             "clan_to_patrol",
             "respect"
@@ -201,6 +204,7 @@
             "fighting",
             "death",
             "scar",
+            "NECKBITE",
             "big_bite_injury",
             "respect",
             "trust",
@@ -267,6 +271,7 @@
         "tags": [
             "fighting",
             "scar",
+            "NECKBITE",
             "big_bite_injury",
             "respect",
             "trust",
@@ -330,6 +335,7 @@
             "fighting",
             "death",
             "scar",
+            "THREE",
             "big_bite_injury",
             "respect",
             "trust",
@@ -400,6 +406,7 @@
             "rel_patrol",
             "fighting",
             "scar",
+            "NECKBITE",
             "big_bite_injury"
         ],
         "intro_text": "Your patrol catches the scent of a fox - but is it red, or swift?",
@@ -452,6 +459,7 @@
             "large_prey2",
             "fighting",
             "scar",
+            "NECKBITE",
             "respect",
             "clan_to_r_c",
             "small_bite_injury"
@@ -563,6 +571,7 @@
             "small_prey",
             "fighting",
             "scar",
+            "NECKBITE",
             "death",
             "no_body",
             "small_bite_injury"

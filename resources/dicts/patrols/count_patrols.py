@@ -21,7 +21,6 @@ def get_patrol_details(path):
         print(path, "is not in the correct patrol format. It may not be a patrol .json.")
         return
 
-
     for p_ in patrols:
         ALL_PATROLS.append(p_["patrol_id"])
 

@@ -234,7 +234,7 @@ class Name():
         "Mitski", "Mittens", "Mochi", "Mocha", "Mojo", "Mollie", "Molly", "Molly Murder Mittens", "Monika", "Monster",
         "Monte", "Monzi", "Moon", "Mop", "Morel", "Moxie", "Mr. Kitty", "Mr. Kitty Whiskers", "Mr. Mistoffolees", "Mr. Whiskers", "Mr. Wigglebottom",
         "Mucha", "Munkustrap", "Mungojerrie", "Murder", "Mushroom", "Mitaine", "Myko", "Neel", "Nagi", "Nakeena", "Neil", "Nemo", "Nessie", "Nick",
-        "Nightmare", "Nikki", "Niles", "Ninja", "Nintendo", "Nisha", "Nitro", "Noodle", "Nottingham", "Norman" "Nova",
+        "Nightmare", "Nikki", "Niles", "Ninja", "Nintendo", "Nisha", "Nitro", "Noodle", "Nottingham", "Norman", "Nova",
         "Nugget", "Nuggets", "Nuka", "Nutella", "O'Leary", "Oakley", "Oapie", "Obi Wan", "Odetta", "Old Deuteronomy", "Old Man Sam",
         "Oleander", "Olga", "Oliver", "Oliva", "Ollie", "Omelet", "Onyx", "Oops", "Oopsy Dazey", "Ophelia", "Oreo",
         "Orion", "Oscar", "Otto", "Owen", "Pangur", "Patience", "Paulina", "Peach", "Peanut", "Peanut Wigglebutt", "Pear", "Pearl",
@@ -258,7 +258,7 @@ class Name():
         "Trinket", "Trip", "Triscuit", "Trixie", "Trouble", "Trouble Nuggets", "Troublemaker", "Tucker", "Tuffnut",
         "Tumble", "Tumblebrutus", "Turbo", "Twilight", "Twinkle Lights", "Twister", "Twix", "Toastee", "Taurus", "Ula", "Ulyssa", "Victoria",
         "Union", "Uriel", "Vanilla", "Van Pelt", "Vaxx", "Venture", "Via", "Victor", "Vida", "Viktor", "Vinnie", "Vinyl",
-        "Violet", "Vivienne", "Void", "Voltage", "Vox", "Virgo", "Wanda", "Warren Peace", "Webby", "Wendy", "Whiskers",
+        "Velociraptor", "Violet", "Vivienne", "Void", "Voltage", "Vox", "Virgo", "Wanda", "Warren Peace", "Webby", "Wendy", "Whiskers",
         "Whisper", "Wigglebutt", "Wiggity Wacks", "Windy", "Wishbone", "Wisp", "Wisteria", "Whiz Kid", "Worm", "X'ek",
         "Xelle", "Yaoyao", "Yen", "Yeza", "Yoshi", "Zelda", "Zim", "Zoe", "Zorro",
         ]
@@ -330,7 +330,6 @@ class Name():
         if self.status in ["deputy", "warrior", "medicine cat", "elder", "mediator"]:
             return self.prefix + self.suffix
         elif self.status in ["kittypet", "loner", "rogue"]:
-            self.suffix = ""
             return self.prefix
         else:
             return self.prefix + self.special_suffixes[self.status]

@@ -95,6 +95,10 @@ class Screens():
         game.switches['cur_screen'] = new_screen
         game.switch_screens = True
 
+        game.rpc.update()
+
+        
+
     def __init__(self, name=None):
         self.name = name
         if name is not None:
