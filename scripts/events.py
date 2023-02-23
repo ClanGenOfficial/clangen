@@ -8,7 +8,7 @@ except ImportError:
 from scripts.cat.appearance_utility import plural_acc_names
 from scripts.cat.names import names
 from scripts.cat.cats import Cat, cat_class
-from scripts.cat.pelts import plant_accessories, wild_accessories
+from scripts.cat.pelts import plant_accessories, wild_accessories, collars
 from scripts.clan import HERBS
 from scripts.conditions import medical_cats_condition_fulfilled, get_amount_cat_for_one_medic
 from scripts.events_module.misc_events import MiscEvents
@@ -78,8 +78,18 @@ class Events():
                     f"{game.clan.name}Clan doesn't have enough prey for next moon!"))
             needed_amount = game.clan.freshkill_pile.amount_food_needed()
             print(f"current freshkill amount: {game.clan.freshkill_pile.total_amount}, needed {needed_amount}")
-
-        if random.randint(1,20) == 1:  
+        
+        kittypet_ub = game.config["cotc_generation"]["kittypet_chance"]
+        rogue_ub = game.config["cotc_generation"]["rogue_chance"]
+        loner_ub = game.config["cotc_generation"]["loner_chance"]
+        if random.randint(1,kittypet_ub) == 1:  
+            self.create_outside_cat("kittypet")   
+        if random.randint(1,rogue_ub) == 1:  
+            self.create_outside_cat("rogue")  
+        if random.randint(1,loner_ub) == 1:  
+            self.create_outside_cat("loner")   
+        rejoin_upperbound = game.config["lost_cat"]["rejoin_chance"]
+        if random.randint(1,rejoin_upperbound) == 1:  
             self.handle_lost_cats_return()   
 
         for cat in Cat.all_cats.copy().values():
@@ -107,6 +117,8 @@ class Events():
                         cat.dead = True
                         if cat.exiled:
                             text = f'Rumors reach your Clan that the exiled {str(cat.name)} has died recently.'
+                        elif cat.status in ['kittypet', 'loner', 'rogue']:
+                            text = f'Rumors reach your Clan that the {cat.status} {str(cat.name)} has died recently.'
                         else:
                             cat.outside = False
                             text = f"Will they reach StarClan, even so far away? {str(cat.name)} isn't sure, " \
@@ -498,11 +510,16 @@ class Events():
             chosen_event = random.choice(possible_events)
             game.cur_events_list.append(Single_Event(chosen_event, "health"))
             game.herb_events_list.append(chosen_event)
-
+            
     def handle_lost_cats_return(self):
+        for id, cat in Cat.all_cats.items():
+            if cat.outside and cat.ID not in Cat.outside_cats.keys():
+                # The outside-value must be set to True before the cat can go to cotc
+                Cat.outside_cats.update({cat.ID: cat})
+                
         lost_cat = None
         for id, cat in Cat.outside_cats.items():
-            if cat.outside and cat.status not in ['kittypet', 'loner', 'rogue']:
+            if cat.outside and cat.status not in ['kittypet', 'loner', 'rogue'] and not cat.exiled and not cat.dead:
                 lost_cat = cat
                 break
         if lost_cat:
@@ -511,6 +528,18 @@ class Events():
             lost_cat.outside = False
             game.cur_events_list.append(Single_Event(random.choice(text), "misc", [lost_cat.ID]))
             lost_cat.add_to_clan()
+            
+    def create_outside_cat(self, status):
+        if status == 'kittypet':
+            name = random.choice(names.loner_names)
+        elif status in ['loner', 'rogue']:
+            name = random.choice(names.loner_names + names.normal_prefixes)
+        new_cat = Cat(prefix=name, suffix = None, status=status, gender=random.choice(['female', 'male']))
+        if status == 'kittypet':
+            new_cat.accessory = random.choice(collars)
+        new_cat.outside = True
+        game.clan.add_cat(new_cat)
+        game.clan.add_to_outside(new_cat)
 
     def handle_fading(self, cat):
         if game.settings["fading"] and not cat.prevent_fading and cat.ID != game.clan.instructor.ID and \
@@ -854,6 +883,12 @@ class Events():
         previous_alive_mentor = None
         dead_parents = []
         living_parents = []
+        mentor_type = {
+            "medicine cat": ["medicine cat"],
+            "warrior": ["warrior", "deputy", "leader", "elder"],
+            "mediator": ["mediator"]
+        }
+
         try:
             # Get all the ceremonies for the role ----------------------------------------
             possible_ceremonies.update(self.ceremony_id_by_tag[promoted_to])
@@ -861,6 +896,7 @@ class Events():
             # Gather ones for mentor. -----------------------------------------------------
             tags = []
 
+            # CURRENT MENTOR TAG CHECK
             if cat.mentor:
                 if Cat.fetch_cat(cat.mentor).status == "leader":
                     tags.append("yes_leader_mentor")
@@ -870,22 +906,34 @@ class Events():
             else:
                 tags.append("no_mentor")
 
-            # Dead mentor
             for c in reversed(cat.former_mentor):
                 if Cat.fetch_cat(c) and Cat.fetch_cat(c).dead:
                     tags.append("dead_mentor")
                     dead_mentor = Cat.fetch_cat(c)
                     break
 
-            # Living Former mentors who are also the leader do not count.
-            for c in reversed(cat.former_mentor):
-                if Cat.fetch_cat(c) and not Cat.fetch_cat(c).dead and not Cat.fetch_cat(c).outside:
-                    if Cat.fetch_cat(c).status == "leader":
-                        tags.append("alive_leader_mentor")
+            # Unlike dead mentors, living mentors must be VALID - they must have the correct status for the role the cat
+            # is being promoted too.
+            valid_living_former_mentors = []
+            for c in cat.former_mentor:
+                if not(Cat.fetch_cat(c).dead or Cat.fetch_cat(c).outside):
+                    if promoted_to in mentor_type:
+                        if Cat.fetch_cat(c).status in mentor_type[promoted_to]:
+                            valid_living_former_mentors.append(c)
                     else:
-                        tags.append("alive_mentor")
-                    previous_alive_mentor = Cat.fetch_cat(c)
-                    break
+                        valid_living_former_mentors.append(c)
+
+            # ALL FORMER MENTOR TAG CHECKS
+            if valid_living_former_mentors:
+                #  Living Former mentors. Grab the latest living valid mentor.
+                previous_alive_mentor = Cat.fetch_cat(valid_living_former_mentors[-1])
+                if previous_alive_mentor.status == "leader":
+                    tags.append("alive_leader_mentor")
+                else:
+                    tags.append("alive_mentor")
+            else:
+                # This tag means the cat has no living, valid mentors.
+                tags.append("no_valid_previous_mentor")
 
             # Now we add the mentor stuff:
             temp = possible_ceremonies.intersection(self.ceremony_id_by_tag["general_mentor"])
