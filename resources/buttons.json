@@ -315,7 +315,7 @@
             },
             "disabled_image":
             {
-				"path": "resources/images/buttons/smallquit_unavailable.png"
+				"path": "resources/images/buttons/smallquit_hover.png"
 			}
         }
     },
