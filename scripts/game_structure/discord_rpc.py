@@ -90,7 +90,7 @@ class _DiscordRPC():
                 small_image="discord",
                 small_text=f"Managing {cats_amount} cats",
                 start=self.start_time,
-                buttons=[{"label": "Join The Server", "url": "https://google.com"}],
+                buttons=[{"label": "Join The Server", "url": "https://discord.gg/clangen"}],
             )
 
     def close(self):
