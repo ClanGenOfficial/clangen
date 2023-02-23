@@ -46,7 +46,7 @@
 
 },
 {
-    "patrol_id": "gen_gen_newcat3",
+    "patrol_id": "gen_gen_newcatthunderpath3",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat", "new_cat_adult", "new_cat_injury", "nc_blunt_force_injury", "reputation", "no_change_fail_rep"],

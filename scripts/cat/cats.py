@@ -27,6 +27,7 @@ from .appearance_utility import (
 from scripts.conditions import Illness, Injury, PermanentCondition, get_amount_cat_for_one_medic, \
     medical_cats_condition_fulfilled
 import bisect
+import pygame
 
 from scripts.utility import get_med_cats, get_personality_compatibility, event_text_adjust, update_sprite
 from scripts.game_structure.game_essentials import game, screen
@@ -2432,6 +2433,8 @@ class Cat():
             file_name = "faded_elder.png"
 
         self.sprite = image_cache.load_image(f"sprites/faded/{file_name}").convert_alpha()
+        self.big_sprite = pygame.transform.scale(self.sprite, (100, 100))
+        self.large_sprite = pygame.transform.scale(self.big_sprite, (150, 150))
 
     @staticmethod
     def fetch_cat(cat_id: str):
