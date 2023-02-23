@@ -93,7 +93,7 @@ class _DiscordRPC():
                 buttons=[{"label": "Join The Server", "url": "https://discord.gg/clangen"}],
             )
 
-    def close(self): # Call this when the game closes.
+    def close(self):
         if self.connected:
             self.rpc.close()
             self.connected = False
