@@ -594,30 +594,6 @@ class Patrol():
         elif game.clan.game_mode == "cruel season":
             gm_modifier = 3
 
-        # resetting stat cats and then finding new stat cats
-        self.patrol_fail_stat_cat = None
-        self.patrol_win_stat_cat = None
-        if self.patrol_event.win_skills:
-            for cat in self.patrol_cats:
-                if "app_stat" in self.patrol_event.tags and cat.status not in ['apprentice', "medicine cat apprentice"]:
-                    continue
-                if "adult_stat" in self.patrol_event.tags and cat.status in ['apprentice', "medicine cat apprentice"]:
-                    continue
-                if cat.skill in self.patrol_event.win_skills:
-                    self.patrol_win_stat_cat = cat
-        if self.patrol_event.win_trait and not self.patrol_win_stat_cat:
-            for cat in self.patrol_cats:
-                if cat.trait in self.patrol_event.win_trait:
-                    self.patrol_win_stat_cat = cat
-        if self.patrol_event.fail_skills:
-            for cat in self.patrol_cats:
-                if cat.skill in self.patrol_event.fail_skills:
-                    self.patrol_fail_stat_cat = cat
-        if self.patrol_event.fail_trait and not self.patrol_fail_stat_cat:
-            for cat in self.patrol_cats:
-                if cat.trait in self.patrol_event.fail_trait:
-                    self.patrol_fail_stat_cat = cat
-
         # if patrol contains cats with autowin skill, chance of success is high. otherwise it will calculate the
         # chance by adding the patrolevent's chance of success plus the patrol's total exp
         success_chance = self.patrol_event.chance_of_success + int(
