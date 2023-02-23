@@ -28,8 +28,8 @@ EXILED_CATS = {
 
 OUTSIDE_CATS = {
     "cat_to": ['is thinking about (cat)'],
-    "cat_from": ['is thinking about (cat) as they wander far from Clan territory.'],
-    "both": ['wonders where (cat) is right now. ']
+    "cat_from": ['is thinking about (cat) as they wander far from Clan territory'],
+    "both": ['wonders where (cat) is right now']
 }
 
 # weights of the stat change
