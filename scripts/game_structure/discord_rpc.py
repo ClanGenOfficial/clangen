@@ -97,3 +97,4 @@ class _DiscordRPC():
         if self.connected:
             self.rpc.close()
             self.connected = False
+            
