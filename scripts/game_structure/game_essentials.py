@@ -246,6 +246,7 @@ class Game():
         # First, we need to make sure the saves folder exists
         if not os.path.exists('saves'):
             os.makedirs('saves')
+            print('Created saves folder')
             return None
 
         # Now we can get a list of all the folders in the saves folder
@@ -277,7 +278,9 @@ class Game():
         
         # Now we can return the list of clans
         if not clan_list:
+            print('No clans found')
             return None
+        # print('Clans found:', clan_list)
         return clan_list
 
     def save_clanlist(self, loaded_clan=None):
