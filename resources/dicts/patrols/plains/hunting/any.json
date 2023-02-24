@@ -856,7 +856,8 @@
         "tags": [
             "hunting",
             "gone",
-            "small_prey"
+            "small_prey",
+	    "scrapes"
         ],
         "intro_text": "r_c decides to hunt out near the Twoleg dens.",
         "decline_text": "On second thought, they decide to re-line their nest today instead.",
@@ -917,7 +918,8 @@
         "biome": "plains",
         "season": "Any",
         "tags": [
-            "app_stat", "hunting",
+            "app_stat", 
+            "hunting",
             "gone",
             "apprentice",
             "medium_prey0",
@@ -1046,7 +1048,8 @@
         "biome": "plains",
         "season": "Any",
         "tags": [
-            "app_stat", "hunting",
+            "app_stat", 
+	    "hunting",
             "gone",
             "apprentice",
             "romantic",

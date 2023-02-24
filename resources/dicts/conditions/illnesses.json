@@ -538,7 +538,7 @@
         "risks": [
             {
                 "name": "lasting grief",
-                "chance": 50
+                "chance": 100
             },
             {
                 "name": "constant nightmares",

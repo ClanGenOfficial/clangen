@@ -22,6 +22,7 @@ from re import sub
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked  # , UIImageTextBox, UISpriteButton
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
 from scripts.cat.names import names
+from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE
 
 
 # ---------------------------------------------------------------------------- #
@@ -106,8 +107,15 @@ def bs_blurb_text(cat):
         'guided1': "This cat used to be a kittypet, but after dreaming of starry-furred cats, they followed their whispers to the Clan.",
         'guided2': "This cat used to live a rough life as a rogue. While wandering, they found a set of starry pawprints, and followed them to the Clan.",
         'guided3': "This cat used to live as a loner. A starry-furred cat appeared to them one day, and then led them to the Clan.",
-        'guided4': "This cat used to live in a different Clan, until a sign from StarClan told them to leave."
-
+        'guided4': "This cat used to live in a different Clan, until a sign from StarClan told them to leave.",
+        'orphaned3': "This cat was found as a kit among the wreckage of a Monster with no parents in sight and got brought to live in the Clan.",
+        'orphaned4': "This cat was found as a kit hiding near a place of battle where there were no survivors and got brought to live in the Clan.",
+        'orphaned5': "This cat was found as a kit hiding near their parent's bodies and got brought to live in the Clan.",
+        'refugee5': "This cat got washed away from their former territory in a flood that destroyed their home but was glad to find a new home in their new Clan here.",
+        'disgraced2': "This cat was exiled from their old Clan for something they didn't do and came here to seek safety.",
+        'disgraced3': "This cat once held a high rank in another Clan but was exiled for reasons they refuse to share.",
+        'other_clan1': "This cat grew up in another Clan but chose to leave that life and join the Clan they now live in."
+        
     }
     return backstory_text.get(backstory, "")
 
@@ -153,14 +161,21 @@ def backstory_text(cat):
         'otherclan': 'formerly from another Clan',
         'otherclan2': 'formerly from another Clan',
         'otherclan3': 'formerly from another Clan',
+        'refugee5': 'formerly from another Clan',
+        'other_clan1': 'formerly from another Clan',
         'guided4': 'formerly from another Clan',
         'ostracized_warrior': 'ostracized warrior',
         'disgraced': 'disgraced',
+        'disgraced2': 'disgraced',
+        'disgraced3': 'disgraced',
         'retired_leader': 'retired leader',
         'refugee': 'refugee',
         'tragedy_survivor': 'survivor of a tragedy',
         'orphaned': 'orphaned',
-        'orphaned2': 'orphaned'
+        'orphaned2': 'orphaned',
+        'orphaned3': 'orphaned',
+        'orphaned4': 'orphaned',
+        'orphaned5': 'orphaned'
     }
 
     if bs_display in backstory_map:
@@ -894,7 +909,7 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # NUTRITION INFO (if the game is in the correct mode)
-        if game.clan.game_mode in ["expanded", "cruel season"] and the_cat.is_alive():
+        if game.clan.game_mode in ["expanded", "cruel season"] and the_cat.is_alive() and FRESHKILL_ACTIVE:
             nutr = None
             if the_cat.ID in game.clan.freshkill_pile.nutrition_info:
                 nutr = game.clan.freshkill_pile.nutrition_info[the_cat.ID]
@@ -1923,6 +1938,12 @@ class ChangeNameScreen(Screens):
                                                                         placeholder_text=
                                                                         self.the_cat.name.special_suffixes[
                                                                             self.the_cat.name.status]
+                                                                        , manager=MANAGER)
+            self.suffix_entry_box.disable()  # You can't change a special suffix
+        elif self.the_cat.name.status in ['kittypet', 'loner', 'rogue']:
+            self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((800, 400), (360, 60))),
+                                                                        placeholder_text=
+                                                                        ""
                                                                         , manager=MANAGER)
             self.suffix_entry_box.disable()  # You can't change a special suffix
         else:
