@@ -172,7 +172,7 @@ class SwitchClanScreen(Screens):
                                        object_id="#main_menu_button", manager=MANAGER)
         self.info = pygame_gui.elements.UITextBox(
             'Note: This will close the game.\n When you open it next, it should have the new clan.',
-            scale(pygame.Rect((200, 1080), (1200, 140))), object_id=get_text_box_theme(), manager=MANAGER)
+            scale(pygame.Rect((200, 1200), (1200, 140))), object_id=get_text_box_theme(), manager=MANAGER)
 
         self.current_clan = pygame_gui.elements.UITextBox("", scale(pygame.Rect((200, 200), (1200, 140))),
                                                           object_id=get_text_box_theme(), manager=MANAGER)
@@ -208,11 +208,11 @@ class SwitchClanScreen(Screens):
                 y_pos = 378
 
         
-        self.next_page_button = UIImageButton(scale(pygame.Rect((912, 1200), (68, 68))), "", object_id="#arrow_right_button"
+        self.next_page_button = UIImageButton(scale(pygame.Rect((912, 1080), (68, 68))), "", object_id="#arrow_right_button"
                                               , manager=MANAGER)
-        self.previous_page_button = UIImageButton(scale(pygame.Rect((620, 1200), (68, 68))), "",
+        self.previous_page_button = UIImageButton(scale(pygame.Rect((620, 1080), (68, 68))), "",
                                                   object_id="#arrow_left_button", manager=MANAGER)
-        self.page_number = pygame_gui.elements.UITextBox("", scale(pygame.Rect((680, 1200), (220, 60))),
+        self.page_number = pygame_gui.elements.UITextBox("", scale(pygame.Rect((680, 1080), (220, 60))),
                                                          object_id=get_text_box_theme()
                                                          , manager=MANAGER) 
         self.page = 0
