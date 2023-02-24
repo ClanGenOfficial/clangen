@@ -130,10 +130,8 @@ while True:
                 pygame.display.quit()
                 pygame.quit()
                 sys.exit()
-            elif not game.is_closing:
-                game.is_closing = True
-                # Display "Would you like to save before......."
-                SaveCheck(game.switches['cur_screen'], False)
+            else:
+                SaveCheck(game.switches['cur_screen'], False, None)
 
 
         # MOUSE CLICK
