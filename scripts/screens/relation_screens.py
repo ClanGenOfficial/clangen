@@ -677,13 +677,13 @@ class ViewChildrenScreen(Screens):
             if self.the_cat.ID in [
                 Cat.all_cats[x].parent1,
                 Cat.all_cats[x].parent2
-            ]:
+            ] and Cat.all_cats[x] not in self.all_offspring:
                 self.all_offspring.append(Cat.all_cats[x])
 
         # Add faded offspring
         for cat in self.the_cat.faded_offspring:
             cat_ob = Cat.load_faded_cat(cat)
-            if cat_ob:
+            if cat_ob and cat_ob not in self.all_offspring:
                 self.all_offspring.append(cat_ob)
 
         self.offspring_page_number = 1  # Current sibling page
