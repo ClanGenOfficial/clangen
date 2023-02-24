@@ -1,5 +1,4 @@
 import random
-from typing import Union
 
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.game_structure.game_essentials import game
@@ -251,7 +250,7 @@ class Freshkill_Events():
     #                                helper function                               #
     # ---------------------------------------------------------------------------- #
 
-    def get_filtered_possibilities(self, possible_events: list, needed_tags: list, cat: Cat, other_cat: Union[Cat, None]) -> list:
+    def get_filtered_possibilities(self, possible_events: list, needed_tags: list, cat: Cat, other_cat: Cat|None) -> list:
         """
         Returns a filtered list of possible events for a given list of tags.
 
@@ -298,7 +297,7 @@ class Freshkill_Events():
                     final_events.append(event)
         return final_events
 
-    def handle_history_death(self, event: Single_Event, cat: Cat, other_cat: Union[Cat, None]) -> None:
+    def handle_history_death(self, event: Single_Event, cat: Cat, other_cat: Cat|None) -> None:
         """
         Handles death and history for a given event.
 
