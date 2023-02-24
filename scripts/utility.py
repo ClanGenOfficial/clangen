@@ -723,6 +723,12 @@ def update_sprite(cat):
                 temp = sprites.sprites['fadedf' + str(cat.age_sprites[cat.age] + offset)].copy()
                 temp.blit(new_sprite, (0, 0))
                 new_sprite = temp
+            
+            if cat.outside:
+                temp = sprites.sprites['fadeur' + str(cat.age_sprites[cat.age] + offset)].copy()
+                temp.blit(new_sprite, (0, 0))
+                new_sprite = temp
+
             else:
                 temp = sprites.sprites['fadestarclan' + str(cat.age_sprites[cat.age] + offset)].copy()
                 temp.blit(new_sprite, (0, 0))
