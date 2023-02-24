@@ -110,9 +110,18 @@ class SwitchClanScreen(Screens):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.main_menu:
                 self.change_screen('start screen')
-            elif event.ui_element in self.clan_buttons:
-                game.clan.switch_clans(self.clan_name[self.clan_buttons.index(
-                    event.ui_element)])  # Please ignore how ugly this is thanks.
+            elif event.ui_element == self.next_page_button:
+                self.page += 1
+                self.update_page()
+            elif event.ui_element == self.previous_page_button:
+                self.page -= 1
+                self.update_page()
+            else:
+                for page in self.clan_buttons:
+                    if event.ui_element in page:
+                        game.clan.switch_clans(self.clan_name[self.page][page.index(event.ui_element)])
+                        # print(self.clan_name[self.page][page.index(event.ui_element)])
+                
 
     def exit_screen(self):
         self.main_menu.kill()
@@ -124,9 +133,18 @@ class SwitchClanScreen(Screens):
 
         del self.screen  # No need to keep that in memory.
 
-        for button in self.clan_buttons:
-            button.kill()
-        self.clan_buttons = []
+        pagezero = False
+        for page in self.clan_buttons:
+            for button in page:
+                button.kill()
+            
+            if pagezero:
+                del page
+
+            pagezero = True
+        pagezero = False
+        self.clan_buttons = [[]]
+        self.clan_name = [[]]
 
     def screen_switches(self):
         self.screen = pygame.transform.scale(pygame.image.load("resources/images/clan_saves_frame.png").convert_alpha(),
@@ -146,21 +164,60 @@ class SwitchClanScreen(Screens):
 
         self.clan_list = game.read_clans()
 
-        self.clan_buttons = []
-        self.clan_name = []
+        self.clan_buttons = [[]]
+        self.clan_name = [[]]
         i = 0
         y_pos = 378
         for clan in self.clan_list[1:]:
-            self.clan_name.append(clan)
-            self.clan_buttons.append(
+            self.clan_name[-1].append(clan)
+            self.clan_buttons[-1].append(
                 pygame_gui.elements.UIButton(scale(pygame.Rect((600, y_pos), (400, 78))), clan + "Clan",
                                              object_id="#saved_clan", manager=MANAGER))
             y_pos += 82
             i += 1
-            if i >= 7:
-                break
+            if i >= 8:
+                self.clan_buttons.append([])
+                self.clan_name.append([])
+                i = 0
+                y_pos = 378
+
+        
+        self.next_page_button = UIImageButton(scale(pygame.Rect((912, 1200), (68, 68))), "", object_id="#arrow_right_button"
+                                              , manager=MANAGER)
+        self.previous_page_button = UIImageButton(scale(pygame.Rect((620, 1200), (68, 68))), "",
+                                                  object_id="#arrow_left_button", manager=MANAGER)
+        self.page_number = pygame_gui.elements.UITextBox("", scale(pygame.Rect((680, 1200), (220, 60))),
+                                                         object_id=get_text_box_theme()
+                                                         , manager=MANAGER) 
+        self.page = 0
+
+        
+        self.update_page()
 
         return super().screen_switches()
+
+    def update_page(self):
+
+        if self.page == 0:
+            self.previous_page_button.disable()
+        else:
+            self.previous_page_button.enable()
+
+        if self.page >= len(self.clan_buttons) - 1:
+            self.next_page_button.disable()
+        else:
+            self.next_page_button.enable()
+
+        self.page_number.set_text(f"Page {self.page + 1} of {len(self.clan_buttons)}")
+
+        for page in self.clan_buttons:
+            for button in page:
+                button.hide()
+
+        for button in self.clan_buttons[self.page]:
+            button.show()
+
+
 
     def on_use(self):
         screen.blit(self.screen, (580 / 1600 * screen_x, 300 / 1400 * screen_y))
