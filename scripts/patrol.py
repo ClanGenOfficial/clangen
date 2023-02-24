@@ -653,9 +653,9 @@ class Patrol():
             if self.patrol_event.tags is not None:
                 if "other_clan" in self.patrol_event.tags:
                     if antagonize:
-                        self.handle_clan_relations(difference=int(-2), antagonize=True)
+                        self.handle_clan_relations(difference=int(-2), antagonize=True, outcome=outcome)
                     else:
-                        self.handle_clan_relations(difference=int(1), antagonize=False)
+                        self.handle_clan_relations(difference=int(1), antagonize=False, outcome=outcome)
                 elif "new_cat" in self.patrol_event.tags:
                     if antagonize:
                         self.handle_reputation(-10)
@@ -746,9 +746,9 @@ class Patrol():
             if self.patrol_event.tags is not None:
                 if "other_clan" in self.patrol_event.tags:
                     if antagonize:
-                        self.handle_clan_relations(difference=int(-1), antagonize=True)
+                        self.handle_clan_relations(difference=int(-1), antagonize=True, outcome=outcome)
                     else:
-                        self.handle_clan_relations(difference=int(-1), antagonize=False)
+                        self.handle_clan_relations(difference=int(-1), antagonize=False, outcome=outcome)
                 elif "new_cat" in self.patrol_event.tags:
                     if antagonize:
                         self.handle_reputation(-5)
@@ -1490,7 +1490,10 @@ class Patrol():
             if len(relevant_patrol_tags) == 0:
                 amount = int(PREY_REQUIREMENT["warrior"] * len(self.patrol_cats) / 2)
                 game.clan.freshkill_pile.add_freshkill(amount)
-                self.results_text.append(f"The patrol still manages to catch some amount of prey.")
+                if len(patrol.patrol_cats) == 1:
+                    self.results_text.append(f"{self.patrol_leader_name} still manages to bring home some amount of prey.")
+                else:
+                    self.results_text.append(f"The patrol still manages to bring home some amount of prey.")
             return
 
         prey_amount_per_cat = 0
@@ -1524,9 +1527,11 @@ class Patrol():
         if game.clan.game_mode != "classic":
             game.clan.freshkill_pile.add_freshkill(total_amount)
             if total_amount > 0:
-                self.results_text.append(f"Each cat catches a {prey_size} amount of prey.")
+                if len(patrol.patrol_cats) == 1:
+                    self.results_text.append(f"{patrol.patrol_leader_name} brings back a {prey_size} amount of prey.")
+                self.results_text.append(f"Each cat brings back a {prey_size} amount of prey.")
 
-    def handle_clan_relations(self, difference, antagonize):
+    def handle_clan_relations(self, difference, antagonize, outcome):
         """
         relations with other clans
         """
@@ -1538,13 +1543,17 @@ class Patrol():
                 difference = 0
             elif "otherclan_antag_nochangefail" in self.patrol_event.tags and antagonize and not self.success:
                 difference = 0
-            change_clan_relations(other_clan, difference)
-            if difference > 0 and self.patrol_event.patrol_id != "gen_bord_otherclan3":
+
+            if f"success_reldown{outcome}" in self.patrol_event.tags:
+                difference = -1
+                insert = "worsened"
+            elif difference > 0 and self.patrol_event.patrol_id != "gen_bord_otherclan3":
                 insert = "improved"
             elif difference == 0:
                 insert = "remained neutral"
             else:
                 insert = "worsened"
+            change_clan_relations(other_clan, difference)
             self.results_text.append(f"Relations with {other_clan} have {insert}.")
 
     def handle_mentor_app_pairing(self):
