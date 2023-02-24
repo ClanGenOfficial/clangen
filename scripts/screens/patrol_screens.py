@@ -748,7 +748,7 @@ class PatrolScreen(Screens):
 
         # if we have both types of stat cats and the patrol is too small then we drop the win stat cat
         # this is to prevent cases where a stat cat and the random cat are the same cat
-        if len(patrol.patrol_cats) <= 2 and patrol.patrol_win_stat_cat and patrol.patrol_fail_stat_cat:
+        if len(patrol.patrol_cats) == 2 and patrol.patrol_win_stat_cat and patrol.patrol_fail_stat_cat:
             patrol.patrol_win_stat_cat = None
 
         # here we try to ensure that the random cat is not the same as either stat cat type or the patrol leader
@@ -763,7 +763,7 @@ class PatrolScreen(Screens):
                 print('counting')
                 if (patrol.patrol_win_stat_cat or patrol.patrol_fail_stat_cat) == patrol.patrol_random_cat \
                         or patrol.patrol_random_cat == patrol.patrol_leader:
-                    if len(patrol.patrol_cats) <= 2:
+                    if len(patrol.patrol_cats) == 2:
                         print('remove all stat cats')
                         patrol.patrol_fail_stat_cat = None
                         patrol.patrol_win_stat_cat = None
