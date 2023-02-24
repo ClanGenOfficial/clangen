@@ -644,7 +644,7 @@ class Cat():
             self.status = 'warrior'
         elif self.status == 'apprentice' and self.moons >= 12:
             self.status_change('warrior')
-            involved_cats = [self]
+            involved_cats = [self.ID]
             game.cur_events_list.append(Single_Event('A long overdue warrior ceremony is held for ' + str(self.name.prefix) + 'paw. They smile as they finally become a warrior of the Clan and are now named ' + str(self.name) + '.', "ceremony", involved_cats))
         elif self.status == 'kitten' and self.moons >= 12:
             self.status_change('warrior')
@@ -652,11 +652,11 @@ class Cat():
             game.cur_events_list.append(Single_Event('A long overdue warrior ceremony is held for ' + str(self.name.prefix) + 'kit. They smile as they finally become a warrior of the Clan and are now named ' + str(self.name) + '.', "ceremony", involved_cats))
         elif self.status == 'kitten' and self.moons >= 6:
             self.status_change('apprentice')
-            involved_cats = [self]
+            involved_cats = [self.ID]
             game.cur_events_list.append(Single_Event('A long overdue apprentice ceremony is held for ' + str(self.name.prefix) + 'kit. They smile as they finally become a warrior of the Clan and are now named ' + str(self.name) + '.', "ceremony", involved_cats))
         elif self.status in ['kittypet', 'loner', 'rogue']:
             if self.moons < 6:
-                self.status_change('kitten')
+                self.status = "kitten"
             elif self.moons < 12:
                 self.status_change('apprentice')
             elif self.moons < 120:
@@ -1543,6 +1543,8 @@ class Cat():
             moons_until = randint(moons_until - 1, moons_until + 1)  # creating a range in which a condition can present
             if moons_until < 0:
                 moons_until = 0
+            if self.status != 'kitten':
+                moons_until = -2
         elif born_with is False:
             moons_until = 0
 

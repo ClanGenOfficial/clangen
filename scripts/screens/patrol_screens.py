@@ -223,10 +223,7 @@ class PatrolScreen(Screens):
                 if cat.status in ['medicine cat', 'medicine cat apprentice']:
                     med = True
                     self.patrol_type = 'med'
-            if med is False and self.current_patrol:
-                self.elements['herb'].disable()
-                if self.patrol_type == 'med':
-                    self.patrol_type = 'general'
+
 
             if game.clan.game_mode != 'classic':
                 self.elements['paw'].enable()
@@ -235,6 +232,11 @@ class PatrolScreen(Screens):
                 self.elements['herb'].enable()
 
                 self.elements['info'].kill()  # clearing the text before displaying new text
+
+                if med is False and self.current_patrol:
+                    self.elements['herb'].disable()
+                    if self.patrol_type == 'med':
+                        self.patrol_type = 'general'
 
                 if self.patrol_type == 'general':
                     text = 'random patrol type'
@@ -748,7 +750,7 @@ class PatrolScreen(Screens):
 
         # if we have both types of stat cats and the patrol is too small then we drop the win stat cat
         # this is to prevent cases where a stat cat and the random cat are the same cat
-        if len(patrol.patrol_cats) <= 2 and patrol.patrol_win_stat_cat and patrol.patrol_fail_stat_cat:
+        if len(patrol.patrol_cats) == 2 and patrol.patrol_win_stat_cat and patrol.patrol_fail_stat_cat:
             patrol.patrol_win_stat_cat = None
 
         # here we try to ensure that the random cat is not the same as either stat cat type or the patrol leader
@@ -763,7 +765,7 @@ class PatrolScreen(Screens):
                 print('counting')
                 if (patrol.patrol_win_stat_cat or patrol.patrol_fail_stat_cat) == patrol.patrol_random_cat \
                         or patrol.patrol_random_cat == patrol.patrol_leader:
-                    if len(patrol.patrol_cats) <= 2:
+                    if len(patrol.patrol_cats) == 2:
                         print('remove all stat cats')
                         patrol.patrol_fail_stat_cat = None
                         patrol.patrol_win_stat_cat = None
