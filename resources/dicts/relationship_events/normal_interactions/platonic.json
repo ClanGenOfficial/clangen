@@ -63,9 +63,34 @@
 			"interactions":[
 				"m_c is telling a story to r_c.",
 				"m_c is sharing prey with r_c."
+				
 			],
 			"reaction_random_cat":{
 				"platonic": "increase"
+			}
+		},
+		{
+			"id":"platonic_kit_inc_med1",
+			"interactions":[
+				"m_c plays mossball with r_c.",
+				"m_c lets r_c play with their favorite toy.",
+				"m_c pretends to be a warrior with r_c.",
+				"m_c is pretending to ward off foxes with r_c.",
+				"m_c is pretending to fight off badgers with r_c.",
+				"m_c is racing r_c back and forth across the camp clearing.",
+				"m_c hopes r_c will be their friend forever."
+			],
+			"main_status_constraint": [
+				"kitten"
+			],
+			"random_status_constraint":[
+				"kitten"
+			],
+			"reaction_random_cat":{
+				"platonic": "increase"
+			},
+			"also_influences":{
+				"comfortable": "increase"
 			}
 		},
 		{

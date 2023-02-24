@@ -134,7 +134,7 @@
 			}
 		},
 		{
-			"id": "dislike_de_med",
+			"id": "dislike_de_med1",
 			"interactions": [
 				"m_c realized that they were too harsh in their judgment of r_c."
 			]
@@ -146,6 +146,33 @@
 			],
 			"reaction_random_cat":{
 				"dislike":"decrease"
+			}
+		},
+		{
+			"id":"dislike_kit_de_med1",
+			"interactions":[
+				"m_c sticks their tongue out at r_c"
+			],
+			"main_status_constraint":[
+				"kitten"
+			],
+			"reaction_random_cat":{
+				"dislike":"increase"
+			}
+		},
+		{
+			"id":"dislike_kit_de_med2",
+			"interactions":[
+				"m_c tried to have a discussion with r_c about what prey tastes best, but it turned into an argument."
+			],
+			"main_status_constraint":[
+				"kitten"
+			],
+			"random_status_constraint": [
+				"kitten"
+			],
+			"reaction_random_cat":{
+				"dislike":"increase"
 			}
 		},
 		{

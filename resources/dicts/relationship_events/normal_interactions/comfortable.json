@@ -72,6 +72,63 @@
 			}
 		},
 		{
+			"id":"comfortable_kit_inc_med1",
+			"interactions":[
+				"wants to snuggle with (cat)."
+			],
+			"main_status_constraint": [
+				"kitten"
+			]
+		},
+		{
+			"id":"comfortable_kit_inc_med2",
+			"interactions":[
+				"wants to snuggle with (cat).",
+				"m_c is hiding under a bush from r_c, but they can't stop giggling."
+			],
+			"main_status_constraint": [
+				"kitten"
+			],
+			"reaction_random_cat":{
+				"platonic":"increase"
+			}
+		},
+		{
+			"id":"comfortable_kit_inc_med3",
+			"interactions":[
+				"m_c spent the whole day playing their favorite games with rc.",
+				"m_C had a friendly argument with r_c about which prey tastes the best.",
+				"m_c takes a nap with (cat) after a long day playing mossball."
+			],
+			"main_status_constraint": [
+				"kitten"
+			],
+			"random_status_constraint":[
+				"kitten"
+			],
+			"reaction_random_cat":{
+				"platonic": "increase",
+				"comfortable":"increase"
+			},
+			"also_influences":{
+				"platonic":"increase"
+			}
+		},
+		{
+			"id":"comfortable_kit_odd1",
+			"interactions":[
+				"m_c chomps on r_c's ear.",
+				"m_c won't stop copying everything r_c does."
+			],
+			"main_status_constraint":[
+				"kitten"
+			],
+			"reaction_random_cat":{
+				"dislike": "increase:",
+				"comfortable":"decrease"
+			}
+		},
+		{
 			"id": "comfort_inc_high1",
 			"intensity": "high",
 			"interactions":[
@@ -138,6 +195,18 @@
 			"id": "comfort_de_med1",
 			"interactions":[
 				"m_c finds the way r_c acts increasingly uncomfortable."
+			]
+		},
+		{
+			"id": "comfort_kit_de_med1",
+			"interactions":[
+				"m_c feels like r_c was too rough while playing."
+			],
+			"main_status_constraint": [
+				"kitten"
+			],
+			"random_status_constraint": [
+				"kitten"
 			]
 		},
 		{

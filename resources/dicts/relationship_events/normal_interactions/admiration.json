@@ -61,11 +61,22 @@
 		{
 			"id":"admire_inc_medium2",
 			"interactions":[
-				"m_c is sparring with r_c."
+				"m_c is sparring with r_c.",
+				"m_c has a mock battle with r_c."
 			],
 			"reaction_random_cat":{
 				"admiration": "increase"
 			}
+		},
+		{
+			"id":"admiration_kit_inc_med1",
+			"interactions":[
+				"m_c wants to become just like r_c someday!",
+				"m_c is pretending to be r_c."
+			],
+			"main_status_constraint":[
+				"kitten"
+			]
 		},
 		{
 			"id": "admire_inc_high1",

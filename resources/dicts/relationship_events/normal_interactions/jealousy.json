@@ -67,6 +67,34 @@
 			}
 		},
 		{
+			"id": "jealousy_kit_inc_med1",
+			"interactions":[
+				"m_c is jealous that r_c is getting more attention than them.",
+				"m_c is upset that r_c always wins in their games."
+			],
+			"main_status_constraint": [
+				"kitten"
+			],
+			"random_status_constraint": [
+				"kitten"
+			]
+		},
+		{
+			"id": "jealousy_kit_inc_med2",
+			"interactions":[
+				"m_c hisses at r_c for getting a bigger piece of prey." 
+			],
+			"main_status_constraint": [
+				"kitten"
+			],
+			"random_status_constraint": [
+				"kitten"
+			],
+			"reaction_random_cat":{
+				"dislike": "increase"
+			}
+		},
+		{
 			"id": "jel_inc_high1",
 			"intensity": "high",
 			"interactions":[
@@ -117,6 +145,8 @@
 				"jealousy": "decrease"
 			}
 		},
+
+		
 		{
 			"id": "jel_de_high1",
 			"intensity": "high",
