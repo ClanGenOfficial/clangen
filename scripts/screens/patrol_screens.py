@@ -237,7 +237,7 @@ class PatrolScreen(Screens):
                     self.elements['herb'].disable()
                     if self.patrol_type == 'med':
                         self.patrol_type = 'general'
-                        
+
                 if self.patrol_type == 'general':
                     text = 'random patrol type'
                 elif self.patrol_type == 'training' and med is False:
