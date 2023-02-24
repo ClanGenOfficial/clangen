@@ -1,0 +1,3 @@
+[submodule "tests/testSaves"]
+	path = tests/testSaves
+	url = git@github.com:ImLvna/clangen-unittest-saves.git
