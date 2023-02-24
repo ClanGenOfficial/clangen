@@ -642,25 +642,29 @@ class Cat():
         if self.status in ['leader', 'deputy']:
             self.status_change('warrior')
             self.status = 'warrior'
-        elif (self.status == 'apprentice' or self.status == 'kitten') and self.moons >= 12:
+        elif self.status == 'apprentice' and self.moons >= 12:
             self.status_change('warrior')
             involved_cats = [self.ID]
             game.cur_events_list.append(Single_Event('A long overdue warrior ceremony is held for ' + str(self.name.prefix) + 'paw. They smile as they finally become a warrior of the Clan and are now named ' + str(self.name) + '.', "ceremony", involved_cats))
+        elif self.status == 'kitten' and self.moons >= 12:
+            self.status_change('warrior')
+            involved_cats = [self]
+            game.cur_events_list.append(Single_Event('A long overdue warrior ceremony is held for ' + str(self.name.prefix) + 'kit. They smile as they finally become a warrior of the Clan and are now named ' + str(self.name) + '.', "ceremony", involved_cats))
         elif self.status == 'kitten' and self.moons >= 6:
             self.status_change('apprentice')
             involved_cats = [self.ID]
             game.cur_events_list.append(Single_Event('A long overdue apprentice ceremony is held for ' + str(self.name.prefix) + 'kit. They smile as they finally become a warrior of the Clan and are now named ' + str(self.name) + '.', "ceremony", involved_cats))
         elif self.status in ['kittypet', 'loner', 'rogue']:
             if self.moons < 6:
-                self.status == "kitten"
+                self.status = "kitten"
             elif self.moons < 12:
                 self.status_change('apprentice')
             elif self.moons < 120:
                 self.status_change('warrior')
             else:
                 self.status_change('elder')
-        self.update_mentor()
         game.clan.add_to_clan(self)
+        self.update_mentor()
 
     def status_change(self, new_status, resort=False):
         """ Changes the status of a cat. Additional functions are needed if you want to make a cat a leader or deputy.
