@@ -207,7 +207,7 @@ class Game():
 
     rpc = None
 
-    is_closing = False
+    is_close_menu_open = False
 
     def __init__(self, current_screen='start screen'):
         self.current_screen = current_screen

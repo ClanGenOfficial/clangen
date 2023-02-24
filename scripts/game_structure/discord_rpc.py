@@ -32,6 +32,7 @@ class _DiscordRPC():
         self.rpc_supported = False
         # Check if pypresence is available.
         try:
+            # raise ImportError # uncomment this line to disable rpc without uninstalling pypresence
             from pypresence import Presence, DiscordNotFound
             print("Discord RPC is supported")
         except ImportError:
