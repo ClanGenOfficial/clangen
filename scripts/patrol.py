@@ -109,6 +109,11 @@ class Patrol():
         if "medicine cat" in self.patrol_statuses:
             med_index = self.patrol_statuses.index("medicine cat")
             self.patrol_leader = self.patrol_cats[med_index]
+        # If there is no medicine cat, but there is a medicine cat apprentice, set them as the patrol leader.
+        # This prevents warrior from being treated as medicine cats in medicine cat patrols.
+        elif "medicine cat apprentice" in self.patrol_statuses:
+            med_index = self.patrol_statuses.index("medicine cat apprentice")
+            self.patrol_leader = self.patrol_cats[med_index]
         # sets leader as patrol leader
         elif clan.leader and clan.leader in self.patrol_cats:
             self.patrol_leader = clan.leader
@@ -305,6 +310,15 @@ class Patrol():
             # makes sure that an apprentice is present if the apprentice tag is
             if "apprentice" in patrol.tags:
                 if "apprentice" not in self.patrol_statuses and "medicine cat apprentice" not in self.patrol_statuses:
+                    continue
+                # If there is only a medicine cat apprentice in the patrol without a medicine cat, remove all
+                # the patrols that assume as apprentice is present, resulting in treating the med apprentice like a
+                # full medicine cat for the patrol.
+                # This is not ideal, since it also means patrols with warrior apprentices may not work correctly
+                # This also means patrols the are written for both a medicine cat apprentice and a warrior
+                # apprentice will only show up if there is also a full medicine cat in the patrol.
+                # TODO: Write patrols for med cat apprentices + warriors.
+                if "medicine cat apprentice" in self.patrol_statuses and "medicine cat" not in self.patrol_statuses:
                     continue
 
             # makes sure that the deputy is present if the deputy tag is
