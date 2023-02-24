@@ -6,9 +6,11 @@ import shutil
 from scripts.game_structure.game_essentials import Game
 
 
-
-
-num_example_saves = len(os.listdir('tests/testSaves'))
+_tmp = os.listdir('tests/testSaves')
+num_example_saves = 0
+for i in _tmp:
+    if i.startswith('save'):
+        num_example_saves += 1
 
 @unittest.skipIf(num_example_saves == 0, "No example saves found. Run 'git submodule update --init --recursive' to download example saves")
 class LoadSave(unittest.TestCase):
