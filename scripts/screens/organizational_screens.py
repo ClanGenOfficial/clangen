@@ -118,19 +118,20 @@ class SwitchClanScreen(Screens):
                 self.page -= 1
                 self.update_page()
             else:
-                for page in self.clan_buttons:
-                    if event.ui_element in page:
-                        #game.clan.switch_clans(self.clan_name[self.page][page.index(event.ui_element)])
-                        print(self.clan_name[self.page][page.index(event.ui_element)])
                 for page in self.delete_buttons:
                     if event.ui_element in page:
+                        print("delete")
                         rempath = "saves/" + self.clan_name[self.page][page.index(event.ui_element)]
                         shutil.rmtree(rempath)
-                        # os.remove(rempath + ".json")
-
-                        self.exit_screen()
+                        os.remove(rempath + ".json")
+                        
                         self.change_screen('switch clan screen')
 
+                        return
+
+                for page in self.clan_buttons:
+                    if event.ui_element in page:
+                        game.clan.switch_clans(self.clan_name[self.page][page.index(event.ui_element)])
                 
 
     def exit_screen(self):
@@ -143,16 +144,23 @@ class SwitchClanScreen(Screens):
 
         # del self.screen  # No need to keep that in memory.
 
-        pagezero = False
         for page in self.clan_buttons:
             for button in page:
                 button.kill()
-            
-            if pagezero:
-                del page
+                del button
+        
+        for page in self.delete_buttons:
+            for button in page:
+                button.kill()
+                del button
 
-            pagezero = True
-        pagezero = False
+        self.next_page_button.kill()
+        del self.next_page_button
+        self.previous_page_button.kill()
+        del self.previous_page_button
+        self.page_number.kill()
+        del self.page_number
+
         self.clan_buttons = [[]]
         self.delete_buttons = [[]]
         self.clan_name = [[]]
@@ -178,6 +186,7 @@ class SwitchClanScreen(Screens):
         self.clan_buttons = [[]]
         self.clan_name = [[]]
         self.delete_buttons = [[]]
+        
         i = 0
         y_pos = 378
         for clan in self.clan_list[1:]:
@@ -187,7 +196,7 @@ class SwitchClanScreen(Screens):
                                              object_id="#saved_clan", manager=MANAGER))
             self.delete_buttons[-1].append(
                 pygame_gui.elements.UIButton(scale(pygame.Rect((940, y_pos + 17), (44, 44))), "",
-                                            object_id="#exit_window_button", manager=MANAGER))
+                                            object_id="#exit_window_button", manager=MANAGER, starting_height=2))
 
             y_pos += 82
             i += 1
