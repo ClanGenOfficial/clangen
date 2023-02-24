@@ -256,7 +256,7 @@ for x in [
     'tortiesextrasmoke', 'tortiesextrarosette', 'tortiesextraspeckled',
     'tortiesextramackerel', 'tortiesextraclassic', 'tortiesextrasokoke', 'tortiesextraagouti',
     'medcatherbs', 'medcatherbsextra', 'lineartdf', 'eyes_df', 'eyesextra_df', 'lightingnew', 'fademask',
-    'fadestarclan', 'fadedarkforest','lineartur'
+    'fadestarclan', 'fadedarkforest','lineartur', 'fadeur'
 
 ]:
     sprites.spritesheet(f"sprites/{x}.png", x)
@@ -290,6 +290,7 @@ sprites.make_group('lineartur', (0, 0), 'lineartur', sprites_y=5)
 sprites.make_group('fademask', (0, 0), 'fademask', sprites_y=15)
 sprites.make_group('fadestarclan', (0, 0), 'fadestarclan', sprites_y=15)
 sprites.make_group('fadedarkforest', (0, 0), 'fadedf', sprites_y=15)
+sprites.make_group('fadeur', (0, 0), 'fadeur', sprites_y=15)
 
 for a, i in enumerate(
         ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE']):
