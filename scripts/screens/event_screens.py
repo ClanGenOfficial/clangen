@@ -133,7 +133,7 @@ class EventsScreen(Screens):
                 if self.event_display_type == "all events":
                     # if events list is empty, add a single message the says nothing interesting happened
                     if not self.all_events:
-                        self.all_events.append(Single_Event("Nothing interesting happened this moon"))
+                        self.all_events.append(Single_Event("Nothing interesting happened this moon."))
                     self.display_events = self.all_events
                 elif self.event_display_type == "ceremony events":
                     self.display_events = self.ceremony_events
