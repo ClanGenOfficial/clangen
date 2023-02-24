@@ -1,3 +1,4 @@
+import os
 import random
 from random import choice, randint
 import copy
@@ -8,7 +9,7 @@ except ImportError:
 from scripts.event_class import Single_Event
 
 from scripts.utility import get_personality_compatibility
-from scripts.game_structure.game_essentials import *
+from scripts.game_structure.game_essentials import game
 
 # if another cat is involved
 THIRD_RELATIONSHIP_INCLUDED = {

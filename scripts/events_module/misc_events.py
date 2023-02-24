@@ -1,10 +1,6 @@
-try:
-    import ujson
-except ImportError:
-    import json as ujson
 import random
 
-from scripts.cat.cats import Cat, INJURIES
+from scripts.cat.cats import Cat
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.utility import event_text_adjust, change_clan_relations, change_relationship_values
 from scripts.game_structure.game_essentials import game

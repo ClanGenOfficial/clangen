@@ -37,6 +37,7 @@
         "injury",
         "quilled by a porcupine",
         "scar",
+        "QUILLSCRATCH",
         "death",
         "huge_prey2"
     ],
@@ -94,6 +95,7 @@
         "injury",
         "quilled by a porcupine",
         "scar",
+        "QUILLSCRATCH",
         "death",
         "huge_prey2",
         "huge_prey3"
@@ -222,6 +224,7 @@
         "injury",
         "sprain",
         "scar",
+        "TOETRAP",
         "medium_prey0",
         "medium_prey1",
         "large_prey2"
@@ -267,6 +270,7 @@
         "hunting",
         "big_bite_injury",
         "scar",
+        "ONE",
         "fighting",
         "medium_prey"
     ],
@@ -344,6 +348,7 @@
     "tags": [
         "hunting",
         "scar",
+        "NECKBITE",
         "big_bite_injury",
         "fighting",
         "death",
@@ -401,6 +406,7 @@
     "tags": [
         "hunting",
         "scar",
+        "NECKBITE",
         "big_bite_injury",
         "fighting",
         "death",
@@ -514,6 +520,7 @@
     "tags": [
         "hunting",
         "scar",
+        "NECKBITE",
         "big_bite_injury",
         "fighting",
         "death",
@@ -759,6 +766,7 @@
         "apprentice",
         "minor_injury",
         "scar",
+        "LEFTEAR",
         "medium_prey0",
         "large_prey1",
         "large_prey2",
@@ -996,6 +1004,7 @@
         "hunting",
         "big_bite_injury",
         "scar",
+        "NECKBITE",
         "small_prey0",
         "small_prey1",
         "medium_prey2"
@@ -1044,6 +1053,7 @@
         "hunting",
         "big_bite_injury",
         "scar",
+        "NECKBITE",
         "death",
         "small_prey0",
         "small_prey1",
@@ -1138,7 +1148,7 @@
         "thoughtful",
         "wise"
     ],
-    "min_cats": 1,
+    "min_cats": 2,
     "max_cats": 3,
     "antagonize_text": null,
     "antagonize_fail_text": null
@@ -1270,7 +1280,6 @@
     "tags": [
         "hunting",
         "gone",
-        "scar",
         "injury",
         "torn pelt",
         "medium_prey0",
@@ -1391,7 +1400,7 @@
     ]
 },
 {
-    "patrol_id": "fst_hunt_gonetwolegden3",
+    "patrol_id": "fst_hunt_twolegdencatdare1",
     "biome": "forest",
     "season": "Any",
     "tags": [
@@ -1615,6 +1624,7 @@
     "tags": [
         "death",
         "scar",
+        "MANLEG",
         "retirement",
         "blunt_force_injury",
         "hunting",
@@ -1670,6 +1680,7 @@
     "tags": [
         "death",
         "scar",
+        "MANTAIL",
         "retirement",
         "blunt_force_injury",
         "hunting",
@@ -1726,6 +1737,7 @@
     "tags": [
         "multi_deaths",
         "scar",
+        "MANLEG",
         "retirement",
         "blunt_force_injury",
         "hunting",
@@ -1784,6 +1796,7 @@
     "tags": [
         "multi_deaths",
         "scar",
+        "MANTAIL",
         "retirement",
         "blunt_force_injury",
         "hunting",

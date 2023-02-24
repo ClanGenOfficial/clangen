@@ -1,36 +1,98 @@
 {
-    "kittypet": [
-        "Cuddles with their Twoleg",
-        "Begs for food from their Twoleg",
-        "Is sunning in their yard",
-        "Doesn't want to go to the vet",
-        "Is resting on a fence",
-        "Almost forgot the way home",
-        "Was taken to the vet recently",
-        "Is looking at the forest, daydreaming about hunting a mouse",
-        "Is hunting for a gift for their Twoleg",
-        "Failed to catch prey with their poor crouch",
-        "Is running away from a Clan cat",
-        "Is hiding from a dog",
-        "Is being friendly with their Twoleg's dog",
-        "Is peering at a fish tank",
-        "Is looking for trouble",
-        "Is meowing to their Twoleg for attention",
-        "Is tangled up in a large ball of yarn",
-        "Is stretching on their scratching post",
-        "Wishes their Twoleg cared more about them",
-        "Saw warriors pass their Twoleg den",
-        "Is hanging with their housefolk",
-        "Is playing with the Twoleg kits",
-        "Enjoying a nice meal",
-        "Trying to escape from bath time",
-        "Heard stories about the nearby Clans",
-        "Is sleeping under the porch",
-        "Is sleeping in a loaf position on the bed",
-        "Is watching the Clan cats from afar",
-        "Is meowing to be let in",
-        "Is listening to frightening stories about wild cats"
-    ],
+    "kittypet": {
+        "general": [
+            "Cuddles with their Twoleg",
+            "Begs for food from their Twoleg",
+            "Is sunning in their yard",
+            "Doesn't want to go to the Cutter",
+            "Is resting on a fence",
+            "Almost forgot the way home",
+            "Was taken to the Cutter recently",
+            "Is looking at the forest, daydreaming about hunting a mouse",
+            "Is hunting for a gift for their Twoleg",
+            "Failed to catch prey with their poor crouch",
+            "Is running away from a Clan cat",
+            "Is hiding from a dog",
+            "Is being friendly with their Twoleg's dog",
+            "Is peering at a fish tank",
+            "Is looking for trouble",
+            "Is meowing to their Twoleg for attention",
+            "Is tangled up in a large ball of yarn",
+            "Is stretching on their scratching post",
+            "Wishes their Twoleg cared more about them",
+            "Saw warriors pass their Twoleg den",
+            "Is hanging with their housefolk",
+            "Is playing with the Twoleg kits",
+            "Enjoying a nice meal",
+            "Trying to escape from bath time",
+            "Heard stories about the nearby Clans",
+            "Is sleeping under the porch",
+            "Is sleeping in a loaf position on the bed",
+            "Is watching the Clan cats from afar",
+            "Is meowing to be let in",
+            "Is listening to frightening stories about wild cats",
+            "Is meowing at their housefolk",
+            "Wants to go outside",
+            "Plays with a yarn ball",
+            "Has the zoomies",
+            "Wishes that they could go outside more",
+            "Is looking out the window",
+            "Tries to catch a fly",
+            "Is eating some scraps that were dropped on the floor",
+            "Lays in their bed",
+            "Got stuck under the couch",
+            "Is trying to bark at a dog",
+            "Chases a mysterious red dot",
+            "Has been left in a room with the door closed",
+            "Managed to escape their den",
+            "Is enjoying some time outside",
+            "Wonders if this is the life for them",
+            "Heard a scary story about the clans",
+            "Wonders what the clans are like",
+            "Wishes there were more cats living with them",
+            "Got scared after hearing stories about the Clan cats",
+            "Saw a strange orange-furred kittypet crawling about in the thickets ",
+            "Was fighting with themselves in a mirror",
+            "Wonders if freshkill is better than their wet food",
+            "Heard about a strange Clan in the alleyways in the Twolegs city ",
+            "Is proud of their large belly",
+            "Was lounging on their fence, looking at the wild beyond",
+            "Can't seem to scratch a certain spot on their neck thanks to their collar"
+        ],
+        "kitten": [
+            "Is currently trying to figure out how to catch a bird"
+        ],
+        "adolescent": [
+            "Is currently trying to figure out how to catch a bird",
+            "Is hogging the bed from their siblings",
+            "Thinks their new collar is uncomfortable",
+            "Is playing with a new toy their twoleg got them"
+        ],
+        "adult": [
+            "Is meowing for food",
+            "Was wandering in the backyard when a strange noise scared them back inside",
+            "Left their den to go scratch up that tree they've been eyeing",
+            "Glad their twolegs collar them on a leash to walk them outside",
+            "Heard the yowls of a recent battle in the distances",
+            "Engaging in a loaf mode",
+            "Is wandering in their neighborhood",
+            "Breath in a sigh of relief when they escape some dogs"
+        ],
+        "elder": [
+            "Is enjoying the sun on their back",
+            "Is glad that their housefolk have taken care of them for so long",
+            "Wishes they had as much energy as the younger house cats",
+            "Smiled at the new younger kit their Twoleg got",
+            "Is worried if their Twolegs would be sad when they're gone",
+            "Snoring by a warm hearth",
+            "Engaging in a loaf mode",
+            "Is having a rough time climbing their fence",
+            "Wonders what if they left to be a loner at a younger age",
+            "Took their time climbing on their fence",
+            "Shakes their head when they spotted a cold queen and their kits"
+            ]
+    
+    },
     "loner": {
         "general": [
             "Is spending the night with a friend",
@@ -56,7 +118,21 @@
             "Hopes their mild cough won't get worse",
             "Wishes newleaf would come already",
             "Frowns deeply at the first frost",
-            "Got invited to spend the night with a group of friendly loners"
+            "Got invited to spend the night with a group of friendly loners",
+            "Saw a helpless cat get taken in a metal box by twolegs",
+            "Sniffed around a known Clan territory curiously ",
+            "Chow down on some food a twolegs left out for them",
+            "Envy the strong kinship the Clan cats has",
+            "Taking a stroll through a twolegs city",
+            "Spy at a kittypet outside of the window, jealous of the protection and food they have",
+            "Spy at a kittypet outside of the window, taunting them that they can't enjoy the freedom",
+            "Taking a nap, hoping something exciting would escape their boredom",
+            "Was running carelessly across the thunderpath and were nearly hit by a monster"
+
+            
+        ],
+        "kitten": [
+            "Is currently trying to figure out how to catch a bird"
         ],
         "adolescent": [
             "Is currently trying to figure out how to catch a bird",
@@ -71,12 +147,20 @@
             "Is asking themself if becoming a kittypet would be an easier life",
             "Is trying not to feel overwhelmingly lonely",
             "Learning about the clans",
-            "Thinks Clan cats are strange"
+            "Thinks Clan cats are strange",
+            "Is in awe hearing the stories about the Clans",
+            "Is imagining an epic life where they're a legendary wander in these lands",
+            "Marking random locations with their claws to remember as a potential hideout",
+            "Turns up their nose when another Loner tried to give them directions",
+            "Collects various items they find beautiful and interesting",
+            "Wonders if their parents were once renowned explorers",
+            "Has a mock battle with r_c from c_n whenever the apprentice fled their boring chores",
+            "Laughed at the thought of being a Clan cat and having a warrior name... Maybe..."  
         ],
         "adult": [
             "Is scouting out locations for a new den",
             "Nearly got caught in a Twoleg trap!",
-            "Got pet by a Twoleg ",
+            "Got pet by a Twoleg",
             "Stayed in a Twoleg den for a couple of days for food",
             "Was almost eaten by a monster",
             "Is playing with kits"
@@ -90,7 +174,17 @@
             "Thinks about old friends",
             "Hopes it isn't too late to join a Clan",
             "Wonders where they'll go when they die",
-            "Telling stories about their younger days"
+            "Telling stories about their younger days",
+            "Licked their sore pawpads from travelling too long",
+            "Is admiring the massive territory they secured for so long",
+            "Looked back with fondness at the misadventures they had with old friends",
+            "Has no shame eating crowfood if that's what it takes to survive",
+            "Easily fought off an overconfident rogue with many moons surviving in this rough life",
+            "Show off individual scars and told r_c in detail how they got them all",
+            "Had a vivid nightmare when they couldn't save their old friend from wild dogs",
+            "Met up with an old kittypet friend, for both the free food and company",
+            "Is gnawing at their pelt, irritated at the abundance of fleas",
+            "Coughed heavily"
         ]
     },
     "rogue": {
@@ -103,6 +197,9 @@
             "Wonders if they can find a warm place to sleep tonight",
             "Was chased by a fox recently",
             "Wishes they were in a warm nest"
+        ],
+        "kitten": [
+            "Is currently trying to figure out how to catch a bird"
         ],
         "adolescent": [
             "Is setting up a pile of thorns to catch a cat off guard",
@@ -207,7 +304,7 @@
             "Wonders if their deputy has already become leader",
             "Hopes that the Clan is doing okay without them",
             "Feels like they have failed their Clan",
-            "Is wondering if starclan is still able to contact them"
+            "Is wondering if StarClan is still able to contact them"
         ],
         "elder": [
             "Wishes they had some help getting around",
@@ -219,7 +316,10 @@
             "Their aches and pain make them unable to hunt",
             "Feels the cold seep and settle into their old bones",
             "Is unable to remember what herbs to look out for to ease their pain",
-            "Wishes they could check in on the Clan's kits"
+            "Wishes they could check in on the Clan's kits",
+            "Is scared they may die away from the clan",
+            "Bones are aching from wandering so long"
+            
             ],
         "med": [
             "Hopes that their Clan is doing okay without their help"

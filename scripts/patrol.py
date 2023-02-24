@@ -1,13 +1,27 @@
 #!/usr/bin/env python3
 # -*- coding: ascii -*-
+import random
 from random import choice, randint, choices
-from math import floor
+
+try:
+    import ujson
+except ImportError:
+    import json as ujson
 
 from scripts.clan import HERBS
-from scripts.game_structure.game_essentials import *
-from scripts.cat.names import *
-from scripts.cat.cats import *
-from scripts.cat.pelts import *
+from scripts.utility import (
+    add_siblings_to_cat,
+    add_children_to_cat,
+    event_text_adjust,
+    change_clan_relations,
+    change_clan_reputation,
+    change_relationship_values,
+    )
+from scripts.game_structure.game_essentials import game
+from scripts.cat.names import names
+from scripts.cat.cats import Cat, cat_class, ILLNESSES, INJURIES, PERMANENT
+from scripts.cat.pelts import collars, scars1, scars2, scars3
+from scripts.cat_relations.relationship import Relationship
 from scripts.clan_resources.freshkill import ADDITIONAL_PREY, PREY_REQUIREMENT, HUNTER_EXP_BONUS, HUNTER_BONUS, FRESHKILL_ACTIVE
 from scripts.clan import Clan
 
@@ -626,7 +640,7 @@ class Patrol():
                 # try to extract the value/threshold from the text
                 try:
                     threshold = int(tags[0].split('_')[1])
-                except e:
+                except Exception as e:
                     print(
                         f"ERROR: patrol {patrol_id} with the relationship constraint for the value {v_type} follows not the formatting guidelines.")
                     break_loop = True
@@ -728,52 +742,22 @@ class Patrol():
         success_text = self.patrol_event.success_text
         fail_text = self.patrol_event.fail_text
 
-        gm_modifier = 1
-        if game.clan.game_mode == "classic":
-            gm_modifier = 1
-        elif game.clan.game_mode == "expanded":
-            gm_modifier = 2
-        elif game.clan.game_mode == "cruel season":
-            gm_modifier = 3
-
-        # resetting stat cats and then finding new stat cats
-        self.patrol_fail_stat_cat = None
-        self.patrol_win_stat_cat = None
-        if self.patrol_event.win_skills:
-            for cat in self.patrol_cats:
-                if "app_stat" in self.patrol_event.tags and cat.status not in ['apprentice', "medicine cat apprentice"]:
-                    continue
-                if "adult_stat" in self.patrol_event.tags and cat.status in ['apprentice', "medicine cat apprentice"]:
-                    continue
-                if cat.skill in self.patrol_event.win_skills:
-                    self.patrol_win_stat_cat = cat
-        if self.patrol_event.win_trait and not self.patrol_win_stat_cat:
-            for cat in self.patrol_cats:
-                if cat.trait in self.patrol_event.win_trait:
-                    self.patrol_win_stat_cat = cat
-        if self.patrol_event.fail_skills:
-            for cat in self.patrol_cats:
-                if cat.skill in self.patrol_event.fail_skills:
-                    self.patrol_fail_stat_cat = cat
-        if self.patrol_event.fail_trait and not self.patrol_fail_stat_cat:
-            for cat in self.patrol_cats:
-                if cat.trait in self.patrol_event.fail_trait:
-                    self.patrol_fail_stat_cat = cat
+        gm_modifier = game.config["patrol_generation"][f"{game.clan.game_mode}_difficulty_modifier"]
 
         # if patrol contains cats with autowin skill, chance of success is high. otherwise it will calculate the
-        # chance by adding the patrolevent's chance of success plus the patrol's total exp
+        # chance by adding the patrol event's chance of success plus the patrol's total exp
         success_chance = self.patrol_event.chance_of_success + int(
             self.patrol_total_experience / (2 * gm_modifier))
 
         if self.patrol_win_stat_cat:
-            success_chance = success_chance + 30
+            success_chance = success_chance + game.config["patrol_generation"]["win_stat_cat_modifier"]
             if ("great" or "very") in self.patrol_win_stat_cat.skill:
-                success_chance = success_chance + 5
+                success_chance = success_chance + game.config["patrol_generation"]["better_stat_modifier"]
             elif ("fantastic" or "excellent" or "extremely") in self.patrol_win_stat_cat.skill:
-                success_chance = success_chance + 10
+                success_chance = success_chance + game.config["patrol_generation"]["best_stat_modifier"]
 
         if self.patrol_fail_stat_cat:
-            success_chance = success_chance - 30
+            success_chance = success_chance + game.config["patrol_generation"]["fail_stat_cat_modifier"]
 
         c = randint(0, 100)
         outcome = int(random.getrandbits(4))
@@ -905,11 +889,11 @@ class Patrol():
                     outcome = 3
 
             if outcome == 2:
-                self.handle_deaths(self.patrol_random_cat)
+                self.handle_deaths_and_gone(self.patrol_random_cat)
             elif outcome == 4:
-                self.handle_deaths(self.patrol_fail_stat_cat)
+                self.handle_deaths_and_gone(self.patrol_fail_stat_cat)
             elif outcome == 6:
-                self.handle_deaths(self.patrol_leader)
+                self.handle_deaths_and_gone(self.patrol_leader)
             elif outcome == 3 or outcome == 5:
                 if game.clan.game_mode == 'classic':
                     self.handle_scars(outcome)
@@ -1348,7 +1332,7 @@ class Patrol():
             final_exp = gained_exp / lvl_modifier
             cat.experience = cat.experience + final_exp
 
-    def handle_deaths(self, cat):
+    def handle_deaths_and_gone(self, cat):
         if "no_body" in self.patrol_event.tags:
             body = False
         else:
@@ -1457,13 +1441,9 @@ class Patrol():
 
         # cats disappearing on patrol is also handled under this def for simplicity's sake
         elif "gone" in self.patrol_event.tags:
-            if len(self.patrol_event.fail_text) > 4 and self.final_fail == self.patrol_event.fail_text[4]:
-                self.results_text.append(f"{self.patrol_fail_stat_cat.name} died.")
-                self.patrol_fail_stat_cat.die(body)
-            else:
-                self.results_text.append(f"{self.patrol_random_cat.name} has been lost.")
-                self.patrol_random_cat.gone()
-                self.patrol_random_cat.grief(body=False)
+            self.results_text.append(f"{cat.name} has been lost.")
+            cat.gone()
+            cat.grief(body=False)
 
         elif "disaster_gone" in self.patrol_event.tags:
             for cat in self.patrol_cats:
@@ -1567,15 +1547,21 @@ class Patrol():
 
     def handle_scars(self, outcome):
         if self.patrol_event.tags is not None:
+            print('getting scar')
             if "scar" in self.patrol_event.tags:
-                cat = None
                 if outcome == 3:
                     cat = self.patrol_random_cat
                 elif outcome == 5:
                     cat = self.patrol_fail_stat_cat
+                else:
+                    return
                 if len(self.patrol_random_cat.scars) < 4:
-                    self.patrol_random_cat.scars.append(choice(
-                        [choice(scars1)]))
+                    for tag in self.patrol_event.tags:
+                        print(tag)
+                        if tag in scars1 + scars2 + scars3:
+                            print('gave scar')
+                            cat.scars.append(tag)
+                            self.results_text.append(f"{cat.name} got a scar.")
                     if len(self.patrol_event.history_text) >= 1:
                         adjust_text = self.patrol_event.history_text[0]
                         adjust_text = adjust_text.replace("r_c", str(cat.name))
@@ -1720,7 +1706,7 @@ class Patrol():
             other_clan = patrol.other_clan
             if "otherclan_nochangefail" in self.patrol_event.tags and not self.success:
                 difference = 0
-            elif "otherclan_nochangesuccess" in self.patrol_event.tags and self.success:
+            elif "otherclan_nochangesuccess" in self.patrol_event.tags and self.success and not antagonize:
                 difference = 0
             elif "otherclan_antag_nochangefail" in self.patrol_event.tags and antagonize and not self.success:
                 difference = 0
