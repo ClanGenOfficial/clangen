@@ -10,6 +10,7 @@ from scripts.cat.names import names
 from scripts.cat.cats import Cat, cat_class
 from scripts.cat.pelts import plant_accessories, wild_accessories, collars
 from scripts.clan import HERBS
+from scripts.clan_resources.freshkill import FRESHKILL_EVENT_ACTIVE
 from scripts.conditions import medical_cats_condition_fulfilled, get_amount_cat_for_one_medic
 from scripts.events_module.misc_events import MiscEvents
 from scripts.events_module.new_cat_events import NewCatEvents
@@ -66,18 +67,24 @@ class Events():
         self.relation_events.handle_pregnancy_age(game.clan)
 
         if game.clan.game_mode in ['expanded', 'cruel season'] and game.clan.freshkill_pile:
+            needed_amount = game.clan.freshkill_pile.amount_food_needed()
+            print(f" -- FRESHKILL: prey amount before feeding {game.clan.freshkill_pile.total_amount}")
+            print(f" -- FRESHKILL: clan needs {needed_amount} prey")
             # feed the cats and update the nutrient status
-            relevant_cats = [cat for cat in Cat.all_cats.copy().values() if
-                             cat.is_alive() and not cat.exiled and not cat.outside]
+            relevant_cats = list(
+                filter(lambda _cat: _cat.is_alive() and not _cat.exiled and not _cat.outside, Cat.all_cats.values())
+            )
             game.clan.freshkill_pile.time_skip(relevant_cats)
-            # handle freshkill pile events, after feeding
             self.get_moon_freshkill()
-            self.freshkill_events.handle_amount_freshkill_pile(game.clan.freshkill_pile, relevant_cats)
-            if not game.clan.freshkill_pile.clan_has_enough_food():
+            # handle freshkill pile events, after feeding
+            # first 5 moons there will not be any freshkill pile event
+            if game.clan.age >= 5:
+                self.freshkill_events.handle_amount_freshkill_pile(game.clan.freshkill_pile, relevant_cats)
+            # make a notification if the clan has not enough prey
+            if not game.clan.freshkill_pile.clan_has_enough_food() and FRESHKILL_EVENT_ACTIVE:
                 game.cur_events_list.insert(0, Single_Event(
                     f"{game.clan.name}Clan doesn't have enough prey for next moon!"))
-            needed_amount = game.clan.freshkill_pile.amount_food_needed()
-            print(f"current freshkill amount: {game.clan.freshkill_pile.total_amount}, needed {needed_amount}")
+            print(f" -- FRESHKILL: prey amount after feeding {game.clan.freshkill_pile.total_amount}")
         
         kittypet_ub = game.config["cotc_generation"]["kittypet_chance"]
         rogue_ub = game.config["cotc_generation"]["rogue_chance"]
@@ -314,7 +321,7 @@ class Events():
                     herbs_found = random.sample(HERBS, k=amount[0])
                     herb_display = []
                     for herb in herbs_found:
-                        # TODO: need to add bee sting as an injury so that these two herbs are relevant.
+                        # TODO: need to add bee sting events so that this herb is relevant.
                         if herb in ['blackberry']:
                             continue
                         if game.clan.current_season in ['Newleaf', 'Greenleaf']:
@@ -598,10 +605,10 @@ class Events():
         self.mediator_events(cat)
 
         # handle nutrition amount (CARE: the cats has to be fed before - should be handled in "one_moon" function)
-        # if game.clan.game_mode in ['expanded', 'cruel season'] and game.clan.freshkill_pile:
-        #    self.freshkill_events.handle_nutrient(cat, game.clan.freshkill_pile.nutrition_info)
-        #    if cat.dead:
-        #        return
+        if game.clan.game_mode in ['expanded', 'cruel season'] and game.clan.freshkill_pile:
+           self.freshkill_events.handle_nutrient(cat, game.clan.freshkill_pile.nutrition_info)
+           if cat.dead:
+               return
 
         # prevent injured or sick cats from unrealistic clan events
         if cat.is_ill() or cat.is_injured():
@@ -1506,9 +1513,12 @@ class Events():
             ])
             if game.clan.current_season == 'Leaf-bare':
                 disaster.extend([
-                    ' die after freezing from a snowstorm.',
-                    ' starve to death when no prey is found.'
+                    ' die after freezing from a snowstorm.'
                 ])
+                if game.clan.game_mode == "classic":
+                    disaster.extend([
+                    	' starve to death when no prey is found.'
+                	])
             elif game.clan.current_season == 'Greenleaf':
                 disaster.extend([
                     ' die after overheating.',

@@ -22,6 +22,7 @@ from re import sub
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked  # , UIImageTextBox, UISpriteButton
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
 from scripts.cat.names import names
+from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE
 
 
 # ---------------------------------------------------------------------------- #
@@ -113,20 +114,8 @@ def bs_blurb_text(cat):
         'refugee5': "This cat got washed away from their former territory in a flood that destroyed their home but was glad to find a new home in their new Clan here.",
         'disgraced2': "This cat was exiled from their old Clan for something they didn't do and came here to seek safety.",
         'disgraced3': "This cat once held a high rank in another Clan but was exiled for reasons they refuse to share.",
-        'other_clan1': "This cat grew up in another Clan but chose to leave that life and join the Clan they now live in.",
-        'medicine_cat2': "This cat grew up well-trained in herb usage, and chose to put their skills to good use by joining a Clan where they're needed.",
-        'medicine_cat3': "This cat felt a calling to help others through herbs and medicine and found this Clan to be the perfect place to do so.",
-        'medicine_cat4': "This cat used to be a medicine cat for another Clan, however, decided to leave to pursue a more fulfilling life here.",
-        'medicine_cat5': "This cat used to be a medicine cat for a rival Clan but disagreed with the leader's actions and got banished as a result.",
-        'medicine_cat6': "This cat used to be a medicine cat and a leader for another Clan, but retired their nine lives and decided to join this Clan as a full medicine cat.", 
-        'medicine_cat7': "This cat used to temporarily join another Clan as a wandering medicine cat, however was kicked out and permanently joined this Clan.",
-        'medicine_cat8': "This cat used to be a medicine cat for another Clan, but disliked how it was run and willingly left to pursue a better home.",
-        'medicine_cat9': "This cat used to be a medicine cat for a rouge group, however left after being mistreated by their Clanmates.",
-        'medicine_cat10': "This cat used to work alongside their Twoleg, helping patients, but decided to leave and join the Clan to further their knowledge.",
-        'medicine_cat11': "This cat came from a group of healers who helped those in need, until they decided to retire their position and join the Clan.",
-        'medicine_cat12': "This cat ventured far to join the Clan, coming from a group not unlike it but where they led as a Medic.",
-
-
+        'other_clan1': "This cat grew up in another Clan but chose to leave that life and join the Clan they now live in."
+        
     }
     return backstory_text.get(backstory, "")
 
@@ -169,17 +158,6 @@ def backstory_text(cat):
         'abandoned3': 'formerly abandoned',
         'abandoned4': 'formerly abandoned',
         'medicine_cat': 'formerly a medicine cat',
-        'medicine_cat2': 'formerly a medicine cat',
-        'medicine_cat3': 'formerly a medicine cat',
-        'medicine_cat4': 'formerly a medicine cat',
-        'medicine_cat5': 'formerly a medicine cat',
-        'medicine_cat6': 'formerly a medicine cat',
-        'medicine_cat7': 'formerly a medicine cat',
-        'medicine_cat8': 'formerly a medicine cat',
-        'medicine_cat9': 'formerly a medicine cat',
-        'medicine_cat10': 'formerly a medicine cat',
-        'medicine_cat11': 'formerly a medicine cat',
-        'medicine_cat12': 'formerly a medicine cat',
         'otherclan': 'formerly from another Clan',
         'otherclan2': 'formerly from another Clan',
         'otherclan3': 'formerly from another Clan',
@@ -197,8 +175,7 @@ def backstory_text(cat):
         'orphaned2': 'orphaned',
         'orphaned3': 'orphaned',
         'orphaned4': 'orphaned',
-        'orphaned5': 'orphaned',
-
+        'orphaned5': 'orphaned'
     }
 
     if bs_display in backstory_map:
@@ -932,7 +909,7 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # NUTRITION INFO (if the game is in the correct mode)
-        if game.clan.game_mode in ["expanded", "cruel season"] and the_cat.is_alive():
+        if game.clan.game_mode in ["expanded", "cruel season"] and the_cat.is_alive() and FRESHKILL_ACTIVE:
             nutr = None
             if the_cat.ID in game.clan.freshkill_pile.nutrition_info:
                 nutr = game.clan.freshkill_pile.nutrition_info[the_cat.ID]
@@ -1961,6 +1938,12 @@ class ChangeNameScreen(Screens):
                                                                         placeholder_text=
                                                                         self.the_cat.name.special_suffixes[
                                                                             self.the_cat.name.status]
+                                                                        , manager=MANAGER)
+            self.suffix_entry_box.disable()  # You can't change a special suffix
+        elif self.the_cat.name.status in ['kittypet', 'loner', 'rogue']:
+            self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((800, 400), (360, 60))),
+                                                                        placeholder_text=
+                                                                        ""
                                                                         , manager=MANAGER)
             self.suffix_entry_box.disable()  # You can't change a special suffix
         else:
