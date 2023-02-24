@@ -81,7 +81,10 @@ class StartScreen(Screens):
 
         if game.clan is not None and game.switches['error_message'] == '':
             self.continue_button.enable()
-            self.switch_clan_button.enable()
+            if len(game.switches['clan_list']) > 1:
+                self.switch_clan_button.enable()
+            else:
+                self.switch_clan_button.disable()
         elif game.clan is not None and game.switches['error_message']:
             self.continue_button.disable()
             self.switch_clan_button.enable()
