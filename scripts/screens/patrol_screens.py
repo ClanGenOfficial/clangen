@@ -217,24 +217,26 @@ class PatrolScreen(Screens):
             self.elements['add_six'].enable()
             self.elements["random"].enable()
 
+            # making sure meds don't get the option for other patrols
+            med = False
+            for cat in self.current_patrol:
+                if cat.status in ['medicine cat', 'medicine cat apprentice']:
+                    med = True
+                    self.patrol_type = 'med'
+
+
             if game.clan.game_mode != 'classic':
                 self.elements['paw'].enable()
                 self.elements['mouse'].enable()
                 self.elements['claws'].enable()
                 self.elements['herb'].enable()
 
-                # making sure meds don't get the option for other patrols
-                med = False
-                for cat in self.current_patrol:
-                    if cat.status in ['medicine cat', 'medicine cat apprentice']:
-                        med = True
-                        self.patrol_type = 'med'
+                self.elements['info'].kill()  # clearing the text before displaying new text
+
                 if med is False and self.current_patrol:
                     self.elements['herb'].disable()
                     if self.patrol_type == 'med':
                         self.patrol_type = 'general'
-
-                self.elements['info'].kill()  # clearing the text before displaying new text
 
                 if self.patrol_type == 'general':
                     text = 'random patrol type'
@@ -682,7 +684,7 @@ class PatrolScreen(Screens):
             return
 
         print("attempted romance between:", patrol.patrol_leader.name, patrol.patrol_random_cat.name)
-        chance_of_romance_patrol = 16
+        chance_of_romance_patrol = game.config["patrol_generation"]["chance_of_romance_patrol"]
 
         if get_personality_compatibility(patrol.patrol_leader, patrol.patrol_random_cat) is True or patrol.patrol_random_cat.mate == patrol.patrol_leader.ID:
             chance_of_romance_patrol -= 10
@@ -695,6 +697,8 @@ class PatrolScreen(Screens):
                 chance_of_romance_patrol -= 1
             elif val in ["dislike", "jealousy"] and value_check >= 20:
                 chance_of_romance_patrol += 2
+        if chance_of_romance_patrol <= 0:
+            chance_of_romance_patrol = 1
         print("final romance chance:", chance_of_romance_patrol)
         if not int(random.random() * chance_of_romance_patrol):
             patrol.patrol_event = self.romantic_event_choice
@@ -746,7 +750,7 @@ class PatrolScreen(Screens):
 
         # if we have both types of stat cats and the patrol is too small then we drop the win stat cat
         # this is to prevent cases where a stat cat and the random cat are the same cat
-        if len(patrol.patrol_cats) <= 2 and patrol.patrol_win_stat_cat and patrol.patrol_fail_stat_cat:
+        if len(patrol.patrol_cats) == 2 and patrol.patrol_win_stat_cat and patrol.patrol_fail_stat_cat:
             patrol.patrol_win_stat_cat = None
 
         # here we try to ensure that the random cat is not the same as either stat cat type or the patrol leader
@@ -761,7 +765,7 @@ class PatrolScreen(Screens):
                 print('counting')
                 if (patrol.patrol_win_stat_cat or patrol.patrol_fail_stat_cat) == patrol.patrol_random_cat \
                         or patrol.patrol_random_cat == patrol.patrol_leader:
-                    if len(patrol.patrol_cats) <= 2:
+                    if len(patrol.patrol_cats) == 2:
                         print('remove all stat cats')
                         patrol.patrol_fail_stat_cat = None
                         patrol.patrol_win_stat_cat = None
@@ -1071,9 +1075,9 @@ class PatrolScreen(Screens):
                                                                               (300, 300)), manager=MANAGER)
 
             name = str(self.selected_cat.name)  # get name
-            if 14 <= len(name) >= 16:  # check name length
-                short_name = str(self.selected_cat.name)[0:15]
-                name = short_name + '...'
+            if len(name) >= 16:  # check name length
+                short_name = name[0:15]
+                name = short_name + '..'
 
             self.elements['selected_name'] = pygame_gui.elements.UITextBox(name,
                                                                            scale(pygame.Rect((600, 650), (400, 60))),
@@ -1102,9 +1106,9 @@ class PatrolScreen(Screens):
                         , manager=MANAGER)
                     # Check for name length
                     name = str(mate.name)  # get name
-                    if 11 <= len(name):  # check name length
-                        short_name = str(mate.name)[0:10]
-                        name = short_name + '...'
+                    if 10 <= len(name):  # check name length
+                        short_name = name[0:9]
+                        name = short_name + '..'
                     self.elements['mate_name'] = pygame_gui.elements.ui_label.UILabel(
                         scale(pygame.Rect((306, 600), (190, 60))),
                         name,
@@ -1144,9 +1148,9 @@ class PatrolScreen(Screens):
                 # Failsafe, if apprentice or mentor is set to none.
                 if self.app_mentor is not None:
                     name = str(self.app_mentor.name)  # get name
-                    if 11 <= len(name):  # check name length
-                        short_name = str(self.app_mentor.name)[0:10]
-                        name = short_name + '...'
+                    if 10 <= len(name):  # check name length
+                        short_name = name[0:9]
+                        name = short_name + '..'
                     self.elements['app_mentor_name'] = pygame_gui.elements.ui_label.UILabel(
                         scale(pygame.Rect((1106, 600), (190, 60))),
                         name,

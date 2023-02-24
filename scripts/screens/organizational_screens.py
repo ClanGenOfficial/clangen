@@ -33,6 +33,7 @@ class StartScreen(Screens):
             elif event.ui_element == self.settings_button:
                 self.change_screen('settings screen')
             elif event.ui_element == self.quit:
+                game.rpc.close()
                 pygame.display.quit()
                 pygame.quit()
                 exit()
@@ -256,6 +257,7 @@ class SettingsScreen(Screens):
             if event.ui_element == self.fullscreen_toggle:
                 game.switch_setting('fullscreen')
                 game.save_settings()
+                game.rpc.close()
                 pygame.display.quit()
                 pygame.quit()
                 exit()
@@ -552,7 +554,7 @@ class SettingsScreen(Screens):
 
         n += 1
         self.checkboxes_text['gore'] = pygame_gui.elements.UITextBox(
-            "Allow mild gore and blood in patrol artwork.",
+            "Allow mild gore and blood in patrol artwork",
             scale(pygame.Rect((x_value, n * y_spacing), (1000, 78))),
             container=self.checkboxes_text["container"],
             object_id=get_text_box_theme("#setting_text_box"), manager=MANAGER
@@ -601,7 +603,7 @@ class SettingsScreen(Screens):
             object_id=get_text_box_theme("#setting_text_box"), manager=MANAGER
         )
         self.checkboxes_text['no unknown fathers'] = pygame_gui.elements.UITextBox(
-            "Allow unmated cats to have offspring.",
+            "Allow unmated cats to have offspring",
             scale(pygame.Rect((x_value, 674), (1000, 100))),
             object_id=get_text_box_theme("#setting_text_box"), manager=MANAGER
         )
@@ -944,6 +946,7 @@ class StatsScreen(Screens):
         elder_num = 0
         starclan_num = 0
         medcat_num = 0
+        other_num = 0
         for cat in Cat.all_cats.values():
             if not cat.dead and not cat.outside:
                 living_num += 1
@@ -957,6 +960,8 @@ class StatsScreen(Screens):
                     elder_num += 1
                 elif cat.status == 'medicine cat':
                     medcat_num += 1
+            elif (cat.status in ['kittypet', 'loner', 'rogue'] or cat.outside) and not cat.dead:
+                other_num+=1
             else:
                 starclan_num += 1
 
@@ -966,6 +971,7 @@ class StatsScreen(Screens):
                      "Number of Apprentices: " + str(app_num) + "\n\n" + \
                      "Number of Kits: " + str(kit_num) + "\n\n" + \
                      "Number of Elders: " + str(elder_num) + "\n\n" + \
+                     "Number of Cats Outside the Clans: " + str(other_num) + "\n\n" + \
                      "Number of Dead Cats: " + str(starclan_num)
 
         self.stats_box = pygame_gui.elements.UITextBox(stats_text, scale(pygame.Rect((200, 300), (1200, 1000))),
