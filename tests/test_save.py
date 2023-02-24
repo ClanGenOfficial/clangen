@@ -5,9 +5,12 @@ import shutil
 
 from scripts.game_structure.game_essentials import Game
 
-NUMBER_OF_EXAMPLE_SAVES = 2
 
 
+
+num_example_saves = len(os.listdir('tests/testSaves'))
+
+@unittest.skipIf(num_example_saves == 0, "No example saves found. Run 'git submodule update --init --recursive' to download example saves")
 class LoadSave(unittest.TestCase):
 
     def setUp(self):
@@ -43,7 +46,7 @@ class LoadSave(unittest.TestCase):
     
 
     def test_check_current_clan(self):
-        for i in range(1, NUMBER_OF_EXAMPLE_SAVES + 1):
+        for i in range(1, num_example_saves + 1):
             with self.subTest(i=i):
                 print("Checking current clan for save " + str(i))
                 self.example_save(i)
@@ -58,7 +61,7 @@ class LoadSave(unittest.TestCase):
     
     def test_check_clan_list(self):
 
-        for i in range(1, NUMBER_OF_EXAMPLE_SAVES + 1):
+        for i in range(1, num_example_saves + 1):
             with self.subTest(i=i):
                 print("Checking clan list for save " + str(i))
                 self.example_save(i)
