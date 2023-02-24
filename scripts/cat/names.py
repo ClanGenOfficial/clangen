@@ -130,7 +130,7 @@ class Name():
         ],
         'GHOST': [
             'Black', 'Black', 'Shade', 'Shaded', 'Crow', 'Raven', 'Ebony', 'Dark',
-            'Night', 'Shadow', 'Scorch', 'Midnight', 'Bleak', 'Storm', 'Violet', 'Pepper', 'Bat'
+            'Night', 'Shadow', 'Scorch', 'Midnight', 'Bleak', 'Storm', 'Violet', 'Pepper', 'Bat', 'Fade'
         ],
         'PALEGINGER': [
             'Pale', 'Ginger', 'Sand', 'Sandy', 'Yellow', 'Sun', 'Sunny', 'Light', 'Lion', 'Bright',
@@ -243,7 +243,7 @@ class Name():
         "Potato", "Pouncival", "President", "Prickle", "Princess", "Private Eye", "Pudding", "Pumpernickel", "Punk", "Purdy",
         "Purry", "Pisces", "Pushee", "Quagmire", "Quake", "Queen", "Queenie", "Queeny", "Queso", "Queso Ruby", "Quest",
         "Quickie", "Quimby", "Quinn", "Quino", "Quinzee", "Quesadilla", "Radar", "Ramble", "Randy", "Rapunzel",
-        "Rarity", "Rat", "Ray", "Reese", "Reeses Puff", "Ren", "Rio", "Riot", "River", "Riya", "Rocket", "Rodeo",
+        "Raptor", "Rarity", "Rat", "Ray", "Reese", "Reeses Puff", "Ren", "Rio", "Riot", "River", "Riya", "Rocket", "Rodeo",
         "Rolo", "Roman", "Roomba", "Rooster", "Rory", "Rose", "Roselie", "Ruby", "Rudolph", "Rufus", "Rue", "Ruffnut", "Rum", "Rumpleteazer", "Rum Tum Tugger", "Russel",
         "Sadie", "Sagwa", "Sailor", "Saki", "Salmon", "Salt", "Sam", "Samantha", "Sandwich", "Sandy", "Sarge", "Sassy", "Sashimi", "Sausage", "Schmidt",
         "Scotch", "Scrooge", "Seamus", "Sekhmet", "Sega", "Seri", "Shamash", "Shampoo", "Shamwow", "Shay", "Sherman",

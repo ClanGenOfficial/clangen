@@ -87,7 +87,7 @@ else:
         VERSION_NUMBER = subprocess.check_output(['git', 'rev-parse', 'HEAD']).decode('ascii').strip()
     except:
         print("Failed to get git commit hash, using hardcoded version number instead.")
-        print("Hey testers! We reccomend you use git to clone the repository, as it makes things easier for everyone.")
+        print("Hey testers! We recommend you use git to clone the repository, as it makes things easier for everyone.")
         print("There are instructions at https://discord.com/channels/1003759225522110524/1054942461178421289/1078170877117616169")
 print("Running on commit " + VERSION_NUMBER)
 
