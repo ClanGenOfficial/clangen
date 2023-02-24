@@ -63,7 +63,7 @@ class SaveCheck(UIWindow):
         self.save_text.hide()
 
         self.back_button = UIImageButton(
-            scale(pygame.Rect((5, 10), (50, 50))),
+            scale(pygame.Rect((540, 10), (44, 44))),
             "",
             object_id="#exit_window_button",
             container=self
