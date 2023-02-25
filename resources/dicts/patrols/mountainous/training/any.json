@@ -101,7 +101,7 @@
     "biome": "mountainous",
     "season": "Any",
     "tags": ["training", "platonic", "comfort", "trust", "blunt_force_injury", "death", "scar", "LEFTEAR", "p_l_to_r_c", "s_c_to_r_c", "patrol_to_p_l", "patrol_to_r_c"],
-    "intro_text": "Trailing behind the patrol, there's a mighty clatter of stones somewhere below r_c. They look around wildly - just in time for the world to tip upside-down as the scree slope beneath them collapses.",
+    "intro_text": "r_c is trailing behind the patrol when there is a mighty clatter of stones from below them. They look around wildly, just in time for the world to tip upside-down as the scree slope beneath them collapses.",
     "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
     "chance_of_success": 90,
     "exp": 20,
