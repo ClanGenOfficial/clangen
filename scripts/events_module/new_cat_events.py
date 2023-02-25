@@ -13,7 +13,7 @@ from scripts.event_class import Single_Event
 
 
 # ---------------------------------------------------------------------------- #
-#                               Death Event Class                              #
+#                               New Cat Event Class                              #
 # ---------------------------------------------------------------------------- #
 
 class NewCatEvents:
@@ -281,6 +281,7 @@ class NewCatEvents:
                     born_with = False
                     if PERMANENT[chosen_condition]['congenital'] in ['always', 'sometimes']:
                         born_with = True
+
                     new_cat.get_permanent_condition(chosen_condition, born_with)
 
                     # assign scars
