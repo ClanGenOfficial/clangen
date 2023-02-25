@@ -527,7 +527,7 @@
     "exp": 10,
     "success_text": [
             "At least they don't have to dig through the snow for these leaves, p_l sighs, slowly and carefully snipping off juniper among the tree's branches.",
-            "Sometimes p_l finds themselves need giddy with gratefulness for evergreens, plants that scoff at leaf-bare and grow to spite it. It's not an effect of the plant - juniper calms, not induces euphoria. This is just the relief of still having a fresh herb source in leaf-bare.",
+            "Sometimes p_l finds themselves near giddy with gratefulness for evergreens, plants that scoff at leaf-bare and grow to spite it. It's not an effect of the plant - juniper calms, not induces euphoria. This is just the relief of still having a fresh herb source in leaf-bare.",
             "Something its not finding plants to harvest that is the problem, it's finding plants to safely harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without needing to risk themselves climbing in leaf-bare."
 ],
     "fail_text": [
@@ -559,7 +559,7 @@
     "exp": 40,
     "success_text": [
             "At least they don't have to dig through the snow for these leaves, p_l sighs, slowly and carefully snipping off juniper among the tree's branches. app1 is very hesitant to join them up there, but eventually overcomes their fear to leaf gather on a lower branch. Very carefully.",
-            "Sometimes p_l finds themselves need giddy with gratefulness for evergreens, plants that scoff at leaf-bare and grow to spite it. It's not an effect of the plant - juniper calms, not induces euphoria. This is just the relief of still having a fresh herb source in leaf-bare, and app1 giving them a weird look as p_l has to explain their smiles.",
+            "Sometimes p_l finds themselves near giddy with gratefulness for evergreens, plants that scoff at leaf-bare and grow to spite it. It's not an effect of the plant - juniper calms, not induces euphoria. This is just the relief of still having a fresh herb source in leaf-bare, and app1 giving them a weird look as p_l has to explain their smiles.",
             "Something its not finding plants to harvest that is the problem, it's finding plants to safely harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without with s_c or app1 needing to risk themselves climbing in leaf-bare."
 ],
     "fail_text": [
@@ -591,7 +591,7 @@
     "exp": 10,
     "success_text": [
             "At least they don't have to dig through the snow for these leaves, p_l sighs, slowly and carefully snipping off juniper among the tree's branches. The patrol joins them, tense and focused, and it's an exhausted group that returns back to camp as the sun dips toward the horizon. Exhausted - but successful.",
-            "Sometimes p_l finds themselves need giddy with gratefulness for evergreens, plants that scoff at leaf-bare and grow to spite it. It's not an effect of the plant - juniper calms, not induces euphoria. This is just the relief of still having a fresh herb source in leaf-bare, and the warmth of having their Clanmates there to help them gather it.",
+            "Sometimes p_l finds themselves near giddy with gratefulness for evergreens, plants that scoff at leaf-bare and grow to spite it. It's not an effect of the plant - juniper calms, not induces euphoria. This is just the relief of still having a fresh herb source in leaf-bare, and the warmth of having their Clanmates there to help them gather it.",
             "Something its not finding plants to harvest that is the problem, it's finding plants to safely harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without any cat needing to risk themselves climbing in leaf-bare."
     ],
     "fail_text": [
