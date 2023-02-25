@@ -124,7 +124,7 @@ class SwitchClanScreen(Screens):
             else:
                 for page in self.delete_buttons:
                     if event.ui_element in page:
-                        DeleteCheck(game.switches['cur_screen'], self.clan_name[self.page][page.index(event.ui_element)])
+                        DeleteCheck(self.change_screen, self.clan_name[self.page][page.index(event.ui_element)])
 
                         return
 
