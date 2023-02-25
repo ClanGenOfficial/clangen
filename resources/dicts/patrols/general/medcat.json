@@ -212,5 +212,80 @@
     "max_cats": 6,
     "antagonize_text": "app1 feels hounded, never given a moment's peace, and they hiss at the StarClan cat. The ghost vanishes like a puff of fog in the morning sun, hopefully not to return.",
     "antagonize_fail_text": "app1 feels hounded, never given a moment's peace, and they hiss at the StarClan cat. But when they turn around, there's only a rather upset looking clanmate, there to fetch them to camp to help with an emergency."
+},
+{
+    "patrol_id": "gen_med_medwar_natureofstarclan",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["med_cat", "warrior", "herb", "random_herbs", "no_app"],
+    "intro_text": "During a patrol looking for herbs, p_l notices that r_c seems more quiet than usual. When prompted, r_c slowly asks if p_l could teach them more about the nature of StarClan.",
+    "decline_text": "p_l opens their mouth to answer, but the cry of another patrol looking for them shuts down the conversation. p_l races away towards the scene leaving r_c behind.",
+    "chance_of_success": 60,
+    "exp": 10,
+    "success_text": [
+        "p_l eventually relents and begins teaching r_c more about StarClan and the nature of prophecies. Expecting boredom, p_l was shocked when they saw wonder in r_c's face. The two spend the rest of the patrol pondering the nature of their ancestors together."
+    ],
+    "fail_text":[
+        "p_l tries to simplify the mystical power of their ancestors, but it only leaves r_c more confused about StarClan and their prophecies.",
+        null,
+        null,
+        null
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "win_skills": null,
+    "win_trait": ["None"],
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_med_medwar_natureofdeath",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["med_cat", "warrior", "herb", "random_herbs", "no_app"],
+    "intro_text": "To p_l's concern, their warrior escort is unusually quiet. When prompted on their troubles, r_c comments that they could not help but think of what legacy they would leave behind if StarClan calls upon them.",
+    "decline_text": "p_l isn't sure how to exactly address such a statement, and quickly attempts to distract r_c with some herb collecting.",
+    "chance_of_success": 60,
+    "exp": 10,
+    "success_text": [
+        "p_l and r_c spend their time on the patrol discussing how to StarClan, the end of their life did not mean it was the true end. Even in StarClan, cats had their role to play. r_c's legacy would shine brighter than any star. Comforted by these words, r_c thanks p_l and helps bring back the herbs."
+    ],
+    "fail_text":[
+        "p_l attempts to soothe r_c's worries, but nothing seems to stick. r_c turns back towards the camp, leaving p_l alone to fruitlessly hunt for herbs.",
+        null,
+        null,
+        null
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "win_skills": null,
+    "win_trait": ["None"],
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_med_medwar_puddles",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["med_cat", "warrior", "herb", "random_herbs", "no_app"],
+    "intro_text": "p_l could not help but be in a grumpy mood after such a storm. Herbs strewn about, prey in hiding, it would take forever to find anything. r_c attempts to find a way to cheer up the healer.",
+    "decline_text": "But before r_c could come up with a plan, a cry from the camp forces p_l to return back to camp.",
+    "chance_of_success": 60,
+    "exp": 10,
+    "success_text": [
+        "r_c splashes water from a puddle onto p_l's fur. p_l fluffs up like a bottlebrush, turning around to quickly send a wave of water back towards r_c! The two engage in a small water fight, and when they resume the herb patrol, r_c is glad to see p_l looks much happier."
+    ],
+    "fail_text":[
+        "r_c splashes water from a puddle at p_l. p_l turns around and hisses at r_c that they don't have time for kit games! The two continue their patrol, but p_l's sour mood distracts them from any usable herbs they could find.",
+        null,
+        null,
+        null
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "win_skills": null,
+    "win_trait": ["None"],
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 }
 ]
