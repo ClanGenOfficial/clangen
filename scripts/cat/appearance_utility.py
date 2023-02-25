@@ -545,27 +545,29 @@ def init_pattern(cat):
         if not cat.pattern:
             cat.pattern = choice(["ONE", "TWO", "THREE", "FOUR"])
 
-        if cat.tortiebase in ["singlestripe", "smoke", "single"]:
-            cat.tortiepattern = choice(['tabby', 'mackerel', 'classic', 'sokoke', 'single', 'smoke', 'agouti',
-                                        'ticked', 'smoke'])
-        else:
-            cat.tortiepattern = random.choices([cat.tortiebase, 'single', 'smoke'], weights=[96, 2, 2], k=1)[0]
-
         wildcard_chance = game.config["cat_generation"]["wildcard_tortie"]
         if cat.pelt.colour:
             # The "not wildcard_chance" allows users to set wildcard_tortie to 0
             # and always get wildcard torties.
             if not wildcard_chance or random.getrandbits(wildcard_chance) == 1:
                 # This is the "wildcard" chance, where you can get funky combinations.
+
+                # Allow any pattern:
+                cat.tortiepattern = choice(tortiebases)
+
                 # Allow any colors that aren't the base color.
-                #print("WILDCARD TORTIE")
                 possible_colors = pelt_colours.copy()
                 possible_colors.remove(cat.pelt.colour)
                 cat.tortiecolour = choice(possible_colors)
-                #print(cat.pelt.colour, cat.tortiecolour)
 
             else:
                 # Normal generation
+                if cat.tortiebase in ["singlestripe", "smoke", "single"]:
+                    cat.tortiepattern = choice(['tabby', 'mackerel', 'classic', 'single', 'smoke', 'agouti',
+                                                'ticked', 'smoke'])
+                else:
+                    cat.tortiepattern = random.choices([cat.tortiebase, 'single'], weights=[97, 3], k=1)[0]
+
                 if cat.pelt.colour == "WHITE":
                     possible_colors = white_colours.copy()
                     possible_colors.remove("WHITE")
