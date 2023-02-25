@@ -11,6 +11,7 @@ from scripts.game_structure.image_button import UIImageButton
 from scripts.utility import get_text_box_theme, scale
 import pygame_gui
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
+from scripts.game_structure.windows import DeleteCheck
 
 
 class StartScreen(Screens):
@@ -123,12 +124,7 @@ class SwitchClanScreen(Screens):
             else:
                 for page in self.delete_buttons:
                     if event.ui_element in page:
-                        print("delete")
-                        rempath = "saves/" + self.clan_name[self.page][page.index(event.ui_element)]
-                        shutil.rmtree(rempath)
-                        os.remove(rempath + ".json")
-                        
-                        self.change_screen('switch clan screen')
+                        DeleteCheck(game.switches['cur_screen'], self.clan_name[self.page][page.index(event.ui_element)])
 
                         return
 
