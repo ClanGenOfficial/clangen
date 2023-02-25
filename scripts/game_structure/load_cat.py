@@ -119,6 +119,11 @@ def json_load():
                 # Convert old torties
                 new_cat.pattern = old_tortie_patches[cat["pattern"]][1]
                 new_cat.tortiecolour = old_tortie_patches[cat["pattern"]][0]
+                # If the pattern is old, there is also a change the base color is stored in
+                # tortiecolour, and that may be different than the pelt color (main for torties
+                # generated before the "ginger-on-ginger" update. If it was generated after that update,
+                # tortiecolour and pelt_colour will be the same. Therefore, so saftly, lets also re-set the pelt color
+                new_cat.pelt.colour = cat["tortie_color"]
             else:
                 new_cat.pattern = cat["pattern"]
                 new_cat.tortiecolour = cat["tortie_color"]

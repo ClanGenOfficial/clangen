@@ -421,7 +421,6 @@ def randomize_pelt(cat):
         torbie = random.getrandbits(tortie_chance_m) == 1
 
     chosen_tortie_base = None
-    torbie=True
     if torbie:
         # If it is tortie, the chosen pelt above becomes the base pelt.
         chosen_tortie_base = chosen_pelt
@@ -552,14 +551,16 @@ def init_pattern(cat):
         else:
             cat.tortiepattern = random.choices([cat.tortiebase, 'single', 'smoke'], weights=[96, 2, 2], k=1)[0]
 
-        wildcard_chance = 9
+        wildcard_chance = 8
         if cat.pelt.colour:
             if random.getrandbits(wildcard_chance) == 1:
                 # This is the "wildcard" chance, where you can get funky combinations.
                 # Allow any colors that aren't the base color.
+                #print("WILDCARD TORTIE")
                 possible_colors = pelt_colours.copy()
                 possible_colors.remove(cat.pelt.colour)
                 cat.tortiecolour = choice(possible_colors)
+                #print(cat.pelt.colour, cat.tortiecolour)
 
             else:
                 # Normal generation
