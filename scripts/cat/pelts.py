@@ -244,10 +244,7 @@ pelt_c_no_bw = [
 tortiepatterns = ['singlecolour', 'tortietabby', 'tortiebengal', 'tortiemarbled', 'tortieticked',
     'tortiesmoke', 'tortierosette', 'tortiespeckled', 'tortiemackerel', 'tortieclassic',
     'tortiesokoke', 'tortieagouti']
-patch_colours = ['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR', 'GOLDONE', 'GOLDTWO',
-    'GOLDTHREE', 'GOLDFOUR', 'GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR',
-    'DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR', 'CREAMONE', 'CREAMTWO', 'CREAMTHREE', 'CREAMFOUR']
-tortiebases = ['singlecolour', 'tabby', 'bengal', 'marbled', 'ticked', 'smoke', 'rosette', 'speckled', 'mackerel',
+tortiebases = ['single', 'tabby', 'bengal', 'marbled', 'ticked', 'smoke', 'rosette', 'speckled', 'mackerel',
     'classic', 'sokoke', 'agouti', 'singlestripe']
 
 pelt_length = ["short", "medium", "long"]

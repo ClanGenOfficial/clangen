@@ -311,8 +311,8 @@ def pelt_inheritance(cat, parents: tuple):
     if torbie:
         # If it is tortie, the chosen pelt above becomes the base pelt.
         chosen_tortie_base = chosen_pelt
-        if chosen_tortie_base == "TwoColour":
-            chosen_tortie_base = "Singlecolour"
+        if chosen_tortie_base in ["TwoColour", "SingleColour"]:
+            chosen_tortie_base = "Single"
         chosen_tortie_base = chosen_tortie_base.lower()
         chosen_pelt = random.choice(torties)
 
@@ -425,8 +425,8 @@ def randomize_pelt(cat):
     if torbie:
         # If it is tortie, the chosen pelt above becomes the base pelt.
         chosen_tortie_base = chosen_pelt
-        if chosen_tortie_base == "TwoColour":
-            chosen_tortie_base = "Singlecolour"
+        if chosen_tortie_base in ["TwoColour", "SingleColour"]:
+            chosen_tortie_base = "Single"
         chosen_tortie_base = chosen_tortie_base.lower()
         chosen_pelt = random.choice(torties)
 
@@ -546,7 +546,7 @@ def init_pattern(cat):
         if not cat.pattern:
             cat.pattern = choice(["ONE", "TWO", "THREE", "FOUR"])
 
-        if cat.tortiebase in ["singlestipe", "smoke", "singlecolour"]:
+        if cat.tortiebase in ["singlestipe", "smoke", "single"]:
             cat.tortiepattern = choice(['tabby', 'mackerel', 'classic'])
         else:
             cat.tortiepattern = cat.tortiebase
@@ -556,19 +556,27 @@ def init_pattern(cat):
             if random.getrandbits(wildcard_chance) == 1:
                 # This is the "wildcard" chance, where you can get funky combinations.
                 # Allow any colors that aren't the base color.
-                cat.tortiecolour = choice(pelt_colours.remove(cat.pelt.colour))
+                possible_colors = pelt_colours.copy()
+                possible_colors.remove(cat.pelt.colour)
+                cat.tortiecolour = choice(possible_colors)
 
             else:
                 # Normal generation
+                if cat.pelt.colour == "WHITE":
+                    possible_colors = white_colours.copy()
+                    possible_colors.remove("WHITE")
+                    cat.pelt.colour = choice(possible_colors)
+
                 if cat.pelt.colour in black_colours:
-                    cat.tortiecolour = choice(ginger_colours)
+                    cat.tortiecolour = choice(ginger_colours + brown_colours)
                 elif cat.pelt.colour in ginger_colours:
                     cat.tortiecolour = choice(brown_colours + black_colours)
                 elif cat.pelt.colour in white_colours:
-                    cat.tortiecolour = choice(ginger_colours)
+                    cat.tortiecolour = choice(ginger_colours + brown_colours)
                 elif cat.pelt.colour in brown_colours:
-                    possible_colors = brown_colours + ginger_colours
-                    cat.tortiecolour = choice(possible_colors.remove(cat.pelt.colour))
+                    possible_colors = brown_colours + ginger_colours + ["GREY", "PALEGREY", "DARKGREY"]
+                    possible_colors.remove(cat.pelt.colour)
+                    cat.tortiecolour = choice(possible_colors)
                 else:
                     cat.tortiecolour = "GOLD"
 
