@@ -770,6 +770,9 @@ class PatrolScreen(Screens):
                         patrol.patrol_fail_stat_cat = None
                         patrol.patrol_win_stat_cat = None
                         break
+                    elif len(patrol.patrol_cats) == 1:
+                        print('solo patrol')
+                        break
                     print("finding new random cat, old random cat:", patrol.patrol_random_cat.name)
                     patrol.patrol_other_cats.append(patrol.patrol_random_cat)
                     patrol.patrol_random_cat = choice(patrol.patrol_cats)
