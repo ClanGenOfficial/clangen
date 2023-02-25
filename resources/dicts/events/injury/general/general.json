@@ -66,7 +66,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c's paws slipped on some rocks and their leg was dislocated.",
+        "event_text": "m_c slipped on some rocks and their leg was dislocated.",
         "history_text": [
             null,
             null,
@@ -85,7 +85,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c's paws slipped on some rocks and they twisted their paw.",
+        "event_text": "m_c slipped on some rocks and they twisted their paw.",
         "history_text": [
             null,
             null,
