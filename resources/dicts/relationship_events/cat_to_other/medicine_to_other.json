@@ -79,7 +79,7 @@
             "has noticed (cat) isn't doing a lot of work lately.",
             "feels like (cat) isn't taking their health seriously.",
             "tells (cat) a trick about a certain herb.",
-            "went to (cat) for advice about a dream they had."
+            
         ],
         "friendly": [],
         "close": [
@@ -88,7 +88,7 @@
     },
     "leader": {
         "unfriendly": [
-            "accuses (cat) of being a bad leader.",
+            ,
             "gives (cat) bitter herbs on purpose."
         ],
         "neutral": [
@@ -103,7 +103,7 @@
     },
     "deputy": {
         "unfriendly": [
-            "accuses (cat) of being a bad deputy.",
+            ,
             "gives (cat) bitter herbs on purpose."
         ],
         "neutral": [

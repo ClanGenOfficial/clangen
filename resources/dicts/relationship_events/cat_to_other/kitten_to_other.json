@@ -19,12 +19,10 @@
         ],
         "neutral": [
             
-            "is asking (cat) where kits come from.",
-            "whines that (cat) won't play with them, even though they're always around camp."
+            
             
         ],
         "friendly": [
-            "ask (cat) what it's like to be a medicine apprentice."
             
             
         ],
@@ -34,19 +32,13 @@
     },
     "apprentice": {
         "unfriendly": [
-            "thinks they should get to be an apprentice already! they're just as good as (cat)."
         ],
         "neutral": [
             
             
             
-            "is asking (cat) where kits come from.",
-            "doesn't understand why (cat) won't let them play in the medicine cat den.",
-           
-            "looks at (cat) napping in the apprentice's den and can't wait to leave the nursery."
         ],
         "friendly": [
-            "ask (cat) what it's like to be a apprentice."
             
             
         ],
@@ -60,19 +52,8 @@
             
         ],
         "neutral": [
-            "is biting (cat)'s tail.",
-            
-            "is asking (cat) where kits come from.",
-            "is demanding (cat)'s attention."
-            
-            
-            
         ],
         "friendly": [
-            "tells (cat) that they would like to be like them when they grows up.",
-           
-           
-            "decorates their nest with gifts that (cat) brought them from patrol"
         ],
         "close": [
 
@@ -82,12 +63,6 @@
     "medicine cat": {
         "unfriendly": [],
         "neutral": [
-           
-            "watched (cat) show kindness and compassion towards their patients.",
-            "caught a glimpse of (cat) caring for a wounded warrior with confidence and grace.",
-            "spent some time hanging out with (cat) in the medicine den.",
-            "went to (cat) for advice about a dream they had."
-            
         ],
         "friendly": [
             
@@ -98,12 +73,9 @@
     },
     "leader": {
         "unfriendly": [
-            "accuses (cat) of being a bad leader."
+            
         ],
         "neutral": [
-           
-           
-            "always wants to play as (cat) in their games of pretend."
         ],
         "friendly": [
             
@@ -113,13 +85,9 @@
         ]
     },
     "deputy": {
-        "unfriendly": [
-            "accuses (cat) of being a bad deputy."
+        "unfriendly": [       
         ],
         "neutral": [
-           
-           
-            "asks (cat) if they're really going to be the leader someday."
         ],
         "friendly": [
             
@@ -132,18 +100,10 @@
         "unfriendly": [
             
         ],
-        "neutral": [
-            
-            
-            "is asking (cat) where kits come from.",
-            "was distracted while (cat) was telling a story."
-            
+        "neutral": [  
         ],
         "friendly": [
-            "thinks that (cat) tells the best stories.",
-           
-           
-            "listens to (cat) talk about what life was like when they were young."
+
         ],
         "close": [
             

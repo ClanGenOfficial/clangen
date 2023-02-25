@@ -94,6 +94,21 @@
 				"dislike": "increase"
 			}
 		},
+		{ 
+			"id":"jel_kit_inc_med1",
+			"interactions":[
+				
+			],
+			"main_status_constraint":[
+				"kitten"
+			],
+			"random_status_constraint":[
+			"mediator apprentice",
+			"apprentice",
+			"medicine cat apprentice",
+			"medicine cat"
+		]
+		},
 		{
 			"id": "jel_inc_high1",
 			"intensity": "high",

@@ -68,15 +68,71 @@
 				"admiration": "increase"
 			}
 		},
+			{
+				"id":"admire_inc_medium3",
+				"interactions":[
+					"m_c watched r_c show kindness and compassion towards their patients.",
+					"m_c caught a glimpse of r_c caring for a wounded warrior with confidence and grace.",
+					"m_c spent some time hanging out with r_c in the medicine den.",
+					"m_c went to r_c for advice about a dream they had."
+				],
+				"random_status_constraint":[
+					"medicine cat",
+					"medicine cat apprentice"
+				],
+				"also_influences":{
+					"comfortable": "increase",
+					"platonic": "increase",
+					"trust": "increase"
+				}
+			},
 		{
 			"id":"admiration_kit_inc_med1",
 			"interactions":[
 				"m_c wants to become just like r_c someday!",
-				"m_c is pretending to be r_c."
+				"m_c is pretending to be r_c.",
+				"m_c always wants to play as r_c in their games of pretend."
 			],
 			"main_status_constraint":[
 				"kitten"
+			],
+			"random_status_constraint":[
+				"elder",
+				"apprentice",
+				"warrior",
+				"mediator apprentice",
+				"mediator",
+				"medicine cat apprentice",
+				"medicine cat",
+				"deputy",
+				"leader"
 			]
+		},
+		{
+			"id":"admeration_kit_inc_med2",
+			"interactions":[
+				"m_c tells r_c that they would like to be like them when they grows up."
+			],
+			"main_status_constraint":[
+				"kitten"
+			],
+			"relationship_constraint":[
+				"admiration_20"
+			],
+			"random_status_constraint":[
+				"elder",
+				"apprentice",
+				"warrior",
+				"mediator apprentice",
+				"mediator",
+				"medicine cat apprentice",
+				"medicine cat",
+				"deputy",
+				"leader"
+			],
+			"reaction_random_cat":{
+				"platonic": "increase"
+			}
 		},
 		{
 			"id": "admire_inc_high1",
@@ -108,6 +164,22 @@
 			"reaction_random_cat":{
 				"admiration":"increase",
 				"trust":"increase"
+			}
+		},
+		{
+			"id":"admeration_kit_inc_high1",
+			"intensity":"high",
+			"interactions":[
+				"m_c asks r_c if they're really going to be the leader someday."
+			],
+			"main_status_constraint":[
+				"kitten"
+			],
+			"random_status_constraint":[
+				"deputy"
+			],
+			"reaction_random_cat":{
+				"platonic": "increase"
 			}
 		}
 	],
@@ -157,7 +229,8 @@
 			"id": "admire_de_high2",
 			"intensity": "high",
 			"interactions":[
-				"m_c had a difficult coversation with r_c and they both ended up resentful of each other."
+				"m_c had a difficult coversation with r_c and they both ended up resentful of each other.",
+				"m_c was distracted while r_c was telling a story."
 			],
 			"reaction_random_cat":{
 				"admiration": "decrease"

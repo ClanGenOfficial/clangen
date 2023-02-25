@@ -90,7 +90,7 @@
             "thought of (cat) on the last patrol and brought an herb back with them.",
             "tells (cat) about their last encounter with StarClan.",
             "feels like (cat) isn't taking their health seriously.",
-            "went to (cat) for advice about a dream they had."
+            
         ],
         "friendly": [],
         "close": [
@@ -105,7 +105,7 @@
     },
     "deputy": {
         "unfriendly": [
-            "accuses (cat) of being a bad deputy.",
+            ,
             "had a disagreement with (cat) while on patrol earlier.",
             "stole (cat)'s catch right out from under their claws."
         ],

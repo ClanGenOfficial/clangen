@@ -124,7 +124,7 @@
             "escorted (cat) so they could gather herbs.",
             "thought of (cat) on the last patrol and brought an herb back with them.",
             "feels like (cat) isn't taking their health seriously.",
-            "went to (cat) for advice about a dream they had.",
+            ,
             "asks (cat) how they're doing.",
             "thanks (cat) for checking when they ask if they're feeling alright.",
             "drops into the medicine den to ask (cat) if they've eaten yet.",
@@ -144,7 +144,7 @@
     },
     "leader": {
         "unfriendly": [
-            "accuses (cat) of being a bad leader.",
+            ,
             "had a disagreement with (cat) while on patrol earlier.",
             "stole (cat)'s catch right out from under their claws."
         ],
@@ -161,7 +161,7 @@
     "deputy": {
         "unfriendly": [
             "thinks they should be deputy instead of (cat).",
-            "accuses (cat) of being a bad deputy.",
+            ,
             "had a disagreement with (cat) while on patrol earlier.",
             "stole (cat)'s catch right out from under their claws."
         ],

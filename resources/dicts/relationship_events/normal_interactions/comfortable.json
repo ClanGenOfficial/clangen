@@ -118,7 +118,8 @@
 			"id":"comfortable_kit_odd1",
 			"interactions":[
 				"m_c chomps on r_c's ear.",
-				"m_c won't stop copying everything r_c does."
+				"m_c won't stop copying everything r_c does.",
+				"m_c is demanding r_c's attention."
 			],
 			"main_status_constraint":[
 				"kitten"

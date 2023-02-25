@@ -72,7 +72,29 @@
 		{
 			"id":"platonic_kit_inc_med1",
 			"interactions":[
-				"m_c plays mossball with r_c.",
+
+			],
+			"main_status_constraint":[
+				"kitten"
+			]
+		},
+		{
+			"id":"platonic_kit_inc_med2",
+			"interactions":[
+				"m_c plays mossball with r_c."
+
+			],
+			"reaction_random_cat":{
+				"platonic": "increase"
+			},
+			"main_status_constraint":[
+				"kitten"
+			]
+		},
+		{
+			"id":"platonic_kit_inc_med3",
+			"interactions":[
+				
 				"m_c lets r_c play with their favorite toy.",
 				"m_c pretends to be a warrior with r_c.",
 				"m_c is pretending to ward off foxes with r_c.",
@@ -91,6 +113,79 @@
 			},
 			"also_influences":{
 				"comfortable": "increase"
+			}
+		},
+		{
+			
+				"id":"platonic_kit_inc_med4",
+				"interactions":[
+					"m_c decorates their nest with gifts that r_c brought them."
+				],
+				"main_status_constraint":[
+					"kitten"
+				],
+				"random_status_constraint":[
+					"elder",
+					"apprentice",
+					"warrior",
+					"mediator apprentice",
+					"mediator",
+					"medicine cat apprentice",
+					"medicine cat",
+					"deputy",
+					"leader"
+				],
+				"reaction_random_cat":{
+					"platonic": "increase"
+				}
+		},
+		{
+			
+			"id":"platonic_kit_inc_med5",
+			"interactions":[
+				"m_c ask r_c what it's like to be in training."
+			],
+			"main_status_constraint":[
+				"kitten"
+			],
+			"random_status_constraint":[
+
+				"apprentice",
+				"mediator apprentice",
+				"medicine cat apprentice"
+			],
+			"reaction_random_cat":{
+				"platonic":"increase"
+			}
+	},
+		{
+			"id":"platonic_kit_inc_odd1",
+			"interactions":[
+				"m_c is asking r_c where kits come from."
+			],
+			"main_status_constraint":[
+				"kitten"
+			],
+			"random_status_constraint":[
+				"elder",
+				"apprentice",
+ 				"warrior",
+				"mediator apprentice",
+				"mediator",
+				"medicine cat apprentice",
+				"medicine cat",
+				"deputy",
+				"leader"
+
+			],
+			"reaction_random_cat":{
+				"comfortable": "decrease",
+				"trust":"increase"
+			},
+			"also_influences":{
+				"trust": "increase",
+				"comfortable":"increase",
+				"admiration": "increase"
 			}
 		},
 		{
@@ -147,6 +242,22 @@
 			"relationship_constraint":[
 				"platonic_60"
 			]
+		},
+		{
+			"id": "platonic_inc_high6",
+			"intensity":"high",
+			"interactions":[
+				"m_c thinks that r_c tells the best stories.",
+				"m_c listens to r_c talk about what life was like when they were young."
+			],
+			"random_status_constraint":[
+				"elder"
+			],
+			"also_influences":{
+				"admiration":"increase",
+				"comfortable":"increase",
+				"trust":"increase"
+			}
 		}
 	],
 	"decrease": [

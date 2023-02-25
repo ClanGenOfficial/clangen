@@ -127,18 +127,18 @@
         "neutral": [
             "escorted (cat) so they could gather herbs.",
             "thought of (cat) on the last patrol and brought a rare herb back for them.",
-            "watched (cat) show kindness and compassion towards their patients.",
-            "caught a glimpse of (cat) caring for a wounded warrior with confidence and grace.",
-            "spent some time hanging out with (cat) in the medicine den.",
+            
+            
+            
             "feels like (cat) isn't taking their own personal health seriously.",
-            "went to (cat) for advice about a dream they had."
+            
         ],
         "friendly": [],
         "close": []
     },
     "leader": {
         "unfriendly": [
-            "accuses (cat) of being a bad leader.",
+            ,
             "had a disagreement with (cat) while on patrol earlier.",
             "stole (cat)'s catch right out from under their claws."
         ],
@@ -150,7 +150,7 @@
     },
     "deputy": {
         "unfriendly": [
-            "accuses (cat) of being a bad deputy.",
+            ,
             "had a disagreement with (cat) while on patrol earlier.",
             "stole (cat)'s catch right out from under their claws!"
         ],

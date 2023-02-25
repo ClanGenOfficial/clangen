@@ -55,7 +55,7 @@
             "is dissatisfied that (cat) can't seem to get rid of their chronic pain."
         ],
         "neutral": [
-            "went to (cat) for advice about a dream they had.",
+            ,
             "is dissatisfied that (cat) can't seem to get rid of their chronic pain."
         ],
         "friendly": [],
@@ -63,7 +63,7 @@
     },
     "leader": {
         "unfriendly": [
-            "accuses (cat) of being a bad leader."
+            
         ],
         "neutral": [],
         "friendly": [],
@@ -71,7 +71,7 @@
     },
     "deputy": {
         "unfriendly": [
-            "accuses (cat) of being a bad deputy."
+            
         ],
         "neutral": [],
         "friendly": [],

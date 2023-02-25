@@ -45,17 +45,17 @@
     "medicine cat": {
         "unfriendly": [],
         "neutral": [
-            "watched (cat) show kindness and compassion towards their patients.",
-            "caught a glimpse of (cat) caring for a wounded warrior with confidence and grace.",
+            
+            
             "feels like (cat) isn't taking their health seriously.",
-            "went to (cat) for advice about a dream they had."
+            
         ],
         "friendly": [],
         "close": []
     },
     "leader": {
         "unfriendly": [
-            "accuses (cat) of being a bad leader."
+            
         ],
         "neutral": [],
         "friendly": [],
@@ -63,7 +63,7 @@
     },
     "deputy": {
         "unfriendly": [
-            "accuses (cat) of being a bad deputy."
+            
         ],
         "neutral": [],
         "friendly": [],

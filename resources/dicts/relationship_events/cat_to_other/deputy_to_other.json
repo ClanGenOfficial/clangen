@@ -94,14 +94,14 @@
             "escorted (cat) so they could gather herbs.",
             "thought of (cat) on the last patrol and brought an herb back with them.",
             "feels like (cat) isn't taking their health seriously.",
-            "went to (cat) for advice about a dream they had."
+            
         ],
         "friendly": [],
         "close": []
     },
     "leader": {
         "unfriendly": [
-            "accuses (cat) of being a bad leader.",
+            ,
             "had a disagreement with (cat) while on patrol earlier.",
             "stole (cat)'s catch right out from under their claws."
         ],
