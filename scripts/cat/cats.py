@@ -1526,11 +1526,12 @@ class Cat():
         if condition['congenital'] == 'always':
             born_with = True
         moons_until = condition["moons_until"]
-        if born_with is True and moons_until != 0:
+        if born_with and moons_until != 0:
             moons_until = randint(moons_until - 1, moons_until + 1)  # creating a range in which a condition can present
             if moons_until < 0:
                 moons_until = 0
-            if self.status != 'kitten':
+
+        if born_with and self.status != 'kitten':
                 moons_until = -2
         elif born_with is False:
             moons_until = 0
