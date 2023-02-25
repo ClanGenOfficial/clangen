@@ -1420,7 +1420,11 @@ class Patrol():
 
         # get the cat to injure
         if outcome == 3:
-            cat = self.patrol_random_cat
+            if "apprentice" in patrol.patrol_event.tags:
+                cat = self.patrol_apprentices[0]
+            else:
+                cat = self.patrol_random_cat
+
         elif outcome == 5:
             cat = self.patrol_fail_stat_cat
 
@@ -1640,7 +1644,8 @@ class Patrol():
             if total_amount > 0:
                 if len(patrol.patrol_cats) == 1:
                     self.results_text.append(f"{patrol.patrol_leader_name} brings back a {prey_size} amount of prey.")
-                self.results_text.append(f"Each cat brings back a {prey_size} amount of prey.")
+                else:
+                    self.results_text.append(f"Each cat brings back a {prey_size} amount of prey.")
 
     def handle_clan_relations(self, difference, antagonize, outcome):
         """
