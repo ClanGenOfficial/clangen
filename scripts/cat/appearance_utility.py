@@ -551,9 +551,11 @@ def init_pattern(cat):
         else:
             cat.tortiepattern = random.choices([cat.tortiebase, 'single', 'smoke'], weights=[96, 2, 2], k=1)[0]
 
-        wildcard_chance = 8
+        wildcard_chance = game.config["cat_generation"]["wildcard_tortie"]
         if cat.pelt.colour:
-            if random.getrandbits(wildcard_chance) == 1:
+            # The "not wildcard_chance" allows users to set wildcard_tortie to 0
+            # and always get wildcard torties.
+            if not wildcard_chance or random.getrandbits(wildcard_chance) == 1:
                 # This is the "wildcard" chance, where you can get funky combinations.
                 # Allow any colors that aren't the base color.
                 #print("WILDCARD TORTIE")
