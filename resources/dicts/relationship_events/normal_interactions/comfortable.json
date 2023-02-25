@@ -54,6 +54,22 @@
 			}
 		},
 		{
+			"id":"comfort_inc_low3",
+			"intensity":"low",
+			"interactions":[
+        		"is asking (cat) to check them for ticks.",
+				"m_c is thinking about how much r_c reminds them of their own apprentice days."
+			],
+			"main_skill_constraint":[
+				"elder"
+			],
+			"random_status_constraint":[
+				"apprentice",
+				"medicine apprentice",
+				"mediator apprentice"
+			]
+		},
+		{
 			"id": "comfort_inc_med1",
 			"interactions":[
 				"m_c helps r_c pick burrs out of their fur."

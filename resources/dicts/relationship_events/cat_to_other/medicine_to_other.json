@@ -1,27 +1,27 @@
 {
     "kitten": {
         "unfriendly": [
-            "is scolding (cat).",
+            ,
             "gives (cat) bitter herbs on purpose."
         ],
         "neutral": [
-            "trips over (cat).",
+            ,
             "had to nip (cat) on the rump because they were being naughty.",
             "is watching (cat) perform an almost-decent hunting crouch.",
-            "is watching over (cat).",
-            "is charmed to hear that (cat) really admires them."
+            ,
+            
         ],
         "friendly": [
             "is giving (cat) a badger ride on their back!",
             "is promising to take (cat) outside of camp if they behave.",
-            "gave (cat) a trinket they found while out on patrol today.",
+            ,
             "is feeling proud of (cat)."
         ],
         "close": []
     },
     "medicine cat apprentice": {
         "unfriendly": [
-            "is scolding (cat).",
+            ,
             "gives (cat) bitter herbs on purpose."
         ],
         "neutral": [
@@ -39,7 +39,7 @@
     },
     "apprentice": {
         "unfriendly": [
-            "is scolding (cat).",
+            ,
             "gives (cat) bitter herbs on purpose."
         ],
         "neutral": [
@@ -77,7 +77,7 @@
             "is giving (cat) a task.",
             
             "has noticed (cat) isn't doing a lot of work lately.",
-            "feels like (cat) isn't taking their health seriously.",
+            ,
             "tells (cat) a trick about a certain herb.",
             
         ],

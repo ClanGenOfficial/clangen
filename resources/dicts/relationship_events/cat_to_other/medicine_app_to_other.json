@@ -2,13 +2,8 @@
     "kitten": {
         "unfriendly": [],
         "neutral": [
-            "trips over (cat).",
-            "is watching over (cat)."
-        ],
-        "friendly": [
-            "trains playfully with (cat).",
-            "gave (cat) a trinket they found while out on patrol today.",
-            "is charmed to hear that (cat) really admires them."
+   ],
+        "friendly": [     
         ],
         "close": []
     },
@@ -16,8 +11,7 @@
         "unfriendly": [],
         "neutral": [
             
-            
-            "is jealous that (cat) got praised by the leader."
+        
         ],
         "friendly": [],
         "close": []
@@ -27,8 +21,7 @@
         "neutral": [
             
             
-            "has been listening to (cat) talk about how hard training has been.",
-            "is jealous that (cat) got praised by the leader."
+            
         ],
         "friendly": [],
         "close": []
@@ -36,8 +29,6 @@
     "warrior": {
         "unfriendly": [],
         "neutral": [
-            
-            "is jealous that (cat) got to fight in a border skirmish when they didn't."
         ],
         "friendly": [],
         "close": []
@@ -47,7 +38,7 @@
         "neutral": [
             
             
-            "feels like (cat) isn't taking their health seriously.",
+            
             
         ],
         "friendly": [],

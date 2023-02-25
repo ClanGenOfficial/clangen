@@ -5,11 +5,11 @@
             "growls at (cat) to get out from under their paws."
         ],
         "neutral": [
-            "trips over (cat).",
+            ,
             "had to nip (cat) on the rump because they were being naughty.",
             "is watching (cat) perform an almost-decent hunting crouch.",
             "is watching over (cat).",
-            "is charmed to hear that (cat) really admires them.",
+            ,
             "joins a game as (cat) runs up to them yowling that they're the greatest warrior ever and could never be defeated. The kit squeals in delight as m_c rolls over in surrender.",
             "bats the mossball back to (cat) when it flies in front of their paws."
         ],
@@ -17,7 +17,7 @@
             "is giving (cat) a badger ride on their back!",
             "hopes that their own kits are as cute as (cat) someday.",
             "is promising to take (cat) outside of camp if they behave.",
-            "gave (cat) a trinket they found while out on patrol today.",
+            ,
             "is feeling proud of (cat).",
             "spends most of the afternoon describing the territory to (cat).",
             "purrs as (cat) asks them to show them how to do a hunter's crouch. They oblige, happy to show their skills.",
@@ -25,7 +25,7 @@
             "tells (cat) that they caught this prey just for them as they deliver it to them."
         ],
         "close": [
-            "trains playfully with (cat)."
+            
         ]
     },
     "medicine cat apprentice": {
@@ -123,8 +123,8 @@
         "neutral": [
             "escorted (cat) so they could gather herbs.",
             "thought of (cat) on the last patrol and brought an herb back with them.",
-            "feels like (cat) isn't taking their health seriously.",
-            ,
+        
+
             "asks (cat) how they're doing.",
             "thanks (cat) for checking when they ask if they're feeling alright.",
             "drops into the medicine den to ask (cat) if they've eaten yet.",
@@ -144,7 +144,7 @@
     },
     "leader": {
         "unfriendly": [
-            ,
+
             "had a disagreement with (cat) while on patrol earlier.",
             "stole (cat)'s catch right out from under their claws."
         ],
@@ -161,7 +161,6 @@
     "deputy": {
         "unfriendly": [
             "thinks they should be deputy instead of (cat).",
-            ,
             "had a disagreement with (cat) while on patrol earlier.",
             "stole (cat)'s catch right out from under their claws."
         ],

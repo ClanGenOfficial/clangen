@@ -1,29 +1,29 @@
 {
     "kitten": {
         "unfriendly": [
-            "is scolding (cat)."
+            
         ],
         "neutral": [
-            "trips over (cat).",
+            ,
             "had to nip (cat) on the rump because they were being naughty.",
             "is watching (cat) perform an almost-decent hunting crouch.",
-            "is watching over (cat).",
-            "is charmed to hear that (cat) really admires them."
+            ,
+            
         ],
         "friendly": [
             "is giving (cat) a badger ride on their back!",
             "hopes that their own kits are as cute as (cat) someday.",
             "is promising to take (cat) outside of camp if they behave.",
-            "gave (cat) a trinket they found while out on patrol today.",
+            ,
             "is feeling proud of (cat)."
         ],
         "close": [
-            "trains playfully with (cat)."
+            
         ]
     },
     "medicine cat apprentice": {
         "unfriendly": [
-            "is scolding (cat)."
+            
         ],
         "neutral": [
             "is giving advice to (cat).",
@@ -39,7 +39,7 @@
     },
     "apprentice": {
         "unfriendly": [
-            "is scolding (cat).",
+            ,
             "punishes (cat) with extra work.",
             "had a disagreement with (cat) while on patrol earlier.",
             "stole (cat)'s catch right out from under their claws."
@@ -89,7 +89,7 @@
             "escorted (cat) so they could gather herbs.",
             "thought of (cat) on the last patrol and brought an herb back with them.",
             "tells (cat) about their last encounter with StarClan.",
-            "feels like (cat) isn't taking their health seriously.",
+            ,
             
         ],
         "friendly": [],

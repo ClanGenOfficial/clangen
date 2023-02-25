@@ -157,7 +157,36 @@
 			"reaction_random_cat":{
 				"platonic":"increase"
 			}
-	},
+		},
+		{
+			"id":"platonic_kit_inc_med6",
+			"interactions":[
+				"m_c is watching over r_c.",
+				"m_c trains playfully with r_c.",
+				"m_c gave r_c a trinket they found while out of the camp today.",
+				"m_c is charmed to hear that r_c really admires them."
+			],
+			"main_status_constraint":[
+				"elder",
+				"apprentice",
+ 				"warrior",
+				"mediator apprentice",
+				"mediator",
+				"medicine cat apprentice",
+				"medicine cat",
+				"deputy",
+				"leader"
+			],
+			"random_status_constraint":[
+				"kitten"
+			],
+			"reaction_random_cat":{
+				"platonic":"increase",
+				"admiration":"increase",
+				"trust":"increase",
+				"comfortable":"increase"
+			}
+		},
 		{
 			"id":"platonic_kit_inc_odd1",
 			"interactions":[

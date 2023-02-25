@@ -43,14 +43,23 @@
 			]
 		},
 		{
-			"id": "trust_inc_low2",
+			"id":"trust_inc_low2",
+			"intensity":"low",
+			"interactions":[]
+		},
+		{
+			"id": "trust_inc_low3",
 			"intensity": "low",
 			"interactions":[
-
+				"m_c bestows wisdom onto r_c."
 			],
 			"reaction_random_cat":{
-				"trust": "increase"
-			}
+				"trust": "increase",
+				"admiration": "increase"
+			},
+			"main_status_constraint":[
+				"elder"
+			]
 		},
 		{
 			"id": "trust_inc_med1",
@@ -163,9 +172,35 @@
 				"m_c tries to scare r_c."
 
 			],
+			"relationship_constraint":[
+				"dislike_40"
+			],
 			"reaction_random_cat":{
 				"trust": "decrease"
 			}
+		},
+		{
+			"id":"trust_for_medcat_de_high1",
+			"intensity":"high",
+			"interactions":[
+				"m_c can never seem explain their health in a way that makes r_c listen..."
+			],
+			"random_status_constraint":[
+				"medicine cat"
+			]
+		},
+		{
+			"id":"trust_for_medcat_de_high1",
+			"intensity":"high",
+			"interactions":[
+				"m_c is dissatisfied that r_c can't seem to get rid of their chronic pain."
+			],
+			"main_status_constraint":[
+				"elder"
+			],
+			"random_status_constrain,t":[
+				"medicine cat"
+			]
 		}
 	]
 }

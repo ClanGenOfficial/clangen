@@ -97,7 +97,7 @@
 		{ 
 			"id":"jel_kit_inc_med1",
 			"interactions":[
-				
+
 			],
 			"main_status_constraint":[
 				"kitten"
@@ -108,6 +108,18 @@
 			"medicine cat apprentice",
 			"medicine cat"
 		]
+		},
+		{
+			"id":"jealousy_allapp_inc_med1",
+			"interactions":[
+				"m_c is jealous that r_c got praised by the leader.",
+				"m_c is jealous that r_c got to fight in a border skirmish when they didn't."
+			],
+			"main_status_constraint":[
+				"apprentice",
+				"medicine apprentice",
+				"mediator apprentice"
+			]
 		},
 		{
 			"id": "jel_inc_high1",
@@ -160,8 +172,19 @@
 				"jealousy": "decrease"
 			}
 		},
-
-		
+		{
+			"id": "jealousy_allapp_de_med1",
+			"interactions":[
+				"m_C has been listening to r_C talk about how hard training has been."
+			],
+			"reaction_random_cat":{
+				"comfortable":"increase",
+				"platonic": "increase"
+			},
+			"also_influences":{
+				"platonic": "increase"
+			}
+		},
 		{
 			"id": "jel_de_high1",
 			"intensity": "high",
