@@ -582,10 +582,9 @@ def init_pattern(cat):
                     possible_colors.remove(cat.pelt.colour)
                     cat.tortiecolour = choice(possible_colors)
                 else:
-                    cat.tortiecolour = "GOLD"
-
+                    cat.tortiecolour = "GOLDEN"
         else:
-            cat.tortiecolour = "GOLD"
+            cat.tortiecolour = "GOLDEN"
     else:
         cat.tortiebase = None
         cat.tortiepattern = None
