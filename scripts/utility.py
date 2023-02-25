@@ -536,8 +536,6 @@ def update_sprite(cat):
                 new_sprite.blit(
                     sprites.sprites[cat.pelt.sprites[1] + 'extra' + cat.pelt.colour + str(cat.age_sprites[cat.age])],
                     (0, 0))
-
-                print(cat.pelt.sprites[1] + 'extra' + cat.pelt.colour + str(cat.age_sprites[cat.age]))
             else:
                 new_sprite.blit(sprites.sprites[cat.pelt.sprites[1] + cat.pelt.colour + str(cat.age_sprites[cat.age])],
                                 (0, 0))
@@ -549,18 +547,14 @@ def update_sprite(cat):
                     (0, 0))
 
                 # Create the patch image
-                if cat.tortiepattern == "Single":
-                    tortie_pattern = "SingleColour"
-                else:
-                    tortie_pattern = cat.tortiepattern
-
                 patches = sprites.sprites[
-                    tortie_pattern + 'extra' + cat.tortiecolour + str(cat.age_sprites[cat.age])].copy()
+                    cat.tortiepattern + 'extra' + cat.tortiecolour + str(cat.age_sprites[cat.age])].copy()
                 patches.blit(sprites.sprites["tortiemask" + cat.pattern + str(cat.age_sprites[cat.age] + 9)],
                              (0, 0),
                              special_flags=pygame.BLEND_RGBA_MULT
                              )
 
+                # Add patches onto cat.
                 new_sprite.blit(patches, (0, 0))
             else:
                 # Base Coat
@@ -579,6 +573,7 @@ def update_sprite(cat):
                 patches.blit(sprites.sprites["tortiemask" + cat.pattern + str(cat.age_sprites[cat.age])], (0, 0),
                              special_flags=pygame.BLEND_RGBA_MULT)
 
+                # Add patches onto cat.
                 new_sprite.blit(patches, (0, 0))
 
 
