@@ -6,7 +6,7 @@
     "tags": ["app_stat", "apprentice", "training", "scar", "TOETRAP", "minor_injury", "warrior"],
     "intro_text": "The patrol wants to hold a training session for app1. They decide to focus on tree climbing!",
     "decline_text": "They decide to focus on the patrolling the territory instead. Training can wait for another day.",
-    "chance_of_success": 70,
+    "chance_of_success": 1,
     "exp": 30,
     "success_text": [
         "app1 listens carefully as the proper techniques of tree climbing are explained.",
