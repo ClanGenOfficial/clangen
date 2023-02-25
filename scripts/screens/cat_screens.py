@@ -1886,7 +1886,7 @@ class ProfileScreen(Screens):
         if the_cat.df:
             dead_platform = [f'{platform_base_dir}darkforestplatform_{light_dark}.png']
             all_platforms = dead_platform * 4
-        elif the_cat.outside:
+        elif the_cat.dead and the_cat.outside:
             dead_platform = [f'{platform_base_dir}urplatform_{light_dark}.png']
             all_platforms = dead_platform * 4
         elif the_cat.dead or game.clan.instructor.ID == the_cat.ID:
