@@ -112,13 +112,13 @@ class SaveCheck(UIWindow):
 
 
 class DeleteCheck(UIWindow):
-    def __init__(self, last_screen, clan_name):
+    def __init__(self, reloadscreen, clan_name):
         super().__init__(scale(pygame.Rect((500, 400), (600, 360))),
                          window_display_title='Delete Check',
                          object_id='#delete_check_window',
                          resizable=False)
         self.clan_name = clan_name
-        self.last_screen = last_screen
+        self.reloadscreen = reloadscreen
 
         self.delete_check_message = UITextBoxTweaked(
             f"Do you wish to delete {str(self.clan_name + 'Clan')}? This is permanent and cannot be undone.",
@@ -129,13 +129,13 @@ class DeleteCheck(UIWindow):
         )
 
         self.delete_it_button = UIImageButton(
-            scale(pygame.Rect((97, 200), (306, 60))),
+            scale(pygame.Rect((142, 200), (306, 60))),
             "delete",
             object_id="#delete_it_button",
             container=self
         )
         self.go_back_button = UIImageButton(
-            scale(pygame.Rect((97, 270), (306, 60))),
+            scale(pygame.Rect((142, 270), (306, 60))),
             "go back",
             object_id="#go_back_button",
             container=self
@@ -161,9 +161,12 @@ class DeleteCheck(UIWindow):
                 print("delete")
                 rempath = "saves/" + self.clan_name
                 shutil.rmtree(rempath)
-                os.remove(rempath + ".json")
+                os.remove(rempath + "clan.json")
 
                 self.kill()
+
+                self.reloadscreen('switch clan screen')
+
             elif event.ui_element == self.go_back_button:
                 self.kill()
             elif event.ui_element == self.back_button:
