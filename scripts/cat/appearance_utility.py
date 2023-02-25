@@ -546,10 +546,11 @@ def init_pattern(cat):
         if not cat.pattern:
             cat.pattern = choice(["ONE", "TWO", "THREE", "FOUR"])
 
-        if cat.tortiebase in ["singlestipe", "smoke", "single"]:
-            cat.tortiepattern = choice(['tabby', 'mackerel', 'classic'])
+        if cat.tortiebase in ["singlestripe", "smoke", "single"]:
+            cat.tortiepattern = choice(['tabby', 'mackerel', 'classic', 'sokoke', 'single', 'smoke', 'agouti',
+                                        'ticked', 'smoke'])
         else:
-            cat.tortiepattern = cat.tortiebase
+            cat.tortiepattern = random.choices([cat.tortiebase, 'single', 'smoke'], weights=[96, 2, 2], k=1)[0]
 
         wildcard_chance = 9
         if cat.pelt.colour:
