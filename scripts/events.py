@@ -1427,15 +1427,17 @@ class Events():
 
         # chance to kill leader: 1/100
         if not int(
-                random.random() * 100) and cat.status == 'leader' and not triggered_death and not cat.not_working():
+                random.random() * game.config["death_related"]["leader_death_chance"]) and cat.status == 'leader' and not triggered_death and not cat.not_working():
             self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
             triggered_death = True
             return triggered_death
+            return triggered_death
 
         # chance to die of old age
-        if cat.moons > int(random.random() * 51) + 150 and not triggered_death:  # cat.moons > 150 <--> 200
+        if cat.moons > int(random.random() * game.config["death_related"]["old_age_death_chance"]) + game.config["death_related"]["old_age_death_start"] and not triggered_death:  # cat.moons > 150 <--> 200
             self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
             triggered_death = True
+            return triggered_death
             return triggered_death
 
         # classic death chance
@@ -1450,9 +1452,10 @@ class Events():
                 triggered_death = True
                 self.handle_disasters()
                 return triggered_death
+                return triggered_death
 
-        # extra death chance and injuries in expanded & cruel season
-        if game.clan.game_mode != 'classic' and not int(random.random() * 500) and not cat.not_working():  # 1/400
+        # final death chance and then, if not triggered, head to injuries
+        if not int (random.random() *game.config["death_related"][f"{game.clan.game_mode}_death_chance"]) and not cat.not_working():  # 1/400
             self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
             triggered_death = True
             return triggered_death
@@ -1559,8 +1562,8 @@ class Events():
     def handle_illnesses_or_illness_deaths(self, cat):
         """ 
         This function will handle:
-            - classic mode: death events with illnesses
             - expanded mode: getting a new illness (extra function in own class)
+            - classic mode illness related deaths is already handled in the general death function
         Returns: 
             - boolean if a death event occurred or not
         """
@@ -1571,34 +1574,6 @@ class Events():
         triggered_death = False
         if game.clan.game_mode in ["expanded", "cruel season"]:
             triggered_death = self.condition_events.handle_illnesses(cat, game.clan.current_season)
-        elif game.clan.game_mode == "classic":
-            # choose other cat
-            other_cat = random.choice(list(Cat.all_cats.values()))
-            countdown = int(len(Cat.all_cats) / 2)
-            while cat == other_cat or other_cat.dead:
-                other_cat = random.choice(list(Cat.all_cats.values()))
-                countdown -= 1
-                if countdown <= 0:
-                    return triggered_death
-            # check if clan has kits, if True then clan has kits
-            alive_kits = list(filter(
-                lambda kitty: (kitty.age == "kitten"
-                               and not kitty.dead
-                               and not kitty.outside),
-                Cat.all_cats.values()
-            ))
-            # chance to kill leader
-            if not int(random.random() * 100) and cat.status == 'leader' and not triggered_death:  # 1/100
-                self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
-                triggered_death = True
-            # chance to die of old age
-            if cat.moons > int(random.random() * 51) + 150 and not triggered_death:  # cat.moons > 150 <--> 200
-                self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
-                triggered_death = True
-            # classic death chance
-            if not int(random.random() * 500) and not triggered_death:  # 1/500
-                self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
-                triggered_death = True
         return triggered_death
 
     def handle_twoleg_capture(self, cat):
