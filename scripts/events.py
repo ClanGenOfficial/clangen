@@ -541,7 +541,9 @@ class Events():
             name = random.choice(names.loner_names)
         elif status in ['loner', 'rogue']:
             name = random.choice(names.loner_names + names.normal_prefixes)
-        new_cat = Cat(prefix=name, suffix = None, status=status, gender=random.choice(['female', 'male']))
+        else:
+            name = random.choice(names.loner_names)
+        new_cat = Cat(prefix=name, suffix=None, status=status, gender=random.choice(['female', 'male']))
         if status == 'kittypet':
             new_cat.accessory = random.choice(collars)
         new_cat.outside = True
@@ -1428,33 +1430,37 @@ class Events():
                 random.random() * 100) and cat.status == 'leader' and not triggered_death and not cat.not_working():
             self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
             triggered_death = True
+            return triggered_death
 
         # chance to die of old age
         if cat.moons > int(random.random() * 51) + 150 and not triggered_death:  # cat.moons > 150 <--> 200
             self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
             triggered_death = True
+            return triggered_death
 
         # classic death chance
         if game.clan.game_mode == "classic" and not int(random.random() * 500):  # 1/500
             self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
             triggered_death = True
+            return triggered_death
 
         # disaster death chance
-        if game.settings.get('disasters') and not triggered_death:
+        if game.settings.get('disasters'):
             if not random.getrandbits(9):  # 1/512
                 triggered_death = True
                 self.handle_disasters()
+                return triggered_death
 
         # extra death chance and injuries in expanded & cruel season
         if game.clan.game_mode != 'classic' and not int(random.random() * 500) and not cat.not_working():  # 1/400
             self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
             triggered_death = True
+            return triggered_death
         else:
             triggered_death = self.condition_events.handle_injuries(cat, other_cat, alive_kits, self.at_war,
                                                                     self.enemy_clan, game.clan.current_season)
             return triggered_death
 
-        return triggered_death
 
     def handle_disasters(self):
         """Handles events when the setting of disasters is turned on.
