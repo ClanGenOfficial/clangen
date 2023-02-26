@@ -3156,6 +3156,52 @@
             }
         }
     },
+  "#delete_it_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/delete_it.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/delete_it_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/delete_it_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/delete_it.png"
+            }
+        }
+    },
+  "#go_back_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/go_back.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/go_back_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/go_back_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/go_back.png"
+            }
+        }
+    },
   "#not_yet_button":
     {
         "prototype": "#image_button",
