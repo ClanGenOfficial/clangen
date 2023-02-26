@@ -345,9 +345,6 @@
     	"app1 rolls their eyes, and asks why they can't just try catching it. Irritably, p_l replies that they're welcome to try, and the bird spots app1 coming immediately."
 	],
 	"win_skills": ["good speaker", "great speaker", "excellent speaker"],
-
-	"fail_skills": null,
-	"fail_trait": null,
 	"min_cats": 2,
 	"max_cats": 2,
 	"antagonize_text": null,
@@ -371,9 +368,6 @@
     	"app1 rolls their eyes, and asks why they can't just try catching it. Irritably, p_l replies that they're welcome to try, and the bird spots app1 coming immediately."
 	],
 	"win_skills": ["good teacher", "great teacher", "fantastic teacher"],
-
-	"fail_skills": null,
-	"fail_trait": null,
 	"min_cats": 2,
 	"max_cats": 2,
 	"antagonize_text": null,
@@ -397,9 +391,6 @@
     	"app1 rolls their eyes, and asks why they can't just try catching it. Irritably, p_l replies that they're welcome to try, and the bird spots app1 coming immediately, also spoiling app2's chances."
 	],
 	"win_skills": ["good speaker", "great speaker", "excellent speaker"],
-
-	"fail_skills": null,
-	"fail_trait": null,
 	"min_cats": 3,
 	"max_cats": 6,
 	"antagonize_text": null,
@@ -423,9 +414,6 @@
     	"app1 rolls their eyes, and asks why they can't just try catching it. Irritably, p_l replies that they're welcome to try, and the bird spots app1 coming immediately, also spoiling app2's chances."
 	],
 	"win_skills": ["good teacher", "great teacher", "fantastic teacher"],
-
-	"fail_skills": null,
-	"fail_trait": null,
 	"min_cats": 3,
 	"max_cats": 6,
 	"antagonize_text": null,
@@ -449,9 +437,6 @@
     	"app1 screeches, and the kea shrieks back, an huge explosion of noise and feathers. Later, p_l tells app1 they're lucky the bird was entertained rather than scared or offended. Entertained?!?"
 	],
 	"win_skills": ["good speaker", "great speaker", "excellent speaker", "good teacher", "great teacher", "fantastic teacher"],
-
-	"fail_skills": null,
-	"fail_trait": null,
 	"min_cats": 2,
 	"max_cats": 2,
 	"antagonize_text": null,

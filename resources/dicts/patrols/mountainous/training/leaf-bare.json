@@ -45,9 +45,6 @@
     	"One of the wolves peels off from the sleepy pack and starts ambling in the general direction of the cats, and p_l decides caution is wise. The patrol returns to camp without seeing anything more."
 	],
 	"win_skills": ["good speaker", "great speaker", "excellent speaker"],
-
-	"fail_skills": null,
-	"fail_trait": null,
 	"min_cats": 2,
 	"max_cats": 2,
 	"antagonize_text": null,
@@ -71,9 +68,6 @@
     	"One of the wolves peels off from the sleepy pack and starts ambling in the general direction of the cats, and p_l decides caution is wise. The patrol returns to camp without seeing anything more."
 	],
 	"win_skills": ["good teacher", "great teacher", "fantastic teacher"],
-
-	"fail_skills": null,
-	"fail_trait": null,
 	"min_cats": 2,
 	"max_cats": 2,
 	"antagonize_text": null,
@@ -97,9 +91,6 @@
     	"One of the wolves peels off from the sleepy pack and starts ambling in the general direction of the cats, and p_l decides caution is wise. The patrol returns to camp without seeing anything more."
 	],
 	"win_skills": ["good speaker", "great speaker", "excellent speaker"],
-
-	"fail_skills": null,
-	"fail_trait": null,
 	"min_cats": 3,
 	"max_cats": 6,
 	"antagonize_text": null,
@@ -123,9 +114,6 @@
     	"One of the wolves peels off from the sleepy pack and starts ambling in the general direction of the cats, and p_l decides caution is wise. The patrol returns to camp without seeing anything more."
 	],
 	"win_skills": ["good teacher", "great teacher", "fantastic teacher"],
-
-	"fail_skills": null,
-	"fail_trait": null,
 	"min_cats": 3,
 	"max_cats": 6,
 	"antagonize_text": null,
