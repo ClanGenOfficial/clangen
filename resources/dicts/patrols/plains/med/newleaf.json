@@ -509,7 +509,6 @@
 "win_trait": [
     "patient"
 ],
-"fail_skills": null,
 "fail_trait": null,
 "min_cats": 2,
 "max_cats": 2,
