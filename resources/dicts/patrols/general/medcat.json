@@ -17,10 +17,7 @@
     "fail_text": [
         "The patrol doesn't get much done because of that."
     ],
-    "win_skills": null,
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "fail_skills": null,
-    "fail_trait": null,
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": null,

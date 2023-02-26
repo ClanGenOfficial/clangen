@@ -38,12 +38,6 @@
         "win_trait": [
             "ambitious"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 3,
         "antagonize_text": null,
@@ -90,12 +84,6 @@
         ],
         "win_trait": [
             "ambitious"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
         ],
         "min_cats": 4,
         "max_cats": 6,
@@ -149,9 +137,6 @@
         "win_trait": [
             "ambitious"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "bloodthirsty"
         ],
@@ -204,12 +189,6 @@
         ],
         "win_trait": [
             "ambitious"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
         ],
         "min_cats": 4,
         "max_cats": 6,
@@ -267,12 +246,6 @@
             "faithful",
             "loving"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
@@ -314,15 +287,6 @@
         "win_skills": [
             "great hunter",
             "fantastic hunter"
-        ],
-        "win_trait": [
-            "None"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -375,12 +339,6 @@
             "empathetic",
             "faithful",
             "loving"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
         ],
         "min_cats": 2,
         "max_cats": 6,
@@ -439,9 +397,6 @@
             "fierce",
             "responsible",
             "righteous"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "troublesome",
@@ -507,9 +462,6 @@
             "responsible",
             "righteous"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "troublesome",
             "vengeful",
@@ -571,9 +523,6 @@
             "fierce",
             "responsible",
             "righteous"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "troublesome",
