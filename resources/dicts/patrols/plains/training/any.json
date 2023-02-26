@@ -119,7 +119,6 @@
     ],
     "win_skills": ["very smart", "extremely smart"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise", "inquisitive"],
-    "fail_skills": null,
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "bossy"],
     "min_cats": 2,
     "max_cats": 6,
@@ -185,7 +184,6 @@
         null,
         "The apprentice wanders along obliviously and slips, and tumbling right down into a well-hidden gully. Bruised and sore, app1 has to report to the medicine cat den when they return to camp."
     ],
-    "win_skills": null,
     "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "fail_trait": ["insecure", "lonesome", "nervous"],
     "min_cats": 1,
@@ -219,7 +217,6 @@
     ],
     "win_skills": ["smart", "very smart", "extremely smart"],
     "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
-    "fail_skills": null,
     "fail_trait": ["insecure", "lonesome", "nervous"],
     "min_cats": 1,
     "max_cats": 1,
@@ -274,7 +271,6 @@
     ],
     "win_skills": ["smart", "very smart", "extremely smart"],
     "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
-    "fail_skills": null,
     "fail_trait": ["insecure", "lonesome", "nervous"],
     "min_cats": 1,
     "max_cats": 1,
@@ -300,9 +296,7 @@
             "app1 maintains that bison are obstacles, not weird land protectors or anything like that, just annoying mooing obstacles, and p_l can't get them to take the training session seriously."
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -327,9 +321,7 @@
             "app1 maintains that bison are obstacles, not dangerous or anything like that, just annoying mooing obstacles, and p_l can't get them to take the training session seriously."
     ],
     "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -354,9 +346,7 @@
             "app1 maintains that bison are obstacles, not weird land protectors or anything like that, just annoying mooing obstacles, and p_l can't get them to take the training session seriously. They distract app2 as well, and eventually p_l has to give up on teaching."
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -381,9 +371,7 @@
             "app1 maintains that bison are obstacles, not dangerous or anything like that, just annoying mooing obstacles, and p_l can't get them to take the training session seriously. They distract app2 as well, and eventually p_l has to give up on teaching."
     ],
     "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -408,9 +396,7 @@
         "app1 maintains that tunnels aren't useful for anything, just annoying obstacles in the landscape, and p_l can't get them to take the training session seriously."
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -435,9 +421,7 @@
             "app1 maintains that tunnels aren't useful for anything, just annoying obstacles in the landscape, and p_l can't get them to take the training session seriously."
     ],
     "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -462,9 +446,7 @@
             "app1 maintains that tunnels aren't useful for anything, just annoying obstacles in the landscape, and p_l can't get them to take the training session seriously. They distract app2 as well, and eventually p_l has to give up on teaching."
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -489,9 +471,7 @@
             "app1 maintains that tunnels aren't useful for anything, just annoying obstacles in the landscape, and p_l can't get them to take the training session seriously. They distract app2 as well, and eventually p_l has to give up on teaching."
     ],
     "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -516,10 +496,7 @@
             "app1 bursts out from cover, pouncing on app2 with claws sheathed and giggling. app2 rolls with the blow and kicks app1 off, but they scramble to their feet looking hurt, and storm off in a huff.",
             "app2 emerges from the soft dark. Seeing app1, they trot up, asking why app1 wanted to meet there. app1 status out some nonsense about hunting, and then runs off into the shadowed grasslands."
     ],
-    "win_skills": null,
     "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
-    "fail_skills": null,
-    "fail_trait": null,
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -546,8 +523,6 @@
     ],
     "win_skills": ["fantastic hunter"],
     "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
-    "fail_skills": null,
-    "fail_trait": null,
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
