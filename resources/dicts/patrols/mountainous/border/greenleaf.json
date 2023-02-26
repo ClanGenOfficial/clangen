@@ -24,7 +24,6 @@
     "win_skills": ["good fighter", "great fighter", "excellent fighter"],
     "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "fail_skills": ["smart"],
-    "fail_trait": null,
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -59,7 +58,6 @@
     "win_skills": ["smart", "very smart", "extremely smart"],
     "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "fail_skills": ["good fighter"],
-    "fail_trait": null,
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -91,9 +89,7 @@
             "Nose to the ground following the trail, app1 doesn't see the blow that kills them.",
             "Nose to the ground following the trail, app1 doesn't see the blow coming. They haul themselves to their feet, squealing with pain, and run for home."
     ],
-    "win_skills": null,
-    "win_trait": null,
-    "fail_skills": null,
+
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "min_cats": 1,
     "max_cats": 1,
@@ -129,7 +125,6 @@
     "win_skills": ["good fighter", "great fighter", "excellent fighter"],
     "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "fail_skills": ["smart"],
-    "fail_trait": null,
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -163,7 +158,6 @@
     "win_skills": ["smart", "very smart", "extremely smart"],
     "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "fail_skills": ["good fighter"],
-    "fail_trait": null,
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -194,9 +188,7 @@
             null,
             "Nose to the ground following the trail, app1 doesn't see the blow coming. They haul themselves to their feet, squealing with pain, and run for home."
     ],
-    "win_skills": null,
-    "win_trait": null,
-    "fail_skills": null,
+
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "min_cats": 2,
     "max_cats": 2,
@@ -231,7 +223,6 @@
     "win_skills": ["good fighter", "great fighter", "excellent fighter"],
     "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "fail_skills": ["smart"],
-    "fail_trait": null,
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -261,7 +252,6 @@
     "win_skills": ["smart", "very smart", "extremely smart"],
     "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "fail_skills": ["good fighter"],
-    "fail_trait": null,
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -291,9 +281,7 @@
             null,
             null
     ],
-    "win_skills": null,
-    "win_trait": null,
-    "fail_skills": null,
+
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "min_cats": 3,
     "max_cats": 6,
@@ -318,10 +306,7 @@
     "fail_text": [
             "They get distracted while splashing in the water. r_c swears they saw a fish, but it derails their border patrol completely and they get nothing done."
     ],
-    "win_skills": null,
     "win_trait": ["responsible", "thoughtful", "loyal", "righteous", "cold", "strict"],
-    "fail_skills": null,
-    "fail_trait": null,
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,

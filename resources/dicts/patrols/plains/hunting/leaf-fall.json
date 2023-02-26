@@ -48,9 +48,6 @@
             "responsible",
             "righteous"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "troublesome",
             "vengeful",
@@ -114,9 +111,6 @@
             "responsible",
             "righteous"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "troublesome",
             "vengeful",
@@ -176,9 +170,6 @@
             "fierce",
             "responsible",
             "righteous"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "troublesome",
@@ -251,9 +242,6 @@
         "fail_skills": [
             "good fighter"
         ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 2,
         "max_cats": 3,
         "antagonize_text": null,
@@ -316,9 +304,6 @@
         "fail_skills": [
             "good fighter"
         ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 4,
         "max_cats": 6,
         "antagonize_text": null,
@@ -380,9 +365,6 @@
         "fail_skills": [
             "good fighter"
         ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
@@ -432,15 +414,6 @@
             "great fighter",
             "excellent fighter"
         ],
-        "win_trait": [
-            "None"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
@@ -486,15 +459,6 @@
             "good fighter",
             "great fighter",
             "excellent fighter"
-        ],
-        "win_trait": [
-            "None"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -545,9 +509,6 @@
             "insecure",
             "nervous",
             "sneaky"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "bold",
@@ -610,9 +571,6 @@
             "insecure",
             "nervous",
             "sneaky"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "bold",
