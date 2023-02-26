@@ -834,11 +834,15 @@ class Condition_Events():
                 if herb == herb_used:
                     break
             modifier = count
+            if cat.status in ['elder', 'kitten']:
+                modifier = modifier * 2
 
             effect_message = 'this should not show up'
             if effect == 'mortality':
                 effect_message = 'They will be less likely to die.'
                 conditions[condition]["mortality"] += 11 - modifier + int(amount_used * 1.5)
+                if conditions[condition]["mortality"] < 1:
+                    conditions[condition]["mortality"] = 1
             elif effect == 'duration':
                 effect_message = 'They will heal sooner.'
                 conditions[condition]["duration"] -= 1

@@ -443,8 +443,6 @@
         	"Churlish and grumpy, app1 storms past p_l, not interested in hearing their dumb lesson."
 	],
 	"win_skills": ["good speaker", "great speaker", "excellent speaker", "good teacher", "great teacher", "fantastic teacher"],
-
-	"fail_skills": null,
 	"fail_trait": ["troublesome"],
 	"min_cats": 2,
 	"max_cats": 2,
