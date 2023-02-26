@@ -48,7 +48,7 @@ class Condition_Events():
         # ---------------------------------------------------------------------------- #
         #                              make cats sick                                  #
         # ---------------------------------------------------------------------------- #
-        random_number = int(random.random() * 300)
+        random_number = int(random.random() * game.config["condition_related"][f"{game.clan.game_mode}_illness_chance"])
         if not cat.dead and not cat.is_ill() and random_number <= 10 and not event_string:
             season_dict = ILLNESSES_SEASON_LIST[season]
             possible_illnesses = []
@@ -97,11 +97,7 @@ class Condition_Events():
         other_clan = random.choice(game.clan.all_clans)
         triggered = False
         text = None
-
-        if game.clan.game_mode != 'classic':
-            random_number = int(random.random() * 150)
-        else:
-            random_number = int(random.random() * 200)
+        random_number = int(random.random() * game.config["condition_related"][f"{game.clan.game_mode}_injury_chance"])
 
         if cat.dead:
             triggered = True

@@ -258,7 +258,7 @@
             "very smart",
             "extremely smart"
         ],
-        "min_cats": 1,
+        "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null
