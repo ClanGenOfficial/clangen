@@ -740,6 +740,7 @@ class Cat():
 
         elif self.status == 'mediator':
             self.update_mentor()
+            self.update_skill()
 
         elif self.status == 'mediator apprentice':
             self.update_mentor()
@@ -1063,6 +1064,7 @@ class Cat():
         # also adds a chance for cat to take a skill similar to their mentor"""
 
         if self.skill == '???':
+            print(str(self.name))
             if len(self.mentor_influence) < 1:
                 self.mentor_influence = ['None']
             # assign skill to new medicine cat
@@ -1132,7 +1134,7 @@ class Cat():
 
                     all_skills = []
                     for x in possible_groups:
-                        all_skills = all_skills + self.skill_groups[x]
+                        all_skills.extend(self.skill_groups[x])
                     self.skill = choice(all_skills)
                     self.mentor_influence.insert(1, 'None')
 
