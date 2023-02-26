@@ -133,12 +133,12 @@ class Condition_Events():
                 possible_events = self.generate_events.possible_events(cat.status, cat.age, "injury")
                 final_events = self.generate_events.filter_possible_events(possible_events, cat, other_cat, war, enemy_clan, other_clan, alive_kits)
 
-                other_clan_name = f'{str(other_clan.name)}Clan'
-                enemy_clan = f'{str(enemy_clan)}'
+                other_clan_name = f'{other_clan.name}Clan'
+                enemy_clan = f'{enemy_clan}'
 
                 if other_clan_name == 'None':
                     other_clan = game.clan.all_clans[0]
-                    other_clan_name = f'{str(other_clan.name)}Clan'
+                    other_clan_name = f'{other_clan.name}Clan'
 
                 if len(final_events) > 0:
                     injury_event = random.choice(final_events)

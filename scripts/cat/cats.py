@@ -1488,7 +1488,7 @@ class Cat():
                     if game.clan.herbs[herb_used] <= 0:
                         game.clan.herbs.pop(herb_used)
                     avoided = True
-                    text = f"{str(herb_used).capitalize()} was used to stop blood loss for {self.name}."
+                    text = f"{herb_used.capitalize()} was used to stop blood loss for {self.name}."
                     game.herb_events_list.append(text)
 
             if not avoided:
