@@ -1107,7 +1107,7 @@ class ProfileScreen(Screens):
             adjust_text = str(bs_blurb).replace('This cat', str(self.the_cat.name))
             text = adjust_text
         else:
-            text = f"{str(self.the_cat.name)} was born into the Clan where they currently reside."
+            text = f"{self.the_cat.name} was born into the Clan where they currently reside."
         return text
 
     def get_scar_text(self):

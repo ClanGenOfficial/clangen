@@ -223,7 +223,7 @@ class EventsScreen(Screens):
                                                      "Clan",
                                                      scale(pygame.Rect((200, 220), (1200, 80))),
                                                      object_id=get_text_box_theme(), manager=MANAGER)
-        self.season = pygame_gui.elements.UITextBox(f'Current season: {str(game.clan.current_season)}',
+        self.season = pygame_gui.elements.UITextBox(f'Current season: {game.clan.current_season}',
                                                     scale(pygame.Rect((200, 280), (1200, 80))),
                                                     object_id=get_text_box_theme(), manager=MANAGER)
         self.clan_age = pygame_gui.elements.UITextBox("",
@@ -236,9 +236,9 @@ class EventsScreen(Screens):
         self.events_frame.disable()
         # Set text for clan age
         if game.clan.age == 1:
-            self.clan_age.set_text(f'Clan age: {str(game.clan.age)} moon')
+            self.clan_age.set_text(f'Clan age: {game.clan.age} moon')
         if game.clan.age != 1:
-            self.clan_age.set_text(f'Clan age: {str(game.clan.age)} moons')
+            self.clan_age.set_text(f'Clan age: {game.clan.age} moons')
 
         self.timeskip_button = UIImageButton(scale(pygame.Rect((620, 436), (360, 60))), "", object_id="#timeskip_button"
                                              , manager=MANAGER)
@@ -403,11 +403,11 @@ class EventsScreen(Screens):
 
     def update_events_display(self):
 
-        self.season.set_text(f'Current season: {str(game.clan.current_season)}')
+        self.season.set_text(f'Current season: {game.clan.current_season}')
         if game.clan.age == 1:
-            self.clan_age.set_text(f'Clan age: {str(game.clan.age)} moon')
+            self.clan_age.set_text(f'Clan age: {game.clan.age} moon')
         if game.clan.age != 1:
-            self.clan_age.set_text(f'Clan age: {str(game.clan.age)} moons')
+            self.clan_age.set_text(f'Clan age: {game.clan.age} moons')
 
         for ele in self.display_events_elements:
             self.display_events_elements[ele].kill()
