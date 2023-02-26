@@ -1431,13 +1431,11 @@ class Events():
             self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
             triggered_death = True
             return triggered_death
-            return triggered_death
 
         # chance to die of old age
         if cat.moons > int(random.random() * game.config["death_related"]["old_age_death_chance"]) + game.config["death_related"]["old_age_death_start"] and not triggered_death:  # cat.moons > 150 <--> 200
             self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
             triggered_death = True
-            return triggered_death
             return triggered_death
 
         # classic death chance
@@ -1451,7 +1449,6 @@ class Events():
             if not random.getrandbits(9):  # 1/512
                 triggered_death = True
                 self.handle_disasters()
-                return triggered_death
                 return triggered_death
 
         # final death chance and then, if not triggered, head to injuries
