@@ -292,8 +292,6 @@
 ],
 "min_cats": 1,
 "max_cats": 1,
-"win_skills": null,
-
 "antagonize_text": null,
 "antagonize_fail_text": null
 },
@@ -314,8 +312,6 @@
 ],
 "min_cats": 2,
 "max_cats": 2,
-"win_skills": null,
-
 "antagonize_text": null,
 "antagonize_fail_text": null
 },
@@ -336,7 +332,6 @@
 ],
 "min_cats": 2,
 "max_cats": 2,
-"win_skills": null,
 
 "antagonize_text": null,
 "antagonize_fail_text": null
@@ -358,7 +353,6 @@
 ],
 "min_cats": 3,
 "max_cats": 6,
-"win_skills": null,
 
 "antagonize_text": null,
 "antagonize_fail_text": null
