@@ -122,6 +122,7 @@ class Relation_Events():
                                                > other_mate_relationship.romantic_love)
                     else:
                         cat_to_mate.relationships[cat_to.ID] = Relationship(cat_to_mate, cat_to, True)
+                        other_mate_relationship = cat_to.relationships[cat_to.mate]
 
                 if ((love_over_30 and not normal_chance) or (bigger_than_current and not bigger_love_chance)):
                     self.had_one_event = True
@@ -221,7 +222,7 @@ class Relation_Events():
             living_cats = len(list(filter(lambda r: not r.dead, Cat.all_cats.values())))
 
             if not affair:
-                if second_parent is not None:
+                if second_parent:
                     chance = 10
                     if second_parent_relation.romantic_love >= 35:
                         chance += 20
@@ -237,8 +238,7 @@ class Relation_Events():
                     elif second_parent_relation.comfortable >= 85:
                         chance += 40
                 else:
-                    chance = int(int(living_cats) / 20 + 5)
-
+                    chance = int(200/living_cats) + 2
                 old_male = False
                 if cat.gender == 'male' and cat.age == 'elder':
                     old_male = True
@@ -248,12 +248,13 @@ class Relation_Events():
                 if old_male:
                     chance = int(chance / 2)
             else:
-                # Affairs almost never cancel - it makes setting affairs number easier.
-                chance = 1000
+                # Affairs never cancel - it makes setting affairs number easier.
+                chance = 0
 
             # print("Kit cancel chance", chance)
-            if not int(random.random() * chance):
+            if int(random.random() * chance) == 1:
                 # Cancel having kits.
+                print("kits canceled")
                 return
 
             # If you've reached here - congrats, kits!

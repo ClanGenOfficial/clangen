@@ -68,7 +68,7 @@
 	},
 	"pregnancy": {
 		"primary_chance_mated": 50,
-		"primary_chance_unmated": 100,
+		"primary_chance_unmated": 110,
 		"random_affair_chance": 70
 	},
 	"cat_generation": {
