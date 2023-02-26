@@ -689,7 +689,8 @@ class Patrol():
         success_chance = self.patrol_event.chance_of_success + int(
             self.patrol_total_experience / (2 * gm_modifier))
 
-        print('starting chance:', success_chance)
+        print('starting chance:', self.patrol_event.chance_of_success)
+        print('updated chance according to exp: ', success_chance)
         for kitty in self.patrol_cats:
             if kitty.skill in self.patrol_event.win_skills:
                 success_chance += game.config["patrol_generation"]["win_stat_cat_modifier"]

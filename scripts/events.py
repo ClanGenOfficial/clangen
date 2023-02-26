@@ -1444,7 +1444,7 @@ class Events():
                 return triggered_death
 
         # final death chance and then, if not triggered, head to injuries
-        if game.config["death_related"][f"{game.clan.game_mode}_death_chance"] and not cat.not_working():  # 1/400
+        if not int (random.random() *game.config["death_related"][f"{game.clan.game_mode}_death_chance"]) and not cat.not_working():  # 1/400
             self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
             triggered_death = True
             return triggered_death
