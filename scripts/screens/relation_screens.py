@@ -84,13 +84,13 @@ class ChooseMentorScreen(Screens):
                                      scale(pygame.Rect((360, 120), (880, 200))), line_spacing=0.95,
                                      object_id=get_text_box_theme("#cat_patrol_info_box"), manager=MANAGER)
         if self.mentor is not None:
-            self.current_mentor_text = pygame_gui.elements.UITextBox(f"{str(self.the_cat.name)}'s current mentor is "
-                                                                    f"{str(self.mentor.name)}",
+            self.current_mentor_text = pygame_gui.elements.UITextBox(f"{self.the_cat.name}'s current mentor is "
+                                                                    f"{self.mentor.name}",
                                                                     scale(pygame.Rect((460, 260), (680, 60))),
                                                                     object_id=get_text_box_theme("#cat_patrol_info_box")
                                                                     , manager=MANAGER)
         else:
-            self.current_mentor_text = pygame_gui.elements.UITextBox(f"{str(self.the_cat.name)} does not have a mentor",
+            self.current_mentor_text = pygame_gui.elements.UITextBox(f"{self.the_cat.name} does not have a mentor",
                                                                     scale(pygame.Rect((460, 260), (680, 60))),
                                                                     object_id=get_text_box_theme("#cat_patrol_info_box")
                                                                     , manager=MANAGER)
@@ -188,13 +188,13 @@ class ChooseMentorScreen(Screens):
         self.selected_mentor = Cat.fetch_cat(self.the_cat.mentor)
         self.mentor = Cat.fetch_cat(self.the_cat.mentor)
 
-        self.heading.set_text(f"Choose a new mentor for {str(self.the_cat.name)}")
+        self.heading.set_text(f"Choose a new mentor for {self.the_cat.name}")
         if self.the_cat.mentor:
             self.current_mentor_text.set_text(
-                f"{str(self.the_cat.name)}'s current mentor is {str(self.mentor.name)}")
+                f"{self.the_cat.name}'s current mentor is {self.mentor.name}")
         else:
             self.current_mentor_text.set_text(
-                f"{str(self.the_cat.name)} does not have a mentor")
+                f"{self.the_cat.name} does not have a mentor")
         self.apprentice_details["apprentice_image"] = pygame_gui.elements.UIImage(scale(pygame.Rect((1200, 300), (300, 300))),
                                                                                   pygame.transform.scale(
                                                                                   self.the_cat.large_sprite,
@@ -291,9 +291,9 @@ class ChooseMentorScreen(Screens):
 
         if self.mentor is not None:
             self.current_mentor_text.set_text(
-                f"{str(self.the_cat.name)}'s current mentor is {str(self.mentor.name)}")
+                f"{self.the_cat.name}'s current mentor is {self.mentor.name}")
         else:
-            self.current_mentor_text.set_text(f"{str(self.the_cat.name)} does not have a mentor")
+            self.current_mentor_text.set_text(f"{self.the_cat.name} does not have a mentor")
 
     def update_selected_cat(self):
         """Updates the image and information on the currently selected mentor"""
@@ -566,7 +566,7 @@ class ViewChildrenScreen(Screens):
                                                                                      , manager=MANAGER)
             else:
                 self.family_elements["parent1"] = pygame_gui.elements.UITextBox(
-                    f'Error: cat {str(self.the_cat.parent1)} not found',
+                    f'Error: cat {self.the_cat.parent1} not found',
                     scale(pygame.Rect((90, 165), (60, 30))),
                     object_id="#cat_patrol_info_box", manager=MANAGER)
 
@@ -609,7 +609,7 @@ class ViewChildrenScreen(Screens):
                                                                                      , manager=MANAGER)
             else:
                 self.family_elements["parent2"] = pygame_gui.elements.UITextBox(
-                    f'Error: cat {str(self.the_cat.parent2)} not found',
+                    f'Error: cat {self.the_cat.parent2} not found',
                     scale(pygame.Rect((180, 500), (120, 60))),
                     object_id="#cat_patrol_info_box", manager=MANAGER)
 
@@ -669,7 +669,7 @@ class ViewChildrenScreen(Screens):
                                                                               , manager=MANAGER)
 
         else:
-            print(f'ERROR: cat {str(self.the_cat.mate)} not found')
+            print(f'ERROR: cat {self.the_cat.mate} not found')
 
         # OFFSPRING
         # Get offspring
@@ -1759,7 +1759,7 @@ class RelationshipScreen(Screens):
             if self.inspect_cat.mate is not None and self.the_cat.ID != self.inspect_cat.mate:
                 col2 += "has a mate\n"
             elif self.the_cat.mate is not None and self.the_cat.mate != '' and self.inspect_cat.ID == self.the_cat.mate:
-                col2 += f"{str(self.the_cat.name)}'s mate\n"
+                col2 += f"{self.the_cat.name}'s mate\n"
             else:
                 col2 += "mate: none\n"
 

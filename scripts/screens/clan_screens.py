@@ -133,7 +133,7 @@ class ClanScreen(Screens):
                                        cat_id=x)
                     )
                 except:
-                    print(f"ERROR: placing {str(Cat.all_cats[x].name)}\'s sprite on Clan page")
+                    print(f"ERROR: placing {Cat.all_cats[x].name}\'s sprite on Clan page")
 
         self.save_button = UIImageButton(scale(pygame.Rect(((686, 1250), (228, 60)))), "", object_id="#save_button")
 
@@ -1190,7 +1190,7 @@ class AllegiancesScreen(Screens):
             if not game.clan.leader.dead and not game.clan.leader.outside:
                 self.allegiance_list.append([
                     '<b><u>LEADER</u></b>',
-                    f"{str(game.clan.leader.name)} - a {game.clan.leader.describe_cat()}"
+                    f"{game.clan.leader.name} - a {game.clan.leader.describe_cat()}"
                 ])
 
                 if len(game.clan.leader.apprentice) > 0:
@@ -1209,7 +1209,7 @@ class AllegiancesScreen(Screens):
         if game.clan.deputy is not None and not game.clan.deputy.dead and not game.clan.deputy.outside:
             self.allegiance_list.append([
                 '<b><u>DEPUTY</u></b>',
-                f"{str(game.clan.deputy.name)} - a {game.clan.deputy.describe_cat()}"
+                f"{game.clan.deputy.name} - a {game.clan.deputy.describe_cat()}"
             ])
 
             if len(game.clan.deputy.apprentice) > 0:
@@ -1241,12 +1241,12 @@ class AllegiancesScreen(Screens):
                 if not cat_count:
                     self.allegiance_list.append([
                         '<b><u>WARRIORS</u></b>',
-                        f"{str(living_cat__.name)} - a {living_cat__.describe_cat()}"
+                        f"{living_cat__.name} - a {living_cat__.describe_cat()}"
                     ])
                 else:
                     self.allegiance_list.append([
                         '',
-                        f"{str(living_cat__.name)} - a {living_cat__.describe_cat()}"
+                        f"{living_cat__.name} - a {living_cat__.describe_cat()}"
                     ])
                 if len(living_cat__.apprentice) >= 1:
                     if len(living_cat__.apprentice) == 1:
@@ -1271,12 +1271,12 @@ class AllegiancesScreen(Screens):
                 if cat_count == 0:
                     self.allegiance_list.append([
                         '<b><u>APPRENTICES</u></b>',
-                        f"{str(living_cat___.name)} - a {living_cat___.describe_cat()}"
+                        f"{living_cat___.name} - a {living_cat___.describe_cat()}"
                     ])
                 else:
                     self.allegiance_list.append([
                         '',
-                        f"{str(living_cat___.name)} - a {living_cat___.describe_cat()}"
+                        f"{living_cat___.name} - a {living_cat___.describe_cat()}"
                     ])
                 cat_count += 1
         if not cat_count:
@@ -1287,12 +1287,12 @@ class AllegiancesScreen(Screens):
                 if cat_count == 0:
                     self.allegiance_list.append([
                         '<b><u>QUEENS</u></b>',
-                        f"{str(living_cat____.name)} - a {living_cat____.describe_cat()}"
+                        f"{living_cat____.name} - a {living_cat____.describe_cat()}"
                     ])
                 else:
                     self.allegiance_list.append([
                         '',
-                        f"{str(living_cat____.name)} - a {living_cat____.describe_cat()}"
+                        f"{living_cat____.name} - a {living_cat____.describe_cat()}"
                     ])
                 cat_count += 1
                 if len(living_cat____.apprentice) > 0:
@@ -1350,12 +1350,12 @@ class AllegiancesScreen(Screens):
                 if result == 0:
                     self.allegiance_list.append([
                         arg2,
-                        f"{str(living_cat.name)} - a {living_cat.describe_cat()}"
+                        f"{living_cat.name} - a {living_cat.describe_cat()}"
                     ])
                 else:
                     self.allegiance_list.append([
                         "",
-                        f"{str(living_cat.name)} - a {living_cat.describe_cat()}"
+                        f"{living_cat.name} - a {living_cat.describe_cat()}"
                     ])
                 result += 1
                 if len(living_cat.apprentice) > 0:
