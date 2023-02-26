@@ -241,9 +241,8 @@ pelt_c_no_bw = [
     'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'PALEGINGER', 'GOLDEN', 'GINGER',
     'DARKGINGER', 'CREAM', 'LIGHTBROWN', 'BROWN', 'DARKBROWN'
 ]
-tortiepatterns = ['singlecolour', 'tortietabby', 'tortiebengal', 'tortiemarbled', 'tortieticked',
-    'tortiesmoke', 'tortierosette', 'tortiespeckled', 'tortiemackerel', 'tortieclassic',
-    'tortiesokoke', 'tortieagouti']
+
+tortiepatterns = ['ONE', 'TWO', 'THREE', 'FOUR', 'REDTAIL']
 tortiebases = ['single', 'tabby', 'bengal', 'marbled', 'ticked', 'smoke', 'rosette', 'speckled', 'mackerel',
     'classic', 'sokoke', 'agouti', 'singlestripe']
 

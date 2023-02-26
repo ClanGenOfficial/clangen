@@ -32,7 +32,8 @@ from .pelts import (
     white_colours,
     wild_accessories,
     yellow_eyes,
-    pelt_colours
+    pelt_colours,
+    tortiepatterns,
     )
 
 from scripts.cat.sprites import Sprites
@@ -543,7 +544,7 @@ def init_pattern(cat):
         if not cat.tortiebase:
             cat.tortiebase = choice(tortiebases)
         if not cat.pattern:
-            cat.pattern = choice(["ONE", "TWO", "THREE", "FOUR"])
+            cat.pattern = choice(tortiepatterns)
 
         wildcard_chance = game.config["cat_generation"]["wildcard_tortie"]
         if cat.pelt.colour:
