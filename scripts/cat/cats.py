@@ -1064,7 +1064,6 @@ class Cat():
         # also adds a chance for cat to take a skill similar to their mentor"""
 
         if self.skill == '???':
-            print(str(self.name))
             if len(self.mentor_influence) < 1:
                 self.mentor_influence = ['None']
             # assign skill to new medicine cat
