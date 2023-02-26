@@ -111,12 +111,6 @@
         "win_trait": [
             "strange"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
@@ -153,9 +147,6 @@
             null,
             "While on the hunt, app1 tumbles right down into a rock pool while their attention is elsewhere. Bruised and sore, r_c has to report to the medicine cat den when they return to camp."
         ],
-        "win_skills": [
-            "None"
-        ],
         "win_trait": [
             "calm",
             "careful",
@@ -168,9 +159,6 @@
             "patient",
             "thoughtful",
             "wise"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "adventurous",
@@ -232,9 +220,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "bold",
             "childish",
@@ -288,9 +273,6 @@
             "patient",
             "thoughtful",
             "wise"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "bold",
@@ -542,9 +524,6 @@
             "troublesome",
             "vengeful"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "altruistic",
             "compassionate",
@@ -605,9 +584,6 @@
             "troublesome",
             "vengeful"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "altruistic",
             "compassionate",
@@ -667,9 +643,6 @@
             "strict",
             "troublesome",
             "vengeful"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "altruistic",
@@ -736,9 +709,6 @@
             "sneaky",
             "strange"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "altruistic",
             "compassionate",
@@ -789,9 +759,6 @@
             "Carelessly, app1 is seen by Twolegs, and taken from c_n.",
             "Carelessly, app1 is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, they discover that a broken window is just wide enough to push themselves out to safety through, but the glass leaves them bleeding as they run back to c_n."
         ],
-        "win_skills": [
-            "None"
-        ],
         "win_trait": [
             "calm",
             "careful",
@@ -801,9 +768,6 @@
             "nervous",
             "sneaky",
             "strange"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "altruistic",
@@ -868,9 +832,6 @@
             "sneaky",
             "strange"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "altruistic",
             "compassionate",
@@ -920,9 +881,6 @@
             "Carelessly, app1 is seen by Twolegs, and taken from c_n.",
             null
         ],
-        "win_skills": [
-            "None"
-        ],
         "win_trait": [
             "calm",
             "careful",
@@ -932,9 +890,6 @@
             "nervous",
             "sneaky",
             "strange"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "altruistic",
@@ -994,9 +949,6 @@
             "sneaky",
             "strange"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "adventurous",
             "bold",
@@ -1050,9 +1002,6 @@
             "nervous",
             "sneaky",
             "strange"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "adventurous",
@@ -1116,12 +1065,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 6,
         "antagonize_text": null,
@@ -1179,12 +1122,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 6,
         "antagonize_text": null,
@@ -1240,12 +1177,6 @@
             "responsible",
             "thoughtful",
             "wise"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
         ],
         "min_cats": 5,
         "max_cats": 6,
@@ -1304,12 +1235,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 5,
         "max_cats": 6,
         "antagonize_text": null,
@@ -1356,9 +1281,6 @@
             "confident",
             "playful"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "adventurous",
             "bold",
@@ -1394,17 +1316,11 @@
             "The cats watch the roiling, uncoordinated, twisting mass of limbs, completely weirded out. The octopus is almost to the sea before someone thinks to catch the thing, and in the resulting undignified scramble the octopus gets away entirely.",
             "s_c convinces the patrol to let it go - the poor thing is clearly struggling so much already, this feels unfair."
         ],
-        "win_skills": [
-            "None"
-        ],
         "win_trait": [
             "bloodthirsty",
             "cold",
             "fierce",
             "strict"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "altruistic",
@@ -1440,17 +1356,11 @@
             "r_c watches the roiling, uncoordinated, twisting mass of limbs, completely weirded out. The small octopus is almost to the sea before r_c thinks to catch the thing, and in the resulting undignified scramble the octopus gets away entirely.",
             "s_c lets it go - the poor thing is clearly struggling so much already, this feels unfair."
         ],
-        "win_skills": [
-            "None"
-        ],
         "win_trait": [
             "bloodthirsty",
             "cold",
             "fierce",
             "strict"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "altruistic",
@@ -1537,12 +1447,6 @@
         "win_trait": [
             "ambitious"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 3,
         "antagonize_text": null,
@@ -1590,12 +1494,6 @@
         ],
         "win_trait": [
             "ambitious"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
         ],
         "min_cats": 4,
         "max_cats": 6,
@@ -1647,12 +1545,6 @@
         "win_trait": [
             "ambitious"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 3,
         "antagonize_text": null,
@@ -1703,12 +1595,6 @@
         ],
         "win_trait": [
             "ambitious"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
         ],
         "min_cats": 4,
         "max_cats": 6,
@@ -1767,9 +1653,6 @@
             "fierce",
             "responsible",
             "righteous"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "troublesome",
@@ -1834,9 +1717,6 @@
             "responsible",
             "righteous"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "troublesome",
             "vengeful",
@@ -1896,9 +1776,6 @@
             "fierce",
             "responsible",
             "righteous"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "troublesome",
@@ -1965,9 +1842,6 @@
             "responsible",
             "righteous"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "troublesome",
             "vengeful",
@@ -2023,9 +1897,6 @@
             "fierce",
             "responsible",
             "righteous"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "troublesome",
@@ -2084,9 +1955,6 @@
             "fierce",
             "responsible",
             "righteous"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "troublesome",
@@ -2158,9 +2026,6 @@
             "righteous",
             "thoughtful",
             "wise"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "adventurous",
@@ -2238,9 +2103,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "adventurous",
             "ambitious",
@@ -2315,9 +2177,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "adventurous",
             "ambitious",
@@ -2391,9 +2250,6 @@
             "righteous",
             "thoughtful",
             "wise"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "adventurous",
@@ -2470,9 +2326,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "adventurous",
             "ambitious",
@@ -2541,9 +2394,6 @@
             "righteous",
             "thoughtful",
             "wise"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "adventurous",

@@ -19,10 +19,7 @@
             "The apprentices find a promising looking patch of fresh snow, only to find it conceals an old dirtplace trench underneath. Not only does it stink, they have to clean it up and try hid that they disturbed it, and it leaves them both irritated and stressed.",
             "As they play in the snow, app1 falls over themselves embarrassingly, and suddenly decides they remember that they have other things they should be doing."
     ],
-    "win_skills": null,
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "fail_skills": null,
-    "fail_trait": null,
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -46,7 +43,7 @@
     	"app1 refuses to believe that the cat cry they hear from the bog comes from a little towhee bird, and argues with p_l all the way back to camp."
 	],
 	"win_skills": ["good speaker", "great speaker", "excellent speaker"],
-	"win_trait": null,
+
 	"fail_skills": null,
 	"fail_trait": null,
 	"min_cats": 2,
@@ -72,7 +69,7 @@
     	"app1 refuses to believe that the cat cry they hear from the bog comes from a little towhee bird, and argues with p_l all the way back to camp."
 	],
 	"win_skills": ["good teacher", "great teacher", "fantastic teacher"],
-	"win_trait": null,
+
 	"fail_skills": null,
 	"fail_trait": null,
 	"min_cats": 2,
@@ -98,7 +95,7 @@
     	"app1 refuses to believe that the cat cry they hear from the bog comes from a little towhee bird, and argues with p_l and app2 all the way back to camp."
 	],
 	"win_skills": ["good speaker", "great speaker", "excellent speaker"],
-	"win_trait": null,
+
 	"fail_skills": null,
 	"fail_trait": null,
 	"min_cats": 3,
@@ -124,7 +121,7 @@
     	"app1 refuses to believe that the cat cry they hear from the bog comes from a little towhee bird, and argues with p_l and app2 all the way back to camp."
 	],
 	"win_skills": ["good teacher", "great teacher", "fantastic teacher"],
-	"win_trait": null,
+
 	"fail_skills": null,
 	"fail_trait": null,
 	"min_cats": 3,

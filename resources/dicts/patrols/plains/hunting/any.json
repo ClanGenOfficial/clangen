@@ -218,12 +218,6 @@
         "win_trait": [
             "strange"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
@@ -262,12 +256,6 @@
         "win_trait": [
             "strange"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
@@ -302,9 +290,6 @@
             null,
             "While on the hunt, r_c tumbles right down an empty badger sett while their attention is elsewhere. Bruised and sore, r_c has to report to the medicine cat den when they return to camp."
         ],
-        "win_skills": [
-            "None"
-        ],
         "win_trait": [
             "calm",
             "careful",
@@ -317,9 +302,6 @@
             "patient",
             "thoughtful",
             "wise"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "adventurous",
@@ -384,9 +366,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "bold",
             "childish",
@@ -443,9 +422,6 @@
             "patient",
             "thoughtful",
             "wise"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "bold",
@@ -700,9 +676,6 @@
             "troublesome",
             "vengeful"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "altruistic",
             "compassionate",
@@ -763,9 +736,6 @@
             "troublesome",
             "vengeful"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "altruistic",
             "compassionate",
@@ -825,9 +795,6 @@
             "strict",
             "troublesome",
             "vengeful"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "altruistic",
@@ -890,9 +857,6 @@
             "sneaky",
             "strange"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "altruistic",
             "compassionate",
@@ -941,9 +905,6 @@
             "Carelessly, s_c is seen by Twolegs, and taken from c_n.",
             "Carelessly, app1 is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, they discover that a broken window is just wide enough to push themselves out to safety through, but the glass leaves them bleeding as they run back to c_n."
         ],
-        "win_skills": [
-            "None"
-        ],
         "win_trait": [
             "calm",
             "careful",
@@ -953,9 +914,6 @@
             "nervous",
             "sneaky",
             "strange"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "altruistic",
@@ -1020,9 +978,6 @@
             "sneaky",
             "strange"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "altruistic",
             "compassionate",
@@ -1073,9 +1028,6 @@
             "Carelessly, app1 is seen by Twolegs, and taken from c_n.",
             null
         ],
-        "win_skills": [
-            "None"
-        ],
         "win_trait": [
             "calm",
             "careful",
@@ -1085,9 +1037,6 @@
             "nervous",
             "sneaky",
             "strange"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "altruistic",
@@ -1148,9 +1097,6 @@
             "sneaky",
             "strange"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "adventurous",
             "bold",
@@ -1205,9 +1151,6 @@
             "nervous",
             "sneaky",
             "strange"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "adventurous",
@@ -1271,12 +1214,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 6,
         "antagonize_text": null,
@@ -1334,12 +1271,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 6,
         "antagonize_text": null,
@@ -1395,12 +1326,6 @@
             "responsible",
             "thoughtful",
             "wise"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
         ],
         "min_cats": 5,
         "max_cats": 6,
@@ -1459,12 +1384,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 5,
         "max_cats": 6,
         "antagonize_text": null,
@@ -1518,12 +1437,6 @@
             "strict",
             "troublesome",
             "vengeful"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
         ],
         "min_cats": 2,
         "max_cats": 6,
@@ -1579,12 +1492,6 @@
             "troublesome",
             "vengeful"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
@@ -1623,12 +1530,6 @@
             "good teacher",
             "great teacher",
             "fantastic teacher"
-        ],
-        "win_trait": [
-            "None"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "childish",
@@ -1670,9 +1571,6 @@
             null,
             "Heart filled with daring, app1 slips off the rock and pads towards the monster in the grass, sure that StarClan will reward their bravery. A surprised wuff of air seems to come from everywhere and nowhere, as the puzzled maned wolf picks up the apprentice at their feet and tosses them aside so they can get back to hunting."
         ],
-        "win_skills": [
-            "None"
-        ],
         "win_trait": [
             "patient",
             "responsible",
@@ -1681,9 +1579,6 @@
             "calm",
             "careful",
             "strange"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "adventurous",
@@ -1747,9 +1642,6 @@
             "fierce",
             "shameless"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "childish",
             "nervous"
@@ -1800,12 +1692,6 @@
             "good fighter",
             "great fighter",
             "excellent fighter"
-        ],
-        "win_trait": [
-            "None"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "adventurous",

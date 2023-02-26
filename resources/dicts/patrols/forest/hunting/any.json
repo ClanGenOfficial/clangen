@@ -1366,9 +1366,6 @@
         "Carelessly, app1 is seen by Twolegs, and taken from c_n.",
         "Carelessly, app1 is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, they discover that a broken window is just wide enough to push themselves out to safety through, but the glass leaves them bleeding as they run back to c_n."
     ],
-    "win_skills": [
-        "None"
-    ],
     "win_trait": [
         "calm",
         "careful",
@@ -1493,9 +1490,6 @@
         "Carelessly, app1 is seen by Twolegs, and taken from c_n.",
         null
     ],
-    "win_skills": [
-        "None"
-    ],
     "win_trait": [
         "calm",
         "careful",
@@ -1506,9 +1500,7 @@
         "sneaky",
         "strange"
     ],
-    "fail_skills": [
-        "None"
-    ],
+
     "fail_trait": [
         "altruistic",
         "compassionate",

@@ -43,9 +43,6 @@
     "fail_skills": [
         "good fighter"
     ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 2,
     "max_cats": 3,
     "antagonize_text": null,
@@ -85,7 +82,6 @@
     "win_trait": ["adventurous", "altruistic", "ambitious", "bloodthirsty", "bold", "confident", "daring", 
     "fierce", "responsible", "righteous", "troublesome", "vengeful"],
     "fail_skills": ["good fighter"],
-    "fail_trait": null,
     "min_cats": 4,
     "max_cats": 6,
     "antagonize_text": null,
@@ -123,7 +119,6 @@
     "win_trait": ["adventurous", "altruistic", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "responsible",
         "righteous", "troublesome", "vengeful"],
     "fail_skills": ["good fighter"],
-    "fail_trait": null,
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -187,9 +182,6 @@
     "fail_skills": [
         "good fighter"
     ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 2,
     "max_cats": 3,
     "antagonize_text": null,
@@ -251,9 +243,6 @@
     "fail_skills": [
         "good fighter"
     ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 4,
     "max_cats": 6,
     "antagonize_text": null,
@@ -313,9 +302,6 @@
     "fail_skills": [
         "good fighter"
     ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -352,15 +338,6 @@
         "smart",
         "very smart",
         "extremely smart"
-    ],
-    "win_trait": [
-        "None"
-    ],
-    "fail_skills": [
-        "None"
-    ],
-    "fail_trait": [
-        "None"
     ],
     "min_cats": 2,
     "max_cats": 6,
