@@ -422,6 +422,7 @@ def randomize_pelt(cat):
         torbie = random.getrandbits(tortie_chance_m) == 1
 
     chosen_tortie_base = None
+    torbie = True
     if torbie:
         # If it is tortie, the chosen pelt above becomes the base pelt.
         chosen_tortie_base = chosen_pelt
@@ -552,6 +553,7 @@ def init_pattern(cat):
             # and always get wildcard torties.
             if not wildcard_chance or random.getrandbits(wildcard_chance) == 1:
                 # This is the "wildcard" chance, where you can get funky combinations.
+                print("WILDCARD TORTIE")
 
                 # Allow any pattern:
                 cat.tortiepattern = choice(tortiebases)
@@ -575,19 +577,18 @@ def init_pattern(cat):
                     cat.pelt.colour = choice(possible_colors)
 
                 # Ginger is often duplicated to increase its chances
-                if cat.pelt.colour in black_colours:
+                if (cat.pelt.colour in black_colours) or (cat.pelt.colour in white_colours):
                     cat.tortiecolour = choice((ginger_colours * 2) + brown_colours)
                 elif cat.pelt.colour in ginger_colours:
                     cat.tortiecolour = choice(brown_colours + black_colours * 2)
-                elif cat.pelt.colour in white_colours:
-                    cat.tortiecolour = choice((ginger_colours * 2) + brown_colours)
                 elif cat.pelt.colour in brown_colours:
-                    possible_colors = brown_colours
+                    possible_colors = brown_colours.copy()
                     possible_colors.remove(cat.pelt.colour)
-                    possible_colors.extend(["GREY", "PALEGREY", "DARKGREY"] + (ginger_colours * 2))
+                    possible_colors.extend(black_colours + (ginger_colours * 2))
                     cat.tortiecolour = choice(possible_colors)
                 else:
                     cat.tortiecolour = "GOLDEN"
+
         else:
             cat.tortiecolour = "GOLDEN"
     else:

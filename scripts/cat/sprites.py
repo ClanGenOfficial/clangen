@@ -489,8 +489,12 @@ for a, i in enumerate(['LIGHTBROWN', 'BROWN', 'DARKBROWN', 'BLACK']):
     sprites.make_group('singlestripeextra', (a, 2), f'singlestripeextra{i}', sprites_y=2)
 
 # new new torties
-for a, i in enumerate(['ONE', 'TWO', 'THREE', 'FOUR', 'REDTAIL']):
+for a, i in enumerate(['ONE', 'TWO', 'THREE', 'FOUR', 'REDTAIL', 'DELILAH']):
     sprites.make_group('tortiepatchesmasks', (a, 0), f"tortiemask{i}", sprites_y=5)
+for a, i in enumerate(['MINIMAL1', 'MINIMAL2', 'MINIMAL3', 'MINIMAL4', 'OREO', 'SWOOP']):
+    sprites.make_group('tortiepatchesmasks', (a, 1), f"tortiemask{i}", sprites_y=5)
+for a, i in enumerate(['MOTTLED']):
+    sprites.make_group('tortiepatchesmasks', (a, 2), f"tortiemask{i}", sprites_y=5)
 
 
 # SKINS
