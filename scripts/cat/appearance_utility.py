@@ -574,15 +574,17 @@ def init_pattern(cat):
                     possible_colors.remove("WHITE")
                     cat.pelt.colour = choice(possible_colors)
 
+                # Ginger is often duplicated to increase its chances
                 if cat.pelt.colour in black_colours:
-                    cat.tortiecolour = choice(ginger_colours + brown_colours)
+                    cat.tortiecolour = choice((ginger_colours * 2) + brown_colours)
                 elif cat.pelt.colour in ginger_colours:
-                    cat.tortiecolour = choice(brown_colours + black_colours)
+                    cat.tortiecolour = choice(brown_colours + black_colours * 2)
                 elif cat.pelt.colour in white_colours:
-                    cat.tortiecolour = choice(ginger_colours + brown_colours)
+                    cat.tortiecolour = choice((ginger_colours * 2) + brown_colours)
                 elif cat.pelt.colour in brown_colours:
-                    possible_colors = brown_colours + ginger_colours + ["GREY", "PALEGREY", "DARKGREY"]
+                    possible_colors = brown_colours
                     possible_colors.remove(cat.pelt.colour)
+                    possible_colors.extend(["GREY", "PALEGREY", "DARKGREY"] + (ginger_colours * 2))
                     cat.tortiecolour = choice(possible_colors)
                 else:
                     cat.tortiecolour = "GOLDEN"
