@@ -255,7 +255,7 @@ class Game():
 
     def save_settings(self):
         """ Save user settings for later use """
-        data = ''.join(f"{s}:{str(self.settings[s])}" + "\n"
+        data = ''.join(f"{s}:{self.settings[s]}" + "\n"
                        for s in self.settings.keys())
 
         with open('saves/settings.txt', 'w') as write_file:

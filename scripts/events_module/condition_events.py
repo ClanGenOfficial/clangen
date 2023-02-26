@@ -137,12 +137,12 @@ class Condition_Events():
                 possible_events = self.generate_events.possible_events(cat.status, cat.age, "injury")
                 final_events = self.generate_events.filter_possible_events(possible_events, cat, other_cat, war, enemy_clan, other_clan, alive_kits)
 
-                other_clan_name = f'{str(other_clan.name)}Clan'
-                enemy_clan = f'{str(enemy_clan)}'
+                other_clan_name = f'{other_clan.name}Clan'
+                enemy_clan = f'{enemy_clan}'
 
                 if other_clan_name == 'None':
                     other_clan = game.clan.all_clans[0]
-                    other_clan_name = f'{str(other_clan.name)}Clan'
+                    other_clan_name = f'{other_clan.name}Clan'
 
                 if len(final_events) > 0:
                     injury_event = random.choice(final_events)
@@ -834,11 +834,15 @@ class Condition_Events():
                 if herb == herb_used:
                     break
             modifier = count
+            if cat.status in ['elder', 'kitten']:
+                modifier = modifier * 2
 
             effect_message = 'this should not show up'
             if effect == 'mortality':
                 effect_message = 'They will be less likely to die.'
                 conditions[condition]["mortality"] += 11 - modifier + int(amount_used * 1.5)
+                if conditions[condition]["mortality"] < 1:
+                    conditions[condition]["mortality"] = 1
             elif effect == 'duration':
                 effect_message = 'They will heal sooner.'
                 conditions[condition]["duration"] -= 1

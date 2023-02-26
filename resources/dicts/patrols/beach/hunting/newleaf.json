@@ -54,9 +54,6 @@
     "fail_skills": [
         "good fighter"
     ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 2,
     "max_cats": 3,
     "antagonize_text": null,
@@ -120,9 +117,6 @@
     "fail_skills": [
         "good fighter"
     ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 4,
     "max_cats": 6,
     "antagonize_text": null,
@@ -162,7 +156,6 @@
         "responsible", "righteous", "troublesome", "vengeful"
     ],
     "fail_skills": ["good fighter"],
-    "fail_trait": null,
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -225,9 +218,6 @@
     "fail_skills": [
         "good fighter"
     ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 2,
     "max_cats": 3,
     "antagonize_text": null,
@@ -289,9 +279,6 @@
     "fail_skills": [
         "good fighter"
     ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 4,
     "max_cats": 6,
     "antagonize_text": null,
@@ -350,9 +337,6 @@
     ],
     "fail_skills": [
         "good fighter"
-    ],
-    "fail_trait": [
-        "None"
     ],
     "min_cats": 1,
     "max_cats": 1,

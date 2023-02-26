@@ -43,12 +43,6 @@
         "faithful",
         "loving"
     ],
-    "fail_skills": [
-        "None"
-    ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": null,
@@ -88,15 +82,6 @@
     "win_skills": [
         "great hunter",
         "fantastic hunter"
-    ],
-    "win_trait": [
-        "None"
-    ],
-    "fail_skills": [
-        "None"
-    ],
-    "fail_trait": [
-        "None"
     ],
     "min_cats": 1,
     "max_cats": 1,
@@ -148,12 +133,6 @@
         "empathetic",
         "faithful",
         "loving"
-    ],
-    "fail_skills": [
-        "None"
-    ],
-    "fail_trait": [
-        "None"
     ],
     "min_cats": 2,
     "max_cats": 6,
@@ -217,9 +196,7 @@
         "responsible",
         "righteous"
     ],
-    "fail_skills": [
-        "None"
-    ],
+
     "fail_trait": [
         "troublesome",
         "vengeful",
@@ -287,9 +264,7 @@
         "responsible",
         "righteous"
     ],
-    "fail_skills": [
-        "None"
-    ],
+
     "fail_trait": [
         "troublesome",
         "vengeful",
@@ -355,9 +330,7 @@
         "responsible",
         "righteous"
     ],
-    "fail_skills": [
-        "None"
-    ],
+
     "fail_trait": [
         "troublesome",
         "vengeful",
@@ -426,9 +399,7 @@
         "responsible",
         "righteous"
     ],
-    "fail_skills": [
-        "None"
-    ],
+
     "fail_trait": [
         "troublesome",
         "vengeful",
@@ -491,9 +462,7 @@
         "responsible",
         "righteous"
     ],
-    "fail_skills": [
-        "None"
-    ],
+
     "fail_trait": [
         "troublesome",
         "vengeful",
@@ -558,9 +527,7 @@
         "responsible",
         "righteous"
     ],
-    "fail_skills": [
-        "None"
-    ],
+
     "fail_trait": [
         "troublesome",
         "vengeful",

@@ -122,7 +122,7 @@ class Relationship():
             string_to_replace = '(' + action[action.find("(") + 1:action.find(")")] + ')'
             self.interaction_str = action.replace(string_to_replace, str(self.cat_to.name))
             game.cur_events_list.append(Single_Event(
-                f"{str(self.cat_from.name)} {self.interaction_str} (neutral effect)", ["relation", "interaction"],
+                f"{self.cat_from.name} {self.interaction_str} (neutral effect)", ["relation", "interaction"],
                 [self.cat_to.ID, self.cat_from.ID]))
             return
         elif self.cat_from.exiled and not self.cat_to.exiled:
@@ -130,7 +130,7 @@ class Relationship():
             string_to_replace = '(' + action[action.find("(") + 1:action.find(")")] + ')'
             self.interaction_str = action.replace(string_to_replace, str(self.cat_to.name))
             game.cur_events_list.append(Single_Event(
-                f"{str(self.cat_from.name)} {self.interaction_str} (neutral effect)", ["relation", "interaction"],
+                f"{self.cat_from.name} {self.interaction_str} (neutral effect)", ["relation", "interaction"],
                 [self.cat_to.ID, self.cat_from.ID]))
             return
         elif self.cat_from.exiled and self.cat_to.exiled:
@@ -138,7 +138,7 @@ class Relationship():
             string_to_replace = '(' + action[action.find("(") + 1:action.find(")")] + ')'
             self.interaction_str = action.replace(string_to_replace, str(self.cat_to.name))
             game.cur_events_list.append(Single_Event(
-                f"{str(self.cat_from.name)} {self.interaction_str} (neutral effect)", ["relation", "interaction"],
+                f"{self.cat_from.name} {self.interaction_str} (neutral effect)", ["relation", "interaction"],
                 [self.cat_to.ID, self.cat_from.ID]))
             return
 
@@ -148,7 +148,7 @@ class Relationship():
             string_to_replace = '(' + action[action.find("(") + 1:action.find(")")] + ')'
             self.interaction_str = action.replace(string_to_replace, str(self.cat_to.name))
             game.cur_events_list.append(Single_Event(
-                f"{str(self.cat_from.name)} {self.interaction_str} (neutral effect)", ["relation", "interaction"],
+                f"{self.cat_from.name} {self.interaction_str} (neutral effect)", ["relation", "interaction"],
                 [self.cat_to.ID, self.cat_from.ID]))
             return
         elif self.cat_from.outside and not self.cat_to.outside:
@@ -156,7 +156,7 @@ class Relationship():
             string_to_replace = '(' + action[action.find("(") + 1:action.find(")")] + ')'
             self.interaction_str = action.replace(string_to_replace, str(self.cat_to.name))
             game.cur_events_list.append(Single_Event(
-                f"{str(self.cat_from.name)} {self.interaction_str} (neutral effect)", ["relation", "interaction"],
+                f"{self.cat_from.name} {self.interaction_str} (neutral effect)", ["relation", "interaction"],
                 [self.cat_to.ID, self.cat_from.ID]))
             return
         elif self.cat_from.outside and self.cat_to.outside:
@@ -164,7 +164,7 @@ class Relationship():
             string_to_replace = '(' + action[action.find("(") + 1:action.find(")")] + ')'
             self.interaction_str = action.replace(string_to_replace, str(self.cat_to.name))
             game.cur_events_list.append(Single_Event(
-                f"{str(self.cat_from.name)} {self.interaction_str} (neutral effect)", ["relation", "interaction"],
+                f"{self.cat_from.name} {self.interaction_str} (neutral effect)", ["relation", "interaction"],
                 [self.cat_to.ID, self.cat_from.ID]))
             return
 
@@ -199,7 +199,7 @@ class Relationship():
         self.interaction_str = self.interaction_str.replace("m_c", str(self.cat_from.name))
 
         # add the effect of the current action
-        action_string_all = f"{str(self.cat_from.name)} {self.interaction_str} "
+        action_string_all = f"{self.cat_from.name} {self.interaction_str} "
         if self_relation_effect == 'neutral effect':
             self_relation_effect = other_relation_effect
         effect_string = f"({self_relation_effect})"

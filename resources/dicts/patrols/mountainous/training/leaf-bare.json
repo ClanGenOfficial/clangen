@@ -21,10 +21,7 @@
             null,
             "Both apprentices are back at camp in time for a normal day of training, but app1 has to confess their predawn adventure when they go to medicine cat den with a running nose."
     ],
-    "win_skills": null,
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "fail_skills": null,
-    "fail_trait": null,
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -48,9 +45,6 @@
     	"One of the wolves peels off from the sleepy pack and starts ambling in the general direction of the cats, and p_l decides caution is wise. The patrol returns to camp without seeing anything more."
 	],
 	"win_skills": ["good speaker", "great speaker", "excellent speaker"],
-	"win_trait": null,
-	"fail_skills": null,
-	"fail_trait": null,
 	"min_cats": 2,
 	"max_cats": 2,
 	"antagonize_text": null,
@@ -74,9 +68,6 @@
     	"One of the wolves peels off from the sleepy pack and starts ambling in the general direction of the cats, and p_l decides caution is wise. The patrol returns to camp without seeing anything more."
 	],
 	"win_skills": ["good teacher", "great teacher", "fantastic teacher"],
-	"win_trait": null,
-	"fail_skills": null,
-	"fail_trait": null,
 	"min_cats": 2,
 	"max_cats": 2,
 	"antagonize_text": null,
@@ -100,9 +91,6 @@
     	"One of the wolves peels off from the sleepy pack and starts ambling in the general direction of the cats, and p_l decides caution is wise. The patrol returns to camp without seeing anything more."
 	],
 	"win_skills": ["good speaker", "great speaker", "excellent speaker"],
-	"win_trait": null,
-	"fail_skills": null,
-	"fail_trait": null,
 	"min_cats": 3,
 	"max_cats": 6,
 	"antagonize_text": null,
@@ -126,9 +114,6 @@
     	"One of the wolves peels off from the sleepy pack and starts ambling in the general direction of the cats, and p_l decides caution is wise. The patrol returns to camp without seeing anything more."
 	],
 	"win_skills": ["good teacher", "great teacher", "fantastic teacher"],
-	"win_trait": null,
-	"fail_skills": null,
-	"fail_trait": null,
 	"min_cats": 3,
 	"max_cats": 6,
 	"antagonize_text": null,

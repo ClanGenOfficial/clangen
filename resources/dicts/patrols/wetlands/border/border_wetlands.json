@@ -42,9 +42,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "ambitious",
             "bloodthirsty",
@@ -107,9 +104,6 @@
             "responsible",
             "thoughtful",
             "wise"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "ambitious",
@@ -175,9 +169,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "ambitious",
             "bloodthirsty",
@@ -241,12 +232,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
@@ -299,12 +284,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
@@ -352,9 +331,6 @@
             "responsible",
             "thoughtful",
             "wise"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "ambitious",
@@ -414,9 +390,6 @@
             "responsible",
             "thoughtful",
             "wise"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "ambitious",
@@ -480,9 +453,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "ambitious",
             "bloodthirsty",
@@ -540,12 +510,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
@@ -589,12 +553,6 @@
             "responsible",
             "thoughtful",
             "wise"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -647,9 +605,6 @@
             "responsible",
             "thoughtful",
             "wise"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "ambitious",
@@ -717,9 +672,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "ambitious",
             "bloodthirsty",
@@ -785,9 +737,6 @@
             "responsible",
             "thoughtful",
             "wise"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "ambitious",
@@ -855,12 +804,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
@@ -917,12 +860,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
@@ -966,12 +903,6 @@
             "insecure",
             "nervous"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
@@ -1014,12 +945,6 @@
             "careful",
             "insecure",
             "nervous"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -1066,12 +991,6 @@
             "insecure",
             "nervous"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
@@ -1117,12 +1036,6 @@
             "insecure",
             "nervous"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
@@ -1166,12 +1079,6 @@
             "insecure",
             "nervous"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
@@ -1214,12 +1121,6 @@
             "insecure",
             "nervous"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
@@ -1261,12 +1162,6 @@
             "careful",
             "insecure",
             "nervous"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -1331,9 +1226,6 @@
         "fail_skills": [
             "smart"
         ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
@@ -1397,9 +1289,6 @@
         "fail_skills": [
             "good fighter"
         ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
@@ -1438,15 +1327,6 @@
             "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. The rogue is not impressed by this teenager, and ignores them completely.",
             "Nose to the ground following the trail, app1 doesn't see the blow that kills them.",
             "Nose to the ground following the trail, app1 doesn't see the blow coming. They haul themselves to their feet, squealing with pain, and run for home."
-        ],
-        "win_skills": [
-            "None"
-        ],
-        "win_trait": [
-            "None"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "ambitious",
@@ -1528,9 +1408,6 @@
         "fail_skills": [
             "smart"
         ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 2,
         "max_cats": 2,
         "antagonize_text": null,
@@ -1593,9 +1470,6 @@
         "fail_skills": [
             "good fighter"
         ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 2,
         "max_cats": 2,
         "antagonize_text": null,
@@ -1633,15 +1507,6 @@
             "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. The rogue is not impressed by the teenager, but reluctantly leaves c_n territory.",
             null,
             "Nose to the ground following the trail, app1 doesn't see the blow coming. They haul themselves to their feet, squealing with pain, and run for home."
-        ],
-        "win_skills": [
-            "None"
-        ],
-        "win_trait": [
-            "None"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "ambitious",
@@ -1720,9 +1585,6 @@
         "fail_skills": [
             "smart"
         ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 3,
         "max_cats": 6,
         "antagonize_text": null,
@@ -1782,9 +1644,6 @@
         "fail_skills": [
             "good fighter"
         ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 3,
         "max_cats": 6,
         "antagonize_text": null,
@@ -1819,15 +1678,6 @@
             "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. The rogue is not impressed by the teenager, but with the full patrol backing them up, leaves c_n territory.",
             null,
             null
-        ],
-        "win_skills": [
-            "None"
-        ],
-        "win_trait": [
-            "None"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "ambitious",
@@ -1894,9 +1744,6 @@
             "empathetic",
             "loving",
             "patient"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "cold",

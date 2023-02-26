@@ -84,7 +84,7 @@ def bs_blurb_text(cat):
         'abandoned1': "This cat was found by the Clan as a kit and has been living with them ever since.",
         'abandoned2': "This cat was born outside of the Clan, but was brought to the Clan as a kit and has lived here ever since.",
         'abandoned3': "This cat was born into another Clan, but they were left here as a kit for the Clan to raise.",
-        'abandoned4': "This cat was found and taken in after being abandoned by their twolegs as a kit.",
+        'abandoned4': "This cat was found and taken in after being abandoned by their Twolegs as a kit.",
         'medicine_cat': "This cat was once a medicine cat in another Clan.",
         'otherclan': "This cat was born into another Clan, but came to this Clan by choice.",
         'otherclan2': "This cat was unhappy in their old Clan and decided to come here instead.",
@@ -94,11 +94,11 @@ def bs_blurb_text(cat):
         'retired_leader': "This cat used to be the leader of another Clan before deciding they needed a change of scenery after leadership became too much. They returned their nine lives and let their deputy take over before coming here.",
         'refugee': "This cat came to this Clan after fleeing from their former Clan and the tyrannical leader that had taken over.",
         'refugee2': "This cat used to live as a loner, but after another cat chased them from their home, they took refuge in the Clan.",
-        'refugee3': "This cat used to be a kittypet, but joined the Clan after fleeing from their cruel twoleg.",
+        'refugee3': "This cat used to be a kittypet, but joined the Clan after fleeing from their cruel Twoleg.",
         'refugee4': "This cat used to be in a rogue group, but joined the Clan after fleeing from the group's tyrannical leader.",
         'tragedy_survivor': "Something horrible happened to this cat's previous Clan. They refuse to speak about it.",
         'tragedy_survivor2': "This cat used to be part of a rogue group, but joined the Clan after something terrible happened to it.",
-        'tragedy_survivor3': "This cat used to be a kittypet, but joined the Clan after something terrible happened to their twolegs.",
+        'tragedy_survivor3': "This cat used to be a kittypet, but joined the Clan after something terrible happened to their Twolegs.",
         'tragedy_survivor4': "This cat used to be a loner, but joined the Clan after something terrible made them leave their old home behind.",
         'orphaned': "This cat was found with a deceased parent. The Clan took them in, but doesn't hide where they came from.",
         'orphaned2': "This cat was found with a deceased parent. The Clan took them in, but doesn't tell them where they really came from.",
@@ -1107,7 +1107,7 @@ class ProfileScreen(Screens):
             adjust_text = str(bs_blurb).replace('This cat', str(self.the_cat.name))
             text = adjust_text
         else:
-            text = f"{str(self.the_cat.name)} was born into the Clan where they currently reside."
+            text = f"{self.the_cat.name} was born into the Clan where they currently reside."
         return text
 
     def get_scar_text(self):
