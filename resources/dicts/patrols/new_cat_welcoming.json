@@ -114,7 +114,7 @@
     "max_cats": 6
 },
 {
-    "patrol_id": "gen_gen_lonerchase1",
+    "patrol_id": "gen_bord_lonerchase1",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat", "reputation", "injury", "claw-wound", "scar", "LEFTEAR", "no_change_fail_rep"],
@@ -159,9 +159,7 @@
             "s_c doesn't even hesitate before splitting from the patrol to check on the source of the noise. They quickly regret their impulsivity, however, when an angry raccoon bursts from the bush! s_c gets quite the scare, but thankfully the raccoon only wanted to get away from them and quickly runs off back into the undergrowth.",
             "p_l takes the lead in checking the source of the noise and comes face to face with a rogue hiding in the bush! The rogue takes a swipe at p_l, but doesn't get much damage in before p_l retaliates and chases the intruder out c_n territory."
     ],
-    "win_skills": null,
     "win_trait": ["compassionate", "empathetic", "loving", "calm"],
-    "fail_skills": null,
     "fail_trait": ["daring", "bold", "ambitious"],
     "min_cats": 1,
     "max_cats": 6,
@@ -187,10 +185,7 @@
     "fail_text": [
             "p_l follows the strange sounds on the wind and finds the bodies of an unknown queen with their kits beside them, slowly going cold. r_c goes back to camp to find help bringing their bodies back to camp to pay respects."
     ],
-    "win_skills": null,
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": null,
@@ -212,10 +207,7 @@
     "fail_text": [
             "p_l follows the strange sounds on the wind and finds the body of an unknown queen with their kits beside them, slowly going cold. r_c goes back to camp to find help bringing their bodies back to camp to pay respects."
     ],
-    "win_skills": null,
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": null,
@@ -237,10 +229,7 @@
     "fail_text": [
             "p_l follows the strange sounds on the wind and finds the body of an unknown queen with their kits beside them, slowly going cold. They cancel their patrol and return to camp to get help sending these lost souls to StarClan."
     ],
-    "win_skills": null,
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -262,10 +251,7 @@
     "fail_text": [
             "p_l follows the strange sounds on the wind and finds the body of an unknown queen with their kits beside them, slowly going cold. They cancel their patrol and return to camp to get help sending these lost souls to StarClan."
     ],
-    "win_skills": null,
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -285,12 +271,9 @@
             "p_l follows the strange sounds on the wind and finds a struggling queen with their newborn kits clinging to them. Panicking, they ask the queen to hold on just a little longer while they fetch help, then sprint for home, yowling in case any patrol is nearby to assist."
     ],
     "fail_text": [
-            "p_l follows the strange sounds on the wind and finds the body of an unknown queen with their kits beside them, slowly going cold. They desperately try to save a kitten, but can't, and their mentor fin them there sobbing hours later."
+            "p_l follows the strange sounds on the wind and finds the body of an unknown queen with their kits beside them, slowly going cold. They desperately try to save a kitten, but can't, and their mentor finds them there sobbing hours later."
     ],
-    "win_skills": null,
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -312,10 +295,7 @@
     "fail_text": [
             "p_l follows the strange sounds on the wind and finds the body of an unknown queen with their kits beside them, slowly going cold. They desperately try to save a kitten, but can't, and their mentor finds them there sobbing hours later."
     ],
-    "win_skills": null,
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -342,8 +322,7 @@
         "The patrol follows the sound, ready to confront the intruder. They come upon a large kittypet that's sniffing around. They begin to approach, but the kittypet immediately turns on them. r_c doesn't have enough time to move as the kittypet launches a quick attack. p_l bats the kittypet away and helps r_c back to camp."
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
-    "win_trait": null,
-    "fail_skills": null,
+
     "fail_trait": ["vengeful", "bloodthirsty"],
     "min_cats": 2,
     "max_cats": 6,
@@ -371,9 +350,7 @@
         "The patrol warily approaches the loner, who doesn't seem to notice them. It's obvious that the cat is bleeding out. p_l attempts to staunch the bleeding and carry the cat to camp, but it's no use. Hopefully the loner didn't suffer too much."
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 6,
     "antagonize_text": null,

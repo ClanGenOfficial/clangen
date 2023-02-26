@@ -123,12 +123,12 @@ class Events():
                         print("Cat Died: " + str(cat.name))
                         cat.dead = True
                         if cat.exiled:
-                            text = f'Rumors reach your Clan that the exiled {str(cat.name)} has died recently.'
+                            text = f'Rumors reach your Clan that the exiled {cat.name} has died recently.'
                         elif cat.status in ['kittypet', 'loner', 'rogue']:
-                            text = f'Rumors reach your Clan that the {cat.status} {str(cat.name)} has died recently.'
+                            text = f'Rumors reach your Clan that the {cat.status} {cat.name} has died recently.'
                         else:
                             cat.outside = False
-                            text = f"Will they reach StarClan, even so far away? {str(cat.name)} isn't sure, " \
+                            text = f"Will they reach StarClan, even so far away? {cat.name} isn't sure, " \
                                    f"but as they drift away, they hope to see familiar starry fur on the other side."
                         game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
 
@@ -136,10 +136,10 @@ class Events():
                         1, 10) == 1:
                     game.clan.leader_lives -= 1
                     if game.clan.leader_lives > 0:
-                        text = f'Rumors reach your Clan that the exiled {str(cat.name)} lost a life recently.'
+                        text = f'Rumors reach your Clan that the exiled {cat.name} lost a life recently.'
                         game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
                     else:
-                        text = f'Rumors reach your Clan that the exiled {str(cat.name)} has died recently.'
+                        text = f'Rumors reach your Clan that the exiled {cat.name} has died recently.'
                         game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
                         cat.dead = True
 
@@ -147,7 +147,7 @@ class Events():
                         1, 45) == 1:
                     game.clan.leader_lives -= 10
                     cat.dead = True
-                    text = f'Rumors reach your Clan that the exiled {str(cat.name)} has died recently.'
+                    text = f'Rumors reach your Clan that the exiled {cat.name} has died recently.'
                     game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
                     game.clan.leader_lives = 0
 
@@ -407,7 +407,7 @@ class Events():
                 herbs.pop(bad_herb)
                 insert2 = "all of"
 
-            event = f"As the herb stores are inspected by the {insert}, it's noticed that {insert2} the {str(bad_herb).replace('_', ' ')}" \
+            event = f"As the herb stores are inspected by the {insert}, it's noticed that {insert2} the {bad_herb.replace('_', ' ')}" \
                     f" went bad. They'll have to be replaced with new ones. "
             game.herb_events_list.append(event)
             game.cur_events_list.append(Single_Event(event, "health"))
@@ -439,10 +439,10 @@ class Events():
                     herbs[herb_given] -= herb_amount
 
                     possible_events = [
-                        f"The {chosen_ally.name}Clan medicine cat comes asking if your Clan has any {str(herb_given).replace('_', ' ')} to spare. "
+                        f"The {chosen_ally.name}Clan medicine cat comes asking if your Clan has any {herb_given.replace('_', ' ')} to spare. "
                         f"Graciously, your Clan decides to aid their allies and share the herbs.",
-                        f"The medicine cat apprentice from {chosen_ally.name}Clan comes asking for {str(herb_given).replace('_', ' ')}. "
-                        f"They refuse to say why their Clan needs them but your Clan still provides them with {str(herb_given).replace('_', ' ')}."
+                        f"The medicine cat apprentice from {chosen_ally.name}Clan comes asking for {herb_given.replace('_', ' ')}. "
+                        f"They refuse to say why their Clan needs them but your Clan still provides them with {herb_given.replace('_', ' ')}."
                     ]
                     if herb_given == 'lungwort':
                         possible_events.extend([
@@ -454,10 +454,10 @@ class Events():
                     chosen_ally.relations += 5
                 else:
                     possible_events = [
-                        f"The {chosen_ally.name}Clan medicine cat comes asking if your Clan has any {str(herb_given).replace('_', ' ')} to spare. "
+                        f"The {chosen_ally.name}Clan medicine cat comes asking if your Clan has any {herb_given.replace('_', ' ')} to spare. "
                         f"However, your Clan only has enough for themselves and they refuse to share.",
                         f"The medicine cat apprentice from {chosen_ally.name}Clan comes asking for herbs. They refuse to "
-                        f"say why their Clan needs them and your Clan decides not to share their precious few {str(herb_given).replace('_', ' ')}."
+                        f"say why their Clan needs them and your Clan decides not to share their precious few {herb_given.replace('_', ' ')}."
                     ]
                     if herb_given == 'lungwort':
                         possible_events.extend([
@@ -718,7 +718,7 @@ class Events():
                 text = ''
                 self.handle_leadership_ceremony(game.clan.deputy)
                 if game.clan.deputy.trait == 'bloodthirsty':
-                    text = f'{str(game.clan.deputy.name)} has become the new leader. ' \
+                    text = f'{game.clan.deputy.name} has become the new leader. ' \
                            f'They stare down at their Clanmates with unsheathed claws, ' \
                            f'promising a new era for the Clans.'
                 else:
@@ -730,15 +730,15 @@ class Events():
                                                             'nine lives and are hailed by their new name, ' + \
                                str(game.clan.deputy.name) + '.'
                     elif c == 2:
-                        text = f'{str(game.clan.deputy.name)} has become the new leader of the Clan. ' \
+                        text = f'{game.clan.deputy.name} has become the new leader of the Clan. ' \
                                f'They vow that they will protect the Clan, even at the cost of their nine lives.'
                     elif c == 3:
-                        text = f'{str(game.clan.deputy.name)} has received their nine lives and became the ' \
+                        text = f'{game.clan.deputy.name} has received their nine lives and became the ' \
                                f'new leader of the Clan. They feel like they are not ready for this new ' \
                                f'responsibility, but will try their best to do what is right for the Clan.'
 
                 # game.ceremony_events_list.append(text)
-                text += f"\nVisit {str(game.clan.deputy.name)}'s profile to see their full leader ceremony."
+                text += f"\nVisit {game.clan.deputy.name}'s profile to see their full leader ceremony."
 
                 game.cur_events_list.append(Single_Event(text, "ceremony", game.clan.deputy.ID))
                 self.ceremony_accessory = True
@@ -760,7 +760,7 @@ class Events():
                 game.clan.medicine_cat = cat
 
             # retiring to elder den
-            if cat.status in ['warrior', 'deputy'] and cat.age == 'elder' and len(cat.apprentice) < 1:
+            if cat.status in ['warrior', 'deputy'] and cat.age == 'senior' and len(cat.apprentice) < 1:
                 if cat.status == 'deputy':
                     game.clan.deputy = None
                 self.ceremony(cat, 'elder')
@@ -774,7 +774,7 @@ class Events():
                                                          and not x.dead and not x.outside, Cat.all_cats_list))
 
                     # check if the medicine cat is an elder
-                    has_elder_med = [c for c in med_cat_list if c.age == 'elder' and c.status == "medicine cat"]
+                    has_elder_med = [c for c in med_cat_list if c.age == 'senior' and c.status == "medicine cat"]
 
                     very_old_med = [c for c in med_cat_list if c.moons >= 150 and c.status == "medicine cat"]
 
@@ -1067,7 +1067,7 @@ class Events():
         involved_cats = list(set(involved_cats))
 
         game.cur_events_list.append(Single_Event(f'{ceremony_text}', "ceremony", involved_cats))
-        # game.ceremony_events_list.append(f'{str(cat.name)}{ceremony_text}')
+        # game.ceremony_events_list.append(f'{cat.name}{ceremony_text}')
     def gain_accessories(self, cat):
         # ---------------------------------------------------------------------------- #
         #                                  accessories                                 #

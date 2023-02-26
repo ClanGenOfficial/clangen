@@ -2,20 +2,22 @@
     "seizure": {
         "severity": "severe",
         "mortality": {
+            "newborn": 10,
             "kitten": 5,
             "adolescent": 10,
             "young adult": 20,
             "adult": 20,
             "senior adult": 20,
-            "elder": 5
+            "senior": 5
         },
         "medicine_mortality": {
+            "newborn": 50,
             "kitten": 50,
             "adolescent": 70,
             "young adult": 100,
             "adult": 100,
             "senior adult": 100,
-            "elder": 70
+            "senior": 70
         },
         "duration": 1,
         "medicine_duration": 1,
@@ -38,7 +40,7 @@
             "young adult": 10,
             "adult": 15,
             "senior adult": 10,
-            "elder": 5
+            "senior": 5
         },
         "medicine_mortality": {
             "kitten": 10,
@@ -46,7 +48,7 @@
             "young adult": 30,
             "adult": 45,
             "senior adult": 30,
-            "elder": 13
+            "senior": 13
         },
         "duration": 2,
         "medicine_duration": 2,
@@ -68,7 +70,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "medicine_mortality": {
             "kitten": 0,
@@ -76,7 +78,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "duration": 4,
         "medicine_duration": 2,
@@ -99,7 +101,7 @@
             "young adult": 8,
             "adult": 10,
             "senior adult": 8,
-            "elder": 3
+            "senior": 3
         },
         "medicine_mortality": {
             "kitten": 7,
@@ -107,7 +109,7 @@
             "young adult": 20,
             "adult": 25,
             "senior adult": 20,
-            "elder": 7
+            "senior": 7
         },
         "duration": 3,
         "medicine_duration": 2,
@@ -136,7 +138,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 5
+            "senior": 5
         },
         "medicine_mortality": {
             "kitten": 5,
@@ -144,7 +146,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 10
+            "senior": 10
         },
         "duration": 3,
         "medicine_duration": 2,
@@ -173,7 +175,7 @@
             "young adult": 8,
             "adult": 10,
             "senior adult": 8,
-            "elder": 5
+            "senior": 5
         },
         "medicine_mortality": {
             "kitten": 8,
@@ -181,7 +183,7 @@
             "young adult": 15,
             "adult": 20,
             "senior adult": 15,
-            "elder": 13
+            "senior": 13
         },
         "duration": 3,
         "medicine_duration": 2,
@@ -207,7 +209,7 @@
             "young adult": 8,
             "adult": 10,
             "senior adult": 8,
-            "elder": 5
+            "senior": 5
         },
         "medicine_mortality": {
             "kitten": 4,
@@ -215,7 +217,7 @@
             "young adult": 13,
             "adult": 17,
             "senior adult": 13,
-            "elder": 10
+            "senior": 10
         },
         "duration": 3,
         "medicine_duration": 2,
@@ -226,20 +228,20 @@
     "redcough": {
         "severity": "severe",
         "mortality": {
-            "kitten": 2,
+            "kitten": 1,
             "adolescent": 2,
             "young adult": 2,
             "adult": 2,
             "senior adult": 2,
-            "elder": 2
+            "senior": 1
         },
         "medicine_mortality": {
-            "kitten": 5,
-            "adolescent": 5,
-            "young adult": 5,
-            "adult": 5,
-            "senior adult": 5,
-            "elder": 5
+            "kitten": 2,
+            "adolescent": 3,
+            "young adult": 3,
+            "adult": 3,
+            "senior adult": 3,
+            "senior": 2
         },
         "duration": 50,
         "medicine_duration": 40,
@@ -264,7 +266,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "medicine_mortality": {
             "kitten": 0,
@@ -272,7 +274,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "duration": 3,
         "medicine_duration": 2,
@@ -297,7 +299,7 @@
             "young adult": 60,
             "adult": 60,
             "senior adult": 50,
-            "elder": 10
+            "senior": 10
         },
         "medicine_mortality": {
             "kitten": 15,
@@ -305,7 +307,7 @@
             "young adult": 70,
             "adult": 70,
             "senior adult": 70,
-            "elder": 15
+            "senior": 15
         },
         "duration": 3,
         "medicine_duration": 2,
@@ -335,7 +337,7 @@
             "young adult": 5,
             "adult": 5,
             "senior adult": 5,
-            "elder": 3
+            "senior": 3
         },
         "medicine_mortality": {
             "kitten": 5,
@@ -343,7 +345,7 @@
             "young adult": 15,
             "adult": 15,
             "senior adult": 15,
-            "elder": 5
+            "senior": 5
         },
         "duration": 3,
         "medicine_duration": 3,
@@ -366,7 +368,7 @@
             "young adult": 3,
             "adult": 5,
             "senior adult": 5,
-            "elder": 2
+            "senior": 2
         },
         "medicine_mortality": {
             "kitten": 3,
@@ -374,7 +376,7 @@
             "young adult": 8,
             "adult": 10,
             "senior adult": 8,
-            "elder": 3
+            "senior": 3
         },
         "duration": 3,
         "medicine_duration": 2,
@@ -398,7 +400,7 @@
             "young adult": 5,
             "adult": 8,
             "senior adult": 8,
-            "elder": 3
+            "senior": 3
         },
         "medicine_mortality": {
             "kitten": 5,
@@ -406,7 +408,7 @@
             "young adult": 15,
             "adult": 20,
             "senior adult": 25,
-            "elder": 10
+            "senior": 10
         },
         "duration": 1,
         "medicine_duration": 1,
@@ -426,7 +428,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "medicine_mortality": {
             "kitten": 0,
@@ -434,7 +436,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "duration": 2,
         "medicine_duration": 2,
@@ -459,7 +461,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "medicine_mortality": {
             "kitten": 0,
@@ -467,7 +469,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "duration": 2,
         "medicine_duration": 1,
@@ -493,7 +495,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "medicine_mortality": {
             "kitten": 0,
@@ -501,7 +503,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "duration": 2,
         "medicine_duration": 1,
@@ -522,7 +524,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "medicine_mortality": {
             "kitten": 0,
@@ -530,7 +532,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "duration": 5,
         "medicine_duration": 3,
@@ -559,7 +561,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "medicine_mortality": {
             "kitten": 0,
@@ -567,7 +569,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "duration": 100,
         "medicine_duration": 100,
@@ -585,7 +587,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "medicine_mortality": {
             "kitten": 0,
@@ -593,7 +595,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "duration": 100,
         "medicine_duration": 100,

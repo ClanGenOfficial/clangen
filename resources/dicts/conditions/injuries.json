@@ -4,12 +4,13 @@
         "severity": "major",
         "medicine_duration": 2,
         "mortality": {
+            "newborn": 5,
             "kitten": 5,
             "adolescent": 40,
             "young adult": 50,
             "adult": 50,
             "senior adult": 50,
-            "elder": 10
+            "senior": 10
         },
         "illness_infectiousness": [],
         "risks": [
@@ -42,12 +43,13 @@
         "severity": "major",
         "medicine_duration": 2,
         "mortality": {
+            "newborn": 10,
             "kitten": 10,
             "adolescent": 45,
             "young adult": 60,
             "adult": 60,
             "senior adult": 60,
-            "elder": 15
+            "senior": 15
         },
         "illness_infectiousness": [
         ],
@@ -80,12 +82,13 @@
         "severity": "major",
         "medicine_duration": 2,
         "mortality": {
+            "newborn": 10,
             "kitten": 10,
             "adolescent": 45,
             "young adult": 60,
             "adult": 60,
             "senior adult": 60,
-            "elder": 15
+            "senior": 15
         },
         "illness_infectiousness": [
         ],
@@ -118,12 +121,13 @@
         "severity": "major",
         "medicine_duration": 1,
         "mortality": {
+            "newborn": 10,
             "kitten": 10,
             "adolescent": 45,
             "young adult": 60,
             "adult": 60,
             "senior adult": 60,
-            "elder": 15
+            "senior": 15
         },
         "illness_infectiousness": [
         ],
@@ -156,12 +160,13 @@
         "severity": "major",
         "medicine_duration": 1,
         "mortality": {
+            "newborn": 10,
             "kitten": 10,
             "adolescent": 45,
             "young adult": 60,
             "adult": 60,
             "senior adult": 60,
-            "elder": 15
+            "senior": 15
         },
         "illness_infectiousness": [
         ],
@@ -192,12 +197,13 @@
         "severity": "major",
         "medicine_duration": 1,
         "mortality": {
+            "newborn": 10,
             "kitten": 10,
             "adolescent": 45,
             "young adult": 60,
             "adult": 60,
             "senior adult": 60,
-            "elder": 15
+            "senior": 15
         },
         "illness_infectiousness": [
             {
@@ -238,12 +244,13 @@
         "severity": "minor",
         "medicine_duration": 1,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [],
         "risks": [
@@ -265,12 +272,13 @@
         "severity": "minor",
         "medicine_duration": 1,
         "mortality": {
+            "newborn": 5,
             "kitten": 5,
             "adolescent": 10,
             "young adult": 20,
             "adult": 25,
             "senior adult": 25,
-            "elder": 15
+            "senior": 15
         },
         "illness_infectiousness": [],
         "risks": [
@@ -295,12 +303,13 @@
         "severity": "severe",
         "medicine_duration": 5,
         "mortality": {
+            "newborn": 10,
             "kitten": 10,
             "adolescent": 35,
             "young adult": 50,
             "adult": 50,
             "senior adult": 50,
-            "elder": 10
+            "senior": 10
         },
         "illness_infectiousness": [],
         "risks": [
@@ -334,12 +343,13 @@
         "severity": "severe",
         "medicine_duration": 7,
         "mortality": {
+            "newborn": 10,
             "kitten": 10,
             "adolescent": 45,
             "young adult": 60,
             "adult": 60,
             "senior adult": 60,
-            "elder": 15
+            "senior": 15
         },
         "illness_infectiousness": [],
         "risks": [
@@ -376,12 +386,13 @@
         "severity": "severe",
         "medicine_duration": 3,
         "mortality": {
+            "newborn": 15,
             "kitten": 15,
             "adolescent": 50,
             "young adult": 60,
             "adult": 60,
             "senior adult": 60,
-            "elder": 15
+            "senior": 15
         },
         "illness_infectiousness": [],
         "risks": [
@@ -422,12 +433,13 @@
         "severity": "major",
         "medicine_duration": 1,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [],
         "risks": [],
@@ -452,12 +464,13 @@
         "severity": "minor",
         "medicine_duration": 2,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [],
         "risks": [],
@@ -478,12 +491,13 @@
         "severity": "major",
         "medicine_duration": 2,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [],
         "risks": [],
@@ -502,12 +516,13 @@
         "severity": "severe",
         "medicine_duration": 3,
         "mortality": {
+            "newborn": 15,
             "kitten": 15,
             "adolescent": 50,
             "young adult": 60,
             "adult": 60,
             "senior adult": 60,
-            "elder": 15
+            "senior": 15
         },
         "illness_infectiousness": [],
         "risks": [
@@ -542,12 +557,13 @@
         "severity": "minor",
         "medicine_duration": 1,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [],
         "risks": [],
@@ -562,12 +578,13 @@
         "severity": "minor",
         "medicine_duration": 1,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [],
         "risks": [
@@ -592,12 +609,13 @@
         "severity": "minor",
         "medicine_duration": 1,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [],
         "risks": [],
@@ -618,12 +636,13 @@
         "severity": "major",
         "medicine_duration": 1,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [],
         "risks": [],
@@ -642,12 +661,13 @@
         "severity": "minor",
         "medicine_duration": 1,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [],
         "risks": [
@@ -672,12 +692,13 @@
         "severity": "minor",
         "medicine_duration": 1,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [],
         "risks": [
@@ -701,12 +722,13 @@
         "severity": "minor",
         "medicine_duration": 1,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [],
         "risks": [
@@ -730,12 +752,13 @@
         "severity": "minor",
         "medicine_duration": 1,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [],
         "risks": [
@@ -763,12 +786,13 @@
         "severity": "minor",
         "medicine_duration": 1,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [],
         "risks": [
@@ -795,12 +819,13 @@
         "severity": "major",
         "medicine_duration": 2,
         "mortality": {
+            "newborn": 10,
             "kitten": 10,
             "adolescent": 20,
             "young adult": 25,
             "adult": 30,
             "senior adult": 20,
-            "elder": 10
+            "senior": 10
         },
         "illness_infectiousness": [
             {
@@ -835,12 +860,13 @@
         "severity": "major",
         "medicine_duration": 5,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [],
         "risks": [
@@ -866,12 +892,13 @@
         "severity": "major",
         "medicine_duration": 2,
         "mortality": {
+            "newborn": 10,
             "kitten": 15,
             "adolescent": 50,
             "young adult": 60,
             "adult": 60,
             "senior adult": 60,
-            "elder": 30
+            "senior": 30
         },
         "illness_infectiousness": [
             {
@@ -912,12 +939,13 @@
         "severity": "major",
         "medicine_duration": 2,
         "mortality": {
+            "newborn": 10,
             "kitten": 10,
             "adolescent": 30,
             "young adult": 50,
             "adult": 60,
             "senior adult": 50,
-            "elder": 30
+            "senior": 30
         },
         "illness_infectiousness": [],
         "risks": [
@@ -947,12 +975,13 @@
         "severity": "severe",
         "medicine_duration": 3,
         "mortality": {
+            "newborn": 5,
             "kitten": 5,
             "adolescent": 10,
             "young adult": 30,
             "adult": 30,
             "senior adult": 30,
-            "elder": 10
+            "senior": 10
         },
         "illness_infectiousness": [],
         "risks": [
@@ -984,12 +1013,13 @@
         "severity": "major",
         "medicine_duration": 1,
         "mortality": {
+            "newborn": 10,
             "kitten": 8,
             "adolescent": 15,
             "young adult": 30,
             "adult": 30,
             "senior adult": 30,
-            "elder": 15
+            "senior": 15
         },
         "illness_infectiousness": [],
         "risks": [
@@ -1014,12 +1044,13 @@
         "severity": "major",
         "medicine_duration": 8,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [],
         "risks": [
@@ -1041,12 +1072,13 @@
         "severity": "minor",
         "medicine_duration": 1,
         "mortality": {
+            "newborn": 10,
             "kitten": 10,
             "adolescent": 30,
             "young adult": 50,
             "adult": 80,
             "senior adult": 50,
-            "elder": 20
+            "senior": 20
         },
         "illness_infectiousness": [
             {
@@ -1081,12 +1113,13 @@
         "severity": "major",
         "medicine_duration": 1,
         "mortality": {
+            "newborn": 10,
             "kitten": 10,
             "adolescent": 30,
             "young adult": 50,
             "adult": 80,
             "senior adult": 50,
-            "elder": 20
+            "senior": 20
         },
         "illness_infectiousness": [
         ],
@@ -1113,12 +1146,13 @@
         "severity": "major",
         "medicine_duration": 2,
         "mortality": {
+            "newborn": 20,
             "kitten": 15,
             "adolescent": 30,
             "young adult": 40,
             "adult": 50,
             "senior adult": 40,
-            "elder": 20
+            "senior": 20
         },
         "illness_infectiousness": [
         ],
@@ -1154,12 +1188,13 @@
         "severity": "major",
         "medicine_duration": 4,
         "mortality": {
+            "newborn": 30,
             "kitten": 30,
             "adolescent": 50,
             "young adult": 70,
             "adult": 70,
             "senior adult": 70,
-            "elder": 50
+            "senior": 50
         },
         "illness_infectiousness": [
         ],
@@ -1194,12 +1229,13 @@
         "severity": "minor",
         "medicine_duration": 1,
         "mortality": {
+            "newborn": 10,
             "kitten": 20,
             "adolescent": 40,
             "young adult": 50,
             "adult": 60,
             "senior adult": 50,
-            "elder": 30
+            "senior": 30
         },
         "illness_infectiousness": [
         ],
@@ -1232,12 +1268,13 @@
         "severity": "severe",
         "medicine_duration": 9,
         "mortality": {
+            "newborn": 10,
             "kitten": 5,
             "adolescent": 25,
             "young adult": 40,
             "adult": 40,
             "senior adult": 30,
-            "elder": 10
+            "senior": 10
         },
         "illness_infectiousness": [
         ],
@@ -1264,12 +1301,13 @@
         "severity": "major",
         "medicine_duration": 1,
         "mortality": {
+            "newborn": 10,
             "kitten": 5,
             "adolescent": 15,
             "young adult": 20,
             "adult": 30,
             "senior adult": 20,
-            "elder": 15
+            "senior": 15
         },
         "illness_infectiousness": [
         ],
@@ -1298,12 +1336,13 @@
         "severity": "minor",
         "medicine_duration": 1,
         "mortality": {
+            "newborn": 10,
             "kitten": 20,
             "adolescent": 30,
             "young adult": 50,
             "adult": 50,
             "senior adult": 50,
-            "elder": 30
+            "senior": 30
         },
         "illness_infectiousness": [
         ],
@@ -1325,12 +1364,13 @@
         "severity": "minor",
         "medicine_duration": 1,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -1350,12 +1390,13 @@
         "severity": "major",
         "medicine_duration": 1,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],

@@ -668,7 +668,7 @@ def get_outside_thoughts(cat, other_cat):
             thoughts += OUTSIDE[cat.status]['adolescent']
         elif cat.age in ['young adult', 'adult', 'senior adult']:
             thoughts += OUTSIDE[cat.status]['adult']
-        elif cat.age == 'elder':
+        elif cat.age == 'senior':
             thoughts += OUTSIDE[cat.status]['elder']
         return thoughts
     thoughts += OUTSIDE['lost']['general']
@@ -684,7 +684,7 @@ def get_outside_thoughts(cat, other_cat):
         thoughts += OUTSIDE['lost']['deputy']
     elif cat.status == 'leader':
         thoughts += OUTSIDE['lost']['leader']
-    elif cat.age == 'elder':
+    elif cat.age == 'senior':
         thoughts += OUTSIDE['lost']['elder']
     return thoughts
 

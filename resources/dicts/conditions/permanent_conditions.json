@@ -9,7 +9,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -27,7 +27,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -62,7 +62,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -93,7 +93,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -124,7 +124,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -155,7 +155,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -184,7 +184,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -202,7 +202,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -241,7 +241,7 @@
             "young adult": 80,
             "adult": 90,
             "senior adult": 60,
-            "elder": 30
+            "senior": 30
         },
         "illness_infectiousness": [
         ],
@@ -266,7 +266,7 @@
             "young adult": 75,
             "adult": 65,
             "senior adult": 40,
-            "elder": 10
+            "senior": 10
         },
         "illness_infectiousness": [
             {
@@ -315,7 +315,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -333,7 +333,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -354,7 +354,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -376,7 +376,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -398,7 +398,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -417,7 +417,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -444,7 +444,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -469,7 +469,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -491,7 +491,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -513,7 +513,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -539,7 +539,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -565,7 +565,7 @@
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],

@@ -31,11 +31,11 @@ class NewCatEvents:
         This function handles the new cats
         """
         other_clan = random.choice(game.clan.all_clans)
-        other_clan_name = f'{str(other_clan.name)}Clan'
+        other_clan_name = f'{other_clan.name}Clan'
 
         if other_clan_name == 'None':
             other_clan = game.clan.all_clans[0]
-            other_clan_name = f'{str(other_clan.name)}Clan'
+            other_clan_name = f'{other_clan.name}Clan'
 
         possible_events = self.generate_events.possible_events(cat.status, cat.age, "new_cat")
         final_events = self.generate_events.filter_possible_events(possible_events, cat, other_cat, war, enemy_clan,

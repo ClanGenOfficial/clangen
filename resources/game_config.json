@@ -104,10 +104,10 @@
 		"classic_difficulty_modifier": 1,
 		"expanded_difficulty_modifier": 2,
 		"cruel season_difficulty_modifier": 3,
-		"win_stat_cat_modifier": 30,
+		"win_stat_cat_modifier": 10,
 		"better_stat_modifier": 5,
 		"best_stat_modifier": 10,
-		"fail_stat_cat_modifier": -30,
+		"fail_stat_cat_modifier": -20,
 		"chance_of_romance_patrol": 16,
 		"comment": [
 			"the Cruel Season difficulty modifier needs to have a space rather than an underscore,",

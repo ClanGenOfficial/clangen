@@ -22,12 +22,7 @@
         "great mediator",
         "excellent mediator"
     ],
-    "win_trait": [
-        "None"
-    ],
-    "fail_skills": [
-        "None"
-    ],
+
     "fail_trait": [
         "troublesome",
         "childish"
@@ -69,12 +64,7 @@
         "great mediator",
         "excellent mediator"
     ],
-    "win_trait": [
-        "None"
-    ],
-    "fail_skills": [
-        "None"
-    ],
+
     "fail_trait": [
         "troublesome",
         "childish"
@@ -102,9 +92,7 @@
             "Hang on. Has p_l identified the betony correctly? They're not sure, and not willing to risk it."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -128,9 +116,7 @@
             "Hang on. Has p_l identified the betony correctly? They're not sure, and not willing to risk it."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -154,9 +140,7 @@
             "Hang on. Has p_l identified the betony correctly? They're not sure, and not willing to risk it."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -180,9 +164,7 @@
             "p_l attempts to pick their way through the blackberry thorns to reach the leaves, but it soon becomes clear that it's a hopeless task."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -206,9 +188,7 @@
             "With app1 following them, p_l attempts to pick their way through the blackberry thorns to reach the leaves, but it soon becomes clear that it's a hopeless task."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -232,9 +212,7 @@
             "p_l manages to avoid a torn pelt only by the grace of StarClan, and isn't going to risk sending anyone else into the brambles with them having so many thorns at the moment. They'll have to try a different blackberry bush on another day."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -258,9 +236,7 @@
             "Maybe they're coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and it feels like a wasted afternoon."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -284,9 +260,7 @@
             "Maybe they're coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and it feels like a wasted afternoon. They avoid snapping at app1, who seems unable to identify the common herb, but it's a near thing."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -310,9 +284,7 @@
             "Maybe they're coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and no one else on the patrol is very helpful either. They return to camp without any burdock, prickling with frustration."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -336,9 +308,7 @@
             "It is alright to fail, p_l reminds themselves. At least they know where there isn't catmint, that will make the next patrols to find it easier."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -362,9 +332,7 @@
             "app1 loses their head over the catmint, and p_l is forced to cancel the gathering patrol to take them back to camp until they regain their sense."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -388,9 +356,7 @@
             "p_l is proven unfortunately correct, as the patrol is full of juvenile behaviour and dumb jokes, rather than focused effort. They even manage to successfully find a catmint plant only to have their helpers roll around in it, bruising all the stems until it's unharvestable, and p_l is furious by the time they return to camp."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -414,9 +380,7 @@
             "Frustratingly, some herbivore has come through and feasted on the daisies p_l targets. The plants will recover, but these half-chewed on leaves are useless to c_n."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -440,9 +404,7 @@
             "Frustratingly, some herbivore has come through and feasted on the daisies p_l targets. The plants will recover, but these half-chewed on leaves are useless to c_n. They avoid snapping at app1, who seems unable to identify the common herb, but it's a near thing."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -466,9 +428,7 @@
             "With the warriors more interested in hunting whatever has been snacking on the daisies than helping p_l find any more plants, it's a frustrating and unproductive afternoon."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -492,9 +452,7 @@
             "Unfortunately, c_n doesn't seem to be the only things after dandelions, and p_l can't gather from this patch without killing off the already damaged plants."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -518,9 +476,7 @@
             "Unfortunately, c_n doesn't seem to be the only things after dandelions, and p_l can't gather from this patch without killing off the already damaged plants. app1 actually starts an argument about it, insistant that they don't need to worry about protecting the dandelion patch for the future."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -544,9 +500,7 @@
             "The warriors that are supposed to be helping p_l gather dandelions instead seem more intent on hunting, and p_l gives up, storming back to camp with their temper flaring."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -573,9 +527,7 @@
             "r_c, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses their balance and tumbles to the ground."     
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -602,9 +554,7 @@
             "r_c, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses their balance and tumbles to the ground." 
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -631,9 +581,7 @@
             "r_c, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses their balance and tumbles to the ground." 
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -657,9 +605,7 @@
             "The goldenrod bushes don't seem to be recovering well from leaf-bare this year, and it worries p_l."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -683,9 +629,7 @@
             "The goldenrod bushes don't seem to be recovering well from leaf-bare this year, and it worries p_l. app1's calivalier attitude is not helping."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -709,9 +653,7 @@
             "The goldenrod bushes don't seem to be recovering well from leaf-bare this year, and it worries p_l, although the warriors dismiss their concerns about the weeds."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -735,9 +677,7 @@
             "p_l seems to have forgotten where to find a juniper tree, much to their own embarassment."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -761,9 +701,7 @@
             "p_l seems to have forgotten where to find a juniper tree, much to their own embarassment and app1's shock."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -787,9 +725,7 @@
             "The warriors are full of complaints about the sharp juniper needles spiking their poor widdle noses, and eventually a mildly disgusted p_l calls off the herb gathering patrol."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -820,8 +756,6 @@
     "win_trait": [
         "patient"
     ],
-    "fail_skills": null,
-    "fail_trait": null,
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -850,8 +784,6 @@
     ],
     "win_skills": ["keen eye", "extremely smart"],
     "win_trait": ["patient"],
-    "fail_skills": null,
-    "fail_trait": null,
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -886,9 +818,7 @@
     "win_trait": [
         "patient"
     ],
-    "fail_skills": [
-        "None"
-    ],
+
     "fail_trait": [
         "troublesome",
         "childish"
@@ -916,9 +846,7 @@
             "The weedy-looking mallow doesn't seem to be recovering well from leaf-bare this year, and it worries p_l."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -942,9 +870,7 @@
             "The weedy-looking mallow doesn't seem to be recovering well from leaf-bare this year, and it worries p_l. app1's calivalier attitude is not helping."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -968,9 +894,7 @@
             "The weedy-looking mallow doesn't seem to be recovering well from leaf-bare this year, and it worries p_l, although the warriors dismiss their concerns about the weeds."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -994,9 +918,7 @@
             "p_l fails to find any marigold, and as the plant dies completely in leaf-bare, can't use any of the spots they know from last year."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1020,9 +942,7 @@
             "p_l fails to find any marigold, and as the plant dies completely in leaf-bare, can't use any of the spots they know from last year. app1's calivalier attitude is not helping."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1046,9 +966,7 @@
             "p_l fails to find any marigold, and as the plant dies completely in leaf-bare, can't use any of the spots they know from last year, although the warriors dismiss their concerns about the weeds."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -1072,9 +990,7 @@
             "p_l fails to find any mullein, and as the plant sometimes dies completely in leaf-bare, can't use any of the spots they know from last year."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1098,9 +1014,7 @@
             "p_l fails to find any mullein, and as the plant sometimes dies completely in leaf-bare, can't use any of the spots they know from last year. app1's calivalier attitude is not helping."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1124,9 +1038,7 @@
             "p_l fails to find any mullein, and as the plant sometimes dies completely in leaf-bare, can't use any of the spots they know from last year, although the warriors dismiss their concerns about the weeds."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -1150,9 +1062,7 @@
             "The trees p_l finds don't look particularly safe to climb, and p_l is forced to give up on the idea of oak leaf gathering for today."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1176,9 +1086,7 @@
             "The trees p_l finds don't look particularly safe to climb, and p_l is forced to give up on the idea of oak leaf gathering for today."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1202,9 +1110,7 @@
             "The trees p_l finds don't look particularly safe to climb, and p_l is forced to give up on the idea of oak leaf gathering for today."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -1228,9 +1134,7 @@
             "p_l fails to find any plantain, and as the plant sometimes dies completely in leaf-bare, can't use any of the spots they know from last year."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1254,9 +1158,7 @@
             "p_l fails to find any plantain, and as the plant sometimes dies completely in leaf-bare, can't use any of the spots they know from last year. app1's calivalier attitude is not helping."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1280,9 +1182,7 @@
             "p_l fails to find any plantain, and as the plant sometimes dies completely in leaf-bare, can't use any of the spots they know from last year, although the warriors dismiss their concerns about the weeds."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -1306,9 +1206,7 @@
             "The wind seems to have stolen all the poppy seeds from their dry flowerheads before p_l could've harvested them."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1332,9 +1230,7 @@
             "The wind seems to have stolen all the poppy seeds from their dry flowerheads before p_l could've harvested them."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1358,9 +1254,7 @@
             "The wind seems to have stolen all the poppy seeds from their dry flowerheads before p_l could've harvested them."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -1384,9 +1278,7 @@
             "Try as they might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants they haven't confidently identified."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1410,9 +1302,7 @@
             "Try as they might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants they haven't confidently identified."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1436,9 +1326,7 @@
             "Try as they might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants they haven't confidently identified."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -1462,9 +1350,7 @@
             "Try as they might, p_l can't quite remember the exact shape of the tansy leaves, and isn't going to harvest from plants they haven't confidently identified."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1488,9 +1374,7 @@
             "Try as they might, p_l can't quite remember the exact shape of the tansy leaves, and isn't going to harvest from plants they haven't confidently identified."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1514,9 +1398,7 @@
             "Try as they might, p_l can't quite remember the exact shape of the tansy leaves, and isn't going to harvest from plants they haven't confidently identified."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -1540,9 +1422,7 @@
             "p_l has no time - and no thyme. They're forced to give up on the search for today."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1566,9 +1446,7 @@
             "p_l has no time - and no thyme. They're forced to give up on the search for today."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1592,9 +1470,7 @@
             "p_l has no time - and no thyme. They're forced to give up on the search for today."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -1618,9 +1494,7 @@
             "Try as they might, p_l can't quite remember the exact shape of the garlic leaves, and isn't going to harvest from plants they haven't confidently identified."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1644,9 +1518,7 @@
             "Try as they might, p_l can't quite remember the exact shape of the garlic leaves, and isn't going to harvest from plants they haven't confidently identified."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1670,9 +1542,7 @@
             "Try as they might, p_l can't quite remember the exact shape of the garlic leaves, and isn't going to harvest from plants they haven't confidently identified."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,

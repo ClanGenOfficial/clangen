@@ -487,10 +487,13 @@ def init_pelt(cat):
 def init_sprite(cat):
     if cat.pelt is None:
         init_pelt(cat)
-    cat.age_sprites = {
+    cat.cat_sprites = {
+        'newborn': 20,
         'kitten': randint(0, 2),
         'adolescent': randint(3, 5),
-        'elder': randint(3, 5)
+        'senior': randint(12, 14),
+        'sick_young': 19,
+        'sick_adult': 18
     }
     cat.reverse = choice([True, False])
     # skin chances
@@ -498,12 +501,13 @@ def init_sprite(cat):
             
     if cat.pelt is not None:
         if cat.pelt.length != 'long':
-            cat.age_sprites['adult'] = randint(6, 8)
+            cat.cat_sprites['adult'] = randint(6, 8)
+            cat.cat_sprites['para_adult'] = 16
         else:
-            cat.age_sprites['adult'] = randint(0, 2)
-        cat.age_sprites['young adult'] = cat.age_sprites['adult']
-        cat.age_sprites['senior adult'] = cat.age_sprites['adult']
-        cat.age_sprites['dead'] = None
+            cat.cat_sprites['adult'] = randint(9, 11)
+            cat.cat_sprites['para_adult'] = 15
+        cat.cat_sprites['young adult'] = cat.cat_sprites['adult']
+        cat.cat_sprites['senior adult'] = cat.cat_sprites['adult']
 
 
 def init_scars(cat):

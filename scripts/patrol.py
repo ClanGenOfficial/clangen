@@ -677,6 +677,7 @@ class Patrol():
     def calculate_success(self, antagonize=False):
         if self.patrol_event is None:
             return
+
         antagonize = antagonize
         success_text = self.patrol_event.success_text
         fail_text = self.patrol_event.fail_text
@@ -688,15 +689,24 @@ class Patrol():
         success_chance = self.patrol_event.chance_of_success + int(
             self.patrol_total_experience / (2 * gm_modifier))
 
-        if self.patrol_win_stat_cat:
-            success_chance = success_chance + game.config["patrol_generation"]["win_stat_cat_modifier"]
-            if ("great" or "very") in self.patrol_win_stat_cat.skill:
-                success_chance = success_chance + game.config["patrol_generation"]["better_stat_modifier"]
-            elif ("fantastic" or "excellent" or "extremely") in self.patrol_win_stat_cat.skill:
-                success_chance = success_chance + game.config["patrol_generation"]["best_stat_modifier"]
+        print('starting chance:', success_chance)
+        for kitty in self.patrol_cats:
+            if kitty.skill in self.patrol_event.win_skills:
+                success_chance += game.config["patrol_generation"]["win_stat_cat_modifier"]
+                if ("great" or "very") in kitty.skill:
+                    success_chance += game.config["patrol_generation"]["better_stat_modifier"]
+                elif ("fantastic" or "excellent" or "extremely") in kitty.skill:
+                    success_chance += game.config["patrol_generation"]["best_stat_modifier"]
+            if kitty.trait in self.patrol_event.win_trait:
+                success_chance += game.config["patrol_generation"]["win_stat_cat_modifier"]
+            if kitty.skill in self.patrol_event.fail_skills:
+                success_chance += game.config["patrol_generation"]["fail_stat_cat_modifier"]
+            if kitty.trait in self.patrol_event.fail_trait:
+                success_chance += game.config["patrol_generation"]["fail_stat_cat_modifier"]
 
-        if self.patrol_fail_stat_cat:
-            success_chance = success_chance + game.config["patrol_generation"]["fail_stat_cat_modifier"]
+            print(kitty.name, 'updated chance to', success_chance)
+        print('ending chance', success_chance)
+
 
         c = randint(0, 100)
         outcome = int(random.getrandbits(4))
@@ -1420,7 +1430,11 @@ class Patrol():
 
         # get the cat to injure
         if outcome == 3:
-            cat = self.patrol_random_cat
+            if "apprentice" in patrol.patrol_event.tags:
+                cat = self.patrol_apprentices[0]
+            else:
+                cat = self.patrol_random_cat
+
         elif outcome == 5:
             cat = self.patrol_fail_stat_cat
 
@@ -1640,7 +1654,8 @@ class Patrol():
             if total_amount > 0:
                 if len(patrol.patrol_cats) == 1:
                     self.results_text.append(f"{patrol.patrol_leader_name} brings back a {prey_size} amount of prey.")
-                self.results_text.append(f"Each cat brings back a {prey_size} amount of prey.")
+                else:
+                    self.results_text.append(f"Each cat brings back a {prey_size} amount of prey.")
 
     def handle_clan_relations(self, difference, antagonize, outcome):
         """

@@ -64,16 +64,17 @@ class Cat():
                      'strange', 'daydreamer', 'quiet'],
     }
     ages = [
-        'kitten', 'adolescent', 'young adult', 'adult', 'senior adult',
-        'elder', 'dead'
+        'newborn', 'kitten', 'adolescent', 'young adult', 'adult', 'senior adult',
+        'senior'
     ]
     age_moons = {
-        'kitten': [0, 5],
+        'newborn': [0, 0],
+        'kitten': [1, 5],
         'adolescent': [6, 11],
         'young adult': [12, 47],
         'adult': [48, 95],
         'senior adult': [96, 119],
-        'elder': [120, 300]
+        'senior': [120, 300]
     }
 
     # This in is in reverse order: top of the list at the bottom
@@ -249,13 +250,18 @@ class Cat():
         self.virtues = []
         self.no_kits = False
         self.paralyzed = False
-        self.age_sprites = {
+        self.cat_sprites = {
+            "newborn": 20,
             "kitten": None,
             "adolescent": None,
             "young adult": None,
             "adult": None,
             "senior adult": None,
-            "elder": None
+            "senior": None,
+            "para_young": 17,
+            "para_adult": None,
+            "sick_adult": 18,
+            "sick_young": 19
         }
 
         self.opacity = 100
@@ -287,15 +293,19 @@ class Cat():
             self.moons = moons
             if moons > 300:
                 # Out of range, always elder
-                self.age = 'elder'
+                self.age = 'senior'
+            elif moons == 0:
+                self.age = 'newborn'
             else:
                 # In range
                 for key_age in self.age_moons.keys():
                     if moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1] + 1):
                         self.age = key_age
         else:
-            if status in ['kitten', 'elder']:
-                self.age = status
+            if status == 'kitten':
+                self.age = 'kitten'
+            elif status == 'elder':
+                self.age = 'senior'
             elif status == 'apprentice':
                 self.age = 'adolescent'
             elif status == 'medicine cat apprentice':
@@ -349,14 +359,14 @@ class Cat():
             # trans cat chances
             trans_chance = randint(0, 50)
             nb_chance = randint(0, 75)
-            if self.gender == "female" and not self.age == 'kitten':
+            if self.gender == "female" and not self.status == 'kitten':
                 if trans_chance == 1:
                     self.genderalign = "trans male"
                 elif nb_chance == 1:
                     self.genderalign = "nonbinary"
                 else:
                     self.genderalign = self.gender
-            elif self.gender == "male" and not self.age == 'kitten':
+            elif self.gender == "male" and not self.status == 'kitten':
                 if trans_chance == 1:
                     self.genderalign = "trans female"
                 elif nb_chance == 1:
@@ -365,6 +375,17 @@ class Cat():
                     self.genderalign = self.gender
             else:
                 self.genderalign = self.gender
+
+            # setting up sprites that might not be correct
+            if self.pelt is not None:
+                if self.pelt.length == 'long':
+                    if self.cat_sprites['adult'] not in [9, 10, 11]:
+                        self.cat_sprites['adult'] = choice([9, 10, 11])
+                        self.cat_sprites['young adult'] = self.cat_sprites['adult']
+                        self.cat_sprites['senior adult'] = self.cat_sprites['adult']
+                        self.cat_sprites['para_adult'] = 16
+                else:
+                    self.cat_sprites['para_adult'] = 15
 
             # APPEARANCE
             init_pelt(self)
@@ -377,7 +398,7 @@ class Cat():
             init_pattern(self)
 
             # experience and current patrol status
-            if self.age in ['kitten']:
+            if self.age in ['young', 'newborn']:
                 self.experience = 0
             elif self.age in ['adolescent']:
                 self.experience = randint(0, 19)
@@ -387,7 +408,7 @@ class Cat():
                 self.experience = randint(20, 50)
             elif self.age in ['senior adult']:
                 self.experience = randint(30, 60)
-            elif self.age in ['elder']:
+            elif self.age in ['senior']:
                 self.experience = randint(40, 70)
             else:
                 self.experience = 0
@@ -1488,7 +1509,7 @@ class Cat():
                     if game.clan.herbs[herb_used] <= 0:
                         game.clan.herbs.pop(herb_used)
                     avoided = True
-                    text = f"{str(herb_used).capitalize()} was used to stop blood loss for {self.name}."
+                    text = f"{herb_used.capitalize()} was used to stop blood loss for {self.name}."
                     game.herb_events_list.append(text)
 
             if not avoided:
@@ -1539,11 +1560,12 @@ class Cat():
         if condition['congenital'] == 'always':
             born_with = True
         moons_until = condition["moons_until"]
-        if born_with is True and moons_until != 0:
+        if born_with and moons_until != 0:
             moons_until = randint(moons_until - 1, moons_until + 1)  # creating a range in which a condition can present
             if moons_until < 0:
                 moons_until = 0
-            if self.status != 'kitten':
+
+        if born_with and self.status != 'kitten':
                 moons_until = -2
         elif born_with is False:
             moons_until = 0
@@ -2614,6 +2636,8 @@ def create_example_cats():
                 ['kitten', 'apprentice', 'warrior', 'warrior', 'elder']))
         if game.choose_cats[a].moons >= 160:
             game.choose_cats[a].moons = choice(range(120, 155))
+        elif game.choose_cats[a].moons == 0:
+            game.choose_cats[a].moons = choice([1, 2, 3, 4, 5])
         for scar in game.choose_cats[a].scars:
             if scar in not_allowed:
                 game.choose_cats[a].scars.remove(scar)
