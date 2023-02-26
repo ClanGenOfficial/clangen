@@ -55,7 +55,7 @@
 		{
 			"id":"dislike_inc_med1",
 			"intensity":[
-				""
+				"m_c wishes r_c would take things more seriously."
 			]
 		},
 		{
@@ -69,10 +69,35 @@
 				"dislike": "increase"
 			}
 		},
+		
+		{
+			"id":"dislike_inc_med3",
+			"interactions":[
+				"m_c had a disagreement with r_c while on patrol earlier.",
+				"m_c stole r_c's catch right out from under their claws."
+			],
+			"main_status_constraint":[
+				"apprentice",
+ 				"warrior",
+				"deputy",
+				"leader"
+			],
+			"random_status_constraint":[
+				"apprentice",
+ 				"warrior",
+				"deputy",
+				"leader"
+			],
+			"reaction_random_cat":{
+				"dislike": "increase"
+			}
+		},
 		{
 			"id":"dislike_kit_inc_med1",
 			"interactions":[
-				"m_c trips over r_c."
+				"m_c trips over r_c.",
+				"m_c had to nip r_c on the rump because they were being naughty.",
+				"m_c growls at r_c to get out from under their paws."
 			],
 			"main_status_constraint":[
 				"elder",
@@ -90,6 +115,38 @@
 			],
 			"reaction_random_cat":{
 				"dislike":"increase"
+			}
+		},
+		{
+			"id":"dislike_dep_leader_inc_med1",
+			"interactions":[
+				"m_c punishes r_c with extra work.",
+				"m_c divides r_c into extra patrols."
+			],
+			"main_status_constraint":[
+				"deputy",
+				"leader"
+
+			],
+			"random_status_constraint":[
+				"apprentice",
+ 				"warrior"
+			],
+			"reaction_random_cat":{
+				"dislike": "increase"
+			}
+		},
+		{
+			"id":"dislike_med_inc_med1",
+			"interactions":[
+				"m_c gives r_c bitter herbs on purpose."
+			],
+			"main_status_constraint":[
+				"medicine cat apprentice",
+				"medicine cat"
+			],
+			"reaction_random_cat":{
+				"dislike": "increase"
 			}
 		},
 		{
@@ -120,7 +177,7 @@
 			]
 		},
 		{
-			"id":"dislike_icnc_high4",
+			"id":"dislike_inc_high4",
 			"intensity":"high",
 			"interactions":[
 				"m_c accuses r_c of being a bad leader."
@@ -163,24 +220,6 @@
 				"comfortable":"decrease",
 				"admiration":"decrease",
 				"trust":"decrease"
-			}
-		},
-		{
-			"id":"dislike_effect_other1",
-			"intensity": "neutral",
-			"relationship_constraint":[
-				"dislike_40"
-			],
-			"interactions":[
-				"m_c is spreading a rumour about r_c.",
-				"m_c is mocking r_c."
-			],
-			"reaction_random_cat":{
-				"admiration": "decrease",
-				"comfortable": "decrease",
-				"trust": "decrease",
-				"dislike": "increase",
-				"platonic": "decrease"
 			}
 		}
 	],

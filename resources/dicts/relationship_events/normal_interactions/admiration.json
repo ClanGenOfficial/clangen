@@ -68,24 +68,47 @@
 				"admiration": "increase"
 			}
 		},
-			{
-				"id":"admire_inc_medium3",
-				"interactions":[
-					"m_c watched r_c show kindness and compassion towards their patients.",
-					"m_c caught a glimpse of r_c caring for a wounded warrior with confidence and grace.",
-					"m_c spent some time hanging out with r_c in the medicine den.",
-					"m_c went to r_c for advice about a dream they had."
-				],
-				"random_status_constraint":[
-					"medicine cat",
-					"medicine cat apprentice"
-				],
+		{
+			"id":"admire_med_inc_medium1",
+			"interactions":[
+				"m_c watched r_c show kindness and compassion towards their patients.",
+				"m_c caught a glimpse of r_c caring for a wounded warrior with confidence and grace.",
+				"m_c spent some time hanging out with r_c in the medicine den.",
+				"m_c went to r_c for advice about a dream they had."
+			],
+			"random_status_constraint":[
+				"medicine cat",
+				"medicine cat apprentice"
+			],
 				"also_influences":{
-					"comfortable": "increase",
-					"platonic": "increase",
-					"trust": "increase"
-				}
-			},
+				"comfortable": "increase",
+				"platonic": "increase",
+				"trust": "increase"
+			}
+		},
+		{
+			"id":"admire_med_inc_med2",
+			"interactions":[
+				"m_c escorted r_c so they could gather herbs.",
+            	"m_c thought of r_c on the last patrol and brought an herb back with them.",
+				"m_c notices that r_c is trying really hard to be a great medicine cat.",
+				"m_c prays that they aren't on patrol with r_c tomorrow."
+			],
+			"main_trait_constraint":[
+				"apprentice",
+				"warrior",
+				"deputy",
+				"leader"
+			],
+			"random_trait_constraint":[
+				"medicine cat apprentice",
+				"medicine cat"
+			],
+			"reaction_random_cat":{
+				"platonic":"increase",
+				"trust":"increase"
+			}
+		},
 		{
 			"id":"admiration_kit_inc_med1",
 			"interactions":[
@@ -132,6 +155,80 @@
 			],
 			"reaction_random_cat":{
 				"platonic": "increase"
+			}
+		},
+		{
+			"id":"admire_adult_inc_med1",
+			"interactions":[
+				"m_c is feeling proud of r_c.",
+				"m_c is watching r_c perform an almost-decent hunting crouch."
+			],
+			"relationship_constraint":[
+				"admiration_30"
+			],
+			"main_status_constraint":[
+				"elder",
+				"warrior",
+				"mediator",
+				"medicine cat",
+				"deputy",
+				"leader"
+			],
+			"random_trait_constraint":[
+				"kitten",
+				"apprentice",
+				"mediator apprentice",
+				"medicine cat apprentice"
+			]
+		},
+
+		{
+			"id":"admire_adult_odd_med1",
+			"interactions":[
+				"m_c feels like they'll never accomplish as much as r_c."
+			],
+			"relationship_constraint":[
+				"admiration_30"
+			],
+			"main_status_constraint":[
+				"warrior",
+				"mediator",
+				"medicine cat",
+				"deputy",
+				"leader"
+			],
+			"random_trait_constraint":[
+				"elder"
+			],
+			"also_influences":{
+				"jealousy": "increase"
+			}
+		},
+		{
+			"id":"admire_adult_odd_med1",
+			"interactions":[
+				"m_c thinks that r_c is so much braver than them."
+			],
+			"relationship_constraint":[
+				"admiration_60"
+			],
+			"main_status_constraint":[
+				"warrior",
+				"mediator",
+				"medicine cat",
+				"deputy",
+				"leader"
+			],
+			"random_trait_constraint":[
+				"elder",
+				"warrior",
+				"mediator",
+				"medicine cat",
+				"deputy",
+				"leader"
+			],
+			"also_influences":{
+				"jealousy": "increase"
 			}
 		},
 		{
@@ -217,6 +314,52 @@
 			"reaction_random_cat":{
 				"admiration": "decrease"
 			}
+		},
+		{
+			"id":"admire_adult_de_med1",
+			"interactions":[
+				"m_c saw r_c miss an easy catch today."
+			],
+			"main_status_constraint":[
+				"apprentice",
+ 				"warrior",
+				"deputy",
+				"leader"
+
+			],
+			"random_status_constraint":[
+				"apprentice",
+ 				"warrior",
+				"deputy",
+				"leader"
+
+			]
+		},
+		{
+			"id":"admire_adult_de_med2",
+			"interactions":[
+				"m_c has noticed r_c isn't doing a lot of work lately."
+			],
+			"main_status_constraint":[
+				"elder",
+				"apprentice",
+ 				"warrior",
+				"deputy",
+				"leader",
+				"medicine cat",
+				"mediator"
+
+			],
+			"random_status_constraint":[
+				"apprentice",
+ 				"warrior",
+				"mediator apprentice",
+				"mediator",
+				"medicine cat apprentice",
+				"medicine cat",
+				"deputy",
+				"leader"
+			]
 		},
 		{
 			"id": "admire_de_high1",

@@ -5,5 +5,41 @@
             "saw (cat) the other day but didn't get a chance to meow hello.",
             "m_c bickered about something trivial with r_c"
         ]
+    },
+    {
+        "id":"neutral_interaction2",
+        "interactions":[
+            "m_c is giving r_c a task."
+        ],
+        "main_status_constraint":[
+            "medicine cat",
+            "deputy",
+            "leader"
+        ],
+        "random_trait_constraint":[
+            "kitten",
+            "apprentice",
+            "mediator apprentice",
+            "medicine cat apprentice",
+            "warrior",
+            "mediator"
+        ]
+    },
+    {
+        "id":"dislike_effect_other1",
+        "relationship_constraint":[
+            "dislike_40"
+        ],
+        "interactions":[
+            "m_c is spreading a rumour about r_c.",
+            "m_c is mocking r_c."
+        ],
+        "reaction_random_cat":{
+            "admiration": "decrease",
+            "comfortable": "decrease",
+            "trust": "decrease",
+            "dislike": "increase",
+            "platonic": "decrease"
+        }
     }
 ]

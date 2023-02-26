@@ -570,8 +570,7 @@ class Relationship():
             ]
         self.chosen_interaction = choice(possible_interactions)
 
-        if in_de_crease != "neutral":
-            self.interaction_affect_relationships(in_de_crease, intensity, rel_type)
+        self.interaction_affect_relationships(in_de_crease, intensity, rel_type)
         
         # get any possible interaction string out of this interaction
         interaction_str = choice(self.chosen_interaction.interactions)

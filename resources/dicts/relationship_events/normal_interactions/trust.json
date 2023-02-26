@@ -77,6 +77,52 @@
 			}
 		},
 		{
+			"id": "trust_adult_inc_med1",
+			"interactions":[
+				"m_c is giving advice to r_c."
+			],
+			"main_status_constraint":[
+				"elder",
+				"warrior",
+				"mediator",
+				"medicine cat",
+				"deputy",
+				"leader"
+			],
+			"random_trait_constraint":[
+				"kitten",
+				"apprentice",
+				"mediator apprentice",
+				"medicine cat apprentice"
+			],
+			"reaction_random_cat":{
+				"trust":"increase"
+			}
+		},
+		{
+			"id":"trust_adult_inc_med2",
+			"interactions":[
+				"goes to (cat) to ask for their wisdom."
+			],
+			"main_status_constraint":[
+				"kitten",
+				"apprentice",
+ 				"warrior",
+				"mediator apprentice",
+				"mediator",
+				"medicine cat apprentice",
+				"medicine cat",
+				"deputy",
+				"leader"
+			],
+			"random_status_constraint":[
+				"elder"
+			],
+			"reaction_random_cat":{
+				"trust": "increase"
+			}
+		},
+		{
 			"id": "trust_inc_high1",
 			"intensity": "high",
 			"interactions":[
@@ -106,7 +152,72 @@
 			"reaction_random_cat":{
 				"trust":"increase"
 			}
+		},
+		{
+			"id":"trust_star_inc_high1",
+			"interactions":[
+				"m_c tells r_c about their last encounter with StarClan."
+			],
+			"main_status_constraint":[
+				"medicine cat apprentice",
+				"medicine cat",
+				"leader"
+			],
+			"relationship_constraint":[
+				"trust_30"
+			],
+			"random_status_constraint":[
+				"elder",
+ 				"warrior",
+				"mediator",
+				"medicine cat apprentice",
+				"medicine cat",
+				"deputy",
+				"leader"
+			],
+			"reaction_random_cat":{
+				"trust": "increase"
+			}
+		},
+		{
+			"id":"trust_led_inc_high1",
+			"interactions":[
+				"m_c talks with r_c about difficult decisions."
+			],
+			"relationship_constraint":[
+				"trust_50"
+			],
+			"main_status_constraint":[
+				"leader"
+			],
+			"random_status_constraint":[
+				"deputy",
+				"elder",
+				"medicine cat"
+			],
+			"reaction_random_cat":{
+				"trust": "increase"
+			}
+		},
+		{
+			"id":"trust_med_inc_high1",
+			"interactions":[
+				"m_c tells r_c a trick about a certain herb.",
+				"goes to (cat) to ask for their wisdom."
+			],
+			"main_status_constraint":[
+				"medicine cat apprentice",
+				"medicine cat"
+			],
+			"random_status_constraint":[
+				"medicine cat apprentice",
+				"medicine cat"
+			],
+			"reaction_random_cat":{
+				"trust": "increase"
+			}
 		}
+
 	],
 	"decrease": [
 		{

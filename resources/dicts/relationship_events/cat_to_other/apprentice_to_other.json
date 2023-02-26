@@ -51,9 +51,9 @@
             "is jealous that (cat) got to go on border patrol this morning.",
             "keeps leaving all of the boring apprentice tasks for (cat) to do by themself.",
             "tells (cat)'s mentor that they've been sneaking out of camp without permission.",
-            "prays that they aren't on patrol with (cat) tomorrow.",
-            "had a disagreement with (cat) while on patrol earlier.",
-            "stole (cat)'s catch right out from under their claws."
+            ,
+            ,
+            
         ],
         "neutral": [
             
@@ -63,7 +63,7 @@
             "doesn't understand how (cat) got so good at hunting.",
             "brings (cat) a piece of prey to share after a long day of training.",
             "is wowed by how well (cat) did in training today!",
-            "saw (cat) miss an easy catch today.",
+            ,
             "doesn't like how (cat) has been talking about their mentor.",
             "has a disagreement with (cat) over who is the better hunter.",
             "is jealous that (cat) got to go on border patrol this morning.",
@@ -71,9 +71,9 @@
             "wishes they had (cat)'s mentor instead.",
             "offers to help (cat) clean out the elder's bedding.",
             "keeps leaving all of the boring apprentice tasks for (cat) to do by themself.",
-            "playfully teases (cat) for missing a catch.",
-            "prays that they aren't on patrol with (cat) tomorrow.",
-            "had a disagreement with (cat) while on patrol earlier.",
+            ,
+            ,
+            ,
             "waves to (cat) with their tail as their patrols cross paths on the territory.",
             "calls to (cat) to catch them a fat mouse on their next hunting patrol."
         ],
@@ -87,7 +87,7 @@
             "wishes they had (cat)'s mentor instead.",
             "offers to help (cat) clean out the elder's bedding.",
             "promises not to tell (cat)'s mentor that they've been sneaking out of camp.",
-            "playfully teases (cat) for missing a catch."
+            
         ],
         "close": [
             "daydreams with (cat) about their future warrior ceremonies.",
@@ -98,22 +98,22 @@
             "wishes they had (cat)'s mentor instead.",
             "offers to help (cat) clean out the elder's bedding.",
             "promises not to tell (cat)'s mentor that they've been sneaking out of camp.",
-            "playfully teases (cat) for missing a catch."
+            
         ]
     },
     "warrior": {
         "unfriendly": [
-            "prays that they aren't on patrol with (cat) tomorrow.",
-            "had a disagreement with (cat) while on patrol earlier.",
-            "stole (cat)'s catch right out from under their claws."
+            ,
+            ,
+            
         ],
         "neutral": [
             
             "is jealous that (cat) got to fight in a border skirmish when they didn't.",
-            "saw (cat) miss an easy catch today.",
+            ,
             "is jealous that (cat) went on patrol without them.",
-            "prays that they aren't on patrol with (cat) tomorrow.",
-            "had a disagreement with (cat) while on patrol earlier.",
+            ,
+            ,
             "waves to (cat) with their tail as their patrols cross paths on the territory.",
             "calls to (cat) to catch them a fat mouse on their next hunting patrol."
         ],
@@ -125,7 +125,7 @@
     "medicine cat": {
         "unfriendly": [],
         "neutral": [
-            "escorted (cat) so they could gather herbs.",
+            ,
             "thought of (cat) on the last patrol and brought a rare herb back for them.",
             
             
@@ -139,11 +139,11 @@
     "leader": {
         "unfriendly": [
             ,
-            "had a disagreement with (cat) while on patrol earlier.",
-            "stole (cat)'s catch right out from under their claws."
+            ,
+            
         ],
         "neutral": [
-            "saw (cat) miss an easy catch today."
+            
         ],
         "friendly": [],
         "close": []
@@ -151,12 +151,12 @@
     "deputy": {
         "unfriendly": [
             ,
-            "had a disagreement with (cat) while on patrol earlier.",
+            ,
             "stole (cat)'s catch right out from under their claws!"
         ],
         "neutral": [
             "is tired from (cat) putting them on so many patrols.",
-            "saw (cat) miss an easy catch today.",
+            ,
             "wants to be just like (cat) someday."
         ],
         "friendly": [

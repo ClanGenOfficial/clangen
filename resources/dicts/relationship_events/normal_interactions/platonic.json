@@ -38,6 +38,7 @@
 			"id": "platonic_inc_low1",
 			"intensity": "low",
 			"interactions":[
+				"m_c thinks r_c was nice to them today."
 
 			]
 		},
@@ -45,7 +46,8 @@
 			"id":"platonic_inc_low2",
 			"intensity":"low",
 			"interactions":[
-				"m_c is talking with r_c."
+				"m_c is talking with r_c.",
+				"m_c asks r_c how they're doing."
 			],
 			"reaction_random_cat":{
 				"platonic":"increase"
@@ -117,27 +119,27 @@
 		},
 		{
 			
-				"id":"platonic_kit_inc_med4",
-				"interactions":[
-					"m_c decorates their nest with gifts that r_c brought them."
-				],
-				"main_status_constraint":[
-					"kitten"
-				],
-				"random_status_constraint":[
-					"elder",
-					"apprentice",
-					"warrior",
-					"mediator apprentice",
-					"mediator",
-					"medicine cat apprentice",
-					"medicine cat",
-					"deputy",
-					"leader"
-				],
-				"reaction_random_cat":{
-					"platonic": "increase"
-				}
+			"id":"platonic_kit_inc_med4",
+			"interactions":[
+				"m_c decorates their nest with gifts that r_c brought them."
+			],
+			"main_status_constraint":[
+				"kitten"
+			],
+			"random_status_constraint":[
+				"elder",
+				"apprentice",
+				"warrior",
+				"mediator apprentice",
+				"mediator",
+				"medicine cat apprentice",
+				"medicine cat",
+				"deputy",
+				"leader"
+			],
+			"reaction_random_cat":{
+				"platonic": "increase"
+			}
 		},
 		{
 			
@@ -164,7 +166,16 @@
 				"m_c is watching over r_c.",
 				"m_c trains playfully with r_c.",
 				"m_c gave r_c a trinket they found while out of the camp today.",
-				"m_c is charmed to hear that r_c really admires them."
+				"m_c is charmed to hear that r_c really admires them.",
+				"m_c is giving r_c a badger ride on their back!",
+           		"m_c remembers how cute kits are becasue of time spent with r_c.",
+           		"m_c is promising to take r_c outside of camp if they behave.",
+				"m_c bats the mossball back to r_c when it flies in front of their paws.",
+				"m_c spends most of the afternoon describing the territory to r_c.",
+            	"m_c purrs as r_c asks them to show them how to do a hunter's crouch. They oblige, happy to show their skills.",
+            	"m_c whiskers twitch in amusement as r_c tells them that they hope they're their mentor when they become an apprentice.",
+            	"m_c tells r_c that they caught this prey just for them as they deliver it to them.",
+				"m_c joins a game as r_c runs up to them yowling that they're the greatest warrior ever and could never be defeated. The kit squeals in delight as m_c rolls over in surrender."
 			],
 			"main_status_constraint":[
 				"elder",
@@ -215,6 +226,26 @@
 				"trust": "increase",
 				"comfortable":"increase",
 				"admiration": "increase"
+			}
+		},
+		{
+			"id":"platonic_app_med1",
+			"interactions":[
+				"m_c is telling r_c about a hunting technique.",
+				"m_c is thinking about how much r_c reminds them of their own apprentice days.",
+				"m_c is telling r_c about their own days as an apprentice."
+			],
+			"main_status_constraint":[
+				"elder",
+				"deputy",
+				"leader",
+				"warrior"
+			],
+			"random_status_constraint":[
+				"apprentice"
+			],
+			"reaction_random_cat":{
+				"platonic":"increase"
 			}
 		},
 		{

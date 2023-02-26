@@ -80,12 +80,31 @@
 			"interactions":[
 				"m_c has snuggled up against r_c.",
 				"m_c chats with r_c about their day.",
-				"m_c basks in the sun with r_c."
+				"m_c basks in the sun with r_c.",
+				"m_C just told r_c a hilarious joke."
 				
 			],
 			"reaction_random_cat":{
 				"comfortable":"increase"
 			}
+		},
+		{
+			"id":"comfort_inc_med3",
+			"interactions":[
+				"m_c playfully teases r_c for missing a catch."
+			],
+			"main_status_constraint":[
+				"apprentice",
+ 				"warrior",
+				"deputy",
+				"leader"
+			],
+			"random_status_constraint":[
+				"apprentice",
+ 				"warrior",
+				"deputy",
+				"leader"
+			]
 		},
 		{
 			"id":"comfortable_kit_inc_med1",
