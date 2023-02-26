@@ -185,10 +185,7 @@ for x in [
     'whitepatches', 'eyes', 'eyes2', 'skin', 'scars', 'collars', 'bellcollars', 'bowcollars',
     'bengalcolours', 'tabbycolours2', 'rosettecolours', 'smokecolours', 'tickedcolours', 
     'mackerelcolours', 'classiccolours', 'sokokecolours', 'agouticolours', 'singlestripecolours',
-    'Newscars', 'shadersnewwhite', 'lineartdead',
-    'tortiecolourssolid', 'tortiecolourstabby', 'tortiecoloursbengal', 'tortiecoloursmarbled',
-    'tortiecoloursticked', 'tortiecolourssmoke', 'tortiecoloursrosette', 'tortiecoloursspeckled',
-    'tortiecoloursmackerel', 'tortiecoloursclassic', 'tortiecolourssokoke', 'tortiecoloursagouti',
+    'Newscars', 'shadersnewwhite', 'lineartdead', 'tortiepatchesmasks',
     'medcatherbs', 'lineartdf', 'lightingnew', 'fademask',
     'fadestarclan', 'fadedarkforest'
 
@@ -333,139 +330,14 @@ for a, i in enumerate(['PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'CREAM'])
     sprites.make_group('singlestripecolours', (a, 1), f'singlestripe{i}')
 for a, i in enumerate(['LIGHTBROWN', 'BROWN', 'DARKBROWN', 'BLACK']):
     sprites.make_group('singlestripecolours', (a, 2), f'singlestripe{i}')
-# new torties
-# solids
-for a, i in enumerate(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR']):
-    sprites.make_group('tortiecolourssolid', (a, 0), f'tortiesolid{i}')
-for a, i in enumerate(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR']):
-    sprites.make_group('tortiecolourssolid', (a, 1), f'tortiesolid{i}')
-for a, i in enumerate(['GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR']):
-    sprites.make_group('tortiecolourssolid', (a, 2), f'tortiesolid{i}')
-for a, i in enumerate(['DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR']):
-    sprites.make_group('tortiecolourssolid', (a, 3), f'tortiesolid{i}')
-for a, i in enumerate(['CREAMONE', 'CREAMTWO', 'CREAMTHREE', 'CREAMFOUR']):
-    sprites.make_group('tortiecolourssolid', (a, 4), f'tortiesolid{i}')
-# tabby
-for a, i in enumerate(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR']):
-    sprites.make_group('tortiecolourstabby', (a, 0), f'tortietabby{i}')
-for a, i in enumerate(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR']):
-    sprites.make_group('tortiecolourstabby', (a, 1), f'tortietabby{i}')
-for a, i in enumerate(['GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR']):
-    sprites.make_group('tortiecolourstabby', (a, 2), f'tortietabby{i}')
-for a, i in enumerate(['DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR']):
-    sprites.make_group('tortiecolourstabby', (a, 3), f'tortietabby{i}')
-for a, i in enumerate(['CREAMONE', 'CREAMTWO', 'CREAMTHREE', 'CREAMFOUR']):
-    sprites.make_group('tortiecolourstabby', (a, 4), f'tortietabby{i}')
-# bengal
-for a, i in enumerate(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR']):
-    sprites.make_group('tortiecoloursbengal', (a, 0), f'tortiebengal{i}')
-for a, i in enumerate(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR']):
-    sprites.make_group('tortiecoloursbengal', (a, 1), f'tortiebengal{i}')
-for a, i in enumerate(['GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR']):
-    sprites.make_group('tortiecoloursbengal', (a, 2), f'tortiebengal{i}')
-for a, i in enumerate(['DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR']):
-    sprites.make_group('tortiecoloursbengal', (a, 3), f'tortiebengal{i}')
-for a, i in enumerate(['CREAMONE', 'CREAMTWO', 'CREAMTHREE', 'CREAMFOUR']):
-    sprites.make_group('tortiecoloursbengal', (a, 4), f'tortiebengal{i}')
-# marbled
-for a, i in enumerate(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR']):
-    sprites.make_group('tortiecoloursmarbled', (a, 0), f'tortiemarbled{i}')
-for a, i in enumerate(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR']):
-    sprites.make_group('tortiecoloursmarbled', (a, 1), f'tortiemarbled{i}')
-for a, i in enumerate(['GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR']):
-    sprites.make_group('tortiecoloursmarbled', (a, 2), f'tortiemarbled{i}')
-for a, i in enumerate(['DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR']):
-    sprites.make_group('tortiecoloursmarbled', (a, 3), f'tortiemarbled{i}')
-for a, i in enumerate(['CREAMONE', 'CREAMTWO', 'CREAMTHREE', 'CREAMFOUR']):
-    sprites.make_group('tortiecoloursmarbled', (a, 4), f'tortiemarbled{i}')
-# ticked
-for a, i in enumerate(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR']):
-    sprites.make_group('tortiecoloursticked', (a, 0), f'tortieticked{i}')
-for a, i in enumerate(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR']):
-    sprites.make_group('tortiecoloursticked', (a, 1), f'tortieticked{i}')
-for a, i in enumerate(['GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR']):
-    sprites.make_group('tortiecoloursticked', (a, 2), f'tortieticked{i}')
-for a, i in enumerate(['DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR']):
-    sprites.make_group('tortiecoloursticked', (a, 3), f'tortieticked{i}')
-for a, i in enumerate(['CREAMONE', 'CREAMTWO', 'CREAMTHREE', 'CREAMFOUR']):
-    sprites.make_group('tortiecoloursticked', (a, 4), f'tortieticked{i}')
-# smoke
-for a, i in enumerate(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR']):
-    sprites.make_group('tortiecolourssmoke', (a, 0), f'tortiesmoke{i}')
-for a, i in enumerate(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR']):
-    sprites.make_group('tortiecolourssmoke', (a, 1), f'tortiesmoke{i}')
-for a, i in enumerate(['GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR']):
-    sprites.make_group('tortiecolourssmoke', (a, 2), f'tortiesmoke{i}')
-for a, i in enumerate(['DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR']):
-    sprites.make_group('tortiecolourssmoke', (a, 3), f'tortiesmoke{i}')
-for a, i in enumerate(['CREAMONE', 'CREAMTWO', 'CREAMTHREE', 'CREAMFOUR']):
-    sprites.make_group('tortiecolourssmoke', (a, 4), f'tortiesmoke{i}')
-# rosette
-for a, i in enumerate(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR']):
-    sprites.make_group('tortiecoloursrosette', (a, 0), f'tortierosette{i}')
-for a, i in enumerate(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR']):
-    sprites.make_group('tortiecoloursrosette', (a, 1), f'tortierosette{i}')
-for a, i in enumerate(['GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR']):
-    sprites.make_group('tortiecoloursrosette', (a, 2), f'tortierosette{i}')
-for a, i in enumerate(['DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR']):
-    sprites.make_group('tortiecoloursrosette', (a, 3), f'tortierosette{i}')
-for a, i in enumerate(['CREAMONE', 'CREAMTWO', 'CREAMTHREE', 'CREAMFOUR']):
-    sprites.make_group('tortiecoloursrosette', (a, 4), f'tortierosette{i}')
-# speckled
-for a, i in enumerate(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR']):
-    sprites.make_group('tortiecoloursspeckled', (a, 0), f'tortiespeckled{i}')
-for a, i in enumerate(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR']):
-    sprites.make_group('tortiecoloursspeckled', (a, 1), f'tortiespeckled{i}')
-for a, i in enumerate(['GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR']):
-    sprites.make_group('tortiecoloursspeckled', (a, 2), f'tortiespeckled{i}')
-for a, i in enumerate(['DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR']):
-    sprites.make_group('tortiecoloursspeckled', (a, 3), f'tortiespeckled{i}')
-for a, i in enumerate(['CREAMONE', 'CREAMTWO', 'CREAMTHREE', 'CREAMFOUR']):
-    sprites.make_group('tortiecoloursspeckled', (a, 4), f'tortiespeckled{i}')
-# mackerel
-for a, i in enumerate(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR']):
-    sprites.make_group('tortiecoloursmackerel', (a, 0), f'tortiemackerel{i}')
-for a, i in enumerate(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR']):
-    sprites.make_group('tortiecoloursmackerel', (a, 1), f'tortiemackerel{i}')
-for a, i in enumerate(['GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR']):
-    sprites.make_group('tortiecoloursmackerel', (a, 2), f'tortiemackerel{i}')
-for a, i in enumerate(['DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR']):
-    sprites.make_group('tortiecoloursmackerel', (a, 3), f'tortiemackerel{i}')
-for a, i in enumerate(['CREAMONE', 'CREAMTWO', 'CREAMTHREE', 'CREAMFOUR']):
-    sprites.make_group('tortiecoloursmackerel', (a, 4), f'tortiemackerel{i}')
-# classic
-for a, i in enumerate(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR']):
-    sprites.make_group('tortiecoloursclassic', (a, 0), f'tortieclassic{i}')
-for a, i in enumerate(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR']):
-    sprites.make_group('tortiecoloursclassic', (a, 1), f'tortieclassic{i}')
-for a, i in enumerate(['GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR']):
-    sprites.make_group('tortiecoloursclassic', (a, 2), f'tortieclassic{i}')
-for a, i in enumerate(['DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR']):
-    sprites.make_group('tortiecoloursclassic', (a, 3), f'tortieclassic{i}')
-for a, i in enumerate(['CREAMONE', 'CREAMTWO', 'CREAMTHREE', 'CREAMFOUR']):
-    sprites.make_group('tortiecoloursclassic', (a, 4), f'tortieclassic{i}')
-# sokoke
-for a, i in enumerate(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR']):
-    sprites.make_group('tortiecolourssokoke', (a, 0), f'tortiesokoke{i}')
-for a, i in enumerate(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR']):
-    sprites.make_group('tortiecolourssokoke', (a, 1), f'tortiesokoke{i}')
-for a, i in enumerate(['GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR']):
-    sprites.make_group('tortiecolourssokoke', (a, 2), f'tortiesokoke{i}')
-for a, i in enumerate(['DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR']):
-    sprites.make_group('tortiecolourssokoke', (a, 3), f'tortiesokoke{i}')
-for a, i in enumerate(['CREAMONE', 'CREAMTWO', 'CREAMTHREE', 'CREAMFOUR']):
-    sprites.make_group('tortiecolourssokoke', (a, 4), f'tortiesokoke{i}')
-# agouti
-for a, i in enumerate(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR']):
-    sprites.make_group('tortiecoloursagouti', (a, 0), f'tortieagouti{i}')
-for a, i in enumerate(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR']):
-    sprites.make_group('tortiecoloursagouti', (a, 1), f'tortieagouti{i}')
-for a, i in enumerate(['GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR']):
-    sprites.make_group('tortiecoloursagouti', (a, 2), f'tortieagouti{i}')
-for a, i in enumerate(['DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR']):
-    sprites.make_group('tortiecoloursagouti', (a, 3), f'tortieagouti{i}')
-for a, i in enumerate(['CREAMONE', 'CREAMTWO', 'CREAMTHREE', 'CREAMFOUR']):
-    sprites.make_group('tortiecoloursagouti', (a, 4), f'tortieagouti{i}')
+    
+# new new torties
+for a, i in enumerate(['ONE', 'TWO', 'THREE', 'FOUR', 'REDTAIL', 'DELILAH']):
+    sprites.make_group('tortiepatchesmasks', (a, 0), f"tortiemask{i}", sprites_y=5)
+for a, i in enumerate(['MINIMAL1', 'MINIMAL2', 'MINIMAL3', 'MINIMAL4', 'OREO', 'SWOOP']):
+    sprites.make_group('tortiepatchesmasks', (a, 1), f"tortiemask{i}", sprites_y=5)
+for a, i in enumerate(['MOTTLED']):
+    sprites.make_group('tortiepatchesmasks', (a, 2), f"tortiemask{i}", sprites_y=5)
 
 # SKINS
 sprites.make_group('skin', (0, 0), 'skinBLACK')

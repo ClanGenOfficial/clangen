@@ -547,8 +547,24 @@ def update_sprite(cat):
         if cat.pelt.name not in ['Tortie', 'Calico']:
             new_sprite.blit(sprites.sprites[cat.pelt.sprites[1] + cat.pelt.colour + cat_sprite], (0, 0))
         else:
-            new_sprite.blit(sprites.sprites[cat.tortiebase + cat.tortiecolour + cat_sprite], (0, 0))
-            new_sprite.blit(sprites.sprites[cat.tortiepattern + cat.pattern + cat_sprite], (0, 0))
+                # Base Coat
+                new_sprite.blit(
+                    sprites.sprites[cat.tortiebase + cat.pelt.colour + cat_sprite],
+                    (0, 0))
+
+                # Create the patch image
+                if cat.tortiepattern == "Single":
+                    tortie_pattern = "SingleColour"
+                else:
+                    tortie_pattern = cat.tortiepattern
+
+                patches = sprites.sprites[
+                    tortie_pattern + cat.tortiecolour + cat_sprite].copy()
+                patches.blit(sprites.sprites["tortiemask" + cat.pattern + cat_sprite], (0, 0),
+                             special_flags=pygame.BLEND_RGBA_MULT)
+
+                # Add patches onto cat.
+                new_sprite.blit(patches, (0, 0))
 
         # TINTS
         if cat.tint != "none" and cat.tint in Sprites.cat_tints["tint_colours"]:
