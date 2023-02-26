@@ -1,6 +1,6 @@
 {
     "Newleaf":{
-        "running nose": 3,
+        "running nose": 2,
         "stomachache": 1
     },
     "Greenleaf":{
@@ -13,7 +13,7 @@
         "stomachache":1,
         "greencough": 1,
         "kittencough": 4,
-        "running nose": 5
+        "running nose": 3
     },
     "Leaf-bare":{
         "stomachache":1,

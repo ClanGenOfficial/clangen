@@ -68,7 +68,7 @@
 	},
 	"pregnancy": {
 		"primary_chance_mated": 50,
-		"primary_chance_unmated": 100,
+		"primary_chance_unmated": 120,
 		"random_affair_chance": 70
 	},
 	"cat_generation": {
@@ -101,7 +101,7 @@
 	},
 	"patrol_generation": {
 		"classic_difficulty_modifier": 1,
-		"expanded_difficulty_modifier": 2,
+		"expanded_difficulty_modifier": 2.5,
 		"cruel season_difficulty_modifier": 3,
 		"win_stat_cat_modifier": 10,
 		"better_stat_modifier": 5,
@@ -112,5 +112,20 @@
 			"the Cruel Season difficulty modifier needs to have a space rather than an underscore,",
 			"due to how it's written in the save files. So don't try to 'fix' it."
 		]
+	},
+	"death_related": {
+		"leader_death_chance": 100,
+		"old_age_death_start": 150,
+		"old_age_death_chance": 51,
+		"classic_death_chance": 500,
+		"expanded_death_chance": 350,
+		"cruel season_death_chance": 300
+	},
+	"condition_related": {
+		"expanded_illness_chance": 250,
+		"cruel season_illness_chance": 200,
+		"classic_injury_chance": 250,
+		"expanded_injury_chance": 200,
+		"cruel season_death_chance": 150
 	}
 }
