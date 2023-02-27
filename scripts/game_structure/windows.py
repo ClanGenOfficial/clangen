@@ -163,7 +163,10 @@ class DeleteCheck(UIWindow):
                 shutil.rmtree(rempath)
                 os.remove(rempath + "clan.json")
 
-                game.switches['clan_list'] = game.switches['clan_list'].remove(self.clan_name)
+                cl = game.read_clans()
+                cl.remove(self.clan_name)
+                game.switches['clan_list'] = cl
+                
                 if game.clan:
                     game.save_clanlist(game.clan.name)
                 else:
