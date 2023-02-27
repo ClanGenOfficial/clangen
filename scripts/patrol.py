@@ -1541,35 +1541,43 @@ class Patrol():
 
         if "random_herbs" in patrol.patrol_event.tags:
             number_of_herb_types = choices([1, 2, 3], [6, 5, 1], k=1)
-            herbs_picked = choices(HERBS, k=number_of_herb_types[0])
+            herbs_picked = random.sample(HERBS, k=number_of_herb_types[0])
             for herb in herbs_picked:
                 herbs_gotten.append(str(herb).replace('_', ' '))
                 if not large_amount:
-                    amount_gotten = choices([1, 2, 3], [2, 3, 1], k=1)
-                    if herb in game.clan.herbs.keys():
-                        game.clan.herbs[herb] += amount_gotten[0] * patrol_size_modifier
-                    else:
-                        game.clan.herbs.update({herb: amount_gotten[0] * patrol_size_modifier})
+                    amount_gotten = choices([1, 2, 3], [2, 3, 1], k=1)[0]
                 else:
-                    if herb in game.clan.herbs.keys():
-                        game.clan.herbs[herb] += large_amount * patrol_size_modifier
-                    else:
-                        game.clan.herbs.update({herb: large_amount})
+                    amount_gotten = large_amount
+
+                # Apply patrol size modifier
+                amount_gotten = int(amount_gotten * patrol_size_modifier)
+                if amount_gotten < 1:
+                    amount_gotten = 1
+
+                if herb in game.clan.herbs.keys():
+                    game.clan.herbs[herb] += amount_gotten
+                else:
+                    game.clan.herbs.update({herb: amount_gotten})
+
         elif "herb" in patrol.patrol_event.tags:
             for tag in patrol.patrol_event.tags:
                 if tag in HERBS:
                     herbs_gotten.append(str(tag).replace('_', ' '))
                     if not large_amount:
-                        amount_gotten = choices([1, 2, 3], [2, 3, 1], k=1)
-                        if tag in game.clan.herbs.keys():
-                            game.clan.herbs[tag] += amount_gotten[0] * patrol_size_modifier
-                        else:
-                            game.clan.herbs.update({tag: amount_gotten[0] * patrol_size_modifier})
+                        amount_gotten = choices([1, 2, 3], [2, 3, 1], k=1)[0]
                     else:
-                        if tag in game.clan.herbs.keys():
-                            game.clan.herbs[tag] += large_amount * patrol_size_modifier
-                        else:
-                            game.clan.herbs.update({tag: large_amount * patrol_size_modifier})
+                        amount_gotten = large_amount
+
+                    # Apply patrol size modifier
+                    amount_gotten = int(amount_gotten * patrol_size_modifier)
+                    if amount_gotten < 1:
+                        amount_gotten = 1
+
+                    if tag in game.clan.herbs.keys():
+                        game.clan.herbs[tag] += amount_gotten
+                    else:
+                        game.clan.herbs.update({tag: amount_gotten})
+
         if herbs_gotten:
             if len(herbs_gotten) == 1 and herbs_gotten[0] != 'cobwebs':
                 insert = f"{herbs_gotten[0]} was"
