@@ -173,6 +173,9 @@ class DeleteCheck(UIWindow):
                     data.remove(self.clan_name)
                 else:
                     print("error")
+
+                # Remove from the list in memory
+                game.switches['clan_list'].remove(self.clan_name)
                 
                 if data[-1].endswith("\n"):
                     data[-1] = data[-1][:-1] #remove the last \n
