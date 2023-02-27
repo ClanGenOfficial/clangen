@@ -91,7 +91,7 @@ class SaveCheck(UIWindow):
                     self.kill()
                 else:
                     game.is_close_menu_open = False
-                    game.rpc.close()
+                    #game.rpc.close()
                     pygame.display.quit()
                     pygame.quit()
                     exit()
