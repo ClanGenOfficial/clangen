@@ -226,20 +226,20 @@
     "redcough": {
         "severity": "severe",
         "mortality": {
-            "kitten": 2,
+            "kitten": 1,
             "adolescent": 2,
             "young adult": 2,
             "adult": 2,
             "senior adult": 2,
-            "elder": 2
+            "elder": 1
         },
         "medicine_mortality": {
-            "kitten": 5,
-            "adolescent": 5,
-            "young adult": 5,
-            "adult": 5,
-            "senior adult": 5,
-            "elder": 5
+            "kitten": 2,
+            "adolescent": 3,
+            "young adult": 3,
+            "adult": 3,
+            "senior adult": 3,
+            "elder": 2
         },
         "duration": 50,
         "medicine_duration": 40,
@@ -538,7 +538,7 @@
         "risks": [
             {
                 "name": "lasting grief",
-                "chance": 50
+                "chance": 100
             },
             {
                 "name": "constant nightmares",

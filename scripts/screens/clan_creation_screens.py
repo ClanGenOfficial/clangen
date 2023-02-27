@@ -862,6 +862,6 @@ class MakeClanScreen(Screens):
         biome = self.biome_selected.lower()
 
         if campnum:
-            return f'{camp_bg_base_dir}/{biome}/{start_leave}_camp{str(campnum)}_{light_dark}.png'
+            return f'{camp_bg_base_dir}/{biome}/{start_leave}_camp{campnum}_{light_dark}.png'
         else:
             return None
