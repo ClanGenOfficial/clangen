@@ -38,7 +38,8 @@ def accessory_display_name(cat):
     if accessory in collars:
         collar_colors = {'crimson': 'red', 'blue': 'blue', 'yellow': 'yellow', 'cyan': 'cyan', 
                          'red': 'orange', 'lime': 'lime', 'green': 'green', 'rainbow': 'rainbow', 
-                         'black': 'black', 'spikes': 'spiky', 'pink': 'pink', 'purple': 'purple', 'multi': 'multi'}
+                         'black': 'black', 'spikes': 'spiky', 'white': 'white', 'pink': 'pink', 
+                         'purple': 'purple', 'multi': 'multi', 'indigo': 'indigo'}
         collar_color = next((color for color in collar_colors if acc_display.startswith(color)), None)
 
         if collar_color:
