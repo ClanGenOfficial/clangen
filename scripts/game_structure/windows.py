@@ -163,24 +163,11 @@ class DeleteCheck(UIWindow):
                 shutil.rmtree(rempath)
                 os.remove(rempath + "clan.json")
 
-                with open("saves/clanlist.txt", "r") as clanfile:
-                    data = clanfile.readlines()
-
-                #delete the line
-                if data.count(self.clan_name + "\n") > 0:
-                    data.remove(self.clan_name + "\n")
-                elif data.count(self.clan_name) > 0:
-                    data.remove(self.clan_name)
+                game.switches['clan_list'] = game.switches['clan_list'].remove(self.clan_name)
+                if game.clan:
+                    game.save_clanlist(game.clan.name)
                 else:
-                    print("error")
-                
-                if data[-1].endswith("\n"):
-                    data[-1] = data[-1][:-1] #remove the last \n
-                
-                #write the file
-                with open("saves/clanlist.txt", "w") as clanfile:
-                    clanfile.writelines(data)
-                
+                    game.save_clanlist()
 
                 self.kill()
 
