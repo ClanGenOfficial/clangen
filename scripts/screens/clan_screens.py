@@ -217,7 +217,7 @@ class ClanScreen(Screens):
             i = randint(0, 20)
             if Cat.all_cats[x].not_working():
                 Cat.all_cats[x].placement = choice(p['medicine place'])
-            if Cat.all_cats[x].status in ['apprentice', 'mediator apprentice']:
+            elif Cat.all_cats[x].status in ['apprentice', 'mediator apprentice']:
                 if i < 13:
                     Cat.all_cats[x].placement = choice([
                         choice(p['apprentice place']),

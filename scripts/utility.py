@@ -514,7 +514,7 @@ def update_sprite(cat):
     new_sprite = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
 
     # setting the cat_sprite (bc this makes things much easier)
-    if cat.paralyzed:
+    if cat.paralyzed and not cat.not_working():
         if cat.age in ['newborn', 'kitten', 'adolescent']:
             cat_sprite = str(17)
         else:
