@@ -194,8 +194,8 @@ class SwitchClanScreen(Screens):
                 pygame_gui.elements.UIButton(scale(pygame.Rect((600, y_pos), (400, 78))), clan + "Clan",
                                              object_id="#saved_clan", manager=MANAGER))
             self.delete_buttons[-1].append(
-                pygame_gui.elements.UIButton(scale(pygame.Rect((940, y_pos + 17), (44, 44))), "",
-                                            object_id="#exit_window_button", manager=MANAGER, starting_height=2))
+                UIImageButton(scale(pygame.Rect((940, y_pos + 17), (44, 44))), "",
+                              object_id="#exit_window_button", manager=MANAGER, starting_height=2))
 
             y_pos += 82
             i += 1
@@ -206,7 +206,6 @@ class SwitchClanScreen(Screens):
                 i = 0
                 y_pos = 378
 
-        
         self.next_page_button = UIImageButton(scale(pygame.Rect((912, 1080), (68, 68))), "", object_id="#arrow_right_button"
                                               , manager=MANAGER)
         self.previous_page_button = UIImageButton(scale(pygame.Rect((620, 1080), (68, 68))), "",
@@ -241,15 +240,12 @@ class SwitchClanScreen(Screens):
         for page in self.delete_buttons:
             for button in page:
                 button.hide()
-        
 
         for button in self.clan_buttons[self.page]:
             button.show()
         
         for button in self.delete_buttons[self.page]:
             button.show()
-
-
 
     def on_use(self):
         screen.blit(self.screen, (580 / 1600 * screen_x, 300 / 1400 * screen_y))
@@ -1037,7 +1033,7 @@ class StatsScreen(Screens):
         medcat_num = 0
         other_num = 0
         for cat in Cat.all_cats.values():
-            if not cat.dead and not cat.outside:
+            if not cat.dead and not (cat.outside or cat.exiled):
                 living_num += 1
                 if cat.status == 'warrior':
                     warriors_num += 1

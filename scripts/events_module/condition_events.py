@@ -663,7 +663,7 @@ class Condition_Events():
                         game.ranks_changed_timeskip = True
                         event_list.append(event)
 
-                if cat.permanent_condition[condition]['severity'] == 'severe':
+                elif cat.permanent_condition[condition]['severity'] == 'severe':
                     event_types.append('ceremony')
                     if game.clan.leader is not None:
                         if not game.clan.leader.dead and not game.clan.leader.exiled \

@@ -541,7 +541,9 @@ class Events():
             name = random.choice(names.loner_names)
         elif status in ['loner', 'rogue']:
             name = random.choice(names.loner_names + names.normal_prefixes)
-        new_cat = Cat(prefix=name, suffix = None, status=status, gender=random.choice(['female', 'male']))
+        else:
+            name = random.choice(names.loner_names)
+        new_cat = Cat(prefix=name, suffix=None, status=status, gender=random.choice(['female', 'male']))
         if status == 'kittypet':
             new_cat.accessory = random.choice(collars)
         new_cat.outside = True
@@ -1402,8 +1404,6 @@ class Events():
         # ---------------------------------------------------------------------------- #
         #                           decide if cat dies                                 #
         # ---------------------------------------------------------------------------- #
-        # if triggered_death is True then the cat will die
-        triggered_death = False
         # choose other cat
         possible_other_cats = list(filter(
             lambda c: not c.dead and not c.exiled and not c.outside and (c.ID != cat.ID), Cat.all_cats.values()
@@ -1424,30 +1424,32 @@ class Events():
         alive_kits = get_alive_kits(Cat)
 
         # chance to kill leader: 1/100
+        # chance to kill leader: 1/100
         if not int(
-                random.random() * game.config["death_related"]["leader_death_chance"]) and cat.status == 'leader' and not triggered_death and not cat.not_working():
+                random.random() * 100) and cat.status == 'leader' and not cat.not_working():
             self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
-            triggered_death = True
-            return triggered_death
+            return True
 
         # chance to die of old age
-        if cat.moons > int(random.random() * game.config["death_related"]["old_age_death_chance"]) + game.config["death_related"]["old_age_death_start"] and not triggered_death:  # cat.moons > 150 <--> 200
+        if cat.moons > int(random.random() * 51) + 150:  # cat.moons > 150 <--> 200
             self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
-            triggered_death = True
-            return triggered_death
+            return True
+
+        # classic death chance
+        if game.clan.game_mode == "classic" and not int(random.random() * 500):  # 1/500
+            self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
+            return True
 
         # disaster death chance
-        if game.settings.get('disasters') and not triggered_death:
+        if game.settings.get('disasters'):
             if not random.getrandbits(9):  # 1/512
-                triggered_death = True
                 self.handle_disasters()
-                return triggered_death
+                return True
 
-        # final death chance and then, if not triggered, head to injuries
-        if not int (random.random() *game.config["death_related"][f"{game.clan.game_mode}_death_chance"]) and not cat.not_working():  # 1/400
+        # extra death chance and injuries in expanded & cruel season
+        if game.clan.game_mode != 'classic' and not int(random.random() * 500) and not cat.not_working():  # 1/400
             self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
-            triggered_death = True
-            return triggered_death
+            return True
         else:
             triggered_death = self.condition_events.handle_injuries(cat, other_cat, alive_kits, self.at_war,
                                                                     self.enemy_clan, game.clan.current_season)
