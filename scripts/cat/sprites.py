@@ -244,11 +244,11 @@ for a, i in enumerate(['LIGHTBROWN', 'BROWN', 'DARKBROWN', 'BLACK']):
     sprites.make_group('tabbycolours', (a, 2), f'tabby{i}')
 # marbled
 for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST']):
-    sprites.make_group('marbled', (a, 0), f'marbled{i}')
+    sprites.make_group('marbledcolours', (a, 0), f'marbled{i}')
 for a, i in enumerate(['PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'CREAM']):
-    sprites.make_group('marbled', (a, 1), f'marbled{i}')
+    sprites.make_group('marbledcolours', (a, 1), f'marbled{i}')
 for a, i in enumerate(['LIGHTBROWN', 'BROWN', 'DARKBROWN', 'BLACK']):
-    sprites.make_group('marbled', (a, 2), f'marbled{i}')
+    sprites.make_group('marbledcolours', (a, 2), f'marbled{i}')
 # rosette
 for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST']):
     sprites.make_group('rosettecolours', (a, 0), f'rosette{i}')
