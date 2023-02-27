@@ -179,7 +179,6 @@ class DeleteCheck(UIWindow):
 
                 # Remove from the list in memory
                 game.switches['clan_list'] = data
-                print(game.switches['clan_list'])
 
                 #write the file
                 with open("saves/clanlist.txt", "w") as clanfile:
