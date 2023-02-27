@@ -118,6 +118,8 @@ else:
 
 
 game.rpc = _DiscordRPC("1076277970060185701")
+game.rpc.start()
+game.rpc.start_rpc.set()
 while True:
     time_delta = clock.tick(30) / 1000.0
     if game.switches['cur_screen'] not in ['start screen']:
@@ -138,7 +140,8 @@ while True:
             # Dont display if on the start screen or there is no clan.
             if (game.switches['cur_screen'] in ['start screen', 'switch clan screen', 'settings screen', 'info screen', 'make clan screen']
                 or not game.clan):
-                game.rpc.close()
+                game.rpc.close_rpc.set()
+                game.rpc.update_rpc.set()
                 pygame.display.quit()
                 pygame.quit()
                 sys.exit()

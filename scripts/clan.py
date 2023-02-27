@@ -367,8 +367,8 @@ class Clan():
     def switch_clans(self, clan):
         game.save_clanlist(clan)
         game.cur_events_list.clear()
-
-        game.rpc.close()
+        game.rpc.close_rpc.set()
+        game.rpc.update_rpc.set()
         pygame.display.quit()
         pygame.quit()
         exit()
