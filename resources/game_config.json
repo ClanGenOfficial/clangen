@@ -77,7 +77,7 @@
 		"base_female_tortie": 4,
 		"base_heterochromia": 120,
 		"direct_inheritance": 15,
-		"wildcard_tortie": 8
+		"wildcard_tortie": 9
 	},
 	"fading": {
 		"age_to_fade": 202,
