@@ -1,17 +1,33 @@
 import ujson
 import collections
+import os
+from os.path import exists as file_exists
 
 """ This script exists to count and catalogue all patrols.   """
 
 ALL_PATROLS = []
 DETAILS = {}
 
+SPRITES_USED = []
+
 def get_patrol_details(path):
     global ALL_PATROLS
     global DETAILS
 
-    with open(path, "r") as read_file:
-        patrols = ujson.loads(read_file.read())
+    try:
+        with open(path, "r") as read_file:
+            patrols = ujson.loads(read_file.read())
+    except:
+        print(f'Something went wrong with {path}')
+
+    if not patrols:
+        return
+
+    if path == ".\explicit_patrol_art.json":
+        return
+    if type(patrols[0]) != dict:
+        print(path, "is not in the correct patrol format. It may not be a patrol .json.")
+        return
 
     for p_ in patrols:
         ALL_PATROLS.append(p_["patrol_id"])
@@ -41,6 +57,56 @@ def get_patrol_details(path):
         else:
             DETAILS["MIN_" + str(p_["min_cats"])] = {p_["patrol_id"]}
 
+def check_patrol_sprites():
+    explicit_sprite = False
+    needs_sprite = False
+    available_sprite = False
+
+    path = "resources/images/patrol_art/"
+
+    if ID in EXPLICIT_PATROL_ART:
+        explicit_sprite = True
+
+    image_name = ID
+    # this stays false until an acceptable image is found
+    image_found = False
+
+    # looking for exact patrol ID
+    exists = file_exists(f"{path}{image_name}.png")
+    if exists:
+        has_patrol_sprite.append(ID)
+        image_found = True
+        available_sprite = True
+        SPRITES_USED.append(image_name)
+
+    # looking for patrol ID without numbers
+    if not image_found:
+        image_name = ''.join([i for i in image_name if not i.isdigit()])
+
+        exists = file_exists(f"{path}{image_name}.png")
+        if exists:
+            available_sprite = True
+            image_found = True
+            SPRITES_USED.append(image_name)
+
+    # looking for patrol ID with biome indicator replaced with 'gen'
+    # if that isn't found then patrol type placeholder will be used
+    if not image_found:
+        image_name = ''.join([i for i in image_name if not i.isdigit()])
+        image_name = image_name.replace("fst_", "gen_")
+        image_name = image_name.replace("mtn_", "gen_")
+        image_name = image_name.replace("pln_", "gen_")
+        image_name = image_name.replace("bch_", "gen_")
+        exists = file_exists(f"{path}{image_name}.png")
+        if exists:
+            available_sprite = True
+            SPRITES_USED.append(image_name)
+        else:
+            needs_sprite = True
+
+    return explicit_sprite, available_sprite, needs_sprite
+
+
 
 paths = ["disaster.json", "new_cat.json", "other_clan.json"]
 
@@ -49,15 +115,46 @@ for pa in paths:
 
 # Now that we have everything gathered, lets do some checks.
 
-# AT CHECK TO MAKE SURE ALL PATROL IDs ARE UNIQUE
-duplicates = [item for item, count in collections.Counter(ALL_PATROLS).items() if count > 1]
-if duplicates:
-    print("There are duplicate patrols IDs:")
-    for d in duplicates:
-        print(d)
-    print("-----")
-else:
-    print("All patrol IDs are unique. \n\n")
+print("""
+You can ask me to do a few different things! But make sure to ask it correctly. When prompted, please use one of the following commands:
+Check patrol IDs
+Check patrol sprites
+Check for certain patrols
+""")
+task = input("What would you like to do? ")
+
+if 'patrol ids'.casefold() in task:
+    # AT CHECK TO MAKE SURE ALL PATROL IDs ARE UNIQUE
+    duplicates = [item for item, count in collections.Counter(ALL_PATROLS).items() if count > 1]
+    if duplicates:
+        print("There are duplicate patrols IDs:")
+        for d in duplicates:
+            print(d)
+        print("-----")
+    else:
+        print("All patrol IDs are unique. \n\n")
+
+if 'patrol sprites'.casefold() in task:
+    EXPLICIT_PATROL_ART = None
+    with open(f"resources/dicts/patrols/explicit_patrol_art.json", 'r') as read_file:
+        EXPLICIT_PATROL_ART = ujson.loads(read_file.read())
+
+    path = "resources/images/patrol_art/"
+
+    explicit_art = []
+    has_patrol_sprite = []
+    needs_patrol_sprite = []
+
+    for ID in ALL_PATROLS:
+        explicit, available, need = check_patrol_sprites()
+
+        if explicit:
+            explicit_art.append(ID)
+        if available:
+            has_patrol_sprite.append(ID)
+        elif need:
+            needs_patrol_sprite.append(ID)
+
 
 # We can do a lot with these sets we have just generated! For example:
 

@@ -290,6 +290,19 @@ class Patrol():
             if "apprentice" in patrol.tags:
                 if "apprentice" not in self.patrol_statuses and "medicine cat apprentice" not in self.patrol_statuses:
                     continue
+                if "warrior_app" in patrol.tags and "apprentice" not in self.patrol_statuses:
+                    continue
+                # If there is only a medicine cat apprentice in the patrol without a full medicine cat and
+                # the number of cats is greater than one, remove all
+                # the patrols that assume an apprentice is present, resulting in treating the med apprentice like a
+                # full medicine cat for the patrol.
+                # This is not ideal, since it also means patrols with warrior apprentices may not work correctly
+                # This also means patrols the are written for both a medicine cat apprentice and a warrior
+                # apprentice will only show up if there is also a full medicine cat in the patrol.
+                # TODO: Write patrols for med cat apprentices + warriors.
+                if "medicine cat apprentice" in self.patrol_statuses and "medicine cat" not in self.patrol_statuses:
+                    if len(self.patrol_cats) > 1:
+                        continue
 
             # makes sure that the deputy is present if the deputy tag is
             if "deputy" in patrol.tags:

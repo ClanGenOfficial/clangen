@@ -117,7 +117,9 @@
 			"comfort",
 			"injury",
 			"death",
-			"scar"
+
+			"scar",
+			"BRIDGE"
 		],
 		"intro_text":"Trailing behind the patrol, there's a roar as a Twoleg monster passes the patrol on the nearby water. r_c looks up just in time to screech in terror as the wake from the monster sweeps over the path, knocking them into the water.",
 		"decline_text":"Thankfully, they're near the bank, and wriggle their way clear.",
