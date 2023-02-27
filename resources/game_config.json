@@ -1,9 +1,15 @@
 {
 	"freshkill":{
+		"activate_death": false,
+		"activate_events": false,
 		"start_amount": 60,
-		"auto_warrior_prey": [1,2],
-		"auto_apprentice_prey": [0,2],
+		"auto_warrior_prey": [1,3],
+		"auto_apprentice_prey": [1,2],
 		"condition_increase": 0.5,
+		"event_trigger_factor": 3.5,
+		"additional_prey": 1,
+		"nutrition_malnourished_percentage" : 70,
+		"nutrition_starving_percentage" : 25,
 		"prey_requirement":{
 			"leader": 3,
 			"deputy": 3,
@@ -30,7 +36,7 @@
 			"deputy",
 			"leader"
 		],
-		"hunter_bonus": {"fantastic_hunter": 3, "great_hunter": 2, "good_hunter": 1},
+		"hunter_bonus": {"fantastic hunter": 3, "great hunter": 2, "good hunter": 1},
 		"hunter_exp_bonus": {
 			"very_low": 1,
 			"low": 2,
@@ -40,8 +46,12 @@
 			"max": 7
 		},
 		"comment": [
+			"activate_deaths - activates the whole system, otherwise nutrition status of the cats doesn't have an effect",
+			"activate_events - activates if events for freshkill pile are triggered or not",
 			"start_amount defines the amount of prey when a new freshkill-pile is made",
 			"The auto parameters are for the prey each moon, each healthy warrior/apprentice will catch an amount of between these two values of prey.",
+			"additional_prey - added amount for hunting patrol, to make it easier",
+			"event_trigger_factor - this number will be used to multiply with the amount of prey the clan needs, if the pile is bigger than this number, prey events will be triggered",
 			"hunter_bonus is the factor which is be used to multiply on a hunting patrol.",
 			"hunter_exp_bonus is the additional prey which will be added on a hunting patrol."
 		]
@@ -58,7 +68,7 @@
 	},
 	"pregnancy": {
 		"primary_chance_mated": 50,
-		"primary_chance_unmated": 100,
+		"primary_chance_unmated": 110,
 		"random_affair_chance": 70
 	},
 	"cat_generation": {
@@ -69,7 +79,7 @@
 		"direct_inheritance": 15
 	},
 	"fading": {
-		"age_to_fade": 302,
+		"age_to_fade": 202,
 		"opacity_at_fade": 20,
 		"visual_fading_speed": 5
 	},
@@ -80,5 +90,42 @@
 			"warrior": 5000,
 			"elder": 400
 		}
+	},
+	"lost_cat": {
+		"rejoin_chance": 20
+	},
+	"cotc_generation": {
+		"kittypet_chance": 30,
+		"rogue_chance": 30,
+		"loner_chance": 30
+	},
+	"patrol_generation": {
+		"classic_difficulty_modifier": 1,
+		"expanded_difficulty_modifier": 2.5,
+		"cruel season_difficulty_modifier": 3,
+		"win_stat_cat_modifier": 10,
+		"better_stat_modifier": 5,
+		"best_stat_modifier": 10,
+		"fail_stat_cat_modifier": -20,
+		"chance_of_romance_patrol": 16,
+		"comment": [
+			"the Cruel Season difficulty modifier needs to have a space rather than an underscore,",
+			"due to how it's written in the save files. So don't try to 'fix' it."
+		]
+	},
+	"death_related": {
+		"leader_death_chance": 100,
+		"old_age_death_start": 150,
+		"old_age_death_chance": 51,
+		"classic_death_chance": 500,
+		"expanded_death_chance": 350,
+		"cruel season_death_chance": 300
+	},
+	"condition_related": {
+		"expanded_illness_chance": 250,
+		"cruel season_illness_chance": 200,
+		"classic_injury_chance": 250,
+		"expanded_injury_chance": 200,
+		"cruel season_death_chance": 150
 	}
 }

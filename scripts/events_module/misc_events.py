@@ -1,10 +1,6 @@
-try:
-    import ujson
-except ImportError:
-    import json as ujson
 import random
 
-from scripts.cat.cats import Cat, INJURIES
+from scripts.cat.cats import Cat
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.utility import event_text_adjust, change_clan_relations, change_relationship_values
 from scripts.game_structure.game_essentials import game
@@ -30,7 +26,7 @@ class MiscEvents():
         """
         involved_cats = [cat.ID]
         other_clan = random.choice(game.clan.all_clans)
-        other_clan_name = f'{str(other_clan.name)}Clan'
+        other_clan_name = f'{other_clan.name}Clan'
 
         possible_events = self.generate_events.possible_events(cat.status, cat.age, "misc_events")
         final_events = self.generate_events.filter_possible_events(possible_events, cat, other_cat, war,

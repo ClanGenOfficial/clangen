@@ -7,6 +7,7 @@
         "fighting",
         "death",
         "scar",
+        "NECKBITE",
         "big_bite_injury",
         "respect",
         "trust",
@@ -42,9 +43,6 @@
     "fail_skills": [
         "good fighter"
     ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 2,
     "max_cats": 3,
     "antagonize_text": null,
@@ -59,7 +57,7 @@
     "patrol_id": "bch_hunt_redvixen5",
     "biome": "beach",
     "season": "greenleaf",
-    "tags": ["fighting", "scar", "big_bite_injury", "respect", "trust", "clan_to_r_c", "patrol_to_r_c", "clan_to_patrol"],
+    "tags": ["fighting", "scar", "NECKBITE", "big_bite_injury", "respect", "trust", "clan_to_r_c", "patrol_to_r_c", "clan_to_patrol"],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
     "decline_text": "Your patrol decides not to pursue the fox.",
     "chance_of_success": 60,
@@ -84,7 +82,6 @@
     "win_trait": ["adventurous", "altruistic", "ambitious", "bloodthirsty", "bold", "confident", "daring", 
     "fierce", "responsible", "righteous", "troublesome", "vengeful"],
     "fail_skills": ["good fighter"],
-    "fail_trait": null,
     "min_cats": 4,
     "max_cats": 6,
     "antagonize_text": null,
@@ -97,7 +94,7 @@
     "patrol_id": "bch_hunt_redvixen6",
     "biome": "beach",
     "season": "greenleaf",
-    "tags": ["fighting", "death", "scar", "big_bite_injury", "shock", "injury", "respect", "trust", "clan_to_patrol", "no_body"],
+    "tags": ["fighting", "death", "scar", "THREE", "big_bite_injury", "shock", "injury", "respect", "trust", "clan_to_patrol", "no_body"],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
     "decline_text": "Your patrol decides not to pursue the fox.",
     "chance_of_success": 10,
@@ -122,7 +119,6 @@
     "win_trait": ["adventurous", "altruistic", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "responsible",
         "righteous", "troublesome", "vengeful"],
     "fail_skills": ["good fighter"],
-    "fail_trait": null,
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -144,7 +140,9 @@
         "respect",
         "trust",
         "rel_patrol",
-        "patrol_to_r_c"
+        "patrol_to_r_c",
+        "scar",
+        "LEGBITE"
     ],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
     "decline_text": "Your patrol decides not to pursue the fox.",
@@ -184,9 +182,6 @@
     "fail_skills": [
         "good fighter"
     ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 2,
     "max_cats": 3,
     "antagonize_text": null,
@@ -206,7 +201,9 @@
         "respect",
         "trust",
         "rel_patrol",
-        "patrol_to_r_c"
+        "patrol_to_r_c",
+        "scar",
+        "LEGBITE"
     ],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
     "decline_text": "Your patrol decides not to pursue the fox.",
@@ -246,9 +243,6 @@
     "fail_skills": [
         "good fighter"
     ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 4,
     "max_cats": 6,
     "antagonize_text": null,
@@ -264,6 +258,7 @@
     "tags": [
         "fighting",
         "scar",
+        "THREE",
         "big_bite_injury",
         "respect",
         "trust",
@@ -307,9 +302,6 @@
     "fail_skills": [
         "good fighter"
     ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -346,15 +338,6 @@
         "smart",
         "very smart",
         "extremely smart"
-    ],
-    "win_trait": [
-        "None"
-    ],
-    "fail_skills": [
-        "None"
-    ],
-    "fail_trait": [
-        "None"
     ],
     "min_cats": 2,
     "max_cats": 6,

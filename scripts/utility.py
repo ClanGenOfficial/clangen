@@ -1,3 +1,5 @@
+from random import choice
+
 import pygame
 
 try:
@@ -8,9 +10,17 @@ import logging
 logger = logging.getLogger(__name__)
 from scripts.game_structure import image_cache
 
-from scripts.cat.sprites import *
-from scripts.cat.pelts import *
-from scripts.game_structure.game_essentials import *
+from scripts.cat.sprites import sprites, Sprites
+from scripts.cat.pelts import (
+    choose_pelt,
+    scars1,
+    scars2,
+    scars3,
+    plant_accessories,
+    wild_accessories,
+    collars,
+    )
+from scripts.game_structure.game_essentials import game, screen_x, screen_y
 
 
 def scale(rect):
@@ -678,7 +688,38 @@ def update_sprite(cat):
                     new_sprite.blit(sprites.sprites['scars' + scar +
                                                     str(cat.age_sprites[cat.age])], (0, 0), special_flags=blendmode)
 
-        # draw accessories        
+        # Apply fading fog
+        if cat.opacity <= 97 and not cat.prevent_fading and game.settings["fading"]:
+            if cat.age == 'elder' or (cat.pelt.length == 'long' and cat.age not in ['kitten', 'adolescent']):
+                offset = 9
+            else:
+                offset = 0
+
+            if 97 >= cat.opacity > 80:
+                # Stage 1
+                pass
+            elif 80 >= cat.opacity > 45:
+                # Stage 2
+                offset += 15
+            elif cat.opacity <= 45:
+                # Stage 3
+                offset += 30
+
+            new_sprite.blit(sprites.sprites['fademask' + str(cat.age_sprites[cat.age] + offset)], (0, 0),
+                            special_flags=pygame.BLEND_RGBA_MULT)
+
+            if cat.df:
+                temp = sprites.sprites['fadedf' + str(cat.age_sprites[cat.age] + offset)].copy()
+                temp.blit(new_sprite, (0, 0))
+                new_sprite = temp
+            else:
+                temp = sprites.sprites['fadestarclan' + str(cat.age_sprites[cat.age] + offset)].copy()
+                temp.blit(new_sprite, (0, 0))
+                new_sprite = temp
+
+
+
+        # draw accessories
         if cat.age == 'elder' or (cat.pelt.length == 'long' and cat.age not in ['kitten', 'adolescent']):
             if cat.accessory in plant_accessories:
                 new_sprite.blit(
@@ -722,13 +763,15 @@ def update_sprite(cat):
             (0, 0)
         )
 
+
+    # Opacity currently disabled for performance reasons. Fading Fog is used as placeholder.
+    """# Apply opacity
+    if cat.opacity < 100 and not cat.prevent_fading and game.settings["fading"]:
+        new_sprite = apply_opacity(new_sprite, cat.opacity)"""
+
     # reverse, if assigned so
     if cat.reverse:
         new_sprite = pygame.transform.flip(new_sprite, True, False)
-
-    # Apply opacity
-    if cat.opacity < 100 and not cat.prevent_fading and game.settings["fading"]:
-        new_sprite = apply_opacity(new_sprite, cat.opacity)
 
     # apply
     cat.sprite = new_sprite

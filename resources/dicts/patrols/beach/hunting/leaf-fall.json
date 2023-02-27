@@ -7,6 +7,7 @@
         "fighting",
         "death",
         "scar",
+        "THREE",
         "big_bite_injury",
         "respect",
         "trust",
@@ -53,9 +54,6 @@
     "fail_skills": [
         "good fighter"
     ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 2,
     "max_cats": 3,
     "antagonize_text": null,
@@ -73,6 +71,7 @@
     "tags": [
         "fighting",
         "scar",
+        "NECKBITE",
         "big_bite_injury",
         "respect",
         "trust",
@@ -116,9 +115,6 @@
     "fail_skills": [
         "good fighter"
     ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 4,
     "max_cats": 6,
     "antagonize_text": null,
@@ -131,7 +127,7 @@
     "patrol_id": "bch_hunt_redvixen9",
     "biome": "beach",
     "season": "leaf-fall",
-    "tags": ["fighting", "death", "scar", "big_bite_injury", "shock", "injury", "respect", "trust", "clan_to_patrol", "no_body"],
+    "tags": ["fighting", "death", "scar", "THREE", "big_bite_injury", "shock", "injury", "respect", "trust", "clan_to_patrol", "no_body"],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
     "decline_text": "Your patrol decides not to pursue the fox.",
     "chance_of_success": 20,
@@ -158,9 +154,6 @@
     "fail_skills": [
         "good fighter"
     ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -181,7 +174,9 @@
         "respect",
         "trust",
         "rel_patrol",
-        "patrol_to_r_c"
+        "patrol_to_r_c",
+        "scar",
+        "NECKBITE"
     ],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
     "decline_text": "Your patrol decides not to pursue the fox.",
@@ -221,9 +216,6 @@
     "fail_skills": [
         "good fighter"
     ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 2,
     "max_cats": 3,
     "antagonize_text": null,
@@ -243,7 +235,9 @@
         "respect",
         "trust",
         "rel_patrol",
-        "patrol_to_r_c"
+        "patrol_to_r_c",
+        "scar",
+        "LEGBITE"
     ],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
     "decline_text": "Your patrol decides not to pursue the fox.",
@@ -257,7 +251,7 @@
     ],
     "fail_text": [
         "The patrol comes across a gray vixen at the end of the scent trail. She spots them too, measures herself up against them, then flees, scrambling up the cliffs of the headland in a move that completely surprises the cats. This round goes to the gray fox.",
-        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarasses them deeply the gray vixen slips past them and flees into the maze of the sand dunes.",
+        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarrasses them deeply the gray vixen slips past them and flees into the maze of the sand dunes.",
         null,
         "The patrol finds a stocky gray vixen wandering their coast, and drives her out in a scene that mostly involves yowling and screaming and yapping at each other until she gives in. r_c gets a little battered, but everyone is mostly fine.",
         null,
@@ -283,9 +277,6 @@
     "fail_skills": [
         "good fighter"
     ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 4,
     "max_cats": 6,
     "antagonize_text": null,
@@ -301,6 +292,7 @@
     "tags": [
         "fighting",
         "scar",
+        "ONE",
         "big_bite_injury",
         "respect",
         "trust",
@@ -343,9 +335,6 @@
     ],
     "fail_skills": [
         "good fighter"
-    ],
-    "fail_trait": [
-        "None"
     ],
     "min_cats": 1,
     "max_cats": 1,

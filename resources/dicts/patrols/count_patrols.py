@@ -3,6 +3,7 @@ import collections
 import os
 from os.path import exists as file_exists
 
+
 """ This script exists to count and catalogue all patrols.   """
 
 ALL_PATROLS = []
@@ -25,6 +26,13 @@ def get_patrol_details(path):
 
     if path == ".\explicit_patrol_art.json":
         return
+    if type(patrols[0]) != dict:
+        print(path, "is not in the correct patrol format. It may not be a patrol .json.")
+        return
+
+    if not patrols:
+        return
+
     if type(patrols[0]) != dict:
         print(path, "is not in the correct patrol format. It may not be a patrol .json.")
         return
@@ -108,9 +116,17 @@ def check_patrol_sprites():
 
 
 
-paths = ["disaster.json", "new_cat.json", "other_clan.json"]
+root_dir = "../patrols"
+file_set = set()
 
-for pa in paths:
+for dir_, _, files in os.walk(root_dir):
+    for file_name in files:
+        rel_dir = os.path.relpath(dir_, root_dir)
+        rel_file = os.path.join(rel_dir, file_name)
+        if os.path.splitext(rel_file)[-1].lower() == ".json":
+            file_set.add(rel_file)
+
+for pa in file_set:
     get_patrol_details(pa)
 
 # Now that we have everything gathered, lets do some checks.

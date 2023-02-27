@@ -36,7 +36,7 @@ class _SoundManager():
             except:
                 logger.exception("Failed to load sound")
 
-        self.volume = volume
+        self._volume = volume
 
     def play(self, sound):
         try:

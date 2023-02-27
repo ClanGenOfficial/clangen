@@ -5,7 +5,9 @@
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "scar",
+            "SNAKE"
         ],
         "event_text": "m_c was bitten by a snake and miraculously survived!",
         "history_text": [
@@ -64,7 +66,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c's paws slipped on some rocks and their leg was dislocated.",
+        "event_text": "m_c slipped on some rocks and their leg was dislocated.",
         "history_text": [
             null,
             null,
@@ -83,7 +85,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c's paws slipped on some rocks and they twisted their paw.",
+        "event_text": "m_c slipped on some rocks and they twisted their paw.",
         "history_text": [
             null,
             null,
@@ -351,7 +353,9 @@
             "neg_trust",
             "neg_comfort",
             "dislike",
-            "neg_platonic"
+            "neg_platonic",
+            "scar",
+            "ONE"
         ],
         "event_text": "m_c was hurt by r_c to make an example out of them.",
         "history_text": [
@@ -529,7 +533,9 @@
             "neg_trust",
             "neg_comfort",
             "dislike",
-            "neg_platonic"
+            "neg_platonic",
+            "scar",
+            "CATBITE"
         ],
         "event_text": "m_c was hurt by r_c to make an example out of them.",
         "history_text": [
