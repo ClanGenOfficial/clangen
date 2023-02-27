@@ -370,8 +370,8 @@
     ],
     "intro_text": "The trio of apprentices strolls through c_n's territory, chatting amicably amongst themselves. The senior medicine cats are all busy back at camp, so the young cats get the chance to be out on their own today, which has everyone excited!",
     "decline_text": "Before they get very far, one of their Clanmates catches up to inform them that they're wanted back at camp. Oh well, maybe they'll get the chance again another day.",
-    "chance_of_success": 25,
-    "exp": 30,
+    "chance_of_success": 30,
+    "exp": 20,
     "success_text": [
         "app1 dramatically flops over into a sunbeam, proclaiming that they need to get some sunshine before hunting for herbs. app2 purrs and flops beside them, while app3 rolls their eyes and loafs nearby. Once they've all warmed up, they renew their search with vigor, and return home content and with herbs.",
         "app1 is the first to find some herbs, and smugly waves them in the faces of app2 and app3 - after that it's a bit of a competition, with each cat trying to out-compete one other. It's great for the Clan - in the end, they come back to camp with a sizeable haul!"
@@ -402,8 +402,8 @@
     ],
     "intro_text": "The quartet of apprentices strolls through c_n's territory, chatting amicably amongst themselves. The senior medicine cats are all busy back at camp, so the young cats get the chance to be out on their own today, which has everyone excited!",
     "decline_text": "Before they get very far, one of their Clanmates catches up to inform them that they're wanted back at camp. Oh well, maybe they'll get the chance again another day.",
-    "chance_of_success": 30,
-    "exp": 30,
+    "chance_of_success": 40,
+    "exp": 20,
     "success_text": [
         "app1 dramatically flops over into a sunbeam, proclaiming that they need to get some sunshine before hunting for herbs. app2 purrs and flops beside them, while app3 rolls their eyes and loafs beside app4. Once they've all warmed up, they renew their search with vigor, and return home content and with herbs.",
         "app1 is the first to find some herbs, and smugly waves them in the faces of the other three - after that it's a bit of a competition, with each cat trying to out-compete one other. It's great for the Clan - in the end, they come back to camp with a sizeable haul!"
@@ -434,8 +434,8 @@
     ],
     "intro_text": "The quintet of apprentices strolls through c_n's territory, chatting amicably amongst themselves. The senior medicine cats are all busy back at camp, so the young cats get the chance to be out on their own today, which has everyone excited!",
     "decline_text": "Before they get very far, one of their Clanmates catches up to inform them that they're wanted back at camp. Oh well, maybe they'll get the chance again another day.",
-    "chance_of_success": 35,
-    "exp": 30,
+    "chance_of_success": 50,
+    "exp": 20,
     "success_text": [
         "app1 dramatically flops over into a sunbeam, proclaiming that they need to get some sunshine before hunting for herbs. app2 purrs and flops beside them, while app3 rolls their eyes and loafs beside the others. Once they've all warmed up, they renew their search with vigor, and return home content and with herbs.",
         "app1 is the first to find some herbs, and smugly waves them in the faces of the other four - after that it's a bit of a competition, with each cat trying to out-compete one other. It's great for the Clan - in the end, they come back to camp with a sizeable haul!"
@@ -466,8 +466,8 @@
     ],
     "intro_text": "The gaggle of apprentices strolls through c_n's territory, chatting amicably amongst themselves. The senior medicine cats are all busy back at camp, so the young cats get the chance to be out on their own today, which has everyone excited!",
     "decline_text": "Before they get very far, one of their Clanmates catches up to inform them that they're wanted back at camp. Oh well, maybe they'll get the chance again another day.",
-    "chance_of_success": 40,
-    "exp": 30,
+    "chance_of_success": 60,
+    "exp": 20,
     "success_text": [
         "app1 dramatically flops over into a sunbeam, proclaiming that they need to get some sunshine before hunting for herbs. app2 purrs and flops beside them, while app3 rolls their eyes and loafs beside the others. Once they've all warmed up, they renew their search with vigor, and return home content and with herbs.",
         "app1 is the first to find some herbs, and smugly waves them in the faces of the other five - after that it's a bit of a competition, with each cat trying to out-compete one other. It's great for the Clan - in the end, they come back to camp with a sizeable haul!"
