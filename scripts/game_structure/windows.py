@@ -176,7 +176,10 @@ class DeleteCheck(UIWindow):
                 
                 if data[-1].endswith("\n"):
                     data[-1] = data[-1][:-1] #remove the last \n
-                
+
+                # Remove from the list in memory
+                game.switches['clan_list'] = data
+
                 #write the file
                 with open("saves/clanlist.txt", "w") as clanfile:
                     clanfile.writelines(data)
