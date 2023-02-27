@@ -463,6 +463,12 @@ class SettingsScreen(Screens):
             self.settings_changed = True
             self.update_save_button()
             self.refresh_checkboxes()
+        elif event.ui_element == self.checkboxes['discord']:
+            game.switch_setting('discord')
+            self.settings_changed = True
+            self.update_save_button()
+            self.refresh_checkboxes()
+
 
     def handle_lang_events(self, event):
         if event.ui_element == self.checkboxes['english']:
@@ -640,6 +646,13 @@ class SettingsScreen(Screens):
         n += 1
         self.checkboxes_text['gore'] = pygame_gui.elements.UITextBox(
             "Allow mild gore and blood in patrol artwork",
+            scale(pygame.Rect((x_value, n * y_spacing), (1000, 78))),
+            container=self.checkboxes_text["container"],
+            object_id=get_text_box_theme("#setting_text_box"), manager=MANAGER
+        )
+        n += 1
+        self.checkboxes_text['discord'] = pygame_gui.elements.UITextBox(
+            "Enable Discord integration",
             scale(pygame.Rect((x_value, n * y_spacing), (1000, 78))),
             container=self.checkboxes_text["container"],
             object_id=get_text_box_theme("#setting_text_box"), manager=MANAGER
@@ -916,6 +929,21 @@ class SettingsScreen(Screens):
                 container=self.checkboxes_text["container"],
                 tool_tip_text="Mild gore and blood will be allowed in the artwork displayed alongside patrols."
             )
+            
+            n += 1
+            # Emable discord rpc
+            if game.settings['discord']:
+                box_type = "#checked_checkbox"
+            else:
+                box_type = "#unchecked_checkbox"
+            self.checkboxes['discord'] = UIImageButton(
+                scale(pygame.Rect((x_value, n * y_spacing), (68, 68))),
+                "",
+                object_id=box_type,
+                container=self.checkboxes_text["container"],
+                tool_tip_text="Discord will show info about your clan."
+            )
+
 
 
         # CHECKBOXES FOR RELATION SETTINGS #################################################################
