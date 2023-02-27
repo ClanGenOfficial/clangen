@@ -1547,7 +1547,7 @@ class Patrol():
                 if not large_amount:
                     amount_gotten = choices([1, 2, 3], [2, 3, 1], k=1)[0]
                 else:
-                    amount_gotten = 4
+                    amount_gotten = large_amount
 
                 # Apply patrol size modifier
                 amount_gotten = int(amount_gotten * patrol_size_modifier)
@@ -1566,7 +1566,7 @@ class Patrol():
                     if not large_amount:
                         amount_gotten = choices([1, 2, 3], [2, 3, 1], k=1)[0]
                     else:
-                        amount_gotten = 4
+                        amount_gotten = large_amount
 
                     # Apply patrol size modifier
                     amount_gotten = int(amount_gotten * patrol_size_modifier)
