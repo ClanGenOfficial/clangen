@@ -221,12 +221,12 @@ class Sprites():
                                f'collarsextra{i}',
                                sprites_y=2)
         for a, i in enumerate(
-                ["GREENBOW", "RAINBOWBOW", "BLACKBOW", "SPIKESBOW"]):
+                ["GREENBOW", "RAINBOWBOW", "BLACKBOW", "SPIKESBOW", "WHITEBOW"]):
             sprites.make_group('bowcollars', (a, 1), f'collars{i}')
             sprites.make_group('bowcollarsextra', (a, 1),
                                f'collarsextra{i}',
                                sprites_y=2)
-        for a, i in enumerate(["PINKBOW", "PURPLEBOW", "MULTIBOW"]):
+        for a, i in enumerate(["PINKBOW", "PURPLEBOW", "MULTIBOW", "INDIGOBOW"]):
             sprites.make_group('bowcollars', (a, 2), f'collars{i}')
             sprites.make_group('bowcollarsextra', (a, 2),
                                f'collarsextra{i}',
@@ -260,7 +260,7 @@ for x in [
     'whitepatches', 'eyes', 'singleextra', 'tabbyextra', 'eyes2',
     'speckledextra', 'whiteextra', 'eyesextra', 'eyes2extra', 'skin',
     'skinextra', 'scars', 'scarsextra', 'whitenewextra', 'whitepatchesnew',
-    'scarsdark', 'scarsdarkextra', 'collars', 'collarsextra',
+    'scarsdark', 'scarsdarkextra', 'collars', 'collarsextra', 'nyloncollars', 'nyloncollarsextra',
     'bellcollars', 'bellcollarsextra', 'bowcollars', 'bowcollarsextra',
     'speckledcolours2', 'speckledextra2', 'tabbycolours2', 'tabbyextra2',
     'rosettecolours', 'rosetteextra', 'smokecolours', 'smokeextra', 'tickedcolours', 'tickedextra',
