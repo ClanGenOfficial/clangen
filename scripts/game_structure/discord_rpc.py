@@ -31,6 +31,8 @@ class _DiscordRPC():
         self.start_time = round(time()*1000)
         self.rpc_supported = False
         # Check if pypresence is available.
+        if not game.settings["discord"]:
+            return
         try:
             # raise ImportError # uncomment this line to disable rpc without uninstalling pypresence
             from pypresence import Presence, DiscordNotFound
