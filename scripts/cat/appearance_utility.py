@@ -567,7 +567,7 @@ def init_pattern(cat):
                 # Normal generation
                 if cat.tortiebase in ["singlestripe", "smoke", "single"]:
                     cat.tortiepattern = choice(['tabby', 'mackerel', 'classic', 'single', 'smoke', 'agouti',
-                                                'ticked', 'smoke'])
+                                                'ticked'])
                 else:
                     cat.tortiepattern = random.choices([cat.tortiebase, 'single'], weights=[97, 3], k=1)[0]
 
