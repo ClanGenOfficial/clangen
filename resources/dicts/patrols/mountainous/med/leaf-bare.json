@@ -19,8 +19,7 @@
         "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
     ],
     "win_skills": ["good mediator", "great mediator", "excellent mediator"],
-    "win_trait": null,
-    "fail_skills": null,
+
     "fail_trait": ["troublesome", "childish"],
     "min_cats": 2,
     "max_cats": 6,
@@ -46,8 +45,7 @@
         "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
     ],
     "win_skills": ["good mediator", "great mediator", "excellent mediator"],
-    "win_trait": null,
-    "fail_skills": null,
+
     "fail_trait": ["troublesome", "childish"],
     "min_cats": 2,
     "max_cats": 6,
@@ -75,9 +73,7 @@
             "r_c edges out onto a slippery frozen rock, trying to get nearer a branch of blackberry leaves that are still green, but they overbalence and fall into a deep snowbank, emerging shivering."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -107,9 +103,7 @@
             "r_c edges out onto a slippery frozen rock, trying to get nearer a branch of blackberry leaves that are still green, but they overbalence and fall into a deep snowbank, emerging shivering."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -139,9 +133,7 @@
             "r_c edges out onto a slippery frozen rock, trying to get nearer a branch of blackberry leaves that are still green, but they overbalence and fall into a deep snowbank, emerging shivering."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -171,9 +163,7 @@
             "r_c digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. The cold had leeched all the heat from their pelt, and they arrive back at camp miserable."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -203,9 +193,7 @@
             "r_c digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. The cold had leeched all the heat from their pelt, and they arrive back at camp miserable."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -224,7 +212,7 @@
     "chance_of_success": 20,
     "exp": 10,
     "success_text": [
-            "p_l's pawpads are nearly frozen, trying to dig up burdock in the cold, but somehow they manage it, and it's worth all the effort and misery to know how crucial these fresh herbs could be for the Clan. Their Clanmates purr at the sight of the dirty roots.",
+            "p_l's paw-pads nearly freeze from trying to dig up burdock in the cold, but somehow they manage it. It's worth all the effort and misery since they know how crucial these fresh herbs could be for the Clan, their Clanmates purring at the sight of the dirty roots.",
            "It's very difficult, especially with the plant's leafy top-half for the season, but p_l somehow manages to find a burdock plant and bring its roots home. Laying the thin roots out in a neat pile in the herb stores makes p_l thrum with a contented purr, and their Clanmates smile, appreciating their hard-working medicine cat.",
             "s_c remembers exactly where the burdock plant grew in greenleaf, even if it's buried under snow now. After all, s_c is after the roots, and those are still perfectly harvestable in leaf-bare."
     ],
@@ -235,9 +223,7 @@
             "r_c digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. The cold had leeched all the heat from their pelt, and they arrive back at camp miserable."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -264,9 +250,7 @@
             "Frustratingly, some herbivore has come through and feasted on the daisies p_l targets. The plants will recover, but these half-chewed on leaves are useless to c_n."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -290,9 +274,7 @@
             "Frustratingly, some herbivore has come through and feasted on the daisies p_l targets. The plants will recover, but these half-chewed on leaves are useless to c_n. They avoid snapping at app1, who seems unable to identify the common herb, but it's a near thing."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -316,9 +298,7 @@
             "With the warriors more interested in hunting whatever has been snacking on the daisies than helping p_l find any more plants, it's a frustrating and unproductive afternoon."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -345,9 +325,7 @@
             "Not only does r_c end up soaked to the skin, and they can't even find any daisies under the snow, but they're also shivering violently by the time they return to camp."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -377,9 +355,7 @@
             "Not only does r_c end up soaked to the skin, and they can't even find any daisies under the snow, but they're also shivering violently by the time they return to camp."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -409,9 +385,7 @@
             "Not only does r_c end up soaked to the skin, and they can't even find any daisies under the snow, but they're also shivering violently by the time they return to camp."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -441,9 +415,7 @@
             "Not only does r_c end up soaked to the skin, and they can't even find any dandelions under the snow, but they're also shivering violently by the time they return to camp."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -473,9 +445,7 @@
             "Not only does r_c end up soaked to the skin, and they can't even find any dandelions under the snow, but they're also shivering violently by the time they return to camp."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -505,9 +475,7 @@
             "Not only does r_c end up soaked to the skin, and they can't even find any dandelions under the snow, but they're also shivering violently by the time they return to camp."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -527,7 +495,7 @@
     "exp": 10,
     "success_text": [
             "At least they don't have to dig through the snow for these leaves, p_l sighs, slowly and carefully snipping off juniper among the tree's branches.",
-            "Sometimes p_l finds themselves need giddy with gratefulness for evergreens, plants that scoff at leaf-bare and grow to spite it. It's not an effect of the plant - juniper calms, not induces euphoria. This is just the relief of still having a fresh herb source in leaf-bare.",
+            "Sometimes p_l finds themselves near giddy with gratefulness for evergreens, plants that scoff at leaf-bare and grow to spite it. It's not an effect of the plant - juniper calms, not induces euphoria. This is just the relief of still having a fresh herb source in leaf-bare.",
             "Something its not finding plants to harvest that is the problem, it's finding plants to safely harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without needing to risk themselves climbing in leaf-bare."
 ],
     "fail_text": [
@@ -537,9 +505,7 @@
             "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -559,7 +525,7 @@
     "exp": 40,
     "success_text": [
             "At least they don't have to dig through the snow for these leaves, p_l sighs, slowly and carefully snipping off juniper among the tree's branches. app1 is very hesitant to join them up there, but eventually overcomes their fear to leaf gather on a lower branch. Very carefully.",
-            "Sometimes p_l finds themselves need giddy with gratefulness for evergreens, plants that scoff at leaf-bare and grow to spite it. It's not an effect of the plant - juniper calms, not induces euphoria. This is just the relief of still having a fresh herb source in leaf-bare, and app1 giving them a weird look as p_l has to explain their smiles.",
+            "Sometimes p_l finds themselves near giddy with gratefulness for evergreens, plants that scoff at leaf-bare and grow to spite it. It's not an effect of the plant - juniper calms, not induces euphoria. This is just the relief of still having a fresh herb source in leaf-bare, and app1 giving them a weird look as p_l has to explain their smiles.",
             "Something its not finding plants to harvest that is the problem, it's finding plants to safely harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without with s_c or app1 needing to risk themselves climbing in leaf-bare."
 ],
     "fail_text": [
@@ -569,9 +535,7 @@
             "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -591,7 +555,7 @@
     "exp": 10,
     "success_text": [
             "At least they don't have to dig through the snow for these leaves, p_l sighs, slowly and carefully snipping off juniper among the tree's branches. The patrol joins them, tense and focused, and it's an exhausted group that returns back to camp as the sun dips toward the horizon. Exhausted - but successful.",
-            "Sometimes p_l finds themselves need giddy with gratefulness for evergreens, plants that scoff at leaf-bare and grow to spite it. It's not an effect of the plant - juniper calms, not induces euphoria. This is just the relief of still having a fresh herb source in leaf-bare, and the warmth of having their Clanmates there to help them gather it.",
+            "Sometimes p_l finds themselves near giddy with gratefulness for evergreens, plants that scoff at leaf-bare and grow to spite it. It's not an effect of the plant - juniper calms, not induces euphoria. This is just the relief of still having a fresh herb source in leaf-bare, and the warmth of having their Clanmates there to help them gather it.",
             "Something its not finding plants to harvest that is the problem, it's finding plants to safely harvest. s_c finds a juniper tree on a slope, with easily accessible lower branches to harvest from without any cat needing to risk themselves climbing in leaf-bare."
     ],
     "fail_text": [
@@ -601,9 +565,7 @@
             "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -633,9 +595,7 @@
             "When the failed patrol arrives back at camp, r_c is shivering with the cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was neither productive nor sensible."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -665,9 +625,7 @@
             "When the failed patrol arrives back at camp, r_c is shivering with the cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was neither productive nor sensible."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -697,9 +655,7 @@
             "When the failed patrol arrives back at camp, r_c is shivering with the cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was neither productive nor sensible."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,

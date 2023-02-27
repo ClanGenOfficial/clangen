@@ -13,7 +13,7 @@ from scripts.event_class import Single_Event
 
 
 # ---------------------------------------------------------------------------- #
-#                               Death Event Class                              #
+#                               New Cat Event Class                              #
 # ---------------------------------------------------------------------------- #
 
 class NewCatEvents:
@@ -31,11 +31,11 @@ class NewCatEvents:
         This function handles the new cats
         """
         other_clan = random.choice(game.clan.all_clans)
-        other_clan_name = f'{str(other_clan.name)}Clan'
+        other_clan_name = f'{other_clan.name}Clan'
 
         if other_clan_name == 'None':
             other_clan = game.clan.all_clans[0]
-            other_clan_name = f'{str(other_clan.name)}Clan'
+            other_clan_name = f'{other_clan.name}Clan'
 
         possible_events = self.generate_events.possible_events(cat.status, cat.age, "new_cat")
         final_events = self.generate_events.filter_possible_events(possible_events, cat, other_cat, war, enemy_clan,
@@ -281,6 +281,7 @@ class NewCatEvents:
                     born_with = False
                     if PERMANENT[chosen_condition]['congenital'] in ['always', 'sometimes']:
                         born_with = True
+
                     new_cat.get_permanent_condition(chosen_condition, born_with)
 
                     # assign scars

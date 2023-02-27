@@ -22,7 +22,7 @@ from scripts.cat.names import names
 from scripts.cat.cats import Cat, cat_class, ILLNESSES, INJURIES, PERMANENT
 from scripts.cat.pelts import collars, scars1, scars2, scars3
 from scripts.cat_relations.relationship import Relationship
-from scripts.clan_resources.freshkill import PREY_REQUIREMENT, HUNTER_EXP_BONUS, HUNTER_BONUS
+from scripts.clan_resources.freshkill import ADDITIONAL_PREY, PREY_REQUIREMENT, HUNTER_EXP_BONUS, HUNTER_BONUS, FRESHKILL_ACTIVE
 from scripts.clan import Clan
 
 # ---------------------------------------------------------------------------- #
@@ -108,6 +108,11 @@ class Patrol():
         # sets medcat as leader if they're in the patrol
         if "medicine cat" in self.patrol_statuses:
             med_index = self.patrol_statuses.index("medicine cat")
+            self.patrol_leader = self.patrol_cats[med_index]
+        # If there is no medicine cat, but there is a medicine cat apprentice, set them as the patrol leader.
+        # This prevents warrior from being treated as medicine cats in medicine cat patrols.
+        elif "medicine cat apprentice" in self.patrol_statuses:
+            med_index = self.patrol_statuses.index("medicine cat apprentice")
             self.patrol_leader = self.patrol_cats[med_index]
         # sets leader as patrol leader
         elif clan.leader and clan.leader in self.patrol_cats:
@@ -265,6 +270,8 @@ class Patrol():
                 possible_patrols.extend(self.generate_patrol_events(self.OTHER_CLAN_HOSTILE))
 
         final_patrols, final_romance_patrols = self.filter_patrols(possible_patrols, biome, patrol_size, current_season, patrol_type)
+        if patrol_type == 'hunting':
+            final_patrols = self.balance_hunting(final_patrols)
         final_patrols = self.filter_relationship(final_patrols)
         final_romance_patrols = self.filter_relationship(final_romance_patrols)
 
@@ -304,6 +311,17 @@ class Patrol():
             if "apprentice" in patrol.tags:
                 if "apprentice" not in self.patrol_statuses and "medicine cat apprentice" not in self.patrol_statuses:
                     continue
+                # If there is only a medicine cat apprentice in the patrol without a full medicine cat and
+                # the number of cats is greater than one, remove all
+                # the patrols that assume as apprentice is present, resulting in treating the med apprentice like a
+                # full medicine cat for the patrol.
+                # This is not ideal, since it also means patrols with warrior apprentices may not work correctly
+                # This also means patrols the are written for both a medicine cat apprentice and a warrior
+                # apprentice will only show up if there is also a full medicine cat in the patrol.
+                # TODO: Write patrols for med cat apprentices + warriors.
+                if "medicine cat apprentice" in self.patrol_statuses and "medicine cat" not in self.patrol_statuses:
+                    if len(self.patrol_cats) > 1:
+                        continue
 
             # makes sure that the deputy is present if the deputy tag is
             if "deputy" in patrol.tags:
@@ -397,6 +415,83 @@ class Patrol():
                     if not self.patrol_random_cat.is_potential_mate(self.patrol_leader, for_patrol=True):
                         continue'''
         return filtered_patrols, romantic_patrols
+
+    def balance_hunting(self, possible_patrols: list):
+        """Filter the incoming hunting patrol list to balance the different kinds of hunting patrols.
+        With this filtering, there should be more prey possible patrols.
+
+            Parameters
+            ----------
+            possible_patrols : list
+                list of patrols which should be filtered
+
+            Returns
+            ----------
+            filtered_patrols : list
+                list of patrols which is filtered
+        """
+        filtered_patrols = []
+
+        # get first what kind of hunting type which will be chosen
+        patrol_type = ["fighting", "injury", "prey", "prey", "more_prey", "less_prey", "all"]
+        needed_tags = []
+        not_allowed_tag = None
+        chosen_tag = choice(patrol_type)
+        # add different tags which should be in the patrol
+        if chosen_tag == "all":
+            return possible_patrols
+        if chosen_tag == "fighting":
+            needed_tags.append("fighting")
+            needed_tags.append("death")
+        elif chosen_tag == "injury":
+            needed_tags.append("injury")
+            needed_tags.append("blunt_force_injury")
+            needed_tags.append("big_bite_injury")
+            needed_tags.append("small_bite_injury")
+            needed_tags.append("minor_injury")
+            needed_tags.append("cold_injury")
+            needed_tags.append("hot_injury")
+        elif chosen_tag in ["less_prey", "prey"]:
+            if chosen_tag == "prey": 
+                not_allowed_tag = "death"
+            prey_types = ["small_prey", "medium_prey", "large_prey", "huge_prey"]
+            for prey_type in prey_types:
+                if chosen_tag == "less_prey" and prey_type in ["large_prey", "huge_prey"]:
+                    continue
+                needed_tags.append(f"{prey_type}")
+                if prey_type != "small_prey":
+                    needed_tags.append(f"{prey_type}0")
+                    needed_tags.append(f"{prey_type}1")
+                    needed_tags.append(f"{prey_type}2")
+                    needed_tags.append(f"{prey_type}3")
+        elif chosen_tag == "more_prey":
+            not_allowed_tag = "death"
+            needed_tags.append("large_prey")
+            needed_tags.append("huge_prey")
+            needed_tags.append("huge_prey0")
+            needed_tags.append("huge_prey1")
+            needed_tags.append("huge_prey2")
+            needed_tags.append("huge_prey3")
+
+        # filter all possible patrol depending on the needed tags
+        # one of the mentioned tags should be in the patrol tag
+        for patrol in possible_patrols:
+            for tag in needed_tags:
+                if tag in patrol.tags:
+                    # if there is a tag set, check if this tag is not in the current patrol
+                    if not_allowed_tag and not_allowed_tag not in patrol.tags:
+                        filtered_patrols.append(patrol)
+                        break
+                    # when there is no tag set, add the patrol
+                    elif not not_allowed_tag:
+                        filtered_patrols.append(patrol)
+                        break
+        
+        # if the filtering results in an empty list, don't filter and return whole possible patrols
+        if len(filtered_patrols) <= 0:
+            print("WARNING: filtering to balance out the hunting, didn't work.")
+            filtered_patrols = possible_patrols
+        return filtered_patrols
 
     def filter_relationship(self, possible_patrols: list):
         """Filter the incoming patrol list according to the relationship constraints, if there are constraints.
@@ -569,8 +664,8 @@ class Patrol():
                 win_trait=patrol["win_trait"] if "win_trait" in patrol else [],
                 fail_skills=patrol["fail_skills"] if "fail_skills" in patrol else [],
                 fail_trait=patrol["fail_trait"] if "fail_trait" in patrol else [],
-                antagonize_text=patrol["antagonize_text"],
-                antagonize_fail_text=patrol["antagonize_fail_text"],
+                antagonize_text=patrol["antagonize_text"] if "antagonize_text" in patrol else None,
+                antagonize_fail_text=patrol["antagonize_fail_text"] if "antagonize_fail_text" in patrol else None,
                 history_text=patrol["history_text"] if "history_text" in patrol else [],
                 relationship_constraint=patrol["relationship_constraint"] if "relationship_constraint" in patrol else []
             )
@@ -582,6 +677,7 @@ class Patrol():
     def calculate_success(self, antagonize=False):
         if self.patrol_event is None:
             return
+
         antagonize = antagonize
         success_text = self.patrol_event.success_text
         fail_text = self.patrol_event.fail_text
@@ -593,15 +689,25 @@ class Patrol():
         success_chance = self.patrol_event.chance_of_success + int(
             self.patrol_total_experience / (2 * gm_modifier))
 
-        if self.patrol_win_stat_cat:
-            success_chance = success_chance + game.config["patrol_generation"]["win_stat_cat_modifier"]
-            if ("great" or "very") in self.patrol_win_stat_cat.skill:
-                success_chance = success_chance + game.config["patrol_generation"]["better_stat_modifier"]
-            elif ("fantastic" or "excellent" or "extremely") in self.patrol_win_stat_cat.skill:
-                success_chance = success_chance + game.config["patrol_generation"]["best_stat_modifier"]
+        print('starting chance:', self.patrol_event.chance_of_success)
+        print('updated chance according to exp: ', success_chance)
+        for kitty in self.patrol_cats:
+            if kitty.skill in self.patrol_event.win_skills:
+                success_chance += game.config["patrol_generation"]["win_stat_cat_modifier"]
+                if ("great" or "very") in kitty.skill:
+                    success_chance += game.config["patrol_generation"]["better_stat_modifier"]
+                elif ("fantastic" or "excellent" or "extremely") in kitty.skill:
+                    success_chance += game.config["patrol_generation"]["best_stat_modifier"]
+            if kitty.trait in self.patrol_event.win_trait:
+                success_chance += game.config["patrol_generation"]["win_stat_cat_modifier"]
+            if kitty.skill in self.patrol_event.fail_skills:
+                success_chance += game.config["patrol_generation"]["fail_stat_cat_modifier"]
+            if kitty.trait in self.patrol_event.fail_trait:
+                success_chance += game.config["patrol_generation"]["fail_stat_cat_modifier"]
 
-        if self.patrol_fail_stat_cat:
-            success_chance = success_chance + game.config["patrol_generation"]["fail_stat_cat_modifier"]
+            print(kitty.name, 'updated chance to', success_chance)
+        print('ending chance', success_chance)
+
 
         c = randint(0, 100)
         outcome = int(random.getrandbits(4))
@@ -653,9 +759,9 @@ class Patrol():
             if self.patrol_event.tags is not None:
                 if "other_clan" in self.patrol_event.tags:
                     if antagonize:
-                        self.handle_clan_relations(difference=int(-2), antagonize=True)
+                        self.handle_clan_relations(difference=int(-2), antagonize=True, outcome=outcome)
                     else:
-                        self.handle_clan_relations(difference=int(1), antagonize=False)
+                        self.handle_clan_relations(difference=int(1), antagonize=False, outcome=outcome)
                 elif "new_cat" in self.patrol_event.tags:
                     if antagonize:
                         self.handle_reputation(-10)
@@ -746,9 +852,9 @@ class Patrol():
             if self.patrol_event.tags is not None:
                 if "other_clan" in self.patrol_event.tags:
                     if antagonize:
-                        self.handle_clan_relations(difference=int(-1), antagonize=True)
+                        self.handle_clan_relations(difference=int(-1), antagonize=True, outcome=outcome)
                     else:
-                        self.handle_clan_relations(difference=int(-1), antagonize=False)
+                        self.handle_clan_relations(difference=int(-1), antagonize=False, outcome=outcome)
                 elif "new_cat" in self.patrol_event.tags:
                     if antagonize:
                         self.handle_reputation(-5)
@@ -1325,7 +1431,11 @@ class Patrol():
 
         # get the cat to injure
         if outcome == 3:
-            cat = self.patrol_random_cat
+            if "apprentice" in patrol.patrol_event.tags:
+                cat = self.patrol_apprentices[0]
+            else:
+                cat = self.patrol_random_cat
+
         elif outcome == 5:
             cat = self.patrol_fail_stat_cat
 
@@ -1418,47 +1528,56 @@ class Patrol():
         herbs_gotten = []
         no_herbs_tags = ["no_herbs0", "no_herbs1", "no_herbs2", "no_herbs3"]
         many_herbs_tags = ["many_herbs0", "many_herbs1", "many_herbs2", "many_herbs3"]
+        patrol_size_modifier = int(len(self.patrol_cats) * .5)
 
         for x in range(len(no_herbs_tags)):
             if f"no_herbs{x}" in patrol.patrol_event.tags and outcome == x:
                 return
 
+        large_amount = None
         for x in range(len(many_herbs_tags)):
-            large_amount = None
             if f"many_herbs{x}" in patrol.patrol_event.tags and outcome == x:
-                large_amount = 5
+                large_amount = 4
 
         if "random_herbs" in patrol.patrol_event.tags:
-            number_of_herb_types = choices([1, 2, 3], [5, 3, 1], k=1)
-            herbs_picked = choices(HERBS, k=number_of_herb_types[0])
+            number_of_herb_types = choices([1, 2, 3], [6, 5, 1], k=1)
+            herbs_picked = random.sample(HERBS, k=number_of_herb_types[0])
             for herb in herbs_picked:
                 herbs_gotten.append(str(herb).replace('_', ' '))
                 if not large_amount:
-                    amount_gotten = choices([1, 2, 3], [1, 3, 2], k=1)
-                    if herb in game.clan.herbs.keys():
-                        game.clan.herbs[herb] += amount_gotten[0] * len(patrol.patrol_cats)
-                    else:
-                        game.clan.herbs.update({herb: amount_gotten[0] * len(patrol.patrol_cats)})
+                    amount_gotten = choices([1, 2, 3], [2, 3, 1], k=1)[0]
                 else:
-                    if herb in game.clan.herbs.keys():
-                        game.clan.herbs[herb] += large_amount * len(patrol.patrol_cats)
-                    else:
-                        game.clan.herbs.update({herb: large_amount})
+                    amount_gotten = large_amount
+
+                # Apply patrol size modifier
+                amount_gotten = int(amount_gotten * patrol_size_modifier)
+                if amount_gotten < 1:
+                    amount_gotten = 1
+
+                if herb in game.clan.herbs.keys():
+                    game.clan.herbs[herb] += amount_gotten
+                else:
+                    game.clan.herbs.update({herb: amount_gotten})
+
         elif "herb" in patrol.patrol_event.tags:
             for tag in patrol.patrol_event.tags:
                 if tag in HERBS:
                     herbs_gotten.append(str(tag).replace('_', ' '))
                     if not large_amount:
-                        amount_gotten = choices([1, 2, 3], [1, 3, 2], k=1)
-                        if tag in game.clan.herbs.keys():
-                            game.clan.herbs[tag] += amount_gotten[0] * len(patrol.patrol_cats)
-                        else:
-                            game.clan.herbs.update({tag: amount_gotten[0] * len(patrol.patrol_cats)})
+                        amount_gotten = choices([1, 2, 3], [2, 3, 1], k=1)[0]
                     else:
-                        if tag in game.clan.herbs.keys():
-                            game.clan.herbs[tag] += large_amount * len(patrol.patrol_cats)
-                        else:
-                            game.clan.herbs.update({tag: large_amount * len(patrol.patrol_cats)})
+                        amount_gotten = large_amount
+
+                    # Apply patrol size modifier
+                    amount_gotten = int(amount_gotten * patrol_size_modifier)
+                    if amount_gotten < 1:
+                        amount_gotten = 1
+
+                    if tag in game.clan.herbs.keys():
+                        game.clan.herbs[tag] += amount_gotten
+                    else:
+                        game.clan.herbs.update({tag: amount_gotten})
+
         if herbs_gotten:
             if len(herbs_gotten) == 1 and herbs_gotten[0] != 'cobwebs':
                 insert = f"{herbs_gotten[0]} was"
@@ -1476,11 +1595,20 @@ class Patrol():
 
     def handle_prey(self, outcome_nr):
         """Handle the amount of prey which was caught and add it to the fresh-kill pile of the clan."""
+        if not "hunting" in patrol.patrol_event.tags:
+            return
+
+        if not FRESHKILL_ACTIVE:
+            return
+
+        basic_amount = PREY_REQUIREMENT["warrior"]
+        if game.clan.game_mode == 'expanded':
+            basic_amount += ADDITIONAL_PREY
         prey_types = {
-            "small_prey": PREY_REQUIREMENT["warrior"],
-            "medium_prey": PREY_REQUIREMENT["warrior"] * 2,
-            "large_prey": PREY_REQUIREMENT["warrior"] * 3,
-            "huge_prey": PREY_REQUIREMENT["warrior"] * 4
+            "small_prey" : basic_amount , 
+            "medium_prey" : basic_amount*2, 
+            "large_prey" : basic_amount*3, 
+            "huge_prey" : basic_amount*4
         }
 
         if not self.success and "hunting" in patrol.patrol_event.tags:
@@ -1488,9 +1616,19 @@ class Patrol():
                            "cruel_season", "gone", "multi_gone", "disaster_gone"]
             relevant_patrol_tags = [tag for tag in patrol.patrol_event.tags if tag in cancel_tags]
             if len(relevant_patrol_tags) == 0:
-                amount = int(PREY_REQUIREMENT["warrior"] * len(self.patrol_cats) / 2)
+                amount = int(PREY_REQUIREMENT["warrior"] * len(self.patrol_cats) / 1.5)
+                if "fantastic hunter" in self.patrol_skills:
+                    amount = int(amount * (HUNTER_BONUS["fantastic hunter"] / 10 + 1))
+                elif "great hunter" in self.patrol_skills:
+                    amount = int(amount * (HUNTER_BONUS["great hunter"] / 10 + 1))
+                elif "good hunter" in self.patrol_skills:
+                    amount = int(amount * (HUNTER_BONUS["good hunter"] / 10 + 1))
+                print(f" -- FRESHKILL: added {amount} fail-prey")
                 game.clan.freshkill_pile.add_freshkill(amount)
-                self.results_text.append(f"The patrol still manages to catch some amount of prey.")
+                if len(patrol.patrol_cats) == 1:
+                    self.results_text.append(f"{self.patrol_leader_name} still manages to bring home some amount of prey.")
+                else:
+                    self.results_text.append(f"The patrol still manages to bring home some amount of prey.")
             return
 
         prey_amount_per_cat = 0
@@ -1509,24 +1647,27 @@ class Patrol():
 
         for cat in self.patrol_cats:
             total_amount += prey_amount_per_cat
-            # add bonus of certain traits
-            if cat.trait in Cat.skill_groups["hunt"]:
-                total_amount += HUNTER_EXP_BONUS[cat.experience_level] * HUNTER_BONUS[cat.trait]
+            # add bonus of certain skills
+            if cat.skill in Cat.skill_groups["hunt"]:
+                total_amount += HUNTER_EXP_BONUS[cat.experience_level] * HUNTER_BONUS[cat.skill]
 
-        # add additional bonus of certain traits
-        if "fantastic_hunter" in self.patrol_skills:
-            total_amount = total_amount * (HUNTER_BONUS["fantastic_hunter"] / 10)
-        elif "great_hunter" in self.patrol_skills:
-            total_amount = total_amount * (HUNTER_BONUS["great_hunter"] / 10)
-        elif "good_hunter" in self.patrol_skills:
-            total_amount = total_amount * (HUNTER_BONUS["good_hunter"] / 10)
+        # add additional bonus of certain skills
+        if "fantastic hunter" in self.patrol_skills:
+            total_amount = int(total_amount * (HUNTER_BONUS["fantastic hunter"] / 10 + 1))
+        elif "great hunter" in self.patrol_skills:
+            total_amount = int(total_amount * (HUNTER_BONUS["great hunter"] / 10 + 1))
+        elif "good hunter" in self.patrol_skills:
+            total_amount = int(total_amount * (HUNTER_BONUS["good hunter"] / 10 + 1))
 
         if game.clan.game_mode != "classic":
             game.clan.freshkill_pile.add_freshkill(total_amount)
             if total_amount > 0:
-                self.results_text.append(f"Each cat catches a {prey_size} amount of prey.")
+                if len(patrol.patrol_cats) == 1:
+                    self.results_text.append(f"{patrol.patrol_leader_name} brings back a {prey_size} amount of prey.")
+                else:
+                    self.results_text.append(f"Each cat brings back a {prey_size} amount of prey.")
 
-    def handle_clan_relations(self, difference, antagonize):
+    def handle_clan_relations(self, difference, antagonize, outcome):
         """
         relations with other clans
         """
@@ -1538,13 +1679,17 @@ class Patrol():
                 difference = 0
             elif "otherclan_antag_nochangefail" in self.patrol_event.tags and antagonize and not self.success:
                 difference = 0
-            change_clan_relations(other_clan, difference)
-            if difference > 0 and self.patrol_event.patrol_id != "gen_bord_otherclan3":
+
+            if f"success_reldown{outcome}" in self.patrol_event.tags:
+                difference = -1
+                insert = "worsened"
+            elif difference > 0 and self.patrol_event.patrol_id != "gen_bord_otherclan3":
                 insert = "improved"
             elif difference == 0:
                 insert = "remained neutral"
             else:
                 insert = "worsened"
+            change_clan_relations(other_clan, difference)
             self.results_text.append(f"Relations with {other_clan} have {insert}.")
 
     def handle_mentor_app_pairing(self):

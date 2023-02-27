@@ -31,7 +31,7 @@ sys.excepthook = log_crash
 from scripts.game_structure.load_cat import load_cats
 from scripts.game_structure.windows import SaveCheck
 from scripts.game_structure.game_essentials import game, MANAGER, screen
-from scripts.game_structure.discord_rpc import _DiscordRPC
+# from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.cat.sprites import sprites
 from scripts.clan import clan_class
 from scripts.utility import get_text_box_theme
@@ -87,7 +87,7 @@ else:
         VERSION_NUMBER = subprocess.check_output(['git', 'rev-parse', 'HEAD']).decode('ascii').strip()
     except:
         print("Failed to get git commit hash, using hardcoded version number instead.")
-        print("Hey testers! We reccomend you use git to clone the repository, as it makes things easier for everyone.")
+        print("Hey testers! We recommend you use git to clone the repository, as it makes things easier for everyone.")
         print("There are instructions at https://discord.com/channels/1003759225522110524/1054942461178421289/1078170877117616169")
 print("Running on commit " + VERSION_NUMBER)
 
@@ -106,7 +106,7 @@ else:
     version_number.set_position((800 - version_number.get_relative_rect()[2] - 8, 700 - version_number.get_relative_rect()[3]))
 
 
-game.rpc = _DiscordRPC("1076277970060185701")
+# game.rpc = _DiscordRPC("1076277970060185701")
 while True:
     time_delta = clock.tick(30) / 1000.0
     if game.switches['cur_screen'] not in ['start screen']:
@@ -125,15 +125,13 @@ while True:
 
         if event.type == pygame.QUIT:
             # Dont display if on the start screen
-            if game.switches['cur_screen'] in ['start screen']:
+            if game.switches['cur_screen'] in ['start screen', 'switch clan screen', 'settings screen', 'info screen']:
                 game.rpc.close()
                 pygame.display.quit()
                 pygame.quit()
                 sys.exit()
-            elif not game.is_closing:
-                game.is_closing = True
-                # Display "Would you like to save before......."
-                SaveCheck(game.switches['cur_screen'], False)
+            else:
+                SaveCheck(game.switches['cur_screen'], False, None)
 
 
         # MOUSE CLICK

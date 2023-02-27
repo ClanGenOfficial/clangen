@@ -251,14 +251,14 @@
             "r_c catches the rabbit, but later they and the cats who eat it become violently ill."
         ],
         "decline_text": "r_c avoids catching the rabbit and looks for other prey.",
-        "chance_of_success": 40,
+        "chance_of_success": 30,
         "exp": 10,
         "win_skills": [
             "smart",
             "very smart",
             "extremely smart"
         ],
-        "min_cats": 1,
+        "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null

@@ -642,16 +642,29 @@ class Cat():
         if self.status in ['leader', 'deputy']:
             self.status_change('warrior')
             self.status = 'warrior'
-        elif (self.status == 'apprentice' or self.status == 'kitten') and self.moons >= 12:
+        elif self.status == 'apprentice' and self.moons >= 12:
+            self.status_change('warrior')
+            involved_cats = [self.ID]
+            game.cur_events_list.append(Single_Event('A long overdue warrior ceremony is held for ' + str(self.name.prefix) + 'paw. They smile as they finally become a warrior of the Clan and are now named ' + str(self.name) + '.', "ceremony", involved_cats))
+        elif self.status == 'kitten' and self.moons >= 12:
             self.status_change('warrior')
             involved_cats = [self]
-            game.cur_events_list.append(Single_Event('A long overdue warrior ceremony is held for ' + str(self.name.prefix) + 'paw. They smile as they finally become a warrior of the Clan and are now named ' + str(self.name) + '.', "ceremony", involved_cats))
+            game.cur_events_list.append(Single_Event('A long overdue warrior ceremony is held for ' + str(self.name.prefix) + 'kit. They smile as they finally become a warrior of the Clan and are now named ' + str(self.name) + '.', "ceremony", involved_cats))
         elif self.status == 'kitten' and self.moons >= 6:
             self.status_change('apprentice')
-            involved_cats = [self]
+            involved_cats = [self.ID]
             game.cur_events_list.append(Single_Event('A long overdue apprentice ceremony is held for ' + str(self.name.prefix) + 'kit. They smile as they finally become a warrior of the Clan and are now named ' + str(self.name) + '.', "ceremony", involved_cats))
-        self.update_mentor()
+        elif self.status in ['kittypet', 'loner', 'rogue']:
+            if self.moons < 6:
+                self.status = "kitten"
+            elif self.moons < 12:
+                self.status_change('apprentice')
+            elif self.moons < 120:
+                self.status_change('warrior')
+            else:
+                self.status_change('elder')
         game.clan.add_to_clan(self)
+        self.update_mentor()
 
     def status_change(self, new_status, resort=False):
         """ Changes the status of a cat. Additional functions are needed if you want to make a cat a leader or deputy.
@@ -727,6 +740,7 @@ class Cat():
 
         elif self.status == 'mediator':
             self.update_mentor()
+            self.update_skill()
 
         elif self.status == 'mediator apprentice':
             self.update_mentor()
@@ -1119,7 +1133,7 @@ class Cat():
 
                     all_skills = []
                     for x in possible_groups:
-                        all_skills = all_skills + self.skill_groups[x]
+                        all_skills.extend(self.skill_groups[x])
                     self.skill = choice(all_skills)
                     self.mentor_influence.insert(1, 'None')
 
@@ -1475,7 +1489,7 @@ class Cat():
                     if game.clan.herbs[herb_used] <= 0:
                         game.clan.herbs.pop(herb_used)
                     avoided = True
-                    text = f"{str(herb_used).capitalize()} was used to stop blood loss for {self.name}."
+                    text = f"{herb_used.capitalize()} was used to stop blood loss for {self.name}."
                     game.herb_events_list.append(text)
 
             if not avoided:
@@ -1526,10 +1540,13 @@ class Cat():
         if condition['congenital'] == 'always':
             born_with = True
         moons_until = condition["moons_until"]
-        if born_with is True and moons_until != 0:
+        if born_with and moons_until != 0:
             moons_until = randint(moons_until - 1, moons_until + 1)  # creating a range in which a condition can present
             if moons_until < 0:
                 moons_until = 0
+
+        if born_with and self.status != 'kitten':
+                moons_until = -2
         elif born_with is False:
             moons_until = 0
 

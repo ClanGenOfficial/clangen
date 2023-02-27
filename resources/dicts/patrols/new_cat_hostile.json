@@ -114,7 +114,7 @@
     "max_cats": 6
 },
 {
-    "patrol_id": "gen_gen_lonerchase2",
+    "patrol_id": "gen_bord_lonerchase2",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat", "reputation", "scar", "LEFTEAR", "new_cat_injury", "nc_blunt_force_injury", "no_change_fail_rep"],
@@ -187,10 +187,7 @@
     "fail_text": [
             "p_l sees the body of an unknown queen with their kits beside them, slowly cooling in the morning breeze. They are filled with an unexpected sense of grief and p_l and the rest of the patrol take the time to carry and bury them outside their borders."
     ],
-    "win_skills": null,
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": null,
@@ -212,10 +209,7 @@
     "fail_text": [
             "p_l sees the body of an unknown queen with their kits beside them, slowly cooling in the morning breeze. They are filled with an unexpected sense of grief and p_l and the rest of the patrol take the time to carry and bury them outside their borders."
     ],
-    "win_skills": null,
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": null,
@@ -237,10 +231,7 @@
     "fail_text": [
             "p_l sees the body of an unknown queen with their kits beside them, slowly cooling in the morning breeze. They are filled with an unexpected sense of grief and take the time to carry and bury them outside their borders."
     ],
-    "win_skills": null,
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -262,10 +253,7 @@
     "fail_text": [
             "p_l sees the body of an unknown queen with their kits beside them, slowly cooling in the morning breeze. They are filled with an unexpected sense of grief and take the time to carry and bury them outside their borders."
     ],
-    "win_skills": null,
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -287,10 +275,7 @@
     "fail_text": [
             "p_l sees the body of an unknown queen with their kits beside them, slowly cooling in the morning breeze. They are filled with an unexpected sense of grief and take the time to carry and bury them outside their borders."
     ],
-    "win_skills": null,
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -312,10 +297,7 @@
     "fail_text": [
             "p_l sees the body of an unknown queen with their kits beside them, slowly cooling in the morning breeze. They are filled with an unexpected sense of grief and take the time to carry and bury them outside their borders."
     ],
-    "win_skills": null,
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
