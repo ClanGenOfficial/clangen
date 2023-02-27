@@ -215,6 +215,8 @@ class ClanScreen(Screens):
             game.clan.medicine_cat.placement = choice(p['medicine place'])
         for x in game.clan.clan_cats:
             i = randint(0, 20)
+            if Cat.all_cats[x].not_working():
+                Cat.all_cats[x].placement = choice(p['medicine place'])
             if Cat.all_cats[x].status in ['apprentice', 'mediator apprentice']:
                 if i < 13:
                     Cat.all_cats[x].placement = choice([
@@ -285,6 +287,7 @@ class ClanScreen(Screens):
                         choice(p['medicine place']),
                         choice(p['apprentice place'])
                     ])
+            
 
     def update_buttons_and_text(self):
         if game.switches['saved_clan']:

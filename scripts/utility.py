@@ -11,6 +11,7 @@ logger = logging.getLogger(__name__)
 from scripts.game_structure import image_cache
 
 from scripts.cat.sprites import sprites, Sprites
+from scripts.cat.appearance_utility import init_pelt
 from scripts.cat.pelts import (
     choose_pelt,
     scars1,
@@ -506,25 +507,7 @@ def update_sprite(cat):
 
     # First make pelt, if it wasn't possible before
     if cat.pelt is None:
-        if cat.parent1 is None:
-            # If pelt has not been picked manually, this function chooses one based on possible inheritances
-            cat.pelt = choose_pelt()
-        elif cat.parent2 is None and cat.parent1 in cat.all_cats.keys():
-            # 1 in 3 chance to inherit a single parent's pelt
-            par1 = cat.all_cats[cat.parent1]
-            cat.pelt = choose_pelt(choice([par1.pelt.colour, None]), choice([par1.pelt.white, None]),
-                                   choice([par1.pelt.name, None]),
-                                   choice([par1.pelt.length, None]))
-        if cat.parent1 in cat.all_cats.keys() and cat.parent2 in cat.all_cats.keys():
-            # 2 in 3 chance to inherit either parent's pelt
-            par1 = cat.all_cats[cat.parent1]
-            par2 = cat.all_cats[cat.parent2]
-            cat.pelt = choose_pelt(choice([par1.pelt.colour, par2.pelt.colour, None]),
-                                   choice([par1.pelt.white, par2.pelt.white, None]),
-                                   choice([par1.pelt.name, par2.pelt.name, None]),
-                                   choice([par1.pelt.length, par2.pelt.length, None]))
-        else:
-            cat.pelt = choose_pelt()
+        init_pelt(cat)
 
             # THE SPRITE UPDATE
     # draw colour & style
@@ -532,13 +515,18 @@ def update_sprite(cat):
 
     # setting the cat_sprite (bc this makes things much easier)
     if cat.paralyzed:
-        if cat.age in ['kitten', 'adolescent']:
+        if cat.age in ['newborn', 'kitten', 'adolescent']:
             cat_sprite = str(17)
         else:
             if cat.pelt.length == 'long':
                 cat_sprite = str(16)
             else:
                 cat_sprite = str(15)
+    elif cat.not_working():
+        if cat.age in ['newborn', 'kitten', 'adolescent']:
+            cat_sprite = str(19)
+        else:
+            cat_sprite = str(18)
     else:
         cat_sprite = str(cat.cat_sprites[cat.age])
 

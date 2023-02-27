@@ -1571,6 +1571,9 @@ class Cat():
         elif born_with is False:
             moons_until = 0
 
+        if condition == "paralyzed":
+            self.paralyzed = True
+
         new_perm_condition = PermanentCondition(
             name=name,
             severity=condition["severity"],
@@ -1750,6 +1753,9 @@ class Cat():
                 if "permanent conditions" in rel_data:
                     self.permanent_condition = rel_data.get("permanent conditions")
 
+            if "paralyzed" in self.permanent_condition and not self.paralyzed:
+                self.paralyzed = True
+                
         except Exception as e:
             print(f"WARNING: There was an error reading the condition file of cat #{self}.\n", e)
 
