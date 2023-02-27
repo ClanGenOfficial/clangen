@@ -664,8 +664,8 @@ class Patrol():
                 win_trait=patrol["win_trait"] if "win_trait" in patrol else [],
                 fail_skills=patrol["fail_skills"] if "fail_skills" in patrol else [],
                 fail_trait=patrol["fail_trait"] if "fail_trait" in patrol else [],
-                antagonize_text=patrol["antagonize_text"],
-                antagonize_fail_text=patrol["antagonize_fail_text"],
+                antagonize_text=patrol["antagonize_text"] if "antagonize_text" in patrol else None,
+                antagonize_fail_text=patrol["antagonize_fail_text"] if "antagonize_fail_text" in patrol else None,
                 history_text=patrol["history_text"] if "history_text" in patrol else [],
                 relationship_constraint=patrol["relationship_constraint"] if "relationship_constraint" in patrol else []
             )
