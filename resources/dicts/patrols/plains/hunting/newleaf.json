@@ -8,6 +8,7 @@
             "large_prey",
             "fighting",
             "scar",
+            "NECKBITE",
             "big_bite_injury",
             "clan_to_patrol",
             "respect",
@@ -46,9 +47,6 @@
             "responsible",
             "righteous"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "troublesome",
             "vengeful",
@@ -73,6 +71,7 @@
             "large_prey",
             "fighting",
             "scar",
+            "NECKBITE",
             "big_bite_injury",
             "clan_to_patrol",
             "respect",
@@ -111,9 +110,6 @@
             "responsible",
             "righteous"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "troublesome",
             "vengeful",
@@ -137,6 +133,7 @@
             "large_prey",
             "fighting",
             "scar",
+            "THROAT",
             "big_bite_injury",
             "clan_to_patrol",
             "respect"
@@ -173,9 +170,6 @@
             "responsible",
             "righteous"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "troublesome",
             "vengeful",
@@ -200,6 +194,7 @@
             "fighting",
             "death",
             "scar",
+            "NECKBITE",
             "big_bite_injury",
             "respect",
             "trust",
@@ -246,9 +241,6 @@
         "fail_skills": [
             "good fighter"
         ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 2,
         "max_cats": 3,
         "antagonize_text": null,
@@ -266,6 +258,7 @@
         "tags": [
             "fighting",
             "scar",
+            "NECKBITE",
             "big_bite_injury",
             "respect",
             "trust",
@@ -311,9 +304,6 @@
         "fail_skills": [
             "good fighter"
         ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 4,
         "max_cats": 6,
         "antagonize_text": null,
@@ -330,6 +320,7 @@
             "fighting",
             "death",
             "scar",
+            "FACE",
             "big_bite_injury",
             "respect",
             "trust",
@@ -374,9 +365,6 @@
         "fail_skills": [
             "good fighter"
         ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
@@ -414,15 +402,6 @@
             "very smart",
             "extremely smart"
         ],
-        "win_trait": [
-            "None"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
@@ -436,6 +415,7 @@
             "hunting",
             "fighting",
             "scar",
+            "LEGBITE",
             "respect",
             "clan_to_r_c",
             "small_bite_injury"
@@ -462,15 +442,6 @@
             "good fighter",
             "great fighter",
             "excellent fighter"
-        ],
-        "win_trait": [
-            "None"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -522,9 +493,6 @@
             "nervous",
             "sneaky"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "bold",
             "childish",
@@ -547,6 +515,7 @@
             "small_prey",
             "fighting",
             "scar",
+            "NECKBITE",
             "death",
             "no_body",
             "small_bite_injury"
@@ -585,9 +554,6 @@
             "insecure",
             "nervous",
             "sneaky"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "bold",

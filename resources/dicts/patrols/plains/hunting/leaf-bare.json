@@ -43,12 +43,6 @@
             "faithful",
             "loving"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
@@ -88,15 +82,6 @@
         "win_skills": [
             "great hunter",
             "fantastic hunter"
-        ],
-        "win_trait": [
-            "None"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -148,12 +133,6 @@
             "faithful",
             "loving"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
@@ -173,6 +152,7 @@
             "large_prey",
             "fighting",
             "scar",
+            "NECKBITE",
             "big_bite_injury",
             "clan_to_patrol",
             "respect",
@@ -211,9 +191,6 @@
             "responsible",
             "righteous"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "troublesome",
             "vengeful",
@@ -238,6 +215,7 @@
             "large_prey",
             "fighting",
             "scar",
+            "NECKBITE",
             "big_bite_injury",
             "clan_to_patrol",
             "respect",
@@ -276,9 +254,6 @@
             "responsible",
             "righteous"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "troublesome",
             "vengeful",
@@ -302,6 +277,7 @@
             "large_prey",
             "fighting",
             "scar",
+            "THREE",
             "big_bite_injury",
             "clan_to_patrol",
             "respect"
@@ -337,9 +313,6 @@
             "fierce",
             "responsible",
             "righteous"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "troublesome",
@@ -399,9 +372,6 @@
             "nervous",
             "sneaky"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "bold",
             "childish",
@@ -424,6 +394,7 @@
             "small_prey",
             "fighting",
             "scar",
+            "NECKBITE",
             "death",
             "no_body",
             "small_bite_injury"
@@ -462,9 +433,6 @@
             "insecure",
             "nervous",
             "sneaky"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "bold",

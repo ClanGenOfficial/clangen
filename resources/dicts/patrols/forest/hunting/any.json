@@ -9,6 +9,7 @@
         "injury",
         "quilled by a porcupine",
         "scar",
+        "QUILLSCRATCH",
         "death",
         "huge_prey2"
     ],
@@ -66,6 +67,7 @@
         "injury",
         "quilled by a porcupine",
         "scar",
+        "QUILLSCRATCH",
         "death",
         "huge_prey2"
     ],
@@ -185,6 +187,53 @@
     "antagonize_fail_text": "The Twoleg kits wandering around are unimpressed by the patrol and chase the cats for fun."
 },
 {
+    "patrol_id": "fst_hunt_squirrelchase1",
+    "biome": "forest",
+    "season": "Any",
+    "tags": [
+        "hunting",
+        "injury",
+        "sprain",
+        "scar",
+        "TOETRAP",
+        "medium_prey0",
+        "medium_prey1",
+        "large_prey2"
+    ],
+    "intro_text": "The patrol notices a commotion and finds two squirrels chasing each other across the forest floor.",
+    "decline_text": "The patrol decides there's probably easier prey to find elsewhere.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "success_text": [
+        "The squirrels are so distracted that the patrol is able to quickly catch them both.",
+        "The patrol springs onto the squirrels without a second thought, easily dispatching them.",
+        "s_c is quick on the jump! Though the squirrels notice the cats and begin scampering away, s_c easily cuts them off and kills both squirrels."
+    ],
+    "fail_text": [
+        "The squirrels are far too excited and quick - they slip right out from between the patrol's claws.",
+        "s_c runs at the squirrels before anyone else can pounce, laughing at the prey's antics and playfully jumping into the middle of their game.  The squirrels scatter away at the disturbance and disappear into the canopy.",
+        null,
+        "r_c tries to climb up after them but slips and falls, twisting their paw."
+    ],
+    "win_skills": [
+        "good hunter",
+        "great hunter",
+        "fantastic hunter"
+    ],
+    "fail_trait": [
+        "troublesome",
+        "childish",
+        "playful"
+    ],
+    "min_cats": 1,
+    "max_cats": 6,
+    "history_text": [
+        "r_c gained a scar after trying to chase some squirrels up a tree."
+    ],
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
     "patrol_id": "fst_hunt_burrow1",
     "biome": "forest",
     "season": "Any",
@@ -192,6 +241,7 @@
         "hunting",
         "big_bite_injury",
         "scar",
+        "ONE",
         "fighting",
         "medium_prey"
     ],
@@ -269,6 +319,7 @@
     "tags": [
         "hunting",
         "scar",
+        "NECKBITE",
         "big_bite_injury",
         "fighting",
         "death",
@@ -326,6 +377,7 @@
     "tags": [
         "hunting",
         "scar",
+        "NECKBITE",
         "big_bite_injury",
         "fighting",
         "death",
@@ -439,6 +491,7 @@
     "tags": [
         "hunting",
         "scar",
+        "NECKBITE",
         "big_bite_injury",
         "fighting",
         "death",
@@ -684,6 +737,7 @@
         "apprentice",
         "minor_injury",
         "scar",
+        "LEFTEAR",
         "medium_prey0",
         "large_prey1",
         "large_prey3",
@@ -920,6 +974,7 @@
         "hunting",
         "big_bite_injury",
         "scar",
+        "NECKBITE",
         "small_prey0",
         "medium_prey2"
     ],
@@ -967,6 +1022,7 @@
         "hunting",
         "big_bite_injury",
         "scar",
+        "NECKBITE",
         "death",
         "small_prey0",
         "medium_prey2"
@@ -1060,7 +1116,7 @@
         "thoughtful",
         "wise"
     ],
-    "min_cats": 1,
+    "min_cats": 2,
     "max_cats": 3,
     "antagonize_text": null,
     "antagonize_fail_text": null
@@ -1192,7 +1248,6 @@
     "tags": [
         "hunting",
         "gone",
-        "scar",
         "injury",
         "torn pelt",
         "medium_prey0",
@@ -1279,9 +1334,6 @@
         "Carelessly, app1 is seen by Twolegs, and taken from c_n.",
         "Carelessly, app1 is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, they discover that a broken window is just wide enough to push themselves out to safety through, but the glass leaves them bleeding as they run back to c_n."
     ],
-    "win_skills": [
-        "None"
-    ],
     "win_trait": [
         "calm",
         "careful",
@@ -1313,7 +1365,7 @@
     ]
 },
 {
-    "patrol_id": "fst_hunt_gonetwolegden3",
+    "patrol_id": "fst_hunt_twolegdencatdare1",
     "biome": "forest",
     "season": "Any",
     "tags": [
@@ -1408,9 +1460,6 @@
         "Carelessly, app1 is seen by Twolegs, and taken from c_n.",
         null
     ],
-    "win_skills": [
-        "None"
-    ],
     "win_trait": [
         "calm",
         "careful",
@@ -1421,9 +1470,7 @@
         "sneaky",
         "strange"
     ],
-    "fail_skills": [
-        "None"
-    ],
+
     "fail_trait": [
         "altruistic",
         "compassionate",
@@ -1539,6 +1586,7 @@
     "tags": [
         "death",
         "scar",
+        "MANLEG",
         "retirement",
         "blunt_force_injury",
         "hunting",
@@ -1594,6 +1642,7 @@
     "tags": [
         "death",
         "scar",
+        "MANTAIL",
         "retirement",
         "blunt_force_injury",
         "hunting",
@@ -1650,6 +1699,7 @@
     "tags": [
         "multi_deaths",
         "scar",
+        "MANLEG",
         "retirement",
         "blunt_force_injury",
         "hunting",
@@ -1708,6 +1758,7 @@
     "tags": [
         "multi_deaths",
         "scar",
+        "MANTAIL",
         "retirement",
         "blunt_force_injury",
         "hunting",

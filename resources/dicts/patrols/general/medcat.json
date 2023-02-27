@@ -3,7 +3,7 @@
     "patrol_id": "gen_med_sunny1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["med_only", "platonic", "comfort", "respect", "trust", "med_cat"],
+    "tags": ["med_only", "random_herbs", "platonic", "comfort", "respect", "trust", "med_cat"],
     "intro_text": "The patrol finds a nice spot to sun themselves.",
     "decline_text": "They decide to stay focused instead.",
     "chance_of_success": 80,
@@ -17,10 +17,7 @@
     "fail_text": [
         "The patrol doesn't get much done because of that."
     ],
-    "win_skills": null,
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "fail_skills": null,
-    "fail_trait": null,
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": null,
@@ -159,13 +156,13 @@
     ],
     "fail_text": [
         "The connection wavers, and as quickly as the feeling of company appears, it vanishes.",
-        "r_c turns to the ghost with a smile, but the StarClan cat meets their eyes with fire in their gaze. StarClan is unhappy with c_n, and things must change."
+        "p_l turns to the ghost with a smile, but the StarClan cat meets their eyes with fire in their gaze. StarClan is unhappy with c_n, and things must change."
     ],
     "win_skills": ["strong connection to starclan", "clairvoyant"],
     "min_cats": 2,
     "max_cats": 6,
-    "antagonize_text": "r_c feels hounded, never given a moment's peace, and they hiss at the StarClan cat. The ghost vanishes like a puff of fog in the morning sun, hopefully not to return.",
-    "antagonize_fail_text": "r_c feels hounded, never given a moment's peace, and they hiss at the StarClan cat. But when they turn around, there's only a rather upset looking Clanmate, there to fetch them to camp to help with an emergency."
+    "antagonize_text": "p_l feels hounded, never given a moment's peace, and they hiss at the StarClan cat. The ghost vanishes like a puff of fog in the morning sun, hopefully not to return.",
+    "antagonize_fail_text": "p_l feels hounded, never given a moment's peace, and they hiss at the StarClan cat. But when they turn around, there's only a rather upset looking Clanmate, there to fetch them to camp to help with an emergency."
 },
 {
     "patrol_id": "gen_med_ghost_star3",

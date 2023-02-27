@@ -156,6 +156,25 @@
             }
         }
     },
+    "#exit_window_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/exit_window_button.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/exit_window_button_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/exit_window_button_hover.png"
+            }
+        }
+    },
     "#timeskip_button":
     {
         "prototype": "#image_button",
@@ -296,26 +315,26 @@
 			}
         }
     },
-    "#quit_game_button":
+    "#smallquit_button":
     {
         "prototype": "#image_button",
 		"images":
         {
             "normal_image":
             {
-                "path": "resources/images/buttons/quit_button.png"
+                "path": "resources/images/buttons/smallquit.png"
             },
 			"hovered_image":
             {
-                "path": "resources/images/buttons/quit_button_hover.png"
+                "path": "resources/images/buttons/smallquit_hover.png"
             },
 			"selected_image":
             {
-                "path": "resources/images/buttons/quit_button_hover.png"
+                "path": "resources/images/buttons/smallquit_hover.png"
             },
             "disabled_image":
             {
-				"path": "resources/images/buttons/quit_button_unavailable.png"
+				"path": "resources/images/buttons/smallquit_hover.png"
 			}
         }
     },
@@ -3134,6 +3153,52 @@
             "disabled_image":
             {
                 "path":"resources/images/buttons/begin_anew.png"
+            }
+        }
+    },
+  "#delete_it_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/delete_it.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/delete_it_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/delete_it_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/delete_it.png"
+            }
+        }
+    },
+  "#go_back_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/go_back.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/go_back_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/go_back_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/go_back.png"
             }
         }
     },
