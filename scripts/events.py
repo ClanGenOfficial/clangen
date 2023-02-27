@@ -365,12 +365,12 @@ class Events():
             insert = "medicine cat"
         else:
             insert = "medicine cats"
-        herbs = game.clan.herbs
+        #herbs = game.clan.herbs
 
         herbs_lost = []
-        for herb in herbs:
-            if herbs[herb] > 25:
-                herbs.update({herb: 25})
+        for herb in game.clan.herbs:
+            if game.clan.herbs[herb] > 25:
+                game.clan.herbs[herb] = 25
                 herbs_lost.append(herb)
 
         if herbs_lost:
@@ -385,26 +385,32 @@ class Events():
             text = f"The herb stores have too {insert2}. The excess is given back to the earth."
             game.herb_events_list.append(text)
 
-        if sum(herbs.values()) >= 50:
+        if sum(game.clan.herbs.values()) >= 50:
             chance = 2
         else:
             chance = 5
 
-        if len(herbs.keys()) >= 10 and not int(random.random() * chance):
-            index = random.randrange(1, int(len(herbs.keys()) / 2))
-            count = 0
-            bad_herb = None
-            for herb in herbs:
-                count += 1
-                if count == index:
-                    bad_herb = herb
-                    break
-            herb_amount = random.randrange(1, int(herbs[bad_herb] + 2))
+        if len(game.clan.herbs.keys()) >= 10 and not int(random.random() * chance):
+            bad_herb = random.choice(list(game.clan.herbs.keys()))
+
+            # Failsafe, since I have no idea why we are getting 0-herb entries.
+            while game.clan.herbs[bad_herb] <= 0:
+                print(f"Warning: {bad_herb} was chosen to destroy, although you currently have "
+                      f"{game.clan.herbs[bad_herb]}. Removing {bad_herb} from herb dict, finding a new herb...")
+                game.clan.herbs.pop(bad_herb)
+                if game.clan.herbs:
+                    bad_herb = random.choice(list(game.clan.herbs.keys()))
+                else:
+                    print("No herbs to destroy")
+                    return
+                print(f"New herb found: {bad_herb}")
+
+            herb_amount = random.randrange(1, game.clan.herbs[bad_herb] + 1)
             # deplete the herb
-            herbs[bad_herb] -= herb_amount
+            game.clan.herbs[bad_herb] -= herb_amount
             insert2 = 'some of'
-            if herbs[bad_herb] <= 0:
-                herbs.pop(bad_herb)
+            if game.clan.herbs[bad_herb] <= 0:
+                game.clan.herbs.pop(bad_herb)
                 insert2 = "all of"
 
             event = f"As the herb stores are inspected by the {insert}, it's noticed that {insert2} the {bad_herb.replace('_', ' ')}" \
@@ -414,7 +420,7 @@ class Events():
 
         elif allies and not int(random.random() * 5):
             chosen_ally = random.choice(allies)
-            if len(herbs.keys()) == 0:
+            if game.clan.herbs == {}:
                 # If you have no herbs, you can't give any to a clan. Special events for that.
                 possible_events = [
                     f"The {chosen_ally.name}Clan medicine cat comes asking if your Clan has any herbs to spare. "
@@ -425,18 +431,24 @@ class Events():
                 ]
                 chosen_ally.relations -= 2
             else:
-                index = random.randrange(1, int(len(herbs.keys())) + 1)
-                count = 0
-                herb_given = None
-                for herb in herbs:
-                    count += 1
-                    if count == index:
-                        herb_given = herb
-                        break
-                if herbs[herb_given] > 2:
-                    herb_amount = random.randrange(1, int(herbs[herb_given] - 1))
+                herb_given = random.choice(list(game.clan.herbs.keys()))
+
+                # Failsafe, since I have no idea why we are getting 0-herb entries.
+                while game.clan.herbs[herb_given] <= 0:
+                    print(f"Warning: {herb_given} was chosen to give to another clan, although you currently have "
+                          f"{game.clan.herbs[herb_given]}. Removing {herb_given} from herb dict, finding a new herb...")
+                    game.clan.herbs.pop(herb_given)
+                    if game.clan.herbs:
+                        herb_given = random.choice(list(game.clan.herbs.keys()))
+                    else:
+                        print("No herbs to destroy")
+                        return
+                    print(f"New herb found: {herb_given}")
+
+                if game.clan.herbs[herb_given] > 2:
+                    herb_amount = random.randrange(1, int(game.clan.herbs[herb_given] - 1))
                     # deplete the herb
-                    herbs[herb_given] -= herb_amount
+                    game.clan.herbs[herb_given] -= herb_amount
 
                     possible_events = [
                         f"The {chosen_ally.name}Clan medicine cat comes asking if your Clan has any {herb_given.replace('_', ' ')} to spare. "
@@ -471,19 +483,18 @@ class Events():
             game.herb_events_list.append(event)
             game.cur_events_list.append(Single_Event(event, "health"))
 
-        elif not int(random.random() * 10) and 'moss' in herbs:
-            herb_amount = random.randrange(1, herbs['moss'] + 1)
-            herbs['moss'] -= herb_amount
-            if herbs['moss'] <= 0:
-                herbs.pop('moss')
+        elif not int(random.random() * 10) and 'moss' in game.clan.herbs:
+            herb_amount = random.randrange(1, game.clan.herbs['moss'] + 1)
+            game.clan.herbs['moss'] -= herb_amount
+            if game.clan.herbs['moss'] <= 0:
+                game.clan.herbs.pop('moss')
             event = "The medicine den nests have been refreshed with new moss from the herb stores."
             game.herb_events_list.append(event)
             game.cur_events_list.append(Single_Event(event, "health"))
 
         elif not int(random.random() * 80) and sum(game.clan.herbs.values()) > 0 and len(meds) > 0:
-
             possible_events = []
-            if self.at_war is True:
+            if self.at_war and self.enemy_clan:
                 possible_events.append(f"{self.enemy_clan} breaks into the camp and ravages the herb stores, "
                                        f"taking some for themselves and destroying the rest.")
             possible_events.extend([

@@ -791,8 +791,7 @@ class Condition_Events():
         clan_herbs.update(game.clan.herbs.keys())
         needed_herbs.update(source[condition]["herbs"])
         herb_set = clan_herbs.intersection(needed_herbs)
-        usable_herbs = []
-        usable_herbs.extend(herb_set)
+        usable_herbs = list(herb_set)
 
         if not source[condition]["herbs"]:
             return
@@ -813,12 +812,22 @@ class Condition_Events():
 
             effect = random.choice(possible_effects)
 
-            # deplete the herb
             herb_used = usable_herbs[0]
-            if game.clan.herbs[herb_used] == 1:
-                amount_used = 1
-            else:
-                amount_used = random.randrange(1, game.clan.herbs[herb_used])
+            # Failsafe, since I have no idea why we are getting 0-herb entries.
+            while game.clan.herbs[herb_used] <= 0:
+                print(f"Warning: {herb_used} was chosen to use, although you currently have "
+                      f"{game.clan.herbs[herb_used]}. Removing {herb_used} from herb dict, finding a new herb...")
+                game.clan.herbs.pop(herb_used)
+                usable_herbs.pop(0)
+                if usable_herbs:
+                    herb_used = usable_herbs[0]
+                else:
+                    print("No herbs to use for this injury")
+                    return
+                print(f"New herb found: {herb_used}")
+
+            # deplete the herb
+            amount_used = 1
             game.clan.herbs[herb_used] -= amount_used
             if game.clan.herbs[herb_used] <= 0:
                 game.clan.herbs.pop(herb_used)
