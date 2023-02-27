@@ -106,33 +106,22 @@ class Sprites():
         scars = 'scars'
 
         for a, i in enumerate(
-                ["ONE", "TWO", "THREE", "LEFTEAR", "RIGHTEAR", "NOTAIL"]):
+                ["ONE", "TWO", "THREE", "MANLEG", "BRIGHTHEART", "MANTAIL", 
+                 "BRIDGE", "RIGHTBLIND", "LEFTBLIND", "BOTHBLIND", "BURNPAWS", "BURNTAIL"]):
             sprites.make_group('scars', (a, 0), f'scars{i}')
 
+        # needed
+        # "LEFTEAR", "RIGHTEAR", "NOTAIL", "NOLEFTEAR", "NORIGHTEAR", "NOEAR", "HALFTAIL", "NOPAW"
+
         for a, i in enumerate(
-                ["MANLEG", "BRIGHTHEART", "MANTAIL", "NOLEFTEAR", "NORIGHTEAR", "NOEAR"]):
+                ["BURNBELLY", "BEAKCHEEK", "BEAKLOWER", "BURNRUMP", "CATBITE", "RATBITE",
+                 "FROSTFACE", "FROSTTAIL", "FROSTMITT", "FROSTSOCK", "QUILLCHUNK", "QUILLSCRATCH"]):
             sprites.make_group('scars', (a, 1), f'scars{i}')
 
         for a, i in enumerate(
-                ["BRIDGE", "RIGHTBLIND", "LEFTBLIND", "BOTHBLIND", "BURNPAWS", "BURNTAIL"]):
+                ["TAILSCAR", "SNOUT", "CHEEK", "SIDE", "THROAT", "TAILBASE", "BELLY", "TOETRAP", "SNAKE",
+                 "LEGBITE", "NECKBITE", "FACE"]):
             sprites.make_group('scars', (a, 2), f'scars{i}')
-
-        for a, i in enumerate(
-                ["BURNBELLY", "BEAKCHEEK", "BEAKLOWER", "BURNRUMP", "CATBITE", "RATBITE"]):
-            sprites.make_group('scars', (a, 3), f'scars{i}')
-
-        for a, i in enumerate(
-                ["TAILSCAR", "SNOUT", "CHEEK", "SIDE", "THROAT", "TAILBASE"]):
-            sprites.make_group('Newscars', (a, 0), f'scars{i}')
-
-        for a, i in enumerate(["BELLY", "TOETRAP", "SNAKE"]):
-            sprites.make_group('Newscars', (a, 1), f'scars{i}')
-
-        for a, i in enumerate(["LEGBITE", "NECKBITE", "FACE", "HALFTAIL", "NOPAW"]):
-            sprites.make_group('Newscars', (a, 2), f'scars{i}')
-
-        for a, i in enumerate(["FROSTFACE", "FROSTTAIL", "FROSTMITT", "FROSTSOCK", "QUILLCHUNK", "QUILLSCRATCH"]):
-            sprites.make_group('Newscars', (a, 3), f'scars{i}')
 
             # Accessories
         for a, i in enumerate([
@@ -183,9 +172,9 @@ sprites = Sprites(50)
 for x in [
     'lineart', 'singlecolours', 'speckledcolours', 'tabbycolours',
     'whitepatches', 'eyes', 'eyes2', 'skin', 'scars', 'collars', 'bellcollars', 'bowcollars',
-    'bengalcolours', 'tabbycolours2', 'rosettecolours', 'smokecolours', 'tickedcolours', 
-    'mackerelcolours', 'classiccolours', 'sokokecolours', 'agouticolours', 'singlestripecolours',
-    'Newscars', 'shadersnewwhite', 'lineartdead', 'tortiepatchesmasks',
+    'bengalcolours', 'marbledcolours', 'rosettecolours', 'smokecolours', 'tickedcolours', 
+    'mackerelcolours', 'classiccolours', 'sokokecolours', 'agouticolours', 'singlestripecolours', 
+    'shadersnewwhite', 'lineartdead', 'tortiepatchesmasks',
     'medcatherbs', 'lineartdf', 'lightingnew', 'fademask',
     'fadestarclan', 'fadedarkforest'
 
@@ -255,11 +244,11 @@ for a, i in enumerate(['LIGHTBROWN', 'BROWN', 'DARKBROWN', 'BLACK']):
     sprites.make_group('tabbycolours', (a, 2), f'tabby{i}')
 # marbled
 for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST']):
-    sprites.make_group('tabbycolours2', (a, 0), f'marbled{i}')
+    sprites.make_group('marbled', (a, 0), f'marbled{i}')
 for a, i in enumerate(['PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER', 'CREAM']):
-    sprites.make_group('tabbycolours2', (a, 1), f'marbled{i}')
+    sprites.make_group('marbled', (a, 1), f'marbled{i}')
 for a, i in enumerate(['LIGHTBROWN', 'BROWN', 'DARKBROWN', 'BLACK']):
-    sprites.make_group('tabbycolours2', (a, 2), f'marbled{i}')
+    sprites.make_group('marbled', (a, 2), f'marbled{i}')
 # rosette
 for a, i in enumerate(['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST']):
     sprites.make_group('rosettecolours', (a, 0), f'rosette{i}')
