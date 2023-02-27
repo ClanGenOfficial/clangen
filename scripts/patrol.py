@@ -1557,7 +1557,7 @@ class Patrol():
                 if herb in game.clan.herbs.keys():
                     game.clan.herbs[herb] += amount_gotten
                 else:
-                    game.clan.herbs.update({herb: large_amount})
+                    game.clan.herbs.update({herb: amount_gotten})
 
         elif "herb" in patrol.patrol_event.tags:
             for tag in patrol.patrol_event.tags:
@@ -1576,7 +1576,7 @@ class Patrol():
                     if tag in game.clan.herbs.keys():
                         game.clan.herbs[tag] += amount_gotten
                     else:
-                        game.clan.herbs.update({tag: large_amount})
+                        game.clan.herbs.update({tag: amount_gotten})
 
         if herbs_gotten:
             if len(herbs_gotten) == 1 and herbs_gotten[0] != 'cobwebs':
