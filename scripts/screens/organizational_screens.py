@@ -12,6 +12,7 @@ from scripts.utility import get_text_box_theme, scale
 import pygame_gui
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 from scripts.game_structure.windows import DeleteCheck
+from scripts.game_structure.discord_rpc import _DiscordRPC
 
 
 class StartScreen(Screens):
@@ -468,6 +469,10 @@ class SettingsScreen(Screens):
             self.settings_changed = True
             self.update_save_button()
             self.refresh_checkboxes()
+            if game.settings['discord']:
+                game.rpc = _DiscordRPC("1076277970060185701")
+            else:
+                game.rpc.close()
 
 
     def handle_lang_events(self, event):
