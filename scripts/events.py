@@ -433,6 +433,18 @@ class Events():
             else:
                 herb_given = random.choice(list(game.clan.herbs.keys()))
 
+                # Failsafe, since I have no idea why we are getting 0-herb entries.
+                while game.clan.herbs[herb_given] <= 0:
+                    print(f"Warning: {herb_given} was chosen to give to another clan, although you currently have "
+                          f"{game.clan.herbs[herb_given]}. Removing {herb_given} from herb dict, finding a new herb...")
+                    game.clan.herbs.pop(herb_given)
+                    if game.clan.herbs:
+                        herb_given = random.choice(list(game.clan.herbs.keys()))
+                    else:
+                        print("No herbs to destroy")
+                        return
+                    print(f"New herb found: {herb_given}")
+
                 if game.clan.herbs[herb_given] > 2:
                     herb_amount = random.randrange(1, int(game.clan.herbs[herb_given] - 1))
                     # deplete the herb
