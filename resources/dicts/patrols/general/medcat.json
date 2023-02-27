@@ -217,15 +217,15 @@
     "patrol_id": "gen_med_medwar_natureofstarclan",
     "biome": "Any",
     "season": "Any",
-    "tags": ["med_cat", "warrior", "random_herbs", "no_app"],
+    "tags": ["med_cat", "warrior", "random_herbs", "no_app", "trust", "comfort", "respect"],
     "intro_text": "During a patrol looking for herbs, p_l notices that r_c seems more quiet than usual. When prompted, r_c slowly asks if p_l could teach them more about the nature of StarClan.",
     "decline_text": "p_l opens their mouth to answer, but the cry of another patrol looking for them shuts down the conversation. p_l races away towards the scene leaving r_c behind.",
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
         "p_l eventually relents and begins teaching r_c more about StarClan and the nature of prophecies. Expecting boredom, p_l was shocked when they saw wonder in r_c's face. The two spend the rest of the patrol pondering the nature of their ancestors together.",
-        "p_l eventually relents and begins teaching r_c more about StarClan and the nature of prophecies. r_c takes to it quickly, marveling at their ancestors. They attempt to bub p_l about any recent prophecies, but p_l only laughs and gets the patrol back on track for herbs.",
-        "p_l had seen before how connected s_c was to StarClan, and began telling them more than they would have told any other Clan cat about their ancestors. p_l and s_c spend much of their patrol gathering herbs and discussing the hard-hitting questions on prophecies and StarClan's gifts."
+        "p_l eventually relents and begins teaching r_c more about StarClan and the nature of prophecies. r_c takes to it quickly, marveling at their ancestors. They attempt to bug p_l about any recent prophecies, but p_l only laughs and gets the patrol back on track for herbs.",
+        "s_c had seen before how connected p_l was to StarClan, and began telling them more than they would have told any other Clan cat about their ancestors. p_l and s_c spend much of their patrol gathering herbs and discussing the hard-hitting questions on prophecies and StarClan's gifts."
     ],
     "fail_text":[
         "p_l tries to simplify the mystical power of their ancestors, but it only leaves r_c more confused about StarClan and their prophecies.",
@@ -250,9 +250,9 @@
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
-        "p_l and r_c spend their time on the patrol discussing how, to StarClan, the end of their life did not mean it was the true end. Even in StarClan, cats had their role to play. r_c's legacy would shine brighter than any star. Comforted by these words, r_c thanks p_l and helps bring back the herbs."
+        "p_l and r_c spend their time on the patrol discussing how, to StarClan, the end of their life did not mean it was the true end. Even in StarClan, cats had their role to play. r_c's legacy would shine brighter than any star. Comforted by these words, r_c thanks p_l and helps bring back the herbs.",
         null,
-        "p_l knew why this bothered s_c so much. A powerful connection to StarClan for either of them allowed them to understand how their legacy would be told again and again to kits in the future. But p_l did their best to ease s_c's worries. To c_n, s_c would be a legend worth remembering one day. s_c brigtens up at that remark, and the two go back to their herb hunt."
+        "p_l knew why this bothered s_c so much. A powerful connection to StarClan for either of them allowed them to understand how their legacy would be told again and again to kits in the future. But p_l did their best to ease s_c's worries. To c_n, s_c would be a legend worth remembering one day. s_c brightens up at that remark, and the two go back to their herb hunt."
     ],
     "fail_text":[
         "p_l attempts to soothe r_c's worries, but nothing seems to stick. r_c turns back towards the camp, leaving p_l alone to fruitlessly hunt for herbs.",
@@ -262,10 +262,7 @@
     ],
     "min_cats": 2,
     "max_cats": 2,
-    "win_skills": ["strong connection to starclan"],
-    "win_trait": null,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
+    "win_skills": ["strong connection to starclan"]
 },
 {
     "patrol_id": "gen_med_medwar_puddles",
@@ -287,8 +284,6 @@
     ],
     "min_cats": 2,
     "max_cats": 2,
-    "win_trait": ["playful", "empathetic", "compassionate"],
-    "antagonize_text": null,
-    "antagonize_fail_text": null
+    "win_trait": ["playful", "empathetic", "compassionate"]
 }
 ]
