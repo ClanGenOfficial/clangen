@@ -966,12 +966,12 @@ class Relation_Events():
 
     def get_amount_of_kits(self, cat):
         """Get the amount of kits which will be born."""
-        one_kit_possibility = {"young adult": 8, "adult": 9, "senior adult": 10, "elder": 4}
-        two_kit_possibility = {"young adult": 10, "adult": 13, "senior adult": 15, "elder": 3}
-        three_kit_possibility = {"young adult": 17, "adult": 15, "senior adult": 5, "elder": 1}
-        four_kit_possibility = {"young adult": 12, "adult": 8, "senior adult": 2, "elder": 0}
-        five_kit_possibility = {"young adult": 6, "adult": 2, "senior adult": 0, "elder": 0}
-        six_kit_possibility = {"young adult": 2, "adult": 0, "senior adult": 0, "elder": 0}
+        one_kit_possibility = {"young adult": 8, "adult": 9, "senior adult": 10, "senior": 4}
+        two_kit_possibility = {"young adult": 10, "adult": 13, "senior adult": 15, "senior": 3}
+        three_kit_possibility = {"young adult": 17, "adult": 15, "senior adult": 5, "senior": 1}
+        four_kit_possibility = {"young adult": 12, "adult": 8, "senior adult": 2, "senior": 0}
+        five_kit_possibility = {"young adult": 6, "adult": 2, "senior adult": 0, "senior": 0}
+        six_kit_possibility = {"young adult": 2, "adult": 0, "senior adult": 0, "senior": 0}
         one_kit = [1] * one_kit_possibility[cat.age]
         two_kits = [2] * two_kit_possibility[cat.age]
         three_kits = [3] * three_kit_possibility[cat.age]
