@@ -43,7 +43,7 @@ def accessory_display_name(cat):
         collar_color = next((color for color in collar_colors if acc_display.startswith(color)), None)
 
         if collar_color:
-            if acc_display.endswith('bow') and not acc_display == 'rainbow':
+            if acc_display.endswith('bow') and not collar_color == 'rainbow':
                 acc_display = collar_color + ' bow'
             elif acc_display.endswith('bell'):
                 acc_display = collar_color + ' bell collar'
