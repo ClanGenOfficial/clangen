@@ -50,7 +50,7 @@ class _DiscordRPC():
         try:
             self.rpc_supported = True
             self.connect()
-            print("Connected to discord!")
+            print("Connected to discord")
         except ConnectionError as e:
             print(f"Failed to connect to Discord: {e}")
             return
