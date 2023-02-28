@@ -294,12 +294,8 @@ class MakeClanScreen(Screens):
 
         # Don't allow someone to enter no name for their clan
         if self.sub_screen == 'name clan':
-            if sub(r'[^A-Za-z0-9 ]+', "", self.elements["name_entry"].get_text()) == "":
+            if self.elements["name_entry"].get_text() == "":
                 self.elements['next_step'].disable()
-            elif len(sub(r'[^A-Za-z0-9 ]+', "", self.elements["name_entry"].get_text())) > 11:
-                self.elements["name_entry"].set_text(self.elements["name_entry"].get_text()[:11])
-            elif sub(r'[^A-Za-z0-9 ]+', "", self.elements["name_entry"].get_text()) != self.elements["name_entry"].get_text():
-                self.elements["name_entry"].set_text(sub(r'[^A-Za-z0-9 ]+', "", self.elements["name_entry"].get_text()))
             else:
                 self.elements['next_step'].enable()
 
@@ -612,6 +608,8 @@ class MakeClanScreen(Screens):
         self.elements['next_step'].disable()
         self.elements["name_entry"] = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((530, 1195), (280, 58)))
                                                                           , manager=MANAGER)
+        self.elements["name_entry"].set_allowed_characters("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_- ")
+        self.elements["name_entry"].set_text_length_limit(11)
         self.elements["clan"] = pygame_gui.elements.UITextBox("<font color='#FFFFFF'>-Clan</font>",
                                                               scale(pygame.Rect((750, 1200), (200, 50))), manager=MANAGER)
         self.elements["reset_name"] = UIImageButton(scale(pygame.Rect((910, 1190), (268, 60))), "",
