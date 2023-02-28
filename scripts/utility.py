@@ -116,7 +116,7 @@ def change_clan_reputation(difference=0):
     will change the clan's reputation with outsider cats according to the difference parameter.
     """
     # grab rep
-    reputation = game.clan.reputation
+    reputation = int(game.clan.reputation)
     # ensure this is an int value
     difference = int(difference)
     # change rep
