@@ -91,7 +91,7 @@ class SaveCheck(UIWindow):
                     self.kill()
                 else:
                     game.is_close_menu_open = False
-                    game.rpc.close()
+                    #game.rpc.close()
                     pygame.display.quit()
                     pygame.quit()
                     exit()
@@ -176,7 +176,10 @@ class DeleteCheck(UIWindow):
                 
                 if data[-1].endswith("\n"):
                     data[-1] = data[-1][:-1] #remove the last \n
-                
+
+                # Remove from the list in memory
+                game.switches['clan_list'] = data
+
                 #write the file
                 with open("saves/clanlist.txt", "w") as clanfile:
                     clanfile.writelines(data)

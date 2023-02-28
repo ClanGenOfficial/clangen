@@ -232,8 +232,8 @@ class Clan():
         if cat.ID in Cat.all_cats.keys(
         ) and not cat.outside and cat.ID in Cat.outside_cats.keys():
             # The outside-value must be set to True before the cat can go to cotc
-            Cat.outside_cats.pop(cat.ID)
             self.clan_cats.append(cat.ID)
+            Cat.outside_cats.pop(cat.ID)
             cat.clan = str(game.clan.name)
 
     def add_to_outside(self, cat):  # same as add_cat
@@ -322,7 +322,7 @@ class Clan():
         game.save_clanlist(clan)
         game.cur_events_list.clear()
 
-        game.rpc.close()
+        #game.rpc.close()
         pygame.display.quit()
         pygame.quit()
         exit()
@@ -597,7 +597,7 @@ class Clan():
                          camp_site=(int(clan_data["camp_site_1"]), int(clan_data["camp_site_2"])),
                          game_mode=clan_data["gamemode"])
 
-        game.clan.reputation = clan_data["reputation"]
+        game.clan.reputation = int(clan_data["reputation"])
 
         game.clan.age = clan_data["clanage"]
         game.clan.current_season = game.clan.seasons[game.clan.age % 12]

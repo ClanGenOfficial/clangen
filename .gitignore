@@ -163,3 +163,7 @@ scripts/__pycache__/**
 .idea/clan_gen_working.iml
 .idea/misc.xml
 .idea/clan_gen_working.iml
+
+
+tests/testSaves
+tests\testSaves
