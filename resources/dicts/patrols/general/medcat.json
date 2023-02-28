@@ -208,6 +208,784 @@
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": "app1 feels hounded, never given a moment's peace, and they hiss at the StarClan cat. The ghost vanishes like a puff of fog in the morning sun, hopefully not to return.",
-    "antagonize_fail_text": "app1 feels hounded, never given a moment's peace, and they hiss at the StarClan cat. But when they turn around, there's only a rather upset looking clanmate, there to fetch them to camp to help with an emergency."
+    "antagonize_fail_text": "app1 feels hounded, never given a moment's peace, and they hiss at the StarClan cat. But when they turn around, there's only a rather upset looking Clanmate, there to fetch them to camp to help with an emergency."
+},
+{
+    "patrol_id": "gen_med_medwar_natureofstarclan",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["med_cat", "warrior", "random_herbs", "no_app", "trust", "comfort", "respect", "p_l_to_r_c", "s_c_to_r_c"],
+    "intro_text": "During a patrol looking for herbs, p_l notices that r_c seems more quiet than usual. When prompted, r_c slowly asks if p_l could teach them more about the nature of StarClan.",
+    "decline_text": "p_l opens their mouth to answer, but the cry of another patrol looking for them shuts down the conversation. p_l races away towards the scene leaving r_c behind.",
+    "chance_of_success": 60,
+    "exp": 10,
+    "success_text": [
+        "p_l eventually relents and begins teaching r_c more about StarClan and the nature of prophecies. Expecting boredom, p_l was shocked when they saw wonder in r_c's face. The two spend the rest of the patrol pondering the nature of their ancestors together.",
+        "p_l eventually relents and begins teaching r_c more about StarClan and the nature of prophecies. r_c takes to it quickly, marveling at their ancestors. They attempt to bug p_l about any recent prophecies, but p_l only laughs and gets the patrol back on track for herbs.",
+        "s_c had seen before how connected p_l was to StarClan, and began telling them more than they would have told any other Clan cat about their ancestors. p_l and s_c spend much of their patrol gathering herbs and discussing the hard-hitting questions on prophecies and StarClan's gifts."
+    ],
+    "fail_text":[
+        "p_l tries to simplify the mystical power of their ancestors, but it only leaves r_c more confused about StarClan and their prophecies.",
+        null,
+        null,
+        null
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "win_skills": ["strong connection to starclan"]
+},
+{
+    "patrol_id": "gen_med_medwar_natureofdeath",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["med_cat", "warrior", "random_herbs", "no_app", "trust", "comfort", "respect", "p_l_to_r_c", "s_c_to_r_c"],
+    "intro_text": "To p_l's concern, their warrior escort is unusually quiet. When prompted on their troubles, r_c comments that they could not help but think of what legacy they would leave behind if StarClan calls upon them.",
+    "decline_text": "p_l isn't sure how to exactly address such a statement, and quickly attempts to distract r_c with some herb collecting.",
+    "chance_of_success": 60,
+    "exp": 10,
+    "success_text": [
+        "p_l and r_c spend their time on the patrol discussing how, to StarClan, the end of their life did not mean it was the true end. Even in StarClan, cats had their role to play. r_c's legacy would shine brighter than any star. Comforted by these words, r_c thanks p_l and helps bring back the herbs.",
+        null,
+        "p_l knew why this bothered s_c so much. A powerful connection to StarClan for either of them allowed them to understand how their legacy would be told again and again to kits in the future. But p_l did their best to ease s_c's worries. To c_n, s_c would be a legend worth remembering one day. s_c brightens up at that remark, and the two go back to their herb hunt."
+    ],
+    "fail_text":[
+        "p_l attempts to soothe r_c's worries, but nothing seems to stick. r_c turns back towards the camp, leaving p_l alone to fruitlessly hunt for herbs.",
+        null,
+        null,
+        null
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "win_skills": ["strong connection to starclan"]
+},
+{
+    "patrol_id": "gen_med_medwar_puddles",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["med_cat", "warrior", "random_herbs", "no_app", "trust", "comfort", "respect", "p_l_to_r_c", "s_c_to_r_c"],
+    "intro_text": "It was one of the worst storms of the season, and left p_l in an unavoidably grumpy mood. Herbs strewn about, prey in hiding, it would take forever to find anything. r_c attempts to find a way to cheer up the healer.",
+    "decline_text": "But before r_c could come up with a plan, a cry from the camp forces p_l to return in a hurry.",
+    "chance_of_success": 60,
+    "exp": 10,
+    "success_text": [
+        "r_c splashes water from a puddle onto p_l's fur. p_l fluffs up like a bottlebrush, turning around to quickly send a wave of water back towards r_c! The two engage in a small water fight, and when they resume the herb patrol, r_c is glad to see p_l looks much happier."
+    ],
+    "fail_text":[
+        "r_c splashes water from a puddle at p_l. p_l turns around and hisses at r_c that they don't have time for kit games! The two continue their patrol, but p_l's sour mood distracts them from any usable herbs they could find.",
+        null,
+        null,
+        null
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "win_trait": ["playful", "empathetic", "compassionate"]
+},
+{
+    "patrol_id": "gen_med_group_randomherb1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "med_cat",
+        "med_only",
+        "random_herbs",
+        "many_herbs2",
+        "comfort",
+        "trust",
+        "platonic",
+        "no_change_fail"
+    ],
+    "intro_text": "The gaggle of medicine cats strolls through c_n's territory, chatting amicably amongst themselves. It's a rare opportunity, for all of them to be out like this together, and each cat plans to make the most of it.",
+    "decline_text": "Before they get very far, one of their Clanmates catches up to inform them of a small emergency back at camp that needs their attention. Oh well, maybe they'll get the chance again another day.",
+    "chance_of_success": 40,
+    "exp": 30,
+    "success_text": [
+        "The cats take turns veering off for herbs, allowing the others time to chat with each other.  By the time they loop back to camp, each cat has a small bundle of herbs in their jaws, and a small bundle of contentment in their hearts.",
+        "The patrol decides to collect herbs first, so they have time to idle and chat before heading back to camp. They spend some time in a warm sunbeam, sharing tongues and sunning themselves, and by the time they're ready to go home, every cat is feeling closer to one another.",
+        "As the cats walk and chat, s_c begins to lag behind. p_l looks back to ask them what's up, and spots them veering down a side path. p_l motions for the others as they follow s_c, and find them purring loudly at the sight of a huge herb patch! There's far more than the patrol can carry, and they know this will keep the Clan healthy for ages."
+    ],
+    "fail_text": [
+        "The medicine cats are too caught up in chatting with one another - they don't collect a single leaf."
+    ],
+    "win_skills": [
+        "keen eye",
+        "very smart",
+        "extremely smart"
+    ],
+    "min_cats": 3,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_med_group_randomherb2",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "med_cat",
+        "med_only",
+        "random_herbs",
+        "many_herbs2",
+        "comfort",
+        "trust",
+        "platonic",
+        "no_change_fail"
+    ],
+    "intro_text": "The gaggle of medicine cats strolls through c_n's territory, chatting amicably amongst themselves. It's a rare opportunity, for all of them to be out like this together, and though the weather is poor and not really ideal for herb-gathering, each cat plans to make the most of it.",
+    "decline_text": "Before they get very far, it starts pouring rain, and none of the cats feel like getting soaked today. At least they can spend time together organizing the herb stores instead!",
+    "chance_of_success": 30,
+    "exp": 30,
+    "success_text": [
+        "The cats take turns veering off for herbs, allowing the others time to chat with each other.  They manage to avoid any rain, and by the time they loop back to camp, each cat has a small bundle of herbs in their jaws, and a small bundle of contentment in their hearts.",
+        "The patrol decides to collect herbs first, so they have time to idle and chat before heading back to camp. They sit themselves in the cover of a tree to share tongues and chat out of the rain, and by the time they're ready to go home, every cat is feeling closer to one another.",
+        "As the cats walk and chat, s_c begins to lag behind. p_l looks back to ask them what's up, and spots them veering down a side path. p_l motions for the others as they follow s_c, and find them purring loudly at the sight of a huge herb patch! There's far more than the patrol can carry, and they know this will keep the Clan healthy for ages."
+    ],
+    "fail_text": [
+        "It starts pouring rain while they're out, and even p_l has to admit defeat and lead them home."
+    ],
+    "win_skills": [
+        "keen eye",
+        "very smart",
+        "extremely smart"
+    ],
+    "min_cats": 3,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_med_appgroup_randomherb1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "med_cat",
+        "med_only",
+        "apprentice",
+        "three_apprentices",
+        "random_herbs",
+        "many_herbs1",
+        "comfort",
+        "trust",
+        "platonic",
+        "no_change_fail"
+    ],
+    "intro_text": "The trio of apprentices strolls through c_n's territory, chatting amicably amongst themselves. The senior medicine cats are all busy back at camp, so the young cats get the chance to be out on their own today, which has everyone excited!",
+    "decline_text": "Before they get very far, one of their Clanmates catches up to inform them that they're wanted back at camp. Oh well, maybe they'll get the chance again another day.",
+    "chance_of_success": 30,
+    "exp": 20,
+    "success_text": [
+        "app1 dramatically flops over into a sunbeam, proclaiming that they need to get some sunshine before hunting for herbs. app2 purrs and flops beside them, while app3 rolls their eyes and loafs nearby. Once they've all warmed up, they renew their search with vigor, and return home content and with herbs.",
+        "app1 is the first to find some herbs, and smugly waves them in the faces of app2 and app3 - after that it's a bit of a competition, with each cat trying to out-compete one other. It's great for the Clan - in the end, they come back to camp with a sizeable haul!"
+    ],
+    "fail_text": [
+        "The apprentices are too caught up in chatting with - and riling up - one another, and don't collect a single leaf."
+    ],
+    "min_cats": 3,
+    "max_cats": 3,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_med_appgroup_randomherb2",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "med_cat",
+        "med_only",
+        "apprentice",
+        "four_apprentices",
+        "random_herbs",
+        "many_herbs1",
+        "comfort",
+        "trust",
+        "platonic",
+        "no_change_fail"
+    ],
+    "intro_text": "The quartet of apprentices strolls through c_n's territory, chatting amicably amongst themselves. The senior medicine cats are all busy back at camp, so the young cats get the chance to be out on their own today, which has everyone excited!",
+    "decline_text": "Before they get very far, one of their Clanmates catches up to inform them that they're wanted back at camp. Oh well, maybe they'll get the chance again another day.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "app1 dramatically flops over into a sunbeam, proclaiming that they need to get some sunshine before hunting for herbs. app2 purrs and flops beside them, while app3 rolls their eyes and loafs beside app4. Once they've all warmed up, they renew their search with vigor, and return home content and with herbs.",
+        "app1 is the first to find some herbs, and smugly waves them in the faces of the other three - after that it's a bit of a competition, with each cat trying to out-compete one other. It's great for the Clan - in the end, they come back to camp with a sizeable haul!"
+    ],
+    "fail_text": [
+        "The apprentices are too caught up in chatting with - and riling up - one another, and don't collect a single leaf."
+    ],
+    "min_cats": 4,
+    "max_cats": 4,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_med_appgroup_randomherb3",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "med_cat",
+        "med_only",
+        "apprentice",
+        "five_apprentices",
+        "random_herbs",
+        "many_herbs1",
+        "comfort",
+        "trust",
+        "platonic",
+        "no_change_fail"
+    ],
+    "intro_text": "The quintet of apprentices strolls through c_n's territory, chatting amicably amongst themselves. The senior medicine cats are all busy back at camp, so the young cats get the chance to be out on their own today, which has everyone excited!",
+    "decline_text": "Before they get very far, one of their Clanmates catches up to inform them that they're wanted back at camp. Oh well, maybe they'll get the chance again another day.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+        "app1 dramatically flops over into a sunbeam, proclaiming that they need to get some sunshine before hunting for herbs. app2 purrs and flops beside them, while app3 rolls their eyes and loafs beside the others. Once they've all warmed up, they renew their search with vigor, and return home content and with herbs.",
+        "app1 is the first to find some herbs, and smugly waves them in the faces of the other four - after that it's a bit of a competition, with each cat trying to out-compete one other. It's great for the Clan - in the end, they come back to camp with a sizeable haul!"
+    ],
+    "fail_text": [
+        "The apprentices are too caught up in chatting with - and riling up - one another, and don't collect a single leaf."
+    ],
+    "min_cats": 5,
+    "max_cats": 5,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_med_appgroup_randomherb4",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "med_cat",
+        "med_only",
+        "apprentice",
+        "six_apprentices",
+        "random_herbs",
+        "many_herbs1",
+        "comfort",
+        "trust",
+        "platonic",
+        "no_change_fail"
+    ],
+    "intro_text": "The gaggle of apprentices strolls through c_n's territory, chatting amicably amongst themselves. The senior medicine cats are all busy back at camp, so the young cats get the chance to be out on their own today, which has everyone excited!",
+    "decline_text": "Before they get very far, one of their Clanmates catches up to inform them that they're wanted back at camp. Oh well, maybe they'll get the chance again another day.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "success_text": [
+        "app1 dramatically flops over into a sunbeam, proclaiming that they need to get some sunshine before hunting for herbs. app2 purrs and flops beside them, while app3 rolls their eyes and loafs beside the others. Once they've all warmed up, they renew their search with vigor, and return home content and with herbs.",
+        "app1 is the first to find some herbs, and smugly waves them in the faces of the other five - after that it's a bit of a competition, with each cat trying to out-compete one other. It's great for the Clan - in the end, they come back to camp with a sizeable haul!"
+    ],
+    "fail_text": [
+        "The apprentices are too caught up in chatting with - and riling up - one another, and don't collect a single leaf."
+    ],
+    "min_cats": 6,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_med_appwarrior_bossypants1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "med_cat",
+        "apprentice",
+        "random_herbs",
+        "warrior",
+        "respect",
+        "trust",
+        "platonic"
+    ],
+    "intro_text": "p_l eyes the warrior chosen to escort them to fetch herbs, feeling a little bit giddy. Apprentices getting to boss around warriors is something that almost never happens, and p_l is going to make sure they make the most of it.",
+    "decline_text": "Just as they're about to leave, r_c is called off to help on a hunting patrol instead. p_l lashes their tail in frustration, but doesn't protest, and heads back to the medicine cat's den alone.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+        "p_l has a grand time, directing r_c around with their tail to various herb patches. If the warrior is annoyed, they don't say it, quietly complying and doing as p_l says.",
+        "r_c doesn't let on that p_l is being a little obnoxious, smiling instead and going about their work. They remember what it was like to be an apprentice, excited for every opportunity to prove themself. Even if p_l is a bit much right now, being mean to them won't help things. There's no harm in letting them feel important today."
+    ],
+    "fail_text": [
+        "p_l and r_c just can't see eye-to-eye, and they end up getting nothing done, much to each cat's frustration."
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_med_appwarrior_bossypants2",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "med_cat",
+        "apprentice",
+        "random_herbs",
+        "warrior",
+        "disrespect",
+        "distrust"
+    ],
+    "intro_text": "r_c eyes p_l as the younger cat approaches, ears slightly drawn back. The prospect of being bossed around by an apprentice is downright humiliating, and the warrior is <i>not</i> looking forward to this experience.",
+    "decline_text": "Just as they're about to leave, r_c is called off to help on a hunting patrol instead, and eagerly rushes off, not sparing a second glance back at the young medicine cat.",
+    "chance_of_success": 30,
+    "exp": 20,
+    "success_text": [
+        "p_l has a grand time, directing r_c around with their tail to various herb patches. r_c grumbles beneath their breath, making sure the apprentice knows how frustrated they are, but does as they're told, not wanting to risk getting in trouble back at camp.",
+        "r_c huffs and puffs the whole time, but does as they're told anyways. They know that p_l technically knows more than them, at least in this instance, but that doesn't mean they have to like it."
+    ],
+    "fail_text": [
+        "r_c scowls at p_l as they try to direct the older cat around, standing stock-still and staring the apprentice down. r_c is <i>not</i> in the mood for an apprentice to lord their authority over them, and they spend the entire patrol refusing to do anything useful."
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_med_medappwarriorapp_siblings1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "med_cat",
+        "warrior_app",
+        "apprentice",
+        "two_apprentices",
+        "random_herbs",
+        "respect",
+        "comfort",
+        "trust",
+        "platonic"
+    ],
+    "intro_text": "app1 trots over to p_l, the two apprentices grinning at each other with raised tails. p_l needs an escort to gather herbs, and as luck would have it, the only cat free at the moment is their sibling, app1!",
+    "decline_text": "... Or so they thought. app1 is called away by their mentor for training, and they scamper off with an apologetic glance back, leaving p_l by themself with their tail sagging to the ground.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "p_l and app1 walk with their tails entwined and pelts brushing together, thrilled to be able to patrol together. p_l doesn't regret becoming a medicine cat, but they do feel secluded at times, watching app1 train and patrol with everyone. The siblings make the most of their time together, returning home side-by-side with their jaws full of herbs.",
+        "p_l and app1 race through the territory together, hearts light with joy at being able to patrol together despite their different roles. So what if they take a little longer coming home than they should? They still return to camp with plenty of herbs! They deserve to have some sibling time for a change.",
+        null,
+        "s_c seems a little distracted, deep in thought about something. When app1 asks what's up, s_c blinks slowly at them before confessing how much they miss spending time together. They burrow their noses into each others pelts and purr, soaking in the moment and their love for each other before continuing on, and promise to spend more time together. "
+    ],
+    "fail_text": [
+        "p_l and app1 are far too distracted playing and catching up with one another, and get nothing useful done.",
+        "s_c seems a little distracted, deep in thought about something. When app1 asks what's up, s_c blinks slowly at them before confessing how much they miss spending time together. app1 tries to comfort them, but s_c shakes their head, knowing that no matter what they say, their roles are just too different. Both cats are too upset to gather herbs."
+    ],
+    "win_trait": [
+        "loving"
+    ],
+    "fail_trait": [
+        "lonesome",
+        "insecure"
+    ],
+    "relationship_constraint": [
+        "siblings",
+        "platonic_20"
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_med_medwarrior_siblings1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "med_cat",
+        "warrior",
+        "random_herbs",
+        "respect",
+        "comfort",
+        "trust",
+        "platonic"
+    ],
+    "intro_text": "r_c trots over to p_l, the two cats grinning at each other with raised tails. p_l wants an escort to gather herbs, and as luck would have it, the only cat free at the moment is their sibling, r_c!",
+    "decline_text": "... Or so they thought. r_c is called away by the deputy, and they rush off with an apologetic glance back, leaving p_l by themself with their tail sagging to the ground.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+        "p_l and r_c walk with their tails entwined and pelts brushing together, thrilled to be able to patrol together. p_l doesn't regret becoming a medicine cat, but they do feel secluded at times, watching r_c train and patrol with everyone. The siblings make the most of their time together, returning home side-by-side with their jaws full of herbs.",
+        "p_l and r_c race through the territory together, hearts light with joy at being able to patrol together despite their different roles. So what if they take a little longer coming home than they should? They still return to camp with plenty of herbs! They deserve to have some sibling time for a change.",
+        "As s_c and r_c walk together, s_c finds their eyes drawn to an almost-unnoticeable gap between stones. Something about it feels important, so they decide to investigate - a little patch of herbs hides within! r_c gushes with praise, telling s_c how amazing they are for noticing something so small, which sends a flush of pride through s_c's pelt.",
+        "s_c seems a little distracted, deep in thought about something. When r_c asks what's up, s_c blinks slowly at them before confessing how much they miss spending time together. They burrow their noses into each others pelts and purr, soaking in the moment and their love for each other before continuing on, and promise to spend more time together. "
+    ],
+    "fail_text": [
+        "p_l and r_c are far too distracted catching up with one another, and get nothing useful done.",
+        "s_c seems a little distracted, deep in thought about something. When r_c asks what's up, s_c blinks slowly at them before confessing how much they miss spending time together. r_c tries to comfort them, but s_c shakes their head, knowing that no matter what they say, their roles are just too different. Both cats are too upset to gather herbs."
+    ],
+    "win_skills": [
+        "keen eye"
+    ],
+    "win_trait": [
+        "loving"
+    ],
+    "fail_trait": [
+        "lonesome",
+        "insecure"
+    ],
+    "relationship_constraint": [
+        "siblings",
+        "platonic_20"
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_med_medwarriorapp_curiosity1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "med_cat",
+        "apprentice",
+        "warrior_app",
+        "one_apprentice",
+        "random_herbs",
+        "respect",
+        "comfort",
+        "trust",
+        "platonic"
+    ],
+    "intro_text": "p_l leads app1 through c_n's territory, enjoying the nice day. They glance back, and realize app1 looks like they want to ask them a question.",
+    "decline_text": "Just as app1 opens their mouth to speak, p_l spots a Clanmate trying to remove a thorn from their paw over app1's shoulder, and they hurry away to help.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+        "p_l sits down and motions for app1 to join them, looking at them inquisitively. app1 tentatively explains that they're curious about herbs, but are worried that desire to learn is detrimental. p_l isn't too sure how to comfort them, but they do their best. app1 doesn't look fully convinced, but at least their mood seems a bit lighter.",
+        "p_l sits down and motions for app1 to join them, looking at them inquisitively. app1 studiously looks at their paws, tail curled around their leg in shame, and mutters that they don't want to talk about it. p_l gently reassures them that it's okay to ask questions, and though app1 doesn't ask, they seem more chipper, and they're a big help anyways.",
+        null,
+        "s_c sits down and motions for app1 to join them, looking at them inquisitively. app1 tentatively explains that they're curious about herbs, but are worried that desire to learn is detrimental. s_c reassures them that nobody would think less of them for that, and it's good to know the basics. s_c promises to teach them when they get back to camp."
+    ],
+    "fail_text": [
+        "p_l sits down and motions for app1 to join them, looking at them inquisitively. app1 studiously looks at their paws, tail curled around their leg in shame, and mutters that they don't want to talk about it. The apprentice unfortunately isn't much help from then on, and the patrol returns home empty-pawed.",
+        "app1 tries a few times to strike up conversation, but s_c barely acknowledges them at all. When they finally do answer back, it's to snap at the younger cat to stay focused and stop distracting them. app1 draws their ears back and looks away, and the two cats studiously refuse to interact the rest of the patrol, returning to camp with no herbs."
+    ],
+    "win_trait": [
+        "compassionate",
+        "empathetic",
+        "patient",
+        "wise"
+    ],
+    "fail_trait": [
+        "cold",
+        "strict"
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_med_medwarriorapp_curiosity2",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "med_cat",
+        "apprentice",
+        "warrior_app",
+        "one_apprentice",
+        "random_herbs",
+        "respect",
+        "comfort",
+        "trust",
+        "platonic"
+    ],
+    "intro_text": "p_l leads app1 through c_n's territory, enjoying the nice day. They glance back, and realize app1 looks like they want to ask them a question.",
+    "decline_text": "Just as app1 opens their mouth to speak, p_l spots a Clanmate trying to remove a thorn from their paw over app1's shoulder, and they hurry away to help.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+        "p_l sits down and motions for app1 to join them, looking at them inquisitively. app1 tentatively explains that they were curious about how visits from StarClan work. p_l feels slightly conflicted, but explains that their ancestors only visit when they need to tell a cat something important. Not the answer they wanted, but app1 is grateful anyways.",
+        "p_l sits down and motions for app1 to join them, looking at them inquisitively. app1 studiously looks at their paws and mutters that they don't want to talk about it, seemingly having thought better of it. p_l gently reassures them that it's okay to ask questions, and though app1 doesn't ask, they seem more chipper, and they're a big help anyways.",
+        "s_c sits down and motions for app1 to join them, looking at them inquisitively. app1 tentatively explains that they were curious about how visits from StarClan work. s_c is probably the best cat they could have asked that question to. The older cat takes pride in the way app1 listens to them talk, wonder shining in their eyes."
+    ],
+    "fail_text": [
+        "p_l sits down and motions for app1 to join them, looking at them inquisitively. app1 studiously looks at their paws and mutters that they don't want to talk about it, seemingly having thought better of it. The apprentice unfortunately isn't much help from then on, and the patrol returns home empty-pawed.",
+        "app1 tries a few times to strike up conversation, but s_c barely acknowledges them at all. When they finally do answer back, it's to snap at the younger cat to stay focused and stop distracting them. app1 draws their ears back and looks away, and the two cats studiously refuse to interact the rest of the patrol, returning to camp with no herbs."
+    ],
+    "win_skills": [
+        "strong connection to StarClan"
+    ],
+    "fail_trait": [
+        "cold",
+        "strict"
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_med_medwarriorapp_curiosity3",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "med_cat",
+        "apprentice",
+        "warrior_app",
+        "one_apprentice",
+        "random_herbs",
+        "respect",
+        "comfort",
+        "trust",
+        "platonic"
+    ],
+    "intro_text": "p_l leads app1 through c_n's territory, enjoying the nice day. They glance back, and realize app1 looks like they want to ask them a question.",
+    "decline_text": "Just as app1 opens their mouth to speak, p_l spots a Clanmate trying to remove a thorn from their paw over app1's shoulder, and they hurry away to help.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+        "p_l sits down and motions for app1 to join them, looking at them inquisitively. app1 tentatively explains that they were curious about what it's like to get a vision from StarClan. p_l ponders how to explain it, and settles for a vague description and iterating that it's different for every cat who has one. app1 seems a bit confused, but grateful.",
+        "p_l sits down and motions for app1 to join them, looking at them inquisitively. app1 studiously looks at their paws and mutters that they don't want to talk about it, seemingly having thought better of it. p_l gently reassures them that it's okay to ask questions, and though app1 doesn't ask, they seem more chipper, and they're a big help anyways.",
+        "s_c sits down and motions for app1 to join them, looking at them inquisitively. app1 tentatively explains that they were curious about how visits from StarClan work. s_c is probably the best cat they could have asked that question to. The older cat takes pride in the way app1 listens to them talk, wonder shining in their eyes."
+    ],
+    "fail_text": [
+        "p_l sits down and motions for app1 to join them, looking at them inquisitively. app1 studiously looks at their paws and mutters that they don't want to talk about it, seemingly having thought better of it. The apprentice unfortunately isn't much help from then on, and the patrol returns home empty-pawed.",
+        "app1 tries a few times to strike up conversation, but s_c barely acknowledges them at all. When they finally do answer back, it's to snap at the younger cat to stay focused and stop distracting them. app1 draws their ears back and looks away, and the two cats studiously refuse to interact the rest of the patrol, returning to camp with no herbs."
+    ],
+    "win_skills": [
+        "strong connection to StarClan"
+    ],
+    "fail_trait": [
+        "cold",
+        "strict"
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_med_medwarriorapp_curiosity4",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "med_cat",
+        "apprentice",
+        "warrior_app",
+        "one_apprentice",
+        "random_herbs",
+        "respect",
+        "comfort",
+        "trust",
+        "platonic"
+    ],
+    "intro_text": "p_l leads app1 through c_n's territory, enjoying the nice day. They glance back, and realize app1 looks like they want to ask them a question.",
+    "decline_text": "Just as app1 opens their mouth to speak, p_l spots a Clanmate trying to remove a thorn from their paw over app1's shoulder, and they hurry away to help.",
+    "chance_of_success": 20,
+    "exp": 20,
+    "success_text": [
+        "p_l sits down and motions for app1 to join them, looking at them inquisitively. app1 studiously looks at their paws and mutters that they don't want to talk about it, seemingly having thought better of it. p_l gently reassures them that it's okay to ask questions, and though app1 doesn't ask, they seem more chipper, and they're a big help anyways.",
+        "p_l sits down and motions for app1 to join them, looking at them inquisitively. app1 tentatively explains that they were curious about where kits come from. p_l sputters, but quickly gathers themself and gently tells app1 that this isn't really the best place to ask, and it might be best to wait until they're a bit older. app1 huffs, but relents.",
+        null,
+        "s_c sits down and motions for app1 to join them, looking at them inquisitively. app1 tentatively explains that they were curious about where kits come from. s_ c takes a breath before answering, gently telling app1 that they understand their curiosity, but this might not be the right place and time. app1 is disappointed, but understands."
+    ],
+    "fail_text": [
+        "p_l sits down and motions for app1 to join them, looking at them inquisitively. app1 tentatively explains that they were curious about where kits come from. p_l sputters and stammers, looking up and away to try to avoid answering. app1 stares at them intently, and they know they'll have to relent sooner or later. This should be interesting...",
+        "app1 tries a few times to strike up conversation, but s_c barely acknowledges them at all. When they finally do answer back, it's to snap at the younger cat to stay focused and stop distracting them. app1 draws their ears back and looks away, and the two cats studiously refuse to interact the rest of the patrol, returning to camp with no herbs."
+    ],
+    "win_trait": [
+        "compassionate",
+        "empathetic"
+    ],
+    "fail_trait": [
+        "cold",
+        "strict"
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_med_medwarriorapp_curiosity5",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "med_cat",
+        "apprentice",
+        "warrior_app",
+        "one_apprentice",
+        "random_herbs",
+        "comfort",
+        "trust",
+        "platonic"
+    ],
+    "intro_text": "p_l leads app1 through c_n's territory, enjoying the nice day. They glance back, and realize app1 looks like they want to ask them a question.",
+    "decline_text": "Just as app1 opens their mouth to speak, p_l spots a Clanmate trying to remove a thorn from their paw over app1's shoulder, and they hurry away to help.",
+    "chance_of_success": 20,
+    "exp": 20,
+    "success_text": [
+        "p_l sits down and motions for app1 to join them, looking at them inquisitively. app1 studiously looks at their paws and mutters that they don't want to talk about it, seemingly having thought better of it. p_l gently reassures them that it's okay to ask questions, and though app1 doesn't ask, they seem more chipper, and they're a big help anyways.",
+        "p_l sits down and motions for app1 to join them, looking at them inquisitively. app1 practically bursts with questions, asking all about scars and wounds and how much blood has p_l seen and what was it like? p_l tells them, gently yet firmly, that spilling blood isn't aspirational. app1 doesn't seem to really get it, but they relent regardless.",
+        null,
+        "s_c sits down and motions for app1 to join them, looking at them inquisitively. app1 practically bursts with questions, asking about scars and wounds and how much blood has s_c seen and what was it like? s_c takes a breath, and explains why that's not appropriate to ask. app1 has the decency to look a little ashamed, and quietly gets back to work."
+    ],
+    "fail_text": [
+        "p_l sits down and motions for app1 to join them, looking at them inquisitively. app1 practically bursts with questions, asking all about scars and wounds and how much blood has p_l seen and what was it like? p_l is taken aback, and rather harshly tells app1 there's nothing noble in spilling blood. app1 scowls, and is sullen the rest of the patrol.",
+        "app1 tries a few times to strike up conversation, but s_c barely acknowledges them at all. When they finally do answer back, it's to snap at the younger cat to stay focused and stop distracting them. app1 draws their ears back and looks away, and the two cats studiously refuse to interact the rest of the patrol, returning to camp with no herbs."
+    ],
+    "win_trait": [
+        "patient",
+        "calm"
+    ],
+    "fail_trait": [
+        "cold",
+        "strict"
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_med_discussion1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "med_cat",
+        "med_only",
+        "no_app",
+        "random_herbs",
+        "comfort",
+        "trust",
+        "platonic"
+    ],
+    "intro_text": "p_l and r_c stroll through the territory, chatting while on their way to an herb patch they haven't visited in awhile.",
+    "decline_text": "p_l stops, then laughs. They've just remembered that they already have the herb they're walking to back at camp! Better to remember now than after picking it and walking all the way back.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+        "r_c makes a humming sound, and asks p_l what they think the nature of StarClan is. p_l swishes their tail, and answers that they'd never really thought about it, past the fact that they're ancestral spirits. It certainly makes for interesting conversation, and it's all too soon that they pick the herbs and have their mouths too full to continue.",
+        "r_c, deep in thought, asks p_l what they think the nature of StarClan is. p_l swishes their tail, and asks what brought this on. It's just something they've been dwelling on recently, r_c explains, and they wanted the opinion of someone they trust. p_l nods, and says they'll think about it - but they've reached the herbs, and have to pick them now.",
+        "r_c hums, and asks s_c what they think the nature of StarClan is. s_c doesn't hesitate before answering, their deep connection to their ancestors granting them knowledge and insight r_c doesn't necessarily have. r_c is enthralled, and it feels all too soon that they pick the herbs and have their mouths too full to continue talking."
+    ],
+    "fail_text": [
+        "The two medicine cats walk in circles for awhile, before realizing that they've completely forgotten where the herb patch is since its been so long. How embarrassing!"
+    ],
+    "win_skills": [
+        "strong connection to StarClan"
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_med_discussion2",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "med_cat",
+        "med_only",
+        "no_app",
+        "random_herbs",
+        "comfort",
+        "trust",
+        "platonic"
+    ],
+    "intro_text": "p_l and r_c stroll through the territory, chatting while on their way to an herb patch they haven't visited in awhile.",
+    "decline_text": "p_l stops, then laughs. They've just remembered that they already have the herb they're walking to back at camp! Better to remember now than after picking it and walking all the way back.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+        "r_c makes a humming sound, and asks p_l if they remember a particular story the elders are fond of. p_l nods, and r_c asks what they think the moral is. It eventually turns into talking about multiple old stories, which certainly makes for interesting conversation, and it's all too soon that they have their mouths too full of herbs to continue.",
+        "r_c, deep in thought, asks p_l if they remember a particular story the elders are fond of. p_l swishes their tail, and asks why. It's just something they've been dwelling on recently, r_c explains, and they wanted to know what p_l thought of it. p_l nods, and says they'll answer at camp - but they've reached the herbs, and have to pick them now.",
+        "r_c asks s_c if they remember a particular story the elders are fond of. s_c nods eagerly, and launches into recanting it. r_c is pleasantly surprised at how readily s_c recites the tale, listening to them talk in content silence. s_c's thrilled to share their knowledge, and it's all too soon that they have their jaws too full of herbs to continue."
+    ],
+    "fail_text": [
+        "The two medicine cats walk in circles for awhile, before realizing that they've completely forgotten where the herb patch is since its been so long. How embarrassing!"
+    ],
+    "win_skills": [
+        "lorekeeper"
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_med_discussion3",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "med_cat",
+        "med_only",
+        "no_app",
+        "random_herbs",
+        "comfort",
+        "trust",
+        "platonic"
+    ],
+    "intro_text": "p_l and r_c stroll through the territory, chatting while on their way to an herb patch they haven't visited in awhile.",
+    "decline_text": "p_l stops, then laughs. They've just remembered that they already have the herb they're walking to back at camp! Better to remember now than after picking it and walking all the way back.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+        "r_c makes a humming sound, and asks p_l if they ever ponder their own mortality. p_l swishes their tail, and answers that they'd never really thought about it, past knowing they'll go to StarClan when they die. It certainly makes for interesting conversation, and it's all too soon that they pick the herbs and have their mouths too full to continue.",
+        "r_c, deep in thought, asks p_l if they ever ponder their own mortality. p_l swishes their tail, and asks what brought this on. It's just something they've been dwelling on recently, r_c explains, and they wanted the opinion of someone they trust. p_l nods, and says they'll think about it - but they've reached the herbs, and have to pick them now."
+    ],
+    "fail_text": [
+        "The two medicine cats walk in circles for awhile, before realizing that they've completely forgotten where the herb patch is since its been so long. How embarrassing!"
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_med_discussion4",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "med_cat",
+        "med_only",
+        "no_app",
+        "random_herbs",
+        "comfort",
+        "trust",
+        "platonic"
+    ],
+    "intro_text": "p_l and r_c stroll through the territory, chatting while on their way to an herb patch they haven't visited in awhile.",
+    "decline_text": "p_l stops, then laughs. They've just remembered that they already have the herb they're walking to back at camp! Better to remember now than after picking it and walking all the way back.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+        "r_c makes a humming sound, and asks p_l if they've considered taking on another apprentice. p_l swishes their tail, and says they've just been waiting for the right cat to show interest, but wonders if r_c has any preferences. It certainly makes for good conversation, and it's all too soon that they have their mouths too full of herbs to continue.",
+        "r_c, deep in thought, asks p_l if they've considered taking on another apprentice. p_l swishes their tail, and asks what brought this on. They were honestly just wondering, r_c explains, as they're not sure themself when they want to. p_l nods, and says they've been thinking about it - but they've reached the herbs, and have to pick them now."
+    ],
+    "fail_text": [
+        "The two medicine cats walk in circles for awhile, before realizing that they've completely forgotten where the herb patch is since its been so long. How embarrassing!"
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_med_discussion5",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "med_cat",
+        "med_only",
+        "no_app",
+        "random_herbs",
+        "comfort",
+        "trust",
+        "platonic"
+    ],
+    "intro_text": "p_l and r_c stroll through the territory, chatting while on their way to an herb patch they haven't visited in awhile.",
+    "decline_text": "p_l stops, then laughs. They've just remembered that they already have the herb they're walking to back at camp! Better to remember now than after picking it and walking all the way back.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+        "r_c makes a humming sound, and mentions that they've been considering taking on another apprentice. p_l swishes their tail, and asks if r_c has seen any cats in particular that would be a good fit. It certainly makes for good conversation, and it's all too soon that they have their mouths too full of herbs to continue.",
+        "r_c, deep in thought, tells p_l they've been considering taking on another apprentice. p_l swishes their tail, and asks what brought this on. They just feel like the time is right, r_c explains, and they wanted p_l's opinion. p_l nods, and says they'll answer back at camp - but they've reached the herbs, and have to pick them now."
+    ],
+    "fail_text": [
+        "The two medicine cats walk in circles for awhile, before realizing that they've completely forgotten where the herb patch is since its been so long. How embarrassing!"
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 }
 ]
