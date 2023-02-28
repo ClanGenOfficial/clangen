@@ -371,6 +371,7 @@ class Clan():
         game.rpc.update_rpc.set()
         pygame.display.quit()
         pygame.quit()
+        game.rpc.finished.wait(1)
         exit()
 
     def save_clan(self):

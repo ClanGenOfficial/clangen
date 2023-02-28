@@ -25,8 +25,8 @@ status_dict = {
     }
 
 class _DiscordRPC(threading.Thread):
-    def __init__(self, client_id: str):
-        super().__init__()
+    def __init__(self, client_id: str, daemon: bool):
+        super().__init__(daemon=daemon)
         self._rpc = None
         self._client_id = client_id
         self._connected = False
@@ -37,7 +37,8 @@ class _DiscordRPC(threading.Thread):
         self.start_rpc = threading.Event()
         self.update_rpc = threading.Event()
         self.close_rpc = threading.Event()
-
+        self.finished = threading.Event()
+            
     def run(self):
         print("It begins....")
         self.start_rpc.wait()
@@ -127,4 +128,5 @@ class _DiscordRPC(threading.Thread):
         if self._connected:
             self._rpc.close()
             self._connected = False
+        self.finished.set()
             

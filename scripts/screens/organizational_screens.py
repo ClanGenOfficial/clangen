@@ -40,6 +40,7 @@ class StartScreen(Screens):
                 game.rpc.update_rpc.set()
                 pygame.display.quit()
                 pygame.quit()
+                game.rpc.finished.wait(1)
                 exit()
 
     def on_use(self):
@@ -348,6 +349,7 @@ class SettingsScreen(Screens):
                 game.rpc.update_rpc.set()
                 pygame.display.quit()
                 pygame.quit()
+                game.rpc.finished.wait(1)
                 exit()
             elif event.ui_element == self.save_settings_button:
                 self.save_settings()

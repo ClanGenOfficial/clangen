@@ -117,7 +117,7 @@ else:
     version_number.set_position((800 - version_number.get_relative_rect()[2] - 8, 700 - version_number.get_relative_rect()[3]))
 
 
-game.rpc = _DiscordRPC("1076277970060185701")
+game.rpc = _DiscordRPC("1076277970060185701", daemon=True)
 game.rpc.start()
 game.rpc.start_rpc.set()
 while True:
@@ -144,6 +144,7 @@ while True:
                 game.rpc.update_rpc.set()
                 pygame.display.quit()
                 pygame.quit()
+                game.rpc.finished.wait(1)
                 sys.exit()
             else:
                 SaveCheck(game.switches['cur_screen'], False, None)
