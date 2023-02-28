@@ -60,7 +60,7 @@
     "exp": 20,
     "success_text": [
         "Unsure but remembering the kittentales of red deathberries, r_c avoids them, and gives the rest of the patrol a head's up about the potentially dangerous bush.",
-        "After careful consideration, r_c recognizes them as raspberries and brings the rare berries  back to the medicine cat's den.",
+        "After careful consideration, r_c recognizes them as raspberries and brings the rare berries back to the medicine cat's den.",
         "Astutely, s_c recognises the cranberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit."
     ],
     "fail_text": [
@@ -485,7 +485,7 @@
     "success_text": [
         "Everyone has a nice practice session and their coordination and trust in their Clanmates grows stronger.",
         null,
-        "s_c takes charge and coordinates exercises for the training patrol. Soon cats are using each other as springboards, practicing breaking a Clanmates' fall, and working on treading exactly in each other's pawsteps."
+        "s_c takes charge and coordinates exercises for the training patrol. Soon cats are using each other as springboards, practicing breaking a Clanmate's fall, and working on treading exactly in each other's pawsteps."
     ],
     "fail_text": [
             "Unfortunately, no one steps up to teach. It's a little awkward, but the patrol disbands to attend to other duties."
@@ -531,7 +531,7 @@
     "success_text": [
         "Everyone has a nice practice session and their coordination with their Clanmates grows stronger. app1 really gets into it, and is praised for their focus and enthusiasm.",
         null,
-        "s_c takes charge and coordinates exercises for the training patrol. Soon cats are using each other as springboards, practicing breaking a Clanmates' fall, and working on treading exactly in each other's pawsteps."
+        "s_c takes charge and coordinates exercises for the training patrol. Soon cats are using each other as springboards, practicing breaking a Clanmate's fall, and working on treading exactly in each other's pawsteps."
     ],
     "fail_text": [
             "Unfortunately, no one steps up to teach. It's a little awkward, but the patrol disbands to attend to other duties."

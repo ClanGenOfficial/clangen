@@ -35,7 +35,7 @@ class StartScreen(Screens):
             elif event.ui_element == self.settings_button:
                 self.change_screen('settings screen')
             elif event.ui_element == self.quit:
-                game.rpc.close()
+                #game.rpc.close()
                 pygame.display.quit()
                 pygame.quit()
                 exit()
@@ -342,7 +342,7 @@ class SettingsScreen(Screens):
             if event.ui_element == self.fullscreen_toggle:
                 game.switch_setting('fullscreen')
                 game.save_settings()
-                game.rpc.close()
+                #game.rpc.close()
                 pygame.display.quit()
                 pygame.quit()
                 exit()

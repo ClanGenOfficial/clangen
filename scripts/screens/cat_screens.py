@@ -38,16 +38,17 @@ def accessory_display_name(cat):
     if accessory in collars:
         collar_colors = {'crimson': 'red', 'blue': 'blue', 'yellow': 'yellow', 'cyan': 'cyan', 
                          'red': 'orange', 'lime': 'lime', 'green': 'green', 'rainbow': 'rainbow', 
-                         'black': 'black', 'spikes': 'spiky', 'pink': 'pink', 'purple': 'purple', 'multi': 'multi'}
+                         'black': 'black', 'spikes': 'spiky', 'white': 'white', 'pink': 'pink', 
+                         'purple': 'purple', 'multi': 'multi', 'indigo': 'indigo'}
         collar_color = next((color for color in collar_colors if acc_display.startswith(color)), None)
 
         if collar_color:
-            if acc_display.endswith('bow') and not acc_display == 'rainbow':
-                acc_display = collar_color + ' bow'
+            if acc_display.endswith('bow') and not collar_color == 'rainbow':
+                acc_display = collar_colors[collar_color] + ' bow'
             elif acc_display.endswith('bell'):
-                acc_display = collar_color + ' bell collar'
+                acc_display = collar_colors[collar_color] + ' bell collar'
             else:
-                acc_display = collar_color + ' collar'
+                acc_display = collar_colors[collar_color] + ' collar'
 
     elif accessory in wild_accessories:
         if acc_display == 'blue feathers':
