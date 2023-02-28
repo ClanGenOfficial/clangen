@@ -153,7 +153,7 @@ class MakeClanScreen(Screens):
                 self.elements["error"].show()
                 return
             for clan in game.switches["clan_list"]:
-                if new_name.lower() in clan.lower():
+                if new_name.casefold() in clan.casefold():
                     self.elements["error"].set_text("A clan with that name already exists.")
                     self.elements["error"].show()
                     return
