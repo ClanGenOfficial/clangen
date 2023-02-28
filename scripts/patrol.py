@@ -967,8 +967,8 @@ class Patrol():
                 if kittypet is True:
                     new_backstory = choice(['kittypet1', 'kittypet2', 'kittypet3',
                                             'refugee3', 'tragedy_survivor3'])
-                    created_cats.extend(self.create_new_cat(loner=False, loner_name=True, kittypet=True, queen=True,
-                                                            backstory=new_backstory))
+                    created_cats = self.create_new_cat(loner=False, loner_name=True, kittypet=True, queen=True,
+                                                            backstory=new_backstory)
                     new_cat = created_cats[0]
                     new_cat.outside = True
                     new_cat.dead = True
@@ -978,8 +978,8 @@ class Patrol():
                                             'ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
                                             'tragedy_survivor', 'refugee2', 'tragedy_survivor4',
                                             'refugee4', 'tragedy_survivor2'])
-                    created_cats.extend(self.create_new_cat(loner=True, loner_name=True, kittypet=False, queen=True,
-                                                            backstory=new_backstory))
+                    created_cats = self.create_new_cat(loner=True, loner_name=True, kittypet=False, queen=True,
+                                                            backstory=new_backstory)
                     new_cat = created_cats[0]
                     new_cat.outside = True
                     new_cat.dead = True
@@ -1093,7 +1093,8 @@ class Patrol():
                        age=None,
                        relevant_cat=None,
                        backstory=None,
-                       other_clan=None):
+                       other_clan=None) -> list:
+        """This function creates cats based on the given values and returns a list."""
         name = None
         skill = None
         accessory = None
