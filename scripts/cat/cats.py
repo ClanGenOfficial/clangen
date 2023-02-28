@@ -1268,7 +1268,7 @@ class Cat():
             if self.status == 'leader':
                 game.clan.leader_lives -= 1
             self.die()
-            return False
+            return True
 
     # ---------------------------------------------------------------------------- #
     #                                   relative                                   #
