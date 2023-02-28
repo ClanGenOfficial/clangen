@@ -63,30 +63,6 @@ class Relationship():
         else:
             self.log = []
 
-        y = random.randrange(0, 31)
-
-        if self.cat_from.is_parent(self.cat_to) or self.cat_to.is_parent(self.cat_from):
-            self.family = True
-            if platonic_like == 0:
-                platonic_like = 30 + y
-                comfortable = 10 + y
-                admiration = 15 + y
-                trust = 10 + y
-
-        if self.cat_from.is_sibling(self.cat_to):
-            self.family = True
-            if platonic_like == 0:
-                platonic_like = 20 + y
-                comfortable = 10 + y
-                trust = 0 + y
-
-        if self.cat_from.mate is not None and self.cat_from.mate == self.cat_to.ID:
-            self.mates = True
-            if romantic_love == 0:
-                romantic_love = 20 + y
-                comfortable = 20 + y
-                trust = 10 + y
-
         # each stat can go from 0 to 100
         self.romantic_love = romantic_love
         self.platonic_like = platonic_like

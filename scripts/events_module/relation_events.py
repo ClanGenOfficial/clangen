@@ -905,15 +905,12 @@ class Relation_Events():
             if other_cat is not None:
                 if cat.gender == 'female':
                     kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0)
-                    all_kitten.append(kit)
                     kit.thought = f"Snuggles up to the belly of {cat.name}"
                 elif cat.gender == 'male' and other_cat.gender == 'male':
                     kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0)
-                    all_kitten.append(kit)
                     kit.thought = f"Snuggles up to the belly of {cat.name}"
                 else:
                     kit = Cat(parent1=other_cat.ID, parent2=cat.ID, moons=0)
-                    all_kitten.append(kit)
                     kit.thought = f"Snuggles up to the belly of {other_cat.name}"
                 cat.birth_cooldown = 6
                 other_cat.birth_cooldown = 6
@@ -923,9 +920,9 @@ class Relation_Events():
                 else:
                     backstory = backstory_choice_2
                 kit = Cat(parent1=cat.ID, moons=0, backstory=backstory)
-                all_kitten.append(kit)
                 cat.birth_cooldown = 6
                 kit.thought = f"Snuggles up to the belly of {cat.name}"
+            all_kitten.append(kit)
 
             # remove scars
             kit.scars.clear()
@@ -948,8 +945,14 @@ class Relation_Events():
                 if the_cat.dead or the_cat.outside:
                     continue
                 if the_cat.ID in kit.get_parents():
-                    the_cat.relationships[kit.ID] = Relationship(the_cat, kit, False, True)
-                    kit.relationships[the_cat.ID] = Relationship(kit, the_cat, False, True)
+                    y = random.randrange(0, 20)
+                    start_relation = Relationship(the_cat, kit, False, True)
+                    start_relation.platonic_like += 30 + y
+                    start_relation.comfortable = 10 + y
+                    start_relation.admiration = 15 + y
+                    start_relation.trust = 10 + y
+                    the_cat.relationships[kit.ID] = start_relation
+                    kit.relationships[the_cat.ID] = start_relation
                 else:
                     the_cat.relationships[kit.ID] = Relationship(the_cat, kit)
                     kit.relationships[the_cat.ID] = Relationship(kit, the_cat)
