@@ -694,7 +694,7 @@
     "success_text": [
         "p_l sits down and motions for app1 to join them, looking at them inquisitively. app1 tentatively explains that they were curious about how visits from StarClan work. p_l feels slightly conflicted, but explains that their ancestors only visit when they need to tell a cat something important. Not the answer they wanted, but app1 is grateful anyways.",
         "p_l sits down and motions for app1 to join them, looking at them inquisitively. app1 studiously looks at their paws and mutters that they don't want to talk about it, seemingly having thought better of it. p_l gently reassures them that it's okay to ask questions, and though app1 doesn't ask, they seem more chipper, and they're a big help anyways.",
-        "s_c sits down and motions for app1 to join them, looking at them inquisitively. app1 tentatively explains that they were curious about how visits from StarClan work. s_c is probably the best cat they could ask that question, and the older cat takes pride in the way app1 listens to them talk with wonder shining in their eyes."
+        "s_c sits down and motions for app1 to join them, looking at them inquisitively. app1 tentatively explains that they were curious about how visits from StarClan work. s_c is probably the best cat they could have asked that question to. The older cat takes pride in the way app1 listens to them talk, wonder shining in their eyes."
     ],
     "fail_text": [
         "p_l sits down and motions for app1 to join them, looking at them inquisitively. app1 studiously looks at their paws and mutters that they don't want to talk about it, seemingly having thought better of it. The apprentice unfortunately isn't much help from then on, and the patrol returns home empty-pawed.",
@@ -734,7 +734,7 @@
     "success_text": [
         "p_l sits down and motions for app1 to join them, looking at them inquisitively. app1 tentatively explains that they were curious about what it's like to get a vision from StarClan. p_l ponders how to explain it, and settles for a vague description and iterating that it's different for every cat who has one. app1 seems a bit confused, but grateful.",
         "p_l sits down and motions for app1 to join them, looking at them inquisitively. app1 studiously looks at their paws and mutters that they don't want to talk about it, seemingly having thought better of it. p_l gently reassures them that it's okay to ask questions, and though app1 doesn't ask, they seem more chipper, and they're a big help anyways.",
-        "s_c sits down and motions for app1 to join them, looking at them inquisitively. app1 tentatively explains that they were curious about what it's like to get a vision from StarClan. s_c is probably the best cat they could ask that question, and the older cat takes pride in the way app1 listens to them talk with wonder shining in their eyes."
+        "s_c sits down and motions for app1 to join them, looking at them inquisitively. app1 tentatively explains that they were curious about how visits from StarClan work. s_c is probably the best cat they could have asked that question to. The older cat takes pride in the way app1 listens to them talk, wonder shining in their eyes."
     ],
     "fail_text": [
         "p_l sits down and motions for app1 to join them, looking at them inquisitively. app1 studiously looks at their paws and mutters that they don't want to talk about it, seemingly having thought better of it. The apprentice unfortunately isn't much help from then on, and the patrol returns home empty-pawed.",
@@ -892,6 +892,9 @@
     ],
     "fail_text": [
         "The two medicine cats walk in circles for awhile, before realizing that they've completely forgotten where the herb patch is since its been so long. How embarrassing!"
+    ],
+    "win_skills": [
+        "lorekeeper"
     ],
     "min_cats": 2,
     "max_cats": 2,
