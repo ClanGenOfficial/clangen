@@ -970,7 +970,6 @@ class Patrol():
                     created_cats = self.create_new_cat(loner=False, loner_name=True, kittypet=True, queen=True,
                                                             backstory=new_backstory)
                     new_cat = created_cats[0]
-                    print(new_cat.name)
                     new_cat.outside = True
                     new_cat.dead = True
                     new_cat.thought = "Is glad that their kits are safe"
@@ -982,7 +981,6 @@ class Patrol():
                     created_cats = self.create_new_cat(loner=True, loner_name=True, kittypet=False, queen=True,
                                                             backstory=new_backstory)
                     new_cat = created_cats[0]
-                    print(new_cat.name)
                     new_cat.outside = True
                     new_cat.dead = True
                     new_cat.thought = "Is glad that their kits are safe"
