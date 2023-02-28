@@ -44,11 +44,11 @@ def accessory_display_name(cat):
 
         if collar_color:
             if acc_display.endswith('bow') and not collar_color == 'rainbow':
-                acc_display = collar_color + ' bow'
+                acc_display = collar_colors[collar_color] + ' bow'
             elif acc_display.endswith('bell'):
-                acc_display = collar_color + ' bell collar'
+                acc_display = collar_colors[collar_color] + ' bell collar'
             else:
-                acc_display = collar_color + ' collar'
+                acc_display = collar_colors[collar_color] + ' collar'
 
     elif accessory in wild_accessories:
         if acc_display == 'blue feathers':
