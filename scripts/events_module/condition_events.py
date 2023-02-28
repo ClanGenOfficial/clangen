@@ -5,7 +5,7 @@ except ImportError:
 import random
 
 from scripts.cat.cats import Cat
-from scripts.cat.pelts import *
+from scripts.cat.pelts import scars1, scars2, scars3
 from scripts.conditions import medical_cats_condition_fulfilled, get_amount_cat_for_one_medic
 from scripts.utility import event_text_adjust, get_med_cats, change_relationship_values
 from scripts.game_structure.game_essentials import game
@@ -48,7 +48,7 @@ class Condition_Events():
         # ---------------------------------------------------------------------------- #
         #                              make cats sick                                  #
         # ---------------------------------------------------------------------------- #
-        random_number = int(random.random() * 300)
+        random_number = int(random.random() * game.config["condition_related"][f"{game.clan.game_mode}_illness_chance"])
         if not cat.dead and not cat.is_ill() and random_number <= 10 and not event_string:
             season_dict = ILLNESSES_SEASON_LIST[season]
             possible_illnesses = []
@@ -97,12 +97,7 @@ class Condition_Events():
         other_clan = random.choice(game.clan.all_clans)
         triggered = False
         text = None
-
-        if game.clan.game_mode != 'classic':
-            random_number = int(random.random() * 150)
-        else:
-            random_number = int(random.random() * 200)
-
+        random_number = int(random.random() * game.config["condition_related"][f"{game.clan.game_mode}_injury_chance"])
 
         if cat.dead:
             triggered = True
@@ -138,12 +133,12 @@ class Condition_Events():
                 possible_events = self.generate_events.possible_events(cat.status, cat.age, "injury")
                 final_events = self.generate_events.filter_possible_events(possible_events, cat, other_cat, war, enemy_clan, other_clan, alive_kits)
 
-                other_clan_name = f'{str(other_clan.name)}Clan'
-                enemy_clan = f'{str(enemy_clan)}'
+                other_clan_name = f'{other_clan.name}Clan'
+                enemy_clan = f'{enemy_clan}'
 
                 if other_clan_name == 'None':
                     other_clan = game.clan.all_clans[0]
-                    other_clan_name = f'{str(other_clan.name)}Clan'
+                    other_clan_name = f'{other_clan.name}Clan'
 
                 if len(final_events) > 0:
                     injury_event = random.choice(final_events)
@@ -661,14 +656,14 @@ class Condition_Events():
                             event = f'{cat.name} has decided to retire from normal Clan duty.'
 
                         if cat.age == 'adolescent':
-                            event += f"They are given the name {cat.name.prefix}{cat.name.suffix} in honor " \
+                            event += f" They are given the name {cat.name.prefix}{cat.name.suffix} in honor " \
                                      f"of their contributions to {game.clan.name}Clan."
 
                         cat.retire_cat()
                         game.ranks_changed_timeskip = True
                         event_list.append(event)
 
-                if cat.permanent_condition[condition]['severity'] == 'severe':
+                elif cat.permanent_condition[condition]['severity'] == 'severe':
                     event_types.append('ceremony')
                     if game.clan.leader is not None:
                         if not game.clan.leader.dead and not game.clan.leader.exiled \
@@ -796,8 +791,7 @@ class Condition_Events():
         clan_herbs.update(game.clan.herbs.keys())
         needed_herbs.update(source[condition]["herbs"])
         herb_set = clan_herbs.intersection(needed_herbs)
-        usable_herbs = []
-        usable_herbs.extend(herb_set)
+        usable_herbs = list(herb_set)
 
         if not source[condition]["herbs"]:
             return
@@ -818,12 +812,22 @@ class Condition_Events():
 
             effect = random.choice(possible_effects)
 
-            # deplete the herb
             herb_used = usable_herbs[0]
-            if game.clan.herbs[herb_used] == 1:
-                amount_used = 1
-            else:
-                amount_used = random.randrange(1, game.clan.herbs[herb_used])
+            # Failsafe, since I have no idea why we are getting 0-herb entries.
+            while game.clan.herbs[herb_used] <= 0:
+                print(f"Warning: {herb_used} was chosen to use, although you currently have "
+                      f"{game.clan.herbs[herb_used]}. Removing {herb_used} from herb dict, finding a new herb...")
+                game.clan.herbs.pop(herb_used)
+                usable_herbs.pop(0)
+                if usable_herbs:
+                    herb_used = usable_herbs[0]
+                else:
+                    print("No herbs to use for this injury")
+                    return
+                print(f"New herb found: {herb_used}")
+
+            # deplete the herb
+            amount_used = 1
             game.clan.herbs[herb_used] -= amount_used
             if game.clan.herbs[herb_used] <= 0:
                 game.clan.herbs.pop(herb_used)
@@ -835,11 +839,15 @@ class Condition_Events():
                 if herb == herb_used:
                     break
             modifier = count
+            if cat.status in ['elder', 'kitten']:
+                modifier = modifier * 2
 
             effect_message = 'this should not show up'
             if effect == 'mortality':
                 effect_message = 'They will be less likely to die.'
                 conditions[condition]["mortality"] += 11 - modifier + int(amount_used * 1.5)
+                if conditions[condition]["mortality"] < 1:
+                    conditions[condition]["mortality"] = 1
             elif effect == 'duration':
                 effect_message = 'They will heal sooner.'
                 conditions[condition]["duration"] -= 1

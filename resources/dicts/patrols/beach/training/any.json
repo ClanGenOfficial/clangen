@@ -3,7 +3,7 @@
     "patrol_id": "bch_train_session1",
     "biome": "beach",
     "season": "Any",
-    "tags": ["app_stat", "apprentice", "training", "scar", "minor_injury", "warrior"],
+    "tags": ["app_stat", "apprentice", "training", "scar", "QUILLCHUNK", "minor_injury", "warrior"],
     "intro_text": "The patrol wants to hold a training session for app1. They decide to focus on how best to navigate the rocky tide pools.",
     "decline_text": "They decide to focus on patrolling the territory instead. Training can wait for another day.",
     "chance_of_success": 70,
@@ -34,7 +34,7 @@
     "patrol_id": "bch_train_stuck1",
     "biome": "beach",
     "season": "Any",
-    "tags": ["training", "platonic", "comfort", "trust", "blunt_force_injury", "death", "scar", "no_change_fail", "p_l_to_r_c", "s_c to r_c", "patrol_to_p_l", "patrol_to_r_c"],
+    "tags": ["training", "platonic", "comfort", "trust", "blunt_force_injury", "death", "scar", "CHEEK", "no_change_fail", "p_l_to_r_c", "s_c to r_c", "patrol_to_p_l", "patrol_to_r_c"],
     "intro_text": "Trailing behind the patrol, the dune they're crossing shifts beneath r_c's paws. They look around wildly for safe footing - just as the sand caves in beneath them and the world goes dark.",
     "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
     "chance_of_success": 90,
@@ -68,7 +68,7 @@
     "patrol_id": "bch_train_stuck2",
     "biome": "beach",
     "season": "Any",
-    "tags": ["training", "blunt_force_injury", "death", "scar"],
+    "tags": ["training", "blunt_force_injury", "death", "scar", "ONE"],
     "intro_text": "r_c is training alone out on the coast when suddenly, the dune they're standing on shifts beneath their paws. They look around wildly for safe footing - just as the sand caves in beneath them and the world goes dark.",
     "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
     "chance_of_success": 70,
@@ -101,7 +101,7 @@
     "patrol_id": "bch_train_soloapp1",
     "biome": "beach",
     "season": "Any",
-    "tags": ["app_stat", "training", "apprentice", "minor_injury", "scar"],
+    "tags": ["app_stat", "training", "apprentice", "minor_injury", "scar", "RIGHTEAR"],
     "intro_text": "r_c heads out along the coast alone, but maybe an apprentice shouldn't try to do a solo patrol.",
     "decline_text": "r_c turns back to camp, deciding that this is a bad idea.",
     "chance_of_success": 50,
@@ -118,7 +118,6 @@
             null,
             "The apprentice wanders along obliviously and slips, tumbling right down into a rocky pool. Bruised and sore, r_c has to report to the medicine cat den when they return to camp."
     ],
-    "win_skills": null,
     "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "fail_trait": ["insecure", "lonesome", "nervous"],
     "min_cats": 1,
@@ -152,7 +151,6 @@
     ],
     "win_skills": ["smart", "very smart", "extremely smart"],
     "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
-    "fail_skills": null,
     "fail_trait": ["insecure", "lonesome", "nervous"],
     "min_cats": 1,
     "max_cats": 1,
@@ -182,7 +180,6 @@
     ],
     "win_skills": ["smart", "very smart", "extremely smart"],
     "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
-    "fail_skills": null,
     "fail_trait": ["insecure", "lonesome", "nervous"],
     "min_cats": 1,
     "max_cats": 1,
@@ -212,7 +209,6 @@
     ],
     "win_skills": ["smart", "very smart", "extremely smart"],
     "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
-    "fail_skills": null,
     "fail_trait": ["insecure", "lonesome", "nervous"],
     "min_cats": 1,
     "max_cats": 1,
@@ -237,9 +233,7 @@
             "app1 maintains that octopus are prey, not opponents or weird transformed dead cats or anything like that, just prey, and p_l can't get them to take the training session seriously."
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -263,9 +257,7 @@
             "app1 refuses to believe that the octopus can fit into the tiny crevice that p_l points out, and starts an argument about it. "
     ],
     "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -289,9 +281,7 @@
             "app1 maintains that octopus are prey, not opponents or weird transformed dead cats or anything like that, just prey, and p_l can't get them to take the training session seriously. They distract app2 as well, and eventually p_l has to give up on teaching."
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -315,9 +305,7 @@
             "app1 refuses to believe that the octopus can fit into the tiny crevice that p_l points out, and starts an argument about it. app2 sides with p_l and no one learns anything in the squabbling."
     ],
     "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -341,10 +329,7 @@
     "fail_text": [
             "app2 rounds the top of the cliff, and seeing app1, asks why app1 wanted to meet there. app1 stutters out some nonsense about hunting, and then runs off into the rain."
     ],
-    "win_skills": null,
     "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
-    "fail_skills": null,
-    "fail_trait": null,
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -368,10 +353,7 @@
     "fail_text": [
             "app2 refuses to come up the cliff while it's so stormy, and app1 gives up on their idea, disappointed they didn't get to spend time with app2."
     ],
-    "win_skills": null,
     "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
-    "fail_skills": null,
-    "fail_trait": null,
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -395,10 +377,7 @@
     "fail_text": [
             "app1 tries to give app2 a shell, but they don't want it, and the crestfallen apprentice slinks off sadly."
     ],
-    "win_skills": null,
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "lonesome", "loyal", "charismatic"],
-    "fail_skills": null,
-    "fail_trait": null,
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -424,8 +403,6 @@
     ],
     "win_skills": ["fantastic hunter"],
     "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
-    "fail_skills": null,
-    "fail_trait": null,
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -451,8 +428,6 @@
     ],
     "win_skills": ["fantastic hunter"],
     "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
-    "fail_skills": null,
-    "fail_trait": null,
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -476,10 +451,7 @@
     "fail_text": [
             "They continue on their way, not stopping to see the sights."
     ],
-    "win_skills": null,
     "win_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "patient", "responsible", "thoughtful", "wise"],
-    "fail_skills": null,
-    "fail_trait": null,
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,

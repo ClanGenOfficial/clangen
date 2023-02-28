@@ -15,18 +15,6 @@
 "fail_text": [
     "They gaze into the puddle only to see the weird ripples were caused by a small frog. p_l feels disappointed because they really could have used some guidance from StarClan."
 ],
-"win_skills": [
-    "None"
-],
-"win_trait": [
-    "None"
-],
-"fail_skills": [
-    "None"
-],
-"fail_trait": [
-    "None"
-],
 "min_cats": 1,
 "max_cats": 1,
 "antagonize_text": null,
@@ -57,9 +45,7 @@
 "fail_text": [
     "app1 is constantly distracted and running ahead much to the frustration of p_l. Evidently no new knowledge will be learned that day."
 ],
-"win_skills": null,
-"win_trait": null,
-"fail_skills": null,
+
 "fail_trait": null,
 "min_cats": 2,
 "max_cats": 2,
@@ -83,18 +69,6 @@
 ],
 "fail_text": [
     "p_l goes to a known herb patch - but the plant has died! They give up and return to camp, feeling terrible and with their tail dragging on the ground."
-],
-"win_skills": [
-    "None"
-],
-"win_trait": [
-    "None"
-],
-"fail_skills": [
-    "None"
-],
-"fail_trait": [
-    "None"
 ],
 "min_cats": 1,
 "max_cats": 1,
@@ -139,9 +113,7 @@
             "p_l knows the conditions are miserable, but their group is even more insufferable, and not only do they have to put up with these cats for an entire afternoon, there's also nothing to show for it."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -207,9 +179,7 @@
             "Can warriors not pay attention, even to something as simple as cobwebs?! p_l holds their breath and counts to ten before they dismiss the patrol, every found cobweb ruined, what little they did manage to find."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -233,9 +203,7 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -259,9 +227,7 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and app1 looks up at them with disappointment."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -285,9 +251,7 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful and snappish with each other."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -310,13 +274,12 @@
     ],
     "min_cats": 1,
     "max_cats": 1,
-    "win_skills": null,
-    "win_trait": null,
+
     "antagonize_text": null,
     "antagonize_fail_text": null
     },
     {
-    "patrol_id": "gen_med_gatheringmoss2",
+    "patrol_id": "fst_med_gatheringmoss2",
     "biome": "forest",
     "season": "Any",
     "tags": ["med_cat", "apprentice", "med_only", "herb", "moss", "big_change", "platonic", "dislike"],
@@ -332,13 +295,12 @@
     ],
     "min_cats": 2,
     "max_cats": 2,
-    "win_skills": null,
-    "win_trait": null,
+
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "gen_med_gatheringmoss3",
+    "patrol_id": "fst_med_gatheringmoss3",
     "biome": "forest",
     "season": "Any",
     "tags": ["med_cat", "warrior", "herb", "moss", "big_change", "platonic", "dislike"],
@@ -354,13 +316,12 @@
     ],
     "min_cats": 2,
     "max_cats": 2,
-    "win_skills": null,
-    "win_trait": null,
+
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "gen_med_gatheringmoss4",
+    "patrol_id": "fst_med_gatheringmoss4",
     "biome": "forest",
     "season": "Any",
     "tags": ["med_cat", "warrior", "herb", "moss", "big_change", "platonic"],
@@ -376,13 +337,12 @@
     ],
     "min_cats": 3,
     "max_cats": 6,
-    "win_skills": null,
-    "win_trait": null,
+
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "fst_med_gatheringrosemary1",
+    "patrol_id": "fst_med_gatheringrosemarylesson1",
     "biome": "forest",
     "season": "Any",
     "tags": ["med_cat", "apprentice", "herb", "rosemary", "comfort", "trust", "no_change_fail", "injury", "thorn in their paw", "med_only"],
@@ -401,8 +361,7 @@
     ],
     "min_cats": 2,
     "max_cats": 2,
-    "win_skills": null,
-    "win_trait": null,
+
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
@@ -426,8 +385,7 @@
     ],
     "min_cats": 2,
     "max_cats": 2,
-    "win_skills": null,
-    "win_trait": null,
+
     "antagonize_text": null,
     "antagonize_fail_text": null
 }

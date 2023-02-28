@@ -43,12 +43,6 @@
         "faithful",
         "loving"
     ],
-    "fail_skills": [
-        "None"
-    ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": null,
@@ -88,15 +82,6 @@
     "win_skills": [
         "great hunter",
         "fantastic hunter"
-    ],
-    "win_trait": [
-        "None"
-    ],
-    "fail_skills": [
-        "None"
-    ],
-    "fail_trait": [
-        "None"
     ],
     "min_cats": 1,
     "max_cats": 1,
@@ -149,12 +134,6 @@
         "faithful",
         "loving"
     ],
-    "fail_skills": [
-        "None"
-    ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": null,
@@ -173,6 +152,7 @@
         "hunting",
         "fighting",
         "scar",
+        "NECKBITE",
         "injury",
         "bite-wound",
         "clan_to_patrol",
@@ -216,9 +196,7 @@
         "responsible",
         "righteous"
     ],
-    "fail_skills": [
-        "None"
-    ],
+
     "fail_trait": [
         "troublesome",
         "vengeful",
@@ -242,6 +220,7 @@
         "hunting",
         "fighting",
         "scar",
+        "NECKBITE",
         "injury",
         "bite-wound",
         "clan_to_patrol",
@@ -285,9 +264,7 @@
         "responsible",
         "righteous"
     ],
-    "fail_skills": [
-        "None"
-    ],
+
     "fail_trait": [
         "troublesome",
         "vengeful",
@@ -311,6 +288,7 @@
         "fighting",
         "death",
         "scar",
+        "NECKBITE",
         "injury",
         "bite-wound",
         "clan_to_patrol",
@@ -352,9 +330,7 @@
         "responsible",
         "righteous"
     ],
-    "fail_skills": [
-        "None"
-    ],
+
     "fail_trait": [
         "troublesome",
         "vengeful",
@@ -379,6 +355,7 @@
         "hunting",
         "fighting",
         "scar",
+        "NECKBITE",
         "injury",
         "bite-wound",
         "clan_to_patrol",
@@ -422,9 +399,7 @@
         "responsible",
         "righteous"
     ],
-    "fail_skills": [
-        "None"
-    ],
+
     "fail_trait": [
         "troublesome",
         "vengeful",
@@ -448,6 +423,7 @@
         "hunting",
         "fighting",
         "scar",
+        "LEFTEAR",
         "injury",
         "clan_to_patrol",
         "respect",
@@ -486,9 +462,7 @@
         "responsible",
         "righteous"
     ],
-    "fail_skills": [
-        "None"
-    ],
+
     "fail_trait": [
         "troublesome",
         "vengeful",
@@ -511,6 +485,7 @@
         "hunting",
         "fighting",
         "scar",
+        "NECKBITE",
         "injury",
         "bite-wound",
         "clan_to_patrol",
@@ -552,9 +527,7 @@
         "responsible",
         "righteous"
     ],
-    "fail_skills": [
-        "None"
-    ],
+
     "fail_trait": [
         "troublesome",
         "vengeful",

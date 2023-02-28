@@ -21,18 +21,6 @@
 	"fail_text":[
 		"They gaze into the water of the underground spring only to see the weird ripples were caused by a small fish flopping around. p_l feels disappointed because they really could have used some guidance from StarClan."
 	],
-	"win_skills":[
-		"None"
-	],
-	"win_trait":[
-		"None"
-	],
-	"fail_skills":[
-		"None"
-	],
-	"fail_trait":[
-		"None"
-	],
 	"min_cats":1,
 	"max_cats":1,
 	"Antagonize_text":null,
@@ -67,18 +55,6 @@
 	"fail_text":[
 		"app1 is constantly distracted and running ahead much to the frustration of p_l. Evidently no new knowledge will be learned that day."
 	],
-	"win_skills":[
-		"None"
-	],
-	"win_trait":[
-		"None"
-	],
-	"fail_skills":[
-		"None"
-	],
-	"fail_trait":[
-		"None"
-	],
 	"min_cats":2,
 	"max_cats":2,
 	"antagonize_text":null,
@@ -106,18 +82,6 @@
 	],
 	"fail_text":[
 		"app1 goes to a known herb patch - but the plant has died! They give up and return to camp, feeling terrible."
-	],
-	"win_skills":[
-		"None"
-	],
-	"win_trait":[
-		"None"
-	],
-	"fail_skills":[
-		"None"
-	],
-	"fail_trait":[
-		"None"
 	],
 	"min_cats":1,
 	"max_cats":1,
@@ -167,12 +131,6 @@
 		"thoughtful",
 		"wise"
 	],
-	"fail_skills":[
-		"None"
-	],
-	"fail_trait":[
-		"None"
-	],
 	"min_cats":1,
 	"max_cats":1,
 	"Antagonize_text":null,
@@ -216,12 +174,6 @@
 	"win_trait":[
 		"patient"
 	],
-	"fail_skills":[
-		"None"
-	],
-	"fail_trait":[
-		"None"
-	],
 	"min_cats":2,
 	"max_cats":2,
 	"antagonize_text":null,
@@ -261,12 +213,6 @@
 	"win_trait":[
 		"patient"
 	],
-	"fail_skills":[
-		"None"
-	],
-	"fail_trait":[
-		"None"
-	],
 	"min_cats":1,
 	"max_cats":1,
 	"antagonize_text":null,
@@ -304,9 +250,6 @@
 	],
 	"win_trait":[
 		"patient"
-	],
-	"fail_skills":[
-		"None"
 	],
 	"fail_trait":[
 		"troublesome",
@@ -351,12 +294,6 @@
 	"win_trait":[
 		"patient"
 	],
-	"fail_skills":[
-		"None"
-	],
-	"fail_trait":[
-		"None"
-	],
 	"min_cats":2,
 	"max_cats":2,
 	"antagonize_text":null,
@@ -396,12 +333,6 @@
 	"win_trait":[
 		"patient"
 	],
-	"fail_skills":[
-		"None"
-	],
-	"fail_trait":[
-		"None"
-	],
 	"min_cats":1,
 	"max_cats":1,
 	"antagonize_text":null,
@@ -439,9 +370,6 @@
 	],
 	"win_trait":[
 		"patient"
-	],
-	"fail_skills":[
-		"None"
 	],
 	"fail_trait":[
 		"troublesome",
@@ -486,12 +414,6 @@
 	"win_trait":[
 		"patient"
 	],
-	"fail_skills":[
-		"None"
-	],
-	"fail_trait":[
-		"None"
-	],
 	"min_cats":2,
 	"max_cats":2,
 	"antagonize_text":null,
@@ -530,12 +452,6 @@
 	],
 	"win_trait":[
 		"patient"
-	],
-	"fail_skills":[
-		"None"
-	],
-	"fail_trait":[
-		"None"
 	],
 	"min_cats":1,
 	"max_cats":1,
@@ -576,9 +492,6 @@
 	"win_trait":[
 		"patient"
 	],
-	"fail_skills":[
-		"None"
-	],
 	"fail_trait":[
 		"troublesome",
 		"childish"
@@ -616,18 +529,6 @@
 		null,
 		null,
 		null
-	],
-	"win_skills":[
-		"None"
-	],
-	"win_trait":[
-		"None"
-	],
-	"fail_skills":[
-		"None"
-	],
-	"fail_trait":[
-		"None"
 	],
 	"min_cats":2,
 	"max_cats":2,
@@ -673,12 +574,6 @@
 		"great mediator",
 		"excellent mediator"
 	],
-	"win_trait":[
-		"None"
-	],
-	"fail_skills":[
-		"None"
-	],
 	"fail_trait":[
 		"troublesome",
 		"childish"
@@ -719,12 +614,6 @@
 		"good mediator",
 		"great mediator",
 		"excellent mediator"
-	],
-	"win_trait":[
-		"None"
-	],
-	"fail_skills":[
-		"None"
 	],
 	"fail_trait":[
 		"troublesome",
@@ -767,12 +656,6 @@
 		"great mediator",
 		"excellent mediator"
 	],
-	"win_trait":[
-		"None"
-	],
-	"fail_skills":[
-		"None"
-	],
 	"fail_trait":[
 		"troublesome",
 		"childish"
@@ -813,12 +696,6 @@
 		"good mediator",
 		"great mediator",
 		"excellent mediator"
-	],
-	"win_trait":[
-		"None"
-	],
-	"fail_skills":[
-		"None"
 	],
 	"fail_trait":[
 		"troublesome",
@@ -861,12 +738,6 @@
 		"great mediator",
 		"excellent mediator"
 	],
-	"win_trait":[
-		"None"
-	],
-	"fail_skills":[
-		"None"
-	],
 	"fail_trait":[
 		"troublesome",
 		"childish"
@@ -907,12 +778,6 @@
 		"good mediator",
 		"great mediator",
 		"excellent mediator"
-	],
-	"win_trait":[
-		"None"
-	],
-	"fail_skills":[
-		"None"
 	],
 	"fail_trait":[
 		"troublesome",
@@ -955,12 +820,6 @@
 		"great mediator",
 		"excellent mediator"
 	],
-	"win_trait":[
-		"None"
-	],
-	"fail_skills":[
-		"None"
-	],
 	"fail_trait":[
 		"troublesome",
 		"childish"
@@ -1002,12 +861,6 @@
 		"great mediator",
 		"excellent mediator"
 	],
-	"win_trait":[
-		"None"
-	],
-	"fail_skills":[
-		"None"
-	],
 	"fail_trait":[
 		"troublesome",
 		"childish"
@@ -1034,8 +887,7 @@
     ],
     "min_cats": 1,
     "max_cats": 1,
-    "win_skills": null,
-    "win_trait": null,
+
     "antagonize_text": null,
     "antagonize_fail_text": null
 }

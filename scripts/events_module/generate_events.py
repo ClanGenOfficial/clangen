@@ -146,7 +146,7 @@ class GenerateEvents:
             if "other_cat" in event.tags and not other_cat:
                 continue
 
-            if "backstory_constraint" and cat.backstory not in backstory_constraint:
+            if event.backstory_constraint and cat.backstory not in event.backstory_constraint:
                 continue
 
             # make complete leader death less likely until the leader is over 150 moons
@@ -175,7 +175,7 @@ class GenerateEvents:
                     continue
 
             # check hate and jealousy before allowing murder
-            if "murder" in event.tags:
+            if "murder" in event.tags and other_cat:
                 hate = False
                 relationships = other_cat.relationships.values()
                 dislike_relation = list(filter(lambda rel: rel.dislike > 50, relationships))

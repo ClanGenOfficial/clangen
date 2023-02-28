@@ -1,17 +1,19 @@
-import re
-from math import ceil
+import random
 from os.path import exists as file_exists
 from random import choice, sample
 import pygame
 import pygame_gui
-import random
+
+try:
+    import ujson
+except ImportError:
+    import json as ujson
 from .base_screens import Screens, cat_profiles
 from scripts.utility import get_text_box_theme, scale, get_personality_compatibility, check_relationship_value
-# from scripts.game_structure.text import *
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked, UISpriteButton
 from scripts.patrol import patrol
-from scripts.cat.cats import Cat, INJURIES, ILLNESSES
-from scripts.game_structure.game_essentials import *
+from scripts.cat.cats import Cat
+from scripts.game_structure.game_essentials import game, MANAGER
 
 
 class PatrolScreen(Screens):
@@ -215,24 +217,26 @@ class PatrolScreen(Screens):
             self.elements['add_six'].enable()
             self.elements["random"].enable()
 
+            # making sure meds don't get the option for other patrols
+            med = False
+            for cat in self.current_patrol:
+                if cat.status in ['medicine cat', 'medicine cat apprentice']:
+                    med = True
+                    self.patrol_type = 'med'
+
+
             if game.clan.game_mode != 'classic':
                 self.elements['paw'].enable()
                 self.elements['mouse'].enable()
                 self.elements['claws'].enable()
                 self.elements['herb'].enable()
 
-                # making sure meds don't get the option for other patrols
-                med = False
-                for cat in self.current_patrol:
-                    if cat.status in ['medicine cat', 'medicine cat apprentice']:
-                        med = True
-                        self.patrol_type = 'med'
+                self.elements['info'].kill()  # clearing the text before displaying new text
+
                 if med is False and self.current_patrol:
                     self.elements['herb'].disable()
                     if self.patrol_type == 'med':
                         self.patrol_type = 'general'
-
-                self.elements['info'].kill()  # clearing the text before displaying new text
 
                 if self.patrol_type == 'general':
                     text = 'random patrol type'
@@ -599,38 +603,7 @@ class PatrolScreen(Screens):
         # resetting stat cats and then finding new stat cats
         self.find_stat_cats(self.normal_event_choice)
 
-        # if no romance was available or the patrol lead and random cat aren't potential mates then use the normal event
-        if not self.romantic_event_choice \
-                or not patrol.patrol_random_cat.is_potential_mate(patrol.patrol_leader, for_love_interest=True) \
-                or ("rel_two_apps" in self.romantic_event_choice.tags and not patrol.patrol_apprentices[0].is_potential_mate(patrol.patrol_apprentices[1], for_love_interest=True)):
-            patrol.patrol_event = self.normal_event_choice
-        else:
-            print("attempted romance between:", patrol.patrol_leader.name, patrol.patrol_random_cat.name)
-            chance_of_romance_patrol = 16
-            
-            if get_personality_compatibility(patrol.patrol_leader, patrol.patrol_random_cat) is True:
-                chance_of_romance_patrol -= 10
-            else:
-                chance_of_romance_patrol += 10
-            values = ["romantic", "platonic", "dislike", "admiration", "comfortable", "jealousy", "trust"]
-            for val in values:
-                value_check = check_relationship_value(patrol.patrol_leader, patrol.patrol_random_cat, val)
-                if val in ["romantic", "platonic", "admiration", "comfortable", "trust"] and value_check >= 20:
-                    chance_of_romance_patrol -= 1
-                elif val in ["dislike", "jealousy"] and value_check >= 20:
-                    chance_of_romance_patrol += 2
-            print("final romance chance:", chance_of_romance_patrol)
-            if not int(random.random() * chance_of_romance_patrol):
-                patrol.patrol_event = self.romantic_event_choice
-                # need to make sure the patrol leader is the same as the stat cat
-                self.find_stat_cats(self.romantic_event_choice)
-                if patrol.patrol_win_stat_cat != patrol.patrol_leader:
-                    patrol.patrol_win_stat_cat = None
-                if patrol.patrol_fail_stat_cat != patrol.patrol_leader:
-                    patrol.patrol_fail_stat_cat = None
-                print("did the romance")
-            else:
-                patrol.patrol_event = self.normal_event_choice
+        self.choose_normal_or_romance()
 
         print("Chosen Patrol ID: " + str(patrol.patrol_event.patrol_id))
         patrol_size = len(patrol.patrol_cats)
@@ -693,46 +666,112 @@ class PatrolScreen(Screens):
         if patrol.patrol_event.antagonize_text is None:
             self.elements["antagonize"].hide()
 
+    def choose_normal_or_romance(self):
+        # if no romance was available or the patrol lead and random cat aren't potential mates then use the normal event
+        if not self.romantic_event_choice:
+            patrol.patrol_event = self.normal_event_choice
+            print('no romance choices')
+            return
+        if not patrol.patrol_random_cat.is_potential_mate(patrol.patrol_leader, for_love_interest=True) \
+                and patrol.patrol_random_cat.mate != patrol.patrol_leader.ID:
+            patrol.patrol_event = self.normal_event_choice
+            print('not a potential mate or current mate')
+            return
+        if "rel_two_apps" in self.romantic_event_choice.tags and not patrol.patrol_apprentices[0].is_potential_mate(
+                patrol.patrol_apprentices[1], for_love_interest=True):
+            patrol.patrol_event = self.normal_event_choice
+            print('two apps were not potential mates')
+            return
+
+        print("attempted romance between:", patrol.patrol_leader.name, patrol.patrol_random_cat.name)
+        chance_of_romance_patrol = game.config["patrol_generation"]["chance_of_romance_patrol"]
+
+        if get_personality_compatibility(patrol.patrol_leader, patrol.patrol_random_cat) is True or patrol.patrol_random_cat.mate == patrol.patrol_leader.ID:
+            chance_of_romance_patrol -= 10
+        else:
+            chance_of_romance_patrol += 10
+        values = ["romantic", "platonic", "dislike", "admiration", "comfortable", "jealousy", "trust"]
+        for val in values:
+            value_check = check_relationship_value(patrol.patrol_leader, patrol.patrol_random_cat, val)
+            if val in ["romantic", "platonic", "admiration", "comfortable", "trust"] and value_check >= 20:
+                chance_of_romance_patrol -= 1
+            elif val in ["dislike", "jealousy"] and value_check >= 20:
+                chance_of_romance_patrol += 2
+        if chance_of_romance_patrol <= 0:
+            chance_of_romance_patrol = 1
+        print("final romance chance:", chance_of_romance_patrol)
+        if not int(random.random() * chance_of_romance_patrol):
+            patrol.patrol_event = self.romantic_event_choice
+            # need to make sure the patrol leader is the same as the stat cat
+            self.find_stat_cats(self.romantic_event_choice)
+            if patrol.patrol_win_stat_cat != patrol.patrol_leader:
+                patrol.patrol_win_stat_cat = None
+            if patrol.patrol_fail_stat_cat != patrol.patrol_leader:
+                patrol.patrol_fail_stat_cat = None
+            print("did the romance")
+        else:
+            patrol.patrol_event = self.normal_event_choice
+
     def find_stat_cats(self, event):
         """sets patrol.patrol_fail_stat_cat and patrol.patrol_win_stat_cat"""
         patrol.patrol_fail_stat_cat = None
         patrol.patrol_win_stat_cat = None
+
+        possible_stat_cats = []
+
+        for kitty in patrol.patrol_cats:
+            if "app_stat" in event.tags \
+                    and kitty.status not in ['apprentice', "medicine cat apprentice"]:
+                continue
+            if "adult_stat" in event.tags and kitty.status in ['apprentice', "medicine cat apprentice"]:
+                continue
+            possible_stat_cats.append(kitty)
+
         if event.win_skills:
-            for cat in patrol.patrol_cats:
-                if "app_stat" in event.tags and cat.status not in ['apprentice',
-                                                                          "medicine cat apprentice"]:
-                    continue
-                if "adult_stat" in event.tags and cat.status in ['apprentice',
-                                                                        "medicine cat apprentice"]:
-                    continue
-                if cat.skill in event.win_skills:
-                    patrol.patrol_win_stat_cat = cat
+            for kitty in possible_stat_cats:
+                if kitty.skill in event.win_skills:
+                    patrol.patrol_win_stat_cat = kitty
+                    break
         if event.win_trait and not patrol.patrol_win_stat_cat:
-            for cat in patrol.patrol_cats:
-                if cat.trait in event.win_trait:
-                    patrol.patrol_win_stat_cat = cat
+            for kitty in possible_stat_cats:
+                if kitty.trait in event.win_trait:
+                    patrol.patrol_win_stat_cat = kitty
+                    break
         if event.fail_skills:
-            for cat in patrol.patrol_cats:
-                if cat.skill in event.fail_skills:
-                    patrol.patrol_fail_stat_cat = cat
+            for kitty in possible_stat_cats:
+                if kitty.skill in event.fail_skills:
+                    patrol.patrol_fail_stat_cat = kitty
+                    break
         if event.fail_trait and not patrol.patrol_fail_stat_cat:
-            for cat in patrol.patrol_cats:
-                if cat.trait in event.fail_trait:
-                    patrol.patrol_fail_stat_cat = cat
+            for kitty in possible_stat_cats:
+                if kitty.trait in event.fail_trait:
+                    patrol.patrol_fail_stat_cat = kitty
+                    break
 
         # if we have both types of stat cats and the patrol is too small then we drop the win stat cat
         # this is to prevent cases where a stat cat and the random cat are the same cat
-        if len(patrol.patrol_cats) <= 2 and patrol.patrol_win_stat_cat and patrol.patrol_fail_stat_cat:
+        if len(patrol.patrol_cats) == 2 and patrol.patrol_win_stat_cat and patrol.patrol_fail_stat_cat:
             patrol.patrol_win_stat_cat = None
 
         # here we try to ensure that the random cat is not the same as either stat cat type or the patrol leader
         if patrol.patrol_win_stat_cat or patrol.patrol_fail_stat_cat:
+            print('has stat cat')
+            if patrol.patrol_win_stat_cat:
+                print(patrol.patrol_win_stat_cat.name, patrol.patrol_random_cat.name)
+            if patrol.patrol_fail_stat_cat:
+                print(patrol.patrol_fail_stat_cat.name, patrol.patrol_random_cat.name)
             count = 0
             while count <= 20:  # conceivably with a 6 cat patrol, 20 is the number of possible 3 cat combinations
+                print('counting')
                 if (patrol.patrol_win_stat_cat or patrol.patrol_fail_stat_cat) == patrol.patrol_random_cat \
                         or patrol.patrol_random_cat == patrol.patrol_leader:
-                    if len(patrol.patrol_cats) <= 2:
+                    if len(patrol.patrol_cats) == 2:
+                        print('remove all stat cats')
                         patrol.patrol_fail_stat_cat = None
+                        patrol.patrol_win_stat_cat = None
+                        break
+                    elif len(patrol.patrol_cats) == 1:
+                        print('solo patrol')
                         break
                     print("finding new random cat, old random cat:", patrol.patrol_random_cat.name)
                     patrol.patrol_other_cats.append(patrol.patrol_random_cat)
@@ -743,7 +782,12 @@ class PatrolScreen(Screens):
                     self.romantic_event_choice = None
                     count += 1
                 else:
+                    if patrol.patrol_win_stat_cat:
+                        print(patrol.patrol_win_stat_cat.name, patrol.patrol_random_cat.name)
+                    if patrol.patrol_fail_stat_cat:
+                        print(patrol.patrol_fail_stat_cat.name, patrol.patrol_random_cat.name)
                     break
+
     def get_patrol_art(self):
         """
         grabs art for the patrol based on the patrol_id
@@ -1034,9 +1078,9 @@ class PatrolScreen(Screens):
                                                                               (300, 300)), manager=MANAGER)
 
             name = str(self.selected_cat.name)  # get name
-            if 14 <= len(name) >= 16:  # check name length
-                short_name = str(self.selected_cat.name)[0:15]
-                name = short_name + '...'
+            if len(name) >= 16:  # check name length
+                short_name = name[0:15]
+                name = short_name + '..'
 
             self.elements['selected_name'] = pygame_gui.elements.UITextBox(name,
                                                                            scale(pygame.Rect((600, 650), (400, 60))),
@@ -1065,9 +1109,9 @@ class PatrolScreen(Screens):
                         , manager=MANAGER)
                     # Check for name length
                     name = str(mate.name)  # get name
-                    if 11 <= len(name):  # check name length
-                        short_name = str(mate.name)[0:10]
-                        name = short_name + '...'
+                    if 10 <= len(name):  # check name length
+                        short_name = name[0:9]
+                        name = short_name + '..'
                     self.elements['mate_name'] = pygame_gui.elements.ui_label.UILabel(
                         scale(pygame.Rect((306, 600), (190, 60))),
                         name,
@@ -1107,9 +1151,9 @@ class PatrolScreen(Screens):
                 # Failsafe, if apprentice or mentor is set to none.
                 if self.app_mentor is not None:
                     name = str(self.app_mentor.name)  # get name
-                    if 11 <= len(name):  # check name length
-                        short_name = str(self.app_mentor.name)[0:10]
-                        name = short_name + '...'
+                    if 10 <= len(name):  # check name length
+                        short_name = name[0:9]
+                        name = short_name + '..'
                     self.elements['app_mentor_name'] = pygame_gui.elements.ui_label.UILabel(
                         scale(pygame.Rect((1106, 600), (190, 60))),
                         name,

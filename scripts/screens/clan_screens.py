@@ -9,7 +9,7 @@ from scripts.cat.cats import Cat
 from scripts.game_structure.image_button import UISpriteButton, UIImageButton, UITextBoxTweaked
 from scripts.utility import get_text_box_theme, update_sprite, scale, get_alive_clan_queens, get_med_cats
 from scripts.game_structure import image_cache
-from scripts.game_structure.game_essentials import *
+from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 from .cat_screens import ProfileScreen
 from ..conditions import get_amount_cat_for_one_medic, medical_cats_condition_fulfilled
 
@@ -133,7 +133,7 @@ class ClanScreen(Screens):
                                        cat_id=x)
                     )
                 except:
-                    print(f"ERROR: placing {str(Cat.all_cats[x].name)}\'s sprite on Clan page")
+                    print(f"ERROR: placing {Cat.all_cats[x].name}\'s sprite on Clan page")
 
         self.save_button = UIImageButton(scale(pygame.Rect(((686, 1250), (228, 60)))), "", object_id="#save_button")
 
@@ -428,7 +428,7 @@ class StarClanScreen(Screens):
         self.dead_cats = [game.clan.instructor] if not game.clan.instructor.df else []
         for the_cat in Cat.all_cats_list:
             if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.outside and not the_cat.df and \
-                    not the_cat.faded:
+                    not the_cat.faded and not the_cat.status in ['kittypet','loner','rogue']:
                 self.dead_cats.append(the_cat)
 
     def screen_switches(self):
@@ -1190,7 +1190,7 @@ class AllegiancesScreen(Screens):
             if not game.clan.leader.dead and not game.clan.leader.outside:
                 self.allegiance_list.append([
                     '<b><u>LEADER</u></b>',
-                    f"{str(game.clan.leader.name)} - a {game.clan.leader.describe_cat()}"
+                    f"{game.clan.leader.name} - a {game.clan.leader.describe_cat()}"
                 ])
 
                 if len(game.clan.leader.apprentice) > 0:
@@ -1209,7 +1209,7 @@ class AllegiancesScreen(Screens):
         if game.clan.deputy is not None and not game.clan.deputy.dead and not game.clan.deputy.outside:
             self.allegiance_list.append([
                 '<b><u>DEPUTY</u></b>',
-                f"{str(game.clan.deputy.name)} - a {game.clan.deputy.describe_cat()}"
+                f"{game.clan.deputy.name} - a {game.clan.deputy.describe_cat()}"
             ])
 
             if len(game.clan.deputy.apprentice) > 0:
@@ -1241,12 +1241,12 @@ class AllegiancesScreen(Screens):
                 if not cat_count:
                     self.allegiance_list.append([
                         '<b><u>WARRIORS</u></b>',
-                        f"{str(living_cat__.name)} - a {living_cat__.describe_cat()}"
+                        f"{living_cat__.name} - a {living_cat__.describe_cat()}"
                     ])
                 else:
                     self.allegiance_list.append([
                         '',
-                        f"{str(living_cat__.name)} - a {living_cat__.describe_cat()}"
+                        f"{living_cat__.name} - a {living_cat__.describe_cat()}"
                     ])
                 if len(living_cat__.apprentice) >= 1:
                     if len(living_cat__.apprentice) == 1:
@@ -1271,12 +1271,12 @@ class AllegiancesScreen(Screens):
                 if cat_count == 0:
                     self.allegiance_list.append([
                         '<b><u>APPRENTICES</u></b>',
-                        f"{str(living_cat___.name)} - a {living_cat___.describe_cat()}"
+                        f"{living_cat___.name} - a {living_cat___.describe_cat()}"
                     ])
                 else:
                     self.allegiance_list.append([
                         '',
-                        f"{str(living_cat___.name)} - a {living_cat___.describe_cat()}"
+                        f"{living_cat___.name} - a {living_cat___.describe_cat()}"
                     ])
                 cat_count += 1
         if not cat_count:
@@ -1287,12 +1287,12 @@ class AllegiancesScreen(Screens):
                 if cat_count == 0:
                     self.allegiance_list.append([
                         '<b><u>QUEENS</u></b>',
-                        f"{str(living_cat____.name)} - a {living_cat____.describe_cat()}"
+                        f"{living_cat____.name} - a {living_cat____.describe_cat()}"
                     ])
                 else:
                     self.allegiance_list.append([
                         '',
-                        f"{str(living_cat____.name)} - a {living_cat____.describe_cat()}"
+                        f"{living_cat____.name} - a {living_cat____.describe_cat()}"
                     ])
                 cat_count += 1
                 if len(living_cat____.apprentice) > 0:
@@ -1350,12 +1350,12 @@ class AllegiancesScreen(Screens):
                 if result == 0:
                     self.allegiance_list.append([
                         arg2,
-                        f"{str(living_cat.name)} - a {living_cat.describe_cat()}"
+                        f"{living_cat.name} - a {living_cat.describe_cat()}"
                     ])
                 else:
                     self.allegiance_list.append([
                         "",
-                        f"{str(living_cat.name)} - a {living_cat.describe_cat()}"
+                        f"{living_cat.name} - a {living_cat.describe_cat()}"
                     ])
                 result += 1
                 if len(living_cat.apprentice) > 0:
@@ -1564,7 +1564,8 @@ class MedDenScreen(Screens):
                                 self.minor_cats.remove(cat)
                             break
                         else:
-                            self.minor_cats.append(cat)
+                            if cat not in self.minor_cats:
+                                self.minor_cats.append(cat)
                 if cat.illnesses:
                     for illness in cat.illnesses:
                         if cat.illnesses[illness]["severity"] != 'minor' and illness != 'grief stricken':
@@ -1583,9 +1584,8 @@ class MedDenScreen(Screens):
                                 self.minor_cats.remove(cat)
                             break
                         else:
-                            if cat not in (self.in_den_cats and self.out_den_cats):
-                                if cat not in self.in_den_cats and cat not in self.out_den_cats:
-                                    self.minor_cats.append(cat)
+                            if cat not in (self.in_den_cats and self.out_den_cats and self.minor_cats):
+                                self.minor_cats.append(cat)
             self.tab_list = self.in_den_cats
             self.current_page = 1
             self.update_sick_cats()

@@ -1,7 +1,7 @@
 from __future__ import annotations
 from random import choice, randint, sample
 from typing import Dict, List, Any
-import math
+import random
 import os.path
 import itertools
 
@@ -11,19 +11,29 @@ try:
 except ImportError:
     import json as ujson
 
-from .pelts import *
-from .names import *
-from .sprites import *
-from .thoughts import *
-from .appearance_utility import *
+from .pelts import describe_color
+from .names import Name
+from .thoughts import get_thoughts
+from .appearance_utility import (
+    init_pelt,
+    init_tint,
+    init_sprite,
+    init_scars,
+    init_accessories,
+    init_white_patches,
+    init_eyes,
+    init_pattern,
+    )
 from scripts.conditions import Illness, Injury, PermanentCondition, get_amount_cat_for_one_medic, \
     medical_cats_condition_fulfilled
 import bisect
+import pygame
 
-from scripts.utility import *
-from scripts.game_structure.game_essentials import *
-from scripts.cat_relations.relationship import *
-import scripts.game_structure.image_cache as image_cache
+from scripts.utility import get_med_cats, get_personality_compatibility, event_text_adjust, update_sprite
+from scripts.game_structure.game_essentials import game, screen
+from scripts.cat.thoughts import get_thoughts
+from scripts.cat_relations.relationship import Relationship
+from scripts.game_structure import image_cache
 from scripts.event_class import Single_Event
 
 
@@ -564,7 +574,8 @@ class Cat():
                     ))
 
                 # grief the cat
-                cat.get_ill("grief stricken", event_triggered=True, severity=severity)
+                if game.clan.game_mode != 'classic':
+                    cat.get_ill("grief stricken", event_triggered=True, severity=severity)
 
             # negative reactions, no grief
             else:
@@ -624,6 +635,36 @@ class Cat():
             app_ob.update_mentor()
         self.update_mentor()
         game.clan.add_to_outside(self)
+    
+    def add_to_clan(self):
+        """ Makes a "outside cat" a clan cat. Former leaders, deputies will become warriors. Apprentices will be assigned a mentor."""
+        self.outside = False
+        if self.status in ['leader', 'deputy']:
+            self.status_change('warrior')
+            self.status = 'warrior'
+        elif self.status == 'apprentice' and self.moons >= 12:
+            self.status_change('warrior')
+            involved_cats = [self.ID]
+            game.cur_events_list.append(Single_Event('A long overdue warrior ceremony is held for ' + str(self.name.prefix) + 'paw. They smile as they finally become a warrior of the Clan and are now named ' + str(self.name) + '.', "ceremony", involved_cats))
+        elif self.status == 'kitten' and self.moons >= 12:
+            self.status_change('warrior')
+            involved_cats = [self]
+            game.cur_events_list.append(Single_Event('A long overdue warrior ceremony is held for ' + str(self.name.prefix) + 'kit. They smile as they finally become a warrior of the Clan and are now named ' + str(self.name) + '.', "ceremony", involved_cats))
+        elif self.status == 'kitten' and self.moons >= 6:
+            self.status_change('apprentice')
+            involved_cats = [self.ID]
+            game.cur_events_list.append(Single_Event('A long overdue apprentice ceremony is held for ' + str(self.name.prefix) + 'kit. They smile as they finally become a warrior of the Clan and are now named ' + str(self.name) + '.', "ceremony", involved_cats))
+        elif self.status in ['kittypet', 'loner', 'rogue']:
+            if self.moons < 6:
+                self.status = "kitten"
+            elif self.moons < 12:
+                self.status_change('apprentice')
+            elif self.moons < 120:
+                self.status_change('warrior')
+            else:
+                self.status_change('elder')
+        game.clan.add_to_clan(self)
+        self.update_mentor()
 
     def status_change(self, new_status, resort=False):
         """ Changes the status of a cat. Additional functions are needed if you want to make a cat a leader or deputy.
@@ -699,6 +740,7 @@ class Cat():
 
         elif self.status == 'mediator':
             self.update_mentor()
+            self.update_skill()
 
         elif self.status == 'mediator apprentice':
             self.update_mentor()
@@ -878,14 +920,15 @@ class Cat():
 
         # get other cat
         i = 0
-        while other_cat == self.ID and len(all_cats) > 1:
+        while other_cat == self.ID and len(all_cats) > 1 or (all_cats.get(other_cat).status in ['kittypet', 'rogue', 'loner']):
             other_cat = random.choice(list(all_cats.keys()))
             i += 1
             if i > 100:
                 other_cat = None
                 break
-        other_cat = all_cats.get(other_cat)
 
+        other_cat = all_cats.get(other_cat)
+            
         # get possible thoughts
         thought_possibilities = get_thoughts(self, other_cat)
         chosen_thought = random.choice(thought_possibilities)
@@ -1090,7 +1133,7 @@ class Cat():
 
                     all_skills = []
                     for x in possible_groups:
-                        all_skills = all_skills + self.skill_groups[x]
+                        all_skills.extend(self.skill_groups[x])
                     self.skill = choice(all_skills)
                     self.mentor_influence.insert(1, 'None')
 
@@ -1225,7 +1268,7 @@ class Cat():
             if self.status == 'leader':
                 game.clan.leader_lives -= 1
             self.die()
-            return False
+            return True
 
     # ---------------------------------------------------------------------------- #
     #                                   relative                                   #
@@ -1446,7 +1489,7 @@ class Cat():
                     if game.clan.herbs[herb_used] <= 0:
                         game.clan.herbs.pop(herb_used)
                     avoided = True
-                    text = f"{str(herb_used).capitalize()} was used to stop blood loss for {self.name}."
+                    text = f"{herb_used.capitalize()} was used to stop blood loss for {self.name}."
                     game.herb_events_list.append(text)
 
             if not avoided:
@@ -1497,10 +1540,13 @@ class Cat():
         if condition['congenital'] == 'always':
             born_with = True
         moons_until = condition["moons_until"]
-        if born_with is True and moons_until != 0:
+        if born_with and moons_until != 0:
             moons_until = randint(moons_until - 1, moons_until + 1)  # creating a range in which a condition can present
             if moons_until < 0:
                 moons_until = 0
+
+        if born_with and self.status != 'kitten':
+                moons_until = -2
         elif born_with is False:
             moons_until = 0
 
@@ -2406,6 +2452,8 @@ class Cat():
             file_name = "faded_elder.png"
 
         self.sprite = image_cache.load_image(f"sprites/faded/{file_name}").convert_alpha()
+        self.big_sprite = pygame.transform.scale(self.sprite, (100, 100))
+        self.large_sprite = pygame.transform.scale(self.big_sprite, (150, 150))
 
     @staticmethod
     def fetch_cat(cat_id: str):

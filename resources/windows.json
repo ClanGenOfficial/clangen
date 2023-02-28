@@ -16,6 +16,9 @@
         "prototype": "#window_base_theme"
     },
     "#save_check_window": {
-    "prototype": "#window_base_theme"
+        "prototype": "#window_base_theme"
+    },
+    "#delete_check_window": {
+        "prototype": "#window_base_theme"
     }
 }

@@ -10,6 +10,7 @@
             "trust",
             "beak_bite",
             "scar",
+            "BEAKCHEEK",
             "large_prey0",
             "large_prey1",
             "huge_prey2",
@@ -37,12 +38,6 @@
         "win_trait": [
             "ambitious"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 3,
         "antagonize_text": null,
@@ -62,6 +57,7 @@
             "trust",
             "beak_bite",
             "scar",
+            "BEAKLOWER",
             "large_prey0",
             "large_prey1",
             "huge_prey2",
@@ -89,12 +85,6 @@
         "win_trait": [
             "ambitious"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 4,
         "max_cats": 6,
         "antagonize_text": null,
@@ -115,6 +105,7 @@
             "cruel_season",
             "beak_bite",
             "scar",
+            "BEAKCHEEK",
             "death",
             "large_prey0",
             "large_prey1",
@@ -146,9 +137,6 @@
         "win_trait": [
             "ambitious"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "bloodthirsty"
         ],
@@ -173,6 +161,7 @@
             "cruel_season",
             "beak_bite",
             "scar",
+            "BEAKLOWER",
             "death",
             "large_prey0",
             "large_prey1",
@@ -201,12 +190,6 @@
         "win_trait": [
             "ambitious"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 4,
         "max_cats": 6,
         "antagonize_text": null,
@@ -229,6 +212,7 @@
             "patrol_to_r_c",
             "cold_injury",
             "scar",
+            "FROSTFACE",
             "small_prey0",
             "medium_prey1",
             "medium_prey2",
@@ -262,12 +246,6 @@
             "faithful",
             "loving"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
@@ -285,6 +263,7 @@
             "hunting",
             "cold_injury",
             "scar",
+            "FROSTTAIL",
             "small_prey0",
             "medium_prey1",
             "medium_prey2",
@@ -309,15 +288,6 @@
             "great hunter",
             "fantastic hunter"
         ],
-        "win_trait": [
-            "None"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
@@ -340,7 +310,8 @@
             "no_app",
             "cold_injury",
             "big_change",
-            "scar"
+            "scar",
+            "FROSTTAIL"
         ],
         "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something for the fresh-kill pile.",
         "decline_text": "They decide to turn back and wait until the snow dies down.",
@@ -369,12 +340,6 @@
             "faithful",
             "loving"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
@@ -392,6 +357,7 @@
             "hunting",
             "fighting",
             "scar",
+            "NECKBITE",
             "injury",
             "clan_to_patrol",
             "respect",
@@ -432,9 +398,6 @@
             "responsible",
             "righteous"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "troublesome",
             "vengeful",
@@ -458,6 +421,7 @@
             "hunting",
             "fighting",
             "scar",
+            "NECKBITE",
             "injury",
             "clan_to_patrol",
             "respect",
@@ -498,9 +462,6 @@
             "responsible",
             "righteous"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "troublesome",
             "vengeful",
@@ -523,6 +484,7 @@
             "hunting",
             "fighting",
             "scar",
+            "THREE",
             "injury",
             "clan_to_patrol",
             "respect",
@@ -561,9 +523,6 @@
             "fierce",
             "responsible",
             "righteous"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "troublesome",

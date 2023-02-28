@@ -60,7 +60,7 @@
     "exp": 20,
     "success_text": [
         "Unsure but remembering the kittentales of red deathberries, r_c avoids them, and gives the rest of the patrol a head's up about the potentially dangerous bush.",
-        "After careful consideration, r_c recognizes them as raspberries and brings the rare berries  back to the medicine cat's den.",
+        "After careful consideration, r_c recognizes them as raspberries and brings the rare berries back to the medicine cat's den.",
         "Astutely, s_c recognises the cranberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit."
     ],
     "fail_text": [
@@ -236,7 +236,7 @@
         "p_l manages to skillfully smooth over any disagreement.",
         "p_l listens to both sides, then makes a careful judgment. It keeps no one happy, the mark of an excellent compromise.",
         "Talking everyone down, p_l encourages the patrol to focus on their work.",
-        "p_l has no time for this spat, and pulls the patrol to a halt to remind them that they have a Star-damned job to do, and quarreling like kittens will not be tolerated. The patrol returns to their work collecting nesting material with newfound vigor."
+        "p_l has no time for this spat and pulls the patrol to a halt to remind them that they have a star-damned job to do and quarreling like kittens will not be tolerated. The patrol returns to their work collecting nesting material with newfound vigor."
     ],
     "fail_text": [
         "p_l stutters; they don't think they are fit to lead the patrol",
@@ -485,7 +485,7 @@
     "success_text": [
         "Everyone has a nice practice session and their coordination and trust in their Clanmates grows stronger.",
         null,
-        "s_c takes charge and coordinates exercises for the training patrol. Soon cats are using each other as springboards, practicing breaking a Clanmates' fall, and working on treading exactly in each other's pawsteps."
+        "s_c takes charge and coordinates exercises for the training patrol. Soon cats are using each other as springboards, practicing breaking a Clanmate's fall, and working on treading exactly in each other's pawsteps."
     ],
     "fail_text": [
             "Unfortunately, no one steps up to teach. It's a little awkward, but the patrol disbands to attend to other duties."
@@ -531,7 +531,7 @@
     "success_text": [
         "Everyone has a nice practice session and their coordination with their Clanmates grows stronger. app1 really gets into it, and is praised for their focus and enthusiasm.",
         null,
-        "s_c takes charge and coordinates exercises for the training patrol. Soon cats are using each other as springboards, practicing breaking a Clanmates' fall, and working on treading exactly in each other's pawsteps."
+        "s_c takes charge and coordinates exercises for the training patrol. Soon cats are using each other as springboards, practicing breaking a Clanmate's fall, and working on treading exactly in each other's pawsteps."
     ],
     "fail_text": [
             "Unfortunately, no one steps up to teach. It's a little awkward, but the patrol disbands to attend to other duties."
@@ -1037,7 +1037,7 @@
     "success_text": [
         "p_l gives them all their attention, as r_c talks about how, hypothetically, if they were interested in another warrior, how one might possibly maybe go about talking to them about it? Hypothetically. For a friend.",
         "r_c talks about how, sometimes, often even, they feel like they're tripping over their own tongue, never able to say anything helpful or pretty. But p_l meows that no way, r_c says such meaningful and beautiful things! They don't want r_c to change.",
-        "s_c talks about how making the right words, teh right effects, can sometimes feel impossible. But that it's always better to try, than to never talk at all, and talking things out can create wonderful connections."
+        "s_c talks about how making the right words, the right effects, can sometimes feel impossible. But that it's always better to try, than to never talk at all, and talking things out can create wonderful connections."
     ],
     "fail_text": [
         "It's a terrible place to try carrying on a conversation, carrying away old bedding, and their private talk dies off awkwardly."

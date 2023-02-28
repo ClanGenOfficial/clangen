@@ -161,3 +161,9 @@ scripts/__pycache__/**
 .idea/misc.xml
 .idea/misc.xml
 .idea/clan_gen_working.iml
+.idea/misc.xml
+.idea/clan_gen_working.iml
+
+
+tests/testSaves
+tests\testSaves
