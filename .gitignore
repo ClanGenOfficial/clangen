@@ -165,4 +165,5 @@ scripts/__pycache__/**
 .idea/clan_gen_working.iml
 
 
-testSaves/
+tests/testSaves
+tests\testSaves
