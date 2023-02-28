@@ -459,7 +459,7 @@ class PatrolScreen(Screens):
         other_clan_name = patrol.other_clan.name
         s = 0
         for x in range(text.count('o_c_n')):
-            index = text.index('o_c_n', s) or text.index("o_c_n's", s) or text.index('o_c_n.', s)
+            index = text.index('o_c_n', s)
             for y in vowels:
                 if str(other_clan_name).startswith(y):
                     modify = text.split()
