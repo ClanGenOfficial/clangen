@@ -2,6 +2,12 @@ import itertools
 import random
 from random import choice
 
+try:
+    import ujson
+except ImportError:
+    import json as ujson
+import random
+
 from scripts.game_structure.game_essentials import game
 from scripts.events_module.condition_events import Condition_Events
 from scripts.utility import (
@@ -11,6 +17,7 @@ from scripts.utility import (
     get_highest_romantic_relation,
     get_med_cats,
     )
+from scripts.utility import event_text_adjust
 from scripts.cat.cats import Cat, cat_class
 from scripts.cat.names import names, Name
 from scripts.event_class import Single_Event
@@ -361,14 +368,14 @@ class Relation_Events():
                     second_name = cat.name
 
                 if highest_romantic_relation.opposite_relationship.romantic_love <= lower_threshold:
-                    text = f"{first_name} confessed their feelings to {second_name}, but they got rejected."
-                    # game.relation_events_list.insert(0, text)
-                    game.cur_events_list.append(Single_Event(text, "relation", [cat.ID, cat_to.ID]))
+                    mate_string = choice(MATE_DICTS["rejected"])
+                    mate_string = event_text_adjust(Cat, mate_string, cat, cat_to)
+                    game.cur_events_list.append(Single_Event(mate_string, "relation", [cat.ID, cat_to.ID]))
                     return False
                 else:
-                    text = f"{first_name} confessed their feelings to {second_name} and they have become mates."
-                    # game.relation_events_list.insert(0, text)
-                    game.cur_events_list.append(Single_Event(text, "relation", [cat.ID, cat_to.ID]))
+                    mate_string = choice(MATE_DICTS["high_romantic"])
+                    mate_string = event_text_adjust(Cat, mate_string, cat, cat_to)
+                    game.cur_events_list.append(Single_Event(mate_string, "relation", [cat.ID, cat_to.ID]))
                     return True
         return False
 
@@ -728,10 +735,12 @@ class Relation_Events():
         high_comfort = relationship_from.comfortable > 25 and relationship_to.comfortable > 25
 
         if not hit and relationship_from.romantic_love > 20 and relationship_to.romantic_love > 20 and semi_high_like:
-            mate_string = f"{cat_from.name} and {cat_to.name} have become mates."
+            mate_string = choice(MATE_DICTS["low_romantic"])
+            mate_string = event_text_adjust(Cat, mate_string, cat_from, cat_to)
             become_mates = True
         elif not random_hit and low_dislike and (high_like or high_comfort):
-            mate_string = f"{cat_from.name} and {cat_to.name} see each other in a different light and have become mates."
+            mate_string = choice(MATE_DICTS["platonic_to_romantic"])
+            mate_string = event_text_adjust(Cat, mate_string, cat_from, cat_to)
             become_mates = True
 
         return become_mates, mate_string
@@ -984,3 +993,15 @@ class Relation_Events():
         amount = choice(one_kit + two_kits + three_kits + four_kits + five_kits + six_kits)
 
         return amount
+
+
+# ---------------------------------------------------------------------------- #
+#                                LOAD RESOURCES                                #
+# ---------------------------------------------------------------------------- #
+
+resource_directory = "resources/dicts/relationship_events/"
+
+MATE_DICTS = None
+
+with open(f"{resource_directory}mating.json", 'r') as read_file:
+    MATE_DICTS = ujson.loads(read_file.read())
