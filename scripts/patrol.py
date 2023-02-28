@@ -282,10 +282,6 @@ class Patrol():
         romantic_patrols = []
         # makes sure that it grabs patrols in the correct biomes, season, with the correct number of cats
         for patrol in possible_patrols:
-            if "new_cat_kits" in patrol.tags:
-                filtered_patrols.append(patrol)
-            else:
-                continue
             if patrol_size < patrol.min_cats:
                 continue
             if patrol_size > patrol.max_cats:
