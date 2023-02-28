@@ -152,10 +152,11 @@ class MakeClanScreen(Screens):
                 self.elements["error"].set_text("Your Clan's name cannot be empty")
                 self.elements["error"].show()
                 return
-            if new_name in game.switches["clan_list"]:
-                self.elements["error"].set_text("A clan with that name already exists.")
-                self.elements["error"].show()
-                return
+            for clan in game.switches["clan_list"]:
+                if new_name.lower() in clan.lower():
+                    self.elements["error"].set_text("A clan with that name already exists.")
+                    self.elements["error"].show()
+                    return
             self.clan_name = new_name
             self.open_choose_leader()
         elif event.ui_element == self.elements['previous_step']:
@@ -297,6 +298,8 @@ class MakeClanScreen(Screens):
                 self.elements['next_step'].disable()
             elif len(sub(r'[^A-Za-z0-9 ]+', "", self.elements["name_entry"].get_text())) > 11:
                 self.elements["name_entry"].set_text(self.elements["name_entry"].get_text()[:11])
+            elif sub(r'[^A-Za-z0-9 ]+', "", self.elements["name_entry"].get_text()) != self.elements["name_entry"].get_text():
+                self.elements["name_entry"].set_text(sub(r'[^A-Za-z0-9 ]+', "", self.elements["name_entry"].get_text()))
             else:
                 self.elements['next_step'].enable()
 
