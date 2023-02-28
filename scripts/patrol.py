@@ -935,6 +935,7 @@ class Patrol():
                     created_cats.extend(self.create_new_cat(loner=False, loner_name=True, kittypet=True, queen=True,
                                                             backstory=new_backstory))
                     new_cat = created_cats[0]
+                    new_cat.thought = "Feels relieved that they've found a safe place to stay"
                     if game.clan.game_mode != 'classic':
                         new_cat.get_injured("recovering from birth")
                 else:
@@ -945,6 +946,7 @@ class Patrol():
                     created_cats.extend(self.create_new_cat(loner=True, loner_name=True, kittypet=False, queen=True,
                                                             backstory=new_backstory))
                     new_cat = created_cats[0]
+                    new_cat.thought = "Feels relieved that they've found a safe place to stay"
                     if game.clan.game_mode != 'classic':
                         new_cat.get_injured("recovering from birth")
                 if "new_cat_kits" in tags:
@@ -970,6 +972,7 @@ class Patrol():
                     new_cat = created_cats[0]
                     new_cat.outside = True
                     new_cat.dead = True
+                    new_cat.thought = "Is glad that their kits are safe"
                 else:
                     new_backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2',
                                             'ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
@@ -980,6 +983,7 @@ class Patrol():
                     new_cat = created_cats[0]
                     new_cat.outside = True
                     new_cat.dead = True
+                    new_cat.thought = "Is glad that their kits are safe"
                 if "new_cat_newborn" in tags:
                     created_cats.extend(
                         self.create_new_cat(loner=False, loner_name=True, backstory=choice(['orphaned', 'orphaned2']),
