@@ -282,6 +282,10 @@ class Patrol():
         romantic_patrols = []
         # makes sure that it grabs patrols in the correct biomes, season, with the correct number of cats
         for patrol in possible_patrols:
+            if "new_cat_kits" in patrol.tags:
+                filtered_patrols.append(patrol)
+            else:
+                continue
             if patrol_size < patrol.min_cats:
                 continue
             if patrol_size > patrol.max_cats:
@@ -970,6 +974,7 @@ class Patrol():
                     created_cats = self.create_new_cat(loner=False, loner_name=True, kittypet=True, queen=True,
                                                             backstory=new_backstory)
                     new_cat = created_cats[0]
+                    print(new_cat.name)
                     new_cat.outside = True
                     new_cat.dead = True
                     new_cat.thought = "Is glad that their kits are safe"
@@ -981,6 +986,7 @@ class Patrol():
                     created_cats = self.create_new_cat(loner=True, loner_name=True, kittypet=False, queen=True,
                                                             backstory=new_backstory)
                     new_cat = created_cats[0]
+                    print(new_cat.name)
                     new_cat.outside = True
                     new_cat.dead = True
                     new_cat.thought = "Is glad that their kits are safe"
@@ -1150,15 +1156,10 @@ class Patrol():
 
         amount = choice([1, 1, 2, 2, 2, 3]) if litter else 1
         created_cats = []
-        a = randint(0, 1)
         for number in range(amount):
             new_cat = None
-            if loner_name and a == 1:
-                new_cat = Cat(moons=age, prefix=name, status=status,
-                              gender=gender if gender is not None else choice(['female', 'male']),
-                              backstory=backstory)
-            elif loner_name:
-                new_cat = Cat(moons=age, prefix=name, suffix=None, status=status,
+            if loner_name:
+                new_cat = Cat(moons=age, prefix=name, suffix="", status=status,
                               gender=gender if gender is not None else choice(['female', 'male']),
                               backstory=backstory)
             else:
