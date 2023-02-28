@@ -377,7 +377,7 @@
         "app1 is the first to find some herbs, and smugly waves them in the faces of app2 and app3 - after that it's a bit of a competition, with each cat trying to out-compete one other. It's great for the Clan - in the end, they come back to camp with a sizeable haul!"
     ],
     "fail_text": [
-        "The apprentices are too caught up in chatting with (and riling up) one another - they don't collect a single leaf."
+        "The apprentices are too caught up in chatting with - and riling up - one another, and don't collect a single leaf."
     ],
     "min_cats": 3,
     "max_cats": 3,
@@ -409,7 +409,7 @@
         "app1 is the first to find some herbs, and smugly waves them in the faces of the other three - after that it's a bit of a competition, with each cat trying to out-compete one other. It's great for the Clan - in the end, they come back to camp with a sizeable haul!"
     ],
     "fail_text": [
-        "The apprentices are too caught up in chatting with (and riling up) one another - they don't collect a single leaf."
+        "The apprentices are too caught up in chatting with - and riling up - one another, and don't collect a single leaf."
     ],
     "min_cats": 4,
     "max_cats": 4,
@@ -441,7 +441,7 @@
         "app1 is the first to find some herbs, and smugly waves them in the faces of the other four - after that it's a bit of a competition, with each cat trying to out-compete one other. It's great for the Clan - in the end, they come back to camp with a sizeable haul!"
     ],
     "fail_text": [
-        "The apprentices are too caught up in chatting with (and riling up) one another - they don't collect a single leaf."
+        "The apprentices are too caught up in chatting with - and riling up - one another, and don't collect a single leaf."
     ],
     "min_cats": 5,
     "max_cats": 5,
@@ -473,7 +473,7 @@
         "app1 is the first to find some herbs, and smugly waves them in the faces of the other five - after that it's a bit of a competition, with each cat trying to out-compete one other. It's great for the Clan - in the end, they come back to camp with a sizeable haul!"
     ],
     "fail_text": [
-        "The apprentices are too caught up in chatting with (and riling up) one another - they don't collect a single leaf."
+        "The apprentices are too caught up in chatting with - and riling up - one another, and don't collect a single leaf."
     ],
     "min_cats": 6,
     "max_cats": 6,
