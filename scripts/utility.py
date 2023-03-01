@@ -290,8 +290,8 @@ def add_children_to_cat(cat, cat_class):
             inter_cat.children.append(cat.ID)
 
 
-def change_relationship_values(cats_to,
-                               cats_from,
+def change_relationship_values(cats_to: list,
+                               cats_from: list,
                                romantic_love=0,
                                platonic_like=0,
                                dislike=0,

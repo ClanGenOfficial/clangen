@@ -64,7 +64,27 @@
 		},
 		"compatibility_bonus": 3,
 		"passive_influence": 4,
-		"chance_for_neutral": 6
+		"chance_for_neutral": 6,
+		"new_cat_buff":{
+			"new_to_patrol_cat": {
+				"romantic": 0,
+				"platonic": 15,
+				"dislike": 0,
+				"admiration": 10,
+				"comfortable": 15,
+				"jealousy": 0,
+				"trust": 15
+			},
+			"patrol_cat_to_new":{
+				"romantic": 0,
+				"platonic": 15,
+				"dislike": 0,
+				"admiration": 5,
+				"comfortable": 10,
+				"jealousy": 0,
+				"trust": 10
+			}
+		}
 	},
 	"pregnancy": {
 		"primary_chance_mated": 50,

@@ -282,6 +282,11 @@ class Patrol():
         romantic_patrols = []
         # makes sure that it grabs patrols in the correct biomes, season, with the correct number of cats
         for patrol in possible_patrols:
+            if "new_cat" in patrol.tags:
+                filtered_patrols.append(patrol)
+            else:
+                continue
+
             if patrol_size < patrol.min_cats:
                 continue
             if patrol_size > patrol.max_cats:
@@ -1088,9 +1093,30 @@ class Patrol():
             if not cat.outside:
                 self.results_text.append(f"{cat.name} has joined the Clan.")
                 # for each cat increase the relationship towards all patrolling cats
-                for clan_cat in self.patrol_cats:
-                    change_relationship_values(cat, clan_cat, 0, 20 , 0, 10, 10, 0, 10)
-                    change_relationship_values(clan_cat, cat, 0, 15, 0, 5, 5, 0, 5)
+                n_p = game.config["relationship"]["new_cat_buff"]["new_to_patrol_cat"]
+                p_n = game.config["relationship"]["new_cat_buff"]["patrol_cat_to_new"]
+                change_relationship_values(
+                    cats_to=        [cat.ID for cat in self.patrol_cats], 
+                    cats_from=      [cat],
+                    romantic_love=  n_p["romantic"],
+                    platonic_like=  n_p["platonic"],
+                    dislike=        n_p["dislike"],
+                    admiration=     n_p["admiration"],
+                    comfortable=    n_p["comfortable"],
+                    jealousy=       n_p["jealousy"],
+                    trust=          n_p["trust"]
+                )
+                change_relationship_values(
+                    cats_to=        [cat.ID], 
+                    cats_from=      self.patrol_cats,
+                    romantic_love=  p_n["romantic"],
+                    platonic_like=  p_n["platonic"],
+                    dislike=        p_n["dislike"],
+                    admiration=     p_n["admiration"],
+                    comfortable=    p_n["comfortable"],
+                    jealousy=       p_n["jealousy"],
+                    trust=          p_n["trust"]
+                )
 
     def create_new_cat(self,
                        loner=False,
