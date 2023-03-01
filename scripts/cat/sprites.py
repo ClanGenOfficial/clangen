@@ -187,7 +187,7 @@ for x in [
     'whitepatches', 'eyes', 'eyes2', 'skin', 'scars', 'collars', 'bellcollars', 'bowcollars',
     'bengalcolours', 'marbledcolours', 'rosettecolours', 'smokecolours', 'tickedcolours', 
     'mackerelcolours', 'classiccolours', 'sokokecolours', 'agouticolours', 'singlestripecolours', 
-    'shadersnewwhite', 'lineartdead', 'tortiepatchesmasks',
+    'shadersnewwhite', 'lineartdead', 'tortiepatchesmasks', 'missingscars',
     'medcatherbs', 'lineartdf', 'lightingnew', 'fademask',
     'fadestarclan', 'fadedarkforest'
 
