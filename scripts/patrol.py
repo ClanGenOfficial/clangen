@@ -972,6 +972,7 @@ class Patrol():
                     new_cat = created_cats[0]
                     new_cat.outside = True
                     new_cat.dead = True
+                    new_cat.name.suffix = ""
                     new_cat.thought = "Is glad that their kits are safe"
                 else:
                     new_backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2',
@@ -983,6 +984,7 @@ class Patrol():
                     new_cat = created_cats[0]
                     new_cat.outside = True
                     new_cat.dead = True
+                    new_cat.name.suffix = ""
                     new_cat.thought = "Is glad that their kits are safe"
                 if "new_cat_newborn" in tags:
                     created_cats.extend(
