@@ -22,8 +22,12 @@ jobs:
         run: python -m pip install --upgrade Pillow
       - name: Install PyInstaller
         run: python -m pip install --upgrade PyInstaller
-      - name: Write Version File
+      - name: Write Dev Version File
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: echo ${{ github.sha }} > commit.txt
+      - name: Write Release Version File
+        if: startsWith(github.ref, 'refs/tags/')
+        run: echo ${{ github.ref_name }} > commit.txt
       - name: Run PyInstaller
         #run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
         run: python -m PyInstaller Clangen.spec
@@ -58,8 +62,12 @@ jobs:
         run: python -m pip install --upgrade Pillow
       - name: Install PyInstaller
         run: python -m pip install --upgrade PyInstaller
-      - name: Write Version File
+      - name: Write Dev Version File
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: echo ${{ github.sha }} > commit.txt
+      - name: Write Release Version File
+        if: startsWith(github.ref, 'refs/tags/')
+        run: echo ${{ github.ref_name }} > commit.txt
       - name: Run PyInstaller
         run: python -m PyInstaller Clangen.spec
       - name: Create archive (.tar.xz)
@@ -93,8 +101,12 @@ jobs:
         run: python -m pip install --upgrade Pillow
       - name: Install PyInstaller
         run: python -m pip install --upgrade PyInstaller
-      - name: Write Version File
+      - name: Write Dev Version File
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: echo ${{ github.sha }} > commit.txt
+      - name: Write Release Version File
+        if: startsWith(github.ref, 'refs/tags/')
+        run: echo ${{ github.ref_name }} > commit.txt
       - name: Run PyInstaller
         #run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
         run: python -m PyInstaller Clangen.spec
@@ -130,8 +142,12 @@ jobs:
         run: python -m pip install --upgrade Pillow
       - name: Install PyInstaller
         run: python -m pip install --upgrade PyInstaller
-      - name: Write Version File
+      - name: Write Dev Version File
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: echo ${{ github.sha }} > commit.txt
+      - name: Write Release Version File
+        if: startsWith(github.ref, 'refs/tags/')
+        run: echo ${{ github.ref_name }} > commit.txt
       # Example of an upx install, also requires adding "--upx-dir upx-4.0.0-win64" to the pyinst run
       #- name: Setup UPX 
       #  run: |
@@ -172,8 +188,12 @@ jobs:
         run: python -m pip install --upgrade Pillow
       - name: Install PyInstaller
         run: python -m pip install --upgrade PyInstaller
-      - name: Write Version File
+      - name: Write Dev Version File
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: echo ${{ github.sha }} > commit.txt
+      - name: Write Release Version File
+        if: startsWith(github.ref, 'refs/tags/')
+        run: echo ${{ github.ref_name }} > commit.txt
       # Example of an upx install, also requires adding "--upx-dir upx-4.0.0-win64" to the pyinst run
       #- name: Setup UPX 
       #  run: |
@@ -216,8 +236,12 @@ jobs:
         run: python -m pip install --upgrade Pillow
       - name: Install PyInstaller
         run: python -m pip install --upgrade PyInstaller
-      - name: Write Version File
+      - name: Write Dev Version File
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: echo ${{ github.sha }} > commit.txt
+      - name: Write Release Version File
+        if: startsWith(github.ref, 'refs/tags/')
+        run: echo ${{ github.ref_name }} > commit.txt
       - name: Run PyInstaller
         #run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
         run: python -m PyInstaller Clangen.spec
