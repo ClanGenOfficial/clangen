@@ -92,7 +92,7 @@
 
 },
 {
-    "patrol_id": "gen_gen_newmed_welcome1",
+    "patrol_id": "gen_bord_healer_welcome1",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat", "reputation", "new_cat_med", "no_change_fail_rep", "kits"],

@@ -38,6 +38,17 @@ from scripts.utility import get_text_box_theme
 import pygame_gui
 import pygame
 
+# if user is developing in a github codespace
+if os.environ.get('CODESPACES'):
+    print('')
+    print("Github codespace user!!! Please ignore the ALSA related errors above.")
+    print("They are not a problem, and are caused by the way codespaces work.")
+    print('')
+    print("Web VNC:")
+    print(f"https://{os.environ.get('CODESPACE_NAME')}-6080.{os.environ.get('GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN')}/?autoconnect=true&reconnect=true&password=clangen&resize=scale")
+    print("(use clangen in fullscreen)")
+    print('')
+
 # Version Number to be displayed.
 # This will only be shown as a fallback, when the git commit hash can't be found.
 VERSION_NUMBER = "Ver. 0.6.0dev"
@@ -124,8 +135,9 @@ while True:
         game.all_screens[game.current_screen].handle_event(event)
 
         if event.type == pygame.QUIT:
-            # Dont display if on the start screen
-            if game.switches['cur_screen'] in ['start screen', 'switch clan screen', 'settings screen', 'info screen']:
+            # Dont display if on the start screen or there is no clan.
+            if (game.switches['cur_screen'] in ['start screen', 'switch clan screen', 'settings screen', 'info screen', 'make clan screen']
+                or not game.clan):
                 #game.rpc.close()
                 pygame.display.quit()
                 pygame.quit()
