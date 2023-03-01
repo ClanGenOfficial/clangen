@@ -656,7 +656,7 @@ class Condition_Events():
                             event = f'{cat.name} has decided to retire from normal Clan duty.'
 
                         if cat.age == 'adolescent':
-                            event += f"They are given the name {cat.name.prefix}{cat.name.suffix} in honor " \
+                            event += f" They are given the name {cat.name.prefix}{cat.name.suffix} in honor " \
                                      f"of their contributions to {game.clan.name}Clan."
 
                         cat.retire_cat()

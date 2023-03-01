@@ -292,7 +292,7 @@ class Patrol():
                 continue
 
             # correct button check
-            if 'general' not in patrol.tags and patrol_type != 'general':
+            if game.clan.game_mode != 'classic' and 'general' not in patrol.tags and patrol_type != 'general':
                 if 'hunting' not in patrol.tags and patrol_type == 'hunting':
                     continue
                 elif 'border' not in patrol.tags and patrol_type == 'border':
@@ -702,7 +702,7 @@ class Patrol():
                 success_chance += game.config["patrol_generation"]["win_stat_cat_modifier"]
             if kitty.skill in self.patrol_event.fail_skills:
                 success_chance += game.config["patrol_generation"]["fail_stat_cat_modifier"]
-            if kitty.trait in self.patrol_event.fail_trait:
+            if self.patrol_event.fail_trait and kitty.trait in self.patrol_event.fail_trait:
                 success_chance += game.config["patrol_generation"]["fail_stat_cat_modifier"]
 
             print(kitty.name, 'updated chance to', success_chance)
@@ -935,6 +935,7 @@ class Patrol():
                     created_cats.extend(self.create_new_cat(loner=False, loner_name=True, kittypet=True, queen=True,
                                                             backstory=new_backstory))
                     new_cat = created_cats[0]
+                    new_cat.thought = "Feels relieved that they've found a safe place to stay"
                     if game.clan.game_mode != 'classic':
                         new_cat.get_injured("recovering from birth")
                 else:
@@ -945,6 +946,7 @@ class Patrol():
                     created_cats.extend(self.create_new_cat(loner=True, loner_name=True, kittypet=False, queen=True,
                                                             backstory=new_backstory))
                     new_cat = created_cats[0]
+                    new_cat.thought = "Feels relieved that they've found a safe place to stay"
                     if game.clan.game_mode != 'classic':
                         new_cat.get_injured("recovering from birth")
                 if "new_cat_kits" in tags:
@@ -965,21 +967,23 @@ class Patrol():
                 if kittypet is True:
                     new_backstory = choice(['kittypet1', 'kittypet2', 'kittypet3',
                                             'refugee3', 'tragedy_survivor3'])
-                    created_cats.extend(self.create_new_cat(loner=False, loner_name=True, kittypet=True, queen=True,
-                                                            backstory=new_backstory))
+                    created_cats = self.create_new_cat(loner=False, loner_name=True, kittypet=True, queen=True,
+                                                            backstory=new_backstory)
                     new_cat = created_cats[0]
                     new_cat.outside = True
                     new_cat.dead = True
+                    new_cat.thought = "Is glad that their kits are safe"
                 else:
                     new_backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2',
                                             'ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
                                             'tragedy_survivor', 'refugee2', 'tragedy_survivor4',
                                             'refugee4', 'tragedy_survivor2'])
-                    created_cats.extend(self.create_new_cat(loner=True, loner_name=True, kittypet=False, queen=True,
-                                                            backstory=new_backstory))
+                    created_cats = self.create_new_cat(loner=True, loner_name=True, kittypet=False, queen=True,
+                                                            backstory=new_backstory)
                     new_cat = created_cats[0]
                     new_cat.outside = True
                     new_cat.dead = True
+                    new_cat.thought = "Is glad that their kits are safe"
                 if "new_cat_newborn" in tags:
                     created_cats.extend(
                         self.create_new_cat(loner=False, loner_name=True, backstory=choice(['orphaned', 'orphaned2']),
@@ -1089,7 +1093,8 @@ class Patrol():
                        age=None,
                        relevant_cat=None,
                        backstory=None,
-                       other_clan=None):
+                       other_clan=None) -> list:
+        """This function creates cats based on the given values and returns a list."""
         name = None
         skill = None
         accessory = None
@@ -1145,15 +1150,10 @@ class Patrol():
 
         amount = choice([1, 1, 2, 2, 2, 3]) if litter else 1
         created_cats = []
-        a = randint(0, 1)
         for number in range(amount):
             new_cat = None
-            if loner_name and a == 1:
-                new_cat = Cat(moons=age, prefix=name, status=status,
-                              gender=gender if gender is not None else choice(['female', 'male']),
-                              backstory=backstory)
-            elif loner_name:
-                new_cat = Cat(moons=age, prefix=name, suffix=None, status=status,
+            if loner_name:
+                new_cat = Cat(moons=age, prefix=name, suffix="", status=status,
                               gender=gender if gender is not None else choice(['female', 'male']),
                               backstory=backstory)
             else:
@@ -1541,35 +1541,43 @@ class Patrol():
 
         if "random_herbs" in patrol.patrol_event.tags:
             number_of_herb_types = choices([1, 2, 3], [6, 5, 1], k=1)
-            herbs_picked = choices(HERBS, k=number_of_herb_types[0])
+            herbs_picked = random.sample(HERBS, k=number_of_herb_types[0])
             for herb in herbs_picked:
                 herbs_gotten.append(str(herb).replace('_', ' '))
                 if not large_amount:
-                    amount_gotten = choices([1, 2, 3], [2, 3, 1], k=1)
-                    if herb in game.clan.herbs.keys():
-                        game.clan.herbs[herb] += amount_gotten[0] * patrol_size_modifier
-                    else:
-                        game.clan.herbs.update({herb: amount_gotten[0] * patrol_size_modifier})
+                    amount_gotten = choices([1, 2, 3], [2, 3, 1], k=1)[0]
                 else:
-                    if herb in game.clan.herbs.keys():
-                        game.clan.herbs[herb] += large_amount * patrol_size_modifier
-                    else:
-                        game.clan.herbs.update({herb: large_amount})
+                    amount_gotten = large_amount
+
+                # Apply patrol size modifier
+                amount_gotten = int(amount_gotten * patrol_size_modifier)
+                if amount_gotten < 1:
+                    amount_gotten = 1
+
+                if herb in game.clan.herbs.keys():
+                    game.clan.herbs[herb] += amount_gotten
+                else:
+                    game.clan.herbs.update({herb: amount_gotten})
+
         elif "herb" in patrol.patrol_event.tags:
             for tag in patrol.patrol_event.tags:
                 if tag in HERBS:
                     herbs_gotten.append(str(tag).replace('_', ' '))
                     if not large_amount:
-                        amount_gotten = choices([1, 2, 3], [2, 3, 1], k=1)
-                        if tag in game.clan.herbs.keys():
-                            game.clan.herbs[tag] += amount_gotten[0] * patrol_size_modifier
-                        else:
-                            game.clan.herbs.update({tag: amount_gotten[0] * patrol_size_modifier})
+                        amount_gotten = choices([1, 2, 3], [2, 3, 1], k=1)[0]
                     else:
-                        if tag in game.clan.herbs.keys():
-                            game.clan.herbs[tag] += large_amount * patrol_size_modifier
-                        else:
-                            game.clan.herbs.update({tag: large_amount * patrol_size_modifier})
+                        amount_gotten = large_amount
+
+                    # Apply patrol size modifier
+                    amount_gotten = int(amount_gotten * patrol_size_modifier)
+                    if amount_gotten < 1:
+                        amount_gotten = 1
+
+                    if tag in game.clan.herbs.keys():
+                        game.clan.herbs[tag] += amount_gotten
+                    else:
+                        game.clan.herbs.update({tag: amount_gotten})
+
         if herbs_gotten:
             if len(herbs_gotten) == 1 and herbs_gotten[0] != 'cobwebs':
                 insert = f"{herbs_gotten[0]} was"

@@ -459,23 +459,22 @@ class PatrolScreen(Screens):
         other_clan_name = patrol.other_clan.name
         s = 0
         for x in range(text.count('o_c_n')):
-            index = text.index('o_c_n', s) or text.index("o_c_n's", s) or text.index('o_c_n.', s)
-            for y in vowels:
-                if str(other_clan_name).startswith(y):
-                    modify = text.split()
-                    pos = 0
-                    if 'o_c_n' in modify:
-                        pos = modify.index('o_c_n')
-                    if "o_c_n's" in modify:
-                        pos = modify.index("o_c_n's")
-                    if 'o_c_n.' in modify:
-                        pos = modify.index('o_c_n.')
-                    if modify[pos - 1] == 'a':
-                        modify.remove('a')
-                        modify.insert(pos - 1, 'an')
-                    text = " ".join(modify)
-                    break
-            s += index + 3
+            if 'o_c_n' in text:
+                for y in vowels:
+                    if str(other_clan_name).startswith(y):
+                        modify = text.split()
+                        pos = 0
+                        if 'o_c_n' in modify:
+                            pos = modify.index('o_c_n')
+                        if "o_c_n's" in modify:
+                            pos = modify.index("o_c_n's")
+                        if 'o_c_n.' in modify:
+                            pos = modify.index('o_c_n.')
+                        if modify[pos - 1] == 'a':
+                            modify.remove('a')
+                            modify.insert(pos - 1, 'an')
+                        text = " ".join(modify)
+                        break
 
         text = text.replace('o_c_n', str(other_clan_name) + 'Clan')
 
@@ -483,22 +482,21 @@ class PatrolScreen(Screens):
         s = 0
         pos = 0
         for x in range(text.count('c_n')):
-            index = text.index('c_n', s)
-            for y in vowels:
-                if str(clan_name).startswith(y):
-                    modify = text.split()
-                    if 'c_n' in modify:
-                        pos = modify.index('c_n')
-                    if "c_n's" in modify:
-                        pos = modify.index("c_n's")
-                    if 'c_n.' in modify:
-                        pos = modify.index('c_n.')
-                    if modify[pos - 1] == 'a':
-                        modify.remove('a')
-                        modify.insert(pos - 1, 'an')
-                    text = " ".join(modify)
-                    break
-            s += index + 3
+            if 'c_n' in text:
+                for y in vowels:
+                    if str(clan_name).startswith(y):
+                        modify = text.split()
+                        if 'c_n' in modify:
+                            pos = modify.index('c_n')
+                        if "c_n's" in modify:
+                            pos = modify.index("c_n's")
+                        if 'c_n.' in modify:
+                            pos = modify.index('c_n.')
+                        if modify[pos - 1] == 'a':
+                            modify.remove('a')
+                            modify.insert(pos - 1, 'an')
+                        text = " ".join(modify)
+                        break
         text = text.replace('c_n', str(game.clan.name) + 'Clan')
 
         # Prey lists for forest random prey patrols

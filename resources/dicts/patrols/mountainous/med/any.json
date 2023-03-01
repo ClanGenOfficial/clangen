@@ -541,10 +541,10 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_med_mossapps5",
+    "patrol_id": "mtn_med_mossapps1",
     "biome": "mountainous",
     "season": "Any",
-    "tags": ["med_cat", "herb", "moss", "apprentice", "two_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
+    "tags": ["med_cat", "warrior_app", "herb", "moss", "apprentice", "two_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
     "intro_text": "p_l comes up to meet app2, apologising about app2 being sent to help p_l collect moss.",
     "decline_text": "They're called back to camp, needed for other chores.",
     "chance_of_success": 70,
@@ -563,10 +563,10 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_med_mossapps6",
+    "patrol_id": "mtn_med_mossapps2",
     "biome": "mountainous",
     "season": "Any",
-    "tags": ["med_cat", "herb", "moss", "apprentice", "three_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
+    "tags": ["med_cat", "warrior_app",  "herb", "moss", "apprentice", "three_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
     "intro_text": "As the apprentices head out to collect moss, app2 screws up their face into a stupid expression at the menial nature of the task.",
     "decline_text": "They're called back to camp, needed for other chores.",
     "chance_of_success": 70,
@@ -585,10 +585,10 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_med_mossapps7",
+    "patrol_id": "mtn_med_mossapps3",
     "biome": "mountainous",
     "season": "Any",
-    "tags": ["med_cat", "herb", "moss", "apprentice", "three_apprentices", "many_herbs1", "big_change", "platonic", "dislike", "respect"],
+    "tags": ["med_cat", "warrior_app",  "herb", "moss", "apprentice", "three_apprentices", "many_herbs1", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "The apprentices are sent off into the territory to gather moss, for the medicine cat den.",
     "decline_text": "They're called back to camp, needed for other chores.",
     "chance_of_success": 70,
@@ -607,98 +607,98 @@
     "antagonize_fail_text": null
 },
 {
+    "patrol_id": "mtn_med_mossapps4",
+    "biome": "mountainous",
+    "season": "Any",
+    "tags": ["med_cat", "warrior_app",  "herb", "moss", "apprentice", "four_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
+    "intro_text": "As the apprentices head out to collect moss, app2 screws up their face into a stupid expression at the menial nature of the task.",
+    "decline_text": "They're called back to camp, needed for other chores.",
+    "chance_of_success": 70,
+    "exp": 20,
+    "success_text": [
+        "Though the other of their group don't look thrilled, app2 says no worries! They bump p_l's shoulder affectionately, brushing past them as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
+        "Out of the cats in the group, app2 seems kinda irritated about it at first, but as p_l keeps chatting to them they warm up, and both apprentices feel much more comfortable with each other by the time they bring their moss loot back to camp."
+    ],
+    "fail_text": [
+        "The other apprentices shrug. It's fine, it's totally not like they'd prefer to be hunting, doing something actually useful."
+    ],
+
+    "min_cats": 4,
+    "max_cats": 4,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "mtn_med_mossapps5",
+    "biome": "mountainous",
+    "season": "Any",
+    "tags": ["med_cat", "warrior_app",  "herb", "moss", "apprentice", "four_apprentices", "many_herbs1", "big_change", "platonic", "dislike", "respect"],
+    "intro_text": "The apprentices head out into the territory, following p_l a little dubiously. Gathering things can't possibly be as hard as hunting them, plants don't run away!",
+    "decline_text": "They're called back to camp, needed for other chores.",
+    "chance_of_success": 70,
+    "exp": 20,
+    "success_text": [
+        "While it's a traditional chore for apprentices, it's not a particularly interesting one. Still, sometimes it isn't what you're doing, but who you're doing it with, and though there's a little bit of complaining all the apprentices enjoy the chance to hang out together.",
+        "p_l is determined to prove themselves to the other apprentices! But fortunately they don't push it too far, avoiding bossing everyone around and instead encouraging the patrol it their duties. Are they a little stiff? Sure, but not unlikeable."
+],
+"fail_text": [
+        "app1 and app2 start to argue, ruining everyone's day."
+],
+
+    "min_cats": 4,
+    "max_cats": 4,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "mtn_med_mossapps6",
+    "biome": "mountainous",
+    "season": "Any",
+    "tags": ["med_cat", "warrior_app",  "herb", "moss", "apprentice", "five_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
+    "intro_text": "As the apprentices head out to collect moss, app2 screws up their face into a stupid expression at the menial nature of the task.",
+    "decline_text": "They're called back to camp, needed for other chores.",
+    "chance_of_success": 70,
+    "exp": 20,
+    "success_text": [
+        "Though the other of their group don't look thrilled, app2 says no worries! They bump p_l's shoulder affectionately, brushing past them as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
+        "Out of the cats in the group, app2 seems kinda irritated about it at first, but as p_l keeps chatting to them they warm up, and both apprentices feel much more comfortable with each other by the time they bring their moss loot back to camp."
+    ],
+    "fail_text": [
+        "The other apprentices shrug. It's fine, it's totally not like they'd prefer to be hunting, doing something actually useful."
+    ],
+
+    "min_cats": 5,
+    "max_cats": 5,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "mtn_med_mossapps7",
+    "biome": "mountainous",
+    "season": "Any",
+    "tags": ["med_cat", "warrior_app",  "herb", "moss", "apprentice", "five_apprentices", "many_herbs1", "big_change", "platonic", "dislike", "respect"],
+    "intro_text": "The apprentices head out into the territory, following p_l a little dubiously. Gathering things can't possibly be as hard as hunting them, plants don't run away!",
+    "decline_text": "They're called back to camp, needed for other chores.",
+    "chance_of_success": 70,
+    "exp": 20,
+    "success_text": [
+        "While it's a traditional chore for apprentices, it's not a particularly interesting one. Still, sometimes it isn't what you're doing, but who you're doing it with, and though there's a little bit of complaining all the apprentices enjoy the chance to hang out together.",
+        "p_l is determined to prove themselves to the other apprentices! But fortunately they don't push it too far, avoiding bossing everyone around and instead encouraging the patrol it their duties. Are they a little stiff? Sure, but not unlikeable."
+],
+"fail_text": [
+        "app1 and app2 start to argue, ruining everyone's day."
+],
+
+    "min_cats": 5,
+    "max_cats": 5,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
     "patrol_id": "mtn_med_mossapps8",
     "biome": "mountainous",
     "season": "Any",
-    "tags": ["med_cat", "herb", "moss", "apprentice", "four_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
-    "intro_text": "As the apprentices head out to collect moss, app2 screws up their face into a stupid expression at the menial nature of the task.",
-    "decline_text": "They're called back to camp, needed for other chores.",
-    "chance_of_success": 70,
-    "exp": 20,
-    "success_text": [
-        "Though the other of their group don't look thrilled, app2 says no worries! They bump p_l's shoulder affectionately, brushing past them as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
-        "Out of the cats in the group, app2 seems kinda irritated about it at first, but as p_l keeps chatting to them they warm up, and both apprentices feel much more comfortable with each other by the time they bring their moss loot back to camp."
-    ],
-    "fail_text": [
-        "The other apprentices shrug. It's fine, it's totally not like they'd prefer to be hunting, doing something actually useful."
-    ],
-
-    "min_cats": 4,
-    "max_cats": 4,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
-},
-{
-    "patrol_id": "mtn_med_mossapps9",
-    "biome": "mountainous",
-    "season": "Any",
-    "tags": ["med_cat", "herb", "moss", "apprentice", "four_apprentices", "many_herbs1", "big_change", "platonic", "dislike", "respect"],
-    "intro_text": "The apprentices head out into the territory, following p_l a little dubiously. Gathering things can't possibly be as hard as hunting them, plants don't run away!",
-    "decline_text": "They're called back to camp, needed for other chores.",
-    "chance_of_success": 70,
-    "exp": 20,
-    "success_text": [
-        "While it's a traditional chore for apprentices, it's not a particularly interesting one. Still, sometimes it isn't what you're doing, but who you're doing it with, and though there's a little bit of complaining all the apprentices enjoy the chance to hang out together.",
-        "p_l is determined to prove themselves to the other apprentices! But fortunately they don't push it too far, avoiding bossing everyone around and instead encouraging the patrol it their duties. Are they a little stiff? Sure, but not unlikeable."
-],
-"fail_text": [
-        "app1 and app2 start to argue, ruining everyone's day."
-],
-
-    "min_cats": 4,
-    "max_cats": 4,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
-},
-{
-    "patrol_id": "mtn_med_mossapps10",
-    "biome": "mountainous",
-    "season": "Any",
-    "tags": ["med_cat", "herb", "moss", "apprentice", "five_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
-    "intro_text": "As the apprentices head out to collect moss, app2 screws up their face into a stupid expression at the menial nature of the task.",
-    "decline_text": "They're called back to camp, needed for other chores.",
-    "chance_of_success": 70,
-    "exp": 20,
-    "success_text": [
-        "Though the other of their group don't look thrilled, app2 says no worries! They bump p_l's shoulder affectionately, brushing past them as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
-        "Out of the cats in the group, app2 seems kinda irritated about it at first, but as p_l keeps chatting to them they warm up, and both apprentices feel much more comfortable with each other by the time they bring their moss loot back to camp."
-    ],
-    "fail_text": [
-        "The other apprentices shrug. It's fine, it's totally not like they'd prefer to be hunting, doing something actually useful."
-    ],
-
-    "min_cats": 5,
-    "max_cats": 5,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
-},
-{
-    "patrol_id": "mtn_med_mossapps11",
-    "biome": "mountainous",
-    "season": "Any",
-    "tags": ["med_cat", "herb", "moss", "apprentice", "five_apprentices", "many_herbs1", "big_change", "platonic", "dislike", "respect"],
-    "intro_text": "The apprentices head out into the territory, following p_l a little dubiously. Gathering things can't possibly be as hard as hunting them, plants don't run away!",
-    "decline_text": "They're called back to camp, needed for other chores.",
-    "chance_of_success": 70,
-    "exp": 20,
-    "success_text": [
-        "While it's a traditional chore for apprentices, it's not a particularly interesting one. Still, sometimes it isn't what you're doing, but who you're doing it with, and though there's a little bit of complaining all the apprentices enjoy the chance to hang out together.",
-        "p_l is determined to prove themselves to the other apprentices! But fortunately they don't push it too far, avoiding bossing everyone around and instead encouraging the patrol it their duties. Are they a little stiff? Sure, but not unlikeable."
-],
-"fail_text": [
-        "app1 and app2 start to argue, ruining everyone's day."
-],
-
-    "min_cats": 5,
-    "max_cats": 5,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
-},
-{
-    "patrol_id": "mtn_med_mossapps12",
-    "biome": "mountainous",
-    "season": "Any",
-    "tags": ["med_cat", "herb", "moss", "apprentice", "six_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
+    "tags": ["med_cat", "warrior_app",  "herb", "moss", "apprentice", "six_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
     "intro_text": "As the apprentices head out to collect moss, app2 screws up their face into a stupid expression at the menial nature of the task.",
     "decline_text": "They're called back to camp, needed for other chores.",
     "chance_of_success": 70,
@@ -717,10 +717,10 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_med_mossapps13",
+    "patrol_id": "mtn_med_mossapps9",
     "biome": "mountainous",
     "season": "Any",
-    "tags": ["med_cat", "herb", "moss", "apprentice", "six_apprentices", "many_herbs1", "big_change", "platonic", "dislike", "respect"],
+    "tags": ["med_cat", "warrior_app",  "herb", "moss", "apprentice", "six_apprentices", "many_herbs1", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "The apprentices head out into the territory, following p_l a little dubiously. Gathering things can't possibly be as hard as hunting them, plants don't run away!",
     "decline_text": "They're called back to camp, needed for other chores.",
     "chance_of_success": 70,
