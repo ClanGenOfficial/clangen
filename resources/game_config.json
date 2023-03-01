@@ -66,7 +66,7 @@
 		"passive_influence": 4,
 		"chance_for_neutral": 6,
 		"new_cat_buff":{
-			"new_to_patrol_cat": {
+			"new_to_clan_cat": {
 				"romantic": 0,
 				"platonic": 15,
 				"dislike": 0,
@@ -75,7 +75,7 @@
 				"jealousy": 0,
 				"trust": 15
 			},
-			"patrol_cat_to_new":{
+			"clan_cat_to_new":{
 				"romantic": 0,
 				"platonic": 15,
 				"dislike": 0,

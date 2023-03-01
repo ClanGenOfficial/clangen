@@ -244,14 +244,30 @@ class NewCatEvents:
                 the_cat.relationships[new_cat.ID] = Relationship(the_cat, new_cat)
                 new_cat.relationships[the_cat.ID] = Relationship(new_cat, the_cat)
             if relevant_cat:
-                print(relevant_cat)
+                new_to_clan_cat = game.config["relationship"]["new_cat_buff"]["new_to_clan_cat"]
+                clan_cat_to_new = game.config["relationship"]["new_cat_buff"]["clan_cat_to_new"]
                 change_relationship_values(
-                    [new_cat.ID, relevant_cat.ID],
-                    [relevant_cat, new_cat],
-                    platonic_like=20,
-                    admiration=5,
-                    comfortable=5,
-                    trust=10)
+                    cats_to=        [relevant_cat.ID], 
+                    cats_from=      [new_cat],
+                    romantic_love=  new_to_clan_cat["romantic"],
+                    platonic_like=  new_to_clan_cat["platonic"],
+                    dislike=        new_to_clan_cat["dislike"],
+                    admiration=     new_to_clan_cat["admiration"],
+                    comfortable=    new_to_clan_cat["comfortable"],
+                    jealousy=       new_to_clan_cat["jealousy"],
+                    trust=          new_to_clan_cat["trust"]
+                )
+                change_relationship_values(
+                    cats_to=        [new_cat.ID], 
+                    cats_from=      [relevant_cat],
+                    romantic_love=  clan_cat_to_new["romantic"],
+                    platonic_like=  clan_cat_to_new["platonic"],
+                    dislike=        clan_cat_to_new["dislike"],
+                    admiration=     clan_cat_to_new["admiration"],
+                    comfortable=    clan_cat_to_new["comfortable"],
+                    jealousy=       clan_cat_to_new["jealousy"],
+                    trust=          clan_cat_to_new["trust"]
+                )
 
             # newbie thought
             new_cat.thought = 'Is looking around the camp with wonder'
