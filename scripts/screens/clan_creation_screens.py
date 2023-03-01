@@ -264,7 +264,7 @@ class MakeClanScreen(Screens):
         elif event.ui_element == self.tabs["tab2"]:
             self.selected_camp_tab = 2
             self.refresh_selected_camp()
-        elif event.ui_element == self.tabs["tab3"]:
+        elif self.biome_selected == 'Forest' and event.ui_element == self.tabs["tab3"]:
             self.selected_camp_tab = 3
             self.refresh_selected_camp()
         elif event.ui_element == self.elements["random_background"]:
@@ -276,9 +276,9 @@ class MakeClanScreen(Screens):
                 possible_biomes.remove(old_biome)
             self.biome_selected = choice(possible_biomes)
             if self.biome_selected == "Forest":
-                self.selected_camp_tab = randrange(1, 3)
+                self.selected_camp_tab = randrange(1, 4)
             else:
-                self.selected_camp_tab = randrange(1, 2)
+                self.selected_camp_tab = randrange(1, 3)
             self.refresh_selected_camp()
             self.refresh_text_and_buttons()
         elif event.ui_element == self.elements['done_button']:
@@ -484,19 +484,23 @@ class MakeClanScreen(Screens):
         if self.selected_camp_tab == 1:
             self.tabs["tab1"].disable()
             self.tabs["tab2"].enable()
-            self.tabs["tab3"].enable()
+            if self.biome_selected == 'Forest':
+                self.tabs["tab3"].enable()
         elif self.selected_camp_tab == 2:
             self.tabs["tab1"].enable()
             self.tabs["tab2"].disable()
-            self.tabs["tab3"].enable()
+            if self.biome_selected == 'Forest':
+                self.tabs["tab3"].enable()
         elif self.selected_camp_tab == 3:
             self.tabs["tab1"].enable()
             self.tabs["tab2"].enable()
-            self.tabs["tab3"].disable()
+            if self.biome_selected == 'Forest':
+                self.tabs["tab3"].disable()
         else:
             self.tabs["tab1"].enable()
             self.tabs["tab2"].enable()
-            self.tabs["tab3"].enable()
+            if self.biome_selected == 'Forest':
+                self.tabs["tab3"].enable()
 
         # I have to do this for proper layering.
         if "camp_art" in self.elements:
