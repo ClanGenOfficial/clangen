@@ -1880,6 +1880,8 @@ class ProfileScreen(Screens):
 
         if biome not in available_biome:
             biome = available_biome[0]
+        if the_cat.age == 'newborn' or the_cat.not_working():
+            biome = 'nest'
 
         biome = biome.lower()
 
@@ -1890,9 +1892,6 @@ class ProfileScreen(Screens):
         elif the_cat.dead or game.clan.instructor.ID == the_cat.ID:
             dead_platform = [f'{platform_base_dir}/starclanplatform_{light_dark}.png']
             all_platforms = dead_platform * 4
-        elif the_cat.age == 'newborn' or the_cat.not_working():
-            nest_platform = [f'{platform_base_dir}sick/{leaf}_{light_dark}']
-            all_platforms = nest_platform * 4
         else:
             for leaf in leaves:
                 platform_dir = f'{platform_base_dir}/{biome}/{leaf}_{light_dark}.png'
