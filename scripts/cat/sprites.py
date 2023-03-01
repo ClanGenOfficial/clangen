@@ -137,9 +137,6 @@ class Sprites():
             sprites.make_group('medcatherbs', (a, 2), f'acc_wild{i}')
         for a, i in enumerate(["CRIMSON", "BLUE", "YELLOW", "CYAN", "RED", "LIME"]):
             sprites.make_group('collars', (a, 0), f'collars{i}')
-            sprites.make_group('collarsextra', (a, 0),
-                               f'collarsextra{i}',
-                               sprites_y=2)
         for a, i in enumerate(["GREEN", "RAINBOW", "BLACK", "SPIKES", "WHITE"]):
             sprites.make_group('collars', (a, 1), f'collars{i}')
         for a, i in enumerate(["PINK", "PURPLE", "MULTI", "INDIGO"]):
@@ -162,9 +159,6 @@ class Sprites():
         for a, i in enumerate(
                 ["GREENBOW", "RAINBOWBOW", "BLACKBOW", "SPIKESBOW", "WHITEBOW"]):
             sprites.make_group('bowcollars', (a, 1), f'collars{i}')
-            sprites.make_group('bowcollarsextra', (a, 1),
-                               f'collarsextra{i}',
-                               sprites_y=2)
         for a, i in enumerate(["PINKBOW", "PURPLEBOW", "MULTIBOW", "INDIGOBOW"]):
             sprites.make_group('bowcollars', (a, 2), f'collars{i}')
         for a, i in enumerate([
@@ -184,10 +178,11 @@ sprites = Sprites(50)
 
 for x in [
     'lineart', 'singlecolours', 'speckledcolours', 'tabbycolours',
-    'whitepatches', 'eyes', 'eyes2', 'skin', 'scars', 'collars', 'bellcollars', 'bowcollars',
+    'whitepatches', 'eyes', 'eyes2', 'skin', 'scars', 'missingscars',
+    'collars', 'bellcollars', 'bowcollars', 'nyloncollars',
     'bengalcolours', 'marbledcolours', 'rosettecolours', 'smokecolours', 'tickedcolours', 
     'mackerelcolours', 'classiccolours', 'sokokecolours', 'agouticolours', 'singlestripecolours', 
-    'shadersnewwhite', 'lineartdead', 'tortiepatchesmasks', 'missingscars',
+    'shadersnewwhite', 'lineartdead', 'tortiepatchesmasks', 
     'medcatherbs', 'lineartdf', 'lightingnew', 'fademask',
     'fadestarclan', 'fadedarkforest'
 
