@@ -164,12 +164,12 @@ class MakeClanScreen(Screens):
 
     def handle_choose_leader_event(self, event):
         if event.ui_element in [self.elements['roll1'], self.elements['roll2'], self.elements['roll3']]:
-            #event.ui_element.disable()
+            event.ui_element.disable()
             self.elements['select_cat'].hide()
             create_example_cats()  # create new cats
             self.selected_cat = None  # Your selected cat now no longer exists. Sad. They go away.
             self.refresh_cat_images_and_info()  # Refresh all the images.
-            #self.rolls_left -= 1
+            self.rolls_left -= 1
         elif event.ui_element in [self.elements["cat" + str(u)] for u in range(0, 12)]:
             self.selected_cat = event.ui_element.return_cat_object()
             self.refresh_cat_images_and_info(self.selected_cat)
@@ -204,7 +204,6 @@ class MakeClanScreen(Screens):
             self.open_choose_deputy()
         elif event.ui_element in [self.elements["cat" + str(u)] for u in range(0, 12)]:
             if event.ui_element.return_cat_object():
-                print(self.med_cat)
                 self.selected_cat = event.ui_element.return_cat_object()
                 self.refresh_cat_images_and_info(self.selected_cat)
                 self.refresh_text_and_buttons()

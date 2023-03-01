@@ -422,7 +422,6 @@ def randomize_pelt(cat):
         torbie = random.getrandbits(tortie_chance_m) == 1
 
     chosen_tortie_base = None
-    torbie = True
     if torbie:
         # If it is tortie, the chosen pelt above becomes the base pelt.
         chosen_tortie_base = chosen_pelt
