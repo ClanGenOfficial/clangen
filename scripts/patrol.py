@@ -664,8 +664,8 @@ class Patrol():
                 win_trait=patrol["win_trait"] if "win_trait" in patrol else [],
                 fail_skills=patrol["fail_skills"] if "fail_skills" in patrol else [],
                 fail_trait=patrol["fail_trait"] if "fail_trait" in patrol else [],
-                antagonize_text=patrol["antagonize_text"],
-                antagonize_fail_text=patrol["antagonize_fail_text"],
+                antagonize_text=patrol["antagonize_text"] if "antagonize_text" in patrol else None,
+                antagonize_fail_text=patrol["antagonize_fail_text"] if "antagonize_fail_text" in patrol else None,
                 history_text=patrol["history_text"] if "history_text" in patrol else [],
                 relationship_constraint=patrol["relationship_constraint"] if "relationship_constraint" in patrol else []
             )
@@ -689,7 +689,8 @@ class Patrol():
         success_chance = self.patrol_event.chance_of_success + int(
             self.patrol_total_experience / (2 * gm_modifier))
 
-        print('starting chance:', success_chance)
+        print('starting chance:', self.patrol_event.chance_of_success)
+        print('updated chance according to exp: ', success_chance)
         for kitty in self.patrol_cats:
             if kitty.skill in self.patrol_event.win_skills:
                 success_chance += game.config["patrol_generation"]["win_stat_cat_modifier"]
@@ -701,7 +702,7 @@ class Patrol():
                 success_chance += game.config["patrol_generation"]["win_stat_cat_modifier"]
             if kitty.skill in self.patrol_event.fail_skills:
                 success_chance += game.config["patrol_generation"]["fail_stat_cat_modifier"]
-            if kitty.trait in self.patrol_event.fail_trait:
+            if self.patrol_event.fail_trait and kitty.trait in self.patrol_event.fail_trait:
                 success_chance += game.config["patrol_generation"]["fail_stat_cat_modifier"]
 
             print(kitty.name, 'updated chance to', success_chance)
@@ -1527,47 +1528,56 @@ class Patrol():
         herbs_gotten = []
         no_herbs_tags = ["no_herbs0", "no_herbs1", "no_herbs2", "no_herbs3"]
         many_herbs_tags = ["many_herbs0", "many_herbs1", "many_herbs2", "many_herbs3"]
+        patrol_size_modifier = int(len(self.patrol_cats) * .5)
 
         for x in range(len(no_herbs_tags)):
             if f"no_herbs{x}" in patrol.patrol_event.tags and outcome == x:
                 return
 
+        large_amount = None
         for x in range(len(many_herbs_tags)):
-            large_amount = None
             if f"many_herbs{x}" in patrol.patrol_event.tags and outcome == x:
-                large_amount = 5
+                large_amount = 4
 
         if "random_herbs" in patrol.patrol_event.tags:
-            number_of_herb_types = choices([1, 2, 3], [5, 3, 1], k=1)
-            herbs_picked = choices(HERBS, k=number_of_herb_types[0])
+            number_of_herb_types = choices([1, 2, 3], [6, 5, 1], k=1)
+            herbs_picked = random.sample(HERBS, k=number_of_herb_types[0])
             for herb in herbs_picked:
                 herbs_gotten.append(str(herb).replace('_', ' '))
                 if not large_amount:
-                    amount_gotten = choices([1, 2, 3], [1, 3, 2], k=1)
-                    if herb in game.clan.herbs.keys():
-                        game.clan.herbs[herb] += amount_gotten[0] * len(patrol.patrol_cats)
-                    else:
-                        game.clan.herbs.update({herb: amount_gotten[0] * len(patrol.patrol_cats)})
+                    amount_gotten = choices([1, 2, 3], [2, 3, 1], k=1)[0]
                 else:
-                    if herb in game.clan.herbs.keys():
-                        game.clan.herbs[herb] += large_amount * len(patrol.patrol_cats)
-                    else:
-                        game.clan.herbs.update({herb: large_amount})
+                    amount_gotten = large_amount
+
+                # Apply patrol size modifier
+                amount_gotten = int(amount_gotten * patrol_size_modifier)
+                if amount_gotten < 1:
+                    amount_gotten = 1
+
+                if herb in game.clan.herbs.keys():
+                    game.clan.herbs[herb] += amount_gotten
+                else:
+                    game.clan.herbs.update({herb: amount_gotten})
+
         elif "herb" in patrol.patrol_event.tags:
             for tag in patrol.patrol_event.tags:
                 if tag in HERBS:
                     herbs_gotten.append(str(tag).replace('_', ' '))
                     if not large_amount:
-                        amount_gotten = choices([1, 2, 3], [1, 3, 2], k=1)
-                        if tag in game.clan.herbs.keys():
-                            game.clan.herbs[tag] += amount_gotten[0] * len(patrol.patrol_cats)
-                        else:
-                            game.clan.herbs.update({tag: amount_gotten[0] * len(patrol.patrol_cats)})
+                        amount_gotten = choices([1, 2, 3], [2, 3, 1], k=1)[0]
                     else:
-                        if tag in game.clan.herbs.keys():
-                            game.clan.herbs[tag] += large_amount * len(patrol.patrol_cats)
-                        else:
-                            game.clan.herbs.update({tag: large_amount * len(patrol.patrol_cats)})
+                        amount_gotten = large_amount
+
+                    # Apply patrol size modifier
+                    amount_gotten = int(amount_gotten * patrol_size_modifier)
+                    if amount_gotten < 1:
+                        amount_gotten = 1
+
+                    if tag in game.clan.herbs.keys():
+                        game.clan.herbs[tag] += amount_gotten
+                    else:
+                        game.clan.herbs.update({tag: amount_gotten})
+
         if herbs_gotten:
             if len(herbs_gotten) == 1 and herbs_gotten[0] != 'cobwebs':
                 insert = f"{herbs_gotten[0]} was"

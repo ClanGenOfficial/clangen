@@ -81,7 +81,7 @@ class _DiscordRPC():
             clan_name = 'Loading...'
             cats_amount = 0
             if game.clan:
-                clan_name =  f"{game.clan.name}clan"
+                clan_name =  f"{game.clan.name}Clan"
                 cats_amount = len(game.clan.clan_cats)
                 clan_age = game.clan.age
             else:

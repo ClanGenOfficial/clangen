@@ -740,6 +740,7 @@ class Cat():
 
         elif self.status == 'mediator':
             self.update_mentor()
+            self.update_skill()
 
         elif self.status == 'mediator apprentice':
             self.update_mentor()
@@ -1132,7 +1133,7 @@ class Cat():
 
                     all_skills = []
                     for x in possible_groups:
-                        all_skills = all_skills + self.skill_groups[x]
+                        all_skills.extend(self.skill_groups[x])
                     self.skill = choice(all_skills)
                     self.mentor_influence.insert(1, 'None')
 
@@ -1267,7 +1268,7 @@ class Cat():
             if self.status == 'leader':
                 game.clan.leader_lives -= 1
             self.die()
-            return False
+            return True
 
     # ---------------------------------------------------------------------------- #
     #                                   relative                                   #
@@ -1488,7 +1489,7 @@ class Cat():
                     if game.clan.herbs[herb_used] <= 0:
                         game.clan.herbs.pop(herb_used)
                     avoided = True
-                    text = f"{str(herb_used).capitalize()} was used to stop blood loss for {self.name}."
+                    text = f"{herb_used.capitalize()} was used to stop blood loss for {self.name}."
                     game.herb_events_list.append(text)
 
             if not avoided:

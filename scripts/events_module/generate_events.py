@@ -175,7 +175,7 @@ class GenerateEvents:
                     continue
 
             # check hate and jealousy before allowing murder
-            if "murder" in event.tags:
+            if "murder" in event.tags and other_cat:
                 hate = False
                 relationships = other_cat.relationships.values()
                 dislike_relation = list(filter(lambda rel: rel.dislike > 50, relationships))

@@ -275,7 +275,7 @@ class Clan():
 
     def __repr__(self):
         if self.name is not None:
-            return f'{self.name}: led by {str(self.leader.name)} with {str(self.medicine_cat.name)} as med. cat'
+            return f'{self.name}: led by {self.leader.name} with {self.medicine_cat.name} as med. cat'
 
         else:
             return 'No clan'
@@ -322,7 +322,7 @@ class Clan():
         game.save_clanlist(clan)
         game.cur_events_list.clear()
 
-        game.rpc.close()
+        #game.rpc.close()
         pygame.display.quit()
         pygame.quit()
         exit()

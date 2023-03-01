@@ -295,6 +295,8 @@ class MakeClanScreen(Screens):
         if self.sub_screen == 'name clan':
             if sub(r'[^A-Za-z0-9 ]+', "", self.elements["name_entry"].get_text()) == "":
                 self.elements['next_step'].disable()
+            elif len(sub(r'[^A-Za-z0-9 ]+', "", self.elements["name_entry"].get_text())) > 11:
+                self.elements["name_entry"].set_text(self.elements["name_entry"].get_text()[:11])
             else:
                 self.elements['next_step'].enable()
 
@@ -862,6 +864,6 @@ class MakeClanScreen(Screens):
         biome = self.biome_selected.lower()
 
         if campnum:
-            return f'{camp_bg_base_dir}/{biome}/{start_leave}_camp{str(campnum)}_{light_dark}.png'
+            return f'{camp_bg_base_dir}/{biome}/{start_leave}_camp{campnum}_{light_dark}.png'
         else:
             return None
