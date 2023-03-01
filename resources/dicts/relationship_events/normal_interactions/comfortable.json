@@ -165,6 +165,21 @@
 			}
 		},
 		{
+			"id":"comfort_med_inc_medium1",
+			"interactions":[
+				"m_c thanks r_c for checking when they ask if they're feeling alright.",
+           		"m_c drops into the medicine den to ask r_c if they've eaten yet."
+			],
+			"random_status_constraint":[
+				"medicine cat",
+				"medicine cat apprentice"
+			],
+			"reaction_random_cat":{
+				"comfortable": "increase",
+				"trust": "increase"
+			}
+		},
+		{
 			"id": "comfort_inc_high1",
 			"intensity": "high",
 			"interactions":[

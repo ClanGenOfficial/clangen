@@ -126,7 +126,8 @@
 				"m_c is spending a lot of time with r_c.",
 				"m_c enjoys the time with r_c and feels secure.",
 				"m_c wants to spend the entire day with r_c.",
-				"m_c saves a piece of prey for r_c because they know it's their favorite."
+				"m_c saves a piece of prey for r_c because they know it's their favorite.",
+				"m_c brings r_c some fresh-kill, hoping that they remembered what r_c's favorite was."
 			],
 			"reaction_random_cat": {
 				"romantic": "increase",

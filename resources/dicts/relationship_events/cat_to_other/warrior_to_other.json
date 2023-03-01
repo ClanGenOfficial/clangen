@@ -65,20 +65,10 @@
             
         ],
         "neutral": [
-            "thanks (cat) for checking when they ask if they're feeling alright.",
-            "drops into the medicine den to ask (cat) if they've eaten yet.",
-            "asks (cat) if there's any herbs they should look out for while they're out on patrol later."
         ],
-        "friendly": [
-            "asks (cat) if there's any herbs they should look out for while they're out on patrol later.",
-            "brings (cat) some fresh-kill, hoping that they remembered what (cat)'s favorite was.",
-            "is suddenly struck by the thought of how much (cat) does to keep the Clan healthy.",
-            "hopes (cat) knows how grateful they are to have them as a medicine cat.",
-            "thanks (cat) for keeping the Clan healthy."
-        ],
+        "friendly":[],
         "close": [
-            "watches (cat) sort herbs as they chat about how their day has gone.",
-            "lets (cat) know that they're about to go out and asks if they need to watch for any herbs."
+            
         ]
     },
     "leader": {
@@ -91,10 +81,10 @@
     },
     "deputy": {
         "unfriendly": [
-            "thinks they should be deputy instead of (cat)."
+            
         ],
         "neutral": [
-            "is tired from (cat) putting them on so many patrols."
+            
         ],
         "friendly": [],
         "close": [

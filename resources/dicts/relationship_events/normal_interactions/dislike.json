@@ -74,7 +74,8 @@
 			"id":"dislike_inc_med3",
 			"interactions":[
 				"m_c had a disagreement with r_c while on patrol earlier.",
-				"m_c stole r_c's catch right out from under their claws."
+				"m_c stole r_c's catch right out from under their claws.",
+				"m_c prays that they aren't on patrol with r_c tomorrow."
 			],
 			"main_status_constraint":[
 				"apprentice",
@@ -200,7 +201,10 @@
 			],
 			"random_status_constraint":[
 				"deputy"
-			]
+			],
+			"reaction_random_cat":{
+				"dislike": "increase"
+			}
 		},
 		{
 			"id":"dislike_inc_high6",
@@ -221,6 +225,26 @@
 				"admiration":"decrease",
 				"trust":"decrease"
 			}
+		},
+		{"id":"dislike_inc_high7",
+		"intensity":"high",
+		"interactions":[
+			"m_c thinks they should be deputy instead of r_c.",
+			"m_c is tired from r_c putting them on so many patrols."
+		],
+		"relationship_constraint":[
+			"dislike_40"
+		],
+		"random_status_constraint":[
+			"deputy"
+		],
+		"main_status_constraint":[
+			"apprentice",
+			"warrior"
+		],
+		"also_influences":{
+			"jealousy": "increase"
+		}
 		}
 	],
 	"decrease": [
