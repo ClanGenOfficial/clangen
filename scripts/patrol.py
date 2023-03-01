@@ -349,7 +349,7 @@ class Patrol():
 
             # makes sure there's a med in a med patrol
             if "med_cat" in patrol.tags:
-                if "medicine cat" not in self.patrol_statuses:
+                if ["medicine cat" or "medicine cat apprentice"] not in self.patrol_statuses:
                     continue
 
             # makes sure no apps are present if they're not supposed to be
