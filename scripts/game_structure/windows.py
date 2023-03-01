@@ -6,6 +6,7 @@ import pygame
 import pygame_gui
 from sys import exit
 
+from scripts.game_structure import image_cache
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
 from scripts.utility import scale
 from scripts.game_structure.game_essentials import game
@@ -56,18 +57,25 @@ class SaveCheck(UIWindow):
             container=self
         )
 
-        self.save_button = UIImageButton(
+        self.save_button = UIImageButton(scale(pygame.Rect((186, 230), (228, 60))),
+                                         "",
+                                         object_id="#save_button",
+                                         container=self
+                                         )
+        self.save_button_saved_state = pygame_gui.elements.UIImage(
             scale(pygame.Rect((186, 230), (228, 60))),
-            "",
-            object_id="#save_button",
-            container=self
-        )
-
-        self.save_text = pygame_gui.elements.UITextBox("<font color=#006600>Saved!</font>",
-                                                       scale(pygame.Rect((0, 170), (600, 80))),
-                                                       object_id="#save_no_bg_text_box",
-                                                       container=self)
-        self.save_text.hide()
+            pygame.transform.scale(
+                image_cache.load_image('resources/images/save_clan_saved.png'),
+                (228, 60)),
+            container=self)
+        self.save_button_saved_state.hide()
+        self.save_button_saving_state = pygame_gui.elements.UIImage(
+            scale(pygame.Rect((186, 230), (228, 60))),
+            pygame.transform.scale(
+                image_cache.load_image('resources/images/save_clan_saving.png'),
+                (228, 60)),
+            container=self)
+        self.save_button_saving_state.hide()
 
         self.back_button = UIImageButton(
             scale(pygame.Rect((540, 10), (44, 44))),
@@ -78,7 +86,6 @@ class SaveCheck(UIWindow):
 
         self.back_button.enable()
         self.main_menu_button.enable()
-        self.save_button.enable()
 
     def process_event(self, event):
         super().process_event(event)
@@ -94,17 +101,19 @@ class SaveCheck(UIWindow):
                     self.kill()
                 else:
                     game.is_close_menu_open = False
-                    #game.rpc.close()
+                    # game.rpc.close()
                     pygame.display.quit()
                     pygame.quit()
                     exit()
             elif event.ui_element == self.save_button:
                 if game.clan is not None:
+                    self.save_button_saving_state.show()
+                    self.save_button.disable()
                     game.save_cats()
                     game.clan.save_clan()
                     game.clan.save_pregnancy(game.clan)
-                    self.save_text.show()
-                    self.save_button.disable()
+                    self.save_button_saving_state.hide()
+                    self.save_button_saved_state.show()
             elif event.ui_element == self.back_button:
                 game.is_close_menu_open = False
                 self.kill()
@@ -169,24 +178,23 @@ class DeleteCheck(UIWindow):
                 with open("saves/clanlist.txt", "r") as clanfile:
                     data = clanfile.readlines()
 
-                #delete the line
+                # delete the line
                 if data.count(self.clan_name + "\n") > 0:
                     data.remove(self.clan_name + "\n")
                 elif data.count(self.clan_name) > 0:
                     data.remove(self.clan_name)
                 else:
                     print("error")
-                
+
                 if data[-1].endswith("\n"):
-                    data[-1] = data[-1][:-1] #remove the last \n
+                    data[-1] = data[-1][:-1]  # remove the last \n
 
                 # Remove from the list in memory
                 game.switches['clan_list'] = data
 
-                #write the file
+                # write the file
                 with open("saves/clanlist.txt", "w") as clanfile:
                     clanfile.writelines(data)
-                
 
                 self.kill()
 
