@@ -1157,7 +1157,7 @@ class Patrol():
         else:
             suffix_ = ""
 
-        if kit or litter: # babies will always get a suffix bc they don't know any better
+        if kit or litter or age == 'young': # babies will always get a suffix bc they don't know any better
             suffix_ = None
         
         for number in range(amount):
