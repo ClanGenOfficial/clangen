@@ -53,7 +53,7 @@
     "patrol_id": "bch_med_gatheringblackberry_leaf-bare1",
     "biome": "beach",
     "season": "leaf-bare",
-    "tags": ["med_only", "cold_injury", "scar", "FROSTMITT", "herb", "blackberry", "med_cat"],
+    "tags": ["cold_injury", "scar", "FROSTMITT", "herb", "blackberry", "med_cat"],
     "intro_text": "Hmm. p_l heads out, deciding that c_n needs more blackberry leaves in their stores.",
     "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
     "chance_of_success": 40,
