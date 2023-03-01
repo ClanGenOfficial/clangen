@@ -45,8 +45,8 @@ class NewCatEvents:
                 outside_cat = self.select_outside_cat()
                 backstory = outside_cat.status
                 self.update_cat_properties(outside_cat)
-                Cat.outside_cats.pop(outside_cat.ID)
                 game.clan.add_cat(outside_cat)
+                Cat.outside_cats.pop(outside_cat.ID)
                 event_text = f"A {backstory} named {outside_cat.name} waits on the border, asking to join the Clan."
                 name_change = random.choice([1,2])
                 if name_change == 1:
