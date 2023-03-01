@@ -16,5 +16,23 @@
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
+    },
+  {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_clan"],
+        "event_text": "m_c visits o_c to converse with their medicine cats about an omen StarClan sent.",
+        "cat_trait": ["strong connection to starclan", "omen sight", "clairvoyant", "dream walker"],
+        "cat_skill": ["compassionate", "faithful", "altruistic"],
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+  {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_clan"],
+        "event_text": "m_c visits o_c to congratulate them on their new medicine cat.",
+        "cat_trait": ["good mediator", "great mediator", "excellent mediator"],
+        "cat_skill": ["compassionate", "empathetic"],
+        "other_cat_trait": null,
+        "other_cat_skill": null
     }
 ]

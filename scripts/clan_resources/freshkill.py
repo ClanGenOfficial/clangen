@@ -117,8 +117,8 @@ class Freshkill_Pile():
         for key, value in self.pile.items():
             self.pile[key] = previous_amount
             previous_amount = value
-            if key == "expires_in_1":
-                print(f" -- FRESHKILL: {value} expired prey is removed")
+            #if key == "expires_in_1":
+                #print(f" -- FRESHKILL: {value} expired prey is removed")
         self.total_amount = sum(self.pile.values())
 
         self.feed_cats(living_cats)

@@ -68,8 +68,8 @@ class Events():
 
         if game.clan.game_mode in ['expanded', 'cruel season'] and game.clan.freshkill_pile:
             needed_amount = game.clan.freshkill_pile.amount_food_needed()
-            print(f" -- FRESHKILL: prey amount before feeding {game.clan.freshkill_pile.total_amount}")
-            print(f" -- FRESHKILL: clan needs {needed_amount} prey")
+            #print(f" -- FRESHKILL: prey amount before feeding {game.clan.freshkill_pile.total_amount}")
+            #print(f" -- FRESHKILL: clan needs {needed_amount} prey")
             # feed the cats and update the nutrient status
             relevant_cats = list(
                 filter(lambda _cat: _cat.is_alive() and not _cat.exiled and not _cat.outside, Cat.all_cats.values())
@@ -84,7 +84,7 @@ class Events():
             if not game.clan.freshkill_pile.clan_has_enough_food() and FRESHKILL_EVENT_ACTIVE:
                 game.cur_events_list.insert(0, Single_Event(
                     f"{game.clan.name}Clan doesn't have enough prey for next moon!"))
-            print(f" -- FRESHKILL: prey amount after feeding {game.clan.freshkill_pile.total_amount}")
+            #print(f" -- FRESHKILL: prey amount after feeding {game.clan.freshkill_pile.total_amount}")
         
         kittypet_ub = game.config["cotc_generation"]["kittypet_chance"]
         rogue_ub = game.config["cotc_generation"]["rogue_chance"]

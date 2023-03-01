@@ -22,7 +22,10 @@ class SaveCheck(UIWindow):
                          window_display_title='Save Check',
                          object_id='#save_check_window',
                          resizable=False)
-        self.clan_name = str(game.clan.name + 'Clan')
+
+        self.clan_name = "UndefinedClan"
+        if game.clan:
+            self.clan_name = f"{game.clan.name}Clan"
         self.last_screen = last_screen
         self.isMainMenu = isMainMenu
         self.mm_btn = mm_btn
