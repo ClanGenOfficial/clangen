@@ -152,7 +152,7 @@ class MakeClanScreen(Screens):
                 self.elements["error"].set_text("Your Clan's name cannot be empty")
                 self.elements["error"].show()
                 return
-            if new_name in game.switches["clan_list"]:
+            if new_name.casefold() in [clan.casefold() for clan in game.switches['clan_list']]:
                 self.elements["error"].set_text("A clan with that name already exists.")
                 self.elements["error"].show()
                 return
@@ -293,11 +293,19 @@ class MakeClanScreen(Screens):
 
         # Don't allow someone to enter no name for their clan
         if self.sub_screen == 'name clan':
-            if sub(r'[^A-Za-z0-9 ]+', "", self.elements["name_entry"].get_text()) == "":
+            if self.elements["name_entry"].get_text() == "":
                 self.elements['next_step'].disable()
-            elif len(sub(r'[^A-Za-z0-9 ]+', "", self.elements["name_entry"].get_text())) > 11:
-                self.elements["name_entry"].set_text(self.elements["name_entry"].get_text()[:11])
+            elif self.elements["name_entry"].get_text().startswith(" "):
+                self.elements["error"].set_text("Clan names cannot start with a space.")
+                self.elements["error"].show()
+                self.elements['next_step'].disable()
+            elif self.elements["name_entry"].get_text().casefold() in [clan.casefold() for clan in game.switches['clan_list']]:
+                self.elements["error"].set_text("A clan with that name already exists.")
+                self.elements["error"].show()
+                self.elements['next_step'].disable()
+                return
             else:
+                self.elements["error"].hide()
                 self.elements['next_step'].enable()
 
     def clear_all_page(self):
@@ -609,6 +617,8 @@ class MakeClanScreen(Screens):
         self.elements['next_step'].disable()
         self.elements["name_entry"] = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((530, 1195), (280, 58)))
                                                                           , manager=MANAGER)
+        self.elements["name_entry"].set_allowed_characters(list("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_- "))
+        self.elements["name_entry"].set_text_length_limit(11)
         self.elements["clan"] = pygame_gui.elements.UITextBox("<font color='#FFFFFF'>-Clan</font>",
                                                               scale(pygame.Rect((750, 1200), (200, 50))), manager=MANAGER)
         self.elements["reset_name"] = UIImageButton(scale(pygame.Rect((910, 1190), (268, 60))), "",
