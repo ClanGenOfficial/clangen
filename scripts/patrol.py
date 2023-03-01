@@ -291,16 +291,15 @@ class Patrol():
             if patrol.season not in [current_season, "Any"]:
                 continue
 
-            # correct button check
-            if game.clan.game_mode != 'classic' and 'general' not in patrol.tags and patrol_type != 'general':
-                if 'hunt' not in patrol.id and patrol_type == 'hunting':
-                    continue
-                elif 'bord' not in patrol.id and patrol_type == 'border':
-                    continue
-                elif 'train' not in patrol.id and patrol_type == 'training':
-                    continue
-                elif 'med' not in patrol.id and patrol_type == 'med':
-                    continue
+        # correct button check
+            if 'hunt' not in patrol.patrol_id and patrol_type == 'hunting':
+                continue
+            elif 'bord' not in patrol.patrol_id and patrol_type == 'border':
+                continue
+            elif 'train' not in patrol.patrol_id and patrol_type == 'training':
+                continue
+            elif 'med' not in patrol.patrol_id and patrol_type == 'med':
+                continue
 
             if patrol_size < patrol.min_cats:
                 continue
