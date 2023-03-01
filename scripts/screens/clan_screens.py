@@ -45,6 +45,8 @@ class ClanScreen(Screens):
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.save_button:
+                self.save_button_saving_state.show()
+                self.save_button.disable()
                 game.save_cats()
                 game.clan.save_clan()
                 game.clan.save_pregnancy(game.clan)
@@ -147,10 +149,20 @@ class ClanScreen(Screens):
         self.show_den_labels.disable()
         self.label_toggle = UIImageButton(scale(pygame.Rect((50, 1282), (64, 64))), "", object_id="#checked_checkbox")
 
-        self.save_button = UIImageButton(scale(pygame.Rect(((686, 1250), (228, 60)))), "", object_id="#save_button")
+        self.save_button = UIImageButton(scale(pygame.Rect(((686, 1286), (228, 60)))), "", object_id="#save_button")
+        self.save_button_saved_state = pygame_gui.elements.UIImage(
+            scale(pygame.Rect((686, 1286), (228, 60))),
+            pygame.transform.scale(
+                image_cache.load_image('resources/images/save_clan_saved.png'),
+                (228, 60)))
+        self.save_button_saved_state.hide()
+        self.save_button_saving_state = pygame_gui.elements.UIImage(
+            scale(pygame.Rect((686, 1286), (228, 60))),
+            pygame.transform.scale(
+                image_cache.load_image('resources/images/save_clan_saving.png'),
+                (228, 60)))
+        self.save_button_saving_state.hide()
 
-        self.save_text = pygame_gui.elements.UITextBox("", scale(pygame.Rect(640, 1320, 320, 40)),
-                                                       object_id="#save_text_box")
         self.update_buttons_and_text()
 
     def exit_screen(self):
@@ -162,8 +174,10 @@ class ClanScreen(Screens):
         # Kill all other elements, and destroy the reference so they aren't hanging around
         self.save_button.kill()
         del self.save_button
-        self.save_text.kill()
-        del self.save_text
+        self.save_button_saved_state.kill()
+        del self.save_button_saved_state
+        self.save_button_saving_state.kill()
+        del self.save_button_saving_state
         self.warrior_den_label.kill()
         del self.warrior_den_label
         self.leader_den_label.kill()
@@ -300,9 +314,11 @@ class ClanScreen(Screens):
 
     def update_buttons_and_text(self):
         if game.switches['saved_clan']:
-            self.save_text.set_text("<font color=#006600>Saved!</font>")
+            self.save_button_saving_state.hide()
+            self.save_button_saved_state.show()
+            self.save_button.disable()
         else:
-            self.save_text.set_text("Remember to save!")
+            self.save_button.enable()
 
         self.label_toggle.kill()
         if game.settings['den labels']:
