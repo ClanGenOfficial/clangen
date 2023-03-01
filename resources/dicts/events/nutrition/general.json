@@ -2,7 +2,7 @@
 	{
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "death"],
-        "death_text": "m_c can feel they have no energy, not to stand up and not to remain longer here. m_c hunt now with their ancestors.",
+        "death_text": "m_c feels that they have no energy, unable to stand up and unable to remain here any longer. m_c hunts now with their ancestors.",
         "history_text": ["m_c died from starvation.", null],
         "cat_trait": null,
         "cat_skill": null,
@@ -12,7 +12,7 @@
 	{
 		"camp": "any",
 		"tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "starving"],
-		"death_text": "m_c noticed how much their stomach is crumbing and they wish dearly they would have something to eat.",
+		"death_text": "m_c notices how loudly their stomach is rumbling, and they wish dearly they could have something to eat.",
 		"history_text": [null, null],
 		"cat_trait": null,
 		"cat_skill": null,
