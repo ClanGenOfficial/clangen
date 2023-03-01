@@ -291,15 +291,19 @@ class Patrol():
             if patrol.season not in [current_season, "Any"]:
                 continue
 
-        # correct button check
-            if 'hunt' not in patrol.patrol_id and patrol_type == 'hunting':
-                continue
-            elif 'bord' not in patrol.patrol_id and patrol_type == 'border':
-                continue
-            elif 'train' not in patrol.patrol_id and patrol_type == 'training':
-                continue
-            elif 'med' not in patrol.patrol_id and patrol_type == 'med':
-                continue
+            #  correct button check
+            if patrol_type == "general":
+                if '_med_' in patrol.patrol_id:
+                    continue
+            else:
+                if '_hunt_' not in patrol.patrol_id and patrol_type == 'hunting':
+                    continue
+                elif '_bord_' not in patrol.patrol_id and patrol_type == 'border':
+                    continue
+                elif '_train_' not in patrol.patrol_id and patrol_type == 'training':
+                    continue
+                elif 'med' not in patrol.patrol_id and patrol_type == 'med':
+                    continue
 
             if patrol_size < patrol.min_cats:
                 continue
