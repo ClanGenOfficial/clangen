@@ -103,25 +103,22 @@ class Sprites():
         """
         Loads scar sprites and puts them into groups.
         """
-        scars = 'scars'
-
         for a, i in enumerate(
                 ["ONE", "TWO", "THREE", "MANLEG", "BRIGHTHEART", "MANTAIL", 
                  "BRIDGE", "RIGHTBLIND", "LEFTBLIND", "BOTHBLIND", "BURNPAWS", "BURNTAIL"]):
             sprites.make_group('scars', (a, 0), f'scars{i}')
-
-        # needed
-        # "LEFTEAR", "RIGHTEAR", "NOTAIL", "NOLEFTEAR", "NORIGHTEAR", "NOEAR", "HALFTAIL", "NOPAW"
-
         for a, i in enumerate(
                 ["BURNBELLY", "BEAKCHEEK", "BEAKLOWER", "BURNRUMP", "CATBITE", "RATBITE",
                  "FROSTFACE", "FROSTTAIL", "FROSTMITT", "FROSTSOCK", "QUILLCHUNK", "QUILLSCRATCH"]):
             sprites.make_group('scars', (a, 1), f'scars{i}')
-
         for a, i in enumerate(
                 ["TAILSCAR", "SNOUT", "CHEEK", "SIDE", "THROAT", "TAILBASE", "BELLY", "TOETRAP", "SNAKE",
                  "LEGBITE", "NECKBITE", "FACE"]):
             sprites.make_group('scars', (a, 2), f'scars{i}')
+        # missing parts
+        for a, i in enumerate(
+                ["LEFTEAR", "RIGHTEAR", "NOTAIL", "NOLEFTEAR", "NORIGHTEAR", "NOEAR", "HALFTAIL", "NOPAW"]):
+            sprites.make_group('missingscars', (a, 0), f'scars{i}')
 
             # Accessories
         for a, i in enumerate([
