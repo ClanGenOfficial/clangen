@@ -48,6 +48,7 @@
 			"interactions":[
 				"m_c is talking with r_c.",
 				"m_c asks r_c how they're doing."
+				
 			],
 			"reaction_random_cat":{
 				"platonic":"increase"
@@ -64,11 +65,36 @@
 			"id": "platonic_inc_med2",
 			"interactions":[
 				"m_c is telling a story to r_c.",
-				"m_c is sharing prey with r_c."
+				"m_c is sharing prey with r_c.",
+				"m_c chats with r_c while grabbing something to eat."
 				
 			],
 			"reaction_random_cat":{
 				"platonic": "increase"
+			}
+		},
+		{
+			"id":"platonic_inc_med3",
+			"interactions":[
+            	"m_c waves to r_c with their tail as their patrols cross paths on the territory.",
+           		"m_c calls to r_c to catch them a fat mouse on their next hunting patrol.",
+				"m_c hopes they are assigned to patrol with r_c tomorrow.",
+				"m_c noticed that r_c is falling behind in training and offered to help them catch up."
+			],
+			"main_status_constraint":[
+				"apprentice",
+				"deputy",
+				"leader",
+				"warrior"
+			],
+			"random_status_constraint":[
+				"apprentice",
+				"deputy",
+				"leader",
+				"warrior"
+			],
+			"reaction_random_cat":{
+				"platonic":"increase"
 			}
 		},
 		{
@@ -233,7 +259,8 @@
 			"interactions":[
 				"m_c is telling r_c about a hunting technique.",
 				"m_c is thinking about how much r_c reminds them of their own apprentice days.",
-				"m_c is telling r_c about their own days as an apprentice."
+				"m_c is telling r_c about their own days as an apprentice.",
+				"m_c promises to teach r_c a new technique later."
 			],
 			"main_status_constraint":[
 				"elder",
@@ -243,6 +270,23 @@
 			],
 			"random_status_constraint":[
 				"apprentice"
+			],
+			"reaction_random_cat":{
+				"platonic":"increase"
+			}
+		},
+		{
+			"id":"platonic_warrior_inc_med1",
+			"interactions":[
+				"m_c greets r_c as they're exiting the warriors' den.",
+				"m_c chats quietly with r_c while they're both on camp guard duty.",
+				"m_c thanks r_c for covering for them during a patrol earlier."
+			],
+			"main_status_constraint":[
+				"warrior"
+			],
+			"random_status_constraint":[
+				"warrior"
 			],
 			"reaction_random_cat":{
 				"platonic":"increase"
@@ -357,17 +401,64 @@
 			"id":"platonic_de_high1",
 			"intensity":"high",
 			"interactions":[
+				"m_c doesn't like how r_c has been talking about their mentor.",
+				"m_c wishes they had r_c's mentor instead."
 
+			],
+			"main_status_constraint":[
+				"apprentice",
+				"mediator apprentice",
+				"medicine cat apprentice"
+			],
+			"random_status_constrain":[
+				"medicine cat apprentice",
+				"apprentice",
+				"mediator apprentice"
 			]
 		},
+		
 		{
 			"id":"platonic_de_high2",
 			"intensity":"high",
 			"interactions":[
+			"m_c mocks r_c for becoming a medicine cat apprentice instead of a warrior apprentice.",
+            "m_c mocks r_c for smelling like gross herbs.",
+            "m_c mocks r_c for smelling like mouse bile.",
+            "m_c looks down on r_c, because there's no way they could ever be a useful medicine cat."
 
+			],
+			"main_status_constraint":[
+				"apprentice"
+			],
+			"random_status_constrain":[
+				"medicine cat apprentice"
 			],
 			"reaction_random_cat":{
 				"platonic":"decrease"
+			}
+		},
+		{
+			"id":"platonic_de_high3",
+			"intensity":"high",
+			"interactions":[
+				"m_c keeps leaving all of the boring apprentice tasks for r_c to do by themself.",
+				"m_c tells r_c's mentor that they've been sneaking out of camp without permission.",
+				"m_c has a disagreement with r_c over who is the better hunter.",
+				"m_c accuses r_c of cheating and there's no way they could win so many practice fights fairly."
+
+			],
+			"main_status_constraint":[
+				"apprentice",
+				"mediator apprentice",
+				"medicine cat apprentice"
+			],
+			"random_status_constrain":[
+				"medicine cat apprentice",
+				"apprentice",
+				"mediator apprentice"
+			],
+			"reaction_random_cat":{
+				"dislike": "increase"
 			}
 		}
 	]

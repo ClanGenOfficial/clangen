@@ -38,7 +38,7 @@
 			"id": "jel_inc_low1",
 			"intensity": "low",
 			"interactions":[
-
+				"m_c wishes they could get their pelt to shine like r_c's."
 			]
 		},
 		{
@@ -57,14 +57,46 @@
 				"m_c thinks that the prey r_c is biting into on the other side of camp looks delicious."
 			]
 		},
-		{
-			"id": "jel_inc_med2",
+		{ 
+			"id":"jel_inc_med2",
 			"interactions":[
-
+				"m_c is jealous that r_c got to go to the last Gathering.",
+				"m_c is jealous that r_c went on patrol without them."
 			],
-			"reaction_random_cat":{
-				"jealousy": "increase"
-			}
+			"main_status_constraint":[
+				"mediator apprentice",
+				"apprentice",
+				"warrior"
+			],
+			"random_status_constraint":[
+				"mediator apprentice",
+				"apprentice",
+				"medicine cat apprentice",
+				"medicine cat",
+				"warrior",
+				"mediator",
+				"deputy"
+		]
+		},
+		{
+			"id":"jealousy_inc_med3",
+			"interactions":[
+				"m_c is jealous that r_c got praised by the leader.",
+				"m_c is jealous that r_c got to fight in a border skirmish when they didn't.",
+				"m_c is jealous that r_c got to go on border patrol this morning.",
+				"m_c doesn't understand how r_c got so good at hunting."
+			],
+			"main_status_constraint":[
+				"apprentice",
+				"medicine apprentice",
+				"mediator apprentice",
+				"warrior"
+			],
+			"random_status_constraint":[
+				"apprentice",
+				"warrior",
+				"deputy"
+			]
 		},
 		{
 			"id": "jealousy_kit_inc_med1",
@@ -94,45 +126,48 @@
 				"dislike": "increase"
 			}
 		},
-		{ 
-			"id":"jel_kit_inc_med1",
-			"interactions":[
-
-			],
-			"main_status_constraint":[
-				"kitten"
-			],
-			"random_status_constraint":[
-			"mediator apprentice",
-			"apprentice",
-			"medicine cat apprentice",
-			"medicine cat"
-		]
-		},
 		{
-			"id":"jealousy_allapp_inc_med1",
+			
+			"id":"jealosuy_kit_inc_med3",
 			"interactions":[
-				"m_c is jealous that r_c got praised by the leader.",
-				"m_c is jealous that r_c got to fight in a border skirmish when they didn't."
+				"m_c looks at r_c and remembers how easy it was to be a kitten.",
+				"m_c is resentful that so much is expected of them, yet no one expects anything of r_c."
 			],
 			"main_status_constraint":[
 				"apprentice",
-				"medicine apprentice",
-				"mediator apprentice"
-			]
+				"mediator apprentice",
+				"medicine cat apprentice"
+			],
+			"random_status_constraint":[
+				"kitten"
+			
+			],
+			"reaction_random_cat":{
+				"platonic": "decrease"
+			}
 		},
+	
 		{
 			"id": "jel_inc_high1",
 			"intensity": "high",
 			"interactions":[
+				"m_c is jealous that r_c gets to do cool super secret medicine cat things.",
+				"m_c thinks it's unfair that r_c always gets to go to Gatherings."
 
+			],
+			"main_status_constraint":[
+				"apprentice",
+				"mediator apprentice"
+			],
+			"random_status_constraint":[
+				"medicine cat apprentice"
 			]
 		},
 		{
 			"id": "jel_inc_high2",
 			"intensity": "high",
 			"interactions":[
-
+				"m_c is complaining that r_c never does anything helpful."
 			],
 			"reaction_random_cat":{
 				"jealousy": "increase"
@@ -173,9 +208,20 @@
 			}
 		},
 		{
-			"id": "jealousy_allapp_de_med1",
+			"id": "jealousy_app_de_med1",
 			"interactions":[
-				"m_C has been listening to r_C talk about how hard training has been."
+				"m_c has been listening to r_c talk about how hard training has been.",
+				"m_c comforts r_c after a hard day's training."
+			],
+			"main_status_constraint":[
+				"apprentice",
+				"mediator apprentice",
+				"medicine cat apprentice"
+			],
+			"random_status_constrain":[
+				"medicine cat apprentice",
+				"apprentice",
+				"mediator apprentice"
 			],
 			"reaction_random_cat":{
 				"comfortable":"increase",
@@ -183,6 +229,27 @@
 			},
 			"also_influences":{
 				"platonic": "increase"
+			}
+		},
+		{
+			"id": "jealousy_app_de_med2",
+			"interactions":[
+				"m_c has been listening to r_c talk about how difficult herb memorization is.",
+				"m_c helps r_c wash mouse bile off of their paws."
+			],
+			"main_status_constraint":[
+				"apprentice",
+				"mediator apprentice",
+				"medicine cat apprentice"
+			],
+			"random_status_constrain":[
+				"medicine cat apprentice"
+			],
+			"reaction_random_cat":{
+				"comfortable": "increase"
+			},
+			"also_influences":{
+				"admiration": "increase"
 			}
 		},
 		{

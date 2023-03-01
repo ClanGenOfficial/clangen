@@ -57,8 +57,7 @@
 			"id":"comfort_inc_low3",
 			"intensity":"low",
 			"interactions":[
-        		"is asking (cat) to check them for ticks.",
-				"m_c is thinking about how much r_c reminds them of their own apprentice days."
+        		"is asking (cat) to check them for ticks."
 			],
 			"main_skill_constraint":[
 				"elder"
@@ -81,7 +80,9 @@
 				"m_c has snuggled up against r_c.",
 				"m_c chats with r_c about their day.",
 				"m_c basks in the sun with r_c.",
-				"m_C just told r_c a hilarious joke."
+				"m_C just told r_c a hilarious joke.",
+				"m_c settles near r_c to eat their fresh-kill.",
+				"m_c bumps heads with r_c reassuringly."
 				
 			],
 			"reaction_random_cat":{
@@ -91,7 +92,10 @@
 		{
 			"id":"comfort_inc_med3",
 			"interactions":[
-				"m_c playfully teases r_c for missing a catch."
+				"m_c is sharing the latest gossip they heard over the border with r_c.",
+            	"m_c tells r_c they'll save them a piece of fresh-kill.",
+				"m_c playfully teases r_c for missing a catch.",
+				"m_c gives r_c some feathers from the bird they caught to line their nest."
 			],
 			"main_status_constraint":[
 				"apprentice",
@@ -245,7 +249,8 @@
 		{
 			"id": "comfort_de_med1",
 			"interactions":[
-				"m_c finds the way r_c acts increasingly uncomfortable."
+				"m_c finds the way r_c acts increasingly uncomfortable.",
+				"m_c thinks that r_c has been behaving stuck up and rude."
 			]
 		},
 		{

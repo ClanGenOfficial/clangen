@@ -53,6 +53,25 @@
 			}
 		},
 		{
+			"id":"admire_inc_low3",
+			"intensity":"low",
+			"interactions":[
+				"m_c wants to be just like r_c someday."
+			],
+			"main_status_constraint":[
+				"apprentice",
+				"mediator apprentice",
+				"medicine cat apprentice"
+			],
+			"random_status_constraint":[
+				"elder",
+				"leader",
+				"mediator",
+				"deputy",
+				"medicine cat"
+			]
+		},
+		{
 			"id": "admire_inc_medium1",
 			"interactions":[
 				"m_c admires how brave r_c is."
@@ -166,7 +185,8 @@
 			"id":"admire_adult_inc_med1",
 			"interactions":[
 				"m_c is feeling proud of r_c.",
-				"m_c is watching r_c perform an almost-decent hunting crouch."
+				"m_c is watching r_c perform an almost-decent hunting crouch.",
+				"m_c is wowed by how well r_c did today!"
 			],
 			"relationship_constraint":[
 				"admiration_30"
@@ -308,7 +328,8 @@
 			"interactions":[
 				"m_c saw r_c take the last piece of prey from the fresh-kill pile.",
 				"m_C thinks r_c has a strange sense of humor.",
-				"m_c is frustrated that r_c won't take their actions more seriously."
+				"m_c is frustrated that r_c won't take their actions more seriously.",
+				"m_c feels like r_c isn't taking their own personal health seriously."
 			]
 		},
 		{

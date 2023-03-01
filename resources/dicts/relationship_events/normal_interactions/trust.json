@@ -102,7 +102,8 @@
 		{
 			"id":"trust_adult_inc_med2",
 			"interactions":[
-				"goes to (cat) to ask for their wisdom."
+				"goes to (cat) to ask for their wisdom.",
+				"m_c is faced with a tough decision and wonders what r_c would do."
 			],
 			"main_status_constraint":[
 				"kitten",
@@ -116,7 +117,10 @@
 				"leader"
 			],
 			"random_status_constraint":[
-				"elder"
+				"elder",
+				"mediator",
+				"medicine cat",
+				"leader"
 			],
 			"reaction_random_cat":{
 				"trust": "increase"

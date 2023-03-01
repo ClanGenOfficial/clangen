@@ -23,41 +23,22 @@
         "unfriendly": [
         ],
         "neutral": [
-            "is jealous that (cat) got to go to the last Gathering.",
-            "chats with (cat) while grabbing something to eat.",
-            "waves to (cat) with their tail as their patrols cross paths on the territory.",
-            "calls to (cat) to catch them a fat mouse on their next hunting patrol."
         ],
         "friendly": [
-            "hopes they are assigned to patrol with (cat) tomorrow."
             
         ],
         "close": [
-            "promises to teach (cat) a new technique later."
+            
         ]
     },
     "warrior": {
         "unfriendly": [
         ],
         "neutral": [
-            
-            "is jealous that (cat) got to go to the last Gathering.",
-            "greets (cat) as they're exiting the warriors' den.",
-            "chats quietly with (cat) while they're both on camp guard duty.",
-            "waves to (cat) with their tail as their patrols cross paths on the territory.",
-            "calls to (cat) to catch them a fat mouse on their next hunting patrol.",
-            "settles near (cat) to eat their fresh-kill."
         ],
         "friendly": [
-            "hopes they are assigned to patrol with (cat) tomorrow.",
-            "thanks (cat) for covering for them during a patrol earlier.",
-            "is faced with a tough decision and wonders what (cat) would do.",
-            "is sharing the latest gossip they heard over the border with (cat).",
-            "tells (cat) they'll save them a piece of fresh-kill.",
-            "gives (cat) some feathers from the bird they caught to line their nest."
         ],
         "close": [
-            "bumps heads with (cat) reassuringly."
         ]
     },
     "medicine cat": {
