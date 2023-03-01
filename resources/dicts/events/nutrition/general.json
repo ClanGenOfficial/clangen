@@ -12,7 +12,7 @@
 	{
 		"camp": "any",
 		"tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "starving"],
-		"death_text": "m_c notices how loudly their stomach is rumbling, and they wish dearly they would have something to eat.",
+		"death_text": "m_c notices how loudly their stomach is rumbling, and they wish dearly they could have something to eat.",
 		"history_text": [null, null],
 		"cat_trait": null,
 		"cat_skill": null,
