@@ -38,6 +38,13 @@ from scripts.utility import get_text_box_theme
 import pygame_gui
 import pygame
 
+# if user is developing in a github codespace
+if os.environ.get('CODESPACES'):
+    print('')
+    print("Github codespace user!!! Please ignore the ALSA related errors above.")
+    print("They are not a problem, and are caused by the way codespaces work.")
+    print('')
+
 # Version Number to be displayed.
 # This will only be shown as a fallback, when the git commit hash can't be found.
 VERSION_NUMBER = "Ver. 0.6.0dev"
