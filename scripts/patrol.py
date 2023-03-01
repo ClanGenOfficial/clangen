@@ -1150,14 +1150,23 @@ class Patrol():
 
         amount = choice([1, 1, 2, 2, 2, 3]) if litter else 1
         created_cats = []
+        suffix_choice = choice([True, False]) # if the cat gets a suffix or not
+        if suffix_choice:
+            suffix_ = None
+        else:
+            suffix_ = ""
+
+        if kit or litter: # babies will always get a suffix bc they don't know any better
+            suffix_ = None
+        
         for number in range(amount):
             new_cat = None
             if loner_name:
-                new_cat = Cat(moons=age, prefix=name, suffix="", status=status,
+                new_cat = Cat(moons=age, prefix=name, suffix=suffix_, status=status,
                               gender=gender if gender is not None else choice(['female', 'male']),
                               backstory=backstory)
             else:
-                new_cat = Cat(moons=age, status=status,
+                new_cat = Cat(moons=age, status=status, suffix=suffix_,
                               gender=gender if gender is not None else choice(['female', 'male']), backstory=backstory)
             if skill:
                 new_cat.skill = skill
