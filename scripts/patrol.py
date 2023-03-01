@@ -308,8 +308,14 @@ class Patrol():
 
             # makes sure that an apprentice is present if the apprentice tag is
             if "apprentice" in patrol.tags:
-                if "apprentice" not in self.patrol_statuses and "medicine cat apprentice" not in self.patrol_statuses:
-                    continue
+                if patrol_type != 'med':
+                    if "apprentice" not in self.patrol_statuses:
+                        continue
+                else:
+                    if "warrior_app" in patrol.tags and "apprentice" not in self.patrol_statuses:
+                        continue
+                    if "apprentice" in patrol.tags and "medicine cat apprentice" not in self.patrol_statuses:
+                        continue
                 # If there is only a medicine cat apprentice in the patrol without a full medicine cat and
                 # the number of cats is greater than one, remove all
                 # the patrols that assume as apprentice is present, resulting in treating the med apprentice like a
@@ -343,8 +349,7 @@ class Patrol():
 
             # makes sure there's a med in a med patrol
             if "med_cat" in patrol.tags:
-                med = ["medicine cat", "medicine cat apprentice"]
-                if not any(status in self.patrol_statuses for status in med):
+                if "medicine cat" not in self.patrol_statuses:
                     continue
 
             # makes sure no apps are present if they're not supposed to be
