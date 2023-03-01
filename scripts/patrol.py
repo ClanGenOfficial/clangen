@@ -293,13 +293,13 @@ class Patrol():
 
             # correct button check
             if game.clan.game_mode != 'classic' and 'general' not in patrol.tags and patrol_type != 'general':
-                if 'hunting' not in patrol.tags and patrol_type == 'hunting':
+                if 'hunt' not in patrol.id and patrol_type == 'hunting':
                     continue
-                elif 'border' not in patrol.tags and patrol_type == 'border':
+                elif 'bord' not in patrol.id and patrol_type == 'border':
                     continue
-                elif 'training' not in patrol.tags and patrol_type == 'training':
+                elif 'train' not in patrol.id and patrol_type == 'training':
                     continue
-                elif 'med_cat' not in patrol.tags and patrol_type == 'med':
+                elif 'med' not in patrol.id and patrol_type == 'med':
                     continue
 
             if patrol_size < patrol.min_cats:
