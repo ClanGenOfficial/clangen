@@ -110,6 +110,7 @@ class Events():
                 # aging the cat
                 cat.one_moon()
                 cat.moons += 1
+                cat.update_traits()
                 if cat.moons == 6:
                     cat.age = 'adolescent'
                 elif cat.moons == 12:
