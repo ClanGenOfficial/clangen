@@ -698,14 +698,20 @@ class PatrolScreen(Screens):
         if chance_of_romance_patrol <= 0:
             chance_of_romance_patrol = 1
         print("final romance chance:", chance_of_romance_patrol)
-        if not int(random.random() * chance_of_romance_patrol):
+        if 1:
             patrol.patrol_event = self.romantic_event_choice
             # need to make sure the patrol leader is the same as the stat cat
             old_random_cat = patrol.patrol_random_cat
+            old_win_stat_cat = patrol.patrol_win_stat_cat
+            old_fail_stat_cat = patrol.patrol_fail_stat_cat
             self.find_stat_cats(self.romantic_event_choice)
             if old_random_cat != patrol.patrol_random_cat:
                 print("Random cat changed after romantic patrol selected. Choosing normal patrol. ")
                 patrol.patrol_event = self.normal_event_choice
+                # Reset the random and stat cat
+                patrol.patrol_random_cat = old_random_cat
+                patrol.patrol_win_stat_cat = old_win_stat_cat
+                patrol.patrol_fail_stat_cat = old_fail_stat_cat
                 return
 
             # need to make sure the patrol leader is the same as the stat cat
