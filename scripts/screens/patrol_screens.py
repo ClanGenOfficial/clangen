@@ -671,7 +671,7 @@ class PatrolScreen(Screens):
             print('no romance choices')
             return
         if not patrol.patrol_random_cat.is_potential_mate(patrol.patrol_leader, for_love_interest=True) \
-                and patrol.patrol_random_cat.mate != patrol.patrol_leader.ID:
+                or patrol.patrol_random_cat.mate != patrol.patrol_leader.ID:
             patrol.patrol_event = self.normal_event_choice
             print('not a potential mate or current mate')
             return
