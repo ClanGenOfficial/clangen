@@ -65,11 +65,11 @@ class Screens():
             manager=MANAGER,
             object_id="#stats_button"),
         "name_background": pygame_gui.elements.UIImage(
-            scale(pygame.Rect((620, 50), (360, 70))),
+            scale(pygame.Rect((610, 50), (380, 70))),
             pygame.transform.scale(
                 image_cache.load_image(
                     "resources/images/clan_name_bg.png").convert_alpha(),
-                (360, 70)),
+                (380, 70)),
             visible=False,
             manager=MANAGER),
         "heading": pygame_gui.elements.UITextBox(

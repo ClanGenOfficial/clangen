@@ -291,16 +291,15 @@ class Patrol():
             if patrol.season not in [current_season, "Any"]:
                 continue
 
-            # correct button check
-            if game.clan.game_mode != 'classic' and 'general' not in patrol.tags and patrol_type != 'general':
-                if 'hunting' not in patrol.tags and patrol_type == 'hunting':
-                    continue
-                elif 'border' not in patrol.tags and patrol_type == 'border':
-                    continue
-                elif 'training' not in patrol.tags and patrol_type == 'training':
-                    continue
-                elif 'med_cat' not in patrol.tags and patrol_type == 'med':
-                    continue
+        # correct button check
+            if 'hunt' not in patrol.patrol_id and patrol_type == 'hunting':
+                continue
+            elif 'bord' not in patrol.patrol_id and patrol_type == 'border':
+                continue
+            elif 'train' not in patrol.patrol_id and patrol_type == 'training':
+                continue
+            elif 'med' not in patrol.patrol_id and patrol_type == 'med':
+                continue
 
             if patrol_size < patrol.min_cats:
                 continue
@@ -309,8 +308,14 @@ class Patrol():
 
             # makes sure that an apprentice is present if the apprentice tag is
             if "apprentice" in patrol.tags:
-                if "apprentice" not in self.patrol_statuses and "medicine cat apprentice" not in self.patrol_statuses:
-                    continue
+                if patrol_type != 'med':
+                    if "apprentice" not in self.patrol_statuses:
+                        continue
+                else:
+                    if "warrior_app" in patrol.tags and "apprentice" not in self.patrol_statuses:
+                        continue
+                    if "apprentice" in patrol.tags and "medicine cat apprentice" not in self.patrol_statuses:
+                        continue
                 # If there is only a medicine cat apprentice in the patrol without a full medicine cat and
                 # the number of cats is greater than one, remove all
                 # the patrols that assume as apprentice is present, resulting in treating the med apprentice like a
@@ -344,8 +349,7 @@ class Patrol():
 
             # makes sure there's a med in a med patrol
             if "med_cat" in patrol.tags:
-                med = ["medicine cat", "medicine cat apprentice"]
-                if not any(status in self.patrol_statuses for status in med):
+                if "medicine cat" not in self.patrol_statuses:
                     continue
 
             # makes sure no apps are present if they're not supposed to be
@@ -1158,7 +1162,7 @@ class Patrol():
         else:
             suffix_ = ""
 
-        if kit or litter: # babies will always get a suffix bc they don't know any better
+        if kit or litter or age == 'young': # babies will always get a suffix bc they don't know any better
             suffix_ = None
         
         for number in range(amount):
