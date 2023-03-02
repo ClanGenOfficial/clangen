@@ -293,20 +293,17 @@ class Patrol():
 
             #  correct button check
             if patrol_type == "general":
-                if 'herb_gathering' in patrol.patrol_id:
-                    continue
-                elif not set(patrol.tags).intersection({"hunting", "border", "training"}):
+                if not set(patrol.tags).intersection({"hunting", "border", "training"}):
                     # This make sure general only gets hunting, border, or training patrols.
-                    print(patrol.patrol_id)
                     continue
             else:
                 if 'hunting' not in patrol.tags and patrol_type == 'hunting':
                     continue
                 elif 'border' not in patrol.tags and patrol_type == 'border':
                     continue
-                elif 'training' not in patrol.patrol_id and patrol_type == 'training':
+                elif 'training' not in patrol.tags and patrol_type == 'training':
                     continue
-                elif 'herb_gathering' not in patrol.patrol_id and patrol_type == 'med':
+                elif 'herb_gathering' not in patrol.tags and patrol_type == 'med':
                     continue
 
             if patrol_size < patrol.min_cats:

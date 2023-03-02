@@ -3,7 +3,7 @@
     "patrol_id": "bch_med_romance1",
     "biome": "beach",
     "season": "newleaf",
-    "tags": ["herb_gathering", "med_cat", "warrior", "random_herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c"],
+    "tags": ["herb_gathering", "warrior", "random_herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c"],
     "intro_text": "p_l goes out with a warrior escort, both for safety as they look for newleaf's fresh buds, and for carrying capacity should they find anything.",
     "decline_text": "Their escort is called away on a different mission, and p_l decides to reorganize the herb store instead.",
     "chance_of_success": 60,
@@ -103,7 +103,7 @@
     "patrol_id": "bch_med_gatheringbetony_newleaf3",
     "biome": "beach",
     "season": "newleaf",
-    "tags": ["herb_gathering", "med_cat", "warrior", "herb", "betony", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "warrior", "herb", "betony", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "The betony plants stretch outwards, racing to take advantage of the newleaf sun. p_l points out the plants to the warriors they brought with them, who just accept that this particular green shrub is different to all the other green shrubs.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
@@ -175,7 +175,7 @@
     "patrol_id": "bch_med_gatheringblackberry_newleaf3",
     "biome": "beach",
     "season": "newleaf",
-    "tags": ["herb_gathering", "med_cat", "warrior", "herb", "blackberry", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "warrior", "herb", "blackberry", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "Newleaf should bring new leaves on the blackberry brambles. p_l heads out to collect some, bringing along anyone who isn't busy with other work.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
@@ -253,7 +253,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-           "The strenthening newleaf sun has tempted fat burdock leaves to start to sprout, and it's not finding them that's hard, it's trying to carry all the roots back to camp all at once that proves difficult! It's a long afternoon, but a productive, light-hearted one, filled with smiles and jokes as the obliging cats follow p_l's direction to cart everything home.",
+           "The strengthening newleaf sun has tempted fat burdock leaves to start to sprout, and it's not finding them that's hard, it's trying to carry all the roots back to camp all at once that proves difficult! It's a long afternoon, but a productive, light-hearted one, filled with smiles and jokes as the obliging cats follow p_l's direction to cart everything home.",
            "Luck is on p_l's side today, and the burdock is both plentiful and easy to find. Laying the fat roots out in a towering but neat pile in the herb stores makes p_l thrum with a contented purr, and their Clanmates smile, obligingly helping out their hard-working medicine cat.",
             "s_c shows their usual talent for spotting herbs, trotting straight over to a burdock plant and digging at its foot. Their team follows them, ready to pitch in and provide the muscle needed to bring back an excellent harvest."
     ],
@@ -391,7 +391,7 @@
     "patrol_id": "bch_med_gatheringdaisy_newleaf3",
     "biome": "beach",
     "season": "newleaf",
-    "tags": ["herb_gathering", "med_cat", "warrior", "herb", "daisy", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "warrior", "herb", "daisy", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "With the snows of leaf-bare nearly vanished as newleaf wins its place in the seasonal cycle, p_l heads out to gather daisy leaves. They assemble a little group of warriors to help them carry the herbs.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
@@ -463,14 +463,14 @@
     "patrol_id": "bch_med_gatheringdandelion_newleaf3",
     "biome": "beach",
     "season": "newleaf",
-    "tags": ["herb_gathering", "med_cat", "warrior", "herb", "dandelion", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "warrior", "herb", "dandelion", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "The strengthening sun in the sky will bring dandelion plants out - always the first to take advantage of newleaf, those ones. p_l heads out to look for them, bringing a group of their Clanmates along for the gathering patrol.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
             "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. The white milk in their roots and stems keeps for a long time and is a potent cure for poison, while their leaves are weaker but fast-acting and can be chewed into poultices. Even the fluffy dandelion heads are useful as a c_n kitten's favourite short lived toy, and the warriors share nursery memories about them as they gather.",
-            "It's a successful gathering mission, with p_l striding back to camp with a great haul of entire dandelion plants. Later they'll sort the leaves and roots to be stored seperately, the leaves remain fresh for a far shorter time, but for now they make sure to thank the warriors that've helped them bring home so many.",
+            "It's a successful gathering mission, with p_l striding back to camp with a great haul of entire dandelion plants. Later they'll sort the leaves and roots to be stored separately, the leaves remain fresh for a far shorter time, but for now they make sure to thank the warriors that've helped them bring home so many.",
             "With warmth in the air and ground, s_c doesn't need to try very hard to find an excellent haul of dandelions to bring back to camp. They help the warriors carefully pluck fluffy dandelions heads to bring back for the nursery."
 ],
     "fail_text": [
@@ -541,14 +541,14 @@
     "patrol_id": "bch_med_gatheringelder_newleaf3",
     "biome": "beach",
     "season": "newleaf",
-    "tags": ["herb_gathering", "med_cat", "warrior", "herb", "elder_leaves", "minor_injury", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "warrior", "herb", "elder_leaves", "minor_injury", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "As newleaf brings green back to the world, p_l has been eagerly anticipating the unfurling of the new leaf buds on the elder trees. There's a particular tree in a sheltered dip along a stream they want to check on today, bringing a group of their Clanmates with them.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
             "Elder leaves being used to soothe sprains and elder leaves having to be gathered in a way that risks sprains is truly one of StarClan's little ironies, p_l reflects. They share the little joke with the patrol, and the cats murrp with amusement, but it also reminds everyone to be careful as they strip leaves from the tree.",
-            "p_l manages to gather more than they were expecting - the tree they chose is in a good spot and has begun its newleaf growth early and vigoriously. The patrol chats and jokes to one another as they get to work plucking leaves to bring a impressive haul home.",
+            "p_l manages to gather more than they were expecting - the tree they chose is in a good spot and has begun its newleaf growth early and vigorously. The patrol chats and jokes to one another as they get to work plucking leaves to bring a impressive haul home.",
             "s_c has managed to discover, with time and experience, that elder leaf picking is actually better handled by chewing off several low hanging thin branches and carting those back to camp instead. With so many assistants they can bring a truely massive haul home, where the rest of the patrol helps them strip the leaves and carefully store them."
 ],
     "fail_text": [
@@ -688,7 +688,7 @@
     "patrol_id": "bch_med_gatheringjuniper_newleaf3",
     "biome": "beach",
     "season": "newleaf",
-    "tags": ["herb_gathering", "med_cat", "warrior", "herb", "juniper", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "warrior", "herb", "juniper", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "With newleaf having won against the snows of leaf-bare, it's far safer to go gather juniper needles from the trees. p_l heads out with a gathering patrol, promising the warriors that they can pick up a few needles for the dens of the camp to help freshen them up, so long as they gather enough for the herb stores first.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
@@ -742,8 +742,7 @@
     "patrol_id": "bch_med_gatheringlungwort2",
     "biome": "beach",
     "season": "newleaf",
-    "tags": ["herb_gathering", 
-        "med_cat",
+    "tags": ["herb_gathering",
         "herb",
         "lungwort",
         "no_app",
@@ -856,7 +855,7 @@
             "s_c has a good eye for these things, finding an excellent patch of mallow. As they do they instruct app1 in how to judge the quality of each stem, and how each bush will contain both ideal and bad examples, either of which could be harvested."
 ],
     "fail_text": [
-            "The weedy-looking mallow doesn't seem to be recovering well from leaf-bare this year, and it worries p_l. app1's calivalier attitude is not helping."
+            "The weedy-looking mallow doesn't seem to be recovering well from leaf-bare this year, and it worries p_l. app1's cavalier attitude is not helping."
     ],
     "win_skills": ["keen eye"],
 
@@ -869,7 +868,7 @@
     "patrol_id": "bch_med_gatheringmallow_newleaf3",
     "biome": "beach",
     "season": "newleaf",
-    "tags": ["herb_gathering", "med_cat", "warrior", "herb", "mallow", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "warrior", "herb", "mallow", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "Newleaf has brought new life to c_n's territory, and p_l heads out to gather fresh mallow for the stores with a patrol of their Clanmates to assist them.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
@@ -1013,7 +1012,7 @@
     "patrol_id": "bch_med_gatheringmullein_newleaf3",
     "biome": "beach",
     "season": "newleaf",
-    "tags": ["herb_gathering", "med_cat", "warrior", "herb", "mullein", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "warrior", "herb", "mullein", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "With newleaf comes the opportunity to scout out c_n's territory and find where mullein might be growing this year, with a patrol of their Clanmates to assist them.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
@@ -1068,8 +1067,8 @@
     "exp": 20,
     "success_text": [
             "Towering into the sky, p_l always finds the blush of new leaves budding from oak branches one of the most hopeful signs of newleaf. They give app1 a lesson on using the trees to track the season - not just what moon it is, which only matters a little, but how warm or cool or wet the season has been so far.",
-            "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine den, and they're always happy to bring a good crop of them back to the herb stores. They use the afternoon to give app1 the chance to lead their expidition, allowing the apprentice to swell with confidence.",
-            "s_c spots an oak tree that's valiantly trying to sprout leaves from a half fallen branch, one of the casualties of last leaf-bare, and heads to harvest from that, taking the safe option of plucking leaves from the ground. app1 asks them if the damaged branch will produce less potent leaves, but s_c doens't think so - if the leaves are growing here at all they should be the same."
+            "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine den, and they're always happy to bring a good crop of them back to the herb stores. They use the afternoon to give app1 the chance to lead their expedition, allowing the apprentice to swell with confidence.",
+            "s_c spots an oak tree that's valiantly trying to sprout leaves from a half fallen branch, one of the casualties of last leaf-bare, and heads to harvest from that, taking the safe option of plucking leaves from the ground. app1 asks them if the damaged branch will produce less potent leaves, but s_c doesn't think so - if the leaves are growing here at all they should be the same."
 ],
     "fail_text": [
             "The trees p_l finds don't look particularly safe to climb, and p_l is forced to give up on the idea of oak leaf gathering for today."
@@ -1085,7 +1084,7 @@
     "patrol_id": "bch_med_gatheringoakleaves_newleaf3",
     "biome": "beach",
     "season": "newleaf",
-    "tags": ["herb_gathering", "med_cat", "warrior", "herb", "oak_leaves", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "warrior", "herb", "oak_leaves", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "As the branches of the oak trees start to green, p_l heads out to collect its leaves with their Clanmates coming along. Many paws will make light work, after all.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
@@ -1093,7 +1092,7 @@
     "success_text": [
             "Towering into the sky, p_l always finds the blush of new leaves budding from oak branches one of the most hopeful signs of newleaf. The warriors helping them seem to just find it a fun training exercise, to see how spindly a branch they're able to balance on as they send down a rain of leaves to p_l.",
             "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine den, and they're always happy to bring a good crop of them back to the herb stores. Their Clanmates are, as expected, a huge help carrying everything back home.",
-            "s_c spots an oak tree that's valiantly trying to sprout leaves from a half fallen branch, one of the casualties of last leaf-bare, and heads to harvest from that, taking the safe option of plucking leaves from the ground. It's less entertaining for the warriors heping them, but the cats still make a nice easy afternoon of it."
+            "s_c spots an oak tree that's valiantly trying to sprout leaves from a half fallen branch, one of the casualties of last leaf-bare, and heads to harvest from that, taking the safe option of plucking leaves from the ground. It's less entertaining for the warriors helping them, but the cats still make a nice easy afternoon of it."
 ],
     "fail_text": [
             "The trees p_l finds don't look particularly safe to climb, and p_l is forced to give up on the idea of oak leaf gathering for today."
@@ -1157,14 +1156,14 @@
     "patrol_id": "bch_med_gatheringplantain_newleaf3",
     "biome": "beach",
     "season": "newleaf",
-    "tags": ["herb_gathering", "med_cat", "warrior", "herb", "plantain", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "warrior", "herb", "plantain", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "The plantain plants have reawoken, and p_l plans to go gather some of their leaves with a gathering patrol.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
             "Deep green even in newleaf and with a characteristic smoothness, p_l finds the plantain where they expected - right in the middle of a path. The warriors help them pull up the entire plant, roots and all. Only the leaves are useful to p_l, but the plantain blocking the path is too annoying in this spot.",
-            "Suitable for soothing throat and pelt irritation, and with a welcome weird habit of consistently sprouting up on well-trodden paths, plantain is a basic but valuable herb to keep stocks of. It's even relatively innoculous taste wise, making it easy to harvest.",
+            "Suitable for soothing throat and pelt irritation, and with a welcome weird habit of consistently sprouting up on well-trodden paths, plantain is a basic but valuable herb to keep stocks of. It's even relatively innocuous taste wise, making it easy to harvest.",
             "Go to where other animals wander through c_n's territory on little beaten paths, wander around under you bump nose first into a plantain plant, harvest. Simple. And the warriors get to tidy their paths through the territory."
 ],
     "fail_text": [
@@ -1229,7 +1228,7 @@
     "patrol_id": "bch_med_gatheringpoppy_newleaf3",
     "biome": "beach",
     "season": "newleaf",
-    "tags": ["herb_gathering", "med_cat", "warrior", "herb", "poppy", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "warrior", "herb", "poppy", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "As the poppy starts to bloom and set seed in newleaf, p_l jumps at the opportunity. They assemble a good sized patrol full of Clanmates to help them out with the gathering of this important herb.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
@@ -1332,7 +1331,7 @@
     "exp": 10,
     "success_text": [
             "The sharp scent of tansy calls p_l in to harvest its newleaf shoots.",
-            "Good for all coughs, for all wounds, for all poisons - but it would be dangerous to asssume tansy has no downsides. In small doses it helps with nearly any aliment, but in large doses it poisons the body, even to the point of causing death.",
+            "Good for all coughs, for all wounds, for all poisons - but it would be dangerous to assume tansy has no downsides. In small doses it helps with nearly any aliment, but in large doses it poisons the body, even to the point of causing death.",
             "Tansy might smell sharp enough to be enjoyed freshening up dens, but it sure tastes... interesting. s_c isn't sure they'll ever get used to it, but at least it's a reminder to be careful around the potentially poisonous herb."
 ],
     "fail_text": [
@@ -1356,7 +1355,7 @@
     "exp": 20,
     "success_text": [
             "The sharp scent of tansy calls p_l in to harvest its newleaf shoots. As they work, p_l instructs app1 on tansy dosage - for kits, weakened cats, and elders, it can be dangerously easy for too much tansy to overcome a system and become a poison.",
-            "Good for all coughs, for all wounds, for all poisons - but it would be dangerous to asssume tansy has no downsides. p_l quietly explains to app1 how tansy is also used to ease the passing of mortally wounded cats and to induce losing a litter in queens whose pregnancy is risking their life. This means you don't use it to treat pregnant or nursing queens, or kits.",
+            "Good for all coughs, for all wounds, for all poisons - but it would be dangerous to assume tansy has no downsides. p_l quietly explains to app1 how tansy is also used to ease the passing of mortally wounded cats and to induce losing a litter in queens whose pregnancy is risking their life. This means you don't use it to treat pregnant or nursing queens, or kits.",
             "Tansy might smell sharp enough to be enjoyed freshening up dens, but it sure tastes... interesting. s_c isn't sure they'll ever get used to it, but at least it's a reminder to be careful around the potentially poisonous herb, and app1 seems to be taking the appropriate amount of care harvesting it."
 ],
     "fail_text": [
@@ -1373,14 +1372,14 @@
     "patrol_id": "bch_med_gatheringtansy_newleaf3",
     "biome": "beach",
     "season": "newleaf",
-    "tags": ["herb_gathering", "med_cat", "warrior", "herb", "tansy", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "warrior", "herb", "tansy", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "As newleaf brings green to c_n's lands, p_l goes out in a search for tansy. There shouldn't be any problem collecting it with other cats - these warriors are all strong and healthy.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
             "The sharp scent of tansy calls p_l in to harvest its newleaf shoots. There's enough of the common herb to let the warriors gather sprigs of it to freshen the dens, making the rest of the patrol purr with satisfaction.",
-            "Good for all coughs, for all wounds, for all poisons - but it would be dangerous to asssume tansy has no downsides. In small doses it helps with nearly any aliment, but in large doses it poisons the body, even to the point of causing death. p_l carefully guides the patrol while gathering it, not that the warriors would be in any danger short of trying to drink the herb.",
+            "Good for all coughs, for all wounds, for all poisons - but it would be dangerous to assume tansy has no downsides. In small doses it helps with nearly any aliment, but in large doses it poisons the body, even to the point of causing death. p_l carefully guides the patrol while gathering it, not that the warriors would be in any danger short of trying to drink the herb.",
             "Tansy might smell sharp enough to be enjoyed freshening up dens, but it sure tastes... interesting. s_c isn't sure they'll ever get used to it, but at least it's a reminder to be careful around the potentially poisonous herb, helpful when gathering with their Clanmates."
 ],
     "fail_text": [
@@ -1445,7 +1444,7 @@
     "patrol_id": "bch_med_gatheringthyme_newleaf3",
     "biome": "beach",
     "season": "newleaf",
-    "tags": ["herb_gathering", "med_cat", "warrior", "herb", "thyme", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "warrior", "herb", "thyme", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "With the newleaf sun hidden behind cloudy drizzle, it's a damp day to find thyme, and the gathering patrol would rather have this over with quickly.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
@@ -1517,7 +1516,7 @@
     "patrol_id": "bch_med_gatheringwildgarlic_newleaf3",
     "biome": "beach",
     "season": "newleaf",
-    "tags": ["herb_gathering", "med_cat", "warrior", "herb", "wild_garlic", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "warrior", "herb", "wild_garlic", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "p_l uses the blustery newleaf morning to try catch the scent of wild garlic on the breeze, a patrol of warriors assisting them.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
