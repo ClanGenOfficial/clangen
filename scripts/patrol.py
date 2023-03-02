@@ -293,16 +293,20 @@ class Patrol():
 
             #  correct button check
             if patrol_type == "general":
-                if '_med_' in patrol.patrol_id:
+                if 'herb_gathering' in patrol.patrol_id:
+                    continue
+                elif not set(patrol.tags).intersection({"hunting", "border", "training"}):
+                    # This make sure general only gets hunting, border, or training patrols.
+                    print(patrol.patrol_id)
                     continue
             else:
-                if '_hunt_' not in patrol.patrol_id and patrol_type == 'hunting':
+                if 'hunting' not in patrol.tags and patrol_type == 'hunting':
                     continue
-                elif '_bord_' not in patrol.patrol_id and patrol_type == 'border':
+                elif 'border' not in patrol.tags and patrol_type == 'border':
                     continue
-                elif '_train_' not in patrol.patrol_id and patrol_type == 'training':
+                elif 'training' not in patrol.patrol_id and patrol_type == 'training':
                     continue
-                elif 'med' not in patrol.patrol_id and patrol_type == 'med':
+                elif 'herb_gathering' not in patrol.patrol_id and patrol_type == 'med':
                     continue
 
             if patrol_size < patrol.min_cats:
@@ -316,20 +320,9 @@ class Patrol():
                     if "apprentice" not in self.patrol_statuses:
                         continue
                 else:
+                    if "medicine cat apprentice" not in self.patrol_statuses:
+                        continue
                     if "warrior_app" in patrol.tags and "apprentice" not in self.patrol_statuses:
-                        continue
-                    if "apprentice" in patrol.tags and "medicine cat apprentice" not in self.patrol_statuses:
-                        continue
-                # If there is only a medicine cat apprentice in the patrol without a full medicine cat and
-                # the number of cats is greater than one, remove all
-                # the patrols that assume as apprentice is present, resulting in treating the med apprentice like a
-                # full medicine cat for the patrol.
-                # This is not ideal, since it also means patrols with warrior apprentices may not work correctly
-                # This also means patrols the are written for both a medicine cat apprentice and a warrior
-                # apprentice will only show up if there is also a full medicine cat in the patrol.
-                # TODO: Write patrols for med cat apprentices + warriors.
-                if "medicine cat apprentice" in self.patrol_statuses and "medicine cat" not in self.patrol_statuses:
-                    if len(self.patrol_cats) > 1:
                         continue
 
             # makes sure that the deputy is present if the deputy tag is
