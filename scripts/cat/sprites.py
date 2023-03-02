@@ -335,7 +335,7 @@ for a, i in enumerate(['MINIMAL1', 'MINIMAL2', 'MINIMAL3', 'MINIMAL4', 'OREO', '
     sprites.make_group('tortiepatchesmasks', (a, 1), f"tortiemask{i}")
 for a, i in enumerate(['MOTTLED', 'SIDEMASK', 'EYEDOT', 'BANDANA', 'PACMAN', 'STREAMSTRIKE']):
     sprites.make_group('tortiepatchesmasks', (a, 2), f"tortiemask{i}")
-for a, i in enumerate(['ORIOLE', 'ROBIN']):
+for a, i in enumerate(['ORIOLE', 'ROBIN', 'BRINDLE']):
     sprites.make_group('tortiepatchesmasks', (a, 3), f"tortiemask{i}")
 
 # SKINS
