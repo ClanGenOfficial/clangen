@@ -11,8 +11,12 @@ def get_patrol_details(path):
     global ALL_PATROLS
     global DETAILS
 
-    with open(path, "r") as read_file:
-        patrols = ujson.loads(read_file.read())
+    try:
+        with open(path, "r") as read_file:
+            patrols = ujson.loads(read_file.read())
+    except:
+        print(f"Error in {path}")
+        return
 
     if not patrols:
         return
