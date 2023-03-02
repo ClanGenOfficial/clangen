@@ -553,7 +553,7 @@ class Relation_Events():
                 f"However, {cat.name} is too far gone for the herbs they're given to choke down to fix this "
                 f"blood loss, and the cats are helpless as {cat.name} slowly slips to StarClan.",
 
-                f"Later, hours later, eons laters, the {insert} mews. Outside, {cat.name}'s body cools, the toll "
+                f"Later, hours later, eons later, the {insert} mews. Outside, {cat.name}'s body cools, the toll "
                 f"of birth too much for it.",
 
                 f"Though all looks fine, the Clan will wake to discover {cat.name}'s body cold in the nursery, "

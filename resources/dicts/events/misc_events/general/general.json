@@ -52,14 +52,5 @@
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
-    },
-    {
-        "camp": "any",
-        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "event_text": "m_c went missing for a few days.",
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
     }
 ]

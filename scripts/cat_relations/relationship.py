@@ -21,7 +21,7 @@ THIRD_RELATIONSHIP_INCLUDED = {
 }
 
 EXILED_CATS = {
-    "cat_to": ['bumped into (cat) at the Clan border', 'caught a glimpse of (cat) from the distance.'],
+    "cat_to": ['bumped into (cat) at the Clan border.', 'caught a glimpse of (cat) from the distance.'],
     "cat_from": ['was wandering near the Clan territory and met (cat).'],
     "both": ['ran into (cat) by chance.']
 }

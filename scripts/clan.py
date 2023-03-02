@@ -3,6 +3,7 @@ from random import choice, randint
 import os
 
 import pygame
+
 try:
     import ujson
 except ImportError:
@@ -14,10 +15,10 @@ from scripts.cat.cats import Cat, cat_class
 from scripts.cat.names import names
 from scripts.clan_resources.freshkill import Freshkill_Pile, Nutrition
 
-#try:
+# try:
 #    from scripts.world import World, save_map, load_map
 #    map_available = True
-#except:
+# except:
 #    map_available = False
 map_available = False
 from sys import exit
@@ -25,7 +26,7 @@ from sys import exit
 
 class Clan():
     BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach"]
-    
+
     CAT_TYPES = [
         "kitten",
         "apprentice",
@@ -79,7 +80,50 @@ class Clan():
         'elder place': [(840, 1140), (700, 1040), (800, 1040), (640, 1140),
                         (740, 1140)]
     }
+
     cur_layout = layout_1
+
+    layout_2 = {
+        'leader den': (688, 188),
+        'medicine den': (160, 400),
+        'nursery': (1240, 400),
+        'clearing': (720, 589),
+        'apprentice den': (164, 860),
+        'warrior den': (1180, 860),
+        'elder den': (696, 980),
+        'leader place': [(1200, 80),
+                         (720, 230),
+                         (700, 320),
+                         (800, 310)],
+        'medicine place': [(300, 550),
+                           (200, 530), (400, 530),
+                           (200, 670),
+                           (400, 630),
+                           (330, 450)],
+        'nursery place': [(1040, 350),
+                          (1240, 420),
+                          (1100, 500), (1200, 500), (1300, 500),
+                          (1070, 600), (1170, 600), (1270, 600),
+                          (1160, 700), (1300, 700)],
+        'clearing place': [(500, 400),
+                           (750, 640), (500, 650),
+                           (600, 450), (710, 460), (820, 420),
+                           (370, 720), (900, 720),
+                           (600, 740), (700, 740), (800, 740),
+                           (700, 840), (800, 840),
+                           (900, 900)],
+        'apprentice place': [(400, 840),
+                             (140, 940), (240, 940), (340, 940),
+                             (300, 1040), (400, 1040),
+                             (350, 1140)],
+        'warrior place': [(1400, 940), (1200, 940),
+                          (1100, 980), (1300, 980),
+                          (1400, 1040), (1200, 1040),
+                          (1100, 1080), (1300, 1080)],
+        'elder place': [(560, 910),
+                        (700, 1040), (800, 1040),
+                        (640, 1140), (740, 1140), (840, 1140)]
+    }
     places_vacant = {
         'leader': [False, False, False],
         'medicine': [False, False, False, False, False],
@@ -146,6 +190,8 @@ class Clan():
                 self.freshkill_pile = Freshkill_Pile()
             else:
                 self.freshkill_pile = None
+            if self.biome == 'Forest' and self.camp_bg == 'camp3':
+                self.cur_layout = self.layout_2
 
             self.faded_ids = []  # Stores ID's of faded cats, to ensure these IDs aren't reused.
 
@@ -204,13 +250,14 @@ class Clan():
             random_camp_options = ['camp1', 'camp2']
             random_camp = choice(random_camp_options)
             game.switches['camp_bg'] = random_camp
+        if game.switches['camp_bg'] == 'camp3' and game.clan.biome == 'Forest':
+            self.cur_layout = self.layout_2
 
         # if no game mode chosen, set to Classic
         if game.switches['game_mode'] is None:
             game.switches['game_mode'] = 'classic'
         if game.switches['game_mode'] == 'cruel_season':
             game.settings['disasters'] = True
-
 
     def add_cat(self, cat):  # cat is a 'Cat' object
         """ Adds cat into the list of clan cats"""
@@ -227,7 +274,7 @@ class Clan():
             if cat.ID in self.med_cat_list:
                 self.med_cat_list.remove(cat.ID)
                 self.med_cat_predecessors += 1
-                
+
     def add_to_clan(self, cat):
         if cat.ID in Cat.all_cats.keys(
         ) and not cat.outside and cat.ID in Cat.outside_cats.keys():
@@ -322,7 +369,7 @@ class Clan():
         game.save_clanlist(clan)
         game.cur_events_list.clear()
 
-        #game.rpc.close()
+        # game.rpc.close()
         pygame.display.quit()
         pygame.quit()
         exit()
@@ -373,7 +420,7 @@ class Clan():
 
         clan_data["faded_cats"] = ",".join([str(i) for i in self.faded_ids])
 
-        #Patrolled cats
+        # Patrolled cats
         clan_data["patrolled_cats"] = [str(i) for i in game.patrolled]
 
         # OTHER CLANS
@@ -582,7 +629,6 @@ class Clan():
         else:
             deputy = None
 
-
         if clan_data["med_cat"]:
             med_cat = Cat.all_cats[clan_data["med_cat"]]
         else:
@@ -636,19 +682,18 @@ class Clan():
                 for cat in clan_data["faded_cats"].split(","):
                     game.clan.faded_ids.append(cat)
 
-        #Patrolled cats
+        # Patrolled cats
         if "patrolled_cats" in clan_data:
             for cat in clan_data["patrolled_cats"]:
                 if cat in Cat.all_cats:
                     game.patrolled.append(Cat.all_cats[cat])
 
-        #Mediated flag
+        # Mediated flag
         if "mediated" in clan_data:
             if type(clan_data["mediated"]) != list:
                 game.mediated = []
             else:
                 game.mediated = clan_data["mediated"]
-
 
         self.load_pregnancy(game.clan)
         self.load_herbs(game.clan)
@@ -739,7 +784,7 @@ class Clan():
 
         try:
             with open(f"saves/{game.clan.name}/freshkill_pile.json", 'w') as rel_file:
-                json_string = ujson.dumps(clan.freshkill_pile.pile, indent = 4)
+                json_string = ujson.dumps(clan.freshkill_pile.pile, indent=4)
                 rel_file.write(json_string)
         except:
             print(f"ERROR: Saving the freshkill pile didn't work.")
@@ -753,10 +798,11 @@ class Clan():
                         "current_score": nutr.current_score,
                         "percentage": nutr.percentage,
                     }
-                json_string = ujson.dumps(data, indent = 4)
+                json_string = ujson.dumps(data, indent=4)
                 rel_file.write(json_string)
         except:
             print(f"ERROR: Saving nutrition information of the freshkill pile didn't work.")
+
 
 class OtherClan():
 
@@ -770,8 +816,6 @@ class OtherClan():
         self.temperament = temperament or choice(temperament_list)
         if self.temperament not in temperament_list:
             self.temperament = choice(temperament_list)
-            
-        
 
     def __repr__(self):
         return f"{self.name}Clan"
