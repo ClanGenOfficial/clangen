@@ -698,7 +698,7 @@ class PatrolScreen(Screens):
         if chance_of_romance_patrol <= 0:
             chance_of_romance_patrol = 1
         print("final romance chance:", chance_of_romance_patrol)
-        if 1:
+        if not int(random.random() * chance_of_romance_patrol):
             patrol.patrol_event = self.romantic_event_choice
             # need to make sure the patrol leader is the same as the stat cat
             old_random_cat = patrol.patrol_random_cat
