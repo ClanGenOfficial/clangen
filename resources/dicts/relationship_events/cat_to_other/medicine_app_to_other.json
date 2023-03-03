@@ -2,22 +2,16 @@
     "kitten": {
         "unfriendly": [],
         "neutral": [
-            "trips over (cat).",
-            "is watching over (cat)."
-        ],
-        "friendly": [
-            "trains playfully with (cat).",
-            "gave (cat) a trinket they found while out on patrol today.",
-            "is charmed to hear that (cat) really admires them."
+   ],
+        "friendly": [     
         ],
         "close": []
     },
     "medicine cat apprentice": {
         "unfriendly": [],
         "neutral": [
-            "is frustrated that (cat) won't take their duties more seriously.",
-            "has a mock battle with (cat).",
-            "is jealous that (cat) got praised by the leader."
+            
+        
         ],
         "friendly": [],
         "close": []
@@ -25,10 +19,9 @@
     "apprentice": {
         "unfriendly": [],
         "neutral": [
-            "is frustrated that (cat) won't take their duties more seriously.",
-            "has a mock battle with (cat).",
-            "has been listening to (cat) talk about how hard training has been.",
-            "is jealous that (cat) got praised by the leader."
+            
+            
+            
         ],
         "friendly": [],
         "close": []
@@ -36,8 +29,6 @@
     "warrior": {
         "unfriendly": [],
         "neutral": [
-            "is frustrated that (cat) won't take their duties more seriously.",
-            "is jealous that (cat) got to fight in a border skirmish when they didn't."
         ],
         "friendly": [],
         "close": []
@@ -45,17 +36,17 @@
     "medicine cat": {
         "unfriendly": [],
         "neutral": [
-            "watched (cat) show kindness and compassion towards their patients.",
-            "caught a glimpse of (cat) caring for a wounded warrior with confidence and grace.",
-            "feels like (cat) isn't taking their health seriously.",
-            "went to (cat) for advice about a dream they had."
+            
+            
+            
+            
         ],
         "friendly": [],
         "close": []
     },
     "leader": {
         "unfriendly": [
-            "accuses (cat) of being a bad leader."
+            
         ],
         "neutral": [],
         "friendly": [],
@@ -63,7 +54,7 @@
     },
     "deputy": {
         "unfriendly": [
-            "accuses (cat) of being a bad deputy."
+            
         ],
         "neutral": [],
         "friendly": [],

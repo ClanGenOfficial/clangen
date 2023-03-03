@@ -1,8 +1,7 @@
 {
     "kitten": {
         "unfriendly": [
-            "is scolding (cat).",
-            "is charmed to hear that (cat) really admires them."
+            
         ],
         "neutral": [],
         "friendly": [],
@@ -10,60 +9,50 @@
     },
     "medicine cat apprentice": {
         "unfriendly": [
-            "is scolding (cat).",
-            "is bossing (cat) around.",
-            "is dissatisfied that (cat) can't seem to get rid of their chronic pain."
+
         ],
         "neutral": [
-            "is frustrated that (cat) won't take their duties more seriously.",
-            "bestows wisdom onto (cat).",
-            "is asking (cat) to check them for ticks.",
-            "feels like (cat) isn't taking their health seriously.",
-            "is dissatisfied that (cat) can't seem to get rid of their chronic pain."
+            
+            
+            
         ],
         "friendly": [],
         "close": []
     },
     "apprentice": {
         "unfriendly": [
-            "is scolding (cat).",
-            "is bossing (cat) around."
+
+           
         ],
         "neutral": [
-            "is frustrated that (cat) won't take their duties more seriously.",
-            "bestows wisdom onto (cat).",
-            "is asking (cat) to check them for ticks.",
-            "is thinking about how much (cat) reminds them of their own apprentice days."
         ],
         "friendly": [],
         "close": []
     },
     "warrior": {
         "unfriendly": [
-            "is scolding (cat).",
-            "is bossing (cat) around."
+
         ],
         "neutral": [
-            "is frustrated that (cat) won't take their duties more seriously.",
-            "bestows wisdom onto (cat)."
+            
+            
         ],
         "friendly": [],
         "close": []
     },
     "medicine cat": {
         "unfriendly": [
-            "is dissatisfied that (cat) can't seem to get rid of their chronic pain."
+            
         ],
         "neutral": [
-            "went to (cat) for advice about a dream they had.",
-            "is dissatisfied that (cat) can't seem to get rid of their chronic pain."
+
         ],
         "friendly": [],
         "close": []
     },
     "leader": {
         "unfriendly": [
-            "accuses (cat) of being a bad leader."
+            
         ],
         "neutral": [],
         "friendly": [],
@@ -71,7 +60,7 @@
     },
     "deputy": {
         "unfriendly": [
-            "accuses (cat) of being a bad deputy."
+            
         ],
         "neutral": [],
         "friendly": [],

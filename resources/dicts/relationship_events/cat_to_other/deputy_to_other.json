@@ -1,118 +1,44 @@
 {
     "kitten": {
         "unfriendly": [
-            "is scolding (cat)."
+            
         ],
         "neutral": [
-            "trips over (cat)",
-            "had to nip (cat) on the rump because they were being naughty.",
-            "is watching (cat) perform an almost-decent hunting crouch.",
-            "is watching over (cat).",
-            "is charmed to hear that (cat) really admires them."
         ],
-        "friendly": [
-            "is giving (cat) a badger ride on their back!",
-            "hopes that their own kits are as cute as (cat) someday.",
-            "is promising to take (cat) outside of camp if they behave.",
-            "gave (cat) a trinket they found while out on patrol today.",
-            "is feeling proud of (cat)."
-        ],
-        "close": [
-            "trains playfully with (cat)."
-        ]
+        "friendly": [],
+        "close": []
     },
     "medicine cat apprentice": {
-        "unfriendly": [
-            "is scolding (cat)."
-        ],
-        "neutral": [
-            "is giving advice to (cat).",
-            "is giving (cat) a task.",
-            "wishes (cat) would take things more seriously."
-        ],
-        "friendly": [
-            "is feeling proud of (cat)."
-        ],
+        "unfriendly": [],
+        "neutral": [],
+        "friendly": [],
         "close": []
     },
     "apprentice": {
-        "unfriendly": [
-            "is scolding (cat).",
-            "punishes (cat) with extra work.",
-            "divides (cat) into extra patrols.",
-            "had a disagreement with (cat) while on patrol earlier.",
-            "stole (cat)'s catch right out from under their claws."
-        ],
-        "neutral": [
-            "is giving advice to (cat).",
-            "is watching (cat) perform an almost-decent hunting crouch.",
-            "is telling (cat) about a hunting technique.",
-            "is giving (cat) a task.",
-            "wishes (cat) would take things more seriously.",
-            "saw (cat) miss an easy catch today.",
-            "is thinking about how much (cat) reminds them of their own apprentice days.",
-            "had a disagreement with (cat) while on patrol earlier."
-        ],
-        "friendly": [
-            "is telling (cat) about their own days as an apprentice.",
-            "is feeling proud of (cat).",
-            "playfully teases (cat) for missing a catch."
-        ],
-        "close": [
-            "playfully teases (cat) for missing a catch."
-        ]
+        "unfriendly": [],
+        "neutral": [],
+        "friendly": [],
+        "close": []
     },
     "warrior": {
-        "unfriendly": [
-            "punishes (cat) with extra work.",
-            "divides (cat) into extra patrols.",
-            "had a disagreement with (cat) while on patrol earlier.",
-            "stole (cat)'s catch right out from under their claws."
+        "unfriendly": [    
         ],
-        "neutral": [
-            "is telling (cat) about a hunting technique.",
-            "is giving (cat) a task.",
-            "is frustrated that (cat) won't take their duties more seriously.",
-            "is sparring with (cat).",
-            
-            "has noticed (cat) isn't doing a lot of work lately.",
-            "saw (cat) miss an easy catch today.",
-            "had a disagreement with (cat) while on patrol earlier."
+        "neutral": [],
+        "friendly": [ 
         ],
-        "friendly": [
-            "just told (cat) a hilarious joke.",
-            "playfully teases (cat) for missing a catch."
-        ],
-        "close": [
-            "thinks that (cat) is so much braver than them.",
-            "playfully teases (cat) for missing a catch."
-        ]
+        "close": []
     },
     "medicine cat": {
         "unfriendly": [],
-        "neutral": [
-            "escorted (cat) so they could gather herbs.",
-            "thought of (cat) on the last patrol and brought an herb back with them.",
-            "feels like (cat) isn't taking their health seriously.",
-            "went to (cat) for advice about a dream they had."
-        ],
+        "neutral": [],
         "friendly": [],
         "close": []
     },
     "leader": {
-        "unfriendly": [
-            "accuses (cat) of being a bad leader.",
-            "had a disagreement with (cat) while on patrol earlier.",
-            "stole (cat)'s catch right out from under their claws."
-        ],
-        "neutral": [
-            "saw (cat) miss an easy catch today.",
-            "had a disagreement with (cat) while on patrol earlier."
-        ],
+        "unfriendly": [],
+        "neutral": [],
         "friendly": [],
-        "close": [
-            "playfully teases (cat) for missing a catch."
-        ]
+        "close": []
     },
     "deputy": {
         "unfriendly": [],
@@ -123,9 +49,7 @@
     "elder": {
         "unfriendly": [],
         "neutral": [],
-        "friendly": [
-            "feels like they'll never accomplish as much as (cat)."
-        ],
+        "friendly": [],
         "close": []
     },
     "mediator": {

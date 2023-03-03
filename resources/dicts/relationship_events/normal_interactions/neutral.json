@@ -1,36 +1,69 @@
 [
 	{
-		"id": "sample_id",
-		"biome": ["Any"],
-		"season": ["Any"],
-		"intensity": "medium",
-		"interactions": [
-			"m_c does some interactions with r_c"
-		],
-		"relationship_constraint": [],
-		"main_status_constraint": [],
-		"main_trait_constraint": [],
-		"main_skill_constraint": [],
-		"random_status_constraint": [],
-		"random_trait_constraint": [],
-		"random_skill_constraint": [],
-		"reaction_random_cat": {
-			"romantic": "increase",
-			"platonic": "neutral",
-			"dislike": "decrease",
-			"admiration": "neutral",
-			"comfortable": "increase",
-			"jealousy": "neutral",
-			"trust": "increase"
-		},
-		"also_influences": {
-			"romantic": "increase",
-			"platonic": "neutral",
-			"dislike": "decrease",
-			"admiration": "neutral",
-			"comfortable": "increase",
-			"jealousy": "neutral",
-			"trust": "increase"
-		}
-	}
+        "id": "neutral_interaction1",
+        "interactions" :[
+            "saw r_c the other day but didn't get a chance to meow hello.",
+            "m_c bickered about something trivial with r_c"
+        ]
+    },
+    {
+        "id":"neutral_interaction2",
+        "interactions":[
+            "m_c is giving r_c a task."
+        ],
+        "main_status_constraint":[
+            "medicine cat",
+            "deputy",
+            "leader"
+        ],
+        "random_trait_constraint":[
+            "kitten",
+            "apprentice",
+            "mediator apprentice",
+            "medicine cat apprentice",
+            "warrior",
+            "mediator"
+        ]
+    },
+    {
+        "id":"neutral_interaction3",
+        "interactions":[
+            "m_c is stuttering while speaking to r_c."
+        ],
+        "main_trait_constraint":
+        "nervious"
+    },
+    {
+        "id":"neutral_interaction4",
+        "interactions":[
+            "m_c stands tall when r_c walks by."
+        ],
+        "main_trait_constraint":
+        "confident"
+    },
+    {
+        "id":"neutral_interaction5",
+        "interactions":[
+            "m_c challenged r_c to spar with them."
+        ],
+        "main_trait_constraint":
+        "bold"
+    },
+    {
+        "id":"dislike_effect_other1",
+        "relationship_constraint":[
+            "dislike_40"
+        ],
+        "interactions":[
+            "m_c is spreading a rumour about r_c.",
+            "m_c is mocking r_c."
+        ],
+        "reaction_random_cat":{
+            "admiration": "decrease",
+            "comfortable": "decrease",
+            "trust": "decrease",
+            "dislike": "increase",
+            "platonic": "decrease"
+        }
+    }
 ]

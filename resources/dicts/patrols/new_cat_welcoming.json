@@ -161,7 +161,7 @@
     ],
     "win_trait": ["compassionate", "empathetic", "loving", "calm"],
     "fail_trait": ["daring", "bold", "ambitious"],
-    "min_cats": 1,
+    "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,

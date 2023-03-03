@@ -1,179 +1,112 @@
 {
     "kitten": {
-        "unfriendly": [
-            "tries to scare (cat).",
-            "constantly pulling pranks on (cat).",
-            "hisses at (cat) for getting a bigger piece of prey.",
-            "feels like (cat) was too rough while playing."
+        "unfriendly": [         
         ],
         "neutral": [
-            "has a mock battle with (cat).",
-            "is jealous that (cat) is getting more attention than them.",
-            "plays mossball with (cat).",
-            "sticks their tongue out at (cat).",
-            "is pretending to be (cat).",
-            "spent the whole day playing their favorite games with (cat).",
-            "had a friendly argument with (cat) about which prey tastes the best.",
-            "tried to have a discussion with (cat) about what prey tastes best, but it turned into an argument.",
-            "is upset that (cat) always wins in their games.",
-            "feels like (cat) was too rough while playing."
+            
         ],
         "friendly": [
-            "chomps on (cat)'s ear.",
-            "pretends to be a warrior with (cat).",
-            "is pretending to ward off foxes with (cat).",
-            "is pretending to fight off badgers with (cat).",
-            "is racing (cat) back and forth across the camp clearing.",
-            "hopes (cat) will be their friend forever.",
-            "lets (cat) play with their favorite toy.",
-            "takes a nap with (cat) after a long day playing mossball.",
-            "feels like (cat) was too rough while playing."
+
+            
         ],
         "close": [
-            "comes up with a plan to sneak out of camp with (cat).",
-            "wants to snuggle with (cat).",
-            "lets (cat) play with their favorite toy.",
-            "takes a nap with (cat) after a long day playing mossball."
+            
         ]
     },
     "medicine cat apprentice": {
         "unfriendly": [
-            "constantly pulling pranks on (cat)."
+            
         ],
         "neutral": [
-            "sticks their tongue out at (cat).",
-            "is hiding under a bush from (cat), but they can't stop giggling.",
-            "is pretending to be (cat).",
-            "is asking (cat) where kits come from.",
-            "whines that (cat) won't play with them, even though they're always around camp.",
-            "won't stop copying everything (cat) does."
+            
+            
+            
         ],
         "friendly": [
-            "ask (cat) what it's like to be a medicine apprentice.",
-            "wants to become just like (cat) someday!",
-            "won't stop copying everything (cat) does."
+            
+            
         ],
         "close": [
-            "wants to snuggle with (cat).",
-            "won't stop copying everything (cat) does."
+            
         ]
     },
     "apprentice": {
         "unfriendly": [
-            "constantly pulling pranks on (cat).",
-            "thinks they should get to be an apprentice already! they're just as good as (cat)."
         ],
         "neutral": [
-            "sticks their tongue out at (cat).",
-            "is hiding under a bush from (cat), but they can't stop giggling.",
-            "is pretending to be (cat).",
-            "is asking (cat) where kits come from.",
-            "doesn't understand why (cat) won't let them play in the medicine cat den.",
-            "won't stop copying everything (cat) does.",
-            "looks at (cat) napping in the apprentice's den and can't wait to leave the nursery."
+            
+            
+            
         ],
         "friendly": [
-            "ask (cat) what it's like to be a apprentice.",
-            "wants to become just like (cat) someday!",
-            "won't stop copying everything (cat) does."
+            
+            
         ],
         "close": [
-            "wants to snuggle with (cat).",
-            "won't stop copying everything (cat) does."
+
+            
         ]
     },
     "warrior": {
         "unfriendly": [
-            "constantly pulling pranks on (cat)."
+            
         ],
         "neutral": [
-            "is biting (cat)'s tail.",
-            "sticks their tongue out at (cat).",
-            "is asking (cat) where kits come from.",
-            "is demanding (cat)'s attention.",
-            "is pretending to be (cat).",
-            "is hiding under a bush from (cat), but they can't stop giggling.",
-            "won't stop copying everything (cat) does."
         ],
         "friendly": [
-            "tells (cat) that they would like to be like them when they grows up.",
-            "wants to become just like (cat) someday!",
-            "won't stop copying everything (cat) does.",
-            "decorates their nest with gifts that (cat) brought them from patrol"
         ],
         "close": [
-            "wants to snuggle with (cat).",
-            "won't stop copying everything (cat) does."
+
+            
         ]
     },
     "medicine cat": {
         "unfriendly": [],
         "neutral": [
-            "wants to become just like (cat) someday!",
-            "watched (cat) show kindness and compassion towards their patients.",
-            "caught a glimpse of (cat) caring for a wounded warrior with confidence and grace.",
-            "spent some time hanging out with (cat) in the medicine den.",
-            "went to (cat) for advice about a dream they had.",
-            "won't stop copying everything (cat) does."
         ],
         "friendly": [
-            "won't stop copying everything (cat) does."
+            
         ],
         "close": [
-            "won't stop copying everything (cat) does."
+            
         ]
     },
     "leader": {
         "unfriendly": [
-            "accuses (cat) of being a bad leader."
+            
         ],
         "neutral": [
-            "wants to become just like (cat) someday!",
-            "won't stop copying everything (cat) does.",
-            "always wants to play as (cat) in their games of pretend."
         ],
         "friendly": [
-            "won't stop copying everything (cat) does."
+            
         ],
         "close": [
-            "won't stop copying everything (cat) does."
+            
         ]
     },
     "deputy": {
-        "unfriendly": [
-            "accuses (cat) of being a bad deputy."
+        "unfriendly": [       
         ],
         "neutral": [
-            "wants to become just like (cat) someday!",
-            "won't stop copying everything (cat) does.",
-            "asks (cat) if they're really going to be the leader someday."
         ],
         "friendly": [
-            "won't stop copying everything (cat) does."
+            
         ],
         "close": [
-            "won't stop copying everything (cat) does."
+            
         ]
     },
     "elder": {
         "unfriendly": [
-            "constantly pulling pranks on (cat)."
+            
         ],
-        "neutral": [
-            "sticks their tongue out at (cat).",
-            "is hiding under a bush from (cat), but they can't stop giggling.",
-            "is asking (cat) where kits come from.",
-            "was distracted while (cat) was telling a story.",
-            "won't stop copying everything (cat) does."
+        "neutral": [  
         ],
         "friendly": [
-            "thinks that (cat) tells the best stories.",
-            "wants to become just like (cat) someday!",
-            "won't stop copying everything (cat) does.",
-            "listens to (cat) talk about what life was like when they were young."
+
         ],
         "close": [
-            "won't stop copying everything (cat) does."
+            
         ]
     },
     "mediator": {

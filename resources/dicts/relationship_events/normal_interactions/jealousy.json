@@ -33,7 +33,228 @@
 				"jealousy": "neutral",
 				"trust": "increase"
 			}
+		},
+		{
+			"id": "jel_inc_low1",
+			"intensity": "low",
+			"interactions":[
+				"m_c wishes they could get their pelt to shine like r_c's."
+			]
+		},
+		{
+			"id": "jel_inc_med1",
+			"interactions": [
+				"m_c thinks that the prey r_c is biting into on the other side of camp looks delicious."
+			]
+		},
+		{ 
+			"id":"jel_inc_med2",
+			"interactions":[
+				"m_c is jealous that r_c got to go to the last Gathering.",
+				"m_c is jealous that r_c went on patrol without them."
+			],
+			"main_status_constraint":[
+				"mediator apprentice",
+				"apprentice",
+				"warrior"
+			],
+			"random_status_constraint":[
+				"mediator apprentice",
+				"apprentice",
+				"medicine cat apprentice",
+				"medicine cat",
+				"warrior",
+				"mediator",
+				"deputy"
+		]
+		},
+		{
+			"id":"jealousy_inc_med3",
+			"interactions":[
+				"m_c is jealous that r_c got praised by the leader.",
+				"m_c is jealous that r_c got to fight in a border skirmish when they didn't.",
+				"m_c is jealous that r_c got to go on border patrol this morning.",
+				"m_c doesn't understand how r_c got so good at hunting."
+			],
+			"main_status_constraint":[
+				"apprentice",
+				"medicine apprentice",
+				"mediator apprentice",
+				"warrior"
+			],
+			"random_status_constraint":[
+				"apprentice",
+				"warrior",
+				"deputy"
+			]
+		},
+		{
+			"id": "jealousy_kit_inc_med1",
+			"interactions":[
+				"m_c is jealous that r_c is getting more attention than them.",
+				"m_c is upset that r_c always wins in their games."
+			],
+			"main_status_constraint": [
+				"kitten"
+			],
+			"random_status_constraint": [
+				"kitten"
+			]
+		},
+		{
+			"id": "jealousy_kit_inc_med2",
+			"interactions":[
+				"m_c hisses at r_c for getting a bigger piece of prey." 
+			],
+			"main_status_constraint": [
+				"kitten"
+			],
+			"random_status_constraint": [
+				"kitten"
+			],
+			"reaction_random_cat":{
+				"dislike": "increase"
+			}
+		},
+		{
+			
+			"id":"jealosuy_kit_inc_med3",
+			"interactions":[
+				"m_c looks at r_c and remembers how easy it was to be a kitten.",
+				"m_c is resentful that so much is expected of them, yet no one expects anything of r_c."
+			],
+			"main_status_constraint":[
+				"apprentice",
+				"mediator apprentice",
+				"medicine cat apprentice"
+			],
+			"random_status_constraint":[
+				"kitten"
+			
+			],
+			"reaction_random_cat":{
+				"platonic": "decrease"
+			}
+		},
+	
+		{
+			"id": "jel_inc_high1",
+			"intensity": "high",
+			"interactions":[
+				"m_c is jealous that r_c gets to do cool super secret medicine cat things.",
+				"m_c thinks it's unfair that r_c always gets to go to Gatherings."
+
+			],
+			"main_status_constraint":[
+				"apprentice",
+				"mediator apprentice"
+			],
+			"random_status_constraint":[
+				"medicine cat apprentice"
+			]
+		},
+		{
+			"id": "jel_inc_high2",
+			"intensity": "high",
+			"interactions":[
+				"m_c is complaining that r_c never does anything helpful."
+			]
+		},
+		{
+			"id":"jel_inc_high3",
+			"intensity":"high",
+			"interactions":[
+				"m_c sees r_c lazing about in the sunshine and is resentful at how little they're expected to contribute."
+			],
+			"random_status_constraint":[
+				"elder"
+			]
 		}
 	],
-	"decrease": []
+	"decrease": [
+		{
+			"id": "jel_de_low1",
+			"intensity": "low",
+			"interactions":[
+				"m_c had wanted a task r_c had been given, but r_c came back smelling like mouse bile..."
+			]
+		},
+		{
+			"id": "jel_de_med1",
+			"interactions":[
+				"m_c saw r_c get assigned a task that m_c wouldn't ever want."
+			]
+		},
+		{
+			"id": "jel_de_med2",
+			"interactions":[
+				"m_c swaps favorite prey with r_c."
+			],
+			"reaction_random_cat":{
+				"jealousy": "decrease"
+			}
+		},
+		{
+			"id": "jealousy_app_de_med1",
+			"interactions":[
+				"m_c has been listening to r_c talk about how hard training has been.",
+				"m_c comforts r_c after a hard day's training."
+			],
+			"main_status_constraint":[
+				"apprentice",
+				"mediator apprentice",
+				"medicine cat apprentice"
+			],
+			"random_status_constrain":[
+				"medicine cat apprentice",
+				"apprentice",
+				"mediator apprentice"
+			],
+			"reaction_random_cat":{
+				"comfortable":"increase",
+				"platonic": "increase"
+			},
+			"also_influences":{
+				"platonic": "increase"
+			}
+		},
+		{
+			"id": "jealousy_app_de_med2",
+			"interactions":[
+				"m_c has been listening to r_c talk about how difficult herb memorization is.",
+				"m_c helps r_c wash mouse bile off of their paws."
+			],
+			"main_status_constraint":[
+				"apprentice",
+				"mediator apprentice",
+				"medicine cat apprentice"
+			],
+			"random_status_constrain":[
+				"medicine cat apprentice"
+			],
+			"reaction_random_cat":{
+				"comfortable": "increase"
+			},
+			"also_influences":{
+				"admiration": "increase"
+			}
+		},
+		{
+			"id": "jel_de_high1",
+			"intensity": "high",
+			"interactions":[
+				"m_c is really suprised that r_c's life isn't as easy as they thought it was."
+			]
+		},
+		{
+			"id": "jel_de_high2",
+			"intensity": "high",
+			"interactions":[
+				"m_c sees that r_c's piece of prey looks tastier and asks if they'd like to swap. They agree happily, saying they like that one better."
+			],
+			"reaction_random_cat":{
+				"jealousy": "decrease"
+			}
+		}
+	]
 }
