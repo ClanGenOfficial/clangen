@@ -1,5 +1,6 @@
 import random
 import traceback
+
 try:
     import ujson as json
 except ImportError:
@@ -21,6 +22,7 @@ from scripts.events_module.freshkill_pile_events import Freshkill_Events
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
 from scripts.utility import get_alive_kits, get_med_cats, ceremony_text_adjust
+
 
 class Events():
     all_events = {}
@@ -68,8 +70,8 @@ class Events():
 
         if game.clan.game_mode in ['expanded', 'cruel season'] and game.clan.freshkill_pile:
             needed_amount = game.clan.freshkill_pile.amount_food_needed()
-            #print(f" -- FRESHKILL: prey amount before feeding {game.clan.freshkill_pile.total_amount}")
-            #print(f" -- FRESHKILL: clan needs {needed_amount} prey")
+            # print(f" -- FRESHKILL: prey amount before feeding {game.clan.freshkill_pile.total_amount}")
+            # print(f" -- FRESHKILL: clan needs {needed_amount} prey")
             # feed the cats and update the nutrient status
             relevant_cats = list(
                 filter(lambda _cat: _cat.is_alive() and not _cat.exiled and not _cat.outside, Cat.all_cats.values())
@@ -84,20 +86,20 @@ class Events():
             if not game.clan.freshkill_pile.clan_has_enough_food() and FRESHKILL_EVENT_ACTIVE:
                 game.cur_events_list.insert(0, Single_Event(
                     f"{game.clan.name}Clan doesn't have enough prey for next moon!"))
-            #print(f" -- FRESHKILL: prey amount after feeding {game.clan.freshkill_pile.total_amount}")
-        
+            # print(f" -- FRESHKILL: prey amount after feeding {game.clan.freshkill_pile.total_amount}")
+
         kittypet_ub = game.config["cotc_generation"]["kittypet_chance"]
         rogue_ub = game.config["cotc_generation"]["rogue_chance"]
         loner_ub = game.config["cotc_generation"]["loner_chance"]
-        if random.randint(1,kittypet_ub) == 1:  
-            self.create_outside_cat("kittypet")   
-        if random.randint(1,rogue_ub) == 1:  
-            self.create_outside_cat("rogue")  
-        if random.randint(1,loner_ub) == 1:  
-            self.create_outside_cat("loner")   
+        if random.randint(1, kittypet_ub) == 1:
+            self.create_outside_cat("kittypet")
+        if random.randint(1, rogue_ub) == 1:
+            self.create_outside_cat("rogue")
+        if random.randint(1, loner_ub) == 1:
+            self.create_outside_cat("loner")
         rejoin_upperbound = game.config["lost_cat"]["rejoin_chance"]
-        if random.randint(1,rejoin_upperbound) == 1:  
-            self.handle_lost_cats_return()   
+        if random.randint(1, rejoin_upperbound) == 1:
+            self.handle_lost_cats_return()
 
         for cat in Cat.all_cats.copy().values():
             if not cat.outside or cat.dead:
@@ -366,7 +368,7 @@ class Events():
             insert = "medicine cat"
         else:
             insert = "medicine cats"
-        #herbs = game.clan.herbs
+        # herbs = game.clan.herbs
 
         herbs_lost = []
         for herb in game.clan.herbs:
@@ -529,13 +531,13 @@ class Events():
             chosen_event = random.choice(possible_events)
             game.cur_events_list.append(Single_Event(chosen_event, "health"))
             game.herb_events_list.append(chosen_event)
-            
+
     def handle_lost_cats_return(self):
         for id, cat in Cat.all_cats.items():
             if cat.outside and cat.ID not in Cat.outside_cats.keys():
                 # The outside-value must be set to True before the cat can go to cotc
                 Cat.outside_cats.update({cat.ID: cat})
-                
+
         lost_cat = None
         for id, cat in Cat.outside_cats.items():
             if cat.outside and cat.status not in ['kittypet', 'loner', 'rogue'] and not cat.exiled and not cat.dead:
@@ -547,7 +549,7 @@ class Events():
             lost_cat.outside = False
             game.cur_events_list.append(Single_Event(random.choice(text), "misc", [lost_cat.ID]))
             lost_cat.add_to_clan()
-            
+
     def create_outside_cat(self, status):
         if status == 'kittypet':
             name = random.choice(names.loner_names)
@@ -620,9 +622,9 @@ class Events():
 
         # handle nutrition amount (CARE: the cats has to be fed before - should be handled in "one_moon" function)
         if game.clan.game_mode in ['expanded', 'cruel season'] and game.clan.freshkill_pile:
-           self.freshkill_events.handle_nutrient(cat, game.clan.freshkill_pile.nutrition_info)
-           if cat.dead:
-               return
+            self.freshkill_events.handle_nutrient(cat, game.clan.freshkill_pile.nutrition_info)
+            if cat.dead:
+                return
 
         # prevent injured or sick cats from unrealistic clan events
         if cat.is_ill() or cat.is_injured():
@@ -633,7 +635,7 @@ class Events():
             self.relation_events.handle_having_kits(cat, clan=game.clan)
             cat.create_interaction()
             # this is the new interaction function, currently not active
-            #cat.relationship_interaction()
+            # cat.relationship_interaction()
             cat.thoughts()
             return
 
@@ -651,7 +653,7 @@ class Events():
 
         cat.create_interaction()
         # this is the new interaction function, currently not active
-        #cat.relationship_interaction()
+        # cat.relationship_interaction()
         cat.thoughts()
 
     def check_clan_relations(self):
@@ -821,7 +823,7 @@ class Events():
                         chance = int(chance * 2.22)
 
                     if cat.trait in ['altruistic', 'compassionate', 'empathetic', 'wise', 'faithful']:
-                        chance = int(chance/1.3)
+                        chance = int(chance / 1.3)
 
                     if not has_med_app and not int(random.random() * chance):
                         self.ceremony(cat, 'medicine cat apprentice')
@@ -892,7 +894,7 @@ class Events():
         # ---------------------------------------------------------------------------- #
         #                      promote cats and add to event list                      #
         # ---------------------------------------------------------------------------- #
-        #ceremony = []
+        # ceremony = []
         cat.status_change(promoted_to)
         involved_cats = [cat.ID]  # Clearly, the cat the ceremony is about is involved.
         game.ranks_changed_timeskip = True
@@ -937,7 +939,7 @@ class Events():
             # is being promoted too.
             valid_living_former_mentors = []
             for c in cat.former_mentor:
-                if not(Cat.fetch_cat(c).dead or Cat.fetch_cat(c).outside):
+                if not (Cat.fetch_cat(c).dead or Cat.fetch_cat(c).outside):
                     if promoted_to in mentor_type:
                         if Cat.fetch_cat(c).status in mentor_type[promoted_to]:
                             valid_living_former_mentors.append(c)
@@ -1082,6 +1084,7 @@ class Events():
 
         game.cur_events_list.append(Single_Event(f'{ceremony_text}', "ceremony", involved_cats))
         # game.ceremony_events_list.append(f'{cat.name}{ceremony_text}')
+
     def gain_accessories(self, cat):
         # ---------------------------------------------------------------------------- #
         #                                  accessories                                 #
@@ -1228,7 +1231,7 @@ class Events():
             game.cur_events_list.append(Single_Event(text, "misc", involved_cats))
             if self.ceremony_accessory:
                 self.ceremony_accessory = False
-    
+
     def handle_leadership_ceremony(self, cat):
         queen = ""
         warrior = ""
@@ -1253,8 +1256,10 @@ class Events():
             prev_lead_virtues = ["endurance in the face of hardship", "knowing when to fight and when to choose peace",
                                  "leadership through the darkest times", "loyalty to their Clan",
                                  "the strength to overcome their fears", "tireless energy"]
-            virtues = [random.choice(queen_virtues), random.choice(warrior_virtues), random.choice(kit_virtues), random.choice(warrior2_virtues),
-                       random.choice(app_virtues), random.choice(elder_virtues), random.choice(warrior3_virtues), random.choice(med_cat_virtues),
+            virtues = [random.choice(queen_virtues), random.choice(warrior_virtues), random.choice(kit_virtues),
+                       random.choice(warrior2_virtues),
+                       random.choice(app_virtues), random.choice(elder_virtues), random.choice(warrior3_virtues),
+                       random.choice(med_cat_virtues),
                        random.choice(prev_lead_virtues)]
             known = [False, False, False, False, False, False, False, False, False]
 
@@ -1410,7 +1415,8 @@ class Events():
             if countdown <= 0:
                 return
 
-        self.misc_events.handle_misc_events(cat, other_cat, self.at_war, self.enemy_clan, alive_kits=get_alive_kits(Cat))
+        self.misc_events.handle_misc_events(cat, other_cat, self.at_war, self.enemy_clan,
+                                            alive_kits=get_alive_kits(Cat))
 
     def handle_injuries_or_general_death(self, cat):
         # ---------------------------------------------------------------------------- #
@@ -1466,7 +1472,6 @@ class Events():
             triggered_death = self.condition_events.handle_injuries(cat, other_cat, alive_kits, self.at_war,
                                                                     self.enemy_clan, game.clan.current_season)
             return triggered_death
-
 
     def handle_disasters(self):
         """Handles events when the setting of disasters is turned on.
@@ -1529,8 +1534,8 @@ class Events():
                 ])
                 if game.clan.game_mode == "classic":
                     disaster.extend([
-                    	' starve to death when no prey is found.'
-                	])
+                        ' starve to death when no prey is found.'
+                    ])
             elif game.clan.current_season == 'Greenleaf':
                 disaster.extend([
                     ' die after overheating.',
@@ -1590,7 +1595,7 @@ class Events():
     def handle_outbreaks(self, cat):
         """Try to infect some cats."""
         # check if the cat is ill, if game mode is classic, or if clan has sufficient med cats in expanded mode
-        #amount_per_med = get_amount_cat_for_one_medic(game.clan)
+        # amount_per_med = get_amount_cat_for_one_medic(game.clan)
         if not cat.is_ill() or game.clan.game_mode == 'classic':
             return
 
