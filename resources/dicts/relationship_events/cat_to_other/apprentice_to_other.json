@@ -8,36 +8,14 @@
     "medicine cat apprentice": {
         "unfriendly": [],
         "neutral": [],
-        "friendly": [
-            "listens closely as (cat) tells them about the new herb they learned to recognize today.",
-            "playfully teases (cat) for having herbs stuck in their fur."
-        ],
-        "close": [
-            "gently grooms some cobwebs off  (cat)'s fur.",
-            "tells (cat) that they'll be an amazing medicine cat someday."
-        ]
+        "friendly": [],
+        "close": []
     },
     "apprentice": {
         "unfriendly": [],
-        "neutral": [
-            "brings (cat) a piece of prey to share after a long day of training.",
-            "is jealous that (cat) got to go on border patrol this morning.",
-            "offers to help (cat) clean out the elder's bedding."
-        ],
-        "friendly": [
-            "was playing with (cat) and learned a fun new battle move from them!",
-            "is excitedly trying to guess what their and (cat)'s warrior names will be.",
-            "offers to help (cat) clean out the elder's bedding."
-        ],
-        "close": [
-            "daydreams with (cat) about their future warrior ceremonies.",
-            "feels like training goes by much faster when they're with (cat).",
-            "wants to explore the whole territory with (cat)!",
-            "is playfully making fun of their mentors with (cat).",
-            "stays awake all night whispering secrets to (cat).",
-            "offers to help (cat) clean out the elder's bedding.",
-            "promises not to tell (cat)'s mentor that they've been sneaking out of camp."
-        ]
+        "neutral": [],
+        "friendly": [],
+        "close": []
     },
     "warrior": {
         "unfriendly": [],
@@ -65,22 +43,15 @@
     },
     "elder": {
         "unfriendly": [
-            "sees (cat) lazing about in the sunshine and is resentful at how little they're expected to contribute.",
-            "is annoyed that they have to pull ticks off (cat) today."
+            
+           
         ],
         "neutral": [
-            "is pestering (cat) for a story.",
-            "is annoyed that they have to pull ticks off (cat) today."
         ],
         "friendly": [
-            "settles down next to (cat) to listen to their stories.",
-            "tells (cat) that they're an amazing storyteller."
         ],
         "close": [
-            "goes to (cat) for advice about some recent troubles.",
-            "asks (cat) for help resolving an argument with a friend.",
-            "tells (cat) that they're an amazing storyteller."
-        ]
+        ] 
     },
     "mediator": {
         "unfriendly": [],

@@ -94,6 +94,39 @@
 			}
 		},
 		{
+			"id":"dislike_inc_med4",
+			"interactions":[
+				"m_c is thinking about how r_c wronged them.",
+				"m_c is watching r_c scornfully.",
+				"m_c is glaring daggers at r_c." 
+			],
+			"main_trait_constraint":[
+				"vengeful"
+			]
+		},
+		{
+			"id":"dislike_inc_med5",
+			"interactions":[
+				"r_c is asking m_c to tell them about how good they look.",
+				"r_c offends m_c with their brutal honesty.",
+				"r_c is boasting about their accomplishments to m_c, but m_c isn't impressed."
+			],
+			"random_trait_constraint":[
+				"shameless"
+			]
+		},
+		{
+			"id":"dislike_inc_med6",
+			"interactions":[
+				"r_c pulled a prank on m_c.",
+				"r_c blamed m_c for their own mistake.",
+				"r_c won't stop bothering m_c."
+			],
+			"random_trait_constraint":[
+				"troublesome"
+			]
+		},
+		{
 			"id":"dislike_kit_inc_med1",
 			"interactions":[
 				"m_c trips over r_c.",

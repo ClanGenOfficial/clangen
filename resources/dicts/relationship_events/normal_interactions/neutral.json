@@ -1,8 +1,8 @@
 [
 	{
-        "id": "neutral_interaction",
+        "id": "neutral_interaction1",
         "interactions" :[
-            "saw (cat) the other day but didn't get a chance to meow hello.",
+            "saw r_c the other day but didn't get a chance to meow hello.",
             "m_c bickered about something trivial with r_c"
         ]
     },
@@ -24,6 +24,30 @@
             "warrior",
             "mediator"
         ]
+    },
+    {
+        "id":"neutral_interaction3",
+        "interactions":[
+            "m_c is stuttering while speaking to r_c."
+        ],
+        "main_trait_constraint":
+        "nervious"
+    },
+    {
+        "id":"neutral_interaction4",
+        "interactions":[
+            "m_c stands tall when r_c walks by."
+        ],
+        "main_trait_constraint":
+        "confident"
+    },
+    {
+        "id":"neutral_interaction5",
+        "interactions":[
+            "m_c challenged r_c to spar with them."
+        ],
+        "main_trait_constraint":
+        "bold"
     },
     {
         "id":"dislike_effect_other1",

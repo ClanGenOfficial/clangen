@@ -45,7 +45,14 @@
 		{
 			"id":"trust_inc_low2",
 			"intensity":"low",
-			"interactions":[]
+			"interactions":[				
+				"r_c tells m_c to get their ailment treated as soon as possible.",
+				"r_c is chiding m_c for being so reckless.",
+				"r_c apologized to m_c for possibly hurting their feelings."
+			],
+			"random_trait_constraint":[
+				"careful"
+			]
 		},
 		{
 			"id": "trust_inc_low3",
@@ -77,6 +84,54 @@
 			}
 		},
 		{
+			"id":"trust_inc_med3",
+			"interactions":[
+				"r_c is telling m_c in great detail how they would protect them from any danger."
+			],
+			"random_trait_constraint":[
+				"fierce"
+			]
+		},
+		{
+			"id":"trust_inc_med4",
+			"interactions":[
+				"r_c is building up m_c's confidence."
+			],
+			"random_trait_constraint":[
+				"confident"
+			]
+		},
+		{
+			"id":"trust_inc_med5",
+			"interactions":[				
+				"r_c let m_c lean on their shoulder after a recent injury.",
+				"r_c is poised to help train m_c."
+			],
+			"random_trait_constraint":[
+				"altruistic"
+			]
+		},
+		{
+			"id":"trust_de_med3",
+			"interactions":[
+				"r_c is teaching m_c how to walk without making a sound.",
+				"r_c is showing m_c how to sneak up on their enemies.",
+				"r_c convinces r_c to help them pull a prank on a Clanmate."
+			  ],
+			"random_trait_constraint":[
+				"sneaky"
+			]
+		},
+		{
+			"id":"trust_de_med3",
+			"interactions":[
+				"r_c is giving m_c advice."
+			],
+			"random_trait_constraint":[
+				"wise"
+			]
+		},
+		{
 			"id": "trust_adult_inc_med1",
 			"interactions":[
 				"m_c is giving advice to r_c."
@@ -102,7 +157,7 @@
 		{
 			"id":"trust_adult_inc_med2",
 			"interactions":[
-				"goes to (cat) to ask for their wisdom.",
+				"goes to r_c to ask for their wisdom.",
 				"m_c is faced with a tough decision and wonders what r_c would do."
 			],
 			"main_status_constraint":[
@@ -130,7 +185,7 @@
 			"id": "trust_inc_high1",
 			"intensity": "high",
 			"interactions":[
-
+				"m_c thinks they can tell r_c something important."
 			]
 		},
 		{
@@ -158,7 +213,24 @@
 			}
 		},
 		{
+			"id":"trust_inc_high4",
+			"intensity":"high",
+			"interactions":[
+				"m_c goes to r_c for advice about some recent troubles.",
+            	"m_c asks r_c for help resolving an argument with a friend."
+			],
+			"relationship_constraint":[
+				"trust_30"
+			],
+			"random_status_constraint":[
+				"elder",
+				"mediator",
+				"mediator apprentice"
+			]
+		},
+		{
 			"id":"trust_star_inc_high1",
+			"intensity":"high",
 			"interactions":[
 				"m_c tells r_c about their last encounter with StarClan."
 			],
@@ -207,7 +279,7 @@
 			"id":"trust_med_inc_high1",
 			"interactions":[
 				"m_c tells r_c a trick about a certain herb.",
-				"goes to (cat) to ask for their wisdom."
+				"goes to r_c to ask for their wisdom."
 			],
 			"main_status_constraint":[
 				"medicine cat apprentice",
@@ -258,9 +330,18 @@
 			}
 		},
 		{
+			"id":"trust_de_med3",
+			"interactions":[
+				"r_c is gossiping about m_c."
+			],
+			"random_trait_constraint":[
+				"sneaky"
+			]
+		},
+		{
 			"id":"trust_kit_de_med1",
 			"interactions":[
-				"constantly pulling pranks on (cat)."
+				"m_c constantly pulling pranks on r_c."
 			],
 			"relationship_constraint": [
 				"dislike_40"

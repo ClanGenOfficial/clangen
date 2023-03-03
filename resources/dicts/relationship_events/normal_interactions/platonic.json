@@ -98,16 +98,124 @@
 			}
 		},
 		{
-			"id":"platonic_kit_inc_med1",
+			"id":"platonic_inc_med4",
 			"interactions":[
-
+				"r_c charms m_c.",
+				"r_c smiles at m_c whenever they meet.",
+				"r_c knows what to say to make m_c feel better.",
+				"r_c compliments m_c for their good disposition."
 			],
-			"main_status_constraint":[
-				"kitten"
+			"random_trait_constraint":[
+				"charismatic"
 			]
 		},
 		{
-			"id":"platonic_kit_inc_med2",
+			"id":"platonic_inc_med5",
+			"interactions":[
+				"r_c relaxing with m_c.",
+				"r_c is helping m_c calm down.",
+				"r_c is soothing m_c's irrational thoughts."
+			],
+			"random_trait_constraint":[
+				"calm"
+			]
+		},
+		{
+			"id":"platonic_inc_med6",
+			"interactions":[
+				"r_c challenges m_c to a race."
+			],
+			"random_trait_constraint":[
+				"daring"
+			]
+		},
+		{
+			"id":"platonic_inc_med7",
+			"interactions":[
+				"r_c is making sure m_c knows that they are loved.",
+      			"r_c is telling m_c how much they cherish them.",
+    			"r_c is purring loudly to comfort r_c."
+			],
+			"random_trait_constraint":[
+				"loving"
+			]
+		},
+		{
+			"id":"platonic_inc_med8",
+			"interactions":[
+				"r_c is playing tag with m_c.",
+				"r_c bats a bit of fluff in front of m_c and gets them to play a game with them."
+    		],
+			"random_trait_constraint":[
+				"playful"
+			]
+		},
+		{
+			"id":"platonic_inc_med9",
+			"interactions":[
+				"m_c feels bad that they caused a problem for r_c.",
+				"m_c convinces r_c to help them pull a prank on a Clanmate."
+			],
+			"main_trait_constraint":[
+				"troublesome"
+			],
+			"reaction_random_cat":{
+				"platonic":"increase"
+			}
+		},
+		{
+			"id":"platonic_inc_med10",
+			"interactions":[
+				"m_c wants to explore Twolegplace with r_c.",
+				"m_c wants to sneak along the border with r_c.",
+				"m_c tells r_c that there's so much to see in the world!"
+			  ],
+			"main_trait_constraint":[
+				"adventurous"
+			]
+		},
+		{
+			"id":"platonic_inc_med10",
+			"interactions":[
+				"m_c is hiding behind a bush ready to pounce on r_c."
+			],
+			"random_trait_constraint":[
+				"childish"
+			]
+		},
+		{
+			"id":"platonic_inc_med4",
+			"interactions":[
+				"m_c wants to explore the whole territory with r_c!"
+			],
+			"relationship_constraint":[
+				"platonic_40"
+			],
+			"main_status_constraint":[
+				"elder",
+				"apprentice",
+				"warrior",
+				"mediator apprentice",
+				"mediator",
+				"medicine cat apprentice",
+				"medicine cat",
+				"deputy",
+				"leader"
+			],
+			"random_skill_constraint":[
+				"elder",
+				"apprentice",
+				"warrior",
+				"mediator apprentice",
+				"mediator",
+				"medicine cat apprentice",
+				"medicine cat",
+				"deputy",
+				"leader"
+			]
+		},
+		{
+			"id":"platonic_kit_inc_med1",
 			"interactions":[
 				"m_c plays mossball with r_c."
 
@@ -276,6 +384,73 @@
 			}
 		},
 		{
+			"id":"platonic_app_med2",
+			"interactions":[
+				"m_c brings r_c a piece of prey to share after a long day of training.",
+				"m_c offers to help r_c clean out the elder's bedding.",
+				"m_c was playing with r_c and learned a fun new battle move from them!",
+				"m_c is excitedly trying to guess what their and r_c's warrior names will be."
+			],
+			"main_status_constraint":[
+				"apprentice"
+			],
+			"random_status_constraint":[
+				"apprentice"
+			],
+			"reaction_random_cat":{
+				"platonic": "increase"
+			}
+		},
+		{
+			"id":"platonic_app_med3",
+			"interactions":[
+				"m_c daydreams with r_c about their future warrior ceremonies.",
+         		"m_c feels like training goes by much faster when they're with r_c.",
+            	"m_c is playfully making fun of their mentors with r_c.",
+            	"m_c stays awake all night whispering secrets to r_c.",
+            	"m_c promises not to tell r_c's mentor that they've been sneaking out of camp."
+			],
+			"relationship_constraint":[
+				"platonic_40"
+			],
+			"main_status_constraint":[
+				"apprentice"
+			],
+			"random_status_constraint":[
+				"apprentice"
+			]
+		},
+		{
+			"id":"platonic_app_med4",
+			"interactions":[
+				"m_c listens closely as r_c tells them about the new herb they learned to recognize today.",
+            	"m_c playfully teases r_c for having herbs stuck in their fur."
+				
+			],
+			"main_status_constraint":[
+				"apprentice"
+			],
+			"random_status_constraint":[
+				"medicine cat apprentice"
+			]
+		},
+		{
+			"id":"platonic_app_med5",
+			"interactions":[
+				"m_c gently grooms some cobwebs off  r_c's fur.",
+            	"m_c tells r_c that they'll be an amazing medicine cat someday."
+			],
+			"relationship_constraint":[
+				"platonic_40"
+			],
+			"main_status_constraint":[
+				"apprentice"
+			],
+			"random_status_constraint":[
+				"medicine cat apprentice"
+			]
+		},
+		{
 			"id":"platonic_warrior_inc_med1",
 			"interactions":[
 				"m_c greets r_c as they're exiting the warriors' den.",
@@ -299,6 +474,20 @@
 				"m_c wants to spend more time with r_c!"
 				
 			]
+		},
+		{
+			"id":"platonic_elder_med1",
+			"interactions":[
+				"m_c is pestering r_c for a story.",
+				"m_c settles down next to r_c to listen to their stories.",
+				"m_c tells r_c that they're an amazing storyteller."
+			],
+			"random_status_constraint":[
+				"elder"
+			],
+			"reaction_random_cat":{
+				"platonic":"increase"
+			}
 		},
 		{
 			"id":"platonic_inc_high2",
@@ -391,11 +580,42 @@
 		{
 			"id": "platonic_de_med2",
 			"interactions":[
-				""
+				"m_c is annoyed that they have to pull ticks off r_c today."
 			],
-			"reaction_random_cat":{
-				"platonic": "decrease"
-			}
+			"main_status_constraint":[
+				"apprentice"
+			],
+			"random_status_constrain":[
+				"elder"
+			]
+		},
+		{
+			"id":"platonic_de_med3",
+			"interactions":[
+				"r_c makes sure m_c is following the warrior code.",
+      			"r_c has a fight with m_c about what's right."
+			],
+			"random_trait_constraint":[
+				"righteous"
+			]
+		},
+		{
+			"id":"platonic_de_med4",
+			"interactions":[
+				"r_c is not backing down in an argument with m_c."
+			],
+			"random_trait_constraint":[
+				"fierce"
+			]
+		},
+		{
+			"id":"platonic_de_med5",
+			"interactions":[
+				"m_c scorns r_c for not catching enough prey."
+			],
+			"random_trait_constraint":[
+				"strict"
+			]
 		},
 		{
 			"id":"platonic_de_high1",
@@ -421,10 +641,10 @@
 			"id":"platonic_de_high2",
 			"intensity":"high",
 			"interactions":[
-			"m_c mocks r_c for becoming a medicine cat apprentice instead of a warrior apprentice.",
-            "m_c mocks r_c for smelling like gross herbs.",
-            "m_c mocks r_c for smelling like mouse bile.",
-            "m_c looks down on r_c, because there's no way they could ever be a useful medicine cat."
+				"m_c mocks r_c for becoming a medicine cat apprentice instead of a warrior apprentice.",
+            	"m_c mocks r_c for smelling like gross herbs.",
+           		"m_c mocks r_c for smelling like mouse bile.",
+            	"m_c looks down on r_c, because there's no way they could ever be a useful medicine cat."
 
 			],
 			"main_status_constraint":[

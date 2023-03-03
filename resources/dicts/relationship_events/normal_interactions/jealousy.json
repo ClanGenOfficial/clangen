@@ -168,10 +168,17 @@
 			"intensity": "high",
 			"interactions":[
 				"m_c is complaining that r_c never does anything helpful."
+			]
+		},
+		{
+			"id":"jel_inc_high3",
+			"intensity":"high",
+			"interactions":[
+				"m_c sees r_c lazing about in the sunshine and is resentful at how little they're expected to contribute."
 			],
-			"reaction_random_cat":{
-				"jealousy": "increase"
-			}
+			"random_status_constraint":[
+				"elder"
+			]
 		}
 	],
 	"decrease": [
