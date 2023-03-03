@@ -12,6 +12,7 @@ from scripts.utility import get_text_box_theme, scale
 import pygame_gui
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 from scripts.game_structure.windows import DeleteCheck
+from scripts.game_structure.discord_rpc import _DiscordRPC
 
 
 class StartScreen(Screens):
@@ -35,7 +36,7 @@ class StartScreen(Screens):
             elif event.ui_element == self.settings_button:
                 self.change_screen('settings screen')
             elif event.ui_element == self.quit:
-                #game.rpc.close()
+                game.rpc.close()
                 pygame.display.quit()
                 pygame.quit()
                 exit()
@@ -342,7 +343,7 @@ class SettingsScreen(Screens):
             if event.ui_element == self.fullscreen_toggle:
                 game.switch_setting('fullscreen')
                 game.save_settings()
-                #game.rpc.close()
+                game.rpc.close()
                 pygame.display.quit()
                 pygame.quit()
                 exit()
@@ -463,6 +464,16 @@ class SettingsScreen(Screens):
             self.settings_changed = True
             self.update_save_button()
             self.refresh_checkboxes()
+        elif event.ui_element == self.checkboxes['discord']:
+            game.switch_setting('discord')
+            self.settings_changed = True
+            self.update_save_button()
+            self.refresh_checkboxes()
+            if game.settings['discord']:
+                game.rpc = _DiscordRPC("1076277970060185701")
+            else:
+                game.rpc.close()
+
 
     def handle_lang_events(self, event):
         if event.ui_element == self.checkboxes['english']:
@@ -640,6 +651,13 @@ class SettingsScreen(Screens):
         n += 1
         self.checkboxes_text['gore'] = pygame_gui.elements.UITextBox(
             "Allow mild gore and blood in patrol artwork",
+            scale(pygame.Rect((x_value, n * y_spacing), (1000, 78))),
+            container=self.checkboxes_text["container"],
+            object_id=get_text_box_theme("#setting_text_box"), manager=MANAGER
+        )
+        n += 1
+        self.checkboxes_text['discord'] = pygame_gui.elements.UITextBox(
+            "Enable Discord integration",
             scale(pygame.Rect((x_value, n * y_spacing), (1000, 78))),
             container=self.checkboxes_text["container"],
             object_id=get_text_box_theme("#setting_text_box"), manager=MANAGER
@@ -916,6 +934,21 @@ class SettingsScreen(Screens):
                 container=self.checkboxes_text["container"],
                 tool_tip_text="Mild gore and blood will be allowed in the artwork displayed alongside patrols."
             )
+            
+            n += 1
+            # Emable discord rpc
+            if game.settings['discord']:
+                box_type = "#checked_checkbox"
+            else:
+                box_type = "#unchecked_checkbox"
+            self.checkboxes['discord'] = UIImageButton(
+                scale(pygame.Rect((x_value, n * y_spacing), (68, 68))),
+                "",
+                object_id=box_type,
+                container=self.checkboxes_text["container"],
+                tool_tip_text="Discord will show info about your clan, Including your clan name"
+            )
+
 
 
         # CHECKBOXES FOR RELATION SETTINGS #################################################################

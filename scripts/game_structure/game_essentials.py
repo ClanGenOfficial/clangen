@@ -169,6 +169,7 @@ class Game():
         'first_cousin_mates': True,
         'become_mediator': False,
         'fullscreen': False,
+        'discord': False,
     }  # The current settings
     setting_lists = {
         'no gendered breeding': [False, True],
@@ -194,6 +195,7 @@ class Game():
         'fading': [True, False],
         'save_faded_copy': [False, True],
         "gore": [False, True],
+        'discord': [False, True],
         'first_cousin_mates': [True, False],
         'become_mediator': [False, True],
         'fullscreen': [False, True]
