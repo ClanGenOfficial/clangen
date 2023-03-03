@@ -110,6 +110,14 @@ def get_living_cat_count(Cat):
         count += 1
     return count
 
+def get_living_clan_cat_count(Cat):
+    count = 0
+    for the_cat in Cat.all_cats.values():
+        if the_cat.dead or the_cat.exiled or the_cat.outside:
+            continue
+        count += 1
+    return count
+
 
 def change_clan_reputation(difference=0):
     """
