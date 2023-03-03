@@ -1,3 +1,31 @@
 [
+    {
+        "patrol_id": "bch_train_lore1",
+        "biome": "beach",
+        "season": "leaf-fall",
+        "tags": ["training", "platonic", "trust"],
+        "intro_text": "p_l takes the patrol down to the beach to train, but, wait, something's odd here...",
+        "decline_text": "It's best to go back to camp and ignore the oddities on the beach.",
+        "chance_of_success": 30,
+        "exp": 5,
+        "success_text": [
+                "r_c explains that the sea has always given mysterious gifts to c_n, and that those strange ginger cat statues are probably just another gift from the ocean, probably.",
+                "The strange ginger cat statues seem to be purring slightly. r_c suggests they leave the beach as soon as possible, those things don't seem... Entirely of this world.",
+                "s_c laughs! The ginger cat statues are twoleg objects, they spin a tale almost unbelievable, but they swear it's true! The ginger cat statues used to live on something called a \"boat\".",
+                "Those ginger cat statues? s_c heard a kittypet call him Garfield. s_c explains that, for what ever reason, twolegs worship the ginger cat so much they made statues they threw into the ocean."
+        ],
+        "fail_text": [
+                "There was no way r_c is staying around here. They tear off back to camp at the sight of a broken ginger cat statue.",
+                "The whole patrol agrees this beach is abandoned by Starclan. There's no way so many broken ginger cat statues are here natrually, and well, s_c has always been a little odd...",
+                null
+        ],
+        "win_skills": ["good storyteller", "great storyteller", "fantastic storyteller","excellent speaker"],
+        "win_trait": ["adventurous"],
+        "fail_trait": ["sneaky", "strange"],
+        "min_cats": 1,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+}
 
 ]
