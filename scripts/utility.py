@@ -592,13 +592,18 @@ def update_sprite(cat):
         # draw white patches
         if cat.white_patches is not None:
             if cat.age == 'elder' or (cat.pelt.length == 'long' and cat.age not in ['kitten', 'adolescent']):
-                new_sprite.blit(
-                    sprites.sprites['whiteextra' + cat.white_patches +
-                                    str(cat.age_sprites[cat.age])], (0, 0))
+                white_patches = sprites.sprites['whiteextra' + cat.white_patches + str(cat.age_sprites[cat.age])].copy()
             else:
-                new_sprite.blit(
-                    sprites.sprites['white' + cat.white_patches +
-                                    str(cat.age_sprites[cat.age])], (0, 0))
+                white_patches = sprites.sprites['white' + cat.white_patches + str(cat.age_sprites[cat.age])]
+
+            # Apply tint to white patches.
+            if cat.white_patches_tint != "none" and cat.white_patches_tint in Sprites.white_patches_tints["tint_colours"]:
+                tint = pygame.Surface((50, 50)).convert_alpha()
+                tint.fill(tuple(Sprites.white_patches_tints["tint_colours"][cat.white_patches_tint]))
+                white_patches.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
+
+            new_sprite.blit(white_patches, (0, 0))
+
         # draw eyes & scars1
         if cat.age == 'elder' or (cat.pelt.length == 'long' and cat.age not in ['kitten', 'adolescent']):
             new_sprite.blit(

@@ -202,6 +202,7 @@ class Cat():
         self.parent2 = parent2
         self.pelt = pelt
         self.tint = None
+        self.white_patches_tint = None
         self.eye_colour = eye_colour
         self.eye_colour2 = None
         self.scars = []

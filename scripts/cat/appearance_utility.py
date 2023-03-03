@@ -709,10 +709,29 @@ def init_white_patches(cat):
 
 
 def init_tint(cat):
+    """Sets tint for pelt and white patches"""
+
     # Basic tints as possible for all colors.
     possible_tints = Sprites.cat_tints["possible_tints"]["basic"].copy()
     if cat.pelt.colour in Sprites.cat_tints["colour_groups"]:
         color_group = Sprites.cat_tints["colour_groups"][cat.pelt.colour]
         possible_tints += Sprites.cat_tints["possible_tints"][color_group]
         cat.tint = choice(possible_tints)
+    else:
+        cat.tint = "none"
+
+    # These are the patches where the tint should always be none
+    no_tint_patches = ['SEPIAPOINT', 'MINKPOINT', 'SEALPOINT'] + vit
+
+    if cat.white_patches not in no_tint_patches:
+        #Now for white patches
+        possible_tints = Sprites.white_patches_tints["possible_tints"]["basic"].copy()
+        if cat.pelt.colour in Sprites.cat_tints["colour_groups"]:
+            color_group = Sprites.white_patches_tints["colour_groups"][cat.pelt.colour]
+            possible_tints += Sprites.white_patches_tints["possible_tints"][color_group]
+            cat.white_patches_tint = choice(possible_tints)
+        else:
+            cat.white_patches_tint = "none"
+    else:
+        cat.white_patches_tint = "none"
 
