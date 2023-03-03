@@ -2,6 +2,8 @@ from random import choice
 
 import pygame
 
+from scripts.cat.appearance_utility import plural_acc_names
+
 try:
     import ujson
 except ImportError:
@@ -388,6 +390,9 @@ def event_text_adjust(Cat,
     if new_cat:
         adjust_text = adjust_text.replace("n_c_pre", str(new_cat.name.prefix))
         adjust_text = adjust_text.replace("n_c", str(new_cat.name))
+    if ("acc_plural" or "acc_singular") in adjust_text:
+        adjust_text = adjust_text.replace("acc_plural", str(plural_acc_names(cat.accessory, True, False)))
+        adjust_text = adjust_text.replace("acc_singular", str(plural_acc_names(cat.accessory, False, True)))
 
     adjust_text = adjust_text.replace("c_n", str(game.clan.name) + "Clan")
     adjust_text = adjust_text.replace("p_l", name)
