@@ -1093,16 +1093,13 @@ class Events():
         if not cat:
             return
 
-        if cat.dead:
+        if cat.dead or cat.outside:
             return
 
         # check if cat already has acc
-        if cat.accessory is not None:
+        if cat.accessory:
             self.ceremony_accessory = False
             return
-
-        name = str(cat.name)
-        involved_cats = [cat.ID]
 
         # find other_cat
         other_cat = random.choice(list(Cat.all_cats.values()))
@@ -1112,35 +1109,28 @@ class Events():
             countdown -= 1
             if countdown <= 0:
                 return
-        other_name = str(other_cat.name)
-
-        acc_text = []
 
         # chance to gain acc
-        chance = random.randint(0, 50)
+        acc_chances = game.config["accessory_generation"]
+        chance = acc_chances["base_acc_chance"]
         if cat.status in ['medicine cat', 'medicine cat apprentice']:
-            chance = random.randint(0, 30)
-        elif cat.age in ['kitten', 'adolescent']:
-            chance = random.randint(0, 80)
-        elif cat.age in ['young adult', 'adult', 'senior adult', 'elder']:
-            chance = random.randint(0, 150)
-        elif cat.trait in ['childish', 'lonesome', 'loving', 'playful', 'shameless', 'strange', 'troublesome']:
-            chance = random.randint(0, 50)
-
-        give = False
+            chance += acc_chances["med_modifier"]
+        if cat.age in ['kitten', 'adolescent']:
+            chance += acc_chances["baby_modifier"]
+        elif cat.age in ['senior adult', 'elder']:
+            chance += acc_chances["elder_modifier"]
+        if cat.trait in ["adventurous", "childish", "confident", "daring", "playful", "attention-seeker", "bouncy", "sweet", "troublesome", "impulsive", "inquisitive", "strange", "shameless"]:
+            chance += acc_chances["happy_trait_modifier"]
+        elif cat.trait in ["cold", "strict", "bossy", "bullying", "insecure", "nervous"]:
+            chance += acc_chances["grumpy_trait_modifier"]
 
         # increase chance of acc if the cat had a ceremony
-        if self.ceremony_accessory is True:
-            if chance in [0, 1, 2, 3, 4, 5]:
-                give = True
-        else:
-            if chance == 1:
-                give = True
-
-        # give them an acc! \o/
-        if give is True:
+        give = False
+        if not int(random.random() * chance):
             self.misc_events.handle_misc_events(cat, other_cat, self.at_war, self.enemy_clan,
                                                 alive_kits=get_alive_kits(Cat), accessory=True, ceremony=self.ceremony_accessory)
+        #return
+
         # old acc events, just commenting out till new events are written and these are no longer needed for reference
         """            if cat.accessory is None:
                         cat.accessory = random.choice([

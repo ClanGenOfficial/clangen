@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ffc5066c-ddb2-4bbb-ab4a-c69acf45d5af" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/clangen.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/cat/pelts.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/cat/pelts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/game_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/game_config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/events.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/events.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/events_module/misc_events.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/events_module/misc_events.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/utility.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/utility.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
