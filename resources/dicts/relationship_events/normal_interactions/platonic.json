@@ -558,14 +558,14 @@
 			"id": "platonic_de_low1",
 			"intensity":"low",
 			"interactions":[
-
+				"m_c thinks that r_c doesn't consider other very much."
 			]
 		},
 		{
 			"id": "platonic_de_low2",
 			"intensity":"low",
 			"interactions":[
-
+				"m_c and r_c had an argument about who should get new nest material."
 			],
 			"reaction_random_cat":{
 				"platonic":"decrease"

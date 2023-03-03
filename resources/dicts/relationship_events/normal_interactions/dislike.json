@@ -187,7 +187,7 @@
 			"id": "dislike_inc_high1",
 			"intensity": "high",
 			"interactions":[
-				""
+				"m_c thinks r_c is being annoying."
 			]
 		},
 		{
@@ -259,25 +259,26 @@
 				"trust":"decrease"
 			}
 		},
-		{"id":"dislike_inc_high7",
-		"intensity":"high",
-		"interactions":[
-			"m_c thinks they should be deputy instead of r_c.",
-			"m_c is tired from r_c putting them on so many patrols."
-		],
-		"relationship_constraint":[
-			"dislike_40"
-		],
-		"random_status_constraint":[
-			"deputy"
-		],
-		"main_status_constraint":[
-			"apprentice",
-			"warrior"
-		],
-		"also_influences":{
-			"jealousy": "increase"
-		}
+		{
+			"id":"dislike_inc_high7",
+			"intensity":"high",
+			"interactions":[
+				"m_c thinks they should be deputy instead of r_c.",
+				"m_c is tired from r_c putting them on so many patrols."
+			],
+			"relationship_constraint":[
+				"dislike_40"
+			],
+			"random_status_constraint":[
+				"deputy"
+			],
+			"main_status_constraint":[
+				"apprentice",
+				"warrior"
+			],
+			"also_influences":{
+				"jealousy": "increase"
+			}
 		}
 	],
 	"decrease": [
@@ -285,14 +286,14 @@
 			"id":"dislike_de_low1",
 			"intensity": "low",
 			"interactions":[
-				""
+				"m_c is surpised by r_c being thoughtful."
 			]
 		},
 		{
 			"id":"dislike_de_low2",
 			"intensity": "low",
 			"interactions":[
-				""
+				"m_c apologized to r_c for something or other."
 			],
 			"reaction_random_cat":{
 				"dislike": "decrease"
@@ -307,7 +308,7 @@
 		{
 			"id":"dislike_de_med2",
 			"interactions":[
-				""
+				"m_c covered for r_c on something important."
 			],
 			"reaction_random_cat":{
 				"dislike":"decrease"
@@ -359,14 +360,14 @@
 			"id": "dislike_de_high1",
 			"intensity": "high",
 			"interactions":[
-				""
+				"m_c is suprised to hear r_c express and ideal they can agree with."
 			]
 		},
 		{
 			"id":"dislike_de_high2",
 			"intensity": "high",
 			"interactions":[
-				""
+				"m_c and r_c heckled another Clan at the gathering together."
 			],
 			"reaction_random_cat":{
 				"dislike":"decrease"

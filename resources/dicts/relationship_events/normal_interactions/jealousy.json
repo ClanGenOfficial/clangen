@@ -42,16 +42,6 @@
 			]
 		},
 		{
-			"id": "jel_inc_low2",
-			"intensity": "low",
-			"interactions":[
-
-			],
-			"reaction_random_cat":{
-				"jealousy": "increase"
-			}
-		},
-		{
 			"id": "jel_inc_med1",
 			"interactions": [
 				"m_c thinks that the prey r_c is biting into on the other side of camp looks delicious."
@@ -186,18 +176,8 @@
 			"id": "jel_de_low1",
 			"intensity": "low",
 			"interactions":[
-
+				"m_c had wanted a task r_c had been given, but r_c came back smelling like mouse bile..."
 			]
-		},
-		{
-			"id": "jel_de_low2",
-			"intensity": "low",
-			"interactions":[
-
-			],
-			"reaction_random_cat":{
-				"jealousy": "decrease"
-			}
 		},
 		{
 			"id": "jel_de_med1",
@@ -263,7 +243,7 @@
 			"id": "jel_de_high1",
 			"intensity": "high",
 			"interactions":[
-
+				"m_c is really suprised that r_c's life isn't as easy as they thought it was."
 			]
 		},
 		{
