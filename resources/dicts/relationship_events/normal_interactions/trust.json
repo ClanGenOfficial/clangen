@@ -1,142 +1,107 @@
 {
 	"increase": [
 		{
-			"id": "sample_id",
-			"biome": ["Any"],
-			"season": ["Any"],
-			"intensity": "medium",
-			"interactions": [
-				"m_c does some interactions with r_c"
-			],
-			"relationship_constraint": [],
-			"main_status_constraint": [],
-			"main_trait_constraint": [],
-			"main_skill_constraint": [],
-			"random_status_constraint": [],
-			"random_trait_constraint": [],
-			"random_skill_constraint": [],
-			"reaction_random_cat": {
-				"romantic": "increase",
-				"platonic": "neutral",
-				"dislike": "decrease",
-				"admiration": "neutral",
-				"comfortable": "increase",
-				"jealousy": "neutral",
-				"trust": "increase"
-			},
-			"also_influences": {
-				"romantic": "increase",
-				"platonic": "neutral",
-				"dislike": "decrease",
-				"admiration": "neutral",
-				"comfortable": "increase",
-				"jealousy": "neutral",
-				"trust": "increase"
-			}
-		},
-		{
 			"id": "trust_inc_low1",
 			"intensity": "low",
-			"interactions":[
+			"interactions": [
 				"m_c appreciates r_c telling them that they had a feather stuck to their face."
-				
 			]
 		},
 		{
-			"id":"trust_inc_low2",
-			"intensity":"low",
-			"interactions":[				
+			"id": "trust_inc_low2",
+			"intensity": "low",
+			"interactions": [
 				"r_c tells m_c to get their ailment treated as soon as possible.",
 				"r_c is chiding m_c for being so reckless.",
 				"r_c apologized to m_c for possibly hurting their feelings."
 			],
-			"random_trait_constraint":[
+			"random_trait_constraint": [
 				"careful"
 			]
 		},
 		{
 			"id": "trust_inc_low3",
 			"intensity": "low",
-			"interactions":[
+			"interactions": [
 				"m_c bestows wisdom onto r_c."
 			],
-			"reaction_random_cat":{
+			"reaction_random_cat": {
 				"trust": "increase",
 				"admiration": "increase"
 			},
-			"main_status_constraint":[
+			"main_status_constraint": [
 				"elder"
 			]
 		},
 		{
 			"id": "trust_inc_med1",
-			"interactions":[
+			"interactions": [
 				"m_c thinks about how r_c is always reliable."
 			]
 		},
 		{
 			"id": "trust_inc_med2",
-			"interactions":[
+			"interactions": [
 				"m_c comes up with a plan to sneak out of camp with r_c."
 			],
-			"reaction_random_cat":{
+			"reaction_random_cat": {
 				"trust": "increase"
 			}
 		},
 		{
-			"id":"trust_inc_med3",
-			"interactions":[
+			"id": "trust_inc_med3",
+			"interactions": [
 				"r_c is telling m_c in great detail how they would protect them from any danger."
 			],
-			"random_trait_constraint":[
+			"random_trait_constraint": [
 				"fierce"
 			]
 		},
 		{
-			"id":"trust_inc_med4",
-			"interactions":[
+			"id": "trust_inc_med4",
+			"interactions": [
 				"r_c is building up m_c's confidence."
 			],
-			"random_trait_constraint":[
+			"random_trait_constraint": [
 				"confident"
 			]
 		},
 		{
-			"id":"trust_inc_med5",
-			"interactions":[				
+			"id": "trust_inc_med5",
+			"interactions": [
 				"r_c let m_c lean on their shoulder after a recent injury.",
 				"r_c is poised to help train m_c."
 			],
-			"random_trait_constraint":[
+			"random_trait_constraint": [
 				"altruistic"
 			]
 		},
 		{
-			"id":"trust_de_med3",
-			"interactions":[
+			"id": "trust_de_med3",
+			"interactions": [
 				"r_c is teaching m_c how to walk without making a sound.",
 				"r_c is showing m_c how to sneak up on their enemies.",
 				"r_c convinces r_c to help them pull a prank on a Clanmate."
-			  ],
-			"random_trait_constraint":[
+			],
+			"random_trait_constraint": [
 				"sneaky"
 			]
 		},
 		{
-			"id":"trust_de_med3",
-			"interactions":[
+			"id": "trust_de_med3",
+			"interactions": [
 				"r_c is giving m_c advice."
 			],
-			"random_trait_constraint":[
+			"random_trait_constraint": [
 				"wise"
 			]
 		},
 		{
 			"id": "trust_adult_inc_med1",
-			"interactions":[
+			"interactions": [
 				"m_c is giving advice to r_c."
 			],
-			"main_status_constraint":[
+			"main_status_constraint": [
 				"elder",
 				"warrior",
 				"mediator",
@@ -144,26 +109,26 @@
 				"deputy",
 				"leader"
 			],
-			"random_trait_constraint":[
+			"random_status_constraint": [
 				"kitten",
 				"apprentice",
 				"mediator apprentice",
 				"medicine cat apprentice"
 			],
-			"reaction_random_cat":{
-				"trust":"increase"
+			"reaction_random_cat": {
+				"trust": "increase"
 			}
 		},
 		{
-			"id":"trust_adult_inc_med2",
-			"interactions":[
+			"id": "trust_adult_inc_med2",
+			"interactions": [
 				"goes to r_c to ask for their wisdom.",
 				"m_c is faced with a tough decision and wonders what r_c would do."
 			],
-			"main_status_constraint":[
+			"main_status_constraint": [
 				"kitten",
 				"apprentice",
- 				"warrior",
+				"warrior",
 				"mediator apprentice",
 				"mediator",
 				"medicine cat apprentice",
@@ -171,177 +136,173 @@
 				"deputy",
 				"leader"
 			],
-			"random_status_constraint":[
+			"random_status_constraint": [
 				"elder",
 				"mediator",
 				"medicine cat",
 				"leader"
 			],
-			"reaction_random_cat":{
+			"reaction_random_cat": {
 				"trust": "increase"
 			}
 		},
 		{
 			"id": "trust_inc_high1",
 			"intensity": "high",
-			"interactions":[
+			"interactions": [
 				"m_c thinks they can tell r_c something important."
 			]
 		},
 		{
 			"id": "trust_inc_high2",
 			"intensity": "high",
-			"interactions":[
+			"interactions": [
 				"m_c is letting r_c share their troubles with them, hoping they'll feel better afterwards."
-
 			],
-			"reaction_random_cat":{
+			"reaction_random_cat": {
 				"trust": "increase"
 			}
 		},
 		{
-			"id":"trust_inc_high3",
-			"intensity":"high",
-			"interactions":[
+			"id": "trust_inc_high3",
+			"intensity": "high",
+			"interactions": [
 				"m_c tells r_c a secret."
 			],
-			"relationship_constraint":[
+			"relationship_constraint": [
 				"trust_30"
 			],
-			"reaction_random_cat":{
-				"trust":"increase"
+			"reaction_random_cat": {
+				"trust": "increase"
 			}
 		},
 		{
-			"id":"trust_inc_high4",
-			"intensity":"high",
-			"interactions":[
+			"id": "trust_inc_high4",
+			"intensity": "high",
+			"interactions": [
 				"m_c goes to r_c for advice about some recent troubles.",
-            	"m_c asks r_c for help resolving an argument with a friend."
+				"m_c asks r_c for help resolving an argument with a friend."
 			],
-			"relationship_constraint":[
+			"relationship_constraint": [
 				"trust_30"
 			],
-			"random_status_constraint":[
+			"random_status_constraint": [
 				"elder",
 				"mediator",
 				"mediator apprentice"
 			]
 		},
 		{
-			"id":"trust_star_inc_high1",
-			"intensity":"high",
-			"interactions":[
+			"id": "trust_star_inc_high1",
+			"intensity": "high",
+			"interactions": [
 				"m_c tells r_c about their last encounter with StarClan."
 			],
-			"main_status_constraint":[
+			"main_status_constraint": [
 				"medicine cat apprentice",
 				"medicine cat",
 				"leader"
 			],
-			"relationship_constraint":[
+			"relationship_constraint": [
 				"trust_30"
 			],
-			"random_status_constraint":[
+			"random_status_constraint": [
 				"elder",
- 				"warrior",
+				"warrior",
 				"mediator",
 				"medicine cat apprentice",
 				"medicine cat",
 				"deputy",
 				"leader"
 			],
-			"reaction_random_cat":{
+			"reaction_random_cat": {
 				"trust": "increase"
 			}
 		},
 		{
-			"id":"trust_led_inc_high1",
-			"interactions":[
+			"id": "trust_led_inc_high1",
+			"interactions": [
 				"m_c talks with r_c about difficult decisions."
 			],
-			"relationship_constraint":[
+			"relationship_constraint": [
 				"trust_50"
 			],
-			"main_status_constraint":[
+			"main_status_constraint": [
 				"leader"
 			],
-			"random_status_constraint":[
+			"random_status_constraint": [
 				"deputy",
 				"elder",
 				"medicine cat"
 			],
-			"reaction_random_cat":{
+			"reaction_random_cat": {
 				"trust": "increase"
 			}
 		},
 		{
-			"id":"trust_med_inc_high1",
-			"interactions":[
+			"id": "trust_med_inc_high1",
+			"interactions": [
 				"m_c tells r_c a trick about a certain herb.",
 				"goes to r_c to ask for their wisdom."
 			],
-			"main_status_constraint":[
+			"main_status_constraint": [
 				"medicine cat apprentice",
 				"medicine cat"
 			],
-			"random_status_constraint":[
+			"random_status_constraint": [
 				"medicine cat apprentice",
 				"medicine cat"
 			],
-			"reaction_random_cat":{
+			"reaction_random_cat": {
 				"trust": "increase"
 			}
 		}
-
 	],
 	"decrease": [
 		{
 			"id": "trust_de_low1",
 			"intensity": "low",
-			"interactions":[
+			"interactions": [
 				"m_c doesn't think that r_c has been completely honest lately."
-
 			]
 		},
 		{
 			"id": "trust_de_low2",
 			"intensity": "low",
-			"interactions":[
-				"m_c shared a embarassing story about r_c they were asked not to share..."
-
+			"interactions": [
+				"m_c shared a embarrassing story about r_c they were asked not to share..."
 			],
-			"reaction_random_cat":{
+			"reaction_random_cat": {
 				"trust": "decrease"
 			}
 		},
 		{
 			"id": "trust_de_med1",
-			"interactions":[
+			"interactions": [
 				"m_c caught r_c in a lie."
 			]
 		},
 		{
 			"id": "trust_de_med2",
-			"interactions":[
+			"interactions": [
 				"m_c said they'd cover for r_c, but when it came time, they got r_c in trouble."
 			],
-			"reaction_random_cat":{
+			"reaction_random_cat": {
 				"trust": "decrease"
 			}
 		},
 		{
-			"id":"trust_de_med3",
-			"interactions":[
+			"id": "trust_de_med3",
+			"interactions": [
 				"r_c is gossiping about m_c."
 			],
-			"random_trait_constraint":[
+			"random_trait_constraint": [
 				"sneaky"
 			]
 		},
 		{
-			"id":"trust_kit_de_med1",
-			"interactions":[
+			"id": "trust_kit_de_med1",
+			"interactions": [
 				"m_c constantly pulling pranks on r_c."
 			],
 			"relationship_constraint": [
@@ -350,7 +311,7 @@
 			"main_status_constraint": [
 				"kitten"
 			],
-			"reaction_random_cat":{
+			"reaction_random_cat": {
 				"trust": "decrease",
 				"dislike": "increase"
 			}
@@ -358,7 +319,7 @@
 		{
 			"id": "trust_de_high1",
 			"intensity": "high",
-			"interactions":[
+			"interactions": [
 				"m_c goes to tell a secret to r_c only for r_c to tell someone elses secret to them."
 			]
 		},
@@ -367,35 +328,34 @@
 			"intensity": "high",
 			"interactions": [
 				"m_c tries to scare r_c."
-
 			],
-			"relationship_constraint":[
+			"relationship_constraint": [
 				"dislike_40"
 			],
-			"reaction_random_cat":{
+			"reaction_random_cat": {
 				"trust": "decrease"
 			}
 		},
 		{
-			"id":"trust_for_medcat_de_high1",
-			"intensity":"high",
-			"interactions":[
+			"id": "trust_for_medcat_de_high1",
+			"intensity": "high",
+			"interactions": [
 				"m_c can never seem explain their health in a way that makes r_c listen..."
 			],
-			"random_status_constraint":[
+			"random_status_constraint": [
 				"medicine cat"
 			]
 		},
 		{
-			"id":"trust_for_medcat_de_high1",
-			"intensity":"high",
-			"interactions":[
+			"id": "trust_for_medcat_de_high1",
+			"intensity": "high",
+			"interactions": [
 				"m_c is dissatisfied that r_c can't seem to get rid of their chronic pain."
 			],
-			"main_status_constraint":[
+			"main_status_constraint": [
 				"elder"
 			],
-			"random_status_constrain,t":[
+			"random_status_constrain,t": [
 				"medicine cat"
 			]
 		}

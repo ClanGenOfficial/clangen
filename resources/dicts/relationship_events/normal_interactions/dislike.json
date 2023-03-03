@@ -1,41 +1,6 @@
 {
 	"increase": [
 		{
-
-			"id": "sample_id",
-			"biome": ["Any"],
-			"season": ["Any"],
-			"intensity": "medium",
-			"interactions": [
-				"m_c does some interactions with r_c"
-			],
-			"relationship_constraint": [],
-			"main_status_constraint": [],
-			"main_trait_constraint": [],
-			"main_skill_constraint": [],
-			"random_status_constraint": [],
-			"random_trait_constraint": [],
-			"random_skill_constraint": [],
-			"reaction_random_cat": {
-				"romantic": "increase",
-				"platonic": "neutral",
-				"dislike": "decrease",
-				"admiration": "neutral",
-				"comfortable": "increase",
-				"jealousy": "neutral",
-				"trust": "increase"
-			},
-			"also_influences": {
-				"romantic": "increase",
-				"platonic": "neutral",
-				"dislike": "decrease",
-				"admiration": "neutral",
-				"comfortable": "increase",
-				"jealousy": "neutral",
-				"trust": "increase"
-			}
-		},
-		{
 			"id": "dislike_inc_low1",
 			"intensity": "low",
 			"interactions":[
@@ -144,7 +109,7 @@
 				"deputy",
 				"leader"
 			],
-			"random_trait_constraint":[
+			"random_status_constraint":[
 				"kitten"
 			],
 			"reaction_random_cat":{
@@ -279,40 +244,6 @@
 			"also_influences":{
 				"jealousy": "increase"
 			}
-		}
-	],
-	"decrease": [
-		{
-			"id":"dislike_de_low1",
-			"intensity": "low",
-			"interactions":[
-				"m_c is surpised by r_c being thoughtful."
-			]
-		},
-		{
-			"id":"dislike_de_low2",
-			"intensity": "low",
-			"interactions":[
-				"m_c apologized to r_c for something or other."
-			],
-			"reaction_random_cat":{
-				"dislike": "decrease"
-			}
-		},
-		{
-			"id": "dislike_de_med1",
-			"interactions": [
-				"m_c realized that they were too harsh in their judgment of r_c."
-			]
-		},
-		{
-			"id":"dislike_de_med2",
-			"interactions":[
-				"m_c covered for r_c on something important."
-			],
-			"reaction_random_cat":{
-				"dislike":"decrease"
-			}
 		},
 		{
 			"id":"dislike_kit_de_med1",
@@ -355,12 +286,46 @@
 				"mediator apprentice",
 				"medicine cat apprentice"
 		]
+		}
+	],
+	"decrease": [
+		{
+			"id":"dislike_de_low1",
+			"intensity": "low",
+			"interactions":[
+				"m_c is surpised by r_c being thoughtful."
+			]
+		},
+		{
+			"id":"dislike_de_low2",
+			"intensity": "low",
+			"interactions":[
+				"m_c apologized to r_c for something or other."
+			],
+			"reaction_random_cat":{
+				"dislike": "decrease"
+			}
+		},
+		{
+			"id": "dislike_de_med1",
+			"interactions": [
+				"m_c realized that they were too harsh in their judgment of r_c."
+			]
+		},
+		{
+			"id":"dislike_de_med2",
+			"interactions":[
+				"m_c covered for r_c on something important."
+			],
+			"reaction_random_cat":{
+				"dislike":"decrease"
+			}
 		},
 		{
 			"id": "dislike_de_high1",
 			"intensity": "high",
 			"interactions":[
-				"m_c is suprised to hear r_c express and ideal they can agree with."
+				"m_c is surprised to hear r_c express and ideal they can agree with."
 			]
 		},
 		{
@@ -372,8 +337,6 @@
 			"reaction_random_cat":{
 				"dislike":"decrease"
 			}
-		},
-		{}
-		
+		}
 	]
 }

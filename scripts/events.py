@@ -1394,8 +1394,11 @@ class Events():
                 random.random() * chance) and cat.age != 'kitten' and cat.age != 'adolescent' and not self.new_cat_invited:
             self.new_cat_invited = True
 
-            self.new_cat_events.handle_new_cats(cat=cat, other_cat=other_cat, war=self.at_war,
+
+            new_cats = self.new_cat_events.handle_new_cats(cat=cat, other_cat=other_cat, war=self.at_war,
                                                 enemy_clan=self.enemy_clan, alive_kits=get_alive_kits(Cat))
+            self.relation_events.welcome_new_cats(new_cats)
+            
 
     def other_interactions(self, cat):
 
@@ -1529,8 +1532,8 @@ class Events():
                 ])
                 if game.clan.game_mode == "classic":
                     disaster.extend([
-                    	' starve to death when no prey is found.'
-                	])
+                        ' starve to death when no prey is found.'
+                    ])
             elif game.clan.current_season == 'Greenleaf':
                 disaster.extend([
                     ' die after overheating.',

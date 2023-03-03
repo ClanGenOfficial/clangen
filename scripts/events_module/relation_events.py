@@ -1,3 +1,4 @@
+import copy
 import itertools
 import random
 from random import choice
@@ -296,6 +297,16 @@ class Relation_Events():
             f'{name} had a litter of {kits_amount} kit(s) with an unknown partner',
             f'{name} had a litter of {kits_amount} kit(s) and refused to talk about their progenitor'
         ]
+
+    def welcome_new_cats(self, new_cats = None):
+        """This function will handle the welcome of new cats, if there are new cats in the clan."""
+        if new_cats is None or len(self.new_cats) <= 0:
+            return
+
+        for new_cat in new_cats:
+            print(new_cat.name)
+
+        print("HERE")
 
     # ---------------------------------------------------------------------------- #
     #                                 handle events                                #

@@ -142,8 +142,9 @@ class NewCatEvents:
         if "other_clan" in new_cat_event.tags:
             types.append("other_clans")
         game.cur_events_list.append(Single_Event(event_text, types, involved_cats))
-        # game.birth_death_events_list.append(death_text)
 
+        return created_cats
+        # game.birth_death_events_list.append(death_text)
 
     def create_new_cat(self,
                        loner=False,

@@ -1,40 +1,6 @@
 {
 	"increase": [
 		{
-			"id": "sample_id",
-			"biome": ["Any"],
-			"season": ["Any"],
-			"intensity": "medium",
-			"interactions": [
-				"m_c does some interactions with r_c"
-			],
-			"relationship_constraint": [],
-			"main_status_constraint": [],
-			"main_trait_constraint": [],
-			"main_skill_constraint": [],
-			"random_status_constraint": [],
-			"random_trait_constraint": [],
-			"random_skill_constraint": [],
-			"reaction_random_cat": {
-				"romantic": "increase",
-				"platonic": "neutral",
-				"dislike": "decrease",
-				"admiration": "neutral",
-				"comfortable": "increase",
-				"jealousy": "neutral",
-				"trust": "increase"
-			},
-			"also_influences": {
-				"romantic": "increase",
-				"platonic": "neutral",
-				"dislike": "decrease",
-				"admiration": "neutral",
-				"comfortable": "increase",
-				"jealousy": "neutral",
-				"trust": "increase"
-			}
-		},
-		{
 			"id": "jel_inc_low1",
 			"intensity": "low",
 			"interactions":[
@@ -118,7 +84,7 @@
 		},
 		{
 			
-			"id":"jealosuy_kit_inc_med3",
+			"id":"jealousy_kit_inc_med3",
 			"interactions":[
 				"m_c looks at r_c and remembers how easy it was to be a kitten.",
 				"m_c is resentful that so much is expected of them, yet no one expects anything of r_c."
