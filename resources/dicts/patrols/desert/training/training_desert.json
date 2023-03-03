@@ -435,7 +435,7 @@
 			"r_c heads off to map out the paths through a rocky maze they've always found confusing. Hunting, fighting, driving off predators, it all requires knowledge of their home turf, it's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
 			"r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow! Purring, they take the opportunity for a small moment of peace, relaxing and enjoying the view.",
 			"r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow! Further investigation shows it's springfed, and s_c purrs. This reliable water source will be important during baking hot greenleaf, there's a relief to discovering it.",
-			"s_c pads confidently through c_n territory. there's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way."
+			"s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way."
 		],
 		"fail_text":[
 			"r_c gets lost in the territory. Somehow.",
@@ -482,7 +482,7 @@
 			"r_c heads off to map out the paths through a rocky maze they've always found confusing. Hunting, fighting, driving off predators, it all requires knowledge of their home turf, it's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
 			"r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow! Purring, they take the opportunity for a small moment of peace, relaxing and enjoying the view.",
 			"r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow! Further investigation shows it's springfed, and s_c purrs. This reliable water source will be important during baking hot greenleaf, there's a relief to discovering it.",
-			"s_c pads confidently through c_n territory. there's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way."
+			"s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way."
 		],
 		"fail_text":[
 			"r_c gets lost in the territory. Somehow.",
@@ -662,7 +662,7 @@
 			"p_l marvels at the opportunity to have s_c's time to themselves. s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so."
 		],
 		"fail_text":[
-			"r_c tries, but both the cats are too tired after a long day's work, and end up snapping at each other. it's nothing serious, but both agree to take some time to cool off.",
+			"r_c tries, but both the cats are too tired after a long day's work, and end up snapping at each other. It's nothing serious, but both agree to take some time to cool off.",
 			"r_c spots p_l looking at them a little bit too admiringly, and ends the training session early, diplomatically making up an excuse."
 		],
 		"win_skills":[
