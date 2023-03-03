@@ -116,6 +116,30 @@
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
+    {
+    "patrol_id": "gen_med_vision4",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["herb_gathering", "random_herbs", "apprentice", "respect", "trust", "jealousy", "patrol_to_p_l", "p_l_to_r_c"],
+    "intro_text": "As the patrol pads out into c_n territory, r_c tells p_l about the dream they had last night, and what the StarClan vision could mean for c_n.",
+    "decline_text": "The cats don't talk about the vision, mouths too full of herbs.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "They have an in depth conversation about r_c's vision as they walk. By the time they head back to camp, they have a good idea of what they should do with the information.",
+        "p_l takes r_c aside to discuss r_c's vision. They don't take the responsibility lightly, and both of them work together to divine the vision's meaning.",
+        "s_c listens intently and tells r_c not to be weirded out, but they had seen the dream, too. r_c is alarmed but s_c soothes them and explains that StarClan sometimes shows them others' dreams, but this one luckily was just a mild warning."
+    ],
+    "fail_text": [
+        "p_l shakes their head sadly. They can't make sense of the vision.",
+        "r_c notices p_l looking at them enviously, and withdraws from the group, dismissing the dream as unimportant."
+    ],
+    "win_skills": ["dreamwalker"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
 {
     "patrol_id": "gen_med_ghost_star1",
     "biome": "Any",
