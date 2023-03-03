@@ -545,19 +545,19 @@
         "trust",
         "platonic"
     ],
-    "intro_text": "app1 trots over to p_l, the two apprentices grinning at each other with raised tails. p_l needs an escort to gather herbs, and as luck would have it, the only cat free at the moment is their sibling, app1!",
-    "decline_text": "... Or so they thought. app1 is called away by their mentor for training, and they scamper off with an apologetic glance back, leaving p_l by themself with their tail sagging to the ground.",
+    "intro_text": "app2 trots over to p_l, the two apprentices grinning at each other with raised tails. p_l needs an escort to gather herbs, and as luck would have it, the only cat free at the moment is their sibling, app2!",
+    "decline_text": "... Or so they thought. app2 is called away by their mentor for training, and they scamper off with an apologetic glance back, leaving p_l by themself with their tail sagging to the ground.",
     "chance_of_success": 40,
     "exp": 20,
     "success_text": [
-        "p_l and app1 walk with their tails entwined and pelts brushing together, thrilled to be able to patrol together. p_l doesn't regret becoming a medicine cat, but they do feel secluded at times, watching app1 train and patrol with everyone. The siblings make the most of their time together, returning home side-by-side with their jaws full of herbs.",
-        "p_l and app1 race through the territory together, hearts light with joy at being able to patrol together despite their different roles. So what if they take a little longer coming home than they should? They still return to camp with plenty of herbs! They deserve to have some sibling time for a change.",
+        "p_l and app2 walk with their tails entwined and pelts brushing together, thrilled to be able to patrol together. p_l doesn't regret becoming a medicine cat, but they do feel secluded at times, watching app2 train and patrol with everyone. The siblings make the most of their time together, returning home side-by-side with their jaws full of herbs.",
+        "p_l and app2 race through the territory together, hearts light with joy at being able to patrol together despite their different roles. So what if they take a little longer coming home than they should? They still return to camp with plenty of herbs! They deserve to have some sibling time for a change.",
         null,
-        "s_c seems a little distracted, deep in thought about something. When app1 asks what's up, s_c blinks slowly at them before confessing how much they miss spending time together. They burrow their noses into each others pelts and purr, soaking in the moment and their love for each other before continuing on, and promise to spend more time together. "
+        "s_c seems a little distracted, deep in thought about something. When app2 asks what's up, s_c blinks slowly at them before confessing how much they miss spending time together. They burrow their noses into each others pelts and purr, soaking in the moment and their love for each other before continuing on, and promise to spend more time together. "
     ],
     "fail_text": [
-        "p_l and app1 are far too distracted playing and catching up with one another, and get nothing useful done.",
-        "s_c seems a little distracted, deep in thought about something. When app1 asks what's up, s_c blinks slowly at them before confessing how much they miss spending time together. app1 tries to comfort them, but s_c shakes their head, knowing that no matter what they say, their roles are just too different. Both cats are too upset to gather herbs."
+        "p_l and app2 are far too distracted playing and catching up with one another, and get nothing useful done.",
+        "s_c seems a little distracted, deep in thought about something. When app2 asks what's up, s_c blinks slowly at them before confessing how much they miss spending time together. app2 tries to comfort them, but s_c shakes their head, knowing that no matter what they say, their roles are just too different. Both cats are too upset to gather herbs."
     ],
     "win_trait": [
         "loving"
