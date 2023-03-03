@@ -109,6 +109,8 @@ def json_load():
 
             if cat["tortie_pattern"] and "tortie" in cat["tortie_pattern"]:
                 new_cat.tortiepattern = sub("tortie", "", cat["tortie_pattern"]).lower()
+                if new_cat.tortiepattern == "solid":
+                    new_cat.tortiepattern = "single"
             else:
                 new_cat.tortiepattern = cat["tortie_pattern"]
 
