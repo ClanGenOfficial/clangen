@@ -77,7 +77,6 @@ class MakeClanScreen(Screens):
 
     def __init__(self, name=None):
         super().__init__(name)
-        self.rolls_left = 3
         self.menu_warning = None
 
     def screen_switches(self):
@@ -164,13 +163,11 @@ class MakeClanScreen(Screens):
             self.open_game_mode()
 
     def handle_choose_leader_event(self, event):
-        if event.ui_element in [self.elements['roll1'], self.elements['roll2'], self.elements['roll3']]:
-            event.ui_element.disable()
+        if event.ui_element is self.elements['roll']:
             self.elements['select_cat'].hide()
             create_example_cats()  # create new cats
             self.selected_cat = None  # Your selected cat now no longer exists. Sad. They go away.
             self.refresh_cat_images_and_info()  # Refresh all the images.
-            self.rolls_left -= 1
         elif event.ui_element in [self.elements["cat" + str(u)] for u in range(0, 12)]:
             self.selected_cat = event.ui_element.return_cat_object()
             self.refresh_cat_images_and_info(self.selected_cat)
@@ -292,7 +289,6 @@ class MakeClanScreen(Screens):
         self.main_menu.kill()
         self.menu_warning.kill()
         self.clear_all_page()
-        self.rolls_left = 3
         return super().exit_screen()
 
     def on_use(self):
@@ -661,22 +657,10 @@ class MakeClanScreen(Screens):
 
         # Roll_buttons
         x_pos = 310
-        y_pos = 470
-        self.elements['roll1'] = UIImageButton(scale(pygame.Rect((x_pos, y_pos), (68, 68))), "",
-                                               object_id="#random_dice_button", manager=MANAGER)
-        y_pos += 80
-        self.elements['roll2'] = UIImageButton(scale(pygame.Rect((x_pos, y_pos), (68, 68))), "",
-                                               object_id="#random_dice_button", manager=MANAGER)
-        y_pos += 80
-        self.elements['roll3'] = UIImageButton(scale(pygame.Rect((x_pos, y_pos), (68, 68))), "",
+        y_pos = 535
+        self.elements['roll'] = UIImageButton(scale(pygame.Rect((x_pos, y_pos), (68, 68))), "",
                                                object_id="#random_dice_button", manager=MANAGER)
 
-        if self.rolls_left <= 2:
-            self.elements['roll1'].disable()
-        if self.rolls_left <= 1:
-            self.elements['roll2'].disable()
-        if self.rolls_left == 0:
-            self.elements['roll3'].disable()
 
         # info for chosen cats:
         self.elements['cat_info'] = UITextBoxTweaked("", scale(pygame.Rect((880, 520), (200, 200))), visible=False,
