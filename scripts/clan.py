@@ -279,7 +279,6 @@ class Clan():
         if cat.ID in Cat.all_cats.keys(
         ) and not cat.outside and cat.ID in Cat.outside_cats.keys():
             # The outside-value must be set to True before the cat can go to cotc
-            self.clan_cats.append(cat.ID)
             Cat.outside_cats.pop(cat.ID)
             cat.clan = str(game.clan.name)
 
@@ -369,7 +368,7 @@ class Clan():
         game.save_clanlist(clan)
         game.cur_events_list.clear()
 
-        # game.rpc.close()
+        game.rpc.close()
         pygame.display.quit()
         pygame.quit()
         exit()
