@@ -150,6 +150,7 @@ class ClanScreen(Screens):
         self.label_toggle = UIImageButton(scale(pygame.Rect((50, 1282), (64, 64))), "", object_id="#checked_checkbox")
 
         self.save_button = UIImageButton(scale(pygame.Rect(((686, 1286), (228, 60)))), "", object_id="#save_button")
+        self.save_button.enable()
         self.save_button_saved_state = pygame_gui.elements.UIImage(
             scale(pygame.Rect((686, 1286), (228, 60))),
             pygame.transform.scale(
@@ -196,6 +197,9 @@ class ClanScreen(Screens):
         del self.label_toggle
         self.show_den_labels.kill()
         del self.show_den_labels
+
+        # reset save status
+        game.switches['saved_clan'] = False
 
     def update_camp_bg(self):
         light_dark = "light"

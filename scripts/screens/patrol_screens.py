@@ -218,12 +218,11 @@ class PatrolScreen(Screens):
             self.elements["random"].enable()
 
             # making sure meds don't get the option for other patrols
-            med = False
-            for cat in self.current_patrol:
-                if cat.status in ['medicine cat', 'medicine cat apprentice']:
-                    med = True
-                    self.patrol_type = 'med'
-
+            if any((cat.status in ['medicine cat', 'medicine cat apprentice'] for cat in self.current_patrol)):
+                self.patrol_type = 'med'
+            else:
+                if self.patrol_type == 'med':
+                    self.patrol_type = 'general'
 
             if game.clan.game_mode != 'classic':
                 self.elements['paw'].enable()
@@ -233,21 +232,21 @@ class PatrolScreen(Screens):
 
                 self.elements['info'].kill()  # clearing the text before displaying new text
 
-                if med is False and self.current_patrol:
+                if self.patrol_type != 'med' and self.current_patrol:
                     self.elements['herb'].disable()
                     if self.patrol_type == 'med':
                         self.patrol_type = 'general'
 
                 if self.patrol_type == 'general':
                     text = 'random patrol type'
-                elif self.patrol_type == 'training' and med is False:
+                elif self.patrol_type == 'training':
                     text = 'training'
-                elif self.patrol_type == 'border' and med is False:
+                elif self.patrol_type == 'border':
                     text = 'border'
-                elif self.patrol_type == 'hunting' and med is False:
+                elif self.patrol_type == 'hunting':
                     text = 'hunting'
                 elif self.patrol_type == 'med':
-                    if med is True and self.current_patrol:
+                    if self.current_patrol:
                         text = 'herb gathering'
                         self.elements['mouse'].disable()
                         self.elements['claws'].disable()
@@ -590,7 +589,7 @@ class PatrolScreen(Screens):
         if normal_events:
             self.normal_event_choice = choice(normal_events)  # Set patrol event.
         else:
-            print("ERROR: NO POSSIBLE NORMAL PATROLS FOUND")
+            print("ERROR: NO POSSIBLE NORMAL PATROLS FOUND for: ", patrol.patrol_statuses)
             self.change_screen("clan screen")
             return
         if romantic_events:
