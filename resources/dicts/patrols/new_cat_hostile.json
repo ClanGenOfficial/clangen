@@ -83,7 +83,7 @@
     ],
     "decline_text": "They decide to leave the kit alone.",
     "antagonize_text": "Your patrol moves the kit away from the territory, they have no interest in strange kits.",
-    "antagonize_fail_text": "The kit smells of two-legs, your patrol has no interest in what will surely grow to be a weak cat.",
+    "antagonize_fail_text": "The kit smells of Twolegs, your patrol has no interest in what will surely grow to be a weak cat.",
     "chance_of_success": 40,
     "exp": 10,
     "win_skills": ["smart", "very smart", "extremely smart"],
