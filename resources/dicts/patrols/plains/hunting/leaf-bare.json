@@ -342,7 +342,7 @@
             "respect",
             "rel_patrol"
         ],
-        "intro_text": "Your patrol catches the scent of a fox. Tracking it, they find a swift fox feeding on a cow carcass, either a small female or one of last Newleaf's calves. The cat-sized predator definitely didn't kill this massive hunk of fresh-kill.",
+        "intro_text": "Your patrol catches the scent of a fox. Tracking it, they find a swift fox feeding on a cow carcass, either a small female or one of last newleaf's calves. The cat-sized predator definitely didn't kill this massive hunk of fresh-kill.",
         "decline_text": "Your patrol decides not to quarrel with the fox - bigger predators will be attracted here. Best to leave sooner rather than later.",
         "chance_of_success": 60,
         "exp": 20,
@@ -400,7 +400,7 @@
             "no_body",
             "small_bite_injury"
         ],
-        "intro_text": "r_c catches the scent of a fox. Tracking it, they find a swift fox feeding on a cow carcass, either a small female or one of last Newleaf's calves. Roughly equal in size to r_c, the swift fox definitely didn't bring down this feast themselves.",
+        "intro_text": "r_c catches the scent of a fox. Tracking it, they find a swift fox feeding on a cow carcass, either a small female or one of last newleaf's calves. Roughly equal in size to r_c, the swift fox definitely didn't bring down this feast themselves.",
         "decline_text": "r_c decides not to quarrel with the fox - bigger predators will be attracted here. Best to leave sooner rather than later.",
         "chance_of_success": 50,
         "exp": 10,

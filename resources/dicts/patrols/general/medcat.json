@@ -3,7 +3,7 @@
     "patrol_id": "gen_med_sunny1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["med_only", "random_herbs", "platonic", "comfort", "respect", "trust", "med_cat"],
+    "tags": ["herb_gathering", "med_only", "random_herbs", "platonic", "comfort", "respect", "trust", "med_cat"],
     "intro_text": "The patrol finds a nice spot to sun themselves.",
     "decline_text": "They decide to stay focused instead.",
     "chance_of_success": 80,
@@ -28,7 +28,7 @@
     "patrol_id": "gen_med_sunny2",
     "biome": "Any",
     "season": "Any",
-    "tags": ["med_cat", "random_herbs"],
+    "tags": ["herb_gathering", "random_herbs"],
     "intro_text": "r_c finds a nice spot to sun themselves.",
     "decline_text": "They decide to stay focused instead.",
     "chance_of_success": 60,
@@ -49,7 +49,7 @@
     "patrol_id": "gen_med_vision1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["med_cat", "random_herbs", "respect", "trust", "jealousy", "patrol_to_p_l", "p_l_to_r_c"],
+    "tags": ["herb_gathering", "med_cat", "random_herbs", "respect", "trust", "jealousy", "patrol_to_p_l", "p_l_to_r_c"],
     "intro_text": "As the medicine cat's patrol pads out into c_n territory, r_c tells p_l about the dream they had last night, and what the StarClan vision could mean for c_n.",
     "decline_text": "The cats don't talk about the vision, mouths too full of herbs.",
     "chance_of_success": 40,
@@ -73,7 +73,7 @@
     "patrol_id": "gen_med_vision2",
     "biome": "Any",
     "season": "Any",
-    "tags": ["med_cat", "random_herbs", "respect", "trust", "jealousy", "patrol_to_p_l", "p_l_to_r_c"],
+    "tags": ["herb_gathering", "med_cat", "random_herbs", "respect", "trust", "jealousy", "patrol_to_p_l", "p_l_to_r_c"],
     "intro_text": "As the medicine cat's patrol pads out into c_n territory, r_c tells p_l about the dream they had last night, and what the StarClan vision could mean for c_n.",
     "decline_text": "The cats don't talk about the vision, mouths too full of herbs.",
     "chance_of_success": 40,
@@ -97,7 +97,7 @@
     "patrol_id": "gen_med_vision3",
     "biome": "Any",
     "season": "Any",
-    "tags": ["med_cat", "herb", "cobwebs", "no_herbs0"],
+    "tags": ["herb_gathering", "med_cat", "herb", "cobwebs", "no_herbs0"],
     "intro_text": "As they head out to gather cobwebs, r_c thinks about the dream they had last night. . . was it sent by StarClan?",
     "decline_text": "They push it from their mind.",
     "chance_of_success": 40,
@@ -116,11 +116,35 @@
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
+    {
+    "patrol_id": "gen_med_vision4",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["herb_gathering", "random_herbs", "apprentice", "respect", "trust", "jealousy", "patrol_to_p_l", "p_l_to_r_c"],
+    "intro_text": "As the patrol pads out into c_n territory, r_c tells p_l about the dream they had last night, and what the StarClan vision could mean for c_n.",
+    "decline_text": "The cats don't talk about the vision, mouths too full of herbs.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "They have an in depth conversation about r_c's vision as they walk. By the time they head back to camp, they have a good idea of what they should do with the information.",
+        "p_l takes r_c aside to discuss r_c's vision. They don't take the responsibility lightly, and both of them work together to divine the vision's meaning.",
+        "s_c listens intently and tells r_c not to be weirded out, but they had seen the dream, too. r_c is alarmed but s_c soothes them and explains that StarClan sometimes shows them others' dreams, but this one luckily was just a mild warning."
+    ],
+    "fail_text": [
+        "p_l shakes their head sadly. They can't make sense of the vision.",
+        "r_c notices p_l looking at them enviously, and withdraws from the group, dismissing the dream as unimportant."
+    ],
+    "win_skills": ["dreamwalker"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
 {
     "patrol_id": "gen_med_ghost_star1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["med_cat", "no_app", "random_herbs"],
+    "tags": ["herb_gathering", "med_cat", "no_app", "random_herbs"],
     "intro_text": "As r_c pads through c_n territory, they feel a presence join them.",
     "decline_text": "Their companion stays with them as silent support while they work.",
     "chance_of_success": 30,
@@ -144,7 +168,7 @@
     "patrol_id": "gen_med_ghost_star2",
     "biome": "Any",
     "season": "Any",
-    "tags": ["med_cat", "random_herbs", "warrior", "comfort", "respect", "patrol_to_p_l"],
+    "tags": ["herb_gathering", "random_herbs", "warrior", "comfort", "respect", "patrol_to_p_l"],
     "intro_text": "As p_l pads through c_n territory with their entourage, they feel a presence join them.",
     "decline_text": "Their companion stays with them as silent support while they continue on.",
     "chance_of_success": 30,
@@ -168,7 +192,7 @@
     "patrol_id": "gen_med_ghost_star3",
     "biome": "Any",
     "season": "Any",
-    "tags": ["med_cat", "random_herbs", "apprentice"],
+    "tags": ["herb_gathering", "med_cat", "random_herbs", "apprentice"],
     "intro_text": "As app1 pads through c_n territory, they feel a presence join them.",
     "decline_text": "Their companion stays with them as silent support while they work. It's a little unnerving, but app1 thinks they mean well?",
     "chance_of_success": 30,
@@ -190,7 +214,7 @@
     "patrol_id": "gen_med_ghost_star4",
     "biome": "Any",
     "season": "Any",
-    "tags": ["adult_stat","med_cat", "random_herbs", "apprentice", "med_only", "comfort", "respect", "patrol_to_p_l"],
+    "tags": ["herb_gathering", "adult_stat","med_cat", "random_herbs", "apprentice", "med_only", "comfort", "respect", "patrol_to_p_l"],
     "intro_text": "As app1 pads through c_n territory, they feel a presence join them.",
     "decline_text": "Their companion stays with them as silent support while they work.",
     "chance_of_success": 30,
@@ -214,7 +238,7 @@
     "patrol_id": "gen_med_medwar_natureofstarclan",
     "biome": "Any",
     "season": "Any",
-    "tags": ["med_cat", "warrior", "random_herbs", "no_app", "trust", "comfort", "respect", "p_l_to_r_c", "s_c_to_r_c"],
+    "tags": ["herb_gathering", "med_cat", "warrior", "random_herbs", "no_app", "trust", "comfort", "respect", "p_l_to_r_c", "s_c_to_r_c"],
     "intro_text": "During a patrol looking for herbs, p_l notices that r_c seems more quiet than usual. When prompted, r_c slowly asks if p_l could teach them more about the nature of StarClan.",
     "decline_text": "p_l opens their mouth to answer, but the cry of another patrol looking for them shuts down the conversation. p_l races away towards the scene leaving r_c behind.",
     "chance_of_success": 60,
@@ -238,7 +262,7 @@
     "patrol_id": "gen_med_medwar_natureofdeath",
     "biome": "Any",
     "season": "Any",
-    "tags": ["med_cat", "warrior", "random_herbs", "no_app", "trust", "comfort", "respect", "p_l_to_r_c", "s_c_to_r_c"],
+    "tags": ["herb_gathering", "med_cat", "warrior", "random_herbs", "no_app", "trust", "comfort", "respect", "p_l_to_r_c", "s_c_to_r_c"],
     "intro_text": "To p_l's concern, their warrior escort is unusually quiet. When prompted on their troubles, r_c comments that they could not help but think of what legacy they would leave behind if StarClan calls upon them.",
     "decline_text": "p_l isn't sure how to exactly address such a statement, and quickly attempts to distract r_c with some herb collecting.",
     "chance_of_success": 60,
@@ -262,7 +286,7 @@
     "patrol_id": "gen_med_medwar_puddles",
     "biome": "Any",
     "season": "Any",
-    "tags": ["med_cat", "warrior", "random_herbs", "no_app", "trust", "comfort", "respect", "p_l_to_r_c", "s_c_to_r_c"],
+    "tags": ["herb_gathering", "med_cat", "warrior", "random_herbs", "no_app", "trust", "comfort", "respect", "p_l_to_r_c", "s_c_to_r_c"],
     "intro_text": "It was one of the worst storms of the season, and left p_l in an unavoidably grumpy mood. Herbs strewn about, prey in hiding, it would take forever to find anything. r_c attempts to find a way to cheer up the healer.",
     "decline_text": "But before r_c could come up with a plan, a cry from the camp forces p_l to return in a hurry.",
     "chance_of_success": 60,
@@ -284,7 +308,7 @@
     "patrol_id": "gen_med_group_randomherb1",
     "biome": "Any",
     "season": "Any",
-    "tags": [
+    "tags": ["herb_gathering", 
         "med_cat",
         "med_only",
         "random_herbs",
@@ -320,7 +344,7 @@
     "patrol_id": "gen_med_group_randomherb2",
     "biome": "Any",
     "season": "Any",
-    "tags": [
+    "tags": ["herb_gathering", 
         "med_cat",
         "med_only",
         "random_herbs",
@@ -356,8 +380,7 @@
     "patrol_id": "gen_med_appgroup_randomherb1",
     "biome": "Any",
     "season": "Any",
-    "tags": [
-        "med_cat",
+    "tags": ["herb_gathering",
         "med_only",
         "apprentice",
         "three_apprentices",
@@ -388,8 +411,7 @@
     "patrol_id": "gen_med_appgroup_randomherb2",
     "biome": "Any",
     "season": "Any",
-    "tags": [
-        "med_cat",
+    "tags": ["herb_gathering",
         "med_only",
         "apprentice",
         "four_apprentices",
@@ -420,8 +442,7 @@
     "patrol_id": "gen_med_appgroup_randomherb3",
     "biome": "Any",
     "season": "Any",
-    "tags": [
-        "med_cat",
+    "tags": ["herb_gathering",
         "med_only",
         "apprentice",
         "five_apprentices",
@@ -452,8 +473,7 @@
     "patrol_id": "gen_med_appgroup_randomherb4",
     "biome": "Any",
     "season": "Any",
-    "tags": [
-        "med_cat",
+    "tags": ["herb_gathering",
         "med_only",
         "apprentice",
         "six_apprentices",
@@ -484,8 +504,7 @@
     "patrol_id": "gen_med_appwarrior_bossypants1",
     "biome": "Any",
     "season": "Any",
-    "tags": [
-        "med_cat",
+    "tags": ["herb_gathering",
         "apprentice",
         "random_herbs",
         "warrior",
@@ -513,8 +532,7 @@
     "patrol_id": "gen_med_appwarrior_bossypants2",
     "biome": "Any",
     "season": "Any",
-    "tags": [
-        "med_cat",
+    "tags": ["herb_gathering",
         "apprentice",
         "random_herbs",
         "warrior",
@@ -541,8 +559,7 @@
     "patrol_id": "gen_med_medappwarriorapp_siblings1",
     "biome": "Any",
     "season": "Any",
-    "tags": [
-        "med_cat",
+    "tags": ["herb_gathering",
         "warrior_app",
         "apprentice",
         "two_apprentices",
@@ -552,19 +569,19 @@
         "trust",
         "platonic"
     ],
-    "intro_text": "app1 trots over to p_l, the two apprentices grinning at each other with raised tails. p_l needs an escort to gather herbs, and as luck would have it, the only cat free at the moment is their sibling, app1!",
-    "decline_text": "... Or so they thought. app1 is called away by their mentor for training, and they scamper off with an apologetic glance back, leaving p_l by themself with their tail sagging to the ground.",
+    "intro_text": "app2 trots over to p_l, the two apprentices grinning at each other with raised tails. p_l needs an escort to gather herbs, and as luck would have it, the only cat free at the moment is their sibling, app2!",
+    "decline_text": "... Or so they thought. app2 is called away by their mentor for training, and they scamper off with an apologetic glance back, leaving p_l by themself with their tail sagging to the ground.",
     "chance_of_success": 40,
     "exp": 20,
     "success_text": [
-        "p_l and app1 walk with their tails entwined and pelts brushing together, thrilled to be able to patrol together. p_l doesn't regret becoming a medicine cat, but they do feel secluded at times, watching app1 train and patrol with everyone. The siblings make the most of their time together, returning home side-by-side with their jaws full of herbs.",
-        "p_l and app1 race through the territory together, hearts light with joy at being able to patrol together despite their different roles. So what if they take a little longer coming home than they should? They still return to camp with plenty of herbs! They deserve to have some sibling time for a change.",
+        "p_l and app2 walk with their tails entwined and pelts brushing together, thrilled to be able to patrol together. p_l doesn't regret becoming a medicine cat, but they do feel secluded at times, watching app2 train and patrol with everyone. The siblings make the most of their time together, returning home side-by-side with their jaws full of herbs.",
+        "p_l and app2 race through the territory together, hearts light with joy at being able to patrol together despite their different roles. So what if they take a little longer coming home than they should? They still return to camp with plenty of herbs! They deserve to have some sibling time for a change.",
         null,
-        "s_c seems a little distracted, deep in thought about something. When app1 asks what's up, s_c blinks slowly at them before confessing how much they miss spending time together. They burrow their noses into each others pelts and purr, soaking in the moment and their love for each other before continuing on, and promise to spend more time together. "
+        "s_c seems a little distracted, deep in thought about something. When app2 asks what's up, s_c blinks slowly at them before confessing how much they miss spending time together. They burrow their noses into each others pelts and purr, soaking in the moment and their love for each other before continuing on, and promise to spend more time together. "
     ],
     "fail_text": [
-        "p_l and app1 are far too distracted playing and catching up with one another, and get nothing useful done.",
-        "s_c seems a little distracted, deep in thought about something. When app1 asks what's up, s_c blinks slowly at them before confessing how much they miss spending time together. app1 tries to comfort them, but s_c shakes their head, knowing that no matter what they say, their roles are just too different. Both cats are too upset to gather herbs."
+        "p_l and app2 are far too distracted playing and catching up with one another, and get nothing useful done.",
+        "s_c seems a little distracted, deep in thought about something. When app2 asks what's up, s_c blinks slowly at them before confessing how much they miss spending time together. app2 tries to comfort them, but s_c shakes their head, knowing that no matter what they say, their roles are just too different. Both cats are too upset to gather herbs."
     ],
     "win_trait": [
         "loving"
@@ -586,7 +603,7 @@
     "patrol_id": "gen_med_medwarrior_siblings1",
     "biome": "Any",
     "season": "Any",
-    "tags": [
+    "tags": ["herb_gathering", 
         "med_cat",
         "warrior",
         "random_herbs",
@@ -632,7 +649,7 @@
     "patrol_id": "gen_med_medwarriorapp_curiosity1",
     "biome": "Any",
     "season": "Any",
-    "tags": [
+    "tags": ["herb_gathering", 
         "med_cat",
         "apprentice",
         "warrior_app",
@@ -676,7 +693,7 @@
     "patrol_id": "gen_med_medwarriorapp_curiosity2",
     "biome": "Any",
     "season": "Any",
-    "tags": [
+    "tags": ["herb_gathering", 
         "med_cat",
         "apprentice",
         "warrior_app",
@@ -716,7 +733,7 @@
     "patrol_id": "gen_med_medwarriorapp_curiosity3",
     "biome": "Any",
     "season": "Any",
-    "tags": [
+    "tags": ["herb_gathering", 
         "med_cat",
         "apprentice",
         "warrior_app",
@@ -756,7 +773,7 @@
     "patrol_id": "gen_med_medwarriorapp_curiosity4",
     "biome": "Any",
     "season": "Any",
-    "tags": [
+    "tags": ["herb_gathering", 
         "med_cat",
         "apprentice",
         "warrior_app",
@@ -798,7 +815,7 @@
     "patrol_id": "gen_med_medwarriorapp_curiosity5",
     "biome": "Any",
     "season": "Any",
-    "tags": [
+    "tags": ["herb_gathering", 
         "med_cat",
         "apprentice",
         "warrior_app",
@@ -839,7 +856,7 @@
     "patrol_id": "gen_med_discussion1",
     "biome": "Any",
     "season": "Any",
-    "tags": [
+    "tags": ["herb_gathering", 
         "med_cat",
         "med_only",
         "no_app",
@@ -872,7 +889,7 @@
     "patrol_id": "gen_med_discussion2",
     "biome": "Any",
     "season": "Any",
-    "tags": [
+    "tags": ["herb_gathering", 
         "med_cat",
         "med_only",
         "no_app",
@@ -905,7 +922,7 @@
     "patrol_id": "gen_med_discussion3",
     "biome": "Any",
     "season": "Any",
-    "tags": [
+    "tags": ["herb_gathering", 
         "med_cat",
         "med_only",
         "no_app",
@@ -934,7 +951,7 @@
     "patrol_id": "gen_med_discussion4",
     "biome": "Any",
     "season": "Any",
-    "tags": [
+    "tags": ["herb_gathering", 
         "med_cat",
         "med_only",
         "no_app",
@@ -963,7 +980,7 @@
     "patrol_id": "gen_med_discussion5",
     "biome": "Any",
     "season": "Any",
-    "tags": [
+    "tags": ["herb_gathering", 
         "med_cat",
         "med_only",
         "no_app",
