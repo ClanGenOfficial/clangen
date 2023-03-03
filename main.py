@@ -51,7 +51,7 @@ if os.environ.get('CODESPACES'):
 
 # Version Number to be displayed.
 # This will only be shown as a fallback, when the git commit hash can't be found.
-VERSION_NUMBER = "Ver. 0.6.0dev"
+VERSION_NUMBER = "Ver. 0.7.0"
 
 # import all screens for initialization (Note - must be done after pygame_gui manager is created)
 from scripts.screens.all_screens import start_screen
