@@ -16,7 +16,6 @@
         "r_c dips one paw in the water and hisses, proclaiming that it's much too cold and urging p_l to come back to camp with them instead.",
         "s_c tries their best to show off their swimming skills, but their companion just isn't paying attention, too focused on their own swimming to notice. Eventually, s_c gives up for now, discouraged."
     ],
-    "fail_skills": ["None"],
     "fail_trait": ["ambitious", "childish", "insecure", "lonesome"],
     "min_cats": 2,
     "max_cats": 2,

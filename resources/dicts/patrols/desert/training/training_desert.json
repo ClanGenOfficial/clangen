@@ -45,6 +45,7 @@
 		"tags":[
 			"death",
 			"scar",
+			"ONE",
 			"training"
 		],
 		"intro_text":"r_c wanders past an old badger sett overlooking a dried up riverbed, only to freeze. There's new scent here, acrid and sour.",
@@ -107,6 +108,7 @@
 		"tags":[
 			"death",
 			"scar",
+			"ONE",
 			"training"
 		],
 		"intro_text":"p_l wanders past an old badger sett overlooking a dried up riverbed, only to freeze. There's new scent here, acrid and sour.",
@@ -171,7 +173,8 @@
 			"comfort",
 			"injury",
 			"death",
-			"scar"
+			"scar",
+			"BRIDGE"
 		],
 		"intro_text":"Up at the front of the patrol, p_l hears a quiet swish and startled yowling. Turning back, they spot r_c being swallowed by a collapsing sand dune.",
 		"decline_text":"p_l runs back to camp to fetch help.",
@@ -205,9 +208,6 @@
 			"wise",
 			"inquisitive"
 		],
-		"fail_skills":[
-			"None"
-		],
 		"fail_trait":[
 			"ambitious",
 			"bloodthirsty",
@@ -236,7 +236,8 @@
 			"comfort",
 			"injury",
 			"death",
-			"scar"
+			"scar",
+			"TOETRAP"
 		],
 		"intro_text":"Trailing behind the patrol, there's a quiet swish below r_c. They look around wildly, just in time for the world to tip upside-down as the sand dune beneath them collapses.",
 		"decline_text":"Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
@@ -270,9 +271,6 @@
 			"wise",
 			"inquisitive"
 		],
-		"fail_skills":[
-			"None"
-		],
 		"fail_trait":[
 			"ambitious",
 			"bloodthirsty",
@@ -299,7 +297,8 @@
 			"training",
 			"injury",
 			"death",
-			"scar"
+			"scar",
+			"RIGHTEAR"
 		],
 		"intro_text":"Out in the desert training alone, r_c hears a quiet swoosh, and the world disappears as they fall into a collapsing sand dune.",
 		"decline_text":"Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
@@ -317,18 +316,6 @@
 			"Hurt and wheezing, r_c is alone as they drift to StarClan.",
 			"r_c eventually manages to pull themselves free, but they're battered and injured, and have to spend the night out alone on the beach before a patrol finds them the next morning and helps them back to camp."
 		],
-		"win_skills":[
-			"None"
-		],
-		"win_trait":[
-			"None"
-		],
-		"fail_skills":[
-			"None"
-		],
-		"fail_trait":[
-			"None"
-		],
 		"min_cats":1,
 		"max_cats":1,
 		"antagonize_text":null,
@@ -339,14 +326,15 @@
 		]
 	},
 	{
-		"patrol_id":"dst_train_solo1",
+		"patrol_id":"dst_train_soloapp1",
 		"biome":"desert",
 		"season":"Any",
 		"tags":[
 			"training",
 			"apprentice",
 			"injury",
-			"scar"
+			"scar",
+			"SIDE"
 		],
 		"intro_text":"r_c heads out into the desert alone, but maybe an apprentice shouldn't try to do a solo patrol.",
 		"decline_text":"r_c turns back to camp, deciding that this is a bad idea.",
@@ -364,9 +352,6 @@
 			null,
 			"The apprentice wanders along obliviously, and manages to wedge themselves between two rocks. Bruised and sore, r_c has to report to the medicine cat den when they return to camp."
 		],
-		"win_skills":[
-			"None"
-		],
 		"win_trait":[
 			"adventurous",
 			"bold",
@@ -376,9 +361,6 @@
 			"daring",
 			"playful",
 			"righteous"
-		],
-		"fail_skills":[
-			"None"
 		],
 		"fail_trait":[
 			"insecure",
@@ -429,9 +411,6 @@
 			"playful",
 			"righteous"
 		],
-		"fail_skills":[
-			"None"
-		],
 		"fail_trait":[
 			"insecure",
 			"lonesome",
@@ -478,9 +457,6 @@
 			"daring",
 			"playful",
 			"righteous"
-		],
-		"fail_skills":[
-			"None"
 		],
 		"fail_trait":[
 			"insecure",
@@ -529,9 +505,6 @@
 			"playful",
 			"righteous"
 		],
-		"fail_skills":[
-			"None"
-		],
 		"fail_trait":[
 			"insecure",
 			"lonesome",
@@ -567,9 +540,6 @@
 			"app2 refuses to go any further from camp while it's so hot, and app1 gives up on their idea, disappointed they didn't get to spend time with app2.",
 			"app2 stops them on the rocky path, and asks why app1 wanted to wander off into the wilderness so badly. app1 stutters out some nonsense about hunting, and then runs off into the desert."
 		],
-		"win_skills":[
-			"None"
-		],
 		"win_trait":[
 			"adventurous",
 			"bold",
@@ -579,12 +549,6 @@
 			"daring",
 			"playful",
 			"righteous"
-		],
-		"fail_skills":[
-			"None"
-		],
-		"fail_trait":[
-			"None"
 		],
 		"min_cats":2,
 		"max_cats":2,
@@ -618,9 +582,6 @@
 			"Watching the glowing dots scurrying around on the sand, bluer than blue, app1 purrs, telling app2 this is what they wanted to show them. app2 looks horrified - scorpions? They don't care that the bugs glow, ewww!",
 			"app2 stops them on the outlook, and asks why app1 wanted to wander off into the wilderness so badly. app1 stutters out some nonsense about hunting, and then runs off into the desert."
 		],
-		"win_skills":[
-			"None"
-		],
 		"win_trait":[
 			"adventurous",
 			"bold",
@@ -630,12 +591,6 @@
 			"daring",
 			"playful",
 			"righteous"
-		],
-		"fail_skills":[
-			"None"
-		],
-		"fail_trait":[
-			"None"
 		],
 		"min_cats":2,
 		"max_cats":2,
@@ -669,9 +624,6 @@
 			"Watching the glowing dots scurrying around on the sand, bluer than blue, app1 purrs, telling app2 this is what they wanted to show them. app2 looks horrified - scorpions? They don't care that the bugs glow, ewww!",
 			"app2 stops them on the outlook, and asks why app1 wanted to wander off into the wilderness so badly. app1 stutters out some nonsense about hunting, and then runs off into the desert."
 		],
-		"win_skills":[
-			"None"
-		],
 		"win_trait":[
 			"adventurous",
 			"bold",
@@ -681,12 +633,6 @@
 			"daring",
 			"playful",
 			"righteous"
-		],
-		"fail_skills":[
-			"None"
-		],
-		"fail_trait":[
-			"None"
 		],
 		"min_cats":2,
 		"max_cats":2,
@@ -731,12 +677,6 @@
 			"daring",
 			"playful",
 			"righteous"
-		],
-		"fail_skills":[
-			"None"
-		],
-		"fail_trait":[
-			"None"
 		],
 		"min_cats":2,
 		"max_cats":2,

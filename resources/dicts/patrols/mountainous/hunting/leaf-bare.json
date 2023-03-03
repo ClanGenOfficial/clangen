@@ -1,7 +1,7 @@
 [
 
     {
-        "patrol_id": "mtn_hunt_eagleswim13",
+        "patrol_id": "mtn_hunt_eagleice13",
         "biome": "mountainous",
         "season": "leaf-bare",
         "tags": [
@@ -13,6 +13,7 @@
             "clan_to_p_l",
             "beak_bite",
             "scar",
+            "BEAKCHEEK",
             "death",
             "medium_prey0",
             "medium_prey1",
@@ -44,12 +45,6 @@
         "win_trait": [
             "ambitious"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 2,
         "max_cats": 3,
         "antagonize_text": null,
@@ -61,7 +56,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_eagleswim14",
+        "patrol_id": "mtn_hunt_eagleice14",
         "biome": "mountainous",
         "season": "leaf-bare",
         "tags": [
@@ -72,6 +67,7 @@
             "respect",
             "clan_to_p_l",
             "scar",
+            "BEAKLOWER",
             "beak_bite",
             "death",
             "medium_prey0",
@@ -104,12 +100,6 @@
         "win_trait": [
             "ambitious"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 4,
         "max_cats": 6,
         "antagonize_text": null,
@@ -121,7 +111,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_eagleswim15",
+        "patrol_id": "mtn_hunt_eagleice15",
         "biome": "mountainous",
         "season": "leaf-bare",
         "tags": [
@@ -133,6 +123,7 @@
             "respect",
             "clan_to_r_c",
             "scar",
+            "BEAKLOWER",
             "beak_bite",
             "death",
             "medium_prey0",
@@ -165,9 +156,6 @@
         "win_trait": [
             "ambitious"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "bloodthirsty"
         ],
@@ -182,7 +170,7 @@
         ]
     },
     {
-        "patrol_id": "mtn_hunt_eagleswim16",
+        "patrol_id": "mtn_hunt_eagleice16",
         "biome": "mountainous",
         "season": "leaf-bare",
         "tags": [
@@ -194,6 +182,7 @@
             "respect",
             "clan_to_p_l",
             "scar",
+            "BEAKCHEEK",
             "death",
             "beak_bite",
             "medium_prey0",
@@ -226,9 +215,6 @@
         "win_trait": [
             "ambitious"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "bloodthirsty"
         ],
@@ -254,6 +240,7 @@
             "patrol_to_r_c",
             "cold_injury",
             "scar",
+            "FROSTFACE",
             "small_prey0",
             "medium_prey1",
             "medium_prey2",
@@ -287,12 +274,6 @@
             "faithful",
             "loving"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
@@ -312,6 +293,7 @@
             "cold_injury",
             "death",
             "scar",
+            "FROSTFACE",
             "small_prey0",
             "medium_prey1",
             "medium_prey2",
@@ -335,15 +317,6 @@
         "win_skills": [
             "great hunter",
             "fantastic hunter"
-        ],
-        "win_trait": [
-            "None"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -369,6 +342,7 @@
             "big_change",
             "cold_injury",
             "scar",
+            "FROSTTAIL",
             "death"
         ],
         "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something, anything, for the fresh-kill pile.",
@@ -398,12 +372,6 @@
             "faithful",
             "loving"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
@@ -422,6 +390,7 @@
             "hunting",
             "fighting",
             "scar",
+            "NECKBITE",
             "injury",
             "clan_to_patrol",
             "respect",
@@ -462,9 +431,6 @@
             "responsible",
             "righteous"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "troublesome",
             "vengeful",
@@ -488,6 +454,7 @@
             "hunting",
             "fighting",
             "scar",
+            "NECKBITE",
             "injury",
             "clan_to_patrol",
             "respect",
@@ -528,9 +495,6 @@
             "responsible",
             "righteous"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "troublesome",
             "vengeful",
@@ -552,7 +516,8 @@
         "tags": [
             "hunting",
             "fighting",
-            "scar",
+            "ONE",
+            "NECKBITE",
             "injury",
             "clan_to_patrol",
             "respect",
@@ -591,9 +556,6 @@
             "fierce",
             "responsible",
             "righteous"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "troublesome",

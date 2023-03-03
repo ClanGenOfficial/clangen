@@ -82,12 +82,6 @@
         "win_trait": [
             "strange"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 2,
         "max_cats": 6
     },
@@ -124,24 +118,18 @@
         "win_trait": [
             "strange"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 1
     },
     {
-        "patrol_id": "dst_hunt_solo1",
+        "patrol_id": "dst_hunt_huntassessment1",
         "biome": "desert",
         "season": "Any",
         "tags": [
+            "app_stat",
             "hunting",
             "apprentice",
             "injury",
-            "scar",
             "medium_prey0",
             "large_prey1",
             "large_prey2",
@@ -163,9 +151,6 @@
             null,
             "While on the hunt, r_c tumbles right down a steep slope while their attention is elsewhere. Bruised and sore, r_c has to report to the medicine cat den when they return to camp."
         ],
-        "win_skills": [
-            "None"
-        ],
         "win_trait": [
             "calm",
             "careful",
@@ -178,9 +163,6 @@
             "patient",
             "thoughtful",
             "wise"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "adventurous",
@@ -241,9 +223,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "bold",
             "childish",
@@ -261,7 +240,6 @@
         "tags": [
             "hunting",
             "deputy",
-            "apprentice",
             "medium_prey",
 			"no_fail_prey"
         ],
@@ -298,9 +276,6 @@
             "patient",
             "thoughtful",
             "wise"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "bold",
@@ -356,9 +331,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "bold",
             "childish",
@@ -406,9 +378,6 @@
             "strict",
             "troublesome",
             "vengeful"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "altruistic",
@@ -468,9 +437,6 @@
             "troublesome",
             "vengeful"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "altruistic",
             "compassionate",
@@ -529,9 +495,6 @@
             "troublesome",
             "vengeful"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "altruistic",
             "compassionate",
@@ -559,6 +522,7 @@
         "tags": [
             "death",
             "scar",
+            "MANLEG",
             "retirement",
             "injury",
             "hunting",
@@ -597,12 +561,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 6,
         "antagonize_text": null,
@@ -620,6 +578,7 @@
         "tags": [
             "death",
             "scar",
+            "MANTAIL",
             "retirement",
             "injury",
             "hunting",
@@ -658,12 +617,6 @@
             "responsible",
             "thoughtful",
             "wise"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
         ],
         "min_cats": 1,
         "max_cats": 6,
@@ -718,12 +671,6 @@
             "nervous",
             "strange"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
@@ -739,8 +686,10 @@
         "biome": "desert",
         "season": "greenleaf",
         "tags": [
+            "app_stat",
             "hunting",
-            "illness",
+            "injury",
+            "heat exhaustion",
             "death",
             "apprentice",
             "small_prey"
@@ -759,12 +708,8 @@
             "Making the smart choice, app1 doesn't move from the shade, taking a good long nap in the heat.",
             "Refusing to stop hunting, app1 bodly decides to go into a canyon where it'll be cooler. They don't find any prey, but don't overheat either.",
             "app1 doesn't make it back to camp. A patrol sent out for them find their body, collapsed in a shadeless part of the territory and already starting to dry out and mummify.",
-            "app1 collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a Clanmate finds them that they're able to totter home shakily.",
             "When s_c doesn't return to camp that evening, a search party goes out for them. They find app1 collapsed and badly affected by heat stroke, and carry them back to camp where their might be a way to help them. However, app1's breathing stops on the journey home, and they slip to StarClan.",
-            "When s_c doesn't return to camp that evening, a search party goes out for them. They find app1 collapsed and badly affected by heat stroke, and carry them back to camp where their might be a way to help them."
-        ],
-        "win_skills": [
-            "None"
+            "s_c collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a Clanmate finds them that they're able to totter home shakily."
         ],
         "win_trait": [
             "patient",
@@ -775,9 +720,6 @@
             "careful",
             "nervous",
             "strange"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "adventurous",
@@ -839,12 +781,6 @@
             "nervous",
             "strange"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
@@ -859,8 +795,10 @@
         "biome": "desert",
         "season": "newleaf",
         "tags": [
+            "app_stat",
             "hunting",
-            "illness",
+            "injury",
+            "heat exhaustion",
             "death",
             "apprentice",
             "small_prey"
@@ -894,12 +832,6 @@
             "careful",
             "nervous",
             "strange"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -954,12 +886,6 @@
             "nervous",
             "strange"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
@@ -974,8 +900,10 @@
         "biome": "desert",
         "season": "leaf-fall",
         "tags": [
+            "app_stat",
             "hunting",
-            "illness",
+            "injury",
+            "heat exhaustion",
             "death",
             "apprentice",
             "small_prey"
@@ -1009,12 +937,6 @@
             "careful",
             "nervous",
             "strange"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -1064,12 +986,6 @@
             "faithful",
             "loving"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
@@ -1102,15 +1018,6 @@
         "win_skills": [
             "great hunter",
             "fantastic hunter"
-        ],
-        "win_trait": [
-            "None"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -1156,12 +1063,6 @@
             "empathetic",
             "faithful",
             "loving"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
         ],
         "min_cats": 2,
         "max_cats": 6,
@@ -1209,12 +1110,6 @@
             "confident",
             "daring"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
@@ -1229,6 +1124,7 @@
             "large_prey",
             "fighting",
             "scar",
+            "LEGBITE",
             "small_bite_injury"
         ],
         "intro_text": "r_c spots a swift fox in the distance, trotting through the scrubland with a desert hare in its jaws. It's the biggest of the foxes in c_n's territory, the size of a cat, and r_c is alone. Should they try and take it on?",
@@ -1262,12 +1158,6 @@
             "bold",
             "confident",
             "daring"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -1306,15 +1196,6 @@
             "very smart",
             "extremely smart"
         ],
-        "win_trait": [
-            "None"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
@@ -1329,6 +1210,7 @@
             "large_prey2",
             "fighting",
             "scar",
+            "LEGBITE",
             "respect",
             "clan_to_r_c",
             "small_bite_injury"
@@ -1356,15 +1238,6 @@
             "great fighter",
             "excellent fighter"
         ],
-        "win_trait": [
-            "None"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
@@ -1386,6 +1259,7 @@
             "rel_patrol",
             "fighting",
             "scar",
+            "NECKBITE",
             "big_bite_injury"
         ],
         "intro_text": "Your patrol spots a swift fox in the distance, behaving weirdly.",
@@ -1411,15 +1285,6 @@
             "great fighter",
             "excellent fighter"
         ],
-        "win_trait": [
-            "None"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
@@ -1438,6 +1303,7 @@
             "large_prey2",
             "fighting",
             "scar",
+            "NECKBITE",
             "respect",
             "clan_to_r_c",
             "small_bite_injury"
@@ -1465,15 +1331,6 @@
             "great fighter",
             "excellent fighter"
         ],
-        "win_trait": [
-            "None"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
@@ -1495,6 +1352,7 @@
             "rel_patrol",
             "fighting",
             "scar",
+            "NECKBITE",
             "big_bite_injury"
         ],
         "intro_text": "Your patrol spots a swift fox in the distance, behaving weirdly.",
@@ -1520,15 +1378,6 @@
             "great fighter",
             "excellent fighter"
         ],
-        "win_trait": [
-            "None"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
@@ -1547,6 +1396,7 @@
             "large_prey2",
             "fighting",
             "scar",
+            "NECKBITE",
             "respect",
             "clan_to_r_c",
             "small_bite_injury"
@@ -1573,15 +1423,6 @@
             "good fighter",
             "great fighter",
             "excellent fighter"
-        ],
-        "win_trait": [
-            "None"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -1636,12 +1477,6 @@
             "responsible",
             "righteous"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 2,
         "max_cats": 3,
         "antagonize_text": null,
@@ -1691,9 +1526,6 @@
             "fierce",
             "responsible",
             "righteous"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "troublesome",
@@ -1756,9 +1588,6 @@
             "responsible",
             "righteous"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "troublesome",
             "vengeful",
@@ -1783,6 +1612,7 @@
             "hunting",
             "fighting",
             "scar",
+            "LEGBITE",
             "small_bite_injury",
             "medium_prey",
             "trust"
@@ -1824,12 +1654,6 @@
             "troublesome",
             "vengeful"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 2,
         "max_cats": 4,
         "antagonize_text": null,
@@ -1847,6 +1671,7 @@
             "large_prey",
             "fighting",
             "scar",
+            "LEGBITE",
             "small_bite_injury"
         ],
         "intro_text": "r_c catches the scent of a fox. Tracking it down, they spot a kit fox wandering through their territory, carrying a mouse in its jaws.",
@@ -1885,12 +1710,6 @@
             "strict",
             "troublesome",
             "vengeful"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -1943,12 +1762,6 @@
             "strict",
             "troublesome",
             "vengeful"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
         ],
         "min_cats": 5,
         "max_cats": 6,

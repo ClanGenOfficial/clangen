@@ -77,7 +77,7 @@
       "ambitious",
       "confident"
     ],
-    "m_c strides up to their new mentor, looking very proud and excited that they were apprenticed to (mentor)."
+    "m_c strides up to their new mentor, looking very proud and excited to be apprenticed to (mentor)."
   ],
   "app_6": [
     [
@@ -129,7 +129,7 @@
       "empathetic",
       "thoughtful"
     ],
-    "m_c touches noses with (mentor), wondering if this is truly the right path for them or not."
+    "m_c touches noses with (mentor), wondering whether this is truly the right path for them."
   ],
   "app_9": [
     [
@@ -227,7 +227,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "Newly-made apprentice, m_c wished they had someone to mentor them."
+    "Newly-made apprentice, m_c wishes they had someone to mentor them."
   ],
   "app_15": [
     [
@@ -271,7 +271,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "m_c isn't sure what to do without the guidance of a mentor."
+    "m_c wonders if they can get by without the guidance of a mentor."
   ],
   "app_19": [
     [
@@ -306,7 +306,7 @@
       "troublesome",
       "vengeful"
     ],
-    "As m_c touches noses with (mentor), they hope that they won't be boring and let them do something cool. Anything but gathering moss or tick duty!"
+    "As m_c touches noses with (mentor), they hope that they'll be a cool mentor that won't assign boring tasks. Anything but gathering moss or tick duty!"
   ],
   "app_30": [
     [
@@ -322,7 +322,7 @@
       "fierce",
       "playful"
     ],
-    "(prefix)kit sits in front of the Clan with pride, their tiny heart beating so fast they think it might explode! They very excitedly touch noses with (mentor), happy to start their apprenticeship!"
+    "(prefix)kit sits in front of the Clan with pride, their tiny heart beating so fast they think it might explode! They very excitedly touch noses with (mentor), happy to start their apprenticeship."
   ],
   "app_31": [
     [
@@ -462,7 +462,7 @@
       "vengeful",
       "thoughtful"
     ],
-    "As m_c touches noses with (mentor), they hope they'll get to do something that will really impress the Clan on their first day. Maybe they could catch a big, fat, rabbit? Or chase off a fox! That'll show the Clan they're the best apprentice anyone's ever seen!"
+    "As m_c touches noses with (mentor), they hope they'll get to do something that will really impress the Clan on their first day. Maybe they could catch a big, fat rabbit? Or chase off a fox! That'll show the Clan they're the best apprentice anyone's ever seen!"
   ],
   "app_37": [
     [
@@ -569,7 +569,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "The Clan gathers around and urges (prefix)kit to go to the front of the crowd. Not having a leader isn't an excuse to force a cat to stay in the nursery when they're six moons old. (prefix)kit is renamed to m_c, and the Clan votes to make (mentor) their mentor."
+    "The Clan gathers around and urges (prefix)kit to go to the front of the crowd. Not having a leader isn't an excuse to force a cat to stay in the nursery when they're six moons old. (prefix)kit is renamed m_c, and the Clan votes to make (mentor) their mentor."
   ],
   "app_44": [
     [
@@ -825,7 +825,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "Interested in herbs even in their kithood, m_c is eager to be apprenticed to be apprenticed to (mentor)."
+    "Interested in herbs even in their kithood, m_c is eager to be apprenticed to (mentor)."
   ],
   "med_app_3": [
     [
@@ -1035,7 +1035,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "m_c decides to serve their clan as a mediator. They are delighted to begin training. "
+    "m_c decides to serve their Clan as a mediator. They are delighted to begin training. "
   ],
   "mediator_app_1": [
     [
@@ -1046,7 +1046,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "m_c feel sick at the mere thought of fighting. They decide to train as a mediator, and (mentor) is named as their mentor. "
+    "m_c feels sick at the mere thought of fighting. They decide to train as a mediator, and (mentor) is named as their mentor. "
   ],
   "mediator_app_2": [
     [
@@ -1237,7 +1237,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "(prefix)paw still can't believe that their mentor is gone. They don't feel ready to heal the Clan, and so politely decline being given a name yet. However, as they visit StarClan that half moon, (deadmentor) appears to them in a dream. They assure (prefix)paw that they'll be alright without them, and that they are ready for their full name. Resting their muzzle on (prefix)paw's head, (mentor) names them m_c."
+    "(prefix)paw still can't believe that their mentor is gone. They don't feel ready to heal the Clan, and so politely decline being given a name yet. However, as they visit StarClan that half moon, (deadmentor) appears to them in a dream. They assure (prefix)paw that they'll be alright without them, and that they are ready for their full name. Resting their muzzle on (prefix)paw's head, (deadmentor) names them m_c."
   ],
   "med_3": [
     [
@@ -1308,7 +1308,7 @@
   "med_9": [
     [
       "medicine cat",
-      "no_mentor",
+      "no_valid_previous_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -1319,7 +1319,7 @@
   "med_10": [
     [
       "medicine cat",
-      "no_mentor",
+      "no_valid_previous_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -1578,7 +1578,7 @@
       "general_backstory",
       "playful"
     ],
-    "No one knows how (prefix)paw got their claws on it, but they manage to play with a shiny piece of twoleg something the whole time the other medicine cats give them their name - m_c. When asked why, m_c replied that one of their patients might like it, and they wanted to make sure it was safe before bringing it back home."
+    "No one knows how (prefix)paw got their claws on it, but they manage to play with a shiny piece of Twoleg something the whole time the other medicine cats give them their name - m_c. When asked why, m_c replied that one of their patients might like it, and they wanted to make sure it was safe before bringing it back home."
   ],
   "med_34": [
     [
@@ -1743,7 +1743,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "(prefix)paw almost sobs as they spot dead_par1 and dead_par2 step out of the crowd towards them to congratulate them on completing their training. dead_par2 rests their muzzle on (prefix)paw's head, naming them m_c, and welcoming them as a full medicine cat."
+    "(prefix)paw almost sobs as they spot dead_par1 and dead_par2 step out of the starry crowd to congratulate them on completing their training. dead_par2 rests their muzzle on (prefix)paw's head, naming them m_c, and welcoming them as a full medicine cat."
   ],
   "med_50": [
     [
@@ -2064,7 +2064,7 @@
       "general_backstory",
       "faithful"
     ],
-    "As l_n names (prefix)paw m_c, they swear that they see some starry cats yowling their support amongst their other Clanmates."
+    "As l_n gives (prefix)paw the name m_c, they swear that they see some starry cats yowling their support amongst their other Clanmates."
   ],
   "warrior_28": [
     [
@@ -2207,7 +2207,7 @@
       "general_backstory",
       "sneaky"
     ],
-    "(prefix)paw's are silent as they pad forward to stand in front of the leader. They remain just as quiet as their steps as l_n names them m_c in honor of their r_h."
+    "(prefix)paw pads forward silently as they sit in front of their leader. They remain as quiet as their steps as l_n names them m_c in honor of their r_h."
   ],
   "warrior_41": [
     [
@@ -2494,7 +2494,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "m_c's been resist to retiring, but the aches and pains of old age have worn them down. They approach l_n, and are honored for their tireless service. "
+    "m_c's been resistant to retiring, but the aches and pains of old age have worn them down. They approach l_n, and are honored for their tireless service. "
   ],
   "elder_4": [
     [
@@ -2516,6 +2516,6 @@
       "general_backstory",
       "all_traits"
     ],
-    "Time as taken it's toll, and m_c has noticed themselves slowing down. They have worked timelessly for many moons, but is it time for them to retire. "
+    "Time has taken its toll, and m_c has noticed themselves slowing down. They have worked timelessly for many moons, but is it time for them to retire. "
   ]
 }

@@ -3,7 +3,7 @@
     "patrol_id": "fst_med_romance7",
     "biome": "forest",
     "season": "leaf-bare",
-    "tags": [
+    "tags": ["herb_gathering", 
         "med_cat",
         "warrior",
         "random_herbs",
@@ -31,12 +31,7 @@
         "great mediator",
         "excellent mediator"
     ],
-    "win_trait": [
-        "None"
-    ],
-    "fail_skills": [
-        "None"
-    ],
+
     "fail_trait": [
         "troublesome",
         "childish"
@@ -50,7 +45,7 @@
     "patrol_id": "fst_med_romance8",
     "biome": "forest",
     "season": "leaf-bare",
-    "tags": [
+    "tags": ["herb_gathering", 
         "med_cat", "med_only", "random_herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c"],
     "intro_text": "p_l heads out, leading a patrol of medicine cats to go find any fresh herbs that have survived leaf-bare so far.",
     "decline_text": ". . . And they're called back almost immediately, as one of the elders starts hacking up something.",
@@ -70,12 +65,7 @@
         "great mediator",
         "excellent mediator"
     ],
-    "win_trait": [
-        "None"
-    ],
-    "fail_skills": [
-        "None"
-    ],
+
     "fail_trait": [
         "troublesome",
         "childish"
@@ -89,7 +79,7 @@
     "patrol_id": "fst_med_gatheringblackberry_leaf-bare1",
     "biome": "forest",
     "season": "leaf-bare",
-    "tags": ["med_only", "cold_injury", "scar", "herb", "blackberry", "med_cat"],
+    "tags": ["herb_gathering", "med_only", "cold_injury", "scar", "FROSTTAIL", "herb", "blackberry"],
     "intro_text": "Hmm. p_l heads out, deciding that c_n needs more blackberry leaves in their stores.",
     "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
     "chance_of_success": 40,
@@ -106,9 +96,7 @@
             "r_c edges out onto a slippery frozen rock, trying to get nearer a branch of blackberry leaves that are still green, but they overbalence and fall into a deep snowbank, emerging shivering."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -121,7 +109,7 @@
     "patrol_id": "fst_med_gatheringblackberry_leaf-bare2",
     "biome": "forest",
     "season": "leaf-bare",
-    "tags": ["med_only", "cold_injury", "scar", "med_cat", "herb", "blackberry", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
+    "tags": ["herb_gathering", "adult_stat", "med_only", "cold_injury", "scar", "FROSTFACE", "med_cat", "herb", "blackberry", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "Hmm. p_l heads out with app1, deciding that c_n needs more blackberry leaves in their stores.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 40,
@@ -138,9 +126,7 @@
             "r_c edges out onto a slippery frozen rock, trying to get nearer a branch of blackberry leaves that are still green, but they overbalence and fall into a deep snowbank, emerging shivering."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -153,7 +139,7 @@
     "patrol_id": "fst_med_gatheringblackberry_leaf-bare3",
     "biome": "forest",
     "season": "leaf-bare",
-    "tags": ["med_cat", "warrior", "cold_injury", "scar", "herb", "blackberry", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "warrior", "cold_injury", "scar", "FROSTTAIL", "herb", "blackberry", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "Hmm. p_l heads out, deciding that c_n needs more blackberry leaves in their stores, bringing along anyone who isn't busy with other work.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 40,
@@ -170,9 +156,7 @@
             "r_c edges out onto a slippery frozen rock, trying to get nearer a branch of blackberry leaves that are still green, but they overbalence and fall into a deep snowbank, emerging shivering."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -185,7 +169,7 @@
     "patrol_id": "fst_med_gatheringburdock_leaf-bare1",
     "biome": "forest",
     "season": "leaf-bare",
-    "tags": ["med_only", "cold_injury", "scar", "herb", "burdock", "med_cat"],
+    "tags": ["herb_gathering", "med_only", "cold_injury", "scar", "FROSTMITT", "herb", "burdock"],
     "intro_text": "As the snows of leaf-bare blow around camp, p_l eyes their herb stores. They should still be able to dig up burdock. p_l heads out to replenish the Clan's stocks.",
     "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
     "chance_of_success": 20,
@@ -202,9 +186,7 @@
             "r_c digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. The cold had leeched all the heat from their pelt, and they arrive back at camp miserable."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -217,7 +199,7 @@
     "patrol_id": "fst_med_gatheringburdock_leaf-bare2",
     "biome": "forest",
     "season": "leaf-bare",
-    "tags": ["med_only", "med_cat", "cold_injury", "scar", "herb", "burdock", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
+    "tags": ["herb_gathering", "adult_stat", "med_only", "med_cat", "cold_injury", "scar", "FROSTMITT", "herb", "burdock", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "As the snows of leaf-bare blow around camp, p_l eyes their herb stores. They should still be able to dig up burdock. p_l heads out to replenish the Clan's stocks, bringing app1 along.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 20,
@@ -234,9 +216,7 @@
             "The patrol digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. r_c in particular is shivering and chilled to the bone by the time they return, empty-pawed and miserable."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -249,7 +229,7 @@
     "patrol_id": "fst_med_gatheringburdock_leaf-bare3",
     "biome": "forest",
     "season": "leaf-bare",
-    "tags": ["med_cat", "warrior", "cold_injury", "scar", "herb", "burdock", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "warrior", "cold_injury", "scar", "FROSTMITT", "herb", "burdock", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "As the snows of leaf-bare blow around camp, p_l eyes their herb stores. They should still be able to dig up burdock. p_l heads out to replenish the Clan's stocks, bringing along anyone who isn't busy with other work.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 20,
@@ -266,9 +246,7 @@
             "The patrol digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. r_c in particular is shivering and chilled to the bone by the time they return, empty-pawed and miserable."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -281,7 +259,7 @@
     "patrol_id": "fst_med_gatheringdaisy_leaf-bare1",
     "biome": "forest",
     "season": "leaf-bare",
-    "tags": ["med_only", "cold_injury", "scar", "herb", "daisy", "med_cat"],
+    "tags": ["herb_gathering", "med_only", "cold_injury", "scar", "FROSTFACE", "herb", "daisy"],
     "intro_text": "In the leaf-bare snow, the chances of finding any useable daisies seem slim. p_l hesitates - should they even try to look?",
     "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
     "chance_of_success": 0,
@@ -298,9 +276,7 @@
             "Not only does r_c end up soaked to the skin, and they can't even find any daisies under the snow, but they're also shivering violently by the time they return to camp."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -313,7 +289,7 @@
     "patrol_id": "fst_med_gatheringdaisy_leaf-bare2",
     "biome": "forest",
     "season": "leaf-bare",
-    "tags": ["med_only", "med_cat", "cold_injury", "scar", "herb", "daisy", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
+    "tags": ["herb_gathering", "adult_stat", "med_only", "med_cat", "cold_injury", "FROSTFACE", "scar", "herb", "daisy", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "In the leaf-bare snow, the chances of finding any useable daisies seem slim. p_l hesitates - should they even try to look? And is bringing app1 a good idea?",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 0,
@@ -330,9 +306,7 @@
             "Not only does r_c end up soaked to the skin, and they can't even find any daisies under the snow, but they're also shivering violently by the time they return to camp."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -345,7 +319,7 @@
     "patrol_id": "fst_med_gatheringdaisy_leaf-bare3",
     "biome": "forest",
     "season": "leaf-bare",
-    "tags": ["med_cat", "warrior", "cold_injury", "scar", "herb", "daisy", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "warrior", "cold_injury", "scar", "FROSTFACE", "herb", "daisy", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "In the leaf-bare snow, the chances of finding any useable daisies seem slim. p_l hesitates - should they even try to look?",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 0,
@@ -362,9 +336,7 @@
             "Not only does r_c end up soaked to the skin, and they can't even find any daisies under the snow, but they're also shivering violently by the time they return to camp."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -377,13 +349,13 @@
     "patrol_id": "fst_med_gatheringdandelion_leaf-bare1",
     "biome": "forest",
     "season": "leaf-bare",
-    "tags": ["med_only", "cold_injury", "scar", "herb", "dandelion", "med_cat"],
+    "tags": ["herb_gathering", "med_only", "cold_injury", "scar", "FROSTFACE", "herb", "dandelion"],
     "intro_text": "The cold of leaf-bare might have killed off a lot of greenery, but p_l knows that the dandelions are only playing dead, and if they can get their paws on a plant the roots will still hold fresh white milky sap.",
     "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
     "chance_of_success": 40,
     "exp": 10,
     "success_text": [
-            "p_l can't say it's fun, swiping away snow to scrouge for the bodies and roots of wilted dandelions beneath, but what matters currently is that it's possible.",
+            "p_l can't say it's fun, swiping away snow to scrounge for the bodies and roots of wilted dandelions beneath, but what matters currently is that it's possible.",
             "It's a truly miserable gray day, but the colds of leaf-bare can't dampen p_l's happiness when they manage to uncover a couple good dandelion plants.",
             "It's not just spotting things that s_c is talented at - finding dandelions in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that they manage it."
 ],
@@ -394,9 +366,7 @@
             "Not only does r_c end up soaked to the skin, and they can't even find any dandelions under the snow, but they're also shivering violently by the time they return to camp."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -409,13 +379,13 @@
     "patrol_id": "fst_med_gatheringdandelion_leaf-bare2",
     "biome": "forest",
     "season": "leaf-bare",
-    "tags": ["med_only", "med_cat", "cold_injury", "scar", "herb", "dandelion", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
+    "tags": ["herb_gathering", "adult_stat", "med_only", "med_cat", "cold_injury", "scar", "FROSTFACE", "herb", "dandelion", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "The cold of leaf-bare might have killed off a lot of greenery, but p_l knows that the dandelions are only playing dead, and if they can get their paws on a plant the roots will still hold fresh white milky sap. Time for app1 to learn about the resources that're still available to gather during leaf-bare.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 40,
     "exp": 40,
     "success_text": [
-            "p_l can't say it's fun, swiping away snow to scrouge for the bodies and roots of wilted dandelions beneath, but what matters currently is that it's possible. Still, they make sure to praise app1 as they head back home with their harvest. The apprentice hasn't uttered a single word of complaint about the miserable conditions.",
+            "p_l can't say it's fun, swiping away snow to scrounge for the bodies and roots of wilted dandelions beneath, but what matters currently is that it's possible. Still, they make sure to praise app1 as they head back home with their harvest. The apprentice hasn't uttered a single word of complaint about the miserable conditions.",
             "It's a truly miserable gray day, but the colds of leaf-bare can't dampen app1's happiness when they manage to uncover a couple good dandelion plants. Watching them find joy in safeguarding the Clan, p_l feels a swoop of pride and affection for the apprentice. The medicine cat path suits them.",
             "It's not just spotting things that s_c is talented at - finding dandelions in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that they manage it. app1 trails in their wake, wide eyed and impressed."
 ],
@@ -426,9 +396,7 @@
             "Not only does r_c end up soaked to the skin, and they can't even find any dandelions under the snow, but they're also shivering violently by the time they return to camp."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -441,13 +409,13 @@
     "patrol_id": "fst_med_gatheringdandelion_leaf-bare3",
     "biome": "forest",
     "season": "leaf-bare",
-    "tags": ["med_cat", "warrior", "cold_injury", "scar", "herb", "dandelion", "big_change", "no_leader", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "warrior", "cold_injury", "scar", "FROSTFACE", "herb", "dandelion", "big_change", "no_leader", "platonic", "dislike", "respect"],
     "intro_text": "The cold of leaf-bare might have killed off a lot of greenery, but p_l knows that the dandelions are only playing dead, and if they can get their paws on a plant the roots will still hold fresh white milky sap. They bring along a patrol of shivering Clanmates - more paws will make light work of digging through the snow.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 40,
     "exp": 10,
     "success_text": [
-            "p_l can't say it's fun, swiping away snow to scrouge for the bodies and roots of wilted dandelions beneath, but what matters currently is that it's possible. They make sure that when they return to camp with the additions to the herb stores that everyone can hear them praise the members of the patrol to the leader.",
+            "p_l can't say it's fun, swiping away snow to scrounge for the bodies and roots of wilted dandelions beneath, but what matters currently is that it's possible. They make sure that when they return to camp with the additions to the herb stores that everyone can hear them praise the members of the patrol to the leader.",
             "It's a truly miserable gray day, but the colds of leaf-bare can't dampen p_l's happiness when they manage to uncover a couple good dandelion plants. They make sure to check up on the pawpads of the warriors who helped them once everyone is back in camp, wanting to make sure everyone is alright and not too chilled.",
             "It's not just spotting things that s_c is talented at - finding dandelions in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that they manage it. It reminds everyone on the patrol just how lucky c_n is to have s_c as a medicine cat."
     ],
@@ -458,9 +426,7 @@
             "Not only does r_c end up soaked to the skin, and they can't even find any dandelions under the snow, but they're also shivering violently by the time they return to camp."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -473,7 +439,7 @@
     "patrol_id": "fst_med_gatheringjuniper_leaf-bare1",
     "biome": "forest",
     "season": "leaf-bare",
-    "tags": ["med_only", "cold_injury", "blunt_force_injury", "scar", "herb", "juniper", "med_cat"],
+    "tags": ["herb_gathering", "med_only", "cold_injury", "blunt_force_injury", "scar", "SIDE", "herb", "juniper"],
     "intro_text": "It's not finding fresh juniper that's the problem. An evergreen plant, they reliably grow through the cold - but they're large shrubs, sometimes large enough to be trees, and climbing in these slippery conditions might be dangerous.",
     "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
     "chance_of_success": 40,
@@ -490,9 +456,7 @@
             "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -505,7 +469,7 @@
     "patrol_id": "fst_med_gatheringjuniper_leaf-bare2",
     "biome": "forest",
     "season": "leaf-bare",
-    "tags": ["med_only", "med_cat", "cold_injury", "blunt_force_injury", "scar", "herb", "juniper", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
+    "tags": ["herb_gathering", "adult_stat", "med_only", "med_cat", "cold_injury", "blunt_force_injury", "scar", "SIDE", "herb", "juniper", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "It's not finding fresh juniper that's the problem. An evergreen plant, they reliably grow through the cold - but they're large shrubs, sometimes large enough to be trees, and climbing in these slippery conditions might be dangerous. p_l has a lot of hesitancy about bringing app1 along under these conditions.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 40,
@@ -522,9 +486,7 @@
             "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -537,7 +499,7 @@
     "patrol_id": "fst_med_gatheringjuniper_leaf-bare3",
     "biome": "forest",
     "season": "leaf-bare",
-    "tags": ["med_cat", "warrior", "cold_injury", "blunt_force_injury", "scar", "herb", "juniper", "big_change", "no_leader", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "warrior", "cold_injury", "blunt_force_injury", "scar", "SIDE", "herb", "juniper", "big_change", "no_leader", "platonic", "dislike", "respect"],
     "intro_text": "It's not finding fresh juniper that's the problem. An evergreen plant, they reliably grow through the cold - but they're large shrubs, sometimes large enough to be trees, and climbing in these slippery conditions might be dangerous. Hopefully the warriors accompanying p_l will be able to help.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 40,
@@ -554,9 +516,7 @@
             "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -569,7 +529,7 @@
     "patrol_id": "fst_med_gatheringwildgarlic_leaf-bare1",
     "biome": "forest",
     "season": "leaf-bare",
-    "tags": ["med_only", "cold_injury", "scar", "herb", "wild_garlic", "many_herbs1", "many_herbs2", "med_cat"],
+    "tags": ["herb_gathering", "med_only", "cold_injury", "scar", "FROSTMITT", "herb", "wild_garlic", "many_herbs1", "many_herbs2", "med_cat"],
     "intro_text": "There's a limited selection of herbs p_l can even look for in leaf-bare, but if they can only remember where the wild garlic grew in greenleaf it's theirs for the taking.",
     "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
     "chance_of_success": 30,
@@ -586,9 +546,7 @@
             "When the failed patrol arrives back at camp, r_c is shivering with the cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was neither productive nor sensible."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -601,7 +559,7 @@
     "patrol_id": "fst_med_gatheringwildgarlic_leaf-bare2",
     "biome": "forest",
     "season": "leaf-bare",
-    "tags": ["med_only", "med_cat", "cold_injury", "scar", "herb", "wild_garlic", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
+    "tags": ["herb_gathering", "adult_stat", "med_only", "med_cat", "cold_injury", "scar", "FROSTMITT", "herb", "wild_garlic", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "There's a limited selection of herbs p_l can even look for in leaf-bare, but if they or app1 can only remember where the wild garlic grew in greenleaf it's theirs for the taking.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 30,
@@ -618,9 +576,7 @@
             "When the failed patrol arrives back at camp, r_c is shivering with the cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was neither productive nor sensible."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -633,7 +589,7 @@
     "patrol_id": "fst_med_gatheringwildgarlic_leaf-bare3",
     "biome": "forest",
     "season": "leaf-bare",
-    "tags": ["med_cat", "warrior", "cold_injury", "scar", "herb", "wild_garlic", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "med_cat", "warrior", "cold_injury", "scar", "FROSTMITT", "herb", "wild_garlic", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "There's a limited selection of herbs p_l can even look for in leaf-bare, even with a patrol helping them, but if they can only remember where the wild garlic grew in greenleaf it's theirs for the taking.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 30,
@@ -650,9 +606,7 @@
             "When the failed patrol arrives back at camp, r_c is shivering with the cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was neither productive nor sensible."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,

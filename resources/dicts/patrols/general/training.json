@@ -60,7 +60,7 @@
     "exp": 20,
     "success_text": [
         "Unsure but remembering the kittentales of red deathberries, r_c avoids them, and gives the rest of the patrol a head's up about the potentially dangerous bush.",
-        "After careful consideration, r_c recognizes them as raspberries and brings the rare berries  back to the medicine cat's den.",
+        "After careful consideration, r_c recognizes them as raspberries and brings the rare berries back to the medicine cat's den.",
         "Astutely, s_c recognises the cranberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit."
     ],
     "fail_text": [
@@ -173,7 +173,7 @@
     "patrol_id": "gen_train_sunny4",
     "biome": "Any",
     "season": "Any",
-    "tags": ["big_change", "platonic", "romantic", "apprentice", "two_apprentices", "training"],
+    "tags": ["app_stat", "big_change", "platonic", "romantic", "apprentice", "two_apprentices", "training"],
     "intro_text": "app1 and app2 find a nice spot to sun themselves.",
     "decline_text": "They decide to stay focused instead.",
     "chance_of_success": 90,
@@ -236,7 +236,7 @@
         "p_l manages to skillfully smooth over any disagreement.",
         "p_l listens to both sides, then makes a careful judgment. It keeps no one happy, the mark of an excellent compromise.",
         "Talking everyone down, p_l encourages the patrol to focus on their work.",
-        "p_l has no time for this spat, and pulls the patrol to a halt to remind them that they have a Star-damned job to do, and quarreling like kittens will not be tolerated. The patrol returns to their work collecting nesting material with newfound vigor."
+        "p_l has no time for this spat and pulls the patrol to a halt to remind them that they have a star-damned job to do and quarreling like kittens will not be tolerated. The patrol returns to their work collecting nesting material with newfound vigor."
     ],
     "fail_text": [
         "p_l stutters; they don't think they are fit to lead the patrol",
@@ -347,7 +347,7 @@
     "patrol_id": "gen_train_ghost2",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "platonic", "dislike", "apprentice", "two_apprentices"],
+    "tags": ["app_stat", "training", "platonic", "dislike", "apprentice", "two_apprentices"],
     "intro_text": "The patrol quickly devolves into ghost stories, leaving everyone on edge.",
     "decline_text": "p_l quickly silences any talk about ghosts.",
     "chance_of_success": 80,
@@ -373,7 +373,7 @@
     "patrol_id": "gen_train_sneakprey1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "apprentice", "disrespect", "distrust", "clan_to_r_c"],
+    "tags": ["app_stat", "training", "apprentice", "disrespect", "distrust", "clan_to_r_c"],
     "intro_text": "app1 is tempted to eat the prey they just caught. After all, they're only practicing hunting, right? So this is theirs, it doesn't count as a true hunting patrol?",
     "decline_text": "app1 decides against breaking the warrior code, resisting the temptation.",
     "chance_of_success": 60,
@@ -382,11 +382,11 @@
         "They eat the prey without anyone noticing, and return to camp, thrilled with their little transgression.",
         null,
         null,
-        "Whatever, it's not a big deal, and app1's hungry. They polish off the little snack, and keep working on their pounce."
+        "Whatever, it's not a big deal, and s_c's hungry. They polish off the little snack, and keep working on their pounce."
     ],
     "fail_text": [
         "app1 eats the prey, but later they feel terrible about it, slinking around guilty and ashamed for the rest of the day.",
-        "app1 freezes in indecision, and eventually a warrior spots them sitting under cover with their prey and accuses app1 of eating it anyway."
+        "s_c freezes in indecision, and eventually a warrior spots them sitting under cover with their prey and accuses app1 of eating it anyway."
     ],
     "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "fail_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "sneaky", "strange"],
@@ -399,7 +399,7 @@
     "patrol_id": "gen_train_sneakprey2",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "apprentice", "disrespect", "distrust", "clan_to_r_c"],
+    "tags": ["app_stat", "training", "apprentice", "disrespect", "distrust", "clan_to_r_c"],
     "intro_text": "app1 is tempted to eat the prey they just caught. After all, they're only practicing hunting, right? So this is theirs, it doesn't count as a true hunting patrol?",
     "decline_text": "app1 decides against breaking the warrior code, resisting the temptation.",
     "chance_of_success": 60,
@@ -408,11 +408,11 @@
         "They eat the prey without anyone noticing, and return to camp, thrilled with their little transgression.",
         null,
         null,
-        "app1 freezes in indecision. But the moment of peace allows them to collect their thoughts, and decide that the warrior code matters more to them than a silly afternoon snack."
+        "s_c freezes in indecision. But the moment of peace allows them to collect their thoughts, and decide that the warrior code matters more to them than a silly afternoon snack."
     ],
     "fail_text": [
         "app1 eats the prey, but later they feel terrible about it, slinking around guilty and ashamed for the rest of the day.",
-        "Whatever, it's not a big deal, and app1's hungry. But as they eat, a passing warrior spots them, and begins an outraged lecture on the values of the warrior code."
+        "Whatever, it's not a big deal, and s_c's hungry. But as they eat, a passing warrior spots them, and begins an outraged lecture on the values of the warrior code."
     ],
     "win_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "sneaky", "strange"],
     "fail_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
@@ -425,7 +425,7 @@
     "patrol_id": "gen_train_sneakprey3",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "apprentice", "disrespect", "distrust", "clan_to_r_c"],
+    "tags": ["app_stat", "training", "apprentice", "disrespect", "distrust", "clan_to_r_c"],
     "intro_text": "app1 is tempted to eat the prey they just caught. After all, they're only practicing hunting, right? So this is theirs, it doesn't count as a true hunting patrol?",
     "decline_text": "app1 decides against breaking the warrior code, resisting the temptation.",
     "chance_of_success": 60,
@@ -434,11 +434,11 @@
         "They eat the prey without anyone noticing, and return to camp, thrilled with their little transgression.",
         null,
         null,
-        "It definitely doesn't count as a proper hunting patrol. But just to be safe, app1 chooses to eat their afternoon snack under cover."
+        "It definitely doesn't count as a proper hunting patrol. But just to be safe, s_c chooses to eat their afternoon snack under cover."
     ],
     "fail_text": [
         "app1 eats the prey, but later they feel terrible about it, slinking around guilty and ashamed for the rest of the day.",
-        "app1 ignores their rumbling belly, and dutifully brings the prey back to camp, only for their mentor to tell them to pick out a bite to eat before their stomach wakes every cat in camp. This would've all been much quicker if they'd eaten it when they first caught it."
+        "s_c ignores their rumbling belly, and dutifully brings the prey back to camp, only for their mentor to tell them to pick out a bite to eat before their stomach wakes every cat in camp. This would've all been much quicker if they'd eaten it when they first caught it."
     ],
     "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "bossy", "bullying", "impulsive"],
     "fail_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
@@ -451,7 +451,7 @@
     "patrol_id": "gen_train_sneakprey4",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "apprentice", "disrespect", "distrust", "clan_to_r_c"],
+    "tags": ["app_stat","training", "apprentice", "disrespect", "distrust", "clan_to_r_c"],
     "intro_text": "app1 is tempted to eat the prey they just caught. After all, they're only practicing hunting, right? So this is theirs, it doesn't count as a true hunting patrol?",
     "decline_text": "app1 decides against breaking the warrior code, resisting the temptation.",
     "chance_of_success": 60,
@@ -460,11 +460,11 @@
         "They eat the prey without anyone noticing, and return to camp, thrilled with their little transgression.",
         null,
         null,
-        "app1 ignores their rumbling belly, and dutifully brings the prey back to camp. Their mentor congratulates them on the catch, and they get to share it with all their friends, feeling a warm glow in their heart at feeding their Clan."
+        "s_c ignores their rumbling belly, and dutifully brings the prey back to camp. Their mentor congratulates them on the catch, and they get to share it with all their friends, feeling a warm glow in their heart at feeding their Clan."
     ],
     "fail_text": [
         "app1 eats the prey, but later they feel terrible about it, slinking around guilty and ashamed for the rest of the day.",
-        "It definitely doesn't count as a proper hunting patrol. But irritatingly the warrior that comes past and spots app1 eating doesn't seem to agree, and a surly r_c is brought back to camp for a lecture."
+        "It definitely doesn't count as a proper hunting patrol. But irritatingly the warrior that comes past and spots s_c eating doesn't seem to agree, and a surly s_c is brought back to camp for a lecture."
     ],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "bossy", "bullying", "impulsive"],
@@ -485,7 +485,7 @@
     "success_text": [
         "Everyone has a nice practice session and their coordination and trust in their Clanmates grows stronger.",
         null,
-        "s_c takes charge and coordinates exercises for the training patrol. Soon cats are using each other as springboards, practicing breaking a Clanmates' fall, and working on treading exactly in each other's pawsteps."
+        "s_c takes charge and coordinates exercises for the training patrol. Soon cats are using each other as springboards, practicing breaking a Clanmate's fall, and working on treading exactly in each other's pawsteps."
     ],
     "fail_text": [
             "Unfortunately, no one steps up to teach. It's a little awkward, but the patrol disbands to attend to other duties."
@@ -523,7 +523,7 @@
     "patrol_id": "gen_train_teamwork3",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "big_change", "platonic", "trust", "apprentice", "one_apprentice", "no_change_fail"],
+    "tags": ["adult_stat", "training", "big_change", "platonic", "trust", "apprentice", "one_apprentice", "no_change_fail"],
     "intro_text": "p_l suggests this might be a good chance for the cats to practice teamwork, particularly with app1.",
     "decline_text": "They decide to focus on working on a different skill instead.",
     "chance_of_success": 80,
@@ -531,7 +531,7 @@
     "success_text": [
         "Everyone has a nice practice session and their coordination with their Clanmates grows stronger. app1 really gets into it, and is praised for their focus and enthusiasm.",
         null,
-        "s_c takes charge and coordinates exercises for the training patrol. Soon cats are using each other as springboards, practicing breaking a Clanmates' fall, and working on treading exactly in each other's pawsteps."
+        "s_c takes charge and coordinates exercises for the training patrol. Soon cats are using each other as springboards, practicing breaking a Clanmate's fall, and working on treading exactly in each other's pawsteps."
     ],
     "fail_text": [
             "Unfortunately, no one steps up to teach. It's a little awkward, but the patrol disbands to attend to other duties."
@@ -546,7 +546,7 @@
     "patrol_id": "gen_train_teamwork4",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "big_change", "platonic", "trust", "warrior", "apprentice"],
+    "tags": ["adult_stat", "training", "big_change", "platonic", "trust", "warrior", "apprentice"],
     "intro_text": "p_l suggests this might be a good chance to practice teamwork with app1.",
     "decline_text": "They decide to focus on working on a different skill instead.",
     "chance_of_success": 80,
@@ -569,7 +569,7 @@
     "patrol_id": "gen_train_teamwork5",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "big_change", "platonic", "romantic", "apprentice", "two_apprentices", "warrior", "rel_two_apps", "no_change_fail"],
+    "tags": ["adult_stat", "training", "big_change", "platonic", "romantic", "apprentice", "two_apprentices", "warrior", "rel_two_apps", "no_change_fail"],
     "intro_text": "As p_l sets the cats up to practise together, app1 and app2 sit in the back, hiding their lashing tails as they plan their prank.",
     "decline_text": "They decide to focus on working on a different skill instead.",
     "chance_of_success": 80,
@@ -638,7 +638,7 @@
     "patrol_id": "gen_train_huntingskill3",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "platonic", "trust", "warrior", "one_apprentice", "apprentice"],
+    "tags": ["adult_stat", "training", "platonic", "trust", "warrior", "one_apprentice", "apprentice"],
     "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques, particularly with app1 present.",
     "decline_text": "They decide to focus on working on a different skill instead.",
     "chance_of_success": 80,
@@ -661,7 +661,7 @@
     "patrol_id": "gen_train_huntingskill4",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "platonic", "trust", "warrior", "apprentice"],
+    "tags": ["adult_stat", "training", "platonic", "trust", "warrior", "apprentice"],
     "intro_text": "p_l suggests this might be a good chance to practice new hunting techniques with app1.",
     "decline_text": "They decide to focus on working on a different skill instead.",
     "chance_of_success": 80,
@@ -684,7 +684,7 @@
     "patrol_id": "gen_train_huntingskill5",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "platonic", "trust", "warrior", "two_apprentices", "apprentice"],
+    "tags": ["adult_stat", "training", "platonic", "trust", "warrior", "two_apprentices", "apprentice"],
     "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques, particularly with apprentices present.",
     "decline_text": "They decide to focus on working on a different skill instead.",
     "chance_of_success": 80,
@@ -707,7 +707,7 @@
     "patrol_id": "gen_train_huntingskill6",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "platonic", "trust", "warrior", "three_apprentices", "apprentice"],
+    "tags": ["adult_stat", "training", "platonic", "trust", "warrior", "three_apprentices", "apprentice"],
     "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques, particularly with apprentices present.",
     "decline_text": "They decide to focus on working on a different skill instead.",
     "chance_of_success": 80,
@@ -730,7 +730,7 @@
     "patrol_id": "gen_train_huntingskill7",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "platonic", "trust", "warrior", "four_apprentices", "apprentice"],
+    "tags": ["adult_stat", "training", "platonic", "trust", "warrior", "four_apprentices", "apprentice"],
     "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques, particularly with apprentices present.",
     "decline_text": "They decide to focus on working on a different skill instead.",
     "chance_of_success": 80,
@@ -753,7 +753,7 @@
     "patrol_id": "gen_train_huntingskill8",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "platonic", "trust", "warrior", "five_apprentices", "apprentice"],
+    "tags": ["adult_stat", "training", "platonic", "trust", "warrior", "five_apprentices", "apprentice"],
     "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques, particularly with apprentices present.",
     "decline_text": "They decide to focus on working on a different skill instead.",
     "chance_of_success": 80,
@@ -822,7 +822,7 @@
     "patrol_id": "gen_train_fightingskill3",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "platonic", "trust", "warrior", "one_apprentice", "apprentice"],
+    "tags": ["adult_stat", "training", "platonic", "trust", "warrior", "one_apprentice", "apprentice"],
     "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques, particularly with app1 here to learn from them.",
     "decline_text": "They decide to focus on working on a different skill instead.",
     "chance_of_success": 80,
@@ -845,7 +845,7 @@
     "patrol_id": "gen_train_fightingskill4",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "platonic", "trust", "warrior", "apprentice"],
+    "tags": ["adult_stat", "training", "platonic", "trust", "warrior", "apprentice"],
     "intro_text": "p_l suggests this might be a good chance to practice new fighting techniques with app1.",
     "decline_text": "They decide to focus on working on a different skill instead.",
     "chance_of_success": 80,
@@ -868,7 +868,7 @@
     "patrol_id": "gen_train_fightingskill5",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "platonic", "trust", "warrior", "two_apprentices", "apprentice"],
+    "tags": ["adult_stat", "training", "platonic", "trust", "warrior", "two_apprentices", "apprentice"],
     "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques, particularly with the apprentices here to learn from them.",
     "decline_text": "They decide to focus on working on a different skill instead.",
     "chance_of_success": 80,
@@ -891,7 +891,7 @@
     "patrol_id": "gen_train_fightingskill6",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "platonic", "trust", "warrior", "three_apprentices", "apprentice"],
+    "tags": ["adult_stat", "training", "platonic", "trust", "warrior", "three_apprentices", "apprentice"],
     "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques, particularly with the apprentices here to learn from them.",
     "decline_text": "They decide to focus on working on a different skill instead.",
     "chance_of_success": 80,
@@ -914,7 +914,7 @@
     "patrol_id": "gen_train_fightingskill7",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "platonic", "trust", "warrior", "four_apprentices", "apprentice"],
+    "tags": ["adult_stat", "training", "platonic", "trust", "warrior", "four_apprentices", "apprentice"],
     "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques, particularly with the apprentices here to learn from them.",
     "decline_text": "They decide to focus on working on a different skill instead.",
     "chance_of_success": 80,
@@ -937,7 +937,7 @@
     "patrol_id": "gen_train_fightingskill8",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "platonic", "trust", "warrior", "five_apprentices", "apprentice"],
+    "tags": ["adult_stat", "training", "platonic", "trust", "warrior", "five_apprentices", "apprentice"],
     "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques, particularly with the apprentices here to learn from them.",
     "decline_text": "They decide to focus on working on a different skill instead.",
     "chance_of_success": 80,
@@ -1037,7 +1037,7 @@
     "success_text": [
         "p_l gives them all their attention, as r_c talks about how, hypothetically, if they were interested in another warrior, how one might possibly maybe go about talking to them about it? Hypothetically. For a friend.",
         "r_c talks about how, sometimes, often even, they feel like they're tripping over their own tongue, never able to say anything helpful or pretty. But p_l meows that no way, r_c says such meaningful and beautiful things! They don't want r_c to change.",
-        "s_c talks about how making the right words, teh right effects, can sometimes feel impossible. But that it's always better to try, than to never talk at all, and talking things out can create wonderful connections."
+        "s_c talks about how making the right words, the right effects, can sometimes feel impossible. But that it's always better to try, than to never talk at all, and talking things out can create wonderful connections."
     ],
     "fail_text": [
         "It's a terrible place to try carrying on a conversation, carrying away old bedding, and their private talk dies off awkwardly."

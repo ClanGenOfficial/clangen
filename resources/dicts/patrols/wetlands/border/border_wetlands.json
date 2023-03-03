@@ -7,7 +7,8 @@
             "border",
             "other_clan",
             "injury",
-            "scar"
+            "scar",
+            "BRIDGE"
         ],
         "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
         "decline_text": "r_c turns back to camp, deciding that their other duties have to come first.",
@@ -41,9 +42,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "ambitious",
             "bloodthirsty",
@@ -71,6 +69,7 @@
             "other_clan",
             "injury",
             "scar",
+            "CHEEK",
             "deputy",
             "death"
         ],
@@ -106,9 +105,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "ambitious",
             "bloodthirsty",
@@ -137,6 +133,7 @@
             "other_clan",
             "injury",
             "scar",
+            "CHEEK",
             "leader",
             "death"
         ],
@@ -172,9 +169,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "ambitious",
             "bloodthirsty",
@@ -203,6 +197,7 @@
             "other_clan",
             "injury",
             "scar",
+            "CHEEK",
             "deputy"
         ],
         "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
@@ -237,12 +232,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
@@ -260,6 +249,7 @@
             "other_clan",
             "injury",
             "scar",
+            "CHEEK",
             "leader"
         ],
         "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
@@ -293,12 +283,6 @@
             "responsible",
             "thoughtful",
             "wise"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -348,9 +332,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "ambitious",
             "bloodthirsty",
@@ -375,6 +356,7 @@
             "other_clan",
             "injury",
             "scar",
+            "BRIDGE",
             "deputy"
         ],
         "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
@@ -409,9 +391,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "ambitious",
             "bloodthirsty",
@@ -439,6 +418,7 @@
             "other_clan",
             "injury",
             "scar",
+            "THROAT",
             "leader"
         ],
         "intro_text": "r_c heads out into the wetlands alone, wanting to make a quick check on the border.",
@@ -472,9 +452,6 @@
             "responsible",
             "thoughtful",
             "wise"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "ambitious",
@@ -533,12 +510,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
@@ -583,12 +554,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
@@ -603,6 +568,7 @@
             "other_clan",
             "injury",
             "scar",
+            "ONE",
             "no_app",
             "death"
         ],
@@ -640,9 +606,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "ambitious",
             "bloodthirsty",
@@ -671,6 +634,7 @@
             "other_clan",
             "injury",
             "scar",
+            "SNOUT",
             "deputy",
             "death"
         ],
@@ -708,9 +672,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "ambitious",
             "bloodthirsty",
@@ -739,6 +700,7 @@
             "other_clan",
             "injury",
             "scar",
+            "THROAT",
             "leader",
             "death"
         ],
@@ -776,9 +738,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "ambitious",
             "bloodthirsty",
@@ -807,6 +766,7 @@
             "other_clan",
             "injury",
             "scar",
+            "CHEEK",
             "deputy",
             "death"
         ],
@@ -844,12 +804,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
@@ -868,6 +822,7 @@
             "other_clan",
             "injury",
             "scar",
+            "SNOUT",
             "leader",
             "death"
         ],
@@ -904,12 +859,6 @@
             "responsible",
             "thoughtful",
             "wise"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -954,12 +903,6 @@
             "insecure",
             "nervous"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
@@ -1002,12 +945,6 @@
             "careful",
             "insecure",
             "nervous"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -1054,12 +991,6 @@
             "insecure",
             "nervous"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
@@ -1105,12 +1036,6 @@
             "insecure",
             "nervous"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
@@ -1154,12 +1079,6 @@
             "insecure",
             "nervous"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
@@ -1201,12 +1120,6 @@
             "careful",
             "insecure",
             "nervous"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -1250,12 +1163,6 @@
             "insecure",
             "nervous"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
@@ -1273,6 +1180,7 @@
             "fighting",
             "injury",
             "scar",
+            "BRIDGE",
             "border",
             "death"
         ],
@@ -1318,9 +1226,6 @@
         "fail_skills": [
             "smart"
         ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
@@ -1338,6 +1243,7 @@
             "fighting",
             "injury",
             "scar",
+            "BRIDGE",
             "border",
             "death"
         ],
@@ -1383,9 +1289,6 @@
         "fail_skills": [
             "good fighter"
         ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
@@ -1400,9 +1303,11 @@
         "biome": "wetlands",
         "season": "Any",
         "tags": [
+            "app_stat",
             "fighting",
             "injury",
             "scar",
+            "CHEEK",
             "border",
             "apprentice",
             "death"
@@ -1422,15 +1327,6 @@
             "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. The rogue is not impressed by this teenager, and ignores them completely.",
             "Nose to the ground following the trail, app1 doesn't see the blow that kills them.",
             "Nose to the ground following the trail, app1 doesn't see the blow coming. They haul themselves to their feet, squealing with pain, and run for home."
-        ],
-        "win_skills": [
-            "None"
-        ],
-        "win_trait": [
-            "None"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "ambitious",
@@ -1467,6 +1363,7 @@
             "fighting",
             "injury",
             "scar",
+            "BRIDGE",
             "border"
         ],
         "intro_text": "While on patrol, r_c notices some suspicious pawprints in the swamp mud.",
@@ -1511,9 +1408,6 @@
         "fail_skills": [
             "smart"
         ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 2,
         "max_cats": 2,
         "antagonize_text": null,
@@ -1531,6 +1425,7 @@
             "fighting",
             "injury",
             "scar",
+            "BRIDGE",
             "border"
         ],
         "intro_text": "While on patrol, r_c notices some suspicious pawprints in the swamp mud.",
@@ -1575,9 +1470,6 @@
         "fail_skills": [
             "good fighter"
         ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 2,
         "max_cats": 2,
         "antagonize_text": null,
@@ -1592,9 +1484,11 @@
         "biome": "wetlands",
         "season": "Any",
         "tags": [
+            "app_stat",
             "fighting",
             "injury",
             "scar",
+            "CHEEK",
             "border",
             "apprentice"
         ],
@@ -1613,15 +1507,6 @@
             "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. The rogue is not impressed by the teenager, but reluctantly leaves c_n territory.",
             null,
             "Nose to the ground following the trail, app1 doesn't see the blow coming. They haul themselves to their feet, squealing with pain, and run for home."
-        ],
-        "win_skills": [
-            "None"
-        ],
-        "win_trait": [
-            "None"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "ambitious",
@@ -1700,9 +1585,6 @@
         "fail_skills": [
             "smart"
         ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 3,
         "max_cats": 6,
         "antagonize_text": null,
@@ -1762,9 +1644,6 @@
         "fail_skills": [
             "good fighter"
         ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 3,
         "max_cats": 6,
         "antagonize_text": null,
@@ -1779,6 +1658,7 @@
         "biome": "wetlands",
         "season": "Any",
         "tags": [
+            "app_stat",
             "fighting",
             "border",
             "apprentice"
@@ -1798,15 +1678,6 @@
             "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. The rogue is not impressed by the teenager, but with the full patrol backing them up, leaves c_n territory.",
             null,
             null
-        ],
-        "win_skills": [
-            "None"
-        ],
-        "win_trait": [
-            "None"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "ambitious",
@@ -1873,9 +1744,6 @@
             "empathetic",
             "loving",
             "patient"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "cold",

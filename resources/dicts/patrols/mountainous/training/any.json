@@ -3,7 +3,7 @@
     "patrol_id": "mtn_train_session1",
     "biome": "mountainous",
     "season": "Any",
-    "tags": ["apprentice", "training", "scar", "minor_injury", "warrior"],
+    "tags": ["app_stat", "apprentice", "training", "scar", "RIGHTEAR", "minor_injury", "warrior"],
     "intro_text": "The patrol wants to hold a training session for app1. They decide to focus on how best to leap up a rocky cliff.",
     "decline_text": "They decide to focus on the patrolling the territory instead. Training can wait for another day.",
     "chance_of_success": 70,
@@ -34,7 +34,7 @@
     "patrol_id": "mtn_train_sett1",
     "biome": "mountainous",
     "season": "Any",
-    "tags": ["death", "scar", "training", "battle_injury", "trust", "respect", "sacrificial", "clan_to_r_c"],
+    "tags": ["death", "scar", "ONE", "training", "battle_injury", "trust", "respect", "sacrificial", "clan_to_r_c"],
     "intro_text": "r_c wanders past an old badger sett dug into the rocky hillside, only to freeze. There's new scent here, acrid and sour.",
     "decline_text": "Surely it must be nothing... uneasily, r_c continues on.",
     "chance_of_success": 80,
@@ -68,7 +68,7 @@
     "patrol_id": "mtn_train_sett2",
     "biome": "mountainous",
     "season": "Any",
-    "tags": ["scar", "battle_injury", "training", "trust", "respect", "no_change_fail", "patrol_to_p_l", "patrol_to_r_c"],
+    "tags": ["scar", "SIDE", "battle_injury", "training", "trust", "respect", "no_change_fail", "patrol_to_p_l", "patrol_to_r_c"],
     "intro_text": "p_l wanders past an old badger sett dug into the rocky hillside, only to freeze. There's new scent here, acrid and sour.",
     "decline_text": "Surely it must be nothing... uneasily, the patrol continues on.",
     "chance_of_success": 80,
@@ -100,8 +100,8 @@
     "patrol_id": "mtn_train_stuck1",
     "biome": "mountainous",
     "season": "Any",
-    "tags": ["training", "platonic", "comfort", "trust", "blunt_force_injury", "death", "scar", "p_l_to_r_c", "s_c_to_r_c", "patrol_to_p_l", "patrol_to_r_c"],
-    "intro_text": "Trailing behind the patrol, there's a mighty clatter of stones somewhere below r_c. They look around wildly - just in time for the world to tip upside-down as the scree slope beneath them collapses.",
+    "tags": ["training", "platonic", "comfort", "trust", "blunt_force_injury", "death", "scar", "LEFTEAR", "p_l_to_r_c", "s_c_to_r_c", "patrol_to_p_l", "patrol_to_r_c"],
+    "intro_text": "r_c is trailing behind the patrol when there is a mighty clatter of stones from below them. They look around wildly, just in time for the world to tip upside-down as the scree slope beneath them collapses.",
     "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
     "chance_of_success": 90,
     "exp": 20,
@@ -134,7 +134,7 @@
     "patrol_id": "mtn_train_stuck2",
     "biome": "mountainous",
     "season": "Any",
-    "tags": ["training", "blunt_force_injury", "death", "scar"],
+    "tags": ["training", "blunt_force_injury", "death", "scar", "TOETRAP"],
     "intro_text": "r_c is training alone out on the mountainside when suddenly, there's a mighty clatter of stones somewhere below them. r_c looks around wildly - just in time for the world to tip upside-down as the scree slope beneath them collapses.",
     "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
     "chance_of_success": 70,
@@ -164,10 +164,10 @@
 
 },
 {
-    "patrol_id": "mtn_train_solo1",
+    "patrol_id": "mtn_train_soloapp1",
     "biome": "mountainous",
     "season": "Any",
-    "tags": ["training", "apprentice", "minor_injury", "scar"],
+    "tags": ["app_stat", "training", "apprentice", "minor_injury", "scar", "LEFTEAR"],
     "intro_text": "r_c heads out into the mountains alone, but maybe an apprentice shouldn't try to do a solo patrol.",
     "decline_text": "r_c turns back to camp, deciding that this is a bad idea.",
     "chance_of_success": 50,
@@ -270,7 +270,6 @@
     "win_skills": ["smart", "very smart", "extremely smart"],
     "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring",
                     "playful", "righteous"],
-    "fail_skills": ["None"],
     "fail_trait": ["insecure", "lonesome", "nervous"],
     "min_cats": 1,
     "max_cats": 1,
@@ -281,7 +280,7 @@
     "patrol_id": "mtn_train_stargazing1",
     "biome": "mountainous",
     "season": "Any",
-    "tags": ["training", "apprentice", "two_apprentices", "rel_two_apps", "romantic", "platonic", "comfort"],
+    "tags": ["app_stat", "training", "apprentice", "two_apprentices", "rel_two_apps", "romantic", "platonic", "comfort"],
     "intro_text": "On top of a rocky outlook, watching over the rolling surface of the foothills below, app1 waits for app2, the dark night cloaking the steep mountain. The tip of their tail keeps twitching in excitement.",
     "decline_text": "Oh no! They both forgot that they were on elder nest change duty this evening!",
     "chance_of_success": 70,
@@ -296,10 +295,7 @@
             "app1 bursts out from cover, pouncing on app2 with claws sheathed and giggling. app2 rolls with the blow and kicks app1 off, but they scramble to their feet looking hurt and alarmed - a rocky outlook is no place for games that knock you off balance.",
             "app2 emerges from the soft dark. Seeing app1, they trot up, asking why app1 wanted to meet there. app1 stutters out some nonsense about hunting, and then runs off into the shadowed slopes of the mountain."
     ],
-    "win_skills": ["None"],
     "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -326,8 +322,6 @@
     ],
     "win_skills": ["fantastic hunter"],
     "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -337,7 +331,7 @@
 	"patrol_id": "mtn_train_thrush1",
 	"biome": "mountainous",
 	"season": "Any",
-	"tags": ["training", "apprentice", "trust", "comfort", "dislike", "warrior"],
+	"tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "warrior"],
 	"intro_text": "Touring through the territory, p_l spots a thrush, and begins to quiz app1 on what the best strategy is for catching it.",
 	"decline_text": "Thinking better of it, the cats try to hunt instead.",
 	"chance_of_success": 80,
@@ -345,15 +339,12 @@
 	"success_text": [
     	"app1 tests the wind. They correctly identify that because of the wind they'd need to approach the thrush from the side. p_l purrs, complimenting them on how much they've learned.",
     	"There's a wooded valley just below where the thrush is foraging - app1 would approach from there!",
-    	"p_l stops, suddenly reminded of an old tale. The thrush below is breaking a snail open on a rock. There was a prophecy about that once, although p_l can't quite remember how the story goes..."
+    	"s_c stops, suddenly reminded of an old tale. The thrush below is breaking a snail open on a rock. There was a prophecy about that once, although s_c can't quite remember how the story goes..."
 	],
 	"fail_text": [
     	"app1 rolls their eyes, and asks why they can't just try catching it. Irritably, p_l replies that they're welcome to try, and the bird spots app1 coming immediately."
 	],
 	"win_skills": ["good speaker", "great speaker", "excellent speaker"],
-	"win_trait": ["None"],
-	"fail_skills": ["None"],
-	"fail_trait": ["None"],
 	"min_cats": 2,
 	"max_cats": 2,
 	"antagonize_text": null,
@@ -363,7 +354,7 @@
 	"patrol_id": "mtn_train_thrush2",
 	"biome": "mountainous",
 	"season": "Any",
-	"tags": ["training", "apprentice", "trust", "comfort", "dislike", "warrior"],
+	"tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "warrior"],
 	"intro_text": "Touring through the territory, p_l spots a thrush, and begins to quiz app1 on what the best strategy is for catching it.",
 	"decline_text": "Thinking better of it, the cats try to hunt instead.",
 	"chance_of_success": 80,
@@ -371,15 +362,12 @@
 	"success_text": [
     	"app1 tests the wind. They correctly identify that because of the wind they'd need to approach the thrush from the side. p_l purrs, complimenting them on how much they've learned.",
     	"There's a wooded valley just below where the thrush is foraging - app1 would approach from there!",
-    	"p_l nods as app1 keeps listing idea after idea after idea. Eventually, app1 asks which one was right - but that wasn't the point of the lesson."
+    	"s_c nods as app1 keeps listing idea after idea after idea. Eventually, app1 asks which one was right - but that wasn't the point of the lesson."
 	],
 	"fail_text": [
     	"app1 rolls their eyes, and asks why they can't just try catching it. Irritably, p_l replies that they're welcome to try, and the bird spots app1 coming immediately."
 	],
 	"win_skills": ["good teacher", "great teacher", "fantastic teacher"],
-	"win_trait": ["None"],
-	"fail_skills": ["None"],
-	"fail_trait": ["None"],
 	"min_cats": 2,
 	"max_cats": 2,
 	"antagonize_text": null,
@@ -389,7 +377,7 @@
 	"patrol_id": "mtn_train_thrush3",
 	"biome": "mountainous",
 	"season": "Any",
-	"tags": ["training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
+	"tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
 	"intro_text": "Touring through the territory, p_l spots a thrush, and begins to quiz the apprentices on what the best strategy is for catching it.",
 	"decline_text": "Thinking better of it, the cats try to hunt instead.",
 	"chance_of_success": 90,
@@ -397,15 +385,12 @@
 	"success_text": [
     	"app1 tests the wind. They correctly identify that because of the wind they'd need to approach the thrush from the side, but app2 counters by pointing out a great vantage point to pounce from, if the wind wasn't against them. p_l purrs, complimenting them both on how much they've learned.",
     	"There's a wooded valley just below where the thrush is foraging - app1 would approach from there! app2 argues for approaching from above and pouncing from on high instead. p_l praises them both for solid plans of attack.",
-    	"p_l stops, suddenly reminded of an old tale. The thrush below is breaking a snail open on a rock. There was a prophecy about that once, although p_l can't quite remember how the story goes..."
+    	"s_c stops, suddenly reminded of an old tale. The thrush below is breaking a snail open on a rock. There was a prophecy about that once, although p_l can't quite remember how the story goes..."
 	],
 	"fail_text": [
     	"app1 rolls their eyes, and asks why they can't just try catching it. Irritably, p_l replies that they're welcome to try, and the bird spots app1 coming immediately, also spoiling app2's chances."
 	],
 	"win_skills": ["good speaker", "great speaker", "excellent speaker"],
-	"win_trait": ["None"],
-	"fail_skills": ["None"],
-	"fail_trait": ["None"],
 	"min_cats": 3,
 	"max_cats": 6,
 	"antagonize_text": null,
@@ -415,7 +400,7 @@
 	"patrol_id": "mtn_train_thrush4",
 	"biome": "mountainous",
 	"season": "Any",
-	"tags": ["training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
+	"tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
 	"intro_text": "Touring through the territory, p_l spots a thrush, and begins to quiz the apprentices on what the best strategy is for catching it.",
 	"decline_text": "Thinking better of it, the cats try to hunt instead.",
 	"chance_of_success": 90,
@@ -423,15 +408,12 @@
 	"success_text": [
     	"app1 tests the wind. They correctly identify that because of the wind they'd need to approach the thrush from the side, but app2 counters by pointing out a great vantage point to pounce from, if the wind wasn't against them. p_l purrs, complimenting them both on how much they've learned.",
     	"There's a wooded valley just below where the thrush is foraging - app1 would approach from there! app2 argues for approaching from above and pouncing from on high instead. p_l praises them both for solid plans of attack.",
-    	"p_l nods as the young apprentices list idea after idea after idea. Eventually, app1 asks which one was right - but that wasn't the point of the lesson."
+    	"s_c nods as the young apprentices list idea after idea after idea. Eventually, app1 asks which one was right - but that wasn't the point of the lesson."
 	],
 	"fail_text": [
     	"app1 rolls their eyes, and asks why they can't just try catching it. Irritably, p_l replies that they're welcome to try, and the bird spots app1 coming immediately, also spoiling app2's chances."
 	],
 	"win_skills": ["good teacher", "great teacher", "fantastic teacher"],
-	"win_trait": ["None"],
-	"fail_skills": ["None"],
-	"fail_trait": ["None"],
 	"min_cats": 3,
 	"max_cats": 6,
 	"antagonize_text": null,
@@ -441,7 +423,7 @@
 	"patrol_id": "mtn_train_kea1",
 	"biome": "mountainous",
 	"season": "Any",
-	"tags": ["training", "apprentice", "trust", "comfort", "no_change_fail", "warrior"],
+	"tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "no_change_fail", "warrior"],
 	"intro_text": "As app1 follows p_l on a training patrol to learn the territory, there's a muffled thump behind them. They whirl around, finding a beady black eye and huge beak far far too close to them.",
 	"decline_text": "Thinking better of it, the cats try to hunt instead.",
 	"chance_of_success": 80,
@@ -449,15 +431,12 @@
 	"success_text": [
     	"app1 leaps backwards, falling in their haste and scrambling upright. Then in one of the weirdest moments of their young life, the green bird does the same thing, chattering as it leans sideways to tumble a little way down the slope. It's not broken, p_l grumbles, coming up to stand by app1. Kea are just, well, like that.",
     	"p_l hisses for app1 to back away. Slowly. That's a kea, and while it's been a long time since the Clan lost anyone to one... app1 suddenly notices the claws the size of their head. The kea chirps weirdly, tilting its head sideways, but when the cats don't move it seems to scoff at them, spreading its wings with their shocking orange undersides and flapping back into the air.",
-    	"app1 freezes in fear, but p_l comes up next to them, and bats a stone down the slope. The bird shrieks, startlingly loud, and waves its wings around. p_l offers it a branch from a shrub, dangling it like playing with a kit in the nursery, and the kea merrily hops after it, as p_l leads it teasingly away from app1. Later, app1 apologizes for being scared, and is shocked when p_l tells them that no, kea are very dangerous. "
+    	"app1 freezes in fear, but s_c comes up next to them, and bats a stone down the slope. The bird shrieks, startlingly loud, and waves its wings around. s_c offers it a branch from a shrub, dangling it like playing with a kit in the nursery, and the kea merrily hops after it, as p_l leads it teasingly away from app1. Later, app1 apologizes for being scared, and is shocked when s_c tells them that no, kea are very dangerous. "
 	],
 	"fail_text": [
     	"app1 screeches, and the kea shrieks back, an huge explosion of noise and feathers. Later, p_l tells app1 they're lucky the bird was entertained rather than scared or offended. Entertained?!?"
 	],
 	"win_skills": ["good speaker", "great speaker", "excellent speaker", "good teacher", "great teacher", "fantastic teacher"],
-	"win_trait": ["None"],
-	"fail_skills": ["None"],
-	"fail_trait": ["None"],
 	"min_cats": 2,
 	"max_cats": 2,
 	"antagonize_text": null,

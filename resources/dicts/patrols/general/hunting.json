@@ -1,6 +1,6 @@
 [
     {
-        "patrol_id": "gen_hunt_mouse1",
+        "patrol_id": "gen_hunt_mouse2",
         "biome": "Any",
         "season": "Any",
         "tags": [
@@ -29,7 +29,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "gen_hunt_mouse2",
+        "patrol_id": "gen_hunt_mouse3",
         "biome": "Any",
         "season": "Any",
         "tags": [
@@ -153,7 +153,7 @@
         "intro_text": "Your patrol comes across a squirrel. It's engrossed in nibbling at a morsel beneath a tree.",
         "success_text": [
             "Stealthily, r_c stalks forward. The squirrel has no idea what's coming as the cat pounces on it and breaks its neck. r_c sends a silent thanks to StarClan for this prey.",
-            "r_c rapidly pads towards the squirrel, their tailtip twitching in excitement. The squirrel is alerted to their presence with a bird's alarm call, but r_c launches themself forward and cuts off its escape with a bite to the back of the head."
+            "r_c rapidly pads towards the squirrel, their tailtip twitching in excitement. The squirrel is alerted to their presence with a bird's alarm call, but r_c launches themself forward and cuts off its escpe with a bite to the back of the head."
         ],
         "fail_text": [
             "Your patrol narrowly misses the squirrel as it's alerted by a bird's alarm call."
@@ -230,7 +230,7 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "gen_hunt_rabbit1",
+        "patrol_id": "gen_hunt_strangerabbit1",
         "biome": "Any",
         "season": "Any",
         "tags": [
@@ -251,14 +251,14 @@
             "r_c catches the rabbit, but later they and the cats who eat it become violently ill."
         ],
         "decline_text": "r_c avoids catching the rabbit and looks for other prey.",
-        "chance_of_success": 40,
+        "chance_of_success": 30,
         "exp": 10,
         "win_skills": [
             "smart",
             "very smart",
             "extremely smart"
         ],
-        "min_cats": 1,
+        "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null
@@ -372,7 +372,7 @@
             "huge_prey1"
         ],
         "intro_text": "r_c is tempted to eat the prey they just caught.",
-        "decline_text": "r_c decides against breaking the warrior code",
+        "decline_text": "r_c decides against breaking the warrior code.",
         "chance_of_success": 50,
         "exp": 20,
         "success_text": [
@@ -403,7 +403,7 @@
             "huge_prey1"
         ],
         "intro_text": "r_c is tempted to eat the prey they just caught.",
-        "decline_text": "r_c decides against breaking the warrior code",
+        "decline_text": "r_c decides against breaking the warrior code.",
         "chance_of_success": 50,
         "exp": 20,
         "success_text": [
@@ -436,7 +436,7 @@
             "huge_prey1"
         ],
         "intro_text": "r_c is tempted to eat the prey they just caught.",
-        "decline_text": "r_c decides against breaking the warrior code",
+        "decline_text": "r_c decides against breaking the warrior code.",
         "chance_of_success": 50,
         "exp": 20,
         "success_text": [
@@ -470,7 +470,7 @@
             "large_prey1"
         ],
         "intro_text": "r_c is tempted to eat the prey they just caught.",
-        "decline_text": "r_c decides against breaking the warrior code",
+        "decline_text": "r_c decides against breaking the warrior code.",
         "chance_of_success": 50,
         "exp": 20,
         "success_text": [

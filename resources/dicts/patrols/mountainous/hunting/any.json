@@ -99,26 +99,21 @@
         "win_trait": [
             "strange"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "mtn_hunt_solo1",
+        "patrol_id": "mtn_hunt_huntassessment1",
         "biome": "mountainous",
         "season": "Any",
         "tags": [
-            "hunting",
+            "app_stat", "hunting",
             "apprentice",
             "minor_injury",
             "scar",
+            "LEFTEAR",
             "medium_prey0",
             "medium_prey1",
             "large_prey2",
@@ -273,9 +268,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "bold",
             "childish",
@@ -353,9 +345,9 @@
             "hunting",
             "big_bite_injury",
             "scar",
+            "NECKBITE",
             "medium_prey0",
-            "medium_prey1",
-            "large_prey3"
+            "medium_prey2"
         ],
         "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from just beyond a rock fall.",
         "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
@@ -398,10 +390,10 @@
             "hunting",
             "big_bite_injury",
             "scar",
+            "NECKBITE",
             "death",
             "medium_prey0",
-            "medium_prey1",
-            "large_prey3"
+            "medium_prey2"
         ],
         "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from just beyond a rock fall.",
         "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
@@ -446,6 +438,7 @@
             "hunting",
             "big_bite_injury",
             "scar",
+            "NECKBITE",
             "death",
             "medium_prey0",
             "medium_prey1",
@@ -527,9 +520,6 @@
             "troublesome",
             "vengeful"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "altruistic",
             "compassionate",
@@ -589,9 +579,6 @@
             "strict",
             "troublesome",
             "vengeful"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "altruistic",
@@ -653,9 +640,6 @@
             "troublesome",
             "vengeful"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "altruistic",
             "compassionate",
@@ -683,6 +667,7 @@
         "tags": [
             "death",
             "scar",
+            "MANLEG",
             "blunt_force_injury",
             "hunting",
             "medium_prey"
@@ -720,12 +705,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 6,
         "antagonize_text": null,
@@ -743,6 +722,7 @@
         "tags": [
             "death",
             "scar",
+            "MANTAIL",
             "blunt_force_injury",
             "hunting",
             "cruel_season",
@@ -780,12 +760,6 @@
             "responsible",
             "thoughtful",
             "wise"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
         ],
         "min_cats": 1,
         "max_cats": 6,

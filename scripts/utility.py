@@ -1,3 +1,5 @@
+from random import choice
+
 import pygame
 
 try:
@@ -8,9 +10,17 @@ import logging
 logger = logging.getLogger(__name__)
 from scripts.game_structure import image_cache
 
-from scripts.cat.sprites import *
-from scripts.cat.pelts import *
-from scripts.game_structure.game_essentials import *
+from scripts.cat.sprites import sprites, Sprites
+from scripts.cat.pelts import (
+    choose_pelt,
+    scars1,
+    scars2,
+    scars3,
+    plant_accessories,
+    wild_accessories,
+    collars,
+    )
+from scripts.game_structure.game_essentials import game, screen_x, screen_y
 
 
 def scale(rect):
@@ -106,7 +116,7 @@ def change_clan_reputation(difference=0):
     will change the clan's reputation with outsider cats according to the difference parameter.
     """
     # grab rep
-    reputation = game.clan.reputation
+    reputation = int(game.clan.reputation)
     # ensure this is an int value
     difference = int(difference)
     # change rep
@@ -154,6 +164,35 @@ def get_highest_romantic_relation(relationships):
             relation = inter_rel
 
     return relation
+
+def check_relationship_value(cat_from, cat_to, rel_value=None):
+    """
+    returns the value of the rel_value param given
+    :param cat_from: the cat who is having the feelings
+    :param cat_to: the cat that the feelings are directed towards
+    :param rel_value: the relationship value that you're looking for,
+    options are: romantic, platonic, dislike, admiration, comfortable, jealousy, trust
+    """
+    if cat_to.ID in cat_from.relationships:
+        relationship = cat_from.relationships[cat_to.ID]
+    else:
+        relationship = cat_from.create_one_relationship(cat_to)
+
+    if rel_value == "romantic":
+        return relationship.romantic_love
+    elif rel_value == "platonic":
+        return relationship.platonic_like
+    elif rel_value == "dislike":
+        return relationship.dislike
+    elif rel_value == "admiration":
+        return relationship.admiration
+    elif rel_value == "comfortable":
+        return relationship.comfortable
+    elif rel_value == "jealousy":
+        return relationship.jealousy
+    elif rel_value == "trust":
+        return relationship.trust
+
 
 
 def get_personality_compatibility(cat1, cat2):
@@ -502,17 +541,41 @@ def update_sprite(cat):
                                 (0, 0))
         else:
             if cat.age == 'elder' or (cat.pelt.length == 'long' and cat.age not in ['kitten', 'adolescent']):
+                # Base Coat
                 new_sprite.blit(
-                    sprites.sprites[cat.tortiebase + 'extra' + cat.tortiecolour + str(cat.age_sprites[cat.age])],
+                    sprites.sprites[cat.tortiebase + 'extra' + cat.pelt.colour + str(cat.age_sprites[cat.age])],
                     (0, 0))
-                new_sprite.blit(
-                    sprites.sprites[cat.tortiepattern + 'extra' + cat.pattern + str(cat.age_sprites[cat.age])],
-                    (0, 0))
+
+                # Create the patch image
+                patches = sprites.sprites[
+                    cat.tortiepattern + 'extra' + cat.tortiecolour + str(cat.age_sprites[cat.age])].copy()
+                patches.blit(sprites.sprites["tortiemask" + cat.pattern + str(cat.age_sprites[cat.age] + 9)],
+                             (0, 0),
+                             special_flags=pygame.BLEND_RGBA_MULT
+                             )
+
+                # Add patches onto cat.
+                new_sprite.blit(patches, (0, 0))
             else:
-                new_sprite.blit(sprites.sprites[cat.tortiebase + cat.tortiecolour + str(cat.age_sprites[cat.age])],
-                                (0, 0))
-                new_sprite.blit(sprites.sprites[cat.tortiepattern + cat.pattern + str(cat.age_sprites[cat.age])],
-                                (0, 0))
+                # Base Coat
+                new_sprite.blit(
+                    sprites.sprites[cat.tortiebase + cat.pelt.colour + str(cat.age_sprites[cat.age])],
+                    (0, 0))
+
+                # Create the patch image
+                if cat.tortiepattern == "Single":
+                    tortie_pattern = "SingleColour"
+                else:
+                    tortie_pattern = cat.tortiepattern
+
+                patches = sprites.sprites[
+                    tortie_pattern + cat.tortiecolour + str(cat.age_sprites[cat.age])].copy()
+                patches.blit(sprites.sprites["tortiemask" + cat.pattern + str(cat.age_sprites[cat.age])], (0, 0),
+                             special_flags=pygame.BLEND_RGBA_MULT)
+
+                # Add patches onto cat.
+                new_sprite.blit(patches, (0, 0))
+
 
         # TINTS
         if cat.tint != "none" and cat.tint in Sprites.cat_tints["tint_colours"]:
@@ -649,7 +712,38 @@ def update_sprite(cat):
                     new_sprite.blit(sprites.sprites['scars' + scar +
                                                     str(cat.age_sprites[cat.age])], (0, 0), special_flags=blendmode)
 
-        # draw accessories        
+        # Apply fading fog
+        if cat.opacity <= 97 and not cat.prevent_fading and game.settings["fading"]:
+            if cat.age == 'elder' or (cat.pelt.length == 'long' and cat.age not in ['kitten', 'adolescent']):
+                offset = 9
+            else:
+                offset = 0
+
+            if 97 >= cat.opacity > 80:
+                # Stage 1
+                pass
+            elif 80 >= cat.opacity > 45:
+                # Stage 2
+                offset += 15
+            elif cat.opacity <= 45:
+                # Stage 3
+                offset += 30
+
+            new_sprite.blit(sprites.sprites['fademask' + str(cat.age_sprites[cat.age] + offset)], (0, 0),
+                            special_flags=pygame.BLEND_RGBA_MULT)
+
+            if cat.df:
+                temp = sprites.sprites['fadedf' + str(cat.age_sprites[cat.age] + offset)].copy()
+                temp.blit(new_sprite, (0, 0))
+                new_sprite = temp
+            else:
+                temp = sprites.sprites['fadestarclan' + str(cat.age_sprites[cat.age] + offset)].copy()
+                temp.blit(new_sprite, (0, 0))
+                new_sprite = temp
+
+
+
+        # draw accessories
         if cat.age == 'elder' or (cat.pelt.length == 'long' and cat.age not in ['kitten', 'adolescent']):
             if cat.accessory in plant_accessories:
                 new_sprite.blit(
@@ -693,13 +787,15 @@ def update_sprite(cat):
             (0, 0)
         )
 
+
+    # Opacity currently disabled for performance reasons. Fading Fog is used as placeholder.
+    """# Apply opacity
+    if cat.opacity < 100 and not cat.prevent_fading and game.settings["fading"]:
+        new_sprite = apply_opacity(new_sprite, cat.opacity)"""
+
     # reverse, if assigned so
     if cat.reverse:
         new_sprite = pygame.transform.flip(new_sprite, True, False)
-
-    # Apply opacity
-    if cat.opacity < 100 and not cat.prevent_fading and game.settings["fading"]:
-        new_sprite = apply_opacity(new_sprite, cat.opacity)
 
     # apply
     cat.sprite = new_sprite

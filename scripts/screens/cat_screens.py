@@ -1,8 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: ascii -*-
+import os
 from random import choice
 
 import pygame
+try:
+    import ujson
+except ImportError:
+    import json as ujson
 
 from scripts.utility import update_sprite, event_text_adjust, scale
 
@@ -11,13 +16,13 @@ from .base_screens import Screens, cat_profiles
 from scripts.utility import get_text_box_theme
 from scripts.cat.cats import Cat
 from scripts.cat.pelts import collars, wild_accessories
-import scripts.game_structure.image_cache as image_cache
+from scripts.game_structure import image_cache
 import pygame_gui
 from re import sub
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked  # , UIImageTextBox, UISpriteButton
-from scripts.game_structure import image_cache
-from scripts.game_structure.game_essentials import *
-from scripts.cat.names import *
+from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
+from scripts.cat.names import names
+from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE
 
 
 # ---------------------------------------------------------------------------- #
@@ -33,16 +38,17 @@ def accessory_display_name(cat):
     if accessory in collars:
         collar_colors = {'crimson': 'red', 'blue': 'blue', 'yellow': 'yellow', 'cyan': 'cyan', 
                          'red': 'orange', 'lime': 'lime', 'green': 'green', 'rainbow': 'rainbow', 
-                         'black': 'black', 'spikes': 'spiky', 'pink': 'pink', 'purple': 'purple', 'multi': 'multi'}
+                         'black': 'black', 'spikes': 'spiky', 'white': 'white', 'pink': 'pink', 
+                         'purple': 'purple', 'multi': 'multi', 'indigo': 'indigo'}
         collar_color = next((color for color in collar_colors if acc_display.startswith(color)), None)
 
         if collar_color:
-            if acc_display.endswith('bow') and not acc_display == 'rainbow':
-                acc_display = collar_color + ' bow'
+            if acc_display.endswith('bow') and not collar_color == 'rainbow':
+                acc_display = collar_colors[collar_color] + ' bow'
             elif acc_display.endswith('bell'):
-                acc_display = collar_color + ' bell collar'
+                acc_display = collar_colors[collar_color] + ' bell collar'
             else:
-                acc_display = collar_color + ' collar'
+                acc_display = collar_colors[collar_color] + ' collar'
 
     elif accessory in wild_accessories:
         if acc_display == 'blue feathers':
@@ -58,6 +64,8 @@ def accessory_display_name(cat):
 # ---------------------------------------------------------------------------- #
 def bs_blurb_text(cat):
     backstory = cat.backstory
+    if cat.status in ['kittypet', 'loner', 'rogue']:
+        return f"This cat is a {cat.status} and currently resides outside of the Clans."
     backstory_text = {
         None: "This cat was born into the Clan where they currently reside.",
         'clan_founder': "This cat is one of the founding members of the Clan.",
@@ -68,7 +76,6 @@ def bs_blurb_text(cat):
         'outsider_roots2': "This cat was born outside the Clan, but came to live in the Clan with their parent at a young age.",
         'loner1': "This cat joined the Clan by choice after living life as a loner.",
         'loner2': "This cat used to live in a barn, but mostly stayed away from Twolegs. They decided clanlife might be an interesting change of pace.",
-        'loner3': "",
         'kittypet1': "This cat joined the Clan by choice after living life with Twolegs as a kittypet.",
         'kittypet2': 'This cat used to live on something called a "boat" with Twolegs, but decided to join the Clan.',
         'kittypet3': "This cat used be a kittypet. They got lost after wandering away, and when they returned home, they found their Twolegs were gone. They eventually found their way to the Clan.",
@@ -78,7 +85,7 @@ def bs_blurb_text(cat):
         'abandoned1': "This cat was found by the Clan as a kit and has been living with them ever since.",
         'abandoned2': "This cat was born outside of the Clan, but was brought to the Clan as a kit and has lived here ever since.",
         'abandoned3': "This cat was born into another Clan, but they were left here as a kit for the Clan to raise.",
-        'abandoned4': "This cat was found and taken in after being abandoned by their twolegs as a kit.",
+        'abandoned4': "This cat was found and taken in after being abandoned by their Twolegs as a kit.",
         'medicine_cat': "This cat was once a medicine cat in another Clan.",
         'otherclan': "This cat was born into another Clan, but came to this Clan by choice.",
         'otherclan2': "This cat was unhappy in their old Clan and decided to come here instead.",
@@ -88,11 +95,11 @@ def bs_blurb_text(cat):
         'retired_leader': "This cat used to be the leader of another Clan before deciding they needed a change of scenery after leadership became too much. They returned their nine lives and let their deputy take over before coming here.",
         'refugee': "This cat came to this Clan after fleeing from their former Clan and the tyrannical leader that had taken over.",
         'refugee2': "This cat used to live as a loner, but after another cat chased them from their home, they took refuge in the Clan.",
-        'refugee3': "This cat used to be a kittypet, but joined the Clan after fleeing from their cruel twoleg.",
+        'refugee3': "This cat used to be a kittypet, but joined the Clan after fleeing from their cruel Twoleg.",
         'refugee4': "This cat used to be in a rogue group, but joined the Clan after fleeing from the group's tyrannical leader.",
         'tragedy_survivor': "Something horrible happened to this cat's previous Clan. They refuse to speak about it.",
         'tragedy_survivor2': "This cat used to be part of a rogue group, but joined the Clan after something terrible happened to it.",
-        'tragedy_survivor3': "This cat used to be a kittypet, but joined the Clan after something terrible happened to their twolegs.",
+        'tragedy_survivor3': "This cat used to be a kittypet, but joined the Clan after something terrible happened to their Twolegs.",
         'tragedy_survivor4': "This cat used to be a loner, but joined the Clan after something terrible made them leave their old home behind.",
         'orphaned': "This cat was found with a deceased parent. The Clan took them in, but doesn't hide where they came from.",
         'orphaned2': "This cat was found with a deceased parent. The Clan took them in, but doesn't tell them where they really came from.",
@@ -101,8 +108,15 @@ def bs_blurb_text(cat):
         'guided1': "This cat used to be a kittypet, but after dreaming of starry-furred cats, they followed their whispers to the Clan.",
         'guided2': "This cat used to live a rough life as a rogue. While wandering, they found a set of starry pawprints, and followed them to the Clan.",
         'guided3': "This cat used to live as a loner. A starry-furred cat appeared to them one day, and then led them to the Clan.",
-        'guided4': "This cat used to live in a different Clan, until a sign from StarClan told them to leave."
-
+        'guided4': "This cat used to live in a different Clan, until a sign from StarClan told them to leave.",
+        'orphaned3': "This cat was found as a kit among the wreckage of a Monster with no parents in sight and got brought to live in the Clan.",
+        'orphaned4': "This cat was found as a kit hiding near a place of battle where there were no survivors and got brought to live in the Clan.",
+        'orphaned5': "This cat was found as a kit hiding near their parent's bodies and got brought to live in the Clan.",
+        'refugee5': "This cat got washed away from their former territory in a flood that destroyed their home but was glad to find a new home in their new Clan here.",
+        'disgraced2': "This cat was exiled from their old Clan for something they didn't do and came here to seek safety.",
+        'disgraced3': "This cat once held a high rank in another Clan but was exiled for reasons they refuse to share.",
+        'other_clan1': "This cat grew up in another Clan but chose to leave that life and join the Clan they now live in."
+        
     }
     return backstory_text.get(backstory, "")
 
@@ -148,14 +162,21 @@ def backstory_text(cat):
         'otherclan': 'formerly from another Clan',
         'otherclan2': 'formerly from another Clan',
         'otherclan3': 'formerly from another Clan',
+        'refugee5': 'formerly from another Clan',
+        'other_clan1': 'formerly from another Clan',
         'guided4': 'formerly from another Clan',
         'ostracized_warrior': 'ostracized warrior',
         'disgraced': 'disgraced',
+        'disgraced2': 'disgraced',
+        'disgraced3': 'disgraced',
         'retired_leader': 'retired leader',
         'refugee': 'refugee',
         'tragedy_survivor': 'survivor of a tragedy',
         'orphaned': 'orphaned',
-        'orphaned2': 'orphaned'
+        'orphaned2': 'orphaned',
+        'orphaned3': 'orphaned',
+        'orphaned4': 'orphaned',
+        'orphaned5': 'orphaned'
     }
 
     if bs_display in backstory_map:
@@ -642,7 +663,7 @@ class ProfileScreen(Screens):
                                                               starting_height=2,
                                                               tool_tip_text="Prevents a cat from fading away."
                                                                             " If unchecked, and the cat has been dead "
-                                                                            "for longer than 302 moons, they will fade "
+                                                                            "for longer than 202 moons, they will fade "
                                                                             "on the next timeskip.",
                                                               object_id=box_type, manager=MANAGER)
             if game.clan.instructor.ID == self.the_cat.ID:
@@ -810,7 +831,7 @@ class ProfileScreen(Screens):
         output = ""
 
         # STATUS
-        if the_cat.outside and not the_cat.exiled:
+        if the_cat.outside and not the_cat.exiled and not the_cat.status in ['kittypet', 'loner', 'rogue']:
             output += "<font color='#FF0000'>lost</font>"
         elif the_cat.exiled:
             output += "<font color='#FF0000'>exiled</font>"
@@ -877,7 +898,9 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # BACKSTORY
-        if the_cat.backstory is not None:
+        if the_cat.status in ['kittypet', 'loner', 'rogue']:
+            output += 'backstory: ' + the_cat.status
+        elif the_cat.backstory is not None:
             bs_text = backstory_text(the_cat)
             output += 'backstory: ' + bs_text
         else:
@@ -887,7 +910,7 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # NUTRITION INFO (if the game is in the correct mode)
-        if game.clan.game_mode in ["expanded", "cruel season"] and the_cat.is_alive():
+        if game.clan.game_mode in ["expanded", "cruel season"] and the_cat.is_alive() and FRESHKILL_ACTIVE:
             nutr = None
             if the_cat.ID in game.clan.freshkill_pile.nutrition_info:
                 nutr = game.clan.freshkill_pile.nutrition_info[the_cat.ID]
@@ -1085,7 +1108,7 @@ class ProfileScreen(Screens):
             adjust_text = str(bs_blurb).replace('This cat', str(self.the_cat.name))
             text = adjust_text
         else:
-            text = f"{str(self.the_cat.name)} was born into the Clan where they currently reside."
+            text = f"{self.the_cat.name} was born into the Clan where they currently reside."
         return text
 
     def get_scar_text(self):
@@ -1124,14 +1147,15 @@ class ProfileScreen(Screens):
 
     def get_influence_text(self):
         influence_history = None
-
+        if self.the_cat.status in ['kittypet', 'loner', 'rogue']:
+            return ""
         # check if cat has any mentor influence, else assign None
         if len(self.the_cat.mentor_influence) >= 1:
-            influenced_skill = str(self.the_cat.mentor_influence[1])
+            influenced_trait = str(self.the_cat.mentor_influence[0])
             if len(self.the_cat.mentor_influence) >= 2:
-                influenced_trait = str(self.the_cat.mentor_influence[0])
+                influenced_skill = str(self.the_cat.mentor_influence[1])
             else:
-                influenced_trait = None
+                influenced_skill = None
         else:
             game.switches['sub_tab_group'] = 'life sub tab'
             influenced_trait = None
@@ -1917,6 +1941,12 @@ class ChangeNameScreen(Screens):
                                                                             self.the_cat.name.status]
                                                                         , manager=MANAGER)
             self.suffix_entry_box.disable()  # You can't change a special suffix
+        elif self.the_cat.name.status in ['kittypet', 'loner', 'rogue']:
+            self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((800, 400), (360, 60))),
+                                                                        placeholder_text=
+                                                                        ""
+                                                                        , manager=MANAGER)
+            self.suffix_entry_box.disable()  # You can't change a special suffix
         else:
             self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((800, 400), (360, 60))),
                                                                         placeholder_text=self.the_cat.name.suffix
@@ -2047,17 +2077,8 @@ class CeremonyScreen(Screens):
 
     def on_use(self):
         pass
-
-    def handle_leadership_ceremony(self, cat):
-        dep_name = str(cat.name.prefix) + str(cat.name.suffix)
-        if cat.trait == "bloodthirsty":
-            intro_text = dep_name + " leaves to speak with StarClan. They close their eyes and awaken under a vast, inky black sky. They turn around to see a wary group of cats approaching, stars dotting their fur." + "\n"
-        else:
-            intro_text = dep_name + " leaves to speak with StarClan. They close their eyes and are immediately surrounded by their loved ones, friends, and Clanmates who have passed on. Stars shine throughout their pelts, and their eyes are warm as they greet the new leader." + "\n"
-
-        # as of right now, chooses random starclan cats to give lives
-        # in the future, plan to have starclan cats with high relationships to give lives
-        # if not enough cats to give lives, generate a new random cat name to give a life
+            
+    def create_leadership_ceremony(self, cat):
         queen = ""
         warrior = ""
         kit = ""
@@ -2158,9 +2179,31 @@ class CeremonyScreen(Screens):
                                                                                       cat.life_givers[6], \
                                                                                       cat.life_givers[7], \
                                                                                       cat.life_givers[8]
-            known = cat.known_life_givers
-            virtues = cat.virtues
 
+    def handle_leadership_ceremony(self, cat):
+        
+        dep_name = str(cat.name.prefix) + str(cat.name.suffix)
+        if cat.trait == "bloodthirsty":
+            intro_text = dep_name + " leaves to speak with StarClan. They close their eyes and awaken under a vast, inky black sky. They turn around to see a wary group of cats approaching, stars dotting their fur." + "\n"
+        else:
+            intro_text = dep_name + " leaves to speak with StarClan. They close their eyes and are immediately surrounded by their loved ones, friends, and Clanmates who have passed on. Stars shine throughout their pelts, and their eyes are warm as they greet the new leader." + "\n"
+
+        # as of right now, chooses random starclan cats to give lives
+        # in the future, plan to have starclan cats with high relationships to give lives
+        # if not enough cats to give lives, generate a new random cat name to give a life
+        known = cat.known_life_givers
+        virtues = cat.virtues
+        if not known or not virtues:
+            self.create_leadership_ceremony(cat)
+        queen, warrior, kit, warrior2, app, elder, warrior3, med_cat, prev_lead = cat.life_givers[0], \
+                                                                                      cat.life_givers[1], \
+                                                                                      cat.life_givers[2], \
+                                                                                      cat.life_givers[3], \
+                                                                                      cat.life_givers[4], \
+                                                                                      cat.life_givers[5], \
+                                                                                      cat.life_givers[6], \
+                                                                                      cat.life_givers[7], \
+                                                                                      cat.life_givers[8]
         if known[0]:
             if cat.trait == "bloodthirsty":
                 queen_text = queen + ' stalks up to the new leader first, eyes burning with unexpected ferocity. They touch their nose to ' + dep_name + '\'s head, giving them a life for ' + cat.virtues[0] + '. ' + dep_name + ' reels back with the emotion of the life that courses through them.'
@@ -2224,10 +2267,10 @@ class CeremonyScreen(Screens):
                         cat.virtues[4] + '.'
         else:
             if cat.trait == "bloodthirsty":
-                app_text = app + ' an unfamiliar apprentice, stretches up to give a life for ' + cat.virtues[
+                app_text = app + ', an unfamiliar apprentice, stretches up to give a life for ' + cat.virtues[
                 4] + '. They start to growl something, but an older StarClan cat nudges them back into their ranks.'
             else:
-                app_text = app + ' an unfamiliar apprentice, stretches up to give a life for ' + cat.virtues[
+                app_text = app + ', an unfamiliar apprentice, stretches up to give a life for ' + cat.virtues[
                     4] + '. Their eyes glimmer as they wish ' + dep_name + " well, and step back for the next cat."
         if known[5]:
             if cat.trait == "bloodthirsty":

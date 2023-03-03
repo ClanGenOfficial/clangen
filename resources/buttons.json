@@ -156,6 +156,25 @@
             }
         }
     },
+    "#exit_window_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/exit_window_button.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/exit_window_button_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/exit_window_button_hover.png"
+            }
+        }
+    },
     "#timeskip_button":
     {
         "prototype": "#image_button",
@@ -293,6 +312,29 @@
             "disabled_image":
             {
 				"path": "resources/images/buttons/main_menu_unavailable.png"
+			}
+        }
+    },
+    "#smallquit_button":
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/smallquit.png"
+            },
+			"hovered_image":
+            {
+                "path": "resources/images/buttons/smallquit_hover.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/smallquit_hover.png"
+            },
+            "disabled_image":
+            {
+				"path": "resources/images/buttons/smallquit_hover.png"
 			}
         }
     },
@@ -2153,6 +2195,29 @@
             }
         }
     },
+    "#grotto_tab":
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/grotto_camp.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/grotto_camp_hover.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/grotto_camp_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/grotto_camp_unavailable.png"
+            }
+        }
+    },
     "#beach_biome_button": 
     {
         "prototype": "#image_button",
@@ -3111,6 +3176,52 @@
             "disabled_image":
             {
                 "path":"resources/images/buttons/begin_anew.png"
+            }
+        }
+    },
+  "#delete_it_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/delete_it.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/delete_it_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/delete_it_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/delete_it.png"
+            }
+        }
+    },
+  "#go_back_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/go_back.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/go_back_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/go_back_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/go_back.png"
             }
         }
     },

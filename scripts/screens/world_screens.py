@@ -4,11 +4,9 @@ from math import ceil
 from scripts.game_structure.image_button import UISpriteButton, UIImageButton
 from .base_screens import Screens, cat_profiles
 
-from .base_screens import Screens
-
-from scripts.game_structure.game_essentials import *
+from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 from scripts.cat.cats import Cat
-import scripts.game_structure.image_cache as image_cache
+from scripts.game_structure import image_cache
 from ..utility import get_text_box_theme, update_sprite, scale
 
 
@@ -309,7 +307,10 @@ class UnknownResScreen(Screens):
         self.search_bar_image = pygame.transform.scale(pygame.image.load(
             "resources/images/search_bar.png").convert_alpha(), (456 / 1600 * screen_x, 68 / 1400 * screen_y))
         self.clan_name_bg = pygame.transform.scale(
-            image_cache.load_image("resources/images/clan_name_bg.png").convert_alpha(), (360, 70))
+            image_cache.load_image("resources/images/clan_name_bg.png").convert_alpha(), (380, 70))
+        self.ur_bg = pygame.transform.scale(
+            pygame.image.load("resources/images/urbg.png").convert(),
+            (screen_x, screen_y))
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -404,6 +405,7 @@ class UnknownResScreen(Screens):
 
     def screen_switches(self):
         # Determine the dead, non-exiled cats.
+        
         cat_profiles()
         self.get_dead_cats()
 
@@ -535,8 +537,7 @@ class UnknownResScreen(Screens):
                 if len(name) >= 13:
                     short_name = str(cat.name)[0:12]
                     name = short_name + '...'
-                self.cat_names.append(pygame_gui.elements.UITextBox("<font color='#FFFFFF'>" + name + "</font>"
-                                                                    ,
+                self.cat_names.append(pygame_gui.elements.UITextBox(name,
                                                                     scale(pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60)))
                                                                     , manager=MANAGER))
                 pos_x += 240
@@ -545,6 +546,8 @@ class UnknownResScreen(Screens):
                     pos_y += 200
 
     def on_use(self):
+        bg = self.ur_bg
+        screen.blit(bg, (0, 0))
         # Only update the positions if the search text changes
         if self.search_bar.get_text() != self.previous_search_text:
             self.update_search_cats(self.search_bar.get_text())

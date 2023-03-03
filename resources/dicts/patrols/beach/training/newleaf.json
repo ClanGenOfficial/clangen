@@ -3,14 +3,14 @@
     "patrol_id": "bch_train_elephantseal1",
     "biome": "beach",
     "season": "newleaf",
-    "tags": ["training", "apprentice", "platonic", "comfort", "respect", "warrior", "no_change_fail"],
+    "tags": ["adult_stat", "training", "apprentice", "platonic", "comfort", "respect", "warrior", "no_change_fail"],
     "intro_text": "As the sun creeps over the horizon, p_l leads the patrol carefully towards a familiar beach, stopping the cats on the clifftop. Below them, the familiar sand is hidden under a mass of boulders, as long as twenty cats and as wide as ten.",
     "decline_text": "They return to camp to report the new beach layout.",
     "chance_of_success": 90,
     "exp": 20,
     "success_text": [
             "As the cats watch, the silence is broken, as one of the massive boulders rears up and snorts. The apprentices jolt with fear, app1's fur standing on end while app2 looks seconds away from fleeing, but p_l flicks their tail encouragingly. These are nosy-seals, they explain, as the beach full of 'boulders' suddenly seems far more intimidating.",
-            "app1 and app2's jaws drop, disbelieving, as p_l explains these are animals, not a rockslide. They stare as a nosy-seal wakes from his slumber and bellows a challenge to his neighbour, flinching as the monolithic animals crash towards each other. Each drips enough blood to fill the veins of an enitre cat, crashing and careening off each other.",
+            "app1 and app2's jaws drop, disbelieving, as p_l explains these are animals, not a rockslide. They stare as a nosy-seal wakes from his slumber and bellows a challenge to his neighbour, flinching as the monolithic animals crash towards each other. Each drips enough blood to fill the veins of an entire cat, crashing and careening off each other.",
             "As the 'rocks' wake and reveal themselves to be the most massive animals app1 and app2 have ever seen, s_c reassures them - they may never have seen these frightening seals before, but c_n has. s_c spends the morning quizzing the apprentices until each is able to identify a male nosy-seal with his trunk vs the comparatively smaller females.",
             "As the sun hits them and the massive boulders wake with grumbling snorts, app1 and app2 both look about to run. s_c quickly calms them, explaining that these massive yearly visitors to c_n are nosy-seals, and that if the cat's don't bother them, they won't bother the cats."
     ],
@@ -19,15 +19,13 @@
     ],
     "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "bch_train_romantic_oceanswim1",
+    "patrol_id": "bch_train_romantic_oceanswim2",
     "biome": "beach",
     "season": "newleaf",
     "tags": ["training", "warrior", "no_app", "romantic"],
@@ -43,7 +41,6 @@
         "r_c dips one paw in the water and hisses, proclaiming that it's much too cold and urging p_l to come back to camp with them instead.",
         "s_c tries their best to show off their swimming skills, but their companion just isn't paying attention, too focused on their own swimming to notice. Eventually, s_c gives up for now, discouraged."
     ],
-    "fail_skills": ["None"],
     "fail_trait": ["ambitious", "childish", "insecure", "lonesome"],
     "min_cats": 2,
     "max_cats": 2,

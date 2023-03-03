@@ -1,9 +1,9 @@
 [
 {
-    "patrol_id": "bch_bord_flashflood5",
+    "patrol_id": "bch_bord_flashflood_tide3",
     "biome": "beach",
     "season": "leaf-bare",
-    "tags": ["border", "death", "large_prey", "no_body"],
+    "tags": ["border", "death", "large_prey", "no_body", "no_fail_prey"],
     "intro_text": "As r_c crosses a beach, shivering with the cold, there's a creaking, rushing sound, like a wave - but out of sync with the ocean.",
     "decline_text": "r_c decides to head back early.",
     "chance_of_success": 60,
@@ -22,8 +22,6 @@
     ],
     "win_skills": ["extremely smart"],
     "win_trait": ["careful", "insecure", "nervous"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,

@@ -2,10 +2,6 @@ from scripts.cat.names import names
 from scripts.cat.pelts import collars
 from scripts.cat_relations.relationship import Relationship
 
-try:
-    import ujson
-except ImportError:
-    import json as ujson
 import random
 
 from scripts.cat.cats import Cat, INJURIES, PERMANENT, cat_class
@@ -17,7 +13,7 @@ from scripts.event_class import Single_Event
 
 
 # ---------------------------------------------------------------------------- #
-#                               Death Event Class                              #
+#                               New Cat Event Class                              #
 # ---------------------------------------------------------------------------- #
 
 class NewCatEvents:
@@ -35,16 +31,35 @@ class NewCatEvents:
         This function handles the new cats
         """
         other_clan = random.choice(game.clan.all_clans)
-        other_clan_name = f'{str(other_clan.name)}Clan'
+        other_clan_name = f'{other_clan.name}Clan'
 
         if other_clan_name == 'None':
             other_clan = game.clan.all_clans[0]
-            other_clan_name = f'{str(other_clan.name)}Clan'
+            other_clan_name = f'{other_clan.name}Clan'
 
         possible_events = self.generate_events.possible_events(cat.status, cat.age, "new_cat")
         final_events = self.generate_events.filter_possible_events(possible_events, cat, other_cat, war, enemy_clan,
                                                                    other_clan, alive_kits)
-
+        if self.has_outside_cat():
+            if random.randint(1,3) == 1:
+                outside_cat = self.select_outside_cat()
+                backstory = outside_cat.status
+                self.update_cat_properties(outside_cat)
+                game.clan.add_cat(outside_cat)
+                Cat.outside_cats.pop(outside_cat.ID)
+                event_text = f"A {backstory} named {outside_cat.name} waits on the border, asking to join the Clan."
+                name_change = random.choice([1,2])
+                if name_change == 1:
+                    event_text = event_text + f" They decide to keep their name."
+                elif name_change == 2:
+                    outside_cat.name.status = 'warrior'
+                    outside_cat.name.prefix = random.choice(names.normal_prefixes)
+                    outside_cat.name.suffix = random.choice(names.normal_suffixes)
+                    event_text = event_text + f" They decide to take a new name, {outside_cat.name}."
+                outside_cat.thought = "Is looking around the camp with wonder"
+                involved_cats = [outside_cat.ID]
+                game.cur_events_list.append(Single_Event(event_text, ["misc"], involved_cats))
+                return
         # ---------------------------------------------------------------------------- #
         #                                cat creation                                  #
         # ---------------------------------------------------------------------------- #
@@ -266,6 +281,7 @@ class NewCatEvents:
                     born_with = False
                     if PERMANENT[chosen_condition]['congenital'] in ['always', 'sometimes']:
                         born_with = True
+
                     new_cat.get_permanent_condition(chosen_condition, born_with)
 
                     # assign scars
@@ -286,3 +302,17 @@ class NewCatEvents:
             game.clan.add_cat(new_cat)
 
         return created_cats
+
+    def has_outside_cat(self):
+        outside_cats = (cat for id, cat in Cat.outside_cats.items() if cat.status in ['kittypet', 'loner', 'rogue'] and not cat.dead)
+        return any(outside_cats)
+    
+    def select_outside_cat(self):
+        for cat_id, cat in Cat.outside_cats.items():
+            if cat.status in ["kittypet", "loner", "rogue"] and not cat.dead:
+                return cat
+
+    def update_cat_properties(self, cat):
+        cat.backstory = cat.status + str(random.choice([1, 2]))
+        cat.status = "warrior"
+        cat.outside = False

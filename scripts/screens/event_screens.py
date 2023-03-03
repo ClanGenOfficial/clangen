@@ -1,17 +1,15 @@
-import re
-from random import choice
 import pygame_gui
 
 from .base_screens import Screens, cat_profiles
 import pygame
 from scripts.events import events_class
-from scripts.utility import draw, get_text_box_theme, get_living_cat_count, scale
-# from scripts.game_structure.text import *
-from scripts.game_structure.image_button import IDImageButton
-from scripts.game_structure.game_essentials import *
+from scripts.utility import get_living_cat_count, get_text_box_theme, scale
+from scripts.game_structure.image_button import IDImageButton, UIImageButton
+from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
 from ..cat.cats import Cat
 from ..game_structure import image_cache
 from scripts.event_class import Single_Event
+from scripts.game_structure.windows import GameOver
 
 
 class EventsScreen(Screens):
@@ -135,7 +133,7 @@ class EventsScreen(Screens):
                 if self.event_display_type == "all events":
                     # if events list is empty, add a single message the says nothing interesting happened
                     if not self.all_events:
-                        self.all_events.append(Single_Event("Nothing interesting happened this moon"))
+                        self.all_events.append(Single_Event("Nothing interesting happened this moon."))
                     self.display_events = self.all_events
                 elif self.event_display_type == "ceremony events":
                     self.display_events = self.ceremony_events
@@ -225,7 +223,7 @@ class EventsScreen(Screens):
                                                      "Clan",
                                                      scale(pygame.Rect((200, 220), (1200, 80))),
                                                      object_id=get_text_box_theme(), manager=MANAGER)
-        self.season = pygame_gui.elements.UITextBox(f'Current season: {str(game.clan.current_season)}',
+        self.season = pygame_gui.elements.UITextBox(f'Current season: {game.clan.current_season}',
                                                     scale(pygame.Rect((200, 280), (1200, 80))),
                                                     object_id=get_text_box_theme(), manager=MANAGER)
         self.clan_age = pygame_gui.elements.UITextBox("",
@@ -238,9 +236,9 @@ class EventsScreen(Screens):
         self.events_frame.disable()
         # Set text for clan age
         if game.clan.age == 1:
-            self.clan_age.set_text(f'Clan age: {str(game.clan.age)} moon')
+            self.clan_age.set_text(f'Clan age: {game.clan.age} moon')
         if game.clan.age != 1:
-            self.clan_age.set_text(f'Clan age: {str(game.clan.age)} moons')
+            self.clan_age.set_text(f'Clan age: {game.clan.age} moons')
 
         self.timeskip_button = UIImageButton(scale(pygame.Rect((620, 436), (360, 60))), "", object_id="#timeskip_button"
                                              , manager=MANAGER)
@@ -405,11 +403,11 @@ class EventsScreen(Screens):
 
     def update_events_display(self):
 
-        self.season.set_text(f'Current season: {str(game.clan.current_season)}')
+        self.season.set_text(f'Current season: {game.clan.current_season}')
         if game.clan.age == 1:
-            self.clan_age.set_text(f'Clan age: {str(game.clan.age)} moon')
+            self.clan_age.set_text(f'Clan age: {game.clan.age} moon')
         if game.clan.age != 1:
-            self.clan_age.set_text(f'Clan age: {str(game.clan.age)} moons')
+            self.clan_age.set_text(f'Clan age: {game.clan.age} moons')
 
         for ele in self.display_events_elements:
             self.display_events_elements[ele].kill()

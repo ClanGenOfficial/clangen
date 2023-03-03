@@ -4,7 +4,7 @@
     "patrol_id": "mtn_train_snowcrunching1",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["training", "apprentice", "two_apprentices", "rel_two_apps", "romantic", "platonic", "comfort", "no_change_fail"],
+    "tags": ["app_stat", "training", "apprentice", "two_apprentices", "rel_two_apps", "romantic", "platonic", "comfort", "no_change_fail"],
     "intro_text": "The apprentices emerge into a predawn world hushed and smothered in a new coating of snow! app1 and app2 tear off into the territory near camp, looking to play.",
     "decline_text": "Their mentors are already up for the day, and call them back. There'll be time to play later.",
     "chance_of_success": 70,
@@ -13,16 +13,13 @@
             "The snow seems to have melted and refrozen during the night, and app1 darts lightly over the top of the thin crust. app2 follows them, only to immediately hear a crack and sink up to their haunches in the fluffy stuff. Teasingly, app1 runs around near them, and it turns into a game of app2 romping through the snow trying to catch them.",
             "app1 finds a snowdrift, and over the course of an hour them and app2 turn it into a very respectable snow den, complete with short entrance tunnel. They're debating what to call the camp of their little Clan when their mentors arrive, congratulating them on running an excellent wilderness survival session without supervision.",
             null,
-            "After a while romping around in the snow, app1 complains of the cold seeping into their fur. app2 digs a little hollow, and invites them in to curl up with them. Strictly for warmth purposes of course. They both stay there as the sun rises. Strictly for warmth."
+            "After a while romping around in the snow, app1 complains of the cold seeping into their fur. s_c digs a little hollow, and invites them in to curl up with them. Strictly for warmth purposes of course. They both stay there as the sun rises. Strictly for warmth."
     ],
     "fail_text": [
             "The apprentices find a promising looking patch of fresh snow, only to find it conceals an old dirtplace trench underneath. Not only does it stink, they have to clean it up and try hid that they disturbed it, and it leaves them both irritated and stressed.",
             "As they play in the snow, app1 falls over themselves embarrassingly, and suddenly decides they remember that they have other things they should be doing."
     ],
-    "win_skills": ["None"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -32,7 +29,7 @@
 	"patrol_id": "mtn_train_towhee1",
 	"biome": "mountainous",
 	"season": "leaf-fall",
-	"tags": ["training", "apprentice", "trust", "comfort", "no_change_fail", "warrior"],
+	"tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "no_change_fail", "warrior"],
 	"intro_text": "p_l brings them down the mountain, to where a little stream turns into a tiny cold bog.",
 	"decline_text": "Thinking better of it, the cats try to hunt instead.",
 	"chance_of_success": 80,
@@ -40,15 +37,12 @@
 	"success_text": [
     	"app1 startles, hearing a cat cry out! They race over the ridge, looking for the caller, as behind them p_l nearly falls over laughing. It's a bird, they explain. The spotted towhee has fooled many a young cat, app1 doesn't need to feel bad, it's just something to learn from.",
     	"As they approach the bog, app1 hears the yowl of a cat. An intruder! They go haring off, as p_l sighs and settles down to wait. When they eventually return, p_l teaches them about towhee birds, who can call like a cat.",
-    	"On a scrub by the bog, a small towhee opens its beak and calls like a cat. app1 pokes p_l for an explanation. You see, an ancient cat, running from wolves, begged StarClan for help. StarClan gave her voice to the bird in the tree she hid under, and while the wolves were distracted she got away, but she never managed to catch that bird and get her voice back."
+    	"On a scrub by the bog, a small towhee opens its beak and calls like a cat. app1 pokes s_c for an explanation. You see, an ancient cat, running from wolves, begged StarClan for help. StarClan gave her voice to the bird in the tree she hid under, and while the wolves were distracted she got away, but she never managed to catch that bird and get her voice back."
 	],
 	"fail_text": [
     	"app1 refuses to believe that the cat cry they hear from the bog comes from a little towhee bird, and argues with p_l all the way back to camp."
 	],
 	"win_skills": ["good speaker", "great speaker", "excellent speaker"],
-	"win_trait": ["None"],
-	"fail_skills": ["None"],
-	"fail_trait": ["None"],
 	"min_cats": 2,
 	"max_cats": 2,
 	"antagonize_text": null,
@@ -58,7 +52,7 @@
 	"patrol_id": "mtn_train_towhee2",
 	"biome": "mountainous",
 	"season": "leaf-fall",
-	"tags": ["training", "apprentice", "trust", "comfort", "no_change_fail", "warrior"],
+	"tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "no_change_fail", "warrior"],
 	"intro_text": "p_l brings them down the mountain, to where a little stream turns into a tiny cold bog.",
 	"decline_text": "Thinking better of it, the cats try to hunt instead.",
 	"chance_of_success": 80,
@@ -66,15 +60,12 @@
 	"success_text": [
     	"app1 startles, hearing a cat cry out! They race over the ridge, looking for the caller, as behind them p_l nearly falls over laughing. It's a bird, they explain. The spotted towhee has fooled many a young cat, app1 doesn't need to feel bad, it's just something to learn from.",
     	"As they approach the bog, app1 hears the yowl of a cat. An intruder! They go haring off, as p_l sighs and settles down to wait. When they eventually return, p_l teaches them about towhee birds, who can call like a cat.",
-    	"p_l points out the towhee sitting on a rock overlooking the bog, and it's only that warning that keeps app1 from startling when the bird opens its beak and calls like a cat. It can be difficult to track intruders around c_n's territory, p_l explains, and this is one of the reasons why. But it can also work in c_n's favor too."
+    	"s_c points out the towhee sitting on a rock overlooking the bog, and it's only that warning that keeps app1 from startling when the bird opens its beak and calls like a cat. It can be difficult to track intruders around c_n's territory, s_c explains, and this is one of the reasons why. But it can also work in c_n's favor too."
 	],
 	"fail_text": [
     	"app1 refuses to believe that the cat cry they hear from the bog comes from a little towhee bird, and argues with p_l all the way back to camp."
 	],
 	"win_skills": ["good teacher", "great teacher", "fantastic teacher"],
-	"win_trait": ["None"],
-	"fail_skills": ["None"],
-	"fail_trait": ["None"],
 	"min_cats": 2,
 	"max_cats": 2,
 	"antagonize_text": null,
@@ -84,7 +75,7 @@
 	"patrol_id": "mtn_train_towhee3",
 	"biome": "mountainous",
 	"season": "leaf-fall",
-	"tags": ["training", "apprentice", "trust", "comfort", "no_change_fail", "two_apprentices", "warrior"],
+	"tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "no_change_fail", "two_apprentices", "warrior"],
 	"intro_text": "p_l brings them down the mountain, to where a little stream turns into a tiny cold bog.",
 	"decline_text": "Thinking better of it, the cats try to hunt instead.",
 	"chance_of_success": 90,
@@ -92,15 +83,12 @@
 	"success_text": [
     	"app1 startles, hearing a cat cry out! app2 races over the ridge, looking for the caller, as behind them p_l nearly falls over laughing. It's a bird, they explain. The spotted towhee has fooled many a young cat, they don't need to feel bad, it's just something to learn from.",
     	"As they approach the bog, app1 hears the yowl of a cat. An intruder! They go haring off with app2, shrieking with fury, as p_l sighs and settles down to wait. When they eventually return, p_l teaches them about towhee birds, who can call like a cat.",
-    	"On a scrub by the bog, a small towhee opens its beak and calls like a cat. The apprentices poke p_l for an explanation. You see, an ancient cat, running from wolves, begged StarClan for help. StarClan gave her voice to the bird in the tree she hid under, and while the wolves were distracted she got away, but she never managed to catch that bird and get her voice back."
+    	"On a scrub by the bog, a small towhee opens its beak and calls like a cat. The apprentices poke s_c for an explanation. You see, an ancient cat, running from wolves, begged StarClan for help. StarClan gave her voice to the bird in the tree she hid under, and while the wolves were distracted she got away, but she never managed to catch that bird and get her voice back."
 	],
 	"fail_text": [
     	"app1 refuses to believe that the cat cry they hear from the bog comes from a little towhee bird, and argues with p_l and app2 all the way back to camp."
 	],
 	"win_skills": ["good speaker", "great speaker", "excellent speaker"],
-	"win_trait": ["None"],
-	"fail_skills": ["None"],
-	"fail_trait": ["None"],
 	"min_cats": 3,
 	"max_cats": 6,
 	"antagonize_text": null,
@@ -110,7 +98,7 @@
 	"patrol_id": "mtn_train_towhee4",
 	"biome": "mountainous",
 	"season": "leaf-fall",
-	"tags": ["training", "apprentice", "trust", "comfort", "no_change_fail", "two_apprentices", "warrior"],
+	"tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "no_change_fail", "two_apprentices", "warrior"],
 	"intro_text": "p_l brings them down the mountain, to where a little stream turns into a tiny cold bog.",
 	"decline_text": "Thinking better of it, the cats try to hunt instead.",
 	"chance_of_success": 90,
@@ -118,15 +106,12 @@
 	"success_text": [
     	"app1 startles, hearing a cat cry out! app2 races over the ridge, looking for the caller, as behind them p_l nearly falls over laughing. It's a bird, they explain. The spotted towhee has fooled many a young cat, they don't need to feel bad, it's just something to learn from.",
     	"As they approach the bog, app1 hears the yowl of a cat. An intruder! They go haring off with app2, shrieking with fury, as p_l sighs and settles down to wait. When they eventually return, p_l teaches them about towhee birds, who can call like a cat.",
-    	"p_l points out the towhee sitting on a rock overlooking the bog, and it's only that warning that keeps the apprentices from startling when the bird opens its beak and calls like a cat. It can be difficult to track intruders around c_n's territory, p_l explains, and this is one of the reasons why. But it can also work in c_n's favor too."
+    	"s_c points out the towhee sitting on a rock overlooking the bog, and it's only that warning that keeps the apprentices from startling when the bird opens its beak and calls like a cat. It can be difficult to track intruders around c_n's territory, p_l explains, and this is one of the reasons why. But it can also work in c_n's favor too."
 	],
 	"fail_text": [
     	"app1 refuses to believe that the cat cry they hear from the bog comes from a little towhee bird, and argues with p_l and app2 all the way back to camp."
 	],
 	"win_skills": ["good teacher", "great teacher", "fantastic teacher"],
-	"win_trait": ["None"],
-	"fail_skills": ["None"],
-	"fail_trait": ["None"],
 	"min_cats": 3,
 	"max_cats": 6,
 	"antagonize_text": null,

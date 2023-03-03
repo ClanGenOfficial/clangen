@@ -5,7 +5,6 @@
     "season": "greenleaf",
     "tags": [
         "hunting",
-        "small_prey",
         "heat_illness",
         "medium_prey0",
         "huge_prey1"
@@ -63,15 +62,6 @@
         "very smart",
         "extremely smart"
     ],
-    "win_trait": [
-        "None"
-    ],
-    "fail_skills": [
-        "None"
-    ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 1,
     "max_cats": 6,
     "antagonize_text": null,
@@ -85,6 +75,7 @@
         "hunting",
         "fighting",
         "scar",
+        "NECKBITE",
         "injury",
         "bite-wound",
         "clan_to_patrol",
@@ -128,9 +119,7 @@
         "responsible",
         "righteous"
     ],
-    "fail_skills": [
-        "None"
-    ],
+
     "fail_trait": [
         "troublesome",
         "vengeful",
@@ -147,13 +136,14 @@
     ]
 },
 {
-    "patrol_id": "fst_hunt_fox_greenleafleafscavenge2",
+    "patrol_id": "fst_hunt_fox_greenleafscavenge2",
     "biome": "forest",
     "season": "greenleaf",
     "tags": [
         "hunting",
         "fighting",
         "scar",
+        "NECKBITE",
         "injury",
         "bite-wound",
         "clan_to_patrol",
@@ -197,9 +187,7 @@
         "responsible",
         "righteous"
     ],
-    "fail_skills": [
-        "None"
-    ],
+
     "fail_trait": [
         "troublesome",
         "vengeful",
@@ -223,6 +211,7 @@
         "fighting",
         "death",
         "scar",
+        "NECKBITE",
         "injury",
         "bite-wound",
         "clan_to_patrol",
@@ -264,9 +253,7 @@
         "responsible",
         "righteous"
     ],
-    "fail_skills": [
-        "None"
-    ],
+
     "fail_trait": [
         "troublesome",
         "vengeful",
@@ -291,6 +278,7 @@
         "hunting",
         "fighting",
         "scar",
+        "NECKBITE",
         "injury",
         "bite-wound",
         "clan_to_patrol",
@@ -334,9 +322,7 @@
         "responsible",
         "righteous"
     ],
-    "fail_skills": [
-        "None"
-    ],
+
     "fail_trait": [
         "troublesome",
         "vengeful",
@@ -360,6 +346,7 @@
         "hunting",
         "fighting",
         "scar",
+        "NECKBITE",
         "injury",
         "clan_to_patrol",
         "respect",
@@ -398,9 +385,7 @@
         "responsible",
         "righteous"
     ],
-    "fail_skills": [
-        "None"
-    ],
+
     "fail_trait": [
         "troublesome",
         "vengeful",
@@ -423,6 +408,7 @@
         "hunting",
         "fighting",
         "scar",
+        "NECKBITE",
         "injury",
         "bite-wound",
         "clan_to_patrol",
@@ -464,9 +450,7 @@
         "responsible",
         "righteous"
     ],
-    "fail_skills": [
-        "None"
-    ],
+
     "fail_trait": [
         "troublesome",
         "vengeful",
@@ -490,6 +474,7 @@
         "fighting",
         "death",
         "scar",
+        "NECKBITE",
         "big_bite_injury",
         "respect",
         "trust",
@@ -536,9 +521,6 @@
     "fail_skills": [
         "good fighter"
     ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 2,
     "max_cats": 3,
     "antagonize_text": null,
@@ -556,6 +538,7 @@
     "tags": [
         "fighting",
         "scar",
+        "NECKBITE",
         "big_bite_injury",
         "respect",
         "trust",
@@ -601,9 +584,6 @@
     "fail_skills": [
         "good fighter"
     ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 4,
     "max_cats": 6,
     "antagonize_text": null,
@@ -620,6 +600,7 @@
         "fighting",
         "death",
         "scar",
+        "NECKBITE",
         "big_bite_injury",
         "shock",
         "injury",
@@ -666,9 +647,6 @@
     "fail_skills": [
         "good fighter"
     ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -689,7 +667,9 @@
         "respect",
         "trust",
         "rel_patrol",
-        "patrol_to_r_c"
+        "patrol_to_r_c",
+        "scar",
+        "LEFTEAR"
     ],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
     "decline_text": "Your patrol decides not to pursue the fox.",
@@ -728,9 +708,6 @@
     ],
     "fail_skills": [
         "good fighter"
-    ],
-    "fail_trait": [
-        "None"
     ],
     "min_cats": 2,
     "max_cats": 3,
@@ -791,9 +768,6 @@
     "fail_skills": [
         "good fighter"
     ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 4,
     "max_cats": 6,
     "antagonize_text": null,
@@ -809,6 +783,7 @@
     "tags": [
         "fighting",
         "scar",
+        "NECKBITE",
         "big_bite_injury",
         "respect",
         "trust",
@@ -851,9 +826,6 @@
     ],
     "fail_skills": [
         "good fighter"
-    ],
-    "fail_trait": [
-        "None"
     ],
     "min_cats": 1,
     "max_cats": 1,

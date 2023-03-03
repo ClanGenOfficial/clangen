@@ -1,6 +1,6 @@
 import pygame
 import pygame_gui
-import sys
+
 
 try:
     import ujson
@@ -9,10 +9,6 @@ except ImportError as e:
     import json as ujson
 import os
 from ast import literal_eval
-
-from pygame_gui.elements import UIWindow
-
-from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
 
 pygame.init()
 
@@ -169,9 +165,11 @@ class Game():
         'fading': True,
         "save_faded_copy": False,
         'favorite sub tab': None,
+        'gore': False,
         'first_cousin_mates': True,
         'become_mediator': False,
         'fullscreen': False,
+        'discord': False,
     }  # The current settings
     setting_lists = {
         'no gendered breeding': [False, True],
@@ -196,6 +194,8 @@ class Game():
         'favorite sub tab': sub_tab_list,
         'fading': [True, False],
         'save_faded_copy': [False, True],
+        "gore": [False, True],
+        'discord': [False, True],
         'first_cousin_mates': [True, False],
         'become_mediator': [False, True],
         'fullscreen': [False, True]
@@ -207,7 +207,9 @@ class Game():
     cat_class = None
     config = {}
 
-    is_closing = False
+    rpc = None
+
+    is_close_menu_open = False
 
     def __init__(self, current_screen='start screen'):
         self.current_screen = current_screen
@@ -218,6 +220,7 @@ class Game():
         with open(f"resources/game_config.json", 'r') as read_file:
             self.config = ujson.loads(read_file.read())
 
+
     def update_game(self):
         if self.current_screen != self.switches['cur_screen']:
             self.current_screen = self.switches['cur_screen']
@@ -226,7 +229,7 @@ class Game():
         self.keyspressed = []
 
     def read_clans(self):
-        with open('saves/clanlist.txt', 'r') as read_file:
+        '''with open('saves/clanlist.txt', 'r') as read_file:
             clan_list = read_file.read()
             if_clans = len(clan_list)
         if if_clans > 0:
@@ -234,13 +237,55 @@ class Game():
             clan_list = [i.strip() for i in clan_list if i]  # Remove empty and whitespace
             return clan_list
         else:
+            return None'''
+        # All of the above is old code
+        # Now, we want clanlist.txt to contain ONLY the name of the clan that is currently loaded
+        # We will get the list of clans from the saves folder
+        # each clan has its own folder, and the name of the folder is the name of the clan
+        # so we can just get a list of all the folders in the saves folder
+
+        # First, we need to make sure the saves folder exists
+        if not os.path.exists('saves'):
+            os.makedirs('saves')
+            print('Created saves folder')
             return None
+        
+        # Now we can get a list of all the folders in the saves folder
+        clan_list = [f.name for f in os.scandir('saves') if f.is_dir()]
+
+        # the clan specified in saves/clanlist.txt should be first in the list
+        # so we can load it automatically
+
+        if os.path.exists('saves/clanlist.txt'):
+            with open('saves/clanlist.txt', 'r') as f:
+                loaded_clan = f.read().strip().splitlines()
+                if loaded_clan:
+                    loaded_clan = loaded_clan[0]
+                else:
+                    loaded_clan = None
+            os.remove('saves/clanlist.txt')
+            if loaded_clan:
+                with open('saves/currentclan.txt', 'w') as f:
+                    f.write(loaded_clan)
+        elif os.path.exists('saves/currentclan.txt'):
+            with open('saves/currentclan.txt', 'r') as f:
+                loaded_clan = f.read().strip()
+        else:
+            loaded_clan = None
+
+        if loaded_clan and loaded_clan in clan_list:
+            clan_list.remove(loaded_clan)
+            clan_list.insert(0, loaded_clan)
+
+        # Now we can return the list of clans
+        if not clan_list:
+            print('No clans found')
+            return None
+        # print('Clans found:', clan_list)
+        return clan_list
 
     def save_clanlist(self, loaded_clan=None):
-        """
-        Save list of clans to saves/clanlist.txt with the loaded_clan first in the list.
-        """
-        clans = []
+        '''clans = []
         if loaded_clan:
             clans.append(f"{loaded_clan}\n")
 
@@ -250,11 +295,19 @@ class Game():
 
         if clans:
             with open('saves/clanlist.txt', 'w') as f:
-                f.writelines(clans)
+                f.writelines(clans)'''
+        if loaded_clan:
+            if os.path.exists('saves/clanlist.txt'):
+                os.remove('saves/clanlist.txt') # we don't need clanlist.txt anymore
+            with open('saves/currentclan.txt', 'w') as f:
+                f.write(loaded_clan)
+        else:
+            if os.path.exists('saves/currentclan.txt'):
+                os.remove('saves/currentclan.txt')
 
     def save_settings(self):
         """ Save user settings for later use """
-        data = ''.join(f"{s}:{str(self.settings[s])}" + "\n"
+        data = ''.join(f"{s}:{self.settings[s]}" + "\n"
                        for s in self.settings.keys())
 
         with open('saves/settings.txt', 'w') as write_file:
@@ -559,136 +612,11 @@ class Game():
         return True
 
 
-class GameOver(UIWindow):
-    def __init__(self, last_screen):
-        super().__init__(pygame.Rect((250, 200), (300, 180)),
-                         window_display_title='Game Over',
-                         object_id='#game_over_window',
-                         resizable=False)
-        self.clan_name = str(game.clan.name + 'Clan')
-        self.last_screen = last_screen
-        self.game_over_message = UITextBoxTweaked(
-            f"{self.clan_name} has died out. For now, this is where their story ends. Perhaps it's time to tell a new "
-            f"tale?",
-            pygame.Rect((20, 20), (260, -1)),
-            line_spacing=1,
-            object_id="",
-            container=self
-        )
-
-        self.game_over_message = UITextBoxTweaked(
-            f"(leaving will not erase the save file)",
-            pygame.Rect((20, 155), (260, -1)),
-            line_spacing=.8,
-            object_id="#cat_patrol_info_box",
-            container=self
-        )
-
-        self.begin_anew_button = UIImageButton(
-            pygame.Rect((25, 115), (111, 30)),
-            "",
-            object_id="#begin_anew_button",
-            container=self
-        )
-        self.not_yet_button = UIImageButton(
-            pygame.Rect((159, 115), (111, 30)),
-            "",
-            object_id="#not_yet_button",
-            container=self
-        )
-
-        self.not_yet_button.enable()
-        self.begin_anew_button.enable()
-
-    def process_event(self, event):
-        super().process_event(event)
-
-        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.begin_anew_button:
-                game.last_screen_forupdate = game.switches['cur_screen']
-                game.switches['cur_screen'] = 'start screen'
-                game.switch_screens = True
-                self.kill()
-            elif event.ui_element == self.not_yet_button:
-
-                self.kill()
-
-
-class SaveCheck(UIWindow):
-    def __init__(self, last_screen, isMainMenu):
-        super().__init__(pygame.Rect((250, 200), (300, 200)),
-                         window_display_title='Save Check',
-                         object_id='#save_check_window',
-                         resizable=False)
-        self.clan_name = str(game.clan.name + 'Clan')
-        self.last_screen = last_screen
-        self.isMainMenu = isMainMenu
-        if(self.isMainMenu):
-            self.message = f"Would you like to save your game before exiting to the Main Menu? If you don't, progress may be lost!"
-        else:
-            self.message = f"Would you like to save your game before exiting? If you don't, progress may be lost!"
-        #TODO: Make a quit button for when directly quitting
-        self.game_over_message = UITextBoxTweaked(
-            self.message,
-            pygame.Rect((20, 20), (260, -1)),
-            line_spacing=1,
-            object_id="",
-            container=self
-        )
-
-        self.main_menu_button = UIImageButton(
-            pygame.Rect((73, 155), (153, 30)),
-            "",
-            object_id="#main_menu_button",
-            container=self
-        )
-        self.save_button = UIImageButton(
-            pygame.Rect((93, 115), (114, 30)),
-            "",
-            object_id="#save_button",
-            container=self
-        )
-
-        self.save_text = pygame_gui.elements.UITextBox("<font color=#006600>Saved!</font>",
-                                                       pygame.Rect((0, 85), (300, 40)),
-                                                       object_id="#save_no_bg_text_box",
-                                                       container=self)
-        self.save_text.hide()
-
-        self.main_menu_button.enable()
-        self.save_button.enable()
-
-
-    def process_event(self, event):
-        super().process_event(event)
-
-        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.main_menu_button:
-                if self.isMainMenu:
-                    game.last_screen_forupdate = game.switches['cur_screen']
-                    game.switches['cur_screen'] = 'start screen'
-                    game.switch_screens = True
-                    self.kill()
-                else:
-                    pygame.display.quit()
-                    pygame.quit()
-                    sys.exit()
-            elif event.ui_element == self.save_button:
-                if game.clan is not None:
-                    game.save_cats()
-                    game.clan.save_clan()
-                    game.clan.save_pregnancy(game.clan)
-                    self.save_text.show()
-
-
 game = Game()
 
-if not os.path.exists('saves/clanlist.txt'):
-    os.makedirs('saves', exist_ok=True)
-    with open('saves/clanlist.txt', 'w') as write_file:
-        write_file.write('')
 
 if not os.path.exists('saves/settings.txt'):
+    os.makedirs('saves', exist_ok=True)
     with open('saves/settings.txt', 'w') as write_file:
         write_file.write('')
 game.load_settings()

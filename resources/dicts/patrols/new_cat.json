@@ -1,6 +1,6 @@
 [
 {
-    "patrol_id": "gen_bord_newcat1",
+    "patrol_id": "gen_gen_newcat1",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat", "new_cat_adult", "reputation", "kits"],
@@ -46,7 +46,7 @@
 
 },
 {
-    "patrol_id": "gen_bord_newcat3",
+    "patrol_id": "gen_gen_newcatthunderpath3",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat", "new_cat_adult", "new_cat_injury", "nc_blunt_force_injury", "reputation", "no_change_fail_rep"],
@@ -69,7 +69,7 @@
 
 },
 {
-    "patrol_id": "gen_bord_newkit1",
+    "patrol_id": "gen_gen_newkit2",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat", "new_cat_kit", "reputation", "no_change_fail_rep"],
@@ -83,7 +83,7 @@
     ],
     "decline_text": "They decide to leave the kit alone.",
     "antagonize_text": "Your patrol moves the kit away from the territory, they have no interest in strange kits.",
-    "antagonize_fail_text": "The kit smells of two-legs, your patrol has no interest in what will surely grow to be a weak cat.",
+    "antagonize_fail_text": "The kit smells of Twolegs, your patrol has no interest in what will surely grow to be a weak cat.",
     "chance_of_success": 40,
     "exp": 10,
     "win_skills": ["smart", "very smart", "extremely smart"],
@@ -92,7 +92,7 @@
 
 },
 {
-    "patrol_id": "gen_med_newmed1",
+    "patrol_id": "gen_bord_healer1",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat", "new_cat_med", "reputation", "kits"],
@@ -117,7 +117,7 @@
     "patrol_id": "gen_bord_lonerchase1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["border", "new_cat", "reputation", "injury", "claw-wound", "scar"],
+    "tags": ["border", "new_cat", "reputation", "injury", "claw-wound", "scar", "RIGHTEAR"],
     "intro_text": "Your patrol cautiously moves towards the sound of barking. Near the border, they spot a dog chasing something. Oh no, it's a cat!",
     "decline_text": "The patrol decides not to interfere. Surely the cat can handle itself, the dog isn't even that big.",
     "chance_of_success": 40,
@@ -143,7 +143,7 @@
     "patrol_id": "gen_med_rescue1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["med_cat", "med_only", "new_cat", "new_cat_queen", "new_cat_kits", "new_cat_newborn", "no_change_fail_rep"],
+    "tags": ["herb_gathering", "med_only", "new_cat", "new_cat_queen", "new_cat_kits", "new_cat_newborn", "no_change_fail_rep"],
     "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
     "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, they go back to c_n to ask for help and guidance.",
     "chance_of_success": 45,
@@ -155,10 +155,7 @@
     "fail_text": [
             "p_l follows the strange sounds on the wind and finds the bodies of a unknown queen with their kits beside them, slowly going cold. r_c goes back to camp to find help bringing their bodies back to camp to pay respects."
     ],
-    "win_skills": ["None"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": null,
@@ -168,7 +165,7 @@
     "patrol_id": "gen_med_rescue2",
     "biome": "Any",
     "season": "Any",
-    "tags": ["med_cat", "med_only", "new_cat", "new_cat_kits", "new_cat_newborn", "no_change_fail_rep"],
+    "tags": ["herb_gathering", "med_only", "new_cat", "new_cat_kits", "new_cat_newborn", "no_change_fail_rep"],
     "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
     "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, they go back to c_n to ask for help and guidance.",
     "chance_of_success": 45,
@@ -180,20 +177,17 @@
     "fail_text": [
             "p_l follows the strange sounds on the wind and finds the body of an unknown queen with their kits beside them, slowly going cold. r_c goes back to camp to find help bringing their bodies back to camp to pay respects."
     ],
-    "win_skills": ["None"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "gen_med_rescuesolo1",
+    "patrol_id": "gen_med_rescue3",
     "biome": "Any",
     "season": "Any",
-    "tags": ["med_cat", "med_only", "no_app", "new_cat", "new_cat_queen", "new_cat_kits", "new_cat_newborn", "no_change_fail_rep"],
+    "tags": ["herb_gathering", "med_cat", "med_only", "no_app", "new_cat", "new_cat_queen", "new_cat_kits", "new_cat_newborn", "no_change_fail_rep"],
     "intro_text": "While searching for some specific herbs p_l is startled by weird sounds and whispers on the wind.",
     "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, they go back to c_n to ask for help and guidance.",
     "chance_of_success": 45,
@@ -205,20 +199,17 @@
     "fail_text": [
             "p_l follows the strange sounds on the wind and finds the body of an unknown queen with their kits beside them, slowly going cold. They cancel their patrol and return to camp to get help sending these lost souls to StarClan."
     ],
-    "win_skills": ["None"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "gen_med_rescuesolo2",
+    "patrol_id": "gen_med_rescue4",
     "biome": "Any",
     "season": "Any",
-    "tags": ["med_cat", "med_only", "no_app", "new_cat", "new_cat_kits", "new_cat_newborn", "no_change_fail_rep"],
+    "tags": ["herb_gathering", "med_cat", "med_only", "no_app", "new_cat", "new_cat_kits", "new_cat_newborn", "no_change_fail_rep"],
     "intro_text": "While searching for some specific herbs p_l is startled by weird sounds and whispers on the wind.",
     "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, they go back to c_n to ask for help and guidance.",
     "chance_of_success": 45,
@@ -230,10 +221,7 @@
     "fail_text": [
             "p_l follows the strange sounds on the wind and finds the body of an unknown queen with their kits beside them, slowly going cold. They cancel their patrol and return to camp to get help sending these lost souls to StarClan."
     ],
-    "win_skills": ["None"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -243,7 +231,7 @@
     "patrol_id": "gen_med_rescuesoloapp1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["med_cat", "med_only", "apprentice", "new_cat", "new_cat_queen", "new_cat_kits", "new_cat_newborn", "no_change_fail_rep"],
+    "tags": ["herb_gathering", "med_only", "apprentice", "new_cat", "new_cat_queen", "new_cat_kits", "new_cat_newborn", "no_change_fail_rep"],
     "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
     "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, they go back to c_n to ask for help and guidance.",
     "chance_of_success": 45,
@@ -255,10 +243,7 @@
     "fail_text": [
             "p_l follows the strange sounds on the wind and finds the bodies of an unknown queen with their kits beside them, slowly going cold. They desperately try to save a kitten, but can't, and their mentor finds them there sobbing hours later."
     ],
-    "win_skills": ["None"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -268,7 +253,7 @@
     "patrol_id": "gen_med_rescuesoloapp2",
     "biome": "Any",
     "season": "Any",
-    "tags": ["med_cat", "med_only", "apprentice", "new_cat", "new_cat_kits", "new_cat_newborn", "no_change_fail_rep"],
+    "tags": ["herb_gathering", "med_only", "apprentice", "new_cat", "new_cat_kits", "new_cat_newborn", "no_change_fail_rep"],
     "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
     "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, they go back to c_n to ask for help and guidance.",
     "chance_of_success": 45,
@@ -280,10 +265,7 @@
     "fail_text": [
             "p_l follows the strange sounds on the wind and finds the body of an unknown queen with their kits beside them, slowly going cold. They desperately try to save a kitten, but can't, and their mentor finds them there sobbing hours later."
     ],
-    "win_skills": ["None"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -356,18 +338,18 @@
     ]
 },
 {
-    "patrol_id": "fst_bord_noise1",
+    "patrol_id": "fst_bord_noise2",
     "biome": "forest",
     "season": "Any",
-    "tags": ["border", "battle_injury", "scar", "reputation", "new_cat", "new_cat_apprentice"],
+    "tags": ["border", "battle_injury", "scar", "BRIDGE", "reputation", "new_cat", "new_cat_apprentice"],
     "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from a nearby bush.",
     "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
         "p_l goes to check the bush and finds a loner sheepishly hiding inside. It seems the stranger was thinking of asking to join the Clan. They're a bit intimidated though and, after speaking to p_l for a little while, they decide to join the Clan.",
-        "p_l pads towards the bush to check on the noise when a rabbit suddenly bursts out with a young cat chasing it! p_l stops the cat, impressed with their hunting skills, and invites them to join the clan, to which the young cat agrees.",
-        "s_c takes the lead in checking the noise, and it's a good thing they did, because the moment they step closer to the bush a rogue comes springing out! s_c is quick to bat them away, hissing and spitting, before promptly chasing the rogue out of the territory.  It was hardly a fight, really. "
+        "p_l pads towards the bush to check on the noise when a rabbit suddenly bursts out with a young cat chasing it! p_l stops the cat, impressed with their hunting skills, and invites them to join the Clan, to which the young cat agrees.",
+        "s_c cautiously checks the bush, only to be surprised by a weight slamming into them! They recover, only to see a young loner snarling at the patrol and are impressed with the cat's bravery. s_c invites them to join the Clan, to which the young cat agrees."
     ],
     "fail_text": [
         "p_l pads closer to the bush, intent on finding the source of the noise, only to come face to face with a skunk! The poor cat ends up stinking for days after the unfortunate incident.",
@@ -408,8 +390,6 @@
     ],
     "win_skills": ["excellent fighter"],
     "win_trait": ["careful", "insecure", "nervous"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": null,
@@ -430,7 +410,7 @@
     "chance_of_success": 30,
     "exp": 30,
     "success_text": [
-            "It's just an odd loner singing to themselves. r _c greets them, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility. The older cat looks like they could use a meal, and p_l invites them to c_n's camp. The loner agrees.",
+            "It's just an odd loner singing to themselves. r_c greets them, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility. The older cat looks like they could use a meal, and p_l invites them to c_n's camp. The loner agrees.",
             "It's just an odd loner singing to themselves. When they see the patrol they invite them to sing too, but instead, p_l offers the somewhat battered looking and strange cat an introduction to c_n. It's got to be far less lonely than their current life.",
             "s_c walks into an ambush by a group of rogues. It's only by the grace of StarClan that s_c has the fighting skill and confidence to escape, running for their life.",
             "s_c has a bad feeling about this. And maybe they're being too cautious - but then they pick up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety."
@@ -443,8 +423,6 @@
     ],
     "win_skills": ["excellent fighter"],
     "win_trait": ["careful", "insecure", "nervous"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -456,10 +434,10 @@
     ]
 },
 {
-    "patrol_id": "gen_bord_curiouskittypet1",
+    "patrol_id": "gen_bord_curiouskittypet2",
     "biome": "Any",
     "season": "Any",
-    "tags": ["border", "new_cat", "reputation", "scar", "battle_injury", "new_cat_adult"],
+    "tags": ["border", "new_cat", "reputation", "scar", "CATBITE", "battle_injury", "new_cat_adult"],
     "intro_text": "As the patrol is checking the border lines, they hear the unmistakable sound of a cat traipsing through Clan territory.",
     "decline_text": "They decide to leave it alone. It's probably just another Clanmate out in the territory.",
     "chance_of_success": 50,
@@ -476,8 +454,7 @@
         "The patrol follows the sound, ready to confront the intruder. They come upon a large kittypet that's sniffing around. They begin to approach, but the kittypet immediately turns on them. r_c doesn't have enough time to move as the kittypet launches a quick attack. p_l bats the kittypet away and helps r_c back to camp."
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
-    "win_trait": null,
-    "fail_skills": ["None"],
+
     "fail_trait": ["vengeful", "bloodthirsty"],
     "min_cats": 2,
     "max_cats": 6,
@@ -488,7 +465,7 @@
     ]
 },
 {
-    "patrol_id": "gen_bord_injuredcat1",
+    "patrol_id": "gen_bord_injuredcat2",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat", "reputation", "new_cat_adult", "new_cat_injury", "nc_battle_injury"],
@@ -505,9 +482,7 @@
         "The patrol warily approaches the loner, who doesn't seem to notice them. It's obvious that the cat is bleeding out. p_l attempts to staunch the bleeding and carry the cat to camp, but it's no use. Hopefully the loner didn't suffer too much."
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
-    "win_trait": null,
-    "fail_skills": ["None"],
-    "fail_trait": null,
+
     "min_cats": 1,
     "max_cats": 6,
     "antagonize_text": null,

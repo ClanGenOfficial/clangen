@@ -3,10 +3,10 @@
     "patrol_id": "fst_train_session1",
     "biome": "forest",
     "season": "Any",
-    "tags": ["apprentice", "training", "scar", "minor_injury", "warrior"],
+    "tags": ["app_stat", "apprentice", "training", "scar", "TOETRAP", "minor_injury", "warrior"],
     "intro_text": "The patrol wants to hold a training session for app1. They decide to focus on tree climbing!",
     "decline_text": "They decide to focus on the patrolling the territory instead. Training can wait for another day.",
-    "chance_of_success": 70,
+    "chance_of_success": 1,
     "exp": 30,
     "success_text": [
         "app1 listens carefully as the proper techniques of tree climbing are explained.",
@@ -34,7 +34,7 @@
     "patrol_id": "fst_train_sett1",
     "biome": "forest",
     "season": "Any",
-    "tags": ["death", "scar", "training", "battle_injury", "trust", "respect", "clan_to_r_c"],
+    "tags": ["death", "scar", "BELLY", "training", "battle_injury", "trust", "respect", "clan_to_r_c"],
     "intro_text": "r_c wanders past an old badger sett in the roots of a hazelnut tree, only to freeze. There's new scent here, acrid and sour.",
     "decline_text": "Surely it must be nothing... uneasily, r_c continues on.",
     "chance_of_success": 80,
@@ -68,7 +68,7 @@
     "patrol_id": "fst_train_sett2",
     "biome": "forest",
     "season": "Any",
-    "tags": ["scar", "battle_injury", "training", "trust", "respect", "patrol_to_p_l", "patrol_to_r_c"],
+    "tags": ["scar", "THROAT", "battle_injury", "training", "trust", "respect", "patrol_to_p_l", "patrol_to_r_c"],
     "intro_text": "p_l wanders past an old badger sett in the roots of a hazelnut tree, only to freeze. There's new scent here, acrid and sour.",
     "decline_text": "Surely it must be nothing... uneasily, the patrol continues on.",
     "chance_of_success": 80,
@@ -100,7 +100,7 @@
     "patrol_id": "fst_train_stuck1",
     "biome": "forest",
     "season": "Any",
-    "tags": ["training", "platonic", "comfort", "trust", "blunt_force_injury", "death", "scar", "p_l_to_r_c", "s_c to r_c", "patrol_to_p_l", "patrol_to_r_c"],
+    "tags": ["training", "platonic", "comfort", "trust", "blunt_force_injury", "death", "scar", "SIDE", "p_l_to_r_c", "s_c to r_c", "patrol_to_p_l", "patrol_to_r_c"],
     "intro_text": "Trailing behind the patrol, there's a mighty crash above r_c. They look around wildly - just as the world is blotted out by a tangle of heavy falling branches.",
     "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
     "chance_of_success": 90,
@@ -134,7 +134,7 @@
     "patrol_id": "fst_train_stuck2",
     "biome": "forest",
     "season": "Any",
-    "tags": ["training", "blunt_force_injury", "death", "scar"],
+    "tags": ["training", "blunt_force_injury", "death", "scar", "SIDE"],
     "intro_text": "r_c is training alone out in the forest when suddenly, a mighty crash sounds from above. They look around wildly - just as the world is blotted out by a tangle of heavy falling branches.",
     "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
     "chance_of_success": 70,
@@ -164,10 +164,10 @@
 
 },
 {
-    "patrol_id": "fst_train_solo1",
+    "patrol_id": "fst_train_soloapp1",
     "biome": "forest",
     "season": "Any",
-    "tags": ["training", "apprentice", "minor_injury", "scar"],
+    "tags": ["app_stat", "training", "apprentice", "minor_injury", "scar", "LEFTEAR"],
     "intro_text": "r_c heads out into the forest alone, but maybe an apprentice shouldn't try to do a solo patrol.",
     "decline_text": "r_c turns back to camp, deciding that this is a bad idea.",
     "chance_of_success": 50,
@@ -185,7 +185,6 @@
         null,
         "The apprentice wanders along obliviously and slips, tumbling right down a well-hidden gully. Bruised and sore, r_c has to report to the medicine cat den when they return to camp."
     ],
-    "win_skills": ["None"],
     "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "fail_trait": ["insecure", "lonesome", "nervous"],
     "min_cats": 1,
@@ -281,7 +280,7 @@
     "patrol_id": "fst_train_porcupine1",
     "biome": "forest",
     "season": "Any",
-    "tags": ["training", "apprentice", "trust", "comfort", "dislike", "warrior"],
+    "tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "warrior"],
     "intro_text": "p_l takes them both out to see a big porcupine a patrol spotted in one of the many glades of c_n's forest.",
     "decline_text": "When they get there, they can't find it, and the lesson fails.",
     "chance_of_success": 80,
@@ -292,13 +291,10 @@
             "s_c points out the dangers of the creature, explaining how some c_n stories tell of a warrior who, in an impossible battle defending a nursery full of kits, sacrificed his body and let StarClan transform his back into an impenetrable wall of thorns to protect his Clan."
     ],
     "fail_text": [
-            "app1 refuses to believe that the happy snuffly creature they visit can possibly be dangerous prey, and starts an argument with p_l about it.",
             "app1 maintains that porcupines are prey, not weird transformed dead cats or anything like that, just prey, and p_l can't get them to take the training session seriously."
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -308,7 +304,7 @@
     "patrol_id": "fst_train_porcupine2",
     "biome": "forest",
     "season": "Any",
-    "tags": ["training", "apprentice", "trust", "comfort", "dislike", "warrior"],
+    "tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "warrior"],
     "intro_text": "p_l takes them both out to see a big porcupine a patrol spotted in one of the many glades of c_n's forest.",
     "decline_text": "When they get there, they can't find it, and the lesson fails.",
     "chance_of_success": 80,
@@ -319,13 +315,10 @@
             "s_c points out the dangers of the creature, finding some spines the porcupine has dropped and showing app1 exactly how they hook into a pelt, or worse, the flesh beneath. It's dangerous, s_c teaches, but it can also be used to defend the Clan - this is why porcupine spines are so valuable for reinforcing c_n's defenses."
     ],
     "fail_text": [
-            "app1 refuses to believe that the happy snuffly creature they visit can possibly be dangerous prey, and starts an argument with p_l about it.",
-            "app1 maintains that porcupines are prey, not dangerous or anything like that, just prey, and p_l can't get them to take the training session seriously."
+            "app1 refuses to believe that the happy snuffly creature they visit can possibly be dangerous prey, and starts an argument with p_l about it."
     ],
     "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -335,7 +328,7 @@
     "patrol_id": "fst_train_porcupine3",
     "biome": "forest",
     "season": "Any",
-    "tags": ["training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
+    "tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
     "intro_text": "p_l takes them out to see a big porcupine a patrol spotted in one of the many glades of c_n's forest.",
     "decline_text": "When they get there, they can't find it, and the lesson fails.",
     "chance_of_success": 90,
@@ -346,13 +339,10 @@
             "s_c points out the dangers of the creature, explaining how some c_n stories tell of a warrior who, in an impossible battle defending a nursery full of kits, sacrificed his body and let StarClan transform his back into an impenetrable wall of thorns to protect his Clan. app1 and app2 spend the walk back to  c_n wondering what this ancient warrior was like."
     ],
     "fail_text": [
-            "app1 refuses to believe that the happy snuffly creature they visit can possibly be dangerous prey, and starts an argument with p_l about it. app2 sides with p_l and no one learns anything in the squabbling.",
             "app1 maintains that porcupines are prey, not weird transformed dead cats or anything like that, just prey, and p_l can't get them to take the training session seriously. They distract app2 as well, and eventually p_l has to give up on teaching."
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -362,7 +352,7 @@
     "patrol_id": "fst_train_porcupine4",
     "biome": "forest",
     "season": "Any",
-    "tags": ["training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
+    "tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
     "intro_text": "p_l takes them out to see a big porcupine a patrol spotted in one of the many glades of c_n's forest.",
     "decline_text": "When they get there, they can't find it, and the lesson fails.",
     "chance_of_success": 90,
@@ -373,13 +363,10 @@
             "s_c points out the dangers of the creature, finding some spines the porcupine has dropped and showing app1 and app2 exactly how they hook into a pelt, or worse, the flesh beneath. It's dangerous, s_c teaches, but it can also be used to defend the Clan - this is why porcupine spines are so valuable for reinforcing c_n's defenses."
     ],
     "fail_text": [
-            "app1 refuses to believe that the happy snuffly creature they visit can possibly be dangerous prey, and starts an argument with p_l about it. app2 sides with p_l and no one learns anything in the squabbling.",
-            "app1 maintains that porcupines are prey, not dangerous or anything like that, just prey, and p_l can't get them to take the training session seriously. They distract app2 as well, and eventually p_l has to give up on teaching."
+            "app1 refuses to believe that the happy snuffly creature they visit can possibly be dangerous prey, and starts an argument with p_l about it. app2 sides with p_l and no one learns anything in the squabbling."
     ],
     "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -389,7 +376,7 @@
     "patrol_id": "fst_train_willow1",
     "biome": "forest",
     "season": "Any",
-    "tags": ["training", "apprentice", "two_apprentices", "rel_two_apps", "romantic", "platonic", "comfort"],
+    "tags": ["adult_stat", "training", "apprentice", "two_apprentices", "rel_two_apps", "romantic", "platonic", "comfort"],
     "intro_text": "Off in the woods, app1 waits for app2 underneath the low hanging branches of a willow. The tip of their tail keeps twitching in excitement.",
     "decline_text": "Oh no! They both forgot that they were on elder nest change duty today!",
     "chance_of_success": 70,
@@ -405,10 +392,7 @@
             "app2 emerges into the hidden soft light under the willow tree. Seeing app1, they trot up, asking why app1 wanted to meet there. app1 status out some nonsense about hunting, and then runs off into the forest."
 
     ],
-    "win_skills": ["None"],
     "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -419,24 +403,22 @@
     "biome": "forest",
     "season": "Any",
     "tags": ["training", "warrior", "romantic", "platonic", "comfort", "no_app"],
-    "intro_text": "p_l approaches r_c, asking if they wouldn't mind showing p_l their hunting techniques, and perhaps doing some training with them?",
+    "intro_text": "r_c approaches p_l, asking if they wouldn't mind showing r_c their hunting techniques, and perhaps doing some training with them?",
     "decline_text": "r_c declines gently, explaining that they have too much work to do.",
     "chance_of_success": 80,
     "exp": 10,
     "success_text": [
-            "The cats go out together in the late of the day, as the shadows stretch long under the trees. r_c goes through their tricks, showing p_l how they shift their balance to make less noise on leaf litter, as p_l watches with eyes that r_c notices are a bit too admiring for what's just a little trick. They smirk, showing off a little.",
+            "The cats go out together in the late of the day, as the shadows stretch long under the trees. p_l goes through their tricks, showing r_c how they shift their balance to make less noise on leaf litter, as r_c watches with eyes that p_l notices are a bit too admiring for what's just a little trick. They smirk, showing off a little.",
             "It's a long but satisfying training session, with both cats having an in depth chance to test themselves and work on their skills. It ends with them both sitting on a little outlook, watching the sun go down and catching the last of its rays on their pelts. r_c sees p_l watching them instead of the sun, and smiles.",
-            "s_c is a fantastic hunter, and p_l isn't shy about telling them so. They blush, but work through it, showing p_l how to hold their balance on a branch so stably they'll be able to nap while waiting for prey to ambush below.",
-            "p_l marvels at the opportunity to have s_c's time to themselves. s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so."
+            "s_c is a fantastic hunter, and r_c isn't shy about telling them so. They blush, but work through it, showing r_c how to hold their balance on a branch so stably they'll be able to nap while waiting for prey to ambush below.",
+            "r_c marvels at the opportunity to have s_c's time to themselves. s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so."
     ],
     "fail_text": [
-            "r_c tries, but both the cats are too tired after a long day's work, and end up snapping at each other. It's nothing serious, but both agree to take some time to cool off.",
-            "r_c spots p_l looking at them a little bit too admiringly, and ends the training session early, diplomatically making up an excuse."
+            "p_l tries, but both the cats are too tired after a long day's work, and end up snapping at each other. It's nothing serious, but both agree to take some time to cool off.",
+            "p_l spots r_c looking at them a little bit too admiringly, and ends the training session early, diplomatically making up an excuse."
     ],
     "win_skills": ["fantastic hunter"],
     "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -446,7 +428,7 @@
 	"patrol_id": "fst_train_groveclan1",
 	"biome": "forest",
 	"season": "Any",
-	"tags": ["training", "apprentice", "trust", "comfort", "dislike", "platonic", "warrior"],
+	"tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "platonic", "warrior"],
 	"intro_text": "Out in the forest, p_l asks app1 if they know why c_n chooses to live in the woods, under the canopy, rather than any other environment.",
 	"decline_text": "app1 seems distracted. p_l shrugs, and decides to focus on more active training today instead.",
 	"chance_of_success": 60,
@@ -461,8 +443,6 @@
         	"Churlish and grumpy, app1 storms past p_l, not interested in hearing their dumb lesson."
 	],
 	"win_skills": ["good speaker", "great speaker", "excellent speaker", "good teacher", "great teacher", "fantastic teacher"],
-	"win_trait": ["None"],
-	"fail_skills": ["None"],
 	"fail_trait": ["troublesome"],
 	"min_cats": 2,
 	"max_cats": 2,
