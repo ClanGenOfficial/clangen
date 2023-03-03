@@ -590,7 +590,7 @@ class PatrolScreen(Screens):
         if normal_events:
             self.normal_event_choice = choice(normal_events)  # Set patrol event.
         else:
-            print("ERROR: NO POSSIBLE NORMAL PATROLS FOUND")
+            print("ERROR: NO POSSIBLE NORMAL PATROLS FOUND for: ", patrol.patrol_statuses)
             self.change_screen("clan screen")
             return
         if romantic_events:
