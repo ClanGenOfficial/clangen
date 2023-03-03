@@ -114,6 +114,10 @@ class Patrol():
         elif "medicine cat apprentice" in self.patrol_statuses:
             med_index = self.patrol_statuses.index("medicine cat apprentice")
             self.patrol_leader = self.patrol_cats[med_index]
+            # then we just make sure that this app will also be app1
+            if self.patrol_leader != self.patrol_apprentices[0]:
+                self.patrol_apprentices.remove(self.patrol_leader)
+                self.patrol_apprentices.insert(0, self.patrol_leader)
         # sets leader as patrol leader
         elif clan.leader and clan.leader in self.patrol_cats:
             self.patrol_leader = clan.leader
@@ -343,7 +347,7 @@ class Patrol():
 
             # makes sure there's a med in a med patrol
             if "med_cat" in patrol.tags:
-                if ["medicine cat" or "medicine cat apprentice"] not in self.patrol_statuses:
+                if "medicine cat" not in self.patrol_statuses:
                     continue
 
             # makes sure no apps are present if they're not supposed to be
