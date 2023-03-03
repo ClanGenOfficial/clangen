@@ -229,7 +229,7 @@ class Game():
         self.keyspressed = []
 
     def read_clans(self):
-        with open('saves/clanlist.txt', 'r') as read_file:
+        '''with open('saves/clanlist.txt', 'r') as read_file:
             clan_list = read_file.read()
             if_clans = len(clan_list)
         if if_clans > 0:
@@ -237,13 +237,55 @@ class Game():
             clan_list = [i.strip() for i in clan_list if i]  # Remove empty and whitespace
             return clan_list
         else:
+            return None'''
+        # All of the above is old code
+        # Now, we want clanlist.txt to contain ONLY the name of the clan that is currently loaded
+        # We will get the list of clans from the saves folder
+        # each clan has its own folder, and the name of the folder is the name of the clan
+        # so we can just get a list of all the folders in the saves folder
+
+        # First, we need to make sure the saves folder exists
+        if not os.path.exists('saves'):
+            os.makedirs('saves')
+            print('Created saves folder')
             return None
+        
+        # Now we can get a list of all the folders in the saves folder
+        clan_list = [f.name for f in os.scandir('saves') if f.is_dir()]
+
+        # the clan specified in saves/clanlist.txt should be first in the list
+        # so we can load it automatically
+
+        if os.path.exists('saves/clanlist.txt'):
+            with open('saves/clanlist.txt', 'r') as f:
+                loaded_clan = f.read().strip().splitlines()
+                if loaded_clan:
+                    loaded_clan = loaded_clan[0]
+                else:
+                    loaded_clan = None
+            os.remove('saves/clanlist.txt')
+            if loaded_clan:
+                with open('saves/currentclan.txt', 'w') as f:
+                    f.write(loaded_clan)
+        elif os.path.exists('saves/currentclan.txt'):
+            with open('saves/currentclan.txt', 'r') as f:
+                loaded_clan = f.read().strip()
+        else:
+            loaded_clan = None
+
+        if loaded_clan and loaded_clan in clan_list:
+            clan_list.remove(loaded_clan)
+            clan_list.insert(0, loaded_clan)
+
+        # Now we can return the list of clans
+        if not clan_list:
+            print('No clans found')
+            return None
+        # print('Clans found:', clan_list)
+        return clan_list
 
     def save_clanlist(self, loaded_clan=None):
-        """
-        Save list of clans to saves/clanlist.txt with the loaded_clan first in the list.
-        """
-        clans = []
+        '''clans = []
         if loaded_clan:
             clans.append(f"{loaded_clan}\n")
 
@@ -253,7 +295,15 @@ class Game():
 
         if clans:
             with open('saves/clanlist.txt', 'w') as f:
-                f.writelines(clans)
+                f.writelines(clans)'''
+        if loaded_clan:
+            if os.path.exists('saves/clanlist.txt'):
+                os.remove('saves/clanlist.txt') # we don't need clanlist.txt anymore
+            with open('saves/currentclan.txt', 'w') as f:
+                f.write(loaded_clan)
+        else:
+            if os.path.exists('saves/currentclan.txt'):
+                os.remove('saves/currentclan.txt')
 
     def save_settings(self):
         """ Save user settings for later use """
@@ -564,12 +614,9 @@ class Game():
 
 game = Game()
 
-if not os.path.exists('saves/clanlist.txt'):
-    os.makedirs('saves', exist_ok=True)
-    with open('saves/clanlist.txt', 'w') as write_file:
-        write_file.write('')
 
 if not os.path.exists('saves/settings.txt'):
+    os.makedirs('saves', exist_ok=True)
     with open('saves/settings.txt', 'w') as write_file:
         write_file.write('')
 game.load_settings()
