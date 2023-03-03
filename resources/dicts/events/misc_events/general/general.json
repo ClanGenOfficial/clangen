@@ -55,11 +55,22 @@
     },
     {
         "camp": "any",
-        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "event_text": "m_c is caught outside of the Clan's territory.",
+        "tags": ["ceremony", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "event_text": "r_c gives m_c something to adorn their pelt as congratulations.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
-        "other_cat_skill": null
+        "other_cat_skill": null,
+        "accessories": ["WILD", "PLANT"]
+    },
+    {
+        "camp": "any",
+        "tags": ["ceremony", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "event_text": "m_c decides to pick something to adorn their pelt as celebration.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null,
+        "accessories": ["WILD", "PLANT"]
     }
 ]
