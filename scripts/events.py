@@ -782,7 +782,7 @@ class Events():
 
             # apprentice a kitten to either med or warrior
             if cat.moons == cat_class.age_moons[cat.age][0]:
-                if cat.status == 'kitten':
+                if cat.status == 'kitten' and cat.moons > 4:
 
                     med_cat_list = list(filter(lambda x: x.status in ["medicine cat", "medicine cat apprentice"]
                                                          and not x.dead and not x.outside, Cat.all_cats_list))
