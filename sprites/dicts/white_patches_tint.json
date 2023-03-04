@@ -6,7 +6,7 @@
     "PALEGREY": "monochrome",
     "SILVER": "monochrome",
     "GREY": "monochrome",
-    "DARKGREY": "monochrome",
+    "DARKGREY": "black",
     "GHOST": "black",
     "PALEGINGER": "ginger",
     "GOLDEN": "ginger",
@@ -18,10 +18,10 @@
     "BLACK": "black"
   },
   "possible_tints": {
-    "basic": ["none", "offwhite"],
+    "basic": ["none", "offwhite", "offwhite"],
     "black": ["gray", "darkcream", "cream"],
     "monochrome": [],
-    "ginger": ["darkcream", "cream"],
+    "ginger": ["darkcream", "cream", "pink"],
     "brown": ["darkcream", "cream"],
     "white": []
   },
@@ -31,6 +31,7 @@
     "cream": [247, 241, 225],
     "offwhite": [238, 249, 252],
     "gray": [199, 220, 225],
+    "pink": [251, 240, 247],
     "none": null
   }
 }

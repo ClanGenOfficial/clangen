@@ -369,13 +369,13 @@ class Cat():
 
             # APPEARANCE
             init_pelt(self)
-            init_tint(self)
             init_sprite(self)
             init_scars(self)
             init_accessories(self)
             init_white_patches(self)
             init_eyes(self)
             init_pattern(self)
+            init_tint(self)
 
             # experience and current patrol status
             if self.age in ['kitten']:
