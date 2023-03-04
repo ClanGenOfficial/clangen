@@ -72,7 +72,7 @@ class Name():
                     else:
                         self.suffix = random.choice(self.names_dict["normal_suffixes"])
                 else:
-                    self.suffix = random.choice(self.names_dict["common_suffixes"] + self.names_dict["normal_suffixes"])
+                    self.suffix = random.choice(self.names_dict["normal_suffixes"])
 
     def __repr__(self):
         if self.status in self.names_dict["special_suffixes"]:
