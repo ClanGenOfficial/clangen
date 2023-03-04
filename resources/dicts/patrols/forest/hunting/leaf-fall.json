@@ -856,7 +856,7 @@
     "biome": "forest",
     "season": "leaf-fall",
     "tags": [
-        "hunting",
+        "rc_has_stat","hunting",
         "romantic",
         "respect",
         "pos_jealous",
@@ -871,7 +871,7 @@
     "success_text": [
         "r_c makes it look easy, and when the patrol is done mousing everyone else ends up carrying catches mostly brought down by them. They lead the way back to camp, sauntering with a distinctly smug sway of their hips.",
         null,
-        "Of course s_c is unconcerned, s_c knows their own skills well, and mice? Not a challenge. After their fifth catch the rest of the patrol is forced to admit they might have a point about not needing to worry.",
+        "Of course s_c is unconcerned, s_c knows their own skills well, and mice? not a challenge. After their fifth catch the rest of the patrol is forced to admit they might have a point about not needing to worry.",
         "As the patrol settles in, tracking mouse scent mostly, s_c wanders back, and as they put a paw down the ground squeaks. They lean down, jaws snapping, and meet the eyes of the rest of the patrol with an insolent smirk."
     ],
     "fail_text": [
