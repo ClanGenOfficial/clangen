@@ -105,7 +105,7 @@ def plural_acc_names(accessory, plural, singular):
             acc_display = 'petals'
         if singular:
             acc_display = 'petal'
-    elif acc_display == 'dry herbs':
+    elif acc_display == ('dry herbs' or 'dry_herbs'):
         if plural:
             acc_display = 'dry herbs'
         if singular:

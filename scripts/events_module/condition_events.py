@@ -206,7 +206,7 @@ class Condition_Events():
     def handle_relationship_changes(self, cat, injury_event, other_cat):
         cat_to = None
         cat_from = None
-        n = 10
+        n = 20
         romantic = 0
         platonic = 0
         dislike = 0

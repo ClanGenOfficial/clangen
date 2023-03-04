@@ -2,6 +2,7 @@ import itertools
 import random
 from random import choice
 
+from scripts import events
 from scripts.game_structure.game_essentials import game
 from scripts.events_module.condition_events import Condition_Events
 from scripts.utility import (
@@ -168,6 +169,7 @@ class Relation_Events():
                 return
             if moons >= 2:
                 self.handle_two_moon_pregnant(cat, clan)
+                events.ceremony_accessory = True
                 return
 
         # Check if they can have kits.

@@ -1,5 +1,5 @@
 [
-{
+  {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "event_text": "m_c is scolded after sneaking out of camp.",
@@ -34,5 +34,35 @@
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
-    }
+    },
+  {
+      "camp": "any",
+      "tags": ["other_cat", "other_cat_app", "romantic", "comfort", "respect", "trust", "neg_jealousy", "to_both"],
+      "event_text": "m_c and r_c were chatting about their day and the chores they finished when r_c mentioned they liked the smell of wild fruit. m_c decides to wear acc_plural on their pelt, hopping that r_c notices them.",
+      "cat_trait": null,
+      "cat_skill": null,
+      "other_cat_trait": null,
+       "other_cat_skill": null,
+      "accessories": ["BLUE BERRIES", "HOLLY"]
+   },
+  {
+    "camp": "any",
+    "tags": ["Leaf-fall", "other_cat", "other_cat_kit", "comfort", "platonic"],
+    "event_text": "m_c is nearly blindsided by r_c as they walk into camp after a long training day, listening to the kit squeak about a type of feather. r_c leads m_c to the nursery, where they carefully put acc_plural in m_c's fur.",
+    "cat_trait": null,
+    "cat_skill": null,
+    "other_cat_trait": null,
+    "other_cat_skill": null,
+    "accessories": ["BLUE FEATHERS"]
+   },
+  {
+    "camp": "any",
+    "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_cat", "other_cat_app", "dislike", "jealousy"],
+    "event_text": "m_c, for the umpteenth time, hears r_c complaining about the dry rye stalks underneath their paws when they finish cleaning the elders' den and got an idea. The next day, m_c adorns their pelt with acc_plural.",
+    "cat_trait": null,
+    "cat_skill": null,
+    "other_cat_trait": null,
+    "other_cat_skill": null,
+    "accessories": ["RYE STALK"]
+   }
 ]

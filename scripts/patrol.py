@@ -121,9 +121,19 @@ class Patrol():
         # sets leader as patrol leader
         elif clan.leader and clan.leader in self.patrol_cats:
             self.patrol_leader = clan.leader
+        elif clan.deputy and clan.deputy in self.patrol_cats:
+            self.patrol_leader = clan.deputy
         else:
             if self.possible_patrol_leaders:
-                self.patrol_leader = choice(self.possible_patrol_leaders)
+                for cat in self.possible_patrol_leaders:
+                    if cat.age == 'senior adult':
+                        self.patrol_leader = cat
+                        break
+                    elif cat.age == 'adult':
+                        self.patrol_leader = cat
+                        break
+                if not self.patrol_leader:
+                    self.patrol_leader = choice(self.possible_patrol_leaders)
             elif not self.possible_patrol_leaders:
                 self.patrol_leader = choice(self.patrol_cats)
         self.patrol_leader_name = str(self.patrol_leader.name)
