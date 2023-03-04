@@ -173,7 +173,12 @@ class DeleteCheck(UIWindow):
                 print("delete")
                 rempath = "saves/" + self.clan_name
                 shutil.rmtree(rempath)
-                os.remove(rempath + "clan.json")
+                if os.path.exists(rempath + 'clan.json'):
+                    os.remove(rempath + "clan.json")
+                elif os.path.exists(rempath + 'clan.txt'):
+                    os.remove(rempath + "clan.txt")
+                else:
+                    raise FileNotFoundError("Clan.json or Clan.txt not found")
 
                 with open("saves/clanlist.txt", "r") as clanfile:
                     data = clanfile.readlines()
