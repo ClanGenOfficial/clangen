@@ -478,6 +478,8 @@ class SettingsScreen(Screens):
             if game.settings['discord']:
                 game.rpc = _DiscordRPC("1076277970060185701",
                                        daemon=True)
+                game.rpc.start()
+                game.rpc.start_rpc.set()
             else:
                 game.rpc.close()
 
