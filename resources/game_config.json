@@ -130,6 +130,6 @@
 		"cruel season_death_chance": 150
 	},
 	"clan_creation": {
-		"rerolls": -1
+		"rerolls": 3
 	}
 }
