@@ -218,12 +218,11 @@ class PatrolScreen(Screens):
             self.elements["random"].enable()
 
             # making sure meds don't get the option for other patrols
-            med = False
-            for cat in self.current_patrol:
-                if cat.status in ['medicine cat', 'medicine cat apprentice']:
-                    med = True
-                    self.patrol_type = 'med'
-
+            if any((cat.status in ['medicine cat', 'medicine cat apprentice'] for cat in self.current_patrol)):
+                self.patrol_type = 'med'
+            else:
+                if self.patrol_type == 'med':
+                    self.patrol_type = 'general'
 
             if game.clan.game_mode != 'classic':
                 self.elements['paw'].enable()
@@ -233,21 +232,21 @@ class PatrolScreen(Screens):
 
                 self.elements['info'].kill()  # clearing the text before displaying new text
 
-                if med is False and self.current_patrol:
+                if self.patrol_type != 'med' and self.current_patrol:
                     self.elements['herb'].disable()
                     if self.patrol_type == 'med':
                         self.patrol_type = 'general'
 
                 if self.patrol_type == 'general':
                     text = 'random patrol type'
-                elif self.patrol_type == 'training' and med is False:
+                elif self.patrol_type == 'training':
                     text = 'training'
-                elif self.patrol_type == 'border' and med is False:
+                elif self.patrol_type == 'border':
                     text = 'border'
-                elif self.patrol_type == 'hunting' and med is False:
+                elif self.patrol_type == 'hunting':
                     text = 'hunting'
                 elif self.patrol_type == 'med':
-                    if med is True and self.current_patrol:
+                    if self.current_patrol:
                         text = 'herb gathering'
                         self.elements['mouse'].disable()
                         self.elements['claws'].disable()
@@ -738,25 +737,45 @@ class PatrolScreen(Screens):
             possible_stat_cats.append(kitty)
 
         if event.win_skills:
-            for kitty in possible_stat_cats:
-                if kitty.skill in event.win_skills:
-                    patrol.patrol_win_stat_cat = kitty
-                    break
+            if "rc_has_stat" in event.tags:
+                if patrol.patrol_random_cat.skill in event.win_skills:
+                    patrol.patrol_win_stat_cat = patrol.patrol_random_cat
+            else:
+                for kitty in possible_stat_cats:
+                    if kitty.skill in event.win_skills:
+                        patrol.patrol_win_stat_cat = kitty
+                        break
         if event.win_trait and not patrol.patrol_win_stat_cat:
-            for kitty in possible_stat_cats:
-                if kitty.trait in event.win_trait:
-                    patrol.patrol_win_stat_cat = kitty
-                    break
+            if "rc_has_stat" in event.tags:
+                if patrol.patrol_random_cat.trait in event.win_trait:
+                    patrol.patrol_win_stat_cat = patrol.patrol_random_cat
+            else:
+                for kitty in possible_stat_cats:
+                    if kitty.trait in event.win_trait:
+                        patrol.patrol_win_stat_cat = kitty
+                        break
         if event.fail_skills:
-            for kitty in possible_stat_cats:
-                if kitty.skill in event.fail_skills:
-                    patrol.patrol_fail_stat_cat = kitty
-                    break
+            if "rc_has_stat" in event.tags:
+                if patrol.patrol_random_cat.skill in event.fail_skills:
+                    patrol.patrol_fail_stat_cat = patrol.patrol_random_cat
+            else:
+                for kitty in possible_stat_cats:
+                    if kitty.skill in event.fail_skills:
+                        patrol.patrol_fail_stat_cat = kitty
+                        break
         if event.fail_trait and not patrol.patrol_fail_stat_cat:
-            for kitty in possible_stat_cats:
-                if kitty.trait in event.fail_trait:
-                    patrol.patrol_fail_stat_cat = kitty
-                    break
+            if "rc_has_stat" in event.tags:
+                if patrol.patrol_random_cat.trait in event.fail_trait:
+                    patrol.patrol_fail_stat_cat = patrol.patrol_random_cat
+            else:
+                for kitty in possible_stat_cats:
+                    if kitty.trait in event.fail_trait:
+                        patrol.patrol_fail_stat_cat = kitty
+                        break
+
+        # we don't need to check for random/stat cat since we already require them to be the same
+        if "rc_has_stat" in event.tags:
+            return
 
         # if we have both types of stat cats and the patrol is too small then we drop the win stat cat
         # this is to prevent cases where a stat cat and the random cat are the same cat

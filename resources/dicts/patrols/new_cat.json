@@ -83,7 +83,7 @@
     ],
     "decline_text": "They decide to leave the kit alone.",
     "antagonize_text": "Your patrol moves the kit away from the territory, they have no interest in strange kits.",
-    "antagonize_fail_text": "The kit smells of two-legs, your patrol has no interest in what will surely grow to be a weak cat.",
+    "antagonize_fail_text": "The kit smells of Twolegs, your patrol has no interest in what will surely grow to be a weak cat.",
     "chance_of_success": 40,
     "exp": 10,
     "win_skills": ["smart", "very smart", "extremely smart"],
@@ -348,8 +348,8 @@
     "exp": 10,
     "success_text": [
         "p_l goes to check the bush and finds a loner sheepishly hiding inside. It seems the stranger was thinking of asking to join the Clan. They're a bit intimidated though and, after speaking to p_l for a little while, they decide to join the Clan.",
-        "p_l pads towards the bush to check on the noise when a rabbit suddenly bursts out with a young cat chasing it! p_l stops the cat, impressed with their hunting skills, and invites them to join the clan, to which the young cat agrees.",
-        "s_c cautiously checks the bush, only to be surprised by a weight slamming into them! They recover, only to see a young loner snarling at the patrol and are impressed with the cat's bravery. s_c invites them to join the clan, to which the young cat agrees."
+        "p_l pads towards the bush to check on the noise when a rabbit suddenly bursts out with a young cat chasing it! p_l stops the cat, impressed with their hunting skills, and invites them to join the Clan, to which the young cat agrees.",
+        "s_c cautiously checks the bush, only to be surprised by a weight slamming into them! They recover, only to see a young loner snarling at the patrol and are impressed with the cat's bravery. s_c invites them to join the Clan, to which the young cat agrees."
     ],
     "fail_text": [
         "p_l pads closer to the bush, intent on finding the source of the noise, only to come face to face with a skunk! The poor cat ends up stinking for days after the unfortunate incident.",

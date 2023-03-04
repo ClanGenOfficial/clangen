@@ -11,12 +11,12 @@
         "success_text": [
                 "r_c explains that the sea has always given mysterious gifts to c_n, and that those strange ginger cat statues are probably just another gift from the ocean, probably.",
                 "The strange ginger cat statues seem to be purring slightly. r_c suggests they leave the beach as soon as possible, those things don't seem... Entirely of this world.",
-                "s_c laughs! The ginger cat statues are twoleg objects, they spin a tale almost unbelievable, but they swear it's true! The ginger cat statues used to live on something called a \"boat\".",
-                "Those ginger cat statues? s_c heard a kittypet call him Garfield. s_c explains that, for what ever reason, twolegs worship the ginger cat so much they made statues they threw into the ocean."
+                "s_c laughs! The ginger cat statues are Twoleg objects, they spin a tale almost unbelievable, but they swear it's true! The ginger cat statues used to live on something called a \"boat\".",
+                "Those ginger cat statues? s_c heard a kittypet call him Garfield. s_c explains that, for what ever reason, Twolegs worship the ginger cat so much they made statues they threw into the ocean."
         ],
         "fail_text": [
                 "There was no way r_c is staying around here. They tear off back to camp at the sight of a broken ginger cat statue.",
-                "The whole patrol agrees this beach is abandoned by Starclan. There's no way so many broken ginger cat statues are here natrually, and well, s_c has always been a little odd...",
+                "The whole patrol agrees this beach is abandoned by StarClan. There's no way so many broken ginger cat statues are here natrually, and well, s_c has always been a little odd...",
                 null
         ],
         "win_skills": ["good storyteller", "great storyteller", "fantastic storyteller","excellent speaker"],

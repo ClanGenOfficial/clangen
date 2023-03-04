@@ -116,6 +116,30 @@
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
+    {
+    "patrol_id": "gen_med_vision4",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["herb_gathering", "random_herbs", "apprentice", "respect", "trust", "jealousy", "patrol_to_p_l", "p_l_to_r_c"],
+    "intro_text": "As the patrol pads out into c_n territory, r_c tells p_l about the dream they had last night, and what the StarClan vision could mean for c_n.",
+    "decline_text": "The cats don't talk about the vision, mouths too full of herbs.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "They have an in depth conversation about r_c's vision as they walk. By the time they head back to camp, they have a good idea of what they should do with the information.",
+        "p_l takes r_c aside to discuss r_c's vision. They don't take the responsibility lightly, and both of them work together to divine the vision's meaning.",
+        "s_c listens intently and tells r_c not to be weirded out, but they had seen the dream, too. r_c is alarmed but s_c soothes them and explains that StarClan sometimes shows them others' dreams, but this one luckily was just a mild warning."
+    ],
+    "fail_text": [
+        "p_l shakes their head sadly. They can't make sense of the vision.",
+        "r_c notices p_l looking at them enviously, and withdraws from the group, dismissing the dream as unimportant."
+    ],
+    "win_skills": ["dreamwalker"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
 {
     "patrol_id": "gen_med_ghost_star1",
     "biome": "Any",
@@ -768,7 +792,7 @@
         "p_l sits down and motions for app1 to join them, looking at them inquisitively. app1 studiously looks at their paws and mutters that they don't want to talk about it, seemingly having thought better of it. p_l gently reassures them that it's okay to ask questions, and though app1 doesn't ask, they seem more chipper, and they're a big help anyways.",
         "p_l sits down and motions for app1 to join them, looking at them inquisitively. app1 tentatively explains that they were curious about where kits come from. p_l sputters, but quickly gathers themself and gently tells app1 that this isn't really the best place to ask, and it might be best to wait until they're a bit older. app1 huffs, but relents.",
         null,
-        "s_c sits down and motions for app1 to join them, looking at them inquisitively. app1 tentatively explains that they were curious about where kits come from. s_ c takes a breath before answering, gently telling app1 that they understand their curiosity, but this might not be the right place and time. app1 is disappointed, but understands."
+        "s_c sits down and motions for app1 to join them, looking at them inquisitively. app1 tentatively explains that they were curious about where kits come from. s_c takes a breath before answering, gently telling app1 that they understand their curiosity, but this might not be the right place and time. app1 is disappointed, but understands."
     ],
     "fail_text": [
         "p_l sits down and motions for app1 to join them, looking at them inquisitively. app1 tentatively explains that they were curious about where kits come from. p_l sputters and stammers, looking up and away to try to avoid answering. app1 stares at them intently, and they know they'll have to relent sooner or later. This should be interesting...",

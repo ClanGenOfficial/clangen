@@ -279,7 +279,6 @@ class Clan():
         if cat.ID in Cat.all_cats.keys(
         ) and not cat.outside and cat.ID in Cat.outside_cats.keys():
             # The outside-value must be set to True before the cat can go to cotc
-            self.clan_cats.append(cat.ID)
             Cat.outside_cats.pop(cat.ID)
             cat.clan = str(game.clan.name)
 
@@ -369,7 +368,7 @@ class Clan():
         game.save_clanlist(clan)
         game.cur_events_list.clear()
 
-        # game.rpc.close()
+        game.rpc.close()
         pygame.display.quit()
         pygame.quit()
         exit()
@@ -437,13 +436,8 @@ class Clan():
             json_string = ujson.dumps(clan_data, indent=4)
             write_file.write(json_string)
 
-        list_data = self.name + "\n"
-        for i in range(len(game.switches['clan_list'])):
-            if game.switches['clan_list'][i] != self.name:
-                list_data = list_data + game.switches['clan_list'][i] + "\n"
-        with open('saves/clanlist.txt', 'w') as write_file:
-            write_file.write(list_data)
-
+        with open('saves/currentclan.txt', 'w') as write_file:
+            write_file.write(self.name)
     def load_clan(self):
         if os.path.exists('saves/' + game.switches['clan_list'][0] + 'clan.json'):
             self.load_clan_json()

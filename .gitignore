@@ -162,3 +162,6 @@ scripts/__pycache__/**
 
 
 tests/testSaves
+
+saves/currentclan.txt
+
