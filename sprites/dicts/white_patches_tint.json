@@ -3,9 +3,9 @@
   {
     "DARKGINGER": "ginger",
     "WHITE": "white",
-    "PALEGREY": "monochrome",
-    "SILVER": "monochrome",
-    "GREY": "monochrome",
+    "PALEGREY": "gray",
+    "SILVER": "gray",
+    "GREY": "gray",
     "DARKGREY": "black",
     "GHOST": "black",
     "PALEGINGER": "ginger",
@@ -20,17 +20,17 @@
   "possible_tints": {
     "basic": ["none", "offwhite", "offwhite"],
     "black": ["gray", "darkcream", "cream"],
-    "monochrome": [],
+    "gray": ["gray"],
     "ginger": ["darkcream", "cream", "pink"],
     "brown": ["darkcream", "cream"],
     "white": []
   },
   "tint_colours":
   {
-    "darkcream": [244, 235, 209],
+    "darkcream": [236, 229, 208],
     "cream": [247, 241, 225],
     "offwhite": [238, 249, 252],
-    "gray": [199, 220, 225],
+    "gray": [208, 225, 229],
     "pink": [252, 238, 243],
     "none": null
   }
