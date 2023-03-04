@@ -30,17 +30,17 @@ class MiscEvents():
         other_clan_name = f'{other_clan.name}Clan'
 
         possible_events = self.generate_events.possible_events(cat.status, cat.age, "misc_events")
-
+        acc_checked_events = []
         for event in possible_events:
-            if ceremony and "ceremony" in event.tags:
+            if (ceremony and "ceremony" not in event.tags) or (not ceremony and "ceremony" in event.tags):
                 continue
 
-            if event.accessories and accessory:
+            if (not accessory and event.accessories) or (accessory and not event.accessories):
                 continue
 
-            possible_events.remove(event)
+            acc_checked_events.append(event)
 
-        final_events = self.generate_events.filter_possible_events(possible_events, cat, other_cat, war,
+        final_events = self.generate_events.filter_possible_events(acc_checked_events, cat, other_cat, war,
                                                                    enemy_clan, other_clan,
                                                                    alive_kits)
 
@@ -80,11 +80,13 @@ class MiscEvents():
         types = ["misc"]
         if "other_clan" in misc_event.tags:
             types.append("other_clans")
+        if ceremony:
+            types.append("ceremony")
         game.cur_events_list.append(Single_Event(event_text, types, involved_cats))
 
     def handle_relationship_changes(self, cat, death_cause, other_cat):
 
-        n = 5
+        n = 10
         romantic = 0
         platonic = 0
         dislike = 0
