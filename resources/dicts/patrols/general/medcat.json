@@ -1030,7 +1030,6 @@
         "max_cats": 2,
         "antagonize_text": null,
         "antagonize_fail_text": null
-        ]
 },
 {
      "patrol_id": "gen_med_warappmedapp_herbcontest2",
@@ -1052,6 +1051,5 @@
         "max_cats": 2,
         "antagonize_text": null,
         "antagonize_fail_text": null
-        ]
 }
 ]
