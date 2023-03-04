@@ -159,14 +159,9 @@ scripts/__pycache__/**
 .vscode/launch.json
 .idea/clan_gen_working.iml
 .idea/misc.xml
-.idea/misc.xml
-.idea/clan_gen_working.iml
-.idea/misc.xml
-.idea/clan_gen_working.iml
 
 
 tests/testSaves
-tests\testSaves
 
 saves/currentclan.txt
-saves\currentclan.txt
+

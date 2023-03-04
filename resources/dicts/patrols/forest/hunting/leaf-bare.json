@@ -632,6 +632,7 @@
     "biome": "forest",
     "season": "leaf-bare",
     "tags": [
+        "rc_has_stat",
         "hunting",
         "romantic",
         "respect",
