@@ -29,7 +29,9 @@
     "scratch", "seed", "shade", "shadow", "shell", "shine", "sight", "skip", "sky", "slip", "snout", "snow", "song", "spark",
     "speck", "speckle", "spirit", "splash", "spot", "spots", "spring", "stalk", "stem", "step", "stone", "storm", "streak",
     "stream", "strike", "stripe", "sun", "swipe", "swoop", "talon", "tooth", "thistle", "thorn", "throat", "toe", "tree",
-    "throat", "watcher", "water", "wave", "whisper", "whistle", "willow", "wind", "wing", "wish"
+    "throat", "watcher", "water", "wave", "whisper", "whistle", "willow", "wind", "wing", "wish",
+    "dragon", "earth", "ghost", "magic", "ground", "king", "guardian", "queen", "knight", "mind", "seeker", "soul", "god", "emperor",
+    "hyena", "lurker", "hunter", "vessel", "forest", "wolf", "air", "energy", "time", "eternity", "instinct"
   ],
   "pelt_suffixes": {
     "TwoColour": ["patch", "spot", "splash", "patch", "spots"],
@@ -100,7 +102,9 @@
     "Stumpy", "Sunny", "Swallow", "Swamp", "Sweet", "Swift", "Sycamore", "Tall", "Talon", "Tangle", "Tansy", "Tawny", "Thistle", "Thorn",
     "Thrift", "Thrush", "Thunder", "Thyme", "Tiger", "Timber", "Tiny", "Tip", "Toad", "Torn", "Trout", "Tuft", "Tulip",
     "Tumble", "Turtle", "Vine", "Vixen", "Wasp", "Weasel", "Web", "Weed", "Wet", "Wheat", "Whirl", "Whisker",
-    "Whisper", "Whispering", "Whistle", "Whorl", "Wild", "Willow", "Wind", "Wish", "Wing", "Wisteria", "Wolf", "Wood", "Wren", "Yarrow", "Yew"
+    "Whisper", "Whispering", "Whistle", "Whorl", "Wild", "Willow", "Wind", "Wish", "Wing", "Wisteria", "Wolf", "Wood", "Wren", "Yarrow", "Yew",
+    "Dragon", "Wyvern", "Earth", "Eternal", "Time', "Ghost", "God", "Magic", "Mind", "Mountain", "Royal", "Shade", "Spirit", "Soul", "Energy", "Fae", "Wyrm",
+    "Kirin", "Bull", "Hyena", "Vulture", "Orchid", "Drake", "Hydra", "Sealed", "Pure", "Radiant", "Shark", "Jaguar", "Moose", "Seal"
   ],
 
   "colour_prefixes": {
@@ -257,6 +261,8 @@
     "Union", "Uriel", "Vanilla", "Van Pelt", "Vaxx", "Venture", "Via", "Victor", "Vida", "Viktor", "Vinnie", "Vinyl",
     "Velociraptor", "Violet", "Vivienne", "Void", "Voltage", "Vox", "Virgo", "Wanda", "Warren Peace", "Webby", "Wendy", "Whiskers",
     "Whisper", "Wigglebutt", "Wiggity Wacks", "Windy", "Wishbone", "Wisp", "Wisteria", "Whiz Kid", "Worm", "X'ek",
-    "Xelle", "Yaoyao", "Yen", "Yeza", "Yoshi", "Zelda", "Zim", "Zoe", "Zorro"
+    "Xelle", "Yaoyao", "Yen", "Yeza", "Yoshi", "Zelda", "Zim", "Zoe", "Zorro",
+    "Olivier", "Kaz", "Kira", "Shira", "Marina", "Nur", "Roy", "Gala", "Bilbo", "Geralt", "Witcher", "Homunculus", "Alchemist", "The Knight", "Inej", "Jesper",
+    "Nina", "Matthias", "Wylan", "Dirtyhands", "Wraith", "Monomon", "Lurien", "Herrah", "Shabor", "Pharaoh", "Porki", "Dark", "Radiance"
     ]
 }
