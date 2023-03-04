@@ -110,6 +110,14 @@ def get_living_cat_count(Cat):
         count += 1
     return count
 
+def get_living_clan_cat_count(Cat):
+    count = 0
+    for the_cat in Cat.all_cats.values():
+        if the_cat.dead or the_cat.exiled or the_cat.outside:
+            continue
+        count += 1
+    return count
+
 
 def change_clan_reputation(difference=0):
     """
@@ -541,17 +549,41 @@ def update_sprite(cat):
                                 (0, 0))
         else:
             if cat.age == 'elder' or (cat.pelt.length == 'long' and cat.age not in ['kitten', 'adolescent']):
+                # Base Coat
                 new_sprite.blit(
-                    sprites.sprites[cat.tortiebase + 'extra' + cat.tortiecolour + str(cat.age_sprites[cat.age])],
+                    sprites.sprites[cat.tortiebase + 'extra' + cat.pelt.colour + str(cat.age_sprites[cat.age])],
                     (0, 0))
-                new_sprite.blit(
-                    sprites.sprites[cat.tortiepattern + 'extra' + cat.pattern + str(cat.age_sprites[cat.age])],
-                    (0, 0))
+
+                # Create the patch image
+                patches = sprites.sprites[
+                    cat.tortiepattern + 'extra' + cat.tortiecolour + str(cat.age_sprites[cat.age])].copy()
+                patches.blit(sprites.sprites["tortiemask" + cat.pattern + str(cat.age_sprites[cat.age] + 9)],
+                             (0, 0),
+                             special_flags=pygame.BLEND_RGBA_MULT
+                             )
+
+                # Add patches onto cat.
+                new_sprite.blit(patches, (0, 0))
             else:
-                new_sprite.blit(sprites.sprites[cat.tortiebase + cat.tortiecolour + str(cat.age_sprites[cat.age])],
-                                (0, 0))
-                new_sprite.blit(sprites.sprites[cat.tortiepattern + cat.pattern + str(cat.age_sprites[cat.age])],
-                                (0, 0))
+                # Base Coat
+                new_sprite.blit(
+                    sprites.sprites[cat.tortiebase + cat.pelt.colour + str(cat.age_sprites[cat.age])],
+                    (0, 0))
+
+                # Create the patch image
+                if cat.tortiepattern == "Single":
+                    tortie_pattern = "SingleColour"
+                else:
+                    tortie_pattern = cat.tortiepattern
+
+                patches = sprites.sprites[
+                    tortie_pattern + cat.tortiecolour + str(cat.age_sprites[cat.age])].copy()
+                patches.blit(sprites.sprites["tortiemask" + cat.pattern + str(cat.age_sprites[cat.age])], (0, 0),
+                             special_flags=pygame.BLEND_RGBA_MULT)
+
+                # Add patches onto cat.
+                new_sprite.blit(patches, (0, 0))
+
 
         # TINTS
         if cat.tint != "none" and cat.tint in Sprites.cat_tints["tint_colours"]:

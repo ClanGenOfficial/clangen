@@ -856,7 +856,7 @@
     "biome": "forest",
     "season": "leaf-fall",
     "tags": [
-        "hunting",
+        "rc_has_stat","hunting",
         "romantic",
         "respect",
         "pos_jealous",
