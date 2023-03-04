@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/clan_gen_working.iml" filepath="$PROJECT_DIR$/.idea/clan_gen_working.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/clangen.iml" filepath="$PROJECT_DIR$/.idea/clangen.iml" />
     </modules>
   </component>
 </project>

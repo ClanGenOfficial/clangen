@@ -2,6 +2,8 @@ from random import choice
 
 import pygame
 
+from scripts.cat.appearance_utility import plural_acc_names
+
 try:
     import ujson
 except ImportError:
@@ -321,31 +323,35 @@ def change_relationship_values(cats_to,
 
     use the relationship value params to indicate how much the values should change.
     """
-    # this is just for prints, if it's still here later, just remove it
+    """# this is just for text prints
     changed = False
     if romantic_love == 0 and platonic_like == 0 and dislike == 0 and admiration == 0 and \
             comfortable == 0 and jealousy == 0 and trust == 0:
         changed = False
     else:
-        changed = True
+        changed = True"""
 
     # pick out the correct cats
-    for cat in cats_from:
+    for kitty in cats_from:
         relationships = list(filter(lambda rel: rel.cat_to.ID in cats_to,
-                                    list(cat.relationships.values())))
+                                    list(kitty.relationships.values())))
 
         # make sure that cats don't gain rel with themselves
         for rel in relationships:
-            if cat.ID == rel.cat_to.ID:
+            if kitty.ID == rel.cat_to.ID:
                 continue
 
-            # if cat already has romantic feelings then automatically increase romantic feelings
-            # when platonic feelings would increase
-            if rel.romantic_love > 0 and auto_romance:
-                romantic_love = platonic_like
+            # here we just double-check that the cats are allowed to be romantic with eath other
+            if kitty.is_potential_mate(rel.cat_to, for_love_interest=True) or kitty.mate == rel.cat_to.ID:
+                # if cat already has romantic feelings then automatically increase romantic feelings
+                # when platonic feelings would increase
+                if rel.romantic_love > 0 and auto_romance:
+                    romantic_love = platonic_like
 
-            # now gain the values
-            rel.romantic_love += romantic_love
+                # now gain the romance
+                rel.romantic_love += romantic_love
+
+            # gain other rel values
             rel.platonic_like += platonic_like
             rel.dislike += dislike
             rel.admiration += admiration
@@ -354,7 +360,7 @@ def change_relationship_values(cats_to,
             rel.trust += trust
 
             # for testing purposes
-            """print(str(cat.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
+            """print(str(kitty.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
                   "Romantic: " + str(romantic_love) +
                   " /Platonic: " + str(platonic_like) +
                   " /Dislike: " + str(dislike) +
@@ -396,6 +402,9 @@ def event_text_adjust(Cat,
     if new_cat:
         adjust_text = adjust_text.replace("n_c_pre", str(new_cat.name.prefix))
         adjust_text = adjust_text.replace("n_c", str(new_cat.name))
+    if ("acc_plural" or "acc_singular") in adjust_text:
+        adjust_text = adjust_text.replace("acc_plural", str(plural_acc_names(cat.accessory, True, False)))
+        adjust_text = adjust_text.replace("acc_singular", str(plural_acc_names(cat.accessory, False, True)))
 
     adjust_text = adjust_text.replace("c_n", str(game.clan.name) + "Clan")
     adjust_text = adjust_text.replace("p_l", name)

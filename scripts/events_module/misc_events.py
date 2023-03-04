@@ -1,6 +1,7 @@
 import random
 
 from scripts.cat.cats import Cat
+from scripts.cat.pelts import wild_accessories, plant_accessories, collars, tail_accessories
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.utility import event_text_adjust, change_clan_relations, change_relationship_values
 from scripts.game_structure.game_essentials import game
@@ -20,16 +21,26 @@ class MiscEvents():
         self.generate_events = GenerateEvents()
         pass
 
-    def handle_misc_events(self, cat, other_cat, war, enemy_clan, alive_kits):
+    def handle_misc_events(self, cat, other_cat=None, war=False, enemy_clan=None, alive_kits=False, accessory=False, ceremony=False):
         """ 
-        This function handles the deaths
+        This function handles the misc events
         """
         involved_cats = [cat.ID]
         other_clan = random.choice(game.clan.all_clans)
         other_clan_name = f'{other_clan.name}Clan'
 
         possible_events = self.generate_events.possible_events(cat.status, cat.age, "misc_events")
-        final_events = self.generate_events.filter_possible_events(possible_events, cat, other_cat, war,
+        acc_checked_events = []
+        for event in possible_events:
+            if (ceremony and "ceremony" not in event.tags) or (not ceremony and "ceremony" in event.tags):
+                continue
+
+            if (not accessory and event.accessories) or (accessory and not event.accessories):
+                continue
+
+            acc_checked_events.append(event)
+
+        final_events = self.generate_events.filter_possible_events(acc_checked_events, cat, other_cat, war,
                                                                    enemy_clan, other_clan,
                                                                    alive_kits)
 
@@ -46,13 +57,15 @@ class MiscEvents():
             other_clan = enemy_clan
             other_clan_name = other_clan.name + "Clan"
 
+        if misc_event.accessories:
+            self.handle_accessories(cat, misc_event.accessories)
+
         # let's change some relationship values \o/ check if another cat is mentioned and if they live
         if "other_cat" in misc_event.tags:
             involved_cats.append(other_cat.ID)
             self.handle_relationship_changes(cat, misc_event, other_cat)
         else:
             other_cat = None
-        event_text = event_text_adjust(Cat, misc_event.event_text, cat, other_cat, other_clan_name)
 
         if "rel_down" in misc_event.tags:
             difference = -5
@@ -62,14 +75,18 @@ class MiscEvents():
             difference = 5
             change_clan_relations(other_clan, difference=difference)
 
+        event_text = event_text_adjust(Cat, misc_event.event_text, cat, other_cat, other_clan_name)
+
         types = ["misc"]
         if "other_clan" in misc_event.tags:
             types.append("other_clans")
+        if ceremony:
+            types.append("ceremony")
         game.cur_events_list.append(Single_Event(event_text, types, involved_cats))
 
     def handle_relationship_changes(self, cat, death_cause, other_cat):
 
-        n = 5
+        n = 10
         romantic = 0
         platonic = 0
         dislike = 0
@@ -127,3 +144,20 @@ class MiscEvents():
             jealousy,
             trust)
 
+    def handle_accessories(self, cat, possible_accs):
+        acc_list = []
+        if "WILD" in possible_accs:
+            acc_list.extend(wild_accessories)
+        if "PLANT" in possible_accs:
+            acc_list.extend(plant_accessories)
+        if "COLLAR" in possible_accs:
+            acc_list.extend(collars)
+
+        if ("NOTAIL" or "HALFTAIL") in cat.scars:
+            acc_list.remove(acc for acc in tail_accessories)
+
+        for acc in possible_accs:
+            if acc not in ["WILD", "PLANT", "COLLAR"]:
+                acc_list.append(acc)
+
+        cat.accessory = random.choice(acc_list)
