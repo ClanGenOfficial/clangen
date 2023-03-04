@@ -730,7 +730,6 @@ def init_tint(cat):
             color_group = Sprites.white_patches_tints["colour_groups"][cat.pelt.colour]
             possible_tints += Sprites.white_patches_tints["possible_tints"][color_group]
             cat.white_patches_tint = choice(possible_tints)
-            print(cat.white_patches_tint)
         else:
             cat.white_patches_tint = "none"
     else:

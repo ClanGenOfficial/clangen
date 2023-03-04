@@ -594,7 +594,7 @@ def update_sprite(cat):
             if cat.age == 'elder' or (cat.pelt.length == 'long' and cat.age not in ['kitten', 'adolescent']):
                 white_patches = sprites.sprites['whiteextra' + cat.white_patches + str(cat.age_sprites[cat.age])].copy()
             else:
-                white_patches = sprites.sprites['white' + cat.white_patches + str(cat.age_sprites[cat.age])]
+                white_patches = sprites.sprites['white' + cat.white_patches + str(cat.age_sprites[cat.age])].copy()
 
             # Apply tint to white patches.
             if cat.white_patches_tint != "none" and cat.white_patches_tint in Sprites.white_patches_tints["tint_colours"]:
