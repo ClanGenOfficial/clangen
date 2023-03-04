@@ -105,7 +105,8 @@ class SaveCheck(UIWindow):
                     game.rpc.update_rpc.set()
                     pygame.display.quit()
                     pygame.quit()
-                    game.rpc.finished.wait(1)
+                    if game.rpc.is_alive():
+                        game.rpc.join(1)
                     exit()
             elif event.ui_element == self.save_button:
                 if game.clan is not None:

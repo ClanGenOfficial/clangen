@@ -37,17 +37,13 @@ class _DiscordRPC(threading.Thread):
         self.start_rpc = threading.Event()
         self.update_rpc = threading.Event()
         self.close_rpc = threading.Event()
-        self.finished = threading.Event()
             
     def run(self):
-        print("It begins....")
         self.start_rpc.wait()
-        print("pre connect!!")
         self.get_rpc()
         self.connect()
         while not self.close_rpc.is_set():
             self.update_rpc.wait()
-            print("Update!!")
             self.update()
         self.close()
 
@@ -128,5 +124,4 @@ class _DiscordRPC(threading.Thread):
         if self._connected:
             self._rpc.close()
             self._connected = False
-        self.finished.set()
             
