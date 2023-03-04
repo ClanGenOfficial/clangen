@@ -46,7 +46,7 @@
             "Creeping in as close as possible, s_c purrs to their Clanmate, keeping them calm as the patrol carefully digs down to them."
     ],
     "fail_text": [
-            "The patrol works all day to free r_C and gets nothing else done.",
+            "The patrol works all day to free r_c and gets nothing else done.",
             "Harshly, s_c tells their Clanmate that they're on their own - this patrol is too important to wait for some idiot who got stuck in the sand.",
             "Hurt and wheezing, r_c hears the patrol panicking as they drift to StarClan.",
             "The patrol eventually manages to rescue r_c, but they need to be helped back to camp, battered and injured."
@@ -369,7 +369,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "app2 drapes themselves with a bunch of seaweed, and proclaims themselves clothed like a Twolegs. They chase after app1, who's not as keen to get seaweed slime all over themselves, and the two young cats play on the safe sands all afternoon.",
+            "app2 drapes themselves with a bunch of seaweed, and proclaims themselves clothed like a Twoleg. They chase after app1, who's not as keen to get seaweed slime all over themselves, and the two young cats play on the safe sands all afternoon.",
             "app1 finds a gigantic and flawless shell that's washed up on the beach with last night's tide and calls app2 over. Both apprentices startle backwards when a hermit crab starts scurrying away from them. They chase it, shouting joyfully, eyes wide and silly as the poor hermit crab has to wait until they finally get bored to escape.",
             null,
             "app1 finds a shell that shines with a brilliant internal sheen. Picking it up, they shyly present it to app2, wondering if app2 might like it for their nest. Blushing to the tips of their ears, app2 accepts their gift."

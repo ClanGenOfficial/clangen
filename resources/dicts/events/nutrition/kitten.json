@@ -22,7 +22,7 @@
 	{
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "death"],
-        "death_text": "m_c complain's how hungry they are. Soon after they sadly walk with their ancestors.",
+        "death_text": "m_c complains about how hungry they are. Soon after, they sadly walk with their ancestors.",
         "history_text": ["m_c died from starvation.", null],
         "cat_trait": ["bossy", "bouncy", "troublesome"],
         "cat_skill": null,
@@ -42,7 +42,7 @@
 	{
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "starving"],
-        "death_text": "m_c asking r_c if there is prey left, they could may have, because they are so hungry.",
+        "death_text": "m_c asks r_c if there is prey left that they may have, because they are so hungry.",
         "history_text": [null, null],
         "cat_trait": null,
         "cat_skill": null,
@@ -52,7 +52,7 @@
 	{
 		"camp": "any",
 		"tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "starving"],
-		"death_text": "m_c's stomach rumbles loudly, but they try to hide the fact, that they are starving.",
+		"death_text": "m_c's stomach rumbles loudly, but they try to hide the fact that they are starving.",
 		"history_text": [null, null],
 		"cat_trait": ["quiet", "nervous", "insecure"],
 		"cat_skill": null,
@@ -62,7 +62,7 @@
 	{
 		"camp": "any",
 		"tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "starving"],
-		"death_text": "m_c demand r_c to bring them prey, because they are really hungry.",
+		"death_text": "m_c demands that r_c bring them prey, because they are really hungry.",
 		"history_text": [null, null],
 		"cat_trait": ["bossy", "impulsive", "attention-seeker", "noisy"],
 		"cat_skill": null,

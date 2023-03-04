@@ -1364,7 +1364,7 @@
     "biome": "forest",
     "season": "newleaf",
     "tags": [
-        "hunting",
+        "rc_has_stat","hunting",
         "romantic",
         "respect",
         "pos_jealous",

@@ -114,12 +114,26 @@ class Patrol():
         elif "medicine cat apprentice" in self.patrol_statuses:
             med_index = self.patrol_statuses.index("medicine cat apprentice")
             self.patrol_leader = self.patrol_cats[med_index]
+            # then we just make sure that this app will also be app1
+            if self.patrol_leader != self.patrol_apprentices[0]:
+                self.patrol_apprentices.remove(self.patrol_leader)
+                self.patrol_apprentices.insert(0, self.patrol_leader)
         # sets leader as patrol leader
         elif clan.leader and clan.leader in self.patrol_cats:
             self.patrol_leader = clan.leader
+        elif clan.deputy and clan.deputy in self.patrol_cats:
+            self.patrol_leader = clan.deputy
         else:
             if self.possible_patrol_leaders:
-                self.patrol_leader = choice(self.possible_patrol_leaders)
+                for cat in self.possible_patrol_leaders:
+                    if cat.age == 'senior adult':
+                        self.patrol_leader = cat
+                        break
+                    elif cat.age == 'adult':
+                        self.patrol_leader = cat
+                        break
+                if not self.patrol_leader:
+                    self.patrol_leader = choice(self.possible_patrol_leaders)
             elif not self.possible_patrol_leaders:
                 self.patrol_leader = choice(self.patrol_cats)
         self.patrol_leader_name = str(self.patrol_leader.name)
@@ -291,15 +305,19 @@ class Patrol():
             if patrol.season not in [current_season, "Any"]:
                 continue
 
-            # correct button check
-            if 'general' not in patrol.tags and patrol_type != 'general':
+            #  correct button check
+            if patrol_type == "general":
+                if not set(patrol.tags).intersection({"hunting", "border", "training"}):
+                    # This make sure general only gets hunting, border, or training patrols.
+                    continue
+            else:
                 if 'hunting' not in patrol.tags and patrol_type == 'hunting':
                     continue
                 elif 'border' not in patrol.tags and patrol_type == 'border':
                     continue
                 elif 'training' not in patrol.tags and patrol_type == 'training':
                     continue
-                elif 'med_cat' not in patrol.tags and patrol_type == 'med':
+                elif 'herb_gathering' not in patrol.tags and patrol_type == 'med':
                     continue
 
             if patrol_size < patrol.min_cats:
@@ -309,18 +327,13 @@ class Patrol():
 
             # makes sure that an apprentice is present if the apprentice tag is
             if "apprentice" in patrol.tags:
-                if "apprentice" not in self.patrol_statuses and "medicine cat apprentice" not in self.patrol_statuses:
-                    continue
-                # If there is only a medicine cat apprentice in the patrol without a full medicine cat and
-                # the number of cats is greater than one, remove all
-                # the patrols that assume as apprentice is present, resulting in treating the med apprentice like a
-                # full medicine cat for the patrol.
-                # This is not ideal, since it also means patrols with warrior apprentices may not work correctly
-                # This also means patrols the are written for both a medicine cat apprentice and a warrior
-                # apprentice will only show up if there is also a full medicine cat in the patrol.
-                # TODO: Write patrols for med cat apprentices + warriors.
-                if "medicine cat apprentice" in self.patrol_statuses and "medicine cat" not in self.patrol_statuses:
-                    if len(self.patrol_cats) > 1:
+                if patrol_type != 'med':
+                    if "apprentice" not in self.patrol_statuses:
+                        continue
+                else:
+                    if "medicine cat apprentice" not in self.patrol_statuses:
+                        continue
+                    if "warrior_app" in patrol.tags and "apprentice" not in self.patrol_statuses:
                         continue
 
             # makes sure that the deputy is present if the deputy tag is
@@ -344,8 +357,7 @@ class Patrol():
 
             # makes sure there's a med in a med patrol
             if "med_cat" in patrol.tags:
-                med = ["medicine cat", "medicine cat apprentice"]
-                if not any(status in self.patrol_statuses for status in med):
+                if "medicine cat" not in self.patrol_statuses:
                     continue
 
             # makes sure no apps are present if they're not supposed to be
@@ -702,7 +714,7 @@ class Patrol():
                 success_chance += game.config["patrol_generation"]["win_stat_cat_modifier"]
             if kitty.skill in self.patrol_event.fail_skills:
                 success_chance += game.config["patrol_generation"]["fail_stat_cat_modifier"]
-            if kitty.trait in self.patrol_event.fail_trait:
+            if self.patrol_event.fail_trait and kitty.trait in self.patrol_event.fail_trait:
                 success_chance += game.config["patrol_generation"]["fail_stat_cat_modifier"]
 
             print(kitty.name, 'updated chance to', success_chance)
@@ -935,6 +947,7 @@ class Patrol():
                     created_cats.extend(self.create_new_cat(loner=False, loner_name=True, kittypet=True, queen=True,
                                                             backstory=new_backstory))
                     new_cat = created_cats[0]
+                    new_cat.thought = "Feels relieved that they've found a safe place to stay"
                     if game.clan.game_mode != 'classic':
                         new_cat.get_injured("recovering from birth")
                 else:
@@ -945,6 +958,7 @@ class Patrol():
                     created_cats.extend(self.create_new_cat(loner=True, loner_name=True, kittypet=False, queen=True,
                                                             backstory=new_backstory))
                     new_cat = created_cats[0]
+                    new_cat.thought = "Feels relieved that they've found a safe place to stay"
                     if game.clan.game_mode != 'classic':
                         new_cat.get_injured("recovering from birth")
                 if "new_cat_kits" in tags:
@@ -965,21 +979,25 @@ class Patrol():
                 if kittypet is True:
                     new_backstory = choice(['kittypet1', 'kittypet2', 'kittypet3',
                                             'refugee3', 'tragedy_survivor3'])
-                    created_cats.extend(self.create_new_cat(loner=False, loner_name=True, kittypet=True, queen=True,
-                                                            backstory=new_backstory))
+                    created_cats = self.create_new_cat(loner=False, loner_name=True, kittypet=True, queen=True,
+                                                            backstory=new_backstory)
                     new_cat = created_cats[0]
                     new_cat.outside = True
                     new_cat.dead = True
+                    new_cat.name.suffix = ""
+                    new_cat.thought = "Is glad that their kits are safe"
                 else:
                     new_backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2',
                                             'ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
                                             'tragedy_survivor', 'refugee2', 'tragedy_survivor4',
                                             'refugee4', 'tragedy_survivor2'])
-                    created_cats.extend(self.create_new_cat(loner=True, loner_name=True, kittypet=False, queen=True,
-                                                            backstory=new_backstory))
+                    created_cats = self.create_new_cat(loner=True, loner_name=True, kittypet=False, queen=True,
+                                                            backstory=new_backstory)
                     new_cat = created_cats[0]
                     new_cat.outside = True
                     new_cat.dead = True
+                    new_cat.name.suffix = ""
+                    new_cat.thought = "Is glad that their kits are safe"
                 if "new_cat_newborn" in tags:
                     created_cats.extend(
                         self.create_new_cat(loner=False, loner_name=True, backstory=choice(['orphaned', 'orphaned2']),
@@ -1089,7 +1107,8 @@ class Patrol():
                        age=None,
                        relevant_cat=None,
                        backstory=None,
-                       other_clan=None):
+                       other_clan=None) -> list:
+        """This function creates cats based on the given values and returns a list."""
         name = None
         skill = None
         accessory = None
@@ -1145,19 +1164,23 @@ class Patrol():
 
         amount = choice([1, 1, 2, 2, 2, 3]) if litter else 1
         created_cats = []
-        a = randint(0, 1)
+        suffix_choice = choice([True, False]) # if the cat gets a suffix or not
+        if suffix_choice:
+            suffix_ = None
+        else:
+            suffix_ = ""
+
+        if kit or litter or age == 'young': # babies will always get a suffix bc they don't know any better
+            suffix_ = None
+        
         for number in range(amount):
             new_cat = None
-            if loner_name and a == 1:
-                new_cat = Cat(moons=age, prefix=name, status=status,
-                              gender=gender if gender is not None else choice(['female', 'male']),
-                              backstory=backstory)
-            elif loner_name:
-                new_cat = Cat(moons=age, prefix=name, suffix=None, status=status,
+            if loner_name:
+                new_cat = Cat(moons=age, prefix=name, suffix=suffix_, status=status,
                               gender=gender if gender is not None else choice(['female', 'male']),
                               backstory=backstory)
             else:
-                new_cat = Cat(moons=age, status=status,
+                new_cat = Cat(moons=age, status=status, suffix=suffix_,
                               gender=gender if gender is not None else choice(['female', 'male']), backstory=backstory)
             if skill:
                 new_cat.skill = skill

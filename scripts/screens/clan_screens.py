@@ -20,6 +20,7 @@ class ClanScreen(Screens):
 
     def __init__(self, name=None):
         super().__init__(name)
+        self.show_den_labels = None
         self.show_den_text = None
         self.label_toggle = None
         self.app_den_label = None
@@ -44,6 +45,8 @@ class ClanScreen(Screens):
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.save_button:
+                self.save_button_saving_state.show()
+                self.save_button.disable()
                 game.save_cats()
                 game.clan.save_clan()
                 game.clan.save_pregnancy(game.clan)
@@ -74,45 +77,6 @@ class ClanScreen(Screens):
         self.update_heading_text(f'{game.clan.name}Clan')
         self.show_menu_buttons()
 
-        # Den Labels
-        # Redo the locations, so that it uses layout on the clan page
-        self.warrior_den_label = pygame_gui.elements.UIImage(
-            scale(pygame.Rect(game.clan.cur_layout["warrior den"], (242, 56))),
-            pygame.transform.scale(
-                image_cache.load_image('resources/images/warrior_den.png'),
-                (242, 56)))
-        self.leader_den_label = pygame_gui.elements.UIImage(scale(pygame.Rect(game.clan.cur_layout["leader den"], (224, 56))),
-                                                            pygame.transform.scale(
-                                                                image_cache.load_image('resources/images/leader_den.png'),
-                                                                (224, 56)))
-        self.med_den_label = UIImageButton(scale(pygame.Rect(
-            game.clan.cur_layout["medicine den"], (302, 56))),
-            "",
-            object_id="#med_den_button"
-        )
-        self.elder_den_label = pygame_gui.elements.UIImage(scale(pygame.Rect(game.clan.cur_layout["elder den"], (206, 56))),
-                                                           pygame.transform.scale(
-                                                               image_cache.load_image('resources/images/elder_den.png'),
-                                                               (206, 56)))
-        self.nursery_label = pygame_gui.elements.UIImage(scale(pygame.Rect(game.clan.cur_layout['nursery'], (160, 56))),
-                                                         pygame.transform.scale(
-                                                             image_cache.load_image('resources/images/nursery_den.png'),
-                                                         (160, 56)))
-        self.clearing_label = pygame_gui.elements.UIImage(scale(pygame.Rect(game.clan.cur_layout['clearing'], (162, 56))),
-                                                          pygame.transform.scale(
-                                                              image_cache.load_image('resources/images/clearing.png'),
-                                                          (162, 56)))
-        self.app_den_label = pygame_gui.elements.UIImage(scale(pygame.Rect(game.clan.cur_layout['apprentice den'], (294, 56))),
-                                                         pygame.transform.scale(
-                                                            image_cache.load_image('resources/images/app_den.png'),
-                                                         (294, 56)))
-
-        # Draw the toggle and text
-        self.label_toggle = UIImageButton(scale(pygame.Rect((50, 1282), (64, 64))), "", object_id="#checked_checkbox")
-        self.show_den_text = pygame_gui.elements.UITextBox("<font color=#000000>Show Den Labels</font>",
-                                                           scale(pygame.Rect((120, 1294), (290, 50))),
-                                                           object_id="#save_text_box")
-
         # Creates and places the cat sprites.
         self.cat_buttons = []  # To contain all the buttons.
 
@@ -129,16 +93,77 @@ class ClanScreen(Screens):
 
                 try:
                     self.cat_buttons.append(
-                        UISpriteButton(scale(pygame.Rect(tuple(Cat.all_cats[x].placement), (100, 100))), Cat.all_cats[x].big_sprite,
-                                       cat_id=x)
+                        UISpriteButton(scale(pygame.Rect(tuple(Cat.all_cats[x].placement), (100, 100))),
+                                       Cat.all_cats[x].big_sprite,
+                                       cat_id=x,
+                                       starting_height=1)
                     )
                 except:
                     print(f"ERROR: placing {Cat.all_cats[x].name}\'s sprite on Clan page")
 
-        self.save_button = UIImageButton(scale(pygame.Rect(((686, 1250), (228, 60)))), "", object_id="#save_button")
+        # Den Labels
+        # Redo the locations, so that it uses layout on the clan page
+        self.warrior_den_label = pygame_gui.elements.UIImage(
+            scale(pygame.Rect(game.clan.cur_layout["warrior den"], (242, 56))),
+            pygame.transform.scale(
+                image_cache.load_image('resources/images/warrior_den.png'),
+                (242, 56)))
+        self.leader_den_label = pygame_gui.elements.UIImage(
+            scale(pygame.Rect(game.clan.cur_layout["leader den"], (224, 56))),
+            pygame.transform.scale(
+                image_cache.load_image('resources/images/leader_den.png'),
+                (224, 56)))
+        self.med_den_label = UIImageButton(scale(pygame.Rect(
+            game.clan.cur_layout["medicine den"], (302, 56))),
+            "",
+            object_id="#med_den_button",
+            starting_height=2
+        )
+        self.elder_den_label = pygame_gui.elements.UIImage(
+            scale(pygame.Rect(game.clan.cur_layout["elder den"], (206, 56))),
+            pygame.transform.scale(
+                image_cache.load_image('resources/images/elder_den.png'),
+                (206, 56)),
+            )
+        self.nursery_label = pygame_gui.elements.UIImage(scale(pygame.Rect(game.clan.cur_layout['nursery'], (160, 56))),
+                                                         pygame.transform.scale(
+                                                             image_cache.load_image('resources/images/nursery_den.png'),
+                                                             (160, 56)))
+        self.clearing_label = pygame_gui.elements.UIImage(
+            scale(pygame.Rect(game.clan.cur_layout['clearing'], (162, 56))),
+            pygame.transform.scale(
+                image_cache.load_image('resources/images/clearing.png'),
+                (162, 56)))
+        self.app_den_label = pygame_gui.elements.UIImage(
+            scale(pygame.Rect(game.clan.cur_layout['apprentice den'], (294, 56))),
+            pygame.transform.scale(
+                image_cache.load_image('resources/images/app_den.png'),
+                (294, 56)))
 
-        self.save_text = pygame_gui.elements.UITextBox("", scale(pygame.Rect(640, 1320, 320, 40)),
-                                                       object_id="#save_text_box")
+        # Draw the toggle and text
+        self.show_den_labels = pygame_gui.elements.UIImage(scale(pygame.Rect((50, 1282), (334, 68))),
+                                                           pygame.transform.scale(
+                                                               image_cache.load_image(
+                                                                   'resources/images/show_den_labels.png'),
+                                                               (334, 68)))
+        self.show_den_labels.disable()
+        self.label_toggle = UIImageButton(scale(pygame.Rect((50, 1282), (64, 64))), "", object_id="#checked_checkbox")
+
+        self.save_button = UIImageButton(scale(pygame.Rect(((686, 1286), (228, 60)))), "", object_id="#save_button")
+        self.save_button.enable()
+        self.save_button_saved_state = pygame_gui.elements.UIImage(
+            scale(pygame.Rect((686, 1286), (228, 60))),
+            pygame.transform.scale(
+                image_cache.load_image('resources/images/save_clan_saved.png'),
+                (228, 60)))
+        self.save_button_saved_state.hide()
+        self.save_button_saving_state = pygame_gui.elements.UIImage(
+            scale(pygame.Rect((686, 1286), (228, 60))),
+            pygame.transform.scale(
+                image_cache.load_image('resources/images/save_clan_saving.png'),
+                (228, 60)))
+        self.save_button_saving_state.hide()
+
         self.update_buttons_and_text()
 
     def exit_screen(self):
@@ -150,8 +175,10 @@ class ClanScreen(Screens):
         # Kill all other elements, and destroy the reference so they aren't hanging around
         self.save_button.kill()
         del self.save_button
-        self.save_text.kill()
-        del self.save_text
+        self.save_button_saved_state.kill()
+        del self.save_button_saved_state
+        self.save_button_saving_state.kill()
+        del self.save_button_saving_state
         self.warrior_den_label.kill()
         del self.warrior_den_label
         self.leader_den_label.kill()
@@ -168,8 +195,11 @@ class ClanScreen(Screens):
         del self.app_den_label
         self.label_toggle.kill()
         del self.label_toggle
-        self.show_den_text.kill()
-        del self.show_den_text
+        self.show_den_labels.kill()
+        del self.show_den_labels
+
+        # reset save status
+        game.switches['saved_clan'] = False
 
     def update_camp_bg(self):
         light_dark = "light"
@@ -288,13 +318,16 @@ class ClanScreen(Screens):
 
     def update_buttons_and_text(self):
         if game.switches['saved_clan']:
-            self.save_text.set_text("<font color=#006600>Saved!</font>")
+            self.save_button_saving_state.hide()
+            self.save_button_saved_state.show()
+            self.save_button.disable()
         else:
-            self.save_text.set_text("Remember to save!")
+            self.save_button.enable()
 
         self.label_toggle.kill()
         if game.settings['den labels']:
-            self.label_toggle = UIImageButton(scale(pygame.Rect((50, 1282), (68, 68))), "", object_id="#checked_checkbox")
+            self.label_toggle = UIImageButton(scale(pygame.Rect((50, 1282), (68, 68))), "",
+                                              object_id="#checked_checkbox")
             self.warrior_den_label.show()
             self.clearing_label.show()
             self.nursery_label.show()
@@ -303,7 +336,8 @@ class ClanScreen(Screens):
             self.med_den_label.show()
             self.elder_den_label.show()
         else:
-            self.label_toggle = UIImageButton(scale(pygame.Rect((50, 1282), (68, 68))), "", object_id="#unchecked_checkbox")
+            self.label_toggle = UIImageButton(scale(pygame.Rect((50, 1282), (68, 68))), "",
+                                              object_id="#unchecked_checkbox")
             self.warrior_den_label.hide()
             self.clearing_label.hide()
             self.nursery_label.hide()
@@ -338,7 +372,7 @@ class StarClanScreen(Screens):
         self.search_bar_image = pygame.transform.scale(
             pygame.image.load("resources/images/search_bar.png").convert_alpha(), (456, 68))
         self.clan_name_bg = pygame.transform.scale(
-            image_cache.load_image("resources/images/clan_name_bg.png").convert_alpha(), (360, 70))
+            image_cache.load_image("resources/images/clan_name_bg.png").convert_alpha(), (380, 70))
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -428,7 +462,7 @@ class StarClanScreen(Screens):
         self.dead_cats = [game.clan.instructor] if not game.clan.instructor.df else []
         for the_cat in Cat.all_cats_list:
             if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.outside and not the_cat.df and \
-                    not the_cat.faded and not the_cat.status in ['kittypet','loner','rogue']:
+                    not the_cat.faded and not the_cat.status in ['kittypet', 'loner', 'rogue']:
                 self.dead_cats.append(the_cat)
 
     def screen_switches(self):
@@ -444,14 +478,18 @@ class StarClanScreen(Screens):
         self.starclan_button.disable()
         self.unknown_residence_button = UIImageButton(scale(pygame.Rect((298, 270), (68, 68))), "",
                                                       object_id="#unknown_residence_button", manager=MANAGER)
-        self.dark_forest_button = UIImageButton(scale(pygame.Rect((366, 270), (68, 68))), "", object_id="#dark_forest_button"
+        self.dark_forest_button = UIImageButton(scale(pygame.Rect((366, 270), (68, 68))), "",
+                                                object_id="#dark_forest_button"
                                                 , manager=MANAGER)
-        self.next_page_button = UIImageButton(scale(pygame.Rect((912, 1190), (68, 68))), "", object_id="#arrow_right_button"
+        self.next_page_button = UIImageButton(scale(pygame.Rect((912, 1190), (68, 68))), "",
+                                              object_id="#arrow_right_button"
                                               , manager=MANAGER)
-        self.previous_page_button = UIImageButton(scale(pygame.Rect((620, 1190), (68, 68))), "", object_id="#arrow_left_button"
+        self.previous_page_button = UIImageButton(scale(pygame.Rect((620, 1190), (68, 68))), "",
+                                                  object_id="#arrow_left_button"
                                                   , manager=MANAGER)
         self.page_number = pygame_gui.elements.UITextBox("", scale(pygame.Rect((680, 1190),
-                                                                         (220, 60))), manager=MANAGER)  # Text will be filled in later
+                                                                               (220, 60))),
+                                                         manager=MANAGER)  # Text will be filled in later
 
         self.set_disabled_menu_buttons(["starclan_screen"])
         self.update_heading_text("StarClan")
@@ -538,7 +576,7 @@ class StarClanScreen(Screens):
             self.next_page_button.enable()
 
         self.page_number.set_text("<font color='#FFFFFF'>" + str(self.list_page) + "/" +
-                                                         str(self.all_pages) + "</font>")
+                                  str(self.all_pages) + "</font>")
 
         # Remove the images for currently listed cats
         for cat in self.display_cats:
@@ -557,7 +595,7 @@ class StarClanScreen(Screens):
                 update_sprite(cat)
                 self.display_cats.append(
                     UISpriteButton(scale(pygame.Rect
-                                   ((260 + pos_x, 360 + pos_y), (100, 100))),
+                                         ((260 + pos_x, 360 + pos_y), (100, 100))),
                                    cat.big_sprite,
                                    cat.ID,
                                    starting_height=1, manager=MANAGER))
@@ -568,7 +606,8 @@ class StarClanScreen(Screens):
                     name = short_name + '...'
                 self.cat_names.append(pygame_gui.elements.UITextBox("<font color='#FFFFFF'>" + name + "</font>"
                                                                     ,
-                                                                    scale(pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60)))
+                                                                    scale(pygame.Rect((160 + pos_x, 460 + pos_y),
+                                                                                      (300, 60)))
                                                                     , manager=MANAGER))
                 pos_x += 240
                 if pos_x >= 1200:
@@ -585,7 +624,7 @@ class StarClanScreen(Screens):
 
         screen.blit(bg, (0, 0))
 
-        screen.blit(ListScreen.search_bar, (696/1600 * screen_x, 270/1400 * screen_y))
+        screen.blit(ListScreen.search_bar, (696 / 1600 * screen_x, 270 / 1400 * screen_y))
 
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]
@@ -616,11 +655,11 @@ class DFScreen(Screens):
             pygame.image.load("resources/images/darkforestbg.png").convert(),
             (screen_x, screen_y))
         self.search_bar_image = pygame.transform.scale(
-            pygame.image.load("resources/images/search_bar.png").convert_alpha(), (int(456/1600 * screen_x),
-                                                                                   int(68/1400 * screen_x)))
+            pygame.image.load("resources/images/search_bar.png").convert_alpha(), (int(456 / 1600 * screen_x),
+                                                                                   int(68 / 1400 * screen_x)))
         self.clan_name_bg = pygame.transform.scale(
-            image_cache.load_image("resources/images/clan_name_bg.png").convert_alpha(), (int(360/1600 * screen_x),
-                                                                                          int(68/1400 * screen_y)))
+            image_cache.load_image("resources/images/clan_name_bg.png").convert_alpha(), (int(380 / 1600 * screen_x),
+                                                                                          int(68 / 1400 * screen_y)))
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -727,15 +766,17 @@ class DFScreen(Screens):
         self.starclan_button = UIImageButton(scale(pygame.Rect((230, 270), (68, 68))), "", object_id="#starclan_button")
         self.unknown_residence_button = UIImageButton(scale(pygame.Rect((298, 270), (68, 68))), "",
                                                       object_id="#unknown_residence_button", manager=MANAGER)
-        self.dark_forest_button = UIImageButton(scale(pygame.Rect((366, 270), (68, 68))), "", object_id="#dark_forest_button"
+        self.dark_forest_button = UIImageButton(scale(pygame.Rect((366, 270), (68, 68))), "",
+                                                object_id="#dark_forest_button"
                                                 , manager=MANAGER)
         self.dark_forest_button.disable()
-        self.next_page_button = UIImageButton(scale(pygame.Rect((912, 1190), (68, 68))), "", object_id="#arrow_right_button"
+        self.next_page_button = UIImageButton(scale(pygame.Rect((912, 1190), (68, 68))), "",
+                                              object_id="#arrow_right_button"
                                               , manager=MANAGER)
         self.previous_page_button = UIImageButton(scale(pygame.Rect((620, 1190), (68, 68))), "",
                                                   object_id="#arrow_left_button", manager=MANAGER)
         self.page_number = pygame_gui.elements.UITextBox("", scale(pygame.Rect((680, 1190),
-                                                                         (220, 60))), manager=MANAGER)
+                                                                               (220, 60))), manager=MANAGER)
 
         self.set_disabled_menu_buttons(["starclan_screen"])
         self.update_heading_text("Dark Forest")
@@ -782,7 +823,6 @@ class DFScreen(Screens):
             starting_height=2, manager=MANAGER
         )
         self.filter_id.hide()
-
 
     def update_search_cats(self, search_text):
         """Run this function when the search text changes, or when the screen is switched to."""
@@ -842,7 +882,7 @@ class DFScreen(Screens):
                 update_sprite(cat)
                 self.display_cats.append(
                     UISpriteButton(scale(pygame.Rect
-                                   ((260 + pos_x, 360 + pos_y), (100, 100))),
+                                         ((260 + pos_x, 360 + pos_y), (100, 100))),
                                    cat.big_sprite,
                                    cat.ID,
                                    starting_height=1))
@@ -853,7 +893,8 @@ class DFScreen(Screens):
                     name = short_name + '...'
                 self.cat_names.append(pygame_gui.elements.UITextBox("<font color='#FFFFFF'>" + name + "</font>"
                                                                     ,
-                                                                    scale(pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60)))
+                                                                    scale(pygame.Rect((160 + pos_x, 460 + pos_y),
+                                                                                      (300, 60)))
                                                                     , manager=MANAGER))
                 pos_x += 240
                 if pos_x >= 1200:
@@ -871,7 +912,7 @@ class DFScreen(Screens):
 
         screen.blit(bg, (0, 0))
 
-        screen.blit(ListScreen.search_bar, (696/1600 * screen_x, 270/1400 * screen_y))
+        screen.blit(ListScreen.search_bar, (696 / 1600 * screen_x, 270 / 1400 * screen_y))
 
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]
@@ -884,7 +925,7 @@ class ListScreen(Screens):
     cat_names = []
 
     search_bar = pygame.transform.scale(pygame.image.load("resources/images/search_bar.png").convert_alpha(),
-                                        (456/1600 * screen_x, 68/1400 * screen_y))
+                                        (456 / 1600 * screen_x, 68 / 1400 * screen_y))
     previous_search_text = ""
 
     def __init__(self, name=None):
@@ -978,12 +1019,14 @@ class ListScreen(Screens):
         self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 284), (294, 46))),
                                                               object_id="#search_entry_box", manager=MANAGER)
 
-        self.your_clan_button = UIImageButton(scale(pygame.Rect((230, 270), (68, 68))), "", object_id="#your_clan_button"
+        self.your_clan_button = UIImageButton(scale(pygame.Rect((230, 270), (68, 68))), "",
+                                              object_id="#your_clan_button"
                                               , manager=MANAGER)
         self.your_clan_button.disable()
         self.outside_clan_button = UIImageButton(scale(pygame.Rect((298, 270), (68, 68))), "",
                                                  object_id="#outside_clan_button", manager=MANAGER)
-        self.next_page_button = UIImageButton(scale(pygame.Rect((912, 1190), (68, 68))), "", object_id="#arrow_right_button"
+        self.next_page_button = UIImageButton(scale(pygame.Rect((912, 1190), (68, 68))), "",
+                                              object_id="#arrow_right_button"
                                               , manager=MANAGER)
         self.previous_page_button = UIImageButton(scale(pygame.Rect((620, 1190), (68, 68))), "",
                                                   object_id="#arrow_left_button", manager=MANAGER)
@@ -1035,7 +1078,6 @@ class ListScreen(Screens):
             starting_height=2, manager=MANAGER
         )
         self.filter_id.hide()
-
 
     def exit_screen(self):
         self.hide_menu_buttons()
@@ -1117,7 +1159,7 @@ class ListScreen(Screens):
                 update_sprite(cat)
                 self.display_cats.append(
                     UISpriteButton(scale(pygame.Rect
-                                   ((260 + pos_x, 360 + pos_y), (100, 100))),
+                                         ((260 + pos_x, 360 + pos_y), (100, 100))),
                                    cat.big_sprite,
                                    cat.ID,
                                    starting_height=1, manager=MANAGER))
@@ -1127,7 +1169,8 @@ class ListScreen(Screens):
                     short_name = str(cat.name)[0:12]
                     name = short_name + '...'
                 self.cat_names.append(pygame_gui.elements.UITextBox(name,
-                                                                    scale(pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60))),
+                                                                    scale(pygame.Rect((160 + pos_x, 460 + pos_y),
+                                                                                      (300, 60))),
                                                                     object_id=get_text_box_theme(), manager=MANAGER))
                 pos_x += 240
                 if pos_x >= 1200:
@@ -1141,7 +1184,7 @@ class ListScreen(Screens):
             self.update_search_cats(self.search_bar.get_text())
         self.previous_search_text = self.search_bar.get_text()
 
-        screen.blit(ListScreen.search_bar, (696/1600 * screen_x, 270/1400 * screen_y))
+        screen.blit(ListScreen.search_bar, (696 / 1600 * screen_x, 270 / 1400 * screen_y))
 
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]
@@ -1326,8 +1369,7 @@ class AllegiancesScreen(Screens):
                                                        object_id=get_text_box_theme("#allegiances_box"),
                                                        container=self.scroll_container, manager=MANAGER)
 
-
-        self.scroll_container.set_scrollable_area_dimensions((1360/1600 * screen_x, self.cat_names_box.rect[3]))
+        self.scroll_container.set_scrollable_area_dimensions((1360 / 1600 * screen_x, self.cat_names_box.rect[3]))
 
         self.ranks_box.disable()
         self.cat_names_box.disable()
@@ -1382,6 +1424,7 @@ class MedDenScreen(Screens):
 
     def __init__(self, name=None):
         super().__init__(name)
+        self.help_button = None
         self.log_box = None
         self.log_title = None
         self.log_tab = None
@@ -1481,9 +1524,21 @@ class MedDenScreen(Screens):
                                       , manager=MANAGER)
 
         if game.clan.game_mode != 'classic':
+            self.help_button = UIImageButton(scale(pygame.Rect(
+                (1450, 50), (68, 68))),
+                "",
+                object_id="#help_button", manager=MANAGER,
+                tool_tip_text="Your medicine cats will gather herbs over each timeskip as well during any patrols you "
+                              "send them on. You can see what was gathered in the Log below! Your medicine cats will"
+                              " give these to any hurt or sick cats that need them, helping those cats to heal quicker."
+                              "<br><br>"
+                              "Hover your mouse over the medicine den image to see what herbs your Clan has!",
+
+            )
             self.last_page = UIImageButton(scale(pygame.Rect((660, 1272), (68, 68))), "", object_id="#arrow_left_button"
                                            , manager=MANAGER)
-            self.next_page = UIImageButton(scale(pygame.Rect((952, 1272), (68, 68))), "", object_id="#arrow_right_button"
+            self.next_page = UIImageButton(scale(pygame.Rect((952, 1272), (68, 68))), "",
+                                           object_id="#arrow_right_button"
                                            , manager=MANAGER)
 
             self.hurt_sick_title = pygame_gui.elements.UITextBox(
@@ -1498,7 +1553,7 @@ class MedDenScreen(Screens):
             )
             self.log_title.hide()
             self.cat_bg = pygame_gui.elements.UIImage(scale(pygame.Rect
-                                                      ((280, 880), (1120, 400))),
+                                                            ((280, 880), (1120, 400))),
                                                       pygame.image.load(
                                                           "resources/images/sick_hurt_bg.png").convert_alpha()
                                                       , manager=MANAGER)
@@ -1511,32 +1566,32 @@ class MedDenScreen(Screens):
             self.log_box = pygame_gui.elements.UITextBox(
                 f"{f'<br><img src={img_path}><br>'.join(log_text)}<br>",
                 scale(pygame.Rect
-                ((300, 900), (1080, 360))),
+                      ((300, 900), (1080, 360))),
                 object_id="#med_den_log_box", manager=MANAGER
             )
             self.log_box.hide()
             self.cats_tab = UIImageButton(scale(pygame.Rect
-                                          ((218, 924), (68, 150))),
+                                                ((218, 924), (68, 150))),
                                           "",
                                           object_id="#hurt_sick_cats_button", manager=MANAGER
                                           )
             self.cats_tab.disable()
             self.log_tab = UIImageButton(scale(pygame.Rect
-                                         ((218, 1104), (68, 128))),
+                                               ((218, 1104), (68, 128))),
                                          "",
                                          object_id="#med_den_log_button", manager=MANAGER
                                          )
             self.in_den_tab = UIImageButton(scale(pygame.Rect
-                                            ((740, 818), (150, 70))),
+                                                  ((740, 818), (150, 70))),
                                             "",
                                             object_id="#in_den_tab", manager=MANAGER)
             self.in_den_tab.disable()
             self.out_den_tab = UIImageButton(scale(pygame.Rect
-                                             ((920, 818), (224, 70))),
+                                                   ((920, 818), (224, 70))),
                                              "",
                                              object_id="#out_den_tab", manager=MANAGER)
             self.minor_tab = UIImageButton(scale(pygame.Rect
-                                           ((1174, 818), (140, 70))),
+                                                 ((1174, 818), (140, 70))),
                                            "",
                                            object_id="#minor_tab", manager=MANAGER)
             self.tab_showing = self.in_den_tab
@@ -1551,7 +1606,8 @@ class MedDenScreen(Screens):
             for cat in self.injured_and_sick_cats:
                 if cat.injuries:
                     for injury in cat.injuries:
-                        if cat.injuries[injury]["severity"] != 'minor' and injury not in ['recovering from birth', "sprain", "lingering shock"]:
+                        if cat.injuries[injury]["severity"] != 'minor' and injury not in ['recovering from birth',
+                                                                                          "sprain", "lingering shock"]:
                             self.in_den_cats.append(cat)
                             if cat in self.out_den_cats:
                                 self.out_den_cats.remove(cat)
@@ -1729,7 +1785,7 @@ class MedDenScreen(Screens):
 
         for cat in self.display_med:
             self.med_cat = UISpriteButton(scale(pygame.Rect
-                                          ((870, 330), (300, 300))),
+                                                ((870, 330), (300, 300))),
                                           cat.large_sprite,
                                           cat_object=cat, manager=MANAGER)
             name = str(cat.name)
@@ -1737,7 +1793,7 @@ class MedDenScreen(Screens):
                 short_name = str(cat.name)[0:18]
                 name = short_name + '...'
             self.med_name = pygame_gui.elements.ui_label.UILabel(scale(pygame.Rect
-                                                                 ((1180, 310), (200, 60))),
+                                                                       ((1180, 310), (200, 60))),
                                                                  name,
                                                                  object_id=get_text_box_theme(), manager=MANAGER
                                                                  )
@@ -1814,12 +1870,12 @@ class MedDenScreen(Screens):
             conditions = ",<br>".join(condition_list)
 
             self.cat_buttons["able_cat" + str(i)] = UISpriteButton(scale(pygame.Rect
-                                                                   ((pos_x, pos_y), (100, 100))),
+                                                                         ((pos_x, pos_y), (100, 100))),
                                                                    cat.big_sprite,
                                                                    cat_object=cat, manager=MANAGER)
 
             self.conditions_hover["able_cat" + str(i)] = UIImageButton(scale(pygame.Rect
-                                                                       ((pos_x - 60, pos_y + 100), (220, 60))),
+                                                                             ((pos_x - 60, pos_y + 100), (220, 60))),
                                                                        "",
                                                                        object_id="#blank_button",
                                                                        tool_tip_text=conditions, manager=MANAGER)
@@ -1828,7 +1884,8 @@ class MedDenScreen(Screens):
                 short_name = str(cat.name)[0:9]
                 name = short_name + '...'
             self.cat_names.append(pygame_gui.elements.UITextBox(name,
-                                                                scale(pygame.Rect((pos_x - 60, pos_y + 100), (220, 60))),
+                                                                scale(
+                                                                    pygame.Rect((pos_x - 60, pos_y + 100), (220, 60))),
                                                                 object_id="text_box", manager=MANAGER))
 
             pos_x += 200
@@ -1851,7 +1908,7 @@ class MedDenScreen(Screens):
             herb_display = "<br>".join(sorted(herb_list))
 
             self.den_base = UIImageButton(scale(pygame.Rect
-                                          ((216, 190), (792, 448))),
+                                                ((216, 190), (792, 448))),
                                           "",
                                           object_id="#med_cat_den_hover",
                                           tool_tip_text=herb_display, manager=MANAGER
@@ -1878,7 +1935,7 @@ class MedDenScreen(Screens):
 
             herb_display = "<br>".join(holding_pairs)
             self.den_base = UIImageButton(scale(pygame.Rect
-                                          ((216, 190), (792, 448))),
+                                                ((216, 190), (792, 448))),
                                           "",
                                           object_id="#med_cat_den_hover_big",
                                           tool_tip_text=herb_display, manager=MANAGER
@@ -1888,26 +1945,26 @@ class MedDenScreen(Screens):
         for herb in herbs:
             if herb == 'cobwebs':
                 self.herbs["cobweb1"] = pygame_gui.elements.UIImage(scale(pygame.Rect
-                                                                    ((216, 190), (792, 448))),
+                                                                          ((216, 190), (792, 448))),
                                                                     pygame.transform.scale(
-                                                                    pygame.image.load(
-                                                                        "resources/images/med_cat_den/cobweb1.png").convert_alpha(),
+                                                                        pygame.image.load(
+                                                                            "resources/images/med_cat_den/cobweb1.png").convert_alpha(),
                                                                         (792, 448)
                                                                     ), manager=MANAGER)
                 if herbs["cobwebs"] > 1:
                     self.herbs["cobweb2"] = pygame_gui.elements.UIImage(scale(pygame.Rect
-                                                                        ((216, 190), (792, 448))),
+                                                                              ((216, 190), (792, 448))),
                                                                         pygame.transform.scale(
-                                                                        pygame.image.load(
-                                                                            "resources/images/med_cat_den/cobweb2.png").convert_alpha(),
+                                                                            pygame.image.load(
+                                                                                "resources/images/med_cat_den/cobweb2.png").convert_alpha(),
                                                                             (792, 448)
                                                                         ), manager=MANAGER)
                 continue
             self.herbs[herb] = pygame_gui.elements.UIImage(scale(pygame.Rect
-                                                           ((216, 190), (792, 448))),
+                                                                 ((216, 190), (792, 448))),
                                                            pygame.transform.scale(
-                                                           pygame.image.load(
-                                                               f"resources/images/med_cat_den/{herb}.png").convert_alpha(),
+                                                               pygame.image.load(
+                                                                   f"resources/images/med_cat_den/{herb}.png").convert_alpha(),
                                                                (792, 448)
                                                            ), manager=MANAGER)
 
@@ -1916,6 +1973,7 @@ class MedDenScreen(Screens):
         self.last_med.kill()
         self.next_med.kill()
         self.den_base.kill()
+        self.help_button.kill()
         for herb in self.herbs:
             self.herbs[herb].kill()
         self.herbs = {}

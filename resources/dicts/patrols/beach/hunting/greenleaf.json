@@ -195,7 +195,7 @@
         "The mother red fox's snapping jaws leave r_c dripping blood on the sand, forcing the patrol to back off.",
         null,
         "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the red vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up on the fight.",
-        "As their hunt descends into a full on battle with the red vixen, p_l takes a blow meant for one of their clanmates, losing a life."
+        "As their hunt descends into a full on battle with the red vixen, p_l takes a blow meant for one of their Clanmates, losing a life."
     ],
     "win_skills": [
         "excellent fighter"
@@ -492,7 +492,7 @@
         "s_c is more interested in the strangely-colored pelt than the food-scent, which the Twolegs will undoubtedly be possessive of. They wonder how the odd creature make such things, and why on earth they'd bring them to a beach to sit on pointlessly."
     ],
     "fail_text": [
-        "The patrol can't seem to interpret the purpose of the gathering. Twolegs are just mystifying.",
+        "The patrol can't seem to interpret the purpose of the Gathering. Twolegs are just mystifying.",
         null,
         null,
         "As the patrol gets close, a Twoleg kit runs at them, screaming unintelligibly. While running away, r_c sprains a leg."

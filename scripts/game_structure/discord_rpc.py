@@ -31,6 +31,8 @@ class _DiscordRPC():
         self.start_time = round(time()*1000)
         self.rpc_supported = False
         # Check if pypresence is available.
+        if not game.settings["discord"]:
+            return
         try:
             # raise ImportError # uncomment this line to disable rpc without uninstalling pypresence
             from pypresence import Presence, DiscordNotFound
@@ -81,7 +83,7 @@ class _DiscordRPC():
             clan_name = 'Loading...'
             cats_amount = 0
             if game.clan:
-                clan_name =  f"{game.clan.name}clan"
+                clan_name =  f"{game.clan.name}Clan"
                 cats_amount = len(game.clan.clan_cats)
                 clan_age = game.clan.age
             else:
