@@ -677,8 +677,12 @@ class MakeClanScreen(Screens):
         self.elements['roll3'] = UIImageButton(scale(pygame.Rect((x_pos, y_pos), (68, 68))), "",
                                                object_id="#random_dice_button", manager=MANAGER)
 
-        self.elements['dice'] = UIImageButton(scale(pygame.Rect((160, 870), (68, 68))), "",
+        _tmp = 160
+        if self.rolls_left == -1:
+            _tmp += 5
+        self.elements['dice'] = UIImageButton(scale(pygame.Rect((_tmp, 870), (68, 68))), "",
                                               object_id="#random_dice_button", manager=MANAGER)
+        del _tmp
         self.elements['reroll_count'] = pygame_gui.elements.UILabel(scale(pygame.Rect((200, 880), (100, 50))),
                                                                     str(self.rolls_left),
                                                                     object_id=get_text_box_theme(""),
@@ -696,6 +700,8 @@ class MakeClanScreen(Screens):
         else:
             if self.rolls_left == 0:
                 self.elements['dice'].disable()
+            elif self.rolls_left == -1:
+                self.elements['reroll_count'].hide()
             self.elements['roll1'].hide()
             self.elements['roll2'].hide()
             self.elements['roll3'].hide()
