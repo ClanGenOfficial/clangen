@@ -72,6 +72,7 @@ def json_load():
         'TUXEDOCREAMY': 'TUXEDO'
     }
 
+    no_tint_patches = ['SEPIAPOINT', 'MINKPOINT', 'SEALPOINT']
 
     # create new cat objects
     for i, cat in enumerate(cat_data):
@@ -119,7 +120,13 @@ def json_load():
                 new_cat.white_patches_tint = "darkcream"
             else:
                 new_cat.white_patches = cat["white_patches"]
-                new_cat.white_patches_tint = cat['white_patches_tint'] if "white_patches_tint" in cat else "offwhite"
+                if 'white_patches_tint' in cat:
+                    new_cat.white_patches_tint = cat['white_patches_tint']
+                else:
+                    if new_cat.white_patches in no_tint_patches:
+                        new_cat.white_patches_tint = "none"
+                    else:
+                        new_cat.white_patches_tint = "offwhite"
 
             new_cat.tortiebase = cat["tortie_base"]
 
