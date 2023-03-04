@@ -36,9 +36,12 @@ class StartScreen(Screens):
             elif event.ui_element == self.settings_button:
                 self.change_screen('settings screen')
             elif event.ui_element == self.quit:
-                game.rpc.close()
+                game.rpc.close_rpc.set()
+                game.rpc.update_rpc.set()
                 pygame.display.quit()
                 pygame.quit()
+                if game.rpc.is_alive():
+                    game.rpc.join(1)
                 exit()
 
     def on_use(self):
@@ -343,9 +346,12 @@ class SettingsScreen(Screens):
             if event.ui_element == self.fullscreen_toggle:
                 game.switch_setting('fullscreen')
                 game.save_settings()
-                game.rpc.close()
+                game.rpc.close_rpc.set()
+                game.rpc.update_rpc.set()
                 pygame.display.quit()
                 pygame.quit()
+                if game.rpc.is_alive():
+                    game.rpc.join(1)
                 exit()
             elif event.ui_element == self.save_settings_button:
                 self.save_settings()
@@ -470,7 +476,10 @@ class SettingsScreen(Screens):
             self.update_save_button()
             self.refresh_checkboxes()
             if game.settings['discord']:
-                game.rpc = _DiscordRPC("1076277970060185701")
+                game.rpc = _DiscordRPC("1076277970060185701",
+                                       daemon=True)
+                game.rpc.start()
+                game.rpc.start_rpc.set()
             else:
                 game.rpc.close()
 
