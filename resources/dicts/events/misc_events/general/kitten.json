@@ -16,5 +16,55 @@
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
+    },
+  {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "event_text": "m_c was playing with acc_plural earlier and decides to wear some of them.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null,
+        "accessories": ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]
+    },
+  {
+        "camp": "any",
+        "tags": ["other_cat_parent", "other_cat","Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "event_text": "No matter how hard r_c tries, there's always something stuck in m_c's fur.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null,
+        "accessories": ["HERBS", "PETALS", "DRY HERBS"]
+    },
+  {
+        "camp": "any",
+        "tags": ["other_cat", "to_both", "platonic", "comfort", "trust", "respect","Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "event_text": "m_c is too cute and r_c gives them a pretty acc_singular as a gift.",
+        "cat_trait": ["sweet", "polite"],
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null,
+        "accessories": ["WILD", "PLANT"]
+    },
+  {
+        "camp": "any",
+        "tags": ["other_cat", "other_cat_kit", "to_both", "platonic", "comfort", "trust", "neg_dislike","Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "event_text": "r_c gives m_c a pretty acc_singular they found while playing.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null,
+        "accessories": ["WILD", "PLANT"]
+    },
+  {
+        "camp": "any",
+        "tags": ["other_cat", "other_cat_kit", "to_both", "dislike", "jealousy", "neg_platonic", "neg_trust", "neg_comfort", "neg_respect","Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "event_text": "m_c starts bringing a pretty acc_singular everywhere they go and r_c loudly complains that they want one too.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["bullying", "impulsive", "attention-seeker"],
+        "other_cat_skill": null,
+        "accessories": ["WILD", "PLANT"]
     }
 ]

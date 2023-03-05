@@ -106,6 +106,7 @@ class Patrol():
             game.patrolled.append(cat)
 
         # sets medcat as leader if they're in the patrol
+        self.patrol_leader = None
         if "medicine cat" in self.patrol_statuses:
             med_index = self.patrol_statuses.index("medicine cat")
             self.patrol_leader = self.patrol_cats[med_index]
@@ -121,9 +122,19 @@ class Patrol():
         # sets leader as patrol leader
         elif clan.leader and clan.leader in self.patrol_cats:
             self.patrol_leader = clan.leader
+        elif clan.deputy and clan.deputy in self.patrol_cats:
+            self.patrol_leader = clan.deputy
         else:
             if self.possible_patrol_leaders:
-                self.patrol_leader = choice(self.possible_patrol_leaders)
+                for cat in self.possible_patrol_leaders:
+                    if cat.age == 'senior adult':
+                        self.patrol_leader = cat
+                        break
+                    elif cat.age == 'adult':
+                        self.patrol_leader = cat
+                        break
+                if not self.patrol_leader:
+                    self.patrol_leader = choice(self.possible_patrol_leaders)
             elif not self.possible_patrol_leaders:
                 self.patrol_leader = choice(self.patrol_cats)
         self.patrol_leader_name = str(self.patrol_leader.name)
@@ -1139,9 +1150,9 @@ class Patrol():
         if (loner or kittypet) and not kit and not litter:
             if loner_name:
                 if loner and kp_name_chance != 1:
-                    name = choice(names.normal_prefixes)
+                    name = choice(names.names_dict["normal_prefixes"])
                 else:
-                    name = choice(names.loner_names)
+                    name = choice(names.names_dict["loner_names"])
             if age >= 12:
                 status = "warrior"
             else:

@@ -101,9 +101,12 @@ class SaveCheck(UIWindow):
                     self.kill()
                 else:
                     game.is_close_menu_open = False
-                    game.rpc.close()
+                    game.rpc.close_rpc.set()
+                    game.rpc.update_rpc.set()
                     pygame.display.quit()
                     pygame.quit()
+                    if game.rpc.is_alive():
+                        game.rpc.join(1)
                     exit()
             elif event.ui_element == self.save_button:
                 if game.clan is not None:
@@ -173,28 +176,13 @@ class DeleteCheck(UIWindow):
                 print("delete")
                 rempath = "saves/" + self.clan_name
                 shutil.rmtree(rempath)
-                os.remove(rempath + "clan.json")
-
-                with open("saves/clanlist.txt", "r") as clanfile:
-                    data = clanfile.readlines()
-
-                # delete the line
-                if data.count(self.clan_name + "\n") > 0:
-                    data.remove(self.clan_name + "\n")
-                elif data.count(self.clan_name) > 0:
-                    data.remove(self.clan_name)
+                if os.path.exists(rempath + 'clan.json'):
+                    os.remove(rempath + "clan.json")
+                elif os.path.exists(rempath + 'clan.txt'):
+                    os.remove(rempath + "clan.txt")
                 else:
-                    print("error")
+                    raise FileNotFoundError("Clan.json or Clan.txt not found")
 
-                if data[-1].endswith("\n"):
-                    data[-1] = data[-1][:-1]  # remove the last \n
-
-                # Remove from the list in memory
-                game.switches['clan_list'] = data
-
-                # write the file
-                with open("saves/clanlist.txt", "w") as clanfile:
-                    clanfile.writelines(data)
 
                 self.kill()
 

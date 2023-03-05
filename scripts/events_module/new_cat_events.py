@@ -53,8 +53,8 @@ class NewCatEvents:
                     event_text = event_text + f" They decide to keep their name."
                 elif name_change == 2:
                     outside_cat.name.status = 'warrior'
-                    outside_cat.name.prefix = random.choice(names.normal_prefixes)
-                    outside_cat.name.suffix = random.choice(names.normal_suffixes)
+                    outside_cat.name.prefix = random.choice(names.names_dict["normal_prefixes"])
+                    outside_cat.name.suffix = random.choice(names.names_dict["normal_suffixes"])
                     event_text = event_text + f" They decide to take a new name, {outside_cat.name}."
                 outside_cat.thought = "Is looking around the camp with wonder"
                 involved_cats = [outside_cat.ID]
@@ -197,14 +197,14 @@ class NewCatEvents:
             else:
                 if kittypet:
                     print('kittypet')
-                    name = random.choice(names.loner_names)
+                    name = random.choice(names.names_dict["loner_names"])
                     if random.choice([1, 2]) == 1:
                         accessory = random.choice(collars)
                 elif loner and random.choice([1, 2]) == 1:
                     print('loner')
-                    name = random.choice(names.loner_names)
+                    name = random.choice(names.names_dict["loner_names"])
                 else:
-                    name = random.choice(names.normal_prefixes)
+                    name = random.choice(names.names_dict["normal_prefixes"])
 
                 if new_name:
                     print('new name')

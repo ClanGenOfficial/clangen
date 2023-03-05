@@ -367,10 +367,12 @@ class Clan():
     def switch_clans(self, clan):
         game.save_clanlist(clan)
         game.cur_events_list.clear()
-
-        game.rpc.close()
+        game.rpc.close_rpc.set()
+        game.rpc.update_rpc.set()
         pygame.display.quit()
         pygame.quit()
+        if game.rpc.is_alive():
+            game.rpc.join(1)
         exit()
 
     def save_clan(self):
@@ -436,13 +438,8 @@ class Clan():
             json_string = ujson.dumps(clan_data, indent=4)
             write_file.write(json_string)
 
-        list_data = self.name + "\n"
-        for i in range(len(game.switches['clan_list'])):
-            if game.switches['clan_list'][i] != self.name:
-                list_data = list_data + game.switches['clan_list'][i] + "\n"
-        with open('saves/clanlist.txt', 'w') as write_file:
-            write_file.write(list_data)
-
+        with open('saves/currentclan.txt', 'w') as write_file:
+            write_file.write(self.name)
     def load_clan(self):
         if os.path.exists('saves/' + game.switches['clan_list'][0] + 'clan.json'):
             self.load_clan_json()
@@ -810,7 +807,7 @@ class OtherClan():
             'cunning', 'wary', 'logical', 'proud', 'stoic',
             'mellow', 'bloodthirsty', 'amiable', 'gracious'
         ]
-        self.name = name or choice(names.normal_prefixes)
+        self.name = name or choice(names.names_dict["normal_prefixes"])
         self.relations = relations or randint(8, 12)
         self.temperament = temperament or choice(temperament_list)
         if self.temperament not in temperament_list:

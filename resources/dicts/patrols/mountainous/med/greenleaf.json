@@ -423,7 +423,7 @@
     "exp": 10,
     "success_text": [
             "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. The white milk in their roots and stems keeps for a long time and is a potent cure for poison, while their leaves are weaker but fast-acting and can be chewed into poultices. Just as useful is the wild garlic that they find nearby, hidden by some undergrowth, but impossible to miss due to their scent.",
-            "It's a successful gathering mission, with p_l striding back to camp with a great haul of entire dandelion plants. and the additional wild garlic they had been hoping to find. Later they'll sort the leaves and roots to be stored seperately, the leaves remain fresh for a far shorter time.",
+            "It's a successful gathering mission, with p_l striding back to camp with a great haul of entire dandelion plants and the additional wild garlic they had been hoping to find. Later they'll sort the leaves and roots to be stored seperately, the leaves remain fresh for a far shorter time.",
             "With warmth in the air and ground, s_c doesn't need to try very hard to find an excellent haul of dandelions and wild garlic to bring back to camp."
 ],
     "fail_text": [

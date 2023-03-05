@@ -117,7 +117,9 @@ else:
     version_number.set_position((800 - version_number.get_relative_rect()[2] - 8, 700 - version_number.get_relative_rect()[3]))
 
 
-game.rpc = _DiscordRPC("1076277970060185701")
+game.rpc = _DiscordRPC("1076277970060185701", daemon=True)
+game.rpc.start()
+game.rpc.start_rpc.set()
 while True:
     time_delta = clock.tick(30) / 1000.0
     if game.switches['cur_screen'] not in ['start screen']:
@@ -138,9 +140,12 @@ while True:
             # Dont display if on the start screen or there is no clan.
             if (game.switches['cur_screen'] in ['start screen', 'switch clan screen', 'settings screen', 'info screen', 'make clan screen']
                 or not game.clan):
-                game.rpc.close()
+                game.rpc.close_rpc.set()
+                game.rpc.update_rpc.set()
                 pygame.display.quit()
                 pygame.quit()
+                if game.rpc.is_alive():
+                    game.rpc.join(1)
                 sys.exit()
             else:
                 SaveCheck(game.switches['cur_screen'], False, None)

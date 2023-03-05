@@ -202,6 +202,7 @@ class Cat():
         self.parent2 = parent2
         self.pelt = pelt
         self.tint = None
+        self.white_patches_tint = None
         self.eye_colour = eye_colour
         self.eye_colour2 = None
         self.scars = []
@@ -368,13 +369,13 @@ class Cat():
 
             # APPEARANCE
             init_pelt(self)
-            init_tint(self)
             init_sprite(self)
             init_scars(self)
             init_accessories(self)
             init_white_patches(self)
             init_eyes(self)
             init_pattern(self)
+            init_tint(self)
 
             # experience and current patrol status
             if self.age in ['kitten']:
