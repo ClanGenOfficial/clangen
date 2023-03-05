@@ -1131,6 +1131,7 @@ class Events():
         if chance <= 0:
             chance = 1
         if not int(random.random() * chance):
+            print('ACC')
             self.misc_events.handle_misc_events(cat, other_cat, self.at_war, self.enemy_clan,
                                                 alive_kits=get_alive_kits(Cat), accessory=True,
                                                 ceremony=self.ceremony_accessory)
