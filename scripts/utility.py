@@ -402,8 +402,9 @@ def event_text_adjust(Cat,
     if new_cat:
         adjust_text = adjust_text.replace("n_c_pre", str(new_cat.name.prefix))
         adjust_text = adjust_text.replace("n_c", str(new_cat.name))
-    if ("acc_plural" or "acc_singular") in adjust_text:
+    if "acc_plural" in adjust_text:
         adjust_text = adjust_text.replace("acc_plural", str(plural_acc_names(cat.accessory, True, False)))
+    if "acc_singular" in adjust_text:
         adjust_text = adjust_text.replace("acc_singular", str(plural_acc_names(cat.accessory, False, True)))
 
     adjust_text = adjust_text.replace("c_n", str(game.clan.name) + "Clan")
