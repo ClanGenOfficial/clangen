@@ -38,12 +38,14 @@
 		],
 		"hunter_bonus": {"fantastic hunter": 3, "great hunter": 2, "good hunter": 1},
 		"hunter_exp_bonus": {
-			"very_low": 1,
-			"low": 2,
-			"average": 3,
-			"high": 4,
-			"master": 5,
-			"max": 7
+			"untrained": 0.1,
+			"trainee": 1,
+			"prepared": 2,
+			"competent": 3,
+			"proficient": 4,
+			"skilled": 5,
+			"expert": 6,
+			"master": 7
 		},
 		"comment": [
 			"activate_deaths - activates the whole system, otherwise nutrition status of the cats doesn't have an effect",
