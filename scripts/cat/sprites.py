@@ -8,6 +8,7 @@ except ImportError:
 
 class Sprites():
     cat_tints = {}
+    white_patches_tints = {}
 
     def __init__(self, original_size, new_size=None):
         self.size = original_size  # size of a single sprite in a spritesheet
@@ -25,6 +26,12 @@ class Sprites():
                 Sprites.cat_tints = ujson.loads(read_file.read())
         except:
             print("ERROR: Reading Tints")
+
+        try:
+            with open("sprites/dicts/white_patches_tint.json", 'r') as read_file:
+                Sprites.white_patches_tints = ujson.loads(read_file.read())
+        except:
+            print("ERROR: Reading White Patches Tints")
 
     def spritesheet(self, a_file, name):
         """
@@ -214,8 +221,7 @@ for a, i in enumerate(
     sprites.make_group('eyes2', (a, 1), f'eyes2{i}')
 
 # white patches
-for a, i in enumerate(['FULLWHITE', 'ANY', 'TUXEDO', 'LITTLE', 'COLOURPOINT', 'VAN', 'ANY2', 
-    'ANYCREAMY', 'TUXEDOCREAMY', 'LITTLECREAMY', 'COLOURPOINTCREAMY', 'VANCREAMY', 'ANY2CREAMY']):
+for a, i in enumerate(['FULLWHITE', 'ANY', 'TUXEDO', 'LITTLE', 'COLOURPOINT', 'VAN', 'ANY2']):
     sprites.make_group('whitepatches', (a, 0), f'white{i}')
 for a, i in enumerate(['EXTRA', 'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL', 
     'LIGHTSONG', 'VITILIGO', 'BLACKSTAR', 'PIEBALD', 'CURVED']):

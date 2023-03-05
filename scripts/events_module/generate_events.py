@@ -69,7 +69,10 @@ class GenerateEvents:
                 new_name=event["new_name"] if "new_name" in event else False,
                 litter=event["litter"] if "litter" in event else False,
                 backstory=event["backstory"] if "backstory" in event else None,
-                reputation=event["reputation"] if "reputation" in event else None
+                reputation=event["reputation"] if "reputation" in event else None,
+
+                # for misc events only
+                accessories=event["accessories"] if "accessories" in event else None
             )
             event_list.append(event)
         return event_list
@@ -153,6 +156,10 @@ class GenerateEvents:
             if "all_lives" in event.tags:
                 if int(cat.moons) < 150 and int(random.random() * 5):
                     continue
+
+            # make sure that 'some lives' events don't show up if the leader doesn't have multiple lives to spare
+            if "some_lives" in event.tags and game.clan.leader_lives <= 3:
+                continue
 
             if "low_lives" in event.tags:
                 if game.clan.leader_lives > 3:
@@ -368,7 +375,8 @@ class SingleEvent:
             litter=False,
             backstory=None,
             other_clan=None,
-            reputation=None
+            reputation=None,
+            accessories=None
     ):
         self.camp = camp
         self.tags = tags
@@ -396,6 +404,9 @@ class SingleEvent:
         self.backstory = backstory
         self.other_clan = other_clan
         self.reputation = reputation
+
+        # for misc events
+        self.accessories = accessories
 
 
 """

@@ -2,6 +2,8 @@ from random import choice
 
 import pygame
 
+from scripts.cat.appearance_utility import plural_acc_names
+
 try:
     import ujson
 except ImportError:
@@ -107,6 +109,14 @@ def get_living_cat_count(Cat):
     count = 0
     for the_cat in Cat.all_cats.values():
         if the_cat.dead or the_cat.exiled:
+            continue
+        count += 1
+    return count
+
+def get_living_clan_cat_count(Cat):
+    count = 0
+    for the_cat in Cat.all_cats.values():
+        if the_cat.dead or the_cat.exiled or the_cat.outside:
             continue
         count += 1
     return count
@@ -314,31 +324,35 @@ def change_relationship_values(cats_to,
 
     use the relationship value params to indicate how much the values should change.
     """
-    # this is just for prints, if it's still here later, just remove it
+    """# this is just for text prints
     changed = False
     if romantic_love == 0 and platonic_like == 0 and dislike == 0 and admiration == 0 and \
             comfortable == 0 and jealousy == 0 and trust == 0:
         changed = False
     else:
-        changed = True
+        changed = True"""
 
     # pick out the correct cats
-    for cat in cats_from:
+    for kitty in cats_from:
         relationships = list(filter(lambda rel: rel.cat_to.ID in cats_to,
-                                    list(cat.relationships.values())))
+                                    list(kitty.relationships.values())))
 
         # make sure that cats don't gain rel with themselves
         for rel in relationships:
-            if cat.ID == rel.cat_to.ID:
+            if kitty.ID == rel.cat_to.ID:
                 continue
 
-            # if cat already has romantic feelings then automatically increase romantic feelings
-            # when platonic feelings would increase
-            if rel.romantic_love > 0 and auto_romance:
-                romantic_love = platonic_like
+            # here we just double-check that the cats are allowed to be romantic with eath other
+            if kitty.is_potential_mate(rel.cat_to, for_love_interest=True) or kitty.mate == rel.cat_to.ID:
+                # if cat already has romantic feelings then automatically increase romantic feelings
+                # when platonic feelings would increase
+                if rel.romantic_love > 0 and auto_romance:
+                    romantic_love = platonic_like
 
-            # now gain the values
-            rel.romantic_love += romantic_love
+                # now gain the romance
+                rel.romantic_love += romantic_love
+
+            # gain other rel values
             rel.platonic_like += platonic_like
             rel.dislike += dislike
             rel.admiration += admiration
@@ -347,7 +361,7 @@ def change_relationship_values(cats_to,
             rel.trust += trust
 
             # for testing purposes
-            """print(str(cat.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
+            """print(str(kitty.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
                   "Romantic: " + str(romantic_love) +
                   " /Platonic: " + str(platonic_like) +
                   " /Dislike: " + str(dislike) +
@@ -389,6 +403,10 @@ def event_text_adjust(Cat,
     if new_cat:
         adjust_text = adjust_text.replace("n_c_pre", str(new_cat.name.prefix))
         adjust_text = adjust_text.replace("n_c", str(new_cat.name))
+    if "acc_plural" in adjust_text:
+        adjust_text = adjust_text.replace("acc_plural", str(plural_acc_names(cat.accessory, True, False)))
+    if "acc_singular" in adjust_text:
+        adjust_text = adjust_text.replace("acc_singular", str(plural_acc_names(cat.accessory, False, True)))
 
     adjust_text = adjust_text.replace("c_n", str(game.clan.name) + "Clan")
     adjust_text = adjust_text.replace("p_l", name)
@@ -559,16 +577,22 @@ def update_sprite(cat):
             # Multiply with alpha does not work as you would expect - it just lowers the alpha of the
             # entire surface. To get around this, we first blit the tint onto a white background to dull it,
             # then blit the surface onto the sprite with pygame.BLEND_RGB_MULT
-            base = pygame.Surface((50, 50)).convert_alpha()
-            base.fill((255, 255, 255))
             tint = pygame.Surface((50, 50)).convert_alpha()
             tint.fill(tuple(Sprites.cat_tints["tint_colours"][cat.tint]))
-            base.blit(tint, (0, 0))
-            new_sprite.blit(base, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
+            new_sprite.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
 
         # draw white patches
         if cat.white_patches is not None:
-            new_sprite.blit(sprites.sprites['white' + cat.white_patches + cat_sprite], (0, 0))
+            white_patches = sprites.sprites['white' + cat.white_patches + cat_sprite].copy()
+
+            # Apply tint to white patches.
+            if cat.white_patches_tint != "none" and cat.white_patches_tint in Sprites.white_patches_tints["tint_colours"]:
+                tint = pygame.Surface((50, 50)).convert_alpha()
+                tint.fill(tuple(Sprites.white_patches_tints["tint_colours"][cat.white_patches_tint]))
+                white_patches.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
+
+            new_sprite.blit(white_patches, (0, 0))
+
         # draw eyes & scars1
         new_sprite.blit(sprites.sprites['eyes' + cat.eye_colour + cat_sprite], (0, 0))
         if cat.eye_colour2 != None:

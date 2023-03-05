@@ -367,10 +367,12 @@ class Clan():
     def switch_clans(self, clan):
         game.save_clanlist(clan)
         game.cur_events_list.clear()
-
-        game.rpc.close()
+        game.rpc.close_rpc.set()
+        game.rpc.update_rpc.set()
         pygame.display.quit()
         pygame.quit()
+        if game.rpc.is_alive():
+            game.rpc.join(1)
         exit()
 
     def save_clan(self):
@@ -805,7 +807,7 @@ class OtherClan():
             'cunning', 'wary', 'logical', 'proud', 'stoic',
             'mellow', 'bloodthirsty', 'amiable', 'gracious'
         ]
-        self.name = name or choice(names.normal_prefixes)
+        self.name = name or choice(names.names_dict["normal_prefixes"])
         self.relations = relations or randint(8, 12)
         self.temperament = temperament or choice(temperament_list)
         if self.temperament not in temperament_list:
