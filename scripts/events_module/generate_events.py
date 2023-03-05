@@ -15,6 +15,8 @@ resource_directory = "resources/dicts/events/"
 # ---------------------------------------------------------------------------- #
 
 class GenerateEvents:
+    loaded_events = {}
+
     @staticmethod
     def get_event_dicts(event_triggered, cat_type, biome):
         events = None
@@ -22,15 +24,25 @@ class GenerateEvents:
             file_path = f"{resource_directory}{event_triggered}/{cat_type}.json"
             if biome:
                 file_path = f"{resource_directory}{event_triggered}/{biome}/{cat_type}.json"
+
+            # If this .json has already been loaded sometime in this timeskip, return the stored copy.
+            if file_path in GenerateEvents.loaded_events:
+                return GenerateEvents.loaded_events[file_path]
+
             with open(
                 file_path,
                 "r",
             ) as read_file:
                 events = ujson.loads(read_file.read())
+                GenerateEvents.loaded_events[file_path] = events
         except:
             print(f"ERROR: Unable to load {event_triggered} events for {cat_type} from biome {biome}.")
 
         return events
+
+    @staticmethod
+    def clear_loaded_events():
+        GenerateEvents.loaded_events = {}
 
     def generate_events(self, events_dict):
         event_list = []
