@@ -1937,17 +1937,11 @@ class ChangeNameScreen(Screens):
         self.prefix_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((440, 400), (360, 60))),
                                                                     placeholder_text=self.the_cat.name.prefix
                                                                     , manager=MANAGER)
-        if self.the_cat.name.status in ["apprentice", "leader", "medicine cat apprentice", "kitten"]:
+        if self.the_cat.name.status in self.the_cat.name.names_dict["special_suffixes"]:
             self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((800, 400), (360, 60))),
                                                                         placeholder_text=
-                                                                        self.the_cat.name.special_suffixes[
-                                                                            self.the_cat.name.status]
-                                                                        , manager=MANAGER)
-            self.suffix_entry_box.disable()  # You can't change a special suffix
-        elif self.the_cat.name.status in ['kittypet', 'loner', 'rogue']:
-            self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((800, 400), (360, 60))),
-                                                                        placeholder_text=
-                                                                        ""
+                                                                        self.the_cat.name.names_dict["special_suffixes"]
+                                                                            [self.the_cat.name.status]
                                                                         , manager=MANAGER)
             self.suffix_entry_box.disable()  # You can't change a special suffix
         else:
