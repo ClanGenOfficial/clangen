@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59212ee2-daae-4bfe-aec9-c3bc7c8ee83c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/dicts/names/names.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/dicts/names/names.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/cat/names.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/cat/names.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/clan.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/clan.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/events.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/events.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/events_module/new_cat_events.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/events_module/new_cat_events.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/events_module/relation_events.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/events_module/relation_events.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/patrol.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/patrol.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/screens/cat_screens.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/screens/cat_screens.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/events_module/generate_events.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/events_module/generate_events.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
