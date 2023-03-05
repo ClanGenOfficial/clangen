@@ -336,33 +336,21 @@ for a, i in enumerate(['LIGHTBROWN', 'BROWN', 'DARKBROWN', 'BLACK']):
     
 # new new torties
 for a, i in enumerate(['ONE', 'TWO', 'THREE', 'FOUR', 'REDTAIL', 'DELILAH']):
-    sprites.make_group('tortiepatchesmasks', (a, 0), f"tortiemask{i}", sprites_y=7)
+    sprites.make_group('tortiepatchesmasks', (a, 0), f"tortiemask{i}")
 for a, i in enumerate(['MINIMAL1', 'MINIMAL2', 'MINIMAL3', 'MINIMAL4', 'OREO', 'SWOOP']):
-    sprites.make_group('tortiepatchesmasks', (a, 1), f"tortiemask{i}", sprites_y=7)
+    sprites.make_group('tortiepatchesmasks', (a, 1), f"tortiemask{i}")
 for a, i in enumerate(['MOTTLED', 'SIDEMASK', 'EYEDOT', 'BANDANA', 'PACMAN', 'STREAMSTRIKE']):
-    sprites.make_group('tortiepatchesmasks', (a, 2), f"tortiemask{i}", sprites_y=7)
+    sprites.make_group('tortiepatchesmasks', (a, 2), f"tortiemask{i}")
 for a, i in enumerate(['ORIOLE', 'ROBIN', 'BRINDLE', 'PAIGE']):
-    sprites.make_group('tortiepatchesmasks', (a, 3), f"tortiemask{i}", sprites_y=7)
+    sprites.make_group('tortiepatchesmasks', (a, 3), f"tortiemask{i}")
 
 
 # SKINS
-sprites.make_group('skin', (0, 0), 'skinBLACK')
-sprites.make_group('skin', (1, 0), 'skinRED')
-sprites.make_group('skin', (2, 0), 'skinPINK')
-sprites.make_group('skin', (3, 0), 'skinDARKBROWN')
-sprites.make_group('skin', (4, 0), 'skinBROWN')
-sprites.make_group('skin', (5, 0), 'skinLIGHTBROWN')
-sprites.make_group('skin', (0, 1), 'skinDARK')
-sprites.make_group('skin', (1, 1), 'skinDARKGREY')
-sprites.make_group('skin', (2, 1), 'skinGREY')
-sprites.make_group('skin', (3, 1), 'skinDARKSALMON')
-sprites.make_group('skin', (4, 1), 'skinSALMON')
-sprites.make_group('skin', (5, 1), 'skinPEACH')
-sprites.make_group('skin', (0, 2), 'skinDARKMARBLED')
-sprites.make_group('skin', (1, 2), 'skinMARBLED')
-sprites.make_group('skin', (2, 2), 'skinLIGHTMARBLED')
-sprites.make_group('skin', (3, 2), 'skinDARKBLUE')
-sprites.make_group('skin', (4, 2), 'skinBLUE')
-sprites.make_group('skin', (5, 2), 'skinLIGHTBLUE')
+for a, i in enumerate(['BLACK', 'RED', 'PINK', 'DARKBROWN', 'BROWN', 'LIGHTBROWN']):
+    sprites.make_group('skin', (a, 0), f"skin{i}")
+for a, i in enumerate(['DARK', 'DARKGREY', 'GREY', 'DARKSALMON', 'SALMON', 'PEACH']):
+    sprites.make_group('skin', (a, 1), f"skin{i}")
+for a, i in enumerate(['DARKMARBLED', 'MARBLED', 'LIGHTMARBLED', 'DARKBLUE', 'BLUE', 'LIGHTBLUE']):
+    sprites.make_group('skin', (a, 2), f"skin{i}")
 
 sprites.load_scars()
