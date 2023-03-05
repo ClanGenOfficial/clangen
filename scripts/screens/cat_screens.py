@@ -2149,23 +2149,29 @@ class CeremonyScreen(Screens):
                     if queen and warrior and kit and warrior2 and app and elder and warrior3 and med_cat and prev_lead:
                         break
             if not queen:
-                queen = str(choice(names.normal_prefixes)) + str(choice(names.normal_suffixes))
+                queen = choice(names.names_dict["normal_prefixes"]) + \
+                    choice(names.names_dict["normal_suffixes"])
             if not warrior:
-                warrior = str(choice(names.normal_prefixes)) + str(choice(names.normal_suffixes))
+                warrior = choice(names.names_dict["normal_prefixes"]) + \
+                    choice(names.names_dict["normal_suffixes"])
             if not kit:
-                kit = str(choice(names.normal_prefixes)) + "kit"
+                kit = choice(names.names_dict["normal_prefixes"]) + "kit"
             if not warrior2:
-                warrior2 = str(choice(names.normal_prefixes)) + str(choice(names.normal_suffixes))
+                warrior2 = choice(names.names_dict["normal_prefixes"]) + \
+                    choice(names.names_dict["normal_suffixes"])
             if not app:
-                app = str(choice(names.normal_prefixes)) + "paw"
+                app = choice(names.names_dict["normal_prefixes"]) + "paw"
             if not elder:
-                elder = str(choice(names.normal_prefixes)) + str(choice(names.normal_suffixes))
+                elder = choice(names.names_dict["normal_prefixes"]) + \
+                    choice(names.names_dict["normal_suffixes"])
             if not warrior3:
-                warrior3 = str(choice(names.normal_prefixes)) + str(choice(names.normal_suffixes))
+                warrior3 = choice(names.names_dict["normal_prefixes"]) + \
+                    choice(names.names_dict["normal_suffixes"])
             if not med_cat:
-                med_cat = str(choice(names.normal_prefixes)) + str(choice(names.normal_suffixes))
+                med_cat = choice(names.names_dict["normal_prefixes"]) + \
+                    choice(names.names_dict["normal_suffixes"])
             if not prev_lead:
-                prev_lead = str(choice(names.normal_prefixes)) + "star"
+                prev_lead = choice(names.names_dict["normal_prefixes"]) + "star"
             cat.life_givers.extend([queen, warrior, kit, warrior2, app, elder, warrior3, med_cat, prev_lead])
             cat.known_life_givers.extend(known)
             cat.virtues.extend(virtues)

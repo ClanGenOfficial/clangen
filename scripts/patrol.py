@@ -1150,9 +1150,9 @@ class Patrol():
         if (loner or kittypet) and not kit and not litter:
             if loner_name:
                 if loner and kp_name_chance != 1:
-                    name = choice(names.normal_prefixes)
+                    name = choice(names.names_dict["normal_prefixes"])
                 else:
-                    name = choice(names.loner_names)
+                    name = choice(names.names_dict["loner_names"])
             if age >= 12:
                 status = "warrior"
             else:
