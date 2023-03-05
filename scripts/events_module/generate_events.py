@@ -157,6 +157,10 @@ class GenerateEvents:
                 if int(cat.moons) < 150 and int(random.random() * 5):
                     continue
 
+            # make sure that 'some lives' events don't show up if the leader doesn't have multiple lives to spare
+            if "some_lives" in event.tags and game.clan.leader_lives <= 3:
+                continue
+
             if "low_lives" in event.tags:
                 if game.clan.leader_lives > 3:
                     continue

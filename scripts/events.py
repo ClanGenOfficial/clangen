@@ -552,11 +552,11 @@ class Events():
 
     def create_outside_cat(self, status):
         if status == 'kittypet':
-            name = random.choice(names.loner_names)
+            name = random.choice(names.names_dict["loner_names"])
         elif status in ['loner', 'rogue']:
-            name = random.choice(names.loner_names + names.normal_prefixes)
+            name = random.choice(names.names_dict["loner_names"] + names.names_dict["normal_prefixes"])
         else:
-            name = random.choice(names.loner_names)
+            name = random.choice(names.names_dict["loner_names"])
         new_cat = Cat(prefix=name, suffix=None, status=status, gender=random.choice(['female', 'male']))
         if status == 'kittypet':
             new_cat.accessory = random.choice(collars)
@@ -1131,6 +1131,7 @@ class Events():
         if chance <= 0:
             chance = 1
         if not int(random.random() * chance):
+            print('ACC')
             self.misc_events.handle_misc_events(cat, other_cat, self.at_war, self.enemy_clan,
                                                 alive_kits=get_alive_kits(Cat), accessory=True,
                                                 ceremony=self.ceremony_accessory)
@@ -1211,23 +1212,29 @@ class Events():
                     if queen and warrior and kit and warrior2 and app and elder and warrior3 and med_cat and prev_lead:
                         break
             if not queen:
-                queen = str(random.choice(names.normal_prefixes)) + str(random.choice(names.normal_suffixes))
+                queen = random.choice(names.names_dict["normal_prefixes"]) + \
+                        random.choice(names.names_dict["normal_suffixes"])
             if not warrior:
-                warrior = str(random.choice(names.normal_prefixes)) + str(random.choice(names.normal_suffixes))
+                warrior = random.choice(names.names_dict["normal_prefixes"]) +\
+                          random.choice(names.names_dict["normal_suffixes"])
             if not kit:
-                kit = str(random.choice(names.normal_prefixes)) + "kit"
+                kit = random.choice(names.names_dict["normal_prefixes"]) + "kit"
             if not warrior2:
-                warrior2 = str(random.choice(names.normal_prefixes)) + str(random.choice(names.normal_suffixes))
+                warrior2 = random.choice(names.names_dict["normal_prefixes"]) + \
+                           random.choice(names.names_dict["normal_suffixes"])
             if not app:
-                app = str(random.choice(names.normal_prefixes)) + "paw"
+                app = random.choice(names.names_dict["normal_prefixes"]) + "paw"
             if not elder:
-                elder = str(random.choice(names.normal_prefixes)) + str(random.choice(names.normal_suffixes))
+                elder = random.choice(names.names_dict["normal_prefixes"]) +\
+                          random.choice(names.names_dict["normal_suffixes"])
             if not warrior3:
-                warrior3 = str(random.choice(names.normal_prefixes)) + str(random.choice(names.normal_suffixes))
+                warrior3 = random.choice(names.names_dict["normal_prefixes"]) + \
+                           random.choice(names.names_dict["normal_suffixes"])
             if not med_cat:
-                med_cat = str(random.choice(names.normal_prefixes)) + str(random.choice(names.normal_suffixes))
+                med_cat = random.choice(names.names_dict["normal_prefixes"]) + \
+                           random.choice(names.names_dict["normal_suffixes"])
             if not prev_lead:
-                prev_lead = str(random.choice(names.normal_prefixes)) + "star"
+                prev_lead = str(names.names_dict["normal_prefixes"]) + "star"
             cat.life_givers.extend([queen, warrior, kit, warrior2, app, elder, warrior3, med_cat, prev_lead])
             cat.known_life_givers.extend(known)
             cat.virtues.extend(virtues)

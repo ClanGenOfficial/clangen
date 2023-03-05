@@ -9,14 +9,13 @@
     "loner": "",
     "rogue": ""
     },
-  "common_suffixes": [
+  "normal_suffixes" : [
     "fur", "fur", "fur", "fur", "fur", "fur", "fur", "fur", "fur", "fur", "fur", "fur", "fur",
     "tuft", "tuft", "tuft", "tuft", "tuft", "tooth", "tooth", "tooth", "tooth", "tooth",
     "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "pelt",
     "tail", "tail", "tail", "tail", "tail", "tail", "tail", "tail", "claw", "claw", "claw", "claw", "claw", "claw", "claw",
     "foot", "foot", "foot", "foot", "foot", "whisker", "whisker", "whisker", "whisker", "whisker", "whisker",
-    "heart", "heart", "heart", "heart", "heart", "heart", "heart", "heart", "heart", "heart"],
-  "normal_suffixes" : [
+    "heart", "heart", "heart", "heart", "heart", "heart", "heart", "heart", "heart", "heart",
     "acorn", "ash", "aster", "back", "bark", "beam", "bee", "belly", "berry", "bite", "bird", "blaze", "blink", "bloom",
     "blossom", "blotch", "bounce", "bracken", "branch", "breeze", "briar", "bright", "brook", "burr", "burrow", "bush", "call",
     "catcher", "cloud", "clover", "crawl", "creek", "cry", "dapple", "daisy", "dawn", "drift", "drop", "dusk", "dust",

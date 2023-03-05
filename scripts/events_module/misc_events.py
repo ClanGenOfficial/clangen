@@ -154,7 +154,10 @@ class MiscEvents():
             acc_list.extend(collars)
 
         if ("NOTAIL" or "HALFTAIL") in cat.scars:
-            acc_list.remove(acc for acc in tail_accessories)
+            try:
+                acc_list.remove(acc for acc in tail_accessories)
+            except:
+                print('attempted to remove tail accs from possible acc list, but no tail accs were in the list!')
 
         for acc in possible_accs:
             if acc not in ["WILD", "PLANT", "COLLAR"]:

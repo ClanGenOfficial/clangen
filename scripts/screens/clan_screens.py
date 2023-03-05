@@ -1973,7 +1973,6 @@ class MedDenScreen(Screens):
         self.last_med.kill()
         self.next_med.kill()
         self.den_base.kill()
-        self.help_button.kill()
         for herb in self.herbs:
             self.herbs[herb].kill()
         self.herbs = {}
@@ -1983,6 +1982,7 @@ class MedDenScreen(Screens):
             self.med_name.kill()
         self.back_button.kill()
         if game.clan.game_mode != 'classic':
+            self.help_button.kill()
             self.cat_bg.kill()
             self.last_page.kill()
             self.next_page.kill()
