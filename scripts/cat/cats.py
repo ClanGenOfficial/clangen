@@ -5,6 +5,7 @@ import random
 import os.path
 import itertools
 
+from ..datadir import get_save_dir
 from ..events_module.generate_events import GenerateEvents
 try:
     import ujson
@@ -1680,7 +1681,7 @@ class Cat():
         elif game.clan is not None:
             clanname = game.clan.name
 
-        condition_directory = 'saves/' + clanname + '/conditions'
+        condition_directory = get_save_dir() + '/' + clanname + '/conditions'
         condition_file_path = condition_directory + '/' + self.ID + '_conditions.json'
 
         if not os.path.exists(condition_directory):
@@ -1715,7 +1716,7 @@ class Cat():
         else:
             clanname = game.switches['clan_list'][0]
 
-        condition_directory = 'saves/' + clanname + '/conditions/'
+        condition_directory = get_save_dir() + '/' + clanname + '/conditions/'
         condition_cat_directory = condition_directory + self.ID + '_conditions.json'
         if not os.path.exists(condition_cat_directory):
             return
@@ -2091,7 +2092,7 @@ class Cat():
             clanname = game.switches['clan_list'][0]
         elif game.clan is not None:
             clanname = game.clan.name
-        relationship_dir = 'saves/' + clanname + '/relationships'
+        relationship_dir = get_save_dir() + '/' + clanname + '/relationships'
         if not os.path.exists(relationship_dir):
             os.makedirs(relationship_dir)
 
@@ -2127,7 +2128,7 @@ class Cat():
         else:
             clanname = game.switches['clan_list'][0]
 
-        relation_directory = 'saves/' + clanname + '/relationships/'
+        relation_directory = get_save_dir() + '/' + clanname + '/relationships/'
         relation_cat_directory = relation_directory + self.ID + '_relations.json'
 
         self.relationships = {}
@@ -2476,10 +2477,10 @@ class Cat():
     def load_faded_cat(cat: str):
         """Loads a faded cat, returning the cat object. This object is saved nowhere else. """
         try:
-            with open('saves/' + game.clan.name + '/faded_cats/' + cat + ".json", 'r') as read_file:
+            with open(get_save_dir() + '/' + game.clan.name + '/faded_cats/' + cat + ".json", 'r') as read_file:
                 cat_info = ujson.loads(read_file.read())
         except AttributeError:  # If loading cats is attempted before the clan is loaded, we would need to use this.
-            with open('saves/' + game.switches['clan_list'][0] + '/faded_cats/' + cat + ".json", 'r') as read_file:
+            with open(get_save_dir() + '/' + game.switches['clan_list'][0] + '/faded_cats/' + cat + ".json", 'r') as read_file:
                 cat_info = ujson.loads(read_file.read())
         except:
             print("ERROR: in loading faded cat")

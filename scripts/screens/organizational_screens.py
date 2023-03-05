@@ -1,3 +1,6 @@
+import platform
+import subprocess
+
 import pygame
 import os
 import shutil
@@ -13,6 +16,7 @@ import pygame_gui
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 from scripts.game_structure.windows import DeleteCheck
 from scripts.game_structure.discord_rpc import _DiscordRPC
+from ..datadir import get_save_dir
 
 
 class StartScreen(Screens):
@@ -35,6 +39,14 @@ class StartScreen(Screens):
                 self.change_screen('make clan screen')
             elif event.ui_element == self.settings_button:
                 self.change_screen('settings screen')
+            elif event.ui_element == self.open_saves_button:
+                if platform.system() == 'Darwin':
+                    subprocess.call(["open", "-R", get_save_dir()])
+                elif platform.system() == 'Windows':
+                    os.startfile(get_save_dir())
+                elif platform.system() == 'Linux':
+                    subprocess.Popen(['xdg-open', get_save_dir()])
+                return
             elif event.ui_element == self.quit:
                 game.rpc.close_rpc.set()
                 game.rpc.update_rpc.set()
@@ -54,6 +66,7 @@ class StartScreen(Screens):
         self.switch_clan_button.kill()
         self.new_clan_button.kill()
         self.settings_button.kill()
+        self.open_saves_button.kill()
         self.error_label.kill()
         self.warning_label.kill()
         self.quit.kill()
@@ -71,7 +84,9 @@ class StartScreen(Screens):
                                              object_id="#new_clan_button", manager=MANAGER)
         self.settings_button = UIImageButton(scale(pygame.Rect((140, 890), (384, 70))), "",
                                              object_id="#settings_button", manager=MANAGER)
-        self.quit = UIImageButton(scale(pygame.Rect((140, 980), (384, 70))), "",
+        self.open_saves_button = UIImageButton(scale(pygame.Rect((140, 980), (384, 70))), "",
+                                               object_id="#open_saves_button", manager=MANAGER)
+        self.quit = UIImageButton(scale(pygame.Rect((140, 1070), (384, 70))), "",
                                   object_id="#quit_button", manager=MANAGER)
 
         self.error_label = pygame_gui.elements.UILabel(scale(pygame.Rect(100, 100, 1400, -1)), "",

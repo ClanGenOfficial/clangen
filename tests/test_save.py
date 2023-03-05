@@ -3,6 +3,7 @@ from unittest.mock import patch
 import os
 import shutil
 
+from scripts.datadir import get_save_dir
 from scripts.game_structure.game_essentials import Game
 
 
@@ -27,7 +28,7 @@ class LoadSave(unittest.TestCase):
             shutil.move('saves_backup', 'saves')
 
     def old_implimentation(self):
-        with open('saves/clanlist.txt', 'r') as read_file:
+        with open(get_save_dir() + '/clanlist.txt', 'r') as read_file:
             clan_list = read_file.read()
             if_clans = len(clan_list)
         if if_clans > 0:
@@ -45,7 +46,7 @@ class LoadSave(unittest.TestCase):
             shutil.rmtree('saves')
 
         #copy tests/testSaves/save<id> to saves
-        shutil.copytree('tests/testSaves/save' + str(id), 'saves')
+        shutil.copytree('tests/testSaves/save' + str(id), get_save_dir())
     
 
     def test_check_current_clan(self):
@@ -109,7 +110,7 @@ class MigrateSave(unittest.TestCase):
                 if 'currentclan.txt' in fileList:
                     self.skipTest("Save " + str(i) + " already migrated")
                 
-                with open('saves/clanlist.txt', 'r') as read_file:
+                with open(get_save_dir() + '/clanlist.txt', 'r') as read_file:
                     clan_name = read_file.read().strip().splitlines()[0]
 
                 Game().read_clans() # the load save function should migrate the save
@@ -117,7 +118,7 @@ class MigrateSave(unittest.TestCase):
                 fileList = os.listdir('saves')
                 self.assertIn('currentclan.txt', fileList, "Save " + str(i) + " not migrated")
 
-                with open('saves/currentclan.txt', 'r') as read_file:
+                with open(get_save_dir() + '/currentclan.txt', 'r') as read_file:
                     curclan = read_file.read().strip()
 
                 self.assertEqual(curclan, clan_name, "Save " + str(i) + " not migrated correctly")

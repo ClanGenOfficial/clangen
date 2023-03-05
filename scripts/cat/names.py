@@ -2,14 +2,16 @@ import random
 import os
 import ujson
 
+from scripts.datadir import get_save_dir
+
 
 class Name():
     if os.path.exists('resources/dicts/names/names.json'):
         with open('resources/dicts/names/names.json') as read_file:
             names_dict = ujson.loads(read_file.read())
 
-        if os.path.exists('saves/prefixlist.txt'):
-            with open('saves/prefixlist.txt', 'r') as read_file:
+        if os.path.exists(get_save_dir() + '/prefixlist.txt'):
+            with open(get_save_dir() + '/prefixlist.txt', 'r') as read_file:
                 name_list = read_file.read()
                 if_names = len(name_list)
             if if_names > 0:
@@ -18,8 +20,8 @@ class Name():
                     if new_name != '':
                         names_dict["normal_prefixes"].append(new_name)
 
-        if os.path.exists('saves/suffixlist.txt'):
-            with open('saves/suffixlist.txt', 'r') as read_file:
+        if os.path.exists(get_save_dir() + '/suffixlist.txt'):
+            with open(get_save_dir() + '/suffixlist.txt', 'r') as read_file:
                 name_list = read_file.read()
                 if_names = len(name_list)
             if if_names > 0:

@@ -74,7 +74,7 @@ if clan_list:
                 'error_message'] = 'There was an error loading the cats file!'
 """
     try:
-        game.map_info = load_map('saves/' + game.clan.name)
+        game.map_info = load_map(get_saves_dir() + '/' + game.clan.name)
     except NameError:
         game.map_info = {}
     except:

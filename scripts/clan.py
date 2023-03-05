@@ -4,6 +4,8 @@ import os
 
 import pygame
 
+from scripts.datadir import get_save_dir
+
 try:
     import ujson
 except ImportError:
@@ -434,16 +436,16 @@ class Clan():
         if game.clan.game_mode in ['expanded', 'cruel season']:
             self.save_freshkill_pile(game.clan)
 
-        with open(f'saves/{self.name}clan.json', 'w') as write_file:
+        with open(get_save_dir() + f'/{self.name}clan.json', 'w') as write_file:
             json_string = ujson.dumps(clan_data, indent=4)
             write_file.write(json_string)
 
-        with open('saves/currentclan.txt', 'w') as write_file:
+        with open(get_save_dir() + '/currentclan.txt', 'w') as write_file:
             write_file.write(self.name)
     def load_clan(self):
-        if os.path.exists('saves/' + game.switches['clan_list'][0] + 'clan.json'):
+        if os.path.exists(get_save_dir() + '/' + game.switches['clan_list'][0] + 'clan.json'):
             self.load_clan_json()
-        elif os.path.exists('saves/' + game.switches['clan_list'][0] + 'clan.txt'):
+        elif os.path.exists(get_save_dir() + '/' + game.switches['clan_list'][0] + 'clan.txt'):
             self.load_clan_txt()
         else:
             game.switches['error_message'] = "There was an error loading the clan.txt"
@@ -462,7 +464,7 @@ class Clan():
                 self.all_clans.append(OtherClan())
             return
         game.switches['error_message'] = "There was an error loading the clan.txt"
-        with open('saves/' + game.switches['clan_list'][0] + 'clan.txt',
+        with open(get_save_dir() + '/' + game.switches['clan_list'][0] + 'clan.txt',
                   'r') as read_file:
             clan_data = read_file.read()
         clan_data = clan_data.replace('\t', ',')
@@ -609,7 +611,7 @@ class Clan():
             return
 
         game.switches['error_message'] = "There was an error loading the clan.json"
-        with open('saves/' + game.switches['clan_list'][0] + 'clan.json',
+        with open(get_save_dir() + '/' + game.switches['clan_list'][0] + 'clan.json',
                   'r') as read_file:
             clan_data = ujson.loads(read_file.read())
 
@@ -700,7 +702,7 @@ class Clan():
     def load_herbs(self, clan):
         if not game.clan.name:
             return
-        file_path = f"saves/{game.clan.name}/herbs.json"
+        file_path = get_save_dir() + f"/{game.clan.name}/herbs.json"
         if os.path.exists(file_path):
             with open(file_path,
                       'r') as read_file:
@@ -720,7 +722,7 @@ class Clan():
     def save_herbs(self, clan):
         if not game.clan.name:
             return
-        file_path = f"saves/{game.clan.name}/herbs.json"
+        file_path = get_save_dir() + f"/{game.clan.name}/herbs.json"
         try:
             with open(file_path, 'w') as file:
                 json_string = ujson.dumps(clan.herbs, indent=4)
@@ -731,7 +733,7 @@ class Clan():
     def load_pregnancy(self, clan):
         if not game.clan.name:
             return
-        file_path = f"saves/{game.clan.name}/pregnancy.json"
+        file_path = get_save_dir() + f"/{game.clan.name}/pregnancy.json"
         if os.path.exists(file_path):
             with open(file_path, 'r') as read_file:
                 clan.pregnancy_data = ujson.load(read_file)
@@ -741,7 +743,7 @@ class Clan():
     def save_pregnancy(self, clan):
         if not game.clan.name:
             return
-        file_path = f"saves/{game.clan.name}/pregnancy.json"
+        file_path = get_save_dir() + f"/{game.clan.name}/pregnancy.json"
         try:
             with open(file_path, 'w') as file:
                 json_string = ujson.dumps(clan.pregnancy_data, indent=4)
@@ -753,14 +755,14 @@ class Clan():
         if not game.clan.name or clan.game_mode == 'classic':
             return
 
-        file_path = f"saves/{game.clan.name}/freshkill_pile.json"
+        file_path = get_save_dir() + f"/{game.clan.name}/freshkill_pile.json"
         try:
             if os.path.exists(file_path):
                 with open(file_path, 'r') as read_file:
                     pile = ujson.load(read_file)
                     clan.freshkill_pile = Freshkill_Pile(pile)
 
-                file_path = f"saves/{game.clan.name}/nutrition_info.json"
+                file_path = get_save_dir() + f"/{game.clan.name}/nutrition_info.json"
                 if os.path.exists(file_path) and clan.freshkill_pile:
                     with open(file_path, 'r') as read_file:
                         nutritions = ujson.load(read_file)
@@ -779,14 +781,14 @@ class Clan():
             return
 
         try:
-            with open(f"saves/{game.clan.name}/freshkill_pile.json", 'w') as rel_file:
+            with open(get_save_dir() + f"/{game.clan.name}/freshkill_pile.json", 'w') as rel_file:
                 json_string = ujson.dumps(clan.freshkill_pile.pile, indent=4)
                 rel_file.write(json_string)
         except:
             print(f"ERROR: Saving the freshkill pile didn't work.")
 
         try:
-            with open(f"saves/{game.clan.name}/nutrition_info.json", 'w') as rel_file:
+            with open(get_save_dir() + f"/{game.clan.name}/nutrition_info.json", 'w') as rel_file:
                 data = {}
                 for k, nutr in clan.freshkill_pile.nutrition_info.items():
                     data[k] = {
