@@ -1,9 +1,9 @@
 import unittest
 from unittest.mock import patch
 
+from scripts.cat_relations.relationship import Relationship
 from scripts.events_module.relation_events import Relation_Events
 from scripts.cat.cats import Cat
-from scripts.cat_relations.relationship import Relationship
 from scripts.clan import Clan
 
 class CanHaveKits(unittest.TestCase):
