@@ -618,7 +618,7 @@ game = Game()
 
 
 if not os.path.exists(get_save_dir() + '/settings.txt'):
-    os.makedirs('saves', exist_ok=True)
+    os.makedirs(get_save_dir(), exist_ok=True)
     with open(get_save_dir() + '/settings.txt', 'w') as write_file:
         write_file.write('')
 game.load_settings()
