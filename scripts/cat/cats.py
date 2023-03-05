@@ -137,6 +137,19 @@ class Cat():
         'retired_leader', 'refugee', 'tragedy_survivor', 'clan_founder', 'orphaned', "orphaned2", "guided1", "guided2",
         "guided3", "guided4"
     ]
+
+    #EX levels and ranges.
+    # Ranges are inclusive to both bounds
+    experience_levels_range = {
+        "untrained": (0, 0),
+        "trainee": (1, 20),
+        "prepared": (21, 40),
+        "competent": (41, 60),
+        "proficient": (61, 70),
+        "expert": (71, 80),
+        "master": (81, 300)
+    }
+
     all_cats: Dict[str, Cat] = {}  # ID: object
     outside_cats: Dict[str, Cat] = {}  # cats outside the clan
     id_iter = itertools.count()
@@ -2561,27 +2574,15 @@ class Cat():
 
     @experience.setter
     def experience(self, exp: int):
-        if (exp > 100):
-            exp = 100
-        self._experience = exp
-        experience_level = self.experience_level
-        experience_levels = [
-            'very low', 'low', 'average', 'high', 'master', 'max'
-        ]
-        if exp < 11:
-            experience_level = 'very low'
-        elif exp < 31:
-            experience_level = 'low'
-        elif exp < 70:
-            experience_level = 'average'
-        elif exp < 81:
-            experience_level = 'high'
-        elif exp < 100:
-            experience_level = 'master'
-        elif exp == 100:
-            experience_level = 'max'
+        if exp > self.experience_levels_range["master"][1]:
+            exp = self.experience_levels_range["master"][1]
+        self._experience = int(exp)
 
-        self.experience_level = experience_level
+        for x in self.experience_levels_range:
+            if self.experience_levels_range[x][0] <= exp <= self.experience_levels_range[x][1]:
+                self.experience_level = x
+                break
+
 
     @property
     def moons(self):

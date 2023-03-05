@@ -1282,7 +1282,7 @@ class Patrol():
     def handle_exp_gain(self):
         gm_modifier = 1
         base_exp = 0
-        if "max" in self.experience_levels:
+        if "master" in self.experience_levels:
             max_boost = 10
         else:
             max_boost = 0
@@ -1293,17 +1293,9 @@ class Patrol():
             gm_modifier = 3
         elif game.clan.game_mode == 'cruel season':
             gm_modifier = 6
-        lvl_modifier = 1  # this makes exp gain slower after the cat reaches average
+        gained_exp = ((patrol_exp + base_exp + max_boost) / len(self.patrol_cats)) / gm_modifier
         for cat in self.patrol_cats:
-            gained_exp = ((patrol_exp + base_exp + max_boost) / len(self.patrol_cats)) / gm_modifier
-            if cat.experience_level == "average":
-                lvl_modifier = 1.25
-            if cat.experience_level == "high":
-                lvl_modifier = 1.75
-            if cat.experience_level == "master":
-                lvl_modifier = 2
-            final_exp = gained_exp / lvl_modifier
-            cat.experience = cat.experience + final_exp
+            cat.experience = cat.experience + gained_exp
 
     def handle_deaths_and_gone(self, cat):
         if "no_body" in self.patrol_event.tags:

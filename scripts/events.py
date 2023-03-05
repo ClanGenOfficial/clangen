@@ -632,6 +632,7 @@ class Events():
                 self.condition_events.handle_already_disabled(cat)
             self.coming_out(cat)
             self.relation_events.handle_having_kits(cat, clan=game.clan)
+            self.handle_apprentice_EX(cat)
             self.perform_ceremonies(cat)
             cat.create_interaction()
             # this is the new interaction function, currently not active
@@ -642,6 +643,8 @@ class Events():
         # check for death/reveal/risks/retire caused by permanent conditions
         if cat.is_disabled():
             self.condition_events.handle_already_disabled(cat)
+
+        self.handle_apprentice_EX(cat)
         self.perform_ceremonies(cat)  # here is age up included
 
         self.invite_new_cats(cat)
@@ -783,7 +786,7 @@ class Events():
                 # cat.status_change('elder')
 
             # apprentice a kitten to either med or warrior
-            if cat.moons == cat_class.age_moons[cat.age][0]:
+            if cat.moons == cat_class.age_moons["adolescent"][0]:
                 if cat.status == 'kitten':
 
                     med_cat_list = list(filter(lambda x: x.status in ["medicine cat", "medicine cat apprentice"]
@@ -856,22 +859,29 @@ class Events():
                             self.ceremony_accessory = True
                             self.gain_accessories(cat)
 
-                # promote to warrior
-                elif cat.status == 'apprentice':
-                    self.ceremony(cat, 'warrior')
-                    self.ceremony_accessory = True
-                    self.gain_accessories(cat)
+            # promote to warrior
+            if cat.status in ["apprentice", "mediator apprentice", "medicine cat apprentice"]:
+                if (cat.experience_level == "prepared" and cat.moons >= 9) or cat.moons >= 25:
+                    if cat.moons >= 25:
+                        prepared = True
+                    else:
+                        prepared = False
 
-                # promote to med cat
-                elif cat.status == 'medicine cat apprentice':
-                    self.ceremony(cat, 'medicine cat')
-                    self.ceremony_accessory = True
-                    self.gain_accessories(cat)
+                    if cat.status == 'apprentice':
+                        self.ceremony(cat, 'warrior')
+                        self.ceremony_accessory = True
+                        self.gain_accessories(cat)
 
-                elif cat.status == 'mediator apprentice':
-                    self.ceremony(cat, 'mediator')
-                    self.ceremony_accessory = True
-                    self.gain_accessories(cat)
+                    # promote to med cat
+                    elif cat.status == 'medicine cat apprentice':
+                        self.ceremony(cat, 'medicine cat')
+                        self.ceremony_accessory = True
+                        self.gain_accessories(cat)
+
+                    elif cat.status == 'mediator apprentice':
+                        self.ceremony(cat, 'mediator')
+                        self.ceremony_accessory = True
+                        self.gain_accessories(cat)
 
     def load_ceremonies(self):
         if self.CEREMONY_TXT:
@@ -1247,6 +1257,29 @@ class Events():
                                                                                       cat.life_givers[6], \
                                                                                       cat.life_givers[7], \
                                                                                       cat.life_givers[8]
+
+    def handle_apprentice_EX(self, cat):
+        if cat.status in ["apprentice", "medicine cat apprentice", "mediator apprentice"]:
+
+            if cat.not_working():
+                print(f"{cat.name} not working, no EX gain")
+                return
+
+            if cat.status == "medicine cat apprentice":
+                base_ex = random.randint(game.config["ex"]["base_med_app_timeskip_ex"][0],
+                                         game.config["ex"]["base_med_app_timeskip_ex"][1])
+            else:
+                base_ex = random.randint(game.config["ex"]["base_app_timeskip_ex"][0],
+                                         game.config["ex"]["base_app_timeskip_ex"][1])
+
+            if cat.mentor and not Cat.fetch_cat(cat.mentor).not_working():
+                mentor_modifier = 1
+            else:
+                # No mentor/sick mentor debuff
+                mentor_modifier = 0.6
+
+            print(f"{cat.name} has gained {base_ex * mentor_modifier} EX")
+            cat.experience = base_ex * mentor_modifier
 
     def invite_new_cats(self, cat):
         # ---------------------------------------------------------------------------- #
