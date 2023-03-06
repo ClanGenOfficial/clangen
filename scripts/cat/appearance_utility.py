@@ -624,8 +624,9 @@ def white_patches_inheritance(cat, parents: tuple):
     
     # dealing with points
     is_pointed = False
-    if parents.points:
-        is_pointed = choice([True, False])
+    for cat in parents:
+        if cat.points:
+            is_pointed = choice([True, False])
     if is_pointed:
         cat.points = choice(point_markings)
 
