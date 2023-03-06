@@ -272,7 +272,7 @@ tortiebases = ['single', 'tabby', 'bengal', 'marbled', 'ticked', 'smoke', 'roset
 
 pelt_length = ["short", "medium", "long"]
 eye_colours = ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE', 'DARKBLUE', 'GREY', 'CYAN', 'EMERALD', 'PALEBLUE', 
-    'PALEYELLOW', 'GOLD', 'HEATHERBLUE', 'COPPER', 'SAGE', 'BLUE2', 'SUNLITICE', 'GREENYELLOW']
+    'PALEYELLOW', 'GOLD', 'HEATHERBLUE', 'COPPER', 'SAGE', 'BLUE2', 'SUNLITICE', 'GREENYELLOW', 'BRONZE', 'SILVER']
 yellow_eyes = ['YELLOW', 'AMBER', 'PALEYELLOW', 'GOLD', 'COPPER', 'GREENYELLOW', 'BRONZE', 'SILVER']
 blue_eyes = ['BLUE', 'DARKBLUE', 'CYAN', 'PALEBLUE', 'HEATHERBLUE', 'BLUE2', 'SUNLITICE', 'GREY']
 green_eyes = ['PALEGREEN', 'GREEN', 'EMERALD', 'SAGE', 'HAZEL']
@@ -324,7 +324,7 @@ colour_categories = [ginger_colours, black_colours, white_colours, brown_colours
 eye_sprites = [
     'YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE', 'DARKBLUE', 'BLUEYELLOW', 'BLUEGREEN',
     'GREY', 'CYAN', 'EMERALD', 'PALEBLUE', 'PALEYELLOW', 'GOLD', 'HEATHERBLUE', 'COPPER', 'SAGE', 'BLUE2',
-    'SUNLITICE', 'GREENYELLOW'
+    'SUNLITICE', 'GREENYELLOW', 'BRONZE', 'SILVER'
 ]
 little_white = ['LITTLE', 'LIGHTTUXEDO', 'BUZZARDFANG', 'TIP', 'BLAZE', 'BIB', 'VEE', 'PAWS',
                 'BELLY', 'TAILTIP', 'TOES', 'BROKENBLAZE', 'LILTWO', 'SCOURGE', 'TOESTAIL', 'RAVENPAW', 'HONEY', 'LUNA',
@@ -336,9 +336,8 @@ high_white = ['ANY', 'ANY2', 'BROKEN', 'FRECKLES', 'RINGTAIL', 'HALFFACE', 'PANT
               'CURVED', 'GLASS', 'MASKMANTLE', 'MAO', 'PAINTED']
 mostly_white = ['VAN', 'ONEEAR', 'LIGHTSONG', 'TAIL', 'HEART', 'MOORISH', 'APRON', 'CAPSADDLE',
                 'CHESTSPECK', 'BLACKSTAR']
-point_markings = ['COLOURPOINT', 'RAGDOLL', 'KARPATI', 'SEPIAPOINT', 'MINKPOINT',
-                  'SEALPOINT']
-vit = ['VITILIGO', 'VITILIGO2']
+point_markings = ['COLOURPOINT', 'RAGDOLL', 'SEPIAPOINT', 'MINKPOINT', 'SEALPOINT']
+vit = ['VITILIGO', 'VITILIGO2', 'MOON', 'PHANTOM', 'KARPATI']
 white_sprites = [
     little_white, mid_white, high_white, mostly_white, point_markings, vit, 'FULLWHITE']
 
