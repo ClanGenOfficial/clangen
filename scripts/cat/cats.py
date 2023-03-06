@@ -227,7 +227,7 @@ class Cat():
         self.pattern = None
         self.tortiepattern = None
         self.tortiecolour = None
-        self.white_patches = None
+        self.white_patches = []
         self.accessory = None
         self.birth_cooldown = 0
         self.siblings = []

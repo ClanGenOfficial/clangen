@@ -9,7 +9,7 @@ except ImportError:
 
 from re import sub
 from scripts.cat.cats import Cat
-from scripts.cat.pelts import choose_pelt
+from scripts.cat.pelts import choose_pelt, vit, point_markings
 from scripts.utility import update_sprite, is_iterable
 from random import choice
 try:
@@ -141,9 +141,7 @@ def json_load():
                         new_cat.white_patches_tint = "none"
                     else:
                         new_cat.white_patches_tint = "offwhite"
-
             new_cat.tortiebase = cat["tortie_base"]
-
             if cat["tortie_pattern"] and "tortie" in cat["tortie_pattern"]:
                 new_cat.tortiepattern = sub("tortie", "", cat["tortie_pattern"]).lower()
                 if new_cat.tortiepattern == "solid":

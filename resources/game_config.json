@@ -77,7 +77,8 @@
 		"base_female_tortie": 4,
 		"base_heterochromia": 120,
 		"direct_inheritance": 15,
-		"wildcard_tortie": 9
+		"wildcard_tortie": 9,
+		"vit_chance": 7
 	},
 	"accessory_generation": {
 		"base_acc_chance": 150,
