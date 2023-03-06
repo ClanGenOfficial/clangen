@@ -486,6 +486,8 @@ def describe_color(pelt, tortiebase, tortiecolour, white_patches, points, vit):
         color_name = 'light brown'
     elif color_name == 'darkbrown':
         color_name = 'dark brown'
+    elif color_name == 'ghost':
+        color_name = 'black'
     if pelt.name == "Tabby":
         if color_name == 'white':
             color_name = 'pale'
