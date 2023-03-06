@@ -866,9 +866,11 @@ class Cat():
             sex = 'she-cat'
         else:
             sex = 'cat'
-        description = str(self.pelt.length).lower() + '-furred'
-        description += ' ' + describe_color(self.pelt, self.tortiecolour, self.tortiepattern,
-                                            self.white_patches) + ' ' + sex
+        description = ''
+        if self.pelt.length == 'long':
+            description = str(self.pelt.length).lower() + '-furred '
+        description = description +  describe_color(self.pelt, self.tortiebase, self.tortiecolour,
+                                            self.white_patches, self.points, self.vitiligo) + ' ' + sex
         return description
 
     def describe_eyes(self):

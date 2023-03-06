@@ -471,11 +471,9 @@ def choose_pelt(colour=None, white=None, pelt=None, length=None, category=None, 
         return Calico(colour, length)
 
 
-def describe_color(pelt, tortiecolour, tortiepattern, white_patches):
+def describe_color(pelt, tortiebase, tortiecolour, white_patches, points, vit):
     color_name = ''
     color_name = str(pelt.colour).lower()
-    if tortiecolour is not None:
-        color_name = str(tortiecolour).lower()
     if color_name == 'palegrey':
         color_name = 'pale grey'
     elif color_name == 'darkgrey':
@@ -489,43 +487,72 @@ def describe_color(pelt, tortiecolour, tortiepattern, white_patches):
     elif color_name == 'darkbrown':
         color_name = 'dark brown'
     if pelt.name == "Tabby":
+        if color_name == 'white':
+            color_name = 'pale'
         color_name = color_name + ' tabby'
     elif pelt.name == "Speckled":
+        if color_name == 'white':
+            color_name = 'pale'
         color_name = color_name + ' speckled'
     elif pelt.name == "Bengal":
-        color_name = color_name + ' bengal'
+        if color_name == 'white':
+            color_name = 'pale'
+        color_name = color_name + ' unusually spotted'
     elif pelt.name == "Marbled":
-        color_name = color_name + ' marbled tabby'
+        if color_name == 'white':
+            color_name = 'pale'
+        color_name = color_name + ' tabby'
     elif pelt.name == "Rosette":
-        color_name = color_name + ' rosetted'
+        if color_name == 'white':
+            color_name = 'pale'
+        color_name = color_name + ' dappled'
     elif pelt.name == "Ticked":
-        color_name = color_name + ' ticked tabby'
+        if color_name == 'white':
+            color_name = 'pale'
+        color_name = color_name + ' ticked'
     elif pelt.name == "Smoke":
+        if color_name == 'white':
+            color_name = 'pale'
         color_name = color_name + ' smoke'
     elif pelt.name == "Mackerel":
-        color_name = color_name + ' mackerel tabby'
+        if color_name == 'white':
+            color_name = 'pale'
+        color_name = color_name + ' tabby'
     elif pelt.name == "Classic":
-        color_name = color_name + ' classic tabby'
+        if color_name == 'white':
+            color_name = 'pale'
+        color_name = color_name + ' tabby'
     elif pelt.name == "Sokoke":
-        color_name = color_name + ' sokoke tabby'
+        if color_name == 'white':
+            color_name = 'pale'
+        color_name = color_name + ' tabby'
     elif pelt.name == "Agouti":
+        if color_name == 'white':
+            color_name = 'pale'
         color_name = color_name + ' agouti'
-    elif pelt.name == "Singlestripe":
-        color_name = color_name + ', with a dorsal stripe,'
-
+    elif pelt.name == 'Singlestripe':
+        if color_name == 'white':
+            color_name = 'pale'
+        color_name = color_name + ' striped'
     elif pelt.name == "Tortie":
-        if tortiepattern not in ["tortiesolid", "tortiesmoke"]:
-            color_name = color_name + ' torbie'
-        else:
-            color_name = color_name + ' tortie'
+        patches = tortiecolour.lower()
+        color_name = f"{color_name} and {patches} tortie"
     elif pelt.name == "Calico":
-        if tortiepattern not in ["tortiesolid", "tortiesmoke"]:
-            color_name = color_name + ' tabico'
+        color_name = f'{color_name} and {patches} calico'
+
+    if pelt.name in ['Tortie', 'Calico']:
+        base = tortiebase.lower()
+        if base in tabbies:
+            base = 'tabby'
+        elif base in ['bengal', 'rosette', 'speckled']:
+            base = 'spotted'
         else:
-            color_name = color_name + ' calico'
-    # enough to comment but not make calico
+            base = ''
+        if pelt.colour in [black_colours, brown_colours, white_colours] and\
+            tortiecolour in [black_colours, brown_colours, white_colours]:
+            color_name = f"mottled {base}"
     if white_patches is not None:
-        if white_patches in little_white + mid_white:
+        if white_patches in [little_white, mid_white]:
             color_name = color_name + ' and white'
         # and white
         elif white_patches in high_white:
@@ -535,12 +562,12 @@ def describe_color(pelt, tortiecolour, tortiepattern, white_patches):
         elif white_patches in mostly_white:
             color_name = 'white and ' + color_name
         # colorpoint
-        elif white_patches in point_markings:
+        if points:
             color_name = color_name + ' point'
             if color_name == 'dark ginger point' or color_name == 'ginger point':
                 color_name = 'flame point'
         # vitiligo
-        elif white_patches in vit:
+        if vit:
             color_name = color_name + ' with vitiligo'
     else:
         color_name = color_name
