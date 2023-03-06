@@ -24,21 +24,49 @@ from scripts.cat.cats import Cat, cat_class
 from scripts.event_class import Single_Event
 from scripts.cat_relations.relationship import Relationship
 
+
+# if another cat is involved
+THIRD_RELATIONSHIP_INCLUDED = {
+    "charismatic": ['is convincing (cat 1) that (cat 2) isn\'t so bad once you get to know them.'],
+    "troublesome": ['made (cat) and (cat) start an argument.'],
+    "sneaky": ['is gossiping about (cat) and (cat).'],
+    "like": '(cat) confesses to (cat) that they think they like (cat).',
+    "trick": 'has successfully tricked (cat) into believing a crazy tale about the Clan leader.'
+}
+
+EXILED_CATS = {
+    "cat_to": ['bumped into (cat) at the Clan border.', 'caught a glimpse of (cat) from the distance.'],
+    "cat_from": ['was wandering near the Clan territory and met (cat).'],
+    "both": ['ran into (cat) by chance.']
+}
+
+OUTSIDE_CATS = {
+    "cat_to": ['is thinking about (cat).'],
+    "cat_from": ['is thinking about (cat) as they wander far from Clan territory.'],
+    "both": ['wonders where (cat) is right now.']
+}
+
+
 class Relation_Events():
     """All relationship events."""
-
-    MAX_ATTEMPTS = 1000
 
     def __init__(self) -> None:
         self.event_sums = 0
         self.had_one_event = False
         self.condition_events = Condition_Events()
+        self.triggered_events = {}
         pass
 
-    def handle_relationships(self, cat):
-        """
-        Check a certain amount of relationships and trigger events.
-        :param cat: cat in question
+    def handle_relationships(self, cat: Cat):
+        """Checks the relationships of the cat and trigger events if possible.
+
+            Parameters
+            ----------
+            cat : Cat
+                the cat where the relationships should be checked
+
+            Returns
+            -------
         """
         if not cat.relationships:
             return
@@ -268,16 +296,6 @@ class Relation_Events():
 
             # If you've reached here - congrats, kits!
             self.handle_zero_moon_pregnant(cat, second_parent, second_parent_relation, clan)
-
-    def welcome_new_cats(self, new_cats = None):
-        """This function will handle the welcome of new cats, if there are new cats in the clan."""
-        if new_cats is None or len(new_cats) <= 0:
-            return
-
-        for new_cat in new_cats:
-            print(new_cat.name)
-
-        print("HERE")
 
     # ---------------------------------------------------------------------------- #
     #                                 handle events                                #
@@ -992,6 +1010,223 @@ class Relation_Events():
 
         return amount
 
+    # ---------------------------------------------------------------------------- #
+    #                                new event types                               #
+    # ---------------------------------------------------------------------------- #
+
+    def mate_events(self):
+        """Description will follow."""
+        """
+        > events unique to mates
+        """
+        print("TODO")
+
+    def same_age_events(self):
+        """Description will follow."""
+        """
+        > uses the same events as normal interactions but only with cats the same age
+        """
+        print("TODO")
+
+    def group_events(self):
+        """Description will follow."""
+        """
+        > different outcomes for the cats should be possible
+        > should be possible with different amount of cats (dynamically)
+        """
+        print("TODO")
+
+    def family_events(self):
+        """Description will follow."""
+        """
+        - parent + child
+        - siblings
+        - grand parents/children
+        """
+        print("TODO")
+
+    def outsider_events(self):
+        """Description will follow."""
+        print("TODO")
+
+    def welcome_new_cats(self, new_cats = None):
+        """This function will handle the welcome of new cats, if there are new cats in the clan."""
+        if new_cats is None or len(new_cats) <= 0:
+            return
+
+        for new_cat in new_cats:
+            print(new_cat.name)
+
+        print("HERE")
+
+
+Single_events_structure = {
+	"id": "sample_id",
+	"biome": ["Any"],
+	"season": ["Any"],
+	"intensity": "medium",
+	"interactions": [
+		"m_c does some interactions with r_c"
+	],
+    "injuries": {
+        "m_c": ["injury_name"],
+        "r_c": ["injury_name"]
+    },
+	"relationship_constraint": [],
+	"main_status_constraint": [],
+	"main_trait_constraint": [],
+	"main_skill_constraint": [],
+	"random_status_constraint": [],
+	"random_trait_constraint": [],
+	"random_skill_constraint": [],
+	"reaction_random_cat": {
+		"romantic": "increase",
+		"platonic": "neutral",
+		"dislike": "decrease",
+		"admiration": "neutral",
+		"comfortable": "increase",
+		"jealousy": "neutral",
+		"trust": "increase"
+	},
+	"also_influences": {
+		"romantic": "increase",
+		"platonic": "neutral",
+		"dislike": "decrease",
+		"admiration": "neutral",
+		"comfortable": "increase",
+		"jealousy": "neutral",
+		"trust": "increase"
+	}
+}
+
+class Single_Interaction():
+
+    def __init__(self,
+                 id,
+                 biome=None,
+                 season=None,
+                 intensity="medium",
+                 interactions=None,
+                 injuries=None,
+                 relationship_constraint=None,
+                 main_status_constraint=None,
+                 random_status_constraint=None,
+                 main_trait_constraint=None,
+                 random_trait_constraint=None,
+                 main_skill_constraint=None,
+                 random_skill_constraint=None,
+                 reaction_random_cat=None,
+                 also_influences=None):
+        self.id = id
+        self.intensity = intensity
+        self.biome = biome if biome else ["Any"]
+        self.season = season if season else ["Any"]
+
+        if interactions:
+            self.interactions = interactions
+        else:
+            self.interactions = [f"This is a default interaction! ID: {id} with cats (m_c), (r_c)"]
+
+        if injuries:
+            self.injuries = injuries
+        else:
+            self.injuries = {}
+
+        if relationship_constraint:
+            self.relationship_constraint = relationship_constraint
+        else:
+            self.relationship_constraint = []
+
+        if main_status_constraint:
+            self.main_status_constraint = main_status_constraint
+        else:
+            self.main_status_constraint = []
+
+        if random_status_constraint:
+            self.random_status_constraint = random_status_constraint
+        else:
+            self.random_status_constraint = []
+
+        if main_trait_constraint:
+            self.main_trait_constraint = main_trait_constraint
+        else:
+            self.main_trait_constraint = []
+
+        if random_trait_constraint:
+            self.random_trait_constraint = random_trait_constraint
+        else:
+            self.random_trait_constraint = []
+
+        if main_skill_constraint:
+            self.main_skill_constraint = main_skill_constraint
+        else:
+            self.main_skill_constraint = []
+
+        if random_skill_constraint:
+            self.random_skill_constraint = random_skill_constraint
+        else:
+            self.random_skill_constraint = []
+
+        if reaction_random_cat:
+            self.reaction_random_cat = reaction_random_cat
+        else:
+            self.reaction_random_cat = {}
+        
+        if also_influences:
+            self.also_influences = also_influences
+        else:
+            self.also_influences = {}
+
+
+Group_event_structure = {
+	"id": "sample_id",
+	"biome": ["Any"],
+	"season": ["Any"],
+	"intensity": "medium",
+    "cat_amount": "3",
+	"interactions": [
+		"m_c does some interactions with r_c1 and r_c2."
+	],
+    "injuries": {
+        "m_c": ["injury_name"],
+        "r_c1": ["injury_name"],
+    },
+	"status_constraint": {
+        "m_c": ["warrior", "deputy"],
+    },
+	"trait_constraint": {
+        "r_c1": ["clam"],
+    },
+	"skill_constraint": {
+        "m_c": ["good hunter"],
+    },
+	"relationship_constraint": {
+        "m_c_to_r_c1": ["platonic_40"],
+    },
+	"reaction": {
+		"m_c_to_r_c1": {
+		    "romantic": "increase",
+		    "platonic": "neutral",
+		    "dislike": "decrease",
+		    "admiration": "neutral",
+		    "comfortable": "increase",
+		    "jealousy": "neutral",
+		    "trust": "increase"
+	    },
+        "r_c1_to_m_c": {
+		    "romantic": "increase",
+		    "dislike": "decrease",
+		    "comfortable": "increase",
+		    "trust": "increase"
+	    }
+    }
+}
+
+
+class Group_Interaction():
+    
+    def __init__(self, id):
+        self.id = id
 
 # ---------------------------------------------------------------------------- #
 #                                LOAD RESOURCES                                #
@@ -1000,6 +1235,5 @@ class Relation_Events():
 resource_directory = "resources/dicts/relationship_events/"
 
 MATE_DICTS = None
-
-with open(f"{resource_directory}mating.json", 'r') as read_file:
+with open(f"{resource_directory}become_mates.json", 'r') as read_file:
     MATE_DICTS = ujson.loads(read_file.read())

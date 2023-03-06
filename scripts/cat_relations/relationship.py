@@ -1,47 +1,15 @@
 import os
 import random
-from random import choice, randint
-import copy
+from random import choice
 try:
     import ujson
 except ImportError:
     import json as ujson
 from scripts.event_class import Single_Event
+from scripts.events_module.relationship.relation_events import Single_Interaction
 
 from scripts.utility import get_personality_compatibility
 from scripts.game_structure.game_essentials import game
-
-# if another cat is involved
-THIRD_RELATIONSHIP_INCLUDED = {
-    "charismatic": ['is convincing (cat 1) that (cat 2) isn\'t so bad once you get to know them.'],
-    "troublesome": ['made (cat) and (cat) start an argument.'],
-    "sneaky": ['is gossiping about (cat) and (cat).'],
-    "like": '(cat) confesses to (cat) that they think they like (cat).',
-    "trick": 'has successfully tricked (cat) into believing a crazy tale about the Clan leader.'
-}
-
-EXILED_CATS = {
-    "cat_to": ['bumped into (cat) at the Clan border.', 'caught a glimpse of (cat) from the distance.'],
-    "cat_from": ['was wandering near the Clan territory and met (cat).'],
-    "both": ['ran into (cat) by chance.']
-}
-
-OUTSIDE_CATS = {
-    "cat_to": ['is thinking about (cat).'],
-    "cat_from": ['is thinking about (cat) as they wander far from Clan territory.'],
-    "both": ['wonders where (cat) is right now.']
-}
-
-# weights of the stat change
-DIRECT_INCREASE_HIGH = 13
-DIRECT_DECREASE_HIGH = 10
-DIRECT_INCREASE_LOW = 8
-DIRECT_DECREASE_LOW = 4
-INDIRECT_INCREASE = 6
-INDIRECT_DECREASE = 3
-
-# add/decrease weight of personality based compatibility
-COMPATIBILITY_WEIGHT = 3
 
 
 # ---------------------------------------------------------------------------- #
@@ -131,13 +99,22 @@ class Relationship():
         if len(possible_interactions) <= 0:
             print("ERROR: No interaction with this conditions. ", rel_type, in_de_crease, intensity)
             possible_interactions = [
-                Interaction("fall_back", "Any", "Any", "medium", [
+                Single_Interaction("fall_back", "Any", "Any", "medium", [
                     "Default string, this should never appear."
                 ])
             ]
         self.chosen_interaction = choice(possible_interactions)
 
         self.interaction_affect_relationships(in_de_crease, intensity, rel_type)
+        # give cats injuries
+        if len(self.chosen_interaction.injuries) > 0:
+            for abbreviations, injuries in self.chosen_interaction.injuries.items():
+                injured_cat = self.cat_from
+                if abbreviations != "m_c":
+                    injured_cat = self.cat_to
+                
+                for inj in injuries:
+                    injured_cat.get_injured(inj, True)
         
         # get any possible interaction string out of this interaction
         interaction_str = choice(self.chosen_interaction.interactions)
@@ -648,78 +625,6 @@ class Relationship():
         self._trust = value
 
 
-class Interaction():
-
-    def __init__(self,
-                 id,
-                 biome=None,
-                 season=None,
-                 intensity="medium",
-                 interactions=None,
-                 relationship_constraint=None,
-                 main_status_constraint=None,
-                 random_status_constraint=None,
-                 main_trait_constraint=None,
-                 random_trait_constraint=None,
-                 main_skill_constraint=None,
-                 random_skill_constraint=None,
-                 reaction_random_cat=None,
-                 also_influences=None):
-        self.id = id
-        self.intensity = intensity
-        self.biome = biome if biome else ["Any"]
-        self.season = season if season else ["Any"]
-
-        if interactions:
-            self.interactions = interactions
-        else:
-            self.interactions = [f"This is a default interaction! ID: {id} with cats (m_c), (r_c)"]
-
-        if relationship_constraint:
-            self.relationship_constraint = relationship_constraint
-        else:
-            self.relationship_constraint = []
-
-        if main_status_constraint:
-            self.main_status_constraint = main_status_constraint
-        else:
-            self.main_status_constraint = []
-
-        if random_status_constraint:
-            self.random_status_constraint = random_status_constraint
-        else:
-            self.random_status_constraint = []
-
-        if main_trait_constraint:
-            self.main_trait_constraint = main_trait_constraint
-        else:
-            self.main_trait_constraint = []
-
-        if random_trait_constraint:
-            self.random_trait_constraint = random_trait_constraint
-        else:
-            self.random_trait_constraint = []
-
-        if main_skill_constraint:
-            self.main_skill_constraint = main_skill_constraint
-        else:
-            self.main_skill_constraint = []
-
-        if random_skill_constraint:
-            self.random_skill_constraint = random_skill_constraint
-        else:
-            self.random_skill_constraint = []
-
-        if reaction_random_cat:
-            self.reaction_random_cat = reaction_random_cat
-        else:
-            self.reaction_random_cat = {}
-        
-        if also_influences:
-            self.also_influences = also_influences
-        else:
-            self.also_influences = {}
-
 # ---------------------------------------------------------------------------- #
 #                   build master dictionary for interactions                   #
 # ---------------------------------------------------------------------------- #
@@ -727,7 +632,7 @@ class Interaction():
 def create_interaction(inter_list) -> list:
     created_list = []
     for inter in inter_list:
-        created_list.append(Interaction(
+        created_list.append(Single_Interaction(
             id=inter["id"],
             biome=inter["biome"] if "biome" in inter else "Any",
             season=inter["season"] if "season" in inter else "Any",
