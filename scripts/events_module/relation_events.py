@@ -49,7 +49,6 @@ OUTSIDE_CATS = {
 
 class Relation_Events():
     """All relationship events."""
-
     def __init__(self) -> None:
         self.event_sums = 0
         self.had_one_event = False
@@ -204,7 +203,7 @@ class Relation_Events():
                 return
             if moons >= 2:
                 self.handle_two_moon_pregnant(cat, clan)
-                events.ceremony_accessory = True
+                #events.ceremony_accessory = True
                 return
 
         # Check if they can have kits.
@@ -1058,175 +1057,6 @@ class Relation_Events():
             print(new_cat.name)
 
         print("HERE")
-
-
-Single_events_structure = {
-	"id": "sample_id",
-	"biome": ["Any"],
-	"season": ["Any"],
-	"intensity": "medium",
-	"interactions": [
-		"m_c does some interactions with r_c"
-	],
-    "injuries": {
-        "m_c": ["injury_name"],
-        "r_c": ["injury_name"]
-    },
-	"relationship_constraint": [],
-	"main_status_constraint": [],
-	"main_trait_constraint": [],
-	"main_skill_constraint": [],
-	"random_status_constraint": [],
-	"random_trait_constraint": [],
-	"random_skill_constraint": [],
-	"reaction_random_cat": {
-		"romantic": "increase",
-		"platonic": "neutral",
-		"dislike": "decrease",
-		"admiration": "neutral",
-		"comfortable": "increase",
-		"jealousy": "neutral",
-		"trust": "increase"
-	},
-	"also_influences": {
-		"romantic": "increase",
-		"platonic": "neutral",
-		"dislike": "decrease",
-		"admiration": "neutral",
-		"comfortable": "increase",
-		"jealousy": "neutral",
-		"trust": "increase"
-	}
-}
-
-class Single_Interaction():
-
-    def __init__(self,
-                 id,
-                 biome=None,
-                 season=None,
-                 intensity="medium",
-                 interactions=None,
-                 injuries=None,
-                 relationship_constraint=None,
-                 main_status_constraint=None,
-                 random_status_constraint=None,
-                 main_trait_constraint=None,
-                 random_trait_constraint=None,
-                 main_skill_constraint=None,
-                 random_skill_constraint=None,
-                 reaction_random_cat=None,
-                 also_influences=None):
-        self.id = id
-        self.intensity = intensity
-        self.biome = biome if biome else ["Any"]
-        self.season = season if season else ["Any"]
-
-        if interactions:
-            self.interactions = interactions
-        else:
-            self.interactions = [f"This is a default interaction! ID: {id} with cats (m_c), (r_c)"]
-
-        if injuries:
-            self.injuries = injuries
-        else:
-            self.injuries = {}
-
-        if relationship_constraint:
-            self.relationship_constraint = relationship_constraint
-        else:
-            self.relationship_constraint = []
-
-        if main_status_constraint:
-            self.main_status_constraint = main_status_constraint
-        else:
-            self.main_status_constraint = []
-
-        if random_status_constraint:
-            self.random_status_constraint = random_status_constraint
-        else:
-            self.random_status_constraint = []
-
-        if main_trait_constraint:
-            self.main_trait_constraint = main_trait_constraint
-        else:
-            self.main_trait_constraint = []
-
-        if random_trait_constraint:
-            self.random_trait_constraint = random_trait_constraint
-        else:
-            self.random_trait_constraint = []
-
-        if main_skill_constraint:
-            self.main_skill_constraint = main_skill_constraint
-        else:
-            self.main_skill_constraint = []
-
-        if random_skill_constraint:
-            self.random_skill_constraint = random_skill_constraint
-        else:
-            self.random_skill_constraint = []
-
-        if reaction_random_cat:
-            self.reaction_random_cat = reaction_random_cat
-        else:
-            self.reaction_random_cat = {}
-        
-        if also_influences:
-            self.also_influences = also_influences
-        else:
-            self.also_influences = {}
-
-
-Group_event_structure = {
-	"id": "sample_id",
-	"biome": ["Any"],
-	"season": ["Any"],
-	"intensity": "medium",
-    "cat_amount": "3",
-	"interactions": [
-		"m_c does some interactions with r_c1 and r_c2."
-	],
-    "injuries": {
-        "m_c": ["injury_name"],
-        "r_c1": ["injury_name"],
-    },
-	"status_constraint": {
-        "m_c": ["warrior", "deputy"],
-    },
-	"trait_constraint": {
-        "r_c1": ["clam"],
-    },
-	"skill_constraint": {
-        "m_c": ["good hunter"],
-    },
-	"relationship_constraint": {
-        "m_c_to_r_c1": ["platonic_40"],
-    },
-	"reaction": {
-		"m_c_to_r_c1": {
-		    "romantic": "increase",
-		    "platonic": "neutral",
-		    "dislike": "decrease",
-		    "admiration": "neutral",
-		    "comfortable": "increase",
-		    "jealousy": "neutral",
-		    "trust": "increase"
-	    },
-        "r_c1_to_m_c": {
-		    "romantic": "increase",
-		    "dislike": "decrease",
-		    "comfortable": "increase",
-		    "trust": "increase"
-	    }
-    }
-}
-
-
-class Group_Interaction():
-    
-    def __init__(self, id):
-        self.id = id
 
 # ---------------------------------------------------------------------------- #
 #                                LOAD RESOURCES                                #
