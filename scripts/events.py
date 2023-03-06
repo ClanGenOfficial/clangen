@@ -21,7 +21,7 @@ from scripts.events_module.death_events import Death_Events
 from scripts.events_module.freshkill_pile_events import Freshkill_Events
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
-from scripts.utility import get_alive_kits, get_med_cats, ceremony_text_adjust
+from scripts.utility import get_alive_kits, get_med_cats, ceremony_text_adjust, get_current_season
 from scripts.events_module.generate_events import GenerateEvents
 
 
@@ -162,7 +162,8 @@ class Events():
 
         # age up the clan, set current season
         game.clan.age += 1
-        game.clan.current_season = game.clan.seasons[game.clan.age % 12]
+        get_current_season()
+        print(game.clan.current_season)
 
         self.herb_destruction()
         self.herb_gather()
