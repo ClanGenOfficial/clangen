@@ -141,6 +141,12 @@ def json_load():
                         new_cat.white_patches_tint = "none"
                     else:
                         new_cat.white_patches_tint = "offwhite"
+            if cat["white_patches"] in vit:
+                new_cat.vitiligo = cat["white_patches"]
+                new_cat.white_patches = None
+            elif cat["white_patches"] in point_markings:
+                new_cat.points = cat["white_patches"]
+                new_cat.white_patches = None
             new_cat.tortiebase = cat["tortie_base"]
             if cat["tortie_pattern"] and "tortie" in cat["tortie_pattern"]:
                 new_cat.tortiepattern = sub("tortie", "", cat["tortie_pattern"]).lower()

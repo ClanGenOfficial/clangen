@@ -620,7 +620,7 @@ def white_patches_inheritance(cat, parents: tuple):
 
     vit_chance = not random.getrandbits(game.config["cat_generation"]["vit_chance"])
     if vit_chance:
-        cat.white_patches.append(choice(vit))
+        cat.vitiligo = choice(vit)
         return
     
     # dealing with points
@@ -628,7 +628,7 @@ def white_patches_inheritance(cat, parents: tuple):
     if parents.white_patches in point_markings:
         is_pointed = choice([True, False])
     if is_pointed:
-        cat.white_patches.append(choice(point_markings))
+        cat.points = choice(point_markings)
 
     white_list = [little_white, mid_white, high_white, mostly_white, ['FULLWHITE']]
 
@@ -672,7 +672,7 @@ def white_patches_inheritance(cat, parents: tuple):
         random.choices(white_list, weights=weights, k=1)[0]
     )
 
-    cat.white_patches.append(chosen_white_patches)
+    cat.white_patches = chosen_white_patches
 
 def randomize_white_patches(cat):
     vit_chance = not random.getrandbits(7)
@@ -692,7 +692,7 @@ def randomize_white_patches(cat):
         random.choices(white_list, weights=weights, k=1)[0]
     )
 
-    cat.white_patches.append(chosen_white_patches)
+    cat.white_patches = chosen_white_patches
 
 def init_white_patches(cat):
 
