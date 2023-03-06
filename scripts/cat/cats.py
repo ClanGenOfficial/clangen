@@ -143,11 +143,11 @@ class Cat():
     experience_levels_range = {
         "untrained": (0, 0),
         "trainee": (1, 20),
-        "prepared": (21, 40),
-        "competent": (41, 60),
-        "proficient": (61, 70),
-        "expert": (71, 80),
-        "master": (81, 300)
+        "prepared": (21, 50),
+        "competent": (51, 125),
+        "proficient": (126, 313),
+        "expert": (314, 781),
+        "master": (782, 782)
     }
 
     all_cats: Dict[str, Cat] = {}  # ID: object
@@ -396,15 +396,21 @@ class Cat():
             if self.age in ['kitten']:
                 self.experience = 0
             elif self.age in ['adolescent']:
-                self.experience = randint(0, 19)
+                m = self.moons
+                self.experience = 0
+                while m > Cat.age_moons['adolescent'][0]:
+                    base_ex = 0.6 * random.randint(game.config["ex"]["base_med_app_timeskip_ex"][0],
+                                                   game.config["ex"]["base_med_app_timeskip_ex"][1])
+                    self.experience += base_ex
+                    m -= 1
             elif self.age in ['young adult']:
-                self.experience = randint(10, 40)
+                self.experience = randint(20, 60)
             elif self.age in ['adult']:
-                self.experience = randint(20, 50)
+                self.experience = randint(20, 100)
             elif self.age in ['senior adult']:
-                self.experience = randint(30, 60)
+                self.experience = randint(50, 500)
             elif self.age in ['elder']:
-                self.experience = randint(40, 70)
+                self.experience = randint(100, 700)
             else:
                 self.experience = 0
 

@@ -1288,8 +1288,8 @@ class Events():
                 # No mentor/sick mentor debuff
                 mentor_modifier = 0.6
 
-            print(f"{cat.name} has gained {base_ex * mentor_modifier} EX")
-            cat.experience = base_ex * mentor_modifier
+            cat.experience += base_ex * mentor_modifier
+            print(f"{cat.name} has gained {base_ex * mentor_modifier} EX", cat._experience)
 
     def invite_new_cats(self, cat):
         # ---------------------------------------------------------------------------- #
