@@ -503,6 +503,9 @@ class Clan():
         with open(f'saves/{self.name}clan.json', 'w') as write_file:
             json_string = ujson.dumps(clan_data, indent=4)
             write_file.write(json_string)
+        
+        if os.path.exists(f'saves/{self.name}clan.txt'):
+            os.remove(f'saves/{self.name}clan.txt')
 
         with open('saves/currentclan.txt', 'w') as write_file:
             write_file.write(self.name)
@@ -512,7 +515,7 @@ class Clan():
         elif os.path.exists('saves/' + game.switches['clan_list'][0] + 'clan.txt'):
             self.load_clan_txt()
         else:
-            game.switches['error_message'] = "There was an error loading the clan.txt"
+            game.switches['error_message'] = "There was an error loading the clan.json"
         pass
 
     def load_clan_txt(self):
