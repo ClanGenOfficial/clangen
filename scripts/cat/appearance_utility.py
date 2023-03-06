@@ -621,11 +621,10 @@ def white_patches_inheritance(cat, parents: tuple):
     vit_chance = not random.getrandbits(game.config["cat_generation"]["vit_chance"])
     if vit_chance:
         cat.vitiligo = choice(vit)
-        return
     
     # dealing with points
     is_pointed = False
-    if parents.white_patches in point_markings:
+    if parents.points:
         is_pointed = choice([True, False])
     if is_pointed:
         cat.points = choice(point_markings)
@@ -667,18 +666,22 @@ def white_patches_inheritance(cat, parents: tuple):
         if not any(weights):
             weights = [2, 1, 0, 0, 0]
 
-
     chosen_white_patches = choice(
         random.choices(white_list, weights=weights, k=1)[0]
     )
 
     cat.white_patches = chosen_white_patches
+    if cat.points and cat.white_patches in [high_white, mostly_white, 'FULLWHITE']:
+        cat.points = None
 
 def randomize_white_patches(cat):
-    vit_chance = not random.getrandbits(7)
+    vit_chance = not random.getrandbits(game.config["cat_generation"]["vit_chance"])
     if vit_chance:
-        cat.white_patches.append(choice(vit))
-        return
+        cat.vitiligo = choice(vit)
+    
+    point_chance = not random.getrandbits(game.config["cat_generation"]["random_point_chance"])
+    if point_chance:
+        cat.points = choice(point_markings)
 
     # Adjust weights for torties, since they can't have anything greater than mid_white:
     if cat.pelt.name == "Tortie":
@@ -693,6 +696,9 @@ def randomize_white_patches(cat):
     )
 
     cat.white_patches = chosen_white_patches
+
+    if cat.points and cat.white_patches in [high_white, mostly_white, 'FULLWHITE']:
+        cat.points = None
 
 def init_white_patches(cat):
 

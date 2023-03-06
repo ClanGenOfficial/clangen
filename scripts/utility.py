@@ -604,7 +604,7 @@ def update_sprite(cat):
             new_sprite.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
 
         # draw white patches
-        if cat.white_patches[0] is not None:
+        if cat.white_patches is not None:
             white_patches = sprites.sprites['white' + cat.white_patches + cat_sprite].copy()
 
             # Apply tint to white patches.
@@ -618,9 +618,9 @@ def update_sprite(cat):
 
         # draw vit & points
         if cat.vitiligo:
-            new_sprite.blit(sprites.sprite['white' + cat.vitiligo + cat_sprite], (0, 0))
+            new_sprite.blit(sprites.sprites['white' + cat.vitiligo + cat_sprite], (0, 0))
         if cat.points:
-            new_sprite.blit(sprites.sprite['white' + cat.points + cat_sprite], (0, 0))
+            new_sprite.blit(sprites.sprites['white' + cat.points + cat_sprite], (0, 0))
 
         # draw eyes & scars1
         new_sprite.blit(sprites.sprites['eyes' + cat.eye_colour + cat_sprite], (0, 0))
