@@ -273,7 +273,7 @@ class PatrolScreen(Screens):
                 self.elements["random"].disable()
             if len(self.current_patrol) > 3 or len(self.able_cats) < 3:
                 self.elements['add_three'].disable()
-            if len(self.current_patrol) > 0:
+            if len(self.current_patrol) > 0 or len(self.able_cats) < 6:
                 self.elements['add_six'].disable()
 
                 # Update the availability of the tab buttons
