@@ -257,7 +257,7 @@ class ClanScreen(Screens):
             if first_choices[chosen_den]:
                 pos = choice(first_choices[chosen_den])
                 first_choices[chosen_den].remove(pos)
-                just_pos = pos[0]
+                just_pos = pos[0].copy()
                 if pos not in first_choices[chosen_den]:
                     # Then this is the second cat to be places here, given an offset
 
@@ -269,8 +269,7 @@ class ClanScreen(Screens):
                         just_pos[0] += 15 * choice([-1, 1])
                     if "y" in pos[1]:
                         just_pos[1] += 15
-                    just_pos = tuple(just_pos)
-                return just_pos
+                return tuple(just_pos)
             dens.pop(chosen_index)
             weights.pop(chosen_index)
             if not dens:
@@ -281,7 +280,7 @@ class ClanScreen(Screens):
         # If this code is reached, all position are filled.  Choose any position in the first den
         # checked, apply offsets.
         pos = choice(self.layout[first_chosen_den])
-        just_pos = pos[0]
+        just_pos = pos[0].copy()
         if "x" in pos[1] and random.getrandbits(1):
             just_pos[0] += 15 * choice([-1, 1])
         if "y" in pos[1]:
