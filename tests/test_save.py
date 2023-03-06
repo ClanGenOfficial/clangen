@@ -13,7 +13,7 @@ for i in _tmp:
         num_example_saves += 1
 
 
-@unittest.skipIf(num_example_saves == 0, "No example saves found. Run 'git submodule update --init --recursive' to download example saves")
+@unittest.skipIf(num_example_saves == 0, "No example saves found. Download the contents of https://github.com/ImLvna/clangen-unittest-saves into tests/testSaves to run unittest")
 class LoadSave(unittest.TestCase):
 
     def setUp(self):
@@ -80,7 +80,7 @@ class LoadSave(unittest.TestCase):
 
                 self.assertEqual(old_out, new_out, "Clan list not saved correctly for save " + str(i))
 
-@unittest.skipIf(num_example_saves == 0, "No example saves found. Run 'git submodule update --init --recursive' to download example saves")
+@unittest.skipIf(num_example_saves == 0, "No example saves found. Download the contents of https://github.com/ImLvna/clangen-unittest-saves into tests/testSaves to run unittest")
 class MigrateSave(unittest.TestCase):
     def setUp(self):
         if os.path.exists('saves'):
