@@ -244,7 +244,7 @@ class ClanScreen(Screens):
         self.leaffall_bg = pygame.transform.scale(
             pygame.image.load(all_backgrounds[3]).convert(), (screen_x, screen_y))
 
-    def choose_nonoverlaping_positions(self, first_choices, dens, weights=None):
+    def choose_nonoverlapping_positions(self, first_choices, dens, weights=None):
         if not weights:
             weights = [1] * len(dens)
 
@@ -257,7 +257,19 @@ class ClanScreen(Screens):
             if first_choices[chosen_den]:
                 pos = choice(first_choices[chosen_den])
                 first_choices[chosen_den].remove(pos)
-                return pos
+                just_pos = pos[0].copy()
+                if pos not in first_choices[chosen_den]:
+                    # Then this is the second cat to be places here, given an offset
+
+                    # Offset based on the "tag" in pos[1]. If "y" is in the tag,
+                    # the cat will be offset down. If "x" is in the tag, the behavior depends on
+                    # the presence of the "y" tag. If "y" is not present, always shift the cat left or right
+                    # if it is present, shift the cat left or right 3/4 of the time.
+                    if "x" in pos[1] and ("y" not in pos[1] or random.getrandbits(2)):
+                        just_pos[0] += 15 * choice([-1, 1])
+                    if "y" in pos[1]:
+                        just_pos[1] += 15
+                return tuple(just_pos)
             dens.pop(chosen_index)
             weights.pop(chosen_index)
             if not dens:
@@ -266,45 +278,56 @@ class ClanScreen(Screens):
             chosen_index = random.choices(range(0, len(dens)), weights=weights, k=1)[0]
 
         # If this code is reached, all position are filled.  Choose any position in the first den
-        # checked.
-        return choice(self.layout[first_chosen_den])
+        # checked, apply offsets.
+        pos = choice(self.layout[first_chosen_den])
+        just_pos = pos[0].copy()
+        if "x" in pos[1] and random.getrandbits(1):
+            just_pos[0] += 15 * choice([-1, 1])
+        if "y" in pos[1]:
+            just_pos[1] += 15
+        return tuple(just_pos)
 
     def choose_cat_positions(self):
         """Determines the positions of cat on the clan screen."""
         # These are the first choices. As positions are chosen, they are removed from the options to indicate they are
         # taken.
         first_choices = deepcopy(self.layout)
+
         all_dens = ["nursery place", "leader place", "elder place", "medicine place", "apprentice place",
                     "clearing place", "warrior place"]
 
-        if game.clan.leader and not game.clan.leader.dead and not game.clan.leader.outside:
-            game.clan.leader.placement = self.choose_nonoverlaping_positions(first_choices, all_dens,
-                                                                             [1, 200, 1, 1, 1, 1, 1])
+        # Allow two cat in the same position.
+        for x in all_dens:
+            first_choices[x].extend(first_choices[x])
+
         for x in game.clan.clan_cats:
             if Cat.all_cats[x].dead or Cat.all_cats[x].outside:
                 continue
 
             if Cat.all_cats[x].status in ['apprentice', 'mediator apprentice']:
-                Cat.all_cats[x].placement = self.choose_nonoverlaping_positions(first_choices, all_dens,
-                                                                                [1, 50, 1, 1, 100, 100, 1])
+                Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(first_choices, all_dens,
+                                                                                 [1, 50, 1, 1, 100, 100, 1])
             elif Cat.all_cats[x].status == 'deputy':
-                Cat.all_cats[x].placement = self.choose_nonoverlaping_positions(first_choices, all_dens,
-                                                                                [1, 50, 1, 1, 1, 50, 1])
+                Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(first_choices, all_dens,
+                                                                                 [1, 50, 1, 1, 1, 50, 1])
 
             elif Cat.all_cats[x].status == 'elder':
-                Cat.all_cats[x].placement = self.choose_nonoverlaping_positions(first_choices, all_dens,
-                                                                                [1, 1, 2000, 1, 1, 1, 1])
+                Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(first_choices, all_dens,
+                                                                                 [1, 1, 2000, 1, 1, 1, 1])
             elif Cat.all_cats[x].status == 'kitten':
-                Cat.all_cats[x].placement = self.choose_nonoverlaping_positions(first_choices, all_dens,
-                                                                                [60, 8, 1, 1, 1, 1, 1])
+                Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(first_choices, all_dens,
+                                                                                 [60, 8, 1, 1, 1, 1, 1])
             elif Cat.all_cats[x].status in [
                 'medicine cat apprentice', 'medicine cat'
             ]:
-                Cat.all_cats[x].placement = self.choose_nonoverlaping_positions(first_choices, all_dens,
-                                                                                [20, 20, 20, 400, 1, 1, 1])
+                Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(first_choices, all_dens,
+                                                                                 [20, 20, 20, 400, 1, 1, 1])
             elif Cat.all_cats[x].status in ['warrior', 'mediator']:
-                Cat.all_cats[x].placement = self.choose_nonoverlaping_positions(first_choices, all_dens,
-                                                                                [1, 1, 1, 1, 1, 60, 60])
+                Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(first_choices, all_dens,
+                                                                                 [1, 1, 1, 1, 1, 60, 60])
+            elif Cat.all_cats[x].status == "leader":
+                game.clan.leader.placement = self.choose_nonoverlapping_positions(first_choices, all_dens,
+                                                                                  [1, 200, 1, 1, 1, 1, 1])
 
     def update_buttons_and_text(self):
         if game.switches['saved_clan']:
@@ -925,6 +948,8 @@ class ListScreen(Screens):
         self.filter_rank = None
         self.filter_by_open = None
         self.filter_by_closed = None
+        self.filter_fav = None
+        self.filter_not_fav = None
         self.page_number = None
         self.previous_page_button = None
         self.next_page_button = None
@@ -946,6 +971,20 @@ class ListScreen(Screens):
             elif event.ui_element == self.previous_page_button:
                 self.list_page -= 1
                 self.update_page()
+            elif event.ui_element == self.filter_fav:
+                self.filter_fav.hide()
+                self.filter_not_fav.show()
+                game.sort_fav = False
+                Cat.sort_cats()
+                self.get_living_cats()
+                self.update_search_cats(self.search_bar.get_text())
+            elif event.ui_element == self.filter_not_fav:
+                self.filter_not_fav.hide()
+                self.filter_fav.show()
+                game.sort_fav = True
+                Cat.sort_cats()
+                self.get_living_cats()
+                self.update_search_cats(self.search_bar.get_text())
             elif event.ui_element == self.filter_by_closed:
                 self.filter_by_closed.hide()
                 self.filter_by_open.show()
@@ -1015,6 +1054,15 @@ class ListScreen(Screens):
         self.your_clan_button.disable()
         self.outside_clan_button = UIImageButton(scale(pygame.Rect((298, 270), (68, 68))), "",
                                                  object_id="#outside_clan_button", manager=MANAGER)
+
+        self.filter_fav = UIImageButton(scale(pygame.Rect((390, 275), (56, 56))), "",
+                                        object_id="#fav_star",
+                                        manager=MANAGER)
+        self.filter_fav.hide()
+        self.filter_not_fav = UIImageButton(scale(pygame.Rect((390, 275), (56, 56))), "",
+                                            object_id="#not_fav_star", manager=MANAGER,
+                                        tool_tip_text='list favorite cats first')
+
         self.next_page_button = UIImageButton(scale(pygame.Rect((912, 1190), (68, 68))), "",
                                               object_id="#arrow_right_button"
                                               , manager=MANAGER)
@@ -1082,6 +1130,8 @@ class ListScreen(Screens):
         self.filter_rank.kill()
         self.filter_age.kill()
         self.filter_id.kill()
+        self.filter_fav.kill()
+        self.filter_not_fav.kill()
 
         # Remove currently displayed cats and cat names.
         for cat in self.display_cats:
