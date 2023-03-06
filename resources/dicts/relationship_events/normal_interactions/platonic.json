@@ -517,7 +517,7 @@
 		},
 		{
 			"id": "platonic_de_low2",
-			"intensity": "low",
+			"intensity": "medium",
 			"interactions": [
 				"m_c and r_c had an argument about who should get new nest material."
 			],
@@ -527,6 +527,7 @@
 		},
 		{
 			"id": "platonic_de_med1",
+			"intensity": "high",
 			"interactions": [
 				"m_c caught r_c complaining about them behind their back."
 			]

@@ -300,7 +300,7 @@ class Relation_Events():
 
     def welcome_new_cats(self, new_cats = None):
         """This function will handle the welcome of new cats, if there are new cats in the clan."""
-        if new_cats is None or len(self.new_cats) <= 0:
+        if new_cats is None or len(new_cats) <= 0:
             return
 
         for new_cat in new_cats:
@@ -961,6 +961,8 @@ class Relation_Events():
 
             # create and update relationships
             for cat_id in clan.clan_cats:
+                if cat_id == kit.ID:
+                    continue
                 the_cat = Cat.all_cats.get(cat_id)
                 if the_cat.dead or the_cat.outside:
                     continue
@@ -972,6 +974,12 @@ class Relation_Events():
                     start_relation.admiration = 15 + y
                     start_relation.trust = 10 + y
                     the_cat.relationships[kit.ID] = start_relation
+                    y = random.randrange(0, 20)
+                    start_relation = Relationship(kit, the_cat, False, True)
+                    start_relation.platonic_like += 30 + y
+                    start_relation.comfortable = 10 + y
+                    start_relation.admiration = 15 + y
+                    start_relation.trust = 10 + y
                     kit.relationships[the_cat.ID] = start_relation
                 else:
                     the_cat.relationships[kit.ID] = Relationship(the_cat, kit)
@@ -984,6 +992,14 @@ class Relation_Events():
         for kitten in all_kitten:
             add_siblings_to_cat(kitten, cat_class)
             add_children_to_cat(kitten, cat_class)
+            # update/buff the relationship towards the siblings
+            for second_kitten in all_kitten:
+                y = random.randrange(0, 10)
+                if second_kitten.ID == kitten.ID:
+                    continue
+                kitten.relationships[second_kitten.ID].platonic_like += 20 + y
+                kitten.relationships[second_kitten.ID].comfortable += 10 + y
+                kitten.relationships[second_kitten.ID].trust += 10 + y
 
         return all_kitten
 

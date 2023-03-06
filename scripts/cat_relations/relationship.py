@@ -529,14 +529,13 @@ class Relationship():
         season = str(game.clan.current_season).casefold()
         biome = str(game.clan.biome).casefold()
 
-        #in_de_crease = "increase"
-        #intensity = "high"
-        #rel_type = "romantic"
-
         all_interactions = NEUTRAL_INTERACTIONS.copy()
         if in_de_crease != "neutral":
             all_interactions = MASTER_DICT[rel_type][in_de_crease].copy()
-        possible_interactions = self.get_relevant_interactions(all_interactions, intensity, biome, season)
+            possible_interactions = self.get_relevant_interactions(all_interactions, intensity, biome, season)
+        else:
+            possible_interactions = all_interactions
+
         if len(possible_interactions) <= 0:
             print("ERROR: No interaction with this conditions. ", rel_type, in_de_crease, intensity)
             possible_interactions = [
@@ -774,6 +773,9 @@ class Relationship():
         # if there are no loaded interactions, return empty list
         if not interactions:
             return filtered
+        
+
+
         for inter in interactions:
             in_tags = list(filter(lambda biome: biome in _biome, inter.biome))
             if len(in_tags) > 0:
