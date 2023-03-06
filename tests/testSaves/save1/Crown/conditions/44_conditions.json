@@ -1,0 +1,20 @@
+{
+    "injuries": {
+        "cat bite": {
+            "severity": "major",
+            "mortality": 60,
+            "duration": 2,
+            "moons_with": 1,
+            "illness_infectiousness": [],
+            "risks": [
+                {
+                    "name": "an infected wound",
+                    "chance": 5
+                }
+            ],
+            "complication": null,
+            "cause_permanent": [],
+            "event_triggered": false
+        }
+    }
+}

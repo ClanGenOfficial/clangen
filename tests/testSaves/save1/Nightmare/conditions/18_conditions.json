@@ -1,0 +1,23 @@
+{
+    "injuries": {
+        "broken bone": {
+            "severity": "severe",
+            "mortality": 91,
+            "duration": 5,
+            "moons_with": 3,
+            "illness_infectiousness": [],
+            "risks": [
+                {
+                    "name": "an infected wound",
+                    "chance": 5
+                }
+            ],
+            "complication": null,
+            "cause_permanent": [
+                "weak leg",
+                "twisted leg"
+            ],
+            "event_triggered": false
+        }
+    }
+}

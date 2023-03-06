@@ -1,0 +1,516 @@
+[
+    {
+        "cat_from_id": "369",
+        "cat_to_id": "370",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 11,
+        "dislike": 0,
+        "admiration": 19,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 11,
+        "log": [
+            "Flintpaw is soothing Mothflight's irrational thoughts. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "369",
+        "cat_to_id": "371",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 71,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 6,
+        "trust": 0,
+        "log": [
+            "Flintwhisker had a disagreement with Driftstar while on patrol earlier. (negative effect)",
+            "Flintwhisker had a fight with Driftstar. (negative effect)",
+            "Flintwhisker had a disagreement with Driftstar while on patrol earlier. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "369",
+        "cat_to_id": "372",
+        "mates": false,
+        "family": false,
+        "romantic_love": 15,
+        "platonic_like": 48,
+        "dislike": 7,
+        "admiration": 6,
+        "comfortable": 44,
+        "jealousy": 0,
+        "trust": 23,
+        "log": [
+            "Flintwhisker is sparring with Harespring. (positive effect)",
+            "Flintwhisker never realized how much they love spending time with Harespring. (positive effect)",
+            "Flintwhisker bickered about something trivial with Harespring. (small negative effect)",
+            "Flintwhisker is helping Harespring calm down. (positive effect)",
+            "Flintwhisker is frustrated that Harespring won't take their duties more seriously. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "369",
+        "cat_to_id": "373",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 42,
+        "dislike": 4,
+        "admiration": 9,
+        "comfortable": 36,
+        "jealousy": 0,
+        "trust": 6,
+        "log": [
+            "Flintwhisker is telling a story to Blacksoul. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "369",
+        "cat_to_id": "374",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 48,
+        "dislike": 10,
+        "admiration": 22,
+        "comfortable": 61,
+        "jealousy": 0,
+        "trust": 22,
+        "log": [
+            "Flintpaw is sharing prey with Finleap. (positive effect)",
+            "Flintwhisker appreciates how Hookleap always seems to ask how they're doing. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "369",
+        "cat_to_id": "375",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 7,
+        "dislike": 0,
+        "admiration": 16,
+        "comfortable": 25,
+        "jealousy": 0,
+        "trust": 8,
+        "log": [
+            "Flintpaw appreciates how Brightsong always seems to ask how they're doing. (positive effect)",
+            "Flintwhisker prays that they aren't on patrol with Brightsong tomorrow. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "369",
+        "cat_to_id": "377",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 31,
+        "dislike": 0,
+        "admiration": 18,
+        "comfortable": 23,
+        "jealousy": 10,
+        "trust": 0,
+        "log": [
+            "Flintwhisker has noticed Peppernose isn't doing a lot of work lately. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "369",
+        "cat_to_id": "378",
+        "mates": false,
+        "family": false,
+        "romantic_love": 22,
+        "platonic_like": 0,
+        "dislike": 59,
+        "admiration": 6,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Basilkit heard an ugly rumor about Redkit. (negative effect)",
+            "Flintkit bickered about something trivial with Redkit. (small negative effect)",
+            "Flintpaw gave a pretty flower they found to Redpaw. (positive effect)",
+            "Flintpaw just noticed how beautiful Redpaw's eyes are. (small positive effect)",
+            "Flintwhisker had a huge argument with Redflare. (negative effect)",
+            "Flintwhisker bickered about something trivial with Redflare. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "369",
+        "cat_to_id": "379",
+        "mates": false,
+        "family": false,
+        "romantic_love": 17,
+        "platonic_like": 68,
+        "dislike": 15,
+        "admiration": 37,
+        "comfortable": 64,
+        "jealousy": 15,
+        "trust": 43,
+        "log": [
+            "Flintpaw is helping Baysong calm down. (positive effect)",
+            "Flintwhisker enjoys the time with Baysong and feels secure. (positive effect)",
+            "Flintwhisker is jealous that Baysong got to go to the last gathering. (negative effect)",
+            "Flintwhisker had a huge argument with Baysong. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "369",
+        "cat_to_id": "380",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 21,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 15,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "369",
+        "cat_to_id": "1",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 18,
+        "dislike": 18,
+        "admiration": 0,
+        "comfortable": 18,
+        "jealousy": 0,
+        "trust": 6,
+        "log": [
+            "Flintkit had a fight with Floodstep. (negative effect)",
+            "Flintwhisker prays that they aren't on patrol with Floodstep tomorrow. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "369",
+        "cat_to_id": "2",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 3,
+        "dislike": 15,
+        "admiration": 0,
+        "comfortable": 15,
+        "jealousy": 0,
+        "trust": 6,
+        "log": [
+            "Flintwhisker thought of Stripeswish on the last patrol and took a rare herb with them. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "369",
+        "cat_to_id": "3",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 5,
+        "dislike": 0,
+        "admiration": 5,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 10,
+        "log": [
+            "Flintwhisker is telling Ashfire about a hunting technique. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "369",
+        "cat_to_id": "4",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 12,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Flintwhisker had a fight with Bigpaw. (negative effect)",
+            "Flintwhisker called Bigfur the wrong name. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "369",
+        "cat_to_id": "5",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 21,
+        "dislike": 9,
+        "admiration": 0,
+        "comfortable": 21,
+        "jealousy": 4,
+        "trust": 6,
+        "log": [
+            "Flintwhisker thinks that the prey Briarkit is biting into on the other side of camp looks delicious. (small negative effect)",
+            "Flintwhisker had a fight with Briarleg. (negative effect)",
+            "Flintwhisker is telling a story to Briarleg. (positive effect)",
+            "Flintwhisker is giving Briarleg a task. (neutral effect)"
+        ]
+    },
+    {
+        "cat_from_id": "369",
+        "cat_to_id": "6",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "369",
+        "cat_to_id": "7",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Flintwhisker said something that rubbed Icepaw the wrong way. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "369",
+        "cat_to_id": "8",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 12,
+        "dislike": 0,
+        "admiration": 5,
+        "comfortable": 11,
+        "jealousy": 0,
+        "trust": 5,
+        "log": [
+            "Flintwhisker relaxing with Owleye. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "369",
+        "cat_to_id": "9",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "369",
+        "cat_to_id": "10",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 6,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 6,
+        "log": [
+            "Flintwhisker appreciates how Stonekit always seems to ask how they're doing. (positive effect)",
+            "Flintwhisker heard an ugly rumor about Stonepaw. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "369",
+        "cat_to_id": "11",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Flintwhisker called Russetpaw the wrong name. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "369",
+        "cat_to_id": "12",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 15,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 15,
+        "jealousy": 0,
+        "trust": 6,
+        "log": [
+            "Flintwhisker is telling a story to Flowerspots. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "369",
+        "cat_to_id": "13",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Flintwhisker said something that rubbed Blackears the wrong way. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "369",
+        "cat_to_id": "14",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "369",
+        "cat_to_id": "15",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Flintwhisker wishes Dapplepaw would take things more seriously. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "369",
+        "cat_to_id": "16",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Flintwhisker caught Burnkit in a lie. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "369",
+        "cat_to_id": "17",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "369",
+        "cat_to_id": "18",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "369",
+        "cat_to_id": "19",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "369",
+        "cat_to_id": "20",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "369",
+        "cat_to_id": "21",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "369",
+        "cat_to_id": "22",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    }
+]

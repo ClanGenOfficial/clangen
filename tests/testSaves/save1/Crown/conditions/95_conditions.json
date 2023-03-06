@@ -1,0 +1,25 @@
+{
+    "injuries": {
+        "recovering from birth": {
+            "severity": "major",
+            "mortality": 0,
+            "duration": 3,
+            "moons_with": 1,
+            "illness_infectiousness": [],
+            "risks": [
+                {
+                    "name": "an infected wound",
+                    "chance": 15
+                }
+            ],
+            "complication": null,
+            "cause_permanent": [
+                "oak_leaves",
+                "juniper",
+                "ragwort",
+                "moss"
+            ],
+            "event_triggered": false
+        }
+    }
+}

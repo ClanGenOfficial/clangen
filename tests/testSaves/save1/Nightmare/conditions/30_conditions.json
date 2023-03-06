@@ -1,0 +1,29 @@
+{
+    "injuries": {
+        "rat bite": {
+            "severity": "major",
+            "mortality": 60,
+            "duration": 1,
+            "moons_with": 1,
+            "illness_infectiousness": [
+                {
+                    "name": "whitecough",
+                    "lower_by": 3
+                }
+            ],
+            "risks": [
+                {
+                    "name": "an infected wound",
+                    "chance": 5
+                },
+                {
+                    "name": "a festering wound",
+                    "chance": 5
+                }
+            ],
+            "complication": null,
+            "cause_permanent": [],
+            "event_triggered": false
+        }
+    }
+}

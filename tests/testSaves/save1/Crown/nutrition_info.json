@@ -1,0 +1,832 @@
+{
+    "5": {
+        "max_score": 3.0,
+        "current_score": 3.0,
+        "percentage": 100.0
+    },
+    "7": {
+        "max_score": 2.0999999999999996,
+        "current_score": 2.0999999999999996,
+        "percentage": 100.0
+    },
+    "10": {
+        "max_score": 3.0,
+        "current_score": 3.0,
+        "percentage": 100.0
+    },
+    "13": {
+        "max_score": 3.0,
+        "current_score": 3.0,
+        "percentage": 100.0
+    },
+    "15": {
+        "max_score": 3.0,
+        "current_score": 3.0,
+        "percentage": 100.0
+    },
+    "17": {
+        "max_score": 3.0,
+        "current_score": 3.0,
+        "percentage": 100.0
+    },
+    "19": {
+        "max_score": 3.0,
+        "current_score": 3.0,
+        "percentage": 100.0
+    },
+    "21": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "23": {
+        "max_score": 2.0999999999999996,
+        "current_score": 2.0999999999999996,
+        "percentage": 100.0
+    },
+    "24": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "25": {
+        "max_score": 2.0999999999999996,
+        "current_score": 2.0999999999999996,
+        "percentage": 100.0
+    },
+    "26": {
+        "max_score": 3.0,
+        "current_score": 3.0,
+        "percentage": 100.0
+    },
+    "27": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "28": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "29": {
+        "max_score": 3.0,
+        "current_score": 3.0,
+        "percentage": 100.0
+    },
+    "33": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "34": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "38": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "40": {
+        "max_score": 3.0,
+        "current_score": 3.0,
+        "percentage": 100.0
+    },
+    "41": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "43": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "44": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "45": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "46": {
+        "max_score": 3.0,
+        "current_score": 3.0,
+        "percentage": 100.0
+    },
+    "48": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "50": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "51": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "52": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "54": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "56": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "62": {
+        "max_score": 3.0,
+        "current_score": 3.0,
+        "percentage": 100.0
+    },
+    "65": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "68": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "70": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "71": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "74": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "77": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "78": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "79": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "81": {
+        "max_score": 3.0,
+        "current_score": 3.0,
+        "percentage": 100.0
+    },
+    "82": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "83": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "84": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "85": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "86": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "87": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "88": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "89": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "90": {
+        "max_score": 2.0999999999999996,
+        "current_score": 2.0999999999999996,
+        "percentage": 100.0
+    },
+    "92": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "94": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "95": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "97": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "98": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "99": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "100": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "101": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "102": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "103": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "104": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "106": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "107": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "108": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "109": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "110": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "111": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "112": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "113": {
+        "max_score": 3,
+        "current_score": 3,
+        "percentage": 100.0
+    },
+    "114": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "116": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "117": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "119": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "120": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "121": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "122": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "123": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "124": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "125": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "126": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "127": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "128": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "129": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "131": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "132": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "133": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "134": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "135": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "136": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "137": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "139": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "140": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "142": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "143": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "144": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "145": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "146": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "147": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "148": {
+        "max_score": 6,
+        "current_score": 6,
+        "percentage": 100.0
+    },
+    "149": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "152": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "153": {
+        "max_score": 6,
+        "current_score": 6,
+        "percentage": 100.0
+    },
+    "154": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "155": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "156": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "157": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "158": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "159": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "160": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "161": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "162": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "163": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "164": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "165": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "166": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "167": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "168": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "169": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "170": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "171": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "172": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "173": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "174": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "175": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "176": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "177": {
+        "max_score": 4.5,
+        "current_score": 4.5,
+        "percentage": 100.0
+    },
+    "178": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "179": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "180": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "181": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "182": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "184": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "185": {
+        "max_score": 6,
+        "current_score": 6,
+        "percentage": 100.0
+    },
+    "186": {
+        "max_score": 4.5,
+        "current_score": 4.5,
+        "percentage": 100.0
+    },
+    "187": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "188": {
+        "max_score": 4.5,
+        "current_score": 4.5,
+        "percentage": 100.0
+    },
+    "189": {
+        "max_score": 4.5,
+        "current_score": 4.5,
+        "percentage": 100.0
+    },
+    "190": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "191": {
+        "max_score": 4.5,
+        "current_score": 4.5,
+        "percentage": 100.0
+    },
+    "193": {
+        "max_score": 4.5,
+        "current_score": 4.5,
+        "percentage": 100.0
+    },
+    "194": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "195": {
+        "max_score": 4.5,
+        "current_score": 4.5,
+        "percentage": 100.0
+    },
+    "196": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "197": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "199": {
+        "max_score": 4.5,
+        "current_score": 4.5,
+        "percentage": 100.0
+    },
+    "200": {
+        "max_score": 4.5,
+        "current_score": 4.5,
+        "percentage": 100.0
+    },
+    "201": {
+        "max_score": 4.5,
+        "current_score": 4.5,
+        "percentage": 100.0
+    },
+    "202": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "203": {
+        "max_score": 1.0,
+        "current_score": 1.0,
+        "percentage": 100.0
+    },
+    "204": {
+        "max_score": 1.0,
+        "current_score": 1.0,
+        "percentage": 100.0
+    },
+    "205": {
+        "max_score": 1.0,
+        "current_score": 1.0,
+        "percentage": 100.0
+    },
+    "206": {
+        "max_score": 4.5,
+        "current_score": 4.5,
+        "percentage": 100.0
+    },
+    "207": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "208": {
+        "max_score": 1.0,
+        "current_score": 1.0,
+        "percentage": 100.0
+    },
+    "209": {
+        "max_score": 1.0,
+        "current_score": 1.0,
+        "percentage": 100.0
+    },
+    "210": {
+        "max_score": 1.0,
+        "current_score": 1.0,
+        "percentage": 100.0
+    },
+    "211": {
+        "max_score": 6,
+        "current_score": 6,
+        "percentage": 100.0
+    },
+    "212": {
+        "max_score": 4.5,
+        "current_score": 4.5,
+        "percentage": 100.0
+    },
+    "213": {
+        "max_score": 4.5,
+        "current_score": 4.5,
+        "percentage": 100.0
+    },
+    "214": {
+        "max_score": 1.0,
+        "current_score": 1.0,
+        "percentage": 100.0
+    },
+    "215": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "217": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "218": {
+        "max_score": 4.5,
+        "current_score": 4.5,
+        "percentage": 100.0
+    },
+    "219": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "220": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "221": {
+        "max_score": 1.0,
+        "current_score": 1.0,
+        "percentage": 100.0
+    },
+    "222": {
+        "max_score": 1.0,
+        "current_score": 1.0,
+        "percentage": 100.0
+    }
+}

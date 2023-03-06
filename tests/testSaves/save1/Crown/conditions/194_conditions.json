@@ -1,0 +1,18 @@
+{
+    "illnesses": {
+        "heat exhaustion": {
+            "severity": "major",
+            "mortality": 0,
+            "infectiousness": 0,
+            "duration": 1,
+            "moons_with": 1,
+            "risks": [
+                {
+                    "name": "heat stroke",
+                    "chance": 5
+                }
+            ],
+            "event_triggered": false
+        }
+    }
+}

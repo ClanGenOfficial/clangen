@@ -1,0 +1,46 @@
+{
+    "injuries": {
+        "mangled leg": {
+            "severity": "severe",
+            "mortality": 60,
+            "duration": 3,
+            "moons_with": 1,
+            "illness_infectiousness": [],
+            "risks": [
+                {
+                    "name": "an infected wound",
+                    "chance": 5
+                }
+            ],
+            "complication": null,
+            "cause_permanent": [
+                "lost a leg",
+                "weak leg",
+                "twisted leg"
+            ],
+            "event_triggered": false
+        }
+    },
+    "permanent conditions": {
+        "weak leg": {
+            "severity": "minor",
+            "born_with": false,
+            "moons_until": 0,
+            "moons_with": 35,
+            "mortality": 0,
+            "illness_infectiousness": [],
+            "risks": [
+                {
+                    "name": "sore",
+                    "chance": 119
+                },
+                {
+                    "name": "joint pain",
+                    "chance": 139
+                }
+            ],
+            "complication": null,
+            "event_triggered": false
+        }
+    }
+}

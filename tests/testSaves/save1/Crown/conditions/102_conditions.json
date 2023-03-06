@@ -1,0 +1,20 @@
+{
+    "permanent conditions": {
+        "failing eyesight": {
+            "severity": "major",
+            "born_with": false,
+            "moons_until": 0,
+            "moons_with": 50,
+            "mortality": 0,
+            "illness_infectiousness": [],
+            "risks": [
+                {
+                    "name": "blind",
+                    "chance": 50
+                }
+            ],
+            "complication": null,
+            "event_triggered": false
+        }
+    }
+}

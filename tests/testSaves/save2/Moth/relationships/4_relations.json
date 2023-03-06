@@ -1,0 +1,150 @@
+[
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "1",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 14,
+        "dislike": 0,
+        "admiration": 7,
+        "comfortable": 21,
+        "jealousy": 0,
+        "trust": 13,
+        "log": []
+    },
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "2",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 10,
+        "dislike": 0,
+        "admiration": 6,
+        "comfortable": 19,
+        "jealousy": 0,
+        "trust": 13,
+        "log": []
+    },
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "3",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 10,
+        "dislike": 0,
+        "admiration": 16,
+        "comfortable": 7,
+        "jealousy": 0,
+        "trust": 5,
+        "log": [
+            "Dappledbrook chats with Tornpaw while grabbing something to eat. (small positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "6",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 15,
+        "dislike": 8,
+        "admiration": 5,
+        "comfortable": 5,
+        "jealousy": 0,
+        "trust": 14,
+        "log": []
+    },
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "7",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 35,
+        "dislike": 8,
+        "admiration": 14,
+        "comfortable": 2,
+        "jealousy": 0,
+        "trust": 15,
+        "log": [
+            "Dappledbrook bristles after being scolded by Flickerkit. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "9",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 35,
+        "dislike": 0,
+        "admiration": 18,
+        "comfortable": 24,
+        "jealousy": 0,
+        "trust": 7,
+        "log": []
+    },
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "11",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 1,
+        "dislike": 0,
+        "admiration": 14,
+        "comfortable": 16,
+        "jealousy": 0,
+        "trust": 12,
+        "log": [
+            "Dappledbrook said something that rubbed Aspensong the wrong way. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "12",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 13,
+        "dislike": 0,
+        "admiration": 16,
+        "comfortable": 41,
+        "jealousy": 0,
+        "trust": 14,
+        "log": []
+    },
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "13",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 29,
+        "dislike": 0,
+        "admiration": 19,
+        "comfortable": 23,
+        "jealousy": 0,
+        "trust": 12,
+        "log": []
+    },
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "5",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 8,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Dappledbrook quickly apologizes after bumping into Emifeather. They have a small laugh about it. (small positive effect)"
+        ]
+    }
+]

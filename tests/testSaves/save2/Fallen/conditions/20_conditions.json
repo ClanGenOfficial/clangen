@@ -1,0 +1,20 @@
+{
+    "injuries": {
+        "claw-wound": {
+            "severity": "major",
+            "mortality": 50,
+            "duration": 1,
+            "moons_with": 2,
+            "illness_infectiousness": [],
+            "risks": [
+                {
+                    "name": "an infected wound",
+                    "chance": 14
+                }
+            ],
+            "complication": null,
+            "cause_permanent": [],
+            "event_triggered": false
+        }
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "permanent conditions": {
+        "twisted leg": {
+            "severity": "major",
+            "born_with": false,
+            "moons_until": 0,
+            "moons_with": 17,
+            "mortality": 0,
+            "illness_infectiousness": [],
+            "risks": [
+                {
+                    "name": "sore",
+                    "chance": 64
+                },
+                {
+                    "name": "joint pain",
+                    "chance": 84
+                }
+            ],
+            "complication": null,
+            "event_triggered": false
+        }
+    }
+}

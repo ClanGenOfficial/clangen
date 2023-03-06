@@ -1,0 +1,26 @@
+no gendered breeding:True
+text size:0
+no unknown fathers:True
+dark mode:True
+backgrounds:True
+autosave:True
+disasters:True
+retirement:False
+language:english
+affair:True
+shaders:True
+hotkey display:False
+random relation:True
+show dead relation:False
+show empty relation:False
+romantic with former mentor:True
+game_mode:expanded
+deputy:True
+den labels:True
+fading:True
+save_faded_copy:False
+favorite sub tab:None
+gore:True
+first_cousin_mates:False
+become_mediator:True
+fullscreen:True

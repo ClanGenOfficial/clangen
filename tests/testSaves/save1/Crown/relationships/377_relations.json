@@ -1,0 +1,290 @@
+[
+    {
+        "cat_from_id": "377",
+        "cat_to_id": "369",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 11,
+        "dislike": 0,
+        "admiration": 10,
+        "comfortable": 2,
+        "jealousy": 0,
+        "trust": 15,
+        "log": []
+    },
+    {
+        "cat_from_id": "377",
+        "cat_to_id": "370",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 23,
+        "dislike": 7,
+        "admiration": 7,
+        "comfortable": 36,
+        "jealousy": 0,
+        "trust": 9,
+        "log": [
+            "Peppernose appreciates how Mothflight always seems to ask how they're doing. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "377",
+        "cat_to_id": "371",
+        "mates": true,
+        "family": false,
+        "romantic_love": 45,
+        "platonic_like": 90,
+        "dislike": 0,
+        "admiration": 33,
+        "comfortable": 78,
+        "jealousy": 0,
+        "trust": 32,
+        "log": [
+            "Peppernose gave a gift to Driftstar, but they turned up their nose at the offering. (negative effect)",
+            "Peppernose is admiring Driftstar from afar... (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "377",
+        "cat_to_id": "372",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 15,
+        "dislike": 7,
+        "admiration": 9,
+        "comfortable": 22,
+        "jealousy": 0,
+        "trust": 10,
+        "log": [
+            "Peppernose prays that they aren't on patrol with Harespring tomorrow. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "377",
+        "cat_to_id": "373",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 19,
+        "dislike": 12,
+        "admiration": 19,
+        "comfortable": 27,
+        "jealousy": 0,
+        "trust": 8,
+        "log": [
+            "Peppernose is sharing prey with Blacksoul. (positive effect)",
+            "Peppernose caught Blacksoul complaining about them behind their back. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "377",
+        "cat_to_id": "374",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 16,
+        "comfortable": 9,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "377",
+        "cat_to_id": "375",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 24,
+        "jealousy": 0,
+        "trust": 5,
+        "log": [
+            "Peppernose is frustrated that Brightsong won't take their duties more seriously. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "377",
+        "cat_to_id": "378",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 13,
+        "dislike": 4,
+        "admiration": 9,
+        "comfortable": 23,
+        "jealousy": 4,
+        "trust": 19,
+        "log": [
+            "Peppernose thinks Redkit has a strange sense of humor. (small negative effect)",
+            "Peppernose thinks that the prey Redkit is biting into on the other side of camp looks delicious. (small negative effect)",
+            "Peppernose appreciates how Redpaw always seems to ask how they're doing. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "377",
+        "cat_to_id": "379",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 35,
+        "dislike": 10,
+        "admiration": 18,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 7,
+        "log": [
+            "Peppernose saw Baysong take the last piece of prey from the freshkill pile. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "377",
+        "cat_to_id": "380",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 2,
+        "dislike": 0,
+        "admiration": 3,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 11,
+        "log": []
+    },
+    {
+        "cat_from_id": "377",
+        "cat_to_id": "1",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 6,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 9,
+        "jealousy": 0,
+        "trust": 6,
+        "log": [
+            "Peppernose is sharing prey with Floodstep. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "377",
+        "cat_to_id": "2",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "377",
+        "cat_to_id": "3",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 46,
+        "dislike": 0,
+        "admiration": 31,
+        "comfortable": 26,
+        "jealousy": 0,
+        "trust": 26,
+        "log": []
+    },
+    {
+        "cat_from_id": "377",
+        "cat_to_id": "4",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 70,
+        "dislike": 0,
+        "admiration": 43,
+        "comfortable": 51,
+        "jealousy": 0,
+        "trust": 38,
+        "log": [
+            "Peppernose helps Bigkit work through something difficult that happened to them. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "377",
+        "cat_to_id": "5",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 52,
+        "dislike": 7,
+        "admiration": 37,
+        "comfortable": 28,
+        "jealousy": 0,
+        "trust": 32,
+        "log": []
+    },
+    {
+        "cat_from_id": "377",
+        "cat_to_id": "6",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 44,
+        "dislike": 0,
+        "admiration": 29,
+        "comfortable": 24,
+        "jealousy": 0,
+        "trust": 24,
+        "log": []
+    },
+    {
+        "cat_from_id": "377",
+        "cat_to_id": "7",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 59,
+        "dislike": 0,
+        "admiration": 44,
+        "comfortable": 39,
+        "jealousy": 0,
+        "trust": 39,
+        "log": []
+    },
+    {
+        "cat_from_id": "377",
+        "cat_to_id": "8",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 34,
+        "dislike": 0,
+        "admiration": 19,
+        "comfortable": 14,
+        "jealousy": 0,
+        "trust": 14,
+        "log": []
+    },
+    {
+        "cat_from_id": "377",
+        "cat_to_id": "9",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 51,
+        "dislike": 0,
+        "admiration": 36,
+        "comfortable": 31,
+        "jealousy": 0,
+        "trust": 31,
+        "log": []
+    }
+]

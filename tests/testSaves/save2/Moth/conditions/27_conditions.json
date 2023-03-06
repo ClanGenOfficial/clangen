@@ -1,0 +1,24 @@
+{
+    "permanent conditions": {
+        "lost their tail": {
+            "severity": "minor",
+            "born_with": false,
+            "moons_until": 0,
+            "moons_with": 17,
+            "mortality": 0,
+            "illness_infectiousness": [],
+            "risks": [
+                {
+                    "name": "an infected wound",
+                    "chance": 78
+                },
+                {
+                    "name": "phantom pain",
+                    "chance": 18
+                }
+            ],
+            "complication": null,
+            "event_triggered": false
+        }
+    }
+}

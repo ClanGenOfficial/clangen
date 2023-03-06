@@ -1,0 +1,18 @@
+{
+    "illnesses": {
+        "kittencough": {
+            "severity": "severe",
+            "mortality": 5,
+            "infectiousness": 15,
+            "duration": 2,
+            "moons_with": 1,
+            "risks": [
+                {
+                    "name": "whitecough",
+                    "chance": 10
+                }
+            ],
+            "event_triggered": false
+        }
+    }
+}

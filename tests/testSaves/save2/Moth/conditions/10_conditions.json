@@ -1,0 +1,20 @@
+{
+    "permanent conditions": {
+        "lasting grief": {
+            "severity": "minor",
+            "born_with": false,
+            "moons_until": 0,
+            "moons_with": 32,
+            "mortality": 0,
+            "illness_infectiousness": [],
+            "risks": [
+                {
+                    "name": "grief stricken",
+                    "chance": 77
+                }
+            ],
+            "complication": null,
+            "event_triggered": false
+        }
+    }
+}

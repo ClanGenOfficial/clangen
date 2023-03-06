@@ -1,0 +1,45 @@
+{
+    "illnesses": {
+        "grief stricken": {
+            "severity": "minor",
+            "mortality": 0,
+            "infectiousness": 0,
+            "duration": 2,
+            "moons_with": 1,
+            "risks": [
+                {
+                    "name": "lasting grief",
+                    "chance": 50
+                },
+                {
+                    "name": "constant nightmares",
+                    "chance": 15
+                }
+            ],
+            "event_triggered": false
+        }
+    },
+    "injuries": {
+        "recovering from birth": {
+            "severity": "major",
+            "mortality": 0,
+            "duration": 2,
+            "moons_with": 2,
+            "illness_infectiousness": [],
+            "risks": [
+                {
+                    "name": "an infected wound",
+                    "chance": 15
+                }
+            ],
+            "complication": null,
+            "cause_permanent": [
+                "oak_leaves",
+                "juniper",
+                "ragwort",
+                "moss"
+            ],
+            "event_triggered": false
+        }
+    }
+}

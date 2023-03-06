@@ -1,0 +1,386 @@
+[
+    {
+        "cat_from_id": "18",
+        "cat_to_id": "9",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 16,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Slatepaw called Hailstar the wrong name. (small negative effect)",
+            "Slatespeckle thinks that the prey Hailstar is biting into on the other side of camp looks delicious. (small negative effect)",
+            "Slatespeckle caught Hailstar complaining about them behind their back. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "18",
+        "cat_to_id": "1",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 74,
+        "dislike": 0,
+        "admiration": 43,
+        "comfortable": 63,
+        "jealousy": 5,
+        "trust": 50,
+        "log": [
+            "Slatespeckle is having a wonderful time discussing recent Clan news with Marshtoe. (positive effect)",
+            "Slatespeckle offers to groom a hard-to-reach place for Marshtoe, who thanks them earnestly. (positive effect)",
+            "Slatespeckle helps Marshtoe pick burrs out of their fur. (small positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "18",
+        "cat_to_id": "2",
+        "mates": false,
+        "family": false,
+        "romantic_love": 6,
+        "platonic_like": 20,
+        "dislike": 0,
+        "admiration": 34,
+        "comfortable": 10,
+        "jealousy": 0,
+        "trust": 15,
+        "log": []
+    },
+    {
+        "cat_from_id": "18",
+        "cat_to_id": "3",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "18",
+        "cat_to_id": "4",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 11,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Slatespeckle bristles after being scolded by Appletuft. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "18",
+        "cat_to_id": "6",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 6,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 10,
+        "jealousy": 0,
+        "trust": 1,
+        "log": []
+    },
+    {
+        "cat_from_id": "18",
+        "cat_to_id": "7",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 10,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "18",
+        "cat_to_id": "12",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 6,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 13,
+        "jealousy": 0,
+        "trust": 6,
+        "log": [
+            "Slatepaw is sharing prey with Seafire. (positive effect)",
+            "Slatepaw called Seafire the wrong name. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "18",
+        "cat_to_id": "5",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 10,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Slatepaw caught Coniferjump in a lie. (negative effect)",
+            "Slatespeckle complains about something Coniferjump did. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "18",
+        "cat_to_id": "8",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 22,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 22,
+        "jealousy": 0,
+        "trust": 22,
+        "log": []
+    },
+    {
+        "cat_from_id": "18",
+        "cat_to_id": "10",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "18",
+        "cat_to_id": "11",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 6,
+        "dislike": 8,
+        "admiration": 0,
+        "comfortable": 16,
+        "jealousy": 0,
+        "trust": 6,
+        "log": [
+            "Slatepaw thinks Curlewpaw has a strange sense of humor. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "18",
+        "cat_to_id": "14",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "18",
+        "cat_to_id": "15",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 5,
+        "dislike": 13,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 8,
+        "trust": 0,
+        "log": [
+            "Slatekit thinks Echokit has a strange sense of humor. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "18",
+        "cat_to_id": "16",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 5,
+        "dislike": 13,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Slatekit plays mossball with Shykit. (small positive effect)",
+            "Slatekit sticks their tongue out at Shykit. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "18",
+        "cat_to_id": "17",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 48,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 30,
+        "jealousy": 0,
+        "trust": 20,
+        "log": []
+    },
+    {
+        "cat_from_id": "18",
+        "cat_to_id": "19",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 39,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 29,
+        "jealousy": 0,
+        "trust": 19,
+        "log": []
+    },
+    {
+        "cat_from_id": "18",
+        "cat_to_id": "20",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 79,
+        "dislike": 5,
+        "admiration": 0,
+        "comfortable": 38,
+        "jealousy": 0,
+        "trust": 17,
+        "log": [
+            "Slatekit finds the way Crestedkit acts increasingly uncomfortable. (negative effect)",
+            "Slatekit has a mock battle with Crestedkit. (small positive effect)",
+            "Slatespeckle helps Crestedwave pick burrs out of their fur. (small positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "18",
+        "cat_to_id": "21",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 6,
+        "dislike": 13,
+        "admiration": 0,
+        "comfortable": 16,
+        "jealousy": 0,
+        "trust": 6,
+        "log": [
+            "Slatespeckle caught Flailpaw complaining about them behind their back. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "18",
+        "cat_to_id": "22",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 6,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 13,
+        "jealousy": 0,
+        "trust": 6,
+        "log": [
+            "Slatespeckle shares a joke about a neighboring Clan with Beetlekit. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "18",
+        "cat_to_id": "23",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "18",
+        "cat_to_id": "24",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 6,
+        "dislike": 13,
+        "admiration": 0,
+        "comfortable": 16,
+        "jealousy": 0,
+        "trust": 6,
+        "log": []
+    },
+    {
+        "cat_from_id": "18",
+        "cat_to_id": "25",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 6,
+        "dislike": 11,
+        "admiration": 0,
+        "comfortable": 16,
+        "jealousy": 0,
+        "trust": 6,
+        "log": [
+            "Slatespeckle is letting Skypaw share their troubles with them, hoping they'll feel better afterwards. (positive effect)",
+            "Slatespeckle had a disagreement with Skymist about something or other. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "18",
+        "cat_to_id": "26",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "18",
+        "cat_to_id": "27",
+        "mates": false,
+        "family": false,
+        "romantic_love": 5,
+        "platonic_like": 5,
+        "dislike": 0,
+        "admiration": 5,
+        "comfortable": 5,
+        "jealousy": 0,
+        "trust": 5,
+        "log": []
+    }
+]

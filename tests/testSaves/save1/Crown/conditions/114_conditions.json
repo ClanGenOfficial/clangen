@@ -1,0 +1,39 @@
+{
+    "illnesses": {
+        "an infected wound": {
+            "severity": "major",
+            "mortality": 20,
+            "infectiousness": 0,
+            "duration": 1,
+            "moons_with": 1,
+            "risks": [
+                {
+                    "name": "a festering wound",
+                    "chance": 10
+                }
+            ],
+            "event_triggered": false
+        }
+    },
+    "injuries": {
+        "broken bone": {
+            "severity": "severe",
+            "mortality": 58,
+            "duration": 2,
+            "moons_with": 5,
+            "illness_infectiousness": [],
+            "risks": [
+                {
+                    "name": "an infected wound",
+                    "chance": 12
+                }
+            ],
+            "complication": "infected",
+            "cause_permanent": [
+                "weak leg",
+                "twisted leg"
+            ],
+            "event_triggered": false
+        }
+    }
+}

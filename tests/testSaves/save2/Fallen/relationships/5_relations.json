@@ -1,0 +1,398 @@
+[
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "9",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 13,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "1",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 16,
+        "dislike": 0,
+        "admiration": 5,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Coniferjump quickly apologizes after bumping into Marshtoe. They have a small laugh about it. (small positive effect)",
+            "Coniferjump called Marshtoe the wrong name. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "2",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 16,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 6,
+        "jealousy": 0,
+        "trust": 16,
+        "log": [
+            "Coniferkit said something that rubbed Chestnutbranch the wrong way. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "3",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 11,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "4",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 89,
+        "dislike": 26,
+        "admiration": 9,
+        "comfortable": 49,
+        "jealousy": 0,
+        "trust": 35,
+        "log": [
+            "Coniferkit bristles after being scolded by Appletuft. (small negative effect)",
+            "Coniferkit finds the way Appletuft acts increasingly uncomfortable. (negative effect)",
+            "Coniferpaw offers to groom a hard-to-reach place for Appletuft, who thanks them earnestly. (positive effect)",
+            "Coniferpaw appreciates Appletuft telling them that they had a feather stuck to their face. (small positive effect)",
+            "Coniferjump complains about something Appletuft did. (small negative effect)",
+            "Coniferjump has snuggled up against Appletuft. (positive effect)",
+            "Coniferjump defends Appletuft from a Clanmate's rude remarks. (positive effect)",
+            "Coniferjump saved a piece of fresh-kill that they know is Appletuft's favorite. (small positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "6",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 74,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 47,
+        "jealousy": 0,
+        "trust": 58,
+        "log": [
+            "Coniferkit shares a joke about a neighboring Clan with Pigeonpaw. (positive effect)",
+            "Coniferpaw is talking with Pigeonpaw. (positive effect)",
+            "Coniferjump tells Pigeonspots to get their ailment treated as soon as possible. (small positive effect)",
+            "Coniferjump saw Pigeonspots take the last piece of prey from the fresh-kill pile. (small negative effect)",
+            "Coniferjump is talking with Pigeonspots. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "7",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "12",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 6,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 16,
+        "jealousy": 0,
+        "trust": 6,
+        "log": []
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "8",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 8,
+        "dislike": 16,
+        "admiration": 31,
+        "comfortable": 5,
+        "jealousy": 11,
+        "trust": 10,
+        "log": [
+            "Coniferjump is sparring with Shiveringdrift. (positive effect)",
+            "Coniferjump caught Shiveringdrift complaining about them behind their back. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "10",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 22,
+        "dislike": 35,
+        "admiration": 0,
+        "comfortable": 22,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Coniferkit bristles after being scolded by Pinekit. (small negative effect)",
+            "Coniferpaw had a disagreement with Pinepaw about something or other. (small negative effect)",
+            "Coniferpaw bickered about something trivial with Pinepaw. (small negative effect)",
+            "Coniferjump doesn't think that Pinecrawl has been completely honest lately. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "11",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 16,
+        "dislike": 10,
+        "admiration": 0,
+        "comfortable": 26,
+        "jealousy": 0,
+        "trust": 6,
+        "log": [
+            "Coniferpaw thinks that the prey Curlewkit is biting into on the other side of camp looks delicious. (small negative effect)",
+            "Coniferjump is chiding Curlewpaw for being so reckless. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "14",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "15",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 11,
+        "dislike": 16,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Coniferjump bristles after being scolded by Echopaw. (small negative effect)",
+            "Coniferjump mews congratulations to Echopaw for a job well done. (small positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "16",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "17",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Coniferjump complains about something Pondpaw did. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "18",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 10,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "19",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 6,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 13,
+        "jealousy": 0,
+        "trust": 6,
+        "log": []
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "20",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 11,
+        "dislike": 2,
+        "admiration": 5,
+        "comfortable": 10,
+        "jealousy": 0,
+        "trust": 11,
+        "log": [
+            "Coniferjump had a disagreement with Cresteddrift about something or other. (small negative effect)",
+            "Coniferjump sees that Cresteddrift's piece of prey looks tastier and asks if they'd like to swap. They agree happily, saying they like that one better. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "21",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Coniferjump said something that rubbed Flailspring the wrong way. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "22",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 25,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 25,
+        "log": []
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "23",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "24",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Coniferjump saw Splashkit take the last piece of prey from the fresh-kill pile. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "25",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 6,
+        "dislike": 8,
+        "admiration": 10,
+        "comfortable": 18,
+        "jealousy": 0,
+        "trust": 16,
+        "log": [
+            "Coniferjump reminds Skypaw to grab something from the fresh-kill pile if they haven't already. (positive effect)",
+            "Coniferjump bristles after being scolded by Skypaw. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "26",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "27",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 11,
+        "trust": 0,
+        "log": []
+    }
+]

@@ -1,0 +1,393 @@
+[
+    {
+        "cat_from_id": "11",
+        "cat_to_id": "9",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 46,
+        "dislike": 0,
+        "admiration": 17,
+        "comfortable": 25,
+        "jealousy": 0,
+        "trust": 18,
+        "log": [
+            "Curlewpaw quickly apologizes after bumping into Hailstar. They have a small laugh about it. (small positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "11",
+        "cat_to_id": "1",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Curlewkit finds the way Marshtoe acts increasingly uncomfortable. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "11",
+        "cat_to_id": "2",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 16,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 16,
+        "jealousy": 11,
+        "trust": 6,
+        "log": [
+            "Curlewtuft appreciates how Chestnutbranch always seems to ask how they're doing. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "11",
+        "cat_to_id": "3",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "11",
+        "cat_to_id": "4",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 19,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 19,
+        "jealousy": 0,
+        "trust": 19,
+        "log": [
+            "Curlewtuft appreciates how Appletuft always seems to ask how they're doing. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "11",
+        "cat_to_id": "6",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "11",
+        "cat_to_id": "7",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "11",
+        "cat_to_id": "12",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "11",
+        "cat_to_id": "5",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 16,
+        "dislike": 10,
+        "admiration": 0,
+        "comfortable": 26,
+        "jealousy": 5,
+        "trust": 6,
+        "log": [
+            "Curlewkit bristles after being scolded by Coniferpaw. (small negative effect)",
+            "Curlewtuft is letting Coniferjump share their troubles with them, hoping they'll feel better afterwards. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "11",
+        "cat_to_id": "8",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Curlewtuft saw Shiveringdrift take the last piece of prey from the fresh-kill pile. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "11",
+        "cat_to_id": "10",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 6,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 13,
+        "jealousy": 10,
+        "trust": 6,
+        "log": [
+            "Curlewkit is upset that Pinekit always wins in their games. (negative effect)",
+            "Curlewpaw sees that Pinepaw's piece of prey looks tastier and asks if they'd like to swap. They agree happily, saying they like that one better. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "11",
+        "cat_to_id": "14",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 51,
+        "dislike": 23,
+        "admiration": 0,
+        "comfortable": 58,
+        "jealousy": 0,
+        "trust": 24,
+        "log": [
+            "Curlewpaw caught Mottledpaw complaining about them behind their back. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "11",
+        "cat_to_id": "15",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 36,
+        "dislike": 10,
+        "admiration": 0,
+        "comfortable": 18,
+        "jealousy": 0,
+        "trust": 3,
+        "log": [
+            "Curlewpaw complains about something Echopaw did. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "11",
+        "cat_to_id": "16",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 42,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 41,
+        "jealousy": 0,
+        "trust": 17,
+        "log": [
+            "Curlewkit appreciates how Shykit always seems to ask how they're doing. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "11",
+        "cat_to_id": "17",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Curlewpaw has been listening to Pondpaw talk about how hard training has been. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "11",
+        "cat_to_id": "18",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 6,
+        "dislike": 8,
+        "admiration": 0,
+        "comfortable": 16,
+        "jealousy": 0,
+        "trust": 6,
+        "log": [
+            "Curlewtuft complains about something Slatespeckle did. (small negative effect)",
+            "Curlewtuft complains about something Slatespeckle did. (small negative effect)",
+            "Curlewtuft asks Slatespeckle how they're doing. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "11",
+        "cat_to_id": "19",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 8,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Curlewkit plays mossball with Finchkit. (small positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "11",
+        "cat_to_id": "20",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 6,
+        "dislike": 13,
+        "admiration": 10,
+        "comfortable": 13,
+        "jealousy": 0,
+        "trust": 6,
+        "log": [
+            "Curlewpaw is wowed by how well Crestedpaw did in training today! (positive effect)",
+            "Curlewtuft caught Crestedpaw complaining about them behind their back. (negative effect)",
+            "Curlewtuft called Cresteddrift the wrong name. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "11",
+        "cat_to_id": "21",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 17,
+        "dislike": 13,
+        "admiration": 0,
+        "comfortable": 10,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Curlewtuft had a disagreement with Flailspring while on patrol earlier. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "11",
+        "cat_to_id": "22",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "11",
+        "cat_to_id": "23",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 6,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 13,
+        "jealousy": 0,
+        "trust": 6,
+        "log": [
+            "Curlewtuft appreciates how Lilykit always seems to ask how they're doing. (positive effect)",
+            "Curlewtuft thinks that the prey Lilykit is biting into on the other side of camp looks delicious. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "11",
+        "cat_to_id": "24",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "11",
+        "cat_to_id": "25",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "11",
+        "cat_to_id": "26",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "11",
+        "cat_to_id": "27",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Curlewtuft feels like Fernfur hasn't been paying much attention to them lately. (small negative effect)"
+        ]
+    }
+]

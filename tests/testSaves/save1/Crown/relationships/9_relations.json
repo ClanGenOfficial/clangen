@@ -1,0 +1,321 @@
+[
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "371",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 72,
+        "dislike": 0,
+        "admiration": 36,
+        "comfortable": 52,
+        "jealousy": 0,
+        "trust": 37,
+        "log": [
+            "Pythonfang is telling a story to Driftstar. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "374",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 7,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Pythonkit saw Hookleap take the last piece of prey from the freshkill pile. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "373",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "369",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "370",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "372",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 10,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Pythonpaw saw Harespring take the last piece of prey from the freshkill pile. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "375",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "377",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 40,
+        "dislike": 0,
+        "admiration": 25,
+        "comfortable": 20,
+        "jealousy": 0,
+        "trust": 20,
+        "log": []
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "378",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 18,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 18,
+        "jealousy": 0,
+        "trust": 6,
+        "log": []
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "379",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "1",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 5,
+        "dislike": 7,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 5,
+        "log": []
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "2",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 10,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Pythonfang tells Stripeswish to get their ailment treated as soon as possible. (small positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "3",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 43,
+        "dislike": 4,
+        "admiration": 0,
+        "comfortable": 24,
+        "jealousy": 7,
+        "trust": 11,
+        "log": [
+            "Pythonpaw is sharing prey with Ashpaw. (positive effect)",
+            "Pythonpaw wishes they had Ashpaw's mentor instead. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "4",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 23,
+        "dislike": 7,
+        "admiration": 0,
+        "comfortable": 13,
+        "jealousy": 0,
+        "trust": 3,
+        "log": []
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "5",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 60,
+        "dislike": 19,
+        "admiration": 0,
+        "comfortable": 44,
+        "jealousy": 0,
+        "trust": 8,
+        "log": [
+            "Pythonkit is pretending to ward off foxes with Briarkit. (small positive effect)",
+            "Pythonfang chiding Briarleg for being so reckless. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "6",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 43,
+        "dislike": 3,
+        "admiration": 9,
+        "comfortable": 30,
+        "jealousy": 0,
+        "trust": 11,
+        "log": [
+            "Pythonkit complains about Shadowkit. (neutral effect)",
+            "Pythonpaw caught Shadowpaw complaining about them behind their back. (negative effect)",
+            "Pythonpaw is wowed by how well Shadowpaw did in training today! (positive effect)",
+            "Pythonpaw is telling a story to Shadowpaw. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "7",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 50,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 33,
+        "jealousy": 0,
+        "trust": 23,
+        "log": [
+            "Pythonkit had a friendly argument with Icekit about which prey tastes the best. (small positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "8",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 80,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 48,
+        "jealousy": 0,
+        "trust": 41,
+        "log": [
+            "Pythonkit is pretending to fight off badgers with Owlkit. (small positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "10",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 7,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Pythonfang bickered about something trivial with Stonekit. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "11",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "12",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    }
+]

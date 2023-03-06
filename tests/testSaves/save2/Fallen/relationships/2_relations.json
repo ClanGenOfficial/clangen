@@ -1,0 +1,416 @@
+[
+    {
+        "cat_from_id": "2",
+        "cat_to_id": "1",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 18,
+        "dislike": 13,
+        "admiration": 5,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 18,
+        "log": [
+            "Chestnutbranch is talking with Shiveringtoe. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "2",
+        "cat_to_id": "3",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 40,
+        "dislike": 0,
+        "admiration": 10,
+        "comfortable": 8,
+        "jealousy": 0,
+        "trust": 4,
+        "log": [
+            "Chestnutbranch quickly apologizes after bumping into Bayoukit. They have a small laugh about it. (small positive effect)",
+            "Chestnutbranch complains about something Bayoupaw did. (small negative effect)",
+            "Chestnutbranch complains about something Bayoudapple did. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "2",
+        "cat_to_id": "4",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 22,
+        "dislike": 0,
+        "admiration": 12,
+        "comfortable": 45,
+        "jealousy": 0,
+        "trust": 17,
+        "log": [
+            "Chestnutbranch is letting Appletuft share their troubles with them, hoping they'll feel better afterwards. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "2",
+        "cat_to_id": "6",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 22,
+        "dislike": 16,
+        "admiration": 0,
+        "comfortable": 22,
+        "jealousy": 7,
+        "trust": 1,
+        "log": [
+            "Chestnutbranch is telling a story to Pigeonspots. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "2",
+        "cat_to_id": "7",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 59,
+        "dislike": 16,
+        "admiration": 1,
+        "comfortable": 63,
+        "jealousy": 0,
+        "trust": 1,
+        "log": [
+            "Chestnutbranch basks in the sun with Bitterpaw. (positive effect)",
+            "Chestnutbranch tells a joke that only Bitterpelt can understand. (positive effect)",
+            "Chestnutbranch caught Bitterpelt complaining about them behind their back. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "2",
+        "cat_to_id": "9",
+        "mates": true,
+        "family": false,
+        "romantic_love": 34,
+        "platonic_like": 100,
+        "dislike": 2,
+        "admiration": 14,
+        "comfortable": 100,
+        "jealousy": 11,
+        "trust": 13,
+        "log": [
+            "Chestnutbranch offers to groom a hard-to-reach place for Hailstar, who thanks them earnestly. (positive effect)",
+            "Chestnutbranch stayed up all night thinking of ways to impress Hailstar. (small positive effect)",
+            "Chestnutbranch complains about something Hailstar did. (small negative effect)",
+            "Chestnutbranch caught Hailstar in a lie. (negative effect)",
+            "Chestnutbranch sees that Hailstar's piece of prey looks tastier and asks if they'd like to swap. They agree happily, saying they like that one better. (positive effect)",
+            "Chestnutbranch finds the way Hailstar acts increasingly uncomfortable. (negative effect)",
+            "Chestnutbranch caught Hailstar in a lie. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "2",
+        "cat_to_id": "12",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 71,
+        "dislike": 19,
+        "admiration": 12,
+        "comfortable": 47,
+        "jealousy": 0,
+        "trust": 32,
+        "log": [
+            "Chestnutbranch had a disagreement with Seafire about something or other. (small negative effect)",
+            "Chestnutbranch bickered about something trivial with Seafire. (small negative effect)",
+            "Chestnutbranch shares a joke about a neighboring Clan with Seafire. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "2",
+        "cat_to_id": "13",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 19,
+        "dislike": 0,
+        "admiration": 10,
+        "comfortable": 13,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "2",
+        "cat_to_id": "5",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 16,
+        "dislike": 5,
+        "admiration": 0,
+        "comfortable": 6,
+        "jealousy": 0,
+        "trust": 16,
+        "log": [
+            "Chestnutbranch is talking with Coniferjump. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "2",
+        "cat_to_id": "8",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 19,
+        "dislike": 16,
+        "admiration": 16,
+        "comfortable": 22,
+        "jealousy": 0,
+        "trust": 25,
+        "log": [
+            "Chestnutbranch reminds Shiveringdrift to grab something from the fresh-kill pile if they haven't already. (positive effect)",
+            "Chestnutbranch is talking with Shiveringdrift. (positive effect)",
+            "Chestnutbranch caught Shiveringdrift complaining about them behind their back. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "2",
+        "cat_to_id": "10",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "2",
+        "cat_to_id": "11",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 10,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Chestnutbranch has noticed Curlewtuft isn't doing a lot of work lately. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "2",
+        "cat_to_id": "14",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "2",
+        "cat_to_id": "15",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 5,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Chestnutbranch gives Echopaw an item they may like. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "2",
+        "cat_to_id": "16",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "2",
+        "cat_to_id": "17",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "2",
+        "cat_to_id": "18",
+        "mates": false,
+        "family": false,
+        "romantic_love": 7,
+        "platonic_like": 20,
+        "dislike": 0,
+        "admiration": 28,
+        "comfortable": 10,
+        "jealousy": 0,
+        "trust": 10,
+        "log": [
+            "Chestnutbranch went to Slatespeckle for advice about a dream they had. (small positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "2",
+        "cat_to_id": "19",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "2",
+        "cat_to_id": "20",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 17,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 13,
+        "jealousy": 0,
+        "trust": 6,
+        "log": [
+            "Chestnutbranch appreciates how Crestedkit always seems to ask how they're doing. (positive effect)",
+            "Chestnutbranch mews congratulations to Crestedpaw for a job well done. (small positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "2",
+        "cat_to_id": "21",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 75,
+        "dislike": 8,
+        "admiration": 35,
+        "comfortable": 46,
+        "jealousy": 0,
+        "trust": 36,
+        "log": [
+            "Chestnutbranch bickered about something trivial with Flailpaw. (small negative effect)",
+            "Chestnutbranch swaps favorite prey with Flailpaw. (small positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "2",
+        "cat_to_id": "22",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 8,
+        "dislike": 8,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Chestnutbranch appreciates Beetlepaw telling them that they had a feather stuck to their face. (small positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "2",
+        "cat_to_id": "23",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 8,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Chestnutbranch thinks Lilykit has a strange sense of humor. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "2",
+        "cat_to_id": "24",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 11,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Chestnutbranch is watching over Splashkit. (small positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "2",
+        "cat_to_id": "25",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "2",
+        "cat_to_id": "26",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "2",
+        "cat_to_id": "27",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    }
+]

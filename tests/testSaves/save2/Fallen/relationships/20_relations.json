@@ -1,0 +1,390 @@
+[
+    {
+        "cat_from_id": "20",
+        "cat_to_id": "9",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 8,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Crestedwave appreciates Hailstar telling them that they had a feather stuck to their face. (small positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "20",
+        "cat_to_id": "1",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 62,
+        "dislike": 5,
+        "admiration": 39,
+        "comfortable": 34,
+        "jealousy": 0,
+        "trust": 34,
+        "log": [
+            "Crestedpaw thinks about how lucky they are to have someone like Marshtoe as a friend. (neutral effect)"
+        ]
+    },
+    {
+        "cat_from_id": "20",
+        "cat_to_id": "2",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 11,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "20",
+        "cat_to_id": "3",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "20",
+        "cat_to_id": "4",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 19,
+        "dislike": 2,
+        "admiration": 0,
+        "comfortable": 19,
+        "jealousy": 0,
+        "trust": 6,
+        "log": [
+            "Cresteddrift finds the way Appletuft acts increasingly uncomfortable. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "20",
+        "cat_to_id": "6",
+        "mates": false,
+        "family": false,
+        "romantic_love": 16,
+        "platonic_like": 19,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 19,
+        "jealousy": 0,
+        "trust": 1,
+        "log": [
+            "Cresteddrift wonders what Pigeonspots thinks about mates. (small positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "20",
+        "cat_to_id": "7",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "20",
+        "cat_to_id": "12",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 14,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 16,
+        "jealousy": 0,
+        "trust": 6,
+        "log": []
+    },
+    {
+        "cat_from_id": "20",
+        "cat_to_id": "5",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 11,
+        "dislike": 2,
+        "admiration": 5,
+        "comfortable": 10,
+        "jealousy": 0,
+        "trust": 11,
+        "log": [
+            "Crestedwave quickly apologizes after bumping into Coniferjump. They have a small laugh about it. (small positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "20",
+        "cat_to_id": "8",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 6,
+        "dislike": 8,
+        "admiration": 1,
+        "comfortable": 14,
+        "jealousy": 0,
+        "trust": 7,
+        "log": [
+            "Cresteddrift prays that they aren't on patrol with Shiveringdrift tomorrow. (small negative effect)",
+            "Crestedwave complains about something Shiveringdrift did. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "20",
+        "cat_to_id": "10",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 11,
+        "dislike": 0,
+        "admiration": 5,
+        "comfortable": 13,
+        "jealousy": 0,
+        "trust": 11,
+        "log": [
+            "Crestedpaw keeps leaving all of the boring apprentice tasks for Pinepaw to do by themself. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "20",
+        "cat_to_id": "11",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 6,
+        "dislike": 13,
+        "admiration": 0,
+        "comfortable": 13,
+        "jealousy": 0,
+        "trust": 6,
+        "log": [
+            "Cresteddrift is letting Curlewtuft share their troubles with them, hoping they'll feel better afterwards. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "20",
+        "cat_to_id": "14",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "20",
+        "cat_to_id": "15",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 22,
+        "dislike": 5,
+        "admiration": 0,
+        "comfortable": 19,
+        "jealousy": 0,
+        "trust": 1,
+        "log": [
+            "Crestedkit caught Echokit in a lie. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "20",
+        "cat_to_id": "16",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "20",
+        "cat_to_id": "17",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 67,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 67,
+        "jealousy": 0,
+        "trust": 34,
+        "log": [
+            "Crestedkit is sharing tongues with Pondkit. (positive effect)",
+            "Crestedpaw is having a wonderful time discussing recent Clan news with Pondpaw. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "20",
+        "cat_to_id": "18",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 92,
+        "dislike": 5,
+        "admiration": 0,
+        "comfortable": 41,
+        "jealousy": 0,
+        "trust": 30,
+        "log": [
+            "Crestedkit swaps favorite prey with Slatekit. (small positive effect)",
+            "Crestedkit is racing Slatekit back and forth across the camp clearing. (small positive effect)",
+            "Crestedpaw helps Slatepaw work through something difficult that happened to them. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "20",
+        "cat_to_id": "19",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 30,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 27,
+        "jealousy": 0,
+        "trust": 10,
+        "log": [
+            "Crestedkit sees that Finchkit's piece of prey looks tastier and asks if they'd like to swap. They agree happily, saying they like that one better. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "20",
+        "cat_to_id": "21",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "20",
+        "cat_to_id": "22",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 18,
+        "dislike": 0,
+        "admiration": 5,
+        "comfortable": 39,
+        "jealousy": 0,
+        "trust": 31,
+        "log": [
+            "Cresteddrift is sharing prey with Beetlekit. (positive effect)",
+            "Cresteddrift joins a game as Beetlekit runs up to them yowling that they're the greatest warrior ever and could never be defeated. The kit squeals in delight as Cresteddrift rolls over in surrender. (positive effect)",
+            "Cresteddrift wants to sneak along the border with Beetlekit. (small positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "20",
+        "cat_to_id": "23",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 13,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 6,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Crestedpaw noticed Lilykit was struggling, and offered to help them. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "20",
+        "cat_to_id": "24",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 8,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "20",
+        "cat_to_id": "25",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 13,
+        "trust": 0,
+        "log": [
+            "Cresteddrift is jealous that Skypaw got to go to the last Gathering. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "20",
+        "cat_to_id": "26",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "20",
+        "cat_to_id": "27",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 8,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Cresteddrift had a disagreement with Fernfur about something or other. (small negative effect)"
+        ]
+    }
+]

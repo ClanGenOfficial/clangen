@@ -1,0 +1,334 @@
+[
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "1",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "2",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 6,
+        "dislike": 5,
+        "admiration": 0,
+        "comfortable": 16,
+        "jealousy": 0,
+        "trust": 6,
+        "log": [
+            "Emifeather appreciates how Ganderleaves always seems to ask how they're doing. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "3",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 16,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Emifeather is frustrated that Tornclaw won't take their duties more seriously. (negative effect)",
+            "Emifeather bickered about something trivial with Tornclaw. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "4",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 8,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "6",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 6,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 16,
+        "jealousy": 13,
+        "trust": 6,
+        "log": [
+            "Emifeather is jealous that Raggedpelt got to go to the last Gathering. (negative effect)",
+            "Emifeather basks in the sun with Raggedpelt. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "7",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 8,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "9",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "11",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 13,
+        "dislike": 8,
+        "admiration": 0,
+        "comfortable": 5,
+        "jealousy": 0,
+        "trust": 5,
+        "log": [
+            "Emifeather caught Aspensong complaining about them behind their back. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "12",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 19,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 24,
+        "jealousy": 0,
+        "trust": 24,
+        "log": [
+            "Emifeather basks in the sun with Lappingaster. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "5",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "8",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 8,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 5,
+        "jealousy": 0,
+        "trust": 5,
+        "log": [
+            "Emifeather appreciates Trixiefin telling them that they had a feather stuck to their face. (small positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "10",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 4,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 13,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Emifeather quickly apologizes after bumping into Cedarkit. They have a small laugh about it. (small positive effect)",
+            "Emifeather is sharing prey with Cedarpaw. (positive effect)",
+            "Emifeather caught Cedarpaw in a lie. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "14",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "15",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 5,
+        "jealousy": 0,
+        "trust": 5,
+        "log": []
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "16",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "17",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 20,
+        "jealousy": 0,
+        "trust": 20,
+        "log": []
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "18",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 6,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 18,
+        "jealousy": 0,
+        "trust": 11,
+        "log": [
+            "Emifeather reminds Glowtuft to grab something from the fresh-kill pile if they haven't already. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "19",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "20",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "21",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 5,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 5,
+        "log": []
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "22",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 11,
+        "trust": 0,
+        "log": [
+            "Emifeather thinks that the prey Flutteringclaw is biting into on the other side of camp looks delicious. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "5",
+        "cat_to_id": "23",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 8,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Emifeather is watching over Henkit. (small positive effect)"
+        ]
+    }
+]

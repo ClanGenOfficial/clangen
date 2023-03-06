@@ -1,0 +1,42 @@
+{
+    "injuries": {
+        "thorn in their paw": {
+            "severity": "minor",
+            "mortality": 0,
+            "duration": 1,
+            "moons_with": 1,
+            "illness_infectiousness": [],
+            "risks": [
+                {
+                    "name": "an infected wound",
+                    "chance": 40
+                }
+            ],
+            "complication": null,
+            "cause_permanent": [],
+            "event_triggered": false
+        }
+    },
+    "permanent conditions": {
+        "weak leg": {
+            "severity": "minor",
+            "born_with": false,
+            "moons_until": 0,
+            "moons_with": 9,
+            "mortality": 0,
+            "illness_infectiousness": [],
+            "risks": [
+                {
+                    "name": "sore",
+                    "chance": 30
+                },
+                {
+                    "name": "joint pain",
+                    "chance": 50
+                }
+            ],
+            "complication": null,
+            "event_triggered": false
+        }
+    }
+}

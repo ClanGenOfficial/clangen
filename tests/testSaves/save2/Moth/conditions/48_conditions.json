@@ -1,0 +1,13 @@
+{
+    "illnesses": {
+        "heat stroke": {
+            "severity": "severe",
+            "mortality": 15,
+            "infectiousness": 0,
+            "duration": 1,
+            "moons_with": 1,
+            "risks": [],
+            "event_triggered": false
+        }
+    }
+}

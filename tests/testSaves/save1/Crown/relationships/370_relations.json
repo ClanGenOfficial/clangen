@@ -1,0 +1,300 @@
+[
+    {
+        "cat_from_id": "370",
+        "cat_to_id": "369",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 19,
+        "dislike": 0,
+        "admiration": 17,
+        "comfortable": 31,
+        "jealousy": 0,
+        "trust": 13,
+        "log": []
+    },
+    {
+        "cat_from_id": "370",
+        "cat_to_id": "371",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 23,
+        "dislike": 0,
+        "admiration": 17,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 15,
+        "log": [
+            "Mothflight finds the way Driftstar acts increasingly uncomfortable. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "370",
+        "cat_to_id": "372",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 31,
+        "dislike": 0,
+        "admiration": 17,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 6,
+        "log": [
+            "Mothflight gave a gift to Harespring, but they turned up their nose at the offering. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "370",
+        "cat_to_id": "373",
+        "mates": false,
+        "family": false,
+        "romantic_love": 5,
+        "platonic_like": 26,
+        "dislike": 0,
+        "admiration": 23,
+        "comfortable": 11,
+        "jealousy": 0,
+        "trust": 9,
+        "log": [
+            "Mothflight is talking with Blacksoul. (positive effect)",
+            "Mothflight caught Blacksoul in a lie. (negative effect)",
+            "Mothflight complains about Blacksoul. (neutral effect)"
+        ]
+    },
+    {
+        "cat_from_id": "370",
+        "cat_to_id": "374",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 34,
+        "dislike": 0,
+        "admiration": 14,
+        "comfortable": 6,
+        "jealousy": 0,
+        "trust": 9,
+        "log": []
+    },
+    {
+        "cat_from_id": "370",
+        "cat_to_id": "375",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 14,
+        "dislike": 12,
+        "admiration": 2,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 12,
+        "log": [
+            "Mothflight prays that they aren't on patrol with Brightsong tomorrow. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "370",
+        "cat_to_id": "377",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 25,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 7,
+        "jealousy": 0,
+        "trust": 4,
+        "log": [
+            "Mothflight prays that they aren't on patrol with Peppernose tomorrow. (small negative effect)",
+            "Mothflight is frustrated that Peppernose won't take their duties more seriously. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "370",
+        "cat_to_id": "378",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 19,
+        "dislike": 7,
+        "admiration": 18,
+        "comfortable": 1,
+        "jealousy": 0,
+        "trust": 9,
+        "log": [
+            "Mothflight thinks Redkit has a strange sense of humor. (small negative effect)",
+            "Mothflight is giving Redpaw a task. (neutral effect)"
+        ]
+    },
+    {
+        "cat_from_id": "370",
+        "cat_to_id": "379",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 18,
+        "dislike": 10,
+        "admiration": 5,
+        "comfortable": 25,
+        "jealousy": 4,
+        "trust": 11,
+        "log": [
+            "Mothflight is sharing prey with Baysong. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "370",
+        "cat_to_id": "380",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 18,
+        "dislike": 0,
+        "admiration": 5,
+        "comfortable": 18,
+        "jealousy": 0,
+        "trust": 13,
+        "log": []
+    },
+    {
+        "cat_from_id": "370",
+        "cat_to_id": "1",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 9,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Mothflight finds the way Floodstep acts increasingly uncomfortable. (negative effect)",
+            "Mothflight had a disagreement with Floodstep while on patrol earlier. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "370",
+        "cat_to_id": "2",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 31,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 12,
+        "trust": 0,
+        "log": [
+            "Mothflight is jealous that Stripeswish got to go to the last gathering. (negative effect)",
+            "Mothflight caught Stripeswish complaining about them behind their back. (negative effect)",
+            "Mothflight caught Stripeswish complaining about them behind their back. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "370",
+        "cat_to_id": "3",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Mothflight prays that they aren't on patrol with Ashpaw tomorrow. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "370",
+        "cat_to_id": "4",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "370",
+        "cat_to_id": "5",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 5,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 5,
+        "log": []
+    },
+    {
+        "cat_from_id": "370",
+        "cat_to_id": "6",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "370",
+        "cat_to_id": "7",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Mothflight called Icekit the wrong name. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "370",
+        "cat_to_id": "8",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "370",
+        "cat_to_id": "9",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Mothflight trips over Pythonkit. (small negative effect)",
+            "Mothflight complains about Pythonpaw. (neutral effect)"
+        ]
+    }
+]

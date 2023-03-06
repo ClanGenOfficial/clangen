@@ -1,0 +1,416 @@
+[
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "1",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 7,
+        "dislike": 35,
+        "admiration": 0,
+        "comfortable": 13,
+        "jealousy": 2,
+        "trust": 6,
+        "log": []
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "2",
+        "mates": true,
+        "family": false,
+        "romantic_love": 41,
+        "platonic_like": 100,
+        "dislike": 0,
+        "admiration": 60,
+        "comfortable": 100,
+        "jealousy": 0,
+        "trust": 45,
+        "log": [
+            "Hailstar heard Chestnutbranch discussing potential mates but their name never came up. (negative effect)",
+            "Hailstar caught Chestnutbranch in a lie. (negative effect)",
+            "Hailstar said something that rubbed Chestnutbranch the wrong way. (small negative effect)",
+            "Hailstar tells a joke that only Chestnutbranch can understand. (positive effect)",
+            "Hailstar called Chestnutbranch the wrong name. (small negative effect)",
+            "Hailstar chats with Chestnutbranch about their day. (small positive effect)",
+            "Hailstar helps Chestnutbranch work through something difficult that happened to them. (positive effect)",
+            "Hailstar thinks that the prey Chestnutbranch is biting into on the other side of camp looks delicious. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "3",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 26,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 15,
+        "trust": 0,
+        "log": [
+            "Hailstar caught Bayoupaw complaining about them behind their back. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "4",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 43,
+        "dislike": 10,
+        "admiration": 8,
+        "comfortable": 20,
+        "jealousy": 0,
+        "trust": 28,
+        "log": [
+            "Hailstar has noticed Appletuft isn't doing a lot of work lately. (small negative effect)",
+            "Hailstar is frustrated that Appletuft won't take their duties more seriously. (negative effect)",
+            "Hailstar is sharing prey with Appletuft. (positive effect)",
+            "Hailstar is talking with Appletuft. (positive effect)",
+            "Hailstar had a disagreement with Appletuft about something or other. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "6",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 84,
+        "dislike": 24,
+        "admiration": 14,
+        "comfortable": 100,
+        "jealousy": 0,
+        "trust": 25,
+        "log": [
+            "Hailstar appreciates how Pigeonkit always seems to ask how they're doing. (positive effect)",
+            "Hailstar is telling a story to Pigeonspots. (positive effect)",
+            "Hailstar saved a piece of fresh-kill that they know is Pigeonspots's favorite. (small positive effect)",
+            "Hailstar thinks that Pigeonspots is so much braver than them. (small positive effect)",
+            "Hailstar playfully teases Pigeonspots for missing a catch. (small positive effect)",
+            "Hailstar helps Pigeonspots work through something difficult that happened to them. (positive effect)",
+            "Hailstar said something that rubbed Pigeonspots the wrong way. (small negative effect)",
+            "Hailstar has noticed Pigeonspots isn't doing a lot of work lately. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "7",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 10,
+        "dislike": 18,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 9,
+        "trust": 10,
+        "log": [
+            "Hailstar complains about something Bitterpelt did. (small negative effect)",
+            "Hailstar swaps favorite prey with Bitterpelt. (small positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "12",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 55,
+        "dislike": 13,
+        "admiration": 0,
+        "comfortable": 53,
+        "jealousy": 0,
+        "trust": 4,
+        "log": [
+            "Hailstar finds the way Seafire acts increasingly uncomfortable. (negative effect)",
+            "Hailstar mews congratulations to Seafire for a job well done. (small positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "13",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 3,
+        "dislike": 0,
+        "admiration": 14,
+        "comfortable": 23,
+        "jealousy": 0,
+        "trust": 10,
+        "log": []
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "5",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 13,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Hailstar caught Coniferpaw complaining about them behind their back. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "8",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 6,
+        "dislike": 0,
+        "admiration": 5,
+        "comfortable": 13,
+        "jealousy": 0,
+        "trust": 5,
+        "log": [
+            "Hailstar is letting Shiveringdrift share their troubles with them, hoping they'll feel better afterwards. (positive effect)",
+            "Hailstar caught Shiveringdrift in a lie. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "10",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 8,
+        "dislike": 19,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "11",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 78,
+        "dislike": 0,
+        "admiration": 43,
+        "comfortable": 64,
+        "jealousy": 0,
+        "trust": 50,
+        "log": [
+            "Hailstar shares a joke about a neighboring Clan with Curlewkit. (positive effect)",
+            "Hailstar appreciates how Curlewpaw always seems to ask how they're doing. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "14",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 47,
+        "dislike": 0,
+        "admiration": 32,
+        "comfortable": 27,
+        "jealousy": 0,
+        "trust": 27,
+        "log": [
+            "Hailstar had to nip Mottledkit on the rump because they were being naughty. (neutral effect)"
+        ]
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "15",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 45,
+        "dislike": 5,
+        "admiration": 25,
+        "comfortable": 25,
+        "jealousy": 0,
+        "trust": 20,
+        "log": []
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "16",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 50,
+        "dislike": 0,
+        "admiration": 35,
+        "comfortable": 30,
+        "jealousy": 0,
+        "trust": 30,
+        "log": []
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "17",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 22,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 22,
+        "jealousy": 0,
+        "trust": 6,
+        "log": []
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "18",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 16,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 11,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "19",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 8,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "20",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 8,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "21",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 68,
+        "dislike": 8,
+        "admiration": 36,
+        "comfortable": 31,
+        "jealousy": 0,
+        "trust": 36,
+        "log": [
+            "Hailstar comforts Flailspring after a nightmare. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "22",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Hailstar said something that rubbed Beetlekit the wrong way. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "23",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "24",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 8,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "25",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 6,
+        "dislike": 0,
+        "admiration": 5,
+        "comfortable": 16,
+        "jealousy": 0,
+        "trust": 11,
+        "log": [
+            "Hailstar reminds Skymist to grab something from the fresh-kill pile if they haven't already. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "26",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 6,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 16,
+        "jealousy": 0,
+        "trust": 6,
+        "log": [
+            "Hailstar appreciates how Furledtalon always seems to ask how they're doing. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "9",
+        "cat_to_id": "27",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    }
+]

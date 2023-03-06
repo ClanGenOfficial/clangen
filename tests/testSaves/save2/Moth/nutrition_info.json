@@ -1,0 +1,367 @@
+{
+    "1": {
+        "max_score": 9,
+        "current_score": 0,
+        "percentage": 0.0
+    },
+    "2": {
+        "max_score": 6,
+        "current_score": 6,
+        "percentage": 100.0
+    },
+    "3": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "12": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "8": {
+        "max_score": 9,
+        "current_score": 0,
+        "percentage": 0.0
+    },
+    "10": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "14": {
+        "max_score": 6,
+        "current_score": 6,
+        "percentage": 100.0
+    },
+    "15": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "16": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "24": {
+        "max_score": 3.0,
+        "current_score": 3.0,
+        "percentage": 100.0
+    },
+    "26": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "27": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "28": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "29": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "31": {
+        "max_score": 3.0,
+        "current_score": 3.0,
+        "percentage": 100.0
+    },
+    "34": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "35": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "36": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "37": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "39": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "41": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "42": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "43": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "45": {
+        "max_score": 6,
+        "current_score": 6,
+        "percentage": 100.0
+    },
+    "47": {
+        "max_score": 9,
+        "current_score": 6,
+        "percentage": 66.66666666666666
+    },
+    "48": {
+        "max_score": 9,
+        "current_score": 6.5,
+        "percentage": 72.22222222222221
+    },
+    "50": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "51": {
+        "max_score": 9,
+        "current_score": 6,
+        "percentage": 66.66666666666666
+    },
+    "52": {
+        "max_score": 9,
+        "current_score": 6,
+        "percentage": 66.66666666666666
+    },
+    "53": {
+        "max_score": 9,
+        "current_score": 6.5,
+        "percentage": 72.22222222222221
+    },
+    "54": {
+        "max_score": 9,
+        "current_score": 6.5,
+        "percentage": 72.22222222222221
+    },
+    "56": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "57": {
+        "max_score": 9,
+        "current_score": 9,
+        "percentage": 100.0
+    },
+    "59": {
+        "max_score": 6,
+        "current_score": 0,
+        "percentage": 0.0
+    },
+    "60": {
+        "max_score": 9,
+        "current_score": 4.0,
+        "percentage": 44.44444444444444
+    },
+    "61": {
+        "max_score": 9,
+        "current_score": 4.5,
+        "percentage": 50.0
+    },
+    "62": {
+        "max_score": 9,
+        "current_score": 0,
+        "percentage": 0.0
+    },
+    "63": {
+        "max_score": 4.5,
+        "current_score": 4.5,
+        "percentage": 100.0
+    },
+    "64": {
+        "max_score": 4.5,
+        "current_score": 4.5,
+        "percentage": 100.0
+    },
+    "65": {
+        "max_score": 4.5,
+        "current_score": 4.5,
+        "percentage": 100.0
+    },
+    "66": {
+        "max_score": 4.5,
+        "current_score": 4.5,
+        "percentage": 100.0
+    },
+    "67": {
+        "max_score": 4.5,
+        "current_score": 4.5,
+        "percentage": 100.0
+    },
+    "68": {
+        "max_score": 9,
+        "current_score": 0,
+        "percentage": 0.0
+    },
+    "70": {
+        "max_score": 4.5,
+        "current_score": 4.5,
+        "percentage": 100.0
+    },
+    "71": {
+        "max_score": 6,
+        "current_score": 6,
+        "percentage": 100.0
+    },
+    "72": {
+        "max_score": 4.5,
+        "current_score": 4.5,
+        "percentage": 100.0
+    },
+    "73": {
+        "max_score": 4.5,
+        "current_score": 4.5,
+        "percentage": 100.0
+    },
+    "74": {
+        "max_score": 4.5,
+        "current_score": 4.5,
+        "percentage": 100.0
+    },
+    "75": {
+        "max_score": 4.5,
+        "current_score": 4.0,
+        "percentage": 88.88888888888889
+    },
+    "76": {
+        "max_score": 1.0,
+        "current_score": 1.0,
+        "percentage": 100.0
+    },
+    "77": {
+        "max_score": 1.0,
+        "current_score": 1.0,
+        "percentage": 100.0
+    },
+    "78": {
+        "max_score": 9,
+        "current_score": 6,
+        "percentage": 66.66666666666666
+    },
+    "79": {
+        "max_score": 1.0,
+        "current_score": 1.0,
+        "percentage": 100.0
+    },
+    "80": {
+        "max_score": 9,
+        "current_score": 6,
+        "percentage": 66.66666666666666
+    },
+    "81": {
+        "max_score": 1.0,
+        "current_score": 1.0,
+        "percentage": 100.0
+    },
+    "82": {
+        "max_score": 1.0,
+        "current_score": 1.0,
+        "percentage": 100.0
+    },
+    "84": {
+        "max_score": 9,
+        "current_score": 0,
+        "percentage": 0.0
+    },
+    "85": {
+        "max_score": 1.0,
+        "current_score": 1.0,
+        "percentage": 100.0
+    },
+    "86": {
+        "max_score": 1.0,
+        "current_score": 1.0,
+        "percentage": 100.0
+    },
+    "87": {
+        "max_score": 1.0,
+        "current_score": 1.0,
+        "percentage": 100.0
+    },
+    "88": {
+        "max_score": 1.0,
+        "current_score": 1.0,
+        "percentage": 100.0
+    },
+    "89": {
+        "max_score": 1.0,
+        "current_score": 1.0,
+        "percentage": 100.0
+    },
+    "90": {
+        "max_score": 9,
+        "current_score": 0.0,
+        "percentage": 0.0
+    },
+    "91": {
+        "max_score": 1.0,
+        "current_score": 1.0,
+        "percentage": 100.0
+    },
+    "92": {
+        "max_score": 9,
+        "current_score": 6.0,
+        "percentage": 66.66666666666666
+    },
+    "93": {
+        "max_score": 1.0,
+        "current_score": 1.0,
+        "percentage": 100.0
+    },
+    "94": {
+        "max_score": 1.0,
+        "current_score": 1.0,
+        "percentage": 100.0
+    },
+    "95": {
+        "max_score": 1.0,
+        "current_score": 1.0,
+        "percentage": 100.0
+    },
+    "96": {
+        "max_score": 1.0,
+        "current_score": 1.0,
+        "percentage": 100
+    },
+    "97": {
+        "max_score": 1.0,
+        "current_score": 1.0,
+        "percentage": 100
+    },
+    "98": {
+        "max_score": 1.0,
+        "current_score": 1.0,
+        "percentage": 100
+    },
+    "99": {
+        "max_score": 1.0,
+        "current_score": 1.0,
+        "percentage": 100
+    },
+    "100": {
+        "max_score": 1.0,
+        "current_score": 1.0,
+        "percentage": 100
+    }
+}

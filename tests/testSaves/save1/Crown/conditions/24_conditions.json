@@ -1,0 +1,40 @@
+{
+    "illnesses": {
+        "fleas": {
+            "severity": "minor",
+            "mortality": 0,
+            "infectiousness": 15,
+            "duration": 1,
+            "moons_with": 1,
+            "risks": [
+                {
+                    "name": "torn pelt",
+                    "chance": 20
+                }
+            ],
+            "event_triggered": false
+        }
+    },
+    "injuries": {
+        "mangled leg": {
+            "severity": "severe",
+            "mortality": 60,
+            "duration": 1,
+            "moons_with": 3,
+            "illness_infectiousness": [],
+            "risks": [
+                {
+                    "name": "an infected wound",
+                    "chance": 23
+                }
+            ],
+            "complication": null,
+            "cause_permanent": [
+                "lost a leg",
+                "weak leg",
+                "twisted leg"
+            ],
+            "event_triggered": false
+        }
+    }
+}

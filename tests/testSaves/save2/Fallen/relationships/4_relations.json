@@ -1,0 +1,415 @@
+[
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "1",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 92,
+        "dislike": 0,
+        "admiration": 2,
+        "comfortable": 61,
+        "jealousy": 0,
+        "trust": 22,
+        "log": [
+            "Appletuft swaps favorite prey with Marshtoe. (small positive effect)",
+            "Appletuft is letting Marshtoe share their troubles with them, hoping they'll feel better afterwards. (positive effect)",
+            "Appletuft caught Marshtoe in a lie. (negative effect)",
+            "Appletuft heard an ugly rumor about Marshtoe. (negative effect)",
+            "Appletuft tells a joke that only Marshtoe can understand. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "2",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 24,
+        "dislike": 0,
+        "admiration": 10,
+        "comfortable": 40,
+        "jealousy": 0,
+        "trust": 22,
+        "log": [
+            "Appletuft asks Chestnutbranch if there's any herbs they should look out for while they're out on patrol later. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "3",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 14,
+        "dislike": 0,
+        "admiration": 8,
+        "comfortable": 7,
+        "jealousy": 0,
+        "trust": 10,
+        "log": [
+            "Appletuft mews congratulations to Bayoupaw for a job well done. (small positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "6",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 61,
+        "dislike": 11,
+        "admiration": 20,
+        "comfortable": 68,
+        "jealousy": 0,
+        "trust": 7,
+        "log": [
+            "Appletuft quickly apologizes after bumping into Pigeonkit. They have a small laugh about it. (small positive effect)",
+            "Appletuft thinks that the prey Pigeonkit is biting into on the other side of camp looks delicious. (small negative effect)",
+            "Appletuft bestows wisdom onto Pigeonspots. (small positive effect)",
+            "Appletuft caught Pigeonspots in a lie. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "7",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 55,
+        "dislike": 0,
+        "admiration": 36,
+        "comfortable": 58,
+        "jealousy": 0,
+        "trust": 25,
+        "log": [
+            "Appletuft called Bitterpaw the wrong name. (small negative effect)",
+            "Appletuft calls to Bitterpaw to catch them a fat mouse on their next hunting patrol. (positive effect)",
+            "Appletuft shares a joke about a neighboring Clan with Bitterpelt. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "9",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 39,
+        "dislike": 8,
+        "admiration": 13,
+        "comfortable": 20,
+        "jealousy": 5,
+        "trust": 33,
+        "log": [
+            "Appletuft saw Hailstar take the last piece of prey from the fresh-kill pile. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "12",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 46,
+        "dislike": 11,
+        "admiration": 10,
+        "comfortable": 20,
+        "jealousy": 0,
+        "trust": 9,
+        "log": [
+            "Appletuft heard an ugly rumor about Seafire. (negative effect)",
+            "Appletuft saw Seafire take the last piece of prey from the fresh-kill pile. (small negative effect)",
+            "Appletuft bristles after being scolded by Seafire. (small negative effect)",
+            "Appletuft quickly apologizes after bumping into Seafire. They have a small laugh about it. (small positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "13",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 6,
+        "dislike": 0,
+        "admiration": 15,
+        "comfortable": 22,
+        "jealousy": 0,
+        "trust": 4,
+        "log": []
+    },
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "5",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 100,
+        "dislike": 7,
+        "admiration": 42,
+        "comfortable": 100,
+        "jealousy": 0,
+        "trust": 68,
+        "log": [
+            "Appletuft appreciates Coniferkit telling them that they had a feather stuck to their face. (small positive effect)",
+            "Appletuft said something that rubbed Coniferkit the wrong way. (small negative effect)",
+            "Appletuft hopes they are assigned to patrol with Coniferpaw tomorrow. (neutral effect)",
+            "Appletuft sees that Coniferpaw's piece of prey looks tastier and asks if they'd like to swap. They agree happily, saying they like that one better. (positive effect)",
+            "Appletuft thinks of Coniferjump as their best friend. (positive effect)",
+            "Appletuft caught Coniferjump complaining about them behind their back. (negative effect)",
+            "Appletuft caught Coniferjump in a lie. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "8",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 16,
+        "dislike": 27,
+        "admiration": 0,
+        "comfortable": 6,
+        "jealousy": 0,
+        "trust": 6,
+        "log": []
+    },
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "10",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 6,
+        "dislike": 8,
+        "admiration": 0,
+        "comfortable": 13,
+        "jealousy": 0,
+        "trust": 6,
+        "log": [
+            "Appletuft bristles after being scolded by Pinepaw. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "11",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 13,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 6,
+        "jealousy": 0,
+        "trust": 13,
+        "log": [
+            "Appletuft is talking with Curlewkit. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "14",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 6,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 13,
+        "jealousy": 0,
+        "trust": 6,
+        "log": [
+            "Appletuft offers to groom a hard-to-reach place for Mottledkit, who thanks them earnestly. (positive effect)",
+            "Appletuft saw Mottledpaw take the last piece of prey from the fresh-kill pile. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "15",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 5,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "16",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 6,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 13,
+        "jealousy": 0,
+        "trust": 6,
+        "log": []
+    },
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "17",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "18",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 11,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "19",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "20",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 19,
+        "dislike": 2,
+        "admiration": 0,
+        "comfortable": 9,
+        "jealousy": 0,
+        "trust": 6,
+        "log": [
+            "Appletuft bickered about something trivial with Cresteddrift. (small negative effect)",
+            "Appletuft is telling a story to Cresteddrift. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "21",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "22",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 11,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "23",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "24",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 6,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 16,
+        "jealousy": 0,
+        "trust": 6,
+        "log": [
+            "Appletuft shares a joke about a neighboring Clan with Splashhail. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "25",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 33,
+        "dislike": 11,
+        "admiration": 0,
+        "comfortable": 9,
+        "jealousy": 0,
+        "trust": 6,
+        "log": [
+            "Appletuft is telling a story to Skykit. (positive effect)",
+            "Appletuft bristles after being scolded by Skymist. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "26",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "4",
+        "cat_to_id": "27",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    }
+]

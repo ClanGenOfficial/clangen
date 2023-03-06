@@ -1,0 +1,24 @@
+{
+    "injuries": {
+        "mangled leg": {
+            "severity": "severe",
+            "mortality": 71,
+            "duration": 1,
+            "moons_with": 3,
+            "illness_infectiousness": [],
+            "risks": [
+                {
+                    "name": "an infected wound",
+                    "chance": 15
+                }
+            ],
+            "complication": null,
+            "cause_permanent": [
+                "lost a leg",
+                "weak leg",
+                "twisted leg"
+            ],
+            "event_triggered": false
+        }
+    }
+}

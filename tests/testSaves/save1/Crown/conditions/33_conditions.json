@@ -1,0 +1,15 @@
+{
+    "permanent conditions": {
+        "blind": {
+            "severity": "minor",
+            "born_with": true,
+            "moons_until": -2,
+            "moons_with": 106,
+            "mortality": 0,
+            "illness_infectiousness": [],
+            "risks": [],
+            "complication": null,
+            "event_triggered": false
+        }
+    }
+}

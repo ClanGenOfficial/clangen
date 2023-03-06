@@ -1,0 +1,32 @@
+{
+    "permanent conditions": {
+        "paralyzed": {
+            "severity": "severe",
+            "born_with": true,
+            "moons_until": -2,
+            "moons_with": 15,
+            "mortality": 0,
+            "illness_infectiousness": [],
+            "risks": [
+                {
+                    "name": "an infected wound",
+                    "chance": 123
+                },
+                {
+                    "name": "torn pelt",
+                    "chance": 93
+                },
+                {
+                    "name": "sore",
+                    "chance": 83
+                },
+                {
+                    "name": "joint pain",
+                    "chance": 83
+                }
+            ],
+            "complication": null,
+            "event_triggered": false
+        }
+    }
+}

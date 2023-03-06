@@ -1,0 +1,20 @@
+{
+    "injuries": {
+        "cracked pads": {
+            "severity": "minor",
+            "mortality": 0,
+            "duration": 1,
+            "moons_with": 1,
+            "illness_infectiousness": [],
+            "risks": [
+                {
+                    "name": "an infected wound",
+                    "chance": 20
+                }
+            ],
+            "complication": null,
+            "cause_permanent": [],
+            "event_triggered": false
+        }
+    }
+}

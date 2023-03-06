@@ -1,0 +1,22 @@
+{
+    "injuries": {
+        "broken back": {
+            "severity": "severe",
+            "mortality": 46,
+            "duration": 7,
+            "moons_with": 6,
+            "illness_infectiousness": [],
+            "risks": [
+                {
+                    "name": "an infected wound",
+                    "chance": 2
+                }
+            ],
+            "complication": null,
+            "cause_permanent": [
+                "paralyzed"
+            ],
+            "event_triggered": false
+        }
+    }
+}

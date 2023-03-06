@@ -1,0 +1,415 @@
+[
+    {
+        "cat_from_id": "1",
+        "cat_to_id": "2",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 29,
+        "dislike": 13,
+        "admiration": 9,
+        "comfortable": 11,
+        "jealousy": 13,
+        "trust": 6,
+        "log": [
+            "Shiveringtoe complains about something Chestnutbranch did. (small negative effect)",
+            "Shiveringtoe feels like Chestnutbranch isn't taking their health seriously. (negative effect)",
+            "Marshtoe complains about something Chestnutbranch did. (small negative effect)",
+            "Marshtoe caught Chestnutbranch complaining about them behind their back. (negative effect)",
+            "Marshtoe caught Chestnutbranch in a lie. (negative effect)",
+            "Marshtoe called Chestnutbranch the wrong name. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "1",
+        "cat_to_id": "3",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 17,
+        "dislike": 0,
+        "admiration": 2,
+        "comfortable": 20,
+        "jealousy": 0,
+        "trust": 36,
+        "log": [
+            "Shiveringtoe basks in the sun with Bayoupaw. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "1",
+        "cat_to_id": "4",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 70,
+        "dislike": 0,
+        "admiration": 15,
+        "comfortable": 51,
+        "jealousy": 0,
+        "trust": 28,
+        "log": [
+            "Shiveringtoe is telling a story to Appletuft. (positive effect)",
+            "Marshtoe caught Appletuft in a lie. (negative effect)",
+            "Marshtoe is talking with Appletuft. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "1",
+        "cat_to_id": "6",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 91,
+        "dislike": 0,
+        "admiration": 3,
+        "comfortable": 88,
+        "jealousy": 0,
+        "trust": 29,
+        "log": [
+            "Shiveringtoe basks in the sun with Pigeonkit. (positive effect)",
+            "Marshtoe shares a joke about a neighboring Clan with Pigeonpaw. (positive effect)",
+            "Marshtoe caught Pigeonspots in a lie. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "1",
+        "cat_to_id": "7",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 22,
+        "dislike": 0,
+        "admiration": 19,
+        "comfortable": 30,
+        "jealousy": 0,
+        "trust": 7,
+        "log": [
+            "Shiveringtoe swaps favorite prey with Bitterpaw. (small positive effect)",
+            "Marshtoe is teaching Bitterpelt how to walk without making a sound. (positive effect)",
+            "Marshtoe thinks that the prey Bitterpelt is biting into on the other side of camp looks delicious. (small negative effect)",
+            "Marshtoe is letting Bitterpelt share their troubles with them, hoping they'll feel better afterwards. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "1",
+        "cat_to_id": "9",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 16,
+        "dislike": 10,
+        "admiration": 3,
+        "comfortable": 36,
+        "jealousy": 0,
+        "trust": 8,
+        "log": [
+            "Marshtoe caught Hailstar complaining about them behind their back. (negative effect)",
+            "Marshtoe is letting Hailstar share their troubles with them, hoping they'll feel better afterwards. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "1",
+        "cat_to_id": "12",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 30,
+        "dislike": 8,
+        "admiration": 14,
+        "comfortable": 4,
+        "jealousy": 0,
+        "trust": 2,
+        "log": [
+            "Shiveringtoe bristles after being scolded by Seafire. (small negative effect)",
+            "Marshtoe might be reading a little too far into Seafire's kindness. (small positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "1",
+        "cat_to_id": "13",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 23,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 10,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "1",
+        "cat_to_id": "5",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 9,
+        "dislike": 0,
+        "admiration": 5,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "1",
+        "cat_to_id": "8",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 12,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 23,
+        "jealousy": 0,
+        "trust": 12,
+        "log": [
+            "Marshtoe reminds Shiveringdrift to grab something from the fresh-kill pile if they haven't already. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "1",
+        "cat_to_id": "10",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 5,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Marshtoe swaps favorite prey with Pinecrawl. (small positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "1",
+        "cat_to_id": "11",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "1",
+        "cat_to_id": "14",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "1",
+        "cat_to_id": "15",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 5,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "1",
+        "cat_to_id": "16",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "1",
+        "cat_to_id": "17",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 60,
+        "dislike": 0,
+        "admiration": 39,
+        "comfortable": 47,
+        "jealousy": 0,
+        "trust": 40,
+        "log": [
+            "Marshtoe is teaching Pondkit how to walk without making a sound. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "1",
+        "cat_to_id": "18",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 57,
+        "dislike": 7,
+        "admiration": 18,
+        "comfortable": 43,
+        "jealousy": 0,
+        "trust": 29,
+        "log": [
+            "Marshtoe complains about something Slatekit did. (small negative effect)",
+            "Marshtoe bickered about something trivial with Slatepaw. (small negative effect)",
+            "Marshtoe thinks that the prey Slatespeckle is biting into on the other side of camp looks delicious. (small negative effect)",
+            "Marshtoe is dissatisfied that Slatespeckle can't seem to get rid of their chronic pain. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "1",
+        "cat_to_id": "19",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 50,
+        "dislike": 0,
+        "admiration": 35,
+        "comfortable": 30,
+        "jealousy": 0,
+        "trust": 30,
+        "log": []
+    },
+    {
+        "cat_from_id": "1",
+        "cat_to_id": "20",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 65,
+        "dislike": 0,
+        "admiration": 42,
+        "comfortable": 37,
+        "jealousy": 0,
+        "trust": 37,
+        "log": [
+            "Marshtoe helps Crestedpaw pick burrs out of their fur. (small positive effect)",
+            "Marshtoe saw Cresteddrift take the last piece of prey from the fresh-kill pile. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "1",
+        "cat_to_id": "21",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 22,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 13,
+        "jealousy": 0,
+        "trust": 6,
+        "log": [
+            "Marshtoe appreciates Flailspring telling them that they had a feather stuck to their face. (small positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "1",
+        "cat_to_id": "22",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "1",
+        "cat_to_id": "23",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 6,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 10,
+        "jealousy": 0,
+        "trust": 6,
+        "log": [
+            "Marshtoe shares a joke about a neighboring Clan with Lilykit. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "1",
+        "cat_to_id": "24",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 8,
+        "dislike": 16,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Marshtoe bickered about something trivial with Splashpaw. (small negative effect)",
+            "Marshtoe quickly apologizes after bumping into Splashhail. They have a small laugh about it. (small positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "1",
+        "cat_to_id": "25",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "1",
+        "cat_to_id": "26",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "1",
+        "cat_to_id": "27",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 14,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 13,
+        "jealousy": 0,
+        "trust": 6,
+        "log": []
+    }
+]

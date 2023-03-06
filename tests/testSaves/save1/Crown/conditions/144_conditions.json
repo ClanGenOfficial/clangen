@@ -1,0 +1,42 @@
+{
+    "injuries": {
+        "snake bite": {
+            "severity": "major",
+            "mortality": 69,
+            "duration": 1,
+            "moons_with": 2,
+            "illness_infectiousness": [],
+            "risks": [
+                {
+                    "name": "an infected wound",
+                    "chance": 5
+                }
+            ],
+            "complication": null,
+            "cause_permanent": [],
+            "event_triggered": false
+        }
+    },
+    "permanent conditions": {
+        "weak leg": {
+            "severity": "minor",
+            "born_with": false,
+            "moons_until": 0,
+            "moons_with": 13,
+            "mortality": 0,
+            "illness_infectiousness": [],
+            "risks": [
+                {
+                    "name": "sore",
+                    "chance": 48
+                },
+                {
+                    "name": "joint pain",
+                    "chance": 68
+                }
+            ],
+            "complication": null,
+            "event_triggered": false
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "permanent conditions": {
+        "one bad eye": {
+            "severity": "major",
+            "born_with": false,
+            "moons_until": -2,
+            "moons_with": 0,
+            "mortality": 0,
+            "illness_infectiousness": [],
+            "risks": [],
+            "complication": null,
+            "event_triggered": true
+        }
+    }
+}

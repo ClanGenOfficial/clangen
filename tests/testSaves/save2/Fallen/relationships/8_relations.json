@@ -1,0 +1,411 @@
+[
+    {
+        "cat_from_id": "8",
+        "cat_to_id": "1",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 12,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 23,
+        "jealousy": 0,
+        "trust": 12,
+        "log": [
+            "Shiveringdrift reminds Marshtoe to grab something from the fresh-kill pile if they haven't already. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "8",
+        "cat_to_id": "2",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 19,
+        "dislike": 16,
+        "admiration": 0,
+        "comfortable": 9,
+        "jealousy": 0,
+        "trust": 9,
+        "log": [
+            "Shiveringdrift thought of Chestnutbranch on the last patrol and brought an herb back with them. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "8",
+        "cat_to_id": "3",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 8,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Shiveringdrift bristles after being scolded by Bayoudapple. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "8",
+        "cat_to_id": "4",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 16,
+        "dislike": 27,
+        "admiration": 0,
+        "comfortable": 19,
+        "jealousy": 0,
+        "trust": 6,
+        "log": [
+            "Shiveringdrift is talking with Appletuft. (positive effect)",
+            "Shiveringdrift offers to groom a hard-to-reach place for Appletuft, who thanks them earnestly. (positive effect)",
+            "Shiveringdrift caught Appletuft complaining about them behind their back. (negative effect)",
+            "Shiveringdrift had a disagreement with Appletuft about something or other. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "8",
+        "cat_to_id": "6",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 28,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 16,
+        "jealousy": 0,
+        "trust": 6,
+        "log": [
+            "Shiveringdrift appreciates Pigeonspots telling them that they had a feather stuck to their face. (small positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "8",
+        "cat_to_id": "7",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 22,
+        "dislike": 6,
+        "admiration": 5,
+        "comfortable": 9,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "8",
+        "cat_to_id": "9",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 6,
+        "dislike": 0,
+        "admiration": 5,
+        "comfortable": 13,
+        "jealousy": 0,
+        "trust": 11,
+        "log": []
+    },
+    {
+        "cat_from_id": "8",
+        "cat_to_id": "12",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Shiveringdrift finds the way Seafire acts increasingly uncomfortable. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "8",
+        "cat_to_id": "5",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 8,
+        "dislike": 16,
+        "admiration": 18,
+        "comfortable": 5,
+        "jealousy": 0,
+        "trust": 10,
+        "log": [
+            "Shiveringdrift swaps favorite prey with Coniferpaw. (small positive effect)",
+            "Shiveringdrift thinks that the prey Coniferjump is biting into on the other side of camp looks delicious. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "8",
+        "cat_to_id": "8",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "8",
+        "cat_to_id": "10",
+        "mates": false,
+        "family": true,
+        "romantic_love": 0,
+        "platonic_like": 45,
+        "dislike": 0,
+        "admiration": 22,
+        "comfortable": 17,
+        "jealousy": 0,
+        "trust": 17,
+        "log": [
+            "Shiveringdrift thinks that the prey Pinecrawl is biting into on the other side of camp looks delicious. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "8",
+        "cat_to_id": "11",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 8,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Shiveringdrift complains about something Curlewtuft did. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "8",
+        "cat_to_id": "14",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "8",
+        "cat_to_id": "15",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 23,
+        "dislike": 2,
+        "admiration": 0,
+        "comfortable": 32,
+        "jealousy": 0,
+        "trust": 7,
+        "log": [
+            "Shiveringdrift saw Echopaw miss an easy catch today. (neutral effect)",
+            "Shiveringdrift sees that Echopaw's piece of prey looks tastier and asks if they'd like to swap. They agree happily, saying they like that one better. (positive effect)",
+            "Shiveringdrift chats quietly with Echothroat while they're both on camp guard duty. (small positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "8",
+        "cat_to_id": "16",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Shiveringdrift caught Shykit in a lie. (negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "8",
+        "cat_to_id": "17",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 8,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": [
+            "Shiveringdrift is watching Pondkit perform an almost-decent hunting crouch. (small positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "8",
+        "cat_to_id": "18",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 28,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 35,
+        "jealousy": 0,
+        "trust": 28,
+        "log": [
+            "Shiveringdrift thinks Slatekit has a strange sense of humor. (small negative effect)",
+            "Shiveringdrift appreciates how Slatepaw always seems to ask how they're doing. (positive effect)",
+            "Shiveringdrift is talking with Slatespeckle. (positive effect)",
+            "Shiveringdrift sees that Slatespeckle's piece of prey looks tastier and asks if they'd like to swap. They agree happily, saying they like that one better. (positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "8",
+        "cat_to_id": "19",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "8",
+        "cat_to_id": "20",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 2,
+        "dislike": 5,
+        "admiration": 5,
+        "comfortable": 18,
+        "jealousy": 0,
+        "trust": 11,
+        "log": [
+            "Shiveringdrift waves to Cresteddrift with their tail as their patrols cross paths on the territory. (positive effect)",
+            "Shiveringdrift said something that rubbed Crestedwave the wrong way. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "8",
+        "cat_to_id": "21",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 6,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 13,
+        "jealousy": 0,
+        "trust": 6,
+        "log": [
+            "Shiveringdrift joins a game as Flailkit runs up to them yowling that they're the greatest warrior ever and could never be defeated. The kit squeals in delight as Shiveringdrift rolls over in surrender. (positive effect)",
+            "Shiveringdrift thinks that the prey Flailpaw is biting into on the other side of camp looks delicious. (small negative effect)"
+        ]
+    },
+    {
+        "cat_from_id": "8",
+        "cat_to_id": "22",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 10,
+        "comfortable": 5,
+        "jealousy": 0,
+        "trust": 10,
+        "log": []
+    },
+    {
+        "cat_from_id": "8",
+        "cat_to_id": "23",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "8",
+        "cat_to_id": "24",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 8,
+        "dislike": 0,
+        "admiration": 5,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 5,
+        "log": [
+            "Shiveringdrift quickly apologizes after bumping into Seakit. They have a small laugh about it. (small positive effect)",
+            "Shiveringdrift heard an ugly rumor about Splashkit. (negative effect)",
+            "Shiveringdrift chats with Splashpaw while grabbing something to eat. (small positive effect)"
+        ]
+    },
+    {
+        "cat_from_id": "8",
+        "cat_to_id": "25",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 15,
+        "comfortable": 5,
+        "jealousy": 0,
+        "trust": 15,
+        "log": []
+    },
+    {
+        "cat_from_id": "8",
+        "cat_to_id": "26",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    },
+    {
+        "cat_from_id": "8",
+        "cat_to_id": "27",
+        "mates": false,
+        "family": false,
+        "romantic_love": 0,
+        "platonic_like": 0,
+        "dislike": 0,
+        "admiration": 0,
+        "comfortable": 0,
+        "jealousy": 0,
+        "trust": 0,
+        "log": []
+    }
+]
