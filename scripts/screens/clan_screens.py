@@ -462,6 +462,8 @@ class StarClanScreen(Screens):
         self.filter_rank.kill()
         self.filter_age.kill()
         self.filter_id.kill()
+        self.filter_fav.kill()
+        self.filter_not_fav.kill()
 
         # Remove currently displayed cats and cat names.
         for cat in self.display_cats:
@@ -1058,6 +1060,7 @@ class ListScreen(Screens):
 
         self.filter_fav = UIImageButton(scale(pygame.Rect((400, 275), (56, 56))), "",
                                         object_id="#fav_star", manager=MANAGER)
+        self.filter_fav.hide()
         self.filter_not_fav = UIImageButton(scale(pygame.Rect((400, 275), (56, 56))), "",
                                             object_id="#not_fav_star", manager=MANAGER)
 
@@ -1128,6 +1131,8 @@ class ListScreen(Screens):
         self.filter_rank.kill()
         self.filter_age.kill()
         self.filter_id.kill()
+        self.filter_fav.kill()
+        self.filter_not_fav.kill()
 
         # Remove currently displayed cats and cat names.
         for cat in self.display_cats:
