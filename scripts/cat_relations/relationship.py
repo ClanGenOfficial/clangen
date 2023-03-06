@@ -365,69 +365,67 @@ class Relationship():
         # if there are no loaded interactions, return empty list
         if not interactions:
             return filtered
-        
 
-
-        for inter in interactions:
-            in_tags = list(filter(lambda biome: biome in _biome, inter.biome))
+        for interact in interactions:
+            in_tags = list(filter(lambda biome: biome in _biome, interact.biome))
             if len(in_tags) > 0:
                 continue
 
-            in_tags = list(filter(lambda season: season in _season, inter.season))
+            in_tags = list(filter(lambda season: season in _season, interact.season))
             if len(in_tags) > 0:
                 continue
 
-            if inter.intensity != intensity:
+            if interact.intensity != intensity:
                 continue
 
-            if len(inter.main_status_constraint) >= 1:
-                if self.cat_from.status not in inter.main_status_constraint:
+            if len(interact.main_status_constraint) >= 1:
+                if self.cat_from.status not in interact.main_status_constraint:
                     continue
 
-            if len(inter.random_status_constraint) >= 1:
-                if self.cat_to.status not in inter.random_status_constraint:
+            if len(interact.random_status_constraint) >= 1:
+                if self.cat_to.status not in interact.random_status_constraint:
                     continue
 
-            if len(inter.main_trait_constraint) >= 1:
-                if self.cat_from.trait not in inter.main_trait_constraint:
+            if len(interact.main_trait_constraint) >= 1:
+                if self.cat_from.trait not in interact.main_trait_constraint:
                     continue
 
-            if len(inter.random_trait_constraint) >= 1:
-                if self.cat_to.trait not in inter.random_trait_constraint:
+            if len(interact.random_trait_constraint) >= 1:
+                if self.cat_to.trait not in interact.random_trait_constraint:
                     continue
 
-            if len(inter.main_skill_constraint) >= 1:
-                if self.cat_from.skill not in inter.main_skill_constraint:
+            if len(interact.main_skill_constraint) >= 1:
+                if self.cat_from.skill not in interact.main_skill_constraint:
                     continue
 
-            if len(inter.random_skill_constraint) >= 1:
-                if self.cat_to.skill not in inter.random_skill_constraint:
+            if len(interact.random_skill_constraint) >= 1:
+                if self.cat_to.skill not in interact.random_skill_constraint:
                     continue
 
             # if there is no constraint, skip other checks
-            if len(inter.relationship_constraint) == 0:
-                filtered.append(inter)
+            if len(interact.relationship_constraint) == 0:
+                filtered.append(interact)
                 continue
 
-            if "siblings" in inter.relationship_constraint and not self.cat_from.is_sibling(self.cat_to):
+            if "siblings" in interact.relationship_constraint and not self.cat_from.is_sibling(self.cat_to):
                 continue
 
-            if "mates" in inter.relationship_constraint and not self.mates:
+            if "mates" in interact.relationship_constraint and not self.mates:
                 continue
 
-            if "not_mates" in inter.relationship_constraint and self.mates:
+            if "not_mates" in interact.relationship_constraint and self.mates:
                 continue
 
-            if "parent/child" in inter.relationship_constraint and not self.cat_from.is_parent(self.cat_to):
+            if "parent/child" in interact.relationship_constraint and not self.cat_from.is_parent(self.cat_to):
                 continue
 
-            if "child/parent" in inter.relationship_constraint and not self.cat_to.is_parent(self.cat_from):
+            if "child/parent" in interact.relationship_constraint and not self.cat_to.is_parent(self.cat_from):
                 continue
 
             value_types = ["romantic", "platonic", "dislike", "admiration", "comfortable", "jealousy", "trust"]
             fulfilled = True
             for v_type in value_types:
-                tags = list(filter(lambda constr: v_type in constr, inter.relationship_constraint))
+                tags = list(filter(lambda constr: v_type in constr, interact.relationship_constraint))
                 if len(tags) < 1:
                     continue
                 threshold = 0
@@ -439,15 +437,15 @@ class Relationship():
                     if len(splitted) > 3:
                         lower_than = True
                 except:
-                    print(f"ERROR: interaction {inter.id} with the relationship constraint for the value {v_type} follows not the formatting guidelines.")
+                    print(f"ERROR: interaction {interact.id} with the relationship constraint for the value {v_type} follows not the formatting guidelines.")
                     break
 
                 if threshold > 100:
-                    print(f"ERROR: interaction {inter.id} has a relationship constraints for the value {v_type}, which is higher than the max value of a relationship.")
+                    print(f"ERROR: interaction {interact.id} has a relationship constraints for the value {v_type}, which is higher than the max value of a relationship.")
                     break
 
                 if threshold <= 0:
-                    print(f"ERROR: patrol {inter.id} has a relationship constraints for the value {v_type}, which is lower than the min value of a relationship or 0.")
+                    print(f"ERROR: patrol {interact.id} has a relationship constraints for the value {v_type}, which is lower than the min value of a relationship or 0.")
                     break
 
                 threshold_fulfilled = False
@@ -487,7 +485,7 @@ class Relationship():
                     continue
 
             if fulfilled:
-                filtered.append(inter)
+                filtered.append(interact)
 
         return filtered
 
@@ -722,11 +720,6 @@ class Interaction():
         else:
             self.also_influences = {}
 
-# IN increase or decrease
-resource_directory = "resources/dicts/relationship_events/"
-de_in_crease_path = "DE_IN_CREASE/"
-cat_to_other_path = "cat_to_other/"
-
 # ---------------------------------------------------------------------------- #
 #                   build master dictionary for interactions                   #
 # ---------------------------------------------------------------------------- #
@@ -766,85 +759,3 @@ NEUTRAL_INTERACTIONS = []
 with open(os.path.join(base_path, "neutral.json"), 'r') as read_file:
     loaded_list = ujson.loads(read_file.read())
     NEUTRAL_INTERACTIONS = create_interaction(loaded_list)
-
-# ---------------------------------------------------------------------------- #
-#                           load event possibilities                           #
-# ---------------------------------------------------------------------------- #
-
-
-GENERAL = None
-with open(f"{resource_directory}{cat_to_other_path}not_age_specific.json", 'r') as read_file:
-    GENERAL = ujson.loads(read_file.read())
-
-KITTEN_TO_OTHER = None
-with open(f"{resource_directory}{cat_to_other_path}kitten_to_other.json", 'r') as read_file:
-    KITTEN_TO_OTHER = ujson.loads(read_file.read())
-
-APPRENTICE_TO_OTHER = None
-with open(f"{resource_directory}{cat_to_other_path}apprentice_to_other.json", 'r') as read_file:
-    APPRENTICE_TO_OTHER = ujson.loads(read_file.read())
-
-MEDICINE_APP_TO_OTHER = None
-with open(f"{resource_directory}{cat_to_other_path}medicine_app_to_other.json", 'r') as read_file:
-    MEDICINE_APP_TO_OTHER = ujson.loads(read_file.read())
-
-WARRIOR_TO_OTHER = None
-with open(f"{resource_directory}{cat_to_other_path}warrior_to_other.json", 'r') as read_file:
-    WARRIOR_TO_OTHER = ujson.loads(read_file.read())
-
-ELDER_TO_OTHER = None
-with open(f"{resource_directory}{cat_to_other_path}elder_to_other.json", 'r') as read_file:
-    ELDER_TO_OTHER = ujson.loads(read_file.read())
-
-LEADER_TO_OTHER = None
-with open(f"{resource_directory}{cat_to_other_path}leader_to_other.json", 'r') as read_file:
-    LEADER_TO_OTHER = ujson.loads(read_file.read())
-
-DEPUTY_TO_OTHER = None
-with open(f"{resource_directory}{cat_to_other_path}deputy_to_other.json", 'r') as read_file:
-    DEPUTY_TO_OTHER = ujson.loads(read_file.read())
-
-MEDICINE_TO_OTHER = None
-with open(f"{resource_directory}{cat_to_other_path}medicine_to_other.json", 'r') as read_file:
-    MEDICINE_TO_OTHER = ujson.loads(read_file.read())
-
-LOVE = None
-with open(f"{resource_directory}love.json", 'r') as read_file:
-    LOVE = ujson.loads(read_file.read())
-
-SPECIAL_CHARACTER = None
-with open(f"{resource_directory}special_character.json", 'r') as read_file:
-    SPECIAL_CHARACTER = ujson.loads(read_file.read())
-
-# ---------------------------------------------------------------------------- #
-#                             load de- and increase                            #
-# ---------------------------------------------------------------------------- #
-
-
-INCREASE_HIGH = None
-try:
-    with open(f"{resource_directory}{de_in_crease_path}INCREASE_HIGH.json", 'r') as read_file:
-        INCREASE_HIGH = ujson.loads(read_file.read())
-except:
-    game.switches['error_message'] = 'There was an error loading the 1_INCREASE_HIGH.json file of relationship_events!'
-
-INCREASE_LOW = None
-try:
-    with open(f"{resource_directory}{de_in_crease_path}INCREASE_LOW.json", 'r') as read_file:
-        INCREASE_LOW = ujson.loads(read_file.read())
-except:
-    game.switches['error_message'] = 'There was an error loading the 1_INCREASE_LOW.json file of relationship_events!'
-
-DECREASE_HIGH = None
-try:
-    with open(f"{resource_directory}{de_in_crease_path}DECREASE_HIGH.json", 'r') as read_file:
-        DECREASE_HIGH = ujson.loads(read_file.read())
-except:
-    game.switches['error_message'] = 'There was an error loading the 1_DECREASE_HIGH.json file of relationship_events!'
-
-DECREASE_LOW = None
-try:
-    with open(f"{resource_directory}{de_in_crease_path}DECREASE_LOW.json", 'r') as read_file:
-        DECREASE_LOW = ujson.loads(read_file.read())
-except:
-    game.switches['error_message'] = 'There was an error loading the 1_DECREASE_LOW.json file of relationship_events!'
