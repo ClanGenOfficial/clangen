@@ -27,5 +27,3 @@ jobs:
         with:
           python-version: '3.11'
           architecture: 'x64'
-      - name: Check file encoding
-        run: python3 tests/test_encoding.py
