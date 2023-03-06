@@ -1023,7 +1023,6 @@ class Cat():
             if attempts_left <= 0:
                 return
         relevant_relationship = relevant_relationship_list[0]
-        #relevant_relationship.start_action()
         relevant_relationship.start_interaction()
 
         if game.game_mode == "classic":
