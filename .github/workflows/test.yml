@@ -8,13 +8,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          submodules: "recursive"
       - name: Setup Python 3.11 x64
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
           architecture: 'x64'
+      - name: Download the test saves
+        run: wget https://github.com/ImLvna/clangen-unittest-saves/archive/refs/heads/main.zip -O tests/saves.zip
+      - name: Unzip
+        run: unzip tests/saves.zip
+      - name: Move the folder
+        run: mv clangen-unittest-saves-main tests/testSaves
+      - name: Remove the zip
+        run: rm tests/saves.zip
       - name: Install depends
         run: python -m pip install -r requirements.txt
       - name: Run unit tests
