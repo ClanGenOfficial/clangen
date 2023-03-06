@@ -57,7 +57,7 @@ class GenerateEvents:
 
                 if not event_text:
                     print(f"WARNING: some events resources which are used in generate_events. Have no 'event_text'.")
-                event = SingleEvent(
+                event = PossibleEvent(
                     camp="any",
                     tags=event["tags"],
                     event_text=event_text,
@@ -347,7 +347,7 @@ class GenerateEvents:
         return possible_events
 
 
-class SingleEvent:
+class PossibleEvent:
     def __init__(
             self,
             camp="any",
