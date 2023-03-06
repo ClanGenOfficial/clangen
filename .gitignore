@@ -161,7 +161,4 @@ scripts/__pycache__/**
 .idea/misc.xml
 
 
-tests/testSaves
-
 saves/currentclan.txt
-
