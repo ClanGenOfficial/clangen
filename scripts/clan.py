@@ -10,7 +10,7 @@ except ImportError:
     import json as ujson
 
 from scripts.game_structure.game_essentials import game
-from scripts.utility import update_sprite
+from scripts.utility import update_sprite, get_current_season
 from scripts.cat.cats import Cat, cat_class
 from scripts.cat.names import names
 from scripts.clan_resources.freshkill import Freshkill_Pile, Nutrition
@@ -157,6 +157,29 @@ class Clan():
                 (624, 1044), (728, 1058), (830, 1062), (580, 1148), (688, 1162), (798, 1168), (901, 1166), (1010, 1134)
             ]
         },
+        "Beachcamp3": {
+            'leader den': (688, 188),
+            'medicine den': (160, 400),
+            'nursery': (1240, 400),
+            'clearing': (720, 589),
+            'apprentice den': (164, 860),
+            'warrior den': (1180, 860),
+            'elder den': (696, 980),
+            'leader place': [(502, 284), (735, 275), (614, 248)],
+            'medicine place': [(262, 582), (406, 561), (575, 520), (404, 684),
+                               (542, 616)],
+            'nursery place': [(1046, 558), (1164, 576), (1266, 476), (1080, 698),
+                              (1204, 688), (1318, 640), (1368, 784), (966, 738)],
+            'clearing place': [(688, 628), (862, 622), (596, 740), (706, 730),
+                               (816, 754), (714, 842)],
+            'apprentice place': [(50, 596), (118, 876), (226, 886), (154, 1014),
+                                 (268, 1016), (174, 1122), (402, 946)],
+            'warrior place': [(1068, 816), (1076, 1058), (1188, 1000), (1300, 962),
+                              (1416, 980), (1306, 1066), (1188, 1112)],
+            'elder place': [(524, 1002), (632, 1080), (810, 1026), (754, 1142),
+                            (86, 1162), (432, 1104)]
+        },
+
     }
 
     places_vacant = {
@@ -186,7 +209,8 @@ class Clan():
                  camp_site=(20, 22),
                  camp_bg=None,
                  game_mode='classic',
-                 starting_members=[]):
+                 starting_members=[],
+                 starting_season='Newleaf'):
         if name != "":
             self.name = name
             self.leader = leader
@@ -212,6 +236,7 @@ class Clan():
             self.herbs = {}
             self.age = 0
             self.current_season = 'Newleaf'
+            self.starting_season = starting_season
             self.instructor = None  # This is the first cat in starclan, to "guide" the other dead cats there.
             self.biome = biome
             self.world_seed = world_seed
@@ -289,6 +314,10 @@ class Clan():
             game.switches['game_mode'] = 'classic'
         if game.switches['game_mode'] == 'cruel_season':
             game.settings['disasters'] = True
+
+        # set the starting season
+        season_index = self.seasons.index(self.starting_season)
+        self.current_season = self.seasons[season_index]
 
     def add_cat(self, cat):  # cat is a 'Cat' object
         """ Adds cat into the list of clan cats"""
@@ -419,7 +448,8 @@ class Clan():
             "gamemode": self.game_mode,
             "instructor": self.instructor.ID,
             "reputation": self.reputation,
-            "mediated": game.mediated
+            "mediated": game.mediated,
+            "starting_season": self.starting_season
         }
 
         # LEADER DATA
@@ -673,7 +703,9 @@ class Clan():
         game.clan.reputation = int(clan_data["reputation"])
 
         game.clan.age = clan_data["clanage"]
-        game.clan.current_season = game.clan.seasons[game.clan.age % 12]
+        game.clan.starting_season = clan_data["starting_season"] if "starting_season" in clan_data else 'Newleaf'
+        get_current_season()
+
         game.clan.leader_lives = leader_lives
         game.clan.leader_predecessors = clan_data["leader_predecessors"]
 

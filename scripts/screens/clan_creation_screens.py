@@ -928,21 +928,25 @@ class MakeClanScreen(Screens):
         self.tabs["newleaf_tab"] = UIImageButton(scale(pygame.Rect((1250, y_pos), (78, 68))), "",
                                                  object_id="#newleaf_toggle_button",
                                                  manager=MANAGER,
+                                                 tool_tip_text='Switch starting season to Newleaf.'
                                                  )
         y_pos += 100
         self.tabs["greenleaf_tab"] = UIImageButton(scale(pygame.Rect((1250, y_pos), (78, 68))), "",
                                                    object_id="#greenleaf_toggle_button",
                                                    manager=MANAGER,
+                                                   tool_tip_text='Switch starting season to Greenleaf.'
                                                    )
         y_pos += 100
         self.tabs["leaffall_tab"] = UIImageButton(scale(pygame.Rect((1250, y_pos), (78, 68))), "",
                                                   object_id="#leaffall_toggle_button",
                                                   manager=MANAGER,
+                                                  tool_tip_text='Switch starting season to Leaf-fall.'
                                                   )
         y_pos += 100
         self.tabs["leafbare_tab"] = UIImageButton(scale(pygame.Rect((1250, y_pos), (78, 68))), "",
                                                   object_id="#leafbare_toggle_button",
                                                   manager=MANAGER,
+                                                  tool_tip_text='Switch starting season to Leaf-bare.'
                                                   )
         # Random background
         self.elements["random_background"] = UIImageButton(scale(pygame.Rect((510, 1190), (580, 60))), "",
@@ -980,7 +984,8 @@ class MakeClanScreen(Screens):
                          self.med_cat,
                          self.biome_selected, game.switches['world_seed'],
                          game.switches['camp_site'], convert_camp[self.selected_camp_tab],
-                         self.game_mode, self.members)
+                         self.game_mode, self.members,
+                         starting_season=self.selected_season)
         game.clan.create_clan()
         game.mediated.clear()
         game.cur_events_list.clear()
