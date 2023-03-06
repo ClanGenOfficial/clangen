@@ -990,6 +990,7 @@ class MakeClanScreen(Screens):
         game.mediated.clear()
         game.cur_events_list.clear()
         game.herb_events_list.clear()
+        Cat.grief_strings.clear()
         Cat.sort_cats()
 
     def get_camp_art_path(self, campnum):
