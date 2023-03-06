@@ -949,6 +949,8 @@ class ListScreen(Screens):
         self.filter_rank = None
         self.filter_by_open = None
         self.filter_by_closed = None
+        self.filter_fav = None
+        self.filter_not_fav = None
         self.page_number = None
         self.previous_page_button = None
         self.next_page_button = None
@@ -970,6 +972,20 @@ class ListScreen(Screens):
             elif event.ui_element == self.previous_page_button:
                 self.list_page -= 1
                 self.update_page()
+            elif event.ui_element == self.filter_fav:
+                self.filter_fav.hide()
+                self.filter_not_fav.show()
+                game.sort_fav = False
+                Cat.sort_cats()
+                self.get_living_cats()
+                self.update_search_cats(self.search_bar.get_text())
+            elif event.ui_element == self.filter_not_fav:
+                self.filter_not_fav.hide()
+                self.filter_fav.show()
+                game.sort_fav = True
+                Cat.sort_cats()
+                self.get_living_cats()
+                self.update_search_cats(self.search_bar.get_text())
             elif event.ui_element == self.filter_by_closed:
                 self.filter_by_closed.hide()
                 self.filter_by_open.show()
@@ -1039,6 +1055,12 @@ class ListScreen(Screens):
         self.your_clan_button.disable()
         self.outside_clan_button = UIImageButton(scale(pygame.Rect((298, 270), (68, 68))), "",
                                                  object_id="#outside_clan_button", manager=MANAGER)
+
+        self.filter_fav = UIImageButton(scale(pygame.Rect((400, 275), (56, 56))), "",
+                                        object_id="#fav_star", manager=MANAGER)
+        self.filter_not_fav = UIImageButton(scale(pygame.Rect((400, 275), (56, 56))), "",
+                                            object_id="#not_fav_star", manager=MANAGER)
+
         self.next_page_button = UIImageButton(scale(pygame.Rect((912, 1190), (68, 68))), "",
                                               object_id="#arrow_right_button"
                                               , manager=MANAGER)
