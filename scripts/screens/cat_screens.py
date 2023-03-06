@@ -302,6 +302,14 @@ class ProfileScreen(Screens):
                 self.change_screen('med den screen')
             elif "mediation" in self.profile_elements and event.ui_element == self.profile_elements["mediation"]:
                 self.change_screen('mediation screen')
+            elif event.ui_element == self.profile_elements["favourite_button"]:
+                self.the_cat.favourite = False
+                self.profile_elements["favourite_button"].hide()
+                self.profile_elements["not_favourite_button"].show()
+            elif event.ui_element == self.profile_elements["not_favourite_button"]:
+                self.the_cat.favourite = True
+                self.profile_elements["favourite_button"].show()
+                self.profile_elements["not_favourite_button"].hide()
             else:
                 self.handle_tab_events(event)
 
@@ -593,6 +601,32 @@ class ProfileScreen(Screens):
             self.profile_elements["med_den"].show()
         else:
             self.profile_elements["med_den"].hide()
+
+        # put it to the left of the med den button if the cat is a med cat
+        # else, put it in the center of where the med den button would be
+        if self.the_cat.status == 'medicine cat':
+            _tmp = 140
+        else:
+            _tmp = 315
+
+        self.profile_elements["favourite_button"] = UIImageButton(scale(pygame.Rect
+                                                                 ((_tmp, 760), (56, 56))),
+                                                                 "",
+                                                                 object_id="#fav_star"
+                                                                 , manager=MANAGER)
+
+        self.profile_elements["not_favourite_button"] = UIImageButton(scale(pygame.Rect
+                                                                 ((_tmp, 760), (56, 56))),
+                                                                 "",
+                                                                 object_id="#not_fav_star"
+                                                                 , manager=MANAGER)
+        
+        if self.the_cat.favourite:
+            self.profile_elements["favourite_button"].show()
+            self.profile_elements["not_favourite_button"].hide()
+        else:
+            self.profile_elements["favourite_button"].hide()
+            self.profile_elements["not_favourite_button"].show()
 
 
         # Determine where the next and previous cat buttons lead

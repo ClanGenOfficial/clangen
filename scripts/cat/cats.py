@@ -266,6 +266,8 @@ class Cat():
         self.faded = faded  # This is only used to flag cat that are faded, but won't be added to the faded list until
         # the next save.
 
+        self.favourite = False
+
         # setting ID
         if ID is None:
             potential_id = str(next(Cat.id_iter))
