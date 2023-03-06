@@ -106,17 +106,20 @@ class PatrolScreen(Screens):
             self.update_cat_images_buttons()
             self.update_button()
         elif event.ui_element == self.elements['add_one']:
-            self.selected_cat = choice(self.able_cats)
-            self.update_selected_cat()
-            self.current_patrol.append(self.selected_cat)
+            if len(self.current_patrol) < 6:
+                self.selected_cat = choice(self.able_cats)
+                self.update_selected_cat()
+                self.current_patrol.append(self.selected_cat)
             self.update_cat_images_buttons()
             self.update_button()
         elif event.ui_element == self.elements['add_three']:
-            self.current_patrol += sample(self.able_cats, k=3)
+            if len(self.current_patrol) <= 3:
+                self.current_patrol += sample(self.able_cats, k=3)
             self.update_cat_images_buttons()
             self.update_button()
         elif event.ui_element == self.elements['add_six']:
-            self.current_patrol += sample(self.able_cats, k=6)
+            if len(self.current_patrol) == 0:
+                self.current_patrol += sample(self.able_cats, k=6)
             self.update_cat_images_buttons()
             self.update_button()
         elif event.ui_element == self.elements['remove_all']:
@@ -270,7 +273,7 @@ class PatrolScreen(Screens):
                 self.elements["random"].disable()
             if len(self.current_patrol) > 3 or len(self.able_cats) < 3:
                 self.elements['add_three'].disable()
-            if len(self.current_patrol) >= 1 or len(self.able_cats) < 6:
+            if len(self.current_patrol) > 0 or len(self.able_cats) < 6:
                 self.elements['add_six'].disable()
 
                 # Update the availability of the tab buttons

@@ -21,12 +21,16 @@ from scripts.events_module.death_events import Death_Events
 from scripts.events_module.freshkill_pile_events import Freshkill_Events
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
-from scripts.utility import get_alive_kits, get_med_cats, ceremony_text_adjust
+from scripts.utility import get_alive_kits, get_med_cats, ceremony_text_adjust, get_current_season
+from scripts.events_module.generate_events import GenerateEvents
 
 
 class Events():
     all_events = {}
     game.switches['timeskip'] = False
+    #This is so we call call the static function needed to clear the events dict.
+    generate_events = GenerateEvents()
+
 
     def __init__(self, e_type=None, **cats):
         self.e_type = e_type
@@ -101,60 +105,14 @@ class Events():
         if random.randint(1, rejoin_upperbound) == 1:
             self.handle_lost_cats_return()
 
+        # Calling of "one_moon" functions.
         for cat in Cat.all_cats.copy().values():
             if not cat.outside or cat.dead:
                 self.one_moon_cat(cat)
-
             else:
-                # ---------------------------------------------------------------------------- #
-                #                              exiled cat events                               #
-                # ---------------------------------------------------------------------------- #
-                # aging the cat
-                cat.one_moon()
-                cat.moons += 1
-                cat.update_traits()
-                if cat.moons == 6:
-                    cat.age = 'adolescent'
-                elif cat.moons == 12:
-                    cat.age = 'adult'
-                elif cat.moons == 120:
-                    cat.age = 'elder'
+                self.one_moon_outside_cat(cat)
 
-                # killing exiled cats
-                if cat.exiled or cat.outside:
-                    if random.getrandbits(6) == 1 and not cat.dead:
-                        print("Cat Died: " + str(cat.name))
-                        cat.dead = True
-                        if cat.exiled:
-                            text = f'Rumors reach your Clan that the exiled {cat.name} has died recently.'
-                        elif cat.status in ['kittypet', 'loner', 'rogue']:
-                            text = f'Rumors reach your Clan that the {cat.status} {cat.name} has died recently.'
-                        else:
-                            cat.outside = False
-                            text = f"Will they reach StarClan, even so far away? {cat.name} isn't sure, " \
-                                   f"but as they drift away, they hope to see familiar starry fur on the other side."
-                        game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
-
-                if cat.exiled and cat.status == 'leader' and not cat.dead and random.randint(
-                        1, 10) == 1:
-                    game.clan.leader_lives -= 1
-                    if game.clan.leader_lives > 0:
-                        text = f'Rumors reach your Clan that the exiled {cat.name} lost a life recently.'
-                        game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
-                    else:
-                        text = f'Rumors reach your Clan that the exiled {cat.name} has died recently.'
-                        game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
-                        cat.dead = True
-
-                elif cat.exiled and cat.status == 'leader' and not cat.dead and random.randint(
-                        1, 45) == 1:
-                    game.clan.leader_lives -= 10
-                    cat.dead = True
-                    text = f'Rumors reach your Clan that the exiled {cat.name} has died recently.'
-                    game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
-                    game.clan.leader_lives = 0
-
-        # Handle injuries and relationships.
+        # Handle injuries and relationships. We must do with in a different all-cats loop.
         for cat in Cat.all_cats.values():
             if cat.dead or cat.outside:
                 continue
@@ -164,11 +122,11 @@ class Events():
             if random.getrandbits(1):
                 triggered_death = self.handle_injuries_or_general_death(cat)
                 if not triggered_death:
-                    triggered_death = self.handle_illnesses_or_illness_deaths(cat)
+                    self.handle_illnesses_or_illness_deaths(cat)
             else:
                 triggered_death = self.handle_illnesses_or_illness_deaths(cat)
                 if not triggered_death:
-                    triggered_death = self.handle_injuries_or_general_death(cat)
+                    self.handle_injuries_or_general_death(cat)
 
             # relationships have to be handled separately, because of the ceremony name change
             if not cat.dead or cat.outside:
@@ -202,8 +160,10 @@ class Events():
 
         self.check_clan_relations()
 
-        # age up the clan
+        # age up the clan, set current season
         game.clan.age += 1
+        get_current_season()
+        print(game.clan.current_season)
 
         self.herb_destruction()
         self.herb_gather()
@@ -233,8 +193,8 @@ class Events():
             game.ranks_changed_timeskip = False
             Cat.sort_cats()
 
-        # change season
-        game.clan.current_season = game.clan.seasons[game.clan.age % 12]
+        # Clear all the loaded event dicts.
+        Events.generate_events.clear_loaded_events()
 
         # autosave
         if game.settings.get('autosave') is True and game.clan.age % 5 == 0:
@@ -601,6 +561,55 @@ class Events():
 
                 game.cat_to_fade.append(cat.ID)
                 cat.set_faded()  # This is a flag to ensure they behave like a faded cat in the meantime.
+
+    def one_moon_outside_cat(self, cat):
+        # ---------------------------------------------------------------------------- #
+        #                              exiled cat events                               #
+        # ---------------------------------------------------------------------------- #
+        # aging the cat
+        cat.one_moon()
+        cat.moons += 1
+        cat.update_traits()
+        if cat.moons == 6:
+            cat.age = 'adolescent'
+        elif cat.moons == 12:
+            cat.age = 'adult'
+        elif cat.moons == 120:
+            cat.age = 'elder'
+
+        # killing exiled cats
+        if cat.exiled or cat.outside:
+            if random.getrandbits(6) == 1 and not cat.dead:
+                print("Cat Died: " + str(cat.name))
+                cat.dead = True
+                if cat.exiled:
+                    text = f'Rumors reach your Clan that the exiled {cat.name} has died recently.'
+                elif cat.status in ['kittypet', 'loner', 'rogue']:
+                    text = f'Rumors reach your Clan that the {cat.status} {cat.name} has died recently.'
+                else:
+                    cat.outside = False
+                    text = f"Will they reach StarClan, even so far away? {cat.name} isn't sure, " \
+                           f"but as they drift away, they hope to see familiar starry fur on the other side."
+                game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
+
+        if cat.exiled and cat.status == 'leader' and not cat.dead and random.randint(
+                1, 10) == 1:
+            game.clan.leader_lives -= 1
+            if game.clan.leader_lives > 0:
+                text = f'Rumors reach your Clan that the exiled {cat.name} lost a life recently.'
+                game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
+            else:
+                text = f'Rumors reach your Clan that the exiled {cat.name} has died recently.'
+                game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
+                cat.dead = True
+
+        elif cat.exiled and cat.status == 'leader' and not cat.dead and random.randint(
+                1, 45) == 1:
+            game.clan.leader_lives -= 10
+            cat.dead = True
+            text = f'Rumors reach your Clan that the exiled {cat.name} has died recently.'
+            game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
+            game.clan.leader_lives = 0
 
     def one_moon_cat(self, cat):
         # ---------------------------------------------------------------------------- #
@@ -1141,6 +1150,7 @@ class Events():
         if chance <= 0:
             chance = 1
         if not int(random.random() * chance):
+            print('ACC')
             self.misc_events.handle_misc_events(cat, other_cat, self.at_war, self.enemy_clan,
                                                 alive_kits=get_alive_kits(Cat), accessory=True,
                                                 ceremony=self.ceremony_accessory)

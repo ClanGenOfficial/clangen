@@ -15,67 +15,84 @@ resource_directory = "resources/dicts/events/"
 # ---------------------------------------------------------------------------- #
 
 class GenerateEvents:
+    loaded_events = {}
+
     @staticmethod
-    def get_event_dicts(event_triggered, cat_type, biome):
-        events = None
+    def get_event_dicts(file_path):
         try:
-            file_path = f"{resource_directory}{event_triggered}/{cat_type}.json"
-            if biome:
-                file_path = f"{resource_directory}{event_triggered}/{biome}/{cat_type}.json"
             with open(
                 file_path,
                 "r",
             ) as read_file:
                 events = ujson.loads(read_file.read())
         except:
-            print(f"ERROR: Unable to load {event_triggered} events for {cat_type} from biome {biome}.")
+            print(f"ERROR: Unable to load {file_path}.")
+            return None
 
         return events
 
-    def generate_events(self, events_dict):
-        event_list = []
-        if not events_dict:
+    @staticmethod
+    def clear_loaded_events():
+        GenerateEvents.loaded_events = {}
+
+    def generate_events(self, event_triggered, cat_type, biome):
+
+        if biome:
+            file_path = f"{resource_directory}{event_triggered}/{biome}/{cat_type}.json"
+        else:
+            file_path = f"{resource_directory}{event_triggered}/{cat_type}.json"
+
+        if file_path in GenerateEvents.loaded_events:
+            return GenerateEvents.loaded_events[file_path]
+        else:
+            events_dict = GenerateEvents.get_event_dicts(file_path)
+
+            event_list = []
+            if not events_dict:
+                return event_list
+            for event in events_dict:
+                event_text = event["event_text"] if "event_text" in event else None
+                if not event_text:
+                    event_text = event["death_text"] if "death_text" in event else None
+
+                if not event_text:
+                    print(f"WARNING: some events resources which are used in generate_events. Have no 'event_text'.")
+                event = PossibleEvent(
+                    camp="any",
+                    tags=event["tags"],
+                    event_text=event_text,
+                    history_text=event["history_text"] if "history_text" in event else None,
+                    cat_trait=event["cat_trait"],
+                    cat_skill=event["cat_skill"],
+                    other_cat_trait=event["other_cat_trait"],
+                    other_cat_skill=event["other_cat_skill"],
+                    cat_negate_trait=event["cat_negate_trait"] if "cat_negate_trait" in event else None,
+                    cat_negate_skill=event["cat_negate_skill"] if "cat_negate_skill" in event else None,
+                    other_cat_negate_trait=event["other_cat_negate_trait"] if "other_cat_negate_trait" in event else None,
+                    other_cat_negate_skill=event["other_cat_negate_trait"] if "other_cat_negate_trait" in event else None,
+                    backstory_constraint=event["backstory_constraint"] if "backstory_constraint" in event else None,
+
+                    # injury event only
+                    injury=event["injury"] if "injury" in event else None,
+
+                    # new cat event only
+                    loner=event["loner"] if "loner" in event else False,
+                    kittypet=event["kittypet"] if "kittypet" in event else False,
+                    other_clan=event["other_clan"] if "other_clan" in event else False,
+                    kit=event["kit"] if "kit" in event else False,
+                    new_name=event["new_name"] if "new_name" in event else False,
+                    litter=event["litter"] if "litter" in event else False,
+                    backstory=event["backstory"] if "backstory" in event else None,
+                    reputation=event["reputation"] if "reputation" in event else None,
+
+                    # for misc events only
+                    accessories=event["accessories"] if "accessories" in event else None
+                )
+                event_list.append(event)
+
+            # Add to loaded events.
+            GenerateEvents.loaded_events[file_path] = event_list
             return event_list
-        for event in events_dict:
-            event_text = event["event_text"] if "event_text" in event else None
-            if not event_text:
-                event_text = event["death_text"] if "death_text" in event else None
-
-            if not event_text:
-                print(f"WARNING: some events resources which are used in generate_events. Have no 'event_text'.")
-            event = SingleEvent(
-                camp="any",
-                tags=event["tags"],
-                event_text=event_text,
-                history_text=event["history_text"] if "history_text" in event else None,
-                cat_trait=event["cat_trait"],
-                cat_skill=event["cat_skill"],
-                other_cat_trait=event["other_cat_trait"],
-                other_cat_skill=event["other_cat_skill"],
-                cat_negate_trait=event["cat_negate_trait"] if "cat_negate_trait" in event else None,
-                cat_negate_skill=event["cat_negate_skill"] if "cat_negate_skill" in event else None,
-                other_cat_negate_trait=event["other_cat_negate_trait"] if "other_cat_negate_trait" in event else None,
-                other_cat_negate_skill=event["other_cat_negate_trait"] if "other_cat_negate_trait" in event else None,
-                backstory_constraint=event["backstory_constraint"] if "backstory_constraint" in event else None,
-
-                # injury event only
-                injury=event["injury"] if "injury" in event else None,
-
-                # new cat event only
-                loner=event["loner"] if "loner" in event else False,
-                kittypet=event["kittypet"] if "kittypet" in event else False,
-                other_clan=event["other_clan"] if "other_clan" in event else False,
-                kit=event["kit"] if "kit" in event else False,
-                new_name=event["new_name"] if "new_name" in event else False,
-                litter=event["litter"] if "litter" in event else False,
-                backstory=event["backstory"] if "backstory" in event else None,
-                reputation=event["reputation"] if "reputation" in event else None,
-
-                # for misc events only
-                accessories=event["accessories"] if "accessories" in event else None
-            )
-            event_list.append(event)
-        return event_list
 
     def possible_events(self, cat_type, age, event_type):
         event_list = []
@@ -89,10 +106,7 @@ class GenerateEvents:
             biome = game.clan.biome.lower()
 
             event_list.extend(
-                self.generate_events(
-                    self.get_event_dicts(event_type, cat_type, "general")
-                )
-            )
+                self.generate_events(event_type, cat_type, "general"))
 
         # skip the rest of the loading if there is an unrecognised cat type
         if cat_type not in game.clan.CAT_TYPES:
@@ -103,36 +117,18 @@ class GenerateEvents:
 
         else:
             event_list.extend(
-                self.generate_events(
-                    self.get_event_dicts(
-                        event_type, cat_type, biome
-                    )
-                )
-            )
+                self.generate_events(event_type, cat_type, biome))
 
             if cat_type in ["apprentice", "deputy", "leader"]:
                 event_list.extend(
-                    self.generate_events(
-                        self.get_event_dicts(
-                            event_type, "warrior", biome
-                        )
-                    )
-                )
+                    self.generate_events(event_type, "warrior", biome))
 
             if cat_type not in ["kitten", "leader"]:
                 if event_type != "nutrition":
                     event_list.extend(
-                        self.generate_events(
-                            self.get_event_dicts(event_type, "general", "general")
-                        )
-                    )
+                        self.generate_events(event_type, "general", "general"))
                 event_list.extend(
-                    self.generate_events(
-                        self.get_event_dicts(
-                            event_type, "general", biome
-                        )
-                    )
-                )
+                    self.generate_events(event_type, "general", biome))
 
         return event_list
 
@@ -156,6 +152,10 @@ class GenerateEvents:
             if "all_lives" in event.tags:
                 if int(cat.moons) < 150 and int(random.random() * 5):
                     continue
+
+            # make sure that 'some lives' events don't show up if the leader doesn't have multiple lives to spare
+            if "some_lives" in event.tags and game.clan.leader_lives <= 3:
+                continue
 
             if "low_lives" in event.tags:
                 if game.clan.leader_lives > 3:
@@ -347,7 +347,7 @@ class GenerateEvents:
         return possible_events
 
 
-class SingleEvent:
+class PossibleEvent:
     def __init__(
             self,
             camp="any",

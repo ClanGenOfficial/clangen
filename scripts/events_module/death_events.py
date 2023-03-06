@@ -89,15 +89,10 @@ class Death_Events():
                 game.clan.leader_lives -= 10
                 additional_event_text += cat.die(body)
                 cat.died_by.append(history_text)
-            elif "murder" in death_cause.tags or "some_lives" in death_cause.tags:
-                if game.clan.leader_lives > 2:
-                    game.clan.leader_lives -= random.randrange(1, current_lives - 1)
-                    additional_event_text += cat.die(body)
-                    cat.died_by.append(history_text)
-                else:
-                    game.clan.leader_lives -= 1
-                    additional_event_text += cat.die(body)
-                    cat.died_by.append(history_text)
+            elif "some_lives" in death_cause.tags:
+                game.clan.leader_lives -= random.randrange(2, current_lives - 1)
+                additional_event_text += cat.die(body)
+                cat.died_by.append(history_text)
             else:
                 game.clan.leader_lives -= 1
                 additional_event_text += cat.die(body)

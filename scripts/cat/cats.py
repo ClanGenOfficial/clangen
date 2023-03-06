@@ -279,6 +279,8 @@ class Cat():
         self.faded = faded  # This is only used to flag cat that are faded, but won't be added to the faded list until
         # the next save.
 
+        self.favourite = False
+
         # setting ID
         if ID is None:
             potential_id = str(next(Cat.id_iter))
@@ -2526,6 +2528,9 @@ class Cat():
             Cat.all_cats_list.sort(key=lambda x: int(x.ID), reverse=True)
         elif game.sort_type == "rank":
             Cat.all_cats_list.sort(key=lambda x: (Cat.rank_order(x), Cat.get_adjusted_age(x)), reverse=True)
+        
+        if game.sort_fav:
+            Cat.all_cats_list.sort(key=lambda x: x.favourite, reverse=True)
         return
 
     @staticmethod

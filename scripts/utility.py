@@ -9,6 +9,7 @@ try:
 except ImportError:
     import json as ujson
 import logging
+
 logger = logging.getLogger(__name__)
 from scripts.game_structure import image_cache
 
@@ -21,7 +22,7 @@ from scripts.cat.pelts import (
     plant_accessories,
     wild_accessories,
     collars,
-    )
+)
 from scripts.game_structure.game_essentials import game, screen_x, screen_y
 
 
@@ -58,6 +59,7 @@ def get_alive_clan_queens(all_cats):
             queens.append(parent_1)
     return queens
 
+
 def get_alive_kits(Cat):
     """
     returns a list of all living kittens in the clan
@@ -69,6 +71,7 @@ def get_alive_kits(Cat):
         Cat.all_cats.values()
     ))
     return alive_kits
+
 
 def get_med_cats(Cat, working=True):
     """
@@ -112,6 +115,7 @@ def get_living_cat_count(Cat):
         count += 1
     return count
 
+
 def get_living_clan_cat_count(Cat):
     count = 0
     for the_cat in Cat.all_cats.values():
@@ -148,6 +152,25 @@ def change_clan_relations(other_clan, difference=0):
     game.clan.all_clans[y].relations = clan_relations
 
 
+def get_current_season():
+    print(game.clan.current_season)
+    modifiers = {
+        "Newleaf": 0,
+        "Greenleaf": 3,
+        "Leaf-fall": 6,
+        "Leaf-bare": 9
+    }
+    index = game.clan.age % 12 + modifiers[game.clan.starting_season]
+    print(index)
+    if index > 11:
+        index = index - 12
+    print(index)
+    game.clan.current_season = game.clan.seasons[index]
+    print(game.clan.current_season)
+
+    return game.clan.current_season
+
+
 # ---------------------------------------------------------------------------- #
 #                       Relationship / Traits / Relative                       #
 # ---------------------------------------------------------------------------- #
@@ -174,6 +197,7 @@ def get_highest_romantic_relation(relationships):
             relation = inter_rel
 
     return relation
+
 
 def check_relationship_value(cat_from, cat_to, rel_value=None):
     """
@@ -202,7 +226,6 @@ def check_relationship_value(cat_from, cat_to, rel_value=None):
         return relationship.jealousy
     elif rel_value == "trust":
         return relationship.trust
-
 
 
 def get_personality_compatibility(cat1, cat2):
@@ -381,7 +404,6 @@ def event_text_adjust(Cat,
                       other_clan_name=None,
                       keep_m_c=False,
                       new_cat=None):
-
     name = str(cat.name)
     other_name = None
     if other_cat is not None:
@@ -402,8 +424,9 @@ def event_text_adjust(Cat,
     if new_cat:
         adjust_text = adjust_text.replace("n_c_pre", str(new_cat.name.prefix))
         adjust_text = adjust_text.replace("n_c", str(new_cat.name))
-    if ("acc_plural" or "acc_singular") in adjust_text:
+    if "acc_plural" in adjust_text:
         adjust_text = adjust_text.replace("acc_plural", str(plural_acc_names(cat.accessory, True, False)))
+    if "acc_singular" in adjust_text:
         adjust_text = adjust_text.replace("acc_singular", str(plural_acc_names(cat.accessory, False, True)))
 
     adjust_text = adjust_text.replace("c_n", str(game.clan.name) + "Clan")
@@ -593,7 +616,6 @@ def update_sprite(cat):
                 # Add patches onto cat.
                 new_sprite.blit(patches, (0, 0))
 
-
         # TINTS
         if cat.tint != "none" and cat.tint in Sprites.cat_tints["tint_colours"]:
             # Multiply with alpha does not work as you would expect - it just lowers the alpha of the
@@ -611,7 +633,8 @@ def update_sprite(cat):
                 white_patches = sprites.sprites['white' + cat.white_patches + str(cat.age_sprites[cat.age])].copy()
 
             # Apply tint to white patches.
-            if cat.white_patches_tint != "none" and cat.white_patches_tint in Sprites.white_patches_tints["tint_colours"]:
+            if cat.white_patches_tint != "none" and cat.white_patches_tint in Sprites.white_patches_tints[
+                "tint_colours"]:
                 tint = pygame.Surface((50, 50)).convert_alpha()
                 tint.fill(tuple(Sprites.white_patches_tints["tint_colours"][cat.white_patches_tint]))
                 white_patches.blit(tint, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
@@ -760,8 +783,6 @@ def update_sprite(cat):
                 temp.blit(new_sprite, (0, 0))
                 new_sprite = temp
 
-
-
         # draw accessories
         if cat.age == 'elder' or (cat.pelt.length == 'long' and cat.age not in ['kitten', 'adolescent']):
             if cat.accessory in plant_accessories:
@@ -805,7 +826,6 @@ def update_sprite(cat):
             image_cache.load_image(f"sprites/faded/faded_adult.png").convert_alpha(),
             (0, 0)
         )
-
 
     # Opacity currently disabled for performance reasons. Fading Fog is used as placeholder.
     """# Apply opacity

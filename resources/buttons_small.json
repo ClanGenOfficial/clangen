@@ -2402,6 +2402,29 @@
             }
         }
     },
+    "#shipwreck_tab":
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/shipwreck_camp.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/shipwreck_camp_hover.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/shipwreck_camp_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/shipwreck_camp_unavailable.png"
+            }
+        }
+    },
     "#continue_button_small": 
     {
         "prototype": "#image_button",
@@ -3972,6 +3995,98 @@
             "disabled_image":
             {
                 "path":"resources/images/buttons/toggle_fullscreen_unavailable.png"
+            }
+        }
+  },
+  "#greenleaf_toggle_button":
+  {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/greenleaf_toggle.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/greenleaf_toggle_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/greenleaf_toggle_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/greenleaf_toggle_unavailable.png"
+            }
+        }
+  },
+  "#newleaf_toggle_button":
+  {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/newleaf_toggle.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/newleaf_toggle_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/newleaf_toggle_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/newleaf_toggle_unavailable.png"
+            }
+        }
+  },
+  "#leafbare_toggle_button":
+  {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/leafbare_toggle.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/leafbare_toggle_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/leafbare_toggle_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/leafbare_toggle_unavailable.png"
+            }
+        }
+  },
+  "#leaffall_toggle_button":
+  {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/leaffall_toggle.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/leaffall_toggle_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/leaffall_toggle_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/leaffall_toggle_unavailable.png"
             }
         }
   }
