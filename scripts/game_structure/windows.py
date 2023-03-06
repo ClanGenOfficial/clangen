@@ -181,7 +181,7 @@ class DeleteCheck(UIWindow):
                 elif os.path.exists(rempath + 'clan.txt'):
                     os.remove(rempath + "clan.txt")
                 else:
-                    raise FileNotFoundError("Clan.json or Clan.txt not found")
+                    print("No clan.json/txt???? clan prolly wasnt initalized kekw")
 
 
                 self.kill()
