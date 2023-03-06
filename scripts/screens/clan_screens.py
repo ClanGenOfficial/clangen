@@ -257,7 +257,21 @@ class ClanScreen(Screens):
             if first_choices[chosen_den]:
                 pos = choice(first_choices[chosen_den])
                 first_choices[chosen_den].remove(pos)
-                return pos
+                just_pos = pos[0]
+                if pos not in first_choices[chosen_den] and pos[1] != "0":
+                    # Then this is the second cat to be places here, given an offset
+                    just_pos = list(just_pos)
+
+                    # Offset based on the "tag" in pos[1]. If "y" is in the tag,
+                    # the cat will be offset down. If "x" is in the tag, the behavior depends on
+                    # the presence of the "y" tag. If "y" is not present, always shift the cat left or right
+                    # if it is present, shift the cat left or right 3/4 of the time.
+                    if "x" in pos[1] and ("y" not in pos[1] or random.getrandbits(2)):
+                        just_pos[0] += 15 * choice([-1, 1])
+                    if "y" in pos[1]:
+                        just_pos[1] += 15
+                    just_pos = tuple(just_pos)
+                return just_pos
             dens.pop(chosen_index)
             weights.pop(chosen_index)
             if not dens:
@@ -274,12 +288,14 @@ class ClanScreen(Screens):
         # These are the first choices. As positions are chosen, they are removed from the options to indicate they are
         # taken.
         first_choices = deepcopy(self.layout)
+
         all_dens = ["nursery place", "leader place", "elder place", "medicine place", "apprentice place",
                     "clearing place", "warrior place"]
 
-        if game.clan.leader and not game.clan.leader.dead and not game.clan.leader.outside:
-            game.clan.leader.placement = self.choose_nonoverlaping_positions(first_choices, all_dens,
-                                                                             [1, 200, 1, 1, 1, 1, 1])
+        # Allow two cat in the same position.
+        for x in all_dens:
+            first_choices[x].extend(first_choices[x])
+
         for x in game.clan.clan_cats:
             if Cat.all_cats[x].dead or Cat.all_cats[x].outside:
                 continue
@@ -305,6 +321,9 @@ class ClanScreen(Screens):
             elif Cat.all_cats[x].status in ['warrior', 'mediator']:
                 Cat.all_cats[x].placement = self.choose_nonoverlaping_positions(first_choices, all_dens,
                                                                                 [1, 1, 1, 1, 1, 60, 60])
+            elif Cat.all_cats[x].status == "leader":
+                game.clan.leader.placement = self.choose_nonoverlaping_positions(first_choices, all_dens,
+                                                                                 [1, 200, 1, 1, 1, 1, 1])
 
     def update_buttons_and_text(self):
         if game.switches['saved_clan']:
