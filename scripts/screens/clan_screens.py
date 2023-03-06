@@ -258,9 +258,8 @@ class ClanScreen(Screens):
                 pos = choice(first_choices[chosen_den])
                 first_choices[chosen_den].remove(pos)
                 just_pos = pos[0]
-                if pos not in first_choices[chosen_den] and pos[1] != "0":
+                if pos not in first_choices[chosen_den]:
                     # Then this is the second cat to be places here, given an offset
-                    just_pos = list(just_pos)
 
                     # Offset based on the "tag" in pos[1]. If "y" is in the tag,
                     # the cat will be offset down. If "x" is in the tag, the behavior depends on
@@ -280,8 +279,14 @@ class ClanScreen(Screens):
             chosen_index = random.choices(range(0, len(dens)), weights=weights, k=1)[0]
 
         # If this code is reached, all position are filled.  Choose any position in the first den
-        # checked.
-        return choice(self.layout[first_chosen_den])
+        # checked, apply offsets.
+        pos = choice(self.layout[first_chosen_den])
+        just_pos = pos[0]
+        if "x" in pos[1] and random.getrandbits(1):
+            just_pos[0] += 15 * choice([-1, 1])
+        if "y" in pos[1]:
+            just_pos[1] += 15
+        return tuple(just_pos)
 
     def choose_cat_positions(self):
         """Determines the positions of cat on the clan screen."""
