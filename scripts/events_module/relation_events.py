@@ -9,6 +9,7 @@ except ImportError:
     import json as ujson
 import random
 
+from scripts import events
 from scripts.game_structure.game_essentials import game
 from scripts.events_module.condition_events import Condition_Events
 from scripts.utility import (
@@ -20,7 +21,6 @@ from scripts.utility import (
     )
 from scripts.utility import event_text_adjust
 from scripts.cat.cats import Cat, cat_class
-from scripts.cat.names import names, Name
 from scripts.event_class import Single_Event
 from scripts.cat_relations.relationship import Relationship
 
@@ -176,6 +176,7 @@ class Relation_Events():
                 return
             if moons >= 2:
                 self.handle_two_moon_pregnant(cat, clan)
+                events.ceremony_accessory = True
                 return
 
         # Check if they can have kits.
@@ -267,36 +268,6 @@ class Relation_Events():
 
             # If you've reached here - congrats, kits!
             self.handle_zero_moon_pregnant(cat, second_parent, second_parent_relation, clan)
-
-        # save old possible strings (will be overworked)
-        name = cat.name
-        loner_name = choice(names.loner_names)
-        warrior_name = Name()
-        warrior_name_two = Name()
-        kits_amount = 0
-        other_clan_name = "FILLER_CLAN"
-        possible_strings = [
-            f'{name} had a litter of {kits_amount} kit(s) with a ' + choice(
-                ['loner', 'rogue', 'kittypet']) + ' named ' + str(loner_name),
-            f'{name} had a secret litter of {kits_amount} kit(s) with a ' + choice(
-                ['loner', 'rogue', 'kittypet']) + ' named ' + str(loner_name),
-            f'{name} had a secret litter of {kits_amount} kit(s) with a ' + other_clan_name + f'Clan warrior named {warrior_name}',
-            f'{name} had a secret litter of {kits_amount} kit(s) with {warrior_name} of ' + other_clan_name + 'Clan',
-            f'{name} had a secret litter of {kits_amount} kit(s) with ' + other_clan_name + f'Clan\'s deputy {warrior_name}',
-            f'{name} had a secret litter of {kits_amount} kit(s) with ' + other_clan_name + f'Clan\'s leader {names.prefix}star',
-            f'{name} had a secret litter of {kits_amount} kit(s) with another Clan\'s warrior',
-            f'{name} had a secret litter of {kits_amount} kit(s) with a warrior named {warrior_name_two}',
-            f'{name} had a secret litter of {kits_amount} kit(s) with {warrior_name_two} from another Clan\'s',
-            f'{name} had a secret litter of {kits_amount} kit(s) with {warrior_name}',
-            f'{name} had a secret litter of {kits_amount} kit(s) with the medicine cat {warrior_name}',
-            f'{name} had a litter of {kits_amount} kit(s) with {warrior_name_two}',
-            f'{name} had a litter of {kits_amount} kit(s) with the medicine cat {warrior_name}',
-            str(cat.name) + ' had a litter of ' + str(kits_amount) + ' kit(s) with ' + str(warrior_name),
-            f'{name} had a litter of {kits_amount} kit(s)',
-            f'{name} had a secret litter of {kits_amount} kit(s)',
-            f'{name} had a litter of {kits_amount} kit(s) with an unknown partner',
-            f'{name} had a litter of {kits_amount} kit(s) and refused to talk about their progenitor'
-        ]
 
     def welcome_new_cats(self, new_cats = None):
         """This function will handle the welcome of new cats, if there are new cats in the clan."""

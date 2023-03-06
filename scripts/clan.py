@@ -10,7 +10,7 @@ except ImportError:
     import json as ujson
 
 from scripts.game_structure.game_essentials import game
-from scripts.utility import update_sprite
+from scripts.utility import update_sprite, get_current_season
 from scripts.cat.cats import Cat, cat_class
 from scripts.cat.names import names
 from scripts.clan_resources.freshkill import Freshkill_Pile, Nutrition
@@ -56,74 +56,132 @@ class Clan():
         'Leaf-bare',
         'Leaf-bare',
     ]
-    layout_1 = {
-        'leader den': (688, 188),
-        'medicine den': (160, 400),
-        'nursery': (1240, 400),
-        'clearing': (720, 589),
-        'apprentice den': (164, 860),
-        'warrior den': (1180, 860),
-        'elder den': (696, 980),
-        'leader place': [(750, 240), (700, 340),
-                         (800, 340)],
-        'medicine place': [(140, 500), (240, 500), (340, 500), (200, 600),
-                           (300, 600)],
-        'nursery place': [(1100, 600), (1200, 500), (1300, 500), (1070, 600),
-                          (1970, 600), (1270, 600), (1370, 600), (1060, 700),
-                          (1160, 700), (1260, 700), (1360, 700)],
-        'clearing place': [(750, 640), (600, 740), (700, 740), (800, 740),
-                           (600, 840), (700, 840), (800, 840)],
-        'apprentice place': [(140, 940), (240, 940), (340, 970), (200, 1040),
-                             (300, 1040), (400, 1040)],
-        'warrior place': [(1400, 940), (1100, 980), (1200, 940), (1300, 980),
-                          (1400, 1040), (1100, 1080), (1200, 1040), (1300, 1080)],
-        'elder place': [(840, 1140), (700, 1040), (800, 1040), (640, 1140),
-                        (740, 1140)]
+
+    layouts = {
+        "default": {
+            'leader den': (688, 188),
+            'medicine den': (160, 400),
+            'nursery': (1240, 400),
+            'clearing': (720, 589),
+            'apprentice den': (164, 860),
+            'warrior den': (1180, 860),
+            'elder den': (696, 980),
+            'leader place': [(750, 240), (700, 340),
+                             (800, 340)],
+            'medicine place': [(140, 500), (240, 500), (340, 500), (200, 600),
+                               (300, 600)],
+            'nursery place': [(1170, 600), (1200, 500), (1300, 500), (1070, 600),
+                              (1970, 600), (1270, 600), (1370, 600), (1060, 700),
+                              (1160, 700), (1260, 700), (1360, 700)],
+            'clearing place': [(750, 640), (600, 740), (700, 740), (800, 740),
+                               (600, 840), (700, 840), (800, 840)],
+            'apprentice place': [(140, 940), (240, 940), (340, 940), (200, 1040),
+                                 (300, 1040), (400, 1040)],
+            'warrior place': [(1400, 940), (1100, 980), (1200, 940), (1300, 980),
+                              (1400, 1040), (1100, 1080), (1200, 1040), (1300, 1080)],
+            'elder place': [(840, 1140), (700, 1040), (800, 1040), (640, 1140),
+                            (740, 1140)]
+        },
+        "Forestcamp3": {
+            'leader den': (688, 188),
+            'medicine den': (160, 400),
+            'nursery': (1240, 400),
+            'clearing': (720, 589),
+            'apprentice den': (164, 860),
+            'warrior den': (1180, 860),
+            'elder den': (696, 980),
+            'leader place': [(1200, 80),
+                             (720, 230),
+                             (700, 320),
+                             (800, 310)],
+            'medicine place': [(300, 550),
+                               (200, 530), (400, 530),
+                               (200, 670),
+                               (400, 630),
+                               (330, 450)],
+            'nursery place': [(1040, 350),
+                              (1240, 420),
+                              (1100, 500), (1200, 500), (1300, 500),
+                              (1070, 600), (1170, 600), (1270, 600),
+                              (1160, 700), (1300, 700)],
+            'clearing place': [(500, 400),
+                               (750, 640), (500, 650),
+                               (600, 450), (710, 460), (820, 420),
+                               (370, 720), (900, 720),
+                               (600, 740), (700, 740), (800, 740),
+                               (700, 840), (800, 840),
+                               (900, 900)],
+            'apprentice place': [(400, 840),
+                                 (140, 940), (240, 940), (340, 940),
+                                 (300, 1040), (400, 1040),
+                                 (350, 1140)],
+            'warrior place': [(1400, 940), (1200, 940),
+                              (1100, 980), (1300, 980),
+                              (1400, 1040), (1200, 1040),
+                              (1100, 1080), (1300, 1080)],
+            'elder place': [(560, 910),
+                            (700, 1040), (800, 1040),
+                            (640, 1140), (740, 1140), (840, 1140)]
+        },
+        "Mountainouscamp1": {
+            'leader den': (798, 188),
+            'medicine den': (122, 338),
+            'nursery': (1270, 368),
+            'clearing': (720, 589),
+            'apprentice den': (164, 802),
+            'warrior den': (1180, 860),
+            'elder den': (696, 980),
+            "leader place": [
+                (769, 246), (874, 276), (642, 308), (649, 199), (759, 345)
+            ],
+            "medicine place": [
+                (26, 407), (134, 466), (242, 476), (350, 493), (464, 504), (578, 458), (110, 572), (218, 588),
+                (327, 610)
+            ],
+            "nursery place": [
+                (1138, 116), (1188, 222), (968, 508), (968, 638), (1142, 468), (1107, 578), (1082, 684), (1252, 482),
+                (1217, 594), (1190, 702), (1304, 704), (1352, 598), (1356, 492), (1458, 504), (1410, 700)
+            ],
+            "clearing place": [
+                (548, 616), (658, 648), (762, 648), (513, 862), (616, 754), (724, 754), (832, 756), (942, 754), 
+                (510, 730), (617, 856), (724, 856)
+            ],
+            'apprentice place': [
+                (56, 850), (166, 887), (272, 887), (380, 887), (40, 962), (150, 994), (262, 994), (369, 1024)
+            ],
+            'warrior place': [
+                (1028, 888), (1136, 922), (1246, 934), (1354, 932), (1462, 902), (1016, 995), (1124, 1067), 
+                (1246, 1042), (1354, 1068), (1462, 1010), (1482, 1188)
+            ],
+            'elder place': [
+                (624, 1044), (728, 1058), (830, 1062), (580, 1148), (688, 1162), (798, 1168), (901, 1166), (1010, 1134)
+            ]
+        },
+        "Beachcamp3": {
+            'leader den': (688, 188),
+            'medicine den': (160, 400),
+            'nursery': (1240, 400),
+            'clearing': (720, 589),
+            'apprentice den': (164, 860),
+            'warrior den': (1180, 860),
+            'elder den': (696, 980),
+            'leader place': [(502, 284), (735, 275), (614, 248)],
+            'medicine place': [(262, 582), (406, 561), (575, 520), (404, 684),
+                               (542, 616)],
+            'nursery place': [(1046, 558), (1164, 576), (1266, 476), (1080, 698),
+                              (1204, 688), (1318, 640), (1368, 784), (966, 738)],
+            'clearing place': [(688, 628), (862, 622), (596, 740), (706, 730),
+                               (816, 754), (714, 842)],
+            'apprentice place': [(50, 596), (118, 876), (226, 886), (154, 1014),
+                                 (268, 1016), (174, 1122), (402, 946)],
+            'warrior place': [(1068, 816), (1076, 1058), (1188, 1000), (1300, 962),
+                              (1416, 980), (1306, 1066), (1188, 1112)],
+            'elder place': [(524, 1002), (632, 1080), (810, 1026), (754, 1142),
+                            (86, 1162), (432, 1104)]
+        },
+
     }
 
-    cur_layout = layout_1
-
-    layout_2 = {
-        'leader den': (688, 188),
-        'medicine den': (160, 400),
-        'nursery': (1240, 400),
-        'clearing': (720, 589),
-        'apprentice den': (164, 860),
-        'warrior den': (1180, 860),
-        'elder den': (696, 980),
-        'leader place': [(1200, 80),
-                         (720, 230),
-                         (700, 320),
-                         (800, 310)],
-        'medicine place': [(300, 550),
-                           (200, 530), (400, 530),
-                           (200, 670),
-                           (400, 630),
-                           (330, 450)],
-        'nursery place': [(1040, 350),
-                          (1240, 420),
-                          (1100, 500), (1200, 500), (1300, 500),
-                          (1070, 600), (1170, 600), (1270, 600),
-                          (1160, 700), (1300, 700)],
-        'clearing place': [(500, 400),
-                           (750, 640), (500, 650),
-                           (600, 450), (710, 460), (820, 420),
-                           (370, 720), (900, 720),
-                           (600, 740), (700, 740), (800, 740),
-                           (700, 840), (800, 840),
-                           (900, 900)],
-        'apprentice place': [(400, 840),
-                             (140, 940), (240, 940), (340, 940),
-                             (300, 1040), (400, 1040),
-                             (350, 1140)],
-        'warrior place': [(1400, 940), (1200, 940),
-                          (1100, 980), (1300, 980),
-                          (1400, 1040), (1200, 1040),
-                          (1100, 1080), (1300, 1080)],
-        'elder place': [(560, 910),
-                        (700, 1040), (800, 1040),
-                        (640, 1140), (740, 1140), (840, 1140)]
-    }
     places_vacant = {
         'leader': [False, False, False],
         'medicine': [False, False, False, False, False],
@@ -151,7 +209,8 @@ class Clan():
                  camp_site=(20, 22),
                  camp_bg=None,
                  game_mode='classic',
-                 starting_members=[]):
+                 starting_members=[],
+                 starting_season='Newleaf'):
         if name != "":
             self.name = name
             self.leader = leader
@@ -177,6 +236,7 @@ class Clan():
             self.herbs = {}
             self.age = 0
             self.current_season = 'Newleaf'
+            self.starting_season = starting_season
             self.instructor = None  # This is the first cat in starclan, to "guide" the other dead cats there.
             self.biome = biome
             self.world_seed = world_seed
@@ -190,8 +250,6 @@ class Clan():
                 self.freshkill_pile = Freshkill_Pile()
             else:
                 self.freshkill_pile = None
-            if self.biome == 'Forest' and self.camp_bg == 'camp3':
-                self.cur_layout = self.layout_2
 
             self.faded_ids = []  # Stores ID's of faded cats, to ensure these IDs aren't reused.
 
@@ -250,14 +308,16 @@ class Clan():
             random_camp_options = ['camp1', 'camp2']
             random_camp = choice(random_camp_options)
             game.switches['camp_bg'] = random_camp
-        if game.switches['camp_bg'] == 'camp3' and game.clan.biome == 'Forest':
-            self.cur_layout = self.layout_2
 
         # if no game mode chosen, set to Classic
         if game.switches['game_mode'] is None:
             game.switches['game_mode'] = 'classic'
         if game.switches['game_mode'] == 'cruel_season':
             game.settings['disasters'] = True
+
+        # set the starting season
+        season_index = self.seasons.index(self.starting_season)
+        self.current_season = self.seasons[season_index]
 
     def add_cat(self, cat):  # cat is a 'Cat' object
         """ Adds cat into the list of clan cats"""
@@ -367,10 +427,12 @@ class Clan():
     def switch_clans(self, clan):
         game.save_clanlist(clan)
         game.cur_events_list.clear()
-
-        game.rpc.close()
+        game.rpc.close_rpc.set()
+        game.rpc.update_rpc.set()
         pygame.display.quit()
         pygame.quit()
+        if game.rpc.is_alive():
+            game.rpc.join(1)
         exit()
 
     def save_clan(self):
@@ -386,7 +448,8 @@ class Clan():
             "gamemode": self.game_mode,
             "instructor": self.instructor.ID,
             "reputation": self.reputation,
-            "mediated": game.mediated
+            "mediated": game.mediated,
+            "starting_season": self.starting_season
         }
 
         # LEADER DATA
@@ -436,13 +499,8 @@ class Clan():
             json_string = ujson.dumps(clan_data, indent=4)
             write_file.write(json_string)
 
-        list_data = self.name + "\n"
-        for i in range(len(game.switches['clan_list'])):
-            if game.switches['clan_list'][i] != self.name:
-                list_data = list_data + game.switches['clan_list'][i] + "\n"
-        with open('saves/clanlist.txt', 'w') as write_file:
-            write_file.write(list_data)
-
+        with open('saves/currentclan.txt', 'w') as write_file:
+            write_file.write(self.name)
     def load_clan(self):
         if os.path.exists('saves/' + game.switches['clan_list'][0] + 'clan.json'):
             self.load_clan_json()
@@ -645,7 +703,9 @@ class Clan():
         game.clan.reputation = int(clan_data["reputation"])
 
         game.clan.age = clan_data["clanage"]
-        game.clan.current_season = game.clan.seasons[game.clan.age % 12]
+        game.clan.starting_season = clan_data["starting_season"] if "starting_season" in clan_data else 'Newleaf'
+        get_current_season()
+
         game.clan.leader_lives = leader_lives
         game.clan.leader_predecessors = clan_data["leader_predecessors"]
 
@@ -810,7 +870,7 @@ class OtherClan():
             'cunning', 'wary', 'logical', 'proud', 'stoic',
             'mellow', 'bloodthirsty', 'amiable', 'gracious'
         ]
-        self.name = name or choice(names.normal_prefixes)
+        self.name = name or choice(names.names_dict["normal_prefixes"])
         self.relations = relations or randint(8, 12)
         self.temperament = temperament or choice(temperament_list)
         if self.temperament not in temperament_list:

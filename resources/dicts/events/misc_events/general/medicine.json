@@ -34,5 +34,35 @@
         "cat_skill": ["compassionate", "empathetic"],
         "other_cat_trait": null,
         "other_cat_skill": null
+    },
+  {
+        "camp": "any",
+        "tags": ["ceremony", "other_cat", "other_cat_med", "to_both", "platonic", "comfort", "trust", "neg_dislike","Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "event_text": "r_c presents m_c with acc_plural as a congratulations.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null,
+        "accessories": ["WILD", "PLANT"]
+    },
+  {
+        "camp": "any",
+        "tags": ["ceremony", "other_cat", "other_cat_med", "to_both", "platonic", "comfort", "trust", "neg_dislike","Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "event_text": "r_c presents m_c with acc_plural as a congratulations.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null,
+        "accessories": ["WILD", "PLANT"]
+    },
+  {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "event_text": "m_c always seems to have acc_plural stuck in their fur.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null,
+        "accessories": ["HERBS", "PETALS", "DRY HERBS"]
     }
 ]
