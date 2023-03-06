@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 import sys
 import os
+
+from scripts.datadir import get_log_dir
+
 directory = os.path.dirname(__file__)
 if directory:
     os.chdir(directory)
@@ -11,7 +14,8 @@ import subprocess
 import logging 
 formatter = logging.Formatter("%(name)s - %(levelname)s - %(message)s")
 # Logging for file
-file_handler = logging.FileHandler("clangen.log")
+file_handler = logging.FileHandler(get_log_dir() + "/clangen.log")
+os.symlink(get_log_dir() + '/clangen.log', 'clangen_latest.log')
 file_handler.setFormatter(formatter)
 # Only log errors to file
 file_handler.setLevel(logging.ERROR)
