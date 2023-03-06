@@ -1196,6 +1196,7 @@ class ListScreen(Screens):
         pos_y = 0
         if self.current_listed_cats:
             for cat in self.chunks(self.current_listed_cats, 20)[self.list_page - 1]:
+
                 update_sprite(cat)
                 self.display_cats.append(
                     UISpriteButton(scale(pygame.Rect
