@@ -1015,6 +1015,7 @@ class PatrolScreen(Screens):
                                     f"resources/images/fav_marker.png").convert_alpha(),
                                 (100, 100))
                         )
+                self.fav[str(i)].disable()
             self.cat_buttons["able_cat" + str(i)] = UISpriteButton(scale(pygame.Rect((pos_x, pos_y), (100, 100))),
                                                                    pygame.transform.scale(cat.large_sprite, (100, 100))
                                                                    , cat_object=cat, manager=MANAGER)
