@@ -209,7 +209,6 @@ class Relation_Events():
             return
 
         for new_cat in new_cats:
-            print("HERE! ", new_cat.name)
             same_age_cats = self.get_cats_same_age(new_cat)
             alive_cats = list(filter(lambda c: not c.dead and not c.outside and not c.exiled , list(new_cat.all_cats.values())))
             number = game.config["new_cat"]["cat_amount_welcoming"]
@@ -217,29 +216,22 @@ class Relation_Events():
             if len(alive_cats) == 0:
                 return
             elif len(same_age_cats) < number and len(same_age_cats) > 0:
-                print("FIRST")
                 for age_cat in same_age_cats:
                     self.welcome_events_class.welcome_cat(age_cat, new_cat)
                 
                 rest_number = number - len(same_age_cats)
-                print("REST ", rest_number)
                 chosen_rest = random.choices(population=alive_cats, k=len(alive_cats))
                 if rest_number >= len(alive_cats):
                     chosen_rest = random.choices(population=alive_cats, k=rest_number)
                 for inter_cat in chosen_rest:
                     self.welcome_events_class.welcome_cat(inter_cat, new_cat)
             elif len(same_age_cats) >= number:
-                print("SECOND")
                 chosen = random.choices(population=alive_cats, k=number)
-                print(len(chosen))
                 for chosen_cat in chosen:
                     self.welcome_events_class.welcome_cat(chosen_cat, new_cat)
             elif len(alive_cats) <= number:
-                print("THIRD")
                 for alive_cat in alive_cats:
                     self.welcome_events_class.welcome_cat(alive_cat, new_cat)
-            else:
-                print("NO CATS FOUND")
 
     def get_cats_same_age(self, cat: Cat, range: int = 10) -> list:
         """Look for all cats in the clan and returns a list of cats, which are in the same age range as the given cat."""
