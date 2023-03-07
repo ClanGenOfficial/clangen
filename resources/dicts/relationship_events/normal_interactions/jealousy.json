@@ -142,13 +142,13 @@
 			"id": "jel_de_low1",
 			"intensity": "low",
 			"interactions":[
-				"m_c thinks r_c is very helpful!"
+				"m_c thinks r_c is very helpful!" 
 			]
 		},
 		{
 			"id": "jel_de_med1",
 			"interactions":[
-				"m_c had r_c suprise them with something nice."
+				"m_c had r_c suprise them with something nice." 
 			]
 		},
 		
