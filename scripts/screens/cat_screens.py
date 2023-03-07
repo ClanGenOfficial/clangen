@@ -2285,7 +2285,7 @@ class CeremonyScreen(Screens):
                     1] + '. They pause, then shake their head, heading back into the ranks of StarClan.'
             else:
                 warrior_text = warrior + ' walks up to ' + dep_name + ' next, offering a life for ' + cat.virtues[
-                    1] + '. They smile, and state that the Clan will do well under ' + dep_name + '\'s leadership.'
+                    1] + '. They smile, and state that the Clan will do well under ' + warrior + '\'s leadership.'
         else:
             if cat.trait == "bloodthirsty":
                 warrior_text = 'An unknown warrior walks towards ' + dep_name + ' stating that their name is ' + warrior + '. They offer a life for ' + \

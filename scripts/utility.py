@@ -124,6 +124,17 @@ def get_living_clan_cat_count(Cat):
         count += 1
     return count
 
+def get_cats_same_age(cat, range = 10):
+    """Look for all cats in the clan and returns a list of cats, which are in the same age range as the given cat."""
+    cats = []
+    for inter_cat in cat.all_cats.values():
+        if inter_cat.dead or inter_cat.outside or inter_cat.exiled:
+            continue
+        if inter_cat.moons <= cat.moons + range and inter_cat.moons <= cat.moons - range:
+            cats.append(inter_cat)
+
+    return cats
+
 
 def change_clan_reputation(difference=0):
     """
@@ -323,8 +334,8 @@ def add_children_to_cat(cat, cat_class):
             inter_cat.children.append(cat.ID)
 
 
-def change_relationship_values(cats_to,
-                               cats_from,
+def change_relationship_values(cats_to: list,
+                               cats_from: list,
                                romantic_love=0,
                                platonic_like=0,
                                dislike=0,
