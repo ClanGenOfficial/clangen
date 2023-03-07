@@ -408,9 +408,9 @@ class Cat():
             elif self.age in ['adult']:
                 self.experience = randint(20, 100)
             elif self.age in ['senior adult']:
-                self.experience = randint(50, 500)
+                self.experience = randint(50, 150)
             elif self.age in ['elder']:
-                self.experience = randint(100, 700)
+                self.experience = randint(50, 200)
             else:
                 self.experience = 0
 
