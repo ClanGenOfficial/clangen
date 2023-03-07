@@ -15,22 +15,22 @@
     "SDL_AUDIODRIVER": "dsp"
   },
   "customizations": {
-  	"vscode": {
-  		"extensions": [
-  			"benjaminbenais.copilot-theme",
-  			"GitHub.copilot",
-  			"GitHub.copilot-labs",
-  			"Tyriar.luna-paint",
-  			"aaron-bond.better-comments"
-  		],
+    "vscode": {
+      "extensions": [
+        "benjaminbenais.copilot-theme",
+        "GitHub.copilot",
+        "GitHub.copilot-labs",
+        "Tyriar.luna-paint",
+        "aaron-bond.better-comments"
+      ],
       "settings": {
         "workbench.colorTheme": "Copilot Theme"
       }
-  	},
+    },
     "codespaces": {
       "openFiles": [
-  			"main.py"
-  		]
+        "main.py"
+      ]
     }
   }
 }
