@@ -623,27 +623,29 @@ class ProfileScreen(Screens):
         else:
             self.profile_elements["med_den"].hide()
 
-        # put it to the left of the med den button if the cat is a med cat
-        # else, put it in the center of where the med den button would be
-        if self.the_cat.status == 'medicine cat':
-            _tmp = 140
+        # Fullscreen
+        if game.settings['fullscreen']:
+            _tmp = 820 - name_text_size.width
         else:
-            _tmp = 315
-
+            _tmp = 740 - name_text_size.width
+        # TODO: positioning is weird. closer to names on some, further on others
+        # this only happens on fullscreen :waaaaaaa:
         self.profile_elements["favourite_button"] = UIImageButton(scale(pygame.Rect
-                                                                        ((740 - name_text_size.width, 287), (56, 56))),
+                                                                        ((_tmp, 287), (56, 56))),
                                                                   "",
-                                                                  object_id="#fav_star",
+                                                                  object_id="#fav_cat",
                                                                   manager=MANAGER,
-                                                                  tool_tip_text='remove favorite status')
+                                                                  tool_tip_text='Remove favorite status',
+                                                                  starting_height=2)
 
         self.profile_elements["not_favourite_button"] = UIImageButton(scale(pygame.Rect
-                                                                            ((740 - name_text_size.width, 287),
+                                                                            ((_tmp, 287),
                                                                              (56, 56))),
                                                                       "",
-                                                                      object_id="#not_fav_star",
+                                                                      object_id="#not_fav_cat",
                                                                       manager=MANAGER,
-                                                                      tool_tip_text='mark as favorite')
+                                                                      tool_tip_text='Mark as favorite',
+                                                                      starting_height=2)
 
         if self.the_cat.favourite:
             self.profile_elements["favourite_button"].show()
