@@ -1,6 +1,6 @@
 import itertools
 import random
-from random import choice
+from random import choice, randint
 
 try:
     import ujson
@@ -51,6 +51,10 @@ class Relation_Events():
         if not cat.relationships:
             return
         self.had_one_event = False
+
+        # 50/50 for an additional event
+        if randint(0,1):
+            self.same_age_events(cat)
 
         # this has to be handled at first
         if random.random() > 0.8:
@@ -176,12 +180,18 @@ class Relation_Events():
         """
         print("TODO")
 
-    def same_age_events(self):
+    def same_age_events(self, cat):
         """Description will follow."""
-        """
-        > uses the same events as normal interactions but only with cats the same age
-        """
-        print("TODO")
+        if not self.can_trigger_events(cat):
+            return
+
+        same_age_cats = get_cats_same_age(cat)
+        if len(same_age_cats) > 0:
+            random_cat = choice(same_age_cats)
+            if self.can_trigger_events(random_cat):
+                cat.relationships[random_cat.ID].start_interaction()
+                self.trigger_event(cat)
+                self.trigger_event(random_cat)
 
     def group_events(self):
         """Description will follow."""
@@ -234,6 +244,35 @@ class Relation_Events():
                 for alive_cat in alive_cats:
                     self.welcome_events_class.welcome_cat(alive_cat, new_cat)
 
+    # ---------------------------------------------------------------------------- #
+    #                                helper function                               #
+    # ---------------------------------------------------------------------------- #
+
+    def trigger_event(self, cat):
+        if cat.ID in self.cats_triggered_events:
+            self.cats_triggered_events[cat.ID] += 1
+        else:
+            self.cats_triggered_events[cat.ID] = 1
+
+    def can_trigger_events(self, cat):
+        """Returns if the given cat can still trigger events."""
+        MAX_NORMAL = 4
+        MAX_SPECIAL = 6
+        special_status = ["leader", "deputy", "medicine cat", "mediator"]
+        
+        # set the threshold correctly
+        threshold = MAX_NORMAL
+        if cat.status in special_status:
+            threshold = MAX_SPECIAL
+        
+        if cat.ID not in self.cats_triggered_events:
+            return True
+
+        return self.cats_triggered_events[cat.ID] < threshold
+ 
+    def clear_trigger_dict(self):
+        """Cleans the trigger dictionary, this function should be called every new moon."""
+        self.cats_triggered_events = {}
 
 # ---------------------------------------------------------------------------- #
 #                                LOAD RESOURCES                                #

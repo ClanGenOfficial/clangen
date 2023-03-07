@@ -1225,10 +1225,20 @@ class Patrol():
 
             # create and update relationships
             for the_cat in new_cat.all_cats.values():
-                if the_cat.dead or the_cat.outside:
+                if the_cat.dead or the_cat.outside or the_cat.exiled:
+                    continue
+                if the_cat.ID == new_cat.ID:
                     continue
                 the_cat.relationships[new_cat.ID] = Relationship(the_cat, new_cat)
                 new_cat.relationships[the_cat.ID] = Relationship(new_cat, the_cat)
+                if relevant_cat and (the_cat.ID == relevant_cat.ID or the_cat.parent1 == relevant_cat.ID):
+                    y = random.randrange(0, 10)
+                    the_cat.relationships[new_cat.ID].platonic_like += 20 + y
+                    the_cat.relationships[new_cat.ID].comfortable += 10 + y
+                    the_cat.relationships[new_cat.ID].trust += 10 + y
+                    new_cat.relationships[the_cat.ID].platonic_like += 20 + y
+                    new_cat.relationships[the_cat.ID].comfortable += 10 + y
+                    new_cat.relationships[the_cat.ID].trust += 10 + y
             new_cat.thought = 'Is looking around the camp with wonder'
             created_cats.append(new_cat)
 

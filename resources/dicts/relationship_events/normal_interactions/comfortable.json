@@ -46,7 +46,7 @@
 				"m_c has snuggled up against r_c.",
 				"m_c chats with r_c about their day.",
 				"m_c basks in the sun with r_c.",
-				"m_C just told r_c a hilarious joke.",
+				"m_c just told r_c a hilarious joke.",
 				"m_c settles near r_c to eat their fresh-kill.",
 				"m_c bumps heads with r_c reassuringly."
 			],
@@ -145,7 +145,7 @@
 			"id": "comfortable_kit_inc_med3",
 			"interactions": [
 				"m_c spent the whole day playing their favorite games with rc.",
-				"m_C had a friendly argument with r_c about which prey tastes the best.",
+				"m_c had a friendly argument with r_c about which prey tastes the best.",
 				"m_c takes a nap with r_c after a long day playing mossball."
 			],
 			"main_status_constraint": [
