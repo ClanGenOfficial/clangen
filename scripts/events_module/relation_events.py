@@ -14,6 +14,7 @@ from scripts.cat.cats import Cat
 from scripts.event_class import Single_Event
 from scripts.cat_relations.relationship import Relationship
 from scripts.events_module.relationship.mate_events import Mate_Events
+from scripts.events_module.relationship.welcoming_events import Welcoming_Events
 
 
 # if another cat is involved
@@ -31,6 +32,7 @@ class Relation_Events():
         self.had_one_event = False
         self.condition_events = Condition_Events()
         self.mate_events_class = Mate_Events()
+        self.welcome_events_class = Welcoming_Events()
         self.cats_triggered_events = {}
         pass
 
@@ -157,7 +159,7 @@ class Relation_Events():
 
             # breakup
             if not self.had_one_event and current_relationship.mates and not cat_from.dead and not cat_to.dead:
-                if self.check_if_breakup(current_relationship, current_relationship.opposite_relationship, cat_from,
+                if self.mate_events_class.check_if_breakup(current_relationship, current_relationship.opposite_relationship, cat_from,
                                          cat_to):
                     self.mate_events_class.handle_breakup(current_relationship, current_relationship.opposite_relationship, cat_from,
                                         cat_to)
@@ -207,9 +209,50 @@ class Relation_Events():
             return
 
         for new_cat in new_cats:
-            print(new_cat.name)
+            print("HERE! ", new_cat.name)
+            same_age_cats = self.get_cats_same_age(new_cat)
+            alive_cats = list(filter(lambda c: not c.dead and not c.outside and not c.exiled , list(new_cat.all_cats.values())))
+            number = game.config["new_cat"]["cat_amount_welcoming"]
 
-        print("HERE")
+            if len(alive_cats) == 0:
+                return
+            elif len(same_age_cats) < number and len(same_age_cats) > 0:
+                print("FIRST")
+                for age_cat in same_age_cats:
+                    self.welcome_events_class.welcome_cat(age_cat, new_cat)
+                
+                rest_number = number - len(same_age_cats)
+                print("REST ", rest_number)
+                chosen_rest = random.choices(population=alive_cats, k=len(alive_cats))
+                if rest_number >= len(alive_cats):
+                    chosen_rest = random.choices(population=alive_cats, k=rest_number)
+                for inter_cat in chosen_rest:
+                    self.welcome_events_class.welcome_cat(inter_cat, new_cat)
+            elif len(same_age_cats) >= number:
+                print("SECOND")
+                chosen = random.choices(population=alive_cats, k=number)
+                print(len(chosen))
+                for chosen_cat in chosen:
+                    self.welcome_events_class.welcome_cat(chosen_cat, new_cat)
+            elif len(alive_cats) <= number:
+                print("THIRD")
+                for alive_cat in alive_cats:
+                    self.welcome_events_class.welcome_cat(alive_cat, new_cat)
+            else:
+                print("NO CATS FOUND")
+
+    def get_cats_same_age(self, cat: Cat, range: int = 10) -> list:
+        """Look for all cats in the clan and returns a list of cats, which are in the same age range as the given cat."""
+        cats = []
+        for inter_cat in cat.all_cats.values():
+            if inter_cat.dead or inter_cat.outside or inter_cat.exiled:
+                continue
+
+            if inter_cat.moons <= cat.moons + range and inter_cat.moons <= cat.moons - range:
+                cats.append(inter_cat)
+
+        return cats
+
 
 # ---------------------------------------------------------------------------- #
 #                                LOAD RESOURCES                                #

@@ -59,7 +59,15 @@ class NewCatEvents:
                 outside_cat.thought = "Is looking around the camp with wonder"
                 involved_cats = [outside_cat.ID]
                 game.cur_events_list.append(Single_Event(event_text, ["misc"], involved_cats))
-                return
+                
+                # add them 
+                for the_cat in outside_cat.all_cats.values():
+                    if the_cat.dead or the_cat.outside or the_cat.ID == outside_cat.ID:
+                        continue
+                    the_cat.relationships[outside_cat.ID] = Relationship(the_cat, outside_cat)
+                    outside_cat.relationships[the_cat.ID] = Relationship(outside_cat, the_cat)
+
+                return [outside_cat]
         # ---------------------------------------------------------------------------- #
         #                                cat creation                                  #
         # ---------------------------------------------------------------------------- #
@@ -245,8 +253,8 @@ class NewCatEvents:
                 the_cat.relationships[new_cat.ID] = Relationship(the_cat, new_cat)
                 new_cat.relationships[the_cat.ID] = Relationship(new_cat, the_cat)
             if relevant_cat:
-                new_to_clan_cat = game.config["relationship"]["new_cat_buff"]["new_to_clan_cat"]
-                clan_cat_to_new = game.config["relationship"]["new_cat_buff"]["clan_cat_to_new"]
+                new_to_clan_cat = game.config["new_cat"]["rel_buff"]["new_to_clan_cat"]
+                clan_cat_to_new = game.config["new_cat"]["rel_buff"]["clan_cat_to_new"]
                 change_relationship_values(
                     cats_to=        [relevant_cat.ID], 
                     cats_from=      [new_cat],

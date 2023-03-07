@@ -90,7 +90,7 @@ class Relationship():
 
         all_interactions = NEUTRAL_INTERACTIONS.copy()
         if in_de_crease != "neutral":
-            all_interactions = MASTER_DICT[rel_type][in_de_crease].copy()
+            all_interactions = INTERACTION_MASTER_DICT[rel_type][in_de_crease].copy()
             possible_interactions = self.get_relevant_interactions(all_interactions, intensity, biome, season)
         else:
             possible_interactions = all_interactions
@@ -776,15 +776,15 @@ def create_interaction(inter_list) -> list:
         ))
     return created_list
 
-MASTER_DICT = {"romantic": {}, "platonic": {}, "dislike": {}, "admiration": {}, "comfortable": {}, "jealousy": {}, "trust": {}}
+INTERACTION_MASTER_DICT = {"romantic": {}, "platonic": {}, "dislike": {}, "admiration": {}, "comfortable": {}, "jealousy": {}, "trust": {}}
 rel_types = ["romantic", "platonic", "dislike", "admiration", "comfortable", "jealousy", "trust"]
 base_path = os.path.join("resources","dicts", "relationship_events", "normal_interactions")
 for rel in rel_types:
     file_name = rel + ".json"
     with open(os.path.join(base_path, file_name), 'r') as read_file:
         loaded_dict = ujson.loads(read_file.read())
-        MASTER_DICT[rel]["increase"] = create_interaction(loaded_dict["increase"])
-        MASTER_DICT[rel]["decrease"] = create_interaction(loaded_dict["decrease"])
+        INTERACTION_MASTER_DICT[rel]["increase"] = create_interaction(loaded_dict["increase"])
+        INTERACTION_MASTER_DICT[rel]["decrease"] = create_interaction(loaded_dict["decrease"])
 
 NEUTRAL_INTERACTIONS = []
 with open(os.path.join(base_path, "neutral.json"), 'r') as read_file:

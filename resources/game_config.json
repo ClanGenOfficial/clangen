@@ -64,8 +64,10 @@
 		},
 		"compatibility_bonus": 3,
 		"passive_influence": 4,
-		"chance_for_neutral": 6,
-		"new_cat_buff":{
+		"chance_for_neutral": 6
+	},
+	"new_cat": {
+		"rel_buff":{
 			"new_to_clan_cat": {
 				"romantic": 0,
 				"platonic": 15,
@@ -84,7 +86,8 @@
 				"jealousy": 0,
 				"trust": 10
 			}
-		}
+		},
+		"cat_amount_welcoming": 3
 	},
 	"pregnancy": {
 		"primary_chance_mated": 50,

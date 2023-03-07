@@ -1102,8 +1102,8 @@ class Patrol():
             if not cat.outside:
                 self.results_text.append(f"{cat.name} has joined the Clan.")
                 # for each cat increase the relationship towards all patrolling cats
-                new_to_clan_cat = game.config["relationship"]["new_cat_buff"]["new_to_clan_cat"]
-                clan_cat_to_new = game.config["relationship"]["new_cat_buff"]["clan_cat_to_new"]
+                new_to_clan_cat = game.config["new_cat"]["rel_buff"]["new_to_clan_cat"]
+                clan_cat_to_new = game.config["new_cat"]["rel_buff"]["clan_cat_to_new"]
                 change_relationship_values(
                     cats_to=        [cat.ID for cat in self.patrol_cats], 
                     cats_from=      [cat],
