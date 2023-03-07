@@ -631,7 +631,7 @@ class ProfileScreen(Screens):
                                                                   "",
                                                                   object_id="#fav_star",
                                                                   manager=MANAGER,
-                                                                  tool_tip_text='remove favorite status')
+                                                                  tool_tip_text='Remove favorite status')
 
         self.profile_elements["not_favourite_button"] = UIImageButton(scale(pygame.Rect
                                                                             ((_tmp - name_text_size.width, 287),
@@ -639,7 +639,7 @@ class ProfileScreen(Screens):
                                                                       "",
                                                                       object_id="#not_fav_star",
                                                                       manager=MANAGER,
-                                                                      tool_tip_text='mark as favorite')
+                                                                      tool_tip_text='Mark as favorite')
 
         if self.the_cat.favourite:
             self.profile_elements["favourite_button"].show()
