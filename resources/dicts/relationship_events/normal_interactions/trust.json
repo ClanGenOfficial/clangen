@@ -320,7 +320,7 @@
 			"id": "trust_de_high1",
 			"intensity": "high",
 			"interactions": [
-				"m_c goes to tell a secret to r_c only for r_c to tell someone elses secret to them."
+				"m_c goes to tell a secret to r_c only for r_c to tell someone else's secret to them."
 			]
 		},
 		{

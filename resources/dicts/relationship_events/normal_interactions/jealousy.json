@@ -142,13 +142,13 @@
 			"id": "jel_de_low1",
 			"intensity": "low",
 			"interactions":[
-				"m_c had wanted a task r_c had been given, but r_c came back smelling like mouse bile..."
+				"m_c thinks r_c may not be so snooty after all."
 			]
 		},
 		{
 			"id": "jel_de_med1",
 			"interactions":[
-				"m_c saw r_c get assigned a task that m_c wouldn't ever want."
+				"m_c always thought r_c had it all figured out, so they're surprised when r_c asks for help."
 			]
 		},
 		{

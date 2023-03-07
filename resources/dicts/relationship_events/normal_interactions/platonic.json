@@ -512,14 +512,15 @@
 			"id": "platonic_de_low1",
 			"intensity": "low",
 			"interactions": [
-				"m_c thinks that r_c doesn't consider other very much."
+				"m_c thinks that r_c isn't very considerate of others"
 			]
 		},
 		{
 			"id": "platonic_de_low2",
 			"intensity": "medium",
 			"interactions": [
-				"m_c and r_c had an argument about who should get new nest material."
+				"m_c and r_c had an argument about who should get a pretty feather, and end up destroying it in their fight.",
+				"m_c has drawn the ire of r_c by deliberately taking the last of their favorite nesting materials for themselves."
 			],
 			"reaction_random_cat": {
 				"platonic": "decrease"
