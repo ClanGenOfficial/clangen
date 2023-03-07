@@ -623,13 +623,6 @@ class ProfileScreen(Screens):
         else:
             self.profile_elements["med_den"].hide()
 
-        # put it to the left of the med den button if the cat is a med cat
-        # else, put it in the center of where the med den button would be
-        if self.the_cat.status == 'medicine cat':
-            _tmp = 140
-        else:
-            _tmp = 315
-
         self.profile_elements["favourite_button"] = UIImageButton(scale(pygame.Rect
                                                                         ((740 - name_text_size.width, 287), (56, 56))),
                                                                   "",
