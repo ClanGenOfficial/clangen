@@ -148,7 +148,7 @@
 		{
 			"id": "jel_de_med1",
 			"interactions":[
-				"m_c had r_c suprise them with something nice." 
+				"m_c had r_c surprise them with something nice." 
 			]
 		},
 		
@@ -230,7 +230,7 @@
 			"id": "jel_de_high1",
 			"intensity": "high",
 			"interactions":[
-				"m_c is really suprised that r_c's life isn't as easy as they thought it was."
+				"m_c is really surprised that r_c's life isn't as easy as they thought it was."
 			]
 		},
 		{
