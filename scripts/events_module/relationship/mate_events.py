@@ -7,7 +7,7 @@ try:
 except ImportError:
     import json as ujson
 
-from scripts.utility import (get_highest_romantic_relation, event_text_adjust)
+from scripts.utility import (get_highest_romantic_relation, event_text_adjust, get_personality_compatibility)
 from scripts.game_structure.game_essentials import game
 from scripts.event_class import Single_Event
 from scripts.cat.cats import Cat

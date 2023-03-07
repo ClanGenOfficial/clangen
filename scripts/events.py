@@ -6,10 +6,9 @@ try:
 except ImportError:
     import json
 
-from scripts.cat.appearance_utility import plural_acc_names
 from scripts.cat.names import names
 from scripts.cat.cats import Cat, cat_class
-from scripts.cat.pelts import plant_accessories, wild_accessories, collars
+from scripts.cat.pelts import collars
 from scripts.clan import HERBS
 from scripts.clan_resources.freshkill import FRESHKILL_EVENT_ACTIVE
 from scripts.conditions import medical_cats_condition_fulfilled, get_amount_cat_for_one_medic
@@ -23,6 +22,7 @@ from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
 from scripts.utility import get_alive_kits, get_med_cats, ceremony_text_adjust, get_current_season
 from scripts.events_module.generate_events import GenerateEvents
+from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
 
 
 class Events():
@@ -45,6 +45,7 @@ class Events():
         self.new_cat_invited = False
         self.ceremony_accessory = False
         self.relation_events = Relation_Events()
+        self.pregnancy_events = Pregnancy_Events()
         self.condition_events = Condition_Events()
         self.death_events = Death_Events()
         self.freshkill_events = Freshkill_Events()
@@ -70,7 +71,7 @@ class Events():
                and not cat.dead and not cat.outside for cat in Cat.all_cats.values()):
             game.switches['no_able_left'] = False
 
-        self.relation_events.handle_pregnancy_age(game.clan)
+        self.pregnancy_events.handle_pregnancy_age(game.clan)
 
         if game.clan.game_mode in ['expanded', 'cruel season'] and game.clan.freshkill_pile:
             needed_amount = game.clan.freshkill_pile.amount_food_needed()
@@ -640,7 +641,7 @@ class Events():
             if cat.is_disabled():
                 self.condition_events.handle_already_disabled(cat)
             self.coming_out(cat)
-            self.relation_events.handle_having_kits(cat, clan=game.clan)
+            self.pregnancy_events.handle_having_kits(cat, clan=game.clan)
             self.perform_ceremonies(cat)
             cat.create_interaction()
             # this is the new interaction function, currently not active
@@ -657,7 +658,7 @@ class Events():
 
         self.other_interactions(cat)
         self.coming_out(cat)
-        self.relation_events.handle_having_kits(cat, clan=game.clan)
+        self.pregnancy_events.handle_having_kits(cat, clan=game.clan)
         self.gain_accessories(cat)
 
         cat.create_interaction()
