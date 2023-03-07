@@ -550,14 +550,14 @@ class ProfileScreen(Screens):
                                                                               "#cat_profile_name_box"), manager=MANAGER)
         name_text_size = self.profile_elements["cat_name"].get_relative_rect()
         self.profile_elements["cat_name"].kill()
-        print(name_text_size.width)
+        #print(name_text_size.width)
         self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(cat_name,
                                                                           scale(pygame.Rect(
                                                                               (800 - name_text_size.width, 280),
                                                                               (name_text_size.width * 2, 80))),
                                                                           object_id=get_text_box_theme(
                                                                               "#cat_profile_name_box"), manager=MANAGER)
-        print(name_text_size)
+        #print(name_text_size)
 
         # Write cat thought
         self.profile_elements["cat_thought"] = pygame_gui.elements.UITextBox(self.the_cat.thought,
@@ -623,27 +623,29 @@ class ProfileScreen(Screens):
         else:
             self.profile_elements["med_den"].hide()
 
-        # put it to the left of the med den button if the cat is a med cat
-        # else, put it in the center of where the med den button would be
-        if self.the_cat.status == 'medicine cat':
-            _tmp = 140
+        # Fullscreen
+        if game.settings['fullscreen']:
+            _tmp = 820 - name_text_size.width
         else:
-            _tmp = 315
-
+            _tmp = 740 - name_text_size.width
+        # TODO: positioning is weird. closer to names on some, further on others
+        # this only happens on fullscreen :waaaaaaa:
         self.profile_elements["favourite_button"] = UIImageButton(scale(pygame.Rect
-                                                                        ((740 - name_text_size.width, 287), (56, 56))),
+                                                                        ((_tmp, 287), (56, 56))),
                                                                   "",
-                                                                  object_id="#fav_star",
+                                                                  object_id="#fav_cat",
                                                                   manager=MANAGER,
-                                                                  tool_tip_text='remove favorite status')
+                                                                  tool_tip_text='Remove favorite status',
+                                                                  starting_height=2)
 
         self.profile_elements["not_favourite_button"] = UIImageButton(scale(pygame.Rect
-                                                                            ((740 - name_text_size.width, 287),
+                                                                            ((_tmp, 287),
                                                                              (56, 56))),
                                                                       "",
-                                                                      object_id="#not_fav_star",
+                                                                      object_id="#not_fav_cat",
                                                                       manager=MANAGER,
-                                                                      tool_tip_text='mark as favorite')
+                                                                      tool_tip_text='Mark as favorite',
+                                                                      starting_height=2)
 
         if self.the_cat.favourite:
             self.profile_elements["favourite_button"].show()
@@ -2283,7 +2285,7 @@ class CeremonyScreen(Screens):
                     1] + '. They pause, then shake their head, heading back into the ranks of StarClan.'
             else:
                 warrior_text = warrior + ' walks up to ' + dep_name + ' next, offering a life for ' + cat.virtues[
-                    1] + '. They smile, and state that the Clan will do well under ' + dep_name + '\'s leadership.'
+                    1] + '. They smile, and state that the Clan will do well under ' + warrior + '\'s leadership.'
         else:
             if cat.trait == "bloodthirsty":
                 warrior_text = 'An unknown warrior walks towards ' + dep_name + ' stating that their name is ' + warrior + '. They offer a life for ' + \
