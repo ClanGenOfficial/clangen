@@ -623,11 +623,13 @@ class ProfileScreen(Screens):
 
         # Fullscreen
         if game.settings['fullscreen']:
-            _tmp = 820
+            _tmp = 820 - name_text_size.width
         else:
-            _tmp = 740
+            _tmp = 740 - name_text_size.width
+        # TODO: positioning is weird. closer to names on some, further on others
+        # this only happens on fullscreen :waaaaaaa:
         self.profile_elements["favourite_button"] = UIImageButton(scale(pygame.Rect
-                                                                        ((_tmp - name_text_size.width, 287), (56, 56))),
+                                                                        ((_tmp, 287), (56, 56))),
                                                                   "",
                                                                   object_id="#fav_cat",
                                                                   manager=MANAGER,
@@ -635,7 +637,7 @@ class ProfileScreen(Screens):
                                                                   starting_height=2)
 
         self.profile_elements["not_favourite_button"] = UIImageButton(scale(pygame.Rect
-                                                                            ((_tmp - name_text_size.width, 287),
+                                                                            ((_tmp, 287),
                                                                              (56, 56))),
                                                                       "",
                                                                       object_id="#not_fav_cat",
