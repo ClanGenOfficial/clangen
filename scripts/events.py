@@ -163,7 +163,7 @@ class Events():
         # age up the clan, set current season
         game.clan.age += 1
         get_current_season()
-        print(game.clan.current_season)
+        #print(game.clan.current_season)
 
         self.herb_destruction()
         self.herb_gather()
@@ -868,27 +868,32 @@ class Events():
                             self.ceremony_accessory = True
                             self.gain_accessories(cat)
 
-            # promote to warrior
+            # graduate
             if cat.status in ["apprentice", "mediator apprentice", "medicine cat apprentice"]:
-                if (cat.experience_level == "prepared" and cat.moons >= 9) or cat.moons >= 25:
-                    if cat.moons >= 25:
-                        prepared = True
+                if (cat.experience_level not in ["untrained", "trainee"] and
+                        cat.moons >= game.config["graduation"]["min_graduating_age"]) \
+                        or cat.moons >= game.config["graduation"]["max_apprentice_age"][cat.status]:
+
+                    if cat.moons == game.config["graduation"]["min_graduating_age"]:
+                        preparedness = "early"
+                    if cat.experience_level in ["untrained", "trainee"]:
+                        preparedness = "unprepared"
                     else:
-                        prepared = False
+                        preparedness = "prepared"
 
                     if cat.status == 'apprentice':
-                        self.ceremony(cat, 'warrior')
+                        self.ceremony(cat, 'warrior', preparedness)
                         self.ceremony_accessory = True
                         self.gain_accessories(cat)
 
                     # promote to med cat
                     elif cat.status == 'medicine cat apprentice':
-                        self.ceremony(cat, 'medicine cat')
+                        self.ceremony(cat, 'medicine cat', preparedness)
                         self.ceremony_accessory = True
                         self.gain_accessories(cat)
 
                     elif cat.status == 'mediator apprentice':
-                        self.ceremony(cat, 'mediator')
+                        self.ceremony(cat, 'mediator', preparedness)
                         self.ceremony_accessory = True
                         self.gain_accessories(cat)
 
@@ -909,7 +914,7 @@ class Events():
                 else:
                     self.ceremony_id_by_tag[tag] = {ID}
 
-    def ceremony(self, cat, promoted_to):
+    def ceremony(self, cat, promoted_to, preparedness="prepared"):
         # ---------------------------------------------------------------------------- #
         #                      promote cats and add to event list                      #
         # ---------------------------------------------------------------------------- #
@@ -934,6 +939,10 @@ class Events():
         try:
             # Get all the ceremonies for the role ----------------------------------------
             possible_ceremonies.update(self.ceremony_id_by_tag[promoted_to])
+
+            # Get ones for prepared status ----------------------------------------------
+            if promoted_to in ["warrior", "medicine cat", "mediator"]:
+                possible_ceremonies = possible_ceremonies.intersection(self.ceremony_id_by_tag[preparedness])
 
             # Gather ones for mentor. -----------------------------------------------------
             tags = []
@@ -1150,7 +1159,7 @@ class Events():
         if chance <= 0:
             chance = 1
         if not int(random.random() * chance):
-            print('ACC')
+            #print('ACC')
             self.misc_events.handle_misc_events(cat, other_cat, self.at_war, self.enemy_clan,
                                                 alive_kits=get_alive_kits(Cat), accessory=True,
                                                 ceremony=self.ceremony_accessory)
@@ -1276,11 +1285,11 @@ class Events():
                 return
 
             if cat.status == "medicine cat apprentice":
-                base_ex = random.randint(game.config["ex"]["base_med_app_timeskip_ex"][0],
-                                         game.config["ex"]["base_med_app_timeskip_ex"][1])
+                base_ex = random.randint(game.config["graduation"]["base_med_app_timeskip_ex"][0],
+                                         game.config["graduation"]["base_med_app_timeskip_ex"][1])
             else:
-                base_ex = random.randint(game.config["ex"]["base_app_timeskip_ex"][0],
-                                         game.config["ex"]["base_app_timeskip_ex"][1])
+                base_ex = random.randint(game.config["graduation"]["base_app_timeskip_ex"][0],
+                                         game.config["graduation"]["base_app_timeskip_ex"][1])
 
             if cat.mentor and not Cat.fetch_cat(cat.mentor).not_working():
                 mentor_modifier = 1

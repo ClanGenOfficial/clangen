@@ -700,7 +700,7 @@ class Patrol():
         # if patrol contains cats with autowin skill, chance of success is high. otherwise it will calculate the
         # chance by adding the patrol event's chance of success plus the patrol's total exp
         success_chance = self.patrol_event.chance_of_success + int(
-            self.patrol_total_experience / (2 * gm_modifier))
+            self.patrol_total_experience / (2 * 2 * gm_modifier))
 
         print('starting chance:', self.patrol_event.chance_of_success)
         print('updated chance according to exp: ', success_chance)
@@ -1287,7 +1287,7 @@ class Patrol():
             max_boost = 10
         else:
             max_boost = 0
-        patrol_exp = self.patrol_event.exp
+        patrol_exp = self.patrol_event.exp * 2
         if game.clan.game_mode == 'classic':
             gm_modifier = gm_modifier
         elif game.clan.game_mode == 'expanded':

@@ -142,12 +142,12 @@ class Cat():
     # Ranges are inclusive to both bounds
     experience_levels_range = {
         "untrained": (0, 0),
-        "trainee": (1, 20),
-        "prepared": (21, 50),
-        "competent": (51, 125),
-        "proficient": (126, 313),
-        "expert": (314, 781),
-        "master": (782, 782)
+        "trainee": (1, 30),
+        "prepared": (31, 60),
+        "competent": (61, 100),
+        "proficient": (101, 150),
+        "expert": (151, 220),
+        "master": (221, 221)
     }
 
     all_cats: Dict[str, Cat] = {}  # ID: object
@@ -399,8 +399,8 @@ class Cat():
                 m = self.moons
                 self.experience = 0
                 while m > Cat.age_moons['adolescent'][0]:
-                    base_ex = 0.6 * random.randint(game.config["ex"]["base_med_app_timeskip_ex"][0],
-                                                   game.config["ex"]["base_med_app_timeskip_ex"][1])
+                    base_ex = 0.6 * random.randint(game.config["graduation"]["base_med_app_timeskip_ex"][0],
+                                                   game.config["graduation"]["base_med_app_timeskip_ex"][1])
                     self.experience += base_ex
                     m -= 1
             elif self.age in ['young adult']:
