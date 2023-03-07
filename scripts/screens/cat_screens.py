@@ -550,12 +550,14 @@ class ProfileScreen(Screens):
                                                                               "#cat_profile_name_box"), manager=MANAGER)
         name_text_size = self.profile_elements["cat_name"].get_relative_rect()
         self.profile_elements["cat_name"].kill()
+        #print(name_text_size.width)
         self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(cat_name,
                                                                           scale(pygame.Rect(
                                                                               (800 - name_text_size.width, 280),
                                                                               (name_text_size.width * 2, 80))),
                                                                           object_id=get_text_box_theme(
                                                                               "#cat_profile_name_box"), manager=MANAGER)
+        #print(name_text_size)
 
         # Write cat thought
         self.profile_elements["cat_thought"] = pygame_gui.elements.UITextBox(self.the_cat.thought,
