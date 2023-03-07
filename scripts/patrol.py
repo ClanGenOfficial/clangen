@@ -700,7 +700,7 @@ class Patrol():
         # if patrol contains cats with autowin skill, chance of success is high. otherwise it will calculate the
         # chance by adding the patrol event's chance of success plus the patrol's total exp
         success_chance = self.patrol_event.chance_of_success + int(
-            self.patrol_total_experience / (2 * gm_modifier))
+            self.patrol_total_experience / (2 * 2 * gm_modifier))
 
         print('starting chance:', self.patrol_event.chance_of_success)
         print('updated chance according to exp: ', success_chance)
@@ -1283,28 +1283,20 @@ class Patrol():
     def handle_exp_gain(self):
         gm_modifier = 1
         base_exp = 0
-        if "max" in self.experience_levels:
+        if "master" in self.experience_levels:
             max_boost = 10
         else:
             max_boost = 0
-        patrol_exp = self.patrol_event.exp
+        patrol_exp = self.patrol_event.exp * 2
         if game.clan.game_mode == 'classic':
             gm_modifier = gm_modifier
         elif game.clan.game_mode == 'expanded':
             gm_modifier = 3
         elif game.clan.game_mode == 'cruel season':
             gm_modifier = 6
-        lvl_modifier = 1  # this makes exp gain slower after the cat reaches average
+        gained_exp = ((patrol_exp + base_exp + max_boost) / len(self.patrol_cats)) / gm_modifier
         for cat in self.patrol_cats:
-            gained_exp = ((patrol_exp + base_exp + max_boost) / len(self.patrol_cats)) / gm_modifier
-            if cat.experience_level == "average":
-                lvl_modifier = 1.25
-            if cat.experience_level == "high":
-                lvl_modifier = 1.75
-            if cat.experience_level == "master":
-                lvl_modifier = 2
-            final_exp = gained_exp / lvl_modifier
-            cat.experience = cat.experience + final_exp
+            cat.experience = cat.experience + gained_exp
 
     def handle_deaths_and_gone(self, cat):
         if "no_body" in self.patrol_event.tags:
