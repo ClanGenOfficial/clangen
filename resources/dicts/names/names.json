@@ -106,17 +106,17 @@
     "WHITE": [
     "White", "White", "Pale", "Snow", "Cloud", "Cloudy", "Milk", "Hail", "Frost", "Frozen", "Freeze", "Ice", "Icy", "Sheep",
     "Blizzard", "Flurry", "Moon", "Light", "Bone", "Bright", "Swan", "Dove", "Wooly", "Cotton", "Hawthorn", "Laurel", 
-    "Mimosa", "Fringe"
+    "Mimosa", "Fringe", "Icicle"
     ],
     "PALEGREY": [
     "Grey", "Silver", "Pale", "Light", "Cloud", "Cloudy", "Hail", "Frost", "Ice", "Icy", "Mouse", "Bright", "Fog", "Freeze",
     "Frozen", "Stone", "Pebble", "Dove", "Sky", "Cotton", "Heather", "Ashen", "Pearl", "Titmouse", "Pipit", "Azalea", 
-    "Fringe", "Mistle"
+    "Fringe", "Mistle", "Icicle"
     ],
     "SILVER": [
     "Grey", "Silver", "Cinder", "Ice", "Icy", "Frost", "Frozen", "Freeze", "Rain", "Blue", "Basalt", "Granite", "Mica",
     "River", "Blizzard", "Flurry", "Bone", "Bleak", "Stone", "Pebble", "Heather", "Shale", "Pearl", "Scale", "Crocus", 
-    "Rue", "Fringe", "Glint", "Mistle"
+    "Rue", "Fringe", "Glint", "Mistle", "Shatter"
     ],
     "GREY": [
     "Grey", "Grey", "Ash", "Ashen", "Cinder", "Rock", "Stone", "Shade", "Mouse", "Smoke", "Smoky", "Shadow", "Fog", "Bone",
