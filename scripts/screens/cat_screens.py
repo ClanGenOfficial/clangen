@@ -623,15 +623,20 @@ class ProfileScreen(Screens):
         else:
             self.profile_elements["med_den"].hide()
 
+        # Fullscreen
+        if game.settings['fullscreen']:
+            _tmp = 820
+        else:
+            _tmp = 740
         self.profile_elements["favourite_button"] = UIImageButton(scale(pygame.Rect
-                                                                        ((740 - name_text_size.width, 287), (56, 56))),
+                                                                        ((_tmp - name_text_size.width, 287), (56, 56))),
                                                                   "",
                                                                   object_id="#fav_star",
                                                                   manager=MANAGER,
                                                                   tool_tip_text='remove favorite status')
 
         self.profile_elements["not_favourite_button"] = UIImageButton(scale(pygame.Rect
-                                                                            ((740 - name_text_size.width, 287),
+                                                                            ((_tmp - name_text_size.width, 287),
                                                                              (56, 56))),
                                                                       "",
                                                                       object_id="#not_fav_star",
