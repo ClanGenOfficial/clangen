@@ -13,24 +13,24 @@
   "postCreateCommand": "pip install -r requirements.txt",
   "remoteEnv": {
     "SDL_AUDIODRIVER": "dsp"
-},
-"customizations": {
-	"vscode": {
-		"extensions": [
-			"benjaminbenais.copilot-theme",
-			"GitHub.copilot",
-			"GitHub.copilot-labs",
-			"Tyriar.luna-paint",
-			"aaron-bond.better-comments"
-		],
-    "settings": {
-      "workbench.colorTheme": "Copilot Theme"
+  },
+  "customizations": {
+  	"vscode": {
+  		"extensions": [
+  			"benjaminbenais.copilot-theme",
+  			"GitHub.copilot",
+  			"GitHub.copilot-labs",
+  			"Tyriar.luna-paint",
+  			"aaron-bond.better-comments"
+  		],
+      "settings": {
+        "workbench.colorTheme": "Copilot Theme"
+      }
+  	},
+    "codespaces": {
+      "openFiles": [
+  			"main.py"
+  		]
     }
-	},
-  "codespaces": {
-    "openFiles": [
-			"main.py"
-		]
   }
-}
 }
