@@ -54,6 +54,8 @@ class Game():
     # Sort-type
     sort_type = "rank"
 
+    sort_fav = False
+
     choose_cats = {}
     '''cat_buttons = {
         'cat0': None,
@@ -426,6 +428,7 @@ class Game():
                 "eye_colour2": inter_cat.eye_colour2 if inter_cat.eye_colour2 else None,
                 "reverse": inter_cat.reverse,
                 "white_patches": inter_cat.white_patches,
+                "white_patches_tint": inter_cat.white_patches_tint,
                 "pattern": inter_cat.pattern,
                 "tortie_base": inter_cat.tortiebase,
                 "tortie_color": inter_cat.tortiecolour,
@@ -450,7 +453,8 @@ class Game():
                 "retired": inter_cat.retired if inter_cat.retired else False,
                 "faded_offspring": inter_cat.faded_offspring,
                 "opacity": inter_cat.opacity,
-                "prevent_fading": inter_cat.prevent_fading
+                "prevent_fading": inter_cat.prevent_fading,
+                "favourite": inter_cat.favourite,
             }
             clan_cats.append(cat_data)
             inter_cat.save_condition()

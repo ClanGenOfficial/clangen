@@ -1,22 +1,22 @@
 {
     "adventurous": [
-        "Is quietly trying to recruit other apprentices for a quick adventure"
+        "Is trying to recruit other apprentices for a quick adventure"
     ],
     "altruistic": [
         "Is thinking of giving their mentor a gift for their hard work",
-        "Made a keen suggestion to their mentor the other day"
+        "Made a suggestion to their mentor the other day"
     ],
     "ambitious": [
-        "Is asking the Clan leader what they can do to help out around camp",
+        "Is asking the Clan leader how to help out around camp",
         "Has been asking their mentor for more training",
         "Tries to put on a brave face for their fellow apprentices",
         "Is feeling proud of themselves",
         "Made sure to wake up early to train",
-        "Is daydreaming about a Clan celebration in their honor someday"
+        "Is daydreaming about a Clan celebration in their honor"
     ],
     "bloodthirsty": [
         "Starts a fight with another apprentice",
-        "Is hoping their warrior name will end in -claw"
+        "Is hoping their medicine cat name will end in -claw"
     ],
     "bold": [
         "Winked cheekily at another apprentice"
@@ -45,8 +45,8 @@
     "faithful": [],
     "fierce": [],
     "insecure": [
-        "Is wondering if they are good enough to be a medicine cat...",
-        "Wonders if the warrior life would have better suited them...",
+        "Is wondering if they are good enough to be a medicine cat",
+        "Wonders if the warrior life would have better suited them",
         "Doesn't think that they have performing up to their mentor's standards lately..."
     ],
     "lonesome": [
@@ -69,7 +69,7 @@
     "playful": [
         "Won't stop making funny faces when their mentor's back is turned",
         "Annoyed their mentor on accident the other day",
-        "Successfully lightened a dreary mood while out training the other day"
+        "Successfully lightened a dreary mood while out training"
     ],
     "responsible": [
         "Is licking their chest in embarrassment after being praised by their mentor",
@@ -98,6 +98,6 @@
     ],
     "wise": [
         "Is giving somber advice to a fellow apprentice",
-        "Was sought out by another apprentice recently for their wisdom"
+        "Was sought out by another apprentice for their wisdom"
     ]
 }

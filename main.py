@@ -27,6 +27,19 @@ def log_crash(type, value, tb):
 
 sys.excepthook = log_crash
 
+
+# if user is developing in a github codespace
+if os.environ.get('CODESPACES'):
+    print('')
+    print("Github codespace user!!! Sorry, but sound *may* not work :(")
+    print("If youre using the provided codespace config, the SDL_AUDIODRIVER environment variable has been set to 'dsp' for you.")
+    print("This is to avoid ALSA errors, but it may disable sound.")
+    print('')
+    print("Web VNC:")
+    print(f"https://{os.environ.get('CODESPACE_NAME')}-6080.{os.environ.get('GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN')}/?autoconnect=true&reconnect=true&password=clangen&resize=scale")
+    print("(use clangen in fullscreen mode for best results)")
+    print('')
+
 # Load game
 from scripts.game_structure.load_cat import load_cats
 from scripts.game_structure.windows import SaveCheck
@@ -38,16 +51,6 @@ from scripts.utility import get_text_box_theme
 import pygame_gui
 import pygame
 
-# if user is developing in a github codespace
-if os.environ.get('CODESPACES'):
-    print('')
-    print("Github codespace user!!! Please ignore the ALSA related errors above.")
-    print("They are not a problem, and are caused by the way codespaces work.")
-    print('')
-    print("Web VNC:")
-    print(f"https://{os.environ.get('CODESPACE_NAME')}-6080.{os.environ.get('GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN')}/?autoconnect=true&reconnect=true&password=clangen&resize=scale")
-    print("(use clangen in fullscreen)")
-    print('')
 
 # Version Number to be displayed.
 # This will only be shown as a fallback, when the git commit hash can't be found.
@@ -117,7 +120,9 @@ else:
     version_number.set_position((800 - version_number.get_relative_rect()[2] - 8, 700 - version_number.get_relative_rect()[3]))
 
 
-game.rpc = _DiscordRPC("1076277970060185701")
+game.rpc = _DiscordRPC("1076277970060185701", daemon=True)
+game.rpc.start()
+game.rpc.start_rpc.set()
 while True:
     time_delta = clock.tick(30) / 1000.0
     if game.switches['cur_screen'] not in ['start screen']:
@@ -138,9 +143,12 @@ while True:
             # Dont display if on the start screen or there is no clan.
             if (game.switches['cur_screen'] in ['start screen', 'switch clan screen', 'settings screen', 'info screen', 'make clan screen']
                 or not game.clan):
-                game.rpc.close()
+                game.rpc.close_rpc.set()
+                game.rpc.update_rpc.set()
                 pygame.display.quit()
                 pygame.quit()
+                if game.rpc.is_alive():
+                    game.rpc.join(1)
                 sys.exit()
             else:
                 SaveCheck(game.switches['cur_screen'], False, None)

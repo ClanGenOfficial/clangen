@@ -63,6 +63,17 @@ def json_load():
         "CREAMFOUR": ("CREAM", "FOUR")
     }
 
+    old_creamy_patches = {
+        'COLOURPOINTCREAMY': 'COLOURPOINT',
+        'ANYCREAMY': 'ANY',
+        'ANY2CREAMY': 'ANY2',
+        'LITTLECREAMY': 'LITTLE',
+        'VANCREAMY': 'VAN',
+        'TUXEDOCREAMY': 'TUXEDO'
+    }
+
+    no_tint_patches = ['SEPIAPOINT', 'MINKPOINT', 'SEALPOINT']
+
     # create new cat objects
     for i, cat in enumerate(cat_data):
         try:
@@ -103,7 +114,19 @@ def json_load():
             new_cat.age_sprites['elder'] = cat["spirit_elder"]
             new_cat.eye_colour = cat["eye_colour"]
             new_cat.reverse = cat["reverse"]
-            new_cat.white_patches = cat["white_patches"]
+            
+            if cat["white_patches"] in old_creamy_patches:
+                new_cat.white_patches = old_creamy_patches[cat['white_patches']]
+                new_cat.white_patches_tint = "darkcream"
+            else:
+                new_cat.white_patches = cat["white_patches"]
+                if 'white_patches_tint' in cat:
+                    new_cat.white_patches_tint = cat['white_patches_tint']
+                else:
+                    if new_cat.white_patches in no_tint_patches:
+                        new_cat.white_patches_tint = "none"
+                    else:
+                        new_cat.white_patches_tint = "offwhite"
 
             new_cat.tortiebase = cat["tortie_base"]
 
@@ -126,7 +149,6 @@ def json_load():
             else:
                 new_cat.pattern = cat["pattern"]
                 new_cat.tortiecolour = cat["tortie_color"]
-
 
             new_cat.skin = cat["skin"]
             new_cat.skill = cat["skill"]
@@ -161,6 +183,7 @@ def json_load():
             new_cat.faded_offspring = cat["faded_offspring"] if "faded_offspring" in cat else []
             new_cat.opacity = cat["opacity"] if "opacity" in cat else 100
             new_cat.prevent_fading = cat["prevent_fading"] if "prevent_fading" in cat else False
+            new_cat.favourite = cat["favourite"] if "favourite" in cat else False
             new_cat.tint = cat["tint"] if "tint" in cat else "none"
             all_cats.append(new_cat)
         except KeyError as e:
