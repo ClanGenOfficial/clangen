@@ -153,7 +153,7 @@ def change_clan_relations(other_clan, difference=0):
 
 
 def get_current_season():
-    print(game.clan.current_season)
+    #print(game.clan.current_season)
     modifiers = {
         "Newleaf": 0,
         "Greenleaf": 3,
@@ -161,12 +161,12 @@ def get_current_season():
         "Leaf-bare": 9
     }
     index = game.clan.age % 12 + modifiers[game.clan.starting_season]
-    print(index)
+    #print(index)
     if index > 11:
         index = index - 12
-    print(index)
+    #print(index)
     game.clan.current_season = game.clan.seasons[index]
-    print(game.clan.current_season)
+    #print(game.clan.current_season)
 
     return game.clan.current_season
 
