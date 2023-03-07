@@ -11,6 +11,7 @@ import random
 from scripts.game_structure.game_essentials import game
 from scripts.events_module.condition_events import Condition_Events
 from scripts.cat.cats import Cat
+from scripts.utility import get_cats_same_age
 from scripts.event_class import Single_Event
 from scripts.cat_relations.relationship import Relationship
 from scripts.events_module.relationship.mate_events import Mate_Events
@@ -209,7 +210,7 @@ class Relation_Events():
             return
 
         for new_cat in new_cats:
-            same_age_cats = self.get_cats_same_age(new_cat)
+            same_age_cats = get_cats_same_age(new_cat)
             alive_cats = list(filter(lambda c: not c.dead and not c.outside and not c.exiled , list(new_cat.all_cats.values())))
             number = game.config["new_cat"]["cat_amount_welcoming"]
 
@@ -232,18 +233,6 @@ class Relation_Events():
             elif len(alive_cats) <= number:
                 for alive_cat in alive_cats:
                     self.welcome_events_class.welcome_cat(alive_cat, new_cat)
-
-    def get_cats_same_age(self, cat: Cat, range: int = 10) -> list:
-        """Look for all cats in the clan and returns a list of cats, which are in the same age range as the given cat."""
-        cats = []
-        for inter_cat in cat.all_cats.values():
-            if inter_cat.dead or inter_cat.outside or inter_cat.exiled:
-                continue
-
-            if inter_cat.moons <= cat.moons + range and inter_cat.moons <= cat.moons - range:
-                cats.append(inter_cat)
-
-        return cats
 
 
 # ---------------------------------------------------------------------------- #

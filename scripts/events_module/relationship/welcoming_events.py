@@ -17,7 +17,7 @@ class Welcoming_Events():
     def __init__(self) -> None:
         pass
     
-    def welcome_cat(self, clan_cat: Cat, new_cat: Cat):
+    def welcome_cat(self, clan_cat: Cat, new_cat: Cat) -> None:
         """Checks and triggers the welcome event from the clan cat to the new cat.
 
             Parameters
@@ -32,20 +32,21 @@ class Welcoming_Events():
         """
         if new_cat.ID == clan_cat.ID:
             return
-        status = clan_cat.status
 
+		# setup the status as "kay" to use it
+        status = clan_cat.status
         if status == "medicine cat" or status == "medicine cat apprentice":
             status = "medicine"
 
         if status == "mediator apprentice":
             status = "mediator"
 
+		# collect all events
         possible_events = deepcopy(GENERAL_WELCOMING)
         if status not in WELCOMING_MASTER_DICT:
             print(f"ERROR: there is no welcoming json for the status {status}")
         else:
             possible_events.extend(WELCOMING_MASTER_DICT[status])
-
         filtered_events = self.filter_welcome_interactions(possible_events, new_cat)
 
         # choose which interaction will be displayed
@@ -87,8 +88,20 @@ class Welcoming_Events():
             interaction_str, ["relation", "interaction"], [new_cat.ID, clan_cat.ID]
         ))
 
-    def filter_welcome_interactions(self, welcome_interactions, new_cat):
-        """Filter welcome events based on states."""
+    def filter_welcome_interactions(self, welcome_interactions : list, new_cat: Cat) -> list:
+        """Filter welcome events based on states.
+    
+            Parameters
+            ----------
+            welcome_interactions : list
+                a list of welcome interaction
+            new_cat : Cat
+                new cat which will be welcomed
+
+            Returns
+            -------
+            filtered list of welcome interactions
+        """
         filtered = []
         for interaction in welcome_interactions:
             if interaction.background and new_cat.backstory not in interaction.background:
