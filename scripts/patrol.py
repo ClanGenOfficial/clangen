@@ -1281,20 +1281,26 @@ class Patrol():
     # ---------------------------------------------------------------------------- #
 
     def handle_exp_gain(self):
-        gm_modifier = 1
         base_exp = 0
         if "master" in self.experience_levels:
             max_boost = 10
         else:
             max_boost = 0
-        patrol_exp = self.patrol_event.exp * 2
+        patrol_exp = 2 * self.patrol_event.exp
         if game.clan.game_mode == 'classic':
-            gm_modifier = gm_modifier
+            gm_modifier = 1
         elif game.clan.game_mode == 'expanded':
             gm_modifier = 3
         elif game.clan.game_mode == 'cruel season':
             gm_modifier = 6
-        gained_exp = ((patrol_exp + base_exp + max_boost) / len(self.patrol_cats)) / gm_modifier
+        else:
+            gm_modifier = 1
+
+        gained_exp = (patrol_exp + base_exp + max_boost)
+        gained_exp = gained_exp * (1 - 0.1 * len(self.patrol_cats)) / gm_modifier
+        if gained_exp < 1:
+            gained_exp = 1
+
         for cat in self.patrol_cats:
             cat.experience = cat.experience + gained_exp
 

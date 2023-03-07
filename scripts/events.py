@@ -1285,11 +1285,11 @@ class Events():
                 return
 
             if cat.status == "medicine cat apprentice":
-                base_ex = random.randint(game.config["graduation"]["base_med_app_timeskip_ex"][0],
-                                         game.config["graduation"]["base_med_app_timeskip_ex"][1])
+                base_ex = random.choices(game.config["graduation"]["base_med_app_timeskip_ex"][0],
+                                          weights=game.config["graduation"]["base_med_app_timeskip_ex"][1], k=1)[0]
             else:
-                base_ex = random.randint(game.config["graduation"]["base_app_timeskip_ex"][0],
-                                         game.config["graduation"]["base_app_timeskip_ex"][1])
+                base_ex = random.choices(game.config["graduation"]["base_app_timeskip_ex"][0],
+                                          weights=game.config["graduation"]["base_app_timeskip_ex"][1], k=1)[0]
 
             if cat.mentor and not Cat.fetch_cat(cat.mentor).not_working():
                 mentor_modifier = 1
@@ -1297,8 +1297,8 @@ class Events():
                 # No mentor/sick mentor debuff
                 mentor_modifier = 0.6
 
-            cat.experience += base_ex * mentor_modifier
-            print(f"{cat.name} has gained {base_ex * mentor_modifier} EX", cat._experience)
+            cat.experience += max(base_ex * mentor_modifier, 1)
+            print(f"{cat.name} has gained {int(base_ex * mentor_modifier)} EX", cat._experience)
 
     def invite_new_cats(self, cat):
         # ---------------------------------------------------------------------------- #
