@@ -19,7 +19,7 @@
 			"interactions": [
 				"m_c is admiring r_c from afar...",
 				"m_c stayed up all night thinking of ways to impress r_c.",
-				"m_c thinks that r_c is really funny."
+				"m_c thinks r_c is really funny."
 			]
 		},
 		{
@@ -46,7 +46,7 @@
 			"id": "rom_inc_low5",
 			"intensity": "low",
 			"interactions": [
-				"m_c thinks that r_c is really charming."
+				"m_c thinks r_c is really charming."
 			],
 			"random_trait_constraint": [
 				"charming"

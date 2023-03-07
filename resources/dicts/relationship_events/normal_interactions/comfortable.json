@@ -259,7 +259,7 @@
 			"id": "comfort_de_med1",
 			"interactions": [
 				"m_c finds the way r_c acts increasingly uncomfortable.",
-				"m_c thinks that r_c has been behaving stuck up and rude."
+				"m_c thinks r_c has been behaving stuck up and rude."
 			]
 		},
 		{

@@ -196,7 +196,7 @@
 		{
 			"id": "admire_adult_odd_med1",
 			"interactions": [
-				"m_c thinks that r_c is so much braver than them."
+				"m_c thinks r_c is so much braver than them."
 			],
 			"relationship_constraint": [
 				"admiration_60"
