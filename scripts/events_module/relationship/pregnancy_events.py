@@ -11,11 +11,13 @@ from scripts.game_structure.game_essentials import game
 from scripts.cat.cats import Cat, cat_class
 from scripts.event_class import Single_Event
 from scripts.cat_relations.relationship import Relationship
+from scripts.events_module.condition_events import Condition_Events
 
 class Pregnancy_Events():
     """All events which are related to pregnancy such as kittening and define who are the parents."""
     
     def __init__(self) -> None:
+        self.condition_events = Condition_Events()
         pass
 
 
