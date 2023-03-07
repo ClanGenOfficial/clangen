@@ -1026,6 +1026,86 @@
     ],
     "As the new medicine cat apprentice, m_c dreams of StarClan for the first time. They are greeted by many StarClan cats, two of which they recognize as dead_par1 and dead_par2, who are watching in pride as the rest of StarClan's ranks accept the new medicine cat apprentice."
   ],
+  "med_app_21": [
+    [
+      "medicine cat apprentice",
+      "general_mentor",
+      "general_leader",
+      "general_backstory",
+      "faithful"
+    ],
+    "m_c Has been looking and wondering about the mysteries of the stars ever since they first opened their eyes. (mentor) promises them their own place amongst them as a full medicine cat one day."
+  ],
+  "med_app_22": [
+    [
+     "medicine cat apprentice",
+     "general_mentor",
+     "general_leader",
+     "general_backstory",
+     "wise"
+    ],
+    "m_c sees no reason to sully their claws with blood, they are far more interested in the knowledge and wisdom that can be gained with being an medicine cat apprentice. (mentor) promises to teach them all they know and they go into the medicine den together immediately after the ceremony."
+  ],
+  "med_app_23": [
+    [
+      "medicine cat apprentice",
+      "general_mentor",
+      "general_leader",
+      "general_backstory",
+      "thoughtful"
+    ],
+    "m_c has been wondering and pondering about the mysteries of life and the meaning of it all. (mentor) is eager to start teaching them, they sound like a delight to work with!"
+  ],
+  "med_app_24": [
+    [
+      "medicine cat apprentice",
+      "general_mentor",
+      "general_leader",
+      "general_backstory",
+      "loving"
+    ],
+    "m_c was never interested in fighting and decided to devote their life to healing and helping all kinds of cats in any way they can. (mentor) is almost awed when they see the determination and love they feel for all the cats that they meet and is extremely proud to become their mentor."
+  ],
+  "med_app_25": [
+    [
+      "medicine cat apprentice",
+      "general_mentor",
+      "general_leader",
+      "general_backstory",
+      "confident"
+    ],
+    "After (mentor) touched noses with m_c they immediately run towards the medicine den boasting that they will be the best medicine cat any Clan has ever seen."
+  ],
+  "med_app_26": [
+    [
+      "medicine cat apprentice",
+      "general_mentor",
+      "general_leader",
+      "general_backstory",
+      "bold"
+    ],
+    "m_c tells (mentor) right after the ceremony that they will tell them if they think they are being a mousebrain. All the other cats immediately gasp and look towards their mentors reaction and relax as (mentor) only laughs and says that they better prove that they have the skills to do that then."
+  ],
+  "med_app_27": [
+    [
+      "medicine cat apprentice",
+      "general_mentor",
+      "general_leader",
+      "general_backstory",
+      "vengeful"
+    ],
+    "While m_c does not really like other cats, they dislike fighting even more. They prefer a more cunning approach and being a medicine cat gives them all the opportunity to do so. (mentor) takes them on as apprentice admiring their sharp tongue and cunning gleam in their eyes."
+  ],
+  "med_app_28": [
+    [
+      "medicine cat apprentice",
+      "general_mentor",
+      "general_leader",
+      "general_backstory",
+      "adventurous"
+    ],
+    "m_c has always longed for adventures and they feel like being a medicine cat apprentice will be the greatest adventure of them all. (mentor) eagerly accepts such an eager and willing apprentice."
+  ],
   "mediator_app_0": [
     [
       "mediator apprentice",
