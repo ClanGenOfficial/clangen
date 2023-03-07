@@ -30,10 +30,10 @@ sys.excepthook = log_crash
 
 # if user is developing in a github codespace
 if os.environ.get('CODESPACES'):
-    os.environ['SDL_AUDIODRIVER'] = 'dsp'
     print('')
     print("Github codespace user!!! Sorry, but sound *may* not work :(")
-    print("We set the SDL_AUDIODRIVER env var to dsp to avoid ALSA errors.")
+    print("If youre using the provided codespace config, the SDL_AUDIODRIVER environment variable has been set to 'dsp' for you.")
+    print("This is to avoid ALSA errors, but it may disable sound.")
     print('')
     print("Web VNC:")
     print(f"https://{os.environ.get('CODESPACE_NAME')}-6080.{os.environ.get('GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN')}/?autoconnect=true&reconnect=true&password=clangen&resize=scale")
