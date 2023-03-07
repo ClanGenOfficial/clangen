@@ -641,7 +641,7 @@ class ProfileScreen(Screens):
                                                                       object_id="#not_fav_cat",
                                                                       manager=MANAGER,
                                                                       tool_tip_text='Mark as favorite',
-                                                                      sstarting_height=2)
+                                                                      starting_height=2)
 
         if self.the_cat.favourite:
             self.profile_elements["favourite_button"].show()
