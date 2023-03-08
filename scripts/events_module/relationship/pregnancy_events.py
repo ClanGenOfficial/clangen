@@ -290,9 +290,12 @@ class Pregnancy_Events():
         elif cat.mate == other_cat.ID and other_cat.dead or other_cat.outside:
             involved_cats.append(other_cat.ID)
             event_list.append(choice(events["birth"]["dead_mate"]))
-        elif cat.mate != other_cat.ID and cat.mate is not None:
+        elif (cat.mate and cat.mate != other_cat.ID) or (other_cat.mate and other_cat.mate != cat.ID):
             involved_cats.append(other_cat.ID)
             event_list.append(choice(events["birth"]["affair"]))
+        elif not cat.mate and not other_cat.mate:
+            involved_cats.append(other_cat.ID)
+            event_list.append(choice(events["birth"]["both_unmated"]))
         else:
             event_list.append(choice(events["birth"]["unmated_parent"]))
 
@@ -479,7 +482,10 @@ class Pregnancy_Events():
 
         highest_romantic_relation = get_highest_romantic_relation(cat.relationships.values(), exclude_mate=True,
                                                                   potential_mate=True)
-        print(str(highest_romantic_relation.cat_to.name))
+        if highest_romantic_relation:
+            print(str(highest_romantic_relation.cat_to.name), cat.name)
+        else:
+            print("None", cat.name)
         if mate and highest_romantic_relation:
             # Love affair calculation when the cat has a mate
             chance_love_affair = self.get_love_affair_chance(mate_relation, highest_romantic_relation)
