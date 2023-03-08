@@ -16,7 +16,10 @@ class Name():
                 new_names = name_list.split('\n')
                 for new_name in new_names:
                     if new_name != '':
-                        names_dict["normal_prefixes"].append(new_name)
+                        if new_name.startswith('-'):
+                            names_dict["normal_prefixes"].remove(new_name[1:])
+                        else:
+                            names_dict["normal_prefixes"].append(new_name)
 
         if os.path.exists('saves/suffixlist.txt'):
             with open('saves/suffixlist.txt', 'r') as read_file:
@@ -26,7 +29,10 @@ class Name():
                 new_names = name_list.split('\n')
                 for new_name in new_names:
                     if new_name != '':
-                        names_dict["normal_suffixes"].append(new_name)
+                        if new_name.startswith('-'):
+                            names_dict["normal_suffixes"].remove(new_name[1:])
+                        else:
+                            names_dict["normal_suffixes"].append(new_name)
 
     def __init__(self,
                  status="warrior",
