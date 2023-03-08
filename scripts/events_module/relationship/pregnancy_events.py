@@ -494,22 +494,6 @@ class Pregnancy_Events():
                 if samesex or cat.gender != highest_romantic_relation.cat_to.gender:
                     print("love affair", str(cat.name), str(highest_romantic_relation.cat_to.name))
                     return highest_romantic_relation.cat_to
-        elif highest_romantic_relation and highest_romantic_relation.cat_to.mate:
-            # Love affair calculation when the highest romantic relation has a mate, but the cat doesn't
-            other_mate = Cat.fetch_cat(highest_romantic_relation.cat_to.mate)
-            cat_to = highest_romantic_relation.cat_to
-            if other_mate.ID in cat_to.relationships:
-                other_mate_relation = cat_to.relationships[other_mate.ID]
-            else:
-                other_mate_relation = Relationship(cat_to, other_mate, True)
-                cat_to.relationships[other_mate.ID] = other_mate_relation
-
-            chance_love_affair = self.get_love_affair_chance(other_mate_relation, highest_romantic_relation)
-            if not chance_love_affair or not int(random.random() * chance_love_affair):
-                print("love affair?")
-                if samesex or cat.gender != highest_romantic_relation.cat_to.gender:
-                    print("love affair", str(cat.name), str(highest_romantic_relation.cat_to.name))
-                    return highest_romantic_relation.cat_to
         elif highest_romantic_relation:
             # Love affair change if neither the cat nor the highest romantic relation has a mate:
             chance_love_affair = self.get_unmated_love_affair_chance(highest_romantic_relation)
