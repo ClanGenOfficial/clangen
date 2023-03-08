@@ -780,11 +780,12 @@ INTERACTION_MASTER_DICT = {"romantic": {}, "platonic": {}, "dislike": {}, "admir
 rel_types = ["romantic", "platonic", "dislike", "admiration", "comfortable", "jealousy", "trust"]
 base_path = os.path.join("resources","dicts", "relationship_events", "normal_interactions")
 for rel in rel_types:
-    file_name = rel + ".json"
-    with open(os.path.join(base_path, file_name), 'r') as read_file:
-        loaded_dict = ujson.loads(read_file.read())
-        INTERACTION_MASTER_DICT[rel]["increase"] = create_interaction(loaded_dict["increase"])
-        INTERACTION_MASTER_DICT[rel]["decrease"] = create_interaction(loaded_dict["decrease"])
+    with open(os.path.join(base_path, rel , "increase.json"), 'r') as read_file:
+        loaded_list = ujson.loads(read_file.read())
+        INTERACTION_MASTER_DICT[rel]["increase"] = create_interaction(loaded_list)
+    with open(os.path.join(base_path, rel , "decrease.json"), 'r') as read_file:
+        loaded_list = ujson.loads(read_file.read())
+        INTERACTION_MASTER_DICT[rel]["decrease"] = create_interaction(loaded_list)
 
 NEUTRAL_INTERACTIONS = []
 with open(os.path.join(base_path, "neutral.json"), 'r') as read_file:
