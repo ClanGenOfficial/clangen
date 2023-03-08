@@ -626,7 +626,7 @@ class ProfileScreen(Screens):
 
         # Fullscreen
         if game.settings['fullscreen']:
-            _tmp = 740 - int(name_text_size.width*7/15)
+            x_pos = 740 - int(name_text_size.width*7/15)
         else:
             x_pos = 740 - name_text_size.width
         # TODO: positioning is weird. closer to names on some, further on others
