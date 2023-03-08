@@ -465,6 +465,9 @@ class Pregnancy_Events():
         affair_chance = 15
         average_romantic_love = (relation.romantic_love + relation.opposite_relationship.romantic_love) / 2
 
+        if relation.cat_to.mate:
+            affair_chance += 20
+
         if average_romantic_love > 50:
             affair_chance -= 12
         elif average_romantic_love > 40:
