@@ -21,7 +21,9 @@
         "GitHub.copilot",
         "GitHub.copilot-labs",
         "Tyriar.luna-paint",
-        "aaron-bond.better-comments"
+        "aaron-bond.better-comments",
+        "ms-python.pylint",
+        "eamodio.gitlens"
       ],
       "settings": {
         "workbench.colorTheme": "Copilot Theme"

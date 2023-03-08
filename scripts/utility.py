@@ -421,10 +421,10 @@ def event_text_adjust(Cat,
                       new_cat=None):
     name = str(cat.name)
     other_name = None
-    if other_cat is not None:
+    if other_cat:
         other_name = str(other_cat.name)
     mate = None
-    if cat.mate is not None:
+    if cat.mate:
         mate = Cat.all_cats.get(cat.mate).name
 
     adjust_text = text

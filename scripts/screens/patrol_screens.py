@@ -40,6 +40,7 @@ class PatrolScreen(Screens):
 
     def __init__(self, name=None):
         super().__init__(name)
+        self.fav = {}
         self.normal_event_choice = None
         self.romantic_event_choice = None
         self.intro_image = None
@@ -959,6 +960,7 @@ class PatrolScreen(Screens):
         """Updates all the cat sprite buttons. Also updates the skills tab, if open, and the next and
             previous page buttons.  """
         self.clear_cat_buttons()  # Clear all the cat buttons
+
         self.able_cats = []
 
         # ASSIGN TO ABLE CATS
@@ -1005,6 +1007,15 @@ class PatrolScreen(Screens):
         pos_x = 100
         i = 0
         for cat in display_cats:
+            if cat.favourite:
+                self.fav[str(i)] = pygame_gui.elements.UIImage(
+                            scale(pygame.Rect((pos_x, pos_y), (100, 100))),
+                            pygame.transform.scale(
+                                pygame.image.load(
+                                    f"resources/images/fav_marker.png").convert_alpha(),
+                                (100, 100))
+                        )
+                self.fav[str(i)].disable()
             self.cat_buttons["able_cat" + str(i)] = UISpriteButton(scale(pygame.Rect((pos_x, pos_y), (100, 100))),
                                                                    pygame.transform.scale(cat.large_sprite, (100, 100))
                                                                    , cat_object=cat, manager=MANAGER)
@@ -1231,6 +1242,9 @@ class PatrolScreen(Screens):
         for cat in self.cat_buttons:
             self.cat_buttons[cat].kill()
         self.cat_buttons = {}
+        for marker in self.fav:
+            self.fav[marker].kill()
+        self.fav = {}
 
     def exit_screen(self):
         self.clear_page()
