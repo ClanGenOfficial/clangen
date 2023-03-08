@@ -1,5 +1,41 @@
 import random
-from .pelts import *
+from random import choice, randint
+
+# Alphabetical !! yea !!
+from .pelts import (
+    black_colours,
+    blue_eyes,
+    brown_colours,
+    choose_pelt,
+    colour_categories,
+    exotic,
+    eye_colours,
+    ginger_colours,
+    green_eyes,
+    high_white,
+    little_white,
+    mid_white,
+    mostly_white,
+    pelt_categories,
+    pelt_length,
+    plain,
+    plant_accessories,
+    point_markings,
+    scars1,
+    scars3,
+    skin_sprites,
+    spotted,
+    tabbies,
+    tortiebases,
+    torties,
+    vit,
+    white_colours,
+    wild_accessories,
+    yellow_eyes,
+    pelt_colours,
+    tortiepatterns,
+    )
+
 from scripts.cat.sprites import Sprites
 from scripts.game_structure.game_essentials import game
 
@@ -69,7 +105,7 @@ def plural_acc_names(accessory, plural, singular):
             acc_display = 'petals'
         if singular:
             acc_display = 'petal'
-    elif acc_display == 'dry herbs':
+    elif acc_display == ('dry herbs' or 'dry_herbs'):
         if plural:
             acc_display = 'dry herbs'
         if singular:
@@ -184,10 +220,10 @@ def pelt_inheritance(cat, parents: tuple):
     par_white = []
     for p in parents:
         if p:
-            #Gather pelt color.
+            # Gather pelt color.
             par_peltcolours.add(p.pelt.colour)
 
-            #Gather pelt length
+             # Gather pelt length
             par_peltlength.add(p.pelt.length)
 
             # Gather pelt name
@@ -196,10 +232,10 @@ def pelt_inheritance(cat, parents: tuple):
             else:
                 par_peltnames.add(p.pelt.name)
 
-            #Gather exact pelts, for direct inheritance.
+            # Gather exact pelts, for direct inheritance.
             par_pelts.append(p.pelt)
 
-            #Gather if they have white in their pelt.
+            # Gather if they have white in their pelt.
             par_white.append(p.pelt.white)
         else:
             # If order for white patches to work correctly, we also want to randomly generate a "pelt_white"
@@ -212,14 +248,14 @@ def pelt_inheritance(cat, parents: tuple):
             par_peltlength.add(None)
             par_peltnames.add(None)
 
-    #If this list is empty, something went wrong.
+    # If this list is empty, something went wrong.
     if not par_peltcolours:
         print("Error - no parents: pelt randomized")
         randomize_pelt(cat)
         return
 
     # There is a 1/10 chance for kits to have the exact same pelt as one of their parents
-    if not randint(0, 10):  # 1/15 chance
+    if not randint(0, game.config["cat_generation"]["direct_inheritance"]):  # 1/10 chance
         selected = choice(par_pelts)
         cat.pelt = choose_pelt(selected.colour, selected.white, selected.name,
                                selected.length)
@@ -505,56 +541,59 @@ def init_pattern(cat):
     if cat.pelt is None:
         init_pelt(cat)
     if cat.pelt.name in torties:
-        cat.tortiecolour = cat.pelt.colour
-        if cat.tortiebase is None:
+        if not cat.tortiebase:
             cat.tortiebase = choice(tortiebases)
-        if cat.tortiebase == 'tabby':
-            cat.tortiepattern = 'tortietabby'
-        elif cat.tortiebase == 'bengal':
-            cat.tortiepattern = 'tortiebengal'
-        elif cat.tortiebase == 'marbled':
-            cat.tortiepattern = 'tortiemarbled'
-        elif cat.tortiebase == 'ticked':
-            cat.tortiepattern = 'tortieticked'
-        elif cat.tortiebase == 'rosette':
-            cat.tortiepattern = 'tortierosette'
-        elif cat.tortiebase == 'smoke':
-            cat.tortiepattern = 'tortiesmoke'
-        elif cat.tortiebase == 'speckled':
-            cat.tortiepattern = 'tortiespeckled'
-        elif cat.tortiebase == 'mackerel':
-            cat.tortiepattern = 'tortiemackerel'
-        elif cat.tortiebase == 'classic':
-            cat.tortiepattern = 'tortieclassic'
-        elif cat.tortiebase == 'sokoke':
-            cat.tortiepattern = 'tortiesokoke'
-        elif cat.tortiebase == 'agouti':
-            cat.tortiepattern = 'tortieagouti'
-        else:
-            cat.tortiepattern = choice(['tortietabby', 'tortiemackerel', 'tortieclassic'])
+        if not cat.pattern:
+            cat.pattern = choice(tortiepatterns)
 
+        wildcard_chance = game.config["cat_generation"]["wildcard_tortie"]
+        if cat.pelt.colour:
+            # The "not wildcard_chance" allows users to set wildcard_tortie to 0
+            # and always get wildcard torties.
+            if not wildcard_chance or random.getrandbits(wildcard_chance) == 1:
+                # This is the "wildcard" chance, where you can get funky combinations.
+                print("WILDCARD TORTIE")
+
+                # Allow any pattern:
+                cat.tortiepattern = choice(tortiebases)
+
+                # Allow any colors that aren't the base color.
+                possible_colors = pelt_colours.copy()
+                possible_colors.remove(cat.pelt.colour)
+                cat.tortiecolour = choice(possible_colors)
+
+            else:
+                # Normal generation
+                if cat.tortiebase in ["singlestripe", "smoke", "single"]:
+                    cat.tortiepattern = choice(['tabby', 'mackerel', 'classic', 'single', 'smoke', 'agouti',
+                                                'ticked'])
+                else:
+                    cat.tortiepattern = random.choices([cat.tortiebase, 'single'], weights=[97, 3], k=1)[0]
+
+                if cat.pelt.colour == "WHITE":
+                    possible_colors = white_colours.copy()
+                    possible_colors.remove("WHITE")
+                    cat.pelt.colour = choice(possible_colors)
+
+                # Ginger is often duplicated to increase its chances
+                if (cat.pelt.colour in black_colours) or (cat.pelt.colour in white_colours):
+                    cat.tortiecolour = choice((ginger_colours * 2) + brown_colours)
+                elif cat.pelt.colour in ginger_colours:
+                    cat.tortiecolour = choice(brown_colours + black_colours * 2)
+                elif cat.pelt.colour in brown_colours:
+                    possible_colors = brown_colours.copy()
+                    possible_colors.remove(cat.pelt.colour)
+                    possible_colors.extend(black_colours + (ginger_colours * 2))
+                    cat.tortiecolour = choice(possible_colors)
+                else:
+                    cat.tortiecolour = "GOLDEN"
+
+        else:
+            cat.tortiecolour = "GOLDEN"
     else:
         cat.tortiebase = None
         cat.tortiepattern = None
         cat.tortiecolour = None
-
-    if cat.pelt.name in torties and cat.pelt.colour is not None:
-        if cat.pelt.colour in black_colours:
-            cat.pattern = choice(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR', 'GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR',
-                                    'DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR'])
-        elif cat.pelt.colour in brown_colours:
-            cat.pattern = choice(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR', 'GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR',
-                                  "DARKONE", "DARKTWO", "DARKTHREE", "DARKFOUR"])
-        elif cat.pelt.colour in white_colours:
-            cat.pattern = choice(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR', 'CREAMONE', 'CREAMTWO', 'CREAMTHREE', 'CREAMFOUR'])
-        elif cat.pelt.colour in ['DARKGINGER', "GINGER"]:
-            cat.pattern = choice(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR', 'CREAMONE', 'CREAMTWO', 'CREAMTHREE',
-                                  'CREAMFOUR'])
-        elif cat.pelt.colour in ["CREAM", "GOLDEN", "PALEGINGER"]:
-            cat.pattern = choice(['DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR'])
-        else:
-            cat.pattern = "GOLDONE"
-    else:
         cat.pattern = None
 
 
@@ -571,7 +610,7 @@ def white_patches_inheritance(cat, parents: tuple):
         return
 
     # Direct inheritance. Will only work if at least one parent has white patches, otherwise continue on.
-    if par_whitepatches and not randint(0, 10):
+    if par_whitepatches and not randint(0, game.config["cat_generation"]["direct_inheritance"]):
         cat.white_patches = choice(list(par_whitepatches))
         return
 
@@ -670,10 +709,29 @@ def init_white_patches(cat):
 
 
 def init_tint(cat):
+    """Sets tint for pelt and white patches"""
+
     # Basic tints as possible for all colors.
     possible_tints = Sprites.cat_tints["possible_tints"]["basic"].copy()
     if cat.pelt.colour in Sprites.cat_tints["colour_groups"]:
         color_group = Sprites.cat_tints["colour_groups"][cat.pelt.colour]
         possible_tints += Sprites.cat_tints["possible_tints"][color_group]
         cat.tint = choice(possible_tints)
+    else:
+        cat.tint = "none"
+
+    # These are the patches where the tint should always be none
+    no_tint_patches = ['SEPIAPOINT', 'MINKPOINT', 'SEALPOINT'] + vit
+
+    if cat.white_patches and cat.white_patches not in no_tint_patches:
+        #Now for white patches
+        possible_tints = Sprites.white_patches_tints["possible_tints"]["basic"].copy()
+        if cat.pelt.colour in Sprites.cat_tints["colour_groups"]:
+            color_group = Sprites.white_patches_tints["colour_groups"][cat.pelt.colour]
+            possible_tints += Sprites.white_patches_tints["possible_tints"][color_group]
+            cat.white_patches_tint = choice(possible_tints)
+        else:
+            cat.white_patches_tint = "none"
+    else:
+        cat.white_patches_tint = "none"
 

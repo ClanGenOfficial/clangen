@@ -1,7 +1,3 @@
-try:
-    import ujson
-except ImportError:
-    import json as ujson
 import random
 
 from scripts.cat.cats import Cat, INJURIES
@@ -30,12 +26,12 @@ class Death_Events():
         """
         involved_cats = [cat.ID]
         other_clan = random.choice(game.clan.all_clans)
-        other_clan_name = f'{str(other_clan.name)}Clan'
+        other_clan_name = f'{other_clan.name}Clan'
         current_lives = int(game.clan.leader_lives)
 
         if other_clan_name == 'None':
             other_clan = game.clan.all_clans[0]
-            other_clan_name = f'{str(other_clan.name)}Clan'
+            other_clan_name = f'{other_clan.name}Clan'
 
         possible_events = self.generate_events.possible_short_events(cat.status, cat.age, "death")
         final_events = self.generate_events.filter_possible_short_events(possible_events, cat, other_cat, war, enemy_clan,
@@ -93,15 +89,10 @@ class Death_Events():
                 game.clan.leader_lives -= 10
                 additional_event_text += cat.die(body)
                 cat.died_by.append(history_text)
-            elif "murder" in death_cause.tags or "some_lives" in death_cause.tags:
-                if game.clan.leader_lives > 2:
-                    game.clan.leader_lives -= random.randrange(1, current_lives - 1)
-                    additional_event_text += cat.die(body)
-                    cat.died_by.append(history_text)
-                else:
-                    game.clan.leader_lives -= 1
-                    additional_event_text += cat.die(body)
-                    cat.died_by.append(history_text)
+            elif "some_lives" in death_cause.tags:
+                game.clan.leader_lives -= random.randrange(2, current_lives - 1)
+                additional_event_text += cat.die(body)
+                cat.died_by.append(history_text)
             else:
                 game.clan.leader_lives -= 1
                 additional_event_text += cat.die(body)

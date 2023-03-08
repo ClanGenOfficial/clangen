@@ -40,12 +40,6 @@
         "faithful",
         "loving"
     ],
-    "fail_skills": [
-        "None"
-    ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -84,15 +78,6 @@
         "great hunter",
         "fantastic hunter"
     ],
-    "win_trait": [
-        "None"
-    ],
-    "fail_skills": [
-        "None"
-    ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -130,7 +115,7 @@
         null,
         null,
         null,
-        "A storm descends, sudden and violent, putting an end to any other thoughts but survival. When the snowstorm leaves, finally, and the cats trudge back home, but r_c hasn't escaped unscathed, their body chilled and refusing to warm up properly."
+        "A storm descends, sudden and violent, putting an end to any other thoughts but survival. Finally, after what feels like moons, the snowstorm leaves and the cats trudge back home. Unfortunately, r_c hasn't escaped unscathed, their body chilled and refusing to warm up properly."
     ],
     "win_skills": [
         "great speaker",
@@ -142,12 +127,6 @@
         "empathetic",
         "faithful",
         "loving"
-    ],
-    "fail_skills": [
-        "None"
-    ],
-    "fail_trait": [
-        "None"
     ],
     "min_cats": 2,
     "max_cats": 6,

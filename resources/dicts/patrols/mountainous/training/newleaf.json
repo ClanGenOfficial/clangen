@@ -4,7 +4,7 @@
     "patrol_id": "mtn_train_eagles1",
     "biome": "mountainous",
     "season": "newleaf",
-    "tags": ["training", "apprentice", "trust", "comfort", "dislike", "warrior"],
+    "tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "warrior"],
     "intro_text": "The cats head out into the crisp clear newleaf sun, p_l leading them towards a massive messy eagle nest.",
     "decline_text": "When they get there they discover that this nest isn't being used this newleaf. Disappointing.",
     "chance_of_success": 80,
@@ -19,9 +19,7 @@
         "p_l can't get app1 to take the training session seriously. They keep making too much noise, not understanding the importance and danger of the opportunity."
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -31,7 +29,7 @@
     "patrol_id": "mtn_train_eagles2",
     "biome": "mountainous",
     "season": "newleaf",
-    "tags": ["training", "apprentice", "trust", "comfort", "dislike", "warrior"],
+    "tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "warrior"],
     "intro_text": "The cats head out into the crisp clear newleaf sun, p_l leading them towards a massive messy eagle nest.",
     "decline_text": "When they get there, the tunnels look muddier than p_l expected, and the training is called off until the cats can be sure they're safe.",
     "chance_of_success": 80,
@@ -46,9 +44,7 @@
         "p_l can't get app1 to take the training session seriously. They keep making too much noise, not understanding the importance and danger of the opportunity."
     ],
     "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -58,7 +54,7 @@
     "patrol_id": "mtn_train_eagles3",
     "biome": "mountainous",
     "season": "newleaf",
-    "tags": ["training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
+    "tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
     "intro_text": "The cats head out into the crisp clear newleaf sun, p_l leading them towards a massive messy eagle nest.",
     "decline_text": "When they get there, the tunnels look muddier than p_l expected, and the training is called off until the cats can be sure they're safe.",
     "chance_of_success": 90,
@@ -73,9 +69,7 @@
         "p_l can't get app1 to take the training session seriously. They keep making too much noise, not understanding the importance and danger of the opportunity. They distract app2 as well, and eventually p_l has to give up on teaching."
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -85,7 +79,7 @@
     "patrol_id": "mtn_train_eagles4",
     "biome": "mountainous",
     "season": "newleaf",
-    "tags": ["training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
+    "tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
     "intro_text": "The cats head out into the crisp clear newleaf sun, p_l leading them towards a massive messy eagle nest.",
     "decline_text": "When they get there, the tunnels look muddier than p_l expected, and the training is called off until the cats can be sure they're safe.",
     "chance_of_success": 90,
@@ -100,9 +94,7 @@
         "p_l can't get app1 to take the training session seriously. They keep making too much noise, not understanding the importance and danger of the opportunity. They distract app2 as well, and eventually p_l has to give up on teaching."
     ],
     "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -112,7 +104,7 @@
     "patrol_id": "mtn_train_snowcrunching3",
     "biome": "mountainous",
     "season": "newleaf",
-    "tags": ["training", "apprentice", "two_apprentices", "rel_two_apps", "romantic", "platonic", "comfort", "no_change_fail"],
+    "tags": ["app_stat", "training", "apprentice", "two_apprentices", "rel_two_apps", "romantic", "platonic", "comfort", "no_change_fail"],
     "intro_text": "The apprentices emerge into a predawn world hushed and smothered in a new coating of snow! app1 and app2 tear off into the territory near camp, looking to play.",
     "decline_text": "Their mentors are already up for the day, and call them back. There'll be time to play later.",
     "chance_of_success": 70,
@@ -121,16 +113,13 @@
             "The snow seems to have melted and refrozen during the night, and app1 darts lightly over the top of the thin crust. app2 follows them, only to immediately hear a crack and sink up to their haunches in the fluffy stuff. Teasingly, app1 runs around near them, and it turns into a game of app2 romping through the snow trying to catch them.",
             "app1 finds a snowdrift, and over the course of an hour them and app2 turn it into a very respectable snow den, complete with short entrance tunnel. They're debating what to call the camp of their little Clan when their mentors arrive, congratulating them on running an excellent wilderness survival session without supervision.",
             null,
-            "After a while romping around in the snow, app1 complains of the cold seeping into their fur. app2 digs a little hollow, and invites them in to curl up with them. Strictly for warmth purposes of course. They both stay there as the sun rises. Strictly for warmth."
+            "After a while romping around in the snow, app1 complains of the cold seeping into their fur. s_c digs a little hollow, and invites them in to curl up with them. Strictly for warmth purposes of course. They both stay there as the sun rises. Strictly for warmth."
     ],
     "fail_text": [
             "The apprentices find a promising looking patch of fresh snow, only to find it conceals an old dirtplace trench underneath. Not only does it stink, they have to clean it up and try hid that they disturbed it, and it leaves them both irritated and stressed.",
             "As they play in the snow, app1 falls over themselves embarrassingly, and suddenly decides they remember that they have other things they should be doing."
     ],
-    "win_skills": ["None"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,

@@ -1,6 +1,6 @@
 [
 {
-    "patrol_id": "bch_bord_flashflood5",
+    "patrol_id": "bch_bord_flashflood_tide4",
     "biome": "beach",
     "season": "leaf-bare",
     "tags": ["border", "death", "large_prey", "no_body"],
@@ -22,8 +22,6 @@
     ],
     "win_skills": ["extremely smart"],
     "win_trait": ["careful", "insecure", "nervous"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,

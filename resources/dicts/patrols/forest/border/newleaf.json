@@ -1,31 +1,3 @@
 [
-{
-    "patrol_id": "fst_bord_shortswim1",
-    "biome": "forest",
-    "season": "greenleaf",
-    "tags": ["border"],
-    "intro_text": "r_c looks at the small stream they have to cross to continue on to mark the border, and debates if they should stop for a quick swim to cool off.",
-    "decline_text": "r_c decides to continue with the patrol instead.",
-    "chance_of_success": 50,
-    "exp": 5,
-    "success_text": [
-            "They stop to swim for a few moments and feel rejuvenated, cooled and ready to continue.",
-            null,
-            null,
-            "They keep going, responsibly, although instead of leaping the little stream r_c wades through it, letting the water cool their paws pleasantly."
-    ],
-    "fail_text": [
-            "They get distracted while splashing in the water. r_c swears they saw a fish, but it derails their border patrol completely and they get nothing done.",
-            null, 
-            null, 
-            null],
-    "win_skills": ["None"],
-    "win_trait": ["responsible", "thoughtful", "loyal", "righteous", "cold", "strict"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
-    "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
-}
+
 ]

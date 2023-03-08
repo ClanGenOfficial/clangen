@@ -1,0 +1,16 @@
+[
+	{
+		"id": "gen1",
+		"interactions":[
+			"m_c is welcoming r_c."
+		]
+	},
+	{
+		"id": "gen_wander1",
+		"new_cat_moons": "over_15",
+		"interactions":[
+			"m_c asks r_c how it was to wander around."
+		],
+		"background": ["wandering_healer1"]
+	}
+]

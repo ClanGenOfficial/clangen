@@ -4,7 +4,7 @@
 	"patrol_id": "mtn_train_hummingbird1",
 	"biome": "mountainous",
 	"season": "greenleaf",
-	"tags": ["training", "apprentice", "trust", "comfort", "dislike", "warrior"],
+	"tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "warrior"],
 	"intro_text": "The cats head out into the forested slopes, hiding from the heat of greenleaf, p_l leading them towards a massive messy eagle nest.",
 	"decline_text": "When they get there p_l can't find the hummingbird they were expecting. Disappointing.",
 	"chance_of_success": 80,
@@ -19,9 +19,6 @@
     	"p_l can't get app1 to take the training session seriously, and gives up before the apprentice can attract the eagles' attention."
 	],
 	"win_skills": ["good speaker", "great speaker", "excellent speaker"],
-	"win_trait": ["None"],
-	"fail_skills": ["None"],
-	"fail_trait": ["None"],
 	"min_cats": 2,
 	"max_cats": 2,
 	"antagonize_text": null,
@@ -31,7 +28,7 @@
 	"patrol_id": "mtn_train_hummingbird2",
 	"biome": "mountainous",
 	"season": "greenleaf",
-	"tags": ["training", "apprentice", "trust", "comfort", "dislike", "warrior"],
+	"tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "warrior"],
 	"intro_text": "The cats head out into the forested slopes, hiding from the heat of greenleaf, p_l leading them towards a massive messy eagle nest.",
 	"decline_text": "When they get there p_l can't find the hummingbird they were expecting. Disappointing.",
 	"chance_of_success": 80,
@@ -46,9 +43,6 @@
     	"p_l can't get app1 to take the training session seriously, and gives up before the apprentice can attract the eagles' attention."
 	],
 	"win_skills": ["good teacher", "great teacher", "fantastic teacher"],
-	"win_trait": ["None"],
-	"fail_skills": ["None"],
-	"fail_trait": ["None"],
 	"min_cats": 2,
 	"max_cats": 2,
 	"antagonize_text": null,
@@ -58,7 +52,7 @@
 	"patrol_id": "mtn_train_hummingbird3",
 	"biome": "mountainous",
 	"season": "greenleaf",
-	"tags": ["training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
+	"tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
 	"intro_text": "The cats head out into the forested slopes, hiding from the heat of greenleaf, p_l leading them towards a massive messy eagle nest.",
 	"decline_text": "When they get there p_l can't find the hummingbird they were expecting. Disappointing.",
 	"chance_of_success": 90,
@@ -73,9 +67,6 @@
     	"p_l can't get app1 or app2 to take the training session seriously, and gives up before the apprentices can attract the eagles' attention."
 	],
 	"win_skills": ["good speaker", "great speaker", "excellent speaker"],
-	"win_trait": ["None"],
-	"fail_skills": ["None"],
-	"fail_trait": ["None"],
 	"min_cats": 3,
 	"max_cats": 6,
 	"antagonize_text": null,
@@ -85,7 +76,7 @@
 	"patrol_id": "mtn_train_hummingbird4",
 	"biome": "mountainous",
 	"season": "greenleaf",
-	"tags": ["training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
+	"tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
 	"intro_text": "The cats head out into the forested slopes, hiding from the heat of greenleaf, p_l leading them towards a massive messy eagle nest.",
 	"decline_text": "When they get there p_l can't find the hummingbird they were expecting. Disappointing.",
 	"chance_of_success": 90,
@@ -100,19 +91,16 @@
     	"p_l can't get app1 or app2 to take the training session seriously, and gives up before the apprentices can attract the eagles' attention."
 	],
 	"win_skills": ["good teacher", "great teacher", "fantastic teacher"],
-	"win_trait": ["None"],
-	"fail_skills": ["None"],
-	"fail_trait": ["None"],
 	"min_cats": 3,
 	"max_cats": 6,
 	"antagonize_text": null,
 	"antagonize_fail_text": null
 },
 {
-	"patrol_id": "mtn_train_hummingbird5",
+	"patrol_id": "mtn_train_hummingbirdmeadow5",
 	"biome": "mountainous",
 	"season": "greenleaf",
-	"tags": ["training", "apprentice", "trust", "comfort", "dislike", "warrior"],
+	"tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "warrior"],
 	"intro_text": "With p_l in the lead, the cats round a corner in the mountain path and come across a flat mountain meadow, transformed by greenleaf into a carpet of sunny bright flowers.",
 	"decline_text": "When they get there p_l can't find the hummingbirds they were expecting. Disappointing.",
 	"chance_of_success": 80,
@@ -120,25 +108,22 @@
 	"success_text": [
     	"app1 sticks their nose down into the soft dew-covered meadowgrass, searching for prey scent, but p_l's tail flicks under their chin, prompting their head up. They gasp. Above them, a male hummingbird hovers, his full breeding plumage flashing brilliantly in the sun.",
     	"They're here to follow the hummingbirds, p_l explains with a laugh, and dives into the thick meadowgrass sea. app1 spends the afternoon bounding through the flowers, following the birds as the males fight, learning about how hummingbirds signal good hunting areas and the easy times of greenleaf.",
-    	"p_l pulls app1's attention towards the flashing hummingbirds darting about. Once upon a time a fire threatened to consume everything but the bare rock of the mountains, but StarClan caught its embers, stopping it from spreading. They released those embers in greenleaf, to fly above the flowering meadows they'd saved from destruction."
+    	"s_c pulls app1's attention towards the flashing hummingbirds darting about. Once upon a time a fire threatened to consume everything but the bare rock of the mountains, but StarClan caught its embers, stopping it from spreading. They released those embers in greenleaf, to fly above the flowering meadows they'd saved from destruction."
 	],
 	"fail_text": [
     	"app1 won't stop their hunting attempts for long enough for p_l to teach, and eventually everyone goes home frustrated."
 	],
 	"win_skills": ["good speaker", "great speaker", "excellent speaker"],
-	"win_trait": ["None"],
-	"fail_skills": ["None"],
-	"fail_trait": ["None"],
 	"min_cats": 2,
 	"max_cats": 2,
 	"antagonize_text": null,
 	"antagonize_fail_text": null
 },
 {
-	"patrol_id": "mtn_train_hummingbird6",
+	"patrol_id": "mtn_train_hummingbirdmeadow6",
 	"biome": "mountainous",
 	"season": "greenleaf",
-	"tags": ["training", "apprentice", "trust", "comfort", "dislike", "warrior"],
+	"tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "warrior"],
 	"intro_text": "With p_l in the lead, the cats round a corner in the mountain path and come across a flat mountain meadow, transformed by greenleaf into a carpet of sunny bright flowers.",
 	"decline_text": "When they get there p_l can't find the hummingbirds they were expecting. Disappointing.",
 	"chance_of_success": 80,
@@ -146,25 +131,22 @@
 	"success_text": [
     	"app1 sticks their nose down into the soft dew-covered meadowgrass, searching for prey scent, but p_l's tail flicks under their chin, prompting their head up. They gasp. Above them, a male hummingbird hovers, his full breeding plumage flashing brilliantly in the sun.",
     	"They're here to follow the hummingbirds, p_l explains with a laugh, and dives into the thick meadowgrass sea. app1 spends the afternoon bounding through the flowers, following the birds as the males fight, learning about how hummingbirds signal good hunting areas and the easy times of greenleaf.",
-    	"app1 leaps into the meadows, running around maniacally as hummingbirds flit away before them. p_l watches them indulgently, and when they slow down p_l explains about how c_n uses hunting the agile birds as the ultimate test - it's considered the mark of a truly fantastic hunter to catch one without using your claws and pluck a single shining feather."
+    	"app1 leaps into the meadows, running around maniacally as hummingbirds flit away before them. s_c watches them indulgently, and when they slow down s_c explains about how c_n uses hunting the agile birds as the ultimate test - it's considered the mark of a truly fantastic hunter to catch one without using your claws and pluck a single shining feather."
 	],
 	"fail_text": [
     	"app1 won't stop their hunting attempts for long enough for p_l to teach, and eventually everyone goes home frustrated."
 	],
 	"win_skills": ["good teacher", "great teacher", "fantastic teacher"],
-	"win_trait": ["None"],
-	"fail_skills": ["None"],
-	"fail_trait": ["None"],
 	"min_cats": 2,
 	"max_cats": 2,
 	"antagonize_text": null,
 	"antagonize_fail_text": null
 },
 {
-	"patrol_id": "mtn_train_hummingbird7",
+	"patrol_id": "mtn_train_hummingbirdmeadow7",
 	"biome": "mountainous",
 	"season": "greenleaf",
-	"tags": ["training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
+	"tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
 	"intro_text": "With p_l in the lead, the cats round a corner in the mountain path and come across a flat mountain meadow, transformed by greenleaf into a carpet of sunny bright flowers.",
 	"decline_text": "When they get there p_l can't find the hummingbirds they were expecting. Disappointing.",
 	"chance_of_success": 90,
@@ -172,25 +154,22 @@
 	"success_text": [
     	"The apprentices stick their noses down into the soft dew-covered meadowgrass, searching for prey scent, but p_l's tail flicks under app1's chin, prompting their head up. They gasp. Above them, a male hummingbird hovers, his full breeding plumage flashing brilliantly in the sun.",
     	"They're here to follow the hummingbirds, p_l explains with a laugh, and dives into the thick meadowgrass sea. The apprentices spend the afternoon bounding through the flowers, following the birds as the males fight, learning about how hummingbirds signal good hunting areas and the easy times of greenleaf.",
-    	"p_l pulls the apprentices' attention towards the flashing hummingbirds darting about. Once upon a time a fire threatened to consume everything but the bare rock of the mountains, but StarClan caught its embers, stopping it from spreading. They released those embers in greenleaf, to fly above the flowering meadows they'd saved from destruction."
+    	"s_c pulls the apprentices' attention towards the flashing hummingbirds darting about. Once upon a time a fire threatened to consume everything but the bare rock of the mountains, but StarClan caught its embers, stopping it from spreading. They released those embers in greenleaf, to fly above the flowering meadows they'd saved from destruction."
 	],
 	"fail_text": [
     	"app1 won't stop their hunting attempts for long enough for p_l to teach, and eventually everyone goes home frustrated."
 	],
 	"win_skills": ["good speaker", "great speaker", "excellent speaker"],
-	"win_trait": ["None"],
-	"fail_skills": ["None"],
-	"fail_trait": ["None"],
 	"min_cats": 3,
 	"max_cats": 6,
 	"antagonize_text": null,
 	"antagonize_fail_text": null
 },
 {
-	"patrol_id": "mtn_train_hummingbird8",
+	"patrol_id": "mtn_train_hummingbirdmeadow8",
 	"biome": "mountainous",
 	"season": "greenleaf",
-	"tags": ["training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
+	"tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
 	"intro_text": "With p_l in the lead, the cats round a corner in the mountain path and come across a flat mountain meadow, transformed by greenleaf into a carpet of sunny bright flowers.",
 	"decline_text": "When they get there p_l can't find the hummingbirds they were expecting. Disappointing.",
 	"chance_of_success": 90,
@@ -198,15 +177,12 @@
 	"success_text": [
     	"The apprentices stick their noses down into the soft dew-covered meadowgrass, searching for prey scent, but p_l's tail flicks under app1's chin, prompting their head up. They gasp. Above them, a male hummingbird hovers, his full breeding plumage flashing brilliantly in the sun.",
     	"They're here to follow the hummingbirds, p_l explains with a laugh, and dives into the thick meadowgrass sea. The apprentices spend the afternoon bounding through the flowers, following the birds as the males fight, learning about how hummingbirds signal good hunting areas and the easy times of greenleaf.",
-    	"The apprentices leap into the meadows, running around maniacally as hummingbirds flit away before them. p_l watches them indulgently, and when they slow down p_l explains about how c_n uses hunting the agile birds as the ultimate test - it's considered the mark of a truly fantastic hunter to catch one without using your claws and pluck a single shining feather."
+    	"The apprentices leap into the meadows, running around maniacally as hummingbirds flit away before them. p_l watches them indulgently, and when they slow down s_c explains about how c_n uses hunting the agile birds as the ultimate test - it's considered the mark of a truly fantastic hunter to catch one without using your claws and pluck a single shining feather."
 	],
 	"fail_text": [
     	"app1 won't stop their hunting attempts for long enough for p_l to teach, and eventually everyone goes home frustrated."
 	],
 	"win_skills": ["good teacher", "great teacher", "fantastic teacher"],
-	"win_trait": ["None"],
-	"fail_skills": ["None"],
-	"fail_trait": ["None"],
 	"min_cats": 3,
 	"max_cats": 6,
 	"antagonize_text": null,

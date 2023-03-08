@@ -83,17 +83,17 @@
             "hunting",
             "medium_prey"
         ],
-        "intro_text": "As the patrol travels the territory, they come upon a strange metal forest that the Twoleg have built.  Smooth, white tree trunks rise up into the sky, completely bare apart from the very top, where three massive branches grow outwards and spin in slow circles. A low hum permeates the air.",
+        "intro_text": "As the patrol travels the territory, they come upon a strange metal forest that the Twolegs have built.  Smooth, white tree trunks rise up into the sky, completely bare apart from the very top, where three massive branches grow outwards and spin in slow circles. A low hum permeates the air.",
         "decline_text": "The patrol decides to hunt elsewhere",
         "chance_of_success": 60,
         "exp": 10,
         "success_text": [
             "The patrol moves among the white trunks, checking the ground underneath them.  Sometimes dead birds can be found scattered about in this area and if not yet rotten, make for acceptable fresh-kill.  They manage to find some carcasses worth taking.",
-            "This place is unnerving and the patrol hunts carefully and cautiously, keeping an eye out for Twoleg all the while."
+            "This place is unnerving and the patrol hunts carefully and cautiously, keeping an eye out for Twolegs all the while."
         ],
         "fail_text": [
             "This place is unnerving and the patrol can't stand the tense atmosphere and grating, constant noise. They don't stay long enough to find prey.",
-            "The patrol considers their options. s_c is adamant that they find somewhere else to hunt. It's not safe here and the threat of Twoleg is too high. They decide to move on but struggle to find any prey during the rest of the patrol."
+            "The patrol considers their options. s_c is adamant that they find somewhere else to hunt. It's not safe here and the threat of Twolegs is too high. They decide to move on but struggle to find any prey during the rest of the patrol."
         ],
         "fail_trait": [
             "strict",
@@ -114,6 +114,7 @@
             "hunting",
             "big_bite_injury",
             "scar",
+            "LEFTBLIND",
             "fighting",
             "large_prey"
         ],
@@ -217,12 +218,6 @@
         "win_trait": [
             "strange"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
@@ -261,26 +256,21 @@
         "win_trait": [
             "strange"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "pln_hunt_solo1",
+        "patrol_id": "pln_hunt_huntassessment1",
         "biome": "plains",
         "season": "Any",
         "tags": [
-            "hunting",
+            "app_stat", "hunting",
             "apprentice",
             "minor_injury",
             "scar",
+            "LEFTEAR",
             "medium_prey",
             "no_fail_prey"
         ],
@@ -300,9 +290,6 @@
             null,
             "While on the hunt, r_c tumbles right down an empty badger sett while their attention is elsewhere. Bruised and sore, r_c has to report to the medicine cat den when they return to camp."
         ],
-        "win_skills": [
-            "None"
-        ],
         "win_trait": [
             "calm",
             "careful",
@@ -315,9 +302,6 @@
             "patient",
             "thoughtful",
             "wise"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "adventurous",
@@ -382,9 +366,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "bold",
             "childish",
@@ -441,9 +422,6 @@
             "patient",
             "thoughtful",
             "wise"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "bold",
@@ -522,6 +500,7 @@
             "hunting",
             "big_bite_injury",
             "scar",
+            "NECKBITE",
             "medium_prey0",
             "medium_prey1",
             "large_prey2"
@@ -567,6 +546,7 @@
             "hunting",
             "big_bite_injury",
             "scar",
+            "NECKBITE",
             "death",
             "medium_prey0",
             "medium_prey1",
@@ -615,6 +595,7 @@
             "hunting",
             "big_bite_injury",
             "scar",
+            "NECKBITE",
             "death",
             "medium_prey0",
             "medium_prey1",
@@ -695,9 +676,6 @@
             "troublesome",
             "vengeful"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "altruistic",
             "compassionate",
@@ -757,9 +735,6 @@
             "strict",
             "troublesome",
             "vengeful"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "altruistic",
@@ -821,9 +796,6 @@
             "troublesome",
             "vengeful"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "altruistic",
             "compassionate",
@@ -851,7 +823,8 @@
         "tags": [
             "hunting",
             "gone",
-            "small_prey"
+            "small_prey",
+	    "scrapes"
         ],
         "intro_text": "r_c decides to hunt out near the Twoleg dens.",
         "decline_text": "On second thought, they decide to re-line their nest today instead.",
@@ -860,7 +833,7 @@
         "success_text": [
             "They're interrupted by Twolegs wandering through the woods a couple times, but it's a successful hunt.",
             "A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for r_c. They've always wondered what it might taste like... dry is the answer. Very odd.",
-            "s_c gets distracted from hunting by strange Twoleg activity around one of their dens. They appear to be hauling all their many, many varieties of nest lining out and into a big monster. s_c take the opportunity to grab a little soft thing, something that's almost shaped like prey. It'll be good for the nursery.",
+            "s_c gets distracted from hunting by strange Twoleg activity around one of their dens. They appear to be hauling all their many, many varieties of nest lining out and into a big monster. s_c takes the opportunity to grab a little soft thing, something that's almost shaped like prey. It'll be good for the nursery.",
             "Calmly, s_c weaves around the Twoleg dens, picking out the mice from the tunnels and the birds off the strange metal hanging fruit. A successful, sneaky hunt."
         ],
         "fail_text": [
@@ -883,9 +856,6 @@
             "nervous",
             "sneaky",
             "strange"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "altruistic",
@@ -912,6 +882,7 @@
         "biome": "plains",
         "season": "Any",
         "tags": [
+            "app_stat", 
             "hunting",
             "gone",
             "apprentice",
@@ -931,11 +902,8 @@
         "fail_text": [
             null,
             "A little carelessly, s_c jumps a fence to hunt in a den's garden. But there's a new thing there, a box, suspicious and strange. Wisely, s_c avoids it, and returns to c_n territory.",
-            "Carelessly, app1 is seen by Twolegs, and taken from c_n.",
+            "Carelessly, s_c is seen by Twolegs, and taken from c_n.",
             "Carelessly, app1 is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, they discover that a broken window is just wide enough to push themselves out to safety through, but the glass leaves them bleeding as they run back to c_n."
-        ],
-        "win_skills": [
-            "None"
         ],
         "win_trait": [
             "calm",
@@ -946,9 +914,6 @@
             "nervous",
             "sneaky",
             "strange"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "altruistic",
@@ -971,7 +936,7 @@
         ]
     },
     {
-        "patrol_id": "pln_hunt_gonetwolegden3",
+        "patrol_id": "pln_hunt_twolegdencatdare1",
         "biome": "plains",
         "season": "Any",
         "tags": [
@@ -1013,9 +978,6 @@
             "sneaky",
             "strange"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "altruistic",
             "compassionate",
@@ -1037,11 +999,12 @@
         ]
     },
     {
-        "patrol_id": "pln_hunt_gonetwolegden4",
+        "patrol_id": "pln_hunt_twolegdenappdare1",
         "biome": "plains",
         "season": "Any",
         "tags": [
-            "hunting",
+            "app_stat", 
+	    "hunting",
             "gone",
             "apprentice",
             "romantic",
@@ -1065,9 +1028,6 @@
             "Carelessly, app1 is seen by Twolegs, and taken from c_n.",
             null
         ],
-        "win_skills": [
-            "None"
-        ],
         "win_trait": [
             "calm",
             "careful",
@@ -1077,9 +1037,6 @@
             "nervous",
             "sneaky",
             "strange"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "altruistic",
@@ -1140,9 +1097,6 @@
             "sneaky",
             "strange"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "adventurous",
             "bold",
@@ -1198,9 +1152,6 @@
             "sneaky",
             "strange"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "adventurous",
             "bold",
@@ -1224,6 +1175,7 @@
         "tags": [
             "death",
             "scar",
+            "MANLEG",
             "retirement",
             "blunt_force_injury",
             "hunting",
@@ -1262,12 +1214,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 6,
         "antagonize_text": null,
@@ -1285,6 +1231,7 @@
         "tags": [
             "death",
             "scar",
+            "MANTAIL",
             "retirement",
             "blunt_force_injury",
             "hunting",
@@ -1324,12 +1271,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 1,
         "max_cats": 6,
         "antagonize_text": null,
@@ -1347,6 +1288,7 @@
         "tags": [
             "multi_deaths",
             "scar",
+            "MANLEG",
             "retirement",
             "blunt_force_injury",
             "hunting",
@@ -1385,12 +1327,6 @@
             "thoughtful",
             "wise"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 5,
         "max_cats": 6,
         "antagonize_text": null,
@@ -1408,6 +1344,7 @@
         "tags": [
             "multi_deaths",
             "scar",
+            "MANTAIL",
             "retirement",
             "blunt_force_injury",
             "hunting",
@@ -1446,12 +1383,6 @@
             "responsible",
             "thoughtful",
             "wise"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
         ],
         "min_cats": 5,
         "max_cats": 6,
@@ -1507,12 +1438,6 @@
             "troublesome",
             "vengeful"
         ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
-        ],
         "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
@@ -1527,6 +1452,7 @@
             "small_prey",
             "fighting",
             "scar",
+            "LEGBITE",
             "small_bite_injury"
         ],
         "intro_text": "r_c catches the scent of a fox. Tracking it down, they spot a kit fox wandering through the grass, carrying a mouse in its jaws.",
@@ -1565,12 +1491,6 @@
             "strict",
             "troublesome",
             "vengeful"
-        ],
-        "fail_skills": [
-            "None"
-        ],
-        "fail_trait": [
-            "None"
         ],
         "min_cats": 1,
         "max_cats": 1,
@@ -1611,12 +1531,6 @@
             "great teacher",
             "fantastic teacher"
         ],
-        "win_trait": [
-            "None"
-        ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "childish",
             "nervous"
@@ -1631,10 +1545,11 @@
         "biome": "plains",
         "season": "Any",
         "tags": [
-            "hunting",
+            "app_stat", "hunting",
             "apprentice",
             "small_bite_injury",
             "scar",
+            "FACE",
             "injury",
             "shock"
         ],
@@ -1650,14 +1565,11 @@
         ],
         "fail_text": [
             "Tarror gives app1 strength, and the don't stop running until their back in camp, gasping about the grassland monster they saw.",
-            "Heart filled with daring, app1 slips off the rock and pads towards the monster in the grass, sure that StarClan will reward their bravery. They sneak closer and closer, until a puzzle wuff of air makes them look up. And up. And up. That is no fox. They pelt for home, as behind them, a confused maned wolf watches them go.",
+            "Heart filled with daring, s_c slips off the rock and pads towards the monster in the grass, sure that StarClan will reward their bravery. They sneak closer and closer, until a puzzle wuff of air makes them look up. And up. And up. That is no fox. They pelt for home, as behind them, a confused maned wolf watches them go.",
             null,
-            "Terror freezes app1 as the massive fox sees them, and comes to investigate, its distorted stretched legs carrying it smoothly through the grass. As the massive nose, as big as app1's entire head, wuffles closer, app1 desperately swipes their claws. Their screw their eyes shut at the outraged yelp, and feel themselves being taken up and tossed by those gaping jaws. They tense, waiting for death to descend, and wait, and... waiting?",
+            "Terror freezes s_c as the massive fox sees them, and comes to investigate, its distorted stretched legs carrying it smoothly through the grass. As the massive nose, as big as app1's entire head, wuffles closer, app1 desperately swipes their claws. Their screw their eyes shut at the outraged yelp, and feel themselves being taken up and tossed by those gaping jaws. They tense, waiting for death to descend, and wait, and... waiting?",
             null,
             "Heart filled with daring, app1 slips off the rock and pads towards the monster in the grass, sure that StarClan will reward their bravery. A surprised wuff of air seems to come from everywhere and nowhere, as the puzzled maned wolf picks up the apprentice at their feet and tosses them aside so they can get back to hunting."
-        ],
-        "win_skills": [
-            "None"
         ],
         "win_trait": [
             "patient",
@@ -1667,9 +1579,6 @@
             "calm",
             "careful",
             "strange"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "adventurous",
@@ -1708,7 +1617,7 @@
         "success_text": [
             "After a good long session of confusion, the patrol manages to work out that the towering creature they're tracking is almost certainly a maned wolf, a nearly mythical creature. They're all a little uncomfortable, watching an upsized red fox with the legs of a deer amble around their territory, but it's also a little thrilling to follow such an unusual and rarely seen creature.",
             "The rumours are true - it seems to mostly be hunting for tiny mouse prey, not large things, despite it's massive size. This must be a maned wolf, and just being able to name the odd thing makes it feel so much less threatening. The cats remind each other of the tales sometimes shared in the nursery, of the tallest predator on the plains being one of the shyest.",
-            "s_c is able to recalled some of the stories that get told about the maned wolf, of how it stole its legs from a deer for speed and power, but in doing so also accidentally took the deer's flightiness. Ever since then it has been the tallest and shyest creature on the grasslands.",
+            "s_c is able to recall some of the stories that get told about the maned wolf, of how it stole its legs from a deer for speed and power, but in doing so also accidentally took the deer's flightiness. Ever since then it has been the tallest and shyest creature on the grasslands.",
             "Boldly, s_c jumps down to go check the potential threat out, and unwilling to leave their Clanmate in danger, the rest of the patrol follows. s_c refuses to let themselves be intimidated by the huge foxish thing, and bounds up to it, knowing courage can overcome things raw strength cannot. The weird creature skitters away from the incoming patrol, trotting off in a tangle of too long legs."
         ],
         "fail_text": [
@@ -1733,9 +1642,6 @@
             "fierce",
             "shameless"
         ],
-        "fail_skills": [
-            "None"
-        ],
         "fail_trait": [
             "childish",
             "nervous"
@@ -1758,6 +1664,7 @@
             "dislike",
             "big_bite_injury",
             "scar",
+            "THREE",
             "injury",
             "shock"
         ],
@@ -1785,12 +1692,6 @@
             "good fighter",
             "great fighter",
             "excellent fighter"
-        ],
-        "win_trait": [
-            "None"
-        ],
-        "fail_skills": [
-            "None"
         ],
         "fail_trait": [
             "adventurous",

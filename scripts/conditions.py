@@ -1,5 +1,3 @@
-import math
-
 from scripts.game_structure.game_essentials import game
 
 
@@ -22,9 +20,9 @@ def medical_cats_condition_fulfilled(all_cats, amount_per_med, give_clanmembers_
 
     total_exp = 0
     for cat in medicine_cats:
-        total_exp += cat.experience * .01
+        total_exp += cat.experience * .003
     for cat in medicine_apprentices:
-        total_exp += cat.experience * .01
+        total_exp += cat.experience * .003
     good_healer = float(len(list(filter(lambda c: c.skill == 'good healer', medicine_cats))) * 1.5)
     great_healer = float(len(list(filter(lambda c: c.skill == 'great healer', medicine_cats))) * 1.75)
     fantastic_healer = float(len(list(filter(lambda c: c.skill == 'fantastic healer', medicine_cats))) * 2)

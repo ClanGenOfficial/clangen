@@ -1,0 +1,18 @@
+name: Pylint
+on: push
+jobs:
+  pylint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Python 3.10 x64
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          architecture: 'x64'
+      - name: Install Dependencies
+        run: python3 -m pip install -r requirements.txt
+      - name: Install Pylint
+        run: python3 -m pip install pylint
+      - name: Run Pylint
+        run: python -m pylint --recursive=y --errors-only "$PWD"

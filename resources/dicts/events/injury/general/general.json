@@ -5,7 +5,9 @@
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "scar",
+            "SNAKE"
         ],
         "event_text": "m_c was bitten by a snake and miraculously survived!",
         "history_text": [
@@ -31,25 +33,6 @@
             null,
             null,
             null
-        ],
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
-    },
-    {
-        "injury": "rat bite",
-        "tags": [
-            "Newleaf",
-            "Greenleaf",
-            "Leaf-fall",
-            "Leaf-bare"
-        ],
-        "event_text": "A rat got through the camp walls and bit m_c.",
-        "history_text": [
-            "m_c was scarred when a rat bit them.",
-            "m_c died from a rat bite.",
-            "bit by a rat"
         ],
         "cat_trait": null,
         "cat_skill": null,
@@ -83,7 +66,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c's paws slipped on some rocks and their leg was dislocated.",
+        "event_text": "m_c slipped on some rocks and their leg was dislocated.",
         "history_text": [
             null,
             null,
@@ -102,7 +85,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c's paws slipped on some rocks and they twisted their paw.",
+        "event_text": "m_c slipped on some rocks and they twisted their paw.",
         "history_text": [
             null,
             null,
@@ -370,7 +353,9 @@
             "neg_trust",
             "neg_comfort",
             "dislike",
-            "neg_platonic"
+            "neg_platonic",
+            "scar",
+            "ONE"
         ],
         "event_text": "m_c was hurt by r_c to make an example out of them.",
         "history_text": [
@@ -548,7 +533,9 @@
             "neg_trust",
             "neg_comfort",
             "dislike",
-            "neg_platonic"
+            "neg_platonic",
+            "scar",
+            "CATBITE"
         ],
         "event_text": "m_c was hurt by r_c to make an example out of them.",
         "history_text": [

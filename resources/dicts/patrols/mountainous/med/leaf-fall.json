@@ -4,7 +4,7 @@
     "patrol_id": "mtn_med_romance5",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_cat", "warrior", "random_herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c"],
+    "tags": ["herb_gathering", "warrior", "random_herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c"],
     "intro_text": "p_l goes out with a warrior escort, both for safety as they try to stock up under the clear leaf-fall skies, and for carrying capacity should they find anything.",
     "decline_text": "Their escort is called away on a different mission, and p_l decides to reorganize the herb store instead.",
     "chance_of_success": 60,
@@ -19,8 +19,7 @@
         "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
     ],
     "win_skills": ["good mediator", "great mediator", "excellent mediator"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
+
     "fail_trait": ["troublesome", "childish"],
     "min_cats": 2,
     "max_cats": 6,
@@ -31,7 +30,7 @@
     "patrol_id": "mtn_med_romance6",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_cat", "med_only", "random_herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c"],
+    "tags": ["herb_gathering", "med_cat", "med_only", "random_herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c"],
     "intro_text": "p_l heads out, leading a patrol of medicine cats to go stock up on the ripening harvest available in leaf-fall.",
     "decline_text": "...And they're called back almost immediately, as one of the elders starts hacking up something.",
     "chance_of_success": 60,
@@ -46,8 +45,7 @@
         "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
     ],
     "win_skills": ["good mediator", "great mediator", "excellent mediator"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
+
     "fail_trait": ["troublesome", "childish"],
     "min_cats": 2,
     "max_cats": 6,
@@ -58,7 +56,7 @@
     "patrol_id": "mtn_med_gatheringbetony_leaf-fall1",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "herb", "betony", "goldenrod", "many_herbs1", "many_herbs2", "med_cat"],
+    "tags": ["herb_gathering", "med_only", "herb", "betony", "goldenrod", "many_herbs1", "many_herbs2"],
     "intro_text": "As the betony plants start to dramatically give up on life as leaf-fall progresses, p_l takes the opportunity to go harvest from them.",
     "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
     "chance_of_success": 70,
@@ -72,9 +70,7 @@
         "Hang on. Has p_l identified the betony correctly? It's difficult to tell without the distinctive purple blossoms. They're not sure, and not willing to risk it."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -84,7 +80,7 @@
     "patrol_id": "mtn_med_gatheringbetony_leaf-fall2",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "med_cat", "herb", "betony", "goldenrod", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
+    "tags": ["herb_gathering", "med_only", "med_cat", "herb", "betony", "goldenrod", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "As the betony plants start to dramatically give up on life as leaf-fall progresses, p_l takes the opportunity to go harvest from them, bringing along app1 for a herbcraft lesson.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 70,
@@ -98,9 +94,7 @@
         "Hang on. Has p_l identified the betony correctly? It's difficult to tell without the distinctive purple blossoms. They're not sure, and not willing to risk it."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -110,7 +104,7 @@
     "patrol_id": "mtn_med_gatheringbetony_leaf-fall3",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_cat", "warrior", "herb", "betony", "goldenrod", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "med_cat", "warrior", "herb", "betony", "goldenrod", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "As the betony plants start to dramatically give up on life as leaf-fall progresses, p_l takes the opportunity to go harvest from them, bringing along a patrol to help them cart the leaves back to the herb stores.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
@@ -124,9 +118,7 @@
         "Hang on. Has p_l identified the betony correctly? It's difficult to tell without the distinctive purple blossoms. They're not sure, and not willing to risk it."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -136,7 +128,7 @@
     "patrol_id": "mtn_med_gatheringblackberry_leaf-fall1",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "herb", "blackberry", "raspberry", "many_herbs1", "many_herbs2", "med_cat"],
+    "tags": ["herb_gathering", "med_only", "herb", "blackberry", "raspberry", "many_herbs1", "many_herbs2"],
     "intro_text": "As leaf-fall arrives, the blackberry plants burst into fruit and p_l heads out to take advantage.",
     "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
     "chance_of_success": 70,
@@ -150,9 +142,7 @@
             "p_l attempts to pick their way through the blackberry thorns to reach the leaves, but it soon becomes clear that it's a hopeless task."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -162,7 +152,7 @@
     "patrol_id": "mtn_med_gatheringblackberry_leaf-fall2",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "med_cat", "herb", "blackberry", "raspberry", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
+    "tags": ["herb_gathering", "med_only", "med_cat", "herb", "blackberry", "raspberry", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "As leaf-fall arrives, the blackberry plants burst into fruit and p_l heads out to take advantage, bringing app1 along.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 70,
@@ -176,9 +166,7 @@
             "With app1 following them, p_l attempts to pick their way through the blackberry thorns to reach the leaves, but it soon becomes clear that it's a hopeless task."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -188,7 +176,7 @@
     "patrol_id": "mtn_med_gatheringblackberry_leaf-fall3",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_cat", "warrior", "herb", "blackberry", "raspberry", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "med_cat", "warrior", "herb", "blackberry", "raspberry", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "As leaf-fall arrives, the blackberry plants burst into fruit and p_l heads out to take advantage, bringing along anyone who isn't busy with other work.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
@@ -202,9 +190,7 @@
             "p_l manages to avoid a torn pelt only by the grace of StarClan, and isn't going to risk sending anyone else into the brambles with them having so many thorns at the moment. They'll have to try a different blackberry bush on another day."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -214,7 +200,7 @@
     "patrol_id": "mtn_med_gatheringburdock_leaf-fall1",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "herb", "burdock", "plantain", "many_herbs1", "many_herbs2", "med_cat", "plantain"],
+    "tags": ["herb_gathering", "med_only", "herb", "burdock", "plantain", "many_herbs1", "many_herbs2", "plantain"],
     "intro_text": "As leaf-fall starts to hint of the cold soon to come, the burdock plants are starting to wilt. p_l heads out to replenish the Clan's stocks.",
     "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
     "chance_of_success": 70,
@@ -228,9 +214,7 @@
             "Maybe they're coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and it feels like a wasted afternoon."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -240,7 +224,7 @@
     "patrol_id": "mtn_med_gatheringburdock_leaf-fall2",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "med_cat", "herb", "burdock", "plantain", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice", "plantain"],
+    "tags": ["herb_gathering", "med_only", "med_cat", "herb", "burdock", "plantain", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice", "plantain"],
     "intro_text": "As leaf-fall starts to hint of the cold soon to come, the burdock plants are starting to wilt. p_l heads out to replenish the Clan's stocks, bringing app1 along.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 70,
@@ -254,9 +238,7 @@
             "Maybe they're coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and it feels like a wasted afternoon. They avoid snapping at app1, who seems unable to identify the common herb, but it's a near thing."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -266,7 +248,7 @@
     "patrol_id": "mtn_med_gatheringburdock_leaf-fall3",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_cat", "warrior", "herb", "burdock", "plantain", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect", "plantain"],
+    "tags": ["herb_gathering", "med_cat", "warrior", "herb", "burdock", "plantain", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect", "plantain"],
     "intro_text": "As leaf-fall starts to hint of the cold soon to come, the burdock plants are starting to wilt. p_l heads out to replenish the Clan's stocks, bringing along anyone who isn't busy with other work.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
@@ -280,9 +262,7 @@
             "Maybe they're coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and no one else on the patrol is very helpful either. They return to camp without any burdock, prickling with frustration."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -292,7 +272,7 @@
     "patrol_id": "mtn_med_gatheringcatmint_leaf-fall1",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "herb", "catmint", "many_herbs2", "med_cat"],
+    "tags": ["herb_gathering", "med_only", "herb", "catmint", "many_herbs2", "med_cat"],
     "intro_text": "They'd better take the opportunity to harvest while they can, p_l doesn't have much time left before many herbs will leave c_n's territory in the cold.",
     "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
     "chance_of_success": 40,
@@ -306,9 +286,7 @@
             "It is alright to fail, p_l reminds themselves. At least they know where there isn't catmint, that will make the next patrols to find it easier."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -318,7 +296,7 @@
     "patrol_id": "mtn_med_gatheringcatmint_leaf-fall2",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "med_cat", "herb", "catmint", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
+    "tags": ["herb_gathering", "med_only", "med_cat", "herb", "catmint", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "p_l waits until they're out of camp to reveal to app1 that they're off to find catmint - a 'helpful' group of 'helpers' can be a little, well, unhelpful. Catmint is just too exciting for many of their Clanmates to keep their heads around, and they need to ensure c_n has stocks for the coming leaf-bare.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 40,
@@ -332,9 +310,7 @@
             "app1 loses their head over the catmint, and p_l is forced to cancel the gathering patrol to take them back to camp until they regain their sense."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -344,7 +320,7 @@
     "patrol_id": "mtn_med_gatheringcatmint_leaf-fall3",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_cat", "warrior", "herb", "catmint", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "jealousy", "dislike", "respect"],
+    "tags": ["herb_gathering", "med_cat", "warrior", "herb", "catmint", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "jealousy", "dislike", "respect"],
     "intro_text": "As p_l looks at the twitching tails and wide eyes of the patrol set up to 'help' them gather catmint, their heart sinks. These overly excited warriors don't look like they're going to be useful, and p_l only has so much time before the catmint dies off at the end of leaf-fall.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 0,
@@ -358,9 +334,7 @@
             "p_l is proven unfortunately correct, as the patrol is full of juvenile behaviour and dumb jokes, rather than focused effort. They even manage to successfully find a catmint plant only to have their helpers roll around in it, bruising all the stems until it's unharvestable, and p_l is furious by the time they return to camp."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -370,7 +344,7 @@
     "patrol_id": "mtn_med_gatheringdaisy_leaf-fall1",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "herb", "daisy", "dandelion", "many_herbs1", "many_herbs2", "med_cat"],
+    "tags": ["herb_gathering", "med_only", "herb", "daisy", "dandelion", "many_herbs1", "many_herbs2"],
     "intro_text": "There's still time this leaf-fall to store away a good harvest of dried-but-potent daisy leaves, in case c_n's elders need it for their joints or cats need to unexpectedly travel.",
     "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
     "chance_of_success": 70,
@@ -384,9 +358,7 @@
             "Frustratingly, some herbivore has come through and feasted on the daisies p_l targets. The plants will recover, but these half-chewed on leaves are useless to c_n."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -396,7 +368,7 @@
     "patrol_id": "mtn_med_gatheringdaisy_leaf-fall2",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "med_cat", "herb", "daisy", "dandelion", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
+    "tags": ["herb_gathering", "med_only", "med_cat", "herb", "daisy", "dandelion", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "There's still time this leaf-fall to store away a good harvest of dried-but-potent daisy leaves, in case c_n's elders need it for their joints or cats need to unexpectedly travel. p_l brings app1 along for a lesson.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 70,
@@ -410,9 +382,7 @@
             "Frustratingly, some herbivore has come through and feasted on the daisies p_l targets. The plants will recover, but these half-chewed on leaves are useless to c_n. They avoid snapping at app1, who seems unable to identify the common herb, but it's a near thing."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -422,7 +392,7 @@
     "patrol_id": "mtn_med_gatheringdaisy_leaf-fall3",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_cat", "warrior", "herb", "daisy", "dandelion", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "warrior", "herb", "daisy", "dandelion", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "There's still time this leaf-fall to store away a good harvest of dried-but-potent daisy leaves, in case c_n's elders need it for their joints or cats need to unexpectedly travel. p_l assembles a little group of warriors to help them carry the herbs.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
@@ -436,9 +406,7 @@
             "With the warriors more interested in hunting whatever has been snacking on the daisies than helping p_l find any more plants, it's a frustrating and unproductive afternoon."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -448,23 +416,21 @@
     "patrol_id": "mtn_med_gatheringdandelion_leaf-fall1",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "herb", "dandelion", "wild_garlic", "many_herbs1", "many_herbs2", "med_cat"],
+    "tags": ["herb_gathering", "med_only", "herb", "dandelion", "wild_garlic", "many_herbs1", "many_herbs2"],
     "intro_text": "Yellow flowers poke out from the leaf litter, signalling that the dandelions haven't given up on growing for the season. If dandelions are around, could there be something else needed for the herb storage, too, like wild garlic?",
     "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
             "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. The white milk in their roots and stems keeps for a long time and is a potent cure for poison, while their leaves are weaker but fast-acting and can be chewed into poultices. Even the fluffy dandelion heads are useful as a c_n kitten's favourite short lived toy. Also as useful - but not a toy - is the wild garlic that p_l tracks down a few fox-lengths away from the dandelion patch they've found.",
-            "It's a successful gathering mission, with p_l striding back to camp with a great haul of entire dandelion plants and several wild garlic bulbs. Later they'll sort the leaves and roots to be stored seperately, the leaves remain fresh for a far shorter time.",
+            "It's a successful gathering mission, with p_l striding back to camp with a great haul of entire dandelion plants and several wild garlic bulbs. Later they'll sort the leaves and roots to be stored separately, the leaves remain fresh for a far shorter time.",
             "With warmth in the air and ground, s_c doesn't need to try very hard to find an excellent haul of dandelions and countless wild garlic bulbs to bring back to camp."
 ],
     "fail_text": [
             "Unfortunately, c_n doesn't seem to be the only things after dandelions, and p_l can't gather from this patch without killing off the already damaged plants."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -474,7 +440,7 @@
     "patrol_id": "mtn_med_gatheringdandelion_leaf-fall2",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "med_cat", "herb", "dandelion", "wild_garlic", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
+    "tags": ["herb_gathering", "med_only", "med_cat", "herb", "dandelion", "wild_garlic", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "Yellow flowers poke out from the leaf litter, signalling that the dandelions haven't given up on growing for the season. p_l heads out to look for them, taking app1 to learn about one of the most useful common herbs in the medicine cat aresenal. If they were particularly lucky, p_l explains to app1, perhaps there might be some other plants, like wild garlic, around to collect as well.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 70,
@@ -488,9 +454,7 @@
             "Unfortunately, c_n doesn't seem to be the only things after dandelions, and p_l can't gather from this patch without killing off the already damaged plants. app1 actually starts an argument about it, insistant that they don't need to worry about protecting the dandelion patch for the future."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -500,7 +464,7 @@
     "patrol_id": "mtn_med_gatheringdandelion_leaf-fall3",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_cat", "warrior", "herb", "dandelion", "wild_garlic", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "med_cat", "warrior", "herb", "dandelion", "wild_garlic", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "Yellow flowers poke out from the leaf litter, signalling that the dandelions haven't given up on growing for the season. p_l heads out to look for them, bringing a group of their Clanmates along for the gathering patrol. With this many cats, they might be able to collect some other herbs along the way, too, such as the wild garlic that p_l knows grows near the dandelion patch they're looking for.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
@@ -514,9 +478,7 @@
             "The warriors that are supposed to be helping p_l gather dandelions instead seem more intent on hunting, and p_l gives up, storming back to camp with their temper flaring."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -526,7 +488,7 @@
     "patrol_id": "mtn_med_gatheringelder_leaf-fall1",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "herb", "elder_leaves", "juniper", "minor_injury", "many_herbs1", "many_herbs2", "med_cat"],
+    "tags": ["herb_gathering", "med_only", "herb", "elder_leaves", "juniper", "minor_injury", "many_herbs1", "many_herbs2"],
     "intro_text": "With leaf-fall washing the world in tones of red and brown, p_l feels the need to gather as many elder leaves as possible, before the season turns and the Clan must survive without new stocks during leaf-bare. There's a particular tree in a sheltered dip along a stream they want to check on today.",
     "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
     "chance_of_success": 60,
@@ -543,9 +505,7 @@
             "r_c, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses their balance and tumbles to the ground."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -555,7 +515,7 @@
     "patrol_id": "mtn_med_gatheringelder_leaf-fall2",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "med_cat", "herb", "elder_leaves", "juniper", "minor_injury", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
+    "tags": ["herb_gathering", "med_only", "med_cat", "herb", "elder_leaves", "juniper", "minor_injury", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "With leaf-fall washing the world in tones of red and brown, p_l feels the need to gather as many elder leaves as possible, before the season turns and the Clan must survive without new stocks during leaf-bare. There's a particular tree in a sheltered dip along a stream they want to check on today, bringing app1 to show them why choosing to harvest from a sheltered plant can be helpful.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 60,
@@ -572,9 +532,7 @@
             "r_c, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses their balance and tumbles to the ground."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -584,15 +542,15 @@
     "patrol_id": "mtn_med_gatheringelder_leaf-fall3",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_cat", "warrior", "herb", "elder_leaves", "juniper", "minor_injury", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "warrior", "herb", "elder_leaves", "juniper", "minor_injury", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "With leaf-fall washing the world in tones of red and brown, p_l feels the need to gather as many elder leaves as possible, before the season turns and the Clan must survive without new stocks during leaf-bare. There's a particular tree in a sheltered dip along a stream they want to check on today, bringing a group of their Clanmates with them.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
             "Elder leaves being used to soothe sprains and elder leaves having to be gathered in a way that risks sprains is truly one of StarClan's little ironies, p_l reflects. They share the little joke with the patrol, and the cats <i>murrp</i> with amusement, but it also reminds everyone to be careful as they strip leaves from the tree.",
-            "Ignoring the leaves piled up at the tree's base, which lack any herbal potency, p_l instead gets a good crop, choosing leaves as close to green as possible for maximum usefulness, which p_l finds tends to fade the more red the leaf-fall elder leaves get. The wrriors are less selective, but the sheer quantity p_l is able to bring back to camp with their help more than makes up for it.",
-            "s_c has managed to discover, with time and experience, that elder leaf picking is actually better handled by chewing off several low hanging thin branches and carting those back to camp instead. With so many assistants they can bring a truely massive haul home, where the rest of the patrol helps them strip the leaves and carefully store them."
+            "Ignoring the leaves piled up at the tree's base, which lack any herbal potency, p_l instead gets a good crop, choosing leaves as close to green as possible for maximum usefulness, which p_l finds tends to fade the more red the leaf-fall elder leaves get. The warriors are less selective, but the sheer quantity p_l is able to bring back to camp with their help more than makes up for it.",
+            "s_c has managed to discover, with time and experience, that elder leaf picking is actually better handled by chewing off several low hanging thin branches and carting those back to camp instead. With so many assistants they can bring a truly massive haul home, where the rest of the patrol helps them strip the leaves and carefully store them."
     ],
     "fail_text": [
             "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and p_l doesn't want to use these tattered, diseased-looking leaves.",
@@ -601,9 +559,7 @@
             "r_c, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses their balance and tumbles to the ground."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -613,7 +569,7 @@
     "patrol_id": "mtn_med_gatheringgoldenrod_leaf-fall1",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "herb", "goldenrod", "marigold", "many_herbs1", "many_herbs2", "med_cat"],
+    "tags": ["herb_gathering", "med_only", "herb", "goldenrod", "marigold", "many_herbs1", "many_herbs2"],
     "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh goldenrod for the stores.",
     "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
     "chance_of_success": 70,
@@ -627,9 +583,7 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -639,7 +593,7 @@
     "patrol_id": "mtn_med_gatheringgoldenrod_leaf-fall2",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "med_cat", "herb", "goldenrod", "marigold", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
+    "tags": ["herb_gathering", "med_only", "med_cat", "herb", "goldenrod", "marigold", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh goldenrod for the stores with app1.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 70,
@@ -653,9 +607,7 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and app1 looks up at them with disappointment."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -665,7 +617,7 @@
     "patrol_id": "mtn_med_gatheringgoldenrod_leaf-fall3",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_cat", "warrior", "herb", "goldenrod", "marigold", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "warrior", "herb", "goldenrod", "marigold", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh goldenrod for the stores with a patrol of their Clanmates to assist them.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
@@ -679,9 +631,7 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful and snappish with each other."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -691,7 +641,7 @@
     "patrol_id": "mtn_med_gatheringjuniper_leaf-fall1",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "herb", "juniper", "oak_leaves", "many_herbs1", "many_herbs2", "med_cat"],
+    "tags": ["herb_gathering", "med_only", "herb", "juniper", "oak_leaves", "many_herbs1", "many_herbs2"],
     "intro_text": "p_l sniffs the clean, fresh morning air, wondering if they can smell juniper berries on the breeze.",
     "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
     "chance_of_success": 70,
@@ -705,9 +655,7 @@
             "p_l seems to have forgotten where to find a juniper tree, much to their own embarassment."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -717,7 +665,7 @@
     "patrol_id": "mtn_med_gatheringjuniper_leaf-fall2",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "med_cat", "herb", "juniper", "oak_leaves", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
+    "tags": ["herb_gathering", "med_only", "med_cat", "herb", "juniper", "oak_leaves", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "p_l sniffs the clean fresh morning air, wondering if they can smell juniper berries on the breeze. They bring app1 to investigate.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 70,
@@ -731,9 +679,7 @@
             "p_l seems to have forgotten where to find a juniper tree, much to their own embarassment and app1's shock."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -743,7 +689,7 @@
     "patrol_id": "mtn_med_gatheringjuniper_leaf-fall3",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_cat", "warrior", "herb", "juniper", "oak_leaves", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "med_cat", "warrior", "herb", "juniper", "oak_leaves", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "p_l sniffs the clean fresh morning air, wondering if they can smell juniper berries on the breeze. They assemble a patrol to investigate.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
@@ -757,9 +703,7 @@
             "The warriors are full of complaints about the sharp juniper needles spiking their poor widdle noses, and eventually a mildly disgusted p_l calls off the herb gathering patrol."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -769,7 +713,7 @@
     "patrol_id": "mtn_med_gatheringlungwort7",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": [
+    "tags": ["herb_gathering", 
         "med_cat",
         "apprentice",
         "med_only",
@@ -800,12 +744,6 @@
     "win_trait": [
         "patient"
     ],
-    "fail_skills": [
-        "None"
-    ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -815,8 +753,7 @@
     "patrol_id": "mtn_med_gatheringlungwort8",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": [
-        "med_cat",
+    "tags": ["herb_gathering",
         "herb",
         "lungwort",
         "no_app",
@@ -846,12 +783,6 @@
     "win_trait": [
         "patient"
     ],
-    "fail_skills": [
-        "None"
-    ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -861,8 +792,7 @@
     "patrol_id": "mtn_med_gatheringlungwort9",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": [
-        "med_cat",
+    "tags": ["herb_gathering",
         "warrior",
         "herb",
         "lungwort",
@@ -891,9 +821,7 @@
     "win_trait": [
         "patient"
     ],
-    "fail_skills": [
-        "None"
-    ],
+
     "fail_trait": [
         "troublesome",
         "childish"
@@ -907,7 +835,7 @@
     "patrol_id": "mtn_med_gatheringmallow_leaf-fall1",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "herb", "mallow", "betony", "many_herbs1", "many_herbs2", "med_cat"],
+    "tags": ["herb_gathering", "med_only", "herb", "mallow", "betony", "many_herbs1", "many_herbs2"],
     "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh mallow for the stores.",
     "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
     "chance_of_success": 70,
@@ -921,9 +849,7 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -933,7 +859,7 @@
     "patrol_id": "mtn_med_gatheringmallow_leaf-fall2",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "med_cat", "herb", "mallow", "betony", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
+    "tags": ["herb_gathering", "med_only", "med_cat", "herb", "mallow", "betony", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh mallow for the stores with app1.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 70,
@@ -947,9 +873,7 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and app1 looks up at them with disappointment."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -959,7 +883,7 @@
     "patrol_id": "mtn_med_gatheringmallow_leaf-fall3",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_cat", "warrior", "herb", "mallow", "betony", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "warrior", "herb", "mallow", "betony", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh mallow for the stores with a patrol of their Clanmates to assist them.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
@@ -973,9 +897,7 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful and snappish with each other."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -985,7 +907,7 @@
     "patrol_id": "mtn_med_gatheringmarigold_leaf-fall1",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "herb", "marigold", "tansy", "many_herbs1", "many_herbs2", "med_cat"],
+    "tags": ["herb_gathering", "med_only", "herb", "marigold", "tansy", "many_herbs1", "many_herbs2"],
     "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh marigold for the stores before the plants wither and die off.",
     "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
     "chance_of_success": 70,
@@ -999,9 +921,7 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1011,7 +931,7 @@
     "patrol_id": "mtn_med_gatheringmarigold_leaf-fall2",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "med_cat", "herb", "marigold", "tansy", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
+    "tags": ["herb_gathering", "med_only", "med_cat", "herb", "marigold", "tansy", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh marigold for the stores with app1 before the plants wither and die off.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 70,
@@ -1025,9 +945,7 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and app1 looks up at them with disappointment."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1037,7 +955,7 @@
     "patrol_id": "mtn_med_gatheringmarigold_leaf-fall3",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_cat", "warrior", "herb", "marigold", "tansy", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "warrior", "herb", "marigold", "tansy", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh marigold for the stores with a patrol of their Clanmates to assist them before the plants wither and die off.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
@@ -1051,9 +969,7 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful and snappish with each other."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -1063,7 +979,7 @@
     "patrol_id": "mtn_med_gatheringmullein_leaf-fall1",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "herb", "mullein", "thyme", "many_herbs1", "many_herbs2", "med_cat"],
+    "tags": ["herb_gathering", "med_only", "herb", "mullein", "thyme", "many_herbs1", "many_herbs2"],
     "intro_text": "As the mullein towers impressively over the other plants, it's a good time to harvest it.",
     "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
     "chance_of_success": 70,
@@ -1077,9 +993,7 @@
             "p_l could swear that there's usually some mullein around here - but not this time."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1089,7 +1003,7 @@
     "patrol_id": "mtn_med_gatheringmullein_leaf-fall2",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "med_cat", "herb", "mullein", "thyme", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
+    "tags": ["herb_gathering", "med_only", "med_cat", "herb", "mullein", "thyme", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "As the mullein towers impressively over the other plants, it's a good time to harvest it. p_l explains to app1 how mullein's height make it easy to spot from a distance.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 70,
@@ -1103,9 +1017,7 @@
             "p_l could swear that there's usually some mullein around here - but not this time."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1115,7 +1027,7 @@
     "patrol_id": "mtn_med_gatheringmullein_leaf-fall3",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_cat", "warrior", "herb", "mullein", "thyme", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "warrior", "herb", "mullein", "thyme", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "As the mullein towers impressively over the other plants, it's a good time to harvest it.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
@@ -1129,9 +1041,7 @@
             "p_l could swear that there's usually some mullein around here - but not this time."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -1141,7 +1051,7 @@
     "patrol_id": "mtn_med_gatheringoakleaves_leaf-fall1",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "herb", "oak_leaves", "elder_leaves", "many_herbs1", "many_herbs2", "med_cat"],
+    "tags": ["herb_gathering", "med_only", "herb", "oak_leaves", "elder_leaves", "many_herbs1", "many_herbs2"],
     "intro_text": "As the oaks are washed with brilliant color, p_l heads out on a patrol to gather their last green leaves.",
     "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
     "chance_of_success": 70,
@@ -1155,9 +1065,7 @@
             "The trees p_l finds don't look particularly safe to climb, and p_l is forced to give up on the idea of oak leaf gathering for today."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1167,7 +1075,7 @@
     "patrol_id": "mtn_med_gatheringoakleaves_leaf-fall2",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "med_cat", "herb", "oak_leaves", "elder_leaves", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
+    "tags": ["herb_gathering", "med_only", "med_cat", "herb", "oak_leaves", "elder_leaves", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "As the oaks are washed with brilliant color, p_l heads out on a patrol to gather their last green leaves, explaining to app1 how the leaves lose their herbal potency with the reds of leaf-fall.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 70,
@@ -1181,9 +1089,7 @@
             "The trees p_l finds don't look particularly safe to climb, and p_l is forced to give up on the idea of oak leaf gathering for today."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1193,7 +1099,7 @@
     "patrol_id": "mtn_med_gatheringoakleaves_leaf-fall3",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_cat", "warrior", "herb", "oak_leaves", "elder_leaves", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "warrior", "herb", "oak_leaves", "elder_leaves", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "As the oaks are washed with brilliant color, p_l heads out on a gathering patrol with warriors to gather their last green leaves.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
@@ -1207,9 +1113,7 @@
             "The trees p_l finds don't look particularly safe to climb, and p_l is forced to give up on the idea of oak leaf gathering for today."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -1219,7 +1123,7 @@
     "patrol_id": "mtn_med_gatheringplantain_leaf-fall1",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "herb", "plantain", "mullein", "many_herbs1", "many_herbs2", "med_cat"],
+    "tags": ["herb_gathering", "med_only", "herb", "plantain", "mullein", "many_herbs1", "many_herbs2"],
     "intro_text": "p_l is always amused by the plantain's enduring cheerfulness in the face of being trodden on, and it's nice that the plants grow with such enthusiasm right to the end of leaf-fall.",
     "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
     "chance_of_success": 70,
@@ -1233,9 +1137,7 @@
             "p_l finds a plantain plant growing in the middle of a path, but it's trampled and useless until it regrows its leaves."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1245,7 +1147,7 @@
     "patrol_id": "mtn_med_gatheringplantain_leaf-fall2",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "med_cat", "herb", "plantain", "mullein", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
+    "tags": ["herb_gathering", "med_only", "med_cat", "herb", "plantain", "mullein", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "p_l is always amused by the plantain's enduring cheerfulness in the face of being trodden on, and it's nice that the plants grow with such enthusiasm right to the end of leaf-fall. app1 asks if they'll really die back in leaf-bare - the plant seems too determined to give up in the cold.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 70,
@@ -1259,9 +1161,7 @@
             "p_l finds a plantain plant growing in the middle of a path, but it's trampled and useless until it regrows its leaves. app1 keeps suggesting they look somewhere that isn't a busy throughfare."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1271,7 +1171,7 @@
     "patrol_id": "mtn_med_gatheringplantain_leaf-fall3",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_cat", "warrior", "herb", "plantain", "mullein", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "warrior", "herb", "plantain", "mullein", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "p_l is always amused by the plantain's enduring cheerfulness in the face of being trodden on, and it's nice that the plants grow with such enthusiasm right to the end of leaf-fall. The warriors they're bringing along seem to regard their task as more path clearing and less herb gathering.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
@@ -1285,9 +1185,7 @@
             "p_l finds a plantain plant growing in the middle of a path, but it's trampled and useless until it regrows its leaves. The warriors are pleased to see the plant dying - they've been stomping on it every time they've come through here."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -1297,7 +1195,7 @@
     "patrol_id": "mtn_med_gatheringragwort_leaf-fall1",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "herb", "ragwort", "burdock", "many_herbs1", "many_herbs2", "med_cat"],
+    "tags": ["herb_gathering", "med_only", "herb", "ragwort", "burdock", "many_herbs1", "many_herbs2"],
     "intro_text": "As the ragwort plants start to dramatically give up on life as leaf-fall progresses, p_l takes the opportunity to go harvest from them.",
     "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
     "chance_of_success": 70,
@@ -1311,9 +1209,7 @@
             "Try as they might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants they haven't confidently identified."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1323,7 +1219,7 @@
     "patrol_id": "mtn_med_gatheringragwort_leaf-fall2",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "med_cat", "herb", "ragwort", "burdock", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
+    "tags": ["herb_gathering", "med_only", "med_cat", "herb", "ragwort", "burdock", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "As the ragwort plants start to dramatically give up on life as leaf-fall progresses, p_l takes the opportunity to go harvest from them, bringing along app1 for a herbcraft lesson.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 70,
@@ -1337,9 +1233,7 @@
             "Try as they might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants they haven't confidently identified."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1349,7 +1243,7 @@
     "patrol_id": "mtn_med_gatheringragwort_leaf-fall3",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_cat", "warrior", "herb", "ragwort", "burdock", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "warrior", "herb", "ragwort", "burdock", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "As the ragwort plants start to dramatically give up on life as leaf-fall progresses, p_l takes the opportunity to go harvest from them, bringing along a patrol to help them cart the leaves back to the herb stores.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
@@ -1363,9 +1257,7 @@
             "Try as they might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants they haven't confidently identified."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -1375,7 +1267,7 @@
     "patrol_id": "mtn_med_gatheringraspberrysolo3",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["herb", "raspberry", "no_herbs1", "no_herbs2", "med_cat", "poisoned", "injury"],
+    "tags": ["herb_gathering", "herb", "raspberry", "no_herbs1", "no_herbs2", "poisoned", "injury"],
     "intro_text": "While gathering herbs, r_c spots a bush of red berries.",
     "decline_text": "r_c decides not to touch the berries.",
     "chance_of_success": 50,
@@ -1392,9 +1284,7 @@
         "While plucking them from the bush, r_c feels one of the berries split in their mouth, and a horrible taste coats their tongue. These aren't raspberries. They rush to force themselves to throw up, and it works, expelling the deathberries from their system, but they're weak and shaky for the rest of the day."
     ],
     "win_skills": ["smart", "very smart", "extremely smart"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1404,7 +1294,7 @@
     "patrol_id": "mtn_med_gatheringraspberrysolo4",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["herb", "raspberry", "no_herbs1", "med_cat", "apprentice", "injury", "poisoned", "death"],
+    "tags": ["herb_gathering", "herb", "raspberry", "no_herbs1", "med_cat", "apprentice", "injury", "poisoned", "death"],
     "intro_text": "While gathering herbs, app1 stumbles upon a bush of red berries.",
     "decline_text": "app1 decides not to touch the berries.",
     "chance_of_success": 50,
@@ -1419,10 +1309,7 @@
         "app1 plucks the berries, several splitting in their mouth, and tries not to gag at the horrible taste - after all, all the herbs they're trying to learn taste horrible. As they start back to camp, they wobble a little. And then the world goes dark.",
         "app1 carefully plucks the horrible tasting berries, and as soon as the taste hits their tongue, they realize they've made a terrible mistake. Gagging, throwing up, and staggering, they crawl back to camp, weakly hoping their mentor will help them."
     ],
-    "win_skills": ["None"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1436,7 +1323,7 @@
     "patrol_id": "mtn_med_gatheringraspberry_leaf-fall1",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "herb", "blackberry", "raspberry", "many_herbs1", "many_herbs2", "med_cat"],
+    "tags": ["herb_gathering", "med_only", "herb", "blackberry", "raspberry", "many_herbs1", "many_herbs2"],
     "intro_text": "As leaf-fall arrives, the raspberry plants burst into fruit, suddenly revealing that several brambles p_l assumed were roses are actually useful for herb harvesting.",
     "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
     "chance_of_success": 70,
@@ -1450,9 +1337,7 @@
             "p_l attempts to pick their way through the blackberry thorns to reach the leaves, but it soon becomes clear that it's a hopeless task."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1462,7 +1347,7 @@
     "patrol_id": "mtn_med_gatheringraspberry_leaf-fall2",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "med_cat", "herb", "blackberry", "raspberry", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
+    "tags": ["herb_gathering", "med_only", "med_cat", "herb", "blackberry", "raspberry", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "As leaf-fall arrives, the raspberry plants burst into fruit, suddenly revealing that several brambles p_l assumed were roses are actually useful for herb harvesting. app1 isn't commenting on their mentor's mistake.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 70,
@@ -1476,9 +1361,7 @@
             "With app1 following them, p_l attempts to pick their way through the blackberry thorns to reach the leaves, but it soon becomes clear that it's a hopeless task."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1488,7 +1371,7 @@
     "patrol_id": "mtn_med_gatheringraspberry_leaf-fall3",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_cat", "warrior", "herb", "blackberry", "raspberry", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "warrior", "herb", "blackberry", "raspberry", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "As leaf-fall arrives, the raspberry plants burst into fruit, suddenly revealing that several brambles p_l assumed were roses are actually useful for herb harvesting. They bring some of their Clanmates along to take advantage of the opportunity.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
@@ -1502,9 +1385,7 @@
             "p_l manages to avoid a torn pelt only by the grace of StarClan, and isn't going to risk sending anyone else into the brambles with them having so many thorns at the moment. They'll have to try a different blackberry bush on another day."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -1514,7 +1395,7 @@
     "patrol_id": "mtn_med_gatheringtansy_leaf-fall1",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "herb", "tansy", "ragwort", "many_herbs1", "many_herbs2", "med_cat"],
+    "tags": ["herb_gathering", "med_only", "herb", "tansy", "ragwort", "many_herbs1", "many_herbs2"],
     "intro_text": "As the tansy plants fight on though leaf-fall to fit in as much life as possible before leaf-bare, p_l goes out to harvest them.",
     "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
     "chance_of_success": 70,
@@ -1528,9 +1409,7 @@
             "Try as they might, p_l can't quite remember the exact shape of the tansy leaves, and isn't going to harvest from plants they haven't confidently identified."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1540,7 +1419,7 @@
     "patrol_id": "mtn_med_gatheringtansy_leaf-fall2",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "med_cat", "herb", "tansy", "ragwort", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
+    "tags": ["herb_gathering", "med_only", "med_cat", "herb", "tansy", "ragwort", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "As the tansy plants fight on though leaf-fall to fit in as much life as possible before leaf-bare, p_l goes out to harvest them with app1, bringing the apprentice for an important herbcraft lesson.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 70,
@@ -1554,9 +1433,7 @@
             "Try as they might, p_l can't quite remember the exact shape of the tansy leaves, and isn't going to harvest from plants they haven't confidently identified."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1566,7 +1443,7 @@
     "patrol_id": "mtn_med_gatheringtansy_leaf-fall3",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_cat", "warrior", "herb", "tansy", "ragwort", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "warrior", "herb", "tansy", "ragwort", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "As the tansy plants fight on though leaf-fall to fit in as much life as possible before leaf-bare, p_l goes out to harvest them with a gathering patrol.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
@@ -1580,9 +1457,7 @@
             "Try as they might, p_l can't quite remember the exact shape of the tansy leaves, and isn't going to harvest from plants they haven't confidently identified."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -1592,23 +1467,21 @@
     "patrol_id": "mtn_med_gatheringthyme_leaf-fall1",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "herb", "thyme", "goldenrod", "many_herbs1", "many_herbs2", "med_cat"],
+    "tags": ["herb_gathering", "med_only", "herb", "thyme", "goldenrod", "many_herbs1", "many_herbs2"],
     "intro_text": "The thyme plants are running out of growing time - p_l better go harvest them before leaf-fall is over.",
     "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "The urgency drains out of p_l as they sit amongst the calming thyme, and it's not just the herb stores that'll feel the benefit of this gathering trip, as they have collect a staisfying amount for this type of weather alongside a pawful of goldenrod stems.",
+            "The urgency drains out of p_l as they sit amongst the calming thyme, and it's not just the herb stores that'll feel the benefit of this gathering trip, as they have collect a satisfying amount for this type of weather alongside a pawful of goldenrod stems.",
             "It calms racing hearts and minds, bringing cats back from the shock of loss or injury. Thyme is always both helpful and pleasant to have around, and p_l makes sure to organise the herb stores ensuring they have a healthy amount of goldenrod to go alongside the thyme, which p_l places so that the scent wafts near their nest.",
-            "Thyme, thyme, thyme, there's never enough thyme. s_c snorts at their little joke, mouth crammed full of the herb. Spotting a small goldenrod plant that looks like its begining to shrivel up from the frosts, they pause to gather the remaining stems to make good use of it."
+            "Thyme, thyme, thyme, there's never enough thyme. s_c snorts at their little joke, mouth crammed full of the herb. Spotting a small goldenrod plant that looks like its beginning to shrivel up from the frosts, they pause to gather the remaining stems to make good use of it."
 ],
     "fail_text": [
             "p_l has no time - and no thyme. They're forced to give up on the search for today."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1618,13 +1491,13 @@
     "patrol_id": "mtn_med_gatheringthyme_leaf-fall2",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "med_cat", "herb", "thyme", "goldenrod", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
+    "tags": ["herb_gathering", "med_only", "med_cat", "herb", "thyme", "goldenrod", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "The thyme plants are running out of growing time - p_l better take app1 to harvest them before leaf-fall is over.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-            "The urgency drains out of the medicine cats as they sit amongst the calming thyme, and it's not just the herb stores that'll feel the benefit of this gathering trip, as they have collect a staisfying amount for this type of weather alongside a pawful of goldenrod stems.",
+            "The urgency drains out of the medicine cats as they sit amongst the calming thyme, and it's not just the herb stores that'll feel the benefit of this gathering trip, as they have collect a satisfying amount for this type of weather alongside a pawful of goldenrod stems.",
             "It calms racing hearts and minds, bringing cats back from the shock of loss or injury. Thyme is always both helpful and pleasant to have around, and p_l makes sure to organise the herb stores ensuring they have a healthy amount of goldenrod to go alongside the thyme, which p_l places so that the scent wafts near the nests they and app1 curl up in at night.",
             "Thyme, thyme, thyme, there's never enough thyme. s_c snorts at their little joke, putting down the herbs they carry to explain it to app1 while they gather a few goldenrod stems from a nearby plant."
 ],
@@ -1632,9 +1505,7 @@
             "p_l has no time - and no thyme. They're forced to give up on the search for today."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1644,13 +1515,13 @@
     "patrol_id": "mtn_med_gatheringthyme_leaf-fall3",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_cat", "warrior", "herb", "thyme", "goldenrod", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "warrior", "herb", "thyme", "goldenrod", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "The thyme plants are running out of growing time - p_l better go harvest them before leaf-fall is over, bringing a patrol with them to help.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "The urgency drains out of the patrol as they sit amongst the calming thyme, and it's not just the herb stores that'll feel the benefit of this gathering trip, as they have collect a staisfying amount for this type of weather alongside a pawful of goldenrod stems.",
+            "The urgency drains out of the patrol as they sit amongst the calming thyme, and it's not just the herb stores that'll feel the benefit of this gathering trip, as they have collect a satisfying amount for this type of weather alongside a pawful of goldenrod stems.",
             "It calms racing hearts and minds, bringing cats back from the shock of loss or injury. Thyme is always both helpful and pleasant to have around, and p_l decides that this patrol has brought back more than enough, including a couple of stems of goldenrod, there's no harm in letting the warriors take a stem each for their nests.",
             "Thyme, thyme, thyme, there's never enough thyme. s_c snorts at their little joke, putting down the herbs they carry to explain it to the rest of the patrol while they gather a few goldenrod stems from a nearby plant."
     ],
@@ -1658,9 +1529,7 @@
             "p_l has no time - and no thyme. They're forced to give up on the search for today."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -1670,7 +1539,7 @@
     "patrol_id": "mtn_med_gatheringwildgarlic_leaf-fall1",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "herb", "wild_garlic", "mallow", "many_herbs1", "many_herbs2", "med_cat"],
+    "tags": ["herb_gathering", "med_only", "herb", "wild_garlic", "mallow", "many_herbs1", "many_herbs2"],
     "intro_text": "In the crisp cool air of a leaf-fall morning, it should be easy to find wild garlic by scent.",
     "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
     "chance_of_success": 70,
@@ -1684,9 +1553,7 @@
             "Try as they might, p_l can't quite remember the exact shape of the garlic leaves, and isn't going to harvest from plants they haven't confidently identified."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1696,7 +1563,7 @@
     "patrol_id": "mtn_med_gatheringwildgarlic_leaf-fall2",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_only", "med_cat", "herb", "wild_garlic", "mallow", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
+    "tags": ["herb_gathering", "med_only", "med_cat", "herb", "wild_garlic", "mallow", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "In the crisp cool air of a leaf-fall morning, it should be easy to find wild garlic by scent. p_l brings along app1, to see if they can do it.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 70,
@@ -1710,9 +1577,7 @@
             "Try as they might, p_l can't quite remember the exact shape of the garlic leaves, and isn't going to harvest from plants they haven't confidently identified."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1722,7 +1587,7 @@
     "patrol_id": "mtn_med_gatheringwildgarlic_leaf-fall3",
     "biome": "mountainous",
     "season": "leaf-fall",
-    "tags": ["med_cat", "warrior", "herb", "wild_garlic", "mallow", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "warrior", "herb", "wild_garlic", "mallow", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "In the crisp cool air of a leaf-fall morning, it should be easy to find wild garlic by scent. p_l leads a gathering patrol to do just that.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
@@ -1736,9 +1601,7 @@
             "Try as they might, p_l can't quite remember the exact shape of the garlic leaves, and isn't going to harvest from plants they haven't confidently identified."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,

@@ -1,5 +1,4 @@
 import unittest
-from unittest.mock import patch
 
 try:
     import ujson
@@ -7,7 +6,7 @@ except ImportError:
     import json as ujson
 
 from scripts.cat.cats import Cat
-from scripts.conditions import Illness, Injury, medical_cats_condition_fulfilled
+from scripts.conditions import medical_cats_condition_fulfilled
 
 class TestsMedCondition(unittest.TestCase):
     def test_not_fulfilled(self):

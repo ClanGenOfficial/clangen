@@ -3,7 +3,7 @@
 	"patrol_id":"dst_med_soloripples1",
 	"biome":"desert",
 	"season":"Any",
-	"tags":[
+	"tags": ["herb_gathering", 
 		"comfort",
 		"respect",
 		"trust",
@@ -21,18 +21,6 @@
 	"fail_text":[
 		"They gaze into the water of the underground spring only to see the weird ripples were caused by a small fish flopping around. p_l feels disappointed because they really could have used some guidance from StarClan."
 	],
-	"win_skills":[
-		"None"
-	],
-	"win_trait":[
-		"None"
-	],
-	"fail_skills":[
-		"None"
-	],
-	"fail_trait":[
-		"None"
-	],
 	"min_cats":1,
 	"max_cats":1,
 	"Antagonize_text":null,
@@ -46,7 +34,7 @@
 	"patrol_id":"dst_med_app_herblocation1",
 	"biome":"desert",
 	"season":"Any",
-	"tags":[
+	"tags": ["herb_gathering", 
 		"med_cat",
 		"apprentice",
 		"trust",
@@ -67,18 +55,6 @@
 	"fail_text":[
 		"app1 is constantly distracted and running ahead much to the frustration of p_l. Evidently no new knowledge will be learned that day."
 	],
-	"win_skills":[
-		"None"
-	],
-	"win_trait":[
-		"None"
-	],
-	"fail_skills":[
-		"None"
-	],
-	"fail_trait":[
-		"None"
-	],
 	"min_cats":2,
 	"max_cats":2,
 	"antagonize_text":null,
@@ -88,7 +64,7 @@
 	"patrol_id":"dst_med_app_herblocation2",
 	"biome":"desert",
 	"season":"Any",
-	"tags":[
+	"tags": ["herb_gathering", 
 		"med_cat",
 		"apprentice",
 		"med_only",
@@ -107,18 +83,6 @@
 	"fail_text":[
 		"app1 goes to a known herb patch - but the plant has died! They give up and return to camp, feeling terrible."
 	],
-	"win_skills":[
-		"None"
-	],
-	"win_trait":[
-		"None"
-	],
-	"fail_skills":[
-		"None"
-	],
-	"fail_trait":[
-		"None"
-	],
 	"min_cats":1,
 	"max_cats":1,
 	"antagonize_text":null,
@@ -132,7 +96,7 @@
 	"patrol_id":"dst_medcat_emergency1",
 	"biome":"desert",
 	"season":"greenleaf",
-	"tags":[
+	"tags": ["herb_gathering", 
 		"med_only",
 		"no_app",
 		"med_cat",
@@ -167,12 +131,6 @@
 		"thoughtful",
 		"wise"
 	],
-	"fail_skills":[
-		"None"
-	],
-	"fail_trait":[
-		"None"
-	],
 	"min_cats":1,
 	"max_cats":1,
 	"Antagonize_text":null,
@@ -186,7 +144,7 @@
 	"patrol_id":"dst_med_lungwort1",
 	"biome":"desert",
 	"season":"newleaf",
-	"tags":[
+	"tags": ["herb_gathering", 
 		"med_cat",
 		"apprentice",
 		"med_only",
@@ -216,12 +174,6 @@
 	"win_trait":[
 		"patient"
 	],
-	"fail_skills":[
-		"None"
-	],
-	"fail_trait":[
-		"None"
-	],
 	"min_cats":2,
 	"max_cats":2,
 	"antagonize_text":null,
@@ -231,7 +183,7 @@
 	"patrol_id":"dst_med_lungwort2",
 	"biome":"desert",
 	"season":"newleaf",
-	"tags":[
+	"tags": ["herb_gathering", 
 		"med_cat",
 		"herb",
 		"no_app",
@@ -261,12 +213,6 @@
 	"win_trait":[
 		"patient"
 	],
-	"fail_skills":[
-		"None"
-	],
-	"fail_trait":[
-		"None"
-	],
 	"min_cats":1,
 	"max_cats":1,
 	"antagonize_text":null,
@@ -276,7 +222,7 @@
 	"patrol_id":"dst_med_lungwort3",
 	"biome":"desert",
 	"season":"newleaf",
-	"tags":[
+	"tags": ["herb_gathering", 
 		"med_cat",
 		"warrior",
 		"herb",
@@ -305,9 +251,6 @@
 	"win_trait":[
 		"patient"
 	],
-	"fail_skills":[
-		"None"
-	],
 	"fail_trait":[
 		"troublesome",
 		"childish"
@@ -321,7 +264,7 @@
 	"patrol_id":"dst_med_lungwort4",
 	"biome":"desert",
 	"season":"leaf-bare",
-	"tags":[
+	"tags": ["herb_gathering", 
 		"med_cat",
 		"apprentice",
 		"med_only",
@@ -351,12 +294,6 @@
 	"win_trait":[
 		"patient"
 	],
-	"fail_skills":[
-		"None"
-	],
-	"fail_trait":[
-		"None"
-	],
 	"min_cats":2,
 	"max_cats":2,
 	"antagonize_text":null,
@@ -366,7 +303,7 @@
 	"patrol_id":"dst_med_lungwort5",
 	"biome":"desert",
 	"season":"leaf-bare",
-	"tags":[
+	"tags": ["herb_gathering", 
 		"med_cat",
 		"herb",
 		"no_app",
@@ -396,12 +333,6 @@
 	"win_trait":[
 		"patient"
 	],
-	"fail_skills":[
-		"None"
-	],
-	"fail_trait":[
-		"None"
-	],
 	"min_cats":1,
 	"max_cats":1,
 	"antagonize_text":null,
@@ -411,7 +342,7 @@
 	"patrol_id":"dst_med_lungwort6",
 	"biome":"desert",
 	"season":"leaf-bare",
-	"tags":[
+	"tags": ["herb_gathering", 
 		"med_cat",
 		"warrior",
 		"herb",
@@ -440,9 +371,6 @@
 	"win_trait":[
 		"patient"
 	],
-	"fail_skills":[
-		"None"
-	],
 	"fail_trait":[
 		"troublesome",
 		"childish"
@@ -456,7 +384,7 @@
 	"patrol_id":"dst_med_lungwort7",
 	"biome":"desert",
 	"season":"leaf-fall",
-	"tags":[
+	"tags": ["herb_gathering", 
 		"med_cat",
 		"apprentice",
 		"med_only",
@@ -486,12 +414,6 @@
 	"win_trait":[
 		"patient"
 	],
-	"fail_skills":[
-		"None"
-	],
-	"fail_trait":[
-		"None"
-	],
 	"min_cats":2,
 	"max_cats":2,
 	"antagonize_text":null,
@@ -501,7 +423,7 @@
 	"patrol_id":"dst_med_lungwort8",
 	"biome":"desert",
 	"season":"leaf-fall",
-	"tags":[
+	"tags": ["herb_gathering", 
 		"med_cat",
 		"herb",
 		"no_app",
@@ -531,12 +453,6 @@
 	"win_trait":[
 		"patient"
 	],
-	"fail_skills":[
-		"None"
-	],
-	"fail_trait":[
-		"None"
-	],
 	"min_cats":1,
 	"max_cats":1,
 	"antagonize_text":null,
@@ -546,7 +462,7 @@
 	"patrol_id":"dst_med_lungwort9",
 	"biome":"desert",
 	"season":"leaf-fall",
-	"tags":[
+	"tags": ["herb_gathering", 
 		"med_cat",
 		"warrior",
 		"herb",
@@ -576,9 +492,6 @@
 	"win_trait":[
 		"patient"
 	],
-	"fail_skills":[
-		"None"
-	],
 	"fail_trait":[
 		"troublesome",
 		"childish"
@@ -592,7 +505,7 @@
 	"patrol_id":"dst_med_rescue1",
 	"biome":"desert",
 	"season":"Any",
-	"tags":[
+	"tags": ["herb_gathering", 
 		"med_cat",
 		"med_only",
 		"new_cat",
@@ -617,18 +530,6 @@
 		null,
 		null
 	],
-	"win_skills":[
-		"None"
-	],
-	"win_trait":[
-		"None"
-	],
-	"fail_skills":[
-		"None"
-	],
-	"fail_trait":[
-		"None"
-	],
 	"min_cats":2,
 	"max_cats":2,
 	"antagonize_text":"null, ",
@@ -644,7 +545,7 @@
 	"patrol_id":"dst_med_romance1",
 	"biome":"desert",
 	"season":"newleaf",
-	"tags":[
+	"tags": ["herb_gathering", 
 		"med_cat",
 		"warrior",
 		"herb",
@@ -673,12 +574,6 @@
 		"great mediator",
 		"excellent mediator"
 	],
-	"win_trait":[
-		"None"
-	],
-	"fail_skills":[
-		"None"
-	],
 	"fail_trait":[
 		"troublesome",
 		"childish"
@@ -692,7 +587,7 @@
 	"patrol_id":"dst_med_romance2",
 	"biome":"desert",
 	"season":"leaf-bare",
-	"tags":[
+	"tags": ["herb_gathering", 
 		"med_cat",
 		"med_only",
 		"herb",
@@ -720,12 +615,6 @@
 		"great mediator",
 		"excellent mediator"
 	],
-	"win_trait":[
-		"None"
-	],
-	"fail_skills":[
-		"None"
-	],
 	"fail_trait":[
 		"troublesome",
 		"childish"
@@ -739,7 +628,7 @@
 	"patrol_id":"dst_med_romance3",
 	"biome":"desert",
 	"season":"leaf-bare",
-	"tags":[
+	"tags": ["herb_gathering", 
 		"med_cat",
 		"warrior",
 		"herb",
@@ -767,12 +656,6 @@
 		"great mediator",
 		"excellent mediator"
 	],
-	"win_trait":[
-		"None"
-	],
-	"fail_skills":[
-		"None"
-	],
 	"fail_trait":[
 		"troublesome",
 		"childish"
@@ -786,7 +669,7 @@
 	"patrol_id":"dst_med_romance4",
 	"biome":"desert",
 	"season":"leaf-bare",
-	"tags":[
+	"tags": ["herb_gathering", 
 		"med_cat",
 		"med_only",
 		"herb",
@@ -814,12 +697,6 @@
 		"great mediator",
 		"excellent mediator"
 	],
-	"win_trait":[
-		"None"
-	],
-	"fail_skills":[
-		"None"
-	],
 	"fail_trait":[
 		"troublesome",
 		"childish"
@@ -833,7 +710,7 @@
 	"patrol_id":"dst_med_romance5",
 	"biome":"desert",
 	"season":"leaf-fall",
-	"tags":[
+	"tags": ["herb_gathering", 
 		"med_cat",
 		"warrior",
 		"herb",
@@ -861,12 +738,6 @@
 		"great mediator",
 		"excellent mediator"
 	],
-	"win_trait":[
-		"None"
-	],
-	"fail_skills":[
-		"None"
-	],
 	"fail_trait":[
 		"troublesome",
 		"childish"
@@ -880,7 +751,7 @@
 	"patrol_id":"dst_med_romance6",
 	"biome":"desert",
 	"season":"leaf-fall",
-	"tags":[
+	"tags": ["herb_gathering", 
 		"med_cat",
 		"med_only",
 		"herb",
@@ -908,12 +779,6 @@
 		"great mediator",
 		"excellent mediator"
 	],
-	"win_trait":[
-		"None"
-	],
-	"fail_skills":[
-		"None"
-	],
 	"fail_trait":[
 		"troublesome",
 		"childish"
@@ -927,7 +792,7 @@
 	"patrol_id":"dst_med_romance7",
 	"biome":"desert",
 	"season":"greenleaf",
-	"tags":[
+	"tags": ["herb_gathering", 
 		"med_cat",
 		"warrior",
 		"herb",
@@ -955,12 +820,6 @@
 		"great mediator",
 		"excellent mediator"
 	],
-	"win_trait":[
-		"None"
-	],
-	"fail_skills":[
-		"None"
-	],
 	"fail_trait":[
 		"troublesome",
 		"childish"
@@ -974,7 +833,7 @@
 	"patrol_id":"dst_med_romance8",
 	"biome":"desert",
 	"season":"greenleaf",
-	"tags":[
+	"tags": ["herb_gathering", 
 		"med_cat",
 		"med_only",
 		"herb",
@@ -1002,12 +861,6 @@
 		"great mediator",
 		"excellent mediator"
 	],
-	"win_trait":[
-		"None"
-	],
-	"fail_skills":[
-		"None"
-	],
 	"fail_trait":[
 		"troublesome",
 		"childish"
@@ -1021,7 +874,7 @@
     "patrol_id": "dst_med_appfirstsign1",
     "biome": "desert",
     "season": "Any",
-    "tags": ["med_cat", "apprentice", "med_only", "herb"],
+    "tags": ["herb_gathering", "med_cat", "apprentice", "med_only", "herb"],
     "intro_text": "p_l is out to gather a few herbs at the behest of their mentor. The wind is gently rustling the scrubby grass as they pad along.",
     "decline_text": "Just before the apprentice can leave, their mentor calls for their attention. Apparently they have a different task that's more pressing.",
     "chance_of_success": 50,
@@ -1034,8 +887,7 @@
     ],
     "min_cats": 1,
     "max_cats": 1,
-    "win_skills": null,
-    "win_trait": ["None"],
+
     "antagonize_text": null,
     "antagonize_fail_text": null
 }

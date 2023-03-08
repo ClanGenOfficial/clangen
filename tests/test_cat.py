@@ -1,6 +1,5 @@
 from copy import deepcopy
 import unittest
-import re
 
 from scripts.cat.cats import Cat
 from scripts.cat_relations.relationship import Relationship

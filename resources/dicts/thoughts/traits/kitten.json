@@ -2,7 +2,7 @@
     "attention-seeker": [],
     "bossy": [],
     "bouncy": [
-        "Is pretending to be a rabbit hopping about",
+        "Is pretending to be a rabbit and hopping about",
         "Is pawing at r_c's tail from behind them"
     ],
     "bullying": [
@@ -20,7 +20,7 @@
     ],
     "daydreamer": [],
     "impulsive": [
-        "Keeps streaking across the clearing",
+        "Is streaking across the clearing",
         "Is stuck in a tree... again",
         "Is complaining of a tummy ache after eating too much",
         "Is awfully close to getting a nip on the rump for misbehaving",
@@ -30,14 +30,14 @@
     "insecure": [],
     "nervous": [
         "Was startled by a croaking frog",
-        "Is doing their best not to get stepped on by the bigger cats",
+        "Is doing their best not to get stepped on",
         "Is trying to stop their paws from shaking",
         "Is nervous about leaving their siblings",
         "Doesn't want to be an apprentice yet",
         "Is thinking about how nervous they are",
         "Is worrying about their family and friends",
         "Is scared of dying",
-        "Is trying to be brave to make their family happy",
+        "Is trying to be brave",
         "Is worried about making mistakes",
         "Is hoping they're not the next cat to fail",
         "Is feeling shaky",
@@ -72,7 +72,7 @@
     ],
     "strong connection to starclan": [
         "Thinks they saw a StarClan cat in their dreams",
-        "Is scrambling the medicine cat's herbs!",
+        "Is scrambling the medicine cat's herbs",
         "Is pretending to be the medicine cat"
     ]
 }

@@ -3,7 +3,7 @@
 "patrol_id": "fst_med_soloripples1",
 "biome": "forest",
 "season": "Any",
-"tags": ["comfort", "respect", "trust", "med_cat", "med_only"],
+"tags": ["herb_gathering", "comfort", "respect", "trust", "med_only"],
 "intro_text": "p_l sees weird ripples on the water of a puddle while gathering fresh water.",
 "decline_text": "p_l is in a hurry and does not stop to look at the ripples.",
 "chance_of_success": 45,
@@ -15,18 +15,6 @@
 "fail_text": [
     "They gaze into the puddle only to see the weird ripples were caused by a small frog. p_l feels disappointed because they really could have used some guidance from StarClan."
 ],
-"win_skills": [
-    "None"
-],
-"win_trait": [
-    "None"
-],
-"fail_skills": [
-    "None"
-],
-"fail_trait": [
-    "None"
-],
 "min_cats": 1,
 "max_cats": 1,
 "antagonize_text": null,
@@ -36,7 +24,7 @@
 "patrol_id": "fst_med_herblocation1",
 "biome": "forest",
 "season": "Any",
-"tags": [
+"tags": ["herb_gathering", 
     "med_cat",
     "apprentice",
     "trust",
@@ -57,9 +45,7 @@
 "fail_text": [
     "app1 is constantly distracted and running ahead much to the frustration of p_l. Evidently no new knowledge will be learned that day."
 ],
-"win_skills": null,
-"win_trait": null,
-"fail_skills": null,
+
 "fail_trait": null,
 "min_cats": 2,
 "max_cats": 2,
@@ -70,7 +56,7 @@
 "patrol_id": "fst_med_herblocation2",
 "biome": "forest",
 "season": "Any",
-"tags": ["med_cat", "apprentice", "med_only", "random_herbs"],
+"tags": ["herb_gathering", "apprentice", "med_only", "random_herbs"],
 "intro_text": "p_l has been sent out into the forest to try to find specific herbs alone.",
 "decline_text": "Nervous and scared of everything that even slightly moves, they decide to go back to camp and try again another day. Their mentor will not be pleased...",
 "chance_of_success": 65,
@@ -84,18 +70,6 @@
 "fail_text": [
     "p_l goes to a known herb patch - but the plant has died! They give up and return to camp, feeling terrible and with their tail dragging on the ground."
 ],
-"win_skills": [
-    "None"
-],
-"win_trait": [
-    "None"
-],
-"fail_skills": [
-    "None"
-],
-"fail_trait": [
-    "None"
-],
 "min_cats": 1,
 "max_cats": 1,
 "antagonize_text": null,
@@ -105,7 +79,7 @@
 "patrol_id": "fst_med_appfirstsign1",
 "biome": "forest",
 "season": "Any",
-"tags": ["med_cat", "apprentice", "herb", "blackberry"],
+"tags": ["herb_gathering", "apprentice", "herb", "blackberry"],
 "intro_text": "p_l is out to gather a few herbs at the behest of their mentor. The wind is gently rustling the trees as they pad along.",
 "decline_text": "Just before the apprentice can leave, their mentor calls for their attention. Apparently they have a different task that's more pressing.",
 "chance_of_success": 50,
@@ -125,7 +99,7 @@
     "patrol_id": "fst_med_rainygathering1",
     "biome": "forest",
     "season": "Any",
-    "tags": ["med_cat", "random_herbs", "many_herbs2", "big_change", "dislike", "respect"],
+    "tags": ["herb_gathering", "med_cat", "random_herbs", "many_herbs2", "big_change", "dislike", "respect"],
     "intro_text": "p_l leads a patrol out to explore c_n's territory and bring back any herbs they can spot. Their whiskers want to twitch with every raindrop that hits them, but the Clan doesn't have the luxury to sit inside away from the weather.",
     "decline_text": "Someone calls p_l back, and the patrol is forgotten as they help a Clanmate.",
     "chance_of_success": 70,
@@ -139,9 +113,7 @@
             "p_l knows the conditions are miserable, but their group is even more insufferable, and not only do they have to put up with these cats for an entire afternoon, there's also nothing to show for it."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -151,7 +123,7 @@
     "patrol_id": "fst_med_gatheringcobwebs1",
     "biome": "forest",
     "season": "Any",
-    "tags": ["med_only", "med_cat", "herb", "cobwebs", "many_herbs1"],
+    "tags": ["herb_gathering", "med_only", "herb", "cobwebs", "many_herbs1"],
     "intro_text": "p_l heads out into the territory to stock up on cobwebs, something the Clan never seems to have enough of.",
     "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
     "chance_of_success": 80,
@@ -169,10 +141,10 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "fst_med_gatheringcobwebs2",
+    "patrol_id": "fst_med_cobweblesson1",
     "biome": "forest",
     "season": "Any",
-    "tags": ["med_only", "med_cat", "respect", "trust", "apprentice", "herb", "cobwebs", "many_herbs1"],
+    "tags": ["herb_gathering", "med_only", "med_cat", "respect", "trust", "apprentice", "herb", "cobwebs", "many_herbs1"],
     "intro_text": "p_l heads out into the territory with app1 to stock up on cobwebs and teach the apprentice how to gather one of the Clan's most vital medical tools.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 80,
@@ -190,10 +162,10 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "fst_med_gatheringcobwebs3",
+    "patrol_id": "fst_med_cobwebhelp1",
     "biome": "forest",
     "season": "Any",
-    "tags": ["med_cat", "warrior", "herb", "cobwebs", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "med_cat", "warrior", "herb", "cobwebs", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "c_n can never have enough cobwebs, p_l instructs their team, leading them out to search for them.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
@@ -207,9 +179,7 @@
             "Can warriors not pay attention, even to something as simple as cobwebs?! p_l holds their breath and counts to ten before they dismiss the patrol, every found cobweb ruined, what little they did manage to find."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -219,7 +189,7 @@
     "patrol_id": "fst_med_gatheringhorsetail1",
     "biome": "forest",
     "season": "Any",
-    "tags": ["med_only", "herb", "horsetail", "many_herbs1", "many_herbs2", "med_cat"],
+    "tags": ["herb_gathering", "med_only", "herb", "horsetail", "many_herbs1", "many_herbs2", "med_cat"],
     "intro_text": "p_l heads out on a herb-gathering patrol, searching for the evergreen, ever-reliable horsetail to harvest for the herb stores.",
     "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
     "chance_of_success": 70,
@@ -233,19 +203,17 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "fst_med_gatheringhorsetail2",
+    "patrol_id": "fst_med_horsetaillesson1",
     "biome": "forest",
     "season": "Any",
-    "tags": ["med_only", "med_cat", "herb", "horsetail", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
+    "tags": ["herb_gathering", "adult_stat", "med_only", "med_cat", "herb", "horsetail", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "p_l heads out on a herb-gathering patrol, searching for the evergreen, ever-reliable horsetail to harvest for the herb stores. app1 trots after them, asking them why horsetail grows so weirdly without leaves.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 70,
@@ -259,19 +227,17 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and app1 looks up at them with disappointment."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "fst_med_gatheringhorsetail3",
+    "patrol_id": "fst_med_horsetailhelp1",
     "biome": "forest",
     "season": "Any",
-    "tags": ["med_cat", "warrior", "herb", "horsetail", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "med_cat", "warrior", "herb", "horsetail", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "Bringing a motley assortment of Clanmates along with them, p_l heads out on a herb-gathering patrol, searching for the evergreen, ever-reliable horsetail to harvest for the herb stores.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
@@ -285,19 +251,17 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful and snappish with each other."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
     {
-    "patrol_id": "gen_med_gatheringmoss1",
+    "patrol_id": "fst_med_gatheringmoss1",
     "biome": "forest",
     "season": "Any",
-    "tags": ["med_cat", "moss", "herb"],
+    "tags": ["herb_gathering", "med_only", "moss", "herb"],
     "intro_text": "p_l notices that the moss in the medicine den is getting old. They need to go and gather some more.",
     "decline_text": "A cat requires their attention just as they go to leave. Moss will have to wait.",
     "chance_of_success": 80,
@@ -310,16 +274,15 @@
     ],
     "min_cats": 1,
     "max_cats": 1,
-    "win_skills": null,
-    "win_trait": ["None"],
+
     "antagonize_text": null,
     "antagonize_fail_text": null
     },
     {
-    "patrol_id": "gen_med_gatheringmoss2",
+    "patrol_id": "fst_med_gatheringmoss2",
     "biome": "forest",
     "season": "Any",
-    "tags": ["med_cat", "apprentice", "med_only", "herb", "moss", "big_change", "platonic", "dislike"],
+    "tags": ["herb_gathering", "med_cat", "apprentice", "med_only", "herb", "moss", "big_change", "platonic", "dislike"],
     "intro_text": "p_l notices that the moss in the medicine den is getting old. They need to go and gather some more.",
     "decline_text": "A cat requires their attention just as they go to leave. Moss will have to wait.",
     "chance_of_success": 80,
@@ -332,16 +295,15 @@
     ],
     "min_cats": 2,
     "max_cats": 2,
-    "win_skills": null,
-    "win_trait": ["None"],
+
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "gen_med_gatheringmoss3",
+    "patrol_id": "fst_med_gatheringmoss3",
     "biome": "forest",
     "season": "Any",
-    "tags": ["med_cat", "warrior", "herb", "moss", "big_change", "platonic", "dislike"],
+    "tags": ["herb_gathering", "med_cat", "warrior", "herb", "moss", "big_change", "platonic", "dislike"],
     "intro_text": "p_l notices that the moss in the medicine den is getting old. They need to go and gather some more.",
     "decline_text": "A cat requires their attention just as they go to leave. Moss will have to wait.",
     "chance_of_success": 80,
@@ -354,16 +316,15 @@
     ],
     "min_cats": 2,
     "max_cats": 2,
-    "win_skills": null,
-    "win_trait": ["None"],
+
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "gen_med_gatheringmoss4",
+    "patrol_id": "fst_med_gatheringmoss4",
     "biome": "forest",
     "season": "Any",
-    "tags": ["med_cat", "warrior", "herb", "moss", "big_change", "platonic"],
+    "tags": ["herb_gathering", "med_cat", "warrior", "herb", "moss", "big_change", "platonic"],
     "intro_text": "p_l notices that the moss in the medicine den is getting old. They need to go and gather some more.",
     "decline_text": "A cat requires their attention just as they go to leave. Moss will have to wait.",
     "chance_of_success": 80,
@@ -376,16 +337,15 @@
     ],
     "min_cats": 3,
     "max_cats": 6,
-    "win_skills": null,
-    "win_trait": ["None"],
+
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "fst_med_gatheringrosemary1",
+    "patrol_id": "fst_med_gatheringrosemarylesson1",
     "biome": "forest",
     "season": "Any",
-    "tags": ["med_cat", "apprentice", "herb", "rosemary", "comfort", "trust", "no_change_fail", "injury", "thorn in their paw", "med_only"],
+    "tags": ["herb_gathering", "med_cat", "apprentice", "herb", "rosemary", "comfort", "trust", "no_change_fail", "injury", "thorn in their paw", "med_only"],
     "intro_text": "p_l has to attend to one of their grimmer jobs as a medicine cat. The grounds where c_n goes to mourn their dead need to be tended. They're bringing along app1 as their assistant for this trip.",
     "decline_text": "Just before the medicine cat can leave, a cat calls for their attention.",
     "chance_of_success": 60,
@@ -401,8 +361,7 @@
     ],
     "min_cats": 2,
     "max_cats": 2,
-    "win_skills": null,
-    "win_trait": ["None"],
+
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
@@ -410,7 +369,7 @@
     "patrol_id": "fst_med_gatheringrosemary2",
     "biome": "forest",
     "season": "Any",
-    "tags": ["med_cat", "warrior", "herb", "rosemary", "comfort", "trust", "no_change_fail", "injury", "thorn in their paw"],
+    "tags": ["herb_gathering", "med_cat", "warrior", "herb", "rosemary", "comfort", "trust", "no_change_fail", "injury", "thorn in their paw"],
     "intro_text": "p_l has to attend to one of their grimmer jobs as a medicine cat. The grounds where c_n goes to mourn their dead need to be tended. They're bringing along r_c as their assistant for this trip.",
     "decline_text": "Just before the medicine cat can leave, a cat calls for their attention.",
     "chance_of_success": 60,
@@ -426,8 +385,7 @@
     ],
     "min_cats": 2,
     "max_cats": 2,
-    "win_skills": null,
-    "win_trait": ["None"],
+
     "antagonize_text": null,
     "antagonize_fail_text": null
 }

@@ -156,6 +156,25 @@
             }
         }
     },
+    "#exit_window_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/exit_window_button.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/exit_window_button_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/exit_window_button_hover.png"
+            }
+        }
+    },
     "#timeskip_button":
     {
         "prototype": "#image_button",
@@ -293,6 +312,29 @@
             "disabled_image":
             {
 				"path": "resources/images/buttons/main_menu_unavailable.png"
+			}
+        }
+    },
+    "#smallquit_button":
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/smallquit.png"
+            },
+			"hovered_image":
+            {
+                "path": "resources/images/buttons/smallquit_hover.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/smallquit_hover.png"
+            },
+            "disabled_image":
+            {
+				"path": "resources/images/buttons/smallquit_hover.png"
 			}
         }
     },
@@ -2153,6 +2195,29 @@
             }
         }
     },
+    "#grotto_tab":
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/grotto_camp.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/grotto_camp_hover.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/grotto_camp_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/grotto_camp_unavailable.png"
+            }
+        }
+    },
     "#beach_biome_button": 
     {
         "prototype": "#image_button",
@@ -2334,6 +2399,29 @@
             "disabled_image":
             {
                 "path":"resources/images/buttons/tidal_cave_camp_unavailable.png"
+            }
+        }
+    },
+    "#shipwreck_tab":
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/shipwreck_camp.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/shipwreck_camp_hover.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/shipwreck_camp_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/shipwreck_camp_unavailable.png"
             }
         }
     },
@@ -3114,6 +3202,52 @@
             }
         }
     },
+    "#delete_it_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/delete_it.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/delete_it_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/delete_it_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/delete_it.png"
+            }
+        }
+    },
+  "#go_back_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/go_back.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/go_back_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/go_back_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/go_back.png"
+            }
+        }
+    },
   "#not_yet_button":
     {
         "prototype": "#image_button",
@@ -3180,6 +3314,52 @@
             "disabled_image":
             {
                 "path":"resources/images/buttons/fav_star_unavailable.png"
+            }
+        }
+    },
+    "#fav_cat":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/fav_cat.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/fav_cat_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/fav_cat_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/fav_cat_unavailable.png"
+            }
+        }
+    },
+      "#not_fav_cat":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/fav_cat_unavailable.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/fav_cat_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/fav_cat_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/fav_cat_unavailable.png"
             }
         }
     },
@@ -3861,6 +4041,98 @@
             "disabled_image":
             {
                 "path":"resources/images/buttons/toggle_fullscreen_unavailable.png"
+            }
+        }
+  },
+  "#greenleaf_toggle_button":
+  {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/greenleaf_toggle.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/greenleaf_toggle_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/greenleaf_toggle_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/greenleaf_toggle_unavailable.png"
+            }
+        }
+  },
+  "#newleaf_toggle_button":
+  {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/newleaf_toggle.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/newleaf_toggle_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/newleaf_toggle_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/newleaf_toggle_unavailable.png"
+            }
+        }
+  },
+  "#leafbare_toggle_button":
+  {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/leafbare_toggle.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/leafbare_toggle_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/leafbare_toggle_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/leafbare_toggle_unavailable.png"
+            }
+        }
+  },
+  "#leaffall_toggle_button":
+  {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/leaffall_toggle.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/leaffall_toggle_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/leaffall_toggle_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/leaffall_toggle_unavailable.png"
             }
         }
   }

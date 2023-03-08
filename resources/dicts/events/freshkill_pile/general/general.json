@@ -45,7 +45,8 @@
             "Leaf-fall",
             "Leaf-bare",
 			"multi_death",
-			"reduce_eighth"
+			"reduce_eighth",
+			"other_cat"
         ],
         "event_text": 
 			"m_c was taking some prey from the fresh-kill pile only to find a swarm of rats! In the midst of battle, they called to r_c for help. Together they fought off the rats, but not without their losses.",
@@ -66,7 +67,8 @@
             "Leaf-fall",
             "Leaf-bare",
 			"multi_injury",
-			"reduce_eighth"
+			"reduce_eighth",
+			"other_cat"
         ],
         "event_text": 
 			"m_c was taking some prey from the fresh-kill pile only to find a swarm of rats! In the midst of battle, they called to r_c for help. Together they fought off the rats, but got injured in the process.",

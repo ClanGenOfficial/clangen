@@ -6,6 +6,7 @@
 			"apprentice",
 			"training",
 			"scar",
+			"TOETRAP",
 			"injury"
 		],
 		"intro_text":"The patrol wants to hold a training session for r_c.  They decide to focus on how best hunt and hide while wading through cheek deep water.",
@@ -52,7 +53,8 @@
 			"comfort",
 			"injury",
 			"death",
-			"scar"
+			"scar",
+			"BRIDGE"
 		],
 		"intro_text":"Up at the front of the patrol, p_l hears a Twoleg monster zoom past on the water, and then startled yowling. Turning back, they spot r_c being washed away by the wave the monster brought in its wake.",
 		"decline_text":"p_l runs back to camp to fetch help.",
@@ -86,9 +88,6 @@
 			"wise",
 			"inquisitive"
 		],
-		"fail_skills":[
-			"None"
-		],
 		"fail_trait":[
 			"ambitious",
 			"bloodthirsty",
@@ -117,7 +116,8 @@
 			"comfort",
 			"injury",
 			"death",
-			"scar"
+			"scar",
+			"BRIDGE"
 		],
 		"intro_text":"Trailing behind the patrol, there's a roar as a Twoleg monster passes the patrol on the nearby water. r_c looks up just in time to screech in terror as the wake from the monster sweeps over the path, knocking them into the water.",
 		"decline_text":"Thankfully, they're near the bank, and wriggle their way clear.",
@@ -151,9 +151,6 @@
 			"wise",
 			"inquisitive"
 		],
-		"fail_skills":[
-			"None"
-		],
 		"fail_trait":[
 			"ambitious",
 			"bloodthirsty",
@@ -180,7 +177,8 @@
 			"training",
 			"injury",
 			"death",
-			"scar"
+			"scar",
+			"RIGHTEAR"
 		],
 		"intro_text":"Out in the wetlands training alone, there's a roar as a Twoleg monster passes r_c on the nearby water. r_c looks up just in time to screech in terror as the wake from the monster sweeps over the path, knocking them into the water.",
 		"decline_text":"Thankfully, they're near the bank, and wriggle their way clear.",
@@ -198,18 +196,6 @@
 			"Hurt and wheezing, r_c is alone as they drift to StarClan under the water.",
 			"r_c eventually manages to pull themselves free, but they're battered and injured, and have to spend the night out alone in the wetlands before a patrol finds them the next morning and helps them back to camp."
 		],
-		"win_skills":[
-			"None"
-		],
-		"win_trait":[
-			"None"
-		],
-		"fail_skills":[
-			"None"
-		],
-		"fail_trait":[
-			"None"
-		],
 		"min_cats":1,
 		"max_cats":1,
 		"antagonize_text":null,
@@ -220,14 +206,15 @@
 		]
 	},
 	{
-		"patrol_id":"wtlnd_train_solo1",
+		"patrol_id":"wtlnd_train_soloapp1",
 		"biome":"wetlands",
 		"season":"Any",
 		"tags":[
 			"training",
 			"apprentice",
 			"injury",
-			"scar"
+			"scar",
+			"LEFTEAR"
 		],
 		"intro_text":"r_c heads out into the swamps alone, but maybe an apprentice shouldn't try to do a solo patrol.",
 		"decline_text":"r_c turns back to camp, deciding that this is a bad idea.",
@@ -245,9 +232,6 @@
 			null,
 			"The apprentice wanders along obliviously, and tumbles right down into the swamp. Bruised and sore, r_c has to report to the medicine cat den when they return to camp."
 		],
-		"win_skills":[
-			"None"
-		],
 		"win_trait":[
 			"adventurous",
 			"bold",
@@ -257,9 +241,6 @@
 			"daring",
 			"playful",
 			"righteous"
-		],
-		"fail_skills":[
-			"None"
 		],
 		"fail_trait":[
 			"insecure",
@@ -310,9 +291,6 @@
 			"playful",
 			"righteous"
 		],
-		"fail_skills":[
-			"None"
-		],
 		"fail_trait":[
 			"insecure",
 			"lonesome",
@@ -359,9 +337,6 @@
 			"daring",
 			"playful",
 			"righteous"
-		],
-		"fail_skills":[
-			"None"
 		],
 		"fail_trait":[
 			"insecure",
@@ -410,9 +385,6 @@
 			"playful",
 			"righteous"
 		],
-		"fail_skills":[
-			"None"
-		],
 		"fail_trait":[
 			"insecure",
 			"lonesome",
@@ -448,9 +420,6 @@
 			"app2 refuses to come out into the night, and app1 gives up on their idea, disappointed they didn't get to spend time with app2.",
 			"app2, seeing app1, asks why app1 wanted to meet there. app1 stutters out some nonsense about hunting, and then runs off into the sparkling night, their romantic ideas shattered."
 		],
-		"win_skills":[
-			"None"
-		],
 		"win_trait":[
 			"adventurous",
 			"bold",
@@ -460,12 +429,6 @@
 			"daring",
 			"playful",
 			"righteous"
-		],
-		"fail_skills":[
-			"None"
-		],
-		"fail_trait":[
-			"None"
 		],
 		"min_cats":2,
 		"max_cats":2,
@@ -510,12 +473,6 @@
 			"daring",
 			"playful",
 			"righteous"
-		],
-		"fail_skills":[
-			"None"
-		],
-		"fail_trait":[
-			"None"
 		],
 		"min_cats":2,
 		"max_cats":2,

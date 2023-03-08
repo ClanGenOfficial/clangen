@@ -15,69 +15,86 @@ resource_directory = "resources/dicts/events/"
 # ---------------------------------------------------------------------------- #
 
 class GenerateEvents:
+    loaded_events = {}
+
     @staticmethod
-    def get_short_event_dicts(event_triggered, cat_type, biome):
-        events = None
+    def get_short_event_dicts(file_path):
         try:
-            if cat_type and not biome:
-                file_path = f"{resource_directory}{event_triggered}/{cat_type}.json"
-            elif not cat_type and biome:
-                file_path = f"{resource_directory}{event_triggered}/{biome}.json"
-            else:
-                file_path = f"{resource_directory}{event_triggered}/{biome}/{cat_type}.json"
             with open(
                 file_path,
                 "r",
             ) as read_file:
                 events = ujson.loads(read_file.read())
         except:
-            print(f"ERROR: Unable to load {event_triggered} events for {cat_type} from biome {biome}.")
+            print(f"ERROR: Unable to load {file_path}.")
+            return None
 
         return events
 
-    def generate_short_events(self, events_dict):
-        event_list = []
-        if not events_dict:
+    @staticmethod
+    def clear_loaded_events():
+        GenerateEvents.loaded_events = {}
+
+    def generate_short_events(self, event_triggered, cat_type, biome):
+
+        if cat_type and not biome:
+            file_path = f"{resource_directory}{event_triggered}/{cat_type}.json"
+        elif not cat_type and biome:
+            file_path = f"{resource_directory}{event_triggered}/{biome}.json"
+        else:
+            file_path = f"{resource_directory}{event_triggered}/{biome}/{cat_type}.json"
+
+        if file_path in GenerateEvents.loaded_events:
+            return GenerateEvents.loaded_events[file_path]
+        else:
+            events_dict = GenerateEvents.get_short_event_dicts(file_path)
+
+            event_list = []
+            if not events_dict:
+                return event_list
+            for event in events_dict:
+                event_text = event["event_text"] if "event_text" in event else None
+                if not event_text:
+                    event_text = event["death_text"] if "death_text" in event else None
+
+                if not event_text:
+                    print(f"WARNING: some events resources which are used in generate_events. Have no 'event_text'.")
+                event = ShortEvent(
+                    camp="any",
+                    tags=event["tags"],
+                    event_text=event_text,
+                    history_text=event["history_text"] if "history_text" in event else None,
+                    cat_trait=event["cat_trait"],
+                    cat_skill=event["cat_skill"],
+                    other_cat_trait=event["other_cat_trait"],
+                    other_cat_skill=event["other_cat_skill"],
+                    cat_negate_trait=event["cat_negate_trait"] if "cat_negate_trait" in event else None,
+                    cat_negate_skill=event["cat_negate_skill"] if "cat_negate_skill" in event else None,
+                    other_cat_negate_trait=event["other_cat_negate_trait"] if "other_cat_negate_trait" in event else None,
+                    other_cat_negate_skill=event["other_cat_negate_trait"] if "other_cat_negate_trait" in event else None,
+                    backstory_constraint=event["backstory_constraint"] if "backstory_constraint" in event else None,
+
+                    # injury event only
+                    injury=event["injury"] if "injury" in event else None,
+
+                    # new cat event only
+                    loner=event["loner"] if "loner" in event else False,
+                    kittypet=event["kittypet"] if "kittypet" in event else False,
+                    other_clan=event["other_clan"] if "other_clan" in event else False,
+                    kit=event["kit"] if "kit" in event else False,
+                    new_name=event["new_name"] if "new_name" in event else False,
+                    litter=event["litter"] if "litter" in event else False,
+                    backstory=event["backstory"] if "backstory" in event else None,
+                    reputation=event["reputation"] if "reputation" in event else None,
+
+                    # for misc events only
+                    accessories=event["accessories"] if "accessories" in event else None
+                )
+                event_list.append(event)
+
+            # Add to loaded events.
+            GenerateEvents.loaded_events[file_path] = event_list
             return event_list
-        for event in events_dict:
-            event_text = event["event_text"] if "event_text" in event else None
-            if not event_text:
-                event_text = event["death_text"] if "death_text" in event else None
-
-            if not event_text:
-                print(f"WARNING: some events resources which are used in generate_events. Have no 'event_text'.")
-
-            event = ShortEvent(
-                camp="any",
-                tags=event["tags"],
-                event_text=event_text,
-                history_text=event["history_text"] if "history_text" in event else None,
-                cat_trait=event["cat_trait"],
-                cat_skill=event["cat_skill"],
-                other_cat_trait=event["other_cat_trait"],
-                other_cat_skill=event["other_cat_skill"],
-                cat_negate_trait=event["cat_negate_trait"] if "cat_negate_trait" in event else None,
-                cat_negate_skill=event["cat_negate_skill"] if "cat_negate_skill" in event else None,
-                other_cat_negate_trait=event["other_cat_negate_trait"] if "other_cat_negate_trait" in event else None,
-                other_cat_negate_skill=event["other_cat_negate_trait"] if "other_cat_negate_trait" in event else None,
-
-                # injury event only
-                injury=event["injury"] if "injury" in event else None,
-
-                # new cat event only
-                loner=event["loner"] if "loner" in event else False,
-                kittypet=event["kittypet"] if "kittypet" in event else False,
-                other_clan=event["other_clan"] if "other_clan" in event else False,
-                kit=event["kit"] if "kit" in event else False,
-                new_name=event["new_name"] if "new_name" in event else False,
-                litter=event["litter"] if "litter" in event else False,
-                backstory=event["backstory"] if "backstory" in event else None,
-                reputation=event["reputation"] if "reputation" in event else None
-            )
-            event_list.append(event)
-
-
-        return event_list
 
     def possible_short_events(self, cat_type=None, age=None, event_type=None):
         event_list = []
@@ -91,10 +108,7 @@ class GenerateEvents:
             biome = game.clan.biome.lower()
 
             event_list.extend(
-                self.generate_short_events(
-                    self.get_short_event_dicts(event_type, cat_type, "general")
-                )
-            )
+                self.generate_short_events(event_type, cat_type, "general"))
 
         # skip the rest of the loading if there is an unrecognised cat type
         if cat_type not in game.clan.CAT_TYPES:
@@ -104,37 +118,17 @@ class GenerateEvents:
             print(f"WARNING: unrecognised biome {game.clan.biome} in generate_events. Have you added it to BIOME_TYPES in clan.py?")
 
         else:
-            event_list.extend(
-                self.generate_short_events(
-                    self.get_short_event_dicts(
-                        event_type, cat_type, biome
-                    )
-                )
-            )
+            event_list.extend(self.generate_short_events(event_type, cat_type, biome))
 
             if cat_type in ["apprentice", "deputy", "leader"]:
                 event_list.extend(
-                    self.generate_short_events(
-                        self.get_short_event_dicts(
-                            event_type, "warrior", biome
-                        )
-                    )
-                )
+                    self.generate_short_events(event_type, "warrior", biome))
 
             if cat_type not in ["kitten", "leader"]:
                 if event_type != "nutrition":
-                    event_list.extend(
-                        self.generate_short_events(
-                            self.get_short_event_dicts(event_type, "general", "general")
-                        )
-                    )
-                event_list.extend(
-                    self.generate_short_events(
-                        self.get_short_event_dicts(
-                            event_type, "general", biome
-                        )
-                    )
-                )
+                    event_list.extend(self.generate_short_events(event_type, "general", "general"))
+
+                event_list.extend(self.generate_short_events(event_type, "general", biome))
 
         return event_list
 
@@ -230,6 +224,7 @@ class GenerateEvents:
 
     def filter_possible_short_events(self, possible_events, cat, other_cat, war, enemy_clan, other_clan, alive_kits):
         final_events = []
+        murder_events = []
 
         for event in possible_events:
 
@@ -240,9 +235,20 @@ class GenerateEvents:
             if "other_cat" in event.tags and not other_cat:
                 continue
 
+            if event.backstory_constraint and cat.backstory not in event.backstory_constraint:
+                continue
+
             # make complete leader death less likely until the leader is over 150 moons
             if "all_lives" in event.tags:
                 if int(cat.moons) < 150 and int(random.random() * 5):
+                    continue
+
+            # make sure that 'some lives' events don't show up if the leader doesn't have multiple lives to spare
+            if "some_lives" in event.tags and game.clan.leader_lives <= 3:
+                continue
+
+            if "low_lives" in event.tags:
+                if game.clan.leader_lives > 3:
                     continue
 
             # check season
@@ -262,7 +268,7 @@ class GenerateEvents:
                     continue
 
             # check hate and jealousy before allowing murder
-            if "murder" in event.tags:
+            if "murder" in event.tags and other_cat:
                 hate = False
                 relationships = other_cat.relationships.values()
                 dislike_relation = list(filter(lambda rel: rel.dislike > 50, relationships))
@@ -271,14 +277,18 @@ class GenerateEvents:
                     cat_to = dislike_relation[y].cat_to
                     if cat_to == cat:
                         hate = True
+                        print('MURDER ATTEMPT', other_cat.name, 'to', cat.name)
                         break
                 for y in range(len(jealous_relation)):
                     cat_to = jealous_relation[y].cat_to
                     if cat_to == cat:
                         hate = True
+                        print('MURDER ATTEMPT', other_cat.name, 'to', cat.name)
                         break
                 if not hate:
                     continue
+                else:
+                    murder_events.append(event)
 
             # roll chance to get an injury of certain severity and check that injury is possible
             if event.injury in INJURIES:
@@ -390,6 +400,10 @@ class GenerateEvents:
                     continue
 
             final_events.append(event)
+
+        if murder_events and (other_cat.trait in ["vengeful", "bloodthirsty", "cold"] or not int(random.random() * 3)):
+            print('WE KILL TONIGHT')
+            return murder_events
         return final_events
 
     @staticmethod
@@ -422,8 +436,7 @@ class GenerateEvents:
 
         return possible_events
 
-
-class ShortEvent:
+class PossibleEvent:
     def __init__(
             self,
             camp="any",
@@ -438,6 +451,7 @@ class ShortEvent:
             cat_negate_skill=None,
             other_cat_negate_trait=None,
             other_cat_negate_skill=None,
+            backstory_constraint=None,
             injury=None,
             loner=False,
             new_name=False,
@@ -446,7 +460,8 @@ class ShortEvent:
             litter=False,
             backstory=None,
             other_clan=None,
-            reputation=None
+            reputation=None,
+            accessories=None
     ):
         self.camp = camp
         self.tags = tags
@@ -460,6 +475,7 @@ class ShortEvent:
         self.cat_negate_skill = cat_negate_skill
         self.other_cat_negate_trait = other_cat_negate_trait
         self.other_cat_negate_skill = other_cat_negate_skill
+        self.backstory_constraint = backstory_constraint
 
         # for injury event
         self.injury = injury
@@ -474,6 +490,9 @@ class ShortEvent:
         self.other_clan = other_clan
         self.reputation = reputation
 
+        # for misc events
+        self.accessories = accessories
+
 
 """
 Tagging Guidelines: (if you add more tags, please add guidelines for them here) 
@@ -487,6 +506,7 @@ Tagging Guidelines: (if you add more tags, please add guidelines for them here)
 
 "all_lives" < take all the lives from a leader
 "some_lives" < take a random number, but not all, lives from a leader
+"low_lives" < only allow event if the leader is low on lives
 
 "murder" < m_c was murdered by the other cat
 
@@ -526,7 +546,7 @@ Following tags are used for new cat events:
 "parent" < this litter or kit also comes with a parent (this does not include adoptive parents from within the clan)
 "m_c" < the event text includes the main cat, not just the new cat
 "other_cat" < the event text includes the other cat, not just the new cat and main cat
-"warrior", "apprentice", "medicine cat apprentice", "medicine cat" < make the new cat start with the tagged for status
+"new_warrior", "new_apprentice", "new_medicine cat apprentice", "new_medicine cat" < make the new cat start with the tagged for status
 "injured" < tag along with a second tag that's the name of the injury you want the new_cat to have
 "major_injury" < tag to give the new cat a random major-severity injury
 

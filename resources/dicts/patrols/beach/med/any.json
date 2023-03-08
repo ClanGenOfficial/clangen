@@ -3,7 +3,7 @@
     "patrol_id": "bch_med_soloripples1",
     "biome": "beach",
     "season": "Any",
-    "tags": ["comfort", "respect", "trust", "clan_to_p_l", "no_change_fail", "med_cat", "med_only"],
+    "tags": ["herb_gathering", "comfort", "respect", "trust", "clan_to_p_l", "no_change_fail", "med_only"],
     "intro_text": "p_l sees weird ripples on the water of a puddle while gathering fresh water.",
     "decline_text": "p_l is in a hurry and does not stop to look at the ripples.",
     "chance_of_success": 45,
@@ -15,10 +15,7 @@
     "fail_text": [
         "They gaze into the puddle only to see the weird ripples were caused by a small frog. p_l feels disappointed because they really could have used some guidance from StarClan." 
     ],
-    "win_skills":["None"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+    "win_skills": [],
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -28,7 +25,7 @@
     "patrol_id": "bch_med_herblocation1",
     "biome": "beach",
     "season": "Any",
-    "tags": ["med_cat", "apprentice", "trust", "respect", "med_only", "random_herbs"],
+    "tags": ["herb_gathering", "herb_gathering", "med_cat", "apprentice", "trust", "respect", "med_only", "random_herbs"],
     "intro_text": "p_l decides it's a good opportunity to show app1 where the most commonly needed herbs are in the territory, also teaching them where to dig in the sand to find some of the more potent plant roots.",
     "decline_text": "As they see app1's absent minded gaze they change their mind. Maybe another day when app1 is more focused and less liable to get sand everywhere and damage the herbs",
     "chance_of_success": 65,
@@ -42,10 +39,7 @@
     "fail_text": [ 
         "app1 is constantly distracted and running ahead much to the frustration of p_l. Evidently no new knowledge will be learned that day." 
     ],
-    "win_skills": ["None"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -55,7 +49,7 @@
     "patrol_id": "bch_med_herblocation2",
     "biome": "beach",
     "season": "Any",
-    "tags": ["med_cat", "apprentice", "med_only", "random_herbs"],
+    "tags": ["herb_gathering", "herb_gathering", "apprentice", "med_only", "random_herbs"],
     "intro_text": "app1 has been sent out onto the beaches to try to find some specific herbs alone.",
     "decline_text": "Nervous and sneezing because of the salty air, they decide to go back to camp and try again another day. Their mentor will not be pleased...",
     "chance_of_success": 65,
@@ -69,20 +63,17 @@
     "fail_text": [ 
         "app1 goes to a known herb patch - but the plant has died! They give up and return to camp, feeling terrible and with their tail dragging behind them."
     ],
-    "win_skills": ["None"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
+
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "bch_med_herbs1",
+    "patrol_id": "bch_med_herbsdandy1",
     "biome": "beach",
     "season": "Any",
-    "tags": ["med_cat", "apprentice", "med_only", "herb", "dandelion", "many_herbs1"],
+    "tags": ["herb_gathering", "herb_gathering", "med_cat", "apprentice", "med_only", "herb", "dandelion", "many_herbs1"],
     "intro_text": "p_l and app1 are going out to gather dandelions. app1 asks their mentor what they'll do if the rabbits have eaten all of it. p_l responds that they'll cross that river when they get to it.",
     "decline_text": "A cat grabs p_l's attention before they can leave.",
     "chance_of_success": 60,
@@ -94,10 +85,6 @@
     "fail_text": [
         "app1 reaches the patch first and p_l can tell by their drooping ears that there must not be enough left to collect."
     ],
-    "win_skills": ["None"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -107,7 +94,7 @@
     "patrol_id": "bch_med_appfirstsign1",
     "biome": "beach",
     "season": "Any",
-    "tags": ["med_cat", "apprentice", "med_only", "herb", "rosemary"],
+    "tags": ["herb_gathering", "herb_gathering", "apprentice", "med_only", "herb", "rosemary"],
     "intro_text": "p_l is out to gather a few herbs at the behest of their mentor. The wind is gently rustling the beach grass as they pad along.",
     "decline_text": "Just before the apprentice can leave, their mentor calls for their attention. Apparently they have a different task that's more pressing.",
     "chance_of_success": 50,
@@ -120,8 +107,7 @@
     ],
     "min_cats": 1,
     "max_cats": 1,
-    "win_skills": null,
-    "win_trait": ["None"],
+
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
@@ -129,13 +115,13 @@
     "patrol_id": "bch_med_rainygathering1",
     "biome": "beach",
     "season": "Any",
-    "tags": ["med_cat", "random_herbs", "many_herbs2", "big_change", "dislike", "respect"],
+    "tags": ["herb_gathering", "random_herbs", "many_herbs2", "big_change", "dislike", "respect"],
     "intro_text": "p_l leads a patrol out to explore c_n's territory and bring back any herbs they can spot. Their whiskers want to twitch with every raindrop that hits them, but the Clan doesn't have the luxury to sit inside away from the weather.",
     "decline_text": "Someone calls p_l back, and the patrol is forgotten as they help a Clanmate.",
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "It's absolutely miserable weather to gather in, and p_l wishes they didn't have to. But, even though r_c slips over and they all end up drenched, they do bring back herbs.",
+            "It's absolutely miserable weather to gather in, and p_l wishes they didn't have to. But, even though r_c falls over and they all end up drenched, they do bring back herbs.",
            "The entire patrol mutely agrees to grit their teeth and bear it, but everyone is relieved to file into their nests to dry off, a random assortment of herbs refreshing the medicine cat den's stocks.",
            "The keen eyed s_c spots herbs quickly, and the cats harvest them and retreat back to the dry camp, not lingering for a second more than they need to."
     ],
@@ -143,9 +129,6 @@
             "p_l knows the conditions are miserable, but their group is even more insufferable, and not only do they have to put up with these cats for an entire afternoon, there's also nothing to show for it."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -155,7 +138,7 @@
     "patrol_id": "bch_med_gatheringcobwebs1",
     "biome": "beach",
     "season": "Any",
-    "tags": ["med_only", "med_cat", "herb", "cobwebs", "many_herbs1"],
+    "tags": ["herb_gathering", "med_only", "herb", "cobwebs", "many_herbs1"],
     "intro_text": "p_l heads out into the territory to stock up on cobwebs, something the Clan never seems to have enough of.",
     "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
     "chance_of_success": 80,
@@ -173,10 +156,10 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "bch_med_gatheringcobwebs2",
+    "patrol_id": "bch_med_cobweblesson1",
     "biome": "beach",
     "season": "Any",
-    "tags": ["med_only", "med_cat", "respect", "trust", "apprentice", "herb", "cobwebs", "many_herbs1"],
+    "tags": ["herb_gathering", "med_only", "med_cat", "respect", "trust", "apprentice", "herb", "cobwebs", "many_herbs1"],
     "intro_text": "p_l heads out into the territory with app1 to stock up on cobwebs and teach the apprentice how to gather one of the Clan's most vital medical tools.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 80,
@@ -194,10 +177,10 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "bch_med_gatheringcobwebs3",
+    "patrol_id": "bch_med_cobwebhelp1",
     "biome": "beach",
     "season": "Any",
-    "tags": ["med_cat", "warrior", "herb", "cobwebs", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "warrior", "herb", "cobwebs", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "c_n can never have enough cobwebs, p_l instructs their team, leading them out to search for them.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
@@ -211,9 +194,6 @@
         "Can warriors not pay attention, even to something as simple as cobwebs?! p_l holds their breath and counts to ten before they dismiss the patrol, every found cobweb ruined, what little they did manage to find."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -223,7 +203,7 @@
     "patrol_id": "bch_med_gatheringhorsetail1",
     "biome": "beach",
     "season": "Any",
-    "tags": ["med_only", "herb", "horsetail", "many_herbs1", "many_herbs2", "med_cat"],
+    "tags": ["herb_gathering", "med_only", "herb", "horsetail", "many_herbs1", "many_herbs2"],
     "intro_text": "p_l heads out on a herb-gathering patrol, searching for the evergreen, ever-reliable horsetail to harvest for the herb stores.",
     "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
     "chance_of_success": 70,
@@ -237,19 +217,16 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "bch_med_gatheringhorsetail2",
+    "patrol_id": "bch_med_horsetaillesson1",
     "biome": "beach",
     "season": "Any",
-    "tags": ["med_only", "med_cat", "herb", "horsetail", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
+    "tags": ["herb_gathering", "adult_stat", "med_only", "herb", "horsetail", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "p_l heads out on a herb-gathering patrol, searching for the evergreen, ever-reliable horsetail to harvest for the herb stores. app1 trots after them, asking them why horsetail grows so weirdly without leaves.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 70,
@@ -263,19 +240,16 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and app1 looks up at them with disappointment."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "bch_med_gatheringhorsetail3",
+    "patrol_id": "bch_med_horsetailhelp1",
     "biome": "beach",
     "season": "Any",
-    "tags": ["med_cat", "warrior", "herb", "horsetail", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
+    "tags": ["herb_gathering", "med_cat", "warrior", "herb", "horsetail", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "Bringing a motley assortment of Clanmates along with them, p_l heads out on a herb-gathering patrol, searching for the evergreen, ever-reliable horsetail to harvest for the herb stores.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
@@ -289,107 +263,96 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful and snappish with each other."
     ],
     "win_skills": ["keen eye"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-"patrol_id": "gen_med_gatheringmoss1",
-"biome": "beach",
-"season": "Any",
-"tags": ["med_cat", "moss", "herb"],
-"intro_text": "p_l notices that the moss in the medicine den is getting old. They need to go and gather some more.",
-"decline_text": "A cat requires their attention just as they go to leave. Moss will have to wait.",
-"chance_of_success": 80,
-"exp": 10,
-"success_text": [
-    "p_l quickly makes their way to the best moss patch they know. They spend a bit of time slicing bits off with their claws, careful not to get any roots or dirt in the pile. Once they're satisfied, they take a moment to wrap their jaws around the heap and make their way back to camp."
-],
-"fail_text":[
-    "Mouse-dung! When p_l gets to the best moss-gathering spot, they find that some animal has dug up most of the moss. They'll have to leave the rest to repopulate before gathering from this spot again."
-],
-"min_cats": 1,
-"max_cats": 1,
-"win_skills": null,
-"win_trait": ["None"],
-"antagonize_text": null,
-"antagonize_fail_text": null
-},
-{
-"patrol_id": "gen_med_gatheringmoss2",
-"biome": "beach",
-"season": "Any",
-"tags": ["med_cat", "apprentice", "med_only", "herb", "moss", "big_change", "platonic", "dislike"],
-"intro_text": "p_l notices that the moss in the medicine den is getting old. They need to go and gather some more.",
-"decline_text": "A cat requires their attention just as they go to leave. Moss will have to wait.",
-"chance_of_success": 80,
-"exp": 10,
-"success_text": [
-    "p_l leads the way to the best moss patch they know, with app1 following close behind. The two cats begin cutting off bits of moss and making their respective piles. Once the piles are a mouthful, they pick up the bundles of new bedding and start back towards camp."
-],
-"fail_text":[
-    "Mouse-dung! When the two cats arrive at the best moss-gathering spot, they find that some animal has dug up most of the moss. They'll have to leave the rest to repopulate before gathering from this spot again."
-],
-"min_cats": 2,
-"max_cats": 2,
-"win_skills": null,
-"win_trait": ["None"],
-"antagonize_text": null,
-"antagonize_fail_text": null
-},
-{
-"patrol_id": "gen_med_gatheringmoss3",
-"biome": "beach",
-"season": "Any",
-"tags": ["med_cat", "warrior", "herb", "moss", "big_change", "platonic", "dislike"],
-"intro_text": "p_l notices that the moss in the medicine den is getting old. They need to go and gather some more.",
-"decline_text": "A cat requires their attention just as they go to leave. Moss will have to wait.",
-"chance_of_success": 80,
-"exp": 10,
-"success_text": [
-    "p_l leads the way to the best moss patch they know, with r_c following close behind. The two cats begin cutting off bits of moss and making their respective piles. Once the piles are a mouthful, they pick up the bundles of new bedding and start back towards camp."
-],
-"fail_text":[
-    "Mouse-dung! When the two cats arrive at the best moss-gathering spot, they find that some animal has dug up most of the moss. They'll have to leave the rest to repopulate before gathering from this spot again."
-],
-"min_cats": 2,
-"max_cats": 2,
-"win_skills": null,
-"win_trait": ["None"],
-"antagonize_text": null,
-"antagonize_fail_text": null
-},
-{
-"patrol_id": "gen_med_gatheringmoss4",
-"biome": "beach",
-"season": "Any",
-"tags": ["med_cat", "warrior", "herb", "moss", "big_change", "platonic"],
-"intro_text": "p_l notices that the moss in the medicine den is getting old. They need to go and gather some more.",
-"decline_text": "A cat requires their attention just as they go to leave. Moss will have to wait.",
-"chance_of_success": 80,
-"exp": 10,
-"success_text": [
-    "p_l leads the way to the best moss patch they know, with their entourage following close behind. The cats begin cutting off bits of moss and making their respective piles. Once the piles are a mouthful, they pick up the bundles of new bedding and start back towards camp."
-],
-"fail_text":[
-    "Mouse-dung! When the cats arrive at the best moss-gathering spot, they find that some animal has dug up most of the moss. They'll have to leave the rest to repopulate before gathering from this spot again."
-],
-"min_cats": 3,
-"max_cats": 6,
-"win_skills": null,
-"win_trait": ["None"],
-"antagonize_text": null,
-"antagonize_fail_text": null
-},
-    {
-    "patrol_id": "bch_med_gatheringrosemary1",
+    "patrol_id": "bch_med_gatheringmoss1",
     "biome": "beach",
     "season": "Any",
-    "tags": ["med_cat", "apprentice", "herb", "rosemary", "comfort", "trust", "no_change_fail", "injury", "thorn in their paw", "med_only"],
+    "tags": ["herb_gathering", "med_cat", "moss", "herb"],
+    "intro_text": "p_l notices that the moss in the medicine den is getting old. They need to go and gather some more.",
+    "decline_text": "A cat requires their attention just as they go to leave. Moss will have to wait.",
+    "chance_of_success": 80,
+    "exp": 10,
+    "success_text": [
+        "p_l quickly makes their way to the best moss patch they know. They spend a bit of time slicing bits off with their claws, careful not to get any roots or dirt in the pile. Once they're satisfied, they take a moment to wrap their jaws around the heap and make their way back to camp."
+    ],
+    "fail_text":[
+        "Mouse-dung! When p_l gets to the best moss-gathering spot, they find that some animal has dug up most of the moss. They'll have to leave the rest to repopulate before gathering from this spot again."
+    ],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_med_gatheringmoss2",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["herb_gathering", "med_cat", "apprentice", "med_only", "herb", "moss", "big_change", "platonic", "dislike"],
+    "intro_text": "p_l notices that the moss in the medicine den is getting old. They need to go and gather some more.",
+    "decline_text": "A cat requires their attention just as they go to leave. Moss will have to wait.",
+    "chance_of_success": 80,
+    "exp": 10,
+    "success_text": [
+        "p_l leads the way to the best moss patch they know, with app1 following close behind. The two cats begin cutting off bits of moss and making their respective piles. Once the piles are a mouthful, they pick up the bundles of new bedding and start back towards camp."
+    ],
+    "fail_text":[
+        "Mouse-dung! When the two cats arrive at the best moss-gathering spot, they find that some animal has dug up most of the moss. They'll have to leave the rest to repopulate before gathering from this spot again."
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_med_gatheringmoss3",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["herb_gathering", "med_cat", "warrior", "herb", "moss", "big_change", "platonic", "dislike"],
+    "intro_text": "p_l notices that the moss in the medicine den is getting old. They need to go and gather some more.",
+    "decline_text": "A cat requires their attention just as they go to leave. Moss will have to wait.",
+    "chance_of_success": 80,
+    "exp": 10,
+    "success_text": [
+        "p_l leads the way to the best moss patch they know, with r_c following close behind. The two cats begin cutting off bits of moss and making their respective piles. Once the piles are a mouthful, they pick up the bundles of new bedding and start back towards camp."
+    ],
+    "fail_text":[
+        "Mouse-dung! When the two cats arrive at the best moss-gathering spot, they find that some animal has dug up most of the moss. They'll have to leave the rest to repopulate before gathering from this spot again."
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_med_gatheringmoss4",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["herb_gathering", "med_cat", "warrior", "herb", "moss", "big_change", "platonic"],
+    "intro_text": "p_l notices that the moss in the medicine den is getting old. They need to go and gather some more.",
+    "decline_text": "A cat requires their attention just as they go to leave. Moss will have to wait.",
+    "chance_of_success": 80,
+    "exp": 10,
+    "success_text": [
+        "p_l leads the way to the best moss patch they know, with their entourage following close behind. The cats begin cutting off bits of moss and making their respective piles. Once the piles are a mouthful, they pick up the bundles of new bedding and start back towards camp."
+    ],
+    "fail_text":[
+        "Mouse-dung! When the cats arrive at the best moss-gathering spot, they find that some animal has dug up most of the moss. They'll have to leave the rest to repopulate before gathering from this spot again."
+    ],
+    "min_cats": 3,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+    },
+    {
+    "patrol_id": "bch_med_gatheringrosemarylesson1",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["herb_gathering", "med_cat", "apprentice", "herb", "rosemary", "comfort", "trust", "no_change_fail", "injury", "thorn in their paw", "med_only"],
     "intro_text": "p_l has to attend to one of their grimmer jobs as a medicine cat. The grounds where c_n goes to mourn their dead need to be tended. They're bringing along app1 as their assistant for this trip.",
     "decline_text": "Just before the medicine cat can leave, a cat calls for their attention.",
     "chance_of_success": 60,
@@ -405,8 +368,6 @@
     ],
     "min_cats": 2,
     "max_cats": 2,
-    "win_skills": null,
-    "win_trait": ["None"],
     "antagonize_text": null,
     "antagonize_fail_text": null
     },
@@ -414,7 +375,7 @@
     "patrol_id": "bch_med_gatheringrosemary2",
     "biome": "beach",
     "season": "Any",
-    "tags": ["med_cat", "warrior", "herb", "rosemary", "comfort", "trust", "no_change_fail", "injury", "thorn in their paw"],
+    "tags": ["herb_gathering", "med_cat", "warrior", "herb", "rosemary", "comfort", "trust", "no_change_fail", "injury", "thorn in their paw"],
     "intro_text": "p_l has to attend to one of their grimmer jobs as a medicine cat. The grounds where c_n goes to mourn their dead need to be tended. They're bringing along r_c as their assistant for this trip.",
     "decline_text": "Just before the medicine cat can leave, a cat calls for their attention.",
     "chance_of_success": 60,
@@ -430,8 +391,6 @@
     ],
     "min_cats": 2,
     "max_cats": 2,
-    "win_skills": null,
-    "win_trait": ["None"],
     "antagonize_text": null,
     "antagonize_fail_text": null
 }

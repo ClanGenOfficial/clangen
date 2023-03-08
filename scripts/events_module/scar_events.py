@@ -1,11 +1,6 @@
-try:
-    import ujson
-except ImportError:
-    import json as ujson
 import random
 
 from scripts.cat.cats import Cat
-from scripts.cat.pelts import scars1, scars2, scars3
 from scripts.conditions import get_amount_cat_for_one_medic, medical_cats_condition_fulfilled
 from scripts.game_structure.game_essentials import game
 

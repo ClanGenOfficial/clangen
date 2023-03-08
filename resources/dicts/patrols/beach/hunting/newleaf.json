@@ -7,6 +7,7 @@
         "fighting",
         "death",
         "scar",
+        "THREE",
         "big_bite_injury",
         "respect",
         "trust",
@@ -31,7 +32,7 @@
         "The mother red fox's snapping jaws leave r_c dripping blood on the sand, forcing the patrol to back off.",
         null,
         "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the red vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up on the fight.",
-        "As their hunt descends into a full on battle with the red vixen, p_l takes a blow meant for one of their clanmates, losing a life."
+        "As their hunt descends into a full on battle with the red vixen, p_l takes a blow meant for one of their Clanmates, losing a life."
     ],
     "win_skills": [
         "excellent fighter"
@@ -53,9 +54,6 @@
     "fail_skills": [
         "good fighter"
     ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 2,
     "max_cats": 3,
     "antagonize_text": null,
@@ -73,6 +71,7 @@
     "tags": [
         "fighting",
         "scar",
+        "NECKBITE",
         "big_bite_injury",
         "respect",
         "trust",
@@ -118,9 +117,6 @@
     "fail_skills": [
         "good fighter"
     ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 4,
     "max_cats": 6,
     "antagonize_text": null,
@@ -133,7 +129,7 @@
     "patrol_id": "bch_hunt_redvixen3",
     "biome": "beach",
     "season": "newleaf",
-    "tags": ["fighting", "death", "scar", "big_bite_injury", "shock", "injury", "respect", "trust", "clan_to_patrol", "no_body"],
+    "tags": ["fighting", "death", "scar", "THREE", "big_bite_injury", "shock", "injury", "respect", "trust", "clan_to_patrol", "no_body"],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
     "decline_text": "Your patrol decides not to pursue the fox.",
     "chance_of_success": 20,
@@ -160,7 +156,6 @@
         "responsible", "righteous", "troublesome", "vengeful"
     ],
     "fail_skills": ["good fighter"],
-    "fail_trait": ["None"],
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -181,7 +176,9 @@
         "respect",
         "trust",
         "rel_patrol",
-        "patrol_to_r_c"
+        "patrol_to_r_c",
+        "scar",
+        "LEGBITE"
     ],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
     "decline_text": "Your patrol decides not to pursue the fox.",
@@ -221,9 +218,6 @@
     "fail_skills": [
         "good fighter"
     ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 2,
     "max_cats": 3,
     "antagonize_text": null,
@@ -243,7 +237,9 @@
         "respect",
         "trust",
         "rel_patrol",
-        "patrol_to_r_c"
+        "patrol_to_r_c",
+        "scar",
+        "LEGBITE"
     ],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
     "decline_text": "Your patrol decides not to pursue the fox.",
@@ -257,7 +253,7 @@
     ],
     "fail_text": [
         "The patrol comes across a gray vixen at the end of the scent trail. She spots them too, measures herself up against them, then flees, scrambling up the cliffs of the headland in a move that completely surprises the cats. This round goes to the gray fox.",
-        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarasses them deeply the gray vixen slips past them and flees into the maze of the sand dunes.",
+        "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one. In a moment that embarasses them deeply, the gray vixen slips past them and flees into the maze of the sand dunes.",
         null,
         "The patrol finds a stocky gray vixen wandering their coast, and drives her out in a scene that mostly involves yowling and screaming and yapping at each other until she gives in. r_c gets a little battered, but everyone is mostly fine.",
         null,
@@ -283,9 +279,6 @@
     "fail_skills": [
         "good fighter"
     ],
-    "fail_trait": [
-        "None"
-    ],
     "min_cats": 4,
     "max_cats": 6,
     "antagonize_text": null,
@@ -301,6 +294,7 @@
     "tags": [
         "fighting",
         "scar",
+        "NECKBITE",
         "big_bite_injury",
         "respect",
         "trust",
@@ -320,7 +314,7 @@
         "r_c comes across a gray vixen at the end of the scent trail. She spots them too, measures herself up against them, then flees, scrambling up the cliffs of the headland in a move that completely surprises r_c. This round goes to the gray fox.",
         "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and in a moment that embarasses them deeply the gray vixen slips past them and flees into the maze of the sand dunes.",
         null,
-        "r_c nearly managed to pin the gray vixen they find on a cliff ledge, but snapping jaws leave r_c dripping blood on the sand. Today this round goes to the gray fox.",
+        "r_c nearly manages to pin the gray vixen they find on a cliff ledge, but snapping jaws leave r_c dripping blood on the sand. Today, this round goes to the gray fox.",
         null,
         "s_c is determined to win, but their confidence is misplaced. They're a good fighter, but not a great one, and the stocky gray vixen is cunning, sinking her teeth into s_c to distract them as she flees."
     ],
@@ -343,9 +337,6 @@
     ],
     "fail_skills": [
         "good fighter"
-    ],
-    "fail_trait": [
-        "None"
     ],
     "min_cats": 1,
     "max_cats": 1,

@@ -17,10 +17,7 @@
     "fail_text": [
             "They get distracted while splashing in the water. r_c swears they saw a fish, but it derails their border patrol completely and they get nothing done."
     ],
-    "win_skills": ["None"],
     "win_trait": ["responsible", "thoughtful", "loyal", "righteous", "cold", "strict"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
