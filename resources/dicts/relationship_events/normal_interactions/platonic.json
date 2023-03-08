@@ -97,7 +97,7 @@
 			"interactions": [
 				"r_c is making sure m_c knows that they are loved.",
 				"r_c is telling m_c how much they cherish them.",
-				"r_c is purring loudly to comfort r_c."
+				"r_c is purring loudly to comfort m_c."
 			],
 			"random_trait_constraint": [
 				"loving"
@@ -260,7 +260,7 @@
 				"m_c gave r_c a trinket they found while out of the camp today.",
 				"m_c is charmed to hear that r_c really admires them.",
 				"m_c is giving r_c a badger ride on their back!",
-				"m_c remembers how cute kits are becasue of time spent with r_c.",
+				"m_c remembers how cute kits are because of time spent with r_c.",
 				"m_c is promising to take r_c outside of camp if they behave.",
 				"m_c bats the mossball back to r_c when it flies in front of their paws.",
 				"m_c spends most of the afternoon describing the territory to r_c.",
