@@ -34,6 +34,31 @@ class Name():
                         else:
                             names_dict["normal_suffixes"].append(new_name)
 
+        """
+            FORMAT:
+
+            to add a new prefix:
+            <status>:<prefix>
+            to remove a prefix:
+            -<status>
+            to make a prefix blank:
+            <status>:
+        """
+        if os.path.exists('saves/specsuffixlist.txt'):
+            with open('saves/specsuffixlist.txt', 'r') as read_file:
+                name_list = read_file.read()
+                if_names = len(name_list)
+            if if_names > 0:
+                new_names = name_list.split('\n')
+                for new_name in new_names:
+                    if new_name != '':
+                        if new_name.startswith('-'):
+                            names_dict["special_suffixes"].remove(new_name[1:])
+                        else:
+                            if ':' in new_name:
+                                namearray = new_name.split(':')
+                                names_dict["special_suffixes"][namearray[0]] = namearray[1]
+
     def __init__(self,
                  status="warrior",
                  prefix=None,
