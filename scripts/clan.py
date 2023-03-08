@@ -1,3 +1,4 @@
+
 import random
 from random import choice, randint
 import os
@@ -291,6 +292,8 @@ class Clan():
                 self.freshkill_pile = Freshkill_Pile()
             else:
                 self.freshkill_pile = None
+            self.primary_disaster = None
+            self.secondary_disaster = None
 
             self.faded_ids = []  # Stores ID's of faded cats, to ensure these IDs aren't reused.
 
@@ -533,6 +536,7 @@ class Clan():
         clan_data["other_clan_temperament"] = ",".join([str(i.temperament) for i in self.all_clans])
 
         self.save_herbs(game.clan)
+        self.save_disaster(game.clan)
         if game.clan.game_mode in ['expanded', 'cruel season']:
             self.save_freshkill_pile(game.clan)
 
@@ -800,6 +804,7 @@ class Clan():
 
         self.load_pregnancy(game.clan)
         self.load_herbs(game.clan)
+        self.load_disaster(game.clan)
         if game.clan.game_mode in ['expanded', 'cruel season']:
             self.load_freshkill_pile(game.clan)
         game.switches['error_message'] = ''
@@ -855,6 +860,117 @@ class Clan():
                 file.write(json_string)
         except:
             print(f"ERROR: Saving the pregnancy data didn't work.")
+
+    def load_disaster(self, clan):
+        if not game.clan.name:
+            return
+
+        file_path = f"saves/{game.clan.name}/disasters/primary.json"
+        try:
+            if os.path.exists(file_path):
+                with open(file_path, 'r') as read_file:
+                    disaster = ujson.load(read_file)
+                    if disaster:
+                        clan.primary_disaster = OngoingEvent(
+                            event=disaster["event"],
+                            tags=disaster["tags"],
+                            duration=disaster["duration"],
+                            current_duration=disaster["current_duration"] if "current_duration" else disaster["duration"],
+                            trigger_events=disaster["trigger_events"],
+                            progress_events=disaster["progress_events"],
+                            conclusion_events=disaster["conclusion_events"],
+                            secondary_disasters=disaster["secondary_disasters"],
+                            collateral_damage=disaster["collateral_damage"]
+                        )
+                    else:
+                        clan.primary_disaster = {}
+            else:
+                os.makedirs(f"saves/{game.clan.name}/disasters")
+                clan.primary_disaster = None
+                with open(file_path, 'w') as rel_file:
+                    json_string = ujson.dumps(clan.primary_disaster, indent=4)
+                    rel_file.write(json_string)
+        except:
+            clan.primary_disaster = None
+
+        file_path = f"saves/{game.clan.name}/disasters/secondary.json"
+        try:
+            if os.path.exists(file_path):
+                with open(file_path, 'r') as read_file:
+                    disaster = ujson.load(read_file)
+                    if disaster:
+                        clan.secondary_disaster = OngoingEvent(
+                            event=disaster["event"],
+                            tags=disaster["tags"],
+                            duration=disaster["duration"],
+                            current_duration=disaster["current_duration"] if "current_duration" else disaster["duration"],
+                            progress_events=disaster["progress_events"],
+                            conclusion_events=disaster["conclusion_events"],
+                            collateral_damage=disaster["collateral_damage"]
+                        )
+                    else:
+                        clan.secondary_disaster = {}
+            else:
+                os.makedirs(f"saves/{game.clan.name}/disasters")
+                clan.secondary_disaster = None
+                with open(file_path, 'w') as rel_file:
+                    json_string = ujson.dumps(clan.secondary_disaster, indent=4)
+                    rel_file.write(json_string)
+
+        except:
+            clan.secondary_disaster = None
+
+    def save_disaster(self, clan):
+        if not game.clan.name:
+            return
+        file_path = f"saves/{game.clan.name}/disasters/primary.json"
+
+        if game.clan.primary_disaster:
+            disaster = {
+                "event": game.clan.primary_disaster.event,
+                "tags": game.clan.primary_disaster.tags,
+                "duration": game.clan.primary_disaster.duration,
+                "current_duration": game.clan.primary_disaster.current_duration,
+                "trigger_events": game.clan.primary_disaster.trigger_events,
+                "progress_events": game.clan.primary_disaster.progress_events,
+                "conclusion_events": game.clan.primary_disaster.conclusion_events,
+                "secondary_disasters": game.clan.primary_disaster.secondary_disasters,
+                "collateral_damage": game.clan.primary_disaster.collateral_damage
+            }
+        else:
+            disaster = {}
+
+        try:
+            with open(file_path, 'w') as rel_file:
+                json_string = ujson.dumps(disaster, indent=4)
+                rel_file.write(json_string)
+        except:
+            print("ERROR: Disaster file failed to save")
+
+        file_path = f"saves/{game.clan.name}/disasters/secondary.json"
+
+        if game.clan.secondary_disaster:
+            disaster = {
+                "event": game.clan.secondary_disaster.event,
+                "tags": game.clan.secondary_disaster.tags,
+                "duration": game.clan.secondary_disaster.duration,
+                "current_duration": game.clan.secondary_disaster.current_duration,
+                "trigger_events": game.clan.secondary_disaster.trigger_events,
+                "progress_events": game.clan.secondary_disaster.progress_events,
+                "conclusion_events": game.clan.secondary_disaster.conclusion_events,
+                "secondary_disasters": game.clan.secondary_disaster.secondary_disasters,
+                "collateral_damage": game.clan.secondary_disaster.collateral_damage
+            }
+        else:
+            disaster = {}
+
+        try:
+            with open(file_path, 'w') as rel_file:
+                json_string = ujson.dumps(disaster, indent=4)
+                rel_file.write(json_string)
+        except:
+            print("ERROR: Disaster file failed to save")
+
 
     def load_freshkill_pile(self, clan):
         if not game.clan.name or clan.game_mode == 'classic':

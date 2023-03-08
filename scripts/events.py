@@ -18,6 +18,7 @@ from scripts.events_module.relation_events import Relation_Events
 from scripts.events_module.condition_events import Condition_Events
 from scripts.events_module.death_events import Death_Events
 from scripts.events_module.freshkill_pile_events import Freshkill_Events
+from scripts.events_module.disaster_events import DisasterEvents
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
 from scripts.utility import get_alive_kits, get_med_cats, ceremony_text_adjust, get_current_season
@@ -28,7 +29,7 @@ from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
 class Events():
     all_events = {}
     game.switches['timeskip'] = False
-    #This is so we call call the static function needed to clear the events dict.
+    #This is so we call the static function needed to clear the events dict.
     generate_events = GenerateEvents()
 
 
@@ -53,6 +54,7 @@ class Events():
         self.misc_events = MiscEvents()
         self.CEREMONY_TXT = None
         self.load_ceremonies()
+        self.disaster_events = DisasterEvents()
 
     def one_moon(self):
         game.cur_events_list = []
@@ -115,6 +117,10 @@ class Events():
                 self.one_moon_outside_cat(cat)
 
         # Handle injuries and relationships. We must do with in a different all-cats loop.
+
+        # keeping this commented out till disasters are more polished
+        # self.disaster_events.handle_disasters()
+
         for cat in Cat.all_cats.values():
             if cat.dead or cat.outside:
                 continue
@@ -1430,7 +1436,7 @@ class Events():
         # disaster death chance
         if game.settings.get('disasters'):
             if not random.getrandbits(9):  # 1/512
-                self.handle_disasters()
+                self.handle_mass_extinctions(cat)
                 return True
 
         # extra death chance and injuries in expanded & cruel season
@@ -1442,10 +1448,9 @@ class Events():
                                                                     self.enemy_clan, game.clan.current_season)
             return triggered_death
 
-    def handle_disasters(self):
-        """Handles events when the setting of disasters is turned on.
 
-        Affects random cats in the clan, no cat needs to be passed to this function."""
+    def handle_mass_extinctions(self, cat):
+        """Affects random cats in the clan, no cat needs to be passed to this function."""
         alive_cats = list(filter(
             lambda kitty: (kitty.status != "leader"
                            and not kitty.dead
