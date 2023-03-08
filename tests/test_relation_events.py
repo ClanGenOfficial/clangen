@@ -25,7 +25,7 @@ class Pregnancy(unittest.TestCase):
     def test_single_cat_female(self, check_if_can_have_kits):
         # given
         relation_events = Pregnancy_Events()
-        clan = Clan()
+        clan = Clan(name="clan")
         cat = Cat(gender = 'female')
         clan.pregnancy_data = {}
 
@@ -40,7 +40,7 @@ class Pregnancy(unittest.TestCase):
     def test_pair(self, check_if_can_have_kits):
         # given
         relation_events = Pregnancy_Events()
-        clan = Clan()
+        clan = Clan(name="clan")
         cat1 = Cat(gender = 'female')
         cat2 = Cat(gender = 'male')
 
@@ -59,7 +59,7 @@ class Pregnancy(unittest.TestCase):
     def test_single_cat_male(self, check_if_can_have_kits):
         # given
         relation_events = Pregnancy_Events()
-        clan = Clan()
+        clan = Clan(name="clan")
         cat = Cat(gender = 'male', moons=40)
         clan.pregnancy_data = {}
         number_before = len(cat.all_cats)
@@ -75,7 +75,7 @@ class Pregnancy(unittest.TestCase):
 
         # given
         relation_events = Pregnancy_Events()
-        test_clan = Clan()
+        test_clan = Clan(name="clan")
         test_clan.pregnancy_data = {}
         cat1 = Cat(gender = 'female')
         cat1.no_kits = True

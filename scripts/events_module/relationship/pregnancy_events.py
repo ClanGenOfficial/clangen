@@ -197,7 +197,7 @@ class Pregnancy_Events():
         }
 
         text = choice(PREGNANT_STRINGS["announcement"])
-        if game.clan.game_mode != 'classic':
+        if clan.game_mode != 'classic':
             severity = random.choices(["minor", "major"], [3, 1], k=1)
             pregnant_cat.get_injured("pregnant", severity=severity[0])
             text += choice(PREGNANT_STRINGS[f"{severity[0]}_severity"])
@@ -238,7 +238,7 @@ class Pregnancy_Events():
         else:
             text = PREGNANT_STRINGS["litter_guess"][2]
 
-        if game.clan.game_mode != 'classic':
+        if clan.game_mode != 'classic':
             if cat.injuries["pregnant"]["severity"] == "minor":
                 cat.injuries["pregnant"]["severity"] = "major"
                 text += choice(PREGNANT_STRINGS["major_severity"])
@@ -299,7 +299,7 @@ class Pregnancy_Events():
         else:
             event_list.append(choice(events["birth"]["unmated_parent"]))
 
-        if game.clan.game_mode != 'classic':
+        if clan.game_mode != 'classic':
             death_chance = cat.injuries["pregnant"]["mortality"]
         else:
             death_chance = 40
@@ -315,13 +315,13 @@ class Pregnancy_Events():
             event_list.append(choice(possible_events))
 
             if cat.status == 'leader':
-                game.clan.leader_lives -= 1
+                clan.leader_lives -= 1
                 cat.die()
                 cat.died_by.append(f" died shortly after kitting")
             else:
                 cat.die()
                 cat.died_by.append(f"{cat.name} died while kitting.")
-        elif game.clan.game_mode != 'classic':  # if cat doesn't die, give recovering from birth
+        elif clan.game_mode != 'classic':  # if cat doesn't die, give recovering from birth
             cat.get_injured("recovering from birth", event_triggered=True)
             if 'blood loss' in cat.injuries:
                 possible_events = events["birth"]["difficult_birth"]
@@ -333,7 +333,7 @@ class Pregnancy_Events():
                             possible_events.remove(event)
 
                 event_list.append(choice(possible_events))
-        if game.clan.game_mode != 'classic':
+        if clan.game_mode != 'classic':
             cat.injuries.pop("pregnant")
         print_event = " ".join(event_list)
         print_event = print_event.replace("{insert}", insert)
