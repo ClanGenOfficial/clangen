@@ -9,7 +9,7 @@ import subprocess
 
 # Setup logging
 import logging 
-formatter = logging.Formatter("%(name)s - %(levelname)s - %(message)s")
+formatter = logging.Formatter("%(name)s - %(levelname)s - %(filename)s / %(funcName)s / %(lineno)d - %(message)s")
 # Logging for file
 file_handler = logging.FileHandler("clangen.log")
 file_handler.setFormatter(formatter)
@@ -24,6 +24,7 @@ logging.root.addHandler(stream_handler)
 def log_crash(type, value, tb):
     # Log exception on crash
     logging.critical("Uncaught exception", exc_info=(type, value, tb))
+    sys.__excepthook__(type, value, tb)
 
 sys.excepthook = log_crash
 
@@ -40,6 +41,26 @@ if os.environ.get('CODESPACES'):
     print("(use clangen in fullscreen mode for best results)")
     print('')
 
+
+# Version Number to be displayed.
+# This will only be shown as a fallback, when the git commit hash can't be found.
+VERSION_NUMBER = "Ver. 0.7.0dev"
+
+
+if os.path.exists("commit.txt"):
+    with open(f"commit.txt", 'r') as read_file:
+        print("Running on pyinstaller build")
+        VERSION_NUMBER = read_file.read()
+else:
+    print("Running on source code")
+    try:
+        VERSION_NUMBER = subprocess.check_output(['git', 'rev-parse', 'HEAD']).decode('ascii').strip()
+    except:
+        print("Failed to get git commit hash, using hardcoded version number instead.")
+        print("Hey testers! We recommend you use git to clone the repository, as it makes things easier for everyone.")
+        print("There are instructions at https://discord.com/channels/1003759225522110524/1054942461178421289/1078170877117616169")
+print("Running on commit " + VERSION_NUMBER)
+
 # Load game
 from scripts.game_structure.load_cat import load_cats
 from scripts.game_structure.windows import SaveCheck
@@ -52,9 +73,7 @@ import pygame_gui
 import pygame
 
 
-# Version Number to be displayed.
-# This will only be shown as a fallback, when the git commit hash can't be found.
-VERSION_NUMBER = "Ver. 0.7.0dev"
+
 
 # import all screens for initialization (Note - must be done after pygame_gui manager is created)
 from scripts.screens.all_screens import start_screen
@@ -91,19 +110,7 @@ sprites.load_scars()
 start_screen.screen_switches()
 
 
-if os.path.exists("commit.txt"):
-    with open(f"commit.txt", 'r') as read_file:
-        print("Running on pyinstaller build")
-        VERSION_NUMBER = read_file.read()
-else:
-    print("Running on source code")
-    try:
-        VERSION_NUMBER = subprocess.check_output(['git', 'rev-parse', 'HEAD']).decode('ascii').strip()
-    except:
-        print("Failed to get git commit hash, using hardcoded version number instead.")
-        print("Hey testers! We recommend you use git to clone the repository, as it makes things easier for everyone.")
-        print("There are instructions at https://discord.com/channels/1003759225522110524/1054942461178421289/1078170877117616169")
-print("Running on commit " + VERSION_NUMBER)
+
 
 
 
