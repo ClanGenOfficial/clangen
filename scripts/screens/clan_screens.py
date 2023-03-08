@@ -1056,11 +1056,11 @@ class ListScreen(Screens):
                                                  object_id="#outside_clan_button", manager=MANAGER)
 
         self.filter_fav = UIImageButton(scale(pygame.Rect((390, 275), (56, 56))), "",
-                                        object_id="#fav_star",
+                                        object_id="#fav_cat",
                                         manager=MANAGER)
         self.filter_fav.hide()
         self.filter_not_fav = UIImageButton(scale(pygame.Rect((390, 275), (56, 56))), "",
-                                            object_id="#not_fav_star", manager=MANAGER,
+                                            object_id="#not_fav_cat", manager=MANAGER,
                                         tool_tip_text='list favorite cats first')
 
         self.next_page_button = UIImageButton(scale(pygame.Rect((912, 1190), (68, 68))), "",

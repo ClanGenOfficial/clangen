@@ -137,6 +137,19 @@ class Cat():
         'retired_leader', 'refugee', 'tragedy_survivor', 'clan_founder', 'orphaned', "orphaned2", "guided1", "guided2",
         "guided3", "guided4"
     ]
+
+    #EX levels and ranges.
+    # Ranges are inclusive to both bounds
+    experience_levels_range = {
+        "untrained": (0, 0),
+        "trainee": (1, 50),
+        "prepared": (51, 110),
+        "competent": (110, 170),
+        "proficient": (171, 240),
+        "expert": (241, 320),
+        "master": (321, 321)
+    }
+
     all_cats: Dict[str, Cat] = {}  # ID: object
     outside_cats: Dict[str, Cat] = {}  # cats outside the clan
     id_iter = itertools.count()
@@ -383,15 +396,22 @@ class Cat():
             if self.age in ['kitten']:
                 self.experience = 0
             elif self.age in ['adolescent']:
-                self.experience = randint(0, 19)
-            elif self.age in ['young adult']:
-                self.experience = randint(10, 40)
-            elif self.age in ['adult']:
-                self.experience = randint(20, 50)
+                m = self.moons
+                self.experience = 0
+                while m > Cat.age_moons['adolescent'][0]:
+                    base_ex = 0.6 * random.choices(game.config["graduation"]["base_app_timeskip_ex"][0],
+                                          weights=game.config["graduation"]["base_app_timeskip_ex"][1], k=1)[0]
+                    self.experience += base_ex
+                    m -= 1
+            elif self.age in ['young adult', 'adult']:
+                self.experience = randint(Cat.experience_levels_range["prepared"][0],
+                                          Cat.experience_levels_range["proficient"][1])
             elif self.age in ['senior adult']:
-                self.experience = randint(30, 60)
+                self.experience = randint(Cat.experience_levels_range["competent"][0],
+                                          Cat.experience_levels_range["expert"][1])
             elif self.age in ['elder']:
-                self.experience = randint(40, 70)
+                self.experience = randint(Cat.experience_levels_range["competent"][0],
+                                          Cat.experience_levels_range["master"][1])
             else:
                 self.experience = 0
 
@@ -1025,7 +1045,7 @@ class Cat():
             if attempts_left <= 0:
                 return
         relevant_relationship = relevant_relationship_list[0]
-        relevant_relationship.start_action()
+        relevant_relationship.start_interaction()
 
         if game.game_mode == "classic":
             return
@@ -2209,19 +2229,21 @@ class Cat():
         output = ""
 
         # Determine the chance of failure.
-        if mediator.experience_level == "very low":
+        if mediator.experience_level == "untrained":
+            chance = 15
+        if mediator.experience_level == "trainee":
             # Negative bonus for very low.
             chance = 20
-        elif mediator.experience_level == "low":
+        elif mediator.experience_level == "prepared":
             chance = 35
-        elif mediator.experience_level == "high":
+        elif mediator.experience_level == "proficient":
             chance = 55
-        elif mediator.experience_level == "master":
+        elif mediator.experience_level == "expert":
             chance = 70
-        elif mediator.experience_level == "max":
+        elif mediator.experience_level == "master":
             chance = 100
         else:
-            chance = 40  # Average gets no bonus.
+            chance = 40
 
         compat = get_personality_compatibility(cat1, cat2)
         if compat is True:
@@ -2566,27 +2588,15 @@ class Cat():
 
     @experience.setter
     def experience(self, exp: int):
-        if (exp > 100):
-            exp = 100
-        self._experience = exp
-        experience_level = self.experience_level
-        experience_levels = [
-            'very low', 'low', 'average', 'high', 'master', 'max'
-        ]
-        if exp < 11:
-            experience_level = 'very low'
-        elif exp < 31:
-            experience_level = 'low'
-        elif exp < 70:
-            experience_level = 'average'
-        elif exp < 81:
-            experience_level = 'high'
-        elif exp < 100:
-            experience_level = 'master'
-        elif exp == 100:
-            experience_level = 'max'
+        if exp > self.experience_levels_range["master"][1]:
+            exp = self.experience_levels_range["master"][1]
+        self._experience = int(exp)
 
-        self.experience_level = experience_level
+        for x in self.experience_levels_range:
+            if self.experience_levels_range[x][0] <= exp <= self.experience_levels_range[x][1]:
+                self.experience_level = x
+                break
+
 
     @property
     def moons(self):
