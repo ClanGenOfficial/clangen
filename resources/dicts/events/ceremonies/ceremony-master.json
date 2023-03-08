@@ -792,7 +792,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "(mentor) calls a meeting. They have been watching (prefix)kit for a while now, and have decided to mentor them personally. m_c's eyes shine with pride. "
+    "(mentor) calls a meeting. {PRONOUN/(mentor)/subject} {VERB/have/has} been watching (prefix)kit for a while now, and have decided to mentor {PRONOUN/m_c/object} personally. m_c's eyes shine with pride. "
   ],
   "med_app_0": [
     [
