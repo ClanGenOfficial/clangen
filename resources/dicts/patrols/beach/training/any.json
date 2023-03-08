@@ -10,9 +10,9 @@
     "exp": 20,
     "success_text": [
             "app1 listens carefully as p_l explains where to find the best prey within the rich waters of the pools.",
-            "app1 picks up the instruction quicky and is soon hopping from pool to pool, picking out the tasty morsels within.",
+            "app1 picks up the instruction quickly and is soon hopping from pool to pool, picking out the tasty morsels within.",
             null,
-            "By the end of the patrol s_c is easily fishing fresh-kill out of the pools, not an ounce of hesitation in their movements."
+            "By the end of the patrol, s_c is easily fishing fresh-kill out of the pools with not an ounce of hesitation in their movements."
     ],
     "fail_text": [
             "app1 tries to remember the differences and nuances between the creatures within the pools, but fails to retain any of the information.",
