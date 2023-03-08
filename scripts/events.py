@@ -594,25 +594,6 @@ class Events():
                            f"but as they drift away, they hope to see familiar starry fur on the other side."
                 game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
 
-        if cat.exiled and cat.status == 'leader' and not cat.dead and random.randint(
-                1, 10) == 1:
-            game.clan.leader_lives -= 1
-            if game.clan.leader_lives > 0:
-                text = f'Rumors reach your Clan that the exiled {cat.name} lost a life recently.'
-                game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
-            else:
-                text = f'Rumors reach your Clan that the exiled {cat.name} has died recently.'
-                game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
-                cat.dead = True
-
-        elif cat.exiled and cat.status == 'leader' and not cat.dead and random.randint(
-                1, 45) == 1:
-            game.clan.leader_lives -= 10
-            cat.dead = True
-            text = f'Rumors reach your Clan that the exiled {cat.name} has died recently.'
-            game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
-            game.clan.leader_lives = 0
-
     def one_moon_cat(self, cat):
         # ---------------------------------------------------------------------------- #
         #                                trigger events                                #
@@ -878,7 +859,7 @@ class Events():
 
                     if cat.moons == game.config["graduation"]["min_graduating_age"]:
                         preparedness = "early"
-                    if cat.experience_level in ["untrained", "trainee"]:
+                    elif cat.experience_level in ["untrained", "trainee"]:
                         preparedness = "unprepared"
                     else:
                         preparedness = "prepared"
@@ -1286,6 +1267,9 @@ class Events():
                 #print(f"{cat.name} not working, no EX gain")
                 return
 
+            if cat.experience > cat.experience_levels_range["trainee"]:
+                return
+
             if cat.status == "medicine cat apprentice":
                 base_ex = random.choices(game.config["graduation"]["base_med_app_timeskip_ex"][0],
                                           weights=game.config["graduation"]["base_med_app_timeskip_ex"][1], k=1)[0]
@@ -1293,11 +1277,11 @@ class Events():
                 base_ex = random.choices(game.config["graduation"]["base_app_timeskip_ex"][0],
                                           weights=game.config["graduation"]["base_app_timeskip_ex"][1], k=1)[0]
 
-            if cat.mentor and not Cat.fetch_cat(cat.mentor).not_working():
-                mentor_modifier = 1
-            else:
-                # No mentor/sick mentor debuff
+            if not cat.mentor or Cat.fetch_cat(cat.mentor).not_working():
+                # Sick mentor debuff
                 mentor_modifier = 0.6
+            else:
+                mentor_modifier = 1
 
             cat.experience += max(base_ex * mentor_modifier, 1)
             # print(f"{cat.name} has gained {int(base_ex * mentor_modifier)} EX", cat._experience)
