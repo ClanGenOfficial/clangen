@@ -3,18 +3,22 @@ import random
 
 from scripts.utility import (
     get_highest_romantic_relation,
-    get_med_cats, 
-    add_children_to_cat, 
-    add_siblings_to_cat
+    get_med_cats,
+    add_children_to_cat,
+    add_siblings_to_cat, event_text_adjust
 )
 from scripts.game_structure.game_essentials import game
 from scripts.cat.cats import Cat, cat_class
 from scripts.event_class import Single_Event
 from scripts.cat_relations.relationship import Relationship
 from scripts.events_module.condition_events import Condition_Events
+try:
+    import ujson
+except ImportError:
+    import json as ujson
 
 class Pregnancy_Events():
-    """All events which are related to pregnancy such as kittening and define who are the parents."""
+    """All events which are related to pregnancy such as kitting and defining who are the parents."""
     
     def __init__(self) -> None:
         self.condition_events = Condition_Events()
@@ -175,8 +179,13 @@ class Pregnancy_Events():
             "moons": 0,
             "amount": 0
         }
-        text = f"{pregnant_cat.name} announced that they are expecting kits."
-        # game.birth_death_events_list.append(text)
+
+        text = choice(PREGNANT_STRINGS["announcement"])
+        if game.clan.game_mode != 'classic':
+            severity = random.choices(["minor", "major"], [3, 1], k=1)
+            pregnant_cat.get_injured("pregnant", severity=severity[0])
+            text += choice(PREGNANT_STRINGS[f"{severity[0]}_severity"])
+        text = event_text_adjust(Cat, text, pregnant_cat)
         game.cur_events_list.append(Single_Event(text, "birth_death", pregnant_cat.ID))
 
     def handle_one_moon_pregnant(self, cat, clan=game.clan):
@@ -190,21 +199,39 @@ class Pregnancy_Events():
             return
 
         amount = self.get_amount_of_kits(cat)
-        thinking_amount = choice([amount - 1, amount, amount + 1])
-        if thinking_amount < 1:
-            thinking_amount = 1
+        text = 'This should not appear (pregnancy_events.py)'
 
         # add the amount to the pregnancy dict
         clan.pregnancy_data[cat.ID]["amount"] = amount
-
-        if thinking_amount == 1:
-            text = f"{cat.name} thinks that they will have one kit."
-            # game.birth_death_events_list.append(text)
-            game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
+        thinking_amount = random.choices(["correct", "incorrect", "unsure"], [4, 1, 1], k=1)
+        if amount <= 3:
+            correct_guess = "small"
         else:
-            text = f"{cat.name} thinks that they will have {thinking_amount} kits."
-            # game.birth_death_events_list.append(text)
-            game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
+            correct_guess = "large"
+
+        if thinking_amount[0] == "correct":
+            if correct_guess == "small":
+                text = PREGNANT_STRINGS["litter_guess"][0]
+            else:
+                text = PREGNANT_STRINGS["litter_guess"][1]
+        elif thinking_amount[0] == 'incorrect':
+            if correct_guess == "small":
+                text = PREGNANT_STRINGS["litter_guess"][1]
+            else:
+                text = PREGNANT_STRINGS["litter_guess"][0]
+        else:
+            text = PREGNANT_STRINGS["litter_guess"][2]
+
+        if game.clan.game_mode != 'classic':
+            if cat.injuries["pregnant"]["severity"] == "minor":
+                cat.injuries["pregnant"]["severity"] = "major"
+                text += choice(PREGNANT_STRINGS["major_severity"])
+            cat.injuries["pregnant"]["duration"] -= 1
+            cat.injuries["pregnant"]["moons_with"] += 1
+
+        text = event_text_adjust(Cat, text, cat)
+        game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
+
 
     def handle_two_moon_pregnant(self, cat, clan=game.clan):
         """Handles if the cat is two moons pregnant."""
@@ -229,109 +256,41 @@ class Pregnancy_Events():
         # delete the cat out of the pregnancy dictionary
         del clan.pregnancy_data[cat.ID]
 
-        insert = 'this should not display'
         if kits_amount == 1:
             insert = 'single kitten'
-        if kits_amount > 1:
+        else:
             insert = f'litter of {kits_amount} kits'
 
+
+
         # choose event string
-        print_event = ""
+        events = PREGNANT_STRINGS
         event_list = []
-        possible_events = []
         if other_cat is None:
-            possible_events = [f"{cat.name} had a {insert}, but refused to talk about their origin.",
-                               f"{cat.name} secretly had a {insert}.",
-                               f"{cat.name} had a {insert} with an unknown partner.",
-                               f"{cat.name} had a {insert} and refused to talk about their progenitor.",
-                               f"{cat.name} had a {insert} and is absolutely refusing to talk about it or acknowledge it at all.",
-                               f"{cat.name} doesn't feel ready to be a parent of this {insert}. But they promise to the tiny flailing limbs by their side that they'll do their best, they swear on StarClan itself.",
-                               f"No one knows who {cat.name} has had their {insert} with, but they seem very happy watching over their little offspring in the nursery.",
-                               f"Whenever someone asks whether {cat.name} will be alright raising their {insert} alone, they just smile, and reply that everything is going to work out fine.",
-                               f"A {insert}! {cat.name} welcomes them happily, and seems unperturbed by the lack of a partner in the nursery with them."
-                               ]
+            event_list.append(choice(events["birth"]["unmated_parent"]))
         elif cat.mate == other_cat.ID and not other_cat.dead and not other_cat.outside:
             involved_cats.append(other_cat.ID)
-            possible_events = [f"{cat.name} had a {insert} with {other_cat.name}.",
-                               f"In the nursery, {cat.name} lies suckling a {insert}, {other_cat.name} watching over them and purring so hard their body vibrates.",
-                               f"{cat.name} and {other_cat.name}'s eyes meet over their {insert}, full of love for their growing family.",
-                               f"In the quiet of the nursery, in the nest they've spent so long preparing, {cat.name} and {other_cat.name} welcome a {insert}.",
-                               f"With their {insert} mewling at their belly, {cat.name}'s long pregnancy has finally given them and {other_cat.name} the expansion to their family they've been hoping and waiting for.",
-                               f"Even with {other_cat.name} by their side, {cat.name} doesn't feel ready to be a parent of this {insert}. But they promise to the tiny flailing limbs by their side that they'll do their best, they swear on StarClan itself.",
-                               f"{other_cat.name} has been waiting eagerly to meet their offspring. At {cat.name}'s invitation, they crawl into the nursery, purring and joining {cat.name} in licking their {insert} clean.",
-                               f"{other_cat.name} has been impatient for the end of {cat.name}'s pregnancy, and when they hear {cat.name} has gone into labor they drop what they're doing and sprint for the nursery, where {cat.name} is bringing a {insert} into the world.",
-                               f"{cat.name} is so, so grateful that their adorable {insert} is here - both thrilled to meet them, and thrilled that {other_cat.name} can take a turn parenting while {cat.name} finally takes a little break from the stuffy air of the nursery.",
-                               f"{cat.name} and {other_cat.name} were so busy worrying about and looking forward to the birth that it's only now that they look at their {insert}, and wonder what to name them.",
-                               f"Purring with {other_cat.name} against their back, {cat.name} feels like they're going to explode with love, looking at their tiny new {insert}."
-                               ]
+            event_list.append(choice(events["birth"]["two_parents"]))
         elif cat.mate == other_cat.ID and other_cat.dead or other_cat.outside:
             involved_cats.append(other_cat.ID)
-            possible_events = [
-                f"{cat.name} looks at their {insert}, choking on both a purr and a wail. How are they supposed to do this without {other_cat.name}?",
-                f"{cat.name} sobs and pushes their new {insert} away from them. They look far too much like {other_cat.name} for {cat.name} to stand the sight of them.",
-                f"{cat.name} purrs sadly over the tiny {insert} StarClan has blessed them with. They see {other_cat.name} in their little pawpads, in their ears and eyes and mews.",
-                f"Cats call out, but {cat.name} can't be convinced to go back to the nursery. Not with the new {insert} made from them and {other_cat.name} there, taunting {cat.name} with what should have been.",
-                f"Looking down at {other_cat.name}'s last gift to them, {cat.name} vows to protect their new {insert}.",
-                f"It's so hard, so very, very, nearly insurmountably hard doing this without their mate, but {cat.name} wouldn't change it for the world. This {insert} is the last piece of {other_cat.name} they have."
-
-            ]
+            event_list.append(choice(events["birth"]["dead_mate"]))
         elif cat.mate != other_cat.ID and cat.mate is not None:
             involved_cats.append(other_cat.ID)
-            possible_events = [f"{cat.name} secretly had a {insert} with {other_cat.name}.",
-                               f"{cat.name} hopes that their {insert} doesn't look too much like "
-                               f"{other_cat.name}, otherwise questions might follow.",
-                               f"{other_cat.name} goes to visit {cat.name} in the nursery with their "
-                               f"new {insert}, on a completely innocent mission to deliver food to the new parent.",
-                               f"The newly arrived {insert} that {cat.name} has just given birth to looks "
-                               f"suspiciously like {other_cat.name}. "
-                               ]
+            event_list.append(choice(events["birth"]["affair"]))
         else:
-            possible_events = [f"{cat.name} had a {insert}, but refused to talk about their origin.",
-                               f"{cat.name} had a {insert} and refused to talk about their progenitor.",
-                               f"{cat.name} doesn't feel ready to be a parent of this {insert}. But they promise to the tiny flailing limbs by their side that they'll do their best, they swear on StarClan itself.",
-                               f"Whenever someone asks whether {cat.name} will be alright raising their {insert} alone, they just smile, and reply that everything is going to work out fine.",
-                               f"A {insert}! {cat.name} welcomes them happily, and seems unperturbed by the lack of a partner in the nursery with them."
-                               ]
+            event_list.append(choice(events["birth"]["unmated_parent"]))
 
+        if not int(random.random() * cat.injuries["pregnant"]["mortality"]):  # chance for a cat to die during childbirth
+            possible_events = events["birth"]["death"]
+            # just makin sure meds aren't mentioned if they aren't around or if they are a parent
+            meds = get_med_cats(Cat, working=False)
+            if not meds or (cat or cat.mate) in meds:
+                for event in possible_events:
+                    if "medicine cat" in event:
+                        possible_events.remove(event)
 
-        event_list.append(choice(possible_events))
+            event_list.append(choice(possible_events))
 
-        if not int(random.random() * 40):  # 1/40 chance for a cat to die during childbirth
-            possible_events = [
-                f"Later, as the medicine cat wails with {cat.name}'s blood streaked through their pelt, and a "
-                f"warrior comes to move the body for its vigil, no one knows what to do with the {insert}.",
-
-                f"As the sun tracks across the sky, {cat.name}'s bleeding gets worse and worse. It was still "
-                f"worth it, {cat.name} decides, even as the medicine cat fights an impossible battle to keep "
-                f"them out of StarClan. Still so worth it.",
-
-                f"The birth was stressful, and {cat.name} is exhausted and still bleeding and really just wants "
-                f"to sleep. Unfortunately, they don't ever wake up again.",
-
-                f"{cat.name} wasn't expecting their birth to be so incredibly painful, and as the day wears on "
-                f"their condition deteriorates, leaving their {insert} mewling and trying to suckle a cooling body.",
-
-                f"It breaks their heart that they won't get to be with their {insert} as they grow. {cat.name}"
-                f" pants out instructions and pleads to their friends around them, as the blood loss from birth "
-                f"slowly takes their life.",
-
-                f"However, {cat.name} is too far gone for the herbs they're given to choke down to fix this "
-                f"blood loss, and the cats are helpless as {cat.name} slowly slips to StarClan.",
-
-                f"Later, hours later, eons later, the {insert} mews. Outside, {cat.name}'s body cools, the toll "
-                f"of birth too much for it.",
-
-                f"Though all looks fine, the Clan will wake to discover {cat.name}'s body cold in the nursery, "
-                f"their {insert} mewing in vain for their parent.",
-
-                f"Though birth is always considered a difficult and risky event, no one thought they'd lose "
-                f"{cat.name} to it, not after the {insert} was all born and seemed fine. "
-                f"They thought the blood loss was under control."
-            ]
-            if len(get_med_cats(Cat)) == 0 or (len(get_med_cats(Cat)) == 1 and cat.status == 'medicine cat'):  # check number of med cats in the clan
-                event_list.append(choice(possible_events[2:]))  # limit possible events to those not mentioned med cats
-            else:
-                event_list.append(choice(possible_events))
             if cat.status == 'leader':
                 game.clan.leader_lives -= 1
                 cat.die()
@@ -342,36 +301,21 @@ class Pregnancy_Events():
         elif game.clan.game_mode != 'classic':  # if cat doesn't die, give recovering from birth
             cat.get_injured("recovering from birth", event_triggered=True)
             if 'blood loss' in cat.injuries:
-                possible_events = [f"The birth was stressful and {cat.name} lost a lot of blood.",
-
-                                   f"{cat.name} pants, looking at their wonderful {insert} and deciding that the "
-                                   f"pain and blood loss was all worth it.",
-
-                                   f"Weak with blood loss, {cat.name} nevertheless purrs at the sight of "
-                                   f"their {insert}.",
-
-                                   f"Though the blood loss did not make the birth any easier for {cat.name}.",
-
-                                   f"Though {cat.name} seems overly exhausted and weak from the birth.",
-
-                                   f"{cat.name} wasn't expecting this birth to be so intensely painful.",
-
-                                   f"Everyone says giving birth is difficult, but {cat.name} feels like this one "
-                                   f"has been worse than most.",
-
-                                   f"This will all be worth it, {cat.name} groans, promising themselves that as "
-                                   f"the pains of afterbirth rock their exhausted and bleeding body.",
-
-                                   f"{cat.name} chokes down the herbs given to them, retching at the taste but "
-                                   f"knowing they need them to stop the blood loss. "
-                                   ]
+                possible_events = events["birth"]["difficult_birth"]
+                # just makin sure meds aren't mentioned if they aren't around or if they are a parent
+                meds = get_med_cats(Cat, working=False)
+                if not meds or (cat or cat.mate) in meds:
+                    for event in possible_events:
+                        if "medicine cat" in event:
+                            possible_events.remove(event)
 
                 event_list.append(choice(possible_events))
-
+        if game.clan.game_mode != 'classic':
+            cat.injuries.pop("pregnant")
         print_event = " ".join(event_list)
+        print_event = print_event.replace("{insert}", insert)
+        print_event = event_text_adjust(Cat, print_event, cat, other_cat)
         # display event
-        # game.health_events_list.append(print_event)
-        # game.birth_death_events_list.append(print_event)
         game.cur_events_list.append(Single_Event(print_event, ["health", "birth_death"], involved_cats))
 
 
@@ -633,3 +577,8 @@ class Pregnancy_Events():
         amount = choice(one_kit + two_kits + three_kits + four_kits + five_kits + six_kits)
 
         return amount
+
+
+PREGNANT_STRINGS = None
+with open(f"resources/dicts/conditions/pregnancy.json", 'r') as read_file:
+    PREGNANT_STRINGS = ujson.loads(read_file.read())

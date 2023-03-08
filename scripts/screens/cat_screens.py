@@ -992,6 +992,8 @@ class ProfileScreen(Screens):
         if the_cat.is_injured():
             if "recovering from birth" in the_cat.injuries:
                 output += 'recovering from birth!'
+            elif "pregnant" in the_cat.injuries:
+                output += 'pregnant!'
             else:
                 output += "injured!"
         elif the_cat.is_ill():
@@ -1509,13 +1511,13 @@ class ProfileScreen(Screens):
             # display if the cat was born with it
             if self.the_cat.permanent_condition[name]["born_with"] is True:
                 text_list.append(f"born with this condition")
-
-            # moons with the condition if not born with condition
-            moons_with = self.the_cat.permanent_condition[name].get("moons_with", 1)
-            if moons_with != 1:
-                text_list.append(f"has had this condition for {moons_with} moons")
             else:
-                text_list.append(f"has had this condition for 1 moon")
+                # moons with the condition if not born with condition
+                moons_with = self.the_cat.permanent_condition[name].get("moons_with", 1)
+                if moons_with != 1:
+                    text_list.append(f"has had this condition for {moons_with} moons")
+                else:
+                    text_list.append(f"has had this condition for 1 moon")
 
             # is permanent
             text_list.append('permanent condition')
@@ -1536,6 +1538,8 @@ class ProfileScreen(Screens):
                 insert = 'has been hurt for'
                 if name == 'recovering from birth':
                     insert = 'has been recovering for'
+                elif name == 'pregnant':
+                    insert = 'has been pregnant for'
                 if moons_with != 1:
                     text_list.append(f"{insert} {moons_with} moons")
                 else:
