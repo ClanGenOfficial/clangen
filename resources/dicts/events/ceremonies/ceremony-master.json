@@ -781,7 +781,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "As m_c touches noses with their new mentor, (mentor), they make a silent promise to dead_par1 and dead_par2 to make them proud, and to take care of the Clan in their parent's absence."
+    "As m_c touches noses with {PRONOUN/m_c/poss} new mentor, (mentor), {PRONOUN/m_c/subject} make a silent promise to dead_par1 and dead_par2 to make them proud, and to take care of the Clan in {PRONOUN/m_c/poss} parent's absence."
   ],
   "app_62": [
     [
