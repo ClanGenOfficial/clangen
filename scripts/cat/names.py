@@ -53,7 +53,7 @@ class Name():
                 for new_name in new_names:
                     if new_name != '':
                         if new_name.startswith('-'):
-                            names_dict["special_suffixes"].remove(new_name[1:])
+                            names_dict["special_suffixes"].pop(new_name[1:])
                         else:
                             if ':' in new_name:
                                 namearray = new_name.split(':')
