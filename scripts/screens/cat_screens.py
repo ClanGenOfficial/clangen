@@ -549,15 +549,16 @@ class ProfileScreen(Screens):
                                                                           object_id=get_text_box_theme(
                                                                               "#cat_profile_name_box"), manager=MANAGER)
         name_text_size = self.profile_elements["cat_name"].get_relative_rect()
+
         self.profile_elements["cat_name"].kill()
-        #print(name_text_size.width)
+
         self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(cat_name,
                                                                           scale(pygame.Rect(
                                                                               (800 - name_text_size.width, 280),
                                                                               (name_text_size.width * 2, 80))),
                                                                           object_id=get_text_box_theme(
                                                                               "#cat_profile_name_box"), manager=MANAGER)
-        #print(name_text_size)
+
 
         # Write cat thought
         self.profile_elements["cat_thought"] = pygame_gui.elements.UITextBox(self.the_cat.thought,
@@ -625,13 +626,13 @@ class ProfileScreen(Screens):
 
         # Fullscreen
         if game.settings['fullscreen']:
-            _tmp = 820 - name_text_size.width
+            x_pos = 740 - int(name_text_size.width*7/15)
         else:
-            _tmp = 740 - name_text_size.width
+            x_pos = 740 - name_text_size.width
         # TODO: positioning is weird. closer to names on some, further on others
         # this only happens on fullscreen :waaaaaaa:
         self.profile_elements["favourite_button"] = UIImageButton(scale(pygame.Rect
-                                                                        ((_tmp, 287), (56, 56))),
+                                                                        ((x_pos, 287), (56, 56))),
                                                                   "",
                                                                   object_id="#fav_cat",
                                                                   manager=MANAGER,
@@ -639,7 +640,7 @@ class ProfileScreen(Screens):
                                                                   starting_height=2)
 
         self.profile_elements["not_favourite_button"] = UIImageButton(scale(pygame.Rect
-                                                                            ((_tmp, 287),
+                                                                            ((x_pos, 287),
                                                                              (56, 56))),
                                                                       "",
                                                                       object_id="#not_fav_cat",
