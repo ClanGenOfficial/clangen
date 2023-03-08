@@ -444,6 +444,12 @@ class Pregnancy_Events():
             Returns:
                 integer (number)
         """
+        difference = mate_relation.romantic_love - affair_relation.romantic_love
+
+        if difference < 0:
+            # If the cat loves the affair more than their mate:
+            
+
         affair_chance = 10
 
         if mate_relation is None:
@@ -501,17 +507,16 @@ class Pregnancy_Events():
 
 
         # Handle love affair chance.
-        highest_romantic_relation = get_highest_romantic_relation(cat.relationships.values())
+        highest_romantic_relation = get_highest_romantic_relation(cat.relationships.values(), exclude_mate=True,
+                                                                  potential_mate=True)
         if mate and highest_romantic_relation:
-            if highest_romantic_relation.cat_to.ID != mate.ID:
-                chance_love_affair = self.get_love_affair_chance(mate_relation, highest_romantic_relation)
-                if not chance_love_affair or not int(random.random() * chance_love_affair):
-                    print("love affair?")
-                    if highest_romantic_relation.cat_to.is_potential_mate(cat, for_love_interest=True):
-                        if samesex or cat.gender != highest_romantic_relation.cat_to.gender:
-                            print("love affair", str(cat.name), str(highest_romantic_relation.cat_to.name))
-                            is_affair = True
-                            return highest_romantic_relation.cat_to, is_affair
+            chance_love_affair = self.get_love_affair_chance(mate_relation, highest_romantic_relation)
+            if not chance_love_affair or not int(random.random() * chance_love_affair):
+                print("love affair?")
+                if samesex or cat.gender != highest_romantic_relation.cat_to.gender:
+                    print("love affair", str(cat.name), str(highest_romantic_relation.cat_to.name))
+                    is_affair = True
+                    return highest_romantic_relation.cat_to, is_affair
 
         # If the love affair chance did not trigger, this code will be reached.
         chance_random_affair = game.config["pregnancy"]["random_affair_chance"]
