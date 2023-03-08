@@ -16,7 +16,7 @@ class Mate_Events():
     """All events which are related to mate's such as becoming mates and breakups."""
     
     def __init__(self) -> None:
-
+        self.had_one_event = False
         pass
 
 

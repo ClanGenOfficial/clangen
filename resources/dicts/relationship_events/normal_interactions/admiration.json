@@ -196,7 +196,7 @@
 		{
 			"id": "admire_adult_odd_med1",
 			"interactions": [
-				"m_c thinks that r_c is so much braver than them."
+				"m_c thinks r_c is so much braver than them."
 			],
 			"relationship_constraint": [
 				"admiration_60"
@@ -299,11 +299,42 @@
 		{
 			"id": "admire_de_medium2",
 			"interactions": [
+				"m_c tried talking to r_c about r_c's behaviour, but it turned into a fight that someone else had to break up."
+			],
+			"reaction_random_cat":{
+				"admiration": "decrease"
+			}
+		},
+		{
+			"id": "admire_de_medium3",
+			"interactions": [
 				"m_c and r_c had to fix something around camp and argued how to fix it. It ended up being fixed by some other cat."
 			],
 			"reaction_random_cat": {
 				"admiration": "decrease"
-			}
+			},
+			"main_status_constraint":[
+				"elder",
+				"apprentice",
+				"warrior",
+				"mediator apprentice",
+				"mediator",
+				"medicine cat apprentice",
+				"medicine cat",
+				"deputy",
+				"leader"
+			],
+			"random_status_constraint":[
+				"elder",
+				"apprentice",
+				"warrior",
+				"mediator apprentice",
+				"mediator",
+				"medicine cat apprentice",
+				"medicine cat",
+				"deputy",
+				"leader"
+			]
 		},
 		{
 			"id": "admire_adult_de_med1",

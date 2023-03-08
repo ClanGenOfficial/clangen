@@ -10,7 +10,7 @@
 		{
 			"id": "jel_inc_med1",
 			"interactions": [
-				"m_c thinks that the prey r_c is biting into on the other side of camp looks delicious."
+				"m_c thinks the prey r_c is biting into on the other side of camp looks delicious."
 			]
 		},
 		{ 
@@ -44,7 +44,7 @@
 			],
 			"main_status_constraint":[
 				"apprentice",
-				"medicine apprentice",
+				"medicine cat apprentice",
 				"mediator apprentice",
 				"warrior"
 			],
@@ -142,15 +142,16 @@
 			"id": "jel_de_low1",
 			"intensity": "low",
 			"interactions":[
-				"m_c thinks r_c may not be so snooty after all."
+				"m_c thinks r_c is very helpful!" 
 			]
 		},
 		{
 			"id": "jel_de_med1",
 			"interactions":[
-				"m_c always thought r_c had it all figured out, so they're surprised when r_c asks for help."
+				"m_c had r_c surprise them with something nice." 
 			]
 		},
+		
 		{
 			"id": "jel_de_med2",
 			"interactions":[
@@ -159,6 +160,26 @@
 			"reaction_random_cat":{
 				"jealousy": "decrease"
 			}
+		},
+		{
+			"id":"jel_de_med3",
+			"interactions":[
+				"m_c always thought r_c had it all figured out, so they're surprised when r_c asks for help."
+			],
+			"main_status_constraint":[
+				"kitten",
+				"apprentice",
+				"mediator apprentice",
+				"medicine cat apprentice",
+				"warrior"
+			],
+			"random_status_constrain":[
+				"warrior",
+				"elder",
+				"medicine cat",
+				"mediator",
+				"deputy"
+			]
 		},
 		{
 			"id": "jealousy_app_de_med1",
@@ -209,7 +230,7 @@
 			"id": "jel_de_high1",
 			"intensity": "high",
 			"interactions":[
-				"m_c is really suprised that r_c's life isn't as easy as they thought it was."
+				"m_c is really surprised that r_c's life isn't as easy as they thought it was."
 			]
 		},
 		{
