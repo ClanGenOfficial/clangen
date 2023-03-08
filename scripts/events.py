@@ -1283,7 +1283,7 @@ class Events():
         if cat.status in ["apprentice", "medicine cat apprentice", "mediator apprentice"]:
 
             if cat.not_working():
-                print(f"{cat.name} not working, no EX gain")
+                #print(f"{cat.name} not working, no EX gain")
                 return
 
             if cat.status == "medicine cat apprentice":
@@ -1300,7 +1300,7 @@ class Events():
                 mentor_modifier = 0.6
 
             cat.experience += max(base_ex * mentor_modifier, 1)
-            print(f"{cat.name} has gained {int(base_ex * mentor_modifier)} EX", cat._experience)
+            # print(f"{cat.name} has gained {int(base_ex * mentor_modifier)} EX", cat._experience)
 
     def invite_new_cats(self, cat):
         # ---------------------------------------------------------------------------- #
