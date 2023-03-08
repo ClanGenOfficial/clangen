@@ -532,7 +532,7 @@ class Pregnancy_Events():
 
         # Handle love affair chance.
         affair_partner = self._determine_love_affair(cat, mate, mate_relation, samesex)
-        if second_parent:
+        if affair_partner:
             return affair_partner, True
 
         # If the love affair chance did not trigger, this code will be reached.
