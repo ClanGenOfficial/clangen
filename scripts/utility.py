@@ -418,7 +418,8 @@ def event_text_adjust(Cat,
                       other_cat=None,
                       other_clan_name=None,
                       keep_m_c=False,
-                      new_cat=None):
+                      new_cat=None,
+                      clan=game.clan):
     name = str(cat.name)
     other_name = None
     if other_cat:
@@ -444,7 +445,7 @@ def event_text_adjust(Cat,
     if "acc_singular" in adjust_text:
         adjust_text = adjust_text.replace("acc_singular", str(plural_acc_names(cat.accessory, False, True)))
 
-    adjust_text = adjust_text.replace("c_n", str(game.clan.name) + "Clan")
+    adjust_text = adjust_text.replace("c_n", str(clan.name) + "Clan")
     adjust_text = adjust_text.replace("p_l", name)
 
     return adjust_text
