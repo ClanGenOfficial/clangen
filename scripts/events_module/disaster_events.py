@@ -38,7 +38,7 @@ class DisasterEvents():
             return
 
         # if the chance isn't hit, don't cause a disaster
-        if int(random.random() * 12):
+        if int(random.random() * 1):
             return
 
         print('new disaster')
@@ -47,13 +47,18 @@ class DisasterEvents():
         final_events = []
 
         for event in possible_events:
+            print(event.event)
             if event.priority == 'secondary':
+                print('priority')
                 continue
             if game.clan.current_season not in event.season:
+                print('season')
                 continue
-            if game.clan.camp_bg not in event.camp and event.camp != 'any':
+            if (game.clan.camp_bg and 'any') not in event.camp:
+                print('camp')
                 continue
 
+            print('still valid')
             chance = 1
             if event.rarity == 'uncommon':
                 chance = 10
@@ -67,6 +72,7 @@ class DisasterEvents():
 
         # choose and save disaster
         chosen_disaster = random.choice(final_events)
+        print('chosen disaster', chosen_disaster.event)
         game.clan.primary_disaster = chosen_disaster
 
         # display trigger event
@@ -93,7 +99,7 @@ class DisasterEvents():
             return
         else:
             # giving a progression event
-            event_list = game.clan.secondary_disaster.progress_events[f"moon{game.clan.primary_disaster.current_duration}"]
+            event_list = game.clan.primary_disaster.progress_events[f"moon{game.clan.primary_disaster.current_duration}"]
             event = self.disaster_text(event_list)
             game.cur_events_list.append(
                 Single_Event(event, "misc"))
@@ -188,9 +194,9 @@ class DisasterEvents():
 
         text = random.choice(text_list)
 
-        text.replace("c_n", f"{game.clan.name}Clan")
-        text.replace("lead_name", leader.name)
-        text.replace("dep_name", deputy.name)
-        text.replace("med_name", random.choice(med_cats).name)
+        text = text.replace("lead_name", str(leader.name))
+        text = text.replace("dep_name", str(deputy.name))
+        text = text.replace("med_name", str(random.choice(med_cats).name))
+        text = text.replace("c_n", f"{game.clan.name}Clan")
 
         return text

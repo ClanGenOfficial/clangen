@@ -563,7 +563,7 @@ class Cat():
                     if cat_to == self:
                         family_relation = self.familial_grief(living_cat=cat)
                         possible_strings.extend(
-                            self.generate_events.get_possible_death_reactions(family_relation, value, cat.trait, body_status))
+                            self.generate_events.possible_death_reactions(family_relation, value, cat.trait, body_status))
 
             if possible_strings:
                 # choose string
@@ -609,7 +609,7 @@ class Cat():
                         if cat_to == self:
                             family_relation = self.familial_grief(living_cat=cat)
                             possible_strings.extend(
-                                self.generate_events.get_possible_death_reactions(family_relation, value, cat.trait, body_status))
+                                self.generate_events.possible_death_reactions(family_relation, value, cat.trait, body_status))
 
                 if possible_strings:
                     # choose string

@@ -117,7 +117,10 @@ class Events():
                 self.one_moon_outside_cat(cat)
 
         # Handle injuries and relationships. We must do with in a different all-cats loop.
-        self.disaster_events.handle_disasters()
+
+        # keeping this commented out till disasters are more polished
+        # self.disaster_events.handle_disasters()
+
         for cat in Cat.all_cats.values():
             if cat.dead or cat.outside:
                 continue
