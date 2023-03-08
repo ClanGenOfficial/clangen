@@ -18,7 +18,7 @@ class Name():
                     if new_name != '':
                         if new_name.startswith('-'):
                             while new_name[1:] in names_dict["normal_prefixes"]:
-                                names_dict["normal_prefixes"].pop(names_dict["normal_prefixes"].index(new_name[1:]))
+                                names_dict["normal_prefixes"].remove(new_name[1:])
                         else:
                             names_dict["normal_prefixes"].append(new_name)
 
@@ -32,34 +32,11 @@ class Name():
                     if new_name != '':
                         if new_name.startswith('-'):
                             while new_name[1:] in names_dict["normal_suffixes"]:
-                                names_dict["normal_suffixes"].pop(names_dict["normal_suffixes"].index(new_name[1:]))
+                                names_dict["normal_suffixes"].remove(new_name[1:])
                         else:
                             names_dict["normal_suffixes"].append(new_name)
 
-        """
-            FORMAT:
 
-            to add a new prefix:
-            <status>:<prefix>
-            to remove a prefix:
-            -<status>
-            to make a prefix blank:
-            <status>:
-        """
-        if os.path.exists('saves/specsuffixlist.txt'):
-            with open('saves/specsuffixlist.txt', 'r') as read_file:
-                name_list = read_file.read()
-                if_names = len(name_list)
-            if if_names > 0:
-                new_names = name_list.split('\n')
-                for new_name in new_names:
-                    if new_name != '':
-                        if new_name.startswith('-'):
-                            names_dict["special_suffixes"].pop(new_name[1:])
-                        else:
-                            if ':' in new_name:
-                                namearray = new_name.split(':')
-                                names_dict["special_suffixes"][namearray[0]] = namearray[1]
 
     def __init__(self,
                  status="warrior",
@@ -91,7 +68,7 @@ class Name():
                     
         # Set suffix
         while self.suffix is None or self.suffix == self.prefix.casefold() or str(self.suffix) in \
-                self.prefix.casefold() and not str(self.suffix) == '':
+                self.prefix.casefold() and str(self.suffix) != '':
             if pelt is None or pelt == 'SingleColour':
                 self.suffix = random.choice(self.names_dict["normal_suffixes"])
             else:
