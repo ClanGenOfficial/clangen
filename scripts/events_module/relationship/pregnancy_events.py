@@ -280,7 +280,11 @@ class Pregnancy_Events():
         else:
             event_list.append(choice(events["birth"]["unmated_parent"]))
 
-        if not int(random.random() * cat.injuries["pregnant"]["mortality"]):  # chance for a cat to die during childbirth
+        if game.clan.game_mode != 'classic':
+            death_chance = cat.injuries["pregnant"]["mortality"]
+        else:
+            death_chance = 40
+        if not int(random.random() * death_chance):  # chance for a cat to die during childbirth
             possible_events = events["birth"]["death"]
             # just makin sure meds aren't mentioned if they aren't around or if they are a parent
             meds = get_med_cats(Cat, working=False)
