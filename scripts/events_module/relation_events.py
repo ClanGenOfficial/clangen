@@ -188,7 +188,7 @@ class Relation_Events():
         same_age_cats = get_cats_same_age(cat)
         if len(same_age_cats) > 0:
             random_cat = choice(same_age_cats)
-            if self.can_trigger_events(random_cat):
+            if self.can_trigger_events(random_cat) and random_cat.ID in cat.relationships:
                 cat.relationships[random_cat.ID].start_interaction()
                 self.trigger_event(cat)
                 self.trigger_event(random_cat)

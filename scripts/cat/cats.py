@@ -1461,7 +1461,7 @@ class Cat():
                 "event_triggered": new_illness.new
             }
 
-    def get_injured(self, name, event_triggered=False, lethal=True):
+    def get_injured(self, name, event_triggered=False, lethal=True, severity='default'):
         if name not in INJURIES:
             if name not in INJURIES:
                 print(f"WARNING: {name} is not in the injuries collection.")
@@ -1485,6 +1485,11 @@ class Cat():
         if duration == 0:
             duration = 1
 
+        if severity == 'default':
+            injury_severity = injury["severity"]
+        else:
+            injury_severity = severity
+
         if mortality != 0:
             if game.clan.game_mode == "cruel season":
                 mortality = int(mortality * 0.5)
@@ -1496,7 +1501,7 @@ class Cat():
 
         new_injury = Injury(
             name=name,
-            severity=injury["severity"],
+            severity=injury_severity,
             duration=injury["duration"],
             medicine_duration=duration,
             mortality=mortality,
@@ -2692,6 +2697,7 @@ with open(f"{resource_directory}injuries.json", 'r') as read_file:
 PERMANENT = None
 with open(f"{resource_directory}permanent_conditions.json", 'r') as read_file:
     PERMANENT = ujson.loads(read_file.read())
+
 
 
 resource_directory = "resources/dicts/events/death/death_reactions/"

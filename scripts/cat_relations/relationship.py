@@ -16,6 +16,8 @@ from scripts.game_structure.game_essentials import game
 # ---------------------------------------------------------------------------- #
 
 class Relationship():
+    used_interaction_ids = []
+
     def __init__(self, cat_from, cat_to, mates=False, family=False, romantic_love=0, platonic_like=0, dislike=0,
                  admiration=0, comfortable=0, jealousy=0, trust=0, log=None) -> None:
         self.cat_from = cat_from
@@ -102,7 +104,21 @@ class Relationship():
                     "Default string, this should never appear."
                 ])
             ]
-        self.chosen_interaction = choice(possible_interactions)
+
+        # check if the current interaction id is already used and us another if so
+        chosen_interaction = choice(possible_interactions)
+        while chosen_interaction.id in self.used_interaction_ids\
+            and len(possible_interactions) > 2:
+            possible_interactions.remove(chosen_interaction)
+            chosen_interaction = choice(possible_interactions)
+
+        # if the chosen_interaction is still in the TRIGGERED_SINGLE_INTERACTIONS, clean the list
+        if chosen_interaction in self.used_interaction_ids:
+            self.used_interaction_ids = []
+
+        # add the chosen interaction id to the TRIGGERED_SINGLE_INTERACTIONS
+        self.chosen_interaction = chosen_interaction
+        self.used_interaction_ids.append(self.chosen_interaction.id)
 
         self.interaction_affect_relationships(in_de_crease, intensity, rel_type)
         # give cats injuries
@@ -624,6 +640,10 @@ class Relationship():
         self._trust = value
 
 
+# ---------------------------------------------------------------------------- #
+#                          needed interaction classes                          #
+# ---------------------------------------------------------------------------- #
+
 class Single_Interaction():
 
     def __init__(self,
@@ -780,13 +800,15 @@ INTERACTION_MASTER_DICT = {"romantic": {}, "platonic": {}, "dislike": {}, "admir
 rel_types = ["romantic", "platonic", "dislike", "admiration", "comfortable", "jealousy", "trust"]
 base_path = os.path.join("resources","dicts", "relationship_events", "normal_interactions")
 for rel in rel_types:
-    file_name = rel + ".json"
-    with open(os.path.join(base_path, file_name), 'r') as read_file:
-        loaded_dict = ujson.loads(read_file.read())
-        INTERACTION_MASTER_DICT[rel]["increase"] = create_interaction(loaded_dict["increase"])
-        INTERACTION_MASTER_DICT[rel]["decrease"] = create_interaction(loaded_dict["decrease"])
+    with open(os.path.join(base_path, rel , "increase.json"), 'r') as read_file:
+        loaded_list = ujson.loads(read_file.read())
+        INTERACTION_MASTER_DICT[rel]["increase"] = create_interaction(loaded_list)
+    with open(os.path.join(base_path, rel , "decrease.json"), 'r') as read_file:
+        loaded_list = ujson.loads(read_file.read())
+        INTERACTION_MASTER_DICT[rel]["decrease"] = create_interaction(loaded_list)
 
 NEUTRAL_INTERACTIONS = []
 with open(os.path.join(base_path, "neutral.json"), 'r') as read_file:
     loaded_list = ujson.loads(read_file.read())
     NEUTRAL_INTERACTIONS = create_interaction(loaded_list)
+
