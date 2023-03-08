@@ -136,6 +136,7 @@ def get_cats_same_age(cat, range = 10):
     return cats
 
 def pronoun_repl(m, cat_pronouns_dict):
+    """ Helper function for add_pronouns """
     inner_details = m.group(1).split("/")
     try:
         d = cat_pronouns_dict[inner_details[1]]
@@ -149,6 +150,12 @@ def pronoun_repl(m, cat_pronouns_dict):
         return "error"
     except:
         return "error"
+
+
+def add_pronouns(text, cat_pronouns_dict):
+    """ Add the correct pronouns into a string. """
+    return re.sub(r"\{(.*?)}", lambda x: pronoun_repl(x, cat_pronouns_dict), text)
+
 
 def change_clan_reputation(difference=0):
     """
@@ -521,7 +528,7 @@ def ceremony_text_adjust(Cat, text, cat, dead_mentor=None, mentor=None, previous
         pronouns_dict["dead_par2"] = random_dead_parent.pronouns
 
     #Pronouns
-    adjust_text = re.sub(r"\{(.*?)}", lambda x: pronoun_repl(x, pronouns_dict), adjust_text)
+    adjust_text = add_pronouns(adjust_text, pronouns_dict)
 
     adjust_text = adjust_text.replace("(prefix)", prefix)
     adjust_text = adjust_text.replace("m_c", name)

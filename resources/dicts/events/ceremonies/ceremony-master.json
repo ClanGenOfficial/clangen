@@ -803,7 +803,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "(prefix)kit, like every young kit, had dreams of becoming a warrior from a young age. However, as they grew older, they knew that their destiny lay in the medicine den. They happily take up their new place as a medicine cat apprentice - looking forward to healing their Clanmates for many moons to come."
+    "(prefix)kit, like every young kit, had dreams of becoming a warrior from a young age. However, as {PRONOUN/m_c/subject} grew older, {PRONOUN/m_c/subject} knew that {PRONOUN/m_c/poss} destiny lay in the medicine den. {PRONOUN/m_c/subject} happily {VERB/m_c/take/takes} up {PRONOUN/m_c/poss} new place as a medicine cat apprentice - looking forward to healing {PRONOUN/m_c/poss} Clanmates for many moons to come."
   ],
   "med_app_1": [
     [
@@ -814,7 +814,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "m_c has decided that hunting and fighting is not the way they can provide for their Clan. Instead, they have decided to serve their Clan by healing and communing with StarClan. (mentor) proudly becomes their mentor."
+    "m_c has decided that hunting and fighting is not the way {PRONOUN/m_c/subject} can provide for {PRONOUN/m_c/poss} Clan. Instead, they have decided to serve their Clan by healing and communing with StarClan. (mentor) proudly becomes their mentor."
   ],
   "med_app_2": [
     [

@@ -388,7 +388,7 @@ class Cat():
                     "subject": "she",
                     "object": "her",
                     "poss": "her",
-                    "poss2": "hers",
+                    "inposs": "hers",
                     "self": "herself",
                     "conju": 2
                 }
@@ -397,7 +397,7 @@ class Cat():
                     "subject": "him",
                     "object": "him",
                     "poss": "his",
-                    "poss2": "his",
+                    "inposs": "his",
                     "self": "himself",
                     "conju": 2
                 }
@@ -406,7 +406,7 @@ class Cat():
                     "subject": "they",
                     "object": "them",
                     "poss": "their",
-                    "poss2": "theirs",
+                    "inposs": "theirs",
                     "self": "themself",
                     "conju": 1
                 }

@@ -76,7 +76,7 @@ def json_load():
         "subject": "they",
         "object": "them",
         "poss": "their",
-        "poss2": "theirs",
+        "inposs": "theirs",
         "self": "themself",
         "conju": 1
     }
