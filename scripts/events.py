@@ -1273,7 +1273,7 @@ class Events():
                 #print(f"{cat.name} not working, no EX gain")
                 return
 
-            if cat.experience > cat.experience_levels_range["trainee"]:
+            if cat.experience > cat.experience_levels_range["trainee"][0]:
                 return
 
             if cat.status == "medicine cat apprentice":
