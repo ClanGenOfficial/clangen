@@ -95,7 +95,7 @@
 		"primary_chance_mated": 50,
 		"primary_chance_unmated": 110,
 		"random_affair_chance": 70,
-		"unmated_random_affair_chance": 15
+		"unmated_random_affair_chance": 20
 	},
 	"cat_generation": {
 		"base_permanent_condition": 90,
