@@ -5,6 +5,8 @@ import os
 
 import pygame
 
+from scripts.events_module.generate_events import OngoingEvent
+
 try:
     import ujson
 except ImportError:
