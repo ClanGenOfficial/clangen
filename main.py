@@ -7,6 +7,8 @@ if directory:
 
 import subprocess
 
+import time
+
 # Setup logging
 import logging 
 formatter = logging.Formatter("%(name)s - %(levelname)s - %(filename)s / %(funcName)s / %(lineno)d - %(message)s")
@@ -15,6 +17,7 @@ file_handler = logging.FileHandler("clangen.log")
 file_handler.setFormatter(formatter)
 # Only log errors to file
 file_handler.setLevel(logging.ERROR)
+file_handler.emit("Starting game " + time.localtime())
 # Logging for console 
 stream_handler = logging.StreamHandler()
 stream_handler.setFormatter(formatter)
@@ -27,7 +30,6 @@ def log_crash(type, value, tb):
     sys.__excepthook__(type, value, tb)
 
 sys.excepthook = log_crash
-
 
 # if user is developing in a github codespace
 if os.environ.get('CODESPACES'):
