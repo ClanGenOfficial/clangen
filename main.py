@@ -17,7 +17,6 @@ file_handler = logging.FileHandler("clangen.log")
 file_handler.setFormatter(formatter)
 # Only log errors to file
 file_handler.setLevel(logging.ERROR)
-file_handler.emit("Starting game " + time.strftime("%r"))
 # Logging for console 
 stream_handler = logging.StreamHandler()
 stream_handler.setFormatter(formatter)
