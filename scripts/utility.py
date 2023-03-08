@@ -137,12 +137,18 @@ def get_cats_same_age(cat, range = 10):
 
 def pronoun_repl(m, cat_pronouns_dict):
     inner_details = m.group(1).split("/")
-    d = cat_pronouns_dict[inner_details[1]]
-    if inner_details[0] == "PRONOUN":
-        return d[inner_details[2]]
-    elif inner_details[0] == "VERB":
-        return inner_details[d["conju"]]
-    return "error"
+    try:
+        d = cat_pronouns_dict[inner_details[1]]
+        if inner_details[0] == "PRONOUN":
+            pro = d[inner_details[2]]
+            if inner_details[-1] == "CAP":
+                pro.capitize()
+            return pro
+        elif inner_details[0] == "VERB":
+            return inner_details[d["conju"] + 1]
+        return "error"
+    except:
+        return "error"
 
 def change_clan_reputation(difference=0):
     """

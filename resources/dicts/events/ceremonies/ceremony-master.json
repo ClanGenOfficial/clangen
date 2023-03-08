@@ -216,7 +216,7 @@
       "strange",
       "troublesome"
     ],
-    "m_c fidgets impatiently beside (mentor) as {PRONOUN/m_c/subject} wait for the meeting to end. {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} finally an apprentice! {PRONOUN/m_c/subject} {VERB/m_c/want/wants} to hurry up, get out there, and go, go, go!"
+    "m_c fidgets impatiently beside (mentor) as {PRONOUN/m_c/subject} wait for the meeting to end. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} finally an apprentice! {PRONOUN/m_c/subject} {VERB/m_c/want/wants} to hurry up, get out there, and go, go, go!"
   ],
   "app_14": [
     [
@@ -322,7 +322,7 @@
       "fierce",
       "playful"
     ],
-    "(prefix)kit sits in front of the Clan with pride, {PRONOUN/m_c/poss} tiny heart beating so fast {PRONOUN/m_c/subject} {VERB/m_c/think/thinks} it might explode! {PRONOUN/m_c/subject} very excitedly touch noses with (mentor), happy to start {PRONOUN/m_c/poss} apprenticeship."
+    "(prefix)kit sits in front of the Clan with pride, {PRONOUN/m_c/poss} tiny heart beating so fast {PRONOUN/m_c/subject} {VERB/m_c/think/thinks} it might explode! {PRONOUN/m_c/subject/CAP} very excitedly touch noses with (mentor), happy to start {PRONOUN/m_c/poss} apprenticeship."
   ],
   "app_31": [
     [
@@ -462,7 +462,7 @@
       "vengeful",
       "thoughtful"
     ],
-    "As m_c touches noses with (mentor), they hope {PRONOUN/m_c/subject}'ll get to do something that will really impress the Clan on {PRONOUN/m_c/poss} first day. Maybe {PRONOUN/m_c/subject} could catch a big, fat rabbit? Or chase off a fox! That'll show the Clan {PRONOUN/m_c/poss}{VERB/m_c/'re/'s} the best apprentice anyone's ever seen!"
+    "As m_c touches noses with (mentor), {PRONOUN/m_c/subject} {VERB/m_c/hope/hopes} {PRONOUN/m_c/subject}'ll get to do something that will really impress the Clan on {PRONOUN/m_c/poss} first day. Maybe {PRONOUN/m_c/subject} could catch a big, fat rabbit? Or chase off a fox! That'll show the Clan {PRONOUN/m_c/poss}{VERB/m_c/'re/'s} the best apprentice anyone's ever seen!"
   ],
   "app_37": [
     [
@@ -480,7 +480,7 @@
       "troublesome",
       "vengeful"
     ],
-    "m_c sits excitedly beside (mentor) as the meeting ends, and hopes they'll be doing something exciting like battle training first. Their claws are itching to tear at something."
+    "m_c sits excitedly beside (mentor) as the meeting ends, and hopes {PRONOUN/m_c/subject}'ll be doing something exciting like battle training first. {PRONOUN/m_c/poss} claws are itching to tear at something."
   ],
   "app_38": [
     [
@@ -501,7 +501,7 @@
       "strict",
       "wise"
     ],
-    "m_c touches noses with their mentor, (mentor), looking bored and unimpressed. But on the inside, they're bouncing around with euphoria as if they were still a kit!"
+    "m_c touches noses with their mentor, (mentor), looking bored and unimpressed. But on the inside, {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} bouncing around with euphoria as if {PRONOUN/m_c/subject} were still a kit!"
   ],
   "app_39": [
     [
@@ -515,7 +515,7 @@
       "shameless",
       "troublesome"
     ],
-    "m_c has been pestering everyone for moons on when they finally get to be an apprentice, and everyone is relieved that they're finally free of the young cat's nagging... Until they start asking about when they're going to be a warrior as soon as the meeting ends."
+    "m_c has been pestering everyone for moons on when {PRONOUN/m_c/subject} finally {VERB/m_c/get/gets} to be an apprentice, and everyone is relieved that they're finally free of the young cat's nagging... Until {PRONOUN/m_c/subject} {VERB/m_c/start/starts} asking about when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} going to be a warrior as soon as the meeting ends."
   ],
   "app_40": [
     [
@@ -530,7 +530,7 @@
       "confident",
       "strange"
     ],
-    "As their mentor is about to be chosen, m_c interrupts and announces they want their mentor to be (mentor). They stride forward with confidence to touch noses with (mentor) when it's allowed."
+    "As {PRONOUN/m_c/poss} mentor is about to be chosen, m_c interrupts and announces {PRONOUN/m_c/subject} want {PRONOUN/m_c/poss} mentor to be (mentor). {PRONOUN/m_c/subject} stride forward with confidence to touch noses with (mentor) when it's allowed."
   ],
   "app_41": [
     [
@@ -545,7 +545,7 @@
       "childish",
       "playful"
     ],
-    "m_c can't believe their apprenticeship is finally here! Nearly tripping over their own paws, they scurry up to (mentor), excitedly touching noses with them."
+    "m_c can't believe {PRONOUN/m_c/poss} apprenticeship is finally here! Nearly tripping over {PRONOUN/m_c/poss} own paws, {PRONOUN/m_c/subject} {VERB/m_c/scurry/scurries} up to (mentor), excitedly touching noses with {PRONOUN/(mentor)/object}."
   ],
   "app_42": [
     [
@@ -558,7 +558,7 @@
       "insecure",
       "nervous"
     ],
-    "Newly apprenticed m_c can't help but squeak when their mentor's name is announced, and they run with their tail tucked between their legs in embarrassment to touch noses with (mentor)."
+    "Newly apprenticed m_c can't help but squeak when {PRONOUN/m_c/poss} mentor's name is announced, and {PRONOUN/m_c/subject} {VERB/m_c_run/runs} with {PRONOUN/m_c/poss} tail tucked between {PRONOUN/m_c/poss} legs in embarrassment to touch noses with (mentor)."
   ],
   "app_43": [
     [
@@ -569,7 +569,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "The Clan gathers around and urges (prefix)kit to go to the front of the crowd. Not having a leader isn't an excuse to force a cat to stay in the nursery when they're six moons old. (prefix)kit is renamed m_c, and the Clan votes to make (mentor) their mentor."
+    "The Clan gathers around and urges (prefix)kit to go to the front of the crowd. Not having a leader isn't an excuse to force a cat to stay in the nursery when they're six moons old. (prefix)kit is renamed m_c, and the Clan votes to make (mentor) {PRONOUN/m_c/poss} mentor."
   ],
   "app_44": [
     [
@@ -580,7 +580,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "The Clan cheers for the new apprentice, m_c. They allow them to choose their own mentor, and m_c chooses (mentor)."
+    "The Clan cheers for the new apprentice, m_c. They allow {PRONOUN/m_c/object} to choose {PRONOUN/m_c/poss} own mentor, and m_c chooses (mentor)."
   ],
   "app_45": [
     [
@@ -591,7 +591,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "With m_c's apprentice ceremony completed, there's still the problem of figuring out who will mentor them. (mentor) steps forward and offers to mentor them first, and m_c touches noses with them."
+    "With m_c's apprentice ceremony completed, there's still the problem of figuring out who will mentor {PRONOUN/m_c/object}. (mentor) steps forward and offers to mentor {PRONOUN/m_c/object} first, and m_c touches noses with {PRONOUN/(mentor)/object}."
   ],
   "app_46": [
     [
@@ -602,7 +602,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "p1 is watching with pride as m_c is named and given to (mentor) to apprentice under. They know that (mentor) was a good choice."
+    "p1 is watching with pride as m_c is named and given to (mentor) to apprentice under. {PRONOUN/p1/subject} know that (mentor) was a good choice."
   ],
   "app_47": [
     [
@@ -614,7 +614,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "(prefix)kit loudly complains as p1 pulls them over to quickly groom their pelt. They manage to wriggle away and scurry off to the front of the crowd for their ceremony, where they are renamed to m_c and apprenticed to (mentor). "
+    "(prefix)kit loudly complains as p1 pulls {PRONOUN/m_c/subject} over to quickly groom {PRONOUN/m_c/poss} pelt. {PRONOUN/m_c/subject} {VERB/m_c/manage/manages} to wriggle away and scurry off to the front of the crowd for {PRONOUN/m_c/poss} ceremony, where {PRONOUN/m_c/subject} are renamed to m_c and apprenticed to (mentor). "
   ],
   "app_48": [
     [
@@ -626,7 +626,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "Even though they are excited to finally be made an apprentice, it takes a bit of coaxing by p1 for (prefix)kit to step forward for their ceremony. p1 watches in pride as they're named m_c, and touch noses with (mentor)."
+    "Even though {PRONOUN/m_c/subject} are excited to finally be made an apprentice, it takes a bit of coaxing by p1 for (prefix)kit to step forward for {PRONOUN/m_c/poss} ceremony. p1 watches in pride as {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} named m_c, and touch noses with (mentor)."
   ],
   "app_49": [
     [
@@ -638,7 +638,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "m_c hopes that dead_par1 is watching in pride from StarClan as they are apprenticed to (mentor)."
+    "m_c hopes that dead_par1 is watching in pride from StarClan as {PRONOUN/m_c/subject} are apprenticed to (mentor)."
   ],
   "app_50": [
     [
@@ -650,7 +650,7 @@
       "clanborn",
       "all_traits"
     ],
-    "m_c wishes that they could be happier about being made an apprentice as they touch noses with (mentor), but all they can think about is how much they wish that dead_par1 was still there to chant their name with the rest of the Clan."
+    "m_c wishes that {PRONOUN/m_c/subject} could be happier about being made an apprentice as {PRONOUN/m_c/subject} {VERB/m_c/touch/touches} noses with (mentor), but all {PRONOUN/m_c/subject} can think about is how much {PRONOUN/m_c/subject} {VERB/m_c/wish/wishes} that dead_par1 was still there to chant {PRONOUN/m_c/poss} name with the rest of the Clan."
   ],
   "app_51": [
     [
@@ -662,7 +662,7 @@
       "clanborn",
       "all_traits"
     ],
-    "m_c tries to keep up a brave face as they're apprenticed to (mentor), but they keep stealing glances at the crowd, as if trying to find dead_par1 despite knowing they're no longer with them."
+    "m_c tries to keep up a brave face as {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} apprenticed to (mentor), but {PRONOUN/m_c/subject} keep stealing glances at the crowd, as if trying to find dead_par1 despite knowing {PRONOUN/dead_par1/subject}{VERB/dead_par1/'re/'s} no longer with them."
   ],
   "app_52": [
     [
@@ -674,7 +674,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "m_c sits beside their new mentor, (mentor) as the meeting comes to a close. Their claws dig into the ground as they glare up at the sky, wondering why dead_par1 couldn't be there with them at such an important moment."
+    "m_c sits beside {PRONOUN/m_c/poss} new mentor, (mentor), as the meeting comes to a close. {PRONOUN/m_c/poss} claws dig into the ground as {PRONOUN/m_c/subject} glare up at the sky, wondering why dead_par1 couldn't be there with {PRONOUN/m_c/object} at such an important moment."
   ],
   "app_53": [
     [
@@ -686,7 +686,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "m_c smiles up at the stars as they sit beside (mentor). The stars seem to shine brighter, and m_c knows it's a sign that dead_par1 is still watching over them."
+    "m_c smiles up at the stars as {PRONOUN/m_c/subject} {VERB/m_c/sit/sits} beside (mentor). The stars seem to shine brighter, and m_c knows it's a sign that dead_par1 is still watching over {PRONOUN/m_c/object}."
   ],
   "app_54": [
     [
@@ -698,7 +698,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "As m_c touches noses with their new mentor, (mentor), they make a silent promise to dead_par1 to make them proud, and to take care of the Clan in their parent's absence."
+    "As m_c touches noses with {PRONOUN/m_c/poss} new mentor, (mentor), {PRONOUN/m_c/subject} {VERB/m_c/make/makes} a silent promise to dead_par1 to make {PRONOUN/dead_par1/object} proud, and to take care of the Clan in {PRONOUN/m_c/poss} parent's absence."
   ],
   "app_55": [
     [
@@ -709,7 +709,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "(prefix)kit runs up to the front of the crowd, eager to get their new name. When they're called m_c for the first time, p1 and p2's voices can be heard the loudest as the Clan welcomes the new apprentice."
+    "(prefix)kit runs up to the front of the crowd, eager to get {PRONOUN/m_c/poss} new name. When {PRONOUN/m_c/poss}{VERB/m_c/'re/'s} called m_c for the first time, p1 and p2's voices can be heard the loudest as the Clan welcomes the new apprentice."
   ],
   "app_56": [
     [
@@ -721,7 +721,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "m_c hopes that dead_par1 and dead_par2 are watching in pride from StarClan as they are apprenticed to (mentor)."
+    "m_c hopes that dead_par1 and dead_par2 are watching in pride from StarClan as {PRONOUN/m_c/subject} {VERB/m_c/are/is} apprenticed to (mentor)."
   ],
   "app_57": [
     [
@@ -733,7 +733,7 @@
       "clanborn",
       "all_traits"
     ],
-    "m_c wishes that they could be happier about being made an apprentice as they touch noses with (mentor), but all they can think about is how much they wish that dead_par1 and dead_par2 were still there to chant their name with the rest of the Clan."
+    "m_c wishes that {PRONOUN/m_c/subject} could be happier about being made an apprentice as {PRONOUN/m_c/subject} {VERB/m_c/touch/touches} noses with (mentor), but all {PRONOUN/m_c/subject} can think about is how much they wish that dead_par1 and dead_par2 were still there to chant {PRONOUN/m_c/poss} name with the rest of the Clan."
   ],
   "app_58": [
     [
@@ -745,7 +745,7 @@
       "clanborn",
       "all_traits"
     ],
-    "m_c tries to keep up a brave face as they're apprenticed to (mentor), but they keep stealing glances at the crowd, as if trying to find dead_par1 and dead_par2 despite knowing they're no longer with them."
+    "m_c tries to keep up a brave face as {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} apprenticed to (mentor), but {PRONOUN/m_c/subject} {VERB/m_c/keep/keeps} stealing glances at the crowd, as if trying to find dead_par1 and dead_par2 despite knowing they're no longer with {PRONOUN/m_c/object}."
   ],
   "app_59": [
     [
@@ -757,7 +757,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "m_c sits beside their new mentor, (mentor) as the meeting comes to a close. Their claws dig into the ground as they glare up at the sky, wondering why dead_par1 and dead_par2 couldn't be there with them at such an important moment."
+    "m_c sits beside {PRONOUN/m_c/poss} new mentor, (mentor), as the meeting comes to a close. {PRONOUN/m_c/subject} claws dig into the ground as {PRONOUN/m_c/subject} {VERB/glare/glares} up at the sky, wondering why dead_par1 and dead_par2 couldn't be there with {PRONOUN/m_c/object} at such an important moment."
   ],
   "app_60": [
     [
@@ -769,7 +769,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "m_c smiles up at the stars as they sit beside (mentor). The stars seem to shine brighter, and m_c knows it's a sign that dead_par1 and dead_par2 are still watching over them."
+    "m_c smiles up at the stars as {PRONOUN/m_c/subject} {VERB/sit/sits} beside (mentor). The stars seem to shine brighter, and m_c knows it's a sign that dead_par1 and dead_par2 are still watching over {PRONOUN/m_c/object}."
   ],
   "app_61": [
     [
