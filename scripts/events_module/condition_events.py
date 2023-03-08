@@ -107,6 +107,12 @@ class Condition_Events():
 
         # handle if the current cat is already injured
         if cat.is_injured() and game.clan.game_mode != 'classic':
+            pregnant = False
+            for injury in cat.injuries:
+                if injury == 'pregnant':
+                    pregnant = True
+            if pregnant:
+                return triggered
             triggered, event_string = self.handle_already_injured(cat)
             text = event_string
         else:
