@@ -1,5 +1,5 @@
 from random import choice
-
+import re
 import pygame
 
 from scripts.cat.appearance_utility import plural_acc_names
@@ -135,6 +135,14 @@ def get_cats_same_age(cat, range = 10):
 
     return cats
 
+def pronoun_repl(m, cat_pronouns_dict):
+    inner_details = m.group(1).split("/")
+    d = cat_pronouns_dict[inner_details[1]]
+    if inner_details[0] == "PRONOUN":
+        return d[inner_details[2]]
+    elif inner_details[0] == "VERB":
+        return inner_details[d["conju"]]
+    return "error"
 
 def change_clan_reputation(difference=0):
     """
@@ -485,6 +493,30 @@ def ceremony_text_adjust(Cat, text, cat, dead_mentor=None, mentor=None, previous
     random_honor = random_honor
 
     adjust_text = text
+
+    pronouns_dict = {
+        "m_c": cat.pronouns if cat else {},
+        "(mentor)": mentor.pronouns if mentor else {},
+        "(deadmentor)": dead_mentor.pronouns if dead_mentor else {},
+        "l_n": game.clan.leader.pronouns if game.clan.leader else {},
+    }
+    if "p1" in adjust_text and "p2" in adjust_text and len(living_parents) >= 2:
+        pronouns_dict["p1"] = living_parents[0].pronouns
+        pronouns_dict["p2"] = living_parents[1].pronouns
+    elif random_living_parent:
+        pronouns_dict["p1"] = random_living_parent.pronouns
+        pronouns_dict["p2"] = random_living_parent.pronouns
+
+    if "dead_par1" in adjust_text and "dead_par2" in adjust_text and len(dead_parents) >= 2:
+        pronouns_dict["dead_par1"] = dead_parents[0].pronouns
+        pronouns_dict["dead_par2"] = dead_parents[1].pronouns
+    elif random_dead_parent:
+        pronouns_dict["dead_par1"] = random_dead_parent.pronouns
+        pronouns_dict["dead_par2"] = random_dead_parent.pronouns
+
+    #Pronouns
+    adjust_text = re.sub(r"\{(.*?)}", lambda x: pronoun_repl(x, pronouns_dict), adjust_text)
+
     adjust_text = adjust_text.replace("(prefix)", prefix)
     adjust_text = adjust_text.replace("m_c", name)
     adjust_text = adjust_text.replace("c_n", clanname)

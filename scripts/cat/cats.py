@@ -256,6 +256,7 @@ class Cat():
         self.scar_event = []
         self.death_event = []
         self.df = False
+        self.pronouns = {}
         self.experience_level = None
         self.corruption = 0
         self.life_givers = []
@@ -381,6 +382,34 @@ class Cat():
                     self.genderalign = self.gender
             else:
                 self.genderalign = self.gender
+
+            if self.genderalign in ["female", "trans female"]:
+                self.pronouns = {
+                    "subject": "she",
+                    "object": "her",
+                    "poss": "her",
+                    "poss2": "hers",
+                    "self": "herself",
+                    "conju": 2
+                }
+            elif self.genderalign in ["male", "trans male"]:
+                self.pronouns = {
+                    "subject": "him",
+                    "object": "him",
+                    "poss": "his",
+                    "poss2": "his",
+                    "self": "himself",
+                    "conju": 2
+                }
+            else:
+                self.pronouns = {
+                    "subject": "they",
+                    "object": "them",
+                    "poss": "their",
+                    "poss2": "theirs",
+                    "self": "themself",
+                    "conju": 1
+                }
 
             # APPEARANCE
             init_pelt(self)

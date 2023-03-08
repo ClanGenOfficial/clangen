@@ -72,6 +72,15 @@ def json_load():
         'TUXEDOCREAMY': 'TUXEDO'
     }
 
+    default_pronouns = {
+        "subject": "they",
+        "object": "them",
+        "poss": "their",
+        "poss2": "theirs",
+        "self": "themself",
+        "conju": 1
+    }
+
     no_tint_patches = ['SEPIAPOINT', 'MINKPOINT', 'SEALPOINT']
 
     # create new cat objects
@@ -185,6 +194,7 @@ def json_load():
             new_cat.prevent_fading = cat["prevent_fading"] if "prevent_fading" in cat else False
             new_cat.favourite = cat["favourite"] if "favourite" in cat else False
             new_cat.tint = cat["tint"] if "tint" in cat else "none"
+            new_cat.pronouns = cat["pronouns"] if "pronouns" in cat else default_pronouns
             all_cats.append(new_cat)
         except KeyError as e:
             if "ID" in cat:
