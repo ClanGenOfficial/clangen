@@ -495,7 +495,7 @@ class Pregnancy_Events():
                     print("love affair", str(cat.name), str(highest_romantic_relation.cat_to.name))
                     return highest_romantic_relation.cat_to
         elif highest_romantic_relation:
-            # Love affair change if neither the cat nor the highest romantic relation has a mate:
+            # Love affair change if the cat doesn't have a mate:
             chance_love_affair = self.get_unmated_love_affair_chance(highest_romantic_relation)
             print("chance unmated love affair")
             if not chance_love_affair or not int(random.random() * chance_love_affair):
