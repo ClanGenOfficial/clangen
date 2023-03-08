@@ -201,7 +201,7 @@ class Pregnancy_Events():
             severity = random.choices(["minor", "major"], [3, 1], k=1)
             pregnant_cat.get_injured("pregnant", severity=severity[0])
             text += choice(PREGNANT_STRINGS[f"{severity[0]}_severity"])
-        text = event_text_adjust(Cat, text, pregnant_cat)
+        text = event_text_adjust(Cat, text, pregnant_cat, clan=clan)
         game.cur_events_list.append(Single_Event(text, "birth_death", pregnant_cat.ID))
 
     def handle_one_moon_pregnant(self, cat, clan=game.clan):
@@ -245,7 +245,7 @@ class Pregnancy_Events():
             cat.injuries["pregnant"]["duration"] -= 1
             cat.injuries["pregnant"]["moons_with"] += 1
 
-        text = event_text_adjust(Cat, text, cat)
+        text = event_text_adjust(Cat, text, cat, clan=clan)
         game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
 
 
@@ -337,7 +337,7 @@ class Pregnancy_Events():
             cat.injuries.pop("pregnant")
         print_event = " ".join(event_list)
         print_event = print_event.replace("{insert}", insert)
-        print_event = event_text_adjust(Cat, print_event, cat, other_cat)
+        print_event = event_text_adjust(Cat, print_event, cat, other_cat, clan=clan)
         # display event
         game.cur_events_list.append(Single_Event(print_event, ["health", "birth_death"], involved_cats))
 
