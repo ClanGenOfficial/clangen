@@ -17,7 +17,8 @@ class Name():
                 for new_name in new_names:
                     if new_name != '':
                         if new_name.startswith('-'):
-                            names_dict["normal_prefixes"].pop(new_name[1:])
+                            while new_name[1:] in names_dict["normal_prefixes"]:
+                                names_dict["normal_prefixes"].pop(names_dict["normal_prefixes"].index(new_name[1:]))
                         else:
                             names_dict["normal_prefixes"].append(new_name)
 
@@ -30,7 +31,8 @@ class Name():
                 for new_name in new_names:
                     if new_name != '':
                         if new_name.startswith('-'):
-                            names_dict["normal_suffixes"].pop(new_name[1:])
+                            while new_name[1:] in names_dict["normal_suffixes"]:
+                                names_dict["normal_suffixes"].pop(names_dict["normal_suffixes"].index(new_name[1:]))
                         else:
                             names_dict["normal_suffixes"].append(new_name)
 
