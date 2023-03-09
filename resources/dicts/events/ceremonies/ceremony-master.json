@@ -825,7 +825,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "Interested in herbs even in their kithood, m_c is eager to be apprenticed to (mentor)."
+    "Interested in herbs even in their {PRONOUN/m_c/poss}, m_c is eager to be apprenticed to (mentor)."
   ],
   "med_app_3": [
     [
@@ -836,7 +836,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "Interested in all the myths and stories told by the elders and queens, m_c decides to become a medicine cat apprentice, hoping to someday speak to those gone before. (mentor) loves their determination and eagerness to learn, and agrees to take them on as their apprentice."
+    "Interested in all the myths and stories told by the elders and queens, m_c decides to become a medicine cat apprentice, hoping to someday speak to those gone before. (mentor) loves {PRONOUN/m_c/poss} determination and eagerness to learn, and agrees to take {PRONOUN/m_c/object} on as {PRONOUN/(mentor)/poss} apprentice."
   ],
   "med_app_4": [
     [
@@ -847,7 +847,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "The thought alone of fighting and hurting another cat makes m_c shiver. They decide to heal instead of fight, and (mentor) takes them under their wing."
+    "The thought alone of fighting and hurting another cat makes m_c shiver. {PRONOUN/m_c/subject} {VERB/m_c/decide/decides} to heal instead of fight, and (mentor) takes {PRONOUN/m_c/object} under {PRONOUN/(mentor)/poss} wing."
   ],
   "med_app_5": [
     [
@@ -858,7 +858,7 @@
       "general_backstory",
       "ambitious"
     ],
-    "Wanting to stand out among their Clanmates more, m_c decides to become a medicine cat, and is apprenticed to (mentor)."
+    "Wanting to stand out among {PRONOUN/m_c/poss} Clanmates more, m_c decides to become a medicine cat, and is apprenticed to (mentor)."
   ],
    "med_app_6": [
     [
@@ -881,7 +881,7 @@
       "nervous",
       "insecure"
     ],
-    "Worried they may not be good as a hunter or fighter, but still wanting to make their Clan proud somehow, m_c decides to become a medicine cat apprentice under (mentor)."
+    "Worried they may not be good as a hunter or fighter, but still wanting to make {PRONOUN/m_c/poss} Clan proud somehow, m_c decides to become a medicine cat apprentice under (mentor)."
   ],
   "med_app_8": [
     [
@@ -892,7 +892,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "(mentor) stands before the Clan and announces that they will not be there forever, and it is time they took on an apprentice. They tell the Clan that they have chosen (prefix)kit, now m_c, to be their new apprentice."
+    "(mentor) stands before the Clan and announces that {PRONOUN/(mentor)/subject} won't be there forever, and it is time {PRONOUN/(mentor)/subject} took on an apprentice. They tell the Clan that {PRONOUN/(mentor)/subject} have chosen (prefix)kit, now m_c, to be {PRONOUN/(mentor)/poss} new apprentice."
   ],
   "med_app_9": [
     [
@@ -903,7 +903,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "(mentor) has no doubts in their mind of who their new apprentice will be. (prefix)kit has always been looking for an excuse to be in their den, asking endless questions about what each herb is and what it's used for. And as (mentor) announces that the newly named m_c, will be their apprentice, they see m_c's eyes shining in delight and excitement, and know they were right in choosing them."
+    "(mentor) has no doubts in their mind of who {PRONOUN/(mentor)/poss} new apprentice will be. (prefix)kit has always been looking for an excuse to be in {PRONOUN/(mentor)/poss} den, asking endless questions about what each herb is and what it's used for. And as (mentor) announces that the newly named m_c will be {PRONOUN/(mentor)/poss} apprentice, {PRONOUN/(mentor)/subject} {VERB/(mentor)/see/sees} m_c's eyes shining in delight and excitement, and knows {PRONOUN/(mentor)/subject} {VERB/(mentor)/were/was} right in choosing {PRONOUN/m_c/object}."
   ],
   "med_app_10": [
     [
@@ -925,7 +925,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "StarClan speaks, and has decided that the new medicine cat apprentice shall be m_c. m_c is unsure if they are ready for this role without a mentor, but the stars promise to guide them."
+    "StarClan speaks: the new medicine cat apprentice shall be m_c. m_c is unsure if {PRONOUN/m_c/subject} {VERB/m_c/are/is} ready for the role without a mentor, but the stars promise to guide {PRONOUN/m_c/object}."
   ],
   "med_app_12": [
     [
@@ -936,7 +936,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "The Clan needs a new medicine cat, and m_c is chosen for the role. m_c is stunned that they were chosen, but agrees anyway, knowing how badly the Clan needs a medicine cat."
+    "The Clan needs a new medicine cat, and m_c is chosen for the role. m_c is stunned that {PRONOUN/m_c/subject} {VERB/m_c/were/was} chosen, but agrees anyway, knowing how badly the Clan needs a medicine cat."
   ],
   "med_app_13": [
     [
@@ -947,7 +947,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "m_c has decided that hunting and fighting is not the way they can provide for their Clan. Instead, they have decided to serve their Clan by healing and communing with StarClan - who will be the ones to train them with the absence of a proper mentor."
+    "m_c has decided that hunting and fighting is not the way {PRONOUN/m_c/subject} can provide for {PRONOUN/m_c/poss} Clan. Instead, {PRONOUN/m_c/subject} {VERB/m_c/have/has} decided to serve {PRONOUN/m_c/poss} Clan by healing and communing with StarClan - who will be the ones to train {PRONOUN/m_c/object} in the absence of a proper mentor."
   ],
   "med_app_14": [
     [
@@ -958,7 +958,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "Interested in herbs even in their kithood, m_c is eager to be made the new medicine cat apprentice, and learn how to heal from those who came before them."
+    "Interested in herbs even in {PRONOUN/m_c/poss} kithood, m_c is eager to be made the new medicine cat apprentice, and learn how to heal from those who came before {PRONOUN/m_c/object}."
   ],
   "med_app_15": [
     [
@@ -969,7 +969,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "The thought alone of fighting and hurting another cat makes m_c shiver. Knowing the Clan needs a medicine cat, they seize the chance to do good for the Clan without harming others, they take on the role of medicine cat apprentice."
+    "The thought alone of fighting and hurting another cat makes m_c shiver. Knowing the Clan needs a medicine cat, {PRONOUN/m_c/subject} {VERB/m_c/seize/seizes} the chance to do good for the Clan without harming others. {PRONOUN/m_c/subject/CAP} {VERB/m_c/take/takes} on the role of medicine cat apprentice."
   ],
   "med_app_16": [
     [
@@ -980,7 +980,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "Knowing the Clan is in desperate need of a medicine cat, and wanting to do something to stand out and do something more important, m_c announces mid-meeting that they want to be the new medicine cat apprentice."
+    "Knowing the Clan is in desperate need of a medicine cat, and wanting to do something to stand out and do something more important, m_c announces mid-meeting that {PRONOUN/m_c/subject} {VERB/m_c/want/wants} to be the new medicine cat apprentice."
   ],
   "med_app_17": [
     [
@@ -991,7 +991,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "m_c decides to become a medicine cat apprentice in hopes that they will be able to see dead_par1 in StarClan."
+    "m_c decides to become a medicine cat apprentice in hopes that {PRONOUN/m_c/subject} will be able to see dead_par1 in StarClan."
   ],
   "med_app_18": [
     [
@@ -1002,7 +1002,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "As the new medicine cat apprentice, m_c dreams of StarClan for the first time. They are greeted by many StarClan cats, one of which they recognize as dead_par1, who is watching in pride as the rest of StarClan's ranks accept the new medicine cat apprentice."
+    "As the new medicine cat apprentice, m_c dreams of StarClan for the first time. {PRONOUN/m_c/subject} {VERB/m_c/are/is} greeted by many StarClan cats, one of which {PRONOUN/m_c/subject} {VERB/m_c/recognize/recognizes} as dead_par1, who is watching in pride as the rest of StarClan's ranks accept the new medicine cat apprentice."
   ],
   "med_app_19": [
     [
@@ -1013,7 +1013,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "m_c decides to become a medicine cat apprentice in hopes that they will be able to see dead_par1 and dead_par2 in StarClan"
+    "m_c decides to become a medicine cat apprentice in hopes that {PRONOUN/m_c/subject} will be able to see dead_par1 and dead_par2 in StarClan"
   ],
   "med_app_20": [
     [
@@ -1024,7 +1024,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "As the new medicine cat apprentice, m_c dreams of StarClan for the first time. They are greeted by many StarClan cats, two of which they recognize as dead_par1 and dead_par2, who are watching in pride as the rest of StarClan's ranks accept the new medicine cat apprentice."
+    "As the new medicine cat apprentice, m_c dreams of StarClan for the first time. {PRONOUN/m_c/subject} {VERB/m_c/are/is} greeted by many StarClan cats, two of which {PRONOUN/m_c/subject} {VERB/m_c/recognize/recognizes} as dead_par1 and dead_par2, who are watching in pride as the rest of StarClan's ranks accept the new medicine cat apprentice."
   ],
   "med_app_21": [
     [
@@ -1034,7 +1034,7 @@
       "general_backstory",
       "faithful"
     ],
-    "m_c Has been looking and wondering about the mysteries of the stars ever since they first opened their eyes. (mentor) promises them their own place amongst them as a full medicine cat one day."
+    "m_c has been looking and wondering about the mysteries of the stars ever since {PRONOUN/m_c/subject} first opened {PRONOUN/m_c/poss} eyes. (mentor) promises {PRONOUN/m_c/object} {PRONOUN/m_c/poss} own place amongst them as a full medicine cat one day."
   ],
   "med_app_22": [
     [
@@ -1044,7 +1044,7 @@
      "general_backstory",
      "wise"
     ],
-    "m_c sees no reason to sully their claws with blood, they are far more interested in the knowledge and wisdom that can be gained with being an medicine cat apprentice. (mentor) promises to teach them all they know and they go into the medicine den together immediately after the ceremony."
+    "m_c sees no reason to sully their claws with blood, {PRONOUN/m_c/subject} {VERB/m_c/are/is} far more interested in the knowledge and wisdom that can be gained by a medicine cat apprentice. (mentor) promises to teach {PRONOUN/m_c/object} all {PRONOUN/(mentor)/subject} {VERB/(mentor)/know/knows} and they go into the medicine den together immediately after the ceremony."
   ],
   "med_app_23": [
     [
@@ -1054,7 +1054,7 @@
       "general_backstory",
       "thoughtful"
     ],
-    "m_c has been wondering and pondering about the mysteries of life and the meaning of it all. (mentor) is eager to start teaching them, they sound like a delight to work with!"
+    "m_c has been wondering and pondering about the mysteries of life and the meaning of it all. (mentor) is eager to start teaching {PRONOUN/m_c/object}; {PRONOUN/m_c/subject} {VERB/m_c/sound/sounds} like a delight to work with!"
   ],
   "med_app_24": [
     [
@@ -1064,7 +1064,7 @@
       "general_backstory",
       "loving"
     ],
-    "m_c was never interested in fighting and decided to devote their life to healing and helping all kinds of cats in any way they can. (mentor) is almost awed when they see the determination and love they feel for all the cats that they meet and is extremely proud to become their mentor."
+    "m_c was never interested in fighting and decided to devote {PRONOUN/m_c/poss} life to healing and helping all kinds of cats in any way {PRONOUN/m_c/subject} can. (mentor) is almost awed when {PRONOUN/(mentor)/subject} {VERB/(mentor)/see/sees} the determination and love m_c feels for all the cats that they meet and is extremely proud to become {PRONOUN/(mentor)/poss} mentor."
   ],
   "med_app_25": [
     [
@@ -1084,7 +1084,7 @@
       "general_backstory",
       "bold"
     ],
-    "m_c tells (mentor) right after the ceremony that they will tell them if they think they are being a mousebrain. All the other cats immediately gasp and look towards their mentors reaction and relax as (mentor) only laughs and says that they better prove that they have the skills to do that then."
+    "m_c tells (mentor) right after the ceremony that {PRONOUN/m_c/subject} will tell {PRONOUN/(mentor)/object} if {PRONOUN/m_c/subject} {VERB/m_c/think/thinks} they're being a mousebrain. All the other cats immediately gasp and look towards their mentors reaction and relax as (mentor) only laughs and says that {PRONOUN/m_c/subject} better prove that {PRONOUN/m_c/subject} {VERB/m_c/have/has} the skills to back that up."
   ],
   "med_app_27": [
     [
@@ -1094,7 +1094,7 @@
       "general_backstory",
       "vengeful"
     ],
-    "While m_c does not really like other cats, they dislike fighting even more. They prefer a more cunning approach and being a medicine cat gives them all the opportunity to do so. (mentor) takes them on as apprentice admiring their sharp tongue and cunning gleam in their eyes."
+    "While m_c does not really like other cats, they dislike fighting even more. {PRONOUN/m_c/subject/CAP} {VERB/m_c/prefer/prefers} a more cunning approach and being a medicine cat gives {PRONOUN/m_c/object} the opportunity to do so. (mentor) takes {PRONOUN/m_c/object} on as apprentice, admiring {PRONOUN/m_c/object} sharp tongue and the cunning gleam in {PRONOUN/m_c/poss} eyes."
   ],
   "med_app_28": [
     [
@@ -1104,7 +1104,7 @@
       "general_backstory",
       "adventurous"
     ],
-    "m_c has always longed for adventures and they feel like being a medicine cat apprentice will be the greatest adventure of them all. (mentor) eagerly accepts such an eager and willing apprentice."
+    "m_c has always longed for adventures and {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} like being a medicine cat apprentice will be the greatest adventure of them all. (mentor) eagerly accepts such an eager and willing apprentice."
   ],
   "mediator_app_0": [
     [
@@ -1115,7 +1115,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "m_c decides to serve their Clan as a mediator. They are delighted to begin training. "
+    "m_c decides to serve {PRONOUN/m_c/poss} Clan as a mediator. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} delighted to begin training. "
   ],
   "mediator_app_1": [
     [
@@ -1126,7 +1126,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "m_c feels sick at the mere thought of fighting. They decide to train as a mediator, and (mentor) is named as their mentor. "
+    "m_c feels sick at the mere thought of fighting. {PRONOUN/m_c/subject/CAP} {VERB/m_c/decide/decides} to train as a mediator, and (mentor) is named as {PRONOUN/m_c/poss} mentor. "
   ],
   "mediator_app_2": [
     [
@@ -1137,7 +1137,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "m_c is fascinated by (mentor)'s ability to solve disputes without tooth or claw. They are eager to learn, and (mentor) take them under their wing."
+    "m_c is fascinated by (mentor)'s ability to solve disputes without tooth or claw. {PRONOUN/m_c/subject/CAP} {VERB/m_c/are/is} eager to learn, and (mentor) takes {PRONOUN/m_c/object} under {PRONOUN/(mentor)/poss} wing."
   ],
   "mediator_app_3": [
     [
@@ -1148,7 +1148,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "Now more than ever, m_c realizes the Clan is in need for a mediator, and decides to step up under StarClan's guidance."
+    "Now more than ever, m_c realizes the Clan is in need of a mediator. {PRONOUN/m_c/subject/CAP} {VERB/m_c/decide/decides} to rise up the task."
   ],
   "mediator_app_4": [
     [
@@ -1174,7 +1174,7 @@
       "compassionate",
       "empathetic"
     ],
-    "m_c has taken to following (mentor) around during their daily duties, fascinated by the life of a mediator. (mentor) is happy to train them. "
+    "m_c has taken to following (mentor) around during {PRONOUN/(mentor)/poss} daily duties, fascinated by the life of a mediator. (mentor) is happy to train {PRONOUN/m_c/object}. "
   ],
   "mediator_app_6": [
     [
@@ -1185,7 +1185,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "m_c has always been interested in helping their Clan but was never good with herbs or fighting: They found their calling as a mediator apprentice under (mentor), where m_c can serve with their words."
+    "m_c has always been interested in helping their Clan but was never good with herbs or fighting: {PRONOUN/m_c/subject/CAP} found {PRONOUN/m_c/poss} calling as a mediator apprentice under (mentor), where m_c can serve with {PRONOUN/m_c/poss} words."
   ],
   "mediator_app_7": [
     [
@@ -1196,7 +1196,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "Despite the odd choice, m_c is firm that they'll be (mentor)'s apprentice: they want to help the Clan through words and influence, not through claw or fang."
+    "Despite the odd choice, m_c is firm that they'll be (mentor)'s apprentice: {PRONOUN/m_c/subject} {VERB/m_c/want/wants} to help the Clan through words and influence, not through claw or fang."
   ],
   "mediator_app_8": [
     [
@@ -1207,7 +1207,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "Being a mediator apprentice was all that m_c was good at; with (mentor)'s guidance, m_c hopes they can change the Clan."
+    "Being a mediator apprentice was all that m_c was good at; with (mentor)'s guidance, m_c hopes {PRONOUN/m_c/subject} can change the Clan."
   ],
   "mediator_app_9": [
     [
@@ -1218,7 +1218,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "m_c had been waiting for this moment: they'll finally be a mediator apprentice and be guided by (mentor) on how to solve the Clan's issues, their one goal in life."
+    "m_c had been waiting for this moment: {PRONOUN/m_c/subject}'ll finally be a mediator apprentice and be guided by (mentor) on how to solve the Clan's issues - {PRONOUN/m_c/poss} one goal in life."
   ],
   "mediator_app_10": [
     [
