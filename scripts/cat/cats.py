@@ -515,6 +515,20 @@ class Cat():
             self.grief(body)
 
         return text
+    
+    def exile(self):
+        """This is used to send a cat into exile. This removes the cat's status and gives them a special 'exiled'
+        status."""
+        self.exiled = True
+        self.outside = True
+        self.status = 'exiled'
+        if self.trait == 'vengeful':
+            self.thought = "Swears their revenge for being exiled"
+        else:
+            self.thought = "Is shocked that they have been exiled"
+        for app in self.apprentice:
+            Cat.fetch_cat(app).update_mentor()
+        self.update_mentor()
 
     def grief(self, body: bool):
         """
