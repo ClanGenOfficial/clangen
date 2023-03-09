@@ -217,7 +217,7 @@
       ]
     },
     "conclusion_events": [
-      "The sun rises one day, rainbow shards of ice glinting on the ground like so many days before, but as the day goes on… They melt and turn to mud. While everyone soon gets dirty, the sunlight feels so good on every cat's fur, no one can complain too much through purrs.",
+      "The sun rises one day, rainbow shards of ice glinting on the ground like so many days before, but as the day goes on... They melt and turn to mud. While everyone soon gets dirty, the sunlight feels so good on every cat's fur, no one can complain too much through purrs.",
       "When the Clan steps from their dens and finds the world no longer freezing, they're almost shocked by the change. It had been so cold for so long, they'd forgotten warmth's embrace.",
       "As the cold loses its grip on their throats, the forest of c_n weeps with relief, trees oozing sap from their damaged trunks."
     ],
@@ -337,7 +337,7 @@
     "rarity": "uncommon",
     "trigger_events": [
       "The objects the Twolegs bring smell so enticing, but the cats of c_n avoid them as much as possible. It only occurs to them that the prey they so rely on for food might not do the same when the first cats start getting sick.",
-      "The prey has been easy to catch lately, though even the freshest of fresh-kill has seemed a little… off. The medicine cat den has more work than usual, and bellyaches are now very common."
+      "The prey has been easy to catch lately, though even the freshest of fresh-kill has seemed a little... off. The medicine cat den has more work than usual, and bellyaches are now very common."
     ],
     "progress_events": {
       "moon1": [
