@@ -239,11 +239,14 @@ class Pregnancy_Events():
             text = PREGNANT_STRINGS["litter_guess"][2]
 
         if clan.game_mode != 'classic':
-            if cat.injuries["pregnant"]["severity"] == "minor":
-                cat.injuries["pregnant"]["severity"] = "major"
-                text += choice(PREGNANT_STRINGS["major_severity"])
-            cat.injuries["pregnant"]["duration"] -= 1
-            cat.injuries["pregnant"]["moons_with"] += 1
+            try:
+                if cat.injuries["pregnant"]["severity"] == "minor":
+                    cat.injuries["pregnant"]["severity"] = "major"
+                    text += choice(PREGNANT_STRINGS["major_severity"])
+                cat.injuries["pregnant"]["duration"] -= 1
+                cat.injuries["pregnant"]["moons_with"] += 1
+            except:
+                print("Is this an old save? Cat does not have the pregnant condition")
 
         text = event_text_adjust(Cat, text, cat, clan=clan)
         game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
@@ -277,8 +280,6 @@ class Pregnancy_Events():
         else:
             insert = f'litter of {kits_amount} kits'
 
-
-
         # choose event string
         events = PREGNANT_STRINGS
         event_list = []
@@ -300,7 +301,10 @@ class Pregnancy_Events():
             event_list.append(choice(events["birth"]["unmated_parent"]))
 
         if clan.game_mode != 'classic':
-            death_chance = cat.injuries["pregnant"]["mortality"]
+            try:
+                death_chance = cat.injuries["pregnant"]["mortality"]
+            except:
+                death_chance = 40
         else:
             death_chance = 40
         if not int(random.random() * death_chance):  # chance for a cat to die during childbirth
@@ -334,13 +338,15 @@ class Pregnancy_Events():
 
                 event_list.append(choice(possible_events))
         if clan.game_mode != 'classic':
-            cat.injuries.pop("pregnant")
+            try:
+                cat.injuries.pop("pregnant")
+            except:
+                print("Is this an old save? Your cat didn't have the pregnant condition!")
         print_event = " ".join(event_list)
         print_event = print_event.replace("{insert}", insert)
         print_event = event_text_adjust(Cat, print_event, cat, other_cat, clan=clan)
         # display event
         game.cur_events_list.append(Single_Event(print_event, ["health", "birth_death"], involved_cats))
-
 
     # ---------------------------------------------------------------------------- #
     #                          check if event is triggered                         #
