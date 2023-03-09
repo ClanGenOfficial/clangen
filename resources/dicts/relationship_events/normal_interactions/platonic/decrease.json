@@ -3,15 +3,15 @@
 		"id": "platonic_de_low1",
 		"intensity": "low",
 		"interactions": [
-			"m_c thinks r_c isn't very considerate of others"
+			"m_c thinks r_c isn't very considerate of others."
 		]
 	},
 	{
 		"id": "platonic_de_low2",
 		"intensity": "medium",
 		"interactions": [
-			"m_c and r_c had an argument about who should get a pretty feather, and end up destroying it in their fight.",
-			"m_c has drawn the ire of r_c by deliberately taking the last of their favorite nesting materials for themselves."
+			"m_c and r_c have an argument about who should get a pretty feather, and end up destroying it in their fight.",
+			"m_c has drawn the ire of r_c by deliberately taking the last of their favourite nesting materials for themselves."
 		],
 		"reaction_random_cat": {
 			"platonic": "decrease"
@@ -27,7 +27,7 @@
 	{
 		"id": "platonic_de_med2",
 		"interactions": [
-			"m_c is annoyed that they have to pull ticks off r_c today."
+			"m_c is annoyed that they have to pull ticks off of r_c today."
 		],
 		"main_status_constraint": [
 			"apprentice"
