@@ -409,7 +409,10 @@ class Clan():
             self.clan_cats.append(cat.ID)
 
     def add_to_starclan(self, cat):  # Same as add_cat
-        """ Places the dead cat into starclan. It should not be removed from the list of cats in the clan"""
+        """
+        Places the dead cat into starclan.
+        It should not be removed from the list of cats in the clan
+        """
         if cat.ID in Cat.all_cats.keys(
         ) and cat.dead and cat.ID not in self.starclan_cats:
             # The dead-value must be set to True before the cat can go to starclan
@@ -419,6 +422,9 @@ class Clan():
                 self.med_cat_predecessors += 1
 
     def add_to_clan(self, cat):
+        """
+        TODO: DOCS
+        """
         if cat.ID in Cat.all_cats.keys(
         ) and not cat.outside and cat.ID in Cat.outside_cats.keys():
             # The outside-value must be set to True before the cat can go to cotc
@@ -426,7 +432,10 @@ class Clan():
             cat.clan = str(game.clan.name)
 
     def add_to_outside(self, cat):  # same as add_cat
-        """ Places the gone cat into cotc. It should not be removed from the list of cats in the clan"""
+        """
+        Places the gone cat into cotc.
+        It should not be removed from the list of cats in the clan
+        """
         if cat.ID in Cat.all_cats.keys(
         ) and cat.outside and cat.ID not in Cat.outside_cats.keys():
             # The outside-value must be set to True before the cat can go to cotc
@@ -435,7 +444,10 @@ class Clan():
                 cat.suffix = ''
 
     def add_to_darkforest(self, cat):  # Same as add_cat
-        """ Places the dead cat into the dark forest. It should not be removed from the list of cats in the clan"""
+        """
+        Places the dead cat into the dark forest.
+        It should not be removed from the list of cats in the clan
+        """
         if cat.ID in Cat.all_cats.keys() and cat.dead and cat.df is False:
             cat.df = True
             cat.thought = "Is distraught after being sent to the Place of No Stars"
@@ -448,8 +460,10 @@ class Clan():
             # The dead-value must be set to True before the cat can go to starclan
 
     def remove_cat(self, ID):  # ID is cat.ID
-        """This function is for completely removing the cat from the game, it's not meant for a cat that's
-        simply dead"""
+        """
+        This function is for completely removing the cat from the game,
+        it's not meant for a cat that's simply dead
+        """
 
         if Cat.all_cats[ID] in Cat.all_cats_list:
             Cat.all_cats_list.remove(Cat.all_cats[ID])
@@ -463,12 +477,17 @@ class Clan():
 
     def __repr__(self):
         if self.name is not None:
-            return f'{self.name}: led by {self.leader.name} with {self.medicine_cat.name} as med. cat'
+            _ = f'{self.name}: led by {self.leader.name}'
+            _ += f'with {self.medicine_cat.name} as med. cat'
+            return _
 
         else:
             return 'No clan'
 
     def new_leader(self, leader):
+        """
+        TODO: DOCS
+        """
         if leader:
             self.leader = leader
             Cat.all_cats[leader.ID].status_change('leader')
@@ -477,12 +496,18 @@ class Clan():
         game.switches['new_leader'] = None
 
     def new_deputy(self, deputy):
+        """
+        TODO: DOCS
+        """
         if deputy:
             self.deputy = deputy
             Cat.all_cats[deputy.ID].status_change('deputy')
             self.deputy_predecessors += 1
 
     def new_medicine_cat(self, medicine_cat):
+        """
+        TODO: DOCS
+        """
         if medicine_cat:
             if medicine_cat.status != 'medicine cat':
                 Cat.all_cats[medicine_cat.ID].status_change('medicine cat')
@@ -493,7 +518,9 @@ class Clan():
             self.med_cat_number = len(self.med_cat_list)
 
     def remove_med_cat(self, medicine_cat):
-        # Removes a med cat. Use when retiring, or switching to warrior
+        """
+        Removes a med cat. Use when retiring, or switching to warrior
+        """
         if medicine_cat:
             if medicine_cat.ID in game.clan.med_cat_list:
                 game.clan.med_cat_list.remove(medicine_cat.ID)
@@ -508,6 +535,9 @@ class Clan():
                         game.clan.medicine_cat = None
 
     def switch_clans(self, clan):
+        """
+        TODO: DOCS
+        """
         game.save_clanlist(clan)
         game.cur_events_list.clear()
         game.rpc.close_rpc.set()
@@ -519,6 +549,9 @@ class Clan():
         exit()
 
     def save_clan(self):
+        """
+        TODO: DOCS
+        """
 
         clan_data = {
             "clanname": self.name,
@@ -582,17 +615,20 @@ class Clan():
         if game.clan.game_mode in ['expanded', 'cruel season']:
             self.save_freshkill_pile(game.clan)
 
-        with open(f'saves/{self.name}clan.json', 'w') as write_file:
+        with open(f'saves/{self.name}clan.json', 'w', encoding='utf-8') as write_file:
             json_string = ujson.dumps(clan_data, indent=4)
             write_file.write(json_string)
 
         if os.path.exists(f'saves/{self.name}clan.txt'):
             os.remove(f'saves/{self.name}clan.txt')
 
-        with open('saves/currentclan.txt', 'w') as write_file:
+        with open('saves/currentclan.txt', 'w', encoding='utf-8') as write_file:
             write_file.write(self.name)
 
     def load_clan(self):
+        """
+        TODO: DOCS
+        """
         if os.path.exists('saves/' + game.switches['clan_list'][0] +
                           'clan.json'):
             self.load_clan_json()
@@ -602,9 +638,11 @@ class Clan():
         else:
             game.switches[
                 'error_message'] = "There was an error loading the clan.json"
-        pass
 
     def load_clan_txt(self):
+        """
+        TODO: DOCS
+        """
         other_clans = []
         if game.switches['clan_list'] == '':
             number_other_clans = randint(3, 5)
@@ -619,7 +657,7 @@ class Clan():
         game.switches[
             'error_message'] = "There was an error loading the clan.txt"
         with open('saves/' + game.switches['clan_list'][0] + 'clan.txt',
-                  'r') as read_file:
+                  'r', encoding='utf-8') as read_file: # pylint: disable=redefined-outer-name
             clan_data = read_file.read()
         clan_data = clan_data.replace('\t', ',')
         sections = clan_data.split('\n')
@@ -751,6 +789,9 @@ class Clan():
         game.switches['error_message'] = ''
 
     def load_clan_json(self):
+        """
+        TODO: DOCS
+        """
         other_clans = []
         if game.switches['clan_list'] == '':
             number_other_clans = randint(3, 5)
@@ -766,7 +807,7 @@ class Clan():
         game.switches[
             'error_message'] = "There was an error loading the clan.json"
         with open('saves/' + game.switches['clan_list'][0] + 'clan.json',
-                  'r') as read_file:
+                  'r', encoding='utf-8') as read_file: # pylint: disable=redefined-outer-name
             clan_data = ujson.loads(read_file.read())
 
         if clan_data["leader"]:
@@ -847,7 +888,7 @@ class Clan():
 
         # Mediated flag
         if "mediated" in clan_data:
-            if type(clan_data["mediated"]) != list:
+            if not isinstance(clan_data["mediated"], list):
                 game.mediated = []
             else:
                 game.mediated = clan_data["mediated"]
@@ -860,11 +901,14 @@ class Clan():
         game.switches['error_message'] = ''
 
     def load_herbs(self, clan):
+        """
+        TODO: DOCS
+        """
         if not game.clan.name:
             return
         file_path = f"saves/{game.clan.name}/herbs.json"
         if os.path.exists(file_path):
-            with open(file_path, 'r') as read_file:
+            with open(file_path, 'r', encoding='utf-8') as read_file: # pylint: disable=redefined-outer-name
                 clan.herbs = ujson.loads(read_file.read())
 
         else:
@@ -873,51 +917,63 @@ class Clan():
             random_herbs = random.choices(HERBS, k=random.randrange(3, 8))
             for herb in random_herbs:
                 herbs.update({herb: random.randint(1, 3)})
-            with open(file_path, 'w') as rel_file:
+            with open(file_path, 'w', encoding='utf-8') as rel_file:
                 json_string = ujson.dumps(herbs, indent=4)
                 rel_file.write(json_string)
             clan.herbs = herbs
 
     def save_herbs(self, clan):
+        """
+        TODO: DOCS
+        """
         if not game.clan.name:
             return
         file_path = f"saves/{game.clan.name}/herbs.json"
         try:
-            with open(file_path, 'w') as file:
+            with open(file_path, 'w', encoding='utf-8') as file:
                 json_string = ujson.dumps(clan.herbs, indent=4)
                 file.write(json_string)
         except:
-            print(f"ERROR: Saving the herb data didn't work.")
+            print("ERROR: Saving the herb data didn't work.")
 
     def load_pregnancy(self, clan):
+        """
+        TODO: DOCS
+        """
         if not game.clan.name:
             return
         file_path = f"saves/{game.clan.name}/pregnancy.json"
         if os.path.exists(file_path):
-            with open(file_path, 'r') as read_file:
+            with open(file_path, 'r', encoding='utf-8') as read_file: # pylint: disable=redefined-outer-name
                 clan.pregnancy_data = ujson.load(read_file)
         else:
             clan.pregnancy_data = {}
 
     def save_pregnancy(self, clan):
+        """
+        TODO: DOCS
+        """
         if not game.clan.name:
             return
         file_path = f"saves/{game.clan.name}/pregnancy.json"
         try:
-            with open(file_path, 'w') as file:
+            with open(file_path, 'w', encoding='utf-8') as file:
                 json_string = ujson.dumps(clan.pregnancy_data, indent=4)
                 file.write(json_string)
         except:
-            print(f"ERROR: Saving the pregnancy data didn't work.")
+            print("ERROR: Saving the pregnancy data didn't work.")
 
     def load_disaster(self, clan):
+        """
+        TODO: DOCS
+        """
         if not game.clan.name:
             return
 
         file_path = f"saves/{game.clan.name}/disasters/primary.json"
         try:
             if os.path.exists(file_path):
-                with open(file_path, 'r') as read_file:
+                with open(file_path, 'r', encoding='utf-8') as read_file: # pylint: disable=redefined-outer-name
                     disaster = ujson.load(read_file)
                     if disaster:
                         clan.primary_disaster = OngoingEvent(
@@ -925,7 +981,7 @@ class Clan():
                             tags=disaster["tags"],
                             duration=disaster["duration"],
                             current_duration=disaster["current_duration"]
-                            if "current_duration" else disaster["duration"],
+                            if "current_duration" else disaster["duration"], # pylint: disable=using-constant-test
                             trigger_events=disaster["trigger_events"],
                             progress_events=disaster["progress_events"],
                             conclusion_events=disaster["conclusion_events"],
@@ -937,7 +993,7 @@ class Clan():
             else:
                 os.makedirs(f"saves/{game.clan.name}/disasters")
                 clan.primary_disaster = None
-                with open(file_path, 'w') as rel_file:
+                with open(file_path, 'w', encoding='utf-8') as rel_file:
                     json_string = ujson.dumps(clan.primary_disaster, indent=4)
                     rel_file.write(json_string)
         except:
@@ -946,7 +1002,7 @@ class Clan():
         file_path = f"saves/{game.clan.name}/disasters/secondary.json"
         try:
             if os.path.exists(file_path):
-                with open(file_path, 'r') as read_file:
+                with open(file_path, 'r', encoding='utf-8') as read_file:
                     disaster = ujson.load(read_file)
                     if disaster:
                         clan.secondary_disaster = OngoingEvent(
@@ -954,7 +1010,7 @@ class Clan():
                             tags=disaster["tags"],
                             duration=disaster["duration"],
                             current_duration=disaster["current_duration"]
-                            if "current_duration" else disaster["duration"],
+                            if "current_duration" else disaster["duration"], # pylint: disable=using-constant-test
                             progress_events=disaster["progress_events"],
                             conclusion_events=disaster["conclusion_events"],
                             collateral_damage=disaster["collateral_damage"])
@@ -963,7 +1019,7 @@ class Clan():
             else:
                 os.makedirs(f"saves/{game.clan.name}/disasters")
                 clan.secondary_disaster = None
-                with open(file_path, 'w') as rel_file:
+                with open(file_path, 'w', encoding='utf-8') as rel_file:
                     json_string = ujson.dumps(clan.secondary_disaster,
                                               indent=4)
                     rel_file.write(json_string)
@@ -971,80 +1027,86 @@ class Clan():
         except:
             clan.secondary_disaster = None
 
-    def save_disaster(self, clan):
-        if not game.clan.name:
+    def save_disaster(self, clan=game.clan):
+        """
+        TODO: DOCS
+        """
+        if not clan.name:
             return
-        file_path = f"saves/{game.clan.name}/disasters/primary.json"
+        file_path = f"saves/{clan.name}/disasters/primary.json"
 
-        if game.clan.primary_disaster:
+        if clan.primary_disaster:
             disaster = {
-                "event": game.clan.primary_disaster.event,
-                "tags": game.clan.primary_disaster.tags,
-                "duration": game.clan.primary_disaster.duration,
+                "event": clan.primary_disaster.event,
+                "tags": clan.primary_disaster.tags,
+                "duration": clan.primary_disaster.duration,
                 "current_duration":
-                game.clan.primary_disaster.current_duration,
-                "trigger_events": game.clan.primary_disaster.trigger_events,
-                "progress_events": game.clan.primary_disaster.progress_events,
+                clan.primary_disaster.current_duration,
+                "trigger_events": clan.primary_disaster.trigger_events,
+                "progress_events": clan.primary_disaster.progress_events,
                 "conclusion_events":
-                game.clan.primary_disaster.conclusion_events,
+                clan.primary_disaster.conclusion_events,
                 "secondary_disasters":
-                game.clan.primary_disaster.secondary_disasters,
+                clan.primary_disaster.secondary_disasters,
                 "collateral_damage":
-                game.clan.primary_disaster.collateral_damage
+                clan.primary_disaster.collateral_damage
             }
         else:
             disaster = {}
 
         try:
-            with open(file_path, 'w') as rel_file:
+            with open(file_path, 'w', encoding='utf-8') as rel_file:
                 json_string = ujson.dumps(disaster, indent=4)
                 rel_file.write(json_string)
         except:
             print("ERROR: Disaster file failed to save")
 
-        file_path = f"saves/{game.clan.name}/disasters/secondary.json"
+        file_path = f"saves/{clan.name}/disasters/secondary.json"
 
-        if game.clan.secondary_disaster:
+        if clan.secondary_disaster:
             disaster = {
-                "event": game.clan.secondary_disaster.event,
-                "tags": game.clan.secondary_disaster.tags,
-                "duration": game.clan.secondary_disaster.duration,
+                "event": clan.secondary_disaster.event,
+                "tags": clan.secondary_disaster.tags,
+                "duration": clan.secondary_disaster.duration,
                 "current_duration":
-                game.clan.secondary_disaster.current_duration,
-                "trigger_events": game.clan.secondary_disaster.trigger_events,
+                clan.secondary_disaster.current_duration,
+                "trigger_events": clan.secondary_disaster.trigger_events,
                 "progress_events":
-                game.clan.secondary_disaster.progress_events,
+                clan.secondary_disaster.progress_events,
                 "conclusion_events":
-                game.clan.secondary_disaster.conclusion_events,
+                clan.secondary_disaster.conclusion_events,
                 "secondary_disasters":
-                game.clan.secondary_disaster.secondary_disasters,
+                clan.secondary_disaster.secondary_disasters,
                 "collateral_damage":
-                game.clan.secondary_disaster.collateral_damage
+                clan.secondary_disaster.collateral_damage
             }
         else:
             disaster = {}
 
         try:
-            with open(file_path, 'w') as rel_file:
+            with open(file_path, 'w', encoding='utf-8') as rel_file:
                 json_string = ujson.dumps(disaster, indent=4)
                 rel_file.write(json_string)
         except:
             print("ERROR: Disaster file failed to save")
 
     def load_freshkill_pile(self, clan):
+        """
+        TODO: DOCS
+        """
         if not game.clan.name or clan.game_mode == 'classic':
             return
 
         file_path = f"saves/{game.clan.name}/freshkill_pile.json"
         try:
             if os.path.exists(file_path):
-                with open(file_path, 'r') as read_file:
+                with open(file_path, 'r', encoding='utf-8') as read_file: # pylint: disable=redefined-outer-name
                     pile = ujson.load(read_file)
                     clan.freshkill_pile = Freshkill_Pile(pile)
 
                 file_path = f"saves/{game.clan.name}/nutrition_info.json"
                 if os.path.exists(file_path) and clan.freshkill_pile:
-                    with open(file_path, 'r') as read_file:
+                    with open(file_path, 'r', encoding='utf-8') as read_file:
                         nutritions = ujson.load(read_file)
                         for k, nutr in nutritions.items():
                             nutrition = Nutrition()
@@ -1057,20 +1119,23 @@ class Clan():
             clan.freshkill_pile = Freshkill_Pile()
 
     def save_freshkill_pile(self, clan):
+        """
+        TODO: DOCS
+        """
         if clan.game_mode == "classic" or not clan.freshkill_pile:
             return
 
         try:
             with open(f"saves/{game.clan.name}/freshkill_pile.json",
-                      'w') as rel_file:
+                      'w', encoding='utf-8') as rel_file:
                 json_string = ujson.dumps(clan.freshkill_pile.pile, indent=4)
                 rel_file.write(json_string)
         except:
-            print(f"ERROR: Saving the freshkill pile didn't work.")
+            print("ERROR: Saving the freshkill pile didn't work.")
 
         try:
             with open(f"saves/{game.clan.name}/nutrition_info.json",
-                      'w') as rel_file:
+                      'w', encoding='utf-8') as rel_file:
                 data = {}
                 for k, nutr in clan.freshkill_pile.nutrition_info.items():
                     data[k] = {
@@ -1082,11 +1147,14 @@ class Clan():
                 rel_file.write(json_string)
         except:
             print(
-                f"ERROR: Saving nutrition information of the freshkill pile didn't work."
+                "ERROR: Saving nutrition information of the freshkill pile didn't work."
             )
 
 
 class OtherClan():
+    """
+    TODO: DOCS
+    """
 
     def __init__(self, name='', relations=0, temperament=''):
         temperament_list = [
@@ -1104,6 +1172,9 @@ class OtherClan():
 
 
 class StarClan():
+    """
+    TODO: DOCS
+    """
     forgotten_stages = {
         0: [0, 100],
         10: [101, 200],
@@ -1115,13 +1186,19 @@ class StarClan():
     dead_cats = {}
 
     def __init__(self):
+        """
+        TODO: DOCS
+        """
         self.instructor = None
 
     def fade(self, cat):
+        """
+        TODO: DOCS
+        """
         white = pygame.Surface((50, 50))
         fade_level = 0
         if cat.dead:
-            for f in self.forgotten_stages.keys():
+            for f in self.forgotten_stages: # pylint: disable=consider-using-dict-items
                 if cat.dead_for in range(self.forgotten_stages[f][0],
                                          self.forgotten_stages[f][1]):
                     fade_level = f
@@ -1133,5 +1210,5 @@ clan_class = Clan()
 clan_class.remove_cat(cat_class.ID)
 
 HERBS = None
-with open(f"resources/dicts/herbs.json", 'r') as read_file:
+with open("resources/dicts/herbs.json", 'r', encoding='utf-8') as read_file:
     HERBS = ujson.loads(read_file.read())
