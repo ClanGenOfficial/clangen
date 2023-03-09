@@ -587,5 +587,32 @@
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
-    }
+    },
+    {
+        "injury": "bee sting",
+        "camp": "any",
+        "tags": [
+            "Greenleaf",
+            "Newleaf",
+            "scar",
+            "BRIDGE"
+        ],
+        "event_text": "m_c found a patch of flowering catmint! No one else is around, so they bend down and take a big bite-- Yowch! A bee! They come home with a swollen face...",
+        "history_text": [
+            "tried eating a bee",
+            "This cat died from complications caused by a bee sting.",
+            "after a bee sing"
+         ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null,
+        "negate_cat_trait": null,
+        "negate_cat_skill": null,
+        "negate_other_cat_trait": null,
+        "negate_other_cat_skill": null,
+        "backstory_constraint": null
+     
+     }
+     
 ]
