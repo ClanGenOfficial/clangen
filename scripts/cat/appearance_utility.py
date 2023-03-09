@@ -210,6 +210,7 @@ def init_eyes(cat):
                 eye_choice = choice([yellow_eyes, blue_eyes])
                 cat.eye_colour2 = choice(eye_choice)
 
+
 def pelt_inheritance(cat, parents: tuple):
     # setting parent pelt categories
     #We are using a set, since we don't need this to be ordered, and sets deal with removing duplicates.
@@ -402,6 +403,7 @@ def pelt_inheritance(cat, parents: tuple):
     cat.pelt = choose_pelt(chosen_pelt_color, chosen_white, chosen_pelt, chosen_pelt_length)
     cat.tortiebase = chosen_tortie_base   # This will be none if the cat isn't a tortie.
 
+
 def randomize_pelt(cat):
     # ------------------------------------------------------------------------------------------------------------#
     #   PELT
@@ -465,6 +467,7 @@ def randomize_pelt(cat):
     cat.pelt = choose_pelt(chosen_pelt_color, chosen_white, chosen_pelt, chosen_pelt_length)
     cat.tortiebase = chosen_tortie_base   # This will be none if the cat isn't a tortie.
 
+
 def init_pelt(cat):
     if cat.pelt is not None:
         return cat.pelt
@@ -482,6 +485,7 @@ def init_pelt(cat):
             pelt_inheritance(cat, (par1, par2))
         else:
             randomize_pelt(cat)
+
 
 def init_sprite(cat):
     if cat.pelt is None:
@@ -675,31 +679,41 @@ def white_patches_inheritance(cat, parents: tuple):
     if cat.points and cat.white_patches in [high_white, mostly_white, 'FULLWHITE']:
         cat.points = None
 
+
 def randomize_white_patches(cat):
-    vit_chance = not random.getrandbits(game.config["cat_generation"]["vit_chance"])
-    if vit_chance:
+
+    # Vet determination
+    if not random.getrandbits(game.config["cat_generation"]["vit_chance"]):
         cat.vitiligo = choice(vit)
-    
-    point_chance = not random.getrandbits(game.config["cat_generation"]["random_point_chance"])
-    if point_chance:
+    else:
+        cat.vitiligo = None
+
+    # Points determination. Tortie can't be pointed
+    if cat.pelt.name != "Tortie" and not random.getrandbits(game.config["cat_generation"]["random_point_chance"]):
+        # Cat has colorpoint!
         cat.points = choice(point_markings)
 
-    # Adjust weights for torties, since they can't have anything greater than mid_white:
-    if cat.pelt.name == "Tortie":
-        weights = (2, 1, 0, 0, 0)
+        # Determination if they will have another white patch
+        if not int(random.random() * 20):
+            # The cat will also have white patches!
+            cat.white_patches = choice(little_white + mid_white)
+        else:
+            cat.white_patches = None
     else:
-        weights = (10, 10, 10, 10, 1)
+        # No colorpoint, normal
 
+        # Adjust weights for torties, since they can't have anything greater than mid_white:
+        if cat.pelt.name == "Tortie":
+            weights = (2, 1, 0, 0, 0)
+        else:
+            weights = (10, 10, 10, 10, 1)
 
-    white_list = [little_white, mid_white, high_white, mostly_white, ['FULLWHITE']]
-    chosen_white_patches = choice(
-        random.choices(white_list, weights=weights, k=1)[0]
-    )
+        white_list = [little_white, mid_white, high_white, mostly_white, ['FULLWHITE']]
+        chosen_white_patches = choice(
+            random.choices(white_list, weights=weights, k=1)[0]
+        )
 
-    cat.white_patches = chosen_white_patches
-
-    if cat.points and cat.white_patches in [high_white, mostly_white, 'FULLWHITE']:
-        cat.points = None
+        cat.white_patches = chosen_white_patches
 
 def init_white_patches(cat):
 
@@ -727,6 +741,7 @@ def init_white_patches(cat):
 def init_tint(cat):
     """Sets tint for pelt and white patches"""
 
+    # PELT TINT
     # Basic tints as possible for all colors.
     possible_tints = Sprites.cat_tints["possible_tints"]["basic"].copy()
     if cat.pelt.colour in Sprites.cat_tints["colour_groups"]:
@@ -736,10 +751,8 @@ def init_tint(cat):
     else:
         cat.tint = "none"
 
-    # These are the patches where the tint should always be none
-    no_tint_patches = ['SEPIAPOINT', 'MINKPOINT', 'SEALPOINT'] + vit
-
-    if cat.white_patches and cat.white_patches not in no_tint_patches:
+    # WHITE PATCHES TINT
+    if cat.white_patches or cat.points:
         #Now for white patches
         possible_tints = Sprites.white_patches_tints["possible_tints"]["basic"].copy()
         if cat.pelt.colour in Sprites.cat_tints["colour_groups"]:

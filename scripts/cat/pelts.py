@@ -336,7 +336,7 @@ high_white = ['ANY', 'ANY2', 'BROKEN', 'FRECKLES', 'RINGTAIL', 'HALFFACE', 'PANT
               'CURVED', 'GLASS', 'MASKMANTLE', 'MAO', 'PAINTED']
 mostly_white = ['VAN', 'ONEEAR', 'LIGHTSONG', 'TAIL', 'HEART', 'MOORISH', 'APRON', 'CAPSADDLE',
                 'CHESTSPECK', 'BLACKSTAR', 'PETAL']
-point_markings = ['COLOURPOINT', 'RAGDOLL', 'SEPIAPOINT', 'MINKPOINT', 'SEALPOINT']
+point_markings = ['COLOURPOINT', 'RAGDOLL', 'SEPIAPOINT', 'MINKPOINT']
 vit = ['VITILIGO', 'VITILIGO2', 'MOON', 'PHANTOM', 'KARPATI']
 white_sprites = [
     little_white, mid_white, high_white, mostly_white, point_markings, vit, 'FULLWHITE']
@@ -540,6 +540,7 @@ def describe_color(pelt, tortiebase, tortiecolour, white_patches, points, vit):
         patches = tortiecolour.lower()
         color_name = f"{color_name} and {patches} tortie"
     elif pelt.name == "Calico":
+        patches = tortiecolour.lower()
         color_name = f'{color_name} and {patches} calico'
 
     if pelt.name in ['Tortie', 'Calico']:

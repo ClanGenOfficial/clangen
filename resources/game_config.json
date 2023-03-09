@@ -105,7 +105,7 @@
 		"direct_inheritance": 15,
 		"wildcard_tortie": 9,
 		"vit_chance": 10,
-		"random_point_chance": 6
+		"random_point_chance": 0
 	},
 	"accessory_generation": {
 		"base_acc_chance": 150,
@@ -167,7 +167,7 @@
 		"cruel season_death_chance": 150
 	},
 	"clan_creation": {
-		"rerolls": 3,
+		"rerolls": -1,
 		"comment": "Set this to -1 for it to be infinite"
 	},
 	"graduation": {
