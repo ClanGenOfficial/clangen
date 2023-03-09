@@ -316,7 +316,7 @@
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "reputation": ["hostile"],
-        "event_text": "While the Clan has no love for outsiders, sometimes new blood is needed. A patrol heads out and finds a wandering cat to bring into the Clan. The new cat, n_c_pre takes on a more clan-like name.",
+        "event_text": "While the Clan has no love for outsiders, sometimes new blood is needed. A patrol heads out and finds a wandering cat to bring into the Clan. The new cat, n_c_pre takes on a more Clan-like name.",
         "loner": true,
         "backstory": ["tragedy_survivor4", "tragedy_survivor2", "rogue3", "rogue1", "loner1"],
         "new_name": true,
