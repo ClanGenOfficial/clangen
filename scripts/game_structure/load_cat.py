@@ -118,14 +118,24 @@ def json_load():
             if new_cat.pelt is not None:
                 if new_cat.pelt.length == 'long':
                     if new_cat.cat_sprites['adult'] not in [9, 10, 11]:
-                        new_cat.cat_sprites['adult'] = choice([9, 10, 11])
+                        if new_cat.cat_sprites['adult'] == 0:
+                            new_cat.cat_sprites['adult'] = 9
+                        elif new_cat.cat_sprites['adult'] == 1:
+                            new_cat.cat_sprites['adult'] = 10
+                        elif new_cat.cat_sprites['adult'] == 2:
+                            new_cat.cat_sprites['adult'] = 11
                         new_cat.cat_sprites['young adult'] = new_cat.cat_sprites['adult']
                         new_cat.cat_sprites['senior adult'] = new_cat.cat_sprites['adult']
                         new_cat.cat_sprites['para_adult'] = 16
                 else:
                     new_cat.cat_sprites['para_adult'] = 15
                 if new_cat.cat_sprites['senior'] not in [12, 13, 14]:
-                    new_cat.cat_sprites['senior'] = choice([12, 13, 14])
+                    if new_cat.cat_sprites['senior'] == 3:
+                        new_cat.cat_sprites['senior'] = 12
+                    elif new_cat.cat_sprites['senior'] == 4:
+                        new_cat.cat_sprites['senior'] = 13
+                    elif new_cat.cat_sprites['senior'] == 5:
+                        new_cat.cat_sprites['senior'] = 14
             new_cat.eye_colour = cat["eye_colour"]
             new_cat.reverse = cat["reverse"]
             
