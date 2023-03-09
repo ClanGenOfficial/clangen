@@ -25,7 +25,6 @@ if directory:
 
 import subprocess
 
-import time
 
 # Setup logging
 import logging 
