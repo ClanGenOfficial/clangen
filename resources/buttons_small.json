@@ -113,6 +113,21 @@
             }
         }
     },
+    "#update_button":
+	{
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/update_available.png"
+            },
+			"hovered_image":
+            {
+                "path": "resources/images/buttons/update_available_hover.png"
+            }
+		}
+    },
     "#done_button":
 	{
 		"prototype": "#image_button",
