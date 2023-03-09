@@ -1,18 +1,21 @@
 #!/usr/bin/env python3
 
 
+# pylint: disable=line-too-long
 """
 
 
 
 
-This file 
+This file is the main file for the game.
+It also contains the main pygame loop
+It first sets up logging, then loads the version hash from commit.txt (if it exists), then loads the cats and clan.
+It then loads the settings, and then loads the start screen.
 
 
 
 
-
-"""
+""" # pylint: enable=line-too-long
 
 import sys
 import os
