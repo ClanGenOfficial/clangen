@@ -13,6 +13,7 @@ import pygame_gui
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 from scripts.game_structure.windows import DeleteCheck
 from scripts.game_structure.discord_rpc import _DiscordRPC
+from ..update import get_version_info, has_update, fetch_latest_dev
 
 
 class StartScreen(Screens):
@@ -35,6 +36,10 @@ class StartScreen(Screens):
                 self.change_screen('make clan screen')
             elif event.ui_element == self.settings_button:
                 self.change_screen('settings screen')
+            elif event.ui_element == self.update_button:
+                fetch_latest_dev()
+                # os.execv(sys.argv[0], sys.argv)
+                exit(0)
             elif event.ui_element == self.quit:
                 game.rpc.close_rpc.set()
                 game.rpc.update_rpc.set()
@@ -56,6 +61,7 @@ class StartScreen(Screens):
         self.settings_button.kill()
         self.error_label.kill()
         self.warning_label.kill()
+        self.update_button.kill()
         self.quit.kill()
 
     def screen_switches(self):
@@ -77,6 +83,13 @@ class StartScreen(Screens):
         self.error_label = pygame_gui.elements.UILabel(scale(pygame.Rect(100, 100, 1400, -1)), "",
                                                        object_id="#save_text_box", manager=MANAGER)
         self.error_label.hide()
+
+        self.update_button = UIImageButton(scale(pygame.Rect((1154, 50), (384, 70))), "",
+                                             object_id="#update_button", manager=MANAGER)
+        self.update_button.visible = 0
+
+        if has_update(get_version_info().version_number):
+            self.update_button.visible = 1
 
         self.warning_label = pygame_gui.elements.UITextBox(
             "Warning: this game includes some mild descriptions of gore.",
