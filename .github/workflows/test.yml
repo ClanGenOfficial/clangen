@@ -40,4 +40,22 @@ jobs:
           python-version: '3.11'
           architecture: 'x64'
       - name: Check file encoding
-        run: python3 tests/test_encoding.py
+        id: encoding_test
+        run: python3 tests/test_encoding.py test
+      - name: Fix the issue hopefully
+        if: failure()
+        env:
+          FILES: ${{ steps.encoding_test.outputs.files  }}
+        run: python3 tests/test_encoding.py fix
+      - name: Make a pr
+        if: failure()
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: Fix file encoding
+          title: Fix file encoding
+          body: |
+            This PR fixes the file encoding. The files that were changed are: ${{ steps.encoding_test.outputs.files }}
+          branch: fix-file-encoding
+          delete-branch: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch-suffix: random
