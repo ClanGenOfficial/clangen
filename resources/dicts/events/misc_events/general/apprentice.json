@@ -112,7 +112,7 @@
   },
   {
     "camp": "any",
-    "tags": ["Leaf-bare", "other_cat", "other_cat_app"],
+    "tags": ["Leaf-bare"],
     "event_text": "m_c gets dared to hunt outside in the snow alone, and returns with acc_singular in their pelt.",
     "cat_trait": null,
     "cat_skill": null,

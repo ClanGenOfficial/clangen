@@ -6,7 +6,7 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
-       "other_cat_skill": null
+        "other_cat_skill": null
       },
       {
         "camp": "any",
@@ -15,7 +15,7 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
-       "other_cat_skill": null
+         "other_cat_skill": null
       },
       {
         "camp": "any",
@@ -24,7 +24,7 @@
         "cat_trait": "playful",
         "cat_skill": null,
         "other_cat_trait": null,
-       "other_cat_skill": null
+        "other_cat_skill": null
       },
       {
         "camp": "any",
@@ -33,7 +33,7 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
-       "other_cat_skill": null
+        "other_cat_skill": null
       },
       {
       "camp": "any",
@@ -42,6 +42,6 @@
       "cat_trait": null,
       "cat_skill": null,
       "other_cat_trait": null,
-     "other_cat_skill": null
+      "other_cat_skill": null
     }
 ]

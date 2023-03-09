@@ -71,9 +71,9 @@
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_cat", "other_cat_parent"],
         "event_text": "m_c finds some acc_singular to wear in their fur to impress r_c!",
-        "cat_trait": null,
+        "cat_trait": ["attention-seeker", "charming"],
         "cat_skill": null,
-        "other_cat_trait": ["attention-seeker", "charming"],
+        "other_cat_trait": null,
         "other_cat_skill": null,
         "accessories": ["WILD", "PLANT"]
     },
