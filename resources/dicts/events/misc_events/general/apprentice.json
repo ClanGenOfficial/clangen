@@ -64,5 +64,70 @@
     "other_cat_trait": null,
     "other_cat_skill": null,
     "accessories": ["RYE STALK"]
-   }
+   },
+   {
+    "camp": "any",
+    "tags": ["Greenleaf", "Leaf-bare", "Leaf-fall", "Newleaf", "other_cat", "other_cat_app"],
+    "event_text": "m_c and r_c sneak out of camp to see the sun rise.",
+    "cat_trait": null,
+    "cat_skill": null,
+    "other_cat_trait": null,
+    "other_cat_skill": null
+  },
+  {
+    "camp": "any",
+    "tags": ["Greenleaf", "Leaf-bare", "Leaf-fall", "Newleaf", "other_cat", "other_cat_app"],
+    "event_text": "m_c and r_c sneak out of camp to see the moon rise.",
+    "cat_trait": null,
+    "cat_skill": null,
+    "other_cat_trait": null,
+    "other_cat_skill": null
+  },
+  {
+    "camp": "any",
+    "tags": ["Greenleaf", "Leaf-bare", "Leaf-fall", "Newleaf", "other_cat", "other_cat_app"],
+    "event_text": "m_c and r_c try to sneak out of camp, but are caught by their mentors.",
+    "cat_trait": null,
+    "cat_skill": null,
+    "other_cat_trait": null,
+    "other_cat_skill": null
+  },
+  {
+    "camp": "any",
+    "tags": ["Leaf-fall", "other_cat", "other_cat_app"],
+    "event_text": "m_c and r_c play in the fallen leaves outside of camp.",
+    "cat_trait": null,
+    "cat_skill": null,
+    "other_cat_trait": null,
+    "other_cat_skill": null
+  },
+  {
+    "camp": "any",
+    "tags": ["Leaf-bare", "other_cat", "other_cat_app"],
+    "event_text": "m_c and r_c play in the snow outside of camp.",
+    "cat_trait": null,
+    "cat_skill": null,
+    "other_cat_trait": null,
+    "other_cat_skill": null
+  },
+  {
+    "camp": "any",
+    "tags": ["Leaf-bare", "other_cat", "other_cat_app"],
+    "event_text": "m_c gets dared to hunt outside in the snow alone, and returns with acc_singular in their pelt.",
+    "cat_trait": null,
+    "cat_skill": null,
+    "other_cat_trait": null,
+    "other_cat_skill": null,
+    "accessories": ["WILD", "PLANT"]
+  },
+  {
+    "camp": "any",
+    "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall", "other_cat", "other_cat_app"],
+    "event_text": "m_c disappears for a few days, then returns to camp with an acc_singular around their neck.",
+    "cat_trait": null,
+    "cat_skill": null,
+    "other_cat_trait": null,
+   "other_cat_skill": null,
+    "accessories": ["COLLAR"]
+  }
 ]
