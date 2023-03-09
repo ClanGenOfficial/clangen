@@ -37,8 +37,8 @@ class NewCatEvents:
             other_clan = game.clan.all_clans[0]
             other_clan_name = f'{other_clan.name}Clan'
 
-        possible_events = self.generate_events.possible_events(cat.status, cat.age, "new_cat")
-        final_events = self.generate_events.filter_possible_events(possible_events, cat, other_cat, war, enemy_clan,
+        possible_events = self.generate_events.possible_short_events(cat.status, cat.age, "new_cat")
+        final_events = self.generate_events.filter_possible_short_events(possible_events, cat, other_cat, war, enemy_clan,
                                                                    other_clan, alive_kits)
         if self.has_outside_cat():
             if random.randint(1,3) == 1:

@@ -538,6 +538,20 @@ class Cat():
             self.grief(body)
 
         return text
+    
+    def exile(self):
+        """This is used to send a cat into exile. This removes the cat's status and gives them a special 'exiled'
+        status."""
+        self.exiled = True
+        self.outside = True
+        self.status = 'exiled'
+        if self.trait == 'vengeful':
+            self.thought = "Swears their revenge for being exiled"
+        else:
+            self.thought = "Is shocked that they have been exiled"
+        for app in self.apprentice:
+            Cat.fetch_cat(app).update_mentor()
+        self.update_mentor()
 
     def grief(self, body: bool):
         """
@@ -586,7 +600,7 @@ class Cat():
                     if cat_to == self:
                         family_relation = self.familial_grief(living_cat=cat)
                         possible_strings.extend(
-                            self.generate_events.get_possible_death_reactions(family_relation, value, cat.trait, body_status))
+                            self.generate_events.possible_death_reactions(family_relation, value, cat.trait, body_status))
 
             if possible_strings:
                 # choose string
@@ -632,7 +646,7 @@ class Cat():
                         if cat_to == self:
                             family_relation = self.familial_grief(living_cat=cat)
                             possible_strings.extend(
-                                self.generate_events.get_possible_death_reactions(family_relation, value, cat.trait, body_status))
+                                self.generate_events.possible_death_reactions(family_relation, value, cat.trait, body_status))
 
                 if possible_strings:
                     # choose string
