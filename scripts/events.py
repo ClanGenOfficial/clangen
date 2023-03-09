@@ -18,6 +18,7 @@ from scripts.events_module.relation_events import Relation_Events
 from scripts.events_module.condition_events import Condition_Events
 from scripts.events_module.death_events import Death_Events
 from scripts.events_module.freshkill_pile_events import Freshkill_Events
+from scripts.events_module.disaster_events import DisasterEvents
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
 from scripts.utility import get_alive_kits, get_med_cats, ceremony_text_adjust, get_current_season
@@ -28,7 +29,7 @@ from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
 class Events():
     all_events = {}
     game.switches['timeskip'] = False
-    #This is so we call call the static function needed to clear the events dict.
+    #This is so we call the static function needed to clear the events dict.
     generate_events = GenerateEvents()
 
 
@@ -53,6 +54,7 @@ class Events():
         self.misc_events = MiscEvents()
         self.CEREMONY_TXT = None
         self.load_ceremonies()
+        self.disaster_events = DisasterEvents()
 
     def one_moon(self):
         game.cur_events_list = []
@@ -115,6 +117,10 @@ class Events():
                 self.one_moon_outside_cat(cat)
 
         # Handle injuries and relationships. We must do with in a different all-cats loop.
+
+        # keeping this commented out till disasters are more polished
+        # self.disaster_events.handle_disasters()
+
         for cat in Cat.all_cats.values():
             if cat.dead or cat.outside:
                 continue
@@ -594,25 +600,6 @@ class Events():
                            f"but as they drift away, they hope to see familiar starry fur on the other side."
                 game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
 
-        if cat.exiled and cat.status == 'leader' and not cat.dead and random.randint(
-                1, 10) == 1:
-            game.clan.leader_lives -= 1
-            if game.clan.leader_lives > 0:
-                text = f'Rumors reach your Clan that the exiled {cat.name} lost a life recently.'
-                game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
-            else:
-                text = f'Rumors reach your Clan that the exiled {cat.name} has died recently.'
-                game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
-                cat.dead = True
-
-        elif cat.exiled and cat.status == 'leader' and not cat.dead and random.randint(
-                1, 45) == 1:
-            game.clan.leader_lives -= 10
-            cat.dead = True
-            text = f'Rumors reach your Clan that the exiled {cat.name} has died recently.'
-            game.cur_events_list.append(Single_Event(text, "birth_death", cat.ID))
-            game.clan.leader_lives = 0
-
     def one_moon_cat(self, cat):
         # ---------------------------------------------------------------------------- #
         #                                trigger events                                #
@@ -878,7 +865,7 @@ class Events():
 
                     if cat.moons == game.config["graduation"]["min_graduating_age"]:
                         preparedness = "early"
-                    if cat.experience_level in ["untrained", "trainee"]:
+                    elif cat.experience_level in ["untrained", "trainee"]:
                         preparedness = "unprepared"
                     else:
                         preparedness = "prepared"
@@ -1286,6 +1273,9 @@ class Events():
                 #print(f"{cat.name} not working, no EX gain")
                 return
 
+            if cat.experience > cat.experience_levels_range["trainee"][0]:
+                return
+
             if cat.status == "medicine cat apprentice":
                 base_ex = random.choices(game.config["graduation"]["base_med_app_timeskip_ex"][0],
                                           weights=game.config["graduation"]["base_med_app_timeskip_ex"][1], k=1)[0]
@@ -1293,11 +1283,11 @@ class Events():
                 base_ex = random.choices(game.config["graduation"]["base_app_timeskip_ex"][0],
                                           weights=game.config["graduation"]["base_app_timeskip_ex"][1], k=1)[0]
 
-            if cat.mentor and not Cat.fetch_cat(cat.mentor).not_working():
-                mentor_modifier = 1
-            else:
-                # No mentor/sick mentor debuff
+            if not cat.mentor or Cat.fetch_cat(cat.mentor).not_working():
+                # Sick mentor debuff
                 mentor_modifier = 0.6
+            else:
+                mentor_modifier = 1
 
             cat.experience += max(base_ex * mentor_modifier, 1)
             # print(f"{cat.name} has gained {int(base_ex * mentor_modifier)} EX", cat._experience)
@@ -1430,7 +1420,7 @@ class Events():
         # disaster death chance
         if game.settings.get('disasters'):
             if not random.getrandbits(9):  # 1/512
-                self.handle_disasters()
+                self.handle_mass_extinctions(cat)
                 return True
 
         # extra death chance and injuries in expanded & cruel season
@@ -1442,10 +1432,9 @@ class Events():
                                                                     self.enemy_clan, game.clan.current_season)
             return triggered_death
 
-    def handle_disasters(self):
-        """Handles events when the setting of disasters is turned on.
 
-        Affects random cats in the clan, no cat needs to be passed to this function."""
+    def handle_mass_extinctions(self, cat):
+        """Affects random cats in the clan, no cat needs to be passed to this function."""
         alive_cats = list(filter(
             lambda kitty: (kitty.status != "leader"
                            and not kitty.dead
