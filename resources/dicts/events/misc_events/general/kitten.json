@@ -106,15 +106,6 @@
     },
     {
     "camp": "any",
-    "tags": ["Greenleaf", "other_cat", "other_cat_kit", "to_both", "platonic", "comfort", "trust"],
-    "event_text": "m_c and r_c roll around in the moss in the cavernous camp.",
-    "cat_trait": null,
-    "cat_skill": null,
-    "other_cat_trait": null,
-    "other_cat_skill": null
-    },
-    {
-    "camp": "any",
     "tags": ["Leaf-bare", "other_cat", "other_cat_kit", "to_both", "platonic", "comfort", "trust"],
     "event_text": "m_c and r_c make little snow lumps at the entrance to the camp.",
     "cat_trait": null,
@@ -142,7 +133,7 @@
     },
     {
     "camp": "any",
-    "tags": ["Leaf-bare", "Greenleaf", "Newleaf"],
+    "tags": ["Greenleaf", "Newleaf"],
     "event_text": "m_c picks some flowers around the camp to bring back to the medicine den.",
     "cat_trait": null,
     "cat_skill": null,
