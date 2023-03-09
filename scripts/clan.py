@@ -13,19 +13,18 @@ import os
 
 import pygame
 
-from .events_module.generate_events import OngoingEvent
+from scripts.events_module.generate_events import OngoingEvent
 
 try:
     import ujson
 except ImportError:
     import json as ujson
 
-from .game_structure.game_essentials import game
-from .utility import update_sprite, get_current_season
-from .cat.cats import Cat, cat_class
-from .cat.names import names
-from .clan_resources.freshkill import Freshkill_Pile, Nutrition
-
+from scripts.game_structure.game_essentials import game
+from scripts.utility import update_sprite, get_current_season
+from scripts.cat.cats import Cat, cat_class
+from scripts.cat.names import names
+from scripts.clan_resources.freshkill import Freshkill_Pile, Nutrition
 # try:
 #    from scripts.world import World, save_map, load_map
 #    map_available = True
