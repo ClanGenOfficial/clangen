@@ -423,7 +423,11 @@ disable=raw-checker-failed,
         deprecated-pragma,
         use-symbolic-message-instead,
         relative-beyond-top-level,
-        wrong-import-position
+        wrong-import-position,
+        invalid-name,
+        bare-except,
+        broad-except,
+        wrong-import-order,
 
 # Enable the message, report, category or checker with the given id(s). You can
 # either give multiple identifier separated by comma (,) or put this option
