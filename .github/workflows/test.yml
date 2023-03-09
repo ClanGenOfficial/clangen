@@ -44,11 +44,12 @@ jobs:
         run: python3 tests/test_encoding.py test
       - name: Fix the issue hopefully
         if: failure()
+        id: fixit
         env:
           FILES: ${{ steps.encoding_test.outputs.files  }}
         run: python3 tests/test_encoding.py fix
       - name: Make a pr
-        if: failure()
+        if: ${{ failure() && steps.fixit.conclusion == 'success' }}
         uses: peter-evans/create-pull-request@v3
         with:
           commit-message: Fix file encoding
