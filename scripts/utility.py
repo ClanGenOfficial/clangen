@@ -419,7 +419,7 @@ def event_text_adjust(Cat,
                       other_clan_name=None,
                       keep_m_c=False,
                       new_cat=None,
-                      clan=game.clan):
+                      clan=None):
     name = str(cat.name)
     other_name = None
     if other_cat:
