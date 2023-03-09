@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
+import logging
+import subprocess
 import sys
 import os
+
+
 directory = os.path.dirname(__file__)
 if directory:
     os.chdir(directory)
 
-import subprocess
-
 # Setup logging
-import logging 
 formatter = logging.Formatter("%(name)s - %(levelname)s - %(message)s")
 # Logging for file
 file_handler = logging.FileHandler("clangen.log")
