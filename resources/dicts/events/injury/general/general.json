@@ -613,6 +613,65 @@
         "negate_other_cat_skill": null,
         "backstory_constraint": null
      
+     },
+     {
+        "injury": "bee sting",
+        "camp": "any",
+        "tags": [
+            "Greenleaf",
+            "Newleaf",
+            "scar",
+            "QUILLCHUNK"
+        ],
+        "event_text": "The day is so nice out today that m_c decided to sneak out of camp and go play in the flowers without anyone noticing. They come back with a swollen paw, having stepped on a bee.",
+        "history_text": [
+            "m_c found it unbelievable they got scarred by a bee.",
+            "This cat died from complications caused by a bee sting.",
+            "after a bee sting"
+         ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null,
+        "negate_cat_trait": null,
+        "negate_cat_skill": null,
+        "negate_other_cat_trait": null,
+        "negate_other_cat_skill": null,
+        "backstory_constraint": null
+     
+     },
+     {
+        "injury": "bee sting",
+        "camp": "any",
+        "tags": [
+            "Greenleaf",
+            "Newleaf",
+            "scar",
+            "BOTHBLIND"
+        ],
+        "event_text": "Camp was supposed to be safe, but m_c found bees trying to form a hive in a corner of camp. Annoyed by their buzzing, m_c attacks them, and got swarmed by bees.",
+        "history_text": [
+            "This cat was attacked by bees.",
+            "This cat died from complications caused by a bee sting.",
+            "after a bee sting"
+         ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": [
+            "bloodthirsty",
+            "childish",
+            "fierce",
+            "vengeful",
+            "daring",
+            "ambitious"
+        ],
+        "other_cat_skill": null,
+        "negate_cat_trait": null,
+        "negate_cat_skill": null,
+        "negate_other_cat_trait": null,
+        "negate_other_cat_skill": null,
+        "backstory_constraint": null
+     
      }
      
 ]
