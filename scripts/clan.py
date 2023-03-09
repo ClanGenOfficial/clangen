@@ -405,7 +405,7 @@ class Clan():
 
     def add_cat(self, cat):  # cat is a 'Cat' object
         """ Adds cat into the list of clan cats"""
-        if cat.ID in Cat.all_cats.keys() and cat.ID not in self.clan_cats:
+        if cat.ID in Cat.all_cats and cat.ID not in self.clan_cats:
             self.clan_cats.append(cat.ID)
 
     def add_to_starclan(self, cat):  # Same as add_cat
@@ -413,8 +413,7 @@ class Clan():
         Places the dead cat into starclan.
         It should not be removed from the list of cats in the clan
         """
-        if cat.ID in Cat.all_cats.keys(
-        ) and cat.dead and cat.ID not in self.starclan_cats:
+        if cat.ID in Cat.all_cats and cat.dead and cat.ID not in self.starclan_cats:
             # The dead-value must be set to True before the cat can go to starclan
             self.starclan_cats.append(cat.ID)
             if cat.ID in self.med_cat_list:
@@ -425,8 +424,7 @@ class Clan():
         """
         TODO: DOCS
         """
-        if cat.ID in Cat.all_cats.keys(
-        ) and not cat.outside and cat.ID in Cat.outside_cats.keys():
+        if cat.ID in Cat.all_cats and not cat.outside and cat.ID in Cat.outside_cats:
             # The outside-value must be set to True before the cat can go to cotc
             Cat.outside_cats.pop(cat.ID)
             cat.clan = str(game.clan.name)
@@ -436,8 +434,7 @@ class Clan():
         Places the gone cat into cotc.
         It should not be removed from the list of cats in the clan
         """
-        if cat.ID in Cat.all_cats.keys(
-        ) and cat.outside and cat.ID not in Cat.outside_cats.keys():
+        if cat.ID in Cat.all_cats and cat.outside and cat.ID not in Cat.outside_cats:
             # The outside-value must be set to True before the cat can go to cotc
             Cat.outside_cats.update({cat.ID: cat})
             if cat.status != 'leader':  # takes away the suffix unless the cat used to be leader
@@ -448,7 +445,7 @@ class Clan():
         Places the dead cat into the dark forest.
         It should not be removed from the list of cats in the clan
         """
-        if cat.ID in Cat.all_cats.keys() and cat.dead and cat.df is False:
+        if cat.ID in Cat.all_cats and cat.dead and cat.df is False:
             cat.df = True
             cat.thought = "Is distraught after being sent to the Place of No Stars"
             if cat in self.starclan_cats:
@@ -468,7 +465,7 @@ class Clan():
         if Cat.all_cats[ID] in Cat.all_cats_list:
             Cat.all_cats_list.remove(Cat.all_cats[ID])
 
-        if ID in Cat.all_cats.keys():
+        if ID in Cat.all_cats:
             Cat.all_cats.pop(ID)
             if ID in self.clan_cats:
                 self.clan_cats.remove(ID)
@@ -758,7 +755,7 @@ class Clan():
         if len(med_cat_info) > 2:
             game.clan.med_cat_number = int(med_cat_info[2])
         if len(sections) > 4:
-            if instructor_info in Cat.all_cats.keys():
+            if instructor_info in Cat.all_cats:
                 game.clan.instructor = Cat.all_cats[instructor_info]
                 game.clan.add_cat(game.clan.instructor)
         else:
@@ -780,7 +777,7 @@ class Clan():
                 self.all_clans.append(OtherClan())
 
         for cat in members:
-            if cat in Cat.all_cats.keys():
+            if cat in Cat.all_cats:
                 game.clan.add_cat(Cat.all_cats[cat])
                 game.clan.add_to_starclan(Cat.all_cats[cat])
             else:
@@ -852,7 +849,7 @@ class Clan():
         game.clan.med_cat_number = clan_data["med_cat_number"]
 
         # Instructor Info
-        if clan_data["instructor"] in Cat.all_cats.keys():
+        if clan_data["instructor"] in Cat.all_cats:
             game.clan.instructor = Cat.all_cats[clan_data["instructor"]]
             game.clan.add_cat(game.clan.instructor)
         else:
@@ -869,7 +866,7 @@ class Clan():
             game.clan.all_clans.append(OtherClan(name, int(relation), temper))
 
         for cat in clan_data["clan_cats"].split(","):
-            if cat in Cat.all_cats.keys():
+            if cat in Cat.all_cats:
                 game.clan.add_cat(Cat.all_cats[cat])
                 game.clan.add_to_starclan(Cat.all_cats[cat])
             else:
