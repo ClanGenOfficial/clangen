@@ -4,8 +4,9 @@
 TODO: Docs
 
 
-""" # pylint: enable=line-too-long
+"""
 
+  # pylint: enable=line-too-long
 
 import random
 from random import choice, randint
@@ -612,14 +613,16 @@ class Clan():
         if game.clan.game_mode in ['expanded', 'cruel season']:
             self.save_freshkill_pile(game.clan)
 
-        with open(f'saves/{self.name}clan.json', 'w', encoding='utf-8') as write_file:
+        with open(f'saves/{self.name}clan.json', 'w',
+                  encoding='utf-8') as write_file:
             json_string = ujson.dumps(clan_data, indent=4)
             write_file.write(json_string)
 
         if os.path.exists(f'saves/{self.name}clan.txt'):
             os.remove(f'saves/{self.name}clan.txt')
 
-        with open('saves/currentclan.txt', 'w', encoding='utf-8') as write_file:
+        with open('saves/currentclan.txt', 'w',
+                  encoding='utf-8') as write_file:
             write_file.write(self.name)
 
     def load_clan(self):
@@ -654,7 +657,8 @@ class Clan():
         game.switches[
             'error_message'] = "There was an error loading the clan.txt"
         with open('saves/' + game.switches['clan_list'][0] + 'clan.txt',
-                  'r', encoding='utf-8') as read_file: # pylint: disable=redefined-outer-name
+                  'r',
+                  encoding='utf-8') as read_file:  # pylint: disable=redefined-outer-name
             clan_data = read_file.read()
         clan_data = clan_data.replace('\t', ',')
         sections = clan_data.split('\n')
@@ -804,7 +808,8 @@ class Clan():
         game.switches[
             'error_message'] = "There was an error loading the clan.json"
         with open('saves/' + game.switches['clan_list'][0] + 'clan.json',
-                  'r', encoding='utf-8') as read_file: # pylint: disable=redefined-outer-name
+                  'r',
+                  encoding='utf-8') as read_file:  # pylint: disable=redefined-outer-name
             clan_data = ujson.loads(read_file.read())
 
         if clan_data["leader"]:
@@ -905,7 +910,7 @@ class Clan():
             return
         file_path = f"saves/{game.clan.name}/herbs.json"
         if os.path.exists(file_path):
-            with open(file_path, 'r', encoding='utf-8') as read_file: # pylint: disable=redefined-outer-name
+            with open(file_path, 'r', encoding='utf-8') as read_file:  # pylint: disable=redefined-outer-name
                 clan.herbs = ujson.loads(read_file.read())
 
         else:
@@ -941,7 +946,7 @@ class Clan():
             return
         file_path = f"saves/{game.clan.name}/pregnancy.json"
         if os.path.exists(file_path):
-            with open(file_path, 'r', encoding='utf-8') as read_file: # pylint: disable=redefined-outer-name
+            with open(file_path, 'r', encoding='utf-8') as read_file:  # pylint: disable=redefined-outer-name
                 clan.pregnancy_data = ujson.load(read_file)
         else:
             clan.pregnancy_data = {}
@@ -970,7 +975,7 @@ class Clan():
         file_path = f"saves/{game.clan.name}/disasters/primary.json"
         try:
             if os.path.exists(file_path):
-                with open(file_path, 'r', encoding='utf-8') as read_file: # pylint: disable=redefined-outer-name
+                with open(file_path, 'r', encoding='utf-8') as read_file:  # pylint: disable=redefined-outer-name
                     disaster = ujson.load(read_file)
                     if disaster:
                         clan.primary_disaster = OngoingEvent(
@@ -978,7 +983,7 @@ class Clan():
                             tags=disaster["tags"],
                             duration=disaster["duration"],
                             current_duration=disaster["current_duration"]
-                            if "current_duration" else disaster["duration"], # pylint: disable=using-constant-test
+                            if "current_duration" else disaster["duration"],  # pylint: disable=using-constant-test
                             trigger_events=disaster["trigger_events"],
                             progress_events=disaster["progress_events"],
                             conclusion_events=disaster["conclusion_events"],
@@ -1007,7 +1012,7 @@ class Clan():
                             tags=disaster["tags"],
                             duration=disaster["duration"],
                             current_duration=disaster["current_duration"]
-                            if "current_duration" else disaster["duration"], # pylint: disable=using-constant-test
+                            if "current_duration" else disaster["duration"],  # pylint: disable=using-constant-test
                             progress_events=disaster["progress_events"],
                             conclusion_events=disaster["conclusion_events"],
                             collateral_damage=disaster["collateral_damage"])
@@ -1037,16 +1042,13 @@ class Clan():
                 "event": clan.primary_disaster.event,
                 "tags": clan.primary_disaster.tags,
                 "duration": clan.primary_disaster.duration,
-                "current_duration":
-                clan.primary_disaster.current_duration,
+                "current_duration": clan.primary_disaster.current_duration,
                 "trigger_events": clan.primary_disaster.trigger_events,
                 "progress_events": clan.primary_disaster.progress_events,
-                "conclusion_events":
-                clan.primary_disaster.conclusion_events,
+                "conclusion_events": clan.primary_disaster.conclusion_events,
                 "secondary_disasters":
                 clan.primary_disaster.secondary_disasters,
-                "collateral_damage":
-                clan.primary_disaster.collateral_damage
+                "collateral_damage": clan.primary_disaster.collateral_damage
             }
         else:
             disaster = {}
@@ -1065,17 +1067,13 @@ class Clan():
                 "event": clan.secondary_disaster.event,
                 "tags": clan.secondary_disaster.tags,
                 "duration": clan.secondary_disaster.duration,
-                "current_duration":
-                clan.secondary_disaster.current_duration,
+                "current_duration": clan.secondary_disaster.current_duration,
                 "trigger_events": clan.secondary_disaster.trigger_events,
-                "progress_events":
-                clan.secondary_disaster.progress_events,
-                "conclusion_events":
-                clan.secondary_disaster.conclusion_events,
+                "progress_events": clan.secondary_disaster.progress_events,
+                "conclusion_events": clan.secondary_disaster.conclusion_events,
                 "secondary_disasters":
                 clan.secondary_disaster.secondary_disasters,
-                "collateral_damage":
-                clan.secondary_disaster.collateral_damage
+                "collateral_damage": clan.secondary_disaster.collateral_damage
             }
         else:
             disaster = {}
@@ -1097,7 +1095,7 @@ class Clan():
         file_path = f"saves/{game.clan.name}/freshkill_pile.json"
         try:
             if os.path.exists(file_path):
-                with open(file_path, 'r', encoding='utf-8') as read_file: # pylint: disable=redefined-outer-name
+                with open(file_path, 'r', encoding='utf-8') as read_file:  # pylint: disable=redefined-outer-name
                     pile = ujson.load(read_file)
                     clan.freshkill_pile = Freshkill_Pile(pile)
 
@@ -1124,7 +1122,8 @@ class Clan():
 
         try:
             with open(f"saves/{game.clan.name}/freshkill_pile.json",
-                      'w', encoding='utf-8') as rel_file:
+                      'w',
+                      encoding='utf-8') as rel_file:
                 json_string = ujson.dumps(clan.freshkill_pile.pile, indent=4)
                 rel_file.write(json_string)
         except:
@@ -1132,7 +1131,8 @@ class Clan():
 
         try:
             with open(f"saves/{game.clan.name}/nutrition_info.json",
-                      'w', encoding='utf-8') as rel_file:
+                      'w',
+                      encoding='utf-8') as rel_file:
                 data = {}
                 for k, nutr in clan.freshkill_pile.nutrition_info.items():
                     data[k] = {
@@ -1195,7 +1195,7 @@ class StarClan():
         white = pygame.Surface((50, 50))
         fade_level = 0
         if cat.dead:
-            for f in self.forgotten_stages: # pylint: disable=consider-using-dict-items
+            for f in self.forgotten_stages:  # pylint: disable=consider-using-dict-items
                 if cat.dead_for in range(self.forgotten_stages[f][0],
                                          self.forgotten_stages[f][1]):
                     fade_level = f
