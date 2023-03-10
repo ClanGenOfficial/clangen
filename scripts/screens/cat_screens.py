@@ -376,12 +376,7 @@ class ProfileScreen(Screens):
                 self.update_disabled_buttons_and_text()
             elif event.ui_element == self.exile_cat_button:
                 if not self.the_cat.dead and not self.the_cat.exiled:
-                    self.the_cat.exiled = True
-                    self.the_cat.outside = True
-                    self.the_cat.thought = "Is shocked that they have been exiled"
-                    for app in self.the_cat.apprentice:
-                        Cat.fetch_cat(app).update_mentor()
-                    self.the_cat.update_mentor()
+                    Cat.exile(self.the_cat)
                     self.clear_profile()
                     self.build_profile()
                     self.update_disabled_buttons_and_text()

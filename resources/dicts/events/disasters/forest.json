@@ -217,7 +217,7 @@
       ]
     },
     "conclusion_events": [
-      "The sun rises one day, rainbow shards of ice glinting on the ground like so many days before, but as the day goes on… They melt and turn to mud. While everyone soon gets dirty, the sunlight feels so good on every cat's fur, no one can complain too much through purrs.",
+      "The sun rises one day, rainbow shards of ice glinting on the ground like so many days before, but as the day goes on... They melt and turn to mud. While everyone soon gets dirty, the sunlight feels so good on every cat's fur, no one can complain too much through purrs.",
       "When the Clan steps from their dens and finds the world no longer freezing, they're almost shocked by the change. It had been so cold for so long, they'd forgotten warmth's embrace.",
       "As the cold loses its grip on their throats, the forest of c_n weeps with relief, trees oozing sap from their damaged trunks."
     ],
@@ -337,7 +337,7 @@
     "rarity": "uncommon",
     "trigger_events": [
       "The objects the Twolegs bring smell so enticing, but the cats of c_n avoid them as much as possible. It only occurs to them that the prey they so rely on for food might not do the same when the first cats start getting sick.",
-      "The prey has been easy to catch lately, though even the freshest of fresh-kill has seemed a little… off. The medicine cat den has more work than usual, and bellyaches are now very common."
+      "The prey has been easy to catch lately, though even the freshest of fresh-kill has seemed a little... off. The medicine cat den has more work than usual, and bellyaches are now very common."
     ],
     "progress_events": {
       "moon1": [
@@ -426,10 +426,10 @@
       "moon1": [
         "The Clan hunts and scrounges for any hint of possible food, but they never seem to find enough.",
         "As famine hunts the Clan, none of their own hunts seem enough to drive it from haunting their paws.",
-        "Every cat in the clan seems a little sadder, a little more serious as the situation dawns on them all. They have to try find more prey, before it becomes too late."
+        "Every cat in the Clan seems a little sadder, a little more serious as the situation dawns on them all. They have to try find more prey, before it becomes too late."
       ],
       "moon2": [
-        "c_n has started wandering past their borders to find prey. While it might not be as much as they hoped for, any catch is considered a blessing from StarClan, even if some prey might smell like a rival clan. No questions are asked if it means not going hungry.",
+        "c_n has started wandering past their borders to find prey. While it might not be as much as they hoped for, any catch is considered a blessing from StarClan, even if some prey might smell like a rival Clan. No questions are asked if it means not going hungry.",
         "Every scrap, every catch, every piece brought back to the Clan, it all carries such weight. With prey so scarce, every mouthful is critical.",
         "Never before has the whispered prayers to StarClan over every catch seemed so heartful. All the cats of Clan can do with hunger dogging their pawsteps is their best. The rest is in the paws of the stars."
       ]
