@@ -20,7 +20,7 @@ from sys import exit # pylint: disable=redefined-builtin
 from scripts.cat.cats import Cat
 from scripts.game_structure.image_button import UIImageButton
 # from scripts.world import save_map
-from scripts.utility import get_text_box_theme, scale
+from scripts.utility import get_text_box_theme, scale, quit # pylint: disable=redefined-builtin
 import pygame_gui
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 from scripts.game_structure.windows import DeleteCheck
@@ -52,13 +52,7 @@ class StartScreen(Screens):
             elif event.ui_element == self.settings_button:
                 self.change_screen('settings screen')
             elif event.ui_element == self.quit:
-                game.rpc.close_rpc.set()
-                game.rpc.update_rpc.set()
-                pygame.display.quit()
-                pygame.quit()
-                if game.rpc.is_alive():
-                    game.rpc.join(1)
-                exit()
+                quit(savesettings=False, clearevents=False)
 
     def on_use(self):
         # have to blit this manually or else hover input doesn't get read properly
@@ -310,6 +304,9 @@ class SettingsScreen(Screens):
 
 
     def handle_event(self, event):
+        """
+        TODO: DOCS
+        """
         if event.type == pygame_gui.UI_TEXT_BOX_LINK_CLICKED:
             os.system(f"start \"\" {event.link_target}")
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -318,14 +315,7 @@ class SettingsScreen(Screens):
                 return
             if event.ui_element == self.fullscreen_toggle:
                 game.switch_setting('fullscreen')
-                game.save_settings()
-                game.rpc.close_rpc.set()
-                game.rpc.update_rpc.set()
-                pygame.display.quit()
-                pygame.quit()
-                if game.rpc.is_alive():
-                    game.rpc.join(1)
-                exit()
+                quit(savesettings=True, clearevents=False)
             elif event.ui_element == self.save_settings_button:
                 self.save_settings()
                 game.save_settings()
@@ -343,136 +333,26 @@ class SettingsScreen(Screens):
                 return
             elif event.ui_element == self.language_button:
                 self.open_lang_settings()
-            if self.sub_menu == 'general':
-                self.handle_general_events(event)
-            elif self.sub_menu == 'relation':
-                self.handle_relation_events(event)
-            elif self.sub_menu == 'language':
-                self.handle_lang_events(event)
+            if self.sub_menu in ['general', 'relation', 'language']:
+                self.handle_checkbox_events(event)
 
-    def handle_relation_events(self, event):
-        if event.ui_element == self.checkboxes['random relation']:
-            game.switch_setting('random relation')
-            self.settings_changed = True
-            self.update_save_button()
-            self.refresh_checkboxes()
-        elif event.ui_element == self.checkboxes['affair']:
-            game.switch_setting('affair')
-            self.settings_changed = True
-            self.update_save_button()
-            self.refresh_checkboxes()
-        elif event.ui_element == self.checkboxes['no gendered breeding']:
-            game.switch_setting('no gendered breeding')
-            self.settings_changed = True
-            self.update_save_button()
-            self.refresh_checkboxes()
-        elif event.ui_element == self.checkboxes['no unknown fathers']:
-            game.switch_setting('no unknown fathers')
-            self.settings_changed = True
-            self.update_save_button()
-            self.refresh_checkboxes()
-        elif event.ui_element == self.checkboxes['romantic with former mentor']:
-            game.switch_setting('romantic with former mentor')
-            self.settings_changed = True
-            self.update_save_button()
-            self.refresh_checkboxes()
-        elif event.ui_element == self.checkboxes['first_cousin_mates']:
-            game.switch_setting('first_cousin_mates')
-            self.settings_changed = True
-            self.update_save_button()
-            self.refresh_checkboxes()
+    def handle_checkbox_events(self, event):
+        """
+        TODO: DOCS
+        """
+        if event.ui_element in self.checkboxes.values():
+            for key, value in self.checkboxes.items():
+                if value == event.ui_element:
+                    if self.sub_menu is 'language':
+                        game.settings['language'] = key
+                    else:
+                        game.switch_setting(key)
+                    self.settings_changed = True
+                    self.update_save_button()
+                    self.refresh_checkboxes()
+                    break
+        
 
-    def handle_general_events(self, event):
-        if event.ui_element == self.checkboxes['dark mode']:
-            game.switch_setting('dark mode')
-            self.settings_changed = True
-            self.update_save_button()
-            self.open_general_settings()
-        elif event.ui_element == self.checkboxes['backgrounds']:
-            game.switch_setting('backgrounds')
-            self.settings_changed = True
-            self.update_save_button()
-            self.refresh_checkboxes()
-        elif event.ui_element == self.checkboxes['autosave']:
-            game.switch_setting('autosave')
-            self.settings_changed = True
-            self.update_save_button()
-            self.refresh_checkboxes()
-        elif event.ui_element == self.checkboxes['disasters']:
-            game.switch_setting('disasters')
-            self.settings_changed = True
-            self.update_save_button()
-            self.refresh_checkboxes()
-        elif event.ui_element == self.checkboxes['retirement']:
-            game.switch_setting('retirement')
-            self.settings_changed = True
-            self.update_save_button()
-            self.refresh_checkboxes()
-        elif event.ui_element == self.checkboxes['shaders']:
-            game.switch_setting('shaders')
-            self.settings_changed = True
-            self.update_save_button()
-            self.refresh_checkboxes()
-        elif event.ui_element == self.checkboxes['hotkey display']:
-            game.switch_setting('hotkey display')
-            self.settings_changed = True
-            self.update_save_button()
-            self.refresh_checkboxes()
-        elif event.ui_element == self.checkboxes['deputy']:
-            game.switch_setting('deputy')
-            self.settings_changed = True
-            self.update_save_button()
-            self.refresh_checkboxes()
-        elif event.ui_element == self.checkboxes['fading']:
-            game.switch_setting('fading')
-            self.settings_changed = True
-            self.update_save_button()
-            self.refresh_checkboxes()
-        elif event.ui_element == self.checkboxes['save_faded_copy']:
-            game.switch_setting('save_faded_copy')
-            self.settings_changed = True
-            self.update_save_button()
-            self.refresh_checkboxes()
-        elif event.ui_element == self.checkboxes['gore']:
-            game.switch_setting('gore')
-            self.settings_changed = True
-            self.update_save_button()
-            self.refresh_checkboxes()
-        elif event.ui_element == self.checkboxes['become_mediator']:
-            game.switch_setting('become_mediator')
-            self.settings_changed = True
-            self.update_save_button()
-            self.refresh_checkboxes()
-        elif event.ui_element == self.checkboxes['discord']:
-            game.switch_setting('discord')
-            self.settings_changed = True
-            self.update_save_button()
-            self.refresh_checkboxes()
-            if game.settings['discord']:
-                game.rpc = _DiscordRPC("1076277970060185701",
-                                       daemon=True)
-                game.rpc.start()
-                game.rpc.start_rpc.set()
-            else:
-                game.rpc.close()
-
-
-    def handle_lang_events(self, event):
-        if event.ui_element == self.checkboxes['english']:
-            game.settings['language'] = 'english'
-            self.settings_changed = True
-            self.update_save_button()
-            self.refresh_checkboxes()
-        elif event.ui_element == self.checkboxes['spanish']:
-            game.settings['language'] = 'spanish'
-            self.settings_changed = True
-            self.update_save_button()
-            self.refresh_checkboxes()
-        elif event.ui_element == self.checkboxes['german']:
-            game.settings['language'] = 'german'
-            self.settings_changed = True
-            self.update_save_button()
-            self.refresh_checkboxes()
 
     def screen_switches(self):
         self.settings_changed = False

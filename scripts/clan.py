@@ -537,14 +537,7 @@ class Clan():
         TODO: DOCS
         """
         game.save_clanlist(clan)
-        game.cur_events_list.clear()
-        game.rpc.close_rpc.set()
-        game.rpc.update_rpc.set()
-        pygame.display.quit()
-        pygame.quit()
-        if game.rpc.is_alive():
-            game.rpc.join(1)
-        exit()
+        quit(savesettings=False, clearevents=True)
 
     def save_clan(self):
         """

@@ -918,3 +918,20 @@ def get_text_box_theme(themename=""):
             return "text_box"
         else:
             return themename
+
+
+def quit(savesettings=False, clearevents=False):
+    """
+    Quits the game, avoids a bunch of repeated lines
+    """
+    if savesettings:
+        game.save_settings()
+    if clearevents:
+        game.cur_events_list.clear()
+    game.rpc.close_rpc.set()
+    game.rpc.update_rpc.set()
+    pygame.display.quit()
+    pygame.quit()
+    if game.rpc.is_alive():
+        game.rpc.join(1)
+    exit()
