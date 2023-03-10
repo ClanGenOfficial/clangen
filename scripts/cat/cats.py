@@ -70,10 +70,10 @@ class Cat():
     age_moons = {
         'kitten': [0, 5],
         'adolescent': [6, 11],
-        'young adult': [12, 47],
-        'adult': [48, 95],
-        'senior adult': [96, 119],
-        'elder': [120, 300]
+        'young adult': [12, 53],
+        'adult': [54, 107],
+        'senior adult': [108, 131],
+        'elder': [132, 216]
     }
 
     # This in is in reverse order: top of the list at the bottom
@@ -862,12 +862,12 @@ class Cat():
         if self.genderalign == 'male' or self.genderalign == "transmasc" or self.genderalign == "trans male":
             sex = 'tom'
         elif self.genderalign == 'female' or self.genderalign == "transfem" or self.genderalign == "trans female":
-            sex = 'she-cat'
+            sex = 'molly'
         else:
-            sex = 'cat'
+            sex = 'eli'
         description = str(self.pelt.length).lower() + '-furred'
         description += ' ' + describe_color(self.pelt, self.tortiecolour, self.tortiepattern,
-                                            self.white_patches) + ' ' + sex
+                                            self.white_patches, self.skin) + ' ' + sex
         return description
 
     def describe_eyes(self):

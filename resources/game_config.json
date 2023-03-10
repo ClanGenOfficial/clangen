@@ -99,11 +99,11 @@
 	},
 	"cat_generation": {
 		"base_permanent_condition": 90,
-		"base_male_tortie": 13,
-		"base_female_tortie": 4,
+		"base_male_tortie": 18,
+		"base_female_tortie": 8,
 		"base_heterochromia": 120,
 		"direct_inheritance": 15,
-		"wildcard_tortie": 9
+		"wildcard_tortie": 10
 	},
 	"accessory_generation": {
 		"base_acc_chance": 150,
@@ -115,7 +115,7 @@
 		"ceremony_modifier": -20
 	},
 	"fading": {
-		"age_to_fade": 202,
+		"age_to_fade": 300,
 		"opacity_at_fade": 20,
 		"visual_fading_speed": 5
 	},
