@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: ascii -*-
-"""This is not a unittest scripts so mybe this shouldn't be in /tests/...
+"""
+
+ Please dont put this *unittest* in the tests/unittest github action.
+ It is only for local use.
+HOWEVER
+ Please keep the raw python script, so it can be run by the tests/encoding_test github action.
+
 Alternatively to Python, the 'file' command on linux can also check encoding.
 
 This test isn't because we can't use utf-8 characters, but because we shouldn't
@@ -13,6 +19,7 @@ diff old_file.txt new_file.txt"""
 import os
 import sys
 import difflib
+import unittest
 
 
 def test():
@@ -51,6 +58,20 @@ def test():
         else:
             print(f"files={':'.join(failedFiles)}")
         sys.exit(1)
+    else:
+        sys.exit(0)
+
+
+# THE UNITTEST IS ONLY FOR LOCAL USE
+# PLEASE DONT PUT THIS IN THE GITHUB ACTION
+class TestEncoding(unittest.TestCase):
+    """Test that all files are ascii decodable."""
+
+    def test_encoding(self):
+        """Test that all files are ascii decodable."""
+        with self.assertRaises(SystemExit) as cm:
+            test()
+        self.assertEqual(cm.exception.code, 0)
 
 def fix():
 
