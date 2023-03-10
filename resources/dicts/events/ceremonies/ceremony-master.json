@@ -1240,7 +1240,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "(prefix)kit can't contain the energy flowing through them: they were officially going to begin training to be a Mediator! They earn their apprentices name, m_c, and are guided by (mentor) on their journey."
+    "(prefix)kit can't contain the energy flowing through them: they are officially going to begin training to be a mediator! They earn their apprentice name, m_c, and will be guided by (mentor) on their journey."
   ],
   "mediator_app_12": [
     [
@@ -1284,7 +1284,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "(prefix)kit always dreamed of becoming a Mediator: Now that they're m_c, an apprentice being mentored by (mentor), it feels like a wish come true."
+    "(prefix)kit always dreamed of becoming a mediator: Now that they're m_c, an apprentice being mentored by (mentor), it feels like a wish come true."
   ],
   "med_0": [
     [
@@ -1308,7 +1308,7 @@
     "general_backstory",
     "all_traits"
   ],
-  "(prefix)paw has struggled to learn the skills of a medicine cat, but they refuse to train as a warrior. They are too old to remain an apprentice, and are hesitantly given the name m_c."
+  "(prefix)paw has struggled to learn the skills of a medicine cat, but they refuse to train as a warrior. They are too old to remain an apprentice, and as the other medicine cats look with pity, they are hesitantly given the name m_c."
 ],
   "med_0_b": [
   [
@@ -1464,7 +1464,7 @@
       "general_backstory",
       "altruistic"
     ],
-    "Helping cats heal is what (prefix)paw does best, their full name of m_c proves to them that they're fully qualified to do so, and that StarClan has accepted them for it."
+    "Helping cats heal is what (prefix)paw does best. Their full name of m_c proves to them that they're fully qualified to do so, and that StarClan has accepted them for it."
   ],
   "med_13": [
     [
@@ -1632,7 +1632,7 @@
       "general_backstory",
       "fierce"
     ],
-    "During their apprenticeship (prefix)paw struggled with the best way to protect c_n, with teeth or with tinctures, but now they're m_c they're certain they've made the right choice to be a medicine cat. Though they will keep practicing that battle move they've learned, just in case."
+    "During their apprenticeship (prefix)paw struggled with the best way to protect c_n, with teeth or with tinctures, but now that they're m_c, they're certain they've made the right choice to be a medicine cat. Though they will keep practicing that battle move they've learned, just in case."
   ],
   "med_27": [
     [
@@ -1716,7 +1716,7 @@
       "general_backstory",
       "playful"
     ],
-    "No one knows how (prefix)paw got their claws on it, but they manage to play with a shiny piece of Twoleg something the whole time the other medicine cats give them their name - m_c. When asked why, m_c replied that one of their patients might like it, and they wanted to make sure it was safe before bringing it back home."
+    "No one knows how (prefix)paw got their claws on it, but they manage to play with a shiny piece of Twoleg stuff the whole time while the other medicine cats give them their name - m_c. When asked why, m_c replied that one of their patients might like it, and they wanted to make sure it was safe before bringing it back home."
   ],
   "med_34": [
     [
@@ -1836,7 +1836,7 @@
       "general_backstory",
       "vengeful"
     ],
-    "The other medicine cats mistake it as being calm, but (prefix)paw isn't quiet because they're at peace, but because they are angry. Every snide remark, every time someone sneered at them, every time they were treated less than, all of it goes through their mind. Now that they are m_c, c_n better treat them with respect, or there would be consequences."
+    "The other medicine cats mistake it as being calm, but (prefix)paw isn't quiet because they're at peace, but because they are angry. Every snide remark, every time someone sneered at them, every time they were treated less than, all of it goes through their mind. Now that they are m_c, c_n better treat them with respect, or there will be consequences."
   ],
   "med_44": [
     [
@@ -1908,7 +1908,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "As a StarClan cat steps forward to give, (prefix)paw their new name of m_c, they spot dead_par1 and dead_par2 watching them proudly with the other StarClan cats."
+    "As a StarClan cat steps forward to give (prefix)paw their new name of m_c, they spot dead_par1 and dead_par2 watching them proudly with the other StarClan cats."
   ],
   "warrior_0": [
     [
@@ -1932,7 +1932,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "Although their training has been long, (prefix)paw has failed to master the skills needed of a warrior. However, they are getting to old to stay in the apprentices den. The mood is tense and awkward as they are named m_c and honored for the r_h. "
+    "Although their training has been long, (prefix)paw has failed to master the skills needed of a warrior. However, they are getting too old to stay in the apprentices den. The mood is tense and awkward as they are named m_c and honored for their r_h. "
   ],
   "warrior_0_b": [
     [
@@ -2679,7 +2679,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "Although (prefix)paw still not ready to become a full mediator, they are too old to remain in the apprentices den. An meeting is called, and they are given the name m_c. The mood is tense and pitying. "
+    "Although (prefix)paw is still not ready to become a full mediator, they are too old to remain in the apprentices den. A meeting is called, and they are given the name m_c. The mood is tense and pitying. "
   ],
   "mediator_0_b": [
     [
@@ -2781,6 +2781,6 @@
       "general_backstory",
       "all_traits"
     ],
-    "Time has taken its toll, and m_c has noticed themselves slowing down. They have worked timelessly for many moons, but is it time for them to retire. "
+    "Time has taken its toll, and m_c has noticed themselves slowing down. They have worked timelessly for many moons, but it is time for them to retire. "
   ]
 }
