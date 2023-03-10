@@ -650,7 +650,7 @@ class Condition_Events():
                         event_types.append('ceremony')
                         if game.clan.leader is not None:
                             if not game.clan.leader.dead and not game.clan.leader.exiled and \
-                                    not game.clan.leader.outside:
+                                    not game.clan.leader.outside and cat.moons < 120:
                                 event = f"{game.clan.leader.name}, seeing {cat.name} struggling the last few moons " \
                                         f"approaches them and promises them that no one would think less of them for " \
                                         f"retiring early and that they would still be a valuable member of the Clan " \
@@ -673,7 +673,7 @@ class Condition_Events():
                     event_types.append('ceremony')
                     if game.clan.leader is not None:
                         if not game.clan.leader.dead and not game.clan.leader.exiled \
-                                and not game.clan.leader.outside:
+                                and not game.clan.leader.outside and cat.moons < 120:
                             event = f"{game.clan.leader.name}, seeing {cat.name} struggling the last few moons " \
                                     f"approaches them and promises them that no one would think less of them for " \
                                     f"retiring early and that they would still be a valuable member of the clan " \
