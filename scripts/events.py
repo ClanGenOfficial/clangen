@@ -1034,7 +1034,7 @@ class Events():
         """
         TODO: DOCS
         """
-        if self.CEREMONY_TXT:
+        if self.CEREMONY_TXT is not None:
             return
 
         resource_dir = "resources/dicts/events/ceremonies/"
