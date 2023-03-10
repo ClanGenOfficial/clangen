@@ -1,9 +1,21 @@
+# pylint: disable=line-too-long
+"""
+
+This file contains:
+  The start screen,
+  The switch clan screen,
+  The settings screen,
+  And the statistics screen.
+
+
+
+""" # pylint: enable=line-too-long
 import pygame
 import os
-import shutil
+
 
 from .base_screens import Screens
-from sys import exit
+from sys import exit # pylint: disable=redefined-builtin
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.image_button import UIImageButton
@@ -14,6 +26,10 @@ from scripts.game_structure.game_essentials import game, screen, screen_x, scree
 from scripts.game_structure.windows import DeleteCheck
 from scripts.game_structure.discord_rpc import _DiscordRPC
 
+try:
+    import ujson
+except ImportError:
+    import json as ujson
 
 class StartScreen(Screens):
 
@@ -279,62 +295,18 @@ class SettingsScreen(Screens):
     # Contains the text for the checkboxes.
     checkboxes_text = {}
 
-    info_text = "<b>Welcome to Warrior Cats clan generator!</b><br><br>" \
-                "This is a fan-made generator for the Warrior Cats -book series by Erin Hunter.<br><br>" \
-                "You're welcome to use the characters and sprites generated in this program, " \
-                "as long as you don't claim the sprites as your own creations or sell them for any reason.<br><br>" \
-                "<b>Original creator:</b> <i>just-some-cat.tumblr.com (anju)</i><br><br>" \
-                "<b>Fan edit made by:</b> <i>SableSteel</i><br>" \
-                "<b>With contributions from:</b><br><i>" \
-                "Blackfur<br>" \
-                "coffee<br>" \
-                "Desmond The Furry<br>" \
-                "ikethefifth<br>" \
-                "Lixxis<br>" \
-                "Ryos<br>" \
-                "clayteeth<br>" \
-                "CrumbsDeluxe<br>" \
-                "Hatsune Miku<br>" \
-                "keyraven (key)<br>" \
-                "larkgz<br>" \
-                "ozzie<br>" \
-                "sami(RAYTRAC3R)<br>" \
-                "scribble<br>" \
-                "Shou<br>" \
-                "Tanukigami<br>" \
-                "Tiri<br>" \
-                "Tybaxel<br>" \
-                "MathKangaroo (Victor)<br>" \
-                "ZtheCorgi (Zabe)<br>" \
-                "Charlie<br>" \
-                "green?<br>" \
-                "Owanora<br>" \
-                "Salix<br>" \
-                "Silverstar<br>" \
-                "Thrae<br>" \
-                "Chase<br>" \
-                "wood pank<br>" \
-                "grif<br>" \
-                "beejeans<br>" \
-                "Irony-Dragon<br>" \
-                "Kassi (Sophia)<br>" \
-                "milly!<br>" \
-                "coyotedawn<br>" \
-                "paradigox<br>" \
-                "Fruit Punk<br>" \
-                "ImLvna (Luna)<br>" \
-                "clownthoughts<br>" \
-                "thyfrankie<br>" \
-                "Perrio<br>" \
-                "anonn (Nicole)<br>" \
-                "catastrophe<br>" \
-                "Kittenvy<br>" \
-                "SunlitFable<br>" \
-                "Hobohime<br></i>" \
-                "Thank you to the beta testers and all those who have helped with development.<br><br>" \
-                "<b>Thank you for playing!!</b><br><br>" \
-                "Code is licensed under <a href=https://www.mozilla.org/en-US/MPL/2.0/>Mozilla Public License Version 2.0</a><br>" \
-                "Art is licensed under <a href=https://creativecommons.org/licenses/by-nc/4.0/legalcode>CC-BY-NC 4.0</a> "
+    info_text = ""
+    with open('resources/credits_text.json', 'r', encoding='utf-8') as f:
+        credits_text = ujson.load(f)
+    for string in credits_text.text:
+        if string == "{contrib}":
+            for contributor in credits_text.contrib:
+                info_text += contributor.name + "<br>"
+        
+        info_text += string
+
+        info_text += "<br>"
+
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_TEXT_BOX_LINK_CLICKED:
