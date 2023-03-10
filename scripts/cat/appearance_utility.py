@@ -608,31 +608,62 @@ def init_pattern(cat):
 def white_patches_inheritance(cat, parents: tuple):
 
     par_whitepatches = set()
+    par_points = []
+    par_vit = []
     for p in parents:
-        if p and p.white_patches:
-            par_whitepatches.add(p.white_patches)
+        if p:
+            if p.white_patches:
+                par_whitepatches.add(p.white_patches)
+            elif p.points:
+                par_points.append(p.points)
+            elif p.vit:
+                par_vit.append(p.vit)
 
     if not parents:
         print("Error - no parents. Randomizing white patches.")
         randomize_white_patches(cat)
         return
 
+    vit_chance = max(game.config["cat_generation"]["vit_chance"] - len(par_vit), 0)
+    if not random.getrandbits(vit_chance):
+        cat.vitiligo = choice(vit)
+
     # Direct inheritance. Will only work if at least one parent has white patches, otherwise continue on.
     if par_whitepatches and not randint(0, game.config["cat_generation"]["direct_inheritance"]):
-        cat.white_patches = choice(list(par_whitepatches))
-        return
+        # This ensures Torties and Calicos won't get direct inheritance of incorrect white patch types
+        _temp = par_whitepatches.copy()
+        if cat.pelt.name == "Tortie":
+            for p in _temp:
+                if p in high_white + mostly_white + ["FULLWHITE"]:
+                    _temp.remove(p)
+        elif cat.pelt.name == "Calico":
+            for p in _temp:
+                if p in little_white + mid_white:
+                    _temp.remove(p)
 
-    vit_chance = not random.getrandbits(game.config["cat_generation"]["vit_chance"])
-    if vit_chance:
-        cat.vitiligo = choice(vit)
-    
+        # Only proceed with the direct inheritance if there are white patches that match the pelt.
+        if _temp:
+            cat.white_patches = choice(list(_temp))
+
+            # Direct inheritance also effect the point marking.
+            if par_points and cat.pelt.name != "Tortie":
+                cat.points = choice(par_points)
+            else:
+                cat.points = None
+
+            return
+
     # dealing with points
-    is_pointed = False
-    for cat in parents:
-        if cat.points:
-            is_pointed = choice([True, False])
-    if is_pointed:
+    if par_points:
+        chance = 10 - len(par_points)
+    else:
+        chance = 40
+
+    if cat.pelt != "Tortie" and not (random.random() * chance):
         cat.points = choice(point_markings)
+    else:
+        cat.points = None
+
 
     white_list = [little_white, mid_white, high_white, mostly_white, ['FULLWHITE']]
 
@@ -666,6 +697,12 @@ def white_patches_inheritance(cat, parents: tuple):
     # Adjust weights for torties, since they can't have anything greater than mid_white:
     if cat.pelt.name == "Tortie":
         weights = weights[:2] + [0, 0, 0, 0]
+        # Another check to make sure not all the values are zero. This should never happen, but better
+        # safe then sorry.
+        if not any(weights):
+            weights = [2, 1, 0, 0, 0]
+    elif cat.pelt.name == "Calico":
+        weights = [0, 0] + weights[3:]
         # Another check to make sure not all the values are zero. This should never happen, but better
         # safe then sorry.
         if not any(weights):
