@@ -35,11 +35,16 @@ class Single_Event():
             self.cats_involved = list(cats_involved)
         else:
             self.cats_involved = []
+        
+        # TODO: remove this, its debug for the event thats just a number
+        print('--luna debug, thisll be gone next update sorry testers for spam--')
+        print(f"Event text: \"{self.text}\"")
+        print(f"Event types: ", self.types)
+        print(f"Event cats: ", self.cats_involved)
+        # for cat in self.cats_involved:
+        #     print('cat: ',cat)
+        #     if cat in self.text:
+        #         print("ID ", cat.id)
+        #         print("Text ", self.text)
 
-        for cat in self.cats_involved:
-            print('cat: ',cat)
-            if cat in self.text:
-                print("ID ", cat.id)
-                print("Text ", self.text)
-
-                raise ValueError("PING LUNA FOR THIS: INV Cat ID in event text")
+        #         raise ValueError("PING LUNA FOR THIS: INV Cat ID in event text")
