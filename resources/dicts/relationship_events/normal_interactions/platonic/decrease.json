@@ -108,7 +108,7 @@
 			"m_c keeps leaving all of the boring apprentice tasks for r_c to do by themself.",
 			"m_c tells r_c's mentor that they've been sneaking out of camp without permission.",
 			"m_c has a disagreement with r_c over who is the better hunter.",
-			"m_c accuses r_c of cheating and there's no way they could win so many practice fights fairly."
+			"m_c accuses r_c of cheating; there's no way they could win so many practice fights fairly."
 		],
 		"main_status_constraint": [
 			"apprentice",
