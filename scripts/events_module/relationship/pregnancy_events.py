@@ -650,19 +650,15 @@ class Pregnancy_Events():
 
     def get_amount_of_kits(self, cat):
         """Get the amount of kits which will be born."""
-        one_kit_possibility = {"young adult": 8, "adult": 9, "senior adult": 10, "elder": 4}
-        two_kit_possibility = {"young adult": 10, "adult": 13, "senior adult": 15, "elder": 3}
-        three_kit_possibility = {"young adult": 17, "adult": 15, "senior adult": 5, "elder": 1}
-        four_kit_possibility = {"young adult": 12, "adult": 8, "senior adult": 2, "elder": 0}
-        five_kit_possibility = {"young adult": 6, "adult": 2, "senior adult": 0, "elder": 0}
-        six_kit_possibility = {"young adult": 2, "adult": 0, "senior adult": 0, "elder": 0}
-        one_kit = [1] * one_kit_possibility[cat.age]
-        two_kits = [2] * two_kit_possibility[cat.age]
-        three_kits = [3] * three_kit_possibility[cat.age]
-        four_kits = [4] * four_kit_possibility[cat.age]
-        five_kits = [5] * five_kit_possibility[cat.age]
-        six_kits = [6] * six_kit_possibility[cat.age]
-        amount = choice(one_kit + two_kits + three_kits + four_kits + five_kits + six_kits)
+        tiny_litter_possibility = {"young adult": 18, "adult": 10, "senior adult": 15, "elder": 24}
+        small_litter_possibility = {"young adult": 18, "adult": 18, "senior adult": 24, "elder": 16}
+        large_litter_possibility = {"young adult": 10, "adult": 24, "senior adult": 15, "elder": 10}
+        huge_litter_possibility = {"young adult": 3, "adult": 4, "senior adult": 3, "elder": 2}
+        tiny_litter = [random.randint(1, 3)] *tiny_litter_possibility[cat.age]
+        small_litter = [random.randint(4, 6)] *small_litter_possibility[cat.age]
+        large_litter = [random.randint(7, 9)] *large_litter_possibility[cat.age]
+        huge_litter = [random.randint(10, 13)] *huge_litter_possibility[cat.age]      
+        amount = choice(tiny_litter + small_litter + large_litter + huge_litter)
 
         return amount
 

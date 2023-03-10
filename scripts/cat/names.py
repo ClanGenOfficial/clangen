@@ -1,6 +1,22 @@
 import random
 import os
 import ujson
+from .pelts import (
+    black_colours,
+    brown_colours,
+    ginger_colours,
+    white_colours,
+    cream_colours,
+    grey_colours,
+    chocolate_colours,
+    albino_sprites,
+    melanistic_sprites,
+    sphynx,
+    tabbies,
+    spotted,
+    exotic,
+    torties,
+    )
 
 
 class Name():
@@ -56,6 +72,7 @@ class Name():
                  prefix=None,
                  suffix=None,
                  colour=None,
+                 skin=None,
                  eyes=None,
                  pelt=None,
                  tortiepattern=None):
@@ -65,15 +82,29 @@ class Name():
         
         # Set prefix
         if prefix is None:
-            named_after_appearance = not random.getrandbits(3)  # Chance for True is '1/8'.
-            # Add possible prefix categories to list.
             possible_prefix_categories = []
-            if eyes in self.names_dict["eye_prefixes"]:
-                possible_prefix_categories.append(self.names_dict["eye_prefixes"][eyes])
-            if colour in self.names_dict["colour_prefixes"]:
-                possible_prefix_categories.append(self.names_dict["colour_prefixes"][colour])
+            if colour is not None:
+                if colour in black_colours:
+                    possible_prefix_categories.append(self.names_dict["black_prefixes"])
+                elif colour in grey_colours:
+                    possible_prefix_categories.append(self.names_dict["grey_prefixes"])
+                elif colour in white_colours:
+                    possible_prefix_categories.append(self.names_dict["white_prefixes"])
+                elif colour in ginger_colours:
+                    possible_prefix_categories.append(self.names_dict["ginger_prefixes"])
+                elif colour in brown_colours or colour in chocolate_colours:
+                    possible_prefix_categories.append(self.names_dict["brown_prefixes"])                   
+                elif colour in cream_colours:
+                    possible_prefix_categories.append(self.names_dict["cream_prefixes"])
+            if skin is not None:
+                if skin in albino_sprites:
+                    possible_prefix_categories.append(self.names_dict["albino_prefixes"])
+                elif skin in melanistic_sprites:    
+                    possible_prefix_categories = random.choices(self.names_dict["melanistic_prefixes"])  
+                elif skin in sphynx:    
+                    possible_prefix_categories = random.choices(self.names_dict["sphynx_prefixes"])  
             # Choose appearance-based prefix if possible and named_after_appearance because True.
-            if named_after_appearance and possible_prefix_categories:
+            if possible_prefix_categories:
                 prefix_category = random.choice(possible_prefix_categories)
                 self.prefix = random.choice(prefix_category)
             else:
@@ -87,13 +118,22 @@ class Name():
             else:
                 named_after_pelt = not random.getrandbits(3) # Chance for True is '1/8'.
                 # Pelt name only gets used if there's an associated suffix.
+                possible_suffix_categories = []
                 if named_after_pelt:
-                    if pelt in ["Tortie", "Calico"] and tortiepattern in self.names_dict["tortie_pelt_suffixes"]:
-                        self.suffix = random.choice(self.names_dict["tortie_pelt_suffixes"][tortiepattern])
-                    elif pelt in self.names_dict["pelt_suffixes"]:
-                        self.suffix = random.choice(self.names_dict["pelt_suffixes"][pelt])
-                    else:
-                        self.suffix = random.choice(self.names_dict["normal_suffixes"])
+                    possible_suffix_categories.append(self.names_dict["normal_suffixes"])
+                    if pelt in tabbies:
+                        possible_suffix_categories.append(self.names_dict["tabby_suffixes"])
+                    elif pelt in spotted:
+                        possible_suffix_categories.append(self.names_dict["spotted_suffixes"])
+                    elif pelt in exotic:
+                        possible_suffix_categories.append(self.names_dict["exotic_suffixes"])
+                    elif pelt in torties:
+                        possible_suffix_categories.append(self.names_dict["tortie_suffixes"])
+                    elif skin in sphynx:    
+                        possible_suffix_categories = random.choices(self.names_dict["sphynx_suffixes"])     
+                if possible_suffix_categories:    
+                    suffix_category = random.choice(possible_suffix_categories)
+                    self.suffix = random.choice(suffix_category)
                 else:
                     self.suffix = random.choice(self.names_dict["normal_suffixes"])
 
