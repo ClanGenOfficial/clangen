@@ -21,7 +21,7 @@
     "catcher", "cloud", "clover", "crawl", "creek", "cry", "dapple", "daisy", "dawn", "drift", "drop", "dusk", "dust", "dew",
     "ear", "ears", "eater", "eye", "eyes", "face", "fall", "fang", "fawn", "feather", "fern", "fin", "fire", "fish", "flake",
     "flame", "flight", "flick", "flood", "flower", "fox", "frost", "gaze", "goose", "gorse", "grass", "hail", "hare", "hawk", "haze",
-    "heather", "hollow", "holly", "ice", "ivy", "jaw", "jay", "jump", "kite", "lake", "larch","laurel", "leaf", "leap",
+    "heather", "hollow", "holly", "howl", "ice", "ivy", "jaw", "jay", "jump", "kite", "lake", "larch","laurel", "leaf", "leap",
     "leg", "light", "lightning", "lilac", "lily", "lotus", "mask", "mark", "minnow", "mist", "moth", "moon", "moss", "mouse",
     "muzzle", "needle", "nettle", "night", "noise", "nose", "nut", "pad", "patch", "path", "peak", "petal", "plume", "pond",
     "pool", "poppy", "pounce", "puddle", "rain", "rapid", "ripple", "river", "roar", "rose", "rump", "run", "runner", "scar",
@@ -80,7 +80,7 @@
     "Frog", "Frond", "Furled", "Furze", "Fuzzy", "Gale", "Gander", "Gannet", "Garlic", "Goose",
     "Gorge", "Gorse", "Grass", "Gravel", "Grouse", "Gull", "Gust", "Hail", "Half", "Hare",
     "Hatch", "Haven", "Hawk", "Hay", "Hazel", "Heath", "Heavy", "Heron", "Hill", "Hollow", "Holly",
-    "Honey", "Hoot", "Hop", "Hope", "Hornet", "Hound", "Iris", "Ivy", "Jackdaw", "Jagged", "Jay", "Jump", "Juniper", "Kestrel",
+    "Honey", "Hoot", "Hop", "Hope", "Hornet", "Hound", "Howl", "Iris", "Ivy", "Jackdaw", "Jagged", "Jay", "Jump", "Juniper", "Kestrel",
     "Kink", "Kite", "Lake", "Larch", "Lark", "Laurel", "Lavender", "Leaf", "Leap", "Leopard", "Lichen", "Light",
     "Lightning", "Lilac", "Lily", "Lion", "Little", "Lizard", "Locust", "Long", "Lotus", "Loud", "Low", "Lynx",
     "Mallow", "Mantis", "Maple", "Marigold", "Marsh", "Marten", "Meadow", "Midge",
@@ -91,7 +91,7 @@
     "Pond", "Pool", "Poppy", "Posy", "Pounce", "Prance", "Prickle", "Prim", "Primrose", "Puddle", "Quail", "Quick",
     "Pop", "Quiet", "Quill", "Rabbit", "Raccoon", "Ragged", "Rain", "Rat", "Rattle", "Raven", "Reed",
     "Ridge", "Rift", "Ripple", "River", "Roach", "Rook", "Root", "Rose", "Rosy", "Rowan", "Rubble",
-    "Running", "Rush", "Rye", "Sage", "Scorch", "Sedge", "Seed", "Shard", "Sharp", "Sheep",
+    "Running", "Rush", "Rye", "Sage", "Scorch", "Sedge", "Seed", "Shard", "Sharp",
     "Shell", "Shimmer", "Shining", "Shivering", "Short", "Shrew", "Shy", "Silk", "Silt", "Skip", "Sky", "Slate",
     "Sleek", "Sleet", "Slight", "Sloe", "Slope", "Small", "Snail", "Snake", "Snap", "Sneeze", "Snip", "Soft", "Song",
     "Sorrel", "Spark", "Sparrow", "Speckle", "Spider", "Spike", "Spire", "Splash", "Spot", "Spotted", "Spring", "Spruce",
@@ -104,7 +104,7 @@
 
   "colour_prefixes": {
     "WHITE": [
-    "White", "White", "Pale", "Snow", "Cloud", "Cloudy", "Milk", "Hail", "Frost", "Frozen", "Freeze", "Ice", "Icy", "Sheep",
+    "White", "White", "Pale", "Snow", "Cloud", "Cloudy", "Milk", "Hail", "Frost", "Frozen", "Freeze", "Ice", "Icy",
     "Blizzard", "Flurry", "Moon", "Light", "Bone", "Bright", "Swan", "Dove", "Wooly", "Cotton", "Hawthorn", "Laurel", 
     "Mimosa", "Fringe", "Icicle"
     ],
