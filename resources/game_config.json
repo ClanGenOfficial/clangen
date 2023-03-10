@@ -105,7 +105,7 @@
 		"direct_inheritance": 15,
 		"wildcard_tortie": 9,
 		"vit_chance": 10,
-		"random_point_chance": 0
+		"random_point_chance": 6
 	},
 	"accessory_generation": {
 		"base_acc_chance": 150,
