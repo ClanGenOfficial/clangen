@@ -21,6 +21,9 @@ import sys
 import difflib
 import unittest
 
+import os
+os.environ["SDL_VIDEODRIVER"] = "dummy"
+os.environ["SDL_AUDIODRIVER"] = "dummy"
 
 def test():
     """Iterate through all files in 'resources'
