@@ -298,14 +298,15 @@ class SettingsScreen(Screens):
     info_text = ""
     with open('resources/credits_text.json', 'r', encoding='utf-8') as f:
         credits_text = ujson.load(f)
-    for string in credits_text.text:
+    for string in credits_text["text"]:
         if string == "{contrib}":
-            for contributor in credits_text.contrib:
-                info_text += contributor.name + "<br>"
+            for contributor in credits_text["contrib"]:
+                info_text += contributor + "<br>"
+        else:
+            info_text += string
+            info_text += "<br>"
         
-        info_text += string
-
-        info_text += "<br>"
+        
 
 
     def handle_event(self, event):
