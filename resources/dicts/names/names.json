@@ -22,7 +22,7 @@
     "ear", "ears", "eater", "eye", "eyes", "face", "fall", "fang", "fawn", "feather", "fern", "fin", "fire", "fish", "flake",
     "flame", "flight", "flick", "flood", "flower", "fox", "frost", "gaze", "goose", "gorse", "grass", "hail", "hare", "hawk", "haze",
     "heather", "hollow", "holly", "howl", "ice", "ivy", "jaw", "jay", "jump", "kite", "lake", "larch","laurel", "leaf", "leap",
-    "leg", "light", "lightning", "lilac", "lily", "lotus", "mask", "mark", "minnow", "mist", "moth", "moon", "moss", "mouse",
+    "leg", "light", "lightning", "lilac", "lily", "lotus", "luster", "mask", "mark", "minnow", "mist", "moth", "moon", "moss", "mouse",
     "muzzle", "needle", "nettle", "night", "noise", "nose", "nut", "pad", "patch", "path", "peak", "petal", "plume", "pond",
     "pool", "poppy", "pounce", "puddle", "rain", "rapid", "ripple", "river", "roar", "rose", "rump", "run", "runner", "scar",
     "scratch", "seed", "shade", "shadow", "shell", "shine", "sight", "skip", "sky", "slip", "snout", "snow", "song", "spark",
@@ -92,7 +92,7 @@
     "Pop", "Quiet", "Quill", "Rabbit", "Raccoon", "Ragged", "Rain", "Rat", "Rattle", "Raven", "Reed",
     "Ridge", "Rift", "Ripple", "River", "Roach", "Rook", "Root", "Rose", "Rosy", "Rowan", "Rubble",
     "Running", "Rush", "Rye", "Sage", "Scorch", "Sedge", "Seed", "Shard", "Sharp",
-    "Shell", "Shimmer", "Shining", "Shivering", "Short", "Shrew", "Shy", "Silk", "Silt", "Skip", "Sky", "Slate",
+    "Shell", "Shimmer", "Shine", "Shining", "Shivering", "Short", "Shrew", "Shy", "Silk", "Silt", "Skip", "Sky", "Slate",
     "Sleek", "Sleet", "Slight", "Sloe", "Slope", "Small", "Snail", "Snake", "Snap", "Sneeze", "Snip", "Soft", "Song",
     "Sorrel", "Spark", "Sparrow", "Speckle", "Spider", "Spike", "Spire", "Splash", "Spot", "Spotted", "Spring", "Spruce",
     "Squirrel", "Starling", "Stem", "Stoat", "Stork", "Stream", "Strike",
@@ -104,19 +104,19 @@
 
   "colour_prefixes": {
     "WHITE": [
-    "White", "White", "Pale", "Snow", "Cloud", "Cloudy", "Milk", "Hail", "Frost", "Frozen", "Freeze", "Ice", "Icy",
-    "Blizzard", "Flurry", "Moon", "Light", "Bone", "Bright", "Swan", "Dove", "Wooly", "Cotton", "Hawthorn", "Laurel", 
-    "Mimosa", "Fringe", "Icicle"
+    "White", "White", "Pale", "Snow", "Cloud", "Cloudy", "Milk", "Hail", "Frost", "Frozen", "Freeze", "Ice", "Icy", "Icicle",
+    "Blizzard", "Flurry", "Moon", "Light", "Bone", "Bright", "Swan", "Dove", "Cotton", "Hawthorn", "Laurel", "Whisp",
+    "Mimosa", "Fringe"
     ],
     "PALEGREY": [
     "Grey", "Silver", "Pale", "Light", "Cloud", "Cloudy", "Hail", "Frost", "Ice", "Icy", "Mouse", "Bright", "Fog", "Freeze",
-    "Frozen", "Stone", "Pebble", "Dove", "Sky", "Cotton", "Heather", "Ashen", "Pearl", "Titmouse", "Pipit", "Azalea", 
+    "Frozen", "Stone", "Pebble", "Dove", "Sky", "Cotton", "Heather", "Ashen", "Titmouse", "Pipit", "Azalea", 
     "Fringe", "Mistle", "Icicle"
     ],
     "SILVER": [
-    "Grey", "Silver", "Cinder", "Ice", "Icy", "Frost", "Frozen", "Freeze", "Rain", "Blue", "Basalt", "Granite", "Mica",
-    "River", "Blizzard", "Flurry", "Bone", "Bleak", "Stone", "Pebble", "Heather", "Shale", "Pearl", "Scale", "Crocus", 
-    "Rue", "Fringe", "Glint", "Mistle", "Shatter"
+    "Grey", "Silver", "Cinder", "Ice", "Icy", "Frost", "Frozen", "Freeze", "Rain", "Blue", "Basalt",  "Mica",
+    "River", "Blizzard", "Flurry", "Bone", "Bleak", "Stone", "Pebble", "Heather", "Shale",  "Scale", "Crocus", 
+    "Rue", "Fringe", "Glint", "Mistle", "Shatter", "Gossamer"
     ],
     "GREY": [
     "Grey", "Grey", "Ash", "Ashen", "Cinder", "Rock", "Stone", "Shade", "Mouse", "Smoke", "Smoky", "Shadow", "Fog", "Bone",
@@ -125,7 +125,7 @@
     ],
     "DARKGREY": [
     "Grey", "Shade", "Raven", "Crow", "Stone", "Dark", "Night", "Cinder", "Ash", "Ashen", "Pewter", "Twilight",
-    "Smoke", "Smokey", "Shadow", "Bleak", "Rain", "Storm", "Pebble", "Mist", "Misty", "Warbler"
+    "Smoke", "Smokey", "Shadow", "Bleak", "Rain", "Storm", "Pebble", "Mist", "Misty", "Warbler", "Wisp"
     ],
     "GHOST": [
     "Black", "Black", "Shade", "Shaded", "Crow", "Raven", "Ebony", "Dark", "Onyx", "Char",
@@ -151,7 +151,7 @@
     ],
     "CREAM": [
     "Sand", "Sandy", "Yellow", "Pale", "Cream", "Light", "Milk", "Fawn", "Morel", "Jasmine", "Veil", "Gill",
-    "Bone", "Daisy", "Branch", "Warm", "Robin", "Almond", "Acorn", "Spindle", "Ivory", "Pearl", "Pearly"
+    "Bone", "Daisy", "Branch", "Warm", "Robin", "Almond", "Acorn", "Spindle", "Ivory"
     ],
     "LIGHTBROWN": [
     "Brown", "Pale", "Light", "Mouse", "Dust", "Dusty", "Sand", "Sandy", "Bright", "Mud", "Scrub", "Velvet",
@@ -250,7 +250,7 @@
     "Odetta", "Old Deuteronomy", "Old Man Sam", "Oleander", "Olga", "Oliva", "Oliver", "Ollie", "Omelet", "Omen", "Onion", "Onyx", 
     "Oops", "Oopsy Dazey", "Ophelia", "Orchard", "Oregano", "Oreo", "Orion", "Orzo", "Oscar", "Otto", "Owen", "Pablo", "Paella", 
     "Paimon", "Paloma", "Pancake", "Pancho", "Pangur", "Panini", "Paprika", "Papyrus", "Paquito", "Patience", "Paulina", "Pawmi", "Peach", 
-    "Peanut Wigglebutt", "Peanut", "Pear", "Pearl", "Pecan", "Penny", "Peony", "Pepita", "Pepper", "Pepsi", "Pequeno", "Perry", "Phantom", "Pichi", "Pickles", "Pierre", "Piggy",
+    "Peanut Wigglebutt", "Peanut", "Pear", "Pearl", "Pecan", "Penny", "Peony", "Pepita", "Pepper", "Pepsi", "Pequeno", "Perry", "Petya", "Phantom", "Pichi", "Pickles", "Pierre", "Piggy",
     "Pikachu", "Ping Pong", "Ping", "Pip", "Piper", "Pipkin", "Pipsqueak", "Pisces", "Pixel", "Pina Colada", "Plato", "Pochito", "Pocket", "Poe", "Poki", "Polly",
     "Pong", "Ponyboy", "Poopy", "Porsche", "Potato", "Pouncival", "President", "Prickle", "Princess", "Private Eye", "Pudding", 
     "Pumba", "Pumpernickel", "Pumpkin", "Punk", "Purdy", "Purry", "Pushee", "Puzzle", "Quagmire", "Quake", "Qubo", "Queen", "Queenie", "Queeny", "Querida", 
