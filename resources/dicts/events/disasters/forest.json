@@ -16,7 +16,7 @@
       ]
     },
     "conclusion_events": [
-      "The dazzling light of the sun shines brightly on white, still snow. The blizzard has ended, though bare-leaf still continues."
+      "The dazzling light of the sun shines brightly on white, still snow. The blizzard has ended, though leaf-bare still continues."
     ],
     "secondary_disasters": [
       {
@@ -57,15 +57,15 @@
     "duration": 3,
     "rarity": "uncommon",
     "trigger_events": [
-      "lead_name scuffs as paw in the dirt, clawing it open to show dep_name and med_name. There's an alarming lack of moisture there, the soil dusty and dry. It may be time to declare this hot weather a drought, and start planning for the future.",
+      "lead_name scuffs a paw in the dirt, clawing it to show dep_name and med_name. There's an alarming lack of moisture there, the soil dusty and dry. It may be time to declare this hot weather a drought, and start planning for the future.",
       "med_name pulls aside lead_name. They've noticed some of the herbs that grow in the swampy corners of c_n's forest are beginning to wilt in this heat.",
       "The leaves on the trees wilt and droop, heavy with the exhaustion that the hot weather brings. In camp, cats lounge in the shade, waiting impatiently for the cool of night and the chance to hunt. It hasn't rained all moon."
     ],
     "progress_events": {
       "moon1": [
-        "Even the trees look dry. The cats of c_n cart moss between camp and their water, brining back vital liquid to their youngest and oldest Clanmates. But there are murmurs of discontented gossip - what will they do if their water dries up?",
-        "The prey cats bring back to the fresh-kill pile is beginning to look weak. Difficult to say what's taking its toll - the heat, or the difficulty of finding water.",
-        "med_name feels the crunch of leaf litter so dry it shatters under their footsteps. They swallow their concern - drought cannot be fought by the Clan's warriors, but med_name can stock the medicine cat's den with remedies against heatstroke and exhaustion."
+        "Even the trees look dry. The cats of c_n cart moss between camp and their water source, bringing back vital liquid to their youngest and oldest Clanmates. But there are murmurs of discontented gossip - what will they do if their water dries up?",
+        "The prey that cats bring back to the fresh-kill pile is beginning to look weak. Difficult to say what's taking its toll - the heat, or the difficulty of finding water.",
+        "med_name feels the crunch of leaf litter so dry it shatters under their footsteps. They swallow their concern - drought cannot be fought by the Clan's warriors, but med_name can stock the medicine cat's den with remedies against heat stroke and exhaustion."
       ],
       "moon2": [
         "The drought continues. The cats of c_n pant in the shade, too hot to move, their tongues dry and tacky.",
@@ -75,7 +75,7 @@
       ]
     },
     "conclusion_events": [
-      "The cats of c_n turn their faces to the skies, collecting in the clearing at the heart of camp, thrumming with joy as rain washing their pelts sodden and dings off the drought-hardened ground. With water, life returns to the forest.",
+      "The cats of c_n turn their faces to the skies, collecting in the clearing at the heart of camp, thrumming with joy as rain washes their pelts sodden and dings off the drought-hardened ground. With water, life returns to the forest.",
       "The shade of the canopy, so often their only protection from the heat haunting their woods, now shelters c_n from a different sky. Rain patters off the leaves above them as the cats bow their heads in thanks. StarClan has heard their prayers, and the drought has broken.",
       "lead_name watches the clouds gather, trembling in anticipation and hope. When the skies open, the ground sucks away the water, as thirsty as the Clan that turns their heads towards the stars and lets the life-giving rain fill their throats."
     ],
@@ -87,7 +87,7 @@
         "trigger_events": [
           "It's to no one's surprise that the woods are losing their plants, the undergrowth drooping and wilted as the drought takes its toll.",
           "med_name has been anticipating this, but it's still a huge blow to watch what should be peak herb gathering season turn into a desperate search for wilted dusty leaves.",
-          "The land, suffering under the heat of the drought, just can't support the normal plantlife that should be growing under the forest canopy."
+          "The land, suffering under the heat of the drought, just can't support the normal plant life that should be growing under the forest canopy."
         ]
       },
       {
@@ -126,13 +126,13 @@
     "trigger_events": [
       "Smoke billows into the sky as the distant crackling of fire foreshadows a grim fate. A wildfire is blazing through the forest.",
       "c_n shivers as the forest roars, the hot teeth of fire ripping through their beloved woods.",
-      "Nothing could compare to this, not the roar of Monster or Tiger or Lion. The creaking howl of fire rips through the forest, scattering all in front of its glowing destruction."
+      "Nothing could compare to this, not the roar of monsters or tigers or lions. The creaking howl of fire rips through the forest, scattering all in front of its glowing destruction."
     ],
     "progress_events": {
       "moon1": [
         "In the aftermath of the fire the forest lays still and quiet, but the Clan knows life will find its way back.",
         "The haze of smoke covers every sight, every smell, every sound. Until it lifts, there'll be no telling what c_n has lost - or what they've saved.",
-        "The ground feels hot under pawpad, unnatural and wrong. Streaked with soot, the cats of c_n stare at each other with wide eyes, shocked into silence."
+        "The ground feels hot underpaw, unnatural and wrong. Streaked with soot, the cats of c_n stare at each other with wide eyes, shocked into silence."
       ],
       "moon2": [
         "The terror of fire lingers in the hearts and minds of c_n. While some wake during the night, reliving their escape in their dreams, others cannot sleep at all.",
@@ -151,7 +151,7 @@
       ]
   },
     "conclusion_events": [
-      "Finally, the forest feels almost normal. The fire now nothing but a scar and a memory.",
+      "Finally, the forest feels almost normal. The fire is now nothing but a scar and a memory.",
       "There's no one moment. But somehow, clawing their way step by step, c_n and their territory have recovered from the fire that raged through their forests.",
       "It's so strange, to think of the wildfire as something now distant from them, to think of kits hearing about it in the nursery or elders discussing it as a tale from their youth. But that's what happens, isn't it? Life moves on."
     ],
@@ -163,7 +163,7 @@
         "trigger_events": [
           "The prey that once filled the forest has disappeared, scared away or killed by the wildfire. A famine forebodes the future.",
           "Once again, the hunting patrols return empty pawed. With the undergrowth gone and the trees scorched and burnt, how can the cats of c_n find enough fresh-kill to survive?",
-          "Cat's ribs are starting to show beneath their pelts. The forest, normally c_n's great protector, has little prey or life here after the wildfire."
+          "Cats' ribs are starting to show beneath their pelts. The forest, normally c_n's great protector, has little prey or life here after the wildfire."
         ]
       },
       {
@@ -217,7 +217,7 @@
       ]
     },
     "conclusion_events": [
-      "The sun rises one day, rainbow shards of ice glinting on the ground like so many days before, but as the day goes on... They melt and turn to mud. While everyone soon gets dirty, the sunlight feels so good on every cat's fur, no one can complain too much through purrs.",
+      "The sun rises one day, rainbow shards of ice glinting on the ground like so many days before, but as the day goes on... They melt and turn to mud. While everyone soon gets dirty, the sunlight feels so good on every cat's fur, no one can complain too much through their purrs.",
       "When the Clan steps from their dens and finds the world no longer freezing, they're almost shocked by the change. It had been so cold for so long, they'd forgotten warmth's embrace.",
       "As the cold loses its grip on their throats, the forest of c_n weeps with relief, trees oozing sap from their damaged trunks."
     ],
@@ -238,9 +238,9 @@
     "duration": 3,
     "rarity": "uncommon",
     "trigger_events": [
-      "lead_name checks on the tiny streams of snowmelt crisscrossing the forest with growing concern. They're far higher than usual for this point in Newleaf, and if this keeps up, the woods will be flooded.",
+      "lead_name checks on the tiny streams of snowmelt crisscrossing the forest with growing concern. They're far higher than usual for this point in newleaf, and if this keeps up, the woods will be flooded.",
       "c_n huddles in their dens, miserable and soaked. The brambles and forest canopy still thin and budding have both failed under the heavy, constant rain. There's no sound out in the forest, there hasn't been for days, every preystep or bird chirp eclipse by the steady shower of water.",
-      "The ground, still not fully recovered its green pelt after Leaf-Bare, now lies drenched and sodden, more mud than forest-floor. A stream is establishing itself right through the center of camp where the fresh-kill pile should be - not that there's been much fresh-kill, not with the rains soaking the hunting patrols right down to their skin."
+      "The ground, still not fully recovered its green pelt after leaf-bare, now lies drenched and sodden, more mud than forest-floor. A stream is establishing itself right through the center of camp where the fresh-kill pile should be - not that there's been much fresh-kill, not with the rains soaking the hunting patrols right down to their skin."
     ],
     "progress_events": {
       "moon1": [
@@ -399,7 +399,7 @@
         "triggers_during": "during",
         "chance": 0,
         "trigger_events": [
-          "The world seems to have been washed out by the sky, no prey is to be found in c_n's territory, and every burrow they've found is only full of water. Lean days are ahead"
+          "The world seems to have been washed out by the sky, no prey is to be found in c_n's territory, and every burrow they've found is only full of water. Lean days are ahead."
         ]
       }
     ],

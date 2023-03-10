@@ -20,7 +20,7 @@
 		"id": "comfort_de_med1",
 		"interactions": [
 			"m_c finds the way r_c acts increasingly uncomfortable.",
-			"m_c thinks r_c has been behaving stuck up and rude."
+			"m_c thinks r_c has been acting stuck up and rude."
 		]
 	},
 	{
@@ -48,7 +48,7 @@
 		"id": "comfort_de_med3",
 		"interactions": [
 			"r_c is following m_c around.",
-			"r_c tells m_c that their pelt looks like a different colour today."
+			"r_c tells m_c that their pelt looks like a different color today."
 		],
 		"random_trait_constraint": [
 			"strange"
@@ -57,7 +57,7 @@
 	{
 		"id": "comfort_de_med4",
 		"interactions": [
-			"r_c talks to m_c how best to kill prey, very enthusiastic.",
+			"r_c talks to m_c a bit too enthusiastically about how best to kill prey.",
 			"r_c started a fight with m_c."
 		],
 		"random_trait_constraint": [
