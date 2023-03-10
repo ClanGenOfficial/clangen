@@ -251,7 +251,7 @@ class Events():
                 clan.relations += increase
                 dispute_type = random.choice(
                     ["hunting", "border", "personal", "herb-gathering"])
-                text = f"{cat.name} travels to {clan} to" \
+                text = f"{cat.name} travels to {clan} to " \
                     f"resolve some recent {dispute_type} disputes. "
                 if increase > 4:
                     text += f"The meeting goes better than expected, and " \
