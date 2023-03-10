@@ -542,7 +542,7 @@ def init_sprite(cat):
     cat.reverse = choice([True, False])
     # skin chances
     if cat.parent1 is None:
-        hit = randint(0, 10)
+        hit = randint(0, 150)
         if hit == 0 or hit == 1:
             cat.skin = choice(skin_sphynx)
             cat.pelt.length = "short"
