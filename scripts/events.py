@@ -1034,7 +1034,7 @@ class Events():
         """
         TODO: DOCS
         """
-        if self.CEREMONY_TXT:
+        if self.CEREMONY_TXT is not None:
             return
 
         resource_dir = "resources/dicts/events/ceremonies/"
@@ -2025,8 +2025,8 @@ class Events():
                             else:
                                 previous_deputy_mention = ""
 
-                            text = f"{game.clan.leader.name} chooses ' \
-                                   f'{random_cat.name} to take over " \
+                            text = f"{game.clan.leader.name} chooses " \
+                                   f"{random_cat.name} to take over " \
                                    f"as deputy. " + previous_deputy_mention
 
                             involved_cats.append(game.clan.leader.ID)
