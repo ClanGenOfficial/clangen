@@ -22,8 +22,35 @@
         "win_skills": ["good storyteller", "great storyteller", "fantastic storyteller","excellent speaker"],
         "win_trait": ["adventurous"],
         "fail_trait": ["sneaky", "strange"],
-        "min_cats": 1,
+        "min_cats": 2,
         "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+},
+{
+        "patrol_id": "bch_train_lore2",
+        "biome": "beach",
+        "season": "leaf-fall",
+        "tags": ["training"],
+        "intro_text": "p_l decides to go down to the beach by themsleves. There seems to be something strange here...",
+        "decline_text": "It's best to go back to camp and ignore the oddities on the beach.",
+        "chance_of_success": 30,
+        "exp": 5,
+        "success_text": [
+                "p_l is shocked to find green and black lizards scattered around the beach. They freeze, trying not to get bit. When nothing moves, they head back to camp unscathed.",
+                "Green and black lizards are everywhere! p_l freezes up, only to notice that they're not moving, some of them sticking striaght up. They're not real! They take a fake lizard home to show the others.",
+                "There are green and black lizards! s_c realizes they're not real immediatelty and decided to come back to this loaction to collect fake lizards for future pranks on clanmates.",
+                "s_c remembers seeing these green and black lizards being shown to them by a kittypet before, who called them 'lego dragons'. s_c wonders if Legodragon would be a proper name for a warrior."
+        ],
+        "fail_text": [
+                "It's a beach full of lizards! p_l tears back to camp before they can get bitten.",
+                null
+        ],
+        "win_skills": null,
+        "win_trait": ["adventurous", "shameless", "sneaky", "strange", "troublesome", "chilish."],
+        "fail_trait": null,
+        "min_cats": 1,
+        "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null
 }
