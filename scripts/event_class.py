@@ -39,8 +39,8 @@ class Single_Event():
         # TODO: remove this, its debug for the event thats just a number
         print('--luna debug, thisll be gone next update sorry testers for spam--')
         print(f"Event text: \"{self.text}\"")
-        print(f"Event types: ", self.types)
-        print(f"Event cats: ", self.cats_involved)
+        print("Event types: ", self.types)
+        print("Event cats: ", self.cats_involved)
         # for cat in self.cats_involved:
         #     print('cat: ',cat)
         #     if cat in self.text:
