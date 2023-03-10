@@ -36,10 +36,10 @@ class Single_Event():
         else:
             self.cats_involved = []
 
-
         for cat in self.cats_involved:
-            if cat.id in self.text:
+            print('cat: ',cat)
+            if cat in self.text:
                 print("ID ", cat.id)
                 print("Text ", self.text)
-                
+
                 raise ValueError("PING LUNA FOR THIS: INV Cat ID in event text")
