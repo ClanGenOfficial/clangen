@@ -29,7 +29,8 @@ class MiscEvents():
         other_clan = random.choice(game.clan.all_clans)
         other_clan_name = f'{other_clan.name}Clan'
 
-        possible_events = self.generate_events.possible_events(cat.status, cat.age, "misc_events")
+
+        possible_events = self.generate_events.possible_short_events(cat.status, cat.age, "misc_events")
         acc_checked_events = []
         for event in possible_events:
             if (ceremony and "ceremony" not in event.tags) or (not ceremony and "ceremony" in event.tags):
@@ -40,7 +41,7 @@ class MiscEvents():
 
             acc_checked_events.append(event)
 
-        final_events = self.generate_events.filter_possible_events(acc_checked_events, cat, other_cat, war,
+        final_events = self.generate_events.filter_possible_short_events(acc_checked_events, cat, other_cat, war,
                                                                    enemy_clan, other_clan,
                                                                    alive_kits)
 

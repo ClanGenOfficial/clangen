@@ -55,6 +55,8 @@ class Game():
     # Sort-type
     sort_type = "rank"
 
+    sort_fav = False
+
     choose_cats = {}
     '''cat_buttons = {
         'cat0': None,
@@ -452,7 +454,8 @@ class Game():
                 "retired": inter_cat.retired if inter_cat.retired else False,
                 "faded_offspring": inter_cat.faded_offspring,
                 "opacity": inter_cat.opacity,
-                "prevent_fading": inter_cat.prevent_fading
+                "prevent_fading": inter_cat.prevent_fading,
+                "favourite": inter_cat.favourite,
             }
             clan_cats.append(cat_data)
             inter_cat.save_condition()

@@ -970,7 +970,7 @@ class SettingsScreen(Screens):
                 "",
                 object_id=box_type,
                 container=self.checkboxes_text["container"],
-                tool_tip_text="Discord will show info about your clan, Including your clan name"
+                tool_tip_text="Discord will show info about your clan, including your Clan name"
             )
 
 

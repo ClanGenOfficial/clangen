@@ -10,9 +10,11 @@ if directory:
 
 import subprocess
 
+import time
+
 # Setup logging
 import logging 
-formatter = logging.Formatter("%(name)s - %(levelname)s - %(message)s")
+formatter = logging.Formatter("%(name)s - %(levelname)s - %(filename)s / %(funcName)s / %(lineno)d - %(message)s")
 # Logging for file
 file_handler = logging.FileHandler(get_log_dir() + "/clangen.log")
 os.symlink(get_log_dir() + '/clangen.log', 'clangen_latest.log')
@@ -28,8 +30,41 @@ logging.root.addHandler(stream_handler)
 def log_crash(type, value, tb):
     # Log exception on crash
     logging.critical("Uncaught exception", exc_info=(type, value, tb))
+    sys.__excepthook__(type, value, tb)
 
 sys.excepthook = log_crash
+
+# if user is developing in a github codespace
+if os.environ.get('CODESPACES'):
+    print('')
+    print("Github codespace user!!! Sorry, but sound *may* not work :(")
+    print("If youre using the provided codespace config, the SDL_AUDIODRIVER environment variable has been set to 'dsp' for you.")
+    print("This is to avoid ALSA errors, but it may disable sound.")
+    print('')
+    print("Web VNC:")
+    print(f"https://{os.environ.get('CODESPACE_NAME')}-6080.{os.environ.get('GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN')}/?autoconnect=true&reconnect=true&password=clangen&resize=scale")
+    print("(use clangen in fullscreen mode for best results)")
+    print('')
+
+
+# Version Number to be displayed.
+# This will only be shown as a fallback, when the git commit hash can't be found.
+VERSION_NUMBER = "Ver. 0.7.0dev"
+
+
+if os.path.exists("commit.txt"):
+    with open(f"commit.txt", 'r') as read_file:
+        print("Running on pyinstaller build")
+        VERSION_NUMBER = read_file.read()
+else:
+    print("Running on source code")
+    try:
+        VERSION_NUMBER = subprocess.check_output(['git', 'rev-parse', 'HEAD']).decode('ascii').strip()
+    except:
+        print("Failed to get git commit hash, using hardcoded version number instead.")
+        print("Hey testers! We recommend you use git to clone the repository, as it makes things easier for everyone.")
+        print("There are instructions at https://discord.com/channels/1003759225522110524/1054942461178421289/1078170877117616169")
+print("Running on commit " + VERSION_NUMBER)
 
 # Load game
 from scripts.game_structure.load_cat import load_cats
@@ -42,20 +77,8 @@ from scripts.utility import get_text_box_theme
 import pygame_gui
 import pygame
 
-# if user is developing in a github codespace
-if os.environ.get('CODESPACES'):
-    print('')
-    print("Github codespace user!!! Please ignore the ALSA related errors above.")
-    print("They are not a problem, and are caused by the way codespaces work.")
-    print('')
-    print("Web VNC:")
-    print(f"https://{os.environ.get('CODESPACE_NAME')}-6080.{os.environ.get('GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN')}/?autoconnect=true&reconnect=true&password=clangen&resize=scale")
-    print("(use clangen in fullscreen)")
-    print('')
 
-# Version Number to be displayed.
-# This will only be shown as a fallback, when the git commit hash can't be found.
-VERSION_NUMBER = "Ver. 0.7.0dev"
+
 
 # import all screens for initialization (Note - must be done after pygame_gui manager is created)
 from scripts.screens.all_screens import start_screen
@@ -92,19 +115,7 @@ sprites.load_scars()
 start_screen.screen_switches()
 
 
-if os.path.exists("commit.txt"):
-    with open(f"commit.txt", 'r') as read_file:
-        print("Running on pyinstaller build")
-        VERSION_NUMBER = read_file.read()
-else:
-    print("Running on source code")
-    try:
-        VERSION_NUMBER = subprocess.check_output(['git', 'rev-parse', 'HEAD']).decode('ascii').strip()
-    except:
-        print("Failed to get git commit hash, using hardcoded version number instead.")
-        print("Hey testers! We recommend you use git to clone the repository, as it makes things easier for everyone.")
-        print("There are instructions at https://discord.com/channels/1003759225522110524/1054942461178421289/1078170877117616169")
-print("Running on commit " + VERSION_NUMBER)
+
 
 
 

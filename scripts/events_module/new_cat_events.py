@@ -37,8 +37,8 @@ class NewCatEvents:
             other_clan = game.clan.all_clans[0]
             other_clan_name = f'{other_clan.name}Clan'
 
-        possible_events = self.generate_events.possible_events(cat.status, cat.age, "new_cat")
-        final_events = self.generate_events.filter_possible_events(possible_events, cat, other_cat, war, enemy_clan,
+        possible_events = self.generate_events.possible_short_events(cat.status, cat.age, "new_cat")
+        final_events = self.generate_events.filter_possible_short_events(possible_events, cat, other_cat, war, enemy_clan,
                                                                    other_clan, alive_kits)
         if self.has_outside_cat():
             if random.randint(1,3) == 1:
@@ -59,7 +59,15 @@ class NewCatEvents:
                 outside_cat.thought = "Is looking around the camp with wonder"
                 involved_cats = [outside_cat.ID]
                 game.cur_events_list.append(Single_Event(event_text, ["misc"], involved_cats))
-                return
+                
+                # add them 
+                for the_cat in outside_cat.all_cats.values():
+                    if the_cat.dead or the_cat.outside or the_cat.ID == outside_cat.ID:
+                        continue
+                    the_cat.relationships[outside_cat.ID] = Relationship(the_cat, outside_cat)
+                    outside_cat.relationships[the_cat.ID] = Relationship(outside_cat, the_cat)
+
+                return [outside_cat]
         # ---------------------------------------------------------------------------- #
         #                                cat creation                                  #
         # ---------------------------------------------------------------------------- #
@@ -142,8 +150,9 @@ class NewCatEvents:
         if "other_clan" in new_cat_event.tags:
             types.append("other_clans")
         game.cur_events_list.append(Single_Event(event_text, types, involved_cats))
-        # game.birth_death_events_list.append(death_text)
 
+        return created_cats
+        # game.birth_death_events_list.append(death_text)
 
     def create_new_cat(self,
                        loner=False,
@@ -244,14 +253,30 @@ class NewCatEvents:
                 the_cat.relationships[new_cat.ID] = Relationship(the_cat, new_cat)
                 new_cat.relationships[the_cat.ID] = Relationship(new_cat, the_cat)
             if relevant_cat:
-                print(relevant_cat)
+                new_to_clan_cat = game.config["new_cat"]["rel_buff"]["new_to_clan_cat"]
+                clan_cat_to_new = game.config["new_cat"]["rel_buff"]["clan_cat_to_new"]
                 change_relationship_values(
-                    [new_cat.ID, relevant_cat.ID],
-                    [relevant_cat, new_cat],
-                    platonic_like=20,
-                    admiration=5,
-                    comfortable=5,
-                    trust=10)
+                    cats_to=        [relevant_cat.ID], 
+                    cats_from=      [new_cat],
+                    romantic_love=  new_to_clan_cat["romantic"],
+                    platonic_like=  new_to_clan_cat["platonic"],
+                    dislike=        new_to_clan_cat["dislike"],
+                    admiration=     new_to_clan_cat["admiration"],
+                    comfortable=    new_to_clan_cat["comfortable"],
+                    jealousy=       new_to_clan_cat["jealousy"],
+                    trust=          new_to_clan_cat["trust"]
+                )
+                change_relationship_values(
+                    cats_to=        [new_cat.ID], 
+                    cats_from=      [relevant_cat],
+                    romantic_love=  clan_cat_to_new["romantic"],
+                    platonic_like=  clan_cat_to_new["platonic"],
+                    dislike=        clan_cat_to_new["dislike"],
+                    admiration=     clan_cat_to_new["admiration"],
+                    comfortable=    clan_cat_to_new["comfortable"],
+                    jealousy=       clan_cat_to_new["jealousy"],
+                    trust=          clan_cat_to_new["trust"]
+                )
 
             # newbie thought
             new_cat.thought = 'Is looking around the camp with wonder'
