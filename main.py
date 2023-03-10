@@ -17,6 +17,8 @@ import logging
 formatter = logging.Formatter("%(name)s - %(levelname)s - %(filename)s / %(funcName)s / %(lineno)d - %(message)s")
 # Logging for file
 file_handler = logging.FileHandler(get_log_dir() + "/clangen.log")
+if os.path.exists('clangen_latest.log'):
+    os.remove('clangen_latest.log')
 os.symlink(get_log_dir() + '/clangen.log', 'clangen_latest.log')
 file_handler.setFormatter(formatter)
 # Only log errors to file
