@@ -268,9 +268,9 @@ class Events():
         if game.settings['become_mediator']:
             # Note: These chances are large since it triggers every moon.
             # Checking every moon has the effect giving older cats more chances to become a mediator
-            _ = game.config["roles"]["become_mediator_chances"][cat.status]
-            if cat.status in game.config["roles"]["become_mediator_chances"] and \
-                    not int(random.random() * _):
+            _ = game.config["roles"]["become_mediator_chances"]
+            if cat.status in _ and \
+                    not int(random.random() * _[cat.status]):
                 game.cur_events_list.append(
                     Single_Event(
                         f"{cat.name} had chosen to use their skills and experience to help "
