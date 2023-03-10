@@ -15,7 +15,6 @@ import os
 
 
 from .base_screens import Screens
-from sys import exit # pylint: disable=redefined-builtin
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.image_button import UIImageButton
@@ -43,14 +42,14 @@ class StartScreen(Screens):
         """This is where events that occur on this page are handled.
         For the pygame_gui rewrite, button presses are also handled here. """
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.continue_button:
-                self.change_screen('clan screen')
-            elif event.ui_element == self.switch_clan_button:
-                self.change_screen('switch clan screen')
-            elif event.ui_element == self.new_clan_button:
-                self.change_screen('make clan screen')
-            elif event.ui_element == self.settings_button:
-                self.change_screen('settings screen')
+            screens = {
+                self.continue_button: 'clan screen',
+                self.switch_clan_button: 'switch clan screen',
+                self.new_clan_button: 'make clan screen',
+                self.settings_button: 'settings screen',
+            }
+            if event.ui_element in screens:
+                self.change_screen(screens[event.ui_element])
             elif event.ui_element == self.quit:
                 quit(savesettings=False, clearevents=False)
 
@@ -343,13 +342,24 @@ class SettingsScreen(Screens):
         if event.ui_element in self.checkboxes.values():
             for key, value in self.checkboxes.items():
                 if value == event.ui_element:
-                    if self.sub_menu is 'language':
+                    if self.sub_menu == 'language':
                         game.settings['language'] = key
                     else:
                         game.switch_setting(key)
                     self.settings_changed = True
                     self.update_save_button()
                     self.refresh_checkboxes()
+                    print(event.ui_element)
+                    print(self.checkboxes['discord'])
+                    print(event.ui_element is self.checkboxes['discord'])
+                    if event.ui_element is self.checkboxes['discord'] and game.settings['discord']:
+                        print("Starting Discord RPC")
+                        game.rpc = _DiscordRPC("1076277970060185701",
+                                               daemon=True)
+                        game.rpc.start()
+                        game.rpc.start_rpc.set()
+                    else:
+                        game.rpc.close()
                     break
         
 
