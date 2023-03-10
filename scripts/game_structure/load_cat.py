@@ -244,8 +244,15 @@ def json_load():
 
         # Add faded siblings:
         for parent in cat.get_parents():
-            cat_ob = Cat.fetch_cat(parent)
-            cat.siblings.extend(cat_ob.faded_offspring)
+            try:
+                cat_ob = Cat.fetch_cat(parent)
+                cat.siblings.extend(cat_ob.faded_offspring)
+            except:
+                if parent == cat.parent1:
+                    cat.parent1 = None
+                elif parent == cat.parent2:
+                    cat.parent2 = None
+
         # Remove duplicates
         cat.siblings = list(set(cat.siblings))
 

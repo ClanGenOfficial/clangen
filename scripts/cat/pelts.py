@@ -540,6 +540,7 @@ def describe_color(pelt, tortiebase, tortiecolour, white_patches, points, vit):
         patches = tortiecolour.lower()
         color_name = f"{color_name} and {patches} tortie"
     elif pelt.name == "Calico":
+        patches = tortiecolour.lower()
         color_name = f'{color_name} and {patches} calico'
 
     if pelt.name in ['Tortie', 'Calico']:
