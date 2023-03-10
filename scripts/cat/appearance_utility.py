@@ -616,8 +616,8 @@ def white_patches_inheritance(cat, parents: tuple):
                 par_whitepatches.add(p.white_patches)
             elif p.points:
                 par_points.append(p.points)
-            elif p.vit:
-                par_vit.append(p.vit)
+            elif p.vitiligo:
+                par_vit.append(p.vitiligo)
 
     if not parents:
         print("Error - no parents. Randomizing white patches.")
