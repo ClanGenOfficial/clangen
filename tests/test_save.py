@@ -3,6 +3,9 @@ from unittest.mock import patch
 import os
 import shutil
 
+os.environ["SDL_VIDEODRIVER"] = "dummy"
+os.environ["SDL_AUDIODRIVER"] = "dummy"
+
 from scripts.game_structure.game_essentials import Game
 
 if not os.path.exists('tests/testSaves'):
