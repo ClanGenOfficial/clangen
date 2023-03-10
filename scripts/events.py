@@ -190,8 +190,8 @@ class Events():
             # Generate events
             for item in Cat.grief_strings.items():
                 game.cur_events_list.append(
-                    Single_Event(item[0], ["birth_death", "relation"],
-                                 item[1]))
+                    Single_Event(item[1], ["birth_death", "relation"],
+                                 item[0]))
 
             Cat.grief_strings.clear()
 
@@ -251,7 +251,7 @@ class Events():
                 clan.relations += increase
                 dispute_type = random.choice(
                     ["hunting", "border", "personal", "herb-gathering"])
-                text = f"{cat.name} travels to {clan} to" \
+                text = f"{cat.name} travels to {clan} to " \
                     f"resolve some recent {dispute_type} disputes. "
                 if increase > 4:
                     text += f"The meeting goes better than expected, and " \
@@ -1034,7 +1034,7 @@ class Events():
         """
         TODO: DOCS
         """
-        if self.CEREMONY_TXT:
+        if self.CEREMONY_TXT is not None:
             return
 
         resource_dir = "resources/dicts/events/ceremonies/"
@@ -2025,8 +2025,8 @@ class Events():
                             else:
                                 previous_deputy_mention = ""
 
-                            text = f"{game.clan.leader.name} chooses ' \
-                                   f'{random_cat.name} to take over " \
+                            text = f"{game.clan.leader.name} chooses " \
+                                   f"{random_cat.name} to take over " \
                                    f"as deputy. " + previous_deputy_mention
 
                             involved_cats.append(game.clan.leader.ID)
