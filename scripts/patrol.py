@@ -891,6 +891,11 @@ class Patrol():
         return text
 
     def add_new_cats(self, litter_choice):
+        """
+        handles new_cat tags and passing info to the create_new_cats function
+        :param litter_choice: set True to indicate that a cat should also come with a litter
+        (except for new_cat_queen, new_cat_kit, and new_cat_kits)
+        """
         tags = self.patrol_event.tags
 
         # setting the defaults
