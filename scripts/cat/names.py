@@ -97,6 +97,24 @@ class Name():
                 else:
                     self.suffix = random.choice(self.names_dict["normal_suffixes"])
 
+        if self.suffix:
+            possible_three_letter = (self.prefix[-2:] + self.suffix[0], self.prefix[-1] + self.suffix[:2])
+
+            if all(i == possible_three_letter[0][0] for i in possible_three_letter[0]) or \
+                    all(i == possible_three_letter[1][0] for i in possible_three_letter[1]):
+                triple_letter = True
+
+                MAX_ATTEMPT = 3
+                while triple_letter and MAX_ATTEMPT > 0:
+                    self.suffix = random.choice(self.names_dict["normal_suffixes"])
+                    possible_three_letter = (self.prefix[-2:] + self.suffix[0], self.prefix[-1] + self.suffix[:2])    
+                    if all(i == possible_three_letter[0][0] for i in possible_three_letter[0]) or \
+                            all(i == possible_three_letter[1][0] for i in possible_three_letter[1]):
+                        pass
+                    else:
+                        triple_letter = False
+                MAX_ATTEMPT -= 1
+
     def __repr__(self):
         if self.status in self.names_dict["special_suffixes"]:
             return self.prefix + self.names_dict["special_suffixes"][self.status]
