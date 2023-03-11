@@ -32,48 +32,20 @@ def json_load():
     all_cats = []
     cat_data = None
     clanname = game.switches['clan_list'][0]
+    with open(f"resources/dicts/conversion_dict.json", 'r') as read_file:
+        convert = ujson.loads(read_file.read())
     try:
-        with open(get_save_dir() + '/' + clanname + '/clan_cats.json', 'r') as read_file:
+        with open('saves/' + clanname + '/clan_cats.json', 'r') as read_file:
             cat_data = ujson.loads(read_file.read())
     except PermissionError:
         game.switches['error_message'] = f'Can\t open saves/{clanname}/clan_cats.json!'
         raise
     except JSONDecodeError:
-        game.switches['error_message'] = get_save_dir() + f'/{clanname}/clan_cats.json is malformed!'
+        game.switches['error_message'] = f'saves/{clanname}/clan_cats.json is malformed!'
         raise
-        
-    old_tortie_patches = {
-        "PALEONE": ("PALEGINGER", "ONE"),
-        "PALETWO": ("PALEGINGER", "TWO"),
-        "PALETHREE": ("PALEGINGER", "THREE"),
-        "PALEFOUR": ("PALEGINGER", "FOUR"),
-        "GOLDONE": ("GOLDEN", "ONE"),
-        "GOLDTWO": ("GOLDEN", "TWO"),
-        "GOLDTHREE": ("GOLDEN", "THREE"),
-        "GOLDFOUR": ("GOLDEN", "FOUR"),
-        "GINGERONE": ("GINGER", "ONE"),
-        "GINGERTWO": ("GINGER", "TWO"),
-        "GINGERTHREE": ("GINGER", "THREE"),
-        "GINGERFOUR": ("GINGER", "FOUR"),
-        "DARKONE": ("DARKGINGER", "ONE"),
-        "DARKTWO": ("DARKGINGER", "TWO"),
-        "DARKTHREE": ("DARKGINGER", "THREE"),
-        "DARKFOUR": ("DARKGINGER", "FOUR"),
-        "CREAMONE": ("CREAM", "ONE"),
-        "CREAMTWO": ("CREAM", "TWO"),
-        "CREAMTHREE": ("CREAM", "THREE"),
-        "CREAMFOUR": ("CREAM", "FOUR")
-    }
 
-    old_creamy_patches = {
-        'COLOURPOINTCREAMY': 'COLOURPOINT',
-        'ANYCREAMY': 'ANY',
-        'ANY2CREAMY': 'ANY2',
-        'LITTLECREAMY': 'LITTLE',
-        'VANCREAMY': 'VAN',
-        'TUXEDOCREAMY': 'TUXEDO'
-    }
-
+    old_creamy_patches = convert["old_creamy_patches"]
+    old_tortie_patches = convert["old_tortie_patches"]
     no_tint_patches = ['SEPIAPOINT', 'MINKPOINT', 'SEALPOINT']
 
     # create new cat objects
