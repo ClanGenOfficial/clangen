@@ -107,6 +107,12 @@ class Condition_Events():
 
         # handle if the current cat is already injured
         if cat.is_injured() and game.clan.game_mode != 'classic':
+            pregnant = False
+            for injury in cat.injuries:
+                if injury == 'pregnant':
+                    pregnant = True
+            if pregnant:
+                return triggered
             triggered, event_string = self.handle_already_injured(cat)
             text = event_string
         else:
@@ -130,8 +136,8 @@ class Condition_Events():
                 triggered = True
 
             if triggered:
-                possible_events = self.generate_events.possible_events(cat.status, cat.age, "injury")
-                final_events = self.generate_events.filter_possible_events(possible_events, cat, other_cat, war, enemy_clan, other_clan, alive_kits)
+                possible_events = self.generate_events.possible_short_events(cat.status, cat.age, "injury")
+                final_events = self.generate_events.filter_possible_short_events(possible_events, cat, other_cat, war, enemy_clan, other_clan, alive_kits)
 
                 other_clan_name = f'{other_clan.name}Clan'
                 enemy_clan = f'{enemy_clan}'
@@ -644,7 +650,7 @@ class Condition_Events():
                         event_types.append('ceremony')
                         if game.clan.leader is not None:
                             if not game.clan.leader.dead and not game.clan.leader.exiled and \
-                                    not game.clan.leader.outside:
+                                    not game.clan.leader.outside and cat.moons < 120:
                                 event = f"{game.clan.leader.name}, seeing {cat.name} struggling the last few moons " \
                                         f"approaches them and promises them that no one would think less of them for " \
                                         f"retiring early and that they would still be a valuable member of the Clan " \
@@ -667,7 +673,7 @@ class Condition_Events():
                     event_types.append('ceremony')
                     if game.clan.leader is not None:
                         if not game.clan.leader.dead and not game.clan.leader.exiled \
-                                and not game.clan.leader.outside:
+                                and not game.clan.leader.outside and cat.moons < 120:
                             event = f"{game.clan.leader.name}, seeing {cat.name} struggling the last few moons " \
                                     f"approaches them and promises them that no one would think less of them for " \
                                     f"retiring early and that they would still be a valuable member of the clan " \

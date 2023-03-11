@@ -63,6 +63,20 @@
             "rect_width": "300"
         }
     },
+    "#fav_cat.tool_tip":
+    {
+        "misc":
+        {
+            "rect_width": "150"
+        }
+    },
+    "#not_fav_cat.tool_tip":
+    {
+        "misc":
+        {
+            "rect_width": "150"
+        }
+    },
     "#help_button.tool_tip":
     {
         "misc":

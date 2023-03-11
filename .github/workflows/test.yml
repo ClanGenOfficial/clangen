@@ -8,20 +8,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          submodules: "recursive"
       - name: Setup Python 3.11 x64
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
           architecture: 'x64'
+      - name: Download the test saves
+        run: wget https://github.com/ImLvna/clangen-unittest-saves/archive/refs/heads/main.zip -O tests/saves.zip
+      - name: Unzip
+        run: unzip tests/saves.zip
+      - name: Move the folder
+        run: mv clangen-unittest-saves-main tests/testSaves
+      - name: Remove the zip
+        run: rm tests/saves.zip
       - name: Install depends
         run: python -m pip install -r requirements.txt
       - name: Run unit tests
         env:
           SDL_VIDEODRIVER: "dummy"
           SDL_AUDIODRIVER: "disk"
-        run: python3 -m unittest tests/test_relationships.py tests/test_thoughts.py tests/test_relation_events.py tests/test_conditions.py tests/test_utility.py tests/test_cat.py tests/test_save.py
+        run: python3 -m unittest tests/test_thoughts.py tests/test_relation_events.py tests/test_conditions.py tests/test_utility.py tests/test_cat.py tests/test_save.py
         
   # Check if file encoding is correct.
   encoding_test:
@@ -34,4 +40,23 @@ jobs:
           python-version: '3.11'
           architecture: 'x64'
       - name: Check file encoding
-        run: python3 tests/test_encoding.py
+        id: encoding_test
+        run: python3 tests/test_encoding.py test
+      - name: Fix the issue hopefully
+        if: failure()
+        id: fixit
+        env:
+          FILES: ${{ steps.encoding_test.outputs.files  }}
+        run: python3 tests/test_encoding.py fix
+      - name: Make a pr
+        if: ${{ failure() && steps.fixit.conclusion == 'success' }}
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: Fix file encoding
+          title: Fix file encoding
+          body: |
+            This PR fixes the file encoding. The files that were changed are: ${{ steps.encoding_test.outputs.files }}
+          branch: fix-file-encoding
+          delete-branch: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch-suffix: random

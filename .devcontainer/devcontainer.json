@@ -10,5 +10,29 @@
     "ghcr.io/devcontainers-contrib/features/pylint:2": {}
   },
   "capAdd": ["SYS_PTRACE"],
-  "postCreateCommand": "pip install -r requirements.txt"
+  "postCreateCommand": "pip install -r requirements.txt",
+  "remoteEnv": {
+    "SDL_AUDIODRIVER": "dsp"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "benjaminbenais.copilot-theme",
+        "GitHub.copilot",
+        "GitHub.copilot-labs",
+        "Tyriar.luna-paint",
+        "aaron-bond.better-comments",
+        "ms-python.pylint",
+        "eamodio.gitlens"
+      ],
+      "settings": {
+        "workbench.colorTheme": "Copilot Theme"
+      }
+    },
+    "codespaces": {
+      "openFiles": [
+        "main.py"
+      ]
+    }
+  }
 }

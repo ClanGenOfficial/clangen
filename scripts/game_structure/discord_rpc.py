@@ -58,6 +58,7 @@ class _DiscordRPC(threading.Thread):
         except ImportError:
             print("Pypresence not installed, Discord RPC isn't supported.")
             print("To enable rpc, run 'pip install pypresence' in your terminal.")
+            return
         # Check if Discord is running.
         try:
             self._rpc = Presence(client_id=self._client_id,
@@ -73,7 +74,6 @@ class _DiscordRPC(threading.Thread):
             print("Connected to discord!")
         except ConnectionError as e:
             print(f"Failed to connect to Discord: {e}")
-            return
 
     def connect(self):
         if self._rpc_supported:

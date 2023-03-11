@@ -5,6 +5,7 @@ import random
 import os.path
 import itertools
 
+from ..datadir import get_save_dir
 from ..events_module.generate_events import GenerateEvents
 try:
     import ujson
@@ -137,6 +138,19 @@ class Cat():
         'retired_leader', 'refugee', 'tragedy_survivor', 'clan_founder', 'orphaned', "orphaned2", "guided1", "guided2",
         "guided3", "guided4"
     ]
+
+    #EX levels and ranges.
+    # Ranges are inclusive to both bounds
+    experience_levels_range = {
+        "untrained": (0, 0),
+        "trainee": (1, 50),
+        "prepared": (51, 110),
+        "competent": (110, 170),
+        "proficient": (171, 240),
+        "expert": (241, 320),
+        "master": (321, 321)
+    }
+
     all_cats: Dict[str, Cat] = {}  # ID: object
     outside_cats: Dict[str, Cat] = {}  # cats outside the clan
     id_iter = itertools.count()
@@ -266,6 +280,8 @@ class Cat():
         self.faded = faded  # This is only used to flag cat that are faded, but won't be added to the faded list until
         # the next save.
 
+        self.favourite = False
+
         # setting ID
         if ID is None:
             potential_id = str(next(Cat.id_iter))
@@ -381,15 +397,22 @@ class Cat():
             if self.age in ['kitten']:
                 self.experience = 0
             elif self.age in ['adolescent']:
-                self.experience = randint(0, 19)
-            elif self.age in ['young adult']:
-                self.experience = randint(10, 40)
-            elif self.age in ['adult']:
-                self.experience = randint(20, 50)
+                m = self.moons
+                self.experience = 0
+                while m > Cat.age_moons['adolescent'][0]:
+                    base_ex = 0.6 * random.choices(game.config["graduation"]["base_app_timeskip_ex"][0],
+                                          weights=game.config["graduation"]["base_app_timeskip_ex"][1], k=1)[0]
+                    self.experience += base_ex
+                    m -= 1
+            elif self.age in ['young adult', 'adult']:
+                self.experience = randint(Cat.experience_levels_range["prepared"][0],
+                                          Cat.experience_levels_range["proficient"][1])
             elif self.age in ['senior adult']:
-                self.experience = randint(30, 60)
+                self.experience = randint(Cat.experience_levels_range["competent"][0],
+                                          Cat.experience_levels_range["expert"][1])
             elif self.age in ['elder']:
-                self.experience = randint(40, 70)
+                self.experience = randint(Cat.experience_levels_range["competent"][0],
+                                          Cat.experience_levels_range["master"][1])
             else:
                 self.experience = 0
 
@@ -493,6 +516,20 @@ class Cat():
             self.grief(body)
 
         return text
+    
+    def exile(self):
+        """This is used to send a cat into exile. This removes the cat's status and gives them a special 'exiled'
+        status."""
+        self.exiled = True
+        self.outside = True
+        self.status = 'exiled'
+        if self.trait == 'vengeful':
+            self.thought = "Swears their revenge for being exiled"
+        else:
+            self.thought = "Is shocked that they have been exiled"
+        for app in self.apprentice:
+            Cat.fetch_cat(app).update_mentor()
+        self.update_mentor()
 
     def grief(self, body: bool):
         """
@@ -541,7 +578,7 @@ class Cat():
                     if cat_to == self:
                         family_relation = self.familial_grief(living_cat=cat)
                         possible_strings.extend(
-                            self.generate_events.get_possible_death_reactions(family_relation, value, cat.trait, body_status))
+                            self.generate_events.possible_death_reactions(family_relation, value, cat.trait, body_status))
 
             if possible_strings:
                 # choose string
@@ -587,7 +624,7 @@ class Cat():
                         if cat_to == self:
                             family_relation = self.familial_grief(living_cat=cat)
                             possible_strings.extend(
-                                self.generate_events.get_possible_death_reactions(family_relation, value, cat.trait, body_status))
+                                self.generate_events.possible_death_reactions(family_relation, value, cat.trait, body_status))
 
                 if possible_strings:
                     # choose string
@@ -1023,7 +1060,7 @@ class Cat():
             if attempts_left <= 0:
                 return
         relevant_relationship = relevant_relationship_list[0]
-        relevant_relationship.start_action()
+        relevant_relationship.start_interaction()
 
         if game.game_mode == "classic":
             return
@@ -1414,7 +1451,7 @@ class Cat():
                 "event_triggered": new_illness.new
             }
 
-    def get_injured(self, name, event_triggered=False, lethal=True):
+    def get_injured(self, name, event_triggered=False, lethal=True, severity='default'):
         if name not in INJURIES:
             if name not in INJURIES:
                 print(f"WARNING: {name} is not in the injuries collection.")
@@ -1438,6 +1475,11 @@ class Cat():
         if duration == 0:
             duration = 1
 
+        if severity == 'default':
+            injury_severity = injury["severity"]
+        else:
+            injury_severity = severity
+
         if mortality != 0:
             if game.clan.game_mode == "cruel season":
                 mortality = int(mortality * 0.5)
@@ -1449,7 +1491,7 @@ class Cat():
 
         new_injury = Injury(
             name=name,
-            severity=injury["severity"],
+            severity=injury_severity,
             duration=injury["duration"],
             medicine_duration=duration,
             mortality=mortality,
@@ -1680,7 +1722,7 @@ class Cat():
         elif game.clan is not None:
             clanname = game.clan.name
 
-        condition_directory = 'saves/' + clanname + '/conditions'
+        condition_directory = get_save_dir() + '/' + clanname + '/conditions'
         condition_file_path = condition_directory + '/' + self.ID + '_conditions.json'
 
         if not os.path.exists(condition_directory):
@@ -1715,7 +1757,7 @@ class Cat():
         else:
             clanname = game.switches['clan_list'][0]
 
-        condition_directory = 'saves/' + clanname + '/conditions/'
+        condition_directory = get_save_dir() + '/' + clanname + '/conditions/'
         condition_cat_directory = condition_directory + self.ID + '_conditions.json'
         if not os.path.exists(condition_cat_directory):
             return
@@ -2091,7 +2133,7 @@ class Cat():
             clanname = game.switches['clan_list'][0]
         elif game.clan is not None:
             clanname = game.clan.name
-        relationship_dir = 'saves/' + clanname + '/relationships'
+        relationship_dir = get_save_dir() + '/' + clanname + '/relationships'
         if not os.path.exists(relationship_dir):
             os.makedirs(relationship_dir)
 
@@ -2127,7 +2169,7 @@ class Cat():
         else:
             clanname = game.switches['clan_list'][0]
 
-        relation_directory = 'saves/' + clanname + '/relationships/'
+        relation_directory = get_save_dir() + '/' + clanname + '/relationships/'
         relation_cat_directory = relation_directory + self.ID + '_relations.json'
 
         self.relationships = {}
@@ -2207,19 +2249,21 @@ class Cat():
         output = ""
 
         # Determine the chance of failure.
-        if mediator.experience_level == "very low":
+        if mediator.experience_level == "untrained":
+            chance = 15
+        if mediator.experience_level == "trainee":
             # Negative bonus for very low.
             chance = 20
-        elif mediator.experience_level == "low":
+        elif mediator.experience_level == "prepared":
             chance = 35
-        elif mediator.experience_level == "high":
+        elif mediator.experience_level == "proficient":
             chance = 55
-        elif mediator.experience_level == "master":
+        elif mediator.experience_level == "expert":
             chance = 70
-        elif mediator.experience_level == "max":
+        elif mediator.experience_level == "master":
             chance = 100
         else:
-            chance = 40  # Average gets no bonus.
+            chance = 40
 
         compat = get_personality_compatibility(cat1, cat2)
         if compat is True:
@@ -2476,10 +2520,10 @@ class Cat():
     def load_faded_cat(cat: str):
         """Loads a faded cat, returning the cat object. This object is saved nowhere else. """
         try:
-            with open('saves/' + game.clan.name + '/faded_cats/' + cat + ".json", 'r') as read_file:
+            with open(get_save_dir() + '/' + game.clan.name + '/faded_cats/' + cat + ".json", 'r') as read_file:
                 cat_info = ujson.loads(read_file.read())
         except AttributeError:  # If loading cats is attempted before the clan is loaded, we would need to use this.
-            with open('saves/' + game.switches['clan_list'][0] + '/faded_cats/' + cat + ".json", 'r') as read_file:
+            with open(get_save_dir() + '/' + game.switches['clan_list'][0] + '/faded_cats/' + cat + ".json", 'r') as read_file:
                 cat_info = ujson.loads(read_file.read())
         except:
             print("ERROR: in loading faded cat")
@@ -2513,6 +2557,9 @@ class Cat():
             Cat.all_cats_list.sort(key=lambda x: int(x.ID), reverse=True)
         elif game.sort_type == "rank":
             Cat.all_cats_list.sort(key=lambda x: (Cat.rank_order(x), Cat.get_adjusted_age(x)), reverse=True)
+        
+        if game.sort_fav:
+            Cat.all_cats_list.sort(key=lambda x: x.favourite, reverse=True)
         return
 
     @staticmethod
@@ -2561,27 +2608,15 @@ class Cat():
 
     @experience.setter
     def experience(self, exp: int):
-        if (exp > 100):
-            exp = 100
-        self._experience = exp
-        experience_level = self.experience_level
-        experience_levels = [
-            'very low', 'low', 'average', 'high', 'master', 'max'
-        ]
-        if exp < 11:
-            experience_level = 'very low'
-        elif exp < 31:
-            experience_level = 'low'
-        elif exp < 70:
-            experience_level = 'average'
-        elif exp < 81:
-            experience_level = 'high'
-        elif exp < 100:
-            experience_level = 'master'
-        elif exp == 100:
-            experience_level = 'max'
+        if exp > self.experience_levels_range["master"][1]:
+            exp = self.experience_levels_range["master"][1]
+        self._experience = int(exp)
 
-        self.experience_level = experience_level
+        for x in self.experience_levels_range:
+            if self.experience_levels_range[x][0] <= exp <= self.experience_levels_range[x][1]:
+                self.experience_level = x
+                break
+
 
     @property
     def moons(self):
@@ -2596,8 +2631,12 @@ class Cat():
             if self._moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1] + 1):
                 updated_age = True
                 self.age = key_age
-        if not updated_age and self.age is not None:
-            self.age = "elder"
+        try:
+            if not updated_age and self.age is not None:
+                self.age = "elder"
+        except AttributeError:
+            print("ERROR: cat has no age attribute! Cat ID: " + self.ID)
+            print("Possibly the disappearing cat bug? Ping luna on the discord if you see this message")
 
 
 # ---------------------------------------------------------------------------- #
@@ -2644,6 +2683,7 @@ with open(f"{resource_directory}injuries.json", 'r') as read_file:
 PERMANENT = None
 with open(f"{resource_directory}permanent_conditions.json", 'r') as read_file:
     PERMANENT = ujson.loads(read_file.read())
+
 
 
 resource_directory = "resources/dicts/events/death/death_reactions/"
