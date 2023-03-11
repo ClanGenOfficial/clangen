@@ -100,7 +100,7 @@
 	"cat_generation": {
 		"base_permanent_condition": 90,
 		"base_male_tortie": 18,
-		"base_female_tortie": 8,
+		"base_female_tortie": 9,
 		"base_heterochromia": 120,
 		"direct_inheritance": 15,
 		"wildcard_tortie": 10
@@ -165,7 +165,7 @@
 		"cruel season_death_chance": 150
 	},
 	"clan_creation": {
-		"rerolls": 3,
+		"rerolls": 5,
 		"comment": "Set this to -1 for it to be infinite"
 	},
 	"graduation": {
@@ -174,7 +174,7 @@
 		"max_apprentice_age": {
 			"medicine cat apprentice": 30,
 			"apprentice": 25,
-			"mediator apprentice": 25
+			"mediator apprentice": 30
 		},
 		"min_graduating_age": 9
 	}

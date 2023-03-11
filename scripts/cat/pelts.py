@@ -420,20 +420,42 @@ pelt_colours = ['PALECREAM', 'CREAM', 'BEIGE', 'MEERKAT', 'KHAKI', 'SAND', 'WOOD
     'ANCHOR', 'CHARCOAL', 'COAL', 'BLACK', 'GREY', 'MARENGO', 'BATTLESHIP', 'CADET', 
     'BLUEGREY', 'STEEL', 'SLATE', 'CAPPUCCINO', 'ECRU', 'ASHBROWN', 'DUSTBROWN', 'SANDALWOOD', 
     'PINECONE', 'WRENGE', 'BROWN', 'MINK', 'CHESTNUT', 'TAN', 'DARKBROWN', 'BEAVER', 
-    'CHOCOLATE', 'MOCHA', 'COFFEE', 'TAUPE', 'UMBER', 'WHITE', 'SILVER', 'BRONZE']
+    'CHOCOLATE', 'MOCHA', 'COFFEE', 'TAUPE', 'UMBER', 'WHITE', 'SILVER', 'BRONZE', 'PALEBOW', 
+    'TURQUOISE', 'TIFFANY', 'SAPPHIRE', 'OCEAN', 'DENIUM', 'SHINYMEW', 'SKY', 'TEAL', 'COBALT', 'SONIC',
+    'POWDERBLUE', 'JEANS', 'NAVY', 'DUSKBOW', 'PANTONE', 'SALMON', 'THISTLE', 'AMYTHYST', 
+    'DARKSALMON', 'MAGENTA', 'PETAL', 'MEW', 'HEATHER', 'ORCHID', 'STRAKIT', 'PURPLE', 'WINE', 'RASIN',
+    'GENDER', 'REDNEG', 'IVORY', 'BANNANA', 'FARROW', 'HAY', 'FAWN', 'HAZELNUT', 'LEMON', 'LAGUNA', 
+    'YELLOW', 'CORN', 'GOLD', 'HONEY', 'BEE', 'PINEAPPLE', 'TROMBONE', 'MEDALLION', 'GRANOLA', 
+    'SADDLE', 'CEDAR', 'ONYX', 'LIME', 'CHARTRUSE', 'LETTUCE', 'GRASS', 'MINT', 'EMERALD', 'OLIVE',
+    'DARKOLIVE', 'GREEN', 'FOREST', 'JADE', 'SPINNACH', 'SEAWEED', 'SACRAMENTO', 'XANADU', 'DEEPFOREST']
 pelt_c_no_white = ['PALECREAM', 'CREAM', 'BEIGE', 'MEERKAT', 'KHAKI', 'SAND', 'WOOD', 'ROSE', 
     'GINGER', 'SUNSET', 'RUFOUS', 'FIRE', 'BRICK', 'RED', 'SCARLET', 'APRICOT', 'GARFIELD', 
     'APPLE', 'CRIMSON', 'BURNT', 'CARMINE', 'COSMOS', 'ROSEWOOD', 'BLOOD', 'SOOT', 'DARKGREY', 
     'ANCHOR', 'CHARCOAL', 'COAL', 'BLACK', 'GREY', 'MARENGO', 'BATTLESHIP', 'CADET', 
     'BLUEGREY', 'STEEL', 'SLATE', 'CAPPUCCINO', 'ECRU', 'ASHBROWN', 'DUSTBROWN', 'SANDALWOOD', 
     'PINECONE', 'WRENGE', 'BROWN', 'MINK', 'CHESTNUT', 'TAN', 'DARKBROWN', 'BEAVER', 
-    'CHOCOLATE', 'MOCHA', 'COFFEE', 'TAUPE', 'UMBER']
+    'CHOCOLATE', 'MOCHA', 'COFFEE', 'TAUPE', 'UMBER','TURQUOISE', 'TIFFANY', 'SAPPHIRE', 'OCEAN', 'DENIUM', 
+    'SHINYMEW', 'SKY', 'TEAL', 'COBALT', 'SONIC', 'POWDERBLUE', 'JEANS', 'NAVY', 'DUSKBOW', 
+    'PANTONE', 'SALMON', 'THISTLE', 'AMYTHYST', 'DARKSALMON', 'MAGENTA', 'MEW', 
+    'HEATHER', 'ORCHID', 'STRAKIT', 'PURPLE', 'WINE', 'RASIN','GENDER', 'REDNEG', 'BANNANA', 'FARROW', 
+    'HAY', 'FAWN', 'HAZELNUT', 'LEMON', 'LAGUNA', 'YELLOW', 'CORN', 'GOLD', 'HONEY', 'BEE', 
+    'PINEAPPLE', 'TROMBONE', 'MEDALLION', 'GRANOLA', 'SADDLE', 'CEDAR', 'ONYX', 'LIME', 'CHARTRUSE', 
+    'LETTUCE', 'GRASS', 'MINT', 'EMERALD', 'OLIVE','DARKOLIVE', 'GREEN', 'FOREST', 'JADE', 'SPINNACH', 
+    'SEAWEED', 'SACRAMENTO', 'XANADU', 'DEEPFOREST']
 pelt_c_no_bw = ['PALECREAM', 'CREAM', 'BEIGE', 'MEERKAT', 'KHAKI', 'SAND', 'WOOD', 'ROSE', 
     'GINGER', 'SUNSET', 'RUFOUS', 'FIRE', 'BRICK', 'RED', 'SCARLET', 'APRICOT', 'GARFIELD', 
     'APPLE', 'CRIMSON', 'BURNT', 'CARMINE', 'COSMOS', 'ROSEWOOD', 'BLOOD', 'GREY', 'MARENGO', 
     'BATTLESHIP', 'CADET', 'BLUEGREY', 'STEEL', 'SLATE', 'CAPPUCCINO', 'ECRU', 
     'ASHBROWN', 'DUSTBROWN', 'SANDALWOOD', 'PINECONE', 'WRENGE', 'BROWN', 'MINK', 
-    'CHESTNUT', 'TAN', 'DARKBROWN', 'BEAVER', 'CHOCOLATE', 'MOCHA', 'COFFEE', 'TAUPE', 'UMBER']    
+    'CHESTNUT', 'TAN', 'DARKBROWN', 'BEAVER', 'CHOCOLATE', 'MOCHA', 'COFFEE', 'TAUPE', 'UMBER',
+    'TURQUOISE', 'TIFFANY', 'SAPPHIRE', 'OCEAN', 'DENIUM', 'SHINYMEW', 'SKY', 'TEAL', 'COBALT', 'SONIC',
+    'POWDERBLUE', 'JEANS', 'NAVY', 'TURQUOISE', 'TIFFANY', 'SAPPHIRE', 'OCEAN', 'DENIUM', 'SHINYMEW', 
+    'SKY', 'TEAL', 'COBALT', 'SONIC', 'POWDERBLUE', 'JEANS', 'NAVY', 'PANTONE', 'SALMON', 'THISTLE', 'AMYTHYST', 
+    'DARKSALMON', 'MAGENTA', 'MEW', 'HEATHER', 'ORCHID', 'STRAKIT', 'PURPLE', 'WINE',
+    'GENDER', 'REDNEG', 'BANNANA', 'FARROW', 'HAY', 'FAWN', 'HAZELNUT', 'LEMON', 'LAGUNA', 
+    'YELLOW', 'CORN', 'GOLD', 'HONEY', 'BEE', 'PINEAPPLE', 'TROMBONE', 'MEDALLION', 'GRANOLA', 
+    'SADDLE', 'CEDAR', 'LIME', 'CHARTRUSE', 'LETTUCE', 'GRASS', 'MINT', 'EMERALD', 'OLIVE',
+    'DARKOLIVE', 'GREEN', 'FOREST', 'JADE', 'SPINNACH', 'SEAWEED', 'SACRAMENTO', 'XANADU', 'DEEPFOREST']  
 
 tortiepatterns = ['ONE', 'TWO', 'THREE', 'FOUR', 'REDTAIL', 'DELILAH', 'MINIMAL1', 'MINIMAL2', 'MINIMAL3', 'MINIMAL4',
                   'OREO', 'SWOOP', 'MOTTLED', 'SIDEMASK', 'EYEDOT', 'BANDANA', 'PACMAN', 'STREAMSTRIKE', 'ORIOLE',
@@ -485,28 +507,42 @@ torties = ["Tortie", "Calico"]
 pelt_categories = [tabbies, spotted, plain, exotic, torties]
 
 # SPRITE NAMES
-single_colours = [
-    'WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'GHOST', 'PALEGINGER',
-    'GOLDEN', 'GINGER', 'DARKGINGER', 'CREAM', 'LIGHTBROWN', 'BROWN', 'DARKBROWN', 'BLACK'
-]
+pride_colours = ['AGENDER', 'ENBY', 'ASEXUAL', 'TRANS', 'GAYBOW']
 single_colours = ['PALECREAM', 'CREAM', 'BEIGE', 'MEERKAT', 'KHAKI', 'SAND', 'WOOD', 'ROSE', 
     'GINGER', 'SUNSET', 'RUFOUS', 'FIRE', 'BRICK', 'RED', 'SCARLET', 'APRICOT', 'GARFIELD', 
     'APPLE', 'CRIMSON', 'BURNT', 'CARMINE', 'COSMOS', 'ROSEWOOD', 'BLOOD', 'SOOT', 'DARKGREY', 
     'ANCHOR', 'CHARCOAL', 'COAL', 'BLACK', 'GREY', 'MARENGO', 'BATTLESHIP', 'CADET', 
     'BLUEGREY', 'STEEL', 'SLATE', 'CAPPUCCINO', 'ECRU', 'ASHBROWN', 'DUSTBROWN', 'SANDALWOOD', 
     'PINECONE', 'WRENGE', 'BROWN', 'MINK', 'CHESTNUT', 'TAN', 'DARKBROWN', 'BEAVER', 
-    'CHOCOLATE', 'MOCHA', 'COFFEE', 'TAUPE', 'UMBER', 'WHITE', 'SILVER', 'BRONZE']
-cream_colours = ['PALECREAM', 'CREAM', 'BEIGE', 'MEERKAT', 'KHAKI', 'SAND', 'WOOD']
+    'CHOCOLATE', 'MOCHA', 'COFFEE', 'TAUPE', 'UMBER', 'WHITE', 'SILVER', 'BRONZE', 'PALEBOW', 
+    'TURQUOISE', 'TIFFANY', 'SAPPHIRE', 'OCEAN', 'DENIUM', 'SHINYMEW', 'SKY', 'TEAL', 'COBALT', 'SONIC',
+    'POWDERBLUE', 'JEANS', 'NAVY', 'DUSKBOW', 'PANTONE', 'SALMON', 'THISTLE', 'AMYTHYST', 
+    'DARKSALMON', 'MAGENTA', 'PETAL', 'MEW', 'HEATHER', 'ORCHID', 'STRAKIT', 'PURPLE', 'WINE', 'RASIN',
+    'GENDER', 'REDNEG', 'IVORY', 'BANNANA', 'FARROW', 'HAY', 'FAWN', 'HAZELNUT', 'LEMON', 'LAGUNA', 
+    'YELLOW', 'CORN', 'GOLD', 'HONEY', 'BEE', 'PINEAPPLE', 'TROMBONE', 'MEDALLION', 'GRANOLA', 
+    'SADDLE', 'CEDAR', 'ONYX', 'LIME', 'CHARTRUSE', 'LETTUCE', 'GRASS', 'MINT', 'EMERALD', 'OLIVE',
+    'DARKOLIVE', 'GREEN', 'FOREST', 'JADE', 'SPINNACH', 'SEAWEED', 'SACRAMENTO', 'XANADU', 'DEEPFOREST']
+cream_colours = ['PALECREAM', 'CREAM', 'BEIGE', 'MEERKAT', 'KHAKI', 'SAND', 'WOOD', 'PANTONE', 'SALMON',
+    'THISTLE', 'BANNANA', 'FARROW', 'HAY']
 ginger_colours = ['ROSE', 'GINGER', 'SUNSET', 'RUFOUS', 'FIRE', 'BRICK', 'RED', 
     'SCARLET', 'APRICOT', 'GARFIELD', 'APPLE', 'CRIMSON', 'BURNT', 'CARMINE', 'COSMOS', 
     'ROSEWOOD', 'BLOOD']
-black_colours = ['SOOT', 'DARKGREY', 'ANCHOR', 'CHARCOAL', 'COAL', 'BLACK']
+black_colours = ['SOOT', 'DARKGREY', 'ANCHOR', 'CHARCOAL', 'COAL', 'BLACK', 'ONYX', 'RASIN', 'DUSKBOW']
 grey_colours = ['GREY', 'MARENGO', 'BATTLESHIP', 'CADET', 'BLUEGREY', 'STEEL', 'SLATE']
-white_colours = ['WHITE', 'SILVER', 'BRONZE']
+white_colours = ['WHITE', 'SILVER', 'BRONZE', 'PALEBOW', 'PETAL', 'IVORY']
 brown_colours = ['CAPPUCCINO', 'ECRU', 'ASHBROWN', 'DUSTBROWN', 'SANDALWOOD', 
-    'PINECONE', 'WRENGE', 'BROWN', 'MINK', 'CHESTNUT', 'TAN']
-chocolate_colours = ['DARKBROWN', 'BEAVER', 'CHOCOLATE', 'MOCHA', 'COFFEE', 'TAUPE', 'UMBER']
-colour_categories = [cream_colours, ginger_colours, black_colours, grey_colours, white_colours, brown_colours, chocolate_colours]
+    'PINECONE', 'WRENGE', 'BROWN', 'MINK', 'CHESTNUT', 'TAN', 'TROMBONE', 'MEDALLION', 'GRANOLA', 
+    'SADDLE', 'CEDAR', 'DARKBROWN', 'BEAVER', 'CHOCOLATE', 'MOCHA', 'COFFEE', 'TAUPE', 'UMBER']
+blue_colours = ['TURQUOISE', 'TIFFANY', 'SAPPHIRE', 'SHINYMEW', 'SKY', 'OCEAN', 'DENIUM', 'COBALT', 'SONIC', 'POWDERBLUE', 'JEANS', 'NAVY']
+yellow_colours = ['FAWN', 'HAZELNUT', 'LEMON', 'LAGUNA', 'YELLOW', 'CORN', 'GOLD', 'HONEY', 'BEE', 'PINEAPPLE']
+purple_colours = ['AMYTHYST', 'DARKSALMON', 'MAGENTA', 'MEW', 'HEATHER', 
+    'ORCHID', 'STRAKIT', 'PURPLE', 'WINE', 'GENDER', 'REDNEG']
+green_colours = ['LIME', 'CHARTRUSE', 'LETTUCE', 'GRASS', 'MINT', 'EMERALD', 'OLIVE', 'DARKOLIVE', 'GREEN', 
+    'FOREST', 'JADE', 'SPINNACH', 'SEAWEED', 'SACRAMENTO', 'XANADU', 'DEEPFOREST']
+
+colour_categories = [cream_colours, ginger_colours, black_colours, grey_colours, white_colours, brown_colours, blue_colours, 
+    yellow_colours, purple_colours, green_colours]
+    
 eye_sprites = [
     'YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE', 'DARKBLUE', 'BLUEYELLOW', 'BLUEGREEN',
     'GREY', 'CYAN', 'EMERALD', 'PALEBLUE', 'PALEYELLOW', 'GOLD', 'HEATHERBLUE', 'COPPER', 'SAGE', 'BLUE2',
@@ -544,13 +580,29 @@ skin_sprites = ['BLACK', 'RED', 'PINK', 'DARKBROWN', 'BROWN', 'LIGHTBROWN', 'DAR
                 'SALMON', 'PEACH', 'DARKMARBLED', 'MARBLED', 'LIGHTMARBLED', 'DARKBLUE', 'BLUE', 'LIGHTBLUE']
 skin_sphynx = ['S_BLACK', 'S_RED', 'S_PINK', 'S_DARKBROWN', 'S_BROWN', 'S_LIGHTBROWN', 'S_DARK', 'S_DARKGREY', 'S_GREY', 'S_DARKSALMON',
                 'S_SALMON', 'S_PEACH', 'S_DARKMARBLED', 'S_MARBLED', 'S_LIGHTMARBLED', 'S_DARKBLUE', 'S_BLUE', 'S_LIGHTBLUE']
-albino_sprites = ["ALBINOPINK", "ALBINOBLUE", "ALBINORED", "ALBINOVIOLET", "S_ALBINOPINK", "S_ALBINOBLUE", "S_ALBINORED", "S_ALBINOVIOLET"]
-melanistic_sprites = ["MELANISTICLIGHT", "MELANISTIC", "MELANISTICDARK", "S_MELANISTICLIGHT", "S_MELANISTIC", "S_MELANISTICDARK"] 
-skin_categories = [skin_sprites, skin_sphynx, albino_sprites, melanistic_sprites] 
+albino_sprites = ['ALBINOPINK', 'ALBINOBLUE', 'ALBINORED', 'ALBINOVIOLET', 'ALBINOYELLOW', 'ALBINOGREEN', 'S_ALBINOPINK',  
+                'S_ALBINOBLUE', 'S_ALBINORED', 'S_ALBINOVIOLET', 'S_ALBINOYELLOW', 'S_ALBINOGREEN', 'ALBINOPINKWING', 'ALBINOBLUEWING', 
+                'ALBINOREDWING', 'ALBINOVIOLETWING', 'ALBINOYELLOWWING', 'ALBINOGREENWING']
+melanistic_sprites = ['MELANISTICLIGHT', 'MELANISTIC', 'MELANISTICDARK', 'S_MELANISTICLIGHT', 'S_MELANISTIC', 'S_MELANISTICDARK', 
+                'MELANISTICLIGHTWING', 'MELANISTICWING', 'MELANISTICDARKWING', ] 
+wing_sprites = ['WHITEWING', 'BLUEGREENWING', 'REDWING', 'PURPLEFADEWING', 'RAINBOWWING', 'SILVERWING',
+                'STRAKITWING', 'SONICWING', 'MEWWING', 'OLIVEWING', 'GREENWING', 'GREYWING', 'GREYFADEWING',
+                'BROWNFADEWING', 'PARROTWING', 'GOLDWING', 'LIGHTBROWNWING', 'BLACKWING']
+magic_kitty = ['FIRE', 'WATER', 'EARTH', 'WIND', 'STAR', 'STEAM', 'MAGMA', 'SMOKE', 
+                'HELL', 'MUD', 'STORM', 'BLOOD', 'SAND', 'BERRY', 'GHOST', 'S_FIRE', 'S_WATER', 'S_EARTH', 
+                'S_WIND', 'S_STAR', 'S_STEAM', 'S_MAGMA', 'S_SMOKE', 'S_HELL', 'S_MUD', 'S_STORM', 'S_BLOOD', 
+                'S_SAND', 'S_BERRY', 'S_GHOST']
+skin_categories = [skin_sprites, skin_sphynx, albino_sprites, melanistic_sprites, wing_sprites, magic_kitty] 
 sphynx = ['S_BLACK', 'S_RED', 'S_PINK', 'S_DARKBROWN', 'S_BROWN', 'S_LIGHTBROWN', 'S_DARK', 'S_DARKGREY', 'S_GREY', 'S_DARKSALMON',
             'S_SALMON', 'S_PEACH', 'S_DARKMARBLED', 'S_MARBLED', 'S_LIGHTMARBLED', 'S_DARKBLUE', 'S_BLUE', 'S_LIGHTBLUE',  
-            "S_ALBINOPINK", "S_ALBINOBLUE", "S_ALBINORED", "S_ALBINOVIOLET", "S_MELANISTICLIGHT", 
-            "S_MELANISTIC", "S_MELANISTICDARK"]
+            'S_ALBINOPINK', 'S_ALBINOBLUE', 'S_ALBINORED', 'S_ALBINOVIOLET', 'S_ALBINOYELLOW', 'S_ALBINOGREEN' 'S_MELANISTICLIGHT', 
+            'S_MELANISTIC', 'S_MELANISTICDARK', 'S_FIRE', 'S_WATER', 'S_EARTH', 'S_WIND', 'S_STAR', 'S_STEAM', 'S_MAGMA', 
+            'S_SMOKE', 'S_HELL', 'S_MUD', 'S_STORM', 'S_BLOOD', 'S_SAND', 'S_BERRY', 'S_GHOST']
+wings = ['WHITEWING', 'BLUEGREENWING', 'REDWING', 'PURPLEFADEWING', 'RAINBOWWING', 'SILVERWING',
+            'STRAKITWING', 'SONICWING', 'MEWWING', 'OLIVEWING', 'GREENWING', 'GREYWING', 'GREYFADEWING',
+            'BROWNFADEWING', 'PARROTWING', 'GOLDWING', 'LIGHTBROWNWING', 'BLACKWING'"ALBINOPINKWING", "ALBINOBLUEWING", 
+            "ALBINOREDWING", "ALBINOVIOLETWING", "ALBINOYELLOWWING", "ALBINOGREENWING", "MELANISTICLIGHTWING", 
+            "MELANISTICWING", "MELANISTICDARKWING"]
 
 # CHOOSING PELT
 def choose_pelt(colour=None, white=None, pelt=None, length=None, category=None, determined=False):
@@ -740,7 +792,6 @@ def choose_pelt(colour=None, white=None, pelt=None, length=None, category=None, 
     else:
         return Calico(colour, length)
 
-
 def describe_color(pelt, tortiecolour, tortiepattern, white_patches, skin):
     color_name = ''
     color_name = str(pelt.colour).lower()
@@ -756,6 +807,16 @@ def describe_color(pelt, tortiecolour, tortiepattern, white_patches, skin):
         color_name = 'pale cream'
     elif color_name == 'darkgrey':
         color_name = 'dark grey'
+    elif color_name == 'shinymew':
+        color_name = 'shiny mew'
+    elif color_name == 'sonic':
+        color_name = 'sonic blue'
+    elif color_name == 'darksalmon':
+        color_name = 'dark salmon'            
+    elif color_name == 'strakit':
+        color_name = 'starkit purple'
+    elif color_name == 'gender' or color_name == 'redneg':
+        color_name = 'genderfluid blurple'   
     if skin in albino_sprites:
         color_name = "albino"      
     elif skin in melanistic_sprites:
@@ -806,6 +867,9 @@ def describe_color(pelt, tortiecolour, tortiepattern, white_patches, skin):
         color_name = color_name + ' charcoal hooded tabby'  
     if skin in sphynx:
         color_name = color_name + ' sphynx'
+    elif skin in wings:
+        color_name = 'winged ' + color_name 
+
     elif pelt.name == "Tortie":
         if tortiepattern not in ["tortiesolid", "tortiesmoke"]:
             color_name = color_name + ' torbie'
@@ -854,9 +918,9 @@ def describe_color(pelt, tortiecolour, tortiepattern, white_patches, skin):
         if white_patches == 'FULLWHITE':
             color_name = 'white'
 
-        if color_name == 'white and white':
+        if color_name == 'white and white' or color_name == 'white and petal' or color_name == 'white and ivory':
             color_name = 'white'
-        if color_name == 'shaded and black':
+        if color_name == 'shaded and black' or color_name == 'shaded and onyx' or color_name == 'shaded and rasin':
             color_name = 'black'
 
     return color_name
