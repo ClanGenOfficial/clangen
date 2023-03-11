@@ -716,7 +716,7 @@ class SettingsScreen(Screens):
         TODO: DOCS
         """
         # Kill the checkboxes. No mercy here.
-        for checkbox in self.checkboxes.items():
+        for checkbox in self.checkboxes.values():
             checkbox.kill()
         self.checkboxes = {}
 
@@ -765,10 +765,10 @@ class SettingsScreen(Screens):
         """
         TODO: DOCS
         """
-        for checkbox in self.checkboxes.items():
+        for checkbox in self.checkboxes.values():
             checkbox.kill()
         self.checkboxes = {}
-        for text in self.checkboxes_text.items():
+        for text in self.checkboxes_text.values():
             text.kill()
         self.checkboxes_text = {}
 
@@ -861,4 +861,3 @@ class StatsScreen(Screens):
         """
         TODO: DOCS
         """
-        
