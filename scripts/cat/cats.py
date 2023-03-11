@@ -2631,8 +2631,12 @@ class Cat():
             if self._moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1] + 1):
                 updated_age = True
                 self.age = key_age
-        if not updated_age and self.age is not None:
-            self.age = "elder"
+        try:
+            if not updated_age and self.age is not None:
+                self.age = "elder"
+        except AttributeError:
+            print("ERROR: cat has no age attribute! Cat ID: " + self.ID)
+            print("Possibly the disappearing cat bug? Ping luna on the discord if you see this message")
 
 
 # ---------------------------------------------------------------------------- #
