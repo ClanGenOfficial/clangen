@@ -20,14 +20,14 @@ else:
 class LoadSave(unittest.TestCase):
 
     def setUp(self):
-        if os.path.exists('saves'):
-            shutil.move('saves', 'saves_backup')
+        if os.path.exists(get_save_dir()):
+            shutil.move(get_save_dir(), 'saves_backup')
 
     def tearDown(self):
-        if os.path.exists('saves'):
-            shutil.rmtree('saves')
+        if os.path.exists(get_save_dir()):
+            shutil.rmtree(get_save_dir())
         if os.path.exists('saves_backup'):
-            shutil.move('saves_backup', 'saves')
+            shutil.move('saves_backup', get_save_dir())
 
     def old_implimentation(self):
         with open(get_save_dir() + '/clanlist.txt', 'r') as read_file:
@@ -44,8 +44,8 @@ class LoadSave(unittest.TestCase):
         return Game().read_clans()
     
     def example_save(self, id):
-        if os.path.exists('saves'):
-            shutil.rmtree('saves')
+        if os.path.exists(get_save_dir()):
+            shutil.rmtree(get_save_dir())
 
         #copy tests/testSaves/save<id> to saves
         shutil.copytree('tests/testSaves/save' + str(id), get_save_dir())
@@ -56,7 +56,7 @@ class LoadSave(unittest.TestCase):
             with self.subTest(i=i):
                 print("Checking current clan for save " + str(i))
                 self.example_save(i)
-                fileList = os.listdir('saves')
+                fileList = os.listdir(get_save_dir())
                 if 'currentclan.txt' in fileList:
                     self.skipTest("Save " + str(i) + " already migrated")
                 old_out = self.old_implimentation()
@@ -74,7 +74,7 @@ class LoadSave(unittest.TestCase):
             with self.subTest(i=i):
                 print("Checking clan list for save " + str(i))
                 self.example_save(i)
-                fileList = os.listdir('saves')
+                fileList = os.listdir(get_save_dir())
                 if 'currentclan.txt' in fileList:
                     self.skipTest("Save " + str(i) + " already migrated")
                 old_out = self.old_implimentation().sort()
@@ -86,21 +86,21 @@ class LoadSave(unittest.TestCase):
 @unittest.skipIf(num_example_saves == 0, "No example saves found. Download the contents of https://github.com/ImLvna/clangen-unittest-saves into tests/testSaves to run unittest")
 class MigrateSave(unittest.TestCase):
     def setUp(self):
-        if os.path.exists('saves'):
-            shutil.move('saves', 'saves_backup')
+        if os.path.exists(get_save_dir()):
+            shutil.move(get_save_dir(), 'saves_backup')
 
     def tearDown(self):
-        if os.path.exists('saves'):
-            shutil.rmtree('saves')
+        if os.path.exists(get_save_dir()):
+            shutil.rmtree(get_save_dir())
         if os.path.exists('saves_backup'):
-            shutil.move('saves_backup', 'saves')
+            shutil.move('saves_backup', get_save_dir())
 
     def example_save(self, id):
-        if os.path.exists('saves'):
-            shutil.rmtree('saves')
+        if os.path.exists(get_save_dir()):
+            shutil.rmtree(get_save_dir())
 
         #copy tests/testSaves/save<id> to saves
-        shutil.copytree('tests/testSaves/save' + str(id), 'saves')
+        shutil.copytree('tests/testSaves/save' + str(id), get_save_dir())
 
     def test_migrate_save_onread(self):
         
@@ -108,7 +108,7 @@ class MigrateSave(unittest.TestCase):
             with self.subTest(i=i):
                 print("Checking migration for save " + str(i))
                 self.example_save(i)
-                fileList = os.listdir('saves')
+                fileList = os.listdir(get_save_dir())
                 if 'currentclan.txt' in fileList:
                     self.skipTest("Save " + str(i) + " already migrated")
                 
@@ -117,7 +117,7 @@ class MigrateSave(unittest.TestCase):
 
                 Game().read_clans() # the load save function should migrate the save
 
-                fileList = os.listdir('saves')
+                fileList = os.listdir(get_save_dir())
                 self.assertIn('currentclan.txt', fileList, "Save " + str(i) + " not migrated")
 
                 with open(get_save_dir() + '/currentclan.txt', 'r') as read_file:

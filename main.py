@@ -20,6 +20,7 @@ It then loads the settings, and then loads the start screen.
 import platform
 import sys
 import os
+import time
 
 from scripts.datadir import get_log_dir, setup_data_dir
 
@@ -133,7 +134,7 @@ if clan_list:
                 'error_message'] = 'There was an error loading the cats file!'
 
     # try:
-    #     game.map_info = load_map('saves/' + game.clan.name)
+    #     game.map_info = load_map(get_save_dir() + '/' + game.clan.name)
     # except NameError:
     #     game.map_info = {}
     # except:
