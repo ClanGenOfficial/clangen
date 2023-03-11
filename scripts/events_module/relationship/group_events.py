@@ -11,12 +11,14 @@ from scripts.cat.cats import Cat
 from scripts.event_class import Single_Event
 from scripts.cat_relations.relationship import create_group_interaction
 from scripts.game_structure.game_essentials import game
+from scripts.cat_relations.relationship import Group_Interaction
 
 class Group_Events():
 
     def __init__(self) -> None:
         self.chosen_interaction = None
         self.abbreviations_cat_id = {}
+        self.cat_abbreviations_counter = {}
         pass
 
     def start_interaction(self, cat: Cat, interact_cats: list):
@@ -32,6 +34,7 @@ class Group_Events():
             Returns
             -------
         """
+        self.abbreviations_cat_id = {}
         self.abbreviations_cat_id["m_c"] = cat.id
         cat_amount = choice(GROUP_INTERACTION_MASTER_DICT.keys())
         inter_type = choice(["negative", "positive", "neutral"])
@@ -40,6 +43,11 @@ class Group_Events():
         # there will be no possible solution and it will be returned
         if len(interact_cats) < int(cat_amount):
             return
+
+        # setup the abbreviations_cat_id dictionary
+        for integer in range(cat_amount):
+            new_key = "r_c" + str(integer+1)
+            self.abbreviations_cat_id[new_key] = None
 
         possibilities = GROUP_INTERACTION_MASTER_DICT[cat_amount][inter_type]
         
@@ -74,7 +82,7 @@ class Group_Events():
         # TODO: add the interaction to the relationship log?
         interaction_str = interaction_str + f" ({inter_type})"
         game.cur_events_list.append(Single_Event(
-            interaction_str, ["relation", "interaction"], [self.cat_to.ID, self.cat_from.ID]
+            interaction_str, ["relation", "interaction"], self.abbreviations_cat_id.values()
         ))
 
     # ---------------------------------------------------------------------------- #
@@ -128,17 +136,70 @@ class Group_Events():
 
     def get_filtered_interactions(self, interactions: list, amount: int, interact_cats: list):
         """Handles the whole filtered interaction list based on all other constraints."""
-        # TODO: finish this function
-
         # first get all abbreviations possibilities for the cats
-        abbreviations_per_interaction = self.get_abbreviations_possibilities(interactions, int(amount), interact_cats)
+        abbr_per_interaction = self.get_abbreviations_possibilities(interactions, int(amount), interact_cats)
 
         # check which combinations are possible
+        abbr_per_interaction = self.remove_impossible_abbreviations_combinations(abbr_per_interaction)
 
         # set which abbreviations is which cat
+        self.set_abbreviations_cats(interact_cats)
+        # check if any abbreviations_cat_ids is None, if so return, because the interaction should not continue
+        not_none = [abbr != None for abbr in self.abbreviations_cat_id.values()]
+        if not all(not_none):
+            return []
 
         # last filter based on relationships between the cats
         filtered_interactions = []
+        for interact in interactions:
+            # if this interaction is not in the cleared abbreviations dictionary,
+            # there is no solution for the cat-abbreviation problem and thus, this
+            # interaction is not possible
+            if interact.id not in abbr_per_interaction.keys():
+                continue
+
+            # check if all cats fulfill the status constraints
+            all_fulfilled = True
+            for abbr, value in interact.status_constraint.items():
+                # main cat is already filtered
+                if abbr == "m_c":
+                    continue
+                relevant_cat = Cat.all_cats[self.abbreviations_cat_id[abbr]]
+                if relevant_cat.status not in value:
+                    all_fulfilled = False
+            if not all_fulfilled:
+                continue
+
+            # check if all cats fulfill the skill constraints
+            all_fulfilled = True
+            for abbr, value in interact.skill_constraint.items():
+                # main cat is already filtered
+                if abbr == "m_c":
+                    continue
+                relevant_cat = Cat.all_cats[self.abbreviations_cat_id[abbr]]
+                if relevant_cat.skill not in value:
+                    all_fulfilled = False
+            if not all_fulfilled:
+                continue
+
+            # check if all cats fulfill the trait constraints
+            all_fulfilled = True
+            for abbr, value in interact.trait_constraint.items():
+                # main cat is already filtered
+                if abbr == "m_c":
+                    continue
+                relevant_cat = Cat.all_cats[self.abbreviations_cat_id[abbr]]
+                if relevant_cat.trait not in value:
+                    all_fulfilled = False
+            if not all_fulfilled:
+                continue
+
+            # now check for relationship constraints
+            relationship_allow_interaction = self.relationship_allow_interaction(interact)
+            if not relationship_allow_interaction:
+                continue
+
+            filtered_interactions.append(interact)
 
         return filtered_interactions
 
@@ -156,6 +217,7 @@ class Group_Events():
                 a list of cats, which are open to interact with the main cat
         """
         possibilities = {}
+        self.cat_abbreviations_counter = {}
 
         # prepare how the base dictionary should look, 
         # this depends on the chosen cat amount -> which abbreviation are needed
@@ -198,14 +260,142 @@ class Group_Events():
                     if cat_id in status_ids and cat_id in skill_ids and cat_id in trait_ids:
                         dictionary[abbreviation].append(cat_id)
 
+                        if cat_id in self.cat_abbreviations_counter and\
+                            abbreviation in self.cat_abbreviations_counter[cat_id]:
+                            self.cat_abbreviations_counter[cat_id][abbreviation] +=1
+                        else:
+                            self.cat_abbreviations_counter[cat_id][abbreviation] = 1
+
             possibilities[interact.id] = dictionary
 
     def remove_impossible_abbreviations_combinations(self, abbreviations_per_interaction: dict):
+        """
+        Check which combinations of abbreviations are allowed and possible and which are not, only return a dictionary,
+        with possible combinations together with the id for the interaction.
+        """
         filtered_abbreviations = {}
+        for interaction_id, dictionary in abbreviations_per_interaction.items():
+            # check if there is any abbreviation, which is empty
+            abbr_length = [len(val) for abr,val in dictionary.items()]
+            # if one length is 0 the all function returns false
+            if not all(abbr_length):
+                continue
+
+            filtered_abbreviations[interaction_id] = dictionary
         return filtered_abbreviations
 
-    def set_abbreviations_cats(self):
-        print("TODO")
+    def set_abbreviations_cats(self, interact_cats: list):
+        """Choose which cat is which abbreviations."""
+        free_to_choose = [cat.id for cat in interact_cats]
+
+        for abbr_key in self.abbreviations_cat_ids.keys():
+            highest_value = 0
+            highest_id = None
+
+            # gets the cat id which fits the abbreviations most of the time
+            for cat_id in free_to_choose:
+                curr_value = self.cat_abbreviations_counter[cat_id][abbr_key]
+                if highest_value < curr_value:
+                    highest_value = curr_value
+                    highest_id = cat_id
+            
+            self.abbreviations_cat_ids[abbr_key] = highest_id
+            if highest_id in free_to_choose:
+                free_to_choose.remove(highest_id)
+
+    def relationship_allow_interaction(self, interaction: Group_Interaction):
+        """Check if the interaction is allowed with the current chosen cats."""
+        fulfilled_list = []
+
+        for name, dictionary in interaction.specific_reaction.items():
+            abbre_from = name.split('_to_')[0]
+            abbre_to = name.split('_to_')[1]
+
+            cat_from_id = self.abbreviations_cat_id[abbre_from]
+            cat_to_id = self.abbreviations_cat_id[abbre_to]
+            cat_from = Cat.all_cats[cat_from_id]
+            cat_to = Cat.all_cats[cat_to_id]
+
+            if "siblings" in dictionary and not cat_from.is_sibling(cat_to):
+                continue
+
+            if "mates" in dictionary and not self.mates:
+                continue
+
+            if "not_mates" in dictionary and self.mates:
+                continue
+
+            if "parent/child" in dictionary and not cat_from.is_parent(cat_to):
+                continue
+
+            if "child/parent" in dictionary and not cat_to.is_parent(cat_from):
+                continue
+
+            value_types = ["romantic", "platonic", "dislike", "admiration", "comfortable", "jealousy", "trust"]
+            fulfilled = True
+            for v_type in value_types:
+                tags = list(filter(lambda constr: v_type in constr, dictionary))
+                if len(tags) < 1:
+                    continue
+                threshold = 0
+                lower_than = False
+                # try to extract the value/threshold from the text
+                try:
+                    splitted = tags[0].split('_')
+                    threshold = int(splitted[1])
+                    if len(splitted) > 3:
+                        lower_than = True
+                except:
+                    print(f"ERROR: interaction {interaction.id} with the relationship constraint for the value {v_type} follows not the formatting guidelines.")
+                    break
+
+                if threshold > 100:
+                    print(f"ERROR: interaction {interaction.id} has a relationship constraints for the value {v_type}, which is higher than the max value of a relationship.")
+                    break
+
+                if threshold <= 0:
+                    print(f"ERROR: patrol {interaction.id} has a relationship constraints for the value {v_type}, which is lower than the min value of a relationship or 0.")
+                    break
+
+                threshold_fulfilled = False
+                if v_type == "romantic":
+                    if not lower_than and self.romantic_love >= threshold:
+                        threshold_fulfilled = True
+                    elif lower_than and self.romantic_love <= threshold:
+                        threshold_fulfilled = True
+                if v_type == "platonic":
+                    if not lower_than and self.platonic_like >= threshold:
+                        threshold_fulfilled = True
+                    elif lower_than and self.platonic_like <= threshold:
+                        threshold_fulfilled = True
+                if v_type == "dislike":
+                    if not lower_than and self.dislike >= threshold:
+                        threshold_fulfilled = True
+                    elif lower_than and self.dislike <= threshold:
+                        threshold_fulfilled = True
+                if v_type == "comfortable":
+                    if not lower_than and self.comfortable >= threshold:
+                        threshold_fulfilled = True
+                    elif lower_than and self.comfortable <= threshold:
+                        threshold_fulfilled = True
+                if v_type == "jealousy":
+                    if not lower_than and self.jealousy >= threshold:
+                        threshold_fulfilled = True
+                    elif lower_than and self.jealousy <= threshold:
+                        threshold_fulfilled = True
+                if v_type == "trust":
+                    if not lower_than and self.trust >= threshold:
+                        threshold_fulfilled = True
+                    elif lower_than and self.trust <= threshold:
+                        threshold_fulfilled = True
+
+                if not threshold_fulfilled:
+                    fulfilled = False
+                    continue
+
+            fulfilled_list.append(fulfilled)
+
+        return all(fulfilled_list)
 
     # ---------------------------------------------------------------------------- #
     #                      functions after interaction decision                    #
