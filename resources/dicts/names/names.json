@@ -20,12 +20,12 @@
     "blossom", "blotch", "bounce", "bracken", "branch", "breeze", "briar", "bright", "brook", "burr", "burrow", "bush", "call",
     "catcher", "cloud", "clover", "crawl", "creek", "cry", "dapple", "daisy", "dawn", "drift", "drop", "dusk", "dust", "dew",
     "ear", "ears", "eater", "eye", "eyes", "face", "fall", "fang", "fawn", "feather", "fern", "fin", "fire", "fish", "flake",
-    "flame", "flight", "flick", "flood", "flower", "fox", "frost", "gaze", "goose", "gorse", "grass", "hail", "hare", "hawk", "haze",
+    "flame", "flight", "flick", "flood", "flower", "fox", "frost", "gaze", "glint", "goose", "gorse", "grass", "hail", "hare", "hawk", "haze",
     "heather", "hollow", "holly", "howl", "ice", "ivy", "jaw", "jay", "jump", "kite", "lake", "larch","laurel", "leaf", "leap",
     "leg", "light", "lightning", "lilac", "lily", "lotus", "luster", "mask", "mark", "minnow", "mist", "moth", "moon", "moss", "mouse",
     "muzzle", "needle", "nettle", "night", "noise", "nose", "nut", "pad", "patch", "path", "peak", "petal", "plume", "pond",
     "pool", "poppy", "pounce", "puddle", "rain", "rapid", "ripple", "river", "roar", "rose", "rump", "run", "runner", "scar",
-    "scratch", "seed", "shade", "shadow", "shell", "shine", "sight", "skip", "sky", "slip", "snout", "snow", "song", "spark",
+    "scratch", "seed", "shade", "shadow", "shell", "shimmer", "shine", "sight", "skip", "sky", "slip", "snout", "snow", "song", "spark",
     "speck", "speckle", "spirit", "splash", "spot", "spots", "spring", "stalk", "stem", "step", "stone", "storm", "streak",
     "stream", "strike", "stripe", "sun", "swipe", "swoop", "talon", "tooth", "thistle", "thorn", "throat", "toe", "tree",
     "throat", "watcher", "water", "wave", "whisper", "whistle", "willow", "wind", "wing", "wish" 
@@ -133,7 +133,7 @@
     ],
     "PALEGINGER": [
     "Pale", "Ginger", "Sand", "Sandy", "Yellow", "Sun", "Sunny", "Light", "Lion", "Bright", "Phlox", "Vervain",
-    "Honey", "Daisy", "Warm", "Robin", "Cosmos", "Orchid", "Opal", "Snapdragon", "Foxglove", "Verbena", "Straw",
+    "Honey", "Daisy", "Warm", "Robin", "Cosmos", "Orchid", "Snapdragon", "Foxglove", "Verbena", "Straw",
     "Sago"
     ],
     "GOLDEN": [
@@ -162,7 +162,7 @@
     "Twig", "Owl", "Otter", "Log", "Vole", "Branch", "Hazel", "Robin", "Acorn", "Bark", "Umber"
     ],
     "DARKBROWN": [
-    "Brown", "Dark", "Shade", "Night", "Russet", "Rowan", "Mud", "Oak", "Stag", "Elk", "Twig", "Loach", 
+    "Brown", "Dark", "Shade", "Night", "Russet", "Rowan", "Mud", "Oak", "Twig", "Loach", 
     "Owl", "Otter", "Log", "Hickory", "Branch", "Robin", "Bark", "Agate", "Umber", "Chanterelle"
     ],
     "BLACK": [
@@ -190,7 +190,7 @@
     "COPPER": ["Copper", "Red", "Amber", "Brown", "Fire", "Cinnamon"],
     "SAGE": ["Sage", "Leaf", "Olive", "Bush", "Clove", "Green", "Weed"],
     "BLUE2": ["Blue", "Blue", "Ice", "Icy", "Sky", "Lake", "Frost", "Water"],
-    "SUNLITICE": ["Sun", "Ice", "Icy", "Frost", "Sunrise", "Dawn", "Dusk", "Odd", "Glow"],
+    "SUNLITICE": ["Sun", "Ice", "Icy", "Frost", "Dawn", "Dusk", "Odd", "Glow"],
     "GREENYELLOW": ["Green", "Yellow", "Tawny", "Hazel", "Gold", "Daisy", "Sand", "Sandy", "Weed"]
   },
 
