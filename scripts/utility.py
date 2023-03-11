@@ -164,12 +164,13 @@ def pronoun_repl(m, cat_pronouns_dict):
         if inner_details[0] == "PRONOUN":
             pro = d[inner_details[2]]
             if inner_details[-1] == "CAP":
-                pro.capitize()
+                pro = pro.capitalize()
             return pro
         elif inner_details[0] == "VERB":
             return inner_details[d["conju"] + 1]
         return "error1"
-    except:
+    except KeyError as e:
+        logger.exception("Failed to load sprite")
         return "error2"
 
 
@@ -540,8 +541,12 @@ def ceremony_text_adjust(Cat, text, cat, dead_mentor=None, mentor=None, previous
         "(previous_mentor)": (str(previous_alive_mentor.name), choice(previous_alive_mentor.pronouns)) if previous_alive_mentor else ("previous_mentor_placeholder", None),
         "l_n": (str(game.clan.leader.name), choice(game.clan.leader.pronouns)) if game.clan.leader else ("leader_placeholder", None),
         "c_n": (clanname, None),
-        "prefix": (prefix, None)
+        "(prefix)": (prefix, None),
     }
+
+    if random_honor:
+        cat_dict["r_h"] = (random_honor, None)
+
     if "p1" in adjust_text and "p2" in adjust_text and len(living_parents) >= 2:
         cat_dict["p1"] = (str(living_parents[0].name), choice(living_parents[0].pronouns))
         cat_dict["p2"] = (str(living_parents[1].name), choice(living_parents[1].pronouns))
