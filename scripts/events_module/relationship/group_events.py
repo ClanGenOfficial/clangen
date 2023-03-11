@@ -3,7 +3,7 @@ try:
     import ujson
 except ImportError:
     import json as ujson
-from random import choice
+from random import choice, shuffle
 from copy import deepcopy
 
 from scripts.utility import change_relationship_values
@@ -35,6 +35,7 @@ class Group_Events():
             -------
         """
         self.abbreviations_cat_id = {}
+        self.cat_abbreviations_counter = {}
         self.abbreviations_cat_id["m_c"] = cat.ID
         cat_amount = choice(list(GROUP_INTERACTION_MASTER_DICT.keys()))
         inter_type = choice(["negative", "positive", "neutral"])
@@ -154,8 +155,6 @@ class Group_Events():
         # check if any abbreviations_cat_ids is None, if so return, because the interaction should not continue
         not_none = [abbr != None for abbr in self.abbreviations_cat_id.values()]
         if not all(not_none):
-            print(not_none)
-            print(self.abbreviations_cat_id)
             print("RETURN 1.2")
             return []
 
@@ -228,8 +227,6 @@ class Group_Events():
                 a list of cats, which are open to interact with the main cat
         """
         possibilities = {}
-        self.cat_abbreviations_counter = {}
-
         # prepare how the base dictionary should look, 
         # this depends on the chosen cat amount -> which abbreviation are needed
         base_dictionary = {}
@@ -274,6 +271,9 @@ class Group_Events():
                         if cat_id in self.cat_abbreviations_counter and\
                             abbreviation in self.cat_abbreviations_counter[cat_id]:
                             self.cat_abbreviations_counter[cat_id][abbreviation] +=1
+                        elif cat_id in self.cat_abbreviations_counter and\
+                            abbreviation not in self.cat_abbreviations_counter[cat_id]:
+                            self.cat_abbreviations_counter[cat_id][abbreviation] = 1
                         else:
                             self.cat_abbreviations_counter[cat_id] = {}
                             self.cat_abbreviations_counter[cat_id][abbreviation] = 1
@@ -300,6 +300,8 @@ class Group_Events():
     def set_abbreviations_cats(self, interact_cats: list):
         """Choose which cat is which abbreviations."""
         free_to_choose = [cat.ID for cat in interact_cats]
+        # shuffle the list to prevent choosing the same cats every time
+        shuffle(free_to_choose)
 
         for abbr_key in list(self.abbreviations_cat_id.keys()):
             if abbr_key == "m_c":
