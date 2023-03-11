@@ -40,8 +40,14 @@ from .pelts import (
     sphynx,
     cream_colours,
     grey_colours,
-    chocolate_colours,
+    blue_colours,
+    green_colours,
+    purple_colours,
+    yellow_colours,
+    pride_colours,
     skin_categories,
+    wing_sprites,
+    magic_kitty,
     little_black,
     mid_black,
     high_black,
@@ -362,38 +368,44 @@ def pelt_inheritance(cat, parents: tuple):
     # ------------------------------------------------------------------------------------------------------------#
     #   PELT COLOUR
     # ------------------------------------------------------------------------------------------------------------#
-    # Weights for each colour group. It goes: (cream, ginger, black, grey, white, brown, chocolate)
-    weights = [0, 0, 0, 0, 0, 0, 0]
+    # Weights for each colour group. It goes: (cream, ginger, black, grey, white, brown, 
+        #blue, yellow, purple, green)
+    weights = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     for p_ in par_peltcolours:
         if p_ in cream_colours:
-            add_weight = (40, 20, 0, 0, 0, 10, 5)
+            add_weight = (40, 20, 0, 0, 0, 10, 0, 5, 5, 2)
         if p_ in ginger_colours:
-            add_weight = (20, 40, 0, 0, 0, 10, 5)
+            add_weight = (20, 40, 0, 0, 0, 10, 0, 0, 5, 0)
         elif p_ in black_colours:
-            add_weight = (0, 0, 40, 20, 2, 5, 5)
+            add_weight = (0, 0, 40, 20, 2, 5, 5, 0, 0, 0)
         elif p_ in grey_colours:
-            add_weight = (0, 0, 10, 40, 10, 2, 2)
+            add_weight = (0, 0, 10, 40, 10, 2, 5, 0, 0, 1)
         elif p_ in white_colours:
-            add_weight = (2, 0, 5, 20, 40, 0, 0)
+            add_weight = (2, 0, 5, 20, 40, 0, 5, 2, 0, 1)
         elif p_ in brown_colours:
-            add_weight = (5, 10, 5, 2, 0, 35, 10)
-        elif p_ in chocolate_colours:
-            add_weight = (2, 5, 10, 5, 0, 10, 35)
+            add_weight = (5, 10, 5, 2, 0, 35, 0, 5, 0, 1)
+        elif p_ in blue_colours:
+            add_weight = (0, 0, 20, 20, 20, 0, 25, 0, 2, 0)
+        elif p_ in yellow_colours:
+            add_weight = (10, 0, 0, 0, 10, 20, 0, 25, 0, 5)
+        elif p_ in purple_colours:
+            add_weight = (20, 20, 0, 0, 0, 0, 0, 5, 25, 0)
+        elif p_ in green_colours:
+            add_weight = (2, 0, 0, 1, 1, 1, 0, 5, 0, 35)
         elif p_ is None:
-            add_weight = (40, 40, 40, 40, 40, 40, 40)
+            add_weight = (40, 40, 40, 40, 40, 40, 2, 2, 2, 15)
         else:
-            add_weight = (0, 0, 0, 0, 0, 0, 0)
+            add_weight = (0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
         for x in range(0, len(weights)):
             weights[x] += add_weight[x]
 
         # A quick check to make sure all the weights aren't 0
         if all([x == 0 for x in weights]):
-            weights = [1, 1, 1, 1, 1, 1, 1]
+            weights = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 
     chosen_pelt_color = choice(
-        random.choices(colour_categories, weights=weights, k=1)[0]
-    )
+        random.choices(colour_categories, weights=weights, k=1)[0])
 
     # ------------------------------------------------------------------------------------------------------------#
     #   PELT LENGTH
@@ -483,7 +495,7 @@ def randomize_pelt(cat):
     # ------------------------------------------------------------------------------------------------------------#
 
     chosen_pelt_color = choice(
-        random.choices(colour_categories, k=1)[0]
+        random.choices(colour_categories, weights=(40, 40, 40, 40, 40, 40, 10, 10, 10, 20), k=1)[0]
     )
 
     # ------------------------------------------------------------------------------------------------------------#
@@ -548,19 +560,21 @@ def init_sprite(cat):
             cat.pelt.length = "short"
         else:
             hit = randint(0, 200)
-            if hit == 1 or hit == 2:
-                cat.skin = choice(albino_sprites)
-            elif hit == 3:
-                cat.skin = choice(melanistic_sprites)         
+            if hit == 0 or hit == 1 or hit == 2:
+                cat.skin = choice([choice(albino_sprites), choice(magic_kitty)]) 
+            elif hit == 3 or hit == 4:
+                cat.skin = choice(melanistic_sprites)        
+            elif hit == 5:
+                cat.skin = choice(wing_sprites) 
             else:
                 cat.skin = choice(skin_sprites)   
     elif cat.parent2 is None:
         par1 = cat.all_cats[cat.parent1]
-        cat.skin = choice([par1.skin, choice(random.choices(skin_categories, weights=(193, 3, 3, 1), k=1)[0])])
+        cat.skin = choice([par1.skin, choice(random.choices(skin_categories, weights=(191, 3, 3, 2, 1, 3), k=1)[0])])
     else:
         par1 = cat.all_cats[cat.parent1]
         par2 = cat.all_cats[cat.parent2]
-        cat.skin = choice([par1.skin, par2.skin, choice(random.choices(skin_categories, weights=(190, 4, 4, 2), k=1)[0])])  
+        cat.skin = choice([par1.skin, par2.skin, choice(random.choices(skin_categories, weights=(187, 4, 4, 3, 2, 4), k=1)[0])]) 
 
     if cat.skin in sphynx:
         cat.pelt.length = 'short'
@@ -639,6 +653,7 @@ def init_pattern(cat):
                 # Allow any colors that aren't the base color.
                 possible_colors = pelt_colours.copy()
                 possible_colors.remove(cat.pelt.colour)
+                possible_colors.extend(pride_colours * 4)
                 cat.tortiecolour = choice(possible_colors)
 
             else:
@@ -650,36 +665,74 @@ def init_pattern(cat):
                 elif cat.tortiebase in ["charcoal", "hooded"]:
                     cat.tortiepattern = choice(['charcoal', 'hooded'])    
                 else:
-                    cat.tortiepattern = random.choices([cat.tortiebase, 'ghost'], weights=[97, 3], k=1)[0]
+                    cat.tortiepattern = random.choices([cat.tortiebase, 'ghost', 'rat', 'skele'], weights=[93, 3, 3, 1], k=1)[0]
 
                 # Ginger is often duplicated to increase its chances
-                if cat.pelt.colour in ["WHITE", "SILVER", "BRONZE", "GREY"]:
-                    cat.tortiecolour = choice(['PALECREAM', 'CREAM', 'SAND', 'WOOD'])
-                elif cat.pelt.colour in ["GREY", "MARENGO", "BATTLESHIP", "CADET", "BLUEGREY", "STEEL", "SLATE"]:
+                if cat.pelt.colour in ["WHITE", "SILVER", "BRONZE", "GREY", "PALEBOW", "TURQUOISE", "TIFFANY", "SHINYMEW", "SKY",
+                                    "POWDERBLUE"]:
+                    cat.tortiecolour = choice(['PALECREAM', 'CREAM', 'SAND', 'WOOD', 'PETAL', 'PANTONE', 'SALMON', 
+                                    'THISTLE', 'MEW', 'LIME', 'CHARTRUSE', 'LETTUCE', 'GRASS', 'MINT', 'EMERALD', 'OLIVE'] + (pride_colours * 2))
+                elif cat.pelt.colour in ["GREY", "MARENGO", "BATTLESHIP", "CADET", "BLUEGREY", "STEEL", "SLATE", "SAPPHIRE", "OCEAN", 
+                                    "DENIUM", "TEAL", "COBALT"]:
                     cat.tortiecolour = choice(['ROSE', 'GINGER', 'SUNSET', 'RUFOUS', 'FIRE', 'BRICK', 'SCARLET', 'APRICOT', 
-                                            'GARFIELD', 'APPLE'])
-                elif cat.pelt.colour in ["SOOT", "DARKGREY", "ANCHOR", "CHARCOAL", "COAL", "BLACK"]:
-                    cat.tortiecolour = choice(['RED', 'CRIMSON', 'BURNT', 'CARMINE', 'COSMOS', 'ROSEWOOD', 'BLOOD'])
+                                    'GARFIELD', 'APPLE', 'AMYTHYST', 'DARKSALMON', 'MAGENTA', 'HEATHER', 'ORCHID', 
+                                    'PURPLE', 'DARKOLIVE', 'GREEN', 'SPINNACH', 'SEAWEED', 'SACRAMENTO'] + (pride_colours * 2))
+                elif cat.pelt.colour in ["SOOT", "DARKGREY", "ANCHOR", "CHARCOAL", "COAL", "BLACK", "DUSKBOW", "SONIC", "JEANS", "NAVY"]:
+                    cat.tortiecolour = choice(['RED', 'CRIMSON', 'BURNT', 'CARMINE', 'COSMOS', 'ROSEWOOD', 'BLOOD', 'RASIN',
+                                    'STRAKIT',  'WINE', 'GENDER', 'REDNEG', 'FOREST', 'JADE', 'XANADU', 'DEEPFOREST'] + (pride_colours * 2))
                 
-                elif cat.pelt.colour in ["PALECREAM", "CREAM", "SAND", "WOOD"]:
-                    cat.tortiecolour = choice(['WHITE', 'SILVER', 'BRONZE', 'GREY'])
+                elif cat.pelt.colour in ["PALECREAM", "CREAM", "SAND", "WOOD", "PETAL", "PANTONE", "SALMON", "THISTLE", "MEW"]:
+                    cat.tortiecolour = choice(['WHITE', 'SILVER', 'BRONZE', 'GREY', 'PALEBOW', 
+                                    'TURQUOISE', 'TIFFANY', 'SHINYMEW', 'SKY', 'POWDERBLUE', 'LIME', 
+                                    'CHARTRUSE', 'LETTUCE', 'GRASS', 'MINT', 'EMERALD', 'OLIVE'] + (pride_colours * 2))
                 elif cat.pelt.colour in ["ROSE", "GINGER", "SUNSET", "RUFOUS", "FIRE", "BRICK", "SCARLET", "APRICOT", 
-                                            "GARFIELD", "APPLE"]:
-                    cat.tortiecolour = choice(['GREY', 'MARENGO', 'BATTLESHIP', 'CADET', 'BLUEGREY', 'STEEL', 'SLATE'])
-                elif cat.pelt.colour in ["RED", "CRIMSON", "BURNT", "CARMINE", "COSMOS", "ROSEWOOD", "BLOOD"]:                   
-                    cat.tortiecolour = choice(['SOOT', 'DARKGREY', 'ANCHOR', 'CHARCOAL', 'COAL', 'BLACK'])
+                                    "GARFIELD", "APPLE", "AMYTHYST", "DARKSALMON", "MAGENTA", "HEATHER", "ORCHID", 
+                                    "PURPLE"]:
+                    cat.tortiecolour = choice(['GREY', 'MARENGO', 'BATTLESHIP', 'CADET', 'BLUEGREY', 'STEEL', 'SLATE',
+                                    'SAPPHIRE', 'OCEAN', 'DENIUM', 'TEAL', 'COBALT', 'DARKOLIVE', 'GREEN', 'SPINNACH', 
+                                    'SEAWEED', 'SACRAMENTO'] + (pride_colours * 2))
+                elif cat.pelt.colour in ["RED", "CRIMSON", "BURNT", "CARMINE", "COSMOS", "ROSEWOOD", "BLOOD", "RASIN",
+                                    "STRAKIT",  "WINE", "GENDER", "REDNEG"]:                   
+                    cat.tortiecolour = choice(['SOOT', 'DARKGREY', 'ANCHOR', 'CHARCOAL', 'COAL', 'BLACK', 'DUSKBOW', 
+                                    'SONIC', 'JEANS', 'NAVY', 'FOREST', 'JADE', 'XANADU', 'DEEPFOREST'] + (pride_colours * 2))
 
-                elif cat.pelt.colour in [ "BEIGE", "MEERKAT", "KHAKI"]:
-                    cat.tortiecolour = choice(['PALECREAM', 'CREAM', 'SAND', 'WOOD', 'WHITE', 'SILVER', 'BRONZE', 'GREY'])
-                elif cat.pelt.colour in ["CAPPUCCINO", "ECRU", "ASHBROWN", "DUSTBROWN", "SANDALWOOD", "PINECONE", 
-                                            "WRENGE", "BROWN", "MINK", "CHESTNUT", "TAN"]:
+                elif cat.pelt.colour in ["BEIGE", "MEERKAT", "KHAKI", "IVORY", "BANNANA", "FARROW", "HAY"]:
+                    cat.tortiecolour = choice(['PALECREAM', 'CREAM', 'SAND', 'WOOD', 'PETAL', 'PANTONE', 'SALMON', 
+                                    'THISTLE', 'MEW', 'WHITE', 'SILVER', 'BRONZE', 'GREY', 'PALEBOW', 
+                                    'TURQUOISE', 'TIFFANY', 'SHINYMEW', 'SKY', 'POWDERBLUE', 'LIME', 
+                                    'CHARTRUSE', 'LETTUCE', 'GRASS', 'MINT', 'EMERALD', 'OLIVE'] + (pride_colours * 2))
+                elif cat.pelt.colour in ["CAPPUCCINO", "ECRU", "ASHBROWN", "DUSTBROWN", "SANDALWOOD", "PINECONE", "WRENGE", "BROWN", 
+                                    "MINK", "CHESTNUT", "TAN", "FAWN", "HAZELNUT", "LEMON", "LAGUNA", "YELLOW", "CORN",
+                                    "BEE"]:
                     cat.tortiecolour = choice(['ROSE', 'GINGER', 'SUNSET', 'RUFOUS', 'FIRE', 'BRICK', 'SCARLET', 'APRICOT', 
-                                                'GARFIELD', 'APPLE', 'GREY', 'MARENGO', 'BATTLESHIP', 'CADET', 'BLUEGREY', 'STEEL', 'SLATE'])
-                elif cat.pelt.colour in ["DARKBROWN", "BEAVER", "CHOCOLATE", "MOCHA", "COFFEE", "TAUPE", "UMBER"]:
-                    cat.tortiecolour = choice(['RED', 'CRIMSON', 'BURNT', 'CARMINE', 'COSMOS', 'ROSEWOOD', 'BLOOD', 'SOOT', 
-                                                'DARKGREY', 'ANCHOR', 'CHARCOAL', 'COAL', 'BLACK'])
+                                    'GARFIELD', 'APPLE', 'AMYTHYST', 'DARKSALMON', 'MAGENTA', 'HEATHER', 'ORCHID', 
+                                    'PURPLE', 'GREY', 'MARENGO', 'BATTLESHIP', 'CADET', 'BLUEGREY', 'STEEL', 'SLATE',
+                                    'SAPPHIRE', 'OCEAN', 'DENIUM', 'TEAL', 'COBALT', 'DARKOLIVE', 'GREEN', 'SPINNACH', 
+                                    'SEAWEED', 'SACRAMENTO'] + (pride_colours * 2))
+                elif cat.pelt.colour in ["DARKBROWN", "BEAVER", "CHOCOLATE", "MOCHA", "COFFEE", "TAUPE", "UMBER", "ONYX", "GOLD", "HONEY", 
+                                    "PINEAPPLE", "TROMBONE", "MEDALLION", "GRANOLA", "SADDLE", "CEDAR"]:
+                    cat.tortiecolour = choice(['RED', 'CRIMSON', 'BURNT', 'CARMINE', 'COSMOS', 'ROSEWOOD', 'BLOOD', 'RASIN',
+                                    'STRAKIT',  'WINE', 'GENDER', 'REDNEG', 'SOOT', 'DARKGREY', 'ANCHOR', 'CHARCOAL', 
+                                    'COAL', 'BLACK', 'DUSKBOW', 'SONIC', 'JEANS', 'NAVY', 'FOREST', 'JADE', 'XANADU', 
+                                    'DEEPFOREST'] + (pride_colours * 2))
+
+                elif cat.pelt.colour in ["LIME", "CHARTRUSE", "LETTUCE", "GRASS", "MINT", "EMERALD", "OLIVE"]:
+                    cat.pattern = choice (['PALECREAM', 'CREAM', 'SAND', 'WOOD', 'PETAL', 'PANTONE', 'SALMON', 
+                                    'THISTLE', 'MEW', 'WHITE', 'SILVER', 'BRONZE', 'GREY', 'PALEBOW', 
+                                    'TURQUOISE', 'TIFFANY', 'SHINYMEW', 'SKY', 'POWDERBLUE'] + (pride_colours * 2))
+                elif cat.pelt.colour in ["DARKOLIVE", "GREEN", "SPINNACH", "SEAWEED", "SACRAMENTO"]:
+                    cat.pattern = choice (['ROSE', 'GINGER', 'SUNSET', 'RUFOUS', 'FIRE', 'BRICK', 'SCARLET', 'APRICOT', 
+                                    'GARFIELD', 'APPLE', 'AMYTHYST', 'DARKSALMON', 'MAGENTA', 'HEATHER', 'ORCHID', 
+                                    'PURPLE', 'GREY', 'MARENGO', 'BATTLESHIP', 'CADET', 'BLUEGREY', 'STEEL', 'SLATE',
+                                    'SAPPHIRE', 'OCEAN', 'DENIUM', 'TEAL', 'COBALT'] + (pride_colours * 2))
+                elif cat.pelt.colour in ["FOREST", "JADE", "XANADU", "DEEPFOREST"]:
+                    cat.pattern = choice (['RED', 'CRIMSON', 'BURNT', 'CARMINE', 'COSMOS', 'ROSEWOOD', 'BLOOD', 'RASIN',
+                                    'STRAKIT', 'WINE', 'GENDER', 'REDNEG', 'SOOT', 'DARKGREY', 'ANCHOR', 'CHARCOAL', 
+                                    'COAL', 'BLACK', 'DUSKBOW', 'SONIC', 'JEANS', 'NAVY'] + (pride_colours * 2))  
+
+
         else:
-            cat.tortiecolour = "APRICOT"
+            cat.tortiecolour = choice(pride_colours)
     else:
         cat.tortiebase = None
         cat.tortiepattern = None

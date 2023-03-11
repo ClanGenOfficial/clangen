@@ -22,7 +22,7 @@ from scripts.cat.pelts import (
     plant_accessories,
     wild_accessories,
     collars,
-    )
+    wing_sprites,)
 from scripts.game_structure.game_essentials import game, screen_x, screen_y
 
 
@@ -756,26 +756,49 @@ def update_sprite(cat):
                                                     str(cat.age_sprites[cat.age])], (0, 0), special_flags=blendmode)
 
         #Draw Dead Lineart
-        if cat.df:
-            if cat.age == 'elder' or (cat.pelt.length == 'long' and cat.age not in ['kitten', 'adolescent']):
-                new_sprite.blit(
-                    sprites.sprites['lineartdf' +
-                                    str(cat.age_sprites[cat.age] + 9)],
-                    (0, 0))
-            else:
-                new_sprite.blit(
-                    sprites.sprites['lineartdf' +
-                                    str(cat.age_sprites[cat.age])], (0, 0))
-        elif cat.dead:
-            if cat.age == 'elder' or (cat.pelt.length == 'long' and cat.age not in ['kitten', 'adolescent']):
-                new_sprite.blit(
-                    sprites.sprites['lineartdead' +
-                                    str(cat.age_sprites[cat.age] + 9)],
-                    (0, 0))
-            else:
-                new_sprite.blit(
-                    sprites.sprites['lineartdead' +
-                                    str(cat.age_sprites[cat.age])], (0, 0))        
+        if cat.skin in wing_sprites:
+            if cat.df:
+                if cat.age == 'elder' or (cat.pelt.length == 'long' and cat.age not in ['kitten', 'adolescent']):
+                    new_sprite.blit(
+                        sprites.sprites['w_lineartdf' +
+                                        str(cat.age_sprites[cat.age] + 9)],
+                        (0, 0))
+                else:
+                    new_sprite.blit(
+                        sprites.sprites['w_lineartdf' +
+                                        str(cat.age_sprites[cat.age])], (0, 0))
+            elif cat.dead:
+                if cat.age == 'elder' or (cat.pelt.length == 'long' and cat.age not in ['kitten', 'adolescent']):
+                    new_sprite.blit(
+                        sprites.sprites['w_lineartdead' +
+                                        str(cat.age_sprites[cat.age] + 9)],
+                        (0, 0))
+                else:
+                    new_sprite.blit(
+                        sprites.sprites['w_lineartdead' +
+                                        str(cat.age_sprites[cat.age])], (0, 0))        
+
+        else:
+            if cat.df:
+                if cat.age == 'elder' or (cat.pelt.length == 'long' and cat.age not in ['kitten', 'adolescent']):
+                    new_sprite.blit(
+                        sprites.sprites['lineartdf' +
+                                        str(cat.age_sprites[cat.age] + 9)],
+                        (0, 0))
+                else:
+                    new_sprite.blit(
+                        sprites.sprites['lineartdf' +
+                                        str(cat.age_sprites[cat.age])], (0, 0))
+            elif cat.dead:
+                if cat.age == 'elder' or (cat.pelt.length == 'long' and cat.age not in ['kitten', 'adolescent']):
+                    new_sprite.blit(
+                        sprites.sprites['lineartdead' +
+                                        str(cat.age_sprites[cat.age] + 9)],
+                        (0, 0))
+                else:
+                    new_sprite.blit(
+                        sprites.sprites['lineartdead' +
+                                        str(cat.age_sprites[cat.age])], (0, 0))        
 
         # Apply fading fog
         if cat.opacity <= 97 and not cat.prevent_fading and game.settings["fading"]:
