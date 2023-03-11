@@ -1,12 +1,12 @@
 import itertools
 import random
 from random import choice, randint
-
+import os
 try:
     import ujson
 except ImportError:
     import json as ujson
-import random
+from copy import deepcopy
 
 from scripts.game_structure.game_essentials import game
 from scripts.events_module.condition_events import Condition_Events
@@ -273,9 +273,3 @@ class Relation_Events():
     def clear_trigger_dict(self):
         """Cleans the trigger dictionary, this function should be called every new moon."""
         self.cats_triggered_events = {}
-
-# ---------------------------------------------------------------------------- #
-#                                LOAD RESOURCES                                #
-# ---------------------------------------------------------------------------- #
-
-resource_directory = "resources/dicts/relationship_events/"

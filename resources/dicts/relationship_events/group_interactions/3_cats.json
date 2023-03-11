@@ -1,1 +1,76 @@
-[]
+[
+	{
+		"id": "sample_id",
+		"biome": [
+			"Any"
+		],
+		"season": [
+			"Any"
+		],
+		"intensity": "medium",
+		"cat_amount": "3",
+		"interactions": [
+			"m_c does some interactions with r_c1 and r_c2."
+		],
+		"injuries": {
+			"m_c": [
+				"claw-wound"
+			]
+		},
+		"status_constraint": {
+			"m_c": [
+				"warrior",
+				"deputy",
+				"leader"
+			],
+			"r_c1": [
+				"warrior",
+				"deputy",
+				"leader"
+			],
+			"r_c2": [
+				"warrior",
+				"deputy",
+				"leader"
+			]
+		},
+		"trait_constraint": {
+			"r_c2": [
+				"clam"
+			]
+		},
+		"skill_constraint": {
+			"m_c": [
+				"good hunter"
+			]
+		},
+		"relationship_constraint": {
+			"m_c_to_r_c1": [
+				"platonic_40"
+			]
+		},
+		"reaction": {
+			"m_c_to_r_c1": {
+				"romantic": "increase",
+				"platonic": "neutral",
+				"dislike": "decrease",
+				"admiration": "neutral",
+				"comfortable": "increase",
+				"jealousy": "neutral",
+				"trust": "increase"
+			},
+			"r_c1_to_m_c": {
+				"romantic": "increase",
+				"dislike": "decrease",
+				"comfortable": "increase",
+				"trust": "increase"
+			},
+			"r_c1_to_r_c2": {
+				"romantic": "increase",
+				"dislike": "decrease",
+				"comfortable": "increase",
+				"trust": "increase"
+			}
+		}
+	}
+]
