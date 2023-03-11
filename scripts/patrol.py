@@ -894,18 +894,7 @@ class Patrol():
         tags = self.patrol_event.tags
 
         # setting the defaults
-        new_name = False
-        loner = False
-        kittypet = False
-        kit = False
-        litter = False
-        if "other_clan" in tags:
-            other_clan = self.other_clan
-        else:
-            other_clan = None
-        status = None
-        age = None
-        kit_age = 0
+        new_name = choice([True, False])
         kit_backstory = None
         if "new_cat_tom" in tags:
             gender = 'male'
@@ -913,15 +902,44 @@ class Patrol():
             gender = 'female'
         else:
             gender = None
+        kit = False
+        litter = False
+        status = None
+        age = None
+        kit_age = 0
         thought = 'Is looking around the camp with wonder'
         alive = True
         outside = False
+
+        # figure out what type of cat they are and set default backstories - this can be overwritten if need be
+        loner = False
+        kittypet = False
+        if "other_clan" in tags:
+            other_clan = self.other_clan
+        else:
+            other_clan = None
+
+        cat_type = choice(['kittypet', 'loner', 'other_clan'])
+        if cat_type == 'kittypet':
+            kittypet = True
+        elif cat_type == 'loner':
+            loner = True
+        elif cat_type == 'other_clan':
+            other_clan = self.other_clan
+        if "kittypet" in self.patrol_event.patrol_id or kittypet:  # new kittypet
+            backstory = ['kittypet1', 'kittypet2', 'kittypet3', 'refugee3', 'tragedy_survivor3']
+        elif loner:  # new loner
+            backstory = ['loner1', 'loner2', 'rogue1', 'rogue2', 'refugee2', 'tragedy_survivor4',
+                         'refugee4', 'tragedy_survivor2']
+        else:  # new other_clan cat
+            backstory = ['ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
+                         'tragedy_survivor']
 
         # ensuring the patrol should give a new cat
         if "new_cat" not in tags:
             return
 
-        # single abandoned kitten
+        # single abandoned kitten - since it's only one cat, it's treated differently from the litters
         if "new_cat_kit" in tags:  # new kit
             kittypet = choice([True, False])
             new_name = True
@@ -930,18 +948,7 @@ class Patrol():
 
         # new cat
         elif "new_cat_adult" in tags:
-            if "kittypet" in self.patrol_event.patrol_id:  # new kittypet
-                new_name = choice([True, False])
-                kittypet = True
-                backstory = ['kittypet1', 'kittypet2', 'kittypet3', 'refugee3', 'tragedy_survivor3']
-
-            else:  # new loner
-                loner = True
-                new_name = choice([True, False])
-                backstory = ['loner1', 'loner2', 'rogue1', 'rogue2',
-                             'ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
-                             'tragedy_survivor', 'refugee2', 'tragedy_survivor4',
-                             'refugee4', 'tragedy_survivor2']
+            status = 'warrior'
 
             if litter_choice:  # have them come with a litter
                 litter = True
@@ -961,21 +968,9 @@ class Patrol():
 
         # living queen with kits
         elif "new_cat_queen" in tags:
-            kittypet = choice([True, False])
             new_name = choice([True, False])
             status = 'warrior'
             thought = "Feels relieved that they've found a safe place to stay"
-
-            if "kittypet" in self.patrol_event.patrol_id or kittypet:  # kittypet
-                backstory = ['kittypet1', 'kittypet2', 'kittypet3',
-                             'refugee3', 'tragedy_survivor3']
-
-            else:  # loner
-                backstory = ['loner1', 'loner2', 'rogue1', 'rogue2',
-                             'ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
-                             'tragedy_survivor', 'refugee2', 'tragedy_survivor4',
-                             'refugee4', 'tragedy_survivor2']
-                loner = True
 
             if "new_cat_kits" in tags:  # if they come with kits
                 litter = True
@@ -988,21 +983,11 @@ class Patrol():
 
         # dead queen with kits
         elif "new_cat_kits" in tags:
-            kittypet = choice([True, False])
             status = 'warrior'
             outside = True
             alive = False
             thought = "Is glad that their kits are safe"
 
-            if "kittypet" in self.patrol_event.patrol_id or kittypet:  # kittypet
-                backstory = ['kittypet1', 'kittypet2', 'kittypet3',
-                             'refugee3', 'tragedy_survivor3']
-
-            else:  # loner
-                backstory = ['loner1', 'loner2', 'rogue1', 'rogue2', 'ostracized_warrior', 'disgraced',
-                             'retired_leader', 'refugee', 'tragedy_survivor', 'refugee2', 'tragedy_survivor4',
-                             'refugee4', 'tragedy_survivor2']
-                loner = True
             if "new_cat_newborn" in tags:  # generate with newborns
                 kit_backstory = ['orphaned', 'orphaned2']
                 kit_age = 0
@@ -1014,55 +999,13 @@ class Patrol():
 
         # new apprentice
         elif "new_cat_apprentice" in tags:
-            new_name = choice([True, False])
             status = 'apprentice'
-            kittypet = choice([True, False])
-
-            if "kittypet" in self.patrol_event.patrol_id or kittypet:  # new kittypet
-                backstory = ['kittypet1', 'kittypet2', 'kittypet3', 'refugee3', 'tragedy_survivor3']
-
-            else:  # new loner
-                backstory = ['loner1', 'loner2', 'rogue1', 'rogue2', 'refugee',
-                             'tragedy_survivor', 'refugee2', 'tragedy_survivor4',
-                             'refugee4', 'tragedy_survivor2']
-                loner = True
 
         # new elder
         elif "new_cat_elder" in tags:
-            new_name = choice([True, False])
-            kittypet = choice([True, False])
             status = 'elder'
 
-            if "kittypet" in self.patrol_event.patrol_id or kittypet:  # new kittypet
-                backstory = ['kittypet1', 'kittypet2']
-
-            else:  # new loner
-                loner = True
-                backstory = ['loner1', 'loner2', 'rogue1', 'rogue2',
-                             'ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
-                             'tragedy_survivor']
-
-        # completely random cat
-        else:
-            cat_type = choice(['kittypet', 'loner', 'other_clan'])
-            if cat_type == 'kittypet':
-                kittypet = True
-            elif cat_type == 'loner':
-                loner = True
-            elif cat_type == 'other_clan':
-                other_clan = self.other_clan
-            new_name = choice([True, False])
-            if "kittypet" in self.patrol_event.patrol_id or kittypet:  # new kittypet
-                backstory = ['kittypet1', 'kittypet2', 'kittypet3', 'refugee3', 'tragedy_survivor3']
-            elif loner:  # new loner
-                backstory = ['loner1', 'loner2', 'rogue1', 'rogue2',
-                             'ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
-                             'tragedy_survivor', 'refugee2', 'tragedy_survivor4',
-                             'refugee4', 'tragedy_survivor2']
-            else:  # new other_clan cat
-                backstory = ['ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
-                             'tragedy_survivor']
-
+        # if none of these tags are present, then a completely random cat is made
 
         # we create a single cat
         created_cats = create_new_cat(Cat,
