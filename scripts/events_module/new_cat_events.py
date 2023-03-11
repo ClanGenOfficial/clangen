@@ -113,6 +113,8 @@ class NewCatEvents:
             involved_cats.append(new_cat.ID)
             if "adoption" in new_cat_event.tags:
                 new_cat.parent1 = cat.ID
+                if cat.mate:
+                    new_cat.parent2 = cat.mate
                 print('parent is', new_cat.parent1, cat.ID)
 
             if "m_c" in new_cat_event.tags:

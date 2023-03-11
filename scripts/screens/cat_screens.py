@@ -10,7 +10,7 @@ try:
 except ImportError:
     import json as ujson
 
-from scripts.utility import update_sprite, event_text_adjust, scale
+from scripts.utility import update_sprite, event_text_adjust, scale, ACC_DISPLAY
 
 from .base_screens import Screens, cat_profiles
 
@@ -800,9 +800,10 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # ACCESSORY
-        output += 'accessory: ' + str(accessory_display_name(the_cat))
-        # NEWLINE ----------
-        output += "\n"
+        if the_cat.accessory:
+            output += 'accessory: ' + str(ACC_DISPLAY[the_cat.accessory]["default"])
+            # NEWLINE ----------
+            output += "\n"
 
         # PARENTS
         if the_cat.parent1 is None and the_cat.parent2 is None:

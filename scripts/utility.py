@@ -10,8 +10,6 @@ TODO: Docs
 
 from random import choice, choices, randint, random
 import pygame
-
-from scripts.cat.appearance_utility import plural_acc_names
 from scripts.cat.names import names
 
 try:
@@ -628,9 +626,9 @@ def event_text_adjust(Cat,
         adjust_text = adjust_text.replace("n_c_pre", str(new_cat.name.prefix))
         adjust_text = adjust_text.replace("n_c", str(new_cat.name))
     if "acc_plural" in adjust_text:
-        adjust_text = adjust_text.replace("acc_plural", str(plural_acc_names(cat.accessory, True, False)))
+        adjust_text = adjust_text.replace("acc_plural", str(ACC_DISPLAY[cat.accessory]["plural"]))
     if "acc_singular" in adjust_text:
-        adjust_text = adjust_text.replace("acc_singular", str(plural_acc_names(cat.accessory, False, True)))
+        adjust_text = adjust_text.replace("acc_singular", str(ACC_DISPLAY[cat.accessory]["singular"]))
 
     if clan is not None:
         _tmp = clan
@@ -1099,3 +1097,7 @@ def get_text_box_theme(themename=""):
 PERMANENT = None
 with open(f"resources/dicts/conditions/permanent_conditions.json", 'r') as read_file:
     PERMANENT = ujson.loads(read_file.read())
+
+ACC_DISPLAY = None
+with open(f"resources/dicts/acc_display.json", 'r') as read_file:
+    ACC_DISPLAY = ujson.loads(read_file.read())
