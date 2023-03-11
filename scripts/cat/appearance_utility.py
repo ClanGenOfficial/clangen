@@ -715,8 +715,8 @@ def init_pattern(cat):
                     possible_colors.remove(cat.pelt.colour)
                     possible_colors.extend(['STRAKIT', 'GENDER', 'REDNEG'])
                     cat.tortiecolour = choice(possible_colors)
- 
-       else:
+
+        else:
             cat.tortiecolour = choice(pride_colours)
     else:
         cat.tortiebase = None
