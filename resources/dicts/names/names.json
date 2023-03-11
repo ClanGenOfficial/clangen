@@ -18,7 +18,7 @@
     "heart", "heart", "heart", "heart", "heart", "heart", "heart", "heart", "heart", "heart",
     "acorn", "ash", "aster", "back", "bark", "beam", "bee", "belly", "berry", "bite", "bird", "blaze", "blink", "bloom", "bud",
     "blossom", "blotch", "bounce", "bracken", "branch", "breeze", "briar", "bright", "brook", "burr", "burrow", "bush", "call",
-    "catcher", "cloud", "clover", "crawl", "creek", "cry", "dapple", "daisy", "dawn", "drift", "drop", "dusk", "dust", "dew",
+    "catcher", "cloud", "clover", "crawl", "creek", "cry", "current", "dapple", "daisy", "dawn", "drift", "drop", "dusk", "dust", "dew",
     "ear", "ears", "eater", "eye", "eyes", "face", "fall", "fang", "fawn", "feather", "fern", "fin", "fire", "fish", "flake",
     "flame", "flight", "flick", "flood", "flower", "fox", "frost", "gaze", "glint", "goose", "gorse", "grass", "hail", "hare", "hawk", "haze",
     "heather", "hollow", "holly", "howl", "ice", "ivy", "jaw", "jay", "jump", "kite", "lake", "larch","laurel", "leaf", "leap",
@@ -128,7 +128,7 @@
     "Smoke", "Smokey", "Shadow", "Bleak", "Rain", "Storm", "Pebble", "Mist", "Misty", "Warbler", "Wisp", "Gum"
     ],
     "GHOST": [
-    "Black", "Black", "Shade", "Shaded", "Crow", "Raven", "Ebony", "Dark", "Char", "Magpie",
+    "Black", "Black", "Shade", "Shaded", "Crow", "Raven", "Ebony", "Dark", "Char", "Charred", "Magpie",
     "Night", "Shadow", "Scorch", "Midnight", "Bleak", "Storm", "Violet", "Pepper", "Bat", "Fade"
     ],
     "PALEGINGER": [
@@ -166,9 +166,9 @@
     "Owl", "Otter", "Log", "Hickory", "Branch", "Robin", "Bark", "Agate", "Umber", "Chanterelle"
     ],
     "BLACK": [
-    "Black", "Black", "Shade", "Shaded", "Crow", "Raven", "Ebony", "Dark", "Grackle",
-    "Night", "Shadow", "Scorch", "Midnight", "Pepper", "Pitchh", "Bat", "Burnt", "Onyx", "Coal", "Ink", "Inky",
-    "Obsidian", "Char"
+    "Black", "Black", "Shade", "Shaded", "Crow", "Raven", "Ebony", "Dark", "Grackle", 
+    "Night", "Shadow", "Scorch", "Midnight", "Pepper", "Pitch", "Bat", "Burnt", "Coal", "Ink", "Inky"
+    , "Char", "Charred", "Current", "Mulberry"
     ]
   },
 
@@ -237,7 +237,8 @@
     "Leo", "Leon", "Lester", "Levi", "Levon", "Lex", "Libra", "Lil Baby", "Lilac", "Lilith", "Lily", "Linden", "Linguine", "Little Lady", "Little Nicky", "Little One", 
     "Loaf", "Lobster", "Loca", "Loki", "Lola", "Lollipop", "London", "Loona", "Lora", "Lorado", "Louie", "Louis", "Loyalty", "Luchasaurus", "Luci-Purr", "Lucia", 
     "Lucky", "Lucy", "Lugnut", "Luigi", "Lulu", "Lumine", "Luna", "Lupo", "Luz", "Lydia", "Mabel", "Macaroon", "Macavity", "Maddy", 
-    "Madi", "Maggie", "Magic", "Maize", "Majesty", "Makini", "Makwa", "Maleficent", "Malia", "Malik", "Manda", "Mange", "Mango", "Mani", "Marathon", "Marceline",
+    "Madi", "Maggie", "Magic", "Maize", "Majesty", "Makini", "Makwa", "Maleficent", "Malia", "Malik", "Manda", "Mange", "Mango", 
+    "Mangosteen", "Mani", "Marathon", "Marceline",
     "Mare", "Marie", "Mario", "Mariposa", "Marny", "Martini", "Matador", "Matcha", "Maverick", "Max", "May", "Maya", "McChicken", 
     "McFlurry", "Meatloaf", "Meatlug", "Medusa", "Melody", "Melon", "Meow-Meow", "Meowyman", "Mera", "Mercedes", "Mercy", "Merlot", "Merry", "Mew", "Mick", "Midnight Goddess", "Miles", 
     "Milhouse", "Milky Way", "Millie", "Milo", "Milque", "Mimi", "Minette", "Mini", "Minna", "Minnie", "Mint", "Minty", "Miriam", "Miso", "Missile Launcher", "Misty", 
