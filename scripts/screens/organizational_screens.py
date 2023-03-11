@@ -147,7 +147,7 @@ class StartScreen(Screens):
             self.continue_button.disable()
             self.switch_clan_button.disable()
 
-        if True: # if game.switches['error_message']:
+        if game.switches['error_message']:
             error_text = f"There was an error loading the game: {game.switches['error_message']}"
             if game.switches['traceback']:
                 print("Traceback:")
