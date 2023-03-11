@@ -1065,7 +1065,7 @@ class Patrol():
                     new_cat.get_permanent_condition(new_condition)
 
         # we create any needed litters
-        if litter:
+        if litter or litter_choice:
             created_cats.extend(create_new_cat(Cat,
                                                new_name=new_name,
                                                loner=loner,
