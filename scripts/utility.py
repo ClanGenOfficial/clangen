@@ -1,5 +1,14 @@
-from random import choice, choices, randint, random
 
+# pylint: disable=line-too-long
+"""
+
+TODO: Docs
+
+
+""" # pylint: enable=line-too-long
+
+
+from random import choice, choices, randint, random
 import pygame
 
 from scripts.cat.appearance_utility import plural_acc_names
@@ -30,8 +39,11 @@ from scripts.game_structure.game_essentials import game, screen_x, screen_y
 # ---------------------------------------------------------------------------- #
 #                              Counting Cats                                   #
 # ---------------------------------------------------------------------------- #
+
 def get_alive_clan_queens(all_cats):
-    """Returns a list with all cats with the 'status' queen."""
+    """
+    Returns a list with all cats with the 'status' queen.
+    """
     queens = []
     for inter_cat in all_cats.values():
         if inter_cat.dead:
@@ -103,6 +115,9 @@ def get_med_cats(Cat, working=True):
 
 
 def get_living_cat_count(Cat):
+    """
+    TODO: DOCS
+    """
     count = 0
     for the_cat in Cat.all_cats.values():
         if the_cat.dead or the_cat.exiled:
@@ -112,6 +127,9 @@ def get_living_cat_count(Cat):
 
 
 def get_living_clan_cat_count(Cat):
+    """
+    TODO: DOCS
+    """
     count = 0
     for the_cat in Cat.all_cats.values():
         if the_cat.dead or the_cat.exiled or the_cat.outside:
@@ -120,7 +138,7 @@ def get_living_clan_cat_count(Cat):
     return count
 
 
-def get_cats_same_age(cat, range=10):
+def get_cats_same_age(cat, range=10):  # pylint: disable=redefined-builtin
     """Look for all cats in the clan and returns a list of cats, which are in the same age range as the given cat."""
     cats = []
     for inter_cat in cat.all_cats.values():
@@ -257,16 +275,13 @@ def create_new_cat(Cat,
                           status=status,
                           gender=gender,
                           backstory=backstory)
-            print('other clan')
         else:
             # grab starting names and accs for loners/kittypets
             if kittypet:
-                print('kittypet')
                 name = choice(names.names_dict["loner_names"])
                 if choice([1, 2]) == 1:
                     accessory = choice(collars)
             elif loner and choice([1, 2]) == 1:  # try to give name from full loner name list
-                print('loner')
                 name = choice(names.names_dict["loner_names"])
             else:
                 name = choice(
@@ -274,7 +289,6 @@ def create_new_cat(Cat,
 
             # now we make the cats
             if new_name:  # these cats get new names
-                print('new name')
                 if choice([1, 2]) == 1:  # adding suffix to OG name
                     spaces = name.count(" ")
                     if spaces > 0:
@@ -295,7 +309,6 @@ def create_new_cat(Cat,
                                   backstory=backstory)
             # these cats keep their old names
             else:
-                print('old name')
                 new_cat = Cat(moons=age,
                               prefix=name,
                               suffix="",
@@ -535,13 +548,13 @@ def change_relationship_values(cats_to: list,
 
     use the relationship value params to indicate how much the values should change.
     """
-    # this is just for text prints
+    '''# this is just for test prints - DON'T DELETE - you can use this to test if relationships are changing
     changed = False
     if romantic_love == 0 and platonic_like == 0 and dislike == 0 and admiration == 0 and \
             comfortable == 0 and jealousy == 0 and trust == 0:
         changed = False
     else:
-        changed = True
+        changed = True'''
 
     # pick out the correct cats
     for kitty in cats_from:
@@ -571,7 +584,7 @@ def change_relationship_values(cats_to: list,
             rel.jealousy += jealousy
             rel.trust += trust
 
-            # for testing purposes
+            '''# for testing purposes - DON'T DELETE - you can use this to test if relationships are changing
             print(str(kitty.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
                   "Romantic: " + str(romantic_love) +
                   " /Platonic: " + str(platonic_like) +
@@ -579,7 +592,7 @@ def change_relationship_values(cats_to: list,
                   " /Respect: " + str(admiration) +
                   " /Comfort: " + str(comfortable) +
                   " /Jealousy: " + str(jealousy) +
-                  " /Trust: " + str(trust)) if changed else print("No relationship change")
+                  " /Trust: " + str(trust)) if changed else print("No relationship change")'''
 
 
 # ---------------------------------------------------------------------------- #
