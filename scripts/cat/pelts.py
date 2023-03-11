@@ -832,7 +832,7 @@ def describe_color(pelt, tortiecolour, tortiepattern, white_patches, skin):
     elif pelt.name == "Agouti":
         color_name = color_name + ' agouti'
     elif pelt.name == "Backed":
-        color_name = color_name + ', with a dorsal stripe,'
+        color_name = color_name + ' stripe backed'
     elif pelt.name == "Charcoal":
         color_name = color_name + ' charcoal tabby'
     elif pelt.name == "Stain":

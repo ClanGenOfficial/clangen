@@ -34,9 +34,6 @@ from .pelts import (
     yellow_eyes,
     pelt_colours,
     tortiepatterns,
-    skin_sphynx,
-    albino_sprites,
-    melanistic_sprites,
     sphynx,
     cream_colours,
     grey_colours,
@@ -46,8 +43,6 @@ from .pelts import (
     yellow_colours,
     pride_colours,
     skin_categories,
-    wing_sprites,
-    magic_kitty,
     )
 
 from scripts.cat.sprites import Sprites
@@ -550,27 +545,14 @@ def init_sprite(cat):
     cat.reverse = choice([True, False])
     # skin chances
     if cat.parent1 is None:
-        hit = randint(0, 150)
-        if hit == 0 or hit == 1:
-            cat.skin = choice(skin_sphynx)
-            cat.pelt.length = "short"
-        else:
-            hit = randint(0, 200)
-            if hit == 0 or hit == 1 or hit == 2:
-                cat.skin = choice([choice(albino_sprites), choice(magic_kitty)]) 
-            elif hit == 3 or hit == 4:
-                cat.skin = choice(melanistic_sprites)        
-            elif hit == 5:
-                cat.skin = choice(wing_sprites) 
-            else:
-                cat.skin = choice(skin_sprites)   
+        cat.skin = choice(random.choices(skin_categories, weights=(297, 5, 3, 2, 1, 3), k=1) [0])
     elif cat.parent2 is None:
         par1 = cat.all_cats[cat.parent1]
-        cat.skin = choice([par1.skin, choice(random.choices(skin_categories, weights=(191, 3, 3, 2, 1, 3), k=1)[0])])
+        cat.skin = choice([par1.skin, choice(random.choices(skin_categories, weights=(191, 5, 3, 2, 1, 3), k=1)[0])])
     else:
         par1 = cat.all_cats[cat.parent1]
         par2 = cat.all_cats[cat.parent2]
-        cat.skin = choice([par1.skin, par2.skin, choice(random.choices(skin_categories, weights=(187, 4, 4, 3, 2, 4), k=1)[0])]) 
+        cat.skin = choice([par1.skin, par2.skin, choice(random.choices(skin_categories, weights=(187, 6, 4, 3, 2, 4), k=1)[0])]) 
 
     if cat.skin in sphynx:
         cat.pelt.length = 'short'
