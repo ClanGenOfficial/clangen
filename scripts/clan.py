@@ -26,12 +26,6 @@ from scripts.utility import update_sprite, get_current_season
 from scripts.cat.cats import Cat, cat_class
 from scripts.cat.names import names
 from scripts.clan_resources.freshkill import Freshkill_Pile, Nutrition
-# try:
-#    from scripts.world import World, save_map, load_map
-#    map_available = True
-# except:
-#    map_available = False
-map_available = False
 from sys import exit  # pylint: disable=redefined-builtin
 
 

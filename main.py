@@ -121,12 +121,6 @@ if clan_list:
             game.switches[
                 'error_message'] = 'There was an error loading the cats file!'
 
-    # try:
-    #     game.map_info = load_map('saves/' + game.clan.name)
-    # except NameError:
-    #     game.map_info = {}
-    # except:
-    #     game.map_info = load_map("Fallback")
 
 # LOAD settings
 
