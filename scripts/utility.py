@@ -1,3 +1,12 @@
+# pylint: disable=line-too-long
+"""
+
+TODO: Docs
+
+
+""" # pylint: enable=line-too-long
+
+
 from random import choice
 import re
 import pygame
@@ -27,6 +36,9 @@ from scripts.game_structure.game_essentials import game, screen_x, screen_y
 
 
 def scale(rect):
+    """
+    TODO: DOCS
+    """
     rect[0] = round(rect[0] / 1600 * screen_x) if rect[0] > 0 else rect[0]
     rect[1] = round(rect[1] / 1400 * screen_y) if rect[1] > 0 else rect[1]
     rect[2] = round(rect[2] / 1600 * screen_x) if rect[2] > 0 else rect[2]
@@ -36,7 +48,9 @@ def scale(rect):
 
 
 def get_alive_clan_queens(all_cats):
-    """Returns a list with all cats with the 'status' queen."""
+    """
+    Returns a list with all cats with the 'status' queen.
+    """
     queens = []
     for inter_cat in all_cats.values():
         if inter_cat.dead:
@@ -108,6 +122,9 @@ def get_med_cats(Cat, working=True):
 
 
 def get_living_cat_count(Cat):
+    """
+    TODO: DOCS
+    """
     count = 0
     for the_cat in Cat.all_cats.values():
         if the_cat.dead or the_cat.exiled:
@@ -117,6 +134,9 @@ def get_living_cat_count(Cat):
 
 
 def get_living_clan_cat_count(Cat):
+    """
+    TODO: DOCS
+    """
     count = 0
     for the_cat in Cat.all_cats.values():
         if the_cat.dead or the_cat.exiled or the_cat.outside:
@@ -124,7 +144,7 @@ def get_living_clan_cat_count(Cat):
         count += 1
     return count
 
-def get_cats_same_age(cat, range = 10):
+def get_cats_same_age(cat, range = 10): # pylint: disable=redefined-builtin
     """Look for all cats in the clan and returns a list of cats, which are in the same age range as the given cat."""
     cats = []
     for inter_cat in cat.all_cats.values():
@@ -213,10 +233,14 @@ with open(f"{resource_directory}personality_compatibility.json", 'r') as read_fi
     PERSONALITY_COMPATIBILITY = ujson.loads(read_file.read())
 
 
-def get_highest_romantic_relation(relationships):
+def get_highest_romantic_relation(relationships, exclude_mate=False, potential_mate=False):
     """Returns the relationship with the highest romantic value."""
+    # Different filters for different
     romantic_relation = list(
-        filter(lambda rel: rel.romantic_love > 0, relationships))
+        filter(lambda rel: rel.romantic_love > 0 and (exclude_mate and rel.cat_to.ID != rel.cat_to.mate)
+               and (potential_mate and rel.cat_to.is_potential_mate(rel.cat_from, for_love_interest=True)),
+               relationships))
+
     if romantic_relation is None or len(romantic_relation) == 0:
         return None
 
@@ -435,13 +459,14 @@ def event_text_adjust(Cat,
                       other_cat=None,
                       other_clan_name=None,
                       keep_m_c=False,
-                      new_cat=None):
+                      new_cat=None,
+                      clan=None):
     name = str(cat.name)
     other_name = None
-    if other_cat is not None:
+    if other_cat:
         other_name = str(other_cat.name)
     mate = None
-    if cat.mate is not None:
+    if cat.mate:
         mate = Cat.all_cats.get(cat.mate).name
 
     adjust_text = text
@@ -461,7 +486,11 @@ def event_text_adjust(Cat,
     if "acc_singular" in adjust_text:
         adjust_text = adjust_text.replace("acc_singular", str(plural_acc_names(cat.accessory, False, True)))
 
-    adjust_text = adjust_text.replace("c_n", str(game.clan.name) + "Clan")
+    if clan is not None:
+        _tmp = clan
+    else:
+        _tmp = game.clan
+    adjust_text = adjust_text.replace("c_n", str(_tmp.name) + "Clan")
     adjust_text = adjust_text.replace("p_l", name)
 
     return adjust_text

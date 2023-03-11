@@ -544,6 +544,20 @@ class Cat():
             self.grief(body)
 
         return text
+    
+    def exile(self):
+        """This is used to send a cat into exile. This removes the cat's status and gives them a special 'exiled'
+        status."""
+        self.exiled = True
+        self.outside = True
+        self.status = 'exiled'
+        if self.trait == 'vengeful':
+            self.thought = "Swears their revenge for being exiled"
+        else:
+            self.thought = "Is shocked that they have been exiled"
+        for app in self.apprentice:
+            Cat.fetch_cat(app).update_mentor()
+        self.update_mentor()
 
     def grief(self, body: bool):
         """
@@ -592,7 +606,7 @@ class Cat():
                     if cat_to == self:
                         family_relation = self.familial_grief(living_cat=cat)
                         possible_strings.extend(
-                            self.generate_events.get_possible_death_reactions(family_relation, value, cat.trait, body_status))
+                            self.generate_events.possible_death_reactions(family_relation, value, cat.trait, body_status))
 
             if possible_strings:
                 # choose string
@@ -638,7 +652,7 @@ class Cat():
                         if cat_to == self:
                             family_relation = self.familial_grief(living_cat=cat)
                             possible_strings.extend(
-                                self.generate_events.get_possible_death_reactions(family_relation, value, cat.trait, body_status))
+                                self.generate_events.possible_death_reactions(family_relation, value, cat.trait, body_status))
 
                 if possible_strings:
                     # choose string
@@ -1465,7 +1479,7 @@ class Cat():
                 "event_triggered": new_illness.new
             }
 
-    def get_injured(self, name, event_triggered=False, lethal=True):
+    def get_injured(self, name, event_triggered=False, lethal=True, severity='default'):
         if name not in INJURIES:
             if name not in INJURIES:
                 print(f"WARNING: {name} is not in the injuries collection.")
@@ -1489,6 +1503,11 @@ class Cat():
         if duration == 0:
             duration = 1
 
+        if severity == 'default':
+            injury_severity = injury["severity"]
+        else:
+            injury_severity = severity
+
         if mortality != 0:
             if game.clan.game_mode == "cruel season":
                 mortality = int(mortality * 0.5)
@@ -1500,7 +1519,7 @@ class Cat():
 
         new_injury = Injury(
             name=name,
-            severity=injury["severity"],
+            severity=injury_severity,
             duration=injury["duration"],
             medicine_duration=duration,
             mortality=mortality,
@@ -2640,8 +2659,12 @@ class Cat():
             if self._moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1] + 1):
                 updated_age = True
                 self.age = key_age
-        if not updated_age and self.age is not None:
-            self.age = "elder"
+        try:
+            if not updated_age and self.age is not None:
+                self.age = "elder"
+        except AttributeError:
+            print("ERROR: cat has no age attribute! Cat ID: " + self.ID)
+            print("Possibly the disappearing cat bug? Ping luna on the discord if you see this message")
 
 
 # ---------------------------------------------------------------------------- #
@@ -2688,6 +2711,7 @@ with open(f"{resource_directory}injuries.json", 'r') as read_file:
 PERMANENT = None
 with open(f"{resource_directory}permanent_conditions.json", 'r') as read_file:
     PERMANENT = ujson.loads(read_file.read())
+
 
 
 resource_directory = "resources/dicts/events/death/death_reactions/"
