@@ -146,9 +146,9 @@ class Relationship():
 
         interaction_str = interaction_str + effect
         self.log.append(interaction_str)
-        #game.cur_events_list.append(Single_Event(
-        #    interaction_str, ["relation", "interaction"], [self.cat_to.ID, self.cat_from.ID]
-        #))
+        game.cur_events_list.append(Single_Event(
+            interaction_str, ["relation", "interaction"], [self.cat_to.ID, self.cat_from.ID]
+        ))
 
     def get_amount(self, in_de_crease: str, intensity: str) -> int:
         """Calculates the amount of such an interaction.
@@ -366,11 +366,11 @@ class Relationship():
             return filtered
 
         for interact in interactions:
-            in_tags = list(filter(lambda biome: biome in _biome, interact.biome))
+            in_tags = list(filter(lambda biome: biome not in _biome, interact.biome))
             if len(in_tags) > 0:
                 continue
 
-            in_tags = list(filter(lambda season: season in _season, interact.season))
+            in_tags = list(filter(lambda season: season not in _season, interact.season))
             if len(in_tags) > 0:
                 continue
 
@@ -801,8 +801,8 @@ def create_interaction(inter_list) -> list:
     for inter in inter_list:
         created_list.append(Single_Interaction(
             id=inter["id"],
-            biome=inter["biome"] if "biome" in inter else "Any",
-            season=inter["season"] if "season" in inter else "Any",
+            biome=inter["biome"] if "biome" in inter else ["Any"],
+            season=inter["season"] if "season" in inter else ["Any"],
             intensity=inter["intensity"] if "intensity" in inter else "medium",
             interactions=inter["interactions"] if "interactions" in inter else None,
             injuries=inter["injuries"] if "injuries" in inter else None,
@@ -823,8 +823,8 @@ def create_group_interaction(inter_list) -> list:
     for inter in inter_list:
         created_list.append(Group_Interaction(
             id=inter["id"],
-            biome=inter["biome"] if "biome" in inter else "Any",
-            season=inter["season"] if "season" in inter else "Any",
+            biome=inter["biome"] if "biome" in inter else ["Any"],
+            season=inter["season"] if "season" in inter else ["Any"],
             cat_amount=inter["cat_amount"] if "cat_amount" in inter else None,
             intensity=inter["intensity"] if "intensity" in inter else "medium",
             interactions=inter["interactions"] if "interactions" in inter else None,
@@ -833,7 +833,8 @@ def create_group_interaction(inter_list) -> list:
             trait_constraint = inter["trait_constraint"] if "trait_constraint" in inter else None,
             skill_constraint = inter["skill_constraint"] if "skill_constraint" in inter else None,
             relationship_constraint = inter["relationship_constraint"] if "relationship_constraint" in inter else None,
-            specific_reaction= inter["reaction_random_cat"] if "reaction_random_cat" in inter else None
+            specific_reaction= inter["specific_reaction"] if "specific_reaction" in inter else None,
+            general_reaction= inter["general_reaction"] if "general_reaction" in inter else None
         ))
     return created_list
 

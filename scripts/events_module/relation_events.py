@@ -202,6 +202,7 @@ class Relation_Events():
         # TODO: make "group" types
         possible_interaction_cats = list(Cat.all_cats.values())
         random_cat = choice(possible_interaction_cats)
+        possible_interaction_cats.remove(random_cat)
         self.group_events_class.start_interaction(random_cat, possible_interaction_cats)
 
     def family_events(self):

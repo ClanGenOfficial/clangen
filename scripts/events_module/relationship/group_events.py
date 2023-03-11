@@ -40,18 +40,13 @@ class Group_Events():
         cat_amount = choice(list(GROUP_INTERACTION_MASTER_DICT.keys()))
         inter_type = choice(["negative", "positive", "neutral"])
 
-        # for testing purposes TODO: Remove after testing
-        cat_amount = "3"
-        inter_type = "neutral"
-
         # if the chosen amount is bigger than the given interaction cats,
         # there will be no possible solution and it will be returned
         if len(interact_cats) < int(cat_amount):
-            print("RETURN 1")
             return
 
         # setup the abbreviations_cat_id dictionary
-        for integer in range(int(cat_amount)):
+        for integer in range(int(cat_amount)-1):
             new_key = "r_c" + str(integer+1)
             self.abbreviations_cat_id[new_key] = None
 
@@ -69,7 +64,6 @@ class Group_Events():
 
         # if there is no possibility return
         if len(possibilities) < 1:
-            print("RETURN 2")
             return
 
         # choose one interaction and trigger all needed functions to reflect the interaction
@@ -88,8 +82,9 @@ class Group_Events():
         interaction_str = self.prepare_text(interaction_str)
         # TODO: add the interaction to the relationship log?
         interaction_str = interaction_str + f" ({inter_type})"
+        ids = list(self.abbreviations_cat_id.values())
         game.cur_events_list.append(Single_Event(
-            interaction_str, ["relation", "interaction"], self.abbreviations_cat_id.values()
+            interaction_str, ["relation", "interaction"], ids
         ))
 
     # ---------------------------------------------------------------------------- #
@@ -118,24 +113,24 @@ class Group_Events():
         _biome = [biome, "Any", "any"]
         main_cat = Cat.all_cats[self.abbreviations_cat_id["m_c"]]
         for interact in interactions:
-            in_tags = list(filter(lambda biome: biome in _biome, interact.biome))
+            in_tags = list(filter(lambda inter_biome: inter_biome not in _biome, interact.biome))
             if len(in_tags) > 0:
                 continue
 
-            in_tags = list(filter(lambda season: season in _season, interact.season))
+            in_tags = list(filter(lambda inter_season: inter_season not in _season, interact.season))
             if len(in_tags) > 0:
                 continue
 
             if len(interact.status_constraint) >= 1 and "m_c" in interact.status_constraint:
-                if main_cat.status not in interact.status_constraint:
+                if main_cat.status not in interact.status_constraint["m_c"]:
                     continue
 
             if len(interact.trait_constraint) >= 1 and "m_c" in interact.trait_constraint:
-                if main_cat.trait not in interact.trait_constraint:
+                if main_cat.trait not in interact.trait_constraint["m_c"]:
                     continue
 
             if len(interact.skill_constraint) >= 1 and "m_c" in interact.skill_constraint:
-                if main_cat.skill not in interact.skill_constraint:
+                if main_cat.skill not in interact.skill_constraint["m_c"]:
                     continue
 
             filtered_interactions.append(interact)
@@ -143,7 +138,6 @@ class Group_Events():
 
     def get_filtered_interactions(self, interactions: list, amount: int, interact_cats: list):
         """Handles the whole filtered interaction list based on all other constraints."""
-        print("LIST BEFORE FILTERING", len(interactions))
         # first get all abbreviations possibilities for the cats
         abbr_per_interaction = self.get_abbreviations_possibilities(interactions, int(amount), interact_cats)
 
@@ -155,7 +149,6 @@ class Group_Events():
         # check if any abbreviations_cat_ids is None, if so return, because the interaction should not continue
         not_none = [abbr != None for abbr in self.abbreviations_cat_id.values()]
         if not all(not_none):
-            print("RETURN 1.2")
             return []
 
         # last filter based on relationships between the cats
@@ -210,7 +203,6 @@ class Group_Events():
 
             filtered_interactions.append(interact)
 
-        print("LIST BEFORE FILTERING", len(filtered_interactions))
         return filtered_interactions
 
     def get_abbreviations_possibilities(self, interactions: list, amount: int, interact_cats: list):
@@ -247,19 +239,19 @@ class Group_Events():
                 # if the abbreviation has a status constraint, check in details
                 if abbreviation in interact.status_constraint:
                     # if the cat status is in the status constraint, add the id to the list
-                    status_ids = [cat.ID for cat in interact_cats if cat.status in interact.status_constraint]
-                # if there is no constraint, add all ids to the list 
+                    status_ids = [cat.ID for cat in interact_cats if cat.status in interact.status_constraint[abbreviation]]
                 else:
+                    # if there is no constraint, add all ids to the list 
                     status_ids = [cat.ID for cat in interact_cats]
 
                 # same as status
                 if abbreviation in interact.skill_constraint:
-                    skill_ids = [cat.ID for cat in interact_cats if cat.skill in interact.skill_constraint]
+                    skill_ids = [cat.ID for cat in interact_cats if cat.skill in interact.skill_constraint[abbreviation]]
                 else:
                     skill_ids = [cat.ID for cat in interact_cats]
 
                 if abbreviation in interact.trait_constraint:
-                    trait_ids = [cat.ID for cat in interact_cats if cat.trait in interact.trait_constraint]
+                    trait_ids = [cat.ID for cat in interact_cats if cat.trait in interact.trait_constraint[abbreviation]]
                 else:
                     trait_ids = [cat.ID for cat in interact_cats]
 
@@ -331,7 +323,7 @@ class Group_Events():
         """Check if the interaction is allowed with the current chosen cats."""
         fulfilled_list = []
 
-        for name, dictionary in interaction.specific_reaction.items():
+        for name, dictionary in interaction.relationship_constraint.items():
             abbre_from = name.split('_to_')[0]
             abbre_to = name.split('_to_')[1]
 
@@ -429,7 +421,7 @@ class Group_Events():
         """
         Influence the relationship between all cats with the same amount, defined by the chosen group relationship.
         """
-        dictionary = self.chosen_interaction.general_interaction
+        dictionary = self.chosen_interaction.general_reaction
 
         # set the amount
         romantic = 0
@@ -456,9 +448,10 @@ class Group_Events():
 
 
         for inter_cat_id in self.abbreviations_cat_id.values():
+            inter_cat = Cat.all_cats[inter_cat_id]
             change_relationship_values(
-                cats_from=inter_cat_id,
-                cats_to=self.abbreviations_cat_id.values(),
+                cats_from=[inter_cat],
+                cats_to=list(self.abbreviations_cat_id.values()),
                 romantic_love=romantic,
                 platonic_like=platonic,
                 dislike=dislike,
@@ -481,6 +474,7 @@ class Group_Events():
 
             cat_from_id = self.abbreviations_cat_id[abbre_from]
             cat_to_id = self.abbreviations_cat_id[abbre_to]
+            cat_from = Cat.all_cats[cat_from_id]
 
             # set all values to influence the relationship
             romantic = 0
@@ -495,18 +489,18 @@ class Group_Events():
             if "platonic" in dictionary and dictionary["platonic"] != "neutral":
                 platonic = amount if dictionary["platonic"] == "increase" else amount *-1
             if "dislike" in dictionary and dictionary["dislike"] != "neutral":
-                platonic = amount if dictionary["dislike"] == "increase" else amount *-1
+                dislike = amount if dictionary["dislike"] == "increase" else amount *-1
             if "admiration" in dictionary and dictionary["admiration"] != "neutral":
-                platonic = amount if dictionary["admiration"] == "increase" else amount *-1
+                admiration = amount if dictionary["admiration"] == "increase" else amount *-1
             if "comfortable" in dictionary and dictionary["comfortable"] != "neutral":
-                platonic = amount if dictionary["comfortable"] == "increase" else amount *-1
+                comfortable = amount if dictionary["comfortable"] == "increase" else amount *-1
             if "jealousy" in dictionary and dictionary["jealousy"] != "neutral":
-                platonic = amount if dictionary["jealousy"] == "increase" else amount *-1
+                jealousy = amount if dictionary["jealousy"] == "increase" else amount *-1
             if "trust" in dictionary and dictionary["trust"] != "neutral":
-                platonic = amount if dictionary["trust"] == "increase" else amount *-1
+                trust = amount if dictionary["trust"] == "increase" else amount *-1
 
             change_relationship_values(
-                cats_from=cat_from_id,
+                cats_from=[cat_from],
                 cats_to=[cat_to_id],
                 romantic_love=romantic,
                 platonic_like=platonic,
@@ -533,7 +527,7 @@ class Group_Events():
     def prepare_text(self, text: str) -> str:
         """Prep the text based of the amount of cats and the assigned abbreviations."""
         for abbr, cat_id in self.abbreviations_cat_id.items():
-            current_cat_name = Cat.all_cats[cat_id]
+            current_cat_name = Cat.all_cats[cat_id].name
             text = text.replace(abbr, str(current_cat_name))
         return text
 

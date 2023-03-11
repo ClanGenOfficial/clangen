@@ -9,6 +9,58 @@
 		}
 	},
 	{
+		"id": "lovers_tests",
+		"cat_amount": 3,
+		"interactions": [
+			"m_c is fighting with r_c1 over r_c2 and got hurt."
+		],
+		"injuries": {
+			"m_c": [
+				"bruises"
+			]
+		},
+		"status_constraint": {
+			"m_c": [
+				"warrior",
+				"deputy",
+				"leader",
+				"medicine cat",
+				"mediator",
+				"elder"
+			],
+			"r_c1": [
+				"warrior",
+				"deputy",
+				"leader",
+				"medicine cat",
+				"mediator",
+				"elder"
+			],
+			"r_c2": [
+				"warrior",
+				"deputy",
+				"leader",
+				"medicine cat",
+				"mediator",
+				"elder"
+			]
+		},
+		"relationship_constraint": {
+			"m_c_to_r_c2": [
+				"mate"
+			]
+		},
+		"specific_reaction": {
+			"m_c_to_r_c1": {
+				"platonic": "decrease",
+				"dislike": "increase",
+				"comfortable": "decrease",
+				"trust": "decrease",
+				"jealousy": "increase"
+			}
+		}
+	},
+	{
 		"id": "sample_id",
 		"biome": [
 			"Any"
