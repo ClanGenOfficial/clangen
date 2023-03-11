@@ -29,9 +29,8 @@ from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
 class Events():
     all_events = {}
     game.switches['timeskip'] = False
-    #This is so we call the static function needed to clear the events dict.
+    # This is so we call the static function needed to clear the events dict.
     generate_events = GenerateEvents()
-
 
     def __init__(self, e_type=None, **cats):
         self.e_type = e_type
@@ -171,7 +170,7 @@ class Events():
         # age up the clan, set current season
         game.clan.age += 1
         get_current_season()
-        #print(game.clan.current_season)
+        # print(game.clan.current_season)
 
         self.herb_destruction()
         self.herb_gather()
@@ -860,7 +859,7 @@ class Events():
             # graduate
             if cat.status in ["apprentice", "mediator apprentice", "medicine cat apprentice"]:
                 if (cat.experience_level not in ["untrained", "trainee"] and
-                        cat.moons >= game.config["graduation"]["min_graduating_age"]) \
+                    cat.moons >= game.config["graduation"]["min_graduating_age"]) \
                         or cat.moons >= game.config["graduation"]["max_apprentice_age"][cat.status]:
 
                     if cat.moons == game.config["graduation"]["min_graduating_age"]:
@@ -1148,7 +1147,7 @@ class Events():
         if chance <= 0:
             chance = 1
         if not int(random.random() * chance):
-            #print('ACC')
+            # print('ACC')
             self.misc_events.handle_misc_events(cat, other_cat, self.at_war, self.enemy_clan,
                                                 alive_kits=get_alive_kits(Cat), accessory=True,
                                                 ceremony=self.ceremony_accessory)
@@ -1232,7 +1231,7 @@ class Events():
                 queen = random.choice(names.names_dict["normal_prefixes"]) + \
                         random.choice(names.names_dict["normal_suffixes"])
             if not warrior:
-                warrior = random.choice(names.names_dict["normal_prefixes"]) +\
+                warrior = random.choice(names.names_dict["normal_prefixes"]) + \
                           random.choice(names.names_dict["normal_suffixes"])
             if not kit:
                 kit = random.choice(names.names_dict["normal_prefixes"]) + "kit"
@@ -1242,14 +1241,14 @@ class Events():
             if not app:
                 app = random.choice(names.names_dict["normal_prefixes"]) + "paw"
             if not elder:
-                elder = random.choice(names.names_dict["normal_prefixes"]) +\
-                          random.choice(names.names_dict["normal_suffixes"])
+                elder = random.choice(names.names_dict["normal_prefixes"]) + \
+                        random.choice(names.names_dict["normal_suffixes"])
             if not warrior3:
                 warrior3 = random.choice(names.names_dict["normal_prefixes"]) + \
                            random.choice(names.names_dict["normal_suffixes"])
             if not med_cat:
                 med_cat = random.choice(names.names_dict["normal_prefixes"]) + \
-                           random.choice(names.names_dict["normal_suffixes"])
+                          random.choice(names.names_dict["normal_suffixes"])
             if not prev_lead:
                 prev_lead = str(names.names_dict["normal_prefixes"]) + "star"
             cat.life_givers.extend([queen, warrior, kit, warrior2, app, elder, warrior3, med_cat, prev_lead])
@@ -1270,7 +1269,7 @@ class Events():
         if cat.status in ["apprentice", "medicine cat apprentice", "mediator apprentice"]:
 
             if cat.not_working():
-                #print(f"{cat.name} not working, no EX gain")
+                # print(f"{cat.name} not working, no EX gain")
                 return
 
             if cat.experience > cat.experience_levels_range["trainee"][0]:
@@ -1278,10 +1277,10 @@ class Events():
 
             if cat.status == "medicine cat apprentice":
                 base_ex = random.choices(game.config["graduation"]["base_med_app_timeskip_ex"][0],
-                                          weights=game.config["graduation"]["base_med_app_timeskip_ex"][1], k=1)[0]
+                                         weights=game.config["graduation"]["base_med_app_timeskip_ex"][1], k=1)[0]
             else:
                 base_ex = random.choices(game.config["graduation"]["base_app_timeskip_ex"][0],
-                                          weights=game.config["graduation"]["base_app_timeskip_ex"][1], k=1)[0]
+                                         weights=game.config["graduation"]["base_app_timeskip_ex"][1], k=1)[0]
 
             if not cat.mentor or Cat.fetch_cat(cat.mentor).not_working():
                 # Sick mentor debuff
@@ -1355,11 +1354,9 @@ class Events():
                 random.random() * chance) and cat.age != 'kitten' and cat.age != 'adolescent' and not self.new_cat_invited:
             self.new_cat_invited = True
 
-
             new_cats = self.new_cat_events.handle_new_cats(cat=cat, other_cat=other_cat, war=self.at_war,
-                                                enemy_clan=self.enemy_clan, alive_kits=get_alive_kits(Cat))
+                                                           enemy_clan=self.enemy_clan, alive_kits=get_alive_kits(Cat))
             self.relation_events.welcome_new_cats(new_cats)
-            
 
     def other_interactions(self, cat):
 
@@ -1431,7 +1428,6 @@ class Events():
             triggered_death = self.condition_events.handle_injuries(cat, other_cat, alive_kits, self.at_war,
                                                                     self.enemy_clan, game.clan.current_season)
             return triggered_death
-
 
     def handle_mass_extinctions(self, cat):
         """Affects random cats in the clan, no cat needs to be passed to this function."""
