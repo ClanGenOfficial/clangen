@@ -438,7 +438,7 @@
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat", "reputation", "scar", "CATBITE", "battle_injury", "new_cat_adult"],
-    "intro_text": "As the patrol is checking the border lines, they hear the unmistakable sound of a cat traipsing through Clan territory.",
+    "intro_text": "As the patrol is checking the border lines, they hear the traispe of pawsteps through the territory.",
     "decline_text": "They decide to leave it alone. It's probably just another Clanmate out in the territory.",
     "chance_of_success": 50,
     "exp": 10,
