@@ -146,9 +146,9 @@ class Relationship():
 
         interaction_str = interaction_str + effect
         self.log.append(interaction_str)
-        game.cur_events_list.append(Single_Event(
-            interaction_str, ["relation", "interaction"], [self.cat_to.ID, self.cat_from.ID]
-        ))
+        #game.cur_events_list.append(Single_Event(
+        #    interaction_str, ["relation", "interaction"], [self.cat_to.ID, self.cat_from.ID]
+        #))
 
     def get_amount(self, in_de_crease: str, intensity: str) -> int:
         """Calculates the amount of such an interaction.

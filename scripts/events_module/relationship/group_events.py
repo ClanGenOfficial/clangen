@@ -35,17 +35,22 @@ class Group_Events():
             -------
         """
         self.abbreviations_cat_id = {}
-        self.abbreviations_cat_id["m_c"] = cat.id
-        cat_amount = choice(GROUP_INTERACTION_MASTER_DICT.keys())
+        self.abbreviations_cat_id["m_c"] = cat.ID
+        cat_amount = choice(list(GROUP_INTERACTION_MASTER_DICT.keys()))
         inter_type = choice(["negative", "positive", "neutral"])
+
+        # for testing purposes TODO: Remove after testing
+        cat_amount = "3"
+        inter_type = "neutral"
 
         # if the chosen amount is bigger than the given interaction cats,
         # there will be no possible solution and it will be returned
         if len(interact_cats) < int(cat_amount):
+            print("RETURN 1")
             return
 
         # setup the abbreviations_cat_id dictionary
-        for integer in range(cat_amount):
+        for integer in range(int(cat_amount)):
             new_key = "r_c" + str(integer+1)
             self.abbreviations_cat_id[new_key] = None
 
@@ -63,6 +68,7 @@ class Group_Events():
 
         # if there is no possibility return
         if len(possibilities) < 1:
+            print("RETURN 2")
             return
 
         # choose one interaction and trigger all needed functions to reflect the interaction
@@ -136,6 +142,7 @@ class Group_Events():
 
     def get_filtered_interactions(self, interactions: list, amount: int, interact_cats: list):
         """Handles the whole filtered interaction list based on all other constraints."""
+        print("LIST BEFORE FILTERING", len(interactions))
         # first get all abbreviations possibilities for the cats
         abbr_per_interaction = self.get_abbreviations_possibilities(interactions, int(amount), interact_cats)
 
@@ -147,6 +154,9 @@ class Group_Events():
         # check if any abbreviations_cat_ids is None, if so return, because the interaction should not continue
         not_none = [abbr != None for abbr in self.abbreviations_cat_id.values()]
         if not all(not_none):
+            print(not_none)
+            print(self.abbreviations_cat_id)
+            print("RETURN 1.2")
             return []
 
         # last filter based on relationships between the cats
@@ -201,6 +211,7 @@ class Group_Events():
 
             filtered_interactions.append(interact)
 
+        print("LIST BEFORE FILTERING", len(filtered_interactions))
         return filtered_interactions
 
     def get_abbreviations_possibilities(self, interactions: list, amount: int, interact_cats: list):
@@ -264,9 +275,11 @@ class Group_Events():
                             abbreviation in self.cat_abbreviations_counter[cat_id]:
                             self.cat_abbreviations_counter[cat_id][abbreviation] +=1
                         else:
+                            self.cat_abbreviations_counter[cat_id] = {}
                             self.cat_abbreviations_counter[cat_id][abbreviation] = 1
 
             possibilities[interact.id] = dictionary
+        return possibilities
 
     def remove_impossible_abbreviations_combinations(self, abbreviations_per_interaction: dict):
         """
@@ -286,20 +299,29 @@ class Group_Events():
 
     def set_abbreviations_cats(self, interact_cats: list):
         """Choose which cat is which abbreviations."""
-        free_to_choose = [cat.id for cat in interact_cats]
+        free_to_choose = [cat.ID for cat in interact_cats]
 
-        for abbr_key in self.abbreviations_cat_ids.keys():
+        for abbr_key in list(self.abbreviations_cat_id.keys()):
+            if abbr_key == "m_c":
+                continue
             highest_value = 0
             highest_id = None
 
             # gets the cat id which fits the abbreviations most of the time
             for cat_id in free_to_choose:
+                # first set some values if there are none
+                if cat_id not in self.cat_abbreviations_counter:
+                    self.cat_abbreviations_counter[cat_id] = {}
+                if abbr_key not in self.cat_abbreviations_counter[cat_id]:
+                    self.cat_abbreviations_counter[cat_id][abbr_key] = 0
+
+                # find the highest value
                 curr_value = self.cat_abbreviations_counter[cat_id][abbr_key]
                 if highest_value < curr_value:
                     highest_value = curr_value
                     highest_id = cat_id
             
-            self.abbreviations_cat_ids[abbr_key] = highest_id
+            self.abbreviations_cat_id[abbr_key] = highest_id
             if highest_id in free_to_choose:
                 free_to_choose.remove(highest_id)
 

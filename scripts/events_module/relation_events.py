@@ -199,8 +199,10 @@ class Relation_Events():
 
     def group_events(self):
         """Description will follow."""
-        #possible_interaction_cats = Cat.all_cats.values()
-        print("TODO")
+        # TODO: make "group" types
+        possible_interaction_cats = list(Cat.all_cats.values())
+        random_cat = choice(possible_interaction_cats)
+        self.group_events_class.start_interaction(random_cat, possible_interaction_cats)
 
     def family_events(self):
         """Description will follow."""
