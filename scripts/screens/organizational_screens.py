@@ -16,6 +16,7 @@ import subprocess
 import pygame
 import os
 import traceback
+from html import escape
 
 from .base_screens import Screens
 
@@ -49,6 +50,13 @@ class StartScreen(Screens):
     def handle_event(self, event):
         """This is where events that occur on this page are handled.
         For the pygame_gui rewrite, button presses are also handled here. """
+        if event.type == pygame_gui.UI_TEXT_BOX_LINK_CLICKED:
+            if platform.system() == 'Darwin':
+                subprocess.Popen(["open", "-u", event.link_target])
+            elif platform.system() == 'Windows':
+                os.system(f"start \"\" {event.link_target}")
+            elif platform.system() == 'Linux':
+                subprocess.Popen(['xdg-open', event.link_target])
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             screens = {
                 self.continue_button: 'clan screen',
@@ -143,16 +151,14 @@ class StartScreen(Screens):
 
         self.error_gethelp = pygame_gui.elements.UITextBox(
             "Please join the Discord server and ask for technical support. " \
-            "We\'ll be happy to help! Please include the error message and the traceback below (if available). ", # \ # pylint: disable=line-too-long
-            # TODO: find why link wont work
-            # "<br><a href=https://discord.com/invite/clangen/>https://discord.com/invite/clangen/</a>", # pylint: disable=line-too-long
+            "We\'ll be happy to help! Please include the error message and the traceback below (if available). " \
+            '<br><a href="https://discord.gg/clangen">Discord</a> a', # pylint: disable=line-too-long
             scale(pygame.Rect((1055, 430), (350, 600))),
             object_id="#gethelp_text_box",
             layer_starting_height=3,
             manager=MANAGER
         )
 
-        self.error_gethelp.disable()
 
         self.open_data_directory_button = UIImageButton(
             scale(pygame.Rect((300, 1025), (330, 60))),
@@ -193,14 +199,12 @@ class StartScreen(Screens):
             if game.switches['traceback']:
                 print("Traceback:")
                 print(game.switches['traceback'])
-                error_text += "<br><br>" + "".join(traceback.format_exception(game.switches['traceback']))  # pylint: disable=line-too-long
+                error_text += "<br><br>" + escape("".join(traceback.format_exception(game.switches['traceback'])))  # pylint: disable=line-too-long
             self.error_label.set_text(error_text)
             self.error_box.show()
             self.error_label.show()
             self.error_gethelp.show()
             self.open_data_directory_button.show()
-            for i in range(10):
-                print("https://discord.com/invite/clangen/")
 
         if game.clan is not None:
             key_copy = tuple(Cat.all_cats.keys())
@@ -447,7 +451,12 @@ class SettingsScreen(Screens):
         TODO: DOCS
         """
         if event.type == pygame_gui.UI_TEXT_BOX_LINK_CLICKED:
-            os.system(f"start \"\" {event.link_target}")
+            if platform.system() == 'Darwin':
+                subprocess.Popen(["open", "-u", event.link_target])
+            elif platform.system() == 'Windows':
+                os.system(f"start \"\" {event.link_target}")
+            elif platform.system() == 'Linux':
+                subprocess.Popen(['xdg-open', event.link_target])
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.main_menu_button:
                 self.change_screen('start screen')
@@ -497,18 +506,16 @@ class SettingsScreen(Screens):
                     self.settings_changed = True
                     self.update_save_button()
                     self.refresh_checkboxes()
-                    print(event.ui_element)
-                    print(self.checkboxes['discord'])
-                    print(event.ui_element is self.checkboxes['discord'])
-                    if event.ui_element is self.checkboxes[
-                            'discord'] and game.settings['discord']:
-                        print("Starting Discord RPC")
-                        game.rpc = _DiscordRPC("1076277970060185701",
-                                               daemon=True)
-                        game.rpc.start()
-                        game.rpc.start_rpc.set()
-                    else:
-                        game.rpc.close()
+                    if self.sub_menu == 'general' and event.ui_element is self.checkboxes['discord']:
+                        if game.settings['discord']:
+                            print("Starting Discord RPC")
+                            game.rpc = _DiscordRPC("1076277970060185701",
+                                                   daemon=True)
+                            game.rpc.start()
+                            game.rpc.start_rpc.set()
+                        else:
+                            print("Stopping Discord RPC")
+                            game.rpc.close()
                     break
 
     def screen_switches(self):

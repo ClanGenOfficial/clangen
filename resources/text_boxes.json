@@ -115,8 +115,8 @@
             "dark_bg": "#FFFF0000",
             "normal_text": "#000000",
             "link_text": "#0000FF",
-            "link_hover": "#0000FF",
-            "link_selected": "#0000FF"
+            "link_hover": "#000000",
+            "link_selected": "#00FF00"
         },
         "font": {
             "name": "notosans",
