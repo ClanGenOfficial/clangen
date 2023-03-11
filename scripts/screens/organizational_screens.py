@@ -31,6 +31,9 @@ except ImportError:
     import json as ujson
 
 class StartScreen(Screens):
+    """
+    TODO: DOCS
+    """
 
     def __init__(self, name=None):
         super().__init__(name)
@@ -54,10 +57,16 @@ class StartScreen(Screens):
                 quit(savesettings=False, clearevents=False)
 
     def on_use(self):
+        """
+        TODO: DOCS
+        """
         # have to blit this manually or else hover input doesn't get read properly
         screen.blit(self.bg, (0, 0))
 
     def exit_screen(self):
+        """
+        TODO: DOCS
+        """
         # Button murder time.
         self.continue_button.kill()
         self.switch_clan_button.kill()
@@ -68,6 +77,9 @@ class StartScreen(Screens):
         self.quit.kill()
 
     def screen_switches(self):
+        """
+        TODO: DOCS
+        """
         # Make those unslightly menu button hide away
         self.hide_menu_buttons()
         # Create buttons
@@ -123,8 +135,14 @@ class StartScreen(Screens):
 
 
 class SwitchClanScreen(Screens):
+    """
+    TODO: DOCS
+    """
 
     def handle_event(self, event):
+        """
+        TODO: DOCS
+        """
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.main_menu:
                 self.change_screen('start screen')
@@ -147,6 +165,9 @@ class SwitchClanScreen(Screens):
                 
 
     def exit_screen(self):
+        """
+        TODO: DOCS
+        """
         self.main_menu.kill()
         del self.main_menu
         self.info.kill()
@@ -178,6 +199,9 @@ class SwitchClanScreen(Screens):
         self.clan_name = [[]]
 
     def screen_switches(self):
+        """
+        TODO: DOCS
+        """
         self.screen = pygame.transform.scale(pygame.image.load("resources/images/clan_saves_frame.png").convert_alpha(),
                                              (440 / 1600 * screen_x, 750 / 1400 * screen_y))
         self.main_menu = UIImageButton(scale(pygame.Rect((50, 50), (306, 60))), "",
@@ -234,6 +258,9 @@ class SwitchClanScreen(Screens):
         return super().screen_switches()
 
     def update_page(self):
+        """
+        TODO: DOCS
+        """
 
         if self.page == 0:
             self.previous_page_button.disable()
@@ -261,11 +288,17 @@ class SwitchClanScreen(Screens):
             button.show()
 
     def on_use(self):
+        """
+        TODO: DOCS
+        """
         screen.blit(self.screen, (580 / 1600 * screen_x, 300 / 1400 * screen_y))
         pass
 
 
 class SettingsScreen(Screens):
+    """
+    TODO: DOCS
+    """
     text_size = {
         '0': 'small',
         '1': 'medium',
@@ -365,6 +398,9 @@ class SettingsScreen(Screens):
 
 
     def screen_switches(self):
+        """
+        TODO: DOCS
+        """
         self.settings_changed = False
 
         self.general_settings_button = UIImageButton(scale(pygame.Rect((200, 200), (300, 60))),
@@ -397,6 +433,9 @@ class SettingsScreen(Screens):
         self.refresh_checkboxes()
 
     def update_save_button(self):
+        """
+        TODO: DOCS
+        """
         """Updates the disabled state the save button"""
         if not self.settings_changed:
             self.save_settings_button.disable()
@@ -404,6 +443,9 @@ class SettingsScreen(Screens):
             self.save_settings_button.enable()
 
     def exit_screen(self):
+        """
+        TODO: DOCS
+        """
         self.clear_sub_settings_buttons_and_text()
         self.general_settings_button.kill()
         del self.general_settings_button
@@ -628,7 +670,9 @@ class SettingsScreen(Screens):
         self.refresh_checkboxes()
 
     def refresh_checkboxes(self):
-
+        """
+        TODO: DOCS
+        """
         # Kill the checkboxes. No mercy here.
         for checkbox in self.checkboxes:
             self.checkboxes[checkbox].kill()
@@ -904,6 +948,9 @@ class SettingsScreen(Screens):
                 self.checkboxes['german'].disable()
 
     def clear_sub_settings_buttons_and_text(self):
+        """
+        TODO: DOCS
+        """
         for checkbox in self.checkboxes:
             self.checkboxes[checkbox].kill()
         self.checkboxes = {}
@@ -912,18 +959,30 @@ class SettingsScreen(Screens):
         self.checkboxes_text = {}
 
     def enable_all_menu_buttons(self):
+        """
+        TODO: DOCS
+        """
         self.general_settings_button.enable()
         self.relation_settings_button.enable()
         self.info_button.enable()
         self.language_button.enable()
 
     def on_use(self):
+        """
+        TODO: DOCS
+        """
         pass
 
 
 class StatsScreen(Screens):
+    """
+    TODO: DOCS
+    """
 
     def screen_switches(self):
+        """
+        TODO: DOCS
+        """
         self.set_disabled_menu_buttons(["stats"])
         self.show_menu_buttons()
         self.update_heading_text(f'{game.clan.name}Clan')
@@ -955,26 +1014,36 @@ class StatsScreen(Screens):
             else:
                 starclan_num += 1
 
-        stats_text = "Number of Living Cats: " + str(living_num) + "\n\n" + \
-                     "Number of Med. Cats: " + str(medcat_num) + "\n\n" + \
-                     "Number of Warriors: " + str(warriors_num) + "\n\n" + \
-                     "Number of Apprentices: " + str(app_num) + "\n\n" + \
-                     "Number of Kits: " + str(kit_num) + "\n\n" + \
-                     "Number of Elders: " + str(elder_num) + "\n\n" + \
-                     "Number of Cats Outside the Clans: " + str(other_num) + "\n\n" + \
-                     "Number of Dead Cats: " + str(starclan_num)
+        stats_text = f"Number of Living Cats: {living_num}\n\n" + \
+                     f"Number of Med. Cats: {medcat_num}\n\n" + \
+                     f"Number of Warriors: {warriors_num}\n\n" + \
+                     f"Number of Apprentices: {app_num}\n\n" + \
+                     f"Number of Kits: {kit_num}\n\n" + \
+                     f"Number of Elders: {elder_num}\n\n" + \
+                     f"Number of Cats Outside the Clans: {other_num}\n\n" + \
+                     f"Number of Dead Cats: {starclan_num}"
 
-        self.stats_box = pygame_gui.elements.UITextBox(stats_text, scale(pygame.Rect((200, 300), (1200, 1000))),
-                                                       manager=MANAGER,
-                                                       object_id=get_text_box_theme())
+        self.stats_box = pygame_gui.elements.UITextBox(
+            stats_text, scale(pygame.Rect((200, 300), (1200, 1000))),
+            manager=MANAGER,
+            object_id=get_text_box_theme())
 
     def exit_screen(self):
+        """
+        TODO: DOCS
+        """
         self.stats_box.kill()
         del self.stats_box
 
     def handle_event(self, event):
+        """
+        TODO: DOCS
+        """
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             self.menu_button_pressed(event)
 
     def on_use(self):
+        """
+        TODO: DOCS
+        """
         pass
