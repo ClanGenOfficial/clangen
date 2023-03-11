@@ -4,8 +4,7 @@
 TODO: Docs
 
 
-""" # pylint: enable=line-too-long
-
+"""  # pylint: enable=line-too-long
 
 from random import choice
 import re
@@ -144,7 +143,8 @@ def get_living_clan_cat_count(Cat):
         count += 1
     return count
 
-def get_cats_same_age(cat, range = 10): # pylint: disable=redefined-builtin
+
+def get_cats_same_age(cat, range=10):  # pylint: disable=redefined-builtin
     """Look for all cats in the clan and returns a list of cats, which are in the same age range as the given cat."""
     cats = []
     for inter_cat in cat.all_cats.values():
@@ -155,11 +155,12 @@ def get_cats_same_age(cat, range = 10): # pylint: disable=redefined-builtin
 
     return cats
 
+
 def pronoun_repl(m, cat_pronouns_dict):
     """ Helper function for add_pronouns """
     inner_details = m.group(1).split("/")
     try:
-        d = cat_pronouns_dict[inner_details[1]]
+        d = cat_pronouns_dict[inner_details[1]][1]
         if inner_details[0] == "PRONOUN":
             pro = d[inner_details[2]]
             if inner_details[-1] == "CAP":
@@ -167,14 +168,23 @@ def pronoun_repl(m, cat_pronouns_dict):
             return pro
         elif inner_details[0] == "VERB":
             return inner_details[d["conju"] + 1]
-        return "error"
+        return "error1"
     except:
-        return "error"
+        return "error2"
 
 
-def add_pronouns(text, cat_pronouns_dict):
-    """ Add the correct pronouns into a string. """
-    return re.sub(r"\{(.*?)}", lambda x: pronoun_repl(x, cat_pronouns_dict), text)
+def name_repl(m, cat_dict):
+    return cat_dict[m.group(0)][0]
+
+
+def process_text(text, cat_dict):
+    """ Add the correct name and pronouns into a string. """
+    adjust_text = re.sub(r"\{(.*?)}", lambda x: pronoun_repl(x, cat_dict), text)
+
+    name_patterns = [re.escape(l) for l in cat_dict]
+
+    adjust_text = re.sub("|".join(name_patterns), lambda x: name_repl(x, cat_dict), adjust_text)
+    return adjust_text
 
 
 def change_clan_reputation(difference=0):
@@ -205,7 +215,7 @@ def change_clan_relations(other_clan, difference=0):
 
 
 def get_current_season():
-    #print(game.clan.current_season)
+    # print(game.clan.current_season)
     modifiers = {
         "Newleaf": 0,
         "Greenleaf": 3,
@@ -213,12 +223,12 @@ def get_current_season():
         "Leaf-bare": 9
     }
     index = game.clan.age % 12 + modifiers[game.clan.starting_season]
-    #print(index)
+    # print(index)
     if index > 11:
         index = index - 12
-    #print(index)
+    # print(index)
     game.clan.current_season = game.clan.seasons[index]
-    #print(game.clan.current_season)
+    # print(game.clan.current_season)
 
     return game.clan.current_season
 
@@ -238,7 +248,7 @@ def get_highest_romantic_relation(relationships, exclude_mate=False, potential_m
     # Different filters for different
     romantic_relation = list(
         filter(lambda rel: rel.romantic_love > 0 and (exclude_mate and rel.cat_to.ID != rel.cat_to.mate)
-               and (potential_mate and rel.cat_to.is_potential_mate(rel.cat_from, for_love_interest=True)),
+                           and (potential_mate and rel.cat_to.is_potential_mate(rel.cat_from, for_love_interest=True)),
                relationships))
 
     if romantic_relation is None or len(romantic_relation) == 0:
@@ -498,7 +508,6 @@ def event_text_adjust(Cat,
 
 def ceremony_text_adjust(Cat, text, cat, dead_mentor=None, mentor=None, previous_alive_mentor=None, random_honor=None,
                          living_parents=(), dead_parents=()):
-    name = str(cat.name)
     prefix = str(cat.name.prefix)
     clanname = str(game.clan.name + "Clan")
 
@@ -517,77 +526,39 @@ def ceremony_text_adjust(Cat, text, cat, dead_mentor=None, mentor=None, previous
     else:
         previous_alive_mentor_name = "previous_mentor_name"
 
-    if game.clan.leader:
-        leader_name = str(game.clan.leader.name)
-    else:
-        leader_name = "leader_placeholder"
-
-    if living_parents:
-        random_living_parent = choice(living_parents)
-    else:
-        random_living_parent = None
-
-    if dead_parents:
-        random_dead_parent = choice(dead_parents)
-    else:
-        random_dead_parent = None
-
     random_honor = random_honor
+
+    random_living_parent = None
+    random_dead_parent = None
 
     adjust_text = text
 
-    pronouns_dict = {
-        "m_c": cat.pronouns if cat else {},
-        "(mentor)": mentor.pronouns if mentor else {},
-        "(deadmentor)": dead_mentor.pronouns if dead_mentor else {},
-        "l_n": game.clan.leader.pronouns if game.clan.leader else {},
+    cat_dict = {
+        "m_c": (str(cat.name), choice(cat.pronouns)) if cat else ("cat_placeholder", None),
+        "(mentor)": (str(mentor.name), choice(mentor.pronouns)) if mentor else ("mentor_placeholder", None),
+        "(deadmentor)": (str(dead_mentor.name), choice(dead_mentor.pronouns)) if dead_mentor else ("dead_mentor_placeholder", None),
+        "(previous_mentor)": (str(previous_alive_mentor.name), choice(previous_alive_mentor.pronouns)) if previous_alive_mentor else ("previous_mentor_placeholder", None),
+        "l_n": (str(game.clan.leader.name), choice(game.clan.leader.pronouns)) if game.clan.leader else ("leader_placeholder", None),
+        "c_n": (clanname, None),
+        "prefix": (prefix, None)
     }
     if "p1" in adjust_text and "p2" in adjust_text and len(living_parents) >= 2:
-        pronouns_dict["p1"] = living_parents[0].pronouns
-        pronouns_dict["p2"] = living_parents[1].pronouns
-    elif random_living_parent:
-        pronouns_dict["p1"] = random_living_parent.pronouns
-        pronouns_dict["p2"] = random_living_parent.pronouns
+        cat_dict["p1"] = (str(living_parents[0].name), choice(living_parents[0].pronouns))
+        cat_dict["p2"] = (str(living_parents[1].name), choice(living_parents[1].pronouns))
+    elif living_parents:
+        random_living_parent = choice(living_parents)
+        cat_dict["p1"] = (str(random_living_parent.name), choice(random_living_parent.pronouns))
+        cat_dict["p2"] = (str(random_living_parent.name), choice(random_living_parent.pronouns))
 
     if "dead_par1" in adjust_text and "dead_par2" in adjust_text and len(dead_parents) >= 2:
-        pronouns_dict["dead_par1"] = dead_parents[0].pronouns
-        pronouns_dict["dead_par2"] = dead_parents[1].pronouns
-    elif random_dead_parent:
-        pronouns_dict["dead_par1"] = random_dead_parent.pronouns
-        pronouns_dict["dead_par2"] = random_dead_parent.pronouns
+        cat_dict["dead_par1"] = (str(dead_parents[0].name), choice(dead_parents[0].pronouns))
+        cat_dict["dead_par2"] = (str(dead_parents[1].name), choice(dead_parents[1].pronouns))
+    elif dead_parents:
+        random_dead_parent = choice(dead_parents)
+        cat_dict["dead_par1"] = (str(random_dead_parent.name), choice(random_dead_parent.pronouns))
+        cat_dict["dead_par2"] = (str(random_dead_parent.name), choice(random_dead_parent.pronouns))
 
-    #Pronouns
-    adjust_text = add_pronouns(adjust_text, pronouns_dict)
-
-    adjust_text = adjust_text.replace("(prefix)", prefix)
-    adjust_text = adjust_text.replace("m_c", name)
-    adjust_text = adjust_text.replace("c_n", clanname)
-    if mentor_name:
-        adjust_text = adjust_text.replace("(mentor)", mentor_name)
-    adjust_text = adjust_text.replace("l_n", leader_name)
-    adjust_text = adjust_text.replace("(deadmentor)", dead_mentor_name)
-    adjust_text = adjust_text.replace("(previous_mentor)", previous_alive_mentor_name)
-
-    # Living Parents
-    if "p1" in adjust_text and "p2" in adjust_text and len(living_parents) >= 2:
-        adjust_text = adjust_text.replace("p1", str(living_parents[0].name))
-        adjust_text = adjust_text.replace("p2", str(living_parents[1].name))
-    elif "p1" in adjust_text and random_living_parent:
-        adjust_text = adjust_text.replace("p1", str(random_living_parent.name))
-    elif "p2" in adjust_text and random_living_parent:
-        adjust_text = adjust_text.replace("p2", str(random_living_parent.name))
-
-    # Dead Parents
-    if "dead_par1" in adjust_text and "dead_par2" in adjust_text and len(dead_parents) >= 2:
-        adjust_text = adjust_text.replace("dead_par1", str(dead_parents[0].name))
-        adjust_text = adjust_text.replace("dead_par2", str(dead_parents[1].name))
-    elif "dead_par1" in adjust_text and random_dead_parent:
-        adjust_text = adjust_text.replace("dead_par1", str(random_dead_parent.name))
-    elif "dead_par2" in adjust_text and random_living_parent:
-        adjust_text = adjust_text.replace("dead_par2", str(random_dead_parent.name))
-
-    if random_honor:
-        adjust_text = adjust_text.replace("r_h", random_honor)
+    adjust_text = process_text(adjust_text, cat_dict)
 
     return adjust_text, random_living_parent, random_dead_parent
 

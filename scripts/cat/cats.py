@@ -150,6 +150,33 @@ class Cat():
         "master": (321, 321)
     }
 
+    default_pronouns = [
+        {
+            "subject": "they",
+            "object": "them",
+            "poss": "their",
+            "inposs": "theirs",
+            "self": "themself",
+            "conju": 1
+        },
+        {
+            "subject": "she",
+            "object": "her",
+            "poss": "her",
+            "inposs": "hers",
+            "self": "herself",
+            "conju": 2
+        },
+        {
+            "subject": "he",
+            "object": "him",
+            "poss": "his",
+            "inposs": "his",
+            "self": "himself",
+            "conju": 2
+        }
+    ]
+
     all_cats: Dict[str, Cat] = {}  # ID: object
     outside_cats: Dict[str, Cat] = {}  # cats outside the clan
     id_iter = itertools.count()
@@ -256,7 +283,7 @@ class Cat():
         self.scar_event = []
         self.death_event = []
         self.df = False
-        self.pronouns = {}
+        self.pronouns = [self.default_pronouns[0].copy()]
         self.experience_level = None
         self.corruption = 0
         self.life_givers = []
@@ -384,32 +411,9 @@ class Cat():
                 self.genderalign = self.gender
 
             if self.genderalign in ["female", "trans female"]:
-                self.pronouns = {
-                    "subject": "she",
-                    "object": "her",
-                    "poss": "her",
-                    "inposs": "hers",
-                    "self": "herself",
-                    "conju": 2
-                }
+                self.pronouns = [self.default_pronouns[1].copy()]
             elif self.genderalign in ["male", "trans male"]:
-                self.pronouns = {
-                    "subject": "him",
-                    "object": "him",
-                    "poss": "his",
-                    "inposs": "his",
-                    "self": "himself",
-                    "conju": 2
-                }
-            else:
-                self.pronouns = {
-                    "subject": "they",
-                    "object": "them",
-                    "poss": "their",
-                    "inposs": "theirs",
-                    "self": "themself",
-                    "conju": 1
-                }
+                self.pronouns = [self.default_pronouns[2].copy()]
 
             # APPEARANCE
             init_pelt(self)
