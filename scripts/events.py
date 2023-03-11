@@ -441,7 +441,7 @@ class Events():
                 game.clan.herbs.pop(bad_herb)
                 insert2 = "all of"
 
-            event = f"As the herb stores are inspected by the {insert}, it's noticed" \
+            event = f"As the herb stores are inspected by the {insert}, it's noticed " \
                     f"that {insert2} the {bad_herb.replace('_', ' ')}" \
                     f" went bad. They'll have to be replaced with new ones. "
             game.herb_events_list.append(event)

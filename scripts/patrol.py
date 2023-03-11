@@ -1078,7 +1078,7 @@ class Patrol():
                                                age=kit_age,
                                                gender=gender,
                                                thought=thought,
-                                               alive=alive,
+                                               alive=True,
                                                outside=outside
                                                ))
             # giving the mother the necessary condition
