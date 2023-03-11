@@ -273,8 +273,15 @@ class Relationship():
                 if the event has a positive or negative impact of the relationship
 
         """
-        # how likely it is to have a positive or negative impact depends on the current values
+        # base for non-existing platonic like / dislike
         list_to_choice = [True, True, False]
+
+        # take personality in count
+        comp = get_personality_compatibility(self.cat_from, self.cat_to)
+        if comp is not None:
+            list_to_choice.append(comp)
+
+        # further influence the partition based on the relationship
         list_to_choice += [True] * int(self.platonic_like/10)
         list_to_choice += [False] * int(self.dislike/10)
 
@@ -729,7 +736,7 @@ class Group_Interaction():
                  biome=None,
                  season=None,
                  intensity="medium",
-				 cat_amount=None,
+                 cat_amount=None,
                  interactions=None,
                  injuries=None,
                  status_constraint=None,
