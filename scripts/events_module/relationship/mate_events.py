@@ -48,7 +48,7 @@ class Mate_Events():
                 self.had_one_event = True
                 cat_from.unset_mate(breakup=True, fight=had_fight)
                 cat_to.unset_mate(breakup=True, fight=had_fight)
-                text = f"{cat_from.name} and {cat_to.name} broke up"
+                text = f"{cat_from.name} and {cat_to.name} broke up."
                 # game.relation_events_list.insert(0, text)
                 game.cur_events_list.append(Single_Event(text, "relation", [cat_from.ID, cat_to.ID]))
 

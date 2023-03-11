@@ -3,14 +3,14 @@
 		"id": "platonic_de_low1",
 		"intensity": "low",
 		"interactions": [
-			"m_c thinks r_c isn't very considerate of others"
+			"m_c thinks r_c isn't very considerate of others."
 		]
 	},
 	{
 		"id": "platonic_de_low2",
 		"intensity": "medium",
 		"interactions": [
-			"m_c and r_c had an argument about who should get a pretty feather, and end up destroying it in their fight.",
+			"m_c and r_c have an argument about who should get a pretty feather, and end up destroying it in their fight.",
 			"m_c has drawn the ire of r_c by deliberately taking the last of their favorite nesting materials for themselves."
 		],
 		"reaction_random_cat": {
@@ -27,7 +27,7 @@
 	{
 		"id": "platonic_de_med2",
 		"interactions": [
-			"m_c is annoyed that they have to pull ticks off r_c today."
+			"m_c is annoyed that they have to pull ticks off of r_c today."
 		],
 		"main_status_constraint": [
 			"apprentice"
@@ -108,7 +108,7 @@
 			"m_c keeps leaving all of the boring apprentice tasks for r_c to do by themself.",
 			"m_c tells r_c's mentor that they've been sneaking out of camp without permission.",
 			"m_c has a disagreement with r_c over who is the better hunter.",
-			"m_c accuses r_c of cheating and there's no way they could win so many practice fights fairly."
+			"m_c accuses r_c of cheating; there's no way they could win so many practice fights fairly."
 		],
 		"main_status_constraint": [
 			"apprentice",

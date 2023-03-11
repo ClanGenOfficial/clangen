@@ -9,6 +9,7 @@
     "loner": "",
     "rogue": ""
     },
+
   "normal_suffixes" : ["fur", "fur", "fur", "fur", "fur", "fur", "fur", "fur", "fur", "fur", "pelt", "pelt", "pelt", "pelt", 
         "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "face", "face", "face", "face", "face", "face", "face",
         "face", "face", "face", "shine", "shine", "shine", "cloud", "cloud", "cloud", "cloud", "cloud", "field", "field", "field", "field", 
@@ -24,8 +25,8 @@
         "root", "root", "root", "root", "dig", "dig", "dig", "dig", "dig", "stream", "stream", "stream", "stream", 
         "stream", "flame", "flame", "flame", "leg", "leg", "leg", "leg", "fang", "fang", "fang", "fang", "eye", 
         "eye", "eye", "eye", "ear", "ear", "ear", "ear", "wing", "wing", "wing", "wing", "tree", "tree", "tree", "tree", "berry", 
-        "berry", "berry", "berry", "fall", "fall", "step", "step", "splash", "splash", "moon", "sun", "earth"
-  ],
+        "berry", "berry", "berry", "fall", "fall", "step", "step", "splash", "splash", "moon", "sun", "earth"],
+
   "tabby_suffixes": ["stripe", "stripe", "stripe", "stripe"],
   "spotted_suffixes": ["spot", "spot", "spot", "spot"],
   "exotic_suffixes": ["stripe", "stripe", "stripe", "stripe", "spot", "spot", "spot", "spot", "patch", "patch", "patch"],
@@ -34,7 +35,6 @@
 		"coat", "coat", "coat", "coat", "coat", "coat", "coat", "coat", "shine", "shine", "shine", "spirit"],
   "magic_suffixes": ["shine", "shine", "shine", "magic", "magic", "magic", "moon", "moon", "sun", "sun", "earth", 
 		"earth", "spirt"],
-
 
   "normal_prefixes": ["Fluff", "Plume", "Down", "Shag", "Mop", "Fuzz", "Fan", "Little", "Small", "Tiny", "Runt", "Big", "Boney",
 			"Spike", "Ribbon", "Cotton", "Clear", "Silk", "Wool", "Bare", "Show", "Sparkle", "Single", "One", "Two", 
@@ -149,7 +149,6 @@
 			"Ivy", "Bramble", "Briar", "Python", "Weed", "Pepper", "Celery", "Mustard", "Lettuce", "Marrow",
 			"Zinnia", "Tanager", "Chameleon", "Parsley", "Macaw", "Caterpillar", "Mamba", "Dahlia", 
 			"Iguana", "Egg", "Koi"], 
-
   
   "albino_prefixes": ["Albino", "Blind", "White", "Nacre", "Plain", "Pink", "Pale", "Snow", "Yellow", "Blue", "Violet",
 			"Ivory", "Bilby", "Rat", "Rabbit", "Hare", "Foam", "Haze", "Hound", "Gleam", "Bright", "Flash", "Blaze", "Spark", 
@@ -218,7 +217,8 @@
     "Leo", "Leon", "Lester", "Levi", "Levon", "Lex", "Libra", "Lil Baby", "Lilac", "Lilith", "Lily", "Linden", "Linguine", "Little Lady", "Little Nicky", "Little One", 
     "Loaf", "Lobster", "Loca", "Loki", "Lola", "Lollipop", "London", "Loona", "Lora", "Lorado", "Louie", "Louis", "Loyalty", "Luchasaurus", "Luci-Purr", "Lucia", 
     "Lucky", "Lucy", "Lugnut", "Luigi", "Lulu", "Lumine", "Luna", "Lupo", "Luz", "Lydia", "Mabel", "Macaroon", "Macavity", "Maddy", 
-    "Madi", "Maggie", "Magic", "Maize", "Majesty", "Makini", "Makwa", "Maleficent", "Malia", "Malik", "Manda", "Mange", "Mango", "Mani", "Marathon", "Marceline",
+    "Madi", "Maggie", "Magic", "Maize", "Majesty", "Makini", "Makwa", "Maleficent", "Malia", "Malik", "Manda", "Mange", "Mango", 
+    "Mangosteen", "Mani", "Marathon", "Marceline",
     "Mare", "Marie", "Mario", "Mariposa", "Marny", "Martini", "Matador", "Matcha", "Maverick", "Max", "May", "Maya", "McChicken", 
     "McFlurry", "Meatloaf", "Meatlug", "Medusa", "Melody", "Melon", "Meow-Meow", "Meowyman", "Mera", "Mercedes", "Mercy", "Merlot", "Merry", "Mew", "Mick", "Midnight Goddess", "Miles", 
     "Milhouse", "Milky Way", "Millie", "Milo", "Milque", "Mimi", "Minette", "Mini", "Minna", "Minnie", "Mint", "Minty", "Miriam", "Miso", "Missile Launcher", "Misty", 
@@ -231,7 +231,7 @@
     "Odetta", "Old Deuteronomy", "Old Man Sam", "Oleander", "Olga", "Oliva", "Oliver", "Ollie", "Omelet", "Omen", "Onion", "Onyx", 
     "Oops", "Oopsy Dazey", "Ophelia", "Orchard", "Oregano", "Oreo", "Orion", "Orzo", "Oscar", "Otto", "Owen", "Pablo", "Paella", 
     "Paimon", "Paloma", "Pancake", "Pancho", "Pangur", "Panini", "Paprika", "Papyrus", "Paquito", "Patience", "Paulina", "Pawmi", "Peach", 
-    "Peanut Wigglebutt", "Peanut", "Pear", "Pearl", "Pecan", "Penny", "Peony", "Pepita", "Pepper", "Pepsi", "Pequeno", "Perry", "Phantom", "Pichi", "Pickles", "Pierre", "Piggy",
+    "Peanut Wigglebutt", "Peanut", "Pear", "Pearl", "Pecan", "Penny", "Peony", "Pepita", "Pepper", "Pepsi", "Pequeno", "Perry", "Petya", "Phantom", "Pichi", "Pickles", "Pierre", "Piggy",
     "Pikachu", "Ping Pong", "Ping", "Pip", "Piper", "Pipkin", "Pipsqueak", "Pisces", "Pixel", "Pina Colada", "Plato", "Pochito", "Pocket", "Poe", "Poki", "Polly",
     "Pong", "Ponyboy", "Poopy", "Porsche", "Potato", "Pouncival", "President", "Prickle", "Princess", "Private Eye", "Pudding", 
     "Pumba", "Pumpernickel", "Pumpkin", "Punk", "Purdy", "Purry", "Pushee", "Puzzle", "Quagmire", "Quake", "Qubo", "Queen", "Queenie", "Queeny", "Querida", 
