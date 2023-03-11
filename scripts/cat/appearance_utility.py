@@ -487,9 +487,7 @@ def randomize_pelt(cat):
     #   PELT COLOUR
     # ------------------------------------------------------------------------------------------------------------#
 
-    chosen_pelt_color = choice(
-        random.choices(colour_categories, weights=(40, 40, 40, 40, 40, 40, 10, 10, 10, 20, 20), k=1)[0]
-    )
+    chosen_pelt_color = choice((pride_colours * 2) + random.choices(colour_categories, k=1)[0])
 
     # ------------------------------------------------------------------------------------------------------------#
     #   PELT LENGTH
