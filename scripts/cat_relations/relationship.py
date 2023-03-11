@@ -828,7 +828,7 @@ def create_group_interaction(inter_list) -> list:
             cat_amount=inter["cat_amount"] if "cat_amount" in inter else None,
             intensity=inter["intensity"] if "intensity" in inter else "medium",
             interactions=inter["interactions"] if "interactions" in inter else None,
-            injuries=inter["injuries"] if "interactions" in inter else None,
+            injuries=inter["injuries"] if "injuries" in inter else None,
             status_constraint = inter["status_constraint"] if "status_constraint" in inter else None,
             trait_constraint = inter["trait_constraint"] if "trait_constraint" in inter else None,
             skill_constraint = inter["skill_constraint"] if "skill_constraint" in inter else None,

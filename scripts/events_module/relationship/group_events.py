@@ -526,10 +526,19 @@ base_path = os.path.join(
 )
 
 GROUP_INTERACTION_MASTER_DICT = {}
-for file in os.listdir(base_path):
-    cat_amount = file.split(".")[0]
-    with open(os.path.join(base_path, file), 'r') as read_file:
+for cat_amount in os.listdir(base_path):
+    file_path = os.path.join(base_path, cat_amount, "neutral.json")
+    GROUP_INTERACTION_MASTER_DICT[cat_amount] = {}
+    with open(file_path, 'r') as read_file:
         welcome_list = ujson.load(read_file)
-        GROUP_INTERACTION_MASTER_DICT[cat_amount]["negative"] = create_group_interaction(welcome_list["negative"])
-        GROUP_INTERACTION_MASTER_DICT[cat_amount]["neutral"] = create_group_interaction(welcome_list["neutral"])
-        GROUP_INTERACTION_MASTER_DICT[cat_amount]["positive"] = create_group_interaction(welcome_list["positive"])
+        GROUP_INTERACTION_MASTER_DICT[cat_amount]["neutral"] = create_group_interaction(welcome_list)
+    
+    file_path = os.path.join(base_path, cat_amount, "positive.json")
+    with open(file_path, 'r') as read_file:
+        welcome_list = ujson.load(read_file)
+        GROUP_INTERACTION_MASTER_DICT[cat_amount]["positive"] = create_group_interaction(welcome_list)
+
+    file_path = os.path.join(base_path, cat_amount, "negative.json")
+    with open(file_path, 'r') as read_file:
+        welcome_list = ujson.load(read_file)
+        GROUP_INTERACTION_MASTER_DICT[cat_amount]["negative"] = create_group_interaction(welcome_list)

@@ -16,6 +16,7 @@ from scripts.event_class import Single_Event
 from scripts.cat_relations.relationship import Relationship
 from scripts.events_module.relationship.mate_events import Mate_Events
 from scripts.events_module.relationship.welcoming_events import Welcoming_Events
+from scripts.events_module.relationship.group_events import Group_Events
 
 
 # if another cat is involved
@@ -34,6 +35,7 @@ class Relation_Events():
         self.condition_events = Condition_Events()
         self.mate_events_class = Mate_Events()
         self.welcome_events_class = Welcoming_Events()
+        self.group_events_class = Group_Events()
         self.cats_triggered_events = {}
         pass
 
@@ -51,6 +53,8 @@ class Relation_Events():
         if not cat.relationships:
             return
         self.had_one_event = False
+        
+        self.group_events()
 
         # 50/50 for an additional event
         if randint(0,1):
@@ -195,10 +199,7 @@ class Relation_Events():
 
     def group_events(self):
         """Description will follow."""
-        """
-        > different outcomes for the cats should be possible
-        > should be possible with different amount of cats (dynamically)
-        """
+        #possible_interaction_cats = Cat.all_cats.values()
         print("TODO")
 
     def family_events(self):
