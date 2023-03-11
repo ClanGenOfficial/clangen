@@ -1,4 +1,5 @@
 import os
+import platform
 
 from platformdirs import *
 
@@ -9,6 +10,14 @@ def setup_data_dir():
     os.makedirs(get_data_dir(), exist_ok=True)
     os.makedirs(get_save_dir(), exist_ok=True)
     os.makedirs(get_log_dir(), exist_ok=True)
+
+    # Windows requires elevated permissions to create symlinks.
+    # The OpenDataDirectory.bat can be used instead as "shortcut".
+    if platform.system() != 'Windows':
+        if os.path.exists('game_data'):
+            os.remove('game_data')
+        if not get_version_info().is_source_build:
+            os.symlink(get_data_dir(), 'game_data', target_is_directory=True)
 
 
 def get_data_dir():
