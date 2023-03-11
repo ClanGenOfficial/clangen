@@ -94,13 +94,19 @@ def json_load():
                         pelt=new_pelt,
                         loading_cat=True)
             new_cat.eye_colour2 = cat["eye_colour2"] if "eye_colour2" in cat else None
+            if cat["eye_colour"] == "BLUEYELLOW":
+                new_cat.eye_colour2 = "YELLOW"
+            elif cat["eye_colour"] == "BLUEGREEN":
+                new_cat.eye_colour2 = "GREEN"
             new_cat.age = cat["age"]
             new_cat.genderalign = cat["gender_align"]
             new_cat.backstory = cat["backstory"] if "backstory" in cat else None
-            new_cat.birth_cooldown = cat[
-                "birth_cooldown"] if "birth_cooldown" in cat else 0
+            new_cat.birth_cooldown = cat["birth_cooldown"] if "birth_cooldown" in cat else 0
             new_cat.moons = cat["moons"]
-            new_cat.trait = cat["trait"]
+            if cat["trait"] in ["clever", "patient", "empathetic", "altruistic"]:
+                new_cat.trait = "compassionate"
+            else:
+                new_cat.trait = cat["trait"]
             new_cat.mentor = cat["mentor"]
             new_cat.former_mentor = cat["former_mentor"] if "former_mentor" in cat else []
             new_cat.patrol_with_mentor = cat["patrol_with_mentor"] if "patrol_with_mentor" in cat else 0
@@ -139,9 +145,10 @@ def json_load():
                         new_cat.cat_sprites['senior'] = 14
             new_cat.eye_colour = cat["eye_colour"]
             new_cat.reverse = cat["reverse"]
-            
+            if cat["white_patches"] == 'POINTMARK':
+                new_cat["white_patches"] = "SEALPOINT"
             if cat["white_patches"] in old_creamy_patches:
-                new_cat.white_patches = old_creamy_patches[cat['white_patches']]
+                new_cat.white_patches = convert["old_creamy_patches"][str(cat['white_patches'])]
                 new_cat.white_patches_tint = "darkcream"
             else:
                 new_cat.white_patches = cat["white_patches"]
@@ -168,8 +175,8 @@ def json_load():
 
             if cat["pattern"] in old_tortie_patches:
                 # Convert old torties
-                new_cat.pattern = old_tortie_patches[cat["pattern"]][1]
-                new_cat.tortiecolour = old_tortie_patches[cat["pattern"]][0]
+                new_cat.pattern = convert["old_tortie_patches"][cat["pattern"]][1]
+                new_cat.tortiecolour = convert["old_tortie_patches"][cat["pattern"]][0]
                 # If the pattern is old, there is also a change the base color is stored in
                 # tortiecolour, and that may be different from the pelt color (main for torties
                 # generated before the "ginger-on-ginger" update. If it was generated after that update,
@@ -178,7 +185,6 @@ def json_load():
             else:
                 new_cat.pattern = cat["pattern"]
                 new_cat.tortiecolour = cat["tortie_color"]
-
             new_cat.skin = cat["skin"]
             new_cat.skill = cat["skill"]
             new_cat.scars = cat["scars"] if "scars" in cat else []
