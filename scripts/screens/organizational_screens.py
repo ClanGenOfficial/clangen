@@ -397,9 +397,9 @@ class SettingsScreen(Screens):
                 quit(savesettings=True, clearevents=False)
             elif event.ui_element == self.open_data_directory_button:
                 if platform.system() == 'Darwin':
-                    subprocess.call(["open", "-R", get_data_dir()])
+                    subprocess.Popen(["open", "-R", get_data_dir()])
                 elif platform.system() == 'Windows':
-                    os.startfile(get_data_dir())  # pylint: disable=E1101
+                    os.startfile(get_data_dir()) # pylint: disable=no-member
                 elif platform.system() == 'Linux':
                     subprocess.Popen(['xdg-open', get_data_dir()])
                 return
