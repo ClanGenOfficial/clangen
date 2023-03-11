@@ -2,7 +2,7 @@
 import sys
 import os
 
-from scripts.datadir import get_log_dir
+from scripts.datadir import get_log_dir, setup_data_dir
 
 directory = os.path.dirname(__file__)
 if directory:
@@ -13,13 +13,20 @@ import subprocess
 import time
 
 # Setup logging
-import logging 
+import logging
+
+
+setup_data_dir()
+
+
 formatter = logging.Formatter("%(name)s - %(levelname)s - %(filename)s / %(funcName)s / %(lineno)d - %(message)s")
 # Logging for file
-file_handler = logging.FileHandler(get_log_dir() + "/clangen.log")
+timestr = time.strftime("%Y%m%d_%H%M%S")
+log_file_name = get_log_dir() + f"/clangen_{timestr}.log"
+file_handler = logging.FileHandler(log_file_name)
 if os.path.exists('clangen_latest.log'):
     os.remove('clangen_latest.log')
-os.symlink(get_log_dir() + '/clangen.log', 'clangen_latest.log')
+os.symlink(log_file_name, 'clangen_latest.log', target_is_directory=True)
 file_handler.setFormatter(formatter)
 # Only log errors to file
 file_handler.setLevel(logging.ERROR)

@@ -1,4 +1,12 @@
+import os
+
 from platformdirs import *
+
+
+def setup_data_dir():
+    os.makedirs(get_data_dir(), exist_ok=True)
+    os.makedirs(get_save_dir(), exist_ok=True)
+    os.makedirs(get_log_dir(), exist_ok=True)
 
 
 def get_data_dir():
