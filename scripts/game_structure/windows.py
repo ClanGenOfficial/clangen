@@ -6,6 +6,7 @@ import pygame
 import pygame_gui
 from sys import exit
 
+from scripts.datadir import get_save_dir
 from scripts.game_structure import image_cache
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
 from scripts.utility import scale, quit
@@ -168,7 +169,7 @@ class DeleteCheck(UIWindow):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.delete_it_button:
                 print("delete")
-                rempath = "saves/" + self.clan_name
+                rempath = get_save_dir() + "/" + self.clan_name
                 shutil.rmtree(rempath)
                 if os.path.exists(rempath + 'clan.json'):
                     os.remove(rempath + "clan.json")
