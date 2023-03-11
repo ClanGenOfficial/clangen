@@ -10,11 +10,11 @@
 		"intensity": "medium",
 		"cat_amount": "3",
 		"interactions": [
-			"m_c does some interactions with r_c1 and r_c2."
+			"m_c is convincing r_c1 that r_c2 isn't so bad once you get to know them."
 		],
 		"injuries": {
 			"m_c": [
-				"claw-wound"
+				"bruises"
 			]
 		},
 		"status_constraint": {
@@ -49,7 +49,7 @@
 				"platonic_40"
 			]
 		},
-		"reaction": {
+		"specific_reaction": {
 			"m_c_to_r_c1": {
 				"romantic": "increase",
 				"platonic": "neutral",

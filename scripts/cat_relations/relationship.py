@@ -736,7 +736,9 @@ class Group_Interaction():
                  trait_constraint=None,
                  skill_constraint=None,
                  relationship_constraint=None,
-                 reaction=None):
+                 specific_reaction=None,
+                 general_reaction=None
+                 ):
         self.id = id
         self.intensity = intensity
         self.biome = biome if biome else ["Any"]
@@ -773,10 +775,15 @@ class Group_Interaction():
         else:
             self.relationship_constraint = {}
 
-        if reaction:
-            self.reaction = reaction
+        if specific_reaction:
+            self.specific_reaction = specific_reaction
         else:
-            self.reaction = {}
+            self.specific_reaction = {}
+
+        if general_reaction:
+            self.general_reaction = general_reaction
+        else:
+            self.general_reaction = {}
 
 # ---------------------------------------------------------------------------- #
 #                   build master dictionary for interactions                   #
@@ -819,7 +826,7 @@ def create_group_interaction(inter_list) -> list:
             trait_constraint = inter["trait_constraint"] if "trait_constraint" in inter else None,
             skill_constraint = inter["skill_constraint"] if "skill_constraint" in inter else None,
             relationship_constraint = inter["relationship_constraint"] if "relationship_constraint" in inter else None,
-            reaction= inter["reaction_random_cat"] if "reaction_random_cat" in inter else None
+            specific_reaction= inter["reaction_random_cat"] if "reaction_random_cat" in inter else None
         ))
     return created_list
 
