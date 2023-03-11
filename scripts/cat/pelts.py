@@ -551,28 +551,16 @@ eye_sprites = [
 little_white = ['LITTLE', 'LIGHTTUXEDO', 'BUZZARDFANG', 'TIP', 'BLAZE', 'BIB', 'VEE', 'PAWS', 
     'BELLY', 'TAILTIP', 'TOES', 'BROKENBLAZE', 'LILTWO', 'SCOURGE', 'TOESTAIL', 'RAVENPAW', 'HONEY', 'VENUS', 
     'SHADOWSIGHT', 'TWIST', 'OKAPI', 'LUNA', 'EXTRA']
-little_black = ['BLACKLITTLE', 'BLACKLIGHTTUXEDO', 'BLACKBUZZARDFANG', 'BLACKLITTLECREAMY', 'BLACKTIP', 'BLACKBLAZE', 
-    'BLACKBIB', 'BLACKVEE', 'BLACKPAWS', 'BLACKBELLY', 'BLACKTAILTIP', 'BLACKTOES', 'BLACKBROKENBLAZE', 
-    'BLACKLILTWO', 'BLACKSCOURGE', 'BLACKTOESTAIL', 'BLACKRAVENPAW', 'BLACKHONEY', 'BLACKVENUS', 
-    'BLACKSHADOWSIGHT', 'BLACKTWIST', 'BLACKOKAPI', 'BLACKLUNA', 'BLACKEXTRA']
 mid_white = ['TUXEDO', 'FANCY', 'UNDERS', 'DAMIEN', 'SKUNK', 'MITAINE', 'SQUEAKS', 'STAR', 'MOSSCLAW',
-             'NIGHTMIST', 'SKELEWHITE', 'WINGS']
-mid_black = ['BLACKTUXEDOCREAMY', 'BLACKTUXEDO', 'BLACKFANCY', 'BLACKUNDERS', 'BLACKDAMIEN', 'BLACKSKUNK', 'BLACKMITAINE', 
-    'BLACKSQUEAKS', 'BLACKSTAR', 'BLACKMOSSCLAW', 'BLACKNIGHTMIST', 'SKELEBLACK', 'WINGSBLACK',]             
+             'NIGHTMIST', 'SKELEWHITE', 'WINGS']           
 high_white = ['ANY', 'ANY2', 'BROKEN', 'FRECKLES', 'RINGTAIL', 'HALFFACE', 'PANTS2', 
     'GOATEE', 'PRINCE', 'FAROFA', 'MISTER', 'PANTS', 'REVERSEPANTS', 'HALFWHITE', 'APPALOOSA', 'PIEBALD',
-    'CURVED', 'GLASS', 'MASKMANTLE', 'CHANCE', 'RETSUKO', 'MAO', 'PAINTED']
-high_black = ['BLACKANY', 'BLACKANY2', 'BLACKANY2CREAMY', 'BLACKBROKEN', 'BLACKANYCREAMY', 'HALFBLACK', 'BLACKFRECKLES',
-    'BLACKRINGTAIL', 'BLACKHALFFACE', 'BLACKPANTS2', 'BLACKGOATEE', 'BLACKPRINCE', 'BLACKFAROFA', 'BLACKMISTER', 
-    'BLACKPANTS', 'BLACKREVERSEPANTS', 'BLACKCHANCE', 'BLACKRETSUKO', 'BLACKMAO', 'BLACKPAINTED']   
+    'CURVED', 'GLASS', 'MASKMANTLE', 'CHANCE', 'RETSUKO', 'MAO', 'PAINTED'] 
 mostly_white = ['VAN', 'ONEEAR', 'LIGHTSONG', 'TAIL', 'HEART', 'MOORISH', 'APRON', 'CAPSADDLE', 'DAPPLED', 
     'HAWK', 'FRECKLEMASK', 'MOTH', 'CHESTSPECK', 'HEART2', 'BLACKSTAR']
-mostly_black = ['BLACKVANCREAMY', 'BLACKLIGHTSONG', 'BONEEAR', 'BLACKVAN', 'BLACKTAIL', 'BLACKHEART', 
-    'BLACKMOORISH', 'BLACKAPRON', 'BLACKCAPSADDLE', 'BLACKDAPPLED', 'BLACKHAWK', 'BLACKFRECKLEMASK', 'BLACKMOTH', 'BLACKCHESTSPECK', 
-    'BLACKHEART2', 'REVBLACKSTAR']   
-point_markings = ['COLOURPOINT', 'COLOURPOINTCREAMY', 'RAGDOLL', 'KARPATI', 'SNOWSHOE', 'SNOWBOOT', 'BAGDOLL', 
-    'BLACKCOLOURPOINTCREAMY', 'BLACKCOLOURPOINT', 'BLACKKARPATI', 'SOOTSHOE', 'SOOTBOOT', 'SEPIAPOINT', 'MINKPOINT', 'SEALPOINT', 'BLACKPOINTMARK']
-vit = ['VITILIGO', 'VITILIGO2', 'BLACKVITILIGO', 'BLACKVITILIGO2']
+point_markings = ['COLOURPOINT', 'COLOURPOINTCREAMY', 'RAGDOLL', 'KARPATI', 'SNOWSHOE', 'SNOWBOOT',  
+    'LIGHTPOINT', 'SEPIAPOINT', 'MINKPOINT', 'SEALPOINT']
+vit = ['VITILIGO', 'VITILIGO2']
 white_sprites = [
     little_white, mid_white, high_white, mostly_white, point_markings, vit, 'FULLWHITE']
 
@@ -881,46 +869,32 @@ def describe_color(pelt, tortiecolour, tortiepattern, white_patches, skin):
         else:
             color_name = color_name + ' calico'
     # enough to comment but not make calico
-        if white_patches is not None:
-            if white_patches in little_white + mid_white:
-                color_name = color_name + ' and white'
-            elif white_patches in little_black + mid_black:
-                color_name = color_name + ' and shaded'
-            # and white
-            elif white_patches in high_white:
-                if pelt.name != "Calico":
-                    color_name = color_name + ' and white'
-            elif white_patches in high_black:
-                if pelt.name != "Calico":
-                    color_name = color_name + ' and shaded'        
+    if white_patches is not None:
+        if white_patches in little_white + mid_white:
+            color_name = color_name + ' and stain'
+        # and white
+        elif white_patches in high_white:
+            if pelt.name != "Calico":
+                color_name = color_name + ' and stain'   
 
-            # white and
-            elif white_patches in mostly_white:
-                color_name = 'white and ' + color_name
-            elif white_patches in mostly_black:
-                color_name = 'shaded and ' + color_name    
-            # colorpoint
-            elif white_patches in point_markings:
-                color_name = color_name + ' point'
-                if color_name == 'dark ginger point' or color_name == 'ginger point':
-                    color_name = 'flame point'
-            # vitiligo
-            elif white_patches in vit:
-                color_name = color_name + ' with vitiligo'
-        else:
-            color_name = color_name
+        # white and
+        elif white_patches in mostly_white:
+            color_name = 'stained and ' + color_name 
+        # colorpoint
+        elif white_patches in point_markings:
+            color_name = color_name + ' point'
+            if color_name == 'dark ginger point' or color_name == 'ginger point':
+                color_name = 'flame point'
+        # vitiligo
+        elif white_patches in vit:
+            color_name = color_name + ' with vitiligo'
+    else:
+        color_name = color_name
 
+    if color_name == 'tortie':
+        color_name = 'tortoiseshell'
 
-
-        if color_name == 'tortie':
-            color_name = 'tortoiseshell'
-
-        if white_patches == 'FULLWHITE':
-            color_name = 'white'
-
-        if color_name == 'white and white' or color_name == 'white and petal' or color_name == 'white and ivory':
-            color_name = 'white'
-        if color_name == 'shaded and black' or color_name == 'shaded and onyx' or color_name == 'shaded and rasin':
-            color_name = 'black'
+    if white_patches == 'FULLWHITE':
+        color_name = 'stained'
 
     return color_name
