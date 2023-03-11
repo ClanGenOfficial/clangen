@@ -17,7 +17,6 @@ It then loads the settings, and then loads the start screen.
 
 """ # pylint: enable=line-too-long
 
-import platform
 import sys
 import os
 import time
