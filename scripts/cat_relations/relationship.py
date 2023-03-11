@@ -274,7 +274,7 @@ class Relationship():
 
         """
         # how likely it is to have a positive or negative impact depends on the current values
-        list_to_choice = [True, False]
+        list_to_choice = [True, True, False]
         list_to_choice += [True] * int(self.platonic_like/10)
         list_to_choice += [False] * int(self.dislike/10)
 

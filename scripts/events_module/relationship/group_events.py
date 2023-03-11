@@ -17,7 +17,6 @@ class Group_Events():
     def __init__(self) -> None:
         self.chosen_interaction = None
         self.abbreviations_cat_id = {}
-        self.involved_cats = {}
         pass
 
     def filter_interactions(self, interactions):
@@ -26,10 +25,48 @@ class Group_Events():
             filtered_interactions.append(interaction)
         return filtered_interactions
 
-    def influence_general_relationship(self):
+    def influence_general_relationship(self, amount):
         """
         Influence the relationship between all cats with the same amount, defined by the chosen group relationship.
         """
+        dictionary = self.chosen_interaction.general_interaction
+
+        # set the amount
+        romantic = 0
+        platonic = 0
+        dislike = 0
+        admiration = 0
+        comfortable = 0
+        jealousy = 0
+        trust = 0
+        if "romantic" in dictionary and dictionary["romantic"] != "neutral":
+            romantic = amount if dictionary["romantic"] == "increase" else amount *-1
+        if "platonic" in dictionary and dictionary["platonic"] != "neutral":
+            platonic = amount if dictionary["platonic"] == "increase" else amount *-1
+        if "dislike" in dictionary and dictionary["dislike"] != "neutral":
+            platonic = amount if dictionary["dislike"] == "increase" else amount *-1
+        if "admiration" in dictionary and dictionary["admiration"] != "neutral":
+            platonic = amount if dictionary["admiration"] == "increase" else amount *-1
+        if "comfortable" in dictionary and dictionary["comfortable"] != "neutral":
+            platonic = amount if dictionary["comfortable"] == "increase" else amount *-1
+        if "jealousy" in dictionary and dictionary["jealousy"] != "neutral":
+            platonic = amount if dictionary["jealousy"] == "increase" else amount *-1
+        if "trust" in dictionary and dictionary["trust"] != "neutral":
+            platonic = amount if dictionary["trust"] == "increase" else amount *-1
+
+
+        for inter_cat_id in self.abbreviations_cat_id.values():
+            change_relationship_values(
+                cats_from=inter_cat_id,
+                cats_to=self.abbreviations_cat_id.values(),
+                romantic_love=romantic,
+                platonic_like=platonic,
+                dislike=dislike,
+                admiration=admiration,
+                comfortable=comfortable,
+                jealousy=jealousy,
+                trust=trust
+            )
 
     def influence_specific_relationships(self, reaction_list, amount):
         """
