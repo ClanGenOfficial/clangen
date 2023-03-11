@@ -1,6 +1,7 @@
 import os
 from math import floor
 from .game_essentials import game
+from ..datadir import get_save_dir
 
 try:
     import ujson
@@ -32,13 +33,13 @@ def json_load():
     cat_data = None
     clanname = game.switches['clan_list'][0]
     try:
-        with open('saves/' + clanname + '/clan_cats.json', 'r') as read_file:
+        with open(get_save_dir() + '/' + clanname + '/clan_cats.json', 'r') as read_file:
             cat_data = ujson.loads(read_file.read())
     except PermissionError:
         game.switches['error_message'] = f'Can\t open saves/{clanname}/clan_cats.json!'
         raise
     except JSONDecodeError:
-        game.switches['error_message'] = f'saves/{clanname}/clan_cats.json is malformed!'
+        game.switches['error_message'] = get_save_dir() + f'/{clanname}/clan_cats.json is malformed!'
         raise
         
     old_tortie_patches = {
@@ -271,13 +272,13 @@ def csv_load(all_cats):
     if game.switches['clan_list'][0].strip() == '':
         cat_data = ''
     else:
-        if os.path.exists('saves/' + game.switches['clan_list'][0] +
+        if os.path.exists(get_save_dir() + '/' + game.switches['clan_list'][0] +
                           'cats.csv'):
-            with open('saves/' + game.switches['clan_list'][0] + 'cats.csv',
+            with open(get_save_dir() + '/' + game.switches['clan_list'][0] + 'cats.csv',
                       'r') as read_file:
                 cat_data = read_file.read()
         else:
-            with open('saves/' + game.switches['clan_list'][0] + 'cats.txt',
+            with open(get_save_dir() + '/' + game.switches['clan_list'][0] + 'cats.txt',
                       'r') as read_file:
                 cat_data = read_file.read()
     if len(cat_data) > 0:

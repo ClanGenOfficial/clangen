@@ -69,6 +69,46 @@
 		"chance_for_neutral": 6
 	},
 	"new_cat": {
+		"parent_buff": {
+			"kit_to_parent": {
+				"romantic": 0,
+				"platonic": 40,
+				"dislike": 0,
+				"admiration": 30,
+				"comfortable": 40,
+				"jealousy": 0,
+				"trust": 50
+			},
+			"parent_to_kit": {
+				"romantic": 0,
+				"platonic": 40,
+				"dislike": 0,
+				"admiration": 30,
+				"comfortable": 40,
+				"jealousy": 0,
+				"trust": 30
+			}
+		},
+		"sib_buff": {
+			"cat1_to_cat2": {
+				"romantic": 0,
+				"platonic": 40,
+				"dislike": 0,
+				"admiration": 10,
+				"comfortable": 40,
+				"jealousy": 0,
+				"trust": 30
+			},
+			"cat2_to_cat1": {
+				"romantic": 0,
+				"platonic": 40,
+				"dislike": 0,
+				"admiration": 10,
+				"comfortable": 40,
+				"jealousy": 0,
+				"trust": 30
+			}
+		},
 		"rel_buff":{
 			"new_to_clan_cat": {
 				"romantic": 0,

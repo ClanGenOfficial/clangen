@@ -35,131 +35,13 @@ from .pelts import (
     pelt_colours,
     tortiepatterns,
     )
-
+try:
+    import ujson
+except ImportError:
+    import json as ujson
 from scripts.cat.sprites import Sprites
 from scripts.game_structure.game_essentials import game
 
-# ---------------------------------------------------------------------------- #
-#                               utility functions                              #
-# ---------------------------------------------------------------------------- #
-
-def plural_acc_names(accessory, plural, singular):
-    acc_display = accessory.lower()
-    if acc_display == 'maple leaf':
-        if plural:
-            acc_display = 'maple leaves'
-        if singular:
-            acc_display = 'maple leaf'
-    elif acc_display == 'holly':
-        if plural:
-            acc_display = 'holly berries'
-        if singular:
-            acc_display = 'holly berry'
-    elif acc_display == 'blue berries':
-        if plural:
-            acc_display = 'blueberries'
-        if singular:
-            acc_display = 'blueberry'
-    elif acc_display == 'forget me nots':
-        if plural:
-            acc_display = 'forget me nots'
-        if singular:
-            acc_display = 'forget me not flower'
-    elif acc_display == 'rye stalk':
-        if plural:
-            acc_display = 'rye stalks'
-        if singular:
-            acc_display = 'rye stalk'
-    elif acc_display == 'laurel':
-        if plural:
-            acc_display = 'laurel'
-        if singular:
-            acc_display = 'laurel plant'
-    elif acc_display == 'bluebells':
-        if plural:
-            acc_display = 'bluebells'
-        if singular:
-            acc_display = 'bluebell flower'
-    elif acc_display == 'nettle':
-        if plural:
-            acc_display = 'nettles'
-        if singular:
-            acc_display = 'nettle'
-    elif acc_display == 'poppy':
-        if plural:
-            acc_display = 'poppies'
-        if singular:
-            acc_display = 'poppy flower'
-    elif acc_display == 'lavender':
-        if plural:
-            acc_display = 'lavender'
-        if singular:
-            acc_display = 'lavender flower'
-    elif acc_display == 'herbs':
-        if plural:
-            acc_display = 'herbs'
-        if singular:
-            acc_display = 'herb'
-    elif acc_display == 'petals':
-        if plural:
-            acc_display = 'petals'
-        if singular:
-            acc_display = 'petal'
-    elif acc_display == ('dry herbs' or 'dry_herbs'):
-        if plural:
-            acc_display = 'dry herbs'
-        if singular:
-            acc_display = 'dry herb'
-    elif acc_display == 'oak leaves':
-        if plural:
-            acc_display = 'oak leaves'
-        if singular:
-            acc_display = 'oak leaf'
-    elif acc_display == 'catmint':
-        if plural:
-            acc_display = 'catnip'
-        if singular:
-            acc_display = 'catnip sprig'
-    elif acc_display == 'maple seed':
-        if plural:
-            acc_display = 'maple seeds'
-        if singular:
-            acc_display = 'maple seed'
-    elif acc_display == 'juniper':
-        if plural:
-            acc_display = 'juniper berries'
-        if singular:
-            acc_display = 'juniper berry'
-    elif acc_display == 'red feathers':
-        if plural:
-            acc_display = 'cardinal feathers'
-        if singular:
-            acc_display = 'cardinal feather'
-    elif acc_display == 'blue feathers':
-        if plural:
-            acc_display = 'crow feathers'
-        if singular:
-            acc_display = 'crow feather'
-    elif acc_display == 'jay feathers':
-        if plural:
-            acc_display = 'jay feathers'
-        if singular:
-            acc_display = 'jay feather'
-    elif acc_display == 'moth wings':
-        if plural:
-            acc_display = 'moth wings'
-        if singular:
-            acc_display = 'moth wing'
-    elif acc_display == 'cicada wings':
-        if plural:
-            acc_display = 'cicada wings'
-        if singular:
-            acc_display = 'cicada wing'
-
-    if plural is True and singular is False:
-        return acc_display
-    elif singular is True and plural is False:
-        return acc_display
 
 # ---------------------------------------------------------------------------- #
 #                                init functions                                #
