@@ -159,13 +159,12 @@ class StartScreen(Screens):
             manager=MANAGER
         )
 
-
         self.open_data_directory_button = UIImageButton(
-            scale(pygame.Rect((300, 1025), (330, 60))),
+            scale(pygame.Rect((1040, 1020), (320, 60))),
             "",
             object_id="#open_data_directory_button",
             manager=MANAGER,
-            starting_height=4,
+            starting_height=0, # Layer 0 so it's behind the error box
             tool_tip_text="Opens the data directory. "
             "This is where save files "
             "and logs are stored.")
