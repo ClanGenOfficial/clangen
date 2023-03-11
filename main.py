@@ -23,6 +23,7 @@ import os
 import time
 
 from scripts.datadir import get_log_dir, setup_data_dir
+from scripts.version import get_version_info
 
 directory = os.path.dirname(__file__)
 if directory:
@@ -79,25 +80,16 @@ if os.environ.get('CODESPACES'):
     print('')
 
 
-# Version Number to be displayed.
-# This will only be shown as a fallback, when the git commit hash can't be found.
-VERSION_NUMBER = "Ver. 0.7.0dev"
-
-
-if os.path.exists("commit.txt"):
-    with open("commit.txt", 'r', encoding='utf-8') as read_file:
-        print("Running on pyinstaller build")
-        VERSION_NUMBER = read_file.read()
-else:
+if get_version_info().is_source_build:
     print("Running on source code")
-    try:
-        VERSION_NUMBER = subprocess.check_output(
-            ['git', 'rev-parse', 'HEAD']).decode('ascii').strip()
-    except:
+    if get_version_info() == "":
         print("Failed to get git commit hash, using hardcoded version number instead.")
-        print("Hey testers! We recommend you use git to clone the repository, as it makes things easier for everyone.") # pylint: disable=line-too-long
-        print("There are instructions at https://discord.com/channels/1003759225522110524/1054942461178421289/1078170877117616169") # pylint: disable=line-too-long
-print("Running on commit " + VERSION_NUMBER)
+        print("Hey testers! We recommend you use git to clone the repository, as it makes things easier for everyone.")  # pylint: disable=line-too-long
+        print("There are instructions at https://discord.com/channels/1003759225522110524/1054942461178421289/1078170877117616169")  # pylint: disable=line-too-long
+else:
+    print("Running on PyInstaller build")
+
+print("Running on commit " + get_version_info().version_number)
 
 # Load game
 from scripts.game_structure.load_cat import load_cats
@@ -154,7 +146,7 @@ start_screen.screen_switches()
 #Version Number
 if game.settings['fullscreen']:
     version_number = pygame_gui.elements.UILabel(
-        pygame.Rect((1500, 1350), (-1, -1)), VERSION_NUMBER[0:8],
+        pygame.Rect((1500, 1350), (-1, -1)), get_version_info().version_number[0:8],
         object_id=get_text_box_theme())
     # Adjust position
     version_number.set_position(
@@ -162,7 +154,7 @@ if game.settings['fullscreen']:
          1400 - version_number.get_relative_rect()[3]))
 else:
     version_number = pygame_gui.elements.UILabel(
-        pygame.Rect((700, 650), (-1, -1)), VERSION_NUMBER[0:8],
+        pygame.Rect((700, 650), (-1, -1)), get_version_info().version_number[0:8],
         object_id=get_text_box_theme())
     # Adjust position
     version_number.set_position(
