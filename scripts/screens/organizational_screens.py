@@ -58,6 +58,14 @@ class StartScreen(Screens):
             }
             if event.ui_element in screens:
                 self.change_screen(screens[event.ui_element])
+            elif event.ui_element == self.open_data_directory_button:
+                if platform.system() == 'Darwin':
+                    subprocess.Popen(["open", "-R", get_data_dir()])
+                elif platform.system() == 'Windows':
+                    os.startfile(get_data_dir()) # pylint: disable=no-member
+                elif platform.system() == 'Linux':
+                    subprocess.Popen(['xdg-open', get_data_dir()])
+                return
             elif event.ui_element == self.quit:
                 quit(savesettings=False, clearevents=False)
 
@@ -113,30 +121,50 @@ class StartScreen(Screens):
 
         self.error_label = pygame_gui.elements.UITextBox(
             "",
-            scale(pygame.Rect((300, 400), (700, 645))),
+            scale(pygame.Rect((275, 370), (770, 720))),
             object_id="#error_text_box",
-            manager=MANAGER
+            manager=MANAGER,
+            layer_starting_height=3
         )
+
+        self.error_label.disable()
 
         self.error_gethelp = pygame_gui.elements.UITextBox(
             "Please join the Discord server and ask for technical support. " \
-            "We\'ll be happy to help! Please include the error message and the traceback below (if available). " \
-            "<br><a href=https://discord.com/invite/clangen/>https://discord.com/invite/clangen/</a>",
+            "We\'ll be happy to help! Please include the error message and the traceback below (if available). ", # \
+            # TODO: find why link wont work
+            # "<br><a href=https://discord.com/invite/clangen/>https://discord.com/invite/clangen/</a>",
             scale(pygame.Rect((1055, 430), (350, 600))),
             object_id="#gethelp_text_box",
+            layer_starting_height=3,
             manager=MANAGER
         )
+
+        self.error_gethelp.disable()
+
+        self.open_data_directory_button = UIImageButton(
+            scale(pygame.Rect((300, 1025), (330, 60))),
+            "",
+            object_id="#open_data_directory_button",
+            manager=MANAGER,
+            starting_height=4,
+            tool_tip_text="Opens the data directory. "
+                          "This is where save files "
+                          "and logs are stored.")
 
 
         self.error_box.hide()
         self.error_label.hide()
         self.error_gethelp.hide()
+        self.open_data_directory_button.hide()
 
         self.warning_label = pygame_gui.elements.UITextBox(
             "Warning: this game includes some mild descriptions of gore.",
             scale(pygame.Rect((100, 1244), (1400, 60))),
             object_id="#default_dark", manager=MANAGER
         )
+
+        
 
         if game.clan is not None and game.switches['error_message'] == '':
             self.continue_button.enable()
@@ -161,6 +189,7 @@ class StartScreen(Screens):
             self.error_box.show()
             self.error_label.show()
             self.error_gethelp.show()
+            self.open_data_directory_button.show()
             for i in range(10):
                 print("https://discord.com/invite/clangen/")
 
