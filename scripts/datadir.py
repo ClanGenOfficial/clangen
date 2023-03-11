@@ -2,6 +2,8 @@ import os
 
 from platformdirs import *
 
+from scripts.version import get_version_info
+
 
 def setup_data_dir():
     os.makedirs(get_data_dir(), exist_ok=True)
@@ -10,6 +12,10 @@ def setup_data_dir():
 
 
 def get_data_dir():
+    if get_version_info().is_source_build:
+        return '.'
+    elif not get_version_info().is_release:
+        return user_data_dir('ClanGenBeta', 'ClanGen')
     return user_data_dir('ClanGen', 'ClanGen')
 
 
