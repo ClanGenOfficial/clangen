@@ -12,6 +12,7 @@ from .pelts import (
     yellow_colours,
     green_colours,
     purple_colours,
+    pride_colours,
     albino_sprites,
     melanistic_sprites,
     wings,

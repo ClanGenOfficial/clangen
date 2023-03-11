@@ -548,7 +548,7 @@ for a, i in enumerate(['BLACKSHADOWSIGHT', 'BLACKTWIST', 'BLACKRETSUKO', 'BLACKO
     sprites.make_group('blackpatchesmoss', (a, 1), 'white' + i)
     sprites.make_group('blackpatchesmossextra', (a, 1), 'whiteextra' + i, sprites_y=2)    
 
-# single (solid)
+# single
 for a, i in enumerate(['BEIGE', 'MEERKAT', 'KHAKI', 'CAPPUCCINO', 'ECRU', 'ASHBROWN']):
     sprites.make_group('singleB', (a, 0), f'single{i}')
     sprites.make_group('singleBextra', (a, 0), f'singleextra{i}', sprites_y=2)
@@ -2519,8 +2519,8 @@ for a, i in enumerate(['XANADU', 'DEEPFOREST']):
 
 #PridePELTS(For Torties)
 for a, i in enumerate(['AGENDER', 'ENBY', 'ASEXUAL', 'TRANS', 'GAYBOW']):
-    sprites.make_group('pridebase', (a, 0), f'solid{i}')
-    sprites.make_group('pridebaseextra', (a, 0), f'solidextra{i}', sprites_y=2)	
+    sprites.make_group('pridebase', (a, 0), f'single{i}')
+    sprites.make_group('pridebaseextra', (a, 0), f'singleextra{i}', sprites_y=2)	
 for a, i in enumerate(['AGENDER', 'ENBY', 'ASEXUAL', 'TRANS', 'GAYBOW']):
     sprites.make_group('agoutiP', (a, 0), f'agouti{i}')
     sprites.make_group('agoutiPextra', (a, 0), f'agoutiextra{i}', sprites_y=2)	

@@ -373,36 +373,38 @@ def pelt_inheritance(cat, parents: tuple):
     weights = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     for p_ in par_peltcolours:
         if p_ in cream_colours:
-            add_weight = (40, 20, 0, 0, 0, 10, 0, 5, 5, 2)
+            add_weight = (40, 20, 0, 0, 0, 10, 0, 5, 5, 2, 1)
         if p_ in ginger_colours:
-            add_weight = (20, 40, 0, 0, 0, 10, 0, 0, 5, 0)
+            add_weight = (20, 40, 0, 0, 0, 10, 0, 0, 5, 0, 5)
         elif p_ in black_colours:
-            add_weight = (0, 0, 40, 20, 2, 5, 5, 0, 0, 0)
+            add_weight = (0, 0, 40, 20, 2, 5, 5, 0, 0, 0, 1)
         elif p_ in grey_colours:
-            add_weight = (0, 0, 10, 40, 10, 2, 5, 0, 0, 1)
+            add_weight = (0, 0, 10, 40, 10, 2, 5, 0, 0, 1, 1)
         elif p_ in white_colours:
-            add_weight = (2, 0, 5, 20, 40, 0, 5, 2, 0, 1)
+            add_weight = (2, 0, 5, 20, 40, 0, 5, 2, 0, 1, 1)
         elif p_ in brown_colours:
-            add_weight = (5, 10, 5, 2, 0, 35, 0, 5, 0, 1)
+            add_weight = (5, 10, 5, 2, 0, 35, 0, 5, 0, 1, 1)
         elif p_ in blue_colours:
-            add_weight = (0, 0, 20, 20, 20, 0, 25, 0, 2, 0)
+            add_weight = (0, 0, 20, 20, 20, 0, 25, 0, 2, 0, 5)
         elif p_ in yellow_colours:
-            add_weight = (10, 0, 0, 0, 10, 20, 0, 25, 0, 5)
+            add_weight = (10, 0, 0, 0, 10, 20, 0, 25, 0, 5, 5)
         elif p_ in purple_colours:
-            add_weight = (20, 20, 0, 0, 0, 0, 0, 5, 25, 0)
+            add_weight = (20, 20, 0, 0, 0, 0, 0, 5, 25, 0, 5)
         elif p_ in green_colours:
-            add_weight = (2, 0, 0, 1, 1, 1, 0, 5, 0, 35)
+            add_weight = (2, 0, 0, 1, 1, 1, 0, 5, 0, 35, 5)
+        elif p_ in pride_colours:
+            add_weight = (5, 15, 1, 1, 1, 5, 15, 15, 15, 15, 45)
         elif p_ is None:
-            add_weight = (40, 40, 40, 40, 40, 40, 2, 2, 2, 15)
+            add_weight = (40, 40, 40, 40, 40, 40, 2, 2, 2, 15, 15)
         else:
-            add_weight = (0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+            add_weight = (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
         for x in range(0, len(weights)):
             weights[x] += add_weight[x]
 
         # A quick check to make sure all the weights aren't 0
         if all([x == 0 for x in weights]):
-            weights = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+            weights = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 
     chosen_pelt_color = choice(
         random.choices(colour_categories, weights=weights, k=1)[0])
@@ -495,7 +497,7 @@ def randomize_pelt(cat):
     # ------------------------------------------------------------------------------------------------------------#
 
     chosen_pelt_color = choice(
-        random.choices(colour_categories, weights=(40, 40, 40, 40, 40, 40, 10, 10, 10, 20), k=1)[0]
+        random.choices(colour_categories, weights=(40, 40, 40, 40, 40, 40, 10, 10, 10, 20, 20), k=1)[0]
     )
 
     # ------------------------------------------------------------------------------------------------------------#
@@ -735,6 +737,7 @@ def init_pattern(cat):
                     possible_colors.remove(cat.pelt.colour)
                     possible_colors.extend(['STRAKIT', 'GENDER', 'REDNEG'])
                     cat.tortiecolour = choice(possible_colors)
+
         else:
             cat.tortiecolour = choice(pride_colours)
     else:
