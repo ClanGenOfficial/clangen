@@ -69,8 +69,8 @@ class Cat():
     ]
     age_moons = {
         'kitten': [0, 5],
-        'adolescent': [6, 11],
-        'young adult': [12, 53],
+        'adolescent': [6, 14],
+        'young adult': [15, 53],
         'adult': [54, 107],
         'senior adult': [108, 131],
         'elder': [132, 216]
