@@ -717,20 +717,24 @@ def init_pattern(cat):
                                     'DEEPFOREST'] + (pride_colours * 2))
 
                 elif cat.pelt.colour in ["LIME", "CHARTRUSE", "LETTUCE", "GRASS", "MINT", "EMERALD", "OLIVE"]:
-                    cat.pattern = choice (['PALECREAM', 'CREAM', 'SAND', 'WOOD', 'PETAL', 'PANTONE', 'SALMON', 
+                    cat.tortiecolour = choice (['PALECREAM', 'CREAM', 'SAND', 'WOOD', 'PETAL', 'PANTONE', 'SALMON', 
                                     'THISTLE', 'MEW', 'WHITE', 'SILVER', 'BRONZE', 'GREY', 'PALEBOW', 
                                     'TURQUOISE', 'TIFFANY', 'SHINYMEW', 'SKY', 'POWDERBLUE'] + (pride_colours * 2))
                 elif cat.pelt.colour in ["DARKOLIVE", "GREEN", "SPINNACH", "SEAWEED", "SACRAMENTO"]:
-                    cat.pattern = choice (['ROSE', 'GINGER', 'SUNSET', 'RUFOUS', 'FIRE', 'BRICK', 'SCARLET', 'APRICOT', 
+                    cat.tortiecolour = choice (['ROSE', 'GINGER', 'SUNSET', 'RUFOUS', 'FIRE', 'BRICK', 'SCARLET', 'APRICOT', 
                                     'GARFIELD', 'APPLE', 'AMYTHYST', 'DARKSALMON', 'MAGENTA', 'HEATHER', 'ORCHID', 
                                     'PURPLE', 'GREY', 'MARENGO', 'BATTLESHIP', 'CADET', 'BLUEGREY', 'STEEL', 'SLATE',
                                     'SAPPHIRE', 'OCEAN', 'DENIUM', 'TEAL', 'COBALT'] + (pride_colours * 2))
                 elif cat.pelt.colour in ["FOREST", "JADE", "XANADU", "DEEPFOREST"]:
-                    cat.pattern = choice (['RED', 'CRIMSON', 'BURNT', 'CARMINE', 'COSMOS', 'ROSEWOOD', 'BLOOD', 'RASIN',
+                    cat.tortiecolour = choice (['RED', 'CRIMSON', 'BURNT', 'CARMINE', 'COSMOS', 'ROSEWOOD', 'BLOOD', 'RASIN',
                                     'STRAKIT', 'WINE', 'GENDER', 'REDNEG', 'SOOT', 'DARKGREY', 'ANCHOR', 'CHARCOAL', 
                                     'COAL', 'BLACK', 'DUSKBOW', 'SONIC', 'JEANS', 'NAVY'] + (pride_colours * 2))  
 
-
+                elif cat.pelt.colour in pride_colours:
+                    possible_colors = pride_colours.copy()
+                    possible_colors.remove(cat.pelt.colour)
+                    possible_colors.extend(['STRAKIT', 'GENDER', 'REDNEG'])
+                    cat.tortiecolour = choice(possible_colors)
         else:
             cat.tortiecolour = choice(pride_colours)
     else:

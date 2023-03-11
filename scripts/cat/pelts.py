@@ -427,7 +427,8 @@ pelt_colours = ['PALECREAM', 'CREAM', 'BEIGE', 'MEERKAT', 'KHAKI', 'SAND', 'WOOD
     'GENDER', 'REDNEG', 'IVORY', 'BANNANA', 'FARROW', 'HAY', 'FAWN', 'HAZELNUT', 'LEMON', 'LAGUNA', 
     'YELLOW', 'CORN', 'GOLD', 'HONEY', 'BEE', 'PINEAPPLE', 'TROMBONE', 'MEDALLION', 'GRANOLA', 
     'SADDLE', 'CEDAR', 'ONYX', 'LIME', 'CHARTRUSE', 'LETTUCE', 'GRASS', 'MINT', 'EMERALD', 'OLIVE',
-    'DARKOLIVE', 'GREEN', 'FOREST', 'JADE', 'SPINNACH', 'SEAWEED', 'SACRAMENTO', 'XANADU', 'DEEPFOREST']
+    'DARKOLIVE', 'GREEN', 'FOREST', 'JADE', 'SPINNACH', 'SEAWEED', 'SACRAMENTO', 'XANADU', 'DEEPFOREST',
+    'AGENDER', 'ENBY', 'ASEXUAL', 'TRANS', 'GAYBOW']
 pelt_c_no_white = ['PALECREAM', 'CREAM', 'BEIGE', 'MEERKAT', 'KHAKI', 'SAND', 'WOOD', 'ROSE', 
     'GINGER', 'SUNSET', 'RUFOUS', 'FIRE', 'BRICK', 'RED', 'SCARLET', 'APRICOT', 'GARFIELD', 
     'APPLE', 'CRIMSON', 'BURNT', 'CARMINE', 'COSMOS', 'ROSEWOOD', 'BLOOD', 'SOOT', 'DARKGREY', 
@@ -441,7 +442,7 @@ pelt_c_no_white = ['PALECREAM', 'CREAM', 'BEIGE', 'MEERKAT', 'KHAKI', 'SAND', 'W
     'HAY', 'FAWN', 'HAZELNUT', 'LEMON', 'LAGUNA', 'YELLOW', 'CORN', 'GOLD', 'HONEY', 'BEE', 
     'PINEAPPLE', 'TROMBONE', 'MEDALLION', 'GRANOLA', 'SADDLE', 'CEDAR', 'ONYX', 'LIME', 'CHARTRUSE', 
     'LETTUCE', 'GRASS', 'MINT', 'EMERALD', 'OLIVE','DARKOLIVE', 'GREEN', 'FOREST', 'JADE', 'SPINNACH', 
-    'SEAWEED', 'SACRAMENTO', 'XANADU', 'DEEPFOREST']
+    'SEAWEED', 'SACRAMENTO', 'XANADU', 'DEEPFOREST', 'GAYBOW']
 pelt_c_no_bw = ['PALECREAM', 'CREAM', 'BEIGE', 'MEERKAT', 'KHAKI', 'SAND', 'WOOD', 'ROSE', 
     'GINGER', 'SUNSET', 'RUFOUS', 'FIRE', 'BRICK', 'RED', 'SCARLET', 'APRICOT', 'GARFIELD', 
     'APPLE', 'CRIMSON', 'BURNT', 'CARMINE', 'COSMOS', 'ROSEWOOD', 'BLOOD', 'GREY', 'MARENGO', 
@@ -455,7 +456,8 @@ pelt_c_no_bw = ['PALECREAM', 'CREAM', 'BEIGE', 'MEERKAT', 'KHAKI', 'SAND', 'WOOD
     'GENDER', 'REDNEG', 'BANNANA', 'FARROW', 'HAY', 'FAWN', 'HAZELNUT', 'LEMON', 'LAGUNA', 
     'YELLOW', 'CORN', 'GOLD', 'HONEY', 'BEE', 'PINEAPPLE', 'TROMBONE', 'MEDALLION', 'GRANOLA', 
     'SADDLE', 'CEDAR', 'LIME', 'CHARTRUSE', 'LETTUCE', 'GRASS', 'MINT', 'EMERALD', 'OLIVE',
-    'DARKOLIVE', 'GREEN', 'FOREST', 'JADE', 'SPINNACH', 'SEAWEED', 'SACRAMENTO', 'XANADU', 'DEEPFOREST']  
+    'DARKOLIVE', 'GREEN', 'FOREST', 'JADE', 'SPINNACH', 'SEAWEED', 'SACRAMENTO', 'XANADU', 'DEEPFOREST',
+    'GAYBOW']  
 
 tortiepatterns = ['ONE', 'TWO', 'THREE', 'FOUR', 'REDTAIL', 'DELILAH', 'MINIMAL1', 'MINIMAL2', 'MINIMAL3', 'MINIMAL4',
                   'OREO', 'SWOOP', 'MOTTLED', 'SIDEMASK', 'EYEDOT', 'BANDANA', 'PACMAN', 'STREAMSTRIKE', 'ORIOLE',
@@ -521,7 +523,8 @@ single_colours = ['PALECREAM', 'CREAM', 'BEIGE', 'MEERKAT', 'KHAKI', 'SAND', 'WO
     'GENDER', 'REDNEG', 'IVORY', 'BANNANA', 'FARROW', 'HAY', 'FAWN', 'HAZELNUT', 'LEMON', 'LAGUNA', 
     'YELLOW', 'CORN', 'GOLD', 'HONEY', 'BEE', 'PINEAPPLE', 'TROMBONE', 'MEDALLION', 'GRANOLA', 
     'SADDLE', 'CEDAR', 'ONYX', 'LIME', 'CHARTRUSE', 'LETTUCE', 'GRASS', 'MINT', 'EMERALD', 'OLIVE',
-    'DARKOLIVE', 'GREEN', 'FOREST', 'JADE', 'SPINNACH', 'SEAWEED', 'SACRAMENTO', 'XANADU', 'DEEPFOREST']
+    'DARKOLIVE', 'GREEN', 'FOREST', 'JADE', 'SPINNACH', 'SEAWEED', 'SACRAMENTO', 'XANADU', 'DEEPFOREST',
+    'AGENDER', 'ENBY', 'ASEXUAL', 'TRANS', 'GAYBOW']
 cream_colours = ['PALECREAM', 'CREAM', 'BEIGE', 'MEERKAT', 'KHAKI', 'SAND', 'WOOD', 'PANTONE', 'SALMON',
     'THISTLE', 'BANNANA', 'FARROW', 'HAY']
 ginger_colours = ['ROSE', 'GINGER', 'SUNSET', 'RUFOUS', 'FIRE', 'BRICK', 'RED', 
@@ -541,7 +544,7 @@ green_colours = ['LIME', 'CHARTRUSE', 'LETTUCE', 'GRASS', 'MINT', 'EMERALD', 'OL
     'FOREST', 'JADE', 'SPINNACH', 'SEAWEED', 'SACRAMENTO', 'XANADU', 'DEEPFOREST']
 
 colour_categories = [cream_colours, ginger_colours, black_colours, grey_colours, white_colours, brown_colours, blue_colours, 
-    yellow_colours, purple_colours, green_colours]
+    yellow_colours, purple_colours, green_colours, pride_colours]
     
 eye_sprites = [
     'YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE', 'DARKBLUE', 'BLUEYELLOW', 'BLUEGREEN',
@@ -593,6 +596,7 @@ magic_kitty = ['FIRE', 'WATER', 'EARTH', 'WIND', 'STAR', 'STEAM', 'MAGMA', 'SMOK
                 'S_WIND', 'S_STAR', 'S_STEAM', 'S_MAGMA', 'S_SMOKE', 'S_HELL', 'S_MUD', 'S_STORM', 'S_BLOOD', 
                 'S_SAND', 'S_BERRY', 'S_GHOST']
 skin_categories = [skin_sprites, skin_sphynx, albino_sprites, melanistic_sprites, wing_sprites, magic_kitty] 
+
 sphynx = ['S_BLACK', 'S_RED', 'S_PINK', 'S_DARKBROWN', 'S_BROWN', 'S_LIGHTBROWN', 'S_DARK', 'S_DARKGREY', 'S_GREY', 'S_DARKSALMON',
             'S_SALMON', 'S_PEACH', 'S_DARKMARBLED', 'S_MARBLED', 'S_LIGHTMARBLED', 'S_DARKBLUE', 'S_BLUE', 'S_LIGHTBLUE',  
             'S_ALBINOPINK', 'S_ALBINOBLUE', 'S_ALBINORED', 'S_ALBINOVIOLET', 'S_ALBINOYELLOW', 'S_ALBINOGREEN' 'S_MELANISTICLIGHT', 
