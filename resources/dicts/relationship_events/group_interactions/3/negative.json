@@ -1,1 +1,11 @@
-[]
+[
+	{
+		"id": "sample_id_neg",
+		"cat_amount": 3,
+		"interactions": ["m_c interacts with r_c1 and r_c2"],
+		"general_reaction":{
+			"platonic": "increase",
+			"comfortable": "increase"
+		}
+	}
+]

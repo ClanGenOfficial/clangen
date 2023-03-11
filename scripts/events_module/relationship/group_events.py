@@ -148,4 +148,6 @@ for file in os.listdir(base_path):
     cat_amount = file.split(".")[0]
     with open(os.path.join(base_path, file), 'r') as read_file:
         welcome_list = ujson.load(read_file)
-        GROUP_INTERACTION_MASTER_DICT[cat_amount] = create_group_interaction(welcome_list)
+        GROUP_INTERACTION_MASTER_DICT[cat_amount]["negative"] = create_group_interaction(welcome_list["negative"])
+        GROUP_INTERACTION_MASTER_DICT[cat_amount]["neutral"] = create_group_interaction(welcome_list["neutral"])
+        GROUP_INTERACTION_MASTER_DICT[cat_amount]["positive"] = create_group_interaction(welcome_list["positive"])

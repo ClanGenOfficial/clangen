@@ -1,5 +1,14 @@
 [
 	{
+		"id": "sample_id_neu",
+		"cat_amount": 3,
+		"interactions": ["m_c interacts with r_c1 and r_c2"],
+		"general_reaction":{
+			"platonic": "increase",
+			"comfortable": "increase"
+		}
+	},
+	{
 		"id": "sample_id",
 		"biome": [
 			"Any"
@@ -8,7 +17,7 @@
 			"Any"
 		],
 		"intensity": "medium",
-		"cat_amount": "3",
+		"cat_amount": 3,
 		"interactions": [
 			"m_c is convincing r_c1 that r_c2 isn't so bad once you get to know them."
 		],
