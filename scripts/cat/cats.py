@@ -515,6 +515,20 @@ class Cat():
             self.grief(body)
 
         return text
+    
+    def exile(self):
+        """This is used to send a cat into exile. This removes the cat's status and gives them a special 'exiled'
+        status."""
+        self.exiled = True
+        self.outside = True
+        self.status = 'exiled'
+        if self.trait == 'vengeful':
+            self.thought = "Swears their revenge for being exiled"
+        else:
+            self.thought = "Is shocked that they have been exiled"
+        for app in self.apprentice:
+            Cat.fetch_cat(app).update_mentor()
+        self.update_mentor()
 
     def grief(self, body: bool):
         """
@@ -2616,8 +2630,12 @@ class Cat():
             if self._moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1] + 1):
                 updated_age = True
                 self.age = key_age
-        if not updated_age and self.age is not None:
-            self.age = "elder"
+        try:
+            if not updated_age and self.age is not None:
+                self.age = "elder"
+        except AttributeError:
+            print("ERROR: cat has no age attribute! Cat ID: " + self.ID)
+            print("Possibly the disappearing cat bug? Ping luna on the discord if you see this message")
 
 
 # ---------------------------------------------------------------------------- #

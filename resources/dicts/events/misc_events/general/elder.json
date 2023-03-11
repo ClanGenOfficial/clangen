@@ -1,5 +1,5 @@
 [
-{
+      {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "event_text": "m_c is brought back to camp after wandering off.",
@@ -7,5 +7,60 @@
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
-    }
+      },
+      {
+        "camp": "any",
+        "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall"],
+        "event_text": "m_c calls the younger cats to their den to tell stories of the Clan's past.",
+        "cat_trait": null,
+        "cat_skill": ["good storyteller", "great storyteller", "fantastic storyteller"],
+        "other_cat_trait": null,
+        "other_cat_skill": null
+      },
+      {
+        "camp": "any",
+        "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall", "other_cat", "other_cat_leader"],
+        "event_text": "m_c speaks to r_c about how to better defend the camp.",
+        "cat_trait": null,
+        "cat_skill": ["smart tactician", "valueable tactician"],
+        "other_cat_trait": null,
+        "other_cat_skill": null
+      },
+      {
+        "camp": "any",
+        "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall"],
+        "event_text": "m_c helps reinforce the dens in the camp while the rest of the camp is on patrol.",
+        "cat_trait": null,
+        "cat_skill": ["den builder"],
+        "other_cat_trait": null,
+        "other_cat_skill": null
+      },
+      {
+        "camp": "any",
+        "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall"],
+        "event_text": "m_c places small feathers and shining stones near the nest of each clanmate while they're on patrol.].",
+        "cat_trait": null,
+        "cat_skill": ["den builder"],
+        "other_cat_trait": null,
+        "other_cat_skill": null
+      },
+      {
+        "camp": "any",
+        "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall"],
+        "event_text": "m_c keeps an eye on the camp while the warriors are on patrol.",
+        "cat_trait": null,
+        "cat_skill": ["camp keeper"],
+        "other_cat_trait": null,
+        "other_cat_skill": null
+      },
+      {
+        "camp": "any",
+        "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall"],
+        "event_text": "m_c disappears for a few days, then returns to camp with a acc_singular collar around their neck.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null,
+        "accessories": ["COLLAR"]
+      }
 ]
