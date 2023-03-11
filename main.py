@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import platform
 import sys
 import os
 
@@ -24,9 +25,6 @@ formatter = logging.Formatter("%(name)s - %(levelname)s - %(filename)s / %(funcN
 timestr = time.strftime("%Y%m%d_%H%M%S")
 log_file_name = get_log_dir() + f"/clangen_{timestr}.log"
 file_handler = logging.FileHandler(log_file_name)
-if os.path.exists('clangen_latest.log'):
-    os.remove('clangen_latest.log')
-os.symlink(log_file_name, 'clangen_latest.log', target_is_directory=True)
 file_handler.setFormatter(formatter)
 # Only log errors to file
 file_handler.setLevel(logging.ERROR)
