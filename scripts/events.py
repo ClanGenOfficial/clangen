@@ -41,7 +41,7 @@ class Events():
     """
     all_events = {}
     game.switches['timeskip'] = False
-    #This is so we call the static function needed to clear the events dict.
+    # This is so we call the static function needed to clear the events dict.
     generate_events = GenerateEvents()
 
     def __init__(self, e_type=None, **cats):
@@ -200,7 +200,7 @@ class Events():
         # age up the clan, set current season
         game.clan.age += 1
         get_current_season()
-        #print(game.clan.current_season)
+        # print(game.clan.current_season)
 
         self.herb_destruction()
         self.herb_gather()
@@ -1003,7 +1003,7 @@ class Events():
                     "medicine cat apprentice"
             ]:
                 if (cat.experience_level not in ["untrained", "trainee"] and
-                        cat.moons >= game.config["graduation"]["min_graduating_age"]) \
+                    cat.moons >= game.config["graduation"]["min_graduating_age"]) \
                         or cat.moons >= game.config["graduation"]["max_apprentice_age"][cat.status]:
 
                     if cat.moons == game.config["graduation"][
@@ -1328,6 +1328,7 @@ class Events():
         if chance <= 0:
             chance = 1
         if not int(random.random() * chance):
+
             #print('ACC')
             self.misc_events.handle_misc_events(
                 cat,
@@ -1458,7 +1459,7 @@ class Events():
                 queen = random.choice(names.names_dict["normal_prefixes"]) + \
                         random.choice(names.names_dict["normal_suffixes"])
             if not warrior:
-                warrior = random.choice(names.names_dict["normal_prefixes"]) +\
+                warrior = random.choice(names.names_dict["normal_prefixes"]) + \
                           random.choice(names.names_dict["normal_suffixes"])
             if not kit:
                 kit = random.choice(
@@ -1470,14 +1471,14 @@ class Events():
                 app = random.choice(
                     names.names_dict["normal_prefixes"]) + "paw"
             if not elder:
-                elder = random.choice(names.names_dict["normal_prefixes"]) +\
-                          random.choice(names.names_dict["normal_suffixes"])
+                elder = random.choice(names.names_dict["normal_prefixes"]) + \
+                        random.choice(names.names_dict["normal_suffixes"])
             if not warrior3:
                 warrior3 = random.choice(names.names_dict["normal_prefixes"]) + \
                            random.choice(names.names_dict["normal_suffixes"])
             if not med_cat:
                 med_cat = random.choice(names.names_dict["normal_prefixes"]) + \
-                           random.choice(names.names_dict["normal_suffixes"])
+                          random.choice(names.names_dict["normal_suffixes"])
             if not prev_lead:
                 prev_lead = str(names.names_dict["normal_prefixes"]) + "star"
             cat.life_givers.extend([
@@ -1506,7 +1507,7 @@ class Events():
         ]:
 
             if cat.not_working():
-                #print(f"{cat.name} not working, no EX gain")
+                # print(f"{cat.name} not working, no EX gain")
                 return
 
             if cat.experience > cat.experience_levels_range["trainee"][0]:
