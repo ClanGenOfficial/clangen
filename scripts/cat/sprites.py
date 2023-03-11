@@ -2519,8 +2519,8 @@ for a, i in enumerate(['XANADU', 'DEEPFOREST']):
 
 #PridePELTS(For Torties)
 for a, i in enumerate(['AGENDER', 'ENBY', 'ASEXUAL', 'TRANS', 'GAYBOW']):
-    sprites.make_group('pridebase', (a, 0), f'solid{i}')
-    sprites.make_group('pridebaseextra', (a, 0), f'solidextra{i}', sprites_y=2)	
+    sprites.make_group('pridebase', (a, 0), f'single{i}')
+    sprites.make_group('pridebaseextra', (a, 0), f'singleextra{i}', sprites_y=2)	
 for a, i in enumerate(['AGENDER', 'ENBY', 'ASEXUAL', 'TRANS', 'GAYBOW']):
     sprites.make_group('agoutiP', (a, 0), f'agouti{i}')
     sprites.make_group('agoutiPextra', (a, 0), f'agoutiextra{i}', sprites_y=2)	
