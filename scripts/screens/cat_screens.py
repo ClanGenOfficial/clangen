@@ -5,6 +5,8 @@ from random import choice
 
 import pygame
 
+from ..datadir import get_save_dir
+
 try:
     import ujson
 except ImportError:
@@ -1079,7 +1081,7 @@ class ProfileScreen(Screens):
 
         notes = self.user_notes
 
-        notes_directory = 'saves/' + clanname + '/notes'
+        notes_directory = get_save_dir() + '/' + clanname + '/notes'
         notes_file_path = notes_directory + '/' + self.the_cat.ID + '_notes.json'
 
         if not os.path.exists(notes_directory):
@@ -1102,7 +1104,7 @@ class ProfileScreen(Screens):
         """Loads user-entered notes. """
         clanname = game.clan.name
 
-        notes_directory = 'saves/' + clanname + '/notes'
+        notes_directory = get_save_dir() + '/' + clanname + '/notes'
         notes_file_path = notes_directory + '/' + self.the_cat.ID + '_notes.json'
 
         if not os.path.exists(notes_file_path):
