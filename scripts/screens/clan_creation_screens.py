@@ -14,6 +14,7 @@ from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked,
 from scripts.game_structure.game_essentials import game, MANAGER
 
 
+
 class MakeClanScreen(Screens):
     # UI images
     clan_frame_img = pygame.transform.scale(pygame.image.load(

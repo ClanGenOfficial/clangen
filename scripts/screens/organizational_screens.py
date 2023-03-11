@@ -12,6 +12,7 @@ This file contains:
 """ # pylint: enable=line-too-long
 import pygame
 import os
+import traceback
 
 
 from .base_screens import Screens
@@ -23,6 +24,7 @@ import pygame_gui
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 from scripts.game_structure.windows import DeleteCheck
 from scripts.game_structure.discord_rpc import _DiscordRPC
+from scripts.game_structure import image_cache
 
 try:
     import ujson
@@ -93,10 +95,38 @@ class StartScreen(Screens):
                                              object_id="#settings_button", manager=MANAGER)
         self.quit = UIImageButton(scale(pygame.Rect((140, 980), (384, 70))), "",
                                   object_id="#quit_button", manager=MANAGER)
+        
+        errorimg = image_cache.load_image(
+            'resources/images/errormsg.png').convert_alpha()
 
-        self.error_label = pygame_gui.elements.UILabel(scale(pygame.Rect(100, 100, 1400, -1)), "",
-                                                       object_id="#save_text_box", manager=MANAGER)
+        self.error_box = pygame_gui.elements.UIImage(scale(pygame.Rect((259, 300), (1180, 802))),
+                                                     pygame.transform.scale(errorimg, (1180, 802))
+                                                        , manager=MANAGER)
+
+
+        self.error_box.disable()
+
+
+        self.error_label = pygame_gui.elements.UITextBox(
+            "",
+            scale(pygame.Rect((300, 400), (700, 645))),
+            object_id="#error_text_box",
+            manager=MANAGER
+        )
+
+        self.error_gethelp = pygame_gui.elements.UITextBox(
+            "Please join the Discord server and ask for technical support. " \
+            "We\'ll be happy to help! Please include the error message and the traceback below (if available). " \
+            "<br><a href=https://discord.com/invite/clangen/>https://discord.com/invite/clangen/</a>",
+            scale(pygame.Rect((1055, 430), (350, 600))),
+            object_id="#gethelp_text_box",
+            manager=MANAGER
+        )
+
+
+        self.error_box.hide()
         self.error_label.hide()
+        self.error_gethelp.hide()
 
         self.warning_label = pygame_gui.elements.UITextBox(
             "Warning: this game includes some mild descriptions of gore.",
@@ -117,11 +147,18 @@ class StartScreen(Screens):
             self.continue_button.disable()
             self.switch_clan_button.disable()
 
-        if game.switches['error_message']:
-            # TODO: Switch to another kind of ui element here
+        if True: # if game.switches['error_message']:
             error_text = f"There was an error loading the game: {game.switches['error_message']}"
+            if game.switches['traceback']:
+                print("Traceback:")
+                print(game.switches['traceback'])
+                error_text += "<br><br>" + "".join(traceback.format_exception(game.switches['traceback']))
             self.error_label.set_text(error_text)
+            self.error_box.show()
             self.error_label.show()
+            self.error_gethelp.show()
+            for i in range(10):
+                print("https://discord.com/invite/clangen/")
 
         if game.clan is not None:
             key_copy = tuple(Cat.all_cats.keys())

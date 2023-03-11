@@ -120,6 +120,7 @@ if clan_list:
         if not game.switches['error_message']:
             game.switches[
                 'error_message'] = 'There was an error loading the cats file!'
+            game.switches['traceback'] = e
 
 
 # LOAD settings

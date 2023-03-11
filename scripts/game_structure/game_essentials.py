@@ -111,6 +111,7 @@ class Game():
         'fill_patrol': False,
         'patrol_done': False,
         'error_message': '',
+        'traceback': '',
         'apprentice': None,
         'change_name': '',
         'change_suffix': '',
