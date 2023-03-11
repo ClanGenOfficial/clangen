@@ -223,7 +223,6 @@ def create_new_cat(Cat,
     :param backstory: a list of possible backstories for the new cat(s) - default: None
     :param status: set as the rank you want the new cat to have - default: None (will cause a random status to be picked)
     :param age: set the age of the new cat(s) - default: None (will be random or if kit/litter is true, will be kitten.
-    If parent is True, then the age param will be used for the parent, not the kit/litter associated with the parent)
     :param gender: set the gender (BIRTH SEX) of the cat - default: None (will be random)
     :param thought: if you need to give a custom "welcome" thought, set it here
     :param alive: set this as False to generate the cat as already dead - default: True (alive)
@@ -246,7 +245,9 @@ def create_new_cat(Cat,
         elif status == 'apprentice':
             age = randint(6, 11)
         elif status == 'warrior':
-            age = randint(16, 120)
+            age = randint(23, 120)
+        elif status == 'medicine cat':
+            age = randint(23, 140)
         else:
             age = randint(6, 120)
     else:
