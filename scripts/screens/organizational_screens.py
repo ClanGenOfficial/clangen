@@ -361,7 +361,7 @@ class SettingsScreen(Screens):
                 if platform.system() == 'Darwin':
                     subprocess.call(["open", "-R", get_data_dir()])
                 elif platform.system() == 'Windows':
-                    os.startfile(get_data_dir())
+                    os.startfile(get_data_dir())  # pylint: disable=E1101
                 elif platform.system() == 'Linux':
                     subprocess.Popen(['xdg-open', get_data_dir()])
                 return
