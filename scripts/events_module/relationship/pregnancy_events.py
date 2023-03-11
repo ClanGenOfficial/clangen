@@ -321,7 +321,7 @@ class Pregnancy_Events():
             if cat.status == 'leader':
                 clan.leader_lives -= 1
                 cat.die()
-                cat.died_by.append(f" died shortly after kitting")
+                cat.died_by.append(f" died shortly after kitting.")
             else:
                 cat.die()
                 cat.died_by.append(f"{cat.name} died while kitting.")
