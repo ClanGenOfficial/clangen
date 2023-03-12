@@ -157,8 +157,136 @@ class Group_Interaction():
         else:
             self.general_reaction = {}
 
+
 # ---------------------------------------------------------------------------- #
-#                   build master dictionary for interactions                   #
+#                some useful functions, related to interactions                #
+# ---------------------------------------------------------------------------- #
+
+def rel_fulfill_rel_conditions(relationship, constraint) -> bool:
+    """Check if the relationship fulfills the interaction relationship constraints."""
+    # if the constraints are not existing, they are considered to be fulfilled
+    if not constraint:
+        return True
+    if len(constraint) == 0:
+        return True
+            
+    if "siblings" in constraint and not relationship.cat_from.is_sibling(relationship.cat_to):
+        return False
+
+    if "mates" in constraint and not relationship.mates:
+        return False
+
+    if "not_mates" in constraint and relationship.mates:
+        return False
+
+    if "parent/child" in constraint and not relationship.cat_from.is_parent(relationship.cat_to):
+        return False
+
+    if "child/parent" in constraint and not relationship.cat_to.is_parent(relationship.cat_from):
+        return False
+
+    value_types = ["romantic", "platonic", "dislike", "admiration", "comfortable", "jealousy", "trust"]
+    for v_type in value_types:
+        tags = list(filter(lambda constr: v_type in constr, constraint))
+        if len(tags) < 1:
+            continue
+        threshold = 0
+        lower_than = False
+        # try to extract the value/threshold from the text
+        try:
+            splitted = tags[0].split('_')
+            threshold = int(splitted[1])
+            if len(splitted) > 3:
+                lower_than = True
+        except:
+            print(f"ERROR: interaction {interaction.id} with the relationship constraint for the value {v_type} follows not the formatting guidelines.")
+            break
+
+        if threshold > 100:
+            print(f"ERROR: interaction {interaction.id} has a relationship constraints for the value {v_type}, which is higher than the max value of a relationship.")
+            break
+
+        if threshold <= 0:
+            print(f"ERROR: patrol {interaction.id} has a relationship constraints for the value {v_type}, which is lower than the min value of a relationship or 0.")
+            break
+
+        threshold_fulfilled = False
+        if v_type == "romantic":
+            if not lower_than and relationship.romantic_love >= threshold:
+                threshold_fulfilled = True
+            elif lower_than and relationship.romantic_love <= threshold:
+                threshold_fulfilled = True
+        if v_type == "platonic":
+            if not lower_than and relationship.platonic_like >= threshold:
+                threshold_fulfilled = True
+            elif lower_than and relationship.platonic_like <= threshold:
+                threshold_fulfilled = True
+        if v_type == "dislike":
+            if not lower_than and relationship.dislike >= threshold:
+                threshold_fulfilled = True
+            elif lower_than and relationship.dislike <= threshold:
+                threshold_fulfilled = True
+        if v_type == "comfortable":
+            if not lower_than and relationship.comfortable >= threshold:
+                threshold_fulfilled = True
+            elif lower_than and relationship.comfortable <= threshold:
+                threshold_fulfilled = True
+        if v_type == "jealousy":
+            if not lower_than and relationship.jealousy >= threshold:
+                threshold_fulfilled = True
+            elif lower_than and relationship.jealousy <= threshold:
+                threshold_fulfilled = True
+        if v_type == "trust":
+            if not lower_than and relationship.trust >= threshold:
+                threshold_fulfilled = True
+            elif lower_than and relationship.trust <= threshold:
+                threshold_fulfilled = True
+
+        if not threshold_fulfilled:
+            return False
+
+    return True
+
+
+def cats_fulfill_single_interaction_conditions(main_cat, random_cat, interaction) -> bool:
+    """Check if the two cats fulfills the interaction constraints."""
+    if len(interaction.main_status_constraint) >= 1:
+        if main_cat.status not in interaction.main_status_constraint:
+            return False
+
+    if len(interaction.random_status_constraint) >= 1:
+        if random_cat.status not in interaction.random_status_constraint:
+            return False
+
+    if len(interaction.main_trait_constraint) >= 1:
+        if main_cat.trait not in interaction.main_trait_constraint:
+            return False
+
+    if len(interaction.random_trait_constraint) >= 1:
+        if random_cat.trait not in interaction.random_trait_constraint:
+            return False
+
+    if len(interaction.main_skill_constraint) >= 1:
+        if main_cat.skill not in interaction.main_skill_constraint:
+            return False
+
+    if len(interaction.random_skill_constraint) >= 1:
+        if random_cat.skill not in interaction.random_skill_constraint:
+            return False
+
+    if len(interaction.backstory_constraint) >= 1:
+        if "m_c" in interaction.backstory_constraint:
+            if main_cat.backstory not in interaction.backstory_constraint["m_c"]:
+                return False
+        if "r_c" in interaction.backstory_constraint:
+            if random_cat.backstory not in interaction.backstory_constraint["r_c"]:
+                return False
+
+    return True
+
+
+# ---------------------------------------------------------------------------- #
+#                            BUILD MASTER DICTIONARY                           #
 # ---------------------------------------------------------------------------- #
 
 def create_interaction(inter_list) -> list:

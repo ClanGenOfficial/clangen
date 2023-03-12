@@ -9,7 +9,7 @@ from copy import deepcopy
 from scripts.utility import change_relationship_values
 from scripts.cat.cats import Cat
 from scripts.event_class import Single_Event
-from scripts.cat_relations.interaction import create_group_interaction, Group_Interaction
+from scripts.cat_relations.interaction import create_group_interaction, Group_Interaction, rel_fulfill_rel_conditions
 from scripts.game_structure.game_essentials import game
 
 class Group_Events():
@@ -135,6 +135,10 @@ class Group_Events():
             if len(interact.skill_constraint) >= 1 and "m_c" in interact.skill_constraint:
                 if main_cat.skill not in interact.skill_constraint["m_c"]:
                     continue
+            
+            if len(interact.backstory_constraint) >= 1 and "m_c" in interact.backstory_constraint:
+                if main_cat.backstory not in interact.backstory_constraint["m_c"]:
+                    continue
 
             filtered_interactions.append(interact)
         return filtered_interactions
@@ -196,6 +200,18 @@ class Group_Events():
                     continue
                 relevant_cat = Cat.all_cats[self.abbreviations_cat_id[abbr]]
                 if relevant_cat.trait not in value:
+                    all_fulfilled = False
+            if not all_fulfilled:
+                continue
+
+            # check if all cats fulfill the backstory constraints
+            all_fulfilled = True
+            for abbr, value in interact.backstory_constraint.items():
+                # main cat is already filtered
+                if abbr == "m_c":
+                    continue
+                relevant_cat = Cat.all_cats[self.abbreviations_cat_id[abbr]]
+                if relevant_cat.backstory not in value:
                     all_fulfilled = False
             if not all_fulfilled:
                 continue
@@ -327,7 +343,7 @@ class Group_Events():
         """Check if the interaction is allowed with the current chosen cats."""
         fulfilled_list = []
 
-        for name, dictionary in interaction.relationship_constraint.items():
+        for name, rel_constraint in interaction.relationship_constraint.items():
             abbre_from = name.split('_to_')[0]
             abbre_to = name.split('_to_')[1]
 
@@ -335,85 +351,14 @@ class Group_Events():
             cat_to_id = self.abbreviations_cat_id[abbre_to]
             cat_from = Cat.all_cats[cat_from_id]
             cat_to = Cat.all_cats[cat_to_id]
+
+            if cat_to_id not in cat_from.relationships:
+                print(f"ERROR: there is no relationship from {cat_from.name} to {cat_to.name}")
+                continue
+
             relationship = cat_from.relationships[cat_to_id]
-
-            if "siblings" in dictionary and not cat_from.is_sibling(cat_to):
-                continue
-
-            if "mates" in dictionary and not relationship.mates:
-                continue
-
-            if "not_mates" in dictionary and relationship.mates:
-                continue
-
-            if "parent/child" in dictionary and not cat_from.is_parent(cat_to):
-                continue
-
-            if "child/parent" in dictionary and not cat_to.is_parent(cat_from):
-                continue
-
-            value_types = ["romantic", "platonic", "dislike", "admiration", "comfortable", "jealousy", "trust"]
-            fulfilled = True
-            for v_type in value_types:
-                tags = list(filter(lambda constr: v_type in constr, dictionary))
-                if len(tags) < 1:
-                    continue
-                threshold = 0
-                lower_than = False
-                # try to extract the value/threshold from the text
-                try:
-                    splitted = tags[0].split('_')
-                    threshold = int(splitted[1])
-                    if len(splitted) > 3:
-                        lower_than = True
-                except:
-                    print(f"ERROR: interaction {interaction.id} with the relationship constraint for the value {v_type} follows not the formatting guidelines.")
-                    break
-
-                if threshold > 100:
-                    print(f"ERROR: interaction {interaction.id} has a relationship constraints for the value {v_type}, which is higher than the max value of a relationship.")
-                    break
-
-                if threshold <= 0:
-                    print(f"ERROR: patrol {interaction.id} has a relationship constraints for the value {v_type}, which is lower than the min value of a relationship or 0.")
-                    break
-
-                threshold_fulfilled = False
-                if v_type == "romantic":
-                    if not lower_than and relationship.romantic_love >= threshold:
-                        threshold_fulfilled = True
-                    elif lower_than and relationship.romantic_love <= threshold:
-                        threshold_fulfilled = True
-                if v_type == "platonic":
-                    if not lower_than and relationship.platonic_like >= threshold:
-                        threshold_fulfilled = True
-                    elif lower_than and relationship.platonic_like <= threshold:
-                        threshold_fulfilled = True
-                if v_type == "dislike":
-                    if not lower_than and relationship.dislike >= threshold:
-                        threshold_fulfilled = True
-                    elif lower_than and relationship.dislike <= threshold:
-                        threshold_fulfilled = True
-                if v_type == "comfortable":
-                    if not lower_than and relationship.comfortable >= threshold:
-                        threshold_fulfilled = True
-                    elif lower_than and relationship.comfortable <= threshold:
-                        threshold_fulfilled = True
-                if v_type == "jealousy":
-                    if not lower_than and relationship.jealousy >= threshold:
-                        threshold_fulfilled = True
-                    elif lower_than and relationship.jealousy <= threshold:
-                        threshold_fulfilled = True
-                if v_type == "trust":
-                    if not lower_than and relationship.trust >= threshold:
-                        threshold_fulfilled = True
-                    elif lower_than and relationship.trust <= threshold:
-                        threshold_fulfilled = True
-
-                if not threshold_fulfilled:
-                    fulfilled = False
-                    continue
-
+            
+            fulfilled = rel_fulfill_rel_conditions(relationship, rel_constraint)
             fulfilled_list.append(fulfilled)
 
         return all(fulfilled_list)

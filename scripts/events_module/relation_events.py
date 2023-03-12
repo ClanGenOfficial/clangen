@@ -285,6 +285,13 @@ class Relation_Events():
         for inter_cat in cat_list:
             cat_from = main_cat
             cat_to = inter_cat
+
+            if inter_cat.ID == main_cat.ID:
+                continue
+            if cat_to.ID not in cat_from.relationships:
+                print(f"ERROR: there is no relationship from {cat_from.name} to {cat_to.name}")
+                continue
+
             relationship = cat_from.relationships[cat_to.ID]
 
             if "siblings" in constraint and not cat_from.is_sibling(cat_to):

@@ -4,7 +4,13 @@ from scripts.event_class import Single_Event
 
 from scripts.utility import get_personality_compatibility
 from scripts.game_structure.game_essentials import game
-from scripts.cat_relations.interaction import Single_Interaction, NEUTRAL_INTERACTIONS, INTERACTION_MASTER_DICT
+from scripts.cat_relations.interaction import (
+    Single_Interaction, 
+    NEUTRAL_INTERACTIONS, 
+    INTERACTION_MASTER_DICT,
+    rel_fulfill_rel_conditions,
+    cats_fulfill_single_interaction_conditions,
+)
 
 
 # ---------------------------------------------------------------------------- #
@@ -142,9 +148,9 @@ class Relationship():
 
         interaction_str = interaction_str + effect
         self.log.append(interaction_str)
-        #game.cur_events_list.append(Single_Event(
-        #    interaction_str, ["relation", "interaction"], [self.cat_to.ID, self.cat_from.ID]
-        #))
+        game.cur_events_list.append(Single_Event(
+            interaction_str, ["relation", "interaction"], [self.cat_to.ID, self.cat_from.ID]
+        ))
 
     def get_amount(self, in_de_crease: str, intensity: str) -> int:
         """Calculates the amount of such an interaction.
@@ -373,114 +379,15 @@ class Relationship():
             if interact.intensity != intensity:
                 continue
 
-            if len(interact.main_status_constraint) >= 1:
-                if self.cat_from.status not in interact.main_status_constraint:
-                    continue
-
-            if len(interact.random_status_constraint) >= 1:
-                if self.cat_to.status not in interact.random_status_constraint:
-                    continue
-
-            if len(interact.main_trait_constraint) >= 1:
-                if self.cat_from.trait not in interact.main_trait_constraint:
-                    continue
-
-            if len(interact.random_trait_constraint) >= 1:
-                if self.cat_to.trait not in interact.random_trait_constraint:
-                    continue
-
-            if len(interact.main_skill_constraint) >= 1:
-                if self.cat_from.skill not in interact.main_skill_constraint:
-                    continue
-
-            if len(interact.random_skill_constraint) >= 1:
-                if self.cat_to.skill not in interact.random_skill_constraint:
-                    continue
-
-            # if there is no constraint, skip other checks
-            if len(interact.relationship_constraint) == 0:
-                filtered.append(interact)
+            cats_fulfill_conditions = cats_fulfill_single_interaction_conditions(self.cat_from, self.cat_to, interact)
+            if not cats_fulfill_conditions:
                 continue
 
-            if "siblings" in interact.relationship_constraint and not self.cat_from.is_sibling(self.cat_to):
+            relationship_fulfill_conditions = rel_fulfill_rel_conditions(self, interact.relationship_constraint)
+            if not relationship_fulfill_conditions:
                 continue
 
-            if "mates" in interact.relationship_constraint and not self.mates:
-                continue
-
-            if "not_mates" in interact.relationship_constraint and self.mates:
-                continue
-
-            if "parent/child" in interact.relationship_constraint and not self.cat_from.is_parent(self.cat_to):
-                continue
-
-            if "child/parent" in interact.relationship_constraint and not self.cat_to.is_parent(self.cat_from):
-                continue
-
-            value_types = ["romantic", "platonic", "dislike", "admiration", "comfortable", "jealousy", "trust"]
-            fulfilled = True
-            for v_type in value_types:
-                tags = list(filter(lambda constr: v_type in constr, interact.relationship_constraint))
-                if len(tags) < 1:
-                    continue
-                threshold = 0
-                lower_than = False
-                # try to extract the value/threshold from the text
-                try:
-                    splitted = tags[0].split('_')
-                    threshold = int(splitted[1])
-                    if len(splitted) > 3:
-                        lower_than = True
-                except:
-                    print(f"ERROR: interaction {interact.id} with the relationship constraint for the value {v_type} follows not the formatting guidelines.")
-                    break
-
-                if threshold > 100:
-                    print(f"ERROR: interaction {interact.id} has a relationship constraints for the value {v_type}, which is higher than the max value of a relationship.")
-                    break
-
-                if threshold <= 0:
-                    print(f"ERROR: patrol {interact.id} has a relationship constraints for the value {v_type}, which is lower than the min value of a relationship or 0.")
-                    break
-
-                threshold_fulfilled = False
-                if v_type == "romantic":
-                    if not lower_than and self.romantic_love >= threshold:
-                        threshold_fulfilled = True
-                    elif lower_than and self.romantic_love <= threshold:
-                        threshold_fulfilled = True
-                if v_type == "platonic":
-                    if not lower_than and self.platonic_like >= threshold:
-                        threshold_fulfilled = True
-                    elif lower_than and self.platonic_like <= threshold:
-                        threshold_fulfilled = True
-                if v_type == "dislike":
-                    if not lower_than and self.dislike >= threshold:
-                        threshold_fulfilled = True
-                    elif lower_than and self.dislike <= threshold:
-                        threshold_fulfilled = True
-                if v_type == "comfortable":
-                    if not lower_than and self.comfortable >= threshold:
-                        threshold_fulfilled = True
-                    elif lower_than and self.comfortable <= threshold:
-                        threshold_fulfilled = True
-                if v_type == "jealousy":
-                    if not lower_than and self.jealousy >= threshold:
-                        threshold_fulfilled = True
-                    elif lower_than and self.jealousy <= threshold:
-                        threshold_fulfilled = True
-                if v_type == "trust":
-                    if not lower_than and self.trust >= threshold:
-                        threshold_fulfilled = True
-                    elif lower_than and self.trust <= threshold:
-                        threshold_fulfilled = True
-
-                if not threshold_fulfilled:
-                    fulfilled = False
-                    continue
-
-            if fulfilled:
-                filtered.append(interact)
+            filtered.append(interact)
 
         return filtered
 
