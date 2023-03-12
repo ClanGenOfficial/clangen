@@ -11,6 +11,8 @@ from scripts.utility import (get_highest_romantic_relation, event_text_adjust, g
 from scripts.game_structure.game_essentials import game
 from scripts.event_class import Single_Event
 from scripts.cat.cats import Cat
+from scripts.cat_relations.relationship import INTERACTION_MASTER_DICT
+
 
 class Mate_Events():
     """All events which are related to mate's such as becoming mates and breakups."""
@@ -18,7 +20,6 @@ class Mate_Events():
     def __init__(self) -> None:
         self.had_one_event = False
         pass
-
 
     def handle_new_mates(self, relationship, cat_from, cat_to):
         """More in depth check if the cats will become mates."""
@@ -247,3 +248,82 @@ resource_directory = "resources/dicts/relationship_events/"
 MATE_DICTS = None
 with open(f"{resource_directory}become_mates.json", 'r') as read_file:
     MATE_DICTS = ujson.loads(read_file.read())
+
+# ---------------------------------------------------------------------------- #
+#            build up dictionaries which can be used for moon events           #
+#         because there may be less romantic/mate relevant interactions,       #
+#        the dictionary will be ordered in only 'positive' and 'negative'      #
+# ---------------------------------------------------------------------------- #
+
+# ---------------------------------------------------------------------------- #
+#                                     MATE                                     #
+# ---------------------------------------------------------------------------- #
+
+# Use the overall master interaction dictionary and filter for mate tag
+MATE_RELEVANT_INTERACTIONS = {}
+for val_type, dictionary in INTERACTION_MASTER_DICT.items():
+    MATE_RELEVANT_INTERACTIONS[val_type] = {}
+    MATE_RELEVANT_INTERACTIONS[val_type]["increase"] = list(
+        filter(lambda inter: "mates" in inter.relationship_constraint and "not_mates" not in inter.relationship_constraint,
+            dictionary["increase"]
+        )
+    )
+    MATE_RELEVANT_INTERACTIONS[val_type]["decrease"] = list(
+        filter(lambda inter: "mates" in inter.relationship_constraint and "not_mates" not in inter.relationship_constraint,
+            dictionary["decrease"]
+        )
+    )
+
+# resort the first generated overview dictionary to only "positive" and "negative" interactions
+MATE_INTERACTIONS = {
+    "positive": [],
+    "negative": []
+}
+for val_type, dictionary in MATE_RELEVANT_INTERACTIONS.items():
+    if val_type in ["jealousy", "dislike"]:
+        MATE_INTERACTIONS["positive"].append(dictionary["decrease"])
+        MATE_INTERACTIONS["negative"].append(dictionary["increase"])
+    else:
+        MATE_INTERACTIONS["positive"].append(dictionary["increase"])
+        MATE_INTERACTIONS["negative"].append(dictionary["decrease"])
+
+# ---------------------------------------------------------------------------- #
+#                                   ROMANTIC                                   #
+# ---------------------------------------------------------------------------- #
+
+# Use the overall master interaction dictionary and filter for any interactions, which requires a certain amount of romantic
+ROMANTIC_RELEVANT_INTERACTIONS = {}
+for val_type, dictionary in INTERACTION_MASTER_DICT.items():
+    ROMANTIC_RELEVANT_INTERACTIONS[val_type] = {}
+
+    # if it's the romantic interaction type add all interactions
+    if val_type == "romantic":
+        MATE_RELEVANT_INTERACTIONS[val_type]["increase"] = dictionary["increase"]
+        MATE_RELEVANT_INTERACTIONS[val_type]["decrease"] = dictionary["decrease"]
+
+    increase = []
+    for interaction in dictionary["increase"]:
+        romantic = ["romantic" in tag for tag in interaction.relationship_constraint]
+        if any(romantic):
+            increase.append(interaction)
+    ROMANTIC_RELEVANT_INTERACTIONS[val_type]["increase"] = increase
+
+    decrease = []
+    for interaction in dictionary["decrease"]:
+        romantic = ["romantic" in tag for tag in interaction.relationship_constraint]
+        if any(romantic):
+            decrease.append(interaction)
+    ROMANTIC_RELEVANT_INTERACTIONS[val_type]["decrease"] = decrease
+
+# resort the first generated overview dictionary to only "positive" and "negative" interactions
+ROMANTIC_INTERACTIONS = {
+    "positive": [],
+    "negative": []
+}
+for val_type, dictionary in ROMANTIC_RELEVANT_INTERACTIONS.items():
+    if val_type in ["jealousy", "dislike"]:
+        ROMANTIC_INTERACTIONS["positive"].append(dictionary["decrease"])
+        ROMANTIC_INTERACTIONS["negative"].append(dictionary["increase"])
+    else:
+        ROMANTIC_INTERACTIONS["positive"].append(dictionary["increase"])
+        ROMANTIC_INTERACTIONS["negative"].append(dictionary["decrease"])
