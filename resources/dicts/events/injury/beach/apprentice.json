@@ -10,7 +10,7 @@
             "scar",
             "SIDE"
         ],
-        "event_text": "m_c couldn't help but try to show off by climbing the tallest tree they could find. Their plan backfired when they fell out of the tree.",
+        "event_text": "m_c couldn't help but try to show off by climbing the tallest tree {PRONOUN/m_c/subject} could find. {PRONOUN/m_c/poss} plan backfired when {PRONOUN/m_c/subject} {VERB/m_c/fell/falls} out of the tree.",
         "history_text": [
             "m_c was scarred after falling from a tree.",
             "m_c died from their wounds after falling from a tree.",
@@ -38,7 +38,7 @@
             "respect",
             "neg_dislike"
         ],
-        "event_text": "m_c went out of camp alone to practice swimming in the ocean, unfortunately their inexperience led to them being swept up by a riptide. r_c heard their cries and saved them, but m_c almost drowned.",
+        "event_text": "m_c went out of camp alone to practice swimming in the ocean, unfortunately {PRONOUN/m_c/poss} inexperience led to {PRONOUN/m_c/object} being swept up by a riptide. r_c heard {PRONOUN/m_c/poss} cries and saved {PRONOUN/m_c/object}, but m_c almost drowned.",
         "history_text": [
             null,
             "m_c died from watery lungs after nearly drowning in the ocean",
@@ -58,7 +58,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c's paw pads aren't used to all the salt water they've been traipsing around in since becoming an apprentice, they've become cracked and sore.",
+        "event_text": "m_c's paw pads aren't used to all the salt water {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been traipsing around in since becoming an apprentice, they've become cracked and sore.",
         "history_text": [
             null,
             null,
@@ -75,7 +75,7 @@
         "tags": [
             "Leaf-bare"
         ],
-        "event_text": "m_c was dashing around the apprentice rock when they slipped and fell into the high tide waters of the cave. They're alright, if a bit bruised and embarrassed.",
+        "event_text": "m_c was dashing around the apprentice rock when {PRONOUN/m_c/subject} slipped and fell into the high tide waters of the cave. {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} alright, if a bit bruised and embarrassed.",
         "history_text": [
             null,
             null,
@@ -94,7 +94,7 @@
             "Greenleaf",
             "Leaf-fall"
         ],
-        "event_text": "m_c was messing around in the tide pools of the camp clearing when their paw slipped and they fell in face first. Their pride is wounded, but otherwise they're only bruised.",
+        "event_text": "m_c was messing around in the tide pools of the camp clearing when {PRONOUN/m_c/poss} paw slipped and {PRONOUN/m_c/subject} fell in face first. {PRONOUN/m_c/poss} pride is wounded, but otherwise {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} only bruised.",
         "history_text": [
             null,
             null,
@@ -116,7 +116,7 @@
             "rc_to_mc",
             "respect"
         ],
-        "event_text": "m_c unwisely decided to go out swimming alone after r_c dared them to. They made it back, but ended up drenched and shivering violently in the cold air.",
+        "event_text": "m_c unwisely decided to go out swimming alone after r_c dared {PRONOUN/m_c/object} to. {PRONOUN/m_c/subject/CAP} made it back, but ended up drenched and shivering violently in the cold air.",
         "history_text": [
             null,
             "m_c died after swimming in freezing water.",
@@ -143,7 +143,7 @@
             "neg_platonic",
             "dislike"
         ],
-        "event_text": "m_c rarely pays attention when r_c talks about proper ocean safety and it shows when m_c gets thirsty on patrol and drinks salt water. They come back to camp severely dehydrated.",
+        "event_text": "m_c rarely pays attention when r_c talks about proper ocean safety and it shows when m_c gets thirsty on patrol and drinks salt water. {PRONOUN/m_c/subject/CAP} {VERB/come/comes} back to camp severely dehydrated.",
         "history_text": [
             null,
             "m_c died after drinking salt water and becoming dehydrated.",
