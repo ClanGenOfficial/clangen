@@ -15,7 +15,7 @@ from scripts.cat_relations.relationship import INTERACTION_MASTER_DICT
 
 
 class Mate_Events():
-    """All events which are related to mate's such as becoming mates and breakups."""
+    """All events which are related to mate's such as becoming mates and breakups, but also for possible mates and romantic interactions."""
     
     def __init__(self) -> None:
         self.had_one_event = False
