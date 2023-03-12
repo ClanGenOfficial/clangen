@@ -1612,9 +1612,8 @@ class Events():
         TODO: DOCS
         """
 
-        if cat.status != 'medicine cat':
-            if random.randint(1, 90) != 1:
-                return
+        if random.randint(1, 90) != 1:
+            return
 
         other_cat = random.choice(list(Cat.all_cats.values()))
         countdown = int(len(Cat.all_cats) / 3)
