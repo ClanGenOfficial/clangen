@@ -291,8 +291,8 @@ sprites = Sprites(50)
 
 for x in [
     'lineart','eyes', 'eyes2', 'eyesextra', 'eyes2extra', 'skin', 'skinextra', 'skin2', 'skin2extra', 'skin_sphynx', 'skinextra_sphynx',
-    'skin3', 'skin3extra', 'skin3_sphynx', 'skin3extra_sphynx', 'scars', 'scarsextra', 'scarsdark', 'scarsdarkextra', 'Newscars', 
-    'Newscarsextra', 'shaders', 'lineartdead', 'lineartdf', 'eyes_df', 'eyesextra_df', 'singleB', 'singleBextra', 
+    'skin3', 'skin3extra', 'skin3_sphynx', 'skin3extra_sphynx', 'skin4', 'skin4extra', 'scars', 'scarsextra', 'scarsdark', 
+    'scarsdarkextra', 'Newscars', 'Newscarsextra', 'shaders', 'lineartdead', 'lineartdf', 'eyes_df', 'eyesextra_df', 'singleB', 'singleBextra', 
     'singleR', 'singleRextra', 'singleWB', 'singleWBextra', 'shadersnewwhite', 'lightingnew',  'singleBl', 'singleBlextra', 'singlePu', 
     'singlePuextra', 'singleY', 'singleYextra', 'singleG', 'singleGextra', 'shadersnewwhite', 'lightingnew', 'fademask', 'fadestarclan', 'fadedarkforest'
 
@@ -2628,6 +2628,25 @@ sprites.make_group('skin', (3, 2), 'skinDARKBLUE')
 sprites.make_group('skin', (4, 2), 'skinBLUE')
 sprites.make_group('skin', (5, 2), 'skinLIGHTBLUE')
 sprites.make_group('skin3', (3, 2), 'skinXANADU')
+sprites.make_group('skin4', (0, 0), 'skinBLACKGILL')
+sprites.make_group('skin4', (1, 0), 'skinREDGILL')
+sprites.make_group('skin4', (2, 0), 'skinPINKGILL')
+sprites.make_group('skin4', (3, 0), 'skinDARKBROWNGILL')
+sprites.make_group('skin4', (4, 0), 'skinBROWNGILL')
+sprites.make_group('skin4', (5, 0), 'skinLIGHTBROWNGILL')
+sprites.make_group('skin4', (0, 1), 'skinDARKGILL')
+sprites.make_group('skin4', (1, 1), 'skinDARKGREYGILL')
+sprites.make_group('skin4', (2, 1), 'skinGREYGILL')
+sprites.make_group('skin4', (3, 1), 'skinDARKSALMONGILL')
+sprites.make_group('skin4', (4, 1), 'skinSALMONGILL')
+sprites.make_group('skin4', (5, 1), 'skinPEACHGILL')
+sprites.make_group('skin4', (0, 2), 'skinDARKMARBLEDGILL')
+sprites.make_group('skin4', (1, 2), 'skinMARBLEDGILL')
+sprites.make_group('skin4', (2, 2), 'skinLIGHTMARBLEDGILL')
+sprites.make_group('skin4', (3, 2), 'skinDARKBLUEGILL')
+sprites.make_group('skin4', (4, 2), 'skinBLUEGILL')
+sprites.make_group('skin4', (5, 2), 'skinLIGHTBLUEGILL')
+sprites.make_group('skin3', (4, 2), 'skinXANADUGILL')
 
 sprites.make_group('skinparalyzed', (0, 0),
                    'skinparalyzedPINK',
@@ -2661,6 +2680,25 @@ sprites.make_group('skinextra', (3, 2), 'skinextraDARKBLUE', sprites_y=2)
 sprites.make_group('skinextra', (4, 2), 'skinextraBLUE', sprites_y=2)
 sprites.make_group('skinextra', (5, 2), 'skinextraLIGHTBLUE', sprites_y=2)
 sprites.make_group('skin3extra', (3, 2), 'skinextraXANADU', sprites_y=2)
+sprites.make_group('skinextra', (0, 0), 'skinextraBLACKGILL', sprites_y=2)
+sprites.make_group('skinextra', (1, 0), 'skinextraREDGILL', sprites_y=2)
+sprites.make_group('skin4extra', (2, 0), 'skinextraPINKGILL', sprites_y=2)
+sprites.make_group('skin4extra', (3, 0), 'skinextraDARKBROWNGILL', sprites_y=2)
+sprites.make_group('skin4extra', (4, 0), 'skinextraBROWNGILL', sprites_y=2)
+sprites.make_group('skin4extra', (5, 0), 'skinextraLIGHTBROWNGILL', sprites_y=2)
+sprites.make_group('skin4extra', (0, 1), 'skinextraDARKGILL', sprites_y=2)
+sprites.make_group('skin4extra', (1, 1), 'skinextraDARKGREYGILL', sprites_y=2)
+sprites.make_group('skin4extra', (2, 1), 'skinextraGREYGILL', sprites_y=2)
+sprites.make_group('skin4extra', (3, 1), 'skinextraDARKSALMONGILL', sprites_y=2)
+sprites.make_group('skin4extra', (4, 1), 'skinextraSALMONGILL', sprites_y=2)
+sprites.make_group('skin4extra', (5, 1), 'skinextraPEACHGILL', sprites_y=2)
+sprites.make_group('skin4extra', (0, 2), 'skinextraDARKMARBLEDGILL', sprites_y=2)
+sprites.make_group('skin4extra', (1, 2), 'skinextraMARBLEDGILL', sprites_y=2)
+sprites.make_group('skin4extra', (2, 2), 'skinextraLIGHTMARBLEDGILL', sprites_y=2)
+sprites.make_group('skin4extra', (3, 2), 'skinextraDARKBLUEGILL', sprites_y=2)
+sprites.make_group('skin4extra', (4, 2), 'skinextraBLUEGILL', sprites_y=2)
+sprites.make_group('skin4extra', (5, 2), 'skinextraLIGHTBLUEGILL', sprites_y=2)
+sprites.make_group('skin3extra', (4, 2), 'skinextraXANADUGILL', sprites_y=2)
 
 #SKINS MAGIC
 sprites.make_group('skin3', (0, 0), 'skinFIRE')
