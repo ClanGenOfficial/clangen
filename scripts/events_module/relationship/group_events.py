@@ -9,9 +9,8 @@ from copy import deepcopy
 from scripts.utility import change_relationship_values
 from scripts.cat.cats import Cat
 from scripts.event_class import Single_Event
-from scripts.cat_relations.relationship import create_group_interaction
+from scripts.cat_relations.interaction import create_group_interaction, Group_Interaction
 from scripts.game_structure.game_essentials import game
-from scripts.cat_relations.relationship import Group_Interaction
 
 class Group_Events():
 
