@@ -1,7 +1,7 @@
 {
     "born without a leg": [
-        "m_c mewls, snuggling up to their parent as they anxiously await the verdict, but r_c is confident that m_c's lack of a leg won't slow them down, and the new family is left to bond, relieved and purring.",
-        "It's immediately clear that m_c might take longer to find their feet - they've been born without one of the usual set."
+        "m_c mewls, snuggling up to {PRONOUN/m_c/poss} parent as {PRONOUN/m_c/subject} anxiously {VERB/m_c/await/awaits} the verdict, but r_c is confident that m_c's lack of a leg won't slow {PRONOUN/m_c/object} down, and the new family is left to bond, relieved and purring.",
+        "It's immediately clear that m_c might take longer to find {PRONOUN/m_c/poss} feet - {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} been born without one of the usual set."
 
     ],
     "weak leg": [
@@ -10,7 +10,7 @@
 
     ],
     "twisted leg": [
-        "r_c examines m_c as their parent holds them by the scruff, checking on a leg that is becoming twisted as the kit grows.",
+        "r_c examines m_c as {PRONOUN/m_c/poss} parent holds {PRONOUN/m_c/object} by the scruff, checking on a leg that is becoming twisted as the kit grows.",
         "m_c takes a bad fall while climbing something they shouldn't, and tries to hide the injury afterwards. By the time it's treated, the leg has grown twisted."
 
     ],
