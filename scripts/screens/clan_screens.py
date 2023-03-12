@@ -1569,7 +1569,7 @@ class MedDenScreen(Screens):
                 (1450, 50), (68, 68))),
                 "",
                 object_id="#help_button", manager=MANAGER,
-                tool_tip_text="Your medicine cats will gather herbs over each timeskip as well during any patrols you "
+                tool_tip_text="Your medicine cats will gather herbs over each timeskip and during any patrols you "
                               "send them on. You can see what was gathered in the Log below! Your medicine cats will"
                               " give these to any hurt or sick cats that need them, helping those cats to heal quicker."
                               "<br><br>"
