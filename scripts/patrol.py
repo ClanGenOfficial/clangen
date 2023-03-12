@@ -756,31 +756,23 @@ class Patrol():
                     if success_text[1]:
                         outcome = 1
 
-            # this is specifically for new cat events that can come with kits
-            litter_choice = False
-            if self.patrol_event.tags is not None:
-                if "kits" in self.patrol_event.tags:
-                    litter_choice = choice([True, False])
-                    if litter_choice:
-                        outcome = 1
-                    else:
-                        outcome = 0
-
             self.handle_exp_gain()
 
             if not antagonize:
-                self.add_new_cats(litter_choice=litter_choice)
+                self.add_new_cats(outcome)
             if self.patrol_event.tags is not None:
                 if "other_clan" in self.patrol_event.tags:
                     if antagonize:
                         self.handle_clan_relations(difference=int(-2), antagonize=True, outcome=outcome)
                     else:
                         self.handle_clan_relations(difference=int(1), antagonize=False, outcome=outcome)
-                elif "new_cat" in self.patrol_event.tags:
-                    if antagonize:
-                        self.handle_reputation(-10)
-                    else:
-                        self.handle_reputation(10)
+                for tag in self.patrol_event.tags:
+                    if "new_cat" in tag:
+                        if antagonize:
+                            self.handle_reputation(-10)
+                        else:
+                            self.handle_reputation(10)
+                        break
 
             self.handle_mentor_app_pairing()
             self.handle_relationships()
@@ -890,13 +882,27 @@ class Patrol():
         self.results_text.clear()
         return text
 
-    def add_new_cats(self, litter_choice):
+    def add_new_cats(self, outcome):
         """
         handles new_cat tags and passing info to the create_new_cats function
-        :param litter_choice: set True to indicate that a cat should also come with a litter
-        (except for new_cat_queen, new_cat_kit, and new_cat_kits)
+        :param outcome: the outcome index
         """
         tags = self.patrol_event.tags
+        print('new cat creation started')
+        # check for ignore outcome tag
+        if f"no_new_cat{outcome}" in tags:
+            return
+
+        # find the new cat tag and split to get attributes - else return if no tag found
+        attribute_list = []
+        for tag in tags:
+            print(tag)
+            if "new_cat" in tag and ("no_new_cat" and "new_cat_injury") not in tag:
+                attribute_list = tag.split("_")
+                print('found tag, attributes:', attribute_list)
+                break
+        if not attribute_list:
+            return
 
         # setting the defaults
         new_name = choice([True, False])
@@ -919,96 +925,88 @@ class Patrol():
         # figure out what type of cat they are and set default backstories - this can be overwritten if need be
         loner = False
         kittypet = False
-        if "other_clan" in tags:
-            other_clan = self.other_clan
-        else:
-            other_clan = None
+        other_clan = None
+        cat_type = None
 
-        cat_type = choice(['kittypet', 'loner', 'other_clan'])
-        if cat_type == 'kittypet':
+        if ("kittypet" or "loner" or "otherclan") not in attribute_list:
+            cat_type = choice(['kittypet', 'loner', 'other_clan'])
+        if cat_type == 'kittypet' or "kittypet" in attribute_list:
             kittypet = True
-        elif cat_type == 'loner':
-            loner = True
-        elif cat_type == 'other_clan':
-            other_clan = self.other_clan
-        if "kittypet" in self.patrol_event.patrol_id or kittypet:  # new kittypet
+            new_name = choice([True, False])
             backstory = ['kittypet1', 'kittypet2', 'kittypet3', 'refugee3', 'tragedy_survivor3']
-        elif loner:  # new loner
+        elif cat_type == 'loner' or "loner" in attribute_list:
+            loner = True
+            new_name = choice([True, False])
             backstory = ['loner1', 'loner2', 'rogue1', 'rogue2', 'refugee2', 'tragedy_survivor4',
                          'refugee4', 'tragedy_survivor2']
-        else:  # new other_clan cat
+        else:
+            other_clan = self.other_clan
+            # failsafe in case self.other_clan is None for some reason
             backstory = ['ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
                          'tragedy_survivor']
+            if not other_clan:
+                loner = True
+                new_name = choice([True, False])
+                backstory = ['loner1', 'loner2', 'rogue1', 'rogue2', 'refugee2', 'tragedy_survivor4',
+                             'refugee4', 'tragedy_survivor2']
 
-        # ensuring the patrol should give a new cat
-        if "new_cat" not in tags:
-            return
-
-        # single abandoned kitten - since it's only one cat, it's treated differently from the litters
-        if "new_cat_kit" in tags:  # new kit
-            kittypet = choice([True, False])
-            new_name = True
+        # handing out ranks
+        if "kitten" in attribute_list:
             kit = True
+            age = randint(1, 5)
             backstory = ['abandoned2', 'abandoned1', 'abandoned3']
-
-        # new cat
-        elif "new_cat_adult" in tags:
-            status = 'warrior'
-
-            if litter_choice:  # have them come with a litter
-                litter = True
-                kit_backstory = ['outsider_roots2']
-
-        # new med cat
-        elif "new_cat_med" in tags:  # new med cat
-            loner = True
-            new_name = choice([True, False])
-            backstory = ['medicine_cat', 'disgraced', 'loner1', 'loner2',
-                         'wandering_healer1', 'wandering_healer2']
+        elif "apprentice" in attribute_list:
+            status = "apprentice"
+        elif "warrior" in attribute_list:
+            status = "warrior"
+        elif "medcat" in attribute_list:
             status = 'medicine cat'
+        elif "elder" in attribute_list:
+            status = "elder"
 
-            if litter_choice:  # have them come with a litter
-                litter = True
-                kit_backstory = ['outsider_roots2']
+        # handing out ages
+        if "newborn" in attribute_list:
+            age = 0
+        elif "adolescent" in attribute_list:
+            age = randint(6, 11)
+        elif "youngadult" in attribute_list:
+            age = randint(12, 47)
+        elif "adult" in attribute_list:
+            age = randint(48, 95)
+        elif "senioradult" in attribute_list:
+            age = randint(96, 119)
+        elif "elder" in attribute_list:
+            age = randint(120, 300)
+        elif not status:
+            age = randint(12, 115)
 
-        # living queen with kits
-        elif "new_cat_queen" in tags:
-            new_name = choice([True, False])
-            status = 'warrior'
-            thought = "Feels relieved that they've found a safe place to stay"
+        # hand out genders
+        if "male" in attribute_list:
+            gender = 'male'
+        elif 'female' in attribute_list:
+            gender = 'female'
 
-            if "new_cat_kits" in tags:  # if they come with kits
-                litter = True
-                if "new_cat_newborn" in tags:  # create newborns
-                    kit_backstory = ['outsider_roots2']
-                    kit_age = 0
-                else:
-                    kit_age = randint(1, 5)  # create older kittens
-                    kit_backstory = ['outsider_roots2']
-
-        # dead queen with kits
-        elif "new_cat_kits" in tags:
-            status = 'warrior'
-            outside = True
+        # hand out death and outside
+        if "dead" in attribute_list:
             alive = False
             thought = "Is glad that their kits are safe"
 
-            if "new_cat_newborn" in tags:  # generate with newborns
+        if "outside" in attribute_list:
+            outside = True
+
+        # give a litter if the outcome calls for it
+        if f"litter{outcome}" in attribute_list:
+            litter = True
+            # make sure kittens get correct backstory
+            if "dead" in attribute_list:
                 kit_backstory = ['orphaned', 'orphaned2']
+            else:
+                kit_backstory = ['outsider_roots2']
+            # make sure kittens get right age
+            if "litternewborn" in attribute_list:
                 kit_age = 0
-                litter = True
-            else:  # generate with older kittens
-                litter = True
+            else:
                 kit_age = randint(1, 5)
-                kit_backstory = ['orphaned', 'orphaned2']
-
-        # new apprentice
-        elif "new_cat_apprentice" in tags:
-            status = 'apprentice'
-
-        # new elder
-        elif "new_cat_elder" in tags:
-            status = 'elder'
 
         # if none of these tags are present, then a completely random cat is made
 
@@ -1065,7 +1063,7 @@ class Patrol():
                     new_cat.get_permanent_condition(new_condition)
 
         # we create any needed litters
-        if litter or litter_choice:
+        if litter:
             created_cats.extend(create_new_cat(Cat,
                                                new_name=new_name,
                                                loner=loner,
@@ -1079,11 +1077,15 @@ class Patrol():
                                                gender=gender,
                                                thought=thought,
                                                alive=True,
-                                               outside=outside
+                                               outside=False
                                                ))
             # giving the mother the necessary condition
             if game.clan.game_mode != 'classic' and kit_age <= 2:
-                created_cats[0].get_injured("recovering from birth")
+                if not game.settings["no gendered breeding"]:
+                    if created_cats[0].gender == 'female':
+                        created_cats[0].get_injured("recovering from birth")
+                else:
+                    created_cats[0].get_injured("recovering from birth")
 
             # make sure the kits are given to the parent and are given relationships with each other
             if len(created_cats) > 1:
