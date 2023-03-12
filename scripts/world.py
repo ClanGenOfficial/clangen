@@ -24,7 +24,7 @@ class World:
         return self.height_map[x][y]
     
 def save_map(mapinfo, clanname):
-    with open(f'saves/{clanname}map.csv', 'w') as csvfile:
+    with open(get_save_dir() + f'/{clanname}map.csv', 'w') as csvfile:
         writer = csv.writer(csvfile)
         for key in mapinfo:
             writer.writerow(mapinfo[key])
