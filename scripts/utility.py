@@ -481,28 +481,35 @@ def event_text_adjust(Cat,
         mate = Cat.all_cats.get(cat.mate).name
 
     adjust_text = text
-    if keep_m_c is False:
-        adjust_text = adjust_text.replace("m_c", str(name).strip())
-    if other_name:
-        adjust_text = adjust_text.replace("r_c", str(other_name))
+
+    cat_dict = {}
+
+    if not keep_m_c and cat:
+        cat_dict["m_c"] = (str(cat.name), choice(cat.pronouns))
+        cat_dict["p_l"] = cat_dict["m_c"]
+    if other_cat:
+        cat_dict["r_c"] = (str(other_cat.name), choice(other_cat.pronouns))
     if other_clan_name:
-        adjust_text = adjust_text.replace("o_c", str(other_clan_name))
-    if mate:
-        adjust_text = adjust_text.replace("c_m", str(mate))
+        cat_dict["o_c"] = (other_clan_name, None)
+    if cat.mate:
+        mate = Cat.fetch_cat(cat.mate)
+        cat_dict["c_m"] = (str(mate.name), choice(mate.pronouns))
     if new_cat:
-        adjust_text = adjust_text.replace("n_c_pre", str(new_cat.name.prefix))
-        adjust_text = adjust_text.replace("n_c", str(new_cat.name))
-    if "acc_plural" in adjust_text:
-        adjust_text = adjust_text.replace("acc_plural", str(plural_acc_names(cat.accessory, True, False)))
-    if "acc_singular" in adjust_text:
-        adjust_text = adjust_text.replace("acc_singular", str(plural_acc_names(cat.accessory, False, True)))
+        cat_dict["n_c_pre"] = (str(new_cat.name.prefix), None)
+        cat_dict["n_c"] = (str(new_cat.name), choice(new_cat.pronouns))
+
+    if cat.accessory:
+        cat_dict["acc_plural"] = (str(plural_acc_names(cat.accessory, True, False)), None)
+        cat_dict["acc_singular"] = (str(plural_acc_names(cat.accessory, False, True)), None)
 
     if clan is not None:
         _tmp = clan
     else:
         _tmp = game.clan
-    adjust_text = adjust_text.replace("c_n", str(_tmp.name) + "Clan")
-    adjust_text = adjust_text.replace("p_l", name)
+
+    cat_dict["c_n"] = (str(_tmp.name) + "Clan", None)
+
+    adjust_text = process_text(adjust_text, cat_dict)
 
     return adjust_text
 
