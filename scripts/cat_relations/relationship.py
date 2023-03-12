@@ -383,7 +383,7 @@ class Relationship():
             if not cats_fulfill_conditions:
                 continue
 
-            relationship_fulfill_conditions = rel_fulfill_rel_conditions(self, interact.relationship_constraint)
+            relationship_fulfill_conditions = rel_fulfill_rel_conditions(self, interact.relationship_constraint, interact.id)
             if not relationship_fulfill_conditions:
                 continue
 

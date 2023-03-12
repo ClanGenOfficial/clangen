@@ -162,7 +162,7 @@ class Group_Interaction():
 #                some useful functions, related to interactions                #
 # ---------------------------------------------------------------------------- #
 
-def rel_fulfill_rel_conditions(relationship, constraint) -> bool:
+def rel_fulfill_rel_conditions(relationship, constraint, interaction_id) -> bool:
     """Check if the relationship fulfills the interaction relationship constraints."""
     # if the constraints are not existing, they are considered to be fulfilled
     if not constraint:
@@ -199,15 +199,15 @@ def rel_fulfill_rel_conditions(relationship, constraint) -> bool:
             if len(splitted) > 3:
                 lower_than = True
         except:
-            print(f"ERROR: interaction {interaction.id} with the relationship constraint for the value {v_type} follows not the formatting guidelines.")
+            print(f"ERROR: interaction {interaction_id} with the relationship constraint for the value {v_type} follows not the formatting guidelines.")
             break
 
         if threshold > 100:
-            print(f"ERROR: interaction {interaction.id} has a relationship constraints for the value {v_type}, which is higher than the max value of a relationship.")
+            print(f"ERROR: interaction {interaction_id} has a relationship constraints for the value {v_type}, which is higher than the max value of a relationship.")
             break
 
         if threshold <= 0:
-            print(f"ERROR: patrol {interaction.id} has a relationship constraints for the value {v_type}, which is lower than the min value of a relationship or 0.")
+            print(f"ERROR: patrol {interaction_id} has a relationship constraints for the value {v_type}, which is lower than the min value of a relationship or 0.")
             break
 
         threshold_fulfilled = False

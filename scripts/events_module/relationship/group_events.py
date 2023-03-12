@@ -358,7 +358,7 @@ class Group_Events():
 
             relationship = cat_from.relationships[cat_to_id]
             
-            fulfilled = rel_fulfill_rel_conditions(relationship, rel_constraint)
+            fulfilled = rel_fulfill_rel_conditions(relationship, rel_constraint, interaction.id)
             fulfilled_list.append(fulfilled)
 
         return all(fulfilled_list)
