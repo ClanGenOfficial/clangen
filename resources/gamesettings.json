@@ -49,10 +49,6 @@
             "Enable Shaders",
             "This will add a shading layer onto the cat sprites."
         ],
-        "hotkey display": [
-            "Display hotkeys on text buttons -- NOT IMPLEMENTED",
-            ""
-        ],
         "deputy": [
             "Allow leaders to automatically choose a new deputy",
             "The warrior code rules will be taken into account when choosing a deputy."
