@@ -364,18 +364,6 @@
         "other_cat_skill": null,
         "cat_negate_skill": ["great fighter", "excellent fighter"]
     },
-
-    {
-        "camp": "any",
-        "tags": ["other_cat", "murder", "all_lives", "mate", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "to_both", "jealousy", "neg_platonic", "dislike", "neg_respect", "neg_comfort", "neg_trust"],
-        "death_text": "m_c was killed by r_c in an argument over c_m.",
-        "history_text": [null, "were killed by r_c in an argument over c_m"],
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": ["vengeful", "ambitious", "bloodthirsty", "loving", "fierce"],
-        "other_cat_skill": ["great fighter", "excellent fighter"],
-        "cat_negate_skill": ["great fighter", "excellent fighter"]
-    },
     {
         "camp": "any",
         "tags": ["all_lives", "other_cat_dep", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "jealousy", "neg_platonic"],
