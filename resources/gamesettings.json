@@ -1,0 +1,103 @@
+{
+
+    ".": [
+        "WARNING: This file is NOT where your settings are stored.",
+        "This file is only used to display the settings in the game.",
+        "The file you are looking for is 'settings.txt' in your saves folder.",
+        "If you want to change your settings, edit that file instead.",
+
+
+
+        "FORMAT:",
+        {
+            "group": {
+                "setting name": [
+                    "display name",
+                    "tooltip"
+                ]
+            }
+        }
+
+
+    ],
+
+
+
+
+    "general": {
+        "dark mode": [
+            "Dark Mode",
+            "Camp backgrounds will match with the mode: nighttime for Dark mode and daytime for Light mode."
+        ],
+        "backgrounds": [
+            "Enable Clan page background",
+            "Even with this off, the camp you choose will still affect the events you encounter."
+        ],
+        "autosave": [
+            "Automatically save every five moons",
+            "Automatically save every five moons."
+        ],
+        "disasters": [
+            "Allow mass extinction events",
+            "This may result in up to 1/3rd of your Clan dying in one moon."
+        ],
+        "retirement": [
+            "Cats will never retire due to a permanent condition",
+            "When this setting is off, cats with permanent conditions will choose whether or not they want to retire."
+        ],
+        "shaders": [
+            "Enable Shaders",
+            "This will add a shading layer onto the cat sprites."
+        ],
+        "deputy": [
+            "Allow leaders to automatically choose a new deputy",
+            "The warrior code rules will be taken into account when choosing a deputy."
+        ],
+        "fading": [
+            "Allow dead cats to fade away",
+            "After 202 moons, dead cats will be unloaded, and saved separately. No family relations will be lost."
+        ],
+        "save_faded_copy": [
+            "Save a complete copy of faded cats information",
+            "A complete copy of faded cat save info will be saved in plain-text."
+        ],
+        "become_mediator": [
+            "Allow warriors and elders to choose to become mediators",
+            "Warriors and elders will have a chance to become mediators upon timeskip."
+        ],
+        "gore": [
+            "Allow mild gore and blood in patrol artwork",
+            "Mild gore and blood will be allowed in the artwork displayed alongside patrols."
+        ],
+        "discord": [
+            "Enable Discord integration",
+            "Discord will show info about your clan, including your Clan name"
+        ]
+    },
+    "relation": {
+        "random relation": [
+            "Randomize relationship values when creating clan",
+            "Clan founder cats will start the game with established relationships."
+        ],
+        "affair": [
+            "Allow affairs and mate switches based on relationships",
+            "Cats may have kits before mating regardless of the Un-mated Cat Offspring setting."
+        ],
+        "no gendered breeding": [
+            "A cat's biological sex will no longer be a constraining factor for pregnancies.",
+            "Allow couples to birth kittens despite same-sex status"
+        ],
+        "no unknown fathers": [
+            "Allow unmated cats to have offspring",
+            "This setting will not affect the Affairs setting."
+        ],
+        "romantic with former mentor": [
+            "Allow romantic interactions with former mentors",
+            ""
+        ],
+        "first_cousin_mates": [
+            "Allow first cousins to mate",
+            ""
+        ]
+    }
+}

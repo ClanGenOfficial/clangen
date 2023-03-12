@@ -10,9 +10,9 @@ from scripts.cat.cats import create_example_cats, Cat
 from scripts.cat.names import names
 from re import sub
 from scripts.game_structure import image_cache
-# from scripts.world import World, save_map
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked, UISpriteButton
 from scripts.game_structure.game_essentials import game, MANAGER
+
 
 
 class MakeClanScreen(Screens):

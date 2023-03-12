@@ -1168,6 +1168,23 @@ def get_text_box_theme(themename=""):
             return themename
 
 
+def quit(savesettings=False, clearevents=False):
+    """
+    Quits the game, avoids a bunch of repeated lines
+    """
+    if savesettings:
+        game.save_settings()
+    if clearevents:
+        game.cur_events_list.clear()
+    game.rpc.close_rpc.set()
+    game.rpc.update_rpc.set()
+    pygame.display.quit()
+    pygame.quit()
+    if game.rpc.is_alive():
+        game.rpc.join(1)
+    exit()
+
+
 PERMANENT = None
 with open(f"resources/dicts/conditions/permanent_conditions.json", 'r') as read_file:
     PERMANENT = ujson.loads(read_file.read())
