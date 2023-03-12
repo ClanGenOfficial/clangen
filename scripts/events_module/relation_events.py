@@ -53,11 +53,13 @@ class Relation_Events():
         if not cat.relationships:
             return
         self.had_one_event = False
-        
-        self.group_events()
 
-        # 50/50 for an additional event
-        if randint(0,1):
+        # 1/3 for an additional event
+        if not randint(0,2):        
+            self.group_events(cat)
+
+        # 1/3 for an additional event
+        if not randint(0,2):
             self.same_age_events(cat)
 
         # this has to be handled at first
@@ -189,7 +191,8 @@ class Relation_Events():
         if not self.can_trigger_events(cat):
             return
 
-        same_age_cats = get_cats_same_age(cat)
+        range = 10 + randint(0, 10)
+        same_age_cats = get_cats_same_age(cat, range)
         if len(same_age_cats) > 0:
             random_cat = choice(same_age_cats)
             if self.can_trigger_events(random_cat) and random_cat.ID in cat.relationships:
@@ -197,13 +200,24 @@ class Relation_Events():
                 self.trigger_event(cat)
                 self.trigger_event(random_cat)
 
-    def group_events(self):
+    def group_events(self, cat):
         """Description will follow."""
-        # TODO: make "group" types
+        if not self.can_trigger_events(cat):
+            return
+
+        chosen_type = "all"
+        if len(GROUP_TYPES) > 0:
+            chosen_type = choice(list(GROUP_TYPES.keys()))
+
         possible_interaction_cats = list(Cat.all_cats.values())
-        random_cat = choice(possible_interaction_cats)
-        possible_interaction_cats.remove(random_cat)
-        self.group_events_class.start_interaction(random_cat, possible_interaction_cats)
+        possible_interaction_cats.remove(cat)
+        if chosen_type != "all":
+            possible_interaction_cats = self.cats_with_relationship_constraints(cat, GROUP_TYPES[chosen_type])
+
+        interacted_cat_ids = self.group_events_class.start_interaction(cat, possible_interaction_cats)
+        for id in interacted_cat_ids:
+            inter_cat = Cat.all_cats[id]
+            self.trigger_event(inter_cat)
 
     def family_events(self):
         """Description will follow."""
@@ -252,6 +266,105 @@ class Relation_Events():
     #                                helper function                               #
     # ---------------------------------------------------------------------------- #
 
+    def cats_with_relationship_constraints(self, main_cat, constraint):
+        """Returns a list of cats, where the relationship from main_cat towards the cat fulfill the given constraints."""
+        cat_list = list(
+            filter(
+                lambda cat:
+                (not cat.dead and not cat.outside and not cat.exiled),
+                Cat.all_cats.values())
+        )
+        cat_list.remove(main_cat)
+        filtered_cat_list = []
+        
+        for inter_cat in cat_list:
+            cat_from = main_cat
+            cat_to = inter_cat
+            relationship = cat_from.relationships[cat_to.ID]
+
+            if "siblings" in constraint and not cat_from.is_sibling(cat_to):
+                continue
+
+            if "mates" in constraint and not relationship.mates:
+                continue
+
+            if "not_mates" in constraint and relationship.mates:
+                continue
+
+            if "parent/child" in constraint and not cat_from.is_parent(cat_to):
+                continue
+
+            if "child/parent" in constraint and not cat_to.is_parent(cat_from):
+                continue
+
+            value_types = ["romantic", "platonic", "dislike", "admiration", "comfortable", "jealousy", "trust"]
+            fulfilled = True
+            for v_type in value_types:
+                tags = list(filter(lambda constr: v_type in constr, constraint))
+                if len(tags) < 1:
+                    continue
+                threshold = 0
+                lower_than = False
+                # try to extract the value/threshold from the text
+                try:
+                    splitted = tags[0].split('_')
+                    threshold = int(splitted[1])
+                    if len(splitted) > 3:
+                        lower_than = True
+                except:
+                    print(f"ERROR: while creating a cat group, the relationship constraint for the value {v_type} follows not the formatting guidelines.")
+                    break
+
+                if threshold > 100:
+                    print(f"ERROR: while creating a cat group, the relationship constraints for the value {v_type}, which is higher than the max value of a relationship.")
+                    break
+
+                if threshold <= 0:
+                    print(f"ERROR: while creating a cat group, the relationship constraints for the value {v_type}, which is lower than the min value of a relationship or 0.")
+                    break
+
+                threshold_fulfilled = False
+                if v_type == "romantic":
+                    if not lower_than and relationship.romantic_love >= threshold:
+                        threshold_fulfilled = True
+                    elif lower_than and relationship.romantic_love <= threshold:
+                        threshold_fulfilled = True
+                if v_type == "platonic":
+                    if not lower_than and relationship.platonic_like >= threshold:
+                        threshold_fulfilled = True
+                    elif lower_than and relationship.platonic_like <= threshold:
+                        threshold_fulfilled = True
+                if v_type == "dislike":
+                    if not lower_than and relationship.dislike >= threshold:
+                        threshold_fulfilled = True
+                    elif lower_than and relationship.dislike <= threshold:
+                        threshold_fulfilled = True
+                if v_type == "comfortable":
+                    if not lower_than and relationship.comfortable >= threshold:
+                        threshold_fulfilled = True
+                    elif lower_than and relationship.comfortable <= threshold:
+                        threshold_fulfilled = True
+                if v_type == "jealousy":
+                    if not lower_than and relationship.jealousy >= threshold:
+                        threshold_fulfilled = True
+                    elif lower_than and relationship.jealousy <= threshold:
+                        threshold_fulfilled = True
+                if v_type == "trust":
+                    if not lower_than and relationship.trust >= threshold:
+                        threshold_fulfilled = True
+                    elif lower_than and relationship.trust <= threshold:
+                        threshold_fulfilled = True
+
+                if not threshold_fulfilled:
+                    fulfilled = False
+                    continue
+
+            if not fulfilled:
+                continue
+
+            filtered_cat_list.append(inter_cat)
+        return filtered_cat_list
+
     def trigger_event(self, cat):
         if cat.ID in self.cats_triggered_events:
             self.cats_triggered_events[cat.ID] += 1
@@ -277,3 +390,19 @@ class Relation_Events():
     def clear_trigger_dict(self):
         """Cleans the trigger dictionary, this function should be called every new moon."""
         self.cats_triggered_events = {}
+
+
+# ---------------------------------------------------------------------------- #
+#                                load resources                                #
+# ---------------------------------------------------------------------------- #
+
+base_path = os.path.join(
+    "resources",
+    "dicts",
+    "relationship_events"
+)
+
+GROUP_TYPES = {}
+types_path = os.path.join(base_path,"group_interactions" ,"group_types.json")
+with open(types_path, 'r') as read_file:
+    GROUP_TYPES = ujson.load(read_file)

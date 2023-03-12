@@ -1,0 +1,6 @@
+{
+	"all": [],
+	"friends": ["platonic_20", "dislike_20_lower", "jealousy_20_lower"],
+	"best_friends": ["platonic_40", "dislike_20_lower", "jealousy_20_lower"],
+	"love_interests": ["romantic_10","platonic_20"]
+}

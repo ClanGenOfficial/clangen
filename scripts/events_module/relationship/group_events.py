@@ -21,7 +21,7 @@ class Group_Events():
         self.cat_abbreviations_counter = {}
         pass
 
-    def start_interaction(self, cat: Cat, interact_cats: list):
+    def start_interaction(self, cat: Cat, interact_cats: list) -> list:
         """Start to define the possible group interactions.
 
             Parameters
@@ -33,6 +33,8 @@ class Group_Events():
 
             Returns
             -------
+            list
+                returns the list of the cat id's, which interacted with each other
         """
         self.abbreviations_cat_id = {}
         self.cat_abbreviations_counter = {}
@@ -43,7 +45,7 @@ class Group_Events():
         # if the chosen amount is bigger than the given interaction cats,
         # there will be no possible solution and it will be returned
         if len(interact_cats) < int(cat_amount):
-            return
+            return []
 
         # setup the abbreviations_cat_id dictionary
         for integer in range(int(cat_amount)-1):
@@ -64,7 +66,7 @@ class Group_Events():
 
         # if there is no possibility return
         if len(possibilities) < 1:
-            return
+            return []
 
         # choose one interaction and trigger all needed functions to reflect the interaction
         self.chosen_interaction = choice(possibilities)
@@ -81,11 +83,13 @@ class Group_Events():
         interaction_str = choice(self.chosen_interaction.interactions)
         interaction_str = self.prepare_text(interaction_str)
         # TODO: add the interaction to the relationship log?
+
         interaction_str = interaction_str + f" ({inter_type})"
         ids = list(self.abbreviations_cat_id.values())
         game.cur_events_list.append(Single_Event(
             interaction_str, ["relation", "interaction"], ids
         ))
+        return ids
 
     # ---------------------------------------------------------------------------- #
     #                  functions to filter and decide interaction                  #
@@ -146,6 +150,7 @@ class Group_Events():
 
         # set which abbreviations is which cat
         self.set_abbreviations_cats(interact_cats)
+
         # check if any abbreviations_cat_ids is None, if so return, because the interaction should not continue
         not_none = [abbr != None for abbr in self.abbreviations_cat_id.values()]
         if not all(not_none):
@@ -331,14 +336,15 @@ class Group_Events():
             cat_to_id = self.abbreviations_cat_id[abbre_to]
             cat_from = Cat.all_cats[cat_from_id]
             cat_to = Cat.all_cats[cat_to_id]
+            relationship = cat_from.relationships[cat_to_id]
 
             if "siblings" in dictionary and not cat_from.is_sibling(cat_to):
                 continue
 
-            if "mates" in dictionary and not self.mates:
+            if "mates" in dictionary and not relationship.mates:
                 continue
 
-            if "not_mates" in dictionary and self.mates:
+            if "not_mates" in dictionary and relationship.mates:
                 continue
 
             if "parent/child" in dictionary and not cat_from.is_parent(cat_to):
@@ -375,34 +381,34 @@ class Group_Events():
 
                 threshold_fulfilled = False
                 if v_type == "romantic":
-                    if not lower_than and self.romantic_love >= threshold:
+                    if not lower_than and relationship.romantic_love >= threshold:
                         threshold_fulfilled = True
-                    elif lower_than and self.romantic_love <= threshold:
+                    elif lower_than and relationship.romantic_love <= threshold:
                         threshold_fulfilled = True
                 if v_type == "platonic":
-                    if not lower_than and self.platonic_like >= threshold:
+                    if not lower_than and relationship.platonic_like >= threshold:
                         threshold_fulfilled = True
-                    elif lower_than and self.platonic_like <= threshold:
+                    elif lower_than and relationship.platonic_like <= threshold:
                         threshold_fulfilled = True
                 if v_type == "dislike":
-                    if not lower_than and self.dislike >= threshold:
+                    if not lower_than and relationship.dislike >= threshold:
                         threshold_fulfilled = True
-                    elif lower_than and self.dislike <= threshold:
+                    elif lower_than and relationship.dislike <= threshold:
                         threshold_fulfilled = True
                 if v_type == "comfortable":
-                    if not lower_than and self.comfortable >= threshold:
+                    if not lower_than and relationship.comfortable >= threshold:
                         threshold_fulfilled = True
-                    elif lower_than and self.comfortable <= threshold:
+                    elif lower_than and relationship.comfortable <= threshold:
                         threshold_fulfilled = True
                 if v_type == "jealousy":
-                    if not lower_than and self.jealousy >= threshold:
+                    if not lower_than and relationship.jealousy >= threshold:
                         threshold_fulfilled = True
-                    elif lower_than and self.jealousy <= threshold:
+                    elif lower_than and relationship.jealousy <= threshold:
                         threshold_fulfilled = True
                 if v_type == "trust":
-                    if not lower_than and self.trust >= threshold:
+                    if not lower_than and relationship.trust >= threshold:
                         threshold_fulfilled = True
-                    elif lower_than and self.trust <= threshold:
+                    elif lower_than and relationship.trust <= threshold:
                         threshold_fulfilled = True
 
                 if not threshold_fulfilled:
@@ -545,6 +551,8 @@ base_path = os.path.join(
 
 GROUP_INTERACTION_MASTER_DICT = {}
 for cat_amount in os.listdir(base_path):
+    if cat_amount == "group_types.json":
+        continue
     file_path = os.path.join(base_path, cat_amount, "neutral.json")
     GROUP_INTERACTION_MASTER_DICT[cat_amount] = {}
     with open(file_path, 'r') as read_file:
