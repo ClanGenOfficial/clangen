@@ -153,14 +153,14 @@ class MiscEvents():
         if "COLLAR" in possible_accs:
             acc_list.extend(collars)
 
+        for acc in possible_accs:
+            if acc not in ["WILD", "PLANT", "COLLAR"]:
+                acc_list.append(acc)
+
         if ("NOTAIL" or "HALFTAIL") in cat.scars:
             try:
                 acc_list.remove(acc for acc in tail_accessories)
             except:
                 print('attempted to remove tail accs from possible acc list, but no tail accs were in the list!')
-
-        for acc in possible_accs:
-            if acc not in ["WILD", "PLANT", "COLLAR"]:
-                acc_list.append(acc)
 
         cat.accessory = random.choice(acc_list)

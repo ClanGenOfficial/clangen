@@ -168,11 +168,14 @@
     },
     "smell": {
       "general": [
+        ["the scent of spoiled queen's milk"],
+        ["the scent of a long dead cat"]
 
       ]
     },
     "emotional": {
       "general": [
+        ["a pervasive feeling of dread"]
 
       ]
     },
@@ -189,5 +192,10 @@
         "confidence", "calm", "anxiety", "happiness", "contentment", "pain", "vengeful thoughts", "achievement",
         "sorrow", "pride", "turmoil", "worry", "horror", "terror", "fear", "foreboding", "dread", "bloodlust", "hope",
         "curiosity"
+  ],
+
+  "clair_list": [
+    "dread", "fear", "danger", "loss", "grief", "betrayal", "vengeance", "hate", "blood spilt in battle", "love", "romance",
+    "excitement", "secrecy", "thrill"
   ]
 }

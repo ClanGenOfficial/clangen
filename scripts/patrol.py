@@ -995,18 +995,27 @@ class Patrol():
             outside = True
 
         # give a litter if the outcome calls for it
+        kit_thought = 'Is looking around the camp with wonder'
         if f"litter{outcome}" in attribute_list:
+            print('litter outcome checking')
+            if not game.settings["no gendered breeding"]:
+                gender = 'female'
             litter = True
             age = randint(23, 100)
             # make sure kittens get correct backstory
             if "dead" in attribute_list:
+                print('parent is dead')
                 kit_backstory = ['orphaned', 'orphaned2']
             else:
+                print('parent is alive')
                 kit_backstory = ['outsider_roots2']
             # make sure kittens get right age
             if "litternewborn" in attribute_list:
+                print('litter is newborn')
                 kit_age = 0
+                kit_thought = "Snuggles against another cat"
             else:
+                print('litter is not newborn')
                 kit_age = randint(1, 5)
 
         # if none of these tags are present, then a completely random cat is made
@@ -1075,8 +1084,8 @@ class Patrol():
                                                backstory=kit_backstory,
                                                status='kitten',
                                                age=kit_age,
-                                               gender=gender,
-                                               thought=thought,
+                                               gender=None,
+                                               thought=kit_thought,
                                                alive=True,
                                                outside=False
                                                ))
@@ -1159,7 +1168,7 @@ class Patrol():
 
         # now have the new cats form relationships with the patrol cats
         for new_cat in created_cats:
-            if not new_cat.outside or new_cat.dead:
+            if not new_cat.outside or not new_cat.dead:
                 for patrol_cat in self.patrol_cats:
                     patrol_cat.relationships[new_cat.ID] = Relationship(patrol_cat, new_cat)
                     new_cat.relationships[patrol_cat.ID] = Relationship(new_cat, patrol_cat)
