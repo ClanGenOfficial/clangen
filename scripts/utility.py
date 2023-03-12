@@ -150,6 +150,10 @@ def get_cats_same_age(cat, range=10):  # pylint: disable=redefined-builtin
 #                          Handling Outside Factors                            #
 # ---------------------------------------------------------------------------- #
 def get_current_season():
+    """
+    function to handle the math for finding the clan's current season
+    :return: the clan's current season
+    """
     # print(game.clan.current_season)
     modifiers = {
         "Newleaf": 0,
@@ -597,6 +601,40 @@ def change_relationship_values(cats_to: list,
 #                               Text Adjust                                    #
 # ---------------------------------------------------------------------------- #
 
+def get_snippet_list(chosen_list, amount, sense_groups=None):
+    """
+    function to grab items from various lists in snippet_collections.json
+    list options are:
+    -omen_list
+    -dream_list (this list doesn't have sense categories, leave sense_groups as None)
+    -prophecy_list
+    :param chosen_list: pick which list you want to grab from
+    :param amount: the amount of items you want the returned list to contain
+    :param sense_groups: list which senses you want the snippets to correspond with:
+     "touch", "sight", "emotional", "sound", "smell" are the options. Default is None, if left as this then all senses
+     will be included
+    :return: a list of the chosen items from chosen_list
+    """
+    if chosen_list == 'dream_list':
+        final_snippets = sample(SNIPPETS[chosen_list], k=amount)
+        return final_snippets
+
+    if not sense_groups:
+        sense_groups = ["sight", "sound", "smell", "emotional", "touch"]
+
+    snippets = []
+    for sense in sense_groups:
+        snippet_group = SNIPPETS[chosen_list][sense]
+        snippets.extend(snippet_group["general"])
+
+    unique_snippets = []
+    for snip_list in snippets:
+        unique_snippets.append(choice(snip_list))
+
+    final_snippets = sample(unique_snippets, k=amount)
+    return final_snippets
+
+
 def event_text_adjust(Cat,
                       text,
                       cat,
@@ -605,56 +643,19 @@ def event_text_adjust(Cat,
                       keep_m_c=False,
                       new_cat=None,
                       clan=None):
-    omen_list = ["a five-pointed leaf", "a stone with shining chips in it", "a crooked-jawed squirrel",
-                 "an odd pile of soft downy fur left in the open", "a charred scrap of fur",
-                 "a shard of glass", "a stick that smells of fire", "the tooth of a large predator",
-                 "an gleaming feather", "withered deathberries", "a strangely shaped cloud", "a split acorn",
-                 "a piece of prey, fresh and yet rotten with maggots", "a shell shining with the colors of water",
-                 "a branch that looks whole but comes apart with a gentle touch", "a three-eyed fish"
-                 "a stone of two halves perfectly fitting together", "a two-headed adder", "a perfectly shed snake-skin",
-                 "a glowing bug fallen in the middle of camp", "a pawprint of red on rock", "destroyed herbs",
-                 "a bird's broken egg", "a dew covered spider's web", "stars shooting across the sky", "a torn collar"
-                 "a strangely-patterned stone", "the bones of freshkill", "a shining beetle shell", "a green moth",
-                 "an old bloody claw", "a starving vole", "the talon of a hawk", "a headless centipede",
-                 "an abandoned bee-stinger", "a cracked mouse skull", "tattered feathers", "a miraculously burning reed",
-                 "a shed whisker"
-                 ]
-    prophecy_list = ["blood pooling on the ground", "blood dripping from a leaf", "spread claws", "snarling teeth",
-                     "echoing snarls", "wailing cries", "hissing", "yowling", "the hiss of a friend", "an enemy's hiss",
-                     "a kit's mew", "the excitement of an apprentice", "the strength of a warrior",
-                     "the smell of the medicine cat den", "the ache in an elder's bones", "a thundering voice",
-                     "a barking figure", "howling in the distance", "a monster roaring", "the purring of a friend",
-                     "the purr of an enemy", "the brush of a pelt against their own", "the scent of a friend",
-                     "the touch of a mentor to an apprentice's forehead", "a tail twining with their own",
-                     "a bird call", "a bird's feather", "soft fur", "the squeak of prey being killed",
-                     "sunlight glinting off a plant", "pouring rain", "hail pounding the ground", "snow falling softly",
-                     "a blizzard raging", "storms neverending", "wind howling", "bright sunshine",
-                     "blazing heat", "dark clouds", "rolling clouds", "rushing fire", "flooding water",
-                     "mud splattered on the rocks", "rocks falling", "earth ripping", "a deep hole in the ground",
-                     "a freshly-dug grave", "the falling petals of a flower", "honey dripping", "spreading frost",
-                     "falling trees", "crashing waves", "a clear pool of water", "deathberries", "herbs", "the scent of catmint",
-                     "poppy seeds", "the moon", "the stars", "the sun", "the sensation of falling",
-                     "the feeling of flight", "a view of camp", "the sounds of battle", "frozen paws",
-                     "an unyielding fog", "an oppressive darkness", "blinding light", "the apprentice den",
-                     "the leader's den", "the nursery", "a deep lake", "a snake eating it's own tail",
-                     "the scent of another Clan", "a ghostly pair of eyes", "the scent of someone long dead",
-                     "the rushing sound of a river", "the smell of sickness", "a blackbird covering the moon",
-                     "two pawprints overlapping", "a broken Twoleg collar", "a half-remembered promise",
-                     "the glowing eyes of a monster", "their own voice speaking to them", "a foreboding feeling",
-                     "skeletal trees against the sky", "the sound of cracking ice", "claw-marks on a still puddle",
-                     "a fire trapped in stone", "abandoned Twoleg dens", "a tattered Twoleg pelt",
-                     "the sound of a heartbeat", "clouds covering the stars", "their family",
-                     "a single beam of moonlight from the clouds", "the camp in flames", "a rainbow on the water",
-                     "the reflection of a lion", "a tiger's reflection", "an animal leaping from flames",
-                     "the sun blotted out by a great shadow", "a twig burning from both ends", "a panther-black night"
-                     "a warrior's form blocking the sun", "the moon bleeding", "a distant howl of pain",
-                     "the scent of traveling herbs", "the grin of a wolf", "pawsteps that smell like no cat",
-                     "water flowing upwards", "a lost object finally returned", "a figure with the voice of StarClan",
-                     "the scent of milk far from the nursery", "a cat not yet born", "darkness despite the shining sun",
-                     "a trail of light stretching through the camp", "a cat covered in blood", "bloodied teeth",
-                     "a whispered message", "cats howling to the moon", "a bloody red cloud", "a cat beside a Twoleg",
-                     "a cat's paw devoid of claws", "stones dissolving in water", "a dry river still flowing with water"
-                     ]
+    """
+    This function takes the given text and returns it with the abbreviations replaced appropriately
+    :param Cat: Always give the Cat class
+    :param text: The text that needs to be changed
+    :param cat: The cat taking the place of m_c
+    :param other_cat: The cat taking the place of r_c
+    :param other_clan_name: The other clan involved in the event
+    :param keep_m_c: set True if you don't want m_c to be replaced with the name - this is only currently important for history text
+    :param new_cat: The cat taking the place of n_c
+    :param clan: The player's Clan
+    :return: the adjusted text
+    """
+
     name = str(cat.name)
     other_name = None
     if other_cat:
@@ -674,8 +675,9 @@ def event_text_adjust(Cat,
         adjust_text = adjust_text.replace("acc_plural", str(ACC_DISPLAY[cat.accessory]["plural"]))
     if "acc_singular" in adjust_text:
         adjust_text = adjust_text.replace("acc_singular", str(ACC_DISPLAY[cat.accessory]["singular"]))
+
     if "omen_list" in adjust_text:
-        chosen_omens = sample(omen_list, k=randint(2, 4))
+        chosen_omens = get_snippet_list("omen_list", randint(2, 4), sense_groups=["sight"])
         omen_amount = len(chosen_omens)
         if omen_amount == 2:
             omen_text = " and ".join(chosen_omens)
@@ -683,9 +685,8 @@ def event_text_adjust(Cat,
             start = ", ".join(chosen_omens[:-1])
             omen_text = ", and ".join([start, chosen_omens[-1]])
         adjust_text = adjust_text.replace("omen_list", omen_text)
-
     if "prophecy_list" in adjust_text:
-        chosen_prophecy = sample(prophecy_list, k=randint(2, 4))
+        chosen_prophecy = get_snippet_list("prophecy_list", randint(2, 4), sense_groups=["sight", "emotional", "touch"])
         prophecy_amount = len(chosen_prophecy)
         if prophecy_amount == 2:
             prophecy_text = " and ".join(chosen_prophecy)
@@ -693,8 +694,17 @@ def event_text_adjust(Cat,
             start = ", ".join(chosen_prophecy[:-1])
             prophecy_text = ", and ".join([start, chosen_prophecy[-1]])
         adjust_text = adjust_text.replace("prophecy_list", prophecy_text)
+    if "dream_list" in adjust_text:
+        chosen_dream = get_snippet_list("dream_list", randint(2, 4))
+        dream_amount = len(chosen_dream)
+        if dream_amount == 2:
+            dream_text = " and ".join(chosen_dream)
+        else:
+            start = ", ".join(chosen_dream[:-1])
+            dream_text = ", and ".join([start, chosen_dream[-1]])
+        adjust_text = adjust_text.replace("dream_list", dream_text)
 
-    if clan is not None:
+    if clan:
         _tmp = clan
     else:
         _tmp = game.clan
@@ -1165,3 +1175,7 @@ with open(f"resources/dicts/conditions/permanent_conditions.json", 'r') as read_
 ACC_DISPLAY = None
 with open(f"resources/dicts/acc_display.json", 'r') as read_file:
     ACC_DISPLAY = ujson.loads(read_file.read())
+
+SNIPPETS = None
+with open(f"resources/dicts/snippet_collections.json", 'r') as read_file:
+    SNIPPETS = ujson.loads(read_file.read())
