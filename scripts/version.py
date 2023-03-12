@@ -20,8 +20,8 @@ def get_version_info():
             is_source_build = True
             try:
                 version_number = subprocess.check_output(['git', 'rev-parse', 'HEAD']).decode('ascii').strip()
-            except Exception as e:
-                logger.exception(f"Git CLI invocation failed: {str(e)}")
+            except:
+                logger.exception("Git CLI invocation failed")
         get_version_info.instance = VersionInfo(is_source_build, is_release, version_number)
     return get_version_info.instance
 
