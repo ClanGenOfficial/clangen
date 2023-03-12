@@ -80,7 +80,7 @@
 		"interactions": [
 			"r_c is teaching m_c how to walk without making a sound.",
 			"r_c is showing m_c how to sneak up on their enemies.",
-			"r_c convinces r_c to help them pull a prank on a Clanmate."
+			"r_c convinces m_c to help them pull a prank on a Clanmate."
 		],
 		"random_trait_constraint": [
 			"sneaky"
