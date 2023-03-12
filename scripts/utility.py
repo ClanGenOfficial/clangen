@@ -1,14 +1,12 @@
-
 # pylint: disable=line-too-long
 """
 
 TODO: Docs
 
 
-""" # pylint: enable=line-too-long
+"""  # pylint: enable=line-too-long
 
-
-from random import choice, choices, randint, random
+from random import choice, choices, randint, random, sample
 import pygame
 from scripts.cat.names import names
 
@@ -152,6 +150,10 @@ def get_cats_same_age(cat, range=10):  # pylint: disable=redefined-builtin
 #                          Handling Outside Factors                            #
 # ---------------------------------------------------------------------------- #
 def get_current_season():
+    """
+    function to handle the math for finding the clan's current season
+    :return: the clan's current season
+    """
     # print(game.clan.current_season)
     modifiers = {
         "Newleaf": 0,
@@ -524,6 +526,7 @@ def add_children_to_cat(cat, cat_class):
             inter_cat.children.append(cat.ID)
     print('cats children', cat.children)
 
+
 def change_relationship_values(cats_to: list,
                                cats_from: list,
                                romantic_love=0,
@@ -598,6 +601,40 @@ def change_relationship_values(cats_to: list,
 #                               Text Adjust                                    #
 # ---------------------------------------------------------------------------- #
 
+def get_snippet_list(chosen_list, amount, sense_groups=None):
+    """
+    function to grab items from various lists in snippet_collections.json
+    list options are:
+    -omen_list
+    -dream_list (this list doesn't have sense categories, leave sense_groups as None)
+    -prophecy_list
+    :param chosen_list: pick which list you want to grab from
+    :param amount: the amount of items you want the returned list to contain
+    :param sense_groups: list which senses you want the snippets to correspond with:
+     "touch", "sight", "emotional", "sound", "smell" are the options. Default is None, if left as this then all senses
+     will be included
+    :return: a list of the chosen items from chosen_list
+    """
+    if chosen_list == 'dream_list':
+        final_snippets = sample(SNIPPETS[chosen_list], k=amount)
+        return final_snippets
+
+    if not sense_groups:
+        sense_groups = ["sight", "sound", "smell", "emotional", "touch"]
+
+    snippets = []
+    for sense in sense_groups:
+        snippet_group = SNIPPETS[chosen_list][sense]
+        snippets.extend(snippet_group["general"])
+
+    unique_snippets = []
+    for snip_list in snippets:
+        unique_snippets.append(choice(snip_list))
+
+    final_snippets = sample(unique_snippets, k=amount)
+    return final_snippets
+
+
 def event_text_adjust(Cat,
                       text,
                       cat,
@@ -606,13 +643,23 @@ def event_text_adjust(Cat,
                       keep_m_c=False,
                       new_cat=None,
                       clan=None):
+    """
+    This function takes the given text and returns it with the abbreviations replaced appropriately
+    :param Cat: Always give the Cat class
+    :param text: The text that needs to be changed
+    :param cat: The cat taking the place of m_c
+    :param other_cat: The cat taking the place of r_c
+    :param other_clan_name: The other clan involved in the event
+    :param keep_m_c: set True if you don't want m_c to be replaced with the name - this is only currently important for history text
+    :param new_cat: The cat taking the place of n_c
+    :param clan: The player's Clan
+    :return: the adjusted text
+    """
+
     name = str(cat.name)
     other_name = None
     if other_cat:
         other_name = str(other_cat.name)
-    mate = None
-    if cat.mate:
-        mate = Cat.all_cats.get(cat.mate).name
 
     adjust_text = text
     if keep_m_c is False:
@@ -621,8 +668,6 @@ def event_text_adjust(Cat,
         adjust_text = adjust_text.replace("r_c", str(other_name))
     if other_clan_name:
         adjust_text = adjust_text.replace("o_c", str(other_clan_name))
-    if mate:
-        adjust_text = adjust_text.replace("c_m", str(mate))
     if new_cat:
         adjust_text = adjust_text.replace("n_c_pre", str(new_cat.name.prefix))
         adjust_text = adjust_text.replace("n_c", str(new_cat.name))
@@ -631,7 +676,35 @@ def event_text_adjust(Cat,
     if "acc_singular" in adjust_text:
         adjust_text = adjust_text.replace("acc_singular", str(ACC_DISPLAY[cat.accessory]["singular"]))
 
-    if clan is not None:
+    if "omen_list" in adjust_text:
+        chosen_omens = get_snippet_list("omen_list", randint(2, 4), sense_groups=["sight"])
+        omen_amount = len(chosen_omens)
+        if omen_amount == 2:
+            omen_text = " and ".join(chosen_omens)
+        else:
+            start = ", ".join(chosen_omens[:-1])
+            omen_text = ", and ".join([start, chosen_omens[-1]])
+        adjust_text = adjust_text.replace("omen_list", omen_text)
+    if "prophecy_list" in adjust_text:
+        chosen_prophecy = get_snippet_list("prophecy_list", randint(2, 4), sense_groups=["sight", "emotional", "touch"])
+        prophecy_amount = len(chosen_prophecy)
+        if prophecy_amount == 2:
+            prophecy_text = " and ".join(chosen_prophecy)
+        else:
+            start = ", ".join(chosen_prophecy[:-1])
+            prophecy_text = ", and ".join([start, chosen_prophecy[-1]])
+        adjust_text = adjust_text.replace("prophecy_list", prophecy_text)
+    if "dream_list" in adjust_text:
+        chosen_dream = get_snippet_list("dream_list", randint(2, 4))
+        dream_amount = len(chosen_dream)
+        if dream_amount == 2:
+            dream_text = " and ".join(chosen_dream)
+        else:
+            start = ", ".join(chosen_dream[:-1])
+            dream_text = ", and ".join([start, chosen_dream[-1]])
+        adjust_text = adjust_text.replace("dream_list", dream_text)
+
+    if clan:
         _tmp = clan
     else:
         _tmp = game.clan
@@ -1095,6 +1168,23 @@ def get_text_box_theme(themename=""):
             return themename
 
 
+def quit(savesettings=False, clearevents=False):
+    """
+    Quits the game, avoids a bunch of repeated lines
+    """
+    if savesettings:
+        game.save_settings()
+    if clearevents:
+        game.cur_events_list.clear()
+    game.rpc.close_rpc.set()
+    game.rpc.update_rpc.set()
+    pygame.display.quit()
+    pygame.quit()
+    if game.rpc.is_alive():
+        game.rpc.join(1)
+    exit()
+
+
 PERMANENT = None
 with open(f"resources/dicts/conditions/permanent_conditions.json", 'r') as read_file:
     PERMANENT = ujson.loads(read_file.read())
@@ -1102,3 +1192,7 @@ with open(f"resources/dicts/conditions/permanent_conditions.json", 'r') as read_
 ACC_DISPLAY = None
 with open(f"resources/dicts/acc_display.json", 'r') as read_file:
     ACC_DISPLAY = ujson.loads(read_file.read())
+
+SNIPPETS = None
+with open(f"resources/dicts/snippet_collections.json", 'r') as read_file:
+    SNIPPETS = ujson.loads(read_file.read())

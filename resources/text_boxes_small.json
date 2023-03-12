@@ -95,6 +95,39 @@
             "padding": "0,8"
         }
     },
+    "#error_text_box": {
+        "colours": {
+            "dark_bg": "#FFFF0000",
+            "normal_text": "#000000"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "12"
+        },
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "left"
+        }
+    },
+    "#gethelp_text_box": {
+        "colours": {
+            "dark_bg": "#FFFF0000",
+            "normal_text": "#000000",
+            "link_text": "#0000FF",
+            "link_hover": "#000000",
+            "link_selected": "#00FF00"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "14"
+        },
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "left"
+        }
+    },
     "#cat_profile_info_box": {
         "colours": {
             "dark_bg": "#00000000",
