@@ -93,11 +93,11 @@
         ],
         "romantic with former mentor": [
             "Allow romantic interactions with former mentors",
-            ""
+            "Allows mentors and the cats they trained to be romantic after they become warriors"
         ],
         "first_cousin_mates": [
             "Allow first cousins to mate",
-            ""
+            "Allows cats with the same grandparents but different parents to become mates"
         ]
     }
 }
