@@ -7,7 +7,7 @@ except ImportError:
     import json as ujson
 from scripts.event_class import Single_Event
 
-from scripts.utility import get_personality_compatibility
+from scripts.utility import get_personality_compatibility, process_text
 from scripts.game_structure.game_essentials import game
 
 
@@ -135,8 +135,7 @@ class Relationship():
         interaction_str = choice(self.chosen_interaction.interactions)
 
         # prepare string for display
-        interaction_str = interaction_str.replace("m_c", str(self.cat_from.name))
-        interaction_str = interaction_str.replace("r_c", str(self.cat_to.name))
+        interaction_str = self.adjust_interaction_string(interaction_str)
 
         effect = " (neutral effect)"
         if in_de_crease != "neutral" and positive:
@@ -149,6 +148,18 @@ class Relationship():
         game.cur_events_list.append(Single_Event(
             interaction_str, ["relation", "interaction"], [self.cat_to.ID, self.cat_from.ID]
         ))
+
+    def adjust_interaction_string(self, string):
+
+        cat_dict = {
+            "m_c": (str(self.cat_from.name), choice(self.cat_to.pronouns)),
+            "r_c": (str(self.cat_to.name), choice(self.cat_to.pronouns))
+        }
+
+        return process_text(string, cat_dict)
+
+
+
 
     def get_amount(self, in_de_crease: str, intensity: str) -> int:
         """Calculates the amount of such an interaction.
