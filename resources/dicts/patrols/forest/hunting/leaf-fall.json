@@ -1417,5 +1417,85 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_hunt_random_leaffallsolowarrior1",
+    "biome": "forest",
+    "season": "leaf-fall",
+    "tags": [
+        "hunting",
+        "no_app",
+        "minor_injury",
+        "no_fail_prey",
+        "medium_prey0",
+        "medium_prey1",
+        "large_prey2",
+        "large_prey3"
+    ],
+    "intro_text": "The air feels tense - r_c is sure that a storm is on its way to pull more leaves from the forest's canopy. If they're going to hunt, they should do it now.",
+    "decline_text": "No, they decide to reinforce the ceiling of the warriors den instead. r_c doesn't want a wet nest tonight.",
+    "success_text": [
+        "You've got to take your opportunities as you can find them, so even though the static in the air makes their whiskers feel quivery, r_c heads out. They find a small f_tp_s and pin a f_mp_s down under a oak tree painted with leaf-fall's brilliant colors, heading back to camp well before the storm breaks.",
+        "r_c puts the way their whiskers feel about the wind to one side, focusing on hunting around a blackberry bramble near camp. The prey is attracted to the berries like moths to fireflies, and it makes them reskless as they gorge themselves. A old f_tp_s and two f_tp_p fall to r_c before the forest creatures wise up to the hunter's presence.",
+        "Keen to be back in their nest before the storm breaks, s_c uses teh darkness of the thick gray clouds to their advantage. In the thick forest undergrowth, they quickly catch a f_mp_s and two f_tp_s, trotting back home with a sense of urgency in their steps.",
+        "Not keen to get caught out in any kind of storm, s_c hunts carefully rather than boldly, choosing a hunting ground with a clear quick path back to camp. There they manage to find a f_mp_s out on its own foraging trip, scooping it up with a clean bite to the throat and trotting home. On the way back to camp, a f_tp_s crosses the path in front of them, and s_c adds it to their collection in an undignified scramble, dropping the f_mp_s and throwing themselves after the f_tp_s."
+    ],
+    "fail_text": [
+        "Just as r_c reaches the hunting grounds, the storm breaks. All the forest's birdsong is downed out in a deluge of water, and its a sodden cat that trudges back to camp, tired and uncomfortable.",
+        null,
+        null,
+        "The bright colors of the leaf litter masquerade as solid ground, and r_c falls into the pile up to their neck, bumping into what feel like the sharpest twigs in the forest as they do. It takes them an embarassingly long time to clamber out, and by the time they do, the storm breaks, adding to an awful afternoon.",
+        null,
+        "s_c heads off and has a very successful hunt on the banks of a stream, picking up several f_tp_p, a f_tp_s, and even a f_mp_s, all stashed until they feel it's head to go home as the thunder growls. But the rain floods the little stream, and all their hard-won prey, and s_c themselves, are swept away. It's only a stream, and s_c fights their way out of it, sore and wet through, but there'll be no contributions to the fresh-kill pile today."
+    ],
+    "chance_of_success": 50,
+    "exp": 15,
+    "win_skills": [
+        "good hunter",
+        "great hunter",
+        "fantastic hunter"
+    ],
+    "win_trait": ["calm", "careful", "nervous", "thoughtful"],
+    "fail_trait": ["bold", "daring"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_hunt_random_leaffallsoloapp1",
+    "biome": "forest",
+    "season": "leaf-fall",
+    "tags": [
+        "hunting",
+        "apprentice",
+        "minor_injury",
+        "no_fail_prey",
+        "medium_prey"
+    ],
+    "intro_text": "app1 hears the senior warriors chatting about an incoming storm. They could go out for a quick hunt - they'd much rather do that, bring some prey home, and then earn a break from their chores to wait out the rain.",
+    "decline_text": "...Maybe it'd be better to wait until their mentor is free to take them on a hunting patrol. Even if they get damp.",
+    "success_text": [
+        "A f_tp_s and three f_tp_p, one of which is definitely more of a mouthful than a meal, but still! Surely that's enough to count for their duty to c_n for the day. Scarpering back to camp, app1 realises they forgot to thank Starclan for their success when a huge roll of tunder booms across the forest. Err, sorry Starclan! And thank you!",
+        "app1 finds a f_mp_s, and catches it with what they think is enough grace that they're actually disappointed their mentor isn't here to see it. But just as they're trying to figure out if there's a quicker way back to camp, the storm breaks. app1 waits it out under a bush, wondering if maybe nest-cleaning duty would've been a better idea.",
+        null,
+        "app1 doesn't want to go far with bad weather incoming - but they don't have to. Only a dozen fox-lengths from camp, an oak trees is shedding acorns like raindrops. They wait there, alert and patient, ambushing three f_tp_p before heading home to a warm dry nest and an impressed mentor."
+    ],
+    "fail_text": [
+        null,
+        null,
+        null,
+        "The thunderstorm breaks while app1 is out hunting, scaring them halfway out of their fur and causing them to leap halfway up a tree before the deafening sound proves itself rain rather than danger. The fall back off the tree isn't high, but they land without grace and with the fur still standing on end.",
+        null,
+        "app1 daringly heads out hunting and then daringly ends up on the wrong side of a swollen creek, sore and tired as the rain pours down, daringly crouched under a bush to daringly wait out the storm. Fox-dung!"
+    ],
+    "chance_of_success": 40,
+    "exp": 25,
+    "win_trait": ["calm", "careful", "nervous", "thoughtful"],
+    "fail_trait": ["bold", "daring"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 }
 ]

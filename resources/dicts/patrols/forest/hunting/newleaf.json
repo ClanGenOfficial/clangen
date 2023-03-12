@@ -1438,5 +1438,85 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_hunt_random_newleafsolowarrior1",
+    "biome": "forest",
+    "season": "newleaf",
+    "tags": [
+        "hunting",
+        "no_app",
+        "minor_injury",
+        "no_fail_prey",
+        "medium_prey0",
+        "medium_prey1",
+        "large_prey2",
+        "large_prey3"
+    ],
+    "intro_text": "As r_c sets off to see what they can find for the fresh-kill pile, the newleaf sun feels weak, but the grass is sprouting and the trees of the forest are coated in mangy pelts of not-quite-unfurled leaf buds. Let's see what they can rustle up.",
+    "decline_text": "While on their way to a likely hunting ground, r_c notices the pawprints of a large, clawed animal corssing their path. They'd better return to camp and report it instead.",
+    "success_text": [
+        "The forest is coming alive again after leaf-bare, but it's still recovering, and the f_tp_s r_c finds looks on the scrawny side. Still, together with a uncracked bird egg fallen from it's nest, that's a decent contribution to bring back to camp.",
+        "r_c is very proud of the pounce that nails them a f_tp_s, and tries to repeat the trick. On the one paw, it does work, netting them a f_tp_s for their prey haul, but that fantastic pounce also takes them into a dirty pile of melting snow under a bush. Blegh. They really thought they'd be done with snow by now.",
+        "Finally! It felt like the snows would never clear. s_c ignores the odd dirty slushy pile still trying to hold out in the most sheltered spots under evergreen trees, telling themselves those are probably mostly mud by now anyway, and cheerfully brings back to c_n camp a full haul of several f_tp_p and a plump f_tp_s.",
+        "s_c pads carefully around the signs of the strengthening sun, avoiding what seems like an endless series of puddles and washed out trails to carefully make their way to a small meadow hemmed in by the trees. In the clearing in the forest, the sun has been left unimpeded to call grass from dormancy, and it makes for a productive huntign spot, with s_c bringing home a f_tp_s and two f_tp_p."
+    ],
+    "fail_text": [
+        "Maybe it was a bad idea hunting on an empty stomach - there's little cover from the forest right now, and r_c gets spotted every time they start a stalk.",
+        null,
+        null,
+        "When they round a bend in the path, r_c hears a bird call. Jerking their head up, they lose their footing and skid down a slope more mud than grass. They're not that badly hurt, but r_c is tender enough after that fall to give up and go home.",
+        null,
+        "s_c overconfidently tries to jump a muddy puddle, doesn't make it, and slides face first into a tree. Also there's snow within the puddle, not quite melted. Fantastic."
+    ],
+    "chance_of_success": 50,
+    "exp": 15,
+    "win_skills": [
+        "good hunter",
+        "great hunter",
+        "fantastic hunter"
+    ],
+    "win_trait": ["calm", "careful", "nervous", "thoughtful"],
+    "fail_trait": ["bold", "daring"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_hunt_random_newleafsoloapp1",
+    "biome": "forest",
+    "season": "newleaf",
+    "tags": [
+        "hunting",
+        "apprentice",
+        "minor_injury",
+        "no_fail_prey",
+        "medium_prey"
+    ],
+    "intro_text": "app1, hearing the rest of camp gossiping about the good hunting newleaf will bring, thinks it's worth a shot going out into the soggy forest by themselves. They want to prove that they've gotten better at stalking.",
+    "decline_text": "...Maybe it'd be better to wait until their mentor is free to take them on a hunting patrol.",
+    "success_text": [
+        "There's no snow. That's so obvious that app1 feels embarassed for thinking it, but - there's no snow. And it's so warm, app1 doesn't even mind all the mud the rest of the Clan is so upset about, at least it's not cold anymore. Stalking through a tangle of evergreen trees, app1 finds a good f_mp_s.",
+        "Perhaps they need to ask their mentor about working on their killing technique next - the f_tp_s they found by a rotting log sort of had half it's head caved in, and if they hadn't snagged the leg of the f_tp_s they found by a big oak tree, it would've gotten away. Still, app1 is proud to bring these back to the fresh-kill pile all by themselves.",
+        null,
+        "app1 carefully skirts the seas of mud that've replaced the snowdrifts, not knowing which they prefer. But it's difficult to be too upset by it, not when the sun is shining and the birds are out singing and app1 has a f_mp_s to bring home to the fresh-kill pile in front of the whole Clan."
+    ],
+    "fail_text": [
+        null,
+        null,
+        null,
+        "While rounds a bend in the path, app1 hears a bird call. Jerking their head up, they lose their footing and skid down a slope more mud than grass. They're not that badly hurt, but app1 is tender enough after that fall to give up and go home.",
+        null,
+        "app1 heads out confidently, sure that the bounties of newleaf will make this hunt easy. While pouncing for a bird, they fall into a muddy puddle, landing awkwardly. To add insult to injury, the bird makes dirt on their head. Great."
+    ],
+    "chance_of_success": 40,
+    "exp": 25,
+    "win_trait": ["calm", "careful", "nervous", "thoughtful"],
+    "fail_trait": ["bold", "daring"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 }
 ]

@@ -1780,5 +1780,85 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_hunt_random_greenleafsolowarrior1",
+    "biome": "forest",
+    "season": "greenleaf",
+    "tags": [
+        "hunting",
+        "no_app",
+        "minor_injury",
+        "no_fail_prey",
+        "medium_prey0",
+        "medium_prey1",
+        "large_prey2",
+        "large_prey3"
+    ],
+    "intro_text": "The light drizzle falling on their whiskers is refreshing, after so many days of warmth. r_c wanders out to hunt, making the most of the drop in temperature so they don't have to stalk in the full heat of greenleaf.",
+    "decline_text": "They weren't dead-set on hunting, and r_c allows themselves to be distracted by one of their Clanmates instead.",
+    "success_text": [
+        "They're not the only creature taking advantage of the light rain to find food - though for the f_tp_p and the single f_tp_s they're bringing back to camp, that descision was a mistake.",
+        "Some of the forest's plants, particularly the short-rooted undergrowth, will definitely appreciate the drink the sky is providing. r_c thanks the sky for a different reason, giving thanks to Starclan as they bring home a f_tp_s, a f_tp_s they found limping, and a old f_tp_s for the fresh-kill pile.",
+        "The thick undergrowth of the forest is perfect for stalking - s_c doesn't know why cats would ever live elsewhere. They bring back a f_mp_s and a couple f_tp_p for good measure, pleased with the satisfying hunt.",
+        "With the sky gray and intermittently scattering water through c_n's territory, any Twolegs will be huddled in their strange dens. s_c doesn't know why, but the behaviour is obvious. It makes it far safer to hunt near Twoleg paths and dens, and s_c brings a nice f_mp_s and a very dumb f_tp_s that wandered in front of their nose back for the fresh-kill pile."
+    ],
+    "fail_text": [
+        "The skies clear, and though r_c keeps hunting, the heat of the sun makes them sluggish and slow to react",
+        null,
+        null,
+        "Finding a decently sized rock to pounce from, r_c misjudges the landing, losing the f_tp_s they were after and having to go back to camp to sleep off their sore body and sore pride.",
+        null,
+        "Perhaps trying to hunt in the canopy was overconfident, s_c muses, clinging to bark made slippery by the drizzle. Edging backwards carefully, they manage to inelegantly return to the ground with only a little bit of a fall. Their pride has probably taken more damage than their pelt, if they're being honest."
+    ],
+    "chance_of_success": 60,
+    "exp": 15,
+    "win_skills": [
+        "good hunter",
+        "great hunter",
+        "fantastic hunter"
+    ],
+    "win_trait": ["calm", "careful", "nervous", "thoughtful"],
+    "fail_trait": ["bold", "daring"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_hunt_random_greenleafsoloapp1",
+    "biome": "forest",
+    "season": "greenleaf",
+    "tags": [
+        "hunting",
+        "apprentice",
+        "minor_injury",
+        "no_fail_prey",
+        "medium_prey"
+    ],
+    "intro_text": "It's been so hot recently, but today, with the clouds providing a slight drizzle, app1 has the zoomies. Their mentor suggests, with a weird amount of tired humor, that they should go hunting if they're so energetic. Sure!",
+    "decline_text": "...Maybe it'd be better to wait until their mentor is free to take them on a hunting patrol.",
+    "success_text": [
+        "Darting around the forest, still close to camp, app1 manages to snag a f_tp_s and a stinky f_tp_s. Their mentor looks both impressed and exhausted to see them report back so soon.",
+        "app1 is thrilled to find a nice f_mp_s, and even more thrilled to catch the second one they find!",
+        null,
+        "Once they're out in the woods, their frenetic energy fades into focus. s_c brings back a plump f_mp_s, and their mentor praises them for both the impressive catch and their growing independence."
+    ],
+    "fail_text": [
+        null,
+        null,
+        null,
+        "It turns out running headlong at prey isn't an effective hunting techniques, and is a fantastic technique for crashing into things. A little wiser, a little dishevelled, and a little less hyper, app1 heads back to camp.",
+        null,
+        "app1 tries to run after a f_tp_s into a wild rose bush, and remembers the warnings about it thorns. Except they only remember the warnings after doing it. Ouch."
+    ],
+    "chance_of_success": 50,
+    "exp": 25,
+    "win_trait": ["calm", "careful", "nervous", "thoughtful"],
+    "fail_trait": ["bold", "daring"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 }
 ]
