@@ -43,7 +43,7 @@ class MakeClanScreen(Screens):
                          "- Illnesses, Injuries, and Permanent Conditions<br>" \
                          "- Herb gathering and treatment<br>" \
                          "- Ability to choose patrol type<br><br>" \
-                         "With this mode you'll be making the important clan-life decisions."
+                         "With this mode you'll be making the important Clan-life decisions."
 
     cruel_mode_text = "This mode has all the features of Expanded mode, but is significantly more difficult. If " \
                       "you'd like a challenge with a bit of brutality, then this mode is for you.<br><br>" \
