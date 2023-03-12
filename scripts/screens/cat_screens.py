@@ -5,12 +5,14 @@ from random import choice
 
 import pygame
 
+from ..datadir import get_save_dir
+
 try:
     import ujson
 except ImportError:
     import json as ujson
 
-from scripts.utility import update_sprite, event_text_adjust, scale
+from scripts.utility import update_sprite, event_text_adjust, scale, ACC_DISPLAY
 
 from .base_screens import Screens, cat_profiles
 
@@ -802,9 +804,10 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # ACCESSORY
-        output += 'accessory: ' + str(accessory_display_name(the_cat))
-        # NEWLINE ----------
-        output += "\n"
+        if the_cat.accessory:
+            output += 'accessory: ' + str(ACC_DISPLAY[the_cat.accessory]["default"])
+            # NEWLINE ----------
+            output += "\n"
 
         # PARENTS
         if the_cat.parent1 is None and the_cat.parent2 is None:
@@ -1080,7 +1083,7 @@ class ProfileScreen(Screens):
 
         notes = self.user_notes
 
-        notes_directory = 'saves/' + clanname + '/notes'
+        notes_directory = get_save_dir() + '/' + clanname + '/notes'
         notes_file_path = notes_directory + '/' + self.the_cat.ID + '_notes.json'
 
         if not os.path.exists(notes_directory):
@@ -1103,7 +1106,7 @@ class ProfileScreen(Screens):
         """Loads user-entered notes. """
         clanname = game.clan.name
 
-        notes_directory = 'saves/' + clanname + '/notes'
+        notes_directory = get_save_dir() + '/' + clanname + '/notes'
         notes_file_path = notes_directory + '/' + self.the_cat.ID + '_notes.json'
 
         if not os.path.exists(notes_file_path):

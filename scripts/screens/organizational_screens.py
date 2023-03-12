@@ -1,3 +1,6 @@
+import platform
+import subprocess
+
 import pygame
 import os
 import shutil
@@ -13,6 +16,7 @@ import pygame_gui
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 from scripts.game_structure.windows import DeleteCheck
 from scripts.game_structure.discord_rpc import _DiscordRPC
+from ..datadir import get_data_dir
 
 
 class StartScreen(Screens):
@@ -353,6 +357,14 @@ class SettingsScreen(Screens):
                 if game.rpc.is_alive():
                     game.rpc.join(1)
                 exit()
+            elif event.ui_element == self.open_data_directory_button:
+                if platform.system() == 'Darwin':
+                    subprocess.call(["open", "-R", get_data_dir()])
+                elif platform.system() == 'Windows':
+                    os.startfile(get_data_dir())  # pylint: disable=E1101
+                elif platform.system() == 'Linux':
+                    subprocess.Popen(['xdg-open', get_data_dir()])
+                return
             elif event.ui_element == self.save_settings_button:
                 self.save_settings()
                 game.save_settings()
@@ -523,6 +535,14 @@ class SettingsScreen(Screens):
                                                              "When you reopen, fullscreen"
                                                              " will be toggled. ")
 
+        self.open_data_directory_button = UIImageButton(scale(pygame.Rect((50, 1290), (356, 60))),
+                                               "",
+                                               object_id="#open_data_directory_button",
+                                               manager=MANAGER,
+                                               tool_tip_text="Opens the data directory. "
+                                                             "This is where save files "
+                                                             "and logs are stored.")
+
         self.update_save_button()
         self.main_menu_button = UIImageButton(scale(pygame.Rect((50, 50), (305, 60))),
                                               "", object_id="#main_menu_button", manager=MANAGER)
@@ -556,6 +576,8 @@ class SettingsScreen(Screens):
         del self.main_menu_button
         self.fullscreen_toggle.kill()
         del self.fullscreen_toggle
+        self.open_data_directory_button.kill()
+        del self.open_data_directory_button
 
         game.settings = self.settings_at_open
 
