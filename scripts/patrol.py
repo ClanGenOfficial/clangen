@@ -997,6 +997,7 @@ class Patrol():
         # give a litter if the outcome calls for it
         if f"litter{outcome}" in attribute_list:
             litter = True
+            age = randint(23, 100)
             # make sure kittens get correct backstory
             if "dead" in attribute_list:
                 kit_backstory = ['orphaned', 'orphaned2']

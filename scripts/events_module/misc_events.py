@@ -29,7 +29,6 @@ class MiscEvents():
         other_clan = random.choice(game.clan.all_clans)
         other_clan_name = f'{other_clan.name}Clan'
 
-
         possible_events = self.generate_events.possible_short_events(cat.status, cat.age, "misc_events")
         acc_checked_events = []
         for event in possible_events:

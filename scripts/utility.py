@@ -1,14 +1,12 @@
-
 # pylint: disable=line-too-long
 """
 
 TODO: Docs
 
 
-""" # pylint: enable=line-too-long
+"""  # pylint: enable=line-too-long
 
-
-from random import choice, choices, randint, random
+from random import choice, choices, randint, random, sample
 import pygame
 from scripts.cat.names import names
 
@@ -524,6 +522,7 @@ def add_children_to_cat(cat, cat_class):
             inter_cat.children.append(cat.ID)
     print('cats children', cat.children)
 
+
 def change_relationship_values(cats_to: list,
                                cats_from: list,
                                romantic_love=0,
@@ -606,13 +605,60 @@ def event_text_adjust(Cat,
                       keep_m_c=False,
                       new_cat=None,
                       clan=None):
+    omen_list = ["a five-pointed leaf", "a stone with shining chips in it", "a crooked-jawed squirrel",
+                 "an odd pile of soft downy fur left in the open", "a charred scrap of fur",
+                 "a shard of glass", "a stick that smells of fire", "the tooth of a large predator",
+                 "an gleaming feather", "withered deathberries", "a strangely shaped cloud", "a split acorn",
+                 "a piece of prey, fresh and yet rotten with maggots", "a shell shining with the colors of water",
+                 "a branch that looks whole but comes apart with a gentle touch", "a three-eyed fish"
+                 "a stone of two halves perfectly fitting together", "a two-headed adder", "a perfectly shed snake-skin",
+                 "a glowing bug fallen in the middle of camp", "a pawprint of red on rock", "destroyed herbs",
+                 "a bird's broken egg", "a dew covered spider's web", "stars shooting across the sky", "a torn collar"
+                 "a strangely-patterned stone", "the bones of freshkill", "a shining beetle shell", "a green moth",
+                 "an old bloody claw", "a starving vole", "the talon of a hawk", "a headless centipede",
+                 "an abandoned bee-stinger", "a cracked mouse skull", "tattered feathers", "a miraculously burning reed",
+                 "a shed whisker"
+                 ]
+    prophecy_list = ["blood pooling on the ground", "blood dripping from a leaf", "spread claws", "snarling teeth",
+                     "echoing snarls", "wailing cries", "hissing", "yowling", "the hiss of a friend", "an enemy's hiss",
+                     "a kit's mew", "the excitement of an apprentice", "the strength of a warrior",
+                     "the smell of the medicine cat den", "the ache in an elder's bones", "a thundering voice",
+                     "a barking figure", "howling in the distance", "a monster roaring", "the purring of a friend",
+                     "the purr of an enemy", "the brush of a pelt against their own", "the scent of a friend",
+                     "the touch of a mentor to an apprentice's forehead", "a tail twining with their own",
+                     "a bird call", "a bird's feather", "soft fur", "the squeak of prey being killed",
+                     "sunlight glinting off a plant", "pouring rain", "hail pounding the ground", "snow falling softly",
+                     "a blizzard raging", "storms neverending", "wind howling", "bright sunshine",
+                     "blazing heat", "dark clouds", "rolling clouds", "rushing fire", "flooding water",
+                     "mud splattered on the rocks", "rocks falling", "earth ripping", "a deep hole in the ground",
+                     "a freshly-dug grave", "the falling petals of a flower", "honey dripping", "spreading frost",
+                     "falling trees", "crashing waves", "a clear pool of water", "deathberries", "herbs", "the scent of catmint",
+                     "poppy seeds", "the moon", "the stars", "the sun", "the sensation of falling",
+                     "the feeling of flight", "a view of camp", "the sounds of battle", "frozen paws",
+                     "an unyielding fog", "an oppressive darkness", "blinding light", "the apprentice den",
+                     "the leader's den", "the nursery", "a deep lake", "a snake eating it's own tail",
+                     "the scent of another Clan", "a ghostly pair of eyes", "the scent of someone long dead",
+                     "the rushing sound of a river", "the smell of sickness", "a blackbird covering the moon",
+                     "two pawprints overlapping", "a broken Twoleg collar", "a half-remembered promise",
+                     "the glowing eyes of a monster", "their own voice speaking to them", "a foreboding feeling",
+                     "skeletal trees against the sky", "the sound of cracking ice", "claw-marks on a still puddle",
+                     "a fire trapped in stone", "abandoned Twoleg dens", "a tattered Twoleg pelt",
+                     "the sound of a heartbeat", "clouds covering the stars", "their family",
+                     "a single beam of moonlight from the clouds", "the camp in flames", "a rainbow on the water",
+                     "the reflection of a lion", "a tiger's reflection", "an animal leaping from flames",
+                     "the sun blotted out by a great shadow", "a twig burning from both ends", "a panther-black night"
+                     "a warrior's form blocking the sun", "the moon bleeding", "a distant howl of pain",
+                     "the scent of traveling herbs", "the grin of a wolf", "pawsteps that smell like no cat",
+                     "water flowing upwards", "a lost object finally returned", "a figure with the voice of StarClan",
+                     "the scent of milk far from the nursery", "a cat not yet born", "darkness despite the shining sun",
+                     "a trail of light stretching through the camp", "a cat covered in blood", "bloodied teeth",
+                     "a whispered message", "cats howling to the moon", "a bloody red cloud", "a cat beside a Twoleg",
+                     "a cat's paw devoid of claws", "stones dissolving in water", "a dry river still flowing with water"
+                     ]
     name = str(cat.name)
     other_name = None
     if other_cat:
         other_name = str(other_cat.name)
-    mate = None
-    if cat.mate:
-        mate = Cat.all_cats.get(cat.mate).name
 
     adjust_text = text
     if keep_m_c is False:
@@ -621,8 +667,6 @@ def event_text_adjust(Cat,
         adjust_text = adjust_text.replace("r_c", str(other_name))
     if other_clan_name:
         adjust_text = adjust_text.replace("o_c", str(other_clan_name))
-    if mate:
-        adjust_text = adjust_text.replace("c_m", str(mate))
     if new_cat:
         adjust_text = adjust_text.replace("n_c_pre", str(new_cat.name.prefix))
         adjust_text = adjust_text.replace("n_c", str(new_cat.name))
@@ -630,6 +674,25 @@ def event_text_adjust(Cat,
         adjust_text = adjust_text.replace("acc_plural", str(ACC_DISPLAY[cat.accessory]["plural"]))
     if "acc_singular" in adjust_text:
         adjust_text = adjust_text.replace("acc_singular", str(ACC_DISPLAY[cat.accessory]["singular"]))
+    if "omen_list" in adjust_text:
+        chosen_omens = sample(omen_list, k=randint(2, 4))
+        omen_amount = len(chosen_omens)
+        if omen_amount == 2:
+            omen_text = " and ".join(chosen_omens)
+        else:
+            start = ", ".join(chosen_omens[:-1])
+            omen_text = ", and ".join([start, chosen_omens[-1]])
+        adjust_text = adjust_text.replace("omen_list", omen_text)
+
+    if "prophecy_list" in adjust_text:
+        chosen_prophecy = sample(prophecy_list, k=randint(2, 4))
+        prophecy_amount = len(chosen_prophecy)
+        if prophecy_amount == 2:
+            prophecy_text = " and ".join(chosen_prophecy)
+        else:
+            start = ", ".join(chosen_prophecy[:-1])
+            prophecy_text = ", and ".join([start, chosen_prophecy[-1]])
+        adjust_text = adjust_text.replace("prophecy_list", prophecy_text)
 
     if clan is not None:
         _tmp = clan
