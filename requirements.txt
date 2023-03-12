@@ -1,3 +1,4 @@
 pygame==2.2.0
 ujson==5.7.0
 pygame_gui==0.6.8
+platformdirs===3.1.0
