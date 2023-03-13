@@ -188,10 +188,11 @@ class Events():
                     Cat.grief_strings.pop(ID)
 
             # Generate events
-            for item in Cat.grief_strings.items():
+            for item in Cat.grief_strings.values():
+                print(item)
                 game.cur_events_list.append(
-                    Single_Event(item[1], ["birth_death", "relation"],
-                                 item[0]))
+                    Single_Event(item[0], ["birth_death", "relation"],
+                                 item[1]))
 
             Cat.grief_strings.clear()
 
