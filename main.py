@@ -159,6 +159,13 @@ else:
 game.rpc = _DiscordRPC("1076277970060185701", daemon=True)
 game.rpc.start()
 game.rpc.start_rpc.set()
+
+
+cursorimg = pygame.image.load('resources/images/cursor.png')
+pygame.mouse.set_visible(False)
+cursor = pygame.transform.scale(cursorimg, (32, 32))
+
+
 while True:
     time_delta = clock.tick(30) / 1000.0
     if game.switches['cur_screen'] not in ['start screen']:
@@ -211,7 +218,12 @@ while True:
         game.all_screens[game.current_screen].screen_switches()
         game.switch_screens = False
 
+
     # END FRAME
     MANAGER.draw_ui(screen)
+
+    # Custom cursor
+    if True: #if game.settings['custom cursor']: TODO: Add setting
+        screen.blit(cursor, pygame.mouse.get_pos())
 
     pygame.display.update()
