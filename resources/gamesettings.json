@@ -84,7 +84,7 @@
             "Cats may have kits before mating regardless of the Un-mated Cat Offspring setting."
         ],
         "no gendered breeding": [
-            "A cat's biological sex will no longer be a constraining factor for pregnancies.",
+            "Allow same-sex breeding",
             "Allow couples to birth kittens despite same-sex status"
         ],
         "no unknown fathers": [
@@ -93,11 +93,11 @@
         ],
         "romantic with former mentor": [
             "Allow romantic interactions with former mentors",
-            ""
+            "Allows mentors and the cats they trained to be romantic after they become warriors"
         ],
         "first_cousin_mates": [
             "Allow first cousins to be mates and have romantic interactions",
-            ""
+            "Allows cats with the same grandparents but different parents to become mates"
         ]
     }
 }
