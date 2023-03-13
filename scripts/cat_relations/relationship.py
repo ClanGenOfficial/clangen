@@ -91,11 +91,12 @@ class Relationship():
         # get other possible filters
         season = str(game.clan.current_season).casefold()
         biome = str(game.clan.biome).casefold()
+        game_mode = game.clan.game_mode
 
         all_interactions = NEUTRAL_INTERACTIONS.copy()
         if in_de_crease != "neutral":
             all_interactions = INTERACTION_MASTER_DICT[rel_type][in_de_crease].copy()
-            possible_interactions = self.get_relevant_interactions(all_interactions, intensity, biome, season)
+            possible_interactions = self.get_relevant_interactions(all_interactions, intensity, biome, season, game_mode)
         else:
             possible_interactions = all_interactions
 
@@ -123,9 +124,9 @@ class Relationship():
         self.used_interaction_ids.append(self.chosen_interaction.id)
 
         self.interaction_affect_relationships(in_de_crease, intensity, rel_type)
-        # give cats injuries
-        if len(self.chosen_interaction.injuries) > 0:
-            for abbreviations, injuries in self.chosen_interaction.injuries.items():
+        # give cats injuries if the game mode is not classic
+        if len(self.chosen_interaction.get_injuries) > 0 and game_mode != 'classic':
+            for abbreviations, injuries in self.chosen_interaction.get_injuries.items():
                 injured_cat = self.cat_from
                 if abbreviations != "m_c":
                     injured_cat = self.cat_to
@@ -340,7 +341,7 @@ class Relationship():
         rel_type = choice(types)
         return rel_type
 
-    def get_relevant_interactions(self, interactions : list, intensity : str, biome : str, season : str) -> list:
+    def get_relevant_interactions(self, interactions : list, intensity : str, biome : str, season : str, game_mode : str) -> list:
         """
         Filter interactions based on the status and other constraints.
             
@@ -354,6 +355,8 @@ class Relationship():
                 biome of the clan
             season : str
                 current season of the clan
+            game_mode : str
+				game mode of the clan
 
             Returns
             -------
@@ -379,7 +382,7 @@ class Relationship():
             if interact.intensity != intensity:
                 continue
 
-            cats_fulfill_conditions = cats_fulfill_single_interaction_conditions(self.cat_from, self.cat_to, interact)
+            cats_fulfill_conditions = cats_fulfill_single_interaction_conditions(self.cat_from, self.cat_to, interact, game_mode)
             if not cats_fulfill_conditions:
                 continue
 

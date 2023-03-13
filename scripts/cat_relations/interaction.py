@@ -12,7 +12,8 @@ class Single_Interaction():
                  season=None,
                  intensity="medium",
                  interactions=None,
-                 injuries=None,
+                 get_injuries=None,
+                 has_injuries=None,
                  relationship_constraint=None,
                  backstory_constraint=None,
                  main_status_constraint=None,
@@ -33,10 +34,15 @@ class Single_Interaction():
         else:
             self.interactions = [f"This is a default interaction! ID: {id} with cats (m_c), (r_c)"]
 
-        if injuries:
-            self.injuries = injuries
+        if get_injuries:
+            self.get_injuries = get_injuries
         else:
-            self.injuries = {}
+            self.get_injuries = {}
+
+        if has_injuries:
+            self.has_injuries = has_injuries
+        else:
+            self.has_injuries = {}
 
         if relationship_constraint:
             self.relationship_constraint = relationship_constraint
@@ -97,7 +103,8 @@ class Group_Interaction():
                  intensity="medium",
                  cat_amount=None,
                  interactions=None,
-                 injuries=None,
+                 get_injuries=None,
+                 has_injuries=None,
                  status_constraint=None,
                  trait_constraint=None,
                  skill_constraint=None,
@@ -117,10 +124,15 @@ class Group_Interaction():
         else:
             self.interactions = [f"This is a default interaction! ID: {id} with cats (m_c), (r_c)"]
 
-        if injuries:
-            self.injuries = injuries
+        if get_injuries:
+            self.get_injuries = get_injuries
         else:
-            self.injuries = {}
+            self.get_injuries = {}
+
+        if has_injuries:
+            self.has_injuries = has_injuries
+        else:
+            self.has_injuries = {}
 
         if status_constraint:
             self.status_constraint = status_constraint
@@ -248,7 +260,7 @@ def rel_fulfill_rel_conditions(relationship, constraint, interaction_id) -> bool
     return True
 
 
-def cats_fulfill_single_interaction_conditions(main_cat, random_cat, interaction) -> bool:
+def cats_fulfill_single_interaction_conditions(main_cat, random_cat, interaction, game_mode) -> bool:
     """Check if the two cats fulfills the interaction constraints."""
     if len(interaction.main_status_constraint) >= 1:
         if main_cat.status not in interaction.main_status_constraint:
@@ -282,6 +294,24 @@ def cats_fulfill_single_interaction_conditions(main_cat, random_cat, interaction
             if random_cat.backstory not in interaction.backstory_constraint["r_c"]:
                 return False
 
+    if len(interaction.has_injuries) >= 1:
+        # if there is a injury constraint and the clan is in classic mode, this interact can not be used
+        if game_mode == "classic":
+            return False
+
+        if "m_c" in interaction.has_injuries:
+            injuries_in_needed = list(
+                filter(lambda inj: inj in interaction.backstory_constraint["m_c"], main_cat.injuries.keys())
+            )
+            if len(injuries_in_needed) <= 0:
+                return False
+        if "r_c" in interaction.has_injuries:
+            injuries_in_needed = list(
+                filter(lambda inj: inj in interaction.backstory_constraint["r_c"], random_cat.injuries.keys())
+            )
+            if len(injuries_in_needed) <= 0:
+                return False
+
     return True
 
 
@@ -298,8 +328,10 @@ def create_interaction(inter_list) -> list:
             season=inter["season"] if "season" in inter else ["Any"],
             intensity=inter["intensity"] if "intensity" in inter else "medium",
             interactions=inter["interactions"] if "interactions" in inter else None,
-            injuries=inter["injuries"] if "injuries" in inter else None,
+            get_injuries=inter["get_injuries"] if "get_injuries" in inter else None,
+            has_injuries=inter["has_injuries"] if "has_injuries" in inter else None,
             relationship_constraint = inter["relationship_constraint"] if "relationship_constraint" in inter else None,
+            backstory_constraint = inter["backstory_constraint"] if "backstory_constraint" in inter else None,
             main_status_constraint = inter["main_status_constraint"] if "main_status_constraint" in inter else None,
             random_status_constraint = inter["random_status_constraint"] if "random_status_constraint" in inter else None,
             main_trait_constraint = inter["main_trait_constraint"] if "main_trait_constraint" in inter else None,
@@ -321,11 +353,13 @@ def create_group_interaction(inter_list) -> list:
             cat_amount=inter["cat_amount"] if "cat_amount" in inter else None,
             intensity=inter["intensity"] if "intensity" in inter else "medium",
             interactions=inter["interactions"] if "interactions" in inter else None,
-            injuries=inter["injuries"] if "injuries" in inter else None,
+            get_injuries=inter["get_injuries"] if "get_injuries" in inter else None,
+            has_injuries=inter["has_injuries"] if "has_injuries" in inter else None,
             status_constraint = inter["status_constraint"] if "status_constraint" in inter else None,
             trait_constraint = inter["trait_constraint"] if "trait_constraint" in inter else None,
             skill_constraint = inter["skill_constraint"] if "skill_constraint" in inter else None,
             relationship_constraint = inter["relationship_constraint"] if "relationship_constraint" in inter else None,
+            backstory_constraint = inter["backstory_constraint"] if "backstory_constraint" in inter else None,
             specific_reaction= inter["specific_reaction"] if "specific_reaction" in inter else None,
             general_reaction= inter["general_reaction"] if "general_reaction" in inter else None
         ))

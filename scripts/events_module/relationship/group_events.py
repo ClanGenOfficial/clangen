@@ -70,7 +70,8 @@ class Group_Events():
         # choose one interaction and trigger all needed functions to reflect the interaction
         self.chosen_interaction = choice(possibilities)
 
-        self.injuring_cats()
+        if game.clan.game_mode != 'classic':
+            self.injuring_cats()
         amount = game.config["relationship"]["in_decrease_value"][self.chosen_interaction.intensity]
 
         # if there is a general reaction in the interaction, then use this
@@ -207,6 +208,21 @@ class Group_Events():
             # check if all cats fulfill the backstory constraints
             all_fulfilled = True
             for abbr, value in interact.backstory_constraint.items():
+                # main cat is already filtered
+                if abbr == "m_c":
+                    continue
+                relevant_cat = Cat.all_cats[self.abbreviations_cat_id[abbr]]
+                if relevant_cat.backstory not in value:
+                    all_fulfilled = False
+            if not all_fulfilled:
+                continue
+
+            # if the interaction has injuries constraints, but the clan is in classic mode
+            if game.clan.game_mode == 'classic' and len(interact.has_injuries) > 0:
+                continue
+            # check if all cats fulfill the injuries constraints
+            all_fulfilled = True
+            for abbr, value in interact.has_injuries.items():
                 # main cat is already filtered
                 if abbr == "m_c":
                     continue
@@ -465,10 +481,10 @@ class Group_Events():
         """
         Injuring the cats based on the list of the injuries of the chosen group interaction.
         """
-        if len(self.chosen_interaction.injuries) <= 0:
+        if len(self.chosen_interaction.get_injuries) <= 0:
             return
 
-        for abbreviations, injuries in self.chosen_interaction.injuries.items():
+        for abbreviations, injuries in self.chosen_interaction.get_injuries.items():
             injured_cat = Cat.all_cats[self.abbreviations_cat_id[abbreviations]]
             
             for inj in injuries:
