@@ -196,7 +196,7 @@
     "exp": 10,
     "success_text": [
             "As a plant that grows non-seasonally and without losing any of its green in leaf-bare, while also having a crucial herbal use stopping blood loss, horsetail is a welcome sight in any well-stocked medicine cat den.",
-            "Snapping off the thick horsetail stem near the base of the plant lets p_l drag an entire big, long shoot back to camp, where they process it down further into small stem sections that're easily stored.",
+            "Snapping off the thick horsetail stem near the base of the plant lets p_l drag an entire big, long shoot back to camp, where they process it down further into small stem sections that are easily stored.",
             "s_c deftly picks out a horsetail shoot, bringing back an impressive addition to the Clan's herb stores."
 ],
     "fail_text": [
@@ -220,7 +220,7 @@
     "exp": 20,
     "success_text": [
             "p_l doesn't know why horsetail plants lack leaves, but they encourage app1's interest in the topic. As a plant that grows non-seasonally and without losing any of its green in leaf-bare, while also having a crucial herbal use stopping blood loss, horsetail is a welcome sight in any well-stocked medicine cat den.",
-            "Snapping off the thick horsetail stem near the base of the plant lets p_l drag an entire big, long shoot back to camp, where app1 processes it down further into small stem sections that're easily stored and makes a neat pile in the medicine cat den with them.",
+            "Snapping off the thick horsetail stem near the base of the plant lets p_l drag an entire big, long shoot back to camp, where app1 processes it down further into small stem sections that are easily stored and makes a neat pile in the medicine cat den with them.",
             "s_c deftly picks out a horsetail shoot, bringing back an impressive addition to the Clan's herb stores as they describe the plant's uses to app1."
 ],
     "fail_text": [
@@ -244,7 +244,7 @@
     "exp": 10,
     "success_text": [
             "As a plant that grows non-seasonally and without losing any of its green in leaf-bare, while also having a crucial herbal use stopping blood loss, horsetail is a welcome sight in any well-stocked medicine cat den, and having other cats to help them makes the patrol an easy afternoon's work.",
-            "Snapping off the thick horsetail stem near the base of the plant lets p_l drag an entire big, long shoot back to camp. The patrol helps pull the massive bush, and several cats in camp fluff up with alarm watching the herb gathering patrol drag it in where they process it down further into small stem sections that're easily stored.",
+            "Snapping off the thick horsetail stem near the base of the plant lets p_l drag an entire big, long shoot back to camp. The patrol helps pull the massive bush, and several cats in camp fluff up with alarm watching the herb gathering patrol drag it in where they process it down further into small stem sections that are easily stored.",
             "s_c deftly picks out a horsetail shoot, bringing back impressive additions to the Clan's herb stores with the help of the warriors."
     ],
     "fail_text": [
