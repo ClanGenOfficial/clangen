@@ -215,20 +215,20 @@ for a, i in enumerate(
     sprites.make_group('eyes', (a, 0), f'eyes{i}')
     sprites.make_group('eyes2', (a, 0), f'eyes2{i}')
 for a, i in enumerate(
-        ['COPPER', 'SAGE', 'BLUE2', 'PALEBLUE', 'BRONZE', 'SILVER',
+        ['COPPER', 'SAGE', 'BLUETWO', 'PALEBLUE', 'BRONZE', 'SILVER',
         'PALEYELLOW', 'GOLD', 'GREENYELLOW']):
     sprites.make_group('eyes', (a, 1), f'eyes{i}')
     sprites.make_group('eyes2', (a, 1), f'eyes2{i}')
 
 # white patches
-for a, i in enumerate(['FULLWHITE', 'ANY', 'TUXEDO', 'LITTLE', 'COLOURPOINT', 'VAN', 'ANY2',
+for a, i in enumerate(['FULLWHITE', 'ANY', 'TUXEDO', 'LITTLE', 'COLOURPOINT', 'VAN', 'ANYTWO',
     'MOON', 'PHANTOM']):
     sprites.make_group('whitepatches', (a, 0), f'white{i}')
 for a, i in enumerate(['EXTRA', 'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL', 
     'LIGHTSONG', 'VITILIGO', 'BLACKSTAR', 'PIEBALD', 'CURVED', 'PETAL']):
     sprites.make_group('whitepatches', (a, 1), f'white{i}')
 # ryos white patches
-for a, i in enumerate(['TIP', 'FANCY', 'FRECKLES', 'RINGTAIL', 'HALFFACE', 'PANTS2', 'GOATEE', 'VITILIGO2',
+for a, i in enumerate(['TIP', 'FANCY', 'FRECKLES', 'RINGTAIL', 'HALFFACE', 'PANTSTWO', 'GOATEE', 'VITILIGOTWO',
     'PAWS', 'MITAINE', 'BROKENBLAZE', 'SCOURGE']):
     sprites.make_group('whitepatches', (a, 2), f'white{i}')
 for a, i in enumerate(['TAIL', 'BLAZE', 'PRINCE', 'BIB', 'VEE', 'UNDERS', 'HONEY',
@@ -240,7 +240,7 @@ for a, i in enumerate(
     sprites.make_group('whitepatches', (a, 4), f'white{i}')
 # beejeans white patches + perrio's point marks, painted, and heart2 + anju's new marks + key's blackstar
 for a, i in enumerate(['HEART', 'LILTWO', 'GLASS', 'MOORISH', 'SEPIAPOINT', 'MINKPOINT', 'SEALPOINT',
-    'MAO', 'LUNA', 'CHESTSPECK', 'WINGS', 'PAINTED', 'HEART2']):
+    'MAO', 'LUNA', 'CHESTSPECK', 'WINGS', 'PAINTED', 'HEARTTWO']):
     sprites.make_group('whitepatches', (a, 5), 'white' + i)
 
 # single (solid)
