@@ -175,8 +175,7 @@ while True:
     if game.settings['custom cursor']:
         pygame.mouse.set_cursor((0, 0), cursor_img)
     else:
-        pygame.mouse.set_cursor(*pygame.cursors.arrow)
-        # TODO: use system cursor
+        pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_ARROW)
 
     # Draw screens
     # This occurs before events are handled to stop pygame_gui buttons from blinking.
