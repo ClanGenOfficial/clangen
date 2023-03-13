@@ -2662,7 +2662,7 @@ class MediationScreen(Screens):
 
             # COMFORTABLE
             if the_relationship.comfortable > 49:
-                text = "secure:"
+                text = "security:"
             else:
                 text = "comfortable:"
             self.selected_cat_elements[f'comfortable_text{tag}'] = pygame_gui.elements.UITextBox(text, scale(pygame.Rect(

@@ -22,7 +22,7 @@
 		"id": "comfort_inc_low3",
 		"intensity": "low",
 		"interactions": [
-			"is asking r_c to check them for ticks."
+			"m_c is asking r_c to check them for ticks."
 		],
 		"main_status_constraint": [
 			"elder"
@@ -130,7 +130,7 @@
 	{
 		"id": "comfortable_kit_inc_med2",
 		"interactions": [
-			"wants to snuggle with r_c.",
+			"m_c wants to snuggle with r_c.",
 			"m_c is hiding under a bush from r_c, but they can't stop giggling."
 		],
 		"main_status_constraint": [
