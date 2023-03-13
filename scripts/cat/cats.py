@@ -433,9 +433,10 @@ class Cat():
                 m = self.moons
                 self.experience = 0
                 while m > Cat.age_moons['adolescent'][0]:
-                    base_ex = 0.6 * random.choices(game.config["graduation"]["base_app_timeskip_ex"][0],
-                                          weights=game.config["graduation"]["base_app_timeskip_ex"][1], k=1)[0]
-                    self.experience += base_ex
+                    ran = game.config["graduation"]["base_app_timeskip_ex"]
+                    exp = random.choice(
+                        list(range(ran[0][0], ran[0][1] + 1)) + list(range(ran[1][0], ran[1][1] + 1)) * 2)
+                    self.experience += exp + 3
                     m -= 1
             elif self.age in ['young adult', 'adult']:
                 self.experience = randint(Cat.experience_levels_range["prepared"][0],
@@ -2323,23 +2324,27 @@ class Cat():
         else:
             apply_bonus = True
             # EX gain on success
-            EX_gain = randint(5, 12)
+            if mediator.status != "mediator apprentice":
+                EX_gain = randint(10, 24)
 
-            gm_modifier = 1
-            if game.clan.game_mode == 'expanded':
-                gm_modifier = 3
-            elif game.clan.game_mode == 'cruel season':
-                gm_modifier = 6
+                gm_modifier = 1
+                if game.clan.game_mode == 'expanded':
+                    gm_modifier = 3
+                elif game.clan.game_mode == 'cruel season':
+                    gm_modifier = 6
 
-            if mediator.experience_level == "average":
-                lvl_modifier = 1.25
-            elif mediator.experience_level == "high":
-                lvl_modifier = 1.75
-            elif mediator.experience_level == "master":
-                lvl_modifier = 2
-            else:
-                lvl_modifier = 1
-            mediator.experience += EX_gain / lvl_modifier / gm_modifier
+                if mediator.experience_level == "average":
+                    lvl_modifier = 1.25
+                elif mediator.experience_level == "high":
+                    lvl_modifier = 1.75
+                elif mediator.experience_level == "master":
+                    lvl_modifier = 2
+                else:
+                    lvl_modifier = 1
+                mediator.experience += EX_gain / lvl_modifier / gm_modifier
+
+        if mediator.status == "mediator apprentice":
+            mediator.experience += max(random.randint(1, 6), 1)
 
         no_romantic_mentor = False
         if not game.settings['romantic with former mentor']:

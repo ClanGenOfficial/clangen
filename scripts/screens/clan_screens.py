@@ -2,7 +2,7 @@ import random
 
 import pygame
 from math import ceil
-from random import choice, randint
+from random import choice
 import pygame_gui
 from copy import deepcopy
 

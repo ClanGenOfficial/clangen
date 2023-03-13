@@ -46,9 +46,7 @@
                 "It's a beach full of lizards! p_l tears back to camp before they can get bitten.",
                 null
         ],
-        "win_skills": null,
         "win_trait": ["adventurous", "shameless", "sneaky", "strange", "troublesome", "chilish."],
-        "fail_trait": null,
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
