@@ -264,9 +264,14 @@ jobs:
         with:
           name: Clangen_macOS64.dmg
           path: Clangen_macOS64.dmg
+      - name: Import GPG key
+        id: import_gpg
+        uses: crazy-max/ghaction-import-gpg@v5
+        with:
+          gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
+          passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
       - name: Upload artifact to API
         run: |
-          echo ${{ secrets.PackageSignKey }} | gpg --import --passphrase ${{ secrets.PackageSignKeyPassphrase }}
           zip Clangen_macOS64.dmg.zip ./Clangen_macOS64.dmg
           gpg --output Clangen_macOS64.dmg.zip.sig --detach-sig Clangen_macOS64.dmg.zip
           curl -X 'POST' \
