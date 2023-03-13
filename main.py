@@ -28,15 +28,10 @@ directory = os.path.dirname(__file__)
 if directory:
     os.chdir(directory)
 
-import subprocess
-
-
 # Setup logging
 import logging
 
-
 setup_data_dir()
-
 
 formatter = logging.Formatter(
     "%(name)s - %(levelname)s - %(filename)s / %(funcName)s / %(lineno)d - %(message)s"
