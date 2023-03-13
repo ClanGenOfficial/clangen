@@ -953,6 +953,7 @@ class Patrol():
         if "kitten" in attribute_list:
             kit = True
             age = randint(1, 5)
+            status = "kitten"
             backstory = ['abandoned2', 'abandoned1', 'abandoned3']
         elif "apprentice" in attribute_list:
             status = "apprentice"
