@@ -201,6 +201,7 @@ def change_clan_relations(other_clan, difference=0):
 
 
 def create_new_cat(Cat,
+                   Relationship,
                    new_name=False,
                    loner=False,
                    kittypet=False,
@@ -217,6 +218,7 @@ def create_new_cat(Cat,
     """
     This function creates new cats and then returns a list of those cats
     :param Cat: pass the Cat class
+    :params Relationship: pass the Relationship class
     :param new_name: set True if cat(s) is a loner/rogue receiving a new Clan name - default: False
     :param loner: set True if cat(s) is a loner or rogue - default: False
     :param kittypet: set True if cat(s) is a kittypet - default: False
@@ -367,6 +369,13 @@ def create_new_cat(Cat,
         # and they exist now
         created_cats.append(new_cat)
         game.clan.add_cat(new_cat)
+
+        # create relationship class
+        for inter_cat in Cat.all_cats.values():
+            if inter_cat.ID == new_cat.ID:
+                continue
+            inter_cat.relationships[new_cat.ID] = Relationship(inter_cat, new_cat)
+            new_cat.relationships[inter_cat.ID] = Relationship(new_cat, inter_cat)
 
     return created_cats
 
@@ -652,9 +661,7 @@ def get_snippet_list(chosen_list, amount, sense_groups=None, return_string=True)
 
     # now choose a unique snippet from each snip list
     unique_snippets = []
-    print(snippets)
     for snip_list in snippets:
-        print(snip_list)
         unique_snippets.append(choice(snip_list))
 
     # pick out our final snippets

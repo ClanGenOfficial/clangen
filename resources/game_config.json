@@ -66,7 +66,11 @@
 		},
 		"compatibility_bonus": 3,
 		"passive_influence": 4,
-		"chance_for_neutral": 6
+		"chance_for_neutral": 6,
+		"chance_of_special_group": 4,
+		"comment":[
+			"chance_for_neutral - how high the chance is to make the interaction of the relationship to a 'neutral' instead of negative or positive"
+		]
 	},
 	"new_cat": {
 		"parent_buff": {
@@ -211,13 +215,13 @@
 		"comment": "Set this to -1 for it to be infinite"
 	},
 	"graduation": {
-		"base_app_timeskip_ex": [[3, 4, 5, 6, 7, 8, 9], [5, 10, 15, 40, 15, 10, 5]],
-		"base_med_app_timeskip_ex": [[1, 2, 3, 4, 5, 6, 7], [5, 10, 15, 40, 15, 10, 5]],
+		"base_app_timeskip_ex": [[3, 10],[5, 6]],
+		"base_med_app_timeskip_ex": [[2, 7],[2, 3]],
 		"max_apprentice_age": {
 			"medicine cat apprentice": 30,
 			"apprentice": 25,
 			"mediator apprentice": 25
 		},
-		"min_graduating_age": 9
+		"min_graduating_age": 10
 	}
 }

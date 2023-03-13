@@ -16,6 +16,7 @@ import subprocess
 import pygame
 import os
 import traceback
+import logging
 from html import escape
 
 from .base_screens import Screens
@@ -35,6 +36,7 @@ try:
 except ImportError:
     import json as ujson
 
+logger = logging.getLogger(__name__)
 
 class StartScreen(Screens):
     """
@@ -469,7 +471,10 @@ class SettingsScreen(Screens):
                 elif platform.system() == 'Windows':
                     os.startfile(get_data_dir())  # pylint: disable=no-member
                 elif platform.system() == 'Linux':
-                    subprocess.Popen(['xdg-open', get_data_dir()])
+                    try:
+                        subprocess.Popen(['xdg-open', get_data_dir()])
+                    except OSError:
+                        logger.exception("Failed to call to xdg-open.")
                 return
             elif event.ui_element == self.save_settings_button:
                 self.save_settings()
