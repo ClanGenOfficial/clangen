@@ -16,8 +16,22 @@ It then loads the settings, and then loads the start screen.
 
 
 """ # pylint: enable=line-too-long
-
 import sys
+import time
+from scripts.stream_duplexer import BufferedStreamDuplexer
+from scripts.datadir import get_log_dir, setup_data_dir
+
+
+setup_data_dir()
+timestr = time.strftime("%Y%m%d_%H%M%S")
+
+
+stdout_file = open(get_log_dir() + f'/stdout_{timestr}.log', 'a')
+stderr_file = open(get_log_dir() + f'/stderr_{timestr}.log', 'a')
+sys.stdout = BufferedStreamDuplexer(sys.stdout, stdout_file)
+sys.stderr = BufferedStreamDuplexer(sys.stderr, stderr_file)
+
+
 import os
 import time
 
@@ -34,15 +48,12 @@ import subprocess
 # Setup logging
 import logging
 
-
-setup_data_dir()
-
-
 formatter = logging.Formatter(
     "%(name)s - %(levelname)s - %(filename)s / %(funcName)s / %(lineno)d - %(message)s"
     )
+
+
 # Logging for file
-timestr = time.strftime("%Y%m%d_%H%M%S")
 log_file_name = get_log_dir() + f"/clangen_{timestr}.log"
 file_handler = logging.FileHandler(log_file_name)
 file_handler.setFormatter(formatter)
