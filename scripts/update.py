@@ -70,7 +70,8 @@ def self_update(release_channel, artifact_name):
 
     os.makedirs('Downloads/macOS_tempmount', exist_ok=True)
     os.system('hdiutil attach -nobrowse -mountpoint Downloads/macOS_tempmount Downloads/Clangen_macOS64.dmg')
-    shutil.rmtree('/Applications/Clangen.app', ignore_errors=True)
+    shutil.rmtree('/Applications/Clangen.app.old', ignore_errors=True)
+    shutil.move('/Applications/Clangen.app', '/Applications/Clangen.app.old')
     shutil.copytree('Downloads/macOS_tempmount/Clangen.app', '/Applications/Clangen.app')
     os.system('hdiutil detach Downloads/macOS_tempmount')
     os.execv('/Applications/Clangen.app/Contents/MacOS/Clangen', sys.argv)
