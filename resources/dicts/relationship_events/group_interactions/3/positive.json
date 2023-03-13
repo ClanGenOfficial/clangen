@@ -5,7 +5,7 @@
 		"intensity": "high",
 		"interactions": [
 			"m_c is convincing r_c1 that r_c2 isn't so bad once you get to know them.",
-			"m_c is talking with r_c1 and mentions multiple times, that r_c2 is a nice cat."
+			"m_c chats with r_c1 about how r_c2 is a nice cat."
 		],
 		"trait_constraint": {
 			"m_c": ["charismatic", "empathetic", "loyal", "charming"]
