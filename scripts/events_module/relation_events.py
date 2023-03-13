@@ -18,16 +18,6 @@ from scripts.events_module.relationship.mate_events import Mate_Events
 from scripts.events_module.relationship.welcoming_events import Welcoming_Events
 from scripts.events_module.relationship.group_events import Group_Events
 
-
-# if another cat is involved
-THIRD_RELATIONSHIP_INCLUDED = {
-    "charismatic": ['is convincing (cat 1) that (cat 2) isn\'t so bad once you get to know them.'],
-    "troublesome": ['made (cat) and (cat) start an argument.'],
-    "sneaky": ['is gossiping about (cat) and (cat).'],
-    "like": '(cat) confesses to (cat) that they think they like (cat).',
-    "trick": 'has successfully tricked (cat) into believing a crazy tale about the Clan leader.'
-}
-
 class Relation_Events():
     """All relationship events."""
     def __init__(self) -> None:

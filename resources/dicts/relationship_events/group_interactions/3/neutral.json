@@ -1,135 +1,22 @@
 [
 	{
-		"id": "sample_id_neu",
+		"id": "group_3_neutral_talk",
 		"cat_amount": 3,
-		"interactions": ["m_c interacts with r_c1 and r_c2"],
-		"general_reaction":{
-			"platonic": "increase",
-			"comfortable": "increase"
-		}
-	},
-	{
-		"id": "lovers_tests",
-		"cat_amount": 3,
+		"intensity": "low",
 		"interactions": [
-			"m_c is fighting with r_c1 over r_c2 and got hurt."
+			"m_c confesses to r_c1 that they like r_c2 in a romantic way.",
+			"While m_c and r_c1 where talking, m_c had the feeling, they can trust r_c1 and confesses, that they like r_c2."
 		],
-		"injuries": {
-			"m_c": [
-				"bruises"
-			]
-		},
-		"status_constraint": {
-			"m_c": [
-				"warrior",
-				"deputy",
-				"leader",
-				"medicine cat",
-				"mediator",
-				"elder"
-			],
-			"r_c1": [
-				"warrior",
-				"deputy",
-				"leader",
-				"medicine cat",
-				"mediator",
-				"elder"
-			],
-			"r_c2": [
-				"warrior",
-				"deputy",
-				"leader",
-				"medicine cat",
-				"mediator",
-				"elder"
-			]
-		},
 		"relationship_constraint": {
-			"m_c_to_r_c2": [
-				"mate"
-			]
+			"m_c_to_r_c1": ["trust_30"],
+			"m_c_to_r_c3": ["romantic_15"]
 		},
 		"specific_reaction": {
 			"m_c_to_r_c1": {
-				"platonic": "decrease",
-				"dislike": "increase",
-				"comfortable": "decrease",
-				"trust": "decrease",
-				"jealousy": "increase"
-			}
-		}
-	},
-	{
-		"id": "sample_id",
-		"biome": [
-			"Any"
-		],
-		"season": [
-			"Any"
-		],
-		"intensity": "medium",
-		"cat_amount": 3,
-		"interactions": [
-			"m_c is convincing r_c1 that r_c2 isn't so bad once you get to know them."
-		],
-		"injuries": {
-			"m_c": [
-				"bruises"
-			]
-		},
-		"status_constraint": {
-			"m_c": [
-				"warrior",
-				"deputy",
-				"leader"
-			],
-			"r_c1": [
-				"warrior",
-				"deputy",
-				"leader"
-			],
-			"r_c2": [
-				"warrior",
-				"deputy",
-				"leader"
-			]
-		},
-		"trait_constraint": {
-			"r_c2": [
-				"clam"
-			]
-		},
-		"skill_constraint": {
-			"m_c": [
-				"good hunter"
-			]
-		},
-		"relationship_constraint": {
-			"m_c_to_r_c1": [
-				"platonic_40"
-			]
-		},
-		"specific_reaction": {
-			"m_c_to_r_c1": {
-				"romantic": "increase",
-				"platonic": "neutral",
-				"dislike": "decrease",
-				"admiration": "neutral",
 				"comfortable": "increase",
-				"jealousy": "neutral",
 				"trust": "increase"
 			},
 			"r_c1_to_m_c": {
-				"romantic": "increase",
-				"dislike": "decrease",
-				"comfortable": "increase",
-				"trust": "increase"
-			},
-			"r_c1_to_r_c2": {
-				"romantic": "increase",
-				"dislike": "decrease",
-				"comfortable": "increase",
 				"trust": "increase"
 			}
 		}

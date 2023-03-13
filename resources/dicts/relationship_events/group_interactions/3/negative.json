@@ -1,11 +1,44 @@
 [
 	{
-		"id": "sample_id_neg",
+		"id": "group_3_negative_gossip",
 		"cat_amount": 3,
-		"interactions": ["m_c interacts with r_c1 and r_c2"],
-		"general_reaction":{
-			"platonic": "increase",
-			"comfortable": "increase"
+		"intensity": "low",
+		"interactions": ["m_c is gossiping with r_c1 about r_c2"],
+		"relationship_constraint": {
+			"m_c_to_r_c2": ["dislike_15"],
+			"r_c1_to_r_c2": ["dislike_15"]
+		},
+		"specific_reaction":{
+			"m_c_to_r_c1": {
+				"comfortable": "increase"
+			},
+			"m_c_to_r_c2": {
+				"platonic": "decrease",
+				"dislike": "increase"
+			},
+			"r_c1_to_r_c2": {
+				"platonic": "decrease",
+				"dislike": "increase"
+			},
+			"r_c2_to_m_c":{
+				"dislike": "increase"
+			},
+			"r_c2_to_r_c1":{
+				"dislike": "increase"
+			}
+		}
+	},	
+	{
+		"id": "group_3_negative_argument",
+		"cat_amount": 3,
+		"interactions": [
+			"m_c made r_c1 and r_c2 start an huge argument."
+		],
+		"trait_constraint": {
+			"m_c": ["troublesome"]
+		},
+		"general_reaction": {
+			"comfortable": "decrease"
 		}
 	}
 ]
