@@ -1682,7 +1682,7 @@ class ProfileScreen(Screens):
             else:
                 self.see_relationships_button.enable()
 
-            if self.the_cat.age not in ['young adult', 'adult', 'senior adult', 'elder'
+            if self.the_cat.age not in ['young adult', 'adult', 'senior adult', 'senior'
                                         ] or self.the_cat.dead or self.the_cat.exiled or self.the_cat.outside:
                 self.choose_mate_button.disable()
             else:
