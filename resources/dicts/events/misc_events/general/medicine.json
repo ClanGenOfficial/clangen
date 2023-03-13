@@ -111,7 +111,6 @@
     "other_cat_skill": null
   },
   {
-    "camp": "any",
     "tags": ["other_cat", "other_cat_elder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "event_text": "m_c has been worried that o_c will lose the knowledge r_c has gained through their long life, but by sitting with r_c and discussing their experiences, m_c will ensure the lessons learned in the past are never forgotten.",
     "cat_trait": null,
@@ -122,10 +121,20 @@
   {
     "camp": "any",
     "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-    "event_text": "m_c tosses in their sleep and their dreamself pads through the thoughts of their clanmates, picking up snippets of dream_list. They blink slowly awake, wondering whose dreams they walked in.",
+    "event_text": "m_c tosses in their sleep and their dreamself pads through the thoughts of their Clanmates, picking up snippets of dream_list. They blink slowly awake, wondering whose dreams they walked in.",
     "cat_trait": null,
     "cat_skill": ["dream walker"],
     "other_cat_trait": null,
     "other_cat_skill": null
+  },
+  {
+    "camp": "any",
+    "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall"],
+    "event_text": "m_c disappears for a few days, then returns to camp with a acc_singular around their neck.",
+    "cat_trait": null,
+    "cat_skill": null,
+    "other_cat_trait": null,
+    "other_cat_skill": null,
+    "accessories": ["COLLAR"]
   }
 ]
