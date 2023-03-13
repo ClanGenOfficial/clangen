@@ -1518,5 +1518,52 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_hunt_eggs_newleaf1",
+    "biome": "forest",
+    "season": "newleaf",
+    "tags": [
+        "hunting",
+        "apprentice",
+        "two_apprentices",
+        "respect",
+        "comfort",
+        "platonic",
+        "patrol_to_p_l",
+        "rel_patrol",
+        "herb",
+        "oak_leaves",
+        "no_herbs0",
+        "no_herbs2",
+        "no_herbs3",
+        "medium_prey0",
+        "medium_prey1",
+        "large_prey2",
+        "large_prey3"
+    ],
+    "intro_text": "Leading the way into the forest, p_l calls back to the two apprentices, telling them there's a treat in store for them - finally it's newleaf, which means its time for the young cats to pick up on one of the quinessential c_n skills - nest raiding!",
+    "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "success_text": [
+        "As they walk, the warriors chat, passing on tips in what's as much gossip as a lesson. app1 and app2 are far too busy to speak, eyes fixed on the trees (app2 is stopped before they can walk into a puddle, and gently reminded to watch their paws a little more). Both apprentices are thrilled to be allowed the first shot, sneaking upwards deploying all their climbing skills as they carefully fish fragile eggs out of stick piles, trying not to drool over the shells.",
+        "r_c spots a great hole in the trunk of an oak, and together the hunting patrol shimmer up into the branches, jokingly teasing when app1 accidentally breaks one of the eight big eggs inside. p_l tells the apprentices that with this many big eggs, the nest they're raiding is probably that of a bird of prey, always good to have less of in c_n's territory. They even bring back some oak leaves with them, though it's a real stuggle holding them with the eggs!",
+        "s_c has a great eye for spotting nests, but they stay back, remembering the thrill (and also realative safety) of nest raiding as an apprentice. app1 and app2 get all the credit for their climbing skills, and s_c is more than content with the grateful look the other warrior throws their way.",
+        "It's a wonderful day, wandering through the sunshine kinda randomly around c_n's forest searching for the signs of bird nests and swarming up the trees for them. s_c is even able to show off a little, inching cautiously out onto the spindly branches of a willow to snag a hard to reach nest."
+    ],
+    "fail_text": [
+        "The wind starts to pick up, and alarmed, p_l stops the nest raiding plans in their tracks. There's no reason to risk themselves on thin branches in bad weather - the nests will be stocked full of eggs or nestlings to make off with all newleaf, and p_l well remembers the tales teh elders tell of foolish risks taken for stupidly small rewards."
+    ],
+    "win_skills": [
+        "good hunter",
+        "great hunter",
+        "fantastic hunter"
+    ],
+    "win_trait": ["careful", "bold", "daring", "adventurous", "playful"],
+    "min_cats": 4,
+    "max_cats": 4,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 }
 ]

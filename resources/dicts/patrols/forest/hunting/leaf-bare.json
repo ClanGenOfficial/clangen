@@ -1173,7 +1173,7 @@
             "small_prey",
             "rel_patrol",
             "respect",
-            "platonic",
+            "platonic"
         ],
         "intro_text": "p_l leads app1 through the snow-covered forest, showing them how to distribute their weight across their paws to avoid sinking and to move silently. Suddenly, p_l flicks their tail: they have spotted a bird up ahead.",
         "decline_text": "app1 shakes their head when p_l asks if they'd like to try their paws at hunting a bird. They're just getting used to navigating in the snow quietly; surely catching a bird will be too difficult at the moment.",
@@ -1298,5 +1298,99 @@
         "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "fst_hunt_random_leafbaresolowarrior1",
+        "biome": "forest",
+        "season": "leaf-bare",
+        "tags": [
+            "hunting",
+            "no_app",
+            "minor_injury",
+            "cold_injury",
+            "scar",
+            "FROSTTAIL",
+            "no_fail_prey",
+            "medium_prey0",
+            "medium_prey1",
+            "large_prey2",
+            "large_prey3"
+        ],
+        "intro_text": "The gentle speckles of snow falling from the sky don't dissuade r_c. The canopy of the forest will shelter them while they hunt.",
+        "decline_text": "But if the snow gets worse, it'd be a different story - maybe it's better to wait until the weather clears.",
+        "success_text": [
+            "With the benefits of a full fresh-kill pile at the forefront of their mind, r_c is determined to bring back whatever they can for the clan. Thankfully the snowfall stays light and inconsistent, and their trip out is rewarded by a f_tp_s and several f_tp_p - though one of the f_tp_p is prey brought down by the cold, rather than by claw. Still, it's not crowfood, and it's all useful for c_n.",
+            "r_c takes a risk, hunting between the bare tree trunks of the woods that have lost their leaves, rather than in the evergreens. But their judegement pays off, netting them a f_mp_s. They'll have to discuss it with the other warriors back at camp, maybe c_n has been overhunting the evergreen woods.",
+            "The f_mp_p they net will be sorely appreciated back at camp, though the combination of fresh snow powder and more compacted stuff makes it difficult for s_c to keep their footing. Still, slipping over while carrying prey is far better than slipping over while pouncing on it!",
+            "s_c doesn't like the look of the weather - not that they can actually see the clouds. They wait in camp instead, and as night sets sniff out a f_tp_s and a clutch of f_tp_p that froze to death in the storm. Frozen meat is still meat afterall."
+        ],
+        "fail_text": [
+            "The skies darken and the snow thickens, and r_c retreats back to camp instead of risking the cold.",
+            null,
+            null,
+            "The skies darken and the snow thickens, but r_c is too far away from camp to turn back now. They end up huddled under a bush, cold and stiff as they wait out the storm from their uncomfortable shelter.",
+            null,
+            "Perhaps wandering so far when it was already snowing was a little... not their finest idea. Just a little, s_c reflects, shivering in a half rotten log as the thick snowstorm rages around them."
+        ],
+        "chance_of_success": 30,
+        "exp": 25,
+        "win_skills": [
+            "good hunter",
+            "great hunter",
+            "fantastic hunter"
+        ],
+        "win_trait": ["calm", "careful", "nervous", "thoughtful"],
+        "fail_trait": ["bold", "daring"],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c was scarred after a brush with frostbite, gotten while hunting in leaf-bare."
+    ]
+    },
+    {
+        "patrol_id": "fst_hunt_random_leafbaresoloapp1",
+        "biome": "forest",
+        "season": "leaf-bare",
+        "tags": [
+            "hunting",
+            "apprentice",
+            "minor_injury",
+            "cold_injury",
+            "scar",
+            "FROSTTAIL",
+            "death",
+            "no_fail_prey",
+            "medium_prey"
+        ],
+        "intro_text": "Surely it's not snowing too much to go hunt - app1 wants fresh prey, not the half frozen stuff on the fresh-kill pile.",
+        "decline_text": "...Maybe it'd be better to wait until their mentor is free to take them on a hunting patrol.",
+        "success_text": [
+            "The prey sure seem to agree that the weather is no barrier to feeding, and app1 proudly brings back three f_tp_p for the Clan, and hopefully for their own dinner.",
+            "Alright, snow is awful to chase in - but it's awful to be chased in too, and the fluffy stuff is as much an obstacle for the f_mp_s app1 finds as it is for them. It's a tough hunt, but a successful one.",
+            null,
+            "As keen as they are for dinner, app1 isn't reskless. Instead, they go to hunt in a sheltered spot where the pine trees have shielded the gorund and the wind can't blow snow. It's a good plain, netting them a thin f_mp_s for their work."
+        ],
+        "fail_text": [
+            null,
+            null,
+            "As the storm builds around them, by the time app1 tries to head for home, it's too late. They can't see the path in the heavy snow - they can't see the trees, or the ground, or anything. All is white.",
+            "As the storm builds around them, by the time app1 tries to head for home, it's too late. app1 finds a little hollow out of the wind, possibly the only thing that saves them.",
+            "Their mentor will find them, out in the far corner of the territory, frozen and still.",
+            "Their mentor will find them, out in the far corner of the territory, frozen and barely breathing."
+        ],
+        "chance_of_success": 30,
+        "exp": 35,
+        "win_trait": ["calm", "careful", "nervous", "thoughtful"],
+        "fail_trait": ["bold", "daring"],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c was scarred after a brush with frostbite, gotten while hunting in leaf-bare as an apprentice.",
+            "r_c froze to death, caught in a snowstorm while hunting by themselves."
+    ]
     }
 ]

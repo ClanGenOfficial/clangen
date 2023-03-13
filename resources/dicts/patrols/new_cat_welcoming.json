@@ -358,6 +358,34 @@
     "history_text": [
             null
     ]
+},
+{
+    "patrol_id": "mnt_hunt_newcat_leaf-barecatcrywelcoming1",
+    "biome": "mountainous",
+    "season": "leaf-bare",
+    "tags": ["hunting", "new_cat_kittypet_injury", "nc_cold_injury", "apprentice"],
+    "intro_text": "It's a cold day in c_n's territory, and app1 is the only cat stepping out. They're by themselves when they hear a cat screaming for help.",
+    "decline_text": "Nope, not today, there's no way app1 is running after ghost cats, no thank you.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "success_text": [
+            "Oh StarClan, app1 can't live with leaving some poor sad soul alone on the mountainside in the cold! Following the pitious cries, app1 finds a terrified kittypet crouched by a tunderpath, desperately searching for a monster and the Twolegs that it contains. But it's alright, app1 is here,an c_n will be able to help.",
+            "StarClan, but the cat they find is weird, they fur soft and thin, their cries desperate as they call in confusion. app1 comes down to them, starling the poor thing half out of their pelt, offfering to bring them back to camp, where they're sure the day will seem less bleak once app1 can get them food and a warm nest.",
+            null,
+            "app1 follows the sad cries to find a kittypet, lost and alone and cold. The apprentice introduces themselves cheerfully, and the desperate kittypet nearly tumbles them over in their haste to press their nose to app1's shoulder, breaking into desperately grateful purrs."
+    ],
+    "fail_text": [
+            "The cat seems to be moving all over the place, and finally, p_l gives up and goes home, too tired to catch more than a mouthful.",
+            "s_c calls out to the cat, only to be met with raucous cawing. Are they being laughed at? They decide to slink off, leaving it be."
+    ],
+    "win_skills": null,
+    "win_trait": ["adventurous", "playful", "strange", "childish", "shameless" ],
+    "fail_skills": null,
+    "fail_trait": ["troublesome", "bold", "daring", "ambitious"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": "app1 screams that this is c_n's territory and there's no help for anyone else. A kittypet runs from them, terrified of the echoing voice.",
+    "antagonize_fail_text": "app1 charges after the sound to attack the cat, only for a kittypet to bowl them right over as the terrified Twoleg pet, fully grown and fat, runs app1 over in their haste to get away."
 }
 ]
 
