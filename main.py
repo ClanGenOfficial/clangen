@@ -161,9 +161,11 @@ game.rpc.start()
 game.rpc.start_rpc.set()
 
 
-cursorimg = pygame.image.load('resources/images/cursor.png')
-pygame.mouse.set_visible(False)
-cursor = pygame.transform.scale(cursorimg, (32, 32))
+cursor_surface = pygame.Surface((21, 22))
+cursor_img = pygame.image.load('resources/images/cursor.png').convert()
+cursor_img.set_colorkey((255, 255, 255))
+cursor_surface.blit(cursor_img, (0, 0))
+pygame.mouse.set_cursor((0, 0), cursor_surface)
 
 
 while True:
@@ -221,9 +223,5 @@ while True:
 
     # END FRAME
     MANAGER.draw_ui(screen)
-
-    # Custom cursor
-    if True: #if game.settings['custom cursor']: TODO: Add setting
-        screen.blit(cursor, pygame.mouse.get_pos())
 
     pygame.display.update()
