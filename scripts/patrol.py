@@ -756,8 +756,6 @@ class Patrol():
                     if success_text[1]:
                         outcome = 1
 
-            self.handle_exp_gain()
-
             if not antagonize:
                 self.add_new_cats(outcome)
             if self.patrol_event.tags is not None:
@@ -872,6 +870,7 @@ class Patrol():
             if antagonize:
                 self.antagonize_fail = self.patrol_event.antagonize_fail_text
 
+        self.handle_exp_gain(self.success)
         if not antagonize and game.clan.game_mode != "classic":
             self.handle_prey(outcome)
 
@@ -1272,13 +1271,8 @@ class Patrol():
     #                                   Handlers                                   #
     # ---------------------------------------------------------------------------- #
 
-    def handle_exp_gain(self):
-        base_exp = 0
-        if "master" in self.experience_levels:
-            max_boost = 10
-        else:
-            max_boost = 0
-        patrol_exp = 2 * self.patrol_event.exp
+    def handle_exp_gain(self, success: bool):
+
         if game.clan.game_mode == 'classic':
             gm_modifier = 1
         elif game.clan.game_mode == 'expanded':
@@ -1288,13 +1282,31 @@ class Patrol():
         else:
             gm_modifier = 1
 
-        gained_exp = (patrol_exp + base_exp + max_boost)
-        gained_exp = gained_exp * (1 - 0.1 * len(self.patrol_cats)) / gm_modifier
-        if gained_exp < 1:
-            gained_exp = 1
+        if success:
+            base_exp = 0
+            if "master" in self.experience_levels:
+                max_boost = 10
+            else:
+                max_boost = 0
+            patrol_exp = 2 * self.patrol_event.exp
+            gained_exp = (patrol_exp + base_exp + max_boost)
+            gained_exp = max(gained_exp * (1 - 0.1 * len(self.patrol_cats)) / gm_modifier, 1)
+        else:
+            gained_exp = 0
 
-        for cat in self.patrol_cats:
-            cat.experience = cat.experience + gained_exp
+        #Apprentice exp, does not depend on success
+        if "apprentice" in self.patrol_statuses or "medicine cat apprentice" in self.patrol_statuses:
+            app_exp = max(random.randint(1, 7) * (1 - 0.1 * len(self.patrol_cats)), 1)
+        else:
+            app_exp = 0
+
+        if gained_exp or app_exp:
+            for cat in self.patrol_cats:
+                if cat.status in ["apprentice", "medicine cat apprentice"]:
+                    cat.experience = cat.experience + app_exp
+                    print(f"{cat.name} earned {app_exp}. New exp: {cat.experience}")
+                else:
+                    cat.experience = cat.experience + gained_exp
 
     def handle_deaths_and_gone(self, cat):
         if "no_body" in self.patrol_event.tags:
