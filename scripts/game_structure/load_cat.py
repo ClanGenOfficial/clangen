@@ -23,8 +23,9 @@ def load_cats():
     except FileNotFoundError:
         try:
             csv_load(Cat.all_cats)
-        except FileNotFoundError:
+        except FileNotFoundError as e:
             game.switches['error_message'] = 'Can\'t find clan_cats.json!'
+            game.switches['traceback'] = e
             raise
 
 def json_load():
@@ -34,11 +35,13 @@ def json_load():
     try:
         with open(get_save_dir() + '/' + clanname + '/clan_cats.json', 'r') as read_file:
             cat_data = ujson.loads(read_file.read())
-    except PermissionError:
+    except PermissionError as e:
         game.switches['error_message'] = f'Can\t open saves/{clanname}/clan_cats.json!'
+        game.switches['traceback'] = e
         raise
-    except JSONDecodeError:
+    except JSONDecodeError as e:
         game.switches['error_message'] = get_save_dir() + f'/{clanname}/clan_cats.json is malformed!'
+        game.switches['traceback'] = e
         raise
         
     old_tortie_patches = {
@@ -193,6 +196,7 @@ def json_load():
             else: 
                 key = f" at index {i} "
             game.switches['error_message'] = f'Cat{key}in clan_cats.json is missing {e}!'
+            game.switches['traceback'] = e
             raise
 
     # replace cat ids with cat objects and add other needed variables
