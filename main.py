@@ -161,7 +161,7 @@ game.rpc.start()
 game.rpc.start_rpc.set()
 
 
-cursor_img = pygame.image.load('resources/images/cursor.png')
+cursor_img = pygame.image.load('resources/images/cursor.png').convert_alpha()
 cursor = pygame.cursors.Cursor((9,0), cursor_img)
 cursor_toggled = False
 
