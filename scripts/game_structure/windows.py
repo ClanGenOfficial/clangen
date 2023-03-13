@@ -4,7 +4,6 @@ import shutil
 from pygame_gui.elements import UIWindow
 import pygame
 import pygame_gui
-from sys import exit
 
 from scripts.datadir import get_save_dir
 from scripts.game_structure import image_cache
