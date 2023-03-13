@@ -21,12 +21,14 @@ import sys
 import os
 import time
 
-from scripts.datadir import get_log_dir, setup_data_dir
-from scripts.version import get_version_info
+
 
 directory = os.path.dirname(__file__)
 if directory:
     os.chdir(directory)
+
+from scripts.datadir import get_log_dir, setup_data_dir
+from scripts.version import get_version_info
 
 # Setup logging
 import logging
