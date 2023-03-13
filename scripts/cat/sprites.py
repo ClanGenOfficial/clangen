@@ -215,7 +215,7 @@ for a, i in enumerate(
     sprites.make_group('eyes', (a, 0), f'eyes{i}')
     sprites.make_group('eyes2', (a, 0), f'eyes2{i}')
 for a, i in enumerate(
-        ['COPPER', 'SAGE', 'BLUETWO', 'PALEBLUE', 'BRONZE', 'SILVER',
+        ['COPPER', 'SAGE', 'COBALT', 'PALEBLUE', 'BRONZE', 'SILVER',
         'PALEYELLOW', 'GOLD', 'GREENYELLOW']):
     sprites.make_group('eyes', (a, 1), f'eyes{i}')
     sprites.make_group('eyes2', (a, 1), f'eyes2{i}')
