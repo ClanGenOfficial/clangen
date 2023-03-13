@@ -58,6 +58,7 @@ class TestsMedCondition(unittest.TestCase):
 
         med = Cat(moons=20)
         med.status = "medicine cat"
+        med.experience_level = 'competent'
 
         all_cats = [cat1, cat2, cat3, cat4, med]
         self.assertFalse(medical_cats_condition_fulfilled(all_cats, 2))
