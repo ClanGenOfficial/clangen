@@ -18,8 +18,14 @@ It then loads the settings, and then loads the start screen.
 """ # pylint: enable=line-too-long
 import sys
 import time
+import os
 from scripts.stream_duplexer import UnbufferedStreamDuplexer
 from scripts.datadir import get_log_dir, setup_data_dir
+from scripts.version import get_version_info
+
+directory = os.path.dirname(__file__)
+if directory:
+    os.chdir(directory)
 
 
 setup_data_dir()
@@ -30,19 +36,6 @@ stdout_file = open(get_log_dir() + f'/stdout_{timestr}.log', 'a')
 stderr_file = open(get_log_dir() + f'/stderr_{timestr}.log', 'a')
 sys.stdout = UnbufferedStreamDuplexer(sys.stdout, stdout_file)
 sys.stderr = UnbufferedStreamDuplexer(sys.stderr, stderr_file)
-
-
-import os
-
-from scripts.datadir import get_log_dir, setup_data_dir
-from scripts.version import get_version_info
-
-directory = os.path.dirname(__file__)
-if directory:
-    os.chdir(directory)
-
-import subprocess
-
 
 # Setup logging
 import logging
