@@ -189,7 +189,6 @@ class Events():
 
             # Generate events
             for item in Cat.grief_strings.values():
-                print(item)
                 game.cur_events_list.append(
                     Single_Event(item[0], ["birth_death", "relation"],
                                  item[1]))
