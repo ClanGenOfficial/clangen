@@ -97,7 +97,7 @@ from scripts.game_structure.game_essentials import game, MANAGER, screen
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.cat.sprites import sprites
 from scripts.clan import clan_class
-from scripts.utility import get_text_box_theme
+from scripts.utility import get_text_box_theme, quit # pylint: disable=redefined-builtin
 import pygame_gui
 import pygame
 
@@ -123,13 +123,8 @@ if clan_list:
         if not game.switches['error_message']:
             game.switches[
                 'error_message'] = 'There was an error loading the cats file!'
+            game.switches['traceback'] = e
 
-    # try:
-    #     game.map_info = load_map(get_save_dir() + '/' + game.clan.name)
-    # except NameError:
-    #     game.map_info = {}
-    # except:
-    #     game.map_info = load_map("Fallback")
 
 # LOAD settings
 
@@ -188,13 +183,7 @@ while True:
                                                 'info screen',
                                                 'make clan screen']
                 or not game.clan):
-                game.rpc.close_rpc.set()
-                game.rpc.update_rpc.set()
-                pygame.display.quit()
-                pygame.quit()
-                if game.rpc.is_alive():
-                    game.rpc.join(1)
-                sys.exit()
+                quit(savesettings=False)
             else:
                 SaveCheck(game.switches['cur_screen'], False, None)
 

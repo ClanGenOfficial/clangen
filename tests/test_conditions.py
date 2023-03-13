@@ -1,5 +1,9 @@
 import unittest
 
+import os
+os.environ["SDL_VIDEODRIVER"] = "dummy"
+os.environ["SDL_AUDIODRIVER"] = "dummy"
+
 try:
     import ujson
 except ImportError:
