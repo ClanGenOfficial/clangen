@@ -676,7 +676,7 @@ class Events():
         elif cat.moons == 12:
             cat.age = 'adult'
         elif cat.moons == 120:
-            cat.age = 'elder'
+            cat.age = 'senior'
 
         # killing exiled cats
         if cat.exiled or cat.outside:
@@ -1299,7 +1299,7 @@ class Events():
             chance += acc_chances["med_modifier"]
         if cat.age in ['kitten', 'adolescent']:
             chance += acc_chances["baby_modifier"]
-        elif cat.age in ['senior adult', 'elder']:
+        elif cat.age in ['senior adult', 'senior']:
             chance += acc_chances["elder_modifier"]
         if cat.trait in [
                 "adventurous", "childish", "confident", "daring", "playful",
