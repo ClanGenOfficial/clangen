@@ -33,7 +33,6 @@ sys.stderr = UnbufferedStreamDuplexer(sys.stderr, stderr_file)
 
 
 import os
-import time
 
 from scripts.datadir import get_log_dir, setup_data_dir
 from scripts.version import get_version_info
