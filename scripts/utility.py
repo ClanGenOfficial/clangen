@@ -754,19 +754,19 @@ def event_text_adjust(Cat,
     cat_dict["c_n"] = (str(_tmp.name) + "Clan", None)
 
     # Dreams and Omens
-    if "omen_list" in adjust_text:
+    if "omen_list" in text:
         chosen_omens = get_snippet_list("omen_list", randint(2, 4), sense_groups=["sight"])
         cat_dict["omen_list"] = (chosen_omens, None)
-    if "prophecy_list" in adjust_text:
+    if "prophecy_list" in text:
         chosen_prophecy = get_snippet_list("prophecy_list", randint(2, 4), sense_groups=["sight", "emotional", "touch"])
         cat_dict["prophecy_list"] = (chosen_prophecy, None)
-    if "dream_list" in adjust_text:
+    if "dream_list" in text:
         chosen_dream = get_snippet_list("dream_list", randint(2, 4))
         cat_dict["dream_list"] = (chosen_dream, None)
-    if "clair_list" in adjust_text:
+    if "clair_list" in text:
         chosen_clair = get_snippet_list("clair_list", randint(2, 4))
         cat_dict["clair_list"] = (chosen_clair, None)
-    if "story_list" in adjust_text:
+    if "story_list" in text:
         chosen_story = get_snippet_list("story_list", randint(1, 2))
         cat_dict["story_list"] = (chosen_story, None)
 
@@ -780,23 +780,7 @@ def ceremony_text_adjust(Cat, text, cat, dead_mentor=None, mentor=None, previous
     prefix = str(cat.name.prefix)
     clanname = str(game.clan.name + "Clan")
 
-    if mentor:
-        mentor_name = str(mentor.name)
-    else:
-        mentor_name = "mentor_placeholder"
-
-    if dead_mentor:
-        dead_mentor_name = str(dead_mentor.name)
-    else:
-        dead_mentor_name = "dead_mentor_placeholder"
-
-    if previous_alive_mentor:
-        previous_alive_mentor_name = str(previous_alive_mentor.name)
-    else:
-        previous_alive_mentor_name = "previous_mentor_name"
-
     random_honor = random_honor
-
     random_living_parent = None
     random_dead_parent = None
 
@@ -805,9 +789,9 @@ def ceremony_text_adjust(Cat, text, cat, dead_mentor=None, mentor=None, previous
     cat_dict = {
         "m_c": (str(cat.name), choice(cat.pronouns)) if cat else ("cat_placeholder", None),
         "(mentor)": (str(mentor.name), choice(mentor.pronouns)) if mentor else ("mentor_placeholder", None),
-        "(deadmentor)": (str(dead_mentor.name), choice(dead_mentor.pronouns)) if dead_mentor else ("dead_mentor_placeholder", None),
-        "(previous_mentor)": (str(previous_alive_mentor.name), choice(previous_alive_mentor.pronouns)) if previous_alive_mentor else ("previous_mentor_placeholder", None),
-        "l_n": (str(game.clan.leader.name), choice(game.clan.leader.pronouns)) if game.clan.leader else ("leader_placeholder", None),
+        "(deadmentor)": (str(dead_mentor.name), choice(dead_mentor.pronouns)) if dead_mentor else ("dead_mentor_name", None),
+        "(previous_mentor)": (str(previous_alive_mentor.name), choice(previous_alive_mentor.pronouns)) if previous_alive_mentor else ("previous_mentor_name", None),
+        "l_n": (str(game.clan.leader.name), choice(game.clan.leader.pronouns)) if game.clan.leader else ("leader_name", None),
         "c_n": (clanname, None),
         "(prefix)": (prefix, None),
     }
