@@ -158,7 +158,7 @@ game.rpc.start_rpc.set()
 
 cursor_img = pygame.image.load('resources/images/cursor.png').convert_alpha()
 cursor = pygame.cursors.Cursor((9,0), cursor_img)
-cursor_toggled = False
+cursor_toggled = not game.settings['custom cursor'] # Invert value to force cursor change
 
 disabled_cursor = pygame.cursors.Cursor(pygame.SYSTEM_CURSOR_ARROW)
 
