@@ -2291,23 +2291,27 @@ class Cat():
         else:
             apply_bonus = True
             # EX gain on success
-            EX_gain = randint(5, 12)
+            if mediator.status != "mediator apprentice":
+                EX_gain = randint(10, 24)
 
-            gm_modifier = 1
-            if game.clan.game_mode == 'expanded':
-                gm_modifier = 3
-            elif game.clan.game_mode == 'cruel season':
-                gm_modifier = 6
+                gm_modifier = 1
+                if game.clan.game_mode == 'expanded':
+                    gm_modifier = 3
+                elif game.clan.game_mode == 'cruel season':
+                    gm_modifier = 6
 
-            if mediator.experience_level == "average":
-                lvl_modifier = 1.25
-            elif mediator.experience_level == "high":
-                lvl_modifier = 1.75
-            elif mediator.experience_level == "master":
-                lvl_modifier = 2
-            else:
-                lvl_modifier = 1
-            mediator.experience += EX_gain / lvl_modifier / gm_modifier
+                if mediator.experience_level == "average":
+                    lvl_modifier = 1.25
+                elif mediator.experience_level == "high":
+                    lvl_modifier = 1.75
+                elif mediator.experience_level == "master":
+                    lvl_modifier = 2
+                else:
+                    lvl_modifier = 1
+                mediator.experience += EX_gain / lvl_modifier / gm_modifier
+
+        if mediator.status == "mediator apprentice":
+            mediator.experience += max(random.randint(1, 6), 1)
 
         no_romantic_mentor = False
         if not game.settings['romantic with former mentor']:
