@@ -80,6 +80,7 @@ class Cat():
 
     # This in is in reverse order: top of the list at the bottom
     rank_sort_order = [
+        "newborn",
         "kitten",
         "elder",
         "apprentice",
@@ -188,7 +189,7 @@ class Cat():
             self.moons = moons
             if moons > 300:
                 # Out of range, always elder
-                self.age = 'elder'
+                self.age = 'senior'
             else:
                 # In range
                 for key_age in self.age_moons.keys():
@@ -315,6 +316,7 @@ class Cat():
                 self.age = 'senior'
             elif moons == 0:
                 self.age = 'newborn'
+                status = 'newborn'
             else:
                 # In range
                 for key_age in self.age_moons.keys():
@@ -1986,7 +1988,7 @@ class Cat():
         if (self.moons < 14 or other_cat.moons < 14) and not for_love_interest:
             return False
 
-        age_restricted_ages = ["kitten", "adolescent"]
+        age_restricted_ages = ["newborn", "kitten", "adolescent"]
         if self.age in age_restricted_ages or other_cat.age in age_restricted_ages:
             if self.age != other_cat.age:
                 return False
@@ -2264,8 +2266,8 @@ class Cat():
         related = direct_related or indirect_related
 
         # Check for both adults, or same age type:
-        if cat1.age == cat2.age or (cat1.age not in ['kitten', 'adolescent'] and
-                                    cat2.age not in ['kitten', 'adolescent']):
+        if cat1.age == cat2.age or (cat1.age not in ['newborn', 'kitten', 'adolescent'] and
+                                    cat2.age not in ['newborn', 'kitten', 'adolescent']):
             valid_age = True
         else:
             valid_age = False
@@ -2518,7 +2520,7 @@ class Cat():
         self.faded = True
 
         # Sillotette sprite
-        if self.age in ['kitten']:
+        if self.age in ['newborn', 'kitten']:
             file_name = "faded_kitten.png"
         elif self.age in ['adult', 'young adult', 'senior adult']:
             file_name = "faded_adult.png"
