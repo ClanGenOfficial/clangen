@@ -17,7 +17,7 @@ from scripts.game_structure.game_essentials import game, screen, screen_x, scree
 from scripts.game_structure.windows import DeleteCheck
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from ..datadir import get_data_dir
-from ..update import get_version_info, has_update, fetch_latest_dev
+from ..update import self_update, has_update
 
 
 class StartScreen(Screens):
