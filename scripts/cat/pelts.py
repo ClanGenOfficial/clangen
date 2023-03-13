@@ -565,14 +565,14 @@ def describe_color(pelt, tortiebase, tortiecolour, white_patches, points, vit):
         # white and
         elif white_patches in mostly_white:
             color_name = 'white and ' + color_name
-        # colorpoint
-        if points:
-            color_name = color_name + ' point'
-            if color_name == 'dark ginger point' or color_name == 'ginger point':
-                color_name = 'flame point'
-        # vitiligo
-        if vit:
-            color_name = color_name + ' with vitiligo'
+    # colorpoint
+    if points:
+        color_name = color_name + ' point'
+        if color_name == 'dark ginger point' or color_name == 'ginger point':
+            color_name = 'flame point'
+    # vitiligo
+    if vit:
+        color_name = color_name + ' with vitiligo'
     else:
         color_name = color_name
 
