@@ -40,5 +40,52 @@
 		"general_reaction": {
 			"comfortable": "decrease"
 		}
+	},
+	{
+		"id": "group_3_ leader_neg",
+		"cat_amount": 3,
+		"interactions": ["m_c, after having r_c2 challange them, takes r_c1 to punish r_c2. Everyone ends up hurt, but m_c feels they can trust r_c1 more."],
+		"injuries": {
+			"m_c": ["claw-wound"],
+			"r_c1": ["claw-wound"],
+			"r_c": ["claw-wound", "bite-wound"]
+		},	
+		"status_constraint": {
+			"m_c": [
+				"leader"
+			],
+			"r_c1": [
+				"warrior",
+				"deputy"
+			],
+			"r_c2": [
+				"warrior"
+			]
+		},
+		"trait_constraint": {
+			"m_c": [
+				"bloodthirsty",
+				"vengeful", 
+				"feirce"
+			]
+		},
+		"specific_reaction": {
+			"m_c_to_r_c1": {
+				"dislike": "decrease",
+				"comfortable": "increase",
+				"trust": "increase"
+			},
+			"r_c1_to_m_c": {
+				"dislike": "increase",
+				"comfortable": "decrease",
+				"trust": "increase"
+			},
+			"r_c1_to_r_c2": {
+				"platonic": "decrease",
+				"dislike": "increase",
+				"comfortable": "decrease",
+				"trust": "decrease"
+			}
+		}
 	}
 ]
