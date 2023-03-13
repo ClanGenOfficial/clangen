@@ -41,9 +41,10 @@ class StartScreen(Screens):
             elif event.ui_element == self.settings_button:
                 self.change_screen('settings screen')
             elif event.ui_element == self.update_button:
-                fetch_latest_dev()
+                self_update("development", "macOS")
+                # fetch_latest_dev()
                 # os.execv(sys.argv[0], sys.argv)
-                exit(0)
+                # exit(0)
             elif event.ui_element == self.quit:
                 game.rpc.close_rpc.set()
                 game.rpc.update_rpc.set()
@@ -92,7 +93,7 @@ class StartScreen(Screens):
                                              object_id="#update_button", manager=MANAGER)
         self.update_button.visible = 0
 
-        if has_update(get_version_info().version_number):
+        if has_update():
             self.update_button.visible = 1
 
         self.warning_label = pygame_gui.elements.UITextBox(

@@ -1,9 +1,15 @@
 import os
 import shutil
 import subprocess
+import sys
+import tempfile
+import urllib.parse
 import zipfile
 
+import pgpy
 import requests as requests
+
+from scripts.version import get_version_info
 
 
 def download_file(url):
@@ -17,62 +23,55 @@ def download_file(url):
     return 'Downloads/' + local_filename
 
 
-def has_update(version_number):
-    action_url = "https://api.github.com/repos/archanyhm/clangen/actions/artifacts"
-    result = requests.get(action_url)
+def has_update():
+    latest_endpoint = "https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/Latest"
+    result = requests.get(latest_endpoint)
 
-    artifacts = result.json()['artifacts']
+    release_info = result.json()['release']
+    latest_version_number = release_info['name']
 
-    for artifact in artifacts:
-        run = artifact['workflow_run']
-
-        if artifact['name'] != 'Clangen_macOS64.dmg':
-            continue
-
-        if run['head_branch'] != 'auto-update':
-            continue
-
-        if run['head_sha'].startswith(version_number) or version_number.startswith(run['head_sha']):
-            return False
-        else:
-            return True
+    if get_version_info().version_number != latest_version_number:
+        print(f"Update available!\nCurrent version: {get_version_info().version_number}\nNewest version : {latest_version_number}")
+        return True
+    else:
+        return False
 
 
-def fetch_latest_dev():
-    zip_path = download_file("https://nightly.link/Thlumyn/clangen/workflows/build/development/Clangen_macOS64.dmg.zip")
-    with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+def self_update(release_channel, artifact_name):
+    response = requests.get(f"https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/Latest/Artifacts/{artifact_name}")
+    encoded_signature = response.headers['x-gpg-signature']
+
+    with open("download.tmp", 'wb') as fd:
+        for chunk in response.iter_content(chunk_size=128):
+            fd.write(chunk)
+
+    decoded_signature = urllib.parse.unquote(encoded_signature)
+
+
+
+    better_signature = decoded_signature.replace("-----BEGIN+PGP+SIGNATURE-----", "-----BEGIN PGP SIGNATURE-----")
+    better_signature = better_signature.replace("-----END+PGP+SIGNATURE-----", "-----END PGP SIGNATURE-----")
+
+    key, _ = pgpy.PGPKey.from_file("./update_pubkey.asc")
+
+    try:
+        with open("./download.tmp", "rb") as fd:
+            data = fd.read()
+            signature = pgpy.PGPSignature.from_blob(better_signature)
+            key.verify(data, signature)
+        print("Signature check succeeded.")
+    except pgpy.errors.PGPError:
+        print("Signature mismatch.")
+        return
+
+    with zipfile.ZipFile("download.tmp", 'r') as zip_ref:
         zip_ref.extractall('Downloads')
-    os.remove(zip_path)
+    os.remove("download.tmp")
 
     os.makedirs('Downloads/macOS_tempmount', exist_ok=True)
     os.system('hdiutil attach -nobrowse -mountpoint Downloads/macOS_tempmount Downloads/Clangen_macOS64.dmg')
     shutil.rmtree('/Applications/Clangen.app', ignore_errors=True)
     shutil.copytree('Downloads/macOS_tempmount/Clangen.app', '/Applications/Clangen.app')
     os.system('hdiutil detach Downloads/macOS_tempmount')
-
-
-def get_version_info():
-    if os.path.exists("commit.txt"):
-        with open(f"commit.txt", 'r') as read_file:
-            print("Running on pyinstaller build")
-            VERSION_NUMBER = read_file.read()
-            binary_release = True
-    else:
-        print("Running on source code")
-        try:
-            VERSION_NUMBER = subprocess.check_output(['git', 'rev-parse', 'HEAD']).decode('ascii').strip()
-        except:
-            print("Failed to get git commit hash, using hardcoded version number instead.")
-            print(
-                "Hey testers! We recommend you use git to clone the repository, as it makes things easier for everyone.")
-            print(
-                "There are instructions at https://discord.com/channels/1003759225522110524/1054942461178421289/1078170877117616169")
-    print("Running on commit " + VERSION_NUMBER)
-
-    return VersionInfo(VERSION_NUMBER, os.path.exists("commit.txt"))
-
-
-class VersionInfo:
-    def __init__(self, version_number, is_binary):
-        self.version_number = version_number
-        self.is_binary = is_binary
+    os.execv('/Applications/Clangen.app/Contents/MacOS/Clangen', sys.argv)
+    exit(0)
