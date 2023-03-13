@@ -9,7 +9,7 @@
 		],
 		"relationship_constraint": {
 			"m_c_to_r_c1": ["trust_30"],
-			"m_c_to_r_c3": ["romantic_15"]
+			"m_c_to_r_c2": ["romantic_15"]
 		},
 		"specific_reaction": {
 			"m_c_to_r_c1": {

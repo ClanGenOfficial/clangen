@@ -69,7 +69,7 @@ class Group_Events():
         # if there is no possibility return
         if len(possibilities) < 1:
             return []
-
+        print("GROUP EVENT!")
         # choose one interaction and 
         self.chosen_interaction = choice(possibilities)
 
