@@ -174,7 +174,7 @@ class Group_Interaction():
 #                some useful functions, related to interactions                #
 # ---------------------------------------------------------------------------- #
 
-def rel_fulfill_rel_conditions(relationship, constraint, interaction_id) -> bool:
+def rel_fulfill_rel_constraints(relationship, constraint, interaction_id) -> bool:
     """Check if the relationship fulfills the interaction relationship constraints."""
     # if the constraints are not existing, they are considered to be fulfilled
     if not constraint:
@@ -260,7 +260,7 @@ def rel_fulfill_rel_conditions(relationship, constraint, interaction_id) -> bool
     return True
 
 
-def cats_fulfill_single_interaction_conditions(main_cat, random_cat, interaction, game_mode) -> bool:
+def cats_fulfill_single_interaction_constraints(main_cat, random_cat, interaction, game_mode) -> bool:
     """Check if the two cats fulfills the interaction constraints."""
     if len(interaction.main_status_constraint) >= 1:
         if main_cat.status not in interaction.main_status_constraint:
@@ -301,19 +301,18 @@ def cats_fulfill_single_interaction_conditions(main_cat, random_cat, interaction
 
         if "m_c" in interaction.has_injuries:
             injuries_in_needed = list(
-                filter(lambda inj: inj in interaction.backstory_constraint["m_c"], main_cat.injuries.keys())
+                filter(lambda inj: inj in interaction.has_injuries["m_c"], main_cat.injuries.keys())
             )
             if len(injuries_in_needed) <= 0:
                 return False
         if "r_c" in interaction.has_injuries:
             injuries_in_needed = list(
-                filter(lambda inj: inj in interaction.backstory_constraint["r_c"], random_cat.injuries.keys())
+                filter(lambda inj: inj in interaction.has_injuries["r_c"], random_cat.injuries.keys())
             )
             if len(injuries_in_needed) <= 0:
                 return False
 
     return True
-
 
 # ---------------------------------------------------------------------------- #
 #                            BUILD MASTER DICTIONARY                           #

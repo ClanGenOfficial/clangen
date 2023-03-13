@@ -8,8 +8,8 @@ from scripts.cat_relations.interaction import (
     Single_Interaction, 
     NEUTRAL_INTERACTIONS, 
     INTERACTION_MASTER_DICT,
-    rel_fulfill_rel_conditions,
-    cats_fulfill_single_interaction_conditions,
+    rel_fulfill_rel_constraints,
+    cats_fulfill_single_interaction_constraints,
 )
 
 
@@ -382,11 +382,11 @@ class Relationship():
             if interact.intensity != intensity:
                 continue
 
-            cats_fulfill_conditions = cats_fulfill_single_interaction_conditions(self.cat_from, self.cat_to, interact, game_mode)
+            cats_fulfill_conditions = cats_fulfill_single_interaction_constraints(self.cat_from, self.cat_to, interact, game_mode)
             if not cats_fulfill_conditions:
                 continue
 
-            relationship_fulfill_conditions = rel_fulfill_rel_conditions(self, interact.relationship_constraint, interact.id)
+            relationship_fulfill_conditions = rel_fulfill_rel_constraints(self, interact.relationship_constraint, interact.id)
             if not relationship_fulfill_conditions:
                 continue
 

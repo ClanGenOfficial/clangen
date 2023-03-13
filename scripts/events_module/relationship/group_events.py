@@ -9,7 +9,7 @@ from copy import deepcopy
 from scripts.utility import change_relationship_values
 from scripts.cat.cats import Cat
 from scripts.event_class import Single_Event
-from scripts.cat_relations.interaction import create_group_interaction, Group_Interaction, rel_fulfill_rel_conditions
+from scripts.cat_relations.interaction import create_group_interaction, Group_Interaction, rel_fulfill_rel_constraints
 from scripts.game_structure.game_essentials import game
 
 class Group_Events():
@@ -35,9 +35,10 @@ class Group_Events():
             list
                 returns the list of the cat id's, which interacted with each other
         """
-        self.abbreviations_cat_id = {}
-        self.cat_abbreviations_counter = {}
-        self.abbreviations_cat_id["m_c"] = cat.ID
+        self.abbreviations_cat_id = {} # keeps track of which abbreviation is which cat
+        self.cat_abbreviations_counter = {} # will be needed to check which cat is the best fit for which abbreviation
+        self.abbreviations_cat_id["m_c"] = cat.ID # set the main cat
+
         cat_amount = choice(list(GROUP_INTERACTION_MASTER_DICT.keys()))
         inter_type = choice(["negative", "positive", "neutral"])
 
@@ -51,35 +52,39 @@ class Group_Events():
             new_key = "r_c" + str(integer+1)
             self.abbreviations_cat_id[new_key] = None
 
+        # get all possibilities
         possibilities = GROUP_INTERACTION_MASTER_DICT[cat_amount][inter_type]
         
         # get some filters premisses
         biome = str(game.clan.biome).casefold()
         season = str(game.clan.current_season).casefold()
 
-        # start filter for main cat
+        # start filter for main cat / basic checks
+        # - this might reduce the amount of checks which will be needed when checking for other cats 
         possibilities = self.get_main_cat_interactions(possibilities,biome,season)
 
-        # get the information, which cat can be which abbreviations and only get the possible interactions
+        # get possible interactions, considering the possible interacting cats 
         possibilities = self.get_filtered_interactions(possibilities, int(cat_amount), interact_cats)
 
         # if there is no possibility return
         if len(possibilities) < 1:
             return []
 
-        # choose one interaction and trigger all needed functions to reflect the interaction
+        # choose one interaction and 
         self.chosen_interaction = choice(possibilities)
 
+        # TRIGGER ALL NEEDED FUNCTIONS TO REFLECT THE INTERACTION
         if game.clan.game_mode != 'classic':
             self.injuring_cats()
         amount = game.config["relationship"]["in_decrease_value"][self.chosen_interaction.intensity]
 
-        # if there is a general reaction in the interaction, then use this
         if len(self.chosen_interaction.general_reaction) > 0:
+            # if there is a general reaction in the interaction, then use this
             self.influence_general_relationship(amount)
         else:
             self.influence_specific_relationships(amount)
 
+        # choose the interaction text and display 
         interaction_str = choice(self.chosen_interaction.interactions)
         interaction_str = self.prepare_text(interaction_str)
         # TODO: add the interaction to the relationship log?
@@ -95,7 +100,7 @@ class Group_Events():
     #                  functions to filter and decide interaction                  #
     # ---------------------------------------------------------------------------- #
 
-    def get_main_cat_interactions(self, interactions: list, biome : str, season : str):
+    def get_main_cat_interactions(self, interactions: list, biome : str, season : str) -> list:
         """Filter interactions for MAIN cat.
             
             Parameters
@@ -145,91 +150,45 @@ class Group_Events():
         return filtered_interactions
 
     def get_filtered_interactions(self, interactions: list, amount: int, interact_cats: list):
-        """Handles the whole filtered interaction list based on all other constraints."""
-        # first get all abbreviations possibilities for the cats
+        """ First assign which cat is which abbreviation, then filtered interaction list based on all constraints, which include the other cats.
+
+            Parameters
+            ----------
+            interactions : list
+                the interactions which need to be filtered
+            amount : int
+                the amount of cats which are be needed for these interactions
+            interact_cats : list
+                a list of cats, which are open to interact with the main cat
+
+            Returns
+            -------
+            filtered : list
+                a list of interactions, which fulfill the criteria
+        
+        """
+        # first handle the abbreviations possibilities for the cats
         abbr_per_interaction = self.get_abbreviations_possibilities(interactions, int(amount), interact_cats)
-
-        # check which combinations are possible
         abbr_per_interaction = self.remove_impossible_abbreviations_combinations(abbr_per_interaction)
-
-        # set which abbreviations is which cat
         self.set_abbreviations_cats(interact_cats)
 
-        # check if any abbreviations_cat_ids is None, if so return, because the interaction should not continue
+        # check if any abbreviations_cat_ids is None, if so return 
         not_none = [abbr != None for abbr in self.abbreviations_cat_id.values()]
         if not all(not_none):
             return []
 
         # last filter based on relationships between the cats
-        filtered_interactions = []
+        filtered = []
         for interact in interactions:
-            # if this interaction is not in the cleared abbreviations dictionary,
-            # there is no solution for the cat-abbreviation problem and thus, this
+            # if this interaction is not in the  abbreviations dictionary,
+            # there is no solution for the cat-abbreviations problem and thus, this
             # interaction is not possible
             if interact.id not in abbr_per_interaction.keys():
                 continue
 
-            # check if all cats fulfill the status constraints
-            all_fulfilled = True
-            for abbr, value in interact.status_constraint.items():
-                # main cat is already filtered
-                if abbr == "m_c":
-                    continue
-                relevant_cat = Cat.all_cats[self.abbreviations_cat_id[abbr]]
-                if relevant_cat.status not in value:
-                    all_fulfilled = False
-            if not all_fulfilled:
-                continue
-
-            # check if all cats fulfill the skill constraints
-            all_fulfilled = True
-            for abbr, value in interact.skill_constraint.items():
-                # main cat is already filtered
-                if abbr == "m_c":
-                    continue
-                relevant_cat = Cat.all_cats[self.abbreviations_cat_id[abbr]]
-                if relevant_cat.skill not in value:
-                    all_fulfilled = False
-            if not all_fulfilled:
-                continue
-
-            # check if all cats fulfill the trait constraints
-            all_fulfilled = True
-            for abbr, value in interact.trait_constraint.items():
-                # main cat is already filtered
-                if abbr == "m_c":
-                    continue
-                relevant_cat = Cat.all_cats[self.abbreviations_cat_id[abbr]]
-                if relevant_cat.trait not in value:
-                    all_fulfilled = False
-            if not all_fulfilled:
-                continue
-
-            # check if all cats fulfill the backstory constraints
-            all_fulfilled = True
-            for abbr, value in interact.backstory_constraint.items():
-                # main cat is already filtered
-                if abbr == "m_c":
-                    continue
-                relevant_cat = Cat.all_cats[self.abbreviations_cat_id[abbr]]
-                if relevant_cat.backstory not in value:
-                    all_fulfilled = False
-            if not all_fulfilled:
-                continue
-
-            # if the interaction has injuries constraints, but the clan is in classic mode
-            if game.clan.game_mode == 'classic' and len(interact.has_injuries) > 0:
-                continue
-            # check if all cats fulfill the injuries constraints
-            all_fulfilled = True
-            for abbr, value in interact.has_injuries.items():
-                # main cat is already filtered
-                if abbr == "m_c":
-                    continue
-                relevant_cat = Cat.all_cats[self.abbreviations_cat_id[abbr]]
-                if relevant_cat.backstory not in value:
-                    all_fulfilled = False
-            if not all_fulfilled:
+            # check how the cats are and if they are fulfill the constraints like: status, trait, skill, ...
+            cat_allow_interaction = self.cat_allow_interaction(interact)
+            if not cat_allow_interaction:
                 continue
 
             # now check for relationship constraints
@@ -237,9 +196,9 @@ class Group_Events():
             if not relationship_allow_interaction:
                 continue
 
-            filtered_interactions.append(interact)
+            filtered.append(interact)
 
-        return filtered_interactions
+        return filtered
 
     def get_abbreviations_possibilities(self, interactions: list, amount: int, interact_cats: list):
         """ Iterate over all pre-filtered interactions and 
@@ -355,6 +314,10 @@ class Group_Events():
             if highest_id in free_to_choose:
                 free_to_choose.remove(highest_id)
 
+    # ---------------------------------------------------------------------------- #
+    #                  helper functions for filtering interactions                 #
+    # ---------------------------------------------------------------------------- #
+
     def relationship_allow_interaction(self, interaction: Group_Interaction):
         """Check if the interaction is allowed with the current chosen cats."""
         fulfilled_list = []
@@ -374,10 +337,85 @@ class Group_Events():
 
             relationship = cat_from.relationships[cat_to_id]
             
-            fulfilled = rel_fulfill_rel_conditions(relationship, rel_constraint, interaction.id)
+            fulfilled = rel_fulfill_rel_constraints(relationship, rel_constraint, interaction.id)
             fulfilled_list.append(fulfilled)
 
         return all(fulfilled_list)
+
+    def cat_allow_interaction(self, interaction: Group_Interaction):
+        """Check if the assigned cats fulfill the constraints of the interaction."""
+
+        all_fulfilled = True
+        for abbr, constraint in interaction.status_constraint.items():
+            # main cat is already filtered
+            if abbr == "m_c":
+                continue
+            # check if the current abbreviations cat fulfill the constraint
+            relevant_cat = Cat.all_cats[self.abbreviations_cat_id[abbr]]
+            if relevant_cat.status not in constraint:
+                all_fulfilled = False
+        if not all_fulfilled:
+            return False
+
+        # check if all cats fulfill the skill constraints
+        all_fulfilled = True
+        for abbr, constraint in interaction.skill_constraint.items():
+            # main cat is already filtered
+            if abbr == "m_c":
+                continue
+            # check if the current abbreviations cat fulfill the constraint
+            relevant_cat = Cat.all_cats[self.abbreviations_cat_id[abbr]]
+            if relevant_cat.skill not in constraint:
+                all_fulfilled = False
+        if not all_fulfilled:
+            return False
+
+        # check if all cats fulfill the trait constraints
+        all_fulfilled = True
+        for abbr, constraint in interaction.trait_constraint.items():
+            # main cat is already filtered
+            if abbr == "m_c":
+                continue
+            # check if the current abbreviations cat fulfill the constraint
+            relevant_cat = Cat.all_cats[self.abbreviations_cat_id[abbr]]
+            if relevant_cat.trait not in constraint:
+                all_fulfilled = False
+        if not all_fulfilled:
+            return False
+
+        # check if all cats fulfill the backstory constraints
+        all_fulfilled = True
+        for abbr, constraint in interaction.backstory_constraint.items():
+            # main cat is already filtered
+            if abbr == "m_c":
+                continue
+            # check if the current abbreviations cat fulfill the constraint
+            relevant_cat = Cat.all_cats[self.abbreviations_cat_id[abbr]]
+            if relevant_cat.backstory not in constraint:
+                all_fulfilled = False
+        if not all_fulfilled:
+            return False
+
+        # if the interaction has injuries constraints, but the clan is in classic mode
+        if game.clan.game_mode == 'classic' and len(interaction.has_injuries) > 0:
+            return False
+        # check if all cats fulfill the injuries constraints
+        all_fulfilled = True
+        for abbr, constraint in interaction.has_injuries.items():
+            # main cat is already filtered
+            if abbr == "m_c":
+                continue
+            # check if the current abbreviations cat fulfill the constraint
+            relevant_cat = Cat.all_cats[self.abbreviations_cat_id[abbr]]
+            injuries_in_needed = list(
+                filter(lambda inj: inj in constraint, relevant_cat.injuries.keys())
+            )
+            if len(injuries_in_needed) <= 0:
+                all_fulfilled = False
+        if not all_fulfilled:
+            return False
+        return True
+
 
     # ---------------------------------------------------------------------------- #
     #                      functions after interaction decision                    #
