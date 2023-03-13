@@ -726,13 +726,6 @@ def event_text_adjust(Cat,
     :return: the adjusted text
     """
 
-    name = str(cat.name)
-    other_name = None
-    if other_cat:
-        other_name = str(other_cat.name)
-
-    adjust_text = text
-
     cat_dict = {}
 
     if not keep_m_c and cat:
@@ -763,26 +756,21 @@ def event_text_adjust(Cat,
     # Dreams and Omens
     if "omen_list" in adjust_text:
         chosen_omens = get_snippet_list("omen_list", randint(2, 4), sense_groups=["sight"])
-        adjust_text = adjust_text.replace("omen_list", chosen_omens)
+        cat_dict["omen_list"] = (chosen_omens, None)
     if "prophecy_list" in adjust_text:
         chosen_prophecy = get_snippet_list("prophecy_list", randint(2, 4), sense_groups=["sight", "emotional", "touch"])
-        adjust_text = adjust_text.replace("prophecy_list", chosen_prophecy)
+        cat_dict["prophecy_list"] = (chosen_prophecy, None)
     if "dream_list" in adjust_text:
         chosen_dream = get_snippet_list("dream_list", randint(2, 4))
-        adjust_text = adjust_text.replace("dream_list", chosen_dream)
+        cat_dict["dream_list"] = (chosen_dream, None)
     if "clair_list" in adjust_text:
         chosen_clair = get_snippet_list("clair_list", randint(2, 4))
-        adjust_text = adjust_text.replace("clair_list", chosen_clair)
+        cat_dict["clair_list"] = (chosen_clair, None)
     if "story_list" in adjust_text:
         chosen_story = get_snippet_list("story_list", randint(1, 2))
-        adjust_text = adjust_text.replace("story_list", chosen_story)
+        cat_dict["story_list"] = (chosen_story, None)
 
-    if clan:
-        _tmp = clan
-    else:
-        _tmp = game.clan
-    adjust_text = adjust_text.replace("c_n", str(_tmp.name) + "Clan")
-    adjust_text = adjust_text.replace("p_l", name)
+    adjust_text = process_text(text, cat_dict)
 
     return adjust_text
 
