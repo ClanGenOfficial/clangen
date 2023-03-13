@@ -28,15 +28,10 @@ directory = os.path.dirname(__file__)
 if directory:
     os.chdir(directory)
 
-import subprocess
-
-
 # Setup logging
 import logging
 
-
 setup_data_dir()
-
 
 formatter = logging.Formatter(
     "%(name)s - %(levelname)s - %(filename)s / %(funcName)s / %(lineno)d - %(message)s"
@@ -81,7 +76,7 @@ if os.environ.get('CODESPACES'):
 
 if get_version_info().is_source_build:
     print("Running on source code")
-    if get_version_info() == "":
+    if get_version_info().version_number == "":
         print("Failed to get git commit hash, using hardcoded version number instead.")
         print("Hey testers! We recommend you use git to clone the repository, as it makes things easier for everyone.")  # pylint: disable=line-too-long
         print("There are instructions at https://discord.com/channels/1003759225522110524/1054942461178421289/1078170877117616169")  # pylint: disable=line-too-long
@@ -97,7 +92,7 @@ from scripts.game_structure.game_essentials import game, MANAGER, screen
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.cat.sprites import sprites
 from scripts.clan import clan_class
-from scripts.utility import get_text_box_theme
+from scripts.utility import get_text_box_theme, quit # pylint: disable=redefined-builtin
 import pygame_gui
 import pygame
 
@@ -123,13 +118,8 @@ if clan_list:
         if not game.switches['error_message']:
             game.switches[
                 'error_message'] = 'There was an error loading the cats file!'
+            game.switches['traceback'] = e
 
-    # try:
-    #     game.map_info = load_map(get_save_dir() + '/' + game.clan.name)
-    # except NameError:
-    #     game.map_info = {}
-    # except:
-    #     game.map_info = load_map("Fallback")
 
 # LOAD settings
 
@@ -164,6 +154,15 @@ else:
 game.rpc = _DiscordRPC("1076277970060185701", daemon=True)
 game.rpc.start()
 game.rpc.start_rpc.set()
+
+
+cursor_img = pygame.image.load('resources/images/cursor.png').convert_alpha()
+cursor = pygame.cursors.Cursor((9,0), cursor_img)
+cursor_toggled = not game.settings['custom cursor'] # Invert value to force cursor change
+
+disabled_cursor = pygame.cursors.Cursor(pygame.SYSTEM_CURSOR_ARROW)
+
+
 while True:
     time_delta = clock.tick(30) / 1000.0
     if game.switches['cur_screen'] not in ['start screen']:
@@ -171,6 +170,13 @@ while True:
             screen.fill((57, 50, 36))
         else:
             screen.fill((206, 194, 168))
+
+    if game.settings['custom cursor'] != cursor_toggled:
+        cursor_toggled = game.settings['custom cursor']
+        if cursor_toggled:
+            pygame.mouse.set_cursor(cursor)
+        else:
+            pygame.mouse.set_cursor(disabled_cursor)
 
     # Draw screens
     # This occurs before events are handled to stop pygame_gui buttons from blinking.
@@ -188,13 +194,7 @@ while True:
                                                 'info screen',
                                                 'make clan screen']
                 or not game.clan):
-                game.rpc.close_rpc.set()
-                game.rpc.update_rpc.set()
-                pygame.display.quit()
-                pygame.quit()
-                if game.rpc.is_alive():
-                    game.rpc.join(1)
-                sys.exit()
+                quit(savesettings=False)
             else:
                 SaveCheck(game.switches['cur_screen'], False, None)
 
@@ -221,6 +221,7 @@ while True:
         game.all_screens[game.last_screen_forupdate].exit_screen()
         game.all_screens[game.current_screen].screen_switches()
         game.switch_screens = False
+
 
     # END FRAME
     MANAGER.draw_ui(screen)

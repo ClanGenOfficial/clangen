@@ -198,7 +198,7 @@
 			"m_c gave a pretty flower they found to r_c.",
 			"m_c picks some fragrant flowers for r_c.",
 			"m_c decorates r_c's nest with flowers to surprise them!",
-			"m_c rolls around in (herb) after hearing r_c likes their smell."
+			"m_c rolls around in some herbs after hearing r_c likes their smell."
 		],
 		"reaction_random_cat": {
 			"romantic": "increase",
