@@ -154,6 +154,11 @@ else:
 game.rpc = _DiscordRPC("1076277970060185701", daemon=True)
 game.rpc.start()
 game.rpc.start_rpc.set()
+
+
+cursor_img = pygame.image.load('resources/images/cursor.png')
+
+
 while True:
     time_delta = clock.tick(30) / 1000.0
     if game.switches['cur_screen'] not in ['start screen']:
@@ -161,6 +166,11 @@ while True:
             screen.fill((57, 50, 36))
         else:
             screen.fill((206, 194, 168))
+
+    if game.settings['custom cursor']:
+        pygame.mouse.set_cursor((0, 0), cursor_img)
+    else:
+        pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_ARROW)
 
     # Draw screens
     # This occurs before events are handled to stop pygame_gui buttons from blinking.
@@ -205,6 +215,7 @@ while True:
         game.all_screens[game.last_screen_forupdate].exit_screen()
         game.all_screens[game.current_screen].screen_switches()
         game.switch_screens = False
+
 
     # END FRAME
     MANAGER.draw_ui(screen)
