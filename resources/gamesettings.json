@@ -29,6 +29,10 @@
             "Dark Mode",
             "Camp backgrounds will match with the mode: nighttime for Dark mode and daytime for Light mode."
         ],
+        "custom cursor": [
+            "Custom Cursor",
+            "The cursor will be replaced with a cat paw."
+        ],
         "backgrounds": [
             "Enable Clan page background",
             "Even with this off, the camp you choose will still affect the events you encounter."
