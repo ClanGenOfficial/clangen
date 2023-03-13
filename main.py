@@ -161,11 +161,7 @@ game.rpc.start()
 game.rpc.start_rpc.set()
 
 
-cursor_surface = pygame.Surface((21, 22))
-cursor_img = pygame.image.load('resources/images/cursor.png').convert()
-cursor_img.set_colorkey((255, 255, 255))
-cursor_surface.blit(cursor_img, (0, 0))
-pygame.mouse.set_cursor((0, 0), cursor_surface)
+cursor_img = pygame.image.load('resources/images/cursor.png')
 
 
 while True:
@@ -175,6 +171,12 @@ while True:
             screen.fill((57, 50, 36))
         else:
             screen.fill((206, 194, 168))
+
+    if game.settings['custom cursor']:
+        pygame.mouse.set_cursor((0, 0), cursor_img)
+    else:
+        pygame.mouse.set_cursor(*pygame.cursors.arrow)
+        # TODO: use system cursor
 
     # Draw screens
     # This occurs before events are handled to stop pygame_gui buttons from blinking.
