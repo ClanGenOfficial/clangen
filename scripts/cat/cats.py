@@ -316,6 +316,7 @@ class Cat():
                 self.age = 'senior'
             elif moons == 0:
                 self.age = 'newborn'
+                status = 'newborn'
             else:
                 # In range
                 for key_age in self.age_moons.keys():

@@ -208,7 +208,7 @@ class GenerateEvents:
                 event_list.extend(
                     self.generate_short_events(event_type, "warrior", biome))
 
-            if cat_type not in ["kitten", "leader"]:
+            if cat_type not in ["kitten", "leader", "newborn"]:
                 if event_type != "nutrition":
                     event_list.extend(self.generate_short_events(event_type, "general", "general"))
 
