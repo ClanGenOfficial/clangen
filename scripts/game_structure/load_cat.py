@@ -68,8 +68,10 @@ def json_load():
                         eye_colour=cat["eye_colour"] if cat["eye_colour"] not in ["BLUEYELLOW", "BLUEGREEN", "BLUE2"] else "BLUE",
                         pelt=new_pelt,
                         loading_cat=True)
+            if cat["eye_colour"] == "BLUE2":
+                new_cat.eye_colour = "BLUETWO"
             if cat["eye_colour2"] == "BLUE2":
-                new_cat["eye_colour2"] = "BLUETWO"
+                new_cat.eye_colour2 = "BLUETWO"
             new_cat.eye_colour2 = cat["eye_colour2"] if "eye_colour2" in cat else None
             if cat["eye_colour"] == "BLUEYELLOW":
                 new_cat.eye_colour2 = "YELLOW"
@@ -122,12 +124,6 @@ def json_load():
                         new_cat.cat_sprites['senior'] = 14
             new_cat.eye_colour = cat["eye_colour"]
             new_cat.reverse = cat["reverse"]
-            if cat["white_patches"] == 'POINTMARK':
-                new_cat["white_patches"] = "SEALPOINT"
-            if cat["white_patches"] == 'PANTS2':
-                new_cat["white_patches"] = 'PANTSTWO'
-            if cat["white_patches"] == 'ANY2':
-                new_cat["white_patches"] = 'ANYTWO'
             if cat["white_patches"] in old_creamy_patches:
                 new_cat.white_patches = convert["old_creamy_patches"][str(cat['white_patches'])]
                 new_cat.white_patches_tint = "darkcream"
@@ -140,6 +136,12 @@ def json_load():
                         new_cat.white_patches_tint = "none"
                     else:
                         new_cat.white_patches_tint = "offwhite"
+            if cat["white_patches"] == 'POINTMARK':
+                new_cat.white_patches = "SEALPOINT"
+            if cat["white_patches"] == 'PANTS2':
+                new_cat.white_patches = 'PANTSTWO'
+            if cat["white_patches"] == 'ANY2':
+                new_cat.white_patches = 'ANYTWO'
             new_cat.vitiligo = cat["vitiligo"] if cat["vitiligo"] else None
             new_cat.points = cat["points"] if cat["points"] else None
             if cat["white_patches"] in vit:
