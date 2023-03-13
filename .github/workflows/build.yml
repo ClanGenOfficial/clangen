@@ -228,6 +228,9 @@ jobs:
         uses: conda-incubator/setup-miniconda@v2
         with:
           python-version: "3.11"
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@master
       - name: Update pip
         run: python -m pip install --upgrade pip
       - name: Update setuptools and wheel
@@ -238,6 +241,10 @@ jobs:
         run: python -m pip install --upgrade Pillow
       - name: Install PyInstaller
         run: python -m pip install --upgrade PyInstaller
+      - name: Install gnupg
+        run: brew install gnupg
+      - name: Install curl
+        run: brew install curl
       - name: Write Dev Version File
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: echo ${{ github.sha }} > commit.txt
@@ -257,6 +264,23 @@ jobs:
         with:
           name: Clangen_macOS64.dmg
           path: Clangen_macOS64.dmg
+      - name: Upload artifact to API
+        run: |
+          echo ${{ secrets.PackageSignKey }} | gpg --import --passphrase ${{ secrets.PackageSignKeyPassphrase }
+          zip Clangen_macOS64.dmg.zip ./Clangen_macOS64.dmg
+          gpg --output Clangen_macOS64.dmg.zip.sig --detach-sig Clangen_macOS64.dmg.zip
+          curl -X 'POST' \
+            'https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/${{ github.sha }}/Appoint' \
+            -H 'accept: */*'
+          curl -X 'PUT' \
+            'https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/${{ github.sha }}/Artifacts/macOS' \
+            -H 'accept: */*' \
+            -H 'Content-Type: multipart/form-data' \
+            -F 'fileBundle=@Clangen_macOS64.dmg.zip;type=application/zip' \
+            -F 'fileBundle=@Clangen_macOS64.dmg.zip.sig'
+          curl -X 'POST' \
+            'https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/${{ github.sha }}/Confirm' \
+            -H 'accept: */*'
       - name: Release 
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
