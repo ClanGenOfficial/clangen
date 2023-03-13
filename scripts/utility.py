@@ -651,9 +651,7 @@ def get_snippet_list(chosen_list, amount, sense_groups=None, return_string=True)
 
     # now choose a unique snippet from each snip list
     unique_snippets = []
-    print(snippets)
     for snip_list in snippets:
-        print(snip_list)
         unique_snippets.append(choice(snip_list))
 
     # pick out our final snippets
