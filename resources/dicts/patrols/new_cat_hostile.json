@@ -72,7 +72,7 @@
     "patrol_id": "gen_gen_newkit3",
     "biome": "Any",
     "season": "Any",
-    "tags": ["border", "new_cat_kit", "reputation", "no_change_fail_rep"],
+    "tags": ["border", "new_cat_kitten", "reputation", "no_change_fail_rep"],
     "intro_text": "r_c finds an abandoned kit whose parents are nowhere to be found.",
     "success_text": [
         "The kit is taken back to camp and nursed back to health."

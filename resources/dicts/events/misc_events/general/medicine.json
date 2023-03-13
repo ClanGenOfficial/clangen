@@ -121,7 +121,7 @@
   {
     "camp": "any",
     "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-    "event_text": "m_c tosses in their sleep and their dreamself pads through the thoughts of their clanmates, picking up snippets of dream_list. They blink slowly awake, wondering whose dreams they walked in.",
+    "event_text": "m_c tosses in their sleep and their dreamself pads through the thoughts of their Clanmates, picking up snippets of dream_list. They blink slowly awake, wondering whose dreams they walked in.",
     "cat_trait": null,
     "cat_skill": ["dream walker"],
     "other_cat_trait": null,

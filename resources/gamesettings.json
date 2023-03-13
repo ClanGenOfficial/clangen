@@ -29,6 +29,10 @@
             "Dark Mode",
             "Camp backgrounds will match with the mode: nighttime for Dark mode and daytime for Light mode."
         ],
+        "custom cursor": [
+            "Custom Cursor",
+            "The cursor will be replaced with a cat paw."
+        ],
         "backgrounds": [
             "Enable Clan page background",
             "Even with this off, the camp you choose will still affect the events you encounter."
@@ -96,7 +100,7 @@
             "Allows mentors and the cats they trained to be romantic after they become warriors"
         ],
         "first_cousin_mates": [
-            "Allow first cousins to mate",
+            "Allow first cousins to be mates and have romantic interactions",
             "Allows cats with the same grandparents but different parents to become mates"
         ]
     }

@@ -28,15 +28,10 @@ directory = os.path.dirname(__file__)
 if directory:
     os.chdir(directory)
 
-import subprocess
-
-
 # Setup logging
 import logging
 
-
 setup_data_dir()
-
 
 formatter = logging.Formatter(
     "%(name)s - %(levelname)s - %(filename)s / %(funcName)s / %(lineno)d - %(message)s"
@@ -159,6 +154,15 @@ else:
 game.rpc = _DiscordRPC("1076277970060185701", daemon=True)
 game.rpc.start()
 game.rpc.start_rpc.set()
+
+
+cursor_img = pygame.image.load('resources/images/cursor.png').convert_alpha()
+cursor = pygame.cursors.Cursor((9,0), cursor_img)
+cursor_toggled = not game.settings['custom cursor'] # Invert value to force cursor change
+
+disabled_cursor = pygame.cursors.Cursor(pygame.SYSTEM_CURSOR_ARROW)
+
+
 while True:
     time_delta = clock.tick(30) / 1000.0
     if game.switches['cur_screen'] not in ['start screen']:
@@ -166,6 +170,13 @@ while True:
             screen.fill((57, 50, 36))
         else:
             screen.fill((206, 194, 168))
+
+    if game.settings['custom cursor'] != cursor_toggled:
+        cursor_toggled = game.settings['custom cursor']
+        if cursor_toggled:
+            pygame.mouse.set_cursor(cursor)
+        else:
+            pygame.mouse.set_cursor(disabled_cursor)
 
     # Draw screens
     # This occurs before events are handled to stop pygame_gui buttons from blinking.
@@ -210,6 +221,7 @@ while True:
         game.all_screens[game.last_screen_forupdate].exit_screen()
         game.all_screens[game.current_screen].screen_switches()
         game.switch_screens = False
+
 
     # END FRAME
     MANAGER.draw_ui(screen)
