@@ -2,10 +2,6 @@ import itertools
 import random
 from random import choice, randint
 
-try:
-    import ujson
-except ImportError:
-    import json as ujson
 import random
 
 from scripts.game_structure.game_essentials import game
