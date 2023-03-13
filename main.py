@@ -34,15 +34,11 @@ sys.stderr = UnbufferedStreamDuplexer(sys.stderr, stderr_file)
 
 
 import os
-
-from scripts.datadir import get_log_dir, setup_data_dir
 from scripts.version import get_version_info
 
 directory = os.path.dirname(__file__)
 if directory:
     os.chdir(directory)
-
-import subprocess
 
 
 # Setup logging
