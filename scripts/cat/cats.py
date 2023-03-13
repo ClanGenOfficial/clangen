@@ -400,9 +400,10 @@ class Cat():
                 m = self.moons
                 self.experience = 0
                 while m > Cat.age_moons['adolescent'][0]:
-                    base_ex = 0.6 * random.choices(game.config["graduation"]["base_app_timeskip_ex"][0],
-                                          weights=game.config["graduation"]["base_app_timeskip_ex"][1], k=1)[0]
-                    self.experience += base_ex
+                    ran = game.config["graduation"]["base_app_timeskip_ex"]
+                    exp = random.choice(
+                        list(range(ran[0][0], ran[0][1] + 1)) + list(range(ran[1][0], ran[1][1] + 1)) * 2)
+                    self.experience += exp + 3
                     m -= 1
             elif self.age in ['young adult', 'adult']:
                 self.experience = randint(Cat.experience_levels_range["prepared"][0],
