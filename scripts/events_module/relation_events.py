@@ -44,9 +44,9 @@ class Relation_Events():
             return
         self.had_one_event = False
 
-        # 1/3 for an additional event
-        if not randint(0,2):        
-            self.group_events(cat)
+        # currently try to trigger every moon, because there are not many group events
+        # TODO: maybe change in future
+        self.group_events(cat)
 
         # 1/3 for an additional event
         if not randint(0,2):
@@ -181,7 +181,7 @@ class Relation_Events():
         if not self.can_trigger_events(cat):
             return
 
-        range = 10 + randint(0, 10)
+        range = 15 + randint(0, 10)
         same_age_cats = get_cats_same_age(cat, range)
         if len(same_age_cats) > 0:
             random_cat = choice(same_age_cats)
@@ -196,8 +196,11 @@ class Relation_Events():
             return
 
         chosen_type = "all"
-        if len(GROUP_TYPES) > 0:
-            chosen_type = choice(list(GROUP_TYPES.keys()))
+        if len(GROUP_TYPES) > 0 and randint(0,game.config["relationship"]["chance_of_special_group"]):
+            types_to_choose = []
+            for group, value in GROUP_TYPES.items():
+                types_to_choose.extend([group] * value["frequency"])
+                chosen_type = choice(list(GROUP_TYPES.keys()))
 
         possible_interaction_cats = list(
             filter(
@@ -207,7 +210,7 @@ class Relation_Events():
         )
         possible_interaction_cats.remove(cat)
         if chosen_type != "all":
-            possible_interaction_cats = self.cats_with_relationship_constraints(cat, GROUP_TYPES[chosen_type])
+            possible_interaction_cats = self.cats_with_relationship_constraints(cat, GROUP_TYPES[chosen_type]["constraint"])
 
         interacted_cat_ids = self.group_events_class.start_interaction(cat, possible_interaction_cats)
         for id in interacted_cat_ids:

@@ -20,5 +20,18 @@
 				"trust": "increase"
 			}
 		}
+	},
+	{
+		"id": "group_3_neutral_talk2",
+		"cat_amount": 3,
+		"intensity": "low",
+		"interactions": [
+			"m_c, r_c1 and r_c2 had a nice talk, while eating.",
+			"m_c, r_c1 and r_c2 took a sunbath and had a little smalltalk."
+		],
+		"general_reaction": {
+			"comfortable": "increase",
+			"disliked": "decrease"
+		}
 	}
 ]

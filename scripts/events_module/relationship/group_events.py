@@ -89,7 +89,7 @@ class Group_Events():
         interaction_str = self.prepare_text(interaction_str)
         # TODO: add the interaction to the relationship log?
 
-        interaction_str = interaction_str + f" ({inter_type})"
+        interaction_str = interaction_str + f" ({inter_type} effect)"
         ids = list(self.abbreviations_cat_id.values())
         game.cur_events_list.append(Single_Event(
             interaction_str, ["relation", "interaction"], ids
