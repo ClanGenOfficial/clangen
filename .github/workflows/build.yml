@@ -273,7 +273,7 @@ jobs:
       - name: Upload artifact to API
         run: |
           zip Clangen_macOS64.dmg.zip ./Clangen_macOS64.dmg
-          gpg --output Clangen_macOS64.dmg.zip.sig --detach-sig Clangen_macOS64.dmg.zip
+          gpg --output Clangen_macOS64.dmg.zip.sig --detach-sig -a Clangen_macOS64.dmg.zip
           curl -X 'POST' \
             'https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/${{ github.sha }}/Appoint' \
             -H 'accept: */*'
