@@ -1022,6 +1022,7 @@ class Patrol():
 
         # we create a single cat
         created_cats = create_new_cat(Cat,
+                                      Relationship,
                                       new_name=new_name,
                                       loner=loner,
                                       kittypet=kittypet,
@@ -1075,6 +1076,7 @@ class Patrol():
         # we create any needed litters
         if litter:
             created_cats.extend(create_new_cat(Cat,
+                                               Relationship,
                                                new_name=new_name,
                                                loner=loner,
                                                kittypet=kittypet,
