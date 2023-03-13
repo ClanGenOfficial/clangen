@@ -1,5 +1,6 @@
 import os
 import subprocess
+import sys
 
 
 def get_version_info():
@@ -8,8 +9,10 @@ def get_version_info():
         version_number = ""
         is_release = False
 
-        if os.path.exists("commit.txt"):
-            with open("commit.txt", 'r', encoding="utf-8") as read_file:
+        game_root_directory = os.path.dirname(sys.argv[0])
+
+        if os.path.exists(f"{game_root_directory}/commit.txt"):
+            with open(f"{game_root_directory}/commit.txt", 'r', encoding="utf-8") as read_file:
                 version_number = read_file.read()
                 is_release = True
         else:
