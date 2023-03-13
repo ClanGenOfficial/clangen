@@ -456,5 +456,30 @@
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null
-}
-]
+},
+{
+    "patrol_id": "bch_training_dolphinlore1",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["training", "platonic", "apprentice", "two_apprentices", "warrior", "patrol_to_p_l", "no_change_fail", "respect"],
+    "intro_text": "p_l sees a pod of dolphins swimming in the distance and considers it a good learning opportunity for the apprentices.",
+    "decline_text": "The weather is turning rough and p_l makes the decision to teach the apprentices about the dolphins another day. ",
+    "chance_of_success": 75,
+    "exp": 5,
+    "success_text": [
+    "p_l tells a mournful and haunting tale of all the cats that were swept out to sea and drowned before the dolphins took pity on one of them. p_l tells the apprentices that the tiny white and red cat that was saved made the first traditions and bonds with the dolphins and that both clan and dolphins wept at their death when it came.",
+    "p_l tells the apprentices about the red and white cat that was saved by the dolphins, they managed to keep afloat long enough for them to be saved by relaxing their entire body and floating on the waves."
+    ],
+    "fail_text": [
+    "A sudden storm cuts off p_l’s words and the patrol sprints back to camp to get warm and dry."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 3,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+

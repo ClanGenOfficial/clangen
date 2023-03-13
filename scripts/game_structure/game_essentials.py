@@ -147,6 +147,7 @@ class Game():
 
     # SETTINGS
     settings = {
+        'custom cursor': True,
         'no gendered breeding': False,
         'text size': '0',
         'no unknown fathers': False,
@@ -176,6 +177,7 @@ class Game():
         'discord': False,
     }  # The current settings
     setting_lists = {
+        'custom cursor': [True, False],
         'no gendered breeding': [False, True],
         'text size': ['0', '1', '2'],
         'no unknown fathers': [False, True],

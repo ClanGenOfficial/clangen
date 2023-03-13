@@ -6,7 +6,6 @@ try:
     import ujson
 except ImportError:
     import json as ujson
-from copy import deepcopy
 
 from scripts.game_structure.game_essentials import game
 from scripts.events_module.condition_events import Condition_Events
