@@ -1421,7 +1421,7 @@
             "young adult": 40,
             "adult": 40,
             "senior adult": 30,
-            "elder": 20
+            "senior": 20
         },
         "illness_infectiousness": [
         ],
