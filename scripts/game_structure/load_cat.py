@@ -134,6 +134,8 @@ def json_load():
                         new_cat.white_patches_tint = "none"
                     else:
                         new_cat.white_patches_tint = "offwhite"
+            new_cat.vitiligo = cat["vitiligo"] if cat["vitiligo"] else None
+            new_cat.points = cat["points"] if cat["points"] else None
             if cat["white_patches"] in vit:
                 new_cat.vitiligo = cat["white_patches"]
                 new_cat.white_patches = None
