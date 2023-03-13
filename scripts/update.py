@@ -30,8 +30,8 @@ def has_update():
     release_info = result.json()['release']
     latest_version_number = release_info['name']
 
-    if get_version_info().version_number != latest_version_number:
-        print(f"Update available!\nCurrent version: {get_version_info().version_number}\nNewest version : {latest_version_number}")
+    if get_version_info().version_number.strip() != latest_version_number.strip():
+        print(f"Update available!\nCurrent version: {get_version_info().version_number.strip()}\nNewest version : {latest_version_number.strip()}")
         return True
     else:
         return False
