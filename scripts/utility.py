@@ -601,38 +601,75 @@ def change_relationship_values(cats_to: list,
 #                               Text Adjust                                    #
 # ---------------------------------------------------------------------------- #
 
-def get_snippet_list(chosen_list, amount, sense_groups=None):
+def get_snippet_list(chosen_list, amount, sense_groups=None, return_string=True):
     """
     function to grab items from various lists in snippet_collections.json
     list options are:
-    -omen_list
-    -dream_list (this list doesn't have sense categories, leave sense_groups as None)
-    -prophecy_list
+    -prophecy_list - sense_groups = sight, sound, smell, emotional, touch
+    -omen_list - sense_groups = sight, sound, smell, emotional, touch
+    -clair_list  - sense_groups = sound, smell, emotional, touch, taste
+    -dream_list (this list doesn't have sense_groups)
+    -story_list (this list doesn't have sense_groups)
     :param chosen_list: pick which list you want to grab from
     :param amount: the amount of items you want the returned list to contain
     :param sense_groups: list which senses you want the snippets to correspond with:
      "touch", "sight", "emotional", "sound", "smell" are the options. Default is None, if left as this then all senses
-     will be included
-    :return: a list of the chosen items from chosen_list
+     will be included (if the list doesn't have sense categories, then leave as None)
+    :param return_string: if True then the function will format the snippet list with appropriate commas and 'ands'.
+    This will work with any number of items. If set to True, then the function will return a string instead of a list.
+    (i.e. ["hate", "fear", "dread"] becomes "hate, fear, and dread") - Default is True
+    :return: a list of the chosen items from chosen_list or a formatted string if format is True
     """
-    if chosen_list == 'dream_list':
-        final_snippets = sample(SNIPPETS[chosen_list], k=amount)
-        return final_snippets
+    biome = game.clan.biome.casefold()
 
-    if not sense_groups:
-        sense_groups = ["sight", "sound", "smell", "emotional", "touch"]
+    # these lists don't get sense specific snippets, so is handled first
+    if chosen_list in ["dream_list", "story_list"]:
 
-    snippets = []
-    for sense in sense_groups:
-        snippet_group = SNIPPETS[chosen_list][sense]
-        snippets.extend(snippet_group["general"])
+        if chosen_list == 'story_list':  # story list has some biome specific things to collect
+            snippets = SNIPPETS[chosen_list]['general']
+            snippets.extend(SNIPPETS[chosen_list][biome])
+        elif chosen_list == 'clair_list':  # the clair list also pulls from the dream list
+            snippets = SNIPPETS[chosen_list]
+            snippets.extend(SNIPPETS["dream_list"])
+        else:  # the dream list just gets the one
+            snippets = SNIPPETS[chosen_list]
 
+    else:
+        # if no sense groups were specified, use all of them
+        if not sense_groups:
+            if chosen_list == 'clair_list':
+                sense_groups = ["taste", "sound", "smell", "emotional", "touch"]
+            else:
+                sense_groups = ["sight", "sound", "smell", "emotional", "touch"]
+
+        # find the correct lists and compile them
+        snippets = []
+        for sense in sense_groups:
+            snippet_group = SNIPPETS[chosen_list][sense]
+            snippets.extend(snippet_group["general"])
+            snippets.extend(snippet_group[biome])
+
+    # now choose a unique snippet from each snip list
     unique_snippets = []
+    print(snippets)
     for snip_list in snippets:
+        print(snip_list)
         unique_snippets.append(choice(snip_list))
 
+    # pick out our final snippets
     final_snippets = sample(unique_snippets, k=amount)
-    return final_snippets
+
+    if return_string:
+        if amount == 1:
+            text = str(final_snippets[0])
+        elif amount == 2:
+            text = " and ".join(final_snippets)
+        else:
+            start = ", ".join(final_snippets[:-1])
+            text = ", and ".join([start, final_snippets[-1]])
+        return text
+    else:
+        return final_snippets
 
 
 def event_text_adjust(Cat,
@@ -678,31 +715,19 @@ def event_text_adjust(Cat,
 
     if "omen_list" in adjust_text:
         chosen_omens = get_snippet_list("omen_list", randint(2, 4), sense_groups=["sight"])
-        omen_amount = len(chosen_omens)
-        if omen_amount == 2:
-            omen_text = " and ".join(chosen_omens)
-        else:
-            start = ", ".join(chosen_omens[:-1])
-            omen_text = ", and ".join([start, chosen_omens[-1]])
-        adjust_text = adjust_text.replace("omen_list", omen_text)
+        adjust_text = adjust_text.replace("omen_list", chosen_omens)
     if "prophecy_list" in adjust_text:
         chosen_prophecy = get_snippet_list("prophecy_list", randint(2, 4), sense_groups=["sight", "emotional", "touch"])
-        prophecy_amount = len(chosen_prophecy)
-        if prophecy_amount == 2:
-            prophecy_text = " and ".join(chosen_prophecy)
-        else:
-            start = ", ".join(chosen_prophecy[:-1])
-            prophecy_text = ", and ".join([start, chosen_prophecy[-1]])
-        adjust_text = adjust_text.replace("prophecy_list", prophecy_text)
+        adjust_text = adjust_text.replace("prophecy_list", chosen_prophecy)
     if "dream_list" in adjust_text:
         chosen_dream = get_snippet_list("dream_list", randint(2, 4))
-        dream_amount = len(chosen_dream)
-        if dream_amount == 2:
-            dream_text = " and ".join(chosen_dream)
-        else:
-            start = ", ".join(chosen_dream[:-1])
-            dream_text = ", and ".join([start, chosen_dream[-1]])
-        adjust_text = adjust_text.replace("dream_list", dream_text)
+        adjust_text = adjust_text.replace("dream_list", chosen_dream)
+    if "clair_list" in adjust_text:
+        chosen_clair = get_snippet_list("clair_list", randint(2, 4))
+        adjust_text = adjust_text.replace("clair_list", chosen_clair)
+    if "story_list" in adjust_text:
+        chosen_story = get_snippet_list("story_list", randint(1, 2))
+        adjust_text = adjust_text.replace("story_list", chosen_story)
 
     if clan:
         _tmp = clan
