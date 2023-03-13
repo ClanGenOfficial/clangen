@@ -723,9 +723,7 @@ def event_text_adjust(Cat,
 
     cat_dict["c_n"] = (str(_tmp.name) + "Clan", None)
 
-    adjust_text = process_text(adjust_text, cat_dict)
-
-
+    # Dreams and Omens
     if "omen_list" in adjust_text:
         chosen_omens = get_snippet_list("omen_list", randint(2, 4), sense_groups=["sight"])
         omen_amount = len(chosen_omens)
@@ -734,7 +732,9 @@ def event_text_adjust(Cat,
         else:
             start = ", ".join(chosen_omens[:-1])
             omen_text = ", and ".join([start, chosen_omens[-1]])
-        adjust_text = adjust_text.replace("omen_list", omen_text)
+        
+        cat_dict["omen_list"] = (omen_text, None)
+
     if "prophecy_list" in adjust_text:
         chosen_prophecy = get_snippet_list("prophecy_list", randint(2, 4), sense_groups=["sight", "emotional", "touch"])
         prophecy_amount = len(chosen_prophecy)
@@ -743,7 +743,9 @@ def event_text_adjust(Cat,
         else:
             start = ", ".join(chosen_prophecy[:-1])
             prophecy_text = ", and ".join([start, chosen_prophecy[-1]])
-        adjust_text = adjust_text.replace("prophecy_list", prophecy_text)
+
+        cat_dict["prophecy_list"] = (prophecy_text, None)
+
     if "dream_list" in adjust_text:
         chosen_dream = get_snippet_list("dream_list", randint(2, 4))
         dream_amount = len(chosen_dream)
@@ -752,7 +754,10 @@ def event_text_adjust(Cat,
         else:
             start = ", ".join(chosen_dream[:-1])
             dream_text = ", and ".join([start, chosen_dream[-1]])
-        adjust_text = adjust_text.replace("dream_list", dream_text)
+        
+        cat_dict["dream_list"] = (chosen_dream, None)
+
+    adjust_text = process_text(adjust_text, cat_dict)
 
     return adjust_text
 
