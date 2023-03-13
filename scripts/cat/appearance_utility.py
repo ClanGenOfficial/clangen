@@ -492,9 +492,9 @@ def white_patches_inheritance(cat, parents: tuple):
         if p:
             if p.white_patches:
                 par_whitepatches.add(p.white_patches)
-            elif p.points:
+            if p.points:
                 par_points.append(p.points)
-            elif p.vitiligo:
+            if p.vitiligo:
                 par_vit.append(p.vitiligo)
 
     if not parents:
@@ -574,13 +574,13 @@ def white_patches_inheritance(cat, parents: tuple):
 
     # Adjust weights for torties, since they can't have anything greater than mid_white:
     if cat.pelt.name == "Tortie":
-        weights = weights[:2] + [0, 0, 0, 0]
+        weights = weights[:2] + [0, 0, 0]
         # Another check to make sure not all the values are zero. This should never happen, but better
         # safe then sorry.
         if not any(weights):
             weights = [2, 1, 0, 0, 0]
     elif cat.pelt.name == "Calico":
-        weights = [0, 0] + weights[3:]
+        weights = [0, 0, 0] + weights[3:]
         # Another check to make sure not all the values are zero. This should never happen, but better
         # safe then sorry.
         if not any(weights):
