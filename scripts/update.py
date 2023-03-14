@@ -47,7 +47,7 @@ def has_update():
         return True
     else:
         return False
-
+# a
 
 def self_update(release_channel, artifact_name):
     response = requests.get(f"https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/Latest/Artifacts/{artifact_name}", proxies=proxies, verify=(not use_proxy))
