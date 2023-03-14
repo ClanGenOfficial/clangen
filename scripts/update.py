@@ -51,17 +51,26 @@ def has_update():
 # a
 
 def self_update(release_channel='development'):
-    _ = {
-        'Windows': [ 'win32', 'win64', 'win10+' ],
-        'Linux': [ 'linux2.31', 'linux2.35' ],
-        'Darwin': [ 'macOS' ]
-    }
-    artifact_name = _[platform.system()]
-    if len(artifact_name) == 1:
-        artifact_name = artifact_name[0]
-    else:
-        for name in artifact_name:
-            print("TODO: Implement multi-arch support.")
+    if platform.system() == 'Windows':
+        if platform.architecture()[0][:2] == '32':
+            artifact_name = 'win32'
+        elif platform.architecture()[0][:2] == '64':
+            artifact_name = 'win64'
+            if platform.win32_ver()[0] == '10':
+                artifact_name = 'win10+'
+    elif platform.system() == 'Darwin':
+        artifact_name = 'macOS'
+    elif platform.system() == 'Linux':
+        if platform.libc_ver()[0] != 'glibc':
+            print("Unsupported libc.")
+            return
+        elif platform.libc_ver()[1] == '2.31':
+            artifact_name = 'linux2.31'
+        elif platform.libc_ver()[1] == '2.35':
+            artifact_name = 'linux2.35'
+        else:
+            print("Unsupported libc version.")
+            return
     response = requests.get(f"https://clangen-update-api-beta.archanyhm.dev/Update/Channels/{release_channel}/Releases/Latest/Artifacts/{artifact_name}", proxies=proxies, verify=(not use_proxy))
     encoded_signature = response.headers['x-gpg-signature']
 
