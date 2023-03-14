@@ -5,6 +5,7 @@ import sys
 import tempfile
 import urllib.parse
 import zipfile
+import tarfile
 import platform
 
 import pgpy
@@ -96,17 +97,32 @@ def self_update(release_channel='development'):
     except pgpy.errors.PGPError:
         print("Signature mismatch.")
         return
+    
+    if platform.system() == 'Windows':
+        print("im doing windows last, fuck windows")
+    elif platform.system() == 'Darwin':
 
-    with zipfile.ZipFile("download.tmp", 'r') as zip_ref:
-        zip_ref.extractall('Downloads')
-    os.remove("download.tmp")
+        with zipfile.ZipFile("download.tmp", 'r') as zip_ref:
+            zip_ref.extractall('Downloads')
+        os.remove("download.tmp")
 
-    os.makedirs('Downloads/macOS_tempmount', exist_ok=True)
-    os.system('hdiutil attach -nobrowse -mountpoint Downloads/macOS_tempmount Downloads/Clangen_macOS64.dmg')
-    shutil.rmtree('/Applications/Clangen.app.old', ignore_errors=True)
-    shutil.move('/Applications/Clangen.app', '/Applications/Clangen.app.old')
-    shutil.copytree('Downloads/macOS_tempmount/Clangen.app', '/Applications/Clangen.app')
-    os.system('hdiutil detach Downloads/macOS_tempmount')
-    shutil.rmtree('Downloads', ignore_errors=True)
-    os.execv('/Applications/Clangen.app/Contents/MacOS/Clangen', sys.argv)
+        os.makedirs('Downloads/macOS_tempmount', exist_ok=True)
+        os.system('hdiutil attach -nobrowse -mountpoint Downloads/macOS_tempmount Downloads/Clangen_macOS64.dmg')
+        shutil.rmtree('/Applications/Clangen.app.old', ignore_errors=True)
+        shutil.move('/Applications/Clangen.app', '/Applications/Clangen.app.old')
+        shutil.copytree('Downloads/macOS_tempmount/Clangen.app', '/Applications/Clangen.app')
+        os.system('hdiutil detach Downloads/macOS_tempmount')
+        shutil.rmtree('Downloads', ignore_errors=True)
+        os.execv('/Applications/Clangen.app/Contents/MacOS/Clangen', sys.argv)
+
+    elif platform.system() == 'Linux':
+        current_folder = os.getcwd()
+        with tarfile.open("download.tmp", 'r') as tar_ref:
+            tar_ref.extractall('Downloads')
+        os.remove("download.tmp")
+        shutil.move("Downloads", "../clangen_update")
+        shutil.rmtree(current_folder, ignore_errors=True)
+        shutil.move("../clangen_update", current_folder)
+        os.chmod(current_folder + "/Clangen", 0o755)
+        os.execv(current_folder + "/Clangen", sys.argv)
     exit(0)
