@@ -169,6 +169,7 @@ jobs:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
       - name: Upload artifact to API
+        shell: bash
         run: |
           zip Clangen_Win32.zip ./Clangen_Win32
           gpg --output Clangen_Win32.zip.sig --detach-sig -a Clangen_Win32.zip
@@ -234,6 +235,7 @@ jobs:
           name: Clangen_Win64
           path: dist/
       - name: Upload artifact to API
+        shell: bash
         run: |
           zip Clangen_Win64.zip ./Clangen_Win64
           gpg --output Clangen_Win64.zip.sig --detach-sig -a Clangen_Win64.zip
@@ -299,6 +301,7 @@ jobs:
           name: Clangen_Win64_Windows10+
           path: dist/
       - name: Upload artifact to API
+        shell: bash
         run: |
           zip Clangen_Win64_Windows10+.zip ./Clangen_Win64_Windows10+
           gpg --output Clangen_Win64_Windows10+.zip.sig --detach-sig -a Clangen_Win64_Windows10+.zip
