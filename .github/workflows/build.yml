@@ -266,24 +266,94 @@ jobs:
         with:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
-      - name: Upload artifact to API
-        run: |
-          zip Clangen_macOS64.dmg.zip ./Clangen_macOS64.dmg
-          gpg --output Clangen_macOS64.dmg.zip.sig --detach-sig -a Clangen_macOS64.dmg.zip
-          curl -X 'POST' \
-            'https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/${{ github.sha }}/Appoint' \
-            -H 'accept: */*'
-          curl -X 'PUT' \
-            'https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/${{ github.sha }}/Artifacts/macOS' \
-            -H 'accept: */*' \
-            -H 'Content-Type: multipart/form-data' \
-            -F 'fileBundle=@Clangen_macOS64.dmg.zip;type=application/zip' \
-            -F 'fileBundle=@Clangen_macOS64.dmg.zip.sig'
-          curl -X 'POST' \
-            'https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/${{ github.sha }}/Confirm' \
-            -H 'accept: */*'
       - name: Release 
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: Clangen_macOS64.dmg
+
+  push_artifacts_to_api:
+    build_ubuntu_22_04:
+      runs-on: ubuntu-22.04
+      needs:
+        - build_ubuntu_20_04
+        - build_ubuntu_22_04
+        - build_win32
+        - build_win64
+        - build_win64_py311
+        - build_macos64
+      steps:
+        - name: Import GPG key
+          id: import_gpg
+          uses: crazy-max/ghaction-import-gpg@v5
+          with:
+            gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
+            passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
+        - uses: actions/download-artifact@v3
+          with:
+            path: ./
+        - name: Appoint release
+          run: |
+            curl -X 'POST' \
+              'https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/${{ github.sha }}/Appoint' \
+              -H 'accept: */*'
+        - name: Linux x64 glibc 2.31 Artifact
+          run: |
+            gpg --output Clangen_Linux64_glibc2.31+.tar.xz.sig --detach-sig -a Clangen_Linux64_glibc2.31+.tar.xz
+            curl -X 'PUT' \
+              'https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/${{ github.sha }}/Artifacts/linux_glibc_2.31' \
+              -H 'accept: */*' \
+              -H 'Content-Type: multipart/form-data' \
+              -F 'fileBundle=@Clangen_Linux64_glibc2.31+.tar.xz' \
+              -F 'fileBundle=@Clangen_Linux64_glibc2.31+.tar.xz
+        - name: Linux x64 glibc 2.35 Artifact
+          run: |
+            gpg --output Clangen_Linux64_glibc2.35+.tar.xz.sig --detach-sig -a Clangen_Linux64_glibc2.35+.tar.xz
+            curl -X 'PUT' \
+              'https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/${{ github.sha }}/Artifacts/linux_glibc_2.35' \
+              -H 'accept: */*' \
+              -H 'Content-Type: multipart/form-data' \
+              -F 'fileBundle=@Clangen_Linux64_glibc2.35+.tar.xz' \
+              -F 'fileBundle=@Clangen_Linux64_glibc2.35+.tar.xz.sig'
+        - name: Windows x32 Artifact
+          run: |
+            gpg --output Clangen_Win32.zip.sig --detach-sig -a Clangen_Win32.zip
+            curl -X 'PUT' \
+              'https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/${{ github.sha }}/Artifacts/win_x32' \
+              -H 'accept: */*' \
+              -H 'Content-Type: multipart/form-data' \
+              -F 'fileBundle=@Clangen_Win32.zip' \
+              -F 'fileBundle=@Clangen_Win32.zip.sig'
+        - name: Windows x64 Artifact
+          run: |
+            gpg --output Clangen_Win64.zip.sig --detach-sig -a Clangen_Win64.zip
+            curl -X 'PUT' \
+              'https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/${{ github.sha }}/Artifacts/win_x64' \
+              -H 'accept: */*' \
+              -H 'Content-Type: multipart/form-data' \
+              -F 'fileBundle=@Clangen_Win64.zip' \
+              -F 'fileBundle=@Clangen_Win64.zip.sig'
+        - name: Windows 10+ x64 Artifact
+          run: |
+            gpg --output Clangen_Win64_Windows10+.zip.sig --detach-sig -a Clangen_Win64_Windows10+.zip
+            curl -X 'PUT' \
+              'https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/${{ github.sha }}/Artifacts/win10_x64' \
+              -H 'accept: */*' \
+              -H 'Content-Type: multipart/form-data' \
+              -F 'fileBundle=@Clangen_Win64_Windows10+.zip' \
+              -F 'fileBundle=@Clangen_Win64_Windows10+.zip.sig'
+        - name: macOS Universal artifact
+          run: |
+            zip Clangen_macOS64.dmg.zip ./Clangen_macOS64.dmg
+            gpg --output Clangen_macOS64.dmg.zip.sig --detach-sig -a Clangen_macOS64.dmg.zip
+            curl -X 'PUT' \
+              'https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/${{ github.sha }}/Artifacts/macOS' \
+              -H 'accept: */*' \
+              -H 'Content-Type: multipart/form-data' \
+              -F 'fileBundle=@Clangen_macOS64.dmg.zip' \
+              -F 'fileBundle=@Clangen_macOS64.dmg.zip.sig'
+        - name: Confirm release
+          run: |
+            curl -X 'POST' \
+              'https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/${{ github.sha }}/Confirm' \
+              -H 'accept: */*'
