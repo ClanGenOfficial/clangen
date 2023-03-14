@@ -35,7 +35,7 @@ get_update_url.value = None
 
 
 def has_update():
-    latest_endpoint = f"{get_update_url()}/v1/Update/Channels/development/Releases/Latest"
+    latest_endpoint = f"{get_update_url()}/v1/Update/Channels/development-test/Releases/Latest"
     result = requests.get(latest_endpoint)
 
     release_info = result.json()['release']
