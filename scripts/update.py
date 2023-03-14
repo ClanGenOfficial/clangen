@@ -13,9 +13,6 @@ import requests as requests
 from scripts.version import get_version_info
 
 
-powershell = 'C:\Program Files\WindowsApps\Microsoft.PowerShellPreview_7.4.1.0_x64__8wekyb3d8bbwe\pwsh.exe'
-# my dev environment is weird and subprocess.Popen cant find powershell.exe
-
 
 
 use_proxy = False  # Set this to True if you want to use a proxy for the update check. Useful for debugging.
@@ -119,6 +116,14 @@ def self_update(release_channel='development-test'):
     #     return
 
     if platform.system() == 'Windows':
+        pwsh = ''
+        if shutil.which('pwsh') is not None:
+            pwsh = shutil('pwsh')
+        elif shutil.which('powershell') is not None:
+            pwsh = shutil.which('powershell')
+        else:
+            print("Powershell not found. Please install it and try again.")
+            return
         with zipfile.ZipFile("download.tmp", 'r') as zip_ref:
             zip_ref.extractall('Downloads')
         os.remove("download.tmp")
@@ -130,7 +135,7 @@ def self_update(release_channel='development-test'):
         print("Powershell will now be used to update Clangen.")
         print("A console window will open and close automatically. Please do not be alarmed.")
 
-        subprocess.Popen([powershell, "-ExecutionPolicy", "Bypass", "-File", "../clangen_update_script.ps1", "internal", os.getcwd(), latest_version_number])
+        subprocess.Popen([pwsh, "-ExecutionPolicy", "Bypass", "-File", "../clangen_update_script.ps1", "internal", os.getcwd(), latest_version_number])
 
     elif platform.system() == 'Darwin':
         with zipfile.ZipFile("download.tmp", 'r') as zip_ref:
