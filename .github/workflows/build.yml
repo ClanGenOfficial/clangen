@@ -106,11 +106,6 @@ jobs:
         with:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
-      - name: "add-path"
-        shell: cmd
-        run: |
-          echo ::add-path::C:\msys64\usr\bin
-          dir C:\msys64\usr\bin
       - name: Upload artifact to API
         run: |
           gpg --output Clangen_Linux64_glibc2.35+.tar.xz.sig --detach-sig -a Clangen_Linux64_glibc2.35+.tar.xz
@@ -173,11 +168,6 @@ jobs:
         with:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
-      - name: "add-path"
-        shell: cmd
-        run: |
-          echo ::add-path::C:\msys64\usr\bin
-          dir C:\msys64\usr\bin
       - name: Upload artifact to API
         shell: bash
         run: |
@@ -244,11 +234,6 @@ jobs:
         with:
           name: Clangen_Win64
           path: dist/
-      - name: "add-path"
-        shell: cmd
-        run: |
-          echo ::add-path::C:\msys64\usr\bin
-          dir C:\msys64\usr\bin
       - name: Upload artifact to API
         shell: bash
         run: |
