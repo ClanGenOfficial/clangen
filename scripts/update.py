@@ -122,7 +122,7 @@ def self_update(release_channel='development-test'):
         elif shutil.which('powershell') is not None:
             pwsh = shutil.which('powershell')
         else:
-            print("Powershell not found. Please install it and try again.")
+            print("Powershell not found. Please install it and try again")
             return
         with zipfile.ZipFile("download.tmp", 'r') as zip_ref:
             zip_ref.extractall('Downloads')
