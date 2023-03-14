@@ -70,7 +70,7 @@ def self_update(release_channel='development-test'):
             artifact_name = 'win32'
         elif platform.architecture()[0][:2] == '64':
             artifact_name = 'win64'
-            if platform.win32_ver()[0] == '10':
+            if platform.win32_ver()[0] == '10' or platform.win32_ver()[0] == '11':
                 artifact_name = 'win10+'
     elif platform.system() == 'Darwin':
         artifact_name = 'macOS'
