@@ -47,16 +47,19 @@ jobs:
         run: |
           gpg --output Clangen_Linux64_glibc2.31+.tar.xz.sig --detach-sig -a Clangen_Linux64_glibc2.31+.tar.xz
           curl -X 'POST' \
-            'https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/${{ github.sha }}/Appoint' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Appoint' \
+            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*'
           curl -X 'PUT' \
-            'https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/${{ github.sha }}/Artifacts/linux2.31' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Artifacts/linux2.31' \
+            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
-            -F 'fileBundle=@Clangen_Linux64_glibc2.31+.tar.xz;type=application/zip' \
+            -F 'fileBundle=@Clangen_Linux64_glibc2.31+.tar.xz' \
             -F 'fileBundle=@Clangen_Linux64_glibc2.31+.tar.xz.sig'
           curl -X 'POST' \
-            'https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/${{ github.sha }}/Confirm' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Confirm' \
+            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*'
       - name: Release 
         uses: softprops/action-gh-release@v1
@@ -107,16 +110,19 @@ jobs:
         run: |
           gpg --output Clangen_Linux64_glibc2.35+.tar.xz.sig --detach-sig -a Clangen_Linux64_glibc2.35+.tar.xz
           curl -X 'POST' \
-            'https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/${{ github.sha }}/Appoint' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Appoint' \
+            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*'
           curl -X 'PUT' \
-            'https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/${{ github.sha }}/Artifacts/linux2.35' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Artifacts/linux2.35' \
+            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
-            -F 'fileBundle=@Clangen_Linux64_glibc2.35+.tar.xz;type=application/zip' \
+            -F 'fileBundle=@Clangen_Linux64_glibc2.35+.tar.xz' \
             -F 'fileBundle=@Clangen_Linux64_glibc2.35+.tar.xz.sig'
           curl -X 'POST' \
-            'https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/${{ github.sha }}/Confirm' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Confirm' \
+            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*'
       - name: Release 
         uses: softprops/action-gh-release@v1
