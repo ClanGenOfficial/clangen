@@ -509,7 +509,7 @@
 "win_trait": [
     "patient"
 ],
-"fail_trait": null,
+
 "min_cats": 2,
 "max_cats": 2,
 "antagonize_text": null,

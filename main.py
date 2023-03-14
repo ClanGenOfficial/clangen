@@ -16,11 +16,10 @@ It then loads the settings, and then loads the start screen.
 
 
 """ # pylint: enable=line-too-long
-
 import sys
-import os
 import time
-
+import os
+from scripts.stream_duplexer import UnbufferedStreamDuplexer
 from scripts.datadir import get_log_dir, setup_data_dir
 from scripts.version import get_version_info
 
@@ -28,21 +27,25 @@ directory = os.path.dirname(__file__)
 if directory:
     os.chdir(directory)
 
-import subprocess
 
+setup_data_dir()
+timestr = time.strftime("%Y%m%d_%H%M%S")
+
+
+stdout_file = open(get_log_dir() + f'/stdout_{timestr}.log', 'a')
+stderr_file = open(get_log_dir() + f'/stderr_{timestr}.log', 'a')
+sys.stdout = UnbufferedStreamDuplexer(sys.stdout, stdout_file)
+sys.stderr = UnbufferedStreamDuplexer(sys.stderr, stderr_file)
 
 # Setup logging
 import logging
 
-
-setup_data_dir()
-
-
 formatter = logging.Formatter(
     "%(name)s - %(levelname)s - %(filename)s / %(funcName)s / %(lineno)d - %(message)s"
     )
+
+
 # Logging for file
-timestr = time.strftime("%Y%m%d_%H%M%S")
 log_file_name = get_log_dir() + f"/clangen_{timestr}.log"
 file_handler = logging.FileHandler(log_file_name)
 file_handler.setFormatter(formatter)
@@ -159,6 +162,13 @@ else:
 game.rpc = _DiscordRPC("1076277970060185701", daemon=True)
 game.rpc.start()
 game.rpc.start_rpc.set()
+
+
+cursor_img = pygame.image.load('resources/images/cursor.png').convert_alpha()
+cursor = pygame.cursors.Cursor((9,0), cursor_img)
+disabled_cursor = pygame.cursors.Cursor(pygame.SYSTEM_CURSOR_ARROW)
+
+
 while True:
     time_delta = clock.tick(30) / 1000.0
     if game.switches['cur_screen'] not in ['start screen']:
@@ -167,6 +177,11 @@ while True:
         else:
             screen.fill((206, 194, 168))
 
+    if game.settings['custom cursor']:
+        if pygame.mouse.get_cursor() == disabled_cursor:
+            pygame.mouse.set_cursor(cursor)
+    elif pygame.mouse.get_cursor() == cursor:
+        pygame.mouse.set_cursor(disabled_cursor)
     # Draw screens
     # This occurs before events are handled to stop pygame_gui buttons from blinking.
     game.all_screens[game.current_screen].on_use()
@@ -210,6 +225,7 @@ while True:
         game.all_screens[game.last_screen_forupdate].exit_screen()
         game.all_screens[game.current_screen].screen_switches()
         game.switch_screens = False
+
 
     # END FRAME
     MANAGER.draw_ui(screen)
