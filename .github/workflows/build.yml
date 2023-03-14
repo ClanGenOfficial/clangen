@@ -282,7 +282,7 @@ jobs:
             -F 'fileBundle=@Clangen_macOS64.dmg.zip;type=application/zip' \
             -F 'fileBundle=@Clangen_macOS64.dmg.zip.sig'
           curl -X 'POST' \
-            'https://${{ vars.UPDATE_API_BASEURL }}/Update/Channels/development/Releases/${{ github.sha }}/Confirm' \
+            'https://${{ vars.UPDATE_API_BASEURL }}/Update/Channels/development-test/Releases/${{ github.sha }}/Confirm' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*'
       - name: Release 
