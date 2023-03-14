@@ -47,12 +47,12 @@ def self_update(release_channel, artifact_name):
 
     decoded_signature = urllib.parse.unquote(encoded_signature)
 
-
-
     better_signature = decoded_signature.replace("-----BEGIN+PGP+SIGNATURE-----", "-----BEGIN PGP SIGNATURE-----")
     better_signature = better_signature.replace("-----END+PGP+SIGNATURE-----", "-----END PGP SIGNATURE-----")
 
-    key, _ = pgpy.PGPKey.from_file("./update_pubkey.asc")
+    download_file("https://raw.githubusercontent.com/archanyhm/clangen/auto-update/update_pubkey.asc")
+
+    key, _ = pgpy.PGPKey.from_file("./Downloads/update_pubkey.asc")
 
     try:
         with open("./download.tmp", "rb") as fd:
@@ -74,5 +74,6 @@ def self_update(release_channel, artifact_name):
     shutil.move('/Applications/Clangen.app', '/Applications/Clangen.app.old')
     shutil.copytree('Downloads/macOS_tempmount/Clangen.app', '/Applications/Clangen.app')
     os.system('hdiutil detach Downloads/macOS_tempmount')
+    shutil.rmtree('Downloads', ignore_errors=True)
     os.execv('/Applications/Clangen.app/Contents/MacOS/Clangen', sys.argv)
     exit(0)
