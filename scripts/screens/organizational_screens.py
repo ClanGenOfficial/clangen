@@ -78,7 +78,7 @@ class StartScreen(Screens):
                     subprocess.Popen(['xdg-open', get_data_dir()])
                 return
             elif event.ui_element == self.update_button:
-                self_update("development", "macOS")
+                self_update("development")
                 # fetch_latest_dev()
                 # os.execv(sys.argv[0], sys.argv)
                 # exit(0)
