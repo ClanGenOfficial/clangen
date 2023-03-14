@@ -12,6 +12,12 @@ import requests as requests
 
 from scripts.version import get_version_info
 
+
+powershell = 'C:\Program Files\WindowsApps\Microsoft.PowerShellPreview_7.4.1.0_x64__8wekyb3d8bbwe\pwsh.exe'
+# my dev environment is weird and subprocess.Popen cant find powershell.exe
+
+
+
 use_proxy = False  # Set this to True if you want to use a proxy for the update check. Useful for debugging.
 
 if use_proxy:
@@ -46,6 +52,7 @@ get_update_url.value = None
 
 
 def has_update():
+    return True
     latest_endpoint = f"{get_update_url()}/v1/Update/Channels/development-test/Releases/Latest"
     result = requests.get(latest_endpoint, proxies=proxies, verify=(not use_proxy))
 
@@ -111,12 +118,18 @@ def self_update(release_channel='development-test'):
         return
 
     if platform.system() == 'Windows':
-        os.makedirs('Downloads/windows/', exist_ok=True)
-
         with zipfile.ZipFile("download.tmp", 'r') as zip_ref:
-            zip_ref.extractall('Downloads/windows')
+            zip_ref.extractall('Downloads')
         os.remove("download.tmp")
-        subprocess.Popen(["SelfUpdate.bat"])
+        
+        shutil.move("Downloads/Clangen", "../clangen_update")
+
+        shutil.copy("resources/update.ps1", "../clangen_update_script.ps1")
+        print("Clangen python application cannot continue to run while it is being updated.")
+        print("Powershell will now be used to update Clangen.")
+        print("A console window will open and close automatically. Please do not be alarmed.")
+
+        subprocess.Popen([powershell, "-ExecutionPolicy", "Bypass", "-File", "../clangen_update_script.ps1", "internal"])
 
     elif platform.system() == 'Darwin':
         with zipfile.ZipFile("download.tmp", 'r') as zip_ref:
