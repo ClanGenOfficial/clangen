@@ -48,7 +48,7 @@
 		"get_injuries": {
 			"m_c": ["claw-wound"],
 			"r_c1": ["claw-wound"],
-			"r_c": ["claw-wound", "bite-wound"]
+			"r_c2": ["claw-wound", "bite-wound"]
 		},	
 		"status_constraint": {
 			"m_c": [
