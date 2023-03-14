@@ -7,6 +7,9 @@ Write-Output "Waiting for clangen to close..."
 $clangen = Get-Process clangen -ErrorAction SilentlyContinue
 if ($clangen) {
     $clangen.WaitForExit()
+} else {
+    Write-Output "Possibly running on src, waiting..."
+    Start-Sleep -s 5
 }
 Write-Output "Clangen closed, continuing..."
 
