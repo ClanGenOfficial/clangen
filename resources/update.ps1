@@ -14,9 +14,6 @@ Write-Output "Clangen closed, continuing..."
 Write-Output "Moving update files to the correct location..."
 
 
-# move to ../
-
-Set-Location ../
 
 # delete old files
 Write-Output "Deleting old files..."

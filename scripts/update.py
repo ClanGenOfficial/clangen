@@ -6,6 +6,7 @@ import urllib.parse
 import zipfile
 import tarfile
 import platform
+import pathlib
 
 import pgpy
 import requests as requests
@@ -70,8 +71,8 @@ def self_update(release_channel='development-test'):
             artifact_name = 'win32'
         elif platform.architecture()[0][:2] == '64':
             artifact_name = 'win64'
-            if platform.win32_ver()[0] == '10' or platform.win32_ver()[0] == '11':
-                artifact_name = 'win10+'
+            # if platform.win32_ver()[0] == '10' or platform.win32_ver()[0] == '11':
+            #     artifact_name = 'win10+'
     elif platform.system() == 'Darwin':
         artifact_name = 'macOS'
     elif platform.system() == 'Linux':
@@ -133,14 +134,14 @@ def self_update(release_channel='development-test'):
         
         shutil.move("Downloads/Clangen", "../clangen_update")
 
+        path = pathlib.Path(os.getcwd()).parent.absolute()
+
         shutil.copy("resources/update.ps1", "../clangen_update_script.ps1")
         print("Clangen python application cannot continue to run while it is being updated.")
         print("Powershell will now be used to update Clangen.")
         print("A console window will open and close automatically. Please do not be alarmed.")
 
-        print(" ".join([pwsh, "-ExecutionPolicy", "Bypass", "-File", "../clangen_update_script.ps1", "internal", os.getcwd()]))
-        exit()
-        subprocess.Popen([pwsh, "-ExecutionPolicy", "Bypass", "-File", "../clangen_update_script.ps1", "internal", os.getcwd()])
+        subprocess.Popen([pwsh, "-ExecutionPolicy", "Bypass", "-File", "./clangen_update_script.ps1", "internal", os.getcwd()], cwd=path)
 
     elif platform.system() == 'Darwin':
         with zipfile.ZipFile("download.tmp", 'r') as zip_ref:
