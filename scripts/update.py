@@ -60,7 +60,7 @@ def has_update():
         return False
 
 
-def self_update(release_channel='development'):
+def self_update(release_channel='development-test'):
     if platform.system() == 'Windows':
         if platform.architecture()[0][:2] == '32':
             artifact_name = 'win32'
