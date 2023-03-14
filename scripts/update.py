@@ -110,7 +110,25 @@ def self_update(release_channel='development'):
         return
 
     if platform.system() == 'Windows':
-        print("im doing windows last, fuck windows")
+        current_folder = os.getcwd()
+
+        os.makedirs('Downloads/windows/', exist_ok=True)
+
+        with zipfile.ZipFile("download.tmp", 'r') as zip_ref:
+            zip_ref.extractall('Downloads/windows')
+        os.remove("download.tmp")
+
+        os.makedirs('oldfiles', exist_ok=True)
+        for file in os.listdir('./'):
+            if file == "Downloads":
+                continue
+            shutil.move(file, './oldfiles/')
+
+        for file in os.listdir('./Downloads/windows/'):
+            shutil.move(file, './')
+
+        os.execv(sys.argv[0], sys.argv)
+
     elif platform.system() == 'Darwin':
 
         with zipfile.ZipFile("download.tmp", 'r') as zip_ref:
