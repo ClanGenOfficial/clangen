@@ -1,8 +1,6 @@
 import os
 import shutil
-import subprocess
 import sys
-import tempfile
 import urllib.parse
 import zipfile
 import tarfile
@@ -13,9 +11,7 @@ import requests as requests
 
 from scripts.version import get_version_info
 
-
-use_proxy = False # Set this to True if you want to use a proxy for the update check. Useful for debugging.
-
+use_proxy = False  # Set this to True if you want to use a proxy for the update check. Useful for debugging.
 
 if use_proxy:
     proxies = {
@@ -56,10 +52,12 @@ def has_update():
     latest_version_number = release_info['name']
 
     if get_version_info().version_number.strip() != latest_version_number.strip():
-        print(f"Update available!\nCurrent version: {get_version_info().version_number.strip()}\nNewest version : {latest_version_number.strip()}")
+        print(
+            f"Update available!\nCurrent version: {get_version_info().version_number.strip()}\nNewest version : {latest_version_number.strip()}")
         return True
     else:
         return False
+
 
 def self_update(release_channel='development'):
     if platform.system() == 'Windows':
@@ -83,7 +81,9 @@ def self_update(release_channel='development'):
             print("Unsupported libc version.")
             return
 
-    response = requests.get(f"{get_update_url()}/v1/Update/Channels/{release_channel}/Releases/Latest/Artifacts/{artifact_name}", proxies=proxies, verify=(not use_proxy))
+    response = requests.get(
+        f"{get_update_url()}/v1/Update/Channels/{release_channel}/Releases/Latest/Artifacts/{artifact_name}",
+        proxies=proxies, verify=(not use_proxy))
     encoded_signature = response.headers['x-gpg-signature']
 
     with open("download.tmp", 'wb') as fd:
@@ -110,8 +110,6 @@ def self_update(release_channel='development'):
         return
 
     if platform.system() == 'Windows':
-        current_folder = os.getcwd()
-
         os.makedirs('Downloads/windows/', exist_ok=True)
 
         with zipfile.ZipFile("download.tmp", 'r') as zip_ref:
