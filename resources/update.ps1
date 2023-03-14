@@ -20,4 +20,18 @@ Set-Location ../
 
 # delete old files
 Write-Output "Deleting old files..."
-Remove-Item -Recurse -Force 
+Remove-Item -Recurse -Force $args[1]
+
+Write-Output "Moving new files..."
+Move-Item -Path "./clangen_update" -Destination $args[1]
+
+# Write args[2] to update file
+Write-Output "Writing update file..."
+Set-Location $args[1]
+Set-Content -Path "auto-updated" -Value $args[2]
+
+Write-Output "Update complete!"
+
+Write-Output "Restarting clangen..."
+
+Start-Process Clangen.exe

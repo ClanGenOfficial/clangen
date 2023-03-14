@@ -50,18 +50,19 @@ def get_update_url():
 
 get_update_url.value = None
 
+latest_version_number = None
+
 
 def has_update():
-    return True
     latest_endpoint = f"{get_update_url()}/v1/Update/Channels/development-test/Releases/Latest"
     result = requests.get(latest_endpoint, proxies=proxies, verify=(not use_proxy))
 
     release_info = result.json()['release']
-    latest_version_number = release_info['name']
+    latest_version_number = release_info['name'].strip()
 
     if get_version_info().version_number.strip() != latest_version_number.strip():
         print(
-            f"Update available!\nCurrent version: {get_version_info().version_number.strip()}\nNewest version : {latest_version_number.strip()}")
+            f"Update available!\nCurrent version: {get_version_info().version_number.strip()}\nNewest version : {latest_version_number}")
         return True
     else:
         return False
@@ -129,7 +130,7 @@ def self_update(release_channel='development-test'):
         print("Powershell will now be used to update Clangen.")
         print("A console window will open and close automatically. Please do not be alarmed.")
 
-        subprocess.Popen([powershell, "-ExecutionPolicy", "Bypass", "-File", "../clangen_update_script.ps1", "internal"])
+        subprocess.Popen([powershell, "-ExecutionPolicy", "Bypass", "-File", "../clangen_update_script.ps1", "internal", os.getcwd(), latest_version_number])
 
     elif platform.system() == 'Darwin':
         with zipfile.ZipFile("download.tmp", 'r') as zip_ref:
