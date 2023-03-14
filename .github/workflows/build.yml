@@ -252,10 +252,10 @@ jobs:
         run: python -m PyInstaller Clangen.spec
       - name: Create archive (.tar.xz)
         run: rm -r dist/Clangen
-      - name: Install dmgbuild
-        run: "pip install dmgbuild"
+      - name: Install appdmg
+        run: "npm install -g appdmg"
       - name: Generate .dmg
-        run: "dmgbuild -s dmgbuild.py Clangen_macOS64.dmg"
+        run: "appdmg appdmg.json Clangen_macOS64.dmg"
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_macOS64.dmg

@@ -1,0 +1,15 @@
+{
+    "title": "Clangen",
+    "background": "resources/images/mac_installer_bg_blank.png",
+    "icon-size": 75,
+    "window": {
+        "size": {
+            "width": 600,
+            "height": 480
+        }
+    },
+    "contents": [
+        { "x": 204, "y": 200, "type": "link", "path": "/Applications" },
+        { "x": 66, "y": 200, "type": "file", "path": "dist/Clangen.app" }
+      ]
+}
