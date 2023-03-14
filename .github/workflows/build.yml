@@ -37,6 +37,27 @@ jobs:
         with:
           name: Clangen_Linux64_glibc2.31+.tar.xz
           path: Clangen_Linux64_glibc2.31+.tar.xz
+      - name: Import GPG key
+        id: import_gpg
+        uses: crazy-max/ghaction-import-gpg@v5
+        with:
+          gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
+          passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
+      - name: Upload artifact to API
+        run: |
+          gpg --output Clangen_Linux64_glibc2.31+.tar.xz.sig --detach-sig -a Clangen_Linux64_glibc2.31+.tar.xz
+          curl -X 'POST' \
+            'https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/${{ github.sha }}/Appoint' \
+            -H 'accept: */*'
+          curl -X 'PUT' \
+            'https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/${{ github.sha }}/Artifacts/linux2.31' \
+            -H 'accept: */*' \
+            -H 'Content-Type: multipart/form-data' \
+            -F 'fileBundle=@Clangen_Linux64_glibc2.31+.tar.xz;type=application/zip' \
+            -F 'fileBundle=@Clangen_Linux64_glibc2.31+.tar.xz.sig'
+          curl -X 'POST' \
+            'https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/${{ github.sha }}/Confirm' \
+            -H 'accept: */*'
       - name: Release 
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
@@ -76,6 +97,27 @@ jobs:
         with:
           name: Clangen_Linux64_glibc2.35+.tar.xz
           path: Clangen_Linux64_glibc2.35+.tar.xz
+      - name: Import GPG key
+        id: import_gpg
+        uses: crazy-max/ghaction-import-gpg@v5
+        with:
+          gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
+          passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
+      - name: Upload artifact to API
+        run: |
+          gpg --output Clangen_Linux64_glibc2.35+.tar.xz.sig --detach-sig -a Clangen_Linux64_glibc2.35+.tar.xz
+          curl -X 'POST' \
+            'https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/${{ github.sha }}/Appoint' \
+            -H 'accept: */*'
+          curl -X 'PUT' \
+            'https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/${{ github.sha }}/Artifacts/linux2.35' \
+            -H 'accept: */*' \
+            -H 'Content-Type: multipart/form-data' \
+            -F 'fileBundle=@Clangen_Linux64_glibc2.35+.tar.xz;type=application/zip' \
+            -F 'fileBundle=@Clangen_Linux64_glibc2.35+.tar.xz.sig'
+          curl -X 'POST' \
+            'https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/${{ github.sha }}/Confirm' \
+            -H 'accept: */*'
       - name: Release 
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
