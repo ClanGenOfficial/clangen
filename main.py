@@ -16,11 +16,10 @@ It then loads the settings, and then loads the start screen.
 
 
 """ # pylint: enable=line-too-long
-
 import sys
-import os
 import time
-
+import os
+from scripts.stream_duplexer import UnbufferedStreamDuplexer
 from scripts.datadir import get_log_dir, setup_data_dir
 from scripts.version import get_version_info
 
@@ -28,16 +27,25 @@ directory = os.path.dirname(__file__)
 if directory:
     os.chdir(directory)
 
-# Setup logging
-import logging
 
 setup_data_dir()
+timestr = time.strftime("%Y%m%d_%H%M%S")
+
+
+stdout_file = open(get_log_dir() + f'/stdout_{timestr}.log', 'a')
+stderr_file = open(get_log_dir() + f'/stderr_{timestr}.log', 'a')
+sys.stdout = UnbufferedStreamDuplexer(sys.stdout, stdout_file)
+sys.stderr = UnbufferedStreamDuplexer(sys.stderr, stderr_file)
+
+# Setup logging
+import logging
 
 formatter = logging.Formatter(
     "%(name)s - %(levelname)s - %(filename)s / %(funcName)s / %(lineno)d - %(message)s"
     )
+
+
 # Logging for file
-timestr = time.strftime("%Y%m%d_%H%M%S")
 log_file_name = get_log_dir() + f"/clangen_{timestr}.log"
 file_handler = logging.FileHandler(log_file_name)
 file_handler.setFormatter(formatter)
@@ -158,8 +166,6 @@ game.rpc.start_rpc.set()
 
 cursor_img = pygame.image.load('resources/images/cursor.png').convert_alpha()
 cursor = pygame.cursors.Cursor((9,0), cursor_img)
-cursor_toggled = not game.settings['custom cursor'] # Invert value to force cursor change
-
 disabled_cursor = pygame.cursors.Cursor(pygame.SYSTEM_CURSOR_ARROW)
 
 
@@ -171,13 +177,11 @@ while True:
         else:
             screen.fill((206, 194, 168))
 
-    if game.settings['custom cursor'] != cursor_toggled:
-        cursor_toggled = game.settings['custom cursor']
-        if cursor_toggled:
+    if game.settings['custom cursor']:
+        if pygame.mouse.get_cursor() == disabled_cursor:
             pygame.mouse.set_cursor(cursor)
-        else:
-            pygame.mouse.set_cursor(disabled_cursor)
-
+    elif pygame.mouse.get_cursor() == cursor:
+        pygame.mouse.set_cursor(disabled_cursor)
     # Draw screens
     # This occurs before events are handled to stop pygame_gui buttons from blinking.
     game.all_screens[game.current_screen].on_use()
