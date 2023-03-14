@@ -32,10 +32,10 @@ setup_data_dir()
 timestr = time.strftime("%Y%m%d_%H%M%S")
 
 
-stdout_file = open(get_log_dir() + f'/stdout_{timestr}.log', 'a')
-stderr_file = open(get_log_dir() + f'/stderr_{timestr}.log', 'a')
-sys.stdout = UnbufferedStreamDuplexer(sys.stdout, stdout_file)
-sys.stderr = UnbufferedStreamDuplexer(sys.stderr, stderr_file)
+# stdout_file = open(get_log_dir() + f'/stdout_{timestr}.log', 'a')
+# stderr_file = open(get_log_dir() + f'/stderr_{timestr}.log', 'a')
+# sys.stdout = UnbufferedStreamDuplexer(sys.stdout, stdout_file)
+# sys.stderr = UnbufferedStreamDuplexer(sys.stderr, stderr_file)
 
 # Setup logging
 import logging
