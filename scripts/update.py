@@ -23,8 +23,19 @@ def download_file(url):
     return 'Downloads/' + local_filename
 
 
+def get_update_url():
+    if get_update_url.value is None:
+        fetch_url = "https://raw.githubusercontent.com/archanyhm/clangen/auto-update/update_api_url.txt"
+        result = requests.get(fetch_url)
+        get_update_url.value = result.text
+    return get_update_url.value
+
+
+get_update_url.value = None
+
+
 def has_update():
-    latest_endpoint = "https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/Latest"
+    latest_endpoint = f"{get_update_url()}/v1/Update/Channels/development/Releases/Latest"
     result = requests.get(latest_endpoint)
 
     release_info = result.json()['release']
@@ -38,7 +49,7 @@ def has_update():
 
 
 def self_update(release_channel, artifact_name):
-    response = requests.get(f"https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/Latest/Artifacts/{artifact_name}")
+    response = requests.get(f"{get_update_url()}/v1/Update/Channels/development-test/Releases/Latest/Artifacts/{artifact_name}")
     encoded_signature = response.headers['x-gpg-signature']
 
     with open("download.tmp", 'wb') as fd:
