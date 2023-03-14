@@ -134,10 +134,10 @@
     "chance_of_success": 80,
     "exp": 20,
     "success_text": [
-        "The sunlight energizes r_c for a solo training session."
+        "The sunlight energizes r_c for a solo training session. They know just what to work on!"
     ],
     "fail_text": [
-            "The patrol doesn't get much done because of that."
+            "r_c doesn't get much done, soaking up the heat. They did mean to do some trianing, but... it's so nice to stop for a bit."
     ],
     "min_cats": 1,
     "max_cats": 1,
@@ -193,6 +193,61 @@
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_train_sunny5",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["warrior", "adult_stat", "apprentice", "comfort", "training"],
+    "intro_text": "The pair find a nice spot to sun themselves.",
+    "decline_text": "They decide to stay focused instead.",
+    "chance_of_success": 90,
+    "exp": 20,
+    "success_text": [
+        "p_l smiles, inviting app1 to sit down. The apprentice is a little stiff at first, unsure how to act in front of the warrior, but that's actually what p_l wants to work on here. c_n contains cats of all ages, skills, and talents - it's important to work on being comfortable with everyone, just as important as working on respecting them. They're all c_n, after all.",
+        "The pair sit down, app1 a little stiffly, and p_l starts telling them a story of their own apprenticehood, about a time when they made a dumb mistake. They make it sound funny - certianly funnier than it felt like at the time - and slowly, app1 opens up, still respectful, but less wooden in the way they act.",
+        null,
+        "It's important to take time to rest, s_c tells app1, trying to hit a middle ground between advice and command. They've seen how hard app1 has been working, and commend them for it, but it'll do the Clan no good if app1 burns themself out. All things in their time."
+    ],
+    "fail_text": [
+            "While the pair do bask together, app1 is too stiff and polite for it to be considered bonding time. p_l will have to try something else."
+    ],
+    "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving",
+                    "patient", "responsible", "thoughtful", "wise"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_train_sunny6",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["warrior", "adult_stat", "apprentice", "platonic", "dislike", "comfort", "training"],
+    "intro_text": "The pair find a nice spot to sun themselves.",
+    "decline_text": "They decide to stay focused instead.",
+    "chance_of_success": 90,
+    "exp": 20,
+    "success_text": [
+        "p_l smiles, inviting app1 to sit down. A little embarassed, app1 looks like they're going to object - but not, they're the only two cats around. They lie down, and p_l curls around them, settling down to ash app1's face like they did during their kithood. Their lovely young warrior is growing up so fast.",
+        "Settling down, p_l wants to know how app1 is finding their training. It turns into a lovely conversation, a perfect moment spent with one another, time that's been so rare since app1 became a paw. Not that p_l regrets that, of course, app1 is going to be a wonderful warrior.",
+        null,
+        "The pair sit down, app1 acting very awkward. But that all melts away as p_l starts talking about how they've come so far with their training, picking out particular moments they've seen recnetly until app1 is puffed up with embarassed, thrilled pride."
+    ],
+    "fail_text": [
+        "Settling down, p_l wants to know how app1 is finding their training - what do they think of the other young cats in the Clan? Any special friends, perhaps? app1 half melts into the ground with embarassment.",
+        "Settling down in the sunlight, p_l launches into an assessment of app1's progress, praising things, critquing things, pointing out where they need to improve. Strangely, the apprentice doesn't seem thrilled with the topic."
+    ],
+    "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving",
+                    "patient", "responsible", "thoughtful", "wise"],
+    "fail_trait":["cold", "ambitious"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "relationship_constraint": [
+        "parent/child"
+]
 },
 {
     "patrol_id": "gen_train_argue1",
@@ -253,6 +308,64 @@
     "antagonize_fail_text": null
 },
 {
+    "patrol_id": "gen_train_argue3",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "warrior", "adult_stat", "apprentice", "pos_dislike", "comfort", "patrol_to_p_l"],
+    "intro_text": "While out training together, app1 starts an argument with p_l about the technique they're working on.",
+    "decline_text": "Your patrol decides to head home.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+        "With a deep sigh, p_l holds back their temper, and instead sits down to explain their reasoning to the young cat. They can see why app1 thinks differently, but practising this way will help app1 build muscle better than taking the cheap way out. app1 also sighs, apologising for their outburst.",
+        "Tired of hearing about how they don't understand, p_l swings around, performing a flawless rendition of the technique. Chasened, app1 lowers their gaze. They'll follow p_l's way of doing things then.",
+        "p_l is able to defuse the moment with a joke, and sneak in a quiet remark that has app1 rethinking things. Still, it's not the most fun training session.",
+        "This is unlike app1. s_c stops in their tracks, sitting their butt down in the middle of the path and refusing to move until app1 tells them what's bothering them. No, what's <i>actually</i> bothering them."
+    ],
+    "fail_text": [
+        "p_l rolls their eyes, as amused by the apprentice's audacity as they are annoyed.",
+        "Well, p_l won't be teaching app1, not until the less experienced cat comes back with a proper apology. That was some stars-damned disrespect if p_l has ever seen it!"
+    ],
+    "win_skills": ["great speaker", "excellent speaker"],
+    "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving",
+                    "patient", "responsible", "thoughtful", "wise", "inquisitive"],
+    "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict",
+                    "troublesome", "vengeful", "bossy"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_train_argue4",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "warrior", "adult_stat", "apprentice", "pos_dislike", "respect", "patrol_to_p_l"],
+    "intro_text": "While out training together, app1 starts an argument with p_l about the technique they're working on.",
+    "decline_text": "Your patrol decides to head home.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+        "With a deep sigh, p_l holds back their temper, and instead sits down to explain their reasoning to the young cat. They can see why app1 thinks differently, but practising this way will help app1 build muscle better than taking the cheap way out. app1 also sighs, apologising for their outburst.",
+        "Tired of hearing about how they don't understand, p_l swings around, performing a flawless rendition of the technique. Chasened, app1 lowers their gaze. They'll follow p_l's way of doing things then.",
+        "p_l is able to defuse the moment with a joke, and sneak in a quiet remark that has app1 rethinking things. Still, it's not the most fun training session.",
+        "s_c has taken valuable time out of their day to personally help app1 with their studies, and this is completley juvenile behaviour. s_c isn't shy about telling app1 so, and by the time they're back in camp teh apprentice is cowed, but respectful once more. "
+    ],
+    "fail_text": [
+        "p_l rolls their eyes, as amused by the apprentice's audacity as they are annoyed.",
+        "Well, p_l won't be teaching app1, not until the less experienced cat comes back with a proper apology. That was some stars-damned disrespect if p_l has ever seen it!"
+    ],
+    "win_skills": ["great speaker", "excellent speaker"],
+    "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict",
+                    "troublesome", "vengeful"],
+    "fail_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving",
+                    "patient", "responsible", "thoughtful", "wise", "inquisitive"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
     "patrol_id": "gen_train_vision1",
     "biome": "Any",
     "season": "Any",
@@ -271,7 +384,7 @@
         "r_c notices p_l looking at them enviously, withdraws from the rest of the patrol, and dismisses the dream as unimportant."
     ],
     "win_skills": ["strong connection to starclan"],
-    "min_cats": 2,
+    "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null
@@ -315,6 +428,33 @@
     "fail_text": [
         "That's super weird, app1 tells them. Does app2's mentor know that they're so weird?"
     ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_train_vision4",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "warrior", "apprentice", "adult_stat", "comfort", "trust", "jealousy", "distrust", "big_change"],
+    "intro_text": "While app1 and p_l are out walking, app1 seems preoccupied. When p_l brings their patrol to a halt and asks what's wrong, they reveal they're been having a hard time sleeping. Their dreams are filled with shadows and... images.",
+    "decline_text": "This is beyond p_l's sphere of teachable subjects, but they promise that there'll be another cat back at camp who can help, probably app1 should talk to a medicine cat.",
+    "chance_of_success": 70,
+    "exp": 20,
+    "success_text": [
+        "p_l listens sympathetically, gently nodding as app1 pours out their troubles, until the apprentice eventually runs out of words. They've been dealing with a lot, apparently, and while p_l isn't too sure what to do, they can offer support, and time away from app1's troubles, and just that is already enough to make app1's ears stop drooping.",
+        "That... honestly sounds like it could be a vision. That's unusual, and also not to say that it's been particularly fun for app1 to deal with everything, p_l hastens to add, but it's not a bad thing. Those connected to StarClan in such ways are rare, and have been critical for protecting c_n in the past.",
+        "s_c listens to app1 talk was a deep sense of deja vu, in addition to their shock. This sounds like the trouble they had, when they were young, plagued by contact with StarClan regardless of whether they wanted it or not, and they immediately take app1 aside to give them their full attention and support.",
+        "s_c cannot relate to the frankly nightmarish scenes app1 has been tormented by, but they can't believe their Clanmate has been going through so much without anybody noticing. Wrapping their tail around app1's shoulders, they tell app1 this will all be alright - they're going to make sure that app1 doesn't have to shoulder this burden alone."
+    ],
+    "fail_text": [
+        "app1 isn't a kit anymore, and though p_l tries to be gentle about it, they make it clear that it's app1's responsibility to make sure they're well rested and attentive for their training.",
+        "Visions! From StarClan, perhaps? app1 should be thrilled, not upset, and s_c sweeps past them, telling app1 just how they should use this unexpected ability."
+    ],
+    "win_skills": ["strong connection to starclan"],
+    "win_trait": ["calm", "compassionate", "empathetic", "faithful", "strange"],
+    "fail_trait":["ambitious", "cold", "righteous"],
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
