@@ -66,7 +66,7 @@ def self_update(release_channel='development'):
         elif platform.architecture()[0][:2] == '64':
             artifact_name = 'win64'
             if platform.win32_ver()[0] == '10':
-                artifact_name = 'win10+'
+                artifact_name = 'win64_win10+'
     elif platform.system() == 'Darwin':
         artifact_name = 'macOS'
     elif platform.system() == 'Linux':
