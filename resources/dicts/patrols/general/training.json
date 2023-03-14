@@ -1094,4 +1094,45 @@
     "antagonize_text": null,
     "antagonize_fail_text": null
 }
-]
+{
+    "patrol_id": "gen_training_twoapps_forbiddentunnels1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["two_apprentices", "rel_two_apps", "big_change", "trust",  "scar", "injury", "broken back", "app_only", “training”],
+    "intro_text": "app1 and app2 while exploring the territory come across the forbidden tunnels.",
+    "decline_text": "They don't want to get into trouble and they have a lot more territory to explore anyway.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "success_text": [
+            "app1 and app2 have a wonderful time exploring the forbidden tunnels.
+They return to camp sharing a mysterious smile, swearing not to speak of this to anyone.",
+            "app1 expected a little hesitation but app2 defies that expectation and darts right into the tunnels playfully batting at them as they do so.
+They play for it seems like forever and they make up a lie to tell their mentors on their way back to camp."
+                   ],
+    "fail_text": [
+            "As app1 and app2 begin to make their way into the tunnels they are suddenly grabbed by their scruffs.
+They hesitantly look upwards and find their mentors looking at them with disappointment. They are escorted back to camp to receive a punishment from their leader, though they feel like they should fear their mentors' punishments more. . . .", 
+            null,
+            null,
+            null,
+            null,
+            "s_c boasts to app2 that they go into the tunnels allllllll the time, their head and tail held high as they do so.
+app2 seems to be unconvinced so s_c crawls into the narrow opening of the tunnel and exclaims that there is nothing to it.
+Just at that moment the tunnel makes an ominous rumble and collapses.
+They both scream in absolute terror and app2 runs back to camp praying to StarClan that they can find help and soon, as they return with the help they can only hear the heartbroken wail of s_c that they can’t feel their legs anymore. ."
+     ],
+    "win_skills": null,
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": ["adventurous", "bold", "confident", "daring"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            "This cat their back was broken after attempting to enter the forbidden tunnels."
+    ]
+},
+
+
+
