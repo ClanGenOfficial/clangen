@@ -271,16 +271,19 @@ jobs:
           zip Clangen_macOS64.dmg.zip ./Clangen_macOS64.dmg
           gpg --output Clangen_macOS64.dmg.zip.sig --detach-sig -a Clangen_macOS64.dmg.zip
           curl -X 'POST' \
-            'https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/${{ github.sha }}/Appoint' \
+            'https://${{ vars.UPDATE_API_BASEURL }}/Update/Channels/development-test/Releases/${{ github.sha }}/Appoint' \
+            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*'
           curl -X 'PUT' \
-            'https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/${{ github.sha }}/Artifacts/macOS' \
+            'https://${{ vars.UPDATE_API_BASEURL }}/Update/Channels/development-test/Releases/${{ github.sha }}/Artifacts/macOS' \
+            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
             -F 'fileBundle=@Clangen_macOS64.dmg.zip;type=application/zip' \
             -F 'fileBundle=@Clangen_macOS64.dmg.zip.sig'
           curl -X 'POST' \
-            'https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/${{ github.sha }}/Confirm' \
+            'https://${{ vars.UPDATE_API_BASEURL }}/Update/Channels/development/Releases/${{ github.sha }}/Confirm' \
+            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*'
       - name: Release 
         uses: softprops/action-gh-release@v1
