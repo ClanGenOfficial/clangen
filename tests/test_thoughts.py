@@ -1,5 +1,9 @@
 import unittest
 
+import os
+os.environ["SDL_VIDEODRIVER"] = "dummy"
+os.environ["SDL_AUDIODRIVER"] = "dummy"
+
 from scripts.cat.thoughts import resource_directory, get_med_thoughts, get_family_thoughts
 
 try:

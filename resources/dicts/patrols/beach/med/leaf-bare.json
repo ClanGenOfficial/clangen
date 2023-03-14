@@ -345,7 +345,7 @@
     "season": "leaf-bare",
     "tags": ["herb_gathering", "adult_stat", "med_only", "med_cat", "cold_injury", "scar", "FROSTTAIL", "herb", "dandelion", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
 
-    "intro_text": "The cold of leaf-bare might have killed off a lot of greenery, but p_l knows that the dandelions are only playing dead, and if they can get their paws on a plant the roots will still hold fresh white milky sap. Time for app1 to learn about the resources that're still available to gather during leaf-bare.",
+    "intro_text": "The cold of leaf-bare might have killed off a lot of greenery, but p_l knows that the dandelions are only playing dead, and if they can get their paws on a plant the roots will still hold fresh white milky sap. Time for app1 to learn about the resources that are still available to gather during leaf-bare.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 40,
     "exp": 40,
