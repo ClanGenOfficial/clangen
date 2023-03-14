@@ -167,4 +167,3 @@ def self_update(release_channel='development-test'):
         shutil.move("../clangen_update", current_folder)
         os.chmod(current_folder + "/Clangen", 0o755)
         os.execv(current_folder + "/Clangen", sys.argv)
-    exit(0)
