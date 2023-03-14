@@ -120,9 +120,9 @@ def self_update(release_channel='development'):
         with tarfile.open("download.tmp", 'r') as tar_ref:
             tar_ref.extractall('Downloads')
         os.remove("download.tmp")
-        shutil.move("Downloads", "../clangen_update")
+        shutil.move("Downloads/Clangen", "../clangen_update")
         shutil.rmtree(current_folder, ignore_errors=True)
         shutil.move("../clangen_update", current_folder)
-        os.chmod(current_folder + "/Clangen/Clangen", 0o755)
-        os.execv(current_folder + "/Clangen/Clangen", sys.argv)
+        os.chmod(current_folder + "/Clangen", 0o755)
+        os.execv(current_folder + "/Clangen", sys.argv)
     exit(0)
