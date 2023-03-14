@@ -23,6 +23,8 @@ pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
 a.datas += Tree('./resources', prefix='resources')
 a.datas += Tree('./sprites', prefix='sprites')
 a.datas += [ ('OpenDataDirectory.bat', './bin/OpenDataDirectory.bat', 'DATA') ]
+a.datas += [ ('SelfUpdate.ps1', './bin/SelfUpdate.ps1', 'DATA') ]
+a.datas += [ ('SelfUpdate.bat', './bin/SelfUpdate.bat', 'DATA') ]
 
 
 exe = EXE(

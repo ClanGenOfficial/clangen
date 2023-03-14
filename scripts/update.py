@@ -1,5 +1,6 @@
 import os
 import shutil
+import subprocess
 import sys
 import urllib.parse
 import zipfile
@@ -115,17 +116,7 @@ def self_update(release_channel='development'):
         with zipfile.ZipFile("download.tmp", 'r') as zip_ref:
             zip_ref.extractall('Downloads/windows')
         os.remove("download.tmp")
-
-        os.makedirs('oldfiles', exist_ok=True)
-        for file in os.listdir('./'):
-            if file == "Downloads" or file == "oldfiles":
-                continue
-            shutil.move(file, './oldfiles/')
-
-        for file in os.listdir('./Downloads/windows/Clangen'):
-            shutil.move(file, './')
-
-        os.execv(sys.argv[0], sys.argv)
+        subprocess.Popen(["SelfUpdate.bat"])
 
     elif platform.system() == 'Darwin':
         with zipfile.ZipFile("download.tmp", 'r') as zip_ref:
