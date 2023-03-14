@@ -9,7 +9,8 @@ try:
 except ImportError:
     import json as ujson
 from .base_screens import Screens, cat_profiles
-from scripts.utility import get_text_box_theme, scale, get_personality_compatibility, check_relationship_value
+from scripts.utility import get_text_box_theme, scale, get_personality_compatibility, check_relationship_value, \
+    get_snippet_list
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked, UISpriteButton
 from scripts.patrol import patrol
 from scripts.cat.cats import Cat
@@ -524,12 +525,7 @@ class PatrolScreen(Screens):
                               'red squirrels', 'grey squirrels', 'rats', ]
         text = text.replace('f_mp_p', str(fst_midprey_plural))
 
-        sign_list = ['strangely-patterned stone', 'sharp stick', 'prey bone', 'cloud shaped like a cat',
-                     'tuft of red fur', 'red feather', 'brown feather', 'black feather', 'white feather',
-                     'star-shaped leaf',
-                     'beetle shell', 'snail shell', 'tuft of badger fur', 'two pawprints overlapping',
-                     'flower missing a petal',
-                     'tuft of fox fur', ]
+        sign_list = get_snippet_list("omen_list", amount=random.randint(2, 4), return_string=False)
         sign = choice(sign_list)
         s = 0
         pos = 0

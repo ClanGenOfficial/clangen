@@ -1,6 +1,10 @@
+import logging
 import os
 import subprocess
 import sys
+
+
+logger = logging.getLogger(__name__)
 
 
 def get_version_info():
@@ -20,7 +24,7 @@ def get_version_info():
             try:
                 version_number = subprocess.check_output(['git', 'rev-parse', 'HEAD']).decode('ascii').strip()
             except:
-                pass
+                logger.exception("Git CLI invocation failed")
         get_version_info.instance = VersionInfo(is_source_build, is_release, version_number)
     return get_version_info.instance
 

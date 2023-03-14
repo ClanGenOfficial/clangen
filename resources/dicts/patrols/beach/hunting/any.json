@@ -2415,5 +2415,32 @@
         "history_text": [
             "r_c carries a scar from a solo fight with a gray fox."
         ]
+    },
+    {
+        "patrol_id": "bch_hunting_patrol_dolphinofferings1",
+        "biome": "beach",
+        "season": "Any",
+        "tags": ["hunting", "random_herbs", "respect", "warrior", "medium_prey","patrol_to_p_l", "dislike"],
+        "intro_text": "The patrol going back to camp with a good haul of fish sees a pod of dolphins chattering at them.",
+        "decline_text": "p_l bows their head and offers their apologies to the pod of dolphins but they will keep those fish for the fresh kill pile.",
+        "chance_of_success": 90,
+        "exp": 5,
+        "success_text": [
+               "p_l offers the dolphins some of their fish catch. Good relations with the dolphins are more important than a few fish, they are surprised to see that they have offered a few soggy wet herbs back in return and they accept them with gratitude a grace.",
+                "p_l gives the dolphins a few of their fish and is surprised and grateful when they get some useful herbs for the medicine cat.",
+               null,
+               null
+        ],
+         "fail_text": [
+         "As p_l offers the dolphin some of their fishes they accidentally slip and fall into the water, both the patrol and the dolphins seem to be laughing at them, the dolphins give some herbs for the good laugh they gave them it seems."
+        ],
+        "win_skills": ["None"],
+        "win_trait": ["None"],
+        "fail_skills": ["None"],
+        "fail_trait": ["None"],
+        "min_cats": 2,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     }
 ]

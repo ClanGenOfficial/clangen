@@ -188,10 +188,10 @@ class Events():
                     Cat.grief_strings.pop(ID)
 
             # Generate events
-            for item in Cat.grief_strings.items():
+            for item in Cat.grief_strings.values():
                 game.cur_events_list.append(
-                    Single_Event(item[1], ["birth_death", "relation"],
-                                 item[0]))
+                    Single_Event(item[0], ["birth_death", "relation"],
+                                 item[1]))
 
             Cat.grief_strings.clear()
 
@@ -1506,34 +1506,27 @@ class Events():
                 "apprentice", "medicine cat apprentice", "mediator apprentice"
         ]:
 
-            if cat.not_working():
-                # print(f"{cat.name} not working, no EX gain")
+            if cat.not_working() and int(random.random() * 3):
                 return
 
-            if cat.experience > cat.experience_levels_range["trainee"][0]:
+            if cat.experience > cat.experience_levels_range["trainee"][1]:
                 return
 
             if cat.status == "medicine cat apprentice":
-                base_ex = random.choices(
-                    game.config["graduation"]["base_med_app_timeskip_ex"][0],
-                    weights=game.config["graduation"]
-                    ["base_med_app_timeskip_ex"][1],
-                    k=1)[0]
+                ran = game.config["graduation"]["base_med_app_timeskip_ex"]
             else:
-                base_ex = random.choices(
-                    game.config["graduation"]["base_app_timeskip_ex"][0],
-                    weights=game.config["graduation"]["base_app_timeskip_ex"]
-                    [1],
-                    k=1)[0]
+                ran = game.config["graduation"]["base_app_timeskip_ex"]
 
             if not cat.mentor or Cat.fetch_cat(cat.mentor).not_working():
                 # Sick mentor debuff
-                mentor_modifier = 0.6
+                mentor_modifier = 0.7
             else:
                 mentor_modifier = 1
 
-            cat.experience += max(base_ex * mentor_modifier, 1)
-            # print(f"{cat.name} has gained {int(base_ex * mentor_modifier)} EX", cat._experience)
+            exp = random.choice(list(range(ran[0][0], ran[0][1] + 1)) + list(range(ran[1][0], ran[1][1] + 1)) * 2)
+
+            cat.experience += max(exp * mentor_modifier, 1)
+            print(f"{cat.name} has gained {int(exp * mentor_modifier)} EX", cat._experience)
 
     def invite_new_cats(self, cat):
         """
