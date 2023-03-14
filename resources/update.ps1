@@ -28,7 +28,7 @@ Move-Item -Path "./clangen_update" -Destination $args[1]
 # Write args[2] to update file
 Write-Output "Writing update file..."
 Set-Location $args[1]
-Set-Content -Path "auto-updated" -Value $args[2]
+New-Item -Path "auto-update" -ItemType File
 
 Write-Output "Update complete!"
 

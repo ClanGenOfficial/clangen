@@ -30,13 +30,10 @@ if directory:
 
 if os.path.exists("auto-updated"):
     print("Clangen starting, deleting auto-updated file")
-    with open("auto-updated", "r") as f:
-        old_version = f.read()
-    os.remove("auto-updated")
+    os.remove("auto-update")
     print("Deleting powershell script")
     os.remove("../update.ps1")
     print("Update Complete!")
-    print("Old version: " + old_version)
     print("New version: " + get_version_info())
 
 
