@@ -64,7 +64,7 @@ def has_update():
 
 def self_update(release_channel='development-test'):
 
-    print("Updat")
+    print("Updating Clangen...")
     if platform.system() == 'Windows':
         if platform.architecture()[0][:2] == '32':
             artifact_name = 'win32'
@@ -91,6 +91,8 @@ def self_update(release_channel='development-test'):
         proxies=proxies, verify=(not use_proxy))
     encoded_signature = response.headers['x-gpg-signature']
 
+    print("Verifying...")
+
     with open("download.tmp", 'wb') as fd:
         for chunk in response.iter_content(chunk_size=128):
             fd.write(chunk)
@@ -114,7 +116,7 @@ def self_update(release_channel='development-test'):
     #     print("Signature mismatch.")
     #     return
 
-    print('Updating Clangen...')
+    print('Installing...')
 
     if platform.system() == 'Windows':
         pwsh = ''
@@ -135,6 +137,9 @@ def self_update(release_channel='development-test'):
         print("Clangen python application cannot continue to run while it is being updated.")
         print("Powershell will now be used to update Clangen.")
         print("A console window will open and close automatically. Please do not be alarmed.")
+
+        print(" ".join([pwsh, "-ExecutionPolicy", "Bypass", "-File", "../clangen_update_script.ps1", "internal", os.getcwd()]))
+        exit()
         subprocess.Popen([pwsh, "-ExecutionPolicy", "Bypass", "-File", "../clangen_update_script.ps1", "internal", os.getcwd()])
 
     elif platform.system() == 'Darwin':
