@@ -168,10 +168,11 @@ jobs:
         with:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
+      - name: Create archive (.zip)
+        run: tar.exe -a -c -f Clangen_Win32.zip -C dist Clangen
       - name: Upload artifact to API
         shell: bash
         run: |
-          tar.exe -a -c -f Clangen_Win32.zip -C dist Clangen
           gpg --output Clangen_Win32.zip.sig --detach-sig -a Clangen_Win32.zip
           curl -X 'POST' \
             'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Appoint' \
@@ -188,10 +189,7 @@ jobs:
             'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Confirm' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*'
-      - name: Create archive for release (.zip)
-        if: startsWith(github.ref, 'refs/tags/')
-        run: tar.exe -a -c -f Clangen_Win32.zip -C dist Clangen
-      - name: Release 
+      - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
@@ -240,10 +238,11 @@ jobs:
         with:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
+      - name: Create archive (.zip)
+        run: tar.exe -a -c -f Clangen_Win64.zip -C dist Clangen
       - name: Upload artifact to API
         shell: bash
         run: |
-          tar.exe -a -c -f Clangen_Win64.zip -C dist Clangen
           gpg --output Clangen_Win64.zip.sig --detach-sig -a Clangen_Win64.zip
           curl -X 'POST' \
             'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Appoint' \
@@ -260,10 +259,7 @@ jobs:
             'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Confirm' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*'
-      - name: Create archive for release (.zip)
-        if: startsWith(github.ref, 'refs/tags/')
-        run: tar.exe -a -c -f Clangen_Win64.zip -C dist Clangen
-      - name: Release 
+      - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
@@ -312,10 +308,11 @@ jobs:
         with:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
+      - name: Create archive (.zip)
+        run: tar.exe -a -c -f Clangen_Win64_Windows10+.zip -C dist Clangen
       - name: Upload artifact to API
         shell: bash
         run: |
-          tar.exe -a -cf Clangen_Win64_Windows10+.zip -C dist Clangen
           gpg --output Clangen_Win64_Windows10+.zip.sig --detach-sig -a Clangen_Win64_Windows10+.zip
           curl -X 'POST' \
             'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Appoint' \
@@ -332,10 +329,7 @@ jobs:
             'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Confirm' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*'
-      - name: Create archive for release (.zip)
-        if: startsWith(github.ref, 'refs/tags/')
-        run: tar.exe -a -c -f Clangen_Win64_Windows10+.zip -C dist Clangen
-      - name: Release 
+      - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
