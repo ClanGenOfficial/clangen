@@ -118,11 +118,11 @@ def self_update(release_channel='development'):
 
         os.makedirs('oldfiles', exist_ok=True)
         for file in os.listdir('./'):
-            if file == "Downloads":
+            if file == "Downloads" or file == "oldfiles":
                 continue
             shutil.move(file, './oldfiles/')
 
-        for file in os.listdir('./Downloads/windows/'):
+        for file in os.listdir('./Downloads/windows/Clangen'):
             shutil.move(file, './')
 
         os.execv(sys.argv[0], sys.argv)
