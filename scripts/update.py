@@ -12,10 +12,22 @@ import requests as requests
 from scripts.version import get_version_info
 
 
+use_proxy = False # Set this to True if you want to use a proxy for the update check. Useful for debugging.
+
+
+if use_proxy:
+    proxies = {
+        'http': 'http://127.0.0.1:8080',
+        'https': 'http://127.0.0.1:8080',
+    }
+else:
+    proxies = {}
+
+
 def download_file(url):
     local_filename = url.split('/')[-1]
     os.makedirs('Downloads', exist_ok=True)
-    with requests.get(url, stream=True) as r:
+    with requests.get(url, stream=True, proxies=proxies, verify=(not use_proxy)) as r:
         r.raise_for_status()
         with open('Downloads/' + local_filename, 'wb') as f:
             for chunk in r.iter_content(chunk_size=8192):
@@ -25,7 +37,7 @@ def download_file(url):
 
 def has_update():
     latest_endpoint = "https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/Latest"
-    result = requests.get(latest_endpoint)
+    result = requests.get(latest_endpoint, proxies=proxies, verify=(not use_proxy))
 
     release_info = result.json()['release']
     latest_version_number = release_info['name']
@@ -38,7 +50,7 @@ def has_update():
 
 
 def self_update(release_channel, artifact_name):
-    response = requests.get(f"https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/Latest/Artifacts/{artifact_name}")
+    response = requests.get(f"https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/Latest/Artifacts/{artifact_name}", proxies=proxies, verify=(not use_proxy))
     encoded_signature = response.headers['x-gpg-signature']
 
     with open("download.tmp", 'wb') as fd:
