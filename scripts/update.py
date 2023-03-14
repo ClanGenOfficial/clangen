@@ -116,7 +116,8 @@ def self_update(release_channel='development-test'):
         with zipfile.ZipFile("download.tmp", 'r') as zip_ref:
             zip_ref.extractall('Downloads/windows')
         os.remove("download.tmp")
-        subprocess.Popen(["SelfUpdate.bat"])
+        subprocess.Popen(["SelfUpdate.bat"], close_fds=True, creationflags=subprocess.CREATE_NEW_PROCESS_GROUP | subprocess.CREATE_NO_WINDOW | subprocess.DETACHED_PROCESS)
+        exit(0)
 
     elif platform.system() == 'Darwin':
         with zipfile.ZipFile("download.tmp", 'r') as zip_ref:
@@ -142,4 +143,3 @@ def self_update(release_channel='development-test'):
         shutil.move("../clangen_update", current_folder)
         os.chmod(current_folder + "/Clangen", 0o755)
         os.execv(current_folder + "/Clangen", sys.argv)
-    exit(0)
