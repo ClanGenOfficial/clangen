@@ -310,6 +310,7 @@ jobs:
             -F 'fileBundle=@Clangen_Linux64_glibc2.35+.tar.xz.sig'
       - name: Windows x32 Artifact
         run: |
+          zip -r Clangen_Win32.zip ./Clangen_Win32
           gpg --output Clangen_Win32.zip.sig --detach-sig -a Clangen_Win32.zip
           curl -X 'PUT' \
             'https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/${{ github.sha }}/Artifacts/win_x32' \
@@ -319,6 +320,7 @@ jobs:
             -F 'fileBundle=@Clangen_Win32.zip.sig'
       - name: Windows x64 Artifact
         run: |
+          zip -r Clangen_Win64.zip ./Clangen_Win64
           gpg --output Clangen_Win64.zip.sig --detach-sig -a Clangen_Win64.zip
           curl -X 'PUT' \
             'https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/${{ github.sha }}/Artifacts/win_x64' \
@@ -328,6 +330,7 @@ jobs:
             -F 'fileBundle=@Clangen_Win64.zip.sig'
       - name: Windows 10+ x64 Artifact
         run: |
+          zip -r Clangen_Win64_Windows10+.zip ./Clangen_Win64_Windows10+
           gpg --output Clangen_Win64_Windows10+.zip.sig --detach-sig -a Clangen_Win64_Windows10+.zip
           curl -X 'PUT' \
             'https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/${{ github.sha }}/Artifacts/win10_x64' \
