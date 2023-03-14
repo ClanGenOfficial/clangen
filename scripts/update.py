@@ -40,7 +40,7 @@ def download_file(url):
 
 def get_update_url():
     if get_update_url.value is None:
-        fetch_url = "https://raw.githubusercontent.com/archanyhm/clangen/auto-update/update_api_url.txt"
+        fetch_url = "https://raw.githubusercontent.com/archanyhm/clangen/auto-update/verification/update_api_url.txt"
         result = requests.get(fetch_url)
         get_update_url.value = result.text
     return get_update_url.value
@@ -103,7 +103,7 @@ def self_update(release_channel='development-test'):
     better_signature = decoded_signature.replace("-----BEGIN+PGP+SIGNATURE-----", "-----BEGIN PGP SIGNATURE-----")
     better_signature = better_signature.replace("-----END+PGP+SIGNATURE-----", "-----END PGP SIGNATURE-----")
 
-    download_file("https://raw.githubusercontent.com/archanyhm/clangen/auto-update/update_pubkey.asc")
+    download_file("https://raw.githubusercontent.com/archanyhm/clangen/auto-update/verification/update_pubkey.asc")
 
     key, _ = pgpy.PGPKey.from_file("./Downloads/update_pubkey.asc")
 
