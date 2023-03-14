@@ -41,7 +41,7 @@ class StartScreen(Screens):
             elif event.ui_element == self.settings_button:
                 self.change_screen('settings screen')
             elif event.ui_element == self.update_button:
-                self_update("development", "macOS")
+                self_update("development")
                 # fetch_latest_dev()
                 # os.execv(sys.argv[0], sys.argv)
                 # exit(0)

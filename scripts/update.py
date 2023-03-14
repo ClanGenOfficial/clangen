@@ -5,6 +5,7 @@ import sys
 import tempfile
 import urllib.parse
 import zipfile
+import platform
 
 import pgpy
 import requests as requests
@@ -49,8 +50,19 @@ def has_update():
         return False
 # a
 
-def self_update(release_channel, artifact_name):
-    response = requests.get(f"https://clangen-update-api-beta.archanyhm.dev/Update/Channels/development/Releases/Latest/Artifacts/{artifact_name}", proxies=proxies, verify=(not use_proxy))
+def self_update(release_channel='development'):
+    _ = {
+        'Windows': [ 'win32', 'win64', 'win10+' ],
+        'Linux': [ 'linux2.31', 'linux2.35' ],
+        'Darwin': [ 'macOS' ]
+    }
+    artifact_name = _[platform.system()]
+    if len(artifact_name) == 1:
+        artifact_name = artifact_name[0]
+    else:
+        for name in artifact_name:
+            print("TODO: Implement multi-arch support.")
+    response = requests.get(f"https://clangen-update-api-beta.archanyhm.dev/Update/Channels/{release_channel}/Releases/Latest/Artifacts/{artifact_name}", proxies=proxies, verify=(not use_proxy))
     encoded_signature = response.headers['x-gpg-signature']
 
     with open("download.tmp", 'wb') as fd:
