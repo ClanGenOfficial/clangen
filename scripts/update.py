@@ -130,7 +130,6 @@ def self_update(release_channel='development'):
         os.execv(sys.argv[0], sys.argv)
 
     elif platform.system() == 'Darwin':
-
         with zipfile.ZipFile("download.tmp", 'r') as zip_ref:
             zip_ref.extractall('Downloads')
         os.remove("download.tmp")
