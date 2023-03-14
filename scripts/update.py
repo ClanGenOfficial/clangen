@@ -118,7 +118,7 @@ def self_update(release_channel='development-test'):
     if platform.system() == 'Windows':
         pwsh = ''
         if shutil.which('pwsh') is not None:
-            pwsh = shutil('pwsh')
+            pwsh = shutil.which('pwsh')
         elif shutil.which('powershell') is not None:
             pwsh = shutil.which('powershell')
         else:
