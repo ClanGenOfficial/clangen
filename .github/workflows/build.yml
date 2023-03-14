@@ -249,7 +249,7 @@ jobs:
         run: echo ${{ github.ref_name }} > commit.txt
       - name: Run PyInstaller
         #run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
-        run: python -m PyInstaller "Clangen" Clangen.spec
+        run: python -m PyInstaller Clangen.spec
       - name: Create archive (.tar.xz)
         run: rm -r dist/Clangen
       - name: Install dmgbuild
