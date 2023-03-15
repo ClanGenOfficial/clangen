@@ -42,13 +42,13 @@
 		}
 	},
 	{
-		"id": "group_3_ leader_neg",
+		"id": "group_3_leader_neg1",
 		"cat_amount": 3,
 		"interactions": ["m_c, after having r_c2 challenge them, takes r_c1 to punish r_c2. Everyone ends up hurt, but m_c feels they can trust r_c1 more."],
 		"get_injuries": {
 			"m_c": ["claw-wound"],
 			"r_c1": ["claw-wound"],
-			"r_c": ["claw-wound", "bite-wound"]
+			"r_c2": ["claw-wound", "bite-wound"]
 		},	
 		"status_constraint": {
 			"m_c": [
@@ -81,6 +81,69 @@
 				"trust": "increase"
 			},
 			"r_c1_to_r_c2": {
+				"platonic": "decrease",
+				"dislike": "increase",
+				"comfortable": "decrease",
+				"trust": "decrease"
+			},
+			"r_c2_to_r_c1": {
+				"platonic": "decrease",
+				"dislike": "increase",
+				"comfortable": "decrease",
+				"trust": "decrease"
+			},
+			"r_c2_to_m_c": {
+				"platonic": "decrease",
+				"dislike": "increase",
+				"comfortable": "decrease",
+				"trust": "decrease"
+			}
+		}
+	},
+	{
+		"id": "group_3_leader_neg2",
+		"cat_amount": 3,
+		"interactions": ["m_c and r_c1 are where they should put their border marks that r_c2 overheards and disagrees with because it isn't right. m_c and r_c1 sneer at them."],
+		"status_constraint": {
+			"m_c": [
+				"leader"
+			],
+			"r_c1": [
+				"warrior",
+				"deputy"
+			],
+			"r_c2": [
+				"warrior"
+			]
+		},
+		"trait_constraint": {
+			"m_c": ["bloodthirsty", "vengeful", "fierce", "bold"],
+			"r_c2": ["responsible", "righteous", "wise"]
+		},
+		"specific_reaction": {
+			"m_c_to_r_c1": {
+				"dislike": "decrease",
+				"comfortable": "increase",
+				"trust": "increase"
+			},
+			"r_c1_to_m_c": {
+				"dislike": "decrease",
+				"comfortable": "decrease",
+				"trust": "increase"
+			},
+			"r_c1_to_r_c2": {
+				"platonic": "decrease",
+				"dislike": "increase",
+				"comfortable": "decrease",
+				"trust": "decrease"
+			},
+			"r_c2_to_r_c1": {
+				"platonic": "decrease",
+				"dislike": "increase",
+				"comfortable": "decrease",
+				"trust": "decrease"
+			},
+			"r_c2_to_m_c": {
 				"platonic": "decrease",
 				"dislike": "increase",
 				"comfortable": "decrease",
