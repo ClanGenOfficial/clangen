@@ -1151,9 +1151,9 @@ class Events():
                         living_parents.append(Cat.fetch_cat(p))
 
             tags = []
-            if len(dead_parents) >= 1:
+            if len(dead_parents) >= 1 and "orphaned" not in cat.backstory:
                 tags.append("dead1_parents")
-            if len(dead_parents) >= 2:
+            if len(dead_parents) >= 2 and "orphaned" not in cat.backstory:
                 tags.append("dead1_parents")
                 tags.append("dead2_parents")
 
