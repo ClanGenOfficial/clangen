@@ -457,6 +457,7 @@
         "biome": "Any",
         "season": "Any",
         "tags": [
+            "no_app",
             "hunting",
             "trust",
             "dislike",

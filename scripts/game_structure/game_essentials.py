@@ -146,67 +146,31 @@ class Game():
     map_info = {}
 
     # SETTINGS
-    settings = {
-        'custom cursor': True,
-        'no gendered breeding': False,
-        'text size': '0',
-        'no unknown fathers': False,
-        'dark mode': False,
-        'backgrounds': True,
-        'autosave': False,
-        'disasters': False,
-        'retirement': False,
-        'language': 'english',
-        'affair': False,
-        'shaders': False,
-        'hotkey display': False,
-        'random relation': True,
-        'show dead relation': False,
-        'show empty relation': False,
-        'romantic with former mentor': True,
-        'game_mode': None,
-        'deputy': False,
-        'den labels': True,
-        'fading': True,
-        "save_faded_copy": False,
-        'favorite sub tab': None,
-        'gore': False,
-        'first_cousin_mates': True,
-        'become_mediator': False,
-        'fullscreen': False,
-        'discord': False,
-    }  # The current settings
-    setting_lists = {
-        'custom cursor': [True, False],
-        'no gendered breeding': [False, True],
-        'text size': ['0', '1', '2'],
-        'no unknown fathers': [False, True],
-        'dark mode': [False, True],
-        'backgrounds': [True, False],
-        'autosave': [False, True],
-        'disasters': [False, True],
-        'retirement': [True, False],
-        'language': language_list,
-        'affair': [False, True],
-        'shaders': [False, True],
-        'hotkey display': [False, True],
-        'random relation': [False, True],
-        'show dead relation': [False, True],
-        'show empty relation': [False, True],
-        'romantic with former mentor': [False, True],
-        'game_mode': game_mode_list,
-        'deputy': [False, True],
-        'den labels': [False, True],
-        'favorite sub tab': sub_tab_list,
-        'fading': [True, False],
-        'save_faded_copy': [False, True],
-        "gore": [False, True],
-        'discord': [False, True],
-        'first_cousin_mates': [True, False],
-        'become_mediator': [False, True],
-        'fullscreen': [False, True]
-    }  # Lists of possible options for each setting
+    settings = {}
+    setting_lists = {}
+
+
+
+    with open("resources/gamesettings.json", 'r') as read_file:
+        _settings = ujson.loads(read_file.read())
+
+    for setting, values in _settings['__other'].items():
+        settings[setting] = values[0]
+        setting_lists[setting] = values
+    
+    _ = []
+    _.append(_settings['relation'])
+    _.append(_settings['general'])
+
+    for cat in _:  # Add all the settings to the settings dictionary
+        for setting_name, inf in cat.items():
+            settings[setting_name] = inf[2]
+            setting_lists[setting_name] = [inf[2], not inf[2]]
+
+
+
     settings_changed = False
+    
 
     # CLAN
     clan = None
