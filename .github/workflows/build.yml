@@ -396,9 +396,9 @@ jobs:
       - build_win64_py311
       - build_macos64
     steps:
-      name: Confirm release
-      run: |
-        curl -X 'POST' \
-          'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Confirm' \
-          -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
-          -H 'accept: */*'
+      - name: Confirm release
+        run: |
+          curl -X 'POST' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Confirm' \
+            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
+            -H 'accept: */*'
