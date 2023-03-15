@@ -72,7 +72,7 @@
     "patrol_id": "gen_gen_newkit1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["border", "new_cat_kit", "reputation", "no_change_fail_rep"],
+    "tags": ["border", "new_cat_kitten", "reputation", "no_change_fail_rep"],
     "intro_text": "r_c finds an abandoned kit whose parents are nowhere to be found.",
     "success_text": [
         "r_c rushes the kit back to camp. The kit is nursed back to health and promised a place in the Clan."
@@ -163,8 +163,8 @@
     "fail_trait": ["daring", "bold", "ambitious"],
     "min_cats": 2,
     "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
+    "antagonize_text": "A loner and their kits emerge from the bush, but p_l shakes their head, and informs them there's no room in c_n.",
+    "antagonize_fail_text": "A loner and their kits emerge from the bush, but p_l shakes their head, and tells the loner they meant it when they didn't want to see them again. The loner hisses and scratches at p_l. Roumors start at camp over what p_l said to the loner.",
     "history_text": [
             "p_l gained a scar after tussling with a rogue."
     ]
@@ -188,8 +188,8 @@
 
     "min_cats": 2,
     "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
+    "antagonize_text": "p_l hisses at StarClan for the sign, refusing to follow it to it's source, and what might have been.",
+    "antagonize_fail_text": "p_l begrudgingly follows the sound, only to find the bodies of a unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, they return home, their mind clouded."
 },
 {
     "patrol_id": "gen_med_rescue10",
@@ -210,8 +210,8 @@
 
     "min_cats": 2,
     "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
+    "antagonize_text": "p_l hisses at StarClan for the sign, refusing to follow it to it's source, and what might have been.",
+    "antagonize_fail_text": "p_l begrudgingly follows the sound, only to find the bodies of a unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, they return home, their mind clouded."
 },
 {
     "patrol_id": "gen_med_rescue11",
@@ -232,8 +232,8 @@
 
     "min_cats": 1,
     "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
+    "antagonize_text": "p_l hisses at StarClan for the sign, refusing to follow it to it's source, and what might have been.",
+    "antagonize_fail_text": "p_l begrudgingly follows the sound, only to find the bodies of a unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, they return home, their mind clouded."
 },
 {
     "patrol_id": "gen_med_rescue12",
@@ -254,8 +254,8 @@
 
     "min_cats": 1,
     "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
+    "antagonize_text": "p_l hisses at StarClan for the sign, refusing to follow it to it's source, and what might have been.",
+    "antagonize_fail_text": "p_l begrudgingly follows the sound, only to find the bodies of a unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, they return home, their mind clouded."
 },
 {
     "patrol_id": "gen_med_rescuesoloapp3",
@@ -276,8 +276,8 @@
 
     "min_cats": 1,
     "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
+    "antagonize_text": "p_l hisses at StarClan for the sign, refusing to follow it to it's source, and what might have been.",
+    "antagonize_fail_text": "p_l begrudgingly follows the sound, only to find the bodies of a unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, they return home, their mind clouded."
 },
 {
     "patrol_id": "gen_med_rescuesoloapp4",
@@ -298,15 +298,15 @@
 
     "min_cats": 1,
     "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
+    "antagonize_text": "p_l hisses at StarClan for the sign, refusing to follow it to it's source, and what might have been.",
+    "antagonize_fail_text": "p_l begrudgingly follows the sound, only to find the bodies of a unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, they return home, their mind clouded."
 },
 {
     "patrol_id": "gen_bord_curiouskittypet1",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat_kittypet", "reputation", "scar", "CATBITE", "battle_injury"],
-    "intro_text": "As the patrol is checking the border lines, they hear the unmistakable sound of a cat traipsing through Clan territory.",
+    "intro_text": "As the patrol is checking the border lines, they hear the traispe of pawsteps through the territory.",
     "decline_text": "They decide to leave it alone. It's probably just another Clanmate out in the territory.",
     "chance_of_success": 50,
     "exp": 10,
@@ -326,8 +326,8 @@
     "fail_trait": ["vengeful", "bloodthirsty"],
     "min_cats": 2,
     "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
+    "antagonize_text": "The patrol follows the sound, intent on finding the intruder. A kittypet! No wonder they were so loud. they scare them off easily.",
+    "antagonize_fail_text": "The patrol follows the noise and comes upon a kittypet that's sniffing around. The kittypet quickly begins a story about how they've been training for <i>days</i> now and they're finally ready to join c_n. p_l laughs and gets clawed by the angry kittypet. They have been training.",
     "history_text": [
             "This cat gained a scar from a fight with an angry kittypet."
     ]
@@ -353,8 +353,8 @@
 
     "min_cats": 1,
     "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
+    "antagonize_text": "The patrol launches into attack, only to find the loner that they've been fighting is too weak to fight back. They go home with blood on their paws.",
+    "antagonize_fail_text": "The patrol approaches the loner cautiously, inteanding to attack. Instead, they find a StarClan warrior, who scolds them all for being willing to attack a hurt loner. With shame in their heart, the patrol goes back home, and tells no one of what they saw.",
     "history_text": [
             null
     ]

@@ -383,6 +383,55 @@ class Hooded():
         else:
             return self.colour + self.length + " hooded"  
 
+class Ponit():
+    name = "Ponit"
+    sprites = {1: 'ponit', 2: 'white'}
+
+    def __init__(self, colour, white, length):
+        self.white = white  # boolean; does cat have white on it or no
+        self.colour = colour
+        self.length = length
+
+    def __repr__(self):
+        if self.white:
+            return f"white and {self.colour}{self.length} ponit"
+        else:
+            return self.colour + self.length + " ponit"  
+
+class Spirit():
+    name = "Spirit"
+    sprites = {1: 'spirit'}
+
+    def __init__(self, colour, length):
+        self.colour = colour
+        self.length = length
+        self.white = self.colour == "white"
+
+    def __repr__(self):
+        return self.colour + self.length + " spirit"  
+
+class Wolf():
+    name = "Wolf"
+    sprites = {1: 'wolf'}
+
+    def __init__(self, colour, length):
+        self.colour = colour
+        self.length = length
+        self.white = self.colour == "white"
+
+    def __repr__(self):
+        return self.colour + self.length + " wolf"  
+class WolfBicolour():
+    name = "WolfBicolour"
+    sprites = {1: 'wolf', 2: 'white'}
+
+    def __init__(self, colour, length):
+        self.colour = colour
+        self.length = length
+        self.white = True
+
+    def __repr__(self):
+        return f"white and {self.colour}{self.length} wolf"
 
 class Tortie():
     name = "Tortie"
@@ -461,18 +510,26 @@ pelt_c_no_bw = ['PALECREAM', 'CREAM', 'BEIGE', 'MEERKAT', 'KHAKI', 'SAND', 'WOOD
 
 tortiepatterns = ['ONE', 'TWO', 'THREE', 'FOUR', 'REDTAIL', 'DELILAH', 'MINIMAL1', 'MINIMAL2', 'MINIMAL3', 'MINIMAL4',
                   'OREO', 'SWOOP', 'MOTTLED', 'SIDEMASK', 'EYEDOT', 'BANDANA', 'PACMAN', 'STREAMSTRIKE', 'ORIOLE',
-                  'ROBIN', 'BRINDLE', 'PAIGE', 'COMBO', 'BLENDED', 'SCATTER', 'LIGHT']
+                  'ROBIN', 'BRINDLE', 'PAIGE', 'COMBO', 'BLENDED', 'SCATTER', 'LIGHT', 'BROKENONE', 'BROKENTWO', 
+                  'BROKENTHREE', 'BROKENFOUR', 'GLITCH', 'WAVE', 'STRIPESMASK', 'KOI', 'SKULL', 'LITTLE', 'O', 'TOADSTOOL',
+                  'PONITMASK', 'SPOTSCHAOS', 'FOG', 'SUNSET', 'TAIL', 'MOON']
 tortiebases = ['single', 'tabby', 'bengal', 'marbled', 'ticked', 'smoke', 'rosette', 'speckled', 'mackerel',
                'classic', 'sokoke', 'agouti', 'backed', 'charcoal', 'ghost', 'merle', 'doberman', 'skele', 'stain', 
-               'mottled', 'snowflake', 'rat', 'hooded', 'skitty']
+               'mottled', 'snowflake', 'rat', 'hooded', 'skitty', 'ponit', 'spirit', 'wolf']               
 
 pelt_length = ["short", "medium", "long"]
 eye_colours = ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE', 'DARKBLUE', 'GREY', 'CYAN', 'EMERALD',
-               'PALEBLUE',
-               'PALEYELLOW', 'GOLD', 'HEATHERBLUE', 'COPPER', 'SAGE', 'BLUE2', 'SUNLITICE', 'GREENYELLOW']
-yellow_eyes = ['YELLOW', 'AMBER', 'PALEYELLOW', 'GOLD', 'COPPER', 'GREENYELLOW']
-blue_eyes = ['BLUE', 'DARKBLUE', 'CYAN', 'PALEBLUE', 'HEATHERBLUE', 'BLUE2', 'SUNLITICE', 'GREY']
-green_eyes = ['PALEGREEN', 'GREEN', 'EMERALD', 'SAGE', 'HAZEL']
+               'PALEBLUE', 'VOID', 'GHOST', 'PALEYELLOW', 'GOLD', 'HEATHERBLUE', 'COPPER', 'SAGE', 'BLUE2', 'SUNLITICE', 
+               'GREENYELLOW', 'POPPY', 'CRIMSON', 'RUBY', 'BROWN', 'EMERALD2', 'SKY', 'LILAC', 'BROWN2', 'PEANUT', 
+               'GREY2', 'YELLOWOLIVE', 'SUNSHINE', 'AZURE', 'COBOLT', 'GRASS', 'MINT', 'LILACGREY', 'WHITE',
+               'VIOLET', 'GRAPE', 'INDIGO']
+yellow_eyes = ['YELLOW', 'AMBER', 'PALEYELLOW', 'GOLD', 'COPPER', 'GREENYELLOW', 'BROWN', 'BROWN2', 
+                'PEANUT', 'YELLOWOLIVE', 'SUNSHINE']
+blue_eyes = ['BLUE', 'DARKBLUE', 'CYAN', 'PALEBLUE', 'HEATHERBLUE', 'BLUE2', 'SUNLITICE', 'AZURE', 
+                'COBOLT',]
+green_eyes = ['PALEGREEN', 'GREEN', 'EMERALD', 'SAGE', 'HAZEL', 'EMERALD2', 'GRASS', 'MINT']
+mono_eyes = ['GREY', 'VOID', 'GHOST', 'GREY2', 'LILACGREY', 'WHITE']
+purple_eyes = ['POPPY', 'CRIMSON', 'RUBY', 'LILAC', 'VIOLET', 'GRAPE', 'INDIGO']
 # scars1 is scars from other cats, other animals - scars2 is missing parts - scars3 is "special" scars that could only happen in a special event
 # bite scars by @wood pank on discord
 scars1 = ["ONE", "TWO", "THREE", "TAILSCAR", "SNOUT", "CHEEK", "SIDE", "THROAT", "TAILBASE", "BELLY",
@@ -487,8 +544,10 @@ plant_accessories = ["MAPLE LEAF", "HOLLY", "BLUE BERRIES", "FORGET ME NOTS", "R
                      "BLUEBELLS", "NETTLE", "POPPY", "LAVENDER", "HERBS", "PETALS", "DRY HERBS",
                      "OAK LEAVES", "CATMINT", "MAPLE SEED", "JUNIPER"
                      ]
-wild_accessories = ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS", "MOTH WINGS", "CICADA WINGS"
-                    ]
+wild_accessories = ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS", "MOTH WINGS", "CICADA WINGS",
+    "RAT BLACK", "RAT BROWN", "RAT CREAM", "RAT WHITE", "RAT GREY", "RAT HOODED", "CRIMSONSTAR", "BLUESTAR", 
+    "YELLOWSTAR", "CYANSTAR", "REDSTAR", "LIMESTAR", "DARKSEAWEED", "LIGHTSEAWEED", "DRYSEAWEED", "MAGICSEAWEED",
+    "DARKPEARLS", "LIGHTPEARL"]
 tail_accessories = ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]
 collars = [
     "CRIMSON", "BLUE", "YELLOW", "CYAN", "RED", "LIME", "GREEN", "RAINBOW",
@@ -498,14 +557,17 @@ collars = [
     "MULTIBELL", "INDIGOBELL", "CRIMSONBOW", "BLUEBOW", "YELLOWBOW", "CYANBOW", "REDBOW",
     "LIMEBOW", "GREENBOW", "RAINBOWBOW", "BLACKBOW", "SPIKESBOW", "WHITEBOW", "PINKBOW",
     "PURPLEBOW", "MULTIBOW", "INDIGOBOW", "CRIMSONNYLON", "BLUENYLON", "YELLOWNYLON", "CYANNYLON",
-    "REDNYLON", "LIMENYLON", "GREENNYLON", "RAINBOWNYLON",
-    "BLACKNYLON", "SPIKESNYLON", "WHITENYLON", "PINKNYLON", "PURPLENYLON", "MULTINYLON", "INDIGONYLON",
+    "REDNYLON", "LIMENYLON", "GREENNYLON", "RAINBOWNYLON", "BLACKNYLON", "SPIKESNYLON", "WHITENYLON", 
+    "PINKNYLON", "PURPLENYLON", "MULTINYLON", "INDIGONYLON", "CRIMSONBC", "BLUEBC", "YELLOWBC", "CYANBC", 
+    "REDBC", "LIMEBC", "GREENBC", "RAINBOWBC", "BLACKBC", "SPIKESBC", "PINKBC", "PURPLEBC", "MULTIBC",
+    "CRIMSONCAPE", "BLUECAPE", "YELLOWCAPE", "CYANCAPE", "REDCAPE", "LIMECAPE", "GREENCAPE", "RAINBOWCAPE", 
+    "BLACKCAPE", "ORANGECAPE", "PINKCAPE", "PURPLECAPE", "WHITECAPE"
 ]
 
 tabbies = ["Tabby", "Ticked", "Mackerel", "Classic", "Sokoke", "Agouti", "Merle"]
 spotted = ["Speckled", "Rosette", "Snowflake", "Mottled"]
-plain = ["SingleColour", "TwoColour", "Smoke", "Backed", "Doberman", "Skitty", "Rat"]
-exotic = ["Bengal", "Marbled", "Skele", "Stain", "Charcoal", "Hooded"]
+plain = ["SingleColour", "TwoColour", "Smoke", "Backed", "Doberman", "Skitty", "Rat", "Wolf", "WolfBicolour"]
+exotic = ["Bengal", "Marbled", "Skele", "Stain", "Charcoal", "Hooded", "Ponit", "Spirit"]
 torties = ["Tortie", "Calico"]
 pelt_categories = [tabbies, spotted, plain, exotic, torties]
 
@@ -547,11 +609,6 @@ green_colours = ['LIME', 'CHARTRUSE', 'LETTUCE', 'GRASS', 'MINT', 'EMERALD', 'OL
 colour_categories = [cream_colours, ginger_colours, black_colours, grey_colours, white_colours, brown_colours, blue_colours, 
     yellow_colours, purple_colours, green_colours, pride_colours]
     
-eye_sprites = [
-    'YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE', 'DARKBLUE', 'BLUEYELLOW', 'BLUEGREEN',
-    'GREY', 'CYAN', 'EMERALD', 'PALEBLUE', 'PALEYELLOW', 'GOLD', 'HEATHERBLUE', 'COPPER', 'SAGE', 'BLUE2',
-    'SUNLITICE', 'GREENYELLOW'
-]
 little_white = ['LITTLE', 'LIGHTTUXEDO', 'BUZZARDFANG', 'TIP', 'BLAZE', 'BIB', 'VEE', 'PAWS', 
     'BELLY', 'TAILTIP', 'TOES', 'BROKENBLAZE', 'LILTWO', 'SCOURGE', 'TOESTAIL', 'RAVENPAW', 'HONEY', 'VENUS', 
     'SHADOWSIGHT', 'TWIST', 'OKAPI', 'LUNA', 'EXTRA']
@@ -562,11 +619,10 @@ high_white = ['ANY', 'ANY2', 'BROKEN', 'FRECKLES', 'RINGTAIL', 'HALFFACE', 'PANT
     'CURVED', 'GLASS', 'MASKMANTLE', 'CHANCE', 'RETSUKO', 'MAO', 'PAINTED'] 
 mostly_white = ['VAN', 'ONEEAR', 'LIGHTSONG', 'TAIL', 'HEART', 'MOORISH', 'APRON', 'CAPSADDLE', 'DAPPLED', 
     'HAWK', 'FRECKLEMASK', 'MOTH', 'CHESTSPECK', 'HEART2', 'BLACKSTAR']
-point_markings = ['COLOURPOINT', 'COLOURPOINTCREAMY', 'RAGDOLL', 'KARPATI', 'SNOWSHOE', 'SNOWBOOT',  
-    'LIGHTPOINT', 'SEPIAPOINT', 'MINKPOINT', 'SEALPOINT']
-vit = ['VITILIGO', 'VITILIGO2']
-white_sprites = [
-    little_white, mid_white, high_white, mostly_white, point_markings, vit, 'FULLWHITE']
+point_markings = ['COLOURPOINT', 'RAGDOLL', 'KARPATI', 'SNOWSHOE', 'SNOWBOOT', 'LIGHTPOINT', 
+    'SEPIAPOINT', 'MINKPOINT', 'SEALPOINT']
+vit = ['VITILIGO', 'VITILIGO2', 'DARKVITILIGO', 'DARKVITILIGO2']
+white_sprites = [little_white, mid_white, high_white, mostly_white, point_markings, vit, 'FULLWHITE']
 
 skin_sprites = ['BLACK', 'RED', 'PINK', 'DARKBROWN', 'BROWN', 'LIGHTBROWN', 'DARK', 'DARKGREY', 'GREY', 'DARKSALMON',
                 'SALMON', 'PEACH', 'DARKMARBLED', 'MARBLED', 'LIGHTMARBLED', 'DARKBLUE', 'BLUE', 'LIGHTBLUE', 'XANADU', 'BLACKGILL', 
@@ -781,6 +837,32 @@ def choose_pelt(colour=None, white=None, pelt=None, length=None, category=None, 
             return Hooded(choice(pelt_colours), white, length)
         else:
             return Hooded(colour, white, length) 
+    elif pelt == "Ponit":
+        if colour is None and white is None:
+            return Ponit(choice(pelt_colours), choice([False, True]), length)
+        elif colour is None:
+            return Ponit(choice(pelt_colours), white, length)
+        else:
+            return Ponit(colour, white, length) 
+    elif pelt == "Spirit":
+        if colour is None and not white:
+            return Spirit(choice(pelt_colours), length)
+        elif colour is None:
+            return Spirit("WHITE", length)
+        else:
+            return Spirit(colour, length) 
+    if pelt == 'Wolf':
+        if colour is None and not white:
+            return Wolf(choice(pelt_colours), length)
+        elif colour is None:
+            return Wolf("WHITE", length)
+        else:
+            return Wolf(colour, length)
+    elif pelt == 'WolfBicolour':
+        if colour is None:
+            return WolfBicolour(choice(pelt_c_no_white), length)
+        else:
+            return WolfBicolour(colour, length)
     elif pelt == 'Tortie':
         if white is None:
             return Tortie(colour, choice([False, True]), length)
@@ -862,19 +944,35 @@ def describe_color(pelt, tortiecolour, tortiepattern, white_patches, skin):
         color_name = color_name + ' skitty'  
     elif pelt.name == "Hooded":
         color_name = color_name + ' charcoal hooded tabby'  
+    elif pelt.name == "Ponit":
+        color_name = color_name + ' bleach point'  
+    elif pelt.name == "Spirit":
+        color_name = color_name + ' ghostly spirit'  
+    elif pelt.name == "Wolf":
+        color_name = color_name + ' wolf'  
+    elif pelt.name == "WolfBicolour":
+        color_name = color_name + ' bicoloured wolf'  
     if skin in sphynx:
         color_name = color_name + ' sphynx'
     elif skin in wings:
         color_name = 'winged ' + color_name 
 
     elif pelt.name == "Tortie":
-        if tortiepattern not in ["tortiesolid", "tortiesmoke"]:
+        if tortiepattern not in ["tortiesolid", "tortiesmoke", "tortierat", "tortiewolf", "tortiedoberman"]:
             color_name = color_name + ' torbie'
+        elif tortiepattern in "ponit":
+            color_name = color_name + ' point tortie'
+        elif tortiepattern in "spirit":
+            color_name = color_name + ' ghostly spirit torbie'
         else:
             color_name = color_name + ' tortie'
     elif pelt.name == "Calico":
-        if tortiepattern not in ["tortiesolid", "tortiesmoke"]:
+        if tortiepattern not in ["tortiesolid", "tortiesmoke", "tortierat", "tortiewolf", "tortiedoberman"]:
             color_name = color_name + ' tabico'
+        elif tortiepattern in "ponit":
+            color_name = color_name + ' point calico'
+        elif tortiepattern in "spirit":
+            color_name = color_name + ' ghostly spirit tabico'
         else:
             color_name = color_name + ' calico'
     # enough to comment but not make calico

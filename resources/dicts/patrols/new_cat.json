@@ -72,7 +72,7 @@
     "patrol_id": "gen_gen_newkit2",
     "biome": "Any",
     "season": "Any",
-    "tags": ["border", "new_cat_kit", "reputation", "no_change_fail_rep"],
+    "tags": ["border", "new_cat_kitten", "reputation", "no_change_fail_rep"],
     "intro_text": "r_c finds an abandoned kit whose parents are nowhere to be found.",
     "success_text": [
         "The kit is taken back to camp and nursed back to health."
@@ -158,8 +158,8 @@
 
     "min_cats": 2,
     "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
+    "antagonize_text": "p_l hisses at StarClan for the sign, refusing to follow it to it's source, and what might have been.",
+    "antagonize_fail_text": "p_l begrudgingly follows the sound, only to find the bodies of a unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, they return home, their mind clouded."
 },
 {
     "patrol_id": "gen_med_rescue2",
@@ -180,8 +180,8 @@
 
     "min_cats": 2,
     "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
+    "antagonize_text": "p_l hisses at StarClan for the sign, refusing to follow it to it's source, and what might have been.",
+    "antagonize_fail_text": "p_l begrudgingly follows the sound, only to find the bodies of a unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, they return home, their mind clouded."
 },
 {
     "patrol_id": "gen_med_rescue3",
@@ -202,8 +202,8 @@
 
     "min_cats": 1,
     "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
+    "antagonize_text": "p_l hisses at StarClan for the sign, refusing to follow it to it's source, and what might have been.",
+    "antagonize_fail_text": "p_l begrudgingly follows the sound, only to find the bodies of a unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, they return home, their mind clouded."
 },
 {
     "patrol_id": "gen_med_rescue4",
@@ -224,8 +224,8 @@
 
     "min_cats": 1,
     "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
+    "antagonize_text": "p_l hisses at StarClan for the sign, refusing to follow it to it's source, and what might have been.",
+    "antagonize_fail_text": "p_l begrudgingly follows the sound, only to find the bodies of a unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, they return home, their mind clouded."
 },
 {
     "patrol_id": "gen_med_rescuesoloapp1",
@@ -268,8 +268,8 @@
 
     "min_cats": 1,
     "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
+    "antagonize_text": "p_l hisses at StarClan for the sign, refusing to follow it to it's source, and what might have been.",
+    "antagonize_fail_text": "p_l begrudgingly follows the sound, only to find the bodies of a unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, they return home, their mind clouded."
 },
 {
     "patrol_id": "bch_bord_newcat_abandontwoleg1",
@@ -296,8 +296,8 @@
     "win_trait": ["careful", "insecure", "nervous"],
     "min_cats": 1,
     "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
+    "antagonize_text": "r_c can sense it's a trap, and waits just outside, setting their own trap. They manage to set up such a yowl that it sends the rogues running as if LionClan were after them.",
+    "antagonize_fail_text": "r_c can sense its a trap, and tries to get the upper paw, only to find rogues waiting for them there too. r_c escapes with their life, but fear in their heart.",
     "history_text": [
         null,
         "This cat died in an ambush set by rogues.",
@@ -329,8 +329,8 @@
     "win_trait": ["careful", "insecure", "nervous"],
     "min_cats": 3,
     "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
+    "antagonize_text": "r_c can sense it's a trap, and waits just outside, setting their own trap. They manage to set up such a yowl that it sends the rogues running as if LionClan were after them.",
+    "antagonize_fail_text": "r_c can sense its a trap, and tries to get the upper paw, only to find rogues waiting for them there too. r_c escapes with their life, but fear in their heart.",
     "history_text": [
         null,
         "This cat died in an ambush set by rogues.",
@@ -361,8 +361,8 @@
     "fail_trait": ["daring", "bold", "ambitious"],
     "min_cats": 1,
     "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
+    "antagonize_text": "A loner and their kits emerge from the bush, but p_l shakes their head, and informs them there's no room in c_n.",
+    "antagonize_fail_text": "A loner and their kits emerge from the bush, but p_l shakes their head, and tells the loner they meant it when they didn't want to see them again. The loner hisses and scratches at p_l. Roumors start at camp over what p_l said to the loner.",
     "history_text": [
             "p_l gained a scar after tussling with a rogue."
     ]
@@ -392,12 +392,12 @@
     "win_trait": ["careful", "insecure", "nervous"],
     "min_cats": 2,
     "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
+    "antagonize_text": "r_c can sense it's a trap, and waits just outside, setting their own trap. They manage to set up such a yowl that it sends the rogues running as if LionClan were after them.",
+    "antagonize_fail_text": "r_c can sense its a trap, and tries to get the upper paw, only to find rogues waiting for them there too. r_c escapes with their life, but fear in their heart.",
     "history_text": [
             null,
             "This cat died from being ambushed by rogues.",
-        "were killed in a rogue ambush"
+            "were killed in a rogue ambush"
     ]
 },
 {
@@ -425,8 +425,8 @@
     "win_trait": ["careful", "insecure", "nervous"],
     "min_cats": 1,
     "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
+    "antagonize_text": "r_c can sense it's a trap, and waits just outside, setting their own trap. They manage to set up such a yowl that it sends the rogues running as if LionClan were after them.",
+    "antagonize_fail_text": "r_c can sense its a trap, and tries to get the upper paw, only to find rogues waiting for them there too. r_c escapes with their life, but fear in their heart.",
     "history_text": [
         null,
         "This cat died from being ambushed by rogues.",
@@ -458,8 +458,8 @@
     "fail_trait": ["vengeful", "bloodthirsty"],
     "min_cats": 2,
     "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
+    "antagonize_text": "The patrol follows the sound, intent on finding the intruder. A kittypet! No wonder they were so loud. they scare them off easily.",
+    "antagonize_fail_text": "The patrol follows the noise and comes upon a kittypet that's sniffing around. The kittypet quickly begins a story about how they've been training for <i>days</i> now and they're finally ready to join c_n. p_l laughs and gets clawed by the angry kittypet. They have been training.",
     "history_text": [
             "This cat gained a scar from a fight with an angry kittypet."
     ]
@@ -485,8 +485,8 @@
 
     "min_cats": 1,
     "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
+    "antagonize_text": "The patrol launches into attack, only to find the loner that they've been fighting is too weak to fight back. They go home with blood on their paws.",
+    "antagonize_fail_text": "The patrol approaches the loner cautiously, inteanding to attack. Instead, they find a StarClan warrior, who scolds them all for being willing to attack a hurt loner. With shame in their heart, the patrol goes back home, and tell no one of what they saw.",
     "history_text": [
             null
     ]

@@ -52,6 +52,8 @@ def accessory_display_name(cat):
                 acc_display = collar_colors[collar_color] + ' bell collar'
             elif acc_display.endswith('bc'):
                 acc_display = collar_colors[collar_color] + ' bloodclan collar'
+            elif acc_display.endswith('cape'):
+                acc_display = collar_colors[collar_color] + ' cape'
             else:
                 acc_display = collar_colors[collar_color] + ' collar'
 
@@ -2290,7 +2292,7 @@ class CeremonyScreen(Screens):
                     1] + '. They pause, then shake their head, heading back into the ranks of StarClan.'
             else:
                 warrior_text = warrior + ' walks up to ' + dep_name + ' next, offering a life for ' + cat.virtues[
-                    1] + '. They smile, and state that the Clan will do well under ' + warrior + '\'s leadership.'
+                    1] + '. They smile, and state that the Clan will do well under ' + dep_name + '\'s leadership.'
         else:
             if cat.trait == "bloodthirsty":
                 warrior_text = 'An unknown warrior walks towards ' + dep_name + ' stating that their name is ' + warrior + '. They offer a life for ' + \

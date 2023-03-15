@@ -10,9 +10,9 @@ from scripts.cat.cats import create_example_cats, Cat
 from scripts.cat.names import names
 from re import sub
 from scripts.game_structure import image_cache
-# from scripts.world import World, save_map
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked, UISpriteButton
 from scripts.game_structure.game_essentials import game, MANAGER
+
 
 
 class MakeClanScreen(Screens):
@@ -43,7 +43,7 @@ class MakeClanScreen(Screens):
                          "- Illnesses, Injuries, and Permanent Conditions<br>" \
                          "- Herb gathering and treatment<br>" \
                          "- Ability to choose patrol type<br><br>" \
-                         "With this mode you'll be making the important clan-life decisions."
+                         "With this mode you'll be making the important Clan-life decisions."
 
     cruel_mode_text = "This mode has all the features of Expanded mode, but is significantly more difficult. If " \
                       "you'd like a challenge with a bit of brutality, then this mode is for you.<br><br>" \
@@ -574,7 +574,8 @@ class MakeClanScreen(Screens):
             self.elements['cat_name'].show()
             self.elements['cat_info'].set_text(selected.gender + "\n" +
                                                str(selected.age + "\n" +
-                                                   str(selected.trait)))
+                                                   str(selected.trait + "\n" +
+                                                   str(selected.moons) + " moons")))
             self.elements['cat_info'].show()
         else:
             self.elements['next_step'].disable()
