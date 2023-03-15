@@ -142,7 +142,7 @@ def self_update(release_channel='development-test'):
         print("Powershell will now be used to update Clangen.")
         print("A console window will open and close automatically. Please do not be alarmed.")
 
-        subprocess.Popen([pwsh, "-ExecutionPolicy", "Bypass", "-WindowStyle", "Hidden", "-File", "./clangen_update_script.ps1", "internal", os.getcwd()], cwd=path)
+        subprocess.Popen([pwsh, "-ExecutionPolicy", "Bypass", "-File", "./clangen_update_script.ps1", "internal", os.getcwd()], cwd=path)
         quit()
 
     elif platform.system() == 'Darwin':
