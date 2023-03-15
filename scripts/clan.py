@@ -23,7 +23,7 @@ except ImportError:
     import json as ujson
 
 from scripts.game_structure.game_essentials import game
-from scripts.utility import update_sprite, get_current_season
+from scripts.utility import update_sprite, get_current_season, quit # pylint: disable=redefined-builtin
 from scripts.cat.cats import Cat, cat_class
 from scripts.cat.names import names
 from scripts.clan_resources.freshkill import Freshkill_Pile, Nutrition
