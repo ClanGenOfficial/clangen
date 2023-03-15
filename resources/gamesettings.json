@@ -135,6 +135,7 @@
     "__other": {
         "language": ["english", "spanish", "german"],
         "game_mode": ["classic", "expanded", "cruel season"],
-        "text size": ["0", "1", "2"]
+        "text size": ["0", "1", "2"],
+        "fullscreen": [ false, true ]
     }
 }
