@@ -52,6 +52,8 @@ def accessory_display_name(cat):
                 acc_display = collar_colors[collar_color] + ' bell collar'
             elif acc_display.endswith('bc'):
                 acc_display = collar_colors[collar_color] + ' bloodclan collar'
+            elif acc_display.endswith('cape'):
+                acc_display = collar_colors[collar_color] + ' cape'
             else:
                 acc_display = collar_colors[collar_color] + ' collar'
 

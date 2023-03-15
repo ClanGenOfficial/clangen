@@ -418,5 +418,256 @@
     "default": "indigo nylon collar",
     "plural": "indigo nylon collars",
     "singular": "indigo nylon collar"
-  }
+  },
+
+  "RAT BLACK": {
+    "default": "a black rat",
+    "plural": "black rats",
+    "singular": "black rat"
+  },
+
+  "RAT BROWN": {
+    "default": "a brown rat",
+    "plural": "brown rats",
+    "singular": "brown rat"
+  },
+
+  "RAT CREAM": {
+    "default": "a cream rat",
+    "plural": "cream rats",
+    "singular": "cream rat"
+  },
+
+  "RAT WHITE": {
+    "default": "a white rat",
+    "plural": "white rats",
+    "singular": "white rat"
+  },
+
+  "RAT GREY": {
+    "default": "a grey rat",
+    "plural": "grey rats",
+    "singular": "grey rat"
+  },
+
+  "RAT HOODED": {
+    "default": "a hooded rat",
+    "plural": "hooded rats",
+    "singular": "hooded rat"
+  },
+
+  "CRIMSONSTAR": {
+    "default": "crimson starfish",
+    "plural": "couple of starfish",
+    "singular": "starfish"
+  },
+
+  "BLUESTAR": {
+    "default": "blue starfish",
+    "plural": "couple of starfish",
+    "singular": "starfish"
+  },
+
+  "YELLOWSTAR": {
+    "default": "yellow starfish",
+    "plural": "couple of starfish",
+    "singular": "starfish"
+  },
+
+  "YELLOWSTAR": {
+    "default": "yellow starfish",
+    "plural": "couple of starfish",
+    "singular": "starfish"
+  },
+
+  "CYANSTAR": {
+    "default": "cyan starfish",
+    "plural": "couple of starfish",
+    "singular": "starfish"
+  },
+
+  "LIMESTAR": {
+    "default": "lime starfish",
+    "plural": "couple of starfish",
+    "singular": "starfish"
+  },
+
+  "DARKSEAWEED": {
+    "default": "dark seaweed",
+    "plural": "pile of seaweed",
+    "singular": "seaweed"
+  },
+
+  "LIGHTSEAWEED": {
+    "default": "light seaweed",
+    "plural": "pile of seaweed",
+    "singular": "seaweed"
+  },
+
+  "DRYSEAWEED": {
+    "default": "dried seaweed",
+    "plural": "dried pile of seaweed",
+    "singular": "dry seaweed"
+  },
+
+  "MAGICSEAWEED": {
+    "default": "magic seaweed",
+    "plural": "pile of purple seaweed",
+    "singular": "purple seaweed"
+  },
+
+  "DARKPEARLS": {
+    "default": "blue pearl chain",
+    "plural": "chain of blue pearls",
+    "singular": "shiny blue pearl"
+  },
+
+  "LIGHTPEARLS": {
+    "default": "white pearl chain",
+    "plural": "chain of white pearls",
+    "singular": "shiny white pearl"
+  },
+
+  "CRIMSONBC": {
+    "default": "crimson blood clan collar",
+    "plural": "crimson blood clan collars",
+    "singular": "crimson blood clan collar"
+  },
+  "BLUEBC": {
+    "default": "blue blood clan collar",
+    "plural": "blue blood clan collars",
+    "singular": "blue blood clan collar"
+  },
+  "CYANBC": {
+    "default": "cyan blood clan collar",
+    "plural": "cyan blood clan collars",
+    "singular": "cyan blood clan collar"
+  },
+  "YELLOWBC": {
+    "default": "yellow blood clan collar",
+    "plural": "yellow blood clan collars",
+    "singular": "yellow blood clan collar"
+  },
+  "LIMEBC": {
+    "default": "lime blood clan collar",
+    "plural": "lime blood clan collars",
+    "singular": "lime blood clan collar"
+  },
+  "GREENBC": {
+    "default": "green blood clan collar",
+    "plural": "green blood clan collars",
+    "singular": "green blood clan collar"
+  },
+  "REDBC": {
+    "default": "red blood clan collar",
+    "plural": "red blood clan collars",
+    "singular": "red blood clan collar"
+  },
+  "RAINBCBC": {
+    "default": "rainbow blood clan collar",
+    "plural": "rainbow blood clan collars",
+    "singular": "rainbow clan blood clan collar"
+  },
+  "BLACKBC": {
+    "default": "black blood clan collar",
+    "plural": "black blood clan collars",
+    "singular": "black blood clan collar"
+  },
+  "SPIKESBC": {
+    "default": "gold foil blood clan collar",
+    "plural": "gold foil blood clan collars",
+    "singular": "gold foil blood clan collar"
+  },
+  "WHITEBC": {
+    "default": "white blood clan collar",
+    "plural": "white blood clan collars",
+    "singular": "white blood clan collar"
+  },
+  "PINKBC": {
+    "default": "pink blood clan collar",
+    "plural": "pink blood clan collars",
+    "singular": "pink blood clan collar"
+  },
+  "PURPLEBC": {
+    "default": "purple blood clan collar",
+    "plural": "purple blood clan collars",
+    "singular": "purple blood clan collar"
+  },
+  "MULTIBC": {
+    "default": "lilac blood clan collar",
+    "plural": "lilac blood clan collars",
+    "singular": "lilac blood clan collar"
+  },
+
+  "CRIMSONCAPE": {
+    "default": "crimson cape",
+    "plural": "crimson capes",
+    "singular": "crimson cape"
+  },
+  "BLUECAPE": {
+    "default": "blue cape",
+    "plural": "blue capes",
+    "singular": "blue cape"
+  },
+  "CYANCAPE": {
+    "default": "cyan cape",
+    "plural": "cyan capes",
+    "singular": "cyan cape"
+  },
+  "YELLOWCAPE": {
+    "default": "yellow cape",
+    "plural": "yellow capes",
+    "singular": "yellow cape"
+  },
+  "LIMECAPE": {
+    "default": "lime cape",
+    "plural": "lime capes",
+    "singular": "lime cape"
+  },
+  "GREENCAPE": {
+    "default": "green cape",
+    "plural": "green capes",
+    "singular": "green cape"
+  },
+  "REDCAPE": {
+    "default": "red cape",
+    "plural": "red capes",
+    "singular": "red cape"
+  },
+  "RAINCAPECAPE": {
+    "default": "rainbow cape",
+    "plural": "rainbow capes",
+    "singular": "rainbow cape"
+  },
+  "BLACKCAPE": {
+    "default": "black cape",
+    "plural": "black capes",
+    "singular": "black cape"
+  },
+  "SPIKESCAPE": {
+    "default": "gold foil cape",
+    "plural": "gold foil capes",
+    "singular": "gold foil cape"
+  },
+  "WHITECAPE": {
+    "default": "white cape",
+    "plural": "white capes",
+    "singular": "white cape"
+  },
+  "PINKCAPE": {
+    "default": "pink cape",
+    "plural": "pink capes",
+    "singular": "pink cape"
+  },
+  "PURPLECAPE": {
+    "default": "purple cape",
+    "plural": "purple capes",
+    "singular": "purple cape"
+  },
+  "MULTICAPE": {
+    "default": "lilac cape",
+    "plural": "lilac capes",
+    "singular": "lilac cape"
+  } 
+  
 }
