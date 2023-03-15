@@ -16,8 +16,11 @@ except ImportError:
     import json as ujson
 import logging
 
+
 logger = logging.getLogger(__name__)
 from scripts.game_structure import image_cache
+
+from sys import exit as sys_exit
 
 from scripts.cat.sprites import sprites, Sprites
 from scripts.cat.pelts import (
@@ -1214,7 +1217,7 @@ def quit(savesettings=False, clearevents=False):
     pygame.quit()
     if game.rpc.is_alive():
         game.rpc.join(1)
-    exit()
+    sys_exit()
 
 
 PERMANENT = None
