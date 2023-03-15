@@ -503,11 +503,73 @@ class PatrolScreen(Screens):
                         break
         text = text.replace('c_n', str(game.clan.name) + 'Clan')
 
+        # Prey lists for beach random prey patrols
+        bch_tinyprey_land_singlular_list = ['fiddler crab', 'hermit crab',
+                                    'beach mouse', ]
+        bch_tinyprey_land_singlular = choice(bch_tinyprey_land_singlular_list)
+        text = text.replace('b_tp_l_s', str(bch_tinyprey_land_singlular))
+
+        bch_tinyprey_land_plural_list = []
+        bch_tinyprey_land_plural = choice(bch_tinyprey_land_plural_list)
+        text = text.replace('b_tp_l_p', str(bch_tinyprey_land_plural))
+
+        bch_tinyprey_aquatic_singlular_list = ['shad', 'anchovy', 'sardine', 'smelt',
+                                    'pink shrimp', 'white shrimp']
+        bch_tinyprey_aquatic_singlular = choice(bch_tinyprey_aquatic_singlular_list)
+        text = text.replace('b_tp_a_s', str(bch_tinyprey_aquatic_singlular))
+
+        bch_tinyprey_aquatic_plural_list = []
+        bch_tinyprey_aquatic_plural = choice(bch_tinyprey_aquatic_plural_list)
+        text = text.replace('b_tp_a_p', str(bch_tinyprey_aquatic_plural))
+
+        bch_midprey_land_singlular_list = []
+        bch_midprey_land_singlular = choice(bch_midprey_land_singlular_list)
+        text = text.replace('b_mp_l_s', str(bch_midprey_land_singlular))
+
+        bch_midprey_land_plural_list = []
+        bch_midprey_land_plural = choice(bch_midprey_land_plural_list)
+        text = text.replace('b_mp_l_p', str(bch_midprey_land_plural))
+
+        bch_midprey_aquatic_singlular_list = []
+        bch_midprey_aquatic_singlular = choice(bch_midprey_aquatic_singlular_list)
+        text = text.replace('b_mp_a_s', str(bch_midprey_aquatic_singlular))
+
+        bch_midprey_aquatic_plural_list = []
+        bch_midprey_aquatic_plural = choice(bch_midprey_aquatic_plural_list)
+        text = text.replace('b_mp_a_p', str(bch_midprey_aquatic_plural))
+
+        # Prey lists for desert random prey patrols
+        dst_tinyprey_singlular_list = ['spotted ground squirrel', 'round-tailed ground squirrel', 'ground squirrel',
+                                  'small bird', 
+                                  'kangaroo rat', 'chisel-toothed kangaroo rat', 'banner-tailed kangaroo rat',
+                                  'narrow-faced kangaroo rat', 'big-eared kangaroo rat', 'dark kangaroo mouse',
+                                  'pale kangaroo mouse', ]
+        dst_tinyprey_singlular = choice(dst_tinyprey_singlular_list)
+        text = text.replace('d_tp_s', str(dst_tinyprey_singlular))
+
+        dst_tinyprey_plural_list = [
+                                '', ]
+        dst_tinyprey_plural = choice(dst_tinyprey_plural_list)
+        text = text.replace('d_tp_p', str(dst_tinyprey_plural))
+
+        dst_midprey_singlular_list = ['antelope squirrel', 'white-tailed antelope squirrel',  
+                                 'giant kangaroo rat', 'rock squirrel', ]
+        dst_midprey_singlular = choice(dst_midprey_singlular_list)
+        text = text.replace('d_mp_s', str(dst_midprey_singlular))
+
+        dst_midprey_plural_list = ['plump shrews', 'woodpeckers', 'moles', 'blackbirds',
+                              'field voles', 'big lizards', 'grass snakes', 'half-grown rabbits', 'hedgehogs',
+                              'red squirrels', 'grey squirrels', 'rats', ]
+        dst_midprey_plural = choice(dst_midprey_plural_list)
+        text = text.replace('d_mp_p', str(dst_midprey_plural))
+        
         # Prey lists for forest random prey patrols
         fst_tinyprey_singlular_list = ['shrew', 'robin', 'vole', 'dormouse', 'blackbird',
                                   'wood mouse', 'lizard', 'tiny grass snake', 'finch', 'sparrow',
                                   'small bird', 'young rat', 'young hedgehog', 'big beetle', 'woodrat',
-                                  'white-footed mouse', 'golden mouse', 'young squirrel', 'chipmunk', ]
+                                  'white-footed mouse', 'golden mouse', 'young squirrel', 'chipmunk', 
+                                  'white-footed mouse', 'jumping mouse', 'red tree vole', 
+                                  'gray-tailed vole' 'gray-footed chipmunk', ]
         fst_tinyprey_singlular = choice(fst_tinyprey_singlular_list)
         text = text.replace('f_tp_s', str(fst_tinyprey_singlular))
 
@@ -528,6 +590,89 @@ class PatrolScreen(Screens):
                               'red squirrels', 'grey squirrels', 'rats', ]
         fst_midprey_plural = choice(fst_midprey_plural_list)
         text = text.replace('f_mp_p', str(fst_midprey_plural))
+
+        # Prey lists for mountain random prey patrols
+        mtn_tinyprey_singlular_list = ['meadow mouse', 'pocket mouse', 'white-eared pocket mouse', 'spiny pocket mouse', 
+                                       'alping chipmunk', 'yellow-pine chipmunk', 'chipmunk', 'gray-collared chipmunk',
+
+                                       ]
+        mtn_tinyprey_singlular = choice(mtn_tinyprey_singlular_list)
+        text = text.replace('m_tp_s', str(mtn_tinyprey_singlular))
+
+        mtn_tinyprey_plural_list = ['mice', 'mice', 'mice', 'shrews', 'robins', 'voles', 'mice', 'blackbirds',
+                               'mice', 'mice', 'lizards', 'small birds', 'small birds', 'sparrows',
+                               'sleepy dormice', 'chipmunks', 'woodrats', ]
+        mtn_tinyprey_plural = choice(mtn_tinyprey_plural_list)
+        text = text.replace('m_tp_p', str(mtn_tinyprey_plural))
+
+        mtn_midprey_singlular_list = ['plump shrew', 'woodpecker', 'blackbird', 'golden-mantled ground squirrel',
+                                 'half-grown rabbit', 'fox squirrel', ''
+                                 'red squirrel', 'grey squirrel', 'rat', 'flying squirrel',  ]
+        mtn_midprey_singlular = choice(mtn_midprey_singlular_list)
+        text = text.replace('m_mp_s', str(mtn_midprey_singlular))
+
+        mtn_midprey_plural_list = ['plump shrews', 'woodpeckers', 'moles', 'blackbirds',
+                              'field voles', 'big lizards', 'grass snakes', 'half-grown rabbits', 'hedgehogs',
+                              'red squirrels', 'grey squirrels', 'rats', ]
+        mtn_midprey_plural = choice(mtn_midprey_plural_list)
+        text = text.replace('m_mp_p', str(mtn_midprey_plural))
+
+         # Prey lists for plains random prey patrols
+        pln_tinyprey_singlular_list = [ 
+                                  'meadow mouse', 'dark kangaroo mouse', 'pocket mouse',
+                                  'pale kangaroo mouse', ]
+        pln_tinyprey_singlular = choice(pln_tinyprey_singlular_list)
+        text = text.replace('p_tp_s', str(pln_tinyprey_singlular))
+
+        pln_tinyprey_plural_list = []
+        pln_tinyprey_plural = choice(pln_tinyprey_plural_list)
+        text = text.replace('p_tp_p', str(pln_tinyprey_plural))
+
+        pln_midprey_singlular_list = ['prairie dog', 'white-tailed prairie dog', 'black-tailed prairie dog',
+                                      '']
+        pln_midprey_singlular = choice(pln_midprey_singlular_list)
+        text = text.replace('p_mp_s', str(pln_midprey_singlular))
+
+        pln_midprey_plural_list = []
+        pln_midprey_plural = choice(pln_midprey_plural_list)
+        text = text.replace('p_mp_p', str(pln_midprey_plural))
+
+        # Prey lists for wetlands random prey patrols
+        wtlnd_tinyprey_land_singlular_list = ['salt-marsh vole',]
+        wtlnd_tinyprey_land_singlular = choice(wtlnd_tinyprey_land_singlular_list)
+        text = text.replace('w_tp_l_s', str(wtlnd_tinyprey_land_singlular))
+
+        wtlnd_tinyprey_land_plural_list = []
+        wtlnd_tinyprey_land_plural = choice(wtlnd_tinyprey_land_plural_list)
+        text = text.replace('w_tp_l_p', str(wtlnd_tinyprey_land_plural))
+
+        wtlnd_tinyprey_aquatic_singlular_list = []
+        wtlnd_tinyprey_aquatic_singlular = choice(wtlnd_tinyprey_aquatic_singlular_list)
+        text = text.replace('w_tp_a_s', str(wtlnd_tinyprey_aquatic_singlular))
+
+        wtlnd_tinyprey_aquatic_plural_list = []
+        wtlnd_tinyprey_aquatic_plural = choice(wtlnd_tinyprey_aquatic_plural_list)
+        text = text.replace('w_tp_a_p', str(wtlnd_tinyprey_aquatic_plural))
+
+        wtlnd_midprey_land_singlular_list = ['blackbird',
+                                 'big lizard', 'grass snake',
+                                 'kingfisher', ]
+        wtlnd_midprey_land_singlular = choice(wtlnd_midprey_land_singlular_list)
+        text = text.replace('w_mp_l_s', str(wtlnd_midprey_land_singlular))
+
+        wtlnd_midprey_land_plural_list = ['blackbirds',
+                                'big lizards', 'grass snakes', 
+                                'rats', ]
+        wtlnd_midprey_land_plural = choice(wtlnd_midprey_land_plural_list)
+        text = text.replace('w_mp_l_p', str(wtlnd_midprey_land_plural))
+
+        wtlnd_midprey_aquatic_singlular_list = []
+        wtlnd_midprey_aquatic_singlular = choice(wtlnd_midprey_aquatic_singlular_list)
+        text = text.replace('w_mp_a_s', str(wtlnd_midprey_aquatic_singlular))
+
+        wtlnd_midprey_aquatic_plural_list = []
+        wtlnd_midprey_aquatic_plural = choice(wtlnd_midprey_aquatic_plural_list)
+        text = text.replace('w_mp_a_p', str(wtlnd_midprey_aquatic_plural))
 
         sign_list = get_snippet_list("omen_list", amount=random.randint(2, 4), return_string=False)
         sign = choice(sign_list)
