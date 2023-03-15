@@ -28,6 +28,15 @@ if directory:
     os.chdir(directory)
 
 
+if os.path.exists("auto-updated"):
+    print("Clangen starting, deleting auto-updated file")
+    os.remove("auto-update")
+    print("Deleting powershell script")
+    os.remove("../clangen_update_script.ps1")
+    print("Update Complete!")
+    print("New version: " + get_version_info())
+
+
 setup_data_dir()
 timestr = time.strftime("%Y%m%d_%H%M%S")
 

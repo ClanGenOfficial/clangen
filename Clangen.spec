@@ -7,7 +7,7 @@ a = Analysis(
     ['main.py'],
     pathex=[],
     binaries=[],
-    datas=[('commit.txt', '.')],
+    datas=[],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
@@ -22,9 +22,8 @@ pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
 
 a.datas += Tree('./resources', prefix='resources')
 a.datas += Tree('./sprites', prefix='sprites')
+a.datas += [ ('commit.txt', './commit.txt', 'DATA') ]
 a.datas += [ ('OpenDataDirectory.bat', './bin/OpenDataDirectory.bat', 'DATA') ]
-a.datas += [ ('SelfUpdate.ps1', './bin/SelfUpdate.ps1', 'DATA') ]
-a.datas += [ ('SelfUpdate.bat', './bin/SelfUpdate.bat', 'DATA') ]
 
 
 exe = EXE(

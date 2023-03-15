@@ -6,11 +6,15 @@ import urllib.parse
 import zipfile
 import tarfile
 import platform
+import pathlib
 
 import pgpy
 import requests as requests
 
 from scripts.version import get_version_info
+
+
+
 
 use_proxy = False  # Set this to True if you want to use a proxy for the update check. Useful for debugging.
 
@@ -36,14 +40,13 @@ def download_file(url):
 
 def get_update_url():
     if get_update_url.value is None:
-        fetch_url = "https://raw.githubusercontent.com/archanyhm/clangen/auto-update/update_api_url.txt"
+        fetch_url = "https://raw.githubusercontent.com/archanyhm/clangen/auto-update/verification/update_api_url.txt"
         result = requests.get(fetch_url)
         get_update_url.value = result.text
     return get_update_url.value
 
 
 get_update_url.value = None
-
 
 def has_update():
     latest_endpoint = f"{get_update_url()}/v1/Update/Channels/development-test/Releases/Latest"
@@ -54,20 +57,22 @@ def has_update():
 
     if get_version_info().version_number.strip() != latest_version_number.strip():
         print(
-            f"Update available!\nCurrent version: {get_version_info().version_number.strip()}\nNewest version : {latest_version_number.strip()}")
+            f"Update available!\nCurrent version: {get_version_info().version_number}\nNewest version : {latest_version_number.strip()}")
         return True
     else:
         return False
 
 
 def self_update(release_channel='development-test'):
+
+    print("Updating Clangen...")
     if platform.system() == 'Windows':
         if platform.architecture()[0][:2] == '32':
             artifact_name = 'win32'
         elif platform.architecture()[0][:2] == '64':
             artifact_name = 'win64'
-            if platform.win32_ver()[0] == '10':
-                artifact_name = 'win64_win10+'
+            # if platform.win32_ver()[0] == '10' or platform.win32_ver()[0] == '11':
+            #     artifact_name = 'win10+'
     elif platform.system() == 'Darwin':
         artifact_name = 'macOS'
     elif platform.system() == 'Linux':
@@ -87,6 +92,8 @@ def self_update(release_channel='development-test'):
         proxies=proxies, verify=(not use_proxy))
     encoded_signature = response.headers['x-gpg-signature']
 
+    print("Verifying...")
+
     with open("download.tmp", 'wb') as fd:
         for chunk in response.iter_content(chunk_size=128):
             fd.write(chunk)
@@ -96,7 +103,7 @@ def self_update(release_channel='development-test'):
     better_signature = decoded_signature.replace("-----BEGIN+PGP+SIGNATURE-----", "-----BEGIN PGP SIGNATURE-----")
     better_signature = better_signature.replace("-----END+PGP+SIGNATURE-----", "-----END PGP SIGNATURE-----")
 
-    download_file("https://raw.githubusercontent.com/archanyhm/clangen/auto-update/update_pubkey.asc")
+    download_file("https://raw.githubusercontent.com/archanyhm/clangen/auto-update/verification/update_pubkey.asc")
 
     key, _ = pgpy.PGPKey.from_file("./Downloads/update_pubkey.asc")
 
@@ -110,14 +117,31 @@ def self_update(release_channel='development-test'):
         print("Signature mismatch.")
         return
 
-    if platform.system() == 'Windows':
-        os.makedirs('Downloads/windows/', exist_ok=True)
+    print('Installing...')
 
+    if platform.system() == 'Windows':
+        pwsh = ''
+        if shutil.which('pwsh') is not None:
+            pwsh = shutil.which('pwsh')
+        elif shutil.which('powershell') is not None:
+            pwsh = shutil.which('powershell')
+        else:
+            print("Powershell not found. Please install it and try again")
+            return
         with zipfile.ZipFile("download.tmp", 'r') as zip_ref:
-            zip_ref.extractall('Downloads/windows')
+            zip_ref.extractall('Downloads')
         os.remove("download.tmp")
-        subprocess.Popen(["SelfUpdate.bat"], close_fds=True, creationflags=subprocess.CREATE_NEW_PROCESS_GROUP | subprocess.CREATE_NO_WINDOW | subprocess.DETACHED_PROCESS)
-        exit(0)
+        
+        shutil.move("Downloads/Clangen", "../clangen_update")
+
+        path = pathlib.Path(os.getcwd()).parent.absolute()
+
+        shutil.copy("resources/update.ps1", "../clangen_update_script.ps1")
+        print("Clangen python application cannot continue to run while it is being updated.")
+        print("Powershell will now be used to update Clangen.")
+        print("A console window will open and close automatically. Please do not be alarmed.")
+
+        subprocess.Popen([pwsh, "-ExecutionPolicy", "Bypass", "-File", "./clangen_update_script.ps1", "internal", os.getcwd()], cwd=path)
 
     elif platform.system() == 'Darwin':
         with zipfile.ZipFile("download.tmp", 'r') as zip_ref:
