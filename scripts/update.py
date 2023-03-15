@@ -11,7 +11,7 @@ import pathlib
 import pgpy
 import requests as requests
 
-from utility import quit
+from scripts.utility import quit
 from scripts.version import get_version_info
 
 
