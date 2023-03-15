@@ -141,7 +141,8 @@ def self_update(release_channel='development-test'):
         print("Powershell will now be used to update Clangen.")
         print("A console window will open and close automatically. Please do not be alarmed.")
 
-        subprocess.Popen([pwsh, "-ExecutionPolicy", "Bypass", "-File", "./clangen_update_script.ps1", "internal", os.getcwd()], cwd=path)
+        subprocess.Popen([pwsh, "-ExecutionPolicy", "Bypass", "-NoNewWindow", "-File", "./clangen_update_script.ps1", "internal", os.getcwd()], cwd=path)
+        exit(0)
 
     elif platform.system() == 'Darwin':
         with zipfile.ZipFile("download.tmp", 'r') as zip_ref:
@@ -156,6 +157,7 @@ def self_update(release_channel='development-test'):
         os.system('hdiutil detach Downloads/macOS_tempmount')
         shutil.rmtree('Downloads', ignore_errors=True)
         os.execv('/Applications/Clangen.app/Contents/MacOS/Clangen', sys.argv)
+        exit(0)
 
     elif platform.system() == 'Linux':
         current_folder = os.getcwd()
@@ -167,3 +169,4 @@ def self_update(release_channel='development-test'):
         shutil.move("../clangen_update", current_folder)
         os.chmod(current_folder + "/Clangen", 0o755)
         os.execv(current_folder + "/Clangen", sys.argv)
+        exit(0)
