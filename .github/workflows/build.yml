@@ -57,11 +57,7 @@ jobs:
             -H 'Content-Type: multipart/form-data' \
             -F 'fileBundle=@Clangen_Linux64_glibc2.31+.tar.xz' \
             -F 'fileBundle=@Clangen_Linux64_glibc2.31+.tar.xz.sig'
-          curl -X 'POST' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Confirm' \
-            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
-            -H 'accept: */*'
-      - name: Release 
+      - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
@@ -120,11 +116,7 @@ jobs:
             -H 'Content-Type: multipart/form-data' \
             -F 'fileBundle=@Clangen_Linux64_glibc2.35+.tar.xz' \
             -F 'fileBundle=@Clangen_Linux64_glibc2.35+.tar.xz.sig'
-          curl -X 'POST' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Confirm' \
-            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
-            -H 'accept: */*'
-      - name: Release 
+      - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
@@ -185,10 +177,6 @@ jobs:
             -H 'Content-Type: multipart/form-data' \
             -F 'fileBundle=@Clangen_Win32.zip;type=application/zip' \
             -F 'fileBundle=@Clangen_Win32.zip.sig'
-          curl -X 'POST' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Confirm' \
-            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
-            -H 'accept: */*'
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
@@ -255,10 +243,6 @@ jobs:
             -H 'Content-Type: multipart/form-data' \
             -F 'fileBundle=@Clangen_Win64.zip;type=application/zip' \
             -F 'fileBundle=@Clangen_Win64.zip.sig'
-          curl -X 'POST' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Confirm' \
-            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
-            -H 'accept: */*'
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
@@ -325,10 +309,6 @@ jobs:
             -H 'Content-Type: multipart/form-data' \
             -F 'fileBundle=@Clangen_Win64_Windows10+.zip;type=application/zip' \
             -F 'fileBundle=@Clangen_Win64_Windows10+.zip.sig'
-          curl -X 'POST' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Confirm' \
-            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
-            -H 'accept: */*'
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
@@ -401,12 +381,24 @@ jobs:
             -H 'Content-Type: multipart/form-data' \
             -F 'fileBundle=@Clangen_macOS64.dmg.zip;type=application/zip' \
             -F 'fileBundle=@Clangen_macOS64.dmg.zip.sig'
-          curl -X 'POST' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Confirm' \
-            -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
-            -H 'accept: */*'
-      - name: Release 
+      - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: Clangen_macOS64.dmg
+  confirm_release_ubuntu_22_04:
+    runs-on: ubuntu-22.04
+    needs:
+      - build_ubuntu_20_04
+      - build_ubuntu_22_04
+      - build_win32
+      - build_win64
+      - build_win64_py311
+      - build_macos64
+    steps:
+      name: Confirm release
+      run: |
+        curl -X 'POST' \
+          'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Confirm' \
+          -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
+          -H 'accept: */*'
