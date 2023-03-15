@@ -189,7 +189,7 @@
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": "p_l hisses at StarClan for the sign, refusing to follow it to it's source, and what might have been.",
-    "antagonize_fail_text": "p_l begrudgingly follows the sound, only to fing the bodies of a unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, they return home, their mind clouded."
+    "antagonize_fail_text": "p_l begrudgingly follows the sound, only to find the bodies of a unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, they return home, their mind clouded."
 },
 {
     "patrol_id": "gen_med_rescue10",
@@ -211,7 +211,7 @@
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": "p_l hisses at StarClan for the sign, refusing to follow it to it's source, and what might have been.",
-    "antagonize_fail_text": "p_l begrudgingly follows the sound, only to fing the bodies of a unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, they return home, their mind clouded."
+    "antagonize_fail_text": "p_l begrudgingly follows the sound, only to find the bodies of a unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, they return home, their mind clouded."
 },
 {
     "patrol_id": "gen_med_rescue11",
@@ -233,7 +233,7 @@
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": "p_l hisses at StarClan for the sign, refusing to follow it to it's source, and what might have been.",
-    "antagonize_fail_text": "p_l begrudgingly follows the sound, only to fing the bodies of a unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, they return home, their mind clouded."
+    "antagonize_fail_text": "p_l begrudgingly follows the sound, only to find the bodies of a unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, they return home, their mind clouded."
 },
 {
     "patrol_id": "gen_med_rescue12",
@@ -255,7 +255,7 @@
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": "p_l hisses at StarClan for the sign, refusing to follow it to it's source, and what might have been.",
-    "antagonize_fail_text": "p_l begrudgingly follows the sound, only to fing the bodies of a unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, they return home, their mind clouded."
+    "antagonize_fail_text": "p_l begrudgingly follows the sound, only to find the bodies of a unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, they return home, their mind clouded."
 },
 {
     "patrol_id": "gen_med_rescuesoloapp3",
@@ -277,7 +277,7 @@
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": "p_l hisses at StarClan for the sign, refusing to follow it to it's source, and what might have been.",
-    "antagonize_fail_text": "p_l begrudgingly follows the sound, only to fing the bodies of a unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, they return home, their mind clouded."
+    "antagonize_fail_text": "p_l begrudgingly follows the sound, only to find the bodies of a unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, they return home, their mind clouded."
 },
 {
     "patrol_id": "gen_med_rescuesoloapp4",
@@ -299,7 +299,7 @@
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": "p_l hisses at StarClan for the sign, refusing to follow it to it's source, and what might have been.",
-    "antagonize_fail_text": "p_l begrudgingly follows the sound, only to fing the bodies of a unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, they return home, their mind clouded."
+    "antagonize_fail_text": "p_l begrudgingly follows the sound, only to find the bodies of a unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, they return home, their mind clouded."
 },
 {
     "patrol_id": "gen_bord_curiouskittypet1",
