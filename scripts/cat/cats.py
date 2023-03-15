@@ -14,7 +14,7 @@ except ImportError:
 
 from .pelts import describe_color
 from .names import Name
-from .thoughts import get_thoughts
+from .thoughts import create_thoughts, cats_fulfill_thought_constraints, load_thoughts
 from .appearance_utility import (
     init_pelt,
     init_tint,
@@ -956,6 +956,7 @@ class Cat():
         """ Generates a thought for the cat, which displays on their profile. """
         all_cats = self.all_cats
         other_cat = random.choice(list(all_cats.keys()))
+        game_mode = game.clan.game_mode
 
         # get other cat
         i = 0
@@ -969,8 +970,13 @@ class Cat():
         other_cat = all_cats.get(other_cat)
             
         # get possible thoughts
-        thought_possibilities = get_thoughts(self, other_cat)
-        chosen_thought = random.choice(thought_possibilities)
+        filtered_thoughts = []
+        thought_possibilities = load_thoughts(self.age)
+        for thought in thought_possibilities:
+            if cats_fulfill_thought_constraints(self, other_cat, thought, game_mode):
+                filtered_thoughts.append(thought)
+
+        chosen_thought = choice(filtered_thoughts)
 
         # insert name if it is needed
         if "r_c" in chosen_thought:
