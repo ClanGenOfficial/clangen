@@ -297,7 +297,7 @@
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": "r_c can sense it's a trap, and waits just outside, setting their own trap. They manage to set up such a yowl that it sends the rogues running as if LionClan were after them.",
-    "antagonize_fail_text": "r_c can sense its a trap, and tries to get the upper paw, only to find rogues waiting for them there too. r_c hopes they'll make it to StarClan",
+    "antagonize_fail_text": "r_c can sense its a trap, and tries to get the upper paw, only to find rogues waiting for them there too. r_c escapes with their life, but fear in their heart.",
     "history_text": [
         null,
         "This cat died in an ambush set by rogues.",
