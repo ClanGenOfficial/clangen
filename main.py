@@ -33,6 +33,7 @@ if os.path.exists("auto-updated"):
     os.remove("auto-update")
     print("Deleting powershell script")
     os.remove("../clangen_update_script.ps1")
+    os.remove("auto-updated")
     print("Update Complete!")
     print("New version: " + get_version_info())
 
