@@ -13,7 +13,8 @@
             "group": {
                 "setting name": [
                     "display name",
-                    "tooltip"
+                    "tooltip",
+                    "default"
                 ]
             }
         }
@@ -27,81 +28,113 @@
     "general": {
         "dark mode": [
             "Dark Mode",
-            "Camp backgrounds will match with the mode: nighttime for Dark mode and daytime for Light mode."
+            "Camp backgrounds will match with the mode: nighttime for Dark mode and daytime for Light mode.",
+            false
         ],
         "custom cursor": [
             "Custom Cursor",
-            "The cursor will be replaced with a cat paw."
+            "The cursor will be replaced with a cat paw.",
+            false
         ],
         "backgrounds": [
             "Enable Clan page background",
-            "Even with this off, the camp you choose will still affect the events you encounter."
+            "Even with this off, the camp you choose will still affect the events you encounter.",
+            true
         ],
         "autosave": [
             "Automatically save every five moons",
-            "Automatically save every five moons."
+            "Automatically save every five moons.",
+            false
         ],
         "disasters": [
             "Allow mass extinction events",
-            "This may result in up to 1/3rd of your Clan dying in one moon."
+            "This may result in up to 1/3rd of your Clan dying in one moon.",
+            false
         ],
         "retirement": [
             "Cats will never retire due to a permanent condition",
-            "When this setting is off, cats with permanent conditions will choose whether or not they want to retire."
+            "When this setting is off, cats with permanent conditions will choose whether or not they want to retire.",
+            false
         ],
         "shaders": [
             "Enable Shaders",
-            "This will add a shading layer onto the cat sprites."
+            "This will add a shading layer onto the cat sprites.",
+            false
         ],
         "deputy": [
             "Allow leaders to automatically choose a new deputy",
-            "The warrior code rules will be taken into account when choosing a deputy."
+            "The warrior code rules will be taken into account when choosing a deputy.",
+            false
         ],
         "fading": [
             "Allow dead cats to fade away",
-            "After 202 moons, dead cats will be unloaded, and saved separately. No family relations will be lost."
+            "After 202 moons, dead cats will be unloaded, and saved separately. No family relations will be lost.",
+            true
         ],
         "save_faded_copy": [
             "Save a complete copy of faded cats information",
-            "A complete copy of faded cat save info will be saved in plain-text."
+            "A complete copy of faded cat save info will be saved in plain-text.",
+            false
         ],
         "become_mediator": [
             "Allow warriors and elders to choose to become mediators",
-            "Warriors and elders will have a chance to become mediators upon timeskip."
+            "Warriors and elders will have a chance to become mediators upon timeskip.",
+            false
         ],
         "gore": [
             "Allow mild gore and blood in patrol artwork",
-            "Mild gore and blood will be allowed in the artwork displayed alongside patrols."
+            "Mild gore and blood will be allowed in the artwork displayed alongside patrols.",
+            false
         ],
         "discord": [
             "Enable Discord integration",
-            "Discord will show info about your clan, including your Clan name"
+            "Discord will show info about your clan, including your Clan name",
+            false
+        ],
+        "showxp": [
+            "Show exact XP",
+            "Will turn experience: proficient into experience: proficient (151)",
+            false
         ]
     },
     "relation": {
         "random relation": [
             "Randomize relationship values when creating clan",
-            "Clan founder cats will start the game with established relationships."
+            "Clan founder cats will start the game with established relationships.",
+            true
         ],
         "affair": [
             "Allow affairs and mate switches based on relationships",
-            "Cats may have kits before mating regardless of the Un-mated Cat Offspring setting."
+            "Cats may have kits before mating regardless of the Un-mated Cat Offspring setting.",
+            false
         ],
         "no gendered breeding": [
             "Allow same-sex breeding",
-            "Allow couples to birth kittens despite same-sex status"
+            "Allow couples to birth kittens despite same-sex status",
+            false
         ],
         "no unknown fathers": [
             "Allow unmated cats to have offspring",
-            "This setting will not affect the Affairs setting."
+            "This setting will not affect the Affairs setting.",
+            false
         ],
         "romantic with former mentor": [
             "Allow romantic interactions with former mentors",
-            "Allows mentors and the cats they trained to be romantic after they become warriors"
+            "Allows mentors and the cats they trained to be romantic after they become warriors",
+            true
         ],
         "first_cousin_mates": [
             "Allow first cousins to be mates and have romantic interactions",
-            "Allows cats with the same grandparents but different parents to become mates"
+            "Allows cats with the same grandparents but different parents to become mates",
+            true
         ]
+    },
+
+
+    "..": "these are special. they do not have a display name or a tooltip",
+    "__other": {
+        "language": ["english", "spanish", "german"],
+        "game_mode": ["classic", "expanded", "cruel season"],
+        "text size": ["0", "1", "2"]
     }
 }

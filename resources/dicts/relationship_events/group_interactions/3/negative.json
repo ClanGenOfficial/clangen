@@ -103,7 +103,7 @@
 	{
 		"id": "group_3_leader_neg2",
 		"cat_amount": 3,
-		"interactions": ["m_c and r_c1 are where they should put their border marks that r_c2 overheards and disagrees with because it isn't right. m_c and r_c1 sneer at them."],
+		"interactions": ["m_c and r_c1 are where they should put their border marks that r_c2 overheards and disagrees with. m_c and r_c1 sneer at r_c2."],
 		"status_constraint": {
 			"m_c": [
 				"leader"
@@ -117,8 +117,7 @@
 			]
 		},
 		"trait_constraint": {
-			"m_c": ["bloodthirsty", "vengeful", "fierce", "bold"],
-			"r_c2": ["responsible", "righteous", "wise"]
+			"m_c": ["bloodthirsty", "vengeful", "fierce", "bold"]
 		},
 		"specific_reaction": {
 			"m_c_to_r_c1": {
