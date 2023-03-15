@@ -163,8 +163,8 @@
     "fail_trait": ["daring", "bold", "ambitious"],
     "min_cats": 1,
     "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
+    "antagonize_text": "p_l goes to check the bush and finds a kittypet cowering inside. p_l scratches its ears off and sends it on it's way.",
+    "antagonize_fail_text": "p_l finds a gang of rogues in the bush! p_l has to turn tail and run, the sound of gloating the last thing in p_l's ears, hearing how little the rogues think of c_n.",
     "history_text": [
             "p_l gained a scar after tussling with a rogue.",
             "p_l was killed by a rogue.",
@@ -190,8 +190,8 @@
 
     "min_cats": 2,
     "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
+    "antagonize_text": "p_l hisses at StarClan for the sign, refusing to follow it to it's source, and what might have been.",
+    "antagonize_fail_text": "p_l begrudgingly follows the sound, only to find the bodies of a unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, they return home, their mind clouded."
 },
 {
     "patrol_id": "gen_med_rescue6",
@@ -212,8 +212,8 @@
 
     "min_cats": 2,
     "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
+    "antagonize_text": "p_l hisses at StarClan for the sign, refusing to follow it to it's source, and what might have been.",
+    "antagonize_fail_text": "p_l begrudgingly follows the sound, only to find the bodies of a unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, they return home, their mind clouded."
 },
 {
     "patrol_id": "gen_med_rescue7",
@@ -234,8 +234,8 @@
 
     "min_cats": 1,
     "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
+    "antagonize_text": "p_l hisses at StarClan for the sign, refusing to follow it to it's source, and what might have been.",
+    "antagonize_fail_text": "p_l begrudgingly follows the sound, only to find the bodies of a unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, they return home, their mind clouded."
 },
 {
     "patrol_id": "gen_med_rescue8",
@@ -256,8 +256,8 @@
 
     "min_cats": 1,
     "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
+    "antagonize_text": "p_l hisses at StarClan for the sign, refusing to follow it to it's source, and what might have been.",
+    "antagonize_fail_text": "p_l begrudgingly follows the sound, only to find the bodies of a unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, they return home, their mind clouded."
 },
 {
     "patrol_id": "gen_med_rescuesoloapp_hostile1",
@@ -278,8 +278,8 @@
 
     "min_cats": 1,
     "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
+    "antagonize_text": "p_l hisses at StarClan for the sign, refusing to follow it to it's source, and what might have been.",
+    "antagonize_fail_text": "p_l begrudgingly follows the sound, only to find the bodies of a unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, they return home, their mind clouded."
 },
 {
     "patrol_id": "gen_med_rescuesoloapp_hostile2",
@@ -300,7 +300,7 @@
 
     "min_cats": 1,
     "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
+    "antagonize_text": "p_l hisses at StarClan for the sign, refusing to follow it to it's source, and what might have been.",
+    "antagonize_fail_text": "p_l begrudgingly follows the sound, only to find the bodies of a unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, they return home, their mind clouded."
 }
 ]

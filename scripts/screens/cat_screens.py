@@ -952,6 +952,9 @@ class ProfileScreen(Screens):
 
         # EXPERIENCE
         output += 'experience: ' + str(the_cat.experience_level)
+
+        if game.settings['showxp']:
+            output += ' (' + str(the_cat.experience) + ')'
         # NEWLINE ----------
         output += "\n"
 
