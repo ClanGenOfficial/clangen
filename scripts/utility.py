@@ -5,7 +5,7 @@ TODO: Docs
 
 
 """  # pylint: enable=line-too-long
-
+import sys
 from random import choice, choices, randint, random, sample
 import pygame
 from scripts.cat.names import names
@@ -1214,7 +1214,7 @@ def quit(savesettings=False, clearevents=False):
     pygame.quit()
     if game.rpc.is_alive():
         game.rpc.join(1)
-    exit()
+    sys.exit()
 
 
 PERMANENT = None
