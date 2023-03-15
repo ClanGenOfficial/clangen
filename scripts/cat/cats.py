@@ -971,7 +971,7 @@ class Cat():
             
         # get possible thoughts
         filtered_thoughts = []
-        thought_possibilities = load_thoughts(self.age)
+        thought_possibilities = load_thoughts(self, other_cat, self.age)
         for thought in thought_possibilities:
             if cats_fulfill_thought_constraints(self, other_cat, thought, game_mode):
                 filtered_thoughts.append(thought)
