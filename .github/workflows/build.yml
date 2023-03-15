@@ -319,7 +319,7 @@ jobs:
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*'
           curl -X 'PUT' \
-            'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Artifacts/win64_win10+' \
+            'https://clangen.archanyhm.dev/api/v1/Update/Channels/development-test/Releases/${{ github.sha }}/Artifacts/win10+' \
             -H 'X-API-Key: ${{ secrets.UPDATE_API_DEPLOY_KEY }}' \
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
