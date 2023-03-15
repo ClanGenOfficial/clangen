@@ -12,7 +12,7 @@ try:
 except ImportError:
     import json as ujson
 
-from .pelts import describe_color
+from .pelts import describe_color, descibe_short_color
 from .names import Name
 from .thoughts import get_thoughts
 from .appearance_utility import (
@@ -872,18 +872,23 @@ class Cat():
                         else:
                             self.trait = chosen_trait
 
-    def describe_cat(self):
+    def describe_cat(self, short=False):
         """ Generates a string describing the cat's appearance and gender. Mainly used for generating
-        the allegiances."""
+        the allegiances. If short is true, it will generate a very short one, with the minimal amount of information. """
+
         if self.genderalign == 'male' or self.genderalign == "transmasc" or self.genderalign == "trans male":
             sex = 'tom'
         elif self.genderalign == 'female' or self.genderalign == "transfem" or self.genderalign == "trans female":
             sex = 'she-cat'
         else:
             sex = 'cat'
-        description = str(self.pelt.length).lower() + '-furred'
-        description += ' ' + describe_color(self.pelt, self.tortiecolour, self.tortiepattern,
-                                            self.white_patches) + ' ' + sex
+
+        if short:
+            description = descibe_short_color(self.pelt, self.white_patches) + " " + sex
+        else:
+            description = str(self.pelt.length).lower() + '-furred'
+            description += ' ' + describe_color(self.pelt, self.tortiecolour, self.tortiepattern,
+                                                self.white_patches) + ' ' + sex
         return description
 
     def describe_eyes(self):

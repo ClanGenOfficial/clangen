@@ -473,24 +473,59 @@ def choose_pelt(colour=None, white=None, pelt=None, length=None, category=None, 
     else:
         return Calico(colour, length)
 
+def descibe_short_color(pelt, white_patches):
+    """Shortened"""
+    special_color_names = {
+        "palegrry": "pale gray",
+        "darkgrey": "dark gray",
+        "paleginger": "pale ginger",
+        "darkginger": "dark ginger",
+        "lightbrown": "light brown",
+        "darkbrown": "dark brown"
+    }
+
+    color_name = str(pelt.colour).lower()
+    
+    if color_name in special_color_names:
+        color_name = special_color_names[color_name]
+
+    if pelt.name in tabbies + exotic:
+        color_name += " tabby"
+    elif pelt.name in spotted:
+        color_name += " spotted"
+    elif pelt.name == "Calico":
+        color_name = "calico"
+    elif pelt.name == "Tortie":
+        color_name = "tortoiseshell"
+
+    if white_patches == 'FULLWHITE':
+        color_name = "white"
+    elif white_patches:
+        if white_patches in point_markings:
+            color_name += " pointed"
+        elif pelt.name != "Calico":
+            color_name += " and white"
+    
+    return color_name
+
+
 
 def describe_color(pelt, tortiecolour, tortiepattern, white_patches):
-    color_name = ''
+    
+    special_color_names = {
+        "palegrry": "pale gray",
+        "darkgrey": "dark gray",
+        "paleginger": "pale ginger",
+        "darkginger": "dark ginger",
+        "lightbrown": "light brown",
+        "darkbrown": "dark brown"
+    }
+
     color_name = str(pelt.colour).lower()
-    if tortiecolour is not None:
-        color_name = str(tortiecolour).lower()
-    if color_name == 'palegrey':
-        color_name = 'pale grey'
-    elif color_name == 'darkgrey':
-        color_name = 'dark grey'
-    elif color_name == 'paleginger':
-        color_name = 'pale ginger'
-    elif color_name == 'darkginger':
-        color_name = 'dark ginger'
-    elif color_name == 'lightbrown':
-        color_name = 'light brown'
-    elif color_name == 'darkbrown':
-        color_name = 'dark brown'
+    
+    if color_name in special_color_names:
+        color_name = special_color_names[color_name]
+    
     if pelt.name == "Tabby":
         color_name = color_name + ' tabby'
     elif pelt.name == "Speckled":
@@ -514,19 +549,23 @@ def describe_color(pelt, tortiecolour, tortiepattern, white_patches):
     elif pelt.name == "Agouti":
         color_name = color_name + ' agouti'
     elif pelt.name == "Singlestripe":
-        color_name = color_name + ', with a dorsal stripe,'
+        color_name = 'dorsal-striped' + color_name
 
-    elif pelt.name == "Tortie":
-        if tortiepattern not in ["tortiesolid", "tortiesmoke"]:
-            color_name = color_name + ' torbie'
-        else:
-            color_name = color_name + ' tortie'
-    elif pelt.name == "Calico":
-        if tortiepattern not in ["tortiesolid", "tortiesmoke"]:
-            color_name = color_name + ' tabico'
-        else:
+    elif pelt.name in ["Tortie", "Calcio"]:
+        second_color = tortiecolour.lower()
+        if second_color in special_color_names:
+            second_color = special_color_names[second_color]
+
+        color_name = f"{color_name} and {second_color} "
+        
+        if pelt.name == "Tortie":
+            if tortiepattern not in ["single", "smoke"]:
+                color_name = color_name + ' torbie'
+            else:
+                color_name = color_name + ' tortie'
+        elif pelt.name == "Calico":
             color_name = color_name + ' calico'
-    # enough to comment but not make calico
+  
     if white_patches is not None:
         if white_patches in little_white + mid_white:
             color_name = color_name + ' and white'
@@ -545,8 +584,6 @@ def describe_color(pelt, tortiecolour, tortiepattern, white_patches):
         # vitiligo
         elif white_patches in vit:
             color_name = color_name + ' with vitiligo'
-    else:
-        color_name = color_name
 
     if color_name == 'tortie':
         color_name = 'tortoiseshell'
