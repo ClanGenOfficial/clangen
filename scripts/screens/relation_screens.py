@@ -249,12 +249,14 @@ class ChooseMentorScreen(Screens):
                 self.next_cat = 1
 
             if self.next_cat == 0 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead and \
-                    check_cat.ID != game.clan.instructor.ID and not check_cat.exiled and check_cat.mentor is not None \
+                    check_cat.ID != game.clan.instructor.ID and not check_cat.exiled and check_cat.status in \
+                    ["apprentice", "medicine cat apprentice", "mediator apprentice"] \
                     and check_cat.df == self.the_cat.df:
                 self.previous_cat = check_cat.ID
 
             elif self.next_cat == 1 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead and \
-                    check_cat.ID != game.clan.instructor.ID and not check_cat.exiled and check_cat.mentor is not None \
+                    check_cat.ID != game.clan.instructor.ID and not check_cat.exiled and check_cat.status in \
+                    ["apprentice", "medicine cat apprentice", "mediator apprentice"] \
                     and check_cat.df == self.the_cat.df:
                 self.next_cat = check_cat.ID
 
@@ -932,11 +934,11 @@ class ChooseMateScreen(Screens):
 
     def screen_switches(self):
         """Sets up the elements that are always on the page"""
-        self.info = UITextBoxTweaked("If the cat has chosen a mate, they will stay loyal and not have kittens "
-                                     "with anyone else, even when having kittens in their relationship is "
-                                     "impossible. However, their chance of having kittens is heightened, "
-                                     "when possible. If affairs are toggled on, the cats may not be loyal "
-                                     "in their relationships. ", scale(pygame.Rect((360, 120), (880, 200))),
+        self.info = UITextBoxTweaked("If a cat has a mate, then they will be loyal and only have kittens with their mate"
+                                     " (unless affairs are toggled on.) Potential mates are listed below! The lines "
+                                     "connecting the two cats may give a hint on their compatibility with one another "
+                                     "and any existing romantic feelings will be shown with a small heart.",
+                                     scale(pygame.Rect((360, 120), (880, 200))),
                                      object_id=get_text_box_theme("#cat_patrol_info_box"), line_spacing=0.95)
 
         self.the_cat_frame = pygame_gui.elements.UIImage(scale(pygame.Rect((80, 226), (532, 394))),
@@ -2660,7 +2662,7 @@ class MediationScreen(Screens):
 
             # COMFORTABLE
             if the_relationship.comfortable > 49:
-                text = "secure:"
+                text = "security:"
             else:
                 text = "comfortable:"
             self.selected_cat_elements[f'comfortable_text{tag}'] = pygame_gui.elements.UITextBox(text, scale(pygame.Rect(

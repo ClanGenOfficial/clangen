@@ -32,132 +32,12 @@ from .pelts import (
     white_colours,
     wild_accessories,
     yellow_eyes,
+    pelt_colours,
+    tortiepatterns,
     )
-
 from scripts.cat.sprites import Sprites
 from scripts.game_structure.game_essentials import game
 
-# ---------------------------------------------------------------------------- #
-#                               utility functions                              #
-# ---------------------------------------------------------------------------- #
-
-def plural_acc_names(accessory, plural, singular):
-    acc_display = accessory.lower()
-    if acc_display == 'maple leaf':
-        if plural:
-            acc_display = 'maple leaves'
-        if singular:
-            acc_display = 'maple leaf'
-    elif acc_display == 'holly':
-        if plural:
-            acc_display = 'holly berries'
-        if singular:
-            acc_display = 'holly berry'
-    elif acc_display == 'blue berries':
-        if plural:
-            acc_display = 'blueberries'
-        if singular:
-            acc_display = 'blueberry'
-    elif acc_display == 'forget me nots':
-        if plural:
-            acc_display = 'forget me nots'
-        if singular:
-            acc_display = 'forget me not flower'
-    elif acc_display == 'rye stalk':
-        if plural:
-            acc_display = 'rye stalks'
-        if singular:
-            acc_display = 'rye stalk'
-    elif acc_display == 'laurel':
-        if plural:
-            acc_display = 'laurel'
-        if singular:
-            acc_display = 'laurel plant'
-    elif acc_display == 'bluebells':
-        if plural:
-            acc_display = 'bluebells'
-        if singular:
-            acc_display = 'bluebell flower'
-    elif acc_display == 'nettle':
-        if plural:
-            acc_display = 'nettles'
-        if singular:
-            acc_display = 'nettle'
-    elif acc_display == 'poppy':
-        if plural:
-            acc_display = 'poppies'
-        if singular:
-            acc_display = 'poppy flower'
-    elif acc_display == 'lavender':
-        if plural:
-            acc_display = 'lavender'
-        if singular:
-            acc_display = 'lavender flower'
-    elif acc_display == 'herbs':
-        if plural:
-            acc_display = 'herbs'
-        if singular:
-            acc_display = 'herb'
-    elif acc_display == 'petals':
-        if plural:
-            acc_display = 'petals'
-        if singular:
-            acc_display = 'petal'
-    elif acc_display == 'dry herbs':
-        if plural:
-            acc_display = 'dry herbs'
-        if singular:
-            acc_display = 'dry herb'
-    elif acc_display == 'oak leaves':
-        if plural:
-            acc_display = 'oak leaves'
-        if singular:
-            acc_display = 'oak leaf'
-    elif acc_display == 'catmint':
-        if plural:
-            acc_display = 'catnip'
-        if singular:
-            acc_display = 'catnip sprig'
-    elif acc_display == 'maple seed':
-        if plural:
-            acc_display = 'maple seeds'
-        if singular:
-            acc_display = 'maple seed'
-    elif acc_display == 'juniper':
-        if plural:
-            acc_display = 'juniper berries'
-        if singular:
-            acc_display = 'juniper berry'
-    elif acc_display == 'red feathers':
-        if plural:
-            acc_display = 'cardinal feathers'
-        if singular:
-            acc_display = 'cardinal feather'
-    elif acc_display == 'blue feathers':
-        if plural:
-            acc_display = 'crow feathers'
-        if singular:
-            acc_display = 'crow feather'
-    elif acc_display == 'jay feathers':
-        if plural:
-            acc_display = 'jay feathers'
-        if singular:
-            acc_display = 'jay feather'
-    elif acc_display == 'moth wings':
-        if plural:
-            acc_display = 'moth wings'
-        if singular:
-            acc_display = 'moth wing'
-    elif acc_display == 'cicada wings':
-        if plural:
-            acc_display = 'cicada wings'
-        if singular:
-            acc_display = 'cicada wing'
-
-    if plural is True and singular is False:
-        return acc_display
-    elif singular is True and plural is False:
-        return acc_display
 
 # ---------------------------------------------------------------------------- #
 #                                init functions                                #
@@ -539,56 +419,59 @@ def init_pattern(cat):
     if cat.pelt is None:
         init_pelt(cat)
     if cat.pelt.name in torties:
-        cat.tortiecolour = cat.pelt.colour
-        if cat.tortiebase is None:
+        if not cat.tortiebase:
             cat.tortiebase = choice(tortiebases)
-        if cat.tortiebase == 'tabby':
-            cat.tortiepattern = 'tortietabby'
-        elif cat.tortiebase == 'bengal':
-            cat.tortiepattern = 'tortiebengal'
-        elif cat.tortiebase == 'marbled':
-            cat.tortiepattern = 'tortiemarbled'
-        elif cat.tortiebase == 'ticked':
-            cat.tortiepattern = 'tortieticked'
-        elif cat.tortiebase == 'rosette':
-            cat.tortiepattern = 'tortierosette'
-        elif cat.tortiebase == 'smoke':
-            cat.tortiepattern = 'tortiesmoke'
-        elif cat.tortiebase == 'speckled':
-            cat.tortiepattern = 'tortiespeckled'
-        elif cat.tortiebase == 'mackerel':
-            cat.tortiepattern = 'tortiemackerel'
-        elif cat.tortiebase == 'classic':
-            cat.tortiepattern = 'tortieclassic'
-        elif cat.tortiebase == 'sokoke':
-            cat.tortiepattern = 'tortiesokoke'
-        elif cat.tortiebase == 'agouti':
-            cat.tortiepattern = 'tortieagouti'
-        else:
-            cat.tortiepattern = choice(['tortietabby', 'tortiemackerel', 'tortieclassic'])
+        if not cat.pattern:
+            cat.pattern = choice(tortiepatterns)
 
+        wildcard_chance = game.config["cat_generation"]["wildcard_tortie"]
+        if cat.pelt.colour:
+            # The "not wildcard_chance" allows users to set wildcard_tortie to 0
+            # and always get wildcard torties.
+            if not wildcard_chance or random.getrandbits(wildcard_chance) == 1:
+                # This is the "wildcard" chance, where you can get funky combinations.
+                print("WILDCARD TORTIE")
+
+                # Allow any pattern:
+                cat.tortiepattern = choice(tortiebases)
+
+                # Allow any colors that aren't the base color.
+                possible_colors = pelt_colours.copy()
+                possible_colors.remove(cat.pelt.colour)
+                cat.tortiecolour = choice(possible_colors)
+
+            else:
+                # Normal generation
+                if cat.tortiebase in ["singlestripe", "smoke", "single"]:
+                    cat.tortiepattern = choice(['tabby', 'mackerel', 'classic', 'single', 'smoke', 'agouti',
+                                                'ticked'])
+                else:
+                    cat.tortiepattern = random.choices([cat.tortiebase, 'single'], weights=[97, 3], k=1)[0]
+
+                if cat.pelt.colour == "WHITE":
+                    possible_colors = white_colours.copy()
+                    possible_colors.remove("WHITE")
+                    cat.pelt.colour = choice(possible_colors)
+
+                # Ginger is often duplicated to increase its chances
+                if (cat.pelt.colour in black_colours) or (cat.pelt.colour in white_colours):
+                    cat.tortiecolour = choice((ginger_colours * 2) + brown_colours)
+                elif cat.pelt.colour in ginger_colours:
+                    cat.tortiecolour = choice(brown_colours + black_colours * 2)
+                elif cat.pelt.colour in brown_colours:
+                    possible_colors = brown_colours.copy()
+                    possible_colors.remove(cat.pelt.colour)
+                    possible_colors.extend(black_colours + (ginger_colours * 2))
+                    cat.tortiecolour = choice(possible_colors)
+                else:
+                    cat.tortiecolour = "GOLDEN"
+
+        else:
+            cat.tortiecolour = "GOLDEN"
     else:
         cat.tortiebase = None
         cat.tortiepattern = None
         cat.tortiecolour = None
-
-    if cat.pelt.name in torties and cat.pelt.colour is not None:
-        if cat.pelt.colour in black_colours:
-            cat.pattern = choice(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR', 'GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR',
-                                    'DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR'])
-        elif cat.pelt.colour in brown_colours:
-            cat.pattern = choice(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR', 'GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR',
-                                  "DARKONE", "DARKTWO", "DARKTHREE", "DARKFOUR"])
-        elif cat.pelt.colour in white_colours:
-            cat.pattern = choice(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR', 'CREAMONE', 'CREAMTWO', 'CREAMTHREE', 'CREAMFOUR'])
-        elif cat.pelt.colour in ['DARKGINGER', "GINGER"]:
-            cat.pattern = choice(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR', 'CREAMONE', 'CREAMTWO', 'CREAMTHREE',
-                                  'CREAMFOUR'])
-        elif cat.pelt.colour in ["CREAM", "GOLDEN", "PALEGINGER"]:
-            cat.pattern = choice(['DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR'])
-        else:
-            cat.pattern = "GOLDONE"
-    else:
         cat.pattern = None
 
 
@@ -704,10 +587,29 @@ def init_white_patches(cat):
 
 
 def init_tint(cat):
+    """Sets tint for pelt and white patches"""
+
     # Basic tints as possible for all colors.
     possible_tints = Sprites.cat_tints["possible_tints"]["basic"].copy()
     if cat.pelt.colour in Sprites.cat_tints["colour_groups"]:
         color_group = Sprites.cat_tints["colour_groups"][cat.pelt.colour]
         possible_tints += Sprites.cat_tints["possible_tints"][color_group]
         cat.tint = choice(possible_tints)
+    else:
+        cat.tint = "none"
+
+    # These are the patches where the tint should always be none
+    no_tint_patches = ['SEPIAPOINT', 'MINKPOINT', 'SEALPOINT'] + vit
+
+    if cat.white_patches and cat.white_patches not in no_tint_patches:
+        #Now for white patches
+        possible_tints = Sprites.white_patches_tints["possible_tints"]["basic"].copy()
+        if cat.pelt.colour in Sprites.cat_tints["colour_groups"]:
+            color_group = Sprites.white_patches_tints["colour_groups"][cat.pelt.colour]
+            possible_tints += Sprites.white_patches_tints["possible_tints"][color_group]
+            cat.white_patches_tint = choice(possible_tints)
+        else:
+            cat.white_patches_tint = "none"
+    else:
+        cat.white_patches_tint = "none"
 

@@ -1369,6 +1369,29 @@
             "poppy",
             "juniper"
         ]
+    },
+    "pregnant": {
+        "duration": 2,
+        "severity": "major",
+        "medicine_duration": 3,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 40,
+            "adult": 40,
+            "senior adult": 30,
+            "elder": 20
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+        ],
+        "also_got": [
+        ],
+        "cause_permanent": [
+        ],
+        "herbs": [
+        ]
     }
 }
 

@@ -1,12 +1,14 @@
 import os
 from math import floor
 from .game_essentials import game
+from ..datadir import get_save_dir
 
 try:
     import ujson
 except ImportError:
     import json as ujson
 
+from re import sub
 from scripts.cat.cats import Cat
 from scripts.cat.pelts import choose_pelt
 from scripts.utility import update_sprite
@@ -21,8 +23,9 @@ def load_cats():
     except FileNotFoundError:
         try:
             csv_load(Cat.all_cats)
-        except FileNotFoundError:
+        except FileNotFoundError as e:
             game.switches['error_message'] = 'Can\'t find clan_cats.json!'
+            game.switches['traceback'] = e
             raise
 
 def json_load():
@@ -30,15 +33,51 @@ def json_load():
     cat_data = None
     clanname = game.switches['clan_list'][0]
     try:
-        with open('saves/' + clanname + '/clan_cats.json', 'r') as read_file:
+        with open(get_save_dir() + '/' + clanname + '/clan_cats.json', 'r') as read_file:
             cat_data = ujson.loads(read_file.read())
-    except PermissionError:
+    except PermissionError as e:
         game.switches['error_message'] = f'Can\t open saves/{clanname}/clan_cats.json!'
+        game.switches['traceback'] = e
         raise
-    except JSONDecodeError:
-        game.switches['error_message'] = f'saves/{clanname}/clan_cats.json is malformed!'
+    except JSONDecodeError as e:
+        game.switches['error_message'] = get_save_dir() + f'/{clanname}/clan_cats.json is malformed!'
+        game.switches['traceback'] = e
         raise
         
+    old_tortie_patches = {
+        "PALEONE": ("PALEGINGER", "ONE"),
+        "PALETWO": ("PALEGINGER", "TWO"),
+        "PALETHREE": ("PALEGINGER", "THREE"),
+        "PALEFOUR": ("PALEGINGER", "FOUR"),
+        "GOLDONE": ("GOLDEN", "ONE"),
+        "GOLDTWO": ("GOLDEN", "TWO"),
+        "GOLDTHREE": ("GOLDEN", "THREE"),
+        "GOLDFOUR": ("GOLDEN", "FOUR"),
+        "GINGERONE": ("GINGER", "ONE"),
+        "GINGERTWO": ("GINGER", "TWO"),
+        "GINGERTHREE": ("GINGER", "THREE"),
+        "GINGERFOUR": ("GINGER", "FOUR"),
+        "DARKONE": ("DARKGINGER", "ONE"),
+        "DARKTWO": ("DARKGINGER", "TWO"),
+        "DARKTHREE": ("DARKGINGER", "THREE"),
+        "DARKFOUR": ("DARKGINGER", "FOUR"),
+        "CREAMONE": ("CREAM", "ONE"),
+        "CREAMTWO": ("CREAM", "TWO"),
+        "CREAMTHREE": ("CREAM", "THREE"),
+        "CREAMFOUR": ("CREAM", "FOUR")
+    }
+
+    old_creamy_patches = {
+        'COLOURPOINTCREAMY': 'COLOURPOINT',
+        'ANYCREAMY': 'ANY',
+        'ANY2CREAMY': 'ANY2',
+        'LITTLECREAMY': 'LITTLE',
+        'VANCREAMY': 'VAN',
+        'TUXEDOCREAMY': 'TUXEDO'
+    }
+
+    no_tint_patches = ['SEPIAPOINT', 'MINKPOINT', 'SEALPOINT']
+
     # create new cat objects
     for i, cat in enumerate(cat_data):
         try:
@@ -79,11 +118,42 @@ def json_load():
             new_cat.age_sprites['elder'] = cat["spirit_elder"]
             new_cat.eye_colour = cat["eye_colour"]
             new_cat.reverse = cat["reverse"]
-            new_cat.white_patches = cat["white_patches"]
-            new_cat.pattern = cat["pattern"]
+            
+            if cat["white_patches"] in old_creamy_patches:
+                new_cat.white_patches = old_creamy_patches[cat['white_patches']]
+                new_cat.white_patches_tint = "darkcream"
+            else:
+                new_cat.white_patches = cat["white_patches"]
+                if 'white_patches_tint' in cat:
+                    new_cat.white_patches_tint = cat['white_patches_tint']
+                else:
+                    if new_cat.white_patches in no_tint_patches:
+                        new_cat.white_patches_tint = "none"
+                    else:
+                        new_cat.white_patches_tint = "offwhite"
+
             new_cat.tortiebase = cat["tortie_base"]
-            new_cat.tortiecolour = cat["tortie_color"]
-            new_cat.tortiepattern = cat["tortie_pattern"]
+
+            if cat["tortie_pattern"] and "tortie" in cat["tortie_pattern"]:
+                new_cat.tortiepattern = sub("tortie", "", cat["tortie_pattern"]).lower()
+                if new_cat.tortiepattern == "solid":
+                    new_cat.tortiepattern = "single"
+            else:
+                new_cat.tortiepattern = cat["tortie_pattern"]
+
+            if cat["pattern"] in old_tortie_patches:
+                # Convert old torties
+                new_cat.pattern = old_tortie_patches[cat["pattern"]][1]
+                new_cat.tortiecolour = old_tortie_patches[cat["pattern"]][0]
+                # If the pattern is old, there is also a change the base color is stored in
+                # tortiecolour, and that may be different from the pelt color (main for torties
+                # generated before the "ginger-on-ginger" update. If it was generated after that update,
+                # tortiecolour and pelt_colour will be the same. Therefore, lets also re-set the pelt color
+                new_cat.pelt.colour = cat["tortie_color"]
+            else:
+                new_cat.pattern = cat["pattern"]
+                new_cat.tortiecolour = cat["tortie_color"]
+
             new_cat.skin = cat["skin"]
             new_cat.skill = cat["skill"]
             new_cat.scars = cat["scars"] if "scars" in cat else []
@@ -117,6 +187,7 @@ def json_load():
             new_cat.faded_offspring = cat["faded_offspring"] if "faded_offspring" in cat else []
             new_cat.opacity = cat["opacity"] if "opacity" in cat else 100
             new_cat.prevent_fading = cat["prevent_fading"] if "prevent_fading" in cat else False
+            new_cat.favourite = cat["favourite"] if "favourite" in cat else False
             new_cat.tint = cat["tint"] if "tint" in cat else "none"
             all_cats.append(new_cat)
         except KeyError as e:
@@ -125,6 +196,7 @@ def json_load():
             else: 
                 key = f" at index {i} "
             game.switches['error_message'] = f'Cat{key}in clan_cats.json is missing {e}!'
+            game.switches['traceback'] = e
             raise
 
     # replace cat ids with cat objects and add other needed variables
@@ -142,45 +214,6 @@ def json_load():
                 cat.create_all_relationships()
         else:
             cat.relationships = {}
-
-        """# replace mentor id with cat instance
-        mentor_relevant = list(
-            filter(lambda inter_cat: inter_cat.ID == cat.mentor, all_cats))
-        cat.mentor = None
-        if len(mentor_relevant) == 1:
-            cat.mentor = mentor_relevant[0]
-
-        if len(cat.former_mentor) > 0:
-            old_mentors = []
-            for cat_id in cat.former_mentor:
-                relevant_list = list(
-                    filter(lambda cat: cat.ID == cat_id, all_cats)
-                )
-                if len(relevant_list) > 0:
-                    old_mentors.append(relevant_list[0])
-            cat.former_mentor = old_mentors
-
-        # update the apprentice
-        if len(cat.apprentice) > 0:
-            new_apprentices = []
-            for cat_id in cat.apprentice:
-                relevant_list = list(
-                    filter(lambda cat: cat.ID == cat_id, all_cats))
-                if len(relevant_list) > 0:
-                    # if the cat can't be found, drop the cat_id
-                    new_apprentices.append(relevant_list[0])
-            cat.apprentice = new_apprentices
-
-        # update the apprentice
-        if len(cat.former_apprentices) > 0:
-            new_apprentices = []
-            for cat_id in cat.former_apprentices:
-                relevant_list = list(
-                    filter(lambda cat: cat.ID == cat_id, all_cats))
-                if len(relevant_list) > 0:
-                    # if the cat can't be found, drop the cat_id
-                    new_apprentices.append(relevant_list[0])
-            cat.former_apprentices = new_apprentices"""
 
         # get all the siblings ids and save them
         siblings = list(
@@ -209,13 +242,13 @@ def csv_load(all_cats):
     if game.switches['clan_list'][0].strip() == '':
         cat_data = ''
     else:
-        if os.path.exists('saves/' + game.switches['clan_list'][0] +
+        if os.path.exists(get_save_dir() + '/' + game.switches['clan_list'][0] +
                           'cats.csv'):
-            with open('saves/' + game.switches['clan_list'][0] + 'cats.csv',
+            with open(get_save_dir() + '/' + game.switches['clan_list'][0] + 'cats.csv',
                       'r') as read_file:
                 cat_data = read_file.read()
         else:
-            with open('saves/' + game.switches['clan_list'][0] + 'cats.txt',
+            with open(get_save_dir() + '/' + game.switches['clan_list'][0] + 'cats.txt',
                       'r') as read_file:
                 cat_data = read_file.read()
     if len(cat_data) > 0:

@@ -10,9 +10,9 @@
     "exp": 20,
     "success_text": [
             "app1 listens carefully as p_l explains where to find the best prey within the rich waters of the pools.",
-            "app1 picks up the instruction quicky and is soon hopping from pool to pool, picking out the tasty morsels within.",
+            "app1 picks up the instruction quickly and is soon hopping from pool to pool, picking out the tasty morsels within.",
             null,
-            "By the end of the patrol s_c is easily fishing fresh-kill out of the pools, not an ounce of hesitation in their movements."
+            "By the end of the patrol, s_c is easily fishing fresh-kill out of the pools with not an ounce of hesitation in their movements."
     ],
     "fail_text": [
             "app1 tries to remember the differences and nuances between the creatures within the pools, but fails to retain any of the information.",
@@ -46,7 +46,7 @@
             "Creeping in as close as possible, s_c purrs to their Clanmate, keeping them calm as the patrol carefully digs down to them."
     ],
     "fail_text": [
-            "The patrol works all day to free r_C and gets nothing else done.",
+            "The patrol works all day to free r_c and gets nothing else done.",
             "Harshly, s_c tells their Clanmate that they're on their own - this patrol is too important to wait for some idiot who got stuck in the sand.",
             "Hurt and wheezing, r_c hears the patrol panicking as they drift to StarClan.",
             "The patrol eventually manages to rescue r_c, but they need to be helped back to camp, battered and injured."
@@ -369,7 +369,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "app2 drapes themselves with a bunch of seaweed, and proclaims themselves clothed like a Twolegs. They chase after app1, who's not as keen to get seaweed slime all over themselves, and the two young cats play on the safe sands all afternoon.",
+            "app2 drapes themselves with a bunch of seaweed, and proclaims themselves clothed like a Twoleg. They chase after app1, who's not as keen to get seaweed slime all over themselves, and the two young cats play on the safe sands all afternoon.",
             "app1 finds a gigantic and flawless shell that's washed up on the beach with last night's tide and calls app2 over. Both apprentices startle backwards when a hermit crab starts scurrying away from them. They chase it, shouting joyfully, eyes wide and silly as the poor hermit crab has to wait until they finally get bored to escape.",
             null,
             "app1 finds a shell that shines with a brilliant internal sheen. Picking it up, they shyly present it to app2, wondering if app2 might like it for their nest. Blushing to the tips of their ears, app2 accepts their gift."
@@ -456,5 +456,31 @@
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_training_dolphinlore1",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["training", "platonic", "apprentice", "two_apprentices", "warrior", "patrol_to_p_l", "no_change_fail", "respect"],
+    "intro_text": "p_l sees a pod of dolphins swimming in the distance and considers it a good learning opportunity for the apprentices.",
+    "decline_text": "The weather is turning rough and p_l makes the decision to teach the apprentices about the dolphins another day. ",
+    "chance_of_success": 75,
+    "exp": 5,
+    "success_text": [
+    "p_l tells a mournful and haunting tale of all the cats that were swept out to sea and drowned before the dolphins took pity on one of them. p_l tells the apprentices that the tiny white and red cat that was saved made the first traditions and bonds with the dolphins and that both clan and dolphins wept at their death when it came.",
+    "p_l tells the apprentices about the red and white cat that was saved by the dolphins, they managed to keep afloat long enough for them to be saved by relaxing their entire body and floating on the waves."
+    ],
+    "fail_text": [
+    "A sudden storm cuts off p_l's words and the patrol sprints back to camp to get warm and dry."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 3,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 }
 ]
+

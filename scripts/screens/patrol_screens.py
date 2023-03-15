@@ -9,7 +9,8 @@ try:
 except ImportError:
     import json as ujson
 from .base_screens import Screens, cat_profiles
-from scripts.utility import get_text_box_theme, scale, get_personality_compatibility, check_relationship_value
+from scripts.utility import get_text_box_theme, scale, get_personality_compatibility, check_relationship_value, \
+    get_snippet_list
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked, UISpriteButton
 from scripts.patrol import patrol
 from scripts.cat.cats import Cat
@@ -40,6 +41,7 @@ class PatrolScreen(Screens):
 
     def __init__(self, name=None):
         super().__init__(name)
+        self.fav = {}
         self.normal_event_choice = None
         self.romantic_event_choice = None
         self.intro_image = None
@@ -106,17 +108,20 @@ class PatrolScreen(Screens):
             self.update_cat_images_buttons()
             self.update_button()
         elif event.ui_element == self.elements['add_one']:
-            self.selected_cat = choice(self.able_cats)
-            self.update_selected_cat()
-            self.current_patrol.append(self.selected_cat)
+            if len(self.current_patrol) < 6:
+                self.selected_cat = choice(self.able_cats)
+                self.update_selected_cat()
+                self.current_patrol.append(self.selected_cat)
             self.update_cat_images_buttons()
             self.update_button()
         elif event.ui_element == self.elements['add_three']:
-            self.current_patrol += sample(self.able_cats, k=3)
+            if len(self.current_patrol) <= 3:
+                self.current_patrol += sample(self.able_cats, k=3)
             self.update_cat_images_buttons()
             self.update_button()
         elif event.ui_element == self.elements['add_six']:
-            self.current_patrol += sample(self.able_cats, k=6)
+            if len(self.current_patrol) == 0:
+                self.current_patrol += sample(self.able_cats, k=6)
             self.update_cat_images_buttons()
             self.update_button()
         elif event.ui_element == self.elements['remove_all']:
@@ -218,12 +223,11 @@ class PatrolScreen(Screens):
             self.elements["random"].enable()
 
             # making sure meds don't get the option for other patrols
-            med = False
-            for cat in self.current_patrol:
-                if cat.status in ['medicine cat', 'medicine cat apprentice']:
-                    med = True
-                    self.patrol_type = 'med'
-
+            if any((cat.status in ['medicine cat', 'medicine cat apprentice'] for cat in self.current_patrol)):
+                self.patrol_type = 'med'
+            else:
+                if self.patrol_type == 'med':
+                    self.patrol_type = 'general'
 
             if game.clan.game_mode != 'classic':
                 self.elements['paw'].enable()
@@ -233,21 +237,21 @@ class PatrolScreen(Screens):
 
                 self.elements['info'].kill()  # clearing the text before displaying new text
 
-                if med is False and self.current_patrol:
+                if self.patrol_type != 'med' and self.current_patrol:
                     self.elements['herb'].disable()
                     if self.patrol_type == 'med':
                         self.patrol_type = 'general'
 
                 if self.patrol_type == 'general':
                     text = 'random patrol type'
-                elif self.patrol_type == 'training' and med is False:
+                elif self.patrol_type == 'training':
                     text = 'training'
-                elif self.patrol_type == 'border' and med is False:
+                elif self.patrol_type == 'border':
                     text = 'border'
-                elif self.patrol_type == 'hunting' and med is False:
+                elif self.patrol_type == 'hunting':
                     text = 'hunting'
                 elif self.patrol_type == 'med':
-                    if med is True and self.current_patrol:
+                    if self.current_patrol:
                         text = 'herb gathering'
                         self.elements['mouse'].disable()
                         self.elements['claws'].disable()
@@ -271,7 +275,7 @@ class PatrolScreen(Screens):
                 self.elements["random"].disable()
             if len(self.current_patrol) > 3 or len(self.able_cats) < 3:
                 self.elements['add_three'].disable()
-            if len(self.current_patrol) >= 1 or len(self.able_cats) < 6:
+            if len(self.current_patrol) > 0 or len(self.able_cats) < 6:
                 self.elements['add_six'].disable()
 
                 # Update the availability of the tab buttons
@@ -459,23 +463,22 @@ class PatrolScreen(Screens):
         other_clan_name = patrol.other_clan.name
         s = 0
         for x in range(text.count('o_c_n')):
-            index = text.index('o_c_n', s) or text.index("o_c_n's", s) or text.index('o_c_n.', s)
-            for y in vowels:
-                if str(other_clan_name).startswith(y):
-                    modify = text.split()
-                    pos = 0
-                    if 'o_c_n' in modify:
-                        pos = modify.index('o_c_n')
-                    if "o_c_n's" in modify:
-                        pos = modify.index("o_c_n's")
-                    if 'o_c_n.' in modify:
-                        pos = modify.index('o_c_n.')
-                    if modify[pos - 1] == 'a':
-                        modify.remove('a')
-                        modify.insert(pos - 1, 'an')
-                    text = " ".join(modify)
-                    break
-            s += index + 3
+            if 'o_c_n' in text:
+                for y in vowels:
+                    if str(other_clan_name).startswith(y):
+                        modify = text.split()
+                        pos = 0
+                        if 'o_c_n' in modify:
+                            pos = modify.index('o_c_n')
+                        if "o_c_n's" in modify:
+                            pos = modify.index("o_c_n's")
+                        if 'o_c_n.' in modify:
+                            pos = modify.index('o_c_n.')
+                        if modify[pos - 1] == 'a':
+                            modify.remove('a')
+                            modify.insert(pos - 1, 'an')
+                        text = " ".join(modify)
+                        break
 
         text = text.replace('o_c_n', str(other_clan_name) + 'Clan')
 
@@ -483,22 +486,21 @@ class PatrolScreen(Screens):
         s = 0
         pos = 0
         for x in range(text.count('c_n')):
-            index = text.index('c_n', s)
-            for y in vowels:
-                if str(clan_name).startswith(y):
-                    modify = text.split()
-                    if 'c_n' in modify:
-                        pos = modify.index('c_n')
-                    if "c_n's" in modify:
-                        pos = modify.index("c_n's")
-                    if 'c_n.' in modify:
-                        pos = modify.index('c_n.')
-                    if modify[pos - 1] == 'a':
-                        modify.remove('a')
-                        modify.insert(pos - 1, 'an')
-                    text = " ".join(modify)
-                    break
-            s += index + 3
+            if 'c_n' in text:
+                for y in vowels:
+                    if str(clan_name).startswith(y):
+                        modify = text.split()
+                        if 'c_n' in modify:
+                            pos = modify.index('c_n')
+                        if "c_n's" in modify:
+                            pos = modify.index("c_n's")
+                        if 'c_n.' in modify:
+                            pos = modify.index('c_n.')
+                        if modify[pos - 1] == 'a':
+                            modify.remove('a')
+                            modify.insert(pos - 1, 'an')
+                        text = " ".join(modify)
+                        break
         text = text.replace('c_n', str(game.clan.name) + 'Clan')
 
         # Prey lists for forest random prey patrols
@@ -523,12 +525,7 @@ class PatrolScreen(Screens):
                               'red squirrels', 'grey squirrels', 'rats', ]
         text = text.replace('f_mp_p', str(fst_midprey_plural))
 
-        sign_list = ['strangely-patterned stone', 'sharp stick', 'prey bone', 'cloud shaped like a cat',
-                     'tuft of red fur', 'red feather', 'brown feather', 'black feather', 'white feather',
-                     'star-shaped leaf',
-                     'beetle shell', 'snail shell', 'tuft of badger fur', 'two pawprints overlapping',
-                     'flower missing a petal',
-                     'tuft of fox fur', ]
+        sign_list = get_snippet_list("omen_list", amount=random.randint(2, 4), return_string=False)
         sign = choice(sign_list)
         s = 0
         pos = 0
@@ -592,7 +589,7 @@ class PatrolScreen(Screens):
         if normal_events:
             self.normal_event_choice = choice(normal_events)  # Set patrol event.
         else:
-            print("ERROR: NO POSSIBLE NORMAL PATROLS FOUND")
+            print("ERROR: NO POSSIBLE NORMAL PATROLS FOUND for: ", patrol.patrol_statuses)
             self.change_screen("clan screen")
             return
         if romantic_events:
@@ -702,8 +699,20 @@ class PatrolScreen(Screens):
         print("final romance chance:", chance_of_romance_patrol)
         if not int(random.random() * chance_of_romance_patrol):
             patrol.patrol_event = self.romantic_event_choice
-            # need to make sure the patrol leader is the same as the stat cat
+            old_random_cat = patrol.patrol_random_cat
+            old_win_stat_cat = patrol.patrol_win_stat_cat
+            old_fail_stat_cat = patrol.patrol_fail_stat_cat
             self.find_stat_cats(self.romantic_event_choice)
+            if old_random_cat != patrol.patrol_random_cat:
+                print("Random cat changed after romantic patrol selected. Choosing normal patrol. ")
+                patrol.patrol_event = self.normal_event_choice
+                # Reset the random and stat cat
+                patrol.patrol_random_cat = old_random_cat
+                patrol.patrol_win_stat_cat = old_win_stat_cat
+                patrol.patrol_fail_stat_cat = old_fail_stat_cat
+                return
+
+            # need to make sure the patrol leader is the same as the stat cat
             if patrol.patrol_win_stat_cat != patrol.patrol_leader:
                 patrol.patrol_win_stat_cat = None
             if patrol.patrol_fail_stat_cat != patrol.patrol_leader:
@@ -728,25 +737,45 @@ class PatrolScreen(Screens):
             possible_stat_cats.append(kitty)
 
         if event.win_skills:
-            for kitty in possible_stat_cats:
-                if kitty.skill in event.win_skills:
-                    patrol.patrol_win_stat_cat = kitty
-                    break
+            if "rc_has_stat" in event.tags:
+                if patrol.patrol_random_cat.skill in event.win_skills:
+                    patrol.patrol_win_stat_cat = patrol.patrol_random_cat
+            else:
+                for kitty in possible_stat_cats:
+                    if kitty.skill in event.win_skills:
+                        patrol.patrol_win_stat_cat = kitty
+                        break
         if event.win_trait and not patrol.patrol_win_stat_cat:
-            for kitty in possible_stat_cats:
-                if kitty.trait in event.win_trait:
-                    patrol.patrol_win_stat_cat = kitty
-                    break
+            if "rc_has_stat" in event.tags:
+                if patrol.patrol_random_cat.trait in event.win_trait:
+                    patrol.patrol_win_stat_cat = patrol.patrol_random_cat
+            else:
+                for kitty in possible_stat_cats:
+                    if kitty.trait in event.win_trait:
+                        patrol.patrol_win_stat_cat = kitty
+                        break
         if event.fail_skills:
-            for kitty in possible_stat_cats:
-                if kitty.skill in event.fail_skills:
-                    patrol.patrol_fail_stat_cat = kitty
-                    break
+            if "rc_has_stat" in event.tags:
+                if patrol.patrol_random_cat.skill in event.fail_skills:
+                    patrol.patrol_fail_stat_cat = patrol.patrol_random_cat
+            else:
+                for kitty in possible_stat_cats:
+                    if kitty.skill in event.fail_skills:
+                        patrol.patrol_fail_stat_cat = kitty
+                        break
         if event.fail_trait and not patrol.patrol_fail_stat_cat:
-            for kitty in possible_stat_cats:
-                if kitty.trait in event.fail_trait:
-                    patrol.patrol_fail_stat_cat = kitty
-                    break
+            if "rc_has_stat" in event.tags:
+                if patrol.patrol_random_cat.trait in event.fail_trait:
+                    patrol.patrol_fail_stat_cat = patrol.patrol_random_cat
+            else:
+                for kitty in possible_stat_cats:
+                    if kitty.trait in event.fail_trait:
+                        patrol.patrol_fail_stat_cat = kitty
+                        break
+
+        # we don't need to check for random/stat cat since we already require them to be the same
+        if "rc_has_stat" in event.tags:
+            return
 
         # if we have both types of stat cats and the patrol is too small then we drop the win stat cat
         # this is to prevent cases where a stat cat and the random cat are the same cat
@@ -927,6 +956,7 @@ class PatrolScreen(Screens):
         """Updates all the cat sprite buttons. Also updates the skills tab, if open, and the next and
             previous page buttons.  """
         self.clear_cat_buttons()  # Clear all the cat buttons
+
         self.able_cats = []
 
         # ASSIGN TO ABLE CATS
@@ -973,6 +1003,15 @@ class PatrolScreen(Screens):
         pos_x = 100
         i = 0
         for cat in display_cats:
+            if cat.favourite:
+                self.fav[str(i)] = pygame_gui.elements.UIImage(
+                            scale(pygame.Rect((pos_x, pos_y), (100, 100))),
+                            pygame.transform.scale(
+                                pygame.image.load(
+                                    f"resources/images/fav_marker.png").convert_alpha(),
+                                (100, 100))
+                        )
+                self.fav[str(i)].disable()
             self.cat_buttons["able_cat" + str(i)] = UISpriteButton(scale(pygame.Rect((pos_x, pos_y), (100, 100))),
                                                                    pygame.transform.scale(cat.large_sprite, (100, 100))
                                                                    , cat_object=cat, manager=MANAGER)
@@ -1199,6 +1238,9 @@ class PatrolScreen(Screens):
         for cat in self.cat_buttons:
             self.cat_buttons[cat].kill()
         self.cat_buttons = {}
+        for marker in self.fav:
+            self.fav[marker].kill()
+        self.fav = {}
 
     def exit_screen(self):
         self.clear_page()

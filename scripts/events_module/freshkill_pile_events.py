@@ -35,8 +35,7 @@ class Freshkill_Events():
 
         # get all events for a certain status of a cat
         cat_nutrition = nutrition_info[cat.ID]
-        possible_events = self.generate_events.possible_events(cat.status, cat.age, "nutrition")
-
+        possible_events = self.generate_events.possible_short_events(cat.status, cat.age, "nutrition")
 
         # get the other needed information and values to create a event
         possible_other_cats = list(filter(
@@ -156,7 +155,7 @@ class Freshkill_Events():
         # check if amount of the freshkill pile is too big and a event will be triggered
         needed_amount = freshkill_pile.amount_food_needed()
         trigger_value = FRESHKILL_EVENT_TRIGGER_FACTOR * needed_amount
-        print(f" -- FRESHKILL: amount {trigger_value} to trigger freshkill event. current amount {freshkill_pile.total_amount}")
+        #print(f" -- FRESHKILL: amount {trigger_value} to trigger freshkill event. current amount {freshkill_pile.total_amount}")
         if freshkill_pile.total_amount < trigger_value:
             return
 
@@ -164,7 +163,7 @@ class Freshkill_Events():
         chance = 10 - factor
         if chance <= 0:
             chance = 1
-        print(f" -- FRESHKILL: trigger chance of 1/{chance}")
+        #print(f" -- FRESHKILL: trigger chance of 1/{chance}")
         choice = random.randint(1,chance)
         if choice != 1:
             return
@@ -182,7 +181,7 @@ class Freshkill_Events():
             while other_cat.ID == cat.ID:
                 other_cat = random.choice(living_cats)
 
-        possible_events = self.generate_events.possible_events(cat.status, cat.age, "freshkill_pile")
+        possible_events = self.generate_events.possible_short_events(cat.status, cat.age, "freshkill_pile")
         possible_tasks = ["death", "reduce", "reduce", "reduce", "reduce", "injury", "injury", "injury"]
         needed_tags = []
 

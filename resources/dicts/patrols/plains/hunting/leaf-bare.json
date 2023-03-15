@@ -342,7 +342,7 @@
             "respect",
             "rel_patrol"
         ],
-        "intro_text": "Your patrol catches the scent of a fox. Tracking it, they find a swift fox feeding on a cow carcass, either a small female or one of last Newleaf's calves. The cat-sized predator definitely didn't kill this massive hunk of fresh-kill.",
+        "intro_text": "Your patrol catches the scent of a fox. Tracking it, they find a swift fox feeding on a cow carcass, either a small female or one of last newleaf's calves. The cat-sized predator definitely didn't kill this massive hunk of fresh-kill.",
         "decline_text": "Your patrol decides not to quarrel with the fox - bigger predators will be attracted here. Best to leave sooner rather than later.",
         "chance_of_success": 60,
         "exp": 20,
@@ -400,7 +400,7 @@
             "no_body",
             "small_bite_injury"
         ],
-        "intro_text": "r_c catches the scent of a fox. Tracking it, they find a swift fox feeding on a cow carcass, either a small female or one of last Newleaf's calves. Roughly equal in size to r_c, the swift fox definitely didn't bring down this feast themselves.",
+        "intro_text": "r_c catches the scent of a fox. Tracking it, they find a swift fox feeding on a cow carcass, either a small female or one of last newleaf's calves. Roughly equal in size to r_c, the swift fox definitely didn't bring down this feast themselves.",
         "decline_text": "r_c decides not to quarrel with the fox - bigger predators will be attracted here. Best to leave sooner rather than later.",
         "chance_of_success": 50,
         "exp": 10,
@@ -414,7 +414,7 @@
             "A coyote yip in the distance sends both the smaller predator species running before r_c can muscle in on the feeding opportunity.",
             "The swift fox gives up the kill, but s_c pursues it anyway, until the fox turns and threatens with snapping teeth. s_c dances out of the way, but hears the caw of ravens descending on the carcass, and knows it would be too dangerous to return.",
             "r_c happily tucks into the massive calf - there's more than enough room for both them and the small fox to feed. They hear a massive, outraged yowl, and a blow from behind sends them to StarClan with a single hit. They never saw what did it.",
-            "Puffed up, r_c approaches the swift fox. But there's only one of them, and the fox is their equal in size and weight. instead of running or giving it, it snarls, and attacks. r_c gives just as good as they get, and both animals end up limping away from the kill.",
+            "Puffed up, r_c approaches the swift fox. But there's only one of them, and the fox is their equal in size and weight. Instead of running or giving it, it snarls, and attacks. r_c gives just as good as they get, and both animals end up limping away from the kill.",
             null,
             "The swift fox gives up the kill, but s_c pursues it anyway, until the fox turns and threatens with snapping teeth, sinking them into s_c and giving s_c a bigger concern than scavenging from the calf carcass."
         ],

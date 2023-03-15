@@ -10,8 +10,6 @@ from scripts.game_structure import image_cache
 from ..utility import get_text_box_theme, update_sprite, scale
 
 
-#from scripts.world import load_map
-
 class OutsideClanScreen(Screens):
 
     list_page = 1  # Holds the current page
@@ -307,7 +305,7 @@ class UnknownResScreen(Screens):
         self.search_bar_image = pygame.transform.scale(pygame.image.load(
             "resources/images/search_bar.png").convert_alpha(), (456 / 1600 * screen_x, 68 / 1400 * screen_y))
         self.clan_name_bg = pygame.transform.scale(
-            image_cache.load_image("resources/images/clan_name_bg.png").convert_alpha(), (360, 70))
+            image_cache.load_image("resources/images/clan_name_bg.png").convert_alpha(), (380, 70))
         self.ur_bg = pygame.transform.scale(
             pygame.image.load("resources/images/urbg.png").convert(),
             (screen_x, screen_y))

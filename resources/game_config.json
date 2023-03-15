@@ -38,12 +38,14 @@
 		],
 		"hunter_bonus": {"fantastic hunter": 3, "great hunter": 2, "good hunter": 1},
 		"hunter_exp_bonus": {
-			"very_low": 1,
-			"low": 2,
-			"average": 3,
-			"high": 4,
-			"master": 5,
-			"max": 7
+			"untrained": 0.1,
+			"trainee": 1,
+			"prepared": 2,
+			"competent": 3,
+			"proficient": 4,
+			"skilled": 5,
+			"expert": 6,
+			"master": 7
 		},
 		"comment": [
 			"activate_deaths - activates the whole system, otherwise nutrition status of the cats doesn't have an effect",
@@ -64,19 +66,97 @@
 		},
 		"compatibility_bonus": 3,
 		"passive_influence": 4,
-		"chance_for_neutral": 6
+		"chance_for_neutral": 6,
+		"chance_of_special_group": 4,
+		"comment":[
+			"chance_for_neutral - how high the chance is to make the interaction of the relationship to a 'neutral' instead of negative or positive"
+		]
+	},
+	"new_cat": {
+		"parent_buff": {
+			"kit_to_parent": {
+				"romantic": 0,
+				"platonic": 40,
+				"dislike": 0,
+				"admiration": 30,
+				"comfortable": 40,
+				"jealousy": 0,
+				"trust": 50
+			},
+			"parent_to_kit": {
+				"romantic": 0,
+				"platonic": 40,
+				"dislike": 0,
+				"admiration": 30,
+				"comfortable": 40,
+				"jealousy": 0,
+				"trust": 30
+			}
+		},
+		"sib_buff": {
+			"cat1_to_cat2": {
+				"romantic": 0,
+				"platonic": 40,
+				"dislike": 0,
+				"admiration": 10,
+				"comfortable": 40,
+				"jealousy": 0,
+				"trust": 30
+			},
+			"cat2_to_cat1": {
+				"romantic": 0,
+				"platonic": 40,
+				"dislike": 0,
+				"admiration": 10,
+				"comfortable": 40,
+				"jealousy": 0,
+				"trust": 30
+			}
+		},
+		"rel_buff":{
+			"new_to_clan_cat": {
+				"romantic": 0,
+				"platonic": 15,
+				"dislike": 0,
+				"admiration": 10,
+				"comfortable": 15,
+				"jealousy": 0,
+				"trust": 15
+			},
+			"clan_cat_to_new":{
+				"romantic": 0,
+				"platonic": 15,
+				"dislike": 0,
+				"admiration": 5,
+				"comfortable": 10,
+				"jealousy": 0,
+				"trust": 10
+			}
+		},
+		"cat_amount_welcoming": 3
 	},
 	"pregnancy": {
 		"primary_chance_mated": 50,
 		"primary_chance_unmated": 110,
-		"random_affair_chance": 70
+		"random_affair_chance": 70,
+		"unmated_random_affair_chance": 20
 	},
 	"cat_generation": {
 		"base_permanent_condition": 90,
 		"base_male_tortie": 13,
 		"base_female_tortie": 4,
 		"base_heterochromia": 120,
-		"direct_inheritance": 15
+		"direct_inheritance": 15,
+		"wildcard_tortie": 9
+	},
+	"accessory_generation": {
+		"base_acc_chance": 150,
+		"med_modifier": -80,
+		"baby_modifier": -20,
+		"elder_modifier": 20,
+		"happy_trait_modifier": -30,
+		"grumpy_trait_modifier": 30,
+		"ceremony_modifier": -20
 	},
 	"fading": {
 		"age_to_fade": 202,
@@ -127,5 +207,19 @@
 		"classic_injury_chance": 250,
 		"expanded_injury_chance": 200,
 		"cruel season_death_chance": 150
+	},
+	"clan_creation": {
+		"rerolls": 3,
+		"comment": "Set this to -1 for it to be infinite"
+	},
+	"graduation": {
+		"base_app_timeskip_ex": [[3, 10],[5, 6]],
+		"base_med_app_timeskip_ex": [[2, 7],[2, 3]],
+		"max_apprentice_age": {
+			"medicine cat apprentice": 30,
+			"apprentice": 25,
+			"mediator apprentice": 25
+		},
+		"min_graduating_age": 10
 	}
 }

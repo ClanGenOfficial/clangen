@@ -2,7 +2,7 @@
 	{
 		"camp": "any",
 		"tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "malnourished"],
-		"death_text": "m_c feels the crumbing of they stomach, but they try to stay strong for the clan and be a good example.",
+		"death_text": "m_c feels their stomach rumble, but they try to stay strong for the Clan and be a good example.",
 		"history_text": [null, null],
 		"cat_trait": ["empathetic", "strict", "responsible", "altruistic"],
 		"cat_skill": null,

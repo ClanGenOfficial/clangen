@@ -1,3 +1,57 @@
 [
-
+      {
+        "camp": "any",
+        "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall", "other_cat", "other_cat_warrior"],
+        "event_text": "m_c and r_c take a late night patrol out of camp to watch the sun rise.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+      },
+      {
+        "camp": "any",
+        "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall", "other_cat", "other_cat_warrior"],
+        "event_text": "m_c and r_c take an early evening out of camp to watch the moon rise.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+         "other_cat_skill": null
+      },
+      {
+        "camp": "any",
+        "tags": ["Leaf-bare", "other_cat", "other_cat_warrior"],
+        "event_text": "m_c encourages r_c to play in the snow with them during a patrol.",
+        "cat_trait": "playful",
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+      },
+      {
+        "camp": "any",
+        "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall", "other_cat", "other_cat_mate", "romantic", "comfort", "trust"],
+        "event_text": "m_c gifts their beloved r_c with a acc_singular to wear in their pelt.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+      },
+      {
+      "camp": "any",
+      "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall", "other_cat", "other_cat_mate", "romantic", "comfort", "trust"],
+      "event_text": "m_c gives r_c a singular_acc to make up for a bad fight between them.",
+      "cat_trait": null,
+      "cat_skill": null,
+      "other_cat_trait": null,
+      "other_cat_skill": null
+    },
+    {
+      "camp": "any",
+      "tags": ["Leaf-bare", "Newleaf", "Greenleaf", "Leaf-fall"],
+      "event_text": "m_c disappears for a few days, then returns to camp with a acc_singular around their neck.",
+      "cat_trait": null,
+      "cat_skill": null,
+      "other_cat_trait": null,
+      "other_cat_skill": null,
+      "accessories": ["COLLAR"]
+    }
 ]
