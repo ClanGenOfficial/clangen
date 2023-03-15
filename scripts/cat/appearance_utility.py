@@ -46,10 +46,6 @@ from .pelts import (
     mono_eyes,
     purple_eyes,
     )
-try:
-    import ujson
-except ImportError:
-    import json as ujson
 from scripts.cat.sprites import Sprites
 from scripts.game_structure.game_essentials import game
 

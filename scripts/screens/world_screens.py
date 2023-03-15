@@ -10,8 +10,6 @@ from scripts.game_structure import image_cache
 from ..utility import get_text_box_theme, update_sprite, scale
 
 
-#from scripts.world import load_map
-
 class OutsideClanScreen(Screens):
 
     list_page = 1  # Holds the current page

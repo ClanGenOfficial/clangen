@@ -7,7 +7,6 @@ If you do not have the pypresence module installed,
 this file will not be used, and the game will run as normal.
 """
 from time import time
-import os
 from scripts.game_structure.game_essentials import game
 import threading
 import asyncio
