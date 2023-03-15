@@ -362,7 +362,7 @@
     "min_cats": 1,
     "max_cats": 6,
     "antagonize_text": "A loner and their kits emerge from the bush, but p_l shakes their head, and informs them there's no room in c_n.",
-    "antagonize_fail_text": "A loner and their kits emerge from the bush, but p_l shakes their head, and tells the loner they meant it when they didn't want to see them again. The loner hisses and scratches at p_l. Roumors start at camp over what p_l said to the loner.",
+    "antagonize_fail_text": "A loner and their kits emerge from the bush, but p_l shakes their head, and tells the loner they meant it when they didn't want to see them again. The loner hisses and scratches at p_l. Rumors start at camp over what p_l said to the loner.",
     "history_text": [
             "p_l gained a scar after tussling with a rogue."
     ]
@@ -486,7 +486,7 @@
     "min_cats": 1,
     "max_cats": 6,
     "antagonize_text": "The patrol launches into attack, only to find the loner that they've been fighting is too weak to fight back. They go home with blood on their paws.",
-    "antagonize_fail_text": "The patrol approaches the loner cautiously, inteanding to attack. Instead, they find a StarClan warrior, who scolds them all for being willing to attack a hurt loner. With shame in their heart, the patrol goes back home, and tell no one of what they saw.",
+    "antagonize_fail_text": "The patrol approaches the loner cautiously, intending to attack. Instead, they find a StarClan warrior, who scolds them all for being willing to attack a hurt loner. With shame in their heart, the patrol goes back home, and tell no one of what they saw.",
     "history_text": [
             null
     ]
