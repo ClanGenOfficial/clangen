@@ -1118,7 +1118,7 @@
     "win_skills": null,
     "win_trait": null,
     "fail_skills": null,
-    "fail_trait": ["adventurous", "bold", "confident", "daring", "troublesome", "playful", "childish", ],
+    "fail_trait": ["adventurous", "bold", "confident", "daring", "troublesome", "playful", "childish"],
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
