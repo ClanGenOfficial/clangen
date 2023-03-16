@@ -1332,7 +1332,8 @@ class AllegiancesScreen(Screens):
         queen_dict = {}
         for cat in living_kits.copy():
             parents = cat.get_parents()
-            parents = [Cat.fetch_cat(i) for i in parents]
+            #Fetch parent object, only alive and not outside. 
+            parents = [Cat.fetch_cat(i) for i in parents if not(Cat.fetch_cat(i).dead or Cat.fetch_cat(i).outside)]
             if not parents:
                 continue
             
