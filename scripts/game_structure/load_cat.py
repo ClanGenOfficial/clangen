@@ -79,10 +79,6 @@ def json_load():
                         pelt=new_pelt,
                         loading_cat=True)
             new_cat.eye_colour2 = cat["eye_colour2"] if "eye_colour2" in cat else None
-            if cat["eye_colour"] == "BLUEYELLOW":
-                new_cat.eye_colour2 = "YELLOW"
-            elif cat["eye_colour"] == "BLUEGREEN":
-                new_cat.eye_colour2 = "GREEN"
             new_cat.age = cat["age"]
             new_cat.genderalign = cat["gender_align"]
             new_cat.backstory = cat["backstory"] if "backstory" in cat else None
@@ -150,6 +146,8 @@ def json_load():
                 new_cat.white_patches = 'PANTSTWO'
             if cat["white_patches"] == 'ANY2':
                 new_cat.white_patches = 'ANYTWO'
+            if cat["white_patches"] == "VITILIGO2":
+                cat["white_patches"] = "VITILIGOTWO"
             new_cat.vitiligo = cat["vitiligo"] if "vitiligo" in cat else None
             new_cat.points = cat["points"] if "points" in cat else None
             if cat["white_patches"] in vit:
