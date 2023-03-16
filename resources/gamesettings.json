@@ -141,6 +141,9 @@
         "language": ["english", "spanish", "german"],
         "game_mode": ["classic", "expanded", "cruel season"],
         "text size": ["0", "1", "2"],
-        "fullscreen": [ false, true ]
+        "fullscreen": [ false, true ],
+        "show dead relation": [ false, true ],
+        "show empty relation": [ false, true ],
+        "favourite sub tab": [ null, "life events", "user notes"]
     }
 }
