@@ -1,5 +1,9 @@
 import unittest
 
+import os
+os.environ["SDL_VIDEODRIVER"] = "dummy"
+os.environ["SDL_AUDIODRIVER"] = "dummy"
+
 from scripts.cat.cats import Cat
 from scripts.cat_relations.relationship import Relationship
 from scripts.utility import get_personality_compatibility, get_amount_of_cats_with_relation_value_towards

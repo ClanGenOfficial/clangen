@@ -4044,6 +4044,25 @@
             }
         }
   },
+  "#open_data_directory_button":
+  {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/data_directory.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/data_directory_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/data_directory_hover.png"
+            }
+        }
+  },
   "#greenleaf_toggle_button":
   {
         "prototype": "#image_button",

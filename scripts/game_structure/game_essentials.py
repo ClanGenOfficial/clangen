@@ -1,6 +1,7 @@
 import pygame
 import pygame_gui
 
+from scripts.datadir import get_save_dir
 
 try:
     import ujson
@@ -111,6 +112,7 @@ class Game():
         'fill_patrol': False,
         'patrol_done': False,
         'error_message': '',
+        'traceback': '',
         'apprentice': None,
         'change_name': '',
         'change_suffix': '',
@@ -144,65 +146,31 @@ class Game():
     map_info = {}
 
     # SETTINGS
-    settings = {
-        'no gendered breeding': False,
-        'text size': '0',
-        'no unknown fathers': False,
-        'dark mode': False,
-        'backgrounds': True,
-        'autosave': False,
-        'disasters': False,
-        'retirement': False,
-        'language': 'english',
-        'affair': False,
-        'shaders': False,
-        'hotkey display': False,
-        'random relation': True,
-        'show dead relation': False,
-        'show empty relation': False,
-        'romantic with former mentor': True,
-        'game_mode': None,
-        'deputy': False,
-        'den labels': True,
-        'fading': True,
-        "save_faded_copy": False,
-        'favorite sub tab': None,
-        'gore': False,
-        'first_cousin_mates': True,
-        'become_mediator': False,
-        'fullscreen': False,
-        'discord': False,
-    }  # The current settings
-    setting_lists = {
-        'no gendered breeding': [False, True],
-        'text size': ['0', '1', '2'],
-        'no unknown fathers': [False, True],
-        'dark mode': [False, True],
-        'backgrounds': [True, False],
-        'autosave': [False, True],
-        'disasters': [False, True],
-        'retirement': [True, False],
-        'language': language_list,
-        'affair': [False, True],
-        'shaders': [False, True],
-        'hotkey display': [False, True],
-        'random relation': [False, True],
-        'show dead relation': [False, True],
-        'show empty relation': [False, True],
-        'romantic with former mentor': [False, True],
-        'game_mode': game_mode_list,
-        'deputy': [False, True],
-        'den labels': [False, True],
-        'favorite sub tab': sub_tab_list,
-        'fading': [True, False],
-        'save_faded_copy': [False, True],
-        "gore": [False, True],
-        'discord': [False, True],
-        'first_cousin_mates': [True, False],
-        'become_mediator': [False, True],
-        'fullscreen': [False, True]
-    }  # Lists of possible options for each setting
+    settings = {}
+    setting_lists = {}
+
+
+
+    with open("resources/gamesettings.json", 'r') as read_file:
+        _settings = ujson.loads(read_file.read())
+
+    for setting, values in _settings['__other'].items():
+        settings[setting] = values[0]
+        setting_lists[setting] = values
+    
+    _ = []
+    _.append(_settings['relation'])
+    _.append(_settings['general'])
+
+    for cat in _:  # Add all the settings to the settings dictionary
+        for setting_name, inf in cat.items():
+            settings[setting_name] = inf[2]
+            setting_lists[setting_name] = [inf[2], not inf[2]]
+
+
+
     settings_changed = False
+    
 
     # CLAN
     clan = None
@@ -231,7 +199,7 @@ class Game():
         self.keyspressed = []
 
     def read_clans(self):
-        '''with open('saves/clanlist.txt', 'r') as read_file:
+        '''with open(get_save_dir() + '/clanlist.txt', 'r') as read_file:
             clan_list = read_file.read()
             if_clans = len(clan_list)
         if if_clans > 0:
@@ -247,30 +215,30 @@ class Game():
         # so we can just get a list of all the folders in the saves folder
 
         # First, we need to make sure the saves folder exists
-        if not os.path.exists('saves'):
-            os.makedirs('saves')
+        if not os.path.exists(get_save_dir()):
+            os.makedirs(get_save_dir())
             print('Created saves folder')
             return None
         
         # Now we can get a list of all the folders in the saves folder
-        clan_list = [f.name for f in os.scandir('saves') if f.is_dir()]
+        clan_list = [f.name for f in os.scandir(get_save_dir()) if f.is_dir()]
 
         # the clan specified in saves/clanlist.txt should be first in the list
         # so we can load it automatically
 
-        if os.path.exists('saves/clanlist.txt'):
-            with open('saves/clanlist.txt', 'r') as f:
+        if os.path.exists(get_save_dir() + '/clanlist.txt'):
+            with open(get_save_dir() + '/clanlist.txt', 'r') as f:
                 loaded_clan = f.read().strip().splitlines()
                 if loaded_clan:
                     loaded_clan = loaded_clan[0]
                 else:
                     loaded_clan = None
-            os.remove('saves/clanlist.txt')
+            os.remove(get_save_dir() + '/clanlist.txt')
             if loaded_clan:
-                with open('saves/currentclan.txt', 'w') as f:
+                with open(get_save_dir() + '/currentclan.txt', 'w') as f:
                     f.write(loaded_clan)
-        elif os.path.exists('saves/currentclan.txt'):
-            with open('saves/currentclan.txt', 'r') as f:
+        elif os.path.exists(get_save_dir() + '/currentclan.txt'):
+            with open(get_save_dir() + '/currentclan.txt', 'r') as f:
                 loaded_clan = f.read().strip()
         else:
             loaded_clan = None
@@ -296,29 +264,29 @@ class Game():
                 clans.append(f"{clan_name}\n")
 
         if clans:
-            with open('saves/clanlist.txt', 'w') as f:
+            with open(get_save_dir() + '/clanlist.txt', 'w') as f:
                 f.writelines(clans)'''
         if loaded_clan:
-            if os.path.exists('saves/clanlist.txt'):
-                os.remove('saves/clanlist.txt') # we don't need clanlist.txt anymore
-            with open('saves/currentclan.txt', 'w') as f:
+            if os.path.exists(get_save_dir() + '/clanlist.txt'):
+                os.remove(get_save_dir() + '/clanlist.txt') # we don't need clanlist.txt anymore
+            with open(get_save_dir() + '/currentclan.txt', 'w') as f:
                 f.write(loaded_clan)
         else:
-            if os.path.exists('saves/currentclan.txt'):
-                os.remove('saves/currentclan.txt')
+            if os.path.exists(get_save_dir() + '/currentclan.txt'):
+                os.remove(get_save_dir() + '/currentclan.txt')
 
     def save_settings(self):
         """ Save user settings for later use """
         data = ''.join(f"{s}:{self.settings[s]}" + "\n"
                        for s in self.settings.keys())
 
-        with open('saves/settings.txt', 'w') as write_file:
+        with open(get_save_dir() + '/settings.txt', 'w') as write_file:
             write_file.write(data)
         self.settings_changed = False
 
     def load_settings(self):
         """ Load settings that user has saved from previous use """
-        with open('saves/settings.txt', 'r') as read_file:
+        with open(get_save_dir() + '/settings.txt', 'r') as read_file:
             settings_data = read_file.read()
 
         lines = settings_data.split(
@@ -381,7 +349,7 @@ class Game():
             clanname = game.switches['clan_list'][0]'''
         if game.clan is not None:
             clanname = game.clan.name
-        directory = 'saves/' + clanname
+        directory = get_save_dir() + '/' + clanname
         if not os.path.exists(directory):
             os.makedirs(directory)
 
@@ -417,17 +385,19 @@ class Game():
                 "pelt_color": inter_cat.pelt.colour,
                 "pelt_white": inter_cat.pelt.white,
                 "pelt_length": inter_cat.pelt.length,
-                "spirit_kitten": inter_cat.age_sprites['kitten'],
-                "spirit_adolescent": inter_cat.age_sprites['adolescent'],
-                "spirit_young_adult": inter_cat.age_sprites['young adult'],
-                "spirit_adult": inter_cat.age_sprites['adult'],
-                "spirit_senior_adult": inter_cat.age_sprites['senior adult'],
-                "spirit_elder": inter_cat.age_sprites['elder'],
-                "spirit_dead": inter_cat.age_sprites['dead'],
+                "sprite_kitten": inter_cat.cat_sprites['kitten'],
+                "sprite_adolescent": inter_cat.cat_sprites['adolescent'],
+                "sprite_young_adult": inter_cat.cat_sprites['young adult'],
+                "sprite_adult": inter_cat.cat_sprites['adult'],
+                "sprite_senior_adult": inter_cat.cat_sprites['senior adult'],
+                "sprite_senior": inter_cat.cat_sprites['senior'],
+                "sprite_para_adult": inter_cat.cat_sprites['para_adult'],
                 "eye_colour": inter_cat.eye_colour,
                 "eye_colour2": inter_cat.eye_colour2 if inter_cat.eye_colour2 else None,
                 "reverse": inter_cat.reverse,
                 "white_patches": inter_cat.white_patches,
+                "vitiligo": inter_cat.vitiligo,
+                "points": inter_cat.points,
                 "white_patches_tint": inter_cat.white_patches_tint,
                 "pattern": inter_cat.pattern,
                 "tortie_base": inter_cat.tortiebase,
@@ -461,7 +431,7 @@ class Game():
             if not inter_cat.dead:
                 inter_cat.save_relationship_of_cat()
         try:
-            with open('saves/' + clanname + '/clan_cats.json', 'w') as write_file:
+            with open(get_save_dir() + '/' + clanname + '/clan_cats.json', 'w') as write_file:
                 json_string = ujson.dumps(clan_cats, indent=4)
                 write_file.write(json_string)
         except:
@@ -470,7 +440,7 @@ class Game():
     def save_faded_cats(self, clanname):
         """Deals with fades cats, if needed, adding them as faded """
         if game.cat_to_fade:
-            directory = 'saves/' + clanname + "/faded_cats"
+            directory = get_save_dir() + '/' + clanname + "/faded_cats"
             if not os.path.exists(directory):
                 os.makedirs(directory)
 
@@ -534,13 +504,13 @@ class Game():
                 "pelt_color": {inter_cat.pelt.colour},
                 "pelt_white": {inter_cat.pelt.white},
                 "pelt_length": {inter_cat.pelt.length},
-                "spirit_kitten": {inter_cat.age_sprites['kitten']},
-                "spirit_adolescent": {inter_cat.age_sprites['adolescent']},
-                "spirit_young_adult": {inter_cat.age_sprites['young adult']},
-                "spirit_adult": {inter_cat.age_sprites['adult']},
-                "spirit_senior_adult": {inter_cat.age_sprites['senior adult']},
-                "spirit_elder": {inter_cat.age_sprites['elder']},
-                "spirit_dead": {inter_cat.age_sprites['dead']},
+                "spirit_kitten": {inter_cat.cat_sprites['kitten']},
+                "spirit_adolescent": {inter_cat.cat_sprites['adolescent']},
+                "spirit_young_adult": {inter_cat.cat_sprites['young adult']},
+                "spirit_adult": {inter_cat.cat_sprites['adult']},
+                "spirit_senior_adult": {inter_cat.cat_sprites['senior adult']},
+                "spirit_elder": {inter_cat.cat_sprites['elder']},
+                "spirit_dead": {inter_cat.cat_sprites['dead']},
                 "eye_colour": {inter_cat.eye_colour},
                 "reverse": {inter_cat.reverse},
                 "white_patches": {inter_cat.white_patches},
@@ -577,7 +547,7 @@ class Game():
             }
             try:
 
-                with open('saves/' + clanname + '/faded_cats/' + cat + ".json", 'w') as write_file:
+                with open(get_save_dir() + '/' + clanname + '/faded_cats/' + cat + ".json", 'w') as write_file:
                     json_string = ujson.dumps(cat_data, indent=4)
                     write_file.write(json_string)
             except:
@@ -587,12 +557,12 @@ class Game():
 
         # Save the copy data is needed
         if game.settings["save_faded_copy"]:
-            if not os.path.exists('saves/' + clanname + '/faded_cats_info_copy.txt'):
+            if not os.path.exists(get_save_dir() + '/' + clanname + '/faded_cats_info_copy.txt'):
                 # Create the file if it doesn't exist
-                with open('saves/' + clanname + '/faded_cats_info_copy.txt', 'w') as create_file:
+                with open(get_save_dir() + '/' + clanname + '/faded_cats_info_copy.txt', 'w') as create_file:
                     pass
 
-            with open('saves/' + clanname + '/faded_cats_info_copy.txt', 'a') as write_file:
+            with open(get_save_dir() + '/' + clanname + '/faded_cats_info_copy.txt', 'a') as write_file:
                 write_file.write(copy_of_info)
 
         game.cat_to_fade = []
@@ -601,7 +571,7 @@ class Game():
         """In order to siblings to work correctly, and not to lose relation info on fading, we have to keep track of
         both active and faded cat's faded offpsring. This will add a faded offspring to a faded parents file. """
         try:
-            with open('saves/' + self.clan.name + '/faded_cats/' + parent + ".json", 'r') as read_file:
+            with open(get_save_dir() + '/' + self.clan.name + '/faded_cats/' + parent + ".json", 'r') as read_file:
                 cat_info = ujson.loads(read_file.read())
         except:
             print("ERROR: loading faded cat")
@@ -609,7 +579,7 @@ class Game():
 
         cat_info["faded_offspring"].append(offspring)
 
-        with open('saves/' + self.clan.name + '/faded_cats/' + parent + ".json", 'w') as write_file:
+        with open(get_save_dir() + '/' + self.clan.name + '/faded_cats/' + parent + ".json", 'w') as write_file:
             json_string = ujson.dumps(cat_info, indent=4)
             write_file.write(json_string)
 
@@ -619,9 +589,9 @@ class Game():
 game = Game()
 
 
-if not os.path.exists('saves/settings.txt'):
-    os.makedirs('saves', exist_ok=True)
-    with open('saves/settings.txt', 'w') as write_file:
+if not os.path.exists(get_save_dir() + '/settings.txt'):
+    os.makedirs(get_save_dir(), exist_ok=True)
+    with open(get_save_dir() + '/settings.txt', 'w') as write_file:
         write_file.write('')
 game.load_settings()
 

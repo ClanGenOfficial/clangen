@@ -4,11 +4,11 @@ import shutil
 from pygame_gui.elements import UIWindow
 import pygame
 import pygame_gui
-from sys import exit
 
+from scripts.datadir import get_save_dir
 from scripts.game_structure import image_cache
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
-from scripts.utility import scale
+from scripts.utility import scale, quit
 from scripts.game_structure.game_essentials import game
 
 
@@ -101,13 +101,7 @@ class SaveCheck(UIWindow):
                     self.kill()
                 else:
                     game.is_close_menu_open = False
-                    game.rpc.close_rpc.set()
-                    game.rpc.update_rpc.set()
-                    pygame.display.quit()
-                    pygame.quit()
-                    if game.rpc.is_alive():
-                        game.rpc.join(1)
-                    exit()
+                    quit(savesettings=False, clearevents=False)
             elif event.ui_element == self.save_button:
                 if game.clan is not None:
                     self.save_button_saving_state.show()
@@ -174,7 +168,7 @@ class DeleteCheck(UIWindow):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.delete_it_button:
                 print("delete")
-                rempath = "saves/" + self.clan_name
+                rempath = get_save_dir() + "/" + self.clan_name
                 shutil.rmtree(rempath)
                 if os.path.exists(rempath + 'clan.json'):
                     os.remove(rempath + "clan.json")

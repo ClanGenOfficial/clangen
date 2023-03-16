@@ -5,12 +5,14 @@ from random import choice
 
 import pygame
 
+from ..datadir import get_save_dir
+
 try:
     import ujson
 except ImportError:
     import json as ujson
 
-from scripts.utility import update_sprite, event_text_adjust, scale
+from scripts.utility import update_sprite, event_text_adjust, scale, ACC_DISPLAY
 
 from .base_screens import Screens, cat_profiles
 
@@ -777,7 +779,7 @@ class ProfileScreen(Screens):
         # AGE
         if the_cat.age == 'kitten':
             output += 'young'
-        elif the_cat.age == 'elder':
+        elif the_cat.age == 'senior':
             output += 'senior'
         else:
             output += the_cat.age
@@ -800,9 +802,10 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # ACCESSORY
-        output += 'accessory: ' + str(accessory_display_name(the_cat))
-        # NEWLINE ----------
-        output += "\n"
+        if the_cat.accessory:
+            output += 'accessory: ' + str(ACC_DISPLAY[the_cat.accessory]["default"])
+            # NEWLINE ----------
+            output += "\n"
 
         # PARENTS
         if the_cat.parent1 is None and the_cat.parent2 is None:
@@ -949,6 +952,9 @@ class ProfileScreen(Screens):
 
         # EXPERIENCE
         output += 'experience: ' + str(the_cat.experience_level)
+
+        if game.settings['showxp']:
+            output += ' (' + str(the_cat.experience) + ')'
         # NEWLINE ----------
         output += "\n"
 
@@ -1078,7 +1084,7 @@ class ProfileScreen(Screens):
 
         notes = self.user_notes
 
-        notes_directory = 'saves/' + clanname + '/notes'
+        notes_directory = get_save_dir() + '/' + clanname + '/notes'
         notes_file_path = notes_directory + '/' + self.the_cat.ID + '_notes.json'
 
         if not os.path.exists(notes_directory):
@@ -1101,7 +1107,7 @@ class ProfileScreen(Screens):
         """Loads user-entered notes. """
         clanname = game.clan.name
 
-        notes_directory = 'saves/' + clanname + '/notes'
+        notes_directory = get_save_dir() + '/' + clanname + '/notes'
         notes_file_path = notes_directory + '/' + self.the_cat.ID + '_notes.json'
 
         if not os.path.exists(notes_file_path):
@@ -1679,7 +1685,7 @@ class ProfileScreen(Screens):
             else:
                 self.see_relationships_button.enable()
 
-            if self.the_cat.age not in ['young adult', 'adult', 'senior adult', 'elder'
+            if self.the_cat.age not in ['young adult', 'adult', 'senior adult', 'senior'
                                         ] or self.the_cat.dead or self.the_cat.exiled or self.the_cat.outside:
                 self.choose_mate_button.disable()
             else:
@@ -1939,6 +1945,8 @@ class ProfileScreen(Screens):
 
         if biome not in available_biome:
             biome = available_biome[0]
+        if the_cat.age == 'newborn' or the_cat.not_working():
+            biome = 'nest'
 
         biome = biome.lower()
 
@@ -2285,7 +2293,7 @@ class CeremonyScreen(Screens):
                     1] + '. They pause, then shake their head, heading back into the ranks of StarClan.'
             else:
                 warrior_text = warrior + ' walks up to ' + dep_name + ' next, offering a life for ' + cat.virtues[
-                    1] + '. They smile, and state that the Clan will do well under ' + warrior + '\'s leadership.'
+                    1] + '. They smile, and state that the Clan will do well under ' + dep_name + '\'s leadership.'
         else:
             if cat.trait == "bloodthirsty":
                 warrior_text = 'An unknown warrior walks towards ' + dep_name + ' stating that their name is ' + warrior + '. They offer a life for ' + \

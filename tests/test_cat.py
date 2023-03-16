@@ -1,6 +1,10 @@
 from copy import deepcopy
 import unittest
 
+import os
+os.environ["SDL_VIDEODRIVER"] = "dummy"
+os.environ["SDL_AUDIODRIVER"] = "dummy"
+
 from scripts.cat.cats import Cat
 from scripts.cat_relations.relationship import Relationship
 
@@ -29,7 +33,7 @@ class TestCreationAge(unittest.TestCase):
 
     def test_elder(self):
         test_cat = Cat(moons=120)
-        self.assertEqual(test_cat.age,"elder")
+        self.assertEqual(test_cat.age,"senior")
 
 class TestRelativesFunction(unittest.TestCase):
 

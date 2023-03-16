@@ -14,16 +14,22 @@
         "Astutely, s_c recognises the cranberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit."
     ],
     "fail_text": [
-        "Confidently gathering them and prancing back to camp with the patrol, r_c is then informed that raspberries aren't a useful medicinal herb.",
+        "Confidently gathering them and prancing back to camp with the patrol, r_c is then informed that red currents aren't a useful medicinal herb.",
         null,
         null,
-        "While plucking them from the bush, r_c feels one of the berries split in their mouth, and a horrible taste coats their tongue. They're rushed back to camp, where the medicine cat might have a chance at saving them from deathberry poisoning."
+        "While plucking them from the bush, r_c is suprised to find they taste pretty good. Before anyone can stop them, they eat a few, and are rushed back to camp for deathberry poisoning."
     ],
     "win_skills": ["very smart", "extremely smart"],
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
-    "antagonize_fail_text": null
+    "antagonize_fail_text": null,
+    "history_text": [
+        null,
+        "r_c mistook deathberries for something edible.",
+        "after eating deathberries"
+]
+
 },
 {
     "patrol_id": "gen_train_berrybush2",
@@ -39,15 +45,20 @@
         "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries and brings them back to camp, where it turns out they're called raspberries."
     ],
     "fail_text": [
-        "Confidently gathering them and prancing back to camp, app1 is then informed that raspberries aren't a useful medicinal herb.",
+        "Confidently gathering them and prancing back to camp, app1 is then informed that red currents aren't a useful medicinal herb.",
         null,
-        "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, several splitting in their mouth, and tries not to gag at the horrible taste - after all, all medicine cat herbs taste horrible. Right? They collapse on the way back to camp, and there's nothing any cat can do for them.",
-        "Whatever. Identifying them is a medicine cat problem. app1 plucks the horrible tasting berries and brings them back to camp, where the medicine cat immediately starts work trying to save them from deathberry poisoning."
+        "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, surprised at the pleasent taste, and swallow a few. They collapse on the way back to camp, and there's nothing any cat can do for them, having not identified deathberries before eating them.",
+        "Whatever. Identifying them is a medicine cat problem. app1 plucks the tasty berries, swallowing a few, and takes the rest back to camp where the medicine cat immediately starts work trying to save them from deathberry poisoning."
     ],
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
-    "antagonize_fail_text": null
+    "antagonize_fail_text": null,
+    "history_text": [
+        null,
+        "r_c mistook deathberries for something edible.",
+        "after eating deathberries"
+    ]
 },
 {
     "patrol_id": "gen_train_berrybush3",
@@ -64,16 +75,21 @@
         "Astutely, s_c recognises the cranberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit."
     ],
     "fail_text": [
-        "Confidently gathering them and prancing back to camp with the patrol, r_c is then informed that raspberries aren't a useful medicinal herb.",
+        "Confidently gathering them and prancing back to camp with the patrol, r_c is then informed that red currents aren't a useful medicinal herb.",
         null,
         null,
-        "While plucking them from the bush, r_c feels one of the berries split in their mouth, and a horrible taste coats their tongue. They're rushed back to camp, where the medicine cat might have a chance at saving them from deathberry poisoning."
+        "While plucking them from the bush, r_c finds them tasty, and eats a few, only for p_l to notice what they're eating. They're rushed back to camp, where the medicine cat might have a chance at saving them from deathberry poisoning."
     ],
     "win_skills": ["very smart", "extremely smart"],
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
-    "antagonize_fail_text": null
+    "antagonize_fail_text": null,
+    "history_text": [
+        null,
+        "r_c mistook deathberries for something edible.",
+        "after eating deathberries"
+    ]
 },
 {
     "patrol_id": "gen_train_berrybush4",
@@ -89,15 +105,20 @@
         "Whatever. Identifying them is a medicine cat problem.  app1 plucks the berries and brings them back to camp, where it turns out they're called raspberries."
     ],
     "fail_text": [
-        "Confidently gathering them and prancing back to camp, app1 is then informed that raspberries aren't a useful medicinal herb.",
+        "Confidently gathering them and prancing back to camp, app1 is then informed that red currents aren't a useful medicinal herb.",
         null,
-        "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, several splitting in their mouth, and tries not to gag at the horrible taste - after all, all medicine cat herbs taste horrible. Right? They collapse on the way back to camp, and there's nothing any cat can do for them.",
-        "Whatever. Identifying them is a medicine cat problem. app1 plucks the horrible tasting berries and brings them back to camp, where the medicine cat immediately starts work trying to save them from deathberry poisoning."
+        "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, surprised at the pleasent taste, and swallow a few. They collapse on the way back to camp, and there's nothing any cat can do for them, having not identified deathberries before eating them.",
+        "Whatever. Identifying them is a medicine cat problem. app1 plucks the tasty berries, swallowing a few, and takes the rest back to camp where the medicine cat immediately starts work trying to save them from deathberry poisoning."
     ],
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
-    "antagonize_fail_text": null
+    "antagonize_fail_text": null,
+    "history_text": [
+        null,
+        "r_c mistook deathberries for something edible.",
+        "after eating deathberries"
+    ]
 },
 {
     "patrol_id": "gen_train_sunny1",
@@ -1093,5 +1114,38 @@
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_training_twoapps_forbiddentunnels1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["two_apprentices", "rel_two_apps", "big_change", "trust",  "scar", "TAILBASE", "injury", "broken back", "app_only", "training"],
+    "intro_text": "app1 and app2 while exploring the territory come across the forbidden tunnels.",
+    "decline_text": "They don't want to get into trouble and they have a lot more territory to explore anyway.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "success_text": [
+            "app1 and app2 have a wonderful time exploring the forbidden tunnels. They return to camp sharing a mysterious smile, swearing not to speak of this to anyone.",
+            "app1 expected a little hesitation but app2 defies that expectation and darts right into the tunnels playfully batting at them as they do so. They play for what seems like forever and they make up a lie to tell their mentors on their way back to camp."
+                   ],
+    "fail_text": [
+            "As app1 and app2 begin to make their way into the tunnels they are suddenly grabbed by their scruffs. They hesitantly look upwards and find their mentors looking at them with disappointment. They are escorted back to camp to receive a punishment from their leader, though they feel like they should fear their mentors' punishments more. . . .", 
+            null,
+            null,
+            null,
+            null,
+            "s_c boasts to app2 that they go into the tunnels allllllll the time, their head and tail held high as they do so. app2 seems to be unconvinced so s_c crawls into the narrow opening of the tunnel and exclaims that there is nothing to it. Just at that moment the tunnel makes an ominous rumble and collapses. They both scream in absolute terror and app2 runs back to camp praying to StarClan that they can find help and soon, as they return with the help they can only hear the heartbroken wail of s_c that they can't feel their legs anymore."
+     ],
+    "fail_trait": ["adventurous", "bold", "confident", "daring", "troublesome", "playful", "childish"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            "This cat's back was broken after attempting to enter the forbidden tunnels."
+    ]
 }
-]
+    ]
+
+
+
