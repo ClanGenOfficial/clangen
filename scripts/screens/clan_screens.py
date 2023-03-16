@@ -1434,7 +1434,7 @@ class AllegiancesScreen(Screens):
                 if len(kittens) == 1:
                     kittens = f" <i>(caring for {kittens[0]})</i>"
                 else:
-                    kittens = f" <i>(caring for {', '.join(kittens[:-1])} and {kittens[-1]})</i>"
+                    kittens = f" <i>(caring for {', '.join(kittens[:-1])}, and {kittens[-1]})</i>"
 
                 all_entries.append(self.generate_one_entry(queen) + kittens)
 
