@@ -33,7 +33,7 @@ class TestCreationAge(unittest.TestCase):
 
     def test_elder(self):
         test_cat = Cat(moons=120)
-        self.assertEqual(test_cat.age,"elder")
+        self.assertEqual(test_cat.age,"senior")
 
 class TestRelativesFunction(unittest.TestCase):
 
