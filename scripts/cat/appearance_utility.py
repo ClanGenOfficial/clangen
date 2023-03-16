@@ -511,11 +511,11 @@ def white_patches_inheritance(cat, parents: tuple):
         # This ensures Torties and Calicos won't get direct inheritance of incorrect white patch types
         _temp = par_whitepatches.copy()
         if cat.pelt.name == "Tortie":
-            for p in _temp:
+            for p in _temp.copy():
                 if p in high_white + mostly_white + ["FULLWHITE"]:
                     _temp.remove(p)
         elif cat.pelt.name == "Calico":
-            for p in _temp:
+            for p in _temp.copy():
                 if p in little_white + mid_white:
                     _temp.remove(p)
 

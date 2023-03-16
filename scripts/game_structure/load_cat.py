@@ -150,7 +150,7 @@ def json_load():
                 new_cat.vitiligo = cat["white_patches"]
                 new_cat.white_patches = None
             if "vitiligo" in cat and cat["vitiligo"] == "VITILIGO2":
-                new_cat["vitiligo"] = "VITILIGOTWO"
+                new_cat.vitiligo = "VITILIGOTWO"
             elif cat["white_patches"] in point_markings:
                 new_cat.points = cat["white_patches"]
                 new_cat.white_patches = None
