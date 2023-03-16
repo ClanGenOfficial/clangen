@@ -1331,7 +1331,6 @@ class AllegiancesScreen(Screens):
         # Find Queens:
         queen_dict = {}
         for cat in living_kits.copy():
-            print(str(cat.name))
             parents = cat.get_parents()
             parents = [Cat.fetch_cat(i) for i in parents]
             if not parents:
@@ -1423,7 +1422,7 @@ class AllegiancesScreen(Screens):
          # Queens and Kits Box:
         if queen_dict or living_kits:
             _box = ["", ""]
-            _box[0] = '<b><u>KITS AND CARETAKERS</u></b>'
+            _box[0] = '<b><u>QUEENS AND KITS</u></b>'
             
             # This one is a bit different.  First all the queens, and the kits they are caring for. 
             all_entries = []
