@@ -59,6 +59,14 @@ def json_load():
                                 cat["pelt_length"], True)
             if cat["eye_colour"] == "BLUE2":
                 cat["eye_colour"] = "COBALT"
+            if cat["eye_colour"] in ["BLUEYELLOW", "BLUEGREEN"]:
+                if cat["eye_colour"] == "BLUEYELLOW":
+                    cat["eye_colour2"] = "YELLOW"
+                elif cat["eye_colour"] == "BLUEGREEN":
+                    cat["eye_colour2"] = "GREEN"
+                cat["eye_colour"] = "BLUE"
+            if cat["eye_colour2"] == "BLUE2":
+                new_cat.eye_colour2 = "COBALT"
             new_cat = Cat(ID=cat["ID"],
                         prefix=cat["name_prefix"],
                         suffix=cat["name_suffix"],
@@ -67,11 +75,9 @@ def json_load():
                         parent1=cat["parent1"],
                         parent2=cat["parent2"],
                         moons=cat["moons"],
-                        eye_colour=cat["eye_colour"] if cat["eye_colour"] not in ["BLUEYELLOW", "BLUEGREEN"] else "BLUE",
+                        eye_colour=cat["eye_colour"],
                         pelt=new_pelt,
                         loading_cat=True)
-            if cat["eye_colour2"] == "BLUE2":
-                new_cat.eye_colour2 = "COBALT"
             new_cat.eye_colour2 = cat["eye_colour2"] if "eye_colour2" in cat else None
             if cat["eye_colour"] == "BLUEYELLOW":
                 new_cat.eye_colour2 = "YELLOW"
