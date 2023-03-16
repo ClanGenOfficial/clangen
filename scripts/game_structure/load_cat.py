@@ -10,8 +10,9 @@ except ImportError:
 
 from re import sub
 from scripts.cat.cats import Cat
-from scripts.cat.pelts import choose_pelt
-from scripts.utility import update_sprite
+from scripts.cat.pelts import choose_pelt, vit, point_markings
+from scripts.utility import update_sprite, is_iterable
+from random import choice
 try:
     from ujson import JSONDecodeError
 except ImportError:
@@ -32,8 +33,10 @@ def json_load():
     all_cats = []
     cat_data = None
     clanname = game.switches['clan_list'][0]
+    with open(f"resources/dicts/conversion_dict.json", 'r') as read_file:
+        convert = ujson.loads(read_file.read())
     try:
-        with open(get_save_dir() + '/' + clanname + '/clan_cats.json', 'r') as read_file:
+        with open('saves/' + clanname + '/clan_cats.json', 'r') as read_file:
             cat_data = ujson.loads(read_file.read())
     except PermissionError as e:
         game.switches['error_message'] = f'Can\t open saves/{clanname}/clan_cats.json!'
@@ -43,39 +46,9 @@ def json_load():
         game.switches['error_message'] = get_save_dir() + f'/{clanname}/clan_cats.json is malformed!'
         game.switches['traceback'] = e
         raise
-        
-    old_tortie_patches = {
-        "PALEONE": ("PALEGINGER", "ONE"),
-        "PALETWO": ("PALEGINGER", "TWO"),
-        "PALETHREE": ("PALEGINGER", "THREE"),
-        "PALEFOUR": ("PALEGINGER", "FOUR"),
-        "GOLDONE": ("GOLDEN", "ONE"),
-        "GOLDTWO": ("GOLDEN", "TWO"),
-        "GOLDTHREE": ("GOLDEN", "THREE"),
-        "GOLDFOUR": ("GOLDEN", "FOUR"),
-        "GINGERONE": ("GINGER", "ONE"),
-        "GINGERTWO": ("GINGER", "TWO"),
-        "GINGERTHREE": ("GINGER", "THREE"),
-        "GINGERFOUR": ("GINGER", "FOUR"),
-        "DARKONE": ("DARKGINGER", "ONE"),
-        "DARKTWO": ("DARKGINGER", "TWO"),
-        "DARKTHREE": ("DARKGINGER", "THREE"),
-        "DARKFOUR": ("DARKGINGER", "FOUR"),
-        "CREAMONE": ("CREAM", "ONE"),
-        "CREAMTWO": ("CREAM", "TWO"),
-        "CREAMTHREE": ("CREAM", "THREE"),
-        "CREAMFOUR": ("CREAM", "FOUR")
-    }
 
-    old_creamy_patches = {
-        'COLOURPOINTCREAMY': 'COLOURPOINT',
-        'ANYCREAMY': 'ANY',
-        'ANY2CREAMY': 'ANY2',
-        'LITTLECREAMY': 'LITTLE',
-        'VANCREAMY': 'VAN',
-        'TUXEDOCREAMY': 'TUXEDO'
-    }
-
+    old_creamy_patches = convert["old_creamy_patches"]
+    old_tortie_patches = convert["old_tortie_patches"]
     no_tint_patches = ['SEPIAPOINT', 'MINKPOINT', 'SEALPOINT']
 
     # create new cat objects
@@ -84,6 +57,8 @@ def json_load():
             new_pelt = choose_pelt(cat["pelt_color"],
                                 cat["pelt_white"], cat["pelt_name"],
                                 cat["pelt_length"], True)
+            if cat["eye_colour"] == "BLUE2":
+                cat["eye_colour"] = "COBALT"
             new_cat = Cat(ID=cat["ID"],
                         prefix=cat["name_prefix"],
                         suffix=cat["name_suffix"],
@@ -95,32 +70,64 @@ def json_load():
                         eye_colour=cat["eye_colour"] if cat["eye_colour"] not in ["BLUEYELLOW", "BLUEGREEN"] else "BLUE",
                         pelt=new_pelt,
                         loading_cat=True)
+            if cat["eye_colour2"] == "BLUE2":
+                new_cat.eye_colour2 = "COBALT"
             new_cat.eye_colour2 = cat["eye_colour2"] if "eye_colour2" in cat else None
+            if cat["eye_colour"] == "BLUEYELLOW":
+                new_cat.eye_colour2 = "YELLOW"
+            elif cat["eye_colour"] == "BLUEGREEN":
+                new_cat.eye_colour2 = "GREEN"
             new_cat.age = cat["age"]
             new_cat.genderalign = cat["gender_align"]
             new_cat.backstory = cat["backstory"] if "backstory" in cat else None
-            new_cat.birth_cooldown = cat[
-                "birth_cooldown"] if "birth_cooldown" in cat else 0
+            new_cat.birth_cooldown = cat["birth_cooldown"] if "birth_cooldown" in cat else 0
             new_cat.moons = cat["moons"]
-            new_cat.trait = cat["trait"]
+            if cat["trait"] in ["clever", "patient", "empathetic", "altruistic"]:
+                new_cat.trait = "compassionate"
+            else:
+                new_cat.trait = cat["trait"]
             new_cat.mentor = cat["mentor"]
             new_cat.former_mentor = cat["former_mentor"] if "former_mentor" in cat else []
             new_cat.patrol_with_mentor = cat["patrol_with_mentor"] if "patrol_with_mentor" in cat else 0
             new_cat.mentor_influence = cat["mentor_influence"] if "mentor_influence" in cat else []
             new_cat.paralyzed = cat["paralyzed"]
+            if new_cat.paralyzed:
+                new_cat.get_permanent_condition("paralyzed")
             new_cat.no_kits = cat["no_kits"]
             new_cat.exiled = cat["exiled"]
-            new_cat.age_sprites['kitten'] = cat["spirit_kitten"]
-            new_cat.age_sprites['adolescent'] = cat["spirit_adolescent"]
-            new_cat.age_sprites['young adult'] = cat["spirit_young_adult"]
-            new_cat.age_sprites['adult'] = cat["spirit_adult"]
-            new_cat.age_sprites['senior adult'] = cat["spirit_senior_adult"]
-            new_cat.age_sprites['elder'] = cat["spirit_elder"]
+            new_cat.cat_sprites['kitten'] = cat["sprite_kitten"] if "sprite_kitten" in cat else cat["spirit_kitten"]
+            new_cat.cat_sprites['adolescent'] = cat["sprite_adolescent"] if "sprite_adolescent" in cat else cat["spirit_adolescent"]
+            new_cat.cat_sprites['young adult'] = cat["sprite_young_adult"] if "sprite_young_adult" in cat else cat["spirit_young_adult"]
+            new_cat.cat_sprites['adult'] = cat["sprite_adult"] if "sprite_adult" in cat else cat["spirit_adult"]
+            new_cat.cat_sprites['senior adult'] = cat["sprite_senior_adult"] if "sprite_senior_adult" in cat else cat["spirit_senior_adult"]
+            new_cat.cat_sprites['senior'] = cat["sprite_senior"] if "sprite_senior" in cat else cat["spirit_elder"]
+            new_cat.cat_sprites['para_adult'] = cat["sprite_para_adult"] if "sprite_para_adult" in cat else None
+            # setting up sprites that might not be correct
+            if new_cat.pelt is not None:
+                if new_cat.pelt.length == 'long':
+                    if new_cat.cat_sprites['adult'] not in [9, 10, 11]:
+                        if new_cat.cat_sprites['adult'] == 0:
+                            new_cat.cat_sprites['adult'] = 9
+                        elif new_cat.cat_sprites['adult'] == 1:
+                            new_cat.cat_sprites['adult'] = 10
+                        elif new_cat.cat_sprites['adult'] == 2:
+                            new_cat.cat_sprites['adult'] = 11
+                        new_cat.cat_sprites['young adult'] = new_cat.cat_sprites['adult']
+                        new_cat.cat_sprites['senior adult'] = new_cat.cat_sprites['adult']
+                        new_cat.cat_sprites['para_adult'] = 16
+                else:
+                    new_cat.cat_sprites['para_adult'] = 15
+                if new_cat.cat_sprites['senior'] not in [12, 13, 14]:
+                    if new_cat.cat_sprites['senior'] == 3:
+                        new_cat.cat_sprites['senior'] = 12
+                    elif new_cat.cat_sprites['senior'] == 4:
+                        new_cat.cat_sprites['senior'] = 13
+                    elif new_cat.cat_sprites['senior'] == 5:
+                        new_cat.cat_sprites['senior'] = 14
             new_cat.eye_colour = cat["eye_colour"]
             new_cat.reverse = cat["reverse"]
-            
             if cat["white_patches"] in old_creamy_patches:
-                new_cat.white_patches = old_creamy_patches[cat['white_patches']]
+                new_cat.white_patches = convert["old_creamy_patches"][str(cat['white_patches'])]
                 new_cat.white_patches_tint = "darkcream"
             else:
                 new_cat.white_patches = cat["white_patches"]
@@ -131,9 +138,23 @@ def json_load():
                         new_cat.white_patches_tint = "none"
                     else:
                         new_cat.white_patches_tint = "offwhite"
-
+            if cat["white_patches"] == 'POINTMARK':
+                new_cat.white_patches = "SEALPOINT"
+            if cat["white_patches"] == 'PANTS2':
+                new_cat.white_patches = 'PANTSTWO'
+            if cat["white_patches"] == 'ANY2':
+                new_cat.white_patches = 'ANYTWO'
+            new_cat.vitiligo = cat["vitiligo"] if "vitiligo" in cat else None
+            new_cat.points = cat["points"] if "points" in cat else None
+            if cat["white_patches"] in vit:
+                new_cat.vitiligo = cat["white_patches"]
+                new_cat.white_patches = None
+            if "vitiligo" in cat and cat["vitiligo"] == "VITILIGO2":
+                new_cat.vitiligo = "VITILIGOTWO"
+            elif cat["white_patches"] in point_markings:
+                new_cat.points = cat["white_patches"]
+                new_cat.white_patches = None
             new_cat.tortiebase = cat["tortie_base"]
-
             if cat["tortie_pattern"] and "tortie" in cat["tortie_pattern"]:
                 new_cat.tortiepattern = sub("tortie", "", cat["tortie_pattern"]).lower()
                 if new_cat.tortiepattern == "solid":
@@ -143,8 +164,8 @@ def json_load():
 
             if cat["pattern"] in old_tortie_patches:
                 # Convert old torties
-                new_cat.pattern = old_tortie_patches[cat["pattern"]][1]
-                new_cat.tortiecolour = old_tortie_patches[cat["pattern"]][0]
+                new_cat.pattern = convert["old_tortie_patches"][cat["pattern"]][1]
+                new_cat.tortiecolour = convert["old_tortie_patches"][cat["pattern"]][0]
                 # If the pattern is old, there is also a change the base color is stored in
                 # tortiecolour, and that may be different from the pelt color (main for torties
                 # generated before the "ginger-on-ginger" update. If it was generated after that update,
@@ -153,7 +174,6 @@ def json_load():
             else:
                 new_cat.pattern = cat["pattern"]
                 new_cat.tortiecolour = cat["tortie_color"]
-
             new_cat.skin = cat["skin"]
             new_cat.skill = cat["skill"]
             new_cat.scars = cat["scars"] if "scars" in cat else []
@@ -169,7 +189,6 @@ def json_load():
             new_cat.mate = cat["mate"]
             new_cat.dead = cat["dead"]
             new_cat.died_by = cat["died_by"] if "died_by" in cat else []
-            new_cat.age_sprites['dead'] = cat["spirit_dead"]
             new_cat.experience = cat["experience"]
             new_cat.dead_for = cat["dead_moons"]
             new_cat.apprentice = cat["current_apprentice"]
@@ -222,8 +241,15 @@ def json_load():
 
         # Add faded siblings:
         for parent in cat.get_parents():
-            cat_ob = Cat.fetch_cat(parent)
-            cat.siblings.extend(cat_ob.faded_offspring)
+            try:
+                cat_ob = Cat.fetch_cat(parent)
+                cat.siblings.extend(cat_ob.faded_offspring)
+            except:
+                if parent == cat.parent1:
+                    cat.parent1 = None
+                elif parent == cat.parent2:
+                    cat.parent2 = None
+
         # Remove duplicates
         cat.siblings = list(set(cat.siblings))
 
@@ -296,17 +322,17 @@ def csv_load(all_cats):
                 game.switches[
                     'error_message'] = '4There was an error loading cat # ' + str(
                         attr[0])
-                the_cat.age_sprites['kitten'], the_cat.age_sprites[
+                the_cat.cat_sprites['kitten'], the_cat.cat_sprites[
                     'adolescent'] = int(attr[13]), int(attr[14])
                 game.switches[
                     'error_message'] = '5There was an error loading cat # ' + str(
                         attr[0])
-                the_cat.age_sprites['adult'], the_cat.age_sprites[
+                the_cat.cat_sprites['adult'], the_cat.cat_sprites[
                     'elder'] = int(attr[15]), int(attr[16])
                 game.switches[
                     'error_message'] = '6There was an error loading cat # ' + str(
                         attr[0])
-                the_cat.age_sprites['young adult'], the_cat.age_sprites[
+                the_cat.cat_sprites['young adult'], the_cat.cat_sprites[
                     'senior adult'] = int(attr[15]), int(attr[15])
                 game.switches[
                     'error_message'] = '7There was an error loading cat # ' + str(
@@ -358,7 +384,7 @@ def csv_load(all_cats):
                     if len(attr) >= 32:
                         # Is the cat dead
                         the_cat.dead = attr[32]
-                        the_cat.age_sprites['dead'] = attr[33]
+                        the_cat.cat_sprites['dead'] = attr[33]
                 game.switches[
                     'error_message'] = '13There was an error loading cat # ' + str(
                         attr[0])

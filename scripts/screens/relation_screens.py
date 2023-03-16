@@ -1370,7 +1370,7 @@ class ChooseMateScreen(Screens):
         """Get a list of valid mates for the current cat"""
         valid_mates = []
         for relevant_cat in Cat.all_cats_list:
-            invalid_age = relevant_cat.age not in ['kitten', 'adolescent']
+            invalid_age = relevant_cat.age not in ['newborn', 'kitten', 'adolescent']
 
             # cat.is_potential_mate() is not used here becuase that restricts to the same age catagory, which we
             # don't want here.
