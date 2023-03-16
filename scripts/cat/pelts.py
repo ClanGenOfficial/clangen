@@ -473,41 +473,6 @@ def choose_pelt(colour=None, white=None, pelt=None, length=None, category=None, 
     else:
         return Calico(colour, length)
 
-def descibe_short_color(pelt, white_patches):
-    """Shortened"""
-    special_color_names = {
-        "palegrry": "pale gray",
-        "darkgrey": "dark gray",
-        "paleginger": "pale ginger",
-        "darkginger": "dark ginger",
-        "lightbrown": "light brown",
-        "darkbrown": "dark brown"
-    }
-
-    color_name = str(pelt.colour).lower()
-    
-    if color_name in special_color_names:
-        color_name = special_color_names[color_name]
-
-    if pelt.name in tabbies + exotic:
-        color_name += " tabby"
-    elif pelt.name in spotted:
-        color_name += " spotted"
-    elif pelt.name == "Calico":
-        color_name = "calico"
-    elif pelt.name == "Tortie":
-        color_name = "tortoiseshell"
-
-    if white_patches == 'FULLWHITE':
-        color_name = "white"
-    elif white_patches:
-        if white_patches in point_markings:
-            color_name += " pointed"
-        elif pelt.name != "Calico":
-            color_name += " and white"
-    
-    return color_name
-
 def describe_color(pelt, tortiebase, tortiecolour, white_patches, short=False):
     """ short=True makes everything just slightly shorter, mainly for kit purposes. """
     
