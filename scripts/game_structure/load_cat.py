@@ -91,6 +91,8 @@ def json_load():
             new_cat.patrol_with_mentor = cat["patrol_with_mentor"] if "patrol_with_mentor" in cat else 0
             new_cat.mentor_influence = cat["mentor_influence"] if "mentor_influence" in cat else []
             new_cat.paralyzed = cat["paralyzed"]
+            if new_cat.paralyzed:
+                new_cat.get_permanent_condition("paralyzed")
             new_cat.no_kits = cat["no_kits"]
             new_cat.exiled = cat["exiled"]
             new_cat.cat_sprites['kitten'] = cat["sprite_kitten"] if "sprite_kitten" in cat else cat["spirit_kitten"]
