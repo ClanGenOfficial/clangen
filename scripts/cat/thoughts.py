@@ -24,7 +24,9 @@ class Thoughts():
                  main_trait_constraint=None,
                  random_trait_constraint=None,
                  main_skill_constraint=None,
-                 random_skill_constraint=None):
+                 random_skill_constraint=None,
+                 random_living_status=None,
+                 random_outside_status=None):
         self.id = id
         self.biome = biome if biome else ["Any"]
         self.season = season if season else ["Any"]
@@ -99,6 +101,15 @@ class Thoughts():
         else:
             self.random_skill_constraint = []
 
+        if random_living_status:
+            self.random_living_status = random_living_status
+        else:
+            self.random_living_status = []
+        if random_outside_status:
+            self.random_outside_status = random_outside_status
+        else:
+            self.random_outside_status = []
+
 # ---------------------------------------------------------------------------- #
 #                some useful functions, related to thoughts                    #
 # ---------------------------------------------------------------------------- #
@@ -168,14 +179,34 @@ def cats_fulfill_thought_constraints(main_cat, random_cat, thought, game_mode) -
             return False
 
     if len(thought.main_backstory_constraint) >= 1:
-        if "m_c" in thought.main_backstory_constraint:
-            if main_cat.backstory not in thought.main_backstory_constraint["m_c"]:
-                return False
+        if main_cat.backstory not in thought.main_backstory_constraint["m_c"]:
+            return False
             
     if len(thought.random_backstory_constraint) >= 1:
-        if "r_c" in thought.random_backstory_constraint:
-            if random_cat.backstory not in thought.random_backstory_constraint["r_c"]:
-                return False
+        if random_cat.backstory not in thought.random_backstory_constraint["r_c"]:
+            return False
+            
+    if len(thought.random_living_status) >= 1:
+        living_status = None
+        if not random_cat.dead:
+            living_status = "living"
+        elif random_cat.dead and random_cat.df:
+            living_status = "darkforest"
+        elif random_cat.dead and not random_cat.df:
+            living_status = "starclan"
+        else:
+            living_status = 'unknownresidence'
+        if living_status not in thought.random_living_status:
+            return False
+        
+    if len(thought.random_outside_status) >= 1:
+        outside_status = None
+        if random_cat.outside and random_cat.status not in ["kittypet", "loner", "rogue"]:
+            outside_status = "lost"
+        else:
+            outside_status = "outside cat"
+        if outside_status not in thought.random_outside_status:
+            return False
 
     if len(thought.has_injuries) >= 1:
         # if there is a injury constraint and the clan is in classic mode, this interact can not be used
@@ -220,7 +251,9 @@ def create_thoughts(inter_list) -> list:
             main_trait_constraint = inter["main_trait_constraint"] if "main_trait_constraint" in inter else None,
             random_trait_constraint = inter["random_trait_constraint"] if "random_trait_constraint" in inter else None,
             main_skill_constraint = inter["main_skill_constraint"] if "main_skill_constraint" in inter else None,
-            random_skill_constraint = inter["random_skill_constraint"] if "random_skill_constraint" in inter else None
+            random_skill_constraint = inter["random_skill_constraint"] if "random_skill_constraint" in inter else None,
+            random_living_status = inter["random_living_status"] if "random_living_status" in inter else None,
+            random_outside_status = inter["random_outside_status"] if "random_outside_status" in inter else None
         ))
     return created_list
 
