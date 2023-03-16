@@ -18,7 +18,7 @@
     "heart", "heart", "heart", "heart", "heart", "heart", "heart", "heart", "heart", "heart",
     "acorn", "ash", "aster","beam", "beak", "back", "bark", "bee", "belly", "berry", "bite", "bird", "blaze", "blink", "bloom", 
     "blossom", "blotch", "bounce", "bracken", "branch", "breeze", "briar", "bright", "brook", "bubble", "bud", "burr", "burrow", "burst", "bush", 
-    "call", "catcher", "chase", "chaser", "clear", "cloud", "clover", "cool", "crag", "crawl", "creek", "cry", "curl", "current", "cut",
+    "call", "catcher", "chase", "chaser", "clear", "cloud", "clover", "crag", "crawl", "creek", "cry", "curl", "current", "cut",
     "dapple", "daisy", "dash", "dance", "dawn", "dirt", "drift", "drop", "dusk", "dust", "dew", "dune",
     "eagle", "ear", "ears", "eater", "ease", "echo", "egg", "ember", "eye", "eyes", 
     "face", "fall", "fang", "fawn", "feather", "fern", "fin", "fire", "fish", "flake", 
@@ -38,7 +38,7 @@
     "step", "stone", "storm", "streak", "stream", "strike", "stripe", "sun", "swipe", "swoop",
     "tear", "talon", "tangle", "tooth", "thistle", "thorn", "throat","thud", "tiger", "timber", "toe", "tree", "turtle", "twist",
     "watcher", "water", "wave", "whisper", "whistle", "willow", "wind", "wing", "wish",
-    "zest", "zip"
+    "zap", "zinnia", "zoom"
   ],
   "pelt_suffixes": {
     "TwoColour": ["patch", "spot", "splash", "patch", "spots"],
