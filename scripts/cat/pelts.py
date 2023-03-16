@@ -498,7 +498,7 @@ def describe_color(pelt, tortiebase, tortiecolour, white_patches, points, vitili
     pattern_des = {
         "Tabby": "tabby",
         "Speckled": "speckled",
-        "Bengal": "unusally spotted",
+        "Bengal": "unusually spotted",
         "Marbled": "tabby",
         "Ticked": "ticked",
         "Smoke": "smoke",
