@@ -2010,11 +2010,11 @@ class ChangeNameScreen(Screens):
         
         self.toggle_spec_block_on = UIImageButton(scale(pygame.Rect((1170, 413), (34, 34))), "",
                                                   object_id="#checked_checkbox",
-                                                  tool_tip_text="Allow custom suffixes, instead of the special role ones", manager=MANAGER)
+                                                  tool_tip_text="Unlocks the special suffix. This allows you to see and edit the cats real suffix, that would show if the cat does not have a special suffix", manager=MANAGER)
 
         self.toggle_spec_block_off = UIImageButton(scale(pygame.Rect((1170, 413), (34, 34))), "",
                                                     object_id="#unchecked_checkbox",
-                                                    tool_tip_text="Allow custom suffixes, instead of the special role ones", manager=MANAGER)
+                                                    tool_tip_text="Unlocks the special suffix. This allows you to see and edit the cats real suffix, that would show if the cat does not have a special suffix", manager=MANAGER)
 
         if self.the_cat.name.status in self.the_cat.name.names_dict["special_suffixes"]:
             self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((800, 400), (360, 60))),
@@ -2118,7 +2118,7 @@ class ChangeNameScreen(Screens):
                 self.toggle_spec_block_off.hide()
                 self.toggle_spec_block_on.enable()
                 self.toggle_spec_block_on.show()
-                self.suffix_entry_box.set_text(self.the_cat.name.names_dict["special_suffixes"][self.the_cat.name.status])
+                self.suffix_entry_box.set_text("")
             elif event.ui_element == self.back_button:
                 self.change_screen('profile screen')
 
