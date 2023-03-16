@@ -24,7 +24,7 @@
     "eagle", "ear", "ears", "eater", "ease", "echo", "egg", "ember", "eye", "eyes", 
     "face", "fall", "fang", "fawn", "feather", "fern", "fin", "fire", "fish", "flake", 
     "flame", "flash", "flight", "flick", "flicker", "falcon", "flow", "flood", "flower", "fox", "freeze", "frost", 
-    "gale", "gaze", "gill", "glide", "glint", "goose", "gorse", "gossamer", "grass", "growl",
+    "gale", "gaze", "gil", "glide", "glint", "goose", "gorse", "grass", "growl",
     "heavy", "hail", "hare", "haste", "hawk", "haze", "heather", "hiss", "hollow", "holly", "hope", "hound", "husk", "howl",
     "ibis", "ice", "icicle", "iris", "isle", "ivy",
     "jaw", "jay", "joy", "jump", "jumble", "juniper", 
@@ -38,7 +38,7 @@
     "snow", "song", "spark", "speck", "speckle", "spirit", "spike", "splash", "spot", "spots", "spring", "sprout", "stalk", "stem", 
     "step", "stone", "storm", "streak", "stream", "strike", "stripe", "sun", "swipe", "swoop",
     "tear", "talon", "tangle", "tooth", "thistle", "thorn", "throat","thud", "tiger", "timber", "toe", "tree", "turtle", "twist",
-    "watcher", "water", "wave", "whisper", "whistle", "willow", "wind", "wing", "wish",
+    "watcher", "water", "wave", "web", "whisper", "whistle", "willow", "wind", "wing", "wish",
     "zap", "zinnia", "zoom"
   ],
   "pelt_suffixes": {
