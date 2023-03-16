@@ -471,7 +471,7 @@ def choose_pelt(colour=None, white=None, pelt=None, length=None, category=None, 
     else:
         return Calico(colour, length)
 
-def describe_color(pelt, tortiebase, tortiecolour, white_patches, short=False, points=None, vitiligo=None):
+def describe_color(pelt, tortiebase, tortiecolour, white_patches, points, vitiligo, short=False):
     """ short=True makes everything just slightly shorter, mainly for kit purposes. """
     
     if short:

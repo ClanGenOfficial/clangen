@@ -915,7 +915,7 @@ class Cat():
             description += str(self.pelt.length).lower() + '-furred ' 
 
         description += describe_color(self.pelt, self.tortiepattern, self.tortiecolour,
-                                            self.white_patches, short=short, self.points, self.vitiligo) + ' ' + sex
+                                            self.white_patches, self.points, self.vitiligo, short=short) + ' ' + sex
         return description
         
 
