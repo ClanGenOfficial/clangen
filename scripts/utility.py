@@ -381,6 +381,37 @@ def create_new_cat(Cat,
 
     return created_cats
 
+def create_outside_cat(Cat, status, backstory):
+        """
+        TODO: DOCS
+        """
+        suffix = ''
+        if 'rogue' in backstory:
+            status = 'rogue'
+        elif backstory in ['ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
+                         'tragedy_survivor', 'disgraced2', 'disgraced3', 'refugee5']:
+            status = "former clancat"
+        if status == 'kittypet':
+            name = random.choice(names.names_dict["loner_names"])
+        elif status in ['loner', 'rogue']:
+            name = random.choice(names.names_dict["loner_names"] +
+                                 names.names_dict["normal_prefixes"])
+        elif status == 'former clancat':
+            name = random.choice(names.names_dict["normal_prefixes"])
+            suffix = random.choice(names.names_dict["normal_suffixes"])
+        else:
+            name = random.choice(names.names_dict["loner_names"])
+        new_cat = Cat(prefix=name,
+                      suffix=suffix,
+                      status=status,
+                      gender=random.choice(['female', 'male']))
+        if status == 'kittypet':
+            new_cat.accessory = random.choice(collars)
+        new_cat.outside = True
+        game.clan.add_cat(new_cat)
+        game.clan.add_to_outside(new_cat)
+
+        return name, suffix
 
 # ---------------------------------------------------------------------------- #
 #                             Cat Relationships                                #

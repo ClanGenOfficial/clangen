@@ -8,7 +8,7 @@ try:
 except ImportError:
     import json as ujson
 
-from scripts.clan import HERBS
+from scripts.clan import HERBS, Clan
 from scripts.utility import (
     add_siblings_to_cat,
     add_children_to_cat,
@@ -16,6 +16,7 @@ from scripts.utility import (
     change_clan_relations,
     change_clan_reputation,
     change_relationship_values, create_new_cat,
+    create_outside_cat
 )
 from scripts.game_structure.game_essentials import game
 from scripts.cat.names import names
@@ -24,7 +25,6 @@ from scripts.cat.pelts import collars, scars1, scars2, scars3
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_resources.freshkill import ADDITIONAL_PREY, PREY_REQUIREMENT, HUNTER_EXP_BONUS, HUNTER_BONUS, \
     FRESHKILL_ACTIVE
-from scripts.clan import Clan
 
 # ---------------------------------------------------------------------------- #
 #                              PATROL CLASS START                              #
@@ -757,7 +757,7 @@ class Patrol():
                         outcome = 1
 
             if not antagonize:
-                self.add_new_cats(outcome)
+                self.add_new_cats(outcome, self.success)
             if self.patrol_event.tags is not None:
                 if "other_clan" in self.patrol_event.tags:
                     if antagonize:
@@ -853,6 +853,8 @@ class Patrol():
                     self.handle_scars(outcome)
                 else:
                     self.handle_conditions(outcome)
+            if not antagonize:
+                self.add_new_cats(outcome, self.success)
             if self.patrol_event.tags is not None:
                 if "other_clan" in self.patrol_event.tags:
                     if antagonize:
@@ -881,10 +883,11 @@ class Patrol():
         self.results_text.clear()
         return text
 
-    def add_new_cats(self, outcome):
+    def add_new_cats(self, outcome, success):
         """
         handles new_cat tags and passing info to the create_new_cats function
         :param outcome: the outcome index
+        :param success: success bool
         """
         tags = self.patrol_event.tags
         print('new cat creation started')
@@ -933,21 +936,30 @@ class Patrol():
             kittypet = True
             new_name = choice([True, False])
             backstory = ['kittypet1', 'kittypet2', 'kittypet3', 'refugee3', 'tragedy_survivor3']
+            if not success:
+                outsider = create_outside_cat(Cat, "kittypet", backstory=choice(backstory))
+                self.results_text.append(f"The Clan has met {outsider}.")
         elif cat_type == 'loner' or "loner" in attribute_list:
             loner = True
             new_name = choice([True, False])
             backstory = ['loner1', 'loner2', 'rogue1', 'rogue2', 'refugee2', 'tragedy_survivor4',
                          'refugee4', 'tragedy_survivor2']
+            if not success:
+                outsider = create_outside_cat(Cat, "loner", backstory=choice(backstory))
+                self.results_text.append(f"The Clan has met {outsider}.")
         else:
             other_clan = self.other_clan
             # failsafe in case self.other_clan is None for some reason
             backstory = ['ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
-                         'tragedy_survivor']
+                         'tragedy_survivor', 'disgraced2', 'disgraced3', 'refugee5']
             if not other_clan:
                 loner = True
                 new_name = choice([True, False])
                 backstory = ['loner1', 'loner2', 'rogue1', 'rogue2', 'refugee2', 'tragedy_survivor4',
                              'refugee4', 'tragedy_survivor2']
+            if not success:
+                outsider = create_outside_cat(Cat, "loner", backstory=choice(backstory))
+                self.results_text.append(f"The Clan has met {outsider}.")
 
         # handing out ranks
         if "kitten" in attribute_list:
