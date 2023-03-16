@@ -12,7 +12,7 @@ try:
 except ImportError:
     import json as ujson
 
-from .pelts import describe_color, descibe_short_color
+from .pelts import describe_color
 from .names import Name
 from .thoughts import get_thoughts
 from .appearance_utility import (
@@ -883,13 +883,14 @@ class Cat():
         else:
             sex = 'cat'
 
-        if short:
-            description = descibe_short_color(self.pelt, self.white_patches) + " " + sex
-        else:
-            description = str(self.pelt.length).lower() + '-furred'
-            description += ' ' + describe_color(self.pelt, self.tortiecolour, self.tortiepattern,
-                                                self.white_patches) + ' ' + sex
+        description = ""
+        if not short and self.pelt.length == "long":
+            description = str(self.pelt.length).lower() + '-furred ' 
+
+        description += describe_color(self.pelt, self.tortiepattern, self.tortiecolour,
+                                            self.white_patches, short=short) + ' ' + sex
         return description
+        
 
     def describe_eyes(self):
         colour = str(self.eye_colour).lower()
