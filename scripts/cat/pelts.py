@@ -508,7 +508,8 @@ def describe_color(pelt, tortiebase, tortiecolour, white_patches, short=False):
         "Classic": "tabby",
         "Agouti": "tabby",
         "Singlestripe": "striped",
-        "Rosette": "dappled"
+        "Rosette": "dappled",
+        "Sokoke": "tabby"
     }
     
     color_name = str(pelt.colour).lower()
@@ -532,7 +533,7 @@ def describe_color(pelt, tortiebase, tortiecolour, white_patches, short=False):
             if base in tabbies:
                 base = 'tabby'
             elif base in ['bengal', 'rosette', 'speckled']:
-                base = 'spotted'
+                base = 'spotted tabby'
             else:
                 base = ''
 
@@ -541,6 +542,8 @@ def describe_color(pelt, tortiebase, tortiecolour, white_patches, short=False):
                 color_name = f"mottled {base}"
             else:
                 patches = tortiecolour.lower()
+                if patches in renamed_colors:
+                    patches = renamed_colors[patches]
                 color_name = f"{color_name} and {patches} {pelt.name.lower()}"
 
     if white_patches:
