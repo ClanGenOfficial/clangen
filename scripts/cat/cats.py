@@ -884,8 +884,11 @@ class Cat():
             sex = 'cat'
 
         description = ""
+        if len(self.scars) >= 4:
+            description += "scarred "
+
         if not short and self.pelt.length == "long":
-            description = str(self.pelt.length).lower() + '-furred ' 
+            description += str(self.pelt.length).lower() + '-furred ' 
 
         description += describe_color(self.pelt, self.tortiepattern, self.tortiecolour,
                                             self.white_patches, short=short) + ' ' + sex
