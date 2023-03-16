@@ -13,6 +13,8 @@ from scripts.event_class import Single_Event
 from scripts.cat.cats import Cat
 from scripts.cat_relations.relationship import INTERACTION_MASTER_DICT
 
+from scripts.mods.resources import mod_open
+
 
 class Mate_Events():
     """All events which are related to mate's such as becoming mates and breakups, but also for possible mates and romantic interactions."""
@@ -246,7 +248,7 @@ class Mate_Events():
 resource_directory = "resources/dicts/relationship_events/"
 
 MATE_DICTS = None
-with open(f"{resource_directory}become_mates.json", 'r') as read_file:
+with mod_open(f"{resource_directory}become_mates.json", 'r') as read_file:
     MATE_DICTS = ujson.loads(read_file.read())
 
 # ---------------------------------------------------------------------------- #

@@ -9,6 +9,8 @@ from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
 from ..utility import get_text_box_theme, update_sprite, scale
 
+from scripts.mods.resources import pyg_img_load, mod_open
+
 
 class OutsideClanScreen(Screens):
 
@@ -19,7 +21,7 @@ class OutsideClanScreen(Screens):
     previous_search_text = ""
 
     def load_images(self):
-        self.search_bar_image = pygame.transform.scale(pygame.image.load(
+        self.search_bar_image = pygame.transform.scale(pyg_img_load(
             "resources/images/search_bar.png").convert_alpha(), (456 / 1600 * screen_x, 68 / 1400 * screen_y))
 
     def __init__(self, name=None):
@@ -302,12 +304,12 @@ class UnknownResScreen(Screens):
         self.load_images()
 
     def load_images(self):
-        self.search_bar_image = pygame.transform.scale(pygame.image.load(
+        self.search_bar_image = pygame.transform.scale(pyg_img_load(
             "resources/images/search_bar.png").convert_alpha(), (456 / 1600 * screen_x, 68 / 1400 * screen_y))
         self.clan_name_bg = pygame.transform.scale(
             image_cache.load_image("resources/images/clan_name_bg.png").convert_alpha(), (380, 70))
         self.ur_bg = pygame.transform.scale(
-            pygame.image.load("resources/images/urbg.png").convert(),
+            pyg_img_load("resources/images/urbg.png").convert(),
             (screen_x, screen_y))
 
     def handle_event(self, event):

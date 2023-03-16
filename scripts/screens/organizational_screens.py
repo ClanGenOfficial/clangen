@@ -31,6 +31,8 @@ from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.game_structure import image_cache
 from ..datadir import get_data_dir
 
+from scripts.mods.resources import pyg_img_load, mod_open
+
 try:
     import ujson
 except ImportError:
@@ -46,7 +48,7 @@ class StartScreen(Screens):
     def __init__(self, name=None):
         super().__init__(name)
         self.warning_label = None
-        self.bg = pygame.image.load("resources/images/menu.png").convert()
+        self.bg = pyg_img_load("resources/images/menu.png").convert()
         self.bg = pygame.transform.scale(self.bg, (screen_x, screen_y))
 
     def handle_event(self, event):
@@ -290,7 +292,7 @@ class SwitchClanScreen(Screens):
         TODO: DOCS
         """
         self.screen = pygame.transform.scale(
-            pygame.image.load(
+            pyg_img_load(
                 "resources/images/clan_saves_frame.png").convert_alpha(),
             (440 / 1600 * screen_x, 750 / 1400 * screen_y))
         self.main_menu = UIImageButton(scale(pygame.Rect((50, 50), (306, 60))),
@@ -406,7 +408,7 @@ class SwitchClanScreen(Screens):
                     (580 / 1600 * screen_x, 300 / 1400 * screen_y))
 
 
-with open('resources/gamesettings.json', 'r', encoding='utf-8') as f:
+with mod_open('resources/gamesettings.json', 'r', encoding='utf-8') as f:
     settings_dict = ujson.load(f)
 
 
@@ -437,7 +439,7 @@ class SettingsScreen(Screens):
     checkboxes_text = {}
 
     info_text = ""
-    with open('resources/credits_text.json', 'r', encoding='utf-8') as f:
+    with mod_open('resources/credits_text.json', 'r', encoding='utf-8') as f:
         credits_text = ujson.load(f)
     for string in credits_text["text"]:
         if string == "{contrib}":

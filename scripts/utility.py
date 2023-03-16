@@ -34,6 +34,8 @@ from scripts.cat.pelts import (
 )
 from scripts.game_structure.game_essentials import game, screen_x, screen_y
 
+from scripts.mods.resources import mod_open
+
 
 # ---------------------------------------------------------------------------- #
 #                              Counting Cats                                   #
@@ -388,7 +390,7 @@ def create_new_cat(Cat,
 
 resource_directory = "resources/dicts/"
 PERSONALITY_COMPATIBILITY = None
-with open(f"{resource_directory}personality_compatibility.json", 'r') as read_file:
+with mod_open(f"{resource_directory}personality_compatibility.json", 'r') as read_file:
     PERSONALITY_COMPATIBILITY = ujson.loads(read_file.read())
 
 
@@ -1221,13 +1223,13 @@ def quit(savesettings=False, clearevents=False):
 
 
 PERMANENT = None
-with open(f"resources/dicts/conditions/permanent_conditions.json", 'r') as read_file:
+with mod_open(f"resources/dicts/conditions/permanent_conditions.json", 'r') as read_file:
     PERMANENT = ujson.loads(read_file.read())
 
 ACC_DISPLAY = None
-with open(f"resources/dicts/acc_display.json", 'r') as read_file:
+with mod_open(f"resources/dicts/acc_display.json", 'r') as read_file:
     ACC_DISPLAY = ujson.loads(read_file.read())
 
 SNIPPETS = None
-with open(f"resources/dicts/snippet_collections.json", 'r') as read_file:
+with mod_open(f"resources/dicts/snippet_collections.json", 'r') as read_file:
     SNIPPETS = ujson.loads(read_file.read())

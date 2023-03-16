@@ -8,6 +8,8 @@ except ImportError:
     import json as ujson
 from scripts.game_structure.game_essentials import game
 
+from scripts.mods.resources import mod_open
+
 resource_directory = "resources/dicts/events/"
 
 
@@ -21,7 +23,7 @@ class GenerateEvents:
     @staticmethod
     def get_short_event_dicts(file_path):
         try:
-            with open(
+            with mod_open(
                     file_path,
                     "r",
             ) as read_file:
@@ -36,7 +38,7 @@ class GenerateEvents:
     def get_ongoing_event_dicts(file_path):
         events = None
         try:
-            with open(
+            with mod_open(
                     file_path,
                     "r",
             ) as read_file:
@@ -50,7 +52,7 @@ class GenerateEvents:
     def get_death_reaction_dicts(family_relation, rel_value):
         try:
             file_path = f"{resource_directory}/death/death_reactions/{family_relation}/{family_relation}_{rel_value}.json"
-            with open(
+            with mod_open(
                     file_path,
                     "r",
             ) as read_file:
@@ -609,9 +611,9 @@ class OngoingEvent:
 
 
 INJURY_DISTRIBUTION = None
-with open(f"resources/dicts/conditions/event_injuries_distribution.json", 'r') as read_file:
+with mod_open(f"resources/dicts/conditions/event_injuries_distribution.json", 'r') as read_file:
     INJURY_DISTRIBUTION = ujson.loads(read_file.read())
 
 INJURIES = None
-with open(f"resources/dicts/conditions/injuries.json", 'r') as read_file:
+with mod_open(f"resources/dicts/conditions/injuries.json", 'r') as read_file:
     INJURIES = ujson.loads(read_file.read())

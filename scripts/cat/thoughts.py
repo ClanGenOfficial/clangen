@@ -5,6 +5,8 @@ try:
 except ImportError:
     import json as ujson
 
+from scripts.mods.resources import mod_open
+
 def get_thoughts(cat, other_cat):
     # placeholder thought - should only appear in game, when there is only one cat left
     thoughts = ['Is not thinking about much right now']
@@ -695,23 +697,23 @@ def get_outside_thoughts(cat, other_cat):
 resource_directory = "resources/dicts/thoughts/"
 
 GENERAL_DEAD = None
-with open(f"{resource_directory}cat_dead_general.json", 'r', encoding='ascii') as read_file:
+with mod_open(f"{resource_directory}cat_dead_general.json", 'r', encoding='ascii') as read_file:
     GENERAL_DEAD = ujson.loads(read_file.read())
 
 GENERAL_ALIVE = None
-with open(f"{resource_directory}cat_alive_general.json", 'r', encoding='ascii') as read_file:
+with mod_open(f"{resource_directory}cat_alive_general.json", 'r', encoding='ascii') as read_file:
     GENERAL_ALIVE = ujson.loads(read_file.read())
     
 EXILE = None
-with open(f"{resource_directory}exile.json", 'r', encoding='ascii') as read_file:
+with mod_open(f"{resource_directory}exile.json", 'r', encoding='ascii') as read_file:
     EXILE = ujson.loads(read_file.read())
     
 OUTSIDE = None
-with open(f"{resource_directory}other.json", 'r', encoding='ascii') as read_file:
+with mod_open(f"{resource_directory}other.json", 'r', encoding='ascii') as read_file:
     OUTSIDE = ujson.loads(read_file.read())
 
 FAMILY = None
-with open(f"{resource_directory}family.json", 'r', encoding='ascii') as read_file:
+with mod_open(f"{resource_directory}family.json", 'r', encoding='ascii') as read_file:
     FAMILY = ujson.loads(read_file.read())
 
 # ---------------------------------------------------------------------------- #
@@ -721,47 +723,47 @@ with open(f"{resource_directory}family.json", 'r', encoding='ascii') as read_fil
 in_depth_path = "alive/"
 
 GENERAL_TO_OTHER = None
-with open(f"{resource_directory}{in_depth_path}1_all_to_other.json", 'r') as read_file:
+with mod_open(f"{resource_directory}{in_depth_path}1_all_to_other.json", 'r') as read_file:
     GENERAL_TO_OTHER = ujson.loads(read_file.read())
 
 KITTEN_GENERAL = None
-with open(f"{resource_directory}{in_depth_path}kitten_to_other.json", 'r') as read_file:
+with mod_open(f"{resource_directory}{in_depth_path}kitten_to_other.json", 'r') as read_file:
     KITTEN_GENERAL = ujson.loads(read_file.read())
 
 MEDIATOR_GENERAL = None
-with open(f"{resource_directory}{in_depth_path}mediator_to_other.json", 'r') as read_file:
+with mod_open(f"{resource_directory}{in_depth_path}mediator_to_other.json", 'r') as read_file:
     MEDIATOR_GENERAL = ujson.loads(read_file.read())
 
 MEDIATOR_APP_GENERAL = None
-with open(f"{resource_directory}{in_depth_path}mediator_apprentice_to_other.json", 'r') as read_file:
+with mod_open(f"{resource_directory}{in_depth_path}mediator_apprentice_to_other.json", 'r') as read_file:
     MEDIATOR_APP_GENERAL = ujson.loads(read_file.read())
 
 APPR_GENERAL = None
-with open(f"{resource_directory}{in_depth_path}apprentice_to_other.json", 'r') as read_file:
+with mod_open(f"{resource_directory}{in_depth_path}apprentice_to_other.json", 'r') as read_file:
     APPR_GENERAL = ujson.loads(read_file.read())
 
 MED_APPR_GENERAL = None
-with open(f"{resource_directory}{in_depth_path}medicine_app_to_other.json", 'r') as read_file:
+with mod_open(f"{resource_directory}{in_depth_path}medicine_app_to_other.json", 'r') as read_file:
     MED_APPR_GENERAL = ujson.loads(read_file.read())
 
 WARRIOR_GENERAL = None
-with open(f"{resource_directory}{in_depth_path}warrior_to_other.json", 'r') as read_file:
+with mod_open(f"{resource_directory}{in_depth_path}warrior_to_other.json", 'r') as read_file:
     WARRIOR_GENERAL = ujson.loads(read_file.read())
 
 MEDICINE_GENERAL = None
-with open(f"{resource_directory}{in_depth_path}medicine_to_other.json", 'r') as read_file:
+with mod_open(f"{resource_directory}{in_depth_path}medicine_to_other.json", 'r') as read_file:
     MEDICINE_GENERAL = ujson.loads(read_file.read())
 
 DEPUTY_GENERAL = None
-with open(f"{resource_directory}{in_depth_path}deputy_to_other.json", 'r') as read_file:
+with mod_open(f"{resource_directory}{in_depth_path}deputy_to_other.json", 'r') as read_file:
     DEPUTY_GENERAL = ujson.loads(read_file.read())
 
 LEADER_GENERAL = None
-with open(f"{resource_directory}{in_depth_path}leader_to_other.json", 'r') as read_file:
+with mod_open(f"{resource_directory}{in_depth_path}leader_to_other.json", 'r') as read_file:
     LEADER_GENERAL = ujson.loads(read_file.read())
 
 ELDER_GENERAL = None
-with open(f"{resource_directory}{in_depth_path}elder_to_other.json", 'r') as read_file:
+with mod_open(f"{resource_directory}{in_depth_path}elder_to_other.json", 'r') as read_file:
     ELDER_GENERAL = ujson.loads(read_file.read())
 
 # ---------------------------------------------------------------------------- #
@@ -771,41 +773,41 @@ with open(f"{resource_directory}{in_depth_path}elder_to_other.json", 'r') as rea
 traits_path = "traits/"
 
 KITTEN_TRAITS = None
-with open(f"{resource_directory}{traits_path}kitten.json", 'r', encoding='ascii') as read_file:
+with mod_open(f"{resource_directory}{traits_path}kitten.json", 'r', encoding='ascii') as read_file:
     KITTEN_TRAITS = ujson.loads(read_file.read())
 
 APPR_TRAITS = None
-with open(f"{resource_directory}{traits_path}apprentice.json", 'r', encoding='ascii') as read_file:
+with mod_open(f"{resource_directory}{traits_path}apprentice.json", 'r', encoding='ascii') as read_file:
     APPR_TRAITS = ujson.loads(read_file.read())
 
 MED_APPR_TRAITS = None
-with open(f"{resource_directory}{traits_path}med_apprentice.json", 'r', encoding='ascii') as read_file:
+with mod_open(f"{resource_directory}{traits_path}med_apprentice.json", 'r', encoding='ascii') as read_file:
     MED_APPR_TRAITS = ujson.loads(read_file.read())
 
 WARRIOR_TRAITS = None
-with open(f"{resource_directory}{traits_path}warrior.json", 'r', encoding='ascii') as read_file:
+with mod_open(f"{resource_directory}{traits_path}warrior.json", 'r', encoding='ascii') as read_file:
     WARRIOR_TRAITS = ujson.loads(read_file.read())
 
 MEDICINE_TRAITS = None
-with open(f"{resource_directory}{traits_path}medicine.json", 'r', encoding='ascii') as read_file:
+with mod_open(f"{resource_directory}{traits_path}medicine.json", 'r', encoding='ascii') as read_file:
     MEDICINE_TRAITS = ujson.loads(read_file.read())
 
 DEPUTY_TRAITS = None
-with open(f"{resource_directory}{traits_path}deputy.json", 'r', encoding='ascii') as read_file:
+with mod_open(f"{resource_directory}{traits_path}deputy.json", 'r', encoding='ascii') as read_file:
     DEPUTY_TRAITS = ujson.loads(read_file.read())
 
 LEADER_TRAITS = None
-with open(f"{resource_directory}{traits_path}leader.json", 'r', encoding='ascii') as read_file:
+with mod_open(f"{resource_directory}{traits_path}leader.json", 'r', encoding='ascii') as read_file:
     LEADER_TRAITS = ujson.loads(read_file.read())
 
 ELDER_TRAITS = None
-with open(f"{resource_directory}{traits_path}elder.json", 'r', encoding='ascii') as read_file:
+with mod_open(f"{resource_directory}{traits_path}elder.json", 'r', encoding='ascii') as read_file:
     ELDER_TRAITS = ujson.loads(read_file.read())
 
 MEDIATOR_TRAITS = None
-with open(f"{resource_directory}{traits_path}mediator.json", 'r', encoding='ascii') as read_file:
+with mod_open(f"{resource_directory}{traits_path}mediator.json", 'r', encoding='ascii') as read_file:
     MEDIATOR_TRAITS = ujson.loads(read_file.read())
 
 MEDIATOR_APP_RAITS = None
-with open(f"{resource_directory}{traits_path}mediator_apprentice.json", 'r', encoding='ascii') as read_file:
+with mod_open(f"{resource_directory}{traits_path}mediator_apprentice.json", 'r', encoding='ascii') as read_file:
     MEDIATOR_APP_TRAITS = ujson.loads(read_file.read())

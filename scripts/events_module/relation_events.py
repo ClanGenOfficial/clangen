@@ -17,6 +17,8 @@ from scripts.events_module.relationship.mate_events import Mate_Events
 from scripts.events_module.relationship.welcoming_events import Welcoming_Events
 from scripts.events_module.relationship.group_events import Group_Events
 
+from scripts.mods.resources import mod_open
+
 class Relation_Events():
     """All relationship events."""
     def __init__(self) -> None:
@@ -408,5 +410,5 @@ base_path = os.path.join(
 
 GROUP_TYPES = {}
 types_path = os.path.join(base_path,"group_interactions" ,"group_types.json")
-with open(types_path, 'r') as read_file:
+with mod_open(types_path, 'r') as read_file:
     GROUP_TYPES = ujson.load(read_file)

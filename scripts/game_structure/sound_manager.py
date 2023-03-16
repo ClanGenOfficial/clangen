@@ -6,6 +6,8 @@ except ImportError:
     import json
 logger = logging.getLogger(__name__)
 
+from scripts.mods.resources import mod_open
+
 
 class _SoundManager():
 
@@ -19,7 +21,7 @@ class _SoundManager():
             return
 
         try:
-            with open("resources/audio/sounds.json", "r") as f:
+            with mod_open("resources/audio/sounds.json", "r") as f:
                 sound_data = json.load(f)
         except:
             logger.exception("Failed to load sound index")

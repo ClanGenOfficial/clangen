@@ -12,6 +12,9 @@ from re import sub
 from scripts.cat.cats import Cat
 from scripts.cat.pelts import choose_pelt
 from scripts.utility import update_sprite
+
+from scripts.mods.resources import mod_open
+
 try:
     from ujson import JSONDecodeError
 except ImportError:
@@ -33,7 +36,7 @@ def json_load():
     cat_data = None
     clanname = game.switches['clan_list'][0]
     try:
-        with open(get_save_dir() + '/' + clanname + '/clan_cats.json', 'r') as read_file:
+        with mod_open(get_save_dir() + '/' + clanname + '/clan_cats.json', 'r') as read_file:
             cat_data = ujson.loads(read_file.read())
     except PermissionError as e:
         game.switches['error_message'] = f'Can\t open saves/{clanname}/clan_cats.json!'
@@ -244,11 +247,11 @@ def csv_load(all_cats):
     else:
         if os.path.exists(get_save_dir() + '/' + game.switches['clan_list'][0] +
                           'cats.csv'):
-            with open(get_save_dir() + '/' + game.switches['clan_list'][0] + 'cats.csv',
+            with mod_open(get_save_dir() + '/' + game.switches['clan_list'][0] + 'cats.csv',
                       'r') as read_file:
                 cat_data = read_file.read()
         else:
-            with open(get_save_dir() + '/' + game.switches['clan_list'][0] + 'cats.txt',
+            with mod_open(get_save_dir() + '/' + game.switches['clan_list'][0] + 'cats.txt',
                       'r') as read_file:
                 cat_data = read_file.read()
     if len(cat_data) > 0:

@@ -1,4 +1,5 @@
 import pygame
+from scripts.mods.resources import pyg_img_load, mod_open, mod_open
 
 _images = {}
 def load_image(path):
@@ -7,5 +8,5 @@ def load_image(path):
     Otherwise, the image is retrieved from the cache.
     """
     if path not in _images:
-        _images[path] = pygame.image.load(path)
+        _images[path] = pyg_img_load(path)
     return _images[path]

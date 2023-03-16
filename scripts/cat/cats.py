@@ -37,6 +37,8 @@ from scripts.cat_relations.relationship import Relationship
 from scripts.game_structure import image_cache
 from scripts.event_class import Single_Event
 
+from scripts.mods.resources import mod_open
+
 
 class Cat():
     used_screen = screen
@@ -1746,7 +1748,7 @@ class Cat():
             conditions["permanent conditions"] = self.permanent_condition
 
         try:
-            with open(condition_file_path, 'w') as rel_file:
+            with mod_open(condition_file_path, 'w') as rel_file:
                 json_string = ujson.dumps(conditions, indent=4)
                 rel_file.write(json_string)
         except:
@@ -1764,7 +1766,7 @@ class Cat():
             return
 
         try:
-            with open(condition_cat_directory, 'r') as read_file:
+            with mod_open(condition_cat_directory, 'r') as read_file:
                 rel_data = ujson.loads(read_file.read())
                 if "illnesses" in rel_data:
                     self.illnesses = rel_data.get("illnesses")
@@ -2157,7 +2159,7 @@ class Cat():
             rel.append(r_data)
 
         try:
-            with open(relationship_dir + '/' + self.ID + '_relations.json',
+            with mod_open(relationship_dir + '/' + self.ID + '_relations.json',
                       'w') as rel_file:
                 json_string = ujson.dumps(rel, indent=4)
                 rel_file.write(json_string)
@@ -2181,7 +2183,7 @@ class Cat():
                     cat.relationships[self.ID] = Relationship(cat, self)
                 return
             try:
-                with open(relation_cat_directory, 'r') as read_file:
+                with mod_open(relation_cat_directory, 'r') as read_file:
                     rel_data = ujson.loads(read_file.read())
                     for rel in rel_data:
                         cat_to = self.all_cats.get(rel['cat_to_id'])
@@ -2525,10 +2527,10 @@ class Cat():
     def load_faded_cat(cat: str):
         """Loads a faded cat, returning the cat object. This object is saved nowhere else. """
         try:
-            with open(get_save_dir() + '/' + game.clan.name + '/faded_cats/' + cat + ".json", 'r') as read_file:
+            with mod_open(get_save_dir() + '/' + game.clan.name + '/faded_cats/' + cat + ".json", 'r') as read_file:
                 cat_info = ujson.loads(read_file.read())
         except AttributeError:  # If loading cats is attempted before the clan is loaded, we would need to use this.
-            with open(get_save_dir() + '/' + game.switches['clan_list'][0] + '/faded_cats/' + cat + ".json", 'r') as read_file:
+            with mod_open(get_save_dir() + '/' + game.switches['clan_list'][0] + '/faded_cats/' + cat + ".json", 'r') as read_file:
                 cat_info = ujson.loads(read_file.read())
         except:
             print("ERROR: in loading faded cat")
@@ -2678,15 +2680,15 @@ game.cat_class = cat_class
 resource_directory = "resources/dicts/conditions/"
 
 ILLNESSES = None
-with open(f"{resource_directory}illnesses.json", 'r') as read_file:
+with mod_open(f"{resource_directory}illnesses.json", 'r') as read_file:
     ILLNESSES = ujson.loads(read_file.read())
 
 INJURIES = None
-with open(f"{resource_directory}injuries.json", 'r') as read_file:
+with mod_open(f"{resource_directory}injuries.json", 'r') as read_file:
     INJURIES = ujson.loads(read_file.read())
 
 PERMANENT = None
-with open(f"{resource_directory}permanent_conditions.json", 'r') as read_file:
+with mod_open(f"{resource_directory}permanent_conditions.json", 'r') as read_file:
     PERMANENT = ujson.loads(read_file.read())
 
 
@@ -2694,6 +2696,6 @@ with open(f"{resource_directory}permanent_conditions.json", 'r') as read_file:
 resource_directory = "resources/dicts/events/death/death_reactions/"
 
 MINOR_MAJOR_REACTION = None
-with open(f"{resource_directory}minor_major.json", 'r') as read_file:
+with mod_open(f"{resource_directory}minor_major.json", 'r') as read_file:
     MINOR_MAJOR_REACTION = ujson.loads(read_file.read())
 

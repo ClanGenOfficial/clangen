@@ -3,6 +3,8 @@ import collections
 import os
 from os.path import exists as file_exists
 
+from scripts.mods.resources import mod_open
+
 
 """ This script exists to count and catalogue all patrols.   """
 
@@ -16,7 +18,7 @@ def get_patrol_details(path):
     global DETAILS
 
     try:
-        with open(path, "r") as read_file:
+        with mod_open(path, "r") as read_file:
             patrols = ujson.loads(read_file.read())
     except:
         print(f'Something went wrong with {path}')
@@ -152,7 +154,7 @@ if 'patrol ids'.casefold() in task:
 
 if 'patrol sprites'.casefold() in task:
     EXPLICIT_PATROL_ART = None
-    with open(f"resources/dicts/patrols/explicit_patrol_art.json", 'r') as read_file:
+    with mod_open(f"resources/dicts/patrols/explicit_patrol_art.json", 'r') as read_file:
         EXPLICIT_PATROL_ART = ujson.loads(read_file.read())
 
     path = "resources/images/patrol_art/"

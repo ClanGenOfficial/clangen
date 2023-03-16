@@ -13,24 +13,26 @@ from scripts.game_structure import image_cache
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked, UISpriteButton
 from scripts.game_structure.game_essentials import game, MANAGER
 
+from scripts.mods.resources import pyg_img_load, mod_open, mod_open, mod_open, mod_open
+
 
 
 class MakeClanScreen(Screens):
     # UI images
-    clan_frame_img = pygame.transform.scale(pygame.image.load(
+    clan_frame_img = pygame.transform.scale(pyg_img_load(
         'resources/images/pick_clan_screen/clan_name_frame.png').convert_alpha(), (432, 100))
-    name_clan_img = pygame.transform.scale(pygame.image.load(
+    name_clan_img = pygame.transform.scale(pyg_img_load(
         'resources/images/pick_clan_screen/name_clan_light.png').convert_alpha(), (1600, 1400))
-    leader_img = pygame.transform.scale(pygame.image.load(
+    leader_img = pygame.transform.scale(pyg_img_load(
         'resources/images/pick_clan_screen/leader_light.png').convert_alpha(), (1600, 1400))
-    deputy_img = pygame.transform.scale(pygame.image.load(
+    deputy_img = pygame.transform.scale(pyg_img_load(
         'resources/images/pick_clan_screen/deputy_light.png').convert_alpha(), (1600, 1400))
-    medic_img = pygame.transform.scale(pygame.image.load(
+    medic_img = pygame.transform.scale(pyg_img_load(
         'resources/images/pick_clan_screen/med_light.png').convert_alpha(), (1600, 1400))
-    clan_img = pygame.transform.scale(pygame.image.load(
+    clan_img = pygame.transform.scale(pyg_img_load(
         'resources/images/pick_clan_screen/clan_light.png').convert_alpha(), (1600, 1400))
     bg_preview_border = pygame.transform.scale(
-        pygame.image.load("resources/images/bg_preview_border.png").convert_alpha(), (466, 416))
+        pyg_img_load("resources/images/bg_preview_border.png").convert_alpha(), (466, 416))
 
     classic_mode_text = "This mode is Clan Generator at it's most basic. " \
                         "The player will not be expected to manage the minutia of Clan life. <br><br>" \
@@ -401,31 +403,31 @@ class MakeClanScreen(Screens):
             if len(self.members) == 0:
                 self.elements["background"].set_image(
                     pygame.transform.scale(
-                        pygame.image.load("resources/images/pick_clan_screen/clan_none_light.png").convert_alpha(),
+                        pyg_img_load("resources/images/pick_clan_screen/clan_none_light.png").convert_alpha(),
                         (1600, 1400)))
                 self.elements['next_step'].disable()
             elif len(self.members) == 1:
                 self.elements["background"].set_image(
                     pygame.transform.scale(
-                        pygame.image.load("resources/images/pick_clan_screen/clan_one_light.png").convert_alpha(),
+                        pyg_img_load("resources/images/pick_clan_screen/clan_one_light.png").convert_alpha(),
                         (1600, 1400)))
                 self.elements['next_step'].disable()
             elif len(self.members) == 2:
                 self.elements["background"].set_image(
                     pygame.transform.scale(
-                        pygame.image.load("resources/images/pick_clan_screen/clan_two_light.png").convert_alpha(),
+                        pyg_img_load("resources/images/pick_clan_screen/clan_two_light.png").convert_alpha(),
                         (1600, 1400)))
                 self.elements['next_step'].disable()
             elif len(self.members) == 3:
                 self.elements["background"].set_image(
                     pygame.transform.scale(
-                        pygame.image.load("resources/images/pick_clan_screen/clan_three_light.png").convert_alpha(),
+                        pyg_img_load("resources/images/pick_clan_screen/clan_three_light.png").convert_alpha(),
                         (1600, 1400)))
                 self.elements['next_step'].disable()
             elif 4 <= len(self.members) <= 6:
                 self.elements["background"].set_image(
                     pygame.transform.scale(
-                        pygame.image.load("resources/images/pick_clan_screen/clan_four_light.png").convert_alpha(),
+                        pyg_img_load("resources/images/pick_clan_screen/clan_four_light.png").convert_alpha(),
                         (1600, 1400)))
                 self.elements['next_step'].enable()
                 # In order for the "previous step" to work properly, we must enable this button, just in case it
@@ -434,7 +436,7 @@ class MakeClanScreen(Screens):
             elif len(self.members) == 7:
                 self.elements["background"].set_image(
                     pygame.transform.scale(
-                        pygame.image.load("resources/images/pick_clan_screen/clan_full_light.png").convert_alpha(),
+                        pyg_img_load("resources/images/pick_clan_screen/clan_full_light.png").convert_alpha(),
                         (1600, 1400)))
                 self.elements["select_cat"].disable()
                 self.elements['next_step'].enable()
@@ -549,14 +551,14 @@ class MakeClanScreen(Screens):
         if self.biome_selected:
             self.elements["camp_art"] = pygame_gui.elements.UIImage(scale(pygame.Rect((350, 340), (900, 800))),
                                                                     pygame.transform.scale(
-                                                                        pygame.image.load(
+                                                                        pyg_img_load(
                                                                             self.get_camp_art_path(
                                                                                 self.selected_camp_tab)).convert_alpha(),
                                                                         (900, 800)), manager=MANAGER)
             self.elements['art_frame'].kill()
             self.elements['art_frame'] = pygame_gui.elements.UIImage(scale(pygame.Rect(((334, 324), (932, 832)))),
                                                                      pygame.transform.scale(
-                                                                         pygame.image.load(
+                                                                         pyg_img_load(
                                                                              "resources/images/bg_preview_border.png").convert_alpha(),
                                                                          (932, 832)), manager=MANAGER)
 
@@ -860,7 +862,7 @@ class MakeClanScreen(Screens):
 
         self.elements['background'] = pygame_gui.elements.UIImage(scale(pygame.Rect((0, 828), (1600, 572))),
                                                                   pygame.transform.scale(
-                                                                      pygame.image.load(
+                                                                      pyg_img_load(
                                                                           "resources/images/pick_clan_screen/clan_none_light.png").convert_alpha(),
                                                                       (1600, 1400)), manager=MANAGER)
         self.elements["name_backdrop"] = pygame_gui.elements.UIImage(scale(pygame.Rect((584, 200), (432, 100))),
@@ -955,12 +957,12 @@ class MakeClanScreen(Screens):
         # art frame
         self.elements['art_frame'] = pygame_gui.elements.UIImage(scale(pygame.Rect(((334, 324), (932, 832)))),
                                                                  pygame.transform.scale(
-                                                                     pygame.image.load(
+                                                                     pyg_img_load(
                                                                          "resources/images/bg_preview_border.png").convert_alpha(),
                                                                      (932, 832)), manager=MANAGER)
 
         # camp art self.elements["camp_art"] = pygame_gui.elements.UIImage(scale(pygame.Rect((175,170),(450, 400))),
-        # pygame.image.load(self.get_camp_art_path(1)).convert_alpha(), visible=False)
+        # pyg_img_load(self.get_camp_art_path(1)).convert_alpha(), visible=False)
 
     def open_clan_saved_screen(self):
         self.clear_all_page()

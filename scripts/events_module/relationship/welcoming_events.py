@@ -11,6 +11,8 @@ from scripts.game_structure.game_essentials import game
 from scripts.event_class import Single_Event
 from scripts.cat.cats import Cat
 
+from scripts.mods.resources import mod_open
+
 class Welcoming_Events():
     """All events which are related to welcome a new cat in the clan."""
 
@@ -171,11 +173,11 @@ for file in os.listdir(base_path):
     if "general.json" == file:
         continue
     status = file.split(".")[0]
-    with open(os.path.join(base_path, file), 'r') as read_file:
+    with mod_open(os.path.join(base_path, file), 'r') as read_file:
         welcome_list = ujson.load(read_file)
         WELCOMING_MASTER_DICT[status] = create_welcome_interaction(welcome_list)
 
 GENERAL_WELCOMING = []
-with open(os.path.join(base_path, "general.json"), 'r') as read_file:
+with mod_open(os.path.join(base_path, "general.json"), 'r') as read_file:
     loaded_list = ujson.loads(read_file.read())
     GENERAL_WELCOMING = create_welcome_interaction(loaded_list)

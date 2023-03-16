@@ -5,6 +5,7 @@ try:
 except ImportError:
     import json as ujson
 
+from scripts.mods.resources import pyg_img_load, mod_open
 
 class Sprites():
     cat_tints = {}
@@ -22,13 +23,13 @@ class Sprites():
 
     def load_tints(self):
         try:
-            with open("sprites/dicts/tint.json", 'r') as read_file:
+            with mod_open("sprites/dicts/tint.json", 'r') as read_file:
                 Sprites.cat_tints = ujson.loads(read_file.read())
         except:
             print("ERROR: Reading Tints")
 
         try:
-            with open("sprites/dicts/white_patches_tint.json", 'r') as read_file:
+            with mod_open("sprites/dicts/white_patches_tint.json", 'r') as read_file:
                 Sprites.white_patches_tints = ujson.loads(read_file.read())
         except:
             print("ERROR: Reading White Patches Tints")
@@ -41,7 +42,7 @@ class Sprites():
         a_file -- Path to the file to create a spritesheet from.
         name -- Name to call the new spritesheet.
         """
-        self.spritesheets[name] = pygame.image.load(a_file).convert_alpha()
+        self.spritesheets[name] = pyg_img_load(a_file).convert_alpha()
 
     def find_sprite(self, group_name, x, y):
         """

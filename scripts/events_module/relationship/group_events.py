@@ -12,6 +12,8 @@ from scripts.event_class import Single_Event
 from scripts.cat_relations.interaction import create_group_interaction, Group_Interaction, rel_fulfill_rel_constraints
 from scripts.game_structure.game_essentials import game
 
+from scripts.mods.resources import mod_open
+
 class Group_Events():
 
     def __init__(self) -> None:
@@ -553,16 +555,16 @@ for cat_amount in os.listdir(base_path):
         continue
     file_path = os.path.join(base_path, cat_amount, "neutral.json")
     GROUP_INTERACTION_MASTER_DICT[cat_amount] = {}
-    with open(file_path, 'r') as read_file:
+    with mod_open(file_path, 'r') as read_file:
         welcome_list = ujson.load(read_file)
         GROUP_INTERACTION_MASTER_DICT[cat_amount]["neutral"] = create_group_interaction(welcome_list)
     
     file_path = os.path.join(base_path, cat_amount, "positive.json")
-    with open(file_path, 'r') as read_file:
+    with mod_open(file_path, 'r') as read_file:
         welcome_list = ujson.load(read_file)
         GROUP_INTERACTION_MASTER_DICT[cat_amount]["positive"] = create_group_interaction(welcome_list)
 
     file_path = os.path.join(base_path, cat_amount, "negative.json")
-    with open(file_path, 'r') as read_file:
+    with mod_open(file_path, 'r') as read_file:
         welcome_list = ujson.load(read_file)
         GROUP_INTERACTION_MASTER_DICT[cat_amount]["negative"] = create_group_interaction(welcome_list)

@@ -16,6 +16,7 @@ from scripts.game_structure.game_essentials import game, screen, screen_x, scree
 from .cat_screens import ProfileScreen
 from ..conditions import get_amount_cat_for_one_medic, medical_cats_condition_fulfilled
 
+from scripts.mods.resources import pyg_img_load, mod_open
 
 class ClanScreen(Screens):
     max_sprites_displayed = 400  # we don't want 100,000 sprites rendering at once. 400 is enough.
@@ -236,13 +237,13 @@ class ClanScreen(Screens):
             all_backgrounds.append(platform_dir)
 
         self.newleaf_bg = pygame.transform.scale(
-            pygame.image.load(all_backgrounds[0]).convert(), (screen_x, screen_y))
+            pyg_img_load(all_backgrounds[0]).convert(), (screen_x, screen_y))
         self.greenleaf_bg = pygame.transform.scale(
-            pygame.image.load(all_backgrounds[1]).convert(), (screen_x, screen_y))
+            pyg_img_load(all_backgrounds[1]).convert(), (screen_x, screen_y))
         self.leafbare_bg = pygame.transform.scale(
-            pygame.image.load(all_backgrounds[2]).convert(), (screen_x, screen_y))
+            pyg_img_load(all_backgrounds[2]).convert(), (screen_x, screen_y))
         self.leaffall_bg = pygame.transform.scale(
-            pygame.image.load(all_backgrounds[3]).convert(), (screen_x, screen_y))
+            pyg_img_load(all_backgrounds[3]).convert(), (screen_x, screen_y))
 
     def choose_nonoverlapping_positions(self, first_choices, dens, weights=None):
         if not weights:
@@ -380,10 +381,10 @@ class StarClanScreen(Screens):
         self.filter_by_open = None
         self.filter_by_closed = None
         self.starclan_bg = pygame.transform.scale(
-            pygame.image.load("resources/images/starclanbg.png").convert(),
+            pyg_img_load("resources/images/starclanbg.png").convert(),
             (screen_x, screen_y))
         self.search_bar_image = pygame.transform.scale(
-            pygame.image.load("resources/images/search_bar.png").convert_alpha(), (456, 68))
+            pyg_img_load("resources/images/search_bar.png").convert_alpha(), (456, 68))
         self.clan_name_bg = pygame.transform.scale(
             image_cache.load_image("resources/images/clan_name_bg.png").convert_alpha(), (380, 70))
 
@@ -665,10 +666,10 @@ class DFScreen(Screens):
         self.filter_by_open = None
         self.filter_by_closed = None
         self.df_bg = pygame.transform.scale(
-            pygame.image.load("resources/images/darkforestbg.png").convert(),
+            pyg_img_load("resources/images/darkforestbg.png").convert(),
             (screen_x, screen_y))
         self.search_bar_image = pygame.transform.scale(
-            pygame.image.load("resources/images/search_bar.png").convert_alpha(), (int(456 / 1600 * screen_x),
+            pyg_img_load("resources/images/search_bar.png").convert_alpha(), (int(456 / 1600 * screen_x),
                                                                                    int(68 / 1400 * screen_x)))
         self.clan_name_bg = pygame.transform.scale(
             image_cache.load_image("resources/images/clan_name_bg.png").convert_alpha(), (int(380 / 1600 * screen_x),
@@ -937,7 +938,7 @@ class ListScreen(Screens):
     display_cats = []
     cat_names = []
 
-    search_bar = pygame.transform.scale(pygame.image.load("resources/images/search_bar.png").convert_alpha(),
+    search_bar = pygame.transform.scale(pyg_img_load("resources/images/search_bar.png").convert_alpha(),
                                         (456 / 1600 * screen_x, 68 / 1400 * screen_y))
     previous_search_text = ""
 
@@ -1595,7 +1596,7 @@ class MedDenScreen(Screens):
             self.log_title.hide()
             self.cat_bg = pygame_gui.elements.UIImage(scale(pygame.Rect
                                                             ((280, 880), (1120, 400))),
-                                                      pygame.image.load(
+                                                      pyg_img_load(
                                                           "resources/images/sick_hurt_bg.png").convert_alpha()
                                                       , manager=MANAGER)
             self.cat_bg.disable()
@@ -1988,7 +1989,7 @@ class MedDenScreen(Screens):
                 self.herbs["cobweb1"] = pygame_gui.elements.UIImage(scale(pygame.Rect
                                                                           ((216, 190), (792, 448))),
                                                                     pygame.transform.scale(
-                                                                        pygame.image.load(
+                                                                        pyg_img_load(
                                                                             "resources/images/med_cat_den/cobweb1.png").convert_alpha(),
                                                                         (792, 448)
                                                                     ), manager=MANAGER)
@@ -1996,7 +1997,7 @@ class MedDenScreen(Screens):
                     self.herbs["cobweb2"] = pygame_gui.elements.UIImage(scale(pygame.Rect
                                                                               ((216, 190), (792, 448))),
                                                                         pygame.transform.scale(
-                                                                            pygame.image.load(
+                                                                            pyg_img_load(
                                                                                 "resources/images/med_cat_den/cobweb2.png").convert_alpha(),
                                                                             (792, 448)
                                                                         ), manager=MANAGER)
@@ -2004,7 +2005,7 @@ class MedDenScreen(Screens):
             self.herbs[herb] = pygame_gui.elements.UIImage(scale(pygame.Rect
                                                                  ((216, 190), (792, 448))),
                                                            pygame.transform.scale(
-                                                               pygame.image.load(
+                                                               pyg_img_load(
                                                                    f"resources/images/med_cat_den/{herb}.png").convert_alpha(),
                                                                (792, 448)
                                                            ), manager=MANAGER)

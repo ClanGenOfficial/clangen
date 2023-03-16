@@ -12,6 +12,10 @@ from scripts.cat.cats import Cat, cat_class
 from scripts.event_class import Single_Event
 from scripts.cat_relations.relationship import Relationship
 from scripts.events_module.condition_events import Condition_Events
+
+from scripts.mods.resources import mod_open
+
+
 try:
     import ujson
 except ImportError:
@@ -668,5 +672,5 @@ class Pregnancy_Events():
 
 
 PREGNANT_STRINGS = None
-with open(f"resources/dicts/conditions/pregnancy.json", 'r') as read_file:
+with mod_open(f"resources/dicts/conditions/pregnancy.json", 'r') as read_file:
     PREGNANT_STRINGS = ujson.loads(read_file.read())

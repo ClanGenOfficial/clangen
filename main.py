@@ -101,6 +101,8 @@ from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.cat.sprites import sprites
 from scripts.clan import clan_class
 from scripts.utility import get_text_box_theme, quit # pylint: disable=redefined-builtin
+
+from scripts.mods.resources import pyg_img_load, mod_open
 import pygame_gui
 import pygame
 
@@ -112,7 +114,7 @@ from scripts.screens.all_screens import start_screen # pylint: disable=ungrouped
 
 # P Y G A M E
 clock = pygame.time.Clock()
-pygame.display.set_icon(pygame.image.load('resources/images/icon.png'))
+pygame.display.set_icon(pyg_img_load('resources/images/icon.png'))
 
 # LOAD cats & clan
 clan_list = game.read_clans()
@@ -164,7 +166,7 @@ game.rpc.start()
 game.rpc.start_rpc.set()
 
 
-cursor_img = pygame.image.load('resources/images/cursor.png').convert_alpha()
+cursor_img = pyg_img_load('resources/images/cursor.png').convert_alpha()
 cursor = pygame.cursors.Cursor((9,0), cursor_img)
 disabled_cursor = pygame.cursors.Cursor(pygame.SYSTEM_CURSOR_ARROW)
 

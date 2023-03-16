@@ -8,13 +8,13 @@ Loads resources from the modloader directory.
 
 import os
 import typing
+from types import UnionType
 
 import pygame
 import pygame.image
 from .mods import get_mods
 
 from ._common import FileArg, Literal
-
 
 
 
@@ -35,12 +35,24 @@ def pyg_img_load(filename: FileArg, namehint: str = "") -> pygame.Surface:
 
 
 def mod_open(
-    file: FileDescriptorOrPath,
-    mode: OpenTextMode = "r",
+    file,
+    mode = "r",
     buffering: int = -1,
-    encoding: str | None = None,
-    errors: str | None = None,
-    newline: str | None = None,
+    encoding: str | None = None, # pylint: disable=unsupported-binary-operation
+    errors: str | None = None, # pylint: disable=unsupported-binary-operation
+    newline: str | None = None, # pylint: disable=unsupported-binary-operation
     closefd: bool = True,
-    opener: _Opener | None = None,
-) -> TextIOWrapper:
+    opener = None, # pylint: disable=unsupported-binary-operation
+):
+    """
+    Opens a file from the modloader directory
+    """
+
+    mods = get_mods()
+
+    for mod in mods:
+        if os.path.exists(os.path.join(os.getcwd(), "mods", mod, file)):
+            _ = os.path.join(os.getcwd(), "mods", mod, file)
+            return open(_, mode, buffering, encoding, errors, newline, closefd, opener)
+
+    return open(file, mode, buffering, encoding, errors, newline, closefd, opener)

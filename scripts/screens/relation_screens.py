@@ -10,6 +10,7 @@ from scripts.game_structure import image_cache
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked, UISpriteButton, UIRelationStatusBar
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 
+from scripts.mods.resources import pyg_img_load, mod_open
 
 class ChooseMentorScreen(Screens):
     selected_mentor = None
@@ -412,9 +413,9 @@ class ChooseMentorScreen(Screens):
 
 
 class ViewChildrenScreen(Screens):
-    parents = pygame.transform.scale(pygame.image.load("resources/images/family_parents.png").convert_alpha(),
+    parents = pygame.transform.scale(pyg_img_load("resources/images/family_parents.png").convert_alpha(),
                                      (1288/1600 * screen_x, 460/1400 * screen_y))
-    mate = pygame.transform.scale(pygame.image.load("resources/images/family_mate.png").convert_alpha(),
+    mate = pygame.transform.scale(pyg_img_load("resources/images/family_mate.png").convert_alpha(),
                                   (1280/1600 * screen_x, 460/1400 * screen_y))
     family_elements = {}
     offspring_elements = {}
@@ -2246,7 +2247,7 @@ class MediationScreen(Screens):
         self.cat_bg = pygame_gui.elements.UIImage(scale(pygame.Rect
                                                   ((100, 940), (1400, 300))),
                                                   pygame.transform.scale(
-                                                      pygame.image.load(
+                                                      pyg_img_load(
                                                           "resources/images/mediation_selection_bg.png").convert_alpha(),
                                                       (1400, 300))
                                                   )

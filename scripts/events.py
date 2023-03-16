@@ -34,6 +34,8 @@ from scripts.utility import get_alive_kits, get_med_cats, ceremony_text_adjust, 
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
 
+from scripts.mods.resources import mod_open
+
 
 class Events():
     """
@@ -1038,7 +1040,7 @@ class Events():
             return
 
         resource_dir = "resources/dicts/events/ceremonies/"
-        with open(f"{resource_dir}ceremony-master.json",
+        with mod_open(f"{resource_dir}ceremony-master.json",
                   encoding="ascii") as read_file:
             self.CEREMONY_TXT = json.loads(read_file.read())
 
@@ -1224,7 +1226,7 @@ class Events():
         random_honor = None
         if promoted_to == 'warrior':
             resource_dir = "resources/dicts/events/ceremonies/"
-            with open(f"{resource_dir}ceremony_traits.json",
+            with mod_open(f"{resource_dir}ceremony_traits.json",
                       encoding="ascii") as read_file:
                 TRAITS = json.loads(read_file.read())
             try:

@@ -27,7 +27,9 @@ from scripts.game_structure.game_essentials import game, screen_x, screen_y, MAN
 from scripts.cat.names import names
 from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE
 
+from scripts.mods.resources import mod_open
 
+from scripts.mods.resources import pyg_img_load, mod_open, mod_open
 # ---------------------------------------------------------------------------- #
 #             change how accessory info displays on cat profiles               #
 # ---------------------------------------------------------------------------- #
@@ -1096,7 +1098,7 @@ class ProfileScreen(Screens):
         new_notes = {str(self.the_cat.ID): notes}
 
         try:
-            with open(notes_file_path, 'w') as rel_file:
+            with mod_open(notes_file_path, 'w') as rel_file:
                 json_string = ujson.dumps(new_notes, indent=2)
                 rel_file.write(json_string)
 
@@ -1114,7 +1116,7 @@ class ProfileScreen(Screens):
             return
 
         try:
-            with open(notes_file_path, 'r') as read_file:
+            with mod_open(notes_file_path, 'r') as read_file:
                 rel_data = ujson.loads(read_file.read())
                 self.user_notes = 'Click the check mark to enter notes about your cat!'
                 if str(self.the_cat.ID) in rel_data:
@@ -1961,13 +1963,13 @@ class ProfileScreen(Screens):
                 all_platforms.append(platform_dir)
 
         self.newleaf_plt = pygame.transform.scale(
-            pygame.image.load(all_platforms[0]).convert_alpha(), (240, 210))
+            pyg_img_load(all_platforms[0]).convert_alpha(), (240, 210))
         self.greenleaf_plt = pygame.transform.scale(
-            pygame.image.load(all_platforms[1]).convert_alpha(), (240, 210))
+            pyg_img_load(all_platforms[1]).convert_alpha(), (240, 210))
         self.leafbare_plt = pygame.transform.scale(
-            pygame.image.load(all_platforms[2]).convert_alpha(), (240, 210))
+            pyg_img_load(all_platforms[2]).convert_alpha(), (240, 210))
         self.leaffall_plt = pygame.transform.scale(
-            pygame.image.load(all_platforms[3]).convert_alpha(), (240, 210))
+            pyg_img_load(all_platforms[3]).convert_alpha(), (240, 210))
 
     def on_use(self):
         pass
@@ -2503,7 +2505,7 @@ class RoleScreen(Screens):
         self.blurb_background = pygame_gui.elements.UIImage(scale(pygame.Rect
                                                                   ((100, 390), (1400, 300))),
                                                             pygame.transform.scale(
-                                                                pygame.image.load(
+                                                                pyg_img_load(
                                                                     "resources/images/mediation_selection_bg.png").convert_alpha(),
                                                                 (1400, 300))
                                                             )
