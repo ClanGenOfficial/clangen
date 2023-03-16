@@ -779,7 +779,7 @@ class ProfileScreen(Screens):
         # AGE
         if the_cat.age == 'kitten':
             output += 'young'
-        elif the_cat.age == 'elder':
+        elif the_cat.age == 'senior':
             output += 'senior'
         else:
             output += the_cat.age
@@ -1685,7 +1685,7 @@ class ProfileScreen(Screens):
             else:
                 self.see_relationships_button.enable()
 
-            if self.the_cat.age not in ['young adult', 'adult', 'senior adult', 'elder'
+            if self.the_cat.age not in ['young adult', 'adult', 'senior adult', 'senior'
                                         ] or self.the_cat.dead or self.the_cat.exiled or self.the_cat.outside:
                 self.choose_mate_button.disable()
             else:
@@ -1945,6 +1945,8 @@ class ProfileScreen(Screens):
 
         if biome not in available_biome:
             biome = available_biome[0]
+        if the_cat.age == 'newborn' or the_cat.not_working():
+            biome = 'nest'
 
         biome = biome.lower()
 
