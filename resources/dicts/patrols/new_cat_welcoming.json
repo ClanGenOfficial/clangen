@@ -143,7 +143,7 @@
     "patrol_id": "fst_bord_noise1",
     "biome": "forest",
     "season": "Any",
-    "tags": ["border", "new_cat_warrior_loner_litter1_litter0_litter3_litternewborn", "battle_injury", "scar", "BRIDGE", "reputation"],
+    "tags": ["border", "new_cat_warrior_loner_litter0_litter1_litter3_litternewborn", "battle_injury", "scar", "BRIDGE", "reputation"],
     "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from a nearby bush.",
     "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
     "chance_of_success": 60,
@@ -326,7 +326,7 @@
     "fail_trait": ["vengeful", "bloodthirsty"],
     "min_cats": 2,
     "max_cats": 6,
-    "antagonize_text": "The patrol follows the sound, intent on finding the intruder. A kittypet! No wonder they were so loud. they scare them off easily.",
+    "antagonize_text": "The patrol follows the sound, intent on finding the intruder. A kittypet! No wonder they were so loud. They scare them off easily.",
     "antagonize_fail_text": "The patrol follows the noise and comes upon a kittypet that's sniffing around. The kittypet quickly begins a story about how they've been training for <i>days</i> now and they're finally ready to join c_n. p_l laughs and gets clawed by the angry kittypet. They have been training.",
     "history_text": [
             "This cat gained a scar from a fight with an angry kittypet."
