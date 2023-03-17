@@ -2,6 +2,7 @@ import os
 import shutil
 import subprocess
 import sys
+import tempfile
 import urllib.parse
 import zipfile
 import tarfile
@@ -150,12 +151,12 @@ def self_update(release_channel='development-test'):
             zip_ref.extractall('Downloads')
         os.remove("download.tmp")
 
-        os.makedirs('Downloads/macOS_tempmount', exist_ok=True)
-        os.system('hdiutil attach -nobrowse -mountpoint Downloads/macOS_tempmount Downloads/Clangen_macOS64.dmg')
-        shutil.rmtree('/Applications/Clangen.app.old', ignore_errors=True)
-        shutil.move('/Applications/Clangen.app', '/Applications/Clangen.app.old')
-        shutil.copytree('Downloads/macOS_tempmount/Clangen.app', '/Applications/Clangen.app')
-        os.system('hdiutil detach Downloads/macOS_tempmount')
+        with tempfile.TemporaryDirectory() as mountdir:
+            os.system(f'hdiutil attach -nobrowse -mountpoint {mountdir} Downloads/Clangen_macOS64.dmg')
+            shutil.rmtree('/Applications/Clangen.app.old', ignore_errors=True)
+            shutil.move('/Applications/Clangen.app', '/Applications/Clangen.app.old')
+            shutil.copytree('Downloads/macOS_tempmount/Clangen.app', '/Applications/Clangen.app')
+            os.system(f'hdiutil detach {mountdir}')
         shutil.rmtree('Downloads', ignore_errors=True)
         os.execv('/Applications/Clangen.app/Contents/MacOS/Clangen', sys.argv)
         quit()
