@@ -205,9 +205,10 @@ sprites.make_group('lineartdead', (0, 0), 'lineartdead')
 sprites.make_group('lineartdf', (0, 0), 'lineartdf')
 
 # Fading Fog
-sprites.make_group('fademask', (0, 0), 'fademask', sprites_y=15)
-sprites.make_group('fadestarclan', (0, 0), 'fadestarclan', sprites_y=15)
-sprites.make_group('fadedarkforest', (0, 0), 'fadedf', sprites_y=15)
+for i in range(1, 4):
+    sprites.make_group('fademask', (i, 0), f'fademask{i}',)
+    sprites.make_group('fadestarclan', (i, 0), f'fadestarclan{i}')
+    sprites.make_group('fadedarkforest', (i, 0), f'fadedf{i}')
 
 for a, i in enumerate(
         ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE', 
