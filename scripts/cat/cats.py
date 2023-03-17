@@ -32,7 +32,7 @@ import pygame
 
 from scripts.utility import get_med_cats, get_personality_compatibility, event_text_adjust, update_sprite
 from scripts.game_structure.game_essentials import game, screen
-from scripts.cat.thoughts import get_thoughts
+from scripts.cat.thoughts import load_thoughts
 from scripts.cat_relations.relationship import Relationship
 from scripts.game_structure import image_cache
 from scripts.event_class import Single_Event
@@ -1002,12 +1002,15 @@ class Cat():
             
         # get possible thoughts
         filtered_thoughts = []
-        thought_possibilities = load_thoughts(self, other_cat, self.age)
+        thought_possibilities = load_thoughts(self, other_cat, self.status)
         for thought in thought_possibilities:
             if cats_fulfill_thought_constraints(self, other_cat, thought, game_mode):
                 filtered_thoughts.append(thought)
 
-        chosen_thought = choice(filtered_thoughts)
+        try:
+            chosen_thought = choice(filtered_thoughts)
+        except IndexError:
+            chosen_thought = "Isn't thinking about much right now"
 
         # insert name if it is needed
         if "r_c" in chosen_thought:

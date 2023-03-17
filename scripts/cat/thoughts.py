@@ -141,9 +141,10 @@ def thought_fulfill_rel_constraints(relationship, constraint, thought_id) -> boo
 
 def cats_fulfill_thought_constraints(main_cat, random_cat, thought, game_mode) -> bool:
     """Check if the two cats fulfills the thought constraints."""
+    relationship = main_cat.relationships[random_cat.ID]
     if len(thought.relationship_constraint) >= 1:
         for constraint in thought.relationship_constraint:
-            if thought_fulfill_rel_constraints(main_cat, constraint, thought.id):
+            if thought_fulfill_rel_constraints(relationship, constraint, thought.id):
                 continue
 
     if len(thought.main_status_constraint) >= 1:
@@ -257,9 +258,10 @@ def create_thoughts(inter_list) -> list:
         ))
     return created_list
 
-def load_thoughts(main_cat, other_cat, age):
-    base_path = os.path.join("resources", "dicts", "thoughts")
+def load_thoughts(main_cat, other_cat, status):
+    base_path = f"resources/dicts/thoughts/"
     life_dir = None
+    status = status
     thoughts = []
 
     if not main_cat.dead and not main_cat.outside:
@@ -274,9 +276,9 @@ def load_thoughts(main_cat, other_cat, age):
         life_dir = "unknownresidence"
 
     THOUGHTS = []
-    with open(os.path.join(base_path, life_dir, age, "general.json"), 'r') as read_file:
+    with open(f"{base_path}{life_dir}/{status}.json", 'r') as read_file:
         THOUGHTS = ujson.loads(read_file.read())
-    with open(os.path.join(base_path, life_dir, "general", "general.json"), 'r') as read_file:
+    with open(f"{base_path}{life_dir}/general.json", 'r') as read_file:
         THOUGHTS += ujson.loads(read_file.read())
 
     thoughts = create_thoughts(THOUGHTS)
