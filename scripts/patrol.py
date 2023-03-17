@@ -938,8 +938,7 @@ class Patrol():
             backstory = ['kittypet1', 'kittypet2', 'kittypet3', 'refugee3', 'tragedy_survivor3']
             if not success:
                 outsider = create_outside_cat(Cat, "kittypet", backstory=choice(backstory))
-                outsider_name = str(outsider)
-                self.results_text.append(f"The Clan has met {outsider_name}.")
+                self.results_text.append(f"The Clan has met {outsider}.")
                 return
         elif cat_type == 'loner' or "loner" in attribute_list:
             loner = True
@@ -948,8 +947,7 @@ class Patrol():
                          'refugee4', 'tragedy_survivor2']
             if not success:
                 outsider = create_outside_cat(Cat, "loner", backstory=choice(backstory))
-                outsider_name = str(outsider)
-                self.results_text.append(f"The Clan has met {outsider_name}.")
+                self.results_text.append(f"The Clan has met {outsider}.")
                 return
         else:
             other_clan = self.other_clan
@@ -963,8 +961,7 @@ class Patrol():
                              'refugee4', 'tragedy_survivor2']
             if not success:
                 outsider = create_outside_cat(Cat, "loner", backstory=choice(backstory))
-                outsider_name = str(outsider)
-                self.results_text.append(f"The Clan has met {outsider_name}.")
+                self.results_text.append(f"The Clan has met {outsider}.")
                 return
 
         # handing out ranks
