@@ -291,10 +291,10 @@ class ProfileScreen(Screens):
                 self.toggle_dangerous_tab()
             elif event.ui_element == self.backstory_tab_button:
                 if self.open_sub_tab is None:
-                    if game.settings['favorite sub tab'] is None:
+                    if game.switches['favorite_sub_tab'] is None:
                         self.open_sub_tab = 'life events'
                     else:
-                        self.open_sub_tab = game.settings['favorite sub tab']
+                        self.open_sub_tab = game.switches['favorite_sub_tab']
 
                 self.toggle_history_tab()
             elif event.ui_element == self.conditions_tab_button:
@@ -389,6 +389,10 @@ class ProfileScreen(Screens):
                         self.the_cat.df = True
                         game.clan.add_to_darkforest(self.the_cat)
                         self.the_cat.thought = "Is distraught after being sent to the Place of No Stars"
+
+                    #Update sprite in this situation. 
+                    update_sprite(self.the_cat)
+
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()
@@ -411,11 +415,11 @@ class ProfileScreen(Screens):
                 self.open_sub_tab = 'user notes'
                 self.toggle_history_sub_tab()
             elif event.ui_element == self.fav_tab:
-                game.settings['favorite sub tab'] = None
+                game.switches['favorite_sub_tab'] = None
                 self.fav_tab.hide()
                 self.not_fav_tab.show()
             elif event.ui_element == self.not_fav_tab:
-                game.settings['favorite sub tab'] = self.open_sub_tab
+                game.switches['favorite_sub_tab'] = self.open_sub_tab
                 self.fav_tab.show()
                 self.not_fav_tab.hide()
             elif event.ui_element == self.save_text:
@@ -779,7 +783,7 @@ class ProfileScreen(Screens):
         # AGE
         if the_cat.age == 'kitten':
             output += 'young'
-        elif the_cat.age == 'elder':
+        elif the_cat.age == 'senior':
             output += 'senior'
         else:
             output += the_cat.age
@@ -1685,7 +1689,7 @@ class ProfileScreen(Screens):
             else:
                 self.see_relationships_button.enable()
 
-            if self.the_cat.age not in ['young adult', 'adult', 'senior adult', 'elder'
+            if self.the_cat.age not in ['young adult', 'adult', 'senior adult', 'senior'
                                         ] or self.the_cat.dead or self.the_cat.exiled or self.the_cat.outside:
                 self.choose_mate_button.disable()
             else:
@@ -1792,7 +1796,7 @@ class ProfileScreen(Screens):
         # History Tab:
         elif self.open_tab == 'history':
             # show/hide fav tab star
-            if self.open_sub_tab == game.settings['favorite sub tab']:
+            if self.open_sub_tab == game.switches['favorite_sub_tab']:
                 self.fav_tab.show()
                 self.not_fav_tab.hide()
             else:
@@ -1945,6 +1949,8 @@ class ProfileScreen(Screens):
 
         if biome not in available_biome:
             biome = available_biome[0]
+        if the_cat.age == 'newborn' or the_cat.not_working():
+            biome = 'nest'
 
         biome = biome.lower()
 

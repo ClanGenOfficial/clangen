@@ -646,7 +646,7 @@ class Events():
         elif cat.moons == 12:
             cat.age = 'adult'
         elif cat.moons == 120:
-            cat.age = 'elder'
+            cat.age = 'senior'
 
         # killing exiled cats
         if cat.exiled or cat.outside:
@@ -865,9 +865,7 @@ class Events():
                 game.clan.medicine_cat = cat
 
             # retiring to elder den
-            if cat.status in [
-                    'warrior', 'deputy'
-            ] and cat.age == 'elder' and len(cat.apprentice) < 1:
+            if cat.status in ['warrior', 'deputy'] and cat.age == 'senior' and len(cat.apprentice) < 1:
                 if cat.status == 'deputy':
                     game.clan.deputy = None
                 self.ceremony(cat, 'elder')
@@ -876,19 +874,11 @@ class Events():
             # apprentice a kitten to either med or warrior
             if cat.moons == cat_class.age_moons["adolescent"][0]:
                 if cat.status == 'kitten':
-
-                    med_cat_list = list(
-                        filter(
-                            lambda x: x.status in [
-                                "medicine cat", "medicine cat apprentice"
-                            ] and not x.dead and not x.outside,
-                            Cat.all_cats_list))
+                    med_cat_list = list(filter(lambda x: x.status in ["medicine cat", "medicine cat apprentice"]
+                                                         and not x.dead and not x.outside, Cat.all_cats_list))
 
                     # check if the medicine cat is an elder
-                    has_elder_med = [
-                        c for c in med_cat_list
-                        if c.age == 'elder' and c.status == "medicine cat"
-                    ]
+                    has_elder_med = [c for c in med_cat_list if c.age == 'senior' and c.status == "medicine cat"]
 
                     very_old_med = [
                         c for c in med_cat_list
@@ -1279,7 +1269,7 @@ class Events():
             chance += acc_chances["med_modifier"]
         if cat.age in ['kitten', 'adolescent']:
             chance += acc_chances["baby_modifier"]
-        elif cat.age in ['senior adult', 'elder']:
+        elif cat.age in ['senior adult', 'senior']:
             chance += acc_chances["elder_modifier"]
         if cat.trait in [
                 "adventurous", "childish", "confident", "daring", "playful",
