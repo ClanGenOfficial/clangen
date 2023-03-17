@@ -39,6 +39,7 @@ class Clan():
     BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach"]
 
     CAT_TYPES = [
+        "newborn",
         "kitten",
         "apprentice",
         "warrior",

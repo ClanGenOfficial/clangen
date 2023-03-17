@@ -617,35 +617,7 @@ class ViewChildrenScreen(Screens):
 
         # Siblings
         # Get siblings.
-        for x in game.clan.clan_cats:
-            if (Cat.all_cats[x].parent1 in (self.the_cat.parent1, self.the_cat.parent2) or Cat.all_cats[
-                x].parent2 in (
-                        self.the_cat.parent1, self.the_cat.parent2) and self.the_cat.parent2 is not None) and \
-                    self.the_cat.ID != Cat.all_cats[x].ID and self.the_cat.parent1 is not None and \
-                    Cat.all_cats[x].parent1 is not None:
-                self.all_siblings.append(Cat.all_cats[x])
-
-        # Check for faded siblings through parent 1
-        if self.the_cat.parent1 not in Cat.all_cats and self.the_cat.parent1:
-            parent_ob = Cat.load_faded_cat(self.the_cat.parent1)
-            if parent_ob:
-                #Check to see if the faded offspring list is empty or not
-                for sib in parent_ob.faded_offspring:
-                    sib_ob = Cat.load_faded_cat(sib)
-                    if sib:
-                        self.all_siblings.append(sib_ob)
-
-        #Check for siblings through parent 1, but we need to make sure we don't have duplicates.
-        sibling_ids = [i.ID for i in self.all_siblings]
-
-        if self.the_cat.parent2 not in Cat.all_cats and self.the_cat.parent2:
-            parent_ob = Cat.load_faded_cat(self.the_cat.parent2)
-            if parent_ob:
-                for sib in parent_ob.faded_offspring:
-                    if sib not in sibling_ids:
-                        sib_ob = Cat.load_faded_cat(sib)
-                        if sib:
-                            self.all_siblings.append(sib_ob)
+        self.all_siblings = [Cat.fetch_cat(i) for i in self.the_cat.siblings]
 
 
         self.siblings_page_number = 1  # Current sibling page
@@ -1347,12 +1319,12 @@ class ChooseMateScreen(Screens):
                 self.next_cat = 1
             if self.next_cat == 0 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead and \
                     check_cat.ID != game.clan.instructor.ID and not check_cat.exiled and not check_cat.outside and \
-                    check_cat.age not in ["adolescent", "kitten"] and check_cat.df == self.the_cat.df:
+                    check_cat.age not in ["adolescent", "kitten", "newborn"] and check_cat.df == self.the_cat.df:
                 self.previous_cat = check_cat.ID
 
             elif self.next_cat == 1 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead and \
                     check_cat.ID != game.clan.instructor.ID and not check_cat.exiled and not check_cat.outside and \
-                    check_cat.age not in ["adolescent", "kitten"] and check_cat.df == self.the_cat.df:
+                    check_cat.age not in ["adolescent", "kitten", "newborn"] and check_cat.df == self.the_cat.df:
                 self.next_cat = check_cat.ID
 
             elif int(self.next_cat) > 1:
@@ -1370,7 +1342,7 @@ class ChooseMateScreen(Screens):
         """Get a list of valid mates for the current cat"""
         valid_mates = []
         for relevant_cat in Cat.all_cats_list:
-            invalid_age = relevant_cat.age not in ['kitten', 'adolescent']
+            invalid_age = relevant_cat.age not in ['newborn', 'kitten', 'adolescent']
 
             # cat.is_potential_mate() is not used here becuase that restricts to the same age catagory, which we
             # don't want here.

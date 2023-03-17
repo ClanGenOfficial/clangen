@@ -65,20 +65,22 @@ class Cat():
                      'strange', 'daydreamer', 'quiet'],
     }
     ages = [
-        'kitten', 'adolescent', 'young adult', 'adult', 'senior adult',
-        'elder', 'dead'
+        'newborn', 'kitten', 'adolescent', 'young adult', 'adult', 'senior adult',
+        'senior'
     ]
     age_moons = {
-        'kitten': [0, 5],
+        'newborn': [0, 0],
+        'kitten': [1, 5],
         'adolescent': [6, 11],
         'young adult': [12, 47],
         'adult': [48, 95],
         'senior adult': [96, 119],
-        'elder': [120, 300]
+        'senior': [120, 300]
     }
 
     # This in is in reverse order: top of the list at the bottom
     rank_sort_order = [
+        "newborn",
         "kitten",
         "elder",
         "apprentice",
@@ -187,7 +189,7 @@ class Cat():
             self.moons = moons
             if moons > 300:
                 # Out of range, always elder
-                self.age = 'elder'
+                self.age = 'senior'
             else:
                 # In range
                 for key_age in self.age_moons.keys():
@@ -241,6 +243,8 @@ class Cat():
         self.tortiepattern = None
         self.tortiecolour = None
         self.white_patches = None
+        self.vitiligo = None
+        self.points = None
         self.accessory = None
         self.birth_cooldown = 0
         self.siblings = []
@@ -264,13 +268,18 @@ class Cat():
         self.virtues = []
         self.no_kits = False
         self.paralyzed = False
-        self.age_sprites = {
+        self.cat_sprites = {
+            "newborn": 20,
             "kitten": None,
             "adolescent": None,
             "young adult": None,
             "adult": None,
             "senior adult": None,
-            "elder": None
+            "senior": None,
+            "para_young": 17,
+            "para_adult": None,
+            "sick_adult": 18,
+            "sick_young": 19
         }
 
         self.opacity = 100
@@ -304,15 +313,19 @@ class Cat():
             self.moons = moons
             if moons > 300:
                 # Out of range, always elder
-                self.age = 'elder'
+                self.age = 'senior'
+            elif moons == 0:
+                self.age = 'newborn'
             else:
                 # In range
                 for key_age in self.age_moons.keys():
                     if moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1] + 1):
                         self.age = key_age
         else:
-            if status in ['kitten', 'elder']:
-                self.age = status
+            if status == 'kitten':
+                self.age = 'kitten'
+            elif status == 'elder':
+                self.age = 'senior'
             elif status == 'apprentice':
                 self.age = 'adolescent'
             elif status == 'medicine cat apprentice':
@@ -366,14 +379,14 @@ class Cat():
             # trans cat chances
             trans_chance = randint(0, 50)
             nb_chance = randint(0, 75)
-            if self.gender == "female" and not self.age == 'kitten':
+            if self.gender == "female" and not self.status == 'kitten':
                 if trans_chance == 1:
                     self.genderalign = "trans male"
                 elif nb_chance == 1:
                     self.genderalign = "nonbinary"
                 else:
                     self.genderalign = self.gender
-            elif self.gender == "male" and not self.age == 'kitten':
+            elif self.gender == "male" and not self.status == 'kitten':
                 if trans_chance == 1:
                     self.genderalign = "trans female"
                 elif nb_chance == 1:
@@ -382,6 +395,17 @@ class Cat():
                     self.genderalign = self.gender
             else:
                 self.genderalign = self.gender
+
+            # setting up sprites that might not be correct
+            if self.pelt is not None:
+                if self.pelt.length == 'long':
+                    if self.cat_sprites['adult'] not in [9, 10, 11]:
+                        self.cat_sprites['adult'] = choice([9, 10, 11])
+                        self.cat_sprites['young adult'] = self.cat_sprites['adult']
+                        self.cat_sprites['senior adult'] = self.cat_sprites['adult']
+                        self.cat_sprites['para_adult'] = 16
+                else:
+                    self.cat_sprites['para_adult'] = 15
 
             # APPEARANCE
             init_pelt(self)
@@ -394,7 +418,7 @@ class Cat():
             init_tint(self)
 
             # experience and current patrol status
-            if self.age in ['kitten']:
+            if self.age in ['young', 'newborn']:
                 self.experience = 0
             elif self.age in ['adolescent']:
                 m = self.moons
@@ -411,7 +435,7 @@ class Cat():
             elif self.age in ['senior adult']:
                 self.experience = randint(Cat.experience_levels_range["competent"][0],
                                           Cat.experience_levels_range["expert"][1])
-            elif self.age in ['elder']:
+            elif self.age in ['senior']:
                 self.experience = randint(Cat.experience_levels_range["competent"][0],
                                           Cat.experience_levels_range["master"][1])
             else:
@@ -891,7 +915,7 @@ class Cat():
             description += str(self.pelt.length).lower() + '-furred ' 
 
         description += describe_color(self.pelt, self.tortiepattern, self.tortiecolour,
-                                            self.white_patches, short=short) + ' ' + sex
+                                            self.white_patches, self.points, self.vitiligo, short=short) + ' ' + sex
         return description
         
 
@@ -926,8 +950,6 @@ class Cat():
                 colour2 = 'pale yellow'
             if colour2 == 'heatherblue':
                 colour2 = 'heather blue'
-            if colour2 == 'blue2':
-                colour2 = 'blue'
             if colour2 == 'sunlitice':
                 colour2 = 'sunlit ice'
             if colour2 == 'greenyellow':
@@ -1609,6 +1631,9 @@ class Cat():
         elif born_with is False:
             moons_until = 0
 
+        if condition == "paralyzed":
+            self.paralyzed = True
+
         new_perm_condition = PermanentCondition(
             name=name,
             severity=condition["severity"],
@@ -1788,6 +1813,9 @@ class Cat():
                 if "permanent conditions" in rel_data:
                     self.permanent_condition = rel_data.get("permanent conditions")
 
+            if "paralyzed" in self.permanent_condition and not self.paralyzed:
+                self.paralyzed = True
+                
         except Exception as e:
             print(f"WARNING: There was an error reading the condition file of cat #{self}.\n", e)
 
@@ -1971,7 +1999,7 @@ class Cat():
         if (self.moons < 14 or other_cat.moons < 14) and not for_love_interest:
             return False
 
-        age_restricted_ages = ["kitten", "adolescent"]
+        age_restricted_ages = ["newborn", "kitten", "adolescent"]
         if self.age in age_restricted_ages or other_cat.age in age_restricted_ages:
             if self.age != other_cat.age:
                 return False
@@ -2249,8 +2277,8 @@ class Cat():
         related = direct_related or indirect_related
 
         # Check for both adults, or same age type:
-        if cat1.age == cat2.age or (cat1.age not in ['kitten', 'adolescent'] and
-                                    cat2.age not in ['kitten', 'adolescent']):
+        if cat1.age == cat2.age or (cat1.age not in ['newborn', 'kitten', 'adolescent'] and
+                                    cat2.age not in ['newborn', 'kitten', 'adolescent']):
             valid_age = True
         else:
             valid_age = False
@@ -2507,7 +2535,7 @@ class Cat():
         self.faded = True
 
         # Sillotette sprite
-        if self.age in ['kitten']:
+        if self.age in ['newborn', 'kitten']:
             file_name = "faded_kitten.png"
         elif self.age in ['adult', 'young adult', 'senior adult']:
             file_name = "faded_adult.png"
@@ -2676,6 +2704,8 @@ def create_example_cats():
                 ['kitten', 'apprentice', 'warrior', 'warrior', 'elder']))
         if game.choose_cats[a].moons >= 160:
             game.choose_cats[a].moons = choice(range(120, 155))
+        elif game.choose_cats[a].moons == 0:
+            game.choose_cats[a].moons = choice([1, 2, 3, 4, 5])
         for scar in game.choose_cats[a].scars:
             if scar in not_allowed:
                 game.choose_cats[a].scars.remove(scar)
