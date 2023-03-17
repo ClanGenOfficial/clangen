@@ -853,7 +853,7 @@ class Patrol():
                     self.handle_scars(outcome)
                 else:
                     self.handle_conditions(outcome)
-            if not antagonize:
+            if not antagonize and "meeting" in self.patrol_event.tags:
                 self.add_new_cats(outcome, self.success)
             if self.patrol_event.tags is not None:
                 if "other_clan" in self.patrol_event.tags:
@@ -1107,7 +1107,7 @@ class Patrol():
                                                outside=False
                                                ))
             # giving the mother the necessary condition
-            if game.clan.game_mode != 'classic' and kit_age <= 2:
+            if game.clan.game_mode != 'classic' and kit_age <= 2 and not created_cats[0].dead:
                 if not game.settings["no gendered breeding"]:
                     if created_cats[0].gender == 'female':
                         created_cats[0].get_injured("recovering from birth")
