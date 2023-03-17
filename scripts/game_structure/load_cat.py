@@ -33,17 +33,18 @@ def json_load():
     all_cats = []
     cat_data = None
     clanname = game.switches['clan_list'][0]
+    clan_cats_json_path = f'{get_save_dir()}/{clanname}/clan_cats.json'
     with open(f"resources/dicts/conversion_dict.json", 'r') as read_file:
         convert = ujson.loads(read_file.read())
     try:
-        with open('saves/' + clanname + '/clan_cats.json', 'r') as read_file:
+        with open(clan_cats_json_path, 'r') as read_file:
             cat_data = ujson.loads(read_file.read())
     except PermissionError as e:
-        game.switches['error_message'] = f'Can\t open saves/{clanname}/clan_cats.json!'
+        game.switches['error_message'] = f'Can\t open {clan_cats_json_path}!'
         game.switches['traceback'] = e
         raise
     except JSONDecodeError as e:
-        game.switches['error_message'] = get_save_dir() + f'/{clanname}/clan_cats.json is malformed!'
+        game.switches['error_message'] = f'{clan_cats_json_path} is malformed!'
         game.switches['traceback'] = e
         raise
 
