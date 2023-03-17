@@ -1291,9 +1291,9 @@ class AllegiancesScreen(Screens):
         self.heading.kill()
         del self.heading
     
-    def generate_one_entry(self, cat):
-            output = ""
-            output += f"{str(cat.name).upper()} - a {cat.describe_cat()}"
+    def generate_one_entry(self, cat, extra_details = ""):
+            """ Extra Details will be placed after the cat description, but before the apprentice (if they have one. )"""
+            output = f"{str(cat.name).upper()} - a {cat.describe_cat()} {extra_details}"
 
             if len(cat.apprentice) > 0:
                 if len(cat.apprentice) == 1:
@@ -1437,11 +1437,11 @@ class AllegiancesScreen(Screens):
                 else:
                     kittens = f" <i>(caring for {', '.join(kittens[:-1])}, and {kittens[-1]})</i>"
 
-                all_entries.append(self.generate_one_entry(queen) + kittens)
+                all_entries.append(self.generate_one_entry(queen, kittens))
 
             #Now kittens without carers
             for k in living_kits:
-                all_entries.append(f"{k.name} - a {k.describe_cat(short=True)}")
+                all_entries.append(f"{str(k.name).upper()} - a {k.describe_cat(short=True)}")
 
             _box[1] = "\n".join(all_entries)
             outputs.append(_box)

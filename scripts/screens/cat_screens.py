@@ -389,6 +389,10 @@ class ProfileScreen(Screens):
                         self.the_cat.df = True
                         game.clan.add_to_darkforest(self.the_cat)
                         self.the_cat.thought = "Is distraught after being sent to the Place of No Stars"
+
+                    #Update sprite in this situation. 
+                    update_sprite(self.the_cat)
+
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()
