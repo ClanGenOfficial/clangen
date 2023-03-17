@@ -67,7 +67,7 @@ def accessory_display_name(cat):
 # ---------------------------------------------------------------------------- #
 def bs_blurb_text(cat):
     backstory = cat.backstory
-    if cat.status in ['kittypet', 'loner', 'rogue']:
+    if cat.status in ['kittypet', 'loner', 'rogue', 'former clancat']:
         return f"This cat is a {cat.status} and currently resides outside of the Clans."
     backstory_text = {
         None: "This cat was born into the Clan where they currently reside.",
@@ -371,6 +371,7 @@ class ProfileScreen(Screens):
                 if self.the_cat.status == 'leader':
                     game.clan.leader_lives -= 10
                 self.the_cat.die()
+                self.the_cat.died_by.append(f'It was the will of something even mightier than StarClan that this cat died.')
                 update_sprite(self.the_cat)
                 self.clear_profile()
                 self.build_profile()
@@ -894,7 +895,7 @@ class ProfileScreen(Screens):
         output = ""
 
         # STATUS
-        if the_cat.outside and not the_cat.exiled and not the_cat.status in ['kittypet', 'loner', 'rogue']:
+        if the_cat.outside and not the_cat.exiled and not the_cat.status in ['kittypet', 'loner', 'rogue', 'former clancat']:
             output += "<font color='#FF0000'>lost</font>"
         elif the_cat.exiled:
             output += "<font color='#FF0000'>exiled</font>"
