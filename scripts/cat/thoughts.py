@@ -262,7 +262,7 @@ def load_thoughts(main_cat, other_cat, status):
     base_path = f"resources/dicts/thoughts/"
     life_dir = None
     status = status
-    thoughts = []
+    loaded_thoughts = []
 
     if not main_cat.dead and not main_cat.outside:
         life_dir = "alive"
@@ -278,8 +278,11 @@ def load_thoughts(main_cat, other_cat, status):
     THOUGHTS = []
     with open(f"{base_path}{life_dir}/{status}.json", 'r') as read_file:
         THOUGHTS = ujson.loads(read_file.read())
+    GENTHOUGHTS = []
     with open(f"{base_path}{life_dir}/general.json", 'r') as read_file:
-        THOUGHTS += ujson.loads(read_file.read())
-
-    thoughts = create_thoughts(THOUGHTS)
-    return thoughts
+        GENTHOUGHTS = ujson.loads(read_file.read())
+    loaded_thoughts += THOUGHTS
+    loaded_thoughts += GENTHOUGHTS
+    
+    final_thoughts = choice(create_thoughts(loaded_thoughts))
+    return final_thoughts
