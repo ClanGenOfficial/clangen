@@ -14,16 +14,22 @@
         "Astutely, s_c recognises the cranberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit."
     ],
     "fail_text": [
-        "Confidently gathering them and prancing back to camp with the patrol, r_c is then informed that raspberries aren't a useful medicinal herb.",
+        "Confidently gathering them and prancing back to camp with the patrol, r_c is then informed that red currents aren't a useful medicinal herb.",
         null,
         null,
-        "While plucking them from the bush, r_c feels one of the berries split in their mouth, and a horrible taste coats their tongue. They're rushed back to camp, where the medicine cat might have a chance at saving them from deathberry poisoning."
+        "While plucking them from the bush, r_c is suprised to find they taste pretty good. Before anyone can stop them, they eat a few, and are rushed back to camp for deathberry poisoning."
     ],
     "win_skills": ["very smart", "extremely smart"],
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
-    "antagonize_fail_text": null
+    "antagonize_fail_text": null,
+    "history_text": [
+        null,
+        "r_c mistook deathberries for something edible.",
+        "after eating deathberries"
+]
+
 },
 {
     "patrol_id": "gen_train_berrybush2",
@@ -39,15 +45,20 @@
         "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries and brings them back to camp, where it turns out they're called raspberries."
     ],
     "fail_text": [
-        "Confidently gathering them and prancing back to camp, app1 is then informed that raspberries aren't a useful medicinal herb.",
+        "Confidently gathering them and prancing back to camp, app1 is then informed that red currents aren't a useful medicinal herb.",
         null,
-        "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, several splitting in their mouth, and tries not to gag at the horrible taste - after all, all medicine cat herbs taste horrible. Right? They collapse on the way back to camp, and there's nothing any cat can do for them.",
-        "Whatever. Identifying them is a medicine cat problem. app1 plucks the horrible tasting berries and brings them back to camp, where the medicine cat immediately starts work trying to save them from deathberry poisoning."
+        "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, surprised at the pleasent taste, and swallow a few. They collapse on the way back to camp, and there's nothing any cat can do for them, having not identified deathberries before eating them.",
+        "Whatever. Identifying them is a medicine cat problem. app1 plucks the tasty berries, swallowing a few, and takes the rest back to camp where the medicine cat immediately starts work trying to save them from deathberry poisoning."
     ],
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
-    "antagonize_fail_text": null
+    "antagonize_fail_text": null,
+    "history_text": [
+        null,
+        "r_c mistook deathberries for something edible.",
+        "after eating deathberries"
+    ]
 },
 {
     "patrol_id": "gen_train_berrybush3",
@@ -64,16 +75,21 @@
         "Astutely, s_c recognises the cranberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit."
     ],
     "fail_text": [
-        "Confidently gathering them and prancing back to camp with the patrol, r_c is then informed that raspberries aren't a useful medicinal herb.",
+        "Confidently gathering them and prancing back to camp with the patrol, r_c is then informed that red currents aren't a useful medicinal herb.",
         null,
         null,
-        "While plucking them from the bush, r_c feels one of the berries split in their mouth, and a horrible taste coats their tongue. They're rushed back to camp, where the medicine cat might have a chance at saving them from deathberry poisoning."
+        "While plucking them from the bush, r_c finds them tasty, and eats a few, only for p_l to notice what they're eating. They're rushed back to camp, where the medicine cat might have a chance at saving them from deathberry poisoning."
     ],
     "win_skills": ["very smart", "extremely smart"],
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
-    "antagonize_fail_text": null
+    "antagonize_fail_text": null,
+    "history_text": [
+        null,
+        "r_c mistook deathberries for something edible.",
+        "after eating deathberries"
+    ]
 },
 {
     "patrol_id": "gen_train_berrybush4",
@@ -89,15 +105,20 @@
         "Whatever. Identifying them is a medicine cat problem.  app1 plucks the berries and brings them back to camp, where it turns out they're called raspberries."
     ],
     "fail_text": [
-        "Confidently gathering them and prancing back to camp, app1 is then informed that raspberries aren't a useful medicinal herb.",
+        "Confidently gathering them and prancing back to camp, app1 is then informed that red currents aren't a useful medicinal herb.",
         null,
-        "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, several splitting in their mouth, and tries not to gag at the horrible taste - after all, all medicine cat herbs taste horrible. Right? They collapse on the way back to camp, and there's nothing any cat can do for them.",
-        "Whatever. Identifying them is a medicine cat problem. app1 plucks the horrible tasting berries and brings them back to camp, where the medicine cat immediately starts work trying to save them from deathberry poisoning."
+        "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, surprised at the pleasent taste, and swallow a few. They collapse on the way back to camp, and there's nothing any cat can do for them, having not identified deathberries before eating them.",
+        "Whatever. Identifying them is a medicine cat problem. app1 plucks the tasty berries, swallowing a few, and takes the rest back to camp where the medicine cat immediately starts work trying to save them from deathberry poisoning."
     ],
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
-    "antagonize_fail_text": null
+    "antagonize_fail_text": null,
+    "history_text": [
+        null,
+        "r_c mistook deathberries for something edible.",
+        "after eating deathberries"
+    ]
 },
 {
     "patrol_id": "gen_train_sunny1",
