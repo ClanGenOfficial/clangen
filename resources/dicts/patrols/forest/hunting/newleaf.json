@@ -1537,6 +1537,7 @@
         "no_herbs0",
         "no_herbs2",
         "no_herbs3",
+        "no_fail_prey",
         "medium_prey0",
         "medium_prey1",
         "large_prey2",
@@ -1545,7 +1546,7 @@
     "intro_text": "Leading the way into the forest, p_l calls back to the two apprentices, telling them there's a treat in store for them - finally it's newleaf, which means its time for the young cats to pick up on one of the quinessential c_n skills - nest raiding!",
     "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
     "chance_of_success": 60,
-    "exp": 20,
+    "exp": 60,
     "success_text": [
         "As they walk, the warriors chat, passing on tips in what's as much gossip as a lesson. app1 and app2 are far too busy to speak, eyes fixed on the trees (app2 is stopped before they can walk into a puddle, and gently reminded to watch their paws a little more). Both apprentices are thrilled to be allowed the first shot, sneaking upwards deploying all their climbing skills as they carefully fish fragile eggs out of stick piles, trying not to drool over the shells.",
         "r_c spots a great hole in the trunk of an oak, and together the hunting patrol shimmer up into the branches, jokingly teasing when app1 accidentally breaks one of the eight big eggs inside. p_l tells the apprentices that with this many big eggs, the nest they're raiding is probably that of a bird of prey, always good to have less of in c_n's territory. They even bring back some oak leaves with them, though it's a real stuggle holding them with the eggs!",
@@ -1563,6 +1564,169 @@
     "win_trait": ["careful", "bold", "daring", "adventurous", "playful"],
     "min_cats": 4,
     "max_cats": 4,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_hunt_eggs_newleaf2",
+    "biome": "forest",
+    "season": "newleaf",
+    "tags": [
+        "hunting",
+        "apprentice",
+        "three_apprentices",
+        "respect",
+        "comfort",
+        "platonic",
+        "patrol_to_p_l",
+        "rel_patrol",
+        "herb",
+        "oak_leaves",
+        "no_herbs0",
+        "no_herbs2",
+        "no_herbs3",
+        "no_fail_prey",
+        "medium_prey0",
+        "medium_prey1",
+        "large_prey2",
+        "large_prey3"
+    ],
+    "intro_text": "Leading the way into the forest, p_l calls back to the three apprentices, telling them there's a treat in store for them - finally it's newleaf, which means its time for the young cats to pick up on one of the quinessential c_n skills - nest raiding!",
+    "decline_text": "The cats are called back to camp - there's something the deputy needs to discuss with them.",
+    "chance_of_success": 60,
+    "exp": 90,
+    "success_text": [
+        "As they walk, the warriors chat, passing on tips in what's as much gossip as a lesson. All three apprentices are far too busy to speak, eyes fixed on the trees (app1 is stopped before they can walk into a puddle, and gently reminded to watch their paws a little more). The young cats are thrilled to be allowed the first shot, sneaking upwards deploying all their climbing skills as they carefully fish fragile eggs out of stick piles, trying not to drool over the shells.",
+        "r_c spots a great hole in the trunk of an oak, and together the hunting patrol shimmer up into the branches, jokingly teasing when app1 accidentally breaks one of the eight big eggs inside. p_l tells the apprentices that with this many big eggs, the nest they're raiding is probably that of a bird of prey, always good to have less of in c_n's territory. They even bring back some oak leaves with them, though it's a real stuggle holding them with the eggs!",
+        "s_c has a great eye for spotting nests, but they stay back, remembering the thrill (and also realative safety) of nest raiding as an apprentice. The young cats get all the credit for their climbing skills, and s_c is more than content with the grateful look one of the other warriors throws their way.",
+        "It's a wonderful day, wandering through the sunshine kinda randomly around c_n's forest searching for the signs of bird nests and swarming up the trees for them. s_c is even able to show off a little, inching cautiously out onto the spindly branches of a willow to snag a hard to reach nest."
+    ],
+    "fail_text": [
+        "The wind starts to pick up, and alarmed, p_l stops the nest raiding plans in their tracks. There's no reason to risk themselves on thin branches in bad weather - the nests will be stocked full of eggs or nestlings to make off with all newleaf, and p_l well remembers the tales the elders tell of foolish risks taken for stupidly small rewards."
+    ],
+    "win_skills": [
+        "good hunter",
+        "great hunter",
+        "fantastic hunter"
+    ],
+    "win_trait": ["careful", "bold", "daring", "adventurous", "playful"],
+    "min_cats": 6,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_hunt_eggs_newleaf3",
+    "biome": "forest",
+    "season": "newleaf",
+    "tags": [
+        "hunting",
+        "no_app",
+        "minor_injury",
+        "no_fail_prey",
+        "medium_prey0",
+        "large_prey1",
+        "large_prey2",
+        "large_prey3"
+    ],
+    "intro_text": "As r_c strentchs, luxuriating in sharpening their claws on a tree root, they spot a pair of birds furiously chattering to each other above them, puffing up their feathers and singing in territorial fury. They could go after the birds of course - but if the fluffy mouthfuls are being protective,then there's something to protect, and it's the season for nest raiding.",
+    "decline_text": "But r_c can't be bothered today, not with the newleaf sun so bright and warm. Another time, perhaps.",
+    "success_text": [
+        "It takes a little time to find a nest, but r_c manages it, and it's worth it for the hunt it offers - r_c would have to be concussed to fail to reach this nest, the birds have done a terrible job choosing it's location. The blackbird incubating its eggs can only flee to another branch and chatter angrily as r_c carefully removes the eggs one by one. All three will make a delicacy of a meal for someone back at camp.",
+        "The beech tree these sparrows have chosen to nest in is a popular choice, and as birds continue to fight with their neighbours, r_c slips into the tree to take advantage, emptying nest after nest through the ineffectual outraged squawking protests of their owners. These birds will lay again before the season is out, r_c will have to remember this tree.",
+        "s_c hops confidently into the trees to hunt, taking their time picking out the nests among the branches. It's difficult not to drool all over the eggs they steal, looking forward to the little feast of the well-loved delicacies they'll be able to have with their Clanmates."
+    ],
+    "fail_text": [
+        "Unfortunately, the squabbling birds have managed to construct their homes on branches thin and high enough that r_c can't justify the risk, not even for those delicious, perfect eggs.",
+        null,
+        null,
+        "Full of mouth-watering desire for the full rich yolk of eggs, r_c risks venturing out onto a thin spindly branch. Too spindly, in fact, and though they catch themselves on a lower branch with a scrabbling struggle, they'll be feeling that tonight when they stretch out in their nest. Ow."
+    ],
+    "chance_of_success": 50,
+    "exp": 15,
+    "win_skills": [
+        "good hunter",
+        "great hunter",
+        "fantastic hunter"
+    ],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_hunt_eggs_newleaf4",
+    "biome": "forest",
+    "season": "newleaf",
+    "tags": [
+        "hunting",
+        "no_app",
+        "minor_injury",
+        "blunt_force_injury",
+        "no_fail_prey",
+        "medium_prey0",
+        "large_prey1",
+        "large_prey2",
+        "large_prey3"
+    ],
+    "intro_text": "r_c wakes from a dream of rich yolk, tongue sticking out ready to lap from an eggshell. However, when they poke their head out of their den to go nest raiding, theres ",
+    "decline_text": "But r_c can't be bothered today, not with the newleaf sun so bright and warm. Another time, perhaps.",
+    "success_text": [
+        "It takes a little time to find a nest, but r_c manages it, and it's worth it for the hunt it offers - r_c would have to be concussed to fail to reach this nest, the birds have done a terrible job choosing it's location. The blackbird incubating its eggs can only flee to another branch and chatter angrily as r_c carefully removes the eggs one by one. All three will make a delicacy of a meal for someone back at camp.",
+        "The beech tree these sparrows have chosen to nest in is a popular choice, and as birds continue to fight with their neighbours, r_c slips into the tree to take advantage, emptying nest after nest through the ineffectual outraged squawking protests of their owners. These birds will lay again before the season is out, r_c will have to remember this tree.",
+        "s_c hops confidently into the trees to hunt, taking their time picking out the nests among the branches. It's difficult not to drool all over the eggs they steal, looking forward to the little feast of the well-loved delicacies they'll be able to have with their Clanmates."
+    ],
+    "fail_text": [
+        "Unfortunately, the squabbling birds have managed to construct their homes on branches thin and high enough that r_c can't justify the risk, not even for those delicious, perfect eggs.",
+        null,
+        null,
+        "Full of mouth-watering desire for the full rich yolk of eggs, r_c risks venturing out onto a thin spindly branch. Too spindly, in fact, and though they catch themselves on a lower branch with a scrabbling struggle, they'll be feeling that tonight when they stretch out in their nest. Ow."
+    ],
+    "chance_of_success": 50,
+    "exp": 15,
+    "win_skills": [
+        "good hunter",
+        "great hunter",
+        "fantastic hunter"
+    ],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_hunt_eggs_newleaf3",
+    "biome": "forest",
+    "season": "newleaf",
+    "tags": [
+        "hunting",
+        "apprentice",
+        "minor_injury",
+        "no_fail_prey",
+        "medium_prey"
+    ],
+    "intro_text": "app1, hearing the rest of camp gossiping about the good hunting newleaf will bring, thinks it's worth a shot going out into the soggy forest by themselves. They want to prove that they've gotten better at stalking.",
+    "decline_text": "...Maybe it'd be better to wait until their mentor is free to take them on a hunting patrol.",
+    "success_text": [
+        "There's no snow. That's so obvious that app1 feels embarassed for thinking it, but - there's no snow. And it's so warm, app1 doesn't even mind all the mud the rest of the Clan is so upset about, at least it's not cold anymore. Stalking through a tangle of evergreen trees, app1 finds a good f_mp_s.",
+        "Perhaps they need to ask their mentor about working on their killing technique next - the f_tp_s they found by a rotting log sort of had half it's head caved in, and if they hadn't snagged the leg of the f_tp_s they found by a big oak tree, it would've gotten away. Still, app1 is proud to bring these back to the fresh-kill pile all by themselves.",
+        null,
+        "app1 carefully skirts the seas of mud that've replaced the snowdrifts, not knowing which they prefer. But it's difficult to be too upset by it, not when the sun is shining and the birds are out singing and app1 has a f_mp_s to bring home to the fresh-kill pile in front of the whole Clan."
+    ],
+    "fail_text": [
+        null,
+        null,
+        null,
+        "While rounds a bend in the path, app1 hears a bird call. Jerking their head up, they lose their footing and skid down a slope more mud than grass. They're not that badly hurt, but app1 is tender enough after that fall to give up and go home.",
+        null,
+        "app1 heads out confidently, sure that the bounties of newleaf will make this hunt easy. While pouncing for a bird, they fall into a muddy puddle, landing awkwardly. To add insult to injury, the bird makes dirt on their head. Great."
+    ],
+    "chance_of_success": 40,
+    "exp": 25,
+    "win_trait": ["calm", "careful", "nervous", "thoughtful"],
+    "fail_trait": ["bold", "daring"],
+    "min_cats": 1,
+    "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null
 }
