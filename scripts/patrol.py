@@ -841,18 +841,18 @@ class Patrol():
                 # attempt injure outcome
                 elif fail_text[3]:
                     outcome = 3
-
-            if outcome == 2:
-                self.handle_deaths_and_gone(self.patrol_random_cat)
-            elif outcome == 4:
-                self.handle_deaths_and_gone(self.patrol_fail_stat_cat)
-            elif outcome == 6:
-                self.handle_deaths_and_gone(self.patrol_leader)
-            elif outcome == 3 or outcome == 5:
-                if game.clan.game_mode == 'classic':
-                    self.handle_scars(outcome)
-                else:
-                    self.handle_conditions(outcome)
+            if not antagonize or antagonize and "antag_death" in self.patrol_event.tags:
+                if outcome == 2:
+                    self.handle_deaths_and_gone(self.patrol_random_cat)
+                elif outcome == 4:
+                    self.handle_deaths_and_gone(self.patrol_fail_stat_cat)
+                elif outcome == 6:
+                    self.handle_deaths_and_gone(self.patrol_leader)
+                elif outcome == 3 or outcome == 5:
+                    if game.clan.game_mode == 'classic':
+                        self.handle_scars(outcome)
+                    else:
+                        self.handle_conditions(outcome)
             if not antagonize and "meeting" in self.patrol_event.tags:
                 self.add_new_cats(outcome, self.success)
             if self.patrol_event.tags is not None:
