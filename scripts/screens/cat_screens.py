@@ -370,6 +370,7 @@ class ProfileScreen(Screens):
                 if self.the_cat.status == 'leader':
                     game.clan.leader_lives -= 10
                 self.the_cat.die()
+                self.the_cat.died_by.append(f'It was the will of something even mightier than StarClan that this cat died.')
                 update_sprite(self.the_cat)
                 self.clear_profile()
                 self.build_profile()
