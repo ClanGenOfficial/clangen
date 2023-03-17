@@ -31,7 +31,8 @@
 		],
 		"general_reaction": {
 			"comfortable": "increase",
-			"disliked": "decrease"
+			"disliked": "decrease",
+			"platonic": "increase"
 		}
 	}
 ]
