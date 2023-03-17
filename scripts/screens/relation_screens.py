@@ -617,7 +617,7 @@ class ViewChildrenScreen(Screens):
 
         # Siblings
         # Get siblings.
-        self.siblings = [Cat.fetch_cat(i) for i in self.the_cat.siblings]
+        self.all_siblings = [Cat.fetch_cat(i) for i in self.the_cat.siblings]
 
 
         self.siblings_page_number = 1  # Current sibling page
