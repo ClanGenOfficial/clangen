@@ -411,11 +411,11 @@ class ProfileScreen(Screens):
                 self.open_sub_tab = 'user notes'
                 self.toggle_history_sub_tab()
             elif event.ui_element == self.fav_tab:
-                game.settings['favorite sub tab'] = None
+                game.switches['favorite_sub_tab'] = None
                 self.fav_tab.hide()
                 self.not_fav_tab.show()
             elif event.ui_element == self.not_fav_tab:
-                game.settings['favorite sub tab'] = self.open_sub_tab
+                game.switches['favorite_sub_tab'] = self.open_sub_tab
                 self.fav_tab.show()
                 self.not_fav_tab.hide()
             elif event.ui_element == self.save_text:
@@ -1792,7 +1792,7 @@ class ProfileScreen(Screens):
         # History Tab:
         elif self.open_tab == 'history':
             # show/hide fav tab star
-            if self.open_sub_tab == game.settings['favorite sub tab']:
+            if self.open_sub_tab == game.switches['favorite_sub_tab']:
                 self.fav_tab.show()
                 self.not_fav_tab.hide()
             else:
