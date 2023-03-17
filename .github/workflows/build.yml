@@ -56,7 +56,8 @@ jobs:
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
             -F 'fileBundle=@Clangen_Linux64_glibc2.31+.tar.xz' \
-            -F 'fileBundle=@Clangen_Linux64_glibc2.31+.tar.xz.sig'
+            -F 'fileBundle=@Clangen_Linux64_glibc2.31+.tar.xz.sig' \
+            -v
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
@@ -115,7 +116,8 @@ jobs:
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
             -F 'fileBundle=@Clangen_Linux64_glibc2.35+.tar.xz' \
-            -F 'fileBundle=@Clangen_Linux64_glibc2.35+.tar.xz.sig'
+            -F 'fileBundle=@Clangen_Linux64_glibc2.35+.tar.xz.sig' \
+            -v
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
@@ -176,7 +178,8 @@ jobs:
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
             -F 'fileBundle=@Clangen_Win32.zip;type=application/zip' \
-            -F 'fileBundle=@Clangen_Win32.zip.sig'
+            -F 'fileBundle=@Clangen_Win32.zip.sig' \
+            -v
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
@@ -242,7 +245,8 @@ jobs:
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
             -F 'fileBundle=@Clangen_Win64.zip;type=application/zip' \
-            -F 'fileBundle=@Clangen_Win64.zip.sig'
+            -F 'fileBundle=@Clangen_Win64.zip.sig' \
+            -v
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
@@ -308,7 +312,8 @@ jobs:
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
             -F 'fileBundle=@Clangen_Win64_Windows10+.zip;type=application/zip' \
-            -F 'fileBundle=@Clangen_Win64_Windows10+.zip.sig'
+            -F 'fileBundle=@Clangen_Win64_Windows10+.zip.sig' \
+            -v
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
@@ -380,7 +385,8 @@ jobs:
             -H 'accept: */*' \
             -H 'Content-Type: multipart/form-data' \
             -F 'fileBundle=@Clangen_macOS64.dmg.zip;type=application/zip' \
-            -F 'fileBundle=@Clangen_macOS64.dmg.zip.sig'
+            -F 'fileBundle=@Clangen_macOS64.dmg.zip.sig' \
+            -v
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
