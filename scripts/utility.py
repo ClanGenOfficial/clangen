@@ -367,7 +367,7 @@ def create_new_cat(Cat,
         if outside:
             new_cat.outside = True
         if not alive:
-            new_cat.dead = True
+            new_cat.die()
 
         # and they exist now
         created_cats.append(new_cat)
