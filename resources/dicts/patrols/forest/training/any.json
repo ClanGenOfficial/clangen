@@ -122,18 +122,86 @@
     "win_skills": ["very smart", "extremely smart"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
-    "min_cats": 2,
+    "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
     "history_text": [
         "r_c carries a scar from being trapped on patrol.",
         "r_c tragically died after being trapped on patrol.",
-      "died after being trapped on patrol"
+        "died after being trapped on patrol"
     ]
 },
 {
     "patrol_id": "fst_train_stuck2",
+    "biome": "plains",
+    "season": "Any",
+    "tags": ["training", "platonic", "comfort", "trust", "blunt_force_injury", "death", "scar", "LEFTEAR", "p_l_to_r_c", "s_c_to_r_c", "patrol_to_p_l", "patrol_to_r_c"],
+    "intro_text": "Trailing behind p_l , there's a mighty crash above r_c. They look around wildly - just as the world is blotted out by a tangle of heavy falling branches.",
+    "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+        "Their Clanmate comes running at their yowls, and r_c is soon freed, shaken but unharmed. The cats settle down as they comfort each other.",
+        "p_l tugs on just the right branch, lifting the pile off of r_c for long enough for the other cat to scramble free.",
+        "Without letting themselves panic, s_c carefully assesses the branches trapping their Clanmate, then throws their weight onto one. It acts as a lever, forcing the entire pile up and allowing r_c to scrabble free, shaken but grateful.",
+        "Creeping in as close as possible, s_c purrs to r_c, keeping them calm as they carefully dig down to them. r_c blinks up at them, holding on to their presence in the scary situation."
+    ],
+    "fail_text": [
+        "p_l works all day to free r_c and gets nothing else done.",
+        "As s_c rarely has patience for other cats, r_c tells them harshly that they don't have time for some idiot who got stuck, making s_c resentful as they pull themselves out from under the branches.",
+        "Hurt and wheezing, r_c hears p_l panicking as they drift to StarClan.",
+        "p_l eventually manages to rescue r_c, but they need to be helped back to camp, battered and injured."
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise", "inquisitive"],
+    "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "bossy"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        "r_c carries a scar from being trapped on patrol",
+        "r_c tragically died after being trapped on patrol.",
+        "died after being trapped on patrol"
+    ]
+},
+{
+    "patrol_id": "fst_train_stuck3",
+    "biome": "plains",
+    "season": "Any",
+    "tags": ["training", "romantic", "comfort", "trust", "blunt_force_injury", "death", "scar", "LEFTEAR", "p_l_to_r_c", "s_c_to_r_c", "patrol_to_p_l", "patrol_to_r_c"],
+    "intro_text": "Trailing behind p_l, there's a mighty crash above r_c. They look around wildly - just as the world is blotted out by a tangle of heavy falling branches.",
+    "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+        "p_l comes running at their yowls, and r_c is soon freed, shaken but unharmed. r_c has never noticed how strong p_l is before.",
+        "p_l tugs on just the right branch, lifting the pile off of r_c for long enough for the other cat to scramble free. r_c admires how smart p_l is.",
+        "Without letting themselves panic, s_c carefully assesses the branches trapping their Clanmate, then throws their weight onto one. It acts as a lever, forcing the entire pile up and allowing r_c to scrabble free, shaken but grateful. r_c is impressed by s_c's wits.",
+        "Creeping in as close as possible, s_c purrs to r_c, keeping them calm as they carefully dig down to them. r_c blinks up at them, holding on to their presence in the scary situation."
+    ],
+    "fail_text": [
+        "p_l works all day to free r_c and gets nothing else done.",
+        "As s_c rarely has patience for other cats, r_c tells them harshly that they don't have time for some idiot who got stuck, making s_c resentful as they pull themselves out from under the branches.",
+        "Hurt and wheezing, r_c hears p_l panicking as they drift to StarClan.",
+        "p_l eventually manages to rescue r_c, but they need to be helped back to camp, battered and injured."
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise", "inquisitive"],
+    "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "bossy"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        "r_c carries a scar from being trapped on patrol",
+        "r_c tragically died after being trapped on patrol.",
+        "died after being trapped on patrol"
+    ]
+},
+{
+    "patrol_id": "fst_train_stuck4",
     "biome": "forest",
     "season": "Any",
     "tags": ["training", "blunt_force_injury", "death", "scar", "SIDE"],
@@ -161,7 +229,7 @@
     "history_text": [
         "r_c carries a scar from being trapped on patrol.",
         "r_c tragically died after being trapped on patrol.",
-      "died after being trapped on patrol"
+        "died after being trapped on patrol"
     ]
 
 },
