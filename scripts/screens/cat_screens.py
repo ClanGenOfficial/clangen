@@ -154,6 +154,7 @@ def backstory_text(cat):
         'guided1': 'formerly a kittypet',
         'rogue1': 'formerly a rogue',
         'rogue2': 'formerly a rogue',
+        'rogue3': 'formerly a rogue',
         'refugee4': 'formerly a rogue',
         'tragedy_survivor2': 'formerly a rogue',
         'guided2': 'formerly a rogue',
