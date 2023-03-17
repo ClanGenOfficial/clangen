@@ -521,22 +521,23 @@ def describe_color(pelt, tortiebase, tortiecolour, white_patches, points, vitili
         color_name += f" {pattern_des[pelt.name]}"
     elif pelt.name in ["Tortie", "Calico"]:
         if short:
-            if pelt.colour in [black_colours, brown_colours, white_colours] and \
-                tortiecolour in [black_colours, brown_colours, white_colours]:
+            # If using short, don't describe the colors of calicos and torties. Just call them calico, tortie, or mottled. 
+            if pelt.colour in black_colours + brown_colours + white_colours and \
+                tortiecolour in black_colours + brown_colours + white_colours:
                 color_name = f"mottled"
             else:
                 color_name = pelt.name.lower()
         else:
-            base = tortiebase.lower()
-            if base in tabbies:
-                base = 'tabby'
-            elif base in ['bengal', 'rosette', 'speckled']:
-                base = 'spotted tabby'
-            else:
-                base = ''
-
-            if pelt.colour in [black_colours, brown_colours, white_colours] and \
-                tortiecolour in [black_colours, brown_colours, white_colours]:
+            # Otherwise, all more details about the colors of torties and calicos. 
+            if pelt.colour in black_colours + brown_colours + white_colours and \
+                    tortiecolour in black_colours + brown_colours + white_colours:
+                base = tortiebase.lower()
+                if base in tabbies:
+                    base = 'tabby'
+                elif base in ['bengal', 'rosette', 'speckled']:
+                    base = 'spotted tabby'
+                else:
+                    base = ''
                 color_name = f"mottled {base}"
             else:
                 patches = tortiecolour.lower()
@@ -546,22 +547,25 @@ def describe_color(pelt, tortiebase, tortiecolour, white_patches, points, vitili
 
     if white_patches:
         if white_patches == "FULLWHITE":
+            # If the cat is fullwhite, discard all other information. This are just white. 
             color_name = "white"
         if white_patches in mostly_white:
             if pelt.name != "Calico":
                 color_name = 'white and ' + color_name
-        elif vitiligo:
-            # If short, don't include vit information. 
-            color_name = color_name + " with vitiligo"
-        elif points:
-            color_name = color_name + " point"
-            if color_name == 'dark ginger point' or color_name == 'ginger point':
-                color_name = "flame point"
         else:
             if pelt.name != "Calico":
                 color_name = color_name + ' and white'
 
-    if color_name == 'white and white':
-        color_name = 'white'
+    
+    if points:
+        color_name = color_name + " point"
+        if "ginger point" in color_name:
+            color_name.replace("ginger point", "flame point")
+    if vitiligo and not short:
+        # If short, don't include vit information. Since short is mainly used for kittens, and vit doesn't show, it just takes up extra space. 
+        color_name = color_name + " with vitiligo"
+    
+    if 'white and white' in color_name:
+        color_name.replace("white and white", "white")
 
     return color_name
