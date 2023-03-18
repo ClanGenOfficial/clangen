@@ -153,12 +153,15 @@ def self_update(release_channel='development-test'):
 
         with tempfile.TemporaryDirectory() as mountdir:
             os.system(f'hdiutil attach -nobrowse -mountpoint {mountdir} Downloads/Clangen_macOS64.dmg')
-            shutil.rmtree('/Applications/Clangen.app.old', ignore_errors=True)
-            shutil.move('/Applications/Clangen.app', '/Applications/Clangen.app.old')
-            shutil.copytree('Downloads/macOS_tempmount/Clangen.app', '/Applications/Clangen.app')
-            os.system(f'hdiutil detach {mountdir}')
-        shutil.rmtree('Downloads', ignore_errors=True)
-        os.execv('/Applications/Clangen.app/Contents/MacOS/Clangen', sys.argv)
+            try:
+                shutil.rmtree('/Applications/Clangen.app.old', ignore_errors=True)
+                shutil.move('/Applications/Clangen.app', '/Applications/Clangen.app.old')
+                shutil.copytree(f'{mountdir}/Clangen.app', '/Applications/Clangen.app')
+                shutil.rmtree('Downloads', ignore_errors=True)
+                os.execv('/Applications/Clangen.app/Contents/MacOS/Clangen', sys.argv)
+            finally:
+                os.system(f'hdiutil detach {mountdir}')
+                os.rmdir(mountdir)
         quit()
 
     elif platform.system() == 'Linux':
