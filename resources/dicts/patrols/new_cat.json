@@ -434,6 +434,35 @@
     ]
 },
 {
+    "patrol_id": "fst_hunt_twolegplacekittens1",
+    "biome": "forest",
+    "season": "Any",
+    "tags": [
+        "hunting",
+        "no_fail_prey",
+        "new_cat_kittypet_female_dead_litter0_litter1_litter3"
+    ],
+    "intro_text": "The patrol approaches a Twoleg nest in the woods while hunting.",
+    "decline_text": "The patrol decides to hunt elsewhere.",
+    "chance_of_success": 70,
+    "exp": 30,
+    "success_text": [
+        "The patrol has a successful hunt, avoiding any Twolegs.",
+        "The patrol finds some astonishingly fat chickens running around the Twoleg nest, and helps themselves to one."
+    ],
+    "fail_text": [
+        "Twoleg kits scare the patrol away."
+    ],
+    "win_trait":["careful", "thoughtful"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": "A Twoleg kit approaches the patrol, and they send it away squawking with it's blood on their claws.",
+    "antagonize_fail_text": "The Twoleg kits wandering around are unimpressed by the patrol and chase the cats for fun.",
+    "relationship_constraint": [
+        "mates"
+]
+},
+{
     "patrol_id": "gen_bord_curiouskittypet2",
     "biome": "Any",
     "season": "Any",
