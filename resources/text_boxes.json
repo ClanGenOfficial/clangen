@@ -33,6 +33,23 @@
             "text_horiz_alignment": "center"
         }
     },
+    "#dev_watermark": {
+        "colours": {
+            "dark_bg": "#00000000",
+            "normal_text": "#EFE5CE88"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "18",
+            "bold": "1"
+        },
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "center",
+            "text_vert_alignment": "center"
+        }
+    },
     "#med_messages_box": {
         "colours": {
             "dark_bg": "#00000000",
