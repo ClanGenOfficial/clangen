@@ -459,13 +459,13 @@ class Abbreviations(unittest.TestCase):
 class OtherCatsFiltering(unittest.TestCase):
     def test_relationship_allow_true(self):
         # given
-        self.assertTrue(False)
         group_events = Group_Events()
+        parent = Cat()
         main_cat = Cat()
         main_cat.status = "warrior"
-        random1 = Cat()
+        random1 = Cat(parent1=parent.ID)
         random1.status = "warrior"
-        random2 = Cat()
+        random2 = Cat(parent1=parent.ID)
         random2.status = "warrior"
         group_events.abbreviations_cat_id={
             "m_c": main_cat.ID,
@@ -481,9 +481,6 @@ class OtherCatsFiltering(unittest.TestCase):
             random1, main_cat, False, False, 50, 50, 0, 50, 50, 0, 50
         )
 
-        parent = Cat()
-        main_cat.parent1 = parent.ID
-        random2.parent2 = parent.ID
         main_cat.relationships[random2.ID] = Relationship(
             main_cat, random2, False, True, 0, 0, 50, 0, 0, 50, 0
         )

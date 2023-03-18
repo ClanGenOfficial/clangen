@@ -50,8 +50,6 @@ class TestRelativesFunction(unittest.TestCase):
         kit2 = Cat(parent1=parent.ID)
         self.assertFalse(parent.is_sibling(kit1))
         self.assertFalse(kit1.is_sibling(parent))
-        # Cats don't need to be their own siblings, do they?
-        #self.assertTrue(kit1.is_sibling(kit1))
         self.assertTrue(kit2.is_sibling(kit1))
         self.assertTrue(kit1.is_sibling(kit2))
 
@@ -75,11 +73,11 @@ class TestRelativesFunction(unittest.TestCase):
         sibling2.siblings.append(sibling1.ID)
         kit = Cat(parent1=sibling1.ID)
         self.assertFalse(sibling1.is_grandparent(kit))
-        #self.assertFalse(sibling1.is_grandparent(sibling2))
-        #self.assertFalse(kit.is_grandparent(sibling2))
-        #self.assertFalse(sibling2.is_grandparent(kit))
-        #self.assertFalse(kit.is_grandparent(grand_parent))
-        #self.assertTrue(grand_parent.is_grandparent(kit))
+        self.assertFalse(sibling1.is_grandparent(sibling2))
+        self.assertFalse(kit.is_grandparent(sibling2))
+        self.assertFalse(sibling2.is_grandparent(kit))
+        self.assertFalse(kit.is_grandparent(grand_parent))
+        self.assertTrue(grand_parent.is_grandparent(kit))
 
 class TestPossibleMateFunction(unittest.TestCase):
 
