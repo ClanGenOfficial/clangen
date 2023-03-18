@@ -41,7 +41,7 @@
     "min_cats": 1,
     "max_cats": 6,
     "win_skills": ["great speaker","excellent speaker"],
-    "antagonize_text": "Your patrol approaches the loner and tells them firmly that newcomers aren't being taken in right now. The kittypet seems disappointed, but leaves anyway.",
+    "antagonize_text": "Your patrol approaches the kittypet and tells them firmly that newcomers aren't being taken in right now. The kittypet seems disappointed, but leaves anyway.",
     "antagonize_fail_text": "The patrol approaches the kittypet and tries to explain that c_n currently has enough mouths to feed, but the kittypet seems to take offense and leaves in a huff."
 
 },
