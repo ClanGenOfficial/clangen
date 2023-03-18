@@ -22,7 +22,7 @@
     ],
     "win_trait": ["adventurous", "bold", "confident", "daring", "ambitious"],
     "fail_trait": ["troublesome", "playful"],
-    "min_cats": 2,
+    "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
@@ -47,27 +47,95 @@
     ],
     "fail_text": [
             "The patrol works all day to free r_c and gets nothing else done.",
-            "Harshly, s_c tells their Clanmate that they're on their own - this patrol is too important to wait for some idiot who got stuck in the sand.",
+            "As s_c rarely has patience for other cats, r_c tells them harshly that they don't have time for some idiot who got stuck, making s_c resentful as they dig themselves out of the sand.",
             "Hurt and wheezing, r_c hears the patrol panicking as they drift to StarClan.",
             "The patrol eventually manages to rescue r_c, but they need to be helped back to camp, battered and injured.",
-            "The patrol can't help r_c in time, and as r_c starts to drift off to StarClan, the eyes of s_c glint malevolently. Was this...? r_c doesn't have a chance to finish their last thought.",
-            "Even though r_c made it out, they swear someone pushed them in, and blame s_c. s_c denies it and says they should get r_c back to camp to get their injury looked at."
+            "The patrol can't help s_c in time, and as s_c starts to drift off to StarClan, the eyes of r_c glint malevolently. Was this...? s_c doesn't have a chance to finish their last thought.",
+            "Even though s_c made it out, they swear someone pushed them, and blame r_c. r_c denies it and says they should get s_c back to camp to get their injury looked at."
     ],
     "win_skills": ["very smart", "extremely smart"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise", "inquisitive"],
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
-    "min_cats": 2,
+    "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
     "history_text": [
             "r_c carries a scar from being trapped on patrol.",
             "r_c tragically died after being trapped on patrol.",
-      "died after being trapped on patrol"
+            "died after being trapped on patrol"
     ]
 },
 {
-    "patrol_id": "bch_train_stuck2",
+        "patrol_id": "bch_train_stuck2",
+        "biome": "plains",
+        "season": "Any",
+        "tags": ["training", "platonic", "comfort", "trust", "blunt_force_injury", "death", "scar", "LEFTEAR", "p_l_to_r_c", "s_c_to_r_c", "patrol_to_p_l", "patrol_to_r_c"],
+        "intro_text": "Trailing behind p_l, the dune they're crossing shifts beneath r_c's paws. They look around wildly for safe footing - just as the sand caves in beneath them and the world goes dark.",
+        "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
+        "chance_of_success": 50,
+        "exp": 20,
+        "success_text": [
+            "p_l comes running at their yowls, and r_c is soon freed, shaken but unharmed. The cats settle down as they comfort each other.",
+            "p_l digs through the loose sand, helping r_c clear it away enough for the other cat to scramble free.",
+            "Without letting themselves panic, s_c carefully assesses the collapsed dune trapping their Clanmate. They find stable footing to dig them out from above, and r_c is recovered, scared but okay.",
+            "Creeping in as close as possible, s_c purrs to r_c, keeping them calm as they carefully dig down to them. r_c blinks up at them, holding on to their presence in the scary situation."
+        ],
+        "fail_text": [
+            "p_l works all day to free r_c and gets nothing else done.",
+            "As s_c rarely has patience for other cats, r_c tells them harshly that they don't have time for some idiot who got stuck, making s_c resentful as they dig themselves out of the sand.",
+            "Hurt and wheezing, r_c hears p_l panicking as they drift to StarClan.",
+            "p_l eventually manages to rescue r_c, but they need to be helped back to camp, battered and injured."
+        ],
+        "win_skills": ["very smart", "extremely smart"],
+        "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise", "inquisitive"],
+        "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "bossy"],
+        "min_cats": 2,
+        "max_cats": 2,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from being trapped on patrol",
+            "r_c tragically died after being trapped on patrol.",
+            "died after being trapped on patrol"
+        ]
+},
+{
+        "patrol_id": "bch_train_stuck3",
+        "biome": "plains",
+        "season": "Any",
+        "tags": ["training", "romantic", "comfort", "trust", "blunt_force_injury", "death", "scar", "LEFTEAR", "p_l_to_r_c", "s_c_to_r_c", "patrol_to_p_l", "patrol_to_r_c"],
+        "intro_text": "Trailing behind p_l, the dune they're crossing shifts beneath r_c's paws. They look around wildly for safe footing - just as the sand caves in beneath them and the world goes dark.",
+        "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
+        "chance_of_success": 50,
+        "exp": 20,
+        "success_text": [
+            "p_l comes running at their yowls, and r_c is soon freed, shaken but unharmed. r_c has never noticed how strong p_l is before.",
+            "p_l digs through the loose soil, helping r_c clear it away enough for the other cat to scramble free. r_c admires how smart p_l is.",
+            "Without letting themselves panic, s_c carefully assesses the collapsed dune trapping their Clanmate. They find stable footing to dig them out from above, and r_c is recovered, scared but okay. r_c finds themselves seeing s_c in a different light.",
+            "Creeping in as close as possible, s_c purrs to r_c, keeping them calm as they carefully dig down to them. r_c blinks up at them, holding on to their presence in the scary situation."
+        ],
+        "fail_text": [
+            "p_l works all day to free r_c and gets nothing else done.",
+            "As s_c rarely has patience for other cats, r_c tells them harshly that they don't have time for some idiot who got stuck, making s_c resentful as they dig themselves out of the sand.",
+            "Hurt and wheezing, r_c hears p_l panicking as they drift to StarClan.",
+            "p_l eventually manages to rescue r_c, but they need to be helped back to camp, battered and injured."
+        ],
+        "win_skills": ["very smart", "extremely smart"],
+        "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise", "inquisitive"],
+        "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "bossy"],
+        "min_cats": 2,
+        "max_cats": 2,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from being trapped on patrol",
+            "r_c tragically died after being trapped on patrol.",
+            "died after being trapped on patrol"
+        ]
+},
+{
+    "patrol_id": "bch_train_stuck4",
     "biome": "beach",
     "season": "Any",
     "tags": ["training", "blunt_force_injury", "death", "scar", "ONE"],

@@ -3,7 +3,7 @@
     "patrol_id": "gen_gen_newcat_hostile1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["border", "new_cat_warrior_loner_litter1", "reputation"],
+    "tags": ["border", "new_cat_warrior_loner_litter1", "reputation", "meeting"],
     "intro_text": "Your patrol scents a loner on the territory. They confront the cat, who quickly surrenders and begs for shelter.",
     "success_text": [
             "The patrol relents and the loner is allowed to join the Clan.",
@@ -26,7 +26,7 @@
     "patrol_id": "gen_gen_newcatkittypet_hostile1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["border", "new_cat_warrior_kittypet_litter1", "reputation", "kits"],
+    "tags": ["border", "new_cat_warrior_kittypet_litter1", "reputation", "kits", "meeting"],
     "intro_text": "Your patrol scents a kittypet on the territory. They confront the cat, who quickly surrenders and begs for shelter.",
     "decline_text": "Your patrol decides the kittypet isn't worth their time.",
     "chance_of_success": 40,
@@ -95,7 +95,7 @@
     "patrol_id": "gen_bord_healer_hostile1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["border", "reputation", "new_cat_medcat_litter1", "no_change_fail_rep"],
+    "tags": ["border", "reputation", "new_cat_medcat_litter1", "no_change_fail_rep", "meeting"],
     "intro_text": "Your patrol scents a loner on the territory. r_c finds the loner, who offers their healing skills in exchange for shelter.",
     "success_text": [
         "The new medicine cat is welcomed into the Clan.",
@@ -117,7 +117,7 @@
     "patrol_id": "gen_bord_lonerchase2",
     "biome": "Any",
     "season": "Any",
-    "tags": ["border", "new_cat_loner", "reputation", "scar", "LEFTEAR", "new_cat_injury", "nc_blunt_force_injury", "no_change_fail_rep"],
+    "tags": ["border", "new_cat_loner", "reputation", "scar", "LEFTEAR", "new_cat_injury", "nc_blunt_force_injury", "no_change_fail_rep", "meeting"],
     "intro_text": "Your patrol cautiously moves towards the sound of barking. Near the border, they spot a dog chasing something. Oh no, it's a cat!",
     "success_text": [
             "The patrol swiftly jumps into action. They capture the dog's attention and draw it away from the cat. r_c stays hidden and goes to the cat while the rest of the patrol lures the dog away. They're unharmed, and this display of bravery makes them want to join the Clan!",

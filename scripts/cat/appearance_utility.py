@@ -607,28 +607,23 @@ def randomize_white_patches(cat):
     if cat.pelt.name != "Tortie" and not random.getrandbits(game.config["cat_generation"]["random_point_chance"]):
         # Cat has colorpoint!
         cat.points = choice(point_markings)
-
-        # Determination if they will have another white patch
-        if not int(random.random() * 20):
-            # The cat will also have white patches!
-            cat.white_patches = choice(little_white + mid_white)
-        else:
-            cat.white_patches = None
     else:
-        # No colorpoint, normal
+        cat.points = None
 
-        # Adjust weights for torties, since they can't have anything greater than mid_white:
-        if cat.pelt.name == "Tortie":
-            weights = (2, 1, 0, 0, 0)
-        else:
-            weights = (10, 10, 10, 10, 1)
+    # Adjust weights for torties, since they can't have anything greater than mid_white:
+    if cat.pelt.name == "Tortie":
+        weights = (2, 1, 0, 0, 0)
+    else:
+        weights = (10, 10, 10, 10, 1)
 
-        white_list = [little_white, mid_white, high_white, mostly_white, ['FULLWHITE']]
-        chosen_white_patches = choice(
-            random.choices(white_list, weights=weights, k=1)[0]
-        )
+    white_list = [little_white, mid_white, high_white, mostly_white, ['FULLWHITE']]
+    chosen_white_patches = choice(
+        random.choices(white_list, weights=weights, k=1)[0]
+    )
 
-        cat.white_patches = chosen_white_patches
+    cat.white_patches = chosen_white_patches
+    if cat.points and cat.white_patches in [high_white, mostly_white, 'FULLWHITE']:
+        cat.points = None
 
 def init_white_patches(cat):
 

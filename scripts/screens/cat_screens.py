@@ -67,7 +67,7 @@ def accessory_display_name(cat):
 # ---------------------------------------------------------------------------- #
 def bs_blurb_text(cat):
     backstory = cat.backstory
-    if cat.status in ['kittypet', 'loner', 'rogue']:
+    if cat.status in ['kittypet', 'loner', 'rogue', 'former clancat']:
         return f"This cat is a {cat.status} and currently resides outside of the Clans."
     backstory_text = {
         None: "This cat was born into the Clan where they currently reside.",
@@ -154,6 +154,7 @@ def backstory_text(cat):
         'guided1': 'formerly a kittypet',
         'rogue1': 'formerly a rogue',
         'rogue2': 'formerly a rogue',
+        'rogue3': 'formerly a rogue',
         'refugee4': 'formerly a rogue',
         'tragedy_survivor2': 'formerly a rogue',
         'guided2': 'formerly a rogue',
@@ -291,10 +292,10 @@ class ProfileScreen(Screens):
                 self.toggle_dangerous_tab()
             elif event.ui_element == self.backstory_tab_button:
                 if self.open_sub_tab is None:
-                    if game.settings['favorite sub tab'] is None:
+                    if game.switches['favorite_sub_tab'] is None:
                         self.open_sub_tab = 'life events'
                     else:
-                        self.open_sub_tab = game.settings['favorite sub tab']
+                        self.open_sub_tab = game.switches['favorite_sub_tab']
 
                 self.toggle_history_tab()
             elif event.ui_element == self.conditions_tab_button:
@@ -370,6 +371,7 @@ class ProfileScreen(Screens):
                 if self.the_cat.status == 'leader':
                     game.clan.leader_lives -= 10
                 self.the_cat.die()
+                self.the_cat.died_by.append(f'It was the will of something even mightier than StarClan that this cat died.')
                 update_sprite(self.the_cat)
                 self.clear_profile()
                 self.build_profile()
@@ -389,6 +391,10 @@ class ProfileScreen(Screens):
                         self.the_cat.df = True
                         game.clan.add_to_darkforest(self.the_cat)
                         self.the_cat.thought = "Is distraught after being sent to the Place of No Stars"
+
+                    #Update sprite in this situation. 
+                    update_sprite(self.the_cat)
+
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()
@@ -411,11 +417,11 @@ class ProfileScreen(Screens):
                 self.open_sub_tab = 'user notes'
                 self.toggle_history_sub_tab()
             elif event.ui_element == self.fav_tab:
-                game.settings['favorite sub tab'] = None
+                game.switches['favorite_sub_tab'] = None
                 self.fav_tab.hide()
                 self.not_fav_tab.show()
             elif event.ui_element == self.not_fav_tab:
-                game.settings['favorite sub tab'] = self.open_sub_tab
+                game.switches['favorite_sub_tab'] = self.open_sub_tab
                 self.fav_tab.show()
                 self.not_fav_tab.hide()
             elif event.ui_element == self.save_text:
@@ -889,7 +895,7 @@ class ProfileScreen(Screens):
         output = ""
 
         # STATUS
-        if the_cat.outside and not the_cat.exiled and not the_cat.status in ['kittypet', 'loner', 'rogue']:
+        if the_cat.outside and not the_cat.exiled and not the_cat.status in ['kittypet', 'loner', 'rogue', 'former clancat']:
             output += "<font color='#FF0000'>lost</font>"
         elif the_cat.exiled:
             output += "<font color='#FF0000'>exiled</font>"
@@ -1792,7 +1798,7 @@ class ProfileScreen(Screens):
         # History Tab:
         elif self.open_tab == 'history':
             # show/hide fav tab star
-            if self.open_sub_tab == game.settings['favorite sub tab']:
+            if self.open_sub_tab == game.switches['favorite_sub_tab']:
                 self.fav_tab.show()
                 self.not_fav_tab.hide()
             else:
