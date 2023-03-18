@@ -140,6 +140,18 @@ class Cat():
         'retired_leader', 'refugee', 'tragedy_survivor', 'clan_founder', 'orphaned', "orphaned2", "guided1", "guided2",
         "guided3", "guided4"
     ]
+    backstory_categories = {
+        'clan-born_backstories': ['clanborn', 'halfclan1', 'halfclan2', 'outsider_roots1', 'outsider_roots2'],
+        'loner_backstories': ['loner1', 'loner2', 'refugee2', 'tragedy_survivor4'],
+        'rogue_backstories': ['rogue1', 'rogue2', 'rogue3', 'refugee4', 'tragedy_survivor2'],
+        'kittypet_backstories': ['kittypet1', 'kittypet2', 'kittypet3', 'refugee3', 'tragedy_survivor3'],
+        'former_clancat_backstories': ['ostracized_warrior', 'disgraced', 'retired_leader', 'refugee', 
+                                        'tragedy_survivor', 'disgraced2', 'disgraced3', 'medicine_cat'],
+        'otherclan_backstories': ['otherclan', 'otherclan2', 'otherclan3', 'other_clan1'],
+        'healer_backstories': ['medicine_cat', 'wandering_healer1', 'wandering_healer2'],
+        'orphaned_backstories': ['orphaned', 'orphaned2', 'orphaned3', 'orphaned4', 'orphaned5'],
+        'abandoned_backstories': ['abandoned1', 'abandoned2', 'abandoned3', 'abandoned4']
+    }
 
     #EX levels and ranges.
     # Ranges are inclusive to both bounds
