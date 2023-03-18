@@ -600,6 +600,8 @@ def randomize_white_patches(cat):
     # Adjust weights for torties, since they can't have anything greater than mid_white:
     if cat.pelt.name == "Tortie":
         weights = (2, 1, 0, 0, 0)
+    elif cat.pelt.name == "Calico":
+        weights = (0, 0, 20, 15, 1)
     else:
         weights = (10, 10, 10, 10, 1)
 
