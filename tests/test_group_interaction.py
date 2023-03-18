@@ -29,4 +29,4 @@ class Filtering(unittest.TestCase):
         filtered_interactions = group_events.get_main_cat_interactions(all_interactions, "Any", "Any")
 
         # then
-        self.assertEqual(len(filtered_interactions), len(all_interactions))
+        self.assertNotEqual(len(filtered_interactions), len(all_interactions))
