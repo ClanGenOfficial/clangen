@@ -461,11 +461,11 @@ class OtherCatsFiltering(unittest.TestCase):
         # given
         group_events = Group_Events()
         parent = Cat()
-        main_cat = Cat()
+        main_cat = Cat(parent1=parent.ID)
         main_cat.status = "warrior"
         random1 = Cat(parent1=parent.ID)
         random1.status = "warrior"
-        random2 = Cat(parent1=parent.ID)
+        random2 = Cat()
         random2.status = "warrior"
         group_events.abbreviations_cat_id={
             "m_c": main_cat.ID,
@@ -517,7 +517,7 @@ class OtherCatsFiltering(unittest.TestCase):
 
         interaction3 = Group_Interaction("test")
         interaction3.relationship_constraint = {
-            "m_c_to_r_c2": ["siblings"]
+            "m_c_to_r_c1": ["siblings"]
         }
 
         interaction4 = Group_Interaction("test")
@@ -568,11 +568,12 @@ class OtherCatsFiltering(unittest.TestCase):
         self.assertTrue(group_events.relationship_allow_interaction(interaction10))
 
     def test_relationship_allow_false(self):
-        # given - cats
+        # given
         group_events = Group_Events()
-        main_cat = Cat()
+        parent = Cat()
+        main_cat = Cat(parent1=parent.ID)
         main_cat.status = "warrior"
-        random1 = Cat()
+        random1 = Cat(parent1=parent.ID)
         random1.status = "warrior"
         random2 = Cat()
         random2.status = "warrior"
@@ -581,7 +582,6 @@ class OtherCatsFiltering(unittest.TestCase):
             "r_c1": random1.ID,
             "r_c2": random2.ID
         }
-
         # given - relationships
         # order: romantic, platonic, dislike, admiration, comfortable, jealousy, trust
         main_cat.relationships[random1.ID] = Relationship(
@@ -591,9 +591,6 @@ class OtherCatsFiltering(unittest.TestCase):
             random1, main_cat, False, False, 50, 50, 0, 50, 50, 0, 50
         )
 
-        parent = Cat()
-        main_cat.parent1 = parent.ID
-        random2.parent1 = parent.ID
         main_cat.relationships[random2.ID] = Relationship(
             main_cat, random2, False, True, 0, 0, 50, 0, 0, 50, 0
         )
@@ -631,17 +628,17 @@ class OtherCatsFiltering(unittest.TestCase):
 
         interaction3 = Group_Interaction("test")
         interaction3.relationship_constraint = {
-            "r_c1_to_r_c2": ["romantic_50_lower"]
+            "r_c1_to_r_c2": ["romantic_40_lower"]
         }
 
         interaction4 = Group_Interaction("test")
         interaction4.relationship_constraint = {
-            "r_c1_to_r_c2": ["romantic_50_lower"]
+            "r_c1_to_r_c2": ["romantic_40_lower"]
         }
 
         interaction5 = Group_Interaction("test")
         interaction5.relationship_constraint = {
-            "r_c1_to_r_c2": ["trust_50_lower"]
+            "r_c1_to_r_c2": ["trust_40_lower"]
         }
 
         interaction6 = Group_Interaction("test")
