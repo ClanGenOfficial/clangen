@@ -23,7 +23,7 @@ except ImportError:
     import json as ujson
 
 from scripts.game_structure.game_essentials import game
-from scripts.utility import update_sprite, get_current_season
+from scripts.utility import update_sprite, get_current_season, quit # pylint: disable=redefined-builtin
 from scripts.cat.cats import Cat, cat_class
 from scripts.cat.names import names
 from scripts.clan_resources.freshkill import Freshkill_Pile, Nutrition
@@ -39,6 +39,7 @@ class Clan():
     BIOME_TYPES = ["Forest", "Plains", "Mountainous", "Beach"]
 
     CAT_TYPES = [
+        "newborn",
         "kitten",
         "apprentice",
         "warrior",
@@ -102,6 +103,44 @@ class Clan():
             'elder place': [([840, 1140], "xy"), ([700, 1040], "xy"),
                             ([800, 1040], "xy"), ([640, 1140], "xy"),
                             ([740, 1140], "xy")]
+        },
+        "Forestcamp2": {
+            'leader den': (688, 188),
+            'medicine den': (160, 400),
+            'nursery': (1240, 400),
+            'clearing': (720, 589),
+            'apprentice den': (164, 860),
+            'warrior den': (1180, 860),
+            'elder den': (696, 980),
+            'leader place': [([650, 248], "y"), ([764, 224], "y"),
+                             ([976, 232], "y"), ([806, 344], "xy")],
+            'medicine place': [([94, 468], "xy"), ([204, 514], "xy"),
+                               ([314, 514], "xy"), ([322, 628], "xy"),
+                               ([426, 606], "xy")],
+            'nursery place': [([1120, 542], "xy"), ([1228, 554], "xy"),
+                              ([1318, 608], "xy"), ([1424, 540], "xy"),
+                              ([1436, 638], "xy"), ([1114, 660], "xy"),
+                              ([1220, 694], "xy"), ([1316, 724], "xy"),
+                              ([1424, 732], "xy")],
+            'clearing place': [([382, 268], "xy"), ([642, 404], "xy"),
+                               ([750, 454], "xy"), ([852, 456], "xy"),
+                               ([958, 396], "xy"), ([896, 558], "xy"),
+                               ([928, 664], "xy"), ([788, 676], "xy"),
+                               ([676, 656], "xy"), ([558, 644], "xy"),
+                               ([592, 752], "xy"), ([712, 780], "xy"),
+                               ([818, 782], "xy")],
+            'apprentice place': [([446, 826], "xy"), ([378, 924], "xy"),
+                                 ([258, 914], "xy"), ([148, 948], "xy"),
+                                 ([160, 1062], "xy"), ([280, 1026], "xy"),
+                                 ([86, 1172], "xy"), ([192, 1160], "xy")],
+            'warrior place': [([1004, 906], "xy"), ([1116, 966], "xy"),
+                              ([1234, 1028], "xy"), ([1354, 1026], "xy"),
+                              ([1422, 886], "xy"), ([1106, 1110], "xy"),
+                              ([1216, 1162], "xy"), ([1320, 1144], "xy")],
+            'elder place': [([728, 944], "xy"), ([620, 1080], "xy"),
+                            ([728, 1066], "xy"), ([838, 1064], "xy"),
+                            ([748, 1174], "xy"), ([444, 1204], "xy"),
+                            ([552, 1226], "xy")]
         },
         "Forestcamp3": {
             'leader den': (688, 188),

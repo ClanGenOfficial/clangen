@@ -74,7 +74,7 @@
 	{
 		"id": "platonic_inc_med5",
 		"interactions": [
-			"r_c relaxing with m_c.",
+			"r_c is relaxing with m_c.",
 			"r_c is helping m_c calm down.",
 			"r_c is soothing m_c's irrational thoughts."
 		],

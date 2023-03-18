@@ -146,67 +146,31 @@ class Game():
     map_info = {}
 
     # SETTINGS
-    settings = {
-        'custom cursor': False,
-        'no gendered breeding': False,
-        'text size': '0',
-        'no unknown fathers': False,
-        'dark mode': False,
-        'backgrounds': True,
-        'autosave': False,
-        'disasters': False,
-        'retirement': False,
-        'language': 'english',
-        'affair': False,
-        'shaders': False,
-        'hotkey display': False,
-        'random relation': True,
-        'show dead relation': False,
-        'show empty relation': False,
-        'romantic with former mentor': True,
-        'game_mode': None,
-        'deputy': False,
-        'den labels': True,
-        'fading': True,
-        "save_faded_copy": False,
-        'favorite sub tab': None,
-        'gore': False,
-        'first_cousin_mates': True,
-        'become_mediator': False,
-        'fullscreen': False,
-        'discord': False,
-    }  # The current settings
-    setting_lists = {
-        'custom cursor': [False, True],
-        'no gendered breeding': [False, True],
-        'text size': ['0', '1', '2'],
-        'no unknown fathers': [False, True],
-        'dark mode': [False, True],
-        'backgrounds': [True, False],
-        'autosave': [False, True],
-        'disasters': [False, True],
-        'retirement': [True, False],
-        'language': language_list,
-        'affair': [False, True],
-        'shaders': [False, True],
-        'hotkey display': [False, True],
-        'random relation': [False, True],
-        'show dead relation': [False, True],
-        'show empty relation': [False, True],
-        'romantic with former mentor': [False, True],
-        'game_mode': game_mode_list,
-        'deputy': [False, True],
-        'den labels': [False, True],
-        'favorite sub tab': sub_tab_list,
-        'fading': [True, False],
-        'save_faded_copy': [False, True],
-        "gore": [False, True],
-        'discord': [False, True],
-        'first_cousin_mates': [True, False],
-        'become_mediator': [False, True],
-        'fullscreen': [False, True]
-    }  # Lists of possible options for each setting
+    settings = {}
+    setting_lists = {}
+
+
+
+    with open("resources/gamesettings.json", 'r') as read_file:
+        _settings = ujson.loads(read_file.read())
+
+    for setting, values in _settings['__other'].items():
+        settings[setting] = values[0]
+        setting_lists[setting] = values
+    
+    _ = []
+    _.append(_settings['relation'])
+    _.append(_settings['general'])
+
+    for cat in _:  # Add all the settings to the settings dictionary
+        for setting_name, inf in cat.items():
+            settings[setting_name] = inf[2]
+            setting_lists[setting_name] = [inf[2], not inf[2]]
+
+
+
     settings_changed = False
+    
 
     # CLAN
     clan = None
@@ -421,17 +385,19 @@ class Game():
                 "pelt_color": inter_cat.pelt.colour,
                 "pelt_white": inter_cat.pelt.white,
                 "pelt_length": inter_cat.pelt.length,
-                "spirit_kitten": inter_cat.age_sprites['kitten'],
-                "spirit_adolescent": inter_cat.age_sprites['adolescent'],
-                "spirit_young_adult": inter_cat.age_sprites['young adult'],
-                "spirit_adult": inter_cat.age_sprites['adult'],
-                "spirit_senior_adult": inter_cat.age_sprites['senior adult'],
-                "spirit_elder": inter_cat.age_sprites['elder'],
-                "spirit_dead": inter_cat.age_sprites['dead'],
+                "sprite_kitten": inter_cat.cat_sprites['kitten'],
+                "sprite_adolescent": inter_cat.cat_sprites['adolescent'],
+                "sprite_young_adult": inter_cat.cat_sprites['young adult'],
+                "sprite_adult": inter_cat.cat_sprites['adult'],
+                "sprite_senior_adult": inter_cat.cat_sprites['senior adult'],
+                "sprite_senior": inter_cat.cat_sprites['senior'],
+                "sprite_para_adult": inter_cat.cat_sprites['para_adult'],
                 "eye_colour": inter_cat.eye_colour,
                 "eye_colour2": inter_cat.eye_colour2 if inter_cat.eye_colour2 else None,
                 "reverse": inter_cat.reverse,
                 "white_patches": inter_cat.white_patches,
+                "vitiligo": inter_cat.vitiligo,
+                "points": inter_cat.points,
                 "white_patches_tint": inter_cat.white_patches_tint,
                 "pattern": inter_cat.pattern,
                 "tortie_base": inter_cat.tortiebase,
@@ -538,13 +504,13 @@ class Game():
                 "pelt_color": {inter_cat.pelt.colour},
                 "pelt_white": {inter_cat.pelt.white},
                 "pelt_length": {inter_cat.pelt.length},
-                "spirit_kitten": {inter_cat.age_sprites['kitten']},
-                "spirit_adolescent": {inter_cat.age_sprites['adolescent']},
-                "spirit_young_adult": {inter_cat.age_sprites['young adult']},
-                "spirit_adult": {inter_cat.age_sprites['adult']},
-                "spirit_senior_adult": {inter_cat.age_sprites['senior adult']},
-                "spirit_elder": {inter_cat.age_sprites['elder']},
-                "spirit_dead": {inter_cat.age_sprites['dead']},
+                "spirit_kitten": {inter_cat.cat_sprites['kitten']},
+                "spirit_adolescent": {inter_cat.cat_sprites['adolescent']},
+                "spirit_young_adult": {inter_cat.cat_sprites['young adult']},
+                "spirit_adult": {inter_cat.cat_sprites['adult']},
+                "spirit_senior_adult": {inter_cat.cat_sprites['senior adult']},
+                "spirit_elder": {inter_cat.cat_sprites['elder']},
+                "spirit_dead": {inter_cat.cat_sprites['dead']},
                 "eye_colour": {inter_cat.eye_colour},
                 "reverse": {inter_cat.reverse},
                 "white_patches": {inter_cat.white_patches},

@@ -1,7 +1,7 @@
 import logging
 import os
 import subprocess
-
+import sys
 
 logger = logging.getLogger(__name__)
 
@@ -12,12 +12,14 @@ def get_version_info():
         version_number = ""
         is_release = False
 
+        if not getattr(sys, 'frozen', False):
+            is_source_build = True
+
         if os.path.exists("commit.txt"):
             with open("commit.txt", 'r', encoding="utf-8") as read_file:
                 version_number = read_file.read()
                 is_release = True
         else:
-            is_source_build = True
             try:
                 version_number = subprocess.check_output(['git', 'rev-parse', 'HEAD']).decode('ascii').strip()
             except:

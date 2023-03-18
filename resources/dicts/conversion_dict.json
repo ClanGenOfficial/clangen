@@ -1,0 +1,144 @@
+{
+    "tortie_map": {
+        "ONE": {
+            "tortie_base": "single",
+            "tortie_color": "BLACK",
+            "tortie_pattern": "tortiesolid",
+            "pattern": "GOLDONE"
+        },
+        "TWO": {
+            "tortie_base": "single",
+            "tortie_color": "BLACK",
+            "tortie_pattern": "tortiesolid",
+            "pattern": "GOLDTWO"
+        },
+        "FADEDONE": {
+            "tortie_base": "single",
+            "tortie_color": "BROWN",
+            "tortie_pattern": "tortiesolid",
+            "pattern": "GOLDONE"
+        },
+        "FADEDTWO": {
+            "tortie_base": "single",
+            "tortie_color": "BROWN",
+            "tortie_pattern": "tortiesolid",
+            "pattern": "GOLDTWO"
+        },
+        "BLUEONE": {
+            "tortie_base": "single",
+            "tortie_color": "SILVER",
+            "tortie_pattern": "tortiesolid",
+            "pattern": "PALEONE"
+        },
+        "BLUETWO": {
+            "tortie_base": "single",
+            "tortie_color": "SILVER",
+            "tortie_pattern": "tortiesolid",
+            "pattern": "PALETWO"
+        }
+    },
+    "calico_map":{
+        "ONE": {
+            "tortie_base": "single",
+            "tortie_color": "BLACK",
+            "tortie_pattern": "tortiesolid",
+            "pattern": "GOLDTHREE"
+        },
+        "TWO": {
+            "tortie_base": "single",
+            "tortie_color": "BLACK",
+            "tortie_pattern": "tortiesolid",
+            "pattern": "GOLDFOUR"
+        },
+        "THREE": {
+            "tortie_base": "single",
+            "tortie_color": "BLACK",
+            "tortie_pattern": "tortietabby",
+            "pattern": "GOLDTHREE"
+        },
+        "FOUR": {
+            "tortie_base": "single",
+            "tortie_color": "BLACK",
+            "tortie_pattern": "tortietabby",
+            "pattern": "GOLDFOUR"
+        },
+        "FADEDONE": {
+            "tortie_base": "single",
+            "tortie_color": "BROWN",
+            "tortie_pattern": "tortiesolid",
+            "pattern": "GOLDTHREE"
+        },
+        "FADEDTWO": {
+            "tortie_base": "single",
+            "tortie_color": "BROWN",
+            "tortie_pattern": "tortiesolid",
+            "pattern": "GOLDFOUR"
+        },
+        "FADEDTHREE": {
+            "tortie_base": "tabby",
+            "tortie_color": "BROWN",
+            "tortie_pattern": "tortietabby",
+            "pattern": "GOLDTHREE"
+        },
+        "FADEDFOUR": {
+            "tortie_base": "tabby",
+            "tortie_color": "BROWN",
+            "tortie_pattern": "tortietabby",
+            "pattern": "GOLDFOUR"
+        },
+        "BLUEONE": {
+            "tortie_base": "single",
+            "tortie_color": "SILVER",
+            "tortie_pattern": "tortiesolid",
+            "pattern": "PALETHREE"
+        },
+        "BLUETWO": {
+            "tortie_base": "single",
+            "tortie_color": "SILVER",
+            "tortie_pattern": "tortiesolid",
+            "pattern": "PALEFOUR"
+        },
+        "BLUETHREE": {
+            "tortie_base": "tabby",
+            "tortie_color": "SILVER",
+            "tortie_pattern": "tortietabby",
+            "pattern": "PALETHREE"
+        },
+        "BLUEFOUR": {
+            "tortie_base": "tabby",
+            "tortie_color": "SILVER",
+            "tortie_pattern": "tortietabby",
+            "pattern": "PALEFOUR"
+        }
+},
+    "old_tortie_patches": {
+        "PALEONE": ["PALEGINGER", "ONE"],
+        "PALETWO": ["PALEGINGER", "TWO"],
+        "PALETHREE": ["PALEGINGER", "THREE"],
+        "PALEFOUR": ["PALEGINGER", "FOUR"],
+        "GOLDONE": ["GOLDEN", "ONE"],
+        "GOLDTWO": ["GOLDEN", "TWO"],
+        "GOLDTHREE": ["GOLDEN", "THREE"],
+        "GOLDFOUR": ["GOLDEN", "FOUR"],
+        "GINGERONE": ["GINGER", "ONE"],
+        "GINGERTWO": ["GINGER", "TWO"],
+        "GINGERTHREE": ["GINGER", "THREE"],
+        "GINGERFOUR": ["GINGER", "FOUR"],
+        "DARKONE": ["DARKGINGER", "ONE"],
+        "DARKTWO": ["DARKGINGER", "TWO"],
+        "DARKTHREE": ["DARKGINGER", "THREE"],
+        "DARKFOUR": ["DARKGINGER", "FOUR"],
+        "CREAMONE": ["CREAM", "ONE"],
+        "CREAMTWO": ["CREAM", "TWO"],
+        "CREAMTHREE": ["CREAM", "THREE"],
+        "CREAMFOUR": ["CREAM", "FOUR"]
+},
+    "old_creamy_patches": {
+        "COLOURPOINTCREAMY": "COLOURPOINT",
+        "ANYCREAMY": "ANY",
+        "ANY2CREAMY": "ANY2",
+        "LITTLECREAMY": "LITTLE",
+        "VANCREAMY": "VAN",
+        "TUXEDOCREAMY": "TUXEDO"
+}
+}

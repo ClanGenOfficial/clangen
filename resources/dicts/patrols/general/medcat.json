@@ -325,7 +325,7 @@
     "success_text": [
         "The cats take turns veering off for herbs, allowing the others time to chat with each other.  By the time they loop back to camp, each cat has a small bundle of herbs in their jaws, and a small bundle of contentment in their hearts.",
         "The patrol decides to collect herbs first, so they have time to idle and chat before heading back to camp. They spend some time in a warm sunbeam, sharing tongues and sunning themselves, and by the time they're ready to go home, every cat is feeling closer to one another.",
-        "As the cats walk and chat, s_c begins to lag behind. p_l looks back to ask them what's up, and spots them veering down a side path. p_l motions for the others as they follow s_c, and find them purring loudly at the sight of a huge herb patch! There's far more than the patrol can carry, and they know this will keep the Clan healthy for ages."
+        "As the cats walk and chat, s_c begins to lag behind. r_c looks back to ask them what's up, and spots them veering down a side path. r_c motions for the others as they follow s_c, and find them purring loudly at the sight of a huge herb patch! There's far more than the patrol can carry, and they know this will keep the Clan healthy for ages."
     ],
     "fail_text": [
         "The medicine cats are too caught up in chatting with one another - they don't collect a single leaf."
@@ -361,7 +361,7 @@
     "success_text": [
         "The cats take turns veering off for herbs, allowing the others time to chat with each other.  They manage to avoid any rain, and by the time they loop back to camp, each cat has a small bundle of herbs in their jaws, and a small bundle of contentment in their hearts.",
         "The patrol decides to collect herbs first, so they have time to idle and chat before heading back to camp. They sit themselves in the cover of a tree to share tongues and chat out of the rain, and by the time they're ready to go home, every cat is feeling closer to one another.",
-        "As the cats walk and chat, s_c begins to lag behind. p_l looks back to ask them what's up, and spots them veering down a side path. p_l motions for the others as they follow s_c, and find them purring loudly at the sight of a huge herb patch! There's far more than the patrol can carry, and they know this will keep the Clan healthy for ages."
+        "As the cats walk and chat, s_c begins to lag behind. r_c looks back to ask them what's up, and spots them veering down a side path. r_c motions for the others as they follow s_c, and find them purring loudly at the sight of a huge herb patch! There's far more than the patrol can carry, and they know this will keep the Clan healthy for ages."
     ],
     "fail_text": [
         "It starts pouring rain while they're out, and even p_l has to admit defeat and lead them home."
@@ -940,7 +940,7 @@
         "r_c, deep in thought, asks p_l if they ever ponder their own mortality. p_l swishes their tail, and asks what brought this on. It's just something they've been dwelling on recently, r_c explains, and they wanted the opinion of someone they trust. p_l nods, and says they'll think about it - but they've reached the herbs, and have to pick them now."
     ],
     "fail_text": [
-        "The two medicine cats walk in circles for awhile, before realizing that they've completely forgotten where the herb patch is since its been so long. How embarrassing!"
+        "The two medicine cats walk in circles for awhile, before realizing that they've completely forgotten where the herb patch is since it's been so long. How embarrassing!"
     ],
     "min_cats": 2,
     "max_cats": 2,
