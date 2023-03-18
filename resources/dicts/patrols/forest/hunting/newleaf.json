@@ -1662,6 +1662,8 @@
         "hunting",
         "no_app",
         "blunt_force_injury",
+        "scar",
+        "TWO",
         "death",
         "some_lives",
         "no_fail_prey",
@@ -1709,6 +1711,8 @@
         "no_app",
         "minor_injury",
         "blunt_force_injury",
+        "scar",
+        "TWO",
         "death",
         "some_lives",
         "no_fail_prey",
@@ -1807,32 +1811,80 @@
         "hunting",
         "apprentice",
         "blunt_force_injury",
+        "scar",
+        "TWO",
         "no_fail_prey",
         "medium_prey"
     ],
     "intro_text": "app1 has ears, of course they've hear the rest of c_n buzzing about the nest raiding season, and they see no reason they should be left out of it!",
     "decline_text": "As they're about to leave camp, one of the older cats starts telling a story about someone they knew who died, falling form the treetops while hunting for nests. Maybe app1 shouldn't go out alone...",
     "success_text": [
-        "There's no snow. That's so obvious that app1 feels embarassed for thinking it, but - there's no snow. And it's so warm, app1 doesn't even mind all the mud the rest of the Clan is so upset about, at least it's not cold anymore. Stalking through a tangle of evergreen trees, app1 finds a good f_mp_s.",
-        "Perhaps they need to ask their mentor about working on their killing technique next - the f_tp_s they found by a rotting log sort of had half it's head caved in, and if they hadn't snagged the leg of the f_tp_s they found by a big oak tree, it would've gotten away. Still, app1 is proud to bring these back to the fresh-kill pile all by themselves.",
+        "It's amazing that birds just leave these lying about! app1 finds a low hanging nest, shoos away the sparrow, and trots home with them, one by one adding them to the fresh-kill pile to the praise of the cats in camp at the time, fluffing out their chest fur in pride.",
+        "Going out by themselves makes everything much harder, and instead of fishing eggs out, app1 accidentally knocks their target nest out of the tree. But at least a couple of the eggs are unbroken, and that's better than nothing.",
         null,
-        "app1 carefully skirts the seas of mud that've replaced the snowdrifts, not knowing which they prefer. But it's difficult to be too upset by it, not when the sun is shining and the birds are out singing and app1 has a f_mp_s to bring home to the fresh-kill pile in front of the whole Clan."
+        "It doesn't take long to find a nest, positioned high in the crook between two thin branchs of a hazelnut tree. But app1 isn't confident they can safely make that climb. Instead they grab a stick and jab at the nest from futher away, sending it plummeting out of the tree. Some of the eggs inside are smashed open, but there's still a couple left to bring home."
     ],
     "fail_text": [
+        "Step one, find nests, has been conclusively failed. At least they're alone though - app1 trips over a branch on the forest floor as they walk with their eyes pinned skyward, and they're grateful no one was here to see it.",
+        "It doesn't take long to find a nest, positioned high in the crook between two thin branchs of a hazelnut tree. But app1 is confident they can safely make that climb! They're rather less confident once up so high in the air, and eventually they retreat, shaking.",
         null,
+        "Going out by themselves makes everything much harder, and instead of fishing eggs out, app1 accidentally knocks their target nest and themselves out of the tree. They hit the ground hard, hearing the crack of something breaking.",
         null,
-        null,
-        "While rounds a bend in the path, app1 hears a bird call. Jerking their head up, they lose their footing and skid down a slope more mud than grass. They're not that badly hurt, but app1 is tender enough after that fall to give up and go home.",
-        null,
-        "app1 heads out confidently, sure that the bounties of newleaf will make this hunt easy. While pouncing for a bird, they fall into a muddy puddle, landing awkwardly. To add insult to injury, the bird makes dirt on their head. Great."
+        "It doesn't take long to find a nest, positioned high in the crook between two thin branchs of a hazelnut tree. But app1 is confident they can safely make that climb! They're rather less confident once up so high in the air, and their claws slip, sending them plummeting earthwards."
     ],
-    "chance_of_success": 40,
+    "chance_of_success": 30,
     "exp": 25,
-    "win_trait": ["calm", "careful", "nervous", "thoughtful"],
-    "fail_trait": ["bold", "daring"],
+    "win_trait": ["calm", "careful", "nervous", "thoughtful", "insecure", "nervous", "responsible", "wise"],
+    "fail_trait": ["bold", "daring", "adventurous", "confident"],
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
-    "antagonize_fail_text": null
+    "antagonize_fail_text": null,
+    "history_text": [
+        "r_c will always carry the scars from falling from the treetops while nest raiding alone as an apprentice."
+]
+},
+{
+    "patrol_id": "fst_hunt_eggs_newleaf8",
+    "biome": "forest",
+    "season": "newleaf",
+    "tags": [
+        "hunting",
+        "apprentice",
+        "blunt_force_injury",
+        "death",
+        "scar",
+        "TWO",
+        "no_fail_prey",
+        "medium_prey"
+    ],
+    "intro_text": "app1 has ears, of course they've hear the rest of c_n buzzing about the nest raiding season, and they see no reason they should be left out of it!",
+    "decline_text": "As they're about to leave camp, one of the older cats starts telling a story about someone they knew who died, falling form the treetops while hunting for nests. Maybe app1 shouldn't go out alone...",
+    "success_text": [
+        "It's amazing that birds just leave these lying about! app1 finds a low hanging nest, shoos away the sparrow, and trots home with them, one by one adding them to the fresh-kill pile to the praise of the cats in camp at the time, fluffing out their chest fur in pride.",
+        "Going out by themselves makes everything much harder, and instead of fishing eggs out, app1 accidentally knocks their target nest out of the tree. But at least a couple of the eggs are unbroken, and that's better than nothing.",
+        null,
+        "It doesn't take long to find a nest, positioned high in the crook between two thin branchs of a hazelnut tree. But app1 isn't confident they can safely make that climb. Instead they grab a stick and jab at the nest from futher away, sending it plummeting out of the tree. Some of the eggs inside are smashed open, but there's still a couple left to bring home."
+    ],
+    "fail_text": [
+        "Step one, find nests, has been conclusively failed. At least they're alone though - app1 trips over a branch on the forest floor as they walk with their eyes pinned skyward, and they're grateful no one was here to see it.",
+        "It doesn't take long to find a nest, positioned high in the crook between two thin branchs of a hazelnut tree. But app1 is confident they can safely make that climb! They're rather less confident once up so high in the air, and eventually they retreat, shaking.",
+        "Going out by themselves makes everything much harder, and instead of fishing eggs out, app1 accidentally knocks their target nest and themselves out of the tree. They wake in StarClan, confused and with the lingering sensation of falling.",
+        "Going out by themselves makes everything much harder, and instead of fishing eggs out, app1 accidentally knocks their target nest and themselves out of the tree. They hit the ground hard, hearing the crack of something breaking.",
+        "It doesn't take long to find a nest, positioned high in the crook between two thin branchs of a hazelnut tree. But app1 is confident they can safely make that climb! They're rather less confident once up so high in the air, and their claws slip, sending them plummeting earthwards where StarCaln awaits.",
+        "It doesn't take long to find a nest, positioned high in the crook between two thin branchs of a hazelnut tree. But app1 is confident they can safely make that climb! They're rather less confident once up so high in the air, and their claws slip, sending them plummeting earthwards."
+    ],
+    "chance_of_success": 30,
+    "exp": 25,
+    "win_trait": ["calm", "careful", "nervous", "thoughtful", "insecure", "nervous", "responsible", "wise"],
+    "fail_trait": ["bold", "daring", "adventurous", "confident"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        "r_c will always carry the scars from falling from the treetops while nest raiding alone as an apprentice.",
+        "r_c died as an apprentice after going out nest raiding alone."
+]
 }
 ]
