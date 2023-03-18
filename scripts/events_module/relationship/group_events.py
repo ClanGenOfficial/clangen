@@ -169,7 +169,7 @@ class Group_Events():
         """
         # first handle the abbreviations possibilities for the cats
         abbr_per_interaction = self.get_abbreviations_possibilities(interactions, int(amount), interact_cats)
-        abbr_per_interaction = self.remove_impossible_abbreviations_combinations(abbr_per_interaction)
+        abbr_per_interaction = self.remove_abbreviations_missing_cats(abbr_per_interaction)
         self.set_abbreviations_cats(interact_cats)
 
         # check if any abbreviations_cat_ids is None, if so return 
@@ -268,7 +268,7 @@ class Group_Events():
             possibilities[interact.id] = dictionary
         return possibilities
 
-    def remove_impossible_abbreviations_combinations(self, abbreviations_per_interaction: dict):
+    def remove_abbreviations_missing_cats(self, abbreviations_per_interaction: dict):
         """
         Check which combinations of abbreviations are allowed and possible and which are not, only return a dictionary,
         with possible combinations together with the id for the interaction.
