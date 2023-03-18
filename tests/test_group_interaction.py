@@ -193,7 +193,7 @@ class OtherFiltering(unittest.TestCase):
         interaction1.season = ["newleaf"]
 
         interaction2 = Group_Interaction("2")
-        interaction1.season = ["green-leaf"]
+        interaction2.season = ["green-leaf"]
         
         # when
         all_interactions = [interaction1, interaction2]
@@ -213,7 +213,7 @@ class OtherFiltering(unittest.TestCase):
         interaction1.season = ["newleaf"]
 
         interaction2 = Group_Interaction("2")
-        interaction1.season = ["newleaf", "green-leaf"]
+        interaction2.season = ["newleaf", "green-leaf"]
         
         # when
         all_interactions = [interaction1, interaction2]
@@ -234,7 +234,7 @@ class OtherFiltering(unittest.TestCase):
         interaction1.season = ["newleaf"]
 
         interaction2 = Group_Interaction("2")
-        interaction1.season = ["Any"]
+        interaction2.season = ["Any"]
         
         # when
         all_interactions = [interaction1, interaction2]
@@ -252,10 +252,10 @@ class OtherFiltering(unittest.TestCase):
         group_events.abbreviations_cat_id={"m_c": main_cat.ID}
 
         interaction1 = Group_Interaction("1")
-        interaction1.season = ["forest"]
+        interaction1.biome = ["forest"]
 
         interaction2 = Group_Interaction("2")
-        interaction1.season = ["beach"]
+        interaction2.biome = ["beach"]
         
         # when
         all_interactions = [interaction1, interaction2]
@@ -275,7 +275,7 @@ class OtherFiltering(unittest.TestCase):
         interaction1.biome = ["forest"]
 
         interaction2 = Group_Interaction("2")
-        interaction1.season = ["beach", "forest"]
+        interaction2.biome = ["beach", "forest"]
         
         # when
         all_interactions = [interaction1, interaction2]
@@ -296,7 +296,7 @@ class OtherFiltering(unittest.TestCase):
         interaction1.biome = ["forest"]
 
         interaction2 = Group_Interaction("2")
-        interaction1.season = ["Any"]
+        interaction1.biome = ["Any"]
         
         # when
         all_interactions = [interaction1, interaction2]
@@ -362,17 +362,17 @@ class Abbreviations(unittest.TestCase):
         random2 = Cat()
         random2.status = "warrior"
         random3 = Cat()
-        random3.status = "healer"
+        random3.status = "medicine cat"
 
         interaction1 = Group_Interaction("1")
         interaction1.status_constraint = {"r_c1": ["warrior"]}
 
         interaction2 = Group_Interaction("2")
-        interaction2.status_constraint = {"r_c1": ["healer"]}
+        interaction2.status_constraint = {"r_c1": ["medicine cat"]}
         
         # when
         all_interactions = [interaction1, interaction2]
-        interaction_cats = [random1, random2]
+        interaction_cats = [random1, random2, random3]
         abbreviations_possibilities = group_events.get_abbreviations_possibilities(
             all_interactions, 3, interaction_cats
         )
@@ -380,8 +380,8 @@ class Abbreviations(unittest.TestCase):
         # then
         self.assertEqual(len(abbreviations_possibilities), 2)
         # all cats would fit in
-        self.assertEqual(len(abbreviations_possibilities["1"]), 3)
-        self.assertEqual(len(abbreviations_possibilities["2"]), 1)
+        self.assertEqual(len(abbreviations_possibilities["1"]["r_c1"]), 2)
+        self.assertEqual(len(abbreviations_possibilities["2"]["r_c1"]), 1)
 
     def test_remove_abbreviations_missing_cats(self):
         # given
