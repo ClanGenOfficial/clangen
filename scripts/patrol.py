@@ -702,7 +702,11 @@ class Patrol():
         # if patrol contains cats with autowin skill, chance of success is high. otherwise it will calculate the
         # chance by adding the patrol event's chance of success plus the patrol's total exp
         success_chance = self.patrol_event.chance_of_success + int(
-            self.patrol_total_experience / (2 * 2 * gm_modifier))
+            self.patrol_total_experience / (7.5 * gm_modifier))
+        
+        # Auto-wins based on EXP are sorta lame. Often makes it immpossible for large patrols with experiences cats to fail patrols at all. 
+        # EXP alone can only bring success chance up to 95. However, skills/traits can bring it up above that. 
+        success_chance = min(success_chance, 95)
 
         print('starting chance:', self.patrol_event.chance_of_success)
         print('updated chance according to exp: ', success_chance)
@@ -737,7 +741,7 @@ class Patrol():
         # ---------------------------------------------------------------------------- #
         #                                   SUCCESS                                    #
         # ---------------------------------------------------------------------------- #
-
+        
         if c < success_chance:
             self.success = True
             self.patrol_fail_stat_cat = None

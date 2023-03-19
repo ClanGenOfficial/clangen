@@ -1477,15 +1477,24 @@ class Events():
             else:
                 ran = game.config["graduation"]["base_app_timeskip_ex"]
 
+
             if not cat.mentor or Cat.fetch_cat(cat.mentor).not_working():
                 # Sick mentor debuff
                 mentor_modifier = 0.7
+                mentor_skill_modifier = 0
             else:
                 mentor_modifier = 1
+                cat_ob = Cat.fetch_cat(cat.mentor)
+                if cat_ob.skill in ['fantastic teacher']:
+                    mentor_skill_modifier = 1
+                else:
+                    mentor_skill_modifier = 0
 
-            exp = random.choice(list(range(ran[0][0], ran[0][1] + 1)) + list(range(ran[1][0], ran[1][1] + 1)) * 2)
+                
 
-            cat.experience += max(exp * mentor_modifier, 1)
+            exp = random.choice(list(range(ran[0][0], ran[0][1] + 1)) + list(range(ran[1][0], ran[1][1] + 1)))
+
+            cat.experience += max(exp * mentor_modifier + mentor_skill_modifier, 1)
             print(f"{cat.name} has gained {int(exp * mentor_modifier)} EX", cat._experience)
 
     def invite_new_cats(self, cat):
