@@ -280,7 +280,7 @@ class UpdateWindow(UIWindow):
             container=self,
         )
 
-        x = threading.Thread(target=self_update, args=('development-test', self.progress_bar, self.step_text, asdf))
+        x = threading.Thread(target=self_update, daemon=True, args=('development-test', self.progress_bar, self.step_text, asdf))
         x.start()
 
         self.not_yet_button = UIImageButton(
@@ -316,7 +316,7 @@ class AnnounceRestart(UIWindow):
             container=self
         )
 
-        threading.Thread(target=self.update_text).start()
+        threading.Thread(target=self.update_text, daemon=True).start()
 
     def update_text(self):
         for i in range(2, 0, -1):
