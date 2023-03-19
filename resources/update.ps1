@@ -32,6 +32,8 @@ New-Item -Path "auto-update" -ItemType File
 
 Write-Output "Update complete!"
 
+Read-Host "Press ENTER to continue... "
+
 Write-Output "Restarting clangen..."
 
 Start-Process Clangen.exe
