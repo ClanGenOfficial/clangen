@@ -517,12 +517,12 @@ class PatrolScreen(Screens):
 
         fst_midprey_singlular = ['plump shrew', 'woodpecker', 'mole', 'fat dormouse', 'blackbird',
                                  'field vole', 'big lizard', 'grass snake', 'half-grown rabbit', 'hedgehog',
-                                 'red squirrel', 'grey squirrel', 'rat', 'flying squirrel', 'kingfisher', ]
+                                 'red squirrel', 'gray squirrel', 'rat', 'flying squirrel', 'kingfisher', ]
         text = text.replace('f_mp_s', str(fst_midprey_singlular))
 
         fst_midprey_plural = ['plump shrews', 'woodpeckers', 'moles', 'blackbirds',
                               'field voles', 'big lizards', 'grass snakes', 'half-grown rabbits', 'hedgehogs',
-                              'red squirrels', 'grey squirrels', 'rats', ]
+                              'red squirrels', 'gray squirrels', 'rats', ]
         text = text.replace('f_mp_p', str(fst_midprey_plural))
 
         sign_list = get_snippet_list("omen_list", amount=random.randint(2, 4), return_string=False)
