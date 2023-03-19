@@ -564,6 +564,9 @@ def describe_appearance(cat, short=False):
         if "ginger point" in color_name:
             color_name.replace("ginger point", "flame point")
 
+    if "white and white" in color_name:
+        color_name = color_name.replace("white and white", "white")
+
     # Now it's time for gender
     if cat.genderalign in ["female", "trans female"]:
         color_name = f"{color_name} she-cat"
