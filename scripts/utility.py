@@ -367,7 +367,7 @@ def create_new_cat(Cat,
         if outside:
             new_cat.outside = True
         if not alive:
-            new_cat.dead = True
+            new_cat.die()
 
         # and they exist now
         created_cats.append(new_cat)
@@ -382,6 +382,38 @@ def create_new_cat(Cat,
 
     return created_cats
 
+def create_outside_cat(Cat, status, backstory):
+        """
+        TODO: DOCS
+        """
+        suffix = ''
+        if 'rogue' in backstory:
+            status = 'rogue'
+        elif backstory in ['ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
+                         'tragedy_survivor', 'disgraced2', 'disgraced3', 'refugee5']:
+            status = "former clancat"
+        if status == 'kittypet':
+            name = choice(names.names_dict["loner_names"])
+        elif status in ['loner', 'rogue']:
+            name = choice(names.names_dict["loner_names"] +
+                                 names.names_dict["normal_prefixes"])
+        elif status == 'former clancat':
+            name = choice(names.names_dict["normal_prefixes"])
+            suffix = choice(names.names_dict["normal_suffixes"])
+        else:
+            name = choice(names.names_dict["loner_names"])
+        new_cat = Cat(prefix=name,
+                      suffix=suffix,
+                      status=status,
+                      gender=choice(['female', 'male']))
+        if status == 'kittypet':
+            new_cat.accessory = choice(collars)
+        new_cat.outside = True
+        game.clan.add_cat(new_cat)
+        game.clan.add_to_outside(new_cat)
+        name = str(name + suffix)
+
+        return name
 
 # ---------------------------------------------------------------------------- #
 #                             Cat Relationships                                #
@@ -992,13 +1024,14 @@ def update_sprite(cat):
 
         # Apply fading fog
         if cat.opacity <= 97 and not cat.prevent_fading and game.settings["fading"]:
-            stage = "1"
+            
+            stage = "0"
             if 80 >= cat.opacity > 45:
+                # Stage 1
+                stage = "1"
+            elif cat.opacity <= 45:
                 # Stage 2
                 stage = "2"
-            elif cat.opacity <= 45:
-                # Stage 3
-                stage = "3"
 
             new_sprite.blit(sprites.sprites['fademask' + stage + cat_sprite], 
                             (0, 0), special_flags=pygame.BLEND_RGBA_MULT)

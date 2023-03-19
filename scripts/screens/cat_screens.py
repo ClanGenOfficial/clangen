@@ -67,7 +67,7 @@ def accessory_display_name(cat):
 # ---------------------------------------------------------------------------- #
 def bs_blurb_text(cat):
     backstory = cat.backstory
-    if cat.status in ['kittypet', 'loner', 'rogue']:
+    if cat.status in ['kittypet', 'loner', 'rogue', 'former clancat']:
         return f"This cat is a {cat.status} and currently resides outside of the Clans."
     backstory_text = {
         None: "This cat was born into the Clan where they currently reside.",
@@ -154,6 +154,7 @@ def backstory_text(cat):
         'guided1': 'formerly a kittypet',
         'rogue1': 'formerly a rogue',
         'rogue2': 'formerly a rogue',
+        'rogue3': 'formerly a rogue',
         'refugee4': 'formerly a rogue',
         'tragedy_survivor2': 'formerly a rogue',
         'guided2': 'formerly a rogue',
@@ -370,6 +371,7 @@ class ProfileScreen(Screens):
                 if self.the_cat.status == 'leader':
                     game.clan.leader_lives -= 10
                 self.the_cat.die()
+                self.the_cat.died_by.append(f'It was the will of something even mightier than StarClan that this cat died.')
                 update_sprite(self.the_cat)
                 self.clear_profile()
                 self.build_profile()
@@ -382,10 +384,12 @@ class ProfileScreen(Screens):
                     self.update_disabled_buttons_and_text()
                 if self.the_cat.dead:
                     if self.the_cat.df is True:
+                        self.the_cat.outside, self.the_cat.exiled = False, False
                         self.the_cat.df = False
                         game.clan.add_to_starclan(self.the_cat)
                         self.the_cat.thought = "Is relieved to once again hunt in StarClan"
                     else:
+                        self.the_cat.outside, self.the_cat.exiled = False, False
                         self.the_cat.df = True
                         game.clan.add_to_darkforest(self.the_cat)
                         self.the_cat.thought = "Is distraught after being sent to the Place of No Stars"
@@ -893,7 +897,7 @@ class ProfileScreen(Screens):
         output = ""
 
         # STATUS
-        if the_cat.outside and not the_cat.exiled and not the_cat.status in ['kittypet', 'loner', 'rogue']:
+        if the_cat.outside and not the_cat.exiled and not the_cat.status in ['kittypet', 'loner', 'rogue', 'former clancat']:
             output += "<font color='#FF0000'>lost</font>"
         elif the_cat.exiled:
             output += "<font color='#FF0000'>exiled</font>"

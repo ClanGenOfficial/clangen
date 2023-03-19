@@ -118,16 +118,16 @@ class Group_Events():
                 a list of interactions, which fulfill the criteria
         """
         filtered_interactions = []
-        _season = [season, "Any", "any"]
-        _biome = [biome, "Any", "any"]
+        allowed_season = [season, "Any", "any"]
+        allowed_biome = [biome, "Any", "any"]
         main_cat = Cat.all_cats[self.abbreviations_cat_id["m_c"]]
         for interact in interactions:
-            in_tags = list(filter(lambda inter_biome: inter_biome not in _biome, interact.biome))
-            if len(in_tags) > 0:
+            in_tags = list(filter(lambda inter_biome: inter_biome in allowed_biome, interact.biome))
+            if len(in_tags) < 1:
                 continue
 
-            in_tags = list(filter(lambda inter_season: inter_season not in _season, interact.season))
-            if len(in_tags) > 0:
+            in_tags = list(filter(lambda inter_season: inter_season in allowed_season, interact.season))
+            if len(in_tags) < 1:
                 continue
 
             if len(interact.status_constraint) >= 1 and "m_c" in interact.status_constraint:
@@ -169,7 +169,7 @@ class Group_Events():
         """
         # first handle the abbreviations possibilities for the cats
         abbr_per_interaction = self.get_abbreviations_possibilities(interactions, int(amount), interact_cats)
-        abbr_per_interaction = self.remove_impossible_abbreviations_combinations(abbr_per_interaction)
+        abbr_per_interaction = self.remove_abbreviations_missing_cats(abbr_per_interaction)
         self.set_abbreviations_cats(interact_cats)
 
         # check if any abbreviations_cat_ids is None, if so return 
@@ -235,6 +235,7 @@ class Group_Events():
                 if abbreviation in interact.status_constraint:
                     # if the cat status is in the status constraint, add the id to the list
                     status_ids = [cat.ID for cat in interact_cats if cat.status in interact.status_constraint[abbreviation]]
+                    print(status_ids)
                 else:
                     # if there is no constraint, add all ids to the list 
                     status_ids = [cat.ID for cat in interact_cats]
@@ -268,7 +269,7 @@ class Group_Events():
             possibilities[interact.id] = dictionary
         return possibilities
 
-    def remove_impossible_abbreviations_combinations(self, abbreviations_per_interaction: dict):
+    def remove_abbreviations_missing_cats(self, abbreviations_per_interaction: dict):
         """
         Check which combinations of abbreviations are allowed and possible and which are not, only return a dictionary,
         with possible combinations together with the id for the interaction.
