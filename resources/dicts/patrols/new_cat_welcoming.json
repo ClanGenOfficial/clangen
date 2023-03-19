@@ -41,7 +41,7 @@
     "min_cats": 1,
     "max_cats": 6,
     "win_skills": ["great speaker","excellent speaker"],
-    "antagonize_text": "Your patrol approaches the loner and tells them firmly that newcomers aren't being taken in right now. The kittypet seems disappointed, but leaves anyway.",
+    "antagonize_text": "Your patrol approaches the kittypet and tells them firmly that newcomers aren't being taken in right now. The kittypet seems disappointed, but leaves anyway.",
     "antagonize_fail_text": "The patrol approaches the kittypet and tries to explain that c_n currently has enough mouths to feed, but the kittypet seems to take offense and leaves in a huff."
 
 },
@@ -300,6 +300,37 @@
     "max_cats": 1,
     "antagonize_text": "p_l hisses at StarClan for the sign, refusing to follow it to it's source, and what might have been.",
     "antagonize_fail_text": "p_l begrudgingly follows the sound, only to find the bodies of a unknown queen and their kits beside them. If p_l had been quicker... Whatever the case, they return home, their mind clouded."
+},
+{
+    "patrol_id": "fst_hunt_twolegplacekittenswelcome1",
+    "biome": "forest",
+    "season": "Any",
+    "tags": [
+        "hunting",
+        "no_fail_prey",
+        "new_cat_kittypet_female_dead_litter0_litter1_litter3"
+    ],
+    "intro_text": "The patrol approaches a Twoleg nest in the woods while hunting.",
+    "decline_text": "The patrol decides to hunt elsewhere.",
+    "chance_of_success": 70,
+    "exp": 30,
+    "success_text": [
+        "p_l hears r_c softly calling them through the bushes, and drops the idea of following mouse scent, hurrying to their mate's side. r_c, head poking into the nest's garden through a gap in the fense, murmurs something about Twoleg kits. Twoleg kits? No, r_c corrects, the <i>Twolegs's kits</i>, the Twolegs <i>have kittens</i> wandering through the nest's garden, they need to be rescued before something happens to them!",
+        "Near the Twoleg den, p_l suddenly hears furious gowls. Tiny, adorable, furious growls. A kitten tries to pounce on p_l, barely coming up to their elbows. Before little teeth can do any damage, p_l gently flips the tiny cat over and places a gentle paw on their back, completely pinning them as they struggle with all their might. r_c, called over by the mighty fight, asks the little warrior what on earth they're doing. Why, they're defending their territory of course!",
+        null,
+        "Furious, high pitched yowls greet the patrol, as a tiny kittypet kitten comes roaring out of the Twoleg nest to try and fight them. Terrifying. s_c tips the little fighter over and carefully scruffs the tiny warrior - they can't leave them here. The kitten insists that they're a big cat and they're <b>fine</b>, but after a couple minutes, does reveal their mother is dead. Twolegs have kept them alive somehow, but c_n will do better."
+    ],
+    "fail_text": [
+        "Twoleg kits scare the patrol away."
+    ],
+    "win_trait":["careful", "thoughtful"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": "A kittypet kitten approaches the patrol, yowling furiously. p_l bats it aside as the warriors continue hunting, unruffled.",
+    "antagonize_fail_text": "The kittypet kittens trying furiously to defend their territory ruin all the hunting to be had, and the patrol returns home, irritated but impressed by the kittens' bravery.",
+    "relationship_constraint": [
+        "mates"
+]
 },
 {
     "patrol_id": "gen_bord_curiouskittypet1",

@@ -12,7 +12,7 @@ try:
 except ImportError:
     import json as ujson
 
-from .pelts import describe_color
+from .pelts import describe_appearance
 from .names import Name
 from .thoughts import get_thoughts
 from .appearance_utility import (
@@ -140,6 +140,18 @@ class Cat():
         'retired_leader', 'refugee', 'tragedy_survivor', 'clan_founder', 'orphaned', "orphaned2", "guided1", "guided2",
         "guided3", "guided4"
     ]
+    backstory_categories = {
+        'clan-born_backstories': ['clanborn', 'halfclan1', 'halfclan2', 'outsider_roots1', 'outsider_roots2'],
+        'loner_backstories': ['loner1', 'loner2', 'refugee2', 'tragedy_survivor4'],
+        'rogue_backstories': ['rogue1', 'rogue2', 'rogue3', 'refugee4', 'tragedy_survivor2'],
+        'kittypet_backstories': ['kittypet1', 'kittypet2', 'kittypet3', 'refugee3', 'tragedy_survivor3'],
+        'former_clancat_backstories': ['ostracized_warrior', 'disgraced', 'retired_leader', 'refugee', 
+                                        'tragedy_survivor', 'disgraced2', 'disgraced3', 'medicine_cat'],
+        'otherclan_backstories': ['otherclan', 'otherclan2', 'otherclan3', 'other_clan1'],
+        'healer_backstories': ['medicine_cat', 'wandering_healer1', 'wandering_healer2'],
+        'orphaned_backstories': ['orphaned', 'orphaned2', 'orphaned3', 'orphaned4', 'orphaned5'],
+        'abandoned_backstories': ['abandoned1', 'abandoned2', 'abandoned3', 'abandoned4']
+    }
 
     #EX levels and ranges.
     # Ranges are inclusive to both bounds
@@ -899,24 +911,14 @@ class Cat():
     def describe_cat(self, short=False):
         """ Generates a string describing the cat's appearance and gender. Mainly used for generating
         the allegiances. If short is true, it will generate a very short one, with the minimal amount of information. """
-
-        if self.genderalign == 'male' or self.genderalign == "transmasc" or self.genderalign == "trans male":
-            sex = 'tom'
-        elif self.genderalign == 'female' or self.genderalign == "transfem" or self.genderalign == "trans female":
-            sex = 'she-cat'
+        output = describe_appearance(self, short)
+        # Add "a" or "an"
+        if output[0].lower() in "aiou":
+            output = f"an {output}"
         else:
-            sex = 'cat'
+            output = f"a {output}"
 
-        description = ""
-        if len(self.scars) >= 4:
-            description += "scarred "
-
-        if not short and self.pelt.length == "long":
-            description += str(self.pelt.length).lower() + '-furred ' 
-
-        description += describe_color(self.pelt, self.tortiepattern, self.tortiecolour,
-                                            self.white_patches, self.points, self.vitiligo, short=short) + ' ' + sex
-        return description
+        return output
         
 
     def describe_eyes(self):
