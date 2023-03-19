@@ -11,12 +11,12 @@
     "rogue": ""
     },
   "normal_suffixes" : [
-    "fur", "fur", "fur", "fur", "fur", "fur", "fur", "fur", "fur", "fur", "fur", "fur", "fur",
+    "fur", "fur", "fur", "fur", "fur", "fur", "fur", "fur", "fur", "fur", "fur",
     "tuft", "tuft", "tuft", "tuft", "tuft", "tooth", "tooth", "tooth", "tooth", "tooth",
-    "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "pelt",
-    "tail", "tail", "tail", "tail", "tail", "tail", "tail", "tail", "claw", "claw", "claw", "claw", "claw", "claw", "claw",
+    "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", 
+    "tail", "tail", "tail", "tail", "tail", "tail", "tail", "claw", "claw", "claw", "claw", "claw", "claw",
     "foot", "foot", "foot", "foot", "foot", "whisker", "whisker", "whisker", "whisker", "whisker", "whisker",
-    "heart", "heart", "heart", "heart", "heart", "heart", "heart", "heart", "heart", "heart",
+    "heart", "heart", "heart", "heart", "heart", "heart", "heart", "heart",
     "acorn", "ash", "aster","beam", "beak", "back", "bark", "bee", "belly", "berry", "bite", "bird", "blaze", "blink", "bloom", 
     "blossom", "blotch", "bounce", "bracken", "break", "branch", "breeze", "briar", "bright", "brook", "bubble", "bud", "burr", "burrow", "burst", "bush", 
     "call", "catcher", "chase", "chaser", "clear", "cloud", "clover", "crag", "crawl", "creek", "cry", "curl", "current", "cut",
@@ -34,10 +34,10 @@
     "needle", "nest", "nettle", "newt", "nibble", "night", "nip", "noise", "nose", "nudge", "nut",
     "pad", "patch", "path", "peak", "petal", "plume", "pond",
     "pool", "poppy", "pounce", "prickle", "puddle", "rain", "rapid", "reed", "ripple", "river", "roar", "rose", "root", "rump", "run", "runner", 
-    "scar", "scratch", "seed", "shade", "shadow", "shell", "shimmer", "shiver", "shine", "sight", "skip", "sky", "slip", "snap", "snow", "snout",
-    "snow", "song", "spark", "speck", "speckle", "spirit", "spike", "splash", "spot", "spots", "spring", "sprout", "stalk", "stem", 
+    "scar", "scratch", "seed", "shade", "shadow", "shard", "shatter", "shell", "shimmer", "shiver", "shine", "sight", "skip", "sky", "slip", "snap",
+    "snout","snow", "song", "spark", "speck", "speckle", "spirit", "spike", "splash", "spot", "spots", "spring", "sprout", "stalk", "stem", 
     "step", "stone", "storm", "streak", "stream", "strike", "stripe", "sun", "swipe", "swoop",
-     "talon", "tangle", "tooth", "thistle", "thorn", "throat","thud", "tiger", "timber", "toe", "tree", "turtle", "twist",
+    "talon", "tangle", "tooth", "thistle", "thorn", "throat","thud", "tiger", "timber", "toe", "tree", "turtle", "twist",
     "watcher", "water", "wave", "web", "whisper", "whistle", "willow", "wind", "wing", "wish",
     "zap", "zinnia", "zoom"
   ],
@@ -140,7 +140,7 @@
     "Smoke", "Smokey", "Shadow", "Bleak", "Rain", "Storm", "Pebble", "Mist", "Misty", "Warbler", "Wisp", "Gum"
     ],
     "GHOST": [
-    "Black", "Black", "Shade", "Shaded", "Crow", "Raven", "Ebony", "Dark", "Char", "Charred", "Magpie",
+    "Badger", "Black", "Black", "Shade", "Shaded", "Crow", "Raven", "Ebony", "Dark", "Char", "Charred", "Magpie",
     "Night", "Shadow", "Scorch", "Midnight", "Bleak", "Storm", "Violet", "Pepper", "Bat", "Fade"
     ],
     "PALEGINGER": [
@@ -178,7 +178,7 @@
     "Owl", "Otter", "Log", "Hickory", "Branch", "Robin", "Bark", "Agate", "Umber", "Chanterelle"
     ],
     "BLACK": [
-    "Black", "Black", "Shade", "Shaded", "Crow", "Raven", "Ebony", "Dark", "Grackle", 
+    "Badger", "Black", "Black", "Shade", "Shaded", "Crow", "Raven", "Ebony", "Dark", "Grackle", 
     "Night", "Shadow", "Scorch", "Midnight", "Pepper", "Pitch", "Bat", "Burnt", "Coal", "Ink", "Inky"
     , "Char", "Charred", "Current", "Mulberry"
     ]
@@ -268,7 +268,7 @@
     "Pong", "Ponyboy", "Poopy", "Porsche", "Potato", "Pouncival", "President", "Prickle", "Pride", "Princess", "Private Eye", "Pudding", 
     "Pumba", "Pumpernickel", "Pumpkin", "Punk", "Purdy", "Purry", "Pushee", "Puzzle", "Quagmire", "Quake", "Qubo", "Queen", "Queenie", "Queeny", "Querida", 
     "Quesadilla", "Queso Ruby", "Queso", "Quest", "Quickie", "Quimby", "Quinn", "Quino", "Quinzee", "Radar", "Rafael", "Rafiki", "Ramble", "Ramen", "Randy", 
-    "Rani", "Raptor", "Rapunzel", "Rarity", "Rat", "Raven", "Ravioli", "Ray", "Reese", "Reeses Puff", "Ren", "Rhianna", "Rhubarb", "Rice",
+    "Rani", "Raptor", "Rapunzel", "Rarity", "Rat", "Raven", "Ravioli", "Ray", "Redhairedl", "Reese", "Reeses Puff",  "Ren", "Rhianna", "Rhubarb", "Rice",
     "Rico", "Rigatoni", "Rio", "Riot", "Risa", "River", "Riya", "Rizz", "Robbie", "Rocket", "Rodeo", "Rolo", "Roman", "Roomba", "Rooster", 
     "Rory", "Rose", "Roselie", "Rosewood", "Ruby", "Rudolph", "Rue", "Ruffnut", "Rufus", "Rum Tum Tugger", "Rum", "Rumpleteazer", 
     "Runt", "Russel", "Sable", "Sadie", "Saffron", "Sagittarius", "Sagwa", "Sailor", "Saki", "Sakura", "Salem", "Salmon", "Salt", "Sam", "Samantha", 
