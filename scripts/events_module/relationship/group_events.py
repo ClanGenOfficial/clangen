@@ -91,8 +91,12 @@ class Group_Events():
 
         interaction_str = interaction_str + f" ({inter_type} effect)"
         ids = list(self.abbreviations_cat_id.values())
+        relevant_event_tabs = ["relation", "interaction"]
+        if len(self.chosen_interaction.get_injuries) > 0:
+            relevant_event_tabs.append("health")
+
         game.cur_events_list.append(Single_Event(
-            interaction_str, ["relation", "interaction"], ids
+            interaction_str, relevant_event_tabs, ids
         ))
         return ids
 

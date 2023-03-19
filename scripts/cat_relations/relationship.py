@@ -158,8 +158,11 @@ class Relationship():
 
         interaction_str = interaction_str + effect
         self.log.append(interaction_str)
+        relevant_event_tabs = ["relation", "interaction"]
+        if len(self.chosen_interaction.get_injuries) > 0:
+            relevant_event_tabs.append("health")
         game.cur_events_list.append(Single_Event(
-            interaction_str, ["relation", "interaction"], [self.cat_to.ID, self.cat_from.ID]
+            interaction_str, relevant_event_tabs, [self.cat_to.ID, self.cat_from.ID]
         ))
 
     def get_amount(self, in_de_crease: str, intensity: str) -> int:
