@@ -1477,9 +1477,11 @@ class Events():
             else:
                 ran = game.config["graduation"]["base_app_timeskip_ex"]
 
+
             if not cat.mentor or Cat.fetch_cat(cat.mentor).not_working():
                 # Sick mentor debuff
                 mentor_modifier = 0.7
+                mentor_skill_modifier = 0
             else:
                 mentor_modifier = 1
                 cat_ob = Cat.fetch_cat(cat.mentor)
