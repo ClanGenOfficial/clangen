@@ -169,7 +169,7 @@ else:
         (800 - version_number.get_relative_rect()[2] - 8,
         700 - version_number.get_relative_rect()[3]))
 
-if get_version_info().is_source_build:
+if get_version_info().is_source_build or not get_version_info().is_release:
     dev_watermark = pygame_gui.elements.UILabel(
         scale(pygame.Rect((1050, 1321), (600, 100))),
         "Dev Build:",
