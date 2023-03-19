@@ -254,7 +254,6 @@ class UpdateWindow(UIWindow):
                          window_display_title='Game Over',
                          object_id='#game_over_window',
                          resizable=False)
-        self.clan_name = str(game.clan.name + 'Clan')
         self.last_screen = last_screen
         self.update_message = UITextBoxTweaked(
             f"Update in progress.",
@@ -306,7 +305,6 @@ class AnnounceRestart(UIWindow):
                          window_display_title='Game Over',
                          object_id='#game_over_window',
                          resizable=False)
-        self.clan_name = str(game.clan.name + 'Clan')
         self.last_screen = last_screen
         self.announce_message = UITextBoxTweaked(
             f"The game will automatically restart in 3...",
