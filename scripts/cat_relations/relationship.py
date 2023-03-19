@@ -126,13 +126,22 @@ class Relationship():
         self.interaction_affect_relationships(in_de_crease, intensity, rel_type)
         # give cats injuries if the game mode is not classic
         if len(self.chosen_interaction.get_injuries) > 0 and game_mode != 'classic':
-            for abbreviations, injuries in self.chosen_interaction.get_injuries.items():
+            for abbreviations, injury_dict in self.chosen_interaction.get_injuries.items():
+                if "injury_names" not in injury_dict:
+                    print(f"ERROR: there are no injury names in the chosen interaction {self.chosen_interaction.id}.")
+                    continue
+
                 injured_cat = self.cat_from
                 if abbreviations != "m_c":
                     injured_cat = self.cat_to
                 
-                for inj in injuries:
+                for inj in injury_dict["injury_names"]:
                     injured_cat.get_injured(inj, True)
+
+                injured_cat.possible_scar = injury_dict["scar_text"] if "scar_text" in injury_dict else None
+                injured_cat.possible_death = injury_dict["death_text"] if "death_text" in injury_dict else None
+                if injured_cat.status == "leader":
+                    injured_cat.possible_death = injury_dict["death_leader_text"] if "death_leader_text" in injury_dict else None
         
         # get any possible interaction string out of this interaction
         interaction_str = choice(self.chosen_interaction.interactions)
@@ -356,7 +365,7 @@ class Relationship():
             season : str
                 current season of the clan
             game_mode : str
-				game mode of the clan
+                game mode of the clan
 
             Returns
             -------
