@@ -120,22 +120,22 @@
     "Mimosa", "Fringe", "Ibis"
     ],
     "PALEGREY": [
-    "Grey", "Silver", "Pale", "Light", "Cloud", "Cloudy", "Hail", "Frost", "Ice", "Icy", "Mouse", "Bright", "Fog", "Freeze",
+    "Gray", "Grey", "Silver", "Pale", "Light", "Cloud", "Cloudy", "Hail", "Frost", "Ice", "Icy", "Mouse", "Bright", "Fog", "Freeze",
     "Frozen", "Stone", "Pebble", "Dove", "Sky", "Cotton", "Heather", "Ashen", "Titmouse", "Pipit", "Azalea", 
     "Fringe", "Mistle", "Icicle"
     ],
     "SILVER": [
-    "Grey", "Silver", "Cinder", "Ice", "Icy", "Frost", "Frozen", "Freeze", "Rain", "Blue", "Basalt",  "Mica",
+    "Gray", "Grey", "Silver", "Cinder", "Ice", "Icy", "Frost", "Frozen", "Freeze", "Rain", "Blue", "Basalt",  "Mica",
     "River", "Blizzard", "Flurry", "Bone", "Bleak", "Stone", "Pebble", "Heather", "Shale",  "Scale", "Crocus", 
     "Rue", "Fringe", "Glint", "Mistle", "Shatter", "Gossamer"
     ],
     "GREY": [
-    "Grey", "Grey", "Ash", "Ashen", "Cinder", "Rock", "Stone", "Shade", "Mouse", "Smoke", "Smoky", "Shadow", "Fog", "Bone",
+    "Gray", "Gray", "Grey", "Grey", "Ash", "Ashen", "Cinder", "Rock", "Stone", "Shade", "Mouse", "Smoke", "Smoky", "Shadow", "Fog", "Bone",
     "Bleak", "Rain", "Storm", "Soot", "Pebble", "Mist", "Misty", "Heather", "Shale", "Trout", "Shrike", "Plume", "Tassel",
     "Lyre"
     ],
     "DARKGREY": [
-    "Grey", "Shade", "Raven", "Crow", "Stone", "Dark", "Night", "Cinder", "Ash", "Ashen", "Pewter", "Twilight",
+    "Gray", "Grey", "Shade", "Raven", "Crow", "Stone", "Dark", "Night", "Cinder", "Ash", "Ashen", "Pewter", "Twilight",
     "Smoke", "Smokey", "Shadow", "Bleak", "Rain", "Storm", "Pebble", "Mist", "Misty", "Warbler", "Wisp", "Gum"
     ],
     "GHOST": [
@@ -191,7 +191,7 @@
     "GREEN": ["Green", "Fern", "Weed", "Holly", "Clover", "Olive"],
     "BLUE": ["Blue", "Blue", "Ice", "Sky", "Lake", "Frost", "Water"],
     "DARKBLUE": ["Dark", "Blue", "Sky", "Lake", "Berry", "Water", "Deep"],
-    "GREY": ["Grey", "Stone", "Silver", "Ripple", "Moon", "Rain", "Storm", "Heather"],
+    "GREY": ["Gray", "Grey", "Stone", "Silver", "Ripple", "Moon", "Rain", "Storm", "Heather"],
     "CYAN": ["Sky", "Blue", "River", "Rapid"],
     "EMERALD": ["Emerald", "Green", "Shine", "Blue", "Pine", "Weed"],
     "PALEBLUE": ["Pale", "Blue", "Sky", "River", "Ripple", "Day", "Cloud"],
@@ -289,6 +289,7 @@
     "Uriel", "Valente", "Valentino", "Van Pelt", "Vanilla", "Vaxx", "Velociraptor", "Venti", "Venture", "Via", "Victor", "Victoria", 
     "Vida", "Viktor", "Vinnie", "Vinyl", "Violet", "Virgo", "Vivienne", "Void", "Volkswagen", "Voltage", "Vox", "Waffle", "Wagyu", "Walnut", "Wanda", "Warren Peace", "Wasabi", "Webby", "Wednesday", 
     "Wendy", "Whiskers", "Whiskey", "Whisper", "Whiz Kid", "Wiggity Wacks", "Wigglebutt", "Windy", "Wishbone", "Wisp", "Wisteria", 
-    "Wolverine", "Wonder", "Worm", "X'ek", "Xelle", "Yaoyao", "Yeet", "Yeeted", "Yen", "Yeza", "Yote", "Yooted", "Yokai", "Yoshi", "Yuca", "Yuki", "Zari", "Zariah", "Zazu", "Zelda", "Zim", "Zion", "Zira", "Ziti", "Zoe", "Zorro" 
+    "Wolverine", "Wonder", "Worm", "X'ek", "Xelle", "Yaoyao", "Yeet", "Yeeted", "Yen", "Yeza", "Yote", "Yooted", "Yokai", "Yoshi", "Yuca", "Yuki",
+     "Zari", "Zariah", "Zazu", "Zelda", "Zim", "Zion", "Zira", "Ziti", "Zoe", "Zorro" 
     ]
 }
