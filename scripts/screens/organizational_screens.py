@@ -26,7 +26,7 @@ from scripts.game_structure.image_button import UIImageButton
 from scripts.utility import get_text_box_theme, scale, quit  # pylint: disable=redefined-builtin
 import pygame_gui
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
-from scripts.game_structure.windows import DeleteCheck
+from scripts.game_structure.windows import DeleteCheck, UpdateWindow, AnnounceRestart
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.game_structure import image_cache
 from ..datadir import get_data_dir
@@ -78,12 +78,15 @@ class StartScreen(Screens):
                     subprocess.Popen(['xdg-open', get_data_dir()])
                 return
             elif event.ui_element == self.update_button:
-                self_update("development-test")
-                # fetch_latest_dev()
-                # os.execv(sys.argv[0], sys.argv)
-                # exit(0)
+                self.x = UpdateWindow(game.switches['cur_screen'], self.announce_restart)
             elif event.ui_element == self.quit:
                 quit(savesettings=False, clearevents=False)
+
+    def announce_restart(self):
+        self.x.kill()
+        y = AnnounceRestart(game.switches['cur_screen'])
+        y.update(1)
+
 
     def on_use(self):
         """

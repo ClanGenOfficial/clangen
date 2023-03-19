@@ -3,6 +3,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import time
 import urllib.parse
 import zipfile
 import tarfile
@@ -12,6 +13,8 @@ import pathlib
 import pgpy
 import requests as requests
 
+from scripts.game_structure.image_button import UITextBoxTweaked
+from scripts.progress_bar_updater import UIUpdateProgressBar
 from scripts.utility import quit
 from scripts.version import get_version_info
 
@@ -65,8 +68,7 @@ def has_update():
         return False
 
 
-def self_update(release_channel='development-test'):
-
+def self_update(release_channel='development-test', progress_bar: UIUpdateProgressBar = None, progress_text: UITextBoxTweaked = None, asdf = None):
     print("Updating Clangen...")
     if platform.system() == 'Windows':
         if platform.architecture()[0][:2] == '32':
@@ -96,24 +98,45 @@ def self_update(release_channel='development-test'):
 
     print("Verifying...")
 
+    length = response.headers.get('Content-Length')
+
+    progress_bar.set_steps(int(length) / 1024, "Downloading update...", False, " MB", 1 / 1000 / 1000)
+    progress_bar.maximum_progress = int(length)
+
     with open("download.tmp", 'wb') as fd:
-        for chunk in response.iter_content(chunk_size=128):
+        for chunk in response.iter_content(chunk_size=1024):
             fd.write(chunk)
+            progress_bar.advance()
+
+    progress_bar.set_steps(9, "Verifying update...")
 
     decoded_signature = urllib.parse.unquote(encoded_signature)
+    progress_bar.advance()
 
     better_signature = decoded_signature.replace("-----BEGIN+PGP+SIGNATURE-----", "-----BEGIN PGP SIGNATURE-----")
+    progress_bar.advance()
+
     better_signature = better_signature.replace("-----END+PGP+SIGNATURE-----", "-----END PGP SIGNATURE-----")
+    progress_bar.advance()
 
     download_file("https://raw.githubusercontent.com/archanyhm/clangen/auto-update/verification/update_pubkey.asc")
+    progress_bar.advance()
 
     key, _ = pgpy.PGPKey.from_file("./Downloads/update_pubkey.asc")
+    progress_bar.advance()
 
     try:
         with open("./download.tmp", "rb") as fd:
+            progress_bar.advance()
+
             data = fd.read()
+            progress_bar.advance()
+
             signature = pgpy.PGPSignature.from_blob(better_signature)
+            progress_bar.advance()
+
             key.verify(data, signature)
+            progress_bar.advance()
         print("Signature check succeeded.")
     except pgpy.errors.PGPError:
         print("Signature mismatch.")
@@ -147,21 +170,43 @@ def self_update(release_channel='development-test'):
         quit()
 
     elif platform.system() == 'Darwin':
+        progress_bar.set_steps(11, "Installing update...")
+
         with zipfile.ZipFile("download.tmp", 'r') as zip_ref:
+            progress_bar.advance()
+
             zip_ref.extractall('Downloads')
+            progress_bar.advance()
+
         os.remove("download.tmp")
+        progress_bar.advance()
 
         with tempfile.TemporaryDirectory() as mountdir:
+            progress_bar.advance()
+
             os.system(f'hdiutil attach -nobrowse -mountpoint {mountdir} Downloads/Clangen_macOS64.dmg')
-            try:
-                shutil.rmtree('/Applications/Clangen.app.old', ignore_errors=True)
-                shutil.move('/Applications/Clangen.app', '/Applications/Clangen.app.old')
-                shutil.copytree(f'{mountdir}/Clangen.app', '/Applications/Clangen.app')
-                shutil.rmtree('Downloads', ignore_errors=True)
-                os.execv('/Applications/Clangen.app/Contents/MacOS/Clangen', sys.argv)
-            finally:
-                os.system(f'hdiutil detach {mountdir}')
-                os.rmdir(mountdir)
+            progress_bar.advance()
+
+            shutil.rmtree('/Applications/Clangen.app.old', ignore_errors=True)
+            progress_bar.advance()
+
+            shutil.move('/Applications/Clangen.app', '/Applications/Clangen.app.old')
+            progress_bar.advance()
+
+            shutil.copytree(f'{mountdir}/Clangen.app', '/Applications/Clangen.app')
+            progress_bar.advance()
+
+            shutil.rmtree('Downloads', ignore_errors=True)
+            progress_bar.advance()
+
+            os.system(f'hdiutil detach {mountdir}')
+            progress_bar.advance()
+
+            os.rmdir(mountdir)
+            progress_bar.advance()
+        asdf()
+        time.sleep(3)
+        os.execv('/Applications/Clangen.app/Contents/MacOS/Clangen', sys.argv)
         quit()
 
     elif platform.system() == 'Linux':
