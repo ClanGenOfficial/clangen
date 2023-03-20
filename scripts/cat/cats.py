@@ -69,13 +69,13 @@ class Cat():
         'senior'
     ]
     age_moons = {
-        'newborn': [0, 0],
-        'kitten': [1, 5],
-        'adolescent': [6, 11],
-        'young adult': [12, 47],
-        'adult': [48, 95],
-        'senior adult': [96, 119],
-        'senior': [120, 300]
+        'newborn': game.config["cat_ages"]["newborn"],
+        'kitten': game.config["cat_ages"]["kitten"],
+        'adolescent': game.config["cat_ages"]["adolescent"],
+        'young adult': game.config["cat_ages"]["young adult"],
+        'adult': game.config["cat_ages"]["adult"],
+        'senior adult': game.config["cat_ages"]["senior adult"],
+        'senior': game.config["cat_ages"]["senior"]
     }
 
     # This in is in reverse order: top of the list at the bottom
