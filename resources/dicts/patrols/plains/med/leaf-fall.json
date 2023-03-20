@@ -303,7 +303,7 @@
     "exp": 30,
     "success_text": [
             "As they walk, p_l teaches app1 about how crucial catmint is for treating coughs, and how although its scent hold drugged pleasure for cats, part of the responsibility of being a medicine cat is avoiding becoming caught in its pleasant haze. The medicine cats carefully pick out catmint from its known hiding places, carting it back to camp where it will protect the Clan.",
-            "Leaf-fall indicates the last of the catmint harvest, and p_l works hard to bring some home before the plants wilt and lose their potency, showing app1 how some of the stems are already starting to look discoloured. Frost doesn't agree with catmint.",
+            "Leaf-fall indicates the last of the catmint harvest, and p_l works hard to bring some home before the plants wilt and lose their potency, showing app1 how some of the stems are already starting to look discolored. Frost doesn't agree with catmint.",
             "s_c makes a circuit visiting all the known catmint plants in c_n's territory. While some are already wilting from frost, there's more than enough to harvest and bring back to the herb stores, and showing app1 all the plants will prepare them for trying to refind catmint in newleaf."
 ],
     "fail_text": [
@@ -912,7 +912,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "The low-growing marigold creeps across the ground, spotted less by its strange leaves that look like they're pretending to be small fern fronds from a distance, and more by their explosively sunset-coloured flowers. Time to collect these while they're still here.",
+            "The low-growing marigold creeps across the ground, spotted less by its strange leaves that look like they're pretending to be small fern fronds from a distance, and more by their explosively sunset-colored flowers. Time to collect these while they're still here.",
             "It stops infection, bleeding, and sore joints - why would any medicine cat ever want to risk running out of it? p_l brings back as much marigold as they can stuff into their mouth.",
             "s_c finds a patch of marigold, harvests its best leaves and flowers, and pads home, unaware of how much of their success rests on their talent for herb gathering."
 ],
@@ -936,7 +936,7 @@
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-            "The low-growing marigold creeps across the ground, spotted less by its strange leaves that look like they're pretending to be small fern fronds from a distance, and more by their explosively sunset-coloured flowers. Time to collect these while they're still here, and the medicine cats work with urgency.",
+            "The low-growing marigold creeps across the ground, spotted less by its strange leaves that look like they're pretending to be small fern fronds from a distance, and more by their explosively sunset-colored flowers. Time to collect these while they're still here, and the medicine cats work with urgency.",
             "It stops infection, bleeding, and sore joints - why would any medicine cat ever want to risk running out of it? p_l brings back as much marigold as they can stuff into their mouth, and app1 actually drops some of the leaves they carry on the way back to camp, a little over-ambitious with how much they can carry.",
             "s_c finds a patch of marigold, harvests its best leaves and flowers, and pads home, unaware of how much of their success rests on their talent for herb gathering. app1 watches, trying to soak up their skills."
 ],
@@ -960,7 +960,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "The low-growing marigold creeps across the ground, spotted less by its strange leaves that look like they're pretending to be small fern fronds from a distance, and more by their explosively sunset-coloured flowers. Time to collect these while they're still here, and every cat returns to camp carrying some.",
+            "The low-growing marigold creeps across the ground, spotted less by its strange leaves that look like they're pretending to be small fern fronds from a distance, and more by their explosively sunset-colored flowers. Time to collect these while they're still here, and every cat returns to camp carrying some.",
             "It stops infection, bleeding, and sore joints - why would any medicine cat ever want to risk running out of it? p_l brings back as much marigold as they can stuff into their mouth. The warriors helping them don't understand the importance, but obligingly follow p_l's example.",
             "s_c finds a patch of marigold, harvests its best leaves and flowers, and pads home, unaware of how much of their success rests on their talent for herb gathering. The patrol is also unaware, but it certainly helps their faith in their medicine cat to see them succeed with such competence."
     ],
@@ -1051,7 +1051,7 @@
     "biome": "plains",
     "season": "leaf-fall",
     "tags": ["herb_gathering", "med_only", "herb", "oak_leaves", "many_herbs1", "many_herbs2"],
-    "intro_text": "As the oaks are washed with brilliant colour, p_l heads out on a patrol to gather their last green leaves.",
+    "intro_text": "As the oaks are washed with brilliant color, p_l heads out on a patrol to gather their last green leaves.",
     "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
     "chance_of_success": 70,
     "exp": 10,
@@ -1075,12 +1075,12 @@
     "biome": "plains",
     "season": "leaf-fall",
     "tags": ["herb_gathering", "med_only", "med_cat", "herb", "oak_leaves", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
-    "intro_text": "As the oaks are washed with brilliant colour, p_l heads out on a patrol to gather their last green leaves, explaining to app1 how the leaves lose their herbal potency with the reds of leaf-fall.",
+    "intro_text": "As the oaks are washed with brilliant color, p_l heads out on a patrol to gather their last green leaves, explaining to app1 how the leaves lose their herbal potency with the reds of leaf-fall.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-            "Picking only the green leaves proves challenging, but not impossible, and with careful effort p_l still manages to bring a decent number home. app1 takes on the lesson about leaf colour quickly, impressing p_l with their efforts to learn herbcraft.",
+            "Picking only the green leaves proves challenging, but not impossible, and with careful effort p_l still manages to bring a decent number home. app1 takes on the lesson about leaf color quickly, impressing p_l with their efforts to learn herbcraft.",
             "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine den, and they're always happy to bring a good crop of them back to the herb stores. They use the afternoon to give app1 the chance to lead their expidition, allowing the apprentice to swell with confidence.",
             "s_c spots an oak tree that's valiantly trying to sprout leaves from a half fallen branch, one of the casualties of last leaf-bare, and heads to harvest from that, taking the safe option of plucking leaves from the ground. app1 asks them if the damaged branch will produce less potent leaves, but s_c doens't think so - if the leaves are growing here at all they should be the same."
 ],
@@ -1099,7 +1099,7 @@
     "biome": "plains",
     "season": "leaf-fall",
     "tags": ["herb_gathering", "warrior", "herb", "oak_leaves", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
-    "intro_text": "As the oaks are washed with brilliant colour, p_l heads out on a gathering patrol with warriors to gather their last green leaves.",
+    "intro_text": "As the oaks are washed with brilliant color, p_l heads out on a gathering patrol with warriors to gather their last green leaves.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
     "exp": 10,
