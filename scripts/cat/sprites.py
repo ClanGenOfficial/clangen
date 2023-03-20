@@ -205,8 +205,8 @@ sprites.make_group('lineartdead', (0, 0), 'lineartdead')
 sprites.make_group('lineartdf', (0, 0), 'lineartdf')
 
 # Fading Fog
-for i in range(1, 4):
-    sprites.make_group('fademask', (i, 0), f'fademask{i}',)
+for i in range(0, 3):
+    sprites.make_group('fademask', (i, 0), f'fademask{i}')
     sprites.make_group('fadestarclan', (i, 0), f'fadestarclan{i}')
     sprites.make_group('fadedarkforest', (i, 0), f'fadedf{i}')
 
@@ -339,7 +339,7 @@ for a, i in enumerate(['LIGHTBROWN', 'BROWN', 'DARKBROWN', 'BLACK']):
 # new new torties
 for a, i in enumerate(['ONE', 'TWO', 'THREE', 'FOUR', 'REDTAIL', 'DELILAH']):
     sprites.make_group('tortiepatchesmasks', (a, 0), f"tortiemask{i}")
-for a, i in enumerate(['MINIMAL1', 'MINIMAL2', 'MINIMAL3', 'MINIMAL4', 'OREO', 'SWOOP']):
+for a, i in enumerate(['MINIMALONE', 'MINIMALTWO', 'MINIMALTHREE', 'MINIMALFOUR', 'OREO', 'SWOOP']):
     sprites.make_group('tortiepatchesmasks', (a, 1), f"tortiemask{i}")
 for a, i in enumerate(['MOTTLED', 'SIDEMASK', 'EYEDOT', 'BANDANA', 'PACMAN', 'STREAMSTRIKE']):
     sprites.make_group('tortiepatchesmasks', (a, 2), f"tortiemask{i}")

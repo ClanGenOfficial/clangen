@@ -276,8 +276,8 @@ def create_new_cat(Cat,
         if not gender:
             gender = choice(['female', 'male'])
 
-        # other clan cats and kittens (kittens get indoctrinated lmao no old names for them)
-        if other_clan or kit or litter:
+        # other clan cats, apps, and kittens (kittens and apps get indoctrinated lmao no old names for them)
+        if other_clan or kit or litter or age < 12:
             new_cat = Cat(moons=age,
                           status=status,
                           gender=gender,
@@ -1024,13 +1024,14 @@ def update_sprite(cat):
 
         # Apply fading fog
         if cat.opacity <= 97 and not cat.prevent_fading and game.settings["fading"]:
-            stage = "1"
+            
+            stage = "0"
             if 80 >= cat.opacity > 45:
+                # Stage 1
+                stage = "1"
+            elif cat.opacity <= 45:
                 # Stage 2
                 stage = "2"
-            elif cat.opacity <= 45:
-                # Stage 3
-                stage = "3"
 
             new_sprite.blit(sprites.sprites['fademask' + stage + cat_sprite], 
                             (0, 0), special_flags=pygame.BLEND_RGBA_MULT)

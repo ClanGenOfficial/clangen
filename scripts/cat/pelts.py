@@ -264,7 +264,7 @@ pelt_c_no_bw = [
     'DARKGINGER', 'CREAM', 'LIGHTBROWN', 'BROWN', 'DARKBROWN'
 ]
 
-tortiepatterns = ['ONE', 'TWO', 'THREE', 'FOUR', 'REDTAIL', 'DELILAH', 'MINIMAL1', 'MINIMAL2', 'MINIMAL3', 'MINIMAL4',
+tortiepatterns = ['ONE', 'TWO', 'THREE', 'FOUR', 'REDTAIL', 'DELILAH', 'MINIMALONE', 'MINIMALTWO', 'MINIMALTHREE', 'MINIMALFOUR',
                   'OREO', 'SWOOP', 'MOTTLED', 'SIDEMASK', 'EYEDOT', 'BANDANA', 'PACMAN', 'STREAMSTRIKE', 'ORIOLE',
                   'ROBIN', 'BRINDLE', 'PAIGE']
 tortiebases = ['single', 'tabby', 'bengal', 'marbled', 'ticked', 'smoke', 'rosette', 'speckled', 'mackerel',
@@ -563,6 +563,9 @@ def describe_appearance(cat, short=False):
         color_name = f"{color_name} point"
         if "ginger point" in color_name:
             color_name.replace("ginger point", "flame point")
+
+    if "white and white" in color_name:
+        color_name = color_name.replace("white and white", "white")
 
     # Now it's time for gender
     if cat.genderalign in ["female", "trans female"]:
