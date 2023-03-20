@@ -1440,7 +1440,7 @@ class Events():
                 med_cat = random.choice(names.names_dict["normal_prefixes"]) + \
                           random.choice(names.names_dict["normal_suffixes"])
             if not prev_lead:
-                prev_lead = str(names.names_dict["normal_prefixes"]) + "star"
+                prev_lead = random.choice(names.names_dict["normal_prefixes"]) + "star"
             cat.life_givers.extend([
                 queen, warrior, kit, warrior2, app, elder, warrior3, med_cat,
                 prev_lead
