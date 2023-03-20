@@ -1182,7 +1182,7 @@ class Events():
 
         # getting the random honor if it's needed
         random_honor = None
-        if promoted_to == ['warrior', 'mediator', 'medicine cat']:
+        if promoted_to == ['warrior', 'mediator']:
             resource_dir = "resources/dicts/events/ceremonies/"
             with open(f"{resource_dir}ceremony_traits.json",
                       encoding="ascii") as read_file:
