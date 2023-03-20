@@ -1028,7 +1028,7 @@ class Patrol():
             if "litternewborn" in attribute_list:
                 print('litter is newborn')
                 kit_age = 0
-                kit_thought = "Snuggles against another cat"
+                kit_thought = "Mewls quietly for milk"
             else:
                 print('litter is not newborn')
                 kit_age = randint(1, 5)
