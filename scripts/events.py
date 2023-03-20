@@ -1440,7 +1440,7 @@ class Events():
                 med_cat = random.choice(names.names_dict["normal_prefixes"]) + \
                           random.choice(names.names_dict["normal_suffixes"])
             if not prev_lead:
-                prev_lead = str(names.names_dict["normal_prefixes"]) + "star"
+                prev_lead = random.choice(names.names_dict["normal_prefixes"]) + "star"
             cat.life_givers.extend([
                 queen, warrior, kit, warrior2, app, elder, warrior3, med_cat,
                 prev_lead
@@ -2032,7 +2032,7 @@ class Events():
                     if all_warriors:
                         random_cat = random.choice(all_warriors)
                         involved_cats = [random_cat.ID]
-                        text = f"No cat in is truly fit to be deputy, " \
+                        text = f"No cat is truly fit to be deputy, " \
                                f"but the position can't remain vacant. " \
                                f"{random_cat.name} is appointed as the new deputy. "
 
