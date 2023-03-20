@@ -189,10 +189,18 @@
 	"lost_cat": {
 		"rejoin_chance": 20
 	},
-	"cotc_generation": {
-		"kittypet_chance": 30,
-		"rogue_chance": 30,
-		"loner_chance": 30
+	"cat_ages": {
+		"newborn": [0, 0],
+		"kitten": [1, 5],
+		"adolescent": [6, 11],
+		"young adult": [12, 47],
+        "adult": [48, 95],
+        "senior adult": [96, 119],
+        "senior": [120, 300],
+		"comment": [
+			"These HAVE to be in the correct order: where one ends, the next one begins on the next number.",
+			"If you DON'T DO THIS, your game WILL break."
+		]
 	},
 	"patrol_generation": {
 		"classic_difficulty_modifier": 1,
