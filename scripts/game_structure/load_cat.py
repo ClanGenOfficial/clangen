@@ -176,6 +176,14 @@ def json_load():
                 # generated before the "ginger-on-ginger" update. If it was generated after that update,
                 # tortiecolour and pelt_colour will be the same. Therefore, lets also re-set the pelt color
                 new_cat.pelt.colour = cat["tortie_color"]
+            elif cat["pattern"] == "MINIMAL1":
+                new_cat.pattern = "MINIMALONE"
+            elif cat["pattern"] == "MINIMAL2":
+                new_cat.pattern = "MINIMALTWO"
+            elif cat["pattern"] == "MINIMAL3":
+                new_cat.pattern = "MINIMALTHREE"
+            elif cat["pattern"] == "MINIMAL4":
+                new_cat.pattern = "MINIMALFOUR"
             else:
                 new_cat.pattern = cat["pattern"]
                 new_cat.tortiecolour = cat["tortie_color"]
