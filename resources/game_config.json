@@ -251,7 +251,7 @@
 
 
 	"fun": {
-		"all_cats_are_newborn": true,
+		"all_cats_are_newborn": false,
 		"newborns_can_roam": false,
 		"newborns_can_patrol": false
 	}
