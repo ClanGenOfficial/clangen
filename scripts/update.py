@@ -166,7 +166,7 @@ def self_update(release_channel='development-test', progress_bar: UIUpdateProgre
         # print("Powershell will now be used to update Clangen.")
         # print("A console window will open and close automatically. Please do not be alarmed.")
 
-        subprocess.Popen(["./winupdate.exe", os.getcwd()], cwd=path, creationflags=subprocess.DETACHED_PROCESS | subprocess.CREATE_NEW_PROCESS_GROUP | subprocess.CREATE_BREAKAWAY_FROM_JOB)
+        subprocess.Popen(["./winupdate.exe", os.getcwd()], cwd=path, close_fds=True, creationflags=subprocess.DETACHED_PROCESS | subprocess.CREATE_NEW_PROCESS_GROUP | subprocess.CREATE_BREAKAWAY_FROM_JOB)
         quit()
 
     elif platform.system() == 'Darwin':
