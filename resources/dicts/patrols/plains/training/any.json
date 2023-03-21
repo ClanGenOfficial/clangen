@@ -614,7 +614,7 @@
                 "As they head out to the border, app1 rushes app2 along. It's too fast in such murky lighting, an app2 hurts themselves tumbling into an unseen hole. Their little outing is called off, and both of the apprentices return home, one limping, disappointed and struggling with feelings of rejection."
         ],
 
-        "win_trait": ["bold", "charismatic", "playful", "empathetic", "faithful", "loving", "insecure", "lonesome", "loyal"]
+        "win_trait": ["bold", "charismatic", "playful", "empathetic", "faithful", "loving", "insecure", "lonesome", "loyal"],
         "min_cats": 2,
         "max_cats": 2,
         "antagonize_text": null,
