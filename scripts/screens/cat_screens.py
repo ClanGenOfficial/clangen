@@ -2010,21 +2010,21 @@ class ChangeNameScreen(Screens):
                                                                     placeholder_text=self.the_cat.name.prefix
                                                                     , manager=MANAGER)
         
-        self.random_pre = UIImageButton(scale(pygame.Rect((730, 460), (68, 68))), "",
+        self.random_pre = UIImageButton(scale(pygame.Rect((586, 460), (68, 68))), "",
                                         object_id="#random_dice_button"
                                         , manager=MANAGER)
 
-        self.random_suff = UIImageButton(scale(pygame.Rect((802, 460), (68, 68))), "",
+        self.random_suff = UIImageButton(scale(pygame.Rect((946, 460), (68, 68))), "",
                                                 object_id="#random_dice_button"
                                                 , manager=MANAGER)
         
-        self.toggle_spec_block_on = UIImageButton(scale(pygame.Rect((1170, 413), (34, 34))), "",
-                                                  object_id="#checked_checkbox",
-                                                  tool_tip_text="Unlocks the special suffix. This allows you to see and edit the cats real suffix, that would show if the cat does not have a special suffix", manager=MANAGER)
+        self.toggle_spec_block_on = UIImageButton(scale(pygame.Rect((1150, 396), (68, 68))), "",
+                                                  object_id="#unchecked_checkbox",
+                                                  tool_tip_text="Allow editing the underlying suffix. Currently, this is overwritten by the cat's rank, as it has a special suffix", manager=MANAGER)
 
-        self.toggle_spec_block_off = UIImageButton(scale(pygame.Rect((1170, 413), (34, 34))), "",
-                                                    object_id="#unchecked_checkbox",
-                                                    tool_tip_text="Unlocks the special suffix. This allows you to see and edit the cats real suffix, that would show if the cat does not have a special suffix", manager=MANAGER)
+        self.toggle_spec_block_off = UIImageButton(scale(pygame.Rect((1150, 396), (68, 68))), "",
+                                                    object_id="#checked_checkbox",
+                                                    tool_tip_text="Disable editing the underlying suffix. Currently, this is overwritten by the cat's rank, as it has a special suffix", manager=MANAGER)
 
         if self.the_cat.name.status in self.the_cat.name.names_dict["special_suffixes"]:
             self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((800, 400), (360, 60))),
@@ -2121,14 +2121,16 @@ class ChangeNameScreen(Screens):
                 self.toggle_spec_block_on.hide()
                 self.toggle_spec_block_off.enable()
                 self.toggle_spec_block_off.show()
+                self.suffix_entry_box.set_text(self.the_cat.name.suffix)
             elif event.ui_element == self.toggle_spec_block_off:
-                self.suffix_entry_box.disable()
                 self.random_suff.disable()
                 self.toggle_spec_block_off.disable()
                 self.toggle_spec_block_off.hide()
                 self.toggle_spec_block_on.enable()
                 self.toggle_spec_block_on.show()
                 self.suffix_entry_box.set_text("")
+                self.suffix_entry_box.rebuild()
+                self.suffix_entry_box.disable()
             elif event.ui_element == self.back_button:
                 self.change_screen('profile screen')
 
