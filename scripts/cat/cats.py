@@ -467,7 +467,8 @@ class Cat():
                              self.pelt.colour,
                              self.eye_colour,
                              self.pelt.name,
-                             self.tortiepattern)
+                             self.tortiepattern,
+                             game.clan.biome)
         else:
             self.name = Name(status, prefix, suffix, eyes=self.eye_colour)
 
