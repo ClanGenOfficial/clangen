@@ -670,12 +670,26 @@ class Events():
         """
         trigger events
         """
-
         if cat.dead:
             cat.thoughts()
             cat.dead_for += 1
             self.handle_fading(cat)  # Deal with fading.
             return
+
+        # switches between the two death handles
+        self.handle_outbreaks(cat)
+        if random.getrandbits(1):
+            triggered_death = self.handle_injuries_or_general_death(cat)
+            if not triggered_death:
+                self.handle_illnesses_or_illness_deaths(cat)
+            else:
+                return
+        else:
+            triggered_death = self.handle_illnesses_or_illness_deaths(cat)
+            if not triggered_death:
+                self.handle_injuries_or_general_death(cat)
+            else:
+                return
 
         # all actions, which do not trigger an event display and
         # are connected to cats are located in there
@@ -725,6 +739,10 @@ class Events():
         # this is the new interaction function, currently not active
         # cat.relationship_interaction()
         cat.thoughts()
+
+        # relationships have to be handled separately, because of the ceremony name change
+        if not cat.dead or cat.outside:
+            self.relation_events.handle_relationships(cat)
 
     def check_clan_relations(self):
         """

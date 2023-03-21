@@ -262,7 +262,9 @@ def create_new_cat(Cat,
         age = age
     # setting status
     if not status:
-        if age < 6:
+        if age == 0:
+            status = "newborn"
+        elif age < 6:
             status = "kitten"
         elif 6 <= age <= 11:
             status = "apprentice"
