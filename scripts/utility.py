@@ -72,7 +72,7 @@ def get_alive_kits(Cat):
     returns a list of all living kittens in the clan
     """
     alive_kits = list(filter(
-        lambda kitty: (kitty.age == "kitten"
+        lambda kitty: (kitty.age in ['kitten', 'newborn']
                        and not kitty.dead
                        and not kitty.outside),
         Cat.all_cats.values()
@@ -247,7 +247,7 @@ def create_new_cat(Cat,
         number_of_cats = choices([1, 2, 3, 4, 5], [2, 5, 4, 1, 1], k=1)
         number_of_cats = number_of_cats[0]
     # setting age
-    if not age:
+    if not age and age != 0:
         if litter or kit:
             age = randint(0, 5)
         elif status == 'apprentice':
@@ -262,7 +262,9 @@ def create_new_cat(Cat,
         age = age
     # setting status
     if not status:
-        if age < 6:
+        if age == 0:
+            status = "newborn"
+        elif age < 6:
             status = "kitten"
         elif 6 <= age <= 11:
             status = "apprentice"
@@ -923,6 +925,8 @@ def update_sprite(cat):
         else:
             cat_sprite = str(18)
     else:
+        if cat.age == 'elder':
+            cat.age = 'senior'
         cat_sprite = str(cat.cat_sprites[cat.age])
 
 # generating the sprite

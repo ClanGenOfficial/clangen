@@ -91,8 +91,12 @@ class Group_Events():
 
         interaction_str = interaction_str + f" ({inter_type} effect)"
         ids = list(self.abbreviations_cat_id.values())
+        relevant_event_tabs = ["relation", "interaction"]
+        if len(self.chosen_interaction.get_injuries) > 0:
+            relevant_event_tabs.append("health")
+
         game.cur_events_list.append(Single_Event(
-            interaction_str, ["relation", "interaction"], ids
+            interaction_str, relevant_event_tabs, ids
         ))
         return ids
 
@@ -523,11 +527,19 @@ class Group_Events():
         if len(self.chosen_interaction.get_injuries) <= 0:
             return
 
-        for abbreviations, injuries in self.chosen_interaction.get_injuries.items():
+        for abbreviations, injury_dict in self.chosen_interaction.get_injuries.items():
+            if "injury_names" not in injury_dict:
+                print(f"ERROR: there are no injury names in the chosen interaction {self.chosen_interaction.id}.")
+                continue
             injured_cat = Cat.all_cats[self.abbreviations_cat_id[abbreviations]]
             
-            for inj in injuries:
+            for inj in injury_dict["injury_names"]:
                 injured_cat.get_injured(inj, True)
+
+            injured_cat.possible_scar = injury_dict["scar_text"] if "scar_text" in injury_dict else None
+            injured_cat.possible_death = injury_dict["death_text"] if "death_text" in injury_dict else None
+            if injured_cat.status == "leader":
+                injured_cat.possible_death = injury_dict["death_leader_text"] if "death_leader_text" in injury_dict else None
 
     def prepare_text(self, text: str) -> str:
         """Prep the text based of the amount of cats and the assigned abbreviations."""
