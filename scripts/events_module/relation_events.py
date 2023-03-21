@@ -201,8 +201,8 @@ class Relation_Events():
 
                 cat_to_choose_from = free_possible_mates
                 if len(other_love_interest) > 0:
-                    cat_to_choose_from.extended(other_love_interest)
-                    cat_to_choose_from.extended(other_love_interest)
+                    cat_to_choose_from.extend(other_love_interest)
+                    cat_to_choose_from.extend(other_love_interest)
 
                 if len(free_possible_mates) < 1:
                     return
@@ -214,8 +214,8 @@ class Relation_Events():
             
             cat_to_choose_from = free_possible_mates
             if len(other_love_interest) > 0:
-                cat_to_choose_from.extended(other_love_interest)
-                cat_to_choose_from.extended(other_love_interest)
+                cat_to_choose_from.extend(other_love_interest)
+                cat_to_choose_from.extend(other_love_interest)
 
             if len(free_possible_mates) < 1:
                 return
