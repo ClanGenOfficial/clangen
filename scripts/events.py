@@ -717,10 +717,11 @@ class Events():
             if cat.dead:
                 return
 
+        if cat.is_disabled():
+            self.condition_events.handle_already_disabled(cat)
+
         # prevent injured or sick cats from unrealistic clan events
         if cat.is_ill() or cat.is_injured():
-            if cat.is_disabled():
-                self.condition_events.handle_already_disabled(cat)
             self.coming_out(cat)
             self.pregnancy_events.handle_having_kits(cat, clan=game.clan)
             self.handle_apprentice_EX(cat)
@@ -732,13 +733,16 @@ class Events():
             return
 
         # check for death/reveal/risks/retire caused by permanent conditions
-        if cat.is_disabled():
-            self.condition_events.handle_already_disabled(cat)
+
+        if cat.status == 'newborn':
+            cat.create_interaction()
+            cat.thoughts()
+            return
 
         self.coming_out(cat)
         self.pregnancy_events.handle_having_kits(cat, clan=game.clan)
         self.handle_apprentice_EX(cat)
-        self.perform_ceremonies(cat)  # here is age up included
+        self.perform_ceremonies(cat)
         cat.create_interaction()
         self.invite_new_cats(cat)
         self.other_interactions(cat)
@@ -1836,7 +1840,7 @@ class Events():
             if cat.illnesses[illness]["infectiousness"] == 0:
                 continue
             chance = cat.illnesses[illness]["infectiousness"]
-            chance += len(meds) * 5
+            chance += len(meds) * 7
             if not int(random.random() * chance):  # 1/chance to infect
                 # fleas are the only condition allowed to spread outside of cold seasons
                 if game.clan.current_season not in ["Leaf-bare", "Leaf-fall"
@@ -1847,7 +1851,7 @@ class Events():
                     alive_cats = list(
                         filter(
                             lambda kitty:
-                            (kitty.status == "kitten" and not kitty.dead and
+                            (kitty.status in ['kitten', 'newborn'] and not kitty.dead and
                              not kitty.outside), Cat.all_cats.values()))
                     alive_count = len(alive_cats)
 

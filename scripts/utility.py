@@ -72,7 +72,7 @@ def get_alive_kits(Cat):
     returns a list of all living kittens in the clan
     """
     alive_kits = list(filter(
-        lambda kitty: (kitty.age == "kitten"
+        lambda kitty: (kitty.age in ['kitten', 'newborn']
                        and not kitty.dead
                        and not kitty.outside),
         Cat.all_cats.values()

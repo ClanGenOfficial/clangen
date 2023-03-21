@@ -986,6 +986,7 @@ class Patrol():
         # handing out ages
         if "newborn" in attribute_list:
             age = 0
+            status = 'newborn'
         elif "adolescent" in attribute_list:
             age = randint(6, 11)
         elif "youngadult" in attribute_list:

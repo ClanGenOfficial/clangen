@@ -1323,7 +1323,7 @@ class AllegiancesScreen(Screens):
                 living_mediators.append(cat)
             elif cat.status in ["apprentice", "medicine cat apprentice", "mediator apprentice"]:
                 living_apprentices.append(cat)
-            elif cat.status == "kitten":
+            elif cat.status in ["kitten", "newborn"]:
                 living_kits.append(cat)
             elif cat.status == "elder":
                 living_elders.append(cat)
@@ -1649,20 +1649,22 @@ class MedDenScreen(Screens):
             for cat in self.injured_and_sick_cats:
                 if cat.injuries:
                     for injury in cat.injuries:
-                        if cat.injuries[injury]["severity"] != 'minor' and injury not in ['recovering from birth',
+                        if cat.injuries[injury]["severity"] != 'minor' and injury not in ["pregnant", 'recovering from birth',
                                                                                           "sprain", "lingering shock"]:
-                            self.in_den_cats.append(cat)
+                            if cat not in self.in_den_cats:
+                                self.in_den_cats.append(cat)
                             if cat in self.out_den_cats:
                                 self.out_den_cats.remove(cat)
                             elif cat in self.minor_cats:
                                 self.minor_cats.remove(cat)
                             break
-                        elif injury in ['recovering from birth', "sprain", "lingering shock"]:
-                            self.out_den_cats.append(cat)
+                        elif injury in ['recovering from birth', "sprain", "lingering shock", "pregnant"] and cat not in self.in_den_cats:
+                            if cat not in self.out_den_cats:
+                                self.out_den_cats.append(cat)
                             if cat in self.minor_cats:
                                 self.minor_cats.remove(cat)
                             break
-                        else:
+                        elif cat not in (self.in_den_cats or self.out_den_cats):
                             if cat not in self.minor_cats:
                                 self.minor_cats.append(cat)
                 if cat.illnesses:
@@ -1909,7 +1911,9 @@ class MedDenScreen(Screens):
             if cat.illnesses:
                 condition_list.extend(cat.illnesses.keys())
             if cat.permanent_condition:
-                condition_list.extend(cat.permanent_condition.keys())
+                for condition in cat.permanent_condition:
+                    if cat.permanent_condition[condition]["moons_until"] == -2:
+                        condition_list.extend(cat.permanent_condition.keys())
             conditions = ",<br>".join(condition_list)
 
             self.cat_buttons["able_cat" + str(i)] = UISpriteButton(scale(pygame.Rect
