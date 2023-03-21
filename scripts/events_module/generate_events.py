@@ -323,6 +323,10 @@ class GenerateEvents:
             # check for old age
             if "old_age" in event.tags and cat.moons < 150:
                 continue
+            # remove some of the non old age events to encourage elders to die of old age more often
+            if "old_age" not in event.tags and cat.moons < 150:
+                if not int(random.random() * 2):
+                    continue
 
             # check other_cat status and other identifiers
             if other_cat:

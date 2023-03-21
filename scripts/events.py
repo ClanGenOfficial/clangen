@@ -668,7 +668,17 @@ class Events():
 
     def one_moon_cat(self, cat):
         """
-        trigger events
+        Triggers various moon events for a cat.
+        -If dead, cat is given thought, dead_for count increased, and fading handled (then function is returned)
+        -Outbreak chance is handled, death event is attempted, and conditions are handled (if death happens, return)
+        -cat.one_moon() is triggered
+        -mediator events are triggered (this includes the cat choosing to become a mediator)
+        -freshkill pile events are triggered
+        -if the cat is injured or ill, they're given their own set of possible events to avoid unrealistic behavior.
+        They will handle disability events, coming out, pregnancy, apprentice EXP, ceremonies, relationship events, and
+        will generate a new thought. Then the function is returned.
+        -if the cat was not injured or ill, then they will do all of the above *and* trigger misc events, acc events,
+        and new cat events
         """
         if cat.dead:
             cat.thoughts()
@@ -725,17 +735,15 @@ class Events():
         if cat.is_disabled():
             self.condition_events.handle_already_disabled(cat)
 
-        self.handle_apprentice_EX(cat)
-        self.perform_ceremonies(cat)  # here is age up included
-
-        self.invite_new_cats(cat)
-
-        self.other_interactions(cat)
         self.coming_out(cat)
         self.pregnancy_events.handle_having_kits(cat, clan=game.clan)
+        self.handle_apprentice_EX(cat)
+        self.perform_ceremonies(cat)  # here is age up included
+        cat.create_interaction()
+        self.invite_new_cats(cat)
+        self.other_interactions(cat)
         self.gain_accessories(cat)
 
-        cat.create_interaction()
         # this is the new interaction function, currently not active
         # cat.relationship_interaction()
         cat.thoughts()
@@ -1798,7 +1806,6 @@ class Events():
         """Try to infect some cats."""
         # check if the cat is ill, if game mode is classic,
         # or if clan has sufficient med cats in expanded mode
-        # amount_per_med = get_amount_cat_for_one_medic(game.clan)
         if not cat.is_ill() or game.clan.game_mode == 'classic':
             return
 
@@ -1829,7 +1836,7 @@ class Events():
             if cat.illnesses[illness]["infectiousness"] == 0:
                 continue
             chance = cat.illnesses[illness]["infectiousness"]
-            chance += len(meds) * 10
+            chance += len(meds) * 5
             if not int(random.random() * chance):  # 1/chance to infect
                 # fleas are the only condition allowed to spread outside of cold seasons
                 if game.clan.current_season not in ["Leaf-bare", "Leaf-fall"

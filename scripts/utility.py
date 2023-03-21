@@ -247,7 +247,7 @@ def create_new_cat(Cat,
         number_of_cats = choices([1, 2, 3, 4, 5], [2, 5, 4, 1, 1], k=1)
         number_of_cats = number_of_cats[0]
     # setting age
-    if not age:
+    if not age and age != 0:
         if litter or kit:
             age = randint(0, 5)
         elif status == 'apprentice':
@@ -925,6 +925,8 @@ def update_sprite(cat):
         else:
             cat_sprite = str(18)
     else:
+        if cat.age == 'elder':
+            cat.age = 'senior'
         cat_sprite = str(cat.cat_sprites[cat.age])
 
 # generating the sprite

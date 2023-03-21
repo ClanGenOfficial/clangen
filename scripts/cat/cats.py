@@ -348,7 +348,7 @@ class Cat():
 
         # personality trait and skill
         if self.trait is None:
-            if self.status != 'kitten':
+            if self.status not in ['newborn', 'kitten']:
                 self.trait = choice(self.traits)
             else:
                 self.trait = choice(self.kit_traits)
