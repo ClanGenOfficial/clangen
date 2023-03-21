@@ -166,7 +166,7 @@ def self_update(release_channel='development-test', progress_bar: UIUpdateProgre
 
         #subprocess.Popen("./winupdate.exe", cwd=os.getcwd(), close_fds=True, creationflags=subprocess.CREATE_NEW_CONSOLE | subprocess.CREATE_NEW_PROCESS_GROUP | subprocess.CREATE_BREAKAWAY_FROM_JOB)
 
-        shutil.copy("./Downloads/Clangen/self_updater.exe", "./Downloads/self_updater.exe")
+        shutil.copy("./Downloads/Clangen/resources/self_updater.exe", "./Downloads/self_updater.exe")
         asdf()
         time.sleep(3)
         subprocess.Popen(["./Downloads/self_updater.exe", "../"], cwd="./Downloads/", close_fds=True, creationflags=subprocess.CREATE_NEW_PROCESS_GROUP)
