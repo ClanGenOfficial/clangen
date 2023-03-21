@@ -246,5 +246,13 @@
 			"mediator apprentice": 25
 		},
 		"min_graduating_age": 10
+	},
+
+
+
+	"fun": {
+		"all_cats_are_newborn": true,
+		"newborns_can_roam": false,
+		"newborns_can_patrol": false
 	}
 }

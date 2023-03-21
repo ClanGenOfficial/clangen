@@ -912,7 +912,7 @@ def update_sprite(cat):
 
     # setting the cat_sprite (bc this makes things much easier)
     if cat.paralyzed and not cat.not_working():
-        if cat.age in ['newborn', 'kitten', 'adolescent']:
+        if cat.age in ['newborn', 'kitten', 'adolescent'] or game.config['fun']['all_cats_are_newborn']:
             cat_sprite = str(17)
         else:
             if cat.pelt.length == 'long':
@@ -920,14 +920,17 @@ def update_sprite(cat):
             else:
                 cat_sprite = str(15)
     elif cat.not_working():
-        if cat.age in ['newborn', 'kitten', 'adolescent']:
+        if cat.age in ['newborn', 'kitten', 'adolescent'] or game.config['fun']['all_cats_are_newborn']:
             cat_sprite = str(19)
         else:
             cat_sprite = str(18)
     else:
-        if cat.age == 'elder':
+        if cat.age == 'elder' and not game.config['fun']['all_cats_are_newborn']:
             cat.age = 'senior'
-        cat_sprite = str(cat.cat_sprites[cat.age])
+        if game.config['fun']['all_cats_are_newborn']:
+            cat_sprite = str(cat.cat_sprites['newborn'])
+        else:
+            cat_sprite = str(cat.cat_sprites[cat.age])
 
 # generating the sprite
     try:
