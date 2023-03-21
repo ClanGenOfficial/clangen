@@ -986,6 +986,7 @@ class Patrol():
         # handing out ages
         if "newborn" in attribute_list:
             age = 0
+            status = 'newborn'
         elif "adolescent" in attribute_list:
             age = randint(6, 11)
         elif "youngadult" in attribute_list:
@@ -1103,7 +1104,7 @@ class Patrol():
                                                litter=True,
                                                other_clan=other_clan,
                                                backstory=kit_backstory,
-                                               status='kitten',
+                                               status=None,
                                                age=kit_age,
                                                gender=None,
                                                thought=kit_thought,

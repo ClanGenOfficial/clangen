@@ -81,6 +81,8 @@ def json_load():
                         loading_cat=True)
             new_cat.eye_colour2 = cat["eye_colour2"] if "eye_colour2" in cat else None
             new_cat.age = cat["age"]
+            if new_cat.age == 'elder':
+                new_cat.age = 'senior'
             new_cat.genderalign = cat["gender_align"]
             new_cat.backstory = cat["backstory"] if "backstory" in cat else None
             new_cat.birth_cooldown = cat["birth_cooldown"] if "birth_cooldown" in cat else 0

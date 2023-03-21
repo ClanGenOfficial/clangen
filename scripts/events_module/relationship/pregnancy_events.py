@@ -569,13 +569,13 @@ class Pregnancy_Events():
             kit = None
             if other_cat is not None:
                 if cat.gender == 'female':
-                    kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0)
+                    kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0, status='newborn')
                     kit.thought = f"Snuggles up to the belly of {cat.name}"
                 elif cat.gender == 'male' and other_cat.gender == 'male':
-                    kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0)
+                    kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0, status='newborn')
                     kit.thought = f"Snuggles up to the belly of {cat.name}"
                 else:
-                    kit = Cat(parent1=other_cat.ID, parent2=cat.ID, moons=0)
+                    kit = Cat(parent1=other_cat.ID, parent2=cat.ID, moons=0, status='newborn')
                     kit.thought = f"Snuggles up to the belly of {other_cat.name}"
                 cat.birth_cooldown = 6
                 other_cat.birth_cooldown = 6
@@ -584,7 +584,7 @@ class Pregnancy_Events():
                     backstory = backstory_choice_1
                 else:
                     backstory = backstory_choice_2
-                kit = Cat(parent1=cat.ID, moons=0, backstory=backstory)
+                kit = Cat(parent1=cat.ID, moons=0, backstory=backstory, status='newborn')
                 cat.birth_cooldown = 6
                 kit.thought = f"Snuggles up to the belly of {cat.name}"
             all_kitten.append(kit)
