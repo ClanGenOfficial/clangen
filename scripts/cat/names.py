@@ -79,7 +79,7 @@ class Name():
             if biome is not None and biome in self.names_dict["biome_prefixes"]:
                 possible_prefix_categories.append(self.names_dict["biome_prefixes"][biome])
             # Choose appearance-based prefix if possible and named_after_appearance because True.
-            if named_after_appearance and possible_prefix_categories:
+            if named_after_appearance and possible_prefix_categories and not named_after_biome:
                 prefix_category = random.choice(possible_prefix_categories)
                 self.prefix = random.choice(prefix_category)
             elif named_after_biome and possible_prefix_categories:
