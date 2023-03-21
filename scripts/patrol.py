@@ -905,7 +905,7 @@ class Patrol():
         attribute_list = []
         for tag in tags:
             #print(tag)
-            if "new_cat" in tag and ("no_new_cat" and "new_cat_injury") not in tag:
+            if "new_cat" in tag and "no_new_cat" not in tag and "new_cat_injury" not in tag:
                 attribute_list = tag.split("_")
                 print('found tag, attributes:', attribute_list)
                 break
