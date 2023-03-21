@@ -207,7 +207,9 @@ class Relation_Events():
                 (not cat.dead and not cat.outside and not cat.exiled),
                 Cat.all_cats.values())
         )
-        possible_interaction_cats.remove(cat)
+        if cat in possible_interaction_cats:
+            possible_interaction_cats.remove(cat)
+
         if chosen_type != "all":
             possible_interaction_cats = self.cats_with_relationship_constraints(cat, GROUP_TYPES[chosen_type]["constraint"])
 
