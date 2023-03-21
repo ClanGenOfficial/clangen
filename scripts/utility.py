@@ -156,6 +156,8 @@ def get_free_possible_mates(cat):
     for inter_cat in cat.all_cats.values():
         if inter_cat.dead or inter_cat.outside or inter_cat.exiled:
             continue
+        if inter_cat.ID == cat.ID:
+            continue
         if inter_cat.is_potential_mate(cat,True) and cat.is_potential_mate(inter_cat, True):
             if not inter_cat.mate:
                 cats.append(inter_cat)

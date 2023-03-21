@@ -181,7 +181,8 @@ class Relation_Events():
         """
         if cat.moons < 12:
             return
-        if not self.cats_triggered_events(cat):
+
+        if not self.can_trigger_events(cat):
             return
 
         triggered = False
