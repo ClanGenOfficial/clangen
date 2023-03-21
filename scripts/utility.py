@@ -150,6 +150,18 @@ def get_cats_same_age(cat, range=10):  # pylint: disable=redefined-builtin
     return cats
 
 
+def get_free_possible_mates(cat):
+    """Returns a list of available cats, which are possible mates for the given cat."""
+    cats = []
+    for inter_cat in cat.all_cats.values():
+        if inter_cat.dead or inter_cat.outside or inter_cat.exiled:
+            continue
+        if inter_cat.is_potential_mate(cat,True) and cat.is_potential_mate(inter_cat, True):
+            if not inter_cat.mate:
+                cats.append(inter_cat)
+    return cats
+
+
 # ---------------------------------------------------------------------------- #
 #                          Handling Outside Factors                            #
 # ---------------------------------------------------------------------------- #
@@ -383,6 +395,7 @@ def create_new_cat(Cat,
             new_cat.relationships[inter_cat.ID] = Relationship(new_cat, inter_cat)
 
     return created_cats
+
 
 def create_outside_cat(Cat, status, backstory):
         """

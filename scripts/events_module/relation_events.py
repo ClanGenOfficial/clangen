@@ -10,10 +10,10 @@ except ImportError:
 from scripts.game_structure.game_essentials import game
 from scripts.events_module.condition_events import Condition_Events
 from scripts.cat.cats import Cat
-from scripts.utility import get_cats_same_age
+from scripts.utility import get_cats_same_age, get_free_possible_mates
 from scripts.event_class import Single_Event
 from scripts.cat_relations.relationship import Relationship
-from scripts.events_module.relationship.romantic_events import Mate_Events
+from scripts.events_module.relationship.romantic_events import Romantic_Events
 from scripts.events_module.relationship.welcoming_events import Welcoming_Events
 from scripts.events_module.relationship.group_events import Group_Events
 
@@ -22,7 +22,7 @@ class Relation_Events():
     def __init__(self) -> None:
         self.had_one_event = False
         self.condition_events = Condition_Events()
-        self.mate_events_class = Mate_Events()
+        self.romantic_events_class = Romantic_Events()
         self.welcome_events_class = Welcoming_Events()
         self.group_events_class = Group_Events()
         self.cats_triggered_events = {}
@@ -51,9 +51,13 @@ class Relation_Events():
         if not randint(0,2):
             self.same_age_events(cat)
 
+        # 1/3 for an additional event
+        if not randint(0,2):
+            self.romantic_events(cat)
+
         # this has to be handled at first
         if random.random() > 0.8:
-            if self.mate_events_class.big_love_check(cat):
+            if self.romantic_events_class.big_love_check(cat):
                 return
 
         cats_amount = len(Cat.all_cats)
@@ -105,7 +109,7 @@ class Relation_Events():
             # new mates
             if not self.had_one_event and not cat_from_mate:
                 if cat_to.is_potential_mate(cat_from):
-                    self.mate_events_class.handle_new_mates(current_relationship, cat_from, cat_to)
+                    self.romantic_events_class.handle_new_mates(current_relationship, cat_from, cat_to)
 
             # breakup and new mate
             if (not self.had_one_event and cat_from.mate and
@@ -143,39 +147,68 @@ class Relation_Events():
                     self.had_one_event = True
                     # break up the old relationships
                     cat_from_mate = Cat.all_cats.get(cat_from.mate)
-                    self.mate_events_class.handle_breakup(mate_relationship, mate_relationship.opposite_relationship, cat_from,
+                    self.romantic_events_class.handle_breakup(mate_relationship, mate_relationship.opposite_relationship, cat_from,
                                         cat_from_mate)
 
                     if cat_to_mate:
                         # relationship_from, relationship_to, cat_from, cat_to
-                        self.mate_events_class.handle_breakup(other_mate_relationship, other_mate_relationship.opposite_relationship,
+                        self.romantic_events_class.handle_breakup(other_mate_relationship, other_mate_relationship.opposite_relationship,
                                             cat_to, cat_to_mate)
 
                     # new relationship
                     text = f"{cat_from.name} and {cat_to.name} can't ignore their feelings for each other."
                     # game.relation_events_list.insert(0, text)
                     game.cur_events_list.append(Single_Event(text, "relation", [cat_from.ID, cat_to.ID]))
-                    self.mate_events_class.handle_new_mates(current_relationship, cat_from, cat_to)
+                    self.romantic_events_class.handle_new_mates(current_relationship, cat_from, cat_to)
 
             # breakup
             if not self.had_one_event and current_relationship.mates and not cat_from.dead and not cat_to.dead:
-                if self.mate_events_class.check_if_breakup(current_relationship, current_relationship.opposite_relationship, cat_from,
+                if self.romantic_events_class.check_if_breakup(current_relationship, current_relationship.opposite_relationship, cat_from,
                                          cat_to):
-                    self.mate_events_class.handle_breakup(current_relationship, current_relationship.opposite_relationship, cat_from,
+                    self.romantic_events_class.handle_breakup(current_relationship, current_relationship.opposite_relationship, cat_from,
                                         cat_to)
 
     # ---------------------------------------------------------------------------- #
     #                                new event types                               #
     # ---------------------------------------------------------------------------- #
 
-    def romantic_or_mate_events(self, cat):
+    def romantic_events(self, cat):
         """
             ONLY for cat OLDER than 12 moons.
             To increase mating chance this function is used.
             It will boost the romantic values of either mate or possible mates.
             This also increase the chance of affairs.
         """
-        print("TODO")
+        if cat.moons < 12:
+            return
+        if not self.cats_triggered_events(cat):
+            return
+
+        triggered = False
+        other_cat = None
+        info_text = ""
+        if cat.mate:
+            other_cat = cat.all_cats[cat.mate]
+            info_text ="cat has mate"
+            chance_number = game.config["relationship"]["chance_romantic_not_mate"]
+            chance_number += int(cat.relationships[cat.mate].romantic_love / 10)
+            chance = int(random.random() * chance_number)
+            if not chance:
+                info_text += ": but a other cat was chosen"
+                free_possible_mates = get_free_possible_mates(cat)
+                if len(free_possible_mates) < 1:
+                    return
+                other_cat = choice(free_possible_mates)
+        else:
+            info_text = "cat has no mate"
+            free_possible_mates = get_free_possible_mates(cat)
+            if len(free_possible_mates) < 1:
+                return
+            other_cat = choice(free_possible_mates)
+
+        triggered = self.romantic_events_class.start_interaction(cat, other_cat)
+        if triggered:
+            print(info_text)
 
     def same_age_events(self, cat):
         """	
