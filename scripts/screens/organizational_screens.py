@@ -82,7 +82,7 @@ class StartScreen(Screens):
                 self.error_gethelp.kill()
                 self.closebtn.kill()
                 self.open_data_directory_button.kill()
-                game.switches['error_message'] == ''
+                game.switches['error_message'] = ''
                 game.switches['traceback'] = ''
             elif event.ui_element == self.quit:
                 quit(savesettings=False, clearevents=False)
@@ -212,8 +212,7 @@ class StartScreen(Screens):
             self.continue_button.disable()
             self.switch_clan_button.disable()
 
-        print(not not game.switches['error_message'])
-        print(not not game.switches['traceback'])
+
         if game.switches['error_message']:
             error_text = f"There was an error loading the game: {game.switches['error_message']}"
             if game.switches['traceback']:
