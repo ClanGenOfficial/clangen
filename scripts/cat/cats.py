@@ -1411,6 +1411,14 @@ class Cat():
         if set(self.get_parents()) & set(other_cat.get_parents()):
             return True
         return False
+    
+    def is_littermate(self, other_cat: Cat):
+        """Check if the cats are littermates"""
+        if not self.is_sibling(other_cat):
+            return False
+        if other_cat.moons + other_cat.dead_for == self.moons + self.dead_for:
+            return True
+        return False
 
     def is_uncle_aunt(self, other_cat):
         """Check if the cats are related as uncle/aunt and niece/nephew."""
