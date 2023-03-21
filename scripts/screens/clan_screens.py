@@ -304,9 +304,10 @@ class ClanScreen(Screens):
             if Cat.all_cats[x].dead or Cat.all_cats[x].outside:
                 continue
 
+            # Newborns are now meant to be placed. They are hiding. 
             if Cat.all_cats[x].status == 'newborn':
                 continue
-            print(Cat.all_cats[x].status)
+            # print(Cat.all_cats[x].status)
             if Cat.all_cats[x].status in ['apprentice', 'mediator apprentice']:
                 Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(first_choices, all_dens,
                                                                                  [1, 50, 1, 1, 100, 100, 1])
