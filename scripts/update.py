@@ -145,28 +145,28 @@ def self_update(release_channel='development-test', progress_bar: UIUpdateProgre
     print('Installing...')
 
     if platform.system() == 'Windows':
-        pwsh = ''
-        if shutil.which('pwsh') is not None:
-            pwsh = shutil.which('pwsh')
-        elif shutil.which('powershell') is not None:
-            pwsh = shutil.which('powershell')
-        else:
-            print("Powershell not found. Please install it and try again")
-            return
+        # pwsh = ''
+        # if shutil.which('pwsh') is not None:
+        #     pwsh = shutil.which('pwsh')
+        # elif shutil.which('powershell') is not None:
+        #     pwsh = shutil.which('powershell')
+        # else:
+        #     print("Powershell not found. Please install it and try again")
+        #     return
         with zipfile.ZipFile("download.tmp", 'r') as zip_ref:
             zip_ref.extractall('Downloads')
         os.remove("download.tmp")
         
-        shutil.move("Downloads/Clangen", "../clangen_update")
+        shutil.move("Downloads/Clangen/winupdate.exe", "./winupdate.exe")
 
         path = pathlib.Path(os.getcwd()).parent.absolute()
 
-        shutil.copy("resources/update.ps1", "../clangen_update_script.ps1")
-        print("Clangen python application cannot continue to run while it is being updated.")
-        print("Powershell will now be used to update Clangen.")
-        print("A console window will open and close automatically. Please do not be alarmed.")
+        # shutil.copy("resources/update.ps1", "../clangen_update_script.ps1")
+        # print("Clangen python application cannot continue to run while it is being updated.")
+        # print("Powershell will now be used to update Clangen.")
+        # print("A console window will open and close automatically. Please do not be alarmed.")
 
-        subprocess.Popen(["./clangen_update_script.bat", os.getcwd()], cwd=path, creationflags=subprocess.DETACHED_PROCESS | subprocess.CREATE_NEW_PROCESS_GROUP | subprocess.CREATE_BREAKAWAY_FROM_JOB)
+        subprocess.Popen(["./winupdate.exe", os.getcwd()], cwd=path, creationflags=subprocess.DETACHED_PROCESS | subprocess.CREATE_NEW_PROCESS_GROUP | subprocess.CREATE_BREAKAWAY_FROM_JOB)
         quit()
 
     elif platform.system() == 'Darwin':

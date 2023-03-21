@@ -1,5 +1,8 @@
 import os
 import shutil
+import time
+
+time.sleep(5)
 
 for filename in os.listdir('./'):
     if filename.endswith("winupdate.exe") or filename.endswith("winupdate") or filename.endswith("Downloads"):
