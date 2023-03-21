@@ -60,3 +60,14 @@ jobs:
           delete-branch: true
           token: ${{ secrets.GITHUB_TOKEN }}
           branch-suffix: random
+  json_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Python 3.11 x64
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          architecture: 'x64'
+      - name: Check json validity
+        run: python3 tests/test_json.py
