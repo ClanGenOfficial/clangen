@@ -73,16 +73,17 @@
   "normal_prefixes": [
     "Adder", "Alder", "Ant", "Antler", "Apple", "Apricot", "Arc", "Arch", "Aspen", "Aster",
     "Badger", "Barley", "Basil", "Bass", "Bay", "Bayou", "Beam", "Bear", "Beaver", "Bee", "Beech", "Beetle", "Berry",
-    "Big", "Birch", "Bird", "Bite", "Bitter", "Bittern", "Blizzard", "Bloom", "Bud",
+    "Big", "Bird", "Bite", "Bitter", "Bittern", "Blizzard", "Bloom", "Bud",
     "Blossom", "Blotch", "Bluebell", "Bluff", "Bog", "Borage", "Bough", "Boulder", "Bounce", "Bracken", "Bramble",
-    "Brave", "Breeze", "Briar", "Bright", "Brindle", "Bristle", "Broken", "Brook", "Brush", "Bubbling", "Buck",
+    "Brave", "Breeze", "Briar", "Bright", "Brindle", "Bristle", "Broken", "Brook", "Brush", "Bubbling",
     "Bug", "Bumble", "Burdock", "Burr", "Bush", "Buzzard", "Carp", "Cave", "Cedar", "Chaffinch", "Chasing", "Cherry",
     "Chestnut", "Chive", "Cicada", "Claw", "Clay", "Clear", "Cliff", "Clover", "Condor", "Copse",
     "Cone", "Conifer", "Cougar", "Coyote", "Crag", "Crane", "Creek", "Cress", "Crested", "Cricket", "Crooked",
-    "Crouch", "Curl", "Curlew", "Curly", "Cypress", "Dahlia", "Daisy", "Dancing", "Dandelion", "Dapple", "Dappled",
-    "Dawn", "Deer", "Dew", "Doe", "Dog", "Down", "Downy", "Drift",
-    "Drizzle", "Dry", "Duck", "Dusk", "Eagle", "Echo", "Egret", "Elder", "Elm",
-    "Ermine", "Falcon", "Fallen", "Falling", "Fallow", "Fawn", "Feather", "Fennel", "Fern",
+    "Crouch", "Curl", "Curlew", "Curly", "Cypress", 
+    "Dahlia", "Daisy", "Dancing", "Dapple", "Dappled", "Dawn", "Dew", "Dog", "Down", "Downy", "Drift",
+    "Drizzle", "Dry", "Duck", "Dusk",
+    "Eagle", "Echo", "Egret", "Elder", "Elm", "Ermine",
+    "Falcon", "Fallen", "Falling", "Fallow", "Fawn", "Feather", "Fennel", "Fern",
     "Ferret", "Fidget", "Fin", "Finch", "Fir", "Fish", "Flail", "Flash", "Flax", "Fleck", "Fleet", "Flicker",
     "Flight", "Flint", "Flip", "Flood", "Flower", "Flutter", "Fly", "Fog", "Forest", "Freckle", "Fringe",
     "Frog", "Frond", "Furled", "Furze", "Fuzzy", "Gale", "Gander", "Gannet", "Garlic", "Goose",
@@ -95,20 +96,20 @@
     "Mallow", "Mantis", "Maple", "Marigold", "Marsh", "Marten", "Meadow", "Midge",
     "Milk", "Milkweed", "Mink", "Minnow", "Mistle", "Mite", "Mole", "Moon", "Moor", "Morning", "Moss",
     "Mossy", "Moth", "Mottle", "Mottled", "Mouse", "Mumble", "Murk", "Myrtle", "Nectar", "Needle", "Nettle",
-    "Newt", "Nut", "Oat", "Odd", "One", "Osprey", "Pansy", "Panther", "Parsley", "Partridge", "Patch", "Peak",
+    "Newt", "Nut", "Oak", "Oat", "Odd",  "One", "Osprey", "Pansy", "Panther", "Parsley", "Partridge", "Patch", "Peak",
     "Pear", "Peat", "Perch", "Petal", "Pheasant", "Pigeon", "Pike", "Pine", "Piper", "Plover", "Plum", "Pod",
     "Pond", "Pool", "Poppy", "Posy", "Pounce", "Prance", "Prickle", "Prim", "Primrose", "Puddle", "Quail", "Quick",
     "Pop", "Quiet", "Quill", "Rabbit", "Raccoon", "Ragged", "Rain", "Rat", "Rattle", "Raven", "Reed",
-    "Ridge", "Rift", "Ripple", "River", "Roach", "Rook", "Root", "Rose", "Rosy", "Rowan", "Rubble",
-    "Running", "Rush", "Rye", "Sage", "Scorch", "Sedge", "Seed", "Shard", "Sharp",
-    "Shell", "Shimmer", "Shine", "Shining", "Shivering", "Short", "Shrew", "Shrub", "Shy", "Silk", "Silt", "Skip", "Sky", "Slate",
-    "Sleek", "Sleet", "Slight", "Slip", "Sloe", "Slope", "Small", "Snail", "Snake", "Snap", "Sneeze", "Snip", "Soft", "Song",
-    "Sorrel", "Spark", "Sparrow", "Speckle", "Spider", "Spike", "Splash", "Spot", "Spotted", "Spring", "Spruce",
-    "Squirrel", "Starling", "Stem", "Stoat", "Stork", "Stream", "Strike",
-    "Stumpy", "Sunny", "Swallow", "Swamp", "Sweet", "Swift", "Sycamore", "Tall", "Talon", "Tangle", "Tansy", "Tawny", "Thistle", "Thorn",
-    "Thrift", "Thrush", "Thunder", "Thyme", "Tiger", "Timber", "Tiny", "Tip", "Toad", "Torn", "Trout", "Tuft", "Tulip",
-    "Tumble", "Turtle", "Vine", "Vixen", "Wasp", "Weasel", "Web", "Weed", "Wet", "Wheat", "Whirl", "Whisker",
-    "Whisper", "Whispering", "Whistle", "Whorl", "Wild", "Willow", "Wind", "Wish", "Wing", "Wisteria", "Wolf", "Wood", "Wren", "Yarrow", "Yew"
+    "Ridge", "Rift", "Ripple", "River", "Roach", "Rook", "Root", "Rose", "Rosy", "Rowan", "Rubble", "Running", "Rush", "Rye", 
+    "Scorch", "Seed", "Shard", "Sharp", "Shell", "Shimmer", "Shine", "Shining", "Shivering", "Short", "Shrew", "Shrub",
+    "Shy", "Silk", "Silt", "Skip", "Sky", "Slate", "Sleek", "Sleet", "Slight", "Slip", "Sloe", "Slope", "Small", "Snail",
+    "Snake", "Snap", "Sneeze", "Snip", "Soft", "Song", "Sorrel", "Spark", "Sparrow", "Speckle", "Spider", "Spike", "Splash",
+    "Spot", "Spotted", "Spring", "Spruce", "Squirrel", "Starling", "Stem", "Stoat", "Stork", "Stream", "Strike",
+    "Stumpy", "Sunny", "Swallow", "Swamp", "Sweet", "Swift", "Sycamore", 
+    "Tall", "Talon", "Tangle", "Tansy", "Tawny", "Thistle", "Thorn", "Thrift", "Thrush", "Thunder", "Thyme", "Tiger",
+    "Timber", "Tiny", "Tip", "Toad", "Torn", "Trout", "Tuft", "Tulip", "Tumble", "Turtle", "Vine", "Vixen",
+    "Wasp", "Weasel", "Web", "Weed", "Wet", "Wheat", "Whirl", "Whisker", "Whisper", "Whispering", "Whistle", "Whorl",
+    "Wild", "Willow", "Wind", "Wish", "Wing", "Wisteria", "Wolf", "Wood", "Wren", "Yarrow", "Yew"
   ],
 
   "colour_prefixes": {
@@ -123,7 +124,7 @@
     "Fringe", "Mistle", "Icicle"
     ],
     "SILVER": [
-    "Grey", "Silver", "Silver", "Silver", "Cinder", "Ice", "Icy", "Frost", "Frozen", "Freeze", "Rain", "Blue", "Basalt",  "Mica",
+    "Grey", "Silver", "Silver", "Silver", "Cinder", "Ice", "Icy", "Frost", "Frozen", "Freeze", "Rain", "Blue",  "Mica",
     "River", "Blizzard", "Flurry", "Bone", "Bleak", "Stone", "Pebble", "Heather", "Shale",  "Scale", "Crocus", 
     "Rue", "Fringe", "Glint", "Mistle", "Shatter", "Gossamer", "Air", "Pale", "Ermine", "Stoat", "Gull", "Vine", "Lilac"
     ],
@@ -162,53 +163,54 @@
     ],
     "CREAM": [
     "Sand", "Sandy", "Yellow", "Pale", "Cream", "Cream", "Light", "Milk", "Fawn", "Morel", "Jasmine", "Veil", "Gill",
-    "Bone", "Daisy", "Branch", "Warm", "Robin", "Almond", "Acorn", "Spindle", "Ivory", "Pale", "Bright"
+    "Bone", "Daisy", "Branch", "Warm", "Robin", "Spindle", "Ivory", "Pale", "Bright"
     ],
     "LIGHTBROWN": [
     "Brown", "Pale", "Light", "Mouse", "Dust", "Dusty", "Sand", "Sandy", "Bright", "Mud", "Scrub", "Velvet",
-    "Hazel", "Vole", "Branch", "Warm", "Robin", "Almond", "Acorn", "Bark", "Puma", "Umber", "Dune",
+    "Hazel", "Vole", "Branch", "Warm", "Robin", "Puma", "Umber", "Dune",
     "Tree", "Root", "Bark"
     ],
     "BROWN": [
-    "Brown", "Brown", "Oak", "Mouse", "Dark", "Shade", "Russet", "Dust", "Dusty", "Acorn", "Mud", "Deer", "Fawn", "Doe", "Stag",
-    "Twig", "Owl", "Otter", "Log", "Vole", "Branch", "Hazel", "Robin", "Acorn", "Bark", "Umber", "Tree", "Root", "Shadow"
+    "Brown", "Brown", "Oak", "Mouse", "Dark", "Shade", "Russet", "Dust", "Dusty", "Mud", "Deer", "Fawn", "Doe", "Stag",
+    "Twig", "Owl", "Otter", "Log", "Vole", "Branch", "Hazel", "Robin", "Umber", "Tree", "Root", "Shadow"
     ],
     "DARKBROWN": [
     "Brown", "Brown", "Dark", "Dark", "Shade", "Night", "Russet", "Rowan", "Mud", "Oak", "Twig", "Loach", "Shadow",
-    "Owl", "Otter", "Log", "Hickory", "Branch", "Robin", "Bark", "Agate", "Umber", "Chanterelle", "Almond", "Dust", "Mud"
+    "Owl", "Otter", "Log", "Hickory", "Branch", "Robin", "Agate", "Umber", "Chanterelle", "Almond", "Dust", "Mud"
     ],
     "BLACK": [
     "Black", "Black", "Black", "Shade", "Shaded", "Crow", "Raven", "Ebony", "Dark", "Grackle", 
     "Night", "Shadow", "Scorch", "Midnight", "Pepper", "Pitch", "Bat", "Burnt", "Coal", "Ink", "Inky",
-    "Char", "Charred", "Current", "Mulberry", "Night", "Eve", "Dark", "Murk"
+    "Char", "Charred", "Mulberry", "Night", "Eve", "Dark", "Murk"
     ]
   },
 
   "biome_prefixes": {
     "Forest": [
-    "Acorn", "Magnolia", "Maple", "Doe", "Grove", "Deer", "Buck", "Stag", "Moss", "Wood", "Log", "Stump", "Branch", "Birch",
-    "Oak", "Beech", "Sap", "Wolf", "Grouse", "Moose", "Elk", "Spruce", "Pine", "Aspen", "Mushroom", "Lynx", "Squirrel", "Badger",
-    "Boar", "Marten", "Bat", "Robin", "Sparrow", "Stick", "Twig", "Bark", "Sprig", "Honey", "Frond", "Cedar", "Fir",
-     "Antler", "Almond"
+    "Acorn","Almond", "Antler", "Aspen", "Badger", "Bark", "Bat", "Beech", "Birch", "Boar", "Branch", "Branch", "Buck", 
+    "Cedar", "Deer", "Doe", "Elk", "Fern", "Fern", "Fir", "Frond", "Grouse", "Grove", "Honey", "Log", "Lynx", "Magnolia",
+    "Marten", "Maple", "Moose", "Moss", "Moss", "Mushroom", "Oak", "Oak", "Pine", "Robin", "Robin", "Sap", "Sparrow", "Sprig",
+    "Spruce", "Squirrel", "Squirrel", "Stag", "Stick", "Stump", "Twig", "Twig", "Wood", "Wolf"
     ],
     "Beach": [
-    "Jellyfish", "Trout", "Salt", "Shore", "Coast", "Wave", "Flounder", "Sardine", "Anchovy", "Squid", "Conch", 
-    "Anemone", "Crab", "Hermit", "Coral", "Current", "Splash", "Palm", "Pearl", "Scale", "Shark", "Algae",
-    "Dolphin", "Ocean", "Sea", "Reef", "Shell", "Cove", "Foam", "Clam", "Snail", "Slug", "Brine", "Barracuda", "Sand", 
-    "Octopus", "Ripple", "Swash", "Pool", "Pearl", "Fin", "Drop", "Drip", "Lagoon", "Lake", "Shimmer", "Scale", "Whale",
-    "Torrent", "Wave", "Delta", "Tide", "Tidal", "Nacre", "Avocet", "Barnacle", "Beluga", "Albatross",
-    "Coconut", "Sand", "Dolphin", "Gull", "Seagull", "Pelican"
+    "Albatross", "Algae", "Anchovy", "Anemone", "Avocet", "Bass", "Barnacle", "Barracuda", "Beluga", "Brine", "Clam", "Coast",
+    "Coconut", "Cod", "Conch", "Coral", "Cove", "Crab", "Current", "Delta", "Dolphin", "Dolphin", "Drip", "Drop", "Fin", "Flounder",
+    "Foam", "Gull", "Gull", "Hermit", "Jellyfish", "Lagoon", "Lake", "Marlin", "Nacre", "Ocean", "Octopus", "Palm", "Pearl", "Pearl",
+    "Pearly", "Pelican", "Pool", "Pool", "Ripple", "Reef", "Ripple", "Salmon", "Salt", "Sand", "Sand", "Sardine",  "Scale", "Scale", "Sea",
+    "Seabass", "Seagull", "Shark", "Shell", "Shimmer", "Shimmer", "Shore", "Slug", "Snail", "Splash", "Squid", "Swash",
+    "Tide", "Tidal", "Torrent", "Wave", "Wave", "Whale"
     ],
     "Plains": [
-    "Meadow", "Flutter", "Grass", "Poppy", "Dandelion", "Field", "Pollen", "Wool", "Wooly", "Sheep", "Lamb", "Grouse",
-    "Gopher", "Horse", "Oat", "Elk", "Cow", "Heather", "Barley", "Wheat", "Tunnel", "Willow", "Sage", "Hare", 
-    "Pronghorn", "Sedge", "Field", "Prairie", "Heather", "Rustle", "Breeze", "Swish", "Bison", "Cow", "Anise", "Rye", "Plover"
+    "Anise", "Barley", "Barley", "Bison", "Breeze", "Breeze", "Butterfly", "Cow", "Cow", "Dandelion", "Elk", "Field", "Field",
+    "Flutter", "Gopher", "Grass", "Grass", "Grouse", "Hare", "Heather", "Heather", "Horse", "Lamb", "Meadow", "Oat", "Plover",
+    "Poppy", "Poppy", "Pollen", "Prairie", "Pronghorn", "Rustle", "Rye", "Rye", "Sage", "Sedge", "Sheep", "Swish", "Tunnel",
+    "Wheat", "Wheat", "Willow", "Willow", "Wool", "Wooly"
     ],
     "Mountainous": [
-    "Glacial", "Pinnacle", "Goat", "Alpaca", "Alpine", "Rocky", "Ram", "High", "Volcano", "Yucca", "Lichen", "Crag", "Eagle",
-    "Tundra", "Cliff", "Avalanche", "Granite", "Gravel", "Salt", "Steppe", "Flint", "Mountain", "Summit", "Marten", "Mine",
-    "Cavern", "Cave", "Chamois", "Cliff", "Peak", "Spire", "Shard", "Whistle", "Whisper", "Stone", "Limestone", "Pebble",
-    "Boulder", "Blizzard", "Echo"
+    "Alpaca", "Alpine", "Avalanche", "Basalt", "Blizzard", "Boulder", "Cavern", "Cave", "Chamois", "Cliff", "Cliff", "Crag",
+    "Eagle", "Eagle", "Echo", "Echo", "Flint", "Glacial", "Goat", "Granite", "Gravel", "High", "Lichen", "Limestone",
+    "Marten", "Mine", "Mountain", "Peak", "Pebble", "Pinnacle", "Rocky", "Ram", "Salt", "Shard", "Spire", "Stone", "Steppe", 
+    "Summit","Tundra", "Volcano", "Yucca", "Whistle", "Whisper", "Whisper"
     ],
     "Wetlands": [
     "Willow", "Marsh", "Bog", "Lotus", "Reed", "Frog", "Toad", "Stork", "Crane", "Duck", "Heron", "Ibis", "Mangrove",
@@ -239,7 +241,8 @@
     "field", "meadow", "wool", "oat", "lamb", "elk", "flutter", "pollen", "bull", "bee", "swish", "breeze", "runner", "tunnel", "horse", "sheep"
     ],
     "Mountainous": [
-    "peak", "point", "horn", "lichen", "cliff", "ram", "shard", "whisper", "fall", "drop", "whistle", "tite", "mite", "frost", "cave", "echo", "goat"
+    "peak", "point", "horn", "lichen", "cliff", "ram", "shard", "whisper", "fall", "drop", "whistle", "tite", "mite", "frost",
+    "cave", "echo", "goat", "eagle"
     ],
     "Wetlands": [
     "flood", "swamp", "splash", "croak", "duck", "bog", "mud", "skipper", "wade", "lily", "moss", "root", "song", "bug", "glow", "wave", "creek", "ripple"
