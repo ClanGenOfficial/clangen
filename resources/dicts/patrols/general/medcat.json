@@ -1004,5 +1004,70 @@
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_med_warappmedapp_herbcontest1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "herb_gathering", 
+        "apprentice", 
+        "two_apprentices", 
+        "warrior_app", 
+        "many_herbs1", 
+        "random_herbs", 
+        "respect", 
+        "comfort", 
+        "dislike", 
+        "jealousy"
+    ],
+    "intro_text": "In order to spice up their patrol, p_l challenges app2 to a herb-gathering competition.",
+    "decline_text": "app2 scoffs at p_l's silliness and stalks off, leaving p_l alone in their dismay.",
+    "chance_of_success": 60,
+    "exp": 10,
+    "success_text": [
+         "The game is on! p_l and app2 are quite evenly matched, and both their mentors are pleased with the herbs they bring back.",
+         "The game is afoot! p_l and app2 return to camp, happily spent, with plenty of herbs.",
+         null,
+         "s_c and app2 banter as they scan around their surroundings for any sightings of herb bushes. When they do spot a bush, s_c playfully nudges app2 toward it, letting them get ahead."
+    ],
+    "fail_text": [
+        "Try as they might, neither p_l nor app2 find any herbs. Frustrated, they start bickering about whose fault it is all the way back to camp.",
+        "s_c pranks app1 by scattering their herb bounty. app2 huffs at s_c, annoyed, and runs off without a single herb."
+    ],
+    "win_trait": ["playful", "loving"],
+    "fail_trait": ["shameless", "troublesome"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_med_warappmedapp_herbcontest2",
+    "biome": "Any",
+    "season": "Any",
+    "tags": [
+        "herb_gathering", 
+        "apprentice", 
+        "two_apprentices", 
+        "warrior_app", 
+        "many_herbs1", 
+        "random_herbs"
+    ],
+    "intro_text": "app2 boasts about their hunting skills, saying that makes them better at finding herbs than p_l.",
+    "decline_text": "p_l rolls their eyes, ignoring them for the rest of the patrol.",
+    "chance_of_success": 60,
+    "exp": 10,
+    "success_text": [
+        "p_l takes the bait, and the two apprentices have a lot of fun during this herb-gathering patrol, happily bickering all the way.",
+        "Driven by the competition, p_l and app2 work extra hard and return to camp with a <i>lot</i> of herbs, to the surprise of their mentors."
+    ],
+    "fail_text": [
+        "Either it's bad luck, or app2's herb-gathering skills don't measure up. Disappointed, p_l stresses about how to explain this failed patrol to their mentors."
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 }
 ]
