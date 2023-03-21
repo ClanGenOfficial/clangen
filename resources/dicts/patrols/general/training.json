@@ -260,7 +260,7 @@
         "p_l has no time for this spat and pulls the patrol to a halt to remind them that they have a star-damned job to do and quarreling like kittens will not be tolerated. The patrol returns to their work collecting nesting material with newfound vigor."
     ],
     "fail_text": [
-        "p_l stutters; they don't think they are fit to lead the patrol",
+        "p_l stutters; they don't think they are fit to lead the patrol.",
         "p_l spends so much time listening sympathetically to every cat that the patrol gets nothing done, and as they return back home the quarrel continues."
     ],
     "win_skills": ["great speaker", "excellent speaker"],

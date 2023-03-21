@@ -632,16 +632,17 @@ class Condition_Events():
                 self.give_risks(cat, event_list, condition, condition_progression, conditions, cat.permanent_condition)
 
         retire_chances = {
+            'newborn': 0,
             'kitten': 0,
             'adolescent': 100,
             'young adult': 80,
             'adult': 70,
             'senior adult': 50,
-            'elder': 0
+            'senior': 0
         }
 
         if not triggered and not cat.dead and not cat.retired and cat.status not in \
-                ['leader', 'medicine cat', 'kitten', 'medicine cat apprentice', 'mediator', 'mediator apprentice'] \
+                ['leader', 'medicine cat', 'kitten', 'newborn', 'medicine cat apprentice', 'mediator', 'mediator apprentice'] \
                 and game.settings['retirement'] is False:
             for condition in cat.permanent_condition:
                 if cat.permanent_condition[condition]['severity'] == 'major':

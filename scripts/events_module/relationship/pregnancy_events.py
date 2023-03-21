@@ -569,13 +569,13 @@ class Pregnancy_Events():
             kit = None
             if other_cat is not None:
                 if cat.gender == 'female':
-                    kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0)
+                    kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0, status='newborn')
                     kit.thought = f"Snuggles up to the belly of {cat.name}"
                 elif cat.gender == 'male' and other_cat.gender == 'male':
-                    kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0)
+                    kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0, status='newborn')
                     kit.thought = f"Snuggles up to the belly of {cat.name}"
                 else:
-                    kit = Cat(parent1=other_cat.ID, parent2=cat.ID, moons=0)
+                    kit = Cat(parent1=other_cat.ID, parent2=cat.ID, moons=0, status='newborn')
                     kit.thought = f"Snuggles up to the belly of {other_cat.name}"
                 cat.birth_cooldown = 6
                 other_cat.birth_cooldown = 6
@@ -584,7 +584,7 @@ class Pregnancy_Events():
                     backstory = backstory_choice_1
                 else:
                     backstory = backstory_choice_2
-                kit = Cat(parent1=cat.ID, moons=0, backstory=backstory)
+                kit = Cat(parent1=cat.ID, moons=0, backstory=backstory, status='newborn')
                 cat.birth_cooldown = 6
                 kit.thought = f"Snuggles up to the belly of {cat.name}"
             all_kitten.append(kit)
@@ -650,19 +650,14 @@ class Pregnancy_Events():
 
     def get_amount_of_kits(self, cat):
         """Get the amount of kits which will be born."""
-        one_kit_possibility = {"young adult": 8, "adult": 9, "senior adult": 10, "elder": 4}
-        two_kit_possibility = {"young adult": 10, "adult": 13, "senior adult": 15, "elder": 3}
-        three_kit_possibility = {"young adult": 17, "adult": 15, "senior adult": 5, "elder": 1}
-        four_kit_possibility = {"young adult": 12, "adult": 8, "senior adult": 2, "elder": 0}
-        five_kit_possibility = {"young adult": 6, "adult": 2, "senior adult": 0, "elder": 0}
-        six_kit_possibility = {"young adult": 2, "adult": 0, "senior adult": 0, "elder": 0}
-        one_kit = [1] * one_kit_possibility[cat.age]
-        two_kits = [2] * two_kit_possibility[cat.age]
-        three_kits = [3] * three_kit_possibility[cat.age]
-        four_kits = [4] * four_kit_possibility[cat.age]
-        five_kits = [5] * five_kit_possibility[cat.age]
-        six_kits = [6] * six_kit_possibility[cat.age]
-        amount = choice(one_kit + two_kits + three_kits + four_kits + five_kits + six_kits)
+        min_kits = game.config["pregnancy"]["min_kits"]
+        min_kit = [min_kits] * game.config["pregnancy"]["one_kit_possibility"][cat.age]
+        two_kits = [min_kits + 1] * game.config["pregnancy"]["two_kit_possibility"][cat.age]
+        three_kits = [min_kits + 2] * game.config["pregnancy"]["three_kit_possibility"][cat.age]
+        four_kits = [min_kits + 3] * game.config["pregnancy"]["four_kit_possibility"][cat.age]
+        five_kits = [min_kits + 4] * game.config["pregnancy"]["five_kit_possibility"][cat.age]
+        max_kits = [game.config["pregnancy"]["max_kits"]] * game.config["pregnancy"]["max_kit_possibility"][cat.age]
+        amount = choice(min_kit + two_kits + three_kits + four_kits + five_kits + max_kits)
 
         return amount
 

@@ -4,12 +4,13 @@
         "congenital": "never",
         "moons_until": 0,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -22,12 +23,13 @@
         "congenital": "never",
         "moons_until": 0,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -57,12 +59,13 @@
         "congenital": "always",
         "moons_until": 0,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -88,12 +91,13 @@
         "congenital": "sometimes",
         "moons_until": 2,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -119,12 +123,13 @@
         "congenital": "sometimes",
         "moons_until": 1,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -150,12 +155,13 @@
         "congenital": "never",
         "moons_until": 0,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -179,12 +185,13 @@
         "congenital": "always",
         "moons_until": 0,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -197,12 +204,13 @@
         "congenital": "sometimes",
         "moons_until": 0,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -236,12 +244,13 @@
         "congenital": "sometimes",
         "moons_until": 2,
         "mortality": {
+            "newborn": 20,
             "kitten": 20,
             "adolescent": 60,
             "young adult": 80,
             "adult": 90,
             "senior adult": 60,
-            "elder": 30
+            "senior": 30
         },
         "illness_infectiousness": [
         ],
@@ -261,12 +270,13 @@
         "congenital": "sometimes",
         "moons_until": 0,
         "mortality": {
+            "newborn": 10,
             "kitten": 10,
             "adolescent": 40,
             "young adult": 75,
             "adult": 65,
             "senior adult": 40,
-            "elder": 10
+            "senior": 10
         },
         "illness_infectiousness": [
             {
@@ -310,12 +320,13 @@
         "congenital": "sometimes",
         "moons_until": 1,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -328,12 +339,13 @@
         "congenital": "sometimes",
         "moons_until": 2,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -349,12 +361,13 @@
         "congenital": "sometimes",
         "moons_until": 2,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -371,12 +384,13 @@
         "congenital": "sometimes",
         "moons_until": 2,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -393,12 +407,13 @@
         "congenital": "sometimes",
         "moons_until": 2,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -412,12 +427,13 @@
         "congenital": "sometimes",
         "moons_until": 2,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -439,12 +455,13 @@
         "congenital": "sometimes",
         "moons_until": 2,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -464,12 +481,13 @@
         "congenital": "always",
         "moons_until": 2,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -486,12 +504,13 @@
         "congenital": "never",
         "moons_until": 0,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -508,12 +527,13 @@
         "congenital": "never",
         "moons_until": 0,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -534,12 +554,13 @@
         "congenital": "never",
         "moons_until": 0,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],
@@ -560,12 +581,13 @@
         "congenital": "sometimes",
         "moons_until": 2,
         "mortality": {
+            "newborn": 0,
             "kitten": 0,
             "adolescent": 0,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 0
+            "senior": 0
         },
         "illness_infectiousness": [
         ],

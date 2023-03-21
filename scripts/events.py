@@ -124,15 +124,6 @@ class Events():
                     ))
             # print(f" -- FRESHKILL: prey amount after feeding {game.clan.freshkill_pile.total_amount}") # pylint: disable=line-too-long
 
-        kittypet_ub = game.config["cotc_generation"]["kittypet_chance"]
-        rogue_ub = game.config["cotc_generation"]["rogue_chance"]
-        loner_ub = game.config["cotc_generation"]["loner_chance"]
-        if random.randint(1, kittypet_ub) == 1:
-            self.create_outside_cat("kittypet")
-        if random.randint(1, rogue_ub) == 1:
-            self.create_outside_cat("rogue")
-        if random.randint(1, loner_ub) == 1:
-            self.create_outside_cat("loner")
         rejoin_upperbound = game.config["lost_cat"]["rejoin_chance"]
         if random.randint(1, rejoin_upperbound) == 1:
             self.handle_lost_cats_return()
@@ -580,7 +571,7 @@ class Events():
         lost_cat = None
         for cat in Cat.outside_cats.values():
             if cat.outside and cat.status not in [
-                    'kittypet', 'loner', 'rogue'
+                    'kittypet', 'loner', 'rogue', 'former clancat'
             ] and not cat.exiled and not cat.dead:
                 lost_cat = cat
                 break
@@ -593,27 +584,6 @@ class Events():
             game.cur_events_list.append(
                 Single_Event(random.choice(text), "misc", [lost_cat.ID]))
             lost_cat.add_to_clan()
-
-    def create_outside_cat(self, status):
-        """
-        TODO: DOCS
-        """
-        if status == 'kittypet':
-            name = random.choice(names.names_dict["loner_names"])
-        elif status in ['loner', 'rogue']:
-            name = random.choice(names.names_dict["loner_names"] +
-                                 names.names_dict["normal_prefixes"])
-        else:
-            name = random.choice(names.names_dict["loner_names"])
-        new_cat = Cat(prefix=name,
-                      suffix=None,
-                      status=status,
-                      gender=random.choice(['female', 'male']))
-        if status == 'kittypet':
-            new_cat.accessory = random.choice(collars)
-        new_cat.outside = True
-        game.clan.add_cat(new_cat)
-        game.clan.add_to_outside(new_cat)
 
     def handle_fading(self, cat):
         """
@@ -676,7 +646,7 @@ class Events():
         elif cat.moons == 12:
             cat.age = 'adult'
         elif cat.moons == 120:
-            cat.age = 'elder'
+            cat.age = 'senior'
 
         # killing exiled cats
         if cat.exiled or cat.outside:
@@ -698,14 +668,38 @@ class Events():
 
     def one_moon_cat(self, cat):
         """
-        trigger events
+        Triggers various moon events for a cat.
+        -If dead, cat is given thought, dead_for count increased, and fading handled (then function is returned)
+        -Outbreak chance is handled, death event is attempted, and conditions are handled (if death happens, return)
+        -cat.one_moon() is triggered
+        -mediator events are triggered (this includes the cat choosing to become a mediator)
+        -freshkill pile events are triggered
+        -if the cat is injured or ill, they're given their own set of possible events to avoid unrealistic behavior.
+        They will handle disability events, coming out, pregnancy, apprentice EXP, ceremonies, relationship events, and
+        will generate a new thought. Then the function is returned.
+        -if the cat was not injured or ill, then they will do all of the above *and* trigger misc events, acc events,
+        and new cat events
         """
-
         if cat.dead:
             cat.thoughts()
             cat.dead_for += 1
             self.handle_fading(cat)  # Deal with fading.
             return
+
+        # switches between the two death handles
+        self.handle_outbreaks(cat)
+        if random.getrandbits(1):
+            triggered_death = self.handle_injuries_or_general_death(cat)
+            if not triggered_death:
+                self.handle_illnesses_or_illness_deaths(cat)
+            else:
+                return
+        else:
+            triggered_death = self.handle_illnesses_or_illness_deaths(cat)
+            if not triggered_death:
+                self.handle_injuries_or_general_death(cat)
+            else:
+                return
 
         # all actions, which do not trigger an event display and
         # are connected to cats are located in there
@@ -723,10 +717,11 @@ class Events():
             if cat.dead:
                 return
 
+        if cat.is_disabled():
+            self.condition_events.handle_already_disabled(cat)
+
         # prevent injured or sick cats from unrealistic clan events
         if cat.is_ill() or cat.is_injured():
-            if cat.is_disabled():
-                self.condition_events.handle_already_disabled(cat)
             self.coming_out(cat)
             self.pregnancy_events.handle_having_kits(cat, clan=game.clan)
             self.handle_apprentice_EX(cat)
@@ -738,23 +733,28 @@ class Events():
             return
 
         # check for death/reveal/risks/retire caused by permanent conditions
-        if cat.is_disabled():
-            self.condition_events.handle_already_disabled(cat)
 
-        self.handle_apprentice_EX(cat)
-        self.perform_ceremonies(cat)  # here is age up included
+        if cat.status == 'newborn':
+            cat.create_interaction()
+            cat.thoughts()
+            return
 
-        self.invite_new_cats(cat)
-
-        self.other_interactions(cat)
         self.coming_out(cat)
         self.pregnancy_events.handle_having_kits(cat, clan=game.clan)
+        self.handle_apprentice_EX(cat)
+        self.perform_ceremonies(cat)
+        cat.create_interaction()
+        self.invite_new_cats(cat)
+        self.other_interactions(cat)
         self.gain_accessories(cat)
 
-        cat.create_interaction()
         # this is the new interaction function, currently not active
         # cat.relationship_interaction()
         cat.thoughts()
+
+        # relationships have to be handled separately, because of the ceremony name change
+        if not cat.dead or cat.outside:
+            self.relation_events.handle_relationships(cat)
 
     def check_clan_relations(self):
         """
@@ -895,9 +895,7 @@ class Events():
                 game.clan.medicine_cat = cat
 
             # retiring to elder den
-            if cat.status in [
-                    'warrior', 'deputy'
-            ] and cat.age == 'elder' and len(cat.apprentice) < 1:
+            if cat.status in ['warrior', 'deputy'] and cat.age == 'senior' and len(cat.apprentice) < 1:
                 if cat.status == 'deputy':
                     game.clan.deputy = None
                 self.ceremony(cat, 'elder')
@@ -906,19 +904,11 @@ class Events():
             # apprentice a kitten to either med or warrior
             if cat.moons == cat_class.age_moons["adolescent"][0]:
                 if cat.status == 'kitten':
-
-                    med_cat_list = list(
-                        filter(
-                            lambda x: x.status in [
-                                "medicine cat", "medicine cat apprentice"
-                            ] and not x.dead and not x.outside,
-                            Cat.all_cats_list))
+                    med_cat_list = list(filter(lambda x: x.status in ["medicine cat", "medicine cat apprentice"]
+                                                         and not x.dead and not x.outside, Cat.all_cats_list))
 
                     # check if the medicine cat is an elder
-                    has_elder_med = [
-                        c for c in med_cat_list
-                        if c.age == 'elder' and c.status == "medicine cat"
-                    ]
+                    has_elder_med = [c for c in med_cat_list if c.age == 'senior' and c.status == "medicine cat"]
 
                     very_old_med = [
                         c for c in med_cat_list
@@ -1222,7 +1212,7 @@ class Events():
 
         # getting the random honor if it's needed
         random_honor = None
-        if promoted_to == 'warrior':
+        if promoted_to in ['warrior', 'mediator', 'medicine cat']:
             resource_dir = "resources/dicts/events/ceremonies/"
             with open(f"{resource_dir}ceremony_traits.json",
                       encoding="ascii") as read_file:
@@ -1309,7 +1299,7 @@ class Events():
             chance += acc_chances["med_modifier"]
         if cat.age in ['kitten', 'adolescent']:
             chance += acc_chances["baby_modifier"]
-        elif cat.age in ['senior adult', 'elder']:
+        elif cat.age in ['senior adult', 'senior']:
             chance += acc_chances["elder_modifier"]
         if cat.trait in [
                 "adventurous", "childish", "confident", "daring", "playful",
@@ -1480,7 +1470,7 @@ class Events():
                 med_cat = random.choice(names.names_dict["normal_prefixes"]) + \
                           random.choice(names.names_dict["normal_suffixes"])
             if not prev_lead:
-                prev_lead = str(names.names_dict["normal_prefixes"]) + "star"
+                prev_lead = random.choice(names.names_dict["normal_prefixes"]) + "star"
             cat.life_givers.extend([
                 queen, warrior, kit, warrior2, app, elder, warrior3, med_cat,
                 prev_lead
@@ -1517,15 +1507,24 @@ class Events():
             else:
                 ran = game.config["graduation"]["base_app_timeskip_ex"]
 
+
             if not cat.mentor or Cat.fetch_cat(cat.mentor).not_working():
                 # Sick mentor debuff
                 mentor_modifier = 0.7
+                mentor_skill_modifier = 0
             else:
                 mentor_modifier = 1
+                cat_ob = Cat.fetch_cat(cat.mentor)
+                if cat_ob.skill in ['fantastic teacher']:
+                    mentor_skill_modifier = 1
+                else:
+                    mentor_skill_modifier = 0
 
-            exp = random.choice(list(range(ran[0][0], ran[0][1] + 1)) + list(range(ran[1][0], ran[1][1] + 1)) * 2)
+                
 
-            cat.experience += max(exp * mentor_modifier, 1)
+            exp = random.choice(list(range(ran[0][0], ran[0][1] + 1)) + list(range(ran[1][0], ran[1][1] + 1)))
+
+            cat.experience += max(exp * mentor_modifier + mentor_skill_modifier, 1)
             print(f"{cat.name} has gained {int(exp * mentor_modifier)} EX", cat._experience)
 
     def invite_new_cats(self, cat):
@@ -1811,7 +1810,6 @@ class Events():
         """Try to infect some cats."""
         # check if the cat is ill, if game mode is classic,
         # or if clan has sufficient med cats in expanded mode
-        # amount_per_med = get_amount_cat_for_one_medic(game.clan)
         if not cat.is_ill() or game.clan.game_mode == 'classic':
             return
 
@@ -1842,7 +1840,7 @@ class Events():
             if cat.illnesses[illness]["infectiousness"] == 0:
                 continue
             chance = cat.illnesses[illness]["infectiousness"]
-            chance += len(meds) * 10
+            chance += len(meds) * 7
             if not int(random.random() * chance):  # 1/chance to infect
                 # fleas are the only condition allowed to spread outside of cold seasons
                 if game.clan.current_season not in ["Leaf-bare", "Leaf-fall"
@@ -1853,7 +1851,7 @@ class Events():
                     alive_cats = list(
                         filter(
                             lambda kitty:
-                            (kitty.status == "kitten" and not kitty.dead and
+                            (kitty.status in ['kitten', 'newborn'] and not kitty.dead and
                              not kitty.outside), Cat.all_cats.values()))
                     alive_count = len(alive_cats)
 
@@ -2063,7 +2061,7 @@ class Events():
                     if all_warriors:
                         random_cat = random.choice(all_warriors)
                         involved_cats = [random_cat.ID]
-                        text = f"No cat in is truly fit to be deputy, " \
+                        text = f"No cat is truly fit to be deputy, " \
                                f"but the position can't remain vacant. " \
                                f"{random_cat.name} is appointed as the new deputy. "
 

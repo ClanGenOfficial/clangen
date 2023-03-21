@@ -1013,7 +1013,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "m_c decides to become a medicine cat apprentice in hopes that they will be able to see dead_par1 and dead_par2 in StarClan"
+    "m_c decides to become a medicine cat apprentice in hopes that they will be able to see dead_par1 and dead_par2 in StarClan."
   ],
   "med_app_20": [
     [
@@ -1153,7 +1153,7 @@
   "mediator_app_4": [
     [
       "mediator apprentice",
-      "no_mentor",
+      "yes_mentor",
       "general_parents",
       "general_leader",
       "general_backstory",
@@ -1196,7 +1196,7 @@
       "general_backstory",
       "all_traits"
     ],
-    "Despite the odd choice, m_c is firm that they'll be (mentor)'s apprentice: they want to help the Clan through words and influence, not through claw or fang."
+    "Despite the odd choice, m_c is firm that they'll be (mentor)'s apprentice: they want to help the Clan through words and influence, not through claw nor fang."
   ],
   "mediator_app_8": [
     [
@@ -1286,6 +1286,17 @@
     ],
     "(prefix)kit always dreamed of becoming a mediator: Now that they're m_c, an apprentice being mentored by (mentor), it feels like a wish come true."
   ],
+  "mediator_app_16": [
+     [
+       "mediator apprentice",
+       "yes_mentor",
+       "general_parents",
+       "general_leader",
+       "general_backstory",
+       "all_traits"
+     ],
+     "m_c beams proudly at their new mentor, (mentor), and are excited to begin their journey as the Clan's new mediator apprentice."
+   ],
   "med_0": [
     [
       "medicine cat",
@@ -2112,7 +2123,7 @@
       "general_backstory",
       "careful"
     ],
-    "(prefix)paw sits neatly in front l_n as they talk about how well (prefix)paw did in their assessment. They are named m_c after their r_h."
+    "(prefix)paw sits neatly in front of l_n as they talk about how well (prefix)paw did in their assessment. They are named m_c after their r_h."
   ],
   "warrior_15": [
     [
@@ -2716,6 +2727,29 @@
       "all_traits"
     ],
     "Although some Clan members have doubts of (prefix)paw's abilities, l_n gives them the name m_c and welcomes them as the Clan's new mediator."
+  ],
+  "mediator_3": [
+    [
+      "mediator",
+	    "prepared",
+      "general_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "As (prefix)paw has finished their mediator training, l_n gives them the name m_c after their r_h, welcoming them as the Clan's new mediator."
+  ],
+  "mediator_4": [
+    [
+      "mediator",
+      "alive_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "(previous_mentor) tells l_n that (prefix)paw has completed their mediator training, and l_n gives them the name m_c after their r_h, welcoming them as the Clan's new mediator."
   ],
   "elder_0": [
     [
