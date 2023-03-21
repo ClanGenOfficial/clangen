@@ -51,14 +51,14 @@ class Relation_Events():
         if not randint(0,2):
             self.same_age_events(cat)
 
-        # 1/3 for an additional event
-        if not randint(0,2):
-            self.romantic_events(cat)
-
         # this has to be handled at first
         if random.random() > 0.8:
             if self.romantic_events_class.big_love_check(cat):
                 return
+
+        # 1/15 for an additional event
+        if not random.getrandbits(4):
+            self.romantic_events(cat)
 
         cats_amount = len(Cat.all_cats)
         # cap the maximal checks
