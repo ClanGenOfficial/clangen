@@ -204,7 +204,7 @@
     "Gopher", "Horse", "Oat", "Elk", "Cow", "Heather", "Barley", "Wheat", "Tunnel", "Willow", "Sage", "Hare", 
     "Pronghorn", "Sedge", "Field", "Prairie", "Heather", "Rustle", "Breeze", "Swish", "Bison", "Cow", "Anise", "Rye", "Plover"
     ],
-    "Mountains": [
+    "Mountainous": [
     "Glacial", "Pinnacle", "Goat", "Alpaca", "Alpine", "Rocky", "Ram", "High", "Volcano", "Yucca", "Lichen", "Crag", "Eagle",
     "Tundra", "Cliff", "Avalanche", "Granite", "Gravel", "Salt", "Steppe", "Flint", "Mountain", "Summit", "Marten", "Mine",
     "Cavern", "Cave", "Chamois", "Cliff", "Peak", "Spire", "Shard", "Whistle", "Whisper", "Stone", "Limestone", "Pebble",
@@ -238,7 +238,7 @@
     "Plains": [
     "field", "meadow", "wool", "oat", "lamb", "elk", "flutter", "pollen", "bull", "bee", "swish", "breeze", "runner", "tunnel", "horse", "sheep"
     ],
-    "Mountains": [
+    "Mountainous": [
     "peak", "point", "horn", "lichen", "cliff", "ram", "shard", "whisper", "fall", "drop", "whistle", "tite", "mite", "frost", "cave", "echo", "goat"
     ],
     "Wetlands": [

@@ -468,7 +468,7 @@ class Cat():
                              self.eye_colour,
                              self.pelt.name,
                              self.tortiepattern,
-                             game.clan.biome)
+                             game.switches["biome"])
         else:
             self.name = Name(status, prefix, suffix, eyes=self.eye_colour)
 
