@@ -3,17 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="ce42a407-0f2f-4ee3-bcef-95649ffaedf8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/dicts/conditions/illnesses.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/dicts/conditions/illnesses.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/dicts/patrols/plains/training/any.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/dicts/patrols/plains/training/any.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/game_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/game_config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/cat/cats.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/cat/cats.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/events.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/events.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/events_module/generate_events.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/events_module/generate_events.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/events_module/new_cat_events.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/events_module/new_cat_events.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/patrol.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/patrol.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/screens/clan_creation_screens.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/screens/clan_creation_screens.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/events_module/death_events.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/events_module/death_events.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/events_module/relationship/pregnancy_events.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/events_module/relationship/pregnancy_events.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/screens/clan_screens.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/screens/clan_screens.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/utility.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/utility.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -22,7 +22,7 @@
 			"elder": 1.5,
 			"queen": 4,
 			"kitten": 0.5,
-			"newborn": 0
+			"newborn": 0.2
 		},
 		"feeding_order":[
 			"newborn",

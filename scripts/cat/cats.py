@@ -354,7 +354,7 @@ class Cat():
             else:
                 self.trait = choice(self.kit_traits)
 
-        if self.trait in self.kit_traits and self.status != 'kitten':
+        if self.trait in self.kit_traits and self.status not in ['kitten', 'newborn']:
             self.trait = choice(self.traits)
 
         if self.skill is None or self.skill == '???':
@@ -987,6 +987,8 @@ class Cat():
             return
 
         self.moons += 1
+        if self.moons == 1:
+            self.status = 'kitten'
         self.update_traits()
         self.in_camp = 1
 

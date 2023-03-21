@@ -40,7 +40,11 @@ class Death_Events():
         # ---------------------------------------------------------------------------- #
         #                                  kill cats                                   #
         # ---------------------------------------------------------------------------- #
-        death_cause = (random.choice(final_events))
+        try:
+            death_cause = (random.choice(final_events))
+        except IndexError:
+            print('WARNING: no death events found for', cat.name)
+            return
 
         # check if the cat's body was retrievable
         if "no_body" in death_cause.tags:
