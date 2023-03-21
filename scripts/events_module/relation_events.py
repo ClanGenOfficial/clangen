@@ -10,7 +10,7 @@ except ImportError:
 from scripts.game_structure.game_essentials import game
 from scripts.events_module.condition_events import Condition_Events
 from scripts.cat.cats import Cat
-from scripts.utility import get_cats_same_age, get_free_possible_mates
+from scripts.utility import get_cats_same_age, get_cats_of_romantic_interest, get_free_possible_mates
 from scripts.event_class import Single_Event
 from scripts.cat_relations.relationship import Relationship
 from scripts.events_module.relationship.romantic_events import Romantic_Events
@@ -195,17 +195,31 @@ class Relation_Events():
             chance_number += int(cat.relationships[cat.mate].romantic_love / 10)
             chance = int(random.random() * chance_number)
             if not chance:
-                info_text += ": but a other cat was chosen"
+                info_text += ": but a other cat was chosen, with a chance of: " + str(chance_number)
+                other_love_interest = get_cats_of_romantic_interest(cat)
                 free_possible_mates = get_free_possible_mates(cat)
+
+                cat_to_choose_from = free_possible_mates
+                if len(other_love_interest) > 0:
+                    cat_to_choose_from.extended(other_love_interest)
+                    cat_to_choose_from.extended(other_love_interest)
+
                 if len(free_possible_mates) < 1:
                     return
-                other_cat = choice(free_possible_mates)
+                other_cat = choice(cat_to_choose_from)
         else:
             info_text = "cat has no mate"
+            other_love_interest = get_cats_of_romantic_interest(cat)
             free_possible_mates = get_free_possible_mates(cat)
+            
+            cat_to_choose_from = free_possible_mates
+            if len(other_love_interest) > 0:
+                cat_to_choose_from.extended(other_love_interest)
+                cat_to_choose_from.extended(other_love_interest)
+
             if len(free_possible_mates) < 1:
                 return
-            other_cat = choice(free_possible_mates)
+            other_cat = choice(cat_to_choose_from)
 
         triggered = self.romantic_events_class.start_interaction(cat, other_cat)
         if triggered:

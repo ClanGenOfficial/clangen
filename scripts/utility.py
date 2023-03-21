@@ -144,6 +144,13 @@ def get_cats_same_age(cat, range=10):  # pylint: disable=redefined-builtin
     for inter_cat in cat.all_cats.values():
         if inter_cat.dead or inter_cat.outside or inter_cat.exiled:
             continue
+        if inter_cat.ID == cat.ID:
+            continue
+
+        if inter_cat.ID not in cat.relationships:
+            print(f"ERROR: {cat.name} had no relationship towards {inter_cat.name}")
+            continue
+
         if inter_cat.moons <= cat.moons + range and inter_cat.moons <= cat.moons - range:
             cats.append(inter_cat)
 
@@ -158,6 +165,11 @@ def get_free_possible_mates(cat):
             continue
         if inter_cat.ID == cat.ID:
             continue
+
+        if inter_cat.ID not in cat.relationships:
+            print(f"ERROR: {cat.name} had no relationship towards {inter_cat.name}")
+            continue
+
         if inter_cat.is_potential_mate(cat,True) and cat.is_potential_mate(inter_cat, True):
             if not inter_cat.mate:
                 cats.append(inter_cat)
@@ -514,6 +526,24 @@ def get_personality_compatibility(cat1, cat2):
             return PERSONALITY_COMPATIBILITY[personality2][personality1]
 
     return None
+
+
+def get_cats_of_romantic_interest(cat):
+    """Returns a list of cats, those cats are love interest of the given cat."""
+    cats = []
+    for inter_cat in cat.all_cats.values():
+        if inter_cat.dead or inter_cat.outside or inter_cat.exiled:
+            continue
+        if inter_cat.ID == cat.ID:
+            continue
+        
+        if inter_cat.ID not in cat.relationships:
+            print(f"ERROR: {cat.name} had no relationship towards {inter_cat.name}")
+            continue
+
+        if cat.relationships[inter_cat.ID].romantic_love > 0:
+            cats.append(inter_cat)
+    return cats
 
 
 def get_amount_of_cats_with_relation_value_towards(cat, value, all_cats):
