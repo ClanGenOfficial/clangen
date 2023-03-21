@@ -158,18 +158,18 @@ jobs:
       - name: Run PyInstaller
         #run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
         run: python -m PyInstaller Clangen.spec
+      - name: Create archive (.zip)
+        run: tar.exe -a -c -f Clangen_Win32.zip -C dist Clangen
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Win32
-          path: dist/
+          path: Clangen_Win32.zip
       - name: Import GPG key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v5
         with:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
-      - name: Create archive (.zip)
-        run: tar.exe -a -c -f Clangen_Win32.zip -C dist Clangen
       - name: Upload artifact to API
         shell: bash
         run: |
@@ -231,18 +231,18 @@ jobs:
       - name: Run PyInstaller
         #run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
         run: python -m PyInstaller Clangen.spec
+      - name: Create archive (.zip)
+        run: tar.exe -a -c -f Clangen_Win64.zip -C dist Clangen
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Win64
-          path: dist/
+          path: Clangen_Win64.zip
       - name: Import GPG key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v5
         with:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
-      - name: Create archive (.zip)
-        run: tar.exe -a -c -f Clangen_Win64.zip -C dist Clangen
       - name: Upload artifact to API
         shell: bash
         run: |
@@ -304,18 +304,18 @@ jobs:
       - name: Run PyInstaller
         #run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
         run: python -m PyInstaller Clangen.spec
+      - name: Create archive (.zip)
+        run: tar.exe -a -c -f Clangen_Win64_Windows10+.zip -C dist Clangen
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Win64_Windows10+
-          path: dist/
+          path: Clangen_Win64_Windows10+.zip
       - name: Import GPG key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v5
         with:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
-      - name: Create archive (.zip)
-        run: tar.exe -a -c -f Clangen_Win64_Windows10+.zip -C dist Clangen
       - name: Upload artifact to API
         shell: bash
         run: |
