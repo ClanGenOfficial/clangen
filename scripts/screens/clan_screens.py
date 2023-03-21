@@ -304,7 +304,7 @@ class ClanScreen(Screens):
             if Cat.all_cats[x].dead or Cat.all_cats[x].outside:
                 continue
 
-            # Newborns are now meant to be placed. They are hiding. 
+            # Newborns are not meant to be placed. They are hiding. 
             if Cat.all_cats[x].status == 'newborn' or game.config['fun']['all_cats_are_newborn']:
                 if game.config['fun']['all_cats_are_newborn'] or game.config['fun']['newborns_can_roam']:
                     # Free them
