@@ -13,7 +13,7 @@ from scripts.cat.cats import Cat
 from scripts.utility import get_cats_same_age
 from scripts.event_class import Single_Event
 from scripts.cat_relations.relationship import Relationship
-from scripts.events_module.relationship.mate_events import Mate_Events
+from scripts.events_module.relationship.romantic_events import Mate_Events
 from scripts.events_module.relationship.welcoming_events import Welcoming_Events
 from scripts.events_module.relationship.group_events import Group_Events
 
@@ -168,15 +168,20 @@ class Relation_Events():
     #                                new event types                               #
     # ---------------------------------------------------------------------------- #
 
-    def mate_events(self):
-        """Description will follow."""
+    def romantic_or_mate_events(self, cat):
         """
-        > events unique to mates
+            ONLY for cat OLDER than 12 moons.
+            To increase mating chance this function is used.
+            It will boost the romantic values of either mate or possible mates.
+            This also increase the chance of affairs.
         """
         print("TODO")
 
     def same_age_events(self, cat):
-        """Description will follow."""
+        """	
+            To increase the relationship amounts with cats of the same age. 
+            This should lead to 'friends', 'enemies' and possible mates around the same age group.
+        """
         if not self.can_trigger_events(cat):
             return
 
@@ -190,7 +195,11 @@ class Relation_Events():
                 self.trigger_event(random_cat)
 
     def group_events(self, cat):
-        """Description will follow."""
+        """
+            This function triggers group events, based on the given cat. 
+            First it will be decided if a special type of group (found in relationship_events/group_interactions/group_types.json).
+            As default all cats will be a possible 'group' of interaction.
+        """
         if not self.can_trigger_events(cat):
             return
 
@@ -218,17 +227,17 @@ class Relation_Events():
             inter_cat = Cat.all_cats[id]
             self.trigger_event(inter_cat)
 
-    def family_events(self):
-        """Description will follow."""
+    def family_events(self, cat):
         """
-        - parent + child
-        - siblings
-        - grand parents/children
+            To have more family related events.
         """
         print("TODO")
 
-    def outsider_events(self):
-        """Description will follow."""
+    def outsider_events(self, cat):
+        """
+            ONLY for cat OLDER than 6 moons and not major injured.
+            This function will handle when the cat interacts with cat which are outside of the clan.
+        """
         print("TODO")
 
     def welcome_new_cats(self, new_cats = None):
