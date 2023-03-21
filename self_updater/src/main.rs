@@ -23,13 +23,16 @@ fn recursive_copy(source: impl AsRef<Path>, destination: impl AsRef<Path>) -> io
 }
 
 fn move_update_files_win() -> io::Result<()> {
-    thread::sleep(time::Duration::from_secs(5));
+    println!("Starting update process");
+    thread::sleep(time::Duration::from_secs(2));
+
 
     let args: Vec<String> = env::args().collect();
     let game_path = Path::new(&args[1]);
 
     let entries = fs::read_dir(game_path)?;
 
+    println!("Deleting old game files");
     for entry in entries {
         let entry = entry?;
 
@@ -49,6 +52,7 @@ fn move_update_files_win() -> io::Result<()> {
 
     let entries = fs::read_dir(game_path.join("Downloads").join("Clangen"))?;
 
+    println!("Applying updated files");
     for entry in entries {
         let entry = entry?;
 
@@ -66,6 +70,7 @@ fn move_update_files_win() -> io::Result<()> {
 
     OpenOptions::new().create(true).write(true).open(game_path.join("auto-updated"))?;
 
+    println!("Starting game");
     Command::new("cmd.exe")
         .raw_arg("/C")
         .raw_arg("start")
@@ -73,8 +78,6 @@ fn move_update_files_win() -> io::Result<()> {
         .current_dir(game_path)
         .creation_flags(0x00000008 | 0x01000000)
         .spawn()?;
-
-    //thread::sleep(time::Duration::from_secs(1));
 
     Ok(())
 }
