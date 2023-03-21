@@ -693,6 +693,8 @@ class Patrol():
         if self.patrol_event is None:
             return
 
+        print("patrol tags: ", self.patrol_event.tags)
+
         antagonize = antagonize
         success_text = self.patrol_event.success_text
         fail_text = self.patrol_event.fail_text
