@@ -49,7 +49,6 @@ class Romantic_Events():
         # check if it should be a positive or negative interaction
         relationship = cat_from.relationships[cat_to.ID]
         positive = self.check_if_positive_interaction(relationship)
-        print("------ positive: ", positive)
 
         # get the possible interaction list and filter them
         possible_interactions = relevant_dict["positive"] if positive else relevant_dict["negative"]
@@ -97,9 +96,7 @@ class Romantic_Events():
         in_de_crease = "increase" if positive else "decrease"
         rel_type = "romantic"
         relationship.chosen_interaction = chosen_interaction
-        print("INFO: ", in_de_crease, relationship.romantic_love)
         relationship.interaction_affect_relationships(in_de_crease, interaction.intensity, rel_type)
-        print("INFO - AFTER: ", in_de_crease, relationship.romantic_love)
 
         # give cats injuries if the game mode is not classic
         if len(chosen_interaction.get_injuries) > 0 and game.clan.game_mode != 'classic':
@@ -108,9 +105,9 @@ class Romantic_Events():
                     print(f"ERROR: there are no injury names in the chosen interaction {chosen_interaction.id}.")
                     continue
 
-                injured_cat = self.cat_from
+                injured_cat = cat_from
                 if abbreviations != "m_c":
-                    injured_cat = self.cat_to
+                    injured_cat = cat_to
                 
                 for inj in injury_dict["injury_names"]:
                     injured_cat.get_injured(inj, True)
