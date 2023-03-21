@@ -34,7 +34,7 @@ if os.path.exists("auto-updated"):
     os.remove("auto-updated")
     shutil.rmtree("Downloads")
     print("Update Complete!")
-    print("New version: " + get_version_info())
+    print("New version: " + get_version_info().version_number)
 
 
 setup_data_dir()
