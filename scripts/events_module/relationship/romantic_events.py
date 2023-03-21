@@ -94,6 +94,7 @@ class Romantic_Events():
         # affect relationship - it should always be in a romantic way
         in_de_crease = "increase" if positive else "decrease"
         rel_type = "romantic"
+        relationship.chosen_interaction = chosen_interaction
         relationship.interaction_affect_relationships(in_de_crease, interaction.intensity, rel_type)
 
         # give cats injuries if the game mode is not classic
@@ -123,7 +124,7 @@ class Romantic_Events():
         interaction_str = interaction_str.replace("r_c", str(cat_to.name))
 
         # display the interaction in the moon events
-        effect = "(positive effect)" if positive else "(negative effect)"
+        effect = " (positive effect)" if positive else " (negative effect)"
         interaction_str = interaction_str + effect
 
         relationship.log.append(interaction_str)
@@ -137,7 +138,7 @@ class Romantic_Events():
         game.cur_events_list.append(Single_Event(
             interaction_str, relevant_event_tabs, [cat_to.ID, cat_from.ID]
         ))
-        print("ROMANTIC!", cat_from)
+        print("ROMANTIC!", cat_from.name)
         return True
 
     def handle_new_mates(self, relationship, cat_from, cat_to):
