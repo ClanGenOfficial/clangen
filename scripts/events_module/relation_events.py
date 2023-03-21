@@ -185,44 +185,48 @@ class Relation_Events():
         if not self.can_trigger_events(cat):
             return
 
-        triggered = False
+
         other_cat = None
         info_text = ""
+
+        # get the cats which are relevant for romantic interactions
+        free_possible_mates = get_free_possible_mates(cat)
+        other_love_interest = get_cats_of_romantic_interest(cat)  
+        possible_cats = free_possible_mates
+        if len(other_love_interest) > 0 and len(other_love_interest) < 3:
+            possible_cats.extend(other_love_interest)
+            possible_cats.extend(other_love_interest)
+        elif len(other_love_interest) >= 3:
+            possible_cats = other_love_interest
+
+        # only adding cats which already have SOME relationship with each other
+        cat_to_choose_from = []
+        for inter_cat in possible_cats:
+            cat_to_inter = cat.relationships[inter_cat.ID].platonic_like > 10 or\
+                cat.relationships[inter_cat.ID].comfortable > 10
+            inter_to_cat = inter_cat.relationships[cat.ID].platonic_like > 10 or\
+                inter_cat.relationships[cat.ID].comfortable > 10
+            if cat_to_inter and inter_to_cat:
+                cat_to_choose_from.append(inter_cat)
+
         if cat.mate:
-            other_cat = cat.all_cats[cat.mate]
             info_text ="cat has mate"
             chance_number = game.config["relationship"]["chance_romantic_not_mate"]
             chance_number += int(cat.relationships[cat.mate].romantic_love / 10)
-            chance = int(random.random() * chance_number)
-            if not chance:
-                info_text += ": but a other cat was chosen, with a chance of: " + str(chance_number)
-                other_love_interest = get_cats_of_romantic_interest(cat)
-                free_possible_mates = get_free_possible_mates(cat)
-
-                cat_to_choose_from = free_possible_mates
-                if len(other_love_interest) > 0:
-                    cat_to_choose_from.extend(other_love_interest)
-                    cat_to_choose_from.extend(other_love_interest)
-
-                if len(free_possible_mates) < 1:
-                    return
-                other_cat = choice(cat_to_choose_from)
+            use_mate = int(random.random() * chance_number)  
+            # only if it is 0 then all the other cats should be used
+            if use_mate:
+                cat_to_choose_from = [cat.all_cats[cat.mate]]
         else:
             info_text = "cat has no mate"
-            other_love_interest = get_cats_of_romantic_interest(cat)
-            free_possible_mates = get_free_possible_mates(cat)
+
+        if len(cat_to_choose_from) < 1:
+            return
             
-            cat_to_choose_from = free_possible_mates
-            if len(other_love_interest) > 0:
-                cat_to_choose_from.extend(other_love_interest)
-                cat_to_choose_from.extend(other_love_interest)
-
-            if len(free_possible_mates) < 1:
-                return
-            other_cat = choice(cat_to_choose_from)
-
-        triggered = self.romantic_events_class.start_interaction(cat, other_cat)
-        if triggered:
+        other_cat = choice(cat_to_choose_from)
+        if self.romantic_events_class.start_interaction(cat, other_cat):
+            self.trigger_event(cat)
+            self.trigger_event(other_cat)
             print(info_text)
 
     def same_age_events(self, cat):
