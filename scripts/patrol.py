@@ -693,6 +693,8 @@ class Patrol():
         if self.patrol_event is None:
             return
 
+        print("patrol tags: ", self.patrol_event.tags)
+
         antagonize = antagonize
         success_text = self.patrol_event.success_text
         fail_text = self.patrol_event.fail_text
@@ -708,8 +710,8 @@ class Patrol():
         # EXP alone can only bring success chance up to 95. However, skills/traits can bring it up above that. 
         success_chance = min(success_chance, 95)
 
-        print('starting chance:', self.patrol_event.chance_of_success)
-        print('updated chance according to exp: ', success_chance)
+        print('starting chance:', self.patrol_event.chance_of_success, "| EX_updated chance:", success_chance)
+        skill_updates = ""
         for kitty in self.patrol_cats:
             if kitty.skill in self.patrol_event.win_skills:
                 success_chance += game.config["patrol_generation"]["win_stat_cat_modifier"]
@@ -724,7 +726,8 @@ class Patrol():
             if self.patrol_event.fail_trait and kitty.trait in self.patrol_event.fail_trait:
                 success_chance += game.config["patrol_generation"]["fail_stat_cat_modifier"]
 
-            print(kitty.name, 'updated chance to', success_chance)
+            skill_updates += f"{kitty.name} updated chance to {success_chance} | "
+        print(skill_updates)
         print('ending chance', success_chance)
 
         c = randint(0, 100)
@@ -894,21 +897,22 @@ class Patrol():
         :param success: success bool
         """
         tags = self.patrol_event.tags
-        print('new cat creation started')
         # check for ignore outcome tag
         if f"no_new_cat{outcome}" in tags:
             return
-
+        
         # find the new cat tag and split to get attributes - else return if no tag found
         attribute_list = []
         for tag in tags:
-            print(tag)
+            #print(tag)
             if "new_cat" in tag and "no_new_cat" not in tag and "new_cat_injury" not in tag:
                 attribute_list = tag.split("_")
                 print('found tag, attributes:', attribute_list)
                 break
         if not attribute_list:
             return
+        
+        print('new cat creation started')
 
         # setting the defaults
         new_name = choice([True, False])
@@ -1325,7 +1329,6 @@ class Patrol():
             for cat in self.patrol_cats:
                 if cat.status in ["apprentice", "medicine cat apprentice"]:
                     cat.experience = cat.experience + app_exp
-                    print(f"{cat.name} earned {app_exp}. New exp: {cat.experience}")
                 else:
                     cat.experience = cat.experience + gained_exp
 
