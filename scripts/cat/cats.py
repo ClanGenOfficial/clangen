@@ -177,7 +177,7 @@ class Cat():
     def __init__(self,
                  prefix=None,
                  gender=None,
-                 status="kitten",
+                 status="newborn",
                  backstory="clanborn",
                  parent1=None,
                  parent2=None,
