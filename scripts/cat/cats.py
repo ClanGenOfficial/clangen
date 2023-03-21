@@ -513,6 +513,8 @@ class Cat():
         self.injuries.clear()
         self.illnesses.clear()
 
+        self.thought = 'Is surprised to find themselves walking the stars of Silverpelt.'
+
         # Deal with leader death
         text = ""
         if self.status == 'leader':
