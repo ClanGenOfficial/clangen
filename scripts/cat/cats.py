@@ -335,7 +335,9 @@ class Cat():
                     if moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1] + 1):
                         self.age = key_age
         else:
-            if status == 'kitten':
+            if status == 'newborn':
+                self.age = 'newborn'
+            elif status == 'kitten':
                 self.age = 'kitten'
             elif status == 'elder':
                 self.age = 'senior'
