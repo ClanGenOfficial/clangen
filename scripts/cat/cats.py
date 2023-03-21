@@ -394,14 +394,14 @@ class Cat():
             # trans cat chances
             trans_chance = randint(0, 50)
             nb_chance = randint(0, 75)
-            if self.gender == "female" and not self.status == 'kitten':
+            if self.gender == "female" and not self.status in ['newborn', 'kitten']:
                 if trans_chance == 1:
                     self.genderalign = "trans male"
                 elif nb_chance == 1:
                     self.genderalign = "nonbinary"
                 else:
                     self.genderalign = self.gender
-            elif self.gender == "male" and not self.status == 'kitten':
+            elif self.gender == "male" and not self.status in ['newborn', 'kitten']:
                 if trans_chance == 1:
                     self.genderalign = "trans female"
                 elif nb_chance == 1:
@@ -458,7 +458,10 @@ class Cat():
 
         # In camp status
         self.in_camp = 1
-
+        if game.clan is not None:
+            biome = game.clan.biome
+        else:
+            biome = None
         # NAME
         if self.pelt is not None:
             self.name = Name(status,
@@ -468,7 +471,7 @@ class Cat():
                              self.eye_colour,
                              self.pelt.name,
                              self.tortiepattern,
-                             game.switches["biome"])
+                             biome=biome)
         else:
             self.name = Name(status, prefix, suffix, eyes=self.eye_colour)
 
