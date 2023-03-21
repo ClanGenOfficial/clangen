@@ -16,6 +16,7 @@ It then loads the settings, and then loads the start screen.
 
 
 """ # pylint: enable=line-too-long
+import shutil
 import sys
 import time
 import os
@@ -31,7 +32,7 @@ if directory:
 if os.path.exists("auto-updated"):
     print("Clangen starting, deleting auto-updated file")
     os.remove("auto-updated")
-    os.rmdir("Downloads")
+    shutil.rmtree("Downloads")
     print("Update Complete!")
     print("New version: " + get_version_info())
 
