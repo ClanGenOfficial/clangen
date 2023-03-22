@@ -2032,25 +2032,20 @@ class ChangeNameScreen(Screens):
                                                                         self.the_cat.name.names_dict["special_suffixes"]
                                                                         [self.the_cat.name.status]
                                                                         , manager=MANAGER)
-            # TODO: check if the name is different from the special suffix
-            # if self.the_cat.name.suffix == self.the_cat.name.names_dict["special_suffixes"][self.the_cat.name.status]:
-            #     self.toggle_spec_block_on.show()
-            #     self.toggle_spec_block_on.enable()
-            #     self.toggle_spec_block_off.hide()
-            #     self.toggle_spec_block_off.disable()
-            #     self.random_suff.disable()
-            # else:
-            #     self.toggle_spec_block_on.hide()
-            #     self.toggle_spec_block_on.disable()
-            #     self.toggle_spec_block_off.show()
-            #     self.toggle_spec_block_off.enable()
-            #     self.random_suff.enable()
-            self.toggle_spec_block_on.show()
-            self.toggle_spec_block_on.enable()
-            self.toggle_spec_block_off.hide()
-            self.toggle_spec_block_off.disable()
-            self.random_suff.disable()
-            self.suffix_entry_box.disable()
+            if not self.the_cat.name.specsuffix_hidden:
+                self.toggle_spec_block_on.show()
+                self.toggle_spec_block_on.enable()
+                self.toggle_spec_block_off.hide()
+                self.toggle_spec_block_off.disable()
+                self.random_suff.disable()
+                self.suffix_entry_box.disable()
+            else:
+                self.toggle_spec_block_on.hide()
+                self.toggle_spec_block_on.disable()
+                self.toggle_spec_block_off.show()
+                self.toggle_spec_block_off.enable()
+                self.random_suff.enable()
+                self.suffix_entry_box.enable()
 
 
         else:
@@ -2104,7 +2099,8 @@ class ChangeNameScreen(Screens):
                                                     self.the_cat.pelt.colour,
                                                     self.the_cat.eye_colour,
                                                     self.the_cat.pelt.name,
-                                                    self.the_cat.tortiepattern).prefix)
+                                                    self.the_cat.tortiepattern,
+                                                    specsuffix_hidden=(self.the_cat.name.status in self.the_cat.name.names_dict["special_suffixes"])).suffix)
             elif event.ui_element == self.random_suff:
                                 self.suffix_entry_box.set_text(Name(
                                                     self.the_cat.status,
@@ -2113,7 +2109,8 @@ class ChangeNameScreen(Screens):
                                                     self.the_cat.pelt.colour,
                                                     self.the_cat.eye_colour,
                                                     self.the_cat.pelt.name,
-                                                    self.the_cat.tortiepattern).suffix)
+                                                    self.the_cat.tortiepattern,
+                                                    specsuffix_hidden=(self.the_cat.name.status in self.the_cat.name.names_dict["special_suffixes"])).suffix)
             elif event.ui_element == self.toggle_spec_block_on:
                 self.suffix_entry_box.enable()
                 self.random_suff.enable()
@@ -2122,12 +2119,14 @@ class ChangeNameScreen(Screens):
                 self.toggle_spec_block_off.enable()
                 self.toggle_spec_block_off.show()
                 self.suffix_entry_box.set_text(self.the_cat.name.suffix)
+                self.the_cat.specsuffix_hidden = True
             elif event.ui_element == self.toggle_spec_block_off:
                 self.random_suff.disable()
                 self.toggle_spec_block_off.disable()
                 self.toggle_spec_block_off.hide()
                 self.toggle_spec_block_on.enable()
                 self.toggle_spec_block_on.show()
+                self.the_cat.specsuffix_hidden = False
                 self.suffix_entry_box.set_text("")
                 self.suffix_entry_box.rebuild()
                 self.suffix_entry_box.disable()
