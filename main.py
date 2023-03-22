@@ -19,6 +19,8 @@ It then loads the settings, and then loads the start screen.
 import sys
 import time
 import os
+
+from scripts.housekeeping.log_cleanup import prune_logs
 from scripts.stream_duplexer import UnbufferedStreamDuplexer
 from scripts.datadir import get_log_dir, setup_data_dir
 from scripts.version import get_version_info
@@ -56,6 +58,9 @@ stream_handler = logging.StreamHandler()
 stream_handler.setFormatter(formatter)
 logging.root.addHandler(file_handler)
 logging.root.addHandler(stream_handler)
+
+
+prune_logs(logs_to_keep=5, retain_empty_logs=False)
 
 
 def log_crash(logtype, value, tb):

@@ -366,7 +366,6 @@
             "app1 maintains that bison are obstacles, not weird land protectors or anything like that, just annoying mooing obstacles, and p_l can't get them to take the training session seriously."
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -391,7 +390,6 @@
             "app1 maintains that bison are obstacles, not dangerous or anything like that, just annoying mooing obstacles, and p_l can't get them to take the training session seriously."
     ],
     "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -416,7 +414,6 @@
             "app1 maintains that bison are obstacles, not weird land protectors or anything like that, just annoying mooing obstacles, and p_l can't get them to take the training session seriously. They distract app2 as well, and eventually p_l has to give up on teaching."
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -441,7 +438,6 @@
             "app1 maintains that bison are obstacles, not dangerous or anything like that, just annoying mooing obstacles, and p_l can't get them to take the training session seriously. They distract app2 as well, and eventually p_l has to give up on teaching."
     ],
     "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -466,7 +462,6 @@
         "app1 maintains that tunnels aren't useful for anything, just annoying obstacles in the landscape, and p_l can't get them to take the training session seriously."
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -491,7 +486,6 @@
             "app1 maintains that tunnels aren't useful for anything, just annoying obstacles in the landscape, and p_l can't get them to take the training session seriously."
     ],
     "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -603,7 +597,7 @@
         "biome": "plains",
         "season": "Any",
         "tags": ["app_stat", "training", "romantic", "trust", "big_change", "minor_injury", "apprentice", "two_apprentices"],
-        "intro_text": "Shivering with ilicit excitement, app1 gestures app2 on with their tail. They need to sneak out of camp before anyone notices them in the early morning dark.",
+        "intro_text": "Shivering with illicit excitement, app1 gestures app2 on with their tail. They need to sneak out of camp before anyone notices them in the early morning dark.",
         "decline_text": "Shaking their head, app2 looks back regretfully, tilting their head meaningfully towards where their mentor is already stirring for the day.",
         "chance_of_success": 70,
         "exp": 40,
@@ -621,8 +615,6 @@
         ],
 
         "win_trait": ["bold", "charismatic", "playful", "empathetic", "faithful", "loving", "insecure", "lonesome", "loyal"],
-        "fail_skills": null,
-
         "min_cats": 2,
         "max_cats": 2,
         "antagonize_text": null,

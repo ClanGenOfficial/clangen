@@ -77,14 +77,15 @@
     "Badger", "Barley", "Basil", "Bass", "Bay", "Bayou", "Beam", "Bear", "Beaver", "Bee", "Beech", "Beetle", "Berry",
     "Big", "Birch", "Bird", "Bite", "Bitter", "Bittern", "Blizzard", "Bloom", "Bud",
     "Blossom", "Blotch", "Bluebell", "Bluff", "Bog", "Borage", "Bough", "Boulder", "Bounce", "Bracken", "Bramble",
-    "Brave", "Breeze", "Briar", "Bright", "Brindle", "Bristle", "Broken", "Brook", "Brush", "Bubbling", "Buck",
+    "Brave", "Breeze", "Briar", "Bright", "Brindle", "Bristle", "Broken", "Brook", "Brush", "Bubbling",
     "Bug", "Bumble", "Burdock", "Burr", "Bush", "Buzzard", "Carp", "Cave", "Cedar", "Chaffinch", "Chasing", "Cherry",
     "Chestnut", "Chive", "Cicada", "Claw", "Clay", "Clear", "Cliff", "Clover", "Condor", "Copse",
     "Cone", "Conifer", "Cougar", "Coyote", "Crag", "Crane", "Creek", "Cress", "Crested", "Cricket", "Crooked",
-    "Crouch", "Curl", "Curlew", "Curly", "Cypress", "Dahlia", "Daisy", "Dancing", "Dandelion", "Dapple", "Dappled",
-    "Dawn", "Deer", "Dew", "Doe", "Dog", "Down", "Downy", "Drift",
-    "Drizzle", "Dry", "Duck", "Dusk", "Eagle", "Echo", "Egret", "Elder", "Elm",
-    "Ermine", "Falcon", "Fallen", "Falling", "Fallow", "Fawn", "Feather", "Fennel", "Fern",
+    "Crouch", "Curl", "Curlew", "Curly", "Cypress", 
+    "Dahlia", "Daisy", "Dancing", "Dapple", "Dappled", "Dawn", "Dew", "Dog", "Down", "Downy", "Drift",
+    "Drizzle", "Dry", "Duck", "Dusk",
+    "Eagle", "Echo", "Egret", "Elder", "Elm", "Ermine",
+    "Falcon", "Fallen", "Falling", "Fallow", "Fawn", "Feather", "Fennel", "Fern",
     "Ferret", "Fidget", "Fin", "Finch", "Fir", "Fish", "Flail", "Flash", "Flax", "Fleck", "Fleet", "Flicker",
     "Flight", "Flint", "Flip", "Flood", "Flower", "Flutter", "Fly", "Fog", "Forest", "Freckle", "Fringe",
     "Frog", "Frond", "Furled", "Furze", "Fuzzy", "Gale", "Gander", "Gannet", "Garlic", "Goose",
@@ -97,20 +98,20 @@
     "Mallow", "Mantis", "Maple", "Marigold", "Marsh", "Marten", "Meadow", "Midge",
     "Milk", "Milkweed", "Mink", "Minnow", "Mistle", "Mite", "Mole", "Moon", "Moor", "Morning", "Moss",
     "Mossy", "Moth", "Mottle", "Mottled", "Mouse", "Mumble", "Murk", "Myrtle", "Nectar", "Needle", "Nettle",
-    "Newt", "Nut", "Oat", "Odd", "One", "Orange", "Osprey", "Pansy", "Panther", "Parsley", "Partridge", "Patch", "Peak",
-    "Pear", "Peat", "Perch", "Petal", "Pheasant", "Pigeon", "Pike", "Pine", "Pink", "Piper", "Plover", "Plum", "Pod",
+    "Newt", "Nut", "Oak", "Oat", "Odd",  "One", "Osprey", "Pansy", "Panther", "Parsley", "Partridge", "Patch", "Peak",
+    "Pear", "Peat", "Perch", "Petal", "Pheasant", "Pigeon", "Pike", "Pine", "Piper", "Plover", "Plum", "Pod",
     "Pond", "Pool", "Poppy", "Posy", "Pounce", "Prance", "Prickle", "Prim", "Primrose", "Puddle", "Quail", "Quick",
     "Pop", "Quiet", "Quill", "Rabbit", "Raccoon", "Ragged", "Rain", "Rat", "Rattle", "Raven", "Reed",
-    "Ridge", "Rift", "Ripple", "River", "Roach", "Rook", "Root", "Rose", "Rosy", "Rowan", "Rubble",
-    "Running", "Rush", "Rye", "Sage", "Scorch", "Sedge", "Seed", "Shard", "Sharp",
-    "Shell", "Shimmer", "Shine", "Shining", "Shivering", "Short", "Shrew", "Shrub", "Shy", "Silk", "Silt", "Skip", "Sky", "Slate",
-    "Sleek", "Sleet", "Slight", "Slip", "Sloe", "Slope", "Small", "Snail", "Snake", "Snap", "Sneeze", "Snip", "Soft", "Song",
-    "Sorrel", "Spark", "Sparrow", "Speckle", "Spider", "Spike", "Spire", "Splash", "Spot", "Spotted", "Spring", "Spruce",
-    "Squirrel", "Starling", "Stem", "Stoat", "Stork", "Stream", "Strike",
-    "Stumpy", "Sunny", "Swallow", "Swamp", "Sweet", "Swift", "Sycamore", "Tall", "Talon", "Tangle", "Tansy", "Tawny", "Thistle", "Thorn",
-    "Thrift", "Thrush", "Thunder", "Thyme", "Tiger", "Timber", "Tiny", "Tip", "Toad", "Torn", "Trout", "Tuft", "Tulip",
-    "Tumble", "Turtle", "Vine", "Vixen", "Wasp", "Weasel", "Web", "Weed", "Wet", "Wheat", "Whirl", "Whisker",
-    "Whisper", "Whispering", "Whistle", "Whorl", "Wild", "Willow", "Wind", "Wish", "Wing", "Wisteria", "Wolf", "Wood", "Wren", "Yarrow", "Yew",
+    "Ridge", "Rift", "Ripple", "River", "Roach", "Rook", "Root", "Rose", "Rosy", "Rowan", "Rubble", "Running", "Rush", "Rye", 
+    "Scorch", "Seed", "Shard", "Sharp", "Shell", "Shimmer", "Shine", "Shining", "Shivering", "Short", "Shrew", "Shrub",
+    "Shy", "Silk", "Silt", "Skip", "Sky", "Slate", "Sleek", "Sleet", "Slight", "Slip", "Sloe", "Slope", "Small", "Snail",
+    "Snake", "Snap", "Sneeze", "Snip", "Soft", "Song", "Sorrel", "Spark", "Sparrow", "Speckle", "Spider", "Spike", "Splash",
+    "Spot", "Spotted", "Spring", "Spruce", "Squirrel", "Starling", "Stem", "Stoat", "Stork", "Stream", "Strike",
+    "Stumpy", "Sunny", "Swallow", "Swamp", "Sweet", "Swift", "Sycamore", 
+    "Tall", "Talon", "Tangle", "Tansy", "Tawny", "Thistle", "Thorn", "Thrift", "Thrush", "Thunder", "Thyme", "Tiger",
+    "Timber", "Tiny", "Tip", "Toad", "Torn", "Trout", "Tuft", "Tulip", "Tumble", "Turtle", "Vine", "Vixen",
+    "Wasp", "Weasel", "Web", "Weed", "Wet", "Wheat", "Whirl", "Whisker", "Whisper", "Whispering", "Whistle", "Whorl",
+    "Wild", "Willow", "Wind", "Wish", "Wing", "Wisteria", "Wolf", "Wood", "Wren", "Yarrow", "Yew",
     "Dragon", "Wyvern", "Earth", "Eternal", "Time", "Ghost", "God", "Magic", "Mind", "Mountain", "Royal", "Shade", "Spirit", "Soul", "Energy", "Fae", "Wyrm",
     "Kirin", "Bull", "Hyena", "Vulture", "Orchid", "Drake", "Hydra", "Sealed", "Pure", "Radiant", "Shark", "Jaguar", "Moose", "Seal"
   ],
@@ -119,90 +120,160 @@
     "WHITE": [
     "White", "White", "Pale", "Snow", "Cloud", "Cloudy", "Milk", "Hail", "Frost", "Frozen", "Freeze", "Ice", "Icy", "Icicle",
     "Blizzard", "Flurry", "Moon", "Light", "Bone", "Bright", "Swan", "Dove", "Cotton", "Hawthorn", "Laurel", "Whisp",
-    "Mimosa", "Fringe", "Ibis"
+    "Mimosa", "Fringe", "Ibis", "Air", "Bright"
     ],
     "PALEGREY": [
-    "Gray", "Silver", "Pale", "Light", "Cloud", "Cloudy", "Hail", "Frost", "Ice", "Icy", "Mouse", "Bright", "Fog", "Freeze",
+    "Grey", "Grey", "Silver", "Pale", "Light", "Cloud", "Cloudy", "Hail", "Frost", "Ice", "Icy", "Mouse", "Bright", "Fog", "Freeze",
     "Frozen", "Stone", "Pebble", "Dove", "Sky", "Cotton", "Heather", "Ashen", "Titmouse", "Pipit", "Azalea", 
     "Fringe", "Mistle", "Icicle"
     ],
     "SILVER": [
-    "Gray", "Silver", "Cinder", "Ice", "Icy", "Frost", "Frozen", "Freeze", "Rain", "Blue", "Basalt",  "Mica",
+    "Grey", "Silver", "Silver", "Silver", "Cinder", "Ice", "Icy", "Frost", "Frozen", "Freeze", "Rain", "Blue",  "Mica",
     "River", "Blizzard", "Flurry", "Bone", "Bleak", "Stone", "Pebble", "Heather", "Shale",  "Scale", "Crocus", 
-    "Rue", "Fringe", "Glint", "Mistle", "Shatter", "Gossamer"
+    "Rue", "Fringe", "Glint", "Mistle", "Shatter", "Gossamer", "Air", "Pale", "Ermine", "Stoat", "Gull", "Vine", "Lilac"
     ],
     "GREY": [
-    "Gray", "Gray", "Ash", "Ashen", "Cinder", "Rock", "Stone", "Shade", "Mouse", "Smoke", "Smoky", "Shadow", "Fog", "Bone",
+    "Grey", "Grey", "Ash", "Ashen", "Cinder", "Rock", "Stone", "Shade", "Mouse", "Smoke", "Smoky", "Shadow", "Fog", "Bone",
     "Bleak", "Rain", "Storm", "Soot", "Pebble", "Mist", "Misty", "Heather", "Shale", "Trout", "Shrike", "Plume", "Tassel",
-    "Lyre"
+    "Lyre", "Rat", "Gull", "Pigeon"
     ],
     "DARKGREY": [
-    "Gray", "Shade", "Raven", "Crow", "Stone", "Dark", "Night", "Cinder", "Ash", "Ashen", "Pewter", "Twilight",
+    "Grey", "Grey", "Shade", "Raven", "Crow", "Stone", "Dark", "Dark", "Night", "Cinder", "Ash", "Ashen", "Pewter", "Twilight",
     "Smoke", "Smokey", "Shadow", "Bleak", "Rain", "Storm", "Pebble", "Mist", "Misty", "Warbler", "Wisp", "Gum"
     ],
     "GHOST": [
-    "Badger", "Black", "Black", "Shade", "Shaded", "Crow", "Raven", "Ebony", "Dark", "Char", "Charred", "Magpie",
-    "Night", "Shadow", "Scorch", "Midnight", "Bleak", "Storm", "Violet", "Pepper", "Bat", "Fade"
+    "Black", "Black", "Shade", "Shaded", "Crow", "Raven", "Ebony", "Dark", "Char", "Charred", "Magpie",
+    "Night", "Shadow", "Scorch", "Midnight", "Bleak", "Storm", "Violet", "Pepper", "Bat", "Fade", "Silver"
     ],
     "PALEGINGER": [
     "Pale", "Ginger", "Sand", "Sandy", "Yellow", "Sun", "Sunny", "Light", "Lion", "Bright", "Phlox", "Vervain",
     "Honey", "Daisy", "Warm", "Robin", "Cosmos", "Orchid", "Snapdragon", "Foxglove", "Verbena", "Straw",
-    "Sago"
+    "Sago", "Orange"
     ],
     "GOLDEN": [
-    "Gold", "Golden", "Yellow", "Sun", "Sunny", "Light", "Lightning", "Thunder", "Day", "Fig", "Mica", "Pyrite",
+    "Gold", "Gold", "Golden", "Yellow", "Sun", "Sunny", "Light", "Lightning", "Thunder", "Day", "Fig", "Mica", "Pyrite",
     "Honey", "Tawny", "Lion", "Dandelion", "Marigold", "Warm", "Amber", "Canary", "Chick", "Daffodil", "Saffron",
-    "Buttercup", "Straw", "Glint"
+    "Buttercup", "Straw", "Glint", "Wort"
     ],
     "GINGER": [
     "Ginger", "Ginger", "Red", "Fire", "Rust", "Flame", "Ember", "Sun", "Sunny", "Light", "Primrose", "Rose", "Gilly",
-    "Rowan", "Fox", "Tawny", "Plum", "Orange", "Warm", "Burn", "Burnt", "Robin", "Amber", "Larkspur", "Straw", "Lyre"
+    "Rowan", "Fox", "Tawny", "Plum", "Orange", "Warm", "Burn", "Burnt", "Robin", "Amber", "Larkspur", "Straw", "Lyre",
+    "Pyre", "Flare", "Blaze"
     ],
     "DARKGINGER": [
     "Ginger", "Ginger", "Red", "Red", "Fire", "Flame", "Ember", "Oak", "Shade", "Russet", "Fuchsia", "Hollyhock",
-    "Rowan", "Fox", "Orange", "Copper", "Cinnamon", "Burn", "Burnt", "Robin", "Oleander", "Scarlet", "Rust", "Lyre"
+    "Rowan", "Fox", "Orange", "Copper", "Cinnamon", "Burn", "Burnt", "Robin", "Oleander", "Scarlet", "Rust", "Lyre",
+    "Robin", "Berry"
     ],
     "CREAM": [
-    "Sand", "Sandy", "Yellow", "Pale", "Cream", "Light", "Milk", "Fawn", "Morel", "Jasmine", "Veil", "Gill",
-    "Bone", "Daisy", "Branch", "Warm", "Robin", "Almond", "Acorn", "Spindle", "Ivory"
+    "Sand", "Sandy", "Yellow", "Pale", "Cream", "Cream", "Light", "Milk", "Fawn", "Morel", "Jasmine", "Veil", "Gill",
+    "Bone", "Daisy", "Branch", "Warm", "Robin", "Spindle", "Ivory", "Pale", "Bright"
     ],
     "LIGHTBROWN": [
     "Brown", "Pale", "Light", "Mouse", "Dust", "Dusty", "Sand", "Sandy", "Bright", "Mud", "Scrub", "Velvet",
-    "Hazel", "Vole", "Branch", "Warm", "Robin", "Almond", "Acorn", "Bark", "Puma", "Umber", "Dune"
+    "Hazel", "Vole", "Branch", "Warm", "Robin", "Puma", "Umber", "Dune",
+    "Tree", "Root", "Bark"
     ],
     "BROWN": [
-    "Brown", "Oak", "Mouse", "Dark", "Shade", "Russet", "Dust", "Dusty", "Acorn", "Mud", "Deer", "Fawn", "Doe", "Stag",
-    "Twig", "Owl", "Otter", "Log", "Vole", "Branch", "Hazel", "Robin", "Acorn", "Bark", "Umber"
+    "Brown", "Brown", "Oak", "Mouse", "Dark", "Shade", "Russet", "Dust", "Dusty", "Mud", "Deer", "Fawn", "Doe", "Stag",
+    "Twig", "Owl", "Otter", "Log", "Vole", "Branch", "Hazel", "Robin", "Umber", "Tree", "Root", "Shadow"
     ],
     "DARKBROWN": [
-    "Brown", "Dark", "Shade", "Night", "Russet", "Rowan", "Mud", "Oak", "Twig", "Loach", 
-    "Owl", "Otter", "Log", "Hickory", "Branch", "Robin", "Bark", "Agate", "Umber", "Chanterelle"
+    "Brown", "Brown", "Dark", "Dark", "Shade", "Night", "Russet", "Rowan", "Mud", "Oak", "Twig", "Loach", "Shadow",
+    "Owl", "Otter", "Log", "Hickory", "Branch", "Robin", "Agate", "Umber", "Chanterelle", "Almond", "Dust", "Mud"
     ],
     "BLACK": [
-    "Badger", "Black", "Black", "Shade", "Shaded", "Crow", "Raven", "Ebony", "Dark", "Grackle", 
-    "Night", "Shadow", "Scorch", "Midnight", "Pepper", "Pitch", "Bat", "Burnt", "Coal", "Ink", "Inky"
-    , "Char", "Charred", "Current", "Mulberry"
+    "Black", "Black", "Black", "Shade", "Shaded", "Crow", "Raven", "Ebony", "Dark", "Grackle", 
+    "Night", "Shadow", "Scorch", "Midnight", "Pepper", "Pitch", "Bat", "Burnt", "Coal", "Ink", "Inky",
+    "Char", "Charred", "Mulberry", "Night", "Eve", "Dark", "Murk"
+    ]
+  },
+
+  "biome_prefixes": {
+    "Forest": [
+    "Acorn","Almond", "Antler", "Aspen", "Badger", "Bark", "Bat", "Beech", "Birch", "Boar", "Branch", "Branch", "Buck", 
+    "Cedar", "Deer", "Doe", "Elk", "Fern", "Fern", "Fir", "Frond", "Grouse", "Grove", "Honey", "Log", "Lynx", "Magnolia",
+    "Marten", "Maple", "Moose", "Moss", "Moss", "Mushroom", "Oak", "Oak", "Pine", "Robin", "Robin", "Sap", "Sparrow", "Sprig",
+    "Spruce", "Squirrel", "Squirrel", "Stag", "Stick", "Stump", "Twig", "Twig", "Wood", "Wolf"
+    ],
+    "Beach": [
+    "Albatross", "Algae", "Anchovy", "Anemone", "Avocet", "Bass", "Barnacle", "Barracuda", "Beluga", "Brine", "Clam", "Coast",
+    "Coconut", "Cod", "Conch", "Coral", "Cove", "Crab", "Current", "Delta", "Dolphin", "Dolphin", "Drip", "Drop", "Fin", "Flounder",
+    "Foam", "Gull", "Gull", "Hermit", "Jellyfish", "Lagoon", "Lake", "Marlin", "Nacre", "Ocean", "Octopus", "Palm", "Pearl", "Pearl",
+    "Pearly", "Pelican", "Pool", "Pool", "Ripple", "Reef", "Ripple", "Salmon", "Salt", "Sand", "Sand", "Sardine",  "Scale", "Scale", "Sea",
+    "Seabass", "Seagull", "Shark", "Shell", "Shimmer", "Shimmer", "Shore", "Slug", "Snail", "Splash", "Squid", "Swash",
+    "Tide", "Tidal", "Torrent", "Wave", "Wave", "Whale"
+    ],
+    "Plains": [
+    "Anise", "Barley", "Barley", "Bison", "Breeze", "Breeze", "Butterfly", "Cow", "Cow", "Dandelion", "Elk", "Field", "Field",
+    "Flutter", "Gopher", "Grass", "Grass", "Grouse", "Hare", "Heather", "Heather", "Horse", "Lamb", "Meadow", "Oat", "Plover",
+    "Poppy", "Poppy", "Pollen", "Prairie", "Pronghorn", "Rustle", "Rye", "Rye", "Sage", "Sedge", "Sheep", "Swish", "Tunnel",
+    "Wheat", "Wheat", "Willow", "Willow", "Wool", "Wooly"
+    ],
+    "Mountainous": [
+    "Alpaca", "Alpine", "Avalanche", "Basalt", "Blizzard", "Boulder", "Cavern", "Cave", "Chamois", "Cliff", "Cliff", "Crag",
+    "Eagle", "Eagle", "Echo", "Echo", "Flint", "Glacial", "Goat", "Granite", "Gravel", "High", "Lichen", "Limestone",
+    "Marten", "Mine", "Mountain", "Peak", "Pebble", "Pinnacle", "Rocky", "Ram", "Salt", "Shard", "Spire", "Stone", "Steppe", 
+    "Summit","Tundra", "Volcano", "Yucca", "Whistle", "Whisper", "Whisper"
+    ],
+    "Wetlands": [
+    "Willow", "Marsh", "Bog", "Lotus", "Reed", "Frog", "Toad", "Stork", "Crane", "Duck", "Heron", "Ibis", "Mangrove",
+    "Swamp", "Murk", "Algae", "Mud", "Splash", "Mosquito", "Mallard", "Goose", "Peat", "Bog", "Skink", "Tamarack",
+    "Spruce", "Beaver", "Wade", "Cypress", "Magnolia", "Skunk", "Mosquito", "Lily", "Bayou", "Clay", "Grebe", "Egret",
+    "Creek", "Skip", "Reed", "Bullrush", "Beetle", "Bug", "Vine", "Creeper", "Buffalo", "Rush", "Swam", "Cygnet", "Gosling",
+    "Cormorant", "Stork", "Moorhen", "Spoonbill", "Kingfisher", "Plover", "Alligator", "Crocodile", "Newt",
+    "Axolotl", "Salamander"
+    ],
+    "Desert": [
+    "Cactus", "Dune", "Coyote", "Vulture", "Condor", "Canyon", "Prickle", "Pear", "Agave", "Jackal", "Dry", "Drought",
+    "Rattle", "Desert", "Brittle", "Mesa", "Barren", "Oasis", "Dust", "Arid", "Buzzard", "Fly", "Scrub", "Gully", "Wax",
+    "Yucca", "Salt", "Dingo", "Mirage", "Cobra", "Cheetah", "Caracal", "Scorpion", "Lion", "Antelope", "Gazelle", "Oryx",
+    "Dromedary", "Camel", "Suricate", "Meerkat", "Skull", "Rye", "Jackrabbit", "Needle", "Aloe", "Acacia", "Viper",
+    "Snake", "Poison", "Venom", "Tiapan", "Fang", "Blister", "Blaze", "Burn", "Scorch", "Smoulder"
+    ]
+  },
+
+  "biome_suffixes": {
+    "Forest": [
+    "clove", "grove", "tar", "moss", "wood", "deer", "fog", "antler", "shade", "beak", "dapple", "twig", "branch", "fern", "frond", "cone"
+    ],
+    "Beach": [
+    "current", "shell", "tide", "sand", "wave", "flood", "shore", "coast", "fin", "splash", "surf", "squid", "coral", "pearl",
+    "spray", "pool", "ripple", "drip", "drop", "shine", "shimmer", "foam", "sea", "ocean", "torrent", "tide"
+    ],
+    "Plains": [
+    "field", "meadow", "wool", "oat", "lamb", "elk", "flutter", "pollen", "bull", "bee", "swish", "breeze", "runner", "tunnel", "horse", "sheep"
+    ],
+    "Mountainous": [
+    "peak", "point", "horn", "lichen", "cliff", "ram", "shard", "whisper", "fall", "drop", "whistle", "tite", "mite", "frost",
+    "cave", "echo", "goat", "eagle"
+    ],
+    "Wetlands": [
+    "flood", "swamp", "splash", "croak", "duck", "bog", "mud", "skipper", "wade", "lily", "moss", "root", "song", "bug", "glow", "wave", "creek", "ripple"
+    ],
+    "Desert": [
+    "prickle", "dune", "sand", "canyon", "rattle", "wind", "dust", "sun", "fly", "scorpion", "snake", "needle", "fang", "tooth", "bite"
     ]
   },
 
   "eye_prefixes": {
-    "YELLOW": ["Yellow", "Moon", "Daisy", "Honey", "Light"],
-    "AMBER": ["Amber", "Sun", "Fire", "Gold", "Honey", "Scorch"],
-    "HAZEL": ["Hazel", "Tawny", "Hazel", "Gold", "Daisy", "Sand"],
-    "PALEGREEN": ["Pale", "Green", "Mint", "Fern", "Weed", "Olive"],
-    "GREEN": ["Green", "Fern", "Weed", "Holly", "Clover", "Olive"],
-    "BLUE": ["Blue", "Blue", "Ice", "Sky", "Lake", "Frost", "Water"],
-    "DARKBLUE": ["Dark", "Blue", "Sky", "Lake", "Berry", "Water", "Deep"],
-    "GREY": ["Gray",  "Stone", "Silver", "Ripple", "Moon", "Rain", "Storm", "Heather"],
-    "CYAN": ["Sky", "Blue", "River", "Rapid"],
-    "EMERALD": ["Emerald", "Green", "Shine", "Blue", "Pine", "Weed"],
-    "PALEBLUE": ["Pale", "Blue", "Sky", "River", "Ripple", "Day", "Cloud"],
-    "PALEYELLOW": ["Pale", "Yellow", "Sun", "Gold"],
-    "GOLD": ["Gold", "Golden", "Sun", "Amber", "Sap", "Honey"],
+    "YELLOW": ["Yellow", "Moon", "Daisy", "Honey", "Light", "Sun", "Wort", "Lemon"],
+    "AMBER": ["Amber", "Sun", "Fire", "Gold", "Honey", "Scorch", "Flame", "Blaze"],
+    "HAZEL": ["Hazel", "Tawny", "Hazel", "Gold", "Daisy", "Sand", "Almond"],
+    "PALEGREEN": ["Pale", "Green", "Mint", "Fern", "Weed", "Olive", "Stem", "Lime", "Agave"],
+    "GREEN": ["Green", "Green", "Fern", "Weed", "Holly", "Clover", "Olive", "Jade", "Tree", "Algae", "Aloe"],
+    "BLUE": ["Blue", "Blue", "Ice", "Sky", "Lake", "Frost", "Water", "Icicle", "Frosty", "Cold"],
+    "DARKBLUE": ["Dark", "Blue", "Blue", "Sky", "Lake", "Berry", "Water", "Deep", "Cobalt", "River", "Night", "Rain"],
+    "GREY": ["Grey", "Stone", "Silver", "Ripple", "Moon", "Rain", "Storm", "Heather"],
+    "CYAN": ["Sky", "Blue", "River", "Rapid", "Ice", "Frost", "Cold"],
+    "EMERALD": ["Emerald", "Green", "Shine", "Green", "Pine", "Weed"],
+    "PALEBLUE": ["Pale", "Blue", "Blue", "Sky", "River", "Ripple", "Day", "Cloud"],
+    "PALEYELLOW": ["Pale", "Yellow", "Sun", "Gold", "Light", "Daisy"],
+    "GOLD": ["Gold", "Golden", "Sun", "Amber", "Sap", "Honey", "Yellow"],
     "HEATHERBLUE": ["Heather", "Blue", "Lilac", "Rosemary", "Lavender", "Wisteria"],
     "COPPER": ["Copper", "Red", "Amber", "Brown", "Fire", "Cinnamon"],
     "SAGE": ["Sage", "Leaf", "Olive", "Bush", "Clove", "Green", "Weed"],
-    "BLUE2": ["Blue", "Blue", "Ice", "Icy", "Sky", "Lake", "Frost", "Water"],
+    "COBALT": ["Blue", "Blue", "Ice", "Icy", "Sky", "Lake", "Frost", "Water"],
     "SUNLITICE": ["Sun", "Ice", "Icy", "Frost", "Dawn", "Dusk", "Odd", "Glow"],
     "GREENYELLOW": ["Green", "Yellow", "Tawny", "Hazel", "Gold", "Daisy", "Sand", "Sandy", "Weed"]
   },
@@ -214,7 +285,7 @@
     "Ash", "Aspen", "Asriel", "Aurora", "Ava", "Avellana", "Azula", "Baba Yaga", "Baby", "Bagel", "Bagheera", "Bailey", "Baisel", "Baliyo", 
     "Bamboo", "Bandit", "Banshee", "Banzai", "Baphomet", "Basil", "Bastet", "Bean", "Beanie Baby", "Beanie", "Beans", "Bebe", "Bede", "Beef Stroganoff", 
     "Bella", "Belle", "Bellini", "Ben", "Benito", "Benny", "Bentley", "Berlioz", "Beverly", "Bibelot", "Big Man", "Bigwig", "Bill Bailey", 
-    "Binx", "Birb", "Birdie", "Bixby", "Blair", "Blinky Stubbins", "Blitzo", "Blu", "Bluebell", "Bologna", "Bolt", "Bombalurina", "Bombon",
+    "Binx", "Birb", "Birdie", "Bixby", "Blahaj", "Blair", "Blinky Stubbins", "Blitzo", "Blu", "Bluebell", "Bologna", "Bolt", "Bombalurina", "Bombon",
     "Bonbon", "Bongo", "Boni", "Bonnie", "Bonny", "Boo", "Booker", "Boots", "Brandywine", "Bren", "Brioche", "Broccoli", "Brooklyn", "Broom", "Bub", "Buchito", 
     "Buddy", "Buffy", "Bullwinkle", "Bumblebee", "Bunga", "Bunny", "Burger", "Burm", "Bustopher Jones", "Buttercup", "Butternut", 
     "Butterscotch", "Caesar", "Cake", "Calamari", "Callie", "Calvin", "Camouflage", "Cancer", "Candy", "Canela", "Cannelloni", "Capricorn", "Captain", 
@@ -273,7 +344,6 @@
     "Rico", "Rigatoni", "Rio", "Riot", "Risa", "River", "Riya", "Rizz", "Robbie", "Rocket", "Rodeo", "Rolo", "Roman", "Roomba", "Rooster", 
     "Rory", "Rose", "Roselie", "Rosewood", "Ruby", "Rudolph", "Rue", "Ruffnut", "Rufus", "Rum Tum Tugger", "Rum", "Rumpleteazer", 
     "Runt", "Russel", "Sable", "Sadie", "Saffron", "Sagittarius", "Sagwa", "Sailor", "Saki", "Sakura", "Salem", "Salmon", "Salt", "Sam", "Samantha", 
-    "Sanai", "Sandwich", "Sandy", "Sangria", "Sans", "Sarabi", "Sarafina", "Sarge", "Sashimi", "Sassy", "Sausage", "Savannah",
     "Runt", "Russel", "Sable", "Sadie", "Saffron", "Sagittarius", "Sagwa", "Samus", "Sailor", "Saki", "Sakura", "Salem", "Salmon", "Salt", "Sam", "Samantha", 
     "Sanai", "Sandwich", "Sandy", "Sangria", "Sans", "Sarabi", "Sarafina", "Sarge", "Sashimi", "Sassy", "Sausage", "Savannah", 
     "Scarecrow", "Schmidt", "Scorpio", "Scotch", "Scrooge", "Seamus", "Sega", "Sekhmet", "Serenity", "Sergei", "Sergio", "Seri", "Seven", "Seven Of Nine",
@@ -281,7 +351,7 @@
     "Silva", "Silver", "Simba", "Simone", "Siri", "Sirius", "Skimbleshanks", "Skittles", "Skrunkly", "Skylar", "Slinky", "Sloane", "Sloth",
     "Slug", "Slushie", "Smarty Pants", "Smoothie", "Smores", "Sneakers", "Snek", "Snook", "Snook", "Snoots", "Snotlout", "Socks", "Soda Pop", "Sofa", 
     "Sofrito", "Sol", "Sonata", "Sonnet", "Sonic", "Sookie", "Sophie", "Sorbet", "Sox", "Spam", "Sparky", "Speedwell", "Spicy", "Spinach", "Spots", "Siracha", "Stan", 
-    "Star", "Starfish", "Stella", "Steve", "Steven", "Stinkbutt", "Stinky", "Stolas", "Strawberry", "Stripes", "Subaru", "Sucrose", "Sueno",
+    "Star", "Starfish", "Stella", "Steve", "Steven", "Stinkbutt", "Stinky", "Stolas", "Strawberry", "Stripes", "Stuffie", "Subaru", "Sucrose", "Sueno",
     "Sugar", "Sundae", "Sunflower", "Sunny", "Sunset", "Sushi", "Sweet Creature", "Sweet Leon", "Sweet Marmalade", "Sweet", "Sweetie", 
     "Sylvester", "Tabasco", "Tabatha", "Tabby", "Tabbytha", "Taco Bell", "Taco", "Taffy", "Talia", "Tamagotchi", "Tamale", 
     "Tantomile", "Tasha", "Taurus", "Tay", "Tazama", "Teacup", "Teddie", "Tempest", "Tesla", "Tesora", "Tetris", "Teufel", "Theo", 

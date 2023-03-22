@@ -20,7 +20,6 @@ class NewCatEvents:
     """All events with a connection to new cats."""
 
     def __init__(self) -> None:
-        self.living_cats = len(list(filter(lambda r: not r.dead, Cat.all_cats.values())))
         self.event_sums = 0
         self.had_one_event = False
         self.generate_events = GenerateEvents()
@@ -187,7 +186,7 @@ class NewCatEvents:
             major_injuries = []
             if "major_injury" in new_cat_event.tags:
                 for injury in INJURIES:
-                    if INJURIES[injury]["severity"] == "major":
+                    if INJURIES[injury]["severity"] == "major" and injury != 'pregnant':
                         major_injuries.append(injury)
             for new_cat in created_cats:
                 for tag in new_cat_event.tags:

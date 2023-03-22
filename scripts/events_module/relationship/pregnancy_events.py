@@ -96,7 +96,7 @@ class Pregnancy_Events():
 
             # If an affair was triggered, bypass the love check. They already had an affair - sometimes, there
             # is no love in an affair.
-            living_cats = len(list(filter(lambda r: not r.dead, Cat.all_cats.values())))
+            living_cats = len([i for i in Cat.all_cats.values() if not (i.dead or i.outside or i.exiled)])
 
             if not affair:
                 if second_parent:
@@ -147,7 +147,6 @@ class Pregnancy_Events():
             # print("Kit cancel chance", chance)
             if int(random.random() * chance) == 1:
                 # Cancel having kits.
-                print("kits canceled")
                 return
 
             # If you've reached here - congrats, kits!
@@ -172,7 +171,7 @@ class Pregnancy_Events():
         # instead, the cat should get the kit instantly
         if not other_cat and cat.gender == 'male':
             amount = self.get_amount_of_kits(cat)
-            self.get_kits(amount, cat, None, clan)
+            kits = self.get_kits(amount, cat, None, clan)
             insert = 'this should not display'
             if amount == 1:
                 insert = 'a single kitten'
@@ -180,7 +179,10 @@ class Pregnancy_Events():
                 insert = f'a litter of {amount} kits'
             print_event = f"{cat.name} brought {insert} back to camp, but refused to talk about their origin."
             # game.birth_death_events_list.append(print_event)
-            game.cur_events_list.append(Single_Event(print_event, "birth_death", cat.ID))
+            cats_involved = [cat.ID]
+            for kit in kits:
+                cats_involved.append(kit.ID)
+            game.cur_events_list.append(Single_Event(print_event, "birth_death", cats_involved))
             return
 
         # if the other cat is a female and the current cat is a male, make the female cat pregnant
@@ -459,7 +461,6 @@ class Pregnancy_Events():
             # For difference = 0 or some other weird stuff
             affair_chance = 15
 
-        print("Love Affair Chance", affair_chance)
         return affair_chance
 
     def get_unmated_love_affair_chance(self, relation: Relationship):
@@ -491,26 +492,18 @@ class Pregnancy_Events():
 
         highest_romantic_relation = get_highest_romantic_relation(cat.relationships.values(), exclude_mate=True,
                                                                   potential_mate=True)
-        if highest_romantic_relation:
-            print(str(highest_romantic_relation.cat_to.name), cat.name)
-        else:
-            print("None", cat.name)
+
         if mate and highest_romantic_relation:
             # Love affair calculation when the cat has a mate
             chance_love_affair = self.get_love_affair_chance(mate_relation, highest_romantic_relation)
             if not chance_love_affair or not int(random.random() * chance_love_affair):
-                print("love affair?")
                 if samesex or cat.gender != highest_romantic_relation.cat_to.gender:
-                    print("love affair", str(cat.name), str(highest_romantic_relation.cat_to.name))
                     return highest_romantic_relation.cat_to
         elif highest_romantic_relation:
             # Love affair change if the cat doesn't have a mate:
             chance_love_affair = self.get_unmated_love_affair_chance(highest_romantic_relation)
-            print("chance unmated love affair")
             if not chance_love_affair or not int(random.random() * chance_love_affair):
-                print("unmated love affair?")
                 if samesex or cat.gender != highest_romantic_relation.cat_to.gender:
-                    print("love affair", str(cat.name), str(highest_romantic_relation.cat_to.name))
                     return highest_romantic_relation.cat_to
 
         return None
@@ -546,16 +539,13 @@ class Pregnancy_Events():
             chance_random_affair = game.config["pregnancy"]["random_affair_chance"]
         else:
             chance_random_affair = game.config["pregnancy"]["unmated_random_affair_chance"]
-        print("random_affair_chance", chance_random_affair)
         if not int(random.random() * chance_random_affair):
-            print("triggered")
-            possible_affair_partners = list(filter(lambda x: x.is_potential_mate(cat, for_love_interest=True) and
-                                                             (samesex or cat.gender != x.gender) and
-                                                              cat.mate != x.ID, Cat.all_cats_list))
-            print(possible_affair_partners)
+            possible_affair_partners = [i for i in Cat.all_cats_list if 
+                                        i.is_potential_mate(cat, for_love_interest=True) 
+                                        and (samesex or i.gender != cat.gender) 
+                                        and cat.mate != i.ID] 
             if possible_affair_partners:
                 chosen_affair = choice(possible_affair_partners)
-                print("random affair", str(cat.name), str(chosen_affair.name))
                 return chosen_affair, True
 
         return second_parent, False
@@ -569,13 +559,13 @@ class Pregnancy_Events():
             kit = None
             if other_cat is not None:
                 if cat.gender == 'female':
-                    kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0)
+                    kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0, status='newborn')
                     kit.thought = f"Snuggles up to the belly of {cat.name}"
                 elif cat.gender == 'male' and other_cat.gender == 'male':
-                    kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0)
+                    kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0, status='newborn')
                     kit.thought = f"Snuggles up to the belly of {cat.name}"
                 else:
-                    kit = Cat(parent1=other_cat.ID, parent2=cat.ID, moons=0)
+                    kit = Cat(parent1=other_cat.ID, parent2=cat.ID, moons=0, status='newborn')
                     kit.thought = f"Snuggles up to the belly of {other_cat.name}"
                 cat.birth_cooldown = 6
                 other_cat.birth_cooldown = 6
@@ -584,7 +574,7 @@ class Pregnancy_Events():
                     backstory = backstory_choice_1
                 else:
                     backstory = backstory_choice_2
-                kit = Cat(parent1=cat.ID, moons=0, backstory=backstory)
+                kit = Cat(parent1=cat.ID, moons=0, backstory=backstory, status='newborn')
                 cat.birth_cooldown = 6
                 kit.thought = f"Snuggles up to the belly of {cat.name}"
             all_kitten.append(kit)

@@ -1762,7 +1762,10 @@ class RelationshipScreen(Screens):
                 elif self.the_cat.is_parent(self.inspect_cat):
                     col2 += "related: child"
                 elif self.inspect_cat.is_sibling(self.the_cat) or self.the_cat.is_sibling(self.inspect_cat):
-                    col2 += "related: sibling"
+                    if self.inspect_cat.is_littermate(self.the_cat) or self.the_cat.is_littermate(self.inspect_cat):
+                        col2 += "related: sibling (littermate)"
+                    else:
+                        col2 += "related: sibling"
                 elif not game.settings["first_cousin_mates"] and self.inspect_cat.is_cousin(self.the_cat):
                     col2 += "related: cousin"
 
@@ -2266,7 +2269,7 @@ class MediationScreen(Screens):
 
     def random_cat(self):
         if self.selected_cat_list():
-            random_list = list(filter(lambda x: x.ID not in self.selected_cat_list(), self.all_cats_list))
+            random_list = [i for i in self.all_cats_list if i.ID not in self.selected_cat_list()]
         else:
             random_list = self.all_cats_list
         return choice(random_list)
@@ -2334,8 +2337,7 @@ class MediationScreen(Screens):
         self.update_list_cats()
 
     def update_list_cats(self):
-        self.all_cats_list = list(filter(lambda x: (x.ID != self.mediators[self.selected_mediator].ID)
-                                    and not x.dead and not x.outside, Cat.all_cats_list))
+        self.all_cats_list = [i for i in Cat.all_cats_list if (i.ID != self.mediators[self.selected_mediator].ID) and not (i.dead or i.outside)]
         self.all_cats = self.chunks(self.all_cats_list, 24)
 
         self.update_page()

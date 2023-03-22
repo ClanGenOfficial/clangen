@@ -1921,6 +1921,30 @@
     ],
     "As a StarClan cat steps forward to give (prefix)paw their new name of m_c, they spot dead_par1 and dead_par2 watching them proudly with the other StarClan cats."
   ],
+  "med_51": [
+    [
+      "medicine cat",
+	  "prepared",
+      "general_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "(prefix)paw has waited a long time for this day! Heart pounding, they listen intently as l_n names them m_c after their r_h."
+  ],
+  "med_52": [
+    [
+      "medicine cat",
+	  "prepared",
+      "general_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "Inspired by (prefix)paw's r_h, l_n names them m_c, and welcomes them as a full medicine cat."
+  ],
   "warrior_0": [
     [
       "warrior",
