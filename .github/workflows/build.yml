@@ -133,8 +133,18 @@ jobs:
         with:
           python-version: '3.8' # 3.8 to support older versions of Windows
           architecture: 'x86'
-      - name: Update pip
-        run: python -m pip install --upgrade pip
+      - name: Set up cargo cache
+        uses: actions/cache@v3
+        continue-on-error: false
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            target/
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: ${{ runner.os }}-cargo-
       - name: Update setuptools and wheel
         run: python -m pip install --upgrade setuptools wheel
       - name: Install dependencies
@@ -149,21 +159,27 @@ jobs:
       - name: Write Release Version File
         if: startsWith(github.ref, 'refs/tags/')
         run: echo ${{ github.ref_name }} > commit.txt
+      - name: Build self-updater binary
+        shell: bash
+        run: |
+          cd self_updater
+          cargo build --release
+          cp target/release/self_updater.exe ../resources/
       - name: Run PyInstaller
         #run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
         run: python -m PyInstaller Clangen.spec
+      - name: Create archive (.zip)
+        run: tar.exe -a -c -f Clangen_Win32.zip -C dist Clangen
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Win32
-          path: dist/
+          path: Clangen_Win32.zip
       - name: Import GPG key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v5
         with:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
-      - name: Create archive (.zip)
-        run: tar.exe -a -c -f Clangen_Win32.zip -C dist Clangen
       - name: Upload artifact to API
         shell: bash
         run: |
@@ -195,8 +211,18 @@ jobs:
         with:
           python-version: '3.8' # 3.8 to support older versions of Windows
           architecture: 'x64'
-      - name: Update pip
-        run: python -m pip install --upgrade pip
+      - name: Set up cargo cache
+        uses: actions/cache@v3
+        continue-on-error: false
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            target/
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: ${{ runner.os }}-cargo-
       - name: Update setuptools and wheel
         run: python -m pip install --upgrade setuptools wheel
       - name: Install dependencies
@@ -216,21 +242,27 @@ jobs:
       #  run: |
       #    curl -L -O https://github.com/upx/upx/releases/download/v4.0.0/upx-4.0.0-win64.zip
       #    tar.exe -x -v -f upx-4.0.0-win64.zip
+      - name: Build self-updater binary
+        shell: bash
+        run: |
+          cd self_updater
+          cargo build --release
+          cp target/release/self_updater.exe ../resources/
       - name: Run PyInstaller
         #run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
         run: python -m PyInstaller Clangen.spec
+      - name: Create archive (.zip)
+        run: tar.exe -a -c -f Clangen_Win64.zip -C dist Clangen
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Win64
-          path: dist/
+          path: Clangen_Win64.zip
       - name: Import GPG key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v5
         with:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
-      - name: Create archive (.zip)
-        run: tar.exe -a -c -f Clangen_Win64.zip -C dist Clangen
       - name: Upload artifact to API
         shell: bash
         run: |
@@ -262,8 +294,18 @@ jobs:
         with:
           python-version: '3.11'
           architecture: 'x64'
-      - name: Update pip
-        run: python -m pip install --upgrade pip
+      - name: Set up cargo cache
+        uses: actions/cache@v3
+        continue-on-error: false
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            target/
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: ${{ runner.os }}-cargo-
       - name: Update setuptools and wheel
         run: python -m pip install --upgrade setuptools wheel
       - name: Install dependencies
@@ -283,21 +325,27 @@ jobs:
       #  run: |
       #    curl -L -O https://github.com/upx/upx/releases/download/v4.0.0/upx-4.0.0-win64.zip
       #    tar.exe -x -v -f upx-4.0.0-win64.zip
+      - name: Build self-updater binary
+        shell: bash
+        run: |
+          cd self_updater
+          cargo build --release
+          cp target/release/self_updater.exe ../resources/
       - name: Run PyInstaller
         #run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
         run: python -m PyInstaller Clangen.spec
+      - name: Create archive (.zip)
+        run: tar.exe -a -c -f Clangen_Win64_Windows10+.zip -C dist Clangen
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Win64_Windows10+
-          path: dist/
+          path: Clangen_Win64_Windows10+.zip
       - name: Import GPG key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v5
         with:
           gpg_private_key: ${{ secrets.PACKAGESIGNKEY }}
           passphrase: ${{ secrets.PACKAGESIGNKEYPASSPHRASE }}
-      - name: Create archive (.zip)
-        run: tar.exe -a -c -f Clangen_Win64_Windows10+.zip -C dist Clangen
       - name: Upload artifact to API
         shell: bash
         run: |

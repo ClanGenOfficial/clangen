@@ -16,6 +16,7 @@ It then loads the settings, and then loads the start screen.
 
 
 """ # pylint: enable=line-too-long
+import shutil
 import sys
 import time
 import os
@@ -30,12 +31,10 @@ if directory:
 
 if os.path.exists("auto-updated"):
     print("Clangen starting, deleting auto-updated file")
-    os.remove("auto-update")
-    print("Deleting powershell script")
-    os.remove("../clangen_update_script.ps1")
     os.remove("auto-updated")
+    shutil.rmtree("Downloads")
     print("Update Complete!")
-    print("New version: " + get_version_info())
+    print("New version: " + get_version_info().version_number)
 
 
 setup_data_dir()
