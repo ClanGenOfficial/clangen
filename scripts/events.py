@@ -897,7 +897,6 @@ class Events():
             # retiring to elder den
             if cat.status in ['warrior', 'deputy'] and len(cat.apprentice) < 1 and cat.moons > 114:
                 # There is some variation in the age. 
-                print(str(cat.name), (-0.7*cat.moons + 100))
                 if cat.moons > 140 or not int(random.random() * (-0.7*cat.moons + 100)):                
                     if cat.status == 'deputy':
                         game.clan.deputy = None
