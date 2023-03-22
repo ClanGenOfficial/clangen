@@ -208,10 +208,10 @@ jobs:
         uses: conda-incubator/setup-miniconda@v2
         with:
           python-version: "3.11"
-      - name: Install poetry
-        uses: abatilo/actions-poetry@v2
-        with:
-          poetry-version: 1.4.1
+      # - name: Install poetry
+      #   uses: abatilo/actions-poetry@v2
+      #   with:
+      #     poetry-version: 1.4.1
       # - name: install dependencies
       #   run: poetry install --with build -E discord
       - name: Update pip
