@@ -1,4 +1,4 @@
-from enum import StrEnum, auto
+from enum import StrEnum, auto  # pylint: disable=no-name-in-module
 
 
 class Age(StrEnum):
