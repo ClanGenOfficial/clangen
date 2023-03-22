@@ -83,6 +83,7 @@ jobs:
         with:
           python-version: '3.8' # 3.8 to support older versions of Windows
           architecture: 'x86'
+          cache: 'poetry'
       - name: Install poetry
         uses: abatilo/actions-poetry@v2
         with:
@@ -120,6 +121,7 @@ jobs:
         with:
           python-version: '3.8' # 3.8 to support older versions of Windows
           architecture: 'x64'
+          cache: 'poetry'
       - name: Install poetry
         uses: abatilo/actions-poetry@v2
         with:
@@ -162,6 +164,7 @@ jobs:
         with:
           python-version: '3.11'
           architecture: 'x64'
+          cache: 'poetry'
       - name: Install poetry
         uses: abatilo/actions-poetry@v2
         with:
