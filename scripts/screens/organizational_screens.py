@@ -77,6 +77,14 @@ class StartScreen(Screens):
                 elif platform.system() == 'Linux':
                     subprocess.Popen(['xdg-open', get_data_dir()])
                 return
+            elif event.ui_element == self.closebtn:
+                self.error_box.kill()
+                self.error_label.kill()
+                self.error_gethelp.kill()
+                self.closebtn.kill()
+                self.open_data_directory_button.kill()
+                game.switches['error_message'] = ''
+                game.switches['traceback'] = ''
             elif event.ui_element == self.update_button:
                 self.x = UpdateWindow(game.switches['cur_screen'], self.announce_restart)
             elif event.ui_element == self.quit:
@@ -108,6 +116,7 @@ class StartScreen(Screens):
         self.warning_label.kill()
         self.update_button.kill()
         self.quit.kill()
+        self.closebtn.kill()
 
     def screen_switches(self):
         """
@@ -181,10 +190,18 @@ class StartScreen(Screens):
             "This is where save files "
             "and logs are stored.")
 
+
+        self.closebtn = UIImageButton(
+            scale(pygame.Rect((1386, 430), (44, 44))),
+            "",
+            object_id="#exit_window_button",
+            manager=MANAGER)
+
         self.error_box.hide()
         self.error_label.hide()
         self.error_gethelp.hide()
         self.open_data_directory_button.hide()
+        self.closebtn.hide()
 
         self.update_button = UIImageButton(scale(pygame.Rect((1154, 50), (384, 70))), "",
                                              object_id="#update_button", manager=MANAGER)
@@ -212,6 +229,7 @@ class StartScreen(Screens):
             self.continue_button.disable()
             self.switch_clan_button.disable()
 
+
         if game.switches['error_message']:
             error_text = f"There was an error loading the game: {game.switches['error_message']}"
             if game.switches['traceback']:
@@ -223,6 +241,7 @@ class StartScreen(Screens):
             self.error_label.show()
             self.error_gethelp.show()
             self.open_data_directory_button.show()
+            self.closebtn.show()
 
         if game.clan is not None:
             key_copy = tuple(Cat.all_cats.keys())

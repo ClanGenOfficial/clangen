@@ -358,7 +358,7 @@
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": "The patrol follows the sound, intent on finding the intruder. A kittypet! No wonder they were so loud. They scare them off easily.",
-    "antagonize_fail_text": "The patrol follows the noise and comes upon a kittypet that's sniffing around. The kittypet quickly begins a story about how they've been training for <i>days</i> now and they're finally ready to join c_n. p_l laughs and gets clawed by the angry kittypet. They have been training.",
+    "antagonize_fail_text": "The patrol follows the noise and comes upon a kittypet that's sniffing around. The kittypet quickly begins a story about how they've been training for <i>days</i> now and they're finally ready to join c_n. p_l laughs and gets swatted by the angry kittypet. Embarassed, the patrol goes home.",
     "history_text": [
             "This cat gained a scar from a fight with an angry kittypet."
     ]

@@ -40,7 +40,7 @@
     "chance_of_success": 80,
     "exp": 30,
     "success_text": [
-        "Feeling ever so alone on their solo patrol, r_c carefully sniffs around the mouth of the burrow, but the scent change is unmistakable - a new badger occupant has moved in. Creeping forward, belly flat in the dirt, they manage just enough of a glimpse to confirm the badger's presence. Heart pounding, r_c sprints back to camp to warn everyone",
+        "Feeling ever so alone on their solo patrol, r_c carefully sniffs around the mouth of the burrow, but the scent change is unmistakable - a new badger occupant has moved in. Creeping forward, belly flat in the dirt, they manage just enough of a glimpse to confirm the badger's presence. Heart pounding, r_c sprints back to camp to warn everyone.",
         "Feeling ever so alone on their solo patrol, r_c carefully sniffs around the mouth of the burrow, but after a few moments, realizes that the scent is relatively weak. A badger was here, no doubt about it, but it doesn't seem to have taken up residence. This will be important information to report back at camp.",
         "s_c decides there has to be a smarter way of figuring out if a badger has moved in, one that doesn't involve sticking their head in front of a predator. They search the grass around the sett thoroughly until they come upon some fresh badger scat - stinky, horrible, and perfect proof of the new occupant of the sett.",
         "Carefully considering their options, r_c decides on a stakeout, and watches from a safe hiding place in the grass. When the badger pokes its head above ground at dusk, they're prepared, and dart off back to camp to warn everyone before the predator has blinked the sleep out of its eyes."
@@ -366,7 +366,6 @@
             "app1 maintains that bison are obstacles, not weird land protectors or anything like that, just annoying mooing obstacles, and p_l can't get them to take the training session seriously."
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -391,7 +390,6 @@
             "app1 maintains that bison are obstacles, not dangerous or anything like that, just annoying mooing obstacles, and p_l can't get them to take the training session seriously."
     ],
     "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -416,7 +414,6 @@
             "app1 maintains that bison are obstacles, not weird land protectors or anything like that, just annoying mooing obstacles, and p_l can't get them to take the training session seriously. They distract app2 as well, and eventually p_l has to give up on teaching."
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -441,7 +438,6 @@
             "app1 maintains that bison are obstacles, not dangerous or anything like that, just annoying mooing obstacles, and p_l can't get them to take the training session seriously. They distract app2 as well, and eventually p_l has to give up on teaching."
     ],
     "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -466,7 +462,6 @@
         "app1 maintains that tunnels aren't useful for anything, just annoying obstacles in the landscape, and p_l can't get them to take the training session seriously."
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -491,7 +486,6 @@
             "app1 maintains that tunnels aren't useful for anything, just annoying obstacles in the landscape, and p_l can't get them to take the training session seriously."
     ],
     "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -603,7 +597,7 @@
         "biome": "plains",
         "season": "Any",
         "tags": ["app_stat", "training", "romantic", "trust", "big_change", "minor_injury", "apprentice", "two_apprentices"],
-        "intro_text": "Shivering with ilicit excitement, app1 gestures app2 on with their tail. They need to sneak out of camp before anyone notices them in the early morning dark.",
+        "intro_text": "Shivering with illicit excitement, app1 gestures app2 on with their tail. They need to sneak out of camp before anyone notices them in the early morning dark.",
         "decline_text": "Shaking their head, app2 looks back regretfully, tilting their head meaningfully towards where their mentor is already stirring for the day.",
         "chance_of_success": 70,
         "exp": 40,
@@ -621,8 +615,6 @@
         ],
 
         "win_trait": ["bold", "charismatic", "playful", "empathetic", "faithful", "loving", "insecure", "lonesome", "loyal"],
-        "fail_skills": null,
-
         "min_cats": 2,
         "max_cats": 2,
         "antagonize_text": null,

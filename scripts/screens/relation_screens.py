@@ -1762,7 +1762,10 @@ class RelationshipScreen(Screens):
                 elif self.the_cat.is_parent(self.inspect_cat):
                     col2 += "related: child"
                 elif self.inspect_cat.is_sibling(self.the_cat) or self.the_cat.is_sibling(self.inspect_cat):
-                    col2 += "related: sibling"
+                    if self.inspect_cat.is_littermate(self.the_cat) or self.the_cat.is_littermate(self.inspect_cat):
+                        col2 += "related: sibling (littermate)"
+                    else:
+                        col2 += "related: sibling"
                 elif not game.settings["first_cousin_mates"] and self.inspect_cat.is_cousin(self.the_cat):
                     col2 += "related: cousin"
 
