@@ -74,7 +74,7 @@ jobs:
           python-version: '3.11'
           architecture: 'x64'
       - name: Install poetry
-      - uses: abatilo/actions-poetry@v2
+        uses: abatilo/actions-poetry@v2
         with:
           poetry-version: 1.4.1
       - name: install dependencies
