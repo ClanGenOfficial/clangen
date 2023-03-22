@@ -523,22 +523,24 @@ class Cat():
         self.injuries.clear()
         self.illnesses.clear()
 
-        self.thought = 'Is surprised to find themselves walking the stars of Silverpelt'
 
         # Deal with leader death
         text = ""
         if self.status == 'leader':
             if game.clan.leader_lives > 0:
+                self.thought = 'Was startled to find themselves in Silverpelt for a moment... did they lose a life?'
                 return ""
             elif game.clan.leader_lives <= 0:
                 self.dead = True
                 game.clan.leader_lives = 0
+                self.thought = 'Is surprised to find themselves walking the stars of Silverpelt'
                 if game.clan.instructor.df is False:
                     text = 'They\'ve lost their last life and have travelled to StarClan.'
                 else:
                     text = 'They\'ve has lost their last life and have travelled to the Dark Forest.'
         else:
             self.dead = True
+            self.thought = 'Is surprised to find themselves walking the stars of Silverpelt'
 
         # They are not removed from the mate's "mate" property. There is a "cooldown" period, which prevents
         # cats from getting into relationships the same moon their mates dies.
@@ -607,16 +609,16 @@ class Cat():
             relationships = cat.relationships.values()
 
             pos_rel_values = {
-                "romantic": list(filter(lambda rel: rel.romantic_love > 55, relationships)),
-                "platonic": list(filter(lambda rel: rel.platonic_like > 50, relationships)),
-                "admiration": list(filter(lambda rel: rel.admiration > 70, relationships)),
-                "comfort": list(filter(lambda rel: rel.comfortable > 60, relationships)),
-                "trust": list(filter(lambda rel: rel.trust > 70, relationships))
+                "romantic": [i for i in relationships if i.romantic_love > 55],
+                "platonic": [i for i in relationships if i.platonic_like > 50],
+                "admiration": [i for i in relationships if i.admiration > 70],
+                "comfort": [i for i in relationships if i.comfortable > 60],
+                "trust": [i for i in relationships if i.trust > 70]
             }
 
             neg_rel_values = {
-                "dislike": list(filter(lambda rel: rel.dislike > 50, relationships)),
-                "jealousy": list(filter(lambda rel: rel.jealousy > 50, relationships))
+                "dislike": [i for i in relationships if i.dislike > 50],
+                "jealousy": [i for i in relationships if i.jealousy > 50]
             }
 
             possible_strings = []

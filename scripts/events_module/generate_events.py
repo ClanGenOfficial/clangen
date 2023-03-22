@@ -265,8 +265,8 @@ class GenerateEvents:
             if "murder" in event.tags and other_cat:
                 hate = False
                 relationships = other_cat.relationships.values()
-                dislike_relation = list(filter(lambda rel: rel.dislike > 50, relationships))
-                jealous_relation = list(filter(lambda rel: rel.jealousy > 50, relationships))
+                dislike_relation = [i for i in relationships if i.dislike > 50]
+                jealous_relation = [i for i in relationships if i.jealousy > 50]
                 for y in range(len(dislike_relation)):
                     cat_to = dislike_relation[y].cat_to
                     if cat_to == cat:
