@@ -184,6 +184,7 @@ class Cat():
                  pelt=None,
                  eye_colour=None,
                  suffix=None,
+                 specsuffix_hidden=False,
                  ID=None,
                  moons=None,
                  example=False,
@@ -304,6 +305,8 @@ class Cat():
 
         self.favourite = False
 
+        self.specsuffix_hidden = specsuffix_hidden
+
         # setting ID
         if ID is None:
             potential_id = str(next(Cat.id_iter))
@@ -384,7 +387,7 @@ class Cat():
         else:
             self.backstory = self.backstory
 
-        # sex
+        # sex!?!??!?!?!??!?!?!?!??
         if self.gender is None:
             self.gender = choice(["female", "male"])
         self.g_tag = self.gender_tags[self.gender]
@@ -471,9 +474,10 @@ class Cat():
                              self.eye_colour,
                              self.pelt.name,
                              self.tortiepattern,
-                             biome=biome)
+                             biome=biome,
+                             specsuffix_hidden=self.specsuffix_hidden)
         else:
-            self.name = Name(status, prefix, suffix, eyes=self.eye_colour)
+            self.name = Name(status, prefix, suffix, eyes=self.eye_colour, specsuffix_hidden=self.specsuffix_hidden)
 
         # Sprite sizes
         self.sprite = None

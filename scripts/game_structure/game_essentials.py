@@ -361,6 +361,7 @@ class Game():
                 "ID": inter_cat.ID,
                 "name_prefix": inter_cat.name.prefix,
                 "name_suffix": inter_cat.name.suffix,
+                "specsuffix_hidden": inter_cat.name.specsuffix_hidden,
                 "gender": inter_cat.gender,
                 "gender_align": inter_cat.genderalign,
                 "birth_cooldown": inter_cat.birth_cooldown,
