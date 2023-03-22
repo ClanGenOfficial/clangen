@@ -29,7 +29,7 @@ jobs:
         #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
         run: poetry run python3 -m PyInstaller Clangen.spec
       - name: Create archive (.tar.xz)
-        run: tar -cavf Clangen_Linux64_glibc2.31+.tar.xz -C dist Clangen
+        run: tar -caf Clangen_Linux64_glibc2.31+.tar.xz -C dist Clangen
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Linux64_glibc2.31+.tar.xz
@@ -65,7 +65,7 @@ jobs:
       - name: Run PyInstaller
         run: poetry run python3 -m PyInstaller Clangen.spec
       - name: Create archive (.tar.xz)
-        run: tar -cavf Clangen_Linux64_glibc2.35+.tar.xz -C dist Clangen
+        run: tar -caf Clangen_Linux64_glibc2.35+.tar.xz -C dist Clangen
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Linux64_glibc2.35+.tar.xz
