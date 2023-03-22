@@ -1014,7 +1014,7 @@ class Cat():
         """ Generates a thought for the cat, which displays on their profile. """
         all_cats = self.all_cats
         other_cat = random.choice(list(all_cats.keys()))
-        game_mode = game.clan.game_mode
+        game_mode = game.switches['game_mode']
 
         # get other cat
         i = 0

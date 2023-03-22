@@ -119,6 +119,8 @@ class Thoughts():
     def thought_fulfill_rel_constraints(self, relationship, constraint, thought_id) -> bool:
         """Check if the relationship fulfills the interaction relationship constraints."""
         # if the constraints are not existing, they are considered to be fulfilled
+        if relationship == None:
+            return False
         if not constraint:
             return True
         if len(constraint) == 0:
@@ -143,7 +145,10 @@ class Thoughts():
 
     def cats_fulfill_thought_constraints(self, main_cat, random_cat, thought, game_mode) -> bool:
         """Check if the two cats fulfills the thought constraints."""
-        relationship = main_cat.relationships[random_cat.ID]
+        if random_cat.ID in main_cat.relationships:
+            relationship = main_cat.relationships[random_cat.ID]
+        else:
+            relationship = None
         try:
             if len(thought['relationship_constraint']) >= 1:
                 for constraint in thought['relationship_constraint']:
