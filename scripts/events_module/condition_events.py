@@ -22,7 +22,6 @@ class Condition_Events():
     """All events with a connection to conditions."""
 
     def __init__(self) -> None:
-        self.living_cats = len(list(filter(lambda r: not r.dead, Cat.all_cats.values())))
         self.event_sums = 0
         self.had_one_event = False
         self.scar_events = Scar_Events()

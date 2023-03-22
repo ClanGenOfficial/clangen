@@ -383,11 +383,11 @@ class Relationship():
             return filtered
 
         for interact in interactions:
-            in_tags = list(filter(lambda biome: biome not in _biome, interact.biome))
+            in_tags = [i for i in interact.biome if i not in _biome]
             if len(in_tags) > 0:
                 continue
 
-            in_tags = list(filter(lambda season: season not in _season, interact.season))
+            in_tags = [i for i in interact.season if i not in _season]
             if len(in_tags) > 0:
                 continue
 

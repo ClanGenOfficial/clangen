@@ -199,7 +199,7 @@ def rel_fulfill_rel_constraints(relationship, constraint, interaction_id) -> boo
 
     value_types = ["romantic", "platonic", "dislike", "admiration", "comfortable", "jealousy", "trust"]
     for v_type in value_types:
-        tags = list(filter(lambda constr: v_type in constr, constraint))
+        tags = [i for i in constraint if v_type in i]
         if len(tags) < 1:
             continue
         threshold = 0

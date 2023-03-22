@@ -625,21 +625,17 @@ class Patrol():
 
                     # get the relationships depending on the current value type + threshold
                     if v_type == "romantic":
-                        rel_above_threshold = list(
-                            filter(lambda rel: rel.romantic_love >= threshold, relevant_relationships))
+                        rel_above_threshold = [i for i in relevant_relationships if i.romantic_love >= threshold]
                     elif v_type == "platonic":
-                        rel_above_threshold = list(
-                            filter(lambda rel: rel.platonic_like >= threshold, relevant_relationships))
+                        rel_above_threshold = [i for i in relevant_relationships if i.platonic_like >= threshold]
                     elif v_type == "dislike":
-                        rel_above_threshold = list(filter(lambda rel: rel.dislike >= threshold, relevant_relationships))
-                    elif v_type == "comfortable":
-                        rel_above_threshold = list(
-                            filter(lambda rel: rel.comfortable >= threshold, relevant_relationships))
+                        rel_above_threshold = [i for i in relevant_relationships if i.dislike >= threshold]
+                    elif v_type == "comfortable": 
+                        rel_above_threshold = [i for i in relevant_relationships if i.comfortable >= threshold]
                     elif v_type == "jealousy":
-                        rel_above_threshold = list(
-                            filter(lambda rel: rel.jealousy >= threshold, relevant_relationships))
+                        rel_above_threshold = [i for i in relevant_relationships if i.jealousy >= threshold]
                     elif v_type == "trust":
-                        rel_above_threshold = list(filter(lambda rel: rel.trust >= threshold, relevant_relationships))
+                        rel_above_threshold = [i for i in relevant_relationships if i.trust >= threshold]
 
                     # if the lengths are not equal, one cat has not the relationship value which is needed to another cat of the patrol
                     if len(rel_above_threshold) + 1 != len(self.patrol_cats):
@@ -1827,7 +1823,7 @@ class Patrol():
                 trust = -n
 
         # collect the needed IDs and lists
-        all_cats = list(filter(lambda c: not c.dead and not c.outside, Cat.all_cats.values()))
+        all_cats = [i for i in Cat.all_cats.values() if not (i.dead or i.outside)]
         cat_ids = [cat.ID for cat in self.patrol_cats]
         r_c_id = self.patrol_random_cat.ID
         s_c_id = None

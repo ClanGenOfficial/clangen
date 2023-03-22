@@ -56,11 +56,11 @@ class Romantic_Events():
         _season = [str(game.clan.current_season).casefold(), "Any", "any"]
         _biome = [str(game.clan.biome).casefold(), "Any", "any"]
         for interaction in possible_interactions:
-            in_tags = list(filter(lambda biome: biome not in _biome, interaction.biome))
+            in_tags = [i for i in interaction.biome if i not in _biome]
             if len(in_tags) > 0:
                 continue
 
-            in_tags = list(filter(lambda season: season not in _season, interaction.season))
+            in_tags = [i for i in interaction.season if i not in _season]
             if len(in_tags) > 0:
                 continue
 
