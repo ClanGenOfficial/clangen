@@ -57,12 +57,12 @@ class Name():
                  status="warrior",
                  prefix=None,
                  suffix=None,
-                 specsuffix_hidden=False,
                  colour=None,
                  eyes=None,
                  pelt=None,
                  tortiepattern=None,
-                 biome=None):
+                 biome=None,
+                 specsuffix_hidden=False):
         self.status = status
         self.prefix = prefix
         self.suffix = suffix
