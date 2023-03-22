@@ -1029,10 +1029,9 @@ class Cat():
 
         # get possible thoughts
         filtered_thoughts = []
-        thought_possibilities = load_thoughts(self, other_cat, self.status)
-        for thought in thought_possibilities:
-            if cats_fulfill_thought_constraints(self, other_cat, thought, game_mode):
-                filtered_thoughts.append(thought)
+        thought_list = load_thoughts(self, other_cat, self.status)
+        if cats_fulfill_thought_constraints(self, other_cat, thought_list, game_mode):
+            filtered_thoughts.append(thought_list["thoughts"])
 
         try:
             chosen_thought = choice(filtered_thoughts)
