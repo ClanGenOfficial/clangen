@@ -14,4 +14,4 @@ jobs:
       - name: install dependencies
         run: poetry install
       - name: Run Pylint
-        run: python -m pylint --recursive=y --errors-only "$PWD"
+        run: poetry run pylint --recursive=y --errors-only "$PWD"

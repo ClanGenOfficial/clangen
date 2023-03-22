@@ -22,8 +22,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         run: echo ${{ github.ref_name }} > commit.txt
       - name: Run PyInstaller
-        #run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
-        run: python -m PyInstaller Clangen.spec
+        #run: poetry run PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
+        run: poetry run PyInstaller Clangen.spec
       - name: Create archive (.tar.xz)
         run: tar -cavf Clangen_Linux64_glibc2.31+.tar.xz -C dist Clangen
       - uses: actions/upload-artifact@v3
@@ -55,7 +55,7 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         run: echo ${{ github.ref_name }} > commit.txt
       - name: Run PyInstaller
-        run: python -m PyInstaller Clangen.spec
+        run: poetry run PyInstaller Clangen.spec
       - name: Create archive (.tar.xz)
         run: tar -cavf Clangen_Linux64_glibc2.35+.tar.xz -C dist Clangen
       - uses: actions/upload-artifact@v3
@@ -87,8 +87,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         run: echo ${{ github.ref_name }} > commit.txt
       - name: Run PyInstaller
-        #run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
-        run: python -m PyInstaller Clangen.spec
+        #run: poetry run PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
+        run: poetry run PyInstaller Clangen.spec
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Win32
@@ -126,8 +126,8 @@ jobs:
       #    curl -L -O https://github.com/upx/upx/releases/download/v4.0.0/upx-4.0.0-win64.zip
       #    tar.exe -x -v -f upx-4.0.0-win64.zip
       - name: Run PyInstaller
-        #run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
-        run: python -m PyInstaller Clangen.spec
+        #run: poetry run PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
+        run: poetry run PyInstaller Clangen.spec
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Win64
@@ -165,8 +165,8 @@ jobs:
       #    curl -L -O https://github.com/upx/upx/releases/download/v4.0.0/upx-4.0.0-win64.zip
       #    tar.exe -x -v -f upx-4.0.0-win64.zip
       - name: Run PyInstaller
-        #run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
-        run: python -m PyInstaller Clangen.spec
+        #run: poetry run PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
+        run: poetry run PyInstaller Clangen.spec
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Win64_Windows10+
@@ -203,8 +203,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         run: echo ${{ github.ref_name }} > commit.txt
       - name: Run PyInstaller
-        #run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
-        run: python -m PyInstaller Clangen.spec
+        #run: poetry run PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
+        run: poetry run PyInstaller Clangen.spec
       - name: Create archive (.tar.xz)
         run: rm -r dist/Clangen
       - name: Install appdmg

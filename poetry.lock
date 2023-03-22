@@ -808,4 +808,4 @@ discord = ["pypresence"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.7.2,<3.12"
-content-hash = "9d47858fa6e713f387d7b981cc47158ff7f5dbd8f4caaef908377c8274a296df"
+content-hash = "3738594f2e7294d5ee85734ad3977ad5b91b939d5410ded550102ceb2745deab"
