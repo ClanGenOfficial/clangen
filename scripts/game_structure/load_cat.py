@@ -71,7 +71,7 @@ def json_load():
             new_cat = Cat(ID=cat["ID"],
                         prefix=cat["name_prefix"],
                         suffix=cat["name_suffix"],
-                        specsuffix_hidden=(cat["specsuffix_hidden"] if 'specsuffix_hidden' else False),
+                        specsuffix_hidden=(cat["specsuffix_hidden"] if 'specsuffix_hidden' in cat else False),
                         gender=cat["gender"],
                         status=cat["status"],
                         parent1=cat["parent1"],

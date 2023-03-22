@@ -2020,11 +2020,11 @@ class ChangeNameScreen(Screens):
         
         self.toggle_spec_block_on = UIImageButton(scale(pygame.Rect((1150, 396), (68, 68))), "",
                                                   object_id="#unchecked_checkbox",
-                                                  tool_tip_text="Allow editing the underlying suffix. Currently, this is overwritten by the cat's rank, as it has a special suffix", manager=MANAGER)
+                                                  tool_tip_text=f"Overwrite the cat's special suffix, allowing you to use your own", manager=MANAGER)
 
         self.toggle_spec_block_off = UIImageButton(scale(pygame.Rect((1150, 396), (68, 68))), "",
                                                     object_id="#checked_checkbox",
-                                                    tool_tip_text="Disable editing the underlying suffix. Currently, this is overwritten by the cat's rank, as it has a special suffix", manager=MANAGER)
+                                                    tool_tip_text="Re-enable the cat's special suffix", manager=MANAGER)
 
         if self.the_cat.name.status in self.the_cat.name.names_dict["special_suffixes"]:
             self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((800, 400), (360, 60))),
@@ -2046,6 +2046,7 @@ class ChangeNameScreen(Screens):
                 self.toggle_spec_block_off.enable()
                 self.random_suff.enable()
                 self.suffix_entry_box.enable()
+                self.suffix_entry_box.set_text(self.the_cat.name.suffix)
 
 
         else:
@@ -2091,6 +2092,13 @@ class ChangeNameScreen(Screens):
                 if sub(r'[^A-Za-z0-9 ]+', '', self.suffix_entry_box.get_text()) != '':
                     self.the_cat.name.suffix = sub(r'[^A-Za-z0-9 ]+', '', self.suffix_entry_box.get_text())
                     self.name_changed.show()
+                    self.the_cat.specsuffix_hidden = True
+                    self.the_cat.name.specsuffix_hidden = True
+                elif sub(r'[^A-Za-z0-9 ]+', '', self.suffix_entry_box.get_text()) == '' and not self.the_cat.name.specsuffix_hidden:
+                    self.name_changed.show()
+                else:
+                    self.the_cat.specsuffix_hidden = False
+                    self.the_cat.name.specsuffix_hidden = False
             elif event.ui_element == self.random_pre:
                 self.prefix_entry_box.set_text(Name(
                                                     self.the_cat.status,
@@ -2119,14 +2127,12 @@ class ChangeNameScreen(Screens):
                 self.toggle_spec_block_off.enable()
                 self.toggle_spec_block_off.show()
                 self.suffix_entry_box.set_text(self.the_cat.name.suffix)
-                self.the_cat.specsuffix_hidden = True
             elif event.ui_element == self.toggle_spec_block_off:
                 self.random_suff.disable()
                 self.toggle_spec_block_off.disable()
                 self.toggle_spec_block_off.hide()
                 self.toggle_spec_block_on.enable()
                 self.toggle_spec_block_on.show()
-                self.the_cat.specsuffix_hidden = False
                 self.suffix_entry_box.set_text("")
                 self.suffix_entry_box.rebuild()
                 self.suffix_entry_box.disable()
