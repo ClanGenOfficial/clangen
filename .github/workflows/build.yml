@@ -97,7 +97,7 @@ jobs:
         run: echo ${{ github.ref_name }} > commit.txt
       - name: Run PyInstaller
         #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
-        run: poetry run python3 -m PyInstaller Clangen.spec
+        run: poetry run PyInstaller Clangen.spec
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Win32
@@ -139,7 +139,7 @@ jobs:
       #    tar.exe -x -v -f upx-4.0.0-win64.zip
       - name: Run PyInstaller
         #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
-        run: poetry run python3 -m PyInstaller Clangen.spec
+        run: poetry run PyInstaller Clangen.spec
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Win64
@@ -181,7 +181,7 @@ jobs:
       #    tar.exe -x -v -f upx-4.0.0-win64.zip
       - name: Run PyInstaller
         #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
-        run: poetry run python3 -m PyInstaller Clangen.spec
+        run: poetry run PyInstaller Clangen.spec
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Win64_Windows10+
