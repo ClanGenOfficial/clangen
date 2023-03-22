@@ -13,29 +13,29 @@
         "id": "gen_leader",
         "thoughts": [
             "Is hoping for a sign from StarClan",
-        "Is hoping that they are leading their Clan well",
-        "Is worried about Clan relations",
-        "Is assessing some apprentices",
-        "Is thinking about battle strategies",
-        "Almost lost a life recently",
-        "Is counting how many lives they have left",
-        "Is thinking about what to say at the Gathering",
-        "Is questioning their ability to lead",
-        "Is dreading the Clan meeting they must call later today",
-        "Is finding the responsibility of leadership to be quite the heavy burden",
-        "Is feeling blessed by StarClan this moon",
-        "Is thinking about forming an alliance",
-        "Is making a solemn vow to protect their Clanmates",
-        "Called an important Clan meeting recently",
-        "Think they have been hearing the voices of StarClan cats...",
-        "Is pondering recent dreams they have had... perhaps from StarClan?",
-        "Recently called a Clan meeting, but forgot what to say"
+            "Is hoping that they are leading their Clan well",
+            "Is worried about Clan relations",
+            "Is thinking about battle strategies",
+            "Almost lost a life recently",
+            "Is counting how many lives they have left",
+            "Is thinking about what to say at the Gathering",
+            "Is questioning their ability to lead",
+            "Is dreading the Clan meeting they must call later today",
+            "Is finding the responsibility of leadership to be quite the heavy burden",
+            "Is feeling blessed by StarClan this moon",
+            "Is thinking about forming an alliance",
+            "Is making a solemn vow to protect their Clanmates",
+            "Called an important Clan meeting recently",
+            "Think they have been hearing the voices of StarClan cats...",
+            "Is pondering recent dreams they have had... perhaps from StarClan?",
+            "Recently called a Clan meeting, but forgot what to say"
         ]
     },
     {
         "id": "leader_alive_apprentices",
         "thoughts": [
-            "Thinks about who should mentor new apprentices"
+            "Thinks about who should mentor new apprentices",
+            "Is assessing some apprentices"
         ],
         "random_status_constraint": [
             "kitten"
@@ -54,7 +54,7 @@
     {
         "id": "leader_DF",
         "thoughts": [
-            "Think they have been hearing the voices of Dark Forest cats...",
+            "Thinks they have been hearing the voices of Dark Forest cats...",
             "Is pondering recent dreams they have had... perhaps from the Dark Forest?"
         ],
         "random_status_constraint": [
