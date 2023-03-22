@@ -38,9 +38,7 @@ class Freshkill_Events():
         possible_events = self.generate_events.possible_short_events(cat.status, cat.age, "nutrition")
 
         # get the other needed information and values to create a event
-        possible_other_cats = list(filter(
-            lambda c: not c.dead and not c.outside and c.ID != cat.ID, Cat.all_cats.values()
-        ))
+        possible_other_cats = [i for i in Cat.all_cats.values() if not (i.dead or i.outside) and i.ID != cat.ID]
         if len(possible_other_cats) <= 0:
             other_cat = None
         else:
