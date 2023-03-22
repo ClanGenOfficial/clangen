@@ -13,6 +13,6 @@ jobs:
       - name: Install Dependencies
         run: python3 -m pip install -r requirements.txt
       - name: Install Pylint
-        run: python3 -m pip install pylint enum34
+        run: python3 -m pip install pylint
       - name: Run Pylint
         run: python -m pylint --recursive=y --errors-only "$PWD"
