@@ -21,8 +21,8 @@ jobs:
         run: mv clangen-unittest-saves-main tests/testSaves
       - name: Remove the zip
         run: rm tests/saves.zip
-      - uses: abatilo/actions-poetry@v2
       - name: Install poetry
+        uses: abatilo/actions-poetry@v2
         with:
           poetry-version: 1.4.1
       - name: install dependencies
@@ -73,8 +73,8 @@ jobs:
         with:
           python-version: '3.11'
           architecture: 'x64'
-      - uses: abatilo/actions-poetry@v2
       - name: Install poetry
+      - uses: abatilo/actions-poetry@v2
         with:
           poetry-version: 1.4.1
       - name: install dependencies
