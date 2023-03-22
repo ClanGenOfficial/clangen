@@ -1018,7 +1018,7 @@ class Cat():
         # get other cat
         i = 0
         while other_cat == self.ID and len(all_cats) > 1 or (
-                all_cats.get(other_cat).status in ['kittypet', 'rogue', 'loner']):
+                all_cats.get(other_cat).status in ['kittypet', 'rogue', 'loner', 'former clancat']):
             other_cat = random.choice(list(all_cats.keys()))
             i += 1
             if i > 100:
@@ -1028,13 +1028,10 @@ class Cat():
         other_cat = all_cats.get(other_cat)
 
         # get possible thoughts
-        filtered_thoughts = []
-        thought_list = load_thoughts(self, other_cat, self.status)
-        if cats_fulfill_thought_constraints(self, other_cat, thought_list, game_mode):
-            filtered_thoughts.append(thought_list["thoughts"])
+        thought_str = str(load_thoughts(self, other_cat, self.status, game_mode))
 
         try:
-            chosen_thought = choice(filtered_thoughts)
+            chosen_thought = thought_str
         except IndexError:
             chosen_thought = "Isn't thinking about much right now"
 
