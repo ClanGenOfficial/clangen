@@ -71,6 +71,7 @@ def json_load():
             new_cat = Cat(ID=cat["ID"],
                         prefix=cat["name_prefix"],
                         suffix=cat["name_suffix"],
+                        specsuffix_hidden=(cat["specsuffix_hidden"] if 'specsuffix_hidden' in cat else False),
                         gender=cat["gender"],
                         status=cat["status"],
                         parent1=cat["parent1"],
@@ -178,7 +179,10 @@ def json_load():
                 # generated before the "ginger-on-ginger" update. If it was generated after that update,
                 # tortiecolour and pelt_colour will be the same. Therefore, lets also re-set the pelt color
                 new_cat.pelt.colour = cat["tortie_color"]
-            elif cat["pattern"] == "MINIMAL1":
+            else:
+                new_cat.pattern = cat["pattern"]
+                new_cat.tortiecolour = cat["tortie_color"]
+            if cat["pattern"] == "MINIMAL1":
                 new_cat.pattern = "MINIMALONE"
             elif cat["pattern"] == "MINIMAL2":
                 new_cat.pattern = "MINIMALTWO"
@@ -186,9 +190,6 @@ def json_load():
                 new_cat.pattern = "MINIMALTHREE"
             elif cat["pattern"] == "MINIMAL4":
                 new_cat.pattern = "MINIMALFOUR"
-            else:
-                new_cat.pattern = cat["pattern"]
-                new_cat.tortiecolour = cat["tortie_color"]
             new_cat.skin = cat["skin"]
             new_cat.skill = cat["skill"]
             new_cat.scars = cat["scars"] if "scars" in cat else []

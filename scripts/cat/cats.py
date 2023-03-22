@@ -177,13 +177,14 @@ class Cat():
     def __init__(self,
                  prefix=None,
                  gender=None,
-                 status="kitten",
+                 status="newborn",
                  backstory="clanborn",
                  parent1=None,
                  parent2=None,
                  pelt=None,
                  eye_colour=None,
                  suffix=None,
+                 specsuffix_hidden=False,
                  ID=None,
                  moons=None,
                  example=False,
@@ -304,6 +305,8 @@ class Cat():
 
         self.favourite = False
 
+        self.specsuffix_hidden = specsuffix_hidden
+
         # setting ID
         if ID is None:
             potential_id = str(next(Cat.id_iter))
@@ -335,7 +338,9 @@ class Cat():
                     if moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1] + 1):
                         self.age = key_age
         else:
-            if status == 'kitten':
+            if status == 'newborn':
+                self.age = 'newborn'
+            elif status == 'kitten':
                 self.age = 'kitten'
             elif status == 'elder':
                 self.age = 'senior'
@@ -382,7 +387,7 @@ class Cat():
         else:
             self.backstory = self.backstory
 
-        # sex
+        # sex!?!??!?!?!??!?!?!?!??
         if self.gender is None:
             self.gender = choice(["female", "male"])
         self.g_tag = self.gender_tags[self.gender]
@@ -392,14 +397,14 @@ class Cat():
             # trans cat chances
             trans_chance = randint(0, 50)
             nb_chance = randint(0, 75)
-            if self.gender == "female" and not self.status == 'kitten':
+            if self.gender == "female" and not self.status in ['newborn', 'kitten']:
                 if trans_chance == 1:
                     self.genderalign = "trans male"
                 elif nb_chance == 1:
                     self.genderalign = "nonbinary"
                 else:
                     self.genderalign = self.gender
-            elif self.gender == "male" and not self.status == 'kitten':
+            elif self.gender == "male" and not self.status in ['newborn', 'kitten']:
                 if trans_chance == 1:
                     self.genderalign = "trans female"
                 elif nb_chance == 1:
@@ -456,7 +461,10 @@ class Cat():
 
         # In camp status
         self.in_camp = 1
-
+        if game.clan is not None:
+            biome = game.clan.biome
+        else:
+            biome = None
         # NAME
         if self.pelt is not None:
             self.name = Name(status,
@@ -465,9 +473,11 @@ class Cat():
                              self.pelt.colour,
                              self.eye_colour,
                              self.pelt.name,
-                             self.tortiepattern)
+                             self.tortiepattern,
+                             biome=biome,
+                             specsuffix_hidden=self.specsuffix_hidden)
         else:
-            self.name = Name(status, prefix, suffix, eyes=self.eye_colour)
+            self.name = Name(status, prefix, suffix, eyes=self.eye_colour, specsuffix_hidden=self.specsuffix_hidden)
 
         # Sprite sizes
         self.sprite = None
@@ -1407,6 +1417,14 @@ class Cat():
         if set(self.get_parents()) & set(other_cat.get_parents()):
             return True
         return False
+    
+    def is_littermate(self, other_cat: Cat):
+        """Check if the cats are littermates"""
+        if not self.is_sibling(other_cat):
+            return False
+        if other_cat.moons + other_cat.dead_for == self.moons + self.dead_for:
+            return True
+        return False
 
     def is_uncle_aunt(self, other_cat):
         """Check if the cats are related as uncle/aunt and niece/nephew."""
@@ -1984,7 +2002,7 @@ class Cat():
                           other_cat: Cat,
                           for_love_interest: bool = False,
                           for_patrol: bool = False):
-        """Add aditional information to call the check."""
+        """Add additional information to call the check."""
         former_mentor_setting = game.settings['romantic with former mentor']
         for_patrol = for_patrol
         return self._intern_potential_mate(other_cat, for_love_interest, former_mentor_setting, for_patrol)

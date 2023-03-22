@@ -1525,7 +1525,6 @@ class Events():
             exp = random.choice(list(range(ran[0][0], ran[0][1] + 1)) + list(range(ran[1][0], ran[1][1] + 1)))
 
             cat.experience += max(exp * mentor_modifier + mentor_skill_modifier, 1)
-            print(f"{cat.name} has gained {int(exp * mentor_modifier)} EX", cat._experience)
 
     def invite_new_cats(self, cat):
         """

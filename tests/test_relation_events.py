@@ -8,7 +8,7 @@ os.environ["SDL_AUDIODRIVER"] = "dummy"
 from scripts import events
 from scripts.cat_relations.relationship import Relationship
 from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
-from scripts.events_module.relationship.mate_events import Mate_Events
+from scripts.events_module.relationship.romantic_events import Romantic_Events
 from scripts.cat.cats import Cat
 from scripts.clan import Clan
 
@@ -103,7 +103,7 @@ class Pregnancy(unittest.TestCase):
 class Mates(unittest.TestCase):
     def test_platonic_kitten_mating(self):
         # given
-        relation_events = Mate_Events()
+        relation_events = Romantic_Events()
         cat1 = Cat(moons=3)
         cat2 = Cat(moons=3)
 
@@ -123,7 +123,7 @@ class Mates(unittest.TestCase):
 
     def test_platonic_apprentice_mating(self):
         # given
-        relation_events = Mate_Events()
+        relation_events = Romantic_Events()
         cat1 = Cat(moons=6)
         cat2 = Cat(moons=6)
 
@@ -143,7 +143,7 @@ class Mates(unittest.TestCase):
 
     def test_romantic_kitten_mating(self):
         # given
-        relation_events = Mate_Events()
+        relation_events = Romantic_Events()
         cat1 = Cat(moons=3)
         cat2 = Cat(moons=3)
 
@@ -163,7 +163,7 @@ class Mates(unittest.TestCase):
 
     def test_romantic_apprentice_mating(self):
         # given
-        relation_events = Mate_Events()
+        relation_events = Romantic_Events()
         cat1 = Cat(moons=6)
         cat2 = Cat(moons=6)
 

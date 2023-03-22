@@ -144,9 +144,35 @@ def get_cats_same_age(cat, range=10):  # pylint: disable=redefined-builtin
     for inter_cat in cat.all_cats.values():
         if inter_cat.dead or inter_cat.outside or inter_cat.exiled:
             continue
+        if inter_cat.ID == cat.ID:
+            continue
+
+        if inter_cat.ID not in cat.relationships:
+            print(f"ERROR: {cat.name} had no relationship towards {inter_cat.name}")
+            continue
+
         if inter_cat.moons <= cat.moons + range and inter_cat.moons <= cat.moons - range:
             cats.append(inter_cat)
 
+    return cats
+
+
+def get_free_possible_mates(cat):
+    """Returns a list of available cats, which are possible mates for the given cat."""
+    cats = []
+    for inter_cat in cat.all_cats.values():
+        if inter_cat.dead or inter_cat.outside or inter_cat.exiled:
+            continue
+        if inter_cat.ID == cat.ID:
+            continue
+
+        if inter_cat.ID not in cat.relationships:
+            print(f"ERROR: {cat.name} had no relationship towards {inter_cat.name}")
+            continue
+
+        if inter_cat.is_potential_mate(cat,True) and cat.is_potential_mate(inter_cat, True):
+            if not inter_cat.mate:
+                cats.append(inter_cat)
     return cats
 
 
@@ -158,6 +184,10 @@ def get_current_season():
     function to handle the math for finding the clan's current season
     :return: the clan's current season
     """
+    
+    if game.config['lock_season']:
+        game.clan.current_season = game.clan.starting_season
+        return game.clan.starting_season
     # print(game.clan.current_season)
     modifiers = {
         "Newleaf": 0,
@@ -384,6 +414,7 @@ def create_new_cat(Cat,
 
     return created_cats
 
+
 def create_outside_cat(Cat, status, backstory):
         """
         TODO: DOCS
@@ -499,6 +530,24 @@ def get_personality_compatibility(cat1, cat2):
             return PERSONALITY_COMPATIBILITY[personality2][personality1]
 
     return None
+
+
+def get_cats_of_romantic_interest(cat):
+    """Returns a list of cats, those cats are love interest of the given cat."""
+    cats = []
+    for inter_cat in cat.all_cats.values():
+        if inter_cat.dead or inter_cat.outside or inter_cat.exiled:
+            continue
+        if inter_cat.ID == cat.ID:
+            continue
+        
+        if inter_cat.ID not in cat.relationships:
+            print(f"ERROR: {cat.name} had no relationship towards {inter_cat.name}")
+            continue
+
+        if cat.relationships[inter_cat.ID].romantic_love > 0:
+            cats.append(inter_cat)
+    return cats
 
 
 def get_amount_of_cats_with_relation_value_towards(cat, value, all_cats):
@@ -912,7 +961,7 @@ def update_sprite(cat):
 
     # setting the cat_sprite (bc this makes things much easier)
     if cat.paralyzed and not cat.not_working():
-        if cat.age in ['newborn', 'kitten', 'adolescent']:
+        if cat.age in ['newborn', 'kitten', 'adolescent'] or game.config['fun']['all_cats_are_newborn']:
             cat_sprite = str(17)
         else:
             if cat.pelt.length == 'long':
@@ -920,14 +969,17 @@ def update_sprite(cat):
             else:
                 cat_sprite = str(15)
     elif cat.not_working():
-        if cat.age in ['newborn', 'kitten', 'adolescent']:
+        if cat.age in ['newborn', 'kitten', 'adolescent'] or game.config['fun']['all_cats_are_newborn']:
             cat_sprite = str(19)
         else:
             cat_sprite = str(18)
     else:
-        if cat.age == 'elder':
+        if cat.age == 'elder' and not game.config['fun']['all_cats_are_newborn']:
             cat.age = 'senior'
-        cat_sprite = str(cat.cat_sprites[cat.age])
+        if game.config['fun']['all_cats_are_newborn']:
+            cat_sprite = str(cat.cat_sprites['newborn'])
+        else:
+            cat_sprite = str(cat.cat_sprites[cat.age])
 
 # generating the sprite
     try:
