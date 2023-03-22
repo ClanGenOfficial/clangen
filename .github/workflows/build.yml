@@ -7,15 +7,14 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
+      - name: Install poetry
+        run: pipx install poetry
       - name: Setup Python 3.11 x64
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
           architecture: 'x64'
-      - name: Install poetry
-        uses: abatilo/actions-poetry@v2
-        with:
-          poetry-version: 1.4.1
+          cache: 'poetry'
       - name: install dependencies
         run: poetry install --with build -E discord
       - name: Write Dev Version File
@@ -43,15 +42,14 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
+      - name: Install poetry
+        run: pipx install poetry
       - name: Setup Python 3.11 x64
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
           architecture: 'x64'
-      - name: Install poetry
-        uses: abatilo/actions-poetry@v2
-        with:
-          poetry-version: 1.4.1
+          cache: 'poetry'
       - name: install dependencies
         run: poetry install --with build -E discord
       - name: Write Dev Version File
@@ -78,16 +76,14 @@ jobs:
     runs-on: windows-2019
     steps:
       - uses: actions/checkout@v3
+      - name: Install poetry
+        run: pipx install poetry
       - name: Setup Python 3.8 x86
         uses: actions/setup-python@v4
         with:
           python-version: '3.8' # 3.8 to support older versions of Windows
           architecture: 'x86'
           cache: 'poetry'
-      - name: Install poetry
-        uses: abatilo/actions-poetry@v2
-        with:
-          poetry-version: 1.4.1
       - name: install dependencies
         run: poetry install --with build -E discord
       - name: Write Dev Version File
@@ -116,16 +112,14 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Install poetry
+        run: pipx install poetry
       - name: Setup Python 3.8 x64
         uses: actions/setup-python@v4
         with:
           python-version: '3.8' # 3.8 to support older versions of Windows
           architecture: 'x64'
           cache: 'poetry'
-      - name: Install poetry
-        uses: abatilo/actions-poetry@v2
-        with:
-          poetry-version: 1.4.1
       - name: install dependencies
         run: poetry install --with build -E discord
       - name: Write Dev Version File
@@ -159,16 +153,14 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Install poetry
+        run: pipx install poetry
       - name: Setup Python 3.11 x64
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
           architecture: 'x64'
           cache: 'poetry'
-      - name: Install poetry
-        uses: abatilo/actions-poetry@v2
-        with:
-          poetry-version: 1.4.1
       - name: install dependencies
         run: poetry install --with build -E discord
       - name: Write Dev Version File
