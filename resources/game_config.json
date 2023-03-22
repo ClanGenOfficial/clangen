@@ -250,7 +250,7 @@
 
 
 	"lock_season": false, 
-	"_": "Forces the season to be locked at the clan's starting_season",
+	"comment": "Forces the season to be locked at the clan's starting_season",
 
 
 
