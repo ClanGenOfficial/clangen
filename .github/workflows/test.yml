@@ -22,6 +22,7 @@ jobs:
       - name: Remove the zip
         run: rm tests/saves.zip
       - uses: abatilo/actions-poetry@v2
+      - name: Install poetry
         with:
           poetry-version: 1.4.1
       - name: install dependencies
@@ -73,6 +74,7 @@ jobs:
           python-version: '3.11'
           architecture: 'x64'
       - uses: abatilo/actions-poetry@v2
+      - name: Install poetry
         with:
           poetry-version: 1.4.1
       - name: install dependencies

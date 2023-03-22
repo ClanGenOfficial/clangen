@@ -13,6 +13,7 @@ jobs:
           python-version: '3.11'
           architecture: 'x64'
       - uses: abatilo/actions-poetry@v2
+      - name: Install poetry
         with:
           poetry-version: 1.4.1
       - name: install dependencies
@@ -48,6 +49,7 @@ jobs:
           python-version: '3.11'
           architecture: 'x64'
       - uses: abatilo/actions-poetry@v2
+      - name: Install poetry
         with:
           poetry-version: 1.4.1
       - name: install dependencies
@@ -82,6 +84,7 @@ jobs:
           python-version: '3.8' # 3.8 to support older versions of Windows
           architecture: 'x86'
       - uses: abatilo/actions-poetry@v2
+      - name: Install poetry
         with:
           poetry-version: 1.4.1
       - name: install dependencies
@@ -118,6 +121,7 @@ jobs:
           python-version: '3.8' # 3.8 to support older versions of Windows
           architecture: 'x64'
       - uses: abatilo/actions-poetry@v2
+      - name: Install poetry
         with:
           poetry-version: 1.4.1
       - name: install dependencies
@@ -159,6 +163,7 @@ jobs:
           python-version: '3.11'
           architecture: 'x64'
       - uses: abatilo/actions-poetry@v2
+      - name: Install poetry
         with:
           poetry-version: 1.4.1
       - name: install dependencies
@@ -204,6 +209,7 @@ jobs:
         with:
           python-version: "3.11"
       - uses: abatilo/actions-poetry@v2
+      - name: Install poetry
         with:
           poetry-version: 1.4.1
       - name: install dependencies
