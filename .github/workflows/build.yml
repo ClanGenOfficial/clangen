@@ -95,14 +95,13 @@ jobs:
       - name: Run PyInstaller
         #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
         run: poetry run PyInstaller Clangen.spec
+      - name: Create archive (.zip)
+        run: tar.exe -a -c -f Clangen_Win32.zip -C dist Clangen
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Win32
-          path: dist/
-      - name: Create archive for release (.zip)
-        if: startsWith(github.ref, 'refs/tags/')
-        run: tar.exe -a -c -f Clangen_Win32.zip -C dist Clangen
-      - name: Release 
+          path: Clangen_Win32.zip
+      - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
@@ -136,13 +135,13 @@ jobs:
       - name: Run PyInstaller
         #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
         run: poetry run PyInstaller Clangen.spec
+      - name: Create archive (.zip)
+        if: startsWith(github.ref, 'refs/tags/')
+        run: tar.exe -a -c -f Clangen_Win64.zip -C dist Clangen
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Win64
-          path: dist/
-      - name: Create archive for release (.zip)
-        if: startsWith(github.ref, 'refs/tags/')
-        run: tar.exe -a -c -f Clangen_Win64.zip -C dist Clangen
+          path: Clangen_Win64.zip
       - name: Release 
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
@@ -177,13 +176,12 @@ jobs:
       - name: Run PyInstaller
         #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
         run: poetry run PyInstaller Clangen.spec
+      - name: Create archive (.zip)
+        run: tar.exe -a -c -f Clangen_Win64_Windows10+.zip -C dist Clangen
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Win64_Windows10+
-          path: dist/
-      - name: Create archive for release (.zip)
-        if: startsWith(github.ref, 'refs/tags/')
-        run: tar.exe -a -c -f Clangen_Win64_Windows10+.zip -C dist Clangen
+          path: Clangen_Win64_Windows10+.zip
       - name: Release 
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
