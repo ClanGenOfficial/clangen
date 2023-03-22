@@ -7,21 +7,18 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
+      - name: Install poetry
+        uses: abatilo/actions-poetry@v2
+        with:
+          poetry-version: 1.4.1
       - name: Setup Python 3.11 x64
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
           architecture: 'x64'
-      - name: Update pip
-        run: python -m pip install --upgrade pip
-      - name: Update setuptools and wheel
-        run: python -m pip install --upgrade setuptools wheel
-      - name: Install dependencies
-        run: python -m pip install -r requirements.txt
-      - name: Install Pillow for icon format conversion
-        run: python -m pip install --upgrade Pillow
-      - name: Install PyInstaller
-        run: python -m pip install --upgrade PyInstaller
+          cache: 'poetry'
+      - name: install dependencies
+        run: poetry install --with build -E discord
       - name: Write Dev Version File
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: echo ${{ github.sha }} > commit.txt
@@ -29,10 +26,10 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         run: echo ${{ github.ref_name }} > commit.txt
       - name: Run PyInstaller
-        #run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
-        run: python -m PyInstaller Clangen.spec
+        #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
+        run: poetry run python3 -m PyInstaller Clangen.spec
       - name: Create archive (.tar.xz)
-        run: tar -cavf Clangen_Linux64_glibc2.31+.tar.xz -C dist Clangen
+        run: tar -caf Clangen_Linux64_glibc2.31+.tar.xz -C dist Clangen
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Linux64_glibc2.31+.tar.xz
@@ -68,21 +65,18 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
+      - name: Install poetry
+        uses: abatilo/actions-poetry@v2
+        with:
+          poetry-version: 1.4.1
       - name: Setup Python 3.11 x64
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
           architecture: 'x64'
-      - name: Update pip
-        run: python -m pip install --upgrade pip
-      - name: Update setuptools and wheel
-        run: python -m pip install --upgrade setuptools wheel
-      - name: Install dependencies
-        run: python -m pip install -r requirements.txt
-      - name: Install Pillow for icon format conversion
-        run: python -m pip install --upgrade Pillow
-      - name: Install PyInstaller
-        run: python -m pip install --upgrade PyInstaller
+          cache: 'poetry'
+      - name: install dependencies
+        run: poetry install --with build -E discord
       - name: Write Dev Version File
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: echo ${{ github.sha }} > commit.txt
@@ -90,9 +84,9 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         run: echo ${{ github.ref_name }} > commit.txt
       - name: Run PyInstaller
-        run: python -m PyInstaller Clangen.spec
+        run: poetry run python3 -m PyInstaller Clangen.spec
       - name: Create archive (.tar.xz)
-        run: tar -cavf Clangen_Linux64_glibc2.35+.tar.xz -C dist Clangen
+        run: tar -caf Clangen_Linux64_glibc2.35+.tar.xz -C dist Clangen
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Linux64_glibc2.35+.tar.xz
@@ -128,11 +122,16 @@ jobs:
     runs-on: windows-2019
     steps:
       - uses: actions/checkout@v3
+      - name: Install poetry
+        uses: abatilo/actions-poetry@v2
+        with:
+          poetry-version: 1.4.1
       - name: Setup Python 3.8 x86
         uses: actions/setup-python@v4
         with:
           python-version: '3.8' # 3.8 to support older versions of Windows
           architecture: 'x86'
+          cache: 'poetry'
       - name: Set up cargo cache
         uses: actions/cache@v3
         continue-on-error: false
@@ -145,14 +144,8 @@ jobs:
             target/
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
           restore-keys: ${{ runner.os }}-cargo-
-      - name: Update setuptools and wheel
-        run: python -m pip install --upgrade setuptools wheel
-      - name: Install dependencies
-        run: python -m pip install -r requirements.txt
-      - name: Install Pillow for icon format conversion
-        run: python -m pip install --upgrade Pillow
-      - name: Install PyInstaller
-        run: python -m pip install --upgrade PyInstaller
+      - name: install dependencies
+        run: poetry install --with build -E discord
       - name: Write Dev Version File
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: echo ${{ github.sha }} > commit.txt
@@ -166,8 +159,8 @@ jobs:
           cargo build --release
           cp target/release/self_updater.exe ../resources/
       - name: Run PyInstaller
-        #run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
-        run: python -m PyInstaller Clangen.spec
+        #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
+        run: poetry run PyInstaller Clangen.spec
       - name: Create archive (.zip)
         run: tar.exe -a -c -f Clangen_Win32.zip -C dist Clangen
       - uses: actions/upload-artifact@v3
@@ -206,11 +199,16 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Install poetry
+        uses: abatilo/actions-poetry@v2
+        with:
+          poetry-version: 1.4.1
       - name: Setup Python 3.8 x64
         uses: actions/setup-python@v4
         with:
           python-version: '3.8' # 3.8 to support older versions of Windows
           architecture: 'x64'
+          cache: 'poetry'
       - name: Set up cargo cache
         uses: actions/cache@v3
         continue-on-error: false
@@ -223,14 +221,8 @@ jobs:
             target/
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
           restore-keys: ${{ runner.os }}-cargo-
-      - name: Update setuptools and wheel
-        run: python -m pip install --upgrade setuptools wheel
-      - name: Install dependencies
-        run: python -m pip install -r requirements.txt
-      - name: Install Pillow for icon format conversion
-        run: python -m pip install --upgrade Pillow
-      - name: Install PyInstaller
-        run: python -m pip install --upgrade PyInstaller
+      - name: install dependencies
+        run: poetry install --with build -E discord
       - name: Write Dev Version File
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: echo ${{ github.sha }} > commit.txt
@@ -249,8 +241,8 @@ jobs:
           cargo build --release
           cp target/release/self_updater.exe ../resources/
       - name: Run PyInstaller
-        #run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
-        run: python -m PyInstaller Clangen.spec
+        #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
+        run: poetry run PyInstaller Clangen.spec
       - name: Create archive (.zip)
         run: tar.exe -a -c -f Clangen_Win64.zip -C dist Clangen
       - uses: actions/upload-artifact@v3
@@ -289,11 +281,16 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Install poetry
+        uses: abatilo/actions-poetry@v2
+        with:
+          poetry-version: 1.4.1
       - name: Setup Python 3.11 x64
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
           architecture: 'x64'
+          cache: 'poetry'
       - name: Set up cargo cache
         uses: actions/cache@v3
         continue-on-error: false
@@ -306,14 +303,8 @@ jobs:
             target/
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
           restore-keys: ${{ runner.os }}-cargo-
-      - name: Update setuptools and wheel
-        run: python -m pip install --upgrade setuptools wheel
-      - name: Install dependencies
-        run: python -m pip install -r requirements.txt
-      - name: Install Pillow for icon format conversion
-        run: python -m pip install --upgrade Pillow
-      - name: Install PyInstaller
-        run: python -m pip install --upgrade PyInstaller
+      - name: install dependencies
+        run: poetry install --with build -E discord
       - name: Write Dev Version File
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: echo ${{ github.sha }} > commit.txt
@@ -332,8 +323,8 @@ jobs:
           cargo build --release
           cp target/release/self_updater.exe ../resources/
       - name: Run PyInstaller
-        #run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
-        run: python -m PyInstaller Clangen.spec
+        #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
+        run: poetry run PyInstaller Clangen.spec
       - name: Create archive (.zip)
         run: tar.exe -a -c -f Clangen_Win64_Windows10+.zip -C dist Clangen
       - uses: actions/upload-artifact@v3
@@ -381,9 +372,12 @@ jobs:
         uses: conda-incubator/setup-miniconda@v2
         with:
           python-version: "3.11"
-      - name: Set up Homebrew
-        id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@master
+      # - name: Install poetry
+      #   uses: abatilo/actions-poetry@v2
+      #   with:
+      #     poetry-version: 1.4.1
+      # - name: install dependencies
+      #   run: poetry install --with build -E discord
       - name: Update pip
         run: python -m pip install --upgrade pip
       - name: Update setuptools and wheel
@@ -401,7 +395,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         run: echo ${{ github.ref_name }} > commit.txt
       - name: Run PyInstaller
-        #run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
+        #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
+        # run: poetry run python3 -m PyInstaller Clangen.spec
         run: python -m PyInstaller Clangen.spec
       - name: Create archive (.tar.xz)
         run: rm -r dist/Clangen
