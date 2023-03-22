@@ -106,9 +106,11 @@ class Thoughts():
             self.random_outside_status = []
 
     def __str__(self) -> str:
-        if len(self.thoughts) > 1:
-            self.thoughts = choice(self.thoughts)
-        return self.thoughts
+        if len(self.thoughts) > 0:
+            return choice(self.thoughts)
+        else:
+            #This should never happen. 
+            return "Has no thoughts, head empty"
 
 # ---------------------------------------------------------------------------- #
 #                some useful functions, related to thoughts                    #
