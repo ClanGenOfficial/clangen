@@ -327,7 +327,7 @@ class Thoughts():
             GENTHOUGHTS = ujson.loads(read_file.read())
         loaded_thoughts += THOUGHTS
         loaded_thoughts += GENTHOUGHTS
-        final_thoughts = choice(self.create_thoughts(loaded_thoughts, main_cat, other_cat, game_mode))
+        final_thoughts = choice(self.create_thoughts(self, loaded_thoughts, main_cat, other_cat, game_mode))
 
         return final_thoughts
     
