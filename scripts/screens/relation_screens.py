@@ -9,6 +9,7 @@ from scripts.cat.cats import Cat
 from scripts.game_structure import image_cache
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked, UISpriteButton, UIRelationStatusBar
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
+from ..cat.enums.ages import Age
 
 
 class ChooseMentorScreen(Screens):
@@ -1319,12 +1320,12 @@ class ChooseMateScreen(Screens):
                 self.next_cat = 1
             if self.next_cat == 0 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead and \
                     check_cat.ID != game.clan.instructor.ID and not check_cat.exiled and not check_cat.outside and \
-                    check_cat.age not in ["adolescent", "kitten", "newborn"] and check_cat.df == self.the_cat.df:
+                    check_cat.age not in [Age.ADOLESCENT, Age.KITTEN, Age.NEWBORN] and check_cat.df == self.the_cat.df:
                 self.previous_cat = check_cat.ID
 
             elif self.next_cat == 1 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead and \
                     check_cat.ID != game.clan.instructor.ID and not check_cat.exiled and not check_cat.outside and \
-                    check_cat.age not in ["adolescent", "kitten", "newborn"] and check_cat.df == self.the_cat.df:
+                    check_cat.age not in [Age.ADOLESCENT, Age.KITTEN, Age.NEWBORN] and check_cat.df == self.the_cat.df:
                 self.next_cat = check_cat.ID
 
             elif int(self.next_cat) > 1:
@@ -1342,7 +1343,7 @@ class ChooseMateScreen(Screens):
         """Get a list of valid mates for the current cat"""
         valid_mates = []
         for relevant_cat in Cat.all_cats_list:
-            invalid_age = relevant_cat.age not in ['newborn', 'kitten', 'adolescent']
+            invalid_age = relevant_cat.age not in [Age.NEWBORN, Age.KITTEN, Age.ADOLESCENT]
 
             # cat.is_potential_mate() is not used here becuase that restricts to the same age catagory, which we
             # don't want here.
@@ -1932,7 +1933,7 @@ class RelationshipScreen(Screens):
         # ROMANTIC LOVE
         # CHECK AGE DIFFERENCE
         same_age = the_relationship.cat_to.age == self.the_cat.age
-        adult_ages = ['young adult', 'adult', 'senior adult', 'elder']
+        adult_ages = [Age.YOUNG_ADULT, Age.ADULT, Age.SENIOR_ADULT, Age.SENIOR]
         both_adult = the_relationship.cat_to.age in adult_ages and self.the_cat.age in adult_ages
         check_age = both_adult or same_age
 
@@ -2543,7 +2544,7 @@ class MediationScreen(Screens):
             # ROMANTIC LOVE
             # CHECK AGE DIFFERENCE
             same_age = the_relationship.cat_to.age == cat.age
-            adult_ages = ['young adult', 'adult', 'senior adult', 'elder']
+            adult_ages = [Age.YOUNG_ADULT, Age.ADULT, Age.SENIOR_ADULT, Age.SENIOR]
             both_adult = the_relationship.cat_to.age in adult_ages and cat.age in adult_ages
             check_age = both_adult or same_age
 

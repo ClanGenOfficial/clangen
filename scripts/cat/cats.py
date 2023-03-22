@@ -5,6 +5,7 @@ import random
 import os.path
 import itertools
 
+from .enums.ages import Age
 from ..datadir import get_save_dir
 from ..events_module.generate_events import GenerateEvents
 
@@ -39,7 +40,7 @@ from scripts.game_structure import image_cache
 from scripts.event_class import Single_Event
 
 
-class Cat():
+class Cat:
     used_screen = screen
     traits = [
         'adventurous', 'altruistic', 'ambitious', 'bloodthirsty', 'bold',
@@ -65,10 +66,7 @@ class Cat():
         'Reserved': ['calm', 'careful', 'insecure', 'lonesome', 'loyal', 'nervous', 'sneaky',
                      'strange', 'daydreamer', 'quiet'],
     }
-    ages = [
-        'newborn', 'kitten', 'adolescent', 'young adult', 'adult', 'senior adult',
-        'senior'
-    ]
+
     age_moons = {
         'newborn': game.config["cat_ages"]["newborn"],
         'kitten': game.config["cat_ages"]["kitten"],
@@ -202,12 +200,12 @@ class Cat():
             self.moons = moons
             if moons > 300:
                 # Out of range, always elder
-                self.age = 'senior'
+                self.age = Age.SENIOR
             else:
                 # In range
                 for key_age in self.age_moons.keys():
                     if moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1] + 1):
-                        self.age = key_age
+                        self.age = Age(key_age)
 
             self.set_faded()  # Sets the faded sprite and faded tag (self.faded = True)
 
@@ -224,7 +222,7 @@ class Cat():
         self.gender = gender
         self.status = status
         self.backstory = backstory
-        self.age = None
+        self.age: Age
         self.skill = None
         self.trait = None
         self.parent1 = parent1
@@ -321,32 +319,32 @@ class Cat():
 
         # age and status
         if status is None and moons is None:
-            self.age = choice(self.ages)
+            self.age = Age(choice(list(Age)))
         elif moons is not None:
             self.moons = moons
             if moons > 300:
                 # Out of range, always elder
-                self.age = 'senior'
+                self.age = Age.SENIOR
             elif moons == 0:
-                self.age = 'newborn'
+                self.age = Age.NEWBORN
             else:
                 # In range
                 for key_age in self.age_moons.keys():
                     if moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1] + 1):
-                        self.age = key_age
+                        self.age = Age(key_age)
         else:
             if status == 'newborn':
-                self.age = 'newborn'
+                self.age = Age.NEWBORN
             elif status == 'kitten':
-                self.age = 'kitten'
+                self.age = Age.KITTEN
             elif status == 'elder':
-                self.age = 'senior'
+                self.age = Age.SENIOR
             elif status == 'apprentice':
-                self.age = 'adolescent'
+                self.age = Age.ADOLESCENT
             elif status == 'medicine cat apprentice':
-                self.age = 'adolescent'
+                self.age = Age.ADOLESCENT
             else:
-                self.age = choice(['young adult', 'adult', 'adult', 'senior adult'])
+                self.age = choice([Age.YOUNG_ADULT, Age.ADULT, Age.ADULT, Age.SENIOR_ADULT])
             self.moons = random.randint(self.age_moons[self.age][0], self.age_moons[self.age][1])
 
         # personality trait and skill
@@ -433,9 +431,9 @@ class Cat():
             init_tint(self)
 
             # experience and current patrol status
-            if self.age in ['young', 'newborn']:
+            if self.age in [Age.NEWBORN, Age.KITTEN]:
                 self.experience = 0
-            elif self.age in ['adolescent']:
+            elif self.age in [Age.ADOLESCENT]:
                 m = self.moons
                 self.experience = 0
                 while m > Cat.age_moons['adolescent'][0]:
@@ -444,13 +442,13 @@ class Cat():
                         list(range(ran[0][0], ran[0][1] + 1)) + list(range(ran[1][0], ran[1][1] + 1)))
                     self.experience += exp + 3
                     m -= 1
-            elif self.age in ['young adult', 'adult']:
+            elif self.age in [Age.YOUNG_ADULT, Age.ADULT]:
                 self.experience = randint(Cat.experience_levels_range["prepared"][0],
                                           Cat.experience_levels_range["proficient"][1])
-            elif self.age in ['senior adult']:
+            elif self.age in [Age.SENIOR_ADULT]:
                 self.experience = randint(Cat.experience_levels_range["competent"][0],
                                           Cat.experience_levels_range["expert"][1])
-            elif self.age in ['senior']:
+            elif self.age in [Age.SENIOR]:
                 self.experience = randint(Cat.experience_levels_range["competent"][0],
                                           Cat.experience_levels_range["master"][1])
             else:
@@ -1071,10 +1069,10 @@ class Cat():
                 cats_to_choose.append(relationship.cat_to)
 
         # increase the chance a kitten interacts with other kittens
-        if self.age == "kitten":
+        if self.age == Age.KITTEN:
             kittens = list(
                 filter(
-                    lambda cat_id: self.all_cats.get(cat_id).age == "kitten" and
+                    lambda cat_id: self.all_cats.get(cat_id).age == Age.KITTEN and
                                    cat_id != self.ID, Cat.all_cats.copy()))
             amount = int(len(cats_to_choose) / 4)
             if len(kittens) > 0:
@@ -1082,10 +1080,10 @@ class Cat():
             cats_to_choose = cats_to_choose + kittens * amount
 
         # increase the chance an apprentice interacts with other apprentices
-        if self.age == "adolescent":
+        if self.age == Age.ADOLESCENT:
             apprentices = list(
                 filter(
-                    lambda cat_id: self.all_cats.get(cat_id).age == "adolescent"
+                    lambda cat_id: self.all_cats.get(cat_id).age == Age.ADOLESCENT
                                    and cat_id != self.ID, Cat.all_cats.copy()))
             amount = int(len(cats_to_choose) / 4)
             if len(apprentices) > 0:
@@ -1099,14 +1097,14 @@ class Cat():
                 lambda relation: str(relation.cat_to) == str(random_id) and
                                  not relation.cat_to.dead, self.relationships.values()))
         random_cat = self.all_cats.get(random_id)
-        kitten_and_outside = random_cat is not None and random_cat.outside and self.age == "kitten"
+        kitten_and_outside = random_cat is not None and random_cat.outside and self.age == Age.KITTEN
 
         # is also found in Relation_Events.MAX_ATTEMPTS
         attempts_left = 1000
         while len(relevant_relationship_list) < 1 or random_id == self.ID or kitten_and_outside:
             random_id = random.choice(cats_to_choose)
             random_cat = self.all_cats.get(random_id)
-            kitten_and_outside = random_cat is not None and random_cat.outside and self.age == "kitten"
+            kitten_and_outside = random_cat is not None and random_cat.outside and self.age == Age.KITTEN
             relevant_relationship_list = list(
                 filter(
                     lambda relation: str(relation.cat_to) == str(random_id) and
@@ -2025,7 +2023,7 @@ class Cat():
         if (self.moons < 14 or other_cat.moons < 14) and not for_love_interest:
             return False
 
-        age_restricted_ages = ["newborn", "kitten", "adolescent"]
+        age_restricted_ages = [Age.NEWBORN, Age.KITTEN, Age.ADOLESCENT]
         if self.age in age_restricted_ages or other_cat.age in age_restricted_ages:
             if self.age != other_cat.age:
                 return False
@@ -2303,8 +2301,8 @@ class Cat():
         related = direct_related or indirect_related
 
         # Check for both adults, or same age type:
-        if cat1.age == cat2.age or (cat1.age not in ['newborn', 'kitten', 'adolescent'] and
-                                    cat2.age not in ['newborn', 'kitten', 'adolescent']):
+        if cat1.age == cat2.age or (cat1.age not in [Age.NEWBORN, Age.KITTEN, Age.ADOLESCENT] and
+                                    cat2.age not in [Age.NEWBORN, Age.KITTEN, Age.ADOLESCENT]):
             valid_age = True
         else:
             valid_age = False
@@ -2561,11 +2559,11 @@ class Cat():
         self.faded = True
 
         # Sillotette sprite
-        if self.age in ['newborn', 'kitten']:
+        if self.age in [Age.NEWBORN, Age.KITTEN]:
             file_name = "faded_kitten.png"
-        elif self.age in ['adult', 'young adult', 'senior adult']:
+        elif self.age in [Age.ADULT, Age.YOUNG_ADULT, Age.SENIOR_ADULT]:
             file_name = "faded_adult.png"
-        elif self.age in ["adolescent"]:
+        elif self.age in [Age.ADOLESCENT]:
             file_name = "faded_adol.png"
         else:
             file_name = "faded_elder.png"
@@ -2704,10 +2702,10 @@ class Cat():
         for key_age in self.age_moons.keys():
             if self._moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1] + 1):
                 updated_age = True
-                self.age = key_age
+                self.age = Age(key_age)
         try:
             if not updated_age and self.age is not None:
-                self.age = "elder"
+                self.age = Age.SENIOR
         except AttributeError:
             print("ERROR: cat has no age attribute! Cat ID: " + self.ID)
             print("Possibly the disappearing cat bug? Ping luna on the discord if you see this message")

@@ -2,6 +2,9 @@ from copy import deepcopy
 import unittest
 
 import os
+
+from scripts.cat.enums.ages import Age
+
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
@@ -13,27 +16,27 @@ class TestCreationAge(unittest.TestCase):
 
     def test_kitten(self):
         test_cat = Cat(moons=5)
-        self.assertEqual(test_cat.age,"kitten")
+        self.assertEqual(test_cat.age, Age.KITTEN)
 
     def test_adolescent(self):
         test_cat = Cat(moons=6)
-        self.assertEqual(test_cat.age,"adolescent")
+        self.assertEqual(test_cat.age, Age.ADOLESCENT)
 
     def test_young_adult(self):
         test_cat = Cat(moons=12)
-        self.assertEqual(test_cat.age,"young adult")
+        self.assertEqual(test_cat.age, Age.YOUNG_ADULT)
     
     def test_adult(self):
         test_cat = Cat(moons=48)
-        self.assertEqual(test_cat.age,"adult")
+        self.assertEqual(test_cat.age, Age.ADULT)
 
     def test_senior_adult(self):
         test_cat = Cat(moons=96)
-        self.assertEqual(test_cat.age,"senior adult")
+        self.assertEqual(test_cat.age, Age.SENIOR_ADULT)
 
     def test_elder(self):
         test_cat = Cat(moons=120)
-        self.assertEqual(test_cat.age,"senior")
+        self.assertEqual(test_cat.age, Age.SENIOR)
 
 class TestRelativesFunction(unittest.TestCase):
 

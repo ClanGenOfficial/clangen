@@ -3,6 +3,8 @@
 import random
 from random import choice, randint, choices
 
+from scripts.cat.enums.ages import Age
+
 try:
     import ujson
 except ImportError:
@@ -128,10 +130,10 @@ class Patrol():
         else:
             if self.possible_patrol_leaders:
                 for cat in self.possible_patrol_leaders:
-                    if cat.age == 'senior adult':
+                    if cat.age == Age.SENIOR_ADULT:
                         self.patrol_leader = cat
                         break
-                    elif cat.age == 'adult':
+                    elif cat.age == Age.ADULT:
                         self.patrol_leader = cat
                         break
                 if not self.patrol_leader:

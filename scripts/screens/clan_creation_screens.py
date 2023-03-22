@@ -12,7 +12,7 @@ from re import sub
 from scripts.game_structure import image_cache
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked, UISpriteButton
 from scripts.game_structure.game_essentials import game, MANAGER
-
+from ..cat.enums.ages import Age
 
 
 class MakeClanScreen(Screens):
@@ -390,7 +390,7 @@ class MakeClanScreen(Screens):
                 self.elements['next_step'].enable()
         # Show the error message if you try to choose a child for leader, deputy, or med cat.
         elif self.sub_screen in ['choose leader', 'choose deputy', 'choose med cat']:
-            if self.selected_cat.age in ["newborn", "kitten", "adolescent"]:
+            if self.selected_cat.age in [Age.NEWBORN, Age.KITTEN, Age.ADOLESCENT]:
                 self.elements['select_cat'].hide()
                 self.elements['error_message'].show()
             else:

@@ -1,5 +1,7 @@
 from random import choice
 
+from scripts.cat.enums.ages import Age
+
 try:
     import ujson
 except ImportError:
@@ -662,21 +664,21 @@ def get_outside_thoughts(cat, other_cat):
     thoughts = []
     if cat.status in ["kittypet", "loner", "rogue"]:
         thoughts += OUTSIDE[cat.status]['general']
-        if cat.age == 'kitten':
+        if cat.age == Age.KITTEN:
             thoughts += OUTSIDE[cat.status]['kitten']
-        elif cat.age == 'adolescent':
+        elif cat.age == Age.ADOLESCENT:
             thoughts += OUTSIDE[cat.status]['adolescent']
-        elif cat.age in ['young adult', 'adult', 'senior adult']:
+        elif cat.age in [Age.YOUNG_ADULT, Age.ADULT, Age.SENIOR_ADULT]:
             thoughts += OUTSIDE[cat.status]['adult']
-        elif cat.age == 'senior':
+        elif cat.age == Age.SENIOR:
             thoughts += OUTSIDE[cat.status]['elder']
         return thoughts
     thoughts += OUTSIDE['lost']['general']
-    if cat.age == 'kitten':
+    if cat.age == Age.KITTEN:
         thoughts += OUTSIDE['lost']['kitten']
-    elif cat.age == 'adolescent':
+    elif cat.age == Age.ADOLESCENT:
         thoughts += OUTSIDE['lost']['apprentice']
-    elif cat.age in ['young adult', 'adult', 'senior adult']:
+    elif cat.age in [Age.YOUNG_ADULT, Age.ADULT, Age.SENIOR_ADULT]:
         thoughts += OUTSIDE['lost']['warrior']
     elif cat.status == 'medicine cat' or cat.status == 'medicine cat apprentice':
         thoughts += OUTSIDE['lost']['med']
@@ -684,7 +686,7 @@ def get_outside_thoughts(cat, other_cat):
         thoughts += OUTSIDE['lost']['deputy']
     elif cat.status == 'leader':
         thoughts += OUTSIDE['lost']['leader']
-    elif cat.age == 'senior':
+    elif cat.age == Age.SENIOR:
         thoughts += OUTSIDE['lost']['elder']
     return thoughts
 

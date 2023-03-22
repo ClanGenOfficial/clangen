@@ -1,6 +1,7 @@
 from random import choice
 import random
 
+from scripts.cat.enums.ages import Age
 from scripts.utility import (
     get_highest_romantic_relation,
     get_med_cats,
@@ -135,9 +136,9 @@ class Pregnancy_Events():
                     chance = int(200/living_cats) + 2
 
                 old_male = False
-                if cat.gender == 'male' and cat.age == 'elder':
+                if cat.gender == 'male' and cat.age == Age.SENIOR:
                     chance = int(chance / 2)
-                elif second_parent is not None and second_parent.gender == 'male' and second_parent.age == 'elder':
+                elif second_parent is not None and second_parent.gender == 'male' and second_parent.age == Age.SENIOR:
                     chance = int(chance / 2)
 
             else:
@@ -366,7 +367,7 @@ class Pregnancy_Events():
 
         # decide chances of having kits, and if it's possible at all.
         # Including - age, dead statis, having kits turned off.
-        not_correct_age = cat.age in ['kitten', 'adolescent'] or cat.moons < 15
+        not_correct_age = cat.age in [Age.KITTEN, Age.ADOLESCENT] or cat.moons < 15
         if not_correct_age or cat.no_kits or cat.dead:
             return False
 
@@ -397,7 +398,7 @@ class Pregnancy_Events():
 
         # decide chances of having kits, and if it's possible at all.
         # Including - age, dead statis, having kits turned off.
-        not_correct_age = second_parent.age in ['kitten', 'adolescent'] or second_parent.moons < 15
+        not_correct_age = second_parent.age in [Age.KITTEN, Age.ADOLESCENT] or second_parent.moons < 15
         if not_correct_age or second_parent.no_kits or second_parent.dead or second_parent.outside:
             return False
 

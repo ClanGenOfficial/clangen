@@ -1,3 +1,5 @@
+from scripts.cat.enums.ages import Age
+
 try:
     import ujson
 except ImportError:
@@ -662,7 +664,7 @@ class Condition_Events():
                         else:
                             event = f'{cat.name} has decided to retire from normal Clan duty.'
 
-                        if cat.age == 'adolescent':
+                        if cat.age == Age.ADOLESCENT:
                             event += f" They are given the name {cat.name.prefix}{cat.name.suffix} in honor " \
                                      f"of their contributions to {game.clan.name}Clan."
 
@@ -685,7 +687,7 @@ class Condition_Events():
                     else:
                         event = f'{cat.name} has decided to retire from normal Clan duty.'
 
-                    if cat.age == 'adolescent':
+                    if cat.age == Age.ADOLESCENT:
                         event += f"They are given the name {cat.name.prefix}{cat.name.suffix} in honor " \
                                  f"of their contributions to {game.clan.name}Clan."
 

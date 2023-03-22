@@ -10,6 +10,8 @@ TODO: Docs
 import random
 import traceback
 
+from scripts.cat.enums.ages import Age
+
 try:
     import ujson as json
 except ImportError:
@@ -231,7 +233,7 @@ class Events():
             game.clan.save_clan()
             game.clan.save_pregnancy(game.clan)
 
-    def mediator_events(self, cat):
+    def mediator_events(self, cat: Cat):
         """ Check for mediator events """
         # If the cat is a mediator, check if they visited other clans
         if cat.status in ["mediator", "mediator apprentice"]:
@@ -585,7 +587,7 @@ class Events():
                 Single_Event(random.choice(text), "misc", [lost_cat.ID]))
             lost_cat.add_to_clan()
 
-    def handle_fading(self, cat):
+    def handle_fading(self, cat: Cat):
         """
         TODO: DOCS
         """
@@ -633,7 +635,7 @@ class Events():
                 cat.set_faded(
                 )  # This is a flag to ensure they behave like a faded cat in the meantime.
 
-    def one_moon_outside_cat(self, cat):
+    def one_moon_outside_cat(self, cat: Cat):
         """
         exiled cat events
         """
@@ -642,11 +644,11 @@ class Events():
         cat.moons += 1
         cat.update_traits()
         if cat.moons == 6:
-            cat.age = 'adolescent'
+            cat.age = Age.ADOLESCENT
         elif cat.moons == 12:
-            cat.age = 'adult'
+            cat.age = Age.ADULT
         elif cat.moons == 120:
-            cat.age = 'senior'
+            cat.age = Age.SENIOR
 
         # killing exiled cats
         if cat.exiled or cat.outside:
@@ -666,7 +668,7 @@ class Events():
                 game.cur_events_list.append(
                     Single_Event(text, "birth_death", cat.ID))
 
-    def one_moon_cat(self, cat):
+    def one_moon_cat(self, cat: Cat):
         """
         Triggers various moon events for a cat.
         -If dead, cat is given thought, dead_for count increased, and fading handled (then function is returned)
@@ -819,7 +821,7 @@ class Events():
                 game.cur_events_list.append(
                     Single_Event(war_notice, "other_clans"))
 
-    def perform_ceremonies(self, cat):
+    def perform_ceremonies(self, cat: Cat):
         """
         ceremonies
         """
@@ -895,7 +897,7 @@ class Events():
                 game.clan.medicine_cat = cat
 
             # retiring to elder den
-            if cat.status in ['warrior', 'deputy'] and cat.age == 'senior' and len(cat.apprentice) < 1:
+            if cat.status in ['warrior', 'deputy'] and cat.age == Age.SENIOR and len(cat.apprentice) < 1:
                 if cat.status == 'deputy':
                     game.clan.deputy = None
                 self.ceremony(cat, 'elder')
@@ -1041,7 +1043,7 @@ class Events():
                 else:
                     self.ceremony_id_by_tag[tag] = {ID}
 
-    def ceremony(self, cat, promoted_to, preparedness="prepared"):
+    def ceremony(self, cat: Cat, promoted_to, preparedness="prepared"):
         """
         promote cats and add to event list
         """
@@ -1267,7 +1269,7 @@ class Events():
             Single_Event(f'{ceremony_text}', "ceremony", involved_cats))
         # game.ceremony_events_list.append(f'{cat.name}{ceremony_text}')
 
-    def gain_accessories(self, cat):
+    def gain_accessories(self, cat: Cat):
         """
         accessories
         """
@@ -1297,9 +1299,9 @@ class Events():
         chance = acc_chances["base_acc_chance"]
         if cat.status in ['medicine cat', 'medicine cat apprentice']:
             chance += acc_chances["med_modifier"]
-        if cat.age in ['kitten', 'adolescent']:
+        if cat.age in [Age.KITTEN, Age.ADOLESCENT]:
             chance += acc_chances["baby_modifier"]
-        elif cat.age in ['senior adult', 'senior']:
+        elif cat.age in [Age.SENIOR_ADULT, Age.SENIOR]:
             chance += acc_chances["elder_modifier"]
         if cat.trait in [
                 "adventurous", "childish", "confident", "daring", "playful",
@@ -1332,7 +1334,7 @@ class Events():
 
         return
 
-    def handle_leadership_ceremony(self, cat):
+    def handle_leadership_ceremony(self, cat: Cat):
         """
         TODO: DOCS
         """
@@ -1488,7 +1490,7 @@ class Events():
                                             cat.life_givers[7], \
                                             cat.life_givers[8]
 
-    def handle_apprentice_EX(self, cat):
+    def handle_apprentice_EX(self, cat: Cat):
         """
         TODO: DOCS
         """
@@ -1587,7 +1589,7 @@ class Events():
 
         if not int(
                 random.random() * chance
-        ) and cat.age != 'kitten' and cat.age != 'adolescent' and not self.new_cat_invited:
+        ) and cat.age != Age.KITTEN and cat.age != Age.KITTEN and not self.new_cat_invited:
             self.new_cat_invited = True
 
             new_cats = self.new_cat_events.handle_new_cats(
@@ -1598,7 +1600,7 @@ class Events():
                 alive_kits=get_alive_kits(Cat))
             self.relation_events.welcome_new_cats(new_cats)
 
-    def other_interactions(self, cat):
+    def other_interactions(self, cat: Cat):
         """
         TODO: DOCS
         """
@@ -1620,7 +1622,7 @@ class Events():
                                             self.enemy_clan,
                                             alive_kits=get_alive_kits(Cat))
 
-    def handle_injuries_or_general_death(self, cat):
+    def handle_injuries_or_general_death(self, cat: Cat):
         """
         decide if cat dies
         """
@@ -1685,7 +1687,7 @@ class Events():
                 game.clan.current_season)
             return triggered_death
 
-    def handle_mass_extinctions(self, cat):  # pylint: disable=unused-argument
+    def handle_mass_extinctions(self, cat: Cat):  # pylint: disable=unused-argument
         """Affects random cats in the clan, no cat needs to be passed to this function."""
         alive_cats = list(
             filter(
@@ -1776,7 +1778,7 @@ class Events():
             for poor_little_meowmeow in dead_cats:
                 poor_little_meowmeow.die()
 
-    def handle_illnesses_or_illness_deaths(self, cat):
+    def handle_illnesses_or_illness_deaths(self, cat: Cat):
         """ 
         This function will handle:
             - expanded mode: getting a new illness (extra function in own class)
@@ -1794,7 +1796,7 @@ class Events():
                 cat, game.clan.current_season)
         return triggered_death
 
-    def handle_twoleg_capture(self, cat):
+    def handle_twoleg_capture(self, cat: Cat):
         """
         TODO: DOCS
         """
@@ -1805,7 +1807,7 @@ class Events():
         # FIXME: Not sure what this is intended to do; 'cat_class' has no 'other_cats' attribute.
         # cat_class.other_cats[cat.ID] = cat
 
-    def handle_outbreaks(self, cat):
+    def handle_outbreaks(self, cat: Cat):
         """Try to infect some cats."""
         # check if the cat is ill, if game mode is classic,
         # or if clan has sufficient med cats in expanded mode
@@ -1902,16 +1904,16 @@ class Events():
                 # game.health_events_list.append(event)
                 break
 
-    def coming_out(self, cat):
+    def coming_out(self, cat: Cat):
         """turnin' the kitties trans..."""
         if cat.genderalign == cat.gender:
             if cat.moons < 6:
                 return
 
             involved_cats = [cat.ID]
-            if cat.age == 'adolescent':
+            if cat.age == Age.ADOLESCENT:
                 transing_chance = random.getrandbits(8)  # 2/256
-            elif cat.age == 'young adult':
+            elif cat.age == Age.YOUNG_ADULT:
                 transing_chance = random.getrandbits(9)  # 2/512
             else:
                 # adult, senior adult, elder

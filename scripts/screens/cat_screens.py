@@ -5,6 +5,7 @@ from random import choice
 
 import pygame
 
+from ..cat.enums.ages import Age
 from ..datadir import get_save_dir
 
 try:
@@ -785,9 +786,9 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # AGE
-        if the_cat.age == 'kitten':
+        if the_cat.age == Age.KITTEN:
             output += 'young'
-        elif the_cat.age == 'senior':
+        elif the_cat.age == Age.SENIOR:
             output += 'senior'
         else:
             output += the_cat.age
@@ -1693,7 +1694,7 @@ class ProfileScreen(Screens):
             else:
                 self.see_relationships_button.enable()
 
-            if self.the_cat.age not in ['young adult', 'adult', 'senior adult', 'senior'
+            if self.the_cat.age not in [Age.YOUNG_ADULT, Age.ADULT, Age.SENIOR_ADULT, Age.SENIOR
                                         ] or self.the_cat.dead or self.the_cat.exiled or self.the_cat.outside:
                 self.choose_mate_button.disable()
             else:
@@ -1739,7 +1740,7 @@ class ProfileScreen(Screens):
             # Button to prevent kits:
             if self.toggle_kits:
                 self.toggle_kits.kill()
-            if self.the_cat.age in ['young adult', 'adult', 'senior adult', 'senior'] and not self.the_cat.dead:
+            if self.the_cat.age in [Age.YOUNG_ADULT, Age.ADULT, Age.SENIOR_ADULT, Age.SENIOR] and not self.the_cat.dead:
                 if self.the_cat.no_kits:
                     self.toggle_kits = UIImageButton(scale(pygame.Rect((804, 1148), (344, 72))), "",
                                                      starting_height=2, object_id="#allow_kits_button",
@@ -1953,7 +1954,7 @@ class ProfileScreen(Screens):
 
         if biome not in available_biome:
             biome = available_biome[0]
-        if the_cat.age == 'newborn' or the_cat.not_working():
+        if the_cat.age == Age.NEWBORN or the_cat.not_working():
             biome = 'nest'
 
         biome = biome.lower()
@@ -2801,7 +2802,7 @@ class RoleScreen(Screens):
 
             # ADULT CAT ROLES
             # Keep cats that have retired due to health from being switched to warrior
-            if self.the_cat.retired or self.the_cat.age == "elder":
+            if self.the_cat.retired or self.the_cat.age == Age.SENIOR:
                 self.switch_warrior.disable()
             else:
                 self.switch_warrior.enable()
@@ -2819,14 +2820,14 @@ class RoleScreen(Screens):
             else:
                 self.promote_leader.disable()
 
-            if deputy_invalid and self.the_cat.age != "elder":
+            if deputy_invalid and self.the_cat.age != Age.SENIOR:
                 self.promote_deputy.enable()
             else:
                 self.promote_deputy.disable()
 
             # ADULT CAT ROLES
             # Keep cats that have retired due to health from being switched to warrior
-            if self.the_cat.retired or self.the_cat.age == "elder":
+            if self.the_cat.retired or self.the_cat.age == Age.SENIOR:
                 self.switch_warrior.disable()
             else:
                 self.switch_warrior.enable()
@@ -2885,7 +2886,7 @@ class RoleScreen(Screens):
             self.promote_deputy.disable()
 
             # ADULT CAT ROLES
-            if self.the_cat.age != "elder":
+            if self.the_cat.age != Age.SENIOR:
                 self.switch_warrior.enable()
             else:
                 self.switch_warrior.disable()

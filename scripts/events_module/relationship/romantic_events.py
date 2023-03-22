@@ -3,6 +3,8 @@ from copy import deepcopy
 from random import choice
 import random
 
+from scripts.cat.enums.ages import Age
+
 try:
     import ujson
 except ImportError:
@@ -280,7 +282,7 @@ class Romantic_Events():
     def check_if_new_mate(self, relationship_from, relationship_to, cat_from, cat_to):
         """Checks if the two cats can become mates, or not. Returns: boolean and event_string"""
         become_mates = False
-        young_age = ['kitten', 'adolescent']
+        young_age = [Age.KITTEN, Age.ADOLESCENT]
         if cat_from.age in young_age or cat_to.age in young_age:
             return become_mates
 

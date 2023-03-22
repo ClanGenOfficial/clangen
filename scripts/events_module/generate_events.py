@@ -2,6 +2,8 @@
 # -*- coding: ascii -*-
 import random
 
+from scripts.cat.enums.ages import Age
+
 try:
     import ujson
 except ImportError:
@@ -344,9 +346,9 @@ class GenerateEvents:
                     continue
                 elif "other_cat_elder" in event.tags and other_cat.status != "elder":
                     continue
-                elif "other_cat_adult" in event.tags and other_cat.age in ["elder", "kitten", "newborn"]:
+                elif "other_cat_adult" in event.tags and other_cat.age in [Age.SENIOR, Age.KITTEN, Age.NEWBORN]:
                     continue
-                elif "other_cat_kit" in event.tags and other_cat.status not in ['newborn', 'kitten']:
+                elif "other_cat_kit" in event.tags and other_cat.status not in [Age.NEWBORN, Age.KITTEN]:
                     continue
 
                 if "other_cat_mate" in event.tags and other_cat.ID != cat.mate:

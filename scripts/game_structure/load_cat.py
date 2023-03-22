@@ -1,6 +1,7 @@
 import os
 from math import floor
 from .game_essentials import game
+from ..cat.enums.ages import Age
 from ..datadir import get_save_dir
 
 try:
@@ -80,9 +81,9 @@ def json_load():
                         pelt=new_pelt,
                         loading_cat=True)
             new_cat.eye_colour2 = cat["eye_colour2"] if "eye_colour2" in cat else None
-            new_cat.age = cat["age"]
+            new_cat.age = Age(cat["age"])
             if new_cat.age == 'elder':
-                new_cat.age = 'senior'
+                new_cat.age = Age.SENIOR
             new_cat.genderalign = cat["gender_align"]
             new_cat.backstory = cat["backstory"] if "backstory" in cat else None
             new_cat.birth_cooldown = cat["birth_cooldown"] if "birth_cooldown" in cat else 0
@@ -333,7 +334,7 @@ def csv_load(all_cats):
                 game.switches[
                     'error_message'] = '3There was an error loading cat # ' + str(
                         attr[0])
-                the_cat.age, the_cat.mentor = attr[4], attr[8]
+                the_cat.age, the_cat.mentor = Age(attr[4]), attr[8]
                 game.switches[
                     'error_message'] = '4There was an error loading cat # ' + str(
                         attr[0])

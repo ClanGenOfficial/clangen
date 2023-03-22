@@ -8,6 +8,8 @@ TODO: Docs
 
 from random import choice, choices, randint, random, sample
 import pygame
+
+from scripts.cat.enums.ages import Age
 from scripts.cat.names import names
 
 try:
@@ -72,7 +74,7 @@ def get_alive_kits(Cat):
     returns a list of all living kittens in the clan
     """
     alive_kits = list(filter(
-        lambda kitty: (kitty.age in ['kitten', 'newborn']
+        lambda kitty: (kitty.age in [Age.KITTEN, Age.NEWBORN]
                        and not kitty.dead
                        and not kitty.outside),
         Cat.all_cats.values()
@@ -359,7 +361,7 @@ def create_new_cat(Cat,
         new_cat.thought = thought
 
         # give apprentice aged cat a mentor
-        if new_cat.age == 'adolescent':
+        if new_cat.age == Age.ADOLESCENT:
             new_cat.update_mentor()
 
         # Remove disabling scars, if they generated.
@@ -957,7 +959,7 @@ def update_sprite(cat):
 
     # setting the cat_sprite (bc this makes things much easier)
     if cat.paralyzed and not cat.not_working():
-        if cat.age in ['newborn', 'kitten', 'adolescent'] or game.config['fun']['all_cats_are_newborn']:
+        if cat.age in [Age.NEWBORN, Age.KITTEN, Age.ADOLESCENT] or game.config['fun']['all_cats_are_newborn']:
             cat_sprite = str(17)
         else:
             if cat.pelt.length == 'long':
@@ -965,13 +967,13 @@ def update_sprite(cat):
             else:
                 cat_sprite = str(15)
     elif cat.not_working():
-        if cat.age in ['newborn', 'kitten', 'adolescent'] or game.config['fun']['all_cats_are_newborn']:
+        if cat.age in [Age.NEWBORN, Age.KITTEN, Age.ADOLESCENT] or game.config['fun']['all_cats_are_newborn']:
             cat_sprite = str(19)
         else:
             cat_sprite = str(18)
     else:
         if cat.age == 'elder' and not game.config['fun']['all_cats_are_newborn']:
-            cat.age = 'senior'
+            cat.age = Age.SENIOR
         if game.config['fun']['all_cats_are_newborn']:
             cat_sprite = str(cat.cat_sprites['newborn'])
         else:

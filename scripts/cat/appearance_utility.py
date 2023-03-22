@@ -1,6 +1,7 @@
 import random
 from random import choice, randint
 
+from .enums.ages import Age
 # Alphabetical !! yea !!
 from .pelts import (
     black_colours,
@@ -394,9 +395,9 @@ def init_sprite(cat):
 def init_scars(cat):
     if not cat.scars:
         scar_choice = randint(0, 15)
-        if cat.age in ['kitten', 'adolescent']:
+        if cat.age in [Age.KITTEN, Age.ADOLESCENT]:
             scar_choice = randint(0, 50)
-        elif cat.age in ['young adult', 'adult']:
+        elif cat.age in [Age.YOUNG_ADULT, Age.ADULT]:
             scar_choice = randint(0, 20)
         if scar_choice == 1:
             cat.scars.append(choice([
@@ -410,9 +411,9 @@ def init_scars(cat):
 
 def init_accessories(cat):
     acc_display_choice = randint(0, 35)
-    if cat.age in ['kitten', 'adolescent']:
+    if cat.age in [Age.KITTEN, Age.ADOLESCENT]:
         acc_display_choice = randint(0, 15)
-    elif cat.age in ['young adult', 'adult']:    
+    elif cat.age in [Age.YOUNG_ADULT, Age.ADULT]:
         acc_display_choice = randint(0, 50)
     if acc_display_choice == 1:
         cat.acc_display = choice([
