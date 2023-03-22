@@ -94,7 +94,7 @@ class ClanScreen(Screens):
         i = 0
         for x in game.clan.clan_cats:
             if not Cat.all_cats[x].dead and Cat.all_cats[x].in_camp and \
-                    not Cat.all_cats[x].exiled and not Cat.all_cats[x].outside:
+                    not Cat.all_cats[x].exiled and not Cat.all_cats[x].outside and not ( Cat.all_cats[x].status == 'newborn' and ( game.config['fun']['all_cats_are_newborn'] or game.config['fun']['newborns_can_roam'])):
 
                 i += 1
                 if i > self.max_sprites_displayed:
@@ -304,6 +304,15 @@ class ClanScreen(Screens):
             if Cat.all_cats[x].dead or Cat.all_cats[x].outside:
                 continue
 
+            # Newborns are not meant to be placed. They are hiding. 
+            if Cat.all_cats[x].status == 'newborn' or game.config['fun']['all_cats_are_newborn']:
+                if game.config['fun']['all_cats_are_newborn'] or game.config['fun']['newborns_can_roam']:
+                    # Free them
+                    Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(first_choices, all_dens,
+                                                                                     [1, 100, 1, 1, 1, 100, 50])
+                else:
+                    continue
+            # print(Cat.all_cats[x].status)
             if Cat.all_cats[x].status in ['apprentice', 'mediator apprentice']:
                 Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(first_choices, all_dens,
                                                                                  [1, 50, 1, 1, 100, 100, 1])
@@ -483,7 +492,7 @@ class StarClanScreen(Screens):
         cat_profiles()
         self.get_dead_cats()
 
-        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 284), (294, 46))),
+        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 278), (294, 55))),
                                                               object_id="#search_entry_box", manager=MANAGER)
 
         self.starclan_button = UIImageButton(scale(pygame.Rect((230, 270), (68, 68))), "", object_id="#starclan_button"
@@ -772,7 +781,7 @@ class DFScreen(Screens):
         cat_profiles()
         self.get_dead_cats()
 
-        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 284), (294, 46))),
+        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 278), (294, 55))),
                                                               object_id="#search_entry_box"
                                                               , manager=MANAGER)
 
@@ -1045,7 +1054,7 @@ class ListScreen(Screens):
         cat_profiles()
         self.get_living_cats()
 
-        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 284), (294, 46))),
+        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 278), (294, 55))),
                                                               object_id="#search_entry_box", manager=MANAGER)
 
         self.your_clan_button = UIImageButton(scale(pygame.Rect((230, 270), (68, 68))), "",
@@ -1293,7 +1302,7 @@ class AllegiancesScreen(Screens):
     
     def generate_one_entry(self, cat, extra_details = ""):
             """ Extra Details will be placed after the cat description, but before the apprentice (if they have one. )"""
-            output = f"{str(cat.name).upper()} - a {cat.describe_cat()} {extra_details}"
+            output = f"{str(cat.name).upper()} - {cat.describe_cat()} {extra_details}"
 
             if len(cat.apprentice) > 0:
                 if len(cat.apprentice) == 1:
@@ -1323,7 +1332,7 @@ class AllegiancesScreen(Screens):
                 living_mediators.append(cat)
             elif cat.status in ["apprentice", "medicine cat apprentice", "mediator apprentice"]:
                 living_apprentices.append(cat)
-            elif cat.status == "kitten":
+            elif cat.status in ["kitten", "newborn"]:
                 living_kits.append(cat)
             elif cat.status == "elder":
                 living_elders.append(cat)
@@ -1431,7 +1440,7 @@ class AllegiancesScreen(Screens):
                 queen = Cat.fetch_cat(q)
                 kittens = []
                 for k in queen_dict[q]:
-                    kittens += [f"{k.name} - a {k.describe_cat(short=True)}"]
+                    kittens += [f"{k.name} - {k.describe_cat(short=True)}"]
                 if len(kittens) == 1:
                     kittens = f" <i>(caring for {kittens[0]})</i>"
                 else:
@@ -1441,12 +1450,12 @@ class AllegiancesScreen(Screens):
 
             #Now kittens without carers
             for k in living_kits:
-                all_entries.append(f"{str(k.name).upper()} - a {k.describe_cat(short=True)}")
+                all_entries.append(f"{str(k.name).upper()} - {k.describe_cat(short=True)}")
 
             _box[1] = "\n".join(all_entries)
             outputs.append(_box)
 
-         # Elder Box:
+        # Elder Box:
         if living_elders:
             _box = ["", ""]
             if len(living_elders) == 1:
@@ -1649,20 +1658,22 @@ class MedDenScreen(Screens):
             for cat in self.injured_and_sick_cats:
                 if cat.injuries:
                     for injury in cat.injuries:
-                        if cat.injuries[injury]["severity"] != 'minor' and injury not in ['recovering from birth',
+                        if cat.injuries[injury]["severity"] != 'minor' and injury not in ["pregnant", 'recovering from birth',
                                                                                           "sprain", "lingering shock"]:
-                            self.in_den_cats.append(cat)
+                            if cat not in self.in_den_cats:
+                                self.in_den_cats.append(cat)
                             if cat in self.out_den_cats:
                                 self.out_den_cats.remove(cat)
                             elif cat in self.minor_cats:
                                 self.minor_cats.remove(cat)
                             break
-                        elif injury in ['recovering from birth', "sprain", "lingering shock"]:
-                            self.out_den_cats.append(cat)
+                        elif injury in ['recovering from birth', "sprain", "lingering shock", "pregnant"] and cat not in self.in_den_cats:
+                            if cat not in self.out_den_cats:
+                                self.out_den_cats.append(cat)
                             if cat in self.minor_cats:
                                 self.minor_cats.remove(cat)
                             break
-                        else:
+                        elif cat not in (self.in_den_cats or self.out_den_cats):
                             if cat not in self.minor_cats:
                                 self.minor_cats.append(cat)
                 if cat.illnesses:
@@ -1909,7 +1920,9 @@ class MedDenScreen(Screens):
             if cat.illnesses:
                 condition_list.extend(cat.illnesses.keys())
             if cat.permanent_condition:
-                condition_list.extend(cat.permanent_condition.keys())
+                for condition in cat.permanent_condition:
+                    if cat.permanent_condition[condition]["moons_until"] == -2:
+                        condition_list.extend(cat.permanent_condition.keys())
             conditions = ",<br>".join(condition_list)
 
             self.cat_buttons["able_cat" + str(i)] = UISpriteButton(scale(pygame.Rect

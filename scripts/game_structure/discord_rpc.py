@@ -76,7 +76,12 @@ class _DiscordRPC(threading.Thread):
 
     def connect(self):
         if self._rpc_supported:
-            self._rpc.connect()
+            try:
+                self._rpc.connect()
+            except BaseException as e:
+                self._rpc_supported = False
+                print(f"Failed to connect to Discord: {e}")
+                return
             self._connected = True
             self.update()
 
@@ -107,16 +112,22 @@ class _DiscordRPC(threading.Thread):
                 clan_name = 'Loading...'
                 cats_amount = 0
                 clan_age = 0
-            self._rpc.update(
-                state=state_text,
-                details=f"Managing {clan_name} for {clan_age} moons" ,
-                large_image=img_str.lower(),
-                large_text=img_text,
-                small_image="discord",
-                small_text=f"Managing {cats_amount} cats",
-                start=self._start_time,
-                buttons=[{"label": "Join The Server", "url": "https://discord.gg/clangen"}],
-            )
+            try:
+                self._rpc.update(
+                    state=state_text,
+                    details=f"Managing {clan_name} for {clan_age} moons" ,
+                    large_image=img_str.lower(),
+                    large_text=img_text,
+                    small_image="discord",
+                    small_text=f"Managing {cats_amount} cats",
+                    start=self._start_time,
+                    buttons=[{"label": "Join The Server", "url": "https://discord.gg/clangen"}],
+                )
+            except BaseException: # pylint: disable=broad-except
+                print("Discord rpc had issue updating, disabling...")
+                self._rpc_supported = False
+                self._connected = False
+                self._rpc = None
         self.update_rpc.clear()
 
     def close(self):

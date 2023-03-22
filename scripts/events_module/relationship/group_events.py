@@ -69,7 +69,6 @@ class Group_Events():
         # if there is no possibility return
         if len(possibilities) < 1:
             return []
-        print("GROUP EVENT!")
         # choose one interaction and 
         self.chosen_interaction = choice(possibilities)
 
@@ -91,8 +90,12 @@ class Group_Events():
 
         interaction_str = interaction_str + f" ({inter_type} effect)"
         ids = list(self.abbreviations_cat_id.values())
+        relevant_event_tabs = ["relation", "interaction"]
+        if len(self.chosen_interaction.get_injuries) > 0:
+            relevant_event_tabs.append("health")
+
         game.cur_events_list.append(Single_Event(
-            interaction_str, ["relation", "interaction"], ids
+            interaction_str, relevant_event_tabs, ids
         ))
         return ids
 
@@ -118,16 +121,16 @@ class Group_Events():
                 a list of interactions, which fulfill the criteria
         """
         filtered_interactions = []
-        _season = [season, "Any", "any"]
-        _biome = [biome, "Any", "any"]
+        allowed_season = [season, "Any", "any"]
+        allowed_biome = [biome, "Any", "any"]
         main_cat = Cat.all_cats[self.abbreviations_cat_id["m_c"]]
         for interact in interactions:
-            in_tags = list(filter(lambda inter_biome: inter_biome not in _biome, interact.biome))
-            if len(in_tags) > 0:
+            in_tags = list(filter(lambda inter_biome: inter_biome in allowed_biome, interact.biome))
+            if len(in_tags) < 1:
                 continue
 
-            in_tags = list(filter(lambda inter_season: inter_season not in _season, interact.season))
-            if len(in_tags) > 0:
+            in_tags = list(filter(lambda inter_season: inter_season in allowed_season, interact.season))
+            if len(in_tags) < 1:
                 continue
 
             if len(interact.status_constraint) >= 1 and "m_c" in interact.status_constraint:
@@ -169,7 +172,7 @@ class Group_Events():
         """
         # first handle the abbreviations possibilities for the cats
         abbr_per_interaction = self.get_abbreviations_possibilities(interactions, int(amount), interact_cats)
-        abbr_per_interaction = self.remove_impossible_abbreviations_combinations(abbr_per_interaction)
+        abbr_per_interaction = self.remove_abbreviations_missing_cats(abbr_per_interaction)
         self.set_abbreviations_cats(interact_cats)
 
         # check if any abbreviations_cat_ids is None, if so return 
@@ -268,7 +271,7 @@ class Group_Events():
             possibilities[interact.id] = dictionary
         return possibilities
 
-    def remove_impossible_abbreviations_combinations(self, abbreviations_per_interaction: dict):
+    def remove_abbreviations_missing_cats(self, abbreviations_per_interaction: dict):
         """
         Check which combinations of abbreviations are allowed and possible and which are not, only return a dictionary,
         with possible combinations together with the id for the interaction.
@@ -522,11 +525,19 @@ class Group_Events():
         if len(self.chosen_interaction.get_injuries) <= 0:
             return
 
-        for abbreviations, injuries in self.chosen_interaction.get_injuries.items():
+        for abbreviations, injury_dict in self.chosen_interaction.get_injuries.items():
+            if "injury_names" not in injury_dict:
+                print(f"ERROR: there are no injury names in the chosen interaction {self.chosen_interaction.id}.")
+                continue
             injured_cat = Cat.all_cats[self.abbreviations_cat_id[abbreviations]]
             
-            for inj in injuries:
+            for inj in injury_dict["injury_names"]:
                 injured_cat.get_injured(inj, True)
+
+            injured_cat.possible_scar = injury_dict["scar_text"] if "scar_text" in injury_dict else None
+            injured_cat.possible_death = injury_dict["death_text"] if "death_text" in injury_dict else None
+            if injured_cat.status == "leader":
+                injured_cat.possible_death = injury_dict["death_leader_text"] if "death_leader_text" in injury_dict else None
 
     def prepare_text(self, text: str) -> str:
         """Prep the text based of the amount of cats and the assigned abbreviations."""

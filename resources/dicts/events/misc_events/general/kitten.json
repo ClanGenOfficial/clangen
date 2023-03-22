@@ -148,5 +148,14 @@
     "cat_skill": null,
     "other_cat_trait": null,
     "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Leaf-fall", "other_cat", "other_cat_kit", "to_both", "platonic", "comfort", "trust"],
+        "event_text": "m_c and r_c lead a small leaf gathering hunt while the adult cats watch with amused purrs.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
     }
 ]

@@ -206,5 +206,113 @@
         ],
         "other_cat_trait": null,
         "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["other_cat", "other_cat_adult", "to_both", "platonic", "trust", "comfort", "neg_dislike", "Leaf-bare"],
+        "event_text": "m_c and r_c begin a small camp snowball fight while on guard duty, eventually getting the whole Clan to join in.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_clan", "rel_up"],
+        "event_text": "m_c was seen speaking calmly to a cat from o_c.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_clan", "rel_down"],
+        "event_text": "m_c was seen arguing and borderline fighting with a cat from o_c.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_clan"],
+        "event_text": "m_c was seen racing along the border with their rival from o_c.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_clan"],
+        "event_text": "m_c was seen touching noses with someone from o_c. Scandalous!",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "other_clan"],
+        "event_text": "m_c was loitering around o_c's border, looking for a specific cat.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "event_text": "m_c was seen talking calmly to a loner before both cats went their separate ways.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "event_text": "m_c was seen touching noses with a loner.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "event_text": "m_c was seen arguing and borderline fighting with a loner.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "event_text": "m_c was seen in a very serious conversation with a kittypet, who ran away when another patrol approached.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "event_text": "m_c was chasing a kittypet off of the territory.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "event_text": "m_c was seen chasing a rogue off of the territory.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
     }
 ]

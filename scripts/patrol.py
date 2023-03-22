@@ -693,6 +693,8 @@ class Patrol():
         if self.patrol_event is None:
             return
 
+        print("patrol tags: ", self.patrol_event.tags)
+
         antagonize = antagonize
         success_text = self.patrol_event.success_text
         fail_text = self.patrol_event.fail_text
@@ -702,10 +704,14 @@ class Patrol():
         # if patrol contains cats with autowin skill, chance of success is high. otherwise it will calculate the
         # chance by adding the patrol event's chance of success plus the patrol's total exp
         success_chance = self.patrol_event.chance_of_success + int(
-            self.patrol_total_experience / (2 * 2 * gm_modifier))
+            self.patrol_total_experience / (7.5 * gm_modifier))
+        
+        # Auto-wins based on EXP are sorta lame. Often makes it immpossible for large patrols with experiences cats to fail patrols at all. 
+        # EXP alone can only bring success chance up to 95. However, skills/traits can bring it up above that. 
+        success_chance = min(success_chance, 95)
 
-        print('starting chance:', self.patrol_event.chance_of_success)
-        print('updated chance according to exp: ', success_chance)
+        print('starting chance:', self.patrol_event.chance_of_success, "| EX_updated chance:", success_chance)
+        skill_updates = ""
         for kitty in self.patrol_cats:
             if kitty.skill in self.patrol_event.win_skills:
                 success_chance += game.config["patrol_generation"]["win_stat_cat_modifier"]
@@ -720,7 +726,8 @@ class Patrol():
             if self.patrol_event.fail_trait and kitty.trait in self.patrol_event.fail_trait:
                 success_chance += game.config["patrol_generation"]["fail_stat_cat_modifier"]
 
-            print(kitty.name, 'updated chance to', success_chance)
+            skill_updates += f"{kitty.name} updated chance to {success_chance} | "
+        print(skill_updates)
         print('ending chance', success_chance)
 
         c = randint(0, 100)
@@ -737,7 +744,7 @@ class Patrol():
         # ---------------------------------------------------------------------------- #
         #                                   SUCCESS                                    #
         # ---------------------------------------------------------------------------- #
-
+        
         if c < success_chance:
             self.success = True
             self.patrol_fail_stat_cat = None
@@ -767,7 +774,7 @@ class Patrol():
                 for tag in self.patrol_event.tags:
                     if "new_cat" in tag:
                         if antagonize:
-                            self.handle_reputation(-10)
+                            self.handle_reputation(-20)
                         else:
                             self.handle_reputation(10)
                         break
@@ -863,7 +870,7 @@ class Patrol():
                         self.handle_clan_relations(difference=int(-1), antagonize=False, outcome=outcome)
                 elif "new_cat" in self.patrol_event.tags:
                     if antagonize:
-                        self.handle_reputation(-5)
+                        self.handle_reputation(-10)
                     else:
                         self.handle_reputation(0)
             self.handle_mentor_app_pairing()
@@ -890,21 +897,22 @@ class Patrol():
         :param success: success bool
         """
         tags = self.patrol_event.tags
-        print('new cat creation started')
         # check for ignore outcome tag
         if f"no_new_cat{outcome}" in tags:
             return
-
+        
         # find the new cat tag and split to get attributes - else return if no tag found
         attribute_list = []
         for tag in tags:
-            print(tag)
-            if "new_cat" in tag and ("no_new_cat" and "new_cat_injury") not in tag:
+            #print(tag)
+            if "new_cat" in tag and "no_new_cat" not in tag and "new_cat_injury" not in tag:
                 attribute_list = tag.split("_")
                 print('found tag, attributes:', attribute_list)
                 break
         if not attribute_list:
             return
+        
+        print('new cat creation started')
 
         # setting the defaults
         new_name = choice([True, False])
@@ -982,6 +990,7 @@ class Patrol():
         # handing out ages
         if "newborn" in attribute_list:
             age = 0
+            status = 'newborn'
         elif "adolescent" in attribute_list:
             age = randint(6, 11)
         elif "youngadult" in attribute_list:
@@ -1028,7 +1037,7 @@ class Patrol():
             if "litternewborn" in attribute_list:
                 print('litter is newborn')
                 kit_age = 0
-                kit_thought = "Snuggles against another cat"
+                kit_thought = "Mewls quietly for milk"
             else:
                 print('litter is not newborn')
                 kit_age = randint(1, 5)
@@ -1099,7 +1108,7 @@ class Patrol():
                                                litter=True,
                                                other_clan=other_clan,
                                                backstory=kit_backstory,
-                                               status='kitten',
+                                               status=None,
                                                age=kit_age,
                                                gender=None,
                                                thought=kit_thought,
@@ -1320,7 +1329,6 @@ class Patrol():
             for cat in self.patrol_cats:
                 if cat.status in ["apprentice", "medicine cat apprentice"]:
                     cat.experience = cat.experience + app_exp
-                    print(f"{cat.name} earned {app_exp}. New exp: {cat.experience}")
                 else:
                     cat.experience = cat.experience + gained_exp
 
