@@ -94,7 +94,7 @@ class ClanScreen(Screens):
         i = 0
         for x in game.clan.clan_cats:
             if not Cat.all_cats[x].dead and Cat.all_cats[x].in_camp and \
-                    not Cat.all_cats[x].exiled and not Cat.all_cats[x].outside and Cat.all_cats[x].status != 'newborn':
+                    not Cat.all_cats[x].exiled and not Cat.all_cats[x].outside and not ( Cat.all_cats[x].status == 'newborn' and ( game.config['fun']['all_cats_are_newborn'] or game.config['fun']['newborns_can_roam'])):
 
                 i += 1
                 if i > self.max_sprites_displayed:
@@ -304,9 +304,15 @@ class ClanScreen(Screens):
             if Cat.all_cats[x].dead or Cat.all_cats[x].outside:
                 continue
 
-            if Cat.all_cats[x].status == 'newborn':
-                continue
-            print(Cat.all_cats[x].status)
+            # Newborns are not meant to be placed. They are hiding. 
+            if Cat.all_cats[x].status == 'newborn' or game.config['fun']['all_cats_are_newborn']:
+                if game.config['fun']['all_cats_are_newborn'] or game.config['fun']['newborns_can_roam']:
+                    # Free them
+                    Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(first_choices, all_dens,
+                                                                                     [1, 100, 1, 1, 1, 100, 50])
+                else:
+                    continue
+            # print(Cat.all_cats[x].status)
             if Cat.all_cats[x].status in ['apprentice', 'mediator apprentice']:
                 Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(first_choices, all_dens,
                                                                                  [1, 50, 1, 1, 100, 100, 1])
@@ -486,7 +492,7 @@ class StarClanScreen(Screens):
         cat_profiles()
         self.get_dead_cats()
 
-        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 284), (294, 46))),
+        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 278), (294, 55))),
                                                               object_id="#search_entry_box", manager=MANAGER)
 
         self.starclan_button = UIImageButton(scale(pygame.Rect((230, 270), (68, 68))), "", object_id="#starclan_button"
@@ -775,7 +781,7 @@ class DFScreen(Screens):
         cat_profiles()
         self.get_dead_cats()
 
-        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 284), (294, 46))),
+        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 278), (294, 55))),
                                                               object_id="#search_entry_box"
                                                               , manager=MANAGER)
 
@@ -1048,7 +1054,7 @@ class ListScreen(Screens):
         cat_profiles()
         self.get_living_cats()
 
-        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 284), (294, 46))),
+        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 278), (294, 55))),
                                                               object_id="#search_entry_box", manager=MANAGER)
 
         self.your_clan_button = UIImageButton(scale(pygame.Rect((230, 270), (68, 68))), "",

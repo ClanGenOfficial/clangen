@@ -177,7 +177,7 @@ class Cat():
     def __init__(self,
                  prefix=None,
                  gender=None,
-                 status="kitten",
+                 status="newborn",
                  backstory="clanborn",
                  parent1=None,
                  parent2=None,
@@ -335,7 +335,9 @@ class Cat():
                     if moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1] + 1):
                         self.age = key_age
         else:
-            if status == 'kitten':
+            if status == 'newborn':
+                self.age = 'newborn'
+            elif status == 'kitten':
                 self.age = 'kitten'
             elif status == 'elder':
                 self.age = 'senior'
@@ -392,14 +394,14 @@ class Cat():
             # trans cat chances
             trans_chance = randint(0, 50)
             nb_chance = randint(0, 75)
-            if self.gender == "female" and not self.status == 'kitten':
+            if self.gender == "female" and not self.status in ['newborn', 'kitten']:
                 if trans_chance == 1:
                     self.genderalign = "trans male"
                 elif nb_chance == 1:
                     self.genderalign = "nonbinary"
                 else:
                     self.genderalign = self.gender
-            elif self.gender == "male" and not self.status == 'kitten':
+            elif self.gender == "male" and not self.status in ['newborn', 'kitten']:
                 if trans_chance == 1:
                     self.genderalign = "trans female"
                 elif nb_chance == 1:
@@ -456,7 +458,10 @@ class Cat():
 
         # In camp status
         self.in_camp = 1
-
+        if game.clan is not None:
+            biome = game.clan.biome
+        else:
+            biome = None
         # NAME
         if self.pelt is not None:
             self.name = Name(status,
@@ -465,7 +470,8 @@ class Cat():
                              self.pelt.colour,
                              self.eye_colour,
                              self.pelt.name,
-                             self.tortiepattern)
+                             self.tortiepattern,
+                             biome=biome)
         else:
             self.name = Name(status, prefix, suffix, eyes=self.eye_colour)
 
@@ -1403,6 +1409,14 @@ class Cat():
         if other_cat == self:
             return False
         if set(self.get_parents()) & set(other_cat.get_parents()):
+            return True
+        return False
+    
+    def is_littermate(self, other_cat: Cat):
+        """Check if the cats are littermates"""
+        if not self.is_sibling(other_cat):
+            return False
+        if other_cat.moons + other_cat.dead_for == self.moons + self.dead_for:
             return True
         return False
 

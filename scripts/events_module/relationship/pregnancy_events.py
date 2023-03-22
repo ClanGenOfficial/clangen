@@ -172,7 +172,7 @@ class Pregnancy_Events():
         # instead, the cat should get the kit instantly
         if not other_cat and cat.gender == 'male':
             amount = self.get_amount_of_kits(cat)
-            self.get_kits(amount, cat, None, clan)
+            kits = self.get_kits(amount, cat, None, clan)
             insert = 'this should not display'
             if amount == 1:
                 insert = 'a single kitten'
@@ -180,7 +180,10 @@ class Pregnancy_Events():
                 insert = f'a litter of {amount} kits'
             print_event = f"{cat.name} brought {insert} back to camp, but refused to talk about their origin."
             # game.birth_death_events_list.append(print_event)
-            game.cur_events_list.append(Single_Event(print_event, "birth_death", cat.ID))
+            cats_involved = [cat.ID]
+            for kit in kits:
+                cats_involved.append(kit.ID)
+            game.cur_events_list.append(Single_Event(print_event, "birth_death", cats_involved))
             return
 
         # if the other cat is a female and the current cat is a male, make the female cat pregnant
