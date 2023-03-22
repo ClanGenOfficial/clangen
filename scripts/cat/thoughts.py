@@ -147,7 +147,7 @@ class Thoughts():
         try:
             if len(thought['relationship_constraint']) >= 1:
                 for constraint in thought['relationship_constraint']:
-                    if self.thought_fulfill_rel_constraints(relationship, constraint, thought['id']):
+                    if self.thought_fulfill_rel_constraints(self, relationship, constraint, thought['id']):
                         continue
         except KeyError:
             pass
@@ -274,7 +274,7 @@ class Thoughts():
     def create_thoughts(self, inter_list, main_cat, other_cat, game_mode) -> list:
         created_list = []
         for inter in inter_list:
-            if self.cats_fulfill_thought_constraints(main_cat, other_cat, inter, game_mode):
+            if self.cats_fulfill_thought_constraints(self, main_cat, other_cat, inter, game_mode):
                 created_list.append(Thoughts(
                 id=inter["id"],
                 biome=inter["biome"] if "biome" in inter else ["Any"],
