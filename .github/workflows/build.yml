@@ -7,15 +7,16 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
+      - name: Install poetry
+        uses: abatilo/actions-poetry@v2
+        with:
+          poetry-version: 1.4.1
       - name: Setup Python 3.11 x64
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
           architecture: 'x64'
-      - name: Install poetry
-        uses: abatilo/actions-poetry@v2
-        with:
-          poetry-version: 1.4.1
+          cache: 'poetry'
       - name: install dependencies
         run: poetry install --with build -E discord
       - name: Write Dev Version File
@@ -28,7 +29,7 @@ jobs:
         #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
         run: poetry run python3 -m PyInstaller Clangen.spec
       - name: Create archive (.tar.xz)
-        run: tar -cavf Clangen_Linux64_glibc2.31+.tar.xz -C dist Clangen
+        run: tar -caf Clangen_Linux64_glibc2.31+.tar.xz -C dist Clangen
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Linux64_glibc2.31+.tar.xz
@@ -43,15 +44,16 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
+      - name: Install poetry
+        uses: abatilo/actions-poetry@v2
+        with:
+          poetry-version: 1.4.1
       - name: Setup Python 3.11 x64
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
           architecture: 'x64'
-      - name: Install poetry
-        uses: abatilo/actions-poetry@v2
-        with:
-          poetry-version: 1.4.1
+          cache: 'poetry'
       - name: install dependencies
         run: poetry install --with build -E discord
       - name: Write Dev Version File
@@ -63,7 +65,7 @@ jobs:
       - name: Run PyInstaller
         run: poetry run python3 -m PyInstaller Clangen.spec
       - name: Create archive (.tar.xz)
-        run: tar -cavf Clangen_Linux64_glibc2.35+.tar.xz -C dist Clangen
+        run: tar -caf Clangen_Linux64_glibc2.35+.tar.xz -C dist Clangen
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Linux64_glibc2.35+.tar.xz
@@ -78,15 +80,16 @@ jobs:
     runs-on: windows-2019
     steps:
       - uses: actions/checkout@v3
+      - name: Install poetry
+        uses: abatilo/actions-poetry@v2
+        with:
+          poetry-version: 1.4.1
       - name: Setup Python 3.8 x86
         uses: actions/setup-python@v4
         with:
           python-version: '3.8' # 3.8 to support older versions of Windows
           architecture: 'x86'
-      - name: Install poetry
-        uses: abatilo/actions-poetry@v2
-        with:
-          poetry-version: 1.4.1
+          cache: 'poetry'
       - name: install dependencies
         run: poetry install --with build -E discord
       - name: Write Dev Version File
@@ -98,14 +101,13 @@ jobs:
       - name: Run PyInstaller
         #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
         run: poetry run PyInstaller Clangen.spec
+      - name: Create archive (.zip)
+        run: tar.exe -a -c -f Clangen_Win32.zip -C dist Clangen
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Win32
-          path: dist/
-      - name: Create archive for release (.zip)
-        if: startsWith(github.ref, 'refs/tags/')
-        run: tar.exe -a -c -f Clangen_Win32.zip -C dist Clangen
-      - name: Release 
+          path: Clangen_Win32.zip
+      - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
@@ -115,15 +117,16 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Install poetry
+        uses: abatilo/actions-poetry@v2
+        with:
+          poetry-version: 1.4.1
       - name: Setup Python 3.8 x64
         uses: actions/setup-python@v4
         with:
           python-version: '3.8' # 3.8 to support older versions of Windows
           architecture: 'x64'
-      - name: Install poetry
-        uses: abatilo/actions-poetry@v2
-        with:
-          poetry-version: 1.4.1
+          cache: 'poetry'
       - name: install dependencies
         run: poetry install --with build -E discord
       - name: Write Dev Version File
@@ -140,13 +143,12 @@ jobs:
       - name: Run PyInstaller
         #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
         run: poetry run PyInstaller Clangen.spec
+      - name: Create archive (.zip)
+        run: tar.exe -a -c -f Clangen_Win64.zip -C dist Clangen
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Win64
-          path: dist/
-      - name: Create archive for release (.zip)
-        if: startsWith(github.ref, 'refs/tags/')
-        run: tar.exe -a -c -f Clangen_Win64.zip -C dist Clangen
+          path: Clangen_Win64.zip
       - name: Release 
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
@@ -157,15 +159,16 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Install poetry
+        uses: abatilo/actions-poetry@v2
+        with:
+          poetry-version: 1.4.1
       - name: Setup Python 3.11 x64
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
           architecture: 'x64'
-      - name: Install poetry
-        uses: abatilo/actions-poetry@v2
-        with:
-          poetry-version: 1.4.1
+          cache: 'poetry'
       - name: install dependencies
         run: poetry install --with build -E discord
       - name: Write Dev Version File
@@ -182,13 +185,12 @@ jobs:
       - name: Run PyInstaller
         #run: poetry run python3 -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
         run: poetry run PyInstaller Clangen.spec
+      - name: Create archive (.zip)
+        run: tar.exe -a -c -f Clangen_Win64_Windows10+.zip -C dist Clangen
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Win64_Windows10+
-          path: dist/
-      - name: Create archive for release (.zip)
-        if: startsWith(github.ref, 'refs/tags/')
-        run: tar.exe -a -c -f Clangen_Win64_Windows10+.zip -C dist Clangen
+          path: Clangen_Win64_Windows10+.zip
       - name: Release 
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
