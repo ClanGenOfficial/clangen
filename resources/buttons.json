@@ -29,6 +29,36 @@
             "tool_tip_delay": "0"
         }
     },
+    "#cat_button": 
+    {
+		"colours":
+		{
+			"normal_bg":"#00000000",
+            "hovered_bg":"#00000000",
+            "disabled_bg":"#00000000",
+            "selected_bg":"#00000000",
+            "active_bg": "#00000000",
+            "normal_text":"#00000000",
+            "hovered_text":"#00000000",
+            "selected_text":"#00000000",
+            "disabled_text":"#00000000",
+            "link_text": "#00000000",
+            "link_hover": "#00000000",
+            "link_selected": "#00000000",
+            "text_shadow": "#00000000",
+            "normal_border": "#00000000",
+            "hovered_border": "#00000000",
+            "disabled_border": "#00000000",
+			"active_border": "#00000000",
+            "selected_border": "#00000000",
+            "normal_text_shadow": "#00000000"
+		},
+        "misc":
+        {
+            "shadow_width": "0",
+            "tool_tip_delay": "0"
+        }
+    },
     "#continue_button": 
     {
         "prototype": "#image_button",
