@@ -9,11 +9,9 @@
         "<b>Original creator:</b> <i>just-some-cat.tumblr.com (anju)</i>",
         "",
         "<b>Fan edit made by:</b> <i>SableSteel</i>",
-        "<b>With contributions from:</b><i>",
-        "<a href=__contributors>",
+        "<b>With contributions from:",
         "{contrib}",
-        "</a>",
-        "</i>Thank you to the beta testers and all those who have helped with development.",
+        "Thank you to the beta testers and all those who have helped with development.",
         "",
         "<b>Thank you for playing!!</b>",
         "",
@@ -21,7 +19,7 @@
         "Art is licensed under <a href=https://creativecommons.org/licenses/by-nc/4.0/legalcode>CC-BY-NC 4.0</a> "
     ],
     "contrib": [
-        "Blackfur",
+        "<a href=__contributors><i>Blackfur",
         "coffee",
         "Desmond The Furry",
         "ikethefifth",
@@ -70,6 +68,6 @@
         "SkylerStarling",
         "lividjesmar",
         "teutonic",
-        "redhairdl"
+        "redhairdl</i></a>"
     ]
 }

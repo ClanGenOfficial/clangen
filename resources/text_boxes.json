@@ -37,9 +37,9 @@
         "colours": {
             "dark_bg": "#00000000",
             "normal_text": "#000000",
-            "link_text": "#EFE5CE",
-            "link_hover": "#EFE5CE",
-            "link_selected": "#EFE5CE"
+            "link_text": "#000000",
+            "link_hover": "#000000",
+            "link_selected": "#000000"
         },
         "font": {
             "name": "notosans",
@@ -49,8 +49,8 @@
             "border_width": "0",
             "shadow_width": "0",
             "text_horiz_alignment": "center",
-            "link_normal_underline": false,
-            "link_hover_underline": false
+            "link_normal_underline": "0",
+            "link_hover_underline": "0"
         }
     },
     "#dev_watermark": {

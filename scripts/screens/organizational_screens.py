@@ -456,15 +456,25 @@ class SettingsScreen(Screens):
     checkboxes_text = {}
 
     info_text = ""
+    info_text_2 = ""
     with open('resources/credits_text.json', 'r', encoding='utf-8') as f:
         credits_text = ujson.load(f)
+    
+    after_contrib = False
     for string in credits_text["text"]:
         if string == "{contrib}":
-            for contributor in credits_text["contrib"]:
-                info_text += contributor + "<br>"
+            after_contrib = True
         else:
-            info_text += string
-            info_text += "<br>"
+            if after_contrib:
+                info_text_2 += string
+                info_text_2 += "<br>"
+            else:
+                info_text += string
+                info_text += "<br>"
+    
+    contributors_text = ""
+    for contributor in credits_text["contrib"]:
+        contributors_text += contributor + "<br>"
 
     def handle_event(self, event):
         """
@@ -472,7 +482,7 @@ class SettingsScreen(Screens):
         """
         if event.type == pygame_gui.UI_TEXT_BOX_LINK_CLICKED:
             if event.link_target == "__contributors":
-                print("SECCRET")
+                print("idfk if its just my vnc but this triggeres twice, remember to account for that")
             else:
                 if platform.system() == 'Darwin':
                     subprocess.Popen(["open", "-u", event.link_target])
@@ -726,11 +736,62 @@ class SettingsScreen(Screens):
         else:
             theme = "#secret"
 
+
+        self.checkboxes_text['info_container'] = pygame_gui.elements.UIScrollingContainer(
+            scale(pygame.Rect((200, 300), (1200, 1000))), manager=MANAGER)
+
+
         self.checkboxes_text['info_text_box'] = pygame_gui.elements.UITextBox(
             self.info_text,
-            scale(pygame.Rect((200, 300), (1200, 1000))),
-            object_id=theme,
+            scale(pygame.Rect((0, 0), (1180, -1))),
+            object_id=get_text_box_theme(),
+            container=self.checkboxes_text['info_container'],
             manager=MANAGER)
+        info_rect = self.checkboxes_text['info_text_box'].get_relative_rect()
+        self.checkboxes_text['info_text_box'].kill()
+        self.checkboxes_text['info_text_box'] = pygame_gui.elements.UITextBox(
+            self.info_text,
+            info_rect,
+            object_id=get_text_box_theme(),
+            container=self.checkboxes_text['info_container'],
+            manager=MANAGER)
+
+
+
+        self.checkboxes_text['contributors_text_box'] = pygame_gui.elements.UITextBox(
+            self.contributors_text,
+            scale(pygame.Rect((0, info_rect.bottom), (1180, -1))),
+            object_id=theme,
+            container=self.checkboxes_text['info_container'],
+            manager=MANAGER)
+        contributors_rect = self.checkboxes_text['contributors_text_box'].get_relative_rect()
+        self.checkboxes_text['contributors_text_box'].kill()
+        self.checkboxes_text['contributors_text_box'] = pygame_gui.elements.UITextBox(
+            self.contributors_text,
+            contributors_rect,
+            object_id=theme,
+            container=self.checkboxes_text['info_container'],
+            manager=MANAGER)
+        
+
+        self.checkboxes_text['info_text_box2'] = pygame_gui.elements.UITextBox(
+            self.info_text_2,
+            scale(pygame.Rect((0, contributors_rect.bottom), (1180, -1))),
+            object_id=get_text_box_theme(),
+            container=self.checkboxes_text['info_container'],
+            manager=MANAGER)
+        info_rect2 = self.checkboxes_text['info_text_box2'].get_relative_rect()
+        self.checkboxes_text['info_text_box2'].kill()
+        self.checkboxes_text['info_text_box2'] = pygame_gui.elements.UITextBox(
+            self.info_text_2,
+            info_rect2,
+            object_id=get_text_box_theme(),
+            container=self.checkboxes_text['info_container'],
+            manager=MANAGER)
+        
+        self.checkboxes_text['info_container'].set_scrollable_area_dimensions(
+            (info_rect2.width, info_rect2.bottom))
+
 
     def open_lang_settings(self):
         """Open Language Settings"""
