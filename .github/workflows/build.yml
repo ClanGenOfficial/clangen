@@ -12,16 +12,9 @@ jobs:
         with:
           python-version: '3.11'
           architecture: 'x64'
-      - name: Update pip
-        run: python -m pip install --upgrade pip
-      - name: Update setuptools and wheel
-        run: python -m pip install --upgrade setuptools wheel
-      - name: Install dependencies
-        run: python -m pip install -r requirements.txt
-      - name: Install Pillow for icon format conversion
-        run: python -m pip install --upgrade Pillow
-      - name: Install PyInstaller
-        run: python -m pip install --upgrade PyInstaller
+      - uses: abatilo/actions-poetry@v2
+      - name: install dependencies
+        run: poetry install --with build -E discord
       - name: Write Dev Version File
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: echo ${{ github.sha }} > commit.txt
@@ -52,16 +45,9 @@ jobs:
         with:
           python-version: '3.11'
           architecture: 'x64'
-      - name: Update pip
-        run: python -m pip install --upgrade pip
-      - name: Update setuptools and wheel
-        run: python -m pip install --upgrade setuptools wheel
-      - name: Install dependencies
-        run: python -m pip install -r requirements.txt
-      - name: Install Pillow for icon format conversion
-        run: python -m pip install --upgrade Pillow
-      - name: Install PyInstaller
-        run: python -m pip install --upgrade PyInstaller
+      - uses: abatilo/actions-poetry@v2
+      - name: install dependencies
+        run: poetry install --with build -E discord
       - name: Write Dev Version File
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: echo ${{ github.sha }} > commit.txt
@@ -91,16 +77,9 @@ jobs:
         with:
           python-version: '3.8' # 3.8 to support older versions of Windows
           architecture: 'x86'
-      - name: Update pip
-        run: python -m pip install --upgrade pip
-      - name: Update setuptools and wheel
-        run: python -m pip install --upgrade setuptools wheel
-      - name: Install dependencies
-        run: python -m pip install -r requirements.txt
-      - name: Install Pillow for icon format conversion
-        run: python -m pip install --upgrade Pillow
-      - name: Install PyInstaller
-        run: python -m pip install --upgrade PyInstaller
+      - uses: abatilo/actions-poetry@v2
+      - name: install dependencies
+        run: poetry install --with build -E discord
       - name: Write Dev Version File
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: echo ${{ github.sha }} > commit.txt
@@ -132,16 +111,9 @@ jobs:
         with:
           python-version: '3.8' # 3.8 to support older versions of Windows
           architecture: 'x64'
-      - name: Update pip
-        run: python -m pip install --upgrade pip
-      - name: Update setuptools and wheel
-        run: python -m pip install --upgrade setuptools wheel
-      - name: Install dependencies
-        run: python -m pip install -r requirements.txt
-      - name: Install Pillow for icon format conversion
-        run: python -m pip install --upgrade Pillow
-      - name: Install PyInstaller
-        run: python -m pip install --upgrade PyInstaller
+      - uses: abatilo/actions-poetry@v2
+      - name: install dependencies
+        run: poetry install --with build -E discord
       - name: Write Dev Version File
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: echo ${{ github.sha }} > commit.txt
@@ -178,16 +150,9 @@ jobs:
         with:
           python-version: '3.11'
           architecture: 'x64'
-      - name: Update pip
-        run: python -m pip install --upgrade pip
-      - name: Update setuptools and wheel
-        run: python -m pip install --upgrade setuptools wheel
-      - name: Install dependencies
-        run: python -m pip install -r requirements.txt
-      - name: Install Pillow for icon format conversion
-        run: python -m pip install --upgrade Pillow
-      - name: Install PyInstaller
-        run: python -m pip install --upgrade PyInstaller
+      - uses: abatilo/actions-poetry@v2
+      - name: install dependencies
+        run: poetry install --with build -E discord
       - name: Write Dev Version File
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: echo ${{ github.sha }} > commit.txt
@@ -228,16 +193,9 @@ jobs:
         uses: conda-incubator/setup-miniconda@v2
         with:
           python-version: "3.11"
-      - name: Update pip
-        run: python -m pip install --upgrade pip
-      - name: Update setuptools and wheel
-        run: python -m pip install --upgrade setuptools wheel
-      - name: Install dependencies
-        run: python -m pip install -r requirements.txt
-      - name: Install Pillow for icon format conversion
-        run: python -m pip install --upgrade Pillow
-      - name: Install PyInstaller
-        run: python -m pip install --upgrade PyInstaller
+      - uses: abatilo/actions-poetry@v2
+      - name: install dependencies
+        run: poetry install --with build -E discord
       - name: Write Dev Version File
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: echo ${{ github.sha }} > commit.txt

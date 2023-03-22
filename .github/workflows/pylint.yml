@@ -10,9 +10,8 @@ jobs:
         with:
           python-version: '3.10'
           architecture: 'x64'
-      - name: Install Dependencies
-        run: python3 -m pip install -r requirements.txt
-      - name: Install Pylint
-        run: python3 -m pip install pylint
+      - uses: abatilo/actions-poetry@v2
+      - name: install dependencies
+        run: poetry install
       - name: Run Pylint
         run: python -m pylint --recursive=y --errors-only "$PWD"
