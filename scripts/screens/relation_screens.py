@@ -881,12 +881,10 @@ class ChooseMateScreen(Screens):
 
             if event.ui_element == self.toggle_mate:
                 if self.the_cat.mate is None:
-                    Cat.set_mate(self.the_cat, self.selected_cat)
-                    Cat.set_mate(self.selected_cat, self.the_cat)
+                    self.the_cat.set_mate(self.selected_cat)
                     self.update_mate_screen()
                 else:
-                    Cat.unset_mate(self.the_cat, breakup=True)
-                    Cat.unset_mate(self.selected_cat, breakup=True)
+                    self.the_cat.unset_mate(self.selected_cat, breakup=True)
                     self.update_choose_mate(breakup=True)
                 self.update_cat_list()
             elif event.ui_element == self.previous_cat_button:

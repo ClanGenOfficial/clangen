@@ -243,6 +243,7 @@ class Cat():
         self.former_apprentices = []
         self.relationships = {}
         self.mate = None
+        self.previous_mates = []
         self.placement = None
         self.example = example
         self.dead = False
@@ -2094,39 +2095,76 @@ class Cat():
 
         return True
 
-    def unset_mate(self, breakup: bool = False, fight: bool = False):
-        """Unset the mate."""
-        if self.mate is None:
-            return
+    def unset_mate(self, other_cat: Cat, breakup: bool = False, fight: bool = False):
+        """Unset the mate from both self and other_cat"""   
 
-        if self.mate in self.relationships:
-            relation = self.relationships[self.mate]
-            relation.mates = False
-            if breakup:
-                relation.romantic_love -= 40
-                relation.comfortable -= 20
-                relation.trust -= 10
-                if fight:
-                    relation.platonic_like -= 30
-        else:
-            mate = self.all_cats.get(self.mate)
-            if mate:
-                self.relationships[self.mate] = Relationship(self, mate)
+        # Both cats must have mates for this to work
+        if not self.mate or not other_cat.mate:
+            return
+        
+        # AND they must be mates with each other. 
+        if self.ID != other_cat.mate or other_cat.ID != self.mate:
+            print(f"Unsetting mates: These {self.name} and {other_cat.name} are not mates!")
+            return
+        
+        # If only deal with relationships if this is a breakup. 
+        if breakup:
+            if other_cat.ID not in self.relationships:
+                self.relationships[other_cat.ID] = Relationship(self, other_cat, True)
+            if self.ID not in other_cat.relationships:
+                other_cat.relationships[self.ID] = Relationship(other_cat, self, True)
+
+            self_relationship = self.relationships[other_cat.ID]
+            other_relationship = other_cat.relationships[self.ID]
+
+            self_relationship.romantic_love -= 40
+            other_relationship.romantic_love -= 40
+            self_relationship.comfortable -= 20
+            other_relationship.comfortable -= 20
+            self_relationship.trust -= 10
+            other_relationship.trust -= 10
+            if fight:
+                self_relationship.platonic_like -= 30
+                other_relationship.platonic_like -= 30
 
         self.mate = None
+        other_cat.mate = None
+        
+        #Handle previous mates:
+        if other_cat.ID not in self.previous_mates:
+            self.previous_mates.append(other_cat.ID)
+        if self.ID not in other_cat.previous_mates:
+            other_cat.previous_mates.append(self.ID)
 
     def set_mate(self, other_cat: Cat):
-        """Assigns other_cat as mate to self."""
+        """Sets up a mate relationship between self and other_cat."""
+        if self.mate or other_cat.mate:
+            print(f"Warning: In order to set mates, both cats must have no current mate. {self.name} and {other_cat.name} have not been made mates. ")
+            return
+
         self.mate = other_cat.ID
         other_cat.mate = self.ID
 
-        if other_cat.ID in self.relationships:
-            cat_relationship = self.relationships[other_cat.ID]
-            cat_relationship.romantic_love += 20
-            cat_relationship.comfortable += 20
-            cat_relationship.trust += 10
-        else:
+        # If the current mate was in the previous mate list, remove them. 
+        if self.mate in self.previous_mates:
+            self.previous_mates.remove(self.mate)
+        if other_cat.mate in other_cat.previous_mates:
+            other_cat.previous_mates.remove(other_cat.mate)
+
+        # Set starting relationship values
+        if other_cat.ID not in self.relationships:
             self.relationships[other_cat.ID] = Relationship(self, other_cat, True)
+        if self.ID not in other_cat.relationships:
+            other_cat.relationships[self.ID] = Relationship(other_cat, self, True)
+
+        self_relationship = self.relationships[other_cat.ID]
+        other_relationship = other_cat.relationships[self.ID]
+        self_relationship.romantic_love += 20
+        other_relationship.romantic_love += 20
+        self_relationship.comfortable += 20
+        other_relationship.comfortable += 20
+        self_relationship.trust += 10
+        other_relationship.trust += 10
 
     def create_one_relationship(self, other_cat: Cat):
         """Create a new relationship between current cat and other cat. Returns: Relationship"""
