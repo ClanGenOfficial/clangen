@@ -31,7 +31,7 @@ jobs:
         env:
           SDL_VIDEODRIVER: "dummy"
           SDL_AUDIODRIVER: "disk"
-        run: poetry run unittest tests/test_thoughts.py tests/test_relation_events.py tests/test_conditions.py tests/test_utility.py tests/test_cat.py tests/test_save.py
+        run: poetry run python3 -m unittest tests/test_thoughts.py tests/test_relation_events.py tests/test_conditions.py tests/test_utility.py tests/test_cat.py tests/test_save.py
         
   # Check if file encoding is correct.
   encoding_test:
@@ -43,6 +43,10 @@ jobs:
         with:
           python-version: '3.11'
           architecture: 'x64'
+      - name: Install poetry
+        uses: abatilo/actions-poetry@v2
+        with:
+          poetry-version: 1.4.1
       - name: Check file encoding
         id: encoding_test
         run: poetry run python3 tests/test_encoding.py test
