@@ -205,7 +205,7 @@ class Relationship():
 
             Parameters
             ----------
-            in_de_crease : list
+            in_de_crease : str
                 if the relationship value is increasing or decreasing the value
             intensity : str
                 the intensity of the affect

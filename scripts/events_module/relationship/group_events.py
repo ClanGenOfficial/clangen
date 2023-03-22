@@ -69,7 +69,6 @@ class Group_Events():
         # if there is no possibility return
         if len(possibilities) < 1:
             return []
-        print("GROUP EVENT!")
         # choose one interaction and 
         self.chosen_interaction = choice(possibilities)
 
@@ -239,7 +238,6 @@ class Group_Events():
                 if abbreviation in interact.status_constraint:
                     # if the cat status is in the status constraint, add the id to the list
                     status_ids = [cat.ID for cat in interact_cats if cat.status in interact.status_constraint[abbreviation]]
-                    # print(status_ids)
                 else:
                     # if there is no constraint, add all ids to the list 
                     status_ids = [cat.ID for cat in interact_cats]

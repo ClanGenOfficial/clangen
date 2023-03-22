@@ -1996,7 +1996,7 @@ class Cat():
                           other_cat: Cat,
                           for_love_interest: bool = False,
                           for_patrol: bool = False):
-        """Add aditional information to call the check."""
+        """Add additional information to call the check."""
         former_mentor_setting = game.settings['romantic with former mentor']
         for_patrol = for_patrol
         return self._intern_potential_mate(other_cat, for_love_interest, former_mentor_setting, for_patrol)

@@ -10,10 +10,10 @@ except ImportError:
 from scripts.game_structure.game_essentials import game
 from scripts.events_module.condition_events import Condition_Events
 from scripts.cat.cats import Cat
-from scripts.utility import get_cats_same_age
+from scripts.utility import get_cats_same_age, get_cats_of_romantic_interest, get_free_possible_mates
 from scripts.event_class import Single_Event
 from scripts.cat_relations.relationship import Relationship
-from scripts.events_module.relationship.mate_events import Mate_Events
+from scripts.events_module.relationship.romantic_events import Romantic_Events
 from scripts.events_module.relationship.welcoming_events import Welcoming_Events
 from scripts.events_module.relationship.group_events import Group_Events
 
@@ -22,7 +22,7 @@ class Relation_Events():
     def __init__(self) -> None:
         self.had_one_event = False
         self.condition_events = Condition_Events()
-        self.mate_events_class = Mate_Events()
+        self.romantic_events_class = Romantic_Events()
         self.welcome_events_class = Welcoming_Events()
         self.group_events_class = Group_Events()
         self.cats_triggered_events = {}
@@ -53,8 +53,12 @@ class Relation_Events():
 
         # this has to be handled at first
         if random.random() > 0.8:
-            if self.mate_events_class.big_love_check(cat):
+            if self.romantic_events_class.big_love_check(cat):
                 return
+
+        # 1/15 for an additional event
+        if not random.getrandbits(4):
+            self.romantic_events(cat)
 
         cats_amount = len(Cat.all_cats)
         # cap the maximal checks
@@ -105,7 +109,7 @@ class Relation_Events():
             # new mates
             if not self.had_one_event and not cat_from_mate:
                 if cat_to.is_potential_mate(cat_from):
-                    self.mate_events_class.handle_new_mates(current_relationship, cat_from, cat_to)
+                    self.romantic_events_class.handle_new_mates(current_relationship, cat_from, cat_to)
 
             # breakup and new mate
             if (not self.had_one_event and cat_from.mate and
@@ -143,40 +147,93 @@ class Relation_Events():
                     self.had_one_event = True
                     # break up the old relationships
                     cat_from_mate = Cat.all_cats.get(cat_from.mate)
-                    self.mate_events_class.handle_breakup(mate_relationship, mate_relationship.opposite_relationship, cat_from,
+                    self.romantic_events_class.handle_breakup(mate_relationship, mate_relationship.opposite_relationship, cat_from,
                                         cat_from_mate)
 
                     if cat_to_mate:
                         # relationship_from, relationship_to, cat_from, cat_to
-                        self.mate_events_class.handle_breakup(other_mate_relationship, other_mate_relationship.opposite_relationship,
+                        self.romantic_events_class.handle_breakup(other_mate_relationship, other_mate_relationship.opposite_relationship,
                                             cat_to, cat_to_mate)
 
                     # new relationship
                     text = f"{cat_from.name} and {cat_to.name} can't ignore their feelings for each other."
                     # game.relation_events_list.insert(0, text)
                     game.cur_events_list.append(Single_Event(text, "relation", [cat_from.ID, cat_to.ID]))
-                    self.mate_events_class.handle_new_mates(current_relationship, cat_from, cat_to)
+                    self.romantic_events_class.handle_new_mates(current_relationship, cat_from, cat_to)
 
             # breakup
             if not self.had_one_event and current_relationship.mates and not cat_from.dead and not cat_to.dead:
-                if self.mate_events_class.check_if_breakup(current_relationship, current_relationship.opposite_relationship, cat_from,
+                if self.romantic_events_class.check_if_breakup(current_relationship, current_relationship.opposite_relationship, cat_from,
                                          cat_to):
-                    self.mate_events_class.handle_breakup(current_relationship, current_relationship.opposite_relationship, cat_from,
+                    self.romantic_events_class.handle_breakup(current_relationship, current_relationship.opposite_relationship, cat_from,
                                         cat_to)
 
     # ---------------------------------------------------------------------------- #
     #                                new event types                               #
     # ---------------------------------------------------------------------------- #
 
-    def mate_events(self):
-        """Description will follow."""
+    def romantic_events(self, cat):
         """
-        > events unique to mates
+            ONLY for cat OLDER than 12 moons.
+            To increase mating chance this function is used.
+            It will boost the romantic values of either mate or possible mates.
+            This also increase the chance of affairs.
         """
-        print("TODO")
+        if cat.moons < 12:
+            return
+
+        if not self.can_trigger_events(cat):
+            return
+
+
+        other_cat = None
+        info_text = ""
+
+        # get the cats which are relevant for romantic interactions
+        free_possible_mates = get_free_possible_mates(cat)
+        other_love_interest = get_cats_of_romantic_interest(cat)  
+        possible_cats = free_possible_mates
+        if len(other_love_interest) > 0 and len(other_love_interest) < 3:
+            possible_cats.extend(other_love_interest)
+            possible_cats.extend(other_love_interest)
+        elif len(other_love_interest) >= 3:
+            possible_cats = other_love_interest
+
+        # only adding cats which already have SOME relationship with each other
+        cat_to_choose_from = []
+        for inter_cat in possible_cats:
+            cat_to_inter = cat.relationships[inter_cat.ID].platonic_like > 10 or\
+                cat.relationships[inter_cat.ID].comfortable > 10
+            inter_to_cat = inter_cat.relationships[cat.ID].platonic_like > 10 or\
+                inter_cat.relationships[cat.ID].comfortable > 10
+            if cat_to_inter and inter_to_cat:
+                cat_to_choose_from.append(inter_cat)
+
+        if cat.mate:
+            info_text ="cat has mate"
+            chance_number = game.config["relationship"]["chance_romantic_not_mate"]
+            chance_number += int(cat.relationships[cat.mate].romantic_love / 10)
+            use_mate = int(random.random() * chance_number)  
+            # only if it is 0 then all the other cats should be used
+            if use_mate:
+                cat_to_choose_from = [cat.all_cats[cat.mate]]
+        else:
+            info_text = "cat has no mate"
+
+        if len(cat_to_choose_from) < 1:
+            return
+            
+        other_cat = choice(cat_to_choose_from)
+        if self.romantic_events_class.start_interaction(cat, other_cat):
+            self.trigger_event(cat)
+            self.trigger_event(other_cat)
+            print(info_text)
 
     def same_age_events(self, cat):
-        """Description will follow."""
+        """	
+            To increase the relationship amounts with cats of the same age. 
+            This should lead to 'friends', 'enemies' and possible mates around the same age group.
+        """
         if not self.can_trigger_events(cat):
             return
 
@@ -190,7 +247,11 @@ class Relation_Events():
                 self.trigger_event(random_cat)
 
     def group_events(self, cat):
-        """Description will follow."""
+        """
+            This function triggers group events, based on the given cat. 
+            First it will be decided if a special type of group (found in relationship_events/group_interactions/group_types.json).
+            As default all cats will be a possible 'group' of interaction.
+        """
         if not self.can_trigger_events(cat):
             return
 
@@ -218,17 +279,17 @@ class Relation_Events():
             inter_cat = Cat.all_cats[id]
             self.trigger_event(inter_cat)
 
-    def family_events(self):
-        """Description will follow."""
+    def family_events(self, cat):
         """
-        - parent + child
-        - siblings
-        - grand parents/children
+            To have more family related events.
         """
         print("TODO")
 
-    def outsider_events(self):
-        """Description will follow."""
+    def outsider_events(self, cat):
+        """
+            ONLY for cat OLDER than 6 moons and not major injured.
+            This function will handle when the cat interacts with cat which are outside of the clan.
+        """
         print("TODO")
 
     def welcome_new_cats(self, new_cats = None):

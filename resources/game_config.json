@@ -70,8 +70,10 @@
 		"passive_influence": 4,
 		"chance_for_neutral": 6,
 		"chance_of_special_group": 4,
+		"chance_romantic_not_mate": 10,
 		"comment":[
-			"chance_for_neutral - how high the chance is to make the interaction of the relationship to a 'neutral' instead of negative or positive"
+			"chance_for_neutral - how high the chance is to make the interaction of the relationship to a 'neutral' instead of negative or positive",
+			"chance_romantic_not_mate - the base chance of an romantic interaction with another cat, when a cat has a mate"
 		]
 	},
 	"new_cat": {
