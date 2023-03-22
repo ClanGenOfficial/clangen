@@ -377,6 +377,7 @@ class Game():
                 "patrol_with_mentor": inter_cat.patrol_with_mentor if inter_cat.patrol_with_mentor else 0,
                 "mentor_influence": inter_cat.mentor_influence if inter_cat.mentor_influence else [],
                 "mate": inter_cat.mate,
+                "previous_mates": inter_cat.previous_mates,
                 "dead": inter_cat.dead,
                 "died_by": inter_cat.died_by if inter_cat.died_by else [],
                 "paralyzed": inter_cat.paralyzed,
