@@ -116,217 +116,224 @@ class Thoughts():
 #                some useful functions, related to thoughts                    #
 # ---------------------------------------------------------------------------- #
 
-def thought_fulfill_rel_constraints(relationship, constraint, thought_id) -> bool:
-    """Check if the relationship fulfills the interaction relationship constraints."""
-    # if the constraints are not existing, they are considered to be fulfilled
-    if not constraint:
+    def thought_fulfill_rel_constraints(self, relationship, constraint, thought_id) -> bool:
+        """Check if the relationship fulfills the interaction relationship constraints."""
+        # if the constraints are not existing, they are considered to be fulfilled
+        if not constraint:
+            return True
+        if len(constraint) == 0:
+            return True
+                
+        if "siblings" in constraint and not relationship.cat_from.is_sibling(relationship.cat_to):
+            return False
+
+        if "mates" in constraint and not relationship.mates:
+            return False
+
+        if "not_mates" in constraint and relationship.mates:
+            return False
+
+        if "parent/child" in constraint and not relationship.cat_from.is_parent(relationship.cat_to):
+            return False
+
+        if "child/parent" in constraint and not relationship.cat_to.is_parent(relationship.cat_from):
+            return False
+
         return True
-    if len(constraint) == 0:
-        return True
-            
-    if "siblings" in constraint and not relationship.cat_from.is_sibling(relationship.cat_to):
-        return False
 
-    if "mates" in constraint and not relationship.mates:
-        return False
-
-    if "not_mates" in constraint and relationship.mates:
-        return False
-
-    if "parent/child" in constraint and not relationship.cat_from.is_parent(relationship.cat_to):
-        return False
-
-    if "child/parent" in constraint and not relationship.cat_to.is_parent(relationship.cat_from):
-        return False
-
-    return True
-
-def cats_fulfill_thought_constraints(main_cat, random_cat, thought, game_mode) -> bool:
-    """Check if the two cats fulfills the thought constraints."""
-    relationship = main_cat.relationships[random_cat.ID]
-    try:
-        if len(thought['relationship_constraint']) >= 1:
-            for constraint in thought['relationship_constraint']:
-                if thought_fulfill_rel_constraints(relationship, constraint, thought['id']):
-                    continue
-    except KeyError:
-        pass
-    
-    try:
-        if len(thought['main_status_constraint']) >= 1:
-            if main_cat.status not in thought['main_status_constraint']:
-                return False
-    except KeyError:
-        pass
-
-    try:
-        if len(thought['random_status_constraint']) >= 1:
-            if random_cat.status not in thought['random_status_constraint']:
-                return False
-    except KeyError:
-        pass
-    
-    try:
-        if len(thought['main_age_constraint']) >= 1:
-            if main_cat.age not in thought['main_age_constraint']:
-                return False
-    except KeyError:
-        pass
-
-    try:
-        if len(thought['random_age_constraint']) >= 1:
-            if random_cat.age not in thought['random_age_constraint']:
-                return False
-    except KeyError:
-        pass
-
-    try:
-        if len(thought['main_trait_constraint']) >= 1:
-            if main_cat.trait not in thought['main_trait_constraint']:
-                return False
-    except KeyError:
-        pass
-
-    try:
-        if len(thought['random_trait_constraint']) >= 1:
-            if random_cat.trait not in thought['random_trait_constraint']:
-                return False
-    except KeyError:
-        pass
-
-    try:
-        if len(thought['main_skill_constraint']) >= 1:
-            if main_cat.skill not in thought['main_skill_constraint']:
-                return False
-    except KeyError:
-        pass
-
-    try:
-        if len(thought['random_skill_constraint']) >= 1:
-            if random_cat.skill not in thought['random_skill_constraint']:
-                return False
-    except KeyError:
-        pass
-
-    try:
-        if len(thought['backstory_constraint']) >= 1:
-            if main_cat.backstory not in thought['backstory_constraint']["m_c"]:
-                return False
-            if random_cat.backstory not in thought['backstory_constraint']["r_c"]:
-                return False
-    except KeyError:
-        pass
-    
-    try:
-        if len(thought['random_living_status']) >= 1:
-            living_status = None
-            if not random_cat.dead:
-                living_status = "living"
-            elif random_cat.dead and random_cat.df:
-                living_status = "darkforest"
-            elif random_cat.dead and not random_cat.df:
-                living_status = "starclan"
-            else:
-                living_status = 'unknownresidence'
-            if living_status not in thought['random_living_status']:
-                return False
-    except KeyError:
-        pass
+    def cats_fulfill_thought_constraints(self, main_cat, random_cat, thought, game_mode) -> bool:
+        """Check if the two cats fulfills the thought constraints."""
+        relationship = main_cat.relationships[random_cat.ID]
+        try:
+            if len(thought['relationship_constraint']) >= 1:
+                for constraint in thought['relationship_constraint']:
+                    if self.thought_fulfill_rel_constraints(relationship, constraint, thought['id']):
+                        continue
+        except KeyError:
+            pass
         
-    try:
-        if len(thought['random_outside_status']) >= 1:
-            outside_status = None
-            if random_cat.outside and random_cat.status not in ["kittypet", "loner", "rogue", "former clancat"]:
-                outside_status = "lost"
-            else:
-                outside_status = "outside cat"
-            if outside_status not in thought['random_outside_status']:
-                return False
-    except KeyError:
-        pass
-
-    try:
-        if len(thought['has_injuries']) >= 1:
-            # if there is a injury constraint and the clan is in classic mode, this interact can not be used
-            if game_mode == "classic":
-                return False
-
-            if "m_c" in thought['has_injuries']:
-                injuries_in_needed = list(
-                    filter(lambda inj: inj in thought['has_injuries']["m_c"], main_cat.injuries.keys())
-                )
-                if len(injuries_in_needed) <= 0:
+        try:
+            if len(thought['main_status_constraint']) >= 1:
+                if main_cat.status not in thought['main_status_constraint']:
                     return False
-            if "r_c" in thought['has_injuries']:
-                injuries_in_needed = list(
-                    filter(lambda inj: inj in thought['has_injuries']["r_c"], random_cat.injuries.keys())
-                )
-                if len(injuries_in_needed) <= 0:
+        except KeyError:
+            pass
+
+        try:
+            if len(thought['random_status_constraint']) >= 1:
+                if random_cat.status not in thought['random_status_constraint']:
                     return False
-    except KeyError:
-        pass
+        except KeyError:
+            pass
+        
+        try:
+            if len(thought['main_age_constraint']) >= 1:
+                if main_cat.age not in thought['main_age_constraint']:
+                    return False
+        except KeyError:
+            pass
 
-    return True
-# ---------------------------------------------------------------------------- #
-#                            BUILD MASTER DICTIONARY                           #
-# ---------------------------------------------------------------------------- #
+        try:
+            if len(thought['random_age_constraint']) >= 1:
+                if random_cat.age not in thought['random_age_constraint']:
+                    return False
+        except KeyError:
+            pass
 
-def create_thoughts(inter_list, main_cat, other_cat, game_mode) -> list:
-    created_list = []
-    for inter in inter_list:
-        if cats_fulfill_thought_constraints(main_cat, other_cat, inter, game_mode):
-            created_list.append(Thoughts(
-            id=inter["id"],
-            biome=inter["biome"] if "biome" in inter else ["Any"],
-            season=inter["season"] if "season" in inter else ["Any"],
-            thoughts=inter["thoughts"] if "thoughts" in inter else None,
-            has_injuries=inter["has_injuries"] if "has_injuries" in inter else None,
-            perm_conditions=inter["perm_conditions"] if "perm_conditions" in inter else None,
-            relationship_constraint = inter["relationship_constraint"] if "relationship_constraint" in inter else None,
-            backstory_constraint = inter["backstory_constraint"] if "backstory_constraint" in inter else None,
-            main_status_constraint = inter["main_status_constraint"] if "main_status_constraint" in inter else None,
-            random_status_constraint = inter["random_status_constraint"] if "random_status_constraint" in inter else None,
-            main_age_constraint = inter["main_age_constraint"] if "main_age_constraint" in inter else None,
-            random_age_constraint = inter["random_age_constraint"] if "random_age_constraint" in inter else None,
-            main_trait_constraint = inter["main_trait_constraint"] if "main_trait_constraint" in inter else None,
-            random_trait_constraint = inter["random_trait_constraint"] if "random_trait_constraint" in inter else None,
-            main_skill_constraint = inter["main_skill_constraint"] if "main_skill_constraint" in inter else None,
-            random_skill_constraint = inter["random_skill_constraint"] if "random_skill_constraint" in inter else None,
-            random_living_status = inter["random_living_status"] if "random_living_status" in inter else None,
-            random_outside_status = inter["random_outside_status"] if "random_outside_status" in inter else None
-        ))
-    return created_list
+        try:
+            if len(thought['main_trait_constraint']) >= 1:
+                if main_cat.trait not in thought['main_trait_constraint']:
+                    return False
+        except KeyError:
+            pass
 
-def load_thoughts(main_cat, other_cat, status, game_mode):
-    base_path = f"resources/dicts/thoughts/"
-    life_dir = None
-    status = status
-    loaded_thoughts = []
+        try:
+            if len(thought['random_trait_constraint']) >= 1:
+                if random_cat.trait not in thought['random_trait_constraint']:
+                    return False
+        except KeyError:
+            pass
 
-    if not main_cat.dead and not main_cat.outside:
-        life_dir = "alive"
-    else:
-        life_dir = "dead"
+        try:
+            if len(thought['main_skill_constraint']) >= 1:
+                if main_cat.skill not in thought['main_skill_constraint']:
+                    return False
+        except KeyError:
+            pass
 
-    if not main_cat.dead and main_cat.outside:
-        spec_dir = "/alive_outside"
-    elif main_cat.dead and not main_cat.outside and not main_cat.df:
-        spec_dir = "/starclan"
-    elif main_cat.dead and not main_cat.outside and main_cat.df:
-        spec_dir = "/darkforest"
-    elif main_cat.dead and main_cat.outside:
-        spec_dir = "/unknownresidence"
-    else:
-        spec_dir = ""
+        try:
+            if len(thought['random_skill_constraint']) >= 1:
+                if random_cat.skill not in thought['random_skill_constraint']:
+                    return False
+        except KeyError:
+            pass
 
-    THOUGHTS = []
-    with open(f"{base_path}{life_dir}{spec_dir}/{status}.json", 'r') as read_file:
-        THOUGHTS = ujson.loads(read_file.read())
-    GENTHOUGHTS = []
-    with open(f"{base_path}{life_dir}{spec_dir}/general.json", 'r') as read_file:
-        GENTHOUGHTS = ujson.loads(read_file.read())
-    loaded_thoughts += THOUGHTS
-    loaded_thoughts += GENTHOUGHTS
-    final_thoughts = choice(create_thoughts(loaded_thoughts, main_cat, other_cat, game_mode))
+        try:
+            if len(thought['backstory_constraint']) >= 1:
+                if main_cat.backstory not in thought['backstory_constraint']["m_c"]:
+                    return False
+                if random_cat.backstory not in thought['backstory_constraint']["r_c"]:
+                    return False
+        except KeyError:
+            pass
+        
+        try:
+            if len(thought['random_living_status']) >= 1:
+                living_status = None
+                if not random_cat.dead:
+                    living_status = "living"
+                elif random_cat.dead and random_cat.df:
+                    living_status = "darkforest"
+                elif random_cat.dead and not random_cat.df:
+                    living_status = "starclan"
+                else:
+                    living_status = 'unknownresidence'
+                if living_status not in thought['random_living_status']:
+                    return False
+        except KeyError:
+            pass
+            
+        try:
+            if len(thought['random_outside_status']) >= 1:
+                outside_status = None
+                if random_cat.outside and random_cat.status not in ["kittypet", "loner", "rogue", "former clancat"]:
+                    outside_status = "lost"
+                else:
+                    outside_status = "outside cat"
+                if outside_status not in thought['random_outside_status']:
+                    return False
+        except KeyError:
+            pass
 
-    return final_thoughts
+        try:
+            if len(thought['has_injuries']) >= 1:
+                # if there is a injury constraint and the clan is in classic mode, this interact can not be used
+                if game_mode == "classic":
+                    return False
+
+                if "m_c" in thought['has_injuries']:
+                    injuries_in_needed = list(
+                        filter(lambda inj: inj in thought['has_injuries']["m_c"], main_cat.injuries.keys())
+                    )
+                    if len(injuries_in_needed) <= 0:
+                        return False
+                if "r_c" in thought['has_injuries']:
+                    injuries_in_needed = list(
+                        filter(lambda inj: inj in thought['has_injuries']["r_c"], random_cat.injuries.keys())
+                    )
+                    if len(injuries_in_needed) <= 0:
+                        return False
+        except KeyError:
+            pass
+
+        return True
+    # ---------------------------------------------------------------------------- #
+    #                            BUILD MASTER DICTIONARY                           #
+    # ---------------------------------------------------------------------------- #
+
+    def create_thoughts(self, inter_list, main_cat, other_cat, game_mode) -> list:
+        created_list = []
+        for inter in inter_list:
+            if self.cats_fulfill_thought_constraints(main_cat, other_cat, inter, game_mode):
+                created_list.append(Thoughts(
+                id=inter["id"],
+                biome=inter["biome"] if "biome" in inter else ["Any"],
+                season=inter["season"] if "season" in inter else ["Any"],
+                thoughts=inter["thoughts"] if "thoughts" in inter else None,
+                has_injuries=inter["has_injuries"] if "has_injuries" in inter else None,
+                perm_conditions=inter["perm_conditions"] if "perm_conditions" in inter else None,
+                relationship_constraint = inter["relationship_constraint"] if "relationship_constraint" in inter else None,
+                backstory_constraint = inter["backstory_constraint"] if "backstory_constraint" in inter else None,
+                main_status_constraint = inter["main_status_constraint"] if "main_status_constraint" in inter else None,
+                random_status_constraint = inter["random_status_constraint"] if "random_status_constraint" in inter else None,
+                main_age_constraint = inter["main_age_constraint"] if "main_age_constraint" in inter else None,
+                random_age_constraint = inter["random_age_constraint"] if "random_age_constraint" in inter else None,
+                main_trait_constraint = inter["main_trait_constraint"] if "main_trait_constraint" in inter else None,
+                random_trait_constraint = inter["random_trait_constraint"] if "random_trait_constraint" in inter else None,
+                main_skill_constraint = inter["main_skill_constraint"] if "main_skill_constraint" in inter else None,
+                random_skill_constraint = inter["random_skill_constraint"] if "random_skill_constraint" in inter else None,
+                random_living_status = inter["random_living_status"] if "random_living_status" in inter else None,
+                random_outside_status = inter["random_outside_status"] if "random_outside_status" in inter else None
+            ))
+        return created_list
+
+    def load_thoughts(self, main_cat, other_cat, status, game_mode):
+        base_path = f"resources/dicts/thoughts/"
+        life_dir = None
+        status = status
+        loaded_thoughts = []
+
+        if not main_cat.dead and not main_cat.outside:
+            life_dir = "alive"
+        else:
+            life_dir = "dead"
+
+        if not main_cat.dead and main_cat.outside:
+            spec_dir = "/alive_outside"
+        elif main_cat.dead and not main_cat.outside and not main_cat.df:
+            spec_dir = "/starclan"
+        elif main_cat.dead and not main_cat.outside and main_cat.df:
+            spec_dir = "/darkforest"
+        elif main_cat.dead and main_cat.outside:
+            spec_dir = "/unknownresidence"
+        else:
+            spec_dir = ""
+
+        THOUGHTS = []
+        with open(f"{base_path}{life_dir}{spec_dir}/{status}.json", 'r') as read_file:
+            THOUGHTS = ujson.loads(read_file.read())
+        GENTHOUGHTS = []
+        with open(f"{base_path}{life_dir}{spec_dir}/general.json", 'r') as read_file:
+            GENTHOUGHTS = ujson.loads(read_file.read())
+        loaded_thoughts += THOUGHTS
+        loaded_thoughts += GENTHOUGHTS
+        final_thoughts = choice(self.create_thoughts(loaded_thoughts, main_cat, other_cat, game_mode))
+
+        return final_thoughts
+    
+    def get_chosen_thought(self, main_cat, other_cat, status, game_mode):
+        # get possible thoughts
+        thought_str = str(self.load_thoughts(self, main_cat, other_cat, status, game_mode))
+        chosen_thought = thought_str
+
+        return chosen_thought

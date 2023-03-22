@@ -15,7 +15,6 @@ except ImportError:
 
 from .pelts import describe_appearance
 from .names import Name
-from .thoughts import create_thoughts, cats_fulfill_thought_constraints, load_thoughts
 from .appearance_utility import (
     init_pelt,
     init_tint,
@@ -33,10 +32,10 @@ import pygame
 
 from scripts.utility import get_med_cats, get_personality_compatibility, event_text_adjust, update_sprite
 from scripts.game_structure.game_essentials import game, screen
-from scripts.cat.thoughts import load_thoughts
 from scripts.cat_relations.relationship import Relationship
 from scripts.game_structure import image_cache
 from scripts.event_class import Single_Event
+from .thoughts import Thoughts
 
 
 class Cat():
@@ -1027,14 +1026,9 @@ class Cat():
 
         other_cat = all_cats.get(other_cat)
 
-        # get possible thoughts
-        thought_str = str(load_thoughts(self, other_cat, self.status, game_mode))
-
-        try:
-            chosen_thought = thought_str
-        except IndexError:
-            chosen_thought = "Isn't thinking about much right now"
-
+        # get chosen thought
+        chosen_thought = Thoughts.get_chosen_thought(Thoughts, self, other_cat, self.status, game_mode)
+        
         # insert name if it is needed
         if "r_c" in chosen_thought:
             chosen_thought = chosen_thought.replace("r_c", str(other_cat.name))
