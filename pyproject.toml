@@ -24,8 +24,9 @@ pypresence = {version = "4.2.1", optional = true}
 [tool.poetry.group.test.dependencies]
 pylint = "^2.17.0"
 
-[tool.poetry.group.build.dependencies]
+[tool.poetry.group.build]
 optional = true
+[tool.poetry.group.build.dependencies]
 pyinstaller = "^5.9.0"
 pillow = "^9.4.0"
 setuptools = "^67.6.0"
