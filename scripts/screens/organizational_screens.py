@@ -471,12 +471,15 @@ class SettingsScreen(Screens):
         TODO: DOCS
         """
         if event.type == pygame_gui.UI_TEXT_BOX_LINK_CLICKED:
-            if platform.system() == 'Darwin':
-                subprocess.Popen(["open", "-u", event.link_target])
-            elif platform.system() == 'Windows':
-                os.system(f"start \"\" {event.link_target}")
-            elif platform.system() == 'Linux':
-                subprocess.Popen(['xdg-open', event.link_target])
+            if event.link_target == "__contributors":
+                print("SECCRET")
+            else:
+                if platform.system() == 'Darwin':
+                    subprocess.Popen(["open", "-u", event.link_target])
+                elif platform.system() == 'Windows':
+                    os.system(f"start \"\" {event.link_target}")
+                elif platform.system() == 'Linux':
+                    subprocess.Popen(['xdg-open', event.link_target])
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.main_menu_button:
                 self.change_screen('start screen')
@@ -718,11 +721,15 @@ class SettingsScreen(Screens):
         self.clear_sub_settings_buttons_and_text()
         self.sub_menu = 'info'
         self.save_settings_button.hide()
+        if game.settings['dark mode']:
+            theme = "#secret_dark"
+        else:
+            theme = "#secret"
 
         self.checkboxes_text['info_text_box'] = pygame_gui.elements.UITextBox(
             self.info_text,
             scale(pygame.Rect((200, 300), (1200, 1000))),
-            object_id=get_text_box_theme(),
+            object_id=theme,
             manager=MANAGER)
 
     def open_lang_settings(self):
