@@ -399,7 +399,7 @@ class PatrolScreen(Screens):
 
         # Text box for skills and traits. Hidden for now, and with no text in it
         self.elements["skills_box"] = UITextBoxTweaked("", scale(pygame.Rect((1020, 1020), (480, 180))), visible=False,
-                                                       object_id="#cat_profile_info_box",
+                                                       object_id="#text_box_22_horizleft",
                                                        line_spacing=0.95, manager=MANAGER)
 
         # Start Patrol Button
@@ -611,7 +611,7 @@ class PatrolScreen(Screens):
         # adjusting text for solo patrols
         intro_text = self.adjust_patrol_text(patrol.patrol_event.intro_text, patrol_size)
         self.elements["patrol_text"] = UITextBoxTweaked(intro_text, scale(pygame.Rect((770, 345), (670, 500))),
-                                                        object_id="#patrol_text_box", manager=MANAGER)
+                                                        object_id="#text_box_30_horizleft_pad_10_10", manager=MANAGER)
         # Patrol Info
         # TEXT CATEGORIES AND CHECKING FOR REPEATS
         members = []
@@ -632,7 +632,7 @@ class PatrolScreen(Screens):
             f'patrol members: {self.get_list_text(members)} \n'
             f'patrol skills: {self.get_list_text(skills)} \n'
             f'patrol traits: {self.get_list_text(traits)}', scale(pygame.Rect((210, 920), (480, 400))),
-            object_id="#cat_profile_info_box", manager=MANAGER)
+            object_id="#text_box_22_horizleft", manager=MANAGER)
 
         # Draw Patrol Cats
         pos_x = 800
@@ -942,7 +942,7 @@ class PatrolScreen(Screens):
         self.elements["patrol_results"] = pygame_gui.elements.UITextBox("",
                                                                         scale(pygame.Rect((1100, 1000), (344, 300))),
                                                                         object_id=get_text_box_theme(
-                                                                            "#cat_patrol_info_box")
+                                                                            "#text_box_22_horizcenter")
                                                                         , manager=MANAGER)
         self.elements["patrol_results"].set_text(patrol.results())
 
@@ -1134,7 +1134,7 @@ class PatrolScreen(Screens):
                                                              "\n" + str(self.selected_cat.skill) +
                                                              "\n" + str(self.selected_cat.experience_level),
                                                              scale(pygame.Rect((600, 700), (400, 150))),
-                                                             object_id=get_text_box_theme("#cat_patrol_info_box"),
+                                                             object_id=get_text_box_theme("#text_box_22_horizcenter"),
                                                              line_spacing=0.95
                                                              , manager=MANAGER)
 
@@ -1163,7 +1163,7 @@ class PatrolScreen(Screens):
                         "mate",
                         scale(pygame.Rect((300, 650), (200, 60))),
                         object_id=get_text_box_theme(
-                            "#cat_patrol_info_box"))
+                            "#text_box_22_horizcenter"))
                     self.elements['mate_button'] = UIImageButton(scale(pygame.Rect((296, 712), (208, 52))), "",
                                                                  object_id="#patrol_select_button", manager=MANAGER)
                     # Disable mate_button if the cat is not able to go on a patrol
@@ -1205,7 +1205,7 @@ class PatrolScreen(Screens):
                         relation,
                         scale(pygame.Rect((1100, 650), (200, 60))),
                         object_id=get_text_box_theme(
-                            "#cat_patrol_info_box"))
+                            "#text_box_22_horizcenter"))
                     self.elements['app_mentor_image'] = pygame_gui.elements.UIImage(
                         scale(pygame.Rect((1100, 400), (200, 200))),
                         pygame.transform.scale(

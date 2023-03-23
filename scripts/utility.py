@@ -1131,7 +1131,7 @@ def get_text_box_theme(themename=""):
             return themename + "_dark"
     else:
         if themename == "":
-            return "text_box"
+            return "#text_box_30_horizcenter"
         else:
             return themename
 

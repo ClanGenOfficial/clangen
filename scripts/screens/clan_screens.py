@@ -1254,7 +1254,7 @@ class AllegiancesScreen(Screens):
         # Heading
         self.heading = pygame_gui.elements.UITextBox(f'{game.clan.name}Clan Allegiances',
                                                      scale(pygame.Rect((60, 220), (800, 80))),
-                                                     object_id=get_text_box_theme("#allegiances_header_text_box")
+                                                     object_id=get_text_box_theme("#text_box_34_horizleft")
                                                      , manager=MANAGER)
 
         # Set Menu Buttons.
@@ -1273,13 +1273,13 @@ class AllegiancesScreen(Screens):
         for x in allegiance_list:
             self.ranks_boxes.append(pygame_gui.elements.UITextBox(x[0],
                                    scale(pygame.Rect((0, y_pos), (300, -1))),
-                                   object_id=get_text_box_theme("#allegiances_box"),
+                                   object_id=get_text_box_theme("#text_box_30_horizleft"),
                                    container=self.scroll_container, manager=MANAGER))
             self.ranks_boxes[-1].disable()
 
             self.names_boxes.append(pygame_gui.elements.UITextBox(x[1],
                                     scale(pygame.Rect((300, y_pos), (1060, -1))),
-                                    object_id=get_text_box_theme("#allegiances_box"),
+                                    object_id=get_text_box_theme("#text_box_30_horizleft"),
                                     container=self.scroll_container, manager=MANAGER))
             self.names_boxes[-1].disable()
             
@@ -1596,12 +1596,12 @@ class MedDenScreen(Screens):
             self.hurt_sick_title = pygame_gui.elements.UITextBox(
                 "Hurt & Sick Cats",
                 scale(pygame.Rect((281, 820), (400, 60))),
-                object_id=get_text_box_theme("#cat_profile_name_box"), manager=MANAGER
+                object_id=get_text_box_theme("#text_box_40_horizcenter"), manager=MANAGER
             )
             self.log_title = pygame_gui.elements.UITextBox(
                 "Medicine Den Log",
                 scale(pygame.Rect((281, 820), (400, 60))),
-                object_id=get_text_box_theme("#cat_profile_name_box"), manager=MANAGER
+                object_id=get_text_box_theme("#text_box_40_horizcenter"), manager=MANAGER
             )
             self.log_title.hide()
             self.cat_bg = pygame_gui.elements.UIImage(scale(pygame.Rect
@@ -1619,7 +1619,7 @@ class MedDenScreen(Screens):
                 f"{f'<br><img src={img_path}><br>'.join(log_text)}<br>",
                 scale(pygame.Rect
                       ((300, 900), (1080, 360))),
-                object_id="#med_den_log_box", manager=MANAGER
+                object_id="#text_box_26_horizleft_verttop_pad_14_0_10", manager=MANAGER
             )
             self.log_box.hide()
             self.cats_tab = UIImageButton(scale(pygame.Rect
@@ -1708,7 +1708,7 @@ class MedDenScreen(Screens):
         self.meds_messages = UITextBoxTweaked(
             "",
             scale(pygame.Rect((216, 620), (1200, 160))),
-            object_id=get_text_box_theme("#med_messages_box"),
+            object_id=get_text_box_theme("#text_box_30_horizcenter_vertcenter"),
             line_spacing=1
         )
 
@@ -1854,7 +1854,7 @@ class MedDenScreen(Screens):
             self.med_info = UITextBoxTweaked(
                 "",
                 scale(pygame.Rect((1160, 370), (240, 240))),
-                object_id=get_text_box_theme("#cat_patrol_info_box"),
+                object_id=get_text_box_theme("#text_box_22_horizcenter"),
                 line_spacing=1, manager=MANAGER
             )
             med_skill = cat.skill
@@ -1942,7 +1942,7 @@ class MedDenScreen(Screens):
             self.cat_names.append(pygame_gui.elements.UITextBox(name,
                                                                 scale(
                                                                     pygame.Rect((pos_x - 60, pos_y + 100), (220, 60))),
-                                                                object_id="text_box", manager=MANAGER))
+                                                                object_id="#text_box_30_horizcenter", manager=MANAGER))
 
             pos_x += 200
             if pos_x >= 1340:

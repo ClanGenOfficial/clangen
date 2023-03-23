@@ -154,7 +154,7 @@ class StartScreen(Screens):
         self.error_label = pygame_gui.elements.UITextBox(
             "",
             scale(pygame.Rect((275, 370), (770, 720))),
-            object_id="#error_text_box",
+            object_id="#text_box_14_horizleft",
             manager=MANAGER,
             layer_starting_height=3)
 
@@ -165,7 +165,7 @@ class StartScreen(Screens):
             "We\'ll be happy to help! Please include the error message and the traceback below (if available). " \
             '<br><a href="https://discord.gg/clangen">Discord</a>', # pylint: disable=line-too-long
             scale(pygame.Rect((1055, 430), (350, 600))),
-            object_id="#gethelp_text_box",
+            object_id="#text_box_14_horizleft",
             layer_starting_height=3,
             manager=MANAGER
         )
@@ -659,7 +659,7 @@ class SettingsScreen(Screens):
                 desc[0],
                 scale(pygame.Rect((450, n * 78), (1000, 78))),
                 container=self.checkboxes_text["container_general"],
-                object_id=get_text_box_theme("#setting_text_box"),
+                object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
                 manager=MANAGER)
             self.checkboxes_text[code].disable()
             n += 1
@@ -698,7 +698,7 @@ class SettingsScreen(Screens):
                 desc[0],
                 scale(pygame.Rect((450, n * 78), (1000, 78))),
                 container=self.checkboxes_text["container_relation"],
-                object_id=get_text_box_theme("#setting_text_box"),
+                object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
                 manager=MANAGER)
             self.checkboxes_text[code].disable()
             n += 1

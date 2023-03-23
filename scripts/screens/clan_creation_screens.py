@@ -98,7 +98,7 @@ class MakeClanScreen(Screens):
         self.menu_warning = pygame_gui.elements.UITextBox(
             'Note: going back to main menu resets the generated cats.',
             scale(pygame.Rect((50, 50), (1200, -1))),
-            object_id=get_text_box_theme("#cat_profile_info_box"), manager=MANAGER
+            object_id=get_text_box_theme("#text_box_22_horizleft"), manager=MANAGER
         )
         self.main_menu = UIImageButton(scale(pygame.Rect((50, 100), (306, 60))), "", object_id="#main_menu_button"
                                        , manager=MANAGER)
@@ -659,9 +659,9 @@ class MakeClanScreen(Screens):
         self.elements['next_step'] = UIImageButton(scale(pygame.Rect((800, 1240), (294, 60))), "",
                                                    object_id="#next_step_button", manager=MANAGER)
         self.elements['mode_details'] = UITextBoxTweaked("", scale(pygame.Rect((650, 320), (810, 922))),
-                                                         object_id="#game_mode_details", manager=MANAGER)
+                                                         object_id="#text_box_30_horizleft_pad_40_40", manager=MANAGER)
         self.elements['mode_name'] = UITextBoxTweaked("", scale(pygame.Rect((850, 270), (400, 100))),
-                                                      object_id="#clan_header_text_box", manager=MANAGER)
+                                                      object_id="#text_box_30_horizcenter_white", manager=MANAGER)
 
         self.refresh_text_and_buttons()
 
@@ -710,7 +710,7 @@ class MakeClanScreen(Screens):
                                                                      MakeClanScreen.clan_frame_img, manager=MANAGER)
         self.elements["clan_name"] = pygame_gui.elements.UITextBox(self.clan_name + "Clan",
                                                                    scale(pygame.Rect((585, 220), (432, 100))),
-                                                                   object_id="#clan_header_text_box", manager=MANAGER)
+                                                                   object_id="#text_box_30_horizcenter_white", manager=MANAGER)
 
         # Roll_buttons
         x_pos = 310
@@ -755,7 +755,7 @@ class MakeClanScreen(Screens):
 
         # info for chosen cats:
         self.elements['cat_info'] = UITextBoxTweaked("", scale(pygame.Rect((880, 520), (200, 200))), visible=False,
-                                                     object_id=get_text_box_theme("#cat_profile_info_box"),
+                                                     object_id=get_text_box_theme("#text_box_22_horizleft"),
                                                      line_spacing=0.95, manager=MANAGER)
         self.elements['cat_name'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((300, 350), (1000, 110))),
                                                                   visible=False,
@@ -789,11 +789,11 @@ class MakeClanScreen(Screens):
                                                                      MakeClanScreen.clan_frame_img, manager=MANAGER)
         self.elements["clan_name"] = pygame_gui.elements.UITextBox(self.clan_name + "Clan",
                                                                    scale(pygame.Rect((585, 220), (432, 100))),
-                                                                   object_id="#clan_header_text_box", manager=MANAGER)
+                                                                   object_id="#text_box_30_horizcenter_white", manager=MANAGER)
 
         # info for chosen cats:
         self.elements['cat_info'] = UITextBoxTweaked("", scale(pygame.Rect((880, 520), (200, 200))), visible=False,
-                                                     object_id=get_text_box_theme("#cat_profile_info_box"),
+                                                     object_id=get_text_box_theme("#text_box_22_horizleft"),
                                                      line_spacing=0.95, manager=MANAGER)
         self.elements['cat_name'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((300, 350), (1000, 110))),
                                                                   visible=False,
@@ -826,11 +826,11 @@ class MakeClanScreen(Screens):
                                                                      MakeClanScreen.clan_frame_img, manager=MANAGER)
         self.elements["clan_name"] = pygame_gui.elements.UITextBox(self.clan_name + "Clan",
                                                                    scale(pygame.Rect((585, 220), (432, 100))),
-                                                                   object_id="#clan_header_text_box", manager=MANAGER)
+                                                                   object_id="#text_box_30_horizcenter_white", manager=MANAGER)
 
         # info for chosen cats:
         self.elements['cat_info'] = UITextBoxTweaked("", scale(pygame.Rect((880, 520), (200, 200))), visible=False,
-                                                     object_id=get_text_box_theme("#cat_profile_info_box"),
+                                                     object_id=get_text_box_theme("#text_box_22_horizleft"),
                                                      line_spacing=0.95, manager=MANAGER)
         self.elements['cat_name'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((300, 350), (1000, 110))),
                                                                   visible=False,
@@ -867,11 +867,11 @@ class MakeClanScreen(Screens):
                                                                      MakeClanScreen.clan_frame_img, manager=MANAGER)
         self.elements["clan_name"] = pygame_gui.elements.UITextBox(self.clan_name + "Clan",
                                                                    scale(pygame.Rect((585, 220), (432, 100))),
-                                                                   object_id="#clan_header_text_box", manager=MANAGER)
+                                                                   object_id="#text_box_30_horizcenter_white", manager=MANAGER)
 
         # info for chosen cats:
         self.elements['cat_info'] = UITextBoxTweaked("", scale(pygame.Rect((880, 520), (200, 200))), visible=False,
-                                                     object_id=get_text_box_theme("#cat_profile_info_box"),
+                                                     object_id=get_text_box_theme("#text_box_22_horizleft"),
                                                      line_spacing=0.95, manager=MANAGER)
         self.elements['cat_name'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((300, 350), (1000, 110))),
                                                                   visible=False,

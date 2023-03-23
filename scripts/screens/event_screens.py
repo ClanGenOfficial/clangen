@@ -449,7 +449,7 @@ class EventsScreen(Screens):
             if isinstance(ev.text, str):  # Check to make sure text is a string.
                 self.display_events_elements["event" + str(i)] = pygame_gui.elements.UITextBox(ev.text,
                                                                                                pygame.Rect((0, y), (box_length - 20, -1)),
-                                                                                               object_id=get_text_box_theme("#events_box"),
+                                                                                               object_id=get_text_box_theme("#text_box_30_horizleft"),
                                                                                                container=self.event_container,
                                                                                                layer_starting_height=2
                                                                                                , manager=MANAGER)
