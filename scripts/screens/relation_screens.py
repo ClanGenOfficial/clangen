@@ -568,17 +568,15 @@ class FamilyTreeScreen(Screens):
             MANAGER)
 
         # now grab the other necessary UI elements
-        self.previous_group_page = UIImageButton(scale(pygame.Rect((861, 1291), (68, 68))),
+        self.previous_group_page = UIImageButton(scale(pygame.Rect((891, 1281), (68, 68))),
                                                  "",
                                                  object_id="#arrow_left_button",
-                                                 manager=MANAGER,
-                                                 container=self.family_tree)
+                                                 manager=MANAGER)
         self.previous_group_page.disable()
-        self.next_group_page = UIImageButton(scale(pygame.Rect((1002, 1291), (68, 68))),
+        self.next_group_page = UIImageButton(scale(pygame.Rect((1032, 1281), (68, 68))),
                                              "",
                                              object_id="#arrow_right_button",
-                                             manager=MANAGER,
-                                             container=self.family_tree)
+                                             manager=MANAGER)
         self.next_group_page.disable()
         self.relation_backdrop = pygame_gui.elements.UIImage(scale(pygame.Rect((530, 950), (940, 342))),
                                                              pygame.transform.scale(
