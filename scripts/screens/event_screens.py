@@ -54,7 +54,9 @@ class EventsScreen(Screens):
         self.open_involved_cat_button = None
 
     def handle_event(self, event):
-        if event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
+        if game.switches['window_open']:
+            pass
+        elif event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
             if event.ui_element == self.ceremonies_events_button and self.ceremony_alert:
                 self.ceremony_alert.kill()
             elif event.ui_element == self.birth_death_events_button and self.birth_death_alert:
@@ -67,7 +69,9 @@ class EventsScreen(Screens):
                 self.other_clans_alert.kill()
             elif event.ui_element == self.misc_events_button and self.misc_alert:
                 self.misc_alert.kill()
-        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+        if game.switches['window_open']:
+            pass
+        elif event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.timeskip_button:
                 events_class.one_moon()
                 if get_living_clan_cat_count(Cat) == 0:

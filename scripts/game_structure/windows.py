@@ -14,6 +14,7 @@ from scripts.game_structure.game_essentials import game
 
 class SaveCheck(UIWindow):
     def __init__(self, last_screen, isMainMenu, mm_btn):
+        game.switches['window_open'] = True
         print("Save Check Window Opened")
         if game.is_close_menu_open:
             print("Save Check Window already open")
@@ -99,6 +100,7 @@ class SaveCheck(UIWindow):
                     game.switches['cur_screen'] = 'start screen'
                     game.switch_screens = True
                     self.kill()
+                    game.switches['window_open'] = False
                 else:
                     game.is_close_menu_open = False
                     quit(savesettings=False, clearevents=False)
@@ -113,6 +115,7 @@ class SaveCheck(UIWindow):
                     self.save_button_saved_state.show()
             elif event.ui_element == self.back_button:
                 game.is_close_menu_open = False
+                game.switches['window_open'] = False
                 self.kill()
                 if self.isMainMenu:
                     self.mm_btn.enable()
@@ -126,6 +129,7 @@ class DeleteCheck(UIWindow):
                          window_display_title='Delete Check',
                          object_id='#delete_check_window',
                          resizable=False)
+        game.switches['window_open'] = True
         self.clan_name = clan_name
         self.reloadscreen = reloadscreen
 
@@ -167,6 +171,7 @@ class DeleteCheck(UIWindow):
 
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.delete_it_button:
+                game.switches['window_open'] = False
                 print("delete")
                 rempath = get_save_dir() + "/" + self.clan_name
                 shutil.rmtree(rempath)
@@ -176,15 +181,14 @@ class DeleteCheck(UIWindow):
                     os.remove(rempath + "clan.txt")
                 else:
                     print("No clan.json/txt???? clan prolly wasnt initalized kekw")
-
-
                 self.kill()
-
                 self.reloadscreen('switch clan screen')
 
             elif event.ui_element == self.go_back_button:
+                game.switches['window_open'] = False
                 self.kill()
             elif event.ui_element == self.back_button:
+                game.switches['window_open'] = False
                 game.is_close_menu_open = False
                 self.kill()
 
@@ -195,6 +199,7 @@ class GameOver(UIWindow):
                          window_display_title='Game Over',
                          object_id='#game_over_window',
                          resizable=False)
+        game.switches['window_open'] = True
         self.clan_name = str(game.clan.name + 'Clan')
         self.last_screen = last_screen
         self.game_over_message = UITextBoxTweaked(
@@ -238,7 +243,8 @@ class GameOver(UIWindow):
                 game.last_screen_forupdate = game.switches['cur_screen']
                 game.switches['cur_screen'] = 'start screen'
                 game.switch_screens = True
+                game.switches['window_open'] = False
                 self.kill()
             elif event.ui_element == self.not_yet_button:
-
+                game.switches['window_open'] = False
                 self.kill()
