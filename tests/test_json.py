@@ -53,3 +53,6 @@ class TestJsonValidity(unittest.TestCase):
         with self.assertRaises(SystemExit) as cm:
             test()
         self.assertEqual(cm.exception.code, 0)
+
+if __name__ == "__main__":
+    test()
