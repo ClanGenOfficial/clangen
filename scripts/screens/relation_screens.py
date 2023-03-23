@@ -551,7 +551,10 @@ class FamilyTreeScreen(Screens):
                 game.switches['root_cat'] = None
             elif event.ui_element in self.relation_elements.values() or self.cat_elements.values():
                 try:
-                    game.switches['cat'] = event.ui_element.return_cat_id()
+                    id = event.ui_element.return_cat_id()
+                    if Cat.fetch_cat(id).faded:
+                        return
+                    game.switches['cat'] = id
                 except AttributeError:
                     return
                 if pygame.key.get_mods() & pygame.KMOD_SHIFT:
@@ -622,6 +625,7 @@ class FamilyTreeScreen(Screens):
                                                             manager=MANAGER,
                                                             container=self.family_tree)
         self.center_cat_frame.disable()
+        self.group_page_number = 1
         # self.family_setup()
         self.create_family_tree()
         self.get_previous_next_cat()
@@ -659,11 +663,10 @@ class FamilyTreeScreen(Screens):
             y_dim += 196
             y_pos += 196
             for parent in self.parents:
-                if parent in game.clan.faded_ids:
-                    continue
-                self.grandparents.extend(Cat.all_cats[parent].get_parents())
+                _temp_ob = Cat.fetch_cat(parent)
+                self.grandparents.extend(_temp_ob.get_parents())
                 # collect parent siblings
-                self.parents_siblings.extend(Cat.all_cats[parent].get_siblings())
+                self.parents_siblings.extend(_temp_ob.get_siblings())
                 # collect siblings
             if self.grandparents:
                 y_dim += 160
@@ -672,14 +675,14 @@ class FamilyTreeScreen(Screens):
             self.siblings.extend(self.the_cat.get_siblings())
             x_dim += 309
             for sibling in self.siblings:
-                if sibling in game.clan.faded_ids:
-                    continue
+                _temp_ob = Cat.fetch_cat(sibling)
                 # collect sibling mates
-                if Cat.all_cats[sibling].mate:
-                    self.siblings_mates.append(Cat.all_cats[sibling].mate)
-                    self.siblings_mates.extend(Cat.all_cats[sibling].previous_mates)
+                if not _temp_ob.faded:
+                    if _temp_ob.mate:
+                        self.siblings_mates.append(_temp_ob.mate)
+                    self.siblings_mates.extend(_temp_ob.previous_mates)
                 # collect sibling kits
-                self.siblings_kits.extend(Cat.all_cats[sibling].get_children())
+                self.siblings_kits.extend(_temp_ob.get_children())
             if self.siblings_mates:
                 x_dim += 417
             if self.siblings_kits:
@@ -692,9 +695,8 @@ class FamilyTreeScreen(Screens):
             if not self.siblings_mates and not self.siblings_kits:
                 x_dim += 433
             for sibling in self.parents_siblings:
-                if sibling in game.clan.faded_ids:
-                    continue
-                cousins = Cat.all_cats[sibling].get_children()
+                _temp_ob = Cat.fetch_cat(sibling)
+                cousins = _temp_ob.get_children()
                 for cousin in cousins:
                     if cousin in self.cousins:
                         continue
@@ -703,7 +705,8 @@ class FamilyTreeScreen(Screens):
         # collect mates
         if self.the_cat.mate:
             self.mates = [self.the_cat.mate]
-            self.mates.extend(self.the_cat.previous_mates)
+        self.mates.extend(self.the_cat.previous_mates)
+
         self.kits = self.the_cat.get_children()
         if self.mates or self.kits:
             x_pos += 276
@@ -713,13 +716,14 @@ class FamilyTreeScreen(Screens):
             if not self.siblings_kits:
                 y_dim += 80
             for kit in self.kits:
-                if kit in game.clan.faded_ids:
-                    continue
+                _temp_ob = Cat.fetch_cat(kit)
                 # collect kits mates
-                if Cat.all_cats[kit].mate:
-                    self.kits_mates.append(Cat.all_cats[kit].mate)
+                if not _temp_ob.faded:
+                    if _temp_ob.mate:
+                        self.kits_mates.append(_temp_ob.mate)
+                    self.kits_mates.extend(_temp_ob.previous_mates)
                 # collect grandkits
-                self.grandkits.extend(Cat.all_cats[kit].get_children())
+                self.grandkits.extend(_temp_ob.get_children())
             if self.kits_mates:
                 x_pos += 202
                 x_dim += 202
@@ -858,13 +862,13 @@ class FamilyTreeScreen(Screens):
                                                                                              (900, 60))),
                                                                                      object_id=get_text_box_theme(),
                                                                                      manager=MANAGER)
-        self.current_group = self.chunks(self.current_group, 27)
+        _current_group = self.chunks(self.current_group, 24)
 
-        if self.group_page_number > len(self.current_group):
-            self.group_page_number = len(self.current_group)
+        if self.group_page_number > len(_current_group):
+            self.group_page_number = max(len(_current_group), 1)
 
-        if self.current_group:
-            display_cats = self.current_group[self.group_page_number - 1]
+        if _current_group:
+            display_cats = _current_group[self.group_page_number - 1]
         else:
             display_cats = []
 
@@ -872,15 +876,15 @@ class FamilyTreeScreen(Screens):
         pos_y = 0
         i = 0
         for kitty in display_cats:
-            if kitty in game.clan.faded_ids:
-                continue
-            kitty = Cat.all_cats[kitty]
+            _kitty = Cat.fetch_cat(kitty)
+            if not _kitty:
+                print(kitty)
             self.relation_elements["cat" + str(i)] = UISpriteButton(
                 scale(pygame.Rect((649 + pos_x, 970 + pos_y), (100, 100))),
-                kitty.big_sprite,
-                cat_id=kitty.ID,
+                _kitty.big_sprite,
+                cat_id=_kitty.ID,
                 manager=MANAGER,
-                tool_tip_text=str(kitty.name)
+                tool_tip_text=str(_kitty.name)
             )
 
             pos_x += 100
@@ -890,10 +894,10 @@ class FamilyTreeScreen(Screens):
             i += 1
 
         # Enable and disable page buttons.
-        if len(self.current_group) <= 1:
+        if len(_current_group) <= 1:
             self.previous_group_page.disable()
             self.next_group_page.disable()
-        elif self.group_page_number >= len(self.current_group):
+        elif self.group_page_number >= len(_current_group):
             self.previous_group_page.enable()
             self.next_group_page.disable()
         elif self.group_page_number == 1 and len(self.current_group) > 1:
