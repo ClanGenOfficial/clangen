@@ -1390,7 +1390,9 @@ class Cat():
             siblings = []
             for par in self.get_parents():
                 par_ob = Cat.fetch_cat(par)
-                siblings.extend(par_ob.get_children())
+                for x in par_ob.get_children():
+                    if x not in siblings:
+                        siblings.append(x)
             return siblings
 
 
