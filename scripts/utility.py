@@ -283,13 +283,15 @@ def create_new_cat(Cat,
 
         # setting gender
         if not gender:
-            gender = choice(['female', 'male'])
+            _gender = choice(['female', 'male'])
+        else:
+            _gender = gender
 
         # other clan cats, apps, and kittens (kittens and apps get indoctrinated lmao no old names for them)
         if other_clan or kit or litter or age < 12:
             new_cat = Cat(moons=age,
                           status=status,
-                          gender=gender,
+                          gender=_gender,
                           backstory=backstory)
         else:
             # grab starting names and accs for loners/kittypets
@@ -316,12 +318,12 @@ def create_new_cat(Cat,
                     new_cat = Cat(moons=age,
                                   prefix=name,
                                   status=status,
-                                  gender=gender,
+                                  gender=_gender,
                                   backstory=backstory)
                 else:  # completely new name
                     new_cat = Cat(moons=age,
                                   status=status,
-                                  gender=gender,
+                                  gender=_gender,
                                   backstory=backstory)
             # these cats keep their old names
             else:
@@ -329,7 +331,7 @@ def create_new_cat(Cat,
                               prefix=name,
                               suffix="",
                               status=status,
-                              gender=gender,
+                              gender=_gender,
                               backstory=backstory)
 
         # give em a collar if they got one
