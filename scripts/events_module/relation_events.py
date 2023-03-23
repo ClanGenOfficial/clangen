@@ -190,8 +190,8 @@ class Relation_Events():
         info_text = ""
 
         # get the cats which are relevant for romantic interactions
-        free_possible_mates = get_free_possible_mates(cat)
-        other_love_interest = get_cats_of_romantic_interest(cat)  
+        free_possible_mates = get_free_possible_mates(cat, Relationship)
+        other_love_interest = get_cats_of_romantic_interest(cat, Relationship)  
         possible_cats = free_possible_mates
         if len(other_love_interest) > 0 and len(other_love_interest) < 3:
             possible_cats.extend(other_love_interest)
@@ -227,7 +227,7 @@ class Relation_Events():
         if self.romantic_events_class.start_interaction(cat, other_cat):
             self.trigger_event(cat)
             self.trigger_event(other_cat)
-            print(info_text)
+            #print(info_text)
 
     def same_age_events(self, cat):
         """	
@@ -238,7 +238,7 @@ class Relation_Events():
             return
 
         range = 15 + randint(0, 10)
-        same_age_cats = get_cats_same_age(cat, range)
+        same_age_cats = get_cats_same_age(cat, Relationship, range)
         if len(same_age_cats) > 0:
             random_cat = choice(same_age_cats)
             if self.can_trigger_events(random_cat) and random_cat.ID in cat.relationships:
@@ -298,7 +298,7 @@ class Relation_Events():
             return
 
         for new_cat in new_cats:
-            same_age_cats = get_cats_same_age(new_cat)
+            same_age_cats = get_cats_same_age(new_cat, Relationship)
             alive_cats = list(filter(lambda c: not c.dead and not c.outside and not c.exiled , list(new_cat.all_cats.values())))
             number = game.config["new_cat"]["cat_amount_welcoming"]
 
@@ -344,7 +344,9 @@ class Relation_Events():
             if inter_cat.ID == main_cat.ID:
                 continue
             if cat_to.ID not in cat_from.relationships:
-                print(f"ERROR: there is no relationship from {cat_from.name} to {cat_to.name}")
+                cat_from.relationships[cat_to.ID] = Relationship(cat_from, cat_to)
+                if cat_from.ID not in cat_to.relationships:
+                    cat_to.relationships[cat_from.ID] = Relationship(cat_from, cat_to)
                 continue
 
             relationship = cat_from.relationships[cat_to.ID]
