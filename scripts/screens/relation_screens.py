@@ -585,6 +585,7 @@ class FamilyTreeScreen(Screens):
                                                                  image_cache.load_image(
                                                                      "resources/images/familytree_relationbackdrop.png").convert_alpha(),
                                                                  (980, 342)), manager=MANAGER)
+        self.relation_backdrop.disable()
 
         if not game.switches['root_cat']:
             game.switches['root_cat'] = Cat.all_cats[game.switches['cat']]
@@ -673,10 +674,10 @@ class FamilyTreeScreen(Screens):
                 # collect sibling mates
                 if Cat.all_cats[sibling].mate:
                     self.siblings_mates.append(Cat.all_cats[sibling].mate)
+                    self.siblings_mates.extend(Cat.all_cats[sibling].previous_mates)
                 # collect sibling kits
                 self.siblings_kits.extend(Cat.all_cats[sibling].get_children())
             if self.siblings_mates:
-                print(self.siblings_mates)
                 x_dim += 417
             if self.siblings_kits:
                 y_dim += 80
@@ -688,7 +689,6 @@ class FamilyTreeScreen(Screens):
             if not self.siblings_mates and not self.siblings_kits:
                 x_dim += 433
             for sibling in self.parents_siblings:
-                print(sibling)
                 if sibling in game.clan.faded_ids:
                     continue
                 cousins = Cat.all_cats[sibling].get_children()
@@ -700,14 +700,13 @@ class FamilyTreeScreen(Screens):
         # collect mates
         if self.the_cat.mate:
             self.mates = [self.the_cat.mate]
-        print(self.mates)
+            self.mates.extend(self.the_cat.previous_mates)
         self.kits = self.the_cat.get_children()
         if self.mates or self.kits:
             x_pos += 276
             x_dim += 280
         # collect kits
         if self.kits:
-            print(self.siblings_kits)
             if not self.siblings_kits:
                 y_dim += 80
             for kit in self.kits:
@@ -767,7 +766,7 @@ class FamilyTreeScreen(Screens):
                                                  container=self.family_tree)
             if self.siblings:
                 if self.siblings_mates or self.siblings_kits:
-                    self.sibling_mates_button = UIImageButton(scale(pygame.Rect((465 + x_pos, 65 + y_pos), (418, 60))),
+                    self.sibling_mates_button = UIImageButton(scale(pygame.Rect((464 + x_pos, 65 + y_pos), (418, 60))),
                                                               "",
                                                               object_id="#siblingmates_button",
                                                               manager=MANAGER,
@@ -828,93 +827,6 @@ class FamilyTreeScreen(Screens):
                                                       manager=MANAGER,
                                                       container=self.family_tree)
 
-    def exit_screen(self):
-        for ele in self.cat_elements:
-            self.cat_elements[ele].kill()
-        self.cat_elements = {}
-
-        for ele in self.relation_elements:
-            self.relation_elements[ele].kill()
-        self.relation_elements = {}
-
-        for ele in self.tabs:
-            self.tabs[ele].kill()
-        self.tabs = {}
-
-        self.grandparents = []
-        self.parents = []
-        self.parents_siblings = []
-        self.cousins = []
-        self.siblings = []
-        self.siblings_mates = []
-        self.siblings_kits = []
-        self.mates = []
-        self.kits = []
-        self.kits_mates = []
-        self.grandkits = []
-        self.current_group = None
-
-        self.previous_cat_button.kill()
-        del self.previous_cat_button
-        self.next_cat_button.kill()
-        del self.next_cat_button
-        self.back_button.kill()
-        del self.back_button
-        self.family_tree.kill()
-        del self.family_tree
-        self.relation_backdrop.kill()
-        del self.relation_backdrop
-        self.root_cat_frame.kill()
-        del self.root_cat_frame
-
-    def get_previous_next_cat(self):
-        """Determines where the previous and next buttons should lead, and enables/disables them"""
-
-        is_instructor = False
-        if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID:
-            is_instructor = True
-
-        previous_cat = 0
-        next_cat = 0
-        if self.the_cat.dead and not is_instructor and not self.the_cat.df:
-            previous_cat = game.clan.instructor.ID
-
-        if is_instructor:
-            next_cat = 1
-
-        for check_cat in Cat.all_cats_list:
-            if check_cat.ID == self.the_cat.ID:
-                next_cat = 1
-            else:
-                if next_cat == 0 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead and \
-                        check_cat.ID != game.clan.instructor.ID and check_cat.outside == self.the_cat.outside and \
-                        check_cat.df == self.the_cat.df and not check_cat.faded:
-                    previous_cat = check_cat.ID
-
-                elif next_cat == 1 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead and \
-                        check_cat.ID != game.clan.instructor.ID and check_cat.outside == self.the_cat.outside and \
-                        check_cat.df == self.the_cat.df and not check_cat.faded:
-                    next_cat = check_cat.ID
-
-                elif int(next_cat) > 1:
-                    break
-
-        if next_cat == 1:
-            next_cat = 0
-
-        self.next_cat = next_cat
-        self.previous_cat = previous_cat
-
-        if self.next_cat == 0:
-            self.next_cat_button.disable()
-        else:
-            self.next_cat_button.enable()
-
-        if self.previous_cat == 0:
-            self.previous_cat_button.disable()
-        else:
-            self.previous_cat_button.enable()
-
     def handle_relation_groups(self):
         """Updates the given group"""
         for ele in self.relation_elements:
@@ -924,12 +836,12 @@ class FamilyTreeScreen(Screens):
         self.update_tab()
         if not self.current_group:
             self.relation_elements["no_cats_notice"] = pygame_gui.elements.UITextBox("None",
-                                                                                scale(
-                                                                                    pygame.Rect(
-                                                                                        (550, 1080),
-                                                                                        (900, 60))),
-                                                                                object_id=get_text_box_theme(),
-                                                                                manager=MANAGER)
+                                                                                     scale(
+                                                                                         pygame.Rect(
+                                                                                             (550, 1080),
+                                                                                             (900, 60))),
+                                                                                     object_id=get_text_box_theme(),
+                                                                                     manager=MANAGER)
         self.current_group = self.chunks(self.current_group, 27)
 
         if self.group_page_number > len(self.current_group):
@@ -951,7 +863,9 @@ class FamilyTreeScreen(Screens):
                 scale(pygame.Rect((549 + pos_x, 970 + pos_y), (100, 100))),
                 kitty.big_sprite,
                 cat_id=kitty.ID,
-                manager=MANAGER)
+                manager=MANAGER,
+                tool_tip_text=str(kitty.name)
+            )
 
             pos_x += 100
             if pos_x > 800:
@@ -977,8 +891,6 @@ class FamilyTreeScreen(Screens):
         for ele in self.tabs:
             self.tabs[ele].kill()
         self.tabs = {}
-
-
 
         if self.current_group == self.grandparents:
             self.tabs['grandparents_tab'] = pygame_gui.elements.UIImage(scale(pygame.Rect((1164, 890), (256, 60))),
@@ -1058,8 +970,95 @@ class FamilyTreeScreen(Screens):
                                                                          (200, 60)),
                                                                      manager=MANAGER)
 
+    def get_previous_next_cat(self):
+        """Determines where the previous and next buttons should lead, and enables/disables them"""
+
+        is_instructor = False
+        if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID:
+            is_instructor = True
+
+        previous_cat = 0
+        next_cat = 0
+        if self.the_cat.dead and not is_instructor and not self.the_cat.df:
+            previous_cat = game.clan.instructor.ID
+
+        if is_instructor:
+            next_cat = 1
+
+        for check_cat in Cat.all_cats_list:
+            if check_cat.ID == self.the_cat.ID:
+                next_cat = 1
+            else:
+                if next_cat == 0 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead and \
+                        check_cat.ID != game.clan.instructor.ID and check_cat.outside == self.the_cat.outside and \
+                        check_cat.df == self.the_cat.df and not check_cat.faded:
+                    previous_cat = check_cat.ID
+
+                elif next_cat == 1 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead and \
+                        check_cat.ID != game.clan.instructor.ID and check_cat.outside == self.the_cat.outside and \
+                        check_cat.df == self.the_cat.df and not check_cat.faded:
+                    next_cat = check_cat.ID
+
+                elif int(next_cat) > 1:
+                    break
+
+        if next_cat == 1:
+            next_cat = 0
+
+        self.next_cat = next_cat
+        self.previous_cat = previous_cat
+
+        if self.next_cat == 0:
+            self.next_cat_button.disable()
+        else:
+            self.next_cat_button.enable()
+
+        if self.previous_cat == 0:
+            self.previous_cat_button.disable()
+        else:
+            self.previous_cat_button.enable()
+
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]
+
+    def exit_screen(self):
+        for ele in self.cat_elements:
+            self.cat_elements[ele].kill()
+        self.cat_elements = {}
+
+        for ele in self.relation_elements:
+            self.relation_elements[ele].kill()
+        self.relation_elements = {}
+
+        for ele in self.tabs:
+            self.tabs[ele].kill()
+        self.tabs = {}
+
+        self.grandparents = []
+        self.parents = []
+        self.parents_siblings = []
+        self.cousins = []
+        self.siblings = []
+        self.siblings_mates = []
+        self.siblings_kits = []
+        self.mates = []
+        self.kits = []
+        self.kits_mates = []
+        self.grandkits = []
+        self.current_group = None
+
+        self.previous_cat_button.kill()
+        del self.previous_cat_button
+        self.next_cat_button.kill()
+        del self.next_cat_button
+        self.back_button.kill()
+        del self.back_button
+        self.family_tree.kill()
+        del self.family_tree
+        self.relation_backdrop.kill()
+        del self.relation_backdrop
+        self.root_cat_frame.kill()
+        del self.root_cat_frame
 
 
 class ChooseMateScreen(Screens):
@@ -2586,7 +2585,8 @@ class MediationScreen(Screens):
         self.update_list_cats()
 
     def update_list_cats(self):
-        self.all_cats_list = [i for i in Cat.all_cats_list if (i.ID != self.mediators[self.selected_mediator].ID) and not (i.dead or i.outside)]
+        self.all_cats_list = [i for i in Cat.all_cats_list if
+                              (i.ID != self.mediators[self.selected_mediator].ID) and not (i.dead or i.outside)]
         self.all_cats = self.chunks(self.all_cats_list, 24)
 
         self.update_page()
