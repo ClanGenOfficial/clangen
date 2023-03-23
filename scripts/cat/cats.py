@@ -543,14 +543,8 @@ class Cat():
             self.dead = True
             self.thought = 'Is surprised to find themselves walking the stars of Silverpelt'
 
-        """if self.mate is not None:
-            if isinstance(self.mate, str):
-                mate_cat: Cat = Cat.all_cats[self.mate]
-                if isinstance(mate_cat, Cat):
-                    mate_cat.mate = None
-            elif isinstance(self.mate, Cat):
-                self.mate.mate = None
-            self.mate = None"""
+        # Clear Relationships. 
+        self.relationships = {}
 
         for app in self.apprentice.copy():
             Cat.fetch_cat(app).update_mentor()
@@ -1047,7 +1041,7 @@ class Cat():
     def create_interaction(self):
         """Creates an interaction between this cat and another, which effects relationship values. """
         # if the cat has no relationships, skip
-        if len(self.relationships) < 1 or not self.relationships:
+        if not self.relationships or len(self.relationships) < 1:
             return
 
         cats_to_choose = list(
@@ -1131,7 +1125,7 @@ class Cat():
     def relationship_interaction(self):
         """Randomly choose a cat of the clan and have a interaction with them."""
         # if the cat has no relationships, skip
-        if len(self.relationships) < 1 or not self.relationships:
+        if not self.relationships or len(self.relationships) < 1:
             return
 
         cats_to_choose = list(
@@ -2121,25 +2115,27 @@ class Cat():
         
         # If only deal with relationships if this is a breakup. 
         if breakup:
-            if other_cat.ID not in self.relationships:
-                self.relationships[other_cat.ID] = Relationship(self, other_cat, True)
-            if self.ID not in other_cat.relationships:
-                other_cat.relationships[self.ID] = Relationship(other_cat, self, True)
+            if not self.dead:
+                if other_cat.ID not in self.relationships:
+                    self.relationships[other_cat.ID] = Relationship(self, other_cat, True)
+                self_relationship = self.relationships[other_cat.ID]
+                self_relationship.romantic_love -= 40
+                self_relationship.comfortable -= 20
+                self_relationship.trust -= 10
+                self_relationship.mate = False
+                if fight:
+                    self_relationship.platonic_like -= 30
 
-            self_relationship = self.relationships[other_cat.ID]
-            other_relationship = other_cat.relationships[self.ID]
-
-            self_relationship.romantic_love -= 40
-            other_relationship.romantic_love -= 40
-            self_relationship.comfortable -= 20
-            other_relationship.comfortable -= 20
-            self_relationship.trust -= 10
-            other_relationship.trust -= 10
-            self_relationship.mate = False
-            other_relationship.mate = False
-            if fight:
-                self_relationship.platonic_like -= 30
-                other_relationship.platonic_like -= 30
+            if not other_cat.dead:
+                if self.ID not in other_cat.relationships:
+                    other_cat.relationships[self.ID] = Relationship(other_cat, self, True)
+                other_relationship = other_cat.relationships[self.ID]
+                other_relationship.romantic_love -= 40
+                other_relationship.comfortable -= 20
+                other_relationship.trust -= 10
+                other_relationship.mate = False
+                if fight:
+                    other_relationship.platonic_like -= 30
 
         self.mate = None
         other_cat.mate = None
@@ -2166,21 +2162,24 @@ class Cat():
             other_cat.previous_mates.remove(other_cat.mate)
 
         # Set starting relationship values
-        if other_cat.ID not in self.relationships:
-            self.relationships[other_cat.ID] = Relationship(self, other_cat, True)
-        if self.ID not in other_cat.relationships:
-            other_cat.relationships[self.ID] = Relationship(other_cat, self, True)
 
-        self_relationship = self.relationships[other_cat.ID]
-        other_relationship = other_cat.relationships[self.ID]
-        self_relationship.romantic_love += 20
-        other_relationship.romantic_love += 20
-        self_relationship.comfortable += 20
-        other_relationship.comfortable += 20
-        self_relationship.trust += 10
-        other_relationship.trust += 10
-        self_relationship.mate = True
-        other_relationship.mate = True
+        if not self.dead:
+            if other_cat.ID not in self.relationships:
+                self.relationships[other_cat.ID] = Relationship(self, other_cat, True)
+            self_relationship = self.relationships[other_cat.ID]
+            self_relationship.romantic_love += 20
+            self_relationship.comfortable += 20
+            self_relationship.trust += 10
+            self_relationship.mate = True
+
+        if not other_cat.dead:
+            if self.ID not in other_cat.relationships:
+                other_cat.relationships[self.ID] = Relationship(other_cat, self, True)
+            other_relationship = other_cat.relationships[self.ID]
+            other_relationship.romantic_love += 20
+            other_relationship.comfortable += 20
+            other_relationship.trust += 10
+            other_relationship.mate = True
 
     def create_one_relationship(self, other_cat: Cat):
         """Create a new relationship between current cat and other cat. Returns: Relationship"""
@@ -2254,16 +2253,8 @@ class Cat():
                                    trust=trust)
                 self.relationships[the_cat.ID] = rel
 
-    def save_relationship_of_cat(self):
+    def save_relationship_of_cat(self, relationship_dir):
         # save relationships for each cat
-        clanname = None
-        if game.switches['clan_name'] != '':
-            clanname = game.switches['clan_name']
-        elif len(game.switches['clan_name']) > 0:
-            clanname = game.switches['clan_list'][0]
-        elif game.clan is not None:
-            clanname = game.clan.name
-        relationship_dir = get_save_dir() + '/' + clanname + '/relationships'
         if not os.path.exists(relationship_dir):
             os.makedirs(relationship_dir)
 

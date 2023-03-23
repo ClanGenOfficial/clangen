@@ -69,7 +69,6 @@ class Relation_Events():
 
         #Move on from dead mates
         if cat_mate and "grief stricken" not in cat.illnesses and ((cat_mate.dead and cat_mate.dead_for >= 4) or cat_mate.outside):
-            print("moving on?", str(cat.name))
             # randint is a slow function, don't call it unless we have to.
             if random.random() > 0.8: 
                 text = f'{cat.name} will always love {cat_mate.name} but has decided to move on.'
@@ -204,6 +203,11 @@ class Relation_Events():
         # only adding cats which already have SOME relationship with each other
         cat_to_choose_from = []
         for inter_cat in possible_cats:
+            if inter_cat.ID not in cat.relationships:
+                cat.relationships[inter_cat.ID] = Relationship(cat, inter_cat)
+            if cat.ID not in inter_cat.relationships:
+                inter_cat.relationships[cat.ID] = Relationship(inter_cat, cat)
+
             cat_to_inter = cat.relationships[inter_cat.ID].platonic_like > 10 or\
                 cat.relationships[inter_cat.ID].comfortable > 10
             inter_to_cat = inter_cat.relationships[cat.ID].platonic_like > 10 or\
