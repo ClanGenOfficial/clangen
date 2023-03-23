@@ -525,7 +525,6 @@ class Cat():
         self.injuries.clear()
         self.illnesses.clear()
 
-
         # Deal with leader death
         text = ""
         if self.status == 'leader':
@@ -564,8 +563,6 @@ class Cat():
 
         if game.clan.game_mode != 'classic':
             self.grief(body)
-
-        print(self.mate)
 
         return text
 
@@ -2113,10 +2110,8 @@ class Cat():
     def unset_mate(self, other_cat: Cat, breakup: bool = False, fight: bool = False):
         """Unset the mate from both self and other_cat"""   
 
-        print("unsetting mate")
         # Both cats must have mates for this to work
         if not self.mate or not other_cat.mate:
-            print("One cat doesn't have a mate. ")
             return
         
         # AND they must be mates with each other. 
