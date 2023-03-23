@@ -610,7 +610,7 @@ else:
 
 def load_manager(res: tuple):
     # initialize pygame_gui manager, and load themes
-    manager = pygame_gui.ui_manager.UIManager(res, 'resources/defaults.json')
+    manager = pygame_gui.ui_manager.UIManager(res, 'resources/defaults.json', enable_live_theme_updates=False)
     manager.add_font_paths(
         font_name='notosans',
         regular_path='resources/fonts/NotoSans-Medium.ttf',
