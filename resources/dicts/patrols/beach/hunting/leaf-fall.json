@@ -360,13 +360,9 @@
     "fail_text": [
     "p_l and r_c end up arguing about whether or not to continue the patrol, the rest of the cats are not happy with them both after they decide to go back to camp after already being soaked to the bone, no prey and still wet what a waste of time.",
     null,
-    "p_l and the rest of the patrol decide to seek shelter under some trees. r_c sees a large tree with a weird mark on it, they race ahead happy for the prospect of getting out of the rain. As they run under the tree they suddenly scream out in pain, the rest of the patrol can only watch in terror as their skin seems to burn off in random intervals and they are unable to escape, slowly their screams die off leaving only their too still body behind. p_l swallows their grief and orders their patrol back to camp, they have to inform everyone of this strange tree and they have to discuss if its worth it to recover r_c their body, they don't want any other cat to die such a horrifying death.",
-    "p_l sees a large tree they can shelter under. Just as they attempt to go under the tree they feel a burning pain on their skin, they jump back in a hurry and warns the patrol to not go under this tree. They rush back to camp to consult with their leader about this tree and to treat these strange burn wounds caused somehow by the rain."
+    "p_l and the rest of the patrol decide to seek shelter under some trees. r_c sees a large tree with a weird, flat object attached to it. They race ahead, happy at the prospect of getting out of the rain. As they run under the tree they suddenly scream out in pain, the rest of the patrol can only watch in terror as r_c falls and spasms beneath the tree, the cause seeming to be the rain dripping from it's leaves. p_l swallows their horror and orders their patrol back to camp, they'll have to inform everyone of this tree and discuss if its worth it to recover r_c's body, they don't want any other cat to die such a horrifying death.",
+    "p_l sees a large tree and heads towards it for shelter. Just as the patrol comes under it's leaves, r_c yelps and leaps away! The rain dripping from the tree's leaves seems to burn them and the patrol quickly runs back out into the downpour. The patrol decides to head back to camp, both needing to warn the Clan about this deceptive tree and needing to treat r_c's new wounds."
     ],
-    "win_skills": null,
-    "win_trait": null,
-    "fail_skills": null,
-    "fail_trait": null,
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": null,

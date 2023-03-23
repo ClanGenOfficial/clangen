@@ -1165,6 +1165,6 @@
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
-    "antagonize_fail_text": null,
+    "antagonize_fail_text": null
 }
 ]
