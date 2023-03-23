@@ -1383,11 +1383,27 @@ class Cat():
 
     def get_siblings(self):
         """Returns list of the siblings."""
-        return self.siblings
+        if not self.faded:
+            return self.siblings
+        else:
+            # Finding the siblings of faded cats. 
+            siblings = []
+            for par in self.get_parents():
+                par_ob = Cat.fetch_cat(par)
+                for x in par_ob.get_children():
+                    if x not in siblings:
+                        siblings.append(x)
+            return siblings
+
 
     def get_children(self):
         """Returns list of the children."""
-        return self.children
+        if not self.faded:
+            return self.children
+        else:
+            children = [i.ID for i in Cat.all_cats.values() if self.ID in i.get_parents()]
+            children.extend(self.faded_offspring)
+            return children
 
     def is_grandparent(self, other_cat: Cat):
         """Check if the cat is the grandparent of the other cat."""
