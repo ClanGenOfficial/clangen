@@ -170,7 +170,7 @@ class Freshkill_Pile():
             needed_prey : int|float
                 the amount of prey the clan needs
         """
-        living_cats = list(filter(lambda cat_: not cat_.dead and not cat_.outside and not cat_.exiled, Cat.all_cats.values()))
+        living_cats = [i for i in Cat.all_cats.values() if not (i.dead or i.outside or i.exiled)]
         sick_cats = [cat for cat in living_cats if cat.is_injured() or cat.is_ill()]
         queens = get_alive_clan_queens(Cat.all_cats)
 

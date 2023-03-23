@@ -95,7 +95,7 @@ class ClanScreen(Screens):
         i = 0
         for x in game.clan.clan_cats:
             if not Cat.all_cats[x].dead and Cat.all_cats[x].in_camp and \
-                    not Cat.all_cats[x].exiled and not Cat.all_cats[x].outside:
+                    not (Cat.all_cats[x].exiled or Cat.all_cats[x].outside) and (Cat.all_cats[x].status != 'newborn' or game.config['fun']['all_cats_are_newborn'] or game.config['fun']['newborns_can_roam']):
 
                 i += 1
                 if i > self.max_sprites_displayed:
@@ -305,6 +305,15 @@ class ClanScreen(Screens):
             if Cat.all_cats[x].dead or Cat.all_cats[x].outside:
                 continue
 
+            # Newborns are not meant to be placed. They are hiding. 
+            if Cat.all_cats[x].status == 'newborn' or game.config['fun']['all_cats_are_newborn']:
+                if game.config['fun']['all_cats_are_newborn'] or game.config['fun']['newborns_can_roam']:
+                    # Free them
+                    Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(first_choices, all_dens,
+                                                                                     [1, 100, 1, 1, 1, 100, 50])
+                else:
+                    continue
+            # print(Cat.all_cats[x].status)
             if Cat.all_cats[x].status in ['apprentice', 'mediator apprentice']:
                 Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(first_choices, all_dens,
                                                                                  [1, 50, 1, 1, 100, 100, 1])
@@ -378,6 +387,7 @@ class StarClanScreen(Screens):
         self.dead_cats = None
         self.filter_age = None
         self.filter_rank = None
+        self.filter_exp = None
         self.filter_by_open = None
         self.filter_by_closed = None
         self.starclan_bg = pygame.transform.scale(
@@ -406,18 +416,21 @@ class StarClanScreen(Screens):
                 self.filter_rank.show()
                 self.filter_age.show()
                 self.filter_id.show()
+                self.filter_exp.show()
             elif event.ui_element == self.filter_by_open:
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
                 self.filter_id.hide()
                 self.filter_rank.hide()
                 self.filter_age.hide()
+                self.filter_exp.hide()
             elif event.ui_element == self.filter_age:
                 self.filter_age.hide()
                 self.filter_rank.hide()
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
                 self.filter_id.hide()
+                self.filter_exp.hide()
                 game.sort_type = "reverse_age"
                 Cat.sort_cats()
                 self.get_dead_cats()
@@ -428,6 +441,7 @@ class StarClanScreen(Screens):
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
                 self.filter_id.hide()
+                self.filter_exp.hide()
                 game.sort_type = "rank"
                 Cat.sort_cats()
                 self.get_dead_cats()
@@ -438,7 +452,19 @@ class StarClanScreen(Screens):
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
                 self.filter_id.hide()
+                self.filter_exp.hide()
                 game.sort_type = "id"
+                Cat.sort_cats()
+                self.get_dead_cats()
+                self.update_search_cats(self.search_bar.get_text())
+            elif event.ui_element == self.filter_exp:
+                self.filter_age.hide()
+                self.filter_rank.hide()
+                self.filter_by_open.hide()
+                self.filter_by_closed.show()
+                self.filter_id.hide()
+                self.filter_exp.hide()
+                game.sort_type = "exp"
                 Cat.sort_cats()
                 self.get_dead_cats()
                 self.update_search_cats(self.search_bar.get_text())
@@ -462,6 +488,7 @@ class StarClanScreen(Screens):
         self.filter_rank.kill()
         self.filter_age.kill()
         self.filter_id.kill()
+        self.filter_exp.kill()
 
         # Remove currently displayed cats and cat names.
         for cat in self.display_cats:
@@ -484,7 +511,7 @@ class StarClanScreen(Screens):
         cat_profiles()
         self.get_dead_cats()
 
-        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 284), (294, 46))),
+        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 278), (294, 55))),
                                                               object_id="#search_entry_box", manager=MANAGER)
 
         self.starclan_button = UIImageButton(scale(pygame.Rect((230, 270), (68, 68))), "", object_id="#starclan_button"
@@ -550,6 +577,14 @@ class StarClanScreen(Screens):
             starting_height=2, manager=MANAGER
         )
         self.filter_id.hide()
+        y_pos += 58
+        self.filter_exp = UIImageButton(
+            scale(pygame.Rect((x_pos - 2, y_pos), (204, 58))),
+            "",
+            object_id="#filter_exp_button",
+            starting_height=2, manager=MANAGER
+        )
+        self.filter_exp.hide()
 
     def update_search_cats(self, search_text):
         """Run this function when the search text changes, or when the screen is switched to."""
@@ -663,6 +698,7 @@ class DFScreen(Screens):
         self.dead_cats = None
         self.filter_age = None
         self.filter_rank = None
+        self.filter_exp = None
         self.filter_by_open = None
         self.filter_by_closed = None
         self.df_bg = pygame.transform.scale(
@@ -693,6 +729,7 @@ class DFScreen(Screens):
                 self.filter_rank.show()
                 self.filter_id.show()
                 self.filter_age.show()
+                self.filter_exp.show()
             elif event.ui_element == self.filter_by_open:
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
@@ -700,10 +737,12 @@ class DFScreen(Screens):
                 self.filter_rank.hide()
                 self.filter_id.hide()
                 self.filter_age.hide()
+                self.filter_exp.hide()
             elif event.ui_element == self.filter_age:
                 self.filter_id.hide()
                 self.filter_age.hide()
                 self.filter_rank.hide()
+                self.filter_exp.hide()
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
                 game.sort_type = "reverse_age"
@@ -714,6 +753,7 @@ class DFScreen(Screens):
                 self.filter_age.hide()
                 self.filter_id.hide()
                 self.filter_rank.hide()
+                self.filter_exp.hide()
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
                 game.sort_type = "rank"
@@ -724,12 +764,25 @@ class DFScreen(Screens):
                 self.filter_age.hide()
                 self.filter_id.hide()
                 self.filter_rank.hide()
+                self.filter_exp.hide()
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
                 game.sort_type = "id"
                 Cat.sort_cats()
                 self.get_dead_cats()
                 self.update_search_cats(self.search_bar.get_text())
+            elif event.ui_element == self.filter_exp:
+                self.filter_age.hide()
+                self.filter_id.hide()
+                self.filter_rank.hide()
+                self.filter_exp.hide()
+                self.filter_by_open.hide()
+                self.filter_by_closed.show()
+                game.sort_type = "exp"
+                Cat.sort_cats()
+                self.get_dead_cats()
+                self.update_search_cats(self.search_bar.get_text())
+    
             elif event.ui_element in self.display_cats:
                 game.switches["cat"] = event.ui_element.return_cat_id()
                 self.change_screen('profile screen')
@@ -750,6 +803,7 @@ class DFScreen(Screens):
         self.filter_rank.kill()
         self.filter_age.kill()
         self.filter_id.kill()
+        self.filter_exp.kill()
 
         # Remove currently displayed cats and cat names.
         for cat in self.display_cats:
@@ -773,7 +827,7 @@ class DFScreen(Screens):
         cat_profiles()
         self.get_dead_cats()
 
-        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 284), (294, 46))),
+        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 278), (294, 55))),
                                                               object_id="#search_entry_box"
                                                               , manager=MANAGER)
 
@@ -837,6 +891,14 @@ class DFScreen(Screens):
             starting_height=2, manager=MANAGER
         )
         self.filter_id.hide()
+        y_pos += 58
+        self.filter_exp = UIImageButton(
+            scale(pygame.Rect((x_pos - 2, y_pos), (204, 58))),
+            "",
+            object_id="#filter_exp_button",
+            starting_height=2, manager=MANAGER
+        )
+        self.filter_exp.hide()
 
     def update_search_cats(self, search_text):
         """Run this function when the search text changes, or when the screen is switched to."""
@@ -947,6 +1009,7 @@ class ListScreen(Screens):
         self.filter_age = None
         self.filter_id = None
         self.filter_rank = None
+        self.filter_exp = None
         self.filter_by_open = None
         self.filter_by_closed = None
         self.filter_fav = None
@@ -992,6 +1055,7 @@ class ListScreen(Screens):
                 self.filter_rank.show()
                 self.filter_id.show()
                 self.filter_age.show()
+                self.filter_exp.show()
             elif event.ui_element == self.filter_by_open:
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
@@ -999,10 +1063,12 @@ class ListScreen(Screens):
                 self.filter_id.hide()
                 self.filter_rank.hide()
                 self.filter_age.hide()
+                self.filter_exp.hide()
             elif event.ui_element == self.filter_age:
                 self.filter_id.hide()
                 self.filter_age.hide()
                 self.filter_rank.hide()
+                self.filter_exp.hide()
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
                 game.sort_type = "reverse_age"
@@ -1013,6 +1079,7 @@ class ListScreen(Screens):
                 self.filter_id.hide()
                 self.filter_age.hide()
                 self.filter_rank.hide()
+                self.filter_exp.hide()
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
                 game.sort_type = "rank"
@@ -1023,9 +1090,21 @@ class ListScreen(Screens):
                 self.filter_id.hide()
                 self.filter_age.hide()
                 self.filter_rank.hide()
+                self.filter_exp.hide()
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
                 game.sort_type = "id"
+                Cat.sort_cats()
+                self.get_living_cats()
+                self.update_search_cats(self.search_bar.get_text())
+            elif event.ui_element == self.filter_exp:
+                self.filter_id.hide()
+                self.filter_age.hide()
+                self.filter_rank.hide()
+                self.filter_exp.hide()
+                self.filter_by_open.hide()
+                self.filter_by_closed.show()
+                game.sort_type = "exp"
                 Cat.sort_cats()
                 self.get_living_cats()
                 self.update_search_cats(self.search_bar.get_text())
@@ -1046,7 +1125,7 @@ class ListScreen(Screens):
         cat_profiles()
         self.get_living_cats()
 
-        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 284), (294, 46))),
+        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 278), (294, 55))),
                                                               object_id="#search_entry_box", manager=MANAGER)
 
         self.your_clan_button = UIImageButton(scale(pygame.Rect((230, 270), (68, 68))), "",
@@ -1117,6 +1196,14 @@ class ListScreen(Screens):
             starting_height=2, manager=MANAGER
         )
         self.filter_id.hide()
+        y_pos += 58
+        self.filter_exp = UIImageButton(
+            scale(pygame.Rect((x_pos - 2, y_pos), (204, 58))),
+            "",
+            object_id="#filter_exp_button",
+            starting_height=2, manager=MANAGER
+        )
+        self.filter_exp.hide()
 
     def exit_screen(self):
         self.hide_menu_buttons()
@@ -1131,6 +1218,7 @@ class ListScreen(Screens):
         self.filter_rank.kill()
         self.filter_age.kill()
         self.filter_id.kill()
+        self.filter_exp.kill()
         self.filter_fav.kill()
         self.filter_not_fav.kill()
 
@@ -1253,212 +1341,214 @@ class AllegiancesScreen(Screens):
         self.show_menu_buttons()
         self.set_disabled_menu_buttons(["allegiances"])
         self.update_heading_text(f'{game.clan.name}Clan')
-        self.allegiance_list = []
+        allegiance_list = self.get_allegiances_text()
 
-        living_cats = []
-        # Determine the living cats.
-        for the_cat in Cat.all_cats.values():
-            if not the_cat.dead and not the_cat.outside:
-                living_cats.append(the_cat)
-        living_meds = []
-        for the_cat in living_cats:
-            if the_cat.status == 'medicine cat':
-                living_meds.append(the_cat)
-        living_mediators = []
-        for the_cat in living_cats:
-            if the_cat.status == 'mediator':
-                living_mediators.append(the_cat)
 
-        # Pull the clan leaders
-        leader = []
-        if game.clan.leader is not None:
-            if not game.clan.leader.dead and not game.clan.leader.outside:
-                self.allegiance_list.append([
-                    '<b><u>LEADER</u></b>',
-                    f"{game.clan.leader.name} - a {game.clan.leader.describe_cat()}"
-                ])
-
-                if len(game.clan.leader.apprentice) > 0:
-                    if len(game.clan.leader.apprentice) == 1:
-                        self.allegiance_list.append([
-                            '', '      Apprentice: ' +
-                                str(Cat.fetch_cat(game.clan.leader.apprentice[0]).name)
-                        ])
-                    else:
-                        app_names = ''
-                        for app in game.clan.leader.apprentice:
-                            app_names += str(Cat.fetch_cat(app).name) + ', '
-                        self.allegiance_list.append(
-                            ['', '      Apprentices: ' + app_names[:-2]])
-        # deputy
-        if game.clan.deputy is not None and not game.clan.deputy.dead and not game.clan.deputy.outside:
-            self.allegiance_list.append([
-                '<b><u>DEPUTY</u></b>',
-                f"{game.clan.deputy.name} - a {game.clan.deputy.describe_cat()}"
-            ])
-
-            if len(game.clan.deputy.apprentice) > 0:
-                if len(game.clan.deputy.apprentice) == 1:
-                    self.allegiance_list.append([
-                        '', '      Apprentice: ' +
-                            str(Cat.fetch_cat(game.clan.deputy.apprentice[0]).name)
-                    ])
-                else:
-                    app_names = ''
-                    for app in game.clan.deputy.apprentice:
-                        app_names += str(Cat.fetch_cat(app).name) + ', '
-                    self.allegiance_list.append(
-                        ['', '      Apprentices: ' + app_names[:-2]])
-        cat_count = self._extracted_from_screen_switches_24(
-            living_cats, 'medicine cat', '<b><u>MEDICINE CATS</u></b>')
-
-        if living_mediators:
-            self._extracted_from_screen_switches_24(
-                living_cats, 'mediator', '<b><u>MEDIATORS</u></b>')
-
-        queens = get_alive_clan_queens(Cat.all_cats)
-        queens = [cat.ID for cat in queens]
-        cat_count = 0
-        for living_cat__ in living_cats:
-            if str(
-                    living_cat__.status
-            ) == 'warrior' and living_cat__.ID not in queens and not living_cat__.outside:
-                if not cat_count:
-                    self.allegiance_list.append([
-                        '<b><u>WARRIORS</u></b>',
-                        f"{living_cat__.name} - a {living_cat__.describe_cat()}"
-                    ])
-                else:
-                    self.allegiance_list.append([
-                        '',
-                        f"{living_cat__.name} - a {living_cat__.describe_cat()}"
-                    ])
-                if len(living_cat__.apprentice) >= 1:
-                    if len(living_cat__.apprentice) == 1:
-                        self.allegiance_list.append([
-                            '', '      Apprentice: ' +
-                                str(Cat.fetch_cat(living_cat__.apprentice[0]).name)
-                        ])
-                    else:
-                        app_names = ''
-                        for app in living_cat__.apprentice:
-                            app_names += str(Cat.fetch_cat(app).name) + ', '
-                        self.allegiance_list.append(
-                            ['', '      Apprentices: ' + app_names[:-2]])
-                cat_count += 1
-        if not cat_count:
-            self.allegiance_list.append(['<b><u>WARRIORS</u></b>', ''])
-        cat_count = 0
-        for living_cat___ in living_cats:
-            if str(living_cat___.status) in [
-                'apprentice', 'medicine cat apprentice', 'mediator apprentice'
-            ]:
-                if cat_count == 0:
-                    self.allegiance_list.append([
-                        '<b><u>APPRENTICES</u></b>',
-                        f"{living_cat___.name} - a {living_cat___.describe_cat()}"
-                    ])
-                else:
-                    self.allegiance_list.append([
-                        '',
-                        f"{living_cat___.name} - a {living_cat___.describe_cat()}"
-                    ])
-                cat_count += 1
-        if not cat_count:
-            self.allegiance_list.append(['<b><u>APPRENTICES</u></b>', ''])
-        cat_count = 0
-        for living_cat____ in living_cats:
-            if living_cat____.ID in queens:
-                if cat_count == 0:
-                    self.allegiance_list.append([
-                        '<b><u>QUEENS</u></b>',
-                        f"{living_cat____.name} - a {living_cat____.describe_cat()}"
-                    ])
-                else:
-                    self.allegiance_list.append([
-                        '',
-                        f"{living_cat____.name} - a {living_cat____.describe_cat()}"
-                    ])
-                cat_count += 1
-                if len(living_cat____.apprentice) > 0:
-                    if len(living_cat____.apprentice) == 1:
-                        self.allegiance_list.append([
-                            '', '      Apprentice: ' +
-                                str(Cat.fetch_cat(living_cat____.apprentice[0]).name)
-                        ])
-                    else:
-                        app_names = ''
-                        for app in living_cat____.apprentice:
-                            app_names += str(Cat.fetch_cat(app).name) + ', '
-                        self.allegiance_list.append(
-                            ['', '      Apprentices: ' + app_names[:-2]])
-        if not cat_count:
-            self.allegiance_list.append(['<b><u>QUEENS</u></b>', ''])
-        cat_count = self._extracted_from_screen_switches_24(
-            living_cats, 'elder', '<b><u>ELDERS</u></b>')
-        cat_count = self._extracted_from_screen_switches_24(
-            living_cats, 'kitten', '<b><u>KITS</u></b>')
-
-        self.scroll_container = pygame_gui.elements.UIScrollingContainer(scale(pygame.Rect((100, 300), (1400, 1000)))
+        self.scroll_container = pygame_gui.elements.UIScrollingContainer(scale(pygame.Rect((100, 300), (1430, 1000)))
                                                                          , manager=MANAGER)
-        self.cat_names_box = pygame_gui.elements.UITextBox("\n".join([i[1] for i in self.allegiance_list]),
-                                                           scale(pygame.Rect((300, 0), (1100, -1))),
-                                                           object_id=get_text_box_theme("#allegiances_box"),
-                                                           container=self.scroll_container, manager=MANAGER)
+        
+        self.ranks_boxes = []
+        self.names_boxes = []
+        y_pos = 0
+        for x in allegiance_list:
+            self.ranks_boxes.append(pygame_gui.elements.UITextBox(x[0],
+                                   scale(pygame.Rect((0, y_pos), (300, -1))),
+                                   object_id=get_text_box_theme("#allegiances_box"),
+                                   container=self.scroll_container, manager=MANAGER))
+            self.ranks_boxes[-1].disable()
 
-        self.ranks_box = pygame_gui.elements.UITextBox("\n".join([i[0] for i in self.allegiance_list]),
-                                                       scale(pygame.Rect((0, 0), (300, -1))),
-                                                       object_id=get_text_box_theme("#allegiances_box"),
-                                                       container=self.scroll_container, manager=MANAGER)
+            self.names_boxes.append(pygame_gui.elements.UITextBox(x[1],
+                                    scale(pygame.Rect((300, y_pos), (1060, -1))),
+                                    object_id=get_text_box_theme("#allegiances_box"),
+                                    container=self.scroll_container, manager=MANAGER))
+            self.names_boxes[-1].disable()
+            
+            y_pos += 1400 * self.names_boxes[-1].get_relative_rect()[3] / screen_y 
 
-        self.scroll_container.set_scrollable_area_dimensions((1360 / 1600 * screen_x, self.cat_names_box.rect[3]))
-
-        self.ranks_box.disable()
-        self.cat_names_box.disable()
+        
+        self.scroll_container.set_scrollable_area_dimensions((1360 / 1600 * screen_x, y_pos / 1400 * screen_y))
 
     def exit_screen(self):
-        self.ranks_box.kill()
-        self.cat_names_box.kill()
+        for x in self.ranks_boxes:
+            x.kill()
+        del self.ranks_boxes
+        for x in self.names_boxes:
+            x.kill()
+        del self.names_boxes
         self.scroll_container.kill()
-        del self.ranks_box
-        del self.cat_names_box
         del self.scroll_container
         self.heading.kill()
         del self.heading
+    
+    def generate_one_entry(self, cat, extra_details = ""):
+            """ Extra Details will be placed after the cat description, but before the apprentice (if they have one. )"""
+            output = f"{str(cat.name).upper()} - {cat.describe_cat()} {extra_details}"
 
-    # TODO Rename this here and in `screen_switches`
-    def _extracted_from_screen_switches_24(self, living_cats, arg1, arg2):
-        result = 0
-        for living_cat in living_cats:
-            if str(living_cat.status) == arg1 and not living_cat.outside:
-                if result == 0:
-                    self.allegiance_list.append([
-                        arg2,
-                        f"{living_cat.name} - a {living_cat.describe_cat()}"
-                    ])
+            if len(cat.apprentice) > 0:
+                if len(cat.apprentice) == 1:
+                    output += "\n      APPRENTICE: "
                 else:
-                    self.allegiance_list.append([
-                        "",
-                        f"{living_cat.name} - a {living_cat.describe_cat()}"
-                    ])
-                result += 1
-                if len(living_cat.apprentice) > 0:
-                    if len(living_cat.apprentice) == 1:
-                        self.allegiance_list.append([
-                            '', '      Apprentice: ' +
-                                str(Cat.fetch_cat(living_cat.apprentice[0]).name)
-                        ])
-                    else:
-                        app_names = ''
-                        for app in living_cat.apprentice:
-                            app_names += str(Cat.fetch_cat(app).name) + ', '
-                        self.allegiance_list.append(
-                            ['', '      Apprentices: ' + app_names[:-2]])
-        if not result:
-            self.allegiance_list.append([arg2, ''])
-        return result
+                    output += "\n      APPRENTICES: "     
+                output += ", ".join([str(Cat.fetch_cat(i).name).upper() for i in cat.apprentice])
 
+            return output
 
+    def get_allegiances_text(self):
+        """Determine Text. Ouputs list of tuples. """
+
+        living_cats = [i for i in Cat.all_cats.values() if not (i.dead or i.outside)]
+        living_meds = []
+        living_mediators = []
+        living_warriors = []
+        living_apprentices = []
+        living_kits = []
+        living_elders = []
+        for cat in living_cats:
+            if cat.status == "medicine cat":
+                living_meds.append(cat)
+            elif cat.status == "warrior":
+                living_warriors.append(cat)
+            elif cat.status == "mediator":
+                living_mediators.append(cat)
+            elif cat.status in ["apprentice", "medicine cat apprentice", "mediator apprentice"]:
+                living_apprentices.append(cat)
+            elif cat.status in ["kitten", "newborn"]:
+                living_kits.append(cat)
+            elif cat.status == "elder":
+                living_elders.append(cat)
+
+        # Find Queens:
+        queen_dict = {}
+        for cat in living_kits.copy():
+            parents = cat.get_parents()
+            #Fetch parent object, only alive and not outside. 
+            parents = [Cat.fetch_cat(i) for i in parents if not(Cat.fetch_cat(i).dead or Cat.fetch_cat(i).outside)]
+            if not parents:
+                continue
+            
+            if len(parents) == 1 or all(i.gender == "male" for i in parents) or parents[0].gender == "female":
+                if parents[0].ID in queen_dict:
+                    queen_dict[parents[0].ID].append(cat)
+                    living_kits.remove(cat)
+                else:
+                    queen_dict[parents[0].ID] = [cat]
+                    living_kits.remove(cat) 
+            elif len(parents) == 2:
+                if parents[1].ID in queen_dict:
+                    queen_dict[parents[1].ID].append(cat)
+                    living_kits.remove(cat)
+                else:
+                    queen_dict[parents[1].ID] = [cat]
+                    living_kits.remove(cat) 
+
+        # Remove queens from warrior or elder lists, if they are there.  Let them stay on any other lists. 
+        for q in queen_dict:
+            queen = Cat.fetch_cat(q)
+            if queen in living_warriors:
+                living_warriors.remove(queen)
+            elif queen in living_elders:
+                living_elders.remove(queen)
+            
+        #Clan Leader Box:
+        # Pull the clan leaders
+        outputs = []
+        if game.clan.leader and not (game.clan.leader.dead or game.clan.leader.outside):
+                outputs.append([
+                    '<b><u>LEADER</u></b>',
+                    self.generate_one_entry(game.clan.leader)
+                ])
+
+        # Deputy Box:
+        if game.clan.deputy and not (game.clan.deputy.dead or game.clan.deputy.outside):
+            outputs.append([
+                '<b><u>DEPUTY</u></b>',
+                self.generate_one_entry(game.clan.deputy)
+            ])
+        
+        # Medicine Cat Box:
+        if living_meds:
+            _box = ["", ""]
+            if len(living_meds) == 1:
+                _box[0] = '<b><u>MEDICINE CAT</u></b>'
+            else:
+                _box[0] = '<b><u>MEDICINE CATS</u></b>'
+            
+            _box[1] = "\n".join([self.generate_one_entry(i) for i in living_meds])
+            outputs.append(_box)
+        
+        # Mediator Box:
+        if living_mediators:
+            _box = ["", ""]
+            if len(living_mediators) == 1:
+                _box[0] = '<b><u>MEDIATOR</u></b>'
+            else:
+                _box[0] = '<b><u>MEDIATORS</u></b>'
+            
+            _box[1] = "\n".join([self.generate_one_entry(i) for i in living_mediators])
+            outputs.append(_box)
+
+         # Warrior Box:
+        if living_warriors:
+            _box = ["", ""]
+            if len(living_warriors) == 1:
+                _box[0] = '<b><u>WARRIOR</u></b>'
+            else:
+                _box[0] = '<b><u>WARRIORS</u></b>'
+            
+            _box[1] = "\n".join([self.generate_one_entry(i) for i in living_warriors])
+            outputs.append(_box)
+        
+         # Apprentice Box:
+        if living_apprentices:
+            _box = ["", ""]
+            if len(living_apprentices) == 1:
+                _box[0] = '<b><u>APPRENTICE</u></b>'
+            else:
+                _box[0] = '<b><u>APPRENTICES</u></b>'
+            
+            _box[1] = "\n".join([self.generate_one_entry(i) for i in living_apprentices])
+            outputs.append(_box)
+        
+         # Queens and Kits Box:
+        if queen_dict or living_kits:
+            _box = ["", ""]
+            _box[0] = '<b><u>QUEENS AND KITS</u></b>'
+            
+            # This one is a bit different.  First all the queens, and the kits they are caring for. 
+            all_entries = []
+            for q in queen_dict:
+                queen = Cat.fetch_cat(q)
+                kittens = []
+                for k in queen_dict[q]:
+                    kittens += [f"{k.name} - {k.describe_cat(short=True)}"]
+                if len(kittens) == 1:
+                    kittens = f" <i>(caring for {kittens[0]})</i>"
+                else:
+                    kittens = f" <i>(caring for {', '.join(kittens[:-1])}, and {kittens[-1]})</i>"
+
+                all_entries.append(self.generate_one_entry(queen, kittens))
+
+            #Now kittens without carers
+            for k in living_kits:
+                all_entries.append(f"{str(k.name).upper()} - {k.describe_cat(short=True)}")
+
+            _box[1] = "\n".join(all_entries)
+            outputs.append(_box)
+
+        # Elder Box:
+        if living_elders:
+            _box = ["", ""]
+            if len(living_elders) == 1:
+                _box[0] = '<b><u>ELDER</u></b>'
+            else:
+                _box[0] = '<b><u>ELDERS</u></b>'
+            
+            _box[1] = "\n".join([self.generate_one_entry(i) for i in living_elders])
+            outputs.append(_box)
+
+        return outputs
+
+            
 class MedDenScreen(Screens):
     cat_buttons = {}
     conditions_hover = {}
@@ -1648,20 +1738,22 @@ class MedDenScreen(Screens):
             for cat in self.injured_and_sick_cats:
                 if cat.injuries:
                     for injury in cat.injuries:
-                        if cat.injuries[injury]["severity"] != 'minor' and injury not in ['recovering from birth',
+                        if cat.injuries[injury]["severity"] != 'minor' and injury not in ["pregnant", 'recovering from birth',
                                                                                           "sprain", "lingering shock"]:
-                            self.in_den_cats.append(cat)
+                            if cat not in self.in_den_cats:
+                                self.in_den_cats.append(cat)
                             if cat in self.out_den_cats:
                                 self.out_den_cats.remove(cat)
                             elif cat in self.minor_cats:
                                 self.minor_cats.remove(cat)
                             break
-                        elif injury in ['recovering from birth', "sprain", "lingering shock"]:
-                            self.out_den_cats.append(cat)
+                        elif injury in ['recovering from birth', "sprain", "lingering shock", "pregnant"] and cat not in self.in_den_cats:
+                            if cat not in self.out_den_cats:
+                                self.out_den_cats.append(cat)
                             if cat in self.minor_cats:
                                 self.minor_cats.remove(cat)
                             break
-                        else:
+                        elif cat not in (self.in_den_cats or self.out_den_cats):
                             if cat not in self.minor_cats:
                                 self.minor_cats.append(cat)
                 if cat.illnesses:
@@ -1908,7 +2000,9 @@ class MedDenScreen(Screens):
             if cat.illnesses:
                 condition_list.extend(cat.illnesses.keys())
             if cat.permanent_condition:
-                condition_list.extend(cat.permanent_condition.keys())
+                for condition in cat.permanent_condition:
+                    if cat.permanent_condition[condition]["moons_until"] == -2:
+                        condition_list.extend(cat.permanent_condition.keys())
             conditions = ",<br>".join(condition_list)
 
             self.cat_buttons["able_cat" + str(i)] = UISpriteButton(scale(pygame.Rect

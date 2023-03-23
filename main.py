@@ -19,6 +19,8 @@ It then loads the settings, and then loads the start screen.
 import sys
 import time
 import os
+
+from scripts.housekeeping.log_cleanup import prune_logs
 from scripts.stream_duplexer import UnbufferedStreamDuplexer
 from scripts.datadir import get_log_dir, setup_data_dir
 from scripts.version import get_version_info
@@ -56,6 +58,9 @@ stream_handler = logging.StreamHandler()
 stream_handler.setFormatter(formatter)
 logging.root.addHandler(file_handler)
 logging.root.addHandler(stream_handler)
+
+
+prune_logs(logs_to_keep=5, retain_empty_logs=False)
 
 
 def log_crash(logtype, value, tb):
@@ -100,7 +105,7 @@ from scripts.game_structure.game_essentials import game, MANAGER, screen
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.cat.sprites import sprites
 from scripts.clan import clan_class
-from scripts.utility import get_text_box_theme, quit # pylint: disable=redefined-builtin
+from scripts.utility import get_text_box_theme, quit, scale # pylint: disable=redefined-builtin
 
 from scripts.mods.resources import pyg_img_load, mod_open
 import pygame_gui
@@ -160,6 +165,12 @@ else:
         (800 - version_number.get_relative_rect()[2] - 8,
         700 - version_number.get_relative_rect()[3]))
 
+if get_version_info().is_source_build:
+    dev_watermark = pygame_gui.elements.UILabel(
+        scale(pygame.Rect((1050, 1321), (600, 100))),
+        "Dev Build:",
+        object_id="#dev_watermark"
+    )
 
 game.rpc = _DiscordRPC("1076277970060185701", daemon=True)
 game.rpc.start()

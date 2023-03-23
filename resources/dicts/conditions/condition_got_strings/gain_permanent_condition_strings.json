@@ -120,8 +120,8 @@
 
         ],
         "one bad eye": [
-            "r_c peels the cobwebs away from m_c's face and holds back a wince. The eye is un-salvageable and the rest of the skin will likely never grow fur again.",
-            "m_c can only be glad they were able to heal from the devastating burn, though they can't help but feel angry and their now vastly limited vision."
+            "r_c peels the cobwebs away from m_c's face and holds back a wince. The eye is unsalvageable and the rest of the skin will likely never grow fur again.",
+            "m_c can only be glad they were able to heal from the devastating burn, though they can't help but feel angry at their now vastly limited vision."
         ]
     },
     "lingering shock": {
@@ -191,7 +191,7 @@
     "bite-wound": {
         "weak leg": [
             "r_c informs m_c that the bite-wound they've healed from has left their leg permanently weakened.",
-            "m_c finds that they have a new limp, despite healed from their bite-wound. r_c tells them it's likely permanent.",
+            "m_c finds that they have a new limp, despite having healed from their bite-wound. r_c tells them it's likely permanent.",
             "m_c limps around camp, fully healed from their bite-wound but still marked by it for the rest of their life."
         ],
         "one bad eye": [

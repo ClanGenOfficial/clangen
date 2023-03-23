@@ -152,7 +152,9 @@ class Screens():
     def menu_button_pressed(self, event):
         """This is a short-up to deal with menu button presses.
             This will fail if event.type != pygame_gui.UI_BUTTON_START_PRESS"""
-        if event.ui_element == self.menu_buttons["events_screen"]:
+        if game.switches['window_open']:
+            pass
+        elif event.ui_element == self.menu_buttons["events_screen"]:
             self.change_screen('events screen')
         elif event.ui_element == self.menu_buttons["clan_screen"]:
             self.change_screen('clan screen')

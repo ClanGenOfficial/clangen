@@ -260,7 +260,7 @@
         "p_l has no time for this spat and pulls the patrol to a halt to remind them that they have a star-damned job to do and quarreling like kittens will not be tolerated. The patrol returns to their work collecting nesting material with newfound vigor."
     ],
     "fail_text": [
-        "p_l stutters; they don't think they are fit to lead the patrol",
+        "p_l stutters; they don't think they are fit to lead the patrol.",
         "p_l spends so much time listening sympathetically to every cat that the patrol gets nothing done, and as they return back home the quarrel continues."
     ],
     "win_skills": ["great speaker", "excellent speaker"],
@@ -1144,8 +1144,27 @@
     "history_text": [
             "This cat's back was broken after attempting to enter the forbidden tunnels."
     ]
+},
+{
+    "patrol_id": "gen_train_confidinginwarrior1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["one_apprentice", "warrior", "p_l_to_r_c", "platonic", "comfort", "respect", "trust", "training"],
+    "intro_text": "app1 is not acting like their usual self.",
+    "decline_text": "p_l has no time today to get to the bottom of it.",
+    "chance_of_success": 60,
+    "exp": 5,
+    "success_text": [
+    "p_l guides app1 to one of their favorite places and gently asks them what is wrong. app1 looks at their feet and whispers that they feel like a failure and that they are not doing enough for the Clan because they are not doing too well at their training. p_l gently tugs them closer to them and tells them that they are not just their failures, failure hurts thats true but we can learn so much from them. All they can do is go out there and make up for them and ensure that they won't make the same mistake twice. They then assure them that they don't think that app1 is a failure and that they love teaching them and that the Clan feels the same. app1 looks at p_l with watery eyes and then tackles them in a hug saying thank you for believing in me.",
+    "p_l gently asks them what is wrong and app1 breaks down curling into a little ball wailing that they are not doing good enough and that they are really trying. p_l immediately pulls them into a hug purring softly. They then tell them a story of their own apprentice days and how they also made a lot of mistakes, app1 looks up disbelieving, p_l chuckles at the looks on their face and promises them that nobody but themselves will remember those mistakes and as long as you learn from them nobody will hold it against them. They nudge the apprentice onto their feet and slowly walks back to camp with them recounting some more embarrassing stories from their kithood causing app1 to be smiling and chuckling by the time they get back to camp."
+    ],
+    "fail_text": [
+    "p_l decides to ask app1 if there is something they can help them with. Unfortunately they immediately shut down and ask in a whisper to just get to the training grounds please."
+    ],
+    "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 }
-    ]
-
-
-
+]

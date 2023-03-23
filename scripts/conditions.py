@@ -35,16 +35,9 @@ def medical_cats_condition_fulfilled(all_cats,
         total_exp += cat.experience * .003
     for cat in medicine_apprentices:
         total_exp += cat.experience * .003
-    good_healer = float(
-        len(list(filter(lambda c: c.skill == 'good healer', medicine_cats))) *
-        1.5)
-    great_healer = float(
-        len(list(filter(lambda c: c.skill == 'great healer', medicine_cats))) *
-        1.75)
-    fantastic_healer = float(
-        len(
-            list(filter(lambda c: c.skill == 'fantastic healer',
-                        medicine_cats))) * 2)
+    good_healer = len([i for i in medicine_cats if i.skill == 'good healer']) * 1.5
+    great_healer = len([i for i in medicine_cats if i.skill == 'great healer']) * 1.75
+    fantastic_healer = len([i for i in medicine_cats if i.skill == 'fantastic healer']) * 2
     normal_meds = float(
         len(
             list(

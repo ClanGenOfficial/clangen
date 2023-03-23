@@ -519,12 +519,12 @@ class PatrolScreen(Screens):
 
         fst_midprey_singlular = ['plump shrew', 'woodpecker', 'mole', 'fat dormouse', 'blackbird',
                                  'field vole', 'big lizard', 'grass snake', 'half-grown rabbit', 'hedgehog',
-                                 'red squirrel', 'grey squirrel', 'rat', 'flying squirrel', 'kingfisher', ]
+                                 'red squirrel', 'gray squirrel', 'rat', 'flying squirrel', 'kingfisher', ]
         text = text.replace('f_mp_s', str(fst_midprey_singlular))
 
         fst_midprey_plural = ['plump shrews', 'woodpeckers', 'moles', 'blackbirds',
                               'field voles', 'big lizards', 'grass snakes', 'half-grown rabbits', 'hedgehogs',
-                              'red squirrels', 'grey squirrels', 'rats', ]
+                              'red squirrels', 'gray squirrels', 'rats', ]
         text = text.replace('f_mp_p', str(fst_midprey_plural))
 
         sign_list = get_snippet_list("omen_list", amount=random.randint(2, 4), return_string=False)
@@ -966,7 +966,11 @@ class PatrolScreen(Screens):
             if not the_cat.dead and the_cat.in_camp and the_cat not in game.patrolled and the_cat.status not in [
                 'elder', 'kitten', 'mediator', 'mediator apprentice'
             ] and not the_cat.outside and the_cat not in self.current_patrol and not the_cat.not_working():
-                self.able_cats.append(the_cat)
+                if the_cat.status == 'newborn' or game.config['fun']['all_cats_are_newborn']:
+                    if game.config['fun']['newborns_can_patrol']:
+                        self.able_cats.append(the_cat)
+                else:
+                    self.able_cats.append(the_cat)
 
         if not self.able_cats:
             all_pages = []

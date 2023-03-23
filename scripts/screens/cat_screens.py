@@ -24,7 +24,7 @@ import pygame_gui
 from re import sub
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked  # , UIImageTextBox, UISpriteButton
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
-from scripts.cat.names import names
+from scripts.cat.names import names, Name
 from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE
 
 from scripts.mods.resources import mod_open
@@ -69,7 +69,7 @@ def accessory_display_name(cat):
 # ---------------------------------------------------------------------------- #
 def bs_blurb_text(cat):
     backstory = cat.backstory
-    if cat.status in ['kittypet', 'loner', 'rogue']:
+    if cat.status in ['kittypet', 'loner', 'rogue', 'former clancat']:
         return f"This cat is a {cat.status} and currently resides outside of the Clans."
     backstory_text = {
         None: "This cat was born into the Clan where they currently reside.",
@@ -156,6 +156,7 @@ def backstory_text(cat):
         'guided1': 'formerly a kittypet',
         'rogue1': 'formerly a rogue',
         'rogue2': 'formerly a rogue',
+        'rogue3': 'formerly a rogue',
         'refugee4': 'formerly a rogue',
         'tragedy_survivor2': 'formerly a rogue',
         'guided2': 'formerly a rogue',
@@ -293,10 +294,10 @@ class ProfileScreen(Screens):
                 self.toggle_dangerous_tab()
             elif event.ui_element == self.backstory_tab_button:
                 if self.open_sub_tab is None:
-                    if game.settings['favorite sub tab'] is None:
+                    if game.switches['favorite_sub_tab'] is None:
                         self.open_sub_tab = 'life events'
                     else:
-                        self.open_sub_tab = game.settings['favorite sub tab']
+                        self.open_sub_tab = game.switches['favorite_sub_tab']
 
                 self.toggle_history_tab()
             elif event.ui_element == self.conditions_tab_button:
@@ -372,6 +373,8 @@ class ProfileScreen(Screens):
                 if self.the_cat.status == 'leader':
                     game.clan.leader_lives -= 10
                 self.the_cat.die()
+                self.the_cat.died_by.append(
+                    f'It was the will of something even mightier than StarClan that this cat died.')
                 update_sprite(self.the_cat)
                 self.clear_profile()
                 self.build_profile()
@@ -384,13 +387,19 @@ class ProfileScreen(Screens):
                     self.update_disabled_buttons_and_text()
                 if self.the_cat.dead:
                     if self.the_cat.df is True:
+                        self.the_cat.outside, self.the_cat.exiled = False, False
                         self.the_cat.df = False
                         game.clan.add_to_starclan(self.the_cat)
                         self.the_cat.thought = "Is relieved to once again hunt in StarClan"
                     else:
+                        self.the_cat.outside, self.the_cat.exiled = False, False
                         self.the_cat.df = True
                         game.clan.add_to_darkforest(self.the_cat)
                         self.the_cat.thought = "Is distraught after being sent to the Place of No Stars"
+
+                    # Update sprite in this situation.
+                    update_sprite(self.the_cat)
+
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()
@@ -413,11 +422,11 @@ class ProfileScreen(Screens):
                 self.open_sub_tab = 'user notes'
                 self.toggle_history_sub_tab()
             elif event.ui_element == self.fav_tab:
-                game.settings['favorite sub tab'] = None
+                game.switches['favorite_sub_tab'] = None
                 self.fav_tab.hide()
                 self.not_fav_tab.show()
             elif event.ui_element == self.not_fav_tab:
-                game.settings['favorite sub tab'] = self.open_sub_tab
+                game.switches['favorite_sub_tab'] = self.open_sub_tab
                 self.fav_tab.show()
                 self.not_fav_tab.hide()
             elif event.ui_element == self.save_text:
@@ -558,7 +567,6 @@ class ProfileScreen(Screens):
                                                                           object_id=get_text_box_theme(
                                                                               "#cat_profile_name_box"), manager=MANAGER)
 
-
         # Write cat thought
         self.profile_elements["cat_thought"] = pygame_gui.elements.UITextBox(self.the_cat.thought,
                                                                              scale(pygame.Rect((200, 340), (1200, 80))),
@@ -625,7 +633,7 @@ class ProfileScreen(Screens):
 
         # Fullscreen
         if game.settings['fullscreen']:
-            x_pos = 740 - int(name_text_size.width*7/15)
+            x_pos = 740 - int(name_text_size.width * 7 / 15)
         else:
             x_pos = 740 - name_text_size.width
         # TODO: positioning is weird. closer to names on some, further on others
@@ -781,7 +789,7 @@ class ProfileScreen(Screens):
         # AGE
         if the_cat.age == 'kitten':
             output += 'young'
-        elif the_cat.age == 'elder':
+        elif the_cat.age == 'senior':
             output += 'senior'
         else:
             output += the_cat.age
@@ -891,7 +899,8 @@ class ProfileScreen(Screens):
         output = ""
 
         # STATUS
-        if the_cat.outside and not the_cat.exiled and not the_cat.status in ['kittypet', 'loner', 'rogue']:
+        if the_cat.outside and not the_cat.exiled and not the_cat.status in ['kittypet', 'loner', 'rogue',
+                                                                             'former clancat']:
             output += "<font color='#FF0000'>lost</font>"
         elif the_cat.exiled:
             output += "<font color='#FF0000'>exiled</font>"
@@ -1687,7 +1696,7 @@ class ProfileScreen(Screens):
             else:
                 self.see_relationships_button.enable()
 
-            if self.the_cat.age not in ['young adult', 'adult', 'senior adult', 'elder'
+            if self.the_cat.age not in ['young adult', 'adult', 'senior adult', 'senior'
                                         ] or self.the_cat.dead or self.the_cat.exiled or self.the_cat.outside:
                 self.choose_mate_button.disable()
             else:
@@ -1733,7 +1742,7 @@ class ProfileScreen(Screens):
             # Button to prevent kits:
             if self.toggle_kits:
                 self.toggle_kits.kill()
-            if self.the_cat.age in ['young adult', 'adult', 'senior adult', 'elder'] and not self.the_cat.dead:
+            if self.the_cat.age in ['young adult', 'adult', 'senior adult', 'senior'] and not self.the_cat.dead:
                 if self.the_cat.no_kits:
                     self.toggle_kits = UIImageButton(scale(pygame.Rect((804, 1148), (344, 72))), "",
                                                      starting_height=2, object_id="#allow_kits_button",
@@ -1794,7 +1803,7 @@ class ProfileScreen(Screens):
         # History Tab:
         elif self.open_tab == 'history':
             # show/hide fav tab star
-            if self.open_sub_tab == game.settings['favorite sub tab']:
+            if self.open_sub_tab == game.switches['favorite_sub_tab']:
                 self.fav_tab.show()
                 self.not_fav_tab.hide()
             else:
@@ -1947,6 +1956,8 @@ class ProfileScreen(Screens):
 
         if biome not in available_biome:
             biome = available_biome[0]
+        if the_cat.age == 'newborn' or the_cat.not_working():
+            biome = 'nest'
 
         biome = biome.lower()
 
@@ -2001,14 +2012,52 @@ class ChangeNameScreen(Screens):
         self.prefix_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((440, 400), (360, 60))),
                                                                     placeholder_text=self.the_cat.name.prefix
                                                                     , manager=MANAGER)
+
+        self.random_pre = UIImageButton(scale(pygame.Rect((586, 460), (68, 68))), "",
+                                        object_id="#random_dice_button"
+                                        , manager=MANAGER)
+
+        self.random_suff = UIImageButton(scale(pygame.Rect((946, 460), (68, 68))), "",
+                                         object_id="#random_dice_button"
+                                         , manager=MANAGER)
+
+        self.toggle_spec_block_on = UIImageButton(scale(pygame.Rect((1150, 396), (68, 68))), "",
+                                                  object_id="#unchecked_checkbox",
+                                                  tool_tip_text=f"Overwrite the cat's special suffix, allowing you to use your own",
+                                                  manager=MANAGER)
+
+        self.toggle_spec_block_off = UIImageButton(scale(pygame.Rect((1150, 396), (68, 68))), "",
+                                                   object_id="#checked_checkbox",
+                                                   tool_tip_text="Re-enable the cat's special suffix", manager=MANAGER)
+
         if self.the_cat.name.status in self.the_cat.name.names_dict["special_suffixes"]:
             self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((800, 400), (360, 60))),
                                                                         placeholder_text=
                                                                         self.the_cat.name.names_dict["special_suffixes"]
                                                                         [self.the_cat.name.status]
                                                                         , manager=MANAGER)
-            self.suffix_entry_box.disable()  # You can't change a special suffix
+            if not self.the_cat.name.specsuffix_hidden:
+                self.toggle_spec_block_on.show()
+                self.toggle_spec_block_on.enable()
+                self.toggle_spec_block_off.hide()
+                self.toggle_spec_block_off.disable()
+                self.random_suff.disable()
+                self.suffix_entry_box.disable()
+            else:
+                self.toggle_spec_block_on.hide()
+                self.toggle_spec_block_on.disable()
+                self.toggle_spec_block_off.show()
+                self.toggle_spec_block_off.enable()
+                self.random_suff.enable()
+                self.suffix_entry_box.enable()
+                self.suffix_entry_box.set_text(self.the_cat.name.suffix)
+
+
         else:
+            self.toggle_spec_block_on.disable()
+            self.toggle_spec_block_on.hide()
+            self.toggle_spec_block_off.disable()
+            self.toggle_spec_block_off.hide()
             self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((800, 400), (360, 60))),
                                                                         placeholder_text=self.the_cat.name.suffix
                                                                         , manager=MANAGER)
@@ -2016,8 +2065,16 @@ class ChangeNameScreen(Screens):
     def exit_screen(self):
         self.prefix_entry_box.kill()
         del self.prefix_entry_box
+        self.random_pre.kill()
+        del self.random_pre
         self.suffix_entry_box.kill()
         del self.suffix_entry_box
+        self.random_suff.kill()
+        del self.random_suff
+        self.toggle_spec_block_on.kill()
+        del self.toggle_spec_block_on
+        self.toggle_spec_block_off.kill()
+        del self.toggle_spec_block_off
         self.done_button.kill()
         del self.done_button
         self.back_button.kill()
@@ -2039,6 +2096,51 @@ class ChangeNameScreen(Screens):
                 if sub(r'[^A-Za-z0-9 ]+', '', self.suffix_entry_box.get_text()) != '':
                     self.the_cat.name.suffix = sub(r'[^A-Za-z0-9 ]+', '', self.suffix_entry_box.get_text())
                     self.name_changed.show()
+                    self.the_cat.specsuffix_hidden = True
+                    self.the_cat.name.specsuffix_hidden = True
+                elif sub(r'[^A-Za-z0-9 ]+', '',
+                         self.suffix_entry_box.get_text()) == '' and not self.the_cat.name.specsuffix_hidden:
+                    self.name_changed.show()
+                else:
+                    self.the_cat.specsuffix_hidden = False
+                    self.the_cat.name.specsuffix_hidden = False
+            elif event.ui_element == self.random_pre:
+                self.prefix_entry_box.set_text(Name(self.the_cat.status,
+                                                    None,
+                                                    self.the_cat.name.suffix,
+                                                    self.the_cat.pelt.colour,
+                                                    self.the_cat.eye_colour,
+                                                    self.the_cat.pelt.name,
+                                                    self.the_cat.tortiepattern,
+                                                    specsuffix_hidden=
+                                                        (self.the_cat.name.status in self.the_cat.name.names_dict["special_suffixes"])).prefix)
+            elif event.ui_element == self.random_suff:
+                self.suffix_entry_box.set_text(Name(self.the_cat.status,
+                                                    self.the_cat.name.prefix,
+                                                    None,
+                                                    self.the_cat.pelt.colour,
+                                                    self.the_cat.eye_colour,
+                                                    self.the_cat.pelt.name,
+                                                    self.the_cat.tortiepattern,
+                                                    specsuffix_hidden=
+                                                        (self.the_cat.name.status in self.the_cat.name.names_dict["special_suffixes"])).suffix)
+            elif event.ui_element == self.toggle_spec_block_on:
+                self.suffix_entry_box.enable()
+                self.random_suff.enable()
+                self.toggle_spec_block_on.disable()
+                self.toggle_spec_block_on.hide()
+                self.toggle_spec_block_off.enable()
+                self.toggle_spec_block_off.show()
+                self.suffix_entry_box.set_text(self.the_cat.name.suffix)
+            elif event.ui_element == self.toggle_spec_block_off:
+                self.random_suff.disable()
+                self.toggle_spec_block_off.disable()
+                self.toggle_spec_block_off.hide()
+                self.toggle_spec_block_on.enable()
+                self.toggle_spec_block_on.show()
+                self.suffix_entry_box.set_text("")
+                self.suffix_entry_box.rebuild()
+                self.suffix_entry_box.disable()
             elif event.ui_element == self.back_button:
                 self.change_screen('profile screen')
 

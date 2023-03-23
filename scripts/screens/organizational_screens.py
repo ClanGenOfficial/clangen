@@ -78,6 +78,14 @@ class StartScreen(Screens):
                 elif platform.system() == 'Linux':
                     subprocess.Popen(['xdg-open', get_data_dir()])
                 return
+            elif event.ui_element == self.closebtn:
+                self.error_box.kill()
+                self.error_label.kill()
+                self.error_gethelp.kill()
+                self.closebtn.kill()
+                self.open_data_directory_button.kill()
+                game.switches['error_message'] = ''
+                game.switches['traceback'] = ''
             elif event.ui_element == self.quit:
                 quit(savesettings=False, clearevents=False)
 
@@ -100,6 +108,7 @@ class StartScreen(Screens):
         self.error_label.kill()
         self.warning_label.kill()
         self.quit.kill()
+        self.closebtn.kill()
 
     def screen_switches(self):
         """
@@ -173,10 +182,18 @@ class StartScreen(Screens):
             "This is where save files "
             "and logs are stored.")
 
+
+        self.closebtn = UIImageButton(
+            scale(pygame.Rect((1386, 430), (44, 44))),
+            "",
+            object_id="#exit_window_button",
+            manager=MANAGER)
+
         self.error_box.hide()
         self.error_label.hide()
         self.error_gethelp.hide()
         self.open_data_directory_button.hide()
+        self.closebtn.hide()
 
         self.warning_label = pygame_gui.elements.UITextBox(
             "Warning: this game includes some mild descriptions of gore.",
@@ -197,6 +214,7 @@ class StartScreen(Screens):
             self.continue_button.disable()
             self.switch_clan_button.disable()
 
+
         if game.switches['error_message']:
             error_text = f"There was an error loading the game: {game.switches['error_message']}"
             if game.switches['traceback']:
@@ -208,6 +226,7 @@ class StartScreen(Screens):
             self.error_label.show()
             self.error_gethelp.show()
             self.open_data_directory_button.show()
+            self.closebtn.show()
 
         if game.clan is not None:
             key_copy = tuple(Cat.all_cats.keys())
@@ -229,7 +248,9 @@ class SwitchClanScreen(Screens):
         TODO: DOCS
         """
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.main_menu:
+            if game.switches['window_open']:
+                pass
+            elif event.ui_element == self.main_menu:
                 self.change_screen('start screen')
             elif event.ui_element == self.next_page_button:
                 self.page += 1

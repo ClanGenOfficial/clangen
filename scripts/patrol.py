@@ -8,7 +8,7 @@ try:
 except ImportError:
     import json as ujson
 
-from scripts.clan import HERBS
+from scripts.clan import HERBS, Clan
 from scripts.utility import (
     add_siblings_to_cat,
     add_children_to_cat,
@@ -16,6 +16,7 @@ from scripts.utility import (
     change_clan_relations,
     change_clan_reputation,
     change_relationship_values, create_new_cat,
+    create_outside_cat
 )
 from scripts.game_structure.game_essentials import game
 from scripts.cat.names import names
@@ -24,7 +25,6 @@ from scripts.cat.pelts import collars, scars1, scars2, scars3
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan_resources.freshkill import ADDITIONAL_PREY, PREY_REQUIREMENT, HUNTER_EXP_BONUS, HUNTER_BONUS, \
     FRESHKILL_ACTIVE
-from scripts.clan import Clan
 
 # ---------------------------------------------------------------------------- #
 #                              PATROL CLASS START                              #
@@ -627,21 +627,17 @@ class Patrol():
 
                     # get the relationships depending on the current value type + threshold
                     if v_type == "romantic":
-                        rel_above_threshold = list(
-                            filter(lambda rel: rel.romantic_love >= threshold, relevant_relationships))
+                        rel_above_threshold = [i for i in relevant_relationships if i.romantic_love >= threshold]
                     elif v_type == "platonic":
-                        rel_above_threshold = list(
-                            filter(lambda rel: rel.platonic_like >= threshold, relevant_relationships))
+                        rel_above_threshold = [i for i in relevant_relationships if i.platonic_like >= threshold]
                     elif v_type == "dislike":
-                        rel_above_threshold = list(filter(lambda rel: rel.dislike >= threshold, relevant_relationships))
-                    elif v_type == "comfortable":
-                        rel_above_threshold = list(
-                            filter(lambda rel: rel.comfortable >= threshold, relevant_relationships))
+                        rel_above_threshold = [i for i in relevant_relationships if i.dislike >= threshold]
+                    elif v_type == "comfortable": 
+                        rel_above_threshold = [i for i in relevant_relationships if i.comfortable >= threshold]
                     elif v_type == "jealousy":
-                        rel_above_threshold = list(
-                            filter(lambda rel: rel.jealousy >= threshold, relevant_relationships))
+                        rel_above_threshold = [i for i in relevant_relationships if i.jealousy >= threshold]
                     elif v_type == "trust":
-                        rel_above_threshold = list(filter(lambda rel: rel.trust >= threshold, relevant_relationships))
+                        rel_above_threshold = [i for i in relevant_relationships if i.trust >= threshold]
 
                     # if the lengths are not equal, one cat has not the relationship value which is needed to another cat of the patrol
                     if len(rel_above_threshold) + 1 != len(self.patrol_cats):
@@ -695,6 +691,8 @@ class Patrol():
         if self.patrol_event is None:
             return
 
+        print("patrol tags: ", self.patrol_event.tags)
+
         antagonize = antagonize
         success_text = self.patrol_event.success_text
         fail_text = self.patrol_event.fail_text
@@ -704,10 +702,14 @@ class Patrol():
         # if patrol contains cats with autowin skill, chance of success is high. otherwise it will calculate the
         # chance by adding the patrol event's chance of success plus the patrol's total exp
         success_chance = self.patrol_event.chance_of_success + int(
-            self.patrol_total_experience / (2 * 2 * gm_modifier))
+            self.patrol_total_experience / (7.5 * gm_modifier))
+        
+        # Auto-wins based on EXP are sorta lame. Often makes it immpossible for large patrols with experiences cats to fail patrols at all. 
+        # EXP alone can only bring success chance up to 95. However, skills/traits can bring it up above that. 
+        success_chance = min(success_chance, 95)
 
-        print('starting chance:', self.patrol_event.chance_of_success)
-        print('updated chance according to exp: ', success_chance)
+        print('starting chance:', self.patrol_event.chance_of_success, "| EX_updated chance:", success_chance)
+        skill_updates = ""
         for kitty in self.patrol_cats:
             if kitty.skill in self.patrol_event.win_skills:
                 success_chance += game.config["patrol_generation"]["win_stat_cat_modifier"]
@@ -722,7 +724,8 @@ class Patrol():
             if self.patrol_event.fail_trait and kitty.trait in self.patrol_event.fail_trait:
                 success_chance += game.config["patrol_generation"]["fail_stat_cat_modifier"]
 
-            print(kitty.name, 'updated chance to', success_chance)
+            skill_updates += f"{kitty.name} updated chance to {success_chance} | "
+        print(skill_updates)
         print('ending chance', success_chance)
 
         c = randint(0, 100)
@@ -739,7 +742,7 @@ class Patrol():
         # ---------------------------------------------------------------------------- #
         #                                   SUCCESS                                    #
         # ---------------------------------------------------------------------------- #
-
+        
         if c < success_chance:
             self.success = True
             self.patrol_fail_stat_cat = None
@@ -759,7 +762,7 @@ class Patrol():
                         outcome = 1
 
             if not antagonize:
-                self.add_new_cats(outcome)
+                self.add_new_cats(outcome, self.success)
             if self.patrol_event.tags is not None:
                 if "other_clan" in self.patrol_event.tags:
                     if antagonize:
@@ -769,7 +772,7 @@ class Patrol():
                 for tag in self.patrol_event.tags:
                     if "new_cat" in tag:
                         if antagonize:
-                            self.handle_reputation(-10)
+                            self.handle_reputation(-20)
                         else:
                             self.handle_reputation(10)
                         break
@@ -843,18 +846,20 @@ class Patrol():
                 # attempt injure outcome
                 elif fail_text[3]:
                     outcome = 3
-
-            if outcome == 2:
-                self.handle_deaths_and_gone(self.patrol_random_cat)
-            elif outcome == 4:
-                self.handle_deaths_and_gone(self.patrol_fail_stat_cat)
-            elif outcome == 6:
-                self.handle_deaths_and_gone(self.patrol_leader)
-            elif outcome == 3 or outcome == 5:
-                if game.clan.game_mode == 'classic':
-                    self.handle_scars(outcome)
-                else:
-                    self.handle_conditions(outcome)
+            if not antagonize or antagonize and "antag_death" in self.patrol_event.tags:
+                if outcome == 2:
+                    self.handle_deaths_and_gone(self.patrol_random_cat)
+                elif outcome == 4:
+                    self.handle_deaths_and_gone(self.patrol_fail_stat_cat)
+                elif outcome == 6:
+                    self.handle_deaths_and_gone(self.patrol_leader)
+                elif outcome == 3 or outcome == 5:
+                    if game.clan.game_mode == 'classic':
+                        self.handle_scars(outcome)
+                    else:
+                        self.handle_conditions(outcome)
+            if not antagonize and "meeting" in self.patrol_event.tags:
+                self.add_new_cats(outcome, self.success)
             if self.patrol_event.tags is not None:
                 if "other_clan" in self.patrol_event.tags:
                     if antagonize:
@@ -863,7 +868,7 @@ class Patrol():
                         self.handle_clan_relations(difference=int(-1), antagonize=False, outcome=outcome)
                 elif "new_cat" in self.patrol_event.tags:
                     if antagonize:
-                        self.handle_reputation(-5)
+                        self.handle_reputation(-10)
                     else:
                         self.handle_reputation(0)
             self.handle_mentor_app_pairing()
@@ -883,27 +888,29 @@ class Patrol():
         self.results_text.clear()
         return text
 
-    def add_new_cats(self, outcome):
+    def add_new_cats(self, outcome, success):
         """
         handles new_cat tags and passing info to the create_new_cats function
         :param outcome: the outcome index
+        :param success: success bool
         """
         tags = self.patrol_event.tags
-        print('new cat creation started')
         # check for ignore outcome tag
         if f"no_new_cat{outcome}" in tags:
             return
-
+        
         # find the new cat tag and split to get attributes - else return if no tag found
         attribute_list = []
         for tag in tags:
-            print(tag)
-            if "new_cat" in tag and ("no_new_cat" and "new_cat_injury") not in tag:
+            #print(tag)
+            if "new_cat" in tag and "no_new_cat" not in tag and "new_cat_injury" not in tag:
                 attribute_list = tag.split("_")
                 print('found tag, attributes:', attribute_list)
                 break
         if not attribute_list:
             return
+        
+        print('new cat creation started')
 
         # setting the defaults
         new_name = choice([True, False])
@@ -935,21 +942,33 @@ class Patrol():
             kittypet = True
             new_name = choice([True, False])
             backstory = ['kittypet1', 'kittypet2', 'kittypet3', 'refugee3', 'tragedy_survivor3']
+            if not success:
+                outsider = create_outside_cat(Cat, "kittypet", backstory=choice(backstory))
+                self.results_text.append(f"The Clan has met {outsider}.")
+                return
         elif cat_type == 'loner' or "loner" in attribute_list:
             loner = True
             new_name = choice([True, False])
             backstory = ['loner1', 'loner2', 'rogue1', 'rogue2', 'refugee2', 'tragedy_survivor4',
                          'refugee4', 'tragedy_survivor2']
+            if not success:
+                outsider = create_outside_cat(Cat, "loner", backstory=choice(backstory))
+                self.results_text.append(f"The Clan has met {outsider}.")
+                return
         else:
             other_clan = self.other_clan
             # failsafe in case self.other_clan is None for some reason
             backstory = ['ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
-                         'tragedy_survivor']
+                         'tragedy_survivor', 'disgraced2', 'disgraced3', 'refugee5']
             if not other_clan:
                 loner = True
                 new_name = choice([True, False])
                 backstory = ['loner1', 'loner2', 'rogue1', 'rogue2', 'refugee2', 'tragedy_survivor4',
                              'refugee4', 'tragedy_survivor2']
+            if not success:
+                outsider = create_outside_cat(Cat, "loner", backstory=choice(backstory))
+                self.results_text.append(f"The Clan has met {outsider}.")
+                return
 
         # handing out ranks
         if "kitten" in attribute_list:
@@ -969,6 +988,7 @@ class Patrol():
         # handing out ages
         if "newborn" in attribute_list:
             age = 0
+            status = 'newborn'
         elif "adolescent" in attribute_list:
             age = randint(6, 11)
         elif "youngadult" in attribute_list:
@@ -1015,7 +1035,7 @@ class Patrol():
             if "litternewborn" in attribute_list:
                 print('litter is newborn')
                 kit_age = 0
-                kit_thought = "Snuggles against another cat"
+                kit_thought = "Mewls quietly for milk"
             else:
                 print('litter is not newborn')
                 kit_age = randint(1, 5)
@@ -1086,7 +1106,7 @@ class Patrol():
                                                litter=True,
                                                other_clan=other_clan,
                                                backstory=kit_backstory,
-                                               status='kitten',
+                                               status=None,
                                                age=kit_age,
                                                gender=None,
                                                thought=kit_thought,
@@ -1094,7 +1114,7 @@ class Patrol():
                                                outside=False
                                                ))
             # giving the mother the necessary condition
-            if game.clan.game_mode != 'classic' and kit_age <= 2:
+            if game.clan.game_mode != 'classic' and kit_age <= 2 and not created_cats[0].dead:
                 if not game.settings["no gendered breeding"]:
                     if created_cats[0].gender == 'female':
                         created_cats[0].get_injured("recovering from birth")
@@ -1307,7 +1327,6 @@ class Patrol():
             for cat in self.patrol_cats:
                 if cat.status in ["apprentice", "medicine cat apprentice"]:
                     cat.experience = cat.experience + app_exp
-                    print(f"{cat.name} earned {app_exp}. New exp: {cat.experience}")
                 else:
                     cat.experience = cat.experience + gained_exp
 
@@ -1806,7 +1825,7 @@ class Patrol():
                 trust = -n
 
         # collect the needed IDs and lists
-        all_cats = list(filter(lambda c: not c.dead and not c.outside, Cat.all_cats.values()))
+        all_cats = [i for i in Cat.all_cats.values() if not (i.dead or i.outside)]
         cat_ids = [cat.ID for cat in self.patrol_cats]
         r_c_id = self.patrol_random_cat.ID
         s_c_id = None

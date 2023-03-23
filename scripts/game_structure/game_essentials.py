@@ -140,7 +140,9 @@ class Game():
         'broke_up': False,
         'show_info': False,
         'patrol_chosen': 'general',
-        'favorite_sub_tab': None
+        'favorite_sub_tab': None,
+        'root_cat': None,
+        'window_open': False
 
     }
     all_screens = {}
@@ -363,6 +365,7 @@ class Game():
                 "ID": inter_cat.ID,
                 "name_prefix": inter_cat.name.prefix,
                 "name_suffix": inter_cat.name.suffix,
+                "specsuffix_hidden": inter_cat.name.specsuffix_hidden,
                 "gender": inter_cat.gender,
                 "gender_align": inter_cat.genderalign,
                 "birth_cooldown": inter_cat.birth_cooldown,
@@ -378,6 +381,7 @@ class Game():
                 "patrol_with_mentor": inter_cat.patrol_with_mentor if inter_cat.patrol_with_mentor else 0,
                 "mentor_influence": inter_cat.mentor_influence if inter_cat.mentor_influence else [],
                 "mate": inter_cat.mate,
+                "previous_mates": inter_cat.previous_mates,
                 "dead": inter_cat.dead,
                 "died_by": inter_cat.died_by if inter_cat.died_by else [],
                 "paralyzed": inter_cat.paralyzed,
@@ -387,17 +391,19 @@ class Game():
                 "pelt_color": inter_cat.pelt.colour,
                 "pelt_white": inter_cat.pelt.white,
                 "pelt_length": inter_cat.pelt.length,
-                "spirit_kitten": inter_cat.age_sprites['kitten'],
-                "spirit_adolescent": inter_cat.age_sprites['adolescent'],
-                "spirit_young_adult": inter_cat.age_sprites['young adult'],
-                "spirit_adult": inter_cat.age_sprites['adult'],
-                "spirit_senior_adult": inter_cat.age_sprites['senior adult'],
-                "spirit_elder": inter_cat.age_sprites['elder'],
-                "spirit_dead": inter_cat.age_sprites['dead'],
+                "sprite_kitten": inter_cat.cat_sprites['kitten'],
+                "sprite_adolescent": inter_cat.cat_sprites['adolescent'],
+                "sprite_young_adult": inter_cat.cat_sprites['young adult'],
+                "sprite_adult": inter_cat.cat_sprites['adult'],
+                "sprite_senior_adult": inter_cat.cat_sprites['senior adult'],
+                "sprite_senior": inter_cat.cat_sprites['senior'],
+                "sprite_para_adult": inter_cat.cat_sprites['para_adult'],
                 "eye_colour": inter_cat.eye_colour,
                 "eye_colour2": inter_cat.eye_colour2 if inter_cat.eye_colour2 else None,
                 "reverse": inter_cat.reverse,
                 "white_patches": inter_cat.white_patches,
+                "vitiligo": inter_cat.vitiligo,
+                "points": inter_cat.points,
                 "white_patches_tint": inter_cat.white_patches_tint,
                 "pattern": inter_cat.pattern,
                 "tortie_base": inter_cat.tortiebase,
@@ -504,13 +510,13 @@ class Game():
                 "pelt_color": {inter_cat.pelt.colour},
                 "pelt_white": {inter_cat.pelt.white},
                 "pelt_length": {inter_cat.pelt.length},
-                "spirit_kitten": {inter_cat.age_sprites['kitten']},
-                "spirit_adolescent": {inter_cat.age_sprites['adolescent']},
-                "spirit_young_adult": {inter_cat.age_sprites['young adult']},
-                "spirit_adult": {inter_cat.age_sprites['adult']},
-                "spirit_senior_adult": {inter_cat.age_sprites['senior adult']},
-                "spirit_elder": {inter_cat.age_sprites['elder']},
-                "spirit_dead": {inter_cat.age_sprites['dead']},
+                "spirit_kitten": {inter_cat.cat_sprites['kitten']},
+                "spirit_adolescent": {inter_cat.cat_sprites['adolescent']},
+                "spirit_young_adult": {inter_cat.cat_sprites['young adult']},
+                "spirit_adult": {inter_cat.cat_sprites['adult']},
+                "spirit_senior_adult": {inter_cat.cat_sprites['senior adult']},
+                "spirit_elder": {inter_cat.cat_sprites['elder']},
+                "spirit_dead": {inter_cat.cat_sprites['dead']},
                 "eye_colour": {inter_cat.eye_colour},
                 "reverse": {inter_cat.reverse},
                 "white_patches": {inter_cat.white_patches},
@@ -607,7 +613,7 @@ else:
 
 def load_manager(res: tuple):
     # initialize pygame_gui manager, and load themes
-    manager = pygame_gui.ui_manager.UIManager(res, 'resources/defaults.json')
+    manager = pygame_gui.ui_manager.UIManager(res, 'resources/defaults.json', enable_live_theme_updates=False)
     manager.add_font_paths(
         font_name='notosans',
         regular_path='resources/fonts/NotoSans-Medium.ttf',

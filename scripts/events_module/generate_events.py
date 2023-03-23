@@ -210,7 +210,7 @@ class GenerateEvents:
                 event_list.extend(
                     self.generate_short_events(event_type, "warrior", biome))
 
-            if cat_type not in ["kitten", "leader"]:
+            if cat_type not in ["kitten", "leader", "newborn"]:
                 if event_type != "nutrition":
                     event_list.extend(self.generate_short_events(event_type, "general", "general"))
 
@@ -267,8 +267,8 @@ class GenerateEvents:
             if "murder" in event.tags and other_cat:
                 hate = False
                 relationships = other_cat.relationships.values()
-                dislike_relation = list(filter(lambda rel: rel.dislike > 50, relationships))
-                jealous_relation = list(filter(lambda rel: rel.jealousy > 50, relationships))
+                dislike_relation = [i for i in relationships if i.dislike > 50]
+                jealous_relation = [i for i in relationships if i.jealousy > 50]
                 for y in range(len(dislike_relation)):
                     cat_to = dislike_relation[y].cat_to
                     if cat_to == cat:
@@ -325,6 +325,10 @@ class GenerateEvents:
             # check for old age
             if "old_age" in event.tags and cat.moons < 150:
                 continue
+            # remove some non-old age events to encourage elders to die of old age more often
+            if "old_age" not in event.tags and cat.moons < 150:
+                if not int(random.random() * 2):
+                    continue
 
             # check other_cat status and other identifiers
             if other_cat:
@@ -342,9 +346,9 @@ class GenerateEvents:
                     continue
                 elif "other_cat_elder" in event.tags and other_cat.status != "elder":
                     continue
-                elif "other_cat_adult" in event.tags and other_cat.age in ["elder", "kitten"]:
+                elif "other_cat_adult" in event.tags and other_cat.age in ["elder", "kitten", "newborn"]:
                     continue
-                elif "other_cat_kit" in event.tags and other_cat.status != "kitten":
+                elif "other_cat_kit" in event.tags and other_cat.status not in ['newborn', 'kitten']:
                     continue
 
                 if "other_cat_mate" in event.tags and other_cat.ID != cat.mate:
