@@ -23,7 +23,7 @@
     },
     "#cat_button.tool_tip": {
         "misc": {
-            "rect_width": "200"
+            "rect_width": "300"
         }
     },
     "#checked_checkbox_smalltooltip.tool_tip":
