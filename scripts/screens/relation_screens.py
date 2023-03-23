@@ -2518,7 +2518,7 @@ class MediationScreen(Screens):
 
     def random_cat(self):
         if self.selected_cat_list():
-            random_list = list(filter(lambda x: x.ID not in self.selected_cat_list(), self.all_cats_list))
+            random_list = [i for i in self.all_cats_list if i.ID not in self.selected_cat_list()]
         else:
             random_list = self.all_cats_list
         return choice(random_list)
@@ -2588,8 +2588,7 @@ class MediationScreen(Screens):
         self.update_list_cats()
 
     def update_list_cats(self):
-        self.all_cats_list = list(filter(lambda x: (x.ID != self.mediators[self.selected_mediator].ID)
-                                                   and not x.dead and not x.outside, Cat.all_cats_list))
+        self.all_cats_list = [i for i in Cat.all_cats_list if (i.ID != self.mediators[self.selected_mediator].ID) and not (i.dead or i.outside)]
         self.all_cats = self.chunks(self.all_cats_list, 24)
 
         self.update_page()
