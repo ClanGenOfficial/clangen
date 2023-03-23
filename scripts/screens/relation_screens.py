@@ -487,13 +487,11 @@ class FamilyTreeScreen(Screens):
                 self.change_screen('profile screen')
                 game.switches['root_cat'] = None
             elif event.ui_element == self.previous_cat_button:
-                self.get_previous_next_cat()
                 game.switches['cat'] = self.previous_cat
                 game.switches['root_cat'] = Cat.all_cats[self.previous_cat]
                 self.exit_screen()
                 self.screen_switches()
             elif event.ui_element == self.next_cat_button:
-                self.get_previous_next_cat()
                 game.switches['cat'] = self.next_cat
                 game.switches['root_cat'] = Cat.all_cats[self.next_cat]
                 self.exit_screen()
@@ -626,6 +624,7 @@ class FamilyTreeScreen(Screens):
         self.center_cat_frame.disable()
         # self.family_setup()
         self.create_family_tree()
+        self.get_previous_next_cat()
 
     def create_family_tree(self):
         """
