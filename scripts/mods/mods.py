@@ -8,6 +8,8 @@ mods? what else do you want me to say?
 
 import os
 
+from scripts.datadir import get_mods_dir
+
 
 def get_all_mods():
     """
@@ -15,8 +17,8 @@ def get_all_mods():
     This does not take priority into account
     """
     mods = []
-    for mod in os.listdir(os.path.join(os.getcwd(), "mods")):
-        if os.path.isdir(os.path.join(os.getcwd(), "mods", mod)):
+    for mod in os.listdir(get_mods_dir()):
+        if os.path.isdir(os.path.join(get_mods_dir(), mod)):
             mods.append(mod)
     return mods
 
@@ -32,7 +34,7 @@ def get_real_mods():
     for mod in mods:
         modvalid = False
 
-        dircontents = os.listdir(os.path.join(os.getcwd(), "mods", mod))
+        dircontents = os.listdir(os.path.join(get_mods_dir(), mod))
 
         for folder in required_folders:
             if folder in dircontents:

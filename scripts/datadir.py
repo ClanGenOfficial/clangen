@@ -8,6 +8,7 @@ def setup_data_dir():
     os.makedirs(get_data_dir(), exist_ok=True)
     os.makedirs(get_save_dir(), exist_ok=True)
     os.makedirs(get_log_dir(), exist_ok=True)
+    os.makedirs(get_mods_dir(), exist_ok=True)
 
     # Windows requires elevated permissions to create symlinks.
     # The OpenDataDirectory.bat can be used instead as "shortcut".
@@ -35,3 +36,7 @@ def get_log_dir():
 
 def get_save_dir():
     return get_data_dir() + '/saves'
+
+
+def get_mods_dir():
+    return get_data_dir() + '/mods'
