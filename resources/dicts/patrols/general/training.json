@@ -1161,18 +1161,10 @@
     "fail_text": [
     "p_l decides to ask app1 if there is something they can help them with. Unfortunately they immediately shut down and ask in a whisper to just get to the training grounds please."
     ],
-    "win_skills": null,
-    "win_trait": null,
-    "fail_skills": null,
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-    null,
-    null,
-    null
-    ]
+    "antagonize_fail_text": null
 }
 ]
