@@ -2746,11 +2746,10 @@ class MediationScreen(Screens):
 
         mates = False
         if cat.mate:
-            col2 = "has a mate"
+            col2 = f"{Cat.fetch_cat(cat.mate).name}'s mate"
             if other_cat:
                 if cat.mate == other_cat.ID:
                     mates = True
-                    col2 = f"{Cat.fetch_cat(cat.mate).name}'s mate"
         else:
             col2 = "mate: none"
 
