@@ -703,6 +703,7 @@ class FamilyTreeScreen(Screens):
         # collect mates
         if self.the_cat.mate:
             self.mates = [self.the_cat.mate]
+        if self.the_cat.previous_mates:
             self.mates.extend(self.the_cat.previous_mates)
         self.kits = self.the_cat.get_children()
         if self.mates or self.kits:
