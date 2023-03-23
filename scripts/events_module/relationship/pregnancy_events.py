@@ -12,7 +12,7 @@ from scripts.cat.cats import Cat, cat_class
 from scripts.event_class import Single_Event
 from scripts.cat_relations.relationship import Relationship
 from scripts.events_module.condition_events import Condition_Events
-from scripts.cat.names import names
+from scripts.cat.names import names, Name
 
 try:
     import ujson
@@ -283,16 +283,17 @@ class Pregnancy_Events():
 
         if cat.outside:
             for kit in kits:
-                kit.name = choice(names.names_dict["normal_prefixes"])
                 kit.outside = True
-                kit.status = 'loner'
                 game.clan.add_to_outside(kit)
                 kit.backstory = "outsider"
+                if cat.exiled:
+                    kit.status = 'loner'
+                    name = choice(names.names_dict["normal_prefixes"])
+                    kit.name = Name('loner', prefix=name, suffix="")
                 if other_cat and not other_cat.outside:
                     kit.backstory = "outsider2"
                 if cat.outside and not cat.exiled:
                     kit.backstory = "outsider3"
-                    kit.status = 'lost'
                 kit.relationships = {}
                 kit.relationships[cat.ID] = Relationship(kit, cat)
 

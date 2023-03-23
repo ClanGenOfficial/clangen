@@ -743,7 +743,7 @@ class Cat():
                 self.name) + '.', "ceremony", involved_cats))
         elif self.status == 'kitten' and self.moons >= 12:
             self.status_change('warrior')
-            involved_cats = [self]
+            involved_cats = [self.ID]
             game.cur_events_list.append(Single_Event('A long overdue warrior ceremony is held for ' + str(
                 self.name.prefix) + 'kit. They smile as they finally become a warrior of the Clan and are now named ' + str(
                 self.name) + '.', "ceremony", involved_cats))
@@ -764,7 +764,30 @@ class Cat():
                 self.status_change('warrior')
             else:
                 self.status_change('elder')
+        # for cats which are born outside
         game.clan.add_to_clan(self)
+        
+        # check if there are kits under 12 moons with this cat and also add them to the clan
+        children = self.get_children()
+        names = []
+        ids = []
+        for child_id in children:
+            child = Cat.all_cats[child_id]
+            if child.outside and child.moons < 12:
+                child.add_to_clan()
+                if child.moons < 6:
+                    names.append(child.name)
+                    ids.append(child_id)
+        if len(names) > 0:
+            event_text = "This text should not appear, script cat.py function add_to_clan."
+            if len(names) > 2:
+                event_text = f"{', '.join(names[0:-1])}, and {names[-1]}"
+            elif len(names) == 2:
+                event_text = f"{names[0]} and {names[1]}"
+            else:
+                event_text = f"{names[0]}"
+            game.cur_events_list.append(Single_Event(f"Together with {self.name}, {str(event_text)} joins the Clan.", ids))
+
         self.update_mentor()
 
     def status_change(self, new_status, resort=False):
@@ -1395,9 +1418,8 @@ class Cat():
                         siblings.append(x)
             return siblings
 
-
     def get_children(self):
-        """Returns list of the children."""
+        """Returns list of the children (ids)."""
         if not self.faded:
             return self.children
         else:

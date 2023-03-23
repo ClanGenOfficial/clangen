@@ -125,6 +125,7 @@ class Events():
             # print(f" -- FRESHKILL: prey amount after feeding {game.clan.freshkill_pile.total_amount}") # pylint: disable=line-too-long
 
         rejoin_upperbound = game.config["lost_cat"]["rejoin_chance"]
+        #self.handle_lost_cats_return()
         if random.randint(1, rejoin_upperbound) == 1:
             self.handle_lost_cats_return()
 
@@ -641,12 +642,30 @@ class Events():
         cat.one_moon()
         cat.moons += 1
         cat.update_traits()
-        if cat.moons == 6:
+        if cat.moons == 1:
+            cat.age = "kitten"
+            if cat.status not in [
+                'kittypet', 'loner', 'rogue', 'former clancat'
+            ]:
+                cat.status = "kitten"
+        elif cat.moons == 6:
             cat.age = 'adolescent'
+            if cat.status not in [
+                'kittypet', 'loner', 'rogue', 'former clancat'
+            ]:
+                cat.status = "apprentice"
         elif cat.moons == 12:
             cat.age = 'adult'
+            if cat.status not in [
+                'kittypet', 'loner', 'rogue', 'former clancat'
+            ]:
+                cat.status = "warrior"
         elif cat.moons == 120:
             cat.age = 'senior'
+            if cat.status not in [
+                'kittypet', 'loner', 'rogue', 'former clancat'
+            ]:
+                cat.status = "elder"
 
         self.pregnancy_events.handle_having_kits(cat, clan=game.clan)
 
