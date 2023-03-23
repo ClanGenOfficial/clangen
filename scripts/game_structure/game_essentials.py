@@ -139,7 +139,8 @@ class Game():
         'show_info': False,
         'patrol_chosen': 'general',
         'favorite_sub_tab': None,
-        'root_cat': None
+        'root_cat': None,
+        'window_open': False
 
     }
     all_screens = {}
