@@ -1057,6 +1057,10 @@ class FamilyTreeScreen(Screens):
         del self.relation_backdrop
         self.root_cat_frame.kill()
         del self.root_cat_frame
+        self.next_group_page.kill()
+        del self.next_group_page
+        self.previous_group_page.kill()
+        del self.previous_group_page
 
 
 class ChooseMateScreen(Screens):
