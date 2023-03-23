@@ -1049,7 +1049,7 @@ class ListScreen(Screens):
                 self.filter_rank.hide()
                 self.filter_exp.hide()
                 self.filter_by_open.hide()
-                self.filter_by_closed.hide()
+                self.filter_by_closed.show()
                 game.sort_type = "exp"
                 Cat.sort_cats()
                 self.get_living_cats()

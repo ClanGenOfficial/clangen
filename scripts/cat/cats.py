@@ -2677,7 +2677,7 @@ class Cat():
         elif game.sort_type == "rank":
             Cat.all_cats_list.sort(key=lambda x: (Cat.rank_order(x), Cat.get_adjusted_age(x)), reverse=True)
         elif game.sort_type == "exp":
-            Cat.all_cats_list.sort(key=lambda x: int(x.experience))
+            Cat.all_cats_list.sort(key=lambda x: x.experience, reverse=True)
 
         if game.sort_fav:
             Cat.all_cats_list.sort(key=lambda x: x.favourite, reverse=True)
@@ -2694,7 +2694,7 @@ class Cat():
                 bisect.insort(Cat.all_cats_list, c, key=lambda x: (-1 * Cat.rank_order(x), -1 *
                                                                    Cat.get_adjusted_age(x)))
             elif game.sort_type == "exp":
-                bisect.insort(Cat.all_cats_list, c, key=lambda x: (-1 * x.experience))
+                bisect.insort(Cat.all_cats_list, c, key=lambda x: x.experience)
             elif game.sort_type == "id":
                 bisect.insort(Cat.all_cats_list, c, key=lambda x: int(x.ID))
             elif game.sort_type == "reverse_id":
