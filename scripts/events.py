@@ -140,24 +140,7 @@ class Events():
         # keeping this commented out till disasters are more polished
         # self.disaster_events.handle_disasters()
 
-        for cat in Cat.all_cats.values():
-            if cat.dead or cat.outside:
-                continue
 
-            # switches between the two death handles
-            self.handle_outbreaks(cat)
-            if random.getrandbits(1):
-                triggered_death = self.handle_injuries_or_general_death(cat)
-                if not triggered_death:
-                    self.handle_illnesses_or_illness_deaths(cat)
-            else:
-                triggered_death = self.handle_illnesses_or_illness_deaths(cat)
-                if not triggered_death:
-                    self.handle_injuries_or_general_death(cat)
-
-            # relationships have to be handled separately, because of the ceremony name change
-            if not cat.dead or cat.outside:
-                self.relation_events.handle_relationships(cat)
 
         # Handle grief events.
         if Cat.grief_strings:

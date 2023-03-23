@@ -28,7 +28,13 @@ def test():
             if file.endswith(".json"):
                 path = os.path.join(root, file)
                 with open(path, "r") as file:
-                    contents = file.read()
+                    try:
+                        contents = file.read()
+                    except UnicodeDecodeError as e:
+                        print(f"::error file={path}::File {path} is not utf-8 encoded")
+                        print(e)
+                        failed = True
+                        continue
                 
                 try:
                     _ = ujson.loads(contents)
@@ -53,3 +59,6 @@ class TestJsonValidity(unittest.TestCase):
         with self.assertRaises(SystemExit) as cm:
             test()
         self.assertEqual(cm.exception.code, 0)
+
+if __name__ == "__main__":
+    test()
