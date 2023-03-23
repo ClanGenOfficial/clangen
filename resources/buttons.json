@@ -3577,6 +3577,29 @@
             }
         }
     },
+    "#filter_exp_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/filter_exp.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/filter_exp_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/filter_exp.png"
+            },
+            "disabled_image":
+            {
+            "path": "resources/images/buttons/filter_exp_unavailable.png"
+            }
+        }
+    },
     "#med_den_button":
     {
         "prototype": "#image_button",
