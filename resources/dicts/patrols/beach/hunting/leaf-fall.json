@@ -349,7 +349,7 @@
     "biome": "beach",
     "season": "leaf-fall",
     "tags": ["large_prey", "hunting", "no_fail_prey", "warrior", "patrol_to_p_l", "no_change_success", "dislike", "respect", "trust", "death", "scar", "BURNRUMP", "injury", "burn", "no_body"],
-    "intro_text": "A sudden gust of wind and rain hits the patrol, they were wrong about the weather and are now soaking wet. ",
+    "intro_text": "A sudden gust of wind and rain hits the patrol, they were wrong about the weather and are now soaking wet.",
     "decline_text": "A little bit of rain is not gonna kill this patrol! They decide to continue walking back to camp playfully splashing each other along the way, they are all soaking wet anyway.",
     "chance_of_success": 50,
     "exp": 15,
@@ -372,8 +372,8 @@
     "antagonize_text": null,
     "antagonize_fail_text": null,
     "history_text": [
-            "This cat was scarred by the poison of a certain tree while it was raining.",
-            "This cat died because of the poison of a certain tree while it was raining.",
+    "This cat was scarred by the poison of a certain tree while it was raining.",
+    "This cat died because of the poison of a certain tree while it was raining.",
     "This cat lost a life because of the poison of a certain tree while it was raining."
     ]
 },
