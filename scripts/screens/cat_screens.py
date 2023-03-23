@@ -2100,18 +2100,16 @@ class ChangeNameScreen(Screens):
                     self.the_cat.specsuffix_hidden = False
                     self.the_cat.name.specsuffix_hidden = False
             elif event.ui_element == self.random_pre:
-                self.prefix_entry_box.set_text(Name(
-                                                    self.the_cat.status,
+                self.prefix_entry_box.set_text(Name(self.the_cat.status,
                                                     None,
                                                     self.the_cat.name.suffix,
                                                     self.the_cat.pelt.colour,
                                                     self.the_cat.eye_colour,
                                                     self.the_cat.pelt.name,
                                                     self.the_cat.tortiepattern,
-                                                    specsuffix_hidden=(self.the_cat.name.status in self.the_cat.name.names_dict["special_suffixes"])).suffix)
+                                                    specsuffix_hidden=(self.the_cat.name.status in self.the_cat.name.names_dict["special_suffixes"])).prefix)
             elif event.ui_element == self.random_suff:
-                                self.suffix_entry_box.set_text(Name(
-                                                    self.the_cat.status,
+                self.suffix_entry_box.set_text(Name(self.the_cat.status,
                                                     self.the_cat.name.prefix,
                                                     None,
                                                     self.the_cat.pelt.colour,
