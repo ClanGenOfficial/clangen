@@ -67,8 +67,6 @@ def accessory_display_name(cat):
 # ---------------------------------------------------------------------------- #
 def bs_blurb_text(cat):
     backstory = cat.backstory
-    if cat.status in ['kittypet', 'loner', 'rogue', 'former clancat']:
-        return f"This cat is a {cat.status} and currently resides outside of the Clans."
     backstory_text = {
         None: "This cat was born into the Clan where they currently reside.",
         'clan_founder': "This cat is one of the founding members of the Clan.",
@@ -119,9 +117,17 @@ def bs_blurb_text(cat):
         'disgraced2': "This cat was exiled from their old Clan for something they didn't do and came here to seek safety.",
         'disgraced3': "This cat once held a high rank in another Clan but was exiled for reasons they refuse to share.",
         'other_clan1': "This cat grew up in another Clan but chose to leave that life and join the Clan they now live in.",
-        'outsider': "This cat was born outside of a Clan",
-        'outsider': "This cat was born outside of a Clan, but at their birth one parent was a member of a Clan"
+        'outsider': "This cat was born outside of a Clan.",
+        'outsider2': "This cat was born outside of a Clan, but at their birth one parent was a member of a Clan.",
+        'outsider3': "This cat was born outside of a Clan, while their parent was lost.",
     }
+    
+    if backstory != None and backstory in backstory_text:
+        return backstory_text.get(backstory, "")
+    else:
+        if cat.status in ['kittypet', 'loner', 'rogue', 'former clancat']:
+            return f"This cat is a {cat.status} and currently resides outside of the Clans."
+    
     return backstory_text.get(backstory, "")
 
 
@@ -184,7 +190,8 @@ def backstory_text(cat):
         'orphaned4': 'orphaned',
         'orphaned5': 'orphaned',
         'outsider': 'outsider',
-        'outsider2': 'outsider'
+        'outsider2': 'outsider',
+        'outsider3': 'outsider',
     }
 
     if bs_display in backstory_map:
@@ -971,9 +978,7 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # BACKSTORY
-        if the_cat.status in ['kittypet', 'loner', 'rogue']:
-            output += 'backstory: ' + the_cat.status
-        elif the_cat.backstory is not None:
+        if the_cat.backstory is not None:
             bs_text = backstory_text(the_cat)
             output += 'backstory: ' + bs_text
         else:

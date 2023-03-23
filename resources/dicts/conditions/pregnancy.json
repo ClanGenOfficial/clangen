@@ -90,7 +90,7 @@
       "m_c chokes down the herbs given to them, retching at the taste but knowing they need them to stop the blood loss. "
     ],
 	"outside_alone": [
-		"Rumour's reaches the clan, that m_c gave birth to {insert}."
+		"Rumour's reaches the clan, that m_c gave birth to a {insert}."
 	],
 	"outside_in_clan":[
 		"r_c heard a rumour, that m_c had a litter.",

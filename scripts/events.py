@@ -648,6 +648,8 @@ class Events():
         elif cat.moons == 120:
             cat.age = 'senior'
 
+        self.pregnancy_events.handle_having_kits(cat, clan=game.clan)
+
         # killing exiled cats
         if cat.exiled or cat.outside:
             if random.getrandbits(6) == 1 and not cat.dead:

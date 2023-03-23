@@ -12,6 +12,8 @@ from scripts.cat.cats import Cat, cat_class
 from scripts.event_class import Single_Event
 from scripts.cat_relations.relationship import Relationship
 from scripts.events_module.condition_events import Condition_Events
+from scripts.cat.names import names
+
 try:
     import ujson
 except ImportError:
@@ -32,7 +34,6 @@ class Pregnancy_Events():
 
     def handle_having_kits(self, cat, clan):
         """Handles pregnancy of a cat."""
-
         if not clan:
             return
 
@@ -159,6 +160,7 @@ class Pregnancy_Events():
     def handle_zero_moon_pregnant(self, cat, other_cat=None, relation=None, clan=game.clan):
         """Handles if the cat is zero moons pregnant."""
         if other_cat and (other_cat.dead or other_cat.outside or other_cat.birth_cooldown > 0):
+            print("RETURN")
             return
 
         if cat.ID in clan.pregnancy_data:
@@ -263,7 +265,7 @@ class Pregnancy_Events():
             return
 
         # if the pregnant cat is killed meanwhile, delete it from the dictionary
-        if cat.dead or cat.outside:
+        if cat.dead:
             del clan.pregnancy_data[cat.ID]
             return
 
@@ -281,10 +283,16 @@ class Pregnancy_Events():
 
         if cat.outside:
             for kit in kits:
+                kit.name = choice(names.names_dict["normal_prefixes"])
                 kit.outside = True
-                kit.backstory = 'outsider'
+                kit.status = 'loner'
+                game.clan.add_to_outside(kit)
+                kit.backstory = "outsider"
                 if other_cat and not other_cat.outside:
-                    kit.backstory = 'outsider2'
+                    kit.backstory = "outsider2"
+                if cat.outside and not cat.exiled:
+                    kit.backstory = "outsider3"
+                    kit.status = 'lost'
                 kit.relationships = {}
                 kit.relationships[cat.ID] = Relationship(kit, cat)
 
