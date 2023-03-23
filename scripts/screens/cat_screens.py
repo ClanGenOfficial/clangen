@@ -371,7 +371,8 @@ class ProfileScreen(Screens):
                 if self.the_cat.status == 'leader':
                     game.clan.leader_lives -= 10
                 self.the_cat.die()
-                self.the_cat.died_by.append(f'It was the will of something even mightier than StarClan that this cat died.')
+                self.the_cat.died_by.append(
+                    f'It was the will of something even mightier than StarClan that this cat died.')
                 update_sprite(self.the_cat)
                 self.clear_profile()
                 self.build_profile()
@@ -394,7 +395,7 @@ class ProfileScreen(Screens):
                         game.clan.add_to_darkforest(self.the_cat)
                         self.the_cat.thought = "Is distraught after being sent to the Place of No Stars"
 
-                    #Update sprite in this situation. 
+                    # Update sprite in this situation.
                     update_sprite(self.the_cat)
 
                 self.clear_profile()
@@ -564,7 +565,6 @@ class ProfileScreen(Screens):
                                                                           object_id=get_text_box_theme(
                                                                               "#cat_profile_name_box"), manager=MANAGER)
 
-
         # Write cat thought
         self.profile_elements["cat_thought"] = pygame_gui.elements.UITextBox(self.the_cat.thought,
                                                                              scale(pygame.Rect((200, 340), (1200, 80))),
@@ -631,7 +631,7 @@ class ProfileScreen(Screens):
 
         # Fullscreen
         if game.settings['fullscreen']:
-            x_pos = 740 - int(name_text_size.width*7/15)
+            x_pos = 740 - int(name_text_size.width * 7 / 15)
         else:
             x_pos = 740 - name_text_size.width
         # TODO: positioning is weird. closer to names on some, further on others
@@ -897,7 +897,8 @@ class ProfileScreen(Screens):
         output = ""
 
         # STATUS
-        if the_cat.outside and not the_cat.exiled and not the_cat.status in ['kittypet', 'loner', 'rogue', 'former clancat']:
+        if the_cat.outside and not the_cat.exiled and not the_cat.status in ['kittypet', 'loner', 'rogue',
+                                                                             'former clancat']:
             output += "<font color='#FF0000'>lost</font>"
         elif the_cat.exiled:
             output += "<font color='#FF0000'>exiled</font>"
@@ -2009,22 +2010,23 @@ class ChangeNameScreen(Screens):
         self.prefix_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((440, 400), (360, 60))),
                                                                     placeholder_text=self.the_cat.name.prefix
                                                                     , manager=MANAGER)
-        
+
         self.random_pre = UIImageButton(scale(pygame.Rect((586, 460), (68, 68))), "",
                                         object_id="#random_dice_button"
                                         , manager=MANAGER)
 
         self.random_suff = UIImageButton(scale(pygame.Rect((946, 460), (68, 68))), "",
-                                                object_id="#random_dice_button"
-                                                , manager=MANAGER)
-        
+                                         object_id="#random_dice_button"
+                                         , manager=MANAGER)
+
         self.toggle_spec_block_on = UIImageButton(scale(pygame.Rect((1150, 396), (68, 68))), "",
                                                   object_id="#unchecked_checkbox",
-                                                  tool_tip_text=f"Overwrite the cat's special suffix, allowing you to use your own", manager=MANAGER)
+                                                  tool_tip_text=f"Overwrite the cat's special suffix, allowing you to use your own",
+                                                  manager=MANAGER)
 
         self.toggle_spec_block_off = UIImageButton(scale(pygame.Rect((1150, 396), (68, 68))), "",
-                                                    object_id="#checked_checkbox",
-                                                    tool_tip_text="Re-enable the cat's special suffix", manager=MANAGER)
+                                                   object_id="#checked_checkbox",
+                                                   tool_tip_text="Re-enable the cat's special suffix", manager=MANAGER)
 
         if self.the_cat.name.status in self.the_cat.name.names_dict["special_suffixes"]:
             self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((800, 400), (360, 60))),
@@ -2094,31 +2096,32 @@ class ChangeNameScreen(Screens):
                     self.name_changed.show()
                     self.the_cat.specsuffix_hidden = True
                     self.the_cat.name.specsuffix_hidden = True
-                elif sub(r'[^A-Za-z0-9 ]+', '', self.suffix_entry_box.get_text()) == '' and not self.the_cat.name.specsuffix_hidden:
+                elif sub(r'[^A-Za-z0-9 ]+', '',
+                         self.suffix_entry_box.get_text()) == '' and not self.the_cat.name.specsuffix_hidden:
                     self.name_changed.show()
                 else:
                     self.the_cat.specsuffix_hidden = False
                     self.the_cat.name.specsuffix_hidden = False
             elif event.ui_element == self.random_pre:
-                self.prefix_entry_box.set_text(Name(
-                                                    self.the_cat.status,
+                self.prefix_entry_box.set_text(Name(self.the_cat.status,
                                                     None,
                                                     self.the_cat.name.suffix,
                                                     self.the_cat.pelt.colour,
                                                     self.the_cat.eye_colour,
                                                     self.the_cat.pelt.name,
                                                     self.the_cat.tortiepattern,
-                                                    specsuffix_hidden=(self.the_cat.name.status in self.the_cat.name.names_dict["special_suffixes"])).suffix)
+                                                    specsuffix_hidden=
+                                                        (self.the_cat.name.status in self.the_cat.name.names_dict["special_suffixes"])).prefix)
             elif event.ui_element == self.random_suff:
-                                self.suffix_entry_box.set_text(Name(
-                                                    self.the_cat.status,
+                self.suffix_entry_box.set_text(Name(self.the_cat.status,
                                                     self.the_cat.name.prefix,
                                                     None,
                                                     self.the_cat.pelt.colour,
                                                     self.the_cat.eye_colour,
                                                     self.the_cat.pelt.name,
                                                     self.the_cat.tortiepattern,
-                                                    specsuffix_hidden=(self.the_cat.name.status in self.the_cat.name.names_dict["special_suffixes"])).suffix)
+                                                    specsuffix_hidden=
+                                                        (self.the_cat.name.status in self.the_cat.name.names_dict["special_suffixes"])).suffix)
             elif event.ui_element == self.toggle_spec_block_on:
                 self.suffix_entry_box.enable()
                 self.random_suff.enable()

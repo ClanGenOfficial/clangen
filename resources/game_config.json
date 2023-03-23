@@ -142,8 +142,8 @@
 	"pregnancy": {
 		"primary_chance_mated": 50,
 		"primary_chance_unmated": 110,
-		"random_affair_chance": 70,
-		"unmated_random_affair_chance": 1,
+		"random_affair_chance": 50,
+		"unmated_random_affair_chance": 10,
 		"one_kit_possibility": {"young adult": 8, "adult": 9, "senior adult": 10, "senior": 4},
         "two_kit_possibility": {"young adult": 10, "adult": 13, "senior adult": 15, "senior": 3},
         "three_kit_possibility": {"young adult": 17, "adult": 15, "senior adult": 5, "senior": 1},
