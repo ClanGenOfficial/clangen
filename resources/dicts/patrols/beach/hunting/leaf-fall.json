@@ -343,5 +343,37 @@
     "history_text": [
         "r_c carries a scar from a solo fight with a gray vixen."
     ]
-}
-]
+},
+{
+    "patrol_id": "bch_hunt_leaf-fall_poisonrain1",
+    "biome": "beach",
+    "season": "leaf-fall",
+    "tags": ["large_prey", "hunting", "no_fail_prey", "warrior", "patrol_to_p_l", "no_change_success", "dislike", "respect", "trust", "death", "scar", "BURNRUMP", "injury", "burn", "no_body"],
+    "intro_text": "A sudden gust of wind and rain hits the patrol, they were wrong about the weather and are now soaking wet. ",
+    "decline_text": "A little bit of rain is not gonna kill this patrol! They decide to continue walking back to camp playfully splashing each other along the way, they are all soaking wet anyway.",
+    "chance_of_success": 50,
+    "exp": 15,
+    "success_text": [
+    "p_l and their patrol decide to leave the beach behind and find some trees to shelter under. It turns out to be a stroke of luck as many of the prey have also decided to seek shelter from the pouring rain. They catch many small prey and they end up going back to camp soaked anyway but successful.",
+    "p_l knows of a spot where they can shelter in between some bushes and wait out the rain. r_c suddenly inhales sharply and directs their attention to a small nest full of baby birds who have fallen from a tree because of the wind. They are wet but happy, now they can return to camp with their heads held high and rest happily and hopefully warm in their nests later that day knowing they have fed their Clan."
+    ],
+    "fail_text": [
+    "p_l and r_c end up arguing about whether or not to continue the patrol, the rest of the cats are not happy with them both after they decide to go back to camp after already being soaked to the bone, no prey and still wet what a waste of time.",
+    null,
+    "p_l and the rest of the patrol decide to seek shelter under some trees. r_c sees a large tree with a weird mark on it, they race ahead happy for the prospect of getting out of the rain. As they run under the tree they suddenly scream out in pain, the rest of the patrol can only watch in terror as their skin seems to burn off in random intervals and they are unable to escape, slowly their screams die off leaving only their too still body behind. p_l swallows their grief and orders their patrol back to camp, they have to inform everyone of this strange tree and they have to discuss if its worth it to recover r_c their body, they don't want any other cat to die such a horrifying death.",
+    "p_l sees a large tree they can shelter under. Just as they attempt to go under the tree they feel a burning pain on their skin, they jump back in a hurry and warns the patrol to not go under this tree. They rush back to camp to consult with their leader about this tree and to treat these strange burn wounds caused somehow by the rain."
+    ],
+    "win_skills": null,
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            "This cat was scarred by the poison of a certain tree while it was raining.",
+            "This cat died because of the poison of a certain tree while it was raining.",
+    "This cat lost a life because of the poison of a certain tree while it was raining."
+    ]
+},
