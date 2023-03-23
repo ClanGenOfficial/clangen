@@ -1264,11 +1264,11 @@
     },
 
     "broken back":{
-        "duration": 12,
+        "duration": 10,
         "severity": "severe",
-        "medicine_duration": 9,
+        "medicine_duration": 8,
         "mortality": {
-            "newborn": 10,
+            "newborn": 3,
             "kitten": 5,
             "adolescent": 25,
             "young adult": 40,
@@ -1281,7 +1281,7 @@
         "risks": [
             {
                 "name": "an infected wound",
-                "chance": 6
+                "chance": 10
             }
         ],
         "also_got": [

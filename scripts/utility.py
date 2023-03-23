@@ -71,12 +71,8 @@ def get_alive_kits(Cat):
     """
     returns a list of all living kittens in the clan
     """
-    alive_kits = list(filter(
-        lambda kitty: (kitty.age in ['kitten', 'newborn']
-                       and not kitty.dead
-                       and not kitty.outside),
-        Cat.all_cats.values()
-    ))
+    alive_kits = [i for i in Cat.all_cats.values() if 
+                  i.age in ['kitten', 'newborn'] and not (i.dead or i.outside)]
     return alive_kits
 
 
@@ -87,30 +83,11 @@ def get_med_cats(Cat, working=True):
     set working to False if you want all meds and med apps regardless of their work status
     """
     all_cats = Cat.all_cats.values()
+    possible_med_cats = [i for i in all_cats if i.status in ['medicine cat apprentice','medicine cat'] and not (i.dead or i.outside)] 
 
-    if working is False:
-        medicine_apprentices = list(filter(
-            lambda c: c.status == 'medicine cat apprentice' and not c.dead and not c.outside
-            , all_cats
-        ))
-        medicine_cats = list(filter(
-            lambda c: c.status == 'medicine cat' and not c.dead and not c.outside
-            , all_cats
-        ))
-    else:
-        medicine_apprentices = list(filter(
-            lambda c: c.status == 'medicine cat apprentice' and not c.dead and not c.outside and not c.not_working()
-            , all_cats
-        ))
-        medicine_cats = list(filter(
-            lambda c: c.status == 'medicine cat' and not c.dead and not c.outside and not c.not_working()
-            , all_cats
-        ))
-
-    possible_med_cats = []
-    possible_med_cats.extend(medicine_cats)
-    possible_med_cats.extend(medicine_apprentices)
-
+    if working:
+        possible_med_cats = [i for i in possible_med_cats if not i.not_working()]
+  
     return possible_med_cats
 
 
@@ -188,6 +165,10 @@ def get_current_season():
     function to handle the math for finding the clan's current season
     :return: the clan's current season
     """
+    
+    if game.config['lock_season']:
+        game.clan.current_season = game.clan.starting_season
+        return game.clan.starting_season
     # print(game.clan.current_season)
     modifiers = {
         "Newleaf": 0,
@@ -306,13 +287,15 @@ def create_new_cat(Cat,
 
         # setting gender
         if not gender:
-            gender = choice(['female', 'male'])
+            _gender = choice(['female', 'male'])
+        else:
+            _gender = gender
 
         # other clan cats, apps, and kittens (kittens and apps get indoctrinated lmao no old names for them)
         if other_clan or kit or litter or age < 12:
             new_cat = Cat(moons=age,
                           status=status,
-                          gender=gender,
+                          gender=_gender,
                           backstory=backstory)
         else:
             # grab starting names and accs for loners/kittypets
@@ -339,12 +322,12 @@ def create_new_cat(Cat,
                     new_cat = Cat(moons=age,
                                   prefix=name,
                                   status=status,
-                                  gender=gender,
+                                  gender=_gender,
                                   backstory=backstory)
                 else:  # completely new name
                     new_cat = Cat(moons=age,
                                   status=status,
-                                  gender=gender,
+                                  gender=_gender,
                                   backstory=backstory)
             # these cats keep their old names
             else:
@@ -352,7 +335,7 @@ def create_new_cat(Cat,
                               prefix=name,
                               suffix="",
                               status=status,
-                              gender=gender,
+                              gender=_gender,
                               backstory=backstory)
 
         # give em a collar if they got one
@@ -658,8 +641,7 @@ def change_relationship_values(cats_to: list,
 
     # pick out the correct cats
     for kitty in cats_from:
-        relationships = list(filter(lambda rel: rel.cat_to.ID in cats_to,
-                                    list(kitty.relationships.values())))
+        relationships = [i for i in kitty.relationships.values() if i.cat_to.ID in cats_to]
 
         # make sure that cats don't gain rel with themselves
         for rel in relationships:

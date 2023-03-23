@@ -184,6 +184,7 @@ class Cat():
                  pelt=None,
                  eye_colour=None,
                  suffix=None,
+                 specsuffix_hidden=False,
                  ID=None,
                  moons=None,
                  example=False,
@@ -242,6 +243,7 @@ class Cat():
         self.former_apprentices = []
         self.relationships = {}
         self.mate = None
+        self.previous_mates = []
         self.placement = None
         self.example = example
         self.dead = False
@@ -303,6 +305,8 @@ class Cat():
         # the next save.
 
         self.favourite = False
+
+        self.specsuffix_hidden = specsuffix_hidden
 
         # setting ID
         if ID is None:
@@ -384,7 +388,7 @@ class Cat():
         else:
             self.backstory = self.backstory
 
-        # sex
+        # sex!?!??!?!?!??!?!?!?!??
         if self.gender is None:
             self.gender = choice(["female", "male"])
         self.g_tag = self.gender_tags[self.gender]
@@ -471,9 +475,10 @@ class Cat():
                              self.eye_colour,
                              self.pelt.name,
                              self.tortiepattern,
-                             biome=biome)
+                             biome=biome,
+                             specsuffix_hidden=self.specsuffix_hidden)
         else:
-            self.name = Name(status, prefix, suffix, eyes=self.eye_colour)
+            self.name = Name(status, prefix, suffix, eyes=self.eye_colour, specsuffix_hidden=self.specsuffix_hidden)
 
         # Sprite sizes
         self.sprite = None
@@ -520,22 +525,24 @@ class Cat():
         self.injuries.clear()
         self.illnesses.clear()
 
-        self.thought = 'Is surprised to find themselves walking the stars of Silverpelt'
 
         # Deal with leader death
         text = ""
         if self.status == 'leader':
             if game.clan.leader_lives > 0:
+                self.thought = 'Was startled to find themselves in Silverpelt for a moment... did they lose a life?'
                 return ""
             elif game.clan.leader_lives <= 0:
                 self.dead = True
                 game.clan.leader_lives = 0
+                self.thought = 'Is surprised to find themselves walking the stars of Silverpelt'
                 if game.clan.instructor.df is False:
                     text = 'They\'ve lost their last life and have travelled to StarClan.'
                 else:
                     text = 'They\'ve has lost their last life and have travelled to the Dark Forest.'
         else:
             self.dead = True
+            self.thought = 'Is surprised to find themselves walking the stars of Silverpelt'
 
         # They are not removed from the mate's "mate" property. There is a "cooldown" period, which prevents
         # cats from getting into relationships the same moon their mates dies.
@@ -604,16 +611,16 @@ class Cat():
             relationships = cat.relationships.values()
 
             pos_rel_values = {
-                "romantic": list(filter(lambda rel: rel.romantic_love > 55, relationships)),
-                "platonic": list(filter(lambda rel: rel.platonic_like > 50, relationships)),
-                "admiration": list(filter(lambda rel: rel.admiration > 70, relationships)),
-                "comfort": list(filter(lambda rel: rel.comfortable > 60, relationships)),
-                "trust": list(filter(lambda rel: rel.trust > 70, relationships))
+                "romantic": [i for i in relationships if i.romantic_love > 55],
+                "platonic": [i for i in relationships if i.platonic_like > 50],
+                "admiration": [i for i in relationships if i.admiration > 70],
+                "comfort": [i for i in relationships if i.comfortable > 60],
+                "trust": [i for i in relationships if i.trust > 70]
             }
 
             neg_rel_values = {
-                "dislike": list(filter(lambda rel: rel.dislike > 50, relationships)),
-                "jealousy": list(filter(lambda rel: rel.jealousy > 50, relationships))
+                "dislike": [i for i in relationships if i.dislike > 50],
+                "jealousy": [i for i in relationships if i.jealousy > 50]
             }
 
             possible_strings = []
@@ -2088,39 +2095,76 @@ class Cat():
 
         return True
 
-    def unset_mate(self, breakup: bool = False, fight: bool = False):
-        """Unset the mate."""
-        if self.mate is None:
-            return
+    def unset_mate(self, other_cat: Cat, breakup: bool = False, fight: bool = False):
+        """Unset the mate from both self and other_cat"""   
 
-        if self.mate in self.relationships:
-            relation = self.relationships[self.mate]
-            relation.mates = False
-            if breakup:
-                relation.romantic_love -= 40
-                relation.comfortable -= 20
-                relation.trust -= 10
-                if fight:
-                    relation.platonic_like -= 30
-        else:
-            mate = self.all_cats.get(self.mate)
-            if mate:
-                self.relationships[self.mate] = Relationship(self, mate)
+        # Both cats must have mates for this to work
+        if not self.mate or not other_cat.mate:
+            return
+        
+        # AND they must be mates with each other. 
+        if self.ID != other_cat.mate or other_cat.ID != self.mate:
+            print(f"Unsetting mates: These {self.name} and {other_cat.name} are not mates!")
+            return
+        
+        # If only deal with relationships if this is a breakup. 
+        if breakup:
+            if other_cat.ID not in self.relationships:
+                self.relationships[other_cat.ID] = Relationship(self, other_cat, True)
+            if self.ID not in other_cat.relationships:
+                other_cat.relationships[self.ID] = Relationship(other_cat, self, True)
+
+            self_relationship = self.relationships[other_cat.ID]
+            other_relationship = other_cat.relationships[self.ID]
+
+            self_relationship.romantic_love -= 40
+            other_relationship.romantic_love -= 40
+            self_relationship.comfortable -= 20
+            other_relationship.comfortable -= 20
+            self_relationship.trust -= 10
+            other_relationship.trust -= 10
+            if fight:
+                self_relationship.platonic_like -= 30
+                other_relationship.platonic_like -= 30
 
         self.mate = None
+        other_cat.mate = None
+        
+        #Handle previous mates:
+        if other_cat.ID not in self.previous_mates:
+            self.previous_mates.append(other_cat.ID)
+        if self.ID not in other_cat.previous_mates:
+            other_cat.previous_mates.append(self.ID)
 
     def set_mate(self, other_cat: Cat):
-        """Assigns other_cat as mate to self."""
+        """Sets up a mate relationship between self and other_cat."""
+        if self.mate or other_cat.mate:
+            print(f"Warning: In order to set mates, both cats must have no current mate. {self.name} and {other_cat.name} have not been made mates. ")
+            return
+
         self.mate = other_cat.ID
         other_cat.mate = self.ID
 
-        if other_cat.ID in self.relationships:
-            cat_relationship = self.relationships[other_cat.ID]
-            cat_relationship.romantic_love += 20
-            cat_relationship.comfortable += 20
-            cat_relationship.trust += 10
-        else:
+        # If the current mate was in the previous mate list, remove them. 
+        if self.mate in self.previous_mates:
+            self.previous_mates.remove(self.mate)
+        if other_cat.mate in other_cat.previous_mates:
+            other_cat.previous_mates.remove(other_cat.mate)
+
+        # Set starting relationship values
+        if other_cat.ID not in self.relationships:
             self.relationships[other_cat.ID] = Relationship(self, other_cat, True)
+        if self.ID not in other_cat.relationships:
+            other_cat.relationships[self.ID] = Relationship(other_cat, self, True)
+
+        self_relationship = self.relationships[other_cat.ID]
+        other_relationship = other_cat.relationships[self.ID]
+        self_relationship.romantic_love += 20
+        other_relationship.romantic_love += 20
+        self_relationship.comfortable += 20
+        other_relationship.comfortable += 20
+        self_relationship.trust += 10
+        other_relationship.trust += 10
 
     def create_one_relationship(self, other_cat: Cat):
         """Create a new relationship between current cat and other cat. Returns: Relationship"""

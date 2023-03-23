@@ -1,4 +1,9 @@
-pygame==2.2.0
-ujson==5.7.0
-pygame_gui==0.6.8
-platformdirs===3.1.0
+importlib-resources==5.12.0 ; python_full_version >= "3.7.2" and python_version < "3.9"
+platformdirs==3.1.0 ; python_full_version >= "3.7.2" and python_version < "3.12"
+pygame-gui==0.6.8 ; python_full_version >= "3.7.2" and python_version < "3.12"
+pygame==2.2.0 ; python_full_version >= "3.7.2" and python_version < "3.12"
+pypresence==4.2.1 ; python_full_version >= "3.7.2" and python_version < "3.12"
+python-i18n==0.3.9 ; python_full_version >= "3.7.2" and python_version < "3.12"
+typing-extensions==4.5.0 ; python_full_version >= "3.7.2" and python_version < "3.8"
+ujson==5.7.0 ; python_full_version >= "3.7.2" and python_version < "3.12"
+zipp==3.15.0 ; python_full_version >= "3.7.2" and python_version < "3.9"

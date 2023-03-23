@@ -126,11 +126,11 @@ class Group_Events():
         allowed_biome = [biome, "Any", "any"]
         main_cat = Cat.all_cats[self.abbreviations_cat_id["m_c"]]
         for interact in interactions:
-            in_tags = list(filter(lambda inter_biome: inter_biome in allowed_biome, interact.biome))
+            in_tags = [i for i in interact.biome if i in allowed_biome] 
             if len(in_tags) < 1:
                 continue
 
-            in_tags = list(filter(lambda inter_season: inter_season in allowed_season, interact.season))
+            in_tags = [i for i in interact.season if i in allowed_season]
             if len(in_tags) < 1:
                 continue
 

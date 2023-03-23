@@ -21,6 +21,11 @@
             "enable_title_bar": "0"
         }
     },
+    "#cat_button.tool_tip": {
+        "misc": {
+            "rect_width": "300"
+        }
+    },
     "#checked_checkbox_smalltooltip.tool_tip":
     {
         "misc":

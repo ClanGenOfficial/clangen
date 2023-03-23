@@ -65,19 +65,19 @@ class UIImageButton(pygame_gui.elements.UIButton):
 
 
 class UISpriteButton():
-    '''This is for use with the cat sprites. It wraps together a UIImage and Transparent Button.
-        For most functions, this can be used exactly like other pygame_gui elements. '''
+    """This is for use with the cat sprites. It wraps together a UIImage and Transparent Button.
+        For most functions, this can be used exactly like other pygame_gui elements. """
 
     def __init__(self, relative_rect, sprite, cat_id=None, visible=1, cat_object=None, starting_height=1,
-                 manager=None):
+                 manager=None, container=None, tool_tip_text=None):
 
         # We have to scale the image before putting it into the image object. Otherwise, the method of upscaling that UIImage uses will make the pixel art fuzzy
         self.image = pygame_gui.elements.UIImage(relative_rect, pygame.transform.scale(sprite, relative_rect.size),
-                                                 visible=visible, manager=manager)
+                                                 visible=visible, manager=manager, container=container)
         self.image.disable()
-        # The transparent button. This a subclass that UIButton that aslo hold the cat_id.
+        # The transparent button. This a subclass that UIButton that also hold the cat_id.
         self.button = CatButton(relative_rect, visible=visible, cat_id=cat_id, cat_object=cat_object,
-                                starting_height=starting_height, manager=manager)
+                                starting_height=starting_height, manager=manager, tool_tip_text=tool_tip_text)
 
     def return_cat_id(self):
         return self.button.return_cat_id()
@@ -120,13 +120,13 @@ class UISpriteButton():
 
 
 class CatButton(pygame_gui.elements.UIButton):
-    '''Basic UIButton subclass for at sprite buttons. It stores the cat ID. '''
+    """Basic UIButton subclass for at sprite buttons. It stores the cat ID. """
 
-    def __init__(self, relative_rect, cat_id=None, visible=True, cat_object=None, starting_height=1, manager=None):
+    def __init__(self, relative_rect, cat_id=None, visible=True, cat_object=None, starting_height=1, manager=None, tool_tip_text=None):
         self.cat_id = cat_id
         self.cat_object = cat_object
-        super().__init__(relative_rect, "", object_id="#image_button", visible=visible,
-                         starting_height=starting_height, manager=manager)
+        super().__init__(relative_rect, "", object_id="#cat_button", visible=visible,
+                         starting_height=starting_height, manager=manager, tool_tip_text=tool_tip_text)
 
     def return_cat_id(self):
         return self.cat_id

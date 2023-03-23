@@ -299,7 +299,7 @@ class Relation_Events():
 
         for new_cat in new_cats:
             same_age_cats = get_cats_same_age(new_cat, Relationship)
-            alive_cats = list(filter(lambda c: not c.dead and not c.outside and not c.exiled , list(new_cat.all_cats.values())))
+            alive_cats = [i for i in new_cat.all_cats.values() if not (i.dead or i.outside or i.exiled)]
             number = game.config["new_cat"]["cat_amount_welcoming"]
 
             if len(alive_cats) == 0:
@@ -369,7 +369,7 @@ class Relation_Events():
             value_types = ["romantic", "platonic", "dislike", "admiration", "comfortable", "jealousy", "trust"]
             fulfilled = True
             for v_type in value_types:
-                tags = list(filter(lambda constr: v_type in constr, constraint))
+                tags = [i for i in constraint if v_type in i]
                 if len(tags) < 1:
                     continue
                 threshold = 0

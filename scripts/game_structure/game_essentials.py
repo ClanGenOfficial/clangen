@@ -138,7 +138,8 @@ class Game():
         'broke_up': False,
         'show_info': False,
         'patrol_chosen': 'general',
-        'favorite_sub_tab': None
+        'favorite_sub_tab': None,
+        'root_cat': None
 
     }
     all_screens = {}
@@ -361,6 +362,7 @@ class Game():
                 "ID": inter_cat.ID,
                 "name_prefix": inter_cat.name.prefix,
                 "name_suffix": inter_cat.name.suffix,
+                "specsuffix_hidden": inter_cat.name.specsuffix_hidden,
                 "gender": inter_cat.gender,
                 "gender_align": inter_cat.genderalign,
                 "birth_cooldown": inter_cat.birth_cooldown,
@@ -376,6 +378,7 @@ class Game():
                 "patrol_with_mentor": inter_cat.patrol_with_mentor if inter_cat.patrol_with_mentor else 0,
                 "mentor_influence": inter_cat.mentor_influence if inter_cat.mentor_influence else [],
                 "mate": inter_cat.mate,
+                "previous_mates": inter_cat.previous_mates,
                 "dead": inter_cat.dead,
                 "died_by": inter_cat.died_by if inter_cat.died_by else [],
                 "paralyzed": inter_cat.paralyzed,

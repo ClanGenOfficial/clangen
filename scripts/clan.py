@@ -291,6 +291,47 @@ class Clan():
                             ([810, 1026], "xy"), ([754, 1142], "xy"),
                             ([86, 1162], "xy"), ([432, 1104], "xy")]
         },
+        "Plainscamp2": {
+            'leader den': (830, 189),
+            'medicine den': (22, 348),
+            'nursery': (1240, 400),
+            'clearing': (742, 528),
+            'apprentice den': (212, 820),
+            'warrior den': (1180, 860),
+            'elder den': (858, 980),
+            'leader place': [([722, 220], 'xy'), ([898, 292], ''), 
+                             ([798, 322], 'xy'), ([698, 340], 'xy')],
+            'medicine place': [([136, 496], 'xy'), ([238, 494], 'xy'),
+                               ([340, 502], 'xy'), ([186, 598], 'xy'),
+                               ([290, 604], 'xy'), ([110, 746], '')],
+            'nursery place': [([1010, 572], 'xy'), ([1112, 552], 'xy'), 
+                              ([1214, 494], 'xy'), ([1316, 466], 'xy'),
+                              ([1348, 567], 'xy'), ([1246, 596], 'xy'),
+                              ([1144, 624], 'xy'), ([1042, 674], 'xy'),
+                              ([1144, 728], 'xy'), ([1248, 698], 'xy'),
+                              ([1340, 670], 'xy')],
+            'clearing place': [([252, 176], 'xy'), ([1190, 30], 'x'), 
+                               ([534, 418], 'y'), ([540, 520], 'y'),
+                               ([524, 624], 'xy'), ([530, 726], 'xy'),
+                               ([574, 828], 'xy'), ([640, 588], 'xy'),
+                               ([638, 690], 'xy'), ([676, 794], 'xy'),
+                               ([730, 896], 'xy'), ([740, 594], 'xy'),
+                               ([734, 694], 'xy'), ([778, 794], 'xy'),
+                               ([840, 584], 'xy'), ([836, 694], 'xy'),
+                               ([880, 794], 'xy')],
+            'apprentice place': [([129, 922], 'xy'), ([231, 927], 'xy'),
+                                 ([334, 927], 'xy'), ([440, 897], ''),
+                                 ([171, 1026], 'xy'), ([281, 1027], 'xy'),
+                                 ([383, 1028], 'xy')],
+            'warrior place': [([1106, 974], 'xy'), ([1104, 1078], 'xy'),
+                              ([1212, 926], 'xy'), ([1206, 1026], 'xy'),
+                              ([1206, 1129], 'xy'), ([1314, 948], 'xy'),
+                              ([1312, 1050], 'xy'), ([1414, 1028], 'y'),
+                              ([1374, 1160], '')],
+            'elder place': [([700, 1038], 'xy'), ([803, 1046], 'xy'),
+                            ([882, 1164], 'xy'), ([780, 1146], 'xy'),
+                            ([678, 1146], 'xy'), ([576, 1162], 'xy')]
+        },
     }
 
     places_vacant = {
@@ -775,7 +816,10 @@ class Clan():
                              Cat.all_cats.get(deputy_info[0], None),
                              Cat.all_cats.get(med_cat_info[0], None))
         game.clan.age = int(general[1])
-        game.clan.current_season = game.clan.seasons[game.clan.age % 12]
+        if not game.config['lock_season']:
+            game.clan.current_season = game.clan.seasons[game.clan.age % 12]
+        else:
+            game.clan.current_season = game.clan.starting_season
         game.clan.leader_lives, game.clan.leader_predecessors = int(
             leader_info[1]), int(leader_info[2])
 
