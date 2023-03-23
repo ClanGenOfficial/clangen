@@ -178,7 +178,6 @@ class Pregnancy_Events():
             if amount > 1:
                 insert = f'a litter of {amount} kits'
             print_event = f"{cat.name} brought {insert} back to camp, but refused to talk about their origin."
-            # game.birth_death_events_list.append(print_event)
             cats_involved = [cat.ID]
             for kit in kits:
                 cats_involved.append(kit.ID)
@@ -293,10 +292,10 @@ class Pregnancy_Events():
         elif cat.mate == other_cat.ID and other_cat.dead or other_cat.outside:
             involved_cats.append(other_cat.ID)
             event_list.append(choice(events["birth"]["dead_mate"]))
-        elif not cat.mate and not other_cat.mate:
+        elif not cat.mate and not other_cat.mate and not other_cat.dead:
             involved_cats.append(other_cat.ID)
             event_list.append(choice(events["birth"]["both_unmated"]))
-        elif (cat.mate and cat.mate != other_cat.ID) or (other_cat.mate and other_cat.mate != cat.ID):
+        elif (cat.mate and cat.mate != other_cat.ID and not other_cat.dead) or (other_cat.mate and other_cat.mate != cat.ID and not other_cat.dead):
             involved_cats.append(other_cat.ID)
             event_list.append(choice(events["birth"]["affair"]))
         else:
