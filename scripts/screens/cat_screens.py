@@ -118,8 +118,9 @@ def bs_blurb_text(cat):
         'refugee5': "This cat got washed away from their former territory in a flood that destroyed their home but was glad to find a new home in their new Clan here.",
         'disgraced2': "This cat was exiled from their old Clan for something they didn't do and came here to seek safety.",
         'disgraced3': "This cat once held a high rank in another Clan but was exiled for reasons they refuse to share.",
-        'other_clan1': "This cat grew up in another Clan but chose to leave that life and join the Clan they now live in."
-
+        'other_clan1': "This cat grew up in another Clan but chose to leave that life and join the Clan they now live in.",
+        'outsider': "This cat was born outside of a Clan",
+        'outsider': "This cat was born outside of a Clan, but at their birth one parent was a member of a Clan"
     }
     return backstory_text.get(backstory, "")
 
@@ -181,7 +182,9 @@ def backstory_text(cat):
         'orphaned2': 'orphaned',
         'orphaned3': 'orphaned',
         'orphaned4': 'orphaned',
-        'orphaned5': 'orphaned'
+        'orphaned5': 'orphaned',
+        'outsider': 'outsider',
+        'outsider2': 'outsider'
     }
 
     if bs_display in backstory_map:
