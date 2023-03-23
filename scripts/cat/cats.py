@@ -544,9 +544,6 @@ class Cat():
             self.dead = True
             self.thought = 'Is surprised to find themselves walking the stars of Silverpelt'
 
-        # They are not removed from the mate's "mate" property. There is a "cooldown" period, which prevents
-        # cats from getting into relationships the same moon their mates dies.
-        self.mate = None
         """if self.mate is not None:
             if isinstance(self.mate, str):
                 mate_cat: Cat = Cat.all_cats[self.mate]
@@ -567,6 +564,8 @@ class Cat():
 
         if game.clan.game_mode != 'classic':
             self.grief(body)
+
+        print(self.mate)
 
         return text
 
@@ -2114,8 +2113,10 @@ class Cat():
     def unset_mate(self, other_cat: Cat, breakup: bool = False, fight: bool = False):
         """Unset the mate from both self and other_cat"""   
 
+        print("unsetting mate")
         # Both cats must have mates for this to work
         if not self.mate or not other_cat.mate:
+            print("One cat doesn't have a mate. ")
             return
         
         # AND they must be mates with each other. 
@@ -2139,6 +2140,8 @@ class Cat():
             other_relationship.comfortable -= 20
             self_relationship.trust -= 10
             other_relationship.trust -= 10
+            self_relationship.mate = False
+            other_relationship.mate = False
             if fight:
                 self_relationship.platonic_like -= 30
                 other_relationship.platonic_like -= 30
@@ -2181,6 +2184,8 @@ class Cat():
         other_relationship.comfortable += 20
         self_relationship.trust += 10
         other_relationship.trust += 10
+        self_relationship.mate = True
+        other_relationship.mate = True
 
     def create_one_relationship(self, other_cat: Cat):
         """Create a new relationship between current cat and other cat. Returns: Relationship"""

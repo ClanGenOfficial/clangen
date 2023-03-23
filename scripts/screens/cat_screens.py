@@ -873,13 +873,12 @@ class ProfileScreen(Screens):
                 output += ' moons'
 
         # MATE
-        if the_cat.mate is not None and not the_cat.dead:
+        if the_cat.mate:
             # NEWLINE ----------
             output += "\n"
             if the_cat.mate in Cat.all_cats:
-                if Cat.all_cats.get(
-                        the_cat.mate
-                ).dead:
+                mate_ob = Cat.fetch_cat(the_cat.mate)
+                if mate_ob.dead != self.the_cat.dead or mate_ob.outside != self.the_cat.outside:
                     output += 'former mate: ' + str(Cat.all_cats[the_cat.mate].name)
                 else:
                     output += 'mate: ' + str(Cat.all_cats[the_cat.mate].name)
@@ -1695,7 +1694,7 @@ class ProfileScreen(Screens):
                 self.see_relationships_button.enable()
 
             if self.the_cat.age not in ['young adult', 'adult', 'senior adult', 'senior'
-                                        ] or self.the_cat.dead or self.the_cat.exiled or self.the_cat.outside:
+                                        ] or self.the_cat.exiled or self.the_cat.outside:
                 self.choose_mate_button.disable()
             else:
                 self.choose_mate_button.enable()

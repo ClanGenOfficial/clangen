@@ -1612,7 +1612,7 @@ class ChooseMateScreen(Screens):
 
             related = direct_related or indirect_related
 
-            not_available = relevant_cat.dead or relevant_cat.outside
+            not_available = (relevant_cat.dead != self.the_cat.dead) or (relevant_cat.outside != self.the_cat.outside) or relevant_cat.faded
 
             if not related and relevant_cat.ID != self.the_cat.ID and invalid_age \
                     and not not_available and relevant_cat.mate is None:
