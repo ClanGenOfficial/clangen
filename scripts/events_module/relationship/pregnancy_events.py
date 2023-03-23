@@ -293,12 +293,12 @@ class Pregnancy_Events():
         elif cat.mate == other_cat.ID and other_cat.dead or other_cat.outside:
             involved_cats.append(other_cat.ID)
             event_list.append(choice(events["birth"]["dead_mate"]))
-        elif (cat.mate and cat.mate != other_cat.ID) or (other_cat.mate and other_cat.mate != cat.ID):
-            involved_cats.append(other_cat.ID)
-            event_list.append(choice(events["birth"]["affair"]))
         elif not cat.mate and not other_cat.mate:
             involved_cats.append(other_cat.ID)
             event_list.append(choice(events["birth"]["both_unmated"]))
+        elif (cat.mate and cat.mate != other_cat.ID) or (other_cat.mate and other_cat.mate != cat.ID):
+            involved_cats.append(other_cat.ID)
+            event_list.append(choice(events["birth"]["affair"]))
         else:
             event_list.append(choice(events["birth"]["unmated_parent"]))
 
@@ -436,13 +436,13 @@ class Pregnancy_Events():
             difference = -difference
 
             if difference > 30:
-                affair_chance -= 8
+                affair_chance -= 7
             elif difference > 20:
-                affair_chance -= 5
+                affair_chance -= 6
             elif difference > 15:
-                affair_chance -= 3
+                affair_chance -= 5
             elif difference > 10:
-                affair_chance -= 2
+                affair_chance -= 4
 
         elif difference > 0:
             # If the average love between the mate is greater than the average relationship between the affair
@@ -455,7 +455,7 @@ class Pregnancy_Events():
             elif difference > 15:
                 affair_chance += 3
             elif difference > 10:
-                affair_chance += 2
+                affair_chance += 5
 
         else:
             # For difference = 0 or some other weird stuff
@@ -472,17 +472,18 @@ class Pregnancy_Events():
         affair_chance = 15
         average_romantic_love = (relation.romantic_love + relation.opposite_relationship.romantic_love) / 2
 
+        # If the highest romantic reltaion has a mate, increase the chance. 
         if relation.cat_to.mate:
-            affair_chance += 30
+            affair_chance = 30
 
         if average_romantic_love > 50:
             affair_chance -= 12
         elif average_romantic_love > 40:
-            affair_chance -= 6
+            affair_chance -= 10
         elif average_romantic_love > 30:
-            affair_chance -= 3
+            affair_chance -= 7
         elif average_romantic_love > 10:
-            affair_chance -= 2
+            affair_chance -= 5
 
         return affair_chance
 
@@ -529,21 +530,31 @@ class Pregnancy_Events():
             cat.relationships[mate.ID] = mate_relation
 
 
+        # LOVE AFFAIR
         # Handle love affair chance.
         affair_partner = self._determine_love_affair(cat, mate, mate_relation, samesex)
         if affair_partner:
             return affair_partner, True
 
-        # If the love affair chance did not trigger, this code will be reached.
-        if cat.mate:
-            chance_random_affair = game.config["pregnancy"]["random_affair_chance"]
-        else:
-            chance_random_affair = game.config["pregnancy"]["unmated_random_affair_chance"]
-        if not int(random.random() * chance_random_affair):
+        # RANDOM AFFAIR
+        # "regular" random affair
+        if not int(random.random() * game.config["pregnancy"]["random_affair_chance"]):
             possible_affair_partners = [i for i in Cat.all_cats_list if 
                                         i.is_potential_mate(cat, for_love_interest=True) 
                                         and (samesex or i.gender != cat.gender) 
                                         and cat.mate != i.ID] 
+            if possible_affair_partners:
+                chosen_affair = choice(possible_affair_partners)
+                return chosen_affair, True
+        
+        # SPECIAL UNMATED RANDOM AFFAIR
+        # Special random affair check only for unmated cats. For this check, only
+        # other unmated cats can be the affair partner. 
+        if not cat.mate and not int(random.random() * game.config["pregnancy"]["unmated_random_affair_chance"]):
+            possible_affair_partners = [i for i in Cat.all_cats_list if 
+                                        i.is_potential_mate(cat, for_love_interest=True) 
+                                        and (samesex or i.gender != cat.gender) 
+                                        and not i.mate] 
             if possible_affair_partners:
                 chosen_affair = choice(possible_affair_partners)
                 return chosen_affair, True
