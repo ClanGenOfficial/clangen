@@ -25,7 +25,7 @@
         },
         "font": {
             "name": "notosans",
-            "size": "9",
+            "size": "18",
             "bold": "1"
         },
         "misc": {
@@ -58,9 +58,6 @@
         "colours": {
             "dark_bg": "#FFFF0000",
             "normal_text": "#000000",
-            "link_text": "#0000FF",
-            "link_hover": "#000000",
-            "link_selected": "#00FF00",
             "selected_bg": "#776045",
             "selected_text": "#AC9D72"
         },
@@ -77,22 +74,12 @@
     "#text_box_14": {
         "prototype": "#text_box",
         "font": {
+            "name": "notosans",
             "size": "7"
         }
     },
     "#text_box_14_horizleft": {
         "prototype": "#text_box_14",
-        "colours": {
-            "dark_bg": "#FFFF0000",
-            "normal_text": "#000000",
-            "link_text": "#0000FF",
-            "link_hover": "#000000",
-            "link_selected": "#00FF00"
-        },
-        "font": {
-            "name": "notosans",
-            "size": "7"
-        },
         "misc": {
             "border_width": "0",
             "shadow_width": "0",
@@ -103,13 +90,8 @@
     "#text_box_22": {
         "prototype": "#text_box",
         "font": {
+            "name": "notosans",
             "size": "11"
-        }
-    },
-    "#text_box_22_horizleft": {
-        "prototype": "#text_box_22",
-        "misc": {
-            "text_horiz_alignment": "left"
         }
     },
     "#text_box_22_horizcenter": {
@@ -118,16 +100,36 @@
             "text_horiz_alignment": "center"
         }
     },
+    "#text_box_22_horizcenter_spacing_95": {
+        "prototype": "#text_box_22",
+        "misc": {
+            "text_horiz_alignment": "center",
+            "line_spacing": "0.95"
+        }
+    },
     "#text_box_22_horizcenter_pad_20_20": {
         "prototype": "#text_box_22_horizcenter",
         "misc": {
             "padding": "10,10"
         }
     },
+    "#text_box_22_horizleft": {
+        "prototype": "#text_box_22",
+        "misc": {
+            "text_horiz_alignment": "left"
+        }
+    },
+    "#text_box_22_horizleft_spacing_95": {
+        "prototype": "#text_box_22_horizleft",
+        "misc": {
+            "line_spacing": "0.95"
+        }
+    },
 
     "#text_box_26": {
         "prototype": "#text_box",
         "font": {
+            "name": "notosans",
             "size": "13"
         }
     },
@@ -164,7 +166,27 @@
     "#text_box_30": {
         "prototype": "#text_box",
         "font": {
+            "name": "notosans",
             "size": "15"
+        }
+    },
+    "#text_box_30_horizcenter": {
+        "prototype": "#text_box_30",
+        "misc": {
+            "text_horiz_alignment": "center"
+        }
+    },
+    "#text_box_30_horizcenter_spacing_95": {
+        "prototype": "#text_box_30",
+        "misc": {
+            "text_horiz_alignment": "center",
+            "line_spacing": "0.95"
+        }
+    },
+    "#text_box_30_horizcenter_white": {
+        "prototype": "#text_box_30_horizcenter",
+        "colours": {
+            "normal_text": "#FFFFFF"
         }
     },
     "#text_box_30_horizcenter_vertcenter": {
@@ -186,6 +208,12 @@
             "padding": "5,5"
         }
     },
+    "#text_box_30_horizleft_pad_10_10_spacing_95": {
+        "prototype": "#text_box_30_horizleft_pad_10_10",
+        "misc": {
+            "line_spacing": "0.95"
+        }
+    },
     "#text_box_30_horizleft_pad_0_8": {
         "prototype": "#text_box_30_horizleft",
         "misc": {
@@ -198,22 +226,11 @@
             "padding": "20,20"
         }
     },
-    "#text_box_30_horizcenter": {
-        "prototype": "#text_box_30",
-        "misc": {
-            "text_horiz_alignment": "center"
-        }
-    },
-    "#text_box_30_horizcenter_white": {
-        "prototype": "#text_box_30_horizcenter",
-        "colours": {
-            "normal_text": "#FFFFFF"
-        }
-    },
 
     "#text_box_34": {
         "prototype": "#text_box",
         "font": {
+            "name": "notosans",
             "size": "17"
         }
     },
@@ -239,6 +256,7 @@
     "#text_box_40": {
         "prototype": "#text_box",
         "font": {
+            "name": "notosans",
             "size": "20"
         }
     },

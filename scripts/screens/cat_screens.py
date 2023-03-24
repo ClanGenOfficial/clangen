@@ -570,11 +570,11 @@ class ProfileScreen(Screens):
                                                                              scale(pygame.Rect((200, 340), (1200, 80))),
                                                                              wrap_to_height=True,
                                                                              object_id=get_text_box_theme(
-                                                                                 "#text_box_30_horizcenter")
+                                                                                 "#text_box_30_horizcenter_spacing_95")
                                                                              , manager=MANAGER)
 
         self.profile_elements["cat_info_column1"] = UITextBoxTweaked(self.generate_column1(self.the_cat),
-                                                                     scale(pygame.Rect((600, 460), (360, 360))),
+                                                                     scale(pygame.Rect((600, 460), (360, 380))),
                                                                      object_id=get_text_box_theme(
                                                                          "#text_box_22_horizleft"),
                                                                      line_spacing=0.95, manager=MANAGER)

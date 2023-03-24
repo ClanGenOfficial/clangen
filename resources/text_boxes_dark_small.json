@@ -21,14 +21,8 @@
     "#text_box_22_dark": {
         "prototype": "#default_dark",
         "font": {
+            "name": "notosans",
             "size": 11
-        }
-    },
-    "#text_box_22_horizleft_dark": {
-        "prototype": "#text_box_22_dark",
-        "misc":
-        {
-            "text_horiz_alignment": "left"
         }
     },
     "#text_box_22_horizcenter_dark": {
@@ -38,10 +32,31 @@
             "text_horiz_alignment": "center"
         }
     },
+    "#text_box_22_horizcenter_spacing_95_dark": {
+        "prototype": "#text_box_22",
+        "misc": {
+            "text_horiz_alignment": "center",
+            "line_spacing": "0.95"
+        }
+    },
+    "#text_box_22_horizleft_dark": {
+        "prototype": "#text_box_22_dark",
+        "misc":
+        {
+            "text_horiz_alignment": "left"
+        }
+    },
+    "#text_box_22_horizleft_spacing_95_dark": {
+        "prototype": "#text_box_22_horizleft",
+        "misc": {
+            "line_spacing": "0.95"
+        }
+    },
 
     "#text_box_26_dark": {
         "prototype": "#default_dark",
         "font": {
+            "name": "notosans",
             "size": 13
         }
     },
@@ -65,6 +80,7 @@
     "#text_box_30_dark": {
         "prototype": "#default_dark",
         "font": {
+            "name": "notosans",
             "size": 15
         }
     },
@@ -73,6 +89,13 @@
         "misc":
         {
             "text_horiz_alignment": "center"
+        }
+    },
+    "#text_box_30_horizcenter_spacing_95_dark": {
+        "prototype": "#text_box_30",
+        "misc": {
+            "text_horiz_alignment": "center",
+            "line_spacing": "0.95"
         }
     },
     "#text_box_30_horizcenter_vertcenter_dark": {
@@ -106,6 +129,7 @@
     "#text_box_34_dark": {
         "prototype": "#default_dark",
         "font": {
+            "name": "notosans",
             "size": 17
         }
     },
@@ -127,6 +151,7 @@
     "#text_box_40_dark": {
         "prototype": "#default_dark",
         "font": {
+            "name": "notosans",
             "size": 20
         }
     },

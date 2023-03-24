@@ -7,8 +7,9 @@
       <change beforePath="$PROJECT_DIR$/resources/text_boxes_dark.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/text_boxes_dark.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/text_boxes_dark_small.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/text_boxes_dark_small.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/text_boxes_small.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/text_boxes_small.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tool_tips.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/tool_tips.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tool_tips_small.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/tool_tips_small.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/game_structure/windows.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/game_structure/windows.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/screens/base_screens.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/screens/base_screens.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/screens/cat_screens.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/screens/cat_screens.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/screens/clan_creation_screens.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/screens/clan_creation_screens.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/screens/clan_screens.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/screens/clan_screens.py" afterDir="false" />
@@ -16,6 +17,7 @@
       <change beforePath="$PROJECT_DIR$/scripts/screens/organizational_screens.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/screens/organizational_screens.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/screens/patrol_screens.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/screens/patrol_screens.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/screens/relation_screens.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/screens/relation_screens.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/screens/world_screens.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/screens/world_screens.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/utility.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/utility.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

@@ -527,8 +527,8 @@ class StarClanScreen(Screens):
         self.previous_page_button = UIImageButton(scale(pygame.Rect((620, 1190), (68, 68))), "",
                                                   object_id="#arrow_left_button"
                                                   , manager=MANAGER)
-        self.page_number = pygame_gui.elements.UITextBox("", scale(pygame.Rect((680, 1190),
-                                                                               (220, 60))),
+        self.page_number = pygame_gui.elements.UITextBox("", scale(pygame.Rect((680, 1190), (220, 60))),
+                                                         object_id="#text_box_30_horizcenter_white",
                                                          manager=MANAGER)  # Text will be filled in later
 
         self.set_disabled_menu_buttons(["starclan_screen"])
@@ -652,11 +652,11 @@ class StarClanScreen(Screens):
                 if len(name) >= 13:
                     short_name = str(cat.name)[0:12]
                     name = short_name + '...'
-                self.cat_names.append(pygame_gui.elements.UITextBox("<font color='#FFFFFF'>" + name + "</font>"
-                                                                    ,
+                self.cat_names.append(pygame_gui.elements.UITextBox(name,
                                                                     scale(pygame.Rect((160 + pos_x, 460 + pos_y),
-                                                                                      (300, 60)))
-                                                                    , manager=MANAGER))
+                                                                                      (300, 60))),
+                                                                    object_id="#text_box_30_horizcenter_white",
+                                                                    manager=MANAGER))
                 pos_x += 240
                 if pos_x >= 1200:
                     pos_x = 0
@@ -842,8 +842,9 @@ class DFScreen(Screens):
                                               , manager=MANAGER)
         self.previous_page_button = UIImageButton(scale(pygame.Rect((620, 1190), (68, 68))), "",
                                                   object_id="#arrow_left_button", manager=MANAGER)
-        self.page_number = pygame_gui.elements.UITextBox("", scale(pygame.Rect((680, 1190),
-                                                                               (220, 60))), manager=MANAGER)
+        self.page_number = pygame_gui.elements.UITextBox("", scale(pygame.Rect((680, 1190),(220, 60))),
+                                                         object_id="#text_box_30_horizcenter_white",
+                                                         manager=MANAGER)
 
         self.set_disabled_menu_buttons(["starclan_screen"])
         self.update_heading_text("Dark Forest")
@@ -966,11 +967,11 @@ class DFScreen(Screens):
                 if len(name) >= 13:
                     short_name = str(cat.name)[0:12]
                     name = short_name + '...'
-                self.cat_names.append(pygame_gui.elements.UITextBox("<font color='#FFFFFF'>" + name + "</font>"
-                                                                    ,
+                self.cat_names.append(pygame_gui.elements.UITextBox(name,
                                                                     scale(pygame.Rect((160 + pos_x, 460 + pos_y),
-                                                                                      (300, 60)))
-                                                                    , manager=MANAGER))
+                                                                                      (300, 60))),
+                                                                    object_id="#text_box_30_horizcenter_white",
+                                                                    manager=MANAGER))
                 pos_x += 240
                 if pos_x >= 1200:
                     pos_x = 0
@@ -1148,7 +1149,7 @@ class ListScreen(Screens):
         self.previous_page_button = UIImageButton(scale(pygame.Rect((620, 1190), (68, 68))), "",
                                                   object_id="#arrow_left_button", manager=MANAGER)
         self.page_number = pygame_gui.elements.UITextBox("", scale(pygame.Rect((680, 1190), (220, 60))),
-                                                         object_id=get_text_box_theme()
+                                                         object_id=get_text_box_theme("#text_box_30_horizcenter")
                                                          , manager=MANAGER)  # Text will be filled in later
 
         self.set_disabled_menu_buttons(["list_screen"])
@@ -1300,7 +1301,7 @@ class ListScreen(Screens):
                 self.cat_names.append(pygame_gui.elements.UITextBox(name,
                                                                     scale(pygame.Rect((160 + pos_x, 460 + pos_y),
                                                                                       (300, 60))),
-                                                                    object_id=get_text_box_theme(), manager=MANAGER))
+                                                                    object_id=get_text_box_theme("#text_box_30_horizcenter"), manager=MANAGER))
                 pos_x += 240
                 if pos_x >= 1200:
                     pos_x = 0
@@ -1928,7 +1929,7 @@ class MedDenScreen(Screens):
             self.med_name = pygame_gui.elements.ui_label.UILabel(scale(pygame.Rect
                                                                        ((1180, 310), (200, 60))),
                                                                  name,
-                                                                 object_id=get_text_box_theme(), manager=MANAGER
+                                                                 object_id=get_text_box_theme("#text_box_30_horizcenter"), manager=MANAGER
                                                                  )
             self.med_info = UITextBoxTweaked(
                 "",
@@ -2007,13 +2008,11 @@ class MedDenScreen(Screens):
             self.cat_buttons["able_cat" + str(i)] = UISpriteButton(scale(pygame.Rect
                                                                          ((pos_x, pos_y), (100, 100))),
                                                                    cat.big_sprite,
-                                                                   cat_object=cat, manager=MANAGER)
+                                                                   cat_object=cat,
+                                                                   manager=MANAGER,
+                                                                   tool_tip_text=conditions)
 
-            self.conditions_hover["able_cat" + str(i)] = UIImageButton(scale(pygame.Rect
-                                                                             ((pos_x - 60, pos_y + 100), (220, 60))),
-                                                                       "",
-                                                                       object_id="#blank_button",
-                                                                       tool_tip_text=conditions, manager=MANAGER)
+
             name = str(cat.name)
             if len(name) >= 10:
                 short_name = str(cat.name)[0:9]

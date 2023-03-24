@@ -54,7 +54,7 @@ class SaveCheck(UIWindow):
             self.message,
             scale(pygame.Rect((40, 40), (520, -1))),
             line_spacing=1,
-            object_id="",
+            object_id="#text_box_30_horizcenter",
             container=self
         )
 

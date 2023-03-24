@@ -321,13 +321,13 @@ class SwitchClanScreen(Screens):
         self.info = pygame_gui.elements.UITextBox(
             'Note: This will close the game.\n When you open it next, it should have the new clan.',  # pylint: disable=line-too-long
             scale(pygame.Rect((200, 1200), (1200, 140))),
-            object_id=get_text_box_theme(),
+            object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER)
 
         self.current_clan = pygame_gui.elements.UITextBox(
             "",
             scale(pygame.Rect((200, 200), (1200, 140))),
-            object_id=get_text_box_theme(),
+            object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER)
         if game.clan:
             self.current_clan.set_text(
@@ -380,7 +380,7 @@ class SwitchClanScreen(Screens):
         self.page_number = pygame_gui.elements.UITextBox(
             "",
             scale(pygame.Rect((680, 1080), (220, 60))),
-            object_id=get_text_box_theme(),
+            object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER)
         self.page = 0
 
@@ -673,12 +673,12 @@ class SettingsScreen(Screens):
         self.checkboxes_text['instr'] = pygame_gui.elements.UITextBox(
             "Change the general settings of your game here",
             scale(pygame.Rect((200, 320), (1200, 100))),
-            object_id=get_text_box_theme(),
+            object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER)
 
-        # This is where the acual checkboxes are created. I don't like
-        #   how this is seperated from the text boxes, but I've spent too much time to rewrite it.
-        #   It has to seperated becuase the checkboxes must be updated when settings are changed.
+        # This is where the actual checkboxes are created. I don't like
+        #   how this is separated from the text boxes, but I've spent too much time to rewrite it.
+        #   It has to separated because the checkboxes must be updated when settings are changed.
         #   Fix if you want. - keyraven
         self.refresh_checkboxes()
 
@@ -708,7 +708,7 @@ class SettingsScreen(Screens):
         self.checkboxes_text['instr'] = pygame_gui.elements.UITextBox(
             "Change the relationship settings of your game here",
             scale(pygame.Rect((200, 320), (1200, 100))),
-            object_id=get_text_box_theme(),
+            object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER)
 
         self.refresh_checkboxes()
@@ -724,7 +724,7 @@ class SettingsScreen(Screens):
         self.checkboxes_text['info_text_box'] = pygame_gui.elements.UITextBox(
             self.info_text,
             scale(pygame.Rect((200, 300), (1200, 1000))),
-            object_id=get_text_box_theme(),
+            object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER)
 
     def open_lang_settings(self):
@@ -738,7 +738,7 @@ class SettingsScreen(Screens):
         self.checkboxes_text['instr'] = pygame_gui.elements.UITextBox(
             "Change the language of the game here. This has not been implemented yet.",
             scale(pygame.Rect((200, 320), (1200, 100))),
-            object_id=get_text_box_theme(),
+            object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER)
 
         self.refresh_checkboxes()
@@ -873,7 +873,7 @@ class StatsScreen(Screens):
             stats_text,
             scale(pygame.Rect((200, 300), (1200, 1000))),
             manager=MANAGER,
-            object_id=get_text_box_theme())
+            object_id=get_text_box_theme("#text_box_30_horizcenter"))
 
     def exit_screen(self):
         """
