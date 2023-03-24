@@ -11,7 +11,7 @@ except ImportError:
 from .base_screens import Screens, cat_profiles
 from scripts.utility import get_text_box_theme, scale, get_personality_compatibility, check_relationship_value, \
     get_snippet_list
-from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked, UISpriteButton
+from scripts.game_structure.image_button import UIImageButton, UISpriteButton
 from scripts.patrol import patrol
 from scripts.cat.cats import Cat
 from scripts.game_structure.game_essentials import game, MANAGER
@@ -950,7 +950,7 @@ class PatrolScreen(Screens):
         self.elements["patrol_results"] = pygame_gui.elements.UITextBox("",
                                                                         scale(pygame.Rect((1100, 1000), (344, 300))),
                                                                         object_id=get_text_box_theme(
-                                                                            "#text_box_22_horizcenter"),
+                                                                            "#text_box_22_horizcenter_spacing_95"),
                                                                         manager=MANAGER)
         self.elements["patrol_results"].set_text(patrol.results())
 

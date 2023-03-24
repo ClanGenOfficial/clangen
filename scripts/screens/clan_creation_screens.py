@@ -10,7 +10,7 @@ from scripts.cat.cats import create_example_cats, Cat
 from scripts.cat.names import names
 from re import sub
 from scripts.game_structure import image_cache
-from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked, UISpriteButton
+from scripts.game_structure.image_button import UIImageButton, UISpriteButton
 from scripts.game_structure.game_essentials import game, MANAGER
 
 
