@@ -732,6 +732,7 @@ class Cat():
     def add_to_clan(self):
         """ Makes a "outside cat" a clan cat. Former leaders, deputies will become warriors. Apprentices will be assigned a mentor."""
         self.outside = False
+        print(self.name, self.moons)
         if self.status in ['leader', 'deputy']:
             self.status_change('warrior')
             self.status = 'warrior'
@@ -764,7 +765,7 @@ class Cat():
                 self.status_change('warrior')
             else:
                 self.status_change('elder')
-        # for cats which are born outside
+
         game.clan.add_to_clan(self)
         
         # check if there are kits under 12 moons with this cat and also add them to the clan
@@ -773,7 +774,7 @@ class Cat():
         ids = []
         for child_id in children:
             child = Cat.all_cats[child_id]
-            if child.outside and child.moons < 12:
+            if child.outside and not child.exiled and child.moons < 12:
                 child.add_to_clan()
                 if child.moons < 6:
                     names.append(child.name)
