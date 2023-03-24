@@ -299,9 +299,9 @@
     },
 
     "broken jaw":{
-        "duration": 6,
+        "duration": 4,
         "severity": "severe",
-        "medicine_duration": 5,
+        "medicine_duration": 3,
         "mortality": {
             "newborn": 10,
             "kitten": 10,
@@ -339,9 +339,9 @@
     },
 
     "broken bone":{
-        "duration": 8,
+        "duration": 5,
         "severity": "severe",
-        "medicine_duration": 7,
+        "medicine_duration": 3,
         "mortality": {
             "newborn": 10,
             "kitten": 10,
@@ -1264,9 +1264,9 @@
     },
 
     "broken back":{
-        "duration": 10,
+        "duration": 8,
         "severity": "severe",
-        "medicine_duration": 8,
+        "medicine_duration": 6,
         "mortality": {
             "newborn": 3,
             "kitten": 5,
