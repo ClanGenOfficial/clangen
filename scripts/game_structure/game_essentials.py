@@ -139,7 +139,8 @@ class Game():
         'show_info': False,
         'patrol_chosen': 'general',
         'favorite_sub_tab': None,
-        'root_cat': None
+        'root_cat': None,
+        'window_open': False
 
     }
     all_screens = {}
@@ -610,7 +611,7 @@ else:
 
 def load_manager(res: tuple):
     # initialize pygame_gui manager, and load themes
-    manager = pygame_gui.ui_manager.UIManager(res, 'resources/defaults.json')
+    manager = pygame_gui.ui_manager.UIManager(res, 'resources/defaults.json', enable_live_theme_updates=False)
     manager.add_font_paths(
         font_name='notosans',
         regular_path='resources/fonts/NotoSans-Medium.ttf',

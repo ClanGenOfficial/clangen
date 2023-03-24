@@ -1383,11 +1383,27 @@ class Cat():
 
     def get_siblings(self):
         """Returns list of the siblings."""
-        return self.siblings
+        if not self.faded:
+            return self.siblings
+        else:
+            # Finding the siblings of faded cats. 
+            siblings = []
+            for par in self.get_parents():
+                par_ob = Cat.fetch_cat(par)
+                for x in par_ob.get_children():
+                    if x not in siblings:
+                        siblings.append(x)
+            return siblings
+
 
     def get_children(self):
         """Returns list of the children."""
-        return self.children
+        if not self.faded:
+            return self.children
+        else:
+            children = [i.ID for i in Cat.all_cats.values() if self.ID in i.get_parents()]
+            children.extend(self.faded_offspring)
+            return children
 
     def is_grandparent(self, other_cat: Cat):
         """Check if the cat is the grandparent of the other cat."""
@@ -2676,6 +2692,8 @@ class Cat():
             Cat.all_cats_list.sort(key=lambda x: int(x.ID), reverse=True)
         elif game.sort_type == "rank":
             Cat.all_cats_list.sort(key=lambda x: (Cat.rank_order(x), Cat.get_adjusted_age(x)), reverse=True)
+        elif game.sort_type == "exp":
+            Cat.all_cats_list.sort(key=lambda x: x.experience, reverse=True)
 
         if game.sort_fav:
             Cat.all_cats_list.sort(key=lambda x: x.favourite, reverse=True)
@@ -2691,6 +2709,8 @@ class Cat():
             elif game.sort_type == "rank":
                 bisect.insort(Cat.all_cats_list, c, key=lambda x: (-1 * Cat.rank_order(x), -1 *
                                                                    Cat.get_adjusted_age(x)))
+            elif game.sort_type == "exp":
+                bisect.insort(Cat.all_cats_list, c, key=lambda x: x.experience)
             elif game.sort_type == "id":
                 bisect.insort(Cat.all_cats_list, c, key=lambda x: int(x.ID))
             elif game.sort_type == "reverse_id":
