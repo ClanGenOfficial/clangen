@@ -187,24 +187,19 @@
     "patrol_id": "gen_bord_abandonedkittypet1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["border", "new_cat_injury_kittypet", "nc_sickness",  "respect", "warrior"],
-    "intro_text": "The patrol hears the wailing of a cat and the sound of a monster speeding away.",
-    "decline_text": "It's none of their business really and they have to finish the border patrol.",
+    "tags": ["border", "new_cat_injury", "new_cat_kittypet", "nc_sickness",  "respect", "warrior"],
+    "intro_text": "The patrol hears the screaming of a cat begging for their Twolegs to come back and the sound of a monster speeding away.",
+    "decline_text": "p_l decides it's none of their business and resumes their patrol.",
     "chance_of_success": 30,
     "exp": 15,
     "success_text": [
-    "They find a well groomed kittypet collapsed by the thunderpath wailing for their twolegs to come back. p_l comforts them and when asked why their twolegs would do this, the only explanation that they can give is that they got sick recently. p_l offers the former kittypet a place in c_n till they are better at least. They tentatively accept whilst looking longely back to the thunderpath."
+    "They find a well groomed kittypet collapsed by the thunderpath wailing for their Twolegs to come back. p_l comforts them and asks them why their Twolegs have left them, The only explanation that they can give is that they've been sick recently and perhaps too much of a burden?. p_l offers the former kittypet a place in c_n, till they're better at least. They tentatively accept whilst looking longingly back to the thunderpath."
     ],
     "fail_text": [
-    "They discover the cooling body of a kittypet, it seems they attempted to run after the monster with their twolegs in it and were run over by another monster instead. p_l silently sends a prayer for the kittypet and can't help but to curse the twolegs who abandoned such a loyal cat."
+    "They discover the cooling body of a kittypet, it seems they attempted to run after their Twolegs and were run over by a monster. p_l silently sends a prayer for the kittypet and can't help but to curse the Twolegs who abandoned such a loyal cat."
     ],
     "min_cats": 2,
     "max_cats": 6,
-    "antagonize_text": "They tell the kittypet that they are unwelcome here but they agree to carry them to a nearby twoleg den to find help.",
-    "antagonize_fail_text": "The heavily injured kittypet makes a run for it despite their illness. They won't make it far. . .",
-    "history_text": [
-    null,
-    "This cat died from an illness they contracted when they lived with their twolegs.",
-    null
-    ],
-}
+    "antagonize_text": "They tell the kittypet that they are not welcome here, but after they hear that the kittypet is ill they agree to carry them to a nearby twoleg den to find help.",
+    "antagonize_fail_text": "The kittypet makes a run for it, suddenly they collapse and when p_l comes closer they can smell the sickness coming of their pelt. They decide to resume the border patrol, its not their problem anymore."
+},
