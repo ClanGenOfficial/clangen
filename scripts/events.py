@@ -217,7 +217,7 @@ class Events():
     def mediator_events(self, cat):
         """ Check for mediator events """
         # If the cat is a mediator, check if they visited other clans
-        if cat.status in ["mediator", "mediator apprentice"]:
+        if cat.status in ["mediator", "mediator apprentice"] and not cat.not_working():
             # 1 /10 chance
             if not int(random.random() * 10):
                 increase = random.randint(-2, 6)
@@ -596,6 +596,11 @@ class Events():
                 # two with this, so here it is.
                 if cat.ID in game.clan.med_cat_list:
                     game.clan.med_cat_list.remove(cat.ID)
+                    
+                # Unset their mate, if they have one
+                if cat.mate:
+                    if Cat.all_cats.get(cat.mate):
+                        cat.unset_mate(Cat.all_cats.get(cat.mate))
 
                 # If the cat is the current med, leader, or deputy, remove them
                 if game.clan.leader:
@@ -613,8 +618,7 @@ class Events():
                             game.clan.medicine_cat = None
 
                 game.cat_to_fade.append(cat.ID)
-                cat.set_faded(
-                )  # This is a flag to ensure they behave like a faded cat in the meantime.
+                cat.set_faded()  
 
     def one_moon_outside_cat(self, cat):
         """

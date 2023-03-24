@@ -354,6 +354,12 @@ class Game():
         directory = get_save_dir() + '/' + clanname
         if not os.path.exists(directory):
             os.makedirs(directory)
+   
+        # Delete all existing relationship files
+        if not os.path.exists(directory + '/relationships'):
+            os.makedirs(directory + '/relationships')
+        for f in os.listdir(directory + '/relationships'):
+            os.remove(os.path.join(directory + '/relationships', f))
 
         self.save_faded_cats(clanname)  # Fades cat and saves them, if needed
 
@@ -433,7 +439,7 @@ class Game():
             clan_cats.append(cat_data)
             inter_cat.save_condition()
             if not inter_cat.dead:
-                inter_cat.save_relationship_of_cat()
+                inter_cat.save_relationship_of_cat(directory + '/relationships')
         try:
             with open(get_save_dir() + '/' + clanname + '/clan_cats.json', 'w') as write_file:
                 json_string = ujson.dumps(clan_cats, indent=4)
