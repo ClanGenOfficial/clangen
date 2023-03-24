@@ -613,6 +613,11 @@ class Events():
                 # two with this, so here it is.
                 if cat.ID in game.clan.med_cat_list:
                     game.clan.med_cat_list.remove(cat.ID)
+                    
+                # Unset their mate, if they have one
+                if cat.mate:
+                    if Cat.all_cats.get(cat.mate):
+                        cat.unset_mate(Cat.all_cats.get(cat.mate))
 
                 # If the cat is the current med, leader, or deputy, remove them
                 if game.clan.leader:
@@ -630,8 +635,7 @@ class Events():
                             game.clan.medicine_cat = None
 
                 game.cat_to_fade.append(cat.ID)
-                cat.set_faded(
-                )  # This is a flag to ensure they behave like a faded cat in the meantime.
+                cat.set_faded()  
 
     def one_moon_outside_cat(self, cat):
         """
