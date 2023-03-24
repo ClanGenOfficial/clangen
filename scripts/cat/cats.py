@@ -352,6 +352,8 @@ class Cat():
             else:
                 self.age = choice(['young adult', 'adult', 'adult', 'senior adult'])
             self.moons = random.randint(self.age_moons[self.age][0], self.age_moons[self.age][1])
+            print(f"lunadebug: cat {self.name} gen with status {status} and rolled {self.moons} moons")
+            print(f"lunadebug: min: {self.age_moons[self.age][0]} max: {self.age_moons[self.age][1]}")
 
         # personality trait and skill
         if self.trait is None:
