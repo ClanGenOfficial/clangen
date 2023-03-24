@@ -430,6 +430,7 @@ class Clan():
         other_clans = []
 
         key_copy = tuple(Cat.all_cats.keys())
+        print(key_copy)
         for i in key_copy:  # Going through all currently existing cats
             # cat_class is a Cat-object
             not_found = True
