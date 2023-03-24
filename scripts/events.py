@@ -125,7 +125,6 @@ class Events():
             # print(f" -- FRESHKILL: prey amount after feeding {game.clan.freshkill_pile.total_amount}") # pylint: disable=line-too-long
 
         rejoin_upperbound = game.config["lost_cat"]["rejoin_chance"]
-        self.handle_lost_cats_return()
         if random.randint(1, rejoin_upperbound) == 1:
             self.handle_lost_cats_return()
 

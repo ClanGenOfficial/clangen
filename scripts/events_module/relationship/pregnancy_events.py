@@ -160,7 +160,6 @@ class Pregnancy_Events():
     def handle_zero_moon_pregnant(self, cat, other_cat=None, relation=None, clan=game.clan):
         """Handles if the cat is zero moons pregnant."""
         if other_cat and (other_cat.dead or other_cat.outside or other_cat.birth_cooldown > 0):
-            print("RETURN")
             return
 
         if cat.ID in clan.pregnancy_data:
