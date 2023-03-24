@@ -34,7 +34,7 @@
     "patrol_id": "bch_train_stuck1",
     "biome": "beach",
     "season": "Any",
-    "tags": ["training", "platonic", "comfort", "trust", "blunt_force_injury", "death", "scar", "CHEEK", "no_change_fail", "p_l_to_r_c", "s_c to r_c", "patrol_to_p_l", "patrol_to_r_c"],
+    "tags": ["training", "platonic", "comfort", "trust", "blunt_force_injury", "death", "scar", "CHEEK", "no_change_fail", "p_l_to_r_c", "s_c_to_r_c", "patrol_to_p_l", "patrol_to_r_c"],
     "intro_text": "Trailing behind the patrol, the dune they're crossing shifts beneath r_c's paws. They look around wildly for safe footing - just as the sand caves in beneath them and the world goes dark.",
     "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
     "chance_of_success": 50,

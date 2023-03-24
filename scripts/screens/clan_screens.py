@@ -94,7 +94,7 @@ class ClanScreen(Screens):
         i = 0
         for x in game.clan.clan_cats:
             if not Cat.all_cats[x].dead and Cat.all_cats[x].in_camp and \
-                    not Cat.all_cats[x].exiled and not Cat.all_cats[x].outside and not ( Cat.all_cats[x].status == 'newborn' and ( game.config['fun']['all_cats_are_newborn'] or game.config['fun']['newborns_can_roam'])):
+                    not (Cat.all_cats[x].exiled or Cat.all_cats[x].outside) and (Cat.all_cats[x].status != 'newborn' or game.config['fun']['all_cats_are_newborn'] or game.config['fun']['newborns_can_roam']):
 
                 i += 1
                 if i > self.max_sprites_displayed:
@@ -386,6 +386,7 @@ class StarClanScreen(Screens):
         self.dead_cats = None
         self.filter_age = None
         self.filter_rank = None
+        self.filter_exp = None
         self.filter_by_open = None
         self.filter_by_closed = None
         self.starclan_bg = pygame.transform.scale(
@@ -414,18 +415,21 @@ class StarClanScreen(Screens):
                 self.filter_rank.show()
                 self.filter_age.show()
                 self.filter_id.show()
+                self.filter_exp.show()
             elif event.ui_element == self.filter_by_open:
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
                 self.filter_id.hide()
                 self.filter_rank.hide()
                 self.filter_age.hide()
+                self.filter_exp.hide()
             elif event.ui_element == self.filter_age:
                 self.filter_age.hide()
                 self.filter_rank.hide()
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
                 self.filter_id.hide()
+                self.filter_exp.hide()
                 game.sort_type = "reverse_age"
                 Cat.sort_cats()
                 self.get_dead_cats()
@@ -436,6 +440,7 @@ class StarClanScreen(Screens):
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
                 self.filter_id.hide()
+                self.filter_exp.hide()
                 game.sort_type = "rank"
                 Cat.sort_cats()
                 self.get_dead_cats()
@@ -446,7 +451,19 @@ class StarClanScreen(Screens):
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
                 self.filter_id.hide()
+                self.filter_exp.hide()
                 game.sort_type = "id"
+                Cat.sort_cats()
+                self.get_dead_cats()
+                self.update_search_cats(self.search_bar.get_text())
+            elif event.ui_element == self.filter_exp:
+                self.filter_age.hide()
+                self.filter_rank.hide()
+                self.filter_by_open.hide()
+                self.filter_by_closed.show()
+                self.filter_id.hide()
+                self.filter_exp.hide()
+                game.sort_type = "exp"
                 Cat.sort_cats()
                 self.get_dead_cats()
                 self.update_search_cats(self.search_bar.get_text())
@@ -470,6 +487,7 @@ class StarClanScreen(Screens):
         self.filter_rank.kill()
         self.filter_age.kill()
         self.filter_id.kill()
+        self.filter_exp.kill()
 
         # Remove currently displayed cats and cat names.
         for cat in self.display_cats:
@@ -558,6 +576,14 @@ class StarClanScreen(Screens):
             starting_height=2, manager=MANAGER
         )
         self.filter_id.hide()
+        y_pos += 58
+        self.filter_exp = UIImageButton(
+            scale(pygame.Rect((x_pos - 2, y_pos), (204, 58))),
+            "",
+            object_id="#filter_exp_button",
+            starting_height=2, manager=MANAGER
+        )
+        self.filter_exp.hide()
 
     def update_search_cats(self, search_text):
         """Run this function when the search text changes, or when the screen is switched to."""
@@ -671,6 +697,7 @@ class DFScreen(Screens):
         self.dead_cats = None
         self.filter_age = None
         self.filter_rank = None
+        self.filter_exp = None
         self.filter_by_open = None
         self.filter_by_closed = None
         self.df_bg = pygame.transform.scale(
@@ -701,6 +728,7 @@ class DFScreen(Screens):
                 self.filter_rank.show()
                 self.filter_id.show()
                 self.filter_age.show()
+                self.filter_exp.show()
             elif event.ui_element == self.filter_by_open:
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
@@ -708,10 +736,12 @@ class DFScreen(Screens):
                 self.filter_rank.hide()
                 self.filter_id.hide()
                 self.filter_age.hide()
+                self.filter_exp.hide()
             elif event.ui_element == self.filter_age:
                 self.filter_id.hide()
                 self.filter_age.hide()
                 self.filter_rank.hide()
+                self.filter_exp.hide()
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
                 game.sort_type = "reverse_age"
@@ -722,6 +752,7 @@ class DFScreen(Screens):
                 self.filter_age.hide()
                 self.filter_id.hide()
                 self.filter_rank.hide()
+                self.filter_exp.hide()
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
                 game.sort_type = "rank"
@@ -732,12 +763,25 @@ class DFScreen(Screens):
                 self.filter_age.hide()
                 self.filter_id.hide()
                 self.filter_rank.hide()
+                self.filter_exp.hide()
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
                 game.sort_type = "id"
                 Cat.sort_cats()
                 self.get_dead_cats()
                 self.update_search_cats(self.search_bar.get_text())
+            elif event.ui_element == self.filter_exp:
+                self.filter_age.hide()
+                self.filter_id.hide()
+                self.filter_rank.hide()
+                self.filter_exp.hide()
+                self.filter_by_open.hide()
+                self.filter_by_closed.show()
+                game.sort_type = "exp"
+                Cat.sort_cats()
+                self.get_dead_cats()
+                self.update_search_cats(self.search_bar.get_text())
+    
             elif event.ui_element in self.display_cats:
                 game.switches["cat"] = event.ui_element.return_cat_id()
                 self.change_screen('profile screen')
@@ -758,6 +802,7 @@ class DFScreen(Screens):
         self.filter_rank.kill()
         self.filter_age.kill()
         self.filter_id.kill()
+        self.filter_exp.kill()
 
         # Remove currently displayed cats and cat names.
         for cat in self.display_cats:
@@ -845,6 +890,14 @@ class DFScreen(Screens):
             starting_height=2, manager=MANAGER
         )
         self.filter_id.hide()
+        y_pos += 58
+        self.filter_exp = UIImageButton(
+            scale(pygame.Rect((x_pos - 2, y_pos), (204, 58))),
+            "",
+            object_id="#filter_exp_button",
+            starting_height=2, manager=MANAGER
+        )
+        self.filter_exp.hide()
 
     def update_search_cats(self, search_text):
         """Run this function when the search text changes, or when the screen is switched to."""
@@ -955,6 +1008,7 @@ class ListScreen(Screens):
         self.filter_age = None
         self.filter_id = None
         self.filter_rank = None
+        self.filter_exp = None
         self.filter_by_open = None
         self.filter_by_closed = None
         self.filter_fav = None
@@ -1000,6 +1054,7 @@ class ListScreen(Screens):
                 self.filter_rank.show()
                 self.filter_id.show()
                 self.filter_age.show()
+                self.filter_exp.show()
             elif event.ui_element == self.filter_by_open:
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
@@ -1007,10 +1062,12 @@ class ListScreen(Screens):
                 self.filter_id.hide()
                 self.filter_rank.hide()
                 self.filter_age.hide()
+                self.filter_exp.hide()
             elif event.ui_element == self.filter_age:
                 self.filter_id.hide()
                 self.filter_age.hide()
                 self.filter_rank.hide()
+                self.filter_exp.hide()
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
                 game.sort_type = "reverse_age"
@@ -1021,6 +1078,7 @@ class ListScreen(Screens):
                 self.filter_id.hide()
                 self.filter_age.hide()
                 self.filter_rank.hide()
+                self.filter_exp.hide()
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
                 game.sort_type = "rank"
@@ -1031,9 +1089,21 @@ class ListScreen(Screens):
                 self.filter_id.hide()
                 self.filter_age.hide()
                 self.filter_rank.hide()
+                self.filter_exp.hide()
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
                 game.sort_type = "id"
+                Cat.sort_cats()
+                self.get_living_cats()
+                self.update_search_cats(self.search_bar.get_text())
+            elif event.ui_element == self.filter_exp:
+                self.filter_id.hide()
+                self.filter_age.hide()
+                self.filter_rank.hide()
+                self.filter_exp.hide()
+                self.filter_by_open.hide()
+                self.filter_by_closed.show()
+                game.sort_type = "exp"
                 Cat.sort_cats()
                 self.get_living_cats()
                 self.update_search_cats(self.search_bar.get_text())
@@ -1125,6 +1195,14 @@ class ListScreen(Screens):
             starting_height=2, manager=MANAGER
         )
         self.filter_id.hide()
+        y_pos += 58
+        self.filter_exp = UIImageButton(
+            scale(pygame.Rect((x_pos - 2, y_pos), (204, 58))),
+            "",
+            object_id="#filter_exp_button",
+            starting_height=2, manager=MANAGER
+        )
+        self.filter_exp.hide()
 
     def exit_screen(self):
         self.hide_menu_buttons()
@@ -1139,6 +1217,7 @@ class ListScreen(Screens):
         self.filter_rank.kill()
         self.filter_age.kill()
         self.filter_id.kill()
+        self.filter_exp.kill()
         self.filter_fav.kill()
         self.filter_not_fav.kill()
 

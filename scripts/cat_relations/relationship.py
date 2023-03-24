@@ -138,10 +138,10 @@ class Relationship():
                 for inj in injury_dict["injury_names"]:
                     injured_cat.get_injured(inj, True)
 
-                injured_cat.possible_scar = injury_dict["scar_text"] if "scar_text" in injury_dict else None
-                injured_cat.possible_death = injury_dict["death_text"] if "death_text" in injury_dict else None
-                if injured_cat.status == "leader":
-                    injured_cat.possible_death = injury_dict["death_leader_text"] if "death_leader_text" in injury_dict else None
+            injured_cat.possible_scar = self.prepare_text(injury_dict["scar_text"]) if "scar_text" in injury_dict else None
+            injured_cat.possible_death = self.prepare_text(injury_dict["death_text"]) if "death_text" in injury_dict else None
+            if injured_cat.status == "leader":
+                injured_cat.possible_death = self.prepare_text(injury_dict["death_leader_text"]) if "death_leader_text" in injury_dict else None
         
         # get any possible interaction string out of this interaction
         interaction_str = choice(self.chosen_interaction.interactions)

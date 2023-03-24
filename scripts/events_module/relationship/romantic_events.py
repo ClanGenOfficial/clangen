@@ -139,7 +139,7 @@ class Romantic_Events():
         game.cur_events_list.append(Single_Event(
             interaction_str, relevant_event_tabs, [cat_to.ID, cat_from.ID]
         ))
-        print(f"ROMANTIC! {cat_from.name} to {cat_to.name}")
+        #print(f"ROMANTIC! {cat_from.name} to {cat_to.name}")
         return True
 
     def handle_new_mates(self, relationship, cat_from, cat_to):

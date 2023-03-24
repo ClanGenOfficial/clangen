@@ -115,7 +115,7 @@ def get_living_clan_cat_count(Cat):
     return count
 
 
-def get_cats_same_age(cat, range=10):  # pylint: disable=redefined-builtin
+def get_cats_same_age(cat, Relationship, range=10):  # pylint: disable=redefined-builtin
     """Look for all cats in the clan and returns a list of cats, which are in the same age range as the given cat."""
     cats = []
     for inter_cat in cat.all_cats.values():
@@ -125,7 +125,9 @@ def get_cats_same_age(cat, range=10):  # pylint: disable=redefined-builtin
             continue
 
         if inter_cat.ID not in cat.relationships:
-            print(f"ERROR: {cat.name} had no relationship towards {inter_cat.name}")
+            cat.relationships[inter_cat.ID] = Relationship(cat, inter_cat)
+            if cat.ID not in inter_cat.relationships:
+                inter_cat.relationships[cat.ID] = Relationship(inter_cat, cat)
             continue
 
         if inter_cat.moons <= cat.moons + range and inter_cat.moons <= cat.moons - range:
@@ -134,7 +136,7 @@ def get_cats_same_age(cat, range=10):  # pylint: disable=redefined-builtin
     return cats
 
 
-def get_free_possible_mates(cat):
+def get_free_possible_mates(cat, Relationship):
     """Returns a list of available cats, which are possible mates for the given cat."""
     cats = []
     for inter_cat in cat.all_cats.values():
@@ -144,7 +146,9 @@ def get_free_possible_mates(cat):
             continue
 
         if inter_cat.ID not in cat.relationships:
-            print(f"ERROR: {cat.name} had no relationship towards {inter_cat.name}")
+            cat.relationships[inter_cat.ID] = Relationship(cat, inter_cat)
+            if cat.ID not in inter_cat.relationships:
+                inter_cat.relationships[cat.ID] = Relationship(inter_cat, cat)
             continue
 
         if inter_cat.is_potential_mate(cat,True) and cat.is_potential_mate(inter_cat, True):
@@ -283,13 +287,15 @@ def create_new_cat(Cat,
 
         # setting gender
         if not gender:
-            gender = choice(['female', 'male'])
+            _gender = choice(['female', 'male'])
+        else:
+            _gender = gender
 
         # other clan cats, apps, and kittens (kittens and apps get indoctrinated lmao no old names for them)
         if other_clan or kit or litter or age < 12:
             new_cat = Cat(moons=age,
                           status=status,
-                          gender=gender,
+                          gender=_gender,
                           backstory=backstory)
         else:
             # grab starting names and accs for loners/kittypets
@@ -316,12 +322,12 @@ def create_new_cat(Cat,
                     new_cat = Cat(moons=age,
                                   prefix=name,
                                   status=status,
-                                  gender=gender,
+                                  gender=_gender,
                                   backstory=backstory)
                 else:  # completely new name
                     new_cat = Cat(moons=age,
                                   status=status,
-                                  gender=gender,
+                                  gender=_gender,
                                   backstory=backstory)
             # these cats keep their old names
             else:
@@ -329,7 +335,7 @@ def create_new_cat(Cat,
                               prefix=name,
                               suffix="",
                               status=status,
-                              gender=gender,
+                              gender=_gender,
                               backstory=backstory)
 
         # give em a collar if they got one
@@ -509,7 +515,7 @@ def get_personality_compatibility(cat1, cat2):
     return None
 
 
-def get_cats_of_romantic_interest(cat):
+def get_cats_of_romantic_interest(cat, Relationship):
     """Returns a list of cats, those cats are love interest of the given cat."""
     cats = []
     for inter_cat in cat.all_cats.values():
@@ -519,7 +525,9 @@ def get_cats_of_romantic_interest(cat):
             continue
         
         if inter_cat.ID not in cat.relationships:
-            print(f"ERROR: {cat.name} had no relationship towards {inter_cat.name}")
+            cat.relationships[inter_cat.ID] = Relationship(cat, inter_cat)
+            if cat.ID not in inter_cat.relationships:
+                inter_cat.relationships[cat.ID] = Relationship(inter_cat, cat)
             continue
 
         if cat.relationships[inter_cat.ID].romantic_love > 0:

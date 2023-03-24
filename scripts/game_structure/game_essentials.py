@@ -139,7 +139,8 @@ class Game():
         'show_info': False,
         'patrol_chosen': 'general',
         'favorite_sub_tab': None,
-        'root_cat': None
+        'root_cat': None,
+        'window_open': False
 
     }
     all_screens = {}
@@ -353,6 +354,12 @@ class Game():
         directory = get_save_dir() + '/' + clanname
         if not os.path.exists(directory):
             os.makedirs(directory)
+   
+        # Delete all existing relationship files
+        if not os.path.exists(directory + '/relationships'):
+            os.makedirs(directory + '/relationships')
+        for f in os.listdir(directory + '/relationships'):
+            os.remove(os.path.join(directory + '/relationships', f))
 
         self.save_faded_cats(clanname)  # Fades cat and saves them, if needed
 
@@ -432,7 +439,7 @@ class Game():
             clan_cats.append(cat_data)
             inter_cat.save_condition()
             if not inter_cat.dead:
-                inter_cat.save_relationship_of_cat()
+                inter_cat.save_relationship_of_cat(directory + '/relationships')
         try:
             with open(get_save_dir() + '/' + clanname + '/clan_cats.json', 'w') as write_file:
                 json_string = ujson.dumps(clan_cats, indent=4)
@@ -610,7 +617,7 @@ else:
 
 def load_manager(res: tuple):
     # initialize pygame_gui manager, and load themes
-    manager = pygame_gui.ui_manager.UIManager(res, 'resources/defaults.json')
+    manager = pygame_gui.ui_manager.UIManager(res, 'resources/defaults.json', enable_live_theme_updates=False)
     manager.add_font_paths(
         font_name='notosans',
         regular_path='resources/fonts/NotoSans-Medium.ttf',

@@ -11,6 +11,7 @@ from scripts.cat.cats import Cat
 from scripts.event_class import Single_Event
 from scripts.cat_relations.interaction import create_group_interaction, Group_Interaction, rel_fulfill_rel_constraints
 from scripts.game_structure.game_essentials import game
+from scripts.cat_relations.relationship import Relationship
 
 class Group_Events():
 
@@ -335,7 +336,9 @@ class Group_Events():
             cat_to = Cat.all_cats[cat_to_id]
 
             if cat_to_id not in cat_from.relationships:
-                print(f"ERROR: there is no relationship from {cat_from.name} to {cat_to.name}")
+                cat_from.relationships[cat_to.ID] = Relationship(cat_from, cat_to)
+                if cat_from.ID not in cat_to.relationships:
+                    cat_to.relationships[cat_from.ID] = Relationship(cat_from, cat_to)
                 continue
 
             relationship = cat_from.relationships[cat_to_id]
@@ -534,10 +537,10 @@ class Group_Events():
             for inj in injury_dict["injury_names"]:
                 injured_cat.get_injured(inj, True)
 
-            injured_cat.possible_scar = injury_dict["scar_text"] if "scar_text" in injury_dict else None
-            injured_cat.possible_death = injury_dict["death_text"] if "death_text" in injury_dict else None
+            injured_cat.possible_scar = self.prepare_text(injury_dict["scar_text"]) if "scar_text" in injury_dict else None
+            injured_cat.possible_death = self.prepare_text(injury_dict["death_text"]) if "death_text" in injury_dict else None
             if injured_cat.status == "leader":
-                injured_cat.possible_death = injury_dict["death_leader_text"] if "death_leader_text" in injury_dict else None
+                injured_cat.possible_death = self.prepare_text(injury_dict["death_leader_text"]) if "death_leader_text" in injury_dict else None
 
     def prepare_text(self, text: str) -> str:
         """Prep the text based of the amount of cats and the assigned abbreviations."""
