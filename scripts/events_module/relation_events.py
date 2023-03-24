@@ -268,6 +268,8 @@ class Relation_Events():
                 types_to_choose.extend([group] * value["frequency"])
                 chosen_type = choice(list(GROUP_TYPES.keys()))
 
+        if cat.status == "leader":
+            chosen_type = "all"
         possible_interaction_cats = list(
             filter(
                 lambda cat:

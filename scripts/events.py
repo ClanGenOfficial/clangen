@@ -628,12 +628,20 @@ class Events():
         cat.one_moon()
         cat.moons += 1
         cat.update_traits()
-        if cat.moons == 6:
+        if cat.moons == 1:
+            cat.age = "kitten"
+            if cat.status not in [
+                'kittypet', 'loner', 'rogue', 'former clancat'
+            ]:
+                cat.status = "kitten"
+        elif cat.moons == 6:
             cat.age = 'adolescent'
         elif cat.moons == 12:
             cat.age = 'adult'
         elif cat.moons == 120:
             cat.age = 'senior'
+
+        self.pregnancy_events.handle_having_kits(cat, clan=game.clan)
 
         # killing exiled cats
         if cat.exiled or cat.outside:
