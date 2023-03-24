@@ -1139,7 +1139,7 @@ def get_text_box_theme(themename=""):
             return themename + "_dark"
     else:
         if themename == "":
-            return "text_box"
+            return "#text_box"
         else:
             return themename
 
