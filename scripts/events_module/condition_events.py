@@ -327,7 +327,7 @@ class Condition_Events():
                         else:
                             return perm_condition
                 except KeyError:
-                    print("WARNING: injury couldn't be found in injury dict! no scar was given")
+                    print(f"WARNING: {injury_name} couldn't be found in injury dict! no scar was given")
                     return perm_condition
 
         elif condition is not None:
@@ -366,8 +366,8 @@ class Condition_Events():
         # making a copy, so we can iterate through copy and modify the real dict at the same time
         illnesses = deepcopy(cat.illnesses)
         for illness in illnesses:
-            print('SAVE FILE', cat.name, cat.illnesses)
-            print('COPY', cat.name, illnesses)
+            # print('SAVE FILE', cat.name, cat.illnesses)
+            # print('COPY', cat.name, illnesses)
             # use herbs
             self.use_herbs(cat, illness, illnesses, ILLNESSES)
 
@@ -453,8 +453,8 @@ class Condition_Events():
 
         injuries = deepcopy(cat.injuries)
         for injury in injuries:
-            print('SAVE FILE', cat.name, cat.injuries)
-            print('COPY', cat.name, injuries)
+            # print('SAVE FILE', cat.name, cat.injuries)
+            # print('COPY', cat.name, injuries)
             self.use_herbs(cat, injury, injuries, INJURIES)
 
             skipped = cat.moon_skip_injury(injury)
@@ -497,7 +497,7 @@ class Condition_Events():
                         random_index = int(random.random() * len(possible_string_list))
                         event = possible_string_list[random_index]
                     except KeyError:
-                        print("WARNING: the condition couldn't be found in the healed strings dict! placeholder string was used.")
+                        print(f"WARNING: {injury} couldn't be found in the healed strings dict! placeholder string was used.")
                         event = "m_c's injury has healed."
                     event = event_text_adjust(Cat, event, cat, other_cat=None)  # adjust the text
                     game.herb_events_list.append(event)
@@ -560,30 +560,18 @@ class Condition_Events():
 
         conditions = cat.permanent_condition
         for condition in conditions:
+            print('trying perm condition')
 
-            condition_appears = True
-            if cat.permanent_condition[condition]["born_with"] is True and cat.permanent_condition[condition][
-                    "moons_until"] != -2:
-                condition_appears = False
+            # checking if the cat has a congenital condition to reveal and handling duration and death
+            status = cat.moon_skip_permanent_condition(condition)
 
-            if condition_appears is True:
-                chance = 0
-                if conditions[condition]["severity"] == 'minor':
-                    chance = 5
-                elif conditions[condition]["severity"] == 'major':
-                    chance = 3
-                elif conditions[condition]["severity"] == 'severe':
-                    chance = 2
-                if not int(random.random() * chance):
-                    self.use_herbs(cat, condition, conditions, PERMANENT)
-
-            # checking if the cat has a congenital condition to reveal
-            condition_appears = cat.moon_skip_permanent_condition(condition)
-
-            if not condition_appears:
+            if status == 'skip':
+                print('condition is not revealed or was not disabled or event was already triggered')
                 continue
 
-            elif cat.dead:
+            # if cat is dead, break
+            if cat.dead:
+                print('cat died from perm condition')
                 triggered = True
                 event_types.append("birth_death")
 
@@ -593,7 +581,9 @@ class Condition_Events():
                 game.herb_events_list.append(event)
                 break
 
-            elif condition_appears:
+            # revealing perm condition
+            if status == 'reveal':
+                print('revealing perm condition')
                 # gather potential event strings for gotten risk
                 possible_string_list = CONGENITAL_CONDITION_GOT_STRINGS[condition]
 
@@ -603,7 +593,6 @@ class Condition_Events():
                 med_cat = None
                 has_parents = False
                 if cat.parent1 is not None and cat.parent2 is not None:
-
                     # Check if the parent is in Cat.all_cats. If not, they are faded are dead.
 
                     med_parent = False  # If they have a med parent, this will be flicked to True in the next couple lines.
@@ -638,10 +627,30 @@ class Condition_Events():
                 event_list.append(event)
                 continue
 
-            if cat.permanent_condition[condition]["moons_until"] is None or cat.permanent_condition[condition][
-                "moons_until"] == 0:
-                self.give_risks(cat, event_list, condition, condition_progression, conditions, cat.permanent_condition)
+            # trying herbs
+            chance = 0
+            if conditions[condition]["severity"] == 'minor':
+                chance = 5
+            elif conditions[condition]["severity"] == 'major':
+                chance = 3
+            elif conditions[condition]["severity"] == 'severe':
+                chance = 2
+            if not int(random.random() * chance):
+                print('condition used herbs')
+                self.use_herbs(cat, condition, conditions, PERMANENT)
 
+            # give risks
+            print('giving perm risks')
+            self.give_risks(cat, event_list, condition, condition_progression, conditions, cat.permanent_condition)
+
+        self.determine_retirement(cat, event_list, event_types, triggered)
+
+        if len(event_list) > 0:
+            event_string = ' '.join(event_list)
+            game.cur_events_list.append(Single_Event(event_string, event_types, cat.ID))
+        return
+
+    def determine_retirement(self, cat, event_list, event_types, triggered):
         retire_chances = {
             'newborn': 0,
             'kitten': 0,
@@ -651,9 +660,9 @@ class Condition_Events():
             'senior adult': 50,
             'senior': 0
         }
-
         if not triggered and not cat.dead and not cat.retired and cat.status not in \
-                ['leader', 'medicine cat', 'kitten', 'newborn', 'medicine cat apprentice', 'mediator', 'mediator apprentice'] \
+                ['leader', 'medicine cat', 'kitten', 'newborn', 'medicine cat apprentice', 'mediator',
+                 'mediator apprentice'] \
                 and game.settings['retirement'] is False:
             for condition in cat.permanent_condition:
                 if cat.permanent_condition[condition]['severity'] == 'major':
@@ -703,11 +712,6 @@ class Condition_Events():
                     cat.retire_cat()
                     game.ranks_changed_timeskip = True
                     event_list.append(event)
-
-        if len(event_list) > 0:
-            event_string = ' '.join(event_list)
-            game.cur_events_list.append(Single_Event(event_string, event_types, cat.ID))
-        return
 
     def give_risks(self, cat, event_list, condition, progression, conditions, dictionary):
         event_triggered = False
@@ -786,7 +790,7 @@ class Condition_Events():
                             random_index = 1
                     event = possible_string_list[random_index]
                 except KeyError:
-                    print("WARNING: condition couldn't be found in the risk strings! placeholder string was used")
+                    print(f"WARNING: {condition} couldn't be found in the risk strings! placeholder string was used")
                     event = "m_c's condition has gotten worse."
 
                 event = event_text_adjust(Cat, event, cat, other_cat=med_cat)  # adjust the text
@@ -826,7 +830,7 @@ class Condition_Events():
         try:
             needed_herbs.update(source[condition]["herbs"])
         except KeyError:
-            print("WARNING: condition does not exist in it's condition dict! if the condition is 'thorn in paw' or "
+            print(f"WARNING: {condition} does not exist in it's condition dict! if the condition is 'thorn in paw' or "
                   "'splinter', disregard this! otherwise, check that your condition is in the correct dict or report "
                   "this as a bug.")
             return

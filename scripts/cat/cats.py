@@ -1347,11 +1347,11 @@ class Cat():
     def moon_skip_permanent_condition(self, condition):
         """handles the moon skip for permanent conditions"""
         if not self.is_disabled():
-            return False
+            return "skip"
 
         if self.permanent_condition[condition]["event_triggered"]:
             self.permanent_condition[condition]["event_triggered"] = False
-            return False
+            return "skip"
 
         mortality = self.permanent_condition[condition]["mortality"]
         moons_until = self.permanent_condition[condition]["moons_until"]
@@ -1362,11 +1362,11 @@ class Cat():
             self.permanent_condition[condition]["moons_until"] = int(moons_until - 1)
             self.permanent_condition[condition]["moons_with"] = 0
             if self.permanent_condition[condition]["moons_until"] != -1:
-                return False
+                return "skip"
         if self.permanent_condition[condition]["moons_until"] == -1 and \
                 self.permanent_condition[condition]["born_with"] is True:
             self.permanent_condition[condition]["moons_until"] = -2
-            return True
+            return "reveal"
 
         keys = self.permanent_condition[condition].keys()
         if 'moons_with' in keys:
@@ -1384,7 +1384,7 @@ class Cat():
             if self.status == 'leader':
                 game.clan.leader_lives -= 1
             self.die()
-            return True
+            return "continue"
 
     # ---------------------------------------------------------------------------- #
     #                                   relative                                   #
