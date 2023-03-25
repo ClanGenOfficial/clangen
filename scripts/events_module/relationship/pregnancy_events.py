@@ -37,9 +37,6 @@ class Pregnancy_Events():
         if not clan:
             return
 
-        if cat.outside:
-            return
-
         #Handles if a cat is already pregnant
         if cat.ID in clan.pregnancy_data:
             moons = clan.pregnancy_data[cat.ID]["moons"]
@@ -50,6 +47,9 @@ class Pregnancy_Events():
                 self.handle_two_moon_pregnant(cat, clan)
                 #events.ceremony_accessory = True
                 return
+
+        if cat.outside:
+            return
 
         # Check if they can have kits.
         can_have_kits = self.check_if_can_have_kits(cat, game.settings['no unknown fathers'])
