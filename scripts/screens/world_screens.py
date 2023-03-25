@@ -141,7 +141,8 @@ class OutsideClanScreen(Screens):
         self.previous_page_button = UIImageButton(scale(pygame.Rect((620, 1190), (68, 68))), "",
                                                   object_id="#arrow_left_button", manager=MANAGER)
         self.page_number = pygame_gui.elements.UITextBox("", scale(pygame.Rect((680, 1190), (220, 60))),
-                                                         object_id=get_text_box_theme(), manager=MANAGER)  # Text will be filled in later
+                                                         object_id=get_text_box_theme("#text_box_30_horizcenter"),
+                                                         manager=MANAGER)  # Text will be filled in later
 
         self.set_disabled_menu_buttons(["list_screen"])
         self.update_heading_text('Outside The Clan')
@@ -288,7 +289,7 @@ class OutsideClanScreen(Screens):
                     name = short_name + '...'
                 self.cat_names.append(pygame_gui.elements.UITextBox(name,
                                                                     scale(pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60))),
-                                                                    object_id=get_text_box_theme(), manager=MANAGER))
+                                                                    object_id=get_text_box_theme("#text_box_30_horizcenter"), manager=MANAGER))
                 pos_x += 240
                 if pos_x >= 1200:
                     pos_x = 0
@@ -463,8 +464,9 @@ class UnknownResScreen(Screens):
         self.next_page_button = UIImageButton(scale(pygame.Rect((912, 1190), (68, 68))), "", object_id="#arrow_right_button")
         self.previous_page_button = UIImageButton(scale(pygame.Rect((620, 1190), (68, 68))), "",
                                                   object_id="#arrow_left_button")
-        self.page_number = pygame_gui.elements.UITextBox("", scale(pygame.Rect((680, 1190),
-                                                                         (220, 60))), manager=MANAGER)  # Text will be filled in later
+        self.page_number = pygame_gui.elements.UITextBox("", scale(pygame.Rect((680, 1190), (220, 60))),
+                                                         object_id="#text_box_30_horizcenter_light",
+                                                         manager=MANAGER)  # Text will be filled in later
 
         self.set_disabled_menu_buttons(["starclan_screen"])
         self.update_heading_text("Unknown Residence")
@@ -588,8 +590,9 @@ class UnknownResScreen(Screens):
                     short_name = str(cat.name)[0:12]
                     name = short_name + '...'
                 self.cat_names.append(pygame_gui.elements.UITextBox(name,
-                                                                    scale(pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60)))
-                                                                    , manager=MANAGER))
+                                                                    scale(pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60))),
+                                                                    object_id="#text_box_30_horizcenter_light",
+                                                                    manager=MANAGER))
                 pos_x += 240
                 if pos_x >= 1200:
                     pos_x = 0

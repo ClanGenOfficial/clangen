@@ -54,7 +54,7 @@ class SaveCheck(UIWindow):
             self.message,
             scale(pygame.Rect((40, 40), (520, -1))),
             line_spacing=1,
-            object_id="",
+            object_id="#text_box_30_horizcenter",
             container=self
         )
 
@@ -215,7 +215,7 @@ class GameOver(UIWindow):
             f"(leaving will not erase the save file)",
             scale(pygame.Rect((40, 310), (520, -1))),
             line_spacing=.8,
-            object_id="#cat_patrol_info_box",
+            object_id="#text_box_22_horizcenter",
             container=self
         )
 

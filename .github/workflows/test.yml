@@ -1,6 +1,6 @@
 name: Tests
 
-on: [push, workflow_dispatch]
+on: [push, workflow_dispatch, pull_request]
 
 jobs:
   # Run unittest tests.
@@ -51,13 +51,13 @@ jobs:
         id: encoding_test
         run: poetry run python3 tests/test_encoding.py test
       - name: Fix the issue hopefully
-        if: failure()
+        if: ${{ failure() && github.event_name == 'push'}}
         id: fixit
         env:
           FILES: ${{ steps.encoding_test.outputs.files  }}
         run: poetry run python3 tests/test_encoding.py fix
       - name: Make a pr
-        if: ${{ failure() && steps.fixit.conclusion == 'success' }}
+        if: ${{ failure() && steps.fixit.conclusion == 'success' && github.event_name == 'push' }}
         uses: peter-evans/create-pull-request@v3
         with:
           commit-message: Fix file encoding
