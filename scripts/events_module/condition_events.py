@@ -368,6 +368,10 @@ class Condition_Events():
         for illness in illnesses:
             print('SAVE FILE', cat.name, cat.illnesses)
             print('COPY', cat.name, illnesses)
+
+            if illness in game.switches['skip_conditions']:
+                continue
+
             # use herbs
             self.use_herbs(cat, illness, illnesses, ILLNESSES)
 
@@ -398,6 +402,7 @@ class Condition_Events():
 
             # heal the cat
             elif cat.healed_condition is True:
+                game.switches['skip_conditions'].append(illness)
                 # gather potential event strings for healed illness
                 possible_string_list = ILLNESS_HEALED_STRINGS[illness]
 
@@ -453,6 +458,9 @@ class Condition_Events():
 
         injuries = deepcopy(cat.injuries)
         for injury in injuries:
+            if injury in game.switches['skip_conditions']:
+                continue
+
             print('SAVE FILE', cat.name, cat.injuries)
             print('COPY', cat.name, injuries)
             self.use_herbs(cat, injury, injuries, INJURIES)
@@ -483,6 +491,7 @@ class Condition_Events():
                 game.herb_events_list.append(event)
                 break
             elif cat.healed_condition is True:
+                game.switches['skip_conditions'].append(injury)
                 triggered = True
                 scar_given = None
 
@@ -558,7 +567,7 @@ class Condition_Events():
             "partial hearing loss": "deaf"
         }
 
-        conditions = cat.permanent_condition
+        conditions = deepcopy(cat.permanent_condition)
         for condition in conditions:
 
             # checking if the cat has a congenital condition to reveal and handling duration and death
@@ -627,11 +636,11 @@ class Condition_Events():
             # trying herbs
             chance = 0
             if conditions[condition]["severity"] == 'minor':
-                chance = 5
+                chance = 10
             elif conditions[condition]["severity"] == 'major':
-                chance = 3
+                chance = 6
             elif conditions[condition]["severity"] == 'severe':
-                chance = 2
+                chance = 3
             if not int(random.random() * chance):
                 self.use_herbs(cat, condition, conditions, PERMANENT)
 
@@ -723,13 +732,13 @@ class Condition_Events():
             if medical_cats_condition_fulfilled(Cat.all_cats.values(),
                                                 get_amount_cat_for_one_medic(game.clan)):
                 chance += 10  # lower risk if enough meds
-            if game.clan.medicine_cat is None:
-                chance = int(chance * .75)  # higher risk if no meds
+            if game.clan.medicine_cat is None and chance != 0:
+                chance = int(chance * .75)  # higher risk if no meds and risk chance wasn't 0
                 if chance <= 0:  # ensure that chance is never 0
                     chance = 1
 
             # if we hit the chance, then give the risk if the cat does not already have the risk
-            if not int(random.random() * chance) and risk['name'] not in dictionary:
+            if chance != 0 and not int(random.random() * chance) and risk['name'] not in dictionary:
                 # check if the new risk is a previous stage of a current illness
                 skip = False
                 if risk['name'] in progression:
@@ -791,6 +800,9 @@ class Condition_Events():
                 event = event_text_adjust(Cat, event, cat, other_cat=med_cat)  # adjust the text
                 event_list.append(event)
 
+                # we add the condition to this game switch, this is so we can ensure it's skipped over for this moon
+                game.switches['skip_conditions'].append(new_condition_name)
+                # here we give the new condition
                 if new_condition_name in INJURIES:
                     cat.get_injured(new_condition_name, event_triggered=event_triggered)
                     break
