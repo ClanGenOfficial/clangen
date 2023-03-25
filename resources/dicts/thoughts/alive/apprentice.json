@@ -64,7 +64,7 @@
     {
         "id": "bloodthirsty_apprentices",
         "thoughts": [
-          "Starts a fight with another apprentice",
+          "Starts a fight with another apprentice"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -106,7 +106,7 @@
         "id": "bold_apprentices",
         "thoughts": [
             "Winked cheekily at another apprentice",
-            "Is criticizing their mentor",  
+            "Is criticizing their mentor"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -210,7 +210,7 @@
     {
         "id": "compassionate_apprentice_to_apprentice",
         "thoughts": [
-            "Is convincing r_c to take a moments reast - less they become burnt out"
+            "Is convincing r_c to take a moments reast - lest they become burnt out"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -344,7 +344,7 @@
         "thoughts": [
             "Is wondering if they are good enough to be a warrior...",
             "Is reluctant to spar with their mentor today",
-            "Doesn't think their hauls on hunting patrols have been substantial enough",
+            "Doesn't think their hauls on hunting patrols have been substantial enough"
         ],
         "main_status_constraint": [
             "apprentice"
@@ -372,7 +372,7 @@
     {
         "id": "loving_apprentice",
         "thoughts": [
-            "Is listening to another apprentice's troubles sympathetically",
+            "Is listening to another apprentice's troubles sympathetically"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -387,7 +387,7 @@
         "id": "loyal_apprentice",
         "thoughts": [
             "Is listening to their mentor intently",
-            "Proclaimed their unwavering loyalty to their mentor",
+            "Proclaimed their unwavering loyalty to their mentor"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -486,7 +486,7 @@
         "main_trait_constraint": [
             "righteous"
         ]
-    }
+    },
     {
         "id": "shameless_apprentice",
         "thoughts": [
@@ -611,7 +611,7 @@
             "Wonders what they even need this training method for",
             "Brags about all the prey they caught when they were a rogue",
             "Can't help but be intrigued by the Warrior Code",
-            "Tells stories about their time as a rogue to other apprentice...with slight embellishments",
+            "Tells stories about their time as a rogue to other apprentice... with slight embellishments",
             "Is trying to memorize the warrior code"
         ],
         "main_status_constraint": [
@@ -626,7 +626,7 @@
     {
         "id": "formerly_a_rogue_warrior_apprentice",
         "thoughts": [
-            "Got scolded for eating what they've caught",
+            "Got scolded for eating what they've caught"
         ],
         "main_status_constraint": [
             "apprentice"
@@ -731,7 +731,7 @@
             "Wants to be a great warrior, just like r_c"
         ],
         "main_status_constraint": [
-            "apprentice",
+            "apprentice"
         ],
         "random_status_constraint": [
             "warrior"
@@ -745,7 +745,7 @@
         "thoughts": [
             "Remembers how r_c healed them"
         ],
-        "random_status_constraint": [
+        "main_status_constraint": [
             "apprentice",
             "mediator apprentice"
         ],
@@ -762,7 +762,7 @@
         "thoughts": [
             "Is wondering if r_c approves of them from StarClan"
         ],
-        "random_status_constraint": [
+        "main_status_constraint": [
             "apprentice",
             "medicine cat apprentice",
             "mediator apprentice"
@@ -781,7 +781,7 @@
             "Is wishing r_c was still here to tell them stories",
             "Is wondering who helps r_c with their ticks in StarClan"
         ],
-        "random_status_constraint": [
+        "main_status_constraint": [
             "apprentice",
             "medicine cat apprentice",
             "mediator apprentice"
@@ -803,7 +803,7 @@
             "Is rambling on to kits about the importance of respecting their elders",
             "Makes fun of r_c for not being an apprentice yet"
         ],
-        "random_status_constraint": [
+        "main_status_constraint": [
             "apprentice",
             "medicine cat apprentice",
             "mediator apprentice"
@@ -818,7 +818,7 @@
             "Wishes they could spend more time with r_c",
             "Wants to visit r_c at the medicine cat den"
         ],
-        "random_status_constraint": [
+        "main_status_constraint": [
             "apprentice",
             "mediator apprentice"
         ],
@@ -835,7 +835,7 @@
             "Is having a hunting contest with r_c",
             "Helps r_c perfect a fighting pose"
         ],
-        "random_status_constraint": [
+        "main_status_constraint": [
             "apprentice"
         ],
         "random_status_constraint": [
@@ -848,8 +848,8 @@
             "Is watching and learning from r_c",
             "Is asking r_c questions about warrior life"
         ],
-        "random_status_constraint": [
-            "apprentice",
+        "main_status_constraint": [
+            "apprentice"
         ],
         "random_status_constraint": [
             "warrior"
@@ -861,7 +861,7 @@
             "Wants to help r_c gather fresh herbs",
             "Is at the medicine cat den after a small injury"
         ],
-        "random_status_constraint": [
+        "main_status_constraint": [
             "apprentice",
             "mediator apprentice"
         ],
@@ -876,7 +876,7 @@
             "Wants r_c to notice them",
             "Is paying extra attention to r_c's announcements"
         ],
-        "random_status_constraint": [
+        "main_status_constraint": [
             "apprentice",
             "medicine cat apprentice",
             "mediator apprentice"
@@ -891,7 +891,7 @@
             "Wants r_c to assign them to the next patrol",
             "Is watching and learning from r_c"
         ],
-        "random_status_constraint": [
+        "main_status_constraint": [
             "apprentice"
         ],
         "random_status_constraint": [
@@ -907,7 +907,7 @@
             "Plans to help the elders with their ticks",
             "Is helping to repair the elder's den"
         ],
-        "random_status_constraint": [
+        "main_status_constraint": [
             "apprentice",
             "medicine cat apprentice",
             "mediator apprentice"
@@ -921,7 +921,7 @@
         "thoughts": [
             "Is in awe of r_c's conflict resolution skills"
         ],
-        "random_status_constraint": [
+        "main_status_constraint": [
             "apprentice",
             "medicine cat apprentice",
             "mediator apprentice"
@@ -936,7 +936,7 @@
             "Wishes they could train with r_c",
             "Teases r_c for not training to be a warrior"
         ],
-        "random_status_constraint": [
+        "main_status_constraint": [
             "apprentice",
             "mediator apprentice"
         ],
@@ -1032,7 +1032,7 @@
         "main_status_constraint": [
             "mediator apprentice"
         ]
-    }
+    },
     {
         "id": "med_cat_alive_warrior",
         "thoughts": [

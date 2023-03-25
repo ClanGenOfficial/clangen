@@ -1,16 +1,2 @@
 [
-    {
-        "id": "elder_gen_dead",
-        "thoughts": [
-            "Is telling stories about r_c",
-            "Wishes that r_c were still alive",
-            "Found a trinket that used to belong to r_c",
-            "Is forgetting who r_c was",
-            "Is thinking fondly of r_c",
-            "Sometimes feels like r_c is still right there next to them"
-        ],
-        "random_living_status": [
-            "starclan"
-        ]
-    }
 ]
