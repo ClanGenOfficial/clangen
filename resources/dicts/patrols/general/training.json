@@ -1125,24 +1125,24 @@
     "chance_of_success": 50,
     "exp": 10,
     "success_text": [
-            "app1 and app2 have a wonderful time exploring the forbidden tunnels. They return to camp sharing a mysterious smile, swearing not to speak of this to anyone.",
-            "app1 expected a little hesitation but app2 defies that expectation and darts right into the tunnels playfully batting at them as they do so. They play for what seems like forever and they make up a lie to tell their mentors on their way back to camp."
-                   ],
+    "app1 and app2 have a wonderful time exploring the forbidden tunnels. They return to camp sharing a mysterious smile, swearing not to speak of this to anyone.",
+    "app1 expected a little hesitation but app2 defies that expectation and darts right into the tunnels playfully batting at them as they do so. They play for what seems like forever and they make up a lie to tell their mentors on their way back to camp."
+    ],
     "fail_text": [
-            "As app1 and app2 begin to make their way into the tunnels they are suddenly grabbed by their scruffs. They hesitantly look upwards and find their mentors looking at them with disappointment. They are escorted back to camp to receive a punishment from their leader, though they feel like they should fear their mentors' punishments more. . . .", 
-            null,
-            null,
-            null,
-            null,
-            "s_c boasts to app2 that they go into the tunnels allllllll the time, their head and tail held high as they do so. app2 seems to be unconvinced so s_c crawls into the narrow opening of the tunnel and exclaims that there is nothing to it. Just at that moment the tunnel makes an ominous rumble and collapses. They both scream in absolute terror and app2 runs back to camp praying to StarClan that they can find help and soon, as they return with the help they can only hear the heartbroken wail of s_c that they can't feel their legs anymore."
-     ],
+    "As app1 and app2 begin to make their way into the tunnels they are suddenly grabbed by their scruffs. They hesitantly look upwards and find their mentors looking at them with disappointment. They are escorted back to camp to receive a punishment from their leader, though they feel like they should fear their mentors' punishments more. . . .", 
+    null,
+    null,
+    null,
+    null,
+    "s_c boasts to app2 that they go into the tunnels allllllll the time, their head and tail held high as they do so. app2 seems to be unconvinced so s_c crawls into the narrow opening of the tunnel and exclaims that there is nothing to it. Just at that moment the tunnel makes an ominous rumble and collapses. They both scream in absolute terror and app2 runs back to camp praying to StarClan that they can find help and soon, as they return with the help they can only hear the heartbroken wail of s_c that they can't feel their legs anymore."
+    ],
     "fail_trait": ["adventurous", "bold", "confident", "daring", "troublesome", "playful", "childish"],
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null,
     "history_text": [
-            "This cat's back was broken after attempting to enter the forbidden tunnels."
+    "This cat's back was broken after attempting to enter the forbidden tunnels."
     ]
 },
 {
@@ -1155,16 +1155,16 @@
     "chance_of_success": 60,
     "exp": 5,
     "success_text": [
-    "p_l guides app1 to one of their favorite places and gently asks them what is wrong. app1 looks at their feet and whispers that they feel like a failure and that they are not doing enough for the Clan because they are not doing too well at their training. p_l gently tugs them closer to them and tells them that they are not just their failures, failure hurts thats true but we can learn so much from them. All they can do is go out there and make up for them and ensure that they won't make the same mistake twice. They then assure them that they don't think that app1 is a failure and that they love teaching them and that the Clan feels the same. app1 looks at p_l with watery eyes and then tackles them in a hug saying thank you for believing in me.",
-    "p_l gently asks them what is wrong and app1 breaks down curling into a little ball wailing that they are not doing good enough and that they are really trying. p_l immediately pulls them into a hug purring softly. They then tell them a story of their own apprentice days and how they also made a lot of mistakes, app1 looks up disbelieving, p_l chuckles at the looks on their face and promises them that nobody but themselves will remember those mistakes and as long as you learn from them nobody will hold it against them. They nudge the apprentice onto their feet and slowly walks back to camp with them recounting some more embarrassing stories from their kithood causing app1 to be smiling and chuckling by the time they get back to camp."
+    "p_l guides app1 to their favorite place and softly asks them what's wrong. app1 whispers that they feel like a failure and that they are not doing good enough. p_l gently tugs them closer and tells them that they are not just their failures. Failure hurts, that's true, but we can learn so much from them. All they can do is go out there and ensure that they won't make the same mistake twice. app1 looks at p_l with shiny eyes and cuddles even closer.", 
+    "p_l gently asks them what's wrong and app1 breaks down, crying that they're not doing good enough even though they're really trying. p_l pulls them into a hug, purring softly. They tell app1 a story of their own apprentice days and how they also made a lot of mistakes, app1 looks up disbelieving, p_l chuckles at the look on their face and promises them that nobody but themselves will remember those mistakes."
     ],
     "fail_text": [
-    "p_l decides to ask app1 if there is something they can help them with. Unfortunately they immediately shut down and ask in a whisper to just get to the training grounds please."
+    "p_l decides to ask app1 if there's something they can help them with or if they want to talk about it. Unfortunately app1 immediately shuts down and asks p_l if they could just please continue walking to the training grounds."
     ],
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null
-}
+} 
 ]

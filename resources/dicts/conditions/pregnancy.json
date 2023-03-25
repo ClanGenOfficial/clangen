@@ -88,6 +88,17 @@
       "Everyone says giving birth is difficult, but m_c feels like this one has been worse than most.",
       "This will all be worth it, m_c groans, promising themselves that as the pains of afterbirth rock their exhausted and bleeding body.",
       "m_c chokes down the herbs given to them, retching at the taste but knowing they need them to stop the blood loss. "
-    ]
+    ],
+	"outside_alone": [
+		"Rumour's reaches the clan, that m_c gave birth to a {insert}."
+	],
+	"outside_in_clan":[
+		"r_c heard a rumour, that m_c had a litter.",
+		"r_c thinks that m_c should have had their litter by now."
+	],
+	"outside_death": [
+		"Some say m_c didn't make it.",
+		"Some say m_c would have needed a medicine cat to survive."
+	]
   }
 }
