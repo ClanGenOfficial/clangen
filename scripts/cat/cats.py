@@ -2131,7 +2131,7 @@ class Cat():
         """Unset the mate from both self and other_cat"""   
 
         # Both cats must have mates for this to work
-        if len(self.mate) > 0 or len(other_cat.mate) > 0:
+        if len(self.mate) < 1 or len(other_cat.mate) < 1:
             return
         
         # AND they must be mates with each other. 

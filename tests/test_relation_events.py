@@ -85,8 +85,8 @@ class Pregnancy(unittest.TestCase):
         cat1.no_kits = True
         cat2 = Cat(gender = 'male')
 
-        cat1.mate[0] = cat2.ID
-        cat2.mate[0] = cat1.ID
+        cat1.mate.append(cat2.ID)
+        cat2.mate.append(cat1.ID)
         relation1 = Relationship(cat1, cat2,mates=True,family=False,romantic_love=100)
         relation2 = Relationship(cat2, cat1,mates=True,family=False,romantic_love=100)
         cat1.relationships[cat2.ID] = relation1
