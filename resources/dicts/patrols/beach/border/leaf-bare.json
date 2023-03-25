@@ -31,5 +31,29 @@
             "r_c was swept out to sea by a flood.",
             "were swept out to sea by a flood"
     ]
+},
+{
+        "patrol_id": "bch_ bord_ocean_newcatkits1",
+        "biome": "beach",
+        "season": "leaf-bare",
+        "tags": ["border", "new_cat_litter1_dead", "new_cat_litter4_dead", "platonic", "comfort", "warrior", "shivering", "frostbite", "injure_all"],
+        "intro_text": "p_l hears desperate mewling coming from the ocean. ",
+        "decline_text": "They decide that their imagination is just playing tricks on them and continue the patrol.",
+        "chance_of_success": 20,
+        "exp": 15,
+        "success_text": [
+        "p_l and the rest of their patrol race towards the section of beach they heard the wailing coming from. To their absolute horror they see several kits just barely keeping their heads above water, the remains of a Twoleg thing trapping them into place. p_l and r_c leap into the water and quickly get rid of that blasted twoleg contraption. They grab the kits by their scruff and hand them over to the rest of the patrol so they can be kept warm until they can reach camp.",
+        null,
+        null,
+        "s_c, upon seeing several kits trapped by a Twoleg contraption, immediately jumps into the cold harsh water of the sea. They use a piece of wood as a makeshift raft and paddle the kits back to shore where the rest of the patrol can keep them warm, before racing them back to camp to be cuddled into the pelt of a loving queen."
+        ],
+        "fail_text": [
+        "To the cat's horror they were too late, the bodies of several kits washing ashore. They mutter a prayer before gently picking up the kits, the patrol swims the little bodies back out into the cold ocean, ensuring that the kits rest within the ocean's embrace."
+        ],
+        "win_skills": ["wise", "thoughtful"],
+        "min_cats": 2,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
 }
 ]
