@@ -77,7 +77,7 @@ class Screens():
             scale(pygame.Rect((620, 54), (360, 70))),
             visible=False,
             manager=MANAGER,
-            object_id="#text_box_34_horizcenter_white")
+            object_id="#text_box_34_horizcenter_light")
     }
 
     def change_screen(self, new_screen):

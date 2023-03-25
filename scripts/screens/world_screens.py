@@ -465,7 +465,7 @@ class UnknownResScreen(Screens):
         self.previous_page_button = UIImageButton(scale(pygame.Rect((620, 1190), (68, 68))), "",
                                                   object_id="#arrow_left_button")
         self.page_number = pygame_gui.elements.UITextBox("", scale(pygame.Rect((680, 1190), (220, 60))),
-                                                         object_id="#text_box_30_horizcenter_white",
+                                                         object_id="#text_box_30_horizcenter_light",
                                                          manager=MANAGER)  # Text will be filled in later
 
         self.set_disabled_menu_buttons(["starclan_screen"])
@@ -591,7 +591,7 @@ class UnknownResScreen(Screens):
                     name = short_name + '...'
                 self.cat_names.append(pygame_gui.elements.UITextBox(name,
                                                                     scale(pygame.Rect((160 + pos_x, 460 + pos_y), (300, 60))),
-                                                                    object_id="#text_box_30_horizcenter_white",
+                                                                    object_id="#text_box_30_horizcenter_light",
                                                                     manager=MANAGER))
                 pos_x += 240
                 if pos_x >= 1200:
