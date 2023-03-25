@@ -1,6 +1,6 @@
 [
 {
-    "patrol_id": "bch_med_romance7",
+    "patrol_id": "bch_med_leaf-bare_romance1",
     "biome": "beach",
     "season": "leaf-bare",
     "tags": ["herb_gathering", "med_cat", "warrior", "random_herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c"],
@@ -25,7 +25,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "bch_med_romance8",
+    "patrol_id": "bch_med_leaf-bare_romance2",
     "biome": "beach",
     "season": "leaf-bare",
     "tags": ["herb_gathering", "med_cat", "med_only", "random_herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c"],
