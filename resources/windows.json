@@ -23,5 +23,8 @@
     },
     "#change_cat_name_window": {
         "prototype": "#window_base_theme"
+    },
+    "#change_cat_gender_window": {
+        "prototype": "#window_base_theme"
     }
 }
