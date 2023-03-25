@@ -24,7 +24,6 @@ from sys import exit as sys_exit
 
 from scripts.cat.sprites import sprites, Sprites
 from scripts.cat.appearance_utility import init_pelt
-from scripts.cat.cats import cat_class
 from scripts.cat.pelts import (
     choose_pelt,
     scars1,
@@ -404,9 +403,9 @@ def create_outside_cat(Cat, status, backstory):
         TODO: DOCS
         """
         suffix = ''
-        if backstory in cat_class.backstory_categories["former_rogue_backstories"]:
+        if backstory in Cat.backstory_categories["former_rogue_backstories"]:
             status = 'rogue'
-        elif backstory in cat_class.backstory_categories["former_clancat_backstories"]:
+        elif backstory in Cat.backstory_categories["former_clancat_backstories"]:
             status = "former Clancat"
         if status == 'kittypet':
             name = choice(names.names_dict["loner_names"])

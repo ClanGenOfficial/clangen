@@ -308,6 +308,11 @@ class Thoughts():
         status = status
         loaded_thoughts = []
 
+        if status == "medicine cat apprentice":
+            status = "medicine cat"
+        elif status == "mediator apprentice":
+            status = "mediator"
+
         if not main_cat.dead and not main_cat.outside:
             life_dir = "alive"
         else:

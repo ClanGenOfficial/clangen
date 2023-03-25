@@ -15,10 +15,10 @@
         ],
         "main_status_constraint": [
             "medicine cat",
-            "medicine Cat apprentice"
+            "medicine cat apprentice"
         ],
         "random_living_status": [
-            "Starclan"
+            "starclan"
         ]
     },
     {
@@ -37,7 +37,7 @@
             "medicine Cat Apprentice"
         ],
         "random_living_status": [
-            "Dark forest"
+            "darkforest"
         ]
     },
     {
@@ -53,130 +53,7 @@
             "Kitten"
         ],
         "random_living_status": [
-            "Dark forest"
+            "darkforest"
         ]
-    },
-    {
-        "id": "med_cat_alive_kit",
-        "thoughts": [
-            "Is teaching kits about what plants to stay away from",
-            "Chased kits out of their den"
-        ],
-        "main_status_constraint": [
-            "medicine Cat",
-            "medicine Cat Apprentice"
-        ],  
-        "random_status_constraint": [
-            "kitten"
-        ]
-    },
-    {
-        "id": "med_cat_gen",
-        "thoughts": [
-            "Is looking for herbs",
-            "Is organizing the herb stores",
-            "Is drying some herbs",
-            "Is interpreting an omen",
-            "Is interpreting a prophecy",
-            "Hopes for a message from StarClan soon",
-            "Is feeling stressed taking care of the Clan",
-            "Is tending growing herbs",
-            "Is making new nests",
-            "Wishes they had an extra set of paws",
-            "Is reciting the names of herbs aloud",
-            "Was startled awake in the wee hours by a vivid dream",
-            "Is running low on mouse bile",
-            "Plans to go out gathering herbs today",
-            "Is looking forward to the half-moon meeting",
-            "Is struggling to remember all of the names of herbs",
-            "Is helping organize the herb stores",
-            "Made a mess of the herbs and is panicking",
-            "Has been hearing the voices of StarClan cats...",
-            "Has the foul taste of bitter herbs in their mouth",
-            "Is wondering if they could borrow some catmint from the other Clans",
-            "Is happy that they chose life as a medicine cat",
-            "Is proud of their ability to care for their Clanmates"
-        ]
-    },
-    {
-        "id": "med_cat_alive_apprentice",
-        "thoughts": [
-            "Is thinking about taking on a new apprentice"
-        ],
-        "main_status_constraint": [
-            "medicine Cat"
-        ],  
-        "random_status_constraint": [
-            "apprentice",
-            "kitten"
-        ]
-    },
-    {
-        "id": "med_cat_alive_warrior",
-        "thoughts": [
-            "Is checking up on the warriors"
-        ],
-        "main_status_constraint": [
-            "medicine cat",
-            "medicine cat apprentice"
-        ],  
-        "random_status_constraint": [
-            "warrior"
-        ]
-      },
-      {
-        "id": "med_cat_app_dead_SC_kit",
-        "thoughts": [
-            "Is wondering if r_c would have botherned them while they were sorting herbs",
-            "Wonders if they would have had to treat r_c for kittencough"
-        ],
-        "main_status_constraint": [
-            "medicine cat apprentice"
-        ],  
-        "random_status_constraint": [
-            "kitten"
-        ]
-      },
-      {
-        "id": "med_cat_app_dead_app",
-        "thoughts": [
-            "Is wondering if r_c would have been their friend",
-            "Wonders if r_c would have swapped secrets with eachother"
-        ],
-        "main_status_constraint": [
-            "medicine cat apprentice"
-        ],  
-        "random_status_constraint": [
-            "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
-        ]
-      },
-      {
-        "id": "med_cat_alive_apprentice",
-        "thoughts": [
-            "Wonders if r_c would have been a better healer",
-            "Wishes the other apprentices could understand how they feel",
-            "Wishes they understood the apprentice's inside jokes"
-        ],
-        "main_status_constraint": [
-            "medicine cat apprentice"
-        ],  
-        "random_status_constraint": [
-            "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
-        ]
-      },
-      {
-        "id": "med_cat_gen",
-        "thoughts": [
-            "Is wondering if they are good enough to become a medicine cat",
-            "Helps apply a poultice to a small wound",
-            "Is enjoying learning all of the herbs a medicine cat needs!"
-        ],
-        "main_status_constraint": [
-            "medicine cat apprentice"
-        ]
-      }  
+    }
 ]
