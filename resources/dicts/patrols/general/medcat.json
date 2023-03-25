@@ -1084,7 +1084,7 @@
     "Carefully plucking some herbs, they discuss the latest signs from StarClan and ponder what to do about them. They manage to think up some tentative plans and they return to camp to discuss them with the leader and deputy."
     ],
     "fail_text": [
-    "They fail too discuss the issues that the latest news has brought with it and they are too irritated with each other to continue the patrol."
+    "They fail to discuss the issues that the latest news has brought with it and are too irritated with each other to continue the patrol."
     ],
     "min_cats": 2,
     "max_cats": 2,
@@ -1106,7 +1106,7 @@
     "p_l and r_c decide to make a game of who can hunt the most herbs. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs."
     ],
     "fail_text": [
-    "Both p_l and r_c are tense and it shows. Even though it shouldn't be this hard to find any herbs they fail to find even a single one. They return to camp frustrated and irritated with each other.",
+    "Both p_l and r_c are tense and it shows. Even though it shouldn't be this hard to find any herbs, they fail to find even a single one. They return to camp frustrated and irritated with each other.",
     "Even though there should be many herbs, they fail to find anything. p_l blames r_c for distracting them and they get into a huge argument."
     ],
     "min_cats": 2,

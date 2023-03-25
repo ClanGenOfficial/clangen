@@ -1155,8 +1155,8 @@
     "chance_of_success": 60,
     "exp": 5,
     "success_text": [
-    "p_l guides app1 to their favorite place and softly asks them what's wrong. app1 whispers that they feel like a failure and that they are not doing good enough. p_l gently tugs them closer and tells them that they are not just their failures, failure hurts that's true but we can learn so much from them. All they can do is go out there and ensure that they won't make the same mistake twice. app1 looks at p_l with shiny eyes and cuddles even closer.", 
-    "p_l gently asks them what's wrong and app1 breaks down, crying that they're not doing good enough even though they're really trying. p_l pulls them into a hug purring softly. They tell app1 a story of their own apprentice days and how they also made a lot of mistakes, app1 looks up disbelieving, p_l chuckles at the look on their face and promises them that nobody but themselves will remember those mistakes."
+    "p_l guides app1 to their favorite place and softly asks them what's wrong. app1 whispers that they feel like a failure and that they are not doing good enough. p_l gently tugs them closer and tells them that they are not just their failures. Failure hurts, that's true, but we can learn so much from them. All they can do is go out there and ensure that they won't make the same mistake twice. app1 looks at p_l with shiny eyes and cuddles even closer.", 
+    "p_l gently asks them what's wrong and app1 breaks down, crying that they're not doing good enough even though they're really trying. p_l pulls them into a hug, purring softly. They tell app1 a story of their own apprentice days and how they also made a lot of mistakes, app1 looks up disbelieving, p_l chuckles at the look on their face and promises them that nobody but themselves will remember those mistakes."
                    ],
     "fail_text": [
     "p_l decides to ask app1 if there's something they can help them with or if they want to talk about it. Unfortunately app1 immediately shuts down and asks p_l if they could just please continue walking to the training grounds."
