@@ -6,6 +6,7 @@ from random import choice
 import pygame
 
 from ..datadir import get_save_dir
+from ..game_structure.windows import ChangeCatName, SpecifyCatGender
 
 try:
     import ujson
@@ -278,8 +279,12 @@ class ProfileScreen(Screens):
         self.profile_elements = {}
 
     def handle_event(self, event):
+
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.back_button:
+
+            if game.switches['window_open']:
+                pass
+            elif event.ui_element == self.back_button:
                 self.close_current_tab()
                 self.change_screen(game.last_screen_forProfile)
             elif event.ui_element == self.previous_cat_button:
@@ -328,7 +333,9 @@ class ProfileScreen(Screens):
             else:
                 self.handle_tab_events(event)
 
-            if self.the_cat.dead and game.settings["fading"]:
+            if game.switches['window_open']:
+                pass
+            elif self.the_cat.dead and game.settings["fading"]:
                 if event.ui_element == self.checkboxes["prevent_fading"]:
                     if self.the_cat.prevent_fading:
                         self.the_cat.prevent_fading = False
@@ -356,9 +363,9 @@ class ProfileScreen(Screens):
         # Personal Tab
         elif self.open_tab == 'personal':
             if event.ui_element == self.change_name_button:
-                self.change_screen('change name screen')
+                ChangeCatName(self.the_cat)
             elif event.ui_element == self.specify_gender_button:
-                self.change_screen('change gender screen')
+                SpecifyCatGender(self.the_cat)
             elif event.ui_element == self.cis_trans_button:
                 if self.the_cat.genderalign != "female" and self.the_cat.genderalign != "male":
                     self.the_cat.genderalign = self.the_cat.gender
@@ -560,6 +567,7 @@ class ProfileScreen(Screens):
             self.the_cat.thought = "Hello. I am here to drag the dead cats of " + game.clan.name + "Clan into the Dark Forest."
 
         # Write cat name
+        self.og_name = self.the_cat.name
         self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(cat_name,
                                                                           scale(pygame.Rect((50, 280), (-1, 80))),
                                                                           object_id=get_text_box_theme(
@@ -1989,218 +1997,6 @@ class ProfileScreen(Screens):
 
     def on_use(self):
         pass
-
-
-# ---------------------------------------------------------------------------- #
-#                             change name screen                               #
-# ---------------------------------------------------------------------------- #
-class ChangeNameScreen(Screens):
-    the_cat = ''
-
-    def screen_switches(self):
-        self.hide_menu_buttons()
-
-        self.the_cat = Cat.all_cats.get(game.switches['cat'])
-
-        self.heading = pygame_gui.elements.UITextBox("-Change Name-", scale(pygame.Rect((200, 260), (1200, 80))),
-                                                     object_id=get_text_box_theme(), manager=MANAGER)
-
-        self.name_changed = pygame_gui.elements.UITextBox("Name Changed!", scale(pygame.Rect((200, 700), (1200, 80))),
-                                                          visible=False,
-                                                          object_id=get_text_box_theme(), manager=MANAGER)
-
-        self.done_button = UIImageButton(scale(pygame.Rect((730, 564), (154, 60))), "",
-                                         object_id="#done_button", manager=MANAGER)
-        self.back_button = UIImageButton(scale(pygame.Rect((50, 50), (210, 60))), "",
-                                         object_id="#back_button", manager=MANAGER)
-
-        self.prefix_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((440, 400), (360, 60))),
-                                                                    placeholder_text=self.the_cat.name.prefix
-                                                                    , manager=MANAGER)
-
-        self.random_pre = UIImageButton(scale(pygame.Rect((586, 460), (68, 68))), "",
-                                        object_id="#random_dice_button"
-                                        , manager=MANAGER)
-
-        self.random_suff = UIImageButton(scale(pygame.Rect((946, 460), (68, 68))), "",
-                                         object_id="#random_dice_button"
-                                         , manager=MANAGER)
-
-        self.toggle_spec_block_on = UIImageButton(scale(pygame.Rect((1150, 396), (68, 68))), "",
-                                                  object_id="#unchecked_checkbox",
-                                                  tool_tip_text=f"Overwrite the cat's special suffix, allowing you to use your own",
-                                                  manager=MANAGER)
-
-        self.toggle_spec_block_off = UIImageButton(scale(pygame.Rect((1150, 396), (68, 68))), "",
-                                                   object_id="#checked_checkbox",
-                                                   tool_tip_text="Re-enable the cat's special suffix", manager=MANAGER)
-
-        if self.the_cat.name.status in self.the_cat.name.names_dict["special_suffixes"]:
-            self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((800, 400), (360, 60))),
-                                                                        placeholder_text=
-                                                                        self.the_cat.name.names_dict["special_suffixes"]
-                                                                        [self.the_cat.name.status]
-                                                                        , manager=MANAGER)
-            if not self.the_cat.name.specsuffix_hidden:
-                self.toggle_spec_block_on.show()
-                self.toggle_spec_block_on.enable()
-                self.toggle_spec_block_off.hide()
-                self.toggle_spec_block_off.disable()
-                self.random_suff.disable()
-                self.suffix_entry_box.disable()
-            else:
-                self.toggle_spec_block_on.hide()
-                self.toggle_spec_block_on.disable()
-                self.toggle_spec_block_off.show()
-                self.toggle_spec_block_off.enable()
-                self.random_suff.enable()
-                self.suffix_entry_box.enable()
-                self.suffix_entry_box.set_text(self.the_cat.name.suffix)
-
-
-        else:
-            self.toggle_spec_block_on.disable()
-            self.toggle_spec_block_on.hide()
-            self.toggle_spec_block_off.disable()
-            self.toggle_spec_block_off.hide()
-            self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((800, 400), (360, 60))),
-                                                                        placeholder_text=self.the_cat.name.suffix
-                                                                        , manager=MANAGER)
-
-    def exit_screen(self):
-        self.prefix_entry_box.kill()
-        del self.prefix_entry_box
-        self.random_pre.kill()
-        del self.random_pre
-        self.suffix_entry_box.kill()
-        del self.suffix_entry_box
-        self.random_suff.kill()
-        del self.random_suff
-        self.toggle_spec_block_on.kill()
-        del self.toggle_spec_block_on
-        self.toggle_spec_block_off.kill()
-        del self.toggle_spec_block_off
-        self.done_button.kill()
-        del self.done_button
-        self.back_button.kill()
-        del self.back_button
-        self.heading.kill()
-        del self.heading
-        self.name_changed.kill()
-        del self.name_changed
-
-    def on_use(self):
-        pass
-
-    def handle_event(self, event):
-        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.done_button:
-                if sub(r'[^A-Za-z0-9 ]+', '', self.prefix_entry_box.get_text()) != '':
-                    self.the_cat.name.prefix = sub(r'[^A-Za-z0-9 ]+', '', self.prefix_entry_box.get_text())
-                    self.name_changed.show()
-                if sub(r'[^A-Za-z0-9 ]+', '', self.suffix_entry_box.get_text()) != '':
-                    self.the_cat.name.suffix = sub(r'[^A-Za-z0-9 ]+', '', self.suffix_entry_box.get_text())
-                    self.name_changed.show()
-                    self.the_cat.specsuffix_hidden = True
-                    self.the_cat.name.specsuffix_hidden = True
-                elif sub(r'[^A-Za-z0-9 ]+', '',
-                         self.suffix_entry_box.get_text()) == '' and not self.the_cat.name.specsuffix_hidden:
-                    self.name_changed.show()
-                else:
-                    self.the_cat.specsuffix_hidden = False
-                    self.the_cat.name.specsuffix_hidden = False
-            elif event.ui_element == self.random_pre:
-                self.prefix_entry_box.set_text(Name(self.the_cat.status,
-                                                    None,
-                                                    self.the_cat.name.suffix,
-                                                    self.the_cat.pelt.colour,
-                                                    self.the_cat.eye_colour,
-                                                    self.the_cat.pelt.name,
-                                                    self.the_cat.tortiepattern,
-                                                    specsuffix_hidden=
-                                                        (self.the_cat.name.status in self.the_cat.name.names_dict["special_suffixes"])).prefix)
-            elif event.ui_element == self.random_suff:
-                self.suffix_entry_box.set_text(Name(self.the_cat.status,
-                                                    self.the_cat.name.prefix,
-                                                    None,
-                                                    self.the_cat.pelt.colour,
-                                                    self.the_cat.eye_colour,
-                                                    self.the_cat.pelt.name,
-                                                    self.the_cat.tortiepattern,
-                                                    specsuffix_hidden=
-                                                        (self.the_cat.name.status in self.the_cat.name.names_dict["special_suffixes"])).suffix)
-            elif event.ui_element == self.toggle_spec_block_on:
-                self.suffix_entry_box.enable()
-                self.random_suff.enable()
-                self.toggle_spec_block_on.disable()
-                self.toggle_spec_block_on.hide()
-                self.toggle_spec_block_off.enable()
-                self.toggle_spec_block_off.show()
-                self.suffix_entry_box.set_text(self.the_cat.name.suffix)
-            elif event.ui_element == self.toggle_spec_block_off:
-                self.random_suff.disable()
-                self.toggle_spec_block_off.disable()
-                self.toggle_spec_block_off.hide()
-                self.toggle_spec_block_on.enable()
-                self.toggle_spec_block_on.show()
-                self.suffix_entry_box.set_text("")
-                self.suffix_entry_box.rebuild()
-                self.suffix_entry_box.disable()
-            elif event.ui_element == self.back_button:
-                self.change_screen('profile screen')
-
-
-# ---------------------------------------------------------------------------- #
-#                           change gender screen                               #
-# ---------------------------------------------------------------------------- #
-class ChangeGenderScreen(Screens):
-
-    def screen_switches(self):
-        self.hide_menu_buttons()
-
-        self.header = pygame_gui.elements.UITextBox("-Change Gender-\nYou can set this to anything. "
-                                                    "Gender alignment does not effect gameplay. ",
-                                                    scale(pygame.Rect((200, 260), (1200, -1))),
-                                                    object_id=get_text_box_theme(), manager=MANAGER)
-        self.gender_changed = pygame_gui.elements.UITextBox("Gender Changed!",
-                                                            scale(pygame.Rect((200, 480), (1200, 80))),
-                                                            object_id=get_text_box_theme(),
-                                                            visible=False, manager=MANAGER)
-        self.the_cat = Cat.all_cats.get(game.switches['cat'])
-
-        self.done_button = UIImageButton(scale(pygame.Rect((730, 564), (154, 70))), "",
-                                         object_id="#done_button", manager=MANAGER)
-        self.back_button = UIImageButton(scale(pygame.Rect((50, 50), (210, 60))), "",
-                                         object_id="#back_button", manager=MANAGER)
-
-        self.gender_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((600, 400), (400, 60))),
-                                                                    placeholder_text=self.the_cat.genderalign
-                                                                    , manager=MANAGER)
-
-    def exit_screen(self):
-        self.header.kill()
-        del self.header
-        self.gender_changed.kill()
-        del self.gender_changed
-        self.gender_entry_box.kill()
-        del self.gender_entry_box
-        self.done_button.kill()
-        del self.done_button
-        self.back_button.kill()
-        del self.back_button
-
-    def on_use(self):
-        pass
-
-    def handle_event(self, event):
-        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.done_button:
-                if sub(r'[^A-Za-z0-9 ]+', "", self.gender_entry_box.get_text()) != "":
-                    self.the_cat.genderalign = sub(r'[^A-Za-z0-9 ]+', "", self.gender_entry_box.get_text())
-                    self.gender_changed.show()
-            elif event.ui_element == self.back_button:
-                self.change_screen('profile screen')
-        return
 
 
 # ---------------------------------------------------------------------------- #
