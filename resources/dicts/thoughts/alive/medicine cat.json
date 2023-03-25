@@ -1,5 +1,343 @@
 [
     {
+        "id": "adventurous_medicine_cat",
+        "thoughts": [
+            "Heads out of Clan territories to look for new herbs",
+            "Purposefully planted herbs in hard-to-reach areas",
+            "Purposefully planted herbs in hard-to-reach areas",
+            "Is exploring unclaimed lands while searching for herbs",
+            "Climbed a tree to gather alder bark instead of clawing the trunk",
+            "Thinks about visiting StarClan, just to explore their hunting grounds",
+            "Asks the deputy to go on patrol",
+            "Begs the leader to give them the bounciest kit as their apprentice",
+            "Is showing the kits herbs by taking them on adventures in the territory",
+            "Helps the leader with their duties while the deputy is on patrol",
+            "Offers to help the queens with badger rides for the kits",
+            "Uses extra herbs just to go gather more"
+        ],
+        "main_trait_constraint": [
+            "adventurous"
+        ]
+    },
+    {
+        "id": "altruistic_medicine_cat",
+        "thoughts": [
+            "Declines to eat when prey is low"
+        ],
+        "main_trait_constraint": [
+            "altruistic"
+        ]
+    },
+    {
+        "id": "ambitious_medicine_cat",
+        "thoughts": [
+            "Insists on taking on more tasks",
+            "Spends all day gathering herbs"
+        ],
+        "main_trait_constraint": [
+            "ambitious"
+        ]
+    },
+    {
+        "id": "bloodthirsty_medicine_cat",
+        "thoughts": [
+            "Is gathering deathberries",
+            "Has been disappearing a lot lately",
+            "Insists only on treating cats who need it",
+            "Is ripping some leaves to shreds",
+            "Debates becoming a warrior",
+            "Gives the wrong herbs to a warrior on purpose",
+            "Wishes they weren't confined to this life",
+            "Is stocking up on deathberries",
+            "Is stocking up on yew berries",
+            "Is stocking up on nightshade",
+            "Is stocking up on watermint",
+            "Put herbs in prey to give cats stomachaches",
+            "Refused to treat anyone today",
+            "Is upset that they can't fight alongside the warriors",
+            "Wishes to fight alongside the warriors",
+            "Thinks they'd be an amazing leader",
+            "Talks to the leader and deputy about war",
+            "Ignores the low herb stocks, instead practicing battle moves"
+        ],
+        "main_trait_constraint": [
+            "bloodthirsty"
+        ]
+    },
+    {
+        "id": "bold_medicine_cat",
+        "thoughts": [
+            "Decides to try a new herb as treatment for an injury"
+        ],
+        "main_trait_constraint": [
+            "bold"
+        ]
+    },
+    {
+        "id": "calm_medicine_cat",
+        "thoughts": [
+            "Stays composed when treating a severe injury"
+        ],
+        "main_trait_constraint": [
+            "calm"
+        ]
+    },
+    {
+        "id": "careful_medicine_cat",
+        "thoughts": [
+            "Counts and recounts the poppy seeds"
+        ],
+        "main_trait_constraint": [
+            "careful"
+        ]
+    },
+    {
+        "id": "charismatic_medicine_cat",
+        "thoughts": [
+            "Is doing their daily checkup on the elders"
+        ],
+        "main_trait_constraint": [
+            "charismatic"
+        ]
+    },
+    {
+        "id": "childish_medicine_cat",
+        "thoughts": [
+            "Bounces excitedly at the half-moon meeting"
+        ],
+        "main_trait_constraint": [
+            "childish"
+        ]
+    },
+    {
+        "id": "cold_medicine_cat",
+        "thoughts": [
+            "Refuses to treat an injured, abandoned kit"
+        ],
+        "main_trait_constraint": [
+            "cold"
+        ]
+    },
+    {
+        "id": "compassionate_medicine_cat",
+        "thoughts": [
+            "Works long into the night taking care of the Clan"
+        ],
+        "main_trait_constraint": [
+            "compassionate"
+        ]
+    },
+    {
+        "id": "confident_medicine_cat",
+        "thoughts": [
+            "Is proud of their ability to care for their Clanmates"
+        ],
+        "main_trait_constraint": [
+            "confident"
+        ]
+    },
+    {
+        "id": "daring_medicine_cat",
+        "thoughts": [
+            "Steals catmint from a Twoleg garden"
+        ],
+        "main_trait_constraint": [
+            "daring"
+        ]
+    },
+    {
+        "id": "empathetic_medicine_cat",
+        "thoughts": [
+            "Listens to the apprentices complain about their training"
+        ],
+        "main_trait_constraint": [
+            "empathetic"
+        ]
+    },   
+    {
+        "id": "faithful_medicine_cat",
+        "thoughts": [
+            "Has been hearing the voices of StarClan cats..."
+        ],
+        "main_trait_constraint": [
+            "faithful"
+        ]
+    },
+    {
+        "id": "fierce_medicine_cat",
+        "thoughts": [
+            "Insists on joining battle training once a moon"
+        ],
+        "main_trait_constraint": [
+            "fierce"
+        ]
+    },
+    {
+        "id": "insecure_medicine_cat",
+        "thoughts": [
+            "Is saying that they don't deserve their full name"
+        ],
+        "main_trait_constraint": [
+            "insecure"
+        ]
+    },
+    {
+        "id": "lonesome_medicine_cat",
+        "thoughts": [
+            "Is wishing they could have a mate and kits",
+            "Wishes their Clanmates could understand their struggles",
+            "Wishes there were more medicine cats in the Clan",
+            "Wonders why the warriors won't share prey with them",
+            "Wishes they could make friends with someone",
+            "Wishes the warriors shared an interest in herbs",
+            "Wants to talk to the leader about having a new apprentice",
+            "Wishes for an apprentice, as they're a bit lonely",
+            "Hasn't talked to any warriors for a few days"
+        ],
+        "main_trait_constraint": [
+            "lonesome"
+        ]
+    },
+    {
+        "id": "loving_medicine_cat",
+        "thoughts": [
+            "Watches over some newborn kits"
+        ],
+        "main_trait_constraint": [
+            "loving"
+        ]
+    },
+    {
+        "id": "loyal_medicine_cat",
+        "thoughts": [
+            "Refuses to share gossip at the half-moon meeting",
+            "Refuses to give another Clan's medicine cat some herbs"
+        ],
+        "main_trait_constraint": [
+            "loyal"
+        ]
+    },
+    {
+        "id": "nervous_medicine_cat",
+        "thoughts": [
+            "Recounts the amount of catmint in their stores"
+        ],
+        "main_trait_constraint": [
+            "nervous"
+        ]
+    },
+    {
+        "id": "patient_medicine_cat",
+        "thoughts": [
+            "Helps a warrior regain their strength"
+        ],
+        "main_trait_constraint": [
+            "patient"
+        ]
+    },
+    {
+        "id": "playful_medicine_cat",
+        "thoughts": [
+            "Excitedly teaches the kits about basic herbs"
+        ],
+        "main_trait_constraint": [
+            "playful"
+        ]
+    },
+    {
+        "id": "responsible_medicine_cat",
+        "thoughts": [
+            "Ensures that all of their duties are taken care of"
+        ],
+        "main_trait_constraint": [
+            "responsible"
+        ]
+    },
+    {
+        "id": "righteous_medicine_cat",
+        "thoughts": [
+            "Gives herbs to an injured loner"
+        ],
+        "main_trait_constraint": [
+            "righteous"
+        ]
+    },
+    {
+        "id": "shameless_medicine_cat",
+        "thoughts": [
+            "Refuses to groom themselves"
+        ],
+        "main_trait_constraint": [
+            "shameless"
+        ]
+    },
+    {
+        "id": "sneaky_medicine_cat",
+        "thoughts": [
+            "Seems to be hiding something in the medicine they give to the leader"
+        ],
+        "main_trait_constraint": [
+            "sneaky"
+        ]
+    },
+    {
+        "id": "strange_medicine_cat",
+        "thoughts": [
+            "Insists everyone eat chamomile leaves at moonhigh",
+            "Sleeps in the middle of the clearing",
+            "Looks dazed",
+            "Hisses at the kits randomly"
+        ],
+        "main_trait_constraint": [
+            "strange"
+        ]
+    },
+    {
+        "id": "strict_medicine_cat",
+        "thoughts": [
+            "Forbids anyone from disturbing them when working"
+        ],
+        "main_trait_constraint": [
+            "strict"
+        ]
+    },
+    {
+        "id": "thoughtful_medicine_cat",
+        "thoughts": [
+            "Realizes what an omen might mean"
+        ],
+        "main_trait_constraint": [
+            "thoughtful"
+        ]
+    },
+    {
+        "id": "troublesome_medicine_cat",
+        "thoughts": [
+            "Mixes up herbs"
+        ],
+        "main_trait_constraint": [
+            "troublesome"
+        ]
+    },
+    {
+        "id": "vengeful_medicine_cat",
+        "thoughts": [
+            "Refuses to treat a cat that once bullied them"
+        ],
+        "main_trait_constraint": [
+            "vengeful"
+        ]
+    },
+    {
+        "id": "wise_medicine_cat",
+        "thoughts": [
+            "Tells an ancient tale about StarClan"
+        ],
+        "main_trait_constraint": [
+            "wise"
+        ]
+    },
+    {
         "id": "med_cat_dead_SC_gen",
         "thoughts": [
             "Wishes they could visit r_c in StarClan",
@@ -18,13 +356,12 @@
             "medicine Cat apprentice"
         ],
         "random_living_status": [
-            "Starclan"
+            "starclan"
         ]
     },
     {
         "id": "med_cat_dead_DF_gen",
         "thoughts": [
-            "Wishes they could visit r_c in Dark Forest",
             "Is visited by r_c",
             "Senses r_c is nearby",
             "Thought they heard a low rumbling behind them, but nothing was there",
@@ -37,7 +374,7 @@
             "medicine Cat Apprentice"
         ],
         "random_living_status": [
-            "Dark forest"
+            "darkforest"
         ]
     },
     {
@@ -53,7 +390,7 @@
             "Kitten"
         ],
         "random_living_status": [
-            "Dark forest"
+            "darkforest"
         ]
     },
     {
@@ -110,73 +447,5 @@
             "apprentice",
             "kitten"
         ]
-    },
-    {
-        "id": "med_cat_alive_warrior",
-        "thoughts": [
-            "Is checking up on the warriors"
-        ],
-        "main_status_constraint": [
-            "medicine cat",
-            "medicine cat apprentice"
-        ],  
-        "random_status_constraint": [
-            "warrior"
-        ]
-      },
-      {
-        "id": "med_cat_app_dead_SC_kit",
-        "thoughts": [
-            "Is wondering if r_c would have botherned them while they were sorting herbs",
-            "Wonders if they would have had to treat r_c for kittencough"
-        ],
-        "main_status_constraint": [
-            "medicine cat apprentice"
-        ],  
-        "random_status_constraint": [
-            "kitten"
-        ]
-      },
-      {
-        "id": "med_cat_app_dead_app",
-        "thoughts": [
-            "Is wondering if r_c would have been their friend",
-            "Wonders if r_c would have swapped secrets with eachother"
-        ],
-        "main_status_constraint": [
-            "medicine cat apprentice"
-        ],  
-        "random_status_constraint": [
-            "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
-        ]
-      },
-      {
-        "id": "med_cat_alive_apprentice",
-        "thoughts": [
-            "Wonders if r_c would have been a better healer",
-            "Wishes the other apprentices could understand how they feel",
-            "Wishes they understood the apprentice's inside jokes"
-        ],
-        "main_status_constraint": [
-            "medicine cat apprentice"
-        ],  
-        "random_status_constraint": [
-            "apprentice",
-            "mediator apprentice",
-            "medicine cat apprentice"
-        ]
-      },
-      {
-        "id": "med_cat_gen",
-        "thoughts": [
-            "Is wondering if they are good enough to become a medicine cat",
-            "Helps apply a poultice to a small wound",
-            "Is enjoying learning all of the herbs a medicine cat needs!"
-        ],
-        "main_status_constraint": [
-            "medicine cat apprentice"
-        ]
-      }  
+    }     
 ]

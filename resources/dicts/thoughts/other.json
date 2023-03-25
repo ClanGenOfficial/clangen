@@ -1,100 +1,142 @@
+[
+{        
+    "id": "general_kittypet_thoughts",
+    "thoughts": [
+        "Cuddles with their housefolk",
+        "Begs for food from their housefolk",
+        "Is sunning in their yard",
+        "Doesn't want to go to the Cutter",
+        "Is resting on a fence",
+        "Almost forgot the way home",
+        "Was taken to the Cutter recently",
+        "Is looking at the forest, daydreaming about hunting a mouse",
+        "Is hunting for a gift for their housefolk",
+        "Failed to catch prey with their poor crouch",
+        "Is running away from a Clan cat",
+        "Is hiding from a dog",
+        "Is being friendly with their housefolk's dog",
+        "Is peering at a fish tank",
+        "Is looking for trouble",
+        "Is meowing to their housefolk for attention",
+        "Is tangled up in a large ball of yarn",
+        "Is stretching on their scratching post",
+        "Wishes their housefolk cared more about them",
+        "Saw warriors pass their housefolk den",
+        "Is hanging with their housefolk",
+        "Is playing with the housefolk's kits",
+        "Is enjoying a nice meal",
+        "Trying to escape from bath time",
+        "Heard stories about the nearby Clans",
+        "Is sleeping under the porch",
+        "Is sleeping in a loaf position on the bed",
+        "Is watching the Clan cats from afar",
+        "Is meowing to be let in",
+        "Is listening to frightening stories about wild cats",
+        "Is meowing at their housefolk",
+        "Wants to go outside",
+        "Plays with a yarn ball",
+        "Has the zoomies",
+        "Wishes that they could go outside more",
+        "Is looking out the window",
+        "Tries to catch a fly",
+        "Is eating some scraps that were dropped on the floor",
+        "Lays in their bed",
+        "Got stuck under the couch",
+        "Is trying to bark at a dog",
+        "Chases a mysterious red dot",
+        "Has been left in a room with the door closed",
+        "Managed to escape their den",
+        "Is enjoying some time outside",
+        "Wonders if this is the life for them",
+        "Heard a scary story about the Clans",
+        "Wonders what the Clans are like",
+        "Wishes there were more cats living with them",
+        "Got scared after hearing stories about the Clan cats",
+        "Saw a strange orange-furred kittypet crawling about in the thickets ",
+        "Was fighting with themselves in a mirror",
+        "Wonders if fresh-kill is better than their wet food",
+        "Heard about a strange Clan in the alleyways in the housefolk city ",
+        "Is proud of their large belly",
+        "Was lounging on their fence, looking at the wild beyond",
+        "Can't seem to scratch a certain spot on their neck thanks to their collar"
+    ],
+    "main_status_constraint": [
+        "kittypet"
+    ]
+},
 {
-    "kittypet": {
-        "general": [
-            "Cuddles with their housefolk",
-            "Begs for food from their housefolk",
-            "Is sunning in their yard",
-            "Doesn't want to go to the Cutter",
-            "Is resting on a fence",
-            "Almost forgot the way home",
-            "Was taken to the Cutter recently",
-            "Is looking at the forest, daydreaming about hunting a mouse",
-            "Is hunting for a gift for their housefolk",
-            "Failed to catch prey with their poor crouch",
-            "Is running away from a Clan cat",
-            "Is hiding from a dog",
-            "Is being friendly with their housefolk's dog",
-            "Is peering at a fish tank",
-            "Is looking for trouble",
-            "Is meowing to their housefolk for attention",
-            "Is tangled up in a large ball of yarn",
-            "Is stretching on their scratching post",
-            "Wishes their housefolk cared more about them",
-            "Saw warriors pass their housefolk den",
-            "Is hanging with their housefolk",
-            "Is playing with the housefolk's kits",
-            "Is enjoying a nice meal",
-            "Trying to escape from bath time",
-            "Heard stories about the nearby Clans",
-            "Is sleeping under the porch",
-            "Is sleeping in a loaf position on the bed",
-            "Is watching the Clan cats from afar",
-            "Is meowing to be let in",
-            "Is listening to frightening stories about wild cats",
-            "Is meowing at their housefolk",
-            "Wants to go outside",
-            "Plays with a yarn ball",
-            "Has the zoomies",
-            "Wishes that they could go outside more",
-            "Is looking out the window",
-            "Tries to catch a fly",
-            "Is eating some scraps that were dropped on the floor",
-            "Lays in their bed",
-            "Got stuck under the couch",
-            "Is trying to bark at a dog",
-            "Chases a mysterious red dot",
-            "Has been left in a room with the door closed",
-            "Managed to escape their den",
-            "Is enjoying some time outside",
-            "Wonders if this is the life for them",
-            "Heard a scary story about the Clans",
-            "Wonders what the Clans are like",
-            "Wishes there were more cats living with them",
-            "Got scared after hearing stories about the Clan cats",
-            "Saw a strange orange-furred kittypet crawling about in the thickets ",
-            "Was fighting with themselves in a mirror",
-            "Wonders if fresh-kill is better than their wet food",
-            "Heard about a strange Clan in the alleyways in the housefolk city ",
-            "Is proud of their large belly",
-            "Was lounging on their fence, looking at the wild beyond",
-            "Can't seem to scratch a certain spot on their neck thanks to their collar"
-        ],
-        "kitten": [
-            "Is currently trying to figure out how to catch a bird"
-        ],
-        "adolescent": [
-            "Is currently trying to figure out how to catch a bird",
-            "Is hogging the bed from their siblings",
-            "Thinks their new collar is uncomfortable",
-            "Is playing with a new toy their housefolk got them"
-        ],
-        "adult": [
-            "Is meowing for food",
-            "Was wandering in the backyard when a strange noise scared them back inside",
-            "Left their den to go scratch up that tree they've been eyeing",
-            "Is glad their housefolk collar them on a leash to walk them outside",
-            "Heard the yowls of a recent battle in the distances",
-            "Engaging in loaf mode",
-            "Is wandering in their neighborhood",
-            "Breathes in a sigh of relief when they escape some dogs"
-        ],
-        "elder": [
-            "Is enjoying the sun on their back",
-            "Is glad that their housefolk have taken care of them for so long",
-            "Wishes they had as much energy as the younger house cats",
-            "Smiled at the new younger kit their housefolk got",
-            "Is worried if their housefolk would be sad when they're gone",
-            "Snoring by a warm hearth",
-            "Engaging in loaf mode",
-            "Is having a rough time climbing their fence",
-            "Wonders what if they left to be a loner at a younger age",
-            "Took their time climbing on their fence",
-            "Shakes their head when they spotted a cold queen and their kits"
-            ]
-    
-    },
-    "loner": {
-        "general": [
+    "id": "kittypet_kitten_and_adolescent_thoughts",
+    "thoughts": [
+        "Is currently trying to figure out how to catch a bird"
+    ],
+    "main_status_constraint": [
+        "kittypet"
+    ],
+    "main_age_constraint": [
+        "kitten",
+        "adolescent"
+    ]
+},
+{
+    "id": "kittypet_adolescent_thoughts",
+    "thoughts": [
+        "Is hogging the bed from their siblings",
+        "Thinks their new collar is uncomfortable",
+        "Is playing with a new toy their housefolk got them"
+    ],
+    "main_status_constraint": [
+        "kittypet"
+    ],
+    "main_age_constraint": [
+        "adolescent"
+    ]
+},
+{
+    "id": "kittypet_adult_thoughts",
+    "thoughts": [
+        "Is meowing for food",
+        "Was wandering in the backyard when a strange noise scared them back inside",
+        "Left their den to go scratch up that tree they've been eyeing",
+        "Is glad their housefolk collar them on a leash to walk them outside",
+        "Heard the yowls of a recent battle in the distances",
+        "Engaging in loaf mode",
+        "Is wandering in their neighborhood",
+        "Breathes in a sigh of relief when they escape some dogs"
+    ],
+    "main_status_constraint": [
+        "kittypet"
+    ],
+    "main_age_constraint": [
+        "young adult",
+        "adult",
+        "senior adult"
+    ]
+},
+{
+    "id": "kittypet_senior_/_elder_thoughts",
+    "thoughts": [
+        "Is enjoying the sun on their back",
+        "Is glad that their housefolk have taken care of them for so long",
+        "Wishes they had as much energy as the younger house cats",
+        "Smiled at the new younger kit their housefolk got",
+        "Is worried if their housefolk would be sad when they're gone",
+        "Snoring by a warm hearth",
+        "Engaging in loaf mode",
+        "Is having a rough time climbing their fence",
+        "Wonders what if they left to be a loner at a younger age",
+        "Took their time climbing on their fence",
+        "Shakes their head when they spotted a cold queen and their kits"
+    ],
+    "main_status_constraint": [
+        "kittypet"
+    ],
+    "main_age_constraint": [
+        "senior"
+    ]
+},
+{
+    "id": "general_loner_thoughts",
+    "thoughts": [
             "Is spending the night with a friend",
             "Wonders where r_c went",
             "Wonders about what Clan life would be like",
@@ -128,14 +170,28 @@
             "Spies a kittypet and taunts them that they can't enjoy freedom",
             "Taking a nap, hoping something exciting would escape their boredom",
             "Was running carelessly across the thunderpath and was nearly hit by a monster"
-
-            
-        ],
-        "kitten": [
-            "Is currently trying to figure out how to catch a bird"
-        ],
-        "adolescent": [
-            "Is currently trying to figure out how to catch a bird",
+    ],
+    "main_status_constraint": [
+        "loner"
+    ]
+},
+{
+    "id": "loner_kitten_/_adolescent_thoughts",
+    "thoughts": [
+        "Is currently trying to figure out how to catch a bird"
+    ],
+    "main_status_constraint": [
+        "loner"
+    ],
+    "main_age_constraint": [
+        "kitten",
+        "adolescent"
+    ]
+},
+{
+    "id": "loner_adolescent_thoughts",
+    "thoughts": [
+        "Is currently trying to figure out how to catch a bird",
             "Is currently trying to figure out how to catch a squirrel",
             "Is currently trying to figure out how to catch a rabbit",
             "Is missing their parents",
@@ -155,18 +211,38 @@
             "Collects various items they find beautiful and interesting",
             "Wonders if their parents were once renowned explorers",
             "Has a mock battle with r_c from c_n whenever the apprentice flees their boring chores",
-            "Laughed at the thought of being a Clan cat and having a warrior name... Maybe..."  
-        ],
-        "adult": [
-            "Is scouting out locations for a new den",
+            "Laughed at the thought of being a Clan cat and having a warrior name... Maybe..." 
+    ],
+    "main_status_constraint": [
+        "loner"
+    ],
+    "main_age_constraint": [
+        "adolescent"
+    ]
+},
+{
+    "id": "loner_adult_thoughts",
+    "thoughts": [
+        "Is scouting out locations for a new den",
             "Nearly got caught in a Twoleg trap!",
             "Got pet by a Twoleg",
             "Stayed in a Twoleg den for a couple of days for food",
             "Was almost eaten by a monster",
             "Is playing with kits"
-        ],
-        "elder": [
-            "Wonders if they should have joined a Clan when they were younger",
+    ],
+    "main_status_constraint": [
+        "loner"
+    ],
+    "main_age_constraint": [
+        "young adult",
+        "adult",
+        "senior adult"
+    ]
+},
+{
+    "id": "loner_senior_or_elder_thoughts",
+    "thoughts": [
+        "Wonders if they should have joined a Clan when they were younger",
             "Debates finding housefolk to care for them in their old age",
             "Is enjoying the sun on their back",
             "Purring as the sun's warmth eases their old joints",
@@ -185,11 +261,18 @@
             "Met up with an old kittypet friend, for both the free food and company",
             "Is gnawing at their pelt, irritated at the abundance of fleas",
             "Coughed heavily"
-        ]
-    },
-    "rogue": {
-        "general": [
-            "Wishes the other rogues would leave them alone",
+    ],
+    "main_status_constraint": [
+        "loner"
+    ],
+    "main_age_constraint": [
+        "senior"
+    ]
+},
+{
+    "id": "general_rogue_thoughts",
+    "thoughts": [
+        "Wishes the other rogues would leave them alone",
             "Snarls at any cat that comes near",
             "Wanders off on their own",
             "Has been going missing quite a lot lately",
@@ -197,34 +280,76 @@
             "Wonders if they can find a warm place to sleep tonight",
             "Was chased by a fox recently",
             "Wishes they were in a warm nest"
-        ],
-        "kitten": [
-            "Is currently trying to figure out how to catch a bird"
-        ],
-        "adolescent": [
-            "Is setting up a pile of thorns to catch a cat off guard",
+    ],
+    "main_status_constraint": [
+        "rogue"
+    ]
+},
+{
+    "id": "kitten_rogue_thoughts",
+    "thoughts": [
+        "Is currently trying to figure out how to catch a bird"
+    ],
+    "main_status_constraint": [
+        "rogue"
+    ],
+    "main_age_constraint": [
+        "kitten"
+    ]
+},
+{
+    "id": "adolescent_rogue_thoughts",
+    "thoughts": [
+        "Is setting up a pile of thorns to catch a cat off guard",
             "Wishes they still had their family around",
             "Has been teaching themselves how to hunt",
             "Misses their friends",
             "Regrets their actions",
             "Wonders what being in a Clan is like"
-        ],
-        "adult": [
-            "Hisses at a missed catch",
+    ],
+    "main_status_constraint": [
+        "rogue"
+    ],
+    "main_age_constraint": [
+        "adolescent"
+    ]
+},
+{
+    "id": "adult_rogue_thoughts",
+    "thoughts": [
+        "Hisses at a missed catch",
             "Is hoping they can find something to fill their belly tonight",
             "Licks at an old, aching scar in an attempt to soothe it",
             "Was almost found by a c_n patrol",
             "Is lurking in c_n territory"
-        ],
-        "elder": [
-            "Thinks about finding some Twolegs to help them in their old age",
+    ],
+    "main_status_constraint": [
+        "rogue"
+    ],
+    "main_age_constraint": [
+        "young adult",
+        "adult",
+        "senior adult"
+    ]
+},
+{
+    "id": "elder_and_senior_rogue_thoughts",
+    "thoughts": [
+        "Thinks about finding some Twolegs to help them in their old age",
             "Thinks their joints are aching too much to hunt today",
             "Wonders if they can carry on"
-        ]
-    },
-    "lost": {
-        "general": [
-            "Wonders how their family is doing",
+    ],
+    "main_status_constraint": [
+        "rogue"
+    ],
+    "main_age_constraint": [
+        "senior"
+    ]
+},
+{
+    "id": "general_lost_thoughts",
+    "thoughts": [
+        "Wonders how their family is doing",
             "Desperately tries to find their way back",
             "Wonders if StarClan is still watching over them",
             "Wishes they were back in camp",
@@ -271,13 +396,22 @@
             "Wonders how they will survive without their Clanmates",
             "Is missing r_c",
             "Is scared that they will never be found"
-        ],
-        "kitten": [
-            "Misses playing moss ball",
-            "Is looking desperately for their mother"
-        ],
-        "apprentice": [
-            "Is missing their mentor's guidance",
+    ]
+},
+{
+    "id": "lost_kitten_thoughts",
+    "thoughts": [
+        "Misses playing moss ball",
+        "Is looking desperately for their parent"
+    ],
+    "main_status_constraint": [
+        "kitten"
+    ]
+},
+{
+    "id": "lost_apprentice_thoughts",
+    "thoughts": [
+        "Is missing their mentor's guidance",
             "Misses the elders stories",
             "Wishes they could've become a warrior",
             "Misses their friends deeply",
@@ -285,44 +419,104 @@
             "Hopes they're going in the right direction",
             "Wonders what their warrior name might have been",
             "Tries to come up with a warrior name for themself"
-        ],
-        "warrior": [
-            "Hopes that the Clan's kits are doing well",
+    ],
+    "main_status_constraint": [
+        "apprentice"
+    ]
+},
+{
+    "id": "lost_warrior_thoughts",
+    "thoughts": [
+        "Hopes that the Clan's kits are doing well",
             "Misses the warmth of the warriors' den",
             "Hopes their friends from c_n are doing okay",
             "Dreams about hunting for their Clan",
             "Wonders if the apprentices of the Clan are now warriors"
-        ],
-        "deputy": [
-            "Wonders if they are still the deputy",
+    ],
+    "main_status_constraint": [
+        "warrior"
+    ]
+},
+{
+    "id": "lost_deputy_thoughts",
+    "thoughts": [
+        "Wonders if they are still the deputy",
             "Wonders how the patrols are currently organized without them",
             "Feels sad by the thought of being replaced",
             "Is wondering if they'll still remain deputy after returning"
-        ],
-        "leader": [
-            "Feels lost without the support of their Clan behind them",
-            "Wonders if their deputy has already become leader",
-            "Hopes that the Clan is doing okay without them",
-            "Feels like they have failed their Clan",
-            "Is wondering if StarClan is still able to contact them"
-        ],
-        "elder": [
-            "Wishes they had some help getting around",
-            "Wants an apprentice nearby to help with ticks",
-            "Is saddened by the fact that they can't tell stories to anyone",
-            "Misses the kits stumbling around and bothering them",
-            "Is feeling weary and tired, wondering if there even is a point to carrying on",
-            "Prays that they will see their friends again, in this world or StarClan...",
-            "Their aches and pain make them unable to hunt",
-            "Feels the cold seep and settle into their old bones",
-            "Is unable to remember what herbs to look out for to ease their pain",
-            "Wishes they could check in on the Clan's kits",
-            "Is scared they may die away from the Clan",
-            "Has aching bones from wandering so long"
-            
-            ],
-        "med": [
-            "Hopes that their Clan is doing okay without their help"
-        ]
-    }
+    ],
+    "main_status_constraint": [
+        "deputy"
+    ]
+},
+{
+    "id": "lost_leader_thoughts",
+    "thoughts": [
+        "Feels lost without the support of their Clan behind them",
+        "Wonders if their deputy has already become leader",
+        "Hopes that the Clan is doing okay without them",
+        "Feels like they have failed their Clan",
+        "Is wondering if StarClan is still able to contact them"
+    ],
+    "main_status_constraint": [
+        "leader"
+    ]
+},
+{
+    "id": "lost_elder_thoughts",
+    "thoughts": [
+        "Wishes they had some help getting around",
+        "Wants an apprentice nearby to help with ticks",
+        "Is saddened by the fact that they can't tell stories to anyone",
+        "Misses the kits stumbling around and bothering them",
+        "Is feeling weary and tired, wondering if there even is a point to carrying on",
+        "Prays that they will see their friends again, in this world or StarClan...",
+        "Their aches and pain make them unable to hunt",
+        "Feels the cold seep and settle into their old bones",
+        "Is unable to remember what herbs to look out for to ease their pain",
+        "Wishes they could check in on the Clan's kits",
+        "Is scared they may die away from the Clan",
+        "Has aching bones from wandering so long"
+    ],
+    "main_status_constraint": [
+        "elder"
+    ]
+},
+{
+    "id": "lost_medicine_cats_thoughts",
+    "thoughts": [
+        "Hopes that their Clan is doing okay without their help"
+    ],
+    "main_status_constraint": [
+        "medicine cat",
+        "medicine cat apprentice"
+    ]
+},
+{
+    "id": "general_exiled_thoughts",
+    "thoughts": [
+        "Is hunting for food",
+    "Wishes they could rejoin the Clan",
+    "Was scented near the borders",
+    "Barely avoided a patrol from their old Clan",
+    "Thinks they could find some prey just over the border",
+    "Is having a hard time finding food",
+    "Wonders if there are any cats that miss them",
+    "Wonders if there are any rumors about them",
+    "Uses scraps to form a makeshift nest",
+    "Misses hearing about stories from the elders",
+    "Is pacing around in circles",
+    "Almost ran into a fox",
+    "Wonders why they were exiled",
+    "Rues over their predicament",
+    "Has nightmares about their exile",
+    "Wants a second chance at Clan life",
+    "Fended off their kill from a rogue",
+    "Cried themselves to sleep",
+    "Misses their friends"
+    ],
+    "main_status_constraint": [
+        "exiled"
+    ]
 }
+]
