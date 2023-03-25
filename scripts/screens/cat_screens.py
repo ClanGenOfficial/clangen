@@ -364,7 +364,7 @@ class ProfileScreen(Screens):
         # Personal Tab
         elif self.open_tab == 'personal':
             if event.ui_element == self.change_name_button:
-                ChangeCatName(self.the_cat, ProfileScreen())
+                ChangeCatName(self.the_cat)
             elif event.ui_element == self.specify_gender_button:
                 self.change_screen('change gender screen')
             elif event.ui_element == self.cis_trans_button:

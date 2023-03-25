@@ -303,7 +303,7 @@ class ChangeCatName(UIWindow):
                                          object_id="#random_dice_button",
                                          manager=MANAGER,
                                          container=self,
-                                         tool_tip_text='Randomze the suffix')
+                                         tool_tip_text='Randomize the suffix')
 
         # 636
         self.toggle_spec_block_on = UIImageButton(scale(pygame.Rect((405 + x_pos, 160 + y_pos), (68, 68))), "",
