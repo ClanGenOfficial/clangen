@@ -37,6 +37,9 @@ class Pregnancy_Events():
         if not clan:
             return
 
+        if cat.outside:
+            return
+
         #Handles if a cat is already pregnant
         if cat.ID in clan.pregnancy_data:
             moons = clan.pregnancy_data[cat.ID]["moons"]
