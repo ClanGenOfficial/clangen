@@ -241,7 +241,7 @@ class Thoughts():
         try:
             if len(thought['random_outside_status']) >= 1:
                 outside_status = None
-                if random_cat.outside and random_cat.status not in ["kittypet", "loner", "rogue", "former clancat"]:
+                if random_cat.outside and random_cat.status not in ["kittypet", "loner", "rogue", "former Clancat"]:
                     outside_status = "lost"
                 else:
                     outside_status = "outside cat"

@@ -407,13 +407,13 @@ def create_outside_cat(Cat, status, backstory):
             status = 'rogue'
         elif backstory in ['ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
                          'tragedy_survivor', 'disgraced2', 'disgraced3', 'refugee5']:
-            status = "former clancat"
+            status = "former Clancat"
         if status == 'kittypet':
             name = choice(names.names_dict["loner_names"])
         elif status in ['loner', 'rogue']:
             name = choice(names.names_dict["loner_names"] +
                                  names.names_dict["normal_prefixes"])
-        elif status == 'former clancat':
+        elif status == 'former Clancat':
             name = choice(names.names_dict["normal_prefixes"])
             suffix = choice(names.names_dict["normal_suffixes"])
         else:

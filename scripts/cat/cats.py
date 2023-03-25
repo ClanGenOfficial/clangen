@@ -1036,7 +1036,7 @@ class Cat():
         # get other cat
         i = 0
         while other_cat == self.ID and len(all_cats) > 1 or (
-                all_cats.get(other_cat).status in ['kittypet', 'rogue', 'loner', 'former clancat']):
+                all_cats.get(other_cat).status in ['kittypet', 'rogue', 'loner', 'former Clancat']):
             other_cat = random.choice(list(all_cats.keys()))
             i += 1
             if i > 100:
