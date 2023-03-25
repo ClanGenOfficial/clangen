@@ -322,8 +322,6 @@
 		"id": "platonic_app_med1",
 		"interactions": [
 			"m_c is telling r_c about a hunting technique.",
-			"m_c is thinking about how much r_c reminds them of their own apprentice days.",
-			"m_c is telling r_c about their own days as an apprentice.",
 			"m_c promises to teach r_c a new technique later."
 		],
 		"main_status_constraint": [
@@ -337,6 +335,59 @@
 		],
 		"reaction_random_cat": {
 			"platonic": "increase"
+		}
+	},
+	{
+		"id": "platonic_app_med2",
+		"interactions": [
+			"m_c is thinking about how much r_c reminds them of their own apprentice days.",
+			"m_c is telling r_c about their own days as an apprentice."
+		],
+		"main_status_constraint": [
+			"elder",
+			"deputy",
+			"leader",
+			"warrior"
+		],
+		"random_status_constraint": [
+			"apprentice"
+		],
+		"reaction_random_cat": {
+			"platonic": "increase"
+		},
+		"backstory_constraint": {
+			"m_c": [
+				"clanborn", 
+				"clan_founder", 
+				"halfclan1", 
+				"halfclan2", 
+				"outsider_roots1", 
+				"outsider_roots2",
+				"abandoned1",
+				"abandoned2",
+				"abandoned3",
+				"abandoned4",
+				"otherclan",
+				"otherclan1",
+				"otherclan2",
+				"otherclan3",
+				"ostracized_warrior",
+				"disgraced",
+				"disgraced2",
+				"disgraced3",
+				"retired_leader",
+				"refugee",
+				"refugee2",
+				"refugee3",
+				"refugee4",
+				"tragedy_survivor",
+				"orphaned",
+				"orphaned2",
+				"orphaned3",
+				"orphaned4",
+				"orphaned5",
+				"guided4"
+			]
 		}
 	},
 	{

@@ -352,6 +352,8 @@ class Cat():
             else:
                 self.age = choice(['young adult', 'adult', 'adult', 'senior adult'])
             self.moons = random.randint(self.age_moons[self.age][0], self.age_moons[self.age][1])
+            print(f"lunadebug: cat {prefix} gen with id {self.ID} status {status} and rolled {self.moons} moons")
+            print(f"lunadebug: min: {self.age_moons[self.age][0]} max: {self.age_moons[self.age][1]}")
 
         # personality trait and skill
         if self.trait is None:
@@ -525,7 +527,6 @@ class Cat():
         self.injuries.clear()
         self.illnesses.clear()
 
-
         # Deal with leader death
         text = ""
         if self.status == 'leader':
@@ -544,17 +545,8 @@ class Cat():
             self.dead = True
             self.thought = 'Is surprised to find themselves walking the stars of Silverpelt'
 
-        # They are not removed from the mate's "mate" property. There is a "cooldown" period, which prevents
-        # cats from getting into relationships the same moon their mates dies.
-        self.mate = None
-        """if self.mate is not None:
-            if isinstance(self.mate, str):
-                mate_cat: Cat = Cat.all_cats[self.mate]
-                if isinstance(mate_cat, Cat):
-                    mate_cat.mate = None
-            elif isinstance(self.mate, Cat):
-                self.mate.mate = None
-            self.mate = None"""
+        # Clear Relationships. 
+        self.relationships = {}
 
         for app in self.apprentice.copy():
             Cat.fetch_cat(app).update_mentor()
@@ -732,6 +724,7 @@ class Cat():
     def add_to_clan(self):
         """ Makes a "outside cat" a clan cat. Former leaders, deputies will become warriors. Apprentices will be assigned a mentor."""
         self.outside = False
+        print(self.name, self.moons)
         if self.status in ['leader', 'deputy']:
             self.status_change('warrior')
             self.status = 'warrior'
@@ -743,7 +736,7 @@ class Cat():
                 self.name) + '.', "ceremony", involved_cats))
         elif self.status == 'kitten' and self.moons >= 12:
             self.status_change('warrior')
-            involved_cats = [self]
+            involved_cats = [self.ID]
             game.cur_events_list.append(Single_Event('A long overdue warrior ceremony is held for ' + str(
                 self.name.prefix) + 'kit. They smile as they finally become a warrior of the Clan and are now named ' + str(
                 self.name) + '.', "ceremony", involved_cats))
@@ -764,7 +757,30 @@ class Cat():
                 self.status_change('warrior')
             else:
                 self.status_change('elder')
+
         game.clan.add_to_clan(self)
+        
+        # check if there are kits under 12 moons with this cat and also add them to the clan
+        children = self.get_children()
+        names = []
+        ids = []
+        for child_id in children:
+            child = Cat.all_cats[child_id]
+            if child.outside and not child.exiled and child.moons < 12:
+                child.add_to_clan()
+                if child.moons < 6:
+                    names.append(child.name)
+                    ids.append(child_id)
+        if len(names) > 0:
+            event_text = "This text should not appear, script cat.py function add_to_clan."
+            if len(names) > 2:
+                event_text = f"{', '.join(names[0:-1])}, and {names[-1]}"
+            elif len(names) == 2:
+                event_text = f"{names[0]} and {names[1]}"
+            else:
+                event_text = f"{names[0]}"
+            game.cur_events_list.append(Single_Event(f"Together with {self.name}, {str(event_text)} joins the Clan.", ids))
+
         self.update_mentor()
 
     def status_change(self, new_status, resort=False):
@@ -1051,7 +1067,7 @@ class Cat():
     def create_interaction(self):
         """Creates an interaction between this cat and another, which effects relationship values. """
         # if the cat has no relationships, skip
-        if len(self.relationships) < 1 or not self.relationships:
+        if not self.relationships or len(self.relationships) < 1:
             return
 
         cats_to_choose = list(
@@ -1135,7 +1151,7 @@ class Cat():
     def relationship_interaction(self):
         """Randomly choose a cat of the clan and have a interaction with them."""
         # if the cat has no relationships, skip
-        if len(self.relationships) < 1 or not self.relationships:
+        if not self.relationships or len(self.relationships) < 1:
             return
 
         cats_to_choose = list(
@@ -1395,9 +1411,8 @@ class Cat():
                         siblings.append(x)
             return siblings
 
-
     def get_children(self):
-        """Returns list of the children."""
+        """Returns list of the children (ids)."""
         if not self.faded:
             return self.children
         else:
@@ -2125,23 +2140,27 @@ class Cat():
         
         # If only deal with relationships if this is a breakup. 
         if breakup:
-            if other_cat.ID not in self.relationships:
-                self.relationships[other_cat.ID] = Relationship(self, other_cat, True)
-            if self.ID not in other_cat.relationships:
-                other_cat.relationships[self.ID] = Relationship(other_cat, self, True)
+            if not self.dead:
+                if other_cat.ID not in self.relationships:
+                    self.relationships[other_cat.ID] = Relationship(self, other_cat, True)
+                self_relationship = self.relationships[other_cat.ID]
+                self_relationship.romantic_love -= 40
+                self_relationship.comfortable -= 20
+                self_relationship.trust -= 10
+                self_relationship.mate = False
+                if fight:
+                    self_relationship.platonic_like -= 30
 
-            self_relationship = self.relationships[other_cat.ID]
-            other_relationship = other_cat.relationships[self.ID]
-
-            self_relationship.romantic_love -= 40
-            other_relationship.romantic_love -= 40
-            self_relationship.comfortable -= 20
-            other_relationship.comfortable -= 20
-            self_relationship.trust -= 10
-            other_relationship.trust -= 10
-            if fight:
-                self_relationship.platonic_like -= 30
-                other_relationship.platonic_like -= 30
+            if not other_cat.dead:
+                if self.ID not in other_cat.relationships:
+                    other_cat.relationships[self.ID] = Relationship(other_cat, self, True)
+                other_relationship = other_cat.relationships[self.ID]
+                other_relationship.romantic_love -= 40
+                other_relationship.comfortable -= 20
+                other_relationship.trust -= 10
+                other_relationship.mate = False
+                if fight:
+                    other_relationship.platonic_like -= 30
 
         self.mate = None
         other_cat.mate = None
@@ -2168,19 +2187,24 @@ class Cat():
             other_cat.previous_mates.remove(other_cat.mate)
 
         # Set starting relationship values
-        if other_cat.ID not in self.relationships:
-            self.relationships[other_cat.ID] = Relationship(self, other_cat, True)
-        if self.ID not in other_cat.relationships:
-            other_cat.relationships[self.ID] = Relationship(other_cat, self, True)
 
-        self_relationship = self.relationships[other_cat.ID]
-        other_relationship = other_cat.relationships[self.ID]
-        self_relationship.romantic_love += 20
-        other_relationship.romantic_love += 20
-        self_relationship.comfortable += 20
-        other_relationship.comfortable += 20
-        self_relationship.trust += 10
-        other_relationship.trust += 10
+        if not self.dead:
+            if other_cat.ID not in self.relationships:
+                self.relationships[other_cat.ID] = Relationship(self, other_cat, True)
+            self_relationship = self.relationships[other_cat.ID]
+            self_relationship.romantic_love += 20
+            self_relationship.comfortable += 20
+            self_relationship.trust += 10
+            self_relationship.mate = True
+
+        if not other_cat.dead:
+            if self.ID not in other_cat.relationships:
+                other_cat.relationships[self.ID] = Relationship(other_cat, self, True)
+            other_relationship = other_cat.relationships[self.ID]
+            other_relationship.romantic_love += 20
+            other_relationship.comfortable += 20
+            other_relationship.trust += 10
+            other_relationship.mate = True
 
     def create_one_relationship(self, other_cat: Cat):
         """Create a new relationship between current cat and other cat. Returns: Relationship"""
@@ -2254,16 +2278,8 @@ class Cat():
                                    trust=trust)
                 self.relationships[the_cat.ID] = rel
 
-    def save_relationship_of_cat(self):
+    def save_relationship_of_cat(self, relationship_dir):
         # save relationships for each cat
-        clanname = None
-        if game.switches['clan_name'] != '':
-            clanname = game.switches['clan_name']
-        elif len(game.switches['clan_name']) > 0:
-            clanname = game.switches['clan_list'][0]
-        elif game.clan is not None:
-            clanname = game.clan.name
-        relationship_dir = get_save_dir() + '/' + clanname + '/relationships'
         if not os.path.exists(relationship_dir):
             os.makedirs(relationship_dir)
 
