@@ -58,7 +58,33 @@
             "Is pondering recent dreams they have had... perhaps from the Dark Forest?"
         ],
         "random_status_constraint": [
-            "Dark Forest"
+            "darkforest"
+        ]
+    },
+    {
+        "id": "bloodthirsty_leader",
+        "thoughts": [
+            "Encourages warriors to start fights on border patrols",
+    "Is debating if they should declare a war with another Clan",
+    "Is wondering if they could hold apprentice ceremonies at 4 moons old instead"
+        ],
+        "main_trait_constraint": [
+            "bloodthirsty"
+        ]
+    },
+    {
+        "id": "strange_leader",
+        "thoughts": [
+            "No thoughts, head empty",
+            "Insists they they received ten lives instead of nine",
+            "Has a crazed look in their eyes",
+            "Is wondering how many cats would agree to changing the Clan's name..."
+        ],
+        "main_trait_constraint": [
+            "strange"
         ]
     }
 ]
+
+
+
