@@ -48,6 +48,9 @@ class Pregnancy_Events():
                 #events.ceremony_accessory = True
                 return
 
+        if cat.outside:
+            return
+
         # Check if they can have kits.
         can_have_kits = self.check_if_can_have_kits(cat, game.settings['no unknown fathers'])
         if not can_have_kits:
