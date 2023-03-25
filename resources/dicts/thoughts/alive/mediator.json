@@ -94,58 +94,145 @@
         ]
     },
     {
-        "id": "mediator_app_alive_mediator_app",
+        "id": "altruistic_mediator",
         "thoughts": [
-            "Had an argument with another mediator apprentice"
+            "Wonders why everyone can't just get along"
         ],
         "main_status_constraint": [
-            "mediator apprentice"
-        ],
-        "random_status_constraint": [
-            "mediator apprentice"
-        ]
-    },
-    {
-        "id": "mediator_app_alive_mediator",
-        "thoughts": [
-            "Is amazed at how well r_c mediated a fight between Clanmates",
-                "Is amazed at how well r_c mediated a territory dispute",
-                "Is amazed at how r_c talked their way out of a potential war"
-        ],
-        "main_status_constraint": [
-            "mediator apprentice"
-        ],
-        "random_status_constraint": [
             "mediator"
+        ],
+        "main_trait_constraint": [
+            "altruistic"
         ]
     },
     {
-        "id": "mediator_app_alive_apprentice",
+        "id": "bloodthirsty_mediator",
         "thoughts": [
-            "Successfully solved an argument between their denmates",
-             "Tried to solve an argument between their denmates but only made it worse"
+            "Is wondering if they should sabotage a relationship that is going a bit too well",
+            "Wishes to break up a sickeningly lovey-dovey couple",
+            "Chuckles to themself after sabotaging another relationship"
         ],
         "main_status_constraint": [
-            "mediator apprentice"
+            "mediator"
         ],
-        "random_status_constraint": [
-            "mediator apprentice",
-            "apprentice",
-            "medicine cat apprentice"
+        "main_trait_constraint": [
+            "bloodthirsty"
         ]
     },
     {
-        "id": "gen_mediator_apprentice",
+        "id": "cold_mediator",
         "thoughts": [
-            "Is enjoying learning about mediating",
-            "Is learning how to deal with argumentative Clanmates",
-            "Is learning how to gently guide a cat into accepting a truth they don't like",
-            "Wishes they had learned to mediate arguments sooner",
-            "Wants their training to be completed already"
+            "Is judging two Clanmates for their foolish argument",
+            "Wishes to break up a sickeningly lovey dovey couple",
+            "Is sitting back and watching an argument take place"
         ],
         "main_status_constraint": [
-            "mediator apprentice"
+            "mediator"
+        ],
+        "main_trait_constraint": [
+            "cold"
+        ]
+    },
+    {
+        "id": "empathetic_mediator",
+        "thoughts": [
+            "Feels bad for a parent who can't seem to get along with their child",
+            "Wonders why everyone can't just get along"
+        ],
+        "main_status_constraint": [
+            "mediator"
+        ],
+        "main_trait_constraint": [
+            "empathetic"
+        ]
+    },
+    {
+        "id": "fierce_mediator",
+        "thoughts": [
+            "Is greatly annoyed by a Clanmate's inability to accept they were in the wrong"
+        ],
+        "main_status_constraint": [
+            "mediator"
+        ],
+        "main_trait_constraint": [
+            "fierce"
+        ]
+    },
+    {
+        "id": "insecure_mediator",
+        "thoughts": [
+            "Finds mediating emotionally draining"
+        ],
+        "main_status_constraint": [
+            "mediator"
+        ],
+        "main_trait_constraint": [
+            "insecure"
+        ]
+    },
+    {
+        "id": "loving_mediator",
+        "thoughts": [
+            "Wonders why everyone can't just get along"
+        ],
+        "main_status_constraint": [
+            "mediator"
+        ],
+        "main_trait_constraint": [
+            "loving"
+        ]
+    },
+    {
+        "id": "nervous_mediator",
+        "thoughts": [
+            "Finds mediating emotionally draining",
+            "Is feeling worried with all the high tension lately"
+        ],
+        "main_status_constraint": [
+            "mediator"
+        ],
+        "main_trait_constraint": [
+            "nervous"
+        ]
+    },
+    {
+        "id": "righteous_mediator",
+        "thoughts": [
+            "Is greatly annoyed by a Clanmate's inability to accept they were in the wrong"
+        ],
+        "main_status_constraint": [
+            "mediator"
+        ],
+        "main_trait_constraint": [
+            "righteous"
+        ]
+    },
+    {
+        "id": "troublesome_mediator",
+        "thoughts": [
+            "Is looking for a pair to sabotage, out of boredom"
+        ],
+        "main_status_constraint": [
+            "mediator"
+        ],
+        "main_trait_constraint": [
+            "troublesome"
+        ]
+    },
+    {
+        "id": "vengeful_mediator",
+        "thoughts": [
+            "Is wondering if they should sabotage a relationship that is going a bit too well",
+            "Wishes to break up a sickeningly lovey dovey couple",
+            "Is sitting back and watching an argument take place"
+        ],
+        "main_status_constraint": [
+            "mediator"
+        ],
+        "main_trait_constraint": [
+            "vengeful"
         ]
     }
 ]
+
 
