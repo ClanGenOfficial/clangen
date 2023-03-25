@@ -1568,18 +1568,17 @@ class Cat():
         duration = injury['duration']
         med_duration = injury['medicine_duration']
 
-        amount_per_med = get_amount_cat_for_one_medic(game.clan)
-
-        if medical_cats_condition_fulfilled(Cat.all_cats.values(), amount_per_med):
-            duration = med_duration
-        duration += random.randrange(-1, 1)
-        if duration == 0:
-            duration = 1
-
         if severity == 'default':
             injury_severity = injury["severity"]
         else:
             injury_severity = severity
+
+        if medical_cats_condition_fulfilled(Cat.all_cats.values(), get_amount_cat_for_one_medic(game.clan)):
+            duration = med_duration
+        if severity != 'minor':
+            duration += random.randrange(-1, 1)
+        if duration == 0:
+            duration = 1
 
         if mortality != 0:
             if game.clan.game_mode == "cruel season":

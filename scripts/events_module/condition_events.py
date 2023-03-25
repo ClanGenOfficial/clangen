@@ -3,6 +3,7 @@ try:
 except ImportError:
     import json as ujson
 import random
+from copy import deepcopy
 
 from scripts.cat.cats import Cat
 from scripts.cat.pelts import scars1, scars2, scars3
@@ -359,9 +360,10 @@ class Condition_Events():
         # ---------------------------------------------------------------------------- #
 
         # making a copy, so we can iterate through copy and modify the real dict at the same time
-        illnesses = cat.illnesses.copy()
+        illnesses = deepcopy(cat.illnesses)
         for illness in illnesses:
-
+            print('SAVE FILE', cat.name, cat.illnesses)
+            print('COPY', cat.name, illnesses)
             # use herbs
             self.use_herbs(cat, illness, illnesses, ILLNESSES)
 
@@ -445,8 +447,10 @@ class Condition_Events():
         if game.clan.game_mode == "classic":
             return triggered
 
-        injuries = cat.injuries.copy()
+        injuries = deepcopy(cat.injuries)
         for injury in injuries:
+            print('SAVE FILE', cat.name, cat.injuries)
+            print('COPY', cat.name, injuries)
             self.use_herbs(cat, injury, injuries, INJURIES)
 
             skipped = cat.moon_skip_injury(injury)
@@ -729,10 +733,22 @@ class Condition_Events():
                     break
 
                 new_condition_name = risk['name']
-                if dictionary != cat.permanent_condition:
-                    risk["chance"] = risk["chance"] + 10  # lower risk of getting it again if not a perm condition
 
-                # gather potential event strings for gotten illness
+                # lower risk of getting it again if not a perm condition
+                if dictionary != cat.permanent_condition:
+                    saved_condition = dictionary[condition]["risks"]
+                    for old_risk in saved_condition:
+                        if old_risk['name'] == risk['name']:
+                            if new_condition_name in ['an infected wound', 'a festering wound']:
+                                # if it's infection or festering, we're removing the chance completely
+                                # this is both to prevent annoying infection loops
+                                # and bc the illness/injury difference causes problems
+                                old_risk["chance"] = 0
+                            else:
+                                old_risk['chance'] = risk["chance"] + 10
+                            print('RISK UPDATED', risk['chance'], old_risk['chance'])
+
+                # gather potential event strings for gotten condition
                 if dictionary == cat.illnesses:
                     possible_string_list = ILLNESS_RISK_STRINGS[condition][new_condition_name]
                 elif dictionary == cat.injuries:
@@ -740,7 +756,7 @@ class Condition_Events():
                 else:
                     possible_string_list = PERM_CONDITION_RISK_STRINGS[condition][new_condition_name]
 
-                # if it is a progressive illness, then remove the old illness and keep the new one
+                # if it is a progressive condition, then remove the old condition and keep the new one
                 if condition in progression and new_condition_name == progression.get(condition):
                     removed_condition = True
                     dictionary.pop(condition)
