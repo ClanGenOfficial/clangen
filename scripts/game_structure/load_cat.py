@@ -399,7 +399,7 @@ def csv_load(all_cats):
                     the_cat.moons = int(attr[30])
                     if len(attr) >= 31:
                         # assigning mate to cat, if any
-                        the_cat.mate[0] = attr[31]
+                        the_cat.mate = [attr[31]]
                     if len(attr) >= 32:
                         # Is the cat dead
                         the_cat.dead = attr[32]

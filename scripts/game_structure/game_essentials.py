@@ -463,9 +463,10 @@ class Game():
             self.clan.faded_ids.append(cat)
 
             # If they have a mate, break it up
-            if inter_cat.mate[0]:
-                if inter_cat.mate[0] in self.cat_class.all_cats:
-                    self.cat_class.all_cats[inter_cat.mate[0]].mate[0] = None
+            if len(inter_cat.mate):
+                for mate_id in inter_cat.mate:
+                    if mate_id in self.cat_class.all_cats:
+                        self.cat_class.all_cats[mate_id].mate.remove(inter_cat.ID)
 
             # If they have parents, add them to their parents "faded offspring" list:
             if inter_cat.parent1:

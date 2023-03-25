@@ -898,13 +898,13 @@ class ProfileScreen(Screens):
                         else:
                             mates.append(str(mate_ob.name))
                     else:
-                        output += 'Error: mate: ' + str(the_cat.mate[0]) + " not found"
+                        output += 'Error: mate: ' + str(mate_id) + " not found"
                 for prev_mate_id in the_cat.previous_mates:
                     if prev_mate_id in Cat.all_cats:
                         mate_ob = Cat.fetch_cat(prev_mate_id)
                         prev_mates.append(str(mate_ob.name))
                     else:
-                        output += 'Error: mate: ' + str(the_cat.mate[0]) + " not found"
+                        output += 'Error: mate: ' + str(prev_mate_id) + " not found"
                 # merge the names together for the output
                 if len(mates) > 0:
                     if len(mates) > 1:

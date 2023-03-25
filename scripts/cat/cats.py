@@ -2070,8 +2070,9 @@ class Cat():
 
         # check for current mate
         # if the cat has a mate, they are not open for a new mate
+		# TODO: redo this for poly mates?
         if for_patrol:
-            if self.mate[0] or other_cat.mate[0]:
+            if len(self.mate) > 0 or len(other_cat.mate) > 0:
                 if not for_love_interest:
                     return False
                 elif not affair:
@@ -2079,7 +2080,7 @@ class Cat():
                 else:
                     return True
         else:
-            if self.mate[0] or other_cat.mate[0] and not for_love_interest:
+            if len(self.mate) > 0 or len(other_cat.mate) > 0 and not for_love_interest:
                 return False
 
         # check for mentor
@@ -2130,11 +2131,11 @@ class Cat():
         """Unset the mate from both self and other_cat"""   
 
         # Both cats must have mates for this to work
-        if not self.mate[0] or not other_cat.mate[0]:
+        if len(self.mate) > 0 or len(other_cat.mate) > 0:
             return
         
         # AND they must be mates with each other. 
-        if self.ID != other_cat.mate[0] or other_cat.ID != self.mate[0]:
+        if self.ID not in other_cat.mate or other_cat.ID not in self.mate:
             print(f"Unsetting mates: These {self.name} and {other_cat.name} are not mates!")
             return
         
@@ -2162,9 +2163,8 @@ class Cat():
                 if fight:
                     other_relationship.platonic_like -= 30
 
-        # TODO: mates have to be removed in an other way
-        self.mate[0] = None
-        other_cat.mate[0] = None
+        self.mate.remove(other_cat.ID)
+        other_cat.mate.remove(self.ID)
         
         #Handle previous mates:
         if other_cat.ID not in self.previous_mates:
@@ -2174,18 +2174,20 @@ class Cat():
 
     def set_mate(self, other_cat: Cat):
         """Sets up a mate relationship between self and other_cat."""
-        if self.mate[0] or other_cat.mate[0]:
-            print(f"Warning: In order to set mates, both cats must have no current mate. {self.name} and {other_cat.name} have not been made mates. ")
-            return
+        
+		# TODO: 
+		#if self.mate or other_cat.mate:
+        #    print(f"Warning: In order to set mates, both cats must have no current mate. {self.name} and {other_cat.name} have not been made mates. ")
+        #    return
 
-        self.mate[0] = other_cat.ID
-        other_cat.mate[0] = self.ID
+        self.mate.append(other_cat.ID)
+        other_cat.mate.append(self.ID)
 
         # If the current mate was in the previous mate list, remove them. 
-        if self.mate[0] in self.previous_mates:
-            self.previous_mates.remove(self.mate[0])
-        if other_cat.mate[0] in other_cat.previous_mates:
-            other_cat.previous_mates.remove(other_cat.mate[0])
+        if other_cat.ID in self.previous_mates:
+            self.previous_mates.remove(other_cat.ID)
+        if self.ID in other_cat.previous_mates:
+            other_cat.previous_mates.remove(self.ID)
 
         # Set starting relationship values
 
@@ -2218,7 +2220,7 @@ class Cat():
         for id in self.all_cats:
             the_cat = self.all_cats.get(id)
             if the_cat.ID is not self.ID:
-                mates = the_cat is self.mate[0]
+                mates = the_cat.ID in self.mate
                 are_parents = False
                 parents = False
                 siblings = False
@@ -2366,7 +2368,7 @@ class Cat():
             rel2 = cat2.create_one_relationship(cat1)
 
         # Are they mates?
-        if rel1.cat_to.mate[0] == rel1.cat_from.ID:
+        if rel1.cat_from.ID in rel1.cat_to.mate:
             mates = True
         else:
             mates = False

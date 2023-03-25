@@ -349,7 +349,7 @@ class GenerateEvents:
                 elif "other_cat_kit" in event.tags and other_cat.status not in ['newborn', 'kitten']:
                     continue
 
-                if "other_cat_mate" in event.tags and other_cat.ID != cat.mate[0]:
+                if "other_cat_mate" in event.tags and other_cat.ID not in cat.mate:
                     continue
                 elif "other_cat_child" in event.tags and other_cat.ID not in cat.get_children():
                     continue
@@ -380,7 +380,7 @@ class GenerateEvents:
                     continue
 
             # check for mate if the event requires one
-            if "mate" in event.tags and cat.mate[0] is None:
+            if "mate" in event.tags and len(cat.mate) < 1:
                 continue
 
             # check cat trait and skill

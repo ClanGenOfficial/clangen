@@ -63,6 +63,7 @@ class PatrolScreen(Screens):
             # these buttons may not exist. 
             if "mate_button" in self.elements:
                 if event.ui_element == self.elements['mate_button']:
+                    # TODO: make this like the selection of the apprentices
                     self.selected_cat = Cat.all_cats[self.selected_cat.mate[0]]
                     self.update_button()
                     self.update_cat_images_buttons()
@@ -677,7 +678,7 @@ class PatrolScreen(Screens):
             print('no romance choices')
             return
         if not patrol.patrol_random_cat.is_potential_mate(patrol.patrol_leader, for_love_interest=True) \
-                and patrol.patrol_random_cat.mate[0] != patrol.patrol_leader.ID:
+                and patrol.patrol_leader.ID not in patrol.patrol_random_cat.mate:
             patrol.patrol_event = self.normal_event_choice
             print('not a potential mate or current mate')
             return
@@ -691,7 +692,7 @@ class PatrolScreen(Screens):
         chance_of_romance_patrol = game.config["patrol_generation"]["chance_of_romance_patrol"]
 
         if get_personality_compatibility(patrol.patrol_leader,
-                                         patrol.patrol_random_cat) is True or patrol.patrol_random_cat.mate[0] == patrol.patrol_leader.ID:
+                                         patrol.patrol_random_cat) is True or patrol.patrol_leader.ID in patrol.patrol_random_cat.mate:
             chance_of_romance_patrol -= 10
         else:
             chance_of_romance_patrol += 10
@@ -1151,10 +1152,11 @@ class PatrolScreen(Screens):
 
             # Show Cat's Mate, if they have one
             if self.selected_cat.status not in ['medicine cat apprentice', 'apprentice']:
-                if self.selected_cat.mate[0] is not None:
+                if len(self.selected_cat.mate) > 0:
                     self.elements['mate_frame'] = pygame_gui.elements.UIImage(
                         scale(pygame.Rect((280, 380), (332, 340))),
                         self.mate_frame)
+                    # TODO: make it like apprentices
                     mate = Cat.fetch_cat(self.selected_cat.mate[0])
                     self.elements['mate_image'] = pygame_gui.elements.UIImage(
                         scale(pygame.Rect((300, 400), (200, 200))),

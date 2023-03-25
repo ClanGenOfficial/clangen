@@ -1126,7 +1126,7 @@ class ChooseMateScreen(Screens):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             # Cat buttons list
             if event.ui_element in self.cat_list_buttons.values():
-                if self.the_cat.mate[0] is None:
+                if len(self.the_cat.mate) < 1:
                     self.selected_cat = event.ui_element.return_cat_object()
                     self.update_buttons()
                     self.update_choose_mate()
@@ -1318,6 +1318,7 @@ class ChooseMateScreen(Screens):
 
         self.selected_cat = [Cat.fetch_cat(cat_id) for cat_id in self.the_cat.mate]
         # TODO: UI HAS TO BE UPDATED (maybe like in the patrol screen when a warrior has more apprentices?)
+		# maybe adding a empty space which chan be filled by new mates?
         self.selected_cat = self.selected_cat[0]
 
         self.draw_compatible_line_affection()
@@ -1363,7 +1364,7 @@ class ChooseMateScreen(Screens):
     def update_cat_list(self):
         # If the cat already has a mate, we display the children. If not, we display the possible mates
         all_pages = []
-        if self.selected_cat and self.the_cat.mate[0]:
+        if self.selected_cat and len(self.the_cat.mate) > 0:
             self.kittens = False
             for x in game.clan.clan_cats:
                 if self.the_cat.ID in [
@@ -1949,6 +1950,7 @@ class RelationshipScreen(Screens):
 
             related = False
             # Mate Heart
+			# TODO: UI UPDATE IS NEEDED
             if self.the_cat.mate[0] is not None and self.the_cat.mate[0] != '' and self.inspect_cat.ID == self.the_cat.mate[0]:
                 self.inspect_cat_elements["mate"] = pygame_gui.elements.UIImage(scale(pygame.Rect((90, 300), (44, 40))),
                                                                                 pygame.transform.scale(
@@ -2014,9 +2016,9 @@ class RelationshipScreen(Screens):
             col2 = ""
 
             # Mate
-            if self.inspect_cat.mate[0] is not None and self.the_cat.ID != self.inspect_cat.mate[0]:
+            if len(self.inspect_cat.mate) > 0 and self.the_cat.ID not in self.inspect_cat.mate:
                 col2 += "has a mate\n"
-            elif self.the_cat.mate[0] is not None and self.the_cat.mate[0] != '' and self.inspect_cat.ID == self.the_cat.mate[0]:
+            elif len(self.the_cat.mate) > 0 and self.inspect_cat.ID in self.the_cat.mate:
                 col2 += f"{self.the_cat.name}'s mate\n"
             else:
                 col2 += "mate: none\n"
@@ -2738,7 +2740,7 @@ class MediationScreen(Screens):
 
         related = False
         # MATE
-        if other_cat and cat.mate[0] and cat.mate[0] == other_cat.ID:
+        if other_cat and len(cat.mate) > 0 and other_cat.ID in cat.mate:
             self.selected_cat_elements['mate_icon' + tag] = pygame_gui.elements.UIImage(
                 scale(pygame.Rect((x + 28, y + 28),
                                   (44, 40))),
@@ -2786,9 +2788,9 @@ class MediationScreen(Screens):
         if len(cat.mate) > 0:
             col2 = "has a mate"
             if other_cat:
-                if cat.mate[0] == other_cat.ID:
+                if other_cat.ID in cat.mate:
                     mates = True
-                    col2 = f"{Cat.fetch_cat(cat.mate[0]).name}'s mate"
+                    col2 = f"{other_cat.name}'s mate"
         else:
             col2 = "mate: none"
 
