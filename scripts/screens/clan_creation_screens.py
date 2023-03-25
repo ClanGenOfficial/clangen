@@ -1012,6 +1012,11 @@ class MakeClanScreen(Screens):
                                                                       manager=MANAGER)
 
     def save_clan(self):
+        
+        game.mediated.clear()
+        game.patrolled.clear()
+        game.cat_to_fade.clear()
+        Cat.outside_cats.clear()
         convert_camp = {1: 'camp1', 2: 'camp2', 3: 'camp3'}
         game.clan = Clan(self.clan_name,
                          self.leader,
@@ -1022,7 +1027,6 @@ class MakeClanScreen(Screens):
                          self.game_mode, self.members,
                          starting_season=self.selected_season)
         game.clan.create_clan()
-        game.mediated.clear()
         game.cur_events_list.clear()
         game.herb_events_list.clear()
         Cat.grief_strings.clear()

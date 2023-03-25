@@ -1512,11 +1512,14 @@ class ChooseMateScreen(Screens):
                     (400, 156)))
 
         # Set romantic hearts of current cat towards mate or selected cat.
-        if self.selected_cat.ID in self.the_cat.relationships:
-            relation = self.the_cat.relationships[self.selected_cat.ID]
+        if self.the_cat.dead:
+            romantic_love = 0
         else:
-            relation = self.the_cat.create_one_relationship(self.selected_cat)
-        romantic_love = relation.romantic_love
+            if self.selected_cat.ID in self.the_cat.relationships:
+                relation = self.the_cat.relationships[self.selected_cat.ID]
+            else:
+                relation = self.the_cat.create_one_relationship(self.selected_cat)
+            romantic_love = relation.romantic_love
 
         if 10 <= romantic_love <= 30:
             heart_number = 1
@@ -1538,11 +1541,14 @@ class ChooseMateScreen(Screens):
             x_pos += 54
 
         # Set romantic hearts of mate/selected cat towards current_cat.
-        if self.the_cat.ID in self.selected_cat.relationships:
-            relation = self.selected_cat.relationships[self.the_cat.ID]
+        if self.selected_cat.dead:
+            romantic_love = 0
         else:
-            relation = self.selected_cat.create_one_relationship(self.the_cat)
-        romantic_love = relation.romantic_love
+            if self.the_cat.ID in self.selected_cat.relationships:
+                relation = self.selected_cat.relationships[self.the_cat.ID]
+            else:
+                relation = self.selected_cat.create_one_relationship(self.the_cat)
+            romantic_love = relation.romantic_love
 
         if 10 <= romantic_love <= 30:
             heart_number = 1
@@ -1624,7 +1630,7 @@ class ChooseMateScreen(Screens):
 
             related = direct_related or indirect_related
 
-            not_available = relevant_cat.dead or relevant_cat.outside
+            not_available = (relevant_cat.dead != self.the_cat.dead) or (relevant_cat.outside != self.the_cat.outside) or relevant_cat.faded
 
             if not related and relevant_cat.ID != self.the_cat.ID and invalid_age \
                     and not not_available and relevant_cat.mate is None:
