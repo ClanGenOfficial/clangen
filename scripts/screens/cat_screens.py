@@ -280,8 +280,13 @@ class ProfileScreen(Screens):
         self.profile_elements = {}
 
     def handle_event(self, event):
+        if self.og_name != self.the_cat.name:
+            self.update_cat_name()
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.back_button:
+
+            if game.switches['window_open']:
+                pass
+            elif event.ui_element == self.back_button:
                 self.close_current_tab()
                 self.change_screen(game.last_screen_forProfile)
             elif event.ui_element == self.previous_cat_button:
@@ -330,7 +335,9 @@ class ProfileScreen(Screens):
             else:
                 self.handle_tab_events(event)
 
-            if self.the_cat.dead and game.settings["fading"]:
+            if game.switches['window_open']:
+                pass
+            elif self.the_cat.dead and game.settings["fading"]:
                 if event.ui_element == self.checkboxes["prevent_fading"]:
                     if self.the_cat.prevent_fading:
                         self.the_cat.prevent_fading = False
@@ -358,7 +365,7 @@ class ProfileScreen(Screens):
         # Personal Tab
         elif self.open_tab == 'personal':
             if event.ui_element == self.change_name_button:
-                ChangeCatName(self.the_cat)
+                ChangeCatName(self.the_cat, ProfileScreen())
             elif event.ui_element == self.specify_gender_button:
                 self.change_screen('change gender screen')
             elif event.ui_element == self.cis_trans_button:
@@ -461,6 +468,7 @@ class ProfileScreen(Screens):
                 self.right_arrow.enable()
                 self.left_arrow.disable()
 
+
     def screen_switches(self):
         self.the_cat = Cat.all_cats.get(game.switches['cat'])
 
@@ -562,6 +570,7 @@ class ProfileScreen(Screens):
             self.the_cat.thought = "Hello. I am here to drag the dead cats of " + game.clan.name + "Clan into the Dark Forest."
 
         # Write cat name
+        self.og_name = self.the_cat.name
         self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(cat_name,
                                                                           scale(pygame.Rect((50, 280), (-1, 80))),
                                                                           object_id=get_text_box_theme(

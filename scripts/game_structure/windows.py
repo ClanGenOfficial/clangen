@@ -16,7 +16,6 @@ from scripts.utility import scale, quit
 from scripts.game_structure.game_essentials import game, MANAGER
 
 
-
 class SaveCheck(UIWindow):
     def __init__(self, last_screen, isMainMenu, mm_btn):
         game.switches['window_open'] = True
@@ -254,70 +253,79 @@ class GameOver(UIWindow):
                 game.switches['window_open'] = False
                 self.kill()
 
+
 class ChangeCatName(UIWindow):
-    def __init__(self, cat):
-        super().__init__(scale(pygame.Rect((400, 200), (800, 500))),
+    """This window allows the user to change the cat's name"""
+    def __init__(self, cat, screen):
+        super().__init__(scale(pygame.Rect((400, 200), (800, 370))),
                          window_display_title='Change Cat Name',
                          object_id='#change_cat_name_window',
                          resizable=False)
         game.switches['window_open'] = True
         self.the_cat = cat
-
+        self.profile_screen = screen
         self.back_button = UIImageButton(
-            scale(pygame.Rect((750, 10), (44, 44))),
+            scale(pygame.Rect((740, 10), (44, 44))),
             "",
             object_id="#exit_window_button",
             container=self
         )
-        self.heading = pygame_gui.elements.UITextBox("-Change Name-", scale(pygame.Rect((0, 50), (800, 80))),
+        self.heading = pygame_gui.elements.UITextBox(f"-Change {self.the_cat.name}'s Name-",
+                                                     scale(pygame.Rect((0, 20), (800, 80))),
                                                      object_id="#text_box_30_horizcenter",
                                                      manager=MANAGER,
                                                      container=self)
 
-        self.name_changed = pygame_gui.elements.UITextBox("Name Changed!", scale(pygame.Rect((0, 350), (800, 80))),
+        self.name_changed = pygame_gui.elements.UITextBox("Name Changed!", scale(pygame.Rect((490, 260), (800, 80))),
                                                           visible=False,
-                                                          object_id="#text_box_30_horizcenter",
+                                                          object_id="#text_box_30_horizleft",
                                                           manager=MANAGER,
-                                                     container=self)
+                                                          container=self)
 
-        self.done_button = UIImageButton(scale(pygame.Rect((323, 400), (154, 60))), "",
+        self.done_button = UIImageButton(scale(pygame.Rect((323, 270), (154, 60))), "",
                                          object_id="#done_button",
                                          manager=MANAGER,
-                                                     container=self)
+                                         container=self)
 
-        self.prefix_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((10, 150), (380, 60))),
+        x_pos, y_pos = 75, 35
+
+        self.prefix_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((0 + x_pos, 100 + y_pos), (240, 60))),
                                                                     placeholder_text=self.the_cat.name.prefix,
                                                                     manager=MANAGER,
-                                                     container=self)
+                                                                    container=self)
 
-        self.random_pre = UIImageButton(scale(pygame.Rect((586, 310), (68, 68))), "",
+        self.random_pre = UIImageButton(scale(pygame.Rect((245 + x_pos, 97 + y_pos), (68, 68))), "",
                                         object_id="#random_dice_button",
                                         manager=MANAGER,
-                                                     container=self)
+                                        container=self,
+                                        tool_tip_text='Randomize the prefix')
 
-        self.random_suff = UIImageButton(scale(pygame.Rect((946, 310), (68, 68))), "",
+        self.random_suff = UIImageButton(scale(pygame.Rect((563 + x_pos, 97 + y_pos), (68, 68))), "",
                                          object_id="#random_dice_button",
                                          manager=MANAGER,
-                                                     container=self)
+                                         container=self,
+                                         tool_tip_text='Randomze the suffix')
 
-        self.toggle_spec_block_on = UIImageButton(scale(pygame.Rect((1150, 396), (68, 68))), "",
+        # 636
+        self.toggle_spec_block_on = UIImageButton(scale(pygame.Rect((405 + x_pos, 160 + y_pos), (68, 68))), "",
                                                   object_id="#unchecked_checkbox",
-                                                  tool_tip_text=f"Overwrite the cat's special suffix, allowing you to use your own",
+                                                  tool_tip_text=f"Temporarily remove the cat's special suffix, so "
+                                                                f"that you can change the hidden suffix beneath",
                                                   manager=MANAGER,
-                                                     container=self)
+                                                  container=self)
 
-        self.toggle_spec_block_off = UIImageButton(scale(pygame.Rect((1150, 396), (68, 68))), "",
+        self.toggle_spec_block_off = UIImageButton(scale(pygame.Rect((405 + x_pos, 160 + y_pos), (68, 68))), "",
                                                    object_id="#checked_checkbox",
                                                    tool_tip_text="Re-enable the cat's special suffix", manager=MANAGER,
-                                                     container=self)
+                                                   container=self)
 
         if self.the_cat.name.status in self.the_cat.name.names_dict["special_suffixes"]:
-            self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((800, 400), (360, 60))),
+            self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((318 + x_pos, 100 + y_pos), (240, 60))),
                                                                         placeholder_text=
                                                                         self.the_cat.name.names_dict["special_suffixes"]
                                                                         [self.the_cat.name.status]
                                                                         , manager=MANAGER,
-                                                     container=self)
+                                                                        container=self)
             if not self.the_cat.name.specsuffix_hidden:
                 self.toggle_spec_block_on.show()
                 self.toggle_spec_block_on.enable()
@@ -340,70 +348,71 @@ class ChangeCatName(UIWindow):
             self.toggle_spec_block_on.hide()
             self.toggle_spec_block_off.disable()
             self.toggle_spec_block_off.hide()
-            self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((800, 400), (360, 60))),
+            self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((318 + x_pos, 100 + y_pos), (240, 60))),
                                                                         placeholder_text=self.the_cat.name.suffix
                                                                         , manager=MANAGER,
-                                                     container=self)
+                                                                        container=self)
 
     def process_event(self, event):
         super().process_event(event)
 
-        def handle_event(self, event):
-            if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-                if event.ui_element == self.done_button:
-                    if sub(r'[^A-Za-z0-9 ]+', '', self.prefix_entry_box.get_text()) != '':
-                        self.the_cat.name.prefix = sub(r'[^A-Za-z0-9 ]+', '', self.prefix_entry_box.get_text())
-                        self.name_changed.show()
-                    if sub(r'[^A-Za-z0-9 ]+', '', self.suffix_entry_box.get_text()) != '':
-                        self.the_cat.name.suffix = sub(r'[^A-Za-z0-9 ]+', '', self.suffix_entry_box.get_text())
-                        self.name_changed.show()
-                        self.the_cat.specsuffix_hidden = True
-                        self.the_cat.name.specsuffix_hidden = True
-                    elif sub(r'[^A-Za-z0-9 ]+', '',
-                             self.suffix_entry_box.get_text()) == '' and not self.the_cat.name.specsuffix_hidden:
-                        self.name_changed.show()
-                    else:
-                        self.the_cat.specsuffix_hidden = False
-                        self.the_cat.name.specsuffix_hidden = False
-                elif event.ui_element == self.random_pre:
-                    self.prefix_entry_box.set_text(Name(self.the_cat.status,
-                                                        None,
-                                                        self.the_cat.name.suffix,
-                                                        self.the_cat.pelt.colour,
-                                                        self.the_cat.eye_colour,
-                                                        self.the_cat.pelt.name,
-                                                        self.the_cat.tortiepattern,
-                                                        specsuffix_hidden=
-                                                        (self.the_cat.name.status in self.the_cat.name.names_dict[
-                                                            "special_suffixes"])).prefix)
-                elif event.ui_element == self.random_suff:
-                    self.suffix_entry_box.set_text(Name(self.the_cat.status,
-                                                        self.the_cat.name.prefix,
-                                                        None,
-                                                        self.the_cat.pelt.colour,
-                                                        self.the_cat.eye_colour,
-                                                        self.the_cat.pelt.name,
-                                                        self.the_cat.tortiepattern,
-                                                        specsuffix_hidden=
-                                                        (self.the_cat.name.status in self.the_cat.name.names_dict[
-                                                            "special_suffixes"])).suffix)
-                elif event.ui_element == self.toggle_spec_block_on:
-                    self.suffix_entry_box.enable()
-                    self.random_suff.enable()
-                    self.toggle_spec_block_on.disable()
-                    self.toggle_spec_block_on.hide()
-                    self.toggle_spec_block_off.enable()
-                    self.toggle_spec_block_off.show()
-                    self.suffix_entry_box.set_text(self.the_cat.name.suffix)
-                elif event.ui_element == self.toggle_spec_block_off:
-                    self.random_suff.disable()
-                    self.toggle_spec_block_off.disable()
-                    self.toggle_spec_block_off.hide()
-                    self.toggle_spec_block_on.enable()
-                    self.toggle_spec_block_on.show()
-                    self.suffix_entry_box.set_text("")
-                    self.suffix_entry_box.rebuild()
-                    self.suffix_entry_box.disable()
-                elif event.ui_element == self.back_button:
-                    self.kill()
-                    game.switches['window_open'] = False
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            if event.ui_element == self.done_button:
+                if sub(r'[^A-Za-z0-9 ]+', '', self.prefix_entry_box.get_text()) != '':
+                    self.the_cat.name.prefix = sub(r'[^A-Za-z0-9 ]+', '', self.prefix_entry_box.get_text())
+                    self.name_changed.show()
+
+                if sub(r'[^A-Za-z0-9 ]+', '', self.suffix_entry_box.get_text()) != '':
+                    self.the_cat.name.suffix = sub(r'[^A-Za-z0-9 ]+', '', self.suffix_entry_box.get_text())
+                    self.name_changed.show()
+                    self.the_cat.specsuffix_hidden = True
+                    self.the_cat.name.specsuffix_hidden = True
+                elif sub(r'[^A-Za-z0-9 ]+', '',
+                         self.suffix_entry_box.get_text()) == '' and not self.the_cat.name.specsuffix_hidden:
+                    self.name_changed.show()
+                else:
+                    self.the_cat.specsuffix_hidden = False
+                    self.the_cat.name.specsuffix_hidden = False
+                self.heading.set_text(f"-Change {self.the_cat.name}'s Name-")
+            elif event.ui_element == self.random_pre:
+                self.prefix_entry_box.set_text(Name(self.the_cat.status,
+                                                    None,
+                                                    self.the_cat.name.suffix,
+                                                    self.the_cat.pelt.colour,
+                                                    self.the_cat.eye_colour,
+                                                    self.the_cat.pelt.name,
+                                                    self.the_cat.tortiepattern,
+                                                    specsuffix_hidden=
+                                                    (self.the_cat.name.status in self.the_cat.name.names_dict[
+                                                        "special_suffixes"])).prefix)
+            elif event.ui_element == self.random_suff:
+                self.suffix_entry_box.set_text(Name(self.the_cat.status,
+                                                    self.the_cat.name.prefix,
+                                                    None,
+                                                    self.the_cat.pelt.colour,
+                                                    self.the_cat.eye_colour,
+                                                    self.the_cat.pelt.name,
+                                                    self.the_cat.tortiepattern,
+                                                    specsuffix_hidden=
+                                                    (self.the_cat.name.status in self.the_cat.name.names_dict[
+                                                        "special_suffixes"])).suffix)
+            elif event.ui_element == self.toggle_spec_block_on:
+                self.suffix_entry_box.enable()
+                self.random_suff.enable()
+                self.toggle_spec_block_on.disable()
+                self.toggle_spec_block_on.hide()
+                self.toggle_spec_block_off.enable()
+                self.toggle_spec_block_off.show()
+                self.suffix_entry_box.set_text(self.the_cat.name.suffix)
+            elif event.ui_element == self.toggle_spec_block_off:
+                self.random_suff.disable()
+                self.toggle_spec_block_off.disable()
+                self.toggle_spec_block_off.hide()
+                self.toggle_spec_block_on.enable()
+                self.toggle_spec_block_on.show()
+                self.suffix_entry_box.set_text("")
+                self.suffix_entry_box.rebuild()
+                self.suffix_entry_box.disable()
+            elif event.ui_element == self.back_button:
+                self.kill()
+                game.switches['window_open'] = False
