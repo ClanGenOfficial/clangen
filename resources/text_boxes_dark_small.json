@@ -32,8 +32,14 @@
             "text_horiz_alignment": "center"
         }
     },
+    "#text_box_22_horizcenter_red_dark": {
+        "prototype": "#text_box_22_horizcenter_dark",
+        "colours": {
+            "normal_text": "#dc6a5b"
+        }
+    },
     "#text_box_22_horizcenter_spacing_95_dark": {
-        "prototype": "#text_box_22",
+        "prototype": "#text_box_22_dark",
         "misc": {
             "text_horiz_alignment": "center",
             "line_spacing": "0.95"
@@ -47,7 +53,7 @@
         }
     },
     "#text_box_22_horizleft_spacing_95_dark": {
-        "prototype": "#text_box_22_horizleft",
+        "prototype": "#text_box_22_horizleft_dark",
         "misc": {
             "line_spacing": "0.95"
         }
@@ -91,8 +97,14 @@
             "text_horiz_alignment": "center"
         }
     },
+    "#text_box_30_horizcenter_red_dark": {
+        "prototype": "#text_box_30_horizcenter_dark",
+        "colours": {
+            "normal_text": "#dc6a5b"
+        }
+    },
     "#text_box_30_horizcenter_spacing_95_dark": {
-        "prototype": "#text_box_30",
+        "prototype": "#text_box_30_horizcenter_dark",
         "misc": {
             "text_horiz_alignment": "center",
             "line_spacing": "0.95"

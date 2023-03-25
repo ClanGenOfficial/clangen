@@ -126,10 +126,10 @@ class ChooseMentorScreen(Screens):
                                             object_id="#confirm_mentor_button")
         if self.mentor is not None:
             self.current_mentor_warning = pygame_gui.elements.UITextBox(
-                "<font color=#ae1515>Current mentor selected</font>"
-                , scale(pygame.Rect((600, 670), (400, 60))),
-                object_id=get_text_box_theme(
-                    "#text_box_22_horizcenter"), manager=MANAGER)
+                "Current mentor selected",
+                scale(pygame.Rect((600, 670), (400, 60))),
+                object_id=get_text_box_theme("#text_box_22_horizcenter_red"),
+                manager=MANAGER)
         else:
             self.current_mentor_warning = pygame_gui.elements.UITextBox("<font color=#FF0000>No mentor selected</font>"
                                                                         , scale(pygame.Rect((600, 680), (400, 60))),

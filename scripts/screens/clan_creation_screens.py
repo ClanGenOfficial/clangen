@@ -667,7 +667,7 @@ class MakeClanScreen(Screens):
                                                                       object_id="#text_box_30_horizleft_pad_40_40",
                                                                       manager=MANAGER)
         self.elements['mode_name'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((850, 270), (400, 100))),
-                                                                   object_id="#text_box_30_horizcenter_white",
+                                                                   object_id="#text_box_30_horizcenter_light",
                                                                    manager=MANAGER)
 
         self.refresh_text_and_buttons()
@@ -700,9 +700,9 @@ class MakeClanScreen(Screens):
         self.elements["name_entry"].set_allowed_characters(
             list("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_- "))
         self.elements["name_entry"].set_text_length_limit(11)
-        self.elements["clan"] = pygame_gui.elements.UITextBox("<font color='#FFFFFF'>-Clan</font>",
+        self.elements["clan"] = pygame_gui.elements.UITextBox("-Clan",
                                                               scale(pygame.Rect((750, 1200), (200, 50))),
-                                                              object_id="#text_box_30_horizcenter",
+                                                              object_id="#text_box_30_horizcenter_light",
                                                               manager=MANAGER)
         self.elements["reset_name"] = UIImageButton(scale(pygame.Rect((910, 1190), (268, 60))), "",
                                                     object_id="#reset_name_button", manager=MANAGER)
@@ -712,7 +712,7 @@ class MakeClanScreen(Screens):
                                                                      MakeClanScreen.clan_frame_img, manager=MANAGER)
         self.elements["clan_name"] = pygame_gui.elements.UITextBox(self.clan_name + "Clan",
                                                                    scale(pygame.Rect((585, 212), (432, 100))),
-                                                                   object_id="#text_box_30_horizcenter_white",
+                                                                   object_id="#text_box_30_horizcenter_light",
                                                                    manager=MANAGER)
 
     def open_choose_leader(self):
@@ -782,9 +782,9 @@ class MakeClanScreen(Screens):
                                                     object_id="#nine_lives_button", visible=False, manager=MANAGER)
         # Error message, to appear if you can't choose that cat.
         self.elements['error_message'] = pygame_gui.elements.UITextBox(
-            "<font color='#FF0000'> Too young to become leader </font>",
+            "Too young to become leader",
             scale(pygame.Rect((300, 706), (1000, 110))),
-            object_id=get_text_box_theme("#text_box_30_horizcenter"),
+            object_id=get_text_box_theme("#text_box_30_horizcenter_red"),
             visible=False,
             manager=MANAGER)
 
@@ -823,9 +823,9 @@ class MakeClanScreen(Screens):
                                                     object_id="#support_leader_button", visible=False, manager=MANAGER)
         # Error message, to appear if you can't choose that cat.
         self.elements['error_message'] = pygame_gui.elements.UITextBox(
-            "<font color='#FF0000'> Too young to become deputy </font>",
+            "Too young to become deputy",
             scale(pygame.Rect((300, 706), (1000, 110))),
-            object_id=get_text_box_theme("#text_box_30_horizcenter"),
+            object_id=get_text_box_theme("#text_box_30_horizcenter_red"),
             visible=False,
             manager=MANAGER)
 
@@ -868,9 +868,9 @@ class MakeClanScreen(Screens):
                                                     manager=MANAGER)
         # Error message, to appear if you can't choose that cat.
         self.elements['error_message'] = pygame_gui.elements.UITextBox(
-            "<font color='#FF0000'> Too young to become a medicine cat </font>",
+            "Too young to become a medicine cat",
             scale(pygame.Rect((300, 706), (1000, 110))),
-            object_id=get_text_box_theme("#text_box_30_horizcenter"),
+            object_id=get_text_box_theme("#text_box_30_horizcenter_red"),
             visible=False,
             manager=MANAGER)
 
