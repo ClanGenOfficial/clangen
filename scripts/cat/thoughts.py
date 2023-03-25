@@ -313,7 +313,7 @@ class Thoughts():
         elif status == "mediator apprentice":
             status = "mediator"
 
-        if not main_cat.dead and not main_cat.outside:
+        if not main_cat.dead:
             life_dir = "alive"
         else:
             life_dir = "dead"
