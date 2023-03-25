@@ -548,9 +548,9 @@ class Patrol():
                     cat1 = self.patrol_cats[0]
                     cat2 = self.patrol_cats[1]
                     # if one of the cat has no mate, not add this patrol
-                    if not cat1.mate or not cat2.mate:
+                    if not cat1.mate[0] or not cat2.mate[0]:
                         continue
-                    elif cat1.mate != cat2.ID or cat2.mate != cat1.ID:
+                    elif cat1.mate[0] != cat2.ID or cat2.mate[0] != cat1.ID:
                         continue
 
             # check if the cats are in a parent/child relationship

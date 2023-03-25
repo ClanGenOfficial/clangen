@@ -44,8 +44,8 @@ class TestRelationshipConstraintPatrols(unittest.TestCase):
         mate2 = Cat()
         cat1 = Cat()
 
-        mate1.mate = mate2.ID
-        mate2.mate =mate1.ID
+        mate1.mate[0] = mate2.ID
+        mate2.mate[0] =mate1.ID
 
         # when
         con_patrol_event = PatrolEvent(patrol_id="test1")

@@ -152,7 +152,7 @@ def get_free_possible_mates(cat, Relationship):
             continue
 
         if inter_cat.is_potential_mate(cat,True) and cat.is_potential_mate(inter_cat, True):
-            if not inter_cat.mate:
+            if not inter_cat.mate[0]:
                 cats.append(inter_cat)
     return cats
 
@@ -445,7 +445,7 @@ def get_highest_romantic_relation(relationships, exclude_mate=False, potential_m
     """Returns the relationship with the highest romantic value."""
     # Different filters for different
     romantic_relation = list(
-        filter(lambda rel: rel.romantic_love > 0 and (exclude_mate and rel.cat_to.ID != rel.cat_to.mate)
+        filter(lambda rel: rel.romantic_love > 0 and (exclude_mate and rel.cat_to.ID != rel.cat_to.mate[0])
                            and (potential_mate and rel.cat_to.is_potential_mate(rel.cat_from, for_love_interest=True)),
                relationships))
 
@@ -649,7 +649,7 @@ def change_relationship_values(cats_to: list,
                 continue
 
             # here we just double-check that the cats are allowed to be romantic with eath other
-            if kitty.is_potential_mate(rel.cat_to, for_love_interest=True) or kitty.mate == rel.cat_to.ID:
+            if kitty.is_potential_mate(rel.cat_to, for_love_interest=True) or kitty.mate[0] == rel.cat_to.ID:
                 # if cat already has romantic feelings then automatically increase romantic feelings
                 # when platonic feelings would increase
                 if rel.romantic_love > 0 and auto_romance:

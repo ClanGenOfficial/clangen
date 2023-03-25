@@ -202,7 +202,7 @@ def json_load():
                     new_cat.scars.append(cat["specialty2"])
 
             new_cat.accessory = cat["accessory"]
-            new_cat.mate = cat["mate"]
+            new_cat.mate[0] = cat["mate"]
             new_cat.previous_mates = cat["previous_mates"] if "previous_mates" in cat else []
             new_cat.dead = cat["dead"]
             new_cat.died_by = cat["died_by"] if "died_by" in cat else []
@@ -397,7 +397,7 @@ def csv_load(all_cats):
                     the_cat.moons = int(attr[30])
                     if len(attr) >= 31:
                         # assigning mate to cat, if any
-                        the_cat.mate = attr[31]
+                        the_cat.mate[0] = attr[31]
                     if len(attr) >= 32:
                         # Is the cat dead
                         the_cat.dead = attr[32]

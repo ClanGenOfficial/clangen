@@ -43,7 +43,7 @@ class Romantic_Events():
             return False
 
         relevant_dict = deepcopy(ROMANTIC_INTERACTIONS)
-        if cat_from.mate == cat_to.ID:
+        if cat_from.mate[0] == cat_to.ID:
             relevant_dict = deepcopy(MATE_INTERACTIONS)
 
         # check if it should be a positive or negative interaction
@@ -154,12 +154,12 @@ class Romantic_Events():
 
     def handle_breakup(self, relationship_from, relationship_to, cat_from, cat_to):
         from_mate_in_clan = False
-        if cat_from.mate:
-            if cat_from.mate not in Cat.all_cats.keys():
+        if cat_from.mate[0]:
+            if cat_from.mate[0] not in Cat.all_cats.keys():
                 print(f"WARNING: Cat #{cat_from} has a invalid mate. It will set to none.")
-                cat_from.mate = None
+                cat_from.mate[0] = None
                 return
-            cat_from_mate = Cat.all_cats.get(cat_from.mate)
+            cat_from_mate = Cat.all_cats.get(cat_from.mate[0])
             from_mate_in_clan = cat_from_mate.is_alive() and not cat_from_mate.outside
 
         if not self.had_one_event and relationship_from.mates and from_mate_in_clan:
@@ -192,7 +192,7 @@ class Romantic_Events():
 
         cat_to = highest_romantic_relation.cat_to
         if cat_to.is_potential_mate(cat) and cat.is_potential_mate(cat_to):
-            if cat_to.mate is None and cat.mate is None:
+            if cat_to.mate[0] is None and cat.mate[0] is None:
                 self.had_one_event = True
                 cat.set_mate(cat_to)
 
