@@ -1,0 +1,45 @@
+[tool.poetry]
+
+name = "clangen"
+version = "0.7.9"
+description = "Fan-edit of the warrior cat clangen game"
+license = "MPL-2.0"
+authors = [
+    "Sablesteel <noemail@null.com>"
+]
+readme = "README.md"
+homepage = "https://sablesteel.itch.io/clan-gen-fan-edit"
+repository = "https://github.com/Thlumyn/clangen/"
+keywords = ["warriorcats", "fanedit", "game", "pygame"]
+
+[tool.poetry.dependencies]
+python = ">=3.7.2,<3.12"
+pygame = "2.2.0"
+ujson = "5.7.0"
+pygame-gui = "0.6.8"
+platformdirs = "=3.1.0"
+
+pypresence = {version = "4.2.1", optional = true}
+
+[tool.poetry.group.test.dependencies]
+pylint = "^2.17.0"
+
+[tool.poetry.group.build]
+optional = true
+[tool.poetry.group.build.dependencies]
+pyinstaller = "^5.9.0"
+pillow = "^9.4.0"
+setuptools = "^67.6.0"
+wheel = "^0.40.0"
+
+[tool.poetry.group.dev.dependencies]
+pypresence = "^4.2.1"
+pyinstaller = "^5.9.0"
+pillow = "^9.4.0"
+setuptools = "^67.6.0"
+wheel = "^0.40.0"
+pylint = "^2.17.0"
+
+
+[tool.poetry.extras]
+discord = ["pypresence"]

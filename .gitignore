@@ -94,6 +94,9 @@ saves\
 saves\clanlist.txt
 saves\settings.txt
 
+# Logs
+logs/
+
 # pyenv
 #   For a library or package, you might want to ignore these files since the code is
 #   intended to run in multiple environments; otherwise, check them in:
@@ -159,14 +162,8 @@ scripts/__pycache__/**
 .vscode/launch.json
 .idea/clan_gen_working.iml
 .idea/misc.xml
-.idea/misc.xml
-.idea/clan_gen_working.iml
-.idea/misc.xml
-.idea/clan_gen_working.iml
 
-
-tests/testSaves
-tests\testSaves
 
 saves/currentclan.txt
-saves\currentclan.txt
+
+tests/testSaves

@@ -103,24 +103,26 @@
     "tags": ["training", "platonic", "comfort", "trust", "blunt_force_injury", "death", "scar", "LEFTEAR", "p_l_to_r_c", "s_c_to_r_c", "patrol_to_p_l", "patrol_to_r_c"],
     "intro_text": "r_c is trailing behind the patrol when there is a mighty clatter of stones from below them. They look around wildly, just in time for the world to tip upside-down as the scree slope beneath them collapses.",
     "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
-    "chance_of_success": 90,
+    "chance_of_success": 50,
     "exp": 20,
     "success_text": [
         "Their Clanmates come running at their yowls, and r_c is soon freed, shaken but unharmed. The patrol settles down as everyone comforts each other.",
         "p_l digs through the loose rocks, helping r_c clear them away enough for the other cat to scramble free.",
-        "Without letting themselves panic, s_c carefully assesses the collapsed slope trapping their Clanmate. They point out a stable path to dig them out from above, and r_c is recovered, scared but okay.",
+        "Without letting themselves panic, s_c carefully assesses the collapsed slope trapping their Clanmate. They find a stable path to dig them out from above, and r_c is recovered, scared but okay.",
         "Creeping in as close as possible, s_c purrs to r_c, keeping them calm as the patrol carefully digs down to them. r_c blinks up at them, holding on to their presence in the scary situation."
     ],
     "fail_text": [
         "The patrol works all day to free r_c and gets nothing else done.",
-        "Harshly, s_c tells r_c that they're on their own - this patrol is too important to wait for some idiot who got stuck.",
+        "As s_c rarely has patience for other cats, r_c tells them harshly that they don't have time for some idiot who got stuck, making s_c resentful as they dig themselves out.",
         "Hurt and wheezing, r_c hears the patrol panicking as they drift to StarClan.",
-        "The patrol eventually manages to rescue r_c, but they need to be helped back to camp, battered and injured."
+        "The patrol eventually manages to rescue r_c, but they need to be helped back to camp, battered and injured.",
+        "The patrol can't help s_c in time, and as s_c starts to drift off to StarClan, the eyes of r_c glint malevolently. Was this...? s_c doesn't have a chance to finish their last thought.",
+        "Even though s_c made it out, they swear someone pushed them, and blame r_c. r_c denies it and says they should get s_c back to camp to get their injury looked at."
     ],
     "win_skills": ["very smart", "extremely smart"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
-    "min_cats": 2,
+    "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null,
@@ -131,13 +133,81 @@
     ]
 },
 {
-    "patrol_id": "mtn_train_stuck2",
+    "patrol_id": "mnt_train_stuck2",
+    "biome": "plains",
+    "season": "Any",
+    "tags": ["training", "platonic", "comfort", "trust", "blunt_force_injury", "death", "scar", "LEFTEAR", "p_l_to_r_c", "s_c_to_r_c", "patrol_to_p_l", "patrol_to_r_c"],
+    "intro_text": "r_c is trailing behind p_l when there is a mighty clatter of stones from below them. They look around wildly, just in time for the world to tip upside-down as the scree slope beneath them collapses.",
+    "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+        "p_l comes running at their yowls, and r_c is soon freed, shaken but unharmed. The cats settle down as they comfort each other.",
+        "p_l digs through the loose rocks, helping r_c clear it away enough for the other cat to scramble free.",
+        "Without letting themselves panic, s_c carefully assesses the collapsed slope trapping their Clanmate. They find a stable path to dig them out from above, and r_c is recovered, scared but okay.",
+        "Creeping in as close as possible, s_c purrs to r_c, keeping them calm as they carefully dig down to them. r_c blinks up at them, holding on to their presence in the scary situation."
+    ],
+    "fail_text": [
+        "p_l works all day to free r_c and gets nothing else done.",
+        "As s_c rarely has patience for other cats, r_c tells them harshly that they don't have time for some idiot who got stuck, making s_c resentful as they dig themselves out.",
+        "Hurt and wheezing, r_c hears p_l panicking as they drift to StarClan.",
+        "p_l eventually manages to rescue r_c, but they need to be helped back to camp, battered and injured."
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise", "inquisitive"],
+    "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "bossy"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        "r_c carries a scar from being trapped on patrol",
+        "r_c tragically died after being trapped on patrol.",
+        "died after being trapped on patrol"
+    ]
+},
+{
+    "patrol_id": "mtn_train_stuck3",
+    "biome": "plains",
+    "season": "Any",
+    "tags": ["training", "romantic", "comfort", "trust", "blunt_force_injury", "death", "scar", "LEFTEAR", "p_l_to_r_c", "s_c_to_r_c", "patrol_to_p_l", "patrol_to_r_c"],
+    "intro_text": "r_c is trailing behind p_l when there is a mighty clatter of stones from below them. They look around wildly, just in time for the world to tip upside-down as the scree slope beneath them collapses.",
+    "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+        "p_l comes running at their yowls, and r_c is soon freed, shaken but unharmed. r_c has never noticed how strong p_l is before.",
+        "p_l digs through the loose rocks, helping r_c clear it away enough for the other cat to scramble free. r_c admires how smart p_l is.",
+        "Without letting themselves panic, s_c carefully assesses the collapsed slope trapping their Clanmate. They point out a stable path to dig them out from above, and r_c is recovered, scared but okay, and impressed by s_c's wits.",
+        "Creeping in as close as possible, s_c purrs to r_c, keeping them calm as they carefully dig down to them. r_c blinks up at them, holding on to their presence in the scary situation."
+    ],
+    "fail_text": [
+        "p_l works all day to free r_c and gets nothing else done.",
+        "As s_c rarely has patience for other cats, r_c tells them harshly that they don't have time for some idiot who got stuck, making s_c resentful as they dig themselves out.",
+        "Hurt and wheezing, r_c hears p_l panicking as they drift to StarClan.",
+        "p_l eventually manages to rescue r_c, but they need to be helped back to camp, battered and injured."
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise", "inquisitive"],
+    "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "bossy"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        "r_c carries a scar from being trapped on patrol",
+        "r_c tragically died after being trapped on patrol.",
+        "died after being trapped on patrol"
+    ]
+},
+{
+    "patrol_id": "mtn_train_stuck4",
     "biome": "mountainous",
     "season": "Any",
     "tags": ["training", "blunt_force_injury", "death", "scar", "TOETRAP"],
     "intro_text": "r_c is training alone out on the mountainside when suddenly, there's a mighty clatter of stones somewhere below them. r_c looks around wildly - just in time for the world to tip upside-down as the scree slope beneath them collapses.",
     "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
-    "chance_of_success": 70,
+    "chance_of_success": 40,
     "exp": 20,
     "success_text": [
         "r_c spends the entire day carefully working their way free and gets nothing else done, but at least they're unharmed.",

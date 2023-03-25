@@ -21,9 +21,11 @@
 			"apprentice": 1.5,
 			"elder": 1.5,
 			"queen": 4,
-			"kitten": 0.5
+			"kitten": 0.5,
+			"newborn": 0.2
 		},
 		"feeding_order":[
+			"newborn",
 			"kitten",
 			"queen",
 			"elder",
@@ -38,12 +40,14 @@
 		],
 		"hunter_bonus": {"fantastic hunter": 3, "great hunter": 2, "good hunter": 1},
 		"hunter_exp_bonus": {
-			"very_low": 1,
-			"low": 2,
-			"average": 3,
-			"high": 4,
-			"master": 5,
-			"max": 7
+			"untrained": 0.1,
+			"trainee": 1,
+			"prepared": 2,
+			"competent": 3,
+			"proficient": 4,
+			"skilled": 5,
+			"expert": 6,
+			"master": 7
 		},
 		"comment": [
 			"activate_deaths - activates the whole system, otherwise nutrition status of the cats doesn't have an effect",
@@ -64,12 +68,95 @@
 		},
 		"compatibility_bonus": 3,
 		"passive_influence": 4,
-		"chance_for_neutral": 6
+		"chance_for_neutral": 6,
+		"chance_of_special_group": 4,
+		"chance_romantic_not_mate": 10,
+		"comment":[
+			"chance_for_neutral - how high the chance is to make the interaction of the relationship to a 'neutral' instead of negative or positive",
+			"chance_romantic_not_mate - the base chance of an romantic interaction with another cat, when a cat has a mate"
+		]
+	},
+	"new_cat": {
+		"parent_buff": {
+			"kit_to_parent": {
+				"romantic": 0,
+				"platonic": 40,
+				"dislike": 0,
+				"admiration": 30,
+				"comfortable": 40,
+				"jealousy": 0,
+				"trust": 50
+			},
+			"parent_to_kit": {
+				"romantic": 0,
+				"platonic": 40,
+				"dislike": 0,
+				"admiration": 30,
+				"comfortable": 40,
+				"jealousy": 0,
+				"trust": 30
+			}
+		},
+		"sib_buff": {
+			"cat1_to_cat2": {
+				"romantic": 0,
+				"platonic": 40,
+				"dislike": 0,
+				"admiration": 10,
+				"comfortable": 40,
+				"jealousy": 0,
+				"trust": 30
+			},
+			"cat2_to_cat1": {
+				"romantic": 0,
+				"platonic": 40,
+				"dislike": 0,
+				"admiration": 10,
+				"comfortable": 40,
+				"jealousy": 0,
+				"trust": 30
+			}
+		},
+		"rel_buff":{
+			"new_to_clan_cat": {
+				"romantic": 0,
+				"platonic": 15,
+				"dislike": 0,
+				"admiration": 10,
+				"comfortable": 15,
+				"jealousy": 0,
+				"trust": 15
+			},
+			"clan_cat_to_new":{
+				"romantic": 0,
+				"platonic": 15,
+				"dislike": 0,
+				"admiration": 5,
+				"comfortable": 10,
+				"jealousy": 0,
+				"trust": 10
+			}
+		},
+		"cat_amount_welcoming": 3
 	},
 	"pregnancy": {
 		"primary_chance_mated": 50,
 		"primary_chance_unmated": 110,
-		"random_affair_chance": 70
+		"random_affair_chance": 50,
+		"unmated_random_affair_chance": 10,
+		"one_kit_possibility": {"young adult": 8, "adult": 9, "senior adult": 10, "senior": 4},
+        "two_kit_possibility": {"young adult": 10, "adult": 13, "senior adult": 15, "senior": 3},
+        "three_kit_possibility": {"young adult": 17, "adult": 15, "senior adult": 5, "senior": 1},
+        "four_kit_possibility": {"young adult": 12, "adult": 8, "senior adult": 2, "senior": 0},
+        "five_kit_possibility": {"young adult": 6, "adult": 2, "senior adult": 0, "senior": 0},
+        "max_kit_possibility": {"young adult": 2, "adult": 0, "senior adult": 0, "senior": 0},
+		"min_kits": 1,
+		"max_kits": 6,
+		"comment": [
+			"The kit number is incremental. It is 1-6 as default so if you change these numbers, you should probably keep this in mind.",
+			"As in, your max kits number should probably be 5 more than the min kits number.",
+			"But that's not required - just makes more sense that way with how the litters are generated."
+		]
 	},
 	"cat_generation": {
 		"base_permanent_condition": 90,
@@ -77,7 +164,18 @@
 		"base_female_tortie": 4,
 		"base_heterochromia": 120,
 		"direct_inheritance": 15,
-		"wildcard_tortie": 9
+		"wildcard_tortie": 9,
+		"vit_chance": 10,
+		"random_point_chance": 6
+	},
+	"accessory_generation": {
+		"base_acc_chance": 150,
+		"med_modifier": -80,
+		"baby_modifier": -20,
+		"elder_modifier": 20,
+		"happy_trait_modifier": -30,
+		"grumpy_trait_modifier": 30,
+		"ceremony_modifier": -20
 	},
 	"fading": {
 		"age_to_fade": 202,
@@ -95,10 +193,18 @@
 	"lost_cat": {
 		"rejoin_chance": 20
 	},
-	"cotc_generation": {
-		"kittypet_chance": 30,
-		"rogue_chance": 30,
-		"loner_chance": 30
+	"cat_ages": {
+		"newborn": [0, 0],
+		"kitten": [1, 5],
+		"adolescent": [6, 11],
+		"young adult": [12, 47],
+        "adult": [48, 95],
+        "senior adult": [96, 119],
+        "senior": [120, 300],
+		"comment": [
+			"These HAVE to be in the correct order: where one ends, the next one begins on the next number.",
+			"If you DON'T DO THIS, your game WILL break."
+		]
 	},
 	"patrol_generation": {
 		"classic_difficulty_modifier": 1,
@@ -130,6 +236,29 @@
 		"cruel season_death_chance": 150
 	},
 	"clan_creation": {
-		"rerolls": 3
+		"rerolls": 3,
+		"comment": "Set this to -1 for it to be infinite"
+	},
+	"graduation": {
+		"base_app_timeskip_ex": [[3, 12],[5, 6]],
+		"base_med_app_timeskip_ex": [[2, 7],[2, 3]],
+		"max_apprentice_age": {
+			"medicine cat apprentice": 30,
+			"apprentice": 25,
+			"mediator apprentice": 25
+		},
+		"min_graduating_age": 10
+	},
+
+
+	"lock_season": false, 
+	"comment": "Forces the season to be locked at the clan's starting_season",
+
+
+
+	"fun": {
+		"all_cats_are_newborn": false,
+		"newborns_can_roam": false,
+		"newborns_can_patrol": false
 	}
 }

@@ -1,33 +1,38 @@
 import unittest
-from unittest.mock import patch
 import os
 import shutil
 
+os.environ["SDL_VIDEODRIVER"] = "dummy"
+os.environ["SDL_AUDIODRIVER"] = "dummy"
+
+from scripts.datadir import get_save_dir
 from scripts.game_structure.game_essentials import Game
 
+if not os.path.exists('tests/testSaves'):
+    num_example_saves = 0
+else:
+    _tmp = os.listdir('tests/testSaves')
+    num_example_saves = 0
+    for i in _tmp:
+        if i.startswith('save'):
+            num_example_saves += 1
 
-_tmp = os.listdir('tests/testSaves')
-num_example_saves = 0
-for i in _tmp:
-    if i.startswith('save'):
-        num_example_saves += 1
 
-
-@unittest.skipIf(num_example_saves == 0, "No example saves found. Run 'git submodule update --init --recursive' to download example saves")
+@unittest.skipIf(num_example_saves == 0, "No example saves found. Download the contents of https://github.com/ImLvna/clangen-unittest-saves into tests/testSaves to run unittest")
 class LoadSave(unittest.TestCase):
 
     def setUp(self):
-        if os.path.exists('saves'):
-            shutil.move('saves', 'saves_backup')
+        if os.path.exists(get_save_dir()):
+            shutil.move(get_save_dir(), 'saves_backup')
 
     def tearDown(self):
-        if os.path.exists('saves'):
-            shutil.rmtree('saves')
+        if os.path.exists(get_save_dir()):
+            shutil.rmtree(get_save_dir())
         if os.path.exists('saves_backup'):
-            shutil.move('saves_backup', 'saves')
+            shutil.move('saves_backup', get_save_dir())
 
     def old_implimentation(self):
-        with open('saves/clanlist.txt', 'r') as read_file:
+        with open(get_save_dir() + '/clanlist.txt', 'r') as read_file:
             clan_list = read_file.read()
             if_clans = len(clan_list)
         if if_clans > 0:
@@ -41,11 +46,11 @@ class LoadSave(unittest.TestCase):
         return Game().read_clans()
     
     def example_save(self, id):
-        if os.path.exists('saves'):
-            shutil.rmtree('saves')
+        if os.path.exists(get_save_dir()):
+            shutil.rmtree(get_save_dir())
 
         #copy tests/testSaves/save<id> to saves
-        shutil.copytree('tests/testSaves/save' + str(id), 'saves')
+        shutil.copytree('tests/testSaves/save' + str(id), get_save_dir())
     
 
     def test_check_current_clan(self):
@@ -53,7 +58,7 @@ class LoadSave(unittest.TestCase):
             with self.subTest(i=i):
                 print("Checking current clan for save " + str(i))
                 self.example_save(i)
-                fileList = os.listdir('saves')
+                fileList = os.listdir(get_save_dir())
                 if 'currentclan.txt' in fileList:
                     self.skipTest("Save " + str(i) + " already migrated")
                 old_out = self.old_implimentation()
@@ -71,7 +76,7 @@ class LoadSave(unittest.TestCase):
             with self.subTest(i=i):
                 print("Checking clan list for save " + str(i))
                 self.example_save(i)
-                fileList = os.listdir('saves')
+                fileList = os.listdir(get_save_dir())
                 if 'currentclan.txt' in fileList:
                     self.skipTest("Save " + str(i) + " already migrated")
                 old_out = self.old_implimentation().sort()
@@ -80,24 +85,24 @@ class LoadSave(unittest.TestCase):
 
                 self.assertEqual(old_out, new_out, "Clan list not saved correctly for save " + str(i))
 
-@unittest.skipIf(num_example_saves == 0, "No example saves found. Run 'git submodule update --init --recursive' to download example saves")
+@unittest.skipIf(num_example_saves == 0, "No example saves found. Download the contents of https://github.com/ImLvna/clangen-unittest-saves into tests/testSaves to run unittest")
 class MigrateSave(unittest.TestCase):
     def setUp(self):
-        if os.path.exists('saves'):
-            shutil.move('saves', 'saves_backup')
+        if os.path.exists(get_save_dir()):
+            shutil.move(get_save_dir(), 'saves_backup')
 
     def tearDown(self):
-        if os.path.exists('saves'):
-            shutil.rmtree('saves')
+        if os.path.exists(get_save_dir()):
+            shutil.rmtree(get_save_dir())
         if os.path.exists('saves_backup'):
-            shutil.move('saves_backup', 'saves')
+            shutil.move('saves_backup', get_save_dir())
 
     def example_save(self, id):
-        if os.path.exists('saves'):
-            shutil.rmtree('saves')
+        if os.path.exists(get_save_dir()):
+            shutil.rmtree(get_save_dir())
 
         #copy tests/testSaves/save<id> to saves
-        shutil.copytree('tests/testSaves/save' + str(id), 'saves')
+        shutil.copytree('tests/testSaves/save' + str(id), get_save_dir())
 
     def test_migrate_save_onread(self):
         
@@ -105,19 +110,19 @@ class MigrateSave(unittest.TestCase):
             with self.subTest(i=i):
                 print("Checking migration for save " + str(i))
                 self.example_save(i)
-                fileList = os.listdir('saves')
+                fileList = os.listdir(get_save_dir())
                 if 'currentclan.txt' in fileList:
                     self.skipTest("Save " + str(i) + " already migrated")
                 
-                with open('saves/clanlist.txt', 'r') as read_file:
+                with open(get_save_dir() + '/clanlist.txt', 'r') as read_file:
                     clan_name = read_file.read().strip().splitlines()[0]
 
                 Game().read_clans() # the load save function should migrate the save
 
-                fileList = os.listdir('saves')
+                fileList = os.listdir(get_save_dir())
                 self.assertIn('currentclan.txt', fileList, "Save " + str(i) + " not migrated")
 
-                with open('saves/currentclan.txt', 'r') as read_file:
+                with open(get_save_dir() + '/currentclan.txt', 'r') as read_file:
                     curclan = read_file.read().strip()
 
                 self.assertEqual(curclan, clan_name, "Save " + str(i) + " not migrated correctly")

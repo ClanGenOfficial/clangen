@@ -8,6 +8,7 @@ from sys import exit
 from re import sub
 
 from scripts.cat.names import Name
+
 from scripts.datadir import get_save_dir
 from scripts.game_structure import image_cache
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
@@ -15,8 +16,10 @@ from scripts.utility import scale, quit
 from scripts.game_structure.game_essentials import game, MANAGER
 
 
+
 class SaveCheck(UIWindow):
     def __init__(self, last_screen, isMainMenu, mm_btn):
+        game.switches['window_open'] = True
         print("Save Check Window Opened")
         if game.is_close_menu_open:
             print("Save Check Window already open")
@@ -56,7 +59,7 @@ class SaveCheck(UIWindow):
             self.message,
             scale(pygame.Rect((40, 40), (520, -1))),
             line_spacing=1,
-            object_id="",
+            object_id="#text_box_30_horizcenter",
             container=self
         )
 
@@ -102,12 +105,10 @@ class SaveCheck(UIWindow):
                     game.switches['cur_screen'] = 'start screen'
                     game.switch_screens = True
                     self.kill()
+                    game.switches['window_open'] = False
                 else:
                     game.is_close_menu_open = False
-                    game.rpc.close()
-                    pygame.display.quit()
-                    pygame.quit()
-                    exit()
+                    quit(savesettings=False, clearevents=False)
             elif event.ui_element == self.save_button:
                 if game.clan is not None:
                     self.save_button_saving_state.show()
@@ -119,6 +120,7 @@ class SaveCheck(UIWindow):
                     self.save_button_saved_state.show()
             elif event.ui_element == self.back_button:
                 game.is_close_menu_open = False
+                game.switches['window_open'] = False
                 self.kill()
                 if self.isMainMenu:
                     self.mm_btn.enable()
@@ -132,6 +134,7 @@ class DeleteCheck(UIWindow):
                          window_display_title='Delete Check',
                          object_id='#delete_check_window',
                          resizable=False)
+        game.switches['window_open'] = True
         self.clan_name = clan_name
         self.reloadscreen = reloadscreen
 
@@ -173,19 +176,24 @@ class DeleteCheck(UIWindow):
 
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.delete_it_button:
+                game.switches['window_open'] = False
                 print("delete")
-                rempath = "saves/" + self.clan_name
+                rempath = get_save_dir() + "/" + self.clan_name
                 shutil.rmtree(rempath)
-                os.remove(rempath + "clan.json")
-
-
+                if os.path.exists(rempath + 'clan.json'):
+                    os.remove(rempath + "clan.json")
+                elif os.path.exists(rempath + 'clan.txt'):
+                    os.remove(rempath + "clan.txt")
+                else:
+                    print("No clan.json/txt???? clan prolly wasnt initalized kekw")
                 self.kill()
-
                 self.reloadscreen('switch clan screen')
 
             elif event.ui_element == self.go_back_button:
+                game.switches['window_open'] = False
                 self.kill()
             elif event.ui_element == self.back_button:
+                game.switches['window_open'] = False
                 game.is_close_menu_open = False
                 self.kill()
 
@@ -196,6 +204,7 @@ class GameOver(UIWindow):
                          window_display_title='Game Over',
                          object_id='#game_over_window',
                          resizable=False)
+        game.switches['window_open'] = True
         self.clan_name = str(game.clan.name + 'Clan')
         self.last_screen = last_screen
         self.game_over_message = UITextBoxTweaked(
@@ -211,7 +220,7 @@ class GameOver(UIWindow):
             f"(leaving will not erase the save file)",
             scale(pygame.Rect((40, 310), (520, -1))),
             line_spacing=.8,
-            object_id="#cat_patrol_info_box",
+            object_id="#text_box_22_horizcenter",
             container=self
         )
 
@@ -239,9 +248,10 @@ class GameOver(UIWindow):
                 game.last_screen_forupdate = game.switches['cur_screen']
                 game.switches['cur_screen'] = 'start screen'
                 game.switch_screens = True
+                game.switches['window_open'] = False
                 self.kill()
             elif event.ui_element == self.not_yet_button:
-
+                game.switches['window_open'] = False
                 self.kill()
 
 class ChangeCatName(UIWindow):

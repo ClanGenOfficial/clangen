@@ -32,13 +32,13 @@
         "Is stocking up on yew berries",
         "Is stocking up on nightshade",
         "Is stocking up on watermint",
-        "Put herbs in prey to give cats stomach aches",
+        "Put herbs in prey to give cats stomachaches",
         "Refused to treat anyone today",
         "Is upset that they can't fight alongside the warriors",
         "Wishes to fight alongside the warriors",
         "Thinks they'd be an amazing leader",
         "Talks to the leader and deputy about war",
-        "Ignored the low herb stocks, instead practicing battle moves"
+        "Ignores the low herb stocks, instead practicing battle moves"
     ],
     "bold": [
         "Decides to try a new herb as treatment for an injury"
@@ -119,7 +119,7 @@
         "Seems to be hiding something in the medicine they give to the leader"
     ],
     "strange": [
-        "Insists everyone eat chamomile leaves everyday at moonhigh",
+        "Insists everyone eat chamomile leaves at moonhigh",
         "Sleeps in the middle of the clearing",
         "Looks dazed",
         "Hisses at the kits randomly"

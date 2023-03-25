@@ -1,0 +1,106 @@
+[
+	{
+		"id": "jel_de_low1",
+		"intensity": "low",
+		"interactions": [
+			"m_c thinks r_c is very helpful!"
+		]
+	},
+	{
+		"id": "jel_de_med1",
+		"interactions": [
+			"m_c had r_c surprise them with something nice."
+		]
+	},
+	{
+		"id": "jel_de_med2",
+		"interactions": [
+			"m_c swaps favorite prey with r_c."
+		],
+		"reaction_random_cat": {
+			"jealousy": "decrease"
+		}
+	},
+	{
+		"id": "jel_de_med3",
+		"interactions": [
+			"m_c always thought r_c had it all figured out, so they're surprised when r_c asks for help."
+		],
+		"main_status_constraint": [
+			"kitten",
+			"apprentice",
+			"mediator apprentice",
+			"medicine cat apprentice",
+			"warrior"
+		],
+		"random_status_constraint": [
+			"warrior",
+			"elder",
+			"medicine cat",
+			"mediator",
+			"deputy"
+		]
+	},
+	{
+		"id": "jealousy_app_de_med1",
+		"interactions": [
+			"m_c has been listening to r_c talk about how hard training has been.",
+			"m_c comforts r_c after a hard day's training."
+		],
+		"main_status_constraint": [
+			"apprentice",
+			"mediator apprentice",
+			"medicine cat apprentice"
+		],
+		"random_status_constraint": [
+			"medicine cat apprentice",
+			"apprentice",
+			"mediator apprentice"
+		],
+		"reaction_random_cat": {
+			"comfortable": "increase",
+			"platonic": "increase"
+		},
+		"also_influences": {
+			"platonic": "increase"
+		}
+	},
+	{
+		"id": "jealousy_app_de_med2",
+		"interactions": [
+			"m_c has been listening to r_c talk about how difficult herb memorization is.",
+			"m_c helps r_c wash mouse bile off of their paws."
+		],
+		"main_status_constraint": [
+			"apprentice",
+			"mediator apprentice",
+			"medicine cat apprentice"
+		],
+		"random_status_constraint": [
+			"medicine cat apprentice"
+		],
+		"reaction_random_cat": {
+			"comfortable": "increase"
+		},
+		"also_influences": {
+			"admiration": "increase"
+		}
+	},
+	{
+		"id": "jel_de_high1",
+		"intensity": "high",
+		"interactions": [
+			"m_c is really surprised that r_c's life isn't as easy as they thought it was."
+		]
+	},
+	{
+		"id": "jel_de_high2",
+		"intensity": "high",
+		"interactions": [
+			"m_c sees that r_c's piece of prey looks tastier and asks if they'd like to swap. They agree happily, saying they like that one better."
+		],
+		"reaction_random_cat": {
+			"jealousy": "decrease"
+		}
+	}
+]
