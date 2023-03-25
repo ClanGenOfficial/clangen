@@ -92,19 +92,12 @@
             "The scrapes m_c had gotten seemed minor at first, but even the smallest wounds can get infected."
         ]
     },
-    "splinter": {
+    "small cut": {
         "an infected wound": [
-            "When r_c finally manages to pull out the stubborn splinter, pus erupts from m_c's wound, and it's clear that the area is infected.",
-            "The splinter in m_c's paw still hasn't come out, but the area around it has begun to get inflamed and gross-looking."
+            "r_c takes a closer look at m_c's little cut, concern on their face. It seems the cut wasn't kept clean enough and has become infected.",
+            "Rather than healing, the small cut m_c got earlier has become angry and painful. They worry that it could be infected."
 
         ]
-    },
-    "thorn in their paw": {
-        "an infected wound": [
-            "Though r_c managed to get the thorn out earlier, the wound in m_c's pad looks inflamed. Infection must be setting in.",
-            "A bit of the thorn that was in m_c's paw still hasn't come out, but the area around it has begun to get inflamed and gross-looking."
-    
-            ]
     },
     "torn pelt": {
         "an infected wound": [

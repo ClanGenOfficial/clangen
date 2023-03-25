@@ -315,16 +315,20 @@ class Condition_Events():
                 possible_conditions = scar_to_condition.get(scar)
                 perm_condition = random.choice(possible_conditions)
             elif scar is None:
-                if INJURIES[injury_name] is not None:
-                    conditions = INJURIES[injury_name]["cause_permanent"]
-                    for x in conditions:
-                        if x in scarless_conditions:
-                            possible_conditions.append(x)
+                try:
+                    if INJURIES[injury_name] is not None:
+                        conditions = INJURIES[injury_name]["cause_permanent"]
+                        for x in conditions:
+                            if x in scarless_conditions:
+                                possible_conditions.append(x)
 
-                    if len(possible_conditions) > 0 and not int(random.random() * 40):
-                        perm_condition = random.choice(possible_conditions)
-                    else:
-                        return perm_condition
+                        if len(possible_conditions) > 0 and not int(random.random() * 40):
+                            perm_condition = random.choice(possible_conditions)
+                        else:
+                            return perm_condition
+                except KeyError:
+                    print("WARNING: injury couldn't be found in injury dict! no scar was given")
+                    return perm_condition
 
         elif condition is not None:
             perm_condition = condition
@@ -487,10 +491,14 @@ class Condition_Events():
                     event, scar_given = self.scar_events.handle_scars(cat, injury)
                     game.herb_events_list.append(event)
                 else:
-                    # gather potential event strings for gotten condition
-                    possible_string_list = INJURY_HEALED_STRINGS[injury]
-                    random_index = int(random.random() * len(possible_string_list))
-                    event = possible_string_list[random_index]
+                    try:
+                        # gather potential event strings for gotten condition
+                        possible_string_list = INJURY_HEALED_STRINGS[injury]
+                        random_index = int(random.random() * len(possible_string_list))
+                        event = possible_string_list[random_index]
+                    except KeyError:
+                        print("WARNING: the condition couldn't be found in the healed strings dict! placeholder string was used.")
+                        event = "m_c's injury has healed."
                     event = event_text_adjust(Cat, event, cat, other_cat=None)  # adjust the text
                     game.herb_events_list.append(event)
 
@@ -748,35 +756,39 @@ class Condition_Events():
                                 old_risk['chance'] = risk["chance"] + 10
                             print('RISK UPDATED', risk['chance'], old_risk['chance'])
 
-                # gather potential event strings for gotten condition
-                if dictionary == cat.illnesses:
-                    possible_string_list = ILLNESS_RISK_STRINGS[condition][new_condition_name]
-                elif dictionary == cat.injuries:
-                    possible_string_list = INJURY_RISK_STRINGS[condition][new_condition_name]
-                else:
-                    possible_string_list = PERM_CONDITION_RISK_STRINGS[condition][new_condition_name]
-
-                # if it is a progressive condition, then remove the old condition and keep the new one
-                if condition in progression and new_condition_name == progression.get(condition):
-                    removed_condition = True
-                    dictionary.pop(condition)
-                else:
-                    removed_condition = False
-
-                # choose event string and ensure clan's med cat number aligns with event text
-                random_index = int(random.random() * len(possible_string_list))
-                med_list = get_med_cats(Cat)
                 med_cat = None
-                if len(med_list) == 0:
-                    if random_index == 0:
-                        random_index = 1
+                removed_condition = False
+                try:
+                    # gather potential event strings for gotten condition
+                    if dictionary == cat.illnesses:
+                        possible_string_list = ILLNESS_RISK_STRINGS[condition][new_condition_name]
+                    elif dictionary == cat.injuries:
+                        possible_string_list = INJURY_RISK_STRINGS[condition][new_condition_name]
                     else:
-                        med_cat = None
-                else:
-                    med_cat = random.choice(med_list)
-                    if med_cat == cat:
-                        random_index = 1
-                event = possible_string_list[random_index]
+                        possible_string_list = PERM_CONDITION_RISK_STRINGS[condition][new_condition_name]
+
+                    # if it is a progressive condition, then remove the old condition and keep the new one
+                    if condition in progression and new_condition_name == progression.get(condition):
+                        removed_condition = True
+                        dictionary.pop(condition)
+
+                    # choose event string and ensure clan's med cat number aligns with event text
+                    random_index = int(random.random() * len(possible_string_list))
+                    med_list = get_med_cats(Cat)
+                    if len(med_list) == 0:
+                        if random_index == 0:
+                            random_index = 1
+                        else:
+                            med_cat = None
+                    else:
+                        med_cat = random.choice(med_list)
+                        if med_cat == cat:
+                            random_index = 1
+                    event = possible_string_list[random_index]
+                except KeyError:
+                    print("WARNING: condition couldn't be found in the risk strings! placeholder string was used")
+                    event = "m_c's condition has gotten worse."
+
                 event = event_text_adjust(Cat, event, cat, other_cat=med_cat)  # adjust the text
                 event_list.append(event)
 
@@ -811,7 +823,13 @@ class Condition_Events():
         clan_herbs = set()
         needed_herbs = set()
         clan_herbs.update(game.clan.herbs.keys())
-        needed_herbs.update(source[condition]["herbs"])
+        try:
+            needed_herbs.update(source[condition]["herbs"])
+        except KeyError:
+            print("WARNING: condition does not exist in it's condition dict! if the condition is 'thorn in paw' or "
+                  "'splinter', disregard this! otherwise, check that your condition is in the correct dict or report "
+                  "this as a bug.")
+            return
         herb_set = clan_herbs.intersection(needed_herbs)
         usable_herbs = list(herb_set)
 
