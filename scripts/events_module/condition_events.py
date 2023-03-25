@@ -366,8 +366,8 @@ class Condition_Events():
         # making a copy, so we can iterate through copy and modify the real dict at the same time
         illnesses = deepcopy(cat.illnesses)
         for illness in illnesses:
-            # print('SAVE FILE', cat.name, cat.illnesses)
-            # print('COPY', cat.name, illnesses)
+            print('SAVE FILE', cat.name, cat.illnesses)
+            print('COPY', cat.name, illnesses)
             # use herbs
             self.use_herbs(cat, illness, illnesses, ILLNESSES)
 
@@ -453,8 +453,8 @@ class Condition_Events():
 
         injuries = deepcopy(cat.injuries)
         for injury in injuries:
-            # print('SAVE FILE', cat.name, cat.injuries)
-            # print('COPY', cat.name, injuries)
+            print('SAVE FILE', cat.name, cat.injuries)
+            print('COPY', cat.name, injuries)
             self.use_herbs(cat, injury, injuries, INJURIES)
 
             skipped = cat.moon_skip_injury(injury)
