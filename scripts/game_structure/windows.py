@@ -256,14 +256,13 @@ class GameOver(UIWindow):
 
 class ChangeCatName(UIWindow):
     """This window allows the user to change the cat's name"""
-    def __init__(self, cat, screen):
+    def __init__(self, cat):
         super().__init__(scale(pygame.Rect((400, 200), (800, 370))),
                          window_display_title='Change Cat Name',
                          object_id='#change_cat_name_window',
                          resizable=False)
         game.switches['window_open'] = True
         self.the_cat = cat
-        self.profile_screen = screen
         self.back_button = UIImageButton(
             scale(pygame.Rect((740, 10), (44, 44))),
             "",

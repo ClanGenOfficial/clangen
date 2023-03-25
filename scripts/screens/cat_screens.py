@@ -280,8 +280,7 @@ class ProfileScreen(Screens):
         self.profile_elements = {}
 
     def handle_event(self, event):
-        if self.og_name != self.the_cat.name:
-            self.update_cat_name()
+
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
 
             if game.switches['window_open']:
