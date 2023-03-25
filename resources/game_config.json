@@ -249,6 +249,9 @@
 		},
 		"min_graduating_age": 10
 	},
+	"save_load": {
+		"load_integrity_checks": true
+	},
 
 
 	"lock_season": false, 

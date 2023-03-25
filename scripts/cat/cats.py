@@ -855,7 +855,7 @@ class Cat():
 
     def update_traits(self):
         """Updates the traits of a cat upon ageing up.  """
-        if self.moons == 6:
+        if self.status in ["apprentice", "medicine cat apprentice", "mediator apprentice"]:
             chance = randint(0, 5)  # chance for cat to gain trait that matches their previous trait's personality group
             if chance == 0:
                 self.trait = choice(self.traits)
@@ -869,7 +869,7 @@ class Cat():
                             self.trait = choice(self.traits)
                         else:
                             self.trait = chosen_trait
-        elif self.moons == 12:
+        elif self.status in ["warrior", "medicine cat", "mediator"]:
             chance = randint(0, 9) + int(self.patrol_with_mentor)  # chance for cat to gain new trait or keep old
             if chance == 0:
                 self.trait = choice(self.traits)
@@ -919,7 +919,7 @@ class Cat():
             else:
                 self.mentor_influence.insert(0, 'None')
 
-        elif self.moons == 120:
+        elif self.status in ["elder"]:
             chance = randint(0, 7)  # chance for cat to gain new trait or keep old
             if chance == 0:
                 self.trait = choice(self.traits)
@@ -1002,7 +1002,7 @@ class Cat():
         self.moons += 1
         if self.moons == 1:
             self.status = 'kitten'
-        self.update_traits()
+        # self.update_traits()
         self.in_camp = 1
 
         if self.status in ['apprentice', 'mediator apprentice']:
