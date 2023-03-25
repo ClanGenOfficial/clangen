@@ -256,6 +256,7 @@ class GameOver(UIWindow):
 
 class ChangeCatName(UIWindow):
     """This window allows the user to change the cat's name"""
+
     def __init__(self, cat):
         super().__init__(scale(pygame.Rect((600, 430), (800, 370))),
                          window_display_title='Change Cat Name',
@@ -288,10 +289,11 @@ class ChangeCatName(UIWindow):
 
         x_pos, y_pos = 75, 35
 
-        self.prefix_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((0 + x_pos, 100 + y_pos), (240, 60))),
-                                                                    placeholder_text=self.the_cat.name.prefix,
-                                                                    manager=MANAGER,
-                                                                    container=self)
+        self.prefix_entry_box = pygame_gui.elements.UITextEntryLine(
+            scale(pygame.Rect((0 + x_pos, 100 + y_pos), (240, 60))),
+            placeholder_text=self.the_cat.name.prefix,
+            manager=MANAGER,
+            container=self)
 
         self.random_prefix = UIImageButton(scale(pygame.Rect((245 + x_pos, 97 + y_pos), (68, 68))), "",
                                            object_id="#random_dice_button",
@@ -319,12 +321,13 @@ class ChangeCatName(UIWindow):
                                                    container=self)
 
         if self.the_cat.name.status in self.the_cat.name.names_dict["special_suffixes"]:
-            self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((318 + x_pos, 100 + y_pos), (240, 60))),
-                                                                        placeholder_text=
-                                                                        self.the_cat.name.names_dict["special_suffixes"]
-                                                                        [self.the_cat.name.status]
-                                                                        , manager=MANAGER,
-                                                                        container=self)
+            self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(
+                scale(pygame.Rect((318 + x_pos, 100 + y_pos), (240, 60))),
+                placeholder_text=
+                self.the_cat.name.names_dict["special_suffixes"]
+                [self.the_cat.name.status]
+                , manager=MANAGER,
+                container=self)
             if not self.the_cat.name.specsuffix_hidden:
                 self.toggle_spec_block_on.show()
                 self.toggle_spec_block_on.enable()
@@ -347,10 +350,11 @@ class ChangeCatName(UIWindow):
             self.toggle_spec_block_on.hide()
             self.toggle_spec_block_off.disable()
             self.toggle_spec_block_off.hide()
-            self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((318 + x_pos, 100 + y_pos), (240, 60))),
-                                                                        placeholder_text=self.the_cat.name.suffix
-                                                                        , manager=MANAGER,
-                                                                        container=self)
+            self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(
+                scale(pygame.Rect((318 + x_pos, 100 + y_pos), (240, 60))),
+                placeholder_text=self.the_cat.name.suffix
+                , manager=MANAGER,
+                container=self)
 
     def process_event(self, event):
         super().process_event(event)
@@ -412,6 +416,62 @@ class ChangeCatName(UIWindow):
                 self.suffix_entry_box.set_text("")
                 self.suffix_entry_box.rebuild()
                 self.suffix_entry_box.disable()
+            elif event.ui_element == self.back_button:
+                game.switches['window_open'] = False
+                game.all_screens['profile screen'].exit_screen()
+                game.all_screens['profile screen'].screen_switches()
+                self.kill()
+
+
+class SpecifyCatGender(UIWindow):
+    """This window allows the user to specify the cat's gender"""
+
+    def __init__(self, cat):
+        super().__init__(scale(pygame.Rect((600, 430), (800, 370))),
+                         window_display_title='Change Cat Gender',
+                         object_id='#change_cat_gender_window',
+                         resizable=False)
+        game.switches['window_open'] = True
+        self.the_cat = cat
+        self.back_button = UIImageButton(
+            scale(pygame.Rect((740, 10), (44, 44))),
+            "",
+            object_id="#exit_window_button",
+            container=self
+        )
+        self.heading = pygame_gui.elements.UITextBox(f"-Change {self.the_cat.name}'s Gender-"
+                                                     f"<br> You can set this to anything! "
+                                                     f"Gender alignment does not affect gameplay.",
+                                                     scale(pygame.Rect((20, 20), (760, 150))),
+                                                     object_id="#text_box_30_horizcenter_spacing_95",
+                                                     manager=MANAGER,
+                                                     container=self)
+
+        self.gender_changed = pygame_gui.elements.UITextBox("Gender Changed!",
+                                                            scale(pygame.Rect((490, 260), (800, 80))),
+                                                            visible=False,
+                                                            object_id="#text_box_30_horizleft",
+                                                            manager=MANAGER,
+                                                            container=self)
+
+        self.done_button = UIImageButton(scale(pygame.Rect((323, 270), (154, 60))), "",
+                                         object_id="#done_button",
+                                         manager=MANAGER,
+                                         container=self)
+
+        self.gender_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((200, 180), (400, 60))),
+                                                                    placeholder_text=self.the_cat.genderalign,
+                                                                    manager=MANAGER,
+                                                                    container=self)
+
+    def process_event(self, event):
+        super().process_event(event)
+
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            if event.ui_element == self.done_button:
+                if sub(r'[^A-Za-z0-9 ]+', "", self.gender_entry_box.get_text()) != "":
+                    self.the_cat.genderalign = sub(r'[^A-Za-z0-9 ]+', "", self.gender_entry_box.get_text())
+                    self.gender_changed.show()
             elif event.ui_element == self.back_button:
                 game.switches['window_open'] = False
                 game.all_screens['profile screen'].exit_screen()

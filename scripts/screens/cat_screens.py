@@ -6,8 +6,7 @@ from random import choice
 import pygame
 
 from ..datadir import get_save_dir
-from ..game_structure.windows import ChangeCatName
-
+from ..game_structure.windows import ChangeCatName, SpecifyCatGender
 
 try:
     import ujson
@@ -366,7 +365,7 @@ class ProfileScreen(Screens):
             if event.ui_element == self.change_name_button:
                 ChangeCatName(self.the_cat)
             elif event.ui_element == self.specify_gender_button:
-                self.change_screen('change gender screen')
+                SpecifyCatGender(self.the_cat)
             elif event.ui_element == self.cis_trans_button:
                 if self.the_cat.genderalign != "female" and self.the_cat.genderalign != "male":
                     self.the_cat.genderalign = self.the_cat.gender
@@ -1998,59 +1997,6 @@ class ProfileScreen(Screens):
 
     def on_use(self):
         pass
-
-
-# ---------------------------------------------------------------------------- #
-#                           change gender screen                               #
-# ---------------------------------------------------------------------------- #
-class ChangeGenderScreen(Screens):
-
-    def screen_switches(self):
-        self.hide_menu_buttons()
-
-        self.header = pygame_gui.elements.UITextBox("-Change Gender-\nYou can set this to anything. "
-                                                    "Gender alignment does not effect gameplay. ",
-                                                    scale(pygame.Rect((200, 260), (1200, -1))),
-                                                    object_id=get_text_box_theme(), manager=MANAGER)
-        self.gender_changed = pygame_gui.elements.UITextBox("Gender Changed!",
-                                                            scale(pygame.Rect((200, 480), (1200, 80))),
-                                                            object_id=get_text_box_theme(),
-                                                            visible=False, manager=MANAGER)
-        self.the_cat = Cat.all_cats.get(game.switches['cat'])
-
-        self.done_button = UIImageButton(scale(pygame.Rect((730, 564), (154, 70))), "",
-                                         object_id="#done_button", manager=MANAGER)
-        self.back_button = UIImageButton(scale(pygame.Rect((50, 50), (210, 60))), "",
-                                         object_id="#back_button", manager=MANAGER)
-
-        self.gender_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((600, 400), (400, 60))),
-                                                                    placeholder_text=self.the_cat.genderalign
-                                                                    , manager=MANAGER)
-
-    def exit_screen(self):
-        self.header.kill()
-        del self.header
-        self.gender_changed.kill()
-        del self.gender_changed
-        self.gender_entry_box.kill()
-        del self.gender_entry_box
-        self.done_button.kill()
-        del self.done_button
-        self.back_button.kill()
-        del self.back_button
-
-    def on_use(self):
-        pass
-
-    def handle_event(self, event):
-        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.done_button:
-                if sub(r'[^A-Za-z0-9 ]+', "", self.gender_entry_box.get_text()) != "":
-                    self.the_cat.genderalign = sub(r'[^A-Za-z0-9 ]+', "", self.gender_entry_box.get_text())
-                    self.gender_changed.show()
-            elif event.ui_element == self.back_button:
-                self.change_screen('profile screen')
-        return
 
 
 # ---------------------------------------------------------------------------- #
