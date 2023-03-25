@@ -1,511 +1,69 @@
 [
     {
-        "id": "gen_to_dead_kit",
+        "id": "general_dark_forest_thoughts",
         "thoughts": [
-            "Is hoping r_c is well in StarClan",
-            "Is wishing r_c could've lived to see today",
-            "Is listening to stories about r_c",
-            "Is learning more about r_c"
-        ],
-        "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ],
-        "random_status_constraint": [
-            "kitten"
+            "Is practicing battle moves",
+            "Is sharpening their claws",
+            "Is slinking through the shadows",
+            "Is acting suspiciously",
+            "Is thinking about revenge",
+            "Wishes they could go to StarClan",
+            "Feels regret for their actions",
+            "Is reconsidering some of their choices in life",
+            "Is planning something",
+            "Angrily stalks through the muck",
+            "Is lashing their tail while thinking of those still living",
+            "Is fighting with another member of the Dark Forest",
+            "Wishes they could hurt those who have wronged them",
+            "Is tired of the constant mud staining their pelt",
+            "Wants to unleash mayhem on the cats who hurt them in life",
+            "Is warily watching the shadows",
+            "Is hissing at anyone who comes near",
+            "Is yowling their woes into the endless darkness",
+            "Is feeling hungry",
+            "Is digging their claws into the mud",
+            "Is sending a message to one of the cats still living",
+            "Is scheming",
+            "Found a living cat that they could manipulate",
+            "Found a living cat that they hope will help their plans come to fruition",
+            "Wishes they could destroy the Clan that wronged them",
+            "Has no regrets",
+            "Is curled up in a ball crying",
+            "Is snarling at the shadows",
+            "Has been feeling more miserable than usual",
+            "Is watching for their next victim",
+            "Is licking their wounds",
+            "Is cleaning their fur of muck",
+            "Is hiding a limp after a recent spar",
+            "Is discussing their plans eagerly",
+            "Has picked up fear scent",
+            "Stares through the fog mournfully",
+            "Can feel themselves forgetting about their life",
+            "Sits longingly at the StarClan border",
+            "Is whimpering pathetically",
+            "Almost drowned in the mud",
+            "Thought they heard the voice of a loved one",
+            "Has been behaving erratically recently",
+            "Yearns to taste fresh-kill again",
+            "Yearns to feel the sun on their pelt again",
+            "Is whispering lies into a living cat's ear",
+            "Gingerly checks a recent wound",
+            "Feels the shadows watching them",
+            "Wishes to be alone",
+            "Misses the feeling of a warm nest",
+            "Feels a sharp pang of hunger"
+        ]
+    },
+    {
+        "id": "dark_forest_to_living_other",
+        "thoughts": [
+            "Is thinking about walking in the dreams of r_c",
+            "Watches r_c with malice in their eyes",
+            "Is whispering in the ear of r_c",
+            "Is watching r_c with a sly smile"
         ],
         "random_living_status": [
-            "starclan"
-        ]
-    },
-    {
-        "id": "gen_to_dead_med_cat_apprentice",
-        "thoughts": [
-            "Is mourning the lost potential of r_c",
-            "Is listening to stories about r_c",
-            "Is learning more about r_c",
-            "Is sad they couldn't spend time with r_c"
-        ],
-        "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ],
-        "random_status_constraint": [
-            "medicine cat apprentice"
-        ],
-        "random_living_status": [
-            "starclan"
-        ]
-    },
-    {
-        "id": "gen_to_dead_apprentice",
-        "thoughts": [
-            "Is mourning the lost potential of r_c",
-            "Is listening to stories about r_c",
-            "Is learning more about r_c",
-            "Is sad they couldn't spend time with r_c"
-        ],
-        "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ],
-        "random_status_constraint": [
-            "apprentice"
-        ],
-        "random_living_status": [
-            "starclan"
-        ]
-    },
-    {
-        "id": "gen_to_dead_warrior",
-        "thoughts": [
-            "Is thinking about r_c",
-            "Is wishing to be more like r_c",
-            "Is sad they couldn't spend more time with r_c"
-        ],
-        "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ],
-        "random_status_constraint": [
-            "warrior"
-        ],
-        "random_living_status": [
-            "starclan"
-        ]
-    },
-    {
-        "id": "gen_to_dead_medicine_cat",
-        "thoughts": [
-            "Is listening to stories about r_c",
-            "Is hoping r_c will guide them",
-            "Is wondering if r_c is doing well in StarClan"
-        ],
-        "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ],
-        "random_status_constraint": [
-            "medicine cat"
-        ],
-        "random_living_status": [
-            "starclan"
-        ]
-    },
-    {
-        "id": "gen_to_dead_leader",
-        "thoughts": [
-            "Is missing their late leader r_c", 
-            "Is wondering if r_c is proud of them",
-            "Is wondering if r_c approves from StarClan"
-        ],
-        "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ],
-        "random_status_constraint": [
-            "leader"
-        ],
-        "random_living_status": [
-            "starclan"
-        ]
-    },
-    {
-        "id": "gen_to_dead_deputy",
-        "thoughts": [
-            "Is thinking about r_c",
-            "Is trying to learn from r_c's legacy",
-            "Is sad they couldn't spend more time with r_c"
-        ],
-        "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ],
-        "random_status_constraint": [
-            "deputy"
-        ],
-        "random_living_status": [
-            "starclan"
-        ]
-    },
-    {
-        "id": "gen_to_dead_elder",
-        "thoughts": [
-            "Is grateful for time spent with r_c",
-            "Is reminiscing about r_c",
-            "Is happy for their time spent with r_c"
-        ],
-        "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ],
-        "random_status_constraint": [
-            "elder"
-        ],
-        "random_living_status": [
-            "starclan"
-        ]
-    },
-    {
-        "id": "gen_to_dead_mediator",
-        "thoughts": [
-            "Is wondering what r_c would think of current conflicts in the Clan"
-        ],
-        "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ],
-        "random_status_constraint": [
-            "mediator"
-        ],
-        "random_living_status": [
-            "starclan"
-        ]
-    },
-    {
-        "id": "gen_to_dead_gen",
-        "thoughts": [
-            "Is listening to stories about r_c",
-            "Is learning more about r_c",
-            "Is sad they couldn't spend time with r_c",
-            "Is wondering if r_c is doing well in StarClan",
-            "Is missing r_c"
-        ],
-        "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ],
-        "random_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ],
-        "random_living_status": [
-            "starclan"
-        ]
-    },
-    {
-        "id": "gen_to_alive_kit",
-        "thoughts": [
-            "Is a bit cross with r_c",
-            "Is growing fond of r_c",
-            "Is wishing r_c would play more quietly",
-            "Is worried about r_c"
-        ],
-        "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ],
-        "random_status_constraint": [
-            "kitten"
-        ]
-    },
-    {
-        "id": "gen_to_alive_med_cat_app",
-        "thoughts": [
-            "Is grateful to r_c for their treatment",
-            "Is in awe of r_c's growth as a medicine cat apprentice",
-            "Thinks r_c will make a good medicine cat"
-        ],
-        "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ],
-        "random_status_constraint": [
-            "medicine cat apprentice"
-        ]
-    },
-    {
-        "id": "gen_to_alive_apprentice",
-        "thoughts": [
-            "Is finding r_c annoying",
-            "Lectures r_c on the warrior code",
-            "Makes note of r_c's journey as an apprentice",
-            "Is wondering if r_c will be chosen for the next Gathering",
-            "Wants to go on patrol with r_c",
-            "Doesn't want to go on patrol with r_c"
-        ],
-        "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ],
-        "random_status_constraint": [
-            "apprentice"
-        ]
-    },
-    {
-        "id": "gen_to_alive_med_cat",
-        "thoughts": [
-            "Is grateful to r_c for their treatment",
-            "Wonders if StarClan has given r_c any prophecies lately"
-        ],
-        "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ],
-        "random_status_constraint": [
-            "medicine cat"
-        ]
-    },
-    {
-        "id": "gen_to_alive_leader",
-        "thoughts": [
-            "Is wondering what r_c is thinking",
-            "Is hoping r_c notices their improvement",
-            "Is in awe of r_c's leadership"
-        ],
-        "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ],
-        "random_status_constraint": [
-            "leader"
-        ]
-    },
-    {
-        "id": "gen_to_alive_deputy",
-        "thoughts": [
-            "Is hoping r_c assigns them to the next patrol",
-            "Is hoping r_c won't assign them to the next patrol"
-        ],
-        "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ],
-        "random_status_constraint": [
-            "deputy"
-        ]
-    },
-    {
-        "id": "gen_to_alive_elder",
-        "thoughts": [
-            "Is hoping r_c will tell them a new story",
-            "Is annoyed at having to pick out r_c's ticks"
-        ],
-        "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ],
-        "random_status_constraint": [
-            "elder"
-        ]
-    },
-    {
-        "id": "gen_to_alive_mediator",
-        "thoughts": [
-            "Wants to speak to r_c about something"
-        ],
-        "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ],
-        "random_status_constraint": [
-            "mediator"
-        ]
-    },
-    {
-        "id": "gen_to_alive_mediator_app",
-        "thoughts": [
-            "Wants to speak to r_c about something",
-            "Thinks r_c will make a good mediator",
-            "Is grateful to r_c for their mediation"
-        ],
-        "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ],
-        "random_status_constraint": [
-            "mediator apprentice"
-        ]
-    },
-    {
-        "id": "gen_to_alive_gen",
-        "thoughts": [
-            "Is eavesdropping on r_c",
-            "Wants to get to know r_c better"
-        ],
-        "main_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
-        ],
-        "random_status_constraint": [
-            "kitten",
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
+            "living"
         ]
     }
 ]

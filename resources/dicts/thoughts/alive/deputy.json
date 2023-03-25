@@ -45,5 +45,28 @@
         "random_status_constraint": [
             "apprentice"
         ]
+    },
+    {
+        "id": "bloodthirsty_deputy_to_gen",
+        "thoughts": [
+            "Thinks about killing the leader and staging it as an accident",
+            "Encourages the leader to start a war"
+        ],
+        "main_trait_constraint": [
+            "bloodthirsty"
+        ]
+    },
+    {
+        "id": "strange_deputy_to_gen",
+        "thoughts": [
+            "Accidentally assigns the same cat to three patrols",
+            "Insists a hunting patrol only bring back mice",
+            "Goes missing and comes back smelling like garlic",
+            "Is making odd noises"
+        ],
+        "main_trait_constraint": [
+            "strange"
+        ]
     }
 ]
+
