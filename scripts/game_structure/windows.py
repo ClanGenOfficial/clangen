@@ -257,7 +257,7 @@ class GameOver(UIWindow):
 class ChangeCatName(UIWindow):
     """This window allows the user to change the cat's name"""
     def __init__(self, cat):
-        super().__init__(scale(pygame.Rect((400, 200), (800, 370))),
+        super().__init__(scale(pygame.Rect((600, 430), (800, 370))),
                          window_display_title='Change Cat Name',
                          object_id='#change_cat_name_window',
                          resizable=False)
@@ -293,17 +293,17 @@ class ChangeCatName(UIWindow):
                                                                     manager=MANAGER,
                                                                     container=self)
 
-        self.random_pre = UIImageButton(scale(pygame.Rect((245 + x_pos, 97 + y_pos), (68, 68))), "",
-                                        object_id="#random_dice_button",
-                                        manager=MANAGER,
-                                        container=self,
-                                        tool_tip_text='Randomize the prefix')
+        self.random_prefix = UIImageButton(scale(pygame.Rect((245 + x_pos, 97 + y_pos), (68, 68))), "",
+                                           object_id="#random_dice_button",
+                                           manager=MANAGER,
+                                           container=self,
+                                           tool_tip_text='Randomize the prefix')
 
-        self.random_suff = UIImageButton(scale(pygame.Rect((563 + x_pos, 97 + y_pos), (68, 68))), "",
-                                         object_id="#random_dice_button",
-                                         manager=MANAGER,
-                                         container=self,
-                                         tool_tip_text='Randomize the suffix')
+        self.random_suffix = UIImageButton(scale(pygame.Rect((563 + x_pos, 97 + y_pos), (68, 68))), "",
+                                           object_id="#random_dice_button",
+                                           manager=MANAGER,
+                                           container=self,
+                                           tool_tip_text='Randomize the suffix')
 
         # 636
         self.toggle_spec_block_on = UIImageButton(scale(pygame.Rect((405 + x_pos, 160 + y_pos), (68, 68))), "",
@@ -330,14 +330,14 @@ class ChangeCatName(UIWindow):
                 self.toggle_spec_block_on.enable()
                 self.toggle_spec_block_off.hide()
                 self.toggle_spec_block_off.disable()
-                self.random_suff.disable()
+                self.random_suffix.disable()
                 self.suffix_entry_box.disable()
             else:
                 self.toggle_spec_block_on.hide()
                 self.toggle_spec_block_on.disable()
                 self.toggle_spec_block_off.show()
                 self.toggle_spec_block_off.enable()
-                self.random_suff.enable()
+                self.random_suffix.enable()
                 self.suffix_entry_box.enable()
                 self.suffix_entry_box.set_text(self.the_cat.name.suffix)
 
@@ -373,7 +373,7 @@ class ChangeCatName(UIWindow):
                     self.the_cat.specsuffix_hidden = False
                     self.the_cat.name.specsuffix_hidden = False
                 self.heading.set_text(f"-Change {self.the_cat.name}'s Name-")
-            elif event.ui_element == self.random_pre:
+            elif event.ui_element == self.random_prefix:
                 self.prefix_entry_box.set_text(Name(self.the_cat.status,
                                                     None,
                                                     self.the_cat.name.suffix,
@@ -384,7 +384,7 @@ class ChangeCatName(UIWindow):
                                                     specsuffix_hidden=
                                                     (self.the_cat.name.status in self.the_cat.name.names_dict[
                                                         "special_suffixes"])).prefix)
-            elif event.ui_element == self.random_suff:
+            elif event.ui_element == self.random_suffix:
                 self.suffix_entry_box.set_text(Name(self.the_cat.status,
                                                     self.the_cat.name.prefix,
                                                     None,
@@ -397,14 +397,14 @@ class ChangeCatName(UIWindow):
                                                         "special_suffixes"])).suffix)
             elif event.ui_element == self.toggle_spec_block_on:
                 self.suffix_entry_box.enable()
-                self.random_suff.enable()
+                self.random_suffix.enable()
                 self.toggle_spec_block_on.disable()
                 self.toggle_spec_block_on.hide()
                 self.toggle_spec_block_off.enable()
                 self.toggle_spec_block_off.show()
                 self.suffix_entry_box.set_text(self.the_cat.name.suffix)
             elif event.ui_element == self.toggle_spec_block_off:
-                self.random_suff.disable()
+                self.random_suffix.disable()
                 self.toggle_spec_block_off.disable()
                 self.toggle_spec_block_off.hide()
                 self.toggle_spec_block_on.enable()
@@ -413,5 +413,7 @@ class ChangeCatName(UIWindow):
                 self.suffix_entry_box.rebuild()
                 self.suffix_entry_box.disable()
             elif event.ui_element == self.back_button:
-                self.kill()
                 game.switches['window_open'] = False
+                game.all_screens['profile screen'].exit_screen()
+                game.all_screens['profile screen'].screen_switches()
+                self.kill()
