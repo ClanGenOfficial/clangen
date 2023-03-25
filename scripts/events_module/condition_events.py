@@ -560,18 +560,12 @@ class Condition_Events():
 
         conditions = cat.permanent_condition
         for condition in conditions:
-            print('trying perm condition')
 
             # checking if the cat has a congenital condition to reveal and handling duration and death
             status = cat.moon_skip_permanent_condition(condition)
 
-            if status == 'skip':
-                print('condition is not revealed or was not disabled or event was already triggered')
-                continue
-
             # if cat is dead, break
             if cat.dead:
-                print('cat died from perm condition')
                 triggered = True
                 event_types.append("birth_death")
 
@@ -581,9 +575,12 @@ class Condition_Events():
                 game.herb_events_list.append(event)
                 break
 
+            # skipping for whatever reason
+            if status == 'skip':
+                continue
+
             # revealing perm condition
             if status == 'reveal':
-                print('revealing perm condition')
                 # gather potential event strings for gotten risk
                 possible_string_list = CONGENITAL_CONDITION_GOT_STRINGS[condition]
 
@@ -636,11 +633,9 @@ class Condition_Events():
             elif conditions[condition]["severity"] == 'severe':
                 chance = 2
             if not int(random.random() * chance):
-                print('condition used herbs')
                 self.use_herbs(cat, condition, conditions, PERMANENT)
 
             # give risks
-            print('giving perm risks')
             self.give_risks(cat, event_list, condition, condition_progression, conditions, cat.permanent_condition)
 
         self.determine_retirement(cat, event_list, event_types, triggered)
