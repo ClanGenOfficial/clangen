@@ -883,7 +883,7 @@ class ProfileScreen(Screens):
                 output += ' moons'
 
         # MATE
-        if the_cat.mate[0]:
+        if len(the_cat.mate) > 0:
             # NEWLINE ----------
             output += "\n"
             if len(the_cat.mate) > 0:

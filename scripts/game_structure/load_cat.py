@@ -203,6 +203,8 @@ def json_load():
 
             new_cat.accessory = cat["accessory"]
             new_cat.mate = cat["mate"] if type(cat["mate"]) is list else [cat["mate"]]
+            if None in new_cat.mate:
+                new_cat.mate = [i for i in new_cat.mate if i is not None]
             new_cat.previous_mates = cat["previous_mates"] if "previous_mates" in cat else []
             new_cat.dead = cat["dead"]
             new_cat.died_by = cat["died_by"] if "died_by" in cat else []

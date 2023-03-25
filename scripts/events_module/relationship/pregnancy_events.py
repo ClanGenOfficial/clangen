@@ -399,14 +399,14 @@ class Pregnancy_Events():
             return False
 
         # check for mate
-        mate = None
-        if cat.mate[0]:
-            if cat.mate[0] not in cat.all_cats:
-                print(f"WARNING: {cat.name}  has an invalid mate # {cat.mate[0]}. This has been unset.")
-                cat.mate[0] = None
+        if len(cat.mate) > 0:
+            for mate_id in cat.mate:
+                if mate_id not in cat.all_cats:
+                    print(f"WARNING: {cat.name}  has an invalid mate # {cat.mate[0]}. This has been unset.")
+                    cat.mate.remove(mate_id)
 
         # If the "no unknown fathers setting in on, we should only allow cats that have mates to have kits.
-        if not unknown_parent_setting and not cat.mate[0]:
+        if not unknown_parent_setting and len(cat.mate) < 1:
             return False
 
         # if function reaches this point, having kits is possible

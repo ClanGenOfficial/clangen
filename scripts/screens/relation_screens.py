@@ -682,8 +682,8 @@ class FamilyTreeScreen(Screens):
                 _temp_ob = Cat.fetch_cat(sibling)
                 # collect sibling mates
                 if not _temp_ob.faded:
-                    if _temp_ob.mate[0]:
-                        self.siblings_mates.append(_temp_ob.mate[0])
+                    if len(_temp_ob.mate) > 0:
+                        self.siblings_mates.extend(_temp_ob.mate)
                     self.siblings_mates.extend(_temp_ob.previous_mates)
                 # collect sibling kits
                 self.siblings_kits.extend(_temp_ob.get_children())
@@ -707,8 +707,8 @@ class FamilyTreeScreen(Screens):
                     else:
                         self.cousins.append(cousin)
         # collect mates
-        if self.the_cat.mate[0]:
-            self.mates = [self.the_cat.mate[0]]
+        if len(self.the_cat.mate) > 0:
+            self.mates = self.the_cat.mate
         self.mates.extend(self.the_cat.previous_mates)
 
         self.kits = self.the_cat.get_children()
@@ -723,8 +723,8 @@ class FamilyTreeScreen(Screens):
                 _temp_ob = Cat.fetch_cat(kit)
                 # collect kits mates
                 if not _temp_ob.faded:
-                    if _temp_ob.mate[0]:
-                        self.kits_mates.append(_temp_ob.mate[0])
+                    if len(_temp_ob.mate) > 0:
+                        self.kits_mates.extend(_temp_ob.mate)
                     self.kits_mates.extend(_temp_ob.previous_mates)
                 # collect grandkits
                 self.grandkits.extend(_temp_ob.get_children())
@@ -1139,7 +1139,7 @@ class ChooseMateScreen(Screens):
                 self.change_screen('profile screen')
 
             if event.ui_element == self.toggle_mate:
-                if self.the_cat.mate[0] is None:
+                if len(self.the_cat.mate) < 1:
                     self.the_cat.set_mate(self.selected_cat)
                     self.update_mate_screen()
                 else:
@@ -1289,7 +1289,7 @@ class ChooseMateScreen(Screens):
 
         # Determine what to draw regarding the othe cat. If they have a mate, set the screen up for that.
         # if they don't, set the screen up to choose a mate.
-        if self.the_cat.mate[0] is not None:
+        if len(self.the_cat.mate) > 0:
             self.update_mate_screen()
         else:
             self.update_choose_mate()
@@ -1316,7 +1316,9 @@ class ChooseMateScreen(Screens):
             self.mate_elements[ele].kill()
         self.mate_elements = {}
 
-        self.selected_cat = Cat.all_cats[self.the_cat.mate[0]]
+        self.selected_cat = [Cat.fetch_cat(cat_id) for cat_id in self.the_cat.mate]
+        # TODO: UI HAS TO BE UPDATED (maybe like in the patrol screen when a warrior has more apprentices?)
+        self.selected_cat = self.selected_cat[0]
 
         self.draw_compatible_line_affection()
         self.mate_elements["center_heart"] = pygame_gui.elements.UIImage(scale(pygame.Rect((600, 376), (400, 156))),
@@ -1632,8 +1634,9 @@ class ChooseMateScreen(Screens):
 
             not_available = (relevant_cat.dead != self.the_cat.dead) or (relevant_cat.outside != self.the_cat.outside) or relevant_cat.faded
 
-            if not related and relevant_cat.ID != self.the_cat.ID and invalid_age \
-                    and not not_available and relevant_cat.mate[0] is None:
+            not_self = relevant_cat.ID != self.the_cat.ID
+            if not related and not_self and invalid_age \
+                    and not not_available and len(relevant_cat.mate) < 1:
                 valid_mates.append(relevant_cat)
 
         return valid_mates
@@ -2179,7 +2182,7 @@ class RelationshipScreen(Screens):
 
         related = False
         # MATE
-        if self.the_cat.mate[0] is not None and self.the_cat.mate[0] != '' and the_relationship.cat_to.ID == self.the_cat.mate[0]:
+        if len(self.the_cat.mate) > 0 and the_relationship.cat_to.ID in self.the_cat.mate:
 
             self.relation_list_elements['mate_icon' + str(i)] = pygame_gui.elements.UIImage(
                 scale(pygame.Rect((pos_x + 10, pos_y + 10),
@@ -2780,7 +2783,7 @@ class MediationScreen(Screens):
                                                                                  manager=MANAGER)
 
         mates = False
-        if cat.mate[0]:
+        if len(cat.mate) > 0:
             col2 = "has a mate"
             if other_cat:
                 if cat.mate[0] == other_cat.ID:
