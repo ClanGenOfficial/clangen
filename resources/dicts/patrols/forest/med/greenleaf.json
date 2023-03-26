@@ -60,7 +60,6 @@
         "p_l can't find the burdock plant they were thinking about. Maybe it was trampled by some animal. Oh well.",
         "By the time they reach the burdock plants, p_l is about ready to claw r_c's ears off. Great StarClan! How can a cat be so annoying? p_l hisses in exasperation and they notice that the burdock is wilted on top of that. The roots will surely be no good."
     ],
-
     "fail_trait": ["troublesome", "childish"],
     "min_cats": 2,
     "max_cats": 3,
@@ -88,7 +87,7 @@
     "success_text": [
         "Surprisingly, r_c actually starts up a conversation with them about the herbs they're looking for. p_l launches into the usual spiel, but even more astonishingly, r_c is actually interested, and it makes their heart feel lighter getting to share their knowledge and skills with someone who respects them.",
         null,
-        "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
+        "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with them. It's just a herb gathering patrol, but p_l feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
     ],
     "fail_text": [
         "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common and the other cat bluntly refuses to talk about boring herbs.",
@@ -99,7 +98,6 @@
         "great mediator",
         "excellent mediator"
     ],
-
     "fail_trait": [
         "troublesome",
         "childish"
@@ -124,13 +122,13 @@
         "s_c_to_r_c"
     ],
     "intro_text": "p_l heads out, leading a patrol of medicine cats to go find some of the bounty of greenleaf.",
-    "decline_text": ". . . And they're called back almost immediately, as one of the elders starts hacking up something.",
+    "decline_text": "... And they're called back almost immediately, as one of the elders has started hacking something up.",
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
         "The ground is dusty and slippery, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
         null,
-        "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
+        "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with them. It's just a herb gathering patrol, but p_l feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
     ],
     "fail_text": [
         "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common.",
@@ -141,7 +139,6 @@
         "great mediator",
         "excellent mediator"
     ],
-
     "fail_trait": [
         "troublesome",
         "childish"
@@ -915,7 +912,6 @@
     "win_trait": [
         "patient"
     ],
-
     "fail_trait": [
         "troublesome",
         "childish"
