@@ -560,7 +560,7 @@ class Game():
                 "moons": inter_cat.moons,
                 "parent1": inter_cat.parent1,
                 "parent2": inter_cat.parent2,
-                "paralyzed": inter_cat.paralyzed,
+                "df": inter_cat.df,
                 "faded_offspring": inter_cat.faded_offspring
             }
             try:

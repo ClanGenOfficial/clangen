@@ -190,7 +190,8 @@ class Cat():
                  example=False,
                  faded=False,
                  # Set this to True if you are loading a faded cat. This will prevent the cat from being added to the list
-                 loading_cat=False  # Set to true if you are loading a cat at start-up.
+                 loading_cat=False,  # Set to true if you are loading a cat at start-up.
+                 **kwargs
                  ):
 
         # This must be at the top. It's a smaller list of things to init, which is only for faded cats
@@ -201,6 +202,10 @@ class Cat():
             self.parent2 = None
             self.status = status
             self.moons = moons
+            if "df" in kwargs:
+                self.df = kwargs["df"]
+            else:
+                self.df = False
             if moons > 300:
                 # Out of range, always elder
                 self.age = 'senior'
@@ -209,7 +214,7 @@ class Cat():
                 for key_age in self.age_moons.keys():
                     if moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1] + 1):
                         self.age = key_age
-
+                        
             self.set_faded()  # Sets the faded sprite and faded tag (self.faded = True)
 
             return
@@ -724,7 +729,7 @@ class Cat():
     def add_to_clan(self):
         """ Makes a "outside cat" a clan cat. Former leaders, deputies will become warriors. Apprentices will be assigned a mentor."""
         self.outside = False
-        print(self.name, self.moons)
+        #print(self.name, self.moons)
         if self.status in ['leader', 'deputy']:
             self.status_change('warrior')
             self.status = 'warrior'
@@ -2636,15 +2641,22 @@ class Cat():
         self.faded = True
 
         # Sillotette sprite
-        if self.age in ['newborn', 'kitten']:
-            file_name = "faded_kitten.png"
+        if self.age == 'newborn':
+            file_name = "faded_newborn"
+        elif self.age == 'kitten':
+            file_name = "faded_kitten"
         elif self.age in ['adult', 'young adult', 'senior adult']:
-            file_name = "faded_adult.png"
-        elif self.age in ["adolescent"]:
-            file_name = "faded_adol.png"
+            file_name = "faded_adult"
+        elif self.age == "adolescent":
+            file_name = "faded_adol"
         else:
-            file_name = "faded_elder.png"
-
+            file_name = "faded_senior"
+            
+        if self.df: 
+            file_name += "_df"
+            
+        file_name += ".png"
+            
         self.sprite = image_cache.load_image(f"sprites/faded/{file_name}").convert_alpha()
         self.big_sprite = pygame.transform.scale(self.sprite, (100, 100))
         self.large_sprite = pygame.transform.scale(self.big_sprite, (150, 150))
@@ -2680,12 +2692,12 @@ class Cat():
             return False
 
         cat_ob = Cat(ID=cat_info["ID"], prefix=cat_info["name_prefix"], suffix=cat_info["name_suffix"],
-                     status=cat_info["status"], moons=cat_info["moons"], faded=True)
+                     status=cat_info["status"], moons=cat_info["moons"], faded=True, 
+                     df=cat_info["df"] if "df" in cat_info else False)
         if cat_info["parent1"]:
             cat_ob.parent1 = cat_info["parent1"]
         if cat_info["parent2"]:
             cat_ob.parent2 = cat_info["parent2"]
-        cat_ob.paralyzed = cat_info["paralyzed"]
         cat_ob.faded_offspring = cat_info["faded_offspring"]
         cat_ob.faded = True
 
