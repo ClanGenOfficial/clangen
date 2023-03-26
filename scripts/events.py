@@ -10,6 +10,8 @@ TODO: Docs
 import random
 import traceback
 
+from scripts.patrol import Patrol
+
 try:
     import ujson as json
 except ImportError:
@@ -66,6 +68,7 @@ class Events():
         self.CEREMONY_TXT = None
         self.load_ceremonies()
         self.disaster_events = DisasterEvents()
+        self.patrols = Patrol()
 
     def one_moon(self):
         """

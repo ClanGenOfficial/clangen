@@ -255,7 +255,7 @@ def create_new_cat(Cat,
     if not litter:
         number_of_cats = 1
     else:
-        number_of_cats = choices([1, 2, 3, 4, 5], [2, 5, 4, 1, 1], k=1)
+        number_of_cats = choices([2, 3, 4, 5], [5, 4, 1, 1], k=1)
         number_of_cats = number_of_cats[0]
     # setting age
     if not age and age != 0:
