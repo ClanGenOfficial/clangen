@@ -140,8 +140,8 @@ class Game():
         'patrol_chosen': 'general',
         'favorite_sub_tab': None,
         'root_cat': None,
-        'window_open': False
-
+        'window_open': False,
+        'skip_conditions': []
     }
     all_screens = {}
     cur_events = {}

@@ -74,7 +74,7 @@ class TestsMedCondition(unittest.TestCase):
 
         med = Cat(moons=20)
         med.status = "medicine cat"
-        med.injuries["splinter"] = {"severity": "minor"}
+        med.injuries["small cut"] = {"severity": "minor"}
 
         all_cats = [cat1, med]
         self.assertTrue(medical_cats_condition_fulfilled(all_cats, 15))
