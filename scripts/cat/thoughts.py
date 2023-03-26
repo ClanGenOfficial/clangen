@@ -102,6 +102,10 @@ class Thoughts():
                 return False
         # this covers if living status isn't stated
         if 'random_living_status' not in thought:
+            if not random_cat.dead:
+                living_status = "living"
+            else:
+                living_status = "dead"
             if living_status == "living":
                 pass
             else:
