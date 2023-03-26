@@ -9,7 +9,13 @@
         "valor",
         "spirit",
         "intrigue",
-        "observance"
+        "observance",
+        "boldness",
+        "spunk",
+        "valor",
+        "versatility",
+        "energy",
+        "risk-taking"
     ],
     "ambitious": [
         "initiative",
@@ -17,9 +23,17 @@
         "determination",
         "bravery",
         "passion",
-        "determination",
+        "dedication",
         "commitment",
-        "drive"
+        "drive",
+        "responsibility",
+        "leadership",
+        "decisiveness",
+        "enthusiasm",
+        "spirit",
+        "stamina",
+        "intensity",
+        "strength"
     ],
     "altruistic": [
         "selflessness",
@@ -31,7 +45,13 @@
         "benevolence",
         "heart of gold",
         "exemplar",
-        "justice"
+        "justice",
+        "consideration",
+        "good nature",
+        "dedication",
+        "patience",
+        "spirit",
+        "grace"
     ],
     "bloodthirsty": [
         "ferocity",
@@ -44,7 +64,12 @@
         "determination",
         "dignity",
         "cunning",
-        "justice"
+        "justice",
+        "power",
+        "strong will",
+        "fortitude",
+        "responsibility",
+        "valor"
     ],
     "bold": [
         "boldness",
@@ -55,7 +80,7 @@
         "decisiveness",
         "leadership",
         "dauntlessness",
-        "strong-will",
+        "strong will",
         "integrity",
         "morals",
         "dignity",
@@ -76,7 +101,13 @@
         "phlegmatism",
         "composure",
         "emotional maturity",
-        "observance"
+        "observance",
+        "dedication",
+        "poise",
+        "equanimity",
+        "diligence",
+        "endurance",
+        "perspective"
     ],
     "careful": [
         "mindfulness",
@@ -88,7 +119,13 @@
         "stealth",
         "pragmatism",
         "wit",
-        "observance"
+        "observance",
+        "judgment",
+        "caution",
+        "perspective",
+        "composure",
+        "prudence",
+        "wisdom"
     ],
     "charismatic": [
         "warmth",
@@ -100,18 +137,31 @@
         "affection",
         "openness",
         "exemplar",
-        "wit"
+        "wit",
+        "amity",
+        "charisma",
+        "passion",
+        "spirit",
+        "good nature",
+        "friendliness"
     ],
     "childish": [
         "energy",
         "resilience",
         "spirit",
         "enthusiasm",
-        "spirit",
+        "zeal",
         "humor",
         "self-respect",
         "compassion",
-        "intrigue"
+        "intrigue",
+        "skill",
+        "courage",
+        "audacity",
+        "adaptability",
+        "fearlessness",
+        "determination",
+        "tenacity"
     ],
     "cold": [
         "honesty",
@@ -125,7 +175,13 @@
         "phlegmatism",
         "composure",
         "wit",
-        "observance"
+        "observance",
+        "caution",
+        "independence",
+        "steadfastness",
+        "assurance",
+        "evenness",
+        "fortitude"
     ],
     "compassionate": [
         "compassion",
@@ -139,7 +195,11 @@
         "exemplar",
         "emotional maturity",
         "justice",
-        "observance"
+        "observance",
+        "heart",
+        "benevolence",
+        "understanding",
+        "gentleness"
     ],
     "confident": [
         "confidence",
@@ -149,7 +209,13 @@
         "exemplar",
         "adaptability",
         "dignity",
-        "independence"
+        "independence",
+        "morale",
+        "spirit",
+        "drive",
+        "determination",
+        "strong will",
+        "daring"
     ],
     "daring": [
         "boldness",
@@ -160,7 +226,14 @@
         "vigor",
         "selflessness",
         "intrigue",
-        "wit"
+        "wit",
+        "valor",
+        "spirit",
+        "energy",
+        "courage",
+        "fortitude",
+        "risk-taking",
+        "decisiveness"
     ],
     "empathetic": [
         "compassion",
@@ -171,7 +244,14 @@
         "insight",
         "thoughtfulness",
         "emotional maturity",
-        "observance"
+        "observance",
+        "understanding",
+        "good nature",
+        "tenderness",
+        "heart",
+        "consideration",
+        "warmth",
+        "sensitivity"
     ],
     "faithful": [
         "spirit",
@@ -187,7 +267,9 @@
         "dutifulness",
         "justice",
         "observance",
-        "commitment"
+        "commitment",
+        "sincerity",
+        "honor"
     ],
     "fierce": [
         "bravery",
@@ -201,7 +283,11 @@
         "wit",
         "cunning",
         "boldness",
-        "justice"
+        "justice",
+        "valor",
+        "ferocity",
+        "dedication",
+        "fortitude"
     ],
     "insecure": [
         "loyalty",
@@ -216,7 +302,10 @@
         "guardedness",
         "determination",
         "observance",
-        "pragmatism"
+        "pragmatism",
+        "planning",
+        "vigilance",
+        "wisdom"
     ],
     "lonesome": [
         "independence",
@@ -229,7 +318,12 @@
         "cunning",
         "tranquility",
         "insight",
-        "observance"
+        "observance",
+        "caution",
+        "intellligence",
+        "dignity",
+        "truthfulness",
+        "dependability"
     ],
     "loving": [
         "compassion",
@@ -244,7 +338,10 @@
         "cherish",
         "appreciation",
         "loyalty",
-        "commitment"
+        "commitment",
+        "tenderness",
+        "amity",
+        "care"
     ],
     "loyal": [
         "loyalty",
@@ -256,7 +353,13 @@
         "wit",
         "generosity",
         "spirit",
-        "ambition"
+        "ambition",
+        "dependability",
+        "reliability",
+        "devotion",
+        "honor",
+        "sincerity",
+        "support"
     ],
     "nervous": [
         "loyalty",
@@ -266,7 +369,15 @@
         "adaptability",
         "pragmatism",
         "realism",
-        "observance"
+        "observance",
+        "insight",
+        "judgment",
+        "efficiency",
+        "logic",
+        "reliability",
+        "vigilance",
+        "prudence",
+        "attention"
     ],
     "patient": [
         "patience",
@@ -281,7 +392,10 @@
         "insight",
         "understanding",
         "kindness",
-        "forgiveness"
+        "diligence",
+        "humility",
+        "endurance",
+        "perspective"
     ],
     "playful": [
         "enthusiasm",
@@ -291,7 +405,15 @@
         "humor",
         "heart of gold",
         "kindness",
-        "friendliness"
+        "friendliness",
+        "liveliness",
+        "tenacity",
+        "good nature",
+        "passion",
+        "openness",
+        "empathy",
+        "zeal",
+        "perseverance"
     ],
     "responsible": [
         "strength",
@@ -306,7 +428,10 @@
         "pragmatism",
         "realism",
         "logic",
-        "dignity"
+        "dignity",
+        "steadfastness",
+        "maturity",
+        "capacity"
     ],
     "righteous": [
         "loyalty",
@@ -320,14 +445,18 @@
         "devotion",
         "compassion",
         "justice",
-        "responsibility"
+        "responsibility",
+        "consideration",
+        "integrity",
+        "grace",
+        "poise"
     ],
     "shameless": [
         "enthusiasm",
         "spirit",
         "energy",
-        "honesty",
-        "truthfulness",
+        "vitality",
+        "boldness",
         "dignity",
         "wit",
         "cunning",
@@ -335,7 +464,10 @@
         "skill",
         "strategy",
         "pragmatism",
-        "dedication"
+        "dedication",
+        "intensity",
+        "adaptability",
+        "foolhardiness"
     ],
     "sneaky": [
         "skill",
@@ -348,7 +480,12 @@
         "cunning",
         "observance",
         "realism",
-        "swiftness"
+        "swiftness",
+        "foresight",
+        "courage",
+        "consideration",
+        "shrewdness",
+        "sensitivity"
     ],
     "strange": [
         "enthusiasm",
@@ -361,7 +498,12 @@
         "individuality",
         "independence",
         "perspective",
-        "insight"
+        "insight",
+        "dedication",
+        "self-respect",
+        "candor",
+        "integrity",
+        "intelligence"
     ],
     "strict": [
         "loyalty",
@@ -374,7 +516,12 @@
         "insight",
         "perspective",
         "exemplar",
-        "dignity"
+        "dignity",
+        "leadership",
+        "guidance",
+        "fortitude",
+        "dependability",
+        "equanimity"
     ],
     "thoughtful": [
         "compassion",
@@ -387,7 +534,12 @@
         "wit",
         "cunning",
         "observance",
-        "empathy"
+        "empathy",
+        "understanding",
+        "commitment",
+        "wisdom",
+        "honor",
+        "amity"
     ],
     "troublesome": [
         "energy",
@@ -398,7 +550,14 @@
         "wit",
         "cunning",
         "boldness",
-        "dignity"
+        "dignity",
+        "dedication",
+        "zeal",
+        "zest",
+        "determination",
+        "intensity",
+        "gallantry",
+        "flexibility"
     ],
     "vengeful": [
         "honesty",
@@ -411,7 +570,12 @@
         "dignity",
         "spirit",
         "boldness",
-        "observance"
+        "observance",
+        "drive",
+        "strategy",
+        "resolve",
+        "strong will",
+        "intensity"
     ],
     "wise": [
         "wisdom",
@@ -424,6 +588,11 @@
         "kindness",
         "insight",
         "tranquility",
-        "observance"
+        "observance",
+        "thoughtfulness",
+        "steadfastness",
+        "prudence",
+        "judgment",
+        "foresight"
     ]
 }
