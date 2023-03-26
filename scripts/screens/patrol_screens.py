@@ -606,7 +606,6 @@ class PatrolScreen(Screens):
         self.choose_normal_or_romance()
 
         patrol.used_patrols.append(patrol.patrol_event.patrol_id)
-        print(patrol.used_patrols)
         print("Chosen Patrol ID: " + str(patrol.patrol_event.patrol_id))
         patrol_size = len(patrol.patrol_cats)
 
