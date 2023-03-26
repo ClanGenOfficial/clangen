@@ -147,8 +147,7 @@ class Relationship():
         interaction_str = choice(self.chosen_interaction.interactions)
 
         # prepare string for display
-        interaction_str = interaction_str.replace("m_c", str(self.cat_from.name))
-        interaction_str = interaction_str.replace("r_c", str(self.cat_to.name))
+        interaction_str = self.prepare_text(interaction_str)
 
         effect = " (neutral effect)"
         if in_de_crease != "neutral" and positive:
@@ -406,6 +405,12 @@ class Relationship():
 
         return filtered
 
+
+    def prepare_text(self, text: str) -> str:
+        """Prep the text based of the amount of cats and the assigned abbreviations."""
+        text = text.replace("m_c", str(self.cat_from.name))
+        text = text.replace("r_c", str(self.cat_to.name))
+        return text
 
     # ---------------------------------------------------------------------------- #
     #                            complex value addition                            #

@@ -1756,7 +1756,7 @@ class RelationshipScreen(Screens):
                                               object_id="#relation_list_next")
 
         self.page_number = pygame_gui.elements.UITextBox("", scale(pygame.Rect((890, 1234), (300, 68))),
-                                                         object_id=get_text_box_theme())
+                                                         object_id=get_text_box_theme("#text_box_30_horizcenter"))
 
         self.switch_focus_button = UIImageButton(scale(pygame.Rect((170, 780), (272, 60))), "",
                                                  object_id="#switch_focus_button")
@@ -2218,7 +2218,7 @@ class RelationshipScreen(Screens):
         # ROMANTIC LOVE
         # CHECK AGE DIFFERENCE
         same_age = the_relationship.cat_to.age == self.the_cat.age
-        adult_ages = ['young adult', 'adult', 'senior adult', 'elder']
+        adult_ages = ['young adult', 'adult', 'senior adult', 'senior']
         both_adult = the_relationship.cat_to.age in adult_ages and self.the_cat.age in adult_ages
         check_age = both_adult or same_age
 
