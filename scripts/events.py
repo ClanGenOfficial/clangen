@@ -681,21 +681,6 @@ class Events():
             self.handle_fading(cat)  # Deal with fading.
             return
 
-        # switches between the two death handles
-        self.handle_outbreaks(cat)
-        if random.getrandbits(1):
-            triggered_death = self.handle_injuries_or_general_death(cat)
-            if not triggered_death:
-                self.handle_illnesses_or_illness_deaths(cat)
-            else:
-                return
-        else:
-            triggered_death = self.handle_illnesses_or_illness_deaths(cat)
-            if not triggered_death:
-                self.handle_injuries_or_general_death(cat)
-            else:
-                return
-
         # all actions, which do not trigger an event display and
         # are connected to cats are located in there
         cat.one_moon()
@@ -712,11 +697,35 @@ class Events():
             if cat.dead:
                 return
 
+        # check for death/reveal/risks/retire caused by permanent conditions
         if cat.is_disabled():
             self.condition_events.handle_already_disabled(cat)
 
         # prevent injured or sick cats from unrealistic clan events
         if cat.is_ill() or cat.is_injured():
+            if cat.is_ill() and cat.is_injured():
+                if random.getrandbits(1):
+                    triggered_death = self.condition_events.handle_injuries(cat)
+                    if not triggered_death:
+                        self.condition_events.handle_illnesses(cat)
+                    else:
+                        game.switches['skip_conditions'].clear()
+                        return
+                else:
+                    triggered_death = self.condition_events.handle_illnesses(cat)
+                    if not triggered_death:
+                        self.condition_events.handle_injuries(cat)
+                    else:
+                        game.switches['skip_conditions'].clear()
+                        return
+            elif cat.is_ill():
+                self.condition_events.handle_illnesses(cat)
+                game.switches['skip_conditions'].clear()
+            else:
+                self.condition_events.handle_injuries(cat)
+                game.switches['skip_conditions'].clear()
+
+            self.handle_outbreaks(cat)
             self.coming_out(cat)
             self.pregnancy_events.handle_having_kits(cat, clan=game.clan)
             self.handle_apprentice_EX(cat)
@@ -727,8 +736,7 @@ class Events():
             cat.thoughts()
             return
 
-        # check for death/reveal/risks/retire caused by permanent conditions
-
+        # newborns don't do much
         if cat.status == 'newborn':
             cat.create_interaction()
             cat.thoughts()
@@ -750,6 +758,27 @@ class Events():
         # relationships have to be handled separately, because of the ceremony name change
         if not cat.dead or cat.outside:
             self.relation_events.handle_relationships(cat)
+
+        # switches between the two death handles
+        if random.getrandbits(1):
+            triggered_death = self.handle_injuries_or_general_death(cat)
+            if not triggered_death:
+                self.handle_illnesses_or_illness_deaths(cat)
+            else:
+                game.switches['skip_conditions'].clear()
+                return
+        else:
+            triggered_death = self.handle_illnesses_or_illness_deaths(cat)
+            if not triggered_death:
+                self.handle_injuries_or_general_death(cat)
+            else:
+                game.switches['skip_conditions'].clear()
+                return
+
+        game.switches['skip_conditions'].clear()
+
+
+
 
     def check_clan_relations(self):
         """

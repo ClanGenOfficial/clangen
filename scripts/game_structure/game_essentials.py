@@ -140,8 +140,8 @@ class Game():
         'patrol_chosen': 'general',
         'favorite_sub_tab': None,
         'root_cat': None,
-        'window_open': False
-
+        'window_open': False,
+        'skip_conditions': []
     }
     all_screens = {}
     cur_events = {}
@@ -151,15 +151,13 @@ class Game():
     settings = {}
     setting_lists = {}
 
-
-
     with open("resources/gamesettings.json", 'r') as read_file:
         _settings = ujson.loads(read_file.read())
 
     for setting, values in _settings['__other'].items():
         settings[setting] = values[0]
         setting_lists[setting] = values
-    
+
     _ = []
     _.append(_settings['relation'])
     _.append(_settings['general'])
@@ -169,10 +167,7 @@ class Game():
             settings[setting_name] = inf[2]
             setting_lists[setting_name] = [inf[2], not inf[2]]
 
-
-
     settings_changed = False
-    
 
     # CLAN
     clan = None
@@ -191,7 +186,6 @@ class Game():
 
         with open(f"resources/game_config.json", 'r') as read_file:
             self.config = ujson.loads(read_file.read())
-
 
     def update_game(self):
         if self.current_screen != self.switches['cur_screen']:
@@ -221,7 +215,7 @@ class Game():
             os.makedirs(get_save_dir())
             print('Created saves folder')
             return None
-        
+
         # Now we can get a list of all the folders in the saves folder
         clan_list = [f.name for f in os.scandir(get_save_dir()) if f.is_dir()]
 
@@ -270,7 +264,7 @@ class Game():
                 f.writelines(clans)'''
         if loaded_clan:
             if os.path.exists(get_save_dir() + '/clanlist.txt'):
-                os.remove(get_save_dir() + '/clanlist.txt') # we don't need clanlist.txt anymore
+                os.remove(get_save_dir() + '/clanlist.txt')  # we don't need clanlist.txt anymore
             with open(get_save_dir() + '/currentclan.txt', 'w') as f:
                 f.write(loaded_clan)
         else:
@@ -354,7 +348,7 @@ class Game():
         directory = get_save_dir() + '/' + clanname
         if not os.path.exists(directory):
             os.makedirs(directory)
-   
+
         # Delete all existing relationship files
         if not os.path.exists(directory + '/relationships'):
             os.makedirs(directory + '/relationships')
@@ -611,7 +605,6 @@ class Game():
 
 
 game = Game()
-
 
 if not os.path.exists(get_save_dir() + '/settings.txt'):
     os.makedirs(get_save_dir(), exist_ok=True)

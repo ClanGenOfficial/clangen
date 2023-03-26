@@ -182,6 +182,25 @@
     "history_text": [
         "This cat got a scar from a fight with a small dog, but they always say it was a huge dog."
     ]
+},
+{
+    "patrol_id": "gen_bord_abandonedkittypet1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["border", "new_cat_injury", "new_cat_kittypet", "nc_sickness",  "respect", "warrior"],
+    "intro_text": "The patrol hears the screaming of a cat begging for their Twolegs to come back and the sound of a monster speeding away.",
+    "decline_text": "p_l decides it's none of their business and resumes their patrol.",
+    "chance_of_success": 30,
+    "exp": 15,
+    "success_text": [
+    "They find a well groomed kittypet collapsed by the thunderpath wailing for their Twolegs to come back. p_l comforts them and asks them why their Twolegs have left them. The only explanation that they can give is that they've been sick recently and perhaps too much of a burden? p_l offers the former kittypet a place in c_n, till they're better at least. They tentatively accept whilst looking longingly back to the thunderpath."
+    ],
+    "fail_text": [
+    "They discover the cooling body of a kittypet, it seems they attempted to run after their Twolegs and were run over by a monster. p_l silently sends a prayer for the kittypet and can't help but to curse the Twolegs who abandoned such a loyal cat."
+    ],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": "They tell the kittypet that they are not welcome here, but after they hear that the kittypet is ill they agree to carry them to a nearby twoleg den to find help.",
+    "antagonize_fail_text": "The kittypet tries to make a run for it when suddenly they collapse! When p_l comes closer they can smell the sickness coming off the kittypet's pelt. They decide to resume the border patrol, it's not their problem anymore."
 }
-
 ]
