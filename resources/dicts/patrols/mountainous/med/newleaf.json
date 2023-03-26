@@ -1046,7 +1046,7 @@
     "exp": 10,
     "success_text": [
             "Deep green even in newleaf and with a characteristic smoothness, p_l finds the plantain where they expected - right in the middle of a path, next to a mullein sprout.",
-            "Suitable for soothing throat and pelt irritation, and with a welcome weird habit of consistently sprouting up on well-trodden paths, plantain is a basic but valuable herb to keep stocks of. p_l finds today's harvest growing overshadowed by a big mullein plant, and takes that too.",
+            "Suitable for soothing throat and pelt irritation, and with a welcome - albeit weird - habit of consistently sprouting up on well-trodden paths, plantain is a basic but valuable herb to keep stocks of. p_l finds today's harvest growing overshadowed by a big mullein plant, and takes that too.",
             "Go to where other animals wander through c_n's territory on little beaten paths, wander around until you bump nose-first into a plantain plant, harvest. Simple. Oh, and there's some mullein to pick up on the way home."
 ],
     "fail_text": [
@@ -1070,7 +1070,7 @@
     "exp": 20,
     "success_text": [
             "Deep green even in newleaf and with a characteristic smoothness, p_l finds the plantain where they expected - right in the middle of a path, next to a mullein sprout. They teach app1 how the leaves can be opened and used on top of cobwebs for wound binding - although the plant doesn't actually help with wound healing, the leaves make good structural support for other remedies.",
-            "Suitable for soothing throat and pelt irritation, and with a welcome weird habit of consistently sprouting up on well-trodden paths, plantain is a basic but valuable herb to keep stocks of, and always taught early in the herbal lore each medicine cat must memorise. p_l finds today's harvest growing overshadowed by a big mullein plant, and takes that too.",
+            "Suitable for soothing throat and pelt irritation, and with a welcome - albeit weird - habit of consistently sprouting up on well-trodden paths, plantain is a basic but valuable herb to keep stocks of, and always taught early in the herbal lore each medicine cat must memorise. p_l finds today's harvest growing overshadowed by a big mullein plant, and takes that too.",
             "Go to where other animals wander through c_n's territory on little beaten paths, wander around until you bump nose-first into a plantain plant, harvest. Simple, p_l teaches app1. Oh, and there's some mullein to pick up on the way home."
 ],
     "fail_text": [
@@ -1094,8 +1094,8 @@
     "exp": 10,
     "success_text": [
             "Deep green even in newleaf and with a characteristic smoothness, p_l finds the plantain where they expected - right in the middle of a path, next to a mullein sprout. The warriors help them pull up the entire plant, roots and all. Only the leaves are useful to p_l, but the plantain blocking the path is too annoying in this spot.",
-            "Suitable for soothing throat and pelt irritation, and with a welcome weird habit of consistently sprouting up on well-trodden paths, plantain is a basic but valuable herb to keep stocks of. It's even relatively innoculous taste wise, making it easy to harvest. p_l finds today's harvest growing overshadowed by a big mullein plant, and takes that too.",
-            "Go to where other animals wander through c_n's territory on little beaten paths, wander around until you bump nose-first into a plantain plant, harvest. Simple. Oh, and there's some mullein to pick up on the way home, and the warriors get to tidy their paths through the territory."
+            "Suitable for soothing throat and pelt irritation, and with a welcome - albeit weird - habit of consistently sprouting up on well-trodden paths, plantain is a basic, but valuable, herb to keep stocks of. It's even relatively innocuous taste wise, making it easy to harvest. p_l finds today's harvest growing overshadowed by a big mullein plant, and takes that too.",
+            "Go to where other animals wander through c_n's territory on little beaten paths, wander around until you bump nose-first into a plantain plant, harvest. Simple. Oh, and there's some mullein to pick up on the way home, <i>And</i> the warriors get to tidy their paths through the territory. It's a win-win!"
 ],
     "fail_text": [
             "p_l fails to find any plantain, and as the plant sometimes dies completely in leaf-bare, can't use any of the spots they know from last year, although the warriors dismiss their concerns about the weeds."
@@ -1117,12 +1117,12 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "These plants will be dead in leaf-fall, while the Clan will need painkillers in the colder seasons, so there's no time to waste - p_l goes out and brings back a decent harvest.",
+            "These plants will be dead in leaf-fall, while the Clan won't stop needing painkillers in the colder seasons, so there's no time to waste - p_l goes out and brings back a decent harvest.",
             "The red poppy flowers are pretty, but it's the dried, husk-like flowerheads that contain the poppy seeds p_l wants, and they take as many as they can.",
             "s_c uses the bright flowers to find the plants quickly, determined to bring back as many poppy seeds as possible."
 ],
     "fail_text": [
-            "The wind seems to have stolen all the poppy seeds from their dry flowerheads before p_l could've harvested them."
+            "The wind seems to have stolen all the poppy seeds from their dry flowerheads before p_l could harvest them."
     ],
     "win_skills": ["keen eye"],
 
@@ -1141,12 +1141,12 @@
     "chance_of_success": 70,
     "exp": 30,
     "success_text": [
-            "These plants will be dead in leaf-fall, while the Clan will need painkillers in the colder seasons, so there's no time to waste - p_l goes out and brings back a decent harvest with app1.",
+            "These plants will be dead in leaf-fall, while the Clan won't stop needing painkillers in the colder seasons, so there's no time to waste - p_l goes out and brings back a decent harvest with app1.",
             "The red poppy flowers are pretty, but it's the dried, husk-like flowerheads that contain the poppy seeds p_l wants, and they take as many as they can. app1 knows how crucial poppy seeds are for the Clan, and p_l is proud of how hard they work.",
-            "s_c uses the bright flowers to find the plants quickly, determined to bring back as many poppy seeds as possible. They pass on their knowledge of poppy herbcraft as they gather, teaching app1 about all the different circumstances that poppy seeds can help with, though app1 should avoid using them on pregnant or nursing queens."
+            "s_c uses the bright flowers to find the plants quickly, determined to bring back as many poppy seeds as possible. They pass on their knowledge of poppy herbcraft as they gather, teaching app1 about all the different circumstances that poppy seeds can help with, though warning that app1 should avoid using them on pregnant or nursing queens."
 ],
     "fail_text": [
-            "The wind seems to have stolen all the poppy seeds from their dry flowerheads before p_l could've harvested them."
+            "The wind seems to have stolen all the poppy seeds from their dry flowerheads before p_l could harvest them."
     ],
     "win_skills": ["keen eye"],
 
@@ -1165,12 +1165,12 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "These plants will be dead in leaf-fall, while the Clan will need painkillers in the colder seasons, so there's no time to waste - p_l goes out and brings back a decent harvest, with all the members of the patrol bringing back at least a couple dried flowerheads full of seeds each.",
-            "The red poppy flowers are pretty, but it's the dried, husk-like flowerheads that contain the poppy seeds p_l wants, and they take as many as they can. All the warriors with them work hard to help, focused on a herb so famous that even they know its purpose.",
-            "s_c uses the bright flowers to find the plants quickly, determined to bring back as many poppy seeds as possible. The rest of the patrol, knowing how important poppy seeds are as a painkiller, working hard for s_c and c_n."
+            "These plants will be dead in leaf-fall, while the Clan won't stop needing painkillers in the colder seasons, so there's no time to waste - p_l goes out and brings back a decent harvest, with all the members of the patrol bringing back at least a couple dried flowerheads full of seeds each.",
+            "The red poppy flowers are pretty, but it's the dried, husk-like flowerheads that contain the poppy seeds p_l wants, and they take as many as they can. All the warriors with them work hard to help, focused on a herb so famous that even <i>they</i> know its purpose.",
+            "s_c uses the bright flowers to find the plants quickly, determined to bring back as many poppy seeds as possible. The rest of the patrol, knowing how important poppy seeds are as a painkiller, work hard, both for s_c and all of c_n."
 ],
     "fail_text": [
-            "The wind seems to have stolen all the poppy seeds from their dry flowerheads before p_l could've harvested them."
+            "The wind seems to have stolen all the poppy seeds from their dry flowerheads before p_l could harvest them."
     ],
     "win_skills": ["keen eye"],
 
@@ -1190,11 +1190,11 @@
     "exp": 10,
     "success_text": [
             "In newleaf, with most ragwort plants still flowerless, they're a little more bearable to harvest and don't completely overpower the burdock plant sitting next to them.",
-            "Ragwort brings strength to cats who need it, and eases aching joints, but StarClan it tastes absolutely foul. p_l's pleased with their harvest, but really wishes they had a way to bring it back to camp that didn't need them to carry it in their mouth. The extra burdock root they pick up definitely doesn't make it easier.",
-            "s_c has discovered a trick to harvesting the bountiful but foul ragwort, using their claws to tear leaves from the plant and then carefully carrying them back to camp without chewing or salivating, using some opportune burdock roots to cover their teeth."
+            "Ragwort brings strength to cats who need it, and eases aching joints, but StarClan it tastes absolutely <i>foul.</i> p_l's pleased with their harvest, but really wishes they had a way to bring it back to camp that didn't need them to carry it in their mouth. The extra burdock root they pick up definitely doesn't make it easier.",
+            "s_c has discovered a trick to harvesting the bountiful, but foul, ragwort - using their claws to tear leaves from the plant, then carefully carrying them back to camp without chewing or salivating. It's difficult, but doable, if only just, using some opportune burdock roots to cover their teeth."
 ],
     "fail_text": [
-            "Try as they might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants they haven't confidently identified."
+            "Try as they might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
     "win_skills": ["keen eye"],
 
@@ -1214,11 +1214,11 @@
     "exp": 20,
     "success_text": [
             "In newleaf, with most ragwort plants still flowerless, they're a little more bearable to harvest and don't completely overpower the burdock plant sitting next to them. Still, it's not a task p_l or app1 look forward to, although both of them acknowledge the need and put themselves to work.",
-            "Ragwort brings strength to cats who need it, and eases aching joints, but StarClan it tastes absolutely foul. p_l's pleased with their harvest, but really wishes they had a way to bring it back to camp that didn't need them to carry it in their mouth, and has a lot of sympathy for app1's disgusted expression. p_l lets them carry some burdock they found instead.",
-            "s_c has discovered a trick to harvesting the bountiful but foul ragwort, using their claws to tear leaves from the plant and then carefully carrying them back to camp without chewing or salivating, using some opportune burdock roots to cover their teeth. app1 is desperately grateful to learn the trick."
+            "Ragwort brings strength to cats who need it, and eases aching joints, but StarClan it tastes absolutely <i>foul.</i> p_l's pleased with their harvest, but really wishes they had a way to bring it back to camp that didn't need them to carry it in their mouth, and has a lot of sympathy for app1's disgusted expression. p_l lets them carry some burdock they found instead.",
+            "s_c has discovered a trick to harvesting the bountiful, but foul, ragwort - using their claws to tear leaves from the plant, then carefully carrying them back to camp without chewing or salivating. It's difficult, but doable, if only just, using some opportune burdock roots to cover their teeth, and app1 is desperately grateful to learn the trick."
 ],
     "fail_text": [
-            "Try as they might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants they haven't confidently identified."
+            "Try as they might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
     "win_skills": ["keen eye"],
 
@@ -1238,11 +1238,11 @@
     "exp": 10,
     "success_text": [
             "In newleaf, with most ragwort plants still flowerless, they're a little more bearable to harvest and don't completely overpower the burdock plant sitting next to them. That's not a great improvement though, and they're still foul - p_l makes sure to send the warriors helping them for a drink afterwards, and that the whole camp sees them specifically thanking their long-suffering patrol for their work.",
-            "Ragwort brings strength to cats who need it, and eases aching joints, but StarClan it tastes absolutely foul. p_l's pleased with their harvest, particulalry the extra burdock, but really wishes they had a way to bring it back to camp that didn't need them to carry it in their mouth, a sentiment that the patrol helping them definitely shares, at length, very descriptively.",
-            "s_c has discovered a trick to harvesting the bountiful but foul ragwort, using their claws to tear leaves from the plant and then carefully carrying them back to camp without chewing or salivating, using some opportune burdock roots to cover their teeth. Some of the warriors are too impatient to follow their lead, and end up suffering the taste of ragwort as the patrol brings back loads of the leaves."
+            "Ragwort brings strength to cats who need it, and eases aching joints, but StarClan it tastes absolutely foul. p_l's pleased with their harvest, particulalry the extra burdock, but really wishes they had a way to bring it back to camp that didn't need them to carry it in their mouth, a sentiment that the patrol helping them definitely shares... at length, very descriptively.",
+            "s_c has discovered a trick to harvesting the bountiful, but foul, ragwort - using their claws to tear leaves from the plant, then carefully carrying them back to camp without chewing or salivating. It's difficult, but doable, if only just, using some opportune burdock roots to cover their teeth. Some of the warriors are too impatient to follow their lead, and end up suffering the taste of ragwort as the patrol brings back loads of the leaves."
 ],
     "fail_text": [
-            "Try as they might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants they haven't confidently identified."
+            "Try as they might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
     "win_skills": ["keen eye"],
 
@@ -1266,7 +1266,7 @@
             "Tansy might smell sharp enough to be enjoyed freshening up dens, but it sure tastes... interesting. Definitely not improved by the extra ragwort they find. s_c isn't sure they'll ever get used to it, but at least it's a reminder to be careful around the potentially poisonous herb."
 ],
     "fail_text": [
-            "Try as they might, p_l can't quite remember the exact shape of the tansy leaves, and isn't going to harvest from plants they haven't confidently identified."
+            "Try as they might, p_l can't quite remember the exact shape of the tansy leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
     "win_skills": ["keen eye"],
 
@@ -1287,10 +1287,10 @@
     "success_text": [
             "The sharp scent of tansy calls p_l in to harvest its newleaf shoots. And there's ragwort. By StarClan, this gathering patrol will taste awful. As they work, p_l instructs app1 on tansy dosage - for kits, weakened cats, and elders, it can be dangerously easy for too much tansy to overcome a system and become a poison.",
             "Good for all coughs, for all wounds, for all poisons - but it would be dangerous to assume tansy has no downsides. p_l quietly explains to app1 how tansy is also used to ease the passing of mortally wounded cats and to induce losing a litter in queens whose pregnancy is risking their life. This means you don't use it to treat pregnant or nursing queens, or kits. The topic is serious enough that app1 even forgets to complain about the additional ragwort they find.",
-            "Tansy might smell sharp enough to be enjoyed freshening up dens, but it sure tastes... interesting. Definitely not improved by the extra ragwort they find. s_c isn't sure they'll ever get used to it, but at least it's a reminder to be careful around the potentially poisonous herb, and app1 seems to be taking the appropriate amount of care harvesting it."
+            "Tansy might smell sharp enough to be enjoyed freshening up dens, but it sure tastes... interesting. Definitely not improved by the extra ragwort they find. s_c isn't sure they'll ever get used to it, but at least it's a reminder to be careful around the potentially poisonous herb, and app1 thankfully seems to be taking the appropriate amount of care harvesting it."
 ],
     "fail_text": [
-            "Try as they might, p_l can't quite remember the exact shape of the tansy leaves, and isn't going to harvest from plants they haven't confidently identified."
+            "Try as they might, p_l can't quite remember the exact shape of the tansy leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
     "win_skills": ["keen eye"],
 
@@ -1311,10 +1311,10 @@
     "success_text": [
             "The sharp scent of tansy calls p_l in to harvest its newleaf shoots. And there's ragwort. By StarClan, this gathering patrol will taste awful. There's enough of the common herb to let the warriors gather sprigs of it to freshen the dens, letting the rest of the patrol at least get a small reward for the abuse of their tastebuds.",
             "Good for all coughs, for all wounds, for all poisons - but it would be dangerous to assume tansy has no downsides. In small doses it helps with nearly any aliment, but in large doses it poisons the body, even to the point of causing death. The ragwort trying to outgrow it may stink, but at least that herb isn't dangerous. p_l carefully guides the patrol while gathering it, not that the warriors would be in any danger short of trying to drink the herb.",
-            "Tansy might smell sharp enough to be enjoyed freshening up dens, but it sure tastes... interesting. Definitely not improved by the extra ragwort they find. s_c isn't sure they'll ever get used to it, but at least it's a reminder to be careful around the potentially poisonous herb, helpful when gathering with their Clanmates."
+            "Tansy might smell sharp enough to be enjoyed freshening up dens, but it sure tastes... interesting. Definitely not improved by the extra ragwort they find. s_c isn't sure they'll ever get used to it, but at least it's a reminder to be careful around the potentially poisonous herb, which is extra helpful when gathering with their less-experienced Clanmates."
 ],
     "fail_text": [
-            "Try as they might, p_l can't quite remember the exact shape of the tansy leaves, and isn't going to harvest from plants they haven't confidently identified."
+            "Try as they might, p_l can't quite remember the exact shape of the tansy leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
     "win_skills": ["keen eye"],
 
@@ -1335,7 +1335,7 @@
     "success_text": [
             "With the drizzle hiding scents, p_l almost walks straight past the thyme plant - but they stop, retrace their steps, and settle down to harvest it. p_l is relieved to come across a clump of goldenrod as they pad back to camp. They've been able to catch two prey with one blow today.",
             "It calms racing hearts and minds, bringing cats back from the shock of loss or injury. Thyme is always both helpful and pleasant to have around, p_l makes sure to organise the herb stores ensuring they have a healthy amount of goldenrod to go alongside the thyme, which p_l places so that the scent wafts near their nest.",
-            "Thyme, thyme, thyme, there's never enough thyme. s_c snorts at their little joke, mouth crammed full of the herb. Spotting a small goldenrod plant that looks like it's begining to wilt, they pause to gather the remaining stems to make good use of it."
+            "Thyme, thyme, thyme, there's never enough thyme. s_c snorts at their little joke, mouth crammed full of the herb, as they make their way home. Spotting a small goldenrod plant that looks like it's begining to wilt, they pause to gather the remaining stems to make good use of it."
 ],
     "fail_text": [
             "p_l has no time - and no thyme. They're forced to give up on the search for today."
@@ -1406,11 +1406,11 @@
     "exp": 10,
     "success_text": [
             "The sharp tang of garlic leads p_l to a growing patch to bring home. Not far off are the pink-purple flowers of a mallow clump - just what p_l needed.",
-            "The leaves and especially the bulbs of wild garlic are the preeminent herb to treat infection, even if using them literally always resulting in either their patient or their loved ones complaining about the smell. p_l will take the smell over the illness, thank you very much. On the other paw, mallow is a lot more appreciated by members of the Clan suffering from bellyaches.",
-            "s_c, ever eagle-eyed, spots grass that looks suspiciously tall with oddly thick blades. One sniff confirms it as wild garlic, and the patch has heaps to harvest. To the medicine cat's delight, a mallow patch was growing not too far off."
+            "The leaves, and especially the bulbs, of wild garlic are the preeminent herb to treat infection, even if using them results each time in either their patient or their loved ones complaining about the smell. p_l, personally, will take a bit of a bad smell over illness, thank you very much. On the other paw, mallow is a lot more appreciated by members of the Clan suffering from bellyaches.",
+            "s_c, ever eagle-eyed, spots grass that looks suspiciously tall, with oddly thick blades. One sniff confirms it as wild garlic, and this patch has heaps to harvest. To the medicine cat's delight, a mallow patch was growing not too far off."
 ],
     "fail_text": [
-            "Try as they might, p_l can't quite remember the exact shape of the garlic leaves, and isn't going to harvest from plants they haven't confidently identified."
+            "Try as they might, p_l can't quite remember the exact shape of the garlic leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
     "win_skills": ["keen eye"],
 
@@ -1431,10 +1431,10 @@
     "success_text": [
             "The sharp tang of garlic leads p_l and app1 to a growing patch to bring home. Not far off are the pink-purple flowers of a mallow clump - just what they needed.",
             "The leaves and especially the bulbs of wild garlic are the preeminent herb to treat infection, even if using them literally always resulting in either their patient or their loved ones complaining about the smell. p_l teaches app1 that sometimes they need to prioritize treating their patients above listening to them. Thankfully, mallow that was gathered is a lot more appreciated by members of the Clan suffering from bellyaches.",
-            "s_c, ever eagle-eyed, spots grass that looks suspiciously tall with oddly thick blades. One sniff confirms it as wild garlic, and the patch has heaps to harvest with app1. To the medicine cats' delight, a mallow patch was growing not too far off."
+            "s_c, ever eagle-eyed, spots grass that looks suspiciously tall, with oddly thick blades. One sniff confirms it as wild garlic, and this patch has heaps to harvest with app1. To the medicine cats' delight, a mallow patch was growing not too far off."
 ],
     "fail_text": [
-            "Try as they might, p_l can't quite remember the exact shape of the garlic leaves, and isn't going to harvest from plants they haven't confidently identified."
+            "Try as they might, p_l can't quite remember the exact shape of the garlic leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
     "win_skills": ["keen eye"],
 
@@ -1455,10 +1455,10 @@
     "success_text": [
             "The sharp tang of garlic leads p_l to a growing patch to bring home. Their helpers settle in with only a little disgust, gathering the strong smelling herb for the Clan's stores and not far off are the pink-purple flowers of a mallow clump - just what p_l needed.",
             "The leaves and especially the bulbs of wild garlic are the preeminent herb to treat infection, even if using them literally always resulting in either their patient or their loved ones complaining about the smell. The patrol looks a little disgusted, but they're still a great help to p_l for gathering it. Thankfully, the mallow that was gathered is a lot more appreciated by members of the Clan suffering from bellyaches.",
-            "s_c, ever eagle-eyed, spots grass that looks suspiciously tall with oddly thick blades. One sniff confirms it as wild garlic, and the patch has heaps for their patrol to harvest. To the medicine cat's delight, a mallow patch was growing not too far off."
+            "s_c, ever eagle-eyed, spots grass that looks suspiciously tall, with oddly thick blades. One sniff confirms it as wild garlic, and the patch has heaps for their patrol to harvest. To the medicine cat's delight, a mallow patch was growing not too far off."
 ],
     "fail_text": [
-            "Try as they might, p_l can't quite remember the exact shape of the garlic leaves, and isn't going to harvest from plants they haven't confidently identified."
+            "Try as they might, p_l can't quite remember the exact shape of the garlic leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
     "win_skills": ["keen eye"],
 
