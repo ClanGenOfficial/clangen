@@ -19,9 +19,7 @@ from scripts.game_structure.game_essentials import game, MANAGER
 class SaveCheck(UIWindow):
     def __init__(self, last_screen, isMainMenu, mm_btn):
         game.switches['window_open'] = True
-        print("Save Check Window Opened")
         if game.is_close_menu_open:
-            print("Save Check Window already open")
             return
         game.is_close_menu_open = True
         super().__init__(scale(pygame.Rect((500, 400), (600, 400))),
@@ -91,6 +89,7 @@ class SaveCheck(UIWindow):
 
         self.back_button.enable()
         self.main_menu_button.enable()
+        self.set_blocking(True)
 
     def process_event(self, event):
         super().process_event(event)
@@ -133,6 +132,7 @@ class DeleteCheck(UIWindow):
                          window_display_title='Delete Check',
                          object_id='#delete_check_window',
                          resizable=False)
+        self.set_blocking(True)
         game.switches['window_open'] = True
         self.clan_name = clan_name
         self.reloadscreen = reloadscreen
@@ -141,7 +141,7 @@ class DeleteCheck(UIWindow):
             f"Do you wish to delete {str(self.clan_name + 'Clan')}? This is permanent and cannot be undone.",
             scale(pygame.Rect((40, 40), (520, -1))),
             line_spacing=1,
-            object_id="",
+            object_id="#text_box_30_horizcenter",
             container=self
         )
 
@@ -203,6 +203,7 @@ class GameOver(UIWindow):
                          window_display_title='Game Over',
                          object_id='#game_over_window',
                          resizable=False)
+        self.set_blocking(True)
         game.switches['window_open'] = True
         self.clan_name = str(game.clan.name + 'Clan')
         self.last_screen = last_screen
@@ -355,6 +356,7 @@ class ChangeCatName(UIWindow):
                 placeholder_text=self.the_cat.name.suffix
                 , manager=MANAGER,
                 container=self)
+        self.set_blocking(True)
 
     def process_event(self, event):
         super().process_event(event)
@@ -463,6 +465,7 @@ class SpecifyCatGender(UIWindow):
                                                                     placeholder_text=self.the_cat.genderalign,
                                                                     manager=MANAGER,
                                                                     container=self)
+        self.set_blocking(True)
 
     def process_event(self, event):
         super().process_event(event)
