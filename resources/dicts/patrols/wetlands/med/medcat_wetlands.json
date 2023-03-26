@@ -75,17 +75,17 @@
     "season": "newleaf",
     "tags": ["herb_gathering", "med_cat", "apprentice", "med_only", "herb", "comfort", "respect", "trust", "dislike"],
     "intro_text": "p_l and app1 head out for lungwort, with p_l starting a lesson on the value of this rare herb for treating yellowcough.",
-    "decline_text": "A cat grabs p_l's attention before they can leave. Sighing, the expedition is delayed for another time.",
+    "decline_text": "A cat grabs p_l's attention before they can leave.  p_l heaves a sigh - the expedition is delayed for another time.",
     "chance_of_success": 60,
     "exp": 20,
     "success_text": [
         "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to replenishing the Clan's stores after the long leaf-bare. For just a second, p_l feels the weight of their responsibilities lift, and they let out a whoop and stop to play with app1.",
-        "app1 listens intently as the hours drift slowly by in their intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort! p_l showers them with praise, app1 feeling like they could burst with accomplishment.",
-        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
-        "Night falls, and still s_c insists they keep going - lungwort is the only reliable cure for yellowcough, they can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find those precious speckled leaves."
+        "app1 listens intently as the hours drift slowly by in their intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort! p_l showers them with praise, app1 feeling like they could burst with pride over their accomplishment.",
+        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until, finally, those telltale speckled leaves are found.",
+        "Night falls, and still s_c insists they keep going. Lungwort is the only reliable cure for yellowcough, and they just can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find the precious, speckled leaves."
     ],
     "fail_text": [
-        "Not only do they not find anything, app1 seems to take in absolutely nothing of what p_l is teaching them, and by the time they're back at camp p_l wants to scream."
+        "Not only do they not find anything, app1 seems to not be taking in a single thing p_l tries to teach, and by the time they're back at camp p_l wants to screech."
     ],
     "win_skills": ["keen eye", "extremely smart"],
     "win_trait": ["patient"],
@@ -106,8 +106,8 @@
     "success_text": [
         "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to replenishing the Clan's stores after the long leaf-bare. For just a second, they feel the weight of their responsibilities lift, the strength of that relief catching them off guard.",
         "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. Frustratingly, p_l doesn't have the capacity to cart everything back to camp, but they stick the location in their mind as a place to return to.",
-        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
-        "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves."
+        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until, finally, those telltale speckled leaves are found.",
+        "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find the precious, speckled leaves."
     ],
     "fail_text": [
         null,
@@ -134,8 +134,8 @@
     "success_text": [
         "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to replenishing the Clan's stores after the long leaf-bare. For just a second, they feel the weight of their responsibilities lift, the strength of that relief catching them off guard.",
         "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l loads up their mostly-obliging escort and carries the extensive harvest home, tail waving jovially with their good mood.",
-        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
-        "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves."
+        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until, finally, those telltale speckled leaves are found.",
+        "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find the precious, speckled leaves."
     ],
     "fail_text": [
         null,
@@ -157,17 +157,17 @@
     "season": "greenleaf",
     "tags": ["herb_gathering", "med_cat", "apprentice", "med_only", "herb", "comfort", "respect", "trust", "dislike"],
     "intro_text": "p_l and app1 head out for lungwort, with p_l starting a lesson on the value of this rare herb for treating yellowcough.",
-    "decline_text": "A cat grabs p_l's attention before they can leave. Sighing, the expedition is delayed for another time.",
+    "decline_text": "A cat grabs p_l's attention before they can leave.  p_l heaves a sigh - the expedition is delayed for another time.",
     "chance_of_success": 60,
     "exp": 20,
     "success_text": [
         "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest while the growing season is upon them. For just a second, they feel the weight of their responsibilities lift, and they let out a whoop and stop to play with app1.",
-        "app1 listens intently as the hours drift slowly by in their intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort! p_l showers them with praise, app1 feeling like they could burst with accomplishment.",
-        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
-        "Night falls, and still s_c insists they keep going - lungwort is the only reliable cure for yellowcough, they can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find those precious speckled leaves."
+        "app1 listens intently as the hours drift slowly by in their intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort! p_l showers them with praise, app1 feeling like they could burst with pride over their accomplishment.",
+        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until, finally, those telltale speckled leaves are found.",
+        "Night falls, and still s_c insists they keep going. Lungwort is the only reliable cure for yellowcough, and they just can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find the precious, speckled leaves."
     ],
     "fail_text": [
-        "Not only do they not find anything, app1 seems to take in absolutely nothing of what p_l is teaching them, and by the time they're back at camp p_l wants to scream."
+        "Not only do they not find anything, app1 seems to not be taking in a single thing p_l tries to teach, and by the time they're back at camp p_l wants to screech."
     ],
     "win_skills": ["keen eye", "extremely smart"],
     "win_trait": ["patient"],
@@ -188,8 +188,8 @@
     "success_text": [
         "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest while the growing season is upon them. For just a second, they feel the weight of their responsibilities lift, the strength of that relief catching them off guard.",
         "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. Frustratingly, p_l doesn't have the capacity to cart everything back to camp, but they stick the location in their mind as a place to return to.",
-        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
-        "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves."
+        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until, finally, those telltale speckled leaves are found.",
+        "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find the precious, speckled leaves."
     ],
     "fail_text": [
         null,
@@ -216,8 +216,8 @@
     "success_text": [
         "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest while the growing season is upon them. For just a second, they feel the weight of their responsibilities lift, the strength of that relief catching them off guard.",
         "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l loads up their mostly-obliging escort and carries the extensive harvest home, tail waving jovially with their good mood.",
-        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
-        "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves."
+        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until, finally, those telltale speckled leaves are found.",
+        "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find the precious, speckled leaves."
     ],
     "fail_text": [
         null,
@@ -239,17 +239,17 @@
     "season": "leaf-fall",
     "tags": ["herb_gathering", "med_cat", "apprentice", "med_only", "herb", "comfort", "respect", "trust", "dislike"],
     "intro_text": "p_l and app1 head out for lungwort, with p_l starting a lesson on the value of this rare herb for treating yellowcough.",
-    "decline_text": "A cat grabs p_l's attention before they can leave. Sighing, the expedition is delayed for another time.",
+    "decline_text": "A cat grabs p_l's attention before they can leave.  p_l heaves a sigh - the expedition is delayed for another time.",
     "chance_of_success": 60,
     "exp": 20,
     "success_text": [
         "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest before the plant dies back in leaf-bare. For just a second, they feel the weight of their responsibilities lift, and they let out a whoop and stop to play with app1.",
-        "app1 listens intently as the hours drift slowly by in their intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort! p_l showers them with praise, app1 feeling like they could burst with accomplishment.",
-        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
-        "Night falls, and still s_c insists they keep going - lungwort is the only reliable cure for yellowcough, they can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find those precious speckled leaves."
+        "app1 listens intently as the hours drift slowly by in their intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort! p_l showers them with praise, app1 feeling like they could burst with pride over their accomplishment.",
+        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until, finally, those telltale speckled leaves are found.",
+        "Night falls, and still s_c insists they keep going. Lungwort is the only reliable cure for yellowcough, and they just can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find the precious, speckled leaves."
     ],
     "fail_text": [
-        "Not only do they not find anything, app1 seems to take in absolutely nothing of what p_l is teaching them, and by the time they're back at camp p_l wants to scream."
+        "Not only do they not find anything, app1 seems to not be taking in a single thing p_l tries to teach, and by the time they're back at camp p_l wants to screech."
     ],
     "win_skills": ["keen eye", "extremely smart"],
     "win_trait": ["patient"],
@@ -270,8 +270,8 @@
     "success_text": [
         "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest before the plant dies back in leaf-bare. For just a second, they feel the weight of their responsibilities lift, the strength of that relief catching them off guard.",
         "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. Frustratingly, p_l doesn't have the capacity to cart everything back to camp, but they stick the location in their mind as a place to return to.",
-        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
-        "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves."
+        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until, finally, those telltale speckled leaves are found.",
+        "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find the precious, speckled leaves."
     ],
     "fail_text": [
         null,
@@ -298,8 +298,8 @@
     "success_text": [
         "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest before the plant dies back in leaf-bare. For just a second, they feel the weight of their responsibilities lift, the strength of that relief catching them off guard.",
         "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l loads up their mostly-obliging escort and carries the extensive harvest home, tail waving jovially with their good mood.",
-        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
-        "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves."
+        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until, finally, those telltale speckled leaves are found.",
+        "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find the precious, speckled leaves."
     ],
     "fail_text": [
         null,
@@ -321,17 +321,17 @@
     "season": "leaf-bare",
     "tags": ["herb_gathering", "med_cat", "apprentice", "med_only", "herb", "comfort", "respect", "trust", "dislike"],
     "intro_text": "p_l and app1 head out for lungwort, with p_l starting a lesson on the value of this rare herb for treating yellowcough. It dies back during leaf-bare, but the snow in c_n's territory will preserve its juice and freshness until the newleaf thaw.",
-    "decline_text": "A cat grabs p_l's attention before they can leave. Sighing, the expedition is delayed for another time.",
+    "decline_text": "A cat grabs p_l's attention before they can leave.  p_l heaves a sigh - the expedition is delayed for another time.",
     "chance_of_success": 30,
     "exp": 20,
     "success_text": [
         "p_l heads directly for a sheltered valley, a confused app1 trailing behind them. There, they dig for a lungwort plant they know is under the snow, and show app1 that while the plant is dormant for the winter, the snow has preserved its leaf-fall greenery and kept them fresh - or fresh enough to still be useful anyway.",
-        "app1 listens intently as the hours drift slowly by in their intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort, poking out from the snow! p_l showers them with praise, app1 feeling like they could burst with accomplishment.",
-        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found under a snowy blanket.",
-        "Night falls, and still s_c insists they keep going - lungwort is the only reliable cure for yellowcough, they can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find those precious speckled leaves."
+        "app1 listens intently as the hours drift slowly by in their intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort, poking out from the snow! p_l showers them with praise, app1 feeling like they could burst with pride over their accomplishment.",
+        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until, finally, those telltale speckled leaves are found under a snowy blanket.",
+        "Night falls, and still s_c insists they keep going. Lungwort is the only reliable cure for yellowcough, and they just can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find the precious, speckled leaves."
     ],
     "fail_text": [
-        "Not only do they not find anything, app1 seems to take in absolutely nothing of what p_l is teaching them, and by the time they're back at camp p_l wants to scream."
+        "Not only do they not find anything, app1 seems to not be taking in a single thing p_l tries to teach, and by the time they're back at camp p_l wants to screech."
     ],
     "win_skills": ["keen eye", "extremely smart"],
     "win_trait": ["patient"],
@@ -353,7 +353,7 @@
         "It takes them all day, checking spots where they've seen lungwort growing before, but finally when p_l sweeps back the snow covering, they find a plant with leaves still green, if looking a little wilted. For just a second, they feel the weight of their responsibilities lift, the strength of that relief catching them off guard.",
         "Not only is the lungwort intact and still fresh, but there's also a nice patch of plantain nearby. Frustratingly, p_l doesn't have the capacity to cart everything back to camp, but they stick the location in their mind as a place to return to.",
         "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally, those telltale speckled leaves are found under the blanketing snow.",
-        "Night falls, and s_c still insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves, wilted but still valuable."
+        "Night falls, and s_c still insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find the precious, speckled leaves, wilted but still valuable."
     ],
     "fail_text": [
         null,
@@ -380,8 +380,8 @@
     "success_text": [
         "It takes them all day, checking spots where they've seen lungwort growing before, but finally when p_l sweeps back the snow covering they find a plant with leaves still green, if looking a little wilted. For just a second, they feel the weight of their responsibilities lift, the strength of that relief catching them off guard.",
         "Not only is the lungwort intact and still fresh, but there's also a nice patch of plantain nearby. p_l loads up their mostly-obliging escort and carries the extensive harvest home, tail waving jovially with their good mood.",
-        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found under the blanketing snow.",
-        "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves, wilted but still valuable."
+        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until, finally, those telltale speckled leaves are found under the blanketing snow.",
+        "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find the precious, speckled leaves, wilted but still valuable."
     ],
     "fail_text": [
         null,
