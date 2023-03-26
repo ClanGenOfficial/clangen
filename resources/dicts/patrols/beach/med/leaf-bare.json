@@ -55,7 +55,7 @@
     "season": "leaf-bare",
     "tags": ["herb_gathering", "med_only", "cold_injury", "scar", "FROSTMITT", "herb", "blackberry"],
     "intro_text": "Hmm. p_l heads out, deciding that c_n needs more blackberry leaves in their stores.",
-    "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
+    "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
     "chance_of_success": 40,
     "exp": 10,
     "success_text": [
@@ -84,7 +84,7 @@
     "season": "leaf-bare",
     "tags": ["herb_gathering", "adult_stat", "med_only", "cold_injury", "scar", "FROSTSOCK", "med_cat", "herb", "blackberry", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "Hmm. p_l heads out with app1, deciding that c_n needs more blackberry leaves in their stores.",
-    "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
+    "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
     "chance_of_success": 40,
     "exp": 30,
     "success_text": [
@@ -142,7 +142,7 @@
     "season": "leaf-bare",
     "tags": ["herb_gathering", "med_only", "cold_injury", "scar", "FROSTMITT", "herb", "burdock"],
     "intro_text": "As the snows of leaf-bare blow around camp, p_l eyes their herb stores. They should still be able to dig up burdock. p_l heads out to replenish the Clan's stocks.",
-    "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
+    "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
     "chance_of_success": 20,
     "exp": 10,
     "success_text": [
@@ -151,7 +151,7 @@
             "s_c remembers exactly where the burdock plant grew in greenleaf, even if it's buried under snow now. After all, s_c is after the roots, and those are still perfectly harvestable in leaf-bare."
 ],
     "fail_text": [
-            "Maybe they're coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and it feels like a wasted afternoon.",
+            "Maybe they're just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and it feels like a wasted afternoon.",
             null,
             null,
             "r_c digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. The cold had leeched all the heat from their pelt, and they arrive back at camp miserable."
@@ -171,16 +171,16 @@
     "season": "leaf-bare",
     "tags": ["herb_gathering", "adult_stat", "med_only", "med_cat", "cold_injury", "scar", "FROSTMITT", "herb", "burdock", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "As the snows of leaf-bare blow around camp, p_l eyes their herb stores. They should still be able to dig up burdock. p_l heads out to replenish the Clan's stocks, bringing app1 along.",
-    "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
+    "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
     "chance_of_success": 20,
     "exp": 30,
     "success_text": [
             "p_l's and app1's pawpads are nearly frozen, trying to dig up burdock in the cold, but somehow they manage it, and it's worth all the effort and misery to know how crucial these fresh herbs could be for the Clan.",
-            "It's very difficult, especially with the plant's leafy top-half for the season, but p_l somehow manages to find a burdock plant and bring its roots home. Laying the thin roots out in a neat pile in the herb stores makes p_l thrum with a contented purr, as does seeing how hard app1 is working to learn herbcraft.",
+            "It's very difficult, especially with the plant's leafy top-half for the season, but p_l somehow manages to find a burdock plant and bring its roots home. Laying the thin roots out in a neat pile in the herb stores makes p_l's entire body thrum with a contented purr, as does seeing how hard app1 is working to learn herbcraft.",
             "s_c remembers exactly where the burdock plant grew in greenleaf, even if it's buried under snow now. After all, s_c is after the roots, and those are still perfectly harvestable in leaf-bare."
 ],
     "fail_text": [
-            "Maybe they're coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and it feels like a wasted afternoon. They avoid snapping at app1, who seems unable to identify the common herb, but it's a near thing.",
+            "Maybe they're just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and it feels like a wasted afternoon. They avoid snapping at app1, who seems unable to identify the common herb, but they definitely come close.",
             null,
             null,
             "The patrol digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. r_c in particular is shivering and chilled to the bone by the time they return, empty-pawed and miserable."
@@ -205,11 +205,11 @@
     "exp": 10,
     "success_text": [
             "p_l's pawpads are nearly frozen, trying to dig up burdock in the cold, but somehow they manage it, and it's worth all the effort and misery to know how crucial these fresh herbs could be for the Clan. Their Clanmates purr at the sight of the dirty roots.",
-           "It's very difficult, especially with the plant's leafy top-half for the season, but p_l somehow manages to find a burdock plant and bring its roots home. Laying the thin roots out in a neat pile in the herb stores makes p_l thrum with a contented purr, and their Clanmates smile, appreciating their hard-working medicine cat.",
+           "It's very difficult, especially with the plant's leafy top-half for the season, but p_l somehow manages to find a burdock plant and bring its roots home. Laying the thin roots out in a neat pile in the herb stores makes p_l's entire body thrum with a contented purr, and their Clanmates smile, appreciating their hard-working medicine cat.",
             "s_c remembers exactly where the burdock plant grew in greenleaf, even if it's buried under snow now. After all, s_c is after the roots, and those are still perfectly harvestable in leaf-bare."
     ],
     "fail_text": [
-            "Maybe they're coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and no one else on the patrol is very helpful either. They return to camp without any burdock, prickling with frustration.",
+            "Maybe they're just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and no one else on the patrol is very helpful either. They return to camp without any burdock, prickling with frustration.",
             null,
             null,
             "The patrol digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. r_c in particular is shivering and chilled to the bone by the time they return, empty-pawed and miserable."
@@ -229,7 +229,7 @@
     "season": "leaf-bare",
     "tags": ["herb_gathering", "med_only", "cold_injury", "scar", "FROSTTAIL", "herb", "daisy"],
     "intro_text": "In the leaf-bare snow, the chances of finding any useable daisies seem slim. p_l hesitates - should they even try to look?",
-    "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
+    "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
     "chance_of_success": 0,
     "exp": 10,
     "success_text": [
@@ -258,7 +258,7 @@
     "season": "leaf-bare",
     "tags": ["herb_gathering", "adult_stat", "med_only", "med_cat", "cold_injury", "scar", "FROSTTAIL", "herb", "daisy", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "In the leaf-bare snow, the chances of finding any useable daisies seem slim. p_l hesitates - should they even try to look? And is bringing app1 a good idea?",
-    "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
+    "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
     "chance_of_success": 0,
     "exp": 40,
     "success_text": [
@@ -316,7 +316,7 @@
     "season": "leaf-bare",
     "tags": ["herb_gathering", "med_only", "cold_injury", "scar", "FROSTTAIL", "herb", "dandelion"],
     "intro_text": "The cold of leaf-bare might have killed off a lot of greenery, but p_l knows that the dandelions are only playing dead, and if they can get their paws on a plant the roots will still hold fresh white milky sap.",
-    "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
+    "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
     "chance_of_success": 40,
     "exp": 10,
     "success_text": [
@@ -346,7 +346,7 @@
     "tags": ["herb_gathering", "adult_stat", "med_only", "med_cat", "cold_injury", "scar", "FROSTTAIL", "herb", "dandelion", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
 
     "intro_text": "The cold of leaf-bare might have killed off a lot of greenery, but p_l knows that the dandelions are only playing dead, and if they can get their paws on a plant the roots will still hold fresh white milky sap. Time for app1 to learn about the resources that are still available to gather during leaf-bare.",
-    "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
+    "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
     "chance_of_success": 40,
     "exp": 40,
     "success_text": [
@@ -404,7 +404,7 @@
     "season": "leaf-bare",
     "tags": ["herb_gathering", "med_only", "cold_injury", "blunt_force_injury", "scar", "SIDE", "herb", "juniper"],
     "intro_text": "It's not finding fresh juniper that's the problem. An evergreen plant, they reliably grow through the cold - but they're large shrubs, sometimes large enough to be trees, and climbing in these slippery conditions might be dangerous.",
-    "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
+    "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
     "chance_of_success": 40,
     "exp": 10,
     "success_text": [
@@ -433,7 +433,7 @@
     "season": "leaf-bare",
     "tags": ["herb_gathering", "adult_stat", "med_only", "med_cat", "cold_injury", "blunt_force_injury", "scar", "SIDE", "herb", "juniper", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "It's not finding fresh juniper that's the problem. An evergreen plant, they reliably grow through the cold - but they're large shrubs, sometimes large enough to be trees, and climbing in these slippery conditions might be dangerous. p_l has a lot of hesitancy about bringing app1 along under these conditions.",
-    "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
+    "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
     "chance_of_success": 40,
     "exp": 40,
     "success_text": [
@@ -491,7 +491,7 @@
     "season": "leaf-bare",
     "tags": ["herb_gathering", "med_only", "cold_injury", "scar", "FROSTMITT", "herb", "wild_garlic", "many_herbs1", "many_herbs2"],
     "intro_text": "There's a limited selection of herbs p_l can even look for in leaf-bare, but if they can only remember where the wild garlic grew in greenleaf it's theirs for the taking.",
-    "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
+    "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
     "chance_of_success": 30,
     "exp": 30,
     "success_text": [
@@ -520,7 +520,7 @@
     "season": "leaf-bare",
     "tags": ["herb_gathering", "adult_stat", "med_only", "med_cat", "cold_injury", "scar", "FROSTMITT", "herb", "wild_garlic", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
     "intro_text": "There's a limited selection of herbs p_l can even look for in leaf-bare, but if they or app1 can only remember where the wild garlic grew in greenleaf it's theirs for the taking.",
-    "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
+    "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
     "chance_of_success": 30,
     "exp": 40,
     "success_text": [
