@@ -99,8 +99,13 @@ class Thoughts():
                 living_status = 'unknownresidence'
             
             if living_status not in thought['random_living_status']:
-                    return False
-        
+                return False
+        if 'random_living_status' not in thought:
+            if living_status == "living":
+                pass
+            else:
+                return False
+            
         if 'random_outside_status' in thought:
             if random_cat.outside and random_cat.status not in ["kittypet", "loner", "rogue", "former Clancat", "exiled"]:
                 outside_status = "lost"
