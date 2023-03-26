@@ -1,6 +1,7 @@
 import os
 import shutil
 
+import ujson
 from pygame_gui.elements import UIWindow
 import pygame
 import pygame_gui
@@ -13,7 +14,7 @@ from scripts.datadir import get_save_dir
 from scripts.game_structure import image_cache
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
 from scripts.utility import scale, quit
-from scripts.game_structure.game_essentials import game, MANAGER
+from scripts.game_structure.game_essentials import game, MANAGER, screen_y, screen_x
 
 
 class SaveCheck(UIWindow):
@@ -480,3 +481,212 @@ class SpecifyCatGender(UIWindow):
                 game.all_screens['profile screen'].exit_screen()
                 game.all_screens['profile screen'].screen_switches()
                 self.kill()
+
+
+class AdvancedSettings(UIWindow):
+    """This window allows the user to access settings within game_config"""
+
+    def __init__(self):
+        super().__init__(scale(pygame.Rect((300, 100), (1000, 1200))),
+                         window_display_title='Advanced Settings',
+                         object_id='#advanced_settings_window',
+                         resizable=False)
+
+        self.entry_line2 = None
+        self.entry_line1 = None
+        self.settings_changed = None
+        self.number_of_settings = 0
+        self.x_diff = 150
+
+        self.settings_group = {}
+        self.checkboxes = {}
+        self.settings_text = {}
+
+        game.switches['window_open'] = True
+
+        self.back_button = UIImageButton(
+            scale(pygame.Rect((-60, 10), (44, 44))),
+            "",
+            object_id="#exit_window_button",
+            container=self
+        )
+        self.heading = pygame_gui.elements.UITextBox(f"-Advanced Settings!-",
+                                                     scale(pygame.Rect((20, 20), (760, 150))),
+                                                     object_id="#text_box_30_horizcenter_spacing_95",
+                                                     manager=MANAGER,
+                                                     container=self)
+        self.heading = pygame_gui.elements.UITextBox(f"Please be aware that changing these settings may change the "
+                                                     f"game in unpredictable ways. Inputting incorrect information "
+                                                     f"could cause the game to crash. If you mess with these "
+                                                     f"settings, please do not report any problems you experience as "
+                                                     f"a bug. Some of these settings are not given explanation, trial "
+                                                     f"and error may be the best way to discover what they do!",
+                                                     scale(pygame.Rect((20, 80), (760, 150))),
+                                                     object_id="#text_box_30_horizcenter_spacing_95",
+                                                     manager=MANAGER,
+                                                     container=self)
+        self.gender_changed = pygame_gui.elements.UITextBox("Settings Changed!",
+                                                            scale(pygame.Rect((490, 260), (800, 80))),
+                                                            visible=False,
+                                                            object_id="#text_box_30_horizleft",
+                                                            manager=MANAGER,
+                                                            container=self)
+
+        self.save_settings_button = UIImageButton(
+            scale(pygame.Rect((300, -100), (292, 60))),
+            "",
+            object_id="#save_settings_button",
+            manager=MANAGER)
+
+        self.settings_container = pygame_gui.elements.UIScrollingContainer(
+            scale(pygame.Rect((100, 150), (800, 1000))),
+            manager=MANAGER,
+            container=self
+        )
+        with open(r'C:\Users\tkdbl\Documents\GitHub\clangen\resources\game_config.json', 'r', encoding='utf-8') as f:
+            game_config = ujson.load(f)
+
+        for value in self.dict_generator(game_config):
+            print(value)
+            self.create_setting_groups(value)
+
+        for setting_group in self.settings_group:
+            group = self.settings_group[setting_group]
+            for setting in group:
+                self.setting_name_creation(setting)
+                if 'True' in group[setting] or 'False' in group[setting]:
+                    self.checkbox_creation(setting, group[setting][0])
+                elif len(group[setting]) > 2:
+                    self.text_entry_box_creation()
+                else:
+                    self.text_entry_line_creation(setting, group[setting])
+
+        self.settings_container.set_scrollable_area_dimensions(
+            (800 / 1600 * screen_x, (self.number_of_settings * 150) / 1400 * screen_y))
+
+        self.set_blocking(True)
+
+    def create_setting_groups(self, setting_list):
+        sections = len(setting_list)
+
+        # the biggest group the setting is part of will be the setting group name
+        setting_name = setting_list[0]
+
+        # then we need to get the name of the setting itself, we have to account for nested dicts here
+        if sections > 3:
+            setting_info = " - ".join(setting_list[1:-2])
+        else:
+            setting_info = setting_list[1]
+
+        # we store this in a dict so that we can generate our UI from it later
+        # should generate as something like "setting_group": {"setting_name": ["option1", "option2"]}
+        if setting_info not in self.settings_group[setting_name]:
+            self.settings_group[setting_name] = {setting_info: [setting_list[-1]]}
+        else:
+            self.settings_group[setting_name][setting_info].append(setting_list[-1])
+
+    def dict_generator(self, indict, pre=None):
+        """
+        this is grabbing the game_config dict and separating it all out into lists,
+        since the game_config can get pretty deep with nested dicts, this seems the
+        best way to gather all the info in an organized format
+        :param indict: the dict to be separated
+        :param pre: (I don't even know what this does but I haven't needed it
+        yet, ngl I copy-pasted this off stack overflow lol)
+        :return: a list for each value found
+        """
+        pre = pre[:] if pre else []
+        if isinstance(indict, dict):
+            for key, value in indict.items():
+                if isinstance(value, dict):
+                    for d in self.dict_generator(value, pre + [key]):
+                        yield d
+                elif isinstance(value, list) or isinstance(value, tuple):
+                    for v in value:
+                        for d in self.dict_generator(v, pre + [key]):
+                            yield d
+                else:
+                    yield pre + [key, value]
+        else:
+            yield pre + [indict]
+
+    def setting_name_creation(self, setting_name):
+        self.settings_text[self.number_of_settings] = pygame_gui.elements.UITextBox(
+            str(setting_name),
+            scale(pygame.Rect((450, self.number_of_settings * self.x_diff), (700, 150))),
+            container=self.settings_container,
+            object_id="#text_box_30_horizleft_pad_0_8",
+            manager=MANAGER)
+
+    def checkbox_creation(self, setting_name, default):
+
+        # set if checkbox starts as checked or not
+        if default:
+            box_type = "#checked_checkbox"
+        else:
+            box_type = "#unchecked_checkbox"
+
+        # TODO: figure out how to handle comments as tooltips
+        self.checkboxes[self.number_of_settings] = UIImageButton(
+            scale(pygame.Rect((750, self.number_of_settings * self.x_diff), (68, 68))),
+            "",
+            object_id=box_type,
+            container=self.settings_container)
+
+        self.number_of_settings += 1
+
+    def text_entry_line_creation(self, setting_name, default):
+        # TODO: figure out how to handle comments as tooltips
+
+        x_dim = 200
+
+        # handles settings w tuples
+        if len(default) > 1:
+            x_dim = x_dim / 2
+
+            self.entry_line1[self.number_of_settings] = pygame_gui.elements.UITextEntryLine(
+                scale(pygame.Rect((750, self.number_of_settings * self.x_diff), (x_dim, 68))),
+                placeholder_text=str(setting_name),
+                container=self.settings_container)
+
+            self.entry_line2[self.number_of_settings] = pygame_gui.elements.UITextEntryLine(
+                scale(pygame.Rect((750 + x_dim + 5, self.number_of_settings * self.x_diff), (x_dim, 68))),
+                placeholder_text=str(setting_name),
+                container=self.settings_container)
+
+        # handles settings w just one entry
+        else:
+            self.entry_line1[self.number_of_settings] = pygame_gui.elements.UITextEntryLine(
+                scale(pygame.Rect((750, self.number_of_settings * self.x_diff), (x_dim, 68))),
+                placeholder_text=str(setting_name),
+                container=self.settings_container)
+
+        self.number_of_settings += 1
+
+    def text_entry_box_creation(self):
+        pass
+
+    def update_save_button(self):
+        """
+        Updates the disabled state the save button
+        """
+        if not self.settings_changed:
+            self.save_settings_button.disable()
+        else:
+            self.save_settings_button.enable()
+
+    def process_event(self, event):
+        super().process_event(event)
+
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            if event.ui_element == self.done_button:
+                if sub(r'[^A-Za-z0-9 ]+', "", self.gender_entry_box.get_text()) != "":
+                    self.the_cat.genderalign = sub(r'[^A-Za-z0-9 ]+', "", self.gender_entry_box.get_text())
+                    self.gender_changed.show()
+            elif event.ui_element == self.back_button:
+                game.switches['window_open'] = False
+                game.all_screens['profile screen'].exit_screen()
+                game.all_screens['profile screen'].screen_switches()
+                self.kill()
+
+
