@@ -1390,7 +1390,7 @@ class Cat():
     #                                   relative                                   #
     # ---------------------------------------------------------------------------- #
     def get_parents(self):
-        """Returns list containing parents of cat."""
+        """Returns list containing parents of cat(id)."""
         if self.parent1:
             if self.parent2:
                 return [self.parent1, self.parent2]

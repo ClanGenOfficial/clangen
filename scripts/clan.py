@@ -442,6 +442,7 @@ class Clan():
             self.camp_bg = camp_bg
             self.game_mode = game_mode
             self.pregnancy_data = {}
+            self.inheritance = {}
             self.reputation = 80
             self.starting_members = starting_members
             if game_mode in ['expanded', 'cruel season']:
@@ -721,6 +722,9 @@ class Clan():
 
         self.save_herbs(game.clan)
         self.save_disaster(game.clan)
+        self.save_pregnancy(game.clan)
+        self.save_inheritance(game.clan)
+
         if game.clan.game_mode in ['expanded', 'cruel season']:
             self.save_freshkill_pile(game.clan)
 
@@ -1012,7 +1016,8 @@ class Clan():
         self.load_pregnancy(game.clan)
         self.load_herbs(game.clan)
         self.load_disaster(game.clan)
-        if game.clan.game_mode in ['expanded', 'cruel season']:
+        self.load_inheritance(game.clan)
+        if game.clan.game_mode != "classic":
             self.load_freshkill_pile(game.clan)
         game.switches['error_message'] = ''
 
@@ -1261,6 +1266,28 @@ class Clan():
                 "ERROR: Saving nutrition information of the freshkill pile didn't work."
             )
 
+    def save_inheritance(self, clan):
+        """Saving the inheritance information of the clan."""
+        if not game.clan.name:
+            return
+        file_path = get_save_dir() + f"/{game.clan.name}/inheritance.json"
+        try:
+            with open(file_path, 'w', encoding='utf-8') as file:
+                json_string = ujson.dumps(clan.inheritance_data, indent=4)
+                file.write(json_string)
+        except:
+            print("ERROR: Saving the pregnancy data didn't work.")
+
+    def load_inheritance(self, clan):
+        """Loading the inheritance information of the clan."""
+        if not game.clan.name:
+            return
+        file_path = get_save_dir() + f"/{game.clan.name}/inheritance.json"
+        if os.path.exists(file_path):
+            with open(file_path, 'r', encoding='utf-8') as read_file:  # pylint: disable=redefined-outer-name
+                clan.inheritance_data = ujson.load(read_file)
+        else:
+            clan.inheritance_data = {}
 
 class OtherClan():
     """

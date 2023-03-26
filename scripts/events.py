@@ -212,7 +212,6 @@ class Events():
         if game.settings.get('autosave') is True and game.clan.age % 5 == 0:
             game.save_cats()
             game.clan.save_clan()
-            game.clan.save_pregnancy(game.clan)
 
     def mediator_events(self, cat):
         """ Check for mediator events """
