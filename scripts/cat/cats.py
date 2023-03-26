@@ -1040,7 +1040,7 @@ class Cat():
             other_cat = random.choice(list(all_cats.keys()))
             # makes sure that a cat won't think about a cat that was dead longer than they've been alive (with 4 moons difference)
             if all_cats[other_cat].dead and not self.dead and not self.status in ['leader', 'medicine cat']:
-                if (int(all_cats[other_cat].dead_moons) + 4) > self.moons:
+                if (int(all_cats[other_cat].dead_for) + 4) > self.moons:
                     continue
             i += 1
             if i > 100:
@@ -1050,7 +1050,7 @@ class Cat():
         other_cat = all_cats.get(other_cat)
 
         # get chosen thought
-        chosen_thought = Thoughts.get_chosen_thought(Thoughts, self, other_cat, self.status, game_mode)
+        chosen_thought = Thoughts.get_chosen_thought(self, other_cat, game_mode)
         
         # insert name if it is needed
         if "r_c" in chosen_thought:

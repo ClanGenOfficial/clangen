@@ -28,7 +28,7 @@
         ]
     },
     {
-        "id":"ambitious_apprentices",
+        "id": "ambitious_apprentices",
         "thoughts": [
             "Has been asking their mentor for more training",
             "Is feeling proud of themselves",
@@ -46,10 +46,10 @@
         ],
         "main_trait_constraint": [
             "ambitious"
-        ] 
+        ]
     },
     {
-        "id":"ambitious_warrior_apprentice",
+        "id": "ambitious_warrior_apprentice",
         "thoughts": [
             "Begs to be made a warrior early",
             "Has been catching the most prey out of all the apprentices"
@@ -59,12 +59,12 @@
         ],
         "main_trait_constraint": [
             "ambitious"
-        ] 
+        ]
     },
     {
         "id": "bloodthirsty_apprentices",
         "thoughts": [
-          "Starts a fight with another apprentice"
+            "Starts a fight with another apprentice"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -76,7 +76,7 @@
         ]
     },
     {
-        "id":"bloodthirsty_and_cold_medicine_cat_apprentice",
+        "id": "bloodthirsty_and_cold_medicine_cat_apprentice",
         "thoughts": [
             "Is hoping their medicine cat name will end in -claw"
         ],
@@ -89,7 +89,7 @@
         ]
     },
     {
-        "id":"bloodthirsty_warrior_apprentice",
+        "id": "bloodthirsty_warrior_apprentice",
         "thoughts": [
             "Pesters their mentor for more battle training",
             "Is practicing forbidden battle moves",
@@ -100,7 +100,7 @@
         ],
         "main_trait_constraint": [
             "bloodthirsty"
-        ] 
+        ]
     },
     {
         "id": "bold_apprentices",
@@ -118,7 +118,7 @@
         ]
     },
     {
-        "id":"bold_warrior_apprentice",
+        "id": "bold_warrior_apprentice",
         "thoughts": [
             "Taunted rival Clan apprentices at the border",
             "Is looking to challenge a warrior to a sparring match"
@@ -128,7 +128,7 @@
         ],
         "main_trait_constraint": [
             "bold"
-        ] 
+        ]
     },
     {
         "id": "calm_apprentice_to_mentor",
@@ -150,7 +150,7 @@
     {
         "id": "careful_apprentices",
         "thoughts": [
-          "Is asking if they need more training"
+            "Is asking if they need more training"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -164,9 +164,9 @@
     {
         "id": "charismatic_apprentices",
         "thoughts": [
-          "Winked playfully at another apprentice from across the clearing!",
-          "Is this moon's heartthrob to the other apprentices",
-          "Has recently given a wonderful speech to fellow apprentices, boosting morale"
+            "Winked playfully at another apprentice from across the clearing!",
+            "Is this moon's heartthrob to the other apprentices",
+            "Has recently given a wonderful speech to fellow apprentices, boosting morale"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -197,7 +197,7 @@
     {
         "id": "cold_apprentices",
         "thoughts": [
-          "Is hoping their name will end in -claw"
+            "Is hoping their name will end in -claw"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -223,7 +223,7 @@
         "main_trait_constraint": [
             "compassionate"
         ]
-    }, 
+    },
     {
         "id": "confident_warrior_apprentice",
         "thoughts": [
@@ -236,11 +236,11 @@
             "confident"
         ]
     },
-    {    
+    {
         "id": "daring_apprentices",
         "thoughts": [
-          "Is itching to go and train",
-          "Is being scolded by for reckless behavior while training"
+            "Is itching to go and train",
+            "Is being scolded by for reckless behavior while training"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -254,7 +254,7 @@
     {
         "id": "empathetic_apprentices",
         "thoughts": [
-          "Is doing extra apprentice tasks around camp, to help lighten the load"
+            "Is doing extra apprentice tasks around camp, to help lighten the load"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -520,7 +520,7 @@
     {
         "id": "strange_apprentice",
         "thoughts": [
-           "Decides to stare at their mentor without blinking"
+            "Decides to stare at their mentor without blinking"
         ],
         "main_status_constraint": [
             "apprentice",
@@ -656,7 +656,7 @@
         ]
     },
     {
-        "ID": "gen_formerly_a_rogue_apprentice_to_mentor",
+        "id": "gen_formerly_a_rogue_apprentice_to_mentor",
         "thoughts": [
             "Ditched their mentor to do to their own thing",
             "Is rolling their eyes at their mentor's teachings"
@@ -995,8 +995,8 @@
         "id": "mediator_app_alive_mediator",
         "thoughts": [
             "Is amazed at how well r_c mediated a fight between Clanmates",
-                "Is amazed at how well r_c mediated a territory dispute",
-                "Is amazed at how r_c talked their way out of a potential war"
+            "Is amazed at how well r_c mediated a territory dispute",
+            "Is amazed at how r_c talked their way out of a potential war"
         ],
         "main_status_constraint": [
             "mediator apprentice"
@@ -1009,7 +1009,7 @@
         "id": "mediator_app_alive_apprentice",
         "thoughts": [
             "Successfully solved an argument between their denmates",
-             "Tried to solve an argument between their denmates but only made it worse"
+            "Tried to solve an argument between their denmates but only made it worse"
         ],
         "main_status_constraint": [
             "mediator apprentice"
@@ -1041,12 +1041,12 @@
         "main_status_constraint": [
             "medicine cat",
             "medicine cat apprentice"
-        ],  
+        ],
         "random_status_constraint": [
             "warrior"
         ]
-      },
-      {
+    },
+    {
         "id": "med_cat_app_dead_SC_kit",
         "thoughts": [
             "Is wondering if r_c would have botherned them while they were sorting herbs",
@@ -1054,12 +1054,12 @@
         ],
         "main_status_constraint": [
             "medicine cat apprentice"
-        ],  
+        ],
         "random_status_constraint": [
             "kitten"
         ]
-      },
-      {
+    },
+    {
         "id": "med_cat_app_dead_app",
         "thoughts": [
             "Is wondering if r_c would have been their friend",
@@ -1067,14 +1067,14 @@
         ],
         "main_status_constraint": [
             "medicine cat apprentice"
-        ],  
+        ],
         "random_status_constraint": [
             "apprentice",
             "mediator apprentice",
             "medicine cat apprentice"
         ]
-      },
-      {
+    },
+    {
         "id": "med_cat_alive_apprentice",
         "thoughts": [
             "Wonders if r_c would have been a better healer",
@@ -1083,14 +1083,14 @@
         ],
         "main_status_constraint": [
             "medicine cat apprentice"
-        ],  
+        ],
         "random_status_constraint": [
             "apprentice",
             "mediator apprentice",
             "medicine cat apprentice"
         ]
-      },
-      {
+    },
+    {
         "id": "med_cat_gen",
         "thoughts": [
             "Is wondering if they are good enough to become a medicine cat",
@@ -1100,5 +1100,5 @@
         "main_status_constraint": [
             "medicine cat apprentice"
         ]
-      }
+    }
 ]

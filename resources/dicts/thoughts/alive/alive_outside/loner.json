@@ -1,6 +1,7 @@
-[{
-    "id": "general_loner_thoughts",
-    "thoughts": [
+[
+    {
+        "id": "general_loner_thoughts",
+        "thoughts": [
             "Is spending the night with a friend",
             "Wonders where r_c went",
             "Wonders about what Clan life would be like",
@@ -34,28 +35,28 @@
             "Spies a kittypet and taunts them that they can't enjoy freedom",
             "Taking a nap, hoping something exciting would escape their boredom",
             "Was running carelessly across the thunderpath and was nearly hit by a monster"
-    ],
-    "main_status_constraint": [
-        "loner"
-    ]
-},
-{
-    "id": "loner_kitten_/_adolescent_thoughts",
-    "thoughts": [
-        "Is currently trying to figure out how to catch a bird"
-    ],
-    "main_status_constraint": [
-        "loner"
-    ],
-    "main_age_constraint": [
-        "kitten",
-        "adolescent"
-    ]
-},
-{
-    "id": "loner_adolescent_thoughts",
-    "thoughts": [
-        "Is currently trying to figure out how to catch a bird",
+        ],
+        "main_status_constraint": [
+            "loner"
+        ]
+    },
+    {
+        "id": "loner_kitten_/_adolescent_thoughts",
+        "thoughts": [
+            "Is currently trying to figure out how to catch a bird"
+        ],
+        "main_status_constraint": [
+            "loner"
+        ],
+        "main_age_constraint": [
+            "kitten",
+            "adolescent"
+        ]
+    },
+    {
+        "id": "loner_adolescent_thoughts",
+        "thoughts": [
+            "Is currently trying to figure out how to catch a bird",
             "Is currently trying to figure out how to catch a squirrel",
             "Is currently trying to figure out how to catch a rabbit",
             "Is missing their parents",
@@ -75,38 +76,38 @@
             "Collects various items they find beautiful and interesting",
             "Wonders if their parents were once renowned explorers",
             "Has a mock battle with r_c from c_n whenever the apprentice flees their boring chores",
-            "Laughed at the thought of being a Clan cat and having a warrior name... Maybe..." 
-    ],
-    "main_status_constraint": [
-        "loner"
-    ],
-    "main_age_constraint": [
-        "adolescent"
-    ]
-},
-{
-    "id": "loner_adult_thoughts",
-    "thoughts": [
-        "Is scouting out locations for a new den",
+            "Laughed at the thought of being a Clan cat and having a warrior name... Maybe..."
+        ],
+        "main_status_constraint": [
+            "loner"
+        ],
+        "main_age_constraint": [
+            "adolescent"
+        ]
+    },
+    {
+        "id": "loner_adult_thoughts",
+        "thoughts": [
+            "Is scouting out locations for a new den",
             "Nearly got caught in a Twoleg trap!",
             "Got pet by a Twoleg",
             "Stayed in a Twoleg den for a couple of days for food",
             "Was almost eaten by a monster",
             "Is playing with kits"
-    ],
-    "main_status_constraint": [
-        "loner"
-    ],
-    "main_age_constraint": [
-        "young adult",
-        "adult",
-        "senior adult"
-    ]
-},
-{
-    "id": "loner_senior_or_elder_thoughts",
-    "thoughts": [
-        "Wonders if they should have joined a Clan when they were younger",
+        ],
+        "main_status_constraint": [
+            "loner"
+        ],
+        "main_age_constraint": [
+            "young adult",
+            "adult",
+            "senior adult"
+        ]
+    },
+    {
+        "id": "loner_senior_or_elder_thoughts",
+        "thoughts": [
+            "Wonders if they should have joined a Clan when they were younger",
             "Debates finding housefolk to care for them in their old age",
             "Is enjoying the sun on their back",
             "Purring as the sun's warmth eases their old joints",
@@ -125,11 +126,12 @@
             "Met up with an old kittypet friend, for both the free food and company",
             "Is gnawing at their pelt, irritated at the abundance of fleas",
             "Coughed heavily"
-    ],
-    "main_status_constraint": [
-        "loner"
-    ],
-    "main_age_constraint": [
-        "senior"
-    ]
-}]
+        ],
+        "main_status_constraint": [
+            "loner"
+        ],
+        "main_age_constraint": [
+            "senior"
+        ]
+    }
+]
