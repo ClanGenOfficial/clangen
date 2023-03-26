@@ -1288,7 +1288,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "bch_med_gatheringraspberrysolo1",
+    "patrol_id": "bch_med_gatheringraspberrysolo_greenleaf1",
     "biome": "beach",
     "season": "greenleaf",
     "tags": ["herb_gathering", "herb", "raspberry", "no_herbs1", "no_herbs2", "injury", "poisoned"],
@@ -1314,7 +1314,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "bch_med_gatheringraspberrysolo2",
+    "patrol_id": "bch_med_gatheringraspberrysolo_greenleaf2",
     "biome": "beach",
     "season": "greenleaf",
     "tags": ["herb_gathering", "herb", "raspberry", "no_herbs1", "apprentice", "injury", "poisoned", "death"],

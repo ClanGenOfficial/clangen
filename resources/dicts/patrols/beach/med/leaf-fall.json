@@ -680,7 +680,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "bch_med_gatheringlungwort7",
+    "patrol_id": "bch_med_gatheringlungwort_leaf-fall1",
     "biome": "beach",
     "season": "leaf-fall",
     "tags": [
@@ -721,8 +721,8 @@
     "antagonize_text": null,
     "antagonize_fail_text": null
     },
-    {
-    "patrol_id": "bch_med_gatheringlungwort8",
+{
+    "patrol_id": "bch_med_gatheringlungwort_leaf-fall2",
     "biome": "beach",
     "season": "leaf-fall",
     "tags": ["herb_gathering",
@@ -759,9 +759,9 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null
-    },
-    {
-    "patrol_id": "bch_med_gatheringlungwort9",
+},
+{
+    "patrol_id": "bch_med_gatheringlungwort_leaf-fall3",
     "biome": "beach",
     "season": "leaf-fall",
     "tags": ["herb_gathering",
@@ -801,7 +801,7 @@
     "max_cats": 3,
     "antagonize_text": null,
     "antagonize_fail_text": null
-    },
+},
 {
     "patrol_id": "bch_med_gatheringmallow_leaf-fall1",
     "biome": "beach",
@@ -1217,7 +1217,33 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "bch_med_gatheringraspberrysolo4",
+    "patrol_id": "bch_med_gatheringraspberrysolo_leaf-fall1",
+    "biome": "beach",
+    "season": "leaf-fall",
+    "tags": ["herb_gathering", "herb", "raspberry", "no_herbs1", "no_herbs2", "injury", "poisoned"],
+    "intro_text": "While gathering herbs, p_l spots a bush of red berries.",
+    "decline_text": "p_l decides not to touch the berries.",
+    "chance_of_success": 50,
+    "exp": 30,
+    "success_text": [
+        "p_l identifies them as raspberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit, especially its leaves.",
+        "p_l knows deathberries when they see them, and slips back to camp to report it to the leader - the warriors will need to be told to avoid this bush.",
+        "It takes little intelligence to recognise deathberries, but a great deal to collect them anyway. If s_c can dry them out, these berries will be sufficient for c_n for years to come. By using their weight to snap off one of the bush's branches, and then carefully carrying it back to camp, s_c manages to bring them safely home."
+    ],
+    "fail_text": [
+        "While p_l <i>thinks</i> they're probably cranberries, they aren't confident enough with the identification to risk being wrong and plucking deathberries instead.",
+        null,
+        null,
+        "While plucking them from the bush, p_l feels one of the berries split in their mouth, and a deceptively good taste coats their tongue. These aren't raspberries. They rush to force themselves to throw up, and it works, expelling the deathberries from their system, but they're weak and shaky for the rest of the day."
+    ],
+    "win_skills": ["smart", "very smart", "extremely smart"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_med_gatheringraspberrysolo_leaf-fall2",
     "biome": "beach",
     "season": "leaf-fall",
     "tags": ["herb_gathering", "adult_stat", "herb", "raspberry", "no_herbs1", "apprentice", "injury", "poisoned", "death"],
