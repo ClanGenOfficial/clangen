@@ -2722,8 +2722,6 @@ class Cat():
         elif game.sort_type == "exp":
             Cat.all_cats_list.sort(key=lambda x: x.experience, reverse=True)
 
-        if game.sort_fav:
-            Cat.all_cats_list.sort(key=lambda x: x.favourite, reverse=True)
         return
 
     @staticmethod
