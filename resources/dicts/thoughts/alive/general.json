@@ -396,14 +396,7 @@
         ],
         "main_status_constraint": [
             "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
-            "warrior",
-            "medicine cat",
-            "mediator",
-            "deputy",
-            "leader",
-            "elder"
+            "warrior"
         ],
         "random_status_constraint": [
             "deputy"
