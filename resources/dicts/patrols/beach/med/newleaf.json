@@ -717,7 +717,8 @@
     "success_text": [
         "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to replenishing the Clan's stores after the long leaf-bare. For just a second, they feel the weight of their responsibilities lift, the strength of that relief catching them off guard.",
         "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. Frustratingly, p_l doesn't have the capacity to cart everything back to camp, but they stick the location in their mind as a place to return to.",
-        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until, finally, those telltale speckled leaves are found.", "Night falls, but still s_c insistently keeps going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find the precious, speckled leaves."
+        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until, finally, those telltale speckled leaves are found.",
+        "Night falls, but still s_c insistently keeps going - they just can't let c_n go without. Exhausted, but determined, the medicine cat persists patiently until they find the precious, speckled leaves."
     ],
     "fail_text": [
         null,
@@ -736,7 +737,7 @@
     "patrol_id": "bch_med_gatheringlungwort_newleaf3",
     "biome": "beach",
     "season": "newleaf",
-    "tags": ["herb_gathering",  "med_cat", "warrior", "herb", "lungwort", "dislike", "p_l_to_r_c", "injury", "sore", "rc_has_stat", "injure_all"],
+    "tags": ["herb_gathering",  "med_cat", "warrior", "herb", "lungwort", "dislike", "p_l_to_r_c", "injury", "sore", "injure_all"],
     "intro_text": "p_l is on a mission to find lungwort now that newleaf is here. As the only reliable cure for yellowcough, they're determined that c_n replenish their stocks of it. They take along a warrior escort to help.",
     "decline_text": "A cat grabs p_l's attention before they can leave. p_l heaves a sigh - the expedition is delayed for another time.",
     "chance_of_success": 30,
@@ -745,14 +746,13 @@
         "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to replenishing the Clan's stores after the long leaf-bare. For just a second, they feel the weight of their responsibilities lift, the strength of that relief catching them off guard.",
         "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l loads up their mostly-obliging escort and carries the extensive harvest home, tail waving jollily with their good mood.",
         "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until, finally, those telltale speckled leaves are found.",
-        "Night falls, yet still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find the precious, speckled leaves."
+        "Night falls, but still s_c insistently keeps going - they just can't let c_n go without. Exhausted, but determined, the medicine cat persists patiently until they find the precious, speckled leaves."
     ],
     "fail_text": [
         null,
         "By the time they give up and return to camp, p_l is approaching the explosion point with s_c. They've gotten in the way, questioned the use of the gathering mission, and in general been utterly obnoxious today.",
         null,
         "The cats search and search until their pawpads are sore and their muscles exhausted, but they just can't find lungwort anywhere. p_l returns to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
-
     ],
     "win_skills": ["keen eye", "extremely smart"],
     "win_trait": ["patient"],
@@ -911,7 +911,7 @@
     "exp": 10,
     "success_text": [
             "It's hard to identify mullein while it's small, but p_l finds a plant or two and rips down their central stalks, carrying them back to camp to trim the leaves off later.",
-            "Easing the lungs of those with weaker chest muscles or infections, helping with certain sorts of pain, and being used to treat unhappy guts, mullein is a good herb to keep in stock, even though it doesn't have the glamour of catmint or the rarity of lungwort.",
+            "Easing the lungs of those with weaker chest muscles or infections, helping with certain sorts of pain, <i>and</i> being used to treat unhappy guts - mullein is a good herb to keep in stock, even if it doesn't have the glamour of catmint or the rarity of lungwort.",
             "The always-reliable s_c spots mullein plants growing plenty of leaves on their strange central stems, and knocks them over so that the entire bundle can be carried home."
 ],
     "fail_text": [
@@ -934,7 +934,7 @@
     "exp": 20,
     "success_text": [
             "It's hard to identify mullein while it's small, but p_l finds a plant or two and rips down their central stalks, showing app1 how to carry them back to camp to trim the leaves off later.",
-            "Easing the lungs of those with weaker chest muscles or infections, helping with certain sorts of pain, and being used to treat unhappy guts, mullein is a good herb to keep in stock, even though it doesn't have the glamour of catmint or the rarity of lungwort. app1 soaks up the lessons on its uses attentively.",
+            "Easing the lungs of those with weaker chest muscles or infections, helping with certain sorts of pain, <i>and</i> being used to treat unhappy guts - mullein is a good herb to keep in stock, even if it doesn't have the glamour of catmint or the rarity of lungwort. app1 soaks up the lessons on its uses attentively.",
             "The always-reliable s_c spots mullein plants growing plenty of leaves on their strange central stems, and, with, app1 helping them, knocks them over so that the entire bundle can be carried home."
 ],
     "fail_text": [
@@ -957,7 +957,7 @@
     "exp": 10,
     "success_text": [
             "It's hard to identify mullein while it's small, but p_l finds a plant or two for each member of their patrol and rips down their central stalks, carrying them back to camp to trim the leaves off later.",
-            "Easing the lungs of those with weaker chest muscles or infections, helping with certain sorts of pain, and being used to treat unhappy guts, mullein is a good herb to keep in stock, even though it doesn't have the glamour of catmint or the rarity of lungwort. The warriors helping p_l don't understand the importance, but obligingly help them harvest it.",
+            "Easing the lungs of those with weaker chest muscles or infections, helping with certain sorts of pain, <i>and</i> being used to treat unhappy guts - mullein is a good herb to keep in stock, even without the glamour of catmint or the rarity of lungwort. The warriors helping p_l don't understand the importance, but obligingly help them harvest it.",
             "The always-reliable s_c spots mullein plants growing plenty of leaves on their strange central stems, and knocks them over so that the entire bundle can be carried home by the patrol."
 ],
     "fail_text": [

@@ -451,7 +451,7 @@
             "s_c deftly picks out a horsetail shoot, which happens to be growing near the river where there is an abundance of moss to be collected. s_c brings back their impressive additions to the Clan's herb stores with the help of the warriors."
     ],
     "fail_text": [
-            "p_l is distracted today, and it affects their work. The patrol is unsuccessful and snappish with each other."
+            "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and the cats snappy with each other."
     ],
     "win_skills": ["keen eye"],
 

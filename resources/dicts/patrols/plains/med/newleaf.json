@@ -488,7 +488,7 @@
 "season": "newleaf",
 "tags": ["herb_gathering", "med_cat", "apprentice", "med_only", "herb", "lungwort", "comfort", "respect", "trust", "dislike"],
 "intro_text": "p_l and app1 head out for lungwort, with p_l starting a lesson on the value of this rare herb for treating yellowcough.",
-"decline_text": "A cat grabs p_l's attention before they can leave.  p_l heaves a sigh - the expedition is delayed for another time.",
+"decline_text": "A cat grabs p_l's attention before they can  leave. p_l heaves a sigh - the expedition is delayed for another time.",
 "chance_of_success": 30,
 "exp": 20,
 "success_text": [
@@ -607,7 +607,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "The soft rose-like scent of the mallow bushes drifts around p_l as they work, snipping off clumps of large fuzzy three-nubbed leaves and the occasional pink flower to be taken back to camp.",
+            "The soft, rose-like scent of the mallow bushes drifts around p_l as they work. They snip off clumps of large, fuzzy, three-nubbed leaves, and the occasional pink flower, to be taken back to camp.",
             "While the mellow shrubs are soft in scent and in touch, the plants are engaged in their own vigorous newleaf competition between each other, leaving p_l with tons to harvest.",
             "s_c has a good eye for these things, finding an excellent patch of mallow."
 ],
@@ -631,7 +631,7 @@
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-            "The soft rose-like scent of the mallow bushes drifts around p_l and app1 as they work, snipping off clumps of large fuzzy three-nubbed leaves and the occasional pink flower to be taken back to camp. Bees hum through the air, not trying to bother the medicine cats, and p_l points out where they think the hive might be to app1.",
+            "The soft, rose-like scent of the mallow bushes drifts around p_l and app1 as they work. They snip off clumps of large, fuzzy, three-nubbed leaves, and the occasional pink flower, to be taken back to camp. Bees hum through the air, not trying to bother the medicine cats, and p_l points out where they think the hive might be to app1.",
             "While the mellow shrubs are soft in scent and in touch, the plants are engaged in their own vigorous newleaf competition between each other, leaving p_l with tons to harvest. They test app1 on their knowledge as they work, and the apprentice passes with flying colors.",
             "s_c has a good eye for these things, finding an excellent patch of mallow. As they do, they instruct app1 in how to judge the quality of each stem. Each plant will contain both ideal and bad examples, either of which could be harvested, and it's important app1 has this knowledge, too."
 ],
@@ -655,7 +655,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "The soft rose-like scent of the mallow bushes drifts around p_l as they work, snipping off clumps of large fuzzy three-nubbed leaves and the occasional pink flower to be taken back to camp. The patrol chats as they work, exchanging gossip and news as the smell of cut stems grows around them.",
+            "The soft, rose-like scent of the mallow bushes drifts around p_l and app1 as they work. They snip off clumps of large, fuzzy, three-nubbed leaves, and the occasional pink flower, to be taken back to camp. The patrol chats as they work, exchanging gossip and news as the smell of cut stems wreathes around them.",
             "While the mellow shrubs are soft in scent and in touch, the plants are engaged in their own vigorous newleaf competition between each other, leaving p_l with tons to harvest. It's always a relief to bring in so much after a leaf-bare without any fresh mallow sources.",
             "s_c has a good eye for these things, finding an excellent patch of mallow. They control what is harvested, while their team works to efficiently carry the herb back to camp, deferring to s_c's expertise."
 ],
@@ -680,7 +680,7 @@
     "exp": 10,
     "success_text": [
             "The low-growing marigold creeps across the ground, recognizable by its strange leaves that look like they're pretending to be small fern fronds from a distance.",
-            "It stops infection, bleeding, and sore joints - why would any medicine cat ever want to risk running out of it? p_l brings back as much marigold as they can stuff into their mouth.",
+            "It stops infection, bleeding, <i>and</i> sore joints - why would any medicine cat ever want to risk running out of it? p_l brings back as much marigold as they can stuff into their mouth.",
             "s_c finds a patch of marigold, harvests its best leaves, and pads home, unaware of how much of their success rests on their talent for herb gathering."
 ],
     "fail_text": [
@@ -704,7 +704,7 @@
     "exp": 20,
     "success_text": [
             "The low-growing marigold creeps across the ground, recognizable by its strange leaves that look like they're pretending to be small fern fronds from a distance. p_l makes sure to point them out to app1, leaf shape is the best way to distinguish marigold before they start flowering.",
-            "It stops infection, bleeding, and sore joints - why would any medicine cat ever want to risk running out of it? p_l brings back as much marigold as they can stuff into their mouth, and app1 actually drops some of the leaves they carry on the way back to camp, a little over-ambitious with how much they can carry.",
+            "It stops infection, bleeding, <i>and</i> sore joints - why would any medicine cat ever want to risk running out of it? p_l brings back as much marigold as they can stuff into their mouth, and app1 actually drops some of the leaves they carry on the way back to camp, a little over-ambitious with how much they can carry.",
             "s_c finds a patch of marigold, harvests its best leaves, and pads home, unaware of how much of their success rests on their talent for herb gathering. app1 watches, trying to soak up their skills."
 ],
     "fail_text": [
@@ -728,8 +728,8 @@
     "exp": 10,
     "success_text": [
             "The low-growing marigold creeps across the ground, recognizable by its strange leaves that look like they're pretending to be small fern fronds from a distance. The non-medicine cats wander straight past them, and have to be gently called back by p_l to harvest them.",
-            "It stops infection, bleeding, and sore joints - why would any medicine cat ever want to risk running out of it? p_l brings back as much marigold as they can stuff into their mouth. The warriors helping them don't understand the importance, but obligingly follow p_l's example.",
-            "s_c finds a patch of marigold, harvests its best leaves, and pads home, unaware of how much of their success rests on their talent for herb gathering. The patrol is also unaware, but it certainly helps their faith in their medicine cat to see them succeed with such competence."
+            "It stops infection, bleeding, <i>and</i> sore joints - why would any medicine cat ever want to risk running out of it? p_l brings back as much marigold as they can stuff into their mouth. The warriors helping them don't understand the importance, but obligingly follow p_l's example.",
+            "s_c finds a patch of marigold, harvests its best leaves, and pads home, unaware of how much of their success rests on their talent for herb gathering. The patrol, too, is unaware, but it certainly bolsters their faith in their medicine cat to see them succeed with such competence."
 ],
     "fail_text": [
             "p_l fails to find any marigold, and as the plant dies completely in leaf-bare, can't use any of the spots they know from last year, although the warriors dismiss their concerns about the weeds."
@@ -977,7 +977,7 @@
     "exp": 10,
     "success_text": [
             "It's hard to identify mullein while it's small, but p_l finds a plant or two and rips down their central stalks, carrying them back to camp to trim the leaves off later.",
-            "Easing the lungs of those with weaker chest muscles or infections, helping with certain sorts of pain, and being used to treat unhappy guts, mullein is a good herb to keep in stock, though it doesn't have the glamour of catmint or the rarity of lungwort.",
+            "Easing the lungs of those with weaker chest muscles or infections, helping with certain sorts of pain, <i>and</i> being used to treat unhappy guts - mullein is a good herb to keep in stock, even if it doesn't have the glamour of catmint or the rarity of lungwort.",
             "The always-reliable s_c spots mullein plants growing plenty of leaves on their strange central stems, and knocks them over so that the entire bundle can be carried home."
 ],
     "fail_text": [
@@ -1001,7 +1001,7 @@
     "exp": 20,
     "success_text": [
             "It's hard to identify mullein while it's small, but p_l finds a plant or two and rips down their central stalks, showing app1 how to carry them back to camp to trim the leaves off later.",
-            "Easing the lungs of those with weaker chest muscles or infections, helping with certain sorts of pain, and being used to treat unhappy guts, mullein is a good herb to keep in stock, though it doesn't have the glamour of catmint or the rarity of lungwort. app1 soaks up the lessons on its uses attentively.",
+            "Easing the lungs of those with weaker chest muscles or infections, helping with certain sorts of pain, <i>and</i> being used to treat unhappy guts - mullein is a good herb to keep in stock, even if it doesn't have the glamour of catmint or the rarity of lungwort. app1 soaks up the lessons on its uses attentively.",
             "The always-reliable s_c spots mullein plants growing plenty of leaves on their strange central stems, and with app1 helping them, knocks them over so that the entire bundle can be carried home."
 ],
     "fail_text": [
@@ -1025,7 +1025,7 @@
     "exp": 10,
     "success_text": [
             "It's hard to identify mullein while it's small, but p_l finds a plant or two for each member of their patrol and rips down their central stalks, carrying them back to camp to trim the leaves off later.",
-            "Easing the lungs of those with weaker chest muscles or infections, helping with certain sorts of pain, and being used to treat unhappy guts, mullein is a good herb to keep in stock, though it doesn't have the glamour of catmint or the rarity of lungwort. The warriors helping p_l don't understand the importance, but obligingly help them harvest it.",
+            "Easing the lungs of those with weaker chest muscles or infections, helping with certain sorts of pain, <i>and</i> being used to treat unhappy guts - mullein is a good herb to keep in stock, even without the glamour of catmint or the rarity of lungwort. The warriors helping p_l don't understand the importance, but obligingly help them harvest it.",
             "The always-reliable s_c spots mullein plants growing plenty of leaves on their strange central stems, and knocks them over so that the entire bundle can be carried home by the patrol."
 ],
     "fail_text": [
