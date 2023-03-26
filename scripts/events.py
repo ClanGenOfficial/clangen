@@ -1017,17 +1017,25 @@ class Events():
                     "apprentice", "mediator apprentice",
                     "medicine cat apprentice"
             ]:
-                if (cat.experience_level not in ["untrained", "trainee"] and
-                    cat.moons >= game.config["graduation"]["min_graduating_age"]) \
-                        or cat.moons >= game.config["graduation"]["max_apprentice_age"][cat.status]:
 
-                    if cat.moons == game.config["graduation"][
-                            "min_graduating_age"]:
-                        preparedness = "early"
-                    elif cat.experience_level in ["untrained", "trainee"]:
-                        preparedness = "unprepared"
-                    else:
+                if game.settings["12_moon_graduation"]:
+                    _ready = cat.moons >= 12
+                else:
+                    _ready = (cat.experience_level not in ["untrained", "trainee"] and
+                              cat.moons >= game.config["graduation"]["min_graduating_age"]) \
+                              or cat.moons >= game.config["graduation"]["max_apprentice_age"][cat.status]
+                
+                if _ready:
+                    if game.settings["12_moon_graduation"]:
                         preparedness = "prepared"
+                    else:
+                        if cat.moons == game.config["graduation"][
+                                "min_graduating_age"]:
+                            preparedness = "early"
+                        elif cat.experience_level in ["untrained", "trainee"]:
+                            preparedness = "unprepared"
+                        else:
+                            preparedness = "prepared"
 
                     if cat.status == 'apprentice':
                         self.ceremony(cat, 'warrior', preparedness)
@@ -1548,11 +1556,13 @@ class Events():
                 else:
                     mentor_skill_modifier = 0
 
-                
-
             exp = random.choice(list(range(ran[0][0], ran[0][1] + 1)) + list(range(ran[1][0], ran[1][1] + 1)))
+            
+            if game.clan.game_mode == "classic":
+                exp += random.randint(0, 3)
 
             cat.experience += max(exp * mentor_modifier + mentor_skill_modifier, 1)
+            print(str(cat.name), exp * mentor_modifier + mentor_skill_modifier, cat.experience)
 
     def invite_new_cats(self, cat):
         """
