@@ -526,7 +526,7 @@ class Cat():
         """
         self.injuries.clear()
         self.illnesses.clear()
-
+        print('DEATH', self.name)
         # Deal with leader death
         text = ""
         if self.status == 'leader':
@@ -1266,7 +1266,7 @@ class Cat():
     def moon_skip_illness(self, illness):
         """handles the moon skip for illness"""
         if not self.is_ill():
-            return False
+            return True
 
         if self.illnesses[illness]["event_triggered"]:
             self.illnesses[illness]["event_triggered"] = False
@@ -1311,7 +1311,7 @@ class Cat():
     def moon_skip_injury(self, injury):
         """handles the moon skip for injury"""
         if not self.is_injured():
-            return
+            return True
 
         if self.injuries[injury]["event_triggered"] is True:
             self.injuries[injury]["event_triggered"] = False
@@ -1329,7 +1329,7 @@ class Cat():
             if self.status == 'leader':
                 game.clan.leader_lives -= 1
             self.die()
-            return
+            return False
 
         keys = self.injuries[injury].keys()
         if 'moons_with' in keys:
@@ -1342,7 +1342,7 @@ class Cat():
             self.injuries[injury]["duration"] -= 1
         if self.injuries[injury]["duration"] <= 0:
             self.healed_condition = True
-            return
+            return False
 
     def moon_skip_permanent_condition(self, condition):
         """handles the moon skip for permanent conditions"""

@@ -703,8 +703,28 @@ class Events():
 
         # prevent injured or sick cats from unrealistic clan events
         if cat.is_ill() or cat.is_injured():
-            self.condition_events.handle_already_ill(cat)
-            self.condition_events.handle_already_injured(cat)
+            if cat.is_ill() and cat.is_injured():
+                if random.getrandbits(1):
+                    triggered_death = self.condition_events.handle_injuries(cat)
+                    if not triggered_death:
+                        self.condition_events.handle_illnesses(cat)
+                    else:
+                        game.switches['skip_conditions'].clear()
+                        return
+                else:
+                    triggered_death = self.condition_events.handle_illnesses(cat)
+                    if not triggered_death:
+                        self.condition_events.handle_injuries(cat)
+                    else:
+                        game.switches['skip_conditions'].clear()
+                        return
+            elif cat.is_ill():
+                self.condition_events.handle_illnesses(cat)
+                game.switches['skip_conditions'].clear()
+            else:
+                self.condition_events.handle_injuries(cat)
+                game.switches['skip_conditions'].clear()
+
             self.handle_outbreaks(cat)
             self.coming_out(cat)
             self.pregnancy_events.handle_having_kits(cat, clan=game.clan)
