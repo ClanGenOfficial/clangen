@@ -811,7 +811,6 @@ class Cat():
 
         elif self.status == 'warrior':
             self.update_mentor()
-            self.update_skill()
 
             if old_status == 'leader':
                 game.clan.leader_lives = 0
@@ -829,14 +828,12 @@ class Cat():
 
         elif self.status == 'medicine cat':
             self.update_med_mentor()
-            self.update_skill()
             if game.clan is not None:
                 game.clan.new_medicine_cat(self)
 
         elif self.status == 'elder':
             self.update_mentor()
-            self.skill = choice(self.elder_skills)
-
+            
             # Ideally, this should also be triggered for cats that retired due to
             # health conditions. However, it is currently being triggered for all elders to
             # prevent "unretiring" by switching to med or mediator, then warrior.
@@ -857,7 +854,6 @@ class Cat():
 
         elif self.status == 'mediator':
             self.update_mentor()
-            self.update_skill()
 
         elif self.status == 'mediator apprentice':
             self.update_mentor()
@@ -1018,15 +1014,12 @@ class Cat():
         self.moons += 1
         if self.moons == 1:
             self.status = 'kitten'
-        # self.update_traits()
         self.in_camp = 1
 
         if self.status in ['apprentice', 'mediator apprentice']:
             self.update_mentor()
         elif self.status == 'medicine cat apprentice':
             self.update_med_mentor()
-        else:
-            self.update_skill()
 
     def thoughts(self):
         """ Generates a thought for the cat, which displays on their profile. """
@@ -1407,7 +1400,7 @@ class Cat():
             for par in self.get_parents():
                 par_ob = Cat.fetch_cat(par)
                 for x in par_ob.get_children():
-                    if x not in siblings:
+                    if x != self.ID and x not in siblings:
                         siblings.append(x)
             return siblings
 
@@ -1744,6 +1737,8 @@ class Cat():
         self.retired = True
         self.status = 'elder'
         self.name.status = 'elder'
+        self.update_traits()
+        self.update_skill()
 
         if old_status == 'leader':
             game.clan.leader_lives = 0

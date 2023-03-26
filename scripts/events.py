@@ -1043,6 +1043,9 @@ class Events():
         """
         # ceremony = []
         cat.status_change(promoted_to)
+        cat.update_skill()
+        cat.update_traits()
+    
         involved_cats = [
             cat.ID
         ]  # Clearly, the cat the ceremony is about is involved.
