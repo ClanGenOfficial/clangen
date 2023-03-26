@@ -299,9 +299,9 @@
     },
 
     "broken jaw":{
-        "duration": 6,
+        "duration": 4,
         "severity": "severe",
-        "medicine_duration": 5,
+        "medicine_duration": 3,
         "mortality": {
             "newborn": 10,
             "kitten": 10,
@@ -339,9 +339,9 @@
     },
 
     "broken bone":{
-        "duration": 8,
+        "duration": 5,
         "severity": "severe",
-        "medicine_duration": 7,
+        "medicine_duration": 3,
         "mortality": {
             "newborn": 10,
             "kitten": 10,
@@ -687,37 +687,7 @@
         ]
     },
 
-    "splinter":{
-        "duration": 1,
-        "severity": "minor",
-        "medicine_duration": 1,
-        "mortality": {
-            "newborn": 0,
-            "kitten": 0,
-            "adolescent": 0,
-            "young adult": 0,
-            "adult": 0,
-            "senior adult": 0,
-            "senior": 0
-        },
-        "illness_infectiousness": [],
-        "risks": [
-            {
-                "name": "an infected wound",
-                "chance": 40
-            }
-        ],
-        "also_got": [],
-        "cause_permanent": [
-        ],
-        "herbs": [
-            "marigold",
-            "oak_leaves",
-            "wild_garlic"
-        ]
-    },
-
-    "thorn in their paw":{
+    "small cut":{
         "duration": 1,
         "severity": "minor",
         "medicine_duration": 1,
@@ -1264,9 +1234,9 @@
     },
 
     "broken back":{
-        "duration": 10,
+        "duration": 8,
         "severity": "severe",
-        "medicine_duration": 8,
+        "medicine_duration": 6,
         "mortality": {
             "newborn": 3,
             "kitten": 5,
