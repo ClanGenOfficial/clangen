@@ -66,6 +66,8 @@ class Patrol():
         self.app6_name = None
         self.other_clan = None
         self.experience_levels = []
+        self.used_patrols = []
+        self.filter_count = 0
 
     def add_patrol_cats(self, patrol_cats: list, clan: Clan) -> None:
         """Add the list of cats to the patrol class and handles to set all needed values.
@@ -287,18 +289,18 @@ class Patrol():
 
         final_patrols, final_romance_patrols = self.filter_patrols(possible_patrols, biome, patrol_size, current_season,
                                                                    patrol_type)
-        if patrol_type == 'hunting':
-            final_patrols = self.balance_hunting(final_patrols)
-        final_patrols = self.filter_relationship(final_patrols)
-        final_romance_patrols = self.filter_relationship(final_romance_patrols)
 
         return final_patrols, final_romance_patrols
 
     def filter_patrols(self, possible_patrols, biome, patrol_size, current_season, patrol_type):
         filtered_patrols = []
         romantic_patrols = []
+
         # makes sure that it grabs patrols in the correct biomes, season, with the correct number of cats
         for patrol in possible_patrols:
+            if patrol.patrol_id in self.used_patrols:
+                continue
+
             if patrol_size < patrol.min_cats:
                 continue
             if patrol_size > patrol.max_cats:
@@ -420,15 +422,27 @@ class Patrol():
             else:
                 filtered_patrols.append(patrol)
 
-            # making sure related cats don't accidentally go on romantic patrols together
-            '''if "romantic" in patrol.tags:
-                if ("rel_two_apps" and "two_apprentices") in patrol.tags and len(self.patrol_apprentices) >= 2:
-                    if not self.patrol_apprentices[0].is_potential_mate(self.patrol_apprentices[1],
-                                                                        for_love_interest=True):
-                        continue
-                else:
-                    if not self.patrol_random_cat.is_potential_mate(self.patrol_leader, for_patrol=True):
-                        continue'''
+        if patrol_type == 'hunting':
+            filtered_patrols = self.balance_hunting(filtered_patrols)
+        filtered_patrols = self.filter_relationship(filtered_patrols)
+        romantic_patrols = self.filter_relationship(romantic_patrols)
+
+        if not filtered_patrols:
+            if self.filter_count == 1:
+                # error message will print from patrol_screens.py once this is returned
+                return filtered_patrols, romantic_patrols
+            self.filter_count += 1
+            self.used_patrols.clear()
+            print('used patrols cleared', self.used_patrols)
+            filtered_patrols, romantic_patrols = self.repeat_filter(possible_patrols, biome, patrol_size, current_season, patrol_type)
+        else:
+            # reset this when we succeed in finding a patrol
+            self.filter_count = 0
+        return filtered_patrols, romantic_patrols
+
+    def repeat_filter(self, possible_patrols, biome, patrol_size, current_season, patrol_type):
+        print('repeating filter')
+        filtered_patrols, romantic_patrols = self.filter_patrols(possible_patrols, biome, patrol_size, current_season, patrol_type)
         return filtered_patrols, romantic_patrols
 
     def balance_hunting(self, possible_patrols: list):
@@ -630,7 +644,7 @@ class Patrol():
                         rel_above_threshold = [i for i in relevant_relationships if i.platonic_like >= threshold]
                     elif v_type == "dislike":
                         rel_above_threshold = [i for i in relevant_relationships if i.dislike >= threshold]
-                    elif v_type == "comfortable": 
+                    elif v_type == "comfortable":
                         rel_above_threshold = [i for i in relevant_relationships if i.comfortable >= threshold]
                     elif v_type == "jealousy":
                         rel_above_threshold = [i for i in relevant_relationships if i.jealousy >= threshold]
@@ -701,7 +715,7 @@ class Patrol():
         # chance by adding the patrol event's chance of success plus the patrol's total exp
         success_chance = self.patrol_event.chance_of_success + int(
             self.patrol_total_experience / (7.5 * gm_modifier))
-        
+
         # Auto-wins based on EXP are sorta lame. Often makes it immpossible for large patrols with experiences cats to fail patrols at all. 
         # EXP alone can only bring success chance up to 95. However, skills/traits can bring it up above that. 
         success_chance = min(success_chance, 95)
@@ -740,7 +754,7 @@ class Patrol():
         # ---------------------------------------------------------------------------- #
         #                                   SUCCESS                                    #
         # ---------------------------------------------------------------------------- #
-        
+
         if c < success_chance:
             self.success = True
             self.patrol_fail_stat_cat = None
@@ -896,18 +910,18 @@ class Patrol():
         # check for ignore outcome tag
         if f"no_new_cat{outcome}" in tags:
             return
-        
+
         # find the new cat tag and split to get attributes - else return if no tag found
         attribute_list = []
         for tag in tags:
-            #print(tag)
+            # print(tag)
             if "new_cat" in tag and "no_new_cat" not in tag and "new_cat_injury" not in tag:
                 attribute_list = tag.split("_")
                 print('found tag, attributes:', attribute_list)
                 break
         if not attribute_list:
             return
-        
+
         print('new cat creation started')
 
         # setting the defaults
@@ -1315,7 +1329,7 @@ class Patrol():
         else:
             gained_exp = 0
 
-        #Apprentice exp, does not depend on success
+        # Apprentice exp, does not depend on success
         if "apprentice" in self.patrol_statuses or "medicine cat apprentice" in self.patrol_statuses:
             app_exp = max(random.randint(1, 7) * (1 - 0.1 * len(self.patrol_cats)), 1)
         else:
