@@ -299,7 +299,6 @@ class Patrol():
         # makes sure that it grabs patrols in the correct biomes, season, with the correct number of cats
         for patrol in possible_patrols:
             if patrol.patrol_id in self.used_patrols:
-                print(patrol.patrol_id, 'was in used patrols')
                 continue
 
             if patrol_size < patrol.min_cats:
