@@ -1050,7 +1050,7 @@ class Cat():
         other_cat = all_cats.get(other_cat)
 
         # get chosen thought
-        chosen_thought = Thoughts.get_chosen_thought(Thoughts, self, other_cat, self.status, game_mode)
+        chosen_thought = Thoughts.get_chosen_thought(self, other_cat, game_mode)
         
         # insert name if it is needed
         if "r_c" in chosen_thought:
