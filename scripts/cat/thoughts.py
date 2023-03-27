@@ -157,8 +157,8 @@ class Thoughts():
         status = main_cat.status
         loaded_thoughts = []
 
-        if status == "medicine cat apprentice":
-            status = "medicine cat"
+        if status in ["medicine cat apprentice", "medicine cat"]:
+            status = "medicine_cat"
         elif status == "mediator apprentice":
             status = "mediator"
 
