@@ -280,6 +280,11 @@ def json_load():
 
         # initialization of thoughts
         cat.thoughts()
+        
+        # Save integrety checks
+        if game.config["save_load"]["load_integrity_checks"]:
+            save_check()
+    
 
 def csv_load(all_cats):
     if game.switches['clan_list'][0].strip() == '':
@@ -468,3 +473,20 @@ def csv_load(all_cats):
                 if the_cat.relationships is not None and len(the_cat.relationships) < 1:
                     the_cat.create_all_relationships()
         game.switches['error_message'] = ''
+
+def save_check():
+    """Checks through loaded cats, checks and attempts to fix issues """
+    
+    for cat in Cat.all_cats:
+        cat_ob = Cat.all_cats[cat]
+        
+        # Not-mutural mate relations
+        if cat_ob.mate:
+            _temp_ob = Cat.all_cats.get(cat_ob.mate)
+            if _temp_ob:
+                # Check if the mate's mate feild is set to none
+                if not _temp_ob.mate:
+                    _temp_ob.mate = cat_ob.ID 
+            else:
+                # Invalid mate
+                cat_ob.mate = None

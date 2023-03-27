@@ -1069,5 +1069,49 @@
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_med_discussion1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["med_cat", "random_herbs", "respect", "trust", "med_only", "no_app"],
+    "intro_text": "p_l and r_c decide to look for herbs whilst discussing the latest news.",
+    "decline_text": "It seems like some mischievous cat has gotten into the herb storage and they have to sort it all over again.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "success_text": [
+    "They have a good discussion while foraging for herbs and manage to come up with several ideas regarding the latest news to discuss with the leader and deputy.",
+    "Carefully plucking some herbs, they discuss the latest signs from StarClan and ponder what to do about them. They manage to think up some tentative plans and they return to camp to discuss them with the leader and deputy."
+    ],
+    "fail_text": [
+    "They fail to discuss the issues that the latest news has brought with it and are too irritated with each other to continue the patrol."
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+
+{
+    "patrol_id": "gen_med_herbsgathering1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["random_herbs", "med_cat", "med_only", "platonic", "respect"],
+    "intro_text": "p_l and r_c take a look at their dwindling supply of herbs and decide to combine their efforts into searching for more.",
+    "decline_text": "Unfortunately, they are interrupted by a cat claiming that they have an emergency.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "success_text": [
+    "p_l and r_c search and harvest any herbs they can get their paws on. Later that day they reunite in front of the camp just as the sun is setting, both their mouths stuffed full with herbs.",
+    "p_l and r_c decide to make a game of who can hunt the most herbs. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs."
+    ],
+    "fail_text": [
+    "Both p_l and r_c are tense and it shows. Even though it shouldn't be this hard to find any herbs, they fail to find even a single one. They return to camp frustrated and irritated with each other.",
+    "Even though there should be many herbs, they fail to find anything. p_l blames r_c for distracting them and they get into a huge argument."
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 }
 ]

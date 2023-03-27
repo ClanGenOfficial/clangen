@@ -255,7 +255,7 @@ def create_new_cat(Cat,
     if not litter:
         number_of_cats = 1
     else:
-        number_of_cats = choices([1, 2, 3, 4, 5], [2, 5, 4, 1, 1], k=1)
+        number_of_cats = choices([2, 3, 4, 5], [5, 4, 1, 1], k=1)
         number_of_cats = number_of_cats[0]
     # setting age
     if not age and age != 0:
@@ -1089,7 +1089,7 @@ def update_sprite(cat):
         logger.exception("Failed to load sprite")
 
         # Placeholder image
-        new_sprite.blit(image_cache.load_image(f"sprites/faded/faded_adult.png").convert_alpha(), (0, 0))
+        new_sprite = image_cache.load_image(f"sprites/error_placeholder.png").convert_alpha()
 
     # Opacity currently disabled for performance reasons. Fading Fog is used as placeholder.
     """# Apply opacity
@@ -1136,7 +1136,6 @@ def get_text_box_theme(theme_name=""):
         if theme_name == "":
             return "#default_dark"
         else:
-            print(theme_name + '_dark')
             return theme_name + "_dark"
     else:
         if theme_name == "":

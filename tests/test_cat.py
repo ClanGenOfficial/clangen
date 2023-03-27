@@ -382,6 +382,8 @@ class TestStatusChange(unittest.TestCase):
         # when
         self.assertNotEqual(apprentice.mentor, None)
         apprentice.status_change("warrior")
+        apprentice.update_skill()
+        apprentice.update_traits()
         
         # then
         self.assertNotEqual(apprentice.skill, "???")
