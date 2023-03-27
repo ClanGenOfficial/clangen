@@ -1298,7 +1298,6 @@
         "While plucking them from the bush, p_l feels one of the berries split in their mouth, and a deceptively good taste coats their tongue. These aren't raspberries. They rush to force themselves to throw up, and it works, expelling the deathberries from their system, but they're weak and shaky for the rest of the day."
     ],
     "win_skills": ["smart", "very smart", "extremely smart"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,

@@ -15,7 +15,6 @@
     "fail_text": [
             "They gaze into the puddle only to see the weird ripples were caused by a feather falling on the puddle. p_l feels disappointed because they really could have used some guidance from StarClan."
     ],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -39,7 +38,6 @@
     "fail_text": [ 
         "app1 is constantly distracted and running ahead much to the frustration of p_l. Evidently no new knowledge will be learned that day."
     ],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -63,7 +61,6 @@
     "fail_text": [ 
         "app1 goes to a known herb patch - but the plant has died! They give up and return to camp, feeling terrible."
     ],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -542,7 +539,6 @@
     "fail_text": [
             "app2 shrugs. It's fine, it's totally not like they'd prefer to be hunting, doing something actually useful."
     ],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -564,7 +560,6 @@
     "fail_text": [
         "The other apprentices shrug. It's fine, it's totally not like they'd prefer to be hunting, doing something actually useful."
     ],
-
     "min_cats": 3,
     "max_cats": 3,
     "antagonize_text": null,
@@ -586,7 +581,6 @@
     "fail_text": [
             "app1 and app2 start to argue, ruining everyone's day."
     ],
-
     "min_cats": 3,
     "max_cats": 3,
     "antagonize_text": null,
@@ -608,7 +602,6 @@
     "fail_text": [
         "The other apprentices shrug. It's fine, it's totally not like they'd prefer to be hunting, doing something actually useful."
     ],
-
     "min_cats": 4,
     "max_cats": 4,
     "antagonize_text": null,
@@ -630,7 +623,6 @@
 "fail_text": [
         "app1 and app2 start to argue, ruining everyone's day."
 ],
-
     "min_cats": 4,
     "max_cats": 4,
     "antagonize_text": null,
@@ -652,7 +644,6 @@
     "fail_text": [
         "The other apprentices shrug. It's fine, it's totally not like they'd prefer to be hunting, doing something actually useful."
     ],
-
     "min_cats": 5,
     "max_cats": 5,
     "antagonize_text": null,
@@ -674,7 +665,6 @@
 "fail_text": [
         "app1 and app2 start to argue, ruining everyone's day."
 ],
-
     "min_cats": 5,
     "max_cats": 5,
     "antagonize_text": null,
@@ -696,7 +686,6 @@
     "fail_text": [
         "The other apprentices shrug. It's fine, it's totally not like they'd prefer to be hunting, doing something actually useful."
     ],
-
     "min_cats": 6,
     "max_cats": 6,
     "antagonize_text": null,
@@ -718,7 +707,6 @@
 "fail_text": [
         "app1 and app2 start to argue, ruining everyone's day."
 ],
-
     "min_cats": 6,
     "max_cats": 6,
     "antagonize_text": null,

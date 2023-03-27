@@ -15,7 +15,6 @@
     "fail_text": [
             "They gaze into the puddle only to see the weird ripples were caused by a feather falling on the puddle. p_l feels disappointed because they really could have used some guidance from StarClan."
     ],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -39,7 +38,6 @@
     "fail_text": [ 
         "app1 is constantly distracted and running ahead much to the frustration of p_l. Evidently no new knowledge will be learned that day."
     ],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -63,7 +61,6 @@
     "fail_text": [ 
         "app1 goes to a known herb patch - but the plant has died! They give up and return to camp, feeling terrible."
     ],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -422,7 +419,6 @@
         null,
         null
     ],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": "null, ",
