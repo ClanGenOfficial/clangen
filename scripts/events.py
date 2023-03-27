@@ -10,6 +10,8 @@ TODO: Docs
 import random
 import traceback
 
+from scripts.patrol import Patrol
+
 try:
     import ujson as json
 except ImportError:
@@ -66,6 +68,7 @@ class Events():
         self.CEREMONY_TXT = None
         self.load_ceremonies()
         self.disaster_events = DisasterEvents()
+        self.patrols = Patrol()
 
     def one_moon(self):
         """
@@ -77,13 +80,7 @@ class Events():
         game.switches['saved_clan'] = False
         self.new_cat_invited = False
         self.relation_events.clear_trigger_dict()
-
-        # This is a bandaid solution, and isn't perfect
-        # But this will help reputation from growing without limit.
-        game.clan.reputation = min(
-            game.clan.reputation,
-            100)  # <-- Returns the smallest, so caps at 100.
-
+        Patrol.used_patrols.clear()
         game.patrolled.clear()
 
         if any(
@@ -703,8 +700,28 @@ class Events():
 
         # prevent injured or sick cats from unrealistic clan events
         if cat.is_ill() or cat.is_injured():
-            self.condition_events.handle_already_ill(cat)
-            self.condition_events.handle_already_injured(cat)
+            if cat.is_ill() and cat.is_injured():
+                if random.getrandbits(1):
+                    triggered_death = self.condition_events.handle_injuries(cat)
+                    if not triggered_death:
+                        self.condition_events.handle_illnesses(cat)
+                    else:
+                        game.switches['skip_conditions'].clear()
+                        return
+                else:
+                    triggered_death = self.condition_events.handle_illnesses(cat)
+                    if not triggered_death:
+                        self.condition_events.handle_injuries(cat)
+                    else:
+                        game.switches['skip_conditions'].clear()
+                        return
+            elif cat.is_ill():
+                self.condition_events.handle_illnesses(cat)
+                game.switches['skip_conditions'].clear()
+            else:
+                self.condition_events.handle_injuries(cat)
+                game.switches['skip_conditions'].clear()
+
             self.handle_outbreaks(cat)
             self.coming_out(cat)
             self.pregnancy_events.handle_having_kits(cat, clan=game.clan)
@@ -997,17 +1014,25 @@ class Events():
                     "apprentice", "mediator apprentice",
                     "medicine cat apprentice"
             ]:
-                if (cat.experience_level not in ["untrained", "trainee"] and
-                    cat.moons >= game.config["graduation"]["min_graduating_age"]) \
-                        or cat.moons >= game.config["graduation"]["max_apprentice_age"][cat.status]:
 
-                    if cat.moons == game.config["graduation"][
-                            "min_graduating_age"]:
-                        preparedness = "early"
-                    elif cat.experience_level in ["untrained", "trainee"]:
-                        preparedness = "unprepared"
-                    else:
+                if game.settings["12_moon_graduation"]:
+                    _ready = cat.moons >= 12
+                else:
+                    _ready = (cat.experience_level not in ["untrained", "trainee"] and
+                              cat.moons >= game.config["graduation"]["min_graduating_age"]) \
+                              or cat.moons >= game.config["graduation"]["max_apprentice_age"][cat.status]
+                
+                if _ready:
+                    if game.settings["12_moon_graduation"]:
                         preparedness = "prepared"
+                    else:
+                        if cat.moons == game.config["graduation"][
+                                "min_graduating_age"]:
+                            preparedness = "early"
+                        elif cat.experience_level in ["untrained", "trainee"]:
+                            preparedness = "unprepared"
+                        else:
+                            preparedness = "prepared"
 
                     if cat.status == 'apprentice':
                         self.ceremony(cat, 'warrior', preparedness)
@@ -1052,6 +1077,9 @@ class Events():
         """
         # ceremony = []
         cat.status_change(promoted_to)
+        cat.update_skill()
+        cat.update_traits()
+    
         involved_cats = [
             cat.ID
         ]  # Clearly, the cat the ceremony is about is involved.
@@ -1525,11 +1553,13 @@ class Events():
                 else:
                     mentor_skill_modifier = 0
 
-                
-
             exp = random.choice(list(range(ran[0][0], ran[0][1] + 1)) + list(range(ran[1][0], ran[1][1] + 1)))
+            
+            if game.clan.game_mode == "classic":
+                exp += random.randint(0, 3)
 
             cat.experience += max(exp * mentor_modifier + mentor_skill_modifier, 1)
+            print(str(cat.name), exp * mentor_modifier + mentor_skill_modifier, cat.experience)
 
     def invite_new_cats(self, cat):
         """

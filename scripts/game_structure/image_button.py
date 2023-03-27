@@ -12,7 +12,6 @@ class UIImageButton(pygame_gui.elements.UIButton):
         button image."""
 
     def _set_any_images_from_theme(self):
-
         changed = False
         normal_image = None
         try:
