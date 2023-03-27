@@ -79,7 +79,7 @@
     "biome": "plains",
     "season": "leaf-fall",
     "tags": ["herb_gathering", "med_only", "med_cat", "herb", "betony", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
-    "intro_text": "As the betony plants start to dramatically give up on life as leaf-fall progresses, p_l takes the oportunity to go harvest from them, bringing along app1 for a herbcraft lesson.",
+    "intro_text": "As the betony plants start to dramatically give up on life as leaf-fall progresses, p_l takes the opportunity to go harvest from them, bringing along app1 for a herbcraft lesson.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
     "chance_of_success": 70,
     "exp": 20,
@@ -103,7 +103,7 @@
     "biome": "plains",
     "season": "leaf-fall",
     "tags": ["herb_gathering", "warrior", "herb", "betony", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
-    "intro_text": "As the betony plants start to dramatically give up on life as leaf-fall progresses, p_l takes the oportunity to go harvest from them, bringing along a patrol to help them cart the leaves back to the herb stores.",
+    "intro_text": "As the betony plants start to dramatically give up on life as leaf-fall progresses, p_l takes the opportunity to go harvest from them, bringing along a patrol to help them cart the leaves back to the herb stores.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
     "exp": 10,
@@ -127,7 +127,7 @@
     "biome": "plains",
     "season": "leaf-fall",
     "tags": ["herb_gathering", "med_only", "herb", "blackberry", "many_herbs1", "many_herbs2"],
-    "intro_text": "As leaf-fall arrives the blackberry plants burst into fruit and p_l heads out to take advantage.",
+    "intro_text": "As leaf-fall arrives, the blackberry plants burst into fruit, and p_l heads out to take advantage.",
     "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
     "chance_of_success": 70,
     "exp": 10,
@@ -151,7 +151,7 @@
     "biome": "plains",
     "season": "leaf-fall",
     "tags": ["herb_gathering", "med_only", "med_cat", "herb", "blackberry", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
-    "intro_text": "As leaf-fall arrives the blackberry plants burst into fruit and p_l heads out to take advantage, bringing app1 along.",
+    "intro_text": "As leaf-fall arrives, the blackberry plants burst into fruit, and p_l heads out to take advantage, bringing app1 along.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
     "chance_of_success": 70,
     "exp": 20,
@@ -175,13 +175,13 @@
     "biome": "plains",
     "season": "leaf-fall",
     "tags": ["herb_gathering", "warrior", "herb", "blackberry", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
-    "intro_text": "As leaf-fall arrives the blackberry plants burst into fruit and p_l heads out to take advantage, bringing along anyone who isn't busy with other work.",
+    "intro_text": "As leaf-fall arrives, the blackberry plants burst into fruit, and p_l heads out to take advantage, bringing along anyone who isn't busy with other work.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
            "Careful now. p_l finds the blackberry bramble, utterly coated in berries. This is the season for blackberry picking, and time to leave the leaves alone in anticipation of the coming leaf-bare. The berries are a poor substitute for the leaves, but a medicine cat has to think of the future, p_l explains to the warriors.",
-           "Perfect - there's a good crop of blackberries just waiting for them, and the bramble seems to be sending out new exploratory branches too, promising more growth in the future. Their Clanmates send p_l away for a nap in the sunshine as they organise the berries and p_l smiles appreciatively.",
+           "Perfect - there's a good crop of blackberries just waiting for them, and the bramble seems to be sending out new exploratory branches too, promising more growth in the future. Their Clanmates send p_l away for a nap in the sunshine, as they organise the blackberry leaves, and p_l smiles appreciatively.",
            "s_c falls into the meditative state that herb-gathering brings, and they hum to themselves as they work, crisply plucking from the blackberry brambles. The patrol follows their lead, and its a relaxed group that wanders back into camp with a massive haul from the blackberry bushes."
     ],
     "fail_text": [
@@ -199,12 +199,12 @@
     "biome": "plains",
     "season": "leaf-fall",
     "tags": ["herb_gathering", "med_only", "herb", "burdock", "many_herbs1", "many_herbs2"],
-    "intro_text": "As leaf-fall starts to hint of the cold soon to come, the burdock plants are starting to wilt. p_l heads out to replenish the Clan's stocks.",
+    "intro_text": "As leaf-fall starts to hint at the cold soon to come, the burdock plants begin to wilt. p_l heads out to replenish the Clan's stocks.",
     "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "The rains have made the soil loose, and good for digging. While finding burdock plants is starting to become harder, at least it's easy to harvest the roots.",
+            "The rains have made the soil loose and good for digging. While finding burdock plants is starting to become harder, at least it's easy to harvest the roots when they do come across some.",
             "Luck is on p_l's side today - the burdock is both plentiful and easy to find. Laying the fat roots out in a towering but neat pile in the herb stores makes p_l's entire body thrum with a contented purr.",
             "s_c shows their usual talent for spotting herbs, trotting straight over to a burdock plant and digging at its foot."
 ],
@@ -223,12 +223,12 @@
     "biome": "plains",
     "season": "leaf-fall",
     "tags": ["herb_gathering", "med_only", "med_cat", "herb", "burdock", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
-    "intro_text": "As leaf-fall starts to hint of the cold soon to come, the burdock plants are starting to wilt. p_l heads out to replenish the Clan's stocks, bringing app1 along.",
+    "intro_text": "As leaf-fall starts to hint at the cold soon to come, the burdock plants begin to wilt. p_l heads out to replenish the Clan's stocks, bringing app1 along.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-            "The rains have made the soil loose, and good for digging. While finding burdock plants is starting to become harder, at least it's easy to harvest the roots. app1 actually topples over at one point, although p_l pretends they didn't see, hiding their smile.",
+            "The rains have made the soil loose and good for digging. While finding burdock plants is starting to become harder, at least it's easy to harvest the roots when they do come across some. app1 actually topples over at one point, although p_l pretends they didn't see, hiding their smile.",
             "Luck is on p_l's side today - the burdock is both plentiful and easy to find. Laying the fat roots out in a towering but neat pile in the herb stores makes p_l's entire body thrum with a contented purr, as does seeing how hard app1 is working to learn herbcraft.",
             "s_c shows their usual talent for spotting herbs, trotting straight over to a burdock plant and digging at its foot. app1 asks them about it, and p_l replies with an explanation of how the distinctive size and shape of burdock leaves helps to quickly identify them from a distance."
 ],
@@ -247,12 +247,12 @@
     "biome": "plains",
     "season": "leaf-fall",
     "tags": ["herb_gathering", "warrior", "herb", "burdock", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
-    "intro_text": "As leaf-fall starts to hint of the cold soon to come, the burdock plants are starting to wilt. p_l heads out to replenish the Clan's stocks, bringing along anyone who isn't busy with other work.",
+    "intro_text": "As leaf-fall starts to hint at the cold soon to come, the burdock plants begin to wilt. p_l heads out to replenish the Clan's stocks, bringing along anyone who isn't busy with other work.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-           "The rains have made the soil loose, and good for digging. While finding burdock plants is starting to become harder, at least it's easy to harvest the roots. It's a long afternoon, but a productive, light-hearted one, filled with smiles and jokes as the obliging cats follow p_l's direction to cart everything home.",
+           "The rains have made the soil loose and good for digging. While finding burdock plants is starting to become harder, at least it's easy to harvest the roots when they do come across some. It's a long afternoon, but a productive, light-hearted one, filled with smiles and jokes as the obliging cats follow p_l's direction to cart everything home.",
            "Luck is on p_l's side today - the burdock is both plentiful and easy to find. Laying the fat roots out in a towering but neat pile in the herb stores makes p_l's entire body thrum with a contented purr, and their Clanmates smile, obligingly helping out their hard-working medicine cat.",
             "s_c shows their usual talent for spotting herbs, trotting straight over to a burdock plant and digging at its foot. Their team follows them, ready to pitch in and provide the muscle needed to bring back an excellent harvest."
     ],
@@ -271,7 +271,7 @@
     "biome": "plains",
     "season": "leaf-fall",
     "tags": ["herb_gathering", "med_only", "herb", "catmint", "many_herbs2", "med_cat"],
-    "intro_text": "They'd better take the opportunity to harvest while they can, p_l doesn't have much time left before many herbs will leave c_n's territory in the cold.",
+    "intro_text": "They'd better take the opportunity to harvest while they can, p_l doesn't have much time left before many herbs will leave c_n's territory with the cold of leaf-bare.",
     "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
     "chance_of_success": 40,
     "exp": 30,
@@ -301,7 +301,7 @@
     "exp": 30,
     "success_text": [
             "As they walk, p_l teaches app1 about how crucial catmint is for coughs, and how, although its scent holds drugged pleasure, part of the responsibility of being a medicine cat is avoiding becoming caught in its haze. The medicine cats carefully pick out catmint from its known hiding places, carting it back to camp where it will protect the Clan.",
-            "Leaf-fall indicates the last of the catmint harvest, and p_l works hard to bring some home before the plants wilt and lose their potency, showing app1 how some of the stems are already starting to look discolored. Frost doesn't agree with catmint.",
+            "Leaf-fall indicates the last of the catmint harvest, and p_l works hard to bring some home before the plants wilt and lose their potency, showing app1 how some of the stems are already starting to look discolored. Frost doesn't agree with catmint, unfortunately, so it's best to gather it before the cold bite of leaf-bare truly sets in.",
             "s_c makes a circuit visiting all the known catmint plants in c_n's territory. While some are already wilting from frost, there's more than enough to harvest and bring back to the herb stores, and showing app1 all the plants will prepare them for trying to refind catmint in newleaf."
 ],
     "fail_text": [
@@ -325,8 +325,8 @@
     "exp": 10,
     "success_text": [
             "The warriors keep their heads, with the more experienced of p_l's helpers making themselves useful keeping those that are young or more impulsive focused on their task. The medicine cat and their team carefully pick out catmint from its known hiding places, carting it back to camp where it will protect the Clan.",
-            "Leaf-fall indicates the last of the catmint harvest, and p_l works hard to bring some home before the plants wilt and lose their potency, keeping strict control of their rowdy group and channeling their energies into herb gathering, not smell enjoying. It's not as easygoing as p_l normally is, but the more experienced warriors back them up.",
-            "s_c makes a circuit visiting all the known catmint plants in c_n's territory. While some are already wilting from frost, there's more than enough to harvest and bring back to the herb stores. Their helpers get to keep the wilted stuff for their nests, thrilling their Clanmates."
+            "Leaf-fall indicates the last of the catmint harvest, and p_l works hard to bring some home before the plants wilt and lose their potency. They somehow keep control of their rowdy group, channeling their energies into herb-gathering, not smell-enjoying. It's not as easygoing as their patrols normally are, but the more experienced cats back them up.",
+            "s_c makes a circuit visiting all the known catmint plants in c_n's territory. While some are already wilting from frost, there's more than enough to harvest and bring back to the herb stores. Their helpers get to keep the wilted stuff for their nests, which, unsurprisingly, thrills their Clanmates."
     ],
     "fail_text": [
             "p_l is proven unfortunately correct, as the patrol is full of juvenile behaviour and dumb jokes, rather than focused effort. The one catmint plant they successfully find ends up with their helpers rolling around in it, bruising all the stems until it's unharvestable, and p_l is furious by the time they return to camp."
@@ -349,8 +349,8 @@
     "exp": 10,
     "success_text": [
             "Daisies may seem like part of the everyday carpet of greenery, present everywhere from rocks to fields to nestled at the foot of trees, but that doesn't make their leaves any less useful.",
-            "Leaf-fall is upon the Clan, which means p_l must think of the coming leaf-bare, where daisy leaves will become near-impossible to find. Time to stock up then.",
-            "Daisies aren't hard to find in the warmer seasons, and s_c collects enough that they have trouble not dropping any on the way back to camp."
+            "Leaf-fall is upon the Clan, which means p_l must think of the coming leaf-bare, where daisy leaves will become near-impossible to find. Best to stock up now, rather than worrying later when they have none.",
+            "Daisies aren't hard to find, even with the weather turning cold, and s_c collects enough that they have trouble not dropping any on the way back to camp."
 ],
     "fail_text": [
             "Frustratingly, some herbivore has come through and feasted on the daisies p_l targets. The plants will recover, but these half-chewed on leaves are useless to c_n."
@@ -373,8 +373,8 @@
     "exp": 20,
     "success_text": [
             "Daisies may seem like part of the everyday carpet of greenery, present everywhere from rocks to fields to nestled at the foot of trees, but that doesn't make their leaves any less useful. p_l goes through their common uses with app1.",
-            "Leaf-fall is upon the Clan, which means p_l must think of the coming leaf-bare, where daisy leaves will become near-impossible to find. Time to stock up then, and p_l instruct app1 on the best ways of drying them out for long term storage.",
-            "Daisies aren't hard to find in the warmer seasons, and s_c collects enough that they have trouble not dropping any on the way back to camp. At least with app1 here with them the load is shared, and they purr in appreciation of the apprentice."
+            "Leaf-fall is upon the Clan, which means p_l must think of the coming leaf-bare, where daisy leaves will become near-impossible to find. Best to stock up now, rather than worrying later when they have none, and p_l instruct app1 on the best ways of drying them out for long term storage.",
+            "Daisies aren't hard to find, even with the weather turning cold, and s_c collects enough that they have trouble not dropping any on the way back to camp. At least with app1 here with them the load is shared, and they purr in appreciation of the apprentice."
 ],
     "fail_text": [
             "Frustratingly, some herbivore has come through and feasted on the daisies p_l targets. The plants will recover, but these half-chewed on leaves are useless to c_n. They avoid snapping at app1, who seems unable to identify the common herb, but they definitely come close."
@@ -397,8 +397,8 @@
     "exp": 10,
     "success_text": [
            "Daisies may seem like part of the everyday carpet of greenery, present everywhere from rocks to fields to nestled at the foot of trees, but that doesn't make their leaves any less useful. With a larger patrol, the cats bring back a good haul, and p_l makes sure to thank everyone for their assistance.",
-            "Leaf-fall is upon the Clan, which means p_l must think of the coming leaf-bare, where daisy leaves will become near-impossible to find. Time to stock up then, and the extra paws to collect the herb are deeply appreciated by p_l, who makes sure the patrol knows how much they're helping.",
-            "Daisies aren't hard to find in the warmer seasons, and s_c collects enough that they have trouble not dropping any on the way back to camp. The patrol, filled with gossip and chatter on the way out and daisy leaves on the trip back, makes for an easy and enjoyable afternoon."
+            "Leaf-fall is upon the Clan, which means p_l must think of the coming leaf-bare, where daisy leaves will become near-impossible to find. Best to stock up now, rather than worrying later when they have none, and the extra paws to collect the herb are deeply appreciated by p_l, who makes sure the patrol knows how much they're helping.",
+            "Daisies aren't hard to find, even with the weather turning cold, and s_c collects enough that they have trouble not dropping any on the way back to camp. The patrol, filled with gossip and chatter on the way out, and daisy leaves on the trip back, makes for an easy, enjoyable afternoon."
     ],
     "fail_text": [
             "With the warriors more interested in hunting whatever has been snacking on the daisies than helping p_l find any more plants, it's a frustrating and unproductive afternoon."
@@ -422,7 +422,7 @@
     "success_text": [
             "Truly, dandelions are an essential herb to keep in stock, crucial for poison and stings. The white milk in their roots and stems keeps for a long time, and is a potent cure for poison - their leaves are weaker, but fast-acting, and can be chewed into poultices. Even the fluffy dandelion heads are useful as a c_n kitten's favourite, short-lived toy.",
             "It's a successful gathering mission, with p_l striding back to camp with a great haul of whole, intact dandelion plants. Later, they'll sort the leaves and roots to be stored separately - the leaves remain fresh for a far shorter time.",
-            "With warmth in the air and ground, s_c doesn't need to try very hard to find an excellent haul of dandelions to bring back to camp."
+            "With the last bits of greenleaf's warmth still lingering in the air, s_c doesn't need to try very hard to find an excellent haul of dandelions to bring back to camp."
 ],
     "fail_text": [
             "Unfortunately, c_n doesn't seem to be the only things after dandelions, and p_l can't gather from this patch without killing off the already damaged plants."
@@ -439,14 +439,14 @@
     "biome": "plains",
     "season": "leaf-fall",
     "tags": ["herb_gathering", "med_only", "med_cat", "herb", "dandelion", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
-    "intro_text": "Yellow flowers poke out from the leaf litter, signalling that the dandelions haven't given up on growing for the season. p_l heads out to look for them, taking app1 to learn about one of the most useful common herbs in the medicine cat aresenal.",
+    "intro_text": "Yellow flowers poke out from the leaf litter, signalling that the dandelions haven't given up on growing for the season. p_l heads out to look for them, taking app1 to learn about one of the most useful common herbs in their arsenal.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
             "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. Both the potent milk in their roots and stems, and the fast-acting leaves... even the fluffy dandelion heads are useful as a c_n kitten's favourite, short lived toy, and p_l smiles, remembering watching app1 playing with them just a few short moons ago.",
             "It's a successful gathering mission, with p_l striding back to camp with a great haul of entire dandelion plants. Later they'll teach app1 to sort the leaves and roots to be stored separately, the leaves remain fresh for a far shorter time.",
-            "With warmth in the air and ground, s_c doesn't need to try very hard to find an excellent haul of dandelions to bring back to camp. Instead, they let app1 take the lead in finding the plants, praising them for all the progress they've made in herbcraft."
+            "With the last bits of greenleaf's warmth still lingering in the air, s_c doesn't need to try very hard to find an excellent haul of dandelions to bring back to camp. Instead, they let app1 take the lead in finding the plants, praising them for all the progress they've made in herbcraft."
 ],
     "fail_text": [
             "Unfortunately, c_n doesn't seem to be the only things after dandelions, and p_l can't gather from this patch without killing off the already damaged plants. app1 actually starts an argument about it, insistent that they don't need to worry about protecting the dandelion patch for the future."
@@ -470,7 +470,7 @@
     "success_text": [
             "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. Both the potent milk in their roots and stems, and the fast-acting leaves... even the fluffy dandelion heads are useful as a c_n kitten's favourite, short lived toy, and the warriors fondly share nursery memories about them as they gather.",
             "It's a successful gathering mission, with p_l striding back to camp with a great haul of whole, intact dandelion plants. Later, they'll sort the leaves and roots to be stored separately - the leaves remain fresh for a far shorter time, but for now they make sure to thank the warriors that have helped them bring home so many.",
-            "With warmth in the air and ground, s_c doesn't need to try very hard to find an excellent haul of dandelions to bring back to camp. They help the warriors carefully pluck fluffy dandelions heads to bring back for the nursery."
+            "With the last bits of greenleaf's warmth still lingering in the air, s_c doesn't need to try very hard to find an excellent haul of dandelions to bring back to camp. They help the warriors carefully pluck fluffy dandelions heads to bring back for the nursery."
     ],
     "fail_text": [
             "The warriors that are supposed to be helping p_l gather dandelions instead seem more intent on hunting, and p_l gives up, storming back to camp with their temper flaring."
@@ -493,7 +493,7 @@
     "exp": 10,
     "success_text": [
             "Elder leaves being used to <i>soothe</i> sprains, and elder leaves having to be gathered in a way that <i>risks</i> sprains, is truly one of StarClan's little ironies, p_l reflects.",
-            "Ignoring the leaves piled up at the tree's base, which lack any herbal potency, p_l instead gets a good crop, choosing leaves as close to green as possible for maximum usefulness, which p_l finds tends to fade the more red the leaf-fall elder leaves get.",
+            "Ignoring the leaves piled up at the tree's base, which lack any herbal potency, p_l is pickier with their gather. They choose leaves as close to green as possible for maximum usefulness, which they find tends to fade the redder their leaves get.",
             "s_c has managed to discover, with time and experience, that elder leaf picking is actually better handled by chewing off several low hanging, thin branches, and carting those back to camp instead."
 ],
     "fail_text": [
@@ -514,13 +514,13 @@
     "biome": "plains",
     "season": "leaf-fall",
     "tags": ["herb_gathering", "med_only", "med_cat", "herb", "elder_leaves", "minor_injury", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
-    "intro_text": "With leaf-fall washing the world in tones of red and brown, p_l feels the need to gather as many elder leaves as possible, before the season turns and the Clan must survive without new stocks during leaf-bare. There's a particular tree in a sheltered dip along a stream they want to check on today, bringing app1 to show them why choosing to harvest from a sheltered plant can be helpful.",
+    "intro_text": "With leaf-fall washing the world in rich, warm tones, p_l feels the need to gather as many elder leaves as possible, before the season turns and the Clan must survive without new stock until newleaf. There's a tree in a dip along a stream they want to check on today, and they bring app1 to teach why harvesting from a sheltered plant can be helpful.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
     "chance_of_success": 60,
     "exp": 20,
     "success_text": [
             "Elder leaves being used to <i>soothe</i> sprains, and elder leaves having to be gathered in a way that <i>risks</i> sprains, is truly one of StarClan's little ironies, p_l reflects. app1 is more occupied climbing the tree, and p_l isn't going to dissuade their pride in plucking from the highest branches, even if they're no more potent than those at the bottom.",
-            "Ignoring the leaves piled up at the tree's base, which lack any herbal potency, p_l instead gets a good crop, choosing leaves as close to green as possible for maximum usefulness, which p_l finds tends to fade the more red the leaf-fall elder leaves get. app1 soaks up the information, filing it away in their ever-increasing herbcraft knowledge.",
+            "Ignoring the leaves piled up at the tree's base, which lack any herbal potency, p_l is pickier with their gather. They choose leaves as close to green as possible for maximum usefulness, which they find tends to fade the redder their leaves get. app1 soaks up the information, filing it away in their ever-increasing herbcraft knowledge.",
             "s_c has managed to discover, with time and experience, that elder leaf picking is actually better handled by chewing off several low hanging, thin branches, and carting those back to camp instead. They pass on the trick to app1, and once they're back at camp both medicine cats strip off the leaves and give them a quick wash."
 ],
     "fail_text": [
@@ -546,8 +546,8 @@
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
-            "Elder leaves being used to <i>soothe</i> sprains, and elder leaves having to be gathered in a way that <i>risks</i> sprains, is truly one of StarClan's little ironies, p_l reflects. They share the little joke with the patrol, and the cats murrp with amusement, but it also reminds everyone to be careful as they strip leaves from the tree.",
-            "Ignoring the leaves piled up at the tree's base, which lack any herbal potency, p_l instead gets a good crop, choosing leaves as close to green as possible for maximum usefulness, which p_l finds tends to fade the more red the leaf-fall elder leaves get. The warriors are less selective, but the sheer quantity p_l is able to bring back to camp with their help more than makes up for it.",
+            "Elder leaves being used to <i>soothe</i> sprains, and elder leaves having to be gathered in a way that <i>risks</i> sprains, is truly one of StarClan's little ironies, p_l reflects. They share the little joke with the patrol, and the cats murrp with amusement, but it does also remind everyone to be careful as they strip leaves from the tree.",
+            "Ignoring the leaves piled up at the tree's base, which lack potency, p_l is pickier with their gather. They choose leaves as close to green as possible for maximum usefulness, which they find tends to fade the redder their leaves get. The warriors are less selective, but the sheer quantity p_l's able to bring back to camp more than makes up for it.",
             "s_c has managed to discover, with time and experience, that elder leaf picking is actually better handled by chewing off several low hanging, thin branches, and carting those back to camp instead. With so many assistants, they can bring a truly massive haul home, where the rest of the patrol helps them strip the leaves and carefully store them."
     ],
     "fail_text": [
@@ -574,7 +574,7 @@
     "exp": 10,
     "success_text": [
             "The many stems of goldenrod surround p_l as they work, snipping off stems and clumps of tiny yellow flowers to bring back to c_n's herb stores.",
-            "With the leaf-fall goldenrod bushes starting to die back, p_l collects all they can. That, it turns out, is a lot.",
+            "With the leaf-fall goldenrod bushes starting to die back, p_l collects all they can. That, as it turns out, is actually quite a lot.",
             "s_c has a good eye for these things, snipping off the best, lushest goldenrod to take back for the Clan's stores."
 ],
     "fail_text": [
@@ -598,7 +598,7 @@
     "exp": 20,
     "success_text": [
             "The many stems of goldenrod surround p_l as they work, snipping off stems and clumps of tiny yellow flowers to bring back to c_n's herb stores. app1 and p_l occasionally exchange quiet meows as they work, contact calls reassuring each other that they're both still there amidst the towering goldenrod.",
-            "With the leaf-fall goldenrod bushes starting to die back, p_l collects all they can. That, it turns out, is a lot, and both medicine cat and apprentice are barely visible behind the bushy bundles they carry.",
+            "With the leaf-fall goldenrod bushes starting to die back, p_l collects all they can. That, as it turns out, is actually quite a lot, and both medicine cat and apprentice are barely visible behind the bushy bundles they carry.",
             "s_c has a good eye for these things, snipping off the best, lushest goldenrod to take back for the Clan's stores. As they do, they instruct app1 in how to judge the quality of each stem. Each plant will contain both ideal and bad examples, either of which could be harvested, and it's important app1 has this knowledge, too."
 ],
     "fail_text": [
@@ -622,7 +622,7 @@
     "exp": 10,
     "success_text": [
             "The many stems of goldenrod surround p_l as they work, snipping off stems and clumps of tiny yellow flowers to bring back to c_n's herb stores. The patrol chats, exchanging gossip and news as the smell of cut stems grows around them.",
-            "With the leaf-fall goldenrod bushes starting to die back, p_l collects all they can. That, it turns out, is a lot, particularly with so many willing paws helping them.",
+            "With the leaf-fall goldenrod bushes starting to die back, p_l collects all they can. That, as it turns out, is actually quite a lot, particularly with so many willing paws helping them.",
             "s_c has a good eye for these things, snipping off the best, lushest goldenrod to take back for the Clan's stores. They control what is harvested, while their team works to efficiently carry the herb back to camp, deferring to s_c's expertise."
     ],
     "fail_text": [
@@ -646,7 +646,7 @@
     "exp": 10,
     "success_text": [
             "Leaf-fall brings with it gleaming dots of blue as the juniper trees deck themselves with their hard-fleshed berries, wafting their pleasant scent from their branches. There's a lot to enjoy about gathering them.",
-            "Juniper berries are useful for so many things, from calming minds and easing breathing to soothing aching bellies and as a traveling herb. Really, p_l will always feel better having a good solid store of the stuff to use, especially because the berries keep forever in the herb stores, and this patrol has been very successful at bringing tons of them home.",
+            "Juniper berries have so many uses. Calming minds, easing breath, soothing bellies, as a traveling herb... really, p_l will always feel better having a good store of the stuff, especially since it feels like the berries keep forever in the herb stores, and this patrol has been very successful.",
             "s_c follows not their eyes, but their nose, tracking the juniper trees by the scent of their fragrant berries to find an excellent crop."
 ],
     "fail_text": [
@@ -670,8 +670,8 @@
     "exp": 20,
     "success_text": [
             "Leaf-fall brings with it gleaming dots of blue as the juniper trees deck themselves with their hard-fleshed berries, wafting their pleasant scent from their branches. There's a lot to enjoy about gathering them, and p_l spends a quiet but happy afternoon with app1.",
-            "Juniper berries are useful for so many things, from calming minds and easing breathing to soothing aching bellies and as a traveling herb. Really, p_l will always feel better having a good solid store of the stuff to use, and this patrol has been very successful at bringing tons of them home. app1 is extremely curious that the berries will store so well, and p_l teaches them that the evergreen tree produces very different fruit than most berry bushes.",
-            "s_c follows not their eyes, but their nose, tracking the juniper trees by the scent of their fragrant berries to find an excellent crop."
+            "Juniper berries have so many uses. Calming minds, easing breath, soothing bellies, as a traveling herb... really, p_l will always feel better having a good store of them, and this patrol has been very successful. app1 is extremely curious how the berries store so well, and p_l teaches them how the tree's fruit is very different than most berries.",
+            "s_c follows not their eyes, but their nose, tracking the juniper trees by the scent of their fragrant berries to find an excellent crop. As they work, they chat to app1 about juniper's calming effects. This is one of the few herbs their Clanmates compete to go on patrols to help collect, as everyone enjoys the scent."
 ],
     "fail_text": [
             "p_l seems to have forgotten where to find a juniper tree, much to their own embarrassment and app1's shock."
@@ -694,8 +694,8 @@
     "exp": 10,
     "success_text": [
             "Leaf-fall brings with it gleaming dots of blue as the juniper trees deck themselves with their hard-fleshed berries, wafting their pleasant scent from their branches. There's a lot to enjoy about gathering them, especially with such a companionable group of cats to work with.",
-            "Juniper berries are useful for so many things, from calming minds and easing breathing to soothing aching bellies and as a traveling herb. Really, p_l will always feel better having a good solid store of the stuff to use, and this patrol has been very successful at bringing tons of them home. They make sure to thank their team, though the warrior aren't allowed to keep any of the pleasant smelling crop for themselves.",
-            "s_c follows not their eyes, but their nose, tracking the juniper trees by the scent of their fragrant berries to find an excellent crop."
+            "Juniper needles have so many uses. Calming minds, easing breath, soothing bellies, as a traveling herb... really, p_l will always feel better having a good store of the stuff, and this patrol has been very successful. They make sure to thank their team, though the warriors can't take any of the lovely-scented berries to their dens this time.",
+            "s_c follows not their eyes, but their nose, tracking the juniper trees by the scent of their fragrant berries to find an excellent crop. Their patrol follows their lead, pulling berries off, although a couple times s_c does need to gently scold them for trying to hide away the berries for their dens."
     ],
     "fail_text": [
             "The warriors are full of complaints about the sharp juniper needles spiking their poor widdle noses, and eventually a mildly disgusted p_l calls off the herb gathering patrol."
@@ -839,7 +839,7 @@
     "exp": 10,
     "success_text": [
             "The soft, rose-like scent of the mallow bushes drifts around p_l as they work. They snip off clumps of large, fuzzy, three-nubbed leaves, and the occasional pink flower, to be taken back to camp.",
-            "With the leaf-fall mallow starting to die back in the next step in its endless perennial cycle, p_l collects all they can. That, it turns out, is a lot.",
+            "With the leaf-fall mallow starting to die back in the next step in its endless perennial cycle, p_l collects all they can. That, as it turns out, is actually quite a lot.",
             "s_c has a good eye for these things, finding an excellent patch of mallow."
 ],
     "fail_text": [
@@ -863,7 +863,7 @@
     "exp": 20,
     "success_text": [
             "The soft, rose-like scent of the mallow bushes drifts around p_l and app1 as they work. They snip off clumps of large, fuzzy, three-nubbed leaves, and the occasional pink flower, to be taken back to camp. Bees hum through the air, not trying to bother the medicine cats, and p_l points out where they think the hive might be to app1.",
-            "With the leaf-fall mallow starting to die back in the next step in its endless perennial cycle, p_l collects all they can. That, it turns out, is a lot, and both medicine cat and apprentice are barely visible behind the bushy bundles they carry.",
+            "With the leaf-fall mallow starting to die back in the next step in its endless perennial cycle, p_l collects all they can. That, as it turns out, is actually quite a lot, and both medicine cat and apprentice are barely visible behind the bushy bundles they carry.",
             "s_c has a good eye for these things, finding an excellent patch of mallow. As they do, they instruct app1 in how to judge the quality of each stem. Each plant will contain both ideal and bad examples, either of which could be harvested, and it's important app1 has this knowledge, too."
 ],
     "fail_text": [
@@ -887,7 +887,7 @@
     "exp": 10,
     "success_text": [
             "The soft, rose-like scent of the mallow bushes drifts around p_l as they work. They snip off clumps of large, fuzzy, three-nubbed leaves, and the occasional pink flower, to be taken back to camp. The patrol chats, exchanging gossip and news as the smell of cut stems grows around them.",
-            "With the leaf-fall mallow starting to die back in the next step in its endless perennial cycle, p_l collects all they can. That, it turns out, is a lot, particularly with so many willing paws helping them.",
+            "With the leaf-fall mallow starting to die back in the next step in its endless perennial cycle, p_l collects all they can. That, as it turns out, is actually quite a lot, particularly with so many willing paws helping them.",
             "s_c has a good eye for these things, finding an excellent patch of mallow. They control what is harvested, while their team works to efficiently carry the herb back to camp, deferring to s_c's expertise."
     ],
     "fail_text": [
@@ -1126,7 +1126,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "Not one of the plants that turn red before they die off for leaf-bare, p_l carries the green plantain leaves home through a territory ever less green as leaf-fall wears on.",
+            "Not one of the plants that turn red before they die off for leaf-bare, p_l carries the vibrantly green plantain leaves home through a territory growing less and less green as leaf-fall wears on.",
             "Suitable for soothing throat and pelt irritation, and with a welcome - albeit weird - habit of consistently sprouting up on well-trodden paths, plantain is a basic but valuable herb to keep stocks of.",
             "Go to where other animals wander through c_n's territory on little, beaten paths, wander around under you bump, nose-first, into a plantain plant, harvest. Simple."
 ],
@@ -1150,7 +1150,7 @@
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-            "Not one of the plants that turn red before they die off for leaf-bare, p_l carries the green plantain leaves home through a territory ever less green as leaf-fall wears on. app1 is worried about the herb stores when they arrive back at camp, and p_l reassures them that c_n will be alright.",
+            "Not one of the plants that turn red before they die off for leaf-bare, p_l carries the vibrantly green plantain leaves home through a territory growing less and less green as leaf-fall wears on. app1 is worried about the herb stores when they arrive back at camp, and p_l reassures them that c_n will be alright.",
             "Suitable for soothing throat and pelt irritation, and with a welcome - albeit weird - habit of consistently sprouting up on well-trodden paths, plantain is a basic but valuable herb to keep stocks of, and always taught early in the herbal lore each medicine cat must memorise.",
             "Go to where other animals wander through c_n's territory on little, beaten paths, wander around under you bump, nose-first, into a plantain plant, harvest. Simple, p_l teaches app1."
 ],
@@ -1169,12 +1169,12 @@
     "biome": "plains",
     "season": "leaf-fall",
     "tags": ["herb_gathering", "warrior", "herb", "plantain", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
-    "intro_text": "p_l is always amused by the plantain's enduring cheerfulness in the face of being trodden on, and it's nice that the plants grow with such enthusiasm right to the end of leaf-fall. The warriors they're bringing along seem to regard their task as more path clearing and less herb gathering.",
+    "intro_text": "p_l is always amused by the plantain's enduring cheerfulness in the face of being trodden on, and it's nice that the plants grow with such enthusiasm right to the end of leaf-fall. The warriors they're bringing along seem to regard their task as more path clearing and less herb gathering, but if it gets them helpers, p_l isn't too fussed about it.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "Not one of the plants that turn red before they die off for leaf-bare, p_l carries the green plantain leaves home through a territory ever less green as leaf-fall wears on. Even the warriors seem less irritated at the plantain plants than usual, instead valuing the herb while they can still find it.",
+            "Not one of the plants that turn red before they die off for leaf-bare, p_l carries the vibrantly green plantain leaves home through a territory growing less and less green as leaf-fall wears on. Even the warriors seem less irritated at the plantain plants than usual, instead valuing the herb while they can still find it.",
             "Suitable for soothing throat and pelt irritation, and with a welcome - albeit weird - habit of consistently sprouting up on well-trodden paths, plantain is a basic, but valuable, herb to keep stocks of. It's even relatively innocuous taste wise, making it easy to harvest.",
             "Go to where other animals wander through c_n's territory on little, beaten paths, wander around under you bump, nose-first, into a plantain plant, harvest. Simple. <i>And</i> the warriors get to tidy their paths through the territory. It's a win-win!"
     ],
@@ -1193,7 +1193,7 @@
     "biome": "plains",
     "season": "leaf-fall",
     "tags": ["herb_gathering", "med_only", "herb", "ragwort", "many_herbs1", "many_herbs2"],
-    "intro_text": "As the ragwort plants start to dramatically give up on life as leaf-fall progresses, p_l takes the oportunity to go harvest from them.",
+    "intro_text": "As the ragwort plants start to dramatically give up on life as leaf-fall progresses, p_l takes the opportunity to go harvest from them.",
     "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
     "chance_of_success": 70,
     "exp": 10,
@@ -1217,7 +1217,7 @@
     "biome": "plains",
     "season": "leaf-fall",
     "tags": ["herb_gathering", "med_only", "med_cat", "herb", "ragwort", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
-    "intro_text": "As the ragwort plants start to dramatically give up on life as leaf-fall progresses, p_l takes the oportunity to go harvest from them, bringing along app1 for a herbcraft lesson.",
+    "intro_text": "As the ragwort plants start to dramatically give up on life as leaf-fall progresses, p_l takes the opportunity to go harvest from them, bringing along app1 for a herbcraft lesson.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
     "chance_of_success": 70,
     "exp": 20,
@@ -1241,14 +1241,14 @@
     "biome": "plains",
     "season": "leaf-fall",
     "tags": ["herb_gathering", "warrior", "herb", "ragwort", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
-    "intro_text": "As the ragwort plants start to dramatically give up on life as leaf-fall progresses, p_l takes the oportunity to go harvest from them, bringing along a patrol to help them cart the leaves back to the herb stores.",
+    "intro_text": "As the ragwort plants start to dramatically give up on life as leaf-fall progresses, p_l takes the opportunity to go harvest from them, bringing along a patrol to help them cart the leaves back to the herb stores.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
             "Ugh. The ragwort p_l finds is flowering, and the yellow flowers of the plant waft out their scent, leaving a foul taste hanging in the air. There a chorus of long suffering sighs as the cats get to work, accomplishing their unpleasant task professionally, but without any joy.",
             "Ragwort brings strength to cats who need it, and eases aching joints, but StarClan it tastes absolutely <i>foul.</i> p_l's pleased with their harvest, but really wishes they had a way to bring it back to camp that didn't need them to carry it in their mouth, a sentiment that the patrol helping them definitely shares... at length, very descriptively.",
-            "s_c has discovered a trick to harvesting the bountiful, but foul, ragwort - using their claws to tear leaves from the plant, then carefully carrying them back to camp without chewing or salivating. It's difficult, but doable, if only just. Some of the warriors are too impatient to follow their lead, and end up suffering the taste of ragwort as the patrol brings back loads of the leaves."
+            "s_c has discovered a trick to harvesting the bountiful, but foul, ragwort - using their claws to tear leaves from the plant, then carefully carrying them back to camp without chewing or salivating. Some of the warriors are too impatient to follow their lead, and end up suffering the taste of ragwort as the patrol brings back loads of the leaves."
     ],
     "fail_text": [
             "Try as they might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
@@ -1275,7 +1275,7 @@
         "It takes little intelligence to recognise deathberries, but a great deal to collect them anyway. If s_c can dry them out, these berries will be sufficient for c_n for years to come. By using their weight to snap off one of the bush's branches, and then carefully carrying it back to camp, s_c manages to bring them safely home."
     ],
     "fail_text": [
-        "While p_l <i>thinks</i> they're probably cranberries, they aren't confident enough with the identification to risk being wrong and plucking deathberries instead.",
+        "While p_l thinks they're <i>probably</i> cranberries, they aren't confident enough with the identification to risk being wrong and plucking deathberries instead.",
         null,
         null,
         "While plucking them from the bush, p_l feels one of the berries split in their mouth, and a deceptively good taste coats their tongue. These aren't raspberries. They rush to force themselves to throw up, and it works, expelling the deathberries from their system, but they're weak and shaky for the rest of the day."
@@ -1303,8 +1303,8 @@
     "fail_text": [
         "Confidently gathering them and prancing back to camp, app1 is then informed that they've gathered raspberries, not cranberries, and this isn't going to help the Clan's elders with their problems.",
         null,
-        "app1 plucks the berries, several splitting in their mouth, and tries not to gag at the horrible taste - after all, all the herbs they're trying to learn taste horrible. As they start back to camp, they wobble a little. And then the world goes dark.",
-        "app1 carefully plucks the horrible tasting berries, and as soon as the taste hits their tongue, they realize they've made a terrible mistake. Gagging, throwing up, and staggering, they crawl back to camp, weakly hoping their mentor will help them."
+        "app1 plucks the berries, several splitting in their mouth, and is surprised at how good they taste - after all, every herb they're trying to learn tastes awful, so it's surprising that one tastes good. As they start back to camp, however, they wobble a bit, and the world goes dark. Their body is found soon after, but it's already too late to help.",
+        "app1 carefully plucks the delicious-tasting berries, and as soon as the deceptive taste hits their tongue, they realize they've made a terrible mistake. Trying to force themself to vomit and staggering weakly, they crawl back to camp, weakly hoping their mentor will help them."
     ],
 
     "min_cats": 1,
@@ -1313,7 +1313,7 @@
     "antagonize_fail_text": null,
     "history_text": [
             null,
-            "r_c died before completing their medicine cat training from accidentally eating deathberries."
+            "r_c died before completing their medicine cat training, having accidentally eaten deathberries."
     ]
     },
 {
@@ -1495,7 +1495,7 @@
     "exp": 20,
     "success_text": [
             "The garlic won't notice leaf-bare until it actually hits - one of its good traits that make up for its stinkiness. p_l and app1 are able to bring a good harvest home.",
-            "The leaves and especially the bulbs of wild garlic are the preeminent herb to treat infection, even if using them always resulted in either their patient or their loved ones complaining about the smell. p_l teaches app1 that sometimes they need to prioritise treating their patients above listening to them.",
+            "The leaves and especially the bulbs of wild garlic are the preeminent herb to treat infection, even if using them always resulted in either their patient or their loved ones complaining about the smell. p_l teaches app1 that sometimes, they need to prioritise treating their patients above listening to them.",
             "s_c, ever eagle-eyed, spots grass that looks suspiciously tall, with oddly thick blades. One sniff confirms it as wild garlic, and this patch has heaps to harvest with app1."
 ],
     "fail_text": [
