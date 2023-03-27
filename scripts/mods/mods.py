@@ -73,7 +73,7 @@ class modList():
     TODO: docs
     """
     def __init__(self):
-        self._mods = # TODO()
+        self._mods = get_real_mods()
         self.mods = self.sort(self._mods, should_reread=True)
 
     def sort(self, mods_to_sort=[], should_reread=False, should_rewrite=False):
@@ -141,5 +141,3 @@ class modList():
         self.mods.remove(mod)
         self._mods.remove(mod)
         self.sort(should_rewrite=True)
-
-    
