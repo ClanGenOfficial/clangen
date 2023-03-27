@@ -1,19 +1,19 @@
 [
 {
-    "patrol_id": "fst_med_herbsdandy1",
+    "patrol_id": "fst_med_herbsdandy_greenleaf1",
     "biome": "forest",
     "season": "greenleaf",
     "tags": ["herb_gathering", "med_cat", "apprentice", "med_only", "herb", "dandelion"],
-    "intro_text": "p_l and app1 are going out to gather dandelions. app1 asks their mentor what they'll do if the rabbits have eaten all of it. p_l responds that they'll cross that river when they get to it.",
+    "intro_text": "p_l and app1 are going out to gather dandelions. app1 asks their mentor what they'll do if the rabbits have eaten all of it, and p_l responds that they'll cross that river when they get to it.",
     "decline_text": "A cat grabs p_l's attention before they can leave.",
     "chance_of_success": 60,
     "exp": 20,
     "success_text": [
-        "The two medicine cats find the plants in good shape and are able to collect plenty.",
-        "The dandelions are so plentiful that it seems like there's enough for both cats and rabbits to take what they need."
+        "The two medicine cats find the plants in good shape, and are able to collect plenty.",
+        "The dandelions are so plentiful, it seems there's enough for cats and rabbits alike to take what they need."
     ],
     "fail_text": [
-        "app1 reaches the patch first and p_l can tell by their drooping ears that there must not be enough left to collect."
+        "app1 reaches the patch first, but p_l can tell by their drooping ears that there must not be enough left to collect."
     ],
 
     "min_cats": 2,
@@ -22,11 +22,11 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "fst_med_herbsmeadow1",
+    "patrol_id": "fst_med_herbsmeadow_greenleaf1",
     "biome": "forest",
     "season": "greenleaf",
     "tags": ["herb_gathering", "med_cat", "herb", "mullein", "no_app"],
-    "intro_text": "p_l is on a mission to find herbs. They know a nice grassy clearing where mullein grows and it's always good to have some on paw for coughs and sore throats.",
+    "intro_text": "p_l is on a mission to find herbs. They know a nice grassy clearing, where mullein grows, and it's always good to have some on paw for coughs and sore throats.",
     "decline_text": "A cat grabs p_l's attention before they can leave camp.",
     "chance_of_success": 50,
     "exp": 10,
@@ -44,21 +44,21 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "fst_med_herbsburdock1",
+    "patrol_id": "fst_med_herbsburdock_greenleaf1",
     "biome": "forest",
     "season": "greenleaf",
-    "tags": ["herb_gathering", "med_cat", "warrior", "herb", "burdock", "dislike"],
+    "tags": ["herb_gathering", "med_cat", "warrior", "herb", "burdock", "dislike", "rc_has_stat"],
     "intro_text": "p_l needs to go and gather some burdock root. They take along what warriors they can find around camp to help gather and carry the roots back.",
     "decline_text": "A cat grabs p_l's attention before they can leave.",
     "chance_of_success": 50,
     "exp": 10,
     "success_text": [
-        "The medicine cat and their entourage find the herbs in good time. The warriors don't even complain much when p_l instructs them to dig for the roots.",
+        "The medicine cat and their entourage find the herbs in good time. The warriors don't even complain much when p_l teaches them how to carefully dig up the roots.",
         "The burdock plants are plentiful in the area that p_l chose. They'll have a good supply to last a while!"
     ],
     "fail_text": [
-        "p_l can't find the burdock plant they were thinking about. Maybe it was trampled by some animal. Oh well.",
-        "By the time they reach the burdock plants, p_l is about ready to claw r_c's ears off. Great StarClan! How can a cat be so annoying? p_l hisses in exasperation and they notice that the burdock is wilted on top of that. The roots will surely be no good."
+        "p_l can't find the burdock plant they were thinking about. Maybe it was trampled by some animal... oh, well.",
+        "By the time they reach the burdock plants, p_l is about ready to claw s_c's ears off. Great StarClan! <i>How</i> can a cat be so annoying? p_l hisses in exasperation, just as they notice that the burdock is all shriveled and dead - the roots won't be any good. It's just one thing after another today."
     ],
     "fail_trait": ["troublesome", "childish"],
     "min_cats": 2,
@@ -779,7 +779,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "fst_med_gatheringlungwort4",
+    "patrol_id": "fst_med_gatheringlungwort_greenleaf1",
     "biome": "forest",
     "season": "greenleaf",
     "tags": ["herb_gathering", 
@@ -819,7 +819,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "fst_med_gatheringlungwort5",
+    "patrol_id": "fst_med_gatheringlungwort_greenleaf2",
     "biome": "forest",
     "season": "greenleaf",
     "tags": ["herb_gathering", "med_cat", "herb", "lungwort", "no_app", "clan_to_patrol", "respect", "injury", "sore"],
@@ -852,7 +852,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "fst_med_gatheringlungwort6",
+    "patrol_id": "fst_med_gatheringlungwort_greenleaf3",
     "biome": "forest",
     "season": "greenleaf",
     "tags": ["herb_gathering", 
@@ -1378,7 +1378,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "fst_med_gatheringraspberrysolo1",
+    "patrol_id": "fst_med_gatheringraspberrysolo_greenleaf1",
     "biome": "forest",
     "season": "greenleaf",
     "tags": ["herb_gathering", "herb", "raspberry", "no_herbs1", "no_herbs2", "injury", "poisoned"],
@@ -1404,8 +1404,8 @@
     "antagonize_text": null,
     "antagonize_fail_text": null
     },
-    {
-    "patrol_id": "fst_med_gatheringraspberrysolo2",
+{
+    "patrol_id": "fst_med_gatheringraspberrysolo_greenleaf2",
     "biome": "forest",
     "season": "greenleaf",
     "tags": ["herb_gathering", "herb", "raspberry", "no_herbs1", "med_cat", "apprentice", "injury", "poisoned", "death"],

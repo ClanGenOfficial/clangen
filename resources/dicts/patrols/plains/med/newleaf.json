@@ -465,7 +465,7 @@
     "antagonize_fail_text": null
 },
 {
-"patrol_id": "pln_med_gatheringlungwort1",
+"patrol_id": "pln_med_gatheringlungwort_newleaf1",
 "biome": "plains",
 "season": "newleaf",
 "tags": ["herb_gathering", "med_cat", "apprentice", "med_only", "herb", "lungwort", "comfort", "respect", "trust", "dislike"],
@@ -496,7 +496,7 @@
 "antagonize_fail_text": null
 },
 {
-"patrol_id": "pln_med_gatheringlungwort2",
+"patrol_id": "pln_med_gatheringlungwort_newleaf2",
 "biome": "plains",
 "season": "newleaf",
 "tags": ["herb_gathering", 
@@ -536,7 +536,7 @@
 "antagonize_fail_text": null
 },
 {
-"patrol_id": "pln_med_gatheringlungwort3",
+"patrol_id": "pln_med_gatheringlungwort_newleaf3",
 "biome": "plains",
 "season": "newleaf",
 "tags": ["herb_gathering", 

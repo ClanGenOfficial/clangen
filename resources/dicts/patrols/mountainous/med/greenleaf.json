@@ -681,7 +681,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_med_gatheringlungwort4",
+    "patrol_id": "mtn_med_gatheringlungwort_greenleaf4",
     "biome": "mountainous",
     "season": "greenleaf",
     "tags": ["herb_gathering", 
@@ -720,7 +720,7 @@
     "antagonize_fail_text": null
     },
     {
-    "patrol_id": "mtn_med_gatheringlungwort5",
+    "patrol_id": "mtn_med_gatheringlungwort_greenleaf5",
     "biome": "mountainous",
     "season": "greenleaf",
     "tags": ["herb_gathering", "herb", "lungwort", "no_app", "Clan_to_patrol", "respect", "injury", "sore"],
@@ -753,7 +753,7 @@
     "antagonize_fail_text": null
     },
     {
-    "patrol_id": "mtn_med_gatheringlungwort6",
+    "patrol_id": "mtn_med_gatheringlungwort_greenleaf6",
     "biome": "mountainous",
     "season": "greenleaf",
     "tags": ["herb_gathering",
@@ -1278,7 +1278,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_med_gatheringraspberrysolo1",
+    "patrol_id": "mtn_med_gatheringraspberrysolo_greenleaf1",
     "biome": "mountainous",
     "season": "greenleaf",
     "tags": ["herb_gathering", "herb", "raspberry", "no_herbs1", "no_herbs2", "injury", "poisoned"],
@@ -1305,7 +1305,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_med_gatheringraspberrysolo2",
+    "patrol_id": "mtn_med_gatheringraspberrysolo_greenleaf2",
     "biome": "mountainous",
     "season": "greenleaf",
     "tags": ["herb_gathering", "herb", "raspberry", "no_herbs1", "med_cat", "apprentice", "injury", "poisoned", "death"],

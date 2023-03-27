@@ -50,7 +50,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "bch_med_herbsmeadow1",
+    "patrol_id": "bch_med_herbsmeadow_greenleaf1",
     "biome": "beach",
     "season": "greenleaf",
     "tags": ["herb_gathering", "med_cat", "herb", "mullein", "no_app"],
@@ -71,10 +71,10 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "bch_med_herbsburdock1",
+    "patrol_id": "bch_med_herbsburdock_greenleaf1",
     "biome": "beach",
     "season": "greenleaf",
-    "tags": ["herb_gathering", "warrior", "herb", "burdock", "dislike", "rc_has_stat"],
+    "tags": ["herb_gathering", "med_cat", "warrior", "herb", "burdock", "dislike", "rc_has_stat"],
     "intro_text": "p_l needs to go and gather some burdock root. They take along what warriors they can find around camp to help gather and carry the roots back.",
     "decline_text": "A cat grabs p_l's attention before they can leave.",
     "chance_of_success": 50,
@@ -85,7 +85,7 @@
     ],
     "fail_text": [
         "p_l can't find the burdock plant they were thinking of. Maybe it was elsewhere in the territory..?",
-        "By the time they reach the burdock plants, p_l is about ready to claw s_c's ears off. Great StarClan! How can a cat be so annoying? p_l hisses in exasperation, just as they notice that all of the plants to be found in the area are shriveled and dead. It's just one thing after another today."
+        "By the time they reach the burdock plants, p_l is about ready to claw s_c's ears off. Great StarClan! <i>How</i> can a cat be so annoying? p_l hisses in exasperation, just as they notice that the burdock is all shriveled and dead - the roots won't be any good. It's just one thing after another today."
     ],
     "fail_trait": ["troublesome", "childish"],
     "min_cats": 2,

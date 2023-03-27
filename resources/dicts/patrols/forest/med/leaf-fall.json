@@ -712,7 +712,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "fst_med_gatheringlungwort7",
+    "patrol_id": "fst_med_gatheringlungwort_leaf-fall7",
     "biome": "forest",
     "season": "leaf-fall",
     "tags": ["herb_gathering", 
@@ -752,7 +752,7 @@
     "antagonize_fail_text": null
     },
     {
-    "patrol_id": "fst_med_gatheringlungwort8",
+    "patrol_id": "fst_med_gatheringlungwort_leaf-fall8",
     "biome": "forest",
     "season": "leaf-fall",
     "tags": ["herb_gathering", 
@@ -791,7 +791,7 @@
     "antagonize_fail_text": null
     },
     {
-    "patrol_id": "fst_med_gatheringlungwort9",
+    "patrol_id": "fst_med_gatheringlungwort_leaf-fall9",
     "biome": "forest",
     "season": "leaf-fall",
     "tags": ["herb_gathering", 
@@ -1247,7 +1247,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "fst_med_gatheringraspberrysolo3",
+    "patrol_id": "fst_med_gatheringraspberrysolo_leaf-fall3",
     "biome": "forest",
     "season": "leaf-fall",
     "tags": ["herb_gathering", "herb", "raspberry", "no_herbs1", "no_herbs2", "poisoned", "injury"],
@@ -1274,7 +1274,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "fst_med_gatheringraspberrysolo4",
+    "patrol_id": "fst_med_gatheringraspberrysolo_leaf-fall4",
     "biome": "forest",
     "season": "leaf-fall",
     "tags": ["herb_gathering", "herb", "raspberry", "no_herbs1", "med_cat", "apprentice", "injury", "poisoned", "death"],

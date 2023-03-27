@@ -72,16 +72,16 @@
     "biome": "beach",
     "season": "Any",
     "tags": ["herb_gathering", "herb_gathering", "med_cat", "apprentice", "med_only", "herb", "dandelion", "many_herbs1"],
-    "intro_text": "p_l and app1 are going out to gather dandelions. app1 asks their mentor what they'll do if the rabbits have eaten all of it. p_l responds that they'll cross that river when they get to it.",
+    "intro_text": "p_l and app1 are going out to gather dandelions. app1 asks their mentor what they'll do if the rabbits have eaten all of it, and p_l responds that they'll cross that river when they get to it.",
     "decline_text": "A cat grabs p_l's attention before they can leave.",
     "chance_of_success": 60,
     "exp": 20,
     "success_text": [
-        "The two medicine cats find the plants in good shape and are able to collect plenty.",
-        "The dandelions are so plentiful that it seems like there's enough for both cats and rabbits to take what they need."
+        "The two medicine cats find the plants in good shape, and are able to collect plenty.",
+        "The dandelions are so plentiful, it seems there's enough for cats and rabbits alike to take what they need."
     ],
     "fail_text": [
-        "app1 reaches the patch first and p_l can tell by their drooping ears that there must not be enough left to collect."
+        "app1 reaches the patch first, but p_l can tell by their drooping ears that there must not be enough left to collect."
     ],
     "min_cats": 2,
     "max_cats": 2,
