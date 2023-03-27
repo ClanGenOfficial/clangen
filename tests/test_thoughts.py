@@ -4,7 +4,7 @@ import os
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
-from scripts.cat.thoughts import load_thoughts
+from scripts.cat.thoughts import Thoughts
 
 try:
     import ujson
@@ -24,7 +24,7 @@ class TestsGetStatusThought(unittest.TestCase):
         medicine.trait = "bold"
 
         # load thoughts
-        thoughts = load_thoughts(medicine, warrior, "expanded")
+        thoughts = Thoughts.load_thoughts(medicine, warrior, "expanded")
 
         # when
         function_thoughts = thoughts
@@ -40,8 +40,8 @@ class TestFamilyThoughts(unittest.TestCase):
         parent.children.append(kit.ID)
 
         # when
-        function_thoughts1 = load_thoughts(parent, kit)
-        function_thoughts2 = load_thoughts(kit, parent)
+        function_thoughts1 = Thoughts.load_thoughts(parent, kit)
+        function_thoughts2 = Thoughts.load_thoughts(kit, parent)
 
         # then
         '''
