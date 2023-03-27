@@ -16,7 +16,7 @@
     ],
     "fail_text": [
         "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common and the other cat bluntly refuses to talk about boring herbs.",
-        "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
+        "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with."
     ],
     "win_skills": ["good mediator", "great mediator", "excellent mediator"],
     "fail_trait": ["troublesome", "childish"],
@@ -41,7 +41,7 @@
     ],
     "fail_text": [
         "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common.",
-        "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
+        "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with."
     ],
     "win_skills": ["good mediator", "great mediator", "excellent mediator"],
     "fail_trait": ["troublesome", "childish"],
