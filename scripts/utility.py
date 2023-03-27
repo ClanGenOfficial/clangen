@@ -1089,7 +1089,7 @@ def update_sprite(cat):
         logger.exception("Failed to load sprite")
 
         # Placeholder image
-        new_sprite.blit(image_cache.load_image(f"sprites/faded/faded_adult.png").convert_alpha(), (0, 0))
+        new_sprite = image_cache.load_image(f"sprites/error_placeholder.png").convert_alpha()
 
     # Opacity currently disabled for performance reasons. Fading Fog is used as placeholder.
     """# Apply opacity

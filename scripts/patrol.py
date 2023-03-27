@@ -35,6 +35,8 @@ When adding new patrols, use \n to add a paragraph break in the text
 
 
 class Patrol():
+    
+    used_patrols = []
 
     def __init__(self):
         self.results_text = []
@@ -66,7 +68,6 @@ class Patrol():
         self.app6_name = None
         self.other_clan = None
         self.experience_levels = []
-        self.used_patrols = []
         self.filter_count = 0
 
     def add_patrol_cats(self, patrol_cats: list, clan: Clan) -> None:

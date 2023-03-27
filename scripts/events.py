@@ -80,13 +80,7 @@ class Events():
         game.switches['saved_clan'] = False
         self.new_cat_invited = False
         self.relation_events.clear_trigger_dict()
-
-        # This is a bandaid solution, and isn't perfect
-        # But this will help reputation from growing without limit.
-        game.clan.reputation = min(
-            game.clan.reputation,
-            100)  # <-- Returns the smallest, so caps at 100.
-
+        Patrol.used_patrols.clear()
         game.patrolled.clear()
 
         if any(
