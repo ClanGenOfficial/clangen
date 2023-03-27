@@ -159,7 +159,7 @@
 		]
 	},
 	"cat_generation": {
-		"base_permanent_condition": 1,
+		"base_permanent_condition": 90,
 		"base_male_tortie": 13,
 		"base_female_tortie": 4,
 		"base_heterochromia": 120,
