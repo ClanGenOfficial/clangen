@@ -193,7 +193,10 @@ class Thoughts():
     @staticmethod
     def get_chosen_thought(main_cat, other_cat, game_mode):
         # get possible thoughts
-        chosen_thought_group = choice(Thoughts.load_thoughts(main_cat, other_cat, game_mode))
-        chosen_thought = choice(chosen_thought_group["thoughts"])
+        try:
+            chosen_thought_group = choice(Thoughts.load_thoughts(main_cat, other_cat, game_mode))
+            chosen_thought = choice(chosen_thought_group["thoughts"])
+        except:
+            chosen_thought = "No thoughts, head empty"
 
         return chosen_thought
