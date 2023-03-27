@@ -190,7 +190,8 @@ class Cat():
                  example=False,
                  faded=False,
                  # Set this to True if you are loading a faded cat. This will prevent the cat from being added to the list
-                 loading_cat=False  # Set to true if you are loading a cat at start-up.
+                 loading_cat=False,  # Set to true if you are loading a cat at start-up.
+                 **kwargs
                  ):
 
         # This must be at the top. It's a smaller list of things to init, which is only for faded cats
@@ -201,6 +202,10 @@ class Cat():
             self.parent2 = None
             self.status = status
             self.moons = moons
+            if "df" in kwargs:
+                self.df = kwargs["df"]
+            else:
+                self.df = False
             if moons > 300:
                 # Out of range, always elder
                 self.age = 'senior'
@@ -209,7 +214,7 @@ class Cat():
                 for key_age in self.age_moons.keys():
                     if moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1] + 1):
                         self.age = key_age
-
+                        
             self.set_faded()  # Sets the faded sprite and faded tag (self.faded = True)
 
             return
@@ -724,7 +729,7 @@ class Cat():
     def add_to_clan(self):
         """ Makes a "outside cat" a clan cat. Former leaders, deputies will become warriors. Apprentices will be assigned a mentor."""
         self.outside = False
-        print(self.name, self.moons)
+        #print(self.name, self.moons)
         if self.status in ['leader', 'deputy']:
             self.status_change('warrior')
             self.status = 'warrior'
@@ -811,7 +816,6 @@ class Cat():
 
         elif self.status == 'warrior':
             self.update_mentor()
-            self.update_skill()
 
             if old_status == 'leader':
                 game.clan.leader_lives = 0
@@ -829,14 +833,12 @@ class Cat():
 
         elif self.status == 'medicine cat':
             self.update_med_mentor()
-            self.update_skill()
             if game.clan is not None:
                 game.clan.new_medicine_cat(self)
 
         elif self.status == 'elder':
             self.update_mentor()
-            self.skill = choice(self.elder_skills)
-
+            
             # Ideally, this should also be triggered for cats that retired due to
             # health conditions. However, it is currently being triggered for all elders to
             # prevent "unretiring" by switching to med or mediator, then warrior.
@@ -857,7 +859,6 @@ class Cat():
 
         elif self.status == 'mediator':
             self.update_mentor()
-            self.update_skill()
 
         elif self.status == 'mediator apprentice':
             self.update_mentor()
@@ -871,7 +872,7 @@ class Cat():
 
     def update_traits(self):
         """Updates the traits of a cat upon ageing up.  """
-        if self.moons == 6:
+        if self.status in ["apprentice", "medicine cat apprentice", "mediator apprentice"]:
             chance = randint(0, 5)  # chance for cat to gain trait that matches their previous trait's personality group
             if chance == 0:
                 self.trait = choice(self.traits)
@@ -885,7 +886,7 @@ class Cat():
                             self.trait = choice(self.traits)
                         else:
                             self.trait = chosen_trait
-        elif self.moons == 12:
+        elif self.status in ["warrior", "medicine cat", "mediator"]:
             chance = randint(0, 9) + int(self.patrol_with_mentor)  # chance for cat to gain new trait or keep old
             if chance == 0:
                 self.trait = choice(self.traits)
@@ -935,7 +936,7 @@ class Cat():
             else:
                 self.mentor_influence.insert(0, 'None')
 
-        elif self.moons == 120:
+        elif self.status in ["elder"]:
             chance = randint(0, 7)  # chance for cat to gain new trait or keep old
             if chance == 0:
                 self.trait = choice(self.traits)
@@ -1018,15 +1019,12 @@ class Cat():
         self.moons += 1
         if self.moons == 1:
             self.status = 'kitten'
-        self.update_traits()
         self.in_camp = 1
 
         if self.status in ['apprentice', 'mediator apprentice']:
             self.update_mentor()
         elif self.status == 'medicine cat apprentice':
             self.update_med_mentor()
-        else:
-            self.update_skill()
 
     def thoughts(self):
         """ Generates a thought for the cat, which displays on their profile. """
@@ -1407,7 +1405,7 @@ class Cat():
             for par in self.get_parents():
                 par_ob = Cat.fetch_cat(par)
                 for x in par_ob.get_children():
-                    if x not in siblings:
+                    if x != self.ID and x not in siblings:
                         siblings.append(x)
             return siblings
 
@@ -1743,6 +1741,8 @@ class Cat():
         self.retired = True
         self.status = 'elder'
         self.name.status = 'elder'
+        self.update_traits()
+        self.update_skill()
 
         if old_status == 'leader':
             game.clan.leader_lives = 0
@@ -2636,15 +2636,22 @@ class Cat():
         self.faded = True
 
         # Sillotette sprite
-        if self.age in ['newborn', 'kitten']:
-            file_name = "faded_kitten.png"
+        if self.age == 'newborn':
+            file_name = "faded_newborn"
+        elif self.age == 'kitten':
+            file_name = "faded_kitten"
         elif self.age in ['adult', 'young adult', 'senior adult']:
-            file_name = "faded_adult.png"
-        elif self.age in ["adolescent"]:
-            file_name = "faded_adol.png"
+            file_name = "faded_adult"
+        elif self.age == "adolescent":
+            file_name = "faded_adol"
         else:
-            file_name = "faded_elder.png"
-
+            file_name = "faded_senior"
+            
+        if self.df: 
+            file_name += "_df"
+            
+        file_name += ".png"
+            
         self.sprite = image_cache.load_image(f"sprites/faded/{file_name}").convert_alpha()
         self.big_sprite = pygame.transform.scale(self.sprite, (100, 100))
         self.large_sprite = pygame.transform.scale(self.big_sprite, (150, 150))
@@ -2680,12 +2687,12 @@ class Cat():
             return False
 
         cat_ob = Cat(ID=cat_info["ID"], prefix=cat_info["name_prefix"], suffix=cat_info["name_suffix"],
-                     status=cat_info["status"], moons=cat_info["moons"], faded=True)
+                     status=cat_info["status"], moons=cat_info["moons"], faded=True, 
+                     df=cat_info["df"] if "df" in cat_info else False)
         if cat_info["parent1"]:
             cat_ob.parent1 = cat_info["parent1"]
         if cat_info["parent2"]:
             cat_ob.parent2 = cat_info["parent2"]
-        cat_ob.paralyzed = cat_info["paralyzed"]
         cat_ob.faded_offspring = cat_info["faded_offspring"]
         cat_ob.faded = True
 
@@ -2710,8 +2717,6 @@ class Cat():
         elif game.sort_type == "exp":
             Cat.all_cats_list.sort(key=lambda x: x.experience, reverse=True)
 
-        if game.sort_fav:
-            Cat.all_cats_list.sort(key=lambda x: x.favourite, reverse=True)
         return
 
     @staticmethod

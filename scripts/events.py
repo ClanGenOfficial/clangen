@@ -80,13 +80,7 @@ class Events():
         game.switches['saved_clan'] = False
         self.new_cat_invited = False
         self.relation_events.clear_trigger_dict()
-
-        # This is a bandaid solution, and isn't perfect
-        # But this will help reputation from growing without limit.
-        game.clan.reputation = min(
-            game.clan.reputation,
-            100)  # <-- Returns the smallest, so caps at 100.
-
+        Patrol.used_patrols.clear()
         game.patrolled.clear()
 
         if any(
@@ -1020,17 +1014,25 @@ class Events():
                     "apprentice", "mediator apprentice",
                     "medicine cat apprentice"
             ]:
-                if (cat.experience_level not in ["untrained", "trainee"] and
-                    cat.moons >= game.config["graduation"]["min_graduating_age"]) \
-                        or cat.moons >= game.config["graduation"]["max_apprentice_age"][cat.status]:
 
-                    if cat.moons == game.config["graduation"][
-                            "min_graduating_age"]:
-                        preparedness = "early"
-                    elif cat.experience_level in ["untrained", "trainee"]:
-                        preparedness = "unprepared"
-                    else:
+                if game.settings["12_moon_graduation"]:
+                    _ready = cat.moons >= 12
+                else:
+                    _ready = (cat.experience_level not in ["untrained", "trainee"] and
+                              cat.moons >= game.config["graduation"]["min_graduating_age"]) \
+                              or cat.moons >= game.config["graduation"]["max_apprentice_age"][cat.status]
+                
+                if _ready:
+                    if game.settings["12_moon_graduation"]:
                         preparedness = "prepared"
+                    else:
+                        if cat.moons == game.config["graduation"][
+                                "min_graduating_age"]:
+                            preparedness = "early"
+                        elif cat.experience_level in ["untrained", "trainee"]:
+                            preparedness = "unprepared"
+                        else:
+                            preparedness = "prepared"
 
                     if cat.status == 'apprentice':
                         self.ceremony(cat, 'warrior', preparedness)
@@ -1075,6 +1077,9 @@ class Events():
         """
         # ceremony = []
         cat.status_change(promoted_to)
+        cat.update_skill()
+        cat.update_traits()
+    
         involved_cats = [
             cat.ID
         ]  # Clearly, the cat the ceremony is about is involved.
@@ -1548,11 +1553,13 @@ class Events():
                 else:
                     mentor_skill_modifier = 0
 
-                
-
             exp = random.choice(list(range(ran[0][0], ran[0][1] + 1)) + list(range(ran[1][0], ran[1][1] + 1)))
+            
+            if game.clan.game_mode == "classic":
+                exp += random.randint(0, 3)
 
             cat.experience += max(exp * mentor_modifier + mentor_skill_modifier, 1)
+            print(str(cat.name), exp * mentor_modifier + mentor_skill_modifier, cat.experience)
 
     def invite_new_cats(self, cat):
         """

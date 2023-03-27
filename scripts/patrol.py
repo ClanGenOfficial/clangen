@@ -35,6 +35,8 @@ When adding new patrols, use \n to add a paragraph break in the text
 
 
 class Patrol():
+    
+    used_patrols = []
 
     def __init__(self):
         self.results_text = []
@@ -66,7 +68,6 @@ class Patrol():
         self.app6_name = None
         self.other_clan = None
         self.experience_levels = []
-        self.used_patrols = []
         self.filter_count = 0
 
     def add_patrol_cats(self, patrol_cats: list, clan: Clan) -> None:
@@ -1330,7 +1331,7 @@ class Patrol():
             gained_exp = 0
 
         # Apprentice exp, does not depend on success
-        if "apprentice" in self.patrol_statuses or "medicine cat apprentice" in self.patrol_statuses:
+        if game.clan.game_mode != "classic" and ("apprentice" in self.patrol_statuses or "medicine cat apprentice" in self.patrol_statuses):
             app_exp = max(random.randint(1, 7) * (1 - 0.1 * len(self.patrol_cats)), 1)
         else:
             app_exp = 0
