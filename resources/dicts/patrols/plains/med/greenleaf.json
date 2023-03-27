@@ -15,7 +15,7 @@
         "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with them. It's just a herb gathering patrol, but p_l feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
     ],
     "fail_text": [
-        "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common and the other cat bluntly refuses to talk about boring herbs.",
+        "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common, and the other cat bluntly refuses to talk about boring herbs.",
         "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with."
     ],
     "win_skills": ["good mediator", "great mediator", "excellent mediator"],
@@ -132,10 +132,9 @@
             "As ever, s_c's keen eyes pick out their target quickly, and they bring back a great haul of betony for the herb stores."
 ],
     "fail_text": [
-            "Hang on. Has p_l identified the betony correctly? They're not sure, and not willing to risk it."
+            "Hang on. Has p_l identified the betony correctly? They're not sure, and not willing to risk it. Better to be safe than sorry."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -156,10 +155,9 @@
             "As ever, s_c's keen eyes pick out their target quickly. They point it out to app1, and the two bring back a great haul of betony for the herb stores."
 ],
     "fail_text": [
-            "Hang on. Has p_l identified the betony correctly? They're not sure, and not willing to risk it."
+            "Hang on. Has p_l identified the betony correctly? They're not sure, and not willing to risk it. Better to be safe than sorry."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -180,10 +178,9 @@
             "As ever, s_c's keen eyes pick out their target quickly, and they organise their patrol to bring back a great haul of betony for the herb stores."
     ],
     "fail_text": [
-            "Hang on. Has p_l identified the betony correctly? They're not sure, and not willing to risk it."
+            "Hang on. Has p_l identified the betony correctly? They're not sure, and not willing to risk it. Better to be safe than sorry."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -207,7 +204,6 @@
             "p_l attempts to pick their way through the blackberry thorns to reach the leaves, but it soon becomes clear that it's a hopeless task."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -231,7 +227,6 @@
             "With app1 following them, p_l attempts to pick their way through the blackberry thorns to reach the leaves, but it soon becomes clear that it's a hopeless task."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -255,7 +250,6 @@
             "p_l manages to avoid a torn pelt only by the grace of StarClan, and isn't going to risk sending anyone else into the brambles with them having so many thorns at the moment. They'll have to try a different blackberry bush on another day."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -279,7 +273,6 @@
             "Maybe they're just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and it feels like a wasted afternoon."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -303,7 +296,6 @@
             "Maybe they're just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and it feels like a wasted afternoon. They avoid snapping at app1, who seems unable to identify the common herb, but they definitely come close."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -327,7 +319,6 @@
             "Maybe they're just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and no one else on the patrol is very helpful either. They return to camp without any burdock, prickling with frustration."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -351,7 +342,6 @@
             "It's alright to fail, p_l reminds themselves. At least they know where there <i>isn't</i> catmint, and that will make the next patrols to find it easier."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -375,7 +365,6 @@
             "app1 loses their head over the catmint, and p_l is forced to cancel the gathering patrol to take them back to camp until they regain their sense."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -399,7 +388,6 @@
             "p_l is proven unfortunately correct, as the patrol is full of juvenile behaviour and dumb jokes, rather than focused effort. The one catmint plant they successfully find ends up with their helpers rolling around in it, bruising all the stems until it's unharvestable, and p_l is furious by the time they return to camp."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -423,7 +411,6 @@
             "Frustratingly, some herbivore has come through and feasted on the daisies p_l targets. The plants will recover, but these half-chewed on leaves are useless to c_n."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -447,7 +434,6 @@
             "Frustratingly, some herbivore has come through and feasted on the daisies p_l targets. The plants will recover, but these half-chewed on leaves are useless to c_n. They avoid snapping at app1, who seems unable to identify the common herb, but they definitely come close."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -471,7 +457,6 @@
             "With the warriors more interested in hunting whatever has been snacking on the daisies than helping p_l find any more plants, it's a frustrating and unproductive afternoon."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -495,7 +480,6 @@
             "Unfortunately, c_n doesn't seem to be the only things after dandelions, and p_l can't gather from this patch without killing off the already damaged plants."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -519,7 +503,6 @@
             "Unfortunately, c_n doesn't seem to be the only things after dandelions, and p_l can't gather from this patch without killing off the already damaged plants. app1 actually starts an argument about it, insistent that they don't need to worry about protecting the dandelion patch for the future."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -543,7 +526,6 @@
             "The warriors that are supposed to be helping p_l gather dandelions instead seem more intent on hunting, and p_l gives up, storming back to camp with their temper flaring."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -567,10 +549,9 @@
             "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and p_l doesn't want to use these tattered, diseased-looking leaves.",
             null,
             null,
-            "r_c, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses their balance and tumbles to the ground."
+            "p_l, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses their balance and tumbles to the ground."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -597,7 +578,6 @@
             "r_c, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses their balance and tumbles to the ground."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -624,7 +604,6 @@
             "r_c, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses their balance and tumbles to the ground."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -648,7 +627,6 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -672,7 +650,6 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and app1 looks up at them with disappointment."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -696,7 +673,6 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and the cats snappy with each other."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -720,7 +696,6 @@
             "p_l seems to have forgotten where to find a juniper tree, much to their own embarrassment."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -744,7 +719,6 @@
             "p_l seems to have forgotten where to find a juniper tree, much to their own embarrassment and app1's shock."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -768,7 +742,6 @@
             "The warriors are full of complaints about the sharp juniper needles spiking their poor widdle noses, and eventually a mildly disgusted p_l calls off the herb gathering patrol."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -790,7 +763,7 @@
     "dislike"
 ],
 "intro_text": "p_l and app1 head out for lungwort, with p_l starting a lesson on the value of this rare herb for treating yellowcough.",
-"decline_text": "A cat grabs p_l's attention before they can  leave. p_l heaves a sigh - the expedition is delayed for another time.",
+"decline_text": "A cat grabs p_l's attention before they can leave. p_l heaves a sigh - the expedition is delayed for another time.",
 "chance_of_success": 30,
 "exp": 20,
 "success_text": [
@@ -907,7 +880,6 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -931,7 +903,6 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and app1 looks up at them with disappointment."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -955,7 +926,6 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and the cats snappy with each other."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -979,7 +949,6 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1003,7 +972,6 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and app1 looks up at them with disappointment."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1027,7 +995,6 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and the cats snappy with each other."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -1051,7 +1018,6 @@
             "p_l could swear that there's usually some mullein around here - but not this time."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1069,13 +1035,12 @@
     "success_text": [
             "p_l spots the mullein plants by scrambling up onto a low rock and looking for their sapling-like, fat, towering stems starting to poke over all the other plants. Once they've called app1 up to have a look, they hop down to trot over and harvest them.",
             "Easing the lungs of those with weaker chest muscles or infections, helping with certain sorts of pain, <i>and</i> being used to treat unhappy guts - mullein is a good herb to keep in stock, even if it doesn't have the glamour of catmint or the rarity of lungwort. app1 soaks up the lessons on its uses attentively.",
-            "The always-reliable s_c spots mullein plants growing plenty of leaves on their strange central stems, and with app1 helping them, knocks them over so that the entire bundle can be carried home."
+            "The always-reliable s_c spots mullein plants growing plenty of leaves on their strange central stems, and, with app1 helping them, knocks them over so that the entire bundle can be carried home."
 ],
     "fail_text": [
             "p_l could swear that there's usually some mullein around here - but not this time."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1099,7 +1064,6 @@
             "p_l could swear that there's usually some mullein around here - but not this time."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -1123,7 +1087,6 @@
             "The trees p_l finds don't look particularly safe to climb, and p_l is forced to give up on the idea of oak leaf gathering for today."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1147,7 +1110,6 @@
             "The trees p_l finds don't look particularly safe to climb, and p_l is forced to give up on the idea of oak leaf gathering for today."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1165,13 +1127,12 @@
     "success_text": [
             "The shade of the oak tree makes the ground beneath it cool, and bodes well for harvesting its leaves. The warriors flex their talents, and p_l encourages them as they show off their climbing skils, breaking off twigs to send the leaves down to p_l.",
             "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine den - they're always happy to bring a good crop of them back to the herb stores. Their Clanmates are, as expected, a huge help carrying everything back home.",
-            "s_c spots an oak tree that's valiantly trying to sprout leaves from a half fallen branch, one of the casualties of last leaf-bare, and heads to harvest from that, taking the safe option of plucking leaves from the ground rather than clambering up into the towering branches. It's less entertaining for the warriors heping them, but the cats still make a nice easy afternoon of it."
+            "s_c spots an oak tree that's valiantly trying to sprout leaves from a half fallen branch, one of the casualties of last leaf-bare, and heads to harvest from that, taking the safe option of plucking leaves from the ground. It's less entertaining for the warriors helping them, but the cats still make a nice, easy afternoon of it."
     ],
     "fail_text": [
             "The trees p_l finds don't look particularly safe to climb, and p_l is forced to give up on the idea of oak leaf gathering for today."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -1195,7 +1156,6 @@
             "p_l finds a plantain plant growing in the middle of a path, but it's trampled and useless until it regrows its leaves."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1219,7 +1179,6 @@
             "p_l finds a plantain plant growing in the middle of a path, but it's trampled and useless until it regrows its leaves. app1 keeps suggesting they look somewhere that isn't a busy thoroughfare, not seeming to understand why p_l repeatedly says that won't work."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1236,14 +1195,13 @@
     "exp": 10,
     "success_text": [
             "p_l doesn't so much find the plantain plants as find one of the main paths headed away from camp be blocked off by them, but hey, there's plantain. The warriors are relieved p_l lets them clear the plants away - there'll be plantain elsewhere, and the Clan needs this path.",
-            "Suitable for soothing throat and pelt irritation, and with a welcome - albeit weird - habit of consistently sprouting up on well-trodden paths, plantain is a basic, but valuable, herb to keep stocks of. It's even relatively innocuous taste wise, making it easy to harvest.",
+            "Suitable for soothing throat and pelt irritation, and with a welcome - albeit weird - habit of consistently sprouting up on well-trodden paths, plantain is a basic, but valuable, herb to keep stocks of. It's even relatively innocuous taste-wise, making it easy to harvest.",
             "Go to where other animals wander through c_n's territory on little, beaten paths, wander around under you bump, nose-first, into a plantain plant, harvest. Simple. <i>And</i> the warriors get to tidy their paths through the territory. It's a win-win!"
     ],
     "fail_text": [
             "p_l finds a plantain plant growing in the middle of a path, but it's trampled and useless until it regrows its leaves. The warriors, however, are pleased to see the plant dying - seems they've been stomping on it every time they've come through here. How helpful of them."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -1264,10 +1222,9 @@
             "s_c uses the bright flowers to find the plants quickly, determined to bring back as many poppy seeds as possible."
 ],
     "fail_text": [
-            "The wind seems to have stolen all the poppy seeds from their dry flowerheads before p_l could harvest them."
+            "The wind seems to have stolen all the poppy seeds from their dry flowerheads before p_l even had a chance to harvest them."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1288,10 +1245,9 @@
             "s_c uses the bright flowers to find the plants quickly, determined to bring back as many poppy seeds as possible. They pass on their knowledge of poppy herbcraft as they gather, teaching app1 about all the different circumstances that poppy seeds can help with, though warning that app1 should avoid using them on pregnant or nursing queens."
 ],
     "fail_text": [
-            "The wind seems to have stolen all the poppy seeds from their dry flowerheads before p_l could harvest them."
+            "The wind seems to have stolen all the poppy seeds from their dry flowerheads before p_l and app1 even had a chance to harvest them."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1312,10 +1268,9 @@
             "s_c uses the bright flowers to find the plants quickly, determined to bring back as many poppy seeds as possible. The rest of the patrol, knowing how important poppy seeds are as a painkiller, work hard, both for s_c and all of c_n."
     ],
     "fail_text": [
-            "The wind seems to have stolen all the poppy seeds from their dry flowerheads before p_l could harvest them."
+            "The wind seems to have stolen all the poppy seeds from their dry flowerheads before p_l even had a chance to harvest them."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -1339,7 +1294,6 @@
             "Try as they might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1363,7 +1317,6 @@
             "Try as they might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1387,7 +1340,6 @@
             "Try as they might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -1466,7 +1418,6 @@
             "Try as they might, p_l can't quite remember the exact shape of the tansy leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1490,7 +1441,6 @@
             "Try as they might, p_l can't quite remember the exact shape of the tansy leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1514,7 +1464,6 @@
             "Try as they might, p_l can't quite remember the exact shape of the tansy leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -1538,7 +1487,6 @@
             "p_l has no time - and no thyme. They're forced to give up on the search for today."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1562,7 +1510,6 @@
             "p_l has no time - and no thyme. They're forced to give up on the search for today."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1586,7 +1533,6 @@
             "p_l has no time - and no thyme. They're forced to give up on the search for today."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -1610,7 +1556,6 @@
             "Try as they might, p_l can't quite remember the exact shape of the garlic leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1634,7 +1579,6 @@
             "Try as they might, p_l can't quite remember the exact shape of the garlic leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1658,7 +1602,6 @@
             "Try as they might, p_l can't quite remember the exact shape of the garlic leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,

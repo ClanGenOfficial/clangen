@@ -14,7 +14,7 @@
         "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with them. It's just a herb gathering patrol, but p_l feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
     ],
     "fail_text": [
-        "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common and the other cat bluntly refuses to talk about boring herbs.",
+        "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common, and the other cat bluntly refuses to talk about boring herbs.",
         "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with."
     ],
     "win_skills": ["good mediator", "great mediator", "excellent mediator"],
@@ -64,7 +64,7 @@
             "As ever, s_c's keen eyes pick out their target quickly, and they bring back a great haul of betony for the herb stores."
 ],
     "fail_text": [
-            "Hang on. Has p_l identified the betony correctly? They're not sure, and not willing to risk it."
+            "Hang on. Has p_l identified the betony correctly? They're not sure, and not willing to risk it. Better to be safe than sorry."
     ],
     "win_skills": ["keen eye"],
     "min_cats": 1,
@@ -87,7 +87,7 @@
             "As ever, s_c's keen eyes pick out their target quickly. They point it out to app1, and the two bring back a great haul of betony for the herb stores."
 ],
     "fail_text": [
-            "Hang on. Has p_l identified the betony correctly? They're not sure, and not willing to risk it."
+            "Hang on. Has p_l identified the betony correctly? They're not sure, and not willing to risk it. Better to be safe than sorry."
     ],
     "win_skills": ["keen eye"],
     "min_cats": 2,
@@ -110,7 +110,7 @@
             "As ever, s_c's keen eyes pick out their target quickly, and they organise their patrol to bring back a great haul of betony for the herb stores."
     ],
     "fail_text": [
-            "Hang on. Has p_l identified the betony correctly? They're not sure, and not willing to risk it."
+            "Hang on. Has p_l identified the betony correctly? They're not sure, and not willing to risk it. Better to be safe than sorry."
     ],
     "win_skills": ["keen eye"],
     "min_cats": 3,
@@ -685,7 +685,7 @@
     "season": "leaf-fall",
     "tags": ["herb_gathering", "adult_stat", "med_cat", "apprentice", "med_only", "herb", "lungwort", "comfort", "respect", "trust", "dislike"],
     "intro_text": "p_l and app1 head out for lungwort, with p_l starting a lesson on the value of this rare herb for treating yellowcough.",
-    "decline_text": "A cat grabs p_l's attention before they can  leave. p_l heaves a sigh - the expedition is delayed for another time.",
+    "decline_text": "A cat grabs p_l's attention before they can leave. p_l heaves a sigh - the expedition is delayed for another time.",
     "chance_of_success": 30,
     "exp": 20,
     "success_text": [
@@ -933,7 +933,7 @@
     "success_text": [
             "With all the towering height obtained in newleaf, greenleaf, and now leaf-fall, it almost makes sense why mullein dies off in leaf-bare - otherwise the plants would surely topple over. p_l and app1 shove this one over to get at its leaves.",
             "Easing the lungs of those with weaker chest muscles or infections, helping with certain sorts of pain, <i>and</i> being used to treat unhappy guts - mullein is a good herb to keep in stock, even if it doesn't have the glamour of catmint or the rarity of lungwort. app1 soaks up the lessons on its uses attentively.",
-            "The always-reliable s_c spots mullein plants growing plenty of leaves on their strange central stems, and with app1 helping them, knocks them over so that the entire bundle can be carried home."
+            "The always-reliable s_c spots mullein plants growing plenty of leaves on their strange central stems, and, with app1 helping them, knocks them over so that the entire bundle can be carried home."
 ],
     "fail_text": [
             "p_l could swear that there's usually some mullein around here - but not this time."
@@ -1025,7 +1025,7 @@
     "success_text": [
             "Picking only the green leaves proves challenging, but not impossible, and with careful effort p_l still manages to bring a decent number home, especially with the warriors there, who turn it into a competition between themselves.",
             "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine den - they're always happy to bring a good crop of them back to the herb stores. Their Clanmates are, as expected, a huge help carrying everything back home.",
-            "s_c spots an oak tree that's valiantly trying to sprout leaves from a half fallen branch, one of the casualties of last leaf-bare, and heads to harvest from that, taking the safe option of plucking leaves from the ground. It's less entertaining for the warriors helping them, but the cats still make a nice easy afternoon of it."
+            "s_c spots an oak tree that's valiantly trying to sprout leaves from a half fallen branch, one of the casualties of last leaf-bare, and heads to harvest from that, taking the safe option of plucking leaves from the ground. It's less entertaining for the warriors helping them, but the cats still make a nice, easy afternoon of it."
     ],
     "fail_text": [
             "The trees p_l finds don't look particularly safe to climb, and p_l is forced to give up on the idea of oak leaf gathering for today."
@@ -1093,7 +1093,7 @@
     "exp": 10,
     "success_text": [
             "Not one of the plants that turn red before they die off for leaf-bare, p_l carries the vibrantly green plantain leaves home through a territory growing less and less green as leaf-fall wears on. Even the warriors seem less irritated at the plantain plants than usual, instead valuing the herb while they can still find it.",
-            "Suitable for soothing throat and pelt irritation, and with a welcome - albeit weird - habit of consistently sprouting up on well-trodden paths, plantain is a basic but valuable herb to keep stocks of. It's even relatively innocuous taste wise, making it easy to harvest.",
+            "Suitable for soothing throat and pelt irritation, and with a welcome - albeit weird - habit of consistently sprouting up on well-trodden paths, plantain is a basic but valuable herb to keep stocks of. It's even relatively innocuous taste-wise, making it easy to harvest.",
             "Go to where other animals wander through c_n's territory on little, beaten paths, wander around under you bump, nose-first, into a plantain plant, harvest. Simple. <i>And</i> the warriors get to tidy their paths through the territory. It's a win-win!"
     ],
     "fail_text": [

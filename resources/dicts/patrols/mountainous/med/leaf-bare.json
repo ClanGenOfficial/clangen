@@ -15,7 +15,7 @@
         "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with them. It's just a herb gathering patrol, but p_l feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
     ],
     "fail_text": [
-        "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common and the other cat bluntly refuses to talk about boring herbs.",
+        "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common, and the other cat bluntly refuses to talk about boring herbs.",
         "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with."
     ],
     "win_skills": ["good mediator", "great mediator", "excellent mediator"],
@@ -71,7 +71,6 @@
             "p_l carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. They over-compensate their balance, falling into a deep snowbank that they emerge from with a deep shiver racking their body."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -101,7 +100,6 @@
             "r_c carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. They over-compensate their balance, falling into a deep snowbank that they emerge from with a deep shiver racking their body."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -131,7 +129,6 @@
             "r_c carefully edges out onto a slippery, frozen rock, trying to get closer to a branch of blackberry leaves that are still green. They over-compensate their balance, falling into a deep snowbank that they emerge from with a deep shiver racking their body."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -161,7 +158,6 @@
             "r_c digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. The cold has leached all the heat from their pelt, and they arrive back at camp miserable and cold."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -191,7 +187,6 @@
             "r_c digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. The cold has leached all the heat from their pelt, and they arrive back at camp miserable and cold."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -221,7 +216,6 @@
             "r_c digs and digs and digs, but eventually they have to admit failure and give up the search for burdock root. The cold has leached all the heat from their pelt, and they arrive back at camp miserable and cold."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -248,7 +242,6 @@
             "Frustratingly, some herbivore has come through and feasted on the daisies p_l targets. The plants will recover, but these half-chewed on leaves are useless to c_n."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -272,7 +265,6 @@
             "Frustratingly, some herbivore has come through and feasted on the daisies p_l targets. The plants will recover, but these half-chewed on leaves are useless to c_n. They avoid snapping at app1, who seems unable to identify the common herb, but they definitely come close."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -296,7 +288,6 @@
             "With the warriors more interested in hunting whatever has been snacking on the daisies than helping p_l find any more plants, it's a frustrating and unproductive afternoon."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -323,7 +314,6 @@
             "Not only does r_c end up soaked to the skin, they can't even find any daisies under the snow, and they're left shivering violently by the time they return to camp."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -353,7 +343,6 @@
             "Not only does r_c end up soaked to the skin, they can't even find any daisies under the snow, and they're left shivering violently by the time they return to camp."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -383,7 +372,6 @@
             "Not only does r_c end up soaked to the skin, they can't even find any daisies under the snow, and they're left shivering violently by the time they return to camp."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -413,7 +401,6 @@
             "Not only does p_l_c end up soaked to the skin, they can't even find any dandelions under the snow, and they're left shivering violently by the time they return to camp."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -443,7 +430,6 @@
             "Not only does r_c end up soaked to the skin, they can't even find any dandelions under the snow, and they're left shivering violently by the time they return to camp."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -473,7 +459,6 @@
             "Not only does r_c end up soaked to the skin, they can't even find any dandelions under the snow, and they're left shivering violently by the time they return to camp."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -503,7 +488,6 @@
             "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -533,7 +517,6 @@
             "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -563,7 +546,6 @@
             "r_c, edging out onto a skinny branch to try to get some juniper leaves, slips on the frosted wood and plummets off the tree, hitting the ground hard."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -593,7 +575,6 @@
             "When p_l arrives back at camp, they're shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -623,7 +604,6 @@
             "When the failed patrol arrives back at camp, r_c is shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -653,7 +633,6 @@
             "When the failed patrol arrives back at camp, r_c is shivering and cold. Digging into the leaf-bare ground in a search for bulbs that weren't there was both unproductive and senseless."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,

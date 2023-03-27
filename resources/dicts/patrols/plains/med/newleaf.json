@@ -15,7 +15,7 @@
         "s_c has always been good at talking, so it isn't a big surprise that p_l finds it so easy to chat with them. It's just a herb gathering patrol, but p_l feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
     ],
     "fail_text": [
-        "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common and the other cat bluntly refuses to talk about boring herbs.",
+        "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common, and the other cat bluntly refuses to talk about boring herbs.",
         "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with."
     ],
     "win_skills": ["good mediator", "great mediator", "excellent mediator"],
@@ -65,10 +65,9 @@
             "As ever, s_c's keen eyes pick out their target quickly, and they bring back a great haul of betony for the herb stores."
 ],
     "fail_text": [
-            "Hang on. Has p_l identified the betony correctly? They're not sure, and not willing to risk it."
+            "Hang on. Has p_l identified the betony correctly? They're not sure, and not willing to risk it. Better to be safe than sorry."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -89,10 +88,9 @@
             "As ever, s_c's keen eyes pick out their target quickly. They point it out to app1, and the two bring back a great haul of betony for the herb stores."
 ],
     "fail_text": [
-            "Hang on. Has p_l identified the betony correctly? They're not sure, and not willing to risk it."
+            "Hang on. Has p_l identified the betony correctly? They're not sure, and not willing to risk it. Better to be safe than sorry."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -113,10 +111,9 @@
             "As ever, s_c's keen eyes pick out their target quickly, and they organise their patrol to bring back a great haul of betony for the herb stores."
 ],
     "fail_text": [
-            "Hang on. Has p_l identified the betony correctly? They're not sure, and not willing to risk it."
+            "Hang on. Has p_l identified the betony correctly? They're not sure, and not willing to risk it. Better to be safe than sorry."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -140,7 +137,6 @@
             "p_l attempts to pick their way through the blackberry thorns to reach the leaves, but it soon becomes clear that it's a hopeless task."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -156,7 +152,7 @@
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-            "Sure enough, all along the trailing branches of the blackberry brambles, new leaves are poking towards the sun. p_l carefully plucks them off, not taking too many - they want this plant to supply the Clan in future moons too. app1 hasn't considered plant pruning as a medicine cat skill before now, and they have a good conversation about why it's important.",
+            "Sure enough, all along the trailing branches of the blackberry brambles, new leaves poke towards the sun. p_l carefully plucks them, not taking too many - they want this plant to supply the Clan in future moons, too. app1 hasn't considered plant pruning as a medicine cat skill before now, and they have a good conversation about why it's important.",
             "Perfect - there's a good crop of blackberry leaves just waiting for them, and the bramble seems to be sending out new exploratory branches too, promising more growth in the future. Seeing the leaves set out to dry, app1 watching over them diligently, makes p_l feel like they can relax.",
             "s_c falls into the meditative state that herb-gathering brings, and they hum to themselves as they work, crisply plucking from the blackberry brambles. app1 smiles to hear the quiet sound, comforted by the familiar work and tune."
 ],
@@ -164,7 +160,6 @@
             "With app1 following them, p_l attempts to pick their way through the blackberry thorns to reach the leaves, but it soon becomes clear that it's a hopeless task."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -180,7 +175,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-           "Sure enough, all along the trailing branches of the blackberry brambles, new leaves are poking towards the sun. p_l carefully plucks them off, not taking too many - they want this plant to supply the Clan in future moons too. The rest of the patrol listens to them describe how a medicine cat must predict the Clan's future need, respect for p_l growing.",
+           "Sure enough, all along the trailing branches of the blackberry brambles, new leaves are poking towards the sun. p_l carefully plucks them, not taking too many - they want this plant to supply the Clan in future moons too. The rest of the patrol listens to them describe how a medicine cat must predict the Clan's future need, respect for p_l growing.",
            "Perfect - there's a good crop of blackberry leaves just waiting for them, and the bramble seems to be sending out new exploratory branches too, promising more growth in the future. Their Clanmates send p_l away for a nap in the sunshine, as they organise the blackberry leaves, and p_l smiles appreciatively.",
            "s_c falls into the meditative state that herb-gathering brings, and they hum to themselves as they work, crisply plucking from the blackberry brambles. The patrol follows their lead, and its a relaxed group that wanders back into camp with a massive haul from the blackberry bushes."
     ],
@@ -188,7 +183,6 @@
             "p_l manages to avoid a torn pelt only by the grace of StarClan, and isn't going to risk sending anyone else into the brambles with them having so many thorns at the moment. They'll have to try a different blackberry bush on another day."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -212,7 +206,6 @@
             "Maybe they're just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and it feels like a wasted afternoon."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -228,7 +221,7 @@
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-            "The strengthening newleaf sun has tempted fat burdock leaves to start to sprout, and it's not finding them that's hard, it's trying to carry all the roots back to camp all at once that proves difficult! app1 actually topples over at one point, although p_l pretends they didn't see, hiding their smile.",
+            "The strengthening newleaf sun has tempted fat burdock leaves to start to sprout, and it's not finding them that's hard, it's trying to carry the roots back to camp all at once that proves difficult! app1 actually topples over at one point, although p_l pretends they didn't see, hiding their smile.",
             "Luck is on p_l's side today - the burdock is both plentiful and easy to find. Laying the fat roots out in a towering but neat pile in the herb stores makes p_l's entire body thrum with a contented purr, as does seeing how hard app1 is working to learn herbcraft.",
             "s_c shows their usual talent for spotting herbs, trotting straight over to a burdock plant and digging at its foot. app1 asks them about it, and p_l replies with an explanation of how the distinctive size and shape of burdock leaves helps to quickly identify them from a distance."
 ],
@@ -236,7 +229,6 @@
             "Maybe they're just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and it feels like a wasted afternoon. They avoid snapping at app1, who seems unable to identify the common herb, but they definitely come close."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -252,7 +244,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-           "The strengthening newleaf sun has tempted fat burdock leaves to start to sprout, and it's not finding them that's hard, it's trying to carry all the roots back to camp all at once that proves difficult! It's a long afternoon, but a productive, light-hearted one, filled with smiles and jokes as the obliging cats follow p_l's direction to cart everything home.",
+           "The strengthening newleaf sun has tempted fat burdock leaves to start to sprout, and it's not finding them that's hard, it's trying to carry the roots back to camp all at once that proves difficult! It's a long, but productive, light-hearted afternoon, filled with smiles and jokes as the obliging cats follow p_l's direction to cart everything home.",
            "Luck is on p_l's side today - the burdock is both plentiful and easy to find. Laying the fat roots out in a towering but neat pile in the herb stores makes p_l's entire body thrum with a contented purr, and their Clanmates smile, obligingly helping out their hard-working medicine cat.",
             "s_c shows their usual talent for spotting herbs, trotting straight over to a burdock plant and digging at its foot. Their team follows them, ready to pitch in and provide the muscle needed to bring back an excellent harvest."
     ],
@@ -260,7 +252,6 @@
             "Maybe they're just coming down with a runny nose, but p_l doesn't manage to sniff out any burdock, and no one else on the patrol is very helpful either. They return to camp without any burdock, prickling with frustration."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -271,20 +262,19 @@
     "biome": "plains",
     "season": "newleaf",
     "tags": ["herb_gathering", "med_only", "herb", "catmint", "many_herbs2", "med_cat"],
-    "intro_text": "p_l tests the air, trying to decide it it's warm enough to gather catmint yet. They'd reallly like to replenish the herb stocks after leaf-bare.",
+    "intro_text": "p_l tests the air, trying to decide it it's warm enough to gather catmint yet. They'd really like to replenish the herb stocks after leaf-bare.",
     "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
     "chance_of_success": 40,
     "exp": 30,
     "success_text": [
             "The medicine cat carefully picks out catmint from its known hiding places, carting it back to camp where it will protect the Clan.",
             "Fortunately, catmint starts trying to take over as much ground as possible as soon as it possibly can, and it's already enough of the way through newleaf to go harvest from its young leaves.",
-            "s_c has a couple favourite catmint plants, and goes to check whether they've regrown this newleaf. Two haven't, but another two have and prove enough for a great harvest to take back to camp."
+            "s_c has a few favourite catmint plants, and goes to check whether they've regrown this newleaf. Two haven't, but another two have, and they're enough for a great harvest to take back to camp."
     ],
     "fail_text": [
             "It's alright to fail, p_l reminds themselves. At least they know where there <i>isn't</i> catmint, and that will make the next patrols to find it easier."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -301,14 +291,13 @@
     "exp": 30,
     "success_text": [
             "As they walk, p_l teaches app1 about how crucial catmint is for coughs, and how, although its scent holds drugged pleasure, part of the responsibility of being a medicine cat is avoiding becoming caught in its haze. The medicine cats carefully pick out catmint from its known hiding places, carting it back to camp where it will protect the Clan.",
-            "Fortunately, catmint starts trying to take over as much ground as possible as soon as it possibly can, and it's already enough of the way through newleaf to go harvest from its young leaves. p_l instructs app1 in how one judges these things, to try and promote the most growth from the precious plant while still bringing hom the greatest harvest.",
-            "s_c has a couple favourite catmint plants, and goes to check whether they've regrown this newleaf. Two haven't, but another two have and prove enough for a great harvest to take back to camp with app1."
+            "Fortunately, catmint starts trying to take over as much ground as possible as soon as it possibly can, and it's already enough of the way through newleaf to go harvest from its young leaves. p_l instructs app1 in how one judges these things, to try and promote the most growth from the precious plant while still bringing home the greatest harvest.",
+            "s_c has a few favourite catmint plants, and goes to check whether they've regrown this newleaf. Two haven't, but another two have, and they're enough for a great harvest to take back to camp with app1."
 ],
     "fail_text": [
             "app1 loses their head over the catmint, and p_l is forced to cancel the gathering patrol to take them back to camp until they regain their sense."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -325,14 +314,13 @@
     "exp": 10,
     "success_text": [
             "The warriors keep their heads, with the more experienced of p_l's helpers making themselves useful keeping those that are young or more impulsive focused on their task. The medicine cat and their team carefully pick out catmint from its known hiding places, carting it back to camp where it will protect the Clan.",
-            "Fortunately, catmint starts trying to take over as much ground as possible as soon as it possibly can, and it's already enough of the way through newleaf to go harvest from its young leaves. The patrol of warrior, while over-enthusiastic, calm themselves down when p_l demands their attention, and together the cats bring a fair harvest home.",
-            "s_c has a couple favourite catmint plants, and goes to check whether they've regrown this newleaf. Two haven't, but another two have and prove enough for a great harvest to take back to camp, though the warriors are fairly unruly about the 'no rolling on the plants' rule."
+            "Fortunately, catmint starts trying to take over as much ground as possible as soon as it possibly can, and it's already enough of the way through newleaf to go harvest from its young leaves. The patrol of warriors, while over-enthusiastic, calm themselves down when p_l demands their attention, and together the cats bring a fair harvest home.",
+            "s_c has a few favourite catmint plants, and goes to check whether they've regrown this newleaf. Two haven't, but another two have, and they're enough for a great harvest to take back to camp, though the warriors are fairly unruly about the 'no rolling on the plants' rule."
 ],
     "fail_text": [
             "p_l is proven unfortunately correct, as the patrol is full of juvenile behaviour and dumb jokes, rather than focused effort. The one catmint plant they successfully find ends up with their helpers rolling around in it, bruising all the stems until it's unharvestable, and p_l is furious by the time they return to camp."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -356,7 +344,6 @@
             "The goldenrod bushes don't seem to be recovering well from leaf-bare this year, and it worries p_l."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -377,10 +364,9 @@
             "s_c has a good eye for these things, snipping off the best, lushest goldenrod to take back for the Clan's stores. As they do, they instruct app1 in how to judge the quality of each stem. Each plant will contain both ideal and bad examples, either of which could be harvested, and it's important app1 has this knowledge, too."
 ],
     "fail_text": [
-            "The goldenrod bushes don't seem to be recovering well from leaf-bare this year, and it worries p_l. app1's calivalier attitude is not helping."
+            "The goldenrod bushes don't seem to be recovering well from leaf-bare this year, and it worries p_l. app1's cavalier attitude about it doesn't help, either."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -401,10 +387,9 @@
             "s_c has a good eye for these things, snipping off the best, lushest goldenrod to take back for the Clan's stores. They control what is harvested, while their team works to efficiently carry the herb back to camp, deferring to s_c's expertise."
 ],
     "fail_text": [
-            "The goldenrod bushes don't seem to be recovering well from leaf-bare this year, and it worries p_l, although the warriors dismiss their concerns about the weeds."
+            "The goldenrod bushes don't seem to be recovering well from leaf-bare this year, and it worries p_l, although the warriors dismiss their concerns about what they see as little more than weeds."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -428,7 +413,6 @@
             "p_l seems to have forgotten where to find a juniper tree, much to their own embarrassment."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -452,7 +436,6 @@
             "p_l seems to have forgotten where to find a juniper tree, much to their own embarrassment and app1's shock."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -476,7 +459,6 @@
             "The warriors are full of complaints about the sharp juniper needles spiking their poor widdle noses, and eventually a mildly disgusted p_l calls off the herb gathering patrol."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -488,11 +470,11 @@
 "season": "newleaf",
 "tags": ["herb_gathering", "med_cat", "apprentice", "med_only", "herb", "lungwort", "comfort", "respect", "trust", "dislike"],
 "intro_text": "p_l and app1 head out for lungwort, with p_l starting a lesson on the value of this rare herb for treating yellowcough.",
-"decline_text": "A cat grabs p_l's attention before they can  leave. p_l heaves a sigh - the expedition is delayed for another time.",
+"decline_text": "A cat grabs p_l's attention before they can leave. p_l heaves a sigh - the expedition is delayed for another time.",
 "chance_of_success": 30,
 "exp": 20,
 "success_text": [
-    "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to replenishing the Clan's stores after the long leaf-bare. For just a second, they feel the weight of their responsibilities lift, and they let out a whoop and stop to play with app1.",
+    "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to replenishing the Clan's stores after the long leaf-bare. For just a second, they feel the weight of their responsibilities lift, and they let out a yowl and stop to play with app1.",
     "app1 listens intently as the hours drift slowly by in their intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort! p_l showers them with praise, app1 feeling like they could burst with pride over their accomplishment.",
     "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until, finally, those telltale speckled leaves are found.",
     "Night falls, and still s_c insists they keep going. Lungwort is the only reliable cure for yellowcough, and they just can't let c_n go without. Exhausted, but determined, the medicine cats persist patiently until they finally find the precious, speckled leaves."
@@ -608,14 +590,13 @@
     "exp": 10,
     "success_text": [
             "The soft, rose-like scent of the mallow bushes drifts around p_l as they work. They snip off clumps of large, fuzzy, three-nubbed leaves, and the occasional pink flower, to be taken back to camp.",
-            "While the mellow shrubs are soft in scent and in touch, the plants are engaged in their own vigorous newleaf competition between each other, leaving p_l with tons to harvest.",
+            "While the mallow shrubs are soft, both in scent and in touch, the plants are engaged in their own vigorous newleaf competition between each other, leaving p_l with tons to harvest.",
             "s_c has a good eye for these things, finding an excellent patch of mallow."
 ],
     "fail_text": [
             "The weedy-looking mallow doesn't seem to be recovering well from leaf-bare this year, and it worries p_l."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -632,14 +613,13 @@
     "exp": 20,
     "success_text": [
             "The soft, rose-like scent of the mallow bushes drifts around p_l and app1 as they work. They snip off clumps of large, fuzzy, three-nubbed leaves, and the occasional pink flower, to be taken back to camp. Bees hum through the air, not trying to bother the medicine cats, and p_l points out where they think the hive might be to app1.",
-            "While the mellow shrubs are soft in scent and in touch, the plants are engaged in their own vigorous newleaf competition between each other, leaving p_l with tons to harvest. They test app1 on their knowledge as they work, and the apprentice passes with flying colors.",
+            "While the mallow shrubs are soft, both in scent and in touch, the plants are engaged in their own vigorous newleaf competition between each other, leaving p_l with tons to harvest. They test app1 on their knowledge as they work, and the apprentice passes with flying colors.",
             "s_c has a good eye for these things, finding an excellent patch of mallow. As they do, they instruct app1 in how to judge the quality of each stem. Each plant will contain both ideal and bad examples, either of which could be harvested, and it's important app1 has this knowledge, too."
 ],
     "fail_text": [
-            "The weedy-looking mallow doesn't seem to be recovering well from leaf-bare this year, and it worries p_l. app1's calivalier attitude is not helping."
+            "The weedy-looking mallow doesn't seem to be recovering well from leaf-bare this year, and it worries p_l. app1's cavalier attitude about it doesn't help, either."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -656,14 +636,13 @@
     "exp": 10,
     "success_text": [
             "The soft, rose-like scent of the mallow bushes drifts around p_l and app1 as they work. They snip off clumps of large, fuzzy, three-nubbed leaves, and the occasional pink flower, to be taken back to camp. The patrol chats as they work, exchanging gossip and news as the smell of cut stems wreathes around them.",
-            "While the mellow shrubs are soft in scent and in touch, the plants are engaged in their own vigorous newleaf competition between each other, leaving p_l with tons to harvest. It's always a relief to bring in so much after a leaf-bare without any fresh mallow sources.",
+            "While the mallow shrubs are soft, both in scent and in touch, the plants are engaged in their own vigorous newleaf competition between each other, leaving p_l with tons to harvest. It's always a relief to bring in so much after a leaf-bare without any fresh mallow sources.",
             "s_c has a good eye for these things, finding an excellent patch of mallow. They control what is harvested, while their team works to efficiently carry the herb back to camp, deferring to s_c's expertise."
 ],
     "fail_text": [
-            "The weedy-looking mallow doesn't seem to be recovering well from leaf-bare this year, and it worries p_l, although the warriors dismiss their concerns about the weeds."
+            "The weedy-looking mallow doesn't seem to be recovering well from leaf-bare this year, and it worries p_l, although the warriors dismiss their concerns about what they see as little more than weeds."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -674,7 +653,7 @@
     "biome": "plains",
     "season": "newleaf",
     "tags": ["herb_gathering", "med_only", "herb", "marigold", "many_herbs1", "many_herbs2", "med_cat"],
-    "intro_text": "With newleaf comes the opportunity to scout out c_n's territory and find where marigold might be growing this year.",
+    "intro_text": "With newleaf comes the opportunity to scout out c_n's territory, and find where marigold might be growing this year.",
     "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
     "chance_of_success": 70,
     "exp": 10,
@@ -687,7 +666,6 @@
             "p_l fails to find any marigold, and as the plant dies completely in leaf-bare, can't use any of the spots they know from last year."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -698,20 +676,19 @@
     "biome": "plains",
     "season": "newleaf",
     "tags": ["herb_gathering", "med_only", "med_cat", "herb", "marigold", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
-    "intro_text": "With newleaf comes the opportunity to scout out c_n's territory and find where marigold might be growing this year with app1.",
+    "intro_text": "With newleaf comes the opportunity to scout out c_n's territory, and find where marigold might be growing this year with app1.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-            "The low-growing marigold creeps across the ground, recognizable by its strange leaves that look like they're pretending to be small fern fronds from a distance. p_l makes sure to point them out to app1, leaf shape is the best way to distinguish marigold before they start flowering.",
+            "The low-growing marigold creeps across the ground, recognizable by its strange leaves that look like they're pretending to be small fern fronds from a distance. p_l makes sure to point them out to app1 - leaf shape is the best way to distinguish marigold before they start flowering, so it's especially important to be able to recognize their leaves.",
             "It stops infection, bleeding, <i>and</i> sore joints - why would any medicine cat ever want to risk running out of it? p_l brings back as much marigold as they can stuff into their mouth, and app1 actually drops some of the leaves they carry on the way back to camp, a little over-ambitious with how much they can carry.",
             "s_c finds a patch of marigold, harvests its best leaves, and pads home, unaware of how much of their success rests on their talent for herb gathering. app1 watches, trying to soak up their skills."
 ],
     "fail_text": [
-            "p_l fails to find any marigold, and as the plant dies completely in leaf-bare, can't use any of the spots they know from last year. app1's calivalier attitude is not helping."
+            "p_l fails to find any marigold, and as the plant dies completely in leaf-bare, can't use any of the spots they know from last year. app1's cavalier attitude about it doesn't help, either."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -722,7 +699,7 @@
     "biome": "plains",
     "season": "newleaf",
     "tags": ["herb_gathering", "med_cat", "warrior", "herb", "marigold", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
-    "intro_text": "With newleaf comes the opportunity to scout out c_n's territory and find where marigold might be growing this year, with a patrol of their Clanmates to assist them.",
+    "intro_text": "With newleaf comes the opportunity to scout out c_n's territory, and find where marigold might be growing this year, with a patrol of their Clanmates to assist them.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
     "exp": 10,
@@ -732,10 +709,9 @@
             "s_c finds a patch of marigold, harvests its best leaves, and pads home, unaware of how much of their success rests on their talent for herb gathering. The patrol, too, is unaware, but it certainly bolsters their faith in their medicine cat to see them succeed with such competence."
 ],
     "fail_text": [
-            "p_l fails to find any marigold, and as the plant dies completely in leaf-bare, can't use any of the spots they know from last year, although the warriors dismiss their concerns about the weeds."
+            "p_l fails to find any marigold, and as the plant dies completely in leaf-bare, can't use any of the spots they know from last year, although the warriors dismiss their concerns about what they see as little more than weeds."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -759,7 +735,6 @@
             "Frustratingly, some herbivore has come through and feasted on the daisies p_l targets. The plants will recover, but these half-chewed on leaves are useless to c_n."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -783,7 +758,6 @@
             "Frustratingly, some herbivore has come through and feasted on the daisies p_l targets. The plants will recover, but these half-chewed on leaves are useless to c_n. They avoid snapping at app1, who seems unable to identify the common herb, but they definitely come close."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -807,7 +781,6 @@
             "With the warriors more interested in hunting whatever has been snacking on the daisies than helping p_l find any more plants, it's a frustrating and unproductive afternoon."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -831,7 +804,6 @@
             "Unfortunately, c_n doesn't seem to be the only things after dandelions, and p_l can't gather from this patch without killing off the already damaged plants."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -855,7 +827,6 @@
             "Unfortunately, c_n doesn't seem to be the only things after dandelions, and p_l can't gather from this patch without killing off the already damaged plants. app1 actually starts an argument about it, insistent that they don't need to worry about protecting the dandelion patch for the future."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -879,7 +850,6 @@
             "The warriors that are supposed to be helping p_l gather dandelions instead seem more intent on hunting, and p_l gives up, storming back to camp with their temper flaring."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -896,17 +866,16 @@
     "exp": 10,
     "success_text": [
             "Elder leaves being used to <i>soothe</i> sprains, and elder leaves having to be gathered in a way that <i>risks</i> sprains, is truly one of StarClan's little ironies, p_l reflects.",
-            "p_l manages to gather more than they were expecting - the tree they chose is in a good spot and has begun its newleaf growth early and vigoriously.",
+            "p_l manages to gather more than they were expecting - the tree they chose is in a good spot and has begun its newleaf growth early and vigorously.",
             "s_c has managed to discover, with time and experience, that elder leaf picking is actually better handled by chewing off several low hanging, thin branches, and carting those back to camp instead."
 ],
     "fail_text": [
             "Unfortunately, the elder tree p_l has picked out seems to have a bug infestation of some kind, and p_l doesn't want to use these tattered, diseased-looking leaves.",
             null,
             null,
-            "r_c, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses their balance and tumbles to the ground."
+            "p_l, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses their balance and tumbles to the ground."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -923,7 +892,7 @@
     "exp": 20,
     "success_text": [
             "Elder leaves being used to <i>soothe</i> sprains, and elder leaves having to be gathered in a way that <i>risks</i> sprains, is truly one of StarClan's little ironies, p_l reflects. app1 is more occupied climbing the tree, and p_l isn't going to dissuade their pride in plucking from the highest branches, even if they're no more potent than those at the bottom.",
-            "p_l manages to gather more than they were expecting - the tree they chose is in a good spot and has begun its newleaf growth early and vigoriously, a great demonstration to app1 about why they came here and not anywhere else.",
+            "p_l manages to gather more than they were expecting - the tree they chose is in a good spot, and has begun its newleaf growth early and vigorously, a great demonstration to app1 about why they came here and not anywhere else.",
             "s_c has managed to discover, with time and experience, that elder leaf picking is actually better handled by chewing off several low hanging, thin branches, and carting those back to camp instead. They pass on the trick to app1, and once they're back at camp both medicine cats strip off the leaves and give them a quick wash."
 ],
     "fail_text": [
@@ -933,7 +902,6 @@
             "r_c, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses their balance and tumbles to the ground."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -950,7 +918,7 @@
     "exp": 10,
     "success_text": [
             "Elder leaves being used to <i>soothe</i> sprains, and elder leaves having to be gathered in a way that <i>risks</i> sprains, is truly one of StarClan's little ironies, p_l reflects. They share the little joke with the patrol, and the cats murrp with amusement, but it does also remind everyone to be careful as they strip leaves from the tree.",
-            "p_l manages to gather more than they were expecting - the tree they chose is in a good spot and has begun its newleaf growth early and vigoriously. The patrol chats and jokes to one another as they get to work plucking leaves to bring a impressive haul home.",
+            "p_l manages to gather more than they were expecting - the tree they chose is in a good spot, and has begun its newleaf growth early and vigorously. The patrol chats and jokes to one another as they get to work plucking leaves to bring a impressive haul home.",
             "s_c has managed to discover, with time and experience, that elder leaf picking is actually better handled by chewing off several low hanging, thin branches, and carting those back to camp instead. With so many assistants they can bring a truely massive haul home, where the rest of the patrol helps them strip the leaves and carefully store them."
 ],
     "fail_text": [
@@ -960,7 +928,6 @@
             "r_c, reaching out just a little too far to try and grab a branch of elder while balanced on another, loses their balance and tumbles to the ground."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -971,7 +938,7 @@
     "biome": "plains",
     "season": "newleaf",
     "tags": ["herb_gathering", "med_only", "herb", "mullein", "many_herbs1", "many_herbs2", "med_cat"],
-    "intro_text": "With newleaf comes the opportunity to scout out c_n's territory and find where mullein might be growing this year.",
+    "intro_text": "With newleaf comes the opportunity to scout out c_n's territory, and find where mullein might be growing this year.",
     "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
     "chance_of_success": 70,
     "exp": 10,
@@ -981,10 +948,9 @@
             "The always-reliable s_c spots mullein plants growing plenty of leaves on their strange central stems, and knocks them over so that the entire bundle can be carried home."
 ],
     "fail_text": [
-            "p_l fails to find any mullein, and as the plant sometimes dies completely in leaf-bare, can't use any of the spots they know from last year."
+            "p_l fails to find any mullein, and, as the plant sometimes dies completely in leaf-bare, can't use any of the spots they know from last year."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -995,20 +961,19 @@
     "biome": "plains",
     "season": "newleaf",
     "tags": ["herb_gathering", "med_only", "med_cat", "herb", "mullein", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
-    "intro_text": "With newleaf comes the opportunity to scout out c_n's territory and find where mullein might be growing this year with app1.",
+    "intro_text": "With newleaf comes the opportunity to scout out c_n's territory, and find where mullein might be growing this year with app1.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
             "It's hard to identify mullein while it's small, but p_l finds a plant or two and rips down their central stalks, showing app1 how to carry them back to camp to trim the leaves off later.",
             "Easing the lungs of those with weaker chest muscles or infections, helping with certain sorts of pain, <i>and</i> being used to treat unhappy guts - mullein is a good herb to keep in stock, even if it doesn't have the glamour of catmint or the rarity of lungwort. app1 soaks up the lessons on its uses attentively.",
-            "The always-reliable s_c spots mullein plants growing plenty of leaves on their strange central stems, and with app1 helping them, knocks them over so that the entire bundle can be carried home."
+            "The always-reliable s_c spots mullein plants growing plenty of leaves on their strange central stems, and, with app1 helping them, knocks them over so that the entire bundle can be carried home."
 ],
     "fail_text": [
-            "p_l fails to find any mullein, and as the plant sometimes dies completely in leaf-bare, can't use any of the spots they know from last year. app1's calivalier attitude is not helping."
+            "p_l fails to find any mullein, and, as the plant sometimes dies completely in leaf-bare, can't use any of the spots they know from last year. app1's cavalier attitude about it doesn't help, either."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1019,7 +984,7 @@
     "biome": "plains",
     "season": "newleaf",
     "tags": ["herb_gathering", "med_cat", "warrior", "herb", "mullein", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
-    "intro_text": "With newleaf comes the opportunity to scout out c_n's territory and find where mullein might be growing this year, with a patrol of their Clanmates to assist them.",
+    "intro_text": "With newleaf comes the opportunity to scout out c_n's territory, and find where mullein might be growing this year, with a patrol of their Clanmates to assist them.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
     "exp": 10,
@@ -1029,10 +994,9 @@
             "The always-reliable s_c spots mullein plants growing plenty of leaves on their strange central stems, and knocks them over so that the entire bundle can be carried home by the patrol."
 ],
     "fail_text": [
-            "p_l fails to find any mullein, and as the plant sometimes dies completely in leaf-bare, can't use any of the spots they know from last year, although the warriors dismiss their concerns about the weeds."
+            "p_l fails to find any mullein, and, as the plant sometimes dies completely in leaf-bare, can't use any of the spots they know from last year, although the warriors dismiss their concerns about what they see as little more than weeds."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -1056,7 +1020,6 @@
             "The trees p_l finds don't look particularly safe to climb, and p_l is forced to give up on the idea of oak leaf gathering for today."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1072,7 +1035,7 @@
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-            "Towering into the sky, p_l always finds the blush of new leaves budding from oak branches one of the most hopeful signs of newleaf. They give app1 a lesson on using the trees to track the season - not just what moon it is, which only matters a little, but how warm or cool or wet the season has been so far.",
+            "Towering into the sky, p_l always finds the blush of new leaves budding from oak branches one of the most hopeful signs of newleaf. They give app1 a lesson on using the trees to track the season - not just what moon it is, which only matters a little, but even how warm, cool, or wet the season has been so far.",
             "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine den - they're always happy to bring a good crop of them back to the herb stores. They use the afternoon to give app1 the chance to lead their expedition, which makes the apprentice to swell with confidence.",
             "s_c spots an oak tree that's valiantly trying to sprout leaves from a half fallen branch, one of the casualties of last leaf-bare, and heads to harvest from that, taking the safe option of plucking leaves from the ground. app1 asks if the leaves are any less potent, but s_c doesn't think so - if they're growing here at all, they should be the same."
 ],
@@ -1080,7 +1043,6 @@
             "The trees p_l finds don't look particularly safe to climb, and p_l is forced to give up on the idea of oak leaf gathering for today."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1098,13 +1060,12 @@
     "success_text": [
             "Towering into the sky, p_l always finds the blush of new leaves budding from oak branches one of the most hopeful signs of newleaf. The warriors helping them seem to just find it a fun training exercise, to see how spindly a branch they're able to balance on as they send down a rain of leaves to p_l.",
             "As a basic infection-preventing herb, oak leaves are useful for nearly all of the various scrapes, cuts, and injuries p_l sees in the medicine den - they're always happy to bring a good crop of them back to the herb stores. Their Clanmates are, as expected, a huge help carrying everything back home.",
-            "s_c spots an oak tree that's valiantly trying to sprout leaves from a half fallen branch, one of the casualties of last leaf-bare, and heads to harvest from that, taking the safe option of plucking leaves from the ground rather than clambering up into the towering branches. It's less entertaining for the warriors heping them, but the cats still make a nice easy afternoon of it."
+            "s_c spots an oak tree that's valiantly trying to sprout leaves from a half fallen branch, one of the casualties of last leaf-bare, and heads to harvest from that, taking the safe option of plucking leaves from the ground. It's less entertaining for the warriors helping them, but the cats still make a nice, easy afternoon of it."
 ],
     "fail_text": [
             "The trees p_l finds don't look particularly safe to climb, and p_l is forced to give up on the idea of oak leaf gathering for today."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -1120,15 +1081,14 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "Deep green even in newleaf and with a characteristic smoothness, p_l finds the plantain where they expected - right in the middle of a path.",
+            "Deep green, even in newleaf, and with a characteristic smoothness, p_l finds the plantain where they expected - right in the middle of a path.",
             "Suitable for soothing throat and pelt irritation, and with a welcome - albeit weird - habit of consistently sprouting up on well-trodden paths, plantain is a basic but valuable herb to keep stocks of.",
             "Go to where other animals wander through c_n's territory on little, beaten paths, wander around under you bump, nose-first, into a plantain plant, harvest. Simple."
 ],
     "fail_text": [
-            "p_l fails to find any plantain, and as the plant sometimes dies completely in leaf-bare, can't use any of the spots they know from last year."
+            "p_l fails to find any plantain, and, as the plant sometimes dies completely in leaf-bare, can't use any of the spots they know from last year."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1144,15 +1104,14 @@
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-            "Deep green even in newleaf and with a characteristic smoothness, p_l finds the plantain where they expected - right in the middle of a path. They teach app1 how the leaves can be opened and used on top of cobwebs for wound binding - although the plant doesn't actually help with wound healing, the leaves make good structural support for other remedies.",
+            "Deep green, even in newleaf, and with a characteristic smoothness, p_l finds the plantain where they expected - right in the middle of a path. They teach app1 how the leaves can be opened and used on top of cobwebs for wound binding - although the plant itself doesn't help the wound heal, the leaves make good structural support for other remedies.",
             "Suitable for soothing throat and pelt irritation, and with a welcome - albeit weird - habit of consistently sprouting up on well-trodden paths, plantain is a basic but valuable herb to keep stocks of, and always taught early in the herbal lore each medicine cat must memorise.",
             "Go to where other animals wander through c_n's territory on little, beaten paths, wander around under you bump, nose-first, into a plantain plant, harvest. Simple, p_l teaches app1."
 ],
     "fail_text": [
-            "p_l fails to find any plantain, and as the plant sometimes dies completely in leaf-bare, can't use any of the spots they know from last year. app1's calivalier attitude is not helping."
+            "p_l fails to find any plantain, and, as the plant sometimes dies completely in leaf-bare, can't use any of the spots they know from last year. app1's cavalier attitude about it doesn't help, either."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1168,15 +1127,14 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "Deep green even in newleaf and with a characteristic smoothness, p_l finds the plantain where they expected - right in the middle of a path. The warriors help them pull up the entire plant, roots and all. Only the leaves are useful to p_l, but the plantain blocking the path is too annoying in this spot.",
-            "Suitable for soothing throat and pelt irritation, and with a welcome - albeit weird - habit of consistently sprouting up on well-trodden paths, plantain is a basic, but valuable, herb to keep stocks of. It's even relatively innocuous taste wise, making it easy to harvest.",
+            "Deep green, even in newleaf, and with a characteristic smoothness, p_l finds the plantain where they expected - right in the middle of a path. The warriors help them pull up the entire plant, roots and all. Only the leaves are useful to p_l, but the plantain blocking the path here is too annoying, anyways.",
+            "Suitable for soothing throat and pelt irritation, and with a welcome - albeit weird - habit of consistently sprouting up on well-trodden paths, plantain is a basic, but valuable, herb to keep stocks of. It's even relatively innocuous taste-wise, making it easy to harvest.",
             "Go to where other animals wander through c_n's territory on little, beaten paths, wander around under you bump, nose-first, into a plantain plant, harvest. Simple. <i>And</i> the warriors get to tidy their paths through the territory. It's a win-win!"
 ],
     "fail_text": [
-            "p_l fails to find any plantain, and as the plant sometimes dies completely in leaf-bare, can't use any of the spots they know from last year, although the warriors dismiss their concerns about the weeds."
+            "p_l fails to find any plantain, and, as the plant sometimes dies completely in leaf-bare, can't use any of the spots they know from last year, although the warriors dismiss their concerns about what they see as little more than weeds."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -1197,10 +1155,9 @@
             "s_c uses the bright flowers to find the plants quickly, determined to bring back as many poppy seeds as possible."
 ],
     "fail_text": [
-            "The wind seems to have stolen all the poppy seeds from their dry flowerheads before p_l could harvest them."
+            "The wind seems to have stolen all the poppy seeds from their dry flowerheads before p_l even had a chance to harvest them."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1221,10 +1178,9 @@
             "s_c uses the bright flowers to find the plants quickly, determined to bring back as many poppy seeds as possible. They pass on their knowledge of poppy herbcraft as they gather, teaching app1 about all the different circumstances that poppy seeds can help with, though warning that app1 should avoid using them on pregnant or nursing queens."
 ],
     "fail_text": [
-            "The wind seems to have stolen all the poppy seeds from their dry flowerheads before p_l could harvest them."
+            "The wind seems to have stolen all the poppy seeds from their dry flowerheads before p_l and app1 even had a chance to harvest them."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1245,10 +1201,9 @@
             "s_c uses the bright flowers to find the plants quickly, determined to bring back as many poppy seeds as possible. The rest of the patrol, knowing how important poppy seeds are as a painkiller, work hard, both for s_c and all of c_n."
 ],
     "fail_text": [
-            "The wind seems to have stolen all the poppy seeds from their dry flowerheads before p_l could harvest them."
+            "The wind seems to have stolen all the poppy seeds from their dry flowerheads before p_l even had a chance to harvest them."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -1264,7 +1219,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "In newleaf, with most ragwort plants still flowerless, they're a little more bearable to harvest.",
+            "In newleaf, with most ragwort plants still flowerless, they're a little more bearable to harvest, the foul scent of their petals not yet muddying the air.",
             "Ragwort brings strength to cats who need it, and eases aching joints, but StarClan it tastes absolutely <i>foul.</i> p_l's pleased with their harvest, but really wishes they had a way to bring it back to camp that didn't need them to carry it in their mouth.",
             "s_c has discovered a trick to harvesting the bountiful, but foul, ragwort - using their claws to tear leaves from the plant, then carefully carrying them back to camp without chewing or salivating. It's difficult, but doable, if only just."
 ],
@@ -1272,7 +1227,6 @@
             "Try as they might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1283,12 +1237,12 @@
     "biome": "plains",
     "season": "newleaf",
     "tags": ["herb_gathering", "med_only", "med_cat", "herb", "ragwort", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
-    "intro_text": "With newleaf bringing ragwort back on the medicinal menu, p_l heads out to find where the silly plants have decided to sprout this year. They explain to app1 the annoyances of the type of plant that dies completely in leaf-bare, leaving them having to search for all new spots every newleaf.",
+    "intro_text": "With newleaf bringing ragwort back on the medicinal menu, p_l heads out to find where the silly plants have decided to sprout this year. They explain to app1 the annoyances of the type of plant that dies completely in leaf-bare, leaving them having to search for all-new spots every newleaf.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-            "In newleaf, with most ragwort plants still flowerless, they're a little more bearable to harvest. Still, it's not a task p_l or app1 look forward to, although both of them acknowledge the need and put themselves to work.",
+            "In newleaf, with most ragwort plants still flowerless, they're a little more bearable to harvest, the foul scent of their petals not yet muddying the air. Still, it's not a task p_l or app1 look forward to, although both of them acknowledge the need and put themselves to work.",
             "Ragwort brings strength to cats who need it, and eases aching joints, but StarClan it tastes absolutely <i>foul.</i> p_l's pleased with their harvest, but really wishes they had a way to bring it back to camp that didn't need them to carry it in their mouth, and has a lot of sympathy for app1's disgusted expression.",
             "s_c has discovered a trick to harvesting the bountiful, but foul, ragwort - using their claws to tear leaves from the plant, then carefully carrying them back to camp without chewing or salivating. It's difficult, but doable, if only just, and app1 is desperately grateful to learn the trick."
 ],
@@ -1296,7 +1250,6 @@
             "Try as they might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1312,7 +1265,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "In newleaf, with most ragwort plants still flowerless, they're a little more bearable to harvest. That's not a great improvement though, and they're still foul - p_l makes sure to send the warriors helping them for a drink afterwards, and that the whole camp sees them specifically thanking their long-suffering patrol for their work.",
+            "In newleaf, with most ragwort plants still flowerless, they're a little more bearable to harvest. That's not much improvement, though, and the plants are still foul - p_l makes sure to send the warriors helping them for a drink afterwards, and specifically ensures the whole camp sees them thanking their long-suffering patrol for their work.",
             "Ragwort brings strength to cats who need it, and eases aching joints, but StarClan it tastes absolutely <i>foul.</i> p_l's pleased with their harvest, but really wishes they had a way to bring it back to camp that didn't need them to carry it in their mouth, a sentiment that the patrol helping them definitely shares... at length, very descriptively.",
             "s_c has discovered a trick to harvesting the bountiful, but foul, ragwort - using their claws to tear leaves from the plant, then carefully carrying them back to camp without chewing or salivating. Some of the warriors are too impatient to follow their lead, and end up suffering the taste of ragwort as the patrol brings back loads of the leaves."
 ],
@@ -1320,7 +1273,6 @@
             "Try as they might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -1331,7 +1283,7 @@
     "biome": "plains",
     "season": "newleaf",
     "tags": ["herb_gathering", "med_only", "herb", "tansy", "many_herbs1", "many_herbs2"],
-    "intro_text": "As newleaf brings green to c_n's lands, p_l goes out in a search for tansy. It can be reassuring to be the only cat gathering the sometimes dangerous herb.",
+    "intro_text": "As newleaf brings green to c_n's lands, p_l goes out in a search for tansy. It can be reassuring, in a way, to be the only cat gathering the sometimes dangerous herb.",
     "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
     "chance_of_success": 70,
     "exp": 10,
@@ -1344,7 +1296,6 @@
             "Try as they might, p_l can't quite remember the exact shape of the tansy leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1368,7 +1319,6 @@
             "Try as they might, p_l can't quite remember the exact shape of the tansy leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1392,7 +1342,6 @@
             "Try as they might, p_l can't quite remember the exact shape of the tansy leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -1416,7 +1365,6 @@
             "p_l has no time - and no thyme. They're forced to give up on the search for today."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1432,7 +1380,7 @@
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-            "With the drizzle hiding scents, p_l almost walks straight past the thyme plant - but they stop, retrace their steps, and settle down to harvest it, making sure app1 understands how to avoid the mistake p_l almost made.",
+            "With the drizzle hiding scents, app1 almost walks straight past the thyme plant - but p_l gently herds them back, making sure the young cat understands the visual signs of the plant so they avoid that mistake in the future.",
             "It calms racing hearts and minds, bringing cats back from the shock of loss or injury... thyme is always both helpful and pleasant to have around, and p_l makes sure to organise the herb stores so that the scent wafts near the nests they and app1 curl up in at night.",
             "Thyme, thyme, thyme, there's never enough thyme. s_c snorts at their little joke, putting down the herbs they carry to explain it to app1."
 ],
@@ -1440,7 +1388,6 @@
             "p_l has no time - and no thyme. They're forced to give up on the search for today."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1456,7 +1403,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "With the drizzle hiding scents, p_l almost walks straight past the thyme plant - but one of the warriors calls them over. Thanks to its calming, well loved scent, medicine cats aren't the only Clanmembers who can identify this plant.",
+            "With the drizzle hiding scents, p_l almost walks straight past the thyme plant - but one of the warriors calls them over. Thanks to its calming, well-loved scent, medicine cats aren't the only Clan cats who can identify this plant, a fact that p_l is grateful for right about now.",
             "It calms racing hearts and minds, bringing cats back from the shock of loss or injury... thyme is always both helpful and pleasant to have around, and p_l decides that this patrol has brought back so much there's no harm in letting the warriors take a stem each for their nests.",
             "Thyme, thyme, thyme, there's never enough thyme. s_c snorts at their little joke, putting down the herbs they carry to explain it to the rest of the patrol."
 ],
@@ -1464,7 +1411,6 @@
             "p_l has no time - and no thyme. They're forced to give up on the search for today."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -1488,7 +1434,6 @@
             "Try as they might, p_l can't quite remember the exact shape of the garlic leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1512,7 +1457,6 @@
             "Try as they might, p_l can't quite remember the exact shape of the garlic leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1528,7 +1472,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "The sharp tang of garlic leads p_l to a growing patch to bring home. Their helpers settle in with only a little disgust, gathering the strong smelling herb for the Clan's stores.",
+            "The sharp tang of garlic leads p_l to a growing patch to bring home. Their helpers settle in with minimal disgust, gathering the strong-smelling herb for the Clan's stores.",
             "The leaves, and especially the bulbs, of wild garlic are the preeminent herb to treat infection, even if using them results each time in either their patient or their loved ones complaining about the smell. The patrol looks a little disgusted, but they're still a great help to p_l for gathering it.",
             "s_c, ever eagle-eyed, spots grass that looks suspiciously tall, with oddly thick blades. One sniff confirms it as wild garlic, and the patch has heaps for their patrol to harvest."
 ],
@@ -1536,7 +1480,6 @@
             "Try as they might, p_l can't quite remember the exact shape of the garlic leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,

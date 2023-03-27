@@ -113,7 +113,6 @@
             "p_l knows the conditions are miserable, but their group is even more insufferable, and not only do they have to put up with these cats for an entire afternoon, there's also nothing to show for it."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -179,7 +178,6 @@
             "Can warriors not pay attention, even to something as simple as cobwebs?! p_l holds their breath and counts to ten before they dismiss the patrol, every found cobweb ruined, what little they did manage to find."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -203,7 +201,6 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -227,7 +224,6 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and app1 looks up at them with disappointment."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -251,7 +247,6 @@
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and the cats snappy with each other."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
