@@ -642,7 +642,7 @@ class StarClanScreen(Screens):
             for cat in self.chunks(self.current_listed_cats, 20)[self.list_page - 1]:
                 #update_sprite(cat)
                 
-                if cat.favourite:
+                if game.clan.clan_settings["show_fav"] and cat.favourite:
                     
                     _temp = pygame.transform.scale(
                             pygame.image.load(
@@ -973,7 +973,7 @@ class DFScreen(Screens):
             for cat in self.chunks(self.current_listed_cats, 20)[self.list_page - 1]:
                 #update_sprite(cat)
                 
-                if cat.favourite:
+                if game.clan.clan_settings["show_fav"] and cat.favourite:
                     
                     _temp = pygame.transform.scale(
                             pygame.image.load(
@@ -1069,12 +1069,12 @@ class ListScreen(Screens):
             elif event.ui_element == self.filter_fav:
                 self.filter_not_fav.show()
                 self.filter_fav.hide()
-                game.show_fav = False
+                game.clan.clan_settings["show_fav"] = False
                 self.update_page()
             elif event.ui_element == self.filter_not_fav:
                 self.filter_not_fav.hide()
                 self.filter_fav.show()
-                game.show_fav = True
+                game.clan.clan_settings["show_fav"] = True
                 self.update_page()
             elif event.ui_element == self.filter_by_closed:
                 self.filter_by_closed.hide()
@@ -1171,7 +1171,7 @@ class ListScreen(Screens):
                                             object_id="#not_fav_cat", manager=MANAGER,
                                         tool_tip_text='show favorite cat inidcators')
         
-        if game.show_fav:
+        if game.clan.clan_settings["show_fav"]:
             self.filter_not_fav.hide()
         else:
             self.filter_fav.hide()
@@ -1320,7 +1320,7 @@ class ListScreen(Screens):
             for cat in self.chunks(self.current_listed_cats, 20)[self.list_page - 1]:
 
                 #update_sprite(cat)
-                if game.show_fav and cat.favourite:
+                if game.clan.clan_settings["show_fav"] and cat.favourite:
                     
                     _temp = pygame.transform.scale(
                             pygame.image.load(

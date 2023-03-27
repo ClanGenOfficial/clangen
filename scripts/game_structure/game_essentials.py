@@ -55,8 +55,6 @@ class Game():
     # Sort-type
     sort_type = "rank"
 
-    show_fav = True
-
     choose_cats = {}
     '''cat_buttons = {
         'cat0': None,
