@@ -1038,7 +1038,7 @@ class Cat():
             other_cat = random.choice(list(all_cats.keys()))
             # makes sure that a cat won't think about a cat that was dead longer than they've been alive (with 4 moons difference)
             if all_cats[other_cat].dead and not self.dead and not self.status in ['leader', 'medicine cat']:
-                if (int(all_cats[other_cat].dead_for) + 4) > self.moons:
+                if other_cat.ID not in self.relationships:
                     continue
             i += 1
             if i > 100:
