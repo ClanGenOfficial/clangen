@@ -66,7 +66,7 @@ class StartScreen(Screens):
                 self.continue_button: 'clan screen',
                 self.switch_clan_button: 'switch clan screen',
                 self.new_clan_button: 'make clan screen',
-                self.settings_button: 'settings screen',
+                self.settings_button: 'mod screen',
             }
             if event.ui_element in screens:
                 self.change_screen(screens[event.ui_element])
