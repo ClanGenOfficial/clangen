@@ -67,8 +67,13 @@
             false
         ],
         "deputy": [
-            "Allow leaders to automatically choose a new deputy",
+            "Allow leaders to automatically choose a new deputy.",
             "The warrior code rules will be taken into account when choosing a deputy.",
+            false
+        ],
+        "12_moon_graduation": [
+            "Disable experience-based apprentice graduation.",
+            "All apprentices will graduate at 12 moons.",
             false
         ],
         "fading": [

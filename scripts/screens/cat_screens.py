@@ -2374,6 +2374,10 @@ class RoleScreen(Screens):
                 self.update_selected_cat()
             elif event.ui_element == self.retire:
                 self.the_cat.status_change("elder", resort=True)
+                # Since you can't "unretire" a cat, apply the skill and trait change
+                # here
+                self.the_cat.update_skill()
+                self.the_cat.update_traits()
                 self.update_selected_cat()
             elif event.ui_element == self.switch_mediator:
                 self.the_cat.status_change("mediator", resort=True)
