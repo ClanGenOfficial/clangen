@@ -103,7 +103,7 @@ class ModScreen(Screens):
                                        object_id="#main_menu_button",
                                        manager=MANAGER)
         self.info = pygame_gui.elements.UITextBox(
-            'Note: This will close the game.\n When you open it next, it should have the new clan.',  # pylint: disable=line-too-long
+            'Note: The list of mods installed! You can change the priority here, and toggle them.',  # pylint: disable=line-too-long
             scale(pygame.Rect((200, 1200), (1200, 140))),
             object_id=get_text_box_theme(),
             manager=MANAGER)
