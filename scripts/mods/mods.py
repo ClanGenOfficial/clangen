@@ -78,7 +78,7 @@ class modList():
 
     def sort(self, mods_to_sort=[], should_reread=False, should_rewrite=False):
         """
-        reads <mods-dir>/.modsettings.json
+        reads <mods-dir>/.modsettings.txt
         each line is a mod
         the first mod is the highest priority
         if a mod is not in the file, it is assumed to be the lowest priority, and is appended to the end # pylint: disable=line-too-long
@@ -88,17 +88,20 @@ class modList():
         """
         if mods_to_sort == []:
             return mods_to_sort
-        if not os.path.exists(os.path.join(get_mods_dir(), ".modsettings.json")):
+        if not os.path.exists(os.path.join(get_mods_dir(), ".modsettings.txt")):
+            self.write_modsettings(mods_to_sort)
             return mods_to_sort.sort() # a-z
 
         sorted_mods = []
         if should_reread:
-            with open(os.path.join(get_mods_dir(), ".modsettings.json"), "r", encoding='ascii') as file: # pylint: disable=line-too-long
+            with open(os.path.join(get_mods_dir(), ".modsettings.txt"), "r", encoding='ascii') as file: # pylint: disable=line-too-long
                 prefs = file.readlines()
         else:
             prefs = self.mods # read the already sorted mods list, and sort it again
         for mod in prefs:
             if mod in mods_to_sort:
+                sorted_mods.append(mod)
+            elif mod.startswith("-") and mod[1:] in mods_to_sort:
                 sorted_mods.append(mod)
             else:
                 print(f"Mod {mod} is not installed. It will be removed")
@@ -118,9 +121,9 @@ class modList():
         """
         THIS SHOULD ALWAYS BE CALLED AFTER SORTING
         Preferrably, use self.sort(should_rewrite=True)
-        writes <mods-dir>/.modsettings.json
+        writes <mods-dir>/.modsettings.txt
         """
-        with open(os.path.join(get_mods_dir(), ".modsettings.json"), "w", encoding='ascii') as file:
+        with open(os.path.join(get_mods_dir(), ".modsettings.txt"), "w", encoding='ascii') as file:
             file.writelines(mods)
 
     def add(self, mod):
@@ -154,6 +157,22 @@ class modList():
             if not mod.startswith("-"):
                 _.append(mod)
         return _
+    
+
+    def toggle_mod(self, mod):
+        """
+        Toggles a mod on or off
+        """
+        if mod not in self.mods:
+            return
+        if mod.startswith("-"):
+            self.mods.remove(mod)
+            self.mods.append(mod[1:])
+            print('a')
+        else:
+            self.mods.remove(mod)
+            self.mods.append(f"-{mod}")
+        self.sort(self.mods, should_rewrite=True)
 
 
 modlist = modList()
