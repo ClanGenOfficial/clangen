@@ -9,6 +9,7 @@ from .patrol_screens import PatrolScreen
 from .relation_screens import\
     RelationshipScreen, ChooseMateScreen, FamilyTreeScreen, ChooseMentorScreen, MediationScreen
 from .world_screens import OutsideClanScreen, UnknownResScreen
+from .mod_screens import ModScreen
 
 # ---------------------------------------------------------------------------- #
 #                                  UI RULES                                    #
@@ -96,3 +97,9 @@ mediation_screen = MediationScreen("mediation screen")
 
 outside_clan_screen = OutsideClanScreen('other screen')
 unknown_residence_screen = UnknownResScreen('unknown residence screen')
+
+# ---------------------------------------------------------------------------- #
+#                               mod_screens.py                                 #
+# ---------------------------------------------------------------------------- #
+
+mod_screen = ModScreen('mod screen')

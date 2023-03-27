@@ -12,7 +12,7 @@ from types import UnionType
 
 import pygame
 import pygame.image
-from .mods import get_mods
+from .mods import modlist
 
 from ._common import FileArg, Literal
 
@@ -23,7 +23,7 @@ def pyg_img_load(filename: FileArg, namehint: str = "") -> pygame.Surface:
     Loads an image from the modloader directory
     """
 
-    mods = get_mods()
+    mods = modlist.get_mods()
 
     for mod in mods:
         if os.path.exists(os.path.join(os.getcwd(), "mods", mod, filename)):
@@ -48,7 +48,7 @@ def mod_open(
     Opens a file from the modloader directory
     """
 
-    mods = get_mods()
+    mods = modlist.get_mods()
 
     for mod in mods:
         if os.path.exists(os.path.join(os.getcwd(), "mods", mod, file)):

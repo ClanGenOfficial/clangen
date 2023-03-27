@@ -111,6 +111,7 @@ class modList():
 
         if should_rewrite:
             self.write_modsettings(sorted_mods)
+        self.mods = sorted_mods
         return sorted_mods
 
     def write_modsettings(self, mods):
@@ -140,4 +141,19 @@ class modList():
             return
         self.mods.remove(mod)
         self._mods.remove(mod)
-        self.sort(should_rewrite=True)
+
+    def get_mods(self):
+        """
+        Returns a list of mods
+        """
+        
+        # disabled mods are prefixed with a -
+
+        _ = []
+        for mod in self.mods:
+            if not mod.startswith("-"):
+                _.append(mod)
+        return _
+
+
+modlist = modList()
