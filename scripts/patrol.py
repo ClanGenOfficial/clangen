@@ -1205,36 +1205,39 @@ class Patrol():
 
         # now have the new cats form relationships with the patrol cats
         for new_cat in created_cats:
-            if not new_cat.outside or not new_cat.dead:
-                for patrol_cat in self.patrol_cats:
-                    patrol_cat.relationships[new_cat.ID] = Relationship(patrol_cat, new_cat)
-                    new_cat.relationships[patrol_cat.ID] = Relationship(new_cat, patrol_cat)
-                self.results_text.append(f"{new_cat.name} has joined the Clan.")
-                # for each cat increase the relationship towards all patrolling cats
-                new_to_clan_cat = game.config["new_cat"]["rel_buff"]["new_to_clan_cat"]
-                clan_cat_to_new = game.config["new_cat"]["rel_buff"]["clan_cat_to_new"]
-                change_relationship_values(
-                    cats_to=[cat.ID for cat in self.patrol_cats],
-                    cats_from=[new_cat],
-                    romantic_love=new_to_clan_cat["romantic"],
-                    platonic_like=new_to_clan_cat["platonic"],
-                    dislike=new_to_clan_cat["dislike"],
-                    admiration=new_to_clan_cat["admiration"],
-                    comfortable=new_to_clan_cat["comfortable"],
-                    jealousy=new_to_clan_cat["jealousy"],
-                    trust=new_to_clan_cat["trust"]
-                )
-                change_relationship_values(
-                    cats_to=[new_cat.ID],
-                    cats_from=self.patrol_cats,
-                    romantic_love=clan_cat_to_new["romantic"],
-                    platonic_like=clan_cat_to_new["platonic"],
-                    dislike=clan_cat_to_new["dislike"],
-                    admiration=clan_cat_to_new["admiration"],
-                    comfortable=clan_cat_to_new["comfortable"],
-                    jealousy=clan_cat_to_new["jealousy"],
-                    trust=clan_cat_to_new["trust"]
-                )
+            if new_cat.outside:
+                break
+            if new_cat.dead:
+                break
+            for patrol_cat in self.patrol_cats:
+                patrol_cat.relationships[new_cat.ID] = Relationship(patrol_cat, new_cat)
+                new_cat.relationships[patrol_cat.ID] = Relationship(new_cat, patrol_cat)
+            self.results_text.append(f"{new_cat.name} has joined the Clan.")
+            # for each cat increase the relationship towards all patrolling cats
+            new_to_clan_cat = game.config["new_cat"]["rel_buff"]["new_to_clan_cat"]
+            clan_cat_to_new = game.config["new_cat"]["rel_buff"]["clan_cat_to_new"]
+            change_relationship_values(
+                cats_to=[cat.ID for cat in self.patrol_cats],
+                cats_from=[new_cat],
+                romantic_love=new_to_clan_cat["romantic"],
+                platonic_like=new_to_clan_cat["platonic"],
+                dislike=new_to_clan_cat["dislike"],
+                admiration=new_to_clan_cat["admiration"],
+                comfortable=new_to_clan_cat["comfortable"],
+                jealousy=new_to_clan_cat["jealousy"],
+                trust=new_to_clan_cat["trust"]
+            )
+            change_relationship_values(
+                cats_to=[new_cat.ID],
+                cats_from=self.patrol_cats,
+                romantic_love=clan_cat_to_new["romantic"],
+                platonic_like=clan_cat_to_new["platonic"],
+                dislike=clan_cat_to_new["dislike"],
+                admiration=clan_cat_to_new["admiration"],
+                comfortable=clan_cat_to_new["comfortable"],
+                jealousy=clan_cat_to_new["jealousy"],
+                trust=clan_cat_to_new["trust"]
+            )
 
     def update_resources(self, biome_dir, leaf):
         resource_dir = "resources/dicts/patrols/"
