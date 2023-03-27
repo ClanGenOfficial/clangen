@@ -1,7 +1,7 @@
 [
 
     {
-    "patrol_id": "pln_med_romance3",
+    "patrol_id": "pln_med_romance_greenleaf1",
     "biome": "plains",
     "season": "greenleaf",
     "tags": ["herb_gathering", "med_cat", "warrior", "random_herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c", "rc_has_stat"],
@@ -26,7 +26,7 @@
     "antagonize_fail_text": null
     },
     {
-    "patrol_id": "pln_med_romance4",
+    "patrol_id": "pln_med_romance_greenleaf2",
     "biome": "plains",
     "season": "greenleaf",
     "tags": ["herb_gathering", "med_cat", "med_only", "random_herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c", "rc_has_stat"],
@@ -748,7 +748,7 @@
     "antagonize_fail_text": null
 },
 {
-"patrol_id": "pln_med_gatheringlungwort_greenleaf4",
+"patrol_id": "pln_med_gatheringlungwort_greenleaf1",
 "biome": "plains",
 "season": "greenleaf",
 "tags": ["herb_gathering", 
@@ -788,7 +788,7 @@
 "antagonize_fail_text": null
 },
 {
-"patrol_id": "pln_med_gatheringlungwort_greenleaf5",
+"patrol_id": "pln_med_gatheringlungwort_greenleaf2",
 "biome": "plains",
 "season": "greenleaf",
 "tags": ["herb_gathering", "herb", "lungwort", "no_app", "clan_to_patrol", "respect", "injury", "sore"],
@@ -821,7 +821,7 @@
 "antagonize_fail_text": null
 },
 {
-"patrol_id": "pln_med_gatheringlungwort_greenleaf6",
+"patrol_id": "pln_med_gatheringlungwort_greenleaf3",
 "biome": "plains",
 "season": "greenleaf",
 "tags": ["herb_gathering", 

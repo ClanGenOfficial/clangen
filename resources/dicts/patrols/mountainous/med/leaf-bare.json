@@ -1,7 +1,7 @@
 [
 
 {
-    "patrol_id": "mtn_med_romance7",
+    "patrol_id": "mtn_med_romance_leaf-bare1",
     "biome": "mountainous",
     "season": "leaf-bare",
     "tags": ["herb_gathering", "warrior", "random_herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c", "rc_has_stat"],
@@ -26,7 +26,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_med_romance8",
+    "patrol_id": "mtn_med_romance_leaf-bare2",
     "biome": "mountainous",
     "season": "leaf-bare",
     "tags": ["herb_gathering", "med_cat", "med_only", "random_herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c", "rc_has_stat"],

@@ -67,19 +67,10 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "fst_med_romance3",
+    "patrol_id": "fst_med_romance_greenleaf1",
     "biome": "forest",
     "season": "greenleaf",
-    "tags": ["herb_gathering", 
-        "med_cat",
-        "warrior",
-        "random_herbs",
-        "romantic",
-        "platonic",
-        "respect",
-        "p_l_to_r_c",
-        "s_c_to_r_c"
-    ],
+    "tags": ["herb_gathering", "med_cat", "warrior", "random_herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c"],
     "intro_text": "p_l goes out with a warrior escort, both for safety as they look to take advantage of the greenleaf growing season, and for carrying capacity should they find anything.",
     "decline_text": "Their escort is called away on a different mission, and p_l decides to reorganize the herb store instead.",
     "chance_of_success": 60,
@@ -93,34 +84,18 @@
         "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common, and the other cat bluntly refuses to talk about boring herbs.",
         "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with."
     ],
-    "win_skills": [
-        "good mediator",
-        "great mediator",
-        "excellent mediator"
-    ],
-    "fail_trait": [
-        "troublesome",
-        "childish"
-    ],
+    "win_skills": ["good mediator", "great mediator", "excellent mediator"],
+    "fail_trait": ["troublesome", "childish"],
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "fst_med_romance4",
+    "patrol_id": "fst_med_romance_greenleaf2",
     "biome": "forest",
     "season": "greenleaf",
-    "tags": ["herb_gathering", 
-        "med_cat",
-        "med_only",
-        "random_herbs",
-        "romantic",
-        "platonic",
-        "respect",
-        "p_l_to_r_c",
-        "s_c_to_r_c"
-    ],
+    "tags": ["herb_gathering", "med_cat", "med_only", "random_herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c"],
     "intro_text": "p_l heads out, leading a patrol of medicine cats to go find some of the bounty of greenleaf.",
     "decline_text": "... And they're called back almost immediately, as one of the elders has started hacking something up.",
     "chance_of_success": 60,
@@ -134,15 +109,8 @@
         "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common.",
         "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with."
     ],
-    "win_skills": [
-        "good mediator",
-        "great mediator",
-        "excellent mediator"
-    ],
-    "fail_trait": [
-        "troublesome",
-        "childish"
-    ],
+    "win_skills": ["good mediator", "great mediator", "excellent mediator"],
+    "fail_trait": ["troublesome", "childish"],
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": null,
@@ -782,16 +750,7 @@
     "patrol_id": "fst_med_gatheringlungwort_greenleaf1",
     "biome": "forest",
     "season": "greenleaf",
-    "tags": ["herb_gathering", 
-        "adult_stat", "med_cat",
-        "apprentice",
-        "med_only",
-        "herb",
-        "lungwort",
-        "comfort",
-        "respect",
-        "trust",
-        "dislike"
+    "tags": ["herb_gathering", "adult_stat", "med_cat", "apprentice", "med_only", "herb", "lungwort", "comfort", "respect", "trust", "dislike"
     ],
     "intro_text": "p_l and app1 head out for lungwort, with p_l starting a lesson on the value of this rare herb for treating yellowcough.",
     "decline_text": "A cat grabs p_l's attention before they can leave. p_l heaves a sigh - the expedition is delayed for another time.",
@@ -806,13 +765,8 @@
     "fail_text": [
         "Not only do they not find anything, app1 seems to not be taking in a single thing p_l tries to teach, and by the time they're back at camp p_l wants to screech."
     ],
-    "win_skills": [
-        "keen eye",
-        "extremely smart"
-    ],
-    "win_trait": [
-        "patient"
-    ],
+    "win_skills": ["keen eye", "extremely smart"],
+    "win_trait": ["patient"],
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -839,13 +793,8 @@
         null,
         "p_l searches until their pawpads are sore and their muscles exhausted, but can't find lungwort anywhere. They return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
     ],
-    "win_skills": [
-        "keen eye",
-        "extremely smart"
-    ],
-    "win_trait": [
-        "patient"
-    ],
+    "win_skills": ["keen eye", "extremely smart"],
+    "win_trait": ["patient"],
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -855,12 +804,7 @@
     "patrol_id": "fst_med_gatheringlungwort_greenleaf3",
     "biome": "forest",
     "season": "greenleaf",
-    "tags": ["herb_gathering", 
-        "med_cat",
-        "warrior",
-        "herb",
-        "lungwort",
-        "dislike", "injury", "sore"
+    "tags": ["herb_gathering", "med_cat", "warrior", "herb", "lungwort", "dislike", "injury", "sore"
     ],
     "intro_text": "p_l is on a mission to find lungwort now that greenleaf is here. As the only reliable cure for yellowcough, they're determined that c_n won't run out of it. They take along a warrior escort to help.",
     "decline_text": "A cat grabs p_l's attention before they can leave.",
@@ -878,17 +822,9 @@
         null,
         "The cats search and search until their pawpads are sore and their muscles exhausted, but they just can't find lungwort anywhere. p_l returns to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
     ],
-    "win_skills": [
-        "keen eye",
-        "extremely smart"
-    ],
-    "win_trait": [
-        "patient"
-    ],
-    "fail_trait": [
-        "troublesome",
-        "childish"
-    ],
+    "win_skills": ["keen eye", "extremely smart"],
+    "win_trait": ["patient"],
+    "fail_trait": ["troublesome", "childish"],
     "min_cats": 2,
     "max_cats": 3,
     "antagonize_text": null,

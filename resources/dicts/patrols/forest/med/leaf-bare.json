@@ -1,6 +1,6 @@
 [
 {
-    "patrol_id": "fst_med_romance7",
+    "patrol_id": "fst_med_romance_leaf-bare1",
     "biome": "forest",
     "season": "leaf-bare",
     "tags": ["herb_gathering", 
@@ -41,7 +41,7 @@
     "antagonize_fail_text": null
     },
     {
-    "patrol_id": "fst_med_romance8",
+    "patrol_id": "fst_med_romance_leaf-bare2",
     "biome": "forest",
     "season": "leaf-bare",
     "tags": ["herb_gathering", 

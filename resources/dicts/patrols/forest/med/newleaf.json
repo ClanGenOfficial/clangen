@@ -1,6 +1,6 @@
 [
 {
-    "patrol_id": "fst_med_romance1",
+    "patrol_id": "fst_med_romance_newleaf1",
     "biome": "forest",
     "season": "newleaf",
     "tags": ["herb_gathering", "med_cat", "warrior", "random_herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c", "rc_has_stat"],
@@ -25,7 +25,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "fst_med_romance2",
+    "patrol_id": "fst_med_romance_newleaf2",
     "biome": "forest",
     "season": "newleaf",
     "tags": ["herb_gathering", "med_cat", "med_only", "random_herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c", "rc_has_stat"],

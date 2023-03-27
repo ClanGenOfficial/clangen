@@ -429,7 +429,7 @@
     "antagonize_fail_text": "null, "
 },
 {
-    "patrol_id": "wtlnd_med_romance1",
+    "patrol_id": "wtlnd_med_romance_newleaf1",
     "biome": "wetlands",
     "season": "newleaf",
     "tags": ["herb_gathering", "med_cat", "warrior", "herb", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c", "rc_has_stat"],
@@ -454,7 +454,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "wtlnd_med_romance2",
+    "patrol_id": "wtlnd_med_romance_newleaf2",
     "biome": "wetlands",
     "season": "newleaf",
     "tags": ["herb_gathering", "med_cat", "med_only", "herb", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c", "rc_has_stat"],
@@ -479,7 +479,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "wtlnd_med_romance3",
+    "patrol_id": "wtlnd_med_romance_greenleaf1",
     "biome": "wetlands",
     "season": "greenleaf",
     "tags": ["herb_gathering", "med_cat", "warrior", "herb", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c", "rc_has_stat"],
@@ -504,7 +504,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "wtlnd_med_romance4",
+    "patrol_id": "wtlnd_med_romance_greenleaf2",
     "biome": "wetlands",
     "season": "greenleaf",
     "tags": ["herb_gathering", "med_cat", "med_only", "herb", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c", "rc_has_stat"],
@@ -529,7 +529,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "wtlnd_med_romance5",
+    "patrol_id": "wtlnd_med_romance_leaf-fall1",
     "biome": "wetlands",
     "season": "leaf-fall",
     "tags": ["herb_gathering", "med_cat", "warrior", "herb", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c", "rc_has_stat"],
@@ -554,7 +554,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "wtlnd_med_romance6",
+    "patrol_id": "wtlnd_med_romance_leaf-fall2",
     "biome": "wetlands",
     "season": "leaf-fall",
     "tags": ["herb_gathering", "med_cat", "med_only", "herb", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c", "rc_has_stat"],
@@ -579,7 +579,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "wtlnd_med_romance7",
+    "patrol_id": "wtlnd_med_romance_leaf-bare1",
     "biome": "wetlands",
     "season": "leaf-bare",
     "tags": ["herb_gathering", "med_cat", "warrior", "herb", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c", "rc_has_stat"],
@@ -604,7 +604,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "wtlnd_med_romance8",
+    "patrol_id": "wtlnd_med_romance_leaf-bare2",
     "biome": "wetlands",
     "season": "leaf-bare",
     "tags": ["herb_gathering", "med_cat", "med_only", "herb", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c", "rc_has_stat"],

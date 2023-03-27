@@ -542,7 +542,7 @@
 	]
 },
 {
-	"patrol_id":"dst_med_romance1",
+	"patrol_id":"dst_med_romance_newleaf1",
 	"biome":"desert",
 	"season":"newleaf",
 	"tags": ["herb_gathering", 
@@ -584,7 +584,7 @@
 	"antagonize_fail_text":null
 },
 {
-	"patrol_id":"dst_med_romance2",
+	"patrol_id":"dst_med_romance_leaf-bare2",
 	"biome":"desert",
 	"season":"leaf-bare",
 	"tags": ["herb_gathering", 
@@ -625,7 +625,7 @@
 	"antagonize_fail_text":null
 },
 {
-	"patrol_id":"dst_med_romance3",
+	"patrol_id":"dst_med_romance_leaf-bare3",
 	"biome":"desert",
 	"season":"leaf-bare",
 	"tags": ["herb_gathering", 
@@ -666,7 +666,7 @@
 	"antagonize_fail_text":null
 },
 {
-	"patrol_id":"dst_med_romance4",
+	"patrol_id":"dst_med_romance_leaf-bare4",
 	"biome":"desert",
 	"season":"leaf-bare",
 	"tags": ["herb_gathering", 
@@ -707,7 +707,7 @@
 	"antagonize_fail_text":null
 },
 {
-	"patrol_id":"dst_med_romance5",
+	"patrol_id":"dst_med_romance_leaf-fall1",
 	"biome":"desert",
 	"season":"leaf-fall",
 	"tags": ["herb_gathering", 
@@ -748,7 +748,7 @@
 	"antagonize_fail_text":null
 },
 {
-	"patrol_id":"dst_med_romance6",
+	"patrol_id":"dst_med_romance_leaf-fall2",
 	"biome":"desert",
 	"season":"leaf-fall",
 	"tags": ["herb_gathering", 
@@ -789,7 +789,7 @@
 	"antagonize_fail_text":null
 },
 {
-	"patrol_id":"dst_med_romance7",
+	"patrol_id":"dst_med_romance_greenleaf7",
 	"biome":"desert",
 	"season":"greenleaf",
 	"tags": ["herb_gathering", 
@@ -830,7 +830,7 @@
 	"antagonize_fail_text":null
 },
 {
-	"patrol_id":"dst_med_romance8",
+	"patrol_id":"dst_med_romance_greenleaf8",
 	"biome":"desert",
 	"season":"greenleaf",
 	"tags": ["herb_gathering", 

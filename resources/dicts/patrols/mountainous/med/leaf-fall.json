@@ -1,7 +1,7 @@
 [
 
 {
-    "patrol_id": "mtn_med_romance5",
+    "patrol_id": "mtn_med_romance_leaf-fall1",
     "biome": "mountainous",
     "season": "leaf-fall",
     "tags": ["herb_gathering", "warrior", "random_herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c", "rc_has_stat"],
@@ -26,7 +26,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_med_romance6",
+    "patrol_id": "mtn_med_romance_leaf-fall2",
     "biome": "mountainous",
     "season": "leaf-fall",
     "tags": ["herb_gathering", "med_cat", "med_only", "random_herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c", "rc_has_stat"],
@@ -681,7 +681,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_med_gatheringlungwort_leaf-fall7",
+    "patrol_id": "mtn_med_gatheringlungwort_leaf-fall1",
     "biome": "mountainous",
     "season": "leaf-fall",
     "tags": ["herb_gathering", 
@@ -721,7 +721,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_med_gatheringlungwort_leaf-fall8",
+    "patrol_id": "mtn_med_gatheringlungwort_leaf-fall2",
     "biome": "mountainous",
     "season": "leaf-fall",
     "tags": ["herb_gathering",
@@ -760,7 +760,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_med_gatheringlungwort_leaf-fall9",
+    "patrol_id": "mtn_med_gatheringlungwort_leaf-fall3",
     "biome": "mountainous",
     "season": "leaf-fall",
     "tags": ["herb_gathering",
@@ -1216,7 +1216,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_med_gatheringraspberrysolo_leaf-fall3",
+    "patrol_id": "mtn_med_gatheringraspberrysolo_leaf-fall1",
     "biome": "mountainous",
     "season": "leaf-fall",
     "tags": ["herb_gathering", "herb", "raspberry", "no_herbs1", "no_herbs2", "poisoned", "injury"],
@@ -1243,7 +1243,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_med_gatheringraspberrysolo_leaf-fall4",
+    "patrol_id": "mtn_med_gatheringraspberrysolo_leaf-fall2",
     "biome": "mountainous",
     "season": "leaf-fall",
     "tags": ["herb_gathering", "herb", "raspberry", "no_herbs1", "med_cat", "apprentice", "injury", "poisoned", "death"],
