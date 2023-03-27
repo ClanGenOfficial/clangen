@@ -28,8 +28,8 @@
     "hail", "hare", "haste", "hawk", "haze", "heather", "hiss", "hollow", "holly", "hope", "husk", "howl",
     "ice", "icicle", "iris", "ivy",
     "jaw", "jay", "joy", "jump", "jumble", 
-    "keen", "kern", "kestrel", "kick", "kite", "knoll",
-    "lake", "larch","laurel", "leaf", "leap","leg", "light", "lightning", "lilac", "lily", "lotus", "luster", 
+    "kestrel", "kick", "kite", "knoll",
+    "lake", "larch","laurel", "leaf", "leap","leg", "light", "lightning", "lilac", "lily", "lotus", 
     "mane", "mask", "mark", "melt", "mimic", "minnow", "mist", "moth", "moon", "moss", "mouse", "munch", "muzzle", 
     "needle", "nest", "nettle", "newt", "nibble", "night", "nip", "noise", "nose", "nudge", "nut",
     "pad", "patch", "path", "peak", "petal", "plume", "pond",
@@ -39,7 +39,7 @@
     "spike", "splash", "spot", "spots", "spring", "sprout", "stalk", "stem", "step", "sting", "stone", "storm", "streak", 
     "stream", "strike", "stripe", "sun", "swipe", "swoop",
     "talon", "tangle", "tooth", "thistle", "thorn", "throat","thud", "tiger", "timber", "toe", "tree", "turtle", "twist",
-    "watcher", "water", "wave", "web", "whisper", "whistle", "willow", "wind", "wing", "wish",
+    "watcher", "water", "wave", "web", "whisper", "willow", "wind", "wing", "wish",
     "zap", "zoom"
   ],
   "pelt_suffixes": {
