@@ -40,8 +40,8 @@ class TestFamilyThoughts(unittest.TestCase):
         parent.children.append(kit.ID)
 
         # when
-        function_thoughts1 = Thoughts.load_thoughts(parent, kit)
-        function_thoughts2 = Thoughts.load_thoughts(kit, parent)
+        function_thoughts1 = Thoughts.load_thoughts(parent, kit, "expanded")
+        function_thoughts2 = Thoughts.load_thoughts(kit, parent, "expanded")
 
         # then
         '''
