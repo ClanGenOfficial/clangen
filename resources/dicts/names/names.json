@@ -22,9 +22,9 @@
     "creek", "cry", "curl", "current",
     "dapple", "daisy", "dart", "dash", "dance", "daze", "dazzle", "dawn", "drift", "drop", "dusk", "dust", "dew",
     "eagle", "ear", "ears", "eater","echo", "egg", "ember", "eye", "eyes", 
-    "face", "fall", "fang", "feather", "fern", "fin", "fire", "fish", "flake", 
-    "flame", "flash", "flight", "flick", "flicker", "flit", "falcon", "flow", "flood", "flower", "fox", "freeze", "frost", 
-    "gale", "gaze", "gill", "glide", "glint", "goose", "gorse", "grass", "growl",
+    "face", "fall", "fang", "feather", "fern", "fin", "finder", "fickle", "fire", "fish", "flake", "flame", "flash", "flare",
+    "flight", "flick", "flicker", "flip", "flit", "falcon", "flow", "flood", "flower", "fox", "freeze", "frost", 
+    "gale", "gaze",  "glide", "glint", "goose", "gorse", "grass", "growl",
     "hail", "hare", "haste", "hawk", "haze", "heather", "hiss", "hollow", "holly", "hope", "husk", "howl",
     "ice", "icicle", "iris", "ivy",
     "jaw", "jay", "joy", "jump", "jumble", 
@@ -32,9 +32,10 @@
     "lake", "larch","laurel", "leaf", "leap","leg", "light", "lightning", "lilac", "lily", "lotus", 
     "mane", "mask", "mark", "melt", "mimic", "minnow", "mist", "moth", "moon", "moss", "mouse", "munch", "muzzle", 
     "needle", "nest", "nettle", "newt", "nibble", "night", "nip", "noise", "nose", "nudge", "nut",
-    "pad", "patch", "path", "peak", "petal", "plume", "pond",
-    "pool", "poppy", "pounce", "prickle", "puddle", "rain", "rapid", "reed", "ripple", "river", "roar", "rose", "root", "rump", "run", "runner", 
-    "scar", "scratch", "screech", "seed", "shade", "shadow", "shard",  "shell", "shimmer", "shiver", "shriek", "shine",
+    "pad", "patch", "path", "peak", "petal", "plume", "pond", "pool", "poppy", "pounce", "prickle", "puddle",
+    "rain", "rapid", "reed", "rip", "ripple", "river", "roar", "rose",
+    "root", "rump", "rumble", "run", "runner", 
+    "scar", "scratch", "screech", "seed", "shade", "shadow", "shard", "shell", "shimmer", "shiver", "shriek", "shine",
     "shock", "sight", "skip", "sky", "slip", "snap", "snarl", "snout", "snow", "song", "spark", "speck", "speckle", "spirit", 
     "spike", "splash", "spot", "spots", "spring", "sprout", "stalk", "stem", "step", "sting", "stone", "storm", "streak", 
     "stream", "strike", "stripe", "sun", "swipe", "swoop",
@@ -239,7 +240,7 @@
     ],
     "Beach": [
     "current", "shell", "tide", "sand", "wave", "flood", "shore", "coast", "fin", "splash", "surf", "squid", "coral", "pearl",
-    "spray", "pool", "ripple", "drip", "drop", "shine", "shimmer", "foam", "sea", "ocean", "torrent", "tide"
+    "spray", "pool", "ripple", "drip", "drop", "shine", "shimmer", "foam", "sea", "ocean", "torrent", "tide", "gill"
     ],
     "Plains": [
     "field", "meadow", "wool", "oat", "lamb", "elk", "flutter", "pollen", "bull", "bee", "swish", "breeze", "runner", "tunnel", "horse", "sheep", "burrow"
