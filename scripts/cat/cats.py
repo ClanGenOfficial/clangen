@@ -1152,11 +1152,8 @@ class Cat():
         if not self.relationships or len(self.relationships) < 1:
             return
 
-        cats_to_choose = list(
-            filter(lambda
-                       iter_cat: iter_cat.ID != self.ID and not iter_cat.outside and not iter_cat.exiled and not iter_cat.dead,
-                   Cat.all_cats.values())
-        )
+        cats_to_choose = [iter_cat for iter_cat in Cat.all_cats.values() if iter_cat.ID != self.ID and\
+                          not iter_cat.outside and not iter_cat.exiled and not iter_cat.dead]
         # if there are not cats to interact, stop
         if len(cats_to_choose) < 1:
             return
@@ -2206,11 +2203,31 @@ class Cat():
 
     def create_one_relationship(self, other_cat: Cat):
         """Create a new relationship between current cat and other cat. Returns: Relationship"""
+        if other_cat.ID in self.relationships:
+            return None
         relationship = Relationship(self, other_cat)
         self.relationships[other_cat.ID] = relationship
         return relationship
 
-    def create_all_relationships(self):
+    def create_relationships_new_cat(self):
+        """Create relationships for a new generated cat."""
+        for inter_cat in Cat.all_cats.values():
+            # the inter_cat is the same as the current cat
+            if inter_cat.ID == self.ID:
+                continue
+            # if the cat already has (somehow) a relationship with the inter cat
+            if inter_cat.ID in self.relationships:
+                continue
+            # if they dead (dead cats have no relationships)
+            if self.dead or inter_cat.dead:
+                continue
+            # if they are not outside of the clan at the same time
+            if self.outside and not inter_cat.outside or not self.outside and inter_cat.outside:
+                continue
+            inter_cat.relationships[self.ID] = Relationship(inter_cat, self)
+            self.relationships[inter_cat.ID] = Relationship(self, inter_cat)
+
+    def init_all_relationships(self):
         """Create Relationships to all current Clancats."""
         for id in self.all_cats:
             the_cat = self.all_cats.get(id)
@@ -2319,7 +2336,7 @@ class Cat():
         self.relationships = {}
         if os.path.exists(relation_directory):
             if not os.path.exists(relation_cat_directory):
-                self.create_all_relationships()
+                self.init_all_relationships()
                 for cat in Cat.all_cats.values():
                     cat.relationships[self.ID] = Relationship(cat, self)
                 return
