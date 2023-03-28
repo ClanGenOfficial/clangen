@@ -68,7 +68,6 @@ class Events():
         self.CEREMONY_TXT = None
         self.load_ceremonies()
         self.disaster_events = DisasterEvents()
-        self.patrols = Patrol()
 
     def one_moon(self):
         """
@@ -132,14 +131,35 @@ class Events():
             else:
                 self.one_moon_outside_cat(cat)
 
-        # Handle injuries and relationships. We must do with in a different all-cats loop.
-
         # keeping this commented out till disasters are more polished
         # self.disaster_events.handle_disasters()
 
-
-
         # Handle grief events.
+        print('DEAD CATS', Cat.dead_cats)
+        if Cat.dead_cats:
+            if len(Cat.dead_cats) > 1:
+                ghost_names = []
+                for ghost in Cat.dead_cats:
+                    ghost_names.append(str(ghost.name))
+                if len(ghost_names) == 2:
+                    insert = f"{ghost_names[0]} and {ghost_names[1]}"
+                else:
+                    name_line = ", ".join(ghost_names[:-2])
+                    insert = f"{name_line}, and {ghost_names[-1]}"
+                event = f"In the past moon {insert} have taken their places in StarClan. {game.clan.name}Clan mourns their loss, and " \
+                        f"their friends and family shared the best, and sometimes the worse, moments of their lives " \
+                        f"in stories passed around the circle of mourners as the elders carried them to their final " \
+                        f"resting place.",
+            else:
+                event = f"The past moon, {Cat.dead_cats[0].name} has taken their place in StarClan. {game.clan.name}Clan mourns their " \
+                        f"loss, and their friends and family shared the best, and sometimes the worse, moments of " \
+                        f"their lives in stories passed around the circle of mourners as the elders carried them to " \
+                        f"their final resting place. "
+            print(event)
+            game.cur_events_list.append(
+                Single_Event(event, ["birth_death"],
+                             [i.ID for i in Cat.dead_cats]))
+            Cat.dead_cats.clear()
         if Cat.grief_strings:
             remove_cats = []
             death_report_cats = []
@@ -701,23 +721,18 @@ class Events():
                     triggered_death = self.condition_events.handle_injuries(cat)
                     if not triggered_death:
                         self.condition_events.handle_illnesses(cat)
-                    else:
-                        game.switches['skip_conditions'].clear()
-                        return
                 else:
                     triggered_death = self.condition_events.handle_illnesses(cat)
                     if not triggered_death:
                         self.condition_events.handle_injuries(cat)
-                    else:
-                        game.switches['skip_conditions'].clear()
-                        return
             elif cat.is_ill():
                 self.condition_events.handle_illnesses(cat)
-                game.switches['skip_conditions'].clear()
             else:
                 self.condition_events.handle_injuries(cat)
                 game.switches['skip_conditions'].clear()
-
+            game.switches['skip_conditions'].clear()
+            if cat.dead:
+                return
             self.handle_outbreaks(cat)
 
         # newborns don't do much
@@ -732,6 +747,8 @@ class Events():
         # check for death/reveal/risks/retire caused by permanent conditions
         if cat.is_disabled():
             self.condition_events.handle_already_disabled(cat)
+            if cat.dead:
+                return
 
         self.coming_out(cat)
         self.pregnancy_events.handle_having_kits(cat, clan=game.clan)
