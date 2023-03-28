@@ -388,12 +388,8 @@ def create_new_cat(Cat,
         created_cats.append(new_cat)
         game.clan.add_cat(new_cat)
 
-        # create relationship class
-        for inter_cat in Cat.all_cats.values():
-            if inter_cat.ID == new_cat.ID:
-                continue
-            inter_cat.relationships[new_cat.ID] = Relationship(inter_cat, new_cat)
-            new_cat.relationships[inter_cat.ID] = Relationship(new_cat, inter_cat)
+        # create relationships
+        new_cat.create_relationships_new_cat()
 
     return created_cats
 
@@ -425,6 +421,11 @@ def create_outside_cat(Cat, status, backstory):
         if status == 'kittypet':
             new_cat.accessory = choice(collars)
         new_cat.outside = True
+
+        # create relationships - only with outsiders 
+        # (this function will handle, that the cat only knows other outsiders)
+        new_cat.create_relationships_new_cat()
+
         # game.clan.add_cat(new_cat)
         game.clan.add_to_outside(new_cat)
         name = str(name + suffix)
