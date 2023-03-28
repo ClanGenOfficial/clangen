@@ -70,7 +70,7 @@ class Relation_Events():
         #Move on from dead mates
         if cat_mate and "grief stricken" not in cat.illnesses and ((cat_mate.dead and cat_mate.dead_for >= 4) or cat_mate.outside):
             # randint is a slow function, don't call it unless we have to.
-            if random.random() > 0.8: 
+            if random.random() > 0.6: 
                 text = f'{cat.name} will always love {cat_mate.name} but has decided to move on.'
                 game.cur_events_list.append(Single_Event(text, "relation", [cat.ID, cat_mate.ID]))
                 cat.unset_mate(cat_mate)

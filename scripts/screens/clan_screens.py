@@ -312,7 +312,7 @@ class ClanScreen(Screens):
                                                                                      [1, 100, 1, 1, 1, 100, 50])
                 else:
                     continue
-            # print(Cat.all_cats[x].status)
+ 
             if Cat.all_cats[x].status in ['apprentice', 'mediator apprentice']:
                 Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(first_choices, all_dens,
                                                                                  [1, 50, 1, 1, 100, 100, 1])
@@ -1976,7 +1976,7 @@ class MedDenScreen(Screens):
                 short_name = str(cat.name)[0:18]
                 name = short_name + '...'
             self.med_name = pygame_gui.elements.ui_label.UILabel(scale(pygame.Rect
-                                                                       ((1180, 310), (450, 60))),
+                                                                       ((1050, 310), (450, 60))),
                                                                  name,
                                                                  object_id=get_text_box_theme("#text_box_30_horizcenter"), manager=MANAGER
                                                                  )
