@@ -169,7 +169,7 @@ def get_current_season():
     if game.config['lock_season']:
         game.clan.current_season = game.clan.starting_season
         return game.clan.starting_season
-    # print(game.clan.current_season)
+    
     modifiers = {
         "Newleaf": 0,
         "Greenleaf": 3,
@@ -177,12 +177,12 @@ def get_current_season():
         "Leaf-bare": 9
     }
     index = game.clan.age % 12 + modifiers[game.clan.starting_season]
-    # print(index)
+
     if index > 11:
         index = index - 12
-    # print(index)
+
     game.clan.current_season = game.clan.seasons[index]
-    # print(game.clan.current_season)
+
 
     return game.clan.current_season
 
@@ -608,7 +608,7 @@ def add_children_to_cat(cat, cat_class):
             cat.children.append(inter_cat.ID)
         if inter_cat.is_parent(cat) and cat.ID not in inter_cat.children:
             inter_cat.children.append(cat.ID)
-    print('cats children', cat.children)
+    # print('cats children', cat.children)
 
 
 def change_relationship_values(cats_to: list,
