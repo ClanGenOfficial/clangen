@@ -250,6 +250,9 @@ def create_new_cat(Cat,
     accessory = None
     backstory = choice(backstory)
 
+    if backstory in (Cat.backstory_categories["former_clancat_backstories"] or Cat.backstory_categories["otherclan_categories"]):
+        other_clan = True
+
     created_cats = []
 
     if not litter:
@@ -399,10 +402,9 @@ def create_outside_cat(Cat, status, backstory):
         TODO: DOCS
         """
         suffix = ''
-        if 'rogue' in backstory:
+        if backstory in Cat.backstory_categories["rogue_backstories"]:
             status = 'rogue'
-        elif backstory in ['ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
-                         'tragedy_survivor', 'disgraced2', 'disgraced3', 'refugee5']:
+        elif backstory in Cat.backstory_categories["former_clancat_backstories"]:
             status = "former clancat"
         if status == 'kittypet':
             name = choice(names.names_dict["loner_names"])
