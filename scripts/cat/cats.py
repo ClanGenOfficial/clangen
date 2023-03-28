@@ -230,6 +230,7 @@ class Cat():
         self.trait = None
         self.parent1 = parent1
         self.parent2 = parent2
+        self.adoptive_parents = []
         self.pelt = pelt
         self.tint = None
         self.white_patches_tint = None
