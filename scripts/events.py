@@ -279,7 +279,6 @@ class Events():
         """
         if game.clan.game_mode == 'classic':
             herbs = game.clan.herbs.copy()
-            # print(game.clan.herbs)
             for herb in herbs:
                 adjust_by = random.choices([-2, -1, 0, 1, 2], [1, 2, 3, 2, 1],
                                            k=1)
@@ -290,11 +289,9 @@ class Events():
             if not int(random.random() * 5):
                 new_herb = random.choice(HERBS)
                 game.clan.herbs.update({new_herb: 1})
-            # print(game.clan.herbs)
         else:
             event_list = []
             meds_available = get_med_cats(Cat)
-            # print(game.clan.herbs)
             for med in meds_available:
                 if game.clan.current_season in ['Newleaf', 'Greenleaf']:
                     amount = random.choices([0, 1, 2, 3], [1, 2, 2, 2], k=1)
@@ -315,7 +312,6 @@ class Events():
                             amount = random.choices([1, 2, 3], [3, 3, 1], k=1)
                         else:
                             amount = random.choices([1, 2], [4, 1], k=1)
-                        # print(amount)
                         if herb in game.clan.herbs:
                             game.clan.herbs[herb] += amount[0]
                         else:
@@ -342,7 +338,6 @@ class Events():
                             f"{med.name} could not find any herbs this moon.")
                         return
             game.herb_events_list.extend(event_list)
-            # print(game.clan.herbs)
 
     def herb_destruction(self):
         """
@@ -643,11 +638,11 @@ class Events():
         # killing exiled cats
         if cat.exiled or cat.outside:
             if random.getrandbits(6) == 1 and not cat.dead:
-                print("Cat Died: " + str(cat.name))
+                # print("Cat Died: " + str(cat.name))
                 cat.dead = True
                 if cat.exiled:
                     text = f'Rumors reach your Clan that the exiled {cat.name} has died recently.'
-                elif cat.status in ['kittypet', 'loner', 'rogue']:
+                elif cat.status in ['kittypet', 'loner', 'rogue', 'former clancat']:
                     text = f'Rumors reach your Clan that the {cat.status} ' \
                         f'{cat.name} has died recently.'
                 else:
@@ -1255,7 +1250,6 @@ class Events():
             except KeyError:
                 random_honor = "hard work"
 
-        # print(possible_ceremonies)
         ceremony_tags, ceremony_text = self.CEREMONY_TXT[random.choice(
             list(possible_ceremonies))]
 
@@ -1352,7 +1346,6 @@ class Events():
             chance = 1
         if not int(random.random() * chance):
 
-            #print('ACC')
             self.misc_events.handle_misc_events(
                 cat,
                 other_cat,
@@ -1559,7 +1552,6 @@ class Events():
                 exp += random.randint(0, 3)
 
             cat.experience += max(exp * mentor_modifier + mentor_skill_modifier, 1)
-            print(str(cat.name), exp * mentor_modifier + mentor_skill_modifier, cat.experience)
 
     def invite_new_cats(self, cat):
         """

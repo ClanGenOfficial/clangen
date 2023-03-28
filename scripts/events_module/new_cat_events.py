@@ -108,17 +108,17 @@ class NewCatEvents:
                                       new_cat_event.backstory,
                                       status
                                       )
-        print(created_cats)
+        # print(created_cats)
         for new_cat in created_cats:
             involved_cats.append(new_cat.ID)
             if "adoption" in new_cat_event.tags:
                 new_cat.parent1 = cat.ID
                 if cat.mate:
                     new_cat.parent2 = cat.mate
-                print('parent is', new_cat.parent1, cat.ID)
+                # print('parent is', new_cat.parent1, cat.ID)
 
             if "m_c" in new_cat_event.tags:
-                print('moon event new cat rel gain')
+                # print('moon event new cat rel gain')
                 cat.relationships[new_cat.ID] = Relationship(cat, new_cat)
                 new_cat.relationships[cat.ID] = Relationship(new_cat, cat)
                 new_to_clan_cat = game.config["new_cat"]["rel_buff"]["new_to_clan_cat"]
