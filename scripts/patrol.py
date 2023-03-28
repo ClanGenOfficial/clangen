@@ -719,7 +719,7 @@ class Patrol():
 
         # Auto-wins based on EXP are sorta lame. Often makes it immpossible for large patrols with experiences cats to fail patrols at all. 
         # EXP alone can only bring success chance up to 85. However, skills/traits can bring it up above that. 
-        success_chance = min(success_chance, 85)
+        success_chance = min(success_chance, 90)
 
         print('starting chance:', self.patrol_event.chance_of_success, "| EX_updated chance:", success_chance)
         skill_updates = ""
