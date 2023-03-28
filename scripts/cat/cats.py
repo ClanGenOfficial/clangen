@@ -40,6 +40,7 @@ from scripts.event_class import Single_Event
 
 
 class Cat():
+    dead_cats = []
     used_screen = screen
     traits = [
         'adventurous', 'altruistic', 'ambitious', 'bloodthirsty', 'bold',
@@ -563,6 +564,8 @@ class Cat():
 
         if game.clan.game_mode != 'classic':
             self.grief(body)
+
+        Cat.dead_cats.append(self)
 
         return text
 
