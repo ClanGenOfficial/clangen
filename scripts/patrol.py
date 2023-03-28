@@ -854,10 +854,12 @@ class Patrol():
                         outcome = 2
                 # making sure unscathed fail is always unscathed
                 else:
-                    if fail_text[3]:
-                        outcome = 3
-                    elif fail_text[2]:
-                        outcome = 2
+                    if len(fail_text) > 3:
+                        if fail_text[3]:
+                            outcome = 3
+                    elif len(fail_text) > 2:
+                        if fail_text[2]:
+                            outcome = 2
                     else:
                         outcome = 0
             else:
@@ -979,7 +981,7 @@ class Patrol():
             new_name = choice([True, False])
             backstory = Cat.backstory_categories["loner_backstories"]
             if "medcat" in attribute_list:
-                backstory = choice(["medicine_cat", "disgraced"])
+                backstory = ["medicine_cat", "disgraced"]
             if not success:
                 outsider = create_outside_cat(Cat, "loner", backstory=choice(backstory))
                 self.results_text.append(f"The Clan has met {outsider}.")
@@ -991,6 +993,7 @@ class Patrol():
             if not success:
                 outsider = create_outside_cat(Cat, "rogue", backstory=choice(backstory))
                 self.results_text.append(f"The Clan has met {outsider}.")
+                return
         elif cat_type == 'former_clancat' or "former_clancat" in attribute_list:
             loner = False
             new_name = False
@@ -1000,6 +1003,7 @@ class Patrol():
             if not success:
                 outsider = create_outside_cat(Cat, "loner", backstory=choice(backstory))
                 self.results_text.append(f"The Clan has met {outsider}.")
+                return
         else:
             other_clan = self.other_clan
             # failsafe in case self.other_clan is None for some reason
