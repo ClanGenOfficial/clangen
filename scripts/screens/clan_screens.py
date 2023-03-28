@@ -1165,11 +1165,11 @@ class ListScreen(Screens):
         self.filter_fav = UIImageButton(scale(pygame.Rect((390, 275), (56, 56))), "",
                                         object_id="#fav_cat",
                                         manager=MANAGER,
-                                        tool_tip_text='hide favorite cat inidcators')
+                                        tool_tip_text='hide favorite cat indicators')
 
         self.filter_not_fav = UIImageButton(scale(pygame.Rect((390, 275), (56, 56))), "",
                                             object_id="#not_fav_cat", manager=MANAGER,
-                                        tool_tip_text='show favorite cat inidcators')
+                                        tool_tip_text='show favorite cat indicators')
         
         if game.clan.clan_settings["show_fav"]:
             self.filter_not_fav.hide()
