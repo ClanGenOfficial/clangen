@@ -215,8 +215,12 @@ class Game():
             return None
 
         # Now we can get a list of all the folders in the saves folder
-        clan_list = [f.name for f in os.scandir(get_save_dir()) if f.is_dir()]
+        clan_list = [f.name for f in os.scandir(get_save_dir()) if (f.is_dir() or (f.name.endswith('clan.txt') and not f.name == 'currentclan.txt'))]
 
+
+        for i in range(len(clan_list)):
+            if clan_list[i].endswith('clan.txt'):
+                clan_list[i] = clan_list[i][:-8]
         # the clan specified in saves/clanlist.txt should be first in the list
         # so we can load it automatically
 

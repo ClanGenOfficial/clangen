@@ -1,5 +1,6 @@
 import os
 from math import floor
+import traceback
 from .game_essentials import game
 from ..datadir import get_save_dir
 
@@ -245,14 +246,9 @@ def json_load():
 
         # load the relationships
         if not cat.dead:
-            game.switches[
-                'error_message'] = 'There was an error loading this clan\'s relationships. Last cat read was ' + str(
-                    cat)
             cat.load_relationship_of_cat()
-            game.switches[
-                'error_message'] = f'There was an error when relationships for cat #{cat} are created.'
             if cat.relationships is not None and len(cat.relationships) < 1:
-                cat.create_all_relationships()
+                cat.init_all_relationships()
         else:
             cat.relationships = {}
 
@@ -292,192 +288,284 @@ def json_load():
     
 
 def csv_load(all_cats):
-    if game.switches['clan_list'][0].strip() == '':
-        cat_data = ''
-    else:
+    try:
+        csvFormat = [
+            'ID',
+            'name',
+            'gender',
+            'status',
+            'age',
+            'trait',
+            'parent1',
+            'parent2',
+            'mentor',
+            'pelt_name',
+            'pelt_color',
+            'pelt_white',
+            'pelt_length',
+            'spirit_kitten',
+            'spirit_adolescent',
+            'spirit_adult',
+            'spirit_elder',
+            'eye_colour',
+            'reverse',
+            'white_patches',
+            'pattern',
+            'skin',
+            'skill',
+            'NULL',
+            'specialty',
+            'moons',
+            'mate',
+            'dead',
+            'spirit_dead',
+            'specialty2',
+            'experience',
+            'dead_moons',
+            'current_apprentice',
+            'former_apprentices',
+        ]
+
+        id_fields = [
+            'parent1',
+            'parent2',
+            'ID',
+            'mate',
+            'mentor'
+        ]
+
+        tortie_map = {
+            'ONE': {
+                'tortie_base': 'single',
+                'tortie_color': 'BLACK',
+                'tortie_pattern': 'tortiesolid',
+                'pattern': 'GOLDONE'
+            },
+            'TWO': {
+                'tortie_base': 'single',
+                'tortie_color': 'BLACK',
+                'tortie_pattern': 'tortiesolid',
+                'pattern': 'GOLDTWO'
+            },
+            'FADEDONE': {
+                'tortie_base': 'single',
+                'tortie_color': 'BROWN',
+                'tortie_pattern': 'tortiesolid',
+                'pattern': 'GOLDONE'
+            },
+            'FADEDTWO': {
+                'tortie_base': 'single',
+                'tortie_color': 'BROWN',
+                'tortie_pattern': 'tortiesolid',
+                'pattern': 'GOLDTWO'
+            },
+            'BLUEONE': {
+                'tortie_base': 'single',
+                'tortie_color': 'SILVER',
+                'tortie_pattern': 'tortiesolid',
+                'pattern': 'PALEONE'
+            },
+            'BLUETWO': {
+                'tortie_base': 'single',
+                'tortie_color': 'SILVER',
+                'tortie_pattern': 'tortiesolid',
+                'pattern': 'PALETWO'
+            }
+        }
+
+        calico_map = {
+            'ONE': {
+                'tortie_base': 'single',
+                'tortie_color': 'BLACK',
+                'tortie_pattern': 'tortiesolid',
+                'pattern': 'GOLDTHREE'
+            },
+            'TWO': {
+                'tortie_base': 'single',
+                'tortie_color': 'BLACK',
+                'tortie_pattern': 'tortiesolid',
+                'pattern': 'GOLDFOUR'
+            },
+            'THREE': {
+                'tortie_base': 'single',
+                'tortie_color': 'BLACK',
+                'tortie_pattern': 'tortietabby',
+                'pattern': 'GOLDTHREE'
+            },
+            'FOUR': {
+                'tortie_base': 'single',
+                'tortie_color': 'BLACK',
+                'tortie_pattern': 'tortietabby',
+                'pattern': 'GOLDFOUR'
+            },
+            'FADEDONE': {
+                'tortie_base': 'single',
+                'tortie_color': 'BROWN',
+                'tortie_pattern': 'tortiesolid',
+                'pattern': 'GOLDTHREE'
+            },
+            'FADEDTWO': {
+                'tortie_base': 'single',
+                'tortie_color': 'BROWN',
+                'tortie_pattern': 'tortiesolid',
+                'pattern': 'GOLDFOUR'
+            },
+            'FADEDTHREE': {
+                'tortie_base': 'tabby',
+                'tortie_color': 'BROWN',
+                'tortie_pattern': 'tortietabby',
+                'pattern': 'GOLDTHREE'
+            },
+            'FADEDFOUR': {
+                'tortie_base': 'tabby',
+                'tortie_color': 'BROWN',
+                'tortie_pattern': 'tortietabby',
+                'pattern': 'GOLDFOUR'
+            },
+            'BLUEONE': {
+                'tortie_base': 'single',
+                'tortie_color': 'SILVER',
+                'tortie_pattern': 'tortiesolid',
+                'pattern': 'PALETHREE'
+            },
+            'BLUETWO': {
+                'tortie_base': 'single',
+                'tortie_color': 'SILVER',
+                'tortie_pattern': 'tortiesolid',
+                'pattern': 'PALEFOUR'
+            },
+            'BLUETHREE': {
+                'tortie_base': 'tabby',
+                'tortie_color': 'SILVER',
+                'tortie_pattern': 'tortietabby',
+                'pattern': 'PALETHREE'
+            },
+            'BLUEFOUR': {
+                'tortie_base': 'tabby',
+                'tortie_color': 'SILVER',
+                'tortie_pattern': 'tortietabby',
+                'pattern': 'PALEFOUR'
+            }
+        }
+
         if os.path.exists(get_save_dir() + '/' + game.switches['clan_list'][0] +
                           'cats.csv'):
             with open(get_save_dir() + '/' + game.switches['clan_list'][0] + 'cats.csv',
                       'r') as read_file:
-                cat_data = read_file.read()
+                rows = read_file.readlines()
         else:
             with open(get_save_dir() + '/' + game.switches['clan_list'][0] + 'cats.txt',
                       'r') as read_file:
-                cat_data = read_file.read()
-    if len(cat_data) > 0:
-        cat_data = cat_data.replace('\t', ',')
-        for i in cat_data.split('\n'):
-            # CAT: ID(0) - prefix:suffix(1) - gender(2) - status(3) - age(4) - trait(5) - parent1(6) - parent2(7) - mentor(8)
-            # PELT: pelt(9) - colour(10) - white(11) - length(12)
-            # SPRITE: kitten(13) - apprentice(14) - warrior(15) - elder(16) - eye colour(17) - reverse(18)
-            # - white patches(19) - pattern(20) - tortiebase(21) - tortiepattern(22) - tortiecolour(23) - skin(24) - skill(25) - NONE(26) - spec(27) - accessory(28) -
-            # spec2(29) - moons(30) - mate(31)
-            # dead(32) - SPRITE:dead(33) - exp(34) - dead for _ moons(35) - current apprentice(36)
-            # (BOOLS, either TRUE OR FALSE) paralyzed(37) - no kits(38) - exiled(39)
-            # genderalign(40) - former apprentices list (41)[FORMER APPS SHOULD ALWAYS BE MOVED TO THE END]
-            if i.strip() != '':
-                attr = i.split(',')
-                for x in range(len(attr)):
-                    attr[x] = attr[x].strip()
-                    if attr[x] in ['None', 'None ']:
-                        attr[x] = None
-                    elif attr[x].upper() == 'TRUE':
-                        attr[x] = True
-                    elif attr[x].upper() == 'FALSE':
-                        attr[x] = False
-                game.switches[
-                    'error_message'] = '1There was an error loading cat # ' + str(
-                        attr[0])
-                the_pelt = choose_pelt(attr[2], attr[10], attr[11], attr[9],
-                                       attr[12], True)
-                game.switches[
-                    'error_message'] = '2There was an error loading cat # ' + str(
-                        attr[0])
-                the_cat = Cat(ID=attr[0],
-                              prefix=attr[1].split(':')[0],
-                              suffix=attr[1].split(':')[1],
-                              gender=attr[2],
-                              status=attr[3],
-                              pelt=the_pelt,
-                              parent1=attr[6],
-                              parent2=attr[7],
-                              eye_colour=attr[17])
-                game.switches[
-                    'error_message'] = '3There was an error loading cat # ' + str(
-                        attr[0])
-                the_cat.age, the_cat.mentor = attr[4], attr[8]
-                game.switches[
-                    'error_message'] = '4There was an error loading cat # ' + str(
-                        attr[0])
-                the_cat.cat_sprites['kitten'], the_cat.cat_sprites[
-                    'adolescent'] = int(attr[13]), int(attr[14])
-                game.switches[
-                    'error_message'] = '5There was an error loading cat # ' + str(
-                        attr[0])
-                the_cat.cat_sprites['adult'], the_cat.cat_sprites[
-                    'elder'] = int(attr[15]), int(attr[16])
-                game.switches[
-                    'error_message'] = '6There was an error loading cat # ' + str(
-                        attr[0])
-                the_cat.cat_sprites['young adult'], the_cat.cat_sprites[
-                    'senior adult'] = int(attr[15]), int(attr[15])
-                game.switches[
-                    'error_message'] = '7There was an error loading cat # ' + str(
-                        attr[0])
-                the_cat.reverse, the_cat.white_patches, the_cat.pattern = attr[
-                    18], attr[19], attr[20]
-                game.switches[
-                    'error_message'] = '8There was an error loading cat # ' + str(
-                        attr[0])
-                the_cat.tortiebase, the_cat.tortiepattern, the_cat.tortiecolour = attr[
-                    21], attr[22], attr[23]
-                game.switches[
-                    'error_message'] = '9There was an error loading cat # ' + str(
-                        attr[0])
-                the_cat.trait, the_cat.skin, the_cat.specialty = attr[5], attr[
-                    24], attr[27]
-                game.switches[
-                    'error_message'] = '10There was an error loading cat # ' + str(
-                        attr[0])
-                the_cat.skill = attr[25]
-                if len(attr) > 28:
-                    the_cat.accessory = attr[28]
-                if len(attr) > 29:
-                    the_cat.specialty2 = attr[29]
-                else:
-                    the_cat.specialty2 = None
-                game.switches[
-                    'error_message'] = '11There was an error loading cat # ' + str(
-                        attr[0])
-                if len(attr) > 34:
-                    the_cat.experience = int(attr[34])
-                    experiencelevels = [
-                        'very low', 'low', 'slightly low', 'average',
-                        'somewhat high', 'high', 'very high', 'master', 'max'
-                    ]
-                    the_cat.experience_level = experiencelevels[floor(
-                        int(the_cat.experience) / 10)]
-                else:
-                    the_cat.experience = 0
-                game.switches[
-                    'error_message'] = '12There was an error loading cat # ' + str(
-                        attr[0])
-                if len(attr) > 30:
-                    # Attributes that are to be added after the update
-                    the_cat.moons = int(attr[30])
-                    if len(attr) >= 31:
-                        # assigning mate to cat, if any
-                        the_cat.mate = attr[31]
-                    if len(attr) >= 32:
-                        # Is the cat dead
-                        the_cat.dead = attr[32]
-                        the_cat.cat_sprites['dead'] = attr[33]
-                game.switches[
-                    'error_message'] = '13There was an error loading cat # ' + str(
-                        attr[0])
-                if len(attr) > 35:
-                    the_cat.dead_for = int(attr[35])
-                game.switches[
-                    'error_message'] = '14There was an error loading cat # ' + str(
-                        attr[0])
-                if len(attr) > 36 and attr[36] is not None:
-                    the_cat.apprentice = attr[36].split(';')
-                game.switches[
-                    'error_message'] = '15There was an error loading cat # ' + str(
-                        attr[0])
-                if len(attr) > 37:
-                    the_cat.paralyzed = bool(attr[37])
-                if len(attr) > 38:
-                    the_cat.no_kits = bool(attr[38])
-                if len(attr) > 39:
-                    the_cat.exiled = bool(attr[39])
-                if len(attr) > 40:
-                    the_cat.genderalign = attr[40]
-                if len(attr
-                       ) > 41 and attr[41] is not None:  #KEEP THIS AT THE END
-                    the_cat.former_apprentices = attr[41].split(';')
-        game.switches[
-            'error_message'] = 'There was an error loading this clan\'s mentors, apprentices, relationships, or sprite info.'
-        for inter_cat in all_cats.values():
-            # Load the mentors and apprentices after all cats have been loaded
-            game.switches[
-                'error_message'] = 'There was an error loading this clan\'s mentors/apprentices. Last cat read was ' + str(
-                    inter_cat)
-            inter_cat.mentor = Cat.all_cats.get(inter_cat.mentor)
-            apps = []
-            former_apps = []
-            for app_id in inter_cat.apprentice:
-                app = Cat.all_cats.get(app_id)
-                # Make sure if cat isn't an apprentice, they're a former apprentice
-                if 'apprentice' in app.status:
-                    apps.append(app)
-                else:
-                    former_apps.append(app)
-            for f_app_id in inter_cat.former_apprentices:
-                f_app = Cat.all_cats.get(f_app_id)
-                former_apps.append(f_app)
-            inter_cat.apprentice = [a.ID for a in apps] #Switch back to IDs. I don't want to risk breaking everything.
-            inter_cat.former_apprentices = [a.ID for a in former_apps]
-            if not inter_cat.dead:
-                game.switches[
-                    'error_message'] = 'There was an error loading this clan\'s relationships. Last cat read was ' + str(
-                        inter_cat)
-                inter_cat.load_relationship_of_cat()
-            game.switches[
-                'error_message'] = 'There was an error loading a cat\'s sprite info. Last cat read was ' + str(
-                    inter_cat)
-            update_sprite(inter_cat)
-        # generate the relationship if some is missing
-        if not the_cat.dead:
-            game.switches[
-                'error_message'] = 'There was an error when relationships where created.'
-            for id in all_cats.keys():
-                the_cat = all_cats.get(id)
-                game.switches[
-                    'error_message'] = f'There was an error when relationships for cat #{the_cat} are created.'
-                if the_cat.relationships is not None and len(the_cat.relationships) < 1:
-                    the_cat.create_all_relationships()
-        game.switches['error_message'] = ''
+                rows = read_file.readlines()
+        if len(rows) == 0:
+            return
+
+        catData = []
+
+        for row in rows:
+            if row == None or row == '' or row.strip() == '':
+                continue
+
+            columns = row.split(',')
+            cat = {}
+            if len(columns) != len(csvFormat):
+                game.switches['error_message'] = "Unexpected number of columns in cats"
+
+            i = 0
+            for column in columns:
+                column = column.strip()
+                if column.lower() == 'none':
+                    column = None
+                elif column.lower() == 'true':
+                    column = True
+                elif column.lower() == 'false':
+                    column = False
+                elif column.isnumeric():
+                    column = int(column)
+
+                cat[csvFormat[i]] = column
+                i += 1
+
+            if not cat['current_apprentice']:
+                cat['current_apprentice'] = []
+            else:
+                cat['current_apprentice'] = str(cat['current_apprentice']).split(';')
+
+            if not cat['former_apprentices']:
+                cat['former_apprentices'] = []
+            else:
+                cat['former_apprentices'] = str(cat['former_apprentices']).split(';')
+
+            catData.append(cat)
+
+        for cat in catData:
+            split_name = cat['name'].split(':')
+            cat['name_prefix'] = split_name[0]
+            if len(split_name) > 1:
+                cat['name_suffix'] = split_name[1]
+            else:
+                cat['name_suffix'] = ''
+            
+            del cat['name']
+            del cat['NULL'] # idfk why this is here but it is
+
+            for id_field in id_fields:
+                if cat[id_field]:
+                    cat[id_field] = str(cat[id_field])
+
+            cat['gender_align'] = cat['gender']
+
+            cat['paralyzed'] = False
+            cat['no_kits'] = False
+            cat['exiled'] = False
+
+
+            if cat['pelt_name'] == 'Tortie':
+                tortie_vars = tortie_map[cat['pattern']]
+            elif cat['pelt_name'] == 'Calico':
+                tortie_vars = calico_map[cat['pattern']]
+            else:
+                tortie_vars = {
+                    'tortie_base': None,
+                    'tortie_color': None,
+                    'tortie_pattern': None,
+                }
+            
+            if cat['white_patches']:
+                cat['white_patches'] = cat['white_patches'].replace('ANY2', 'ANYTWO')
+                cat['white_patches'] = cat['white_patches'].replace('CREAMY', '')
+            
+            cat.update(tortie_vars)
+
+            cat['eye_colour2'] = cat['eye_colour']
+            cat['sprite_young_adult'] = cat['spirit_adult']
+            cat['sprite_senior_adult'] = cat['spirit_adult']
+            cat['accessory'] = None
+
+
+        # save the file, then load via the normal method
+        try:
+            os.mkdir(get_save_dir() + '/' + game.switches['clan_list'][0])
+            with open(get_save_dir() + '/' + game.switches['clan_list'][0] + '/clan_cats.json',
+                  'w') as write_file:
+                write_file.write(ujson.dumps(catData, indent=4))
+                load_cats()
+        except Exception as e:
+            game.switches['error_message'] = "Loading converted save failed"
+            game.switches['traceback'] = e
+            return
+                
+
+
+    except Exception as e:
+        game.switches['error_message'] = "Save conversion failed"
+        game.switches['traceback'] = e
+        print(e)
+        print(traceback.format_exception(e))
+        return
+    
+
+    
 
 def save_check():
     """Checks through loaded cats, checks and attempts to fix issues """
