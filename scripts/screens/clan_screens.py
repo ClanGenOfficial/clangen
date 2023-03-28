@@ -1976,7 +1976,7 @@ class MedDenScreen(Screens):
                 short_name = str(cat.name)[0:18]
                 name = short_name + '...'
             self.med_name = pygame_gui.elements.ui_label.UILabel(scale(pygame.Rect
-                                                                       ((1180, 310), (450, 60))),
+                                                                       ((1050, 310), (450, 60))),
                                                                  name,
                                                                  object_id=get_text_box_theme("#text_box_30_horizcenter"), manager=MANAGER
                                                                  )

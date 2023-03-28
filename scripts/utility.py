@@ -938,25 +938,24 @@ def update_sprite(cat):
     # First make pelt, if it wasn't possible before
     if cat.pelt is None:
         init_pelt(cat)
-
             # THE SPRITE UPDATE
     # draw colour & style
     new_sprite = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
 
     # setting the cat_sprite (bc this makes things much easier)
-    if cat.paralyzed and not cat.not_working():
-        if cat.age in ['newborn', 'kitten', 'adolescent'] or game.config['fun']['all_cats_are_newborn']:
+    if cat.not_working() and cat.age != 'newborn':
+        if cat.age in ['kitten', 'adolescent']:
+            cat_sprite = str(19)
+        else:
+            cat_sprite = str(18)
+    elif cat.paralyzed and cat.age != 'newborn':
+        if cat.age in ['kitten', 'adolescent']:
             cat_sprite = str(17)
         else:
             if cat.pelt.length == 'long':
                 cat_sprite = str(16)
             else:
                 cat_sprite = str(15)
-    elif cat.not_working():
-        if cat.age in ['newborn', 'kitten', 'adolescent'] or game.config['fun']['all_cats_are_newborn']:
-            cat_sprite = str(19)
-        else:
-            cat_sprite = str(18)
     else:
         if cat.age == 'elder' and not game.config['fun']['all_cats_are_newborn']:
             cat.age = 'senior'
