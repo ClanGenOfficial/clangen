@@ -158,7 +158,6 @@ class StartScreen(Screens):
             manager=MANAGER,
             layer_starting_height=3)
 
-        self.error_label.disable()
 
         self.error_gethelp = pygame_gui.elements.UITextBox(
             "Please join the Discord server and ask for technical support. " \
