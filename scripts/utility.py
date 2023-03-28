@@ -250,6 +250,9 @@ def create_new_cat(Cat,
     accessory = None
     backstory = choice(backstory)
 
+    if backstory in (Cat.backstory_categories["former_clancat_backstories"] or Cat.backstory_categories["otherclan_categories"]):
+        other_clan = True
+
     created_cats = []
 
     if not litter:
