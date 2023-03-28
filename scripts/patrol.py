@@ -718,8 +718,8 @@ class Patrol():
             self.patrol_total_experience / (7.5 * gm_modifier))
 
         # Auto-wins based on EXP are sorta lame. Often makes it immpossible for large patrols with experiences cats to fail patrols at all. 
-        # EXP alone can only bring success chance up to 95. However, skills/traits can bring it up above that. 
-        success_chance = min(success_chance, 95)
+        # EXP alone can only bring success chance up to 85. However, skills/traits can bring it up above that. 
+        success_chance = min(success_chance, 85)
 
         print('starting chance:', self.patrol_event.chance_of_success, "| EX_updated chance:", success_chance)
         skill_updates = ""
@@ -954,45 +954,48 @@ class Patrol():
         if cat_type == 'kittypet' or "kittypet" in attribute_list:
             kittypet = True
             new_name = choice([True, False])
-            backstory = choice(Cat.backstory_categories["kittypet_backstories"])
+            if "abandonedkittypet" in self.patrol_event.patrol_id:
+                backstory = ['kittypet4', 'kittypet4']
+            else:
+                backstory = Cat.backstory_categories["kittypet_backstories"]
             if not success:
-                outsider = create_outside_cat(Cat, "kittypet", backstory=backstory)
+                outsider = create_outside_cat(Cat, "kittypet", backstory=choice(backstory))
                 self.results_text.append(f"The Clan has met {outsider}.")
                 return
         elif cat_type == 'loner' or "loner" in attribute_list:
             loner = True
             new_name = choice([True, False])
-            backstory = choice(Cat.backstory_categories["loner_backstories"])
+            backstory = Cat.backstory_categories["loner_backstories"]
             if "medcat" in attribute_list:
-                backstory = choice("medicine_cat", "disgraced")
+                backstory = choice(["medicine_cat", "disgraced"])
             if not success:
-                outsider = create_outside_cat(Cat, "loner", backstory=backstory)
+                outsider = create_outside_cat(Cat, "loner", backstory=choice(backstory))
                 self.results_text.append(f"The Clan has met {outsider}.")
                 return
         elif cat_type == 'rogue' or 'rogue' in attribute_list:
             loner = True
             new_name = choice([True, False])
-            backstory = choice(Cat.backstory_categories["rogue_backstories"])
+            backstory = Cat.backstory_categories["rogue_backstories"]
             if not success:
-                outsider = create_outside_cat(Cat, "rogue", backstory=backstory)
+                outsider = create_outside_cat(Cat, "rogue", backstory=choice(backstory))
                 self.results_text.append(f"The Clan has met {outsider}.")
         elif cat_type == 'former_clancat' or "former_clancat" in attribute_list:
             loner = False
             new_name = False
-            backstory = choice(Cat.backstory_categories["former_clancat_backstories"])
+            backstory = Cat.backstory_categories["former_clancat_backstories"]
             if "medcat" in attribute_list:
-                backstory = choice("medicine_cat", "disgraced")
+                backstory = ["medicine_cat", "disgraced"]
             if not success:
-                outsider = create_outside_cat(Cat, "loner", backstory=backstory)
+                outsider = create_outside_cat(Cat, "loner", backstory=choice(backstory))
                 self.results_text.append(f"The Clan has met {outsider}.")
         else:
             other_clan = self.other_clan
             # failsafe in case self.other_clan is None for some reason
-            backstory = choice(Cat.backstory_categories["former_clancat_backstories"])
+            backstory = Cat.backstory_categories["former_clancat_backstories"]
             if not other_clan:
                 loner = True
                 new_name = choice([True, False])
-                backstory = choice(Cat.backstory_categories["rogue_backstories"])
+                backstory = Cat.backstory_categories["rogue_backstories"]
                 return
 
         # handing out ranks
