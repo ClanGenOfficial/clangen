@@ -157,10 +157,12 @@ class Thoughts():
         status = main_cat.status
         loaded_thoughts = []
 
-        if status in ["medicine cat apprentice", "medicine cat"]:
-            status = "medicine_cat"
+        if status == "medicine cat apprentice":
+            status = choice("medicine_cat", "apprentice", "medicine_cat_apprentice")
         elif status == "mediator apprentice":
-            status = "mediator"
+            status = choice("mediator", "apprentice", "mediator_apprentice")
+        elif status == "medicine cat":
+            status = "medicine_cat"
 
         if not main_cat.dead:
             life_dir = "alive"
