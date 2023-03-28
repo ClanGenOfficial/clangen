@@ -135,31 +135,7 @@ class Events():
         # self.disaster_events.handle_disasters()
 
         # Handle grief events.
-        print('DEAD CATS', Cat.dead_cats)
-        if Cat.dead_cats:
-            if len(Cat.dead_cats) > 1:
-                ghost_names = []
-                for ghost in Cat.dead_cats:
-                    ghost_names.append(str(ghost.name))
-                if len(ghost_names) == 2:
-                    insert = f"{ghost_names[0]} and {ghost_names[1]}"
-                else:
-                    name_line = ", ".join(ghost_names[:-2])
-                    insert = f"{name_line}, and {ghost_names[-1]}"
-                event = f"In the past moon {insert} have taken their places in StarClan. {game.clan.name}Clan mourns their loss, and " \
-                        f"their friends and family shared the best, and sometimes the worse, moments of their lives " \
-                        f"in stories passed around the circle of mourners as the elders carried them to their final " \
-                        f"resting place.",
-            else:
-                event = f"The past moon, {Cat.dead_cats[0].name} has taken their place in StarClan. {game.clan.name}Clan mourns their " \
-                        f"loss, and their friends and family shared the best, and sometimes the worse, moments of " \
-                        f"their lives in stories passed around the circle of mourners as the elders carried them to " \
-                        f"their final resting place. "
-            print(event)
-            game.cur_events_list.append(
-                Single_Event(event, ["birth_death"],
-                             [i.ID for i in Cat.dead_cats]))
-            Cat.dead_cats.clear()
+
         if Cat.grief_strings:
             remove_cats = []
             death_report_cats = []
@@ -185,6 +161,30 @@ class Events():
                                  item[1]))
 
             Cat.grief_strings.clear()
+
+        if Cat.dead_cats:
+            if len(Cat.dead_cats) > 1:
+                ghost_names = []
+                for ghost in Cat.dead_cats:
+                    ghost_names.append(str(ghost.name))
+                if len(ghost_names) == 2:
+                    insert = f"{ghost_names[0]} and {ghost_names[1]}"
+                else:
+                    name_line = ", ".join(ghost_names[:-1])
+                    insert = f"{name_line}, and {ghost_names[-1]}"
+                event = f"In the past moon {insert} have taken their places in StarClan. {game.clan.name}Clan mourns their loss, and " \
+                        f"their friends and family shared the best, and sometimes the worse, moments of their lives " \
+                        f"in stories passed around the circle of mourners as the elders carried them to their final " \
+                        f"resting place."
+            else:
+                event = f"The past moon, {Cat.dead_cats[0].name} has taken their place in StarClan. {game.clan.name}Clan mourns their " \
+                        f"loss, and their friends and family shared the best, and sometimes the worse, moments of " \
+                        f"their lives in stories passed around the circle of mourners as the elders carried them to " \
+                        f"their final resting place."
+            game.cur_events_list.append(
+                Single_Event(event, ["birth_death"],
+                             [i.ID for i in Cat.dead_cats]))
+            Cat.dead_cats.clear()
 
         self.check_clan_relations()
 
