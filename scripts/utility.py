@@ -250,6 +250,9 @@ def create_new_cat(Cat,
     accessory = None
     backstory = choice(backstory)
 
+    if backstory in (Cat.backstory_categories["former_clancat_backstories"] or Cat.backstory_categories["otherclan_categories"]):
+        other_clan = True
+
     created_cats = []
 
     if not litter:
@@ -388,12 +391,8 @@ def create_new_cat(Cat,
         created_cats.append(new_cat)
         game.clan.add_cat(new_cat)
 
-        # create relationship class
-        for inter_cat in Cat.all_cats.values():
-            if inter_cat.ID == new_cat.ID:
-                continue
-            inter_cat.relationships[new_cat.ID] = Relationship(inter_cat, new_cat)
-            new_cat.relationships[inter_cat.ID] = Relationship(new_cat, inter_cat)
+        # create relationships
+        new_cat.create_relationships_new_cat()
 
     return created_cats
 
@@ -403,10 +402,9 @@ def create_outside_cat(Cat, status, backstory):
         TODO: DOCS
         """
         suffix = ''
-        if 'rogue' in backstory:
+        if backstory in Cat.backstory_categories["rogue_backstories"]:
             status = 'rogue'
-        elif backstory in ['ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
-                         'tragedy_survivor', 'disgraced2', 'disgraced3', 'refugee5']:
+        elif backstory in Cat.backstory_categories["former_clancat_backstories"]:
             status = "former clancat"
         if status == 'kittypet':
             name = choice(names.names_dict["loner_names"])
@@ -425,6 +423,11 @@ def create_outside_cat(Cat, status, backstory):
         if status == 'kittypet':
             new_cat.accessory = choice(collars)
         new_cat.outside = True
+
+        # create relationships - only with outsiders 
+        # (this function will handle, that the cat only knows other outsiders)
+        new_cat.create_relationships_new_cat()
+
         # game.clan.add_cat(new_cat)
         game.clan.add_to_outside(new_cat)
         name = str(name + suffix)
@@ -938,25 +941,24 @@ def update_sprite(cat):
     # First make pelt, if it wasn't possible before
     if cat.pelt is None:
         init_pelt(cat)
-
             # THE SPRITE UPDATE
     # draw colour & style
     new_sprite = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
 
     # setting the cat_sprite (bc this makes things much easier)
-    if cat.paralyzed and not cat.not_working():
-        if cat.age in ['newborn', 'kitten', 'adolescent'] or game.config['fun']['all_cats_are_newborn']:
+    if cat.not_working() and cat.age != 'newborn':
+        if cat.age in ['kitten', 'adolescent']:
+            cat_sprite = str(19)
+        else:
+            cat_sprite = str(18)
+    elif cat.paralyzed and cat.age != 'newborn':
+        if cat.age in ['kitten', 'adolescent']:
             cat_sprite = str(17)
         else:
             if cat.pelt.length == 'long':
                 cat_sprite = str(16)
             else:
                 cat_sprite = str(15)
-    elif cat.not_working():
-        if cat.age in ['newborn', 'kitten', 'adolescent'] or game.config['fun']['all_cats_are_newborn']:
-            cat_sprite = str(19)
-        else:
-            cat_sprite = str(18)
     else:
         if cat.age == 'elder' and not game.config['fun']['all_cats_are_newborn']:
             cat.age = 'senior'
