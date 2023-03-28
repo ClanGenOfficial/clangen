@@ -546,7 +546,7 @@ class Events():
         lost_cat = None
         for cat in Cat.outside_cats.values():
             if cat.outside and cat.status not in [
-                    'kittypet', 'loner', 'rogue', 'former clancat'
+                    'kittypet', 'loner', 'rogue', 'former Clancat'
             ] and not cat.exiled and not cat.dead:
                 lost_cat = cat
                 break
@@ -623,7 +623,7 @@ class Events():
         if cat.moons == 1:
             cat.age = "kitten"
             if cat.status not in [
-                'kittypet', 'loner', 'rogue', 'former clancat'
+                'kittypet', 'loner', 'rogue', 'former Clancat'
             ]:
                 cat.status = "kitten"
         elif cat.moons == 6:
@@ -642,7 +642,7 @@ class Events():
                 cat.dead = True
                 if cat.exiled:
                     text = f'Rumors reach your Clan that the exiled {cat.name} has died recently.'
-                elif cat.status in ['kittypet', 'loner', 'rogue', 'former clancat']:
+                elif cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']:
                     text = f'Rumors reach your Clan that the {cat.status} ' \
                         f'{cat.name} has died recently.'
                 else:
