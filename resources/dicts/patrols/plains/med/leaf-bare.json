@@ -1,6 +1,5 @@
 [
-
-    {
+{
     "patrol_id": "pln_med_romance_leaf-bare1",
     "biome": "plains",
     "season": "leaf-bare",
@@ -18,7 +17,7 @@
         "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common, and the other cat bluntly refuses to talk about boring herbs.",
         "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with."
     ],
-    "win_skills": ["good mediator", "great mediator", "excellent mediator"],
+    "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "fail_trait": ["troublesome", "childish"],
     "min_cats": 2,
     "max_cats": 6,
@@ -43,7 +42,7 @@
         "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common.",
         "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious, troublesome, childish... simply not someone p_l enjoys interacting with."
     ],
-    "win_skills": ["good mediator", "great mediator", "excellent mediator"],
+    "win_skills": ["good speaker", "great speaker", "excellent speaker", "good mediator", "great mediator", "excellent mediator"],
     "fail_trait": ["troublesome", "childish"],
     "min_cats": 2,
     "max_cats": 6,
@@ -292,7 +291,7 @@
     "chance_of_success": 0,
     "exp": 10,
     "success_text": [
-            "It's miserable, scraping away snow pawful by awful cold pawful. However, p_l manages to find a patch of wilted and soggy but still green daisies to harvest from. Their Clanmates purr at the sight of the mushy green leaves, having spent just as much energy digging for them as p_l.",
+            "It's miserable work, scraping away snowy pawful by awful, cold pawful. However, p_l manages to find a patch of wilted, soggy, but still green daisies to harvest leaves from Their Clanmates purr at the sight of the mushy green leaves, having spent just as much energy digging for them as p_l.",
            "It feels nearly impossible, but the glimpse of soggy green stuff at the end of their cold search makes it all worth it! Or... kind of worth it. p_l is <i>sure</i> it'll seem worth it once they're all back in their nice, warm nests.",
             "It's not just spotting things that s_c is talented at - finding daisies in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that they manage it. It reminds everyone on the patrol just how lucky c_n is to have s_c as a medicine cat."
     ],

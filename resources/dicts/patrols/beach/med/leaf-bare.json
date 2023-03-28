@@ -30,7 +30,7 @@
     "season": "leaf-bare",
     "tags": ["herb_gathering", "med_cat", "med_only", "random_herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c", "rc_has_stat"],
     "intro_text": "p_l heads out, leading a patrol of medicine cats to go find any fresh herbs that have survived leaf-bare so far.",
-    "decline_text": "...And they're called back almost immediately, as one of the elders has started hacking something up.",
+    "decline_text": "... And they're called back almost immediately, as one of the elders has started hacking something up.",
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
@@ -291,7 +291,7 @@
     "chance_of_success": 0,
     "exp": 10,
     "success_text": [
-            "It's miserable, scraping away snow pawful by awful cold pawful. However, p_l manages to find a patch of wilted and soggy but still green daisies to harvest from. Their Clanmates purr at the sight of the mushy green leaves, having spent just as much energy digging for them as p_l.",
+            "It's miserable work, scraping away snowy pawful by awful, cold pawful. However, p_l manages to find a patch of wilted, soggy, but still green daisies to harvest leaves from Their Clanmates purr at the sight of the mushy green leaves, having spent just as much energy digging for them as p_l.",
            "It feels nearly impossible, but the glimpse of soggy green stuff at the end of their cold search makes it all worth it! Or... kind of worth it. p_l is <i>sure</i> it'll seem worth it once they're all back in their nice, warm nests.",
             "It's not just spotting things that s_c is talented at - finding daisies in leaf-bare is hard enough, but finding good, non-wilted leaves is next to impossible, and it's a mark of s_c's unique skills that they manage it. It reminds everyone on the patrol just how lucky c_n is to have s_c as a medicine cat."
     ],
