@@ -40,6 +40,7 @@ from scripts.event_class import Single_Event
 
 
 class Cat():
+    dead_cats = []
     used_screen = screen
     traits = [
         'adventurous', 'altruistic', 'ambitious', 'bloodthirsty', 'bold',
@@ -145,7 +146,7 @@ class Cat():
         'clan-born_backstories': ['clanborn', 'halfclan1', 'halfclan2', 'outsider_roots1', 'outsider_roots2'],
         'loner_backstories': ['loner1', 'loner2', 'refugee2', 'tragedy_survivor4'],
         'rogue_backstories': ['rogue1', 'rogue2', 'rogue3', 'refugee4', 'tragedy_survivor2'],
-        'kittypet_backstories': ['kittypet1', 'kittypet2', 'kittypet3', 'refugee3', 'tragedy_survivor3'],
+        'kittypet_backstories': ['kittypet1', 'kittypet2', 'kittypet3', 'refugee3', 'tragedy_survivor3', 'kittypet4'],
         'former_clancat_backstories': ['ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
                                        'tragedy_survivor', 'disgraced2', 'disgraced3', 'medicine_cat'],
         'otherclan_backstories': ['otherclan', 'otherclan2', 'otherclan3', 'other_clan1'],
@@ -189,7 +190,6 @@ class Cat():
                  moons=None,
                  example=False,
                  faded=False,
-                 # Set this to True if you are loading a faded cat. This will prevent the cat from being added to the list
                  loading_cat=False,  # Set to true if you are loading a cat at start-up.
                  **kwargs
                  ):
@@ -357,8 +357,6 @@ class Cat():
             else:
                 self.age = choice(['young adult', 'adult', 'adult', 'senior adult'])
             self.moons = random.randint(self.age_moons[self.age][0], self.age_moons[self.age][1])
-            print(f"lunadebug: cat {prefix} gen with id {self.ID} status {status} and rolled {self.moons} moons")
-            print(f"lunadebug: min: {self.age_moons[self.age][0]} max: {self.age_moons[self.age][1]}")
 
         # personality trait and skill
         if self.trait is None:
@@ -469,7 +467,9 @@ class Cat():
 
         # In camp status
         self.in_camp = 1
-        if game.clan is not None:
+        if "biome" in kwargs:
+            biome = kwargs["biome"]
+        elif game.clan is not None:
             biome = game.clan.biome
         else:
             biome = None
@@ -531,7 +531,7 @@ class Cat():
         """
         self.injuries.clear()
         self.illnesses.clear()
-        print('DEATH', self.name)
+        # print('DEATH', self.name)
         # Deal with leader death
         text = ""
         if self.status == 'leader':
@@ -564,6 +564,8 @@ class Cat():
 
         if game.clan.game_mode != 'classic':
             self.grief(body)
+
+        Cat.dead_cats.append(self)
 
         return text
 
@@ -729,7 +731,7 @@ class Cat():
     def add_to_clan(self):
         """ Makes a "outside cat" a clan cat. Former leaders, deputies will become warriors. Apprentices will be assigned a mentor."""
         self.outside = False
-        #print(self.name, self.moons)
+
         if self.status in ['leader', 'deputy']:
             self.status_change('warrior')
             self.status = 'warrior'
@@ -751,7 +753,7 @@ class Cat():
             game.cur_events_list.append(Single_Event('A long overdue apprentice ceremony is held for ' + str(
                 self.name.prefix) + 'kit. They smile as they finally become a warrior of the Clan and are now named ' + str(
                 self.name) + '.', "ceremony", involved_cats))
-        elif self.status in ['kittypet', 'loner', 'rogue']:
+        elif self.status in ['kittypet', 'loner', 'rogue', 'former Clancat']:
             if self.moons == 0:
                 self.status = 'newborn'
             elif self.moons < 6:
@@ -1152,11 +1154,8 @@ class Cat():
         if not self.relationships or len(self.relationships) < 1:
             return
 
-        cats_to_choose = list(
-            filter(lambda
-                       iter_cat: iter_cat.ID != self.ID and not iter_cat.outside and not iter_cat.exiled and not iter_cat.dead,
-                   Cat.all_cats.values())
-        )
+        cats_to_choose = [iter_cat for iter_cat in Cat.all_cats.values() if iter_cat.ID != self.ID and\
+                          not iter_cat.outside and not iter_cat.exiled and not iter_cat.dead]
         # if there are not cats to interact, stop
         if len(cats_to_choose) < 1:
             return
@@ -1691,7 +1690,7 @@ class Cat():
         elif born_with is False:
             moons_until = 0
 
-        if condition == "paralyzed":
+        if name == "paralyzed":
             self.paralyzed = True
             update_sprite(self)
 
@@ -1719,7 +1718,6 @@ class Cat():
                 "event_triggered": new_perm_condition.new
             }
             new_condition = True
-        print(self.permanent_condition)
         return new_condition
 
     def not_working(self):
@@ -2207,11 +2205,31 @@ class Cat():
 
     def create_one_relationship(self, other_cat: Cat):
         """Create a new relationship between current cat and other cat. Returns: Relationship"""
+        if other_cat.ID in self.relationships:
+            return None
         relationship = Relationship(self, other_cat)
         self.relationships[other_cat.ID] = relationship
         return relationship
 
-    def create_all_relationships(self):
+    def create_relationships_new_cat(self):
+        """Create relationships for a new generated cat."""
+        for inter_cat in Cat.all_cats.values():
+            # the inter_cat is the same as the current cat
+            if inter_cat.ID == self.ID:
+                continue
+            # if the cat already has (somehow) a relationship with the inter cat
+            if inter_cat.ID in self.relationships:
+                continue
+            # if they dead (dead cats have no relationships)
+            if self.dead or inter_cat.dead:
+                continue
+            # if they are not outside of the clan at the same time
+            if self.outside and not inter_cat.outside or not self.outside and inter_cat.outside:
+                continue
+            inter_cat.relationships[self.ID] = Relationship(inter_cat, self)
+            self.relationships[inter_cat.ID] = Relationship(self, inter_cat)
+
+    def init_all_relationships(self):
         """Create Relationships to all current Clancats."""
         for id in self.all_cats:
             the_cat = self.all_cats.get(id)
@@ -2320,7 +2338,7 @@ class Cat():
         self.relationships = {}
         if os.path.exists(relation_directory):
             if not os.path.exists(relation_cat_directory):
-                self.create_all_relationships()
+                self.init_all_relationships()
                 for cat in Cat.all_cats.values():
                     cat.relationships[self.ID] = Relationship(cat, self)
                 return
@@ -2808,10 +2826,10 @@ def create_example_cats():
                    'NOLEFTEAR', 'NORIGHTEAR', 'MANLEG']
     for a in range(12):
         if a in e:
-            game.choose_cats[a] = Cat(status='warrior')
+            game.choose_cats[a] = Cat(status='warrior', biome=None)
         else:
             game.choose_cats[a] = Cat(status=choice(
-                ['kitten', 'apprentice', 'warrior', 'warrior', 'elder']))
+                ['kitten', 'apprentice', 'warrior', 'warrior', 'elder']), biome=None)
         if game.choose_cats[a].moons >= 160:
             game.choose_cats[a].moons = choice(range(120, 155))
         elif game.choose_cats[a].moons == 0:
@@ -2819,7 +2837,9 @@ def create_example_cats():
         for scar in game.choose_cats[a].scars:
             if scar in not_allowed:
                 game.choose_cats[a].scars.remove(scar)
+    
         update_sprite(game.choose_cats[a])
+    
 
 
 # CAT CLASS ITEMS

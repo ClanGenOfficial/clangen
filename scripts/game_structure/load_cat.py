@@ -97,8 +97,6 @@ def json_load():
             new_cat.patrol_with_mentor = cat["patrol_with_mentor"] if "patrol_with_mentor" in cat else 0
             new_cat.mentor_influence = cat["mentor_influence"] if "mentor_influence" in cat else []
             new_cat.paralyzed = cat["paralyzed"]
-            if new_cat.paralyzed:
-                new_cat.get_permanent_condition("paralyzed")
             new_cat.no_kits = cat["no_kits"]
             new_cat.exiled = cat["exiled"]
             new_cat.cat_sprites['kitten'] = cat["sprite_kitten"] if "sprite_kitten" in cat else cat["spirit_kitten"]
@@ -238,6 +236,13 @@ def json_load():
     # replace cat ids with cat objects and add other needed variables
     for cat in all_cats:
         cat.load_conditions()
+
+        # this is here to handle paralyzed cats in old saves
+        if cat.paralyzed and "paralyzed" not in cat.permanent_condition:
+            cat.get_permanent_condition("paralyzed")
+        elif "paralyzed" in cat.permanent_condition and not cat.paralyzed:
+            cat.paralyzed = True
+
         # load the relationships
         if not cat.dead:
             game.switches[
@@ -247,7 +252,7 @@ def json_load():
             game.switches[
                 'error_message'] = f'There was an error when relationships for cat #{cat} are created.'
             if cat.relationships is not None and len(cat.relationships) < 1:
-                cat.create_all_relationships()
+                cat.init_all_relationships()
         else:
             cat.relationships = {}
 
