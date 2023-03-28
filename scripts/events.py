@@ -694,10 +694,6 @@ class Events():
             if cat.dead:
                 return
 
-        # check for death/reveal/risks/retire caused by permanent conditions
-        if cat.is_disabled():
-            self.condition_events.handle_already_disabled(cat)
-
         # prevent injured or sick cats from unrealistic clan events
         if cat.is_ill() or cat.is_injured():
             if cat.is_ill() and cat.is_injured():
@@ -723,15 +719,6 @@ class Events():
                 game.switches['skip_conditions'].clear()
 
             self.handle_outbreaks(cat)
-            self.coming_out(cat)
-            self.pregnancy_events.handle_having_kits(cat, clan=game.clan)
-            self.handle_apprentice_EX(cat)
-            self.perform_ceremonies(cat)
-            cat.create_interaction()
-            # this is the new interaction function, currently not active
-            # cat.relationship_interaction()
-            cat.thoughts()
-            return
 
         # newborns don't do much
         if cat.status == 'newborn':
@@ -739,14 +726,17 @@ class Events():
             cat.thoughts()
             return
 
+        # this HAS TO be before the cat.is_disabled() so that disabled kits can choose a med cat or mediator position
+        self.perform_ceremonies(cat)
+
+        # check for death/reveal/risks/retire caused by permanent conditions
+        if cat.is_disabled():
+            self.condition_events.handle_already_disabled(cat)
+
         self.coming_out(cat)
         self.pregnancy_events.handle_having_kits(cat, clan=game.clan)
         self.handle_apprentice_EX(cat)
-        self.perform_ceremonies(cat)
         cat.create_interaction()
-        self.invite_new_cats(cat)
-        self.other_interactions(cat)
-        self.gain_accessories(cat)
 
         # this is the new interaction function, currently not active
         # cat.relationship_interaction()
@@ -755,6 +745,14 @@ class Events():
         # relationships have to be handled separately, because of the ceremony name change
         if not cat.dead or cat.outside:
             self.relation_events.handle_relationships(cat)
+
+        # now we make sure ill and injured cats don't get interactions they shouldn't
+        if cat.is_ill() or cat.is_injured():
+            return
+
+        self.invite_new_cats(cat)
+        self.other_interactions(cat)
+        self.gain_accessories(cat)
 
         # switches between the two death handles
         if random.getrandbits(1):
@@ -773,8 +771,6 @@ class Events():
                 return
 
         game.switches['skip_conditions'].clear()
-
-
 
 
     def check_clan_relations(self):
@@ -972,6 +968,11 @@ class Events():
                             'wise', 'faithful'
                     ]:
                         chance = int(chance / 1.3)
+                    if cat.is_disabled():
+                        chance = int(chance / 2)
+
+                    if chance == 0:
+                        chance = 1
 
                     if not has_med_app and not int(random.random() * chance):
                         self.ceremony(cat, 'medicine cat apprentice')
@@ -997,6 +998,11 @@ class Events():
                                 'wise', 'thoughtful'
                         ]:
                             chance = int(chance / 1.5)
+                        if cat.is_disabled():
+                            chance = int(chance / 2)
+
+                        if chance == 0:
+                            chance = 1
 
                         # Only become a mediator if there is already one in the clan.
                         if mediator_list and not has_mediator_apprentice and \
