@@ -126,8 +126,7 @@ def bs_blurb_text(cat):
     
     if backstory != None and backstory in backstory_text:
         return backstory_text.get(backstory, "")
-    else:
-        if cat.status in ['kittypet', 'loner', 'rogue', 'former clancat']:
+    if cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']:
             return f"This cat is a {cat.status} and currently resides outside of the Clans."
     
     return backstory_text.get(backstory, "")
@@ -917,7 +916,7 @@ class ProfileScreen(Screens):
 
         # STATUS
         if the_cat.outside and not the_cat.exiled and not the_cat.status in ['kittypet', 'loner', 'rogue',
-                                                                             'former clancat']:
+                                                                             'former Clancat']:
             output += "<font color='#FF0000'>lost</font>"
         elif the_cat.exiled:
             output += "<font color='#FF0000'>exiled</font>"
@@ -1236,7 +1235,7 @@ class ProfileScreen(Screens):
 
     def get_influence_text(self):
         influence_history = None
-        if self.the_cat.status in ['kittypet', 'loner', 'rogue']:
+        if self.the_cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']:
             return ""
         # check if cat has any mentor influence, else assign None
         if len(self.the_cat.mentor_influence) >= 1:

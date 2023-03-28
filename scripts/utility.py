@@ -419,7 +419,8 @@ def create_outside_cat(Cat, status, backstory):
         new_cat = Cat(prefix=name,
                       suffix=suffix,
                       status=status,
-                      gender=choice(['female', 'male']))
+                      gender=choice(['female', 'male']),
+                      backstory=backstory)
         if status == 'kittypet':
             new_cat.accessory = choice(collars)
         new_cat.outside = True
