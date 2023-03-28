@@ -535,6 +535,9 @@ def csv_load(all_cats):
                 cat['white_patches'] = cat['white_patches'].replace('ANY2', 'ANYTWO')
                 cat['white_patches'] = cat['white_patches'].replace('CREAMY', '')
             
+            if cat['status'] == 'elder':
+                cat['status'] = 'senior'
+            
             cat.update(tortie_vars)
 
             cat['eye_colour2'] = cat['eye_colour']
