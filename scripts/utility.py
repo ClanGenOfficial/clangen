@@ -403,10 +403,9 @@ def create_outside_cat(Cat, status, backstory):
         TODO: DOCS
         """
         suffix = ''
-        if 'rogue' in backstory:
+        if backstory in Cat.backstory_categories["rogue_backstories"]:
             status = 'rogue'
-        elif backstory in ['ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
-                         'tragedy_survivor', 'disgraced2', 'disgraced3', 'refugee5']:
+        elif backstory in Cat.backstory_categories["former_clancat_backstories"]:
             status = "former clancat"
         if status == 'kittypet':
             name = choice(names.names_dict["loner_names"])
@@ -425,7 +424,6 @@ def create_outside_cat(Cat, status, backstory):
         if status == 'kittypet':
             new_cat.accessory = choice(collars)
         new_cat.outside = True
-        # game.clan.add_cat(new_cat)
         game.clan.add_to_outside(new_cat)
         name = str(name + suffix)
 
