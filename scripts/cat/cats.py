@@ -1686,7 +1686,7 @@ class Cat():
             if moons_until < 0:
                 moons_until = 0
 
-        if born_with and self.status != 'kitten':
+        if born_with and self.status not in ['kitten', 'newborn']:
             moons_until = -2
         elif born_with is False:
             moons_until = 0
@@ -1719,7 +1719,7 @@ class Cat():
                 "event_triggered": new_perm_condition.new
             }
             new_condition = True
-
+        print(self.permanent_condition)
         return new_condition
 
     def not_working(self):
