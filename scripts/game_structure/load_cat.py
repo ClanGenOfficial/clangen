@@ -236,6 +236,13 @@ def json_load():
     # replace cat ids with cat objects and add other needed variables
     for cat in all_cats:
         cat.load_conditions()
+
+        # this is here to handle paralyzed cats in old saves
+        if cat.paralyzed and "paralyzed" not in cat.permanent_condition:
+            cat.get_permanent_condition("paralyzed")
+        elif "paralyzed" in cat.permanent_condition and not cat.paralyzed:
+            cat.paralyzed = True
+
         # load the relationships
         if not cat.dead:
             game.switches[
