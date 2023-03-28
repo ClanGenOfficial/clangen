@@ -6,7 +6,7 @@
     "tags": ["herb", "raspberry", "training", "injury", "poisoned", "comfort", "trust", "no_herbs0", "no_herbs2"],
     "intro_text": "While out training, r_c stumbles upon a bush of red berries.",
     "decline_text": "r_c decides not to touch the berries.",
-    "chance_of_success": 80,
+    "chance_of_success": 70,
     "exp": 20,
     "success_text": [
         "Unsure but remembering the kittentales of red deathberries, r_c avoids them, and gives the rest of the patrol a head's up about the potentially dangerous bush.",
@@ -38,7 +38,7 @@
     "tags": ["herb", "raspberry","training", "apprentice", "injury", "poisoned", "death", "no_herbs0"],
     "intro_text": "While helping gathering herbs, r_c stumbles upon a bush of red berries.",
     "decline_text": "r_c decides not to touch the berries.",
-    "chance_of_success": 80,
+    "chance_of_success": 70,
     "exp": 20,
     "success_text": [
         "Unsure but remembering the kittentales of red deathberries, app1 avoids them and alerts the patrol, who, extremely worried, confirm that this a deathberry bush.",
@@ -67,7 +67,7 @@
     "tags": ["herb", "raspberry", "training", "injury", "poisoned", "no_herbs0", "no_herbs2"],
     "intro_text": "While helping gathering herbs, r_c stumbles upon a bush of red berries.",
     "decline_text": "r_c decides not to touch the berries.",
-    "chance_of_success": 80,
+    "chance_of_success": 70,
     "exp": 20,
     "success_text": [
         "Unsure but remembering the kittentales of red deathberries, r_c avoids them, and gives the rest of the patrol a head's up about the potentially dangerous bush.",
@@ -98,7 +98,7 @@
     "tags": ["herb", "raspberry", "training", "apprentice", "injury", "poisoned", "death", "no_herbs0"],
     "intro_text": "While helping gathering herbs, r_c stumbles upon a bush of red berries.",
     "decline_text": "r_c decides not to touch the berries.",
-    "chance_of_success": 80,
+    "chance_of_success": 70,
     "exp": 20,
     "success_text": [
         "Unsure but remembering the kittentales of red deathberries, app1 avoids them and alerts the patrol, who, extremely worried, confirm that this a deathberry bush.",
@@ -127,7 +127,7 @@
     "tags": ["platonic", "training"],
     "intro_text": "The patrol finds a nice spot to sun themselves.",
     "decline_text": "They decide to stay focused instead.",
-    "chance_of_success": 90,
+    "chance_of_success": 80,
     "exp": 20,
     "success_text": [
         "The sunlight feels great and the cats have a successful training session, swapping tips and advice as they stretch out and bask.",
@@ -172,7 +172,7 @@
     "tags": ["platonic", "romantic", "big_change", "no_app", "training"],
     "intro_text": "p_l and r_c find a nice spot to sun themselves.",
     "decline_text": "They decide to stay focused instead.",
-    "chance_of_success": 90,
+    "chance_of_success": 80,
     "exp": 20,
     "success_text": [
         "The sunlight feels so warm on p_l's pelt, and they stretch, lazily lengthening into one long arc of cat. r_c's whiskers twitch with interest as they studiously look elsewhere.",
@@ -197,7 +197,7 @@
     "tags": ["app_stat", "big_change", "platonic", "romantic", "apprentice", "two_apprentices", "training"],
     "intro_text": "app1 and app2 find a nice spot to sun themselves.",
     "decline_text": "They decide to stay focused instead.",
-    "chance_of_success": 90,
+    "chance_of_success": 80,
     "exp": 20,
     "success_text": [
         "app1 nearly dozes off, but they can't quite get to sleep, app2 seems shifting around. Are they uncomfortable? app1 opens one of their eyes, to see app2 staring at them.",
@@ -222,7 +222,7 @@
     "tags": ["training", "dislike", "comfort", "respect", "trust", "patrol_to_p_l"],
     "intro_text": "Your patrol has a disagreement and look to p_l to settle the dispute.",
     "decline_text": "Your patrol decides to head home.",
-    "chance_of_success": 70,
+    "chance_of_success": 60,
     "exp": 20,
     "success_text": [
         "p_l manages to skillfully smooth over any disagreement.",

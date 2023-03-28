@@ -714,12 +714,12 @@ class Patrol():
 
         # if patrol contains cats with autowin skill, chance of success is high. otherwise it will calculate the
         # chance by adding the patrol event's chance of success plus the patrol's total exp
-        success_chance = self.patrol_event.chance_of_success + int(
-            self.patrol_total_experience / (7.5 * gm_modifier))
+        success_adjust = (1 + 0.10) * len(self.patrol_cats) * self.patrol_total_experience / (len(self.patrol_cats) * gm_modifier)
+        success_chance = self.patrol_event.chance_of_success + success_adjust
 
         # Auto-wins based on EXP are sorta lame. Often makes it immpossible for large patrols with experiences cats to fail patrols at all. 
-        # EXP alone can only bring success chance up to 95. However, skills/traits can bring it up above that. 
-        success_chance = min(success_chance, 95)
+        # EXP alone can only bring success chance up to 85. However, skills/traits can bring it up above that. 
+        success_chance = min(success_chance, 90)
 
         print('starting chance:', self.patrol_event.chance_of_success, "| EX_updated chance:", success_chance)
         skill_updates = ""
@@ -741,7 +741,7 @@ class Patrol():
         print(skill_updates)
         print('ending chance', success_chance)
 
-        c = randint(0, 100)
+        c = int(random.getrandbits(7))
         outcome = int(random.getrandbits(4))
 
         # denotes if they get the common "basic" outcome or the rare "basic" outcome
@@ -815,13 +815,16 @@ class Patrol():
             u = int(random.getrandbits(4))
             if u >= 10:
                 unscathed = True
+                print("Unscathed true")
             else:
                 unscathed = False
+                print("Unscathed false")
 
             outcome = 0  # unscathed and common outcome, the default failure
 
             # first we check for a fail stat outcome
-            if self.patrol_fail_stat_cat:
+            if self.patrol_fail_stat_cat is not None:
+                print("Fail stat cat")
                 # safe, just failed
                 if unscathed and len(fail_text) >= 2:
                     if fail_text[1]:
@@ -836,7 +839,7 @@ class Patrol():
                         outcome = 5
 
             # if no fail stat cat or outcomes, then onto the injured/dead outcomes
-            if not outcome and not unscathed:
+            if not unscathed:
                 # injured
                 if common and len(fail_text) > 4:
                     if fail_text[3]:
@@ -849,16 +852,27 @@ class Patrol():
                 elif rare and len(fail_text) >= 3:
                     if fail_text[2]:
                         outcome = 2
+                # making sure unscathed fail is always unscathed
+                else:
+                    if len(fail_text) > 3:
+                        if fail_text[3]:
+                            outcome = 3
+                    elif len(fail_text) > 2:
+                        if fail_text[2]:
+                            outcome = 2
+                    else:
+                        outcome = 0
+            else:
+                # if /still/ no outcome is picked then double check that an outcome 0 is available,
+                # if it isn't, then try to injure and then kill the cat
+                if not fail_text[0]:
+                    # attempt death outcome
+                    if fail_text[2]:
+                        outcome = 2
+                    # attempt injure outcome
+                    elif fail_text[3]:
+                        outcome = 3
 
-            # if /still/ no outcome is picked then double check that an outcome 0 is available,
-            # if it isn't, then try to injure and then kill the cat
-            if not outcome and not fail_text[0]:
-                # attempt death outcome
-                if fail_text[2]:
-                    outcome = 2
-                # attempt injure outcome
-                elif fail_text[3]:
-                    outcome = 3
             if not antagonize or antagonize and "antag_death" in self.patrol_event.tags:
                 if outcome == 2:
                     self.handle_deaths_and_gone(self.patrol_random_cat)
@@ -949,12 +963,15 @@ class Patrol():
         other_clan = None
         cat_type = None
 
-        if ("kittypet" or "loner" or "otherclan") not in attribute_list:
-            cat_type = choice(['kittypet', 'loner', 'other_clan'])
+        if ("kittypet" or "loner" or "former_clancat" or "rogue") not in attribute_list:
+            cat_type = choice(['kittypet', 'loner', 'former_clancat'])
         if cat_type == 'kittypet' or "kittypet" in attribute_list:
             kittypet = True
             new_name = choice([True, False])
-            backstory = ['kittypet1', 'kittypet2', 'kittypet3', 'refugee3', 'tragedy_survivor3']
+            if "abandonedkittypet" in self.patrol_event.patrol_id:
+                backstory = ['kittypet4', 'kittypet4']
+            else:
+                backstory = Cat.backstory_categories["kittypet_backstories"]
             if not success:
                 outsider = create_outside_cat(Cat, "kittypet", backstory=choice(backstory))
                 self.results_text.append(f"The Clan has met {outsider}.")
@@ -962,8 +979,27 @@ class Patrol():
         elif cat_type == 'loner' or "loner" in attribute_list:
             loner = True
             new_name = choice([True, False])
-            backstory = ['loner1', 'loner2', 'rogue1', 'rogue2', 'refugee2', 'tragedy_survivor4',
-                         'refugee4', 'tragedy_survivor2']
+            backstory = Cat.backstory_categories["loner_backstories"]
+            if "medcat" in attribute_list:
+                backstory = ["medicine_cat", "disgraced"]
+            if not success:
+                outsider = create_outside_cat(Cat, "loner", backstory=choice(backstory))
+                self.results_text.append(f"The Clan has met {outsider}.")
+                return
+        elif cat_type == 'rogue' or 'rogue' in attribute_list:
+            loner = True
+            new_name = choice([True, False])
+            backstory = Cat.backstory_categories["rogue_backstories"]
+            if not success:
+                outsider = create_outside_cat(Cat, "rogue", backstory=choice(backstory))
+                self.results_text.append(f"The Clan has met {outsider}.")
+                return
+        elif cat_type == 'former_clancat' or "former_clancat" in attribute_list:
+            loner = False
+            new_name = False
+            backstory = Cat.backstory_categories["former_clancat_backstories"]
+            if "medcat" in attribute_list:
+                backstory = ["medicine_cat", "disgraced"]
             if not success:
                 outsider = create_outside_cat(Cat, "loner", backstory=choice(backstory))
                 self.results_text.append(f"The Clan has met {outsider}.")
@@ -971,16 +1007,11 @@ class Patrol():
         else:
             other_clan = self.other_clan
             # failsafe in case self.other_clan is None for some reason
-            backstory = ['ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
-                         'tragedy_survivor', 'disgraced2', 'disgraced3', 'refugee5']
+            backstory = Cat.backstory_categories["former_clancat_backstories"]
             if not other_clan:
                 loner = True
                 new_name = choice([True, False])
-                backstory = ['loner1', 'loner2', 'rogue1', 'rogue2', 'refugee2', 'tragedy_survivor4',
-                             'refugee4', 'tragedy_survivor2']
-            if not success:
-                outsider = create_outside_cat(Cat, "loner", backstory=choice(backstory))
-                self.results_text.append(f"The Clan has met {outsider}.")
+                backstory = Cat.backstory_categories["rogue_backstories"]
                 return
 
         # handing out ranks
