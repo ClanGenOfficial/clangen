@@ -285,7 +285,7 @@
     "biome": "mountainous",
     "season": "greenleaf",
     "tags": ["herb_gathering", "med_only", "med_cat", "herb", "catmint", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
-    "intro_text": "p_l waits until they're out of camp to reveal to app1 that they're off to find catmint - a 'helpful' group of 'helpers' can be a little, well, unhelpful. Catmint is just too exciting for many of their Clanmates to keep their heads around, and p_l wants to take advantage of the peak greenleaf growing season.",
+    "intro_text": "p_l waits until they're out of camp to reveal to app1 that they're off to find catmint - a 'helpful' group of 'helpers' can be a little... well, unhelpful. Catmint is just too exciting for many of their Clanmates to keep their heads around, and p_l wants to take advantage of the peak greenleaf growing season.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
     "chance_of_success": 40,
     "exp": 30,
@@ -314,7 +314,7 @@
     "exp": 10,
     "success_text": [
             "The warriors keep their heads, with the more experienced of p_l's helpers making themselves useful keeping those that are young or more impulsive focused on their task. The medicine cat and their team carefully pick out catmint from its known hiding places, carting it back to camp where it will protect the Clan.",
-            "It takes a morning full of careful searching, but eventually one of the catmint plants p_l remembers from seasons past is revisited, and to their delight, it's growing well. p_l keeps the patrol back from the plant, not willing to let them roll around on top of it, but the warriors are perfectly happy to carry their wild smelling burdens home without fuss.",
+            "It takes a morning full of careful searching, but eventually one of the catmint plants p_l remembers from seasons past is revisited, and to their delight, it's growing well. p_l keeps the patrol back from the plant, not willing to let them roll around on top of it, but the warriors are perfectly happy to carry their wild-smelling burdens home without fuss.",
             "s_c has a few baby catmint sprouts they've been leaving alone through newleaf, and greenleaf means it's time to see if they're harvestable. They are, and s_c is able to bring huge quantities of the valuable herb home, though a couple sprigs are damaged by their helpers."
     ],
     "fail_text": [
@@ -699,10 +699,10 @@
     "chance_of_success": 30,
     "exp": 20,
     "success_text": [
-        "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest while the growing season is upon them. For just a second, they feel the weight of their responsibilities lift, and they let out a whoop and stop to play with app1.",
+        "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest while the growing season is upon them. For just a second, they feel the weight of their responsibilities lift, and they let out a yowl and stop to play with app1.",
         "app1 listens intently as the hours drift slowly by in their intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort! p_l showers them with praise, app1 feeling like they could burst with pride over their accomplishment.",
         "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until, finally, those telltale speckled leaves are found.",
-        "Night falls, and still s_c insists they keep going. Lungwort is the only reliable cure for yellowcough, and they just can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find the precious, speckled leaves."
+        "Night falls, and still s_c insists they keep going. Lungwort is the only reliable cure for yellowcough, and they just can't let c_n go without. Exhausted, but determined, the medicine cats persist patiently until they finally find the precious, speckled leaves."
     ],
     "fail_text": [
         "Not only do they not find anything, app1 seems to not be taking in a single thing p_l tries to teach, and by the time they're back at camp p_l wants to screech."

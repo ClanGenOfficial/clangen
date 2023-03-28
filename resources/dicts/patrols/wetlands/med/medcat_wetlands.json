@@ -4,13 +4,13 @@
     "biome": "wetlands",
     "season": "Any",
     "tags": ["herb_gathering", "comfort", "respect", "trust", "med_cat","med_only"],
-    "intro_text": "p_l sees weird ripples on the water of a puddle while gathering fresh water." ,
-    "decline_text": "p_l is in a hurry and does not stop to look at the ripples.",
+    "intro_text": "While gathering fresh water, p_l sees strange ripples on the surface of a puddle." ,
+    "decline_text": "p_l is in too much of a hurry, not sparing the rippling water a second glance.",
     "chance_of_success": 45,
     "exp": 10, 
     "success_text": [
-            "As p_l looks into the puddle they are greeted by an intense vision. They drop what they are doing and race back to the camp to tell and consult with their leader.",
-            "They are greeted with the vision of a cat they had failed to save looking content and happy in StarClan saying that they were not at fault for their death. They feel unburdened and at peace after receiving that vision."
+            "As p_l looks into the puddle, they are greeted by an intense vision. They drop what they are doing and race back to the camp to consult with the leader - water can wait, this is far too important.",
+            "They are greeted with the vision of a cat they had failed to save, content and happy in StarClan. The cat gives them a gentle smile, softly telling p_l that they were never at fault for their death. They feel their shoulders sag with the weight of their relief, feeling the burden of the death lift from over their head."
     ],
     "fail_text": [
             "They gaze into the puddle only to see the weird ripples were caused by a feather falling on the puddle. p_l feels disappointed because they really could have used some guidance from StarClan."
@@ -25,18 +25,18 @@
     "biome": "wetlands",
     "season": "Any",
     "tags": ["herb_gathering", "med_cat", "apprentice", "trust", "respect", "med_only"],
-    "intro_text": "p_l decides it's a good opportunity to show app1 where the most commonly needed herbs are in the territory, both on even and uneven ground.",
-    "decline_text": "As they see app1's absent minded gaze they change their mind. Maybe another day when app1 is more focused and less liable to slip and fall off the mountain.",
+    "intro_text": "p_l looks at the calm, cloudless sky, and decides it's a good opportunity to show app1 where some of the most commonly needed herbs are located in their territory, both on even and uneven ground.",
+    "decline_text": "As they look at app1's absent-minded gaze, they hesitate and change their mind. Maybe another day would be best, when app1 is more focused and less liable to slip and fall off the mountain.",
     "chance_of_success": 65,
     "exp": 10,
     "success_text": [
-        "app1 is focused and attentive. p_l is confident that next time there is an emergency, app1 will be able to find those herbs both on even and uneven ground without them if needed.",
+        "app1 is focused and attentive, giving p_l confidence that next time there is an emergency, app1 will be able to find the herbs they need both on even and uneven ground without them if needed.",
         "As p_l is explaining why and where the herbs are growing app1 lets out a shout. To p_l's surprise they have found a previously unknown patch of a uncommon herb. Stunned and filled with pride that they found and recognized the herb, p_l promises them the first pick of fresh-kill.",
         null,
         null
     ],
     "fail_text": [ 
-        "app1 is constantly distracted and running ahead much to the frustration of p_l. Evidently no new knowledge will be learned that day."
+        "app1 is constantly distracted, running ahead at every little noise or interesting sight, much to the frustration of p_l. Evidently, no new knowledge will be gained that day."
     ],
     "min_cats": 2,
     "max_cats": 2,
@@ -53,13 +53,13 @@
     "chance_of_success": 65,
     "exp": 10,
     "success_text": [
-        "app1 is focused and determined to prove their independence. They find the herbs easily, and bring them back to camp with their head held up high, no sweat, no stress, no fuss.",
-        "app1 goes to a known herb patch - but the plant has died! They don't give up, hunting around in the area until they find a smaller overlooked bush that still has leaves on it.",
+        "app1 is focused, determined to prove their independence. They find the herbs easily and bring them back to camp with their head held up high - no sweat, no stress, no fuss.",
+        "app1 goes to an herb patch they're sure they know, only to find the plants withered and dead. They don't give up, hunting around in the area until they find a smaller overlooked bush that still has leaves on it.",
         null,
         null
     ],
     "fail_text": [ 
-        "app1 goes to a known herb patch - but the plant has died! They give up and return to camp, feeling terrible."
+        "app1 goes to an herb patch they're sure they know, only to find the plants withered and dead. They give up and return to camp, their tail dragging miserably along the ground."
     ],
     "min_cats": 1,
     "max_cats": 1,
@@ -79,7 +79,7 @@
         "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to replenishing the Clan's stores after the long leaf-bare. For just a second, p_l feels the weight of their responsibilities lift, and they let out a whoop and stop to play with app1.",
         "app1 listens intently as the hours drift slowly by in their intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort! p_l showers them with praise, app1 feeling like they could burst with pride over their accomplishment.",
         "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until, finally, those telltale speckled leaves are found.",
-        "Night falls, and still s_c insists they keep going. Lungwort is the only reliable cure for yellowcough, and they just can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find the precious, speckled leaves."
+        "Night falls, and still s_c insists they keep going. Lungwort is the only reliable cure for yellowcough, and they just can't let c_n go without. Exhausted, but determined, the medicine cats persist patiently until they finally find the precious, speckled leaves."
     ],
     "fail_text": [
         "Not only do they not find anything, app1 seems to not be taking in a single thing p_l tries to teach, and by the time they're back at camp p_l wants to screech."
@@ -158,10 +158,10 @@
     "chance_of_success": 60,
     "exp": 20,
     "success_text": [
-        "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest while the growing season is upon them. For just a second, they feel the weight of their responsibilities lift, and they let out a whoop and stop to play with app1.",
+        "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest while the growing season is upon them. For just a second, they feel the weight of their responsibilities lift, and they let out a yowl and stop to play with app1.",
         "app1 listens intently as the hours drift slowly by in their intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort! p_l showers them with praise, app1 feeling like they could burst with pride over their accomplishment.",
         "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until, finally, those telltale speckled leaves are found.",
-        "Night falls, and still s_c insists they keep going. Lungwort is the only reliable cure for yellowcough, and they just can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find the precious, speckled leaves."
+        "Night falls, and still s_c insists they keep going. Lungwort is the only reliable cure for yellowcough, and they just can't let c_n go without. Exhausted, but determined, the medicine cats persist patiently until they finally find the precious, speckled leaves."
     ],
     "fail_text": [
         "Not only do they not find anything, app1 seems to not be taking in a single thing p_l tries to teach, and by the time they're back at camp p_l wants to screech."
@@ -243,7 +243,7 @@
         "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest before the plant dies back in leaf-bare. For just a second, they feel the weight of their responsibilities lift, and they let out a whoop and stop to play with app1.",
         "app1 listens intently as the hours drift slowly by in their intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort! p_l showers them with praise, app1 feeling like they could burst with pride over their accomplishment.",
         "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until, finally, those telltale speckled leaves are found.",
-        "Night falls, and still s_c insists they keep going. Lungwort is the only reliable cure for yellowcough, and they just can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find the precious, speckled leaves."
+        "Night falls, and still s_c insists they keep going. Lungwort is the only reliable cure for yellowcough, and they just can't let c_n go without. Exhausted, but determined, the medicine cats persist patiently until they finally find the precious, speckled leaves."
     ],
     "fail_text": [
         "Not only do they not find anything, app1 seems to not be taking in a single thing p_l tries to teach, and by the time they're back at camp p_l wants to screech."
@@ -325,7 +325,7 @@
         "p_l heads directly for a sheltered valley, a confused app1 trailing behind them. There, they dig for a lungwort plant they know is under the snow, and show app1 that while the plant is dormant for the winter, the snow has preserved its leaf-fall greenery and kept them fresh - or fresh enough to still be useful anyway.",
         "app1 listens intently as the hours drift slowly by in their intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort, poking out from the snow! p_l showers them with praise, app1 feeling like they could burst with pride over their accomplishment.",
         "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until, finally, those telltale speckled leaves are found under a snowy blanket.",
-        "Night falls, and still s_c insists they keep going. Lungwort is the only reliable cure for yellowcough, and they just can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find the precious, speckled leaves."
+        "Night falls, and still s_c insists they keep going. Lungwort is the only reliable cure for yellowcough, and they just can't let c_n go without. Exhausted, but determined, the medicine cats persist patiently until they finally find the precious, speckled leaves."
     ],
     "fail_text": [
         "Not only do they not find anything, app1 seems to not be taking in a single thing p_l tries to teach, and by the time they're back at camp p_l wants to screech."
@@ -629,15 +629,15 @@
     "biome": "wetlands",
     "season": "Any",
     "tags": ["herb_gathering", "med_cat", "apprentice", "med_only", "herb"],
-    "intro_text": "p_l is out to gather a few herbs at the behest of their mentor. The wind is gently rustling the vegetation as they pad along.",
-    "decline_text": "Just before the apprentice can leave, their mentor calls for their attention. Apparently they have a different task that's more pressing.",
+    "intro_text": "app1 pads out of camp, ready to gather some herbs at the behest of their mentor. The wind gently rustles through the vegetation as they pad along.",
+    "decline_text": "Before they get more than a few pawsteps away, their mentor calls them back. Apparently, something more pressing has come up.",
     "chance_of_success": 50,
     "exp": 20,
     "success_text": [
-        "p_l is plucking some horsetail when their attention is suddenly grabbed by a a_sign. At the sight, the fur on their back prickles slightly and they can hear their thundering heartbeat. They have to tell their mentor about this sign right away!"
+        "p_l is plucking some horsetail when their attention is suddenly grabbed by a a_sign. The fur on their back begins to prickle slightly, the sound of their heartbeat like thunder in their ears. They turn and hare back to camp, herbs forgotten. They need to tell their mentor about this as soon as possible!"
     ],
     "fail_text":[
-        "p_l feels a pit of dread beginning to form in their belly. They forgot where to find the herb that their mentor wanted. They scent the air hopefully, but it's useless. They'll have to swallow their shame and return to ask for directions."
+        "app1 feels a pit of dread beginning to form in their belly - they've forgotten where to find the herb their mentor wanted. They taste the air, hoping desperately for some hint of its tell-tale scent, but it's a useless effort. They'll have to swallow their pride and return to ask for directions."
     ],
     "min_cats": 1,
     "max_cats": 1,

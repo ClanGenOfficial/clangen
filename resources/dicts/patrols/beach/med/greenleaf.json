@@ -328,7 +328,7 @@
     "biome": "beach",
     "season": "greenleaf",
     "tags": ["herb_gathering", "adult_stat", "med_only", "med_cat", "herb", "catmint", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
-    "intro_text": "p_l waits until they're out of camp to reveal to app1 that they're off to find catmint - a 'helpful' group of 'helpers' can be a little, well, unhelpful. Catmint is just too exciting for many of their Clanmates to keep their heads around, and p_l wants to take advantage of the peak greenleaf growing season.",
+    "intro_text": "p_l waits until they're out of camp to reveal to app1 that they're off to find catmint - a 'helpful' group of 'helpers' can be a little... well, unhelpful. Catmint is just too exciting for many of their Clanmates to keep their heads around, and p_l wants to take advantage of the peak greenleaf growing season.",
     "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
     "chance_of_success": 40,
     "exp": 30,
@@ -357,7 +357,7 @@
     "exp": 10,
     "success_text": [
             "The warriors keep their heads, with the more experienced of p_l's helpers making themselves useful keeping those that are young or more impulsive focused on their task. The medicine cat and their team carefully pick out catmint from its known hiding places, carting it back to camp where it will protect the Clan.",
-            "It takes a morning of careful searching, but eventually one of the catmint plants p_l remembers from seasons past is revisited, and to their delight, it's growing well. p_l keeps the patrol back from the plant, not willing to let them roll around in it, but the warriors are perfectly happy to carry their wild smelling burdens home without fuss.",
+            "It takes a morning of careful searching, but eventually one of the catmint plants p_l remembers from seasons past is revisited, and to their delight, it's growing well. p_l keeps the patrol back from the plant, not willing to let them roll around in it, but the warriors are perfectly happy to carry their wild-smelling burdens home without fuss.",
             "s_c has a few baby catmint sprouts they've been leaving alone through newleaf, and greenleaf means it's time to see if they're harvestable. They are, and s_c is able to bring huge quantities of the valuable herb home, though a couple sprigs are damaged by their helpers."
     ],
     "fail_text": [
