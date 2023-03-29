@@ -782,7 +782,7 @@
             "medicine cat apprentice"
         ],
         "main_backstory_constraint": [
-            "formerly a rogue"
+            "rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2"
         ],
         "random_status_constraint": [
             "warrior"
@@ -802,7 +802,7 @@
             "medicine cat apprentice"
         ],
         "main_backstory_constraint": [
-            "formerly a rogue"
+            "rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2"
         ],
         "random_status_constraint": [
             "apprentice"
@@ -869,7 +869,7 @@
             "medicine cat apprentice"
         ],
         "main_backstory_constraint": [
-            "formerly a rogue"
+            "rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2"
         ]
     },
     {
