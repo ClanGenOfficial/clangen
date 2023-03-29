@@ -4,13 +4,8 @@
         "thoughts": [
             "Wishes they could ask r_c for advice"
         ],
-        "main_status_constraint": [
-            "mediator",
-            "mediator apprentice"
-        ],
         "random_status_constraint": [
-            "mediator",
-            "mediator apprentice"
+            "mediator"
         ],
         "random_living_status": [
             "starclan"
@@ -20,10 +15,6 @@
         "id": "mediator_alive_mediator",
         "thoughts": [
             "Is discussing conflict resolution strategies with r_c"
-        ],
-        "main_status_constraint": [
-            "mediator",
-            "mediator apprentice"
         ],
         "random_status_constraint": [
             "mediator",
@@ -35,10 +26,6 @@
         "thoughts": [
             "Had to fix an argument between the kits... again"
         ],
-        "main_status_constraint": [
-            "mediator",
-            "mediator apprentice"
-        ],
         "random_status_constraint": [
             "kitten"
         ]
@@ -49,10 +36,6 @@
             "Is angry with the leader for a border dispute gone wrong",
            "Mediated a meeting between senior warriors and the leader over recent Clan decisions"
         ],
-        "main_status_constraint": [
-            "mediator",
-            "mediator apprentice"
-        ],
         "random_status_constraint": [
             "leader"
         ]
@@ -61,10 +44,6 @@
         "id": "mediator_alive_elder",
         "thoughts": [
             "Had to fix an argument between the elders... again"
-        ],
-        "main_status_constraint": [
-            "mediator",
-            "mediator apprentice"
         ],
         "random_status_constraint": [
             "elder"
@@ -98,9 +77,6 @@
         "thoughts": [
             "Wonders why everyone can't just get along"
         ],
-        "main_status_constraint": [
-            "mediator"
-        ],
         "main_trait_constraint": [
             "altruistic"
         ]
@@ -111,9 +87,6 @@
             "Is wondering if they should sabotage a relationship that is going a bit too well",
             "Wishes to break up a sickeningly lovey-dovey couple",
             "Chuckles to themself after sabotaging another relationship"
-        ],
-        "main_status_constraint": [
-            "mediator"
         ],
         "main_trait_constraint": [
             "bloodthirsty"
@@ -126,9 +99,6 @@
             "Wishes to break up a sickeningly lovey dovey couple",
             "Is sitting back and watching an argument take place"
         ],
-        "main_status_constraint": [
-            "mediator"
-        ],
         "main_trait_constraint": [
             "cold"
         ]
@@ -139,9 +109,6 @@
             "Feels bad for a parent who can't seem to get along with their child",
             "Wonders why everyone can't just get along"
         ],
-        "main_status_constraint": [
-            "mediator"
-        ],
         "main_trait_constraint": [
             "empathetic"
         ]
@@ -150,9 +117,6 @@
         "id": "fierce_mediator",
         "thoughts": [
             "Is greatly annoyed by a Clanmate's inability to accept they were in the wrong"
-        ],
-        "main_status_constraint": [
-            "mediator"
         ],
         "main_trait_constraint": [
             "fierce"
@@ -163,9 +127,6 @@
         "thoughts": [
             "Finds mediating emotionally draining"
         ],
-        "main_status_constraint": [
-            "mediator"
-        ],
         "main_trait_constraint": [
             "insecure"
         ]
@@ -174,9 +135,6 @@
         "id": "loving_mediator",
         "thoughts": [
             "Wonders why everyone can't just get along"
-        ],
-        "main_status_constraint": [
-            "mediator"
         ],
         "main_trait_constraint": [
             "loving"
@@ -188,9 +146,6 @@
             "Finds mediating emotionally draining",
             "Is feeling worried with all the high tension lately"
         ],
-        "main_status_constraint": [
-            "mediator"
-        ],
         "main_trait_constraint": [
             "nervous"
         ]
@@ -200,9 +155,6 @@
         "thoughts": [
             "Is greatly annoyed by a Clanmate's inability to accept they were in the wrong"
         ],
-        "main_status_constraint": [
-            "mediator"
-        ],
         "main_trait_constraint": [
             "righteous"
         ]
@@ -211,9 +163,6 @@
         "id": "troublesome_mediator",
         "thoughts": [
             "Is looking for a pair to sabotage, out of boredom"
-        ],
-        "main_status_constraint": [
-            "mediator"
         ],
         "main_trait_constraint": [
             "troublesome"
@@ -225,9 +174,6 @@
             "Is wondering if they should sabotage a relationship that is going a bit too well",
             "Wishes to break up a sickeningly lovey dovey couple",
             "Is sitting back and watching an argument take place"
-        ],
-        "main_status_constraint": [
-            "mediator"
         ],
         "main_trait_constraint": [
             "vengeful"
