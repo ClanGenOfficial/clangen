@@ -32,7 +32,8 @@ from scripts.events_module.freshkill_pile_events import Freshkill_Events
 from scripts.events_module.disaster_events import DisasterEvents
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
-from scripts.utility import get_alive_kits, get_med_cats, ceremony_text_adjust, get_current_season
+from scripts.utility import get_alive_kits, get_med_cats, ceremony_text_adjust, get_current_season, \
+    get_living_clan_cat_count, adjust_list_text
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
 
@@ -163,27 +164,52 @@ class Events():
             Cat.grief_strings.clear()
 
         if Cat.dead_cats:
+            ghost_names = []
+            shaken_cats = []
+            extra_event = None
+            for ghost in Cat.dead_cats:
+                ghost_names.append(str(ghost.name))
+            insert = adjust_list_text(ghost_names)
+
             if len(Cat.dead_cats) > 1:
-                ghost_names = []
-                for ghost in Cat.dead_cats:
-                    ghost_names.append(str(ghost.name))
-                if len(ghost_names) == 2:
-                    insert = f"{ghost_names[0]} and {ghost_names[1]}"
-                else:
-                    name_line = ", ".join(ghost_names[:-1])
-                    insert = f"{name_line}, and {ghost_names[-1]}"
                 event = f"In the past moon {insert} have taken their places in StarClan. {game.clan.name}Clan mourns their loss, and " \
                         f"their friends and family shared the best, and sometimes the worse, moments of their lives " \
                         f"in stories passed around the circle of mourners as the elders carried them to their final " \
                         f"resting place."
+
+                if len(ghost_names) > 2:
+                    alive_cats = list(
+                        filter(
+                            lambda kitty: (kitty.status != "leader" and not kitty.dead and
+                                           not kitty.outside and not kitty.exiled), Cat.all_cats.values()))
+                    # finds a percentage of the living clan to become shaken
+                    shaken_cats = random.sample(alive_cats, k=int((len(alive_cats) * random.choice([4, 5, 6])) / 100))
+
+                    shaken_cat_names = []
+                    for cat in shaken_cats:
+                        shaken_cat_names.append(str(cat.name))
+                        cat.get_injured("shock", event_triggered=False, lethal=False, severity='minor')
+
+                    insert = adjust_list_text(shaken_cat_names)
+
+                    if len(shaken_cats) == 1:
+                        extra_event = f"So much grief and death has taken its toll on the cats of {game.clan.name}Clan. {insert} is particularly shaken by it."
+                    else:
+                        extra_event = f"So much grief and death has taken its toll on the cats of {game.clan.name}Clan. {insert} are particularly shaken by it."
+
             else:
-                event = f"The past moon, {Cat.dead_cats[0].name} has taken their place in StarClan. {game.clan.name}Clan mourns their " \
+                event = f"The past moon, {insert} has taken their place in StarClan. {game.clan.name}Clan mourns their " \
                         f"loss, and their friends and family shared the best, and sometimes the worse, moments of " \
                         f"their lives in stories passed around the circle of mourners as the elders carried them to " \
                         f"their final resting place."
+
             game.cur_events_list.append(
                 Single_Event(event, ["birth_death"],
                              [i.ID for i in Cat.dead_cats]))
+            if extra_event:
+                game.cur_events_list.append(
+                    Single_Event(extra_event, ["birth_death"],
+                                 [i.ID for i in shaken_cats]))
             Cat.dead_cats.clear()
 
         self.check_clan_relations()

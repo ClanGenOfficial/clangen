@@ -233,7 +233,8 @@
 		"cruel season_illness_chance": 200,
 		"classic_injury_chance": 250,
 		"expanded_injury_chance": 200,
-		"cruel season_death_chance": 150
+		"cruel season_death_chance": 150,
+		"permanent_condition_chance": 20
 	},
 	"clan_creation": {
 		"rerolls": 3,
