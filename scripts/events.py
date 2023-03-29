@@ -784,7 +784,6 @@ class Events():
 
         game.switches['skip_conditions'].clear()
 
-
     def check_clan_relations(self):
         """
         interactions with other clans

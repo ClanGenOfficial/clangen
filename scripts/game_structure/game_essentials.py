@@ -372,6 +372,7 @@ class Game():
                 "trait": inter_cat.trait,
                 "parent1": inter_cat.parent1,
                 "parent2": inter_cat.parent2,
+                "adoptive_parents": inter_cat.adoptive_parents,
                 "mentor": inter_cat.mentor if inter_cat.mentor else None,
                 "former_mentor": [cat for cat in inter_cat.former_mentor] if inter_cat.former_mentor else [],
                 "patrol_with_mentor": inter_cat.patrol_with_mentor if inter_cat.patrol_with_mentor else 0,

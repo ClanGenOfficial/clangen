@@ -80,6 +80,7 @@ def json_load():
                         eye_colour=cat["eye_colour"],
                         pelt=new_pelt,
                         loading_cat=True)
+            new_cat.adoptive_parents = cat["adoptive_parents"] if "adoptive_parents" in cat else []
             new_cat.eye_colour2 = cat["eye_colour2"] if "eye_colour2" in cat else None
             new_cat.age = cat["age"]
             if new_cat.age == 'elder':
@@ -488,12 +489,12 @@ def save_check():
         cat_ob = Cat.all_cats[cat]
         
         # Not-mutural mate relations
-        if cat_ob.mate:
-            _temp_ob = Cat.all_cats.get(cat_ob.mate)
-            if _temp_ob:
-                # Check if the mate's mate feild is set to none
-                if not _temp_ob.mate:
-                    _temp_ob.mate = cat_ob.ID 
-            else:
-                # Invalid mate
-                cat_ob.mate = None
+        #if cat_ob.mate:
+        #    _temp_ob = Cat.all_cats.get(cat_ob.mate)
+        #    if _temp_ob:
+        #        # Check if the mate's mate feild is set to none
+        #        if not _temp_ob.mate:
+        #            _temp_ob.mate = cat_ob.ID 
+        #    else:
+        #        # Invalid mate
+        #        cat_ob.mate = None
