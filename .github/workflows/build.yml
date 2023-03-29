@@ -40,8 +40,8 @@ jobs:
           cp dist/Clangen -r .debpkg/opt/clangen
           mkdir -p .debpkg/usr/local/bin
           ln -s /opt/clangen/Clangen .debpkg/usr/local/bin/clangen
-          cat commit.txt | xargs -I {} sed -i "s/{ver}/{}/g" .debpkg/DEBIAN/control
           sed -i "s/{glibc}/2.31/g" .debpkg/DEBIAN/control
+          chmod 755 .debpkg/DEBIAN
       - name: Create deb package
         run: |
           dpkg-deb --build .debpkg
@@ -95,8 +95,8 @@ jobs:
           cp dist/Clangen -r .debpkg/opt/clangen
           mkdir -p .debpkg/usr/local/bin
           ln -s /opt/clangen/Clangen .debpkg/usr/local/bin/clangen
-          cat commit.txt | xargs -I {} sed -i "s/{ver}/{}/g" .debpkg/DEBIAN/control
           sed -i "s/{glibc}/2.35/g" .debpkg/DEBIAN/control
+          chmod 755 .debpkg/DEBIAN
       - name: Create deb package
         run: |
           dpkg-deb --build .debpkg
