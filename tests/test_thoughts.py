@@ -22,9 +22,12 @@ class TestsGetStatusThought(unittest.TestCase):
         medicine.status = "medicine cat"
         warrior.status = "warrior"
         medicine.trait = "bold"
+        biome = "Forest"
+        season = "Newleaf"
+        camp = "camp2"
 
         # load thoughts
-        thoughts = Thoughts.load_thoughts(medicine, warrior, "expanded")
+        thoughts = Thoughts.load_thoughts(medicine, warrior, "expanded", biome, season, camp)
 
         # when
         function_thoughts = thoughts
@@ -38,10 +41,13 @@ class TestFamilyThoughts(unittest.TestCase):
         parent = Cat(moons=40)
         kit = Cat(parent1=parent.ID, moons=4)
         parent.children.append(kit.ID)
+        biome = "Forest"
+        season = "Newleaf"
+        camp = "camp2"
 
         # when
-        function_thoughts1 = Thoughts.load_thoughts(parent, kit, "expanded")
-        function_thoughts2 = Thoughts.load_thoughts(kit, parent, "expanded")
+        function_thoughts1 = Thoughts.load_thoughts(parent, kit, "expanded", biome, season, camp)
+        function_thoughts2 = Thoughts.load_thoughts(kit, parent, "expanded", biome, season, camp)
 
         # then
         '''
