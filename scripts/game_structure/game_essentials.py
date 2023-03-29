@@ -24,7 +24,6 @@ class Game():
     # max_relation_events_displayed = 10
     # relation_scroll_ct = 0
 
-    ranks_changed_timeskip = False  # Flag for when a cat's status changes occurs during a timeskip.
     mediated = []  # Keep track of which couples have been mediated this moon.
 
     cur_events_list = []

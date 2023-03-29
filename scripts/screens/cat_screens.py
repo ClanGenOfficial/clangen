@@ -2513,14 +2513,22 @@ class RoleScreen(Screens):
                                                                                  object_id="#text_box_26_horizcenter_vertcenter_spacing_95",
                                                                                  manager=MANAGER)
 
-        if self.the_cat.status == "leader":
-            icon_path = "resources/images/leader_icon.png"
-        elif self.the_cat.status == "deputy":
-            icon_path = "resources/images/deputy_icon.png"
-        elif self.the_cat.status == "medicine cat":
-            icon_path = "resources/images/medic_icon.png"
-        elif self.the_cat.status == "medicine cat apprentice":
-            icon_path = "resources/images/medic_app_icon.png"
+        paths = {
+            "leader": "resources/images/leader_icon.png",
+            "deputy": "resources/images/deputy_icon.png",
+            "medicine cat": "resources/images/medic_icon.png",
+            "medicine cat apprentice": "resources/images/medic_app_icon.png",
+            "mediator": "resources/images/mediator_icon.png",
+            "mediator apprentice": "resources/images/mediator_app_icon.png",
+            "warrior": "resources/images/warrior_icon.png",
+            "apprentice": "resources/images/warrior_app_icon.png",
+            "kitten": "resources/images/kit_icon.png",
+            "newborn": "resources/images/kit_icon.png",
+            "elder": "resources/images/elder_icon.png",
+        }
+        
+        if self.the_cat.status in paths:
+            icon_path = paths[self.the_cat.status]
         else:
             icon_path = "resources/images/buttonrank.png"
 
@@ -2788,6 +2796,13 @@ class RoleScreen(Screens):
                      f"to represent the path their paws take towards adulthood. "
         elif self.the_cat.status == "kitten":
             output = f"{self.the_cat.name} is a <b>kitten</b>. All cats below the age of six moons are " \
+                     f"considered kits. Kits " \
+                     f"are prohibited from leaving camp in order to protect them from the dangers of the wild. " \
+                     f"Although they don't have any official duties in the Clan, they are expected to learn the " \
+                     f"legends and traditions of their Clan. They are protected by every cat in the Clan and always " \
+                     f"eat first. Kit take the suffix \"kit\"."
+        elif self.the_cat.status == "newborn":
+            output = f"{self.the_cat.name} is a <b>newborn kitten</b>. All cats below the age of six moons are " \
                      f"considered kits. Kits " \
                      f"are prohibited from leaving camp in order to protect them from the dangers of the wild. " \
                      f"Although they don't have any official duties in the Clan, they are expected to learn the " \
