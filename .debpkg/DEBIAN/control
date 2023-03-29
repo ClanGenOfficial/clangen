@@ -1,0 +1,9 @@
+Source: clangen
+Package: clangen
+Version: {ver}
+Architecture: amd64
+Maintainer: sablesteel <noemail@null.com>
+Description: Fan-edit of the warrior cat clangen game
+Section: games
+Homepage: https://github.com/Thlumyn/clangen
+Depends: libc6 (>= {glibc}), zlib1g (>= 1:1.1.4)

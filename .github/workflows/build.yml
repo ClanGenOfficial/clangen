@@ -34,11 +34,30 @@ jobs:
         with:
           name: Clangen_Linux64_glibc2.31+.tar.xz
           path: Clangen_Linux64_glibc2.31+.tar.xz
+      - name: Prepare deb files
+        run: |
+          mkdir .debpkg/opt
+          cp dist/clangen -r .debpkg/opt/clangen
+          mkdir -p .debpkg/usr/local/bin
+          ln -s /opt/clangen/Clangen .debpkg/usr/local/bin/clangen
+          cat commit.txt | xargs -I {} sed -i "s/{ver}/{}/g" .debpkg/DEBIAN/control
+          sed -i "s/{glibc}/2.31/g" .debpkg/DEBIAN/control
+      - name: Create deb package
+        run: |
+          dpkg-deb --build .debpkg
+          mv .debpkg.deb Clangen_Linux64_glibc2.31+.deb
+      - name: Upload deb package
+        uses: actions/upload-artifact@v3
+        with:
+          name: Clangen_Linux64_glibc2.31+.deb
+          path: Clangen_Linux64_glibc2.31+.deb
       - name: Release 
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: Clangen_Linux64_glibc2.31+.tar.xz
+          files: |
+            Clangen_Linux64_glibc2.31+.tar.xz
+            Clangen_Linux64_glibc2.31+.deb
           
   build_ubuntu_22_04:
     runs-on: ubuntu-22.04
@@ -70,11 +89,30 @@ jobs:
         with:
           name: Clangen_Linux64_glibc2.35+.tar.xz
           path: Clangen_Linux64_glibc2.35+.tar.xz
+      - name: Prepare deb files
+        run: |
+          mkdir .debpkg/opt
+          cp dist/clangen -r .debpkg/opt/clangen
+          mkdir -p .debpkg/usr/local/bin
+          ln -s /opt/clangen/Clangen .debpkg/usr/local/bin/clangen
+          cat commit.txt | xargs -I {} sed -i "s/{ver}/{}/g" .debpkg/DEBIAN/control
+          sed -i "s/{glibc}/2.35/g" .debpkg/DEBIAN/control
+      - name: Create deb package
+        run: |
+          dpkg-deb --build .debpkg
+          mv .debpkg.deb Clangen_Linux64_glibc2.35+.deb
+      - name: Upload deb package
+        uses: actions/upload-artifact@v3
+        with:
+          name: Clangen_Linux64_glibc2.35+.deb
+          path: Clangen_Linux64_glibc2.35+.deb
       - name: Release 
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: Clangen_Linux64_glibc2.35+.tar.xz
+          files: |
+            Clangen_Linux64_glibc2.35+.tar.xz
+            Clangen_Linux64_glibc2.35+.deb
           
   build_win32:
     runs-on: windows-2019
