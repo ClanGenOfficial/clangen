@@ -2508,6 +2508,36 @@
             "shadow_width": "0"
         }
     },
+    "#disabled_mod": 
+    {
+        "colours":
+        {
+            "normal_bg":"#94865d",
+            "hovered_bg":"#4a3727",
+            "selected_bg":"#4a3727",
+            "active_bg": "#4a3727",
+            "normal_text":"#000000",
+            "hovered_text":"#FFFFFF",
+            "selected_text":"#FFFFFF",
+            "disabled_text":"#FFFFFF",
+            "text_shadow": "#00000000",
+            "normal_border": "#887b56",
+            "hovered_border": "#503825",
+            "disabled_border": "#503825",
+            "selected_border": "#503825",
+            "active_border": "#776045"
+        },
+        "font":
+        {
+        "name": "notosans",
+        "size": "30"
+        },
+        "misc":
+        {
+            "border_width": "3",
+            "shadow_width": "0"
+        }
+    },
     "#add_one_button": 
     {
         "prototype": "#image_button",

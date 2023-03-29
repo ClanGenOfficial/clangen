@@ -37,13 +37,14 @@ class ModScreen(Screens):
                     if event.ui_element in page:
                         modlist.move_up(self.mod_name[self.page][page.index(
                                 event.ui_element)])
-
+                        self.change_screen('mod screen')
                         return
                 for page in self.movedown_buttons:
                     if event.ui_element in page:
                         modlist.move_down(self.mod_name[self.page][page.index(
                                 event.ui_element)])
 
+                        self.change_screen('mod screen')
                         return
 
                 for page in self.mod_buttons:
@@ -51,6 +52,7 @@ class ModScreen(Screens):
                         modlist.toggle_mod(
                             self.mod_name[self.page][page.index(
                                 event.ui_element)])
+                        self.change_screen('mod screen')
 
     def exit_screen(self):
         """
@@ -117,24 +119,36 @@ class ModScreen(Screens):
         y_pos = 378
         for mod in modlist.mods:
             self.mod_name[-1].append(mod)
-            self.mod_buttons[-1].append(
-                pygame_gui.elements.UIButton(scale(
-                    pygame.Rect((600, y_pos), (400, 78))),
-                                             mod,
-                                             object_id="#saved_clan",
-                                             manager=MANAGER))
+            if mod in modlist.get_mods():
+                self.mod_buttons[-1].append(
+                    pygame_gui.elements.UIButton(scale(
+                        pygame.Rect((600, y_pos), (400, 78))),
+                                                 mod,
+                                                 object_id="#saved_clan",
+                                                 manager=MANAGER))
+            else:
+                self.mod_buttons[-1].append(
+                    pygame_gui.elements.UIButton(scale(
+                        pygame.Rect((600, y_pos), (400, 78))),
+                                                 mod[1:],
+                                                 object_id="#disabled_mod",
+                                                 manager=MANAGER))
             self.moveup_buttons[-1].append(
                 UIImageButton(scale(pygame.Rect((940, y_pos), (50, 38))),
                               "",
                               object_id="#arrow_up",
                               manager=MANAGER,
                               starting_height=2))
+            if modlist.mods.index(mod) == 0:
+                self.moveup_buttons[-1][-1].disable()
             self.movedown_buttons[-1].append(
                 UIImageButton(scale(pygame.Rect((940, y_pos + 40), (50, 38))),
                               "",
                               object_id="#arrow_down",
                               manager=MANAGER,
                               starting_height=3))
+            if modlist.mods.index(mod) == len(modlist.mods) - 1:
+                self.movedown_buttons[-1][-1].disable()
 
             y_pos += 82
             i += 1
