@@ -20,15 +20,6 @@
         ]
     },
     {
-        "id": "altruistic_medicine_cat",
-        "thoughts": [
-            "Declines to eat when prey is low"
-        ],
-        "main_trait_constraint": [
-            "altruistic"
-        ]
-    },
-    {
         "id": "ambitious_medicine_cat",
         "thoughts": [
             "Insists on taking on more tasks",
@@ -121,7 +112,10 @@
     {
         "id": "compassionate_medicine_cat",
         "thoughts": [
-            "Works long into the night taking care of the Clan"
+            "Works long into the night taking care of the Clan",
+            "Helps a warrior regain their strength",
+            "Declines to eat when prey is low",
+            "Listens to the apprentices complain about their training"
         ],
         "main_trait_constraint": [
             "compassionate"
@@ -144,16 +138,7 @@
         "main_trait_constraint": [
             "daring"
         ]
-    },
-    {
-        "id": "empathetic_medicine_cat",
-        "thoughts": [
-            "Listens to the apprentices complain about their training"
-        ],
-        "main_trait_constraint": [
-            "empathetic"
-        ]
-    },   
+    },  
     {
         "id": "faithful_medicine_cat",
         "thoughts": [
@@ -224,15 +209,6 @@
         ],
         "main_trait_constraint": [
             "nervous"
-        ]
-    },
-    {
-        "id": "patient_medicine_cat",
-        "thoughts": [
-            "Helps a warrior regain their strength"
-        ],
-        "main_trait_constraint": [
-            "patient"
         ]
     },
     {
@@ -353,7 +329,7 @@
         ],
         "main_status_constraint": [
             "medicine cat",
-            "medicine Cat apprentice"
+            "medicine cat apprentice"
         ],
         "random_living_status": [
             "starclan"
@@ -369,42 +345,8 @@
             "Has been hearing the voices of Dark Forest cats...",
             "Debates whether or not to ask r_c for gudiance, knowing where they are"
         ],
-        "main_status_constraint": [
-            "medicine Cat",
-            "medicine Cat Apprentice"
-        ],
         "random_living_status": [
             "darkforest"
-        ]
-    },
-    {
-        "id": "med_cat_dead_DF_kit",
-        "thoughts": [
-            "Is sure that they saw r_c appear beside a Clanmate, but why?"
-        ],
-        "main_status_constraint": [
-            "medicine Cat",
-            "medicine Cat Apprentice"
-        ],  
-        "random_status_constraint": [
-            "Kitten"
-        ],
-        "random_living_status": [
-            "darkforest"
-        ]
-    },
-    {
-        "id": "med_cat_alive_kit",
-        "thoughts": [
-            "Is teaching kits about what plants to stay away from",
-            "Chased kits out of their den"
-        ],
-        "main_status_constraint": [
-            "medicine Cat",
-            "medicine Cat Apprentice"
-        ],  
-        "random_status_constraint": [
-            "kitten"
         ]
     },
     {
@@ -440,9 +382,6 @@
         "thoughts": [
             "Is thinking about taking on a new apprentice"
         ],
-        "main_status_constraint": [
-            "medicine Cat"
-        ],  
         "random_status_constraint": [
             "apprentice",
             "kitten"
