@@ -6,6 +6,7 @@ from random import choice
 import pygame
 
 from ..datadir import get_save_dir
+from ..game_structure.windows import ChangeCatName, SpecifyCatGender
 
 try:
     import ujson
@@ -22,9 +23,9 @@ from scripts.cat.pelts import collars, wild_accessories
 from scripts.game_structure import image_cache
 import pygame_gui
 from re import sub
-from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked  # , UIImageTextBox, UISpriteButton
+from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
 from scripts.game_structure.game_essentials import game, screen_x, screen_y, MANAGER
-from scripts.cat.names import names
+from scripts.cat.names import names, Name
 from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE
 
 
@@ -67,8 +68,6 @@ def accessory_display_name(cat):
 # ---------------------------------------------------------------------------- #
 def bs_blurb_text(cat):
     backstory = cat.backstory
-    if cat.status in ['kittypet', 'loner', 'rogue', 'former clancat']:
-        return f"This cat is a {cat.status} and currently resides outside of the Clans."
     backstory_text = {
         None: "This cat was born into the Clan where they currently reside.",
         'clan_founder': "This cat is one of the founding members of the Clan.",
@@ -82,6 +81,7 @@ def bs_blurb_text(cat):
         'kittypet1': "This cat joined the Clan by choice after living life with Twolegs as a kittypet.",
         'kittypet2': 'This cat used to live on something called a "boat" with Twolegs, but decided to join the Clan.',
         'kittypet3': "This cat used be a kittypet. They got lost after wandering away, and when they returned home, they found their Twolegs were gone. They eventually found their way to the Clan.",
+        'kittypet4': "This cat used to be a kittypet. One day, they got sick, and their Twolegs brought them into the belly of a monster. The Twolegs then left them to fend for themselves.",
         'rogue1': "This cat joined the Clan by choice after living life as a rogue.",
         'rogue2': "This cat used to live in a Twolegplace, scrounging for what they could find. They thought the Clan might offer them more security.",
         'rogue3': "This cat used to live alone in their own territory, but was chased out by something and eventually found the Clan.",
@@ -118,9 +118,17 @@ def bs_blurb_text(cat):
         'refugee5': "This cat got washed away from their former territory in a flood that destroyed their home but was glad to find a new home in their new Clan here.",
         'disgraced2': "This cat was exiled from their old Clan for something they didn't do and came here to seek safety.",
         'disgraced3': "This cat once held a high rank in another Clan but was exiled for reasons they refuse to share.",
-        'other_clan1': "This cat grew up in another Clan but chose to leave that life and join the Clan they now live in."
-
+        'other_clan1': "This cat grew up in another Clan but chose to leave that life and join the Clan they now live in.",
+        'outsider': "This cat was born outside of a Clan.",
+        'outsider2': "This cat was born outside of a Clan, but at their birth one parent was a member of a Clan.",
+        'outsider3': "This cat was born outside of a Clan, while their parent was lost.",
     }
+    
+    if backstory != None and backstory in backstory_text:
+        return backstory_text.get(backstory, "")
+    if cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']:
+            return f"This cat is a {cat.status} and currently resides outside of the Clans."
+    
     return backstory_text.get(backstory, "")
 
 
@@ -149,6 +157,7 @@ def backstory_text(cat):
         'kittypet1': 'formerly a kittypet',
         'kittypet2': 'formerly a kittypet',
         'kittypet3': 'formerly a kittypet',
+        'kittypet4': 'formerly a kittypet',
         'refugee3': 'formerly a kittypet',
         'tragedy_survivor3': 'formerly a kittypet',
         'guided1': 'formerly a kittypet',
@@ -181,7 +190,10 @@ def backstory_text(cat):
         'orphaned2': 'orphaned',
         'orphaned3': 'orphaned',
         'orphaned4': 'orphaned',
-        'orphaned5': 'orphaned'
+        'orphaned5': 'orphaned',
+        'outsider': 'outsider',
+        'outsider2': 'outsider',
+        'outsider3': 'outsider',
     }
 
     if bs_display in backstory_map:
@@ -268,8 +280,12 @@ class ProfileScreen(Screens):
         self.profile_elements = {}
 
     def handle_event(self, event):
+
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.back_button:
+
+            if game.switches['window_open']:
+                pass
+            elif event.ui_element == self.back_button:
                 self.close_current_tab()
                 self.change_screen(game.last_screen_forProfile)
             elif event.ui_element == self.previous_cat_button:
@@ -318,7 +334,9 @@ class ProfileScreen(Screens):
             else:
                 self.handle_tab_events(event)
 
-            if self.the_cat.dead and game.settings["fading"]:
+            if game.switches['window_open']:
+                pass
+            elif self.the_cat.dead and game.settings["fading"]:
                 if event.ui_element == self.checkboxes["prevent_fading"]:
                     if self.the_cat.prevent_fading:
                         self.the_cat.prevent_fading = False
@@ -346,9 +364,9 @@ class ProfileScreen(Screens):
         # Personal Tab
         elif self.open_tab == 'personal':
             if event.ui_element == self.change_name_button:
-                self.change_screen('change name screen')
+                ChangeCatName(self.the_cat)
             elif event.ui_element == self.specify_gender_button:
-                self.change_screen('change gender screen')
+                SpecifyCatGender(self.the_cat)
             elif event.ui_element == self.cis_trans_button:
                 if self.the_cat.genderalign != "female" and self.the_cat.genderalign != "male":
                     self.the_cat.genderalign = self.the_cat.gender
@@ -371,7 +389,8 @@ class ProfileScreen(Screens):
                 if self.the_cat.status == 'leader':
                     game.clan.leader_lives -= 10
                 self.the_cat.die()
-                self.the_cat.died_by.append(f'It was the will of something even mightier than StarClan that this cat died.')
+                self.the_cat.died_by.append(
+                    f'It was the will of something even mightier than StarClan that this cat died.')
                 update_sprite(self.the_cat)
                 self.clear_profile()
                 self.build_profile()
@@ -384,15 +403,17 @@ class ProfileScreen(Screens):
                     self.update_disabled_buttons_and_text()
                 if self.the_cat.dead:
                     if self.the_cat.df is True:
+                        self.the_cat.outside, self.the_cat.exiled = False, False
                         self.the_cat.df = False
                         game.clan.add_to_starclan(self.the_cat)
                         self.the_cat.thought = "Is relieved to once again hunt in StarClan"
                     else:
+                        self.the_cat.outside, self.the_cat.exiled = False, False
                         self.the_cat.df = True
                         game.clan.add_to_darkforest(self.the_cat)
                         self.the_cat.thought = "Is distraught after being sent to the Place of No Stars"
 
-                    #Update sprite in this situation. 
+                    # Update sprite in this situation.
                     update_sprite(self.the_cat)
 
                 self.clear_profile()
@@ -547,10 +568,11 @@ class ProfileScreen(Screens):
             self.the_cat.thought = "Hello. I am here to drag the dead cats of " + game.clan.name + "Clan into the Dark Forest."
 
         # Write cat name
+        self.og_name = self.the_cat.name
         self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(cat_name,
                                                                           scale(pygame.Rect((50, 280), (-1, 80))),
                                                                           object_id=get_text_box_theme(
-                                                                              "#cat_profile_name_box"), manager=MANAGER)
+                                                                              "#text_box_40_horizcenter"), manager=MANAGER)
         name_text_size = self.profile_elements["cat_name"].get_relative_rect()
 
         self.profile_elements["cat_name"].kill()
@@ -560,26 +582,25 @@ class ProfileScreen(Screens):
                                                                               (800 - name_text_size.width, 280),
                                                                               (name_text_size.width * 2, 80))),
                                                                           object_id=get_text_box_theme(
-                                                                              "#cat_profile_name_box"), manager=MANAGER)
-
+                                                                              "#text_box_40_horizcenter"), manager=MANAGER)
 
         # Write cat thought
         self.profile_elements["cat_thought"] = pygame_gui.elements.UITextBox(self.the_cat.thought,
                                                                              scale(pygame.Rect((200, 340), (1200, 80))),
                                                                              wrap_to_height=True,
                                                                              object_id=get_text_box_theme(
-                                                                                 "#cat_profile_thoughts_box")
+                                                                                 "#text_box_30_horizcenter_spacing_95")
                                                                              , manager=MANAGER)
 
         self.profile_elements["cat_info_column1"] = UITextBoxTweaked(self.generate_column1(self.the_cat),
-                                                                     scale(pygame.Rect((600, 460), (360, 360))),
+                                                                     scale(pygame.Rect((600, 460), (360, 380))),
                                                                      object_id=get_text_box_theme(
-                                                                         "#cat_profile_info_box"),
+                                                                         "#text_box_22_horizleft"),
                                                                      line_spacing=0.95, manager=MANAGER)
         self.profile_elements["cat_info_column2"] = UITextBoxTweaked(self.generate_column2(self.the_cat),
                                                                      scale(pygame.Rect((980, 460), (460, 360))),
                                                                      object_id=get_text_box_theme(
-                                                                         "#cat_profile_info_box"),
+                                                                         "#text_box_22_horizleft"),
                                                                      line_spacing=0.95, manager=MANAGER)
 
         # Set the cat backgrounds.
@@ -629,7 +650,7 @@ class ProfileScreen(Screens):
 
         # Fullscreen
         if game.settings['fullscreen']:
-            x_pos = 740 - int(name_text_size.width*7/15)
+            x_pos = 740 - int(name_text_size.width * 7 / 15)
         else:
             x_pos = 740 - name_text_size.width
         # TODO: positioning is weird. closer to names on some, further on others
@@ -696,12 +717,12 @@ class ProfileScreen(Screens):
                 self.profile_elements["prevent_fading_text"] = pygame_gui.elements.UILabel(
                     scale(pygame.Rect((170, 780), (-1, 60))),
                     "The StarClan Guide will never fade",
-                    object_id=get_text_box_theme("#cat_profile_info_box"), manager=MANAGER)
+                    object_id=get_text_box_theme("#text_box_22_horizleft"), manager=MANAGER)
             elif is_df_instructor:
                 self.profile_elements["prevent_fading_text"] = pygame_gui.elements.UILabel(
                     scale(pygame.Rect((160, 780), (-1, 60))),
                     "The Dark Forest Guide will never fade",
-                    object_id=get_text_box_theme("#cat_profile_info_box"), manager=MANAGER)
+                    object_id=get_text_box_theme("#text_box_22_horizleft"), manager=MANAGER)
             elif self.the_cat.dead:
                 self.profile_elements["prevent_fading_text"] = pygame_gui.elements.UILabel(
                     scale(pygame.Rect((272, 774), (-1, 60))),
@@ -871,13 +892,12 @@ class ProfileScreen(Screens):
                 output += ' moons'
 
         # MATE
-        if the_cat.mate is not None and not the_cat.dead:
+        if the_cat.mate:
             # NEWLINE ----------
             output += "\n"
             if the_cat.mate in Cat.all_cats:
-                if Cat.all_cats.get(
-                        the_cat.mate
-                ).dead:
+                mate_ob = Cat.fetch_cat(the_cat.mate)
+                if mate_ob.dead != self.the_cat.dead or mate_ob.outside != self.the_cat.outside:
                     output += 'former mate: ' + str(Cat.all_cats[the_cat.mate].name)
                 else:
                     output += 'mate: ' + str(Cat.all_cats[the_cat.mate].name)
@@ -895,7 +915,8 @@ class ProfileScreen(Screens):
         output = ""
 
         # STATUS
-        if the_cat.outside and not the_cat.exiled and not the_cat.status in ['kittypet', 'loner', 'rogue', 'former clancat']:
+        if the_cat.outside and not the_cat.exiled and not the_cat.status in ['kittypet', 'loner', 'rogue',
+                                                                             'former Clancat']:
             output += "<font color='#FF0000'>lost</font>"
         elif the_cat.exiled:
             output += "<font color='#FF0000'>exiled</font>"
@@ -965,9 +986,7 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # BACKSTORY
-        if the_cat.status in ['kittypet', 'loner', 'rogue']:
-            output += 'backstory: ' + the_cat.status
-        elif the_cat.backstory is not None:
+        if the_cat.backstory is not None:
             bs_text = backstory_text(the_cat)
             output += 'backstory: ' + bs_text
         else:
@@ -1074,12 +1093,12 @@ class ProfileScreen(Screens):
         self.notes_entry = pygame_gui.elements.UITextEntryBox(
             scale(pygame.Rect((200, 946), (1200, 298))),
             initial_text=self.user_notes,
-            object_id='#history_tab_text_box', manager=MANAGER
+            object_id='#text_box_26_horizleft_pad_10_14', manager=MANAGER
         )
 
         self.display_notes = UITextBoxTweaked(self.user_notes,
                                               scale(pygame.Rect((200, 946), (120, 298))),
-                                              object_id="#history_tab_text_box",
+                                              object_id="#text_box_26_horizleft_pad_10_14",
                                               line_spacing=1, manager=MANAGER)
 
         self.update_disabled_buttons_and_text()
@@ -1216,7 +1235,7 @@ class ProfileScreen(Screens):
 
     def get_influence_text(self):
         influence_history = None
-        if self.the_cat.status in ['kittypet', 'loner', 'rogue']:
+        if self.the_cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']:
             return ""
         # check if cat has any mentor influence, else assign None
         if len(self.the_cat.mentor_influence) >= 1:
@@ -1407,7 +1426,7 @@ class ProfileScreen(Screens):
                     condition,
                     scale(pygame.Rect((x_pos, 26), (276, -1))),
                     line_spacing=.90,
-                    object_id="text_box",
+                    object_id="#text_box_30_horizcenter",
                     container=container, manager=MANAGER
                 )
                 # details
@@ -1416,7 +1435,7 @@ class ProfileScreen(Screens):
                     text,
                     scale(pygame.Rect((x_pos, y_adjust), (276, 276))),
                     line_spacing=.90,
-                    object_id="#condition_details_text_box",
+                    object_id="#text_box_22_horizcenter_pad_20_20",
                     container=container, manager=MANAGER
                 )
                 # adjust the x_pos for the next box
@@ -1447,7 +1466,7 @@ class ProfileScreen(Screens):
                     injury,
                     scale(pygame.Rect((x_pos, 26), (276, -1))),
                     line_spacing=.90,
-                    object_id="text_box",
+                    object_id="#text_box_30_horizcenter",
                     container=container, manager=MANAGER
                 )
                 # details
@@ -1456,7 +1475,7 @@ class ProfileScreen(Screens):
                     text,
                     scale(pygame.Rect((x_pos, y_adjust), (276, 276))),
                     line_spacing=.90,
-                    object_id="#condition_details_text_box",
+                    object_id="#text_box_22_horizcenter_pad_20_20",
                     container=container, manager=MANAGER
                 )
                 # adjust the x_pos for the next box
@@ -1490,7 +1509,7 @@ class ProfileScreen(Screens):
                     illness,
                     scale(pygame.Rect((x_pos, 26), (276, -1))),
                     line_spacing=.90,
-                    object_id="text_box",
+                    object_id="#text_box_30_horizcenter",
                     container=container, manager=MANAGER
                 )
                 # details
@@ -1499,7 +1518,7 @@ class ProfileScreen(Screens):
                     text,
                     scale(pygame.Rect((x_pos, y_adjust), (276, 276))),
                     line_spacing=.90,
-                    object_id="#condition_details_text_box",
+                    object_id="#text_box_22_horizcenter_pad_20_20",
                     container=container, manager=MANAGER
                 )
                 # adjust the x_pos for the next box
@@ -1692,7 +1711,7 @@ class ProfileScreen(Screens):
                 self.see_relationships_button.enable()
 
             if self.the_cat.age not in ['young adult', 'adult', 'senior adult', 'senior'
-                                        ] or self.the_cat.dead or self.the_cat.exiled or self.the_cat.outside:
+                                        ] or self.the_cat.exiled or self.the_cat.outside:
                 self.choose_mate_button.disable()
             else:
                 self.choose_mate_button.enable()
@@ -1737,7 +1756,7 @@ class ProfileScreen(Screens):
             # Button to prevent kits:
             if self.toggle_kits:
                 self.toggle_kits.kill()
-            if self.the_cat.age in ['young adult', 'adult', 'senior adult', 'elder'] and not self.the_cat.dead:
+            if self.the_cat.age in ['young adult', 'adult', 'senior adult', 'senior'] and not self.the_cat.dead:
                 if self.the_cat.no_kits:
                     self.toggle_kits = UIImageButton(scale(pygame.Rect((804, 1148), (344, 72))), "",
                                                      starting_height=2, object_id="#allow_kits_button",
@@ -1811,7 +1830,7 @@ class ProfileScreen(Screens):
                 self.history_text_box.kill()
                 self.history_text_box = UITextBoxTweaked(self.get_all_history_text(),
                                                          scale(pygame.Rect((200, 946), (1200, 298))),
-                                                         object_id="#history_tab_text_box",
+                                                         object_id="#text_box_26_horizleft_pad_10_14",
                                                          line_spacing=1, manager=MANAGER)
             elif self.open_sub_tab == 'user notes':
                 self.sub_tab_1.enable()
@@ -1857,7 +1876,7 @@ class ProfileScreen(Screens):
                     self.notes_entry = pygame_gui.elements.UITextEntryBox(
                         scale(pygame.Rect((200, 946), (1200, 298))),
                         initial_text=self.user_notes,
-                        object_id='#history_tab_entry_box', manager=MANAGER
+                        object_id='#text_box_26_horizleft_pad_10_14', manager=MANAGER
                     )
                 else:
                     self.edit_text = UIImageButton(scale(pygame.Rect(
@@ -1869,7 +1888,7 @@ class ProfileScreen(Screens):
 
                     self.display_notes = UITextBoxTweaked(self.user_notes,
                                                           scale(pygame.Rect((200, 946), (1200, 298))),
-                                                          object_id="#history_tab_text_box",
+                                                          object_id="#text_box_26_horizleft_pad_10_14",
                                                           line_spacing=1, manager=MANAGER)
 
         # Conditions Tab
@@ -1982,127 +2001,6 @@ class ProfileScreen(Screens):
 
 
 # ---------------------------------------------------------------------------- #
-#                             change name screen                               #
-# ---------------------------------------------------------------------------- #
-class ChangeNameScreen(Screens):
-    the_cat = ''
-
-    def screen_switches(self):
-        self.hide_menu_buttons()
-
-        self.the_cat = Cat.all_cats.get(game.switches['cat'])
-
-        self.heading = pygame_gui.elements.UITextBox("-Change Name-", scale(pygame.Rect((200, 260), (1200, 80))),
-                                                     object_id=get_text_box_theme(), manager=MANAGER)
-
-        self.name_changed = pygame_gui.elements.UITextBox("Name Changed!", scale(pygame.Rect((200, 700), (1200, 80))),
-                                                          visible=False,
-                                                          object_id=get_text_box_theme(), manager=MANAGER)
-
-        self.done_button = UIImageButton(scale(pygame.Rect((730, 564), (154, 60))), "",
-                                         object_id="#done_button", manager=MANAGER)
-        self.back_button = UIImageButton(scale(pygame.Rect((50, 50), (210, 60))), "",
-                                         object_id="#back_button", manager=MANAGER)
-
-        self.prefix_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((440, 400), (360, 60))),
-                                                                    placeholder_text=self.the_cat.name.prefix
-                                                                    , manager=MANAGER)
-        if self.the_cat.name.status in self.the_cat.name.names_dict["special_suffixes"]:
-            self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((800, 400), (360, 60))),
-                                                                        placeholder_text=
-                                                                        self.the_cat.name.names_dict["special_suffixes"]
-                                                                        [self.the_cat.name.status]
-                                                                        , manager=MANAGER)
-            self.suffix_entry_box.disable()  # You can't change a special suffix
-        else:
-            self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((800, 400), (360, 60))),
-                                                                        placeholder_text=self.the_cat.name.suffix
-                                                                        , manager=MANAGER)
-
-    def exit_screen(self):
-        self.prefix_entry_box.kill()
-        del self.prefix_entry_box
-        self.suffix_entry_box.kill()
-        del self.suffix_entry_box
-        self.done_button.kill()
-        del self.done_button
-        self.back_button.kill()
-        del self.back_button
-        self.heading.kill()
-        del self.heading
-        self.name_changed.kill()
-        del self.name_changed
-
-    def on_use(self):
-        pass
-
-    def handle_event(self, event):
-        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.done_button:
-                if sub(r'[^A-Za-z0-9 ]+', '', self.prefix_entry_box.get_text()) != '':
-                    self.the_cat.name.prefix = sub(r'[^A-Za-z0-9 ]+', '', self.prefix_entry_box.get_text())
-                    self.name_changed.show()
-                if sub(r'[^A-Za-z0-9 ]+', '', self.suffix_entry_box.get_text()) != '':
-                    self.the_cat.name.suffix = sub(r'[^A-Za-z0-9 ]+', '', self.suffix_entry_box.get_text())
-                    self.name_changed.show()
-            elif event.ui_element == self.back_button:
-                self.change_screen('profile screen')
-
-
-# ---------------------------------------------------------------------------- #
-#                           change gender screen                               #
-# ---------------------------------------------------------------------------- #
-class ChangeGenderScreen(Screens):
-
-    def screen_switches(self):
-        self.hide_menu_buttons()
-
-        self.header = pygame_gui.elements.UITextBox("-Change Gender-\nYou can set this to anything. "
-                                                    "Gender alignment does not effect gameplay. ",
-                                                    scale(pygame.Rect((200, 260), (1200, -1))),
-                                                    object_id=get_text_box_theme(), manager=MANAGER)
-        self.gender_changed = pygame_gui.elements.UITextBox("Gender Changed!",
-                                                            scale(pygame.Rect((200, 480), (1200, 80))),
-                                                            object_id=get_text_box_theme(),
-                                                            visible=False, manager=MANAGER)
-        self.the_cat = Cat.all_cats.get(game.switches['cat'])
-
-        self.done_button = UIImageButton(scale(pygame.Rect((730, 564), (154, 70))), "",
-                                         object_id="#done_button", manager=MANAGER)
-        self.back_button = UIImageButton(scale(pygame.Rect((50, 50), (210, 60))), "",
-                                         object_id="#back_button", manager=MANAGER)
-
-        self.gender_entry_box = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((600, 400), (400, 60))),
-                                                                    placeholder_text=self.the_cat.genderalign
-                                                                    , manager=MANAGER)
-
-    def exit_screen(self):
-        self.header.kill()
-        del self.header
-        self.gender_changed.kill()
-        del self.gender_changed
-        self.gender_entry_box.kill()
-        del self.gender_entry_box
-        self.done_button.kill()
-        del self.done_button
-        self.back_button.kill()
-        del self.back_button
-
-    def on_use(self):
-        pass
-
-    def handle_event(self, event):
-        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.done_button:
-                if sub(r'[^A-Za-z0-9 ]+', "", self.gender_entry_box.get_text()) != "":
-                    self.the_cat.genderalign = sub(r'[^A-Za-z0-9 ]+', "", self.gender_entry_box.get_text())
-                    self.gender_changed.show()
-            elif event.ui_element == self.back_button:
-                self.change_screen('profile screen')
-        return
-
-
-# ---------------------------------------------------------------------------- #
 #                           ceremony screen                                    #
 # ---------------------------------------------------------------------------- #
 class CeremonyScreen(Screens):
@@ -2125,7 +2023,7 @@ class CeremonyScreen(Screens):
         self.scroll_container = pygame_gui.elements.UIScrollingContainer(scale(pygame.Rect((100, 300), (1400, 1000))))
         self.text = pygame_gui.elements.UITextBox(self.life_text,
                                                   scale(pygame.Rect((0, 0), (1100, -1))),
-                                                  object_id=get_text_box_theme("#allegiances_box"),
+                                                  object_id=get_text_box_theme("#text_box_30_horizleft"),
                                                   container=self.scroll_container, manager=MANAGER)
         self.text.disable()
         self.back_button = UIImageButton(scale(pygame.Rect((50, 50), (210, 60))), "",
@@ -2477,6 +2375,10 @@ class RoleScreen(Screens):
                 self.update_selected_cat()
             elif event.ui_element == self.retire:
                 self.the_cat.status_change("elder", resort=True)
+                # Since you can't "unretire" a cat, apply the skill and trait change
+                # here
+                self.the_cat.update_skill()
+                self.the_cat.update_traits()
                 self.update_selected_cat()
             elif event.ui_element == self.switch_mediator:
                 self.the_cat.status_change("mediator", resort=True)
@@ -2602,13 +2504,13 @@ class RoleScreen(Screens):
 
         self.selected_cat_elements["cat_details"] = UITextBoxTweaked(text, scale(pygame.Rect((790, 200), (320, 188))),
                                                                      object_id=get_text_box_theme(
-                                                                         "#cat_patrol_info_box"),
+                                                                         "#text_box_22_horizcenter"),
                                                                      manager=MANAGER, line_spacing=0.95)
 
         self.selected_cat_elements["role_blurb"] = pygame_gui.elements.UITextBox(self.get_role_blurb(),
                                                                                  scale(pygame.Rect((340, 400),
                                                                                                    (1120, 270))),
-                                                                                 object_id="#role_blurb",
+                                                                                 object_id="#text_box_26_horizcenter_vertcenter_spacing_95",
                                                                                  manager=MANAGER)
 
         if self.the_cat.status == "leader":

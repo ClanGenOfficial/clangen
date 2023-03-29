@@ -10,9 +10,9 @@ from scripts.cat.cats import create_example_cats, Cat
 from scripts.cat.names import names
 from re import sub
 from scripts.game_structure import image_cache
-from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked, UISpriteButton
+from scripts.game_structure.image_button import UIImageButton, UISpriteButton
 from scripts.game_structure.game_essentials import game, MANAGER
-
+from scripts.patrol import Patrol
 
 
 class MakeClanScreen(Screens):
@@ -98,7 +98,7 @@ class MakeClanScreen(Screens):
         self.menu_warning = pygame_gui.elements.UITextBox(
             'Note: going back to main menu resets the generated cats.',
             scale(pygame.Rect((50, 50), (1200, -1))),
-            object_id=get_text_box_theme("#cat_profile_info_box"), manager=MANAGER
+            object_id=get_text_box_theme("#text_box_22_horizleft"), manager=MANAGER
         )
         self.main_menu = UIImageButton(scale(pygame.Rect((50, 100), (306, 60))), "", object_id="#main_menu_button"
                                        , manager=MANAGER)
@@ -390,7 +390,7 @@ class MakeClanScreen(Screens):
                 self.elements['next_step'].enable()
         # Show the error message if you try to choose a child for leader, deputy, or med cat.
         elif self.sub_screen in ['choose leader', 'choose deputy', 'choose med cat']:
-            if self.selected_cat.age in ["kitten", "adolescent"]:
+            if self.selected_cat.age in ["newborn", "kitten", "adolescent"]:
                 self.elements['select_cat'].hide()
                 self.elements['error_message'].show()
             else:
@@ -515,7 +515,7 @@ class MakeClanScreen(Screens):
 
         elif self.biome_selected == 'Plains':
             self.tabs["tab1"] = UIImageButton(scale(pygame.Rect((128, 360), (308, 60))), "", object_id="#grasslands_tab"
-                                              , manager=MANAGER,)
+                                              , manager=MANAGER, )
             self.tabs["tab2"] = UIImageButton(scale(pygame.Rect((178, 430), (308, 60))), "", object_id="#tunnel_tab"
                                               , manager=MANAGER)
         elif self.biome_selected == 'Beach':
@@ -643,25 +643,33 @@ class MakeClanScreen(Screens):
         self.elements['permi_warning'] = pygame_gui.elements.UITextBox(
             "Your clan's game mode is permanent and cannot be changed after Clan creation.",
             scale(pygame.Rect((200, 1162), (1200, 80))),
-            object_id=get_text_box_theme(), manager=MANAGER
+            object_id=get_text_box_theme("#text_box_30_horizcenter"),
+            manager=MANAGER
         )
 
         # Create all the elements.
         self.elements['classic_mode_button'] = UIImageButton(scale(pygame.Rect((218, 480), (264, 60))), "",
-                                                             object_id="#classic_mode_button", manager=MANAGER)
+                                                             object_id="#classic_mode_button",
+                                                             manager=MANAGER)
         self.elements['expanded_mode_button'] = UIImageButton(scale(pygame.Rect((188, 640), (324, 68))), "",
-                                                              object_id="#expanded_mode_button", manager=MANAGER)
+                                                              object_id="#expanded_mode_button",
+                                                              manager=MANAGER)
         self.elements['cruel_mode_button'] = UIImageButton(scale(pygame.Rect((200, 800), (300, 60))), "",
-                                                           object_id="#cruel_mode_button", manager=MANAGER)
+                                                           object_id="#cruel_mode_button",
+                                                           manager=MANAGER)
         self.elements['previous_step'] = UIImageButton(scale(pygame.Rect((506, 1240), (294, 60))), "",
-                                                       object_id="#previous_step_button", manager=MANAGER)
+                                                       object_id="#previous_step_button",
+                                                       manager=MANAGER)
         self.elements['previous_step'].disable()
         self.elements['next_step'] = UIImageButton(scale(pygame.Rect((800, 1240), (294, 60))), "",
-                                                   object_id="#next_step_button", manager=MANAGER)
-        self.elements['mode_details'] = UITextBoxTweaked("", scale(pygame.Rect((650, 320), (810, 922))),
-                                                         object_id="#game_mode_details", manager=MANAGER)
-        self.elements['mode_name'] = UITextBoxTweaked("", scale(pygame.Rect((850, 270), (400, 100))),
-                                                      object_id="#clan_header_text_box", manager=MANAGER)
+                                                   object_id="#next_step_button",
+                                                   manager=MANAGER)
+        self.elements['mode_details'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((650, 320), (810, 922))),
+                                                                      object_id="#text_box_30_horizleft_pad_40_40",
+                                                                      manager=MANAGER)
+        self.elements['mode_name'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((850, 270), (400, 100))),
+                                                                   object_id="#text_box_30_horizcenter_light",
+                                                                   manager=MANAGER)
 
         self.refresh_text_and_buttons()
 
@@ -693,11 +701,20 @@ class MakeClanScreen(Screens):
         self.elements["name_entry"].set_allowed_characters(
             list("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_- "))
         self.elements["name_entry"].set_text_length_limit(11)
-        self.elements["clan"] = pygame_gui.elements.UITextBox("<font color='#FFFFFF'>-Clan</font>",
+        self.elements["clan"] = pygame_gui.elements.UITextBox("-Clan",
                                                               scale(pygame.Rect((750, 1200), (200, 50))),
+                                                              object_id="#text_box_30_horizcenter_light",
                                                               manager=MANAGER)
         self.elements["reset_name"] = UIImageButton(scale(pygame.Rect((910, 1190), (268, 60))), "",
                                                     object_id="#reset_name_button", manager=MANAGER)
+
+    def clan_name_header(self):
+        self.elements["name_backdrop"] = pygame_gui.elements.UIImage(scale(pygame.Rect((584, 200), (432, 100))),
+                                                                     MakeClanScreen.clan_frame_img, manager=MANAGER)
+        self.elements["clan_name"] = pygame_gui.elements.UITextBox(self.clan_name + "Clan",
+                                                                   scale(pygame.Rect((585, 212), (432, 100))),
+                                                                   object_id="#text_box_30_horizcenter_light",
+                                                                   manager=MANAGER)
 
     def open_choose_leader(self):
         """Set up the screen for the choose leader phase. """
@@ -706,11 +723,8 @@ class MakeClanScreen(Screens):
 
         self.elements['background'] = pygame_gui.elements.UIImage(scale(pygame.Rect((0, 828), (1600, 572))),
                                                                   MakeClanScreen.leader_img, manager=MANAGER)
-        self.elements["name_backdrop"] = pygame_gui.elements.UIImage(scale(pygame.Rect((584, 200), (432, 100))),
-                                                                     MakeClanScreen.clan_frame_img, manager=MANAGER)
-        self.elements["clan_name"] = pygame_gui.elements.UITextBox(self.clan_name + "Clan",
-                                                                   scale(pygame.Rect((585, 220), (432, 100))),
-                                                                   object_id="#clan_header_text_box", manager=MANAGER)
+
+        self.clan_name_header()
 
         # Roll_buttons
         x_pos = 310
@@ -754,19 +768,26 @@ class MakeClanScreen(Screens):
             self.elements['roll3'].hide()
 
         # info for chosen cats:
-        self.elements['cat_info'] = UITextBoxTweaked("", scale(pygame.Rect((880, 520), (200, 200))), visible=False,
-                                                     object_id=get_text_box_theme("#cat_profile_info_box"),
-                                                     line_spacing=0.95, manager=MANAGER)
+        self.elements['cat_info'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((880, 520), (200, 200))),
+                                                                  visible=False,
+                                                                  object_id=get_text_box_theme(
+                                                                      "#text_box_22_horizleft_spacing_95"),
+                                                                  manager=MANAGER)
         self.elements['cat_name'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((300, 350), (1000, 110))),
                                                                   visible=False,
-                                                                  object_id=get_text_box_theme(), manager=MANAGER)
+                                                                  object_id=get_text_box_theme(
+                                                                      "#text_box_30_horizcenter"),
+                                                                  manager=MANAGER)
 
         self.elements['select_cat'] = UIImageButton(scale(pygame.Rect((468, 696), (664, 104))), "",
                                                     object_id="#nine_lives_button", visible=False, manager=MANAGER)
         # Error message, to appear if you can't choose that cat.
         self.elements['error_message'] = pygame_gui.elements.UITextBox(
-            "<font color='#FF0000'> Too young to become leader </font>", scale(pygame.Rect((300, 706), (1000, 110))),
-            visible=False, manager=MANAGER)
+            "Too young to become leader",
+            scale(pygame.Rect((300, 706), (1000, 110))),
+            object_id=get_text_box_theme("#text_box_30_horizcenter_red"),
+            visible=False,
+            manager=MANAGER)
 
         # Next and previous buttons
         self.elements['previous_step'] = UIImageButton(scale(pygame.Rect((506, 800), (294, 60))), "",
@@ -785,26 +806,29 @@ class MakeClanScreen(Screens):
 
         self.elements['background'] = pygame_gui.elements.UIImage(scale(pygame.Rect((0, 828), (1600, 572))),
                                                                   MakeClanScreen.deputy_img, manager=MANAGER)
-        self.elements["name_backdrop"] = pygame_gui.elements.UIImage(scale(pygame.Rect((584, 200), (432, 100))),
-                                                                     MakeClanScreen.clan_frame_img, manager=MANAGER)
-        self.elements["clan_name"] = pygame_gui.elements.UITextBox(self.clan_name + "Clan",
-                                                                   scale(pygame.Rect((585, 220), (432, 100))),
-                                                                   object_id="#clan_header_text_box", manager=MANAGER)
+        self.clan_name_header()
 
         # info for chosen cats:
-        self.elements['cat_info'] = UITextBoxTweaked("", scale(pygame.Rect((880, 520), (200, 200))), visible=False,
-                                                     object_id=get_text_box_theme("#cat_profile_info_box"),
-                                                     line_spacing=0.95, manager=MANAGER)
+        self.elements['cat_info'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((880, 520), (200, 200))),
+                                                                  visible=False,
+                                                                  object_id=get_text_box_theme(
+                                                                      "#text_box_22_horizleft_spacing_95"),
+                                                                  manager=MANAGER)
         self.elements['cat_name'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((300, 350), (1000, 110))),
                                                                   visible=False,
-                                                                  object_id=get_text_box_theme(), manager=MANAGER)
+                                                                  object_id=get_text_box_theme(
+                                                                      "#text_box_30_horizcenter"),
+                                                                  manager=MANAGER)
 
         self.elements['select_cat'] = UIImageButton(scale(pygame.Rect((418, 696), (768, 104))), "",
                                                     object_id="#support_leader_button", visible=False, manager=MANAGER)
         # Error message, to appear if you can't choose that cat.
         self.elements['error_message'] = pygame_gui.elements.UITextBox(
-            "<font color='#FF0000'> Too young to become deputy </font>", scale(pygame.Rect((300, 706), (1000, 110))),
-            visible=False, manager=MANAGER)
+            "Too young to become deputy",
+            scale(pygame.Rect((300, 706), (1000, 110))),
+            object_id=get_text_box_theme("#text_box_30_horizcenter_red"),
+            visible=False,
+            manager=MANAGER)
 
         # Next and previous buttons
         self.elements['previous_step'] = UIImageButton(scale(pygame.Rect((506, 800), (294, 60))), "",
@@ -822,27 +846,34 @@ class MakeClanScreen(Screens):
 
         self.elements['background'] = pygame_gui.elements.UIImage(scale(pygame.Rect((0, 828), (1600, 572))),
                                                                   MakeClanScreen.medic_img, manager=MANAGER)
-        self.elements["name_backdrop"] = pygame_gui.elements.UIImage(scale(pygame.Rect((584, 200), (432, 100))),
-                                                                     MakeClanScreen.clan_frame_img, manager=MANAGER)
-        self.elements["clan_name"] = pygame_gui.elements.UITextBox(self.clan_name + "Clan",
-                                                                   scale(pygame.Rect((585, 220), (432, 100))),
-                                                                   object_id="#clan_header_text_box", manager=MANAGER)
+        self.clan_name_header()
 
         # info for chosen cats:
-        self.elements['cat_info'] = UITextBoxTweaked("", scale(pygame.Rect((880, 520), (200, 200))), visible=False,
-                                                     object_id=get_text_box_theme("#cat_profile_info_box"),
-                                                     line_spacing=0.95, manager=MANAGER)
-        self.elements['cat_name'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((300, 350), (1000, 110))),
+        self.elements['cat_info'] = pygame_gui.elements.UITextBox("",
+                                                                  scale(pygame.Rect((880, 520), (200, 200))),
                                                                   visible=False,
-                                                                  object_id=get_text_box_theme(), manager=MANAGER)
+                                                                  object_id=get_text_box_theme(
+                                                                      "#text_box_22_horizleft_spacing_95"),
+                                                                  manager=MANAGER)
+        self.elements['cat_name'] = pygame_gui.elements.UITextBox("",
+                                                                  scale(pygame.Rect((300, 350), (1000, 110))),
+                                                                  visible=False,
+                                                                  object_id=get_text_box_theme(
+                                                                      "#text_box_30_horizcenter"),
+                                                                  manager=MANAGER)
 
-        self.elements['select_cat'] = UIImageButton(scale(pygame.Rect((520, 684), (612, 116))), "",
-                                                    object_id="#aid_clan_button", visible=False, manager=MANAGER)
+        self.elements['select_cat'] = UIImageButton(scale(pygame.Rect((520, 684), (612, 116))),
+                                                    "",
+                                                    object_id="#aid_clan_button",
+                                                    visible=False,
+                                                    manager=MANAGER)
         # Error message, to appear if you can't choose that cat.
         self.elements['error_message'] = pygame_gui.elements.UITextBox(
-            "<font color='#FF0000'> Too young to become a medicine cat </font>",
+            "Too young to become a medicine cat",
             scale(pygame.Rect((300, 706), (1000, 110))),
-            visible=False, manager=MANAGER)
+            object_id=get_text_box_theme("#text_box_30_horizcenter_red"),
+            visible=False,
+            manager=MANAGER)
 
         # Next and previous buttons
         self.elements['previous_step'] = UIImageButton(scale(pygame.Rect((506, 800), (294, 60))), "",
@@ -863,23 +894,26 @@ class MakeClanScreen(Screens):
                                                                       pygame.image.load(
                                                                           "resources/images/pick_clan_screen/clan_none_light.png").convert_alpha(),
                                                                       (1600, 1400)), manager=MANAGER)
-        self.elements["name_backdrop"] = pygame_gui.elements.UIImage(scale(pygame.Rect((584, 200), (432, 100))),
-                                                                     MakeClanScreen.clan_frame_img, manager=MANAGER)
-        self.elements["clan_name"] = pygame_gui.elements.UITextBox(self.clan_name + "Clan",
-                                                                   scale(pygame.Rect((585, 220), (432, 100))),
-                                                                   object_id="#clan_header_text_box", manager=MANAGER)
+        self.clan_name_header()
 
         # info for chosen cats:
-        self.elements['cat_info'] = UITextBoxTweaked("", scale(pygame.Rect((880, 520), (200, 200))), visible=False,
-                                                     object_id=get_text_box_theme("#cat_profile_info_box"),
-                                                     line_spacing=0.95, manager=MANAGER)
+        self.elements['cat_info'] = pygame_gui.elements.UITextBox("",
+                                                                  scale(pygame.Rect((880, 520), (200, 200))),
+                                                                  visible=False,
+                                                                  object_id=get_text_box_theme(
+                                                                      "#text_box_22_horizleft_spacing_95"),
+                                                                  manager=MANAGER)
         self.elements['cat_name'] = pygame_gui.elements.UITextBox("", scale(pygame.Rect((300, 350), (1000, 110))),
                                                                   visible=False,
-                                                                  object_id=get_text_box_theme(), manager=MANAGER)
+                                                                  object_id=get_text_box_theme(
+                                                                      "#text_box_30_horizcenter"),
+                                                                  manager=MANAGER)
 
-        self.elements['select_cat'] = UIImageButton(scale(pygame.Rect((706, 720), (190, 60))), "",
+        self.elements['select_cat'] = UIImageButton(scale(pygame.Rect((706, 720), (190, 60))),
+                                                    "",
                                                     object_id="#recruit_button",
-                                                    visible=False, manager=MANAGER)
+                                                    visible=False,
+                                                    manager=MANAGER)
 
         # Next and previous buttons
         self.elements['previous_step'] = UIImageButton(scale(pygame.Rect((506, 800), (294, 60))), "",
@@ -974,9 +1008,17 @@ class MakeClanScreen(Screens):
                                                   object_id="#continue_button_small")
         self.elements["save_confirm"] = pygame_gui.elements.UITextBox('Your Clan has been created and saved!',
                                                                       scale(pygame.Rect((200, 140), (1200, 60))),
-                                                                      object_id=get_text_box_theme(), manager=MANAGER)
+                                                                      object_id=get_text_box_theme(
+                                                                          "#text_box_30_horizcenter"),
+                                                                      manager=MANAGER)
 
     def save_clan(self):
+        
+        game.mediated.clear()
+        game.patrolled.clear()
+        game.cat_to_fade.clear()
+        Cat.outside_cats.clear()
+        Patrol.used_patrols.clear()
         convert_camp = {1: 'camp1', 2: 'camp2', 3: 'camp3'}
         game.clan = Clan(self.clan_name,
                          self.leader,
@@ -987,7 +1029,6 @@ class MakeClanScreen(Screens):
                          self.game_mode, self.members,
                          starting_season=self.selected_season)
         game.clan.create_clan()
-        game.mediated.clear()
         game.cur_events_list.clear()
         game.herb_events_list.clear()
         Cat.grief_strings.clear()

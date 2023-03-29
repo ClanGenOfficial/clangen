@@ -1,4 +1,5 @@
 
+from copy import deepcopy
 from random import choice
 import random
 
@@ -7,19 +8,139 @@ try:
 except ImportError:
     import json as ujson
 
-from scripts.utility import (get_highest_romantic_relation, event_text_adjust, get_personality_compatibility)
+from scripts.utility import (
+    get_highest_romantic_relation, 
+    event_text_adjust, 
+    get_personality_compatibility,
+
+)
 from scripts.game_structure.game_essentials import game
 from scripts.event_class import Single_Event
 from scripts.cat.cats import Cat
-from scripts.cat_relations.relationship import INTERACTION_MASTER_DICT
+from scripts.cat_relations.relationship import (
+    INTERACTION_MASTER_DICT,
+    rel_fulfill_rel_constraints,
+    cats_fulfill_single_interaction_constraints,
+)
 
 
-class Mate_Events():
+class Romantic_Events():
     """All events which are related to mate's such as becoming mates and breakups, but also for possible mates and romantic interactions."""
     
     def __init__(self) -> None:
         self.had_one_event = False
         pass
+
+    def start_interaction(self, cat_from, cat_to):
+        """
+            Filters and triggers events which are connected to romance between these two cats.
+            
+            Returns
+            -------
+            bool : if an event is triggered or not
+        """
+        if cat_from.ID == cat_to.ID:
+            return False
+
+        relevant_dict = deepcopy(ROMANTIC_INTERACTIONS)
+        if cat_from.mate == cat_to.ID:
+            relevant_dict = deepcopy(MATE_INTERACTIONS)
+
+        # check if it should be a positive or negative interaction
+        relationship = cat_from.relationships[cat_to.ID]
+        positive = self.check_if_positive_interaction(relationship)
+
+        # get the possible interaction list and filter them
+        possible_interactions = relevant_dict["positive"] if positive else relevant_dict["negative"]
+        filtered_interactions = []
+        _season = [str(game.clan.current_season).casefold(), "Any", "any"]
+        _biome = [str(game.clan.biome).casefold(), "Any", "any"]
+        for interaction in possible_interactions:
+            in_tags = [i for i in interaction.biome if i not in _biome]
+            if len(in_tags) > 0:
+                continue
+
+            in_tags = [i for i in interaction.season if i not in _season]
+            if len(in_tags) > 0:
+                continue
+
+            rel_fulfilled = rel_fulfill_rel_constraints(relationship, interaction.relationship_constraint, interaction.id)
+            if not rel_fulfilled:
+                continue
+
+            cat_fulfill = cats_fulfill_single_interaction_constraints(cat_from, cat_to, interaction, game.clan.game_mode)
+            if not cat_fulfill:
+                continue
+
+            filtered_interactions.append(interaction)
+        
+        if len(filtered_interactions) < 1:
+            print(f"There were no romantic interactions for: {cat_from.name} to {cat_to.name}")
+            return False
+        
+        # chose interaction
+        chosen_interaction = choice(filtered_interactions)
+        # check if the current interaction id is already used and us another if so
+        chosen_interaction = choice(possible_interactions)
+        while chosen_interaction.id in relationship.used_interaction_ids\
+            and len(possible_interactions) > 2:
+            possible_interactions.remove(chosen_interaction)
+            chosen_interaction = choice(possible_interactions)
+
+        # if the chosen_interaction is still in the TRIGGERED_SINGLE_INTERACTIONS, clean the list
+        if chosen_interaction in relationship.used_interaction_ids:
+            relationship.used_interaction_ids = []
+        relationship.used_interaction_ids.append(chosen_interaction.id)
+
+        # affect relationship - it should always be in a romantic way
+        in_de_crease = "increase" if positive else "decrease"
+        rel_type = "romantic"
+        relationship.chosen_interaction = chosen_interaction
+        relationship.interaction_affect_relationships(in_de_crease, interaction.intensity, rel_type)
+
+        # give cats injuries if the game mode is not classic
+        if len(chosen_interaction.get_injuries) > 0 and game.clan.game_mode != 'classic':
+            for abbreviations, injury_dict in chosen_interaction.get_injuries.items():
+                if "injury_names" not in injury_dict:
+                    print(f"ERROR: there are no injury names in the chosen interaction {chosen_interaction.id}.")
+                    continue
+
+                injured_cat = cat_from
+                if abbreviations != "m_c":
+                    injured_cat = cat_to
+                
+                for inj in injury_dict["injury_names"]:
+                    injured_cat.get_injured(inj, True)
+
+                injured_cat.possible_scar = injury_dict["scar_text"] if "scar_text" in injury_dict else None
+                injured_cat.possible_death = injury_dict["death_text"] if "death_text" in injury_dict else None
+                if injured_cat.status == "leader":
+                    injured_cat.possible_death = injury_dict["death_leader_text"] if "death_leader_text" in injury_dict else None
+
+        # get any possible interaction string out of this interaction
+        interaction_str = choice(chosen_interaction.interactions)
+
+        # prepare string for display
+        interaction_str = interaction_str.replace("m_c", str(cat_from.name))
+        interaction_str = interaction_str.replace("r_c", str(cat_to.name))
+
+        # display the interaction in the moon events
+        effect = " (positive effect)" if positive else " (negative effect)"
+        interaction_str = interaction_str + effect
+
+        relationship.log.append(interaction_str)
+        if not relationship.opposite_relationship and cat_from.ID != cat_to.ID:
+            relationship.link_relationship()
+            relationship.opposite_relationship.log.append(interaction_str)
+
+        relevant_event_tabs = ["relation", "interaction"]
+        if len(chosen_interaction.get_injuries) > 0:
+            relevant_event_tabs.append("health")
+        game.cur_events_list.append(Single_Event(
+            interaction_str, relevant_event_tabs, [cat_to.ID, cat_from.ID]
+        ))
+        #print(f"ROMANTIC! {cat_from.name} to {cat_to.name}")
+        return True
 
     def handle_new_mates(self, relationship, cat_from, cat_to):
         """More in depth check if the cats will become mates."""
@@ -29,7 +150,6 @@ class Mate_Events():
         if become_mates and mate_string:
             self.had_one_event = True
             cat_from.set_mate(cat_to)
-            cat_to.set_mate(cat_from)
             game.cur_events_list.append(Single_Event(mate_string, "relation", [cat_from.ID, cat_to.ID]))
 
     def handle_breakup(self, relationship_from, relationship_to, cat_from, cat_to):
@@ -48,7 +168,6 @@ class Mate_Events():
                 had_fight = False
                 self.had_one_event = True
                 cat_from.unset_mate(breakup=True, fight=had_fight)
-                cat_to.unset_mate(breakup=True, fight=had_fight)
                 text = f"{cat_from.name} and {cat_to.name} broke up."
                 # game.relation_events_list.insert(0, text)
                 game.cur_events_list.append(Single_Event(text, "relation", [cat_from.ID, cat_to.ID]))
@@ -76,7 +195,6 @@ class Mate_Events():
             if cat_to.mate is None and cat.mate is None:
                 self.had_one_event = True
                 cat.set_mate(cat_to)
-                cat_to.set_mate(cat)
 
                 if highest_romantic_relation.opposite_relationship is None:
                     highest_romantic_relation.link_relationship()
@@ -97,6 +215,23 @@ class Mate_Events():
     # ---------------------------------------------------------------------------- #
     #                          check if event is triggered                         #
     # ---------------------------------------------------------------------------- #
+
+    def check_if_positive_interaction(self, relationship) -> bool:
+        """Returns if the interaction should be a positive interaction or not."""
+        # base for non-existing platonic like / dislike
+        list_to_choice = [True, False]
+
+        # take personality in count
+        comp = get_personality_compatibility(relationship.cat_from, relationship.cat_to)
+        if comp is not None:
+            list_to_choice.append(comp)
+
+        # further influence the partition based on the relationship
+        list_to_choice += [True] * int(relationship.platonic_like/15)
+        list_to_choice += [True] * int(relationship.romantic_love/15)
+        list_to_choice += [False] * int(relationship.dislike/10)
+
+        return choice(list_to_choice)
 
     def check_if_breakup(self, relationship_from, relationship_to, cat_from, cat_to):
         """ More in depth check if the cats will break up.
@@ -281,11 +416,11 @@ MATE_INTERACTIONS = {
 }
 for val_type, dictionary in MATE_RELEVANT_INTERACTIONS.items():
     if val_type in ["jealousy", "dislike"]:
-        MATE_INTERACTIONS["positive"].append(dictionary["decrease"])
-        MATE_INTERACTIONS["negative"].append(dictionary["increase"])
+        MATE_INTERACTIONS["positive"] += dictionary["decrease"]
+        MATE_INTERACTIONS["negative"] += dictionary["increase"]
     else:
-        MATE_INTERACTIONS["positive"].append(dictionary["increase"])
-        MATE_INTERACTIONS["negative"].append(dictionary["decrease"])
+        MATE_INTERACTIONS["positive"] += dictionary["increase"]
+        MATE_INTERACTIONS["negative"] += dictionary["decrease"]
 
 # ---------------------------------------------------------------------------- #
 #                                   ROMANTIC                                   #
@@ -298,22 +433,22 @@ for val_type, dictionary in INTERACTION_MASTER_DICT.items():
 
     # if it's the romantic interaction type add all interactions
     if val_type == "romantic":
-        MATE_RELEVANT_INTERACTIONS[val_type]["increase"] = dictionary["increase"]
-        MATE_RELEVANT_INTERACTIONS[val_type]["decrease"] = dictionary["decrease"]
+        ROMANTIC_RELEVANT_INTERACTIONS[val_type]["increase"] = dictionary["increase"]
+        ROMANTIC_RELEVANT_INTERACTIONS[val_type]["decrease"] = dictionary["decrease"]
+    else:
+        increase = []
+        for interaction in dictionary["increase"]:
+            romantic = ["romantic" in tag for tag in interaction.relationship_constraint]
+            if any(romantic):
+                increase.append(interaction)
+        ROMANTIC_RELEVANT_INTERACTIONS[val_type]["increase"] = increase
 
-    increase = []
-    for interaction in dictionary["increase"]:
-        romantic = ["romantic" in tag for tag in interaction.relationship_constraint]
-        if any(romantic):
-            increase.append(interaction)
-    ROMANTIC_RELEVANT_INTERACTIONS[val_type]["increase"] = increase
-
-    decrease = []
-    for interaction in dictionary["decrease"]:
-        romantic = ["romantic" in tag for tag in interaction.relationship_constraint]
-        if any(romantic):
-            decrease.append(interaction)
-    ROMANTIC_RELEVANT_INTERACTIONS[val_type]["decrease"] = decrease
+        decrease = []
+        for interaction in dictionary["decrease"]:
+            romantic = ["romantic" in tag for tag in interaction.relationship_constraint]
+            if any(romantic):
+                decrease.append(interaction)
+        ROMANTIC_RELEVANT_INTERACTIONS[val_type]["decrease"] = decrease
 
 # resort the first generated overview dictionary to only "positive" and "negative" interactions
 ROMANTIC_INTERACTIONS = {
@@ -322,8 +457,8 @@ ROMANTIC_INTERACTIONS = {
 }
 for val_type, dictionary in ROMANTIC_RELEVANT_INTERACTIONS.items():
     if val_type in ["jealousy", "dislike"]:
-        ROMANTIC_INTERACTIONS["positive"].append(dictionary["decrease"])
-        ROMANTIC_INTERACTIONS["negative"].append(dictionary["increase"])
+        ROMANTIC_INTERACTIONS["positive"].extend(dictionary["decrease"])
+        ROMANTIC_INTERACTIONS["negative"].extend(dictionary["increase"])
     else:
-        ROMANTIC_INTERACTIONS["positive"].append(dictionary["increase"])
-        ROMANTIC_INTERACTIONS["negative"].append(dictionary["decrease"])
+        ROMANTIC_INTERACTIONS["positive"].extend(dictionary["increase"])
+        ROMANTIC_INTERACTIONS["negative"].extend(dictionary["decrease"])

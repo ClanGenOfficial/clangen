@@ -1,4 +1,8 @@
 {
+	"all":{
+		"frequency": 1,
+		"constraints": []
+	},
 	"friends": {
 		"frequency": 1,
 		"constraint": [

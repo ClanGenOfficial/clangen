@@ -628,26 +628,35 @@ class PatrolScreen(Screens):
                                   'gray-tailed vole' 'gray-footed chipmunk', 'red-tailed chipmunk',
                                   'red-backed vole', 'creeping vole', 'woodland vole', 'brush mouse',
                                   'cotton mouse', 'white-ankled mouse', 'smoky shrew', 'hairy-tailed mole',
-                                  'mole', 'broad-footed mole', 'shrew mole',]
+                                  'mole', 'broad-footed mole', 'shrew mole', 'Weasel', 'Deer mouse', 'Blue grey gnat catcher', 'Yellow rumped warbler', 'Rock dove', 'Stock dove', 'Bank vole', 'Green anole', 'California towhee', 'House finch', 'Fantail', 'Bobwhite Quail', 'Dark-eyed junco', 'Guadalupe junco', 'Yellow-eyed junco', 'blue-bellies', 'Gray catbird',
+]
         fst_tinyprey_singlular = choice(fst_tinyprey_singlular_list)
         text = text.replace('f_tp_s', str(fst_tinyprey_singlular))
 
-        fst_tinyprey_plural_list = ['mice', 'mice', 'mice', 'shrews', 'robins', 'voles', 'mice', 'blackbirds',
-                               'mice', 'mice', 'lizards', 'small birds', 'small birds', 'sparrows',
-                               'sleepy dormice', 'chipmunks', 'woodrats', ]
+        fst_tinyprey_plural_list = ['shrews', 'robins', 'voles', 'dormice', 'blackbirds',
+                                  'wood mice', 'lizards', 'tiny grass snakes', 'finches', 'sparrows',
+                                  'small birds', 'young rats', 'young hedgehogs', 'big beetles', 'woodrats',
+                                  'white-footed mice', 'golden mice', 'young squirrels', 'chipmunks', 
+                                  'white-footed voles', 'jumping mice', 'red tree voles', 
+                                  'gray-tailed voles' 'gray-footed chipmunks', 'red-tailed chipmunks',
+                                  'red-backed voles', 'creeping voles', 'woodland voles', 'brush mice',
+                                  'cotton mice', 'white-ankled mice', 'smoky shrews', 'hairy-tailed moles',
+                                  'moles', 'broad-footed moles', 'shrew moles', 'Weasels', 'Deer mice', 'Blue grey gnat catchers', 'Yellow rumped warblers', 'Rock doves', 'Stock doves', 'Bank voles', 'Green anoles', 'California towhees', 'House finches', 'Fantails', 'Bobwhite Quails', 'Dark-eyed juncos', 'Guadalupe juncos', 'Yellow-eyed juncos', 'blue-bellies', 'Gray catbirds',]
         fst_tinyprey_plural = choice(fst_tinyprey_plural_list)
         text = text.replace('f_tp_p', str(fst_tinyprey_plural))
 
         fst_midprey_singlular_list = ['plump shrew', 'woodpecker', 'mole', 'fat dormouse', 'blackbird',
                                  'field vole', 'big lizard', 'grass snake', 'half-grown rabbit', 'hedgehog',
                                  'red squirrel', 'grey squirrel', 'rat', 'flying squirrel', 'kingfisher', 
-                                 'packrat', 'dusky-footed woodrat', 'big-eared woodrat', ]
+                                 'packrat', 'dusky-footed woodrat', 'big-eared woodrat', 'stoat', 'ermine', 'Ruffed Grouse', 'Cardinal', 'Ptarmigan', 'Chukar','Quail', 'Pheasant', 'Starling', 'Blue jay', 'Stellar jay' 
+ ]
         fst_midprey_singlular = choice(fst_midprey_singlular_list)
         text = text.replace('f_mp_s', str(fst_midprey_singlular))
 
         fst_midprey_plural_list = ['plump shrews', 'woodpeckers', 'moles', 'blackbirds',
                               'field voles', 'big lizards', 'grass snakes', 'half-grown rabbits', 'hedgehogs',
-                              'red squirrels', 'grey squirrels', 'rats', ]
+                              'red squirrels', 'grey squirrels', 'rats', 'red squirrels', 'grey squirrels', 'rats', 'flying squirrels', 'kingfishers', 
+                                 'packrats', 'dusky-footed woodrats', 'big-eared woodrats', 'stoats', 'ermines', 'Ruffed Grouse', 'Cardinals', 'Ptarmigans', 'Chukars','Quails', 'Pheasant', 'Starlings', 'Blue jays', 'Stellar jays']
         fst_midprey_plural = choice(fst_midprey_plural_list)
         text = text.replace('f_mp_p', str(fst_midprey_plural))
 

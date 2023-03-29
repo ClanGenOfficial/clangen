@@ -20,7 +20,6 @@ class NewCatEvents:
     """All events with a connection to new cats."""
 
     def __init__(self) -> None:
-        self.living_cats = len(list(filter(lambda r: not r.dead, Cat.all_cats.values())))
         self.event_sums = 0
         self.had_one_event = False
         self.generate_events = GenerateEvents()
@@ -109,17 +108,17 @@ class NewCatEvents:
                                       new_cat_event.backstory,
                                       status
                                       )
-        print(created_cats)
+        # print(created_cats)
         for new_cat in created_cats:
             involved_cats.append(new_cat.ID)
             if "adoption" in new_cat_event.tags:
                 new_cat.parent1 = cat.ID
                 if cat.mate:
                     new_cat.parent2 = cat.mate
-                print('parent is', new_cat.parent1, cat.ID)
+                # print('parent is', new_cat.parent1, cat.ID)
 
             if "m_c" in new_cat_event.tags:
-                print('moon event new cat rel gain')
+                # print('moon event new cat rel gain')
                 cat.relationships[new_cat.ID] = Relationship(cat, new_cat)
                 new_cat.relationships[cat.ID] = Relationship(new_cat, cat)
                 new_to_clan_cat = game.config["new_cat"]["rel_buff"]["new_to_clan_cat"]
@@ -187,7 +186,7 @@ class NewCatEvents:
             major_injuries = []
             if "major_injury" in new_cat_event.tags:
                 for injury in INJURIES:
-                    if INJURIES[injury]["severity"] == "major":
+                    if INJURIES[injury]["severity"] == "major" and injury != 'pregnant':
                         major_injuries.append(injury)
             for new_cat in created_cats:
                 for tag in new_cat_event.tags:
@@ -222,12 +221,12 @@ class NewCatEvents:
 
     def has_outside_cat(self):
         outside_cats = (cat for id, cat in Cat.outside_cats.items() if
-                        cat.status in ['kittypet', 'loner', 'rogue'] and not cat.dead)
+                        cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat'] and not cat.dead)
         return any(outside_cats)
 
     def select_outside_cat(self):
         for cat_id, cat in Cat.outside_cats.items():
-            if cat.status in ["kittypet", "loner", "rogue"] and not cat.dead:
+            if cat.status in ["kittypet", "loner", "rogue", "former Clancat"] and not cat.dead:
                 return cat
 
     def update_cat_properties(self, cat):

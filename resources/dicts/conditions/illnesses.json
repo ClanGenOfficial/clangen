@@ -2,7 +2,7 @@
     "seizure": {
         "severity": "severe",
         "mortality": {
-            "newborn": 10,
+            "newborn": 2,
             "kitten": 5,
             "adolescent": 10,
             "young adult": 20,
@@ -11,7 +11,7 @@
             "senior": 5
         },
         "medicine_mortality": {
-            "newborn": 50,
+            "newborn": 30,
             "kitten": 50,
             "adolescent": 70,
             "young adult": 100,

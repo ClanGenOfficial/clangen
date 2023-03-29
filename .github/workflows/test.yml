@@ -1,6 +1,6 @@
 name: Tests
 
-on: [push, workflow_dispatch]
+on: [push, workflow_dispatch, pull_request]
 
 jobs:
   # Run unittest tests.
@@ -21,13 +21,17 @@ jobs:
         run: mv clangen-unittest-saves-main tests/testSaves
       - name: Remove the zip
         run: rm tests/saves.zip
-      - name: Install depends
-        run: python -m pip install -r requirements.txt
+      - name: Install poetry
+        uses: abatilo/actions-poetry@v2
+        with:
+          poetry-version: 1.4.1
+      - name: install dependencies
+        run: poetry install
       - name: Run unit tests
         env:
           SDL_VIDEODRIVER: "dummy"
           SDL_AUDIODRIVER: "disk"
-        run: python3 -m unittest tests/test_thoughts.py tests/test_relation_events.py tests/test_conditions.py tests/test_utility.py tests/test_cat.py tests/test_save.py
+        run: poetry run python3 -m unittest tests/test_thoughts.py tests/test_relation_events.py tests/test_conditions.py tests/test_utility.py tests/test_cat.py tests/test_save.py
         
   # Check if file encoding is correct.
   encoding_test:
@@ -39,17 +43,21 @@ jobs:
         with:
           python-version: '3.11'
           architecture: 'x64'
+      - name: Install poetry
+        uses: abatilo/actions-poetry@v2
+        with:
+          poetry-version: 1.4.1
       - name: Check file encoding
         id: encoding_test
-        run: python3 tests/test_encoding.py test
+        run: poetry run python3 tests/test_encoding.py test
       - name: Fix the issue hopefully
-        if: failure()
+        if: ${{ failure() && github.event_name == 'push'}}
         id: fixit
         env:
           FILES: ${{ steps.encoding_test.outputs.files  }}
-        run: python3 tests/test_encoding.py fix
+        run: poetry run python3 tests/test_encoding.py fix
       - name: Make a pr
-        if: ${{ failure() && steps.fixit.conclusion == 'success' }}
+        if: ${{ failure() && steps.fixit.conclusion == 'success' && github.event_name == 'push' }}
         uses: peter-evans/create-pull-request@v3
         with:
           commit-message: Fix file encoding
@@ -60,3 +68,20 @@ jobs:
           delete-branch: true
           token: ${{ secrets.GITHUB_TOKEN }}
           branch-suffix: random
+  json_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Python 3.11 x64
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          architecture: 'x64'
+      - name: Install poetry
+        uses: abatilo/actions-poetry@v2
+        with:
+          poetry-version: 1.4.1
+      - name: install dependencies
+        run: poetry install
+      - name: Check json validity
+        run: poetry run python3 tests/test_json.py

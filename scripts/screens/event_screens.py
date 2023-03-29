@@ -54,7 +54,9 @@ class EventsScreen(Screens):
         self.open_involved_cat_button = None
 
     def handle_event(self, event):
-        if event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
+        if game.switches['window_open']:
+            pass
+        elif event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
             if event.ui_element == self.ceremonies_events_button and self.ceremony_alert:
                 self.ceremony_alert.kill()
             elif event.ui_element == self.birth_death_events_button and self.birth_death_alert:
@@ -67,7 +69,9 @@ class EventsScreen(Screens):
                 self.other_clans_alert.kill()
             elif event.ui_element == self.misc_events_button and self.misc_alert:
                 self.misc_alert.kill()
-        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+        if game.switches['window_open']:
+            pass
+        elif event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.timeskip_button:
                 events_class.one_moon()
                 if get_living_clan_cat_count(Cat) == 0:
@@ -235,13 +239,16 @@ class EventsScreen(Screens):
         self.heading = pygame_gui.elements.UITextBox("Check this page to see which events are currently happening in the "
                                                      "Clan",
                                                      scale(pygame.Rect((200, 220), (1200, 80))),
-                                                     object_id=get_text_box_theme(), manager=MANAGER)
+                                                     object_id=get_text_box_theme("#text_box_30_horizcenter"),
+                                                     manager=MANAGER)
         self.season = pygame_gui.elements.UITextBox(f'Current season: {game.clan.current_season}',
                                                     scale(pygame.Rect((200, 280), (1200, 80))),
-                                                    object_id=get_text_box_theme(), manager=MANAGER)
+                                                    object_id=get_text_box_theme("#text_box_30_horizcenter"),
+                                                    manager=MANAGER)
         self.clan_age = pygame_gui.elements.UITextBox("",
                                                       scale(pygame.Rect((200, 340), (1200, 80))),
-                                                      object_id=get_text_box_theme())
+                                                      object_id=get_text_box_theme("#text_box_30_horizcenter"),
+                                                      manager=MANAGER)
         self.events_frame = pygame_gui.elements.UIImage(scale(pygame.Rect((412, 532), (1068, 740))),
                                                         image_cache.load_image(
                                                             "resources/images/event_page_frame.png").convert_alpha()
@@ -449,10 +456,10 @@ class EventsScreen(Screens):
             if isinstance(ev.text, str):  # Check to make sure text is a string.
                 self.display_events_elements["event" + str(i)] = pygame_gui.elements.UITextBox(ev.text,
                                                                                                pygame.Rect((0, y), (box_length - 20, -1)),
-                                                                                               object_id=get_text_box_theme("#events_box"),
+                                                                                               object_id=get_text_box_theme("#text_box_30_horizleft"),
                                                                                                container=self.event_container,
-                                                                                               layer_starting_height=2
-                                                                                               , manager=MANAGER)
+                                                                                               layer_starting_height=2,
+                                                                                               manager=MANAGER)
                 self.display_events_elements["event" + str(i)].disable()
                 # Find the next y-height by finding the height of the text box, and adding 35 for the cats button
 

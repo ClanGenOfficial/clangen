@@ -126,20 +126,28 @@ class Relationship():
         self.interaction_affect_relationships(in_de_crease, intensity, rel_type)
         # give cats injuries if the game mode is not classic
         if len(self.chosen_interaction.get_injuries) > 0 and game_mode != 'classic':
-            for abbreviations, injuries in self.chosen_interaction.get_injuries.items():
+            for abbreviations, injury_dict in self.chosen_interaction.get_injuries.items():
+                if "injury_names" not in injury_dict:
+                    print(f"ERROR: there are no injury names in the chosen interaction {self.chosen_interaction.id}.")
+                    continue
+
                 injured_cat = self.cat_from
                 if abbreviations != "m_c":
                     injured_cat = self.cat_to
                 
-                for inj in injuries:
+                for inj in injury_dict["injury_names"]:
                     injured_cat.get_injured(inj, True)
+
+            injured_cat.possible_scar = self.prepare_text(injury_dict["scar_text"]) if "scar_text" in injury_dict else None
+            injured_cat.possible_death = self.prepare_text(injury_dict["death_text"]) if "death_text" in injury_dict else None
+            if injured_cat.status == "leader":
+                injured_cat.possible_death = self.prepare_text(injury_dict["death_leader_text"]) if "death_leader_text" in injury_dict else None
         
         # get any possible interaction string out of this interaction
         interaction_str = choice(self.chosen_interaction.interactions)
 
         # prepare string for display
-        interaction_str = interaction_str.replace("m_c", str(self.cat_from.name))
-        interaction_str = interaction_str.replace("r_c", str(self.cat_to.name))
+        interaction_str = self.prepare_text(interaction_str)
 
         effect = " (neutral effect)"
         if in_de_crease != "neutral" and positive:
@@ -149,8 +157,11 @@ class Relationship():
 
         interaction_str = interaction_str + effect
         self.log.append(interaction_str)
+        relevant_event_tabs = ["relation", "interaction"]
+        if len(self.chosen_interaction.get_injuries) > 0:
+            relevant_event_tabs.append("health")
         game.cur_events_list.append(Single_Event(
-            interaction_str, ["relation", "interaction"], [self.cat_to.ID, self.cat_from.ID]
+            interaction_str, relevant_event_tabs, [self.cat_to.ID, self.cat_from.ID]
         ))
 
     def get_amount(self, in_de_crease: str, intensity: str) -> int:
@@ -193,7 +204,7 @@ class Relationship():
 
             Parameters
             ----------
-            in_de_crease : list
+            in_de_crease : str
                 if the relationship value is increasing or decreasing the value
             intensity : str
                 the intensity of the affect
@@ -356,7 +367,7 @@ class Relationship():
             season : str
                 current season of the clan
             game_mode : str
-				game mode of the clan
+                game mode of the clan
 
             Returns
             -------
@@ -371,11 +382,11 @@ class Relationship():
             return filtered
 
         for interact in interactions:
-            in_tags = list(filter(lambda biome: biome not in _biome, interact.biome))
+            in_tags = [i for i in interact.biome if i not in _biome]
             if len(in_tags) > 0:
                 continue
 
-            in_tags = list(filter(lambda season: season not in _season, interact.season))
+            in_tags = [i for i in interact.season if i not in _season]
             if len(in_tags) > 0:
                 continue
 
@@ -394,6 +405,12 @@ class Relationship():
 
         return filtered
 
+
+    def prepare_text(self, text: str) -> str:
+        """Prep the text based of the amount of cats and the assigned abbreviations."""
+        text = text.replace("m_c", str(self.cat_from.name))
+        text = text.replace("r_c", str(self.cat_to.name))
+        return text
 
     # ---------------------------------------------------------------------------- #
     #                            complex value addition                            #

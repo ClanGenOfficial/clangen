@@ -10,7 +10,7 @@ from .base_screens import Screens, cat_profiles
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.image_button import UISpriteButton, UIImageButton, UITextBoxTweaked
-from scripts.utility import get_text_box_theme, update_sprite, scale, get_alive_clan_queens, get_med_cats
+from scripts.utility import get_text_box_theme, update_sprite, scale, get_med_cats
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
 from .cat_screens import ProfileScreen
@@ -94,7 +94,7 @@ class ClanScreen(Screens):
         i = 0
         for x in game.clan.clan_cats:
             if not Cat.all_cats[x].dead and Cat.all_cats[x].in_camp and \
-                    not Cat.all_cats[x].exiled and not Cat.all_cats[x].outside:
+                    not (Cat.all_cats[x].exiled or Cat.all_cats[x].outside) and (Cat.all_cats[x].status != 'newborn' or game.config['fun']['all_cats_are_newborn'] or game.config['fun']['newborns_can_roam']):
 
                 i += 1
                 if i > self.max_sprites_displayed:
@@ -105,7 +105,7 @@ class ClanScreen(Screens):
                         UISpriteButton(scale(pygame.Rect(tuple(Cat.all_cats[x].placement), (100, 100))),
                                        Cat.all_cats[x].big_sprite,
                                        cat_id=x,
-                                       starting_height=1)
+                                       starting_height=i)
                     )
                 except:
                     print(f"ERROR: placing {Cat.all_cats[x].name}\'s sprite on Clan page")
@@ -304,6 +304,15 @@ class ClanScreen(Screens):
             if Cat.all_cats[x].dead or Cat.all_cats[x].outside:
                 continue
 
+            # Newborns are not meant to be placed. They are hiding. 
+            if Cat.all_cats[x].status == 'newborn' or game.config['fun']['all_cats_are_newborn']:
+                if game.config['fun']['all_cats_are_newborn'] or game.config['fun']['newborns_can_roam']:
+                    # Free them
+                    Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(first_choices, all_dens,
+                                                                                     [1, 100, 1, 1, 1, 100, 50])
+                else:
+                    continue
+ 
             if Cat.all_cats[x].status in ['apprentice', 'mediator apprentice']:
                 Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(first_choices, all_dens,
                                                                                  [1, 50, 1, 1, 100, 100, 1])
@@ -377,6 +386,7 @@ class StarClanScreen(Screens):
         self.dead_cats = None
         self.filter_age = None
         self.filter_rank = None
+        self.filter_exp = None
         self.filter_by_open = None
         self.filter_by_closed = None
         self.starclan_bg = pygame.transform.scale(
@@ -405,18 +415,21 @@ class StarClanScreen(Screens):
                 self.filter_rank.show()
                 self.filter_age.show()
                 self.filter_id.show()
+                self.filter_exp.show()
             elif event.ui_element == self.filter_by_open:
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
                 self.filter_id.hide()
                 self.filter_rank.hide()
                 self.filter_age.hide()
+                self.filter_exp.hide()
             elif event.ui_element == self.filter_age:
                 self.filter_age.hide()
                 self.filter_rank.hide()
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
                 self.filter_id.hide()
+                self.filter_exp.hide()
                 game.sort_type = "reverse_age"
                 Cat.sort_cats()
                 self.get_dead_cats()
@@ -427,6 +440,7 @@ class StarClanScreen(Screens):
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
                 self.filter_id.hide()
+                self.filter_exp.hide()
                 game.sort_type = "rank"
                 Cat.sort_cats()
                 self.get_dead_cats()
@@ -437,7 +451,19 @@ class StarClanScreen(Screens):
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
                 self.filter_id.hide()
+                self.filter_exp.hide()
                 game.sort_type = "id"
+                Cat.sort_cats()
+                self.get_dead_cats()
+                self.update_search_cats(self.search_bar.get_text())
+            elif event.ui_element == self.filter_exp:
+                self.filter_age.hide()
+                self.filter_rank.hide()
+                self.filter_by_open.hide()
+                self.filter_by_closed.show()
+                self.filter_id.hide()
+                self.filter_exp.hide()
+                game.sort_type = "exp"
                 Cat.sort_cats()
                 self.get_dead_cats()
                 self.update_search_cats(self.search_bar.get_text())
@@ -461,6 +487,7 @@ class StarClanScreen(Screens):
         self.filter_rank.kill()
         self.filter_age.kill()
         self.filter_id.kill()
+        self.filter_exp.kill()
 
         # Remove currently displayed cats and cat names.
         for cat in self.display_cats:
@@ -475,7 +502,7 @@ class StarClanScreen(Screens):
         self.dead_cats = [game.clan.instructor] if not game.clan.instructor.df else []
         for the_cat in Cat.all_cats_list:
             if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.outside and not the_cat.df and \
-                    not the_cat.faded and not the_cat.status in ['kittypet', 'loner', 'rogue']:
+                    not the_cat.faded and not the_cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']:
                 self.dead_cats.append(the_cat)
 
     def screen_switches(self):
@@ -483,7 +510,7 @@ class StarClanScreen(Screens):
         cat_profiles()
         self.get_dead_cats()
 
-        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 284), (294, 46))),
+        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 278), (294, 55))),
                                                               object_id="#search_entry_box", manager=MANAGER)
 
         self.starclan_button = UIImageButton(scale(pygame.Rect((230, 270), (68, 68))), "", object_id="#starclan_button"
@@ -500,8 +527,8 @@ class StarClanScreen(Screens):
         self.previous_page_button = UIImageButton(scale(pygame.Rect((620, 1190), (68, 68))), "",
                                                   object_id="#arrow_left_button"
                                                   , manager=MANAGER)
-        self.page_number = pygame_gui.elements.UITextBox("", scale(pygame.Rect((680, 1190),
-                                                                               (220, 60))),
+        self.page_number = pygame_gui.elements.UITextBox("", scale(pygame.Rect((680, 1190), (220, 60))),
+                                                         object_id="#text_box_30_horizcenter_light",
                                                          manager=MANAGER)  # Text will be filled in later
 
         self.set_disabled_menu_buttons(["starclan_screen"])
@@ -549,6 +576,14 @@ class StarClanScreen(Screens):
             starting_height=2, manager=MANAGER
         )
         self.filter_id.hide()
+        y_pos += 58
+        self.filter_exp = UIImageButton(
+            scale(pygame.Rect((x_pos - 2, y_pos), (204, 58))),
+            "",
+            object_id="#filter_exp_button",
+            starting_height=2, manager=MANAGER
+        )
+        self.filter_exp.hide()
 
     def update_search_cats(self, search_text):
         """Run this function when the search text changes, or when the screen is switched to."""
@@ -605,7 +640,23 @@ class StarClanScreen(Screens):
         pos_y = 0
         if self.current_listed_cats:
             for cat in self.chunks(self.current_listed_cats, 20)[self.list_page - 1]:
-                update_sprite(cat)
+                #update_sprite(cat)
+                
+                if game.clan.clan_settings["show_fav"] and cat.favourite:
+                    
+                    _temp = pygame.transform.scale(
+                            pygame.image.load(
+                                f"resources/images/fav_marker.png").convert_alpha(),
+                            (100, 100))
+                    
+                    _temp.set_alpha(150)
+                    
+                    self.display_cats.append(
+                        pygame_gui.elements.UIImage(
+                            scale(pygame.Rect((260 + pos_x, 360 + pos_y), (100, 100))),
+                            _temp))
+                    self.display_cats[-1].disable()
+                
                 self.display_cats.append(
                     UISpriteButton(scale(pygame.Rect
                                          ((260 + pos_x, 360 + pos_y), (100, 100))),
@@ -617,11 +668,11 @@ class StarClanScreen(Screens):
                 if len(name) >= 13:
                     short_name = str(cat.name)[0:12]
                     name = short_name + '...'
-                self.cat_names.append(pygame_gui.elements.UITextBox("<font color='#FFFFFF'>" + name + "</font>"
-                                                                    ,
+                self.cat_names.append(pygame_gui.elements.UITextBox(name,
                                                                     scale(pygame.Rect((160 + pos_x, 460 + pos_y),
-                                                                                      (300, 60)))
-                                                                    , manager=MANAGER))
+                                                                                      (300, 60))),
+                                                                    object_id="#text_box_30_horizcenter_light",
+                                                                    manager=MANAGER))
                 pos_x += 240
                 if pos_x >= 1200:
                     pos_x = 0
@@ -662,6 +713,7 @@ class DFScreen(Screens):
         self.dead_cats = None
         self.filter_age = None
         self.filter_rank = None
+        self.filter_exp = None
         self.filter_by_open = None
         self.filter_by_closed = None
         self.df_bg = pygame.transform.scale(
@@ -692,6 +744,7 @@ class DFScreen(Screens):
                 self.filter_rank.show()
                 self.filter_id.show()
                 self.filter_age.show()
+                self.filter_exp.show()
             elif event.ui_element == self.filter_by_open:
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
@@ -699,10 +752,12 @@ class DFScreen(Screens):
                 self.filter_rank.hide()
                 self.filter_id.hide()
                 self.filter_age.hide()
+                self.filter_exp.hide()
             elif event.ui_element == self.filter_age:
                 self.filter_id.hide()
                 self.filter_age.hide()
                 self.filter_rank.hide()
+                self.filter_exp.hide()
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
                 game.sort_type = "reverse_age"
@@ -713,6 +768,7 @@ class DFScreen(Screens):
                 self.filter_age.hide()
                 self.filter_id.hide()
                 self.filter_rank.hide()
+                self.filter_exp.hide()
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
                 game.sort_type = "rank"
@@ -723,12 +779,25 @@ class DFScreen(Screens):
                 self.filter_age.hide()
                 self.filter_id.hide()
                 self.filter_rank.hide()
+                self.filter_exp.hide()
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
                 game.sort_type = "id"
                 Cat.sort_cats()
                 self.get_dead_cats()
                 self.update_search_cats(self.search_bar.get_text())
+            elif event.ui_element == self.filter_exp:
+                self.filter_age.hide()
+                self.filter_id.hide()
+                self.filter_rank.hide()
+                self.filter_exp.hide()
+                self.filter_by_open.hide()
+                self.filter_by_closed.show()
+                game.sort_type = "exp"
+                Cat.sort_cats()
+                self.get_dead_cats()
+                self.update_search_cats(self.search_bar.get_text())
+    
             elif event.ui_element in self.display_cats:
                 game.switches["cat"] = event.ui_element.return_cat_id()
                 self.change_screen('profile screen')
@@ -749,6 +818,7 @@ class DFScreen(Screens):
         self.filter_rank.kill()
         self.filter_age.kill()
         self.filter_id.kill()
+        self.filter_exp.kill()
 
         # Remove currently displayed cats and cat names.
         for cat in self.display_cats:
@@ -772,7 +842,7 @@ class DFScreen(Screens):
         cat_profiles()
         self.get_dead_cats()
 
-        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 284), (294, 46))),
+        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 278), (294, 55))),
                                                               object_id="#search_entry_box"
                                                               , manager=MANAGER)
 
@@ -788,8 +858,9 @@ class DFScreen(Screens):
                                               , manager=MANAGER)
         self.previous_page_button = UIImageButton(scale(pygame.Rect((620, 1190), (68, 68))), "",
                                                   object_id="#arrow_left_button", manager=MANAGER)
-        self.page_number = pygame_gui.elements.UITextBox("", scale(pygame.Rect((680, 1190),
-                                                                               (220, 60))), manager=MANAGER)
+        self.page_number = pygame_gui.elements.UITextBox("", scale(pygame.Rect((680, 1190),(220, 60))),
+                                                         object_id="#text_box_30_horizcenter_light",
+                                                         manager=MANAGER)
 
         self.set_disabled_menu_buttons(["starclan_screen"])
         self.update_heading_text("Dark Forest")
@@ -836,6 +907,14 @@ class DFScreen(Screens):
             starting_height=2, manager=MANAGER
         )
         self.filter_id.hide()
+        y_pos += 58
+        self.filter_exp = UIImageButton(
+            scale(pygame.Rect((x_pos - 2, y_pos), (204, 58))),
+            "",
+            object_id="#filter_exp_button",
+            starting_height=2, manager=MANAGER
+        )
+        self.filter_exp.hide()
 
     def update_search_cats(self, search_text):
         """Run this function when the search text changes, or when the screen is switched to."""
@@ -892,7 +971,23 @@ class DFScreen(Screens):
         pos_y = 0
         if self.current_listed_cats:
             for cat in self.chunks(self.current_listed_cats, 20)[self.list_page - 1]:
-                update_sprite(cat)
+                #update_sprite(cat)
+                
+                if game.clan.clan_settings["show_fav"] and cat.favourite:
+                    
+                    _temp = pygame.transform.scale(
+                            pygame.image.load(
+                                f"resources/images/fav_marker.png").convert_alpha(),
+                            (100, 100))
+                    
+                    _temp.set_alpha(150)
+                    
+                    self.display_cats.append(
+                        pygame_gui.elements.UIImage(
+                            scale(pygame.Rect((260 + pos_x, 360 + pos_y), (100, 100))),
+                            _temp))
+                    self.display_cats[-1].disable()
+                
                 self.display_cats.append(
                     UISpriteButton(scale(pygame.Rect
                                          ((260 + pos_x, 360 + pos_y), (100, 100))),
@@ -904,11 +999,11 @@ class DFScreen(Screens):
                 if len(name) >= 13:
                     short_name = str(cat.name)[0:12]
                     name = short_name + '...'
-                self.cat_names.append(pygame_gui.elements.UITextBox("<font color='#FFFFFF'>" + name + "</font>"
-                                                                    ,
+                self.cat_names.append(pygame_gui.elements.UITextBox(name,
                                                                     scale(pygame.Rect((160 + pos_x, 460 + pos_y),
-                                                                                      (300, 60)))
-                                                                    , manager=MANAGER))
+                                                                                      (300, 60))),
+                                                                    object_id="#text_box_30_horizcenter_light",
+                                                                    manager=MANAGER))
                 pos_x += 240
                 if pos_x >= 1200:
                     pos_x = 0
@@ -946,6 +1041,7 @@ class ListScreen(Screens):
         self.filter_age = None
         self.filter_id = None
         self.filter_rank = None
+        self.filter_exp = None
         self.filter_by_open = None
         self.filter_by_closed = None
         self.filter_fav = None
@@ -964,7 +1060,6 @@ class ListScreen(Screens):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.outside_clan_button:
                 self.change_screen("other screen")
-
             elif event.ui_element == self.next_page_button:
                 self.list_page += 1
                 self.update_page()
@@ -972,25 +1067,22 @@ class ListScreen(Screens):
                 self.list_page -= 1
                 self.update_page()
             elif event.ui_element == self.filter_fav:
-                self.filter_fav.hide()
                 self.filter_not_fav.show()
-                game.sort_fav = False
-                Cat.sort_cats()
-                self.get_living_cats()
-                self.update_search_cats(self.search_bar.get_text())
+                self.filter_fav.hide()
+                game.clan.clan_settings["show_fav"] = False
+                self.update_page()
             elif event.ui_element == self.filter_not_fav:
                 self.filter_not_fav.hide()
                 self.filter_fav.show()
-                game.sort_fav = True
-                Cat.sort_cats()
-                self.get_living_cats()
-                self.update_search_cats(self.search_bar.get_text())
+                game.clan.clan_settings["show_fav"] = True
+                self.update_page()
             elif event.ui_element == self.filter_by_closed:
                 self.filter_by_closed.hide()
                 self.filter_by_open.show()
                 self.filter_rank.show()
                 self.filter_id.show()
                 self.filter_age.show()
+                self.filter_exp.show()
             elif event.ui_element == self.filter_by_open:
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
@@ -998,10 +1090,12 @@ class ListScreen(Screens):
                 self.filter_id.hide()
                 self.filter_rank.hide()
                 self.filter_age.hide()
+                self.filter_exp.hide()
             elif event.ui_element == self.filter_age:
                 self.filter_id.hide()
                 self.filter_age.hide()
                 self.filter_rank.hide()
+                self.filter_exp.hide()
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
                 game.sort_type = "reverse_age"
@@ -1012,6 +1106,7 @@ class ListScreen(Screens):
                 self.filter_id.hide()
                 self.filter_age.hide()
                 self.filter_rank.hide()
+                self.filter_exp.hide()
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
                 game.sort_type = "rank"
@@ -1022,9 +1117,21 @@ class ListScreen(Screens):
                 self.filter_id.hide()
                 self.filter_age.hide()
                 self.filter_rank.hide()
+                self.filter_exp.hide()
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
                 game.sort_type = "id"
+                Cat.sort_cats()
+                self.get_living_cats()
+                self.update_search_cats(self.search_bar.get_text())
+            elif event.ui_element == self.filter_exp:
+                self.filter_id.hide()
+                self.filter_age.hide()
+                self.filter_rank.hide()
+                self.filter_exp.hide()
+                self.filter_by_open.hide()
+                self.filter_by_closed.show()
+                game.sort_type = "exp"
                 Cat.sort_cats()
                 self.get_living_cats()
                 self.update_search_cats(self.search_bar.get_text())
@@ -1045,7 +1152,7 @@ class ListScreen(Screens):
         cat_profiles()
         self.get_living_cats()
 
-        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 284), (294, 46))),
+        self.search_bar = pygame_gui.elements.UITextEntryLine(scale(pygame.Rect((845, 278), (294, 55))),
                                                               object_id="#search_entry_box", manager=MANAGER)
 
         self.your_clan_button = UIImageButton(scale(pygame.Rect((230, 270), (68, 68))), "",
@@ -1057,11 +1164,17 @@ class ListScreen(Screens):
 
         self.filter_fav = UIImageButton(scale(pygame.Rect((390, 275), (56, 56))), "",
                                         object_id="#fav_cat",
-                                        manager=MANAGER)
-        self.filter_fav.hide()
+                                        manager=MANAGER,
+                                        tool_tip_text='hide favorite cat indicators')
+
         self.filter_not_fav = UIImageButton(scale(pygame.Rect((390, 275), (56, 56))), "",
                                             object_id="#not_fav_cat", manager=MANAGER,
-                                        tool_tip_text='list favorite cats first')
+                                        tool_tip_text='show favorite cat indicators')
+        
+        if game.clan.clan_settings["show_fav"]:
+            self.filter_not_fav.hide()
+        else:
+            self.filter_fav.hide()
 
         self.next_page_button = UIImageButton(scale(pygame.Rect((912, 1190), (68, 68))), "",
                                               object_id="#arrow_right_button"
@@ -1069,7 +1182,7 @@ class ListScreen(Screens):
         self.previous_page_button = UIImageButton(scale(pygame.Rect((620, 1190), (68, 68))), "",
                                                   object_id="#arrow_left_button", manager=MANAGER)
         self.page_number = pygame_gui.elements.UITextBox("", scale(pygame.Rect((680, 1190), (220, 60))),
-                                                         object_id=get_text_box_theme()
+                                                         object_id=get_text_box_theme("#text_box_30_horizcenter")
                                                          , manager=MANAGER)  # Text will be filled in later
 
         self.set_disabled_menu_buttons(["list_screen"])
@@ -1116,6 +1229,14 @@ class ListScreen(Screens):
             starting_height=2, manager=MANAGER
         )
         self.filter_id.hide()
+        y_pos += 58
+        self.filter_exp = UIImageButton(
+            scale(pygame.Rect((x_pos - 2, y_pos), (204, 58))),
+            "",
+            object_id="#filter_exp_button",
+            starting_height=2, manager=MANAGER
+        )
+        self.filter_exp.hide()
 
     def exit_screen(self):
         self.hide_menu_buttons()
@@ -1130,6 +1251,7 @@ class ListScreen(Screens):
         self.filter_rank.kill()
         self.filter_age.kill()
         self.filter_id.kill()
+        self.filter_exp.kill()
         self.filter_fav.kill()
         self.filter_not_fav.kill()
 
@@ -1197,7 +1319,23 @@ class ListScreen(Screens):
         if self.current_listed_cats:
             for cat in self.chunks(self.current_listed_cats, 20)[self.list_page - 1]:
 
-                update_sprite(cat)
+                #update_sprite(cat)
+                if game.clan.clan_settings["show_fav"] and cat.favourite:
+                    
+                    _temp = pygame.transform.scale(
+                            pygame.image.load(
+                                f"resources/images/fav_marker.png").convert_alpha(),
+                            (100, 100))
+                    
+                    if game.settings["dark mode"]:
+                        _temp.set_alpha(150)
+                    
+                    self.display_cats.append(
+                        pygame_gui.elements.UIImage(
+                            scale(pygame.Rect((260 + pos_x, 360 + pos_y), (100, 100))),
+                            _temp))
+                    self.display_cats[-1].disable()
+                
                 self.display_cats.append(
                     UISpriteButton(scale(pygame.Rect
                                          ((260 + pos_x, 360 + pos_y), (100, 100))),
@@ -1212,7 +1350,7 @@ class ListScreen(Screens):
                 self.cat_names.append(pygame_gui.elements.UITextBox(name,
                                                                     scale(pygame.Rect((160 + pos_x, 460 + pos_y),
                                                                                       (300, 60))),
-                                                                    object_id=get_text_box_theme(), manager=MANAGER))
+                                                                    object_id=get_text_box_theme("#text_box_30_horizcenter"), manager=MANAGER))
                 pos_x += 240
                 if pos_x >= 1200:
                     pos_x = 0
@@ -1245,7 +1383,7 @@ class AllegiancesScreen(Screens):
         # Heading
         self.heading = pygame_gui.elements.UITextBox(f'{game.clan.name}Clan Allegiances',
                                                      scale(pygame.Rect((60, 220), (800, 80))),
-                                                     object_id=get_text_box_theme("#allegiances_header_text_box")
+                                                     object_id=get_text_box_theme("#text_box_34_horizleft")
                                                      , manager=MANAGER)
 
         # Set Menu Buttons.
@@ -1264,13 +1402,13 @@ class AllegiancesScreen(Screens):
         for x in allegiance_list:
             self.ranks_boxes.append(pygame_gui.elements.UITextBox(x[0],
                                    scale(pygame.Rect((0, y_pos), (300, -1))),
-                                   object_id=get_text_box_theme("#allegiances_box"),
+                                   object_id=get_text_box_theme("#text_box_30_horizleft"),
                                    container=self.scroll_container, manager=MANAGER))
             self.ranks_boxes[-1].disable()
 
             self.names_boxes.append(pygame_gui.elements.UITextBox(x[1],
                                     scale(pygame.Rect((300, y_pos), (1060, -1))),
-                                    object_id=get_text_box_theme("#allegiances_box"),
+                                    object_id=get_text_box_theme("#text_box_30_horizleft"),
                                     container=self.scroll_container, manager=MANAGER))
             self.names_boxes[-1].disable()
             
@@ -1323,7 +1461,7 @@ class AllegiancesScreen(Screens):
                 living_mediators.append(cat)
             elif cat.status in ["apprentice", "medicine cat apprentice", "mediator apprentice"]:
                 living_apprentices.append(cat)
-            elif cat.status == "kitten":
+            elif cat.status in ["kitten", "newborn"]:
                 living_kits.append(cat)
             elif cat.status == "elder":
                 living_elders.append(cat)
@@ -1587,12 +1725,12 @@ class MedDenScreen(Screens):
             self.hurt_sick_title = pygame_gui.elements.UITextBox(
                 "Hurt & Sick Cats",
                 scale(pygame.Rect((281, 820), (400, 60))),
-                object_id=get_text_box_theme("#cat_profile_name_box"), manager=MANAGER
+                object_id=get_text_box_theme("#text_box_40_horizcenter"), manager=MANAGER
             )
             self.log_title = pygame_gui.elements.UITextBox(
                 "Medicine Den Log",
                 scale(pygame.Rect((281, 820), (400, 60))),
-                object_id=get_text_box_theme("#cat_profile_name_box"), manager=MANAGER
+                object_id=get_text_box_theme("#text_box_40_horizcenter"), manager=MANAGER
             )
             self.log_title.hide()
             self.cat_bg = pygame_gui.elements.UIImage(scale(pygame.Rect
@@ -1610,7 +1748,7 @@ class MedDenScreen(Screens):
                 f"{f'<br><img src={img_path}><br>'.join(log_text)}<br>",
                 scale(pygame.Rect
                       ((300, 900), (1080, 360))),
-                object_id="#med_den_log_box", manager=MANAGER
+                object_id="#text_box_26_horizleft_verttop_pad_14_0_10", manager=MANAGER
             )
             self.log_box.hide()
             self.cats_tab = UIImageButton(scale(pygame.Rect
@@ -1649,20 +1787,22 @@ class MedDenScreen(Screens):
             for cat in self.injured_and_sick_cats:
                 if cat.injuries:
                     for injury in cat.injuries:
-                        if cat.injuries[injury]["severity"] != 'minor' and injury not in ['recovering from birth',
+                        if cat.injuries[injury]["severity"] != 'minor' and injury not in ["pregnant", 'recovering from birth',
                                                                                           "sprain", "lingering shock"]:
-                            self.in_den_cats.append(cat)
+                            if cat not in self.in_den_cats:
+                                self.in_den_cats.append(cat)
                             if cat in self.out_den_cats:
                                 self.out_den_cats.remove(cat)
                             elif cat in self.minor_cats:
                                 self.minor_cats.remove(cat)
                             break
-                        elif injury in ['recovering from birth', "sprain", "lingering shock"]:
-                            self.out_den_cats.append(cat)
+                        elif injury in ['recovering from birth', "sprain", "lingering shock", "pregnant"] and cat not in self.in_den_cats:
+                            if cat not in self.out_den_cats:
+                                self.out_den_cats.append(cat)
                             if cat in self.minor_cats:
                                 self.minor_cats.remove(cat)
                             break
-                        else:
+                        elif cat not in (self.in_den_cats or self.out_den_cats):
                             if cat not in self.minor_cats:
                                 self.minor_cats.append(cat)
                 if cat.illnesses:
@@ -1697,7 +1837,7 @@ class MedDenScreen(Screens):
         self.meds_messages = UITextBoxTweaked(
             "",
             scale(pygame.Rect((216, 620), (1200, 160))),
-            object_id=get_text_box_theme("#med_messages_box"),
+            object_id=get_text_box_theme("#text_box_30_horizcenter_vertcenter"),
             line_spacing=1
         )
 
@@ -1836,14 +1976,14 @@ class MedDenScreen(Screens):
                 short_name = str(cat.name)[0:18]
                 name = short_name + '...'
             self.med_name = pygame_gui.elements.ui_label.UILabel(scale(pygame.Rect
-                                                                       ((1180, 310), (200, 60))),
+                                                                       ((1050, 310), (450, 60))),
                                                                  name,
-                                                                 object_id=get_text_box_theme(), manager=MANAGER
+                                                                 object_id=get_text_box_theme("#text_box_30_horizcenter"), manager=MANAGER
                                                                  )
             self.med_info = UITextBoxTweaked(
                 "",
                 scale(pygame.Rect((1160, 370), (240, 240))),
-                object_id=get_text_box_theme("#cat_patrol_info_box"),
+                object_id=get_text_box_theme("#text_box_22_horizcenter"),
                 line_spacing=1, manager=MANAGER
             )
             med_skill = cat.skill
@@ -1909,19 +2049,19 @@ class MedDenScreen(Screens):
             if cat.illnesses:
                 condition_list.extend(cat.illnesses.keys())
             if cat.permanent_condition:
-                condition_list.extend(cat.permanent_condition.keys())
+                for condition in cat.permanent_condition:
+                    if cat.permanent_condition[condition]["moons_until"] == -2:
+                        condition_list.extend(cat.permanent_condition.keys())
             conditions = ",<br>".join(condition_list)
 
             self.cat_buttons["able_cat" + str(i)] = UISpriteButton(scale(pygame.Rect
                                                                          ((pos_x, pos_y), (100, 100))),
                                                                    cat.big_sprite,
-                                                                   cat_object=cat, manager=MANAGER)
+                                                                   cat_object=cat,
+                                                                   manager=MANAGER,
+                                                                   tool_tip_text=conditions)
 
-            self.conditions_hover["able_cat" + str(i)] = UIImageButton(scale(pygame.Rect
-                                                                             ((pos_x - 60, pos_y + 100), (220, 60))),
-                                                                       "",
-                                                                       object_id="#blank_button",
-                                                                       tool_tip_text=conditions, manager=MANAGER)
+
             name = str(cat.name)
             if len(name) >= 10:
                 short_name = str(cat.name)[0:9]
@@ -1929,7 +2069,7 @@ class MedDenScreen(Screens):
             self.cat_names.append(pygame_gui.elements.UITextBox(name,
                                                                 scale(
                                                                     pygame.Rect((pos_x - 60, pos_y + 100), (220, 60))),
-                                                                object_id="text_box", manager=MANAGER))
+                                                                object_id="#text_box_30_horizcenter", manager=MANAGER))
 
             pos_x += 200
             if pos_x >= 1340:
