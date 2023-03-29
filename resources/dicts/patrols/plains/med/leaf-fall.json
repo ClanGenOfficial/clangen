@@ -1214,7 +1214,7 @@
         "antagonize_fail_text": null
 },
 {
-    "patrol_id": "pln_med_gatheringraspberry_soloapp_leaf-fall1",
+    "patrol_id": "pln_med_gatheringraspberrysoloapp_leaf-fall1",
     "biome": "plains",
     "season": "leaf-fall",
     "tags": ["herb_gathering", "herb", "raspberry", "no_herbs1", "med_cat", "apprentice", "injury", "poisoned", "death"],
