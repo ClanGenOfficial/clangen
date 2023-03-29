@@ -64,7 +64,7 @@
         "s_c watches r_c with undisguised envy, desperately wishing they were the one to receive the vision. Looking back nervously, r_c withdraws from the group, dismissing the dream as unimportant."
     ],
     "win_skills": ["strong connection to starclan"],
-    "fail_trait": ["ambitious"],
+    "fail_trait": ["ambitious", "insecure"],
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": null,
@@ -89,7 +89,7 @@
         "s_c watches r_c with undisguised envy, desperately wishing they were the one to receive the vision. Looking back nervously, r_c withdraws from the group, dismissing the dream as unimportant."
     ],
     "win_skills": ["dreamwalker"],
-    "fail_trait": ["ambitious"],
+    "fail_trait": ["ambitious", "insecure"],
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": null,
@@ -137,7 +137,7 @@
         "s_c watches r_c with undisguised envy, desperately wishing they were the one to receive the vision. Looking back nervously, r_c withdraws from the group, dismissing the dream as unimportant."
     ],
     "win_skills": ["dreamwalker"],
-    "fail_trait": ["ambitious"],
+    "fail_trait": ["ambitious", "insecure"],
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": null,
