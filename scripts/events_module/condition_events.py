@@ -48,7 +48,8 @@ class Condition_Events():
             # ---------------------------------------------------------------------------- #
             #                              make cats sick                                  #
             # ---------------------------------------------------------------------------- #
-            random_number = int(random.random() * game.config["condition_related"][f"{game.clan.game_mode}_illness_chance"])
+            random_number = int(
+                random.random() * game.config["condition_related"][f"{game.clan.game_mode}_illness_chance"])
             if not cat.dead and not cat.is_ill() and random_number <= 10 and not event_string:
                 season_dict = ILLNESSES_SEASON_LIST[season]
                 possible_illnesses = []
@@ -134,7 +135,8 @@ class Condition_Events():
 
             if triggered:
                 possible_events = self.generate_events.possible_short_events(cat.status, cat.age, "injury")
-                final_events = self.generate_events.filter_possible_short_events(possible_events, cat, other_cat, war, enemy_clan, other_clan, alive_kits)
+                final_events = self.generate_events.filter_possible_short_events(possible_events, cat, other_cat, war,
+                                                                                 enemy_clan, other_clan, alive_kits)
 
                 other_clan_name = f'{other_clan.name}Clan'
                 enemy_clan = f'{enemy_clan}'
@@ -509,7 +511,8 @@ class Condition_Events():
                         random_index = int(random.random() * len(possible_string_list))
                         event = possible_string_list[random_index]
                     except KeyError:
-                        print(f"WARNING: {injury} couldn't be found in the healed strings dict! placeholder string was used.")
+                        print(
+                            f"WARNING: {injury} couldn't be found in the healed strings dict! placeholder string was used.")
                         event = "m_c's injury has healed."
                     event = event_text_adjust(Cat, event, cat, other_cat=None)  # adjust the text
                     game.herb_events_list.append(event)
@@ -667,6 +670,7 @@ class Condition_Events():
             'senior adult': 50,
             'senior': 0
         }
+
         if not triggered and not cat.dead and not cat.retired and cat.status not in \
                 ['leader', 'medicine cat', 'kitten', 'newborn', 'medicine cat apprentice', 'mediator',
                  'mediator apprentice'] \
@@ -676,7 +680,10 @@ class Condition_Events():
                     chance = int(retire_chances.get(cat.age))
                     if not int(random.random() * chance):
                         event_types.append('ceremony')
-                        if game.clan.leader is not None:
+                        if cat.age == 'adolescent':
+                            event = f"{cat.name} decides they'd rather spend their time helping around camp and entertaining the " \
+                                    f"kits, they're warmly welcomed into the elder's den."
+                        elif game.clan.leader is not None:
                             if not game.clan.leader.dead and not game.clan.leader.exiled and \
                                     not game.clan.leader.outside and cat.moons < 120:
                                 event = f"{game.clan.leader.name}, seeing {cat.name} struggling the last few moons " \
@@ -699,7 +706,10 @@ class Condition_Events():
 
                 elif cat.permanent_condition[condition]['severity'] == 'severe':
                     event_types.append('ceremony')
-                    if game.clan.leader is not None:
+                    if cat.age == 'adolescent':
+                        event = f"{cat.name} decides they'd rather spend their time helping around camp and entertaining the " \
+                            f"kits, they're warmly welcomed into the elder's den."
+                    elif game.clan.leader is not None:
                         if not game.clan.leader.dead and not game.clan.leader.exiled \
                                 and not game.clan.leader.outside and cat.moons < 120:
                             event = f"{game.clan.leader.name}, seeing {cat.name} struggling the last few moons " \
