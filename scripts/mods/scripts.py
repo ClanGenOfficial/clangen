@@ -21,6 +21,9 @@ import importlib
 
 def check_and_run(scriptname: str) -> str:
     for mod in modlist.get_mods():
+        # path is currently a full path, like /home/clangen/scripts/filename.py
+        # we want it to be scripts/filename.py
+        scriptname = scriptname.replace(os.getcwd(), "")
         if os.path.exists(os.path.join(os.getcwd(), "mods", mod, scriptname)):
             _ = os.path.join("mods", mod, scriptname)
             return _
