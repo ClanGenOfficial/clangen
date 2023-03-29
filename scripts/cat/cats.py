@@ -564,7 +564,8 @@ class Cat():
         if game.clan.game_mode != 'classic':
             self.grief(body)
 
-        Cat.dead_cats.append(self)
+        if not self.outside or self.exiled:
+            Cat.dead_cats.append(self)
 
         return text
 

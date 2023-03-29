@@ -854,10 +854,10 @@ class Patrol():
                         outcome = 2
                 # making sure unscathed fail is always unscathed
                 else:
-                    if len(fail_text) > 3:
+                    if len(fail_text) > 4:
                         if fail_text[3]:
                             outcome = 3
-                    elif len(fail_text) > 2:
+                    elif len(fail_text) > 3:
                         if fail_text[2]:
                             outcome = 2
                     else:
