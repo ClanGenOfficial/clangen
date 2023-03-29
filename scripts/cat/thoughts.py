@@ -37,8 +37,22 @@ class Thoughts():
         return True
 
     @staticmethod
-    def cats_fulfill_thought_constraints(main_cat, random_cat, thought, game_mode) -> bool:
+    def cats_fulfill_thought_constraints(main_cat, random_cat, thought, game_mode, biome, season, camp) -> bool:
         """Check if the two cats fulfills the thought constraints."""
+        # This is for checking biome
+        if "biome" in thought:
+            if biome not in thought["biome"]:
+                return False
+            
+        # This is checking for season
+        if "season" in thought:
+            if season not in thought["season"]:
+                return False
+
+        # This is for checking camp
+        if "camp" in thought:
+            if camp not in thought["camp"]:
+                return False
             
         # This is for filtering certain relationship types between the main cat and random cat. 
         if "relationship_constraint" in thought:
@@ -143,15 +157,15 @@ class Thoughts():
     # ---------------------------------------------------------------------------- #
 
     @staticmethod
-    def create_thoughts(inter_list, main_cat, other_cat, game_mode) -> list:
+    def create_thoughts(inter_list, main_cat, other_cat, game_mode, biome, season, camp) -> list:
         created_list = []
         for inter in inter_list:
-            if Thoughts.cats_fulfill_thought_constraints(main_cat, other_cat, inter, game_mode):
+            if Thoughts.cats_fulfill_thought_constraints(main_cat, other_cat, inter, game_mode, biome, season, camp):
                 created_list.append(inter)
         return created_list
 
     @staticmethod
-    def load_thoughts(main_cat, other_cat, game_mode):
+    def load_thoughts(main_cat, other_cat, game_mode, biome, season, camp):
         base_path = f"resources/dicts/thoughts/"
         life_dir = None
         status = main_cat.status
@@ -188,15 +202,15 @@ class Thoughts():
             GENTHOUGHTS = ujson.loads(read_file.read())
         loaded_thoughts += THOUGHTS
         loaded_thoughts += GENTHOUGHTS
-        final_thoughts = Thoughts.create_thoughts(loaded_thoughts, main_cat, other_cat, game_mode)
+        final_thoughts = Thoughts.create_thoughts(loaded_thoughts, main_cat, other_cat, game_mode, biome, season, camp)
 
         return final_thoughts
     
     @staticmethod
-    def get_chosen_thought(main_cat, other_cat, game_mode):
+    def get_chosen_thought(main_cat, other_cat, game_mode, biome, season, camp):
         # get possible thoughts
         try:
-            chosen_thought_group = choice(Thoughts.load_thoughts(main_cat, other_cat, game_mode))
+            chosen_thought_group = choice(Thoughts.load_thoughts(main_cat, other_cat, game_mode, biome, season, camp))
             chosen_thought = choice(chosen_thought_group["thoughts"])
         except:
             chosen_thought = "No thoughts, head empty"

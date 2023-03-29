@@ -1031,6 +1031,9 @@ class Cat():
         all_cats = self.all_cats
         other_cat = random.choice(list(all_cats.keys()))
         game_mode = game.switches['game_mode']
+        biome = game.clan.biome
+        season = game.clan.season
+        camp = game.clan.camp_bg
 
         # get other cat
         i = 0
@@ -1049,7 +1052,7 @@ class Cat():
         other_cat = all_cats.get(other_cat)
 
         # get chosen thought
-        chosen_thought = Thoughts.get_chosen_thought(self, other_cat, game_mode)
+        chosen_thought = Thoughts.get_chosen_thought(self, other_cat, game_mode, biome, season, camp)
         
         # insert name if it is needed
         if "r_c" in chosen_thought:
