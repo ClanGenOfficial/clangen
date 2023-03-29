@@ -2513,24 +2513,25 @@ class RoleScreen(Screens):
                                                                                  object_id="#text_box_26_horizcenter_vertcenter_spacing_95",
                                                                                  manager=MANAGER)
 
+        main_dir = "resources/images/"
         paths = {
-            "leader": "resources/images/leader_icon.png",
-            "deputy": "resources/images/deputy_icon.png",
-            "medicine cat": "resources/images/medic_icon.png",
-            "medicine cat apprentice": "resources/images/medic_app_icon.png",
-            "mediator": "resources/images/mediator_icon.png",
-            "mediator apprentice": "resources/images/mediator_app_icon.png",
-            "warrior": "resources/images/warrior_icon.png",
-            "apprentice": "resources/images/warrior_app_icon.png",
-            "kitten": "resources/images/kit_icon.png",
-            "newborn": "resources/images/kit_icon.png",
-            "elder": "resources/images/elder_icon.png",
+            "leader": "leader_icon.png",
+            "deputy": "deputy_icon.png",
+            "medicine cat": "medic_icon.png",
+            "medicine cat apprentice": "medic_app_icon.png",
+            "mediator": "mediator_icon.png",
+            "mediator apprentice": "mediator_app_icon.png",
+            "warrior": "warrior_icon.png",
+            "apprentice": "warrior_app_icon.png",
+            "kitten": "kit_icon.png",
+            "newborn": "kit_icon.png",
+            "elder": "elder_icon.png",
         }
-        
+
         if self.the_cat.status in paths:
-            icon_path = paths[self.the_cat.status]
+            icon_path = os.path.join(main_dir,paths[self.the_cat.status])
         else:
-            icon_path = "resources/images/buttonrank.png"
+            icon_path = os.path.join(main_dir,"buttonrank.png")
 
         self.selected_cat_elements["role_icon"] = pygame_gui.elements.UIImage(
             scale(pygame.Rect((165, 462), (156, 156))),

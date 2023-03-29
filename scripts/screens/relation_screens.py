@@ -2771,14 +2771,14 @@ class MediationScreen(Screens):
             col1 += " moon"
         else:
             col1 += " moons"
-        if len(cat.trait) > 11:
-            _t = cat.trait[:10] + ".."
+        if len(cat.trait) > 15:
+            _t = cat.trait[:13] + ".."
         else:
             _t = cat.trait
         col1 += "\n" + _t
         self.selected_cat_elements["col1" + tag] = pygame_gui.elements.UITextBox(col1,
                                                                                  scale(pygame.Rect((x + 42, y + 252),
-                                                                                                   (160, -1))),
+                                                                                                   (180, -1))),
                                                                                  object_id="#text_box_22_horizleft_spacing_95",
                                                                                  manager=MANAGER)
 

@@ -217,9 +217,9 @@ class Events():
         self.check_and_promote_leader()
         self.check_and_promote_deputy()
 
-
         #Resort
-        Cat.sort_cats()
+        if game.sort_type != "id":
+            Cat.sort_cats()
 
         # Clear all the loaded event dicts.
         Events.generate_events.clear_loaded_events()
