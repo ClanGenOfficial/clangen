@@ -1201,10 +1201,10 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "bch_med_gatheringraspberrysolo_leaf-fall2",
+    "patrol_id": "bch_med_gatheringraspberry_soloapp_leaf-fall1",
     "biome": "beach",
     "season": "leaf-fall",
-    "tags": ["herb_gathering", "adult_stat", "herb", "raspberry", "no_herbs1", "apprentice", "injury", "poisoned", "death"],
+    "tags": ["herb_gathering", "herb", "raspberry", "no_herbs1", "med_cat", "apprentice", "injury", "poisoned", "death"],
     "intro_text": "While gathering herbs, app1 stumbles upon a bush of red berries.",
     "decline_text": "app1 decides not to touch the berries.",
     "chance_of_success": 50,
