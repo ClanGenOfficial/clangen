@@ -1225,7 +1225,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "bch_med_gatheringraspberrysolo4",
+    "patrol_id": "bch_med_gatheringraspberrysoloapp2",
     "biome": "beach",
     "season": "leaf-fall",
     "tags": ["herb_gathering", "adult_stat", "herb", "raspberry", "no_herbs1", "apprentice", "injury", "poisoned", "death"],

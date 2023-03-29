@@ -1350,7 +1350,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "bch_med_gatheringraspberrysolo2",
+    "patrol_id": "bch_med_gatheringraspberrysoloapp1",
     "biome": "beach",
     "season": "greenleaf",
     "tags": ["herb_gathering", "herb", "raspberry", "no_herbs1", "apprentice", "injury", "poisoned", "death"],

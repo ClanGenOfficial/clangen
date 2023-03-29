@@ -738,7 +738,7 @@
     ]
 },
 {
-    "patrol_id": "fst_hunt_genmouse1",
+    "patrol_id": "fst_hunt_mouse1",
     "biome": "forest",
     "season": "newleaf",
     "tags": [

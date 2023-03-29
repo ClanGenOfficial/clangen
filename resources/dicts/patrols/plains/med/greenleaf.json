@@ -1424,7 +1424,7 @@
     "antagonize_fail_text": null
     },
     {
-    "patrol_id": "pln_med_gatheringraspberrysolo2",
+    "patrol_id": "pln_med_gatheringraspberrysoloapp1",
     "biome": "plains",
     "season": "greenleaf",
     "tags": ["herb_gathering", "herb", "raspberry", "no_herbs1", "med_cat", "apprentice", "injury", "poisoned", "death"],
