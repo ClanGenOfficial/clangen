@@ -1034,7 +1034,7 @@ class Cat():
         biome = game.switches['biome']
         camp = game.switches['camp_bg']
         try:
-            season = game.clan.season
+            season = game.clan.current_season
         except:
             season = None
 
