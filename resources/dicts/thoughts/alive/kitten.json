@@ -83,7 +83,6 @@
             "Is pretending to be a rabbit and hopping about",
             "Is pawing at r_c's tail from behind them"
         ],
-
         "main_trait_constraint": [
             "bouncy"
         ]
@@ -140,10 +139,10 @@
         "id": "impulsive_kit",
         "thoughts": [
             "Is streaking across the clearing",
-        "Is stuck in a tree... again",
-        "Is complaining of a tummy ache after eating too much",
-        "Is awfully close to getting a nip on the rump for misbehaving",
-        "Is waiting for an opportunity to sprint out of sight"
+            "Is stuck in a tree... again",
+            "Is complaining of a tummy ache after eating too much",
+            "Is awfully close to getting a nip on the rump for misbehaving",
+            "Is waiting for an opportunity to sprint out of sight"
         ],
         "main_trait_constraint": [
             "impulsive"
@@ -153,22 +152,22 @@
         "id": "nervous_kit",
         "thoughts": [
             "Was startled by a croaking frog",
-        "Is doing their best not to get stepped on",
-        "Is trying to stop their paws from shaking",
-        "Is nervous about leaving their siblings",
-        "Doesn't want to be an apprentice yet",
-        "Is thinking about how nervous they are",
-        "Is worrying about their family and friends",
-        "Is trying to be brave",
-        "Is worried about making mistakes",
-        "Is feeling shaky",
-        "Is worried that they won't do a good enough job",
-        "Is trying not to shake with nerves",
-        "Is trying to stay calm",
-        "Wants to stay in their den a little longer",
-        "Is reminding themself that it will be okay",
-        "Is scared of r_c",
-        "Recently jumped at the sight of their own shadow"
+            "Is doing their best not to get stepped on",
+            "Is trying to stop their paws from shaking",
+            "Is nervous about leaving their siblings",
+            "Doesn't want to be an apprentice yet",
+            "Is thinking about how nervous they are",
+            "Is worrying about their family and friends",
+            "Is trying to be brave",
+            "Is worried about making mistakes",
+            "Is feeling shaky",
+            "Is worried that they won't do a good enough job",
+            "Is trying not to shake with nerves",
+            "Is trying to stay calm",
+            "Wants to stay in their den a little longer",
+            "Is reminding themself that it will be okay",
+            "Is scared of r_c",
+            "Recently jumped at the sight of their own shadow"
         ],
         "main_trait_constraint": [
             "nervous"
