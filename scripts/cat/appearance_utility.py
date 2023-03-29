@@ -438,7 +438,6 @@ def init_pattern(cat):
             # and always get wildcard torties.
             if not wildcard_chance or random.getrandbits(wildcard_chance) == 1:
                 # This is the "wildcard" chance, where you can get funky combinations.
-                print("WILDCARD TORTIE")
 
                 # Allow any pattern:
                 cat.tortiepattern = choice(tortiebases)

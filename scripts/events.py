@@ -10,6 +10,8 @@ TODO: Docs
 import random
 import traceback
 
+from scripts.patrol import Patrol
+
 try:
     import ujson as json
 except ImportError:
@@ -77,13 +79,7 @@ class Events():
         game.switches['saved_clan'] = False
         self.new_cat_invited = False
         self.relation_events.clear_trigger_dict()
-
-        # This is a bandaid solution, and isn't perfect
-        # But this will help reputation from growing without limit.
-        game.clan.reputation = min(
-            game.clan.reputation,
-            100)  # <-- Returns the smallest, so caps at 100.
-
+        Patrol.used_patrols.clear()
         game.patrolled.clear()
 
         if any(
@@ -135,14 +131,11 @@ class Events():
             else:
                 self.one_moon_outside_cat(cat)
 
-        # Handle injuries and relationships. We must do with in a different all-cats loop.
-
         # keeping this commented out till disasters are more polished
         # self.disaster_events.handle_disasters()
 
-
-
         # Handle grief events.
+
         if Cat.grief_strings:
             remove_cats = []
             death_report_cats = []
@@ -168,6 +161,30 @@ class Events():
                                  item[1]))
 
             Cat.grief_strings.clear()
+
+        if Cat.dead_cats:
+            if len(Cat.dead_cats) > 1:
+                ghost_names = []
+                for ghost in Cat.dead_cats:
+                    ghost_names.append(str(ghost.name))
+                if len(ghost_names) == 2:
+                    insert = f"{ghost_names[0]} and {ghost_names[1]}"
+                else:
+                    name_line = ", ".join(ghost_names[:-1])
+                    insert = f"{name_line}, and {ghost_names[-1]}"
+                event = f"In the past moon {insert} have taken their places in StarClan. {game.clan.name}Clan mourns their loss, and " \
+                        f"their friends and family shared the best, and sometimes the worse, moments of their lives " \
+                        f"in stories passed around the circle of mourners as the elders carried them to their final " \
+                        f"resting place."
+            else:
+                event = f"The past moon, {Cat.dead_cats[0].name} has taken their place in StarClan. {game.clan.name}Clan mourns their " \
+                        f"loss, and their friends and family shared the best, and sometimes the worse, moments of " \
+                        f"their lives in stories passed around the circle of mourners as the elders carried them to " \
+                        f"their final resting place."
+            game.cur_events_list.append(
+                Single_Event(event, ["birth_death"],
+                             [i.ID for i in Cat.dead_cats]))
+            Cat.dead_cats.clear()
 
         self.check_clan_relations()
 
@@ -281,7 +298,6 @@ class Events():
         """
         if game.clan.game_mode == 'classic':
             herbs = game.clan.herbs.copy()
-            # print(game.clan.herbs)
             for herb in herbs:
                 adjust_by = random.choices([-2, -1, 0, 1, 2], [1, 2, 3, 2, 1],
                                            k=1)
@@ -292,11 +308,9 @@ class Events():
             if not int(random.random() * 5):
                 new_herb = random.choice(HERBS)
                 game.clan.herbs.update({new_herb: 1})
-            # print(game.clan.herbs)
         else:
             event_list = []
             meds_available = get_med_cats(Cat)
-            # print(game.clan.herbs)
             for med in meds_available:
                 if game.clan.current_season in ['Newleaf', 'Greenleaf']:
                     amount = random.choices([0, 1, 2, 3], [1, 2, 2, 2], k=1)
@@ -317,7 +331,6 @@ class Events():
                             amount = random.choices([1, 2, 3], [3, 3, 1], k=1)
                         else:
                             amount = random.choices([1, 2], [4, 1], k=1)
-                        # print(amount)
                         if herb in game.clan.herbs:
                             game.clan.herbs[herb] += amount[0]
                         else:
@@ -344,7 +357,6 @@ class Events():
                             f"{med.name} could not find any herbs this moon.")
                         return
             game.herb_events_list.extend(event_list)
-            # print(game.clan.herbs)
 
     def herb_destruction(self):
         """
@@ -553,7 +565,7 @@ class Events():
         lost_cat = None
         for cat in Cat.outside_cats.values():
             if cat.outside and cat.status not in [
-                    'kittypet', 'loner', 'rogue', 'former clancat'
+                    'kittypet', 'loner', 'rogue', 'former Clancat'
             ] and not cat.exiled and not cat.dead:
                 lost_cat = cat
                 break
@@ -631,7 +643,7 @@ class Events():
         if cat.moons == 1:
             cat.age = "kitten"
             if cat.status not in [
-                'kittypet', 'loner', 'rogue', 'former clancat'
+                'kittypet', 'loner', 'rogue', 'former Clancat'
             ]:
                 cat.status = "kitten"
         elif cat.moons == 6:
@@ -646,11 +658,11 @@ class Events():
         # killing exiled cats
         if cat.exiled or cat.outside:
             if random.getrandbits(6) == 1 and not cat.dead:
-                print("Cat Died: " + str(cat.name))
+                # print("Cat Died: " + str(cat.name))
                 cat.dead = True
                 if cat.exiled:
                     text = f'Rumors reach your Clan that the exiled {cat.name} has died recently.'
-                elif cat.status in ['kittypet', 'loner', 'rogue']:
+                elif cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']:
                     text = f'Rumors reach your Clan that the {cat.status} ' \
                         f'{cat.name} has died recently.'
                 else:
@@ -697,10 +709,6 @@ class Events():
             if cat.dead:
                 return
 
-        # check for death/reveal/risks/retire caused by permanent conditions
-        if cat.is_disabled():
-            self.condition_events.handle_already_disabled(cat)
-
         # prevent injured or sick cats from unrealistic clan events
         if cat.is_ill() or cat.is_injured():
             if cat.is_ill() and cat.is_injured():
@@ -708,33 +716,19 @@ class Events():
                     triggered_death = self.condition_events.handle_injuries(cat)
                     if not triggered_death:
                         self.condition_events.handle_illnesses(cat)
-                    else:
-                        game.switches['skip_conditions'].clear()
-                        return
                 else:
                     triggered_death = self.condition_events.handle_illnesses(cat)
                     if not triggered_death:
                         self.condition_events.handle_injuries(cat)
-                    else:
-                        game.switches['skip_conditions'].clear()
-                        return
             elif cat.is_ill():
                 self.condition_events.handle_illnesses(cat)
-                game.switches['skip_conditions'].clear()
             else:
                 self.condition_events.handle_injuries(cat)
                 game.switches['skip_conditions'].clear()
-
+            game.switches['skip_conditions'].clear()
+            if cat.dead:
+                return
             self.handle_outbreaks(cat)
-            self.coming_out(cat)
-            self.pregnancy_events.handle_having_kits(cat, clan=game.clan)
-            self.handle_apprentice_EX(cat)
-            self.perform_ceremonies(cat)
-            cat.create_interaction()
-            # this is the new interaction function, currently not active
-            # cat.relationship_interaction()
-            cat.thoughts()
-            return
 
         # newborns don't do much
         if cat.status == 'newborn':
@@ -742,14 +736,19 @@ class Events():
             cat.thoughts()
             return
 
+        # this HAS TO be before the cat.is_disabled() so that disabled kits can choose a med cat or mediator position
+        self.perform_ceremonies(cat)
+
+        # check for death/reveal/risks/retire caused by permanent conditions
+        if cat.is_disabled():
+            self.condition_events.handle_already_disabled(cat)
+            if cat.dead:
+                return
+
         self.coming_out(cat)
         self.pregnancy_events.handle_having_kits(cat, clan=game.clan)
         self.handle_apprentice_EX(cat)
-        self.perform_ceremonies(cat)
         cat.create_interaction()
-        self.invite_new_cats(cat)
-        self.other_interactions(cat)
-        self.gain_accessories(cat)
 
         # this is the new interaction function, currently not active
         # cat.relationship_interaction()
@@ -758,6 +757,14 @@ class Events():
         # relationships have to be handled separately, because of the ceremony name change
         if not cat.dead or cat.outside:
             self.relation_events.handle_relationships(cat)
+
+        # now we make sure ill and injured cats don't get interactions they shouldn't
+        if cat.is_ill() or cat.is_injured():
+            return
+
+        self.invite_new_cats(cat)
+        self.other_interactions(cat)
+        self.gain_accessories(cat)
 
         # switches between the two death handles
         if random.getrandbits(1):
@@ -776,8 +783,6 @@ class Events():
                 return
 
         game.switches['skip_conditions'].clear()
-
-
 
 
     def check_clan_relations(self):
@@ -975,6 +980,11 @@ class Events():
                             'wise', 'faithful'
                     ]:
                         chance = int(chance / 1.3)
+                    if cat.is_disabled():
+                        chance = int(chance / 2)
+
+                    if chance == 0:
+                        chance = 1
 
                     if not has_med_app and not int(random.random() * chance):
                         self.ceremony(cat, 'medicine cat apprentice')
@@ -1000,6 +1010,11 @@ class Events():
                                 'wise', 'thoughtful'
                         ]:
                             chance = int(chance / 1.5)
+                        if cat.is_disabled():
+                            chance = int(chance / 2)
+
+                        if chance == 0:
+                            chance = 1
 
                         # Only become a mediator if there is already one in the clan.
                         if mediator_list and not has_mediator_apprentice and \
@@ -1017,17 +1032,25 @@ class Events():
                     "apprentice", "mediator apprentice",
                     "medicine cat apprentice"
             ]:
-                if (cat.experience_level not in ["untrained", "trainee"] and
-                    cat.moons >= game.config["graduation"]["min_graduating_age"]) \
-                        or cat.moons >= game.config["graduation"]["max_apprentice_age"][cat.status]:
 
-                    if cat.moons == game.config["graduation"][
-                            "min_graduating_age"]:
-                        preparedness = "early"
-                    elif cat.experience_level in ["untrained", "trainee"]:
-                        preparedness = "unprepared"
-                    else:
+                if game.settings["12_moon_graduation"]:
+                    _ready = cat.moons >= 12
+                else:
+                    _ready = (cat.experience_level not in ["untrained", "trainee"] and
+                              cat.moons >= game.config["graduation"]["min_graduating_age"]) \
+                              or cat.moons >= game.config["graduation"]["max_apprentice_age"][cat.status]
+                
+                if _ready:
+                    if game.settings["12_moon_graduation"]:
                         preparedness = "prepared"
+                    else:
+                        if cat.moons == game.config["graduation"][
+                                "min_graduating_age"]:
+                            preparedness = "early"
+                        elif cat.experience_level in ["untrained", "trainee"]:
+                            preparedness = "unprepared"
+                        else:
+                            preparedness = "prepared"
 
                     if cat.status == 'apprentice':
                         self.ceremony(cat, 'warrior', preparedness)
@@ -1072,6 +1095,9 @@ class Events():
         """
         # ceremony = []
         cat.status_change(promoted_to)
+        cat.update_skill()
+        cat.update_traits()
+    
         involved_cats = [
             cat.ID
         ]  # Clearly, the cat the ceremony is about is involved.
@@ -1247,7 +1273,6 @@ class Events():
             except KeyError:
                 random_honor = "hard work"
 
-        # print(possible_ceremonies)
         ceremony_tags, ceremony_text = self.CEREMONY_TXT[random.choice(
             list(possible_ceremonies))]
 
@@ -1344,7 +1369,6 @@ class Events():
             chance = 1
         if not int(random.random() * chance):
 
-            #print('ACC')
             self.misc_events.handle_misc_events(
                 cat,
                 other_cat,
@@ -1545,9 +1569,10 @@ class Events():
                 else:
                     mentor_skill_modifier = 0
 
-                
-
             exp = random.choice(list(range(ran[0][0], ran[0][1] + 1)) + list(range(ran[1][0], ran[1][1] + 1)))
+            
+            if game.clan.game_mode == "classic":
+                exp += random.randint(0, 3)
 
             cat.experience += max(exp * mentor_modifier + mentor_skill_modifier, 1)
 

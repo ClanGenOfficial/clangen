@@ -312,7 +312,7 @@ class ClanScreen(Screens):
                                                                                      [1, 100, 1, 1, 1, 100, 50])
                 else:
                     continue
-            # print(Cat.all_cats[x].status)
+ 
             if Cat.all_cats[x].status in ['apprentice', 'mediator apprentice']:
                 Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(first_choices, all_dens,
                                                                                  [1, 50, 1, 1, 100, 100, 1])
@@ -502,7 +502,7 @@ class StarClanScreen(Screens):
         self.dead_cats = [game.clan.instructor] if not game.clan.instructor.df else []
         for the_cat in Cat.all_cats_list:
             if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.outside and not the_cat.df and \
-                    not the_cat.faded and not the_cat.status in ['kittypet', 'loner', 'rogue']:
+                    not the_cat.faded and not the_cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']:
                 self.dead_cats.append(the_cat)
 
     def screen_switches(self):
@@ -640,7 +640,23 @@ class StarClanScreen(Screens):
         pos_y = 0
         if self.current_listed_cats:
             for cat in self.chunks(self.current_listed_cats, 20)[self.list_page - 1]:
-                update_sprite(cat)
+                #update_sprite(cat)
+                
+                if game.clan.clan_settings["show_fav"] and cat.favourite:
+                    
+                    _temp = pygame.transform.scale(
+                            pygame.image.load(
+                                f"resources/images/fav_marker.png").convert_alpha(),
+                            (100, 100))
+                    
+                    _temp.set_alpha(150)
+                    
+                    self.display_cats.append(
+                        pygame_gui.elements.UIImage(
+                            scale(pygame.Rect((260 + pos_x, 360 + pos_y), (100, 100))),
+                            _temp))
+                    self.display_cats[-1].disable()
+                
                 self.display_cats.append(
                     UISpriteButton(scale(pygame.Rect
                                          ((260 + pos_x, 360 + pos_y), (100, 100))),
@@ -955,7 +971,23 @@ class DFScreen(Screens):
         pos_y = 0
         if self.current_listed_cats:
             for cat in self.chunks(self.current_listed_cats, 20)[self.list_page - 1]:
-                update_sprite(cat)
+                #update_sprite(cat)
+                
+                if game.clan.clan_settings["show_fav"] and cat.favourite:
+                    
+                    _temp = pygame.transform.scale(
+                            pygame.image.load(
+                                f"resources/images/fav_marker.png").convert_alpha(),
+                            (100, 100))
+                    
+                    _temp.set_alpha(150)
+                    
+                    self.display_cats.append(
+                        pygame_gui.elements.UIImage(
+                            scale(pygame.Rect((260 + pos_x, 360 + pos_y), (100, 100))),
+                            _temp))
+                    self.display_cats[-1].disable()
+                
                 self.display_cats.append(
                     UISpriteButton(scale(pygame.Rect
                                          ((260 + pos_x, 360 + pos_y), (100, 100))),
@@ -1028,7 +1060,6 @@ class ListScreen(Screens):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.outside_clan_button:
                 self.change_screen("other screen")
-
             elif event.ui_element == self.next_page_button:
                 self.list_page += 1
                 self.update_page()
@@ -1036,19 +1067,15 @@ class ListScreen(Screens):
                 self.list_page -= 1
                 self.update_page()
             elif event.ui_element == self.filter_fav:
-                self.filter_fav.hide()
                 self.filter_not_fav.show()
-                game.sort_fav = False
-                Cat.sort_cats()
-                self.get_living_cats()
-                self.update_search_cats(self.search_bar.get_text())
+                self.filter_fav.hide()
+                game.clan.clan_settings["show_fav"] = False
+                self.update_page()
             elif event.ui_element == self.filter_not_fav:
                 self.filter_not_fav.hide()
                 self.filter_fav.show()
-                game.sort_fav = True
-                Cat.sort_cats()
-                self.get_living_cats()
-                self.update_search_cats(self.search_bar.get_text())
+                game.clan.clan_settings["show_fav"] = True
+                self.update_page()
             elif event.ui_element == self.filter_by_closed:
                 self.filter_by_closed.hide()
                 self.filter_by_open.show()
@@ -1137,11 +1164,17 @@ class ListScreen(Screens):
 
         self.filter_fav = UIImageButton(scale(pygame.Rect((390, 275), (56, 56))), "",
                                         object_id="#fav_cat",
-                                        manager=MANAGER)
-        self.filter_fav.hide()
+                                        manager=MANAGER,
+                                        tool_tip_text='hide favorite cat indicators')
+
         self.filter_not_fav = UIImageButton(scale(pygame.Rect((390, 275), (56, 56))), "",
                                             object_id="#not_fav_cat", manager=MANAGER,
-                                        tool_tip_text='list favorite cats first')
+                                        tool_tip_text='show favorite cat indicators')
+        
+        if game.clan.clan_settings["show_fav"]:
+            self.filter_not_fav.hide()
+        else:
+            self.filter_fav.hide()
 
         self.next_page_button = UIImageButton(scale(pygame.Rect((912, 1190), (68, 68))), "",
                                               object_id="#arrow_right_button"
@@ -1286,7 +1319,23 @@ class ListScreen(Screens):
         if self.current_listed_cats:
             for cat in self.chunks(self.current_listed_cats, 20)[self.list_page - 1]:
 
-                update_sprite(cat)
+                #update_sprite(cat)
+                if game.clan.clan_settings["show_fav"] and cat.favourite:
+                    
+                    _temp = pygame.transform.scale(
+                            pygame.image.load(
+                                f"resources/images/fav_marker.png").convert_alpha(),
+                            (100, 100))
+                    
+                    if game.settings["dark mode"]:
+                        _temp.set_alpha(150)
+                    
+                    self.display_cats.append(
+                        pygame_gui.elements.UIImage(
+                            scale(pygame.Rect((260 + pos_x, 360 + pos_y), (100, 100))),
+                            _temp))
+                    self.display_cats[-1].disable()
+                
                 self.display_cats.append(
                     UISpriteButton(scale(pygame.Rect
                                          ((260 + pos_x, 360 + pos_y), (100, 100))),
@@ -1927,7 +1976,7 @@ class MedDenScreen(Screens):
                 short_name = str(cat.name)[0:18]
                 name = short_name + '...'
             self.med_name = pygame_gui.elements.ui_label.UILabel(scale(pygame.Rect
-                                                                       ((1180, 310), (200, 60))),
+                                                                       ((1050, 310), (450, 60))),
                                                                  name,
                                                                  object_id=get_text_box_theme("#text_box_30_horizcenter"), manager=MANAGER
                                                                  )

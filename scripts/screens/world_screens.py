@@ -275,7 +275,23 @@ class OutsideClanScreen(Screens):
         pos_y = 0
         if self.current_listed_cats:
             for cat in self.chunks(self.current_listed_cats, 20)[self.list_page - 1]:
-                update_sprite(cat)
+                #update_sprite(cat)
+                
+                if cat.favourite:
+                    
+                    _temp = pygame.transform.scale(
+                            pygame.image.load(
+                                f"resources/images/fav_marker.png").convert_alpha(),
+                            (100, 100))
+                    
+                    _temp.set_alpha(150)
+                    
+                    self.display_cats.append(
+                        pygame_gui.elements.UIImage(
+                            scale(pygame.Rect((260 + pos_x, 360 + pos_y), (100, 100))),
+                            _temp))
+                    self.display_cats[-1].disable()
+                
                 self.display_cats.append(
                     UISpriteButton(scale(pygame.Rect
                                    ((260 + pos_x, 360 + pos_y), (100, 100))),
@@ -577,7 +593,23 @@ class UnknownResScreen(Screens):
         pos_y = 0
         if self.current_listed_cats:
             for cat in self.chunks(self.current_listed_cats, 20)[self.list_page - 1]:
-                update_sprite(cat)
+                # update_sprite(cat)
+                
+                if game.clan.clan_settings["show_fav"] and cat.favourite:
+                    
+                    _temp = pygame.transform.scale(
+                            pygame.image.load(
+                                f"resources/images/fav_marker.png").convert_alpha(),
+                            (100, 100))
+                    
+                    _temp.set_alpha(150)
+                    
+                    self.display_cats.append(
+                        pygame_gui.elements.UIImage(
+                            scale(pygame.Rect((260 + pos_x, 360 + pos_y), (100, 100))),
+                            _temp))
+                    self.display_cats[-1].disable()
+                    
                 self.display_cats.append(
                     UISpriteButton(scale(pygame.Rect
                                    ((260 + pos_x, 360 + pos_y), (100, 100))),
