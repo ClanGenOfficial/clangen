@@ -1,3 +1,11 @@
+"""
+
+USED VIA:
+<top of script, below module comments, above imports>
+
+"""
+
+
 from .mods import modlist
 import os
 import importlib

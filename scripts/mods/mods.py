@@ -16,7 +16,8 @@ class modList():
     TODO: docs
     """
     def __init__(self):
-        self._mods = modList.get_real_mods()
+        self.overwritten_scripts = {}
+        self._mods = self.get_real_mods()
         self.mods = self.sort(self._mods, should_reread=True)
     
 
@@ -32,8 +33,7 @@ class modList():
                 mods.append(mod)
         return mods
     
-    @staticmethod
-    def get_real_mods() -> list: 
+    def get_real_mods(self) -> list: 
         """
         Verifies that all mods are valid
         """
@@ -49,7 +49,6 @@ class modList():
 
 
             # God bless anyone who has to read this
-            overwritten_scripts = {}
             for folder in required_folders:
                 if folder in dircontents:
                     _dircontents = os.listdir(os.path.join(get_mods_dir(), mod, folder))
@@ -64,9 +63,9 @@ class modList():
                                             _overwritten_scripts.append(os.path.join(file, _file))
                                 if file.endswith(".py"):
                                     _overwritten_scripts.append(file)
-                            overwritten_scripts[mod] = _overwritten_scripts
+                            self.overwritten_scripts[mod] = _overwritten_scripts
 
-            for mod, scripts in overwritten_scripts.items():
+            for mod, scripts in self.overwritten_scripts.items():
                 print(f"Mod {mod} overwrites the following scripts: {', '.join(scripts)}")
 
 
@@ -163,16 +162,12 @@ class modList():
         Toggles a mod on or off
         """
         if mod not in self.mods:
-            print('returning')
             return
         _ = self.mods.index(mod)
         self.mods.remove(mod)
         if mod.startswith("-"):
-            print('enabling')
             self.mods.insert(_, mod[1:])
-            print('a')
         else:
-            print('disabling')
             self.mods.insert(_, f"-{mod}")
         self.sort(self.mods, should_rewrite=True)
     
