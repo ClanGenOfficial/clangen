@@ -43,10 +43,10 @@ class Cat():
     dead_cats = []
     used_screen = screen
     traits = [
-        'adventurous', 'altruistic', 'ambitious', 'bloodthirsty', 'bold',
+        'adventurous', 'ambitious', 'bloodthirsty', 'bold',
         'calm', 'careful', 'charismatic', 'childish', 'cold', 'compassionate',
-        'confident', 'daring', 'empathetic', 'faithful', 'fierce', 'insecure',
-        'lonesome', 'loving', 'loyal', 'nervous', 'patient', 'playful',
+        'confident', 'daring', 'faithful', 'fierce', 'insecure',
+        'lonesome', 'loving', 'loyal', 'nervous', 'playful',
         'responsible', 'righteous', 'shameless', 'sneaky', 'strange', 'strict',
         'thoughtful', 'troublesome', 'vengeful', 'wise'
     ]
@@ -58,8 +58,7 @@ class Cat():
     personality_groups = {
         'Outgoing': ['adventurous', 'bold', 'charismatic', 'childish', 'confident', 'daring',
                      'playful', 'righteous', 'attention-seeker', 'bouncy', 'charming', 'noisy'],
-        'Benevolent': ['altruistic', 'compassionate', 'empathetic', 'faithful', 'loving',
-                       'patient', 'responsible', 'thoughtful', 'wise', 'inquisitive',
+        'Benevolent': ['faithful', 'loving', 'responsible', 'thoughtful', 'wise', 'inquisitive',
                        'polite', 'sweet'],
         'Abrasive': ['ambitious', 'bloodthirsty', 'cold', 'fierce', 'shameless', 'strict',
                      'troublesome', 'vengeful', 'bossy', 'bullying', 'impulsive'],
@@ -753,7 +752,7 @@ class Cat():
             game.cur_events_list.append(Single_Event('A long overdue apprentice ceremony is held for ' + str(
                 self.name.prefix) + 'kit. They smile as they finally become a warrior of the Clan and are now named ' + str(
                 self.name) + '.', "ceremony", involved_cats))
-        elif self.status in ['kittypet', 'loner', 'rogue']:
+        elif self.status in ['kittypet', 'loner', 'rogue', 'former Clancat']:
             if self.moons == 0:
                 self.status = 'newborn'
             elif self.moons < 6:
