@@ -1237,9 +1237,9 @@ class Patrol():
         # now have the new cats form relationships with the patrol cats
         for new_cat in created_cats:
             if new_cat.outside:
-                break
+                continue
             if new_cat.dead:
-                break
+                continue
             for patrol_cat in self.patrol_cats:
                 patrol_cat.relationships[new_cat.ID] = Relationship(patrol_cat, new_cat)
                 new_cat.relationships[patrol_cat.ID] = Relationship(new_cat, patrol_cat)
