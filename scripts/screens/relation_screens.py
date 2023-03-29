@@ -2774,7 +2774,7 @@ class MediationScreen(Screens):
         col1 += "\n" + cat.trait
         self.selected_cat_elements["col1" + tag] = pygame_gui.elements.UITextBox(col1,
                                                                                  scale(pygame.Rect((x + 42, y + 252),
-                                                                                                   (180, -1))),
+                                                                                                   (160, -1))),
                                                                                  object_id="#text_box_22_horizleft_spacing_95",
                                                                                  manager=MANAGER)
 
