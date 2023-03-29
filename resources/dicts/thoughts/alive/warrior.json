@@ -13,9 +13,6 @@
             "Has to pretend to be a captured warrior for r_c's games",
             "Is prentending to be a big, evil warrior for r_c"
         ],
-        "main_status_constraint": [
-            "warrior"
-        ],
         "random_status_constraint": [
             "kitten"
         ],
@@ -34,9 +31,6 @@
             "Sadly remembers when r_c would play games with them",
             "Hopes the kits in Starclan are safe"
         ],
-        "main_status_constraint": [
-            "warrior"
-        ],
         "random_status_constraint": [
             "kitten"
         ],
@@ -49,9 +43,6 @@
         "thoughts": [
             "Wonders how r_c deals with being in the Dark Forest",
             "Wishes that r_c may walk among the stars"
-        ],
-        "main_status_constraint": [
-            "warrior"
         ],
         "random_status_constraint": [
             "kitten"
@@ -74,9 +65,6 @@
         "relationship_constraint": [
             "parent/child"
         ],
-        "main_status_constraint": [
-            "warrior"
-        ],
         "random_status_constraint": [
             "kitten"
         ],
@@ -88,9 +76,6 @@
         "id": "warrior_gen_alive_apprentice",
         "thoughts": [
             "Has the apprentices very engaged in a very, very tall tale"
-        ],
-        "main_status_constraint": [
-            "warrior"
         ],
         "random_status_constraint": [
             "apprentice"
@@ -104,9 +89,6 @@
         "thoughts": [
             "Wants to be chosen as the new deputy"
         ],
-        "main_status_constraint": [
-            "warrior"
-        ],
         "random_status_constraint": [
             "deputy"
         ]
@@ -115,9 +97,6 @@
         "id": "gen_older_warrior",
         "thoughts": [
             "Tries to set a good example for younger cats"
-        ],
-        "main_status_constraint": [
-            "warrior"
         ],
         "main_age_constraint": [
             "senior adult",
@@ -133,9 +112,6 @@
             "Plans to visit the medicine cat",
             "Is helping to escort the medicine cat to gather herbs"
         ],
-        "main_status_constraint": [
-            "warrior"
-        ],
         "random_status_constraint": [
             "medicine cat"
         ],
@@ -147,9 +123,6 @@
         "id": "warrior_gen_warrior",
         "thoughts": [
             "Is sparring with some Clanmates"
-        ],
-        "main_status_constraint": [
-            "warrior"
         ],
         "random_status_constraint": [
             "warrior"
@@ -193,27 +166,6 @@
         "adventurous"
     ]
 
-},
-{
-    "id": "altruistic_warrior",
-    "thoughts": [
-        "Is laughing at a Clanmates joke, even though they didn't find it too terribly funny",
-        "Helped to gather herbs all day",
-        "Offered to walk at the front of the patrol",
-        "Offered to stick their nose inside a badger set to check if the badger is still there",
-        "Offered to stick their nose inside a fox den to check if the fox is still there",
-        "Volunteered for extra patrols",
-        "Volunteered for extra duties",
-        "Volunteered to stand guard of the camp",
-        "Gives some plump fresh-kill to a Clanmate instead",
-        "Shares the best hunting spots with the other warriors",
-        "Does their Clanmates' chores with a smile on their face",
-        "Offers a helping paw, even after a night of bad sleep",
-        "Feels their kindness might be taken advantage of"
-    ],
-    "main_trait_constraint": [
-        "altruistic"
-    ]
 },
 {
     "id": "ambitious_warrior",
@@ -415,7 +367,48 @@
         "Feels bad seeing the apprentices worked to the bone",
         "Makes sure to check on a Clanmate who's been having a rough time",
         "Quickly forgives somebody after they snapped at them",
-        "Spends some extra time thanking StarClan for the prey today"
+        "Spends some extra time thanking StarClan for the prey today",
+        "Is waiting until everyone has eaten to take from the fresh-kill pile",
+        "Is patiently standing guard outside of camp",
+        "Is winning a staring contest against a Clanmate",
+        "Is listening to a story they've heard many, many times",
+        "Is listening to older cats gripe about their day",
+        "Is looking up, watching the clouds roll by",
+        "Is watching the breeze blow around the camp",
+        "Is listening to the grass sway",
+        "Is listening closely to the sounds of the forest",
+        "Is waiting to watch the sun rise",
+        "Is waiting to watch the sun set",
+        "Is grooming, grooming, grooming away...",
+        "Patiently waits for a rabbit to come out of their burrow, eventually catching it",
+        "Smiles at some kit's cheap prank, knowing they'll grow out of it soon",
+        "Is the only warrior not bothered by a snoring Clanmate",
+        "Is delighted by the slow passage of time",
+        "Feels entirely unlike themselves when they're bothered by something small",
+        "Is laughing at a Clanmates joke, even though they didn't find it too terribly funny",
+        "Helped to gather herbs all day",
+        "Offered to walk at the front of the patrol",
+        "Offered to stick their nose inside a badger set to check if the badger is still there",
+        "Offered to stick their nose inside a fox den to check if the fox is still there",
+        "Volunteered for extra patrols",
+        "Volunteered for extra duties",
+        "Volunteered to stand guard of the camp",
+        "Gives some plump fresh-kill to a Clanmate instead",
+        "Shares the best hunting spots with the other warriors",
+        "Does their Clanmates' chores with a smile on their face",
+        "Offers a helping paw, even after a night of bad sleep",
+        "Feels their kindness might be taken advantage of",
+        "Is listening to the woes of a fellow Clanmate",
+        "Notices an apprentice struggling with a task and offers their help",
+        "Is doing some apprentice tasks around camp, to help lighten the load",
+        "Is sharing tongues with friends",
+        "Is keeping the injured cats company",
+        "Ponders the burdens of others",
+        "Can't stop smiling because of another Clanmates good mood",
+        "Is feeling really sad, but tries not to let it show",
+        "Says sorry before they bite into their fresh-kill",
+        "Helps solve a conflict by mediating both sides",
+        "Purrs contently at the thought of their Clanmates being happy"
     ],
     "main_trait_constraint": [
         "compassionate"
@@ -463,25 +456,6 @@
     ],
     "main_trait_constraint": [
         "daring"
-    ]
-},
-{
-    "id": "empathetic_warrior",
-    "thoughts": [
-        "Is listening to the woes of a fellow Clanmate",
-        "Notices an apprentice struggling with a task and offers their help",
-        "Is doing some apprentice tasks around camp, to help lighten the load",
-        "Is sharing tongues with friends",
-        "Is keeping the injured cats company",
-        "Ponders the burdens of others",
-        "Can't stop smiling because of another Clanmates good mood",
-        "Is feeling really sad, but tries not to let it show",
-        "Says sorry before they bite into their fresh-kill",
-        "Helps solve a conflict by mediating both sides",
-        "Purrs contently at the thought of their Clanmates being happy"
-    ],
-    "main_trait_constraint": [
-        "empathetic"
     ]
 },
 {
@@ -673,31 +647,6 @@
     ]
 },
 {
-    "id": "patient_warrior",
-    "thoughts": [
-        "Is waiting until everyone has eaten to take from the fresh-kill pile",
-        "Is patiently standing guard outside of camp",
-        "Is winning a staring contest against a Clanmate",
-        "Is listening to a story they've heard many, many times",
-        "Is listening to older cats gripe about their day",
-        "Is looking up, watching the clouds roll by",
-        "Is watching the breeze blow around the camp",
-        "Is listening to the grass sway",
-        "Is listening closely to the sounds of the forest",
-        "Is waiting to watch the sun rise",
-        "Is waiting to watch the sun set",
-        "Is grooming, grooming, grooming away...",
-        "Patiently waits for a rabbit to come out of their burrow, eventually catching it",
-        "Smiles at some kit's cheap prank, knowing they'll grow out of it soon",
-        "Is the only warrior not bothered by a snoring Clanmate",
-        "Is delighted by the slow passage of time",
-        "Feels entirely unlike themselves when they're bothered by something small"
-    ],
-    "main_trait_constraint": [
-        "patient"
-    ]
-},
-{
     "id": "playful_warrior",
     "thoughts": [
         "Is playing tag with cats around camp",
@@ -745,31 +694,6 @@
     ],
     "main_trait_constraint": [
         "responsible"
-    ]
-},
-{
-    "id": "patient_warrior",
-    "thoughts": [
-        "Is waiting until everyone has eaten to take from the fresh-kill pile",
-        "Is patiently standing guard outside of camp",
-        "Is winning a staring contest against a Clanmate",
-        "Is listening to a story they've heard many, many times",
-        "Is listening to older cats gripe about their day",
-        "Is looking up, watching the clouds roll by",
-        "Is watching the breeze blow around the camp",
-        "Is listening to the grass sway",
-        "Is listening closely to the sounds of the forest",
-        "Is waiting to watch the sun rise",
-        "Is waiting to watch the sun set",
-        "Is grooming, grooming, grooming away...",
-        "Patiently waits for a rabbit to come out of their burrow, eventually catching it",
-        "Smiles at some kit's cheap prank, knowing they'll grow out of it soon",
-        "Is the only warrior not bothered by a snoring Clanmate",
-        "Is delighted by the slow passage of time",
-        "Feels entirely unlike themselves when they're bothered by something small"
-    ],
-    "main_trait_constraint": [
-        "patient"
     ]
 },
 {
