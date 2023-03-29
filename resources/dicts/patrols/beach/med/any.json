@@ -9,8 +9,8 @@
     "chance_of_success": 45,
     "exp": 10, 
     "success_text": [
-        "As p_l looks into the puddle, they are greeted by an intense vision. They drop what they are doing and race back to the camp to consult with the leader - water can wait, this is far too important.",
-        "They are greeted with the vision of a cat they had failed to save, content and happy in StarClan. The cat gives them a gentle smile, softly telling p_l that they were never at fault for their death. They feel their shoulders sag with the weight of their relief, feeling the burden of the death lift from over their head."
+        "As p_l looks into the puddle, they're greeted by an intense vision. They drop what they're doing and race back to the camp to consult with the leader - water can wait, this is far too important.",
+        "p_l is greeted with the vision of a cat they had failed to save, content and happy in StarClan. The cat gives them a gentle smile, softly telling p_l that they were never at fault for their death. p_l feels their shoulders sag with the weight of their relief, feeling the burden of the death lift from over their head."
     ],
     "fail_text": [
         "They gaze eagerly into the puddle, only to see the weird ripples were caused by a small frog. p_l sighs in disappointment - they really could have used some guidance from StarClan."
@@ -25,7 +25,7 @@
     "patrol_id": "bch_med_herblocation1",
     "biome": "beach",
     "season": "Any",
-    "tags": ["herb_gathering", "herb_gathering", "med_cat", "apprentice", "trust", "respect", "med_only", "random_herbs"],
+    "tags": ["herb_gathering", "med_cat", "apprentice", "trust", "respect", "med_only", "random_herbs"],
     "intro_text": "p_l looks at the calm, cloudless sky, and decides it's a good opportunity to show app1 where some of the most commonly needed herbs are located in their territory, as well as where and when to burrow into the sand to find the more potent roots they tend to use.",
     "decline_text": "As they look at app1's absent-minded gaze, they hesitate and change their mind. Maybe another day would be best, when app1 is more focused... and less liable to get sand everywhere, or damage the herbs.",
     "chance_of_success": 65,
@@ -46,7 +46,7 @@
     "patrol_id": "bch_med_herblocation2",
     "biome": "beach",
     "season": "Any",
-    "tags": ["herb_gathering", "herb_gathering", "apprentice", "med_only", "random_herbs"],
+    "tags": ["herb_gathering", "apprentice", "med_only", "random_herbs"],
     "intro_text": "app1 has been sent out onto the beaches to try to find some specific herbs alone.",
     "decline_text": "Nervous and sneezing due to the salty air, they decide to go back to camp and try again another day. Their mentor won't be very pleased, but they rationalize that it's better to go with confidence than nerves.",
     "chance_of_success": 65,
@@ -67,7 +67,7 @@
     "patrol_id": "bch_med_herbsdandy1",
     "biome": "beach",
     "season": "Any",
-    "tags": ["herb_gathering", "herb_gathering", "med_cat", "apprentice", "med_only", "herb", "dandelion", "many_herbs1"],
+    "tags": ["herb_gathering", "med_cat", "apprentice", "med_only", "herb", "dandelion", "many_herbs1"],
     "intro_text": "p_l and app1 are going out to gather dandelions. app1 asks their mentor what they'll do if the rabbits have eaten all of it, and p_l responds that they'll cross that river when they get to it.",
     "decline_text": "A cat grabs p_l's attention before they can leave.",
     "chance_of_success": 60,
@@ -88,7 +88,7 @@
     "patrol_id": "bch_med_appfirstsign1",
     "biome": "beach",
     "season": "Any",
-    "tags": ["herb_gathering", "herb_gathering", "apprentice", "med_only", "herb", "rosemary"],
+    "tags": ["herb_gathering", "apprentice", "med_only", "herb", "rosemary"],
     "intro_text": "app1 pads out of camp, ready to gather some herbs at the behest of their mentor. The wind gently rustles through the beach grass as they pad along.",
     "decline_text": "Before they get more than a few pawsteps away, their mentor calls them back. Apparently, something more pressing has come up.",
     "chance_of_success": 50,
@@ -120,7 +120,7 @@
            "The keen eyed s_c spots herbs quickly, and the cats harvest them and retreat back to the camp, where it's nice and dry. No point in lingering for a second more than they need to with the weather like this!"
     ],
     "fail_text": [
-            "p_l <i>knows</i> the conditions are miserable, but this group is somehow more insufferable! Not only do they have to put up with these cats for an entire afternoon, there's nothing to show for it at the end of the day."
+            "p_l <i>knows</i> the conditions are miserable, but this group is somehow more insufferable! Not only do they have to put up with these cats for an entire afternoon, there's also nothing to show for it at the end of the day."
     ],
     "win_skills": ["keen eye"],
     "min_cats": 3,
@@ -203,7 +203,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "As a plant that grows non-seasonally, without losing any of its green in leaf-bare, while <i>also</i> having a crucial herbal use in stopping blood-loss, horsetail is a welcome sight in any well-stocked medicine cat den.",
+            "As a plant that grows without losing any of its green in leaf-bare, while <i>also</i> having a crucial herbal use in stopping blood-loss, horsetail is a welcome sight in any well-stocked medicine cat den.",
             "Snapping off the thick horsetail stem near the base of the plant allows p_l to drag an entire big, long shoot back to camp, where they diligently process it down further into smaller stem sections that are easily stored.",
             "s_c deftly picks out an entire horsetail shoot, bringing back quite the impressive addition to the Clan's herb stores."
 ],
@@ -226,7 +226,7 @@
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-            "p_l doesn't know why horsetail plants lack leaves, but they encourage app1's interest in the topic. As a plant that grows non-seasonally, without losing any of its green in leaf-bare, while <i>also</i> having a crucial herbal use in stopping blood-loss, horsetail is a welcome sight in any well-stocked medicine cat den.",
+            "p_l doesn't know why horsetail plants lack leaves, but they encourage app1's interest in the topic. As a plant that grows without losing any of its green in leaf-bare, while <i>also</i> having a crucial herbal use in stopping blood-loss, horsetail is a welcome sight in any well-stocked medicine cat den.",
             "Snapping off the thick horsetail stem near the base of the plant allows p_l to drag an entire big, long shoot back to camp, where app1 processes it down further into small stem sections that are easily stored, making a neat pile in the medicine cat den with them.",
             "s_c deftly picks out an entire horsetail shoot, bringing back quite the impressive addition to the Clan's herb stores as they describe the plant's uses to app1."
 ],
@@ -249,7 +249,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "As a plant that grows non-seasonally, and without losing any of its green in leaf-bare, while <i>also</i> having a crucial herbal use in stopping blood-loss, horsetail is a welcome sight in any well-stocked medicine cat den, and having other cats to help them makes the patrol an easy afternoon's work.",
+            "As a plant that grows without losing any of its green in leaf-bare, while <i>also</i> having a crucial herbal use in stopping blood-loss, horsetail is a welcome sight in any well-stocked medicine cat den. Having other cats to help them makes the patrol an easy afternoon's work.",
             "Snapping off the thick horsetail stem near the base of the plant allows p_l to drag an entire shoot back to camp. The patrol helps pull along the massive bush, causing several cats in camp to fluff up in alarm when the patrol drags it through camp, where they diligently process it down further into smaller stem sections that are easily stored.",
             "s_c deftly picks out an entire horsetail shoot, bringing back quite the impressive addition to the Clan's herb stores with the help of the warriors."
     ],

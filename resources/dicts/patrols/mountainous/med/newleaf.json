@@ -404,7 +404,7 @@
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-            "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. Both the potent milk in their roots and stems, and the fast-acting leaves... even the fluffy dandelion heads are useful as a c_n kitten's favourite, short lived toy, and p_l smiles, remembering watching app1 playing with them just a few short moons ago. Then p_l chuckles to themself, spotting a nearby patch of wild garlic not even a fox-length away. Time to see how app1 will react to this stinky herb!",
+            "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. Both the potent milk in their roots and stems, and the fast-acting leaves... even the fluffy dandelion heads are useful as a c_n kitten's favourite, short lived toy. p_l smiles fondly as they remember watching app1 playing with them just a few short moons ago. Then p_l chuckles to themself, spotting a nearby patch of wild garlic not even a fox-length away. Time to see how app1 will react to this stinky herb!",
             "It's a successful gathering mission, with p_l striding back to camp with a great haul of entire dandelion plants, and bonus wild garlic. Later they'll teach app1 to sort the leaves and roots to be stored separately, the leaves remain fresh for a far shorter time.",
             "With warmth in the air and ground, s_c doesn't need to try very hard to find an excellent haul of dandelions and wild garlic to bring back to camp. Instead, they let app1 take the lead in finding the plants, praising them for all the progress they've made in herbcraft."
     ],
@@ -1192,7 +1192,7 @@
     "fail_text": [
             "Try as they might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
-    "win_skills": ["keen eye"],
+    "win_skills": ["smart", "very smart", "extremely smart"],
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1215,7 +1215,7 @@
     "fail_text": [
             "Try as they might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
-    "win_skills": ["keen eye"],
+    "win_skills": ["smart", "very smart", "extremely smart"],
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1238,7 +1238,7 @@
     "fail_text": [
             "Try as they might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
-    "win_skills": ["keen eye"],
+    "win_skills": ["smart", "very smart", "extremely smart"],
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,

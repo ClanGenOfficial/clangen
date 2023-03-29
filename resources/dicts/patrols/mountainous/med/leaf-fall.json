@@ -427,7 +427,7 @@
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-            "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. Both the potent milk in their roots and stems, and the fast-acting leaves... even the fluffy dandelion heads are useful as a c_n kitten's favourite, short lived toy, and p_l smiles, remembering watching app1 playing with them just a few short moons ago. Then another scent touches their nose, drawing from them their thoughts, and they soon sniff out the wild garlic that was hidden a short distance away. It would be pretty funny to see how app1 will react to this stinky herb!",
+            "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. Both the potent milk in their roots and stems, and the fast-acting leaves... even the fluffy dandelion heads are useful as a c_n kitten's favourite, short lived toy. p_l smiles fondly as they remember watching app1 playing with them just a few short moons ago. Then another scent touches their nose, drawing from them their thoughts, and they soon sniff out the wild garlic that was hidden a short distance away. It would be pretty funny to see how app1 will react to this stinky herb!",
             "It's a successful gathering mission, with p_l striding back to camp with a great haul of entire dandelion plants and several wild garlic bulbs. Later they'll teach app1 to sort the leaves and roots to be stored separately, the leaves remain fresh for a far shorter time.",
             "With the last bits of greenleaf's warmth still lingering in the air, s_c doesn't need to try very hard to find an excellent haul of dandelions to bring back to camp. Instead, they let app1 take the lead in finding the plants, praising them for all the progress they've made in herbcraft. They feel particularly proud when app1 notices the wild garlic without them needing to point it out."
 ],
@@ -474,7 +474,7 @@
     "exp": 10,
     "success_text": [
             "Elder leaves being used to <i>soothe</i> sprains, and elder leaves having to be gathered in a way that <i>risks</i> sprains, is truly one of StarClan's little ironies, p_l reflects.",
-            "Ignoring the leaves piled up at the tree's base, which lack any herbal potency, p_l is pickier with their gather. They choose leaves as close to green as possible for maximum usefulness, which they find tends to fade the redder their leaves get.",
+            "Ignoring the leaves piled up at the tree's base, which lack any herbal potency, p_l is pickier with their gathering. They choose leaves as close to green as possible for maximum usefulness, which they find tends to fade the redder their leaves get.",
             "s_c has managed to discover, with time and experience, that elder leaf picking is actually better handled by chewing off several low hanging, thin branches, and carting those back to camp instead."
 ],
     "fail_text": [
@@ -500,7 +500,7 @@
     "exp": 20,
     "success_text": [
             "Elder leaves being used to <i>soothe</i> sprains, and elder leaves having to be gathered in a way that <i>risks</i> sprains, is truly one of StarClan's little ironies, p_l reflects. app1 is more occupied climbing the tree, and p_l isn't going to dissuade their pride in plucking from the highest branches, even if they're no more potent than those at the bottom.",
-            "Ignoring the leaves piled up at the tree's base, which lack any herbal potency, p_l is pickier with their gather. They choose leaves as close to green as possible for maximum usefulness, which they find tends to fade the redder their leaves get. app1 soaks up the information, filing it away in their ever-increasing herbcraft knowledge.",
+            "Ignoring the leaves piled up at the tree's base, which lack any herbal potency, p_l is pickier with their gathering. They choose leaves as close to green as possible for maximum usefulness, which they find tends to fade the redder their leaves get. app1 soaks up the information, filing it away in their ever-increasing herbcraft knowledge.",
             "s_c has managed to discover, with time and experience, that elder leaf picking is actually better handled by chewing off several low hanging, thin branches, and carting those back to camp instead. They pass on the trick to app1, and once they're back at camp both medicine cats strip off the leaves and give them a quick wash."
 ],
     "fail_text": [
@@ -526,7 +526,7 @@
     "exp": 10,
     "success_text": [
             "Elder leaves being used to <i>soothe</i> sprains, and elder leaves having to be gathered in a way that <i>risks</i> sprains, is truly one of StarClan's little ironies, p_l reflects. They share the little joke with the patrol, and the cats <i>murrp</i> with amusement, but it does also remind everyone to be careful as they strip leaves from the tree.",
-            "Ignoring the leaves piled up at the tree's base, which lack potency, p_l is pickier with their gather. They choose leaves as close to green as possible for maximum usefulness, which they find tends to fade the redder their leaves get. The warriors are less selective, but the sheer quantity p_l's able to bring back to camp more than makes up for it.",
+            "Ignoring the leaves piled up at the tree's base, which lack potency, p_l is pickier with their gathering. They choose leaves as close to green as possible for maximum usefulness, which they find tends to fade the redder their leaves get. The warriors are less selective, but the sheer quantity p_l's able to bring back to camp more than makes up for it.",
             "s_c has managed to discover, with time and experience, that elder leaf picking is actually better handled by chewing off several low hanging, thin branches, and carting those back to camp instead. With so many assistants, they can bring a truly massive haul home, where the rest of the patrol helps them strip the leaves and carefully store them."
     ],
     "fail_text": [
@@ -1123,7 +1123,7 @@
     "fail_text": [
             "Try as they might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
-    "win_skills": ["keen eye"],
+    "win_skills": ["smart", "very smart", "extremely smart"],
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1146,7 +1146,7 @@
     "fail_text": [
             "Try as they might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
-    "win_skills": ["keen eye"],
+    "win_skills": ["smart", "very smart", "extremely smart"],
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1169,7 +1169,7 @@
     "fail_text": [
             "Try as they might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
-    "win_skills": ["keen eye"],
+    "win_skills": ["smart", "very smart", "extremely smart"],
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,

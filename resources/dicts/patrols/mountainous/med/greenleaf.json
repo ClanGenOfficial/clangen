@@ -1191,7 +1191,7 @@
     "fail_text": [
             "Try as they might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
-    "win_skills": ["keen eye"],
+    "win_skills": ["smart", "very smart", "extremely smart"],
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1214,7 +1214,7 @@
     "fail_text": [
             "Try as they might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
-    "win_skills": ["keen eye"],
+    "win_skills": ["smart", "very smart", "extremely smart"],
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1237,7 +1237,7 @@
     "fail_text": [
             "Try as they might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
-    "win_skills": ["keen eye"],
+    "win_skills": ["smart", "very smart", "extremely smart"],
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,

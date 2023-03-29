@@ -328,7 +328,7 @@
             "Not only does p_l end up soaked to the skin, but they can't even find any dandelions under the snow. A wasted and horribly chilly day.",
             null,
             null,
-            "Not only does p_l_c end up soaked to the skin, they can't even find any dandelions under the snow, and they're left shivering violently by the time they return to camp."
+            "Not only does r_c end up soaked to the skin, they can't even find any dandelions under the snow, and they're left shivering violently by the time they return to camp."
     ],
     "win_skills": ["keen eye"],
     "min_cats": 1,

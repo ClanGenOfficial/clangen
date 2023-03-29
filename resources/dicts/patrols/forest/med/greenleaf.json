@@ -25,7 +25,7 @@
     "biome": "forest",
     "season": "greenleaf",
     "tags": ["herb_gathering", "med_cat", "herb", "mullein", "no_app"],
-    "intro_text": "p_l is on a mission to find herbs. They know a nice grassy clearing, where mullein grows, and it's always good to have some on paw for coughs and sore throats.",
+    "intro_text": "p_l is on a mission to find herbs. They know a nice place where mullein grows in a grassy clearing, and it's always good to have some on paw for coughs and sore throats.",
     "decline_text": "A cat grabs p_l's attention before they can leave camp.",
     "chance_of_success": 50,
     "exp": 10,
@@ -492,7 +492,7 @@
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-            "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. Both the potent milk in their roots and stems, and the fast-acting leaves... even the fluffy dandelion heads are useful as a c_n kitten's favourite, short lived toy, and p_l smiles, remembering watching app1 playing with them just a few short moons ago.",
+            "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. Both the potent milk in their roots and stems, and the fast-acting leaves... even the fluffy dandelion heads are useful as a c_n kitten's favourite, short lived toy. p_l smiles fondly as they remember watching app1 playing with them just a few short moons ago.",
             "It's a successful gathering mission, with p_l striding back to camp with a great haul of entire dandelion plants. Later they'll teach app1 to sort the leaves and roots to be stored separately, the leaves remain fresh for a far shorter time.",
             "With warmth in the air and ground, s_c doesn't need to try very hard to find an excellent haul of dandelions to bring back to camp. Instead, they let app1 take the lead in finding the plants, praising them for all the progress they've made in herbcraft."
 ],
@@ -515,7 +515,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. Both the potent milk in their roots and stems, and the fast-acting leaves... even the fluffy dandelion heads are useful as a c_n kitten's favourite, short lived toy, and the warriors fondly share nursery memories about them as they gather.",
+            "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. Both the potent milk in their roots and stems, and the fast-acting leaves... even the fluffy dandelion heads are useful as a c_n kitten's favourite, short lived toy. The warriors smile at the sight, sharing fond nursery memories about them as they gather.",
             "It's a successful gathering mission, with p_l striding back to camp with a great haul of whole, intact dandelion plants. Later, they'll sort the leaves and roots to be stored separately - the leaves remain fresh for a far shorter time, but for now they make sure to thank the warriors that have helped them bring home so many.",
             "With warmth in the air and ground, s_c doesn't need to try very hard to find an excellent haul of dandelions to bring back to camp. They help the warriors carefully pluck fluffy dandelions heads to bring back for the nursery."
     ],
@@ -1116,7 +1116,7 @@
     "success_text": [
             "p_l doesn't so much find the plantain plants as they do walk into one, smack-dab in the middle of a main path headed away from camp, but hey, there's plantain!",
             "Suitable for soothing throat and pelt irritation, and with a welcome - albeit weird - habit of consistently sprouting up on well-trodden paths, plantain is a basic but valuable herb to keep stocks of.",
-            "Go to where other animals wander through c_n's territory on little, beaten paths, wander around under you bump, nose-first, into a plantain plant, harvest. Simple."
+            "Go to where other animals wander through c_n's territory on little, beaten paths, wander around until you bump, nose-first, into a plantain plant, harvest. Simple."
 ],
     "fail_text": [
             "p_l finds a plantain plant growing in the middle of a path, but it's trampled and useless until it regrows its leaves."
@@ -1139,7 +1139,7 @@
     "success_text": [
             "p_l doesn't so much find the plantain plants as they do walk into one, smack-dab in the middle of a main path headed away from camp, but hey, there's plantain! They show app1 how the leaves can make excellent structural support for bandages and poultices.",
             "Suitable for soothing throat and pelt irritation, and with a welcome - albeit weird - habit of consistently sprouting up on well-trodden paths, plantain is a basic but valuable herb to keep stocks of, and always taught early in the herbal lore each medicine cat must memorise.",
-            "Go to where other animals wander through c_n's territory on little, beaten paths, wander around under you bump, nose-first, into a plantain plant, harvest. Simple, p_l teaches app1."
+            "Go to where other animals wander through c_n's territory on little, beaten paths, wander around until you bump, nose-first, into a plantain plant, harvest. Simple, p_l teaches app1."
 ],
     "fail_text": [
             "p_l finds a plantain plant growing in the middle of a path, but it's trampled and useless until it regrows its leaves. app1 keeps suggesting they look somewhere that isn't a busy thoroughfare, not seeming to understand why p_l repeatedly says that won't work."
@@ -1162,7 +1162,7 @@
     "success_text": [
             "p_l doesn't so much find the plantain plants as they do walk into one, smack-dab in the middle of a main path headed away from camp, but hey, there's plantain! The warriors are relieved p_l lets them clear the plants away - there'll be plantain elsewhere, and the Clan needs this path.",
             "Suitable for soothing throat and pelt irritation, and with a welcome - albeit weird - habit of consistently sprouting up on well-trodden paths, plantain is a basic, but valuable, herb to keep stocks of. It's even relatively innocuous taste-wise, making it easy to harvest.",
-            "Go to where other animals wander through c_n's territory on little, beaten paths, wander around under you bump, nose-first, into a plantain plant, harvest. Simple. <i>And</i> the warriors get to tidy their paths through the territory. It's a win-win!"
+            "Go to where other animals wander through c_n's territory on little, beaten paths, wander around until you bump, nose-first, into a plantain plant, harvest. Simple. <i>And</i> the warriors get to tidy their paths through the territory. It's a win-win!"
     ],
     "fail_text": [
             "p_l finds a plantain plant growing in the middle of a path, but it's trampled and useless until it regrows its leaves. The warriors, however, are pleased to see the plant dying - seems they've been stomping on it every time they've come through here. How helpful of them."
@@ -1259,7 +1259,7 @@
     "fail_text": [
             "Try as they might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
-    "win_skills": ["keen eye"],
+    "win_skills": ["smart", "very smart", "extremely smart"],
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -1282,7 +1282,7 @@
     "fail_text": [
             "Try as they might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
-    "win_skills": ["keen eye"],
+    "win_skills": ["smart", "very smart", "extremely smart"],
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -1305,7 +1305,7 @@
     "fail_text": [
             "Try as they might, p_l can't quite remember the exact shape of the ragwort leaves, and isn't going to harvest from plants they haven't confidently identified. Better safe than sorry, as they say."
     ],
-    "win_skills": ["keen eye"],
+    "win_skills": ["smart", "very smart", "extremely smart"],
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,

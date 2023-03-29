@@ -9,8 +9,8 @@
     "chance_of_success": 45,
     "exp": 10, 
     "success_text": [
-            "As p_l looks into the puddle, they are greeted by an intense vision. They drop what they are doing and race back to the camp to consult with the leader - water can wait, this is far too important.",
-            "They are greeted with the vision of a cat they had failed to save, content and happy in StarClan. The cat gives them a gentle smile, softly telling p_l that they were never at fault for their death. They feel their shoulders sag with the weight of their relief, feeling the burden of the death lift from over their head."
+            "As p_l looks into the puddle, they're greeted by an intense vision. They drop what they're doing and race back to the camp to consult with the leader - water can wait, this is far too important.",
+            "p_l is greeted with the vision of a cat they had failed to save, content and happy in StarClan. The cat gives them a gentle smile, softly telling p_l that they were never at fault for their death. p_l feels their shoulders sag with the weight of their relief, feeling the burden of the death lift from over their head."
     ],
     "fail_text": [
             "They gaze into the puddle only to see the weird ripples were caused by a feather falling on the puddle. p_l feels disappointed because they really could have used some guidance from StarClan."
@@ -374,7 +374,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "As a plant that grows non-seasonally, without losing any of its green in leaf-bare, while <i>also</i> having a crucial herbal use in stopping blood-loss, horsetail is a welcome sight in any well-stocked medicine cat den. p_l is delighted to notice moss growing nearby, too, and stops to gather a hefty bundle - the Clan can never have too much moss.",
+            "As a plant that grows without losing any of its green in leaf-bare, while <i>also</i> having a crucial herbal use in stopping blood-loss, horsetail is a welcome sight in any well-stocked medicine cat den. p_l is delighted to notice moss growing nearby, too, and stops to gather a hefty bundle - the Clan can never have too much moss.",
             "p_l snaps off the thick horsetail stem near the base of the plant, which reveals a small clump of moss! p_l drags the entire big, long shoot back to camp, where they diligently process it down further into smaller stem sections that are easily stored.",
             "s_c deftly picks out an entire horsetail shoot, which so happens to be growing near the river, where there is an abundance of moss to be collected. s_c proudly drags their haul back to camp - quite the impressive addition to the Clan's herb stores."
 ],
@@ -397,7 +397,7 @@
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-            "p_l doesn't know why horsetail plants lack leaves, but they encourage app1's interest in the topic. As a plant that grows non-seasonally, without losing any of its green in leaf-bare, while <i>also</i> having a crucial herbal use in stopping blood-loss, horsetail is a welcome sight in any well-stocked medicine cat den. p_l is delighted to notice moss growing nearby, too, and stops to gather a hefty bundle - the Clan can never have too much moss.",
+            "p_l doesn't know why horsetail plants lack leaves, but they encourage app1's interest in the topic. As a plant that grows without losing any of its green in leaf-bare, while <i>also</i> having a crucial herbal use in stopping blood-loss, horsetail is a welcome sight in any well-stocked medicine cat den. p_l is delighted to notice moss growing nearby, too, and stops to gather a hefty bundle - the Clan can never have too much moss.",
             "p_l snaps off the thick horsetail stem near the base of the plant, which reveals a small clump of moss! p_l drags an entire big, long shoot back to camp, leaving app1 to carry the moss. In camp, app1 processes it down further into small stem sections that are easily stored, making a neat pile in the medicine cat den with them.",
             "s_c deftly picks out an entire horsetail shoot, which so happens to be growing near the river, where there is an abundance of moss to be collected. s_c proudly drags their haul back to camp - quite the impressive addition to the Clan's herb stores - while they describe the plant's uses to app1"
 ],
@@ -420,7 +420,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "As a plant that grows non-seasonally, without losing any of its green in leaf-bare, while <i>also</i> having a crucial herbal use in stopping blood-loss, horsetail is a welcome sight in any well-stocked medicine cat den. p_l is delighted to notice moss growing not so far from the horsetail and requests that the warriors gather some. Having other cats to help them has definitely made the patrol an easy afternoon's work.",
+            "As a plant that grows without losing any of its green in leaf-bare, while <i>also</i> having a crucial herbal use in stopping blood-loss, horsetail is a welcome sight in any well-stocked medicine cat den. p_l is delighted to notice moss growing not so far from the horsetail and requests that the warriors gather some. Having other cats to help them has definitely made the patrol an easy afternoon's work.",
             "p_l snaps off the thick horsetail stem near the base of the plant, which reveals a small clump of moss! The patrol helps pull along the massive bush, causing several cats in camp to fluff up in alarm when the patrol drags it through camp, where they diligently process it down further into smaller stem sections that are easily stored.",
             "s_c deftly picks out an entire horsetail shoot, which so happens to be growing near the river, where there is an abundance of moss to be collected. s_c brings back their impressive additions to the Clan's herb stores with the help of the warriors."
     ],
