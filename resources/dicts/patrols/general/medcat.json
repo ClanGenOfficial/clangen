@@ -1069,7 +1069,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "gen_med_discussion1",
+    "patrol_id": "gen_med_discussnews1",
     "biome": "Any",
     "season": "Any",
     "tags": ["med_cat", "random_herbs", "respect", "trust", "med_only", "no_app"],
