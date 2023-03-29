@@ -1031,9 +1031,12 @@ class Cat():
         all_cats = self.all_cats
         other_cat = random.choice(list(all_cats.keys()))
         game_mode = game.switches['game_mode']
-        biome = game.clan.biome
-        season = game.clan.season
-        camp = game.clan.camp_bg
+        biome = game.switches['biome']
+        camp = game.switches['camp_bg']
+        try:
+            season = game.clan.season
+        except:
+            season = None
 
         # get other cat
         i = 0

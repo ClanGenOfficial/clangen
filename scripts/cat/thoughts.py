@@ -46,6 +46,8 @@ class Thoughts():
             
         # This is checking for season
         if "season" in thought:
+            if season == None:
+                return False
             if season not in thought["season"]:
                 return False
 
