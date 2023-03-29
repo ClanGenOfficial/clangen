@@ -37,7 +37,7 @@ jobs:
       - name: Prepare deb files
         run: |
           mkdir .debpkg/opt
-          cp dist/clangen -r .debpkg/opt/clangen
+          cp dist/Clangen -r .debpkg/opt/clangen
           mkdir -p .debpkg/usr/local/bin
           ln -s /opt/clangen/Clangen .debpkg/usr/local/bin/clangen
           cat commit.txt | xargs -I {} sed -i "s/{ver}/{}/g" .debpkg/DEBIAN/control
@@ -92,7 +92,7 @@ jobs:
       - name: Prepare deb files
         run: |
           mkdir .debpkg/opt
-          cp dist/clangen -r .debpkg/opt/clangen
+          cp dist/Clangen -r .debpkg/opt/clangen
           mkdir -p .debpkg/usr/local/bin
           ln -s /opt/clangen/Clangen .debpkg/usr/local/bin/clangen
           cat commit.txt | xargs -I {} sed -i "s/{ver}/{}/g" .debpkg/DEBIAN/control
