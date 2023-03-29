@@ -65,8 +65,8 @@
         "id": "bloodthirsty_leader",
         "thoughts": [
             "Encourages warriors to start fights on border patrols",
-    "Is debating if they should declare a war with another Clan",
-    "Is wondering if they could hold apprentice ceremonies at 4 moons old instead"
+            "Is debating if they should declare a war with another Clan",
+            "Is wondering if they could hold apprentice ceremonies at 4 moons old instead"
         ],
         "main_trait_constraint": [
             "bloodthirsty"
