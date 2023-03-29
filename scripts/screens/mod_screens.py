@@ -96,7 +96,7 @@ class ModScreen(Screens):
         """
         self.screen = pygame.transform.scale(
             pyg_img_load(
-                "resources/images/clan_saves_frame.png").convert_alpha(),
+                "resources/images/yourmods.png").convert_alpha(),
             (440 / 1600 * screen_x, 750 / 1400 * screen_y))
         self.main_menu = UIImageButton(scale(pygame.Rect((50, 50), (306, 60))),
                                        "",
@@ -124,15 +124,15 @@ class ModScreen(Screens):
                                              object_id="#saved_clan",
                                              manager=MANAGER))
             self.moveup_buttons[-1].append(
-                UIImageButton(scale(pygame.Rect((940, y_pos + 17), (44, 44))),
+                UIImageButton(scale(pygame.Rect((940, y_pos), (50, 38))),
                               "",
-                              object_id="#exit_window_button",
+                              object_id="#arrow_up",
                               manager=MANAGER,
                               starting_height=2))
             self.movedown_buttons[-1].append(
-                UIImageButton(scale(pygame.Rect((1000, y_pos + 17), (44, 44))),
+                UIImageButton(scale(pygame.Rect((940, y_pos + 40), (50, 38))),
                               "",
-                              object_id="#exit_window_button",
+                              object_id="#arrow_down",
                               manager=MANAGER,
                               starting_height=3))
 

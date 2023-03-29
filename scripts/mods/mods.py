@@ -99,6 +99,7 @@ class modList():
         else:
             prefs = self.mods # read the already sorted mods list, and sort it again
         for mod in prefs:
+            mod = mod.strip()
             if mod in mods_to_sort:
                 sorted_mods.append(mod)
             elif mod.startswith("-") and mod[1:] in mods_to_sort:
@@ -124,7 +125,7 @@ class modList():
         writes <mods-dir>/.modsettings.txt
         """
         with open(os.path.join(get_mods_dir(), ".modsettings.txt"), "w", encoding='ascii') as file:
-            file.writelines(mods)
+            file.write("\n".join(mods))
 
     def add(self, mod):
         """
@@ -172,6 +173,44 @@ class modList():
         else:
             self.mods.remove(mod)
             self.mods.append(f"-{mod}")
+        self.sort(self.mods, should_rewrite=True)
+    
+    def move_up(self, mod):
+        """
+        Moves a mod up in the list
+        """
+        if mod not in self.mods:
+            return
+        if self.mods.index(mod) == 0:
+            return
+        self.mods.remove(mod)
+        self.mods.insert(self.mods.index(mod)-1, mod)
+        self.sort(self.mods, should_rewrite=True)
+    
+    def move_down(self, mod):
+        """
+        Moves a mod down in the list
+        """
+        if mod not in self.mods:
+            return
+        if self.mods.index(mod) == len(self.mods)-1:
+            return
+        _ = self.mods.index(mod)+1
+        self.mods.remove(mod)
+        self.mods.insert(_, mod)
+        self.sort(self.mods, should_rewrite=True)
+    
+    def move_up(self, mod):
+        """
+        Moves a mod up in the list
+        """
+        if mod not in self.mods:
+            return
+        if self.mods.index(mod) == 0:
+            return
+        _=self.mods.index(mod)-1
+        self.mods.remove(mod)
+        self.mods.insert(_, mod)
         self.sort(self.mods, should_rewrite=True)
 
 

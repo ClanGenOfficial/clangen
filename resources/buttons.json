@@ -4460,6 +4460,52 @@
                 "path":"resources/images/buttons/siblings.png"
             }
         }
+  },
+  "#arrow_up":
+  {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/arrow_up.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/arrow_up_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/arrow_up.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/arrow_up_unavailable.png"
+            }
+        }
+  },
+  "#arrow_down":
+  {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/arrow_down.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/arrow_down_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/arrow_down.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/arrow_down_unavailable.png"
+            }
+        }
   }
 }
 
