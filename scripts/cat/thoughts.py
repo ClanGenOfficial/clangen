@@ -158,9 +158,9 @@ class Thoughts():
         loaded_thoughts = []
 
         if status == "medicine cat apprentice":
-            status = choice("medicine_cat", "apprentice", "medicine_cat_apprentice")
+            status = "medicine_cat_apprentice"
         elif status == "mediator apprentice":
-            status = choice("mediator", "apprentice", "mediator_apprentice")
+            status = "mediator_apprentice"
         elif status == "medicine cat":
             status = "medicine_cat"
 
