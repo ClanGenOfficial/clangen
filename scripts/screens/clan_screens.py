@@ -312,7 +312,7 @@ class ClanScreen(Screens):
                                                                                      [1, 100, 1, 1, 1, 100, 50])
                 else:
                     continue
-            # print(Cat.all_cats[x].status)
+ 
             if Cat.all_cats[x].status in ['apprentice', 'mediator apprentice']:
                 Cat.all_cats[x].placement = self.choose_nonoverlapping_positions(first_choices, all_dens,
                                                                                  [1, 50, 1, 1, 100, 100, 1])
