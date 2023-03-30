@@ -855,7 +855,7 @@ class Patrol():
                     if fail_text[2]:
                         outcome = 2
                 # making sure unscathed fail is always unscathed
-                else:
+                if outcome == 0:
                     if len(fail_text) >= 4:
                         if fail_text[3]:
                             outcome = 3
