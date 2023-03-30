@@ -61,7 +61,7 @@
         ],
         "intro_text": "The patrol approaches a little Twoleg nest on the prairie while hunting. Next to it, a strange tower makes a soft thump, its leaves circling slowly in the wind.",
         "decline_text": "The patrol decides to hunt elsewhere.",
-        "chance_of_success": 60,
+        "chance_of_success": 10,
         "exp": 10,
         "success_text": [
             "The patrol cats split up, using sentries to ensure that the Twolegs don't disturb their hunts.",
@@ -507,7 +507,7 @@
         ],
         "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from the long grass nearby.",
         "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
-        "chance_of_success": 80,
+        "chance_of_success": 20,
         "exp": 10,
         "success_text": [
             "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise. They find themselves to be correct when they pounce into the grass and return to the patrol with the tasty morsel dangling from their mouth.",
@@ -708,7 +708,7 @@
         ],
         "intro_text": "Your patrol encounters a patch of bare ground where a lot of Twolegs linger.",
         "decline_text": "Your patrol decides to hunt elsewhere.",
-        "chance_of_success": 60,
+        "chance_of_success": 10,
         "exp": 20,
         "success_text": [
             "They continue hunting undetected, using the presence of the Twolegs startling the local wildlife to bring back a good haul.",
@@ -768,7 +768,7 @@
         ],
         "intro_text": "Your patrol encounters a patch of bare ground where a lot of Twolegs linger.",
         "decline_text": "Your patrol decides to hunt elsewhere.",
-        "chance_of_success": 60,
+        "chance_of_success": 10,
         "exp": 20,
         "success_text": [
             "They continue hunting undetected.",
@@ -1296,7 +1296,7 @@
         ],
         "intro_text": "The patrol comes across a Thunderpath running through the grasslands.",
         "decline_text": "They decide it is better not to cross.",
-        "chance_of_success": 50,
+        "chance_of_success": 10,
         "exp": 10,
         "success_text": [
             "Your patrol crosses the Thunderpath and can hunt on the other side.",
@@ -1353,7 +1353,7 @@
         ],
         "intro_text": "The patrol comes across a thunderpath running through the grasslands.",
         "decline_text": "They decide it is better not to cross.",
-        "chance_of_success": 30,
+        "chance_of_success": 10,
         "exp": 10,
         "success_text": [
             "Your patrol crosses the thunderpath and can hunt on the other side.",
@@ -1670,7 +1670,7 @@
         ],
         "intro_text": "This is just one of the weirdest things they've ever seen, r_c comments to p_l, as the patrol stares at c_n's uninvited guest to their hunting grounds. Are they going to do anything about that... thing?",
         "decline_text": "Well, they don't really have time to linger - they'll try another hunting place.",
-        "chance_of_success": 30,
+        "chance_of_success": 10,
         "exp": 30,
         "success_text": [
             "Looking out over their full six cat patrol, p_l decides it's worth it. The cats fall into battle, decending onto the maned wolf and battering it, using teamwork to pull at its long legs and fox tail, as the wolf turns in skipping circles, yelping. It flees before them, leaving the triumphant cats with a single mouse for all that effort. Great.",

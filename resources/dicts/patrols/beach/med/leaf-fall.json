@@ -102,7 +102,7 @@
     "tags": ["herb_gathering", "warrior", "herb", "betony", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "As the betony plants start to dramatically give up on life as leaf-fall progresses, p_l takes the opportunity to go harvest from them, bringing along a patrol to help them cart the leaves back to the herb stores.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 70,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
             "The betony plants are determined to enjoy the last of the sun's warmth, reaching up cheerfully to the sky as p_l's patrol gathers their leaves.",
@@ -171,7 +171,7 @@
     "tags": ["herb_gathering", "warrior", "herb", "blackberry", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "As leaf-fall arrives, the blackberry plants burst into fruit, and p_l heads out to take advantage, bringing along anyone who isn't busy with other work.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 70,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
            "Careful now. p_l finds the blackberry bramble, utterly coated in berries. This is the season for blackberry picking, and time to leave the leaves alone in anticipation of the coming leaf-bare. The berries are a poor substitute for the leaves, but a medicine cat has to think of the future, p_l explains to the warriors.",
@@ -240,7 +240,7 @@
     "tags": ["herb_gathering", "med_cat", "warrior", "herb", "burdock", "many_herbs1", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "As leaf-fall starts to hint at the cold soon to come, the burdock plants begin to wilt. p_l heads out to replenish the Clan's stocks, bringing along anyone who isn't busy with other work.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 70,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
            "The rains have made the soil loose and good for digging. While finding burdock plants is starting to become harder, at least it's easy to harvest the roots when they do come across some. It's a long afternoon, but a productive, light-hearted one, filled with smiles and jokes as the obliging cats follow p_l's direction to cart everything home.",
@@ -309,7 +309,7 @@
     "tags": ["herb_gathering", "med_cat", "warrior", "herb", "catmint", "many_herbs2", "big_change", "patrol_to_p_l", "platonic", "jealousy", "dislike", "respect"],
     "intro_text": "As p_l looks at the twitching tails and wide eyes of the patrol set up to 'help' them gather catmint, their heart sinks. These overly excited warriors don't look like they're going to be useful, and p_l only has so much time before the catmint dies off at the end of leaf-fall.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 0,
+    "chance_of_success": 10,
     "exp": 10,
     "success_text": [
             "The warriors keep their heads, with the more experienced of p_l's helpers making themselves useful keeping those that are young or more impulsive focused on their task. The medicine cat and their team carefully pick out catmint from its known hiding places, carting it back to camp where it will protect the Clan.",
@@ -378,7 +378,7 @@
     "tags": ["herb_gathering", "warrior", "herb", "daisy", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "There's still time this leaf-fall to store away a good harvest of dried-but-potent daisy leaves, in case c_n's elders need it for their joints or cats need to unexpectedly travel. p_l assembles a little group of warriors to help them carry the herbs.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 70,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
            "Daisies may seem like part of the everyday carpet of greenery, present everywhere from rocks to fields to nestled at the foot of trees, but that doesn't make their leaves any less useful. With a larger patrol, the cats bring back a good haul, and p_l makes sure to thank everyone for their assistance.",
@@ -447,7 +447,7 @@
     "tags": ["herb_gathering", "warrior", "herb", "dandelion", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "Yellow flowers poke out from the leaf litter, signalling that the dandelions haven't given up on growing for the season. p_l heads out to look for them, bringing a group of their Clanmates along for the gathering patrol.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 70,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
             "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. Both the potent milk in their roots and stems, and the fast-acting leaves... even the fluffy dandelion heads are useful as a c_n kitten's favourite, short lived toy. The warriors smile at the sight, sharing fond nursery memories about them as they gather.",
@@ -522,7 +522,7 @@
     "tags": ["herb_gathering", "warrior", "herb", "elder_leaves", "minor_injury", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "With leaf-fall washing the world in tones of red and brown, p_l feels the need to gather as many elder leaves as possible, before the season turns and the Clan must survive without new stocks during leaf-bare. There's a particular tree in a sheltered dip along a stream they want to check on today, bringing a group of their Clanmates with them.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 60,
+    "chance_of_success": 20,
     "exp": 10,
     "success_text": [
             "Elder leaves being used to <i>soothe</i> sprains, and elder leaves having to be gathered in a way that <i>risks</i> sprains, is truly one of StarClan's little ironies, p_l reflects. They share the little joke with the patrol, and the cats murrp with amusement, but it does also remind everyone to be careful as they strip leaves from the tree.",
@@ -594,7 +594,7 @@
     "tags": ["herb_gathering", "warrior", "herb", "goldenrod", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh goldenrod for the stores with a patrol of their Clanmates to assist them.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 70,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
             "The many stems of goldenrod surround p_l as they work, snipping off stems and clumps of tiny yellow flowers to bring back to c_n's herb stores. The patrol chats, exchanging gossip and news as the smell of cut stems grows around them.",
@@ -663,7 +663,7 @@
     "tags": ["herb_gathering", "med_cat", "warrior", "herb", "juniper", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "p_l sniffs the clean fresh morning air, wondering if they can smell juniper berries on the breeze. They assemble a patrol to investigate.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 70,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
             "Leaf-fall brings with it gleaming dots of blue as the juniper trees deck themselves with their hard-fleshed berries, wafting their pleasant scent from their branches. There's a lot to enjoy about gathering them, especially with such a companionable group of cats to work with.",
@@ -813,7 +813,7 @@
     "tags": ["herb_gathering", "warrior", "herb", "mallow", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh mallow for the stores with a patrol of their Clanmates to assist them.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 70,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
             "The soft, rose-like scent of the mallow bushes drifts around p_l as they work. They snip off clumps of large, fuzzy, three-nubbed leaves, and the occasional pink flower, to be taken back to camp. The patrol chats, exchanging gossip and news as the smell of cut stems grows around them.",
@@ -882,7 +882,7 @@
     "tags": ["herb_gathering", "med_cat", "warrior", "herb", "marigold", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh marigold for the stores with a patrol of their Clanmates to assist them before the plants wither and die off.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 70,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
             "The low-growing marigold creeps across the ground, spotted less by its strange leaves that look like they're pretending to be small fern fronds from a distance, and more by their explosively sunset-colored flowers. Time to collect these while they're still here, and every cat returns to camp carrying some.",
@@ -951,7 +951,7 @@
     "tags": ["herb_gathering", "warrior", "herb", "mullein", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "As the mullein towers impressively over the other plants, it's a good time to harvest it.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 70,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
             "With all the towering height obtained in newleaf, greenleaf, and now leaf-fall, it almost makes sense why mullein dies off in leaf-bare - otherwise the plants would surely topple over. p_l asks their patrol to shove this one over to get at its leaves.",
@@ -1020,7 +1020,7 @@
     "tags": ["herb_gathering", "warrior", "herb", "oak_leaves", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "As the oaks are washed with brilliant color, p_l heads out on a gathering patrol with warriors to gather their last green leaves.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 70,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
             "Picking only the green leaves proves challenging, but not impossible, and with careful effort p_l still manages to bring a decent number home, especially with the warriors there, who turn it into a competition between themselves.",
@@ -1089,7 +1089,7 @@
     "tags": ["herb_gathering", "warrior", "herb", "plantain", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "p_l is always amused by the plantain's enduring cheerfulness in the face of being trodden on, and it's nice that the plants grow with such enthusiasm right to the end of leaf-fall. The warriors they're bringing along seem to regard their task as more path clearing and less herb gathering, but if it gets them helpers, p_l isn't too fussed about it.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 70,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
             "Not one of the plants that turn red before they die off for leaf-bare, p_l carries the vibrantly green plantain leaves home through a territory growing less and less green as leaf-fall wears on. Even the warriors seem less irritated at the plantain plants than usual, instead valuing the herb while they can still find it.",
@@ -1158,7 +1158,7 @@
     "tags": ["herb_gathering", "warrior", "herb", "ragwort", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "As the ragwort plants start to dramatically give up on life as leaf-fall progresses, p_l takes the opportunity to go harvest from them, bringing along a patrol to help them cart the leaves back to the herb stores.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 70,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
             "Ugh. The ragwort p_l finds is flowering, and the yellow flowers of the plant waft out their scent, leaving a foul taste hanging in the air. There a chorus of long suffering sighs as the cats get to work, accomplishing their unpleasant task professionally, but without any joy.",
@@ -1281,7 +1281,7 @@
     "tags": ["herb_gathering", "warrior", "herb", "tansy", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "As the tansy plants fight on though leaf-fall to fit in as much life as possible before leaf-bare, p_l goes out to harvest them with a gathering patrol.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 70,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
             "Better to have tansy, so good for all coughs, stocked up in abundance before leaf-bare hits. The extra paws help p_l bring back a big harvest for the Clan's stores.",
@@ -1350,7 +1350,7 @@
     "tags": ["herb_gathering", "warrior", "herb", "thyme", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "The thyme plants are running out of growing time - p_l better go harvest them before leaf-fall is over, bringing a patrol with them to help.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 70,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
             "The urgency drains out of the patrol as they sit amongst the calming thyme, and it's not just the herb stores that'll feel the benefit of this gathering trip.",
@@ -1419,7 +1419,7 @@
     "tags": ["herb_gathering", "med_cat", "warrior", "herb", "wild_garlic", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
     "intro_text": "In the crisp cool air of a leaf-fall morning, it should be easy to find wild garlic by scent. p_l leads a gathering patrol to do just that.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 70,
+    "chance_of_success": 30,
     "exp": 10,
     "success_text": [
             "The garlic won't notice leaf-bare until it actually hits - one of its good traits that make up for its stinkiness. p_l and the patrol are able to bring a good harvest home.",

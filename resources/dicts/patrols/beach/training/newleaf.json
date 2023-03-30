@@ -6,7 +6,7 @@
     "tags": ["adult_stat", "training", "apprentice", "two_apprentices", "platonic", "comfort", "respect", "warrior", "no_change_fail"],
     "intro_text": "As the sun creeps over the horizon, p_l leads the patrol carefully towards a familiar beach, stopping the cats on the clifftop. Below them, the familiar sand is hidden under a mass of boulders, as long as twenty cats and as wide as ten.",
     "decline_text": "They return to camp to report the new beach layout.",
-    "chance_of_success": 90,
+    "chance_of_success": 40,
     "exp": 20,
     "success_text": [
             "As the cats watch, the silence is broken as one of the massive boulders rears up and snorts. The apprentices jolt with fear, app1's fur standing on end while app2 looks seconds away from fleeing, but p_l flicks their tail encouragingly. These are nosy-seals, they explain, as the beach full of 'boulders' suddenly seems far more intimidating.",

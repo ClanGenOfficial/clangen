@@ -43,7 +43,7 @@
     ],
     "intro_text": "r_c encounters a porcupine, bristling with quills.",
     "decline_text": "The patrol steers clear of the porcupine.",
-    "chance_of_success": 40,
+    "chance_of_success": 10,
     "exp": 10,
     "success_text": [
         "The patrol examines the porcupine, eventually deciding that they shouldn't risk the potential injury it could cause.",
@@ -201,7 +201,7 @@
     ],
     "intro_text": "The patrol approaches a Twoleg nest in the woods while hunting.",
     "decline_text": "The patrol decides to hunt elsewhere.",
-    "chance_of_success": 60,
+    "chance_of_success": 10,
     "exp": 10,
     "success_text": [
         "The patrol cats split up, using sentries to ensure that the Twolegs don't disturb their hunts.",
@@ -359,7 +359,7 @@
     ],
     "intro_text": "The patrol hears distant howling and wonders whether to investigate the noise.",
     "decline_text": "The patrol decides not to investigate the source of the noise.  Whatever is making it will not be friendly to them.",
-    "chance_of_success": 50,
+    "chance_of_success": 10,
     "exp": 30,
     "success_text": [
         "The patrol tracks the noise and discovers a coyote scavenging off a carcass. This is a predator they cannot fight, the patrol decides to return to camp and report the intruder to the leader. Perhaps they can return later to take what the coyote leaves behind.",
@@ -531,7 +531,7 @@
     ],
     "intro_text": "The patrol hears distant howling and wonders whether to investigate the noise.",
     "decline_text": "The patrol decides not to investigate the source of the noise.  Whatever is making it will not be friendly to them.",
-    "chance_of_success": 40,
+    "chance_of_success": 10,
     "exp": 30,
     "success_text": [
         "The patrol tracks the noise and discovers a wolf eating from its kill. This is a predator they cannot fight and more wolves may be nearby, the patrol decides to return to camp and report the intruder to the leader. Perhaps they can return later to take what fresh-kill is left behind.",
@@ -1011,7 +1011,7 @@
     ],
     "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from a nearby bush.",
     "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
-    "chance_of_success": 80,
+    "chance_of_success": 20,
     "exp": 10,
     "success_text": [
         "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise.  They find themselves to be correct when they pounce into the bush and return to the patrol with the tasty morsel dangling from their mouth.",
@@ -1165,7 +1165,7 @@
     ],
     "intro_text": "Your patrol encounters a clearing where a lot of Twolegs linger.",
     "decline_text": "Your patrol decides to hunt elsewhere.",
-    "chance_of_success": 60,
+    "chance_of_success": 10,
     "exp": 20,
     "success_text": [
         "They continue hunting undetected, using the presence of the Twolegs startling the local wildlife to bring back a good haul.",
@@ -1225,7 +1225,7 @@
     ],
     "intro_text": "Your patrol encounters a clearing where a lot of Twolegs linger.",
     "decline_text": "Your patrol decides to hunt elsewhere.",
-    "chance_of_success": 60,
+    "chance_of_success": 10,
     "exp": 20,
     "success_text": [
         "They continue hunting undetected.",
@@ -1740,7 +1740,7 @@
     ],
     "intro_text": "The patrol comes across a thunderpath running through the forest.",
     "decline_text": "They decide it is better not to cross.",
-    "chance_of_success": 50,
+    "chance_of_success": 10,
     "exp": 10,
     "success_text": [
         "Your patrol crosses the thunderpath and can hunt on the other side.",
@@ -1797,7 +1797,7 @@
     ],
     "intro_text": "The patrol comes across a thunderpath running through the forest.",
     "decline_text": "They decide it is better not to cross.",
-    "chance_of_success": 30,
+    "chance_of_success": 10,
     "exp": 10,
     "success_text": [
         "Your patrol crosses the thunderpath and can hunt on the other side.",
