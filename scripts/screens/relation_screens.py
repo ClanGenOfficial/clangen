@@ -2746,10 +2746,11 @@ class MediationScreen(Screens):
 
         mates = False
         if cat.mate:
-            col2 = f"{Cat.fetch_cat(cat.mate).name}'s mate"
+            col2 = "has a mate"
             if other_cat:
                 if cat.mate == other_cat.ID:
                     mates = True
+                    col2 = f"{Cat.fetch_cat(cat.mate).name}'s mate"
         else:
             col2 = "mate: none"
 
@@ -2782,11 +2783,20 @@ class MediationScreen(Screens):
                 col2 += "sibling"
             elif not game.settings["first_cousin_mates"] and other_cat.is_cousin(cat):
                 col2 += "cousin"
-
-        self.selected_cat_elements["col2" + tag] = UITextBoxTweaked(col2,
+        
+        if "has a mate" in col2:
+            self.selected_cat_elements["col2" + tag] = UITextBoxTweaked(col2,
                                                                     scale(pygame.Rect((x + 220, y + 252), (161, -1))),
                                                                     object_id="#cat_profile_info_box",
-                                                                    line_spacing=0.75)
+                                                                    line_spacing=0.75,
+                                                                    tool_tip_text=f"{Cat.fetch_cat(cat.mate).name}'s mate"
+                                                                   )
+        else:
+            self.selected_cat_elements["col2" + tag] = UITextBoxTweaked(col2,
+                                                                    scale(pygame.Rect((x + 220, y + 252), (161, -1))),
+                                                                    object_id="#cat_profile_info_box",
+                                                                    line_spacing=0.75,
+                                                                   )
 
         # ------------------------------------------------------------------------------------------------------------ #
         # RELATION BARS
