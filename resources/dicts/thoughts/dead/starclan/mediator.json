@@ -13,7 +13,8 @@
             "mediator apprentice"
         ],
         "random_living_status": [
-            "starclan"
+            "starclan",
+            "living"
         ]
     }
 ]

@@ -1,3 +1,32 @@
 [
-    
+    {
+        "id": "gen_medicine_cat",
+        "thoughts": [
+            "Regrets leaving the Clan one medicine cat short",
+            "Is worried about the Clan's ability to survive the latest illness"
+        ],
+        "main_status_constraint": [
+            "medicine cat",
+            "medicine cat apprentice"
+        ]
+    },
+    {
+        "id": "medicine_cat_dead_medicine_cat",
+        "thoughts": [
+            "Wishes they could point r_c to where the elusive herbs are",
+            "Has an important message for r_c",
+        ],
+        "main_status_constraint": [
+            "medicine cat",
+            "medicine cat apprentice"
+        ],
+        "random_status_constraint": [
+            "mediator",
+            "mediator apprentice"
+        ],
+        "random_living_status": [
+            "living",
+            "starclan"
+        ]
+    }
 ]
