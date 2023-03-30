@@ -977,15 +977,15 @@
             "hunting",
             "medium_prey"
         ],
-        "intro_text": "The patrol comes across a thunderpath running along a dry bank straight through the wetlands.",
+        "intro_text": "The patrol comes across a Thunderpath running along a dry bank straight through the wetlands.",
         "decline_text": "They decide it is better not to cross.",
         "chance_of_success": 50,
         "exp": 10,
         "success_text": [
-            "Your patrol crosses the thunderpath and can hunt on the other side.",
-            "Your patrol finds a pipe running under the thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of prey.",
-            "Your patrol stops on the edge of the thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the thunderpath, and a good source of scavenged meat.",
-            "s_c is patient enough to wait until the thunderpath is completely clear, then trots across calmly to hunt on the other side."
+            "Your patrol crosses the Thunderpath and can hunt on the other side.",
+            "Your patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of prey.",
+            "Your patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat.",
+            "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across calmly to hunt on the other side."
         ],
         "fail_text": [
             "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
@@ -1034,20 +1034,20 @@
             "cruel_season",
             "medium_prey"
         ],
-        "intro_text": "The patrol comes across a thunderpath running along a dry bank straight through the wetlands.",
+        "intro_text": "The patrol comes across a Thunderpath running along a dry bank straight through the wetlands.",
         "decline_text": "They decide it is better not to cross.",
         "chance_of_success": 30,
         "exp": 10,
         "success_text": [
-            "Your patrol crosses the thunderpath and can hunt on the other side.",
-            "Your patrol finds a pipe running under the thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of prey.",
-            "Your patrol stops on the edge of the thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the thunderpath, and a good source of scavenged meat.",
-            "s_c is patient enough to wait until the thunderpath is completely clear, then trots across calmly to hunt on the other side."
+            "Your patrol crosses the Thunderpath and can hunt on the other side.",
+            "Your patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of prey.",
+            "Your patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat.",
+            "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across calmly to hunt on the other side."
         ],
         "fail_text": [
             "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
             null,
-            "r_c is crossing the thunderpath and hears a monster thundering towards them. They freeze, and the monster swerves to hit them deliberately, killing them instantly.",
+            "r_c is crossing the Thunderpath and hears a monster thundering towards them. They freeze, and the monster swerves to hit them deliberately, killing them instantly.",
             "r_c is hit by a monster and seems quite injured, but miraculously still alive."
         ],
         "win_skills": [
