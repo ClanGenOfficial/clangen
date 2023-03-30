@@ -735,7 +735,7 @@ class SettingsScreen(Screens):
 
 
         self.checkboxes_text['info_container'] = pygame_gui.elements.UIScrollingContainer(
-            scale(pygame.Rect((200, 300), (1200, 1000))), manager=MANAGER)
+            scale(pygame.Rect((200, 300), (1220, 1000))), manager=MANAGER)
 
 
         self.checkboxes_text['info_text_box'] = pygame_gui.elements.UITextBox(
@@ -753,11 +753,11 @@ class SettingsScreen(Screens):
             container=self.checkboxes_text['info_container'],
             manager=MANAGER)
 
-
+        print(info_rect.bottom)
 
         self.checkboxes_text['contributors_text_box'] = pygame_gui.elements.UITextBox(
             self.contributors_text,
-            scale(pygame.Rect((0, info_rect.bottom), (1180, -1))),
+            scale(pygame.Rect((0, info_rect.bottom*2), (1180, -1))),
             object_id=get_text_box_theme("#text_box_30_horizcenter_secret"),
             container=self.checkboxes_text['info_container'],
             manager=MANAGER)
@@ -773,7 +773,7 @@ class SettingsScreen(Screens):
 
         self.checkboxes_text['info_text_box2'] = pygame_gui.elements.UITextBox(
             self.info_text_2,
-            scale(pygame.Rect((0, contributors_rect.bottom), (1180, -1))),
+            scale(pygame.Rect((0, contributors_rect.bottom * 2), (1180, -1))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             container=self.checkboxes_text['info_container'],
             manager=MANAGER)
