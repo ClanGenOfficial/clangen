@@ -732,10 +732,6 @@ class SettingsScreen(Screens):
         self.clear_sub_settings_buttons_and_text()
         self.sub_menu = 'info'
         self.save_settings_button.hide()
-        if game.settings['dark mode']:
-            theme = "#secret_dark"
-        else:
-            theme = "#secret"
 
 
         self.checkboxes_text['info_container'] = pygame_gui.elements.UIScrollingContainer(
@@ -762,7 +758,7 @@ class SettingsScreen(Screens):
         self.checkboxes_text['contributors_text_box'] = pygame_gui.elements.UITextBox(
             self.contributors_text,
             scale(pygame.Rect((0, info_rect.bottom), (1180, -1))),
-            object_id=theme,
+            object_id=get_text_box_theme("#text_box_30_horizcenter_secret"),
             container=self.checkboxes_text['info_container'],
             manager=MANAGER)
         contributors_rect = self.checkboxes_text['contributors_text_box'].get_relative_rect()
@@ -770,7 +766,7 @@ class SettingsScreen(Screens):
         self.checkboxes_text['contributors_text_box'] = pygame_gui.elements.UITextBox(
             self.contributors_text,
             contributors_rect,
-            object_id=theme,
+            object_id=get_text_box_theme("#text_box_30_horizcenter_secret"),
             container=self.checkboxes_text['info_container'],
             manager=MANAGER)
         
