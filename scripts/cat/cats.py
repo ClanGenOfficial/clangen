@@ -1718,6 +1718,7 @@ class Cat():
                 "event_triggered": new_perm_condition.new
             }
             new_condition = True
+            print(self.permanent_condition)
         return new_condition
 
     def not_working(self):

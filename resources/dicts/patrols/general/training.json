@@ -9,15 +9,15 @@
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-        "Unsure but remembering the kittentales of red deathberries, r_c avoids them, and gives the rest of the patrol a head's up about the potentially dangerous bush.",
+        "Unsure but remembering the kitten-tales of red deathberries, r_c avoids them, and gives the rest of the patrol a head's up about the potentially dangerous bush.",
         "After careful consideration and consulting with the other cats, r_c recognizes them as raspberries and brings the rare berries back to the medicine cat's den.",
         "Astutely, s_c recognises the cranberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit."
     ],
     "fail_text": [
-        "Confidently gathering them and prancing back to camp with the patrol, r_c is then informed that red currents aren't a useful medicinal herb.",
+        "Confidently gathering them and prancing back to camp with the patrol, r_c is then informed that redcurrants aren't a useful medicinal herb.",
         null,
         null,
-        "While plucking them from the bush, r_c is suprised to find they taste pretty good. Before anyone can stop them, they eat a few, and are rushed back to camp for deathberry poisoning."
+        "While plucking them from the bush, r_c is surprised to find they taste pretty good. Before anyone can stop them, they eat a few, and are rushed back to camp for deathberry poisoning."
     ],
     "win_skills": ["very smart", "extremely smart"],
     "min_cats": 3,
@@ -41,13 +41,13 @@
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-        "Unsure but remembering the kittentales of red deathberries, app1 avoids them and alerts the patrol, who, extremely worried, confirm that this a deathberry bush.",
+        "Unsure but remembering the kitten-tales of red deathberries, app1 avoids them and alerts the patrol, who, extremely worried, confirm that this a deathberry bush.",
         "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries and brings them back to camp, where it turns out they're called raspberries."
     ],
     "fail_text": [
-        "Confidently gathering them and prancing back to camp, app1 is then informed that red currents aren't a useful medicinal herb.",
+        "Confidently gathering them and prancing back to camp, app1 is then informed that redcurrants aren't a useful medicinal herb.",
         null,
-        "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, surprised at the pleasent taste, and swallow a few. They collapse on the way back to camp, and there's nothing any cat can do for them, having not identified deathberries before eating them.",
+        "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, surprised at the pleasant taste, and swallow a few. They collapse on the way back to camp, and there's nothing any cat can do for them, having not identified deathberries before eating them.",
         "Whatever. Identifying them is a medicine cat problem. app1 plucks the tasty berries, swallowing a few, and takes the rest back to camp where the medicine cat immediately starts work trying to save them from deathberry poisoning."
     ],
     "min_cats": 3,
@@ -70,12 +70,12 @@
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-        "Unsure but remembering the kittentales of red deathberries, r_c avoids them, and gives the rest of the patrol a head's up about the potentially dangerous bush.",
+        "Unsure but remembering the kitten-tales of red deathberries, r_c avoids them, and gives the rest of the patrol a head's up about the potentially dangerous bush.",
         "After careful consideration, r_c recognizes them as raspberries and brings the rare berries back to the medicine cat's den.",
         "Astutely, s_c recognises the cranberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit."
     ],
     "fail_text": [
-        "Confidently gathering them and prancing back to camp with the patrol, r_c is then informed that red currents aren't a useful medicinal herb.",
+        "Confidently gathering them and prancing back to camp with the patrol, r_c is then informed that redcurrants aren't a useful medicinal herb.",
         null,
         null,
         "While plucking them from the bush, r_c finds them tasty, and eats a few, only for p_l to notice what they're eating. They're rushed back to camp, where the medicine cat might have a chance at saving them from deathberry poisoning."
@@ -101,13 +101,13 @@
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-        "Unsure but remembering the kittentales of red deathberries, app1 avoids them and alerts the patrol, who, extremely worried, confirm that this a deathberry bush.",
+        "Unsure but remembering the kitten-tales of red deathberries, app1 avoids them and alerts the patrol, who, extremely worried, confirm that this a deathberry bush.",
         "Whatever. Identifying them is a medicine cat problem.  app1 plucks the berries and brings them back to camp, where it turns out they're called raspberries."
     ],
     "fail_text": [
-        "Confidently gathering them and prancing back to camp, app1 is then informed that red currents aren't a useful medicinal herb.",
+        "Confidently gathering them and prancing back to camp, app1 is then informed that redcurrants aren't a useful medicinal herb.",
         null,
-        "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, surprised at the pleasent taste, and swallow a few. They collapse on the way back to camp, and there's nothing any cat can do for them, having not identified deathberries before eating them.",
+        "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, surprised at the pleasant taste, and swallow a few. They collapse on the way back to camp, and there's nothing any cat can do for them, having not identified deathberries before eating them.",
         "Whatever. Identifying them is a medicine cat problem. app1 plucks the tasty berries, swallowing a few, and takes the rest back to camp where the medicine cat immediately starts work trying to save them from deathberry poisoning."
     ],
     "min_cats": 3,
@@ -330,8 +330,8 @@
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-        "It's alright, app1 assures app2. It wasn't on purpose - maybe they could head to the medicine den after this, there're heaps of herbs to help app2 sleep, and this totally explains why they've been yawning so much during training.",
-        "That's kinda odd. app1 hastens to add that that doens't mean it's bad, but maybe they should tell their mentors about this. Maybe it's something to do with StarClan?"
+        "It's alright, app1 assures app2. It wasn't on purpose - maybe they could head to the medicine den after this, there are heaps of herbs to help app2 sleep, and this totally explains why they've been yawning so much during training.",
+        "That's kinda odd. app1 hastens to add that that doesn't mean it's bad, but maybe they should tell their mentors about this. Maybe it's something to do with StarClan?"
     ],
     "fail_text": [
         "That's super weird, app1 tells them. Does app2's mentor know that they're so weird?"

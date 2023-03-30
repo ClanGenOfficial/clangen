@@ -986,14 +986,15 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # BACKSTORY
-        if the_cat.backstory is not None:
-            bs_text = backstory_text(the_cat)
-            output += 'backstory: ' + bs_text
-        else:
-            output += 'backstory: ' + 'clanborn'
+        if the_cat.status not in ['kittypet', 'loner', 'rogue', 'former clancat']:
+            if the_cat.backstory is not None:
+                bs_text = backstory_text(the_cat)
+                output += 'backstory: ' + bs_text
+            else:
+                output += 'backstory: ' + 'clanborn'
 
-        # NEWLINE ----------
-        output += "\n"
+            # NEWLINE ----------
+            output += "\n"
 
         # NUTRITION INFO (if the game is in the correct mode)
         if game.clan.game_mode in ["expanded", "cruel season"] and the_cat.is_alive() and FRESHKILL_ACTIVE:
@@ -1161,7 +1162,10 @@ class ProfileScreen(Screens):
         output = ""
         if self.open_sub_tab == 'life events':
             # start our history with the backstory, since all cats get one
-            life_history = [str(self.get_backstory_text())]
+            if self.the_cat.status not in ["rogue", "kittypet", "loner", "former clancat"]:
+                life_history = [str(self.get_backstory_text())]
+            else:
+                life_history = []
             body_history = []
 
             # now get mentor influence history and add that if any exists
