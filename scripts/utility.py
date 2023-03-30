@@ -97,7 +97,7 @@ def get_living_cat_count(Cat):
     """
     count = 0
     for the_cat in Cat.all_cats.values():
-        if the_cat.dead or the_cat.exiled:
+        if the_cat.dead:
             continue
         count += 1
     return count
@@ -368,6 +368,8 @@ def create_new_cat(Cat,
             if not int(random() * chance):
                 possible_conditions = []
                 for condition in PERMANENT:
+                    if kit or litter and PERMANENT[condition]['congenital'] not in ['always', 'sometimes']:
+                        continue
                     possible_conditions.append(condition)
                 chosen_condition = choice(possible_conditions)
                 born_with = False
@@ -685,6 +687,24 @@ def change_relationship_values(cats_to: list,
 #                               Text Adjust                                    #
 # ---------------------------------------------------------------------------- #
 
+
+def adjust_list_text(list_of_items):
+    """
+    returns the list in correct grammar format (i.e. item1, item2, item3 and item4)
+    this works with any number of items
+    :param list_of_items: the list of items you want converted
+    :return: the new string
+    """
+    if len(list_of_items) == 1:
+        insert = f"{list_of_items[0]}"
+    elif len(list_of_items) == 2:
+        insert = f"{list_of_items[0]} and {list_of_items[1]}"
+    else:
+        item_line = ", ".join(list_of_items[:-1])
+        insert = f"{item_line}, and {list_of_items[-1]}"
+
+    return insert
+
 def get_snippet_list(chosen_list, amount, sense_groups=None, return_string=True):
     """
     function to grab items from various lists in snippet_collections.json
@@ -742,13 +762,7 @@ def get_snippet_list(chosen_list, amount, sense_groups=None, return_string=True)
     final_snippets = sample(unique_snippets, k=amount)
 
     if return_string:
-        if amount == 1:
-            text = str(final_snippets[0])
-        elif amount == 2:
-            text = " and ".join(final_snippets)
-        else:
-            start = ", ".join(final_snippets[:-1])
-            text = ", and ".join([start, final_snippets[-1]])
+        text = adjust_list_text(final_snippets)
         return text
     else:
         return final_snippets

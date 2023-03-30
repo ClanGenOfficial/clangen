@@ -126,7 +126,7 @@
       "strange",
       "nervous",
       "insecure",
-      "empathetic",
+      "compassionate",
       "thoughtful"
     ],
     "m_c touches noses with (mentor), wondering whether this is truly the right path for them."
@@ -176,7 +176,7 @@
       "calm",
       "careful",
       "cold",
-      "patient",
+      "compassionate",
       "sneaky",
       "strict",
       "vengeful",
@@ -332,16 +332,13 @@
       "general_parents",
       "general_leader",
       "general_backstory",
-      "altruistic",
       "compassionate",
-      "empathetic",
       "loving",
       "faithful",
       "careful",
       "charismatic",
       "loyal",
       "nervous",
-      "patient",
       "responsible",
       "righteous",
       "strange",
@@ -359,15 +356,12 @@
       "general_parents",
       "general_leader",
       "general_backstory",
-      "altruistic",
       "compassionate",
-      "empathetic",
       "loving",
       "faithful",
       "ambitious",
       "charismatic",
       "loyal",
-      "patient",
       "responsible",
       "righteous",
       "strict",
@@ -384,9 +378,7 @@
       "general_parents",
       "general_leader",
       "general_backstory",
-      "altruistic",
       "compassionate",
-      "empathetic",
       "loving",
       "faithful",
       "ambitious",
@@ -407,9 +399,7 @@
       "general_parents",
       "general_leader",
       "general_backstory",
-      "altruistic",
       "compassionate",
-      "empathetic",
       "loving",
       "faithful",
       "charismatic",
@@ -427,9 +417,7 @@
       "general_parents",
       "general_leader",
       "general_backstory",
-      "altruistic",
       "compassionate",
-      "empathetic",
       "loving",
       "faithful",
       "bold",
@@ -495,7 +483,7 @@
       "careful",
       "cold",
       "lonesome",
-      "patient",
+      "compassionate",
       "responsible",
       "sneaky",
       "strict",
@@ -1158,8 +1146,7 @@
       "general_leader",
       "general_backstory",
       "thoughtful",
-      "compassionate",
-      "empathetic"
+      "compassionate"
     ],
     "Impressed by their eagerness, (mentor) chooses m_c as the Clan's new mediator apprentice."
   ],
@@ -1171,8 +1158,7 @@
       "general_leader",
       "general_backstory",
       "thoughtful",
-      "compassionate",
-      "empathetic"
+      "compassionate"
     ],
     "m_c has taken to following (mentor) around during their daily duties, fascinated by the life of a mediator. (mentor) is happy to train them. "
   ],
@@ -1473,7 +1459,7 @@
       "general_parents",
       "general_leader",
       "general_backstory",
-      "altruistic"
+      "compassionate"
     ],
     "Helping cats heal is what (prefix)paw does best. Their full name of m_c proves to them that they're fully qualified to do so, and that StarClan has accepted them for it."
   ],
@@ -1617,7 +1603,7 @@
       "general_parents",
       "general_leader",
       "general_backstory",
-      "empathetic"
+      "compassionate"
     ],
     "There's so much pain that c_n has to endure, and (prefix)paw has decided to heal it all, no matter the cost. StarClan has accepted their passion, and supports them with the name of m_c, hoping that they can help ease some of the burden m_c placed on themselves."
   ],
@@ -1713,7 +1699,7 @@
       "general_parents",
       "general_leader",
       "general_backstory",
-      "patient"
+      "compassionate"
     ],
     "It is (prefix)paw's willingness to sit and listen that assures the other medicine cats it's time to give them their name of m_c. m_c thanks them graciously and tucks themselves back down to listen to the next cat speak."
   ],
@@ -2085,7 +2071,7 @@
       "general_parents",
       "general_leader",
       "general_backstory",
-      "altruistic"
+      "compassionate"
     ],
     "l_n gazes down proudly upon (prefix)paw. They had spent their whole apprenticeship helping the Clan, and so they are named m_c after their r_h."
   ],
@@ -2097,7 +2083,7 @@
       "general_parents",
       "yes_leader",
       "general_backstory",
-      "altruistic"
+      "compassionate"
     ],
     "(prefix)paw's eyes gleam as they stare up at l_n, vowing silently to themself to one day be the one up there. They are named m_c after their r_h."
   ],
@@ -2230,8 +2216,7 @@
       "yes_leader",
       "general_backstory",
       "compassionate",
-      "loving",
-      "empathetic"
+      "loving"
     ],
     "l_n has always thought (prefix)paw had a kind heart, knowing that they are ready for times of peace, but doesn't know how that heart will serve in war. Nevertheless, they name them m_c after their r_h."
   ],
@@ -2279,7 +2264,7 @@
       "general_parents",
       "yes_leader",
       "general_backstory",
-      "empathetic"
+      "compassionate"
     ],
     "(prefix)paw purrs as they feel the joy and pride of their Clanmates wash over them. l_n looks down upon them, eyes glowing with pride as well as they name them m_c after their r_h."
   ],
@@ -2399,7 +2384,7 @@
       "general_parents",
       "yes_leader",
       "general_backstory",
-      "patient"
+      "compassionate"
     ],
     "(prefix)paw sits unbothered as l_n rattles on through the long, formal words of the warrior ceremony. They give (prefix)paw the name m_c, honoring their r_h. m_c has no complaints about the long vigil they must do that night."
   ],

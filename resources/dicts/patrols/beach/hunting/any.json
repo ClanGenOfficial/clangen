@@ -137,7 +137,7 @@
         "exp": 20,
         "success_text": [
             "app1 manages a skillful catch, and brings it back to the camp to show everyone!",
-            "app1 focuses completely on their test, slipping into a cleareyed, razor focused routine of catch and stash, catch and stash. Eventually they've caught enough to need their mentor's help carrying it back to camp, and the feeling seeing their prey stock the fresh-kill pile - they feel ready to burst with happiness!",
+            "app1 focuses completely on their test, slipping into a clear-eyed, razor focused routine of catch and stash, catch and stash. Eventually they've caught enough to need their mentor's help carrying it back to camp, and the feeling seeing their prey stock the fresh-kill pile - they feel ready to burst with happiness!",
             null,
             "It's a terrible day for hunting, the prey running sparse and alert. But s_c takes their time and doesn't let the conditions discourage them, until eventually the perfect opportunity falls into place and they pull off a perfect catch!"
         ],
@@ -1032,15 +1032,15 @@
             "hunting",
             "medium_prey"
         ],
-        "intro_text": "The patrol comes across a thunderpath running along the shore.",
+        "intro_text": "The patrol comes across a Thunderpath running along the shore.",
         "decline_text": "They decide it is better not to cross.",
         "chance_of_success": 50,
         "exp": 10,
         "success_text": [
-            "Your patrol crosses the thunderpath and can hunt on the other side.",
-            "Your patrol finds a pipe running under the thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of prey.",
-            "Your patrol stops on the edge of the thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the thunderpath, and a good source of scavenged meat.",
-            "s_c is patient enough to wait until the thunderpath is completely clear, then trots across calmly to hunt on the other side."
+            "Your patrol crosses the Thunderpath and can hunt on the other side.",
+            "Your patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of prey.",
+            "Your patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat.",
+            "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across calmly to hunt on the other side."
         ],
         "fail_text": [
             "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
@@ -1089,20 +1089,20 @@
             "cruel_season",
             "medium_prey"
         ],
-        "intro_text": "The patrol comes across a thunderpath running along the shore.",
+        "intro_text": "The patrol comes across a Thunderpath running along the shore.",
         "decline_text": "They decide it is better not to cross.",
         "chance_of_success": 30,
         "exp": 10,
         "success_text": [
-            "Your patrol crosses the thunderpath and can hunt on the other side.",
-            "Your patrol finds a pipe running under the thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of prey.",
-            "Your patrol stops on the edge of the thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the thunderpath, and a good source of scavenged meat.",
-            "s_c is patient enough to wait until the thunderpath is completely clear, then trots across calmly to hunt on the other side."
+            "Your patrol crosses the Thunderpath and can hunt on the other side.",
+            "Your patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of prey.",
+            "Your patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the Thunderpath, and a good source of scavenged meat.",
+            "s_c is patient enough to wait until the Thunderpath is completely clear, then trots across calmly to hunt on the other side."
         ],
         "fail_text": [
             "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
             null,
-            "r_c is crossing the thunderpath and hears a monster thundering towards them. They freeze, and the monster swerves to hit them deliberately, killing them instantly.",
+            "r_c is crossing the Thunderpath and hears a monster thundering towards them. They freeze, and the monster swerves to hit them deliberately, killing them instantly.",
             "r_c is hit by a monster and seems quite injured, but miraculously still alive."
         ],
         "win_skills": [
@@ -1145,14 +1145,14 @@
             "hunting",
             "large_prey"
         ],
-        "intro_text": "The patrol comes across a thunderpath running along the shore.",
+        "intro_text": "The patrol comes across a Thunderpath running along the shore.",
         "decline_text": "They decide it is better not to cross.",
         "chance_of_success": 50,
         "exp": 10,
         "success_text": [
-            "Your patrol crosses the thunderpath and can hunt on the other side.",
-            "Your patrol finds a pipe running under the thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of lots of prey.",
-            "Your patrol stops on the edge of the thunderpath, and s_c organizes a thorough search that finds several flattened pieces of roadkill. It's a reminder of the danger of the thunderpath, and a good source of scavenged meat.",
+            "Your patrol crosses the Thunderpath and can hunt on the other side.",
+            "Your patrol finds a pipe running under the Thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of lots of prey.",
+            "Your patrol stops on the edge of the Thunderpath, and s_c organizes a thorough search that finds several flattened pieces of roadkill. It's a reminder of the danger of the thunderpath, and a good source of scavenged meat.",
             "s_c is patient enough to wait until the thunderpath is completely clear, then trots across calmly with the patrol to hunt on the other side."
         ],
         "fail_text": [
@@ -1753,7 +1753,7 @@
         "success_text": [
             "r_c is smaller, alone, and half its weight, but the fox has a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle. The fox, already stuffed full and unwilling to lose blood over it, leaves the kill with a grumble.",
             null,
-            "s_c uses every trick in their talented fighting skillset to attack the fox with no one to watch their flank, until the perfect opportunity opens up and they pounce onto the fox's back, digging in their claws. It's a wild ride through the forest until the fox bucks them off, but it wins them the shark carcass.",
+            "s_c uses every trick in their talented fighting skill set to attack the fox with no one to watch their flank, until the perfect opportunity opens up and they pounce onto the fox's back, digging in their claws. It's a wild ride through the forest until the fox bucks them off, but it wins them the shark carcass.",
             "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. But then they're stuck, unwilling to let go and risk being bitten. They're dragged through the forest, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the shark."
         ],
         "fail_text": [
@@ -1810,7 +1810,7 @@
             "respect",
             "rel_patrol"
         ],
-        "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find a stocky gray fox feeding on an unidentifible but deliciously stinky mound of carrion the sea has washed up onto the shore.",
+        "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find a stocky gray fox feeding on an unidentifiable but deliciously stinky mound of carrion the sea has washed up onto the shore.",
         "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 70,
         "exp": 20,
@@ -1870,7 +1870,7 @@
             "respect",
             "rel_patrol"
         ],
-        "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find a stocky gray fox feeding on an unidentifible but deliciously stinky mound of carrion the sea has washed up onto the shore.",
+        "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find a stocky gray fox feeding on an unidentifiable but deliciously stinky mound of carrion the sea has washed up onto the shore.",
         "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 90,
         "exp": 20,
@@ -1925,14 +1925,14 @@
             "clan_to_patrol",
             "respect"
         ],
-        "intro_text": "r_c catches the scent of a fox - but is it red, or gray? Tracking it, they find a stocky gray fox feeding on an unidentifible but deliciously stinky mound of carrion the sea has washed up onto the shore.",
+        "intro_text": "r_c catches the scent of a fox - but is it red, or gray? Tracking it, they find a stocky gray fox feeding on an unidentifiable but deliciously stinky mound of carrion the sea has washed up onto the shore.",
         "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
         "chance_of_success": 50,
         "exp": 30,
         "success_text": [
             "While a gray fox is bigger and far stockier than r_c, the delicious stench of whatever-it-is makes their eyes go wide, and they leap to claim some of it for themselves and c_n. It's such a big lump that the fox doesn't seem to mind sharing.",
             "A gray fox is bigger than them, yes... but only just, and that carcass smells divine. r_c creeps up on the fox, using the dunes for cover, and waits until the fox has its head buried in the carcass to attack. The ambush sends the competing predator fleeing, and leaves r_c to claim the heavenly stinky food.",
-            "s_c uses every trick in their talented fighting skillset to attack the fox with no one to watch their flank, until the perfect opportunity opens up and they pounce onto the fox's back, digging in their claws. It's enough to convince the gray to back off, and s_c claims a seat at the carcass.",
+            "s_c uses every trick in their talented fighting skill set to attack the fox with no one to watch their flank, until the perfect opportunity opens up and they pounce onto the fox's back, digging in their claws. It's enough to convince the gray to back off, and s_c claims a seat at the carcass.",
             "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. But then they're stuck, unwilling to let go and risk being bitten. They're dragged along the beach, sand casing their pelt, until the fox finally throws them off and the battered s_c goes back to proudly claim the carcass."
         ],
         "fail_text": [
@@ -2146,10 +2146,10 @@
             "Spotting the red fox they've tracked dipping into a sheltered cove, r_c hangs back, sneaking around until they spot the fox burying a fish for later. They simply wait for it to finish and leave, then creep in to steal the fox's hard work, bringing the prize back to camp for the fresh-kill pile. Sometimes winning a battle doesn't require fighting.",
             null,
             "It requires s_c to use some of their best tricks, but they sneak close to the red fox at the end of the scent trail, eyes on the fish the fox carries. The creature puts down its fresh-kill to start digging at a dune, and s_c takes the opportunity, grabbing the fish and running. It's a good prize, and they feel proud to present it to the elders when they pad into camp, tired but satisfied.",
-            "It's a situation that calls for careful calm, not implusive action. s_c tracks down a red fox at the end of the scent trail, holding a young seagull, and waits carefully. Eventually, as the fox starts to hunt at a different beach, it drops its fresh-kill to try win more. s_c carefully snatches it while the fox is distracted, and trots back to camp having successfully outwitted the competing predator."
+            "It's a situation that calls for careful calm, not impulsive action. s_c tracks down a red fox at the end of the scent trail, holding a young seagull, and waits carefully. Eventually, as the fox starts to hunt at a different beach, it drops its fresh-kill to try win more. s_c carefully snatches it while the fox is distracted, and trots back to camp having successfully outwitted the competing predator."
         ],
         "fail_text": [
-            "It embarasses them, but r_c doesn't even manage to find the fox they track, let alone earn anything useful from the afternoon's attempts.",
+            "It embarrasses them, but r_c doesn't even manage to find the fox they track, let alone earn anything useful from the afternoon's attempts.",
             "s_c hones in on the scent, and as soon as they spot the red fox with a dead fish hanging from its jaws, throws themselves to the attack. The fox hears them coming, and with insulting nonchalance trots off, unwilling to get into a fight.",
             null,
             "Finding a red fox holding a fish that would be much appreciated for c_n's fresh-kill pile, r_c goes to attack it. But the fox is just as keen to keep it as r_c is to win it, and they're injured in the resulting fight.",
@@ -2363,16 +2363,16 @@
         "success_text": [
             "Spotting the gray fox they've tracked dipping into a sheltered cove, r_c hangs back, sneaking around until they spot the fox caching a bird kill in an old log a storm washed in moons ago. They simply wait for it to finish and leave, then creep in to steal the fox's hard work, bringing the prize back to camp for the fresh-kill pile. Sometimes winning a battle doesn't require fighting.",
             null,
-            "s_c tracks down a gray fox, and carefully cosiders it as an opponent. Stocky, yes, but they finally decide they can take it, and burst from cover, using surprise to get in a couple vicious swipes to the fox's face while its jaws are still full of prey. Yelping, the gray fox retreats from the cat, unwilling to risk more split blood, and s_c picks up the rat it carried with a proud grin.",
-            "It's a situation that calls for careful calm, not implusive action. s_c tracks down a gray fox at the end of the scent trail, holding a little plump mouse, and waits carefully. Eventually, the fox tries to cache its fresh-kill in a little hole. s_c picks it up once the fox leaves, strolling back to camp having successfully outwitted the competing predator."
+            "s_c tracks down a gray fox, and carefully considers it as an opponent. Stocky, yes, but they finally decide they can take it, and burst from cover, using surprise to get in a couple vicious swipes to the fox's face while its jaws are still full of prey. Yelping, the gray fox retreats from the cat, unwilling to risk more split blood, and s_c picks up the rat it carried with a proud grin.",
+            "It's a situation that calls for careful calm, not impulsive action. s_c tracks down a gray fox at the end of the scent trail, holding a little plump mouse, and waits carefully. Eventually, the fox tries to cache its fresh-kill in a little hole. s_c picks it up once the fox leaves, strolling back to camp having successfully outwitted the competing predator."
         ],
         "fail_text": [
-            "It embarasses them, but r_c doesn't even manage to find the fox they track, let alone earn anything useful from the afternoon's attempts.",
-            "s_c hones in on the scent, and as soon as they spot the gray fox with a dead fish hanging from its jaws, throwes themselves to the attack. The fox hears them coming, and makes a hasty retreat before the fight can start, taking its dinner with it.",
+            "It embarrasses them, but r_c doesn't even manage to find the fox they track, let alone earn anything useful from the afternoon's attempts.",
+            "s_c hones in on the scent, and as soon as they spot the gray fox with a dead fish hanging from its jaws, throws themselves to the attack. The fox hears them coming, and makes a hasty retreat before the fight can start, taking its dinner with it.",
             null,
             "Finding a gray fox holding a mouse that would make a nice addition to c_n's fresh-kill pile, r_c goes to attack it. But the fox is just as keen to keep it as r_c is to win it, and they're injured in the resulting fight.",
             null,
-            "s_c hones in on the scent, and as soon as they spot the gray fox with a dead fish hanging from its jaws, recklessly throwes themselves to the attack. But the fox is a little too desperate to keep itself from harm, and s_c has to retreat bleeding."
+            "s_c hones in on the scent, and as soon as they spot the gray fox with a dead fish hanging from its jaws, recklessly throws themselves to the attack. But the fox is a little too desperate to keep itself from harm, and s_c has to retreat bleeding."
         ],
         "win_skills": [
             "good hunter",

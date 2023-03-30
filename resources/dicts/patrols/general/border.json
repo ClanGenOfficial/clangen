@@ -193,10 +193,10 @@
     "chance_of_success": 30,
     "exp": 15,
     "success_text": [
-    "They find a well groomed kittypet collapsed by the thunderpath wailing for their Twolegs to come back. p_l comforts them and asks them why their Twolegs have left them. The only explanation that they can give is that they've been sick recently and perhaps too much of a burden? p_l offers the former kittypet a place in c_n, till they're better at least. They tentatively accept whilst looking longingly back to the thunderpath."
+    "They find a well groomed kittypet collapsed by the Thunderpath wailing for their Twolegs to come back. p_l comforts them and asks them why their Twolegs have left them. The only explanation that they can give is that they've been sick recently and perhaps too much of a burden? p_l offers the former kittypet a place in c_n, till they're better at least. They tentatively accept whilst looking longingly back to the Thunderpath."
     ],
     "fail_text": [
-    "They discover the cooling body of a kittypet, it seems they attempted to run after their Twolegs and were run over by a monster. p_l silently sends a prayer for the kittypet and can't help but to curse the Twolegs who abandoned such a loyal cat."
+    "They discover the cooling body of a kittypet; it seems they attempted to run after their Twolegs and were run over by a monster. p_l silently sends a prayer for the kittypet and can't help but to curse the Twolegs who abandoned such a loyal cat."
     ],
     "min_cats": 2,
     "max_cats": 6,
