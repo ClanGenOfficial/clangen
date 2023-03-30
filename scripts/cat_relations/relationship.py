@@ -138,17 +138,16 @@ class Relationship():
                 for inj in injury_dict["injury_names"]:
                     injured_cat.get_injured(inj, True)
 
-                injured_cat.possible_scar = injury_dict["scar_text"] if "scar_text" in injury_dict else None
-                injured_cat.possible_death = injury_dict["death_text"] if "death_text" in injury_dict else None
-                if injured_cat.status == "leader":
-                    injured_cat.possible_death = injury_dict["death_leader_text"] if "death_leader_text" in injury_dict else None
+            injured_cat.possible_scar = self.prepare_text(injury_dict["scar_text"]) if "scar_text" in injury_dict else None
+            injured_cat.possible_death = self.prepare_text(injury_dict["death_text"]) if "death_text" in injury_dict else None
+            if injured_cat.status == "leader":
+                injured_cat.possible_death = self.prepare_text(injury_dict["death_leader_text"]) if "death_leader_text" in injury_dict else None
         
         # get any possible interaction string out of this interaction
         interaction_str = choice(self.chosen_interaction.interactions)
 
         # prepare string for display
-        interaction_str = interaction_str.replace("m_c", str(self.cat_from.name))
-        interaction_str = interaction_str.replace("r_c", str(self.cat_to.name))
+        interaction_str = self.prepare_text(interaction_str)
 
         effect = " (neutral effect)"
         if in_de_crease != "neutral" and positive:
@@ -406,6 +405,12 @@ class Relationship():
 
         return filtered
 
+
+    def prepare_text(self, text: str) -> str:
+        """Prep the text based of the amount of cats and the assigned abbreviations."""
+        text = text.replace("m_c", str(self.cat_from.name))
+        text = text.replace("r_c", str(self.cat_to.name))
+        return text
 
     # ---------------------------------------------------------------------------- #
     #                            complex value addition                            #

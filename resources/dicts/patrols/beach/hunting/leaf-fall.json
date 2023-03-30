@@ -343,5 +343,34 @@
     "history_text": [
         "r_c carries a scar from a solo fight with a gray vixen."
     ]
+},
+{
+    "patrol_id": "bch_hunt_leaf-fall_poisonrain1",
+    "biome": "beach",
+    "season": "leaf-fall",
+    "tags": ["large_prey", "hunting", "no_fail_prey", "warrior", "patrol_to_p_l", "no_change_success", "dislike", "respect", "trust", "death", "scar", "BURNRUMP", "injury", "burn", "no_body", "apprentice"],
+    "intro_text": "A sudden gust of wind and rain hits the patrol, they were wrong about the weather and are now soaking wet.",
+    "decline_text": "The patrol decides to make a run back to camp, they can go hunting another time.",
+    "chance_of_success": 50,
+    "exp": 15,
+    "success_text": [
+    "p_l and their patrol decide to leave the beach behind and find some trees to shelter under. It turns out to be a stroke of luck as many of the prey have also decided to seek shelter from the pouring rain. They catch many small prey and they end up going back to camp soaked anyway but successful.",
+    "p_l knows of a spot where they can shelter in between some bushes and wait out the rain. r_c suddenly inhales sharply and directs their attention to a small nest full of baby birds who have fallen from a tree because of the wind. They are wet but happy, now they can return to camp with their heads held high and rest happily and hopefully warm in their nests later that day knowing they have fed their Clan."
+    ],
+    "fail_text": [
+    "p_l and r_c end up arguing about whether or not to continue the patrol, nobody is happy after they decide to go back to camp after already being soaked to the bone.",
+     null,
+    "The patrol decides to take shelter. app1 sees a large tree and makes a run for it, not hearing p_l's scream of warning. Their mistake dawns on them the moment they take shelter underneath what they now realize is the tree that bleeds poison when it rains. They are too late to escape the poisoned rain now pouring down on their body, they let out a scream before falling still in a spasm. The patrol returns to c_n both eyes and fur wet.",
+    "r_c decided to have some fun by splashing into large puddles, they only realize when their skin starts to burn that they've wandered too close to the death tree. The patrol goes back to c_n in a hurry to give r_c immediate medical attention."
+    ],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+    "This cat was scarred by the poison of the death tree while it was raining.",
+    "This cat died because of the poison of a death tree while it was raining.",
+    "This cat lost a life because of the poison of a death tree while it was raining."
+    ]
 }
 ]

@@ -154,18 +154,17 @@ class StartScreen(Screens):
         self.error_label = pygame_gui.elements.UITextBox(
             "",
             scale(pygame.Rect((275, 370), (770, 720))),
-            object_id="#error_text_box",
+            object_id="#text_box_22_horizleft",
             manager=MANAGER,
             layer_starting_height=3)
 
-        self.error_label.disable()
 
         self.error_gethelp = pygame_gui.elements.UITextBox(
             "Please join the Discord server and ask for technical support. " \
             "We\'ll be happy to help! Please include the error message and the traceback below (if available). " \
             '<br><a href="https://discord.gg/clangen">Discord</a>', # pylint: disable=line-too-long
             scale(pygame.Rect((1055, 430), (350, 600))),
-            object_id="#gethelp_text_box",
+            object_id="#text_box_22_horizleft",
             layer_starting_height=3,
             manager=MANAGER
         )
@@ -246,7 +245,9 @@ class SwitchClanScreen(Screens):
         TODO: DOCS
         """
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
-            if event.ui_element == self.main_menu:
+            if game.switches['window_open']:
+                pass
+            elif event.ui_element == self.main_menu:
                 self.change_screen('start screen')
             elif event.ui_element == self.next_page_button:
                 self.page += 1
@@ -319,13 +320,13 @@ class SwitchClanScreen(Screens):
         self.info = pygame_gui.elements.UITextBox(
             'Note: This will close the game.\n When you open it next, it should have the new clan.',  # pylint: disable=line-too-long
             scale(pygame.Rect((200, 1200), (1200, 140))),
-            object_id=get_text_box_theme(),
+            object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER)
 
         self.current_clan = pygame_gui.elements.UITextBox(
             "",
             scale(pygame.Rect((200, 200), (1200, 140))),
-            object_id=get_text_box_theme(),
+            object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER)
         if game.clan:
             self.current_clan.set_text(
@@ -378,7 +379,7 @@ class SwitchClanScreen(Screens):
         self.page_number = pygame_gui.elements.UITextBox(
             "",
             scale(pygame.Rect((680, 1080), (220, 60))),
-            object_id=get_text_box_theme(),
+            object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER)
         self.page = 0
 
@@ -672,7 +673,7 @@ class SettingsScreen(Screens):
                 desc[0],
                 scale(pygame.Rect((450, n * 78), (1000, 78))),
                 container=self.checkboxes_text["container_general"],
-                object_id=get_text_box_theme("#setting_text_box"),
+                object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
                 manager=MANAGER)
             self.checkboxes_text[code].disable()
             n += 1
@@ -684,12 +685,12 @@ class SettingsScreen(Screens):
         self.checkboxes_text['instr'] = pygame_gui.elements.UITextBox(
             "Change the general settings of your game here",
             scale(pygame.Rect((200, 320), (1200, 100))),
-            object_id=get_text_box_theme(),
+            object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER)
 
-        # This is where the acual checkboxes are created. I don't like
-        #   how this is seperated from the text boxes, but I've spent too much time to rewrite it.
-        #   It has to seperated becuase the checkboxes must be updated when settings are changed.
+        # This is where the actual checkboxes are created. I don't like
+        #   how this is separated from the text boxes, but I've spent too much time to rewrite it.
+        #   It has to separated because the checkboxes must be updated when settings are changed.
         #   Fix if you want. - keyraven
         self.refresh_checkboxes()
 
@@ -711,7 +712,7 @@ class SettingsScreen(Screens):
                 desc[0],
                 scale(pygame.Rect((450, n * 78), (1000, 78))),
                 container=self.checkboxes_text["container_relation"],
-                object_id=get_text_box_theme("#setting_text_box"),
+                object_id=get_text_box_theme("#text_box_30_horizleft_pad_0_8"),
                 manager=MANAGER)
             self.checkboxes_text[code].disable()
             n += 1
@@ -719,7 +720,7 @@ class SettingsScreen(Screens):
         self.checkboxes_text['instr'] = pygame_gui.elements.UITextBox(
             "Change the relationship settings of your game here",
             scale(pygame.Rect((200, 320), (1200, 100))),
-            object_id=get_text_box_theme(),
+            object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER)
 
         self.refresh_checkboxes()
@@ -744,7 +745,7 @@ class SettingsScreen(Screens):
         self.checkboxes_text['info_text_box'] = pygame_gui.elements.UITextBox(
             self.info_text,
             scale(pygame.Rect((0, 0), (1180, -1))),
-            object_id=get_text_box_theme(),
+            object_id=get_text_box_theme("text_box_30_horizcenter"),
             container=self.checkboxes_text['info_container'],
             manager=MANAGER)
         info_rect = self.checkboxes_text['info_text_box'].get_relative_rect()
@@ -752,7 +753,7 @@ class SettingsScreen(Screens):
         self.checkboxes_text['info_text_box'] = pygame_gui.elements.UITextBox(
             self.info_text,
             info_rect,
-            object_id=get_text_box_theme(),
+            object_id=get_text_box_theme("text_box_30_horizcenter"),
             container=self.checkboxes_text['info_container'],
             manager=MANAGER)
 
@@ -777,7 +778,7 @@ class SettingsScreen(Screens):
         self.checkboxes_text['info_text_box2'] = pygame_gui.elements.UITextBox(
             self.info_text_2,
             scale(pygame.Rect((0, contributors_rect.bottom), (1180, -1))),
-            object_id=get_text_box_theme(),
+            object_id=get_text_box_theme("text_box_30_horizcenter"),
             container=self.checkboxes_text['info_container'],
             manager=MANAGER)
         info_rect2 = self.checkboxes_text['info_text_box2'].get_relative_rect()
@@ -785,7 +786,7 @@ class SettingsScreen(Screens):
         self.checkboxes_text['info_text_box2'] = pygame_gui.elements.UITextBox(
             self.info_text_2,
             info_rect2,
-            object_id=get_text_box_theme(),
+            object_id=get_text_box_theme("text_box_30_horizcenter"),
             container=self.checkboxes_text['info_container'],
             manager=MANAGER)
         
@@ -804,7 +805,7 @@ class SettingsScreen(Screens):
         self.checkboxes_text['instr'] = pygame_gui.elements.UITextBox(
             "Change the language of the game here. This has not been implemented yet.",
             scale(pygame.Rect((200, 320), (1200, 100))),
-            object_id=get_text_box_theme(),
+            object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER)
 
         self.refresh_checkboxes()
@@ -920,7 +921,7 @@ class StatsScreen(Screens):
                     elder_num += 1
                 elif cat.status == 'medicine cat':
                     medcat_num += 1
-            elif (cat.status in ['kittypet', 'loner', 'rogue']
+            elif (cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']
                   or cat.outside) and not cat.dead:
                 other_num += 1
             else:
@@ -939,7 +940,7 @@ class StatsScreen(Screens):
             stats_text,
             scale(pygame.Rect((200, 300), (1200, 1000))),
             manager=MANAGER,
-            object_id=get_text_box_theme())
+            object_id=get_text_box_theme("#text_box_30_horizcenter"))
 
     def exit_screen(self):
         """

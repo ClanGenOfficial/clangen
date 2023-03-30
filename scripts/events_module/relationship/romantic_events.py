@@ -139,7 +139,7 @@ class Romantic_Events():
         game.cur_events_list.append(Single_Event(
             interaction_str, relevant_event_tabs, [cat_to.ID, cat_from.ID]
         ))
-        print(f"ROMANTIC! {cat_from.name} to {cat_to.name}")
+        #print(f"ROMANTIC! {cat_from.name} to {cat_to.name}")
         return True
 
     def handle_new_mates(self, relationship, cat_from, cat_to):
@@ -150,7 +150,6 @@ class Romantic_Events():
         if become_mates and mate_string:
             self.had_one_event = True
             cat_from.set_mate(cat_to)
-            cat_to.set_mate(cat_from)
             game.cur_events_list.append(Single_Event(mate_string, "relation", [cat_from.ID, cat_to.ID]))
 
     def handle_breakup(self, relationship_from, relationship_to, cat_from, cat_to):
@@ -169,7 +168,6 @@ class Romantic_Events():
                 had_fight = False
                 self.had_one_event = True
                 cat_from.unset_mate(breakup=True, fight=had_fight)
-                cat_to.unset_mate(breakup=True, fight=had_fight)
                 text = f"{cat_from.name} and {cat_to.name} broke up."
                 # game.relation_events_list.insert(0, text)
                 game.cur_events_list.append(Single_Event(text, "relation", [cat_from.ID, cat_to.ID]))
@@ -197,7 +195,6 @@ class Romantic_Events():
             if cat_to.mate is None and cat.mate is None:
                 self.had_one_event = True
                 cat.set_mate(cat_to)
-                cat_to.set_mate(cat)
 
                 if highest_romantic_relation.opposite_relationship is None:
                     highest_romantic_relation.link_relationship()

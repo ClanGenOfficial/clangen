@@ -142,8 +142,8 @@
 	"pregnancy": {
 		"primary_chance_mated": 50,
 		"primary_chance_unmated": 110,
-		"random_affair_chance": 70,
-		"unmated_random_affair_chance": 20,
+		"random_affair_chance": 50,
+		"unmated_random_affair_chance": 10,
 		"one_kit_possibility": {"young adult": 8, "adult": 9, "senior adult": 10, "senior": 4},
         "two_kit_possibility": {"young adult": 10, "adult": 13, "senior adult": 15, "senior": 3},
         "three_kit_possibility": {"young adult": 17, "adult": 15, "senior adult": 5, "senior": 1},
@@ -233,7 +233,8 @@
 		"cruel season_illness_chance": 200,
 		"classic_injury_chance": 250,
 		"expanded_injury_chance": 200,
-		"cruel season_death_chance": 150
+		"cruel season_death_chance": 150,
+		"permanent_condition_chance": 20
 	},
 	"clan_creation": {
 		"rerolls": 3,
@@ -248,6 +249,9 @@
 			"mediator apprentice": 25
 		},
 		"min_graduating_age": 10
+	},
+	"save_load": {
+		"load_integrity_checks": true
 	},
 
 
