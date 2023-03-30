@@ -27,6 +27,7 @@ from scripts.utility import update_sprite, get_current_season, quit # pylint: di
 from scripts.cat.cats import Cat, cat_class
 from scripts.cat.names import names
 from scripts.clan_resources.freshkill import Freshkill_Pile, Nutrition
+from scripts.cat.sprites import spriteSize
 from sys import exit  # pylint: disable=redefined-builtin
 
 
@@ -1342,7 +1343,7 @@ class StarClan():
         """
         TODO: DOCS
         """
-        white = pygame.Surface((50, 50))
+        white = pygame.Surface((spriteSize, spriteSize))
         fade_level = 0
         if cat.dead:
             for f in self.forgotten_stages:  # pylint: disable=consider-using-dict-items
