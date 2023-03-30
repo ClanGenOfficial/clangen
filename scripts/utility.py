@@ -368,7 +368,11 @@ def create_new_cat(Cat,
             if not int(random() * chance):
                 possible_conditions = []
                 for condition in PERMANENT:
+                    if (kit or litter) and PERMANENT[condition]['congenital'] not in ['always', 'sometimes']:
+                        print(condition)
+                        continue
                     possible_conditions.append(condition)
+                print(possible_conditions)
                 chosen_condition = choice(possible_conditions)
                 born_with = False
                 if PERMANENT[chosen_condition]['congenital'] in ['always', 'sometimes']:
@@ -411,7 +415,7 @@ def create_outside_cat(Cat, status, backstory):
         elif status in ['loner', 'rogue']:
             name = choice(names.names_dict["loner_names"] +
                                  names.names_dict["normal_prefixes"])
-        elif status == 'former clancat':
+        elif status == 'former Clancat':
             name = choice(names.names_dict["normal_prefixes"])
             suffix = choice(names.names_dict["normal_suffixes"])
         else:
@@ -760,13 +764,7 @@ def get_snippet_list(chosen_list, amount, sense_groups=None, return_string=True)
     final_snippets = sample(unique_snippets, k=amount)
 
     if return_string:
-        if amount == 1:
-            text = str(final_snippets[0])
-        elif amount == 2:
-            text = " and ".join(final_snippets)
-        else:
-            start = ", ".join(final_snippets[:-1])
-            text = ", and ".join([start, final_snippets[-1]])
+        text = adjust_list_text(final_snippets)
         return text
     else:
         return final_snippets

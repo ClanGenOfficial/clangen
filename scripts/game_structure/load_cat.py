@@ -282,7 +282,8 @@ def json_load():
 
         # Add faded children
         cat.children.extend(cat.faded_offspring)
-
+        
+        game.switches['error_message'] = f'There was an error when thoughts for cat #{cat} are created.'
         # initialization of thoughts
         cat.thoughts()
         

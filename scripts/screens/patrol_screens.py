@@ -1137,7 +1137,8 @@ class PatrolScreen(Screens):
             self.elements['selected_bio'] = pygame_gui.elements.UITextBox(str(self.selected_cat.status) +
                                                                           "\n" + str(self.selected_cat.trait) +
                                                                           "\n" + str(self.selected_cat.skill) +
-                                                                          "\n" + str(self.selected_cat.experience_level),
+                                                                          "\n" + str(self.selected_cat.experience_level) +
+                                                                          (f' ({str(self.selected_cat.experience)})' if game.settings['showxp'] else ''),
                                                                           scale(pygame.Rect((600, 700), (400, 150))),
                                                                           object_id=get_text_box_theme(
                                                                               "#text_box_22_horizcenter_spacing_95"),

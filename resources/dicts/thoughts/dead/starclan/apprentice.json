@@ -1,0 +1,23 @@
+[
+    {
+        "id": "apprentice_dead_apprentice",
+        "thoughts": [
+            "Is wondering if r_c would have been their friend"
+        ],
+        "random_status_constraint": [
+            "apprentice",
+            "medicine cat apprentice",
+            "mediator apprentice"
+        ],
+        "main_age_constraint": [
+            "adolescent"
+        ],
+        "random_age_constraint": [
+            "adolescent"
+        ],
+        "random_living_status": [
+            "living",
+            "starclan"
+        ]
+    }
+]
