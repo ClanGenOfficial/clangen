@@ -254,9 +254,10 @@
 		"load_integrity_checks": true
 	},
 
-
-	"lock_season": false, 
-	"comment": "Forces the season to be locked at the clan's starting_season",
+	"clan": {
+		"lock_season": false, 
+		"comment": "Forces the season to be locked at the clan's starting_season"
+	},
 
 
 

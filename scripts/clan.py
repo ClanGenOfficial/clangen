@@ -872,7 +872,7 @@ class Clan():
                              Cat.all_cats.get(deputy_info[0], None),
                              Cat.all_cats.get(med_cat_info[0], None))
         game.clan.age = int(general[1])
-        if not game.config['lock_season']:
+        if not game.config['clan']['lock_season']:
             game.clan.current_season = game.clan.seasons[game.clan.age % 12]
         else:
             game.clan.current_season = game.clan.starting_season

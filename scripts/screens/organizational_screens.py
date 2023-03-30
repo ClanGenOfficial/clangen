@@ -805,6 +805,10 @@ class SettingsScreen(Screens):
             manager=MANAGER)
 
         self.refresh_checkboxes()
+    
+
+
+    
 
     def refresh_checkboxes(self):
         """
