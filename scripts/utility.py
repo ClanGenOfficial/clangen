@@ -368,9 +368,11 @@ def create_new_cat(Cat,
             if not int(random() * chance):
                 possible_conditions = []
                 for condition in PERMANENT:
-                    if kit or litter and PERMANENT[condition]['congenital'] not in ['always', 'sometimes']:
+                    if (kit or litter) and PERMANENT[condition]['congenital'] not in ['always', 'sometimes']:
+                        print(condition)
                         continue
                     possible_conditions.append(condition)
+                print(possible_conditions)
                 chosen_condition = choice(possible_conditions)
                 born_with = False
                 if PERMANENT[chosen_condition]['congenital'] in ['always', 'sometimes']:
