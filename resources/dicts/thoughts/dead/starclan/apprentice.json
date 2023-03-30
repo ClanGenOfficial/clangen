@@ -1,22 +1,25 @@
 [
     {
-        "id": "apprentice_dead_apprentice",
+        "id": "gen_dead_app",
         "thoughts": [
-            "Is wondering if r_c would have been their friend"
+            "Is sad they never got their warrior name",
+            "Patrols StarClan's territory",
+            "Imagines what their warrior ceremony would have been like"
         ],
-        "random_status_constraint": [
-            "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice"
+        "main_status_constraint": [
+            "apprentice"
+        ]
+    },
+    {
+        "id": "dead_app_to_dead_other",
+        "thoughts": [
+            "Listens to r_c's stories",
+            "Fetches moss for r_c"
         ],
-        "main_age_constraint": [
-            "adolescent"
-        ],
-        "random_age_constraint": [
-            "adolescent"
+        "main_status_constraint": [
+            "apprentice"
         ],
         "random_living_status": [
-            "living",
             "starclan"
         ]
     }

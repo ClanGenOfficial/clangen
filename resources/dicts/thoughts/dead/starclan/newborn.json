@@ -4,7 +4,6 @@
         "thoughts": [
             "Mewls pitifully for milk",
             "Snoozes peacefully",
-            "Tries to open their eyes, but it's all blurry",
             "Wobbles around StarClan happily",
             "Is drinking milk from a StarClan queen",
             "Tries opening their eyes to see the 'stars' everyone is talking about",
@@ -48,21 +47,6 @@
         ],
         "random_living_status": [
             "starclan"
-        ]
-    },
-    {
-        "id": "gen_dead_newborn_to_alive_sibling",
-        "thoughts":[
-            "Wants to let r_c know they're okay"
-        ],
-        "main_age_constraint": [
-            "newborn"
-        ],
-        "relationship_constraint": [
-            "siblings"
-        ],
-        "random_living_status": [
-            "living"
         ]
     }
 ]
