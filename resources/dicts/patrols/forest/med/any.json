@@ -4,16 +4,16 @@
 "biome": "forest",
 "season": "Any",
 "tags": ["herb_gathering", "comfort", "respect", "trust", "med_only"],
-"intro_text": "p_l sees weird ripples on the water of a puddle while gathering fresh water.",
-"decline_text": "p_l is in a hurry and does not stop to look at the ripples.",
+"intro_text": "While gathering fresh water, p_l sees strange ripples on the surface of a puddle.",
+"decline_text": "p_l is in too much of a hurry, not sparing the rippling water a second glance.",
 "chance_of_success": 45,
 "exp": 10,
 "success_text": [
-    "As p_l looks into the puddle they are greeted by an intense vision. They drop what they are doing and race back to the camp to tell and consult with their leader.",
-    "They are greeted with the vision of a cat they had failed to save looking content and happy in StarClan saying that they were not at fault for their death. They feel unburdened and at peace after receiving that vision."
+    "As p_l looks into the puddle, they're greeted by an intense vision. They drop what they're doing and race back to the camp to consult with the leader - water can wait, this is far too important.",
+    "p_l is greeted with the vision of a cat they had failed to save, content and happy in StarClan. The cat gives them a gentle smile, softly telling p_l that they were never at fault for their death. p_l feels their shoulders sag with the weight of their relief, feeling the burden of the death lift from over their head."
 ],
 "fail_text": [
-    "They gaze into the puddle only to see the weird ripples were caused by a small frog. p_l feels disappointed because they really could have used some guidance from StarClan."
+    "They gaze eagerly into the puddle, only to see the weird ripples were caused by a small frog. p_l sighs in disappointment - they really could have used some guidance from StarClan."
 ],
 "min_cats": 1,
 "max_cats": 1,
@@ -32,18 +32,18 @@
     "med_only",
     "random_herbs"
 ],
-"intro_text": "p_l decides it's a good opportunity to show app1 where the most commonly needed herbs are in the territory.",
-"decline_text": "As they see app1's absent minded gaze they change their mind. Maybe another day when app1 is more focused.",
+"intro_text": "p_l looks at the calm, cloudless sky, and decides it's a good opportunity to show app1 where some of the most commonly needed herbs are located in their territory.",
+"decline_text": "As they look at app1's absent-minded gaze, they hesitate and change their mind. Maybe another day would be best, when app1 is more focused.",
 "chance_of_success": 65,
 "exp": 10,
 "success_text": [
-    "app1 is focused and attentive. p_l is confident that next time there is an emergency, app1 will be able to find those herbs without them if needed.",
-    "As p_l is explaining why and where the herbs are growing, app1 lets out a shout. To p_l's surprise they have found a previously unknown patch of an uncommon herb. Stunned and filled with pride that they found and recognized the herb, p_l promises them the first pick of fresh-kill.",
+    "app1 is focused and attentive, giving p_l confidence that next time there is an emergency, app1 will be able to find the herbs they need without them if needed.",
+    "As p_l is explaining why and where the herbs are growing, app1 lets out a shout and bolts ahead. To p_l's surprise, they have found a previously unknown patch of an uncommon herb! Stunned, but filled with pride that they found and recognized the herb, p_l promises them the first pick of fresh-kill as soon as they return to camp.",
     null,
     null
 ],
 "fail_text": [
-    "app1 is constantly distracted and running ahead much to the frustration of p_l. Evidently no new knowledge will be learned that day."
+    "app1 is constantly distracted, running ahead at every little noise or interesting sight, much to the frustration of p_l. Evidently, no new knowledge will be gained that day."
 ],
 
 
@@ -58,7 +58,7 @@
 "season": "Any",
 "tags": ["herb_gathering", "apprentice", "med_only", "random_herbs"],
 "intro_text": "p_l has been sent out into the forest to try to find specific herbs alone.",
-"decline_text": "Nervous and scared of everything that even slightly moves, they decide to go back to camp and try again another day. Their mentor will not be pleased...",
+"decline_text": "Nervous and scared of everything that even slightly moves, they decide to go back to camp and try again another day. Their mentor won't be very pleased, but they rationalize that it's better to go with confidence than nerves.",
 "chance_of_success": 65,
 "exp": 10,
 "success_text": [
@@ -68,7 +68,7 @@
     null
 ],
 "fail_text": [
-    "p_l goes to a known herb patch - but the plant has died! They give up and return to camp, feeling terrible and with their tail dragging on the ground."
+    "p_l goes to a known herb patch - but the plant has died! They give up and return to camp, their tail dragging miserably along the ground."
 ],
 "min_cats": 1,
 "max_cats": 1,
@@ -80,15 +80,15 @@
 "biome": "forest",
 "season": "Any",
 "tags": ["herb_gathering", "apprentice", "herb", "blackberry"],
-"intro_text": "p_l is out to gather a few herbs at the behest of their mentor. The wind is gently rustling the trees as they pad along.",
-"decline_text": "Just before the apprentice can leave, their mentor calls for their attention. Apparently they have a different task that's more pressing.",
+"intro_text": "app1 pads out of camp, ready to gather some herbs at the behest of their mentor. The wind gently rustles through the trees as they pad along.",
+"decline_text": "Before they get more than a few pawsteps away, their mentor calls them back. Apparently, something more pressing has come up.",
 "chance_of_success": 50,
 "exp": 20,
 "success_text": [
-    "p_l is plucking some blackberry leaves when their attention is suddenly grabbed by a a_sign. At the sight, the fur on their back prickles slightly and they can hear their thundering heartbeat. They have to tell their mentor about this sign right away!"
+    "p_l is plucking some blackberry leaves when their attention is suddenly grabbed by a a_sign. The fur on their back begins to prickle slightly, the sound of their heartbeat like thunder in their ears. They turn and hare back to camp, herbs forgotten. They need to tell their mentor about this as soon as possible!"
 ],
 "fail_text":[
-    "p_l feels a pit of dread beginning to form in their belly. They forgot where to find the herb that their mentor wanted. They scent the air hopefully, but it's useless. They'll have to swallow their shame and return to ask for directions."
+    "app1 feels a pit of dread beginning to form in their belly - they've forgotten where to find the herb their mentor wanted. They taste the air, hoping desperately for some hint of its tell-tale scent, but it's a useless effort. They'll have to swallow their pride and return to ask for directions."
 ],
 "min_cats": 1,
 "max_cats": 1,
@@ -106,14 +106,13 @@
     "exp": 10,
     "success_text": [
             "It's absolutely miserable weather to gather in, and p_l wishes they didn't have to. But, even though r_c slips over and they all end up drenched, they do bring back herbs.",
-            "The entire patrol mutely agrees to grit their teeth and bear it, but everyone is relieved to file into their nests to dry off, a random assortment of herbs refreshing the medicine cat den's stocks.",
-            "The keen eyed s_c spots herbs quickly, and the cats harvest them and retreat back to the dry camp, not lingering for a second more than they need to."
+            "The entire patrol mutely agrees to grit their teeth and bear it, but that doesn't stop the relief everyone feels when they settle into their nests to dry off, a rather motley assortment of herbs refreshing the medicine cat den's stocks.",
+            "The keen eyed s_c spots herbs quickly, and the cats harvest them and retreat back to the camp, where it's nice and dry. No point in lingering for a second more than they need to with the weather like this!"
     ],
     "fail_text": [
-            "p_l knows the conditions are miserable, but their group is even more insufferable, and not only do they have to put up with these cats for an entire afternoon, there's also nothing to show for it."
+            "p_l <i>knows</i> the conditions are miserable, but this group is somehow more insufferable! Not only do they have to put up with these cats for an entire afternoon, there's also nothing to show for it at the end of the day."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -125,15 +124,15 @@
     "season": "Any",
     "tags": ["herb_gathering", "med_only", "herb", "cobwebs", "many_herbs1"],
     "intro_text": "p_l heads out into the territory to stock up on cobwebs, something the Clan never seems to have enough of.",
-    "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
+    "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
     "chance_of_success": 80,
     "exp": 20,
     "success_text": [
-        "p_l finds lots of cobwebs and gathers them with sticks. No cat will have the chance to bleed out now!",
-        "p_l goes to their favorite cobweb gathering places. Several cats in the camp startle when they pass by them as they are unable to see p_l underneath the many cobwebs they have gathered."
+        "p_l finds plenty of cobwebs, gently collecting them on the ends of sticks. No cat will have the chance to bleed out - not now, with so many cobwebs to staunch their wounds!",
+        "p_l visits a few of their favourite places to gather cobwebs. When they get back to camp, they end up startling several cats on their way back to their den - p_l is practically a walking cobweb, impossible to see beneath the sheer mass they have gathered."
     ],
     "fail_text": [
-        "Tired from caring for their patients around the clock, the only cobwebs p_l manages to gather are from the cobweb they ran into by accident."
+        "Over-tired from caring for their patients all day and night, the only cobwebs p_l manages to 'collect' are the ones they accidentally walked into."
     ],
     "min_cats": 1,
     "max_cats": 1,
@@ -145,13 +144,13 @@
     "biome": "forest",
     "season": "Any",
     "tags": ["herb_gathering", "med_only", "med_cat", "respect", "trust", "apprentice", "herb", "cobwebs", "many_herbs1"],
-    "intro_text": "p_l heads out into the territory with app1 to stock up on cobwebs and teach the apprentice how to gather one of the Clan's most vital medical tools.",
-    "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
+    "intro_text": "p_l heads out into the territory with app1, both to stock up on cobwebs and to teach the apprentice how to gather one of the Clan's most vital medical tools.",
+    "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
     "chance_of_success": 80,
     "exp": 20,
     "success_text": [
-        "p_l finds lots of cobwebs and gathers them with sticks. The apprentice works hard with their mentor to gather as many as possible, their eyes glittering with joy and pride.",
-        "p_l  goes to their favorite cobweb gathering places. Several cats in the camp startle when they pass by them as they are unable to see p_l and app1 underneath the many cobwebs they have gathered."
+        "p_l finds plenty of cobwebs, gently collecting them on the ends of sticks. app1 works hard alongside them to gather as many as they can, their eyes glittering with joy and pride as they work.",
+        "p_l takes app1 to a few of their favourite places to gather cobwebs. When they get back to camp, they end up startling several cats on their way back to their den - p_l and app1 are practically walking cobwebs, impossible to see beneath the sheer mass they have gathered."
     ],
     "fail_text": [
         "app1 doesn't seem to be able to focus today, and p_l isn't much better off, tired from teaching their apprentice and caring for their patients. After app1 accidentally ruins a cobweb while playing with it, p_l decides to call the whole thing off and try again another day."
@@ -171,15 +170,14 @@
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-            "p_l mrrps with laughter, watching r_c parade around with such a big bundle of cobwebs they keep colliding with things in their path they can't see. The entire patrol has gotten a wonderful haul, and it's a very pleased medicine cat that leads them back to camp.",
-            "The patrol brings back a truly massive haul, and in good humour too, laughing as they set down their sticks of spun up webbing in the medicine cat den. p_l joins everyone as they sit down to share tongues, ridding their pelts of dust and the odd spider as the cats catch up with each other and enjoy the day.",
-            "p_l's keen eyes have a knack for spotting the gossemer thin strings of cobwebs, and with the patrol there to follow their lead it's a very successful gathering mission."
+            "p_l mrrps with laughter, watching r_c parade around with such a big bundle of cobwebs that they keep colliding with things in their path they can't see. The entire patrol has gotten a wonderful haul, and it's a very pleased medicine cat that leads them back to camp.",
+            "The patrol brings back a truly massive haul, and return in good humour, laughing as they set down their sticks of spun-up webbing in the medicine cat den. p_l joins everyone as they sit down to share tongues, ridding their pelts of dust and the odd spider as the cats catch up with each other and enjoy the day.",
+            "s_c's keen eyes have a knack for spotting the gossamer-thin strands of cobwebs, and with the patrol there to follow their lead, it's a very successful gathering mission."
     ],
     "fail_text": [
             "Can warriors not pay attention, even to something as simple as cobwebs?! p_l holds their breath and counts to ten before they dismiss the patrol, every found cobweb ruined, what little they did manage to find."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -190,20 +188,19 @@
     "biome": "forest",
     "season": "Any",
     "tags": ["herb_gathering", "med_only", "herb", "horsetail", "many_herbs1", "many_herbs2", "med_cat"],
-    "intro_text": "p_l heads out on a herb-gathering patrol, searching for the evergreen, ever-reliable horsetail to harvest for the herb stores.",
-    "decline_text": "They have second thoughts leaving their patients behind and decide to go another day.",
+    "intro_text": "p_l heads out on an herb-gathering patrol, searching for the ever-green, ever-reliable horsetail to harvest for the herb stores.",
+    "decline_text": "They have second thoughts about leaving their patients behind, and decide to go another day.",
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "As a plant that grows non-seasonally and without losing any of its green in leaf-bare, while also having a crucial herbal use stopping blood loss, horsetail is a welcome sight in any well-stocked medicine cat den.",
-            "Snapping off the thick horsetail stem near the base of the plant lets p_l drag an entire big, long shoot back to camp, where they process it down further into small stem sections that are easily stored.",
-            "s_c deftly picks out a horsetail shoot, bringing back an impressive addition to the Clan's herb stores."
+            "As a plant that grows without losing any of its green in leaf-bare, while <i>also</i> having a crucial herbal use in stopping blood-loss, horsetail is a welcome sight in any well-stocked medicine cat den.",
+            "Snapping off the thick horsetail stem near the base of the plant allows p_l to drag an entire big, long shoot back to camp, where they diligently process it down further into smaller stem sections that are easily stored.",
+            "s_c deftly picks out an entire horsetail shoot, bringing back quite the impressive addition to the Clan's herb stores."
 ],
     "fail_text": [
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
@@ -214,20 +211,19 @@
     "biome": "forest",
     "season": "Any",
     "tags": ["herb_gathering", "adult_stat", "med_only", "med_cat", "herb", "horsetail", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "comfort", "respect", "trust", "apprentice"],
-    "intro_text": "p_l heads out on a herb-gathering patrol, searching for the evergreen, ever-reliable horsetail to harvest for the herb stores. app1 trots after them, asking them why horsetail grows so weirdly without leaves.",
-    "decline_text": "They have second thoughts leaving their patients behind, especially with their apprentice also out, and decide to go another day.",
+    "intro_text": "p_l heads out on an herb-gathering patrol, searching for the ever-green, ever-reliable horsetail to harvest for the herb stores. app1 trots after them, asking them why horsetail grows so weirdly without leaves.",
+    "decline_text": "They have second thoughts leaving their patients behind, especially with them also bringing their apprentice, and decide to go another day.",
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
-            "p_l doesn't know why horsetail plants lack leaves, but they encourage app1's interest in the topic. As a plant that grows non-seasonally and without losing any of its green in leaf-bare, while also having a crucial herbal use stopping blood loss, horsetail is a welcome sight in any well-stocked medicine cat den.",
-            "Snapping off the thick horsetail stem near the base of the plant lets p_l drag an entire big, long shoot back to camp, where app1 processes it down further into small stem sections that are easily stored and makes a neat pile in the medicine cat den with them.",
-            "s_c deftly picks out a horsetail shoot, bringing back an impressive addition to the Clan's herb stores as they describe the plant's uses to app1."
+            "p_l doesn't know why horsetail plants lack leaves, but they encourage app1's interest in the topic. As a plant that grows without losing any of its green in leaf-bare, while <i>also</i> having a crucial herbal use in stopping blood-loss, horsetail is a welcome sight in any well-stocked medicine cat den.",
+            "Snapping off the thick horsetail stem near the base of the plant allows p_l to drag an entire big, long shoot back to camp, where app1 processes it down further into small stem sections that are easily stored, making a neat pile in the medicine cat den with them.",
+            "s_c deftly picks out an entire horsetail shoot, bringing back quite the impressive addition to the Clan's herb stores as they describe the plant's uses to app1."
 ],
     "fail_text": [
             "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and app1 looks up at them with disappointment."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -238,26 +234,25 @@
     "biome": "forest",
     "season": "Any",
     "tags": ["herb_gathering", "med_cat", "warrior", "herb", "horsetail", "many_herbs1", "many_herbs2", "big_change", "platonic", "dislike", "respect"],
-    "intro_text": "Bringing a motley assortment of Clanmates along with them, p_l heads out on a herb-gathering patrol, searching for the evergreen, ever-reliable horsetail to harvest for the herb stores.",
+    "intro_text": "Bringing a motley assortment of Clanmates along with them, p_l heads out on an herb-gathering patrol, searching for the ever-green, ever-reliable horsetail to harvest for the herb stores.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "As a plant that grows non-seasonally and without losing any of its green in leaf-bare, while also having a crucial herbal use stopping blood loss, horsetail is a welcome sight in any well-stocked medicine cat den, and having other cats to help them makes the patrol an easy afternoon's work.",
-            "Snapping off the thick horsetail stem near the base of the plant lets p_l drag an entire big, long shoot back to camp. The patrol helps pull the massive bush, and several cats in camp fluff up with alarm watching the herb gathering patrol drag it in where they process it down further into small stem sections that are easily stored.",
-            "s_c deftly picks out a horsetail shoot, bringing back impressive additions to the Clan's herb stores with the help of the warriors."
+            "As a plant that grows without losing any of its green in leaf-bare, while <i>also</i> having a crucial herbal use in stopping blood-loss, horsetail is a welcome sight in any well-stocked medicine cat den. Having other cats to help them makes the patrol an easy afternoon's work.",
+            "Snapping off the thick horsetail stem near the base of the plant allows p_l to drag an entire shoot back to camp. The patrol helps pull along the massive bush, causing several cats in camp to fluff up in alarm when the patrol drags it through camp, where they diligently process it down further into smaller stem sections that are easily stored.",
+            "s_c deftly picks out an entire horsetail shoot, bringing back quite the impressive addition to the Clan's herb stores with the help of the warriors."
     ],
     "fail_text": [
-            "p_l is distracted today, and it affects their work. The patrol is unsuccessful and snappish with each other."
+            "p_l is distracted today, and it affects their work. The patrol is unsuccessful, and the cats snappy with each other."
     ],
     "win_skills": ["keen eye"],
-
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
-    {
+{
     "patrol_id": "fst_med_gatheringmoss1",
     "biome": "forest",
     "season": "Any",
@@ -267,7 +262,7 @@
     "chance_of_success": 80,
     "exp": 10,
     "success_text": [
-        "p_l quickly makes their way to the best moss patch they know. They spend a bit of time slicing bits off with their claws, careful not to get any roots or dirt in the pile. Once they're satisfied, they take a moment to wrap their jaws around the heap and make their way back to camp."
+        "p_l quickly makes their way to the best moss patch they know. They spend a bit of time slicing bits off with their claws, careful not to get any roots or dirt in the pile - once they're satisfied, they take a moment to wrap their jaws around the heap, then make their way back to camp."
     ],
     "fail_text":[
         "Mouse-dung! When p_l gets to the best moss-gathering spot, they find that some animal has dug up most of the moss. They'll have to leave the rest to repopulate before gathering from this spot again."
@@ -277,8 +272,8 @@
 
     "antagonize_text": null,
     "antagonize_fail_text": null
-    },
-    {
+},
+{
     "patrol_id": "fst_med_gatheringmoss2",
     "biome": "forest",
     "season": "Any",
@@ -288,7 +283,7 @@
     "chance_of_success": 80,
     "exp": 10,
     "success_text": [
-        "p_l leads the way to the best moss patch they know, with app1 following close behind. The two cats begin cutting off bits of moss and making their respective piles. Once the piles are a mouthful, they pick up the bundles of new bedding and start back towards camp."
+        "p_l leads the way to the best moss patch they know, with app1 following close behind. The two cats begin cutting off bits of moss and making their respective piles - once the piles turn into mouthfuls, they pick up the bundles of new bedding and start back towards camp."
     ],
     "fail_text":[
         "Mouse-dung! When the two cats arrive at the best moss-gathering spot, they find that some animal has dug up most of the moss. They'll have to leave the rest to repopulate before gathering from this spot again."
@@ -309,7 +304,7 @@
     "chance_of_success": 80,
     "exp": 10,
     "success_text": [
-        "p_l leads the way to the best moss patch they know, with r_c following close behind. The two cats begin cutting off bits of moss and making their respective piles. Once the piles are a mouthful, they pick up the bundles of new bedding and start back towards camp."
+        "p_l leads the way to the best moss patch they know, with r_c following close behind. The two cats begin cutting off bits of moss and making their respective piles - once the piles turn into mouthfuls, they pick up the bundles of new bedding and start back towards camp."
     ],
     "fail_text":[
         "Mouse-dung! When the two cats arrive at the best moss-gathering spot, they find that some animal has dug up most of the moss. They'll have to leave the rest to repopulate before gathering from this spot again."
@@ -330,7 +325,7 @@
     "chance_of_success": 80,
     "exp": 10,
     "success_text": [
-        "p_l leads the way to the best moss patch they know, with their entourage following close behind. The cats begin cutting off bits of moss and making their respective piles. Once the piles are a mouthful, they pick up the bundles of new bedding and start back towards camp."
+        "p_l leads the way to the best moss patch they know, with their entourage following close behind. The cats begin cutting off bits of moss and making their respective piles - once the piles turn into mouthfuls, they pick up the bundles of new bedding and start back towards camp."
     ],
     "fail_text":[
         "Mouse-dung! When the cats arrive at the best moss-gathering spot, they find that some animal has dug up most of the moss. They'll have to leave the rest to repopulate before gathering from this spot again."
@@ -342,22 +337,22 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "fst_med_gatheringrosemarylesson1",
+    "patrol_id": "fst_med_gatheringrosemary1",
     "biome": "forest",
     "season": "Any",
     "tags": ["herb_gathering", "med_cat", "apprentice", "herb", "rosemary", "comfort", "trust", "no_change_fail", "injury", "small cut", "med_only"],
-    "intro_text": "p_l has to attend to one of their grimmer jobs as a medicine cat. The grounds where c_n goes to mourn their dead need to be tended. They're bringing along app1 as their assistant for this trip.",
-    "decline_text": "Just before the medicine cat can leave, a cat calls for their attention.",
+    "intro_text": "p_l has to attend to one of their grimmer jobs as a medicine cat - the grounds where c_n goes to mourn their dead need to be tended to. They're bringing along app1 as their assistant for this trip, and the two cats head out in relative silence.",
+    "decline_text": "Just before the two can leave, a cat calls for their attention.",
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
-        "Even though there's nothing different about this place, other than the serenity it was chosen for, p_l always feels that the grief and love their Clanmates express here has seeped into every corner. They tidy the grounds, and collect rosemary. It's appropriate that the plant grows here, when its herbs are used to hide death-scent."
+        "Even though there's nothing different about this place, other than the serenity it was chosen for, p_l always feels that the grief and love their Clanmates express here has seeped into every corner. They tidy the grounds, collecting rosemary as they work. It feels appropriate for the plant to grow here, when its herbs are used to hide the scent of death."
     ],
     "fail_text":[
         null,
         null,
         null,
-        "There's a sharp yowl of pain and a string of muttered curses following it. p_l turns around to see app1 holding one of their paws off the ground. It seems that the apprentice stepped on a thorn. Ouch! They'll have to go back to camp and fix that up."
+        "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see app1 holding one of their paws off the ground. It seems that the apprentice stepped on a thorn. Ouch! They'll have to go back to camp and fix that up."
     ],
     "min_cats": 2,
     "max_cats": 2,
@@ -370,22 +365,400 @@
     "biome": "forest",
     "season": "Any",
     "tags": ["herb_gathering", "med_cat", "warrior", "herb", "rosemary", "comfort", "trust", "no_change_fail", "injury", "small cut"],
-    "intro_text": "p_l has to attend to one of their grimmer jobs as a medicine cat. The grounds where c_n goes to mourn their dead need to be tended. They're bringing along r_c as their assistant for this trip.",
-    "decline_text": "Just before the medicine cat can leave, a cat calls for their attention.",
+    "intro_text": "p_l has to attend to one of their grimmer jobs as a medicine cat - the grounds where c_n goes to mourn their dead need to be tended to. They're bringing along r_c as their assistant for this trip, and the two cats head out in relative silence.",
+    "decline_text": "Just before the two can leave, a cat calls for their attention.",
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
-        "Even though there's nothing different about this place, other than the serenity it was chosen for, p_l always feels that the grief and love their Clanmates express here has seeped into every corner. They tidy the grounds, and collect rosemary. It's appropriate that the plant grows here, when its herbs are used to hide death-scent."
+        "Even though there's nothing different about this place, other than the serenity it was chosen for, p_l always feels that the grief and love their Clanmates express here has seeped into every corner. They tidy the grounds, collecting rosemary as they work. It feels appropriate for the plant to grow here, when its herbs are used to hide the scent of death."
     ],
     "fail_text":[
         null,
         null,
         null,
-        "There's a sharp yowl of pain and a string of muttered curses following it. p_l turns around to see r_c holding one of their paws off the ground. It seems that the other cat stepped on a thorn. Ouch! They'll have to go back to camp and fix that up."
+        "There's a sharp yowl of pain, followed by a string of muttered curses, and p_l turns to see r_c holding one of their paws off the ground. It seems that the other cat stepped on a thorn. Ouch! They'll have to go back to camp and fix that up."
     ],
     "min_cats": 2,
     "max_cats": 2,
 
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_med_cobwebapps1",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["herb_gathering", "herb", "cobwebs", "apprentice", "two_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
+    "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up their face into a stupid expression around the stick they hold in their mouth.",
+    "decline_text": "They're called back to camp, needed for other chores.",
+    "chance_of_success": 70,
+    "exp": 20,
+    "success_text": [
+            "It makes app1 laugh, muffled through their own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, app2 seems to lighten up every situation.",
+            "<i>Murrp</i>ing with laughter, app1 clacks the stick they hold in their own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the apprentices muffled purrs and laughs."
+    ],
+    "fail_text": [
+            "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered.."
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_med_cobwebapps2",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["herb_gathering", "herb", "cobwebs", "apprentice", "three_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
+    "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up their face into a stupid expression around the stick they hold in their mouth.",
+    "decline_text": "They're called back to camp, needed for other chores.",
+    "chance_of_success": 70,
+    "exp": 20,
+    "success_text": [
+            "app3 ignores it, but it makes app1 laugh, muffled through their own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, app2 seems to lighten up every situation.",
+            "<i>Murrp</i>ing with laughter, app1 clacks the stick they hold in their own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the apprentices muffled purrs and laughs, even though app3 seems solely focused on the chore, content to let the others muck about so long as everything gets done."
+    ],
+    "fail_text": [
+            "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered.."
+    ],
+    "min_cats": 3,
+    "max_cats": 3,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_med_cobwebapps3",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["herb_gathering", "herb", "cobwebs", "apprentice", "four_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
+    "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up their face into a stupid expression around the stick they hold in their mouth.",
+    "decline_text": "They're called back to camp, needed for other chores.",
+    "chance_of_success": 70,
+    "exp": 20,
+    "success_text": [
+            "The other apprentices ignore it, but it makes app1 laugh, muffled through their own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, and app2 seems to lighten up every situation.",
+            "<i>Murrp</i>ing with laughter, app1 clacks the stick they hold in their own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the two's muffled purrs and laughs, even though the other apprentices seem solely focused on the chore, content to let the others muck about so long as everything gets done."
+    ],
+    "fail_text": [
+            "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered.."
+    ],
+    "min_cats": 4,
+    "max_cats": 4,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_med_cobwebapps4",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["herb_gathering", "herb", "cobwebs", "apprentice", "five_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
+    "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up their face into a stupid expression around the stick they hold in their mouth.",
+    "decline_text": "They're called back to camp, needed for other chores.",
+    "chance_of_success": 70,
+    "exp": 20,
+    "success_text": [
+            "The other apprentices ignore it, but it makes app1 laugh, muffled through their own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, app2 seems to lighten up every situation.",
+            "<i>Murrp</i>ing with laughter, app1 clacks the stick they hold in their own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the two's muffled purrs and laughs, even though the other apprentices seem solely focused on the chore, content to let the others muck about so long as everything gets done."
+    ],
+    "fail_text": [
+            "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered.."
+    ],
+    "min_cats": 5,
+    "max_cats": 5,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_med_cobwebapps5",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["herb_gathering", "herb", "cobwebs", "apprentice", "six_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
+    "intro_text": "As the apprentices head out to collect cobwebs, app2 screws up their face into a stupid expression around the stick they hold in their mouth.",
+    "decline_text": "They're called back to camp, needed for other chores.",
+    "chance_of_success": 70,
+    "exp": 20,
+    "success_text": [
+            "The other apprentices ignore it, but it makes app1 laugh, muffled through their own cobweb gathering stick. It's good to have a friend around for the boring bits of the day, app2 seems to lighten up every situation.",
+            "<i>Murrp</i>ing with laughter, app1 clacks the stick they hold in their own mouth against app2's. The stick bashing continues as they collect cobwebs, and the afternoon is filled with the two's muffled purrs and laughs, even though the other apprentices seem solely focused on the chore, content to let the others muck about so long as everything gets done."
+    ],
+    "fail_text": [
+            "The apprentices spend the entire patrol messing around with their sticks, even when there's cobwebs spun around the ends of them, and they end up completely ruining what they've gathered.."
+    ],
+    "min_cats": 6,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_med_cobwebapps6",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["herb_gathering", "herb", "cobwebs", "apprentice", "warrior_app", "three_apprentices", "many_herbs1", "big_change", "platonic", "dislike", "respect"],
+    "intro_text": "The apprentices head out into the territory, following p_l a little dubiously. Gathering things can't possibly be as hard as hunting them - plants don't run away!",
+    "decline_text": "They're called back to camp, needed for other chores.",
+    "chance_of_success": 70,
+    "exp": 20,
+    "success_text": [
+            "It's a long, weird, hard day. <i>Yes,</i> they find cobwebs. <i>Yes,</i> they bring them back to camp - but by StarClan, none of the warrior apprentices were expecting something as simple as cobweb gathering to be so hard, not when it feels like they run into one every other hunt! They definitely end up with a new appreciation for p_l's skills.",
+            "... However, once out of camp, the apprentices realise they're out of their depth, and turn to p_l for help. p_l, to their credit, is very gracious about it, not making anyone feel stupid, and by the time the patrol returns with a successful haul there's a new feeling of rapport between everyone, regardless of their role."
+    ],
+    "fail_text": [
+            "p_l is disgusted with the general disdain they feel from the other apprentices, and how hypocritical it is to tell them herb gathering is easy when the patrol hasn't found <i>any</i> cobwebs! They stalk back to the medicine cat den in a huff, unable to bear being near the other apprentices for any longer than they have been."
+    ],
+    "min_cats": 3,
+    "max_cats": 3,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_med_cobwebapps7",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["herb_gathering", "herb", "cobwebs", "apprentice", "warrior_app", "four_apprentices", "many_herbs1", "big_change", "platonic", "dislike", "respect"],
+    "intro_text": "The apprentices head out into the territory, following p_l a little dubiously. Gathering things can't possibly be as hard as hunting them - plants don't run away!",
+    "decline_text": "They're called back to camp, needed for other chores.",
+    "chance_of_success": 70,
+    "exp": 20,
+    "success_text": [
+            "It's a long, weird, hard day. <i>Yes,</i> they find cobwebs. <i>Yes,</i> they bring them back to camp - but by StarClan, none of the warrior apprentices were expecting something as simple as cobweb gathering to be so hard, not when it feels like they run into one every other hunt! They definitely end up with a new appreciation for p_l's skills.",
+            "... However, once out of camp, the apprentices realise they're out of their depth, and turn to p_l for help. p_l, to their credit, is very gracious about it, not making anyone feel stupid, and by the time the patrol returns with a successful haul there's a new feeling of rapport between everyone, regardless of their role."
+    ],
+    "fail_text": [
+            "p_l is disgusted with the general disdain they feel from the other apprentices, and how hypocritical it is to tell them herb gathering is easy when the patrol hasn't found <i>any</i> cobwebs! They stalk back to the medicine cat den in a huff, unable to bear being near the other apprentices for any longer than they have been."
+    ],
+    "min_cats": 4,
+    "max_cats": 4,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_med_cobwebapps8",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["herb_gathering", "herb", "cobwebs", "apprentice", "warrior_app", "five_apprentices", "many_herbs1", "big_change", "platonic", "dislike", "respect"],
+    "intro_text": "The apprentices head out into the territory, following p_l a little dubiously. Gathering things can't possibly be as hard as hunting them - plants don't run away!",
+    "decline_text": "They're called back to camp, needed for other chores.",
+    "chance_of_success": 70,
+    "exp": 20,
+    "success_text": [
+            "It's a long, weird, hard day. <i>Yes,</i> they find cobwebs. <i>Yes,</i> they bring them back to camp - but by StarClan, none of the warrior apprentices were expecting something as simple as cobweb gathering to be so hard, not when it feels like they run into one every other hunt! They definitely end up with a new appreciation for p_l's skills.",
+            "... However, once out of camp, the apprentices realise they're out of their depth, and turn to p_l for help. p_l, to their credit, is very gracious about it, not making anyone feel stupid, and by the time the patrol returns with a successful haul there's a new feeling of rapport between everyone, regardless of their role."
+    ],
+    "fail_text": [
+            "p_l is disgusted with the general disdain they feel from the other apprentices, and how hypocritical it is to tell them herb gathering is easy when the patrol hasn't found <i>any</i> cobwebs! They stalk back to the medicine cat den in a huff, unable to bear being near the other apprentices for any longer than they have been."
+    ],
+    "min_cats": 5,
+    "max_cats": 5,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_med_cobwebapps9",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["herb_gathering", "med_cat", "herb", "cobwebs", "apprentice", "warrior_app", "six_apprentices", "many_herbs1", "big_change", "platonic", "dislike", "respect"],
+    "intro_text": "The apprentices head out into the territory, following p_l a little dubiously. Gathering things can't possibly be as hard as hunting them, plants don't run away!",
+    "decline_text": "They're called back to camp, needed for other chores.",
+    "chance_of_success": 70,
+    "exp": 20,
+    "success_text": [
+            "It's a long, weird, hard day. <i>Yes,</i> they find cobwebs. <i>Yes,</i> they bring them back to camp - but by StarClan, none of the warrior apprentices were expecting something as simple as cobweb gathering to be so hard, not when it feels like they run into one every other hunt! They definitely end up with a new appreciation for p_l's skills.",
+            "... However, once out of camp, the apprentices realise they're out of their depth, and turn to p_l for help. p_l, to their credit, is very gracious about it, not making anyone feel stupid, and by the time the patrol returns with a successful haul there's a new feeling of rapport between everyone, regardless of their role."
+    ],
+    "fail_text": [
+            "p_l is disgusted with the general disdain they feel from the other apprentices, and how hypocritical it is to tell them herb gathering is easy when the patrol hasn't found <i>any</i> cobwebs! They stalk back to the medicine cat den in a huff, unable to bear being near the other apprentices for any longer than they have been."
+    ],
+    "min_cats": 6,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_med_mossapps1",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["herb_gathering", "warrior_app", "herb", "moss", "apprentice", "two_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
+    "intro_text": "p_l comes up to meet app2, quietly apologising about app2 being sent to help p_l collect moss.",
+    "decline_text": "They're called back to camp, needed for other chores.",
+    "chance_of_success": 70,
+    "exp": 20,
+    "success_text": [
+            "There's nothing to apologize for! app2 bumps p_l's shoulder affectionately, brushing past them with a smile as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
+            "app2 seems somewhat irritated at first, but as p_l keeps chatting to them, they start to warm up, and both apprentices feel much more comfortable with each other by the time they bring their mossy loot back to camp."
+    ],
+    "fail_text": [
+            "app2 shrugs, tailtip twitching with irritation. It's fine, it's totally not like they'd prefer to be hunting, doing something actually useful... That attitude, unfortunately, is present through the entire patrol, and each apprentice is too snappy and standoffish to manage gathering anything other than negative thoughts."
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_med_mossapps2",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["herb_gathering", "warrior_app",  "herb", "moss", "apprentice", "three_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
+    "intro_text": "As the apprentices head out to collect moss, app2 screws up their face into a stupid expression at the menial nature of the task.",
+    "decline_text": "They're called back to camp, needed for other chores.",
+    "chance_of_success": 70,
+    "exp": 20,
+    "success_text": [
+        "Though the other cat of their group doesn't look thrilled, app2 insists there's nothing to apologize for. app2 bumps p_l's shoulder affectionately, brushing past them with a smile as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
+        "Out of the cats in the group, app2 is the one that seems irritated about it at first. As p_l keeps chatting to them, however, they start to warm up, and both apprentices feel much more comfortable with each other by the time they bring their mossy loot back to camp."
+    ],
+    "fail_text": [
+            "The other apprentices exchange a glance, tailtips twitching with irritation. It's fine, it's totally not like they'd prefer to be hunting, doing something actually useful... That attitude, unfortunately, is present through the entire patrol, and each apprentice is too snappy and standoffish to manage gathering anything other than negative thoughts."
+    ],
+    "min_cats": 3,
+    "max_cats": 3,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_med_mossapps3",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["herb_gathering", "warrior_app", "herb", "moss", "apprentice", "four_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
+    "intro_text": "As the apprentices head out to collect moss, app2 screws up their face into a stupid expression at the menial nature of the task.",
+    "decline_text": "They're called back to camp, needed for other chores.",
+    "chance_of_success": 70,
+    "exp": 20,
+    "success_text": [
+        "Though the others of their group don't look thrilled, app2 insists there's nothing to apologize for. app2 bumps p_l's shoulder affectionately, brushing past them with a smile as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
+        "Out of the cats in the group, app2 is the one that seems irritated about it at first. As p_l keeps chatting to them, however, they start to warm up, and both apprentices feel much more comfortable with each other by the time they bring their mossy loot back to camp."
+    ],
+    "fail_text": [
+        "The other apprentices exchange a glance, tailtips twitching with irritation. It's fine, it's totally not like they'd prefer to be hunting, doing something actually useful... That attitude, unfortunately, is present through the entire patrol, and each apprentice is too snappy and standoffish to manage gathering anything other than negative thoughts."
+    ],
+    "min_cats": 4,
+    "max_cats": 4,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_med_mossapps4",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["herb_gathering", "warrior_app",  "herb", "moss", "apprentice", "three_apprentices", "many_herbs1", "big_change", "platonic", "dislike", "respect"],
+    "intro_text": "The apprentices are sent off into the territory to gather moss for the medicine cat den.",
+    "decline_text": "They're called back to camp, needed for other chores.",
+    "chance_of_success": 70,
+    "exp": 20,
+    "success_text": [
+            "While it's a traditional chore for apprentices, it's not a particularly <i>interesting</i> one. Still, though, sometimes it isn't what you're doing, but who you're doing it with, and though there's a bit of complaining, all the apprentices are glad to have the chance to spend time together.",
+            "p_l is determined to prove themself to the other apprentices, and fortunately they don't push it too far. Despite their enthusiasm, they avoid bossing everyone around, instead encouraging the patrol in their duties. Are they a bit stiff? Sure, but they're not unlikeable!"
+    ],
+    "fail_text": [
+            "app1 and app2 start to argue, ruining everyone's day."
+    ],
+    "min_cats": 3,
+    "max_cats": 3,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_med_mossapps5",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["herb_gathering", "warrior_app",  "herb", "moss", "apprentice", "four_apprentices", "many_herbs1", "big_change", "platonic", "dislike", "respect"],
+    "intro_text": "The apprentices head out into the territory, following p_l a little dubiously. Gathering things can't possibly be as hard as hunting them - plants don't run away!",
+    "decline_text": "They're called back to camp, needed for other chores.",
+    "chance_of_success": 70,
+    "exp": 20,
+    "success_text": [
+        "While it's a traditional chore for apprentices, it's not a particularly <i>interesting</i> one. Still, though, sometimes it isn't what you're doing, but who you're doing it with, and though there's a bit of complaining, all the apprentices are glad to have the chance to spend time together.",
+        "p_l is determined to prove themself to the other apprentices, and fortunately they don't push it too far. Despite their enthusiasm, they avoid bossing everyone around, instead encouraging the patrol in their duties. Are they a bit stiff? Sure, but they're not unlikeable!"
+],
+"fail_text": [
+        "app1 and app2 start to argue, ruining everyone's day."
+],
+    "min_cats": 4,
+    "max_cats": 4,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_med_mossapps6",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["herb_gathering", "warrior_app",  "herb", "moss", "apprentice", "five_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
+    "intro_text": "As the apprentices head out to collect moss, app2 screws up their face into a stupid expression at the menial nature of the task.",
+    "decline_text": "They're called back to camp, needed for other chores.",
+    "chance_of_success": 70,
+    "exp": 20,
+    "success_text": [
+        "Though the others of their group don't look thrilled, app2 insists there's nothing to apologize for. app2 bumps p_l's shoulder affectionately, brushing past them with a smile as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
+        "Out of the cats in the group, app2 is the one that seems irritated about it at first. As p_l keeps chatting to them, however, they start to warm up, and both apprentices feel much more comfortable with each other by the time they bring their mossy loot back to camp."
+    ],
+    "fail_text": [
+        "The other apprentices exchange a glance, tailtips twitching with irritation. It's fine, it's totally not like they'd prefer to be hunting, doing something actually useful... That attitude, unfortunately, is present through the entire patrol, and each apprentice is too snappy and standoffish to manage gathering anything other than negative thoughts."
+    ],
+    "min_cats": 5,
+    "max_cats": 5,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_med_mossapps7",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["herb_gathering", "warrior_app",  "herb", "moss", "apprentice", "five_apprentices", "many_herbs1", "big_change", "platonic", "dislike", "respect"],
+    "intro_text": "The apprentices head out into the territory, following p_l a little dubiously. Gathering things can't possibly be as hard as hunting them - plants don't run away!",
+    "decline_text": "They're called back to camp, needed for other chores.",
+    "chance_of_success": 70,
+    "exp": 20,
+    "success_text": [
+        "While it's a traditional chore for apprentices, it's not a particularly <i>interesting</i> one. Still, though, sometimes it isn't what you're doing, but who you're doing it with, and though there's a bit of complaining, all the apprentices are glad to have the chance to spend time together.",
+        "p_l is determined to prove themself to the other apprentices, and fortunately they don't push it too far. Despite their enthusiasm, they avoid bossing everyone around, instead encouraging the patrol in their duties. Are they a bit stiff? Sure, but they're not unlikeable!"
+],
+"fail_text": [
+        "app1 and app2 start to argue, ruining everyone's day."
+],
+    "min_cats": 5,
+    "max_cats": 5,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_med_mossapps8",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["herb_gathering", "warrior_app",  "herb", "moss", "apprentice", "six_apprentices", "many_herbs1", "p_l_to_r_c", "big_change", "platonic", "dislike", "respect", "romantic"],
+    "intro_text": "As the apprentices head out to collect moss, app2 screws up their face into a stupid expression at the menial nature of the task.",
+    "decline_text": "They're called back to camp, needed for other chores.",
+    "chance_of_success": 70,
+    "exp": 20,
+    "success_text": [
+        "Though the others of their group don't look thrilled, app2 insists there's nothing to apologize for. app2 bumps p_l's shoulder affectionately, brushing past them with a smile as they leave camp. It's a fine way to spent the afternoon, and a cool cat to spend it with!",
+        "Out of the cats in the group, app2 is the one that seems irritated about it at first. As p_l keeps chatting to them, however, they start to warm up, and both apprentices feel much more comfortable with each other by the time they bring their mossy loot back to camp."
+    ],
+    "fail_text": [
+        "The other apprentices exchange a glance, tailtips twitching with irritation. It's fine, it's totally not like they'd prefer to be hunting, doing something actually useful... That attitude, unfortunately, is present through the entire patrol, and each apprentice is too snappy and standoffish to manage gathering anything other than negative thoughts."
+    ],
+    "min_cats": 6,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_med_mossapps9",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["herb_gathering", "warrior_app",  "herb", "moss", "apprentice", "six_apprentices", "many_herbs1", "big_change", "platonic", "dislike", "respect"],
+    "intro_text": "The apprentices head out into the territory, following p_l a little dubiously. Gathering things can't possibly be as hard as hunting them - plants don't run away!",
+    "decline_text": "They're called back to camp, needed for other chores.",
+    "chance_of_success": 70,
+    "exp": 20,
+    "success_text": [
+        "While it's a traditional chore for apprentices, it's not a particularly <i>interesting</i> one. Still, though, sometimes it isn't what you're doing, but who you're doing it with, and though there's a bit of complaining, all the apprentices are glad to have the chance to spend time together.",
+        "p_l is determined to prove themself to the other apprentices, and fortunately they don't push it too far. Despite their enthusiasm, they avoid bossing everyone around, instead encouraging the patrol in their duties. Are they a bit stiff? Sure, but they're not unlikeable!"
+],
+"fail_text": [
+        "app1 and app2 start to argue, ruining everyone's day."
+],
+    "min_cats": 6,
+    "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null
 }
