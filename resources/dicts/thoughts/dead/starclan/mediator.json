@@ -1,0 +1,20 @@
+[
+    {
+        "id": "mediator_dead_mediator",
+        "thoughts": [
+            "Wishes they could ask r_c for advice"
+        ],
+        "main_status_constraint": [
+            "mediator",
+            "mediator apprentice"
+        ],
+        "random_status_constraint": [
+            "mediator",
+            "mediator apprentice"
+        ],
+        "random_living_status": [
+            "starclan"
+        ]
+    }
+]
+

@@ -1,6 +1,6 @@
 [
 {
-    "patrol_id": "gen_gen_newcat2",
+    "patrol_id": "gen_bord_newcat2",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat_loner_warrior_litter1", "reputation", "no_change_fail_rep", "meeting"],
@@ -23,7 +23,7 @@
 
 },
 {
-    "patrol_id": "gen_gen_newcatkittypet1",
+    "patrol_id": "gen_bord_newcatkittypet1",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat_kittypet_litter1", "reputation", "no_change_fail_rep", "meeting"],
@@ -46,11 +46,11 @@
 
 },
 {
-    "patrol_id": "gen_gen_newcatthunderpath1",
+    "patrol_id": "gen_bord_newcatthunderpath1",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat", "new_cat_injury", "nc_blunt_force_injury", "reputation", "no_change_fail_rep"],
-    "intro_text": "r_c finds a wounded cat near the thunderpath.",
+    "intro_text": "r_c finds a wounded cat near the Thunderpath.",
     "success_text": [
         "The patrol approaches the injured cat and sees signs of life. Alarmed, they gently pick up the cat and take them back to camp to be treated by the medicine cat. The grateful cat decides to join the Clan."
     ],
@@ -69,7 +69,7 @@
 
 },
 {
-    "patrol_id": "gen_gen_newkit1",
+    "patrol_id": "gen_bord_newkit1",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat_kitten", "reputation", "no_change_fail_rep"],
@@ -95,7 +95,7 @@
     "patrol_id": "gen_bord_healer2",
     "biome": "Any",
     "season": "Any",
-    "tags": ["border", "reputation", "new_cat_medcat_litter1", "no_change_fail_rep", "meeting"],
+    "tags": ["border", "reputation", "new_cat_medcat_clancat_litter1", "no_change_fail_rep", "meeting"],
     "intro_text": "r_c finds a loner who offers their healing skills in exchange for shelter.",
     "success_text": [
         "The new medicine cat is welcomed into the Clan.",

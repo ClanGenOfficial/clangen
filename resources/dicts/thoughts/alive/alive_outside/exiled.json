@@ -1,0 +1,14 @@
+[
+    {
+        "id": "general_exiled",
+        "thoughts": [
+            "Wishes they could atone for their mistakes",
+            "Curses c_n for driving them out",
+            "Found a nice, dry den",
+            "Heard a rumor of hostile rogues in the area"
+        ],
+        "main_status_constraint": [
+            "exiled"
+        ]
+    }
+]

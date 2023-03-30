@@ -1,0 +1,11 @@
+[
+    {
+        "id": "deputy_dead_deputy",
+        "thoughts": [
+            "Wishes they could speak to r_c to learn how to assign patrols better"
+        ],
+        "random_status_constraint": [
+            "deputy"
+        ]
+    }
+]
