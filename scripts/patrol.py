@@ -35,7 +35,6 @@ When adding new patrols, use \n to add a paragraph break in the text
 
 
 class Patrol():
-    
     used_patrols = []
 
     def __init__(self):
@@ -435,7 +434,8 @@ class Patrol():
             self.filter_count += 1
             self.used_patrols.clear()
             print('used patrols cleared', self.used_patrols)
-            filtered_patrols, romantic_patrols = self.repeat_filter(possible_patrols, biome, patrol_size, current_season, patrol_type)
+            filtered_patrols, romantic_patrols = self.repeat_filter(possible_patrols, biome, patrol_size,
+                                                                    current_season, patrol_type)
         else:
             # reset this when we succeed in finding a patrol
             self.filter_count = 0
@@ -443,7 +443,8 @@ class Patrol():
 
     def repeat_filter(self, possible_patrols, biome, patrol_size, current_season, patrol_type):
         print('repeating filter')
-        filtered_patrols, romantic_patrols = self.filter_patrols(possible_patrols, biome, patrol_size, current_season, patrol_type)
+        filtered_patrols, romantic_patrols = self.filter_patrols(possible_patrols, biome, patrol_size, current_season,
+                                                                 patrol_type)
         return filtered_patrols, romantic_patrols
 
     def balance_hunting(self, possible_patrols: list):
@@ -714,7 +715,8 @@ class Patrol():
 
         # if patrol contains cats with autowin skill, chance of success is high. otherwise it will calculate the
         # chance by adding the patrol event's chance of success plus the patrol's total exp
-        success_adjust = (1 + 0.10) * len(self.patrol_cats) * self.patrol_total_experience / (len(self.patrol_cats) * gm_modifier)
+        success_adjust = (1 + 0.10) * len(self.patrol_cats) * self.patrol_total_experience / (
+                    len(self.patrol_cats) * gm_modifier)
         success_chance = self.patrol_event.chance_of_success + success_adjust
 
         # Auto-wins based on EXP are sorta lame. Often makes it immpossible for large patrols with experiences cats to fail patrols at all. 
@@ -1005,14 +1007,14 @@ class Patrol():
                 self.results_text.append(f"The Clan has met {outsider}.")
                 return
         elif cat_type == 'clancat' or "clancat" in attribute_list:
-            other_cat = self.other_clan
+            other_clan = self.other_clan
             new_name = False
             backstory = Cat.backstory_categories["former_clancat_backstories"]
             if "medcat" in attribute_list:
                 status = 'medicine cat'
                 backstory = ["medicine_cat", "disgraced"]
             if not success:
-                outsider = create_outside_cat(Cat, "former clancat", backstory=choice(backstory))
+                outsider = create_outside_cat(Cat, "former Clancat", backstory=choice(backstory))
                 self.results_text.append(f"The Clan has met {outsider}.")
                 return
         else:
@@ -1027,14 +1029,16 @@ class Patrol():
                 new_name = choice([True, False])
                 backstory = Cat.backstory_categories["rogue_backstories"]
                 if "medcat" in attribute_list:
-                    status = 'medicine cat'
                     backstory = ["medicine_cat", "disgraced"]
                 if not success:
                     outsider = create_outside_cat(Cat, loner, backstory=choice(backstory))
-                return
+                    self.results_text.append(f"The Clan has met {outsider}.")
+                    return
             else:
                 if not success:
-                    outsider = create_outside_cat(Cat, "former clancat", backstory=choice(backstory))
+                    outsider = create_outside_cat(Cat, "former Clancat", backstory=choice(backstory))
+                    self.results_text.append(f"The Clan has met {outsider}.")
+                    return
 
         # handing out ranks
         if "kitten" in attribute_list:
@@ -1076,6 +1080,12 @@ class Patrol():
 
         # hand out death and outside
         if "dead" in attribute_list:
+            if loner:
+                status = choice(['rogue', 'loner'])
+            elif kittypet:
+                status = 'kittypet'
+            elif other_clan:
+                status = 'former Clancat'
             alive = False
             thought = "Is glad that their kits are safe"
 
@@ -1106,7 +1116,18 @@ class Patrol():
                 print('litter is not newborn')
                 kit_age = randint(1, 5)
 
-        # if none of these tags are present, then a completely random cat is made
+        # giving specified backstories if any were specified
+        possible_backstories = []
+        for backstory in Cat.backstories:
+            if backstory in attribute_list:
+                possible_backstories.append(backstory)
+
+        if possible_backstories:
+            if "dead" in attribute_list:
+                kit_backstory = possible_backstories
+            else:
+                backstory = possible_backstories
+            # if none of these tags are present, then a completely random cat is made
 
         # we create a single cat
         created_cats = create_new_cat(Cat,
@@ -1125,6 +1146,9 @@ class Patrol():
                                       alive=alive,
                                       outside=outside
                                       )
+        if not alive:
+            self.results_text.append(f"{created_cats[0].name}'s ghost now wanders.")
+
         # now we hurt the kitty
         if "new_cat_injury" in tags and game.clan.game_mode != 'classic':
             new_cat = created_cats[0]
@@ -1387,7 +1411,8 @@ class Patrol():
             gained_exp = 0
 
         # Apprentice exp, does not depend on success
-        if game.clan.game_mode != "classic" and ("apprentice" in self.patrol_statuses or "medicine cat apprentice" in self.patrol_statuses):
+        if game.clan.game_mode != "classic" and (
+                "apprentice" in self.patrol_statuses or "medicine cat apprentice" in self.patrol_statuses):
             app_exp = max(random.randint(1, 7) * (1 - 0.1 * len(self.patrol_cats)), 1)
         else:
             app_exp = 0

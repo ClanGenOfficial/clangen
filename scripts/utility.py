@@ -345,8 +345,7 @@ def create_new_cat(Cat,
         if accessory:
             new_cat.accessory = accessory
 
-        # newbie thought
-        new_cat.thought = thought
+
 
         # give apprentice aged cat a mentor
         if new_cat.age == 'adolescent':
@@ -391,6 +390,9 @@ def create_new_cat(Cat,
         if not alive:
             new_cat.die()
 
+        # newbie thought
+        new_cat.thought = thought
+
         # and they exist now
         created_cats.append(new_cat)
         game.clan.add_cat(new_cat)
@@ -401,7 +403,7 @@ def create_new_cat(Cat,
     return created_cats
 
 
-def create_outside_cat(Cat, status, backstory):
+def create_outside_cat(Cat, status, backstory, alive=True, thought=None):
         """
         TODO: DOCS
         """
@@ -409,7 +411,7 @@ def create_outside_cat(Cat, status, backstory):
         if backstory in Cat.backstory_categories["rogue_backstories"]:
             status = 'rogue'
         elif backstory in Cat.backstory_categories["former_clancat_backstories"]:
-            status = "former clancat"
+            status = "former Clancat"
         if status == 'kittypet':
             name = choice(names.names_dict["loner_names"])
         elif status in ['loner', 'rogue']:
@@ -428,6 +430,12 @@ def create_outside_cat(Cat, status, backstory):
         if status == 'kittypet':
             new_cat.accessory = choice(collars)
         new_cat.outside = True
+
+        if not alive:
+            new_cat.dead = True
+
+        if thought:
+            new_cat.thought = thought
 
         # create relationships - only with outsiders 
         # (this function will handle, that the cat only knows other outsiders)

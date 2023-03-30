@@ -2426,7 +2426,7 @@
         "chance_of_success": 90,
         "exp": 5,
         "success_text": [
-               "p_l offers the dolphins some of their fish catch. Good relations with the dolphins are more important than a few fish, they are surprised to see that they have offered a few soggy wet herbs back in return and they accept them with gratitude a grace.",
+               "p_l offers the dolphins some of their fish catch. Good relations with the dolphins are more important than a few fish, they are surprised to see that they have offered a few soggy wet herbs back in return and they accept them with gratitude and grace.",
                 "p_l gives the dolphins a few of their fish and is surprised and grateful when they get some useful herbs for the medicine cat.",
                null,
                null
