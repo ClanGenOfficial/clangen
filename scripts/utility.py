@@ -760,13 +760,7 @@ def get_snippet_list(chosen_list, amount, sense_groups=None, return_string=True)
     final_snippets = sample(unique_snippets, k=amount)
 
     if return_string:
-        if amount == 1:
-            text = str(final_snippets[0])
-        elif amount == 2:
-            text = " and ".join(final_snippets)
-        else:
-            start = ", ".join(final_snippets[:-1])
-            text = ", and ".join([start, final_snippets[-1]])
+        text = adjust_list_text(final_snippets)
         return text
     else:
         return final_snippets

@@ -349,7 +349,7 @@ class Condition_Events():
         illness_progression = {
             "running nose": "whitecough",
             "kittencough": "whitecough",
-            "whitecough": "yellowcough",
+            "whitecough": "greencough",
             "greencough": "yellowcough",
             "yellowcough": "redcough",
             "an infected wound": "a festering wound",
