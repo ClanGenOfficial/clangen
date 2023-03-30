@@ -1,0 +1,81 @@
+[
+    {
+        "id": "general_dead_thoughts",
+        "thoughts": [
+            "Is feeling quite lazy",
+            "Is spending a considerable amount of time grooming",
+            "Is looking forward to today",
+            "Is feeling down...",
+            "Is feeling happy!",
+            "Is curious about other Clans",
+            "Is feeling sassy today",
+            "Is thinking about a message to send",
+            "Wishes they were still alive",
+            "Is admiring StarClan territory",
+            "Is thinking about their life",
+            "Is missing a loved one",
+            "Is hoping to meet with a medicine cat soon",
+            "Is admiring the stars in their fur",
+            "Is watching over a Clan ceremony",
+            "Is hoping to give a life to a new leader",
+            "Is hoping they will be remembered",
+            "Is watching over the Clan",
+            "Is worried about the Clan",
+            "Is relaxing in the sun",
+            "Is wondering about Twolegs",
+            "Is thinking about their ancient ancestors",
+            "Is worried about the cats in the Dark Forest",
+            "Is thinking of advice to give to a medicine cat",
+            "Is exploring StarClan",
+            "Is sad seeing how the Clan has changed",
+            "Wishes they could speak to old friends",
+            "Is sneezing on stardust",
+            "Is comforting another StarClan cat",
+            "Is exploring StarClan's hunting grounds",
+            "Is hunting mice in StarClan",
+            "Is chattering at the birds in StarClan",
+            "Is chasing rabbits in StarClan",
+            "Can feel some cat forgetting them..."
+        ]
+    },
+    {
+        "id": "general_dead_to_dead_other",
+        "thoughts": [
+            "Is sharing tongues with r_c",
+            "Has been spending time with r_c lately",
+            "Is acting huffy at r_c",
+            "Is sharing a fresh-kill with r_c",
+            "Is curious about r_c",
+            "Is talking with r_c",
+            "Doesn't want to talk to r_c",
+            "Is having a serious fight with r_c",
+            "Wants to spend more time with r_c",
+            "Is thinking about future prophecies with r_c",
+            "Is watching over the Clan with r_c",
+            "Is listening to long-forgotten stories about the Clan"
+        ],
+        "random_living_status": [
+            "starclan"
+        ]
+    },
+    {
+        "id": "general_dead_to_alive_other",
+        "thoughts": [
+            "Is watching over r_c",
+            "Is curious about what r_c is doing",
+            "Wants to send a message to r_c",
+            "Is currently walking in the dreams of r_c",
+            "Is proud of r_c",
+            "Is disappointed in r_c",
+            "Wants to warn r_c",
+            "Has been following the growth of r_c",
+            "Has seen r_c's future demise",
+            "Is looking to visit r_c in a dream soon",
+            "Accidentally found themselves in r_c's dreams the other night",
+            "Knows what r_c's secret is and wants to tell some cat"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    }
+]

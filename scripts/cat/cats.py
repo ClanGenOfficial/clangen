@@ -15,7 +15,6 @@ except ImportError:
 
 from .pelts import describe_appearance
 from .names import Name
-from .thoughts import get_thoughts
 from .appearance_utility import (
     init_pelt,
     init_tint,
@@ -33,10 +32,10 @@ import pygame
 
 from scripts.utility import get_med_cats, get_personality_compatibility, event_text_adjust, update_sprite
 from scripts.game_structure.game_essentials import game, screen
-from scripts.cat.thoughts import get_thoughts
 from scripts.cat_relations.relationship import Relationship
 from scripts.game_structure import image_cache
 from scripts.event_class import Single_Event
+from .thoughts import Thoughts
 
 
 class Cat():
@@ -735,13 +734,13 @@ class Cat():
         if self.status in ['leader', 'deputy']:
             self.status_change('warrior')
             self.status = 'warrior'
-        elif self.status == 'apprentice' and self.moons >= 12:
+        elif self.status == 'apprentice' and self.moons >= 15 or self.experience_level not in ['trainee']:
             self.status_change('warrior')
             involved_cats = [self.ID]
             game.cur_events_list.append(Single_Event('A long overdue warrior ceremony is held for ' + str(
                 self.name.prefix) + 'paw. They smile as they finally become a warrior of the Clan and are now named ' + str(
                 self.name) + '.', "ceremony", involved_cats))
-        elif self.status == 'kitten' and self.moons >= 12:
+        elif self.status == 'kitten' and self.moons >= 15 or self.experience_level not in ['untrained', 'trainee']:
             self.status_change('warrior')
             involved_cats = [self.ID]
             game.cur_events_list.append(Single_Event('A long overdue warrior ceremony is held for ' + str(
@@ -1032,12 +1031,23 @@ class Cat():
         """ Generates a thought for the cat, which displays on their profile. """
         all_cats = self.all_cats
         other_cat = random.choice(list(all_cats.keys()))
+        game_mode = game.switches['game_mode']
+        biome = game.switches['biome']
+        camp = game.switches['camp_bg']
+        try:
+            season = game.clan.current_season
+        except:
+            season = None
 
         # get other cat
         i = 0
         while other_cat == self.ID and len(all_cats) > 1 or (
-                all_cats.get(other_cat).status in ['kittypet', 'rogue', 'loner']):
+                all_cats.get(other_cat).status in ['kittypet', 'rogue', 'loner', 'former Clancat']):
             other_cat = random.choice(list(all_cats.keys()))
+            # makes sure that a cat won't think about a cat that was dead longer than they've been alive (with 4 moons difference)
+            if all_cats[other_cat].dead and not self.dead and not self.status in ['leader', 'medicine cat']:
+                if other_cat.ID not in self.relationships:
+                    continue
             i += 1
             if i > 100:
                 other_cat = None
@@ -1045,10 +1055,9 @@ class Cat():
 
         other_cat = all_cats.get(other_cat)
 
-        # get possible thoughts
-        thought_possibilities = get_thoughts(self, other_cat)
-        chosen_thought = random.choice(thought_possibilities)
-
+        # get chosen thought
+        chosen_thought = Thoughts.get_chosen_thought(self, other_cat, game_mode, biome, season, camp)
+        
         # insert name if it is needed
         if "r_c" in chosen_thought:
             chosen_thought = chosen_thought.replace("r_c", str(other_cat.name))

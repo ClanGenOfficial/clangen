@@ -1,0 +1,184 @@
+[
+    {
+        "id": "mediator_dead_mediator",
+        "thoughts": [
+            "Wishes they could ask r_c for advice"
+        ],
+        "random_status_constraint": [
+            "mediator"
+        ],
+        "random_living_status": [
+            "starclan"
+        ]
+    },
+    {
+        "id": "mediator_alive_mediator",
+        "thoughts": [
+            "Is discussing conflict resolution strategies with r_c"
+        ],
+        "random_status_constraint": [
+            "mediator",
+            "mediator apprentice"
+        ]
+    },
+    {
+        "id": "mediator_alive_kits",
+        "thoughts": [
+            "Had to fix an argument between the kits... again"
+        ],
+        "random_status_constraint": [
+            "kitten"
+        ]
+    },
+    {
+        "id": "Mediator_alive_leader",
+        "thoughts": [
+            "Is angry with the leader for a border dispute gone wrong",
+           "Mediated a meeting between senior warriors and the leader over recent Clan decisions"
+        ],
+        "random_status_constraint": [
+            "leader"
+        ]
+    },
+    {
+        "id": "mediator_alive_elder",
+        "thoughts": [
+            "Had to fix an argument between the elders... again"
+        ],
+        "random_status_constraint": [
+            "elder"
+        ]
+    },
+    {
+        "id": "mediator_gen",
+        "thoughts": [
+            "Is feeling a sense of pride after mediating a difficult argument",
+            "Wishes their Clanmates would just talk to each other",
+            "Is upset at a recent negotiation with a rival Clan",
+            "Is negotiating trading herbs with a rival Clan",
+            "Is negotiating with a kittypet to make use of the herbs in their Twoleg garden",
+            "Is dismayed at how quickly their Clanmates get into arguments",
+            "Feels exhausted after mediating so many arguments",
+            "Feels pride for their mediator work",
+            "Is mediating a couple's relationship",
+            "Is mediating a long time friendship between two Clanmates",
+            "Is feeling frustrated after a failed negotiation",
+            "Is feeling exhausted from resolving petty arguments",
+            "Wants to solve a dispute with another Clan",
+            "Wonders if mediating is meant to be so draining",
+            "Wonders if being a warrior would have been more fun",
+            "Is proud of how well they are doing at mediating",
+            "Accidentally made an argument worse",
+            "Is proud of getting through a difficult mediation session"
+        ]
+    },
+    {
+        "id": "altruistic_mediator",
+        "thoughts": [
+            "Wonders why everyone can't just get along"
+        ],
+        "main_trait_constraint": [
+            "altruistic"
+        ]
+    },
+    {
+        "id": "bloodthirsty_mediator",
+        "thoughts": [
+            "Is wondering if they should sabotage a relationship that is going a bit too well",
+            "Wishes to break up a sickeningly lovey-dovey couple",
+            "Chuckles to themself after sabotaging another relationship"
+        ],
+        "main_trait_constraint": [
+            "bloodthirsty"
+        ]
+    },
+    {
+        "id": "cold_mediator",
+        "thoughts": [
+            "Is judging two Clanmates for their foolish argument",
+            "Wishes to break up a sickeningly lovey dovey couple",
+            "Is sitting back and watching an argument take place"
+        ],
+        "main_trait_constraint": [
+            "cold"
+        ]
+    },
+    {
+        "id": "empathetic_mediator",
+        "thoughts": [
+            "Feels bad for a parent who can't seem to get along with their child",
+            "Wonders why everyone can't just get along"
+        ],
+        "main_trait_constraint": [
+            "empathetic"
+        ]
+    },
+    {
+        "id": "fierce_mediator",
+        "thoughts": [
+            "Is greatly annoyed by a Clanmate's inability to accept they were in the wrong"
+        ],
+        "main_trait_constraint": [
+            "fierce"
+        ]
+    },
+    {
+        "id": "insecure_mediator",
+        "thoughts": [
+            "Finds mediating emotionally draining"
+        ],
+        "main_trait_constraint": [
+            "insecure"
+        ]
+    },
+    {
+        "id": "loving_mediator",
+        "thoughts": [
+            "Wonders why everyone can't just get along"
+        ],
+        "main_trait_constraint": [
+            "loving"
+        ]
+    },
+    {
+        "id": "nervous_mediator",
+        "thoughts": [
+            "Finds mediating emotionally draining",
+            "Is feeling worried with all the high tension lately"
+        ],
+        "main_trait_constraint": [
+            "nervous"
+        ]
+    },
+    {
+        "id": "righteous_mediator",
+        "thoughts": [
+            "Is greatly annoyed by a Clanmate's inability to accept they were in the wrong"
+        ],
+        "main_trait_constraint": [
+            "righteous"
+        ]
+    },
+    {
+        "id": "troublesome_mediator",
+        "thoughts": [
+            "Is looking for a pair to sabotage, out of boredom"
+        ],
+        "main_trait_constraint": [
+            "troublesome"
+        ]
+    },
+    {
+        "id": "vengeful_mediator",
+        "thoughts": [
+            "Is wondering if they should sabotage a relationship that is going a bit too well",
+            "Wishes to break up a sickeningly lovey dovey couple",
+            "Is sitting back and watching an argument take place"
+        ],
+        "main_trait_constraint": [
+            "vengeful"
+        ]
+    }
+]
+
+
