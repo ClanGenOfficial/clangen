@@ -759,7 +759,7 @@ class SettingsScreen(Screens):
             container=self.checkboxes_text['info_container'],
             manager=MANAGER)
 
-        print(info_rect.bottom)
+        self.checkboxes_text['info_text_box'].disable()
 
         self.checkboxes_text['contributors_text_box'] = pygame_gui.elements.UITextBox(
             self.contributors_text,
@@ -776,6 +776,8 @@ class SettingsScreen(Screens):
             container=self.checkboxes_text['info_container'],
             manager=MANAGER)
         
+        self.checkboxes_text['contributors_text_box'].disable()
+        
 
         self.checkboxes_text['info_text_box2'] = pygame_gui.elements.UITextBox(
             self.info_text_2,
@@ -791,6 +793,8 @@ class SettingsScreen(Screens):
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             container=self.checkboxes_text['info_container'],
             manager=MANAGER)
+        
+        self.checkboxes_text['info_text_box2'].disable()
         
         self.checkboxes_text['info_container'].set_scrollable_area_dimensions(
             (info_rect2.width, info_rect2.bottom))
