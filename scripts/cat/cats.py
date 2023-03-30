@@ -718,7 +718,7 @@ class Cat():
 
         elif self.status == 'deputy':
             self.outside = True
-            self.status = 'warrior'
+            #self.status = 'warrior'
             game.clan.deputy.outside = True
         else:
             self.outside = True
@@ -781,7 +781,7 @@ class Cat():
         if len(names) > 0:
             event_text = "This text should not appear, script cat.py function add_to_clan."
             if len(names) > 2:
-                event_text = f"{', '.join(names[0:-1])}, and {names[-1]}"
+                event_text = f"{', '.join([str(i) for i in names[0:-1]])}, and {names[-1]}"
             elif len(names) == 2:
                 event_text = f"{names[0]} and {names[1]}"
             else:

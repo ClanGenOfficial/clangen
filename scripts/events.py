@@ -243,9 +243,8 @@ class Events():
         self.check_and_promote_leader()
         self.check_and_promote_deputy()
 
-        # Resort if needed
-        if game.ranks_changed_timeskip and game.sort_type == "rank":
-            game.ranks_changed_timeskip = False
+        #Resort
+        if game.sort_type != "id":
             Cat.sort_cats()
 
         # Clear all the loaded event dicts.
@@ -295,7 +294,6 @@ class Events():
                         f"become the Clan's newest mediator. ", "ceremony",
                         cat.ID))
                 cat.status_change("mediator")
-                game.ranks_changed_timeskip = True
 
     def get_moon_freshkill(self):
         """Adding auto freshkill for the current moon."""
@@ -903,7 +901,6 @@ class Events():
                     not game.clan.deputy.outside and \
                     (leader_dead or leader_outside):
                 game.clan.new_leader(game.clan.deputy)
-                game.ranks_changed_timeskip = True
                 game.clan.leader_lives = 9
                 text = ''
                 self.handle_leadership_ceremony(game.clan.deputy)
@@ -1140,7 +1137,6 @@ class Events():
         involved_cats = [
             cat.ID
         ]  # Clearly, the cat the ceremony is about is involved.
-        game.ranks_changed_timeskip = True
 
         # Time to gather ceremonies. First, lets gather all the ceremony ID's.
         possible_ceremonies = set()
@@ -2164,7 +2160,6 @@ class Events():
 
                 random_cat.status_change("deputy")
                 game.clan.deputy = random_cat
-                game.ranks_changed_timeskip = True
 
                 game.cur_events_list.append(
                     Single_Event(text, "ceremony", involved_cats))

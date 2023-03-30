@@ -700,7 +700,6 @@ class Condition_Events():
                                      f"of their contributions to {game.clan.name}Clan."
 
                         cat.retire_cat()
-                        game.ranks_changed_timeskip = True
                         event_list.append(event)
 
                 elif cat.permanent_condition[condition]['severity'] == 'severe':
@@ -726,7 +725,6 @@ class Condition_Events():
                                  f"of their contributions to {game.clan.name}Clan."
 
                     cat.retire_cat()
-                    game.ranks_changed_timeskip = True
                     event_list.append(event)
 
     def give_risks(self, cat, event_list, condition, progression, conditions, dictionary):
