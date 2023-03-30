@@ -103,7 +103,7 @@
     "tags": ["training", "platonic", "comfort", "trust", "blunt_force_injury", "death", "scar", "LEFTEAR", "p_l_to_r_c", "s_c_to_r_c", "patrol_to_p_l", "patrol_to_r_c"],
     "intro_text": "Trailing behind the patrol, the ground trembles beneath r_c's paws. They look around wildly for safe footing - just as the earth caves in beneath them and the world goes dark.",
     "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
-    "chance_of_success": 50,
+    "chance_of_success": 20,
     "exp": 20,
     "success_text": [
         "Their Clanmates come running at their yowls, and r_c is soon freed, shaken but unharmed. The patrol settles down as everyone comforts each other.",
@@ -402,7 +402,7 @@
     "tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
     "intro_text": "p_l takes them out to see a herd of bison that a patrol spotted moving through c_n's territory.",
     "decline_text": "When they get there, they can't find it, and the lesson fails.",
-    "chance_of_success": 90,
+    "chance_of_success": 40,
     "exp": 20,
     "success_text": [
             "app1 has their view blocked by the long grass and flat ground. But the rumble they feel through their pawpads, the footsteps, the bellows so loud they can be felt through the ground, it all stresses just how huge the thunderbeasts are, and they share a wide eyed look with app2.",
@@ -426,7 +426,7 @@
     "tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
     "intro_text": "p_l takes them out to see a herd of bison that a patrol spotted moving through c_n's territory.",
     "decline_text": "When they get there, they can't find it, and the lesson fails.",
-    "chance_of_success": 90,
+    "chance_of_success": 40,
     "exp": 15,
     "success_text": [
             "app1 has their view blocked by the long grass and flat ground. But the rumble they feel through their pawpads, the footsteps, the bellows so loud they can be felt through the ground, it all stresses just how huge the thunderbeasts are, and they share a wide eyed look with app2.",
@@ -498,7 +498,7 @@
     "tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
     "intro_text": "On this dry morning, the patrol heads out to practice tunnel navigation. There's an old, long abandoned badger sett that's perfect for apprentices, big enough to not be claustrophobic, but with plenty of criss-crossed, overlapping tunnels.",
     "decline_text": "When they get there, the tunnels look muddier than p_l expected, and the training is called off until the cats can be sure they're safe.",
-    "chance_of_success": 90,
+    "chance_of_success": 40,
     "exp": 20,
     "success_text": [
             "app1 carefully practices padding around, in the pitch black, in the dim where the light from the entrance still reaches, with their eyes shut, all of it. It's definitely easier in bigger burrows than the ones rabbits make, and it's good to train where no one can see them faceplant into the walls. app2 does notice when app1 faceplants into them though!",
@@ -523,7 +523,7 @@
     "tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
     "intro_text": "On this dry morning, the patrol heads out to practice tunnel navigation. There's an old, long abandoned badger sett that's perfect for apprentices, big enough to not be claustrophobic but with plenty of criss-crossed overlapping tunnels.",
     "decline_text": "When they get there, the tunnels look muddier than p_l expected, and the training is called off until the cats can be sure they're safe.",
-    "chance_of_success": 90,
+    "chance_of_success": 40,
     "exp": 15,
     "success_text": [
             "app1 carefully practices padding around, in the pitch black, in the dim where the light from the entrance still reaches, with their eyes shut, all of it. It's definitely easier in bigger burrows than the ones rabbits make, and it's good to train where no one can see them faceplant into the walls. app2 does notice when app1 faceplants into them though!",

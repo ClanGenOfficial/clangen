@@ -115,7 +115,7 @@
     "tags": ["herb_gathering", "warrior", "cold_injury", "scar", "FROSTTAIL", "herb", "blackberry", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "Hmm. p_l heads out, deciding that c_n needs more blackberry leaves in their stores, bringing along anyone who isn't busy with other work.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 40,
+    "chance_of_success": 20,
     "exp": 10,
     "success_text": [
             "While blackberries don't lose their leaves completely, leaf-bare is hard on any plant. p_l has to balance the plant's needs, the Clan's needs, and their own frozen paws, as they try to gather what they can. The patrol sees their stress, and gathers around to support them.",
@@ -289,7 +289,7 @@
     "tags": ["herb_gathering", "warrior", "cold_injury", "scar", "FROSTFACE", "herb", "daisy", "big_change", "patrol_to_p_l", "platonic", "dislike", "respect"],
     "intro_text": "In the leaf-bare snow, the chances of finding any usable daisies seem slim. p_l hesitates - should they even try to look?",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 0,
+    "chance_of_success": 10,
     "exp": 10,
     "success_text": [
             "It's miserable work, scraping away snowy pawful by awful, cold pawful. However, p_l manages to find a patch of wilted, soggy, but still green daisies to harvest leaves from Their Clanmates purr at the sight of the mushy green leaves, having spent just as much energy digging for them as p_l.",
@@ -376,7 +376,7 @@
     "tags": ["herb_gathering", "warrior", "cold_injury", "scar", "FROSTFACE", "herb", "dandelion", "big_change", "no_leader", "platonic", "dislike", "respect"],
     "intro_text": "The cold of leaf-bare might have killed off a lot of greenery, but p_l knows that the dandelions are only playing dead. If they can get their paws on a plant, the roots will still hold fresh, milky-white sap. They bring along a patrol of shivering Clanmates - more paws will make light work of digging through the snow.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 40,
+    "chance_of_success": 20,
     "exp": 10,
     "success_text": [
             "p_l can't say it's <i>fun,</i> swiping away snow to scrounge for the stems and roots of wilted dandelions below, but what matters currently is that it's <i>possible.</i> They specifically ensure that, when they return to camp with the additions to the herb stores, the whole camp sees them praising their long-suffering patrol to the leader.",
@@ -463,7 +463,7 @@
     "tags": ["herb_gathering", "warrior", "cold_injury", "blunt_force_injury", "scar", "SIDE", "herb", "juniper", "big_change", "no_leader", "platonic", "dislike", "respect"],
     "intro_text": "It's not finding fresh juniper that's the problem. An evergreen plant, they reliably grow through the cold - but they're large shrubs, sometimes large enough to be trees, and climbing in these slippery conditions might be dangerous. Hopefully the warriors accompanying p_l will be able to help.",
     "decline_text": "They're stopped before they leave camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
-    "chance_of_success": 40,
+    "chance_of_success": 20,
     "exp": 10,
     "success_text": [
             "At least they don't have to dig through the snow for these leaves. p_l sighs, slowly and carefully snipping off juniper among the tree's branches. The patrol joins them, tense and focused, and it's an exhausted group that returns back to camp as the sun dips toward the horizon. Exhausted, yes - but successful.",

@@ -59,7 +59,7 @@
         ],
         "intro_text": "The patrol approaches a Twoleg nest perched on the edge of a swamp, with smoke rising from it's corner.",
         "decline_text": "The patrol decides to hunt elsewhere.",
-        "chance_of_success": 60,
+        "chance_of_success": 10,
         "exp": 20,
         "success_text": [
             "The patrol cats split up, using sentries to ensure that the Twolegs don't disturb their hunts.",
@@ -448,7 +448,7 @@
         ],
         "intro_text": "Your patrol encounters a clearing of dry grassy ground where a lot of Twolegs linger.",
         "decline_text": "Your patrol decides to hunt elsewhere.",
-        "chance_of_success": 60,
+        "chance_of_success": 10,
         "exp": 20,
         "success_text": [
             "They continue hunting undetected, using the presence of the Twolegs startling the local wildlife to bring back a good haul.",
@@ -507,7 +507,7 @@
         ],
         "intro_text": "Your patrol encounters a clearing of dry grassy ground where a lot of Twolegs linger.",
         "decline_text": "Your patrol decides to hunt elsewhere.",
-        "chance_of_success": 60,
+        "chance_of_success": 10,
         "exp": 20,
         "success_text": [
             "They continue hunting undetected.",
@@ -566,7 +566,7 @@
         ],
         "intro_text": "Your patrol encounters a clearing of dry grassy ground where a lot of Twolegs linger.",
         "decline_text": "Your patrol decides to hunt elsewhere.",
-        "chance_of_success": 60,
+        "chance_of_success": 10,
         "exp": 20,
         "success_text": [
             "They continue hunting undetected, using the presence of the Twolegs startling the local wildlife to bring back a good haul.",
@@ -1092,7 +1092,7 @@
         ],
         "intro_text": "The patrol comes across a thunderpath running along a dry bank straight through the wetlands.",
         "decline_text": "They decide it is better not to cross.",
-        "chance_of_success": 50,
+        "chance_of_success": 10,
         "exp": 10,
         "success_text": [
             "Your patrol crosses the thunderpath and can hunt on the other side.",
@@ -1148,7 +1148,7 @@
         ],
         "intro_text": "The patrol comes across a thunderpath running along a dry bank straight through the wetlands.",
         "decline_text": "They decide it is better not to cross.",
-        "chance_of_success": 30,
+        "chance_of_success": 10,
         "exp": 10,
         "success_text": [
             "Your patrol crosses the thunderpath and can hunt on the other side.",
@@ -1519,7 +1519,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a gigantic dead eel it's fished from the swamp, although whether the eel was dead before the fox found it is up for debate.",
         "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
-        "chance_of_success": 80,
+        "chance_of_success": 20,
         "exp": 20,
         "success_text": [
             "Your cats are smaller but heavily outnumber the fox, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full and unwilling to lose blood over it, is driven off from the kill.",
@@ -1709,7 +1709,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find the animal feeding on the body of a stork. Odd prey, but not out of the question for a red fox.",
         "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
-        "chance_of_success": 80,
+        "chance_of_success": 20,
         "exp": 20,
         "success_text": [
             "Your cats are smaller but heavily outnumber the fox, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full and unwilling to lose blood over it, is driven off from the kill.",
@@ -1894,7 +1894,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find a stocky gray fox feeding on an unidentifiable but deliciously stinky small mound of carrion fished up from the swamp.",
         "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
-        "chance_of_success": 90,
+        "chance_of_success": 30,
         "exp": 20,
         "success_text": [
             "While a gray fox is bigger and far stockier than the cats, the delicious stench of whatever it is makes the cats' eyes go wide and silly, and they leap to claim possession of it. Heavily outnumbered and already full of stinky nonsense, the gray fox leaves, scrambling up a tree as the cats give in to instinct and roll around in the glorious smell.",
@@ -2076,7 +2076,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
         "decline_text": "Your patrol decides not to pursue the fox.",
-        "chance_of_success": 60,
+        "chance_of_success": 10,
         "exp": 30,
         "success_text": [
             "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away the red fox, seeks out her den, and kills her young cubs. The swamps will be safe from both the threat the vixen posed this season, and the threat her cubs would've given c_n in the seasons to come.",
@@ -2267,7 +2267,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
         "decline_text": "Your patrol decides not to pursue the fox.",
-        "chance_of_success": 60,
+        "chance_of_success": 10,
         "exp": 30,
         "success_text": [
             "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away the red fox, seeks out her den, and kills her growing cubs. The swamps will be safe from both the threat the vixen posed this season, and the threat her cubs would've given c_n in the seasons to come.",
@@ -2458,7 +2458,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
         "decline_text": "Your patrol decides not to pursue the fox.",
-        "chance_of_success": 60,
+        "chance_of_success": 10,
         "exp": 30,
         "success_text": [
             "Led by p_l and with a heap of cooperation and teamwork, the patrol drives away the red fox, and seeks out her den. But her cubs are near full-grown with the bounty of leaf-fall, and scatter from the patrol into the wilderness. Hopefully leaf-bare takes care of them.",
@@ -2642,7 +2642,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
         "decline_text": "Your patrol decides not to pursue the fox.",
-        "chance_of_success": 90,
+        "chance_of_success": 30,
         "exp": 30,
         "success_text": [
             "The stocky gray vixen they track down smells of milk, and though she's nearly double the weight of any of the patrol and all of it muscle, they meet her eyes squarely, and leap to attack. c_n does not tolerate sharing their territory with foxes, and they work together to drive her off.",
@@ -2824,7 +2824,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
         "decline_text": "Your patrol decides not to pursue the fox.",
-        "chance_of_success": 90,
+        "chance_of_success": 30,
         "exp": 30,
         "success_text": [
             "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away the gray fox, seeks out her den, and kills her growing cubs. The wetland will be safe from both the competition the vixen posed this season, and the threat her cubs would've given c_n in the seasons to come.",
@@ -3004,7 +3004,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
         "decline_text": "Your patrol decides not to pursue the fox.",
-        "chance_of_success": 90,
+        "chance_of_success": 30,
         "exp": 30,
         "success_text": [
             "Led by p_l and with a heap of cooperation and teamwork, the patrol drives away the gray fox, and seeks out her den. But her cubs are near full-grown with the bounty of leaf-fall, and scatter from the patrol into the wilderness. Hopefully leaf-bare takes care of them.",
@@ -3201,7 +3201,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? And is it worth a fight if they encounter it?",
         "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
-        "chance_of_success": 50,
+        "chance_of_success": 10,
         "exp": 20,
         "success_text": [
             "p_l leads the patrol to the end of the scent trail, where a red fox sits plucking the feathers off a plump duck. With careful signals, the cats set up an ambush. While they'd expected having more cats would make it easier, it also makes the patrol far more of a threat to the red fox, and the creature panicks when they reveal themselves. They win the bird, but r_c nearly gets injured, and it's only p_l shoving them both out of the way that saves both their pelts.",
@@ -3425,7 +3425,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? And is it worth a fight if they encounter it?",
         "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
-        "chance_of_success": 70,
+        "chance_of_success": 10,
         "exp": 20,
         "success_text": [
             "Its a gray fox, which as far as the cats are concerned, means free food. They leap after it, and after a short chase the fox drops the mouse it was holding. That's not enough to satisfy the c_n cats, who drive it out of their territory before collecting the mouse and continuing the afternoon's hunt.",
@@ -4228,7 +4228,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find the animal feeding on the body of a stork. Odd prey, but not out of the question for a red fox.",
         "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
-        "chance_of_success": 80,
+        "chance_of_success": 20,
         "exp": 20,
         "success_text": [
             "Your cats are smaller but heavily outnumber the fox, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full and unwilling to lose blood over it, is driven off from the kill.",
@@ -4413,7 +4413,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find a stocky gray fox feeding on an unidentifiable but deliciously stinky small mound of carrion fished up from the swamp.",
         "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
-        "chance_of_success": 90,
+        "chance_of_success": 30,
         "exp": 20,
         "success_text": [
             "While a gray fox is bigger and far stockier than the cats, the delicious stench of whatever it is makes the cats' eyes go wide and silly, and they leap to claim possession of it. Heavily outnumbered and already full of stinky nonsense, the gray fox leaves, scrambling up a tree as the cats give in to instinct and roll around in the glorious smell.",
@@ -4595,7 +4595,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
         "decline_text": "Your patrol decides not to pursue the fox.",
-        "chance_of_success": 60,
+        "chance_of_success": 10,
         "exp": 30,
         "success_text": [
             "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away the red fox, seeks out her den, and kills her young cubs. The swamps will be safe from both the threat the vixen posed this season, and the threat her cubs would've given c_n in the seasons to come.",
@@ -4786,7 +4786,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
         "decline_text": "Your patrol decides not to pursue the fox.",
-        "chance_of_success": 60,
+        "chance_of_success": 10,
         "exp": 30,
         "success_text": [
             "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away the red fox, seeks out her den, and kills her growing cubs. The swamps will be safe from both the threat the vixen posed this season, and the threat her cubs would've given c_n in the seasons to come.",
@@ -5161,7 +5161,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
         "decline_text": "Your patrol decides not to pursue the fox.",
-        "chance_of_success": 90,
+        "chance_of_success": 30,
         "exp": 30,
         "success_text": [
             "The stocky gray vixen they track down smells of milk, and though she's nearly double the weight of any of the patrol and all of it muscle, they meet her eyes squarely, and leap to attack. c_n does not tolerate sharing their territory with foxes, and they work together to drive her off.",
@@ -5341,7 +5341,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
         "decline_text": "Your patrol decides not to pursue the fox.",
-        "chance_of_success": 90,
+        "chance_of_success": 30,
         "exp": 30,
         "success_text": [
             "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away the gray fox, seeks out her den, and kills her growing cubs. The wetland will be safe from both the competition the vixen posed this season, and the threat her cubs would've given c_n in the seasons to come.",
@@ -5521,7 +5521,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray?",
         "decline_text": "Your patrol decides not to pursue the fox.",
-        "chance_of_success": 90,
+        "chance_of_success": 30,
         "exp": 30,
         "success_text": [
             "Led by p_l and with a heap of cooperation and teamwork, the patrol drives away the gray fox, and seeks out her den. But her cubs are near full-grown with the bounty of leaf-fall, and scatter from the patrol into the wilderness. Hopefully leaf-bare takes care of them.",
@@ -5718,7 +5718,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? And is it worth a fight if they encounter it?",
         "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
-        "chance_of_success": 50,
+        "chance_of_success": 10,
         "exp": 20,
         "success_text": [
             "p_l leads the patrol to the end of the scent trail, where a red fox sits plucking the feathers off a plump duck. With careful signals, the cats set up an ambush. While they'd expected having more cats would make it easier, it also makes the patrol far more of a threat to the red fox, and the creature panicks when they reveal themselves. They win the bird, but r_c nearly gets injured, and it's only p_l shoving them both out of the way that saves both their pelts.",
@@ -5943,7 +5943,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? And is it worth a fight if they encounter it?",
         "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
-        "chance_of_success": 70,
+        "chance_of_success": 10,
         "exp": 20,
         "success_text": [
             "Its a gray fox, which as far as the cats are concerned, means free food. They leap after it, and after a short chase the fox drops the mouse it was holding. That's not enough to satisfy the c_n cats, who drive it out of their territory before collecting the mouse and continuing the afternoon's hunt.",

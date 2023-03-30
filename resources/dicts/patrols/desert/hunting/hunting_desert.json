@@ -35,7 +35,7 @@
         ],
         "intro_text": "The patrol approaches a very strange Twolegplace. Gigantic metal leaves lie in unnatural rows, shading the desert beneath them, metal tree branches snake straightly across the ground, and a little Twoleg hut sits in one corner, seemingly abandoned.",
         "decline_text": "The patrol decides to hunt elsewhere.",
-        "chance_of_success": 60,
+        "chance_of_success": 10,
         "exp": 20,
         "success_text": [
             "The patrol cats split up, using sentries to ensure that nothing disturbs their hunts.",
@@ -468,7 +468,7 @@
         ],
         "intro_text": "r_c encounters a swarm of Twolegs, gathered in a dry riverbed.",
         "decline_text": "Your patrol decides to hunt elsewhere.",
-        "chance_of_success": 60,
+        "chance_of_success": 10,
         "exp": 20,
         "success_text": [
             "Your patrol immediately turns and heads for home to report this to their leader, alarmed by the sudden presence of Twolegs in their territory.",
@@ -1498,7 +1498,7 @@
         ],
         "intro_text": "Your patrol catches the scent of a fox. Tracking it, they find a kit fox feeding on a young collared peccary, a bit too big to be called a piglet. It looks like this youngster got on the wrong side of the dominant boar of its group. The kit fox is barely strong enough to open the carcass.",
         "decline_text": "Your patrol decides the boar is probably coming back, and they don't want to be here when it arrives to feed on its victim.",
-        "chance_of_success": 90,
+        "chance_of_success": 30,
         "exp": 20,
         "success_text": [
             "One tiny kit fox against your cats? No contest, and the fox knows it. As soon as it sees them it trots off, leaving the cats to bring as much of the peccary back to camp as they can possibly carry.",
@@ -1731,7 +1731,7 @@
         ],
         "intro_text": "r_c catches the scent of a fox. Tracking it down, the cats spot a kit fox wandering through their territory, carrying a mouse in its jaws.",
         "decline_text": "That's an insignificant amount of fresh-kill to start a fight over.",
-        "chance_of_success": 90,
+        "chance_of_success": 30,
         "exp": 15,
         "success_text": [
             "The hunters melt into the thorny scrubland and surround the smaller predator. By the time it scents them, it's too late. While the hunters will happily accept the mouse it carried, the fox was the prey they were actually after.",
