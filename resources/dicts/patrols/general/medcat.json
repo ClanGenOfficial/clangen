@@ -57,13 +57,14 @@
     "success_text": [
         "They have an in-depth conversation about r_c's vision as they walk. By the time they head back to camp, they have a good idea of what they should do with the information.",
         "p_l takes r_c aside, giving them the full benefits of p_l's experience as they discuss r_c's vision. As a medicine cat, they don't take the responsibility lightly, and both of them work together to divine the vision's meaning.",
-        "p_l chooses to pad pelt to pelt with r_c, the spiritual medicine cat gently guiding the conversation. r_c feels deeply privileged and far more at peace after confiding in them, knowing that c_n is in safe paws."
+        "s_c chooses to pad pelt-to-pelt with r_c, the spiritual medicine cat gently guiding the conversation. r_c feels deeply privileged, and far more at peace, after confiding in them, and they know that c_n is in safe paws."
     ],
     "fail_text": [
         "p_l shakes their head sadly. They can't make sense of the vision.",
-        "r_c notices p_l looking at them enviously, and withdraws from the group, dismissing the dream as unimportant."
+        "s_c watches r_c with undisguised envy, desperately wishing they were the one to receive the vision. Looking back nervously, r_c withdraws from the group, dismissing the dream as unimportant."
     ],
     "win_skills": ["strong connection to starclan"],
+    "fail_trait": ["ambitious", "insecure"],
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": null,
@@ -81,13 +82,14 @@
     "success_text": [
         "They have an in depth conversation about r_c's vision as they walk. By the time they head back to camp, they have a good idea of what they should do with the information.",
         "p_l takes r_c aside, giving them the full benefits of p_l's seniority and experience as they discuss r_c's vision. As a medicine cat, they don't take the responsibility lightly, and both of them work together to divine the vision's meaning.",
-        "s_c listens intently and tells r_c not to be weirded out, but they had seen the dream, too. r_c is alarmed but s_c soothes them and explains that StarClan sometimes shows them others' dreams, but this one luckily was just a mild warning."
+        "s_c listens intently and tells r_c not to be weirded out, but they had seen the dream, too. r_c is alarmed, but s_c soothes them, explaining that StarClan sometimes shows them others' dreams. This one, luckily, was nothing but a mild warning."
     ],
     "fail_text": [
         "p_l shakes their head sadly. They can't make sense of the vision.",
-        "r_c notices p_l looking at them enviously, and withdraws from the group, dismissing the dream as unimportant."
+        "s_c watches r_c with undisguised envy, desperately wishing they were the one to receive the vision. Looking back nervously, r_c withdraws from the group, dismissing the dream as unimportant."
     ],
     "win_skills": ["dreamwalker"],
+    "fail_trait": ["ambitious", "insecure"],
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": null,
@@ -98,13 +100,13 @@
     "biome": "Any",
     "season": "Any",
     "tags": ["herb_gathering", "med_cat", "herb", "cobwebs", "no_herbs0"],
-    "intro_text": "As they head out to gather cobwebs, r_c thinks about the dream they had last night. . . was it sent by StarClan?",
+    "intro_text": "As they head out to gather cobwebs, p_l thinks about the dream they had last night. . . was it sent by StarClan?",
     "decline_text": "They push it from their mind.",
     "chance_of_success": 40,
     "exp": 20,
     "success_text": [
-        "It definitely distracts them from the hunt for cobwebs, but r_c uses the time by themselves to put their thoughts in order. The sign from their ancestors will need acting upon, and they return to camp to assemble the leader and deputy.",
-        "Somehow cobweb-gathering brings r_c to almost a meditative state, and not only are they fairly confident of their next steps having been given this vision, but they also bring back a good haul to the medicine den stocks.",
+        "It definitely distracts them from the hunt for cobwebs, but p_l uses the time by themselves to put their thoughts in order. The sign from their ancestors will need acting upon, and they return to camp to assemble the leader and deputy.",
+        "Somehow cobweb-gathering brings p_l to an almost-meditative state. Not only are they fairly confident of their next steps, having been given this vision, but they also bring back a good haul to the medicine den stocks.",
         "s_c often feels like StarClan walks with them, and this is just another instance on the path. They use the solo patrol to collect their thoughts, and by the time they pad home with a good bundle of cobwebs, they're ready for the next step their vision hinted at."
     ],
     "fail_text": [
@@ -116,7 +118,7 @@
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
-    {
+{
     "patrol_id": "gen_med_vision4",
     "biome": "Any",
     "season": "Any",
@@ -128,13 +130,14 @@
     "success_text": [
         "They have an in depth conversation about r_c's vision as they walk. By the time they head back to camp, they have a good idea of what they should do with the information.",
         "p_l takes r_c aside to discuss r_c's vision. They don't take the responsibility lightly, and both of them work together to divine the vision's meaning.",
-        "s_c listens intently and tells r_c not to be weirded out, but they had seen the dream, too. r_c is alarmed but s_c soothes them and explains that StarClan sometimes shows them others' dreams, but this one luckily was just a mild warning."
+        "s_c listens intently and tells r_c not to be weirded out, but they had seen the dream, too. r_c is alarmed, but s_c soothes them, explaining that StarClan sometimes shows them others' dreams. This one, luckily, was nothing but a mild warning."
     ],
     "fail_text": [
         "p_l shakes their head sadly. They can't make sense of the vision.",
-        "r_c notices p_l looking at them enviously, and withdraws from the group, dismissing the dream as unimportant."
+        "s_c watches r_c with undisguised envy, desperately wishing they were the one to receive the vision. Looking back nervously, r_c withdraws from the group, dismissing the dream as unimportant."
     ],
     "win_skills": ["dreamwalker"],
+    "fail_trait": ["ambitious", "insecure"],
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": null,
@@ -145,20 +148,21 @@
     "biome": "Any",
     "season": "Any",
     "tags": ["herb_gathering", "med_cat", "no_app", "random_herbs"],
-    "intro_text": "As r_c pads through c_n territory, they feel a presence join them.",
+    "intro_text": "As p_l pads through c_n territory, they feel a presence join them.",
     "decline_text": "Their companion stays with them as silent support while they work.",
     "chance_of_success": 30,
     "exp": 30,
     "success_text": [
-        "With a respectful nod, r_c pauses, tucks their paws together neatly, and sits to converse with the StarClan cat.",
-        "The scent of a familiar pelt reaches r_c's nose - they know this cat! With a friendly purr, they turn to greet their friend from beyond the grave.",
-        "With the familiarity brought by their connection to StarClan, r_c turns to the ghost haunting their path, meeting their star-walking ancestor with a purr and quiet confidence."
+        "With a respectful nod, p_l pauses, tucks their paws together neatly, and sits to converse with the StarClan cat.",
+        "The scent of a familiar pelt reaches p_l's nose - they know this cat! With a friendly purr, they turn to greet their friend from beyond the grave.",
+        "With the familiarity brought by their connection to StarClan, s_c turns to the ghost haunting their path, meeting their star-walking ancestor with a purr and quiet confidence."
     ],
     "fail_text": [
         "The connection wavers, and as quickly as the feeling of company appears, it vanishes.",
-        "r_c turns to the ghost with a smile, but the StarClan cat meets their eyes with fire in their gaze. StarClan is unhappy with c_n, and things must change."
+        "s_c turns to the ghost with a smile, but the StarClan cat meets their eyes with fire in their gaze. StarClan is unhappy with them, and things must change."
     ],
     "win_skills": ["strong connection to starclan", "clairvoyant"],
+    "fail_trait": ["bloodthirsty", "vengeful", "sneaky"],
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": "r_c feels hounded, never given a moment's peace, and they hiss at the StarClan cat. The ghost vanishes like a puff of fog in the morning sun, hopefully not to return.",
@@ -180,9 +184,10 @@
     ],
     "fail_text": [
         "The connection wavers, and as quickly as the feeling of company appears, it vanishes.",
-        "p_l turns to the ghost with a smile, but the StarClan cat meets their eyes with fire in their gaze. StarClan is unhappy with c_n, and things must change."
+        "p_l turns to the ghost with a smile, but the StarClan cat meets their eyes with fire in their gaze. StarClan is unhappy with them, and things must change."
     ],
     "win_skills": ["strong connection to starclan", "clairvoyant"],
+    "fail_trait": ["bloodthirsty", "vengeful", "sneaky"],
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": "p_l feels hounded, never given a moment's peace, and they hiss at the StarClan cat. The ghost vanishes like a puff of fog in the morning sun, hopefully not to return.",
@@ -203,8 +208,9 @@
     ],
     "fail_text": [
         "The connection wavers, and as quickly as the feeling of company appears, it vanishes. app1 pads uncertainly back to camp, wondering if it was even real in the first place.",
-        "app1 turns to the ghost with a smile, but the StarClan cat meets their eyes with fire in their gaze. StarClan is unhappy with c_n, and things must change. app1 cowers in front of them, wishing they were anywhere else."
+        "app1 turns to the ghost with a smile, but the StarClan cat meets their eyes with fire in their gaze. StarClan is unhappy with them, and things must change. app1 cowers in front of them, wishing they were anywhere else."
     ],
+    "fail_trait": ["bloodthirsty", "vengeful", "sneaky"],
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": "app1 feels hounded, never given a moment's peace, and they hiss at the StarClan cat. The ghost vanishes like a puff of fog in the morning sun, hopefully not to return.",
@@ -226,9 +232,10 @@
     ],
     "fail_text": [
         "The connection wavers, and as quickly as the feeling of company appears, it vanishes.",
-        "app1 turns to the ghost with a smile, but the StarClan cat meets their eyes with fire in their gaze. StarClan is unhappy with c_n, and things must change."
+        "s_c turns to the ghost with a smile, but the StarClan cat meets their eyes with fire in their gaze. StarClan is unhappy with them, and things must change."
     ],
     "win_skills": ["strong connection to starclan", "clairvoyant"],
+    "fail_trait": ["bloodthirsty", "vengeful", "sneaky"],
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": "app1 feels hounded, never given a moment's peace, and they hiss at the StarClan cat. The ghost vanishes like a puff of fog in the morning sun, hopefully not to return.",
@@ -240,19 +247,16 @@
     "season": "Any",
     "tags": ["herb_gathering", "med_cat", "warrior", "random_herbs", "no_app", "trust", "comfort", "respect", "p_l_to_r_c", "s_c_to_r_c"],
     "intro_text": "During a patrol looking for herbs, p_l notices that r_c seems more quiet than usual. When prompted, r_c slowly asks if p_l could teach them more about the nature of StarClan.",
-    "decline_text": "p_l opens their mouth to answer, but the cry of another patrol looking for them shuts down the conversation. p_l races away towards the scene leaving r_c behind.",
+    "decline_text": "p_l opens their mouth to answer, but the cry of another patrol looking for them shuts down the conversation. p_l races away towards the scene, leaving r_c behind.",
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
-        "p_l eventually relents and begins teaching r_c more about StarClan and the nature of prophecies. Expecting boredom, p_l was shocked when they saw wonder in r_c's face. The two spend the rest of the patrol pondering the nature of their ancestors together.",
-        "p_l eventually relents and begins teaching r_c more about StarClan and the nature of prophecies. r_c takes to it quickly, marveling at their ancestors. They attempt to bug p_l about any recent prophecies, but p_l only laughs and gets the patrol back on track for herbs.",
+        "p_l eventually relents, and begins teaching r_c more about StarClan and the nature of prophecies. Expecting boredom, p_l was shocked when they saw wonder in r_c's face. The two spend the rest of the patrol pondering the nature of their ancestors together.",
+        "p_l eventually relents, and begins teaching r_c more about StarClan and the nature of prophecies. r_c takes to it quickly, marveling at their ancestors. They attempt to bug p_l about any recent prophecies, but p_l only laughs and gets the patrol back on track for herbs.",
         "s_c had seen before how connected p_l was to StarClan, and began telling them more than they would have told any other Clan cat about their ancestors. p_l and s_c spend much of their patrol gathering herbs and discussing the hard-hitting questions on prophecies and StarClan's gifts."
     ],
     "fail_text":[
-        "p_l tries to simplify the mystical power of their ancestors, but it only leaves r_c more confused about StarClan and their prophecies.",
-        null,
-        null,
-        null
+        "p_l tries to simplify the mystical power of their ancestors, but it only leaves r_c more confused about StarClan and their prophecies."
     ],
     "min_cats": 2,
     "max_cats": 2,
@@ -273,10 +277,7 @@
         "p_l knew why this bothered s_c so much. A powerful connection to StarClan for either of them allowed them to understand how their legacy would be told again and again to kits in the future. But p_l did their best to ease s_c's worries. To c_n, s_c would be a legend worth remembering one day. s_c brightens up at that remark, and the two go back to their herb hunt."
     ],
     "fail_text":[
-        "p_l attempts to soothe r_c's worries, but nothing seems to stick. r_c turns back towards the camp, leaving p_l alone to fruitlessly hunt for herbs.",
-        null,
-        null,
-        null
+        "p_l attempts to soothe r_c's worries, but nothing seems to stick. r_c turns back towards the camp, leaving p_l alone to fruitlessly hunt for herbs."
     ],
     "min_cats": 2,
     "max_cats": 2,
@@ -288,17 +289,14 @@
     "season": "Any",
     "tags": ["herb_gathering", "med_cat", "warrior", "random_herbs", "no_app", "trust", "comfort", "respect", "p_l_to_r_c", "s_c_to_r_c"],
     "intro_text": "It was one of the worst storms of the season, and left p_l in an unavoidably grumpy mood. Herbs strewn about, prey in hiding, it would take forever to find anything. r_c attempts to find a way to cheer up the healer.",
-    "decline_text": "But before r_c could come up with a plan, a cry from the camp forces p_l to return in a hurry.",
+    "decline_text": "Before r_c can come up with a plan, a cry from the camp forces p_l to return in a hurry.",
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
         "r_c splashes water from a puddle onto p_l's fur. p_l fluffs up like a bottlebrush, turning around to quickly send a wave of water back towards r_c! The two engage in a small water fight, and when they resume the herb patrol, r_c is glad to see p_l looks much happier."
     ],
     "fail_text":[
-        "r_c splashes water from a puddle at p_l. p_l turns around and hisses at r_c that they don't have time for kit games! The two continue their patrol, but p_l's sour mood distracts them from any usable herbs they could find.",
-        null,
-        null,
-        null
+        "r_c splashes water from a puddle at p_l. p_l turns around and hisses at r_c that they don't have time for kit games! The two continue their patrol, but p_l's sour mood distracts them from any usable herbs they could find."
     ],
     "min_cats": 2,
     "max_cats": 2,
@@ -865,7 +863,7 @@
         "trust",
         "platonic"
     ],
-    "intro_text": "p_l and r_c stroll through the territory, chatting while on their way to an herb patch they haven't visited in awhile.",
+    "intro_text": "p_l and r_c stroll through the territory, chatting while on their way to an herb patch they haven't visited in a while.",
     "decline_text": "p_l stops, then laughs. They've just remembered that they already have the herb they're walking to back at camp! Better to remember now than after picking it and walking all the way back.",
     "chance_of_success": 50,
     "exp": 20,
@@ -875,7 +873,7 @@
         "r_c hums, and asks s_c what they think the nature of StarClan is. s_c doesn't hesitate before answering, their deep connection to their ancestors granting them knowledge and insight r_c doesn't necessarily have. r_c is enthralled, and it feels all too soon that they pick the herbs and have their mouths too full to continue talking."
     ],
     "fail_text": [
-        "The two medicine cats walk in circles for awhile, before realizing that they've completely forgotten where the herb patch is since its been so long. How embarrassing!"
+        "The two medicine cats walk in circles for a while, before realizing that they've completely forgotten where the herb patch is since its been so long. How embarrassing!"
     ],
     "win_skills": [
         "strong connection to StarClan"
@@ -898,7 +896,7 @@
         "trust",
         "platonic"
     ],
-    "intro_text": "p_l and r_c stroll through the territory, chatting while on their way to an herb patch they haven't visited in awhile.",
+    "intro_text": "p_l and r_c stroll through the territory, chatting while on their way to an herb patch they haven't visited in a while.",
     "decline_text": "p_l stops, then laughs. They've just remembered that they already have the herb they're walking to back at camp! Better to remember now than after picking it and walking all the way back.",
     "chance_of_success": 50,
     "exp": 20,
@@ -908,7 +906,7 @@
         "r_c asks s_c if they remember a particular story the elders are fond of. s_c nods eagerly, and launches into recanting it. r_c is pleasantly surprised at how readily s_c recites the tale, listening to them talk in content silence. s_c's thrilled to share their knowledge, and it's all too soon that they have their jaws too full of herbs to continue."
     ],
     "fail_text": [
-        "The two medicine cats walk in circles for awhile, before realizing that they've completely forgotten where the herb patch is since its been so long. How embarrassing!"
+        "The two medicine cats walk in circles for a while, before realizing that they've completely forgotten where the herb patch is since its been so long. How embarrassing!"
     ],
     "win_skills": [
         "lorekeeper"
@@ -931,7 +929,7 @@
         "trust",
         "platonic"
     ],
-    "intro_text": "p_l and r_c stroll through the territory, chatting while on their way to an herb patch they haven't visited in awhile.",
+    "intro_text": "p_l and r_c stroll through the territory, chatting while on their way to an herb patch they haven't visited in a while.",
     "decline_text": "p_l stops, then laughs. They've just remembered that they already have the herb they're walking to back at camp! Better to remember now than after picking it and walking all the way back.",
     "chance_of_success": 50,
     "exp": 20,
@@ -940,7 +938,7 @@
         "r_c, deep in thought, asks p_l if they ever ponder their own mortality. p_l swishes their tail, and asks what brought this on. It's just something they've been dwelling on recently, r_c explains, and they wanted the opinion of someone they trust. p_l nods, and says they'll think about it - but they've reached the herbs, and have to pick them now."
     ],
     "fail_text": [
-        "The two medicine cats walk in circles for awhile, before realizing that they've completely forgotten where the herb patch is since it's been so long. How embarrassing!"
+        "The two medicine cats walk in circles for a while, before realizing that they've completely forgotten where the herb patch is since it's been so long. How embarrassing!"
     ],
     "min_cats": 2,
     "max_cats": 2,
@@ -960,7 +958,7 @@
         "trust",
         "platonic"
     ],
-    "intro_text": "p_l and r_c stroll through the territory, chatting while on their way to an herb patch they haven't visited in awhile.",
+    "intro_text": "p_l and r_c stroll through the territory, chatting while on their way to an herb patch they haven't visited in a while.",
     "decline_text": "p_l stops, then laughs. They've just remembered that they already have the herb they're walking to back at camp! Better to remember now than after picking it and walking all the way back.",
     "chance_of_success": 50,
     "exp": 20,
@@ -969,7 +967,7 @@
         "r_c, deep in thought, asks p_l if they've considered taking on another apprentice. p_l swishes their tail, and asks what brought this on. They were honestly just wondering, r_c explains, as they're not sure themself when they want to. p_l nods, and says they've been thinking about it - but they've reached the herbs, and have to pick them now."
     ],
     "fail_text": [
-        "The two medicine cats walk in circles for awhile, before realizing that they've completely forgotten where the herb patch is since its been so long. How embarrassing!"
+        "The two medicine cats walk in circles for a while, before realizing that they've completely forgotten where the herb patch is since its been so long. How embarrassing!"
     ],
     "min_cats": 2,
     "max_cats": 2,
@@ -989,7 +987,7 @@
         "trust",
         "platonic"
     ],
-    "intro_text": "p_l and r_c stroll through the territory, chatting while on their way to an herb patch they haven't visited in awhile.",
+    "intro_text": "p_l and r_c stroll through the territory, chatting while on their way to an herb patch they haven't visited in a while.",
     "decline_text": "p_l stops, then laughs. They've just remembered that they already have the herb they're walking to back at camp! Better to remember now than after picking it and walking all the way back.",
     "chance_of_success": 50,
     "exp": 20,
@@ -998,7 +996,7 @@
         "r_c, deep in thought, tells p_l they've been considering taking on another apprentice. p_l swishes their tail, and asks what brought this on. They just feel like the time is right, r_c explains, and they wanted p_l's opinion. p_l nods, and says they'll answer back at camp - but they've reached the herbs, and have to pick them now."
     ],
     "fail_text": [
-        "The two medicine cats walk in circles for awhile, before realizing that they've completely forgotten where the herb patch is since its been so long. How embarrassing!"
+        "The two medicine cats walk in circles for a while, before realizing that they've completely forgotten where the herb patch is since its been so long. How embarrassing!"
     ],
     "min_cats": 2,
     "max_cats": 2,
@@ -1071,7 +1069,7 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "gen_med_discussion1",
+    "patrol_id": "gen_med_discussnews1",
     "biome": "Any",
     "season": "Any",
     "tags": ["med_cat", "random_herbs", "respect", "trust", "med_only", "no_app"],
@@ -1080,18 +1078,17 @@
     "chance_of_success": 50,
     "exp": 10,
     "success_text": [
-    "They have a good discussion while foraging for herbs and manage to come up with several ideas regarding the latest news to discuss with the leader and deputy.",
-    "Carefully plucking some herbs, they discuss the latest signs from StarClan and ponder what to do about them. They manage to think up some tentative plans and they return to camp to discuss them with the leader and deputy."
+    "They have a good discussion while foraging for herbs, and manage to come up with several ideas regarding the latest news to discuss with the leader and deputy.",
+    "Carefully plucking some herbs, they discuss the latest signs from StarClan and ponder what to do about them. They manage to think up some tentative plans, and they return to camp to discuss them with the leader and deputy."
     ],
     "fail_text": [
-    "They fail to discuss the issues that the latest news has brought with it and are too irritated with each other to continue the patrol."
+    "They fail to discuss the issues that the latest news has brought with it, and are too irritated with each other to continue the patrol."
     ],
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
-
 {
     "patrol_id": "gen_med_herbsgathering1",
     "biome": "Any",
@@ -1102,13 +1099,14 @@
     "chance_of_success": 50,
     "exp": 10,
     "success_text": [
-    "p_l and r_c search and harvest any herbs they can get their paws on. Later that day they reunite in front of the camp just as the sun is setting, both their mouths stuffed full with herbs.",
-    "p_l and r_c decide to make a game of who can hunt the most herbs. They reunite when the sun is going down and walk into camp purring and playfully shoving each other with both their mouths full of herbs."
+    "p_l and r_c search and harvest any herbs they can get their paws on. Later that day they reunite in front of the camp, just as the sun is setting, both their mouths stuffed full with herbs.",
+    "p_l and r_c decide to make a game of who can hunt the most herbs. They reunite when the sun is going down, and walk into camp purring and playfully shoving each other with both their mouths full of herbs."
     ],
     "fail_text": [
-    "Both p_l and r_c are tense and it shows. Even though it shouldn't be this hard to find any herbs, they fail to find even a single one. They return to camp frustrated and irritated with each other.",
-    "Even though there should be many herbs, they fail to find anything. p_l blames r_c for distracting them and they get into a huge argument."
+    "Both p_l and r_c are tense, and it shows. Even though it shouldn't be this hard to find any herbs, they fail to find even a single one. They return to camp frustrated and irritated with each other.",
+    "Even though there should be plenty of herbs, they fail to find anything. s_c blames r_c for distracting them, and they get into a huge argument."
     ],
+    "fail_trait": ["strict", "childish", "troublesome"],
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,

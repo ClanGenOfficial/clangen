@@ -81,6 +81,7 @@ def bs_blurb_text(cat):
         'kittypet1': "This cat joined the Clan by choice after living life with Twolegs as a kittypet.",
         'kittypet2': 'This cat used to live on something called a "boat" with Twolegs, but decided to join the Clan.',
         'kittypet3': "This cat used be a kittypet. They got lost after wandering away, and when they returned home, they found their Twolegs were gone. They eventually found their way to the Clan.",
+        'kittypet4': "This cat used to be a kittypet. One day, they got sick, and their Twolegs brought them into the belly of a monster. The Twolegs then left them to fend for themselves.",
         'rogue1': "This cat joined the Clan by choice after living life as a rogue.",
         'rogue2': "This cat used to live in a Twolegplace, scrounging for what they could find. They thought the Clan might offer them more security.",
         'rogue3': "This cat used to live alone in their own territory, but was chased out by something and eventually found the Clan.",
@@ -125,8 +126,7 @@ def bs_blurb_text(cat):
     
     if backstory != None and backstory in backstory_text:
         return backstory_text.get(backstory, "")
-    else:
-        if cat.status in ['kittypet', 'loner', 'rogue', 'former clancat']:
+    if cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']:
             return f"This cat is a {cat.status} and currently resides outside of the Clans."
     
     return backstory_text.get(backstory, "")
@@ -157,6 +157,7 @@ def backstory_text(cat):
         'kittypet1': 'formerly a kittypet',
         'kittypet2': 'formerly a kittypet',
         'kittypet3': 'formerly a kittypet',
+        'kittypet4': 'formerly a kittypet',
         'refugee3': 'formerly a kittypet',
         'tragedy_survivor3': 'formerly a kittypet',
         'guided1': 'formerly a kittypet',
@@ -915,7 +916,7 @@ class ProfileScreen(Screens):
 
         # STATUS
         if the_cat.outside and not the_cat.exiled and not the_cat.status in ['kittypet', 'loner', 'rogue',
-                                                                             'former clancat']:
+                                                                             'former Clancat']:
             output += "<font color='#FF0000'>lost</font>"
         elif the_cat.exiled:
             output += "<font color='#FF0000'>exiled</font>"
@@ -985,14 +986,15 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # BACKSTORY
-        if the_cat.backstory is not None:
-            bs_text = backstory_text(the_cat)
-            output += 'backstory: ' + bs_text
-        else:
-            output += 'backstory: ' + 'clanborn'
+        if the_cat.status not in ['kittypet', 'loner', 'rogue', 'former clancat']:
+            if the_cat.backstory is not None:
+                bs_text = backstory_text(the_cat)
+                output += 'backstory: ' + bs_text
+            else:
+                output += 'backstory: ' + 'clanborn'
 
-        # NEWLINE ----------
-        output += "\n"
+            # NEWLINE ----------
+            output += "\n"
 
         # NUTRITION INFO (if the game is in the correct mode)
         if game.clan.game_mode in ["expanded", "cruel season"] and the_cat.is_alive() and FRESHKILL_ACTIVE:
@@ -1160,7 +1162,10 @@ class ProfileScreen(Screens):
         output = ""
         if self.open_sub_tab == 'life events':
             # start our history with the backstory, since all cats get one
-            life_history = [str(self.get_backstory_text())]
+            if self.the_cat.status not in ["rogue", "kittypet", "loner", "former clancat"]:
+                life_history = [str(self.get_backstory_text())]
+            else:
+                life_history = []
             body_history = []
 
             # now get mentor influence history and add that if any exists
@@ -1234,7 +1239,7 @@ class ProfileScreen(Screens):
 
     def get_influence_text(self):
         influence_history = None
-        if self.the_cat.status in ['kittypet', 'loner', 'rogue']:
+        if self.the_cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']:
             return ""
         # check if cat has any mentor influence, else assign None
         if len(self.the_cat.mentor_influence) >= 1:
@@ -2374,6 +2379,10 @@ class RoleScreen(Screens):
                 self.update_selected_cat()
             elif event.ui_element == self.retire:
                 self.the_cat.status_change("elder", resort=True)
+                # Since you can't "unretire" a cat, apply the skill and trait change
+                # here
+                self.the_cat.update_skill()
+                self.the_cat.update_traits()
                 self.update_selected_cat()
             elif event.ui_element == self.switch_mediator:
                 self.the_cat.status_change("mediator", resort=True)

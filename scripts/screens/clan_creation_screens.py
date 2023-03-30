@@ -12,6 +12,7 @@ from re import sub
 from scripts.game_structure import image_cache
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton
 from scripts.game_structure.game_essentials import game, MANAGER
+from scripts.patrol import Patrol
 
 
 class MakeClanScreen(Screens):
@@ -170,6 +171,8 @@ class MakeClanScreen(Screens):
             self.elements['select_cat'].hide()
             create_example_cats()  # create new cats
             self.selected_cat = None  # Your selected cat now no longer exists. Sad. They go away.
+            if self.elements['error_message']:
+                self.elements['error_message'].kill()
             self.refresh_cat_images_and_info()  # Refresh all the images.
             self.rolls_left -= 1
             if game.config["clan_creation"]["rerolls"] == 3:
@@ -1017,6 +1020,7 @@ class MakeClanScreen(Screens):
         game.patrolled.clear()
         game.cat_to_fade.clear()
         Cat.outside_cats.clear()
+        Patrol.used_patrols.clear()
         convert_camp = {1: 'camp1', 2: 'camp2', 3: 'camp3'}
         game.clan = Clan(self.clan_name,
                          self.leader,

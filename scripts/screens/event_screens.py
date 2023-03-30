@@ -445,6 +445,10 @@ class EventsScreen(Screens):
         self.event_container.kill()
         self.make_events_container()
 
+        # Stop if clan is new, so that events from previously loaded clan don't show up
+        if game.clan.age == 0:
+            return
+
         # Make display, with buttons and all that.
         box_length = self.event_container.get_relative_rect()[2]
         i = 0

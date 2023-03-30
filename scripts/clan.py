@@ -442,7 +442,7 @@ class Clan():
             self.camp_bg = camp_bg
             self.game_mode = game_mode
             self.pregnancy_data = {}
-            self.reputation = 80
+            self._reputation = 80
             self.starting_members = starting_members
             if game_mode in ['expanded', 'cruel season']:
                 self.freshkill_pile = Freshkill_Pile()
@@ -458,6 +458,11 @@ class Clan():
             it's a range from 1-100, with 30-70 being neutral, 71-100 being "welcoming",
             and 1-29 being "hostile". if you're hostile to outsiders, they will VERY RARELY show up.
             """
+            
+            # This only contains one thing right now, but will be expanded. 
+            self.clan_settings = {
+                "show_fav": True
+            }
 
     def create_clan(self):
         """
@@ -490,7 +495,7 @@ class Clan():
 
         # give thoughts,actions and relationships to cats
         for cat_id in Cat.all_cats:
-            Cat.all_cats.get(cat_id).create_all_relationships()
+            Cat.all_cats.get(cat_id).init_all_relationships()
             Cat.all_cats.get(cat_id).backstory = 'clan_founder'
             if Cat.all_cats.get(cat_id).status == 'apprentice':
                 Cat.all_cats.get(cat_id).status_change('apprentice')
@@ -721,6 +726,7 @@ class Clan():
 
         self.save_herbs(game.clan)
         self.save_disaster(game.clan)
+        self.save_clan_settings()
         if game.clan.game_mode in ['expanded', 'cruel season']:
             self.save_freshkill_pile(game.clan)
 
@@ -735,6 +741,11 @@ class Clan():
         with open(get_save_dir() + '/currentclan.txt', 'w',
                   encoding='utf-8') as write_file:
             write_file.write(self.name)
+            
+    def save_clan_settings(self):
+        with open(get_save_dir() + f'/{self.name}/clan_settings.json', 'w',
+                  encoding='utf-8') as write_file:
+            write_file.write(ujson.dumps(self.clan_settings, indent=4))
 
     def load_clan(self):
         """
@@ -749,6 +760,8 @@ class Clan():
         else:
             game.switches[
                 'error_message'] = "There was an error loading the clan.json"
+            
+        self.load_clan_settings()
 
     def load_clan_txt(self):
         """
@@ -1016,6 +1029,13 @@ class Clan():
             self.load_freshkill_pile(game.clan)
         game.switches['error_message'] = ''
 
+    def load_clan_settings(self):  
+        if os.path.exists(get_save_dir() + f'/{game.switches["clan_list"][0]}/clan_settings.json'):
+            with open(get_save_dir() + f'/{game.switches["clan_list"][0]}/clan_settings.json', 'r',
+                    encoding='utf-8') as write_file:
+                game.clan.clan_settings = ujson.loads(write_file.read())
+
+
     def load_herbs(self, clan):
         """
         TODO: DOCS
@@ -1150,7 +1170,8 @@ class Clan():
         if not clan.name:
             return
         file_path = get_save_dir() + f"/{clan.name}/disasters/primary.json"
-
+        if not os.path.isdir(f'{get_save_dir()}/{clan.name}/disasters'):
+            os.mkdir(f'{get_save_dir()}/{clan.name}/disasters')
         if clan.primary_disaster:
             disaster = {
                 "event": clan.primary_disaster.event,
@@ -1261,6 +1282,21 @@ class Clan():
                 "ERROR: Saving nutrition information of the freshkill pile didn't work."
             )
 
+
+    ## Properties
+    
+    @property
+    def reputation(self):
+        return self._reputation
+    
+    @reputation.setter
+    def reputation(self, a: int):
+        self._reputation = int(self._reputation + a)
+        if self._reputation > 100:
+            self._reputation = 100
+        elif self._reputation < 0:
+            self._reputation = 0
+    
 
 class OtherClan():
     """

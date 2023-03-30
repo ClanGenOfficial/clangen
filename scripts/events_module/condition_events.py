@@ -29,7 +29,7 @@ class Condition_Events():
         self.generate_events = GenerateEvents()
         pass
 
-    def handle_illnesses(self, cat, season):
+    def handle_illnesses(self, cat, season=None):
         """ 
         This function handles overall the illnesses in 'expanded' (or 'cruel season') game mode
         """
@@ -44,33 +44,34 @@ class Condition_Events():
 
         if cat.is_ill():
             event_string = self.handle_already_ill(cat)
+        else:
+            # ---------------------------------------------------------------------------- #
+            #                              make cats sick                                  #
+            # ---------------------------------------------------------------------------- #
+            random_number = int(
+                random.random() * game.config["condition_related"][f"{game.clan.game_mode}_illness_chance"])
+            if not cat.dead and not cat.is_ill() and random_number <= 10 and not event_string:
+                season_dict = ILLNESSES_SEASON_LIST[season]
+                possible_illnesses = []
 
-        # ---------------------------------------------------------------------------- #
-        #                              make cats sick                                  #
-        # ---------------------------------------------------------------------------- #
-        random_number = int(random.random() * game.config["condition_related"][f"{game.clan.game_mode}_illness_chance"])
-        if not cat.dead and not cat.is_ill() and random_number <= 10 and not event_string:
-            season_dict = ILLNESSES_SEASON_LIST[season]
-            possible_illnesses = []
+                # pick up possible illnesses from the season dict
+                for illness_name in season_dict:
+                    possible_illnesses += [illness_name] * season_dict[illness_name]
 
-            # pick up possible illnesses from the season dict
-            for illness_name in season_dict:
-                possible_illnesses += [illness_name] * season_dict[illness_name]
+                # pick a random illness from those possible
+                random_index = int(random.random() * len(possible_illnesses))
+                chosen_illness = possible_illnesses[random_index]
+                # if a non-kitten got kittencough, switch it to whitecough instead
+                if chosen_illness == 'kittencough' and cat.status != 'kitten':
+                    chosen_illness = 'whitecough'
+                # make em sick
+                cat.get_ill(chosen_illness)
 
-            # pick a random illness from those possible
-            random_index = int(random.random() * len(possible_illnesses))
-            chosen_illness = possible_illnesses[random_index]
-            # if a non-kitten got kittencough, switch it to whitecough instead
-            if chosen_illness == 'kittencough' and cat.status != 'kitten':
-                chosen_illness = 'whitecough'
-            # make em sick
-            cat.get_ill(chosen_illness)
-
-            # create event text
-            if chosen_illness in ["running nose", "stomachache"]:
-                event_string = f"{cat.name} has gotten a {chosen_illness}."
-            else:
-                event_string = f"{cat.name} has gotten {chosen_illness}."
+                # create event text
+                if chosen_illness in ["running nose", "stomachache"]:
+                    event_string = f"{cat.name} has gotten a {chosen_illness}."
+                else:
+                    event_string = f"{cat.name} has gotten {chosen_illness}."
 
         # if an event happened, then add event to cur_event_list and save death if it happened.
         if event_string:
@@ -88,7 +89,7 @@ class Condition_Events():
 
         return triggered
 
-    def handle_injuries(self, cat, other_cat, alive_kits, war, enemy_clan, season):
+    def handle_injuries(self, cat, other_cat=None, alive_kits=None, war=None, enemy_clan=None, season=None):
         """ 
         This function handles overall the injuries in 'expanded' (or 'cruel season') game mode.
         Returns: boolean - if an event was triggered
@@ -107,12 +108,9 @@ class Condition_Events():
 
         # handle if the current cat is already injured
         if cat.is_injured() and game.clan.game_mode != 'classic':
-            pregnant = False
             for injury in cat.injuries:
                 if injury == 'pregnant':
-                    pregnant = True
-            if pregnant:
-                return triggered
+                    return triggered
             triggered, event_string = self.handle_already_injured(cat)
             text = event_string
         else:
@@ -137,7 +135,8 @@ class Condition_Events():
 
             if triggered:
                 possible_events = self.generate_events.possible_short_events(cat.status, cat.age, "injury")
-                final_events = self.generate_events.filter_possible_short_events(possible_events, cat, other_cat, war, enemy_clan, other_clan, alive_kits)
+                final_events = self.generate_events.filter_possible_short_events(possible_events, cat, other_cat, war,
+                                                                                 enemy_clan, other_clan, alive_kits)
 
                 other_clan_name = f'{other_clan.name}Clan'
                 enemy_clan = f'{enemy_clan}'
@@ -321,8 +320,7 @@ class Condition_Events():
                         for x in conditions:
                             if x in scarless_conditions:
                                 possible_conditions.append(x)
-
-                        if len(possible_conditions) > 0 and not int(random.random() * 40):
+                        if len(possible_conditions) > 0 and not int(random.random() * game.config["condition_related"]["permanent_condition_chance"]):
                             perm_condition = random.choice(possible_conditions)
                         else:
                             return perm_condition
@@ -351,7 +349,7 @@ class Condition_Events():
         illness_progression = {
             "running nose": "whitecough",
             "kittencough": "whitecough",
-            "whitecough": "yellowcough",
+            "whitecough": "greencough",
             "greencough": "yellowcough",
             "yellowcough": "redcough",
             "an infected wound": "a festering wound",
@@ -475,9 +473,15 @@ class Condition_Events():
             if cat.dead:
                 triggered = True
 
-                possible_string_list = INJURY_DEATH_STRINGS[injury]
-                event = random.choice(possible_string_list)
+                try:
+                    possible_string_list = INJURY_DEATH_STRINGS[injury]
+                    event = random.choice(possible_string_list)
+                except:
+                    print(f'WARNING: {injury} does not have an injury death string, placeholder used')
+                    event = "m_c was killed by their injuries."
+
                 event = event_text_adjust(Cat, event, cat)
+
                 if cat.status == 'leader':
                     history_text = event.replace(cat.name, " ")
                     cat.died_by.append(history_text.strip())
@@ -506,7 +510,8 @@ class Condition_Events():
                         random_index = int(random.random() * len(possible_string_list))
                         event = possible_string_list[random_index]
                     except KeyError:
-                        print(f"WARNING: {injury} couldn't be found in the healed strings dict! placeholder string was used.")
+                        print(
+                            f"WARNING: {injury} couldn't be found in the healed strings dict! placeholder string was used.")
                         event = "m_c's injury has healed."
                     event = event_text_adjust(Cat, event, cat, other_cat=None)  # adjust the text
                     game.herb_events_list.append(event)
@@ -664,6 +669,7 @@ class Condition_Events():
             'senior adult': 50,
             'senior': 0
         }
+
         if not triggered and not cat.dead and not cat.retired and cat.status not in \
                 ['leader', 'medicine cat', 'kitten', 'newborn', 'medicine cat apprentice', 'mediator',
                  'mediator apprentice'] \
@@ -673,7 +679,10 @@ class Condition_Events():
                     chance = int(retire_chances.get(cat.age))
                     if not int(random.random() * chance):
                         event_types.append('ceremony')
-                        if game.clan.leader is not None:
+                        if cat.age == 'adolescent':
+                            event = f"{cat.name} decides they'd rather spend their time helping around camp and entertaining the " \
+                                    f"kits, they're warmly welcomed into the elder's den."
+                        elif game.clan.leader is not None:
                             if not game.clan.leader.dead and not game.clan.leader.exiled and \
                                     not game.clan.leader.outside and cat.moons < 120:
                                 event = f"{game.clan.leader.name}, seeing {cat.name} struggling the last few moons " \
@@ -696,7 +705,10 @@ class Condition_Events():
 
                 elif cat.permanent_condition[condition]['severity'] == 'severe':
                     event_types.append('ceremony')
-                    if game.clan.leader is not None:
+                    if cat.age == 'adolescent':
+                        event = f"{cat.name} decides they'd rather spend their time helping around camp and entertaining the " \
+                            f"kits, they're warmly welcomed into the elder's den."
+                    elif game.clan.leader is not None:
                         if not game.clan.leader.dead and not game.clan.leader.exiled \
                                 and not game.clan.leader.outside and cat.moons < 120:
                             event = f"{game.clan.leader.name}, seeing {cat.name} struggling the last few moons " \

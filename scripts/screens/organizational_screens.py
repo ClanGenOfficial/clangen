@@ -158,7 +158,6 @@ class StartScreen(Screens):
             manager=MANAGER,
             layer_starting_height=3)
 
-        self.error_label.disable()
 
         self.error_gethelp = pygame_gui.elements.UITextBox(
             "Please join the Discord server and ask for technical support. " \
@@ -854,7 +853,7 @@ class StatsScreen(Screens):
                     elder_num += 1
                 elif cat.status == 'medicine cat':
                     medcat_num += 1
-            elif (cat.status in ['kittypet', 'loner', 'rogue']
+            elif (cat.status in ['kittypet', 'loner', 'rogue', 'former Clancat']
                   or cat.outside) and not cat.dead:
                 other_num += 1
             else:
