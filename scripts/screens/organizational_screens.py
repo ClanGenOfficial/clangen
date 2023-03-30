@@ -775,9 +775,6 @@ class SettingsScreen(Screens):
             object_id=get_text_box_theme("#text_box_30_horizcenter_secret"),
             container=self.checkboxes_text['info_container'],
             manager=MANAGER)
-        
-        self.checkboxes_text['contributors_text_box'].disable()
-        
 
         self.checkboxes_text['info_text_box2'] = pygame_gui.elements.UITextBox(
             self.info_text_2,
