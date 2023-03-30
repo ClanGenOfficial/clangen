@@ -3,7 +3,8 @@
         "id": "gen_medicine_cat",
         "thoughts": [
             "Regrets leaving the Clan one medicine cat short",
-            "Is worried about the Clan's ability to survive the latest illness"
+            "Is worried about the Clan's ability to survive the latest illness",
+            "Looks after the newborns in StarClan"
         ],
         "main_status_constraint": [
             "medicine cat",
@@ -11,18 +12,53 @@
         ]
     },
     {
-        "id": "medicine_cat_dead_medicine_cat",
+        "id": "medicine_cat_to_alive_medicine_cat",
         "thoughts": [
             "Wishes they could point r_c to where the elusive herbs are",
-            "Has an important message for r_c"
+            "Has an important message for r_c",
+            "Is distraught that they can’t help r_c take care of the Clan",
+            "Sends an omen of things to come to r_c",
+            "Is excited that they are able to help c_n by sharing a new prophecy",
+            "Whispers useful suggestions in r_c's ears",
+            "Sends a vision of an undiscovered herb patch to r_c"
         ],
         "main_status_constraint": [
             "medicine cat",
             "medicine cat apprentice"
         ],
         "random_status_constraint": [
-            "mediator",
-            "mediator apprentice"
+            "medicine cat",
+            "medicine cat apprentice"
+        ],
+        "random_living_status": [
+            "living",
+            "starclan"
+        ]
+    },
+    {
+        "id": "medicine_cat_to_alive_medicine_apprentice",
+        "thoughts": [
+            "Walks in the dreams of r_c sharing information to help the Clan",
+            "Hopes r_c knows how proud they are of them"
+        ],
+        "main_status_constraint": [
+            "medicine cat"
+        ],
+        "random_status_constraint": [
+            "medicine cat apprentice"
+        ],
+        "random_living_status": [
+            "living",
+            "starclan"
+        ]
+    },
+    {
+        "id": "medicine_cat_to_alive_random",
+        "thoughts": [
+            "Sends an omen of things to come to r_c"
+        ],
+        "main_status_constraint": [
+            "medicine cat"
         ],
         "random_living_status": [
             "living",
