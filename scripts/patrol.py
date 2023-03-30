@@ -859,21 +859,23 @@ class Patrol():
                     if len(fail_text) >= 4:
                         if fail_text[3]:
                             outcome = 3
+                        elif fail_text[2]:
+                            outcome = 2
                     elif len(fail_text) >= 3:
                         if fail_text[2]:
                             outcome = 2
                     else:
                         outcome = 0
-            else:
-                # if /still/ no outcome is picked then double check that an outcome 0 is available,
-                # if it isn't, then try to injure and then kill the cat
-                if not fail_text[0]:
-                    # attempt death outcome
-                    if fail_text[2]:
-                        outcome = 2
-                    # attempt injure outcome
-                    elif fail_text[3]:
-                        outcome = 3
+                        
+            # if /still/ no outcome is picked then double check that an outcome 0 is available,
+            # if it isn't, then try to injure and then kill the cat
+            if not fail_text[0]:
+                # attempt death outcome
+                if fail_text[2]:
+                    outcome = 2
+                # attempt injure outcome
+                elif fail_text[3]:
+                    outcome = 3
 
             if not antagonize or antagonize and "antag_death" in self.patrol_event.tags:
                 if outcome == 2:
