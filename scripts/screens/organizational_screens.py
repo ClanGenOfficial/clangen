@@ -745,7 +745,7 @@ class SettingsScreen(Screens):
         self.checkboxes_text['info_text_box'] = pygame_gui.elements.UITextBox(
             self.info_text,
             scale(pygame.Rect((0, 0), (1180, -1))),
-            object_id=get_text_box_theme("text_box_30_horizcenter"),
+            object_id=get_text_box_theme("#text_box_30_horizcenter"),
             container=self.checkboxes_text['info_container'],
             manager=MANAGER)
         info_rect = self.checkboxes_text['info_text_box'].get_relative_rect()
@@ -753,7 +753,7 @@ class SettingsScreen(Screens):
         self.checkboxes_text['info_text_box'] = pygame_gui.elements.UITextBox(
             self.info_text,
             info_rect,
-            object_id=get_text_box_theme("text_box_30_horizcenter"),
+            object_id=get_text_box_theme("#text_box_30_horizcenter"),
             container=self.checkboxes_text['info_container'],
             manager=MANAGER)
 
@@ -778,7 +778,7 @@ class SettingsScreen(Screens):
         self.checkboxes_text['info_text_box2'] = pygame_gui.elements.UITextBox(
             self.info_text_2,
             scale(pygame.Rect((0, contributors_rect.bottom), (1180, -1))),
-            object_id=get_text_box_theme("text_box_30_horizcenter"),
+            object_id=get_text_box_theme("#text_box_30_horizcenter"),
             container=self.checkboxes_text['info_container'],
             manager=MANAGER)
         info_rect2 = self.checkboxes_text['info_text_box2'].get_relative_rect()
@@ -786,7 +786,7 @@ class SettingsScreen(Screens):
         self.checkboxes_text['info_text_box2'] = pygame_gui.elements.UITextBox(
             self.info_text_2,
             info_rect2,
-            object_id=get_text_box_theme("text_box_30_horizcenter"),
+            object_id=get_text_box_theme("#text_box_30_horizcenter"),
             container=self.checkboxes_text['info_container'],
             manager=MANAGER)
         
