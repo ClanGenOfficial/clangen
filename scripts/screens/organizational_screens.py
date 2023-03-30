@@ -442,6 +442,8 @@ class SettingsScreen(Screens):
     bool = {True: 'Yes', False: 'No', None: 'None'}
     sub_menu = 'general'
 
+    secret_clicks = 0
+
     # This is set to the current settings when the screen is opened.
     # All edits are made directly to game.settings, however, when you
     #  leave the screen,game.settings will be reverted based on this variable
@@ -483,7 +485,11 @@ class SettingsScreen(Screens):
         """
         if event.type == pygame_gui.UI_TEXT_BOX_LINK_CLICKED:
             if event.link_target == "__contributors":
-                print("idfk if its just my vnc but this triggeres twice, remember to account for that")
+                self.secret_clicks += 1
+                if self.secret_clicks == 8:
+                    print("potato time")
+                    for a in game.config['fun']:
+                        game.config['fun'][a] = True
             else:
                 if platform.system() == 'Darwin':
                     subprocess.Popen(["open", "-u", event.link_target])
