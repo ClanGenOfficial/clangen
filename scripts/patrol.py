@@ -866,7 +866,7 @@ class Patrol():
                             outcome = 2
                     else:
                         outcome = 0
-                        
+
             # if /still/ no outcome is picked then double check that an outcome 0 is available,
             # if it isn't, then try to injure and then kill the cat
             if not fail_text[0]:
