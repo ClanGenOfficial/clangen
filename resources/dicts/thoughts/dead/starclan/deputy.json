@@ -1,11 +1,25 @@
 [
     {
-        "id": "deputy_dead_deputy",
+        "id": "gen_dead_deputy",
         "thoughts": [
-            "Wishes they could speak to r_c to learn how to assign patrols better"
+            "Watches c_n proudly",
+            "Wishes they could have served c_n for longer"
+        ]
+    },
+    {
+        "id": "dead_deputy_to_alive_deputy",
+        "thoughts": [
+            "Is proud of r_c for their leadership",
+            "Thinks l_n made a great choice by picking r_c as c_n's deputy"
+        ],
+        "main_status_constraint": [
+            "deputy"
         ],
         "random_status_constraint": [
             "deputy"
+        ],
+        "random_living_status": [
+            "living"
         ]
     }
 ]

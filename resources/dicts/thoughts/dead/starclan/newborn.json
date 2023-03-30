@@ -1,28 +1,65 @@
 [
     {
-        "id": "gen_newborn",
+        "id": "gen_dead_newborn",
         "thoughts": [
             "Mewls pitifully for milk",
-            "Tries to figure out all of the smells around them",
             "Snoozes peacefully",
-            "Tries to open their eyes, but it's all blurry"
+            "Tries to open their eyes, but it's all blurry",
+            "Wobbles around StarClan happily",
+            "Is drinking milk from a StarClan queen",
+            "Tries opening their eyes to see the 'stars' everyone is talking about",
+            "Is drinking milk from a StarClan queen",
+            "Tries to practice walking to play with the other cats",
+            "Attempts to snarl but can only manage a tiny mewl",
+            "Rolls through the starry grass"
         ],
         "main_age_constraint": [
             "newborn"
         ]
     },
     {
-        "id": "gen_newborn_to_parent",
+        "id": "gen_dead_newborn_to_alive_parent",
         "thoughts":[
-            "Snuggles closer to r_c",
-            "Smells r_c and immediately perks up",
-            "Mews at r_c as they shift in the nest"
+            "Thinks they heard r_c's voice",
+            "Is mewling for r_c",
+            "Searches for r_c's scent",
+            "Blindly reaches out for r_c"
         ],
         "main_age_constraint": [
             "newborn"
         ],
         "relationship_constraint": [
             "child/parent"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    },
+    {
+        "id": "gen_dead_newborn_to_dead_other",
+        "thoughts":[
+            "Is being watched by r_c",
+            "r_c is bathing them",
+            "Is tucked under r_c's belly",
+            "Blindly swipes at r_c's tail"
+        ],
+        "main_age_constraint": [
+            "newborn"
+        ],
+        "random_living_status": [
+            "starclan"
+        ]
+    },
+    {
+        "id": "gen_dead_newborn_to_alive_sibling",
+        "thoughts":[
+            "Wants to let r_c know they're okay"
+        ],
+        "main_age_constraint": [
+            "newborn"
+        ],
+        "relationship_constraint": [
+            "siblings"
         ],
         "random_living_status": [
             "living"

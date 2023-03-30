@@ -38,7 +38,7 @@
     {
         "id": "medicine_cat_to_alive_medicine_apprentice",
         "thoughts": [
-            "Walks in the dreams of r_c sharing information to help the Clan",
+            "Walks in the dreams of r_c, sharing information to help the Clan",
             "Hopes r_c knows how proud they are of them"
         ],
         "main_status_constraint": [
@@ -58,10 +58,24 @@
             "Sends an omen of things to come to r_c"
         ],
         "main_status_constraint": [
-            "medicine cat"
+            "medicine cat",
+            "medicine cat apprentice"
         ],
         "random_living_status": [
             "living",
+            "starclan"
+        ]
+    },
+    {
+        "id": "medicine_cat_to_random_starclan",
+        "thoughts": [
+            "Shares their knowledge with r_c"
+        ],
+        "main_status_constraint": [
+            "medicine cat",
+            "medicine cat apprentice"
+        ],
+        "random_living_status": [
             "starclan"
         ]
     }
