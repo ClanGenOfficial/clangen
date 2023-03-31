@@ -27,6 +27,7 @@ from scripts.utility import update_sprite, get_current_season, quit # pylint: di
 from scripts.cat.cats import Cat, cat_class
 from scripts.cat.names import names
 from scripts.clan_resources.freshkill import Freshkill_Pile, Nutrition
+from scripts.cat.sprites import spriteSize
 from sys import exit  # pylint: disable=redefined-builtin
 
 
@@ -224,6 +225,49 @@ class Clan():
                             ([688, 1162], "xy"), ([798, 1168], "xy"),
                             ([901, 1166], "xy"), ([1010, 1134], "xy")]
         },
+        "Mountainouscamp2": {
+            'leader den': (798, 186),
+            'medicine den': (68, 372),
+            'nursery': (1178, 326),
+            'clearing': (720, 589),
+            'apprentice den': (164, 860),
+            'warrior den': (1180, 860),
+            'elder den': (696, 980),
+            "leader place": [([694, 222], 'x'), ([726, 322], 'xy'),
+                             ([826, 311], 'xy'), ([840, 482], 'x')],
+            "medicine place": [([14, 658], 'xy'), ([196, 524], 'xy'),
+                               ([300, 500], 'xy'), ([408, 550], 'xy'),
+                               ([200, 624], 'xy'), ([304, 600], 'xy'),
+                               ([406, 652], 'xy')],
+            "nursery place": [([1108, 474], 'x'),
+                              ([1280, 440], 'xy'), ([1214, 540], 'xy'),
+                              ([1314, 540], 'xy'), ([1414, 496], 'y'),
+                              ([1170, 640], 'xy'), ([1272, 640], 'xy'),
+                              ([1274, 640], 'xy'), ([1170, 740], 'xy'),
+                              ([1272, 740], 'xy'), ([1470, 740], 'xy')],
+            "clearing place": [([358, 262], 'x'), ([528, 252], 'xy'),
+                               ([584, 420], 'xy'), ([598, 592], 'xy'),
+                               ([532, 694], 'xy'), ([522, 798], 'xy'),
+                               ([566, 902], 'xy'), ([632, 698], 'xy'),
+                               ([626, 800], 'xy'), ([762, 648], 'xy'),
+                               ([734, 752], 'xy'), ([834, 750], 'y'),
+                               ([886, 628], 'xy'), ([967, 769], 'xy'),
+                               ([858, 850], 'xy'), ([730, 856], 'xy')],
+            'apprentice place': [([136, 916], 'xy'), ([238, 920], 'xy'),
+                                 ([340, 928], 'xy'), ([138, 1018], 'xy'),
+                                 ([240, 1022], 'xy'), ([340, 1030], 'xy'),
+                                 ([324, 1162], 'xy'), ([426, 1134], 'xy')],
+            'warrior place': [([1072, 856], 'y'), ([1092, 960], 'xy'),
+                              ([1096, 1060], 'xy'), ([1192, 922], 'xy'),
+                              ([1198, 1024], 'xy'), ([1198, 1126], 'xy'),
+                              ([1294, 918], 'xy'), ([1302, 1034], 'xy'),
+                              ([1300, 1138], 'xy'), ([1396, 934], 'xy'),
+                              ([1406, 1034], 'xy'), ([1400, 1134], 'xy')],
+            'elder place': [([652, 1038], 'xy'), ([752, 1038], 'xy'), 
+                            ([856, 1038], 'xy'), ([960, 1020], 'xy'),
+                            ([628, 1140], 'xy'), ([730, 1140], 'xy'),
+                            ([832, 1140], 'xy')]
+        },
         "Beachcamp1": {
             'leader den': (798, 188),
             'medicine den': (122, 338),
@@ -399,7 +443,7 @@ class Clan():
             self.camp_bg = camp_bg
             self.game_mode = game_mode
             self.pregnancy_data = {}
-            self.reputation = 80
+            self._reputation = 80
             self.starting_members = starting_members
             if game_mode in ['expanded', 'cruel season']:
                 self.freshkill_pile = Freshkill_Pile()
@@ -415,6 +459,11 @@ class Clan():
             it's a range from 1-100, with 30-70 being neutral, 71-100 being "welcoming",
             and 1-29 being "hostile". if you're hostile to outsiders, they will VERY RARELY show up.
             """
+            
+            # This only contains one thing right now, but will be expanded. 
+            self.clan_settings = {
+                "show_fav": True
+            }
 
     def create_clan(self):
         """
@@ -447,7 +496,7 @@ class Clan():
 
         # give thoughts,actions and relationships to cats
         for cat_id in Cat.all_cats:
-            Cat.all_cats.get(cat_id).create_all_relationships()
+            Cat.all_cats.get(cat_id).init_all_relationships()
             Cat.all_cats.get(cat_id).backstory = 'clan_founder'
             if Cat.all_cats.get(cat_id).status == 'apprentice':
                 Cat.all_cats.get(cat_id).status_change('apprentice')
@@ -678,6 +727,7 @@ class Clan():
 
         self.save_herbs(game.clan)
         self.save_disaster(game.clan)
+        self.save_clan_settings()
         if game.clan.game_mode in ['expanded', 'cruel season']:
             self.save_freshkill_pile(game.clan)
 
@@ -692,6 +742,11 @@ class Clan():
         with open(get_save_dir() + '/currentclan.txt', 'w',
                   encoding='utf-8') as write_file:
             write_file.write(self.name)
+            
+    def save_clan_settings(self):
+        with open(get_save_dir() + f'/{self.name}/clan_settings.json', 'w',
+                  encoding='utf-8') as write_file:
+            write_file.write(ujson.dumps(self.clan_settings, indent=4))
 
     def load_clan(self):
         """
@@ -706,6 +761,8 @@ class Clan():
         else:
             game.switches[
                 'error_message'] = "There was an error loading the clan.json"
+            
+        self.load_clan_settings()
 
     def load_clan_txt(self):
         """
@@ -973,6 +1030,13 @@ class Clan():
             self.load_freshkill_pile(game.clan)
         game.switches['error_message'] = ''
 
+    def load_clan_settings(self):  
+        if os.path.exists(get_save_dir() + f'/{game.switches["clan_list"][0]}/clan_settings.json'):
+            with open(get_save_dir() + f'/{game.switches["clan_list"][0]}/clan_settings.json', 'r',
+                    encoding='utf-8') as write_file:
+                game.clan.clan_settings = ujson.loads(write_file.read())
+
+
     def load_herbs(self, clan):
         """
         TODO: DOCS
@@ -1107,7 +1171,8 @@ class Clan():
         if not clan.name:
             return
         file_path = get_save_dir() + f"/{clan.name}/disasters/primary.json"
-
+        if not os.path.isdir(f'{get_save_dir()}/{clan.name}/disasters'):
+            os.mkdir(f'{get_save_dir()}/{clan.name}/disasters')
         if clan.primary_disaster:
             disaster = {
                 "event": clan.primary_disaster.event,
@@ -1219,6 +1284,21 @@ class Clan():
             )
 
 
+    ## Properties
+    
+    @property
+    def reputation(self):
+        return self._reputation
+    
+    @reputation.setter
+    def reputation(self, a: int):
+        self._reputation = int(self._reputation + a)
+        if self._reputation > 100:
+            self._reputation = 100
+        elif self._reputation < 0:
+            self._reputation = 0
+    
+
 class OtherClan():
     """
     TODO: DOCS
@@ -1263,7 +1343,7 @@ class StarClan():
         """
         TODO: DOCS
         """
-        white = pygame.Surface((50, 50))
+        white = pygame.Surface((spriteSize, spriteSize))
         fade_level = 0
         if cat.dead:
             for f in self.forgotten_stages:  # pylint: disable=consider-using-dict-items

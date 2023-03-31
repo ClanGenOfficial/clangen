@@ -1,0 +1,17 @@
+[
+    {
+        "id": "dead_med_cat_to_alive_med_app",
+        "thoughts": [
+            "Walks in the dreams of r_c, sharing information to help the Clan",
+            "Hopes r_c knows how proud they are of them",
+            "Wishes they could point r_c to where the elusive herbs are"
+        ],
+        "random_status_constraint": [
+            "medicine cat apprentice"
+        ],
+        "random_living_status": [
+            "living",
+            "starclan"
+        ]
+    }
+]

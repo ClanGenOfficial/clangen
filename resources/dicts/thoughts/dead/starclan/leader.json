@@ -1,0 +1,24 @@
+[
+    {
+        "id": "gen_dead_leader",
+        "thoughts": [
+            "Watches c_n proudly",
+            "Hopes they have been a good leader",
+            "Is contemplating their legacy"
+        ]
+    },
+    {
+        "id": "dead_leader_to_alive_leader",
+        "thoughts": [
+            "Approves of r_c's leadership choices",
+            "Walks in r_c's dreams to impart wisdom and guidance",
+            "Thinks r_c made some bad decisions lately"
+        ],
+        "random_status_constraint": [
+            "leader"
+        ],
+        "random_living_status": [
+            "living"
+        ]
+    }
+]

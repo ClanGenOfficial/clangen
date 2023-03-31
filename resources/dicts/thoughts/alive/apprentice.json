@@ -1,0 +1,153 @@
+[
+    {
+        "id": "apprentice_alive_mediator_app",
+        "thoughts": [
+            "Wishes they could train with r_c",
+            "Teases r_c for not training to be a warrior"
+        ],
+        "random_status_constraint": [
+            "mediator apprentice",
+            "medicine cat apprentice"
+        ]
+    },
+    {
+        "id": "apprentice_alive_deputy",
+        "thoughts": [
+            "Wants r_c to assign them to the next patrol",
+            "Is watching and learning from r_c"
+        ],
+        "random_status_constraint": [
+            "deputy"
+        ]
+    },
+    {
+        "id": "apprentice_alive_warrior",
+        "thoughts": [
+            "Is watching and learning from r_c",
+            "Is asking r_c questions about warrior life"
+        ],
+        "random_status_constraint": [
+            "warrior"
+        ]
+    },
+    {
+        "id": "apprentice_alive_apprentice",
+        "thoughts": [
+            "Is learning how to hunt with r_c",
+            "Teases r_c for missing an easy catch",
+            "Is happy that they are going to train with r_c",
+            "Is having a hunting contest with r_c",
+            "Helps r_c perfect a fighting pose"
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ]
+    },
+    {
+        "id": "apprentice_dead_warrior",
+        "thoughts": [
+            "Wishes they could learn from r_c",
+            "Wants to be a great warrior, just like r_c"
+        ],
+        "random_status_constraint": [
+            "warrior"
+        ],
+        "random_living_status": [
+            "starclan"
+        ]
+    },
+    {
+        "id": "formerly_a_rogue_warrior_apprentice",
+        "thoughts": [
+            "Got scolded for eating what they've caught"
+        ],
+        "backstory_constraint": {
+            "m_c": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2"]
+        }
+    },
+    {
+        "id": "thoughtful_apprentice",
+        "thoughts": [
+            "Offered to go on the dawn patrol with their mentor"
+        ],
+        "main_trait_constraint": [
+            "thoughtful"
+        ]
+    },
+    {
+        "id": "patient_warrior_apprentice",
+        "thoughts": [
+            "Is busy mastering a fighting technique",
+            "Spent all morning mastering and practicing the hunting crouch"
+        ],
+        "main_trait_constraint": [
+            "patient"
+        ]
+    },
+    {
+        "id": "insecure_warrior_apprentice",
+        "thoughts": [
+            "Is wondering if they are good enough to be a warrior...",
+            "Is reluctant to spar with their mentor today",
+            "Doesn't think their hauls on hunting patrols have been substantial enough"
+        ],
+        "main_trait_constraint": [
+            "insecure"
+        ]
+    },
+    {
+        "id": "fierce_warrior_apprentice",
+        "thoughts": [
+            "Is showing off their new battle moves",
+            "Is pushing hard for more battle training",
+            "Was recently chastised by their mentor for reckless behaviour out on patrol",
+            "Practiced battle moves with their claws out"
+        ],
+        "main_trait_constraint": [
+            "fierce"
+        ]
+    },
+    {
+        "id": "confident_warrior_apprentice",
+        "thoughts": [
+            "Is sure that they'll be made into a warrior soon"
+        ],
+        "main_trait_constraint": [
+            "confident"
+        ]
+    },
+    {
+        "id": "bold_warrior_apprentice",
+        "thoughts": [
+            "Taunted rival Clan apprentices at the border",
+            "Is looking to challenge a warrior to a sparring match"
+        ],
+        "main_status_constraint": [
+            "apprentice"
+        ],
+        "main_trait_constraint": [
+            "bold"
+        ]
+    },
+    {
+        "id": "bloodthirsty_warrior_apprentice",
+        "thoughts": [
+            "Pesters their mentor for more battle training",
+            "Is practicing forbidden battle moves",
+            "Drew blood during their battle training"
+        ],
+        "main_trait_constraint": [
+            "bloodthirsty"
+        ]
+    },
+    {
+        "id": "ambitious_warrior_apprentice",
+        "thoughts": [
+            "Begs to be made a warrior early",
+            "Has been catching the most prey out of all the apprentices"
+        ],
+        "main_trait_constraint": [
+            "ambitious"
+        ]
+    }   
+]

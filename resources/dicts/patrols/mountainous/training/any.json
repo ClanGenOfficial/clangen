@@ -103,7 +103,7 @@
     "tags": ["training", "platonic", "comfort", "trust", "blunt_force_injury", "death", "scar", "LEFTEAR", "p_l_to_r_c", "s_c_to_r_c", "patrol_to_p_l", "patrol_to_r_c"],
     "intro_text": "r_c is trailing behind the patrol when there is a mighty clatter of stones from below them. They look around wildly, just in time for the world to tip upside-down as the scree slope beneath them collapses.",
     "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
-    "chance_of_success": 50,
+    "chance_of_success": 20,
     "exp": 20,
     "success_text": [
         "Their Clanmates come running at their yowls, and r_c is soon freed, shaken but unharmed. The patrol settles down as everyone comforts each other.",
@@ -450,7 +450,7 @@
 	"tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
 	"intro_text": "Touring through the territory, p_l spots a thrush, and begins to quiz the apprentices on what the best strategy is for catching it.",
 	"decline_text": "Thinking better of it, the cats try to hunt instead.",
-	"chance_of_success": 90,
+	"chance_of_success": 40,
 	"exp": 20,
 	"success_text": [
     	"app1 tests the wind. They correctly identify that because of the wind they'd need to approach the thrush from the side, but app2 counters by pointing out a great vantage point to pounce from, if the wind wasn't against them. p_l purrs, complimenting them both on how much they've learned.",
@@ -473,7 +473,7 @@
 	"tags": ["adult_stat", "training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
 	"intro_text": "Touring through the territory, p_l spots a thrush, and begins to quiz the apprentices on what the best strategy is for catching it.",
 	"decline_text": "Thinking better of it, the cats try to hunt instead.",
-	"chance_of_success": 90,
+	"chance_of_success": 40,
 	"exp": 15,
 	"success_text": [
     	"app1 tests the wind. They correctly identify that because of the wind they'd need to approach the thrush from the side, but app2 counters by pointing out a great vantage point to pounce from, if the wind wasn't against them. p_l purrs, complimenting them both on how much they've learned.",

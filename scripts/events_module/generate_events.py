@@ -271,13 +271,13 @@ class GenerateEvents:
                     cat_to = dislike_relation[y].cat_to
                     if cat_to == cat:
                         hate = True
-                        print('MURDER ATTEMPT', other_cat.name, 'to', cat.name)
+                        # print('MURDER ATTEMPT', other_cat.name, 'to', cat.name)
                         break
                 for y in range(len(jealous_relation)):
                     cat_to = jealous_relation[y].cat_to
                     if cat_to == cat:
                         hate = True
-                        print('MURDER ATTEMPT', other_cat.name, 'to', cat.name)
+                        # print('MURDER ATTEMPT', other_cat.name, 'to', cat.name)
                         break
                 if not hate:
                     continue
@@ -400,7 +400,7 @@ class GenerateEvents:
             final_events.append(event)
 
         if murder_events and (other_cat.trait in ["vengeful", "bloodthirsty", "cold"] or not int(random.random() * 3)):
-            print('WE KILL TONIGHT')
+            # print('WE KILL TONIGHT')
             return murder_events
         return final_events
 
