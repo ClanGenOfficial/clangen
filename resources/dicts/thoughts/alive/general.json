@@ -781,9 +781,9 @@
             "mediator apprentice",
             "medicine cat apprentice"
         ],
-        "main_backstory_constraint": [
-            "rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2"
-        ],
+        "backstory_constraint": {
+            "m_c": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2"]
+        },
         "random_status_constraint": [
             "warrior"
         ]
@@ -801,9 +801,9 @@
             "mediator apprentice",
             "medicine cat apprentice"
         ],
-        "main_backstory_constraint": [
-            "rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2"
-        ],
+        "backstory_constraint": {
+            "m_c": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2"]
+        },
         "random_status_constraint": [
             "apprentice"
         ]
@@ -860,7 +860,7 @@
             "Wonders what they even need this training method for",
             "Brags about all the prey they caught when they were a rogue",
             "Can't help but be intrigued by the Warrior Code",
-            "Tells stories about their time as a rogue to other apprentice... with slight embellishments",
+            "Tells stories about their time as a rogue to other apprentices... with slight embellishments",
             "Is trying to memorize the warrior code"
         ],
         "main_status_constraint": [
@@ -868,9 +868,9 @@
             "mediator apprentice",
             "medicine cat apprentice"
         ],
-        "main_backstory_constraint": [
-            "rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2"
-        ]
+        "backstory_constraint": {
+            "m_c": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2"]
+        }
     },
     {
         "id": "shameless_apprentice",

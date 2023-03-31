@@ -61,9 +61,9 @@
         "thoughts": [
             "Got scolded for eating what they've caught"
         ],
-        "main_backstory_constraint": [
-            "formerly a rogue"
-        ]
+        "backstory_constraint": {
+            "m_c": ["rogue1", "rogue2", "rogue3", "refugee4", "tragedy_survivor2"]
+        }
     },
     {
         "id": "thoughtful_apprentice",
