@@ -19,7 +19,7 @@ class Thoughts():
         if random_cat in main_cat.relationships:
             relationship = main_cat.relationships[random_cat]
 
-        if "siblings" in constraint and main_cat.is_sibling(random_cat):
+        if "siblings" in constraint and not main_cat.is_sibling(random_cat):
             return False
 
         if "mates" in constraint and main_cat.mate != random_cat.ID:
@@ -73,12 +73,14 @@ class Thoughts():
 
         # Contraints for the status of the main cat
         if 'main_status_constraint' in thought:
-            if 'main_status_constraint' in thought and main_cat.status not in thought['main_status_constraint']:
+            if ('main_status_constraint' in thought and main_cat.status not in thought['main_status_constraint']) or\
+                ('any' not in thought['main_status_constraint']):
                 return False
 
         # Contraints for the status of the random cat
         if 'random_status_constraint' in thought and random_cat:
-            if random_cat.status not in thought['random_status_constraint']:
+            if (random_cat.status not in thought['random_status_constraint'])or\
+                ('any' not in thought['random_status_constraint']):
                 return False
 
         # main cat age contraint
@@ -156,10 +158,12 @@ class Thoughts():
         
         if game_mode != "classic" and "perm_conditions" in thought:
             if "m_c" in thought["perm_conditions"]:
-                if not [i for i in main_cat.permanent_condition if i in thought["perm_conditions"]["m_c"]]:
+                if not [i for i in main_cat.permanent_condition if i in thought["perm_conditions"]["m_c"]]\
+                    or [main_cat.permanent_condition and "any" in thought['perm_conditions']["m_c"]]:
                     return False
             if "r_c" in thought["perm_conditions"] and random_cat:
-                if not [i for i in random_cat.permanent_condition if i in thought["perm_conditions"]["r_c"]]:
+                if not [i for i in random_cat.permanent_condition if i in thought["perm_conditions"]["r_c"]]\
+                    or [random_cat.permanent_condition and "any" in thought['perm_conditions']["r_c"]]:
                     return False
 
         return True
