@@ -1047,7 +1047,7 @@ class Patrol():
             kit = True
             age = randint(1, 5)
             status = "kitten"
-            backstory = ['abandoned2', 'abandoned1', 'abandoned3']
+            chosen_backstory = ['abandoned2', 'abandoned1', 'abandoned3']
         elif "apprentice" in attribute_list:
             status = "apprentice"
         elif "warrior" in attribute_list:
@@ -1110,7 +1110,7 @@ class Patrol():
                 print('parent is alive')
                 kit_backstory = ['outsider_roots2']
             # make sure kittens get right age
-            if "litternewborn" in attribute_list:
+            if "newborn" in attribute_list:
                 print('litter is newborn')
                 kit_age = 0
                 kit_thought = "Mewls quietly for milk"
@@ -1131,7 +1131,10 @@ class Patrol():
                 backstory = possible_backstories
             # if none of these tags are present, then it uses the chosen_backstory from before
         else:
-            backstory = chosen_backstory
+            if "dead" in attribute_list:
+                kit_backstory = chosen_backstory
+            else:
+                backstory = chosen_backstory
 
         # we create a single cat
         created_cats = create_new_cat(Cat,

@@ -40,7 +40,7 @@ class Thoughts():
         if "app/mentor" in constraint and random_cat.ID == main_cat.mentor:
             return False
         
-        if "strangers" in constraint and relationship and not (relationship.platonic_like < 1 or relationship.romantic_love < 1):
+        if "strangers" in constraint and relationship and (relationship.platonic_like < 1 or relationship.romantic_love < 1):
             return False
 
         return True
@@ -57,7 +57,7 @@ class Thoughts():
         if "season" in thought:
             if season == None:
                 return False
-            if season not in thought["season"]:
+            elif season not in thought["season"]:
                 return False
 
         # This is for checking camp
@@ -112,7 +112,8 @@ class Thoughts():
                 return False
 
         # Filter for the living status of the random cat. The living status of the main cat
-        # is taken into account in the thought loading process. 
+        # is taken into account in the thought loading process.
+        living_status = None
         if 'random_living_status' in thought:
             if random_cat and not random_cat.dead:
                 living_status = "living"
@@ -126,13 +127,9 @@ class Thoughts():
                 return False
         # this covers if living status isn't stated
         elif 'random_living_status' not in thought:
-            if random_cat and not random_cat.dead:
+            if random_cat and not random_cat.dead and not random_cat.outside:
                 living_status = "living"
-            else:
-                living_status = "dead"
-            if living_status == "living":
-                pass
-            else:
+            if living_status != "living":
                 return False
             
         if 'random_outside_status' in thought:
@@ -147,10 +144,12 @@ class Thoughts():
             
         if game_mode != "classic" and 'has_injuries' in thought:
             if "m_c" in thought['has_injuries']:
-                if not ([i for i in main_cat.injuries if i in thought['has_injuries']["m_c"]] or [i for i in main_cat.illnesses if i in thought['has_injuries']["m_c"]]):
+                if not ([i for i in main_cat.injuries if i in thought['has_injuries']["m_c"]] or [i for i in main_cat.illnesses if i in thought['has_injuries']["m_c"]]\
+                    or [(main_cat.injuries or main_cat.illnesses) and "any" in thought['has_injuries']["m_c"]]):
                     return False
             if "r_c" in thought['has_injuries'] and random_cat:
-                if not ([i for i in random_cat.injuries if i in thought['has_injuries']["r_c"]] or [i for i in random_cat.illnesses if i in thought['has_injuries']["m_c"]]):
+                if not ([i for i in random_cat.injuries if i in thought['has_injuries']["r_c"]] or [i for i in random_cat.illnesses if i in thought['has_injuries']["m_c"]]\
+                    or [(random_cat.injuries or random_cat.illnesses) and "any" in thought['has_injuries']["r_c"]]):
                     return False
         
         if game_mode != "classic" and "perm_conditions" in thought:
@@ -224,5 +223,6 @@ class Thoughts():
             chosen_thought = choice(chosen_thought_group["thoughts"])
         except Exception as inst:
             chosen_thought = "No thoughts, head empty"
+            print(inst)
 
         return chosen_thought
