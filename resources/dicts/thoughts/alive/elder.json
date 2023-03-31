@@ -42,6 +42,9 @@
             "Is recalling something no other cat remembers anymore",
             "Is enjoying the warm sun in the camp clearing",
             "Is grumbling about the weather"
+        ],
+        "main_age_constraint": [
+            "senior"
         ]
     },
     {
@@ -53,6 +56,10 @@
             "Is sharing wisdom with younger cats that is... less than helpful",
             "Is recounting daring expeditions for the younger cats to hear",
             "Is telling a rather tall tale to any cat who will listen"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
         ],
         "random_age_constraint": [
             "kitten",
@@ -68,6 +75,9 @@
             "Is requesting an apprentice's help with their ticks",
             "Is asking apprentices to help check them for ticks"
         ],
+        "main_age_constraint": [
+            "senior"
+        ],
         "random_status_constraint": [
             "apprentice"
         ]
@@ -77,8 +87,29 @@
         "thoughts": [
             "Is giving the Clan leader attitude"
         ],
+        "main_age_constraint": [
+            "senior"
+        ],
         "random_status_constraint": [
             "leader"
+        ]
+    },
+    {
+        "id": "elder_alive_mate_dead",
+        "thoughts": [
+            "Wonders when they'll join r_c in StarClan",
+            "Almost can't believe that r_c was the first to go",
+            "Had a dream about r_c last night",
+            "Purrs softly while thinking about r_c"
+        ],
+        "main_age_constraint": [
+            "senior"
+        ],
+        "random_living_status":[
+            "starclan"
+        ],
+        "relationship_constraint":[
+            "mates"
         ]
     }
 ]
