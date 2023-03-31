@@ -2824,13 +2824,13 @@ class MediationScreen(Screens):
 
         
         if "has a mate" in col2:
-            self.selected_cat_elements["col2" + tag] = UITextBox(col2,
+            self.selected_cat_elements["col2" + tag] = pygame_gui.elements.UITextBox(col2,
                                                                  scale(pygame.Rect((300, 650), (180, -1))),
                                                                  object_id="#text_box_22_horizleft_spacing_95",
                                                                  manager=MANAGER
                                                                  )
         else:
-            self.selected_cat_elements["col2" + tag] = UITextBox(col2,
+            self.selected_cat_elements["col2" + tag] = pygame_gui.elements.UITextBox(col2,
                                                                  scale(pygame.Rect((300, 650), (180, -1))),
                                                                  object_id="#text_box_22_horizleft_spacing_95",
                                                                  manager=MANAGER
