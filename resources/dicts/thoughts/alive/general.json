@@ -329,16 +329,10 @@
             "Doesn't want to go on patrol with r_c"
         ],
         "main_status_constraint": [
-            "kitten",
             "apprentice",
-            "medicine cat apprentice",
-            "mediator apprentice",
             "warrior",
-            "medicine cat",
-            "mediator",
             "deputy",
-            "leader",
-            "elder"
+            "leader"
         ],
         "random_status_constraint": [
             "apprentice"
