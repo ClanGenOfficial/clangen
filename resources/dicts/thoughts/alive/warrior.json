@@ -3,7 +3,7 @@
         "id": "warrior_gen_alive_kits",
         "thoughts": [
             "Is watching over the kits",
-            "Begrudingly allows kits to play with their tail",
+            "Begrudgingly allows kits to play with their tail",
             "Goes to help a kit that stumbled over their own paws",
             "Was roped into playing mossball with the kits",
             "Somehow has a gaggle of kits following them",
@@ -11,7 +11,7 @@
             "Somehow got roped up in watching r_c for the day",
             "Theatrically dies after r_c slays them",
             "Has to pretend to be a captured warrior for r_c's games",
-            "Is prentending to be a big, evil warrior for r_c"
+            "Is pretending to be a big, evil warrior for r_c"
         ],
         "random_status_constraint": [
             "kitten"
@@ -29,7 +29,7 @@
             "wonders what type of apprentice r_c would've been",
             "Listens to other kits sadly talk about r_c's death",
             "Sadly remembers when r_c would play games with them",
-            "Hopes the kits in Starclan are safe"
+            "Hopes the kits in StarClan are safe"
         ],
         "random_status_constraint": [
             "kitten"
